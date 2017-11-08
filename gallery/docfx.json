@@ -11,6 +11,7 @@
         ],
         "globalMetadata": {
         "breadcrumb_path": "/powershell/gallery/bread/toc.json",
+            "bilingual_type": "hover over",
             "ROBOTS": "INDEX, FOLLOW",
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "ms.prod": "powershell",
