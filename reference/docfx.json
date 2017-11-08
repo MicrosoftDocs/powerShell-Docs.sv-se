@@ -229,6 +229,7 @@
     "externalReference": [],
     "globalMetadata": {
       "breadcrumb_path": "/powershell/bread-pscore/toc.json",
+      "bilingual_type": "hover over",
       "uhfHeaderId": "MSDocsHeader-Powershell",
       "apiPlatform": "powershell",
       "ms.devlang": "powershell",
