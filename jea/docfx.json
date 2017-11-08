@@ -1,0 +1,34 @@
+{
+    "build": {
+        "content": [
+            {
+                "files": [
+                    "**/**.md",
+                    "**/**.yml"
+                ],
+                "exclude": ["**/obj/**"]
+            }
+        ],
+        "globalMetadata": {
+            "breadcrumb_path": "bread/toc.json",
+            "uhfHeaderId": "MSDocsHeader-Powershell",
+            "ROBOTS": "INDEX, FOLLOW",
+            "ms.prod": "powershell",
+            "ms.technology": "jea",
+            "manager": "carmonm",
+            "ms.devlang": "powershell",
+            "ms.tgt_pltfr": "windows",
+            "ms.author": "jpjofre"
+        },
+        "resource": [
+            {
+                "files": [
+                    "**/images/**"
+                ],
+                "exclude": ["**/obj/**"]
+            }
+        ],
+        "template": "op.html",
+        "dest": "jea"
+    }
+}
