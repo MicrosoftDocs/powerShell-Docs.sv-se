@@ -78,12 +78,9 @@
     "live",
     "master"
   ],
-	"git_repository_url_open_to_public_contributors": "https://github.com/PowerShell/powerShell-Docs.sv-se",
+  "git_repository_url_open_to_public_contributors": "https://github.com/PowerShell/powerShell-Docs.sv-se",
   "git_repository_branch_open_to_public_contributors": "live",
   "continue_with_document_error": true,
-	"contribution_branch_mappings": {
-			    "live-sxs": "live"
-  },
   "skip_source_output_uploading": false,
   "need_preview_pull_request": false,
   "dependent_repositories": [
