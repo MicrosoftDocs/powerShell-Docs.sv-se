@@ -6,7 +6,7 @@
       "build_source_folder": "dsc",
       "build_output_subfolder": "dsc",
       "locale": "sv-SE",
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
@@ -20,7 +20,7 @@
       "build_source_folder": "gallery",
       "build_output_subfolder": "gallery",
       "locale": "sv-SE",
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
@@ -34,7 +34,7 @@
       "build_source_folder": "jea",
       "build_output_subfolder": "jea",
       "locale": "sv-SE",
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
@@ -48,7 +48,7 @@
       "build_source_folder": "reference",
       "build_output_subfolder": "reference",
       "locale": "sv-SE",
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
@@ -63,7 +63,7 @@
       "build_source_folder": "wmf",
       "build_output_subfolder": "wmf",
       "locale": "sv-SE",
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
@@ -75,11 +75,15 @@
   ],
   "notification_subscribers": [],
   "branches_to_filter": [
-    "live-sxs",
-    "master-sxs"
+    "live",
+    "master"
   ],
-  "git_repository_url_open_to_public_contributors": "https://github.com/PowerShell/PowerShell-Docs",
+	"git_repository_url_open_to_public_contributors": "https://github.com/PowerShell/powerShell-Docs.sv-se",
+  "git_repository_branch_open_to_public_contributors": "live",
   "continue_with_document_error": true,
+	"contribution_branch_mappings": {
+			    "live-sxs": "live"
+  },
   "skip_source_output_uploading": false,
   "need_preview_pull_request": false,
   "dependent_repositories": [
