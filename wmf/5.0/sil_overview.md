@@ -1,0 +1,23 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, powershell, inställning"
+ms.openlocfilehash: 4a2dfd651f1c74e7441e5f5e357c1c26453adc07
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 06/12/2017
+---
+# <a name="software-inventory-logging-sil"></a><span data-ttu-id="d9ca3-102">Software Inventory Logging (SIL)</span><span class="sxs-lookup"><span data-stu-id="d9ca3-102">Software Inventory Logging (SIL)</span></span>
+
+<span data-ttu-id="d9ca3-103">** Viktigt: ** *när du installerar WMF 5.0 på en Windows Server 2012 R2-Server som redan kör SIL, är det nödvändigt att köra cmdleten Start-SilLogging en gång efter installationen WMF som installationen avbryts felaktigt programvaran Inventera loggningsfunktionen.*</span><span class="sxs-lookup"><span data-stu-id="d9ca3-103">**IMPORTANT: ** *When installing WMF 5.0 on a Windows Server 2012 R2 Server that is already running SIL, it is necessary to run the Start-SilLogging cmdlet once after the WMF install, as the installation process will errantly stop the Software Inventory Logging feature.*</span></span>
+
+<span data-ttu-id="d9ca3-104">Software Inventory Logging hjälper till att minska driftskostnaderna för hämtning av korrekt information om Microsoft-programvara som installeras lokalt på en server, men speciellt över flera servrar i en IT-miljö (förutsatt att programvaran är installerad och körs hela IT-miljön).</span><span class="sxs-lookup"><span data-stu-id="d9ca3-104">Software Inventory Logging helps reduce the operational costs of getting accurate information about the Microsoft software installed locally on a server, but especially across many servers in an IT environment (assuming the software is installed and running across the IT environment).</span></span> <span data-ttu-id="d9ca3-105">Förutsatt en ställs in kan vidarebefordra data till en aggregeringsserver, och samla in loggdata på ett ställe med en enhetlig, automatisk process.</span><span class="sxs-lookup"><span data-stu-id="d9ca3-105">Provided one is set up, you can forward this data to an aggregation server, and collect the log data in one place by using a uniform, automatic process.</span></span>
+
+<span data-ttu-id="d9ca3-106">Medan du kan också logga programinventeringsdata genom att fråga varje dator direkt, kan Programvaruinventering, genom att använda en vidarebefordringsarkitektur (över nätverket) initieras av varje server hantera de server identifiering utmaningar som är vanliga för många Software inventory scenarier och tillgångshantering.</span><span class="sxs-lookup"><span data-stu-id="d9ca3-106">While you can also log software inventory data by querying each computer directly, Software Inventory Logging, by employing a forwarding (over the network) architecture initiated by each server, can overcome server discovery challenges that are typical for many software inventory and asset management scenarios.</span></span> <span data-ttu-id="d9ca3-107">Loggning av Programvaruinventering använder SSL för att säkra data som vidarebefordras över HTTPS till en aggregeringsserver.</span><span class="sxs-lookup"><span data-stu-id="d9ca3-107">Software Inventory Logging uses SSL to secure data that is forwarded over HTTPS to an aggregation server.</span></span> <span data-ttu-id="d9ca3-108">Lagra data i en enda plats gör att blir lättare att analysera, hantera och dela vid behov.</span><span class="sxs-lookup"><span data-stu-id="d9ca3-108">Storing the data in one place makes the data easier to analyze, manipulate, and share when necessary.</span></span>
+
+<span data-ttu-id="d9ca3-109">Ingen av dessa data skickas till Microsoft som en del av funktionen.</span><span class="sxs-lookup"><span data-stu-id="d9ca3-109">None of this data is sent to Microsoft as part of the feature functionality.</span></span> <span data-ttu-id="d9ca3-110">Programvaruinventeringsdata och -funktioner är endast avsedda att användas av serverprogrammets licensierade ägare och administratörer.</span><span class="sxs-lookup"><span data-stu-id="d9ca3-110">Software Inventory Logging data and functionality is meant for the sole use of the server software’s licensed owner and administrators.</span></span>
+
+<span data-ttu-id="d9ca3-111">Mer information och dokumentation om loggning av Programvaruinventering-cmdlets finns i Windows Server 2012 R2 onlineresurser på <http://technet.microsoft.com/library/dn383584.aspx>.</span><span class="sxs-lookup"><span data-stu-id="d9ca3-111">For more information and documentation about Software Inventory Logging cmdlets, see Windows Server 2012 R2 online resources at <http://technet.microsoft.com/library/dn383584.aspx>.</span></span>
+

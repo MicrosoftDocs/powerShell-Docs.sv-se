@@ -1,0 +1,206 @@
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, powershell, inställning"
+ms.openlocfilehash: 06a1ae284975a56d092c708f8bb57e2ae8b46e54
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 06/12/2017
+---
+# <a name="installation-of-module-dependencies"></a><span data-ttu-id="7c23b-102">Installation av beroenden för modulen</span><span class="sxs-lookup"><span data-stu-id="7c23b-102">Installation of Module Dependencies</span></span>
+
+<span data-ttu-id="7c23b-103">Stöds nu sida-vid-sida (SxS) modulen version i installera modulen Update-modulen och publicera modul-cmdlet: ar som körs i Windows PowerShell 5.0 eller senare.</span><span class="sxs-lookup"><span data-stu-id="7c23b-103">There is now side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
+<span data-ttu-id="7c23b-104">Vi har även lagt till parameter - RequiredVersion cmdlet Publish-Module anger versionen publiceras.</span><span class="sxs-lookup"><span data-stu-id="7c23b-104">Also, we have added a -RequiredVersion parameter to the Publish-Module cmdlet to specify the version to be published.</span></span> <span data-ttu-id="7c23b-105">Parametern Path stöder nu modulen bassökväg med version-mapp.</span><span class="sxs-lookup"><span data-stu-id="7c23b-105">The Path parameter now supports the module base path with the version folder.</span></span>
+
+<span data-ttu-id="7c23b-106">**Installera modulen exempel:**</span><span class="sxs-lookup"><span data-stu-id="7c23b-106">**Install-Module examples:**</span></span>
+```powershell
+PS C:\\windows\\system32&gt; Install-Module -Name ContosoServer -RequiredVersion 1.0 -Repository MSPSGallery
+PS C:\\windows\\system32&gt; Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
+Name : ContosoServer
+Version : 1.0
+ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\1.0
+PS C:\\windows\\system32&gt; Install-Module -Name ContosoServer -RequiredVersion 2.0 -Repository MSPSGallery
+PS C:\\windows\\system32&gt; Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
+Name : ContosoServer
+Version : 2.0
+ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\2.0
+Name : ContosoServer
+Version : 1.0
+ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\1.0
+PS C:\\windows\\system32&gt; Get-InstalledModule
+Version Name Repository Description
+------- ---- ---------- -----------
+1.0 ContosoServer MSPSGallery ContosoServer module
+2.0 ContosoServer MSPSGallery ContosoServer module
+```
+
+<span data-ttu-id="7c23b-107">**Installera en modul med beroenden:**</span><span class="sxs-lookup"><span data-stu-id="7c23b-107">**Install a module with dependencies:**</span></span>
+```powershell
+PS C:\\windows\\system32&gt; Get-InstalledModule
+PS C:\\windows\\system32&gt; Find-Module -Repository GalleryINT -Name ModuleWithDependencies2 -IncludeDependencies
+Version Name Type Repository Description
+------- ---- ---- ---------- -----------
+2.0 ModuleWithDependencies2 Module GalleryINT ModuleWithDependencies2 module
+2.5 RequiredModule1 Module GalleryINT RequiredModule1 module
+2.5 RequiredModule2 Module GalleryINT RequiredModule2 module
+2.5 RequiredModule3 Module GalleryINT RequiredModule3 module
+2.0 RequiredModule4 Module GalleryINT RequiredModule4 module
+1.5 RequiredModule5 Module GalleryINT RequiredModule5 module
+2.5 NestedRequiredModule1 Module GalleryINT NestedRequiredModule1 module
+2.5 NestedRequiredModule2 Module GalleryINT NestedRequiredModule2 module
+2.5 NestedRequiredModule3 Module GalleryINT NestedRequiredModule3 module
+2.0 NestedRequiredModule4 Module GalleryINT NestedRequiredModule4 module
+1.5 NestedRequiredModule5 Module GalleryINT NestedRequiredModule5 module
+
+PS C:\\windows\\system32&gt; Install-Module -Repository GalleryINT -Name ModuleWithDependencies2 -Scope CurrentUser
+PS C:\\windows\\system32&gt; Get-InstalledModule
+Version Name Type Repository Description
+------- ---- ---- ---------- -----------
+2.0 ModuleWithDependencies2 Module GalleryINT ModuleWithDependencies2 module
+2.5 NestedRequiredModule1 Module GalleryINT NestedRequiredModule1 module
+2.5 NestedRequiredModule2 Module GalleryINT NestedRequiredModule2 module
+2.5 NestedRequiredModule3 Module GalleryINT NestedRequiredModule3 module
+2.0 NestedRequiredModule4 Module GalleryINT NestedRequiredModule4 module
+1.5 NestedRequiredModule5 Module GalleryINT NestedRequiredModule5 module
+2.5 RequiredModule1 Module GalleryINT RequiredModule1 module
+2.5 RequiredModule2 Module GalleryINT RequiredModule2 module
+2.5 RequiredModule3 Module GalleryINT RequiredModule3 module
+2.0 RequiredModule4 Module GalleryINT RequiredModule4 module
+1.5 RequiredModule5 Module GalleryINT RequiredModule5 module
+
+PS C:\\windows\\system32&gt; $module = Get-Module -Name ModuleWithDependencies2 -ListAvailable
+PS C:\\windows\\system32&gt; $module
+Directory: C:\\Users\\manikb\\Documents\\WindowsPowerShell\\Modules
+ModuleType Version Name ExportedCommands
+---------- ------- ---- ----------------
+Manifest 2.0 ModuleWithDependencies2 {Get-NestedRequiredModule1, Get-NestedRequiredModule2, Get-NestedRequiredModule3, Get-NestedRequiredModule4...}
+```
+
+<span data-ttu-id="7c23b-108">**Innehållet i ModuleWithDependencies2 modulen manifestfilen:**</span><span class="sxs-lookup"><span data-stu-id="7c23b-108">**Contents of ModuleWithDependencies2 module manifest file:**</span></span>
+```powershell
+@{
+\# Version number of this module.
+ModuleVersion = '2.0'
+\# ID used to uniquely identify this module
+GUID = '0eae34da-99dd-4608-8d28-c614fe7b0841'
+\# Author of this module
+Author = 'manikb'
+\# Company or vendor of this module
+CompanyName = 'Unknown'
+\# Copyright statement for this module
+Copyright = '(c) 2015 manikb. All rights reserved.'
+\# Description of the functionality provided by this module
+Description = 'ModuleWithDependencies2 module'
+\# Modules that must be imported into the global environment prior to importing this module
+RequiredModules = @('RequiredModule1',
+@{ModuleName = 'RequiredModule2'; ModuleVersion = '2.0'; },
+@{ModuleName = 'RequiredModule3'; RequiredVersion = '2.5'; },
+@{ModuleName = 'RequiredModule4'; ModuleVersion = '1.1'; MaximumVersion = '2.0'; },
+@{ModuleName = 'RequiredModule5'; MaximumVersion = '1.5'; })
+\# Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
+NestedModules = @('NestedRequiredModule1',
+@{ModuleName = 'NestedRequiredModule2'; ModuleVersion = '2.0'; },
+@{ModuleName = 'NestedRequiredModule3'; RequiredVersion = '2.5'; },
+@{ModuleName = 'NestedRequiredModule4'; ModuleVersion = '0.7'; MaximumVersion = '2.4'; },
+@{ModuleName = 'NestedRequiredModule5'; MaximumVersion = '1.6'; },'ModuleWithDependencies2.psm1')
+\# Functions to export from this module
+FunctionsToExport = '\*'
+\# Cmdlets to export from this module
+CmdletsToExport = '\*'
+\# Variables to export from this module
+VariablesToExport = '\*'
+\# Aliases to export from this module
+AliasesToExport = '\*'
+\# Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
+PrivateData = @{
+PSData = @{
+\# Tags applied to this module. These help with module discovery in online galleries.
+Tags = 'Tag1', 'Tag2', 'Tag-ModuleWithDependencies2-2.0'
+\# A URL to the license for this module.
+LicenseUri = 'http://modulewithdependencies2.com/license'
+\# A URL to the main website for this project.
+ProjectUri = 'http://modulewithdependencies2.com/'
+\# A URL to an icon representing this module.
+IconUri = 'http://modulewithdependencies2.com/icon'
+\# ReleaseNotes of this module
+ReleaseNotes = 'ModuleWithDependencies2 release notes'
+} \# End of PSData hashtable
+} \# End of PrivateData hashtable
+}
+```
+
+<span data-ttu-id="7c23b-109">**Update-Module-exempel:**</span><span class="sxs-lookup"><span data-stu-id="7c23b-109">**Update-Module examples:**</span></span>
+```powershell
+PS C:\\windows\\system32&gt; Update-Module -Name ContosoServer -RequiredVersion 1.5
+PS C:\\windows\\system32&gt; Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
+Name : ContosoServer
+Version : 2.0
+ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\2.0
+Name : ContosoServer
+Version : 1.5
+ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\1.5
+Name : ContosoServer
+Version : 1.0
+ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\1.0
+PS C:\\windows\\system32&gt; Get-InstalledModule
+Version Name Repository Description
+------- ---- ---------- -----------
+1.0 ContosoServer MSPSGallery ContosoServer module
+1.5 ContosoServer MSPSGallery ContosoServer module
+2.0 ContosoServer MSPSGallery ContosoServer module
+PS C:\\windows\\system32&gt; Update-Module -Name ContosoServer
+PS C:\\windows\\system32&gt; Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
+Name : ContosoServer
+Version : 2.8.1
+ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\2.8.1
+Name : ContosoServer
+Version : 2.0
+ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\2.0
+Name : ContosoServer
+Version : 1.5
+ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\1.5
+Name : ContosoServer
+Version : 1.0
+ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\1.0
+PS C:\\windows\\system32&gt; Get-InstalledModule
+Version Name Repository Description
+------- ---- ---------- -----------
+1.0 ContosoServer MSPSGallery ContosoServer module
+1.5 ContosoServer MSPSGallery ContosoServer module
+2.0 ContosoServer MSPSGallery ContosoServer module
+2.8.1 ContosoServer MSPSGallery ContosoServer module
+```
+
+<span data-ttu-id="7c23b-110">**Publicera modulen exempel:**</span><span class="sxs-lookup"><span data-stu-id="7c23b-110">**Publish-Module examples:**</span></span>
+```powershell
+ContosoServer module with different versions to be published.
+PS C:\\windows\\system32&gt; Get-Module -Name ContosoServer -ListAvailable
+Directory: C:\\Program Files\\WindowsPowerShell\\Modules
+ModuleType Version Name ExportedCommands
+---------- ------- ---- ----------------
+Manifest 2.8 ContosoServer Get-ContosoServer
+Manifest 2.0 ContosoServer Get-ContosoServer
+Manifest 1.5 ContosoServer Get-ContosoServer
+Manifest 1.0 ContosoServer Get-ContosoServer
+PS C:\\windows\\system32&gt; Publish-Module -Name ContosoServer -RequiredVersion 1.0 -Repository LocalRepo -NuGetApiKey Local-Repo-NuGet-ApiKey
+PS C:\\windows\\system32&gt; Find-Module -Name ContosoServer -Repository LocalRepo
+Version Name Repository Description
+------- ---- ---------- -----------
+1.0 ContosoServer LocalRepo ContosoServer module
+PS C:\\windows\\system32&gt; Publish-Module -Name ContosoServer -RequiredVersion 1.5 -Repository LocalRepo -NuGetApiKey Local-Repo-NuGet-ApiKey
+PS C:\\windows\\system32&gt; Find-Module -Name ContosoServer -Repository LocalRepo
+Version Name Repository Description
+------- ---- ---------- -----------
+1.0 ContosoServer LocalRepo ContosoServer module
+1.5 ContosoServer LocalRepo ContosoServer module
+PS C:\\windows\\system32&gt; Publish-Module -Path "C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\2.0" -Repository LocalRepo -NuGetApiKey Local-Repo-NuGet-ApiKey
+PS C:\\windows\\system32&gt; Find-Module -Name ContosoServer -Repository LocalRepo
+Version Name Repository Description
+_------ ---- ---------- -----------
+1.0 ContosoServer LocalRepo ContosoServer module
+1.5 ContosoServer LocalRepo ContosoServer module
+2.0 ContosoServer LocalRepo ContosoServer module
+```
+
