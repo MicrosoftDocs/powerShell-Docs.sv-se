@@ -1,0 +1,35 @@
+{
+    "build": {
+        "content": [
+            {
+                "files": [
+                    "**/**.yml",
+                    "**/**.md"
+                ],
+                "exclude": ["**/obj/**"]
+            }
+        ],
+        "globalMetadata": {
+            "breadcrumb_path": "/powershell/wmf/bread/toc.json",
+            "bilingual_type": "hover over",
+            "uhfHeaderId": "MSDocsHeader-Powershell",
+            "ROBOTS": "INDEX, FOLLOW",
+            "ms.prod": "powershell",
+            "ms.technology": "wmf",
+            "manager": "carmonm",
+            "ms.devlang": "powershell",
+            "ms.tgt_pltfr": "windows",
+            "ms.author": "jpjofre"
+        },
+        "resource": [
+            {
+                "files": [
+                    "**/images/**"
+                ],
+                "exclude": ["**/obj/**"]
+            }
+        ],
+        "template": "op.html",
+        "dest": "wmf"
+    }
+}
