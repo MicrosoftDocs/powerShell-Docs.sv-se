@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Skapa en kontinuerlig integrering och kontinuerlig distribution pipeline med DSC
-ms.openlocfilehash: 60b41c5d279560d0121372e593879fe03cd52f7a
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: baa56088d83fba56d3a19cff7954d3081f341f9a
+ms.sourcegitcommit: 60c6f9d8cf316e6d5b285854e6e5641ac7648f3f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Skapa en kontinuerlig integrering och kontinuerlig distribution pipeline med DSC
 
@@ -353,7 +353,7 @@ Det här steget build körs testerna enhet i skriptet Pester vi har tittat på t
     **\Integration\**
     ```
 
-1. Ange **TargetFolder** till`$(BuildArtifactStagingDirectory)\`
+1. Ange **TargetFolder** till`$(Build.ArtifactStagingDirectory)\`
 
 Det här steget kopierar bygga och testa skript i uppsamlingskatalogen så som de kan publiceras som skapa artefakter med nästa steg.
 
