@@ -1,0 +1,244 @@
+- name: Konceptuellt
+  href: PowerShell-Scripting.md
+  items:
+    - name: Core PowerShell
+      href: core-powershell/core-powershell.md
+      items:
+        - name: Konsol
+          href: ''
+          items:
+            - name: Kommandoradshjälp för PowerShell.exe
+              href: core-powershell/console/powershell.exe-command-line-help.md
+            - name: Använd flikexpansion
+              href: core-powershell/console/using-tab-expansion.md
+        - name: Konsolguide
+          href: core-powershell/console-guide.md
+        - name: ISE
+          href: core-powershell/ise/introducing-the-windows-powershell-ise.md
+          items:
+            - name: Skapa en PowerShell-flik i Windows PowerShell ISE
+              href: core-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
+            - name: Felsök skript i Windows PowerShell ISE
+              href: core-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise.md
+            - name: Använd profiler Windows PowerShell ISE
+              href: core-powershell/ise/how-to-use-profiles-in-windows-powershell-ise.md
+            - name: Använd tabbifyllning i skriptfönstret och konsolfönstret
+              href: core-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
+            - name: Använd konsolfönstret i Windows PowerShell ISE
+              href: core-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
+            - name: Skriv och kör skript i Windows PowerShell ISE
+              href: core-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
+            - name: Introducerar Windows PowerShell ISE
+              href: core-powershell/ise/introducing-the-windows-powershell-ise.md
+            - name: ISE-modul
+              href: core-powershell/ise/ise-module.md
+            - name: Kortkommandon för Windows PowerShell ISE
+              href: core-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
+            - name: Användningsområden för Windows PowerShell ISE-skriptobjektmodellen
+              href: core-powershell/ise/purpose-of-the-windows-powershell-ise-scripting-object-model.md
+            - name: ISEAddOnToolCollection-objektet
+              href: core-powershell/ise/the-iseaddontoolcollection-object.md
+            - name: ISEAddOnTool-objektet
+              href: core-powershell/ise/the-iseaddontool-object.md
+            - name: ISEEditor-objektet
+              href: core-powershell/ise/the-iseeditor-object.md
+            - name: ISEFileCollection-objektet
+              href: core-powershell/ise/the-isefilecollection-object.md
+            - name: ISEFile-objektet
+              href: core-powershell/ise/the-isefile-object.md
+            - name: ISEMenuItemCollection-objektet
+              href: core-powershell/ise/the-isemenuitemcollection-object.md
+            - name: ISEMenuItem-objektet
+              href: core-powershell/ise/the-isemenuitem-object.md
+            - name: ISE-objektmodellhierarkin
+              href: core-powershell/ise/the-ise-object-model-hierarchy.md
+            - name: ISEOptions-objektet
+              href: core-powershell/ise/the-iseoptions-object.md
+            - name: ISESnippetCollection-objektet
+              href: core-powershell/ise/the-isesnippetcollection-object.md
+            - name: ISESnippetObject
+              href: core-powershell/ise/the-isesnippetobject.md
+            - name: ObjectModelRoot-objektet
+              href: core-powershell/ise/the-objectmodelroot-object.md
+            - name: PowerShellTabCollection-objektet
+              href: core-powershell/ise/the-powershelltabcollection-object.md
+            - name: PowerShellTab-objektet
+              href: core-powershell/ise/the-powershelltab-object.md
+            - name: Windows PowerShell ISE-skriptobjektmodellen
+              href: core-powershell/ise/the-windows-powershell-ise-scripting-object-model.md
+            - name: Använd Windows PowerShell ISE
+              href: core-powershell/ise/using-the-windows-powershell-ise.md
+            - name: Windows PowerShell ISE-objektmodellreferens
+              href: core-powershell/ise/windows-powershell-ise-object-model-reference.md
+        - name: ISE-guide
+          href: core-powershell/ise-guide.md
+        - name: Kör fjärrkommandon
+          href: core-powershell/running-remote-commands.md
+        - name: Web Access
+          href: core-powershell/web-access.md
+          items:
+            - name: Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst
+              href: core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
+            - name: Installera och använda Windows PowerShell-webbåtkomst
+              href: core-powershell/web-access/install-and-use-windows-powershell-web-access.md
+            - name: Felsökning av åtkomstproblem i Windows PowerShell-webbåtkomst
+              href: core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
+            - name: Avinstallera Windows PowerShell-webbåtkomst
+              href: core-powershell/web-access/uninstall-windows-powershell-web-access.md
+            - name: Användning av den webbaserade Windows PowerShell-konsolen
+              href: core-powershell/web-access/use-the-web-based-windows-powershell-console.md
+        - name: Arbetsflödesguiden
+          href: core-powershell/workflows-guide.md
+    - name: Komma i gång
+      href: ''
+      items:
+        - name: Grundläggande kokböcker
+          href: getting-started/basic-cookbooks.md
+          items:
+            - name: Bilaga 1   Kompatibilitetsalias
+              href: getting-started/cookbooks/appendix-1---compatibility-aliases.md
+            - name: Bilaga 2   Skapa en anpassad PowerShell-genväg
+              href: getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut.md
+            - name: Grundläggande kokboksreferens
+              href: getting-started/cookbooks/basic-cookbooks-reference.md
+            - name: Ändra datorstatus
+              href: getting-started/cookbooks/changing-computer-state.md
+            - name: Samla in information om datorer
+              href: getting-started/cookbooks/collecting-information-about-computers.md
+            - name: Skapa .NET- och COM-objekt New-Object
+              href: getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md
+            - name: Skapa en anpassad indataruta
+              href: getting-started/cookbooks/creating-a-custom-input-box.md
+            - name: Skapa en grafisk datumväljare
+              href: getting-started/cookbooks/creating-a-graphical-date-picker.md
+            - name: Hämta WMI-objekt Get-WmiObject
+              href: getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md
+            - name: Hantera aktuell plats
+              href: getting-started/cookbooks/managing-current-location.md
+            - name: Hantera processer med Process-cmdletar
+              href: getting-started/cookbooks/managing-processes-with-process-cmdlets.md
+            - name: Hantera tjänster
+              href: getting-started/cookbooks/managing-services.md
+            - name: Hantera Windows PowerShell-enheter
+              href: getting-started/cookbooks/managing-windows-powershell-drives.md
+            - name: Manipulera objekt direkt
+              href: getting-started/cookbooks/manipulating-items-directly.md
+            - name: Listrutor med flera val
+              href: getting-started/cookbooks/multiple-selection-list-boxes.md
+            - name: Andra användbara skriptobjekt
+              href: getting-started/cookbooks/other-useful-scripting-objects.md
+            - name: Utför nätverksuppgifter
+              href: getting-started/cookbooks/performing-networking-tasks.md
+            - name: Omdirigera data med Out-cmdletar
+              href: getting-started/cookbooks/redirecting-data-with-out---cmdlets.md
+            - name: Ta bort objekt från pipelinen Where-Object
+              href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
+            - name: Upprepa en uppgift för flera objekt ForEach-Object
+              href: getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md
+            - name: Välj objekt från en listruta
+              href: getting-started/cookbooks/selecting-items-from-a-list-box.md
+            - name: Välj delar av objekt Select-Object
+              href: getting-started/cookbooks/selecting-parts-of-objects--select-object-.md
+            - name: Sortera objekt
+              href: getting-started/cookbooks/sorting-objects.md
+            - name: Använd formatkommandon för att ändra utdatavyn
+              href: getting-started/cookbooks/using-format-commands-to-change-output-view.md
+            - name: Använd statiska klasser och metoder
+              href: getting-started/cookbooks/using-static-classes-and-methods.md
+            - name: Visa objektstrukturen Get-Member
+              href: getting-started/cookbooks/viewing-object-structure--get-member-.md
+            - name: Arbeta med filer och mappar
+              href: getting-started/cookbooks/working-with-files-and-folders.md
+            - name: 'Arbeta med filer, mappar och registernycklar'
+              href: getting-started/cookbooks/working-with-files-folders-and-registry-keys.md
+            - name: Arbeta med objekt
+              href: getting-started/cookbooks/working-with-objects.md
+            - name: Arbeta med skrivare
+              href: getting-started/cookbooks/working-with-printers.md
+            - name: Arbeta med registerposter
+              href: getting-started/cookbooks/working-with-registry-entries.md
+            - name: Arbeta med registernycklar
+              href: getting-started/cookbooks/working-with-registry-keys.md
+            - name: Arbeta med programinstallationer
+              href: getting-started/cookbooks/working-with-software-installations.md
+        - name: Grunderna
+          href: ''
+          items:
+            - name: Om Windows PowerShell
+              href: getting-started/fundamental/about-windows-powershell.md
+            - name: Utforska Windows PowerShell ISE
+              href: getting-started/fundamental/exploring-the-windows-powershell-ise.md
+            - name: Få detaljerad hjälpinformation
+              href: getting-started/fundamental/getting-detailed-help-information.md
+            - name: Få information om kommandon
+              href: getting-started/fundamental/getting-information-about-commands.md
+            - name: Läs mer om Windows PowerShell-namn
+              href: getting-started/fundamental/learning-windows-powershell-names.md
+            - name: Objektpipeline
+              href: getting-started/fundamental/object-pipeline.md
+            - name: Skriptning med Windows PowerShell
+              href: getting-started/fundamental/scripting-with-windows-powershell.md
+            - name: Förstå viktiga Windows PowerShell-koncept
+              href: getting-started/fundamental/understanding-important-windows-powershell-concepts.md
+            - name: Förstå PowerShell-pipelinen
+              href: getting-started/fundamental/understanding-the-windows-powershell-pipeline.md
+            - name: Använd bekanta kommandonamn
+              href: getting-started/fundamental/using-familiar-command-names.md
+            - name: Använd variabler för att lagra objekt
+              href: getting-started/fundamental/using-variables-to-store-objects.md
+            - name: Använda Windows PowerShell
+              href: getting-started/fundamental/using-windows-powershell.md
+            - name: Använd Windows PowerShell för administration
+              href: getting-started/fundamental/using-windows-powershell-for-administration.md
+            - name: Grunderna i Windows PowerShell
+              href: getting-started/fundamental/windows-powershell-basics.md
+            - name: Windows PowerShell ISE (Integrated Scripting Environment)
+              href: getting-started/fundamental/windows-powershell-integrated-scripting-environment--ise-.md
+        - name: Grundläggande koncept
+          href: getting-started/fundamental-concepts.md
+        - name: Förbered dig för Windows PowerShell
+          href: getting-started/getting-ready-to-use-windows-powershell.md
+        - name: Kom igång med Windows PowerShell
+          href: getting-started/getting-started-with-windows-powershell.md
+        - name: Mer PowerShell-utbildning
+          href: getting-started/more-powershell-learning.md
+        - name: Referens för att förstå koncept
+          href: getting-started/understanding-concepts-reference.md
+    - name: Installation
+      href: ''
+      items:
+        - name: Hjälpmedelsfunktioner i Windows PowerShell ISE
+          href: setup/accessibility-in-windows-powershell-ise.md
+        - name: Installera Windows PowerShell 2.0-motorn
+          href: setup/installing-the-windows-powershell-2.0-engine.md
+        - name: 'Installera Windows PowerShell SDK:n'
+          href: setup/installing-the-windows-powershell-sdk.md
+        - name: Installera Windows PowerShell
+          href: setup/installing-windows-powershell.md
+        - name: PS-fjärrkommunikation andra hoppet
+          href: setup/ps-remoting-second-hop.md
+        - name: Installationsreferens
+          href: setup/setup-reference.md
+        - name: Starta 32-bitarsversionen av Windows PowerShell
+          href: setup/starting-the-32-bit-version-of-windows-powershell.md
+        - name: Starta Windows PowerShell 2.0-motorn
+          href: setup/starting-the-windows-powershell-2.0-engine.md
+        - name: Starta Windows Powershell
+          href: setup/starting-windows-powershell.md
+        - name: Starta PowerShell på tidigare versioner av Windows
+          href: setup/starting-windows-powershell-on-earlier-versions-of-windows.md
+        - name: Windows PowerShell-systemkrav
+          href: setup/windows-powershell-system-requirements.md
+        - name: WinRMSecurity
+          href: setup/winrmsecurity.md
+    - name: Nyheter
+      href: ''
+      items:
+        - name: Nyheter i PowerShell 50 ISE
+          href: whats-new/what-s-new-in-the-powershell-50-ise.md
+        - name: Nyheter i Windows PowerShell 50
+          href: whats-new/what-s-new-in-windows-powershell-50.md
+        - name: Nyheter i PowerShell
+          href: whats-new/what-s-new-with-powershell.md
+    - name: Ordlista
+      href: windows-powershell-glossary.md
