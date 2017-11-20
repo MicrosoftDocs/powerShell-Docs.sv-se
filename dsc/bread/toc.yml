@@ -1,0 +1,7 @@
+- name: PowerShell
+  tocHref: /powershell/
+  topicHref: /powershell/index
+  items:
+    - name: Önskad tillståndskonfiguration
+      tocHref: /powershell/dsc/
+      topicHref: /powershell/dsc/index
