@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-konfigurationer
-ms.openlocfilehash: b0868a276dbf5cdb566ce1f35a96b3372cf49be1
-ms.sourcegitcommit: 60c6f9d8cf316e6d5b285854e6e5641ac7648f3f
+ms.openlocfilehash: c0cf0e7aa1d18898c50a0662e4fc76ab02932f08
+ms.sourcegitcommit: 7bb75bfb8d12aaa6b6071dcb2ca639d4ecceef26
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="dsc-configurations"></a>DSC-konfigurationer
 
@@ -29,7 +29,8 @@ Configuration MyDscConfiguration {
             Name = "Bitlocker"
         }
     }
-} 
+}
+MyDscConfiguration
 
 ```
 
@@ -62,6 +63,7 @@ Configuration MyDscConfiguration {
         }
     }
 }
+MyDscConfiguration
 
 ```
 
