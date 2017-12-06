@@ -4,11 +4,11 @@ contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
 title: "Sök-skript"
-ms.openlocfilehash: 15bf23b803250c7893fe970c2580592ea7c0a4b6
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: df62a9934d8013d37bd0083c03f90fa7fa05ac0c
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="find-script"></a>Sök-skript
 
@@ -73,6 +73,9 @@ Find-Script -Name Connect-O365 -MinimumVersion 1.1 -MaximumVersion 1.6.2
 
 # Find a script with exact version
 Find-Script -Name Connect-O365 -RequiredVersion 1.5.7
+
+# Find a script with a specific pre-release version
+Find-Script -Name Connect-O365 -RequiredVersion 1.3.2-alpha -AllowPrerelease
 
 # Find a script from the specified repository
 Find-Script -Name Fabrikam-ServerScript -Repository MyLocalRepo

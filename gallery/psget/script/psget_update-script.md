@@ -4,11 +4,11 @@ contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
 title: "Skript för uppdatering"
-ms.openlocfilehash: cae199636a3bb06099a07e3e0f9a17df2092cbab
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 8067a502e4ecfa61c5a4347d4e9f74c7437f6502
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="update-script"></a>Skript för uppdatering
 
@@ -41,6 +41,13 @@ Get-InstalledScript -Name Fabrikam-Script
 Version Name Type Repository Description
 ------- ---- ---- ---------- -----------
 1.5 Fabrikam-Script Script GalleryINT Description for the Fabrikam-Script script
+
+# Update a specific script to the required prerelease version
+Update-Script -Name Fabrikam-Script -RequiredVersion 1.5.0-alpha -AllowPrerelease
+Get-InstalledScript -Name Fabrikam-Script
+Version Name Type Repository Description
+------- ---- ---- ---------- -----------
+1.5.0-alpha Fabrikam-Script Script GalleryINT Description for the Fabrikam-Script script
 
 # Update all installed scripts
 Install-Script -Name Fabrikam-ServerScript -RequiredVersion 1.0 -Repository GalleryINT -Scope CurrentUser

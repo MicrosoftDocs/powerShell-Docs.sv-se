@@ -4,11 +4,11 @@ contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
 title: Update-modul
-ms.openlocfilehash: 343c296dad2a3df35f13393b3796a1d484f5f535
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 66535cd5b1f44e108c2bc47fa343c77c86bb21dc
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="update-module"></a>Update-modul
 
@@ -43,38 +43,38 @@ Get-Command -Name Update-Module -Module PowerShellGet -Syntax
 ## <a name="example-commands"></a>Exempel på kommandon
 
 ```powershell
-PS C:\\windows\\system32> Update-Module -Name ContosoServer -RequiredVersion 1.5
-PS C:\\windows\\system32> Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
+PS C:\windows\system32> Update-Module -Name ContosoServer -RequiredVersion 1.5
+PS C:\windows\system32> Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
 Name : ContosoServer
 Version : 2.0
-ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\2.0
+ModuleBase : C:\Program Files\WindowsPowerShell\Modules\ContosoServer\2.0
 Name : ContosoServer
 Version : 1.5
-ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\1.5
+ModuleBase : C:\Program Files\WindowsPowerShell\Modules\ContosoServer\1.5
 Name : ContosoServer
 Version : 1.0
-ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\1.0
-PS C:\\windows\\system32> Get-InstalledModule
+ModuleBase : C:\Program Files\WindowsPowerShell\Modules\ContosoServer\1.0
+PS C:\windows\system32> Get-InstalledModule
 Version Name Repository Description
 ------- ---- ---------- -----------
 1.0 ContosoServer MSPSGallery ContosoServer module
 1.5 ContosoServer MSPSGallery ContosoServer module
 2.0 ContosoServer MSPSGallery ContosoServer module
-PS C:\\windows\\system32> Update-Module -Name ContosoServer
-PS C:\\windows\\system32> Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
+PS C:\windows\system32> Update-Module -Name ContosoServer
+PS C:\windows\system32> Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
 Name : ContosoServer
 Version : 2.8.1
-ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\2.8.1
+ModuleBase : C:\Program Files\WindowsPowerShell\Modules\ContosoServer\2.8.1
 Name : ContosoServer
 Version : 2.0
-ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\2.0
+ModuleBase : C:\Program Files\WindowsPowerShell\Modules\ContosoServer\2.0
 Name : ContosoServer
 Version : 1.5
-ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\1.5
+ModuleBase : C:\Program Files\WindowsPowerShell\Modules\ContosoServer\1.5
 Name : ContosoServer
 Version : 1.0
-ModuleBase : C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoServer\\1.0
-PS C:\\windows\\system32> Get-InstalledModule
+ModuleBase : C:\Program Files\WindowsPowerShell\Modules\ContosoServer\1.0
+PS C:\windows\system32> Get-InstalledModule
 Version Name Repository Description
 ------- ---- ---------- -----------
 1.0 ContosoServer MSPSGallery ContosoServer module
@@ -83,8 +83,36 @@ Version Name Repository Description
 2.8.1 ContosoServer MSPSGallery ContosoServer module
 ```
 
+### <a name="update-the-module-with-a-prerelease-version-requires--allowprerelease-flag"></a>Uppdatera modulen med en förhandsversion, kräver AllowPrerelease - flaggan
+```powershell
+PS C:\windows\system32> Get-InstalledModule
+Version Name Repository Description
+------- ---- ---------- -----------
+1.0 ContosoServer MSPSGallery ContosoServer module
+1.5 ContosoServer MSPSGallery ContosoServer module
+2.0 ContosoServer MSPSGallery ContosoServer module
+2.8.1 ContosoServer MSPSGallery ContosoServer module
 
-###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Uppdatera modulen TestDepWithNestedRequiredModules1 med beroenden.
+PS C:\windows\system32> Find-Module ContosoServer -AllowPrerelease
+
+Version        Name                                Repository           Description
+-------        ----                                ----------           -----------
+3.0.0-alpha    ConstosoServer                      MSPSGallery          The PowerShell Contoso Server deployment tools...
+
+PS C:\windows\system32> Update-Module -Name ContosoServer -AllowPrerelease
+PS C:\windows\system32> Get-InstalledModule
+Version Name Repository Description
+------- ---- ---------- -----------
+1.0 ContosoServer MSPSGallery ContosoServer module
+1.5 ContosoServer MSPSGallery ContosoServer module
+2.0 ContosoServer MSPSGallery ContosoServer module
+2.8.1 ContosoServer MSPSGallery ContosoServer module
+3.0.0-alpha ContosoServer MSPSGallery ContosoServer module
+
+```
+
+
+### <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Uppdatera modulen TestDepWithNestedRequiredModules1 med beroenden.
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 
@@ -108,5 +136,8 @@ Version    Name                                Repository  Description
 2.5        RequiredModule3                     LocalRepo   RequiredModule3 module
 1.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
+
+
+
 ```
 

@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Konfigurera en virtuella datorer på första uppstart med hjälp av DSC"
-ms.openlocfilehash: a3592c50fa7f2232538fbec07129fac86c1d00b5
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c793e36eb9caa194104f9dda2aa1d335b21b676c
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 >Gäller för: Windows PowerShell 5.0
 
@@ -21,7 +21,7 @@ Mer information om hur du konfigurerar nya virtuella datorer på första uppstar
 
 Om du vill köra exemplen behöver du:
 
-- En startbar VHD att arbeta med. Du kan ladda ned en ISO med en utvärderingsversion av Windows Server 2016 vid   [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). Du hittar anvisningar om hur du skapar en VHD från en ISO-avbildning på [skapa startbara virtuella hårddiskar](https://technet.microsoft.com/en-us/library/gg318049.aspx).
+- En startbar VHD att arbeta med. Du kan ladda ned en ISO med en utvärderingsversion av Windows Server 2016 vid [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). Du hittar anvisningar om hur du skapar en VHD från en ISO-avbildning på [skapa startbara virtuella hårddiskar](https://technet.microsoft.com/en-us/library/gg318049.aspx).
 - En värddator som har Hyper-V aktiverat. Mer information finns i [översikt över Hyper-V](https://technet.microsoft.com/library/hh831531.aspx).
 
 Med hjälp av DSC, kan du automatisera installationen och konfigurationen för en dator vid första uppstart.
@@ -83,7 +83,7 @@ Configuration SampleIISInstall
 Byt namn på och flytta filen till rätt plats på den virtuella Hårddisken som `Pending.mof` med hjälp av den [flytta objekt](https://technet.microsoft.comlibrary/hh849852.aspx) cmdlet. Till exempel:
 
     ```powershell
-        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\Sytem32\Configuration\Pending.mof
+        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
     ```
 6. Demontera den virtuella Hårddisken genom att anropa den [Dismount-VHD](https://technet.microsoft.com/library/hh848562.aspx) cmdlet. Till exempel:
 
@@ -201,7 +201,7 @@ Som standard värdet för den **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Cu
 ## <a name="see-also"></a>Se även
 
 - [DSC-konfigurationer](configurations.md)
-- [DSCAutomationHostEnabled registernyckel](DSCAutomationHostEnabled.md)
-- [Konfigurera den lokala Configuration Manager (MGM)](metaConfig.md)
+- [DSCAutomationHostEnabled-registernyckel](DSCAutomationHostEnabled.md)
+- [Konfigurera den lokala konfigurationshanteraren (LCM)](metaConfig.md)
 - [Ställer in en pull webbserver DSC](pullServer.md)
 

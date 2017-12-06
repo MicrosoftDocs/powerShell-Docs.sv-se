@@ -4,11 +4,11 @@ contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
 title: Installera modulen
-ms.openlocfilehash: 37e07cd32e7b2fd4a7a8e6cab179aecc3251baf3
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c066f4b34a03206cc0f31e9d40144fd719d9e305
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="install-module"></a>Installera modulen
 
@@ -80,6 +80,12 @@ Install-Module -Name ContosoServer -MinimumVersion 1.0
 
 # Install a specific version of a module
 Install-Module -Name ContosoServer -RequiredVersion 1.1.3
+
+# Install a specific prerelease version of a module
+Install-Module -Name ContosoServer -RequiredVersion 1.1.3-alpha -AllowPrerelease
+
+# Install the latest version of a module by name, including prelrelease versions if one exists
+Install-Module -Name ContosoServer -AllowPrerelease
 
 # Install the latest version of a module to $home\Documents\WindowsPowerShell\Modules.
 Install-Module -Name ContosoServer -Scope CurrentUser

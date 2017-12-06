@@ -4,11 +4,11 @@ contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
 title: "Sök-modul"
-ms.openlocfilehash: 5c878a04d186f7f5970fba9e7f3cdb480cef21f6
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 65c466909c007ed08c3fa978f78483983b00ba73
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="find-module"></a>Sök-modul
 Söker efter moduler från en online-galleriet som uppfyller angivna villkor.
@@ -66,6 +66,9 @@ Find-Module -Name PSReadline -MinimumVersion 1.0.0.12 -MaximumVersion 1.0.0.13
 
 # Find a module with exact version
 Find-Module -Name AzureRM -RequiredVersion 1.3.2
+
+# Find a module with a specific prerelease version
+Find-Module -Name AzureRM -RequiredVersion 1.3.2-alpha -AllowPrerelease
 
 # Find a module from the specified repository
 Find-Module -Name Contoso -Repository MyLocalRepo

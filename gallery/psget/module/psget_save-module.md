@@ -4,11 +4,11 @@ contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
 title: Spara-modul
-ms.openlocfilehash: 296c5c5ffc6f1e12da0162237e562b13b3679110
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: acea38b0eebc58dafda0ab58b91dc6a70ffffd3b
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="save-module"></a>Spara-modul
 
@@ -53,6 +53,15 @@ Find-Command -Name "Get-NestedRequiredModule4" -Repository "INT" | Save-Module -
 
 # Save the role capability modules by piping the Find-RoleCapability output to Save-Module cmdlet.
 Find-RoleCapability -Name Maintenance,MyJeaRole | Save-Module -Path C:\MyModulesPath
+
+
+# Save a specific prerelease version of a module to C:\MySavedModuleLocation
+Save-Module -Name ContosoServer -RequiredVersion 1.1.3-alpha -Path C:\MySavedModuleLocation -AllowPrerelease
+
+# Install the latest version of a module by name, including prelrelease versions if one exists
+Install-Module -Name ContosoServer -Path C:\MySavedModuleLocation -AllowPrerelease
+
+
 
 ```
 
