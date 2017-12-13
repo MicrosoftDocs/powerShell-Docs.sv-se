@@ -4,11 +4,11 @@ author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Konfigurera den lokala Configuration Manager
-ms.openlocfilehash: 98470f45ca7c11ea63d68da7dec9fcd844f06192
-ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
+ms.openlocfilehash: 6ca527aae263637bbca5a064e0d770fe9384d679
+ms.sourcegitcommit: ea01285a3aa7818d67d4761fbd8793b9b66bd5f7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Konfigurera den lokala Configuration Manager
 
@@ -73,7 +73,7 @@ Följande egenskaper är tillgängliga i en **inställningar** block.
 
 |  Egenskap  |  Typ  |  Beskrivning   |
 |----------- |------- |--------------- |
-| ActionAfterReboot| sträng| Anger vad som händer när en omstart vid tillämpningen av en konfiguration. Möjliga värden är __”ContinueConfiguration”__ och __”StopConfiguration”__. <ul><li> __ContinueConfiguration__: fortsätta använda den aktuella konfigurationen efter omstart av datorn. Detta är standard falue</li><li>__StopConfiguration__: stoppa den aktuella konfigurationen efter omstart av datorn.</li></ul>|
+| ActionAfterReboot| sträng| Anger vad som händer när en omstart vid tillämpningen av en konfiguration. Möjliga värden är __”ContinueConfiguration”__ och __”StopConfiguration”__. <ul><li> __ContinueConfiguration__: fortsätta använda den aktuella konfigurationen efter omstart av datorn. Detta är standardvärdet</li><li>__StopConfiguration__: stoppa den aktuella konfigurationen efter omstart av datorn.</li></ul>|
 | AllowModuleOverwrite| bool| __$TRUE__ om nya konfigurationer som hämtas från tjänsten pull tillåts att skriva över gamla på målnoden. Annars $FALSE.|
 | CertificateID| sträng| Tumavtryck för ett certifikat som används för att säkra autentiseringsuppgifter som angavs i en konfiguration. Mer information finns i [vill skydda autentiseringsuppgifter i Windows PowerShell Desired State Configuration](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?. <br> __Obs:__ detta hanteras automatiskt om med pull-tjänsten för Azure Automation DSC.|
 | ConfigurationDownloadManagers| CimInstance]| Föråldrad. Använd __ConfigurationRepositoryWeb__ och __ConfigurationRepositoryShare__ block definiera configuration pull-tjänstens slutpunkter.|
