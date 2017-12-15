@@ -4,11 +4,11 @@ author: JKeithB
 ms.topic: reference
 keywords: "WMF, powershell, inställning"
 title: WMF 5.1 operativsystemskompatibilitet
-ms.openlocfilehash: b8724538a03ab67529682b9efb29e3ab947339b5
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 04217c5abb0f04a5dc6b15cd956a632f7b84c9bb
+ms.sourcegitcommit: 5dbf78ba0db482efa79e31a0e4963f8cbeb3df54
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 operativsystemskompatibilitet #
 
@@ -33,4 +33,6 @@ ms.lasthandoff: 06/12/2017
 Om ”levereras i-rutan *”: WMF 5.0 funktioner ingår i den ursprungliga Windows 10 RTM-versionen.
 Funktioner för WMF 5.1 ingick i Windows Server 2016 och Windows 10 årsdagar Edition. WMF 5.1 gäller inte för dessa versioner av operativsystemet som uppdateringar tillhandahålls via Windows Update.
 
+
+Observera är WMF inte levereras i Windows. WMF är ett uppgraderingspaket som innehåller en uppsättning av Windows-funktioner till tidigare versioner av Windows. Detta kan göra en viktig skillnad när ansöker om stöd för någon av dessa funktioner, som versionen för dessa komponenter inte matchar vad levereras i det ursprungliga operativsystemet.
 
