@@ -39,6 +39,7 @@
 ### [Publicera](psget/module/psget_publish-module.md)
 ### [Moduler med PSEditions](psget/module/modulewithpseditionsupport.md)
 ### [Moduler som kräver godkännande av licensen](psget/module/RequireLicenseAcceptance.md)
+### [Förhandsversioner](psget/module/PreReleaseModule.md)
 ### [Felsökning](psget/psget_cmdlets_troubleshooting.md)
 
 ## Skript
@@ -54,7 +55,7 @@
 ### [Publicera](psget/script/psget_publish-script.md)
 ### [Skript med PSEditions](psget/script/scriptwithpseditionsupport.md)
 ### [Kräv godkännande av licensen för skript](psget/script/script_RequireLicenseAcceptance.md)
-
+### [Förhandsversioner](psget/script/PreReleaseScript.md)
 ## Hantering av informationslager
 ### [Start av NuGet-providern och NuGet.exe](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
 ### [Registrera informationslagret](psget/repository/psget_register-psrepository.md)
