@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: "Att göra ett andra hopp i PowerShell-fjärrkommunikation"
-ms.openlocfilehash: f3b8280819e43bd67bd608ffd0ba9484c2bbc26c
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 2518409369a75a49b975b9b944320c1878819421
+ms.sourcegitcommit: 1a0a0928c1e3cae4e8df8d79b0737bd7ed6b4e47
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Att göra ett andra hopp i PowerShell-fjärrkommunikation
 
@@ -256,12 +256,12 @@ Du kan skicka autentiseringsuppgifter i den **ScriptBlock** parametern för ett 
 - Kräver inte särskild serverkonfiguration.
 - Fungerar på en server som kör WMF 2.0 eller senare.
 
-## <a name="cons"></a>Nackdelar
+### <a name="cons"></a>Nackdelar
 
 - Kräver en olämpliga kod-teknik.
 - Om du kör WMF 2.0 kräver olika syntax för att överföra argument till en fjärrsession.
 
-## <a name="example"></a>Exempel
+### <a name="example"></a>Exempel
 
 I följande exempel visas hur du skickar autentiseringsuppgifter i en **Invoke-Command** skriptblock:
 
@@ -277,7 +277,7 @@ Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
 
 ## <a name="see-also"></a>Se även
 
-[PowerShell fjärrkommunikation säkerhetsaspekter](WinRMSecurity.md)
+[Säkerhetsöverväganden för PowerShell-fjärrkommunikation](WinRMSecurity.md)
 
 
 
