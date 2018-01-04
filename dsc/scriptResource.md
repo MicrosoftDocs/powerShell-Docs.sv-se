@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Resursen DSC-skript
-ms.openlocfilehash: 81718de0b0c8463189e33e565dc9ff39692dbe8b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: d3e231d33a04fd8a018ffe2f3d51a15360e0d312
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="dsc-script-resource"></a>Resursen DSC-skript
 
@@ -83,13 +83,13 @@ Configuration ScriptTest
     {
         GetScript = { 
             $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-            return @{ 'Version' = "$currentVersion" }
+            return @{ 'Result' = "$currentVersion" }
         }          
         TestScript = { 
             $state = $GetScript
-            if( $state['Version'] -eq $using:version )
+            if( $state['Result'] -eq $using:version )
             {
-                Write-Verbose -Message ('{0} -eq {1}' -f $state['Version'],$using:version)
+                Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
                 return $true
             }
             Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)

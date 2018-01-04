@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Desired State Configuration-översikt för beslutsfattare"
-ms.openlocfilehash: e39ab5138b20653e46ac35fa32b99d268f96b2df
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 1800acfa9edae4f65e34db380ff719ad4c034921
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Desired State Configuration-översikt för beslutsfattare
 
@@ -34,7 +34,7 @@ Konfigurationer är också delas via den [PowerShell-galleriet](https://powershe
 
 ## <a name="desired-state-configuration-and-devops"></a>Desired State Configuration och DevOps
 
-[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) är en kombination av personer, tekniker och kultur som ger snabb distribution och iteration. DSC har utformats med DevOps i åtanke. Med en enda konfiguration definiera en miljö innebär att utvecklare kan koda deras krav till en konfiguration, kontrollera att konfigurationen till källkontroll och team kan enkelt distribuera kod utan att behöva gå igenom felbenägna manuella processer. 
+[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) är en kombination av personer, processer och verktyg som ger snabb distribution och iteration fokuserar på att leverera värde för slutanvändare om interna eller externa. DSC har utformats med DevOps i åtanke. Med en enda konfiguration definiera en miljö innebär att utvecklare kan koda deras krav till en konfiguration, kontrollera att konfigurationen till källkontroll och team kan enkelt distribuera kod utan att behöva gå igenom felbenägna manuella processer. 
 
 Konfigurationer är också [datadrivna](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), vilket gör det enklare för ops team att identifiera och ändra miljöer utan åtgärder från utvecklare. 
 

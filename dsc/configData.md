@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Med konfigurationsdata
-ms.openlocfilehash: a70cd8f0f6c24eb02743b02d198cebcc3d775756
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 60c6c2d5694a03275e1a08522bdcf4b1bc5bb068
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>Med hjälp av konfigurationsdata i DSC
 
@@ -153,7 +153,7 @@ Du kan till exempel skapa en fil med namnet `MyData.psd1` med följande innehål
 
 ## <a name="compiling-a-configuration-with-configuration-data"></a>Kompilera en konfiguration med konfigurationsdata
 
-För att kompilera en konfiguration som du har definierat konfigurationsdata du skickar data cofiguration som värde för den **ConfigurationData** parameter.
+För att kompilera en konfiguration som du har definierat konfigurationsdata skicka konfigurationsdata som värde för den **ConfigurationData** parameter.
 
 Detta skapar en MOF-fil för varje post i den **AllNodes** matris.
 Varje MOF-filen kommer att namnges med den `NodeName` egenskapen för motsvarande post i matrisen.
@@ -187,7 +187,7 @@ DSC innehåller tre särskilda variabler som kan användas i ett konfigurationss
 ## <a name="using-non-node-data"></a>Med hjälp av data-nod
 
 Som vi har sett i föregående exempel kan den **ConfigurationData** hash-tabellen kan ha en eller flera nycklar utöver de nödvändiga **AllNodes** nyckel.
-I exemplen i det här avsnittet har vi används bara en enda addiontal nod och heter den `NonNodeData`. Du kan dock definiera valfritt antal addiontal nycklar och namn som helst.
+I exemplen i det här avsnittet har vi används endast en extra nod och heter den `NonNodeData`. Du kan dock definiera valfritt antal ytterligare nycklar och namn som helst.
 
 Ett exempel på hur nod-data finns [avgränsa konfiguration och miljö data](separatingEnvData.md).
 
