@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-konfigurationer
-ms.openlocfilehash: eeee18e6a4bd09cc22d1ac4ed5cbfaea02346170
-ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
+ms.openlocfilehash: 2c2f8183ef586ff9371e4af7ea83db3e04fa68a4
+ms.sourcegitcommit: 378c7ed4e8c8c1c5fe71417b9ba672a4c990630b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="dsc-configurations"></a>DSC-konfigurationer
 
@@ -63,7 +63,7 @@ Configuration MyDscConfiguration {
         }
     }
 }
-MyDscConfiguration
+MyDscConfiguration -ComputerName <MyComputer>
 
 ```
 
