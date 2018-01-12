@@ -224,7 +224,7 @@ Mer information om PowerShell jobb finns [about_Jobs](https://msdn.microsoft.com
   - `PSEdition`: Det här värdet `Core` på PowerShell Core och `Desktop` på Windows PowerShell
   - `GitCommitId`: Det är Git commit-ID på Git branch eller taggen där PowerShell har skapats.
     På utgivna versioner, sannolikt blir samma som `PSVersion`.
-  - `OS`: Det är en sträng för OS-version som returneras av`[System.Environment]::OSVersion.VersionString`
+  - `OS`: Det är en sträng för OS-version som returneras av`[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
   - `Platform`: Det har returnerats av `[System.Environment]::OSVersion.Platform` anges till `Win32NT` i Windows, `MacOSX` på macOS, och `Unix` på Linux.
 - Ta bort den `BuildVersion` egenskap från `$PSVersionTable`.
   Den här egenskapen har starkt knutna till Windows-versionen.

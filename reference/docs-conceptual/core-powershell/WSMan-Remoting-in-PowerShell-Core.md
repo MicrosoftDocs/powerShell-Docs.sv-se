@@ -35,13 +35,14 @@ Install-PowerShellRemoting.ps1
 #### <a name="executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register"></a>Körs av en annan instans av PowerShell för den instans som registreras
 
 ``` powershell
-<path to powershell>\Install-PowerShellRemoting.ps1 -PowerShellHome "<absolute path to the instance's $PSHOME>" -PowerShellVersion "<the powershell version tag>"
+<path to powershell>\Install-PowerShellRemoting.ps1 -PowerShellHome "<absolute path to the instance's $PSHOME>"
 ```
 
 Exempel:
 
 ``` powershell
-C:\Program Files\PowerShell\6.0.0.9\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0.9\" -PowerShellVersion "6.0.0-alpha.9"
+Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
+.\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
 
 **Obs:** fjärrkommunikation registrering skriptet kommer att startas om WinRM, så alla befintliga PSRP sessioner avslutas omedelbart när skriptet har körts. Om du kör under en fjärrsession kommer detta avslutar anslutningen.
@@ -51,8 +52,8 @@ C:\Program Files\PowerShell\6.0.0.9\Install-PowerShellRemoting.ps1 -PowerShellHo
 Skapa en PowerShell-session till den nya PowerShell-slutpunkten genom att ange `-ConfigurationName "some endpoint name"`. Om du vill ansluta till PowerShell-instans från exemplet ovan, använder du antingen:
 
 ``` powershell
-New-PSSession ... -ConfigurationName "powershell.6.0.0-alpha.9"
-Enter-PSSession ... -ConfigurationName "powershell.6.0.0-alpha.9"
+New-PSSession ... -ConfigurationName "powershell.6.0.0"
+Enter-PSSession ... -ConfigurationName "powershell.6.0.0"
 ```
 
 Observera att `New-PSSession` och `Enter-PSSession` anrop som inte anger `-ConfigurationName` gäller PowerShell standardslutpunkten `microsoft.powershell`.

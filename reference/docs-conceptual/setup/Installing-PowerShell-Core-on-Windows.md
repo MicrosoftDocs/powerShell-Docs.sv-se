@@ -2,10 +2,10 @@
 
 ## <a name="msi"></a>MSI
 
-Installera PowerShell på en Windows-klienten eller Windows Server (fungerar på Server 2008 R2, Windows 7 SP1 och senare), ladda ned MSI-paket från
-<!-- TODO: either the Download Center or -->
-vår GitHub [släpper][] sidan.
+Installera PowerShell på en Windows-klienten eller Windows Server (fungerar på Server 2008 R2, Windows 7 SP1 och senare), ladda ned MSI-paketet från vår GitHub [släpper][] sidan.
+
 MSI-filen ser ut så här-`PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+<!-- TODO: should be updated to point to the Download Center as well -->
 
 När du har hämtat, dubbelklickar du på installationsprogrammet och följ anvisningarna.
 
