@@ -1,27 +1,39 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
-title: "Köra fjärrkommandon"
+title: "Kör fjärrkommandon"
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: 5cf9690b8fe4549a99186f172cb6f0de156a4dea
-ms.sourcegitcommit: c5251755c4442487f99ff74fadf7e37bbf039089
+ms.openlocfilehash: 43f07abd642e7de235647fa151537c46ebe86cae
+ms.sourcegitcommit: 6aed37d7f0c9652ae09bb8c11928da7e4783ed7f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="running-remote-commands"></a>Köra fjärrkommandon
+# <a name="running-remote-commands"></a>Kör fjärrkommandon
+
 Du kan köra kommandon på en eller flera hundra datorer med ett enda Windows PowerShell-kommando. Windows PowerShell stöder fjärrhantering med hjälp av olika teknologier, inklusive WMI-, RPC- och WS-Management.
+
+## <a name="remoting-in-powershell-core"></a>Fjärrkommunikation i PowerShell Core
+
+PowerShell Core, den nya versionen av PowerShell på Windows-, macOS- och Linux, stöder WMI, WS-Management och fjärrkommunikation med SSH.
+(RPC stöds inte längre.)
+
+Mer information om hur du konfigurerar detta finns i:
+
+* [SSH fjärrkommunikation i PowerShell Core] [ssh-fjärrkommunikation]
+* [WinRM fjärrkommunikation i PowerShell Core] [winrm-fjärrkommunikation]
 
 ## <a name="remoting-without-configuration"></a>Fjärrkommunikation utan konfiguration
 Många Windows PowerShell-cmdlets har parametern ComputerName som gör det möjligt att samla in data och ändra inställningar på en eller flera fjärrdatorer. De använder olika kommunikationsteknik och många arbete på alla Windows-operativsystem som har stöd för Windows PowerShell utan någon specialkonfiguration.
 
 Dessa cmdletar är:
+
 * [Starta om datorn](https://go.microsoft.com/fwlink/?LinkId=821625)
 * [Testa anslutning](https://go.microsoft.com/fwlink/?LinkId=821646)
 * [Rensa händelseloggen](https://go.microsoft.com/fwlink/?LinkId=821568)
 * [Get-händelseloggen](https://go.microsoft.com/fwlink/?LinkId=821585)
 * [Get-snabbkorrigering](https://go.microsoft.com/fwlink/?LinkId=821586)
-  - [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
+* [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
 * [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
 * [Ange tjänst](https://go.microsoft.com/fwlink/?LinkId=821633)
 * [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
@@ -135,3 +147,6 @@ Hjälp med fjärrkommunikation fel finns i [about_Remote_Troubleshooting](https:
 - [Ny PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [WSMan-providern](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+
+[wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
+[ssh-resmoting]: SSH-Remoting-in-PowerShell-Core.md
