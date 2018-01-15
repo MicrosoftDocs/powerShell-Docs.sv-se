@@ -72,8 +72,17 @@
               href: core-powershell/ise/windows-powershell-ise-object-model-reference.md
         - name: ISE-guide
           href: core-powershell/ise-guide.md
+        - name: Visual Studio Code
+          items:
+            - name: Använda Visual Studio Code
+              href: core-powershell/vscode/using-vscode.md
         - name: Kör fjärrkommandon
           href: core-powershell/running-remote-commands.md
+          items:
+            - name: PowerShell fjärrkommunikation via SSH
+              href: core-powershell/SSH-Remoting-in-PowerShell-Core.md
+            - name: WS-Management-fjärrkommunikation (WSMan) i PowerShell Core
+              href: core-powershell/WSMan-Remoting-in-PowerShell-Core.md
         - name: Web Access
           href: core-powershell/web-access.md
           items:
@@ -207,6 +216,10 @@
     - name: Installation
       href: ''
       items:
+        - name: Installera PowerShell Core i Windows
+          href: setup/Installing-PowerShell-Core-on-Windows.md
+        - name: Installera PowerShell Core i macOS och Linux
+          href: setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
         - name: Hjälpmedelsfunktioner i Windows PowerShell ISE
           href: setup/accessibility-in-windows-powershell-ise.md
         - name: Installera Windows PowerShell 2.0-motorn
@@ -234,11 +247,15 @@
     - name: Nyheter
       href: ''
       items:
-        - name: Nyheter i PowerShell 50 ISE
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
-        - name: Nyheter i Windows PowerShell 50
-          href: whats-new/what-s-new-in-windows-powershell-50.md
         - name: Nyheter i PowerShell
           href: whats-new/what-s-new-with-powershell.md
+        - name: Nyheter i Windows PowerShell 5.0
+          href: whats-new/what-s-new-in-windows-powershell-50.md
+        - name: Nyheter i PowerShell 5.0 ISE
+          href: whats-new/what-s-new-in-the-powershell-50-ise.md
+        - name: Nyheter i PowerShell Core 6.0
+          href: whats-new/what-s-new-in-powershell-core-60.md
+    - name: Supportlängd för PowerShell Core
+      href: PowerShell-Core-Support.md
     - name: Ordlista
       href: windows-powershell-glossary.md
