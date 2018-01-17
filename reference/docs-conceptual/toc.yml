@@ -11,8 +11,6 @@
               href: core-powershell/console/powershell.exe-command-line-help.md
             - name: Använd flikexpansion
               href: core-powershell/console/using-tab-expansion.md
-        - name: Konsolguide
-          href: core-powershell/console-guide.md
         - name: ISE
           href: core-powershell/ise/introducing-the-windows-powershell-ise.md
           items:
@@ -70,8 +68,6 @@
               href: core-powershell/ise/using-the-windows-powershell-ise.md
             - name: Windows PowerShell ISE-objektmodellreferens
               href: core-powershell/ise/windows-powershell-ise-object-model-reference.md
-        - name: ISE-guide
-          href: core-powershell/ise-guide.md
         - name: Visual Studio Code
           items:
             - name: Använda Visual Studio Code
@@ -211,8 +207,6 @@
           href: getting-started/getting-started-with-windows-powershell.md
         - name: Mer PowerShell-utbildning
           href: getting-started/more-powershell-learning.md
-        - name: Referens för att förstå koncept
-          href: getting-started/understanding-concepts-reference.md
     - name: Installation
       href: ''
       items:
