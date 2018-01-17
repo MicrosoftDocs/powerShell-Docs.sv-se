@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-10-16
-author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Anta konfigurationer
-ms.openlocfilehash: f9f8889439e43d540b50b68ef13e8e088b8cadd3
-ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
+ms.openlocfilehash: 4285dbe04c9745ec2a859e479848da2881c18de0
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="enacting-configurations"></a>Anta konfigurationer
 
