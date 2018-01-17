@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Inbyggda Desired State Configuration-resurser för Linux"
-ms.openlocfilehash: b85f32f7559d89bda566d35462cc613d73424c50
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e268cb2ee8a246f18216b34e5e2a6d512f15e18c
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="built-in-desired-state-configuration-resources-for-linux"></a>Inbyggda Desired State Configuration-resurser för Linux
 

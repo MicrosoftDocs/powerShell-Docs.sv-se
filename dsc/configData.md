@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Med konfigurationsdata
-ms.openlocfilehash: 60c6c2d5694a03275e1a08522bdcf4b1bc5bb068
-ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
+ms.openlocfilehash: b56a3f970b0b5121585dc4ed2f32da3243b980bd
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>Med hjälp av konfigurationsdata i DSC
 

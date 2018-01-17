@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: Windows PowerShell Integrated Scripting Environment ISE
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 6bddb953a7f17e220f92d357eb59dfedc5496272
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 66f36371cbb8ad8523aa1e1e3cd791cc692194c9
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell® Integrated Scripting Environment (ISE)
 I Windows PowerShell Integrated Scripting Environment (ISE) är en av två värdar för Windows PowerShell-motorn och språk. Med det som du kan skriva, köra och testa skript på sätt som inte är tillgängliga i Windows PowerShell-konsolen. I ISE lägger till syntax färgläggning, flikavslutande, IntelliSense, visual felsökning och sammanhangsberoende hjälp.
@@ -63,5 +63,5 @@ Observera att alla poster som är märkta ”Förhandsgranska” är förhandsve
 > Eftersom Windows PowerShell ISE kräver ett grafiskt användargränssnitt, kan du köra det på alternativet Server Core av Windows Server.
 
 ## <a name="see-also"></a>Se även
-- [Med hjälp av Windows PowerShell Integrated Scripting Environment](Using-the-Windows-PowerShell-ISE.md)
+- [Med hjälp av Windows PowerShell Integrated Scripting Environment](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 

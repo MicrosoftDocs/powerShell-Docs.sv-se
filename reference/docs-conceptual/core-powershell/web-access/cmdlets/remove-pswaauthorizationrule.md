@@ -1,22 +1,20 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell-cmdlet
 ms.date: 2016-12-12
 title: ta bort pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: a8304b68a446de0be98aa732304c71302fb8389e
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 4d039e7e00f87bc7aebb89217251edbbb5c3f5be
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="remove-pswaauthorizationrule"></a>Remove-PswaAuthorizationRule
 
-## <a name="synopsis"></a>SAMMANFATTNING
+## <a name="synopsis"></a>SYNOPSIS
 
 Tar bort en angiven auktoriseringsregel från Windows PowerShell® Web Access.
 
@@ -58,7 +56,7 @@ Anger identifierare (ID) av en eller flera regler för att ta bort.
 |||  
 |-|-|
 | Alias                              | inget                                 |
-| Obligatorisk?                            | SANT                                 |
+| Obligatorisk?                            | true                                 |
 | Placering?                            | 2                                    |
 | Standardvärde                        | inget                                 |
 | Acceptera pipelineindata?               | True (ByValue, ByPropertyName)       |
@@ -71,7 +69,7 @@ Anger regler för att ta bort.
 |||  
 |-|-|
 | Alias                              | inget                                 |
-| Obligatorisk?                            | SANT                                 |
+| Obligatorisk?                            | true                                 |
 | Placering?                            | 2                                    |
 | Standardvärde                        | inget                                 |
 | Acceptera pipelineindata?               | True (ByValue)                       |

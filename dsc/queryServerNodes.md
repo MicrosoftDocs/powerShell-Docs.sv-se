@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "DSC-funktionen att fråga efter nod information från hämtningsservern."
-ms.openlocfilehash: 307fd46f113797c75c6ad2211ec86af30104de36
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: f97e1d62873fb9e23147ff137468a767455cd82c
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-function-to-query-node-information-from-pull-server"></a>DSC-funktionen att fråga efter nod information från hämtningsservern.
 

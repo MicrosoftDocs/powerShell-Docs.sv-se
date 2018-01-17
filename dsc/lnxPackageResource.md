@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "DSC för Linux nxPackage resurs"
-ms.openlocfilehash: 11019b1cd12f23b0b498b7cb9a06e02c46c3c279
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 41c627ebb39dad535f7acc8fe34739355f7a81b5
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>DSC för Linux nxPackage resurs
 
@@ -38,7 +37,7 @@ nxPackage <string> #ResourceName
 | Namn| Namnet på paketet som du vill se till att ett visst tillstånd.| 
 | Se till att| Anger om du vill kontrollera att paketet finns. Ange egenskapen ”aktuella” för att säkerställa att paketet finns. Ange den till ”saknas” så paketet inte finns. Standardvärdet är ”saknas”.|  
 | PackageManager| Värden som stöds är ”yum”, ”lgh” och ”zypper”. Anger package manager att använda vid installation av paket. Om **FilePath** anges den angivna sökvägen används för att installera paketet. Annars används en Package Manager för att installera paketet från en förkonfigurerad databas. Om varken **PackageManager** eller **FilePath** tillhandahålls standard package manager för systemet används.| 
-| filePath| Sökvägen till filen där paketet finns| 
+| FilePath| Sökvägen till filen där paketet finns| 
 | PackageGroup| Om **$true**, **namn** förväntas vara namnet på en paketeringsgrupp för användning med en **PackageManager**. **PacakgeGroup** är inte giltig när de tillhandahåller en **FilePath**.| 
 | Argument| En sträng med argument som exakt så som kommer att skickas till paketet.| 
 | Returkod| Förväntade returkoden. Om den faktiska returkod matchar inte det förväntade värdet som anges här, konfigurationen returneras ett fel.| 

@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Resurs för DSC-WindowsFeature"
-ms.openlocfilehash: b4f50cb9ee172600b1811175e9cf67f6a7ed2d55
-ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
+ms.openlocfilehash: 3dd4a9c6f11b0c76054ca3e95796cab8e709a7c6
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-windowsfeature-resource"></a>Resurs för DSC-WindowsFeature
 

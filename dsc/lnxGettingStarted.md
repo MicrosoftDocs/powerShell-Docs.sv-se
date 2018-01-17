@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Kom igång med önskad (DSC tillstånd Configuration) för Linux"
-ms.openlocfilehash: fd4820d27de5958a325032ca3fc202a521c131b4
-ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
+ms.openlocfilehash: 4fd8460bc5d2564cab291904b60a1a0c26c3e5a7
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Kom igång med önskad (DSC tillstånd Configuration) för Linux
 
@@ -28,10 +27,10 @@ I följande tabell beskrivs paket som krävs beroenden för DSC för Linux.
 
 |  Nödvändigt paket |  Beskrivning |  Lägsta version | 
 |---|---|---|
-| Glibc| GNU Library| 2…4 – 31.30| 
-| Python| Python| 2.4 – 3.4| 
+| glibc| GNU Library| 2…4 – 31.30| 
+| python| Python| 2.4 – 3.4| 
 | omiserver| Open Management Infrastructure| 1.0.8.1| 
-| Openssl| OpenSSL-bibliotek| 0.9.8 eller 1.0| 
+| openssl| OpenSSL-bibliotek| 0.9.8 eller 1.0| 
 | ctypes| Python CTypes bibliotek| Måste matcha versionen av Python| 
 | libcurl| cURL http-klientbibliotek| 7.15.1| 
 
@@ -182,5 +181,5 @@ Följande loggfiler genereras för DSC för Linux-meddelanden.
 |Loggfil|Katalog|Beskrivning|
 |---|---|---|
 |omiserver.log|/var/OPT/omi/log|Meddelanden om driften av OMI CIM-servern.|
-|DSC.log|/var/OPT/omi/log|Meddelanden om åtgärden med de lokala Configuration Manager (MGM) och DSC resurs.|
+|dsc.log|/var/OPT/omi/log|Meddelanden om åtgärden med de lokala Configuration Manager (MGM) och DSC resurs.|
 

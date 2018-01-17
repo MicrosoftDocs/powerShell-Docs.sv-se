@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-10-13
-author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Desired State Configuration-översikt för beslutsfattare"
-ms.openlocfilehash: 66822d9a60f98aab3d4f27d14b27ebc6ec90b2c9
-ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
+ms.openlocfilehash: ae545ead0718def44d5a17708d254b872691e1d3
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="desired-state-configuration-overview-for-engineers"></a>Desired State Configuration-översikt för tekniker
 
@@ -99,15 +98,15 @@ Configuration Sample_Share
       # implement the logic of "how" to execute a task
       xSmbShare MySMBShare
       {
-          Ensure      = "Present" 
+          Ensure      = "Present"
           Name        = "MyShare"
-          Path        = "C:\Demo\Temp"  
+          Path        = "C:\Demo\Temp"
           ReadAccess  = "Alice"
           FullAccess  = "Bob"
           Description = "This is an updated description for this share"
       }
    }
-} 
+}
 #Run the function to compile the configuration
 Sample_Share
 #Pass the configuration to the nodes we defined and configure them

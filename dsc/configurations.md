@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-konfigurationer
-ms.openlocfilehash: 2c2f8183ef586ff9371e4af7ea83db3e04fa68a4
-ms.sourcegitcommit: 378c7ed4e8c8c1c5fe71417b9ba672a4c990630b
+ms.openlocfilehash: 3fd2846d0fbfb0ae9baa44cde66afe1f5be65cf7
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-configurations"></a>DSC-konfigurationer
 

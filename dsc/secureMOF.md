@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-10-31
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Skydda MOF-filen
-ms.openlocfilehash: ed9d259e2cd963560ad6f5b60702c54e2fa36900
-ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
+ms.openlocfilehash: fdb8fa17e9b5e92b56e0a62bf850529c241eee41
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="securing-the-mof-file"></a>Skydda MOF-filen
 
@@ -81,7 +80,7 @@ I följande exempel:
  3. importerar det offentliga nyckelcertifikatet till den **min** certifikatarkivet på den **redigering nod**.
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>På målnoden: skapa och exportera certifikatet
->Redigering nod: Windows Server 2016 och Windows 10
+>Målnoden: Windows Server 2016 och Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -91,7 +90,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 En gång exporterade den ```DscPublicKey.cer``` måste kopieras till den **redigering nod**.
 
->Redigering nod: Windows Server 2012 R2/Windows 8.1 och tidigare
+>Målnoden: Windows Server 2012 R2/Windows 8.1 och tidigare
 
 Eftersom cmdlet New-SelfSignedCertificate på Windows-operativsystem före Windows 10 och Windows Server 2016 inte stöder den **typen** parameter, en alternativ metod för att skapa det här certifikatet måste finnas på dessa operativsystem.
 I det här fallet kan du använda ```makecert.exe``` eller ```certutil.exe``` att skapa certifikatet.
@@ -109,7 +108,6 @@ New-SelfsignedCertificateEx `
     -FriendlyName 'DSC Credential Encryption certificate' `
     -Exportable `
     -StoreLocation 'LocalMachine' `
-    -StoreName 'My' `
     -KeyLength 2048 `
     -ProviderName 'Microsoft Enhanced Cryptographic Provider v1.0' `
     -AlgorithmName 'RSA' `

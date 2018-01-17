@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Alternativ för autentiseringsuppgifter i konfigurationsdata"
-ms.openlocfilehash: 94ff541fc517254ef2876c424307513eaf1d362a
-ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
+ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>Alternativ för autentiseringsuppgifter i konfigurationsdata
 >Gäller för: Windows PowerShell 5.0
@@ -21,7 +20,10 @@ Använd nyckelorden DSC-konfiguration data för att ignorera dessa fel och varni
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
->**Kommentarer:** <p>Lagra/överföring av okrypterade lösenord i klartext är inte säker. Du rekommenderas att säkra autentiseringsuppgifter genom att använda de tekniker som beskrivs senare i det här avsnittet.</p> <p>Tjänsten Azure Automation DSC kan du centralt hantera autentiseringsuppgifter som ska kompileras i konfigurationer och lagras på ett säkert sätt.  Mer information finns i: [kompilering av DSC-konfigurationer / Inloggningstillgångar](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets)</p>
+> [!NOTE]
+> Lagra/överföring av okrypterade lösenord i klartext är inte säker. Du rekommenderas att säkra autentiseringsuppgifter genom att använda de tekniker som beskrivs senare i det här avsnittet.
+> Tjänsten Azure Automation DSC kan du centralt hantera autentiseringsuppgifter som ska kompileras i konfigurationer och lagras på ett säkert sätt.
+> Mer information finns i: [kompilering av DSC-konfigurationer / Inloggningstillgångar](/azure/automation/automation-dsc-compile#credential-assets)
 
 Följande är ett exempel på att skicka autentiseringsuppgifter med oformaterad text:
 
@@ -133,7 +135,8 @@ WMF 5.0 lagt till en automatisk `PsDscRunAsCredential` egenskap för alla resurs
 Information om hur du använder `PsDscRunAsCredential`, se [kör DSC med autentiseringsuppgifterna för användaren](runAsUser.md).
 Nyare resurser och anpassade resurser kan använda automatiska egenskapen i stället för att skapa egna egenskapen för autentiseringsuppgifter.
 
->**Obs:** designen för vissa resurser som använder olika autentiseringsuppgifter för en specifik orsak och de har sina egna autentiseringsuppgifter egenskaper.
+> [!NOTE]
+> Designen för vissa resurser som använder olika autentiseringsuppgifter för en specifik orsak och de har sina egna autentiseringsuppgifter egenskaper.
 
 För att hitta tillgängliga autentiseringsuppgifter egenskaperna för en resurs använder antingen `Get-DscResource -Name ResourceName -Syntax` eller Intellisense i ISE (`CTRL+SPACE`).
 
@@ -222,8 +225,8 @@ for node 'localhost'.
 ```
 
 Det här exemplet har två problem:
-1.  Ett fel som förklarar att lösenord i klartext inte rekommenderas
-2.  En varning om att du inte använder en domän-autentiseringsuppgift
+1. Ett fel som förklarar att lösenord i klartext inte rekommenderas
+2. En varning om att du inte använder en domän-autentiseringsuppgift
 
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
@@ -266,12 +269,14 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
->**Obs:** `NodeName` får inte vara lika asterisk, en specifik nod-namn är obligatoriskt.
+> [!NOTE]
+> `NodeName`Det går inte att vara lika med asterisk, en specifik nod-namn är obligatoriskt.
 
 **Microsoft avråder för att undvika lösenord på grund av en stor säkerhetsrisk.**
+
 Ett undantag är när du använder tjänsten Azure Automation DSC, eftersom data lagras alltid krypterad (under överföring i vila i tjänsten och i vila på noden).
 
-## <a name="domain-credentials"></a>Autentiseringsuppgifter för domänen
+## <a name="domain-credentials"></a>Domain Credentials
 
 Kör exempel konfigurationsskript igen (med eller utan kryptering) fortfarande genererar den varning som använder en domän-konto för en autentiseringsuppgift inte rekommenderas.
 Med ett lokalt konto eliminerar eventuell exponering av autentiseringsuppgifter för domänen som kan användas på andra servrar.

@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Komma igång med PowerShell önskad Tillståndskonfiguration"
-ms.openlocfilehash: 403badd11749cfa5c6a5d07e1b537fa3a5f954da
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 856528f1e52eafa8b2c93b825a60376a0d64cab2
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="getting-started-with-powershell-desired-state-configuration"></a>Komma igång med PowerShell önskad Tillståndskonfiguration #
 

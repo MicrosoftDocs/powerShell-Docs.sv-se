@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Partiell PowerShell Desired State Configuration-konfigurationer
-ms.openlocfilehash: 2c5f29ee2940f4b7955219e97275ffa2695f9dee
-ms.sourcegitcommit: aa6890031dad3f2981b24c58893d134bdf4e8655
+ms.openlocfilehash: 66791bb7b14898d292b9da38dd27ba45b7c75d88
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Partiell PowerShell Desired State Configuration-konfigurationer
 

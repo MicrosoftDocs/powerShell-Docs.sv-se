@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Resursen DSC-skript
-ms.openlocfilehash: 3824cbf48d980069b923d91e1fa24739e5d4e617
-ms.sourcegitcommit: 378c7ed4e8c8c1c5fe71417b9ba672a4c990630b
+ms.openlocfilehash: 22213b74986b45b3a8205f1584b3b0d89a92f211
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-script-resource"></a>Resursen DSC-skript
 

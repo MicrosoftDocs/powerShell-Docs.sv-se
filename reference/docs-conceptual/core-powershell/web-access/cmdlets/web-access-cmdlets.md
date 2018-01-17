@@ -1,18 +1,16 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell-cmdlet
 ms.date: 2016-12-12
 title: "-cmdletar för Webbåtkomst"
 ms.technology: powershell
-ms.openlocfilehash: daebe2fe2cbccaf8d3f41d265d23dc45d3bb99b6
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 54821c318b165461ec613678a39c4e3b500dfd0e
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="windows-powershell-web-access-cmdlets"></a>Windows PowerShell-cmdletar för webbåtkomst
 
@@ -38,7 +36,7 @@ Tar bort en angiven auktoriseringsregel från Windows PowerShell Web Access.
 
 Testar auktoriseringsregler Kontrollera att en viss användare, dator, endpoint åtkomstbegäran auktoriseras.
 
-## <a name="uninstall-pswawebapplicationuninstall-pswawebapplicationmd"></a>[Avinstallera-PswaWebApplication](uninstall-pswawebapplication.md)
+## <a name="uninstall-pswawebapplicationuninstall-pswawebapplicationmd"></a>[Uninstall-PswaWebApplication](uninstall-pswawebapplication.md)
 
 Avinstallerar Windows PowerShell-webbprogrammet från IIS.
 

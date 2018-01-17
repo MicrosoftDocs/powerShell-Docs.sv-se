@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: DSC WaitForAll resurs
-ms.openlocfilehash: dcc23ad4e6905bc277ad39348350d5425fc90ad7
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 2054d2af7cd7dd839c62e77c1d4b6eee5cff34ab
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-waitforall-resource"></a>DSC WaitForAll resurs
 
@@ -38,7 +37,7 @@ WaitForAll [string] #ResourceName
 |  Egenskap  |  Beskrivning   | 
 |---|---| 
 | resourceName| Resursnamnet beroende.| 
-| Nodnamn| Målnoder av resursen ska beroende.| 
+| NodeName| Målnoder av resursen ska beroende.| 
 | RetryIntervalSec| Antalet sekunder innan du försöker igen. Minsta är 1.| 
 | retryCount| Maximalt antal nya försök.| 
 | ThrottleLimit| Antal datorer ansluta samtidigt. Standardvärdet är standard för nya cimsession.| 

@@ -1,22 +1,20 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell-cmdlet
 ms.date: 2016-12-12
 title: test-pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: 900547301c815ba6fe3a9507f975503fec864e4e
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: fb2937397616160c70b056e412e42fb8ff4c2f27
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="test-pswaauthorizationrule"></a>Test-PswaAuthorizationRule
 
-## <a name="synopsis"></a>SAMMANFATTNING
+## <a name="synopsis"></a>SYNOPSIS
 
 Kontrollerar om det finns en regel för en specifik användare, dator eller slutpunkt.
 
@@ -52,7 +50,7 @@ Anger namnet på datorn för att testa.
 |||  
 |-|-|
 | Alias                              | inget                                 |
-| Obligatorisk?                            | SANT                                 |
+| Obligatorisk?                            | true                                 |
 | Placering?                            | 2                                    |
 | Standardvärde                        | inget                                 |
 | Acceptera pipelineindata?               | falskt                                |
@@ -78,7 +76,7 @@ Anger URI för att testa anslutningen.
 |||  
 |-|-|
 | Alias                              | inget                                 |
-| Obligatorisk?                            | SANT                                 |
+| Obligatorisk?                            | true                                 |
 | Placering?                            | 2                                    |
 | Standardvärde                        | inget                                 |
 | Acceptera pipelineindata?               | falskt                                |
@@ -117,7 +115,7 @@ Anger namnet på användaren att testa.
 |||  
 |-|-|
 | Alias                              | inget                                 |
-| Obligatorisk?                            | SANT                                 |
+| Obligatorisk?                            | true                                 |
 | Placering?                            | 1                                    |
 | Standardvärde                        | inget                                 |
 | Acceptera pipelineindata?               | falskt                                |

@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Checklista för redigering av resursen"
-ms.openlocfilehash: 9e9855f4ad4ee6db4d9e3b90d3c9a03d81429805
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 8f6ea79ec4936b13f54d2b2a5c6974a180735344
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="resource-authoring-checklist"></a>Checklista för redigering av resursen
 Den här checklistan är en lista över rekommenderade metoder när du skapar en ny DSC-resurs.

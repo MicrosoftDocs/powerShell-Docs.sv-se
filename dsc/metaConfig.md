@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-10-11
-author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Konfigurera den lokala Configuration Manager
-ms.openlocfilehash: 6ca527aae263637bbca5a064e0d770fe9384d679
-ms.sourcegitcommit: ea01285a3aa7818d67d4761fbd8793b9b66bd5f7
+ms.openlocfilehash: 947bc17347204f6f15a24f83b449582afe65a4ee
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Konfigurera den lokala Configuration Manager
 
@@ -46,7 +45,7 @@ configuration LCMConfig
             RefreshMode = 'Push'
         }
     }
-} 
+}
 ```
 
 Processen för att tillämpa inställningar för MGM liknar tillämpa DSC-konfigurationen.
@@ -76,16 +75,16 @@ Följande egenskaper är tillgängliga i en **inställningar** block.
 | ActionAfterReboot| sträng| Anger vad som händer när en omstart vid tillämpningen av en konfiguration. Möjliga värden är __”ContinueConfiguration”__ och __”StopConfiguration”__. <ul><li> __ContinueConfiguration__: fortsätta använda den aktuella konfigurationen efter omstart av datorn. Detta är standardvärdet</li><li>__StopConfiguration__: stoppa den aktuella konfigurationen efter omstart av datorn.</li></ul>|
 | AllowModuleOverwrite| bool| __$TRUE__ om nya konfigurationer som hämtas från tjänsten pull tillåts att skriva över gamla på målnoden. Annars $FALSE.|
 | CertificateID| sträng| Tumavtryck för ett certifikat som används för att säkra autentiseringsuppgifter som angavs i en konfiguration. Mer information finns i [vill skydda autentiseringsuppgifter i Windows PowerShell Desired State Configuration](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?. <br> __Obs:__ detta hanteras automatiskt om med pull-tjänsten för Azure Automation DSC.|
-| ConfigurationDownloadManagers| CimInstance]| Föråldrad. Använd __ConfigurationRepositoryWeb__ och __ConfigurationRepositoryShare__ block definiera configuration pull-tjänstens slutpunkter.|
+| ConfigurationDownloadManagers| CimInstance[]| Föråldrad. Använd __ConfigurationRepositoryWeb__ och __ConfigurationRepositoryShare__ block definiera configuration pull-tjänstens slutpunkter.|
 | ConfigurationID| sträng| För bakåtkompatibilitet kompatibilitet med äldre pull service versioner. Ett GUID som identifierar konfigurationsfil för att hämta från en pull-tjänst. Noden hämtar konfigurationer på pull-tjänsten om namnet på konfigurationen MOF heter ConfigurationID.mof.<br> __Obs:__ om du anger egenskapen registreras noden med en pull-tjänsten med hjälp av __RegistrationKey__ fungerar inte. Mer information finns i [ställa in en pull-klient med konfigurationsnamn](pullClientConfigNames.md).|
 | ConfigurationMode| sträng | Anger hur MGM faktiskt gäller konfigurationen av att målnoder. Möjliga värden är __”ApplyOnly”__,__”ApplyandMonitior”__, och __”ApplyandAutoCorrect”__. <ul><li>__ApplyOnly__: DSC gäller konfigurationen av och inget ytterligare såvida inte en ny konfiguration flyttas till målnoden eller när en ny konfiguration hämtas från en tjänst. DSC kontrollerar inte om inte ett tidigare konfigurerade tillstånd efter första gången för en ny konfiguration. Observera att DSC ska försöka använda konfigurationen tills den lyckas innan __ApplyOnly__ träder i kraft. </li><li> __ApplyAndMonitor__: Detta är standardvärdet. MGM gäller alla nya konfigurationer. Efter första gången för en ny konfiguration om målnoden drifts från det önskade läget rapporterar DSC diskrepans i loggarna. Observera att DSC ska försöka använda konfigurationen tills den lyckas innan __ApplyAndMonitor__ träder i kraft.</li><li>__ApplyAndAutoCorrect__: DSC gäller alla nya konfigurationer. Efter första gången för en ny konfiguration om målnoden drifts från önskade tillstånd DSC rapporterar diskrepans i loggarna och tillämpar sedan den aktuella konfigurationen igen.</li></ul>|
 | ConfigurationModeFrequencyMins| UInt32| Hur ofta i minuter för den aktuella konfigurationen kontrolleras och tillämpas. Den här egenskapen ignoreras om egenskapen ConfigurationMode anges till ApplyOnly. Standardvärdet är 15.|
 | DebugMode| sträng| Möjliga värden är __ingen__, __ForceModuleImport__, och __alla__. <ul><li>Ange till __ingen__ att använda cachelagrade resurser. Detta är standardinställningen och ska användas i produktionen scenarier.</li><li>Ange till __ForceModuleImport__, gör MGM om du vill läsa in alla moduler som resursen DSC, även om de tidigare har lästs in och cachelagras. Detta påverkar prestanda för DSC-åtgärder som varje modul laddas på användning. Använder vanligtvis det här värdet när du felsöker en resurs</li><li>I den här versionen __alla__ är samma som __ForceModuleImport__</li></ul> |
 | RebootNodeIfNeeded| bool| Ställ in på __$true__ att automatiskt starta om noden efter en konfiguration som kräver omstart har tillämpats. I annat fall behöver du manuellt starta om noden för valfri konfiguration som kräver. Standardvärdet är __$false__. Om du vill använda den här inställningen när en omstart villkoret trätt i kraft av något annat än DSC (till exempel Windows Installer), kombinera den här inställningen med det [xPendingReboot](https://github.com/powershell/xpendingreboot) modul.|
 | RefreshMode| sträng| Anger hur MGM hämtar konfigurationer. Möjliga värden är __”inaktiverad”__, __”Push”__, och __”Pull”__. <ul><li>__Inaktiverad__: DSC-konfigurationer har inaktiverats för den här noden.</li><li> __Push-__: konfigurationer initieras genom att anropa den [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet. Konfigurationen tillämpas omedelbart på noden. Det här är standardkonfigurationen.</li><li>__Pull:__ noden är konfigurerad för att regelbundet kontrollera konfigurationer från en pull-tjänsten eller SMB-sökväg. Om den här egenskapen anges till __hämtar__, måste du ange en HTTP (service) eller SMB (resurs) sökväg i en __ConfigurationRepositoryWeb__ eller __ConfigurationRepositoryShare__ block.</li></ul>|
-| RefreshFrequencyMins| UInt32| Tidsintervall i minuter, som kontrollerar MGM en pull-tjänst för att få uppdaterade konfigurationer. Det här värdet ignoreras om MGM inte har konfigurerats på pull-läge. Standardvärdet är 30.|
-| ReportManagers| CimInstance]| Föråldrad. Använd __ReportServerWeb__ block att definiera en slutpunkt för att skicka rapportdata till en pull-tjänst.|
-| ResourceModuleManagers| CimInstance]| Föråldrad. Använd __ResourceRepositoryWeb__ och __ResourceRepositoryShare__ block definiera pull service HTTP-slutpunkter eller SMB-sökvägar respektive.|
+| RefreshFrequencyMins| Uint32| Tidsintervall i minuter, som kontrollerar MGM en pull-tjänst för att få uppdaterade konfigurationer. Det här värdet ignoreras om MGM inte har konfigurerats på pull-läge. Standardvärdet är 30.|
+| ReportManagers| CimInstance[]| Föråldrad. Använd __ReportServerWeb__ block att definiera en slutpunkt för att skicka rapportdata till en pull-tjänst.|
+| ResourceModuleManagers| CimInstance[]| Föråldrad. Använd __ResourceRepositoryWeb__ och __ResourceRepositoryShare__ block definiera pull service HTTP-slutpunkter eller SMB-sökvägar respektive.|
 | PartialConfigurations| CimInstance| Inte implementerat. Använd inte.|
 | StatusRetentionTimeInDays | UInt32| Antal dagar som MGM håller status för den aktuella konfigurationen.|
 
@@ -130,7 +129,7 @@ För att definiera en webbaserad konfigurationsservern, skapar du en **Configura
 En **ConfigurationRepositoryWeb** definierar följande egenskaper.
 
 |Egenskap|Typ|Beskrivning|
-|---|---|---| 
+|---|---|---|
 |AllowUnsecureConnection|bool|Ange till **$TRUE** att tillåta anslutningar från noden till servern utan autentisering. Ange till **$FALSE** kräver autentisering.|
 |CertificateID|sträng|Tumavtryck för ett certifikat som används för att autentisera till servern.|
 |ConfigurationNames|String]|En matris med namnen på de konfigurationer som ska hämtas av målnoden. De används endast om noden är registrerad med pull-tjänsten med hjälp av en **RegistrationKey**. Mer information finns i [ställa in en pull-klient med konfigurationsnamn](pullClientConfigNames.md).|
@@ -191,7 +190,7 @@ Mer information om konfigurationer som delvis finns [DSC partiell konfiguratione
 **PartialConfiguration** definierar följande egenskaper.
 
 |Egenskap|Typ|Beskrivning|
-|---|---|---| 
+|---|---|---|
 |ConfigurationSource|String]|En matris med namnet på konfiguration, som tidigare definierats i **ConfigurationRepositoryWeb** och **ConfigurationRepositoryShare** block, där den partiella konfigurationen hämtas från.|
 |dependsOn|strängen {}|En lista över namnen på andra konfigurationer som måste slutföras innan den här partiella konfigurationen tillämpas.|
 |Beskrivning|sträng|Text som används för att beskriva den partiella konfigurationen.|
@@ -201,15 +200,15 @@ Mer information om konfigurationer som delvis finns [DSC partiell konfiguratione
 
 __Obs:__ partiella konfigurationer stöds med Azure Automation DSC, men bara en konfiguration som kan hämtas från varje automation-konto per nod.
 
-## <a name="see-also"></a>Se även 
+## <a name="see-also"></a>Se även
 
 ### <a name="concepts"></a>Begrepp
 [Desired State Configuration-översikt](overview.md)
- 
+
 [Komma igång med Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)
 
 ### <a name="other-resources"></a>Andra resurser
 
-[Ange DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx)
+[Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx)
 
 [Installera en pull-klient med konfigurationsnamn](pullClientConfigNames.md)

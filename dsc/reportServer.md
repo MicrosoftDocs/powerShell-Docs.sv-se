@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Med hjälp av en DSC-rapportserver"
-ms.openlocfilehash: dd61d6ffff43ac2d1ec663b566e39dfc7d6c6565
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 31b0df7d9baf30d93154d6a28b21f32fc052bc06
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="using-a-dsc-report-server"></a>Med hjälp av en DSC-rapportserver
 
@@ -222,5 +221,5 @@ Observera att de här exemplen är avsedda att ge dig en uppfattning om vad du k
 ## <a name="see-also"></a>Se även
 - [Konfigurera den lokala Configuration Manager](metaConfig.md)
 - [Ställer in en pull webbserver DSC](pullServer.md)
-- [Ställa in en pull-klient som använder konfigurationsnamn](pullClientConfigNames.md)
+- [Konfigurera en pullklient med konfigurationsnamn](pullClientConfigNames.md)
 

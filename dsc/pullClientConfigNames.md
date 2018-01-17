@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Ställa in en pull-klient som använder konfigurationsnamn"
-ms.openlocfilehash: 9bfcac87300d30a59b66e60ed24add32e2420e21
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 11de53fc349ce0ebacf0d4855d82fa8a22d55c99
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-names"></a>Ställa in en pull-klient som använder konfigurationsnamn
 

@@ -1,16 +1,15 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: MSFT_DSCLocalConfigurationManager-klass
-ms.openlocfilehash: 35f732698fcc58f7bd43945edd10c143ffb79af9
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: MSFT_DSCLocalConfigurationManager class
+ms.openlocfilehash: b2d2ce000988f2c10ab04c4ba5a4650bd3c75ec7
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager-klass
+# <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager class
 
 Den lokala Configuration Manager (MGM) som styr tillstånd konfigurationsfiler och använder Configuration Agent för att tillämpa konfigurationerna.
 
@@ -51,7 +50,7 @@ Den **MSFT_DSCLocalConfigurationManager** klassen har dessa metoder.
 | [ResourceGet](msft-dsclocalconfigurationmanager-resourceget.md)| Direkt anropar den **hämta** metoden för en DSC-resurs.| 
 | [ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| Direkt anropar den **ange** metoden för en DSC-resurs.| 
 | [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| Direkt anropar den **Test** metoden för en DSC-resurs.| 
-| [Återställning](msft-dsclocalconfigurationmanager-rollback.md)| Samlar tillbaka till en tidigare konfiguration.| 
+| [RollBack](msft-dsclocalconfigurationmanager-rollback.md)| Samlar tillbaka till en tidigare konfiguration.| 
 | [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| Skickar konfiguration dokumentet till noden hanterade och sparar den som en väntande ändring.| 
 | [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| Skickar konfiguration dokumentet till noden hanterade används Configuration Agent för att tillämpa konfigurationen.| 
 | [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| Skicka konfiguration dokumentet till hanterade noder och börja använda Configuration Agent för att tillämpa konfigurationen. Använd GetConfigurationResultOutput för att hämta resultatet utdata.| 

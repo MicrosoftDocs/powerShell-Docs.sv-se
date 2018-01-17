@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Skriva en anpassad DSC-resurs med MOF
-ms.openlocfilehash: 58d6ba3995d3d6dea2787cfa347e0b1386bc40af
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c416fd7cac80d37f1ca1393fa644b4bc15743724
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Skriva en anpassad DSC-resurs med MOF
 
@@ -275,7 +274,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 }
 ```
 
-## <a name="supporting-psdscrunascredential"></a>Stöd för PsDscRunAsCredential
+## <a name="supporting-psdscrunascredential"></a>Supporting PsDscRunAsCredential
 
 >**Obs:** **PsDscRunAsCredential** stöds i PowerShell 5.0 och senare.
 

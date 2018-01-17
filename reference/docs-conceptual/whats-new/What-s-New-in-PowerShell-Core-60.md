@@ -13,7 +13,7 @@ Detta innebär att Windows PowerShell visar API-uppsättningen som erbjuds av .N
 
 API: er som delas mellan .NET Core och .NET Framework har definierats som en del av [.NET Standard][].
 
-Mer information om hur detta påverkar skriptet och module kompatibilitet mellan PowerShell Core- och Windows PowerShell finns i [Backwards kompatibilitet med Windows PowerShell] [#backwards-kompatibilitet-med-windows-powershell]
+Mer information om hur detta påverkar skriptet och module kompatibilitet mellan PowerShell Core- och Windows PowerShell finns [Backwards kompatibilitet med Windows PowerShell](#backwards-compatibility-with-windows-powershell).
 
 ## <a name="support-for-macos-and-linux"></a>Stöd för macOS- och Linux
 
@@ -28,7 +28,7 @@ PowerShell officiellt stöder nu macOS- och Linux, inklusive:
 - Red Hat Enterprise Linux 7
 - OpenSUSE 42.2
 - Fedora 25, 26
-- macOS 10.12 +
+- macOS 10.12+
 
 Gruppen har också bidragit paket för följande plattformar, men de officiellt stöds inte:
 
@@ -172,18 +172,18 @@ PowerShell Core ändras den standardkodning som överensstämmer med bredare eko
 Detta innebär att alla inbyggda cmdlet: ar som använder den `-Encoding` parametern används den `UTF8NoBOM` värde som standard.
 Följande cmdlets som påverkas av den här ändringen:
 
-- Lägg till innehåll
+- Add-Content
 - Export-Clixml
 - Export-Csv
 - Export-PSSession
-- Hexadecimalt format
-- Get-innehåll
+- Format-Hex
+- Get-Content
 - Import-Csv
 - Ny ModuleManifest
 - Out-File
 - Välj sträng
 - Skicka MailMessage
-- Set-innehåll
+- Set-Content
 
 Dessa cmdletar har också uppdaterats så att den `-Encoding` parametern accepterar universellt `System.Text.Encoding`.
 

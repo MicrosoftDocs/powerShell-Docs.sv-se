@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Resurs för DSC-registret"
-ms.openlocfilehash: 649cb60578c053c04a7fcc7446881fb76daee26a
-ms.sourcegitcommit: 79e8f03afb8d0b0bb0a167e56464929b27f51990
+ms.openlocfilehash: 1e73e4275c0d9db5d8fac7641514ea8190f719ca
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/26/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-registry-resource"></a>Resurs för DSC-registret
 
@@ -43,10 +42,10 @@ Registry [string] #ResourceName
 | dependsOn| Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis __ResourceName__ och dess typ är __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.| 
 | ValueData| Data för registervärdet.| 
 | Värdetyp| Anger vilken typ av värdet. Typerna som stöds är: 
-<ul><li>Sträng (REG_SZ)</li>
+<ul><li>String (REG_SZ)</li>
 
 
-<li>Binär (REG-BINARY)</li>
+<li>Binary (REG-BINARY)</li>
 
 
 <li>DWORD 32-bitars (REG_DWORD)</li>
@@ -55,7 +54,7 @@ Registry [string] #ResourceName
 <li>Qword 64-bitars (REG_QWORD)</li>
 
 
-<li>Multisträng (REG_MULTI_SZ)</li>
+<li>Multi-string (REG_MULTI_SZ)</li>
 
 
 <li>Utbyggbara sträng (REG_EXPAND_SZ)</li></ul>

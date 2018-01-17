@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Ange beroenden mellan noder
-ms.openlocfilehash: 885c130fb050629aac4c072e18a147d77b9deb8f
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: f4411161d819d96803f57600646409d5bfe827b9
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="specifying-cross-node-dependencies"></a>Ange beroenden mellan noder
 
