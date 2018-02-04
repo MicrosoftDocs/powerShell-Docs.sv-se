@@ -234,7 +234,7 @@ Mer information om PowerShell jobb finns [about_Jobs](https://msdn.microsoft.com
 - Lägga till tre nya automatiska variabler för att avgöra om PowerShell körs i en given OS: `$IsWindows`, `$IsMacOs`, och `$IsLinux`.
 - Lägg till `GitCommitId` för PowerShell Core.
   Nu slipper du kör `$PSVersionTable` när du startar PowerShell för att få version! (#3916) (Tack till @iSazonov!)
-- Lägg till en JSON-konfigurationsfil som kallas `PowerShellProperties.json` i `$PSHome` att lagra vissa inställningar som krävs innan starten (t.ex. `ExecutionPolicy`).
+- Lägg till en JSON-konfigurationsfil som kallas `powershell.config.json` i `$PSHome` att lagra vissa inställningar som krävs innan starten (t.ex. `ExecutionPolicy`).
 - Blockera inte pipeline när du kör Windows EXE
 - Aktiverade uppräkning av COM-samlingar. (#4553)
 

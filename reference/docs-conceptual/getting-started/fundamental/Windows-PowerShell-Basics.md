@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: Grunderna i Windows PowerShell
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-ms.openlocfilehash: 7b5cdfce876aa7d5559fe772379829011b275a02
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: bd17786d2d8690b89a2d107e0da98ee45f5b2ff7
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="windows-powershell-basics"></a>Grunderna i Windows PowerShell
 Grafiska användargränssnitt använda några grundläggande begrepp som är kända för de flesta användare. Användare är beroende av välbekanta av dessa gränssnitt för att utföra aktiviteter. Operativsystem ge användarna en grafisk representation av objekt som kan visas, vanligtvis med nedrullningsbara menyer för specifika funktioner och kontext menyer för att komma åt sammanhangsberoende funktioner.
@@ -18,13 +18,10 @@ De flesta CLIs har inte mönster som kan hjälpa användaren att lära dig grän
 
 Windows PowerShell har utformats för att dra nytta av en användares historiska kunskap om CLIs. I det här kapitlet kommer vi om vissa grundläggande verktyg och koncept som du kan använda för att snabbt lära sig Windows PowerShell. Dessa är:
 
-- Kommandot Get
+- Med hjälp av [Get-Command](/powershell/module/Microsoft.PowerShell.Core/get-command)
 
-- Kommandona Cmd.exe och UNIX
+- Med hjälp av [Cmd.exe](/windows-server/administration/windows-commands/cmd) och [UNIX-kommandon](/windows/wsl/reference)
 
-- Med hjälp av externa kommandon
+- [Med fliken slutförande](../../core-powershell/console/using-tab-expansion.md)
 
-- Med fliken slutförande
-
-- Med hjälp av Get-Help
-
+- [Med hjälp av Get-Help](./getting-detailed-help-information.md)
