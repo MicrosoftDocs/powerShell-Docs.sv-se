@@ -11,6 +11,7 @@
 ### [Skapa ett PowerShellGallery-konto](psgallery/psgallery_creating_an_account.md)
 ### [Skapa och publicera objekt](psgallery/Creating-and-Publishing-an-item.md)
 ### [Publicera riktlinjer och metodtips](psgallery/psgallery-PublishingGuidelines.md)
+### [Objektmanifest och galleriets gränssnitt](psgallery/psgallery_ItemManifestAffectingUI.md)
 ### [Avlista objekt](psgallery/psgallery_unlist_items.md)
 ### [Ta bort objekt](psgallery/Deleting-Items.md)
 ### [Hantera objektägare](psgallery/Managing-Item-Owners.md)
