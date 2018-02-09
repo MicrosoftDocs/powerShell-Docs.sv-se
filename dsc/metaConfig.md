@@ -3,11 +3,11 @@ ms.date: 2017-10-11
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Konfigurera den lokala Configuration Manager
-ms.openlocfilehash: 81434b57e453ba7b64cc32dffdf309da16ef8882
-ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
+ms.openlocfilehash: b8e0749cf2f67e395e9fd8eaf9cde33b97c0cb67
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Konfigurera den lokala Configuration Manager
 
@@ -25,8 +25,8 @@ Det är också ansvarig för ett antal andra aspekter av DSC, inklusive följand
 Du kan använda en särskild typ av konfiguration för att konfigurera MGM om du vill ange var och en av dessa beteenden.
 I följande avsnitt beskrivs hur du konfigurerar MGM.
 
-> **Obs**: det här avsnittet gäller MGM som introducerades i Windows PowerShell 5.0.
-Information om hur du konfigurerar MGM i Windows PowerShell 4.0 finns [Windows PowerShell 4.0 önskad tillstånd Configuration Local Configuration Manager](metaconfig4.md).
+Windows PowerShell 5.0 introduceras nya inställningar för att hantera lokala Configuration Manager.
+Information om hur du konfigurerar MGM i Windows PowerShell 4.0 finns [konfigurera den lokala Configuration Manager i tidigare versioner av Windows PowerShell](metaconfig4.md).
 
 ## <a name="writing-and-enacting-an-lcm-configuration"></a>Skriva och anta en MGM-konfiguration
 
@@ -90,38 +90,13 @@ Följande egenskaper är tillgängliga i en **inställningar** block.
 
 ## <a name="pull-service"></a>Pull-tjänsten
 
-DSC-inställningarna gör det möjligt för en nod som ska hanteras genom att dra konfigurationer och moduler och publicera reporting data till en fjärrplats.
-Aktuella alternativ för pull-tjänsten är:
-
-- Azure Automation önskade tillstånd konfigurationstjänsten
-- En instans för pull-tjänsten som körs på Windows Server
-- En SMB-resurs (inte stöder publicerar reporting data)
-
 MGM konfigurationen har stöd för definiera följande typer av slutpunkter för pull:
 
 - **Konfigurationsservern**: en lagringsplats för DSC-konfigurationer. Definiera configuration-servrar med hjälp av **ConfigurationRepositoryWeb** (för Webbaserad servrar) och **ConfigurationRepositoryShare** (för SMB-baserade servrar) block.
 - **Resursservern**: en lagringsplats för DSC-resurser, paketeras i PowerShell-moduler. Definiera resursservrar med **ResourceRepositoryWeb** (för Webbaserad servrar) och **ResourceRepositoryShare** (för SMB-baserade servrar) block.
 - **Rapportservern**: en tjänst som DSC skickar rapportdata till. Definiera rapportservrar med **ReportServerWeb** block. En rapportserver måste vara en webbtjänst.
 
-**Den rekommenderade lösningen**, och alternativet med de funktioner som är tillgängliga, är [Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started).
-
-Azure-tjänsten kan hantera noder lokalt i privat Datacenter eller i offentliga moln, till exempel Azure och AWS.
-Överväg att begränsa utgående trafik till endast publicerade Azure IP-adressintervall för privata miljöer där servrarna inte kan ansluta direkt till Internet, (se [IP-intervall för Azure-Datacenter](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
-
-Tjänsten online-funktioner som inte är tillgängliga i pull-tjänsten på Windows Server inkluderar:
-- Krypteras alla data under överföring och i vila
-- Klientcertifikat skapas och hanteras automatiskt
-- Hemligheter lagra för att centralt hantera [lösenord/autentiseringsuppgifterna](https://docs.microsoft.com/en-us/azure/automation/automation-credentials), eller [variabler](https://docs.microsoft.com/en-us/azure/automation/automation-variables) , till exempel servernamn eller anslutningssträngar
-- Centralt hantera nod [MGM konfiguration](metaConfig.md#basic-settings)
-- Tilldela centralt konfigurationer till klientnoder
-- Versionen konfiguration ändras till ”Kanarieöarna grupper” för att testa innan det nådde produktion
-- Grafisk rapportering
-  - Information om status på nivån för DSC-resurs i granularitet
-  - Detaljerade felmeddelanden från klientdatorer för felsökning
-- [Integrering med Azure logganalys](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-diagnostics) för aviseringar, automatiserade åtgärder Android/iOS-app för rapportering och aviseringar
-
-För information om hur du konfigurerar och använder HTTP pull-tjänsten på Windows Server, se [ställer in en DSC pull server](pullServer.md).
-Du vara medveten om att det är en begränsad implementering med bara grundläggande funktioner för att lagra konfigurationer och moduler och avbildar rapportdata i till en lokal databas.
+Mer information om pull-tjänsten finns [Desired State Configuration Pull Service](pullServer.md).
 
 ## <a name="configuration-server-blocks"></a>Configuration server-block
 

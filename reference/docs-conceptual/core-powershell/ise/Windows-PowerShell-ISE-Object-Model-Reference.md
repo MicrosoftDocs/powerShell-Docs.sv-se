@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
-title: Windows PowerShell ISE objektreferens modellen
+title: Windows PowerShell ISE-objektmodellreferens
 ms.assetid: e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
 ms.openlocfilehash: 624ddca3895ba3e24bf52a27babdb07e8714baae
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/08/2018
 ---
-# <a name="windows-powershell-ise-object-model-reference"></a>Windows PowerShell ISE objektreferens modellen
+# <a name="windows-powershell-ise-object-model-reference"></a>Windows PowerShell ISE-objektmodellreferens
   
 ## <a name="object-model-reference"></a>Objektreferens för modellen
  Det här avsnittet innehåller en referens om de underliggande klasser som definierar de olika objekt inWindows PowerShell® Integrated Scripting Environment (ISE). Objekten ordnade i deras hierarki finns [i ISE modellen objekthierarkin](The-ISE-Object-Model-Hierarchy.md).

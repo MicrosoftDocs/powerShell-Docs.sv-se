@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
-title: "Med hjälp av Windows PowerShell ISE"
+title: "Använd Windows PowerShell ISE"
 ms.assetid: 64fb5f37-90a8-4b89-9fc8-c6b8fcc0c7d0
 ms.openlocfilehash: 5da609363dc0498a5a62157b49cf3de5683a8510
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 02/08/2018
 ---
-# <a name="using-the-windows-powershell-ise"></a>Med hjälp av Windows PowerShell ISE
+# <a name="using-the-windows-powershell-ise"></a>Använd Windows PowerShell ISE
 Den här i det här dokumentet beskrivs hur du kan använda funktionerna för de Windows PowerShell® Integrated Scripting Environment (ISE) för att bli mer produktiva.
 
 [Så här används Flikavslutande i fönstret skript och konsolfönstret](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) innehåller instruktioner för att utföra flikavslutande i både skriptfönstret och konsolfönstret.

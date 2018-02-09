@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
-title: Med Windows PowerShell
+title: "Använda Windows PowerShell"
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
 ms.openlocfilehash: 874c6fc6f0b09b0f586725ed7df7bc68c31e1733
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 02/08/2018
 ---
-# <a name="using-windows-powershell"></a>Med Windows PowerShell
+# <a name="using-windows-powershell"></a>Använda Windows PowerShell
 Windows PowerShell® är ett aktivitetsbaserat kommandoradsskal och skriptspråk som är särskilt utformat för systemadministration. Bygger på .NET Framework och Windows PowerShell hjälper IT-experter och Privilegierade användare att styra och automatisera administrationen av Windows-operativsystem och program som körs på Windows.
 
 Resurser i det här avsnittet hjälpa dig att lära dig om Windows PowerShell, funktioner som ingår i Windows PowerShell, och den grafiska redigeraren i Windows PowerShell, Windows PowerShell Integrated Scripting Environment.

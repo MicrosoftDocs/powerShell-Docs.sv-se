@@ -4,10 +4,10 @@ keywords: PowerShell-cmdlet
 title: ISE-modul
 ms.assetid: fd03c995-4cdb-4d14-a315-9cfbd1e81b10
 ms.openlocfilehash: 846d1c858f6d72009985221267e664f3f40395ac
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/08/2018
 ---
 # <a name="ise-module"></a>ISE-modul
 Det här avsnittet innehåller hjälpämnen för den **ISE** modulen som innehåller kommandon som du kan använda i Windows PowerShell Integrated Scripting Environment (ISE). Den **ISE** modulen är installerad med Windows PowerShell.
@@ -21,5 +21,5 @@ Det här avsnittet innehåller hjälpämnen för den **ISE** modulen som innehå
 - [Windows PowerShell 2.0 Integrated Scripting Environment](http://go.microsoft.com/fwlink/?LinkID=238569)
 - [Windows PowerShell 5.0](../../whats-new/What-s-New-in-Windows-PowerShell-50.md)
 - [Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-- [Med Windows PowerShell-skript](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+- [Skriptning med Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 

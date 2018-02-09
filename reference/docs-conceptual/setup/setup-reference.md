@@ -3,10 +3,10 @@ ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: "Referens för installation"
 ms.openlocfilehash: 39da5f2b524d908270066926ff2cdc56a665fe35
-ms.sourcegitcommit: 6aed37d7f0c9652ae09bb8c11928da7e4783ed7f
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/08/2018
 ---
 # <a name="setup-guide"></a>Guiden
 
