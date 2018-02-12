@@ -108,7 +108,7 @@
 
 # DSC-pullmodellen
 
-## [Konfigurera en webbpullserver](pullServer.md)
+## [DSC-pulltjänsten](pullServer.md)
 
 ## [Konfigurera en DSC SMB-pullserver](pullServerSMB.md)
 
