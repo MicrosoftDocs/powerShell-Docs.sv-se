@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: "Ordlista för Windows PowerShell"
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 48e5d832ead720c8bc7753c94f757ddb21846fc9
-ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
+ms.openlocfilehash: 872ceb342cc72477c5142ce28a9b3b66e32bb84f
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="windows-powershell-glossary"></a>Ordlista för Windows PowerShell
 
@@ -24,16 +24,16 @@ ms.lasthandoff: 08/08/2017
 |värden|Gränssnittet i Windows PowerShell-motorn använder för att kommunicera med användaren. Till exempel anger värden hur frågor hanteras mellan Windows PowerShell och användaren.|
 |värdprogrammet|Ett program som läser in Windows PowerShell-motorn i dess process och används för att utföra åtgärder.|
 |indata som bearbetar metod|En metod som en cmdlet kan använda för att bearbeta de poster som tas emot som indata. Behandling av inkommande sätt är metoden BeginProcessing, metoden ProcessRecord, metoden EndProcessing och StopProcessing-metoden.|
-|manifestmodulen|En Windows PowerShell-modul som har ett manifest och vars ModulesToProcess nyckel är tom.|
+|manifestmodulen|En Windows PowerShell-modul som har ett manifest och vars RootModule nyckel är tom.|
 |modulmanifestet|Windows PowerShell datafil (.psd1) som beskriver innehållet i en modul och som styr hur en modul har bearbetats.|
 |modulen sessionstillstånd|Sessionstillståndet som innehåller de offentliga och privata data i en Windows PowerShell-modul. Privata data i den här sessionens tillstånd är inte tillgängliga för användare av Windows PowerShell-sessionen.|
 |ej avslutande fel|Ett fel som inte att stoppa Windows PowerShell inte kan fortsätta att bearbeta kommandot.|
 |substantiv|Det ord som följer bindestreck i ett Windows PowerShell-cmdlet-namn. Substantivet beskriver de resurser som cmdlet fungerar.|
 |Parameteruppsättningen|En grupp av parametrar som kan användas i samma kommando för att utföra en specifik åtgärd.|
 |pipe|I Windows PowerShell att skicka resultatet av föregående kommando som indata till nästa kommando i pipelinen.|
-|Pipeline|En serie kommandon som är anslutna med pipelineoperatorer (&#124;) (ASCII 124). Varje pipelineoperator skickar resultaten från föregående kommando som indata till nästa kommando.|
+|pipeline|En serie kommandon som är anslutna med pipelineoperatorer (&#124;) (ASCII 124). Varje pipelineoperator skickar resultaten från föregående kommando som indata till nästa kommando.|
 |PSSession|En typ av Windows PowerShell-session som har skapats, hanteras och stängas av användaren.|
-|rotmodul|Modulen som angetts i nyckeln ModuleToProcess i ett modulmanifest.|
+|rotmodul|Modulen som angetts i nyckeln RootModule i ett modulmanifest.|
 |Runspace|I Windows PowerShell, den driftsmiljö som varje kommando i en pipeline körs.|
 |skriptblock|Programmera språk, en samling med-uttryck eller uttryck som kan användas som en enhet i Windows PowerShell. Ett skriptblock kan ta emot argument och returvärden.|
 |skriptmodul|Windows PowerShell-modulen vars rotmodul är en modul-skriptfil (.psm1). En skriptmodul kan eller kan inte innehålla ett modulmanifest.|
@@ -43,7 +43,7 @@ ms.lasthandoff: 08/08/2017
 |avslutande felet|Ett fel som förhindrar att Windows PowerShell kommandot bearbetades.|
 |Transaktionen|En atomisk arbetsenheten. Resurser i en transaktion måste slutföras som helhet. Om någon del av transaktionen misslyckas, misslyckas hela transaktionen.|
 |typer fil|En Windows PowerShell-XML-fil som har filnamnstillägget .ps1xml och som utökar egenskaper för Microsoft .NET Framework-typer i Windows PowerShell.|
-|Verb|Det ord som föregår bindestreck i ett Windows PowerShell-cmdlet-namn. Verbet som beskriver den åtgärd som utförs av cmdleten.|
+|verb|Det ord som föregår bindestreck i ett Windows PowerShell-cmdlet-namn. Verbet som beskriver den åtgärd som utförs av cmdleten.|
 |Windows PowerShell|Ett kommandoradsgränssnitt och uppgiftsbaserad skriptteknik som ger omfattande kontroll för IT-administratörer och automatisering av administrationsuppgifter.|
 |Windows PowerShell-kommando|Elementen i en pipeline som orsakar en åtgärd som ska utföras. Windows PowerShell-kommandon är angett på tangentbordet eller anropas via programmering.|
 |Datafil för Windows PowerShell|En textfil som har filnamnstillägget .psd1. Windows PowerShell använder datafiler för olika ändamål, till exempel modulen manifestet data lagras och lagra översatta strängar för skript internationella.|

@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: Windows PowerShell Integrated Scripting Environment ISE
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 6a2d2bada2d8d6a1d5bedffc7b1b28fe9472544a
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+ms.openlocfilehash: 413fc375ad4617bfae59d6a1217cf9f91c2cf090
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell® Integrated Scripting Environment (ISE)
 
@@ -25,7 +25,7 @@ Här följer några av de funktioner som har lagts till i de senaste versionerna
 
 **Kodavsnitt** är korta kodavsnitt som du enkelt infogar i skripten din skrivåtgärder. En samling användbar kodavsnitt ingår i rutan och mer kan du med hjälp av den **ny fragment** cmdlet.
 
-**Tilläggsverktyg** som lägger till funktioner till ISE kan skapas genom att skriva kod som interagerar med det [i Windows PowerShell ISE Scripting Object Model](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
+**Tilläggsverktyg** som lägger till funktioner till ISE kan skapas genom att skriva kod som interagerar med [i Windows PowerShell ISE Scripting Object Model](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
 
 Dessa verktyg kan visa kontroller i en streckad fönstret eller loggas i bakgrunden. Den **kommandon** tillägget är ett bra exempel och ingår i version 3.0 och senare som visar en lista över tillgängliga kommandon och deras hjälp.
 
