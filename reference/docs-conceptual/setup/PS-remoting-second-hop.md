@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: "Att göra ett andra hopp i PowerShell-fjärrkommunikation"
-ms.openlocfilehash: 2518409369a75a49b975b9b944320c1878819421
-ms.sourcegitcommit: 1a0a0928c1e3cae4e8df8d79b0737bd7ed6b4e47
+ms.openlocfilehash: 726b4d1b7a41e9e344347543ecde26da6547bcf3
+ms.sourcegitcommit: fff6c0522508eeb408cb055ba4c9337a2759b392
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Att göra ett andra hopp i PowerShell-fjärrkommunikation
 
@@ -101,7 +101,7 @@ Innan du kan konfigurera begränsad delegering måste du lägga till den `RSAT-A
 ```powershell
 PS C:\> Add-WindowsFeature RSAT-AD-PowerShell
 
-PS C:\> Import-Module ActiveDirector
+PS C:\> Import-Module ActiveDirectory
 ```
 Nu har flera tillgängliga cmdlet: en **PrincipalsAllowedToDelegateToAccount** parameter:
 
