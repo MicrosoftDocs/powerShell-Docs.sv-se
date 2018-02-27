@@ -52,7 +52,7 @@ Andra är bara finns eller så är tillämpligt i icke-Windows-installationer av
 - Ignorera den `-ExecutionPolicy` växeln när du kör PowerShell på Windows-plattformar eftersom skriptet signering inte stöds för närvarande. (#3481)
 - Fast ConsoleHost ta hänsyn till `NoEcho` på Unix-plattformar. (#3801)
 - Fast `Get-Help` att stödja skiftlägesokänslig matchning på Unix-plattformar. (#3852)
-- `powershell`man-sidan som lagts till i paketet
+- `powershell` man-sidan som lagts till i paketet
 
 ### <a name="logging"></a>Loggning
 
@@ -65,14 +65,14 @@ Flera ändringar har gjorts i macOS och Linux att stödja filnamnstecken traditi
 
 - Sökvägar till cmdlets är nu snedstreck-oberoende (både / och \ fungerar som katalogavgränsare)
 - XDG Base Directory specifikation är nu respekteras och används som standard:
-  - Linux/macOS profilsökvägen finns i`~/.config/powershell/profile.ps1`
-  - Historik spara sökvägen finns i`~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
-  - Modul-sökväg användare finns i`~/.local/share/powershell/Modules`
+  - Linux/macOS profilsökvägen finns i `~/.config/powershell/profile.ps1`
+  - Historik spara sökvägen finns i `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
+  - Modul-sökväg användare finns i `~/.local/share/powershell/Modules`
 - Stöd för fil- och namn som innehåller kolon på Unix. (#4959)
 - Stöd för Skriptnamn eller fullständiga sökvägar med kommatecken. (#4136) (Tack till @TimCurwick!)
 - Identifiera när `-LiteralPath` används för att undertrycka jokertecken expansion för navigering-cmdlets. (#5038)
 - Uppdatera `Get-ChildItem` ska fungera flera liknande det * nix `ls -R` och Windows `DIR /S` inbyggda kommandon.
-  `Get-ChildItem`Returnerar nu symboliska länkar påträffades under en rekursiv sökning och inte i katalogerna som mål för dessa länkar. (#3780)
+  `Get-ChildItem` Returnerar nu symboliska länkar påträffades under en rekursiv sökning och inte i katalogerna som mål för dessa länkar. (#3780)
 
 ### <a name="case-sensitivity"></a>Skiftlägeskänslighet
 
@@ -93,11 +93,11 @@ Sida-vid-sida kan också bakåtkompatibilitet kompatibilitet som kan vara Fäst 
 > Som standard har MSI-baserade installationsprogrammet för Windows installera en uppdatering på plats.
 >
 
-## <a name="renamed-powershellexe-to-pwshexe"></a>Byta namn på `powershell(.exe)` till`pwsh(.exe)`
+## <a name="renamed-powershellexe-to-pwshexe"></a>Byta namn på `powershell(.exe)` till `pwsh(.exe)`
 
 Det binära namnet för PowerShell Core har ändrats från `powershell(.exe)` till `pwsh(.exe)`.
 Den här ändringen kan deterministiska för användare att köra PowerShell Core på datorer som stöder sida-vid-sida Windows PowerShell och PowerShell Core-installationer.
-`pwsh`är också mycket kortare och enklare att skriva.
+`pwsh` är också mycket kortare och enklare att skriva.
 
 Ytterligare ändringar `pwsh(.exe)` från `powershell.exe`:
 
@@ -210,7 +210,7 @@ Mer information om PowerShell jobb finns [about_Jobs](https://msdn.microsoft.com
 ## <a name="language-updates"></a>Språkuppdateringar
 
 - Implementera Unicode-escape-parsning så att användarna kan använda Unicode-tecken som argument, strängar eller variabelnamn. (#3958) (Tack till @rkeithhill!)
-- Tillagda nya escape-tecknet för ESC:`` `e``
+- Tillagda nya escape-tecknet för ESC: `` `e``
 - Tillagt stöd för konvertering av uppräkningar att sträng (#4318) (tack @KirkMunro)
 - Fast omvandling enstaka element matris till en allmän samling. (#3170)
 - Tillagda tecknet område överlagring för den `..` operator, så `'a'..'z'` returnerar tecken från ”a” till ”z”. (#5026) (Tack @IISResetMe!)
@@ -220,11 +220,11 @@ Mer information om PowerShell jobb finns [about_Jobs](https://msdn.microsoft.com
 
 ## <a name="engine-updates"></a>Uppdateringar
 
-- `$PSVersionTable`har fyra nya egenskaper:
+- `$PSVersionTable` har fyra nya egenskaper:
   - `PSEdition`: Det här värdet `Core` på PowerShell Core och `Desktop` på Windows PowerShell
   - `GitCommitId`: Det är Git commit-ID på Git branch eller taggen där PowerShell har skapats.
     På utgivna versioner, sannolikt blir samma som `PSVersion`.
-  - `OS`: Det är en sträng för OS-version som returneras av`[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
+  - `OS`: Det är en sträng för OS-version som returneras av `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
   - `Platform`: Det har returnerats av `[System.Environment]::OSVersion.Platform` anges till `Win32NT` i Windows, `MacOSX` på macOS, och `Unix` på Linux.
 - Ta bort den `BuildVersion` egenskap från `$PSVersionTable`.
   Den här egenskapen har starkt knutna till Windows-versionen.
@@ -302,18 +302,18 @@ Mer information om PowerShell jobb finns [about_Jobs](https://msdn.microsoft.com
 - Lägg till `-Extension` och `-LeafBase` växlar till `Split-Path` så att du kan dela sökvägar mellan filnamnstillägget och resten av filnamnet. (#2721) (Tack till @powercode!)
 - Lägg till parametrar `-Top` och `-Bottom` till `Sort-Object` för översta/nedersta N sortera
 - Exponera en process överordnade processen genom att lägga till den `CodeProperty "Parent"` till `System.Diagnostics.Process`. (#2850) (Tack till @powercode!)
-- Använda MB i stället KB för minne kolumner i`Get-Process`
+- Använda MB i stället KB för minne kolumner i `Get-Process`
 - Lägg till `-NoNewLine` växla för `Out-String`. (#5056) (Tack @raghav710)
-- `Move-Item`cmdlet godkänner `-Include`, `-Exclude`, och `-Filter` parametrar. (#3878)
+- `Move-Item` cmdlet godkänner `-Include`, `-Exclude`, och `-Filter` parametrar. (#3878)
 - Tillåt `*` som ska användas i registersökvägen för `Remove-Item`. (#4866)
 - Lägg till `-Title` till `Get-Credential` och enhetlig fråga upplevelsen olika plattformar.
 - Lägg till den `-TimeOut` parameter till `Test-Connection`. (#2492)
-- `Get-AuthenticodeSignature`cmdlets kan nu hämta signatur-filtidsstämpel. (#4061)
+- `Get-AuthenticodeSignature` cmdlets kan nu hämta signatur-filtidsstämpel. (#4061)
 - Ta bort stöds inte `-ShowWindow` växla från `Get-Help`. (#4903)
 - Åtgärda `Get-Content -Delimiter` att inte inkludera avgränsaren i matriselementen returnerade (#3706) (tack @mklement0)
 - Lägg till `Meta`, `Charset`, och `Transitional` parametrar för att `ConvertTo-HTML` (#4184) (tack @ergo3114)
 - Lägg till `WindowsUBR` och `WindowsVersion` egenskaper till `Get-ComputerInfo` resultat
-- Lägg till `-Group` parameter till`Get-Verb`
+- Lägg till `-Group` parameter till `Get-Verb`
 - Lägg till `ShouldProcess` stöd till `New-FileCatalog` och `Test-FileCatalog` (åtgärdas `-WhatIf` och `-Confirm`). (#3074) (Tack till @iSazonov!)
 - Lägg till `-WhatIf` växla till `Start-Process` cmdlet (#4735) (tack @sarithsutha)
 - Lägg till `ValidateNotNullOrEmpty` för många befintliga parametrar.
@@ -344,8 +344,8 @@ Du kan läsa mer om dem i detalj, se [gör ändringar i PowerShell Core 6.0][bre
 ## <a name="filesystem-updates"></a>Filsystem-uppdateringar
 
 - Aktivera användning av filsystem-provider från en UNC-sökväg. ($4998)
-- `Split-Path`nu fungerar med UNC-rötter
-- `cd`utan argument nu fungerar som`cd ~`
+- `Split-Path` nu fungerar med UNC-rötter
+- `cd` utan argument nu fungerar som `cd ~`
 - Fast PowerShell Core som tillåter användning av sökvägar som är mer än 260 tecken långt. (#3960)
 
 ## <a name="bug-fixes-and-performance-improvements"></a>Felkorrigeringar och kapacitetsförbättringar
@@ -361,8 +361,8 @@ En fullständig lista över korrigeringar och ändringar kolla vår [changelog][
   - OS-plattform (`$PSVersionTable.OSDescription`)
   - exakt vilken version av PowerShell (`$PSVersionTable.GitCommitId`)
 
-Om du vill välja bort den här telemetri bara ta bort `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY`.
-Ta bort filen kringgår all telemetri även före första gången du kör PowerShell.
+Om du vill välja bort den här telemetri bara ta bort `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` eller skapa `POWERSHELL_TELEMETRY_OPTOUT` miljövariabel med något av följande värden: `true`, `1` eller `yes`.
+Ta bort den här filen eller variabeln kringgår all telemetri även före första gången du kör PowerShell.
 Vi planerar också på att exponera informationen telemetri och insikter som vi glean från telemetri i den [community instrumentpanelen][community-dashboard].
 Du hittar mer information om hur vi kan använda informationen i det här [blogginlägget][telemetry-blog].
 

@@ -2,25 +2,16 @@
 ms.date: 2017-08-09
 keywords: "PowerShell cmdlet, hämta, installera, installationsprogrammet, windows 10, windows 8.1, windows 8.0, windows 7"
 title: Installera Windows PowerShell
-ms.openlocfilehash: ec8f09087a5c5f2e7ea6237faa01ea3f447ad1f3
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+ms.openlocfilehash: dffb6ec11ce265ebc4e6bc91f631650e1af5868d
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="installing-windows-powershell"></a>Installera Windows PowerShell
+Windows PowerShell är installerat som standard i alla Windows som börjar med Windows 7 SP1 och Windows Server 2008 R2 SP1.
 
-PowerShell är installerat som standard i alla Windows som börjar med Windows 7 SP1 och Windows Server 2008 R2 SP1.
-
-Linux-, macOS- och Windows-användare som vill installera **PowerShell 6** (beta) i sina datorer, måste du:
-
-1. Hämta PowerShell för specifika operativsystem och version, från [GitHub](https://github.com/powershell/powershell#get-powershell)
-1. Följ installationsanvisningarna
-  - [Linux](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md)
-  - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md)
-  - [Windows](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi)
-
-PowerShell 6 är också tillgängligt för Docker; Se [Docker installation](https://github.com/PowerShell/PowerShell/tree/master/docker) instruktioner.
+Om du är intresserad av i PowerShell 6 och senare, måste du installera PowerShell Core i stället för Windows PowerShell. För att se [installera PowerShell Core på Windows](Installing-PowerShell-Core-on-Windows.md).
 
 ## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>Hitta PowerShell i Windows 10, 8.1, 8.0 och 7
 
@@ -65,7 +56,7 @@ Det enda undantaget till ovanstående regel är ISE i Windows Server 2008 R2 SP1
 
 ## <a name="how-to-check-the-version-of-powershell"></a>Så här kontrollerar du vilken version av PowerShell
 
-Starta en PowerShell-konsol (eller ISE) för att söka efter vilken version av PowerShell som du har installerat, och skriv `$PSVersionTable` och tryck på **RETUR**.
+Starta en PowerShell-konsol (eller ISE) för att söka efter vilken version av PowerShell som du har installerat, och skriv `$PSVersionTable` och tryck på **RETUR**. Leta efter den `PSVersion` värde.
 
 ## <a name="upgrading-existing-windows-powershell"></a>Uppgradera befintliga Windows PowerShell
 
