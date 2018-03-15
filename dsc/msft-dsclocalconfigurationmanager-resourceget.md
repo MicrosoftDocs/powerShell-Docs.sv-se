@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: ResourceGet-metoden i klassen MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: df90cb6859413c94be992c8cbc30171e9bd3d6de
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 2c055b3fab468f85c9e2f91cf1eaf1a4353b4660
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a>ResourceGet-metoden i klassen MSFT_DSCLocalConfigurationManager
 
@@ -35,7 +35,7 @@ Namnet på resursen ska anropa.
 Namnet på den modul som innehåller resursen ska anropa.
 
 *resourceProperty* \[i\]  
-Anger egenskapen resursnamnet och dess värde i en hash-tabell som nyckel och värde, respektive. Använd den [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) för att identifiera egenskaper för resursen och deras typer.
+Anger egenskapen resursnamnet och dess värde i en hash-tabell som nyckel och värde, respektive. Använd den [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) för att identifiera egenskaper för resursen och deras typer.
 
 *konfigurationer* \[ut\]  
 Innehåller en inbäddad instans av konfigurationerna på return.

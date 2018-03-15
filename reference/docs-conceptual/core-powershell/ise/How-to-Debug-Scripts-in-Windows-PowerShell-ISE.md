@@ -1,14 +1,14 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
-title: "Felsöka skript i Windows PowerShell ISE"
-ms.openlocfilehash: 0ec520dfcba5e4562258256570f140e618e77cdb
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: "Felsök skript i Windows PowerShell ISE"
+ms.openlocfilehash: d37fb6cdcd5782cf8eff89c2b124b7c81fdaca71
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Felsöka skript i Windows PowerShell ISE
+# <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Felsök skript i Windows PowerShell ISE
 
 Det här avsnittet beskriver hur du felsöker skript på en lokal dator med hjälp av Windows PowerShell Integrated Scripting Environment (ISE) visual felsökning funktioner.
 
@@ -42,7 +42,7 @@ Visar alla brytpunkter i den aktuella Windows PowerShell-sessionen.
 På den **felsöka** -menyn klickar du på **lista brytpunkter**. Följande skript är ett exempel på hur du kan visa en lista med alla brytpunkter från konsolfönstret med hjälp av den [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) cmdlet.
 
 ``` PowerShell
-# This command lists all breakpoints in the current session. 
+# This command lists all breakpoints in the current session.
 Get-PSBreakpoint
 ```
 
@@ -82,7 +82,7 @@ Disable-PSBreakpoint -Id 0
 Om du inaktiverar en brytpunkt tas inte bort. Det inaktiverar den förrän den har aktiverats.  För att inaktivera alla brytpunkter i den aktuella sessionen på den **felsöka** -menyn klickar du på **inaktivera alla brytpunkter**. Följande skript är ett exempel på hur du kan inaktivera alla brytpunkter från konsolfönstret med hjälp av den [inaktivera PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet.
 
 ``` PowerShell
-# This command disables all breakpoints in the current session. 
+# This command disables all breakpoints in the current session.
 # You can abbreviate this command as: "gbp | dbp".
 Get-PSBreakpoint | Disable-PSBreakpoint
 ```
@@ -99,13 +99,13 @@ Enable-PSBreakpoint -Id 0, 1, 5
 Aktivera alla brytpunkter som definierats i den aktuella sessionen på den **felsöka** -menyn klickar du på **aktivera alla brytpunkter**. Följande skript är ett exempel på hur du kan aktivera alla brytpunkter från konsolfönstret med hjälp av den [aktivera PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) cmdlet.
 
 ``` PowerShell
-# This command enables all breakpoints in the current session. 
+# This command enables all breakpoints in the current session.
 # You can abbreviate the command by using their aliases: "gbp | ebp".
 Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
 ## <a name="how-to-manage-a-debugging-session"></a>Så här hanterar du en felsökning
-Innan du startar felsökning, måste du ange en eller flera brytpunkter. Du kan inte ange en brytpunkt såvida inte det skript som du vill felsöka sparas. Mer information om hur du ställer in en brytpunkt finns [hantera brytpunkter](#how-to-manage-breakpoints) eller [Set PSBreakpoint](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-psbreakpoint). När du startar felsökning kan du inte redigera ett skript tills du avbryter felsökning. Ett skript som har en eller flera brytpunkter ange sparas automatiskt innan den körs.
+Innan du startar felsökning, måste du ange en eller flera brytpunkter. Du kan inte ange en brytpunkt såvida inte det skript som du vill felsöka sparas. Mer information om hur du ställer in en brytpunkt finns [hantera brytpunkter](#how-to-manage-breakpoints) eller [Set PSBreakpoint](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-psbreakpoint). När du startar felsökning kan du inte redigera ett skript tills du avbryter felsökning. Ett skript som har en eller flera brytpunkter ange sparas automatiskt innan den körs.
 
 ### <a name="to-start-debugging"></a>Starta felsökning
 Tryck på **F5** i verktygsfältet klickar du på den **kör skriptet** ikonen, eller på den **felsöka** och klicka **kör/Fortsätt**. Skriptet körs tills den första brytpunkten påträffas. Den pausar det igen och markerar den rad där det pausades.
@@ -174,5 +174,4 @@ C:\ps-test\MyScript.ps1
 ```
 
 ## <a name="see-also"></a>Se även
-- [Med hjälp av Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
+- [Utforska Windows PowerShell ISE](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

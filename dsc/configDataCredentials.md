@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Alternativ för autentiseringsuppgifter i konfigurationsdata"
-ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6ddf82c2b63309255ec3187d650677a6c3c2afb0
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>Alternativ för autentiseringsuppgifter i konfigurationsdata
 >Gäller för: Windows PowerShell 5.0
@@ -156,7 +156,7 @@ Group [String] #ResourceName
 }
 ```
 
-Det här exemplet används en [grupp](https://msdn.microsoft.com/en-us/powershell/dsc/groupresource) resurs från den `PSDesiredStateConfiguration` inbyggda DSC-Resursmodul.
+Det här exemplet används en [grupp](https://msdn.microsoft.com/powershell/dsc/groupresource) resurs från den `PSDesiredStateConfiguration` inbyggda DSC-Resursmodul.
 Det kan skapa lokala grupper och lägga till eller ta bort medlemmar.
 Accepteras både den `Credential` egenskap och automatiskt `PsDscRunAsCredential` egenskapen.
 Resursen som endast använder dock den `Credential` egenskapen.
@@ -231,7 +231,7 @@ Det här exemplet har två problem:
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
 Det första felmeddelandet har en URL till dokumentation.
-Den här länken förklarar hur du krypterar lösenord med en [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) struktur och ett certifikat.
+Den här länken förklarar hur du krypterar lösenord med en [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) struktur och ett certifikat.
 Mer information om certifikat och DSC [läsa inlägget](http://aka.ms/certs4dsc).
 
 Om du vill framtvinga ett lösenord i oformaterad text resursen kräver den `PsDscAllowPlainTextPassword` nyckelord i konfigurationsdata avsnittet på följande sätt:
@@ -270,7 +270,7 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
 > [!NOTE]
-> `NodeName`Det går inte att vara lika med asterisk, en specifik nod-namn är obligatoriskt.
+> `NodeName` Det går inte att vara lika med asterisk, en specifik nod-namn är obligatoriskt.
 
 **Microsoft avråder för att undvika lösenord på grund av en stor säkerhetsrisk.**
 

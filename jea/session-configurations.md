@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea powershell säkerhet"
 title: JEA Sessionskonfigurationer
-ms.openlocfilehash: 0a8931ae15caf04a3639ab46f130e5f5b0498d8c
-ms.sourcegitcommit: 0733db9a05e89e6a23f6b52b9edd784fcbe8beec
+ms.openlocfilehash: c475a90a59d91b074f954cfb656b00142444c052
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/22/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-session-configurations"></a>JEA Sessionskonfigurationer
 
@@ -38,7 +38,7 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 
 Du kan öppna konfigurationsfilen session i en textredigerare.
 Den `-SessionType RestrictedRemoteServer` fältet som anger att sessionskonfigurationen kommer att användas av JEA för säker hantering.
-Sessioner som konfigureras på det här sättet kommer att fungera i [NoLanguage läge](https://technet.microsoft.com/en-us/library/dn433292.aspx) och får bara innehålla följande 8 standardkommandon (och alias) tillgängliga:
+Sessioner som konfigureras på det här sättet kommer att fungera i [NoLanguage läge](https://technet.microsoft.com/library/dn433292.aspx) och får bara innehålla följande 8 standardkommandon (och alias) tillgängliga:
 
 - Rensa-värden (cls, rensa)
 - Avsluta-PSSession (exsn, avsluta)
@@ -128,7 +128,7 @@ Vanliga användare bör ha ingen åtkomst till mappen och en begränsad uppsätt
 ### <a name="user-drive"></a>Enheten
 
 Om du ansluter användarna kommer att behöva kopiera filer till eller från JEA slutpunkten för att köra ett kommando, kan du aktivera enhetens användare i konfigurationsfilen för sessionen.
-Användarens enhet är en [PSDrive](https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) som är mappad till en unik mapp för varje anslutning användare.
+Användarens enhet är en [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) som är mappad till en unik mapp för varje anslutning användare.
 Den här mappen fungerar som ett utrymme att kopiera filer till eller från systemet, utan att ge dem åtkomst till fullständig filsystemet eller exponera filsystem-providern.
 Användarens enhet innehållet är beständiga mellan sessioner för situationer där nätverksanslutningen kan avbrytas.
 

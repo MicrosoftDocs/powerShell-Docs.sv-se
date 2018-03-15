@@ -3,11 +3,11 @@ ms.date: 2017-10-16
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Anta konfigurationer
-ms.openlocfilehash: 4285dbe04c9745ec2a859e479848da2881c18de0
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 01294b85d33e147593299de8ecf46c027a69f7a3
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="enacting-configurations"></a>Anta konfigurationer
 
@@ -19,10 +19,10 @@ Det finns två sätt att införa PowerShell önskad tillstånd Configuration (DS
 
 ![Push-läge](images/pushModel.png "hur push läge fungerar")
 
-Push-läge som refererar till en användare som aktivt tillämpa en konfiguration på målnoden genom att anropa den [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet.
+Push-läge som refererar till en användare som aktivt tillämpa en konfiguration på målnoden genom att anropa den [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet.
 
-När du skapar och sammanställa en konfiguration, kan genomför den i push-läge genom att anropa den [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet, ange parametern - Path för sökvägen konfigurationen MOF-cmdlet.
-Om konfigurationen MOF finns i till exempel `C:\DSC\Configurations\localhost.mof`, du vill tillämpa den på den lokala datorn med följande kommando:`Start-DscConfiguration -Path 'C:\DSC\Configurations'`
+När du skapar och sammanställa en konfiguration, kan genomför den i push-läge genom att anropa den [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet, ange parametern - Path för sökvägen konfigurationen MOF-cmdlet.
+Om konfigurationen MOF finns i till exempel `C:\DSC\Configurations\localhost.mof`, du vill tillämpa den på den lokala datorn med följande kommando: `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
 > __Obs__: som standard körs DSC en konfiguration i bakgrunden. Om du vill köra konfigurationen interaktivt anropa den [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) med den __-vänta__ parameter.
 
@@ -40,7 +40,7 @@ MGM kontrollerar att klienten är kompatibla med konfigurationen med regelbundna
 MGM om du söker efter uppdaterade konfigurationer på pull-tjänsten med regelbundna intervall som anges av den **RefreshModeFrequency** -egenskapen för MGM.
 Information om hur du konfigurerar MGM finns [konfigurera den lokala Configuration Manager](metaConfig.md).
 
-Den rekommenderade lösningen för värd för en Pull-tjänsten är molntjänst DSC [Azure Automation](https://azure.microsoft.com/en-us/services/automation/).
+Den rekommenderade lösningen för värd för en Pull-tjänsten är molntjänst DSC [Azure Automation](https://azure.microsoft.com/services/automation/).
 Detta är värd för lösningen ger grafiska management, rapportering och centraliserad administration.
 
 Mer information om hur du skapar en Pull-tjänst på Windows Server finns [ställer in en pull webbserver DSC](pullServer.md).

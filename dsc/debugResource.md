@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Felsökning av DSC-resurser"
-ms.openlocfilehash: 35eb990705bab8190172df899c64c9f34452aa4b
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c9534deb755e2d3ce59dbb44e55b58b59af2e7f4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="debugging-dsc-resources"></a>Felsökning av DSC-resurser
 
@@ -16,9 +16,9 @@ ms.lasthandoff: 01/17/2018
 I PowerShell 5.0 introducerades en ny funktion i önskad tillstånd serverns konfiguration DSC () som hjälper dig att felsöka en DSC-resurs som en konfiguration som används.
 
 ## <a name="enabling-dsc-debugging"></a>Aktivera felsökning av DSC
-Innan du kan felsöka en resurs måste du aktivera felsökning genom att anropa den [aktivera DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) cmdlet. Den här cmdleten tar en obligatorisk parameter **BreakAll**. 
+Innan du kan felsöka en resurs måste du aktivera felsökning genom att anropa den [aktivera DscDebug](https://technet.microsoft.com/library/mt517870.aspx) cmdlet. Den här cmdleten tar en obligatorisk parameter **BreakAll**. 
 
-Du kan verifiera att felsökning har aktiverats genom att titta på resultatet av ett anrop till [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx).
+Du kan verifiera att felsökning har aktiverats genom att titta på resultatet av ett anrop till [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).
 
 Följande PowerShell-utdata visar resultatet av att aktivera felsökning:
 
@@ -59,7 +59,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-Efter att kompilera konfigurationen, starta den genom att anropa [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx). Konfigurationen stoppas när den lokala Configuration Manager (MGM)-anrop till den första resursen i konfigurationen. Om du använder den `-Verbose` och `-Wait` parametrar, utdata visar rader måste du ange om du vill starta felsökningen.
+Efter att kompilera konfigurationen, starta den genom att anropa [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx). Konfigurationen stoppas när den lokala Configuration Manager (MGM)-anrop till den första resursen i konfigurationen. Om du använder den `-Verbose` och `-Wait` parametrar, utdata visar rader måste du ange om du vill starta felsökningen.
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -96,7 +96,7 @@ Du kan nu använda debug-kommandon i ISE för att gå igenom skriptet resurs, ti
 
 ## <a name="disabling-dsc-debugging"></a>Inaktivera DSC-felsökning
 
-Efter att [aktivera DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx), alla anrop till [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) leder till att konfigurationen bryta in i felsökaren. Om du vill tillåta konfigurationer normalt, måste du inaktivera felsökning genom att anropa den [inaktivera DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet.
+Efter att [aktivera DscDebug](https://technet.microsoft.com/library/mt517870.aspx), alla anrop till [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) leder till att konfigurationen bryta in i felsökaren. Om du vill tillåta konfigurationer normalt, måste du inaktivera felsökning genom att anropa den [inaktivera DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet.
 
 >**Obs:** omstart ändras inte MGM debug-tillstånd. Om felsökning är aktiverad kommer startar en konfiguration fortfarande bryta in i felsökaren efter en omstart.
 

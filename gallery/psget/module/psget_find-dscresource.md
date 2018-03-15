@@ -3,20 +3,20 @@ ms.date: 2017-06-12
 contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
-title: Hitta DscResource
-ms.openlocfilehash: 37ba7925d6f73c453126f25e0818b3f8839d3b3b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Find-DscResource
+ms.openlocfilehash: 6c5713f122d48e9c9d5e0aa45dc14047afc56102
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="find-dscresource"></a>Hitta DscResource
+# <a name="find-dscresource"></a>Find-DscResource
 
 Söker efter DSC-resurser i moduler.
 
 ## <a name="description"></a>Beskrivning
 
-Hitta DscResource cmdleten hittar [önskade tillstånd Configuration (DSC)](https://msdn.microsoft.com/en-us/PowerShell/dsc/overview) resurser som ingår i moduler som matchar de angivna villkoren från registrerade databaser.
+Hitta DscResource cmdleten hittar [önskade tillstånd Configuration (DSC)](https://msdn.microsoft.com/PowerShell/dsc/overview) resurser som ingår i moduler som matchar de angivna villkoren från registrerade databaser.
 För varje modul som söker efter denna cmdlet returnerar hitta DscResource ett PSGetDscResourceInfo-objekt som du kan skicka vidare till Install-modulen för att installera modulerna som innehåller de resurser som denna cmdlet returnerar.
 
 DSC är en ny plattform i Windows PowerShell som gör att distribuera och hantera konfigurationsdata för programtjänster och hantera miljön där tjänsterna körs.

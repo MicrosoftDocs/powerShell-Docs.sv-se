@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: PowerShell-cmdlet
 title: "använda web baserat windows powershell-konsolen"
-ms.openlocfilehash: 31ab17f1a1ea1353abc6f770285a2dca70da446d
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Användning av den webbaserade Windows PowerShell-konsolen
 
@@ -58,7 +58,7 @@ Som standard är webbplatsadressen *https://\<server_name\>/pswa*.
 
 Innan du loggar in på Windows PowerShell Web Access, bör du se till att namnet eller IP-adressen för den fjärrdator som du vill hantera.
 Du måste vara en behörig användare på fjärrdatorn och den måste vara konfigurerad för att tillåta fjärrhantering.
-Mer information om hur du konfigurerar din dator för att tillåta fjärrhantering finns [aktivera och använda fjärrkommandon i Windows PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting).
+Mer information om hur du konfigurerar din dator för att tillåta fjärrhantering finns [aktivera och använda fjärrkommandon i Windows PowerShell](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting).
 
 Det enklaste sättet att konfigurera datorn för att tillåta fjärrhantering är att köra den **Enable-PSRemoting - force** på datorn i en Windows PowerShell-session som har öppnats med utökade användarrättigheter (**Kör som administratör**).
 
@@ -70,11 +70,11 @@ Det enklaste sättet att konfigurera datorn för att tillåta fjärrhantering ä
 
     > ![Obs](images/Note.jpeg) **Observera**:
     >
-    > - Om måldatorn är i en arbetsgrupp, Använd följande syntax för att ange ditt användarnamn och logga in på datorn:`<workgroup_name>\<user_name>`
+    > - Om måldatorn är i en arbetsgrupp, Använd följande syntax för att ange ditt användarnamn och logga in på datorn: `<workgroup_name>\<user_name>`
     > - Om måldatorn är gateway-servern, kan du ange `localhost` i fältet för datornamn
     > - Om måldatorn är gateway-servern och gateway-servern finns i en arbetsgrupp, måste du använda `<workgroup name>\<user_name>` i användarnamn arkiverats. Du kan använda `localhost` i fältet för datornamn.
 
-1. Den **valfria anslutningsinställningar** relaterar till behörighetskraven för den fjärrdator som du vill hantera. Mer information om de parametrar som motsvarar valfria anslutningsinställningar finns i [Enter-PSSession](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession) cmdlet-hjälpen.
+1. Den **valfria anslutningsinställningar** relaterar till behörighetskraven för den fjärrdator som du vill hantera. Mer information om de parametrar som motsvarar valfria anslutningsinställningar finns i [Enter-PSSession](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession) cmdlet-hjälpen.
 
     De autentiseringsuppgifter du använder för att skicka via Windows PowerShell Web Access-gateway är vanligtvis samma som identifieras av den fjärrdator som du vill hantera. Om du vill använda andra autentiseringsuppgifter för att hantera fjärrdatorn som du angav i steg 2, expandera den **valfria anslutningsinställningar** och anger alternativa autentiseringsuppgifter. Annars går du till steg 6.
 

@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea powershell säkerhet"
 title: JEA krav
-ms.openlocfilehash: 75d5db2ba446df1d461050d187dc1495a22fef18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e6ee16e34eb9f1f0b2f3601c1aa9e90ab4f785f1
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="prerequisites"></a>Förutsättningar
 
@@ -33,8 +33,8 @@ Du kan också använda JEA på datorn hem- eller:
 
 Klientens operativsystem   | JEA tillgänglighet
 --------------------------|-----------------------------------------------------
-Windows 10 1607 +          | Förinstallerat
-Windows 10 1603 1511     | Förinstallerat, med nedsatt funktionalitet<sup>2</sup>
+Windows 10 1607+          | Förinstallerat
+Windows 10 1603, 1511     | Förinstallerat, med nedsatt funktionalitet<sup>2</sup>
 Windows 10 1507           | Inte tillgänglig
 Windows 8, 8.1            | Fullständig funktionalitet med WMF 5.1
 Windows 7                 | Funktioner<sup>1</sup> med WMF 5.1
@@ -72,7 +72,7 @@ Windows 10 användare ska installera de senaste funktionsuppdateringarna för at
 ## <a name="enable-powershell-remoting"></a>Aktivera PowerShell-fjärrkommunikation
 
 PowerShell-fjärrkommunikation utgör grunden som JEA är inbyggd.
-Det är därför kontrollera PowerShell-fjärrkommunikation är aktiverad och [ordentligt](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity) på datorn innan du kan använda JEA.
+Det är därför kontrollera PowerShell-fjärrkommunikation är aktiverad och [ordentligt](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity) på datorn innan du kan använda JEA.
 
 PowerShell-fjärrkommunikation är aktiverad som standard på Windows Server 2012 och 2012 R2 2016.
 Du kan aktivera PowerShell-fjärrkommunikation genom att köra följande kommando i ett upphöjt PowerShell-fönster.
@@ -109,6 +109,6 @@ Du kan också aktivera systemomfattande PowerShell skrivfel via en Grupprincip.
 
 ## <a name="see-also"></a>Se även
 
-- [Mer information om säkerhet i PowerShell-fjärrkommunikation och WinRM](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
+- [Mer information om säkerhet i PowerShell-fjärrkommunikation och WinRM](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)
 - [*PowerShell ♥ blå teamet* blogginlägg om säkerhet](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
 

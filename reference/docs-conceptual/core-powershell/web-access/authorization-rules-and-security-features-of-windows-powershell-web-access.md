@@ -2,11 +2,11 @@
 ms.date: 2017-06-27
 keywords: PowerShell-cmdlet
 title: "Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst"
-ms.openlocfilehash: 6b50fdc0f2854d8af6147432fed1a155d26f57e7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst
 
@@ -24,7 +24,7 @@ När Windows PowerShell Web Access har installerats och gatewayen har konfigurer
 Det finns ingen jämförbar GUI för att lägga till eller hantera auktoriseringsregler.
 Se [Windows PowerShell-cmdletar för webbåtkomst](cmdlets/web-access-cmdlets.md).
 
-Administratörer kan definiera 0 - *n*  autentisering regler för Windows PowerShell Web Access.
+Administratörer kan definiera 0 -*n* autentisering regler för Windows PowerShell Web Access.
 Standardsäkerheten är begränsande i stället för tillåtande; noll autentiseringsregler innebär att ingen användare har åtkomst till något.
 
 [Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) och [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) innehåller en parameter för autentiseringsuppgifter som gör att du kan lägga till och testa Windows PowerShell Web Access auktoriseringsregler från en fjärransluten i Windows Server 2012 R2 dator, eller från inom en aktiv Windows PowerShell Web Access-session.
@@ -32,7 +32,7 @@ Som med andra Windows PowerShell-cmdlets som har en parameter för autentisering
 Om du vill skapa ett PSCredential-objekt som innehåller autentiseringsuppgifter som du vill skicka till en fjärrdator, kör den [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) cmdlet.
 
 Windows PowerShell Web Access-reglerna för autentisering är godkända regler.
-Varje regel är en definition av en tillåten anslutning mellan användare, måldatorer och särskilda Windows PowerShellÂ [sessionskonfigurationer](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (kallas också slutpunkter eller _körningsutrymmen_) på måldatorerna som angetts.
+Varje regel är en definition av en tillåten anslutning mellan användare, måldatorer och särskilda Windows PowerShellÂ [sessionskonfigurationer](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (kallas också slutpunkter eller _körningsutrymmen_) på måldatorerna som angetts.
 En förklaring på **körningsutrymmen** finns [början användning av PowerShell Körningsutrymmen](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
 > **Säkerhetsmeddelande**
@@ -103,7 +103,7 @@ Reglerna utvärderas bara när en användare har autentiserats av gatewayen och 
 Det sista säkerhetslagret för Windows PowerShell-webbåtkomst är target-egna säkerhetskonfiguration.
 Användare måste ha lämpliga åtkomsträttigheter som konfigurerats på måldatorn och även i auktoriseringsregler för Windows PowerShell Web Access att köra en Windows PowerShell-webbaserad konsol som påverkar en måldator via Windows PowerShell Web Access.
 
-Lagret innehåller samma säkerhetsmekanismer som utvärderar anslutningsförsök om användarna försökte skapa en fjärransluten Windows PowerShell-session till en måldator från Windows PowerShell genom att köra den [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) eller [New-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/new-pssession) cmdlets.
+Lagret innehåller samma säkerhetsmekanismer som utvärderar anslutningsförsök om användarna försökte skapa en fjärransluten Windows PowerShell-session till en måldator från Windows PowerShell genom att köra den [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) eller [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/new-pssession) cmdlets.
 
 Som standard använder Windows PowerShell Web Access primära användarnamn och lösenord för autentisering på både gatewayen och måldatorn.
 Den webbaserade inloggningssidan, i avsnittet **valfria anslutningsinställningar**, ger användarna möjlighet att ange olika autentiseringsuppgifter för måldatorn, om de behövs.
@@ -120,7 +120,7 @@ Administratörer vill troligen ha samma auktoriseringsregel för Windows PowerSh
 Den första proceduren i det här avsnittet beskriver hur du lägger till en säker auktoriseringsregel som ger åtkomst till en användare som loggar in att hantera en dator, och inom en enda sessionskonfiguration.
 Den andra proceduren beskriver hur du tar bort en auktoriseringsregel som inte längre behövs.
 
-Om du tänker använda anpassade konfigurationer för att tillåta specifika användare att arbeta i begränsade körningsutrymmen i Windows PowerShell Web Access kan du skapa dina anpassade konfigurationer innan du lägger till auktoriseringsregler som refererar till dem..
+Om du tänker använda anpassade konfigurationer för att tillåta specifika användare att arbeta i begränsade körningsutrymmen i Windows PowerShell Web Access kan du skapa dina anpassade konfigurationer innan du lägger till auktoriseringsregler som refererar till dem.
 Du kan inte använda Windows PowerShell Web Access-cmdlets för att skapa anpassade sessionskonfigurationer.
 Mer information om hur du skapar anpassade sessionskonfigurationer finns [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 

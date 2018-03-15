@@ -2,8 +2,8 @@
 
 Det här avsnittet innehåller utgivare med översiktlig information om hur du ändrar manifest för sina PowerShell-galleriet publikationer så att funktionerna i PowerShellGet-cmdlets och PowerShell-galleriet Användargränssnittet kommer att påverkas. Det här innehållet är ordnad efter där ändringen ska visas, från och med avsnittet i mitten och sedan navigeringsområdet till vänster. Det finns en informationsavsnittet omfattar taggar, som identifierar viktiga taggar, samt några av de vanligaste taggar. Det finns två avsnitt som innehåller manifestet exempel: 
 
-* Moduler, se [uppdatering modulen Manifest](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/psget_update-modulemanifest)
-* Skript, se [skapa skriptfil med Metadata](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo)
+* Moduler, se [uppdatering modulen Manifest](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
+* Skript, se [skapa skriptfil med Metadata](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>PowerShell-galleriet funktionselement styrs av manifestet
 
@@ -18,7 +18,7 @@ Varje post anger om den kan styras av manifestet modul eller skript.
 | **Kräv godkännande av licens** | En modul kan kräva att användaren godkänner en licens genom att ändra modulmanifestet med RequireLicenseAcceptance = $true tillhandahåller en LicenseURI och ge en filen license.txt i roten av mappen modulen. Mer information finns i den [kräver godkännande av licens](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_requires_license_acceptance) avsnittet. | Ja | Nej |
 | **Versionsanmärkningar** | Den här informationen hämtas från avsnittet ReleaseNotes under PSData\PrivateData för moduler. I skriptet manifest är det den. RELEASENOTES element. | Ja | Ja |
 | **Ägare** | Ägare är en lista över användare i PowerShell-galleriet som kan uppdatera ett objekt. Listan över ägare ingår inte i manifestet för objektet. Ytterligare dokumentation beskriver hur du [hantera objekt ägare](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners). | Nej | Nej |
-| **Författare** | Detta ingår i modulmanifestet som författare och i ett skript-manifest som. FÖRFATTARE. Fältet Författare används ofta för att ange ett företag eller organisation som är associerad med ett objekt. | Ja | Ja |
+| **författare** | Detta ingår i modulmanifestet som författare och i ett skript-manifest som. FÖRFATTARE. Fältet Författare används ofta för att ange ett företag eller organisation som är associerad med ett objekt. | Ja | Ja |
 | **Copyright** | Detta är det Copyright i modulmanifestet, och. COPYRIGHT i ett skript manifest. | Ja | Ja |
 | **FileList** | I listan över ritas från paketet när den publiceras i PowerShell-galleriet. Det går inte att styra av manifestet information. Obs: det finns en ytterligare .nuspec-fil som visas i listan med varje objekt i PowerShell-galleriet som inte finns när du har installerat objektet på ett system. Detta är Nuget-paketet manifest för objektet och kan ignoreras. | Nej | Nej |
 | **Taggar** | För moduler ingår taggar under PSData\PrivateData. Avsnittet är märkt för skript. TAGGAR. Observera att taggar inte får innehålla blanksteg, även när de är inom citattecken. Taggar har ytterligare krav och innebörd som beskrivs senare i det här avsnittet i avsnittet taggen information. | Ja | Ja |

@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: "Hjälpmedelsfunktioner i Windows PowerShell ISE"
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 505ec3aca84b5ad0b9d58a1ec84d80e3aa86db7a
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 7f758a46bdc722482b9e8a9baaff0a075f64ece9
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Hjälpmedelsfunktioner i Windows PowerShell ISE
 Det här avsnittet beskriver hjälpmedelsfunktionerna i Windows PowerShell Integrated Scripting Environment (ISE) som kan vara användbara.
@@ -22,7 +22,7 @@ Det här avsnittet beskriver hjälpmedelsfunktionerna i Windows PowerShell Integ
 
 Microsoft arbetar ständigt med att göra sina produkter och tjänster lättare att använda för alla. Följande avsnitt innehåller information om de funktioner, produkter och tjänster som gör Windows PowerShell ISE mer tillgängligt för personer med funktionshinder.
 
-Windows PowerShell ISE stöder hög kontrast läge. För nedsatt, brytpunktsinformation är tillgänglig via cmdletar för att hantera brytpunkter, t.ex [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) och [Set PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). Mer information finns, hur du hanterar brytpunkter' i [hur du felsöker skript i Windows PowerShell ISE](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). Förutom hjälpmedelsfunktionerna och verktygen i Microsoft Windows kan gör följande funktioner Windows PowerShell ISE mer tillgängligt för personer med funktionshinder:
+Windows PowerShell ISE stöder hög kontrast läge. För nedsatt, brytpunktsinformation är tillgänglig via cmdletar för att hantera brytpunkter, t.ex [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) och [Set PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420). Mer information finns, hur du hanterar brytpunkter' i [hur du felsöker skript i Windows PowerShell ISE](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). Förutom hjälpmedelsfunktionerna och verktygen i Microsoft Windows kan gör följande funktioner Windows PowerShell ISE mer tillgängligt för personer med funktionshinder:
 
 - Kortkommandon
 
@@ -58,27 +58,27 @@ Du kan använda följande kortkommandon när du redigerar text.
 |Åtgärd|Kortkommandon|Använd i|
 |----------|----------------------|----------|
 |**Kopiera**|CTRL+C|Skriptfönster konsolfönstret|
-|**Klipp ut**|CTRL + X|Skriptfönster konsolfönstret|
+|**Klipp ut**|CTRL+X|Skriptfönster konsolfönstret|
 |**Sök i skript**|CTRL+F|Skriptfönster|
 |**Sök nästa i skript**|F3|Skriptfönster|
 |**Sök föregående i skript**|SKIFT + F3|Skriptfönster|
 |**Klistra in**|CTRL+V|Skriptfönster konsolfönstret|
-|**Gör om**|CTRL + Y|Skriptfönster konsolfönstret|
-|**Ersätt i skript**|CTRL + H|Skriptfönster|
+|**Redo**|CTRL+Y|Skriptfönster konsolfönstret|
+|**Ersätt i skript**|CTRL+H|Skriptfönster|
 |**Spara**|CTRL+S|Skriptfönster|
 |**Markera alla**|CTRL+A|Skriptfönster konsolfönstret|
-|**Ångra**|CTRL + Z|Skriptfönster konsolfönstret|
+|**Ångra**|CTRL+Z|Skriptfönster konsolfönstret|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Kortkommandon för att köra skript
 Du kan använda följande kortkommandon när du kör skript i skriptfönstret.
 
 |Åtgärd|Kortkommando|
 |----------|---------------------|
-|**Ny**|CTRL + N|
-|**Öppna**|CTRL + O|
+|**Ny**|CTRL+N|
+|**Öppna**|CTRL+O|
 |**Kör**|F5|
 |**Kör markering**|F8|
-|**Stoppa körning**|CTRL + BREAK. CTRL + C kan användas när kontexten är entydigt (när det finns ingen text som valts).|
+|**Stoppa körning**|CTRL+BREAK. CTRL + C kan användas när kontexten är entydigt (när det finns ingen text som valts).|
 |**Fliken** (för att nästa skript)|CTRL + TABB **Obs:** att nästa skriptet fungerar endast när du har en PowerShell flik öppna, eller när du har mer än en PowerShell-flik öppen, men fokus ligger i skriptfönstret.|
 |**Fliken** (för att tidigare skript)|CTRL + SKIFT + TABB **Obs:** att föregående skriptet fungerar när du har öppnat med endast en PowerShell-fliken, eller om du har mer än en PowerShell-flik öppen och fokus ligger i skriptfönstret.|
 
@@ -87,15 +87,15 @@ Du kan använda följande kortkommandon för att anpassa vyn i Windows PowerShel
 
 |Åtgärd|Kortkommando|
 |----------|---------------------|
-|**Gå till konsolfönstret**|CTRL + D|
-|**Gå till Skriptfönster**|CTRL + K|
-|**Visa Skriptfönster**|CTRL + R|
-|**Dölj Skriptfönster**|CTRL + R|
+|**Gå till konsolfönstret**|CTRL+D|
+|**Gå till Skriptfönster**|CTRL+I|
+|**Visa Skriptfönster**|CTRL+R|
+|**Dölj Skriptfönster**|CTRL+R|
 ||
-|**Flytta Skriptfönster upp**|CTRL + 1|
-|**Flytta Skriptfönster åt höger**|CTRL + 2|
-|**Maximera Skriptfönster**|CTRL + 3|
-|**Zooma In**|CTRL + PLUSTECKEN|
+|**Flytta Skriptfönster upp**|CTRL+1|
+|**Flytta Skriptfönster åt höger**|CTRL+2|
+|**Maximera Skriptfönster**|CTRL+3|
+|**Zooma In**|CTRL+PLUS SIGN|
 |**Zooma ut**|CTRL + MINUSTECKEN|
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Kortkommandon för att felsöka skript
@@ -134,8 +134,8 @@ Du kan använda följande kortkommandon när du använder Windows PowerShell-fli
 
 |Åtgärd|Kortkommando|
 |----------|---------------------|
-|**Stäng fliken PowerShell**|CTRL + W|
-|**Nya PowerShell-fliken**|CTRL + T|
+|**Stäng fliken PowerShell**|CTRL+W|
+|**Nya PowerShell-fliken**|CTRL+T|
 |**Föregående PowerShell flik**|CTRL + SKIFT + TABB. Den här genvägen fungerar endast när inga filer är öppna på någon av flikarna i PowerShell.|
 |**Nästa flik för Windows PowerShell**|CTRL + TABB. Den här genvägen fungerar endast när inga filer är öppna på någon av flikarna i PowerShell.|
 
@@ -144,9 +144,9 @@ Du kan använda följande kortkommandon om du vill starta Windows PowerShell-kon
 
 |Åtgärd|Kortkommando|
 |----------|---------------------|
-|**Avsluta**|ALT+F4|
+|**Exit**|ALT+F4|
 |**Starta PowerShell.exe** (Windows PowerShell-konsol)|CTRL + SKIFT + P|
 
 ## <a name="see-also"></a>Se även
-- [Med hjälp av Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [Använd Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 

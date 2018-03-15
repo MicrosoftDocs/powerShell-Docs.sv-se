@@ -7,11 +7,11 @@ ms.date: 2016-12-12
 title: "Lägg till pswaauthorizationrule"
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 196797215a678e6f674592dc6b289816aced3c01
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 71954fc115daee4c05662d11baa2bc6a0a417896
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -167,7 +167,7 @@ Formatet är `domain\user` eller `computer\user`.
 ### <a name="ltcommonparametersgt"></a>&lt;CommonParameters&gt;
 
 Denna cmdlet stöder de gemensamma parametrarna:-Verbose,-Debug, - ErrorAction, -ErrorVariable,-OutBuffer och - OutVariable.
-Mer information finns i [about_CommonParameters](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters).
+Mer information finns i [about_CommonParameters](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters).
 
 ## <a name="inputs"></a>INDATA
 
@@ -190,7 +190,7 @@ Denna cmdlet returnerar den ett authorization-regelobjekt.
 ### <a name="example-1"></a>EXEMPEL 1
 
 Det här exemplet ger åtkomst till sessionskonfigurationen *PSWAEndpoint*, ett begränsat körningsutrymme på *srv2* för användare i den *SMAdmins* grupp. \
-**Obs**: datornamnet måste vara ett fullständigt kvalificerat domännamn (FQDN). Administratörer definiera en begränsad sessionskonfiguration eller körningsutrymmen, vilket är ett begränsat antal cmdletar och uppgifter som slutanvändarna kan köras. Definiera ett begränsat körningsutrymme kan hindra användare från att komma åt andra datorer som inte i det tillåtna Windows PowerShell® runspace, vilket ger en säker anslutning. Mer information om sessionskonfigurationer finns [about_Session_Configurations](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) eller [installera och använda Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md).
+**Obs**: datornamnet måste vara ett fullständigt kvalificerat domännamn (FQDN). Administratörer definiera en begränsad sessionskonfiguration eller körningsutrymmen, vilket är ett begränsat antal cmdletar och uppgifter som slutanvändarna kan köras. Definiera ett begränsat körningsutrymme kan hindra användare från att komma åt andra datorer som inte i det tillåtna Windows PowerShell® runspace, vilket ger en säker anslutning. Mer information om sessionskonfigurationer finns [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) eller [installera och använda Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md).
 
 ```PowerShell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint

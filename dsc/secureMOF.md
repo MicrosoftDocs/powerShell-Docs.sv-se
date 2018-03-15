@@ -3,11 +3,11 @@ ms.date: 2017-10-31
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Skydda MOF-filen
-ms.openlocfilehash: fdb8fa17e9b5e92b56e0a62bf850529c241eee41
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 1bb257f3237344f32c9035f3836dd317b75eef0a
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="securing-the-mof-file"></a>Skydda MOF-filen
 
@@ -19,7 +19,7 @@ Det här avsnittet beskriver hur du målnoden har krypterade filen.
 
 Från och med PowerShell version 5.0, hela MOF-filen är krypterad som standard när den används på en nod med hjälp av den **Start DSCConfiguration** cmdlet.
 Processen som beskrivs i den här artikeln krävs bara när du implementerar en lösning med pull-tjänsten-protokollet om certifikat inte som hanteras så konfigurationer som hämtas av målnoden kan dekryptera och läsa av systemet innan de tillämpas (till exempel pull tjänsten finns i Windows Server).
-Noder registrerad [Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) automatiskt har certifikat installerat och hanteras av tjänsten med inga administrativa kostnader krävs.
+Noder registrerad [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) automatiskt har certifikat installerat och hanteras av tjänsten med inga administrativa kostnader krävs.
 
 >**Obs:** det här avsnittet beskrivs certifikat som används för kryptering.
 >Ett självsignerat certifikat är tillräcklig för kryptering, eftersom den privata nyckeln sparas alltid hemlighet och kryptering innebär inte förtroende för dokumentet.
@@ -262,7 +262,7 @@ configuration CredentialEncryptionExample
 
 ## <a name="setting-up-decryption"></a>Konfigurera dekryptering
 
-Innan du [ `Start-DscConfiguration` ](https://technet.microsoft.com/en-us/library/dn521623.aspx) kan fungera, måste du ange Local Configuration Manager på varje målnoden vilket certifikat som ska använda för att dekryptera autentiseringsuppgifterna resursnamnet CertificateID för att verifiera certifikatets tumavtryck. Den här funktionen exempel hittar lokala intyg (du kan behöva anpassa den så att den ska hitta exakt certifikatet som du vill använda):
+Innan du [ `Start-DscConfiguration` ](https://technet.microsoft.com/library/dn521623.aspx) kan fungera, måste du ange Local Configuration Manager på varje målnoden vilket certifikat som ska använda för att dekryptera autentiseringsuppgifterna resursnamnet CertificateID för att verifiera certifikatets tumavtryck. Den här funktionen exempel hittar lokala intyg (du kan behöva anpassa den så att den ska hitta exakt certifikatet som du vill använda):
 
 ```powershell
 # Get the certificate that works for encryption 
@@ -311,7 +311,7 @@ configuration CredentialEncryptionExample
 
 Du kan nu köra konfiguration, som kommer att skapa två filer:
 
- * A *. meta.mof-fil som konfigurerar den lokala Configuration Manager för att dekryptera autentiseringsuppgifterna med det certifikat som lagras på lokala datorns Arkiv och identifieras av dess tumavtryck. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx)gäller de *. meta.mof fil.
+ * A *. meta.mof-fil som konfigurerar den lokala Configuration Manager för att dekryptera autentiseringsuppgifterna med det certifikat som lagras på lokala datorns Arkiv och identifieras av dess tumavtryck. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) gäller de *. meta.mof fil.
  * En MOF-fil som faktiskt gäller konfigurationen av. Start-DscConfiguration gäller konfigurationen av.
 
 Dessa kommandon kan utföra dessa steg:

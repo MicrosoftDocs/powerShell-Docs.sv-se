@@ -1,22 +1,22 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
-title: "Hur du skriver och köra skript i Windows PowerShell ISE"
+title: "Skriv och kör skript i Windows PowerShell ISE"
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: dd3055df8c84195f0145b1a058f1d17c9c382f33
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 77d8ae81cb03f03b3b5d044e6503bbb23cb5b771
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Hur du skriver och köra skript i Windows PowerShell ISE
+# <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Skriv och kör skript i Windows PowerShell ISE
 Det här avsnittet beskriver hur du skapar, redigerar, kör och spara skript i skriptfönstret.
 
 ## <a name="how-to-create-and-run-scripts"></a>Hur du skapar och kör skript
 Du kan öppna och redigera filer i Windows PowerShell i skriptfönstret. Specifika filtyper av intresse för Windows PowerShell är skriptfiler (.ps1), skript datafiler (.psd1) och skriptfiler modul (.psm1). De här filtyperna är syntax färgade i Redigeraren för skriptfönster. Andra vanliga filtyper som du kan öppna i skriptfönstret är konfigurationsfiler (.ps1xml), XML-filer och textfiler.
 
 > [!NOTE]
-> Windows PowerShell-körningsprincipen avgör om du kan köra skript och ladda konfigurationsfiler och profiler för Windows PowerShell. Körningsprincipen standard begränsad, förhindrar alla skript från att köras och förhindrar att läsa in profiler. Om du vill ändra körningsprincipen för att tillåta profiler för att läsa in och användas [Set-ExecutionPolicy [PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) och [about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
+> Windows PowerShell-körningsprincipen avgör om du kan köra skript och ladda konfigurationsfiler och profiler för Windows PowerShell. Körningsprincipen standard begränsad, förhindrar alla skript från att köras och förhindrar att läsa in profiler. Om du vill ändra körningsprincipen för att tillåta profiler för att läsa in och användas [Set-ExecutionPolicy [PSITPro5_Security]](https://technet.microsoft.com/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) och [about_Signing [v4]](https://technet.microsoft.com/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
 
 ### <a name="to-create-a-new-script-file"></a>Skapa en ny skriptfil
 I verktygsfältet klickar du på **ny** , eller på den **filen** -menyn klickar du på **ny**. Skapade filen visas i en ny flik filen under aktuell PowerShell-fliken. Kom ihåg att PowerShell-flikar visas endast när det finns fler än en. Som standard skapas en fil av typen skript (.ps1), men den kan sparas med ett nytt namn och filnamnstillägg. Flera filer kan skapas på samma flik i PowerShell.
@@ -139,5 +139,4 @@ Windows PowerShell ISE stöder följande alternativ för kodning: ASCII, BigEndi
 Windows PowerShell ISE inte ändra kodningen av skript som har skapats med andra program, även när du använder spara eller spara som-kommandon i Windows PowerShell ISE.
 
 ## <a name="see-also"></a>Se även
-- [Med hjälp av Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
+- [Utforska Windows PowerShell ISE](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

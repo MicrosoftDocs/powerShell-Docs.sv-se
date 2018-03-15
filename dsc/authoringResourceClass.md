@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Skriva en anpassad DSC-resurs med PowerShell-klasser
-ms.openlocfilehash: b24351a49ca11dac4687efdce39d400bfd00f399
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 53757f965c51fee699409b5a8ecda802dda9801f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Skriva en anpassad DSC-resurs med PowerShell-klasser
 
@@ -69,7 +69,7 @@ Observera att egenskaperna ändras av attribut. Enligt attribut är följande:
 - **DscProperty(NotConfigurable)**: egenskapen är skrivskyddad. Egenskaper som är markerade med det här attributet kan inte anges med en konfiguration, men fylls med den **Get()** metod i förekommande fall.
 - **DscProperty()**: egenskapen konfigureras, men den krävs inte.
 
-Den **$Path** och **$SourcePath** egenskaper är båda strängar. Den **$CreationTime** är en [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) egenskapen. Den **$Ensure** -egenskapen är en uppräkningstyp som definieras på följande sätt.
+Den **$Path** och **$SourcePath** egenskaper är båda strängar. Den **$CreationTime** är en [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) egenskapen. Den **$Ensure** -egenskapen är en uppräkningstyp som definieras på följande sätt.
 
 ```powershell
 enum Ensure 
@@ -484,10 +484,10 @@ Mer information finns i [kör DSC med autentiseringsuppgifterna för användaren
 Den **DscResource()** attributet tar en valfri parameter **RunAsCredential**.
 Den här parametern tar ett av tre värden:
 
-- `Optional`**PsDscRunAsCredential** är valfri för konfigurationer som anropar den här resursen. Det här är standardkonfigurationen.
-- `Mandatory`**PsDscRunAsCredential** måste användas för alla konfigurationer som anropar den här resursen.
-- `NotSupported`Konfigurationer som anropar den här resursen kan inte använda **PsDscRunAsCredential**.
-- `Default`Samma som `Optional`.
+- `Optional` **PsDscRunAsCredential** är valfri för konfigurationer som anropar den här resursen. Det här är standardkonfigurationen.
+- `Mandatory` **PsDscRunAsCredential** måste användas för alla konfigurationer som anropar den här resursen.
+- `NotSupported` Konfigurationer som anropar den här resursen kan inte använda **PsDscRunAsCredential**.
+- `Default` Samma som `Optional`.
 
 Till exempel använda följande attribut för att ange att den anpassade resursen inte stöder användning av **PsDscRunAsCredential**:
 

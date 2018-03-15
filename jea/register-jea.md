@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea powershell säkerhet"
 title: Registrera JEA konfigurationer
-ms.openlocfilehash: 0684a1c7acffbccbedab9dba4689611a24c8ae25
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: d6b007fed97be6470bfe4cf4d42f72cb4edc3a45
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="registering-jea-configurations"></a>Registrera JEA konfigurationer
 
@@ -19,7 +19,7 @@ Den här processen gäller sessionsinformation konfigurationen systemet och till
 
 ## <a name="single-machine-configuration"></a>Konfiguration av enskild dator
 
-För små miljöer kan du distribuera JEA genom att registrera session configuration filen med den [Register-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) cmdlet.
+För små miljöer kan du distribuera JEA genom att registrera session configuration filen med den [Register-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) cmdlet.
 
 Innan du börjar bör du kontrollera att följande krav är uppfyllda:
 - En eller flera roller har skapats och placeras i mappen 'RoleCapabilities' av en giltig PowerShell-modulen.
@@ -28,7 +28,7 @@ Innan du börjar bör du kontrollera att följande krav är uppfyllda:
 
 Du måste också markera ett namn för din JEA slutpunkt.
 Namnet på slutpunkten JEA måste utföras när du vill ansluta till systemet med JEA.
-Du kan använda den [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) för att kontrollera namnen på befintliga slutpunkter i systemet.
+Du kan använda den [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) för att kontrollera namnen på befintliga slutpunkter i systemet.
 Slutpunkter som börjar med 'microsoft' vanligtvis medföljer Windows.
 'Microsoft.powershell'-slutpunkten är standardslutpunkten användas vid anslutning till en PowerShell-fjärrslutpunkten.
 

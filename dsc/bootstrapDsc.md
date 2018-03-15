@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Konfigurera en virtuella datorer på första uppstart med hjälp av DSC"
-ms.openlocfilehash: 76c990ee7c98ea47d1fc3d7bd955ce6a993e28a6
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ff06aafa6db49d93a9b42e38ac7c3e9a11657bd5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 >Gäller för: Windows PowerShell 5.0
 
@@ -20,7 +20,7 @@ Mer information om hur du konfigurerar nya virtuella datorer på första uppstar
 
 Om du vill köra exemplen behöver du:
 
-- En startbar VHD att arbeta med. Du kan ladda ned en ISO med en utvärderingsversion av Windows Server 2016 vid [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). Du hittar anvisningar om hur du skapar en VHD från en ISO-avbildning på [skapa startbara virtuella hårddiskar](https://technet.microsoft.com/en-us/library/gg318049.aspx).
+- En startbar VHD att arbeta med. Du kan ladda ned en ISO med en utvärderingsversion av Windows Server 2016 vid [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016). Du hittar anvisningar om hur du skapar en VHD från en ISO-avbildning på [skapa startbara virtuella hårddiskar](https://technet.microsoft.com/library/gg318049.aspx).
 - En värddator som har Hyper-V aktiverat. Mer information finns i [översikt över Hyper-V](https://technet.microsoft.com/library/hh831531.aspx).
 
 Med hjälp av DSC, kan du automatisera installationen och konfigurationen för en dator vid första uppstart.

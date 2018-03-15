@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Partiell PowerShell Desired State Configuration-konfigurationer
-ms.openlocfilehash: 66791bb7b14898d292b9da38dd27ba45b7c75d88
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 4401ea80cffd09f4b92c9fcca16d5dcad7f6a327
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Partiell PowerShell Desired State Configuration-konfigurationer
 
@@ -18,10 +18,10 @@ I PowerShell 5.0 kan önskad tillstånd Configuration (DSC) konfigurationer som 
 Du kan använda partiella konfigurationer i push-läge, pull-läge eller en kombination av båda.
 
 ## <a name="partial-configurations-in-push-mode"></a>Partiell konfigurationer i push-läge
-Om du vill använda delvis konfigurationer i push-läge, konfigurerar du MGM på målnoden för att ta emot de partiella konfigurationerna. Varje partiella konfiguration måste skickas till målet med hjälp av cmdleten publicera DSCConfiguration. Målnoden kombinerar sedan partiella konfigurationen i konfigurationen för en och du kan använda konfigurationen genom att anropa den [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet.
+Om du vill använda delvis konfigurationer i push-läge, konfigurerar du MGM på målnoden för att ta emot de partiella konfigurationerna. Varje partiella konfiguration måste skickas till målet med hjälp av cmdleten publicera DSCConfiguration. Målnoden kombinerar sedan partiella konfigurationen i konfigurationen för en och du kan använda konfigurationen genom att anropa den [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet.
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Konfigurera MGM för push-läge partiella konfigurationer
-Om du vill konfigurera MGM för partiellt konfigurationer i push-läge, som du skapar en **DSCLocalConfigurationManager** konfiguration med en **PartialConfiguration** block för varje partiella konfiguration. Mer information om hur du konfigurerar MGM finns [Windows konfigurera den lokala Configuration Manager](https://technet.microsoft.com/en-us/library/mt421188.aspx). I följande exempel visas en MGM konfiguration som förväntar sig konfigurationer av två delar, en som distribuerar Operativsystemet och en som distribuerar och konfigurerar SharePoint.
+Om du vill konfigurera MGM för partiellt konfigurationer i push-läge, som du skapar en **DSCLocalConfigurationManager** konfiguration med en **PartialConfiguration** block för varje partiella konfiguration. Mer information om hur du konfigurerar MGM finns [Windows konfigurera den lokala Configuration Manager](https://technet.microsoft.com/library/mt421188.aspx). I följande exempel visas en MGM konfiguration som förväntar sig konfigurationer av två delar, en som distribuerar Operativsystemet och en som distribuerar och konfigurerar SharePoint.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -51,7 +51,7 @@ Den **RefreshMode** för varje partiella konfiguration har värdet ”Push”. N
 
 ### <a name="publishing-and-starting-push-mode-partial-configurations"></a>Publicera och starta partiella konfigurationer för push-läge
 
-Sedan anropar [publicera DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) för varje konfiguration kan skicka mapparna som innehåller configuration-dokument som den **sökväg** parametrar. `Publish-DSCConfiguration`placerar configuration MOF-filer till målnoder. När du har publicerat båda konfigurationerna kan du anropa `Start-DSCConfiguration –UseExisting` på målnoden.
+Sedan anropar [publicera DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) för varje konfiguration kan skicka mapparna som innehåller configuration-dokument som den **sökväg** parametrar. `Publish-DSCConfiguration`placerar configuration MOF-filer till målnoder. När du har publicerat båda konfigurationerna kan du anropa `Start-DSCConfiguration –UseExisting` på målnoden.
 
 Till exempel om du har sammanställt följande konfiguration MOF dokument på noden redigering:
 
@@ -96,7 +96,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**Obs:** användaren som kör den [publicera DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) cmdlet måste ha administratörsbehörighet på målnoden.
+>**Obs:** användaren som kör den [publicera DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) cmdlet måste ha administratörsbehörighet på målnoden.
 
 ## <a name="partial-configurations-in-pull-mode"></a>Partiell konfigurationer i pull-läge
 
@@ -211,7 +211,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Namnge och placera configuration-dokument på hämtningsservern (ConfigurationID)
 
-Partiell configuration-dokument måste placeras i den angivna mappen i den **ConfigurationPath** i den `web.config` -filen för pull-server (vanligtvis `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Av konfigurationsdokument måste ha namnet på följande sätt: _ConfigurationName_. _ConfigurationID_`.mof`, där _ConfigurationName_ är namnet på den partiella konfigurationen och _ConfigurationID_ konfigurations-ID definieras i MGM på den målnoden. I vårt exempel bör konfigurationsdokument vara namnet på följande sätt:
+Partiell configuration-dokument måste placeras i den angivna mappen i den **ConfigurationPath** i den `web.config` -filen för pull-server (vanligtvis `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Av konfigurationsdokument måste ha namnet på följande sätt: _ConfigurationName_. _ConfigurationID_`.mof`, där _ConfigurationName_ är namnet på den partiella konfigurationen och _ConfigurationID_ definieras konfigurations-ID i MGM på måldatorn noden. I vårt exempel bör konfigurationsdokument vara namnet på följande sätt:
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -377,5 +377,5 @@ SharePointConfig
 **Begrepp**
 [Windows PowerShell önskad Tillståndskonfiguration Pull-servrar](pullServer.md) 
 
-[Windows konfigurera den lokala Configuration Manager](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
+[Windows konfigurera den lokala Configuration Manager](https://technet.microsoft.com/library/mt421188.aspx) 
 

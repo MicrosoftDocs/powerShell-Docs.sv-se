@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea powershell säkerhet"
 title: "JEA säkerhetsaspekter"
-ms.openlocfilehash: 2dcce34113998a1c31709b6afe6d0a21c991e79d
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 69bbe50fb1a7580c32d657a0f084cc80c28825c7
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-security-considerations"></a>JEA säkerhetsaspekter
 
@@ -95,7 +95,7 @@ New-PSSessionConfigurationFile -Path '.\jea.pssc' -SessionType RestrictedRemoteS
 Register-PSSessionConfiguration -Path '.\jea.pssc' -Name 'MyJEAEndpoint'
 ```
 
-Du kan granska användarbehörigheter med den [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet.
+Du kan granska användarbehörigheter med den [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet.
 
 ```powershell
 PS C:\> Get-PSSessionConfiguration -Name 'MyJEAEndpoint' | Select-Object Permission

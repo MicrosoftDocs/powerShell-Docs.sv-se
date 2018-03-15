@@ -1,21 +1,21 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
-title: "Hämtar Information om detaljerad hjälp"
+title: "Få detaljerad hjälpinformation"
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: c786ce089073abccdf186dc1d9e8ee383f83655d
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 67e02b503acf4d683c5a190d6642dea384bbfad2
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="getting-detailed-help-information"></a>Hämtar Information om detaljerad hjälp
+# <a name="getting-detailed-help-information"></a>Få detaljerad hjälpinformation
 Windows PowerShell innehåller detaljerade hjälpavsnitt som beskriver begrepp för Windows PowerShell och Windows PowerShell-språk. Det finns även hjälpavsnitt för varje cmdlet och providern och hjälpavsnitt för många funktioner och skript.
 
 Du kan visa de här hjälpavsnitten i Kommandotolken eller visa senast uppdaterade versioner av dessa avsnitt i Microsoft TechNet Library. Många program som är värdar för Windows PowerShell, till exempel Windows PowerShell Integrated Scripting Environment, ange ytterligare hjälp-funktioner, till exempel sammanhangsberoende hjälp och kompilerade hjälpfilen (.chm).
 
 ## <a name="getting-help-for-cmdlets"></a>Få hjälp med cmdletar
-För att få hjälp om Windows PowerShell-cmdlets kan använda den [Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) cmdlet. Till exempel för att få hjälp med den [Get-ChildItem [m2]](https://technet.microsoft.com/en-us/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) cmdlet, skriv:
+För att få hjälp om Windows PowerShell-cmdlets kan använda den [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) cmdlet. Till exempel för att få hjälp med den [Get-ChildItem [m2]](https://technet.microsoft.com/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) cmdlet, skriv:
 
 ```
 get-help get-childitem
@@ -171,5 +171,5 @@ Information om hur du ska ge support online för dina hjälpavsnitt finns [about
 - [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
 - [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)
 - [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
-- [Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
+- [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
 

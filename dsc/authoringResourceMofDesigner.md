@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Med hjälp av verktyget resurs Designer"
-ms.openlocfilehash: c21602e219b5830877cc211e092e93bb7fc8ad9c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c39b48f67d3874ee3cd2f2704aeb7390fa186fe4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-the-resource-designer-tool"></a>Med hjälp av verktyget resurs Designer
 
@@ -15,7 +15,7 @@ ms.lasthandoff: 01/17/2018
 
 Verktyget resurs Designer är en uppsättning cmdlets som exponeras av den **xDscResourceDesigner** modulen som gör det enklare att skapa resurser för Windows PowerShell önskad tillstånd Configuration (DSC). Cmdletar i den här resursen hjälp för att skapa MOF-schemat, modulen skript och katalogstrukturen för din nya resurs. Läs mer om DSC resurser [skapa anpassade Windows PowerShell önskad tillstånd Configuration resurser](authoringResource.md).
 I det här avsnittet skapar vi en DSC-resurs som hanterar Active Directory-användare.
-Använd den [installera modulen](https://technet.microsoft.com/en-us/library/dn807162.aspx) för att installera den **xDscResourceDesigner** modul.
+Använd den [installera modulen](https://technet.microsoft.com/library/dn807162.aspx) för att installera den **xDscResourceDesigner** modul.
 
 >**Obs**: **installera modulen** ingår i den **PowerShellGet** module, som ingår i PowerShell 5.0. Du kan hämta den **PowerShellGet** -modul för PowerShell 3.0 och 4.0 på [PackageManagement PowerShell-moduler Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
 

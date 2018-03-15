@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: PowerShell-cmdlet
 title: "Installera och använda windows powershell-webbåtkomst"
-ms.openlocfilehash: 63e25fa2b1fc7c0a2b57763e337c25ece17a3296
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 2ad7a701dbb464088d6ed47d49a8dc3fb9b911f8
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installera och använda Windows PowerShell-webbåtkomst
 
@@ -29,7 +29,7 @@ Windows PowerShell Web Access-installation och konfiguration är en process i tr
 1. [Konfigurera en regel för begränsad auktorisering](#configure-a-restrictive-authorization-rule)
 
 Innan du installerar och konfigurerar Windows PowerShell Web Access rekommenderar vi att du läser handboken hela som innehåller instruktioner om hur du installerar säkra och avinstallera Windows PowerShell Web Access.
-Den [använder webbaserade Windows PowerShell-konsolen](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx) avsnittet beskriver hur användare loggar in på den webbaserade konsolen och omfattar begränsningar och skillnader mellan den webbaserade Windows PowerShell-konsolen och  **PowerShell.exe** konsolen. Slutanvändare av den webbaserade konsolen bör läsa [Använd webben baserat Windows PowerShell-konsolen](use-the-web-based-windows-powershell-console.md), men behöver inte läsa resten av den här guiden.
+Den [använder webbaserade Windows PowerShell-konsolen](https://technet.microsoft.com/library/hh831417(v=ws.11).aspx) avsnittet beskriver hur användare loggar in på den webbaserade konsolen och omfattar begränsningar och skillnader mellan den webbaserade Windows PowerShell-konsolen och  **PowerShell.exe** konsolen. Slutanvändare av den webbaserade konsolen bör läsa [Använd webben baserat Windows PowerShell-konsolen](use-the-web-based-windows-powershell-console.md), men behöver inte läsa resten av den här guiden.
 
 Det här avsnittet ger inte djupgående vägledning för IIS-webbserver-åtgärder. endast de steg som krävs för att konfigurera Windows PowerShell Web Access-gatewayen beskrivs i det här avsnittet. Mer information om hur du konfigurerar och säkrar webbplatser i IIS finns i IIS-dokumentationsresurserna i avsnittet Se även.
 
@@ -126,7 +126,7 @@ Du kan slutföra konfigurationen av Windows PowerShell Web Access antingen genom
 
 2. Skriv följande och tryck sedan på **Ange**.
 
-    **Install-PswaWebApplication - UseTestCertificate**
+    **Install-PswaWebApplication -UseTestCertificate**
 
   >**![Säkerhetsmeddelande](images/securitynote.jpeg) säkerhetsmeddelande**
   >
@@ -141,7 +141,7 @@ Följande inställningar konfigureras genom att köra cmdleten. Du kan ändra de
 - EnabledProtocols: http
 - PhysicalPath: %*windir*%/Web/PowerShellWebAccess/wwwroot
 
-**Exempel**:`Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
+**Exempel**: `Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
 
 I det här exemplet är webbplatsen för Windows PowerShell Web Access https://\<*server_name*\>/myWebApp.
 
@@ -212,7 +212,7 @@ Mer information om Windows PowerShell Web Access auktoriseringsregler och säker
 
     - På Windows **starta** , högerklicka på **Windows PowerShell**, och klicka sedan på **kör som administratör**.
 
-2. Valfritt steg för att begränsa användaråtkomsten med hjälp av sessionskonfigurationer: Verifiera att sessionskonfigurationer som du vill använda i dina regler redan finns. Om de inte ännu har skapats använder du instruktionerna för att skapa sessionskonfigurationer i [about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+2. Valfritt steg för att begränsa användaråtkomsten med hjälp av sessionskonfigurationer: Verifiera att sessionskonfigurationer som du vill använda i dina regler redan finns. Om de inte ännu har skapats använder du instruktionerna för att skapa sessionskonfigurationer i [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Skriv följande och tryck sedan på **Ange**.
 
@@ -224,7 +224,7 @@ Mer information om Windows PowerShell Web Access auktoriseringsregler och säker
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
-4. Kontrollera att regeln har skapats genom att köra den `Get-PswaAuthorizationRule` cmdlet, eller`Test-PswaAuthorizationRule -UserName <domain\user> -ComputerName <computer-name>`
+4. Kontrollera att regeln har skapats genom att köra den `Get-PswaAuthorizationRule` cmdlet, eller `Test-PswaAuthorizationRule -UserName <domain\user> -ComputerName <computer-name>`
 
 5. Till exempel `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
@@ -290,13 +290,13 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
 
 9. Följ stegen i proceduren för att konfigurera ett SSL-certifikat i IIS manager](#to-configure-an-ssl-certificate-in-iis-Manager) i det här avsnittet.
 
-10. ![](images/SecurityNote.jpeg)Valfritt säkerhetssteg:
+10. ![](images/SecurityNote.jpeg) Valfritt säkerhetssteg:
 
     Med webbplatsen vald i trädfönstret, dubbelklickar du på **SSL-inställningar** i innehållsfönstret. Välj **Kräv SSL**, och klicka sedan på den **åtgärder** rutan klickar du på **tillämpa**. Valfritt: i den **SSL-inställningar** rutan du kan kräva att användare som ansluter till Windows PowerShell Web Access-webbplatsen har klientcertifikat. Klientcertifikat hjälper att kontrollera identiteten på användare med klientenheter. Mer information om hur klientcertifikat kan öka säkerheten för Windows PowerShell Web Access finns [auktoriseringsregler och säkerhet funktioner i Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md) i den här guiden.
 
 11. Öppna en webbläsarsession på en klientenhet. Mer information om vilka webbläsare och enheter finns [webbläsare och klientenheter som stöder](#browser-and-client-device-support) i det här avsnittet.
 
-12. Öppna den nya Windows PowerShell Web Access-webbplatsen  **https://\<*gateway servernamn*\>/pswa**.
+12. Öppna den nya Windows PowerShell Web Access-webbplatsen **https://\<*gateway servernamn*\>/pswa**.
 
     Webbläsaren bör visa Windows PowerShell Web Access inloggning konsolsidan.
 
@@ -361,7 +361,7 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
 
 15. Öppna den nya Windows PowerShell Web Access-webbplatsen.
 
-    Eftersom rotwebbplatsen pekar till mappen Windows PowerShell Web Access, bör webbläsaren Visa Windows PowerShell Web Access inloggningssida visas när du öppnar  **https://\<*gateway_server_name* \>**. Du behöver inte lägga till **/pswa** till URL: en.
+    Eftersom rotwebbplatsen pekar till mappen Windows PowerShell Web Access, bör webbläsaren Visa Windows PowerShell Web Access inloggningssida visas när du öppnar **https://\<*gateway_server_name* \>**. Du behöver inte lägga till **/pswa** till URL: en.
 
     >**![Obs](images/note.jpeg) Obs!** 
     > 
@@ -384,7 +384,7 @@ Mer information om Windows PowerShell Web Access auktoriseringsregler och säker
 
 2. ![Säkerhetsmeddelande](images/SecurityNote.jpeg) Valfria steg för att begränsa användaråtkomsten med hjälp av sessionskonfigurationer:
 
-    Kontrollera om de sessionskonfigurationer som du vill använda i dina regler redan finns. Om de inte ännu har skapats använder du instruktionerna för att skapa sessionskonfigurationer i [about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+    Kontrollera om de sessionskonfigurationer som du vill använda i dina regler redan finns. Om de inte ännu har skapats använder du instruktionerna för att skapa sessionskonfigurationer i [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Skriv följande och tryck sedan på **Ange**.
 
@@ -418,7 +418,7 @@ Använd alltid ett giltigt SSL-certifikat som har signerats av en certifikatutf�
 
     - Klicka på **skapa certifikatbegäran** att begära ett certifikat från en Certifikatutfärdare som [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), eller [GeoTrust](https://www.geotrust.com/). Certifikatets nätverksnamn måste matcha värdhuvudet i begäran.
 
-      Exempel: om klientwebbläsaren begär http://www.contoso.com/, måste nätverksnamnet också vara http://www.contoso.com/. Detta är det mest säkra och rekommenderade alternativet för att tillhandahålla en gateway för Windows PowerShell-webbåtkomst med ett certifikat.
+      Om exempelvis klientwebbläsaren begär http://www.contoso.com/, måste nätverksnamnet också vara http://www.contoso.com/. Detta är det mest säkra och rekommenderade alternativet för att tillhandahålla en gateway för Windows PowerShell-webbåtkomst med ett certifikat.
 
     - Klicka på **skapa ett självsignerat certifikat** att skapa ett certifikat som du kan använda direkt och få det signerat senare av en Certifikatutfärdare om så önskas. Ange ett eget namn för det självsignerade certifikatet som **Windows PowerShell Web Access**. Det här alternativet anses inte vara säkert och rekommenderas endast för en privat testmiljö.
 

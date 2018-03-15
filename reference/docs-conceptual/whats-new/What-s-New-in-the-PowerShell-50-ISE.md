@@ -3,19 +3,19 @@ ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: Vilka s i PowerShell 50 ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 89dcc905ce200d06029e148c9675269e6f518fa3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 9fd25a4759602bebf2b5df2c17d0c816a15e5e2b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="what39s-new-in-the-windows-powershell-ise"></a>Vad &#39; s nya i Windows PowerShell ISE
+# <a name="what39s-new-in-the-windows-powershell-ise"></a>Vad&#39;s nya i Windows PowerShell ISE
 Det här avsnittet beskriver nya och uppdaterade funktioner som har införts i versioner av Windows PowerShell Integrated Scripting Environment (ISE).
 
 ## <a name="feature-description"></a>Funktionsbeskrivning
 Windows PowerShell ISE är ett program som gör att du kan skriva, köra och testa skript och moduler i en grafisk och intuitiv miljö. Viktiga funktioner, till exempel syntax färgläggning fliken slutförande, visual felsökning, Unicode-kompatibilitet och sammanhangsberoende hjälp ger en omfattande scripting upplevelse.
 
-En översikt över Windows PowerShell ISE finns [översikt över Windows PowerShell Integrated Scripting Environment](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
+En översikt över Windows PowerShell ISE finns [översikt över Windows PowerShell Integrated Scripting Environment](https://technet.microsoft.com/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
 
 ## <a name="new-and-changed-functionality-in-windows-powershell-ise"></a>Nya och ändrade funktioner i Windows PowerShell ISE
 I följande tabell visas de nya och förändrade funktionerna för den här versionen av Windows PowerShell ISE i Windows PowerShell.
@@ -167,7 +167,7 @@ Andra Windows PowerShell ISE redigera funktioner omfattar:
 
 - **XML-syntax färgläggning**Windows PowerShell ISE färger nu XML-syntaxen på samma sätt som den färger Windows PowerShell-syntax.
 
-- **Klammerparentes matchar** Windows PowerShell ISE innehåller matchande klammerparentes och markering och kan användas på följande sätt: (till exempel med hjälp av den **går du till matchar** kommando eller **Ctrl +]** söker efter den avslutande klammerparentesen, om du har en inledande klammerparentesen markerat).
+- **Klammerparentes matchar** Windows PowerShell ISE innehåller matchande klammerparentes och markering och kan användas på följande sätt: (till exempel med hjälp av den **går du till matchar** kommando eller **Ctrl +]** hittar den klammerparentes, om du har en inledande klammerparentesen markerat).
 
 - **Visa disposition** i Skriptfönster stöder disposition, vilket gör att dölja eller expandera kodavsnitt genom att klicka på plus eller minus loggar i vänster marginal. Du kan använda klammerparenteser eller **#region** och **#endregion** taggar om du vill markera början eller slutet av ett avsnitt ska döljas. Om du vill visa eller Dölj alla regioner, trycker du på **Ctrl + M**.
 
@@ -222,7 +222,7 @@ Visa-kommandot är nytt Windows PowerShell ISE 3.0.
 ## <a name="see-also"></a>Se även
 Mer information om hur du använder Windows PowerShell ISE i Windows PowerShell finns i följande länkar.
 
-- [Med hjälp av Windows PowerShell Integrated Scripting Environment](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [Utforska Windows PowerShell Integrated Scripting Environment](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
 - [ISE på TechNet Wiki](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 - [Script Center](http://technet.microsoft.com/scriptcenter/default)
 

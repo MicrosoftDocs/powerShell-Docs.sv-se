@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
 keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: e4e5c6fff2eea12b9cfbba325d5519f6266218e8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 510e1baa2933932cfd4c3bcb4e0973f3eb8095f3
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="system-requirements"></a>Systemkrav
 
@@ -18,9 +18,9 @@ ms.lasthandoff: 06/12/2017
     |------------------------|--------------|------------------|----------------------| --------------|
     | Windows Server 2012 R2 |  |  | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
     | Windows Server 2012    |  |  | [W2K12-KB3134759-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) |
-    | Windows Server 2008 R2 SP1 | Alla utom IA64 | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) och [.NET Framework 4.5 eller senare](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) är installerade| [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)|
-    | Windows 8.1 | Pro, Enterprise | | **x64:**[Win8.1AndW2K12R2-KB3134758-x64.msu  ](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86:**[Win8.1-KB3134758-x86.msu  ](http://go.microsoft.com/fwlink/?LinkID=717963)|
-    | Windows 7 SP1 | Alla | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) och [.NET Framework 4.5 eller senare](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) är installerade | **x64:**[Win7AndW2K8R2-KB3134760-x64.msu  ](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86:**[Win7-KB3134760-x86.msu  ](http://go.microsoft.com/fwlink/?LinkID=717962)|
+    | Windows Server 2008 R2 SP1 | Alla utom IA64 | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) och [.NET Framework 4.5 eller senare](https://msdn.microsoft.com/library/5a4x27ek.aspx) är installerade| [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)|
+    | Windows 8.1 | Pro, Enterprise | | **x64:**  [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86:**  [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963)|
+    | Windows 7 SP1 | Alla | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) och [.NET Framework 4.5 eller senare](https://msdn.microsoft.com/library/5a4x27ek.aspx) är installerade | **x64:**  [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86:**  [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962)|
 
 # <a name="installation-instructions"></a>Instruktioner för installation
 
@@ -48,14 +48,14 @@ ms.lasthandoff: 06/12/2017
 Kontrollera att följande krav är uppfyllda:
 - Senaste servicepack installerat.
 - [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) är installerad.
-- [.NET framework 4.5 eller senare](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) är installerad.
+- [.NET framework 4.5 eller senare](https://msdn.microsoft.com/library/5a4x27ek.aspx) är installerad.
 
 **WMF 4.0 beroende**
 
 Windows Server 2008 R2 SP1 och Windows 7 SP1-system har inbyggda PowerShell 2.0, WinRM och WMI. WMF 3.0 och WMF 4.0 paket som uppdaterar dessa inbyggda komponenter har getts ut efter lanseringen av Windows Server 2008 R2 SP1 och Windows 7 SP1. Installera/avinstallera WMF 3.0 och WMF 4.0-paket som upptäckts problem i följande uppgraderingsmetod:
 
-- Inbyggda--> WMF 4.0
-- Inbyggda--> WMF 3.0--> WMF4.0. 
+- Built-in --> WMF 4.0
+- Built-in --> WMF 3.0 --> WMF4.0. 
 
 Vi har löst alla problem i WMF 4.0-paket. Det är därför en förutsättning för WMF 4.0 för att installera WMF 5.0 på Windows Server 2008 R2 SP1 och Windows 7 SP1. Nedan visas specifika problem som kan uppstå om du inte installerar WMF 4.0 innan du uppgraderar till WMF 5.0:
 

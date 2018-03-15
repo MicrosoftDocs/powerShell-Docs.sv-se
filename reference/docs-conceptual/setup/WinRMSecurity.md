@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: WinRMSecurity
-ms.openlocfilehash: 65cf12466c9dc8fc8b77d79b0d63a6ae61e64d60
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 0522844fded847a3fd45c1b3890a141357edb2b2
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell fjärrkommunikation säkerhetsaspekter
 
@@ -14,7 +14,7 @@ PowerShell-fjärrkommunikation är det rekommenderade sättet att hantera Window
 
 ## <a name="what-is-powershell-remoting"></a>Vad är PowerShell-fjärrkommunikation?
 
-PowerShell-fjärrkommunikation använder [Windows Remote Management (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx), vilket är Microsofts implementering av den [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) protokoll, så att användarna kan köra PowerShell kommandon på fjärrdatorer. Du hittar mer information om hur du använder PowerShell-fjärrkommunikation på [köra fjärrkommandon](https://technet.microsoft.com/en-us/library/dd819505.aspx).
+PowerShell-fjärrkommunikation använder [Windows Remote Management (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx), vilket är Microsofts implementering av den [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) protokoll, så att användarna kan köra PowerShell kommandon på fjärrdatorer. Du hittar mer information om hur du använder PowerShell-fjärrkommunikation på [köra fjärrkommandon](https://technet.microsoft.com/library/dd819505.aspx).
 
 PowerShell-fjärrkommunikation är inte detsamma som att använda den **ComputerName** parametern för en cmdlet ska köras på en fjärrdator som använder Remote Procedure Call (RPC) som dess underliggande protokoll.
 
@@ -33,7 +33,7 @@ Standardregel för Windows-brandväggen för PowerShell-fjärrkommunikation godk
 
 ## <a name="process-isolation"></a>Processisolering av
 
-PowerShell-fjärrkommunikation använder [Windows Remote Management (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426) för kommunikation mellan datorer. WinRM körs som en tjänst under kontot Nätverkstjänst, och skapas isolerade processer som körs som användarkonton till värden PowerShell instanser. En instans av PowerShell som körs som en användare inte har åtkomst till en process som kör en instans av PowerShell som en annan användare.
+PowerShell-fjärrkommunikation använder [Windows Remote Management (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426) för kommunikation mellan datorer. WinRM körs som en tjänst under kontot Nätverkstjänst, och skapas isolerade processer som körs som användarkonton till värden PowerShell instanser. En instans av PowerShell som körs som en användare inte har åtkomst till en process som kör en instans av PowerShell som en annan användare.
 
 ## <a name="event-logs-generated-by-powershell-remoting"></a>Händelseloggar som genererats av PowerShell-fjärrkommunikation
 
@@ -50,10 +50,10 @@ Oavsett transportprotokollet används (HTTP eller HTTPS) krypterar PowerShell-fj
 
 Autentisering bekräftar identiteten för klient till server- och helst - servern till klienten.
     
-När en klient ansluter till en domänserver namn (d.v.s.: server01, eller server01.contoso.com), är standardautentiseringsprotokollet [Kerberos](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378747.aspx).
+När en klient ansluter till en domänserver namn (d.v.s.: server01, eller server01.contoso.com), är standardautentiseringsprotokollet [Kerberos](https://msdn.microsoft.com/library/windows/desktop/aa378747.aspx).
 Kerberos garanterar både användar-ID och serveridentitet utan att skicka någon form av återanvändbara autentiseringsuppgifter.
 
-När en klient ansluter till en domänserver med dess IP-adress eller ansluter till en arbetsgruppsserver, är Kerberos-autentisering inte möjligt. I så fall PowerShell-fjärrkommunikation är beroende av [NTLM-autentiseringsprotokollet](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378749.aspx). NTLM-autentiseringsprotokollet garanterar användaridentiteten utan att skicka alla slags kan delegeras autentiseringsuppgifter. För att bevisa användaridentitet kräver NTLM-protokollet att både klient och server compute en sessionsnyckel från användarens lösenord utan att någonsin utbyta själva lösenordet. Servern vanligtvis vet inte lösenordet, så att den kommunicerar med domänkontrollanten som känner till användarens lösenord och beräknar sessionsnyckeln för servern. 
+När en klient ansluter till en domänserver med dess IP-adress eller ansluter till en arbetsgruppsserver, är Kerberos-autentisering inte möjligt. I så fall PowerShell-fjärrkommunikation är beroende av [NTLM-autentiseringsprotokollet](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx). NTLM-autentiseringsprotokollet garanterar användaridentiteten utan att skicka alla slags kan delegeras autentiseringsuppgifter. För att bevisa användaridentitet kräver NTLM-protokollet att både klient och server compute en sessionsnyckel från användarens lösenord utan att någonsin utbyta själva lösenordet. Servern vanligtvis vet inte lösenordet, så att den kommunicerar med domänkontrollanten som känner till användarens lösenord och beräknar sessionsnyckeln för servern. 
       
 NTLM-protokollet garanterar inte, men serveridentitet. Precis som med alla protokoll som använder NTLM för autentisering, kunde en angripare med tillgång till en domänansluten dator datorkontot anropa domänkontrollanten för att beräkna NTLM-sessionsnyckel och därmed personifiera servern.
 

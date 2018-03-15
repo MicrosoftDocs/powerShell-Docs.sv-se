@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Felsökning av DSC"
-ms.openlocfilehash: 4141e1f3304460dcaf310ce603fdc5d9550a5069
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: cdb11a80daecec0e0d01071752612663ac69ac6d
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting-dsc"></a>Felsökning av DSC
 
@@ -21,7 +21,7 @@ Windows PowerShell önskad tillstånd Configuration (DSC) är beroende av WinRM.
 
 ## <a name="using-get-dscconfigurationstatus"></a>Med hjälp av Get-DscConfigurationStatus
 
-Den [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) cmdlet hämtar information om status för konfiguration från målnoden. En omfattande objekt returneras som innehåller översiktlig information om huruvida kör konfigurationen lyckades eller inte. Du kan prova objektet för att identifiera information om Kör som-konfiguration:
+Den [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet hämtar information om status för konfiguration från målnoden. En omfattande objekt returneras som innehåller översiktlig information om huruvida kör konfigurationen lyckades eller inte. Du kan prova objektet för att identifiera information om Kör som-konfiguration:
 
 * Alla resurser som misslyckades
 * Alla resurser som har begärt en omstart
@@ -117,7 +117,7 @@ Consistency engine was run successfully.
 
 DSC-händelser loggas i en viss struktur som gör att användaren att aggregera händelser från ett DSC-jobb. Strukturen är följande:
 
-**Jobb-ID:<Guid>**
+**Jobb-ID: <Guid>**
 **<Event Message>**
 
 ## <a name="gathering-events-from-a-single-dsc-operation"></a>Samla in händelser från en enda DSC-åtgärd
@@ -232,7 +232,7 @@ Displaying messages from built-in DSC resources:
 
 ### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4: felmeddelanden som loggats för senaste misslyckade åtgärder
 
-`$SeparateDscOperations[0].Group`innehåller en uppsättning händelser för den senaste åtgärden. Kör den `Where-Object` cmdlet för att filtrera händelser utifrån deras nivå visningsnamn. Resultatet lagras i den `$myFailedEvent` variabel, vilket kan medföra ytterligare ut för att få meddelandet:
+`$SeparateDscOperations[0].Group` innehåller en uppsättning händelser för den senaste åtgärden. Kör den `Where-Object` cmdlet för att filtrera händelser utifrån deras nivå visningsnamn. Resultatet lagras i den `$myFailedEvent` variabel, vilket kan medföra ytterligare ut för att få meddelandet:
 
 ```powershell
 PS C:\> $myFailedEvent = ($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
@@ -247,7 +247,7 @@ Error Code : 1
 
 ### <a name="5-all-events-generated-for-a-particular-job-id"></a>5: alla händelser som genererats för ett specifikt jobb-ID.
 
-`$SeparateDscOperations`är en matris med grupper som har namn som unikt jobb-ID. Genom att köra den `Where-Object` cmdlet, som du kan extrahera de grupperna av händelser som har ett specifikt jobb-ID:
+`$SeparateDscOperations` är en matris med grupper som har namn som unikt jobb-ID. Genom att köra den `Where-Object` cmdlet, som du kan extrahera de grupperna av händelser som har ett specifikt jobb-ID:
 
 ```powershell
 PS C:\> ($SeparateDscOperations | Where-Object {$_.Name -eq $jobX} ).Group
@@ -621,5 +621,5 @@ onlyProperty                            PSComputerName
 * [Skapa anpassade Windows PowerShell Desired State Configuration-resurser](authoringResource.md)
 
 ### <a name="other-resources"></a>Andra resurser
-* [Windows PowerShell Desired State Configuration-Cmdlets](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
+* [Windows PowerShell Desired State Configuration-Cmdlets](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
 

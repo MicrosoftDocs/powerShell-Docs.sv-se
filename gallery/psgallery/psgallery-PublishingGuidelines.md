@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: galleriet, powershell, cmdlet, psgallery
 description: "Riktlinjer för utgivare"
 title: "PowerShell-galleriet publicering riktlinjer och bästa praxis"
-ms.openlocfilehash: 882a33c00cc024ad2bbb05a3283e058a61035e3a
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 25bbe31bcc805808c311829598e3c29991f72aad
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery publicering riktlinjer och bästa praxis
 
@@ -19,7 +19,7 @@ Objekt som är publicerade följa dessa riktlinjer tas mer troligt att installer
 Nedan följer riktlinjer för vad som gör ett bra PowerShell galleriobjekt, vilka valfria inställningar för manifestet är viktigast, förbättra din kod med feedback från första granskare och [Powershell-skript Analyzer](https://aka.ms/psscriptanalyzer), versionshantering din modul, dokumentation, tester och exempel på hur du använder du har delat.
 En stor del av den här dokumentationen följer riktlinjerna för publicering [hög kvalitet DSC resurs moduler](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
-Publicera ett objekt i PowerShell-galleriet säkerhetsnivån finns [skapa och publicera en artikel](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/creating-and-publishing-an-item).
+Publicera ett objekt i PowerShell-galleriet säkerhetsnivån finns [skapa och publicera en artikel](https://msdn.microsoft.com/powershell/gallery/psgallery/creating-and-publishing-an-item).
 
 Feedback om dessa riktlinjer välkomnade. Om du har feedback, öppnar du problem i våra [Github dokumentationen databasen](https://github.com/powershell/powershell-docs/).
 
@@ -71,7 +71,7 @@ Det finns flera artiklar i MSDN om hur du skapar dokumentation med PowerShell-ar
 * Riktlinjer för att tillhandahålla hjälp finns i [så att skriva Cmdlet](https://go.microsoft.com/fwlink/?LinkID=123415)
 * Skapa cmdlet-hjälpen, vilket är det bästa sättet för PowerShell-skript, funktion eller cmdlet.
   Information om hur du skapar cmdlet-hjälpen börjar du med [så att skriva Cmdlet](https://go.microsoft.com/fwlink/?LinkID=123415) i MSDN library.
-  Om du vill lägga till hjälp i ett skript, se [om kommentar baserat hjälpa](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
+  Om du vill lägga till hjälp i ett skript, se [om kommentar baserat hjälpa](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
 * Många moduler kan du också inkludera dokumentationen i textformat, till exempel MarkDown-filer.
   Det kan vara särskilt användbart när det finns en projektwebbplats i Github, där Markdown är hårt belastat format.
   Det bästa sättet är att använda [Markdown i Github](https://help.github.com/categories/writing-on-github/)

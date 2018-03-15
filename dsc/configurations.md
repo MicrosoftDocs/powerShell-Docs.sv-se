@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-konfigurationer
-ms.openlocfilehash: 3fd2846d0fbfb0ae9baa44cde66afe1f5be65cf7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 14db60126fd6c3d11d425a28c749a8e8b81122ca
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-configurations"></a>DSC-konfigurationer
 
@@ -62,7 +62,7 @@ Configuration MyDscConfiguration {
         }
     }
 }
-MyDscConfiguration -ComputerName <MyComputer>
+MyDscConfiguration -ComputerName $ComputerName
 
 ```
 
@@ -141,11 +141,11 @@ Configuration DependsOnExample {
 ## <a name="using-new-resources-in-your-configuration"></a>Med nya resurser i din konfiguration
 
 Om du körde i föregående exempel kanske såg du att du har en varning att du använder en resurs utan att uttryckligen importera den.
-Idag DSC levereras med 12 resurser som en del av modulen PSDesiredStateConfiguration. Andra resurser i externa moduler måste placeras i `$env:PSModulePath` för att kunna identifieras av MGM. En ny cmdlet [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), kan användas för att avgöra vilka resurser som är installerade i systemet och kan användas av MGM. När dessa moduler har placerats i `$env:PSModulePath` och kan identifieras av [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), de behöver inte läsas in i din konfiguration. 
+Idag DSC levereras med 12 resurser som en del av modulen PSDesiredStateConfiguration. Andra resurser i externa moduler måste placeras i `$env:PSModulePath` för att kunna identifieras av MGM. En ny cmdlet [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), kan användas för att avgöra vilka resurser som är installerade i systemet och kan användas av MGM. När dessa moduler har placerats i `$env:PSModulePath` och kan identifieras av [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), de behöver inte läsas in i din konfiguration. 
 **Importera DscResource** är en dynamisk nyckelord som kan endast identifieras inom en **Configuration** block (dvs. det inte är en cmdlet). 
 **Importera DscResource** stöder två parametrar:
 - **Modulnamn** är det rekommenderade sättet att använda **importera DscResource**. Namnet på den modul som innehåller resurser som ska importeras (samt en strängmatris Modulnamnen) accepteras. 
-- **Namnet** är namnet på resursen som ska importeras. Detta är inte ett eget namn som ”namn” som returneras av [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), men Klassnamnet används när definierar resursschemat (returneras som **ResourceType** av [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)). 
+- **Namnet** är namnet på resursen som ska importeras. Detta är inte ett eget namn som ”namn” som returneras av [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), men Klassnamnet används när definierar resursschemat (returneras som **ResourceType** av [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)). 
 
 ## <a name="see-also"></a>Se även
 * [Windows PowerShell Desired State Configuration-översikt](overview.md)

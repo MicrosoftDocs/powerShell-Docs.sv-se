@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Hämta server bästa praxis"
-ms.openlocfilehash: 045f98475d6182b329ecf048038a98e933684a82
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 3d0ab969b7a0de9d428becc4b9bdb124a7a44c2c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="pull-server-best-practices"></a>Hämta server bästa praxis
 
@@ -24,7 +24,7 @@ Publicerade | April 2015
 ## <a name="abstract"></a>Abstrakt
 
 Det här dokumentet är utformad att ge officiella vägledning för alla planera för en Windows PowerShell Desired State Configuration pull-serverimplementering. En pull-server är en enkel tjänst som tar endast minuter att distribuera. Även om det här dokumentet kommer att erbjuda teknisk vägledning som kan användas i en distribution, är värdet för det här dokumentet som en referens för bästa praxis och vad du ska tänka på innan du distribuerar.
-Läsare bör ha grundläggande kunskaper med DSC och de termer som används för att beskriva komponenterna som ingår i en DSC-distribution. Mer information finns i [Windows PowerShell Desired Configuration översikt över](https://technet.microsoft.com/en-us/library/dn249912.aspx) avsnittet.
+Läsare bör ha grundläggande kunskaper med DSC och de termer som används för att beskriva komponenterna som ingår i en DSC-distribution. Mer information finns i [Windows PowerShell Desired Configuration översikt över](https://technet.microsoft.com/library/dn249912.aspx) avsnittet.
 Som DSC är förväntat att utvecklas i molnet takt förväntas också den underliggande tekniken inklusive hämtningsservern att utvecklas och ger nya möjligheter. Det här dokumentet innehåller en versionstabell i tillägget som innehåller referenser till tidigare versioner och referenser till framtida söker lösningar för att uppmuntra framtida Designer.
 
 Det här dokumentet två huvuddelar:
@@ -43,7 +43,7 @@ Windows PowerShell innehåller en uppsättning tillägg för Desired State Confi
 ### <a name="pull-server-role"></a>Pull-serverrollen  
 En pull-server är en centraliserad tjänst för att lagra konfigurationer som kommer att vara tillgänglig för målnoder.
  
-Pull-serverrollen kan distribueras som en webbserver-instans eller en SMB filresurs. Web server-kapacitet innehåller ett OData-gränssnitt och att inkludera välja funktioner för målnoder rapporterar bekräftelse av lyckats eller misslyckats eftersom konfigurationer tillämpas. Den här funktionen är användbar i miljöer där det finns ett stort antal målnoder. När du har konfigurerat en målnod (kallas även en klient) för att peka på hämtningsservern i den senaste konfigurationen hämtas och aktiveras data och alla nödvändiga skript. Detta kan inträffa som en enstaka distribution eller som ett nytt förekommer jobb som är dessutom hämtningsservern i en viktig tillgång för att hantera ändring i större skala. Mer information finns i [Windows PowerShell önskad tillstånd hämtar Konfigurationsservrar](https://technet.microsoft.com/en-us/library/dn249913.aspx) och [Push och Pull-konfigurationslägen](https://technet.microsoft.com/en-us/library/dn249913.aspx).
+Pull-serverrollen kan distribueras som en webbserver-instans eller en SMB filresurs. Web server-kapacitet innehåller ett OData-gränssnitt och att inkludera välja funktioner för målnoder rapporterar bekräftelse av lyckats eller misslyckats eftersom konfigurationer tillämpas. Den här funktionen är användbar i miljöer där det finns ett stort antal målnoder. När du har konfigurerat en målnod (kallas även en klient) för att peka på hämtningsservern i den senaste konfigurationen hämtas och aktiveras data och alla nödvändiga skript. Detta kan inträffa som en enstaka distribution eller som ett nytt förekommer jobb som är dessutom hämtningsservern i en viktig tillgång för att hantera ändring i större skala. Mer information finns i [Windows PowerShell önskad tillstånd hämtar Konfigurationsservrar](https://technet.microsoft.com/library/dn249913.aspx) och [Push och Pull-konfigurationslägen](https://technet.microsoft.com/library/dn249913.aspx).
 
 ## <a name="configuration-planning"></a>Planera konfiguration
 

@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Desired State Configuration-översikt för beslutsfattare"
-ms.openlocfilehash: cbde5d22f9cf118485a0302e53ee0a75eb4b8843
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 42335d674bd23a109ad8f818d3e22ef221884ca7
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Desired State Configuration-översikt för beslutsfattare
 
@@ -17,7 +17,7 @@ Det här dokumentet beskriver fördelarna med hjälp av PowerShell önskad tills
 
 Windows PowerShell önskad tillstånd Configuration (DSC) är en plattform för hantering av konfiguration inbyggd i Windows som baseras på öppna standarder. DSC är tillräckligt flexibelt för att fungera på ett tillförlitligt sätt och konsekvent i varje steg i livscykeln för distributionen (utveckling, testa, Förproduktion, produktion) samt under skalbar. 
 
-DSC fokuserad på ”[konfigurationer](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)”.
+DSC fokuserad på ”[konfigurationer](https://msdn.microsoft.com/powershell/dsc/configurations)”.
 En konfiguration är en lätt att läsa dokumentet som beskriver en miljö som består av datorer (”noder”) med specifika egenskaper. Dessa egenskaper kan vara så enkelt som att säkerställa en specifik Windows-funktionen är aktiverad eller så komplicerad som distribuerar SharePoint. 
 
 DSC har också övervakning och rapportering inbyggda. Om ett system som inte längre är kompatibel, DSC rera en avisering och vidta åtgärder för att korrigera systemet. 
@@ -35,11 +35,11 @@ Konfigurationer är också delas via den [PowerShell-galleriet](https://powershe
 
 [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) är en kombination av personer, processer och verktyg som ger snabb distribution och iteration fokuserar på att leverera värde för slutanvändare om interna eller externa. DSC har utformats med DevOps i åtanke. Med en enda konfiguration definiera en miljö innebär att utvecklare kan koda deras krav till en konfiguration, kontrollera att konfigurationen till källkontroll och team kan enkelt distribuera kod utan att behöva gå igenom felbenägna manuella processer. 
 
-Konfigurationer är också [datadrivna](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), vilket gör det enklare för ops team att identifiera och ändra miljöer utan åtgärder från utvecklare. 
+Konfigurationer är också [datadrivna](https://msdn.microsoft.com/powershell/dsc/configdata), vilket gör det enklare för ops team att identifiera och ändra miljöer utan åtgärder från utvecklare. 
 
 ## <a name="desired-state-configuration-on--and-off-premises"></a>Desired State Configuration och inaktivera-lokalt
 
-DSC kan användas för att hantera både lokala och ej lokala distributioner. Lokala lösningar kan DSC har en [hämtningsservern](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver) som kan användas för att centralisera hanteringen av datorer och rapportera om deras status. För molnlösningar kan DSC användas överallt där Windows kan användas. Det finns särskilda erbjudanden från Azure som bygger på Desired State Configuration [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/), vilket centraliserar rapportering av DSC. 
+DSC kan användas för att hantera både lokala och ej lokala distributioner. Lokala lösningar kan DSC har en [hämtningsservern](https://msdn.microsoft.com/powershell/dsc/pullserver) som kan användas för att centralisera hanteringen av datorer och rapportera om deras status. För molnlösningar kan DSC användas överallt där Windows kan användas. Det finns särskilda erbjudanden från Azure som bygger på Desired State Configuration [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/), vilket centraliserar rapportering av DSC. 
 
 ## <a name="dsc-and-compatibility"></a>Kompatibilitet och DSC
 

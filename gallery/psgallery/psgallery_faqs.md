@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: galleriet, powershell, cmdlet, psgallery
 title: psgallery_faqs
-ms.openlocfilehash: 80aaaa5e50e1bd85b93df721a4859e3020d1f315
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b856c44f3733d4a7c236d901edb391091d9d546e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="frequently-asked-questions"></a>Vanliga frågor och svar
 
@@ -18,7 +18,7 @@ En PowerShell-modul är en återanvändbara paket som innehåller alla funktione
 
 ## <a name="what-is-a-powershell-script"></a>Vad är ett PowerShell-skript?
 
-Ett PowerShell-skript är en serie kommandon som lagras i en .ps1-fil för att aktivera återanvändning och delning. PowerShell-arbetsflöden är också PowerShell-skript som beskriver en uppsättning uppgifter och ange ordningsföljd för dessa aktiviteter. Mer information finns [komma igång med PowerShell-arbetsflöde](https://technet.microsoft.com/en-us/library/jj134242.aspx).
+Ett PowerShell-skript är en serie kommandon som lagras i en .ps1-fil för att aktivera återanvändning och delning. PowerShell-arbetsflöden är också PowerShell-skript som beskriver en uppsättning uppgifter och ange ordningsföljd för dessa aktiviteter. Mer information finns [komma igång med PowerShell-arbetsflöde](https://technet.microsoft.com/library/jj134242.aspx).
 
 ## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>Vad är PowerShell-skript från PowerShell-moduler?
 
@@ -35,7 +35,7 @@ När du har registrerat i galleriet, använda den [publicera modulen](https://go
 
 **Du behöver inte registrera dig eller logga in i galleriet så att installera eller spara objekt.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-an-item-to-the-powershell-gallery-what-does-that-mean"></a>Jag har fått ”kunde inte bearbeta begäran. ”Den angivna API-nyckeln är ogiltig eller har inte behörighet att komma åt det angivna paketet”.. Fjärrservern returnerade ett fel: (403) nekad ”. fel när jag försöker publicera ett objekt till PowerShell-galleriet. Vad betyder det?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-an-item-to-the-powershell-gallery-what-does-that-mean"></a>Jag har fått ”kunde inte bearbeta begäran. ”Den angivna API-nyckeln är ogiltig eller har inte behörighet att komma åt det angivna paketet”. Fjärrservern returnerade ett fel: (403) nekad ”. fel när jag försöker publicera ett objekt till PowerShell-galleriet. Vad betyder det?
 
 Det här felet kan inträffa av följande skäl:
 
@@ -48,7 +48,7 @@ Det här felet kan inträffa av följande skäl:
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>Varför inte kan jag logga in med Mina personliga konto men jag kan inte logga in igår?
 
-Tänk på att ditt konto i galleriet inte hantera ändringar i din primära e-postalias. Mer information finns i [Microsoft e-post-alias](https://windows.microsoft.com/en-us/windows/outlook/add-alias-account).
+Tänk på att ditt konto i galleriet inte hantera ändringar i din primära e-postalias. Mer information finns i [Microsoft e-post-alias](https://windows.microsoft.com/windows/outlook/add-alias-account).
 
 ## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>Varför visas inte alla galleriobjekt när du markerar alla kryssrutor för kategori på fliken objekt?
 
@@ -156,7 +156,7 @@ Därför **PowerShellGet** kräver en av följande operativsystem:
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** kräver .NET Framework 4.5 eller senare. Du kan installera .NET Framework 4.5 eller senare från [här](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx).
+**PowerShellGet** kräver .NET Framework 4.5 eller senare. Du kan installera .NET Framework 4.5 eller senare från [här](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
 ## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>Är det möjligt att reservera namnen på objekten som kommer att publiceras i framtiden?
 

@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea powershell säkerhet"
 title: JEA roll funktioner
-ms.openlocfilehash: 10f5f390daccbb012be6ee7272041e777810ee12
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 083cab3b44348168fe20e8355f5076b28be78702
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-role-capabilities"></a>JEA roll funktioner
 
@@ -86,7 +86,7 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 ```
 
 > [!NOTE]
-> Den [vanliga PowerShell-parametrar](https://technet.microsoft.com/en-us/library/hh847884.aspx) tillåts alltid, även om du begränsar tillgängliga parametrar.
+> Den [vanliga PowerShell-parametrar](https://technet.microsoft.com/library/hh847884.aspx) tillåts alltid, även om du begränsar tillgängliga parametrar.
 > Du bör inte explicit lista dem i fältet parametrar.
 
 I tabellen nedan beskrivs de olika sätt som du kan anpassa en synlig cmdlet eller funktion.
@@ -111,7 +111,7 @@ Du kan inte använda både en ValidatePattern och ValidateSet samma cmdlet eller
 
 Om du gör åsidosätter ValidatePattern ValidateSet.
 
-Mer information om ValidatePattern kolla [detta *artikel från Hey, Scripting Guy!* efter](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) och [PowerShell reguljära uttryck](https://technet.microsoft.com/en-us/library/hh847880.aspx) refererar till innehåll.
+Mer information om ValidatePattern kolla [detta *artikel från Hey, Scripting Guy!* efter](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) och [PowerShell reguljära uttryck](https://technet.microsoft.com/library/hh847880.aspx) refererar till innehåll.
 
 ### <a name="allowing-external-commands-and-powershell-scripts"></a>Att tillåta externa kommandon och PowerShell-skript
 
@@ -128,7 +128,7 @@ Många körbara filer kan du att både läsa det aktuella tillståndet och ändr
 Anta till exempel att rollen för fil serveradministratör som vill kontrollera vilka nätverksresurser hanteras av den lokala datorn.
 Ett sätt att kontrollera är att använda `net share`.
 Dock tillåter net.exe är mycket farliga eftersom administratören kan lika enkelt använda kommandot för att få administratörsrättigheter med `net group Administrators unprivilegedjeauser /add`.
-Är det bättre att [Get-SmbShare](https://technet.microsoft.com/en-us/library/jj635704.aspx) som ger samma resultat, men som har mycket mer begränsad omfattning.
+Är det bättre att [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) som ger samma resultat, men som har mycket mer begränsad omfattning.
 
 När du gör externa kommandon tillgängliga för användare i en JEA session kan du alltid ange den fullständiga sökvägen till den körbara filen så ett liknande namn (och potentiellt malicous) program som placeras på en annan plats i systemet inte körs i stället.
 

@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
 keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: f39328b240a36deb40d484c4aedb889cee91dc8d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: ad1d19eeb70a19cd3d1493b9a09b115af755feb4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Desired State Configuration (DSC) kända problem och begränsningar
 
@@ -16,7 +16,7 @@ ms.lasthandoff: 06/12/2017
 
 WMF 4.0 och WMF 5.0 Preview versioner DSC skulle inte tillåter lösenord i konfigurationen som ska ha längden överstiger 121 tecken. DSC tvinga för att använda korta lösenord, även om långvariga och starka lösenord har önskad. Senaste ändringen kan lösenord ska vara av godtycklig längd i DSC-konfigurationen.
 
-**Lösning:** återskapa certifikatet med Data chiffrering eller chiffrering nyckeln användnings- och dokumentet kryptering förbättrad nyckelanvändning (1.3.6.1.4.1.311.80.1). TechNet-artikeln <https://technet.microsoft.com/en-us/library/dn807171.aspx> har mer information.
+**Lösning:** återskapa certifikatet med Data chiffrering eller chiffrering nyckeln användnings- och dokumentet kryptering förbättrad nyckelanvändning (1.3.6.1.4.1.311.80.1). TechNet-artikeln <https://technet.microsoft.com/library/dn807171.aspx> har mer information.
 
 
 <a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>DSC-cmdlets kan misslyckas när du har installerat WMF 5.0 RTM
@@ -89,7 +89,7 @@ Cmdleten Invoke-DscResource returnerar inte utförlig varningen och felmeddeland
 <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>DSC-resurser kan inte felsökas enkelt när det används med Invoke-DscResource
 -----------------------------------------------------------------------
 När MGM körs i felsökningsläge (se [felsökning DSC resurser](https://msdn.microsoft.com/powershell/dsc/debugresource) för mer information), Invoke-DscResource cmdlet ger information om runspace att ansluta till för felsökning.
-**Lösning:** identifiera och Anslut till runspace med cmdlets **Get-PSHostProcessInfo**, **RETUR PSHostProcess** , **Get-Runspace** och  **Felsök Runspace** för felsökning av DSC-resursen.
+**Lösning:** identifiera och Anslut till runspace med cmdlets **Get-PSHostProcessInfo**, **RETUR PSHostProcess** , **Get-Runspace** och **Debug Runspace** för felsökning av DSC-resursen.
 
 ```powershell
 # Find all the processes hosting PowerShell

@@ -4,11 +4,11 @@ contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
 title: modulewithpseditionsupport
-ms.openlocfilehash: 8122756b78e18fe55daef5c46dc299b87ddcaf1a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 8a762ddf307f47ecec8d2a63098e75cde97c391f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Moduler med kompatibla versioner av PowerShell
 Från och med version 5.1 finns PowerShell i olika utgåvor som anger olika funktionsuppsättningar och plattformskompatibilitet.
@@ -224,8 +224,8 @@ Mode                LastWriteTime         Length Name
 -a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl                                                                      
 ```
 
-## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditoncore"></a>PowerShell-galleriet användare kan hitta listan över moduler som stöds på en viss version av PowerShell med hjälp av taggar PSEdition_Desktop och PSEditon_Core.
-Moduler utan PSEdition_Desktop och PSEditon_Core taggar anses fungerar på PowerShell Desktop-versioner.
+## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditioncore"></a>PowerShell-galleriet användare kan hitta listan över moduler som stöds på en viss version av PowerShell med hjälp av taggar PSEdition_Desktop och PSEdition_Core.
+Moduler utan PSEdition_Desktop och PSEdition_Core taggar anses fungerar på PowerShell Desktop-versioner.
 
 ```powershell
 

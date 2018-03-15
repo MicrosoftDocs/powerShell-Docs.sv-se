@@ -3,17 +3,17 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Ställer in en DSC SMB pull-server"
-ms.openlocfilehash: 427dc8d858bd12e420fbde03b33a66f33cd654dc
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ff3faeb1952e6116cf97b1aaf8f125d8931dd35e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Ställer in en DSC SMB pull-server
 
 >Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-En DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) pull-server är en dator som värd för SMB-filresurser som gör DSC-konfigurationsfiler och DSC resurser tillgängliga för målnoder när de noderna som ber om.
+En DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) pull-server är en dator som värd för SMB-filresurser som gör DSC-konfigurationsfiler och DSC resurser tillgängliga för målnoder när de noderna som ber om.
 
 Om du vill använda en SMB-pull-server för DSC, behöver du:
 - Konfigurera en SMB-filresurs på en server som kör PowerShell 4.0 eller senare
@@ -25,7 +25,7 @@ Det finns ett antal sätt att konfigurera en SMB-filresurs, men vi ska titta på
 
 ### <a name="install-the-xsmbshare-resource"></a>Installera xSmbShare resursen
 
-Anropa den [installera modulen](https://technet.microsoft.com/en-us/library/dn807162.aspx) för att installera den **xSmbShare** modul.
+Anropa den [installera modulen](https://technet.microsoft.com/library/dn807162.aspx) för att installera den **xSmbShare** modul.
 >**Obs**: **installera modulen** ingår i den **PowerShellGet** module, som ingår i PowerShell 5.0. Du kan hämta den **PowerShellGet** -modul för PowerShell 3.0 och 4.0 på [PackageManagement PowerShell-moduler Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186). Den **xSmbShare** innehåller DSC-resursen **xSmbShare**, som kan användas för att skapa en SMB filresurs.
 
 ### <a name="create-the-directory-and-file-share"></a>Skapa katalogen och filresursen
@@ -208,7 +208,7 @@ $ConfigurationData = @{
 Särskild tack vare följande:
 
 - Mike F. Robbins vars inlägg om hur du använder SMB DSC hjälpt informera innehållet i det här avsnittet. Hans blogg är på [Mike F Robbins](http://mikefrobbins.com/).
-- Serge Nikalaichyk som skapats av **cNtfsAccessControl** modul. Källa för den här modulen finns på https://github.com/SNikalaichyk/cNtfsAccessControl.
+- Serge Nikalaichyk som skapats av **cNtfsAccessControl** modul. Källan för den här modulen är på https://github.com/SNikalaichyk/cNtfsAccessControl.
 
 ## <a name="see-also"></a>Se även
 - [Windows PowerShell Desired State Configuration-översikt](overview.md)

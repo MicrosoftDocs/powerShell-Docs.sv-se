@@ -4,11 +4,11 @@ author: JKeithB
 ms.topic: reference
 keywords: "WMF, powershell, inställning"
 title: Nya scenarier och funktioner i WMF 5.1
-ms.openlocfilehash: 430781c5c9a59fc544db4f94098313ae1e9cf610
-ms.sourcegitcommit: a6ee6e64d369ecf82c730411bed9750278fdb5c1
+ms.openlocfilehash: da3dfb2243c00e3faf637d3dbcb70016cfabb011
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Nya scenarier och funktioner i WMF 5.1 #
 
@@ -28,9 +28,9 @@ Från och med version 5.1 finns PowerShell i olika utgåvor som anger olika funk
 
 ## <a name="catalog-cmdlets"></a>Katalog-Cmdlets  
 
-Två nya cmdletar har lagts till i den [Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx) modulen; dessa generera och verifiera filer för Windows-katalogen.  
+Två nya cmdletar har lagts till i den [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) modulen; dessa generera och verifiera filer för Windows-katalogen.  
 
-###<a name="new-filecatalog"></a>Ny FileCatalog 
+###<a name="new-filecatalog"></a>New-FileCatalog 
 --------------------------------
 
 Ny FileCatalog skapar en Windows-katalogfil för mappar och filer. Den här katalogfilen innehåller hashvärden för alla filer i angiven sökväg. Användarna kan distribuera mapparna tillsammans med motsvarande katalogfil som representerar mapparna. Den här informationen är användbar för att kontrollera om några ändringar har gjorts till mapparna sedan tiden för skapandet av katalogen.    
@@ -51,7 +51,7 @@ Då skapas katalogfilen.
 Att kontrollera integriteten för katalogfil (Pester.cat i ovanstående exempel), signera den med hjälp av [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.   
 
 
-###<a name="test-filecatalog"></a>Testa FileCatalog 
+###<a name="test-filecatalog"></a>Test-FileCatalog 
 --------------------------------
 
 Testa FileCatalog verifierar katalogen som representerar en uppsättning mappar. 
@@ -62,7 +62,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 ![](../images/TestFileCatalog.jpg)
 
-Denna cmdlet Jämför filer hashvärdena och deras relativa sökvägar finns i *katalog* med de som på *disk*. Om den identifierar eventuella matchningsfel mellan värden och sökvägar returnerar status som *ValidationFailed*. Användare kan hämta den här informationen med hjälp av den *-detaljerad* parameter. Visar även signering status för katalogen i *signatur* -egenskap som motsvarar anropar [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet på katalogfilen. Användare kan också hoppa över en fil vid verifiering av med hjälp av den *- FilesToSkip* parameter. 
+Denna cmdlet Jämför filer hashvärdena och deras relativa sökvägar finns i *katalog* med de som på *disk*. Om den identifierar eventuella matchningsfel mellan värden och sökvägar returnerar status som *ValidationFailed*. Användare kan hämta den här informationen med hjälp av den *-detaljerad* parameter. Visar även signering status för katalogen i *signatur* -egenskap som motsvarar anropar [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet på katalogfilen. Användare kan också hoppa över en fil vid verifiering av med hjälp av den *- FilesToSkip* parameter. 
 
 
 ## <a name="module-analysis-cache"></a>Modulen analys Cache ##
@@ -101,13 +101,13 @@ I WMF 5.1:
 
 * Du kan använda [ModuleSpecification konstruktor (hash-tabell)](https://msdn.microsoft.com/library/jj136290). Den här hashtabellen har samma format som `Get-Module -FullyQualifiedName`.
 
-**Exempel:**`using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
+**Exempel:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
 * Om det finns flera versioner av modulen, PowerShell använder den **samma upplösning logik** som `Import-Module` och returnerar inte ett fel--samma beteende som `Import-Module` och `Import-DscResource`.
 
 
 ##<a name="improvements-to-pester"></a>Förbättringar av lära
-I WMF 5.1 har version av Pester som levereras med PowerShell uppdaterats från 3.3.5 till 3.4.0 med tillägget för genomförande https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e som möjliggör bättre beteende för Lära på Nano Server. 
+I WMF 5.1 version av Pester som levereras med PowerShell har uppdaterats från 3.3.5 till 3.4.0 med tillägget för genomförande https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, vilket förbättrar beteendet för Pester på Nano Server. 
 
-Du kan granska ändringar i versioner 3.3.5 3.4.0 genom att inspektera ChangeLog.md filen på: https://github.com/pester/Pester/blob/master/CHANGELOG.md
+Du kan granska ändringar i versioner 3.3.5 3.4.0 genom att titta i filen ChangeLog.md på: https://github.com/pester/Pester/blob/master/CHANGELOG.md
 

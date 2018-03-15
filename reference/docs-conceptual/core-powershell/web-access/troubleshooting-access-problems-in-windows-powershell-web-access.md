@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: PowerShell-cmdlet
 title: "Felsökning av åtkomstproblem i windows powershell-webbåtkomst"
-ms.openlocfilehash: 08a9fd286ed8a40e9423deb7d29dc0a8ecf8e5b1
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 6e51df3f4c6ac196c855ad918a91394d02c7d75e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Felsökning av åtkomstproblem i Windows PowerShell-webbåtkomst
 
@@ -34,7 +34,7 @@ Fel kan inträffa på grund av något av följande.
 
   Kontrollera fjärrhantering är aktiverat på den dator som användaren försöker ansluta.
 
-  Mer information finns i [hur du konfigurerar din dator för fjärrkommunikation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
+  Mer information finns i [hur du konfigurerar din dator för fjärrkommunikation](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
 
 ## <a name="internal-server-error"></a>Internt serverfel
 
@@ -61,7 +61,7 @@ Detta kan inträffa om en användare har loggat in med ett domännamn som inneh�
 
 ## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>Det går inte att ansluta till en fjärrdator
 
-Om måldatorn är medlem i en arbetsgrupp, Använd följande syntax för att ange ditt användarnamn och logga in på datorn:`<workgroup_name>\<user_name>`
+Om måldatorn är medlem i en arbetsgrupp, Använd följande syntax för att ange ditt användarnamn och logga in på datorn: `<workgroup_name>\<user_name>`
 
 ## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>Det går inte att hitta hanteringsverktyg för Webbserver (IIS), trots att rollen har installerats
 
@@ -92,9 +92,9 @@ Använd inte en punkt (.) ensamt som representerar namnet på datorn.
 
 Parameter | Värde
 -- | --
-UserName | Server\_namn\\användaren\_namn<br/>Localhost\\användaren\_namn<br/>. \\användaren\_namn
-UserGroup | Server\_namn\\användaren\_grupp<br/>Localhost\\användaren\_grupp<br/>. \\användaren\_grupp
-ComputerGroup | Server\_namn\\datorn\_grupp<br/>Localhost\\datorn\_grupp<br/>. \\datorn\_grupp
+UserName | Server\_name\\user\_name<br/>Localhost\\user\_name<br/>.\\user\_name
+UserGroup | Server\_name\\user\_group<br/>Localhost\\användaren\_grupp<br/>. \\användaren\_grupp
+ComputerGroup | Server\_name\\computer\_group<br/>Localhost\\computer\_group<br/>.\\computer\_group
 
 #### <a name="gateway-server-is-in-a-domain"></a>Gateway-servern finns i en domän
 
@@ -112,9 +112,9 @@ ComputerName | Servernamn
 
 Logga in på en gateway-server som måldator med hjälp av autentiseringsuppgifter som är formaterade som något av följande.
 
-- Server\_namn\\användaren\_namn
-- Localhost\\användaren\_namn
-- . \\användaren\_namn
+- Server\_name\\user\_name
+- Localhost\\user\_name
+- .\\user\_name
 
 ## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>En säkerhetsidentifierare (SID) visas i en auktoriseringsregel
 
@@ -132,7 +132,7 @@ Auktoriseringsregler stöder inte en IPv6-adress i form av ett domännamn.
 Använd en IPv6-adress (som innehåller kolon) om du vill ange en måldator med hjälp av en IPv6-adress i auktoriseringsregeln.
 Både domänbaserade och numeriska (med kolon) IPv6-adresser stöds som Måldatornamn på sidan för Windows PowerShell Web Access, men inte i auktoriseringsregler. 
 
-Mer information om IPv6-adresser finns [så här fungerar IPv6](https://technet.microsoft.com/en-us/library/cc781672(v=ws.10).aspx).
+Mer information om IPv6-adresser finns [så här fungerar IPv6](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx).
 
 ## <a name="see-also"></a>Se även
 

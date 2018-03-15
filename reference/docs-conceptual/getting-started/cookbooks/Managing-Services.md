@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: "Hantera tjänster"
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: 9fd6c8bcfecc99756188409629ddf94b880aab91
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 1e83566b1cb3c0c9c3c78a5877e52552ee51b0e9
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="managing-services"></a>Hantera tjänster
 Det finns åtta kärnor cmdlet: ar, utformad för en mängd olika uppgifter för tjänsten. Beskrivs bara visa och ändra körs för tjänster, men du kan hämta en lista cmdlet: ar med hjälp av **Get-Help \&#42;-tjänsten**, och du kan hitta information om varje tjänst-cmdlet med hjälp av **Get-Help < Cmdlet Name >**, som **Get-Help ny tjänst**.
@@ -138,11 +138,11 @@ Cmdlet Set-tjänsten ändrar egenskaperna för en tjänst på en lokal eller fj�
 
 För att använda Set-tjänst i Windows Vista och senare versioner av Windows, öppnar du Windows PowerShell med alternativet ”Kör som administratör”.
 
-Mer information finns i [Set-tjänst [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+Mer information finns i [Set-tjänst [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 
 ## <a name="see-also"></a>Se även
 - [Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
-- [Ange tjänst [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+- [Ange tjänst [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 - [Starta om tjänsten [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
 - [Pausa tjänst [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
 

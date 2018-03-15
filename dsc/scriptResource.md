@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Resursen DSC-skript
-ms.openlocfilehash: 22213b74986b45b3a8205f1584b3b0d89a92f211
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: d65a89ceba0b641ccb0ac3dfcc6d5ec1a48dc92a
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-script-resource"></a>Resursen DSC-skript
 
@@ -42,9 +42,9 @@ Script [string] #ResourceName
 
 |  Egenskap  |  Beskrivning   | 
 |---|---| 
-| GetScript| Ger ett block med Windows PowerShell-skript som körs när du anropar den [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx) cmdlet. Det här blocket måste returnera en hash-tabell. Hash-tabellen får bara innehålla en nyckel **resultatet** och värdet måste vara av typen **sträng**.| 
-| SetScript| Innehåller ett block med Windows PowerShell-skript. När du anropar den [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet, den **TestScript** block körs första. Om den **TestScript** blockera returnerar **$false**, **SetScript** block körs. Om den **TestScript** blockera returnerar **$true**, **SetScript** block körs inte.| 
-| TestScript| Innehåller ett block med Windows PowerShell-skript. När du anropar den [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet, det här blocket körs. Om den returnerar **$false**, SetScript blocket körs. Om den returnerar **$true**, SetScript som block kommer inte att köra. Den **TestScript** block körs även när du anropar den [Test DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet. Men i det här fallet den **SetScript** block inte körs, oavsett vilket värde som TestScript blockera returnerar. Den **TestScript** block måste returnera True om den faktiska konfigurationen matchar aktuella önskad tillståndskonfiguration och FALSKT om den inte matchar. (Den aktuella tillståndskonfigurationen är den senaste konfigurationen trätt i kraft på den nod som använder DSC.)| 
+| GetScript| Ger ett block med Windows PowerShell-skript som körs när du anropar den [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) cmdlet. Det här blocket måste returnera en hash-tabell. Hash-tabellen får bara innehålla en nyckel **resultatet** och värdet måste vara av typen **sträng**.| 
+| SetScript| Innehåller ett block med Windows PowerShell-skript. När du anropar den [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet, den **TestScript** block körs första. Om den **TestScript** blockera returnerar **$false**, **SetScript** block körs. Om den **TestScript** blockera returnerar **$true**, **SetScript** block körs inte.| 
+| TestScript| Innehåller ett block med Windows PowerShell-skript. När du anropar den [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet, det här blocket körs. Om den returnerar **$false**, SetScript blocket körs. Om den returnerar **$true**, SetScript som block kommer inte att köra. Den **TestScript** block körs även när du anropar den [Test DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet. Men i det här fallet den **SetScript** block inte körs, oavsett vilket värde som TestScript blockera returnerar. Den **TestScript** block måste returnera True om den faktiska konfigurationen matchar aktuella önskad tillståndskonfiguration och FALSKT om den inte matchar. (Den aktuella tillståndskonfigurationen är den senaste konfigurationen trätt i kraft på den nod som använder DSC.)| 
 | autentiseringsuppgifter| Anger autentiseringsuppgifter som ska användas för att köra detta skript om autentiseringsuppgifter krävs.| 
 | dependsOn| Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis **ResourceName** och dess typ är **ResourceType**, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.
 

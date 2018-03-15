@@ -3,37 +3,37 @@ ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
 keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: 91b60a22580dcb8eae245f45e202710812522a64
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 10f20967465a1911628552f0d468c63e4e88dcd7
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>PowerShellGet cmdlet: ar för hantering av modul
 
-- [Hitta DscResource](https://technet.microsoft.com/en-us/library/mt654006.aspx)
-- [Sök-modul](https://technet.microsoft.com/en-us/library/dn807167.aspx)
-- [Sök-skript](https://technet.microsoft.com/en-us/library/mt654001.aspx)
+- [Hitta DscResource](https://technet.microsoft.com/library/mt654006.aspx)
+- [Sök-modul](https://technet.microsoft.com/library/dn807167.aspx)
+- [Sök-skript](https://technet.microsoft.com/library/mt654001.aspx)
 - [Get-InstalledModule](https://technet.microsoft.com/en-us/library/mt653990.aspx)
 - [Get-InstalledScript](https://technet.microsoft.com/en-us/library/mt653994.aspx)
 - [Get-PSRepository](https://technet.microsoft.com/en-us/library/dn807170.aspx)
 - [Installera modulen](https://technet.microsoft.com/en-us/library/dn807162.aspx)
-- [Skriptet för installationen](https://technet.microsoft.com/en-us/library/mt653998.aspx)
-- [Ny ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653995.aspx)
+- [Install-Script](https://technet.microsoft.com/en-us/library/mt653998.aspx)
+- [New-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653995.aspx)
 - [Publicera modul](https://technet.microsoft.com/en-us/library/dn807163.aspx)
-- [Publicera skript](https://technet.microsoft.com/en-us/library/mt654003.aspx)
+- [Publish-Script](https://technet.microsoft.com/en-us/library/mt654003.aspx)
 - [Registrera PSRepository](https://technet.microsoft.com/en-us/library/dn807168.aspx)
 - [Spara-modul](https://technet.microsoft.com/en-us/library/mt653992.aspx)
-- [Spara skriptet](https://technet.microsoft.com/en-us/library/mt654004.aspx)
-- [Ange PSRepository](https://technet.microsoft.com/en-us/library/dn807165.aspx)
-- [Testa ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt654005.aspx)
+- [Save-Script](https://technet.microsoft.com/en-us/library/mt654004.aspx)
+- [Set-PSRepository](https://technet.microsoft.com/en-us/library/dn807165.aspx)
+- [Test-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt654005.aspx)
 - [Avinstallera modul](https://technet.microsoft.com/en-us/library/mt653996.aspx)
 - [Avinstallera skript](https://technet.microsoft.com/en-us/library/mt653989.aspx)
 - [Update-modul](https://technet.microsoft.com/en-us/library/dn807166.aspx)
 - [Uppdatera ModuleManifest](https://technet.microsoft.com/en-us/library/mt654002.aspx)
-- [Skript för uppdatering](https://technet.microsoft.com/en-us/library/mt653997.aspx)
-- [Uppdatera ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653991.aspx)
-- [Avregistrera PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
+- [Update-Script](https://technet.microsoft.com/en-us/library/mt653997.aspx)
+- [Update-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653991.aspx)
+- [Unregister-PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
 
 ## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Modulen beroende installationssupport, Get-InstalledModule och avinstallera-Module-cmdlets
 - Lägga till modulen beroenden population i Publicera modul-cmdlet. RequiredModules och NestedModules listor med PSModuleInfo används för att förbereda beroendelistan av en modul som ska publiceras.

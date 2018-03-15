@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: "Kör fjärrkommandon"
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: 43f07abd642e7de235647fa151537c46ebe86cae
-ms.sourcegitcommit: 6aed37d7f0c9652ae09bb8c11928da7e4783ed7f
+ms.openlocfilehash: 24648e8f35fbc28c9ba9f9b7176ac23e72ffbe78
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="running-remote-commands"></a>Kör fjärrkommandon
 
@@ -31,11 +31,11 @@ Dessa cmdletar är:
 * [Starta om datorn](https://go.microsoft.com/fwlink/?LinkId=821625)
 * [Testa anslutning](https://go.microsoft.com/fwlink/?LinkId=821646)
 * [Rensa händelseloggen](https://go.microsoft.com/fwlink/?LinkId=821568)
-* [Get-händelseloggen](https://go.microsoft.com/fwlink/?LinkId=821585)
-* [Get-snabbkorrigering](https://go.microsoft.com/fwlink/?LinkId=821586)
+* [Get-EventLog](https://go.microsoft.com/fwlink/?LinkId=821585)
+* [Get-HotFix](https://go.microsoft.com/fwlink/?LinkId=821586)
 * [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
 * [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
-* [Ange tjänst](https://go.microsoft.com/fwlink/?LinkId=821633)
+* [Set-Service](https://go.microsoft.com/fwlink/?LinkId=821633)
 * [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
 * [Get-WmiObject](https://go.microsoft.com/fwlink/?LinkId=821595)
 
@@ -48,9 +48,9 @@ Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parame
 ## <a name="windows-powershell-remoting"></a>Windows PowerShell-fjärrkommunikation
 Windows PowerShell-fjärrkommunikation, som använder protokollet WS-Management, kan du köra Windows PowerShell-kommando på en eller flera fjärrdatorer. Gör det möjligt att upprätta beständiga anslutningar, starta 1:1 interaktiva sessioner och köra skript på flera datorer.
 
-Om du vill använda Windows PowerShell-fjärrkommunikation måste fjärrdatorn konfigureras för fjärrhantering. Mer information, inklusive instruktioner finns i [om Remote krav](https://technet.microsoft.com/en-us/library/dd315349.aspx).
+Om du vill använda Windows PowerShell-fjärrkommunikation måste fjärrdatorn konfigureras för fjärrhantering. Mer information, inklusive instruktioner finns i [om Remote krav](https://technet.microsoft.com/library/dd315349.aspx).
 
-När du har konfigurerat Windows PowerShell-fjärrkommunikation finns många fjärrkommunikation strategier för dig. Resten av det här dokumentet visar några av dem. Mer information finns i [om Remote](https://technet.microsoft.com/en-us/library/dd347744.aspx) och [om Remote vanliga frågor och svar](https://technet.microsoft.com/en-us/library/dd347744.aspx).
+När du har konfigurerat Windows PowerShell-fjärrkommunikation finns många fjärrkommunikation strategier för dig. Resten av det här dokumentet visar några av dem. Mer information finns i [om Remote](https://technet.microsoft.com/library/dd347744.aspx) och [om Remote vanliga frågor och svar](https://technet.microsoft.com/library/dd347744.aspx).
 
 ### <a name="start-an-interactive-session"></a>Starta en interaktiv Session
 Starta en interaktiv session med en enda fjärrdator med den [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) cmdlet.
@@ -141,12 +141,12 @@ Hjälp med fjärrkommunikation fel finns i [about_Remote_Troubleshooting](https:
 - [about_Remote_Requirements](https://technet.microsoft.com/en-us/library/da213949-134c-4741-b307-81f4492ba1bd)
 - [Om fjärrfelsökning](https://technet.microsoft.com/en-us/library/2f890148-8578-49ed-85ea-79a489dd6317)
 - [about_PSSessions](https://technet.microsoft.com/en-us/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
-- [about_WS Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
+- [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
 - [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 - [Ny PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [WSMan-providern](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+- [WSMan Provider](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
 
 [wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
 [ssh-resmoting]: SSH-Remoting-in-PowerShell-Core.md

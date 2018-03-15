@@ -369,10 +369,21 @@ sudo yum remove powershell
 
 ## <a name="opensuse-422"></a>OpenSUSE 42.2
 
-> **Obs:** när du installerar PowerShell Core, OpenSUSE kan rapportera att ingenting tillhandahåller `libcurl`.
-`libcurl`bör vara installerad på versioner av OpenSUSE stöds.
-Kör `zypper search libcurl` att bekräfta.
-Felet presenterar 2 lösningar. Välj lösning 2 fortsätta installera PowerShell Core.
+> **Obs:** när du installerar PowerShell Core `zypper` kan rapportera följande fel:
+>
+> ```text
+> Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
+>  Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
+>  Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
+> ```
+>
+> I det här fallet kontrollerar du att en kompatibel `libcurl` bibliotek finns genom att kontrollera att följande kommando visar den `libcurl4` paketet som installerade:
+>
+> ```sh
+> zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
+> ```
+>
+> Välj den `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` lösning när du installerar den `powershell` paketet.
 
 ### <a name="installation-via-package-repository-preferred---opensuse-422"></a>Installationen via Paketdatabasen (rekommenderas) - OpenSUSE 42.2
 
@@ -384,9 +395,6 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
 # Add the Microsoft Product feed
 curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/zypp/repos.d/microsoft.repo
-
-# Update the list of products
-sudo zypper update
 
 # Install PowerShell
 sudo zypper install powershell
@@ -763,13 +771,13 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 
 ## <a name="paths"></a>Sökvägar
 
-* `$PSHOME`är`/opt/microsoft/powershell/6.0.0/`
-* Användarprofiler som ska läsas från`~/.config/powershell/profile.ps1`
-* Standardprofiler kommer att läsas från`$PSHOME/profile.ps1`
-* Moduler som användare kommer att läsas från`~/.local/share/powershell/Modules`
-* Delade moduler kommer att läsas från`/usr/local/share/powershell/Modules`
-* Standardmoduler ska läsas från`$PSHOME/Modules`
-* PSReadline historik kommer att läggas till`~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+* `$PSHOME` Är `/opt/microsoft/powershell/6.0.0/`
+* Användarprofiler som ska läsas från `~/.config/powershell/profile.ps1`
+* Standardprofiler kommer att läsas från `$PSHOME/profile.ps1`
+* Moduler som användare kommer att läsas från `~/.local/share/powershell/Modules`
+* Delade moduler kommer att läsas från `/usr/local/share/powershell/Modules`
+* Standardmoduler ska läsas från `$PSHOME/Modules`
+* PSReadline historik kommer att läggas till `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 Profilerna respektera PowerShells per värd konfiguration så värd-specifika standardprofiler finns på `Microsoft.PowerShell_profile.ps1` på samma platser.
 

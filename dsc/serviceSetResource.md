@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: DSC ServiceSet resurs
-ms.openlocfilehash: 9556a1d513c3819a36c1161e3b35388ca1eb66f9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 2488dda5212ccb717f7fd5d59ad62ec135ad13d5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet resurs
 
@@ -38,7 +38,7 @@ Service [string] #ResourceName
 
 |  Egenskap  |  Beskrivning   | 
 |---|---| 
-| Namn| Anger tjänstnamn. Observera att ibland Detta skiljer sig från visningsnamnen. Du kan hämta en lista över tjänster och deras aktuella tillstånd med den [Get-Service](https://technet.microsoft.com/en-us/library/hh849804.aspx) cmdlet.|
+| Namn| Anger tjänstnamn. Observera att ibland Detta skiljer sig från visningsnamnen. Du kan hämta en lista över tjänster och deras aktuella tillstånd med den [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) cmdlet.|
 | StartupType| Anger starttypen för tjänsten. De värden som tillåts för den här egenskapen är: **automatisk**, **inaktiverad**, och **manuell**|  
 | BuiltInAccount| Anger kontot du använder för tjänsterna. De värden som tillåts för den här egenskapen är: **LocalService**, **LocalSystem**, och **NetworkService**.| 
 | Läge| Visar du vill säkerställa för tjänsterna: **stoppad** eller **kör**.| 

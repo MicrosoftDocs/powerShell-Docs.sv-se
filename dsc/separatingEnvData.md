@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: "Avgränsa konfiguration och miljö data"
-ms.openlocfilehash: cf0d4a12efe4998176d3c80841740c5f9d9a103b
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 18b18d805ac248b29526862591df5f0ff785937b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="separating-configuration-and-environment-data"></a>Avgränsa konfiguration och miljö data
 
@@ -81,7 +81,7 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof  
 ```
  
-`$MyData`Anger två olika noder, med egna `NodeName` och `Role`. Konfigurationen skapas dynamiskt **nod** block med samling med noder som får från `$MyData` (särskilt `$AllNodes`) och filtrerar samlingen mot den `Role` egenskapen...
+`$MyData` Anger två olika noder, med egna `NodeName` och `Role`. Konfigurationen skapas dynamiskt **nod** block med samling med noder som får från `$MyData` (särskilt `$AllNodes`) och filtrerar samlingen mot den `Role` egenskapen...
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>Med hjälp av konfigurationsdata för att definiera utveckling och produktionsmiljöer
 
@@ -143,7 +143,7 @@ Configuration MyWebApp
     Import-DscResource -Module xSqlPs
     Import-DscResource -Module xWebAdministration
 
-    Node $AllNodes.Where{$_.Role -contains "MSSQL"}.Nodename
+    Node $AllNodes.Where{$_.Role -contains "MSSQL"}.NodeName
    {
         # Install prerequisites
         WindowsFeature installdotNet35
@@ -246,7 +246,7 @@ Följande konfiguration gör finns två webbplatser.
 Data för varje webbplats har definierats i den **AllNodes** matris.
 Filen `Config.xml` används för både webbplatser, så vi definiera den i nyckeln med namnet `NonNodeData`.
 Observera att du kan ha valfritt antal ytterligare nycklar som du vill och ge dem vad du vill.
-`NonNodeData`är inte ett reserverat ord, det är bara vad vi beslutat att ytterligare nyckeln namnet.
+`NonNodeData` är inte ett reserverat ord, det är bara vad vi beslutat att ytterligare nyckeln namnet.
 
 Du har åtkomst till ytterligare nycklar med hjälp av en särskild variabel **$ConfigurationData**.
 I det här exemplet `ConfigFileContents` används med rad:

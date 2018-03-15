@@ -3,17 +3,17 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Redigera en DSC-resurs i C#
-ms.openlocfilehash: 2fc6b8c127bca29e8f66fc7bd8d2828fdfe39f3c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 4d276edf1180573df61b62d18a9f90cfa1cd4112
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>Redigera en DSC-resurs i C#
 
 > Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-En anpassad resurs i Windows PowerShell önskad tillstånd Configuration (DSC) implementeras normalt i ett PowerShell-skript. Du kan också implementera funktionerna i en anpassad resurs DSC genom att skriva cmdlets i C#. En introduktion om hur du skriver cmdlets i C# finns [skriva en Windows PowerShell-Cmdlet](https://technet.microsoft.com/en-us/library/dd878294.aspx).
+En anpassad resurs i Windows PowerShell önskad tillstånd Configuration (DSC) implementeras normalt i ett PowerShell-skript. Du kan också implementera funktionerna i en anpassad resurs DSC genom att skriva cmdlets i C#. En introduktion om hur du skriver cmdlets i C# finns [skriva en Windows PowerShell-Cmdlet](https://technet.microsoft.com/library/dd878294.aspx).
 
 Utöver implementera resursen i C# som cmdletar, är processen att skapa MOF-schemat, skapa mappstrukturen, importerar och använder din anpassade DSC-resurs på samma sätt som beskrivs i [skriva en anpassad DSC-resurs med MOF](authoringResourceMOF.md).
 
@@ -281,5 +281,5 @@ $env: psmodulepath (folder)
 #### <a name="concepts"></a>Begrepp
 [Skriva en anpassad DSC-resurs med MOF](authoringResourceMOF.md)
 #### <a name="other-resources"></a>Andra resurser
-[Skriva ett Windows PowerShell-Cmdlet](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
+[Skriva ett Windows PowerShell-Cmdlet](https://msdn.microsoft.com/library/dd878294.aspx)
 
