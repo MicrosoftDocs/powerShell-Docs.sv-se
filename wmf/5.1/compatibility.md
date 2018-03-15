@@ -5,10 +5,10 @@ ms.topic: reference
 keywords: "WMF, powershell, inställning"
 title: WMF 5.1 operativsystemskompatibilitet
 ms.openlocfilehash: 04217c5abb0f04a5dc6b15cd956a632f7b84c9bb
-ms.sourcegitcommit: 5dbf78ba0db482efa79e31a0e4963f8cbeb3df54
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 operativsystemskompatibilitet #
 
