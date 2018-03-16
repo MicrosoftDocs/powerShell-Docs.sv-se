@@ -1,0 +1,221 @@
+- name: Översikt
+  href: overview.md
+  items:
+    - name: Desired State Configuration-översikt för beslutsfattare
+      href: decisionMaker.md
+    - name: Desired State Configuration-översikt för tekniker
+      href: DscForEngineers.md
+    - name: DSC-snabbstart
+      href: quickStart.md
+- name: Konfigurationer
+  href: configurations.md
+  items:
+    - name: Tillämpa konfigurationer
+      href: enactingConfigurations.md
+    - name: Avgränsa konfigurations- och miljödata
+      href: separatingEnvData.md
+    - name: Använda resurser med flera versioner
+      href: sxsResource.md
+    - name: Köra DSC med autentiseringsuppgifterna för användaren
+      href: runAsUser.md
+    - name: Ange beroenden mellan noder
+      href: crossNodeDependencies.md
+    - name: Konfigurationsdata
+      href: configData.md
+      items:
+        - name: Alternativ för autentiseringsuppgifter i konfigurationsdata
+          href: configDataCredentials.md
+    - name: Kapslingskonfigurationer
+      href: compositeConfigs.md
+    - name: Skydda MOF-konfigurationsfilen
+      href: secureMOF.md
+    - name: Partiella konfigurationer
+      href: partialConfigs.md
+    - name: Skrivhjälp för DSC-konfigurationer
+      href: configHelp.md
+    - name: Konfigurera en virtuell dator vid första uppstart med hjälp av DSC
+      href: bootstrapDsc.md
+      items:
+        - name: DSCAutomationHostEnabled-registernyckel
+          href: DSCAutomationHostEnabled.md
+- name: Resurser
+  href: resources.md
+  items:
+    - name: Inbyggda resurser
+      href: builtInResource.md
+      items:
+        - name: Arkivera resursen
+          href: archiveResource.md
+        - name: Miljöresurs
+          href: environmentResource.md
+        - name: Filresurs
+          href: fileResource.md
+        - name: Gruppresurs
+          href: groupResource.md
+        - name: GroupSet-resurs
+          href: groupSetResource.md
+        - name: Loggresurs
+          href: logResource.md
+        - name: Paketresurs
+          href: packageResource.md
+        - name: ProcessSet-resurs
+          href: processSetResource.md
+        - name: Registerresurser
+          href: registryResource.md
+        - name: Skriptresurs
+          href: scriptResource.md
+        - name: Tjänstresurs
+          href: serviceResource.md
+        - name: ServiceSet-resurs
+          href: serviceSetResource.md
+        - name: Användarresurs
+          href: userResource.md
+        - name: WaitForAllResource
+          href: waitForAllResource.md
+        - name: WaitForAnyResource
+          href: waitForAnyResource.md
+        - name: WaitForSomeResource
+          href: waitForSomeResource.md
+        - name: WindowsFeature-resurs
+          href: windowsfeatureResource.md
+        - name: WindowsFeatureSet-resurs
+          href: windowsFeatureSetResource.md
+        - name: WindowsOptionalFeature-resurs
+          href: windowsOptionalFeatureResource.md
+        - name: WindowsOptionalFeatureSet-resurs
+          href: windowsOptionalFeatureSetResource.md
+        - name: WindowsPackageCab-resurs
+          href: windowsPackageCabResource.md
+        - name: WindowsProcess-resurs
+          href: windowsProcessResource.md
+    - name: Redigera anpassade resurser
+      href: authoringResource.md
+      items:
+        - name: MOF-baserade anpassade resurser
+          href: authoringResourceMOF.md
+          items:
+            - name: 'MOF-baserad resurs i C#'
+              href: authoringResourceMofCS.md
+        - name: MOF-baserade anpassade resurser
+          href: authoringResourceClass.md
+        - name: Sammansatta resurser
+          href: authoringResourceComposite.md
+        - name: Skriva en DSC-resurs med en enskild instans (metodtips)
+          href: singleInstance.md
+        - name: Checklista för resursskapande
+          href: resourceAuthoringChecklist.md
+    - name: Felsöka DSC-resurser
+      href: debugResource.md
+    - name: Anropa DSC-resursmetoder direkt
+      href: directCallResource.md
+- name: Lokal konfigurationshanterare
+  items:
+    - name: Konfigurera den lokala konfigurationshanteraren (LCM)
+      href: metaConfig.md
+    - name: Konfigurera LCM i PowerShell 4.0
+      href: metaConfig4.md
+- name: DSC-pullmodellen
+  items:
+    - name: DSC-hämtningstjänsten
+      href: pullServer.md
+    - name: Konfigurera en DSC SMB-hämtningsserver
+      href: pullServerSMB.md
+    - name: Konfigurera en hämtningsklient
+      href: pullClient.md
+      items:
+        - name: Konfigurera en hämtningsklient med konfigurationsnamn
+          href: pullClientConfigNames.md
+        - name: Konfigurera en hämtningsklient med konfigurations-ID
+          href: pullClientConfigID.md
+    - name: Använda en DSC-rapportserver
+      href: reportServer.md
+    - name: Metodtips för hämtningsservern
+      href: secureServer.md
+- name: DSC-exempel
+  href: dscExamples.md
+  items:
+    - name: 'Skapa en CI/CD-pipeline med DSC, Pester och Visual Studio Team Services'
+      href: dscCiCd.md
+    - name: Avgränsa konfigurations- och miljödata
+      href: separatingEnvData.md
+- name: Felsöka DSC
+  href: troubleshooting.md
+- name: Använda DSC på Nano Server
+  href: nanoDsc.md
+- name: DSC på Linux
+  items:
+    - name: Komma igång med DSC för Linux
+      href: lnxGettingStarted.md
+    - name: Inbyggda resurser för Linux
+      href: lnxBuiltInResources.md
+      items:
+        - name: nxArchive-resurs
+          href: lnxArchiveResource.md
+        - name: nxEnvironment-resurs
+          href: lnxEnvironmentResource.md
+        - name: nxFile-resurs
+          href: lnxFileResource.md
+        - name: nxFileLine-resurs
+          href: lnxFileLineResource.md
+        - name: nxGroup-resurs
+          href: lnxGroupResource.md
+        - name: nxPackage-resurs
+          href: lnxPackageResource.md
+        - name: nxService-resurs
+          href: lnxServiceResource.md
+        - name: nxSshAuthorizedKeys-resurs
+          href: lnxSshAuthorizedKeysResource.md
+        - name: nxUser-resurs
+          href: lnxUserResource.md
+- name: Använda DSC på Microsoft Azure
+  href: azureDsc.md
+  items:
+    - name: Historik för DSC-tillägg
+      href: azureDscexthistory.md
+- name: DSC MOF-referens
+  items:
+    - name: MSFT_DSCLocalConfigurationManager-klass
+      href: msft-dsclocalconfigurationmanager.md
+      items:
+        - name: ApplyConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klass
+          href: msft-dsclocalconfigurationmanager-applyconfiguration.md
+        - name: DisableDebugConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
+        - name: EnableDebugConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
+        - name: GetConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-getconfiguration.md
+        - name: GetConfigurationResultOutput-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
+        - name: GetConfigurationStatus-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-getconfigurationstatus.md
+        - name: GetMetaConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-getmetaconfiguration.md
+        - name: PerformRequiredConfigurationChecks-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
+        - name: RemoveConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-removeconfiguration.md
+        - name: ResourceGet-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-resourceget.md
+        - name: ResourceSet-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-resourceset.md
+        - name: ResourceTest-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-resourcetest.md
+        - name: RollBack-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-rollback.md
+        - name: SendConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-sendconfiguration.md
+        - name: SendConfigurationApply-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-sendconfigurationapply.md
+        - name: SendConfigurationApplyAsync-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
+        - name: SendMetaConfigurationApply-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
+        - name: StopConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-stopconfiguration.md
+        - name: TestConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+          href: msft-dsclocalconfigurationmanager-testconfiguration.md
+- name: Fler resurser
+  items:
+    - name: Faktablad (white paper)
+      href: whitepapers.md

@@ -1,0 +1,18 @@
+- name: Översikt
+  href: overview.md
+- name: Distribuera JEA
+  items:
+    - name: Förutsättningar
+      href: prerequisites.md
+    - name: Rollfunktioner
+      href: role-capabilities.md
+    - name: Sessionskonfigurationer
+      href: session-configurations.md
+    - name: Registrera JEA
+      href: register-jea.md
+    - name: Använda JEA
+      href: using-jea.md
+    - name: Säkerhetsaspekter
+      href: security-considerations.md
+    - name: Granska och rapportera i JEA
+      href: audit-and-report.md
