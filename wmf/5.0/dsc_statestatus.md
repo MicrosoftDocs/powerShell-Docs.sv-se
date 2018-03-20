@@ -4,12 +4,12 @@ author: JKeithB
 ms.topic: reference
 keywords: "WMF, powershell, inställning"
 ms.openlocfilehash: 32f8e20889ddc526def4b925e8d0761a2e851e19
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/20/2018
 ---
-# <a name="unified-and-consistent-state-and-status-representation"></a>Enhetlig och konsekvent tillstånd och Status Representation
+# <a name="unified-and-consistent-state-and-status-representation"></a>Enhetlig och konsekvent tillstånds- och statusrepresentation
 
 Ett antal förbättringar har gjorts i den här versionen för automatiseringar inbyggda MGM tillstånd och DSC-status. Dessa inkluderar enhetlig och konsekvent tillstånd och status garantier, hanterbara datetime-egenskap för status-objekt som returneras av Get-DscConfigurationStatus cmdlet och förbättrad MGM tillstånd information egenskap returnerades av Get-DscLocalConfigurationManager cmdlet.
 
@@ -23,20 +23,20 @@ Representation av MGM tillstånd och DSC Åtgärdsstatus revisited och enhetlig 
 
 I tabellen nedan visas resulterande tillstånd och status relaterade egenskaper under några vanliga scenarier.
 
-| **Scenario**                    | **LCMState\***       | **Status** | **Omstart begärdes**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
+| **Scenario**                    | **LCMState\***       | **status** | **Omstart begärdes**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
 | S**^**                          | Inaktiv                 | Klart    | $false        | S                            | $null                          |
 | F**^**                          | PendingConfiguration | Fel    | $false        | $null                        | F                              |
-| S, F                             | PendingConfiguration | Fel    | $false        | S                            | F                              |
-| F, S                             | PendingConfiguration | Fel    | $false        | S                            | F                              |
+| S,F                             | PendingConfiguration | Fel    | $false        | S                            | F                              |
+| F,S                             | PendingConfiguration | Fel    | $false        | S                            | F                              |
 | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Fel    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
 | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Fel    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
-| S, r                            | PendingReboot        | Klart    | $true         | S                            | R                              |
+| S, r                            | PendingReboot        | Klart    | $true         | S                            | r                              |
 | F, r                            | PendingReboot        | Fel    | $true         | $null                        | F, r                           |
-| r, S                            | PendingReboot        | Klart    | $true         | $null                        | R                              |
-| r, F                            | PendingReboot        | Klart    | $true         | $null                        | R                              |
+| r, S                            | PendingReboot        | Klart    | $true         | $null                        | r                              |
+| r, F                            | PendingReboot        | Klart    | $true         | $null                        | r                              |
 
-^ S<sub>jag</sub>: ett antal resurser som har tillämpats F<sub>jag</sub>: ett antal resurser som tillämpats fel r: en resurs som kräver omstart\*
+^ S<sub>jag</sub>: ett antal resurser som har tillämpats F<sub>jag</sub>: ett antal resurser som tillämpats fel r: en resurs som kräver omstart \*
 
 ```powershell
 $LCMState = (Get-DscLocalConfigurationManager).LCMState
