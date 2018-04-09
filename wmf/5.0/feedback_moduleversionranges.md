@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: fa972b68015d9b6e14508ccda562cfa5ebd632ac
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: WMF, powershell, inställning
+ms.openlocfilehash: 12c47d3583274e58edbd2171fef50c779aac9fce
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Moduler som har stöd för deklarerar versioner som stöds (1.* osv)
-I kombination med **- MinimumVersion**, **- MaximumVersion** nu kan användare get/import-module inom ett visst intervall. Parametern stöder också **.**\*. I följande exempel visas hur det fungerar:
+I kombination med **- MinimumVersion**, **- MaximumVersion** nu kan användare get/import-module inom ett visst intervall. Parametern stöder också **.** \*. I följande exempel visas hur det fungerar:
 
 ```powershell
 Now, you can combine **-MinimumVersion** and **-MaximumVersion** to import module within specific range:
@@ -25,4 +25,3 @@ VERBOSE: Importing cmdlet 'Set-PSReadlineKeyHandler'.
 VERBOSE: Importing cmdlet 'Set-PSReadlineOption'.
 VERBOSE: Importing function 'PSConsoleHostReadline'.
 ```
-

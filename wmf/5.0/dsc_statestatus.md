@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: 32f8e20889ddc526def4b925e8d0761a2e851e19
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: WMF, powershell, inställning
+ms.openlocfilehash: 9a8c261c01a7970f2e7f89172007768b63295673
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Enhetlig och konsekvent tillstånds- och statusrepresentation
 
@@ -112,4 +112,3 @@ LCM State: Idle,
 LCM State: Busy, LCM is performing a consistency check.
 LCM State: Idle,
 ```
-
