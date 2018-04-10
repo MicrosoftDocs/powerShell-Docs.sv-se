@@ -1,34 +1,34 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
-title: Publicera skript
-ms.openlocfilehash: 0d2fd87645d2286e87e68198844adce8909739cb
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Publish-Script
+ms.openlocfilehash: 6e273a4bacd2bf150a6fa6c4436c3c34f41078ad
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="publish-script"></a><span data-ttu-id="95234-103">Publicera skript</span><span class="sxs-lookup"><span data-stu-id="95234-103">Publish-Script</span></span>
+# <a name="publish-script"></a><span data-ttu-id="1c1f0-103">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="1c1f0-103">Publish-Script</span></span>
 
-<span data-ttu-id="95234-104">Cmdlet Publish-skriptet publicerar det angivna skriptet till online-galleriet.</span><span class="sxs-lookup"><span data-stu-id="95234-104">The Publish-Script cmdlet publishes the specified script to the online gallery.</span></span>
+<span data-ttu-id="1c1f0-104">Cmdlet Publish-skriptet publicerar det angivna skriptet till online-galleriet.</span><span class="sxs-lookup"><span data-stu-id="1c1f0-104">The Publish-Script cmdlet publishes the specified script to the online gallery.</span></span>
 
-## <a name="description"></a><span data-ttu-id="95234-105">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="95234-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="1c1f0-105">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="1c1f0-105">Description</span></span>
 
-<span data-ttu-id="95234-106">Publicera skript-cmdleten låter dig om du vill publicera skriptfilen med giltiga metadata som Version, Guid, författare och beskrivning, osv. Tvingad switchparametern på Publicera skript cmdlet startar NuGet.exe utan att fråga.</span><span class="sxs-lookup"><span data-stu-id="95234-106">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc. Force switch parameter on Publish-Script cmdlet bootstraps the NuGet.exe without prompting.</span></span>
+<span data-ttu-id="1c1f0-106">Publicera skript-cmdleten låter dig om du vill publicera skriptfilen med giltiga metadata som Version, Guid, författare och beskrivning, osv. Tvingad switchparametern på Publicera skript cmdlet startar NuGet.exe utan att fråga.</span><span class="sxs-lookup"><span data-stu-id="1c1f0-106">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc. Force switch parameter on Publish-Script cmdlet bootstraps the NuGet.exe without prompting.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="95234-107">Cmdlet-syntax</span><span class="sxs-lookup"><span data-stu-id="95234-107">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="1c1f0-107">Cmdlet-syntax</span><span class="sxs-lookup"><span data-stu-id="1c1f0-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Publish-Script -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="95234-108">Cmdlet-referens för onlinehjälp</span><span class="sxs-lookup"><span data-stu-id="95234-108">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="1c1f0-108">Cmdlet-referens för onlinehjälp</span><span class="sxs-lookup"><span data-stu-id="1c1f0-108">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="95234-109">Publicera skript</span><span class="sxs-lookup"><span data-stu-id="95234-109">Publish-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619788)
+[<span data-ttu-id="1c1f0-109">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="1c1f0-109">Publish-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619788)
 
-## <a name="example-commands"></a><span data-ttu-id="95234-110">Exempel på kommandon</span><span class="sxs-lookup"><span data-stu-id="95234-110">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="1c1f0-110">Exempel på kommandon</span><span class="sxs-lookup"><span data-stu-id="1c1f0-110">Example commands</span></span>
 
 ```powershell
 # Publish the really basic script file with required metadata
@@ -75,4 +75,3 @@ PackageManagementProvider : NuGet
 AdditionalMetadata : {description, developmentDependency, tags, PackageManagementProvider...}
 
 ```
-

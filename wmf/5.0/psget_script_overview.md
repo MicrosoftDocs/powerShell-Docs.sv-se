@@ -1,18 +1,18 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: a5d1bff0b39cbbac7d83c44c232a2721c340caa8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, inställning
+ms.openlocfilehash: a83c6a75080d7671bbddf265b68c8b3a8d089335
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a><span data-ttu-id="539d4-102">PowerShell Script Discovery, installation och hantering av med PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="539d4-102">PowerShell Script Discovery, Install and Management with PowerShellGet</span></span>
+# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a><span data-ttu-id="24e04-102">PowerShell Script Discovery, installation och hantering av med PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="24e04-102">PowerShell Script Discovery, Install and Management with PowerShellGet</span></span>
 
-<span data-ttu-id="539d4-103">Funktionen för delning av PowerShell-skript har lagts till i PowerShellGet i WMF 5.0 RTM-versionen.</span><span class="sxs-lookup"><span data-stu-id="539d4-103">PowerShell Script sharing feature got added to the PowerShellGet in the WMF 5.0 RTM release.</span></span>
-<span data-ttu-id="539d4-104">Följande nya cmdletar har lagts till PowerShellGet-modulen för att stödja PowerShell-skript.</span><span class="sxs-lookup"><span data-stu-id="539d4-104">The following new cmdlets are added to the PowerShellGet module for supporting the PowerShell Scripts.</span></span>
+<span data-ttu-id="24e04-103">Funktionen för delning av PowerShell-skript har lagts till i PowerShellGet i WMF 5.0 RTM-versionen.</span><span class="sxs-lookup"><span data-stu-id="24e04-103">PowerShell Script sharing feature got added to the PowerShellGet in the WMF 5.0 RTM release.</span></span>
+<span data-ttu-id="24e04-104">Följande nya cmdletar har lagts till PowerShellGet-modulen för att stödja PowerShell-skript.</span><span class="sxs-lookup"><span data-stu-id="24e04-104">The following new cmdlets are added to the PowerShellGet module for supporting the PowerShell Scripts.</span></span>
 ```powershell
 PS C:\\windows\\system32&gt; Get-Command \*script\* -Module PowerShellGet | Sort-Object -Property Noun, Verb
 CommandType Name Version Source
@@ -39,7 +39,7 @@ Function Update-ScriptFileInfo 1.0.0.1 PowerShellGet
 -   **Test-ScriptFileInfo** cmdlet lets you to validate and get the script file metadata.
 ```
 
-<span data-ttu-id="539d4-105">Syntaxen för skriptet delning Cmdlets:</span><span class="sxs-lookup"><span data-stu-id="539d4-105">Syntax of script sharing Cmdlets:</span></span>
+<span data-ttu-id="24e04-105">Syntaxen för skriptet delning Cmdlets:</span><span class="sxs-lookup"><span data-stu-id="24e04-105">Syntax of script sharing Cmdlets:</span></span>
 ```powershell
 **New-ScriptFileInfo** \[-Path\] &lt;string&gt; -Description &lt;string&gt; \[-Version &lt;version&gt;\] \[-Author &lt;string&gt;\] \[-Guid &lt;guid&gt;\] \[-CompanyName &lt;string&gt;\] \[-Copyright &lt;string&gt;\] \[-RequiredModules &lt;Object\[\]&gt;\] \[-ExternalModuleDependencies &lt;string\[\]&gt;\] \[-RequiredScripts &lt;string\[\]&gt;\] \[-ExternalScriptDependencies &lt;string\[\]&gt;\] \[-Tags &lt;string\[\]&gt;\] \[-ProjectUri &lt;uri&gt;\] \[-LicenseUri &lt;uri&gt;\] \[-IconUri &lt;uri&gt;\] \[-ReleaseNotes &lt;string\[\]&gt;\] \[-PassThru\] \[-Force\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 
@@ -77,4 +77,3 @@ Function Update-ScriptFileInfo 1.0.0.1 PowerShellGet
 
 **Publish-Script** -LiteralPath &lt;string&gt; \[-NuGetApiKey &lt;string&gt;\] \[-Repository &lt;string&gt;\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 ```
-

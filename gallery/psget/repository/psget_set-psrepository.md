@@ -1,33 +1,33 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
-title: Ange PSRepository
-ms.openlocfilehash: 2e850947b67d43254ee9d1b3c1c571167435234c
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Set-PSRepository
+ms.openlocfilehash: 0b555f31241bad15c5e99f3db0136d88ff7ab717
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="set-psrepository"></a><span data-ttu-id="446ce-103">Ange PSRepository</span><span class="sxs-lookup"><span data-stu-id="446ce-103">Set-PSRepository</span></span>
+# <a name="set-psrepository"></a><span data-ttu-id="2b5be-103">Set-PSRepository</span><span class="sxs-lookup"><span data-stu-id="2b5be-103">Set-PSRepository</span></span>
 
-<span data-ttu-id="446ce-104">Ange PSRepository anger värden för en registrerad lagringsplats.</span><span class="sxs-lookup"><span data-stu-id="446ce-104">Set-PSRepository sets values for a registered repository.</span></span>
+<span data-ttu-id="2b5be-104">Ange PSRepository anger värden för en registrerad lagringsplats.</span><span class="sxs-lookup"><span data-stu-id="2b5be-104">Set-PSRepository sets values for a registered repository.</span></span>
 
-## <a name="description"></a><span data-ttu-id="446ce-105">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="446ce-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="2b5be-105">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="2b5be-105">Description</span></span>
 
-<span data-ttu-id="446ce-106">Cmdlet Set-PSRepository anger värden för en registrerad modul-databas.</span><span class="sxs-lookup"><span data-stu-id="446ce-106">The Set-PSRepository cmdlet sets values for a registered module repository.</span></span>
+<span data-ttu-id="2b5be-106">Cmdlet Set-PSRepository anger värden för en registrerad modul-databas.</span><span class="sxs-lookup"><span data-stu-id="2b5be-106">The Set-PSRepository cmdlet sets values for a registered module repository.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="446ce-107">Cmdlet-syntax</span><span class="sxs-lookup"><span data-stu-id="446ce-107">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="2b5be-107">Cmdlet-syntax</span><span class="sxs-lookup"><span data-stu-id="2b5be-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Set-PSRepository -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="446ce-108">Cmdlet-referens för onlinehjälp</span><span class="sxs-lookup"><span data-stu-id="446ce-108">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="2b5be-108">Cmdlet-referens för onlinehjälp</span><span class="sxs-lookup"><span data-stu-id="2b5be-108">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="446ce-109">Ange PSRepository</span><span class="sxs-lookup"><span data-stu-id="446ce-109">Set-PSRepository</span></span>](http://go.microsoft.com/fwlink/?LinkID=517128)
+[<span data-ttu-id="2b5be-109">Set-PSRepository</span><span class="sxs-lookup"><span data-stu-id="2b5be-109">Set-PSRepository</span></span>](http://go.microsoft.com/fwlink/?LinkID=517128)
 
-## <a name="example-commands"></a><span data-ttu-id="446ce-110">Exempel på kommandon</span><span class="sxs-lookup"><span data-stu-id="446ce-110">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="2b5be-110">Exempel på kommandon</span><span class="sxs-lookup"><span data-stu-id="2b5be-110">Example commands</span></span>
 
 ```powershell
 PS C:\> Register-PSRepository -Name myRepository -SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" -InstallationPolicy Trusted
@@ -46,9 +46,9 @@ myRepository              Untrusted            https://www.myget.org/F/powershel
 ```
 
 
-### <a name="set-psrepository-cmdlet-with-script-sharing-support"></a><span data-ttu-id="446ce-111">Set-PSRepository cmdlet med skript delning stöd</span><span class="sxs-lookup"><span data-stu-id="446ce-111">Set-PSRepository cmdlet with script sharing support</span></span>
+### <a name="set-psrepository-cmdlet-with-script-sharing-support"></a><span data-ttu-id="2b5be-111">Set-PSRepository cmdlet med skript delning stöd</span><span class="sxs-lookup"><span data-stu-id="2b5be-111">Set-PSRepository cmdlet with script sharing support</span></span>
 
-<span data-ttu-id="446ce-112">Använda Set-PSRepository-cmdletar för att lägga till den **ScriptSourceLocation** och **ScriptPublishLocation** till PSRepository.</span><span class="sxs-lookup"><span data-stu-id="446ce-112">Use Set-PSRepository cmdlets to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
+<span data-ttu-id="2b5be-112">Använda Set-PSRepository-cmdletar för att lägga till den **ScriptSourceLocation** och **ScriptPublishLocation** till PSRepository.</span><span class="sxs-lookup"><span data-stu-id="2b5be-112">Use Set-PSRepository cmdlets to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
 ```powershell
 # Add script sharing locations to an existing PSRepository using Set-PSRepository object.
 Set-PSRepository -Name MyGallery `
@@ -69,4 +69,3 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 
 ```
-

@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
 title: Module_Versioning
-ms.openlocfilehash: ba86c32300cbfac6130a61204e841c5cb6e6290d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: bd6dc05aa8dc9e823d1835b0c1cd49cfb26b1d68
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
