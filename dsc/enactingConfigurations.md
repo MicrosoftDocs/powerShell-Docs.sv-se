@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-10-16
+ms.date: 10/16/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: Anta konfigurationer
-ms.openlocfilehash: 01294b85d33e147593299de8ecf46c027a69f7a3
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Tillämpa konfigurationer
+ms.openlocfilehash: 28ca852eb00298c229be8104ecdfeabc47a10abc
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="enacting-configurations"></a>Anta konfigurationer
+# <a name="enacting-configurations"></a>Tillämpa konfigurationer
 
 >Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
 

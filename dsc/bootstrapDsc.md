@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: "Konfigurera en virtuella datorer på första uppstart med hjälp av DSC"
-ms.openlocfilehash: ff06aafa6db49d93a9b42e38ac7c3e9a11657bd5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Konfigurera en virtuella datorer på första uppstart med hjälp av DSC
+ms.openlocfilehash: e6ff83b9a09f93277904c80e8e52f3db5e818739
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 >Gäller för: Windows PowerShell 5.0
 
@@ -90,7 +90,8 @@ Byt namn på och flytta filen till rätt plats på den virtuella Hårddisken som
     Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
     ```
 
-7. Skapa en virtuell dator med hjälp av den virtuella Hårddisken där du installerade DSC MOF-dokumentet. Efter första uppstart och installation av operativsystemet, kommer IIS att installeras.
+7. Skapa en virtuell dator med hjälp av den virtuella Hårddisken där du installerade DSC MOF-dokumentet.
+Efter första uppstart och installation av operativsystemet, kommer IIS att installeras.
 Du kan kontrollera detta genom att anropa den [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) cmdlet.
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>Mata in en DSC-metakonfigurationen i en virtuell Hårddisk
@@ -203,4 +204,3 @@ Som standard värdet för den **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Cu
 - [DSCAutomationHostEnabled-registernyckel](DSCAutomationHostEnabled.md)
 - [Konfigurera den lokala konfigurationshanteraren (LCM)](metaConfig.md)
 - [Ställer in en pull webbserver DSC](pullServer.md)
-

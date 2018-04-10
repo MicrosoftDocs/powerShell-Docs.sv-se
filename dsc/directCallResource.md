@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: "Anropar metoder för DSC-resursen direkt"
-ms.openlocfilehash: 68344d1be5c41e5ce4660e0a62019fa0a52c2541
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Anropa DSC-resursmetoder direkt
+ms.openlocfilehash: dbf0a4ada4c6cc2e7d65698b87a5a29a2ea84781
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="calling-dsc-resource-methods-directly"></a>Anropar metoder för DSC-resursen direkt
+# <a name="calling-dsc-resource-methods-directly"></a>Anropa DSC-resursmetoder direkt
 
 >Gäller för: Windows PowerShell 5.0
 
-Du kan använda den [Invoke-DscResource](https://technet.microsoft.com/library/mt517869.aspx) för att anropa direkt funktioner eller metoder för en DSC-resurs (den **Get-TargetResource**, **Set TargetResource**, och  **Test-TargetResource** funktioner för en MOF-baserade resurs eller **hämta**, **ange**, och **Test** metoder för en klass-baserade resurs). Detta kan användas med tredje part som vill använda DSC-resurser, eller som ett bra verktyg när du arbetar med resurser. 
+Du kan använda den [Invoke-DscResource](https://technet.microsoft.com/library/mt517869.aspx) för att anropa direkt funktioner eller metoder för en DSC-resurs (den **Get-TargetResource**, **Set TargetResource**, och  **Test-TargetResource** funktioner för en MOF-baserade resurs eller **hämta**, **ange**, och **Test** metoder för en klass-baserade resurs).
+Detta kan användas med tredje part som vill använda DSC-resurser, eller som ett bra verktyg när du arbetar med resurser.
 
 Den här cmdleten används vanligtvis i kombination med en egenskap för metakonfigurationen `refreshMode = 'Disabled'`, men du kan använda oavsett vad **refreshMode** är inställd på.
 
@@ -51,7 +52,6 @@ $result.ItemValue | fl
 >**Obs:** direkt anropar sammansatta resurs metoder inte stöds. I stället anropa de underliggande resurserna som utgör sammansatta resursen.
 
 ## <a name="see-also"></a>Se även
-- [Skriva en anpassad DSC-resurs med MOF](authoringResourceMOF.md) 
+- [Skriva en anpassad DSC-resurs med MOF](authoringResourceMOF.md)
 - [Skriva en anpassad DSC-resurs med PowerShell-klasser](authoringResourceClass.md)
 - [Felsök DSC-resurser](debugResource.md)
-

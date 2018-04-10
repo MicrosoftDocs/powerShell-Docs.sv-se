@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: 1f4aa9cdbf4c3b4b500f4987a2d2aded4040ba42
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, inställning
+ms.openlocfilehash: 688014c9238e0353683bea42bcbfd77b1f8b3048
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="product-compatibility-status"></a>Kompatibilitetsstatus för produkten
+# <a name="product-compatibility-status"></a>Status för produktkompatibilitet
 
 ## <a name="compatible"></a>Kompatibel:
 > System som kör följande serverprogram **kan köra** Windows Management Framework 5.0:
@@ -32,4 +32,3 @@ ms.lasthandoff: 06/12/2017
 - Microsoft Lync Server 2013
 - Microsoft Lync Server 2010
 - System Center 2012 R2 Service Management Automation
-

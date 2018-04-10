@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: RemoveConfiguration-metoden i klassen MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: fed45836293adedbce18f01cfe53cdfa1a474975
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: RemoveConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+ms.openlocfilehash: e0ae8a50212b70841d210d7b2d666a2855218d1a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>RemoveConfiguration-metoden i klassen MSFT_DSCLocalConfigurationManager
+# <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>RemoveConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
 
 Tar bort konfigurationsfilerna.
 
@@ -26,8 +26,7 @@ uint32 RemoveConfiguration(
 <a name="parameters"></a>Parametrar
 ----------
 
-*Steget* \[i\]  
-Anger vilken konfiguration dokumentet ska tas bort. Följande värden är giltiga:
+*Steget* \[i\] anger vilken konfiguration dokumentet ska tas bort. Följande värden är giltiga:
 
 |Värde |Beskrivning |
 |:--- |:---|
@@ -35,8 +34,7 @@ Anger vilken konfiguration dokumentet ska tas bort. Följande värden är giltig
 |**2** | Den **väntande** configuration dokumentet (pending.mof).  |
 |**4** | Den **föregående** configuration dokumentet (previous.mof). |
 
-*Framtvinga* \[i\]  
-**SANT** att Framtvinga borttagning av konfigurationen.
+*Tvinga* \[i\] **SANT** att Framtvinga borttagning av konfigurationen.
 
 ## <a name="return-value"></a>Returvärde
 ------------
@@ -58,11 +56,3 @@ Det här är en statisk metod.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

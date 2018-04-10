@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea powershell säkerhet"
-title: "Med hjälp av JEA"
-ms.openlocfilehash: f0c22bf0f823b9fafa203e7f98049a6a6b3b7c05
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea powershell säkerhet
+title: Använda JEA
+ms.openlocfilehash: 8a6fb2682cf82de8dd20a8699178d4abde4954c2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-jea"></a>Med hjälp av JEA
+# <a name="using-jea"></a>Använda JEA
 
 > Gäller för: Windows PowerShell 5.0
 
@@ -103,7 +103,7 @@ $jeaDefaultCmdlets = 'Clear-Host', 'Exit-PSSession', 'Get-Command', 'Get-FormatD
 $filteredCommands = $commands.Name | Where-Object { $jeaDefaultCmdlets -notcontains $_ }
 
 # Import only commands explicitly added in role capabilities and prefix each imported cmdlet with "JEA"
-Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands 
+Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands
 ```
 
 Du kan också spara via proxy cmdlets från implicit fjärrkommunikation med [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession).
@@ -189,4 +189,3 @@ Det rekommenderas starkt att du skapar en dedikerad lokal användare med ingen b
 Kom ihåg att även en icke-privilegierade användare kan fortfarande logga in på en Windows-dator som standard med obegränsad PowerShell.
 Som gör att de kan bläddra (del av) filsystemet och lär dig mer om OS-miljön.
 Om du vill låsa en Hyper-V-administratör att endast få åtkomst till en virtuell dator med hjälp av PowerShell direkt med JEA behöver du neka lokal inloggningsrättigheter till Hyper-V-administratörens JEA konto.
-

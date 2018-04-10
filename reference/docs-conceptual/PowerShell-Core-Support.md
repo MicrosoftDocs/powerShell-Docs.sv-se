@@ -1,4 +1,4 @@
-# <a name="powershell-core-support-lifecycle"></a>PowerShell Core Support Lifecycle
+# <a name="powershell-core-support-lifecycle"></a>Supportlängd för PowerShell Core
 
 PowerShell Core är en specifik uppsättning verktyg och komponenter som har levererats, installeras och konfigureras separat från Windows PowerShell.
 Därför ingår PowerShell Core inte i Licensavtal för Windows 7/8.1/10 eller Windows Server.
@@ -42,7 +42,7 @@ PowerShell Core stöds officiellt på följande plattformar:
 * Red Hat Enterprise Linux 7
 * OpenSUSE 42.2
 * Fedora 25, 26
-* macOS 10.12 +
+* macOS 10.12+
 
 Gruppen har också bidragit paket för följande plattformar, men de är inte officiellt stöds:
 
@@ -62,12 +62,12 @@ Stöd för PowerShell Core inte utökar till andra moduler för produkten om de 
 Till exempel med hjälp av den `ActiveDirectory` modulen som levereras som en del av Windows Server är ett scenario som inte stöds.
 
 Moduler som inte uttryckligen har stöd för PowerShell Core kan dock vara kompatibla i vissa fall.
-Genom att installera den [`WindowsPSModulePath`][] modulen, kan du lägga till Windows PowerShell `PSModulePath` till PowerShell-kärna `PSModulePath`.
+Genom att installera den [ `WindowsPSModulePath` ][] modulen, kan du lägga till Windows PowerShell `PSModulePath` till PowerShell-kärna `PSModulePath`.
 
 Installera först den `WindowsPSModulePath` modul från PowerShell-galleriet:
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
@@ -89,4 +89,4 @@ Add-WindowsPSModulePath
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [MIT-licensen]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-['WindowsPSModulePath']: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+[`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/

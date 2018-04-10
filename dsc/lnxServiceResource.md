@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: "DSC för Linux nxService resurs"
-ms.openlocfilehash: 4273ad59f15eedd08b07888ebb6ee51d039b72b3
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: DSC för Linux nxService resurs
+ms.openlocfilehash: b02fb1153570f628682533cb57a7d429e5cc8762
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>DSC för Linux nxService resurs
 
@@ -28,13 +28,13 @@ nxService <string> #ResourceName
 ```
 
 ## <a name="properties"></a>Egenskaper
-|  Egenskap |  Beskrivning | 
+|  Egenskap |  Beskrivning |
 |---|---|
-| Namn| Namnet på tjänsten/daemon för att konfigurera.| 
-| Domänkontrollant| Typ av service controller ska använda när du konfigurerar tjänsten.| 
-| Aktiverat| Anger om tjänsten startar vid start.| 
-| Läge| Anger om tjänsten körs. Den här egenskapen till ”Stoppad” för att se till att tjänsten inte körs. Ange den till ”körs” för att se till att tjänsten inte körs.| 
-| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om den **ID** resursens configuration skriptblock som du vill köra först är **ResourceName** och dess typ är **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = "[ResourceType]ResourceName"`.| 
+| Namn| Namnet på tjänsten/daemon för att konfigurera.|
+| Domänkontrollant| Typ av service controller ska använda när du konfigurerar tjänsten.|
+| Aktiverat| Anger om tjänsten startar vid start.|
+| Läge| Anger om tjänsten körs. Den här egenskapen till ”Stoppad” för att se till att tjänsten inte körs. Ange den till ”körs” för att se till att tjänsten inte körs.|
+| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om den **ID** resursens configuration skriptblock som du vill köra först är **ResourceName** och dess typ är **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
 
 
 ## <a name="additional-information"></a>Ytterligare information
@@ -46,11 +46,11 @@ Den **nxService** resursen kommer inte att skapa en tjänstdefinitionen eller et
 I följande exempel visas konfigurationen för tjänsten ”httpd” (för Apache http-Server) som registrerats med den **SystemD** tjänsthanteraren.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 #Apache Service
-nxService ApacheService 
+nxService ApacheService
 {
 Name = "httpd"
 State = "running"
@@ -59,4 +59,3 @@ Controller = "systemd"
 }
 }
 ```
-

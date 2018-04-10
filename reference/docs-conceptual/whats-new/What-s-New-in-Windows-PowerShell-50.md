@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: "Vad är nytt i Windows PowerShell 5.0"
-ms.openlocfilehash: 3a412b35c593c99fb8ea8307b12ccc05871863f4
-ms.sourcegitcommit: e2360ac94fe4deb0ed0f5c8c8d9b293551ec8030
+title: Vad är nytt i Windows PowerShell 5.0
+ms.openlocfilehash: f1134a37e7027b00c948ce1db186a21dc5a311c6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Vad är nytt i Windows PowerShell 5.0
 Windows PowerShell 5.0 innehåller nya viktiga funktioner som utökar användningen, förbättrar dess användbarhet och gör att du kan styra och hantera Windows-baserade miljöer enklare och mer omfattande.
@@ -14,7 +14,7 @@ Windows PowerShell 5.0 innehåller nya viktiga funktioner som utökar användnin
 Windows PowerShell 5.0 är bakåtkompatibel. Cmdlets, providers, moduler, snapin-moduler, skript, funktioner och profiler som har utformats för Windows PowerShell 4.0, Windows PowerShell 3.0 och Windows PowerShell 2.0 vanligtvis fungerar i Windows PowerShell 5.0 utan ändringar.
 
 # <a name="installing-windows-powershell"></a>Installera Windows PowerShell
-Windows PowerShell 5.0 installeras som standard på Windows Server 2016 Technical Preview och Windows 10. 
+Windows PowerShell 5.0 installeras som standard på Windows Server 2016 Technical Preview och Windows 10.
 
 Om du vill installera Windows PowerShell 5.0 på Windows Server 2012 R2, Windows 8.1 Enterprise eller Windows 8.1 Pro, hämta och installera [Windows Management Framework 5.0](http://aka.ms/wmf5download). Glöm inte att läsa hämta information och uppfyller alla systemkrav, innan du installerar Windows Management Framework 5.0.
 
@@ -184,7 +184,7 @@ Många uppdateringar och förbättringar för Windows PowerShell önskad tillst�
 
 - Cmdlet New-Guid utnyttjar .NET Framework Guid-klassen för att generera ett GUID-användbart när du skriver skript eller DSC-resurser.
 
-- Eftersom filversionsinformation kan vara vilseledande, särskilt när en fil är skyddad, är nya FileVersionRaw och ProductVersionRaw skriptegenskaper tillgängliga för FileInfo objekt. Du kan till exempel köra följande kommando för att visa värdena i de här egenskaperna för powershell.exe, där $pid innehåller process-ID för en session som körs i Windows PowerShell:```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
+- Eftersom filversionsinformation kan vara vilseledande, särskilt när en fil är skyddad, är nya FileVersionRaw och ProductVersionRaw skriptegenskaper tillgängliga för FileInfo objekt. Du kan till exempel köra följande kommando för att visa värdena i de här egenskaperna för powershell.exe, där $pid innehåller process-ID för en session som körs i Windows PowerShell:  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 
 - Nya cmdletar RETUR PSHostProcess och avsluta PSHostProcess kan du felsöka Windows PowerShell-skript i processer som är separat från den aktuella processen körs i Windows PowerShell-konsolen. Kör RETUR-PSHostProcess om du vill ange eller ansluta till en specifik process-ID och kör sedan Get-Runspace för att returnera active körningsutrymmen inom processen. Kör avsluta PSHostProcess frånkoppling från processen när du är klar felsökning av skript i processen.
 
@@ -234,9 +234,9 @@ Många uppdateringar och förbättringar för Windows PowerShell önskad tillst�
 
     -   Jämför DscConfiguration
 
-    -   Publicera DscConfiguration
+    -   Publish-DscConfiguration
 
-    -   Ange DscLocalConfigurationManager
+    -   Set-DscLocalConfigurationManager
 
     -   Start-DscConfiguration
 
@@ -352,7 +352,7 @@ Windows PowerShell 4.0 innehåller följande nya funktioner.
 
 - Värdet för **$PSVersionTable.PSVersion** har uppdaterats till 4.0.
 
-- **WHERE ()** operatorn beteende har ändrats. `Collection.Where('property -match name')`Acceptera ett stränguttryck i formatet `"Property -CompareOperator Value"` stöds inte längre. Men den **WHERE ()** operatorn accepterar stränguttryck i formatet av en scriptblock; detta förfarande fortfarande stöds.
+- **WHERE ()** operatorn beteende har ändrats. `Collection.Where('property -match name')` Acceptera ett stränguttryck i formatet `"Property -CompareOperator Value"` stöds inte längre. Men den **WHERE ()** operatorn accepterar stränguttryck i formatet av en scriptblock; detta förfarande fortfarande stöds.
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Nya funktioner i Windows PowerShell Integrated Scripting Environment (ISE)
 
@@ -604,34 +604,34 @@ Nya cmdletar har lagts till i Windows PowerShell Core-installationen, inklusive 
 
 |||
 |-|-|
-|Lägg till JobTrigger|Ny JobTrigger|
-|Connect-PSSession|Ny PSSessionConfigurationFile|
-|ConvertFrom Json|New-PSTransportOption|
-|ConvertTo Json|Ny PSWorkflowExecutionOption|
-|Inaktivera JobTrigger|Ny PSWorkflowSession|
-|Inaktivera-ScheduledJob|Ny ScheduledJobOption|
-|Koppla från PSSession|Ny WinEvent|
+|Lägg till JobTrigger|New-JobTrigger|
+|Connect-PSSession|New-PSSessionConfigurationFile|
+|ConvertFrom-Json|New-PSTransportOption|
+|ConvertTo Json|New-PSWorkflowExecutionOption|
+|Inaktivera JobTrigger|New-PSWorkflowSession|
+|Disable-ScheduledJob|New-ScheduledJobOption|
+|Koppla från PSSession|New-WinEvent|
 |Aktivera JobTrigger|Ta emot PSSession|
-|Aktivera-ScheduledJob|Registrera CimIndicationEvent|
+|Aktivera-ScheduledJob|Register-CimIndicationEvent|
 |Get-CimAssociatedInstance|Register-ScheduledJob|
 |Get-CimClass|Ta bort CimInstance|
 |Get-CimInstance|Ta bort-CimSession|
-|Get-CimSession|Ta bort TypeData|
+|Get-CimSession|Remove-TypeData|
 |Get-ControlPanelItem|Byt namn på datorn|
 |Get-IseSnippet|Resume-Job|
 |Get-JobTrigger|Save-Help|
 |Get-ScheduledJob|Ange CimInstance|
 |Get-ScheduledJobOption|Set-JobTrigger|
 |Get-TypeData|Set-ScheduledJob|
-|Importera IseSnippet|Ange ScheduledJobOption|
-|Anropa AsWorkflow|Visa kommando|
-|Anropa CimMethod|Visa ControlPanelItem|
-|Anropa RestMethod|Pausa jobb|
-|Anropa WebRequest|Testa PSSessionConfigurationFile|
-|Ny CimInstance|Avblockera-fil|
+|Import-IseSnippet|Set-ScheduledJobOption|
+|Invoke-AsWorkflow|Visa kommando|
+|Invoke-CimMethod|Show-ControlPanelItem|
+|Invoke-RestMethod|Pausa jobb|
+|Invoke-WebRequest|Testa PSSessionConfigurationFile|
+|Ny CimInstance|Unblock-File|
 |Ny CimSession|Unregister-ScheduledJob|
-|Ny CimSessionOption|Update-Help|
-|Ny IseSnippet||
+|New-CimSessionOption|Update-Help|
+|New-IseSnippet||
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Förbättringar av befintliga Core-Cmdlets och leverantörer
 Windows PowerShell 3.0 innehåller nya funktioner för befintliga cmdlets med förenklad syntax och nya parametrar för följande cmdlets: datorn cmdlets, CSV-cmdlet: ar, Get-ChildItem Get-Command-, Get-innehåll, Get-historik, måttobjekt-säkerhet cmdlet: ar, Select-Object, Välj sträng, dela sökväg, startprocessen, Tee-objektet, Test-Connection Lägg till medlem och WMI-cmdletar.
@@ -713,4 +713,3 @@ Att förbättra möjligheten för Windows PowerShell 3.0 att tolka och hanterar 
 ## <a name="see-also"></a>Se även
 - [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
 - [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Med Windows PowerShell-skript
+title: Skriptning med Windows PowerShell
 ms.assetid: c425d27a-bb41-4947-8d73-ba5480bc8ee0
-ms.openlocfilehash: 693d1bb9329dbb280453fc16738eda63c466e156
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 9bb420a3d725d3fa925b79452bbbcc542bf9f4db
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="scripting-with-windows-powershell"></a>Med Windows PowerShell-skript
+# <a name="scripting-with-windows-powershell"></a>Skriptning med Windows PowerShell
 
 Windows PowerShell® är ett aktivitetsbaserat kommandoradsskal och skriptspråk som är särskilt utformat för systemadministration. Bygger på .NET Framework och Windows PowerShell hjälper IT-experter och Privilegierade användare att styra och automatisera administrationen av Windows-operativsystem och program som körs på Windows.
 
@@ -23,4 +23,3 @@ Windows PowerShell innehåller följande funktioner:
 - Förenklad, kommandobaserat navigeringen i operativsystemet, vilket kan användarna navigera registret och andra dataarkiv med hjälp av samma teknik som de använder för att navigera i filsystemet.
 - Funktioner för manipulering av kraftfulla objekt. Objekt kan manipuleras direkt eller skickas till andra verktyg eller databaser.
 - Utökningsbart gränssnitt. Oberoende programvaruleverantörer och utvecklare kan skapa anpassade verktyg och funktioner för administration av programvara.
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: "DSC för Linux nxEnvironment resurs"
-ms.openlocfilehash: 61e0c7e77e486cea878351f1929d73f1f80710d8
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: DSC för Linux nxEnvironment resurs
+ms.openlocfilehash: 6d1d5e578e9a7ddda0e70063f86867de2e87a52e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>DSC för Linux nxEnvironment resurs
 
@@ -29,13 +29,13 @@ nxEnvironment <string> #ResourceName
 
 ## <a name="properties"></a>Egenskaper
 
-|  Egenskap |  Beskrivning | 
+|  Egenskap |  Beskrivning |
 |---|---|
-| Namn| Anger namnet på den miljövariabel som du vill se till att ett visst tillstånd.| 
-| Värde| Värdet som tilldelas miljövariabeln.| 
-| Se till att| Anger om du vill kontrollera om det finns variabeln. Ange egenskapen ”aktuella” så variabeln finns. Ange den till ”saknas” så variabeln inte finns. Standardvärdet är ”saknas”.| 
-| Sökväg| Definierar miljövariabeln som konfigureras. Den här egenskapen **$true** om variabeln är den **sökväg** variabeln, annars inställd på **$false**. Standardvärdet är **$false**. Om variabeln som konfigureras är den **sökväg** variabel, värdet tillhandahålls via den **värdet** egenskap läggs till det befintliga värdet.| 
-| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om den **ID** resursens configuration skriptblock som du vill köra först är **ResourceName** och dess typ är **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = "[ResourceType]ResourceName"`.| 
+| Namn| Anger namnet på den miljövariabel som du vill se till att ett visst tillstånd.|
+| Värde| Värdet som tilldelas miljövariabeln.|
+| Se till att| Anger om du vill kontrollera om det finns variabeln. Ange egenskapen ”aktuella” så variabeln finns. Ange den till ”saknas” så variabeln inte finns. Standardvärdet är ”saknas”.|
+| Sökväg| Definierar miljövariabeln som konfigureras. Den här egenskapen **$true** om variabeln är den **sökväg** variabeln, annars inställd på **$false**. Standardvärdet är **$false**. Om variabeln som konfigureras är den **sökväg** variabel, värdet tillhandahålls via den **värdet** egenskap läggs till det befintliga värdet.|
+| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om den **ID** resursens configuration skriptblock som du vill köra först är **ResourceName** och dess typ är **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="additional-information"></a>Ytterligare information
 
@@ -47,7 +47,7 @@ nxEnvironment <string> #ResourceName
 I följande exempel visas hur du använder den **nxEnvironment** resurs så att **TestEnvironmentVariable** finns och har värdet ”Test-värde”. Om **TestEnvironmentVariable** är inte finns, skapas den.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 
 nxEnvironment EnvironmentExample
@@ -57,5 +57,3 @@ nxEnvironment EnvironmentExample
     Value = “TestValue”
 }
 ```
-
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: 510e1baa2933932cfd4c3bcb4e0973f3eb8095f3
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: WMF, powershell, inställning
+ms.openlocfilehash: 7e24bb4ee4d0658b0619f7f008e3740f647f124f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="system-requirements"></a>Systemkrav
 
@@ -55,7 +55,7 @@ Kontrollera att följande krav är uppfyllda:
 Windows Server 2008 R2 SP1 och Windows 7 SP1-system har inbyggda PowerShell 2.0, WinRM och WMI. WMF 3.0 och WMF 4.0 paket som uppdaterar dessa inbyggda komponenter har getts ut efter lanseringen av Windows Server 2008 R2 SP1 och Windows 7 SP1. Installera/avinstallera WMF 3.0 och WMF 4.0-paket som upptäckts problem i följande uppgraderingsmetod:
 
 - Built-in --> WMF 4.0
-- Built-in --> WMF 3.0 --> WMF4.0. 
+- Built-in --> WMF 3.0 --> WMF4.0.
 
 Vi har löst alla problem i WMF 4.0-paket. Det är därför en förutsättning för WMF 4.0 för att installera WMF 5.0 på Windows Server 2008 R2 SP1 och Windows 7 SP1. Nedan visas specifika problem som kan uppstå om du inte installerar WMF 4.0 innan du uppgraderar till WMF 5.0:
 
@@ -96,4 +96,3 @@ wusa /uninstall /kb:3134760
 3.  Klicka på **Visa installerade uppdateringar.**
 
 4.  Välj **Windows Management Framework 5.0** från listan över installerade uppdateringar. Detta motsvarar *KB3134758*, *KB3134759*, eller *KB3134760*. Klicka på **avinstallera.**
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: "Komma igång med Windows PowerShell"
+title: Kom igång med Windows PowerShell
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
-ms.openlocfilehash: 93a4d4a6bc0ebef6b6af7f7f8af59dec865bcfa3
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: d8f1a416c1618040311ec0ea3b98b28aa432bcf1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="getting-started-with-windows-powershell"></a>Komma igång med Windows PowerShell
+# <a name="getting-started-with-windows-powershell"></a>Kom igång med Windows PowerShell
 Windows PowerShell är ett kommandoradsgränssnitt för Windows som är särskilt utformat för administratörer. Windows PowerShell innehåller en interaktiv prompt och en skriptmiljö som kan användas fristående eller i kombination.
 
 Till skillnad från de flesta tankar som accepterar och returnerar text, bygger på .NET Framework CLR (CLR) och .NET Framework, Windows PowerShell och accepterar och returnerar .NET Framework-objekt. Den här grundläggande ändring i miljön ger helt nya verktyg och metoder för hantering och konfiguration av Windows.
@@ -29,4 +29,3 @@ I det här avsnittet:
 - [Starta Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
 
 - [Komma igång med att använda Windows PowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)
-

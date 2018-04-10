@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell-cmdlet
-ms.date: 2016-12-12
-title: "-cmdletar för Webbåtkomst"
+ms.date: 12/12/2016
+title: -cmdletar för Webbåtkomst
 ms.technology: powershell
-ms.openlocfilehash: 54821c318b165461ec613678a39c4e3b500dfd0e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6930fd6a08de69078576fb0d0fbabb04e05d0814
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-web-access-cmdlets"></a>Windows PowerShell-cmdletar för webbåtkomst
 
@@ -44,21 +44,18 @@ Avinstallerar Windows PowerShell-webbprogrammet från IIS.
 >
 >Om du vill visa en lista över alla cmdlets som är tillgängliga, använda den:
 >
-> `Get-Command –Module PowerShellWebAccess`cmdlet.
+> `Get-Command –Module PowerShellWebAccess` cmdlet.
 
-Mer information om, eller syntaxen för någon av cmdletar, Använd:  
-`Get-Help `*&lt;cmdlet-namn&gt;*  
-där  *&lt;cmdlet-namn&gt;*  är namnet på den cmdlet som du vill undersöka.
+Mer information om, eller syntaxen för någon av cmdletar, använda: `Get-Help ` *&lt;cmdlet-namn&gt;* där *&lt;cmdlet-namn&gt;* är namnet på den cmdlet som du vill undersöka.
 
 Du kan köra någon av följande cmdletar för att få mer detaljerad information:
 
-- `Get-Help `*&lt;cmdlet-namn&gt;*` -Detailed`
-- `Get-Help `*&lt;cmdlet-namn&gt;*` -Examples`
-- `Get-Help `*&lt;cmdlet-namn&gt;*` -Full`
+- `Get-Help `*&lt;Cmdlet-namn&gt;*` -Detailed`
+- `Get-Help `*&lt;Cmdlet-namn&gt;*` -Examples`
+- `Get-Help `*&lt;Cmdlet-namn&gt;*` -Full`
 
 ### <a name="more-information"></a>Mer Information
 
 Mer information om PowerShell-webbåtkomst finns:
 
 - [Installera och använda Windows PowerShell-webbåtkomst](../install-and-use-windows-powershell-web-access.md)
-

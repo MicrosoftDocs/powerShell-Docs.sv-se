@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-27
+ms.date: 06/27/2017
 keywords: PowerShell-cmdlet
-title: "Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst"
-ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst
+ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst
 
@@ -186,7 +186,7 @@ Nedan följer några exempel på det här scenariot.
 - Vissa administratörer ger vissa användare mer åtkomst än andra. Till exempel skapar administratören två användargrupper, **administratörer** och **BasicSupport**. Administratören skapar även en slutpunkt med ett begränsat körningsutrymme som kallas **PswaEndpoint**, och definierar följande två regler: **Admins,\*,\***  och  **BasicSupport,\*, PswaEndpoint**. Den första regeln ger alla användare i den **Admin** åtkomst till alla datorer och den andra regeln ger alla användare i den **BasicSupport** åtkomst till enbart de datorerna som har  **PswaEndpoint**.
 
 - En administratör har konfigurerat en privat testmiljö och vill ge alla auktoriserade nätverksanvändare åtkomst till alla datorer i nätverket som de normalt har åtkomst till, samt åtkomst alla sessionskonfigurationer som de normalt har åtkomst till. Eftersom det är en privat testmiljö skapar administratören en auktoriseringsregel som inte är säker.
-  - Administratören kör cmdleten `Add-PswaAuthorizationRule * * *`, som använder jokertecknet  **\***  att representera alla användare, alla datorer och alla konfigurationer.
+  - Administratören kör cmdleten `Add-PswaAuthorizationRule * * *`, som använder jokertecknet **\*** att representera alla användare, alla datorer och alla konfigurationer.
   - Den här regeln motsvarar följande: `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
   >**Obs**:

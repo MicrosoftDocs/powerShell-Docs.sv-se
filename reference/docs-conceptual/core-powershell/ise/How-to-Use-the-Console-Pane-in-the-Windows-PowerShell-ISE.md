@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: "Hur du använder konsolfönstret i Windows PowerShell ISE"
+title: Använd konsolfönstret i Windows PowerShell ISE
 ms.assetid: 44d67705-87c7-4a69-a53e-6471fdebb757
-ms.openlocfilehash: 59e97bbc12269d855c4f3715171636647d4cc634
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 5bbbdd3b1f0324ff1a4f2298459f58640c4dc9a6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="how-to-use-the-console-pane-in-the-windows-powershell-ise"></a>Hur du använder konsolfönstret i Windows PowerShell ISE
+# <a name="how-to-use-the-console-pane-in-the-windows-powershell-ise"></a>Använd konsolfönstret i Windows PowerShell ISE
+
 Konsolfönstret i i Windows PowerShell Integrated Scripting Environment (ISE) fungerar precis som Windows PowerShell ISE fristående konsolfönstret.
 
 Om du vill köra ett kommando i konsolfönstret, skriver du ett kommando och tryck på RETUR. Skriv SKIFT + RETUR mellan kommandon för att ange flera kommandon som du vill köra i följd. Se [så Använd Flikavslutande i fönstret skript och konsolfönstret](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) för hjälp med att skriva kommandon.
@@ -25,5 +26,5 @@ Från och med Windows PowerShell v3 har utdatarutan kombineras med konsolfönstr
 - Rensar du texten i konsolfönstret. Om du vill rensa konsolfönstret, kan du klicka på den **Rensa konsolfönstret** ikonen i verktygsfältet, eller kör kommandot **rensa värden** eller dess alias **cls**.
 
 ## <a name="see-also"></a>Se även
-- [Med hjälp av Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 
+- [Introduktion till Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)

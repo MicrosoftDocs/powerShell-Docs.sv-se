@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: SendConfigurationApply-metoden i klassen MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 20f732d35860cccde4e507dc6916e27d0cf8c5f6
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: SendConfigurationApply-metoden för MSFT_DSCLocalConfigurationManager-klassen
+ms.openlocfilehash: 8edf8c55089e767394ba21b42fe74072777a45c9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="sendconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>SendConfigurationApply-metoden i klassen MSFT_DSCLocalConfigurationManager
+# <a name="sendconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>SendConfigurationApply-metoden för MSFT_DSCLocalConfigurationManager-klassen
 
 Skickar konfiguration dokumentet till noden hanterade används Configuration Agent för att tillämpa konfigurationen.
 
@@ -26,11 +26,9 @@ uint32 SendConfigurationApply(
 <a name="parameters"></a>Parametrar
 ----------
 
-*ConfigurationData* \[i\]  
-Miljödata för konfigurationen.
+*ConfigurationData* \[i\] miljödata för konfigurationen.
 
-*Tvinga* \[i\]  
-**SANT** att tvinga konfigurationen som ska sluta.
+*Tvinga* \[i\] **SANT** att tvinga konfigurationen som ska sluta.
 
 ## <a name="return-value"></a>Returvärde
 ------------
@@ -52,11 +50,3 @@ Det här är en statisk metod.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

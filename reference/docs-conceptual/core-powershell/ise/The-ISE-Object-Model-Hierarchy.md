@@ -1,15 +1,18 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Modellen objekthierarkin ISE
-ms.openlocfilehash: 2df6d40f39dbe14bd3f46a6400cde4a6e91052ef
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+title: ISE-objektmodellhierarkin
+ms.openlocfilehash: 0159707b1050c412a74da3d3ca02a46cea982556
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="the-ise-object-model-hierarchy"></a>Modellen objekthierarkin ISE
-Det här avsnittet visar hierarkin med objekt som är en del av Windows PowerShell Integrated Scripting Environment (ISE). Windows PowerShell ISE ingår i Windows PowerShell 3.0 och Windows PowerShell 4.0. Klicka på ett objekt för att ta dig till referensdokumentationen för den klass som definierar objektet.
+# <a name="the-ise-object-model-hierarchy"></a>ISE-objektmodellhierarkin
+
+Det här avsnittet visar hierarkin med objekt som är en del av Windows PowerShell Integrated Scripting Environment (ISE).
+Windows PowerShell ISE ingår i Windows PowerShell 3.0 och Windows PowerShell 4.0.
+Klicka på ett objekt för att ta dig till referensdokumentationen för den klass som definierar objektet.
 
 ## <a name="psise-object"></a>$psISE objekt
 
@@ -43,8 +46,10 @@ Det är en instans av klassen Microsoft.PowerShell.Host.ISE.ISEOptions.
 ## <a name="psisepowershelltabsthe-powershelltabcollection-objectmd"></a>[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)
 
 Den **$psISE.PowerShellTabs** objekt är en instans av den [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) klass.
-Det är en samling av alla öppna PowerShell flikar som representerar tillgängliga Windows PowerShell kör miljöer på den lokala datorn eller på anslutna fjärrdatorer. Varje medlem i samlingen är en instans av den [PowerShellTab](The-PowerShellTab-Object.md) klass.
+Det är en samling av alla öppna PowerShell flikar som representerar tillgängliga Windows PowerShell kör miljöer på den lokala datorn eller på anslutna fjärrdatorer.
+Varje medlem i samlingen är en instans av den [PowerShellTab](The-PowerShellTab-Object.md) klass.
 
 ## <a name="see-also"></a>Se även
-- [Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Windows PowerShell ISE objektreferens modellen](Windows-PowerShell-ISE-Object-Model-Reference.md)
+
+- [Syftet med Windows PowerShell ISE Scripting Object Model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)

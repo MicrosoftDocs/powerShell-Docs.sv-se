@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
+keywords: WMF, powershell, inställning
 contributor: ryanpu
-title: "Förbättringar av Just Enough Administration JEA)"
-ms.openlocfilehash: 2811b4deb3f4fca513791c7389ee5f9f877dbfe8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Förbättringar av Just Enough Administration JEA)
+ms.openlocfilehash: c80472fa4372331bf2cf9ab0b7513021354d1408
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Förbättringar av Just Enough Administration JEA)
 
@@ -28,7 +28,7 @@ MountUserDrive = $true
 UserDriveMaximumSize = 10485760    # 10 MB
 ```
 
-Mappen säkerhetskopiering enhetens användare kommer att skapas på`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
+Mappen säkerhetskopiering enhetens användare kommer att skapas på `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
 
 Om du vill använda enheten och kopiera filer till/från en JEA slutpunkt som konfigurerats för att exponera enhetens användare, Använd den `-ToSession` och `-FromSession` parametrar på Kopiera-objekt.
 
@@ -50,7 +50,7 @@ Du kan sedan skriva anpassade funktioner för att bearbeta de data som lagras i 
 
 I vissa fall kan en aktivitet som en användare behöver genomföra i en session JEA behöver åtkomst till resurser utanför den lokala datorn.
 När en session JEA är konfigurerad för att använda ett virtuellt konto, visas alla försök att nå dessa resurser kan komma från den lokala datorns identitet, inte virtuellt konto eller anslutna användaren.
-I TP5, finns det stöd för att köra JEA et i sammanhang med en [Grupphanterat tjänstkonto] (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), vilket gör det enklare att komma åt nätverksresurser med hjälp av en domän identitet.
+I TP5, finns det stöd för att köra JEA i en [Grupphanterat tjänstkonto] kontext (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), vilket gör det enklare att komma åt nätverksresurser med hjälp av en domän-identitet.
 
 Om du vill konfigurera en JEA session ska köras under ett konto för gMSA använder du följande nya nyckel i filen PSSC:
 
@@ -93,4 +93,3 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Fast: Virtuella konton stöds nu i Windows Server 2008 R2
 I WMF 5.1 är du nu kunna använda virtuella konton på Windows Server 2008 R2, aktivera konsekventa konfigurationer och funktionsparitet via Windows Server 2008 R2 - 2016.
 Virtuella konton förblir stöds inte när du använder JEA i Windows 7.
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
+keywords: WMF, powershell, inställning
 title: Nya scenarier och funktioner i WMF 5.1
-ms.openlocfilehash: da3dfb2243c00e3faf637d3dbcb70016cfabb011
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: f0e50fc87208d6ee9edba9c660b9243621f02bb4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Nya scenarier och funktioner i WMF 5.1 #
 
@@ -26,35 +26,41 @@ Från och med version 5.1 finns PowerShell i olika utgåvor som anger olika funk
 - [Filtrera Get-Module resultat av CompatiblePSEditions]()
 - [Förhindra körning av skript om du inte på en kompatibel version av PowerShell]()
 
-## <a name="catalog-cmdlets"></a>Katalog-Cmdlets  
+## <a name="catalog-cmdlets"></a>Katalog-Cmdlets
 
-Två nya cmdletar har lagts till i den [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) modulen; dessa generera och verifiera filer för Windows-katalogen.  
+Två nya cmdletar har lagts till i den [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) modulen; dessa generera och verifiera filer för Windows-katalogen.
 
-###<a name="new-filecatalog"></a>New-FileCatalog 
+###<a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
 
-Ny FileCatalog skapar en Windows-katalogfil för mappar och filer. Den här katalogfilen innehåller hashvärden för alla filer i angiven sökväg. Användarna kan distribuera mapparna tillsammans med motsvarande katalogfil som representerar mapparna. Den här informationen är användbar för att kontrollera om några ändringar har gjorts till mapparna sedan tiden för skapandet av katalogen.    
+Ny FileCatalog skapar en Windows-katalogfil för mappar och filer.
+Den här katalogfilen innehåller hashvärden för alla filer i angiven sökväg.
+Användarna kan distribuera mapparna tillsammans med motsvarande katalogfil som representerar mapparna.
+Den här informationen är användbar för att kontrollera om några ändringar har gjorts till mapparna sedan tiden för skapandet av katalogen.
 
 ```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
-Katalogen version 1 och 2 stöds. Version 1 används SHA1-hash-algoritm för att skapa filhash; version 2 används SHA256. Katalogversion 2 stöds inte på *Windows Server 2008 R2* eller *Windows 7*. Du bör använda katalogversion 2 på *Windows 8*, *Windows Server 2012*, och senare operativsystem.  
+Katalogen version 1 och 2 stöds.
+Version 1 används SHA1-hash-algoritm för att skapa filhash; version 2 används SHA256.
+Katalogversion 2 stöds inte på *Windows Server 2008 R2* eller *Windows 7*.
+Du bör använda katalogversion 2 på *Windows 8*, *Windows Server 2012*, och senare operativsystem.
 
 ![](../images/NewFileCatalog.jpg)
 
-Då skapas katalogfilen. 
+Då skapas katalogfilen.
 
-![](../images/CatalogFile1.jpg)  
+![](../images/CatalogFile1.jpg)
 
-![](../images/CatalogFile2.jpg) 
+![](../images/CatalogFile2.jpg)
 
-Att kontrollera integriteten för katalogfil (Pester.cat i ovanstående exempel), signera den med hjälp av [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.   
+Att kontrollera integriteten för katalogfil (Pester.cat i ovanstående exempel), signera den med hjälp av [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.
 
 
-###<a name="test-filecatalog"></a>Test-FileCatalog 
+###<a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
 
-Testa FileCatalog verifierar katalogen som representerar en uppsättning mappar. 
+Testa FileCatalog verifierar katalogen som representerar en uppsättning mappar.
 
 ```powershell
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -62,7 +68,11 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 ![](../images/TestFileCatalog.jpg)
 
-Denna cmdlet Jämför filer hashvärdena och deras relativa sökvägar finns i *katalog* med de som på *disk*. Om den identifierar eventuella matchningsfel mellan värden och sökvägar returnerar status som *ValidationFailed*. Användare kan hämta den här informationen med hjälp av den *-detaljerad* parameter. Visar även signering status för katalogen i *signatur* -egenskap som motsvarar anropar [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet på katalogfilen. Användare kan också hoppa över en fil vid verifiering av med hjälp av den *- FilesToSkip* parameter. 
+Denna cmdlet Jämför filer hashvärdena och deras relativa sökvägar finns i *katalog* med de som på *disk*.
+Om den identifierar eventuella matchningsfel mellan värden och sökvägar returnerar status som *ValidationFailed*.
+Användare kan hämta den här informationen med hjälp av den *-detaljerad* parameter.
+Visar även signering status för katalogen i *signatur* -egenskap som motsvarar anropar [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet på katalogfilen.
+Användare kan också hoppa över en fil vid verifiering av med hjälp av den *- FilesToSkip* parameter.
 
 
 ## <a name="module-analysis-cache"></a>Modulen analys Cache ##
@@ -71,13 +81,17 @@ Från och med WMF 5.1 ger PowerShell kontroll över den fil som används för at
 Det här cacheminnet lagras som standard i filen `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`.
 Cachen läses vanligtvis vid start vid sökning efter ett kommando och sparas på en bakgrundstråd senare när en modul har importerats.
 
-Du kan ändra standardplatsen för cachen, ange den `$env:PSModuleAnalysisCachePath` miljövariabeln innan du startar PowerShell. Ändringar i den här miljövariabeln påverkar endast underordnade processer. Värdet ska namnge den fullständiga sökvägen (inklusive filnamnet) som har behörighet att skapa och skriva filer för PowerShell. Om du vill inaktivera filcachen det här värdet till en ogiltig plats, till exempel:
+Du kan ändra standardplatsen för cachen, ange den `$env:PSModuleAnalysisCachePath` miljövariabeln innan du startar PowerShell.
+Ändringar i den här miljövariabeln påverkar endast underordnade processer.
+Värdet ska namnge den fullständiga sökvägen (inklusive filnamnet) som har behörighet att skapa och skriva filer för PowerShell.
+Om du vill inaktivera filcachen det här värdet till en ogiltig plats, till exempel:
 
 ```powershell
 $env:PSModuleAnalysisCachePath = 'nul'
 ```
 
-Anger sökvägen till en ogiltig enhet. Om PowerShell går inte att skriva till sökvägen inget fel returneras, men du kan se Felrapportering med hjälp av en spårning:
+Anger sökvägen till en ogiltig enhet.
+Om PowerShell går inte att skriva till sökvägen inget fel returneras, men du kan se Felrapportering med hjälp av en spårning:
 
 ```powershell
 Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
@@ -94,12 +108,14 @@ Ange den här miljövariabeln börjar gälla omedelbart i den aktuella processen
 
 ##<a name="specifying-module-version"></a>Ange Modulversion
 
-I WMF 5.1 `using module` fungerar på samma sätt som andra relaterade modulen konstruktioner i PowerShell. Tidigare fick du inte vill ange en viss modul-version. Om det fanns flera versioner finns, resulterade detta i ett fel.
+I WMF 5.1 `using module` fungerar på samma sätt som andra relaterade modulen konstruktioner i PowerShell.
+Tidigare fick du inte vill ange en viss modul-version. Om det fanns flera versioner finns, resulterade detta i ett fel.
 
 
 I WMF 5.1:
 
-* Du kan använda [ModuleSpecification konstruktor (hash-tabell)](https://msdn.microsoft.com/library/jj136290). Den här hashtabellen har samma format som `Get-Module -FullyQualifiedName`.
+* Du kan använda [ModuleSpecification konstruktor (hash-tabell)](https://msdn.microsoft.com/library/jj136290).
+Den här hashtabellen har samma format som `Get-Module -FullyQualifiedName`.
 
 **Exempel:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
@@ -107,7 +123,6 @@ I WMF 5.1:
 
 
 ##<a name="improvements-to-pester"></a>Förbättringar av lära
-I WMF 5.1 version av Pester som levereras med PowerShell har uppdaterats från 3.3.5 till 3.4.0 med tillägget för genomförande https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, vilket förbättrar beteendet för Pester på Nano Server. 
+I WMF 5.1 version av Pester som levereras med PowerShell har uppdaterats från 3.3.5 till 3.4.0 med tillägget för genomförande https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, vilket förbättrar beteendet för Pester på Nano Server.
 
 Du kan granska ändringar i versioner 3.3.5 3.4.0 genom att titta i filen ChangeLog.md på: https://github.com/pester/Pester/blob/master/CHANGELOG.md
-

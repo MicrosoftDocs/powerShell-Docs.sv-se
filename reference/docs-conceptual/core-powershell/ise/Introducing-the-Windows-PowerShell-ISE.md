@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Introducerar Windows PowerShell ISE
-ms.openlocfilehash: 7b529c9da7c91c6ca699c70f2674c8bc8734dd33
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+ms.openlocfilehash: b09e64d0258d11f1f16f96b319ef232ebdfa0c49
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="introducing-the-windows-powershell-ise"></a>Introducerar Windows PowerShell ISE
 
@@ -20,13 +20,13 @@ Prova funktionerna i Windows PowerShell ISE.
 
 Windows PowerShell ISE kan du anpassa vissa aspekter av dess utseende. Har sin egen Windows PowerShell profil där du kan lagra funktioner, alias, variabler och kommandon som du använder i Windows PowerShell ISE.
 
-### <a name="to-start-the-windows-powershell-ise"></a>Starta Windows PowerShell ISE
+## <a name="to-start-the-windows-powershell-ise"></a>Starta Windows PowerShell ISE
 
 Gör något av följande:
 
 - Klicka på **starta**, peka på **alla program**, peka på **Windows PowerShell V2**, och klicka sedan på **Windows PowerShell ISE**.
 - I Windows PowerShell-konsolen Cmd.exe eller i rutan Kör, typ, **powershell_ise.exe**.
 
-### <a name="to-get-help-in-the-windows-powershell-ise"></a>Få hjälp i Windows PowerShell ISE
+## <a name="to-get-help-in-the-windows-powershell-ise"></a>Få hjälp i Windows PowerShell ISE
 
 På den **hjälp** -menyn klickar du på **Windows PowerShell-hjälpen**. Eller tryck på F1. Filen som öppnas beskriver Windows PowerShell ISE och Windows PowerShell, inklusive alla tillgängliga från cmdlet Get-Help hjälp.

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: GetConfigurationResultOutput-metoden i klassen MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: f6106bb28dc20004b5bbb6df2d8e719cf0c453f0
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: GetConfigurationResultOutput-metoden för MSFT_DSCLocalConfigurationManager-klassen
+ms.openlocfilehash: f4c2ddaa37cdafeff1a442f3f1fa656788a1c6c8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>GetConfigurationResultOutput-metoden i klassen MSFT_DSCLocalConfigurationManager
+# <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>GetConfigurationResultOutput-metoden för MSFT_DSCLocalConfigurationManager-klassen
 
 Hämtar Configuration Agent utdata som är associerade med ett specifikt jobb.
 
@@ -27,14 +27,11 @@ uint32 GetConfigurationResultOutput(
 <a name="parameters"></a>Parametrar
 ----------
 
-*jobId* \[i\]  
-ID för jobbet som du vill hämta utdata.
+*jobId* \[i\] ID för jobbet som du vill hämta utdata.
 
-*resumeOutputBookmark* \[i\]  
-Anger att utdata ska vara en fortsättning från föregående bokmärke.
+*resumeOutputBookmark* \[i\] anger att utdata ska vara en fortsättning från föregående bokmärke.
 
-*utdata* \[ut\]  
-Utdata för jobbet.
+*utdata* \[ut\] utdata för det angivna jobbet.
 
 ## <a name="return-value"></a>Returvärde
 ------------
@@ -56,10 +53,3 @@ Det här är en statisk metod.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
- 
-
- 
-
-
-

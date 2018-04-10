@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: "Hjälpmedelsfunktioner i Windows PowerShell ISE"
+title: Hjälpmedelsfunktioner i Windows PowerShell ISE
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 7f758a46bdc722482b9e8a9baaff0a075f64ece9
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 65d159905660f4f3e025b385626679e02a785fd7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Hjälpmedelsfunktioner i Windows PowerShell ISE
+
 Det här avsnittet beskriver hjälpmedelsfunktionerna i Windows PowerShell Integrated Scripting Environment (ISE) som kan vara användbara.
 
 * [Ändra storlek och plats för konsolen och skript fönster](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
@@ -31,6 +32,7 @@ Windows PowerShell ISE stöder hög kontrast läge. För nedsatt, brytpunktsinfo
 - Storlek ändras
 
 ## <a name="how-to-change-the-size-and-location-of-the-console-and-script-panes"></a>Ändra storlek och plats för konsolen och skript fönster
+
 Du kan använda följande steg för att ändra storlek och placering för konsolfönstret och skriptfönstret. När du öppnar Windows PowerShell ISE, kommer storlek och plats ändringarna att sparas.
 
 ### <a name="to-resize-the-script-pane-and-console-pane"></a>Ändra storlek på rutan skript och konsolen
@@ -40,6 +42,7 @@ Du kan använda följande steg för att ändra storlek och placering för konsol
 2. När muspekaren ändras till en dubbelpil, drar du kantlinjen för att ändra storleken på fönstret.
 
 ### <a name="to-move-the-script-pane-and-console-pane"></a>Flytta fönstret skript och konsolen
+
 Gör något av följande:
 
 - Om du vill flytta skriptfönstret ovan konsolfönstret, trycker du på **CTRL + 1** i verktygsfältet klickar du på den **Visa skript fönstret översta** ikonen, eller i den **visa** -menyn klickar du på **visa Script fönstret upp**.
@@ -53,6 +56,7 @@ Gör något av följande:
 - Om du vill visa rutan skript när konsolfönstret är maximerat på raden på flikarna längst till höger kant klickar du på den **visa Skriptfönster** ikonen, eller i den **visa** -menyn, klickar du på den **Visa skript Fönstret** menyalternativet.
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>Kortkommandon för textredigering
+
 Du kan använda följande kortkommandon när du redigerar text.
 
 |Åtgärd|Kortkommandon|Använd i|
@@ -70,6 +74,7 @@ Du kan använda följande kortkommandon när du redigerar text.
 |**Ångra**|CTRL+Z|Skriptfönster konsolfönstret|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Kortkommandon för att köra skript
+
 Du kan använda följande kortkommandon när du kör skript i skriptfönstret.
 
 |Åtgärd|Kortkommando|
@@ -83,6 +88,7 @@ Du kan använda följande kortkommandon när du kör skript i skriptfönstret.
 |**Fliken** (för att tidigare skript)|CTRL + SKIFT + TABB **Obs:** att föregående skriptet fungerar när du har öppnat med endast en PowerShell-fliken, eller om du har mer än en PowerShell-flik öppen och fokus ligger i skriptfönstret.|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Kortkommandon för att anpassa vyn
+
 Du kan använda följande kortkommandon för att anpassa vyn i Windows PowerShell ISE. De är tillgängliga från alla fönster i programmet.
 
 |Åtgärd|Kortkommando|
@@ -99,6 +105,7 @@ Du kan använda följande kortkommandon för att anpassa vyn i Windows PowerShel
 |**Zooma ut**|CTRL + MINUSTECKEN|
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Kortkommandon för att felsöka skript
+
 Du kan använda följande kortkommandon när du felsöker skript.
 
 |Åtgärd|Kortkommando|Använd i|
@@ -130,6 +137,7 @@ Du kan använda följande kortkommandon när du felsöker skript.
 |**Visa konsolen felsökning kommandon**|H eller?|Konsolfönstret vid felsökning av ett skript|
 
 ## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Kortkommandon för Windows PowerShell-flikar
+
 Du kan använda följande kortkommandon när du använder Windows PowerShell-flikar.
 
 |Åtgärd|Kortkommando|
@@ -140,6 +148,7 @@ Du kan använda följande kortkommandon när du använder Windows PowerShell-fli
 |**Nästa flik för Windows PowerShell**|CTRL + TABB. Den här genvägen fungerar endast när inga filer är öppna på någon av flikarna i PowerShell.|
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Kortkommandon för att starta och avsluta
+
 Du kan använda följande kortkommandon om du vill starta Windows PowerShell-konsolen (PowerShell.exe) eller avsluta Windows PowerShell ISE.
 
 |Åtgärd|Kortkommando|
@@ -148,5 +157,5 @@ Du kan använda följande kortkommandon om du vill starta Windows PowerShell-kon
 |**Starta PowerShell.exe** (Windows PowerShell-konsol)|CTRL + SKIFT + P|
 
 ## <a name="see-also"></a>Se även
-- [Använd Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
+- [Introduktion till Windows PowerShell ISE](../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)

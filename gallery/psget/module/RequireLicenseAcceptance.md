@@ -1,23 +1,23 @@
 ---
-ms.date: 2017-06-09
+ms.date: 06/09/2017
 schema: 2.0.0
-keywords: PowerShell
+keywords: powershell
 title: RequireLicenseAcceptance
-ms.openlocfilehash: 260ccc1ee52d09a640e88203c5644f20f9723d6f
-ms.sourcegitcommit: cd66d4f49ea762a31887af2c72d087b219ddbe10
+ms.openlocfilehash: d78f8cb7f84869880e9a88a0f0407d18dc5c64cb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="modules-requiring-license-acceptance"></a>Moduler som kräver godkännande av licens
+# <a name="modules-requiring-license-acceptance"></a>Moduler som kräver godkännande av licensen
 
-## <a name="synopsis"></a>SAMMANFATTNING
+## <a name="synopsis"></a>SYNOPSIS
 Juridiska avdelningar för vissa modulen utgivare kräva att kunder uttryckligen måste acceptera licensvillkoren innan du installerar sina modul från PowerShell-galleriet. Om en användare installerar uppdateringar eller sparar en modul med PowerShellGet, direkt eller som ett beroende för ett annat objekt, och att modulen kräver att användaren godkänner du en licens, måste användaren ange de godkänner licensvillkoren, annars misslyckas åtgärden.
 
 ## <a name="publish-requirements-for-modules"></a>Publicera krav för moduler
 
 Moduler som användarna ska acceptera licens ska uppfylla följande krav:
-    
+
 - PSData avsnitt i modulmanifestet bör innehålla RequireLicenseAcceptance = $True.
 - Modulen bör innehålla filen license.txt i rotkatalogen.
 - Modulmanifestet bör innehålla licens Uri.
@@ -28,16 +28,16 @@ Moduler som användarna ska acceptera licens ska uppfylla följande krav:
 - Cmdlets för installation-spara-uppdateringen stöder en ny parameter – AcceptLicense som fungerar som om användaren såg licensen.
 - Om RequiredLicenseAcceptance är True och – AcceptLicense har inte angetts, användaren ska visas license.txt och du får: &quot;godkänner du licensvillkoren (Ja/Nej/YesToAll/NoToAll)&quot;.
   - Om licensen godkänns
-    - **Spara-modul:** modulen ska kopieras till användaren &#39; s system
-    - **Installera-modul:** modulen ska kopieras till användaren &#39; s system till rätt mapp (baserat på omfattningen)
+    - **Spara-modul:** modulen ska kopieras till användaren&#39;s system
+    - **Installera-modul:** modulen ska kopieras till användaren&#39;s system till rätt mapp (baserat på omfattningen)
     - **Update-modul:** modulen kommer att uppdateras.
-  - Om licensen har nekats. 
+  - Om licensen har nekats.
     - Åtgärden kommer att avbrytas.
 - Alla cmdletar kommer att söka efter metadata (requireLicenseAcceptance och Format Version) där det står att ett godkännande av licens krävs
   - Om formatet för version av klienten är äldre än 2.0, misslyckas åtgärden och be användaren att uppdatera klienten.
   - Om modulen har publicerats med formatversion som är äldre än 2.0 ignoreras requireLicenseAcceptance flaggan.
 
-    
+
  ## <a name="module-dependencies"></a>Modulen beroenden
 - Under installationen-spara-uppdateringen kommer igen om en beroende-modul (något annat beror på modulen) kräver godkännande av licens och sedan licens godkännande beteendet (ovan) att krävas.
 - Om modulversionen finns redan i den lokala katalogen som är installerad på systemet, skulle vi kringgå Licenskontroll.
@@ -59,7 +59,7 @@ PrivateData = @{
         # Flag to indicate whether the module requires explicit user acceptance
         RequireLicenseAcceptance = $true
     } # End of PSData hashtable
-    
+
  } # End of PrivateData hashtable
 ```
 Det här kommandot uppdaterar manifestfilen och ställer in flaggan RequireLicenseAcceptance till true.
@@ -78,7 +78,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 
 ```
 Det här kommandot visar licens från filen license.txt och uppmanar användaren att acceptera licensvillkoren.
@@ -117,7 +117,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 ### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Exempel 6: Installera modulen med beroenden som kräver godkännande av licens och -AcceptLicense
@@ -147,7 +147,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 Det här kommandot visar licens från filen license.txt och uppmanar användaren att acceptera licensvillkoren.
 
@@ -172,7 +172,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 Det här kommandot visar licens från filen license.txt och uppmanar användaren att acceptera licensvillkoren.
 
@@ -183,8 +183,8 @@ PS C:\> Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 Modulen uppdateras utan någon tillfrågas om du vill acceptera licens.
 
 ## <a name="more-details"></a>Mer information
-### <a name="require-license-acceptance-for-scriptsscriptscriptrequirelicenseacceptancemd"></a>[Kräv godkännande av licens för skript](../script/script_RequireLicenseAcceptance.md)
+### <a name="require-license-acceptance-for-scriptsscriptscriptrequirelicenseacceptancemd"></a>[Kräv godkännande av licensen för skript](../script/script_RequireLicenseAcceptance.md)
 
 ### <a name="require-license-acceptance-support-on-powershellgallerypsgallerypsgalleryrequireslicenseacceptancemd"></a>[Kräv godkännande av licens-stöd på PowerShellGallery](../../psgallery/psgallery_requires_license_acceptance.md)
 
-### <a name="require-license-acceptance-on-deploy-to-azure-automationpsgallerypsgallerydeploytoazureautomationrequirelicenseacceptancemd"></a>[Kräv godkännande av licens på Distribuera till Azure Automation](../../psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)
+### <a name="require-license-acceptance-on-deploy-to-azure-automationpsgallerypsgallerydeploytoazureautomationrequirelicenseacceptancemd"></a>[Kräv godkännande av licensen vid distribuera till Azure Automation](../../psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)

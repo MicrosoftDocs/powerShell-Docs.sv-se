@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: "Installera en pull-klient med hjälp av konfigurations-ID i PowerShell 4.0"
-ms.openlocfilehash: 2449a4ddfea5c0ee7096ad7478e80166eb095bbe
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: Installera en pull-klient med hjälp av konfigurations-ID i PowerShell 4.0
+ms.openlocfilehash: 7074d842b7b99ef3fb6498b6dbc1e561b14caf16
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a>Installera en pull-klient med hjälp av konfigurations-ID i PowerShell 4.0
 
@@ -18,28 +18,28 @@ Varje målnoden måste vara ett meddelande om att använda pull-läge och de ang
 Följande skript konfigurerar MGM pull konfigurationer från en server med namnet ”PullServer”:
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "WebDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "http://PullServer:8080/PSDSCPullServer/PSDSCPullServer.svc"; AllowUnsecureConnection = “TRUE”}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-I skriptet **DownloadManagerCustomData** överför Webbadressen för pull-servern och (för det här exemplet) kan en osäker anslutning. 
+I skriptet **DownloadManagerCustomData** överför Webbadressen för pull-servern och (för det här exemplet) kan en osäker anslutning.
 
 När skriptet körs, skapas en ny utdatamapp kallas **SimpleMetaConfigurationForPull** och det placerar en metakonfigurationen MOF-fil.
 
-Om du vill tillämpa konfigurationen genom att använda **Set DscLocalConfigurationManager** med parametrar för **ComputerName** (använda ”localhost”) och **sökväg** (sökvägen till platsen för den rikta nodens localhost.meta.mof-fil). Till exempel: 
+Om du vill tillämpa konfigurationen genom att använda **Set DscLocalConfigurationManager** med parametrar för **ComputerName** (använda ”localhost”) och **sökväg** (sökvägen till platsen för den rikta nodens localhost.meta.mof-fil). Till exempel:
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ```
@@ -53,20 +53,20 @@ Om den pull-servern har konfigurerats som en SMB-filresursen i stället för en 
 Den **DscFileDownloadManager** tar en **SourcePath** egenskapen i stället för **ServerUrl**. Följande skript konfigurerar MGM om du vill dra konfigurationer från en SMB-resurs med namnet ”SmbDscShare” på en server med namnet ”CONTOSO-SERVER”:
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "DscFileDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "\\CONTOSO-SERVER\SmbDscShare"}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
@@ -74,4 +74,3 @@ SimpleMetaConfigurationForPull -Output "."
 
 - [Ställer in en pull webbserver DSC](pullServer.md)
 - [Konfigurera en DSC SMB-pullserver](pullServerSMB.md)
-

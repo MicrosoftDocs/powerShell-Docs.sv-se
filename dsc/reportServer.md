@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: "Med hjälp av en DSC-rapportserver"
-ms.openlocfilehash: fdf16a2de6aea46844d3812029fae474e80ae6ac
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Använda en DSC-rapportserver
+ms.openlocfilehash: e239414dc30c7458c509392792d4775d04f2311a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-a-dsc-report-server"></a>Med hjälp av en DSC-rapportserver
+# <a name="using-a-dsc-report-server"></a>Använda en DSC-rapportserver
 
 > Gäller för: Windows PowerShell 5.0
 
@@ -20,11 +20,11 @@ Den lokala Configuration Manager (MGM) för en nod kan konfigureras för att ski
 ## <a name="configuring-a-node-to-send-reports"></a>Konfigurera en nod för att skicka rapporter
 
 Anger du en nod kan skicka rapporter till en server med hjälp av en **ReportServerWeb** blockera i MGM nodkonfiguration (information om hur du konfigurerar MGM finns [konfigurera den lokala Configuration Manager](metaConfig.md) ). Servern som noden skickar rapporter måste ställas in som pull webbserver (du inte kan skicka rapporter till en SMB-resurs). Information om hur du konfigurerar en pull-server finns i [ställer in en pull webbserver DSC](pullServer.md). Rapportservern kan vara samma tjänst från noden hämtar konfigurationer och hämtar resurser eller det kan vara en annan tjänst.
- 
+
 I den **ReportServerWeb** block, du anger Webbadressen för pull-tjänsten och en registreringsnyckel som kallas till servern.
- 
-Följande konfiguration konfigurerar en nod till pull konfigurationer från en tjänst och skickar rapporter till en tjänst på en annan server. 
- 
+
+Följande konfiguration konfigurerar en nod till pull konfigurationer från en tjänst och skickar rapporter till en tjänst på en annan server.
+
 ```powershell
 [DSCLocalConfigurationManager()]
 configuration ReportClientConfig
@@ -34,7 +34,7 @@ configuration ReportClientConfig
         Settings
         {
             RefreshMode          = 'Pull'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded   = $true
         }
 
@@ -67,7 +67,7 @@ configuration PullClientConfig
         Settings
         {
             RefreshMode = 'Pull'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
 
@@ -76,8 +76,8 @@ configuration PullClientConfig
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
             RegistrationKey = 'fbc6ef09-ad98-4aad-a062-92b0e0327562'
         }
-        
-        
+
+
 
         ReportServerWeb CONTOSO-ReportSrv
         {
@@ -110,7 +110,7 @@ function GetReport
     return $object.value
 }
 ```
-    
+
 ## <a name="viewing-report-data"></a>Visa rapportdata
 
 Om du anger en variabel till resultatet av den **GetReport** funktion, kan du visa enskilda fält i ett element i matrisen som returneras:
@@ -132,7 +132,7 @@ RebootRequested      : False
 Errors               : {}
 StatusData           : {{"StartDate":"2016-04-03T06:21:43.7220000-07:00","IPV6Addresses":["2001:4898:d8:f2f2:852b:b255:b071:283b","fe80::852b:b255:b071
                        :283b%12","::2000:0:0:0","::1","::2000:0:0:0"],"DurationInSeconds":"21","JobID":"{019DFBE5-F99F-11E5-80C6-001DD8B8065C}","Curren
-                       tChecksum":"A7797571CB9C3AF4D74C39A0FDA11DAF33273349E1182385528FFC1E47151F7F","MetaData":"Author: configAuthor; Name: 
+                       tChecksum":"A7797571CB9C3AF4D74C39A0FDA11DAF33273349E1182385528FFC1E47151F7F","MetaData":"Author: configAuthor; Name:
                        Sample_ArchiveFirewall; Version: 2.0.0; GenerationDate: 04/01/2016 15:23:30; GenerationHost: CONTOSO-PullSrv;","RebootRequested":"False
                        ","Status":"Success","IPV4Addresses":["10.240.179.151","127.0.0.1"],"LCMVersion":"2.0","ResourcesNotInDesiredState":[{"SourceInf
                        o":"C:\\ReportTest\\Sample_xFirewall_AddFirewallRule.ps1::23::9::xFirewall","ModuleName":"xNetworking","DurationInSeconds":"8.785",
@@ -171,28 +171,28 @@ IPV6Addresses              : {2001:4898:d8:f2f2:852b:b255:b071:283b, fe80::852b:
 DurationInSeconds          : 25
 JobID                      : {135D230E-FA92-11E5-80C6-001DD8B8065C}
 CurrentChecksum            : A7797571CB9C3AF4D74C39A0FDA11DAF33273349E1182385528FFC1E47151F7F
-MetaData                   : Author: configAuthor; Name: Sample_ArchiveFirewall; Version: 2.0.0; GenerationDate: 04/01/2016 15:23:30; GenerationHost: 
+MetaData                   : Author: configAuthor; Name: Sample_ArchiveFirewall; Version: 2.0.0; GenerationDate: 04/01/2016 15:23:30; GenerationHost:
                              CONTOSO-PullSrv;
 RebootRequested            : False
 Status                     : Success
 IPV4Addresses              : {10.240.179.151, 127.0.0.1}
 LCMVersion                 : 2.0
-ResourcesNotInDesiredState : {@{SourceInfo=C:\ReportTest\Sample_xFirewall_AddFirewallRule.ps1::23::9::xFirewall; ModuleName=xNetworking; 
-                             DurationInSeconds=10.725; InstanceName=Firewall; StartDate=2016-04-04T11:21:55.7200000-07:00; ResourceName=xFirewall; 
-                             ModuleVersion=2.7.0.0; RebootRequested=False; ResourceId=[xFirewall]Firewall; ConfigurationName=Sample_ArchiveFirewall; 
+ResourcesNotInDesiredState : {@{SourceInfo=C:\ReportTest\Sample_xFirewall_AddFirewallRule.ps1::23::9::xFirewall; ModuleName=xNetworking;
+                             DurationInSeconds=10.725; InstanceName=Firewall; StartDate=2016-04-04T11:21:55.7200000-07:00; ResourceName=xFirewall;
+                             ModuleVersion=2.7.0.0; RebootRequested=False; ResourceId=[xFirewall]Firewall; ConfigurationName=Sample_ArchiveFirewall;
                              InDesiredState=False}}
 NumberOfResources          : 2
 Type                       : Consistency
 HostName                   : CONTOSO-PULLCLI
-ResourcesInDesiredState    : {@{SourceInfo=C:\ReportTest\Sample_xFirewall_AddFirewallRule.ps1::16::9::Archive; ModuleName=PSDesiredStateConfiguration; 
-                             DurationInSeconds=2.672; InstanceName=ArchiveExample; StartDate=2016-04-04T11:21:55.7200000-07:00; ResourceName=Archive; 
-                             ModuleVersion=1.1; RebootRequested=False; ResourceId=[Archive]ArchiveExample; ConfigurationName=Sample_ArchiveFirewall; 
+ResourcesInDesiredState    : {@{SourceInfo=C:\ReportTest\Sample_xFirewall_AddFirewallRule.ps1::16::9::Archive; ModuleName=PSDesiredStateConfiguration;
+                             DurationInSeconds=2.672; InstanceName=ArchiveExample; StartDate=2016-04-04T11:21:55.7200000-07:00; ResourceName=Archive;
+                             ModuleVersion=1.1; RebootRequested=False; ResourceId=[Archive]ArchiveExample; ConfigurationName=Sample_ArchiveFirewall;
                              InDesiredState=True}}
 MACAddresses               : {00-1D-D8-B8-06-5C, 00-00-00-00-00-00-00-E0}
-MetaConfiguration          : @{AgentId=52DA826D-00DE-4166-8ACB-73F2B46A7E00; ConfigurationDownloadManagers=System.Object[]; 
-                             ActionAfterReboot=ContinueConfiguration; LCMCompatibleVersions=System.Object[]; LCMState=Idle; 
-                             ResourceModuleManagers=System.Object[]; ReportManagers=System.Object[]; StatusRetentionTimeInDays=10; LCMVersion=2.0; 
-                             ConfigurationMode=ApplyAndMonitor; RefreshFrequencyMins=30; RebootNodeIfNeeded=True; RefreshMode=Pull; 
+MetaConfiguration          : @{AgentId=52DA826D-00DE-4166-8ACB-73F2B46A7E00; ConfigurationDownloadManagers=System.Object[];
+                             ActionAfterReboot=ContinueConfiguration; LCMCompatibleVersions=System.Object[]; LCMState=Idle;
+                             ResourceModuleManagers=System.Object[]; ReportManagers=System.Object[]; StatusRetentionTimeInDays=10; LCMVersion=2.0;
+                             ConfigurationMode=ApplyAndMonitor; RefreshFrequencyMins=30; RebootNodeIfNeeded=True; RefreshMode=Pull;
                              DebugMode=System.Object[]; LCMStateDetail=; AllowModuleOverwrite=False; ConfigurationModeFrequencyMins=15}
 Locale                     : en-US
 Mode                       : Pull
@@ -222,4 +222,3 @@ Observera att de här exemplen är avsedda att ge dig en uppfattning om vad du k
 - [Konfigurera den lokala Configuration Manager](metaConfig.md)
 - [Ställer in en pull webbserver DSC](pullServer.md)
 - [Konfigurera en pullklient med konfigurationsnamn](pullClientConfigNames.md)
-

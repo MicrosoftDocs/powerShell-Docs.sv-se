@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: "Ordlista för Windows PowerShell"
+title: Ordlista för Windows PowerShell
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 872ceb342cc72477c5142ce28a9b3b66e32bb84f
-ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
+ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-glossary"></a>Ordlista för Windows PowerShell
 
@@ -55,4 +55,3 @@ ms.lasthandoff: 02/19/2018
 |Windows PowerShell-skriptfil|En fil som har filnamnstillägget .ps1 och som innehåller ett skript som skrivits i Windows PowerShell-språk.|
 |Snapin-modulen för Windows PowerShell|En resurs som definierar en uppsättning cmdlets och providers Microsoft .NET Framework-typer som kan läggas till Windows PowerShell-miljö.|
 |Windows PowerShell-arbetsflöde|Ett arbetsflöde är en sekvens med programmerade, nätverksanslutna steg som utför tidskrävande uppgifter eller kräver samordning av flera steg i flera enheter eller hanterade noder. Windows PowerShell-arbetsflöde gör att IT-experter och utvecklare kan skriva sekvenser av hantering av flera enheter aktiviteter eller enstaka aktiviteter i ett arbetsflöde, som arbetsflöden. Windows PowerShell-arbetsflöde kan du anpassa och köra både Windows PowerShell-skript och XAML-filer som arbetsflöden.|
-

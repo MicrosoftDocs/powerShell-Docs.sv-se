@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: "Komma igång med PowerShell önskad Tillståndskonfiguration"
-ms.openlocfilehash: 04404696bef128805e4f1c191711eaab33cf7e4c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Komma igång med PowerShell önskad Tillståndskonfiguration
+ms.openlocfilehash: b5aff5008db5a5e45b77d8094b0e48ad98dc63fa
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getting-started-with-powershell-desired-state-configuration"></a>Komma igång med PowerShell önskad Tillståndskonfiguration #
 
-Den här guiden beskriver hur du börjar skapa PowerShell Desired State Configuration-dokument och koppla dem till datorer. Den förutsätter grundläggande kunskaper med PowerShell-cmdlet: ar, moduler och funktioner. 
+Den här guiden beskriver hur du börjar skapa PowerShell Desired State Configuration-dokument och koppla dem till datorer. Den förutsätter grundläggande kunskaper med PowerShell-cmdlet: ar, moduler och funktioner.
 
 
 ## <a name="create-a-configuration"></a>Skapa en konfiguration ##
 
-[**Konfigurationer** ](https://msdn.microsoft.com/powershell/dsc/configurations) är dokument som beskriver en miljö. Miljöer består av ”**noder**”, som ofta är virtuella eller fysiska datorer. 
+[**Konfigurationer** ](https://msdn.microsoft.com/powershell/dsc/configurations) är dokument som beskriver en miljö. Miljöer består av ”**noder**”, som ofta är virtuella eller fysiska datorer.
 
 Konfigurationer kan finnas i olika former. Det enklaste sättet att skapa en ny konfiguration är att skapa en .ps1-fil för (PowerShell-skript). Gör du genom att öppna redigeringsprogram val. PowerShell ISE är ett bra alternativ, eftersom den förstår DSC internt. Spara följande som en PS1:
 
@@ -32,21 +32,21 @@ configuration MyFirstConfiguration
             Name = "IIS"
 
         }
-        
+
     }
 
 }
 ```
 ## <a name="parts-of-a-configuration"></a>Delar av en konfiguration ##
-**Konfigurationen** är ett nyckelord som har lagts till i PowerShell 4.0. Det innebär en särskild typ av PowerShell-funktion som används av Desired State Configuration. I det här exemplet heter funktionen myFirstConfiguration. 
+**Konfigurationen** är ett nyckelord som har lagts till i PowerShell 4.0. Det innebär en särskild typ av PowerShell-funktion som används av Desired State Configuration. I det här exemplet heter funktionen myFirstConfiguration.
 
 Nästa rad är en import-sats, som liknar importera en modul. Den kommer att diskuteras senare.
 
-”Noden” definierar namnet på den här konfigurationen fungerar på den dator. Även om den här konfigurationen redigeras lokalt, kan konfigurationer nå ut till fjärranslutna noder och konfigurera dem. 
+”Noden” definierar namnet på den här konfigurationen fungerar på den dator. Även om den här konfigurationen redigeras lokalt, kan konfigurationer nå ut till fjärranslutna noder och konfigurera dem.
 
-Noder kan vara datornamn eller IP-adresser. Du kan ha flera noder i ett enda dokument. Med hjälp av [konfigurationsdata](https://msdn.microsoft.com/powershell/dsc/configdata), du kan också ha samma konfiguration som gäller för flera noder. I det här fallet är noden ”localhost” - vilket innebär att den lokala datorn. 
+Noder kan vara datornamn eller IP-adresser. Du kan ha flera noder i ett enda dokument. Med hjälp av [konfigurationsdata](https://msdn.microsoft.com/powershell/dsc/configdata), du kan också ha samma konfiguration som gäller för flera noder. I det här fallet är noden ”localhost” - vilket innebär att den lokala datorn.
 
-Nästa objekt är en [ **resurs**](https://msdn.microsoft.com/powershell/dsc/resources). Resurser är byggblocken i konfigurationer. Varje resurs är en modul som definierar logik för implementering av en enda aspekt för en dator. Du kan visa alla resurser på din dator genom att köra **Get-DscResource** i PowerShell. Resurser måste finnas på den lokala datorn och det importeras innan de kan användas i en konfiguration med **importera DscResource** som finns på den andra raden i den här konfigurationen. 
+Nästa objekt är en [ **resurs**](https://msdn.microsoft.com/powershell/dsc/resources). Resurser är byggblocken i konfigurationer. Varje resurs är en modul som definierar logik för implementering av en enda aspekt för en dator. Du kan visa alla resurser på din dator genom att köra **Get-DscResource** i PowerShell. Resurser måste finnas på den lokala datorn och det importeras innan de kan användas i en konfiguration med **importera DscResource** som finns på den andra raden i den här konfigurationen.
 
 **Anta en konfiguration**
 
@@ -63,8 +63,7 @@ Att införa konfigurationen:
 ```powershell
 Start-DscConfiguration -Path ./myFirstConfiguration
 ```
-Detta skapar ett PowerShell-jobb som når till noderna i konfigurationen och konfigurerar dem. Om du vill se resultatet av jobbet, använder du-vänta. 
+Detta skapar ett PowerShell-jobb som når till noderna i konfigurationen och konfigurerar dem. Om du vill se resultatet av jobbet, använder du-vänta.
 ```powershell
 Start-DscConfiguration -Path ./myFirstConfiguration -Wait
 ```
-

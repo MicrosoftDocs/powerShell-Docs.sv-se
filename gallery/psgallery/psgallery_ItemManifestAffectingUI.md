@@ -1,6 +1,8 @@
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Objektet manifestet värden som påverkar Gränssnittet PowerShell-galleriet
 
-Det här avsnittet innehåller utgivare med översiktlig information om hur du ändrar manifest för sina PowerShell-galleriet publikationer så att funktionerna i PowerShellGet-cmdlets och PowerShell-galleriet Användargränssnittet kommer att påverkas. Det här innehållet är ordnad efter där ändringen ska visas, från och med avsnittet i mitten och sedan navigeringsområdet till vänster. Det finns en informationsavsnittet omfattar taggar, som identifierar viktiga taggar, samt några av de vanligaste taggar. Det finns två avsnitt som innehåller manifestet exempel: 
+Det här avsnittet innehåller utgivare med översiktlig information om hur du ändrar manifest för sina PowerShell-galleriet publikationer så att funktionerna i PowerShellGet-cmdlets och PowerShell-galleriet Användargränssnittet kommer att påverkas.
+Det här innehållet är ordnad efter där ändringen ska visas, från och med avsnittet i mitten och sedan navigeringsområdet till vänster. Det finns en informationsavsnittet omfattar taggar, som identifierar viktiga taggar, samt några av de vanligaste taggar.
+Det finns två avsnitt som innehåller manifestet exempel:
 
 * Moduler, se [uppdatering modulen Manifest](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
 * Skript, se [skapa skriptfil med Metadata](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
@@ -10,7 +12,7 @@ Det här avsnittet innehåller utgivare med översiktlig information om hur du �
 Tabellen nedan visar elementen i PowerShell-galleriet objektet sidan användargränssnitt som styrs av utgivaren.
 Varje post anger om den kan styras av manifestet modul eller skript.
 
-| UI-Element | Beskrivning | Modul | Skript | 
+| UI-Element | Beskrivning | Modul | Skript |
 | --- | --- | --- | --- |
 | **Rubrik** | Det här är namnet på det objekt som har publicerats i galleriet  | Nej | Nej |
 | **Version** | Den version som visas är Versionsträngen i metadata och en förhandsversion om har angetts. Den primära delen av version i ett modulmanifest är ModuleVersion. Det har identifierats som ett skript. VERSION. Om en förhandsversion sträng anges ska det läggas till ModuleVersion för moduler, eller anges som del av. VERSION för skript. Det finns dokumentation för att ange förhandsversionen strängar i [moduler](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule), och i [skript](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript) | Ja | Ja |
@@ -49,18 +51,26 @@ Sidan Redigera PowerShell-galleriet artikel kan utgivare ändra flera av de fäl
 * Versionskommentarer
 * Kräv licens
 
-Den här metoden allmänhet rekommenderas inte, utom när behövs för att korrigera det som visas för en äldre version av en modul. Användarna som skaffar modulen visas metadata inte matchar det som visas i PowerShell-galleriet, vilket ökar om objektet. Detta resulterar ofta i frågor som ska objektet ägare att bekräfta ändringen. Det rekommenderas starkt att den här metoden används när en ny version av objektet ska publiceras med samma ändringar. 
+Den här metoden allmänhet rekommenderas inte, utom när behövs för att korrigera det som visas för en äldre version av en modul.
+Användarna som skaffar modulen visas metadata inte matchar det som visas i PowerShell-galleriet, vilket ökar om objektet.
+Detta resulterar ofta i frågor som ska objektet ägare att bekräfta ändringen.
+Det rekommenderas starkt att den här metoden används när en ny version av objektet ska publiceras med samma ändringar.
 
 ## <a name="tag-details"></a>Taggen information
 
-Taggar är enkla strängar konsumenter används för att hitta objekt. Taggar är mest värdefullt när de används konsekvent över många objekt som är relaterade till samma ämnet. Med hjälp av flera varianter av samma innehåller word (till exempel databasen och databaser, eller test och testa) vanligtvis lite förmånen. Taggar är skiftlägeskänsliga strängar för enstaka ord och får inte innehålla blanksteg. Om det finns en fras som du tror att användarna ska söka efter, lägga till som beskrivning av artikeln och kommer att hittas i sökresultaten. Använd Pascal skiftläge, bindestreck, understreck eller perioden om du vill förbättra läsbarhet. Var försiktig om hur du skapar långa komplex och onormal taggar som de är ofta felstavade. 
+Taggar är enkla strängar konsumenter används för att hitta objekt.
+Taggar är mest värdefullt när de används konsekvent över många objekt som är relaterade till samma ämnet. Med hjälp av flera varianter av samma innehåller word (till exempel databasen och databaser, eller test och testa) vanligtvis lite förmånen.
+Taggar är skiftlägeskänsliga strängar för enstaka ord och får inte innehålla blanksteg. Om det finns en fras som du tror att användarna ska söka efter, lägga till som beskrivning av artikeln och kommer att hittas i sökresultaten. Använd Pascal skiftläge, bindestreck, understreck eller perioden om du vill förbättra läsbarhet. Var försiktig om hur du skapar långa komplex och onormal taggar som de är ofta felstavade.
 
-Taggar som är viktigt att notera, PowerShell-galleriet och PowerShellGet cmdlets behandla dem unikt. PSEdition_Desktop PSEdition_Core är specifika exempel och beskrivs ovan. 
+Taggar som är viktigt att notera, PowerShell-galleriet och PowerShellGet cmdlets behandla dem unikt. PSEdition_Desktop PSEdition_Core är specifika exempel och beskrivs ovan.
 
-Som nämnts ovan, ange taggar största möjliga värde när de är specifika och använda konsekvent över många objekt. Som en utgivare försöker hitta bästa taggarna du använder, är det enklaste sättet att söka PowerShell-galleriet för taggar som du överväger. Vi rekommenderar finns många objekt som returneras och artikelbeskrivningarna överensstämmer med din användning av den nyckelord. 
+Som nämnts ovan, ange taggar största möjliga värde när de är specifika och använda konsekvent över många objekt.
+Som en utgivare försöker hitta bästa taggarna du använder, är det enklaste sättet att söka PowerShell-galleriet för taggar som du överväger.
+Vi rekommenderar finns många objekt som returneras och artikelbeskrivningarna överensstämmer med din användning av den nyckelord.
 
-Här följer vissa vanligaste taggar från och med 12/14/2017 referens. I vissa fall finns liknande men kanske mindre perfekt alternativ som visas bredvid taggen.
-Det är bäst att använda önskade-tagg som som kommer att resultera i mindre brus och bättre sökresultat för konsumenterna. 
+Här följer vissa vanligaste taggar från och med 12/14/2017 referens.
+I vissa fall finns liknande men kanske mindre perfekt alternativ som visas bredvid taggen.
+Det är bäst att använda önskade-tagg som som kommer att resultera i mindre brus och bättre sökresultat för konsumenterna.
 
 
 | **Önskad tagg** | **Alternativ och anteckningar** |
@@ -125,5 +135,3 @@ Det är bäst att använda önskade-tagg som som kommer att resultera i mindre b
 | **MSI** |  |
 | **Mac** |  |
 | **PoshBot** |  |
-
-

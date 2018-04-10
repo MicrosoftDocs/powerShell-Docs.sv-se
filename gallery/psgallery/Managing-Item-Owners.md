@@ -1,23 +1,25 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: galleriet, powershell, cmdlet, psgallery
-title: "Hantera objekt ägare"
-ms.openlocfilehash: fcd538148f9ff1ac96324b567d54d643f1756c93
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Hantera objekt ägare
+ms.openlocfilehash: e550b74ebde00cfbb154dbf4fb1fa4ae0582e029
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="managing-item-owners"></a>Hantera objekt ägare
 
 Ägare till ett objekt i PowerShell-galleriet definieras av vem som publicerade artikeln i galleriet.
 Ibland behöver dessa metadata hanteras utöver publicering inledande objektet, vilket innebär att metadata för ägare måste vara föränderliga själva objektet är inte.
 
-Alla användare som har objekt är likvärdiga. Det innebär att alla objekt ägare kan publicera en ny version av ett objekt. Det innebär också att alla objekt ägaren kan ta bort andra element-ägare. Ingen ägare har flera utfärdare än andra ägare.  
+Alla användare som har objekt är likvärdiga.
+Det innebär att alla objekt ägare kan publicera en ny version av ett objekt. Det innebär också att alla objekt ägaren kan ta bort andra element-ägare.
+Ingen ägare har flera utfärdare än andra ägare.
 
-## <a name="setting-an-items-initial-owner"></a>Ange ett objekt inledande ägare 
+## <a name="setting-an-items-initial-owner"></a>Ange ett objekt inledande ägare
 
 När ett nytt objekt publiceras till PowerShell-galleriet, definieras den ursprungliga ägaren av användaren som publicerade artikeln. Detta bestäms genom vars API nyckel användes i Publicera modul-cmdlet.
 
@@ -78,4 +80,3 @@ Vi sedan följer en process för att verifiera ditt ägarskap för objektet.
 Om vi anser att du ska vara ägare till objektet kommer att använda länken hantera ägare för objektet oss själva och skicka inbjudan ska bli ägare.
 Vi kommer bara göra det när du har verifierat att du ska vara en ägare och processen för detta varierar beroende på omständigheter.
 Ofta URL för objektet ska användas för att hitta ett sätt att kontakta Projektägaren, men vi kan också använda Twitter, e-post, eller på annat sätt för att kontakta Projektägaren.
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: "Systemkrav för Windows PowerShell"
+title: Windows PowerShell-systemkrav
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 33824eac4de28de97990ffa1ea2500e61e03e847
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: a15b5b33b5296befae833e520cfdfbd41a07b122
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="windows-powershell-system-requirements"></a>Systemkrav för Windows PowerShell
+# <a name="windows-powershell-system-requirements"></a>Windows PowerShell-systemkrav
 Det här avsnittet beskrivs systemkraven för Windows PowerShell 3.0 och Windows PowerShell 4.0 i Windows PowerShell 5.0 och för särskilda funktioner, till exempel Windows PowerShell Integrated Scripting Environment (ISE), CIM-kommandon och arbetsflöden.
 
 Windows® 8.1 och Windows Server® 2012 R2 inkluderar alla nödvändiga program. Det här avsnittet är avsedd för användare av tidigare versioner av Windows.
@@ -81,15 +81,15 @@ Men vissa objekt, till exempel följande, kräver ett grafiskt användargränssn
 
 - Windows PowerShell® Integrated Scripting Environment (ISE)
 
-- Cmdlet: ar
+- Cmdletar
 
     1.  [Out-GridView-kontrollen](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-gridview)
 
     2.  [Visa kommando](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
 
-    3.  [Visa ControlPanelItem](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
+    3.  [Show-ControlPanelItem](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
 
-    4.  [Visa händelseloggen](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
+    4.  [Show-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
 
 - Parametrar
 
@@ -111,7 +111,7 @@ Windows PowerShell 2.0, Windows PowerShell 3.0 och Windows PowerShell 4.0 körs 
 
 - [Background Intelligent Transfer Service (BITS)-Cmdlets](http://go.microsoft.com/fwlink/?LinkId=257514)
 
-- [Get-händelseloggen](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
+- [Get-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 
 - [Get-WinEvent](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 
@@ -125,4 +125,3 @@ Dessutom den **WinRM** tjänsten finns inte på Windows PE.
 - [Komma igång med Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
 - [Installera Windows PowerShell](Installing-Windows-PowerShell.md)
 - [Starta Windows PowerShell](Starting-Windows-PowerShell.md)
-

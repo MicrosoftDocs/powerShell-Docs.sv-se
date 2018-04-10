@@ -1,21 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
-title: Hitta RoleCapability
-ms.openlocfilehash: 77c5b492d9681fa05315401fba410c508af1d13b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Find-RoleCapability
+ms.openlocfilehash: 89aacd604d54f6a5e9752790be65cc3bcc77c8e1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="find-rolecapability"></a>Hitta RoleCapability
+# <a name="find-rolecapability"></a>Find-RoleCapability
 
 Söker efter roll funktioner i moduler.
 
 ## <a name="description"></a>Beskrivning
-Hitta RoleCapability cmdleten hittar PowerShell rollen funktioner i moduler. Hitta RoleCapability söker moduler i registrerade databaser. För varje roll-funktion som söker efter denna cmdlet returnerar den ett PSGetRoleCapabilityInfo-objekt. Du kan överföra ett PSGetRoleCapabilityInfo-objekt till cmdleten Install-Module så här installerar du den modul som innehåller den roll kapaciteten.
+Hitta RoleCapability cmdleten hittar PowerShell rollen funktioner i moduler. Hitta RoleCapability söker moduler i registrerade databaser.
+För varje roll-funktion som söker efter denna cmdlet returnerar den ett PSGetRoleCapabilityInfo-objekt. Du kan överföra ett PSGetRoleCapabilityInfo-objekt till cmdleten Install-Module så här installerar du den modul som innehåller den roll kapaciteten.
 PowerShell rollen funktioner definierar vilka kommandon, program och så vidare är tillgängliga för en användare i en precis tillräckligt Administration JEA ()-slutpunkten. Rollen funktioner definieras av filer med filnamnstillägget .psrc.
 
 - Hitta RoleCapability kan filtrera med parametrarna: MinimumVersion, RequiredVersion, allaversioner.
@@ -34,7 +35,7 @@ Get-Command -Name Find-RoleCapability -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>Cmdlet-referens för onlinehjälp
 
-[Hitta RoleCapability](http://go.microsoft.com/fwlink/?LinkId=718029)
+[Find-RoleCapability](http://go.microsoft.com/fwlink/?LinkId=718029)
 
 ## <a name="example-commands"></a>Exempel på kommandon
 ```powershell
@@ -78,4 +79,3 @@ Find-RoleCapability -Filter RBAC
 Find-RoleCapability -Tag Azure, DSC
 
 ```
-

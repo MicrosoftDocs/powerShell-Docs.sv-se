@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
-title: "använda web baserat windows powershell-konsolen"
-ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: använda web baserat windows powershell-konsolen
+ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Användning av den webbaserade Windows PowerShell-konsolen
 
@@ -18,15 +18,18 @@ Windows PowerShell Web Access kan användarna logga in på en säker webbplats; 
 
 Eftersom Windows PowerShell-konsolen körs i en webbläsare, kan du öppna från en mängd olika klientenheter; nästan alla enheter med en webbläsare fungerar.
 
-Den webbaserade Windows PowerShell-konsolen är inriktad på en fjärrdator som anges av användare som en del av processen för inloggning. 
+Den webbaserade Windows PowerShell-konsolen är inriktad på en fjärrdator som anges av användare som en del av processen för inloggning.
 
 Det här avsnittet beskriver hur du logga in och börja använda Windows PowerShell Web Access webbaserade konsolen.
 
-Det här avsnittet beskriver inte hur du använder Windows PowerShell eller kör cmdletar eller skript. Information om hur du använder Windows PowerShell och scripting resurser finns i [finns också](#see-also) avsnittet i slutet av det här avsnittet.
+Det här avsnittet beskriver inte hur du använder Windows PowerShell eller kör cmdletar eller skript.
+Information om hur du använder Windows PowerShell och scripting resurser finns i [finns också](#see-also) avsnittet i slutet av det här avsnittet.
 
 ## <a name="supported-browsers-and-client-devices"></a>Webbläsare och klientenheter som stöds
 
-Windows PowerShell Web Access har stöd för följande webbläsare. Även om mobila webbläsare inte stöds officiellt, kan många kanske köra den webbaserade Windows PowerShell-konsolen. Andra webbläsare som accepterar cookies, kör JavaScript och kör HTTPS-webbplatser förväntas fungera, men är inte testade officiellt.
+Windows PowerShell Web Access har stöd för följande webbläsare.
+Även om mobila webbläsare inte stöds officiellt, kan många kanske köra den webbaserade Windows PowerShell-konsolen.
+Andra webbläsare som accepterar cookies, kör JavaScript och kör HTTPS-webbplatser förväntas fungera, men är inte testade officiellt.
 
 ### <a name="supported-desktop-computer-browsers"></a>Datorwebbläsare som stöds
 

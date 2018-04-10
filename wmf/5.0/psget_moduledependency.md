@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: 06a1ae284975a56d092c708f8bb57e2ae8b46e54
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, inställning
+ms.openlocfilehash: 5b9253d4fd6bf2898a93615d5d3462b9c659eb91
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="installation-of-module-dependencies"></a>Installation av beroenden för modulen
+# <a name="installation-of-module-dependencies"></a>Installation av modulberoenden
 
 Stöds nu sida-vid-sida (SxS) modulen version i installera modulen Update-modulen och publicera modul-cmdlet: ar som körs i Windows PowerShell 5.0 eller senare.
 Vi har även lagt till parameter - RequiredVersion cmdlet Publish-Module anger versionen publiceras. Parametern Path stöder nu modulen bassökväg med version-mapp.
@@ -203,4 +203,3 @@ _------ ---- ---------- -----------
 1.5 ContosoServer LocalRepo ContosoServer module
 2.0 ContosoServer LocalRepo ContosoServer module
 ```
-

@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
-title: "Installera och använda windows powershell-webbåtkomst"
-ms.openlocfilehash: 2ad7a701dbb464088d6ed47d49a8dc3fb9b911f8
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Installera och använda windows powershell-webbåtkomst
+ms.openlocfilehash: 8f140e73ce833fd1cfadbe1d8ee0fe0bb2d08873
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installera och använda Windows PowerShell-webbåtkomst
 
@@ -96,7 +96,7 @@ Du kan installera Windows PowerShell Web Access-gateway på en server som kör W
    >**![Obs](images/note.jpeg) Obs!**
    >
    >Installera Windows PowerShell-webbåtkomst med hjälp av Windows PowerShell-cmdlets läggs inte hanteringsverktyg för webbserver (IIS) som standard. Om du vill installera hanteringsverktygen på samma server som Windows PowerShell Web Access-gatewayen, lägger du till den `-IncludeManagementTools` parameter i installationskommandot (enligt det här steget). Om du hanterar Windows PowerShell Web Access webbplats från en fjärrdator, installera snapin-modulen IIS-hanteraren genom att installera [Remote Server Administration Toolsfor Windows 8.1](http://go.microsoft.com/fwlink/?LinkID=304145) eller [Remote Server Administration Verktyg för Windows 8](http://go.microsoft.com/fwlink/p/?LinkID=238560) på den dator som du vill hantera gatewayen.
-   
+
    Om du vill installera roller och funktioner på en offline-VHD, lägger du till både parametern `-ComputerName` och parametern `-VHD`. Parametern `-ComputerName` innehåller namnet på den server som du vill montera VHD:n på och parametern `-VHD` innehåller sökvägen till VHD-filen på den angivna servern.
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart`
@@ -113,8 +113,8 @@ Administratörer kan ersätta testcertifikatet med ett eget signerat certifikat 
 Du kan slutföra konfigurationen av Windows PowerShell Web Access antingen genom att köra den `Install-PswaWebApplication` cmdlet eller genom att utföra gränssnittsbaserade konfigurationssteg i IIS-hanteraren. Som standard installerar cmdleten webbprogrammet, **pswa** (och en programpool, **pswa_pool**) i den **standardwebbplatsen** behållare som visas i IIS-hanteraren, om vill instruera du cmdleten ändra standardwebbplatsbehållaren för webbprogrammet. IIS-hanteraren erbjuder konfigurationsalternativ som är tillgängliga för webbprogram, till exempel för att ändra portnumret eller SSL-certifikat.
 
 >**![Säkerhetsmeddelande](images/securitynote.jpeg) säkerhetsmeddelande**
-> 
->Vi rekommenderar att administratörer konfigurerar gatewayen att använda ett giltigt certifikat som har signerats av en CA. 
+>
+>Vi rekommenderar att administratörer konfigurerar gatewayen att använda ett giltigt certifikat som har signerats av en CA.
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>Så här konfigurerar du gatewayen för Windows PowerShell-webbåtkomst med ett testcertifikat med hjälp av Install-PswaWebApplication
 
@@ -145,8 +145,8 @@ Följande inställningar konfigureras genom att köra cmdleten. Du kan ändra de
 
 I det här exemplet är webbplatsen för Windows PowerShell Web Access https://\<*server_name*\>/myWebApp.
 
->**![Obs](images/note.jpeg) Obs!** 
-> 
+>**![Obs](images/note.jpeg) Obs!**
+>
 >Du kan inte logga in förrän användare har beviljats åtkomst till webbplatsen genom att lägga till auktoriseringsregler. Mer information finns i [konfigurera en regel för begränsad auktorisering](#configure-a-restrictive-authorization-rule) och [auktoriseringsregler och säkerhet funktioner i Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>Så här konfigurerar du gatewayen för Windows PowerShell-webbåtkomst med ett äkta certifikat med hjälp av Install-PswaWebApplication och IIS-hanteraren
@@ -193,9 +193,9 @@ I det här exemplet är webbplatsen för Windows PowerShell Web Access https://\
 
     Du kan komma åt Windows PowerShell Web Access genom att öppna **https://\<server_name\>/pswa** i ett webbläsarfönster.
 
->**![Obs](images/note.jpeg) Obs!** 
-> 
->Du kan inte logga in förrän användare har beviljats åtkomst till webbplatsen genom att lägga till auktoriseringsregler. 
+>**![Obs](images/note.jpeg) Obs!**
+>
+>Du kan inte logga in förrän användare har beviljats åtkomst till webbplatsen genom att lägga till auktoriseringsregler.
 >Mer information finns i [konfigurera en regel för begränsad auktorisering](#configure-a-restrictive-authorization-rule), i det här avsnittet och [auktoriseringsregler och säkerhet funktioner i Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>Konfigurera en regel för begränsad auktorisering
@@ -219,7 +219,7 @@ Mer information om Windows PowerShell Web Access auktoriseringsregler och säker
    `Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>`
 
    Denna auktoriseringsregel ger en specifik användaråtkomst till en dator i nätverket som de normalt har åtkomst, med åtkomst till en specifik sessionskonfiguration som är begränsade till användarens vanliga skript och cmdlet-behov.
-   
+
    I följande exempel beviljas en användare med namnet `JSmith` i `Contoso`-domänen åtkomst för att hantera datorn `Contoso_214`, och använda en sessionskonfiguration med namnet `NewAdminsOnly`.
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
@@ -254,7 +254,7 @@ Du kan installera Windows PowerShell Web Access-gateway på en server som kör W
 
 6. Observera att du uppmanas att lägga till nödvändiga funktioner, till exempel .NET Framework 4.5 och rolltjänster för Webbserver (IIS). Lägg till nödvändiga funktioner och fortsätt.
 
-    >**![Obs](images/note.jpeg) Obs!** 
+    >**![Obs](images/note.jpeg) Obs!**
     >
     >Installera Windows PowerShell-webbåtkomst med hjälp av guiden Lägg till roller och funktioner installeras också webbserver (IIS), inklusive snapin-modulen IIS-hanteraren. Snapin-modulen och andra IIS-hanteringsverktyg installeras som standard om du använder guiden Lägg till roller och funktioner. Om du installerar Windows PowerShell-webbåtkomst med hjälp av Windows PowerShell-cmdlets som beskrivs i följande procedur, läggs inte hanteringsverktyg som standard.
 
@@ -292,7 +292,10 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
 
 10. ![](images/SecurityNote.jpeg) Valfritt säkerhetssteg:
 
-    Med webbplatsen vald i trädfönstret, dubbelklickar du på **SSL-inställningar** i innehållsfönstret. Välj **Kräv SSL**, och klicka sedan på den **åtgärder** rutan klickar du på **tillämpa**. Valfritt: i den **SSL-inställningar** rutan du kan kräva att användare som ansluter till Windows PowerShell Web Access-webbplatsen har klientcertifikat. Klientcertifikat hjälper att kontrollera identiteten på användare med klientenheter. Mer information om hur klientcertifikat kan öka säkerheten för Windows PowerShell Web Access finns [auktoriseringsregler och säkerhet funktioner i Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md) i den här guiden.
+    Med webbplatsen vald i trädfönstret, dubbelklickar du på **SSL-inställningar** i innehållsfönstret.
+Välj **Kräv SSL**, och klicka sedan på den **åtgärder** rutan klickar du på **tillämpa**.
+Valfritt: i den **SSL-inställningar** rutan du kan kräva att användare som ansluter till Windows PowerShell Web Access-webbplatsen har klientcertifikat. Klientcertifikat hjälper att kontrollera identiteten på användare med klientenheter.
+Mer information om hur klientcertifikat kan öka säkerheten för Windows PowerShell Web Access finns [auktoriseringsregler och säkerhet funktioner i Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md) i den här guiden.
 
 11. Öppna en webbläsarsession på en klientenhet. Mer information om vilka webbläsare och enheter finns [webbläsare och klientenheter som stöder](#browser-and-client-device-support) i det här avsnittet.
 
@@ -300,9 +303,9 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
 
     Webbläsaren bör visa Windows PowerShell Web Access inloggning konsolsidan.
 
-    >**![Obs](images/note.jpeg) Obs!** 
-    > 
-    >Du kan inte logga in förrän användare har beviljats åtkomst till webbplatsen genom att lägga till auktoriseringsregler. 
+    >**![Obs](images/note.jpeg) Obs!**
+    >
+    >Du kan inte logga in förrän användare har beviljats åtkomst till webbplatsen genom att lägga till auktoriseringsregler.
     >Mer information finns i [konfigurera en regel för begränsad auktorisering](#configure-a-restrictive-authorization-rule), i det här avsnittet och [auktoriseringsregler och säkerhet funktioner i Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 13. I en Windows PowerShell-session som har öppnats med utökade användarrättigheter (Kör som administratör), kör du följande skript, där *application_pool_name* representerar namnet på den programpool som du skapade i steg 3, att ge programpoolen åtkomsträttigheter till auktoriseringsfilen.
@@ -363,9 +366,9 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
 
     Eftersom rotwebbplatsen pekar till mappen Windows PowerShell Web Access, bör webbläsaren Visa Windows PowerShell Web Access inloggningssida visas när du öppnar **https://\<*gateway_server_name* \>**. Du behöver inte lägga till **/pswa** till URL: en.
 
-    >**![Obs](images/note.jpeg) Obs!** 
-    > 
-    >Du kan inte logga in förrän användare har beviljats åtkomst till webbplatsen genom att lägga till auktoriseringsregler. 
+    >**![Obs](images/note.jpeg) Obs!**
+    >
+    >Du kan inte logga in förrän användare har beviljats åtkomst till webbplatsen genom att lägga till auktoriseringsregler.
     >Mer information finns i [konfigurera en regel för begränsad auktorisering](#configure-a-restrictive-authorization-rule), i det här avsnittet och [auktoriseringsregler och säkerhet funktioner i Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>Konfigurera en regel för begränsad auktorisering
@@ -390,13 +393,13 @@ Mer information om Windows PowerShell Web Access auktoriseringsregler och säker
 
         Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    Denna auktoriseringsregel ger en specifik användaråtkomst till en dator i nätverket som de normalt har åtkomst, med åtkomst till en specifik sessionskonfiguration som är begränsade till användaren '™ vanliga skript- och cmdlet behov. 
-    
+    Denna auktoriseringsregel ger en specifik användaråtkomst till en dator i nätverket som de normalt har åtkomst, med åtkomst till en specifik sessionskonfiguration som är begränsade till användaren '™ vanliga skript- och cmdlet behov.
+
     I följande exempel beviljas en användare med namnet `JSmith` i `Contoso`-domänen åtkomst för att hantera datorn `Contoso_214`, och använda en sessionskonfiguration med namnet `NewAdminsOnly`.
 
         Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4. Kontrollera att regeln har skapats genom att köra den `Get-PswaAuthorizationRule` cmdlet, eller `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`. 
+4. Kontrollera att regeln har skapats genom att köra den `Get-PswaAuthorizationRule` cmdlet, eller `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
 
     Till exempel `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 

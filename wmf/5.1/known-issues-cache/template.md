@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
-title: "exempelmall av ett känt problem eller begränsning uppskrivning"
-ms.openlocfilehash: b93393b2c84e76a301e6406d1388e82e95a2959c
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, inställning
+title: exempelmall av ett känt problem eller begränsning uppskrivning
+ms.openlocfilehash: cecf31127aaa1942471877a2056230ab592bd095
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 >Obs: ge en föreslagna beskrivande rubrik och en kort beskrivning
 
@@ -22,4 +22,3 @@ Lös problemet genom att ange den **ExecutionPolicy** till **RemoteSigned** geno
 ```powershell
 Set-ExecutionPolicy RemoteSigned
 ```
-

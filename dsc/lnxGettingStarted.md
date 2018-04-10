@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: "Kom igång med önskad (DSC tillstånd Configuration) för Linux"
-ms.openlocfilehash: 4fd8460bc5d2564cab291904b60a1a0c26c3e5a7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: Kom igång med önskad (DSC tillstånd Configuration) för Linux
+ms.openlocfilehash: b2f35ebe84dfd9f68ca07e7630534be59f8a1aa3
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Kom igång med önskad (DSC tillstånd Configuration) för Linux
 
@@ -25,14 +25,14 @@ Följande versioner av Linux-operativsystemet stöds för DSC för Linux.
 
 I följande tabell beskrivs paket som krävs beroenden för DSC för Linux.
 
-|  Nödvändigt paket |  Beskrivning |  Lägsta version | 
+|  Nödvändigt paket |  Beskrivning |  Lägsta version |
 |---|---|---|
-| glibc| GNU Library| 2…4 – 31.30| 
-| python| Python| 2.4 – 3.4| 
-| omiserver| Open Management Infrastructure| 1.0.8.1| 
-| openssl| OpenSSL-bibliotek| 0.9.8 eller 1.0| 
-| ctypes| Python CTypes bibliotek| Måste matcha versionen av Python| 
-| libcurl| cURL http-klientbibliotek| 7.15.1| 
+| glibc| GNU Library| 2…4 – 31.30|
+| python| Python| 2.4 – 3.4|
+| omiserver| Open Management Infrastructure| 1.0.8.1|
+| openssl| OpenSSL-bibliotek| 0.9.8 eller 1.0|
+| ctypes| Python CTypes bibliotek| Måste matcha versionen av Python|
+| libcurl| cURL http-klientbibliotek| 7.15.1|
 
 ## <a name="installing-dsc-for-linux"></a>Installera DSC för Linux
 
@@ -52,12 +52,12 @@ Kör följande kommando för att installera OMI på ett CentOS 7 x64 system.
 
 ### <a name="installing-dsc"></a>Installera DSC
 
-DSC för Linux finns att hämta [här](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest). 
+DSC för Linux finns att hämta [här](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest).
 
 Installera DSC, installera det paket som är lämpliga för ditt Linux-system (.rpm eller .deb) och OpenSSL version (ssl_098 eller ssl_100) och arkitektur (x64/x86). RPM-paket är lämpliga för CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server och Oracle Linux. DEB-paket är lämpliga för Debian GNU/Linux- och Ubuntu Server. Ssl_098-paket är lämpliga för datorer med OpenSSL 0.9.8 installerat under ssl_100-paket är lämpliga för datorer med OpenSSL 1.0 installeras.
 
 > **Obs**: för att fastställa den installerade versionen av OpenSSL, kör du kommandot openssl version.
- 
+
 Kör följande kommando för att installera DSC på ett CentOS 7 x64 system.
 
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
@@ -74,10 +74,10 @@ Nyckelordet Windows PowerShell-konfigurationen används för att skapa en konfig
 1. Importera modulen nx. Windows PowerShell-modulen nx måste innehåller schemat för inbyggda resurser för DSC för Linux och installeras på den lokala datorn och importeras i konfigurationen.
 
     -Om du vill installera modulen nx kopiera modulkatalogen nx antingen `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` eller `$PSHOME\Modules`. Modulen nx ingår i DSC för installationspaketet för Linux (MSI). Importera modulen nx i din konfiguration genom att använda den __importera DSCResource__ kommando:
-    
+
 ```powershell
 Configuration ExampleConfiguration{
-   
+
     Import-DSCResource -Module nx
 
 }
@@ -86,9 +86,9 @@ Configuration ExampleConfiguration{
 
 ```powershell
 Configuration ExampleConfiguration{
-   
+
     Import-DscResource -Module nx
- 
+
     Node  "linuxhost.contoso.com"{
     nxFile ExampleFile {
 
@@ -100,7 +100,7 @@ Configuration ExampleConfiguration{
 
     }
 }
-ExampleConfiguration -OutputPath:"C:\temp" 
+ExampleConfiguration -OutputPath:"C:\temp"
 ```
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>Push-konfigurationen till Linux-dator
@@ -117,15 +117,15 @@ $Credential = Get-Credential -UserName:"root" -Message:"Enter Password:"
 #$opt = New-CimSessionOption -UseSsl:$true -SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true
 
 #Options for a trusted SSL certificate
-$opt = New-CimSessionOption -UseSsl:$true 
-$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90 
+$opt = New-CimSessionOption -UseSsl:$true
+$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
 ```
 
 > **Obs**:
 * Användarens autentiseringsuppgifter måste vara rotanvändaren på Linux-dator för ”Push” läge.
 * SSL/TLS-anslutningar stöds för DSC för Linux, New-CimSession måste användas med parametern – UseSSL värdet $true.
 * SSL-certifikatet som används av OMI (för DSC) har angetts i filen: `/opt/omi/etc/omiserver.conf` med egenskaper: pemfile och nyckelfil.
-Om det här certifikatet inte är betrott av Windows-dator som du kör den [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) cmdlet på, kan du ignorera certifikatvalidering med CIMSession alternativ:`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
+Om det här certifikatet inte är betrott av Windows-dator som du kör den [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) cmdlet på, kan du ignorera certifikatvalidering med CIMSession alternativ: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
 
 Kör följande kommando för att push-DSC-konfigurationen till Linux-nod.
 
@@ -162,7 +162,7 @@ DSC för Linux innehåller skript för att arbeta med konfigurationen från den 
 
 `# sudo ./RemoveModule.py cnx_Resource`
 
-* StartDscLocalConfigurationManager.py 
+* StartDscLocalConfigurationManager.py
 
  Gäller en konfiguration MOF-filen till datorn. Liknar den [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet. Kräver sökväg till MOF att tillämpa konfigurationen.
 
@@ -182,4 +182,3 @@ Följande loggfiler genereras för DSC för Linux-meddelanden.
 |---|---|---|
 |omiserver.log|/var/OPT/omi/log|Meddelanden om driften av OMI CIM-servern.|
 |dsc.log|/var/OPT/omi/log|Meddelanden om åtgärden med de lokala Configuration Manager (MGM) och DSC resurs.|
-

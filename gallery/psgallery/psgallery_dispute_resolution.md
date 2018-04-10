@@ -1,20 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: galleriet, powershell, cmdlet, psgallery
 title: psgallery_dispute_resolution
-ms.openlocfilehash: 640d20371a51b08a5627b9beff1bb0ada4f06dd8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 424013229418efddeb0fe56828aece418630d91b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dispute-resolution"></a>Lösning av tvister
 
 Det här dokumentet är en rekommenderad tvister lösningsprocessen för community-medlemmar för att lösa tvister med andra PowerShell-galleriet utgivare.
 
-## <a name="process"></a>Processen
+## <a name="process"></a>Process
 
 1. Kontakta ägarna av artikeln har du tvister med hjälp av den **kontakta ägare** länk på informationssidan för objektet.
 Beskriver problemet i en typ och direkt sätt.
@@ -39,4 +39,3 @@ Publicera koden och komma igång eller förlora namnet till någon som har en pr
 Om du hittar ett objekt som bryter mot någon av dessa objekt, klicka på länken Rapportera missbruk på informationssidan för objektet och skicka en rapport.
 
 **Den här principen kan ändras gottfinnande PowerShell-galleriet.**
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: fbc537cacb8dd58ab989a0bb71cd942cedae844c
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, inställning
+ms.openlocfilehash: 01de08e8c9c2cf18ce481b44f3ca2211462e532b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>Interagera med symboliska länkar med förbättrad objektet cmdlets
 
@@ -22,7 +22,7 @@ Nedan visas några användningsfall av de nya funktionerna:
 ```powershell
 # Create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links to $pshome\profile.ps1
 cd C:\Temp
-New-Item -ItemType SymbolicLink -Name MySymLinkFile.txt -Target $pshome\profile.ps1 
+New-Item -ItemType SymbolicLink -Name MySymLinkFile.txt -Target $pshome\profile.ps1
 
 # Target is an alias to the Value parameter
 # All 3 commands below are equivalent to above
@@ -37,7 +37,7 @@ New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkFile.txt -Value $pshome\p
 # Create a new symbolic link directory named MySymLinkDir in C:\Temp which links to the $pshome folder
 # ItemType is the same for files and directories - autodetect based on specified target
 cd C:\Temp
-New-Item -ItemType SymbolicLink -Name MySymLinkDir -Target $pshome 
+New-Item -ItemType SymbolicLink -Name MySymLinkDir -Target $pshome
 
 # Target is an alias to the Value parameter
 # Similar to above, any combination of Path and Name also works
@@ -124,4 +124,3 @@ Remove-Item C:\Temp\MySymLinkDir
 # Removes the files in the target directory and MySymLinkDir
 Remove-Item C:\Temp\MySymLinkDir -Force
 ```
-

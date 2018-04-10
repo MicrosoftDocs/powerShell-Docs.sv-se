@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell-cmdlet
-ms.date: 2016-12-12
-title: "Hämta pswaauthorizationrule"
+ms.date: 12/12/2016
+title: Hämta pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: 003195457660a18b9bbed065181b6d8c23835348
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 74c044c329d8b6a305b86c9056a7041fb5fd046b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-pswaauthorizationrule"></a>Get-PswaAuthorizationRule
 
@@ -41,7 +41,7 @@ Om varken den **Id** parametern eller **RuleName** parametern anges, och den hä
 
 Anger identifierare (ID) av regler som denna cmdlet ska få. Om inga-ID har angetts returnerar den här cmdleten alla auktoriseringsregler.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
@@ -54,7 +54,7 @@ Anger identifierare (ID) av regler som denna cmdlet ska få. Om inga-ID har ange
 
 Anger namn på auktoriseringsregler för att hämta. Den här parametern returnerar de regler som matchar exakt Regelnamn strängar i denna matris.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | true                                 |

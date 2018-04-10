@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: WinRMSecurity
-ms.openlocfilehash: 0522844fded847a3fd45c1b3890a141357edb2b2
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: e390a84b6f7a1932afdad84c7b09ce7da2ec5370
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell fjärrkommunikation säkerhetsaspekter
 
@@ -33,60 +33,51 @@ Standardregel för Windows-brandväggen för PowerShell-fjärrkommunikation godk
 
 ## <a name="process-isolation"></a>Processisolering av
 
-PowerShell-fjärrkommunikation använder [Windows Remote Management (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426) för kommunikation mellan datorer. WinRM körs som en tjänst under kontot Nätverkstjänst, och skapas isolerade processer som körs som användarkonton till värden PowerShell instanser. En instans av PowerShell som körs som en användare inte har åtkomst till en process som kör en instans av PowerShell som en annan användare.
+PowerShell-fjärrkommunikation använder [Windows Remote Management (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426) för kommunikation mellan datorer.
+WinRM körs som en tjänst under kontot Nätverkstjänst, och skapas isolerade processer som körs som användarkonton till värden PowerShell instanser. En instans av PowerShell som körs som en användare inte har åtkomst till en process som kör en instans av PowerShell som en annan användare.
 
 ## <a name="event-logs-generated-by-powershell-remoting"></a>Händelseloggar som genererats av PowerShell-fjärrkommunikation
 
-FireEye har angett en bra översikt över händelseloggarna och andra säkerhetsbevis som genererats av PowerShell-fjärrkommunikation sessioner, finns på  
-[Undersöka PowerShell attacker](https://www.fireeye.com/content/dam/fireeye-www/global/en/solutions/pdfs/wp-lazanciyan-investigating-powershell-attacks.pdf).
+FireEye har angett en bra översikt över händelseloggarna och andra säkerhetsbevis som genererats av PowerShell-fjärrkommunikation sessioner, finns på [undersöker PowerShell attacker](https://www.fireeye.com/content/dam/fireeye-www/global/en/solutions/pdfs/wp-lazanciyan-investigating-powershell-attacks.pdf).
 
 ## <a name="encryption-and-transport-protocols"></a>Kryptering och transport protokoll
 
-Är det bra att tänka på säkerheten för en PowerShell-fjärrkommunikation anslutning ur två perspektiv: första autentiseringen och en pågående kommunikation. 
+Är det bra att tänka på säkerheten för en PowerShell-fjärrkommunikation anslutning ur två perspektiv: första autentiseringen och en pågående kommunikation.
 
 Oavsett transportprotokollet används (HTTP eller HTTPS) krypterar PowerShell-fjärrkommunikation alltid all kommunikation efter första autentiseringen med sessions-AES 256 symmetrisk nyckel.
-    
+
 ### <a name="initial-authentication"></a>Första autentiseringen
 
 Autentisering bekräftar identiteten för klient till server- och helst - servern till klienten.
-    
+
 När en klient ansluter till en domänserver namn (d.v.s.: server01, eller server01.contoso.com), är standardautentiseringsprotokollet [Kerberos](https://msdn.microsoft.com/library/windows/desktop/aa378747.aspx).
 Kerberos garanterar både användar-ID och serveridentitet utan att skicka någon form av återanvändbara autentiseringsuppgifter.
 
-När en klient ansluter till en domänserver med dess IP-adress eller ansluter till en arbetsgruppsserver, är Kerberos-autentisering inte möjligt. I så fall PowerShell-fjärrkommunikation är beroende av [NTLM-autentiseringsprotokollet](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx). NTLM-autentiseringsprotokollet garanterar användaridentiteten utan att skicka alla slags kan delegeras autentiseringsuppgifter. För att bevisa användaridentitet kräver NTLM-protokollet att både klient och server compute en sessionsnyckel från användarens lösenord utan att någonsin utbyta själva lösenordet. Servern vanligtvis vet inte lösenordet, så att den kommunicerar med domänkontrollanten som känner till användarens lösenord och beräknar sessionsnyckeln för servern. 
-      
+När en klient ansluter till en domänserver med dess IP-adress eller ansluter till en arbetsgruppsserver, är Kerberos-autentisering inte möjligt. I så fall PowerShell-fjärrkommunikation är beroende av [NTLM-autentiseringsprotokollet](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx). NTLM-autentiseringsprotokollet garanterar användaridentiteten utan att skicka alla slags kan delegeras autentiseringsuppgifter. För att bevisa användaridentitet kräver NTLM-protokollet att både klient och server compute en sessionsnyckel från användarens lösenord utan att någonsin utbyta själva lösenordet. Servern vanligtvis vet inte lösenordet, så att den kommunicerar med domänkontrollanten som känner till användarens lösenord och beräknar sessionsnyckeln för servern.
+
 NTLM-protokollet garanterar inte, men serveridentitet. Precis som med alla protokoll som använder NTLM för autentisering, kunde en angripare med tillgång till en domänansluten dator datorkontot anropa domänkontrollanten för att beräkna NTLM-sessionsnyckel och därmed personifiera servern.
 
 NTLM-autentisering är inaktiverat som standard, men kan tillåtas genom antingen konfigurera SSL på målservern, eller genom att konfigurera inställningen WinRM TrustedHosts på klienten.
-    
+
 #### <a name="using-ssl-certificates-to-validate-server-identity-during-ntlm-based-connections"></a>Använder SSL-certifikat för att verifiera serveridentitet under NTLM-baserade anslutningar
 
 Eftersom NTLM-autentiseringsprotokollet går inte att kontrollera identiteten på målservern (endast som redan vet lösenordet), kan du konfigurera målservrar för att använda SSL för PowerShell-fjärrkommunikation. Tilldela målservern ett SSL-certifikat (om det utfärdats av en certifikatsutfärdare som klienten också) gör det möjligt för NTLM-autentisering som garanterar både användar-ID och serveridentitet.
-    
+
 #### <a name="ignoring-ntlm-based-server-identity-errors"></a>Ignorerar NTLM-baserad server identitet fel
-      
+
 Om det är omöjligt att distribuera ett SSL-certifikat till en server för NTLM-anslutningar, kan du förhindra de identitet fel genom att lägga till servern WinRM **TrustedHosts** lista. Observera att lägga till ett servernamn i listan TrustedHosts inte ska betraktas som någon form av instruktionen för trovärdighet värddatorer själva – som NTLM-autentiseringsprotokollet inte kan garantera att du i själva verket ansluter till värden är Avsikten är att ansluta till.
 I stället bör du inställningen TrustedHosts att listan över värdar som du vill ignorera felet genereras av att det inte går att verifiera serverns identitet.
-    
-    
+
+
 ### <a name="ongoing-communication"></a>En pågående kommunikation
 
-När den första autentiseringen är klar, den [PowerShell fjärrkommunikation protokollet](https://msdn.microsoft.com/en-us/library/dd357801.aspx) krypterar alla pågående kommunikation med en tillfälliga AES 256 symmetrisk nyckel.  
+När den första autentiseringen är klar, den [PowerShell fjärrkommunikation protokollet](https://msdn.microsoft.com/en-us/library/dd357801.aspx) krypterar alla pågående kommunikation med en tillfälliga AES 256 symmetrisk nyckel.
 
 
 ## <a name="making-the-second-hop"></a>Gör ett andra hopp
 
 Som standard använder PowerShell-fjärrkommunikation Kerberos (om tillgängligt) eller NTLM för autentisering. Båda dessa protokoll autentisera fjärrdatorn utan att skicka autentiseringsuppgifter till den.
-Detta är det säkraste sättet att autentisera, men eftersom fjärrdatorn inte har användarens autentiseringsuppgifter, den kan inte komma åt andra datorer och tjänster för användarens räkning. Detta kallas ”andra hopp problemet”.
+Detta är det säkraste sättet att autentisera, men eftersom fjärrdatorn inte har användarens autentiseringsuppgifter, den kan inte komma åt andra datorer och tjänster för användarens räkning.
+Detta kallas ”andra hopp problemet”.
 
 Det finns flera sätt att undvika problemet. Beskrivningar av dessa metoder och tekniker och nackdelar med varje finns [att göra ett andra hopp i PowerShell-fjärrkommunikation](PS-remoting-second-hop.md).
-
-
-
-
-
-
-
-
-
-

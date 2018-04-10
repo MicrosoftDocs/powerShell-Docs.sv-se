@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: SendConfigurationApplyAsync-metoden i klassen MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: e680d510aaac097f4f0de80660274230e028ed45
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: SendConfigurationApplyAsync-metoden för MSFT_DSCLocalConfigurationManager-klassen
+ms.openlocfilehash: 7ff821a277a548869862741551ee9897e417ea45
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a>SendConfigurationApplyAsync-metoden i klassen MSFT_DSCLocalConfigurationManager
+# <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a>SendConfigurationApplyAsync-metoden för MSFT_DSCLocalConfigurationManager-klassen
 
 Skickar konfiguration dokumentet asynkront till noden hanterade används Configuration Agent för att tillämpa konfigurationen.
 
@@ -27,14 +27,11 @@ uint32 SendConfigurationApplyAsync(
 <a name="parameters"></a>Parametrar
 ----------
 
-*ConfigurationData* \[i\]  
-Miljödata för konfigurationen.
+*ConfigurationData* \[i\] miljödata för konfigurationen.
 
-*Tvinga* \[i\]  
-**SANT** att tvinga konfigurationen som ska sluta.
+*Tvinga* \[i\] **SANT** att tvinga konfigurationen som ska sluta.
 
-*jobId* \[i\]  
-ID för jobbet för att skicka konfigurationen.
+*jobId* \[i\] ID för jobbet för att skicka konfigurationen.
 
 ## <a name="return-value"></a>Returvärde
 ------------
@@ -56,11 +53,3 @@ Det här är en statisk metod.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

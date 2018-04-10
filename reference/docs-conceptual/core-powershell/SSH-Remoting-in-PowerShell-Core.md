@@ -1,4 +1,4 @@
-# <a name="powershell-remoting-over-ssh"></a>PowerShell-fjärrkommunikation via SSH
+# <a name="powershell-remoting-over-ssh"></a>PowerShell fjärrkommunikation via SSH
 
 ## <a name="overview"></a>Översikt
 
@@ -59,7 +59,7 @@ Dessutom behöver du aktivera autentisering med lösenord och eventuellt viktiga
     Restart-Service sshd
     ```
 1. Lägg till sökvägen där OpenSSH installeras på din sökväg Env variabel
-    - Detta bör vara längs linjer`C:\Program Files\OpenSSH\`
+    - Detta bör vara längs linjer `C:\Program Files\OpenSSH\`
     - Detta möjliggör ssh.exe ska finnas
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Installationen på datorn för Linux (Ubuntu 14.04)
@@ -92,11 +92,11 @@ Dessutom behöver du aktivera autentisering med lösenord och eventuellt viktiga
 
 1. Installera senaste [PowerShell för MacOS] skapa
     - Se till att SSH fjärrkommunikation är aktiverad på följande sätt:
-      - Öppna`System Preferences`
-      - Klicka på`Sharing`
-      - Kontrollera `Remote Login` -ska stå`Remote Login: On`
+      - Öppna `System Preferences`
+      - Klicka på `Sharing`
+      - Kontrollera `Remote Login` -ska stå `Remote Login: On`
       - Tillåt åtkomst till behöriga användare
-1. Redigera den `sshd_config` fil på plats`/private/etc/ssh/sshd_config`
+1. Redigera den `sshd_config` fil på plats `/private/etc/ssh/sshd_config`
     - Använd din favorit redigerare eller
     ```bash
     sudo nano /private/etc/ssh/sshd_config

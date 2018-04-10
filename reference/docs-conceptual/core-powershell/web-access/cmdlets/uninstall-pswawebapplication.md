@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell-cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: avinstallera pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: cc54c94426d754ff2d3bf658e3e92083f02cd6c7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 139c8358a24e54dec630f8c78737728330ba4aa2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-pswawebapplication"></a>Uninstall-PswaWebApplication
 
@@ -36,7 +36,7 @@ Den **Uninstall-PswaWebApplication** cmdlet avinstallerar Windows PowerShell-web
 Anger att testcertifikat som skapats av den **installera\_PswaWebApplication** cmdlet (med den **UseTestCertificate** parametern) tas bort.
 Endast Testcertifikatet med samma namn som skapas av den **Install-PswaWebApplication** cmdlet tas bort.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
@@ -49,7 +49,7 @@ Endast Testcertifikatet med samma namn som skapas av den **Install-PswaWebApplic
 
 Anger namnet på webbprogrammet för att avinstallera.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
@@ -62,7 +62,7 @@ Anger namnet på webbprogrammet för att avinstallera.
 
 Anger namnet på webbplatsen där webbprogrammet är installerat.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
@@ -75,7 +75,7 @@ Anger namnet på webbplatsen där webbprogrammet är installerat.
 
 Uppmanar dig att bekräfta innan du kör cmdleten.
 
-|||  
+|||
 |-|-|
 | Obligatorisk?                            | falskt                                |
 | Placering?                            | Med namnet                                |
@@ -88,7 +88,7 @@ Uppmanar dig att bekräfta innan du kör cmdleten.
 Visar vad som skulle hända om cmdleten kördes.
 Cmdleten körs inte.
 
-|||  
+|||
 |-|-|
 | Obligatorisk?                            | falskt                                |
 | Placering?                            | Med namnet                                |

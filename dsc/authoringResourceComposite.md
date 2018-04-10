@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: "Sammansatta resurser--med hjälp av DSC-konfigurationen som en resurs"
-ms.openlocfilehash: 1d5fb89eb9845820de8543f388ddb6aaeaaa3e44
-ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
+title: Sammansatta resurser--med hjälp av DSC-konfigurationen som en resurs
+ms.openlocfilehash: c89293fdbe9bc054a47cc6974b6bd0471f727f46
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Sammansatta resurser: med hjälp av DSC-konfigurationen som en resurs
 
@@ -162,7 +162,7 @@ Därefter skapar vi en konfiguration som anropar sammansatta resursen. Den här 
 configuration RenameVM
 {
 
-    Import-DscResource -Module TestCompositeResource
+    Import-DscResource -Module xVirtualMachine
     Node localhost
     {
         xVirtualMachine VM
@@ -209,4 +209,3 @@ if ($PsDscContext.RunAsUser) {
 ### <a name="concepts"></a>Begrepp
 * [Skriva en anpassad DSC-resurs med MOF](authoringResourceMOF.md)
 * [Kom igång med Windows PowerShell Desired State Configuration](overview.md)
-

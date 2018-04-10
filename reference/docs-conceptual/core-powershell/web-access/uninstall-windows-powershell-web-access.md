@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
-title: "avinstallera windows powershell-webbåtkomst"
-ms.openlocfilehash: b6e6a2374e6b4b2be8742019c5f1e4d5b5d1abe3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: avinstallera windows powershell-webbåtkomst
+ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>Avinstallera Windows PowerShell-webbåtkomst
 
@@ -29,7 +29,7 @@ Procedurerna i det här avsnittet hjälper dig att avinstallera både:
 
 - webbprogrammet för Windows PowerShell Web Access och
 - funktionen Windows PowerShell-webbåtkomst
- 
+
 med hjälp av Windows PowerShell-cmdlets.
 
 ### <a name="step-1-delete-the-web-application-using-cmdlets"></a>Steg 1: Ta bort webbprogrammet med hjälp av cmdlet: ar
@@ -96,9 +96,9 @@ I det här avsnittet hjälper dig att avinstallera både Windows PowerShell Web 
 
 > ![Varning Obs](images/SecurityNote.jpeg)**Observera**:
 >
-> Certifikatet tas inte bort under avinstallationen. 
+> Certifikatet tas inte bort under avinstallationen.
 >
-> Om du skapat ett självsignerat certifikat eller om du använde ett testcertfikat och vill ta bort det, radera certifikatet i IIS-hanteraren. 
+> Om du skapat ett självsignerat certifikat eller om du använde ett testcertfikat och vill ta bort det, radera certifikatet i IIS-hanteraren.
 
 ### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>Steg 2: Avinstallera Windows PowerShell-webbåtkomst med hjälp av guiden Ta bort roller och funktioner
 

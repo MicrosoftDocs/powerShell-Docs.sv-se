@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
 title: psget_moduledependencypopulation
-ms.openlocfilehash: 126cd65ac35a31f4118474bc36dac1836ec0f22e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c4c9f203e9c526ff532c2388acb6334515d66934
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="logic-for-preparing-the-module-dependencies-during-publish-operation"></a>Logik för att förbereda modulen beroenden under publiceringen
 1.  Moduler som anges som en del av RequiredModules anses vara beroenden.
@@ -29,4 +29,3 @@ ms.lasthandoff: 06/12/2017
 *Under installationen av principmodulen ovan förberedda beroenden används listan för att installera beroenden.*
 
 *Se till att din modulen beroenden är tillgängliga under $env: PSModulePath på datorn under publicera igen.*
-

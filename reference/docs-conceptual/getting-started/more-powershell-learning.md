@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: flera powershell-utbildning
-ms.openlocfilehash: 32d7006010a4808a77d9800ec77c4352213d12b9
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: bed263df0ff52ec687bc7a644470f0397d0106ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="more-powershell-learning"></a>Flera PowerShell-utbildning
 
-Andra källor för att lära dig PowerShell  
+Andra källor för att lära dig PowerShell
 
 ## <a name="resources-for-windows-powershell-users"></a>Resurser för Windows PowerShell-användare
 
@@ -32,11 +32,11 @@ Förutom hjälpen i kommandoraden innehåller följande resurser mer information
 
 ### <a name="script-center-learn"></a>Läs Script Center
 #### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>Windows PowerShell Essentials för upptagen Admin-serien
-- [PowerShell-SmowerShell' – varför du ska lära dig Windows PowerShell &#40; Del 1 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [Hört via Pipeline, hur du sammansatt Windows PowerShell-kommandon för skojs skull och vinst &#40; Del 2 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [Enda providern? Inte knappt – en titt på Windows PowerShell-Providers &#40; En del 3 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [Den huvudsakliga händelsen – Windows PowerShell har händelseloggar &#40; En del 4 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [Mer än via fjärranslutning möjliga, använder Windows PowerShell för att hantera fjärrskrivbordet &#40; En del 5 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
+- [PowerShell-SmowerShell' – varför du ska lära dig Windows PowerShell &#40;del 1&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
+- [Hört via Pipeline, hur du sammansatt Windows PowerShell-kommandon för skojs skull och vinst &#40;del 2&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
+- [Enda providern? Inte knappt – en titt på Windows PowerShell-Providers &#40;del 3&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
+- [Den huvudsakliga händelsen – Windows PowerShell har händelseloggar &#40;del 4&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
+- [Mer än via fjärranslutning möjliga, använder Windows PowerShell för att hantera fjärrskrivbordet &#40;del 5&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
 
 #### <a name="learn-it-now-before-its-an-emergency"></a>Läs den nu innan den är en nödsituation
 - [Windows PowerShell: Läs den nu innan den är en nödsituation - del 1](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
@@ -51,4 +51,3 @@ Följande resurser innehåller resurser som hjälper utvecklare att skapa sina e
 
 - [Windows PowerShell SDK](http://go.microsoft.com/fwlink/p/?LinkID=89595). Ger Referensinnehåll.
 - [Programmeringsguide för Windows PowerShell](http://go.microsoft.com/fwlink/p/?LinkID=89596). Självstudierna. Innehåller även information om grundläggande begrepp för Windows PowerShell.
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea powershell säkerhet"
+keywords: jea powershell säkerhet
 title: Granskning och rapportering av JEA
-ms.openlocfilehash: 57148bc3753bdd751bfa21fc3198aca3f8654849
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 7fc670c77b5fbf9bce8fb55dd99a2f9a984100d2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Granskning och rapportering av JEA
 
@@ -144,11 +144,11 @@ För varje kommando som en användare kör en rad ”CommandInvocation” skrivs
 ParameterBindings följer varje CommandInvocation för information om varje parameter och ett värde som har angetts i kommandot.
 I exemplet ovan kan du se att parametern ”namn” har lämnat värdet ”Dns” för ”Get-tjänst”-cmdlet.
 
-Utdata från varje kommando kommer också utlösa en CommandInvocation vanligtvis ut som standard. InputObject Out-Default är PowerShell-objektet som returnerades från kommandot.
+Utdata från varje kommando kommer också utlösa en CommandInvocation vanligtvis ut som standard.
+InputObject Out-Default är PowerShell-objektet som returnerades från kommandot.
 Information om objektet skrivs ut några rader under nära frihandsbilden vad användaren skulle ha sett.
 
 ## <a name="see-also"></a>Se även
 
 - [Granska användaråtgärder i en JEA session](audit-and-report.md)
 - [*PowerShell ♥ blå teamet* blogginlägg om säkerhet](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
-

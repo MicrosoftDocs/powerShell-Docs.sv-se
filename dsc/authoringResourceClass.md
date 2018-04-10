@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Skriva en anpassad DSC-resurs med PowerShell-klasser
-ms.openlocfilehash: 53757f965c51fee699409b5a8ecda802dda9801f
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 23669a6db17855e8d69aa0144c541bb4c799a9eb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Skriva en anpassad DSC-resurs med PowerShell-klasser
 
@@ -30,8 +30,8 @@ Skapa följande mappstruktur för att implementera en anpassad DSC-resurs med en
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1 
-           MyDscResource.psd1 
+        |- MyDscResource.psm1
+           MyDscResource.psd1
 ```
 
 ## <a name="create-the-class"></a>Skapa klassen
@@ -72,10 +72,10 @@ Observera att egenskaperna ändras av attribut. Enligt attribut är följande:
 Den **$Path** och **$SourcePath** egenskaper är båda strängar. Den **$CreationTime** är en [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) egenskapen. Den **$Ensure** -egenskapen är en uppräkningstyp som definieras på följande sätt.
 
 ```powershell
-enum Ensure 
-{ 
-    Absent 
-    Present 
+enum Ensure
+{
+    Absent
+    Present
 }
 ```
 
@@ -83,7 +83,7 @@ enum Ensure
 
 Den **Get()**, **Set()**, och **Test()** metoder är detsamma som det **Get-TargetResource**, **Set TargetResource** , och **Test TargetResource** funktioner i en resurs för skript.
 
-Den här koden även funktionen CopyFile() hjälpfunktion som kopierar du filen från **$SourcePath** till **$Path**. 
+Den här koden även funktionen CopyFile() hjälpfunktion som kopierar du filen från **$SourcePath** till **$Path**.
 
 ```powershell
 
@@ -450,7 +450,7 @@ PowerShellVersion = '5.0'
 
 # Name of the Windows PowerShell host required by this module
 # PowerShellHostName = ''
-} 
+}
 ```
 
 ## <a name="test-the-resource"></a>Testa resursen
@@ -466,7 +466,7 @@ Configuration Test
         Path = "C:\test\test.txt"
         SourcePath = "c:\test.txt"
         Ensure = "Present"
-    } 
+    }
 }
 Test
 Start-DscConfiguration -Wait -Force Test
@@ -512,4 +512,3 @@ if (PsDscContext.RunAsUser) {
 ## <a name="see-also"></a>Se även
 ### <a name="concepts"></a>Begrepp
 [Skapa anpassade Windows PowerShell Desired State Configuration-resurser](authoringResource.md)
-

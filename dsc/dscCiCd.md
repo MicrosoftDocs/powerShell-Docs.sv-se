@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Skapa en kontinuerlig integrering och kontinuerlig distribution pipeline med DSC
-ms.openlocfilehash: 5f7583fb93b69bbe4103b34b79b3a859c9cee8a9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: a3803a8e6fe6ff1b93758a73ccd54754d7bb2a84
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Skapa en kontinuerlig integrering och kontinuerlig distribution pipeline med DSC
 
 Det här exemplet visar hur du skapar en pipeline för kontinuerlig Integration/kontinuerlig distribution (CI/CD) med hjälp av PowerShell, DSC, Pester och Visual Studio Team Foundation Server (TFS).
 
-När pipelinen har skapats och konfigurerats, du kan använda den för att fullständigt distribuera, konfigurera och testa en DNS-server och tillhörande värdposter. Den här processen simulerar den första delen av en pipeline som ska användas i en utvecklingsmiljö.
+När pipelinen har skapats och konfigurerats, du kan använda den för att fullständigt distribuera, konfigurera och testa en DNS-server och tillhörande värdposter.
+Den här processen simulerar den första delen av en pipeline som ska användas i en utvecklingsmiljö.
 
 En automatisk CI/CD-pipeline kan du uppdatera programvara snabbare och mer tillförlitligt säkerställer att all kod testas och att det finns en aktuell version av din kod vid alla tidpunkter.
 
@@ -60,7 +61,7 @@ Datorn måste köra [Windows Server 2016](https://www.microsoft.com/en-us/evalce
 ### <a name="testagent2"></a>TestAgent2
 
 Detta är den dator som är värd för webbplatsen för det här exemplet konfigureras.
-Datorn måste köra [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). 
+Datorn måste köra [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
 
 ## <a name="add-the-code-to-tfs"></a>Lägg till kod till TFS
 
@@ -156,7 +157,8 @@ Detta hittar de noder som har definierats som en roll `DNSServer` i den [konfigu
 
 Med data för att definiera noder är viktigt när du gör CI eftersom noden informationen ändras troligen mellan miljöer och använder konfigurationsdata kan du enkelt göra ändringar i noden information utan att ändra konfigurationskoden.
 
-I det första resurs blocket konfigurationen anropar den [WindowsFeature](windowsFeatureResource.md) så att DNS-funktionen är aktiverad. Resurs-block som följer anropet resurser från den [xDnsServer](https://github.com/PowerShell/xDnsServer) modul för att konfigurera primär zon och DNS-poster.
+I det första resurs blocket konfigurationen anropar den [WindowsFeature](windowsFeatureResource.md) så att DNS-funktionen är aktiverad.
+Resurs-block som följer anropet resurser från den [xDnsServer](https://github.com/PowerShell/xDnsServer) modul för att konfigurera primär zon och DNS-poster.
 
 Observera att två `xDnsRecord` block placeras i `foreach` slingor gå igenom matriser i konfigurationsdata.
 Igen, konfigurationsdata skapas av den `DevEnv.ps1` skript som vi ska titta på Nästa.
@@ -199,7 +201,8 @@ I vårt fall bara i `RawEnvData` parametern används.
 ### <a name="the-psake-build-script"></a>Skriptet psake build
 
 Den [psake](https://github.com/psake/psake) skapa skript som definierats i `Build.ps1` (från roten av lagringsplatsen Demo_CI `./InfraDNS/Build.ps1`) definierar uppgifter som ingår i versionen.
-Den definierar också vilka aktiviteter som varje uppgift beror på. När den anropas, skriptet psake garanterar att den angivna aktiviteten (eller aktiviteten `Default` om inget anges) körs och att alla beroenden även kör (detta är rekursiv, så att det körs beroenden av beroenden, och så vidare).
+Den definierar också vilka aktiviteter som varje uppgift beror på.
+När den anropas, skriptet psake garanterar att den angivna aktiviteten (eller aktiviteten `Default` om inget anges) körs och att alla beroenden även kör (detta är rekursiv, så att det körs beroenden av beroenden, och så vidare).
 
 I detta exempel på `Default` aktivitet har definierats som:
 
@@ -263,7 +266,7 @@ Skapar de mappar som ska användas för exemplet och tar bort alla testresultat 
 
 Den [psake](https://github.com/psake/psake) distributionsskriptet som definierats i `Deploy.ps1` (från roten av lagringsplatsen Demo_CI `./InfraDNS/Deploy.ps1`) definierar uppgifter som att distribuera och kör sedan konfigurationen.
 
-`Deploy.ps1`definierar följande uppgifter:
+`Deploy.ps1` definierar följande uppgifter:
 
 #### <a name="deploymodules"></a>DeployModules
 
@@ -334,8 +337,8 @@ Det här build-steget körs den `initiate.ps1` -fil, som anropar psake build-skr
 
 ### <a name="publish-test-results"></a>Publicera testresultat
 
-1. Ange **testa Resultatformatet** till`NUnit`
-1. Ange **Test resulterar filer** till`InfraDNS/Tests/Results/*.xml`
+1. Ange **testa Resultatformatet** till `NUnit`
+1. Ange **Test resulterar filer** till `InfraDNS/Tests/Results/*.xml`
 1. Ange **testa kör rubrik** till `Unit`.
 1. Kontrollera att **alternativ för åtkomstkontroll** **aktiverad** och **körs alltid** är båda markerade.
 
@@ -352,15 +355,15 @@ Det här steget build körs testerna enhet i skriptet Pester vi har tittat på t
     **\Integration\**
     ```
 
-1. Ange **TargetFolder** till`$(Build.ArtifactStagingDirectory)\`
+1. Ange **TargetFolder** till `$(Build.ArtifactStagingDirectory)\`
 
 Det här steget kopierar bygga och testa skript i uppsamlingskatalogen så som de kan publiceras som skapa artefakter med nästa steg.
 
 ### <a name="publish-artifact"></a>Publicera artefakt
 
-1. Ange **sökvägen till publicera** till`$(Build.ArtifactStagingDirectory)\`
-1. Ange **artefakt namnet** till`Deploy`
-1. Ange **typ av artefakt** till`Server`
+1. Ange **sökvägen till publicera** till `$(Build.ArtifactStagingDirectory)\`
+1. Ange **artefakt namnet** till `Deploy`
+1. Ange **typ av artefakt** till `Server`
 1. Välj `Enabled` i **alternativ**
 
 ## <a name="enable-continuous-integration"></a>Aktivera kontinuerlig integration
@@ -393,21 +396,21 @@ Redigera stegen på följande sätt:
 
 ### <a name="powershell-script"></a>PowerShell-skript
 
-1. Ange den **skriptsökvägen** till`$(Build.DefinitionName)\Deploy\initiate.ps1"`
-1. Ange den **argument** till`-fileName Deploy`
+1. Ange den **skriptsökvägen** till `$(Build.DefinitionName)\Deploy\initiate.ps1"`
+1. Ange den **argument** till `-fileName Deploy`
 
 ### <a name="first-publish-test-results"></a>Publicera testresultat
 
 1. Välj `NUnit` för den **Test Resultatformatet** fält
-1. Ange den **resultatet Testfiler** till`$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
-1. Ange den **testa kör rubrik** till`Integration`
+1. Ange den **resultatet Testfiler** till `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
+1. Ange den **testa kör rubrik** till `Integration`
 1. Under **alternativ för åtkomstkontroll**, kontrollera **körs alltid**
 
 ### <a name="second-publish-test-results"></a>Andra publicera testresultat
 
 1. Välj `NUnit` för den **Test Resultatformatet** fält
-1. Ange den **resultatet Testfiler** till`$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
-1. Ange den **testa kör rubrik** till`Acceptance`
+1. Ange den **resultatet Testfiler** till `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
+1. Ange den **testa kör rubrik** till `Acceptance`
 1. Under **alternativ för åtkomstkontroll**, kontrollera **körs alltid**
 
 ## <a name="verify-your-results"></a>Kontrollera resultatet
@@ -422,10 +425,3 @@ Du kan kontrollera resultatet av distributionen genom att öppna en webbläsare 
 Det här exemplet konfigureras DNS-servern `TestAgent1` så att URL: en `www.contoso.com` matchar `TestAgent2`, men det inte att distribuera en webbplats.
 Stommen för att göra det tillhandahålls i lagringsplatsen under den `WebApp` mapp.
 Du kan använda stub-rutiner som hjälper för att skapa psake skript, Pester testerna och DSC-konfigurationer för att distribuera din egen webbplats.
-
-
-
-
-
-
-

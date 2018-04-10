@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: "Använder resurser med flera versioner"
-ms.openlocfilehash: 5ca4eadfe23a4675e1b81b86d4274d7f113228fe
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Använda resurser med flera versioner
+ms.openlocfilehash: 9e5b989be3f33fb9151f76cecb6d5f700b1e36c9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-resources-with-multiple-versions"></a>Använder resurser med flera versioner
+# <a name="using-resources-with-multiple-versions"></a>Använda resurser med flera versioner
 
 > Gäller för: Windows PowerShell 5.0
 
@@ -62,7 +62,7 @@ configuration VersionTest
             DomainAdministratorCredential = Get-Credential
         }
      }
-}     
+}
 ```
 
 >Obs: Parametern ModuleVersion för Import-DscResource är inte tillgänglig i PowerShell 4.0. Du kan ange en Modulversion genom att skicka en specifikation Modulobjekt till ModuleName-parametern för Import-DscResource i PowerShell 4.0. En modul specifikation objektet är en hash-tabell som innehåller Modulnamn och RequiredVersion nycklar. Till exempel:
@@ -81,7 +81,7 @@ configuration VersionTest
             DomainAdministratorCredential = Get-Credential
         }
      }
-}     
+}
 ```
 
 Detta fungerar också i PowerShell 5.0, men det rekommenderas att du använder den **ModuleVersion** parameter.
@@ -89,4 +89,3 @@ Detta fungerar också i PowerShell 5.0, men det rekommenderas att du använder d
 ## <a name="see-also"></a>Se även
 * [DSC-konfigurationer](configurations.md)
 * [DSC-resurser](resources.md)
-

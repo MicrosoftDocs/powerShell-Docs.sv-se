@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Skriva en anpassad DSC-resurs med MOF
-ms.openlocfilehash: c416fd7cac80d37f1ca1393fa644b4bc15743724
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 4e336e837d2153fecab8325cb8714ffed85a6175
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Skriva en anpassad DSC-resurs med MOF
 
@@ -56,12 +56,12 @@ class Demo_IISWebsite : OMI_BaseResource
 
 Observera följande om föregående kod:
 
-* `FriendlyName`Definierar namnet som du kan använda för att referera till den här anpassade resursen i DSC-konfigurationsskript. I det här exemplet `Website` motsvarar det egna namnet `Archive` för den inbyggda Arkiv-resursen.
+* `FriendlyName` Definierar namnet som du kan använda för att referera till den här anpassade resursen i DSC-konfigurationsskript. I det här exemplet `Website` motsvarar det egna namnet `Archive` för den inbyggda Arkiv-resursen.
 * Den klass som du definierar för din anpassade resursen måste vara härledd från `OMI_BaseResource`.
 * Typ-kvalificeraren `[Key]`på en egenskap som anger att den här egenskapen unikt identifierar resursinstansen. Minst en `[Key]` egenskapen måste anges.
 * Den `[Required]` kvalificerare anger att egenskapen är obligatorisk (ett värde måste anges i alla konfigurationsskript som använder den här resursen).
 * Den `[write]` kvalificerare anger att den här egenskapen är valfri när du använder den anpassade resursen i ett konfigurationsskript. Den `[read]` kvalificerare anger att en egenskap inte kan anges med en konfiguration, och enbart för rapportering.
-* `Values`begränsar vilka värden som kan tilldelas till egenskapen i listan över värden som definieras i `ValueMap`. Mer information finns i [ValueMap och värdet kvalificerare](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx).
+* `Values` begränsar vilka värden som kan tilldelas till egenskapen i listan över värden som definieras i `ValueMap`. Mer information finns i [ValueMap och värdet kvalificerare](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx).
 * Inklusive en egenskap kallas `Ensure` med värden `Present` och `Absent` i din resurs rekommenderas för att bibehålla en konsekvent stil med inbyggda DSC-resurser.
 * Ett filnamn schemat för den anpassade resursen på följande sätt: `classname.schema.mof`, där `classname` identifierare som följer den `class` nyckelord i din schemadefinition.
 
@@ -117,7 +117,7 @@ function Get-TargetResource
                                         Protocol = $Website.bindings.Collection.protocol;
                                         Binding = $Website.bindings.Collection.bindingInformation;
                                     }
-  
+
         $getTargetResourceResult;
 }
 ```
@@ -131,7 +131,7 @@ Beroende på de värden som har angetts för resursegenskaper i skript för konf
 Följande exempel illustrerar detta.
 
 ```powershell
-# The Set-TargetResource function is used to create, delete or configure a website on the target machine. 
+# The Set-TargetResource function is used to create, delete or configure a website on the target machine.
 function Set-TargetResource
 {
     [CmdletBinding(SupportsShouldProcess=$true)]
@@ -157,7 +157,7 @@ function Set-TargetResource
 
         [string[]]$Protocol
     )
- 
+
     <# If Ensure is set to "Present" and the website specified in the mandatory input parameters does not exist, then create it using the specified parameter values #>
     <# Else, if Ensure is set to "Present" and the website does exist, then update its properties to match the values provided in the non-mandatory parameter values #>
     <# Else, if Ensure is set to "Absent" and the website does not exist, then do nothing #>
@@ -207,15 +207,15 @@ $ApplicationPool
 #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
 
-#Include logic to 
+#Include logic to
 $result = [System.Boolean]
 #Add logic to test whether the website is present and its status mathes the supplied parameter values. If it does, return true. If it does not, return false.
 $result
 }
 ```
 
-**Obs**: för enklare felsökning använder den **Write-Verbose** cmdlet i implementeringen av föregående tre funktioner. 
->Denna cmdlet skriver texten till den utförliga meddelandeströmmen. 
+**Obs**: för enklare felsökning använder den **Write-Verbose** cmdlet i implementeringen av föregående tre funktioner.
+>Denna cmdlet skriver texten till den utförliga meddelandeströmmen.
 >Som standard visas inte den utförliga meddelandeströmmen, men du kan visa den genom att ändra värdet för den **$VerbosePreference** variabel eller med hjälp av den **utförlig** parameter i DSC-cmdlets = ny.
 
 ### <a name="creating-the-module-manifest"></a>Skapa modulmanifestet
@@ -290,7 +290,3 @@ if (PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
-
-
-
-

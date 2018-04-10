@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: ResourceSet-metoden i klassen MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 3486ef559102929f8d05994a4bf6e45d49a0c140
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: ResourceSet-metoden för MSFT_DSCLocalConfigurationManager-klassen
+ms.openlocfilehash: b5f437a123bd38df21f30d11e71d2c3b36bc9f3a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a>ResourceSet-metoden i klassen MSFT_DSCLocalConfigurationManager
+# <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a>ResourceSet-metoden för MSFT_DSCLocalConfigurationManager-klassen
 
 Direkt anropar den **ange** metoden för en DSC-resurs.
 
@@ -28,17 +28,13 @@ uint32 ResourceSet(
 <a name="parameters"></a>Parametrar
 ----------
 
-*ResourceType* \[i\]  
-Namnet på resursen ska anropa.
+*ResourceType* \[i\] namnet på resursen ska anropa.
 
-*Modulnamn* \[i\]  
-Namnet på den modul som innehåller resursen ska anropa.
+*Modulnamn* \[i\] namnet på den modul som innehåller resursen ska anropa.
 
-*resourceProperty* \[i\]  
-Anger egenskapen resursnamnet och dess värde i en hash-tabell som nyckel och värde, respektive. Använd den [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) för att identifiera egenskaper för resursen och deras typer.
+*resourceProperty* \[i\] anger egenskapen resursnamnet och dess värde i en hash-tabell som nyckel och värde, respektive. Använd den [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) för att identifiera egenskaper för resursen och deras typer.
 
-*RebootRequired* \[ut\]  
-På RETUR, ange den här egenskapen är **SANT** om målnoden måste startas om.
+*RebootRequired* \[ut\] på RETUR, ange den här egenskapen är **SANT** om målnoden måste startas om.
 
 ## <a name="return-value"></a>Returvärde
 ------------
@@ -60,10 +56,3 @@ Det här är en statisk metod.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
- 
-
- 
-
-
-

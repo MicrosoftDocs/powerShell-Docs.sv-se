@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: DSC ServiceSet resurs
-ms.openlocfilehash: 2488dda5212ccb717f7fd5d59ad62ec135ad13d5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: a7516120f0c4bc1c91031adc8aabf6a59b845246
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet resurs
 
@@ -30,21 +30,21 @@ Service [string] #ResourceName
     [ Ensure = [string] { Absent | Present }  ]
     [ Credential = [PSCredential] ]
     [ DependsOn = [string[]] ]
-    
+
 }
 ```
 
 ## <a name="properties"></a>Egenskaper
 
-|  Egenskap  |  Beskrivning   | 
-|---|---| 
+|  Egenskap  |  Beskrivning   |
+|---|---|
 | Namn| Anger tjänstnamn. Observera att ibland Detta skiljer sig från visningsnamnen. Du kan hämta en lista över tjänster och deras aktuella tillstånd med den [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) cmdlet.|
-| StartupType| Anger starttypen för tjänsten. De värden som tillåts för den här egenskapen är: **automatisk**, **inaktiverad**, och **manuell**|  
-| BuiltInAccount| Anger kontot du använder för tjänsterna. De värden som tillåts för den här egenskapen är: **LocalService**, **LocalSystem**, och **NetworkService**.| 
-| Läge| Visar du vill säkerställa för tjänsterna: **stoppad** eller **kör**.| 
+| StartupType| Anger starttypen för tjänsten. De värden som tillåts för den här egenskapen är: **automatisk**, **inaktiverad**, och **manuell**|
+| BuiltInAccount| Anger kontot du använder för tjänsterna. De värden som tillåts för den här egenskapen är: **LocalService**, **LocalSystem**, och **NetworkService**.|
+| Läge| Visar du vill säkerställa för tjänsterna: **stoppad** eller **kör**.|
 | Se till att| Anger om tjänsterna som finns på systemet. Den här egenskapen **saknas** så att tjänsten inte finns. Ange värdet till **finns** (standardvärdet) säkerställer att mål-tjänster finns.|
-| autentiseringsuppgifter| Anger autentiseringsuppgifterna för kontot som tjänsten resursen kommer att köras under. Den här egenskapen och **BuiltinAccount** egenskapen kan inte användas tillsammans.| 
-| dependsOn| Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis *ResourceName* och dess typ är *ResourceType*, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.| 
+| autentiseringsuppgifter| Anger autentiseringsuppgifterna för kontot som tjänsten resursen kommer att köras under. Den här egenskapen och **BuiltinAccount** egenskapen kan inte användas tillsammans.|
+| dependsOn| Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis *ResourceName* och dess typ är *ResourceType*, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
 
 
 
@@ -64,8 +64,7 @@ configuration ServiceSetTest
             Name        = @("TermService", "Audiosrv")
             StartupType = "Manual"
             State       = "Running"
-        } 
+        }
     }
 }
 ```
-

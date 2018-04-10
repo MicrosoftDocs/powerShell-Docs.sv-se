@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
 title: Update-modul
-ms.openlocfilehash: 66535cd5b1f44e108c2bc47fa343c77c86bb21dc
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.openlocfilehash: 89b0111eda4421606843f108dca90519b2c9379e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="update-module"></a>Update-modul
 
@@ -140,4 +140,3 @@ Version    Name                                Repository  Description
 
 
 ```
-

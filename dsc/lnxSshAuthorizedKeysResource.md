@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: "DSC för Linux nxSshAuthorizedKeys resurs"
-ms.openlocfilehash: f48ecec39ffe24cee99ca08ad9d050b36c5e04bf
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: DSC för Linux nxSshAuthorizedKeys resurs
+ms.openlocfilehash: a36d158735839727e98893ce9fce174a0f37f764
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>DSC för Linux nxSshAuthorizedKeys resurs
 
@@ -29,20 +29,20 @@ nxAuthorizedKeys <string> #ResourceName
 
 ## <a name="properties"></a>Egenskaper
 
-|  Egenskap |  Beskrivning | 
+|  Egenskap |  Beskrivning |
 |---|---|
-| KeyComment| En unik kommentar för nyckeln. Det här används för att unikt identifiera nycklar.| 
-| Se till att| Anger om nyckeln är definierad. Ange den här egenskapen till ”saknas” för att se till att nyckeln inte finns i användarens auktoriserade nycklar fil. Ange den till ”finns” för att se till att nyckeln har definierats i användarens auktoriserade nyckelfilen.| 
-| Användarnamn| Användarnamn för att hantera ssh behörighet nycklar för. Om du inte har definierats, är standardanvändaren ”rot”.| 
-| Tangent| Innehållet i nyckeln. Detta krävs om **Kontrollera** är inställd på ”saknas”.| 
-| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om den **ID** resursens configuration skriptblock som du vill köra först är **ResourceName** och dess typ är **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = "[ResourceType]ResourceName"`.| 
+| KeyComment| En unik kommentar för nyckeln. Det här används för att unikt identifiera nycklar.|
+| Se till att| Anger om nyckeln är definierad. Ange den här egenskapen till ”saknas” för att se till att nyckeln inte finns i användarens auktoriserade nycklar fil. Ange den till ”finns” för att se till att nyckeln har definierats i användarens auktoriserade nyckelfilen.|
+| Användarnamn| Användarnamn för att hantera ssh behörighet nycklar för. Om du inte har definierats, är standardanvändaren ”rot”.|
+| Tangent| Innehållet i nyckeln. Detta krävs om **Kontrollera** är inställd på ”saknas”.|
+| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om den **ID** resursens configuration skriptblock som du vill köra först är **ResourceName** och dess typ är **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Exempel
 
 I följande exempel definieras en offentlig ssh auktoriserad nyckel för användaren ”monuser”.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 
@@ -51,7 +51,6 @@ nxSshAuthorizedKeys myKey{
    Ensure = "Present"
    Key = 'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEA0b+0xSd07QXRifm3FXj7Pn/DblA6QI5VAkDm6OivFzj3U6qGD1VJ6AAxWPCyMl/qhtpRtxZJDu/TxD8AyZNgc8aN2CljN1hOMbBRvH2q5QPf/nCnnJRaGsrxIqZjyZdYo9ZEEzjZUuMDM5HI1LA9B99k/K6PK2Bc1NLivpu7nbtVG2tLOQs+GefsnHuetsRMwo/+c3LtwYm9M0XfkGjYVCLO4CoFuSQpvX6AB3TedUy6NZ0iuxC0kRGg1rIQTwSRcw+McLhslF0drs33fw6tYdzlLBnnzimShMuiDWiT37WqCRovRGYrGCaEFGTG2e0CN8Co8nryXkyWc6NSDNpMzw== rsa-key-20150401'
    UserName = "monuser"
-} 
+}
 }
 ```
-

@@ -133,7 +133,7 @@ Genom att installera den [ `WindowsPSModulePath` ] [ windowspsmodulepath] module
 Installera först den `WindowsPSModulePath` modul från PowerShell-galleriet:
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
@@ -160,7 +160,7 @@ Allt du behöver göra är att registrera PowerShell som ett delsystem med en Op
 
 Mer information om hur du konfigurerar och använder SSH-baserad fjärrkommunikation finns [PowerShell-fjärrkommunikation via SSH][ssh-remoting].
 
-## <a name="default-encoding-is-utf-8-without-a-bom"></a>Standardkodning är UTF-8 utan en struktur
+## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>Standardkodning är UTF-8 utan en BOM förutom ny ModuleManifest
 
 I tidigare Windows PowerShell-cmdlets som `Get-Content`, `Set-Content` används olika kodningar, till exempel ASCII- och UTF-16.
 Variationen i används som standard skapas problem när blanda cmdlets utan att ange en kodning.
@@ -179,7 +179,6 @@ Följande cmdlets som påverkas av den här ändringen:
 - Format-Hex
 - Get-Content
 - Import-Csv
-- Ny ModuleManifest
 - Out-File
 - Välj sträng
 - Skicka MailMessage
@@ -190,6 +189,8 @@ Dessa cmdletar har också uppdaterats så att den `-Encoding` parametern accepte
 Standardvärdet för `$OutputEncoding` har också ändrats till UTF-8.
 
 Som bästa praxis bör du uttryckligen ange kodningar i skript med hjälp av den `-Encoding` parametern för att skapa deterministiska beteende mellan olika plattformar.
+
+`New-ModuleManifest` cmdlet saknar **kodning** parameter. Kodning av manifestet (.psd1) modulfilen skapats med `New-ModuleManifest` cmdlet beror på miljön: om det är PowerShell Core körs på Linux sedan kodning UTF-8 (utan BOM), annars kodning är UTF-16 (med BOM). (#3940)
 
 ## <a name="support-backgrounding-of-pipelines-with-ampersand--3360"></a>Stöd för backgrounding för pipelines med et-tecken (`&`) (#3360)
 
@@ -225,7 +226,7 @@ Mer information om PowerShell jobb finns [about_Jobs](https://msdn.microsoft.com
   - `GitCommitId`: Det är Git commit-ID på Git branch eller taggen där PowerShell har skapats.
     På utgivna versioner, sannolikt blir samma som `PSVersion`.
   - `OS`: Det är en sträng för OS-version som returneras av `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
-  - `Platform`: Det har returnerats av `[System.Environment]::OSVersion.Platform` anges till `Win32NT` i Windows, `MacOSX` på macOS, och `Unix` på Linux.
+  - `Platform`: Det har returnerats av `[System.Environment]::OSVersion.Platform` anges till `Win32NT` i Windows, `Unix` på macOS, och `Unix` på Linux.
 - Ta bort den `BuildVersion` egenskap från `$PSVersionTable`.
   Den här egenskapen har starkt knutna till Windows-versionen.
   I stället rekommenderar vi att du använder `GitCommitId` att hämta PowerShell Core exakta versionen. (#3877) (Tack till @iSazonov!)

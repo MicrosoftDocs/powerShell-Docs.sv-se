@@ -1,21 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: c7318552969c44f3b79f82efd71e6a72bfabef6b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, inställning
+ms.openlocfilehash: 85e9206ffef76fb4bd7714d847888e6e5bbcc4ec
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="new-language-features-in-powershell-50"></a>Funktioner för nya språk i PowerShell 5.0 
+# <a name="new-language-features-in-powershell-50"></a>Funktioner för nya språk i PowerShell 5.0
 
 PowerShell 5.0 innehåller följande nya språkelement i Windows PowerShell:
 
 ## <a name="class-keyword"></a>Nyckelordet class
 
-Den **klassen** nyckelordet definierar en ny klass. Detta är sant .NET Framework-typen. Klassmedlemmar är offentlig men bara offentliga inom omfånget för modulen.
+Den **klassen** nyckelordet definierar en ny klass. Detta är sant .NET Framework-typen.
+Klassmedlemmar är offentlig men bara offentliga inom omfånget för modulen.
 Du kan inte referera till typnamn som en sträng (till exempel `New-Object` fungerar inte), och i den här versionen kan du inte använda en literal typ (till exempel `[MyClass]`) utanför filen skript-modul som klassen definierats.
 
 ```powershell
@@ -64,11 +65,11 @@ PowerShell Parsar angiven modul rotmodul söker efter klasser som innehåller de
 
 ## <a name="implementingassembly"></a>ImplementingAssembly
 
-Ett nytt fält **ImplementingAssembly**, har lagts till ModuleInfo. Den är inställd på dynamisk sammansättning för en skriptmodul skapas om skriptet definierar klasser eller läsa in sammansättningen för binära moduler. Den är inte inställd när ModuleType = Manifest. 
+Ett nytt fält **ImplementingAssembly**, har lagts till ModuleInfo. Den är inställd på dynamisk sammansättning för en skriptmodul skapas om skriptet definierar klasser eller läsa in sammansättningen för binära moduler. Den är inte inställd när ModuleType = Manifest.
 
 Reflektion på den **ImplementingAssembly** fältet identifierar resurser i en modul. Det innebär att du kan identifiera resurser som skrivits i PowerShell eller andra hanterade språk.
 
-Fält med initierare:      
+Fält med initierare:
 
 ```powershell
 [int] $i = 5
@@ -86,11 +87,11 @@ En typ är valfritt.
 $s = "hello"
 ```
 
-Alla medlemmar är offentlig. 
+Alla medlemmar är offentlig.
 
 ## <a name="constructors-and-instantiation"></a>Konstruktorer och instansiering
 
-Windows PowerShell-klasser kan ha konstruktorer; de har samma namn som sin klass. Konstruktorer kan vara överbelastad. Statiska konstruktörer stöds. Egenskaper med initiering uttryck initieras innan du kör någon kod i en konstruktor. Statiska egenskaper initieras innan innehållet i en statisk konstruktor och instans egenskaper initieras innan innehållet i icke-statisk konstruktor. För närvarande finns ingen syntax för att anropa en konstruktor från en annan konstruktor (t.ex. C\# syntaxen ”: this()"). Lösningen är att definiera en vanlig Init-metod. 
+Windows PowerShell-klasser kan ha konstruktorer; de har samma namn som sin klass. Konstruktorer kan vara överbelastad. Statiska konstruktörer stöds. Egenskaper med initiering uttryck initieras innan du kör någon kod i en konstruktor. Statiska egenskaper initieras innan innehållet i en statisk konstruktor och instans egenskaper initieras innan innehållet i icke-statisk konstruktor. För närvarande finns ingen syntax för att anropa en konstruktor från en annan konstruktor (t.ex. C\# syntaxen ”: this()"). Lösningen är att definiera en vanlig Init-metod.
 
 Följande är sätt initierar klasser i den här versionen.
 
@@ -113,7 +114,7 @@ $c = [MyClass]::new(@(42,43,44), "Hello")
 
 I den här versionen fungerar inte New-Object med klasser som definierats i Windows PowerShell. Även för den här versionen visas typnamnet bara lexically, vilket innebär att den inte är synlig utanför modul eller skript som definierar klassen. Funktioner som kan returnera instanser av en klass som definieras i Windows PowerShell och instanser fungerar bra utanför modul eller skript.
 
-`Get-Member -Static`Visar en lista över konstruktorer, så att du kan visa överlagringar som någon annan metod. Prestanda för den här syntaxen är också betydligt snabbare än New-Object.
+`Get-Member -Static` Visar en lista över konstruktorer, så att du kan visa överlagringar som någon annan metod. Prestanda för den här syntaxen är också betydligt snabbare än New-Object.
 
 Startvärden statisk metod med namnet **nya** fungerar med .NET-typer som visas i följande exempel.
 
@@ -151,12 +152,12 @@ Metodanropet:
 
 ```powershell
 $b = [MyClass]::new()
-$b.DoSomething(42) 
+$b.DoSomething(42)
 ```
 
 Överlagrade metoder – det vill säga de som har samma namn som en befintlig metod men hjälp av de angivna värdena--stöds också.
 
-## <a name="properties"></a>Egenskaper 
+## <a name="properties"></a>Egenskaper
 
 Alla egenskaper är offentlig. Egenskaper för kräver en ny rad eller semikolon. Om ingen objekttyp har angetts är egenskapstypen-objekt.
 
@@ -210,7 +211,8 @@ $v -eq $d # true
 
 ## <a name="end-to-end-example"></a>Slutpunkt till slutpunkt-exempel
 
-I följande exempel skapar flera nya, anpassade klasser för att implementera en HTML-dynamiska språk (DSL). I exempel läggs sedan hjälpfunktioner för att skapa specifika elementtyper som en del av elementklassen, till exempel rubrik och tabeller, eftersom typer inte kan användas utanför omfånget för en modul.
+I följande exempel skapar flera nya, anpassade klasser för att implementera en HTML-dynamiska språk (DSL).
+I exempel läggs sedan hjälpfunktioner för att skapa specifika elementtyper som en del av elementklassen, till exempel rubrik och tabeller, eftersom typer inte kan användas utanför omfånget för en modul.
 
 ```powershell
 # Classes that define the structure of the document
@@ -220,7 +222,7 @@ class Html
     [string] $docType
     [HtmlHead] $Head
     [Element[]] $Body
-    
+
     [string] Render()
     {
         $text = "<html>`n<head>`n"
@@ -334,4 +336,3 @@ function Style
 #
 function Html ([HTML] $doc) { return $doc }
 ```
-

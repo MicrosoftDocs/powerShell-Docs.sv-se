@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: galleriet, powershell, cmdlet, psgallery
 title: Objektet konventioner
-ms.openlocfilehash: a97d2fa38eaeefbd6018f68d999dae2b93857cab
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c78777147e6e8a4aae4c878fc1009291535ac8bb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---

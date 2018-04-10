@@ -1,17 +1,17 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: ApplyConfiguration-metoden i klassen MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 72fbedf30e5058d8003ed620400d6b443d50dff6
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: ApplyConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klass
+ms.openlocfilehash: 2844e354e0d054b13b92267ce314536d88a1c33e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>ApplyConfiguration-metoden i klassen MSFT_DSCLocalConfigurationManager
+# <a name="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>ApplyConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klass
 
-Använder Configuration Agent för att använda den konfiguration som är i vänteläge. 
+Använder Configuration Agent för att använda den konfiguration som är i vänteläge.
 
 Om det finns ingen konfiguration väntande, återställer den här metoden den aktuella konfigurationen.
 
@@ -28,8 +28,7 @@ uint32 ApplyConfiguration(
 ## <a name="parameters"></a>Parametrar
 ----------
 
-*Tvinga* \[i\]  
-Om det här är **SANT**, den aktuella konfigurationen används igen, även om det finns en konfiguration väntande.
+*Tvinga* \[i\] om det här är **SANT**, den aktuella konfigurationen används igen, även om det finns en konfiguration väntande.
 
 ## <a name="return-value"></a>Returvärde
 ------------
@@ -51,10 +50,3 @@ Det här är en statisk metod.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
- 
-
- 
-
-
-

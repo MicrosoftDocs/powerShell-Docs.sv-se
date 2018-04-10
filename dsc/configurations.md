@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-konfigurationer
-ms.openlocfilehash: 14db60126fd6c3d11d425a28c749a8e8b81122ca
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 8b44fd9a715c217ee198ea343cdffbfab1193625
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-configurations"></a>DSC-konfigurationer
 
 >Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-DSC-konfigurationer är PowerShell-skript som definierar en särskild typ av funktionen. Om du vill definiera en konfiguration, använder du nyckelordet PowerShell **Configuration**.
+DSC-konfigurationer är PowerShell-skript som definierar en särskild typ av funktionen.
+Om du vill definiera en konfiguration, använder du nyckelordet PowerShell **Configuration**.
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -70,21 +71,22 @@ I det här exemplet, ange namnet på noden genom att skicka den som den **Comput
 
 ## <a name="compiling-the-configuration"></a>Kompilera konfiguration
 
-Innan du kan tillämpar en konfiguration som du behöver kompileras till en MOF-dokument. Det gör du genom att anropa konfigurationen som en PowerShell-funktionen.  
+Innan du kan tillämpar en konfiguration som du behöver kompileras till en MOF-dokument.
+Det gör du genom att anropa konfigurationen som en PowerShell-funktionen.
 Den sista raden i exemplet som innehåller namnet på konfigurationen, anropar konfigurationen.
 
->**Obs:** för att anropa en konfiguration, funktionen måste vara i globalt scope (precis som med andra PowerShell funktioner). 
->Du kan göra detta hända antingen av ”dot-källa” skriptet, eller genom att köra skriptet konfiguration genom att använda F5 eller klicka på den **kör skriptet** knappen i ISE. 
+>**Obs:** för att anropa en konfiguration, funktionen måste vara i globalt scope (precis som med andra PowerShell funktioner).
+>Du kan göra detta hända antingen av ”dot-källa” skriptet, eller genom att köra skriptet konfiguration genom att använda F5 eller klicka på den **kör skriptet** knappen i ISE.
 >Till dot-källa skriptet, kör du kommandot `. .\myConfig.ps1` där `myConfig.ps1` är namnet på den skriptfil som innehåller din konfiguration.
 
 När du anropar konfigurationen, är det:
 
-- Matchar alla variabler 
+- Matchar alla variabler
 - Skapar en mapp i den aktuella katalogen med samma namn som konfigurationen.
-- Skapar en fil med namnet _NodeName_MOF i den nya katalogen där _nodnamn_ är namnet på målnoden av konfigurationen. 
+- Skapar en fil med namnet _NodeName_MOF i den nya katalogen där _nodnamn_ är namnet på målnoden av konfigurationen.
     Om det finns flera noder, skapas en MOF-fil för varje nod.
 
->**Obs**: I MOF-filen innehåller all konfigurationsinformation för målnoden. Därför är det viktigt att skydda den. 
+>**Obs**: I MOF-filen innehåller all konfigurationsinformation för målnoden. Därför är det viktigt att skydda den.
 >Mer information finns i [skydda MOF-filen](secureMOF.md).
 
 Kompilera den första konfigurationen ovan resulterar i följande mappstrukturen:
@@ -96,10 +98,10 @@ MyDscConfiguration
 
 ```
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
-Mode                LastWriteTime         Length Name                                                                                              
-----                -------------         ------ ----                                                                                         
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
 -a----       10/23/2015   4:32 PM           2842 localhost.mof
-```  
+```
 
 Om konfigurationen tar en parameter i det andra exemplet som anges vid kompileringen. Här är hur som ser ut:
 
@@ -110,14 +112,16 @@ MyDscConfiguration -ComputerName 'MyTestNode'
 
 ```
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
-Mode                LastWriteTime         Length Name                                                                                              
-----                -------------         ------ ----                                                                                         
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
 -a----       10/23/2015   4:32 PM           2842 MyTestNode.mof
-```      
+```
 
 ## <a name="using-dependson"></a>Använder DependsOn
 
-Ett användbart DSC-nyckelord är **DependsOn**. Vanligtvis (men inte nödvändigtvis), DSC gäller resurser i den ordning som de visas i konfigurationen. Dock **DependsOn** anger vilken resurser är beroende av andra resurser och MGM säkerställer att tillämpas de i rätt ordning, oavsett ordningen i vilken resurs som instanser har definierats. En konfiguration kan till exempel ange att en instans av den **användare** resurs beror på förekomsten av en **grupp** instans:
+Ett användbart DSC-nyckelord är **DependsOn**. Vanligtvis (men inte nödvändigtvis), DSC gäller resurser i den ordning som de visas i konfigurationen.
+Dock **DependsOn** anger vilken resurser är beroende av andra resurser och MGM säkerställer att tillämpas de i rätt ordning, oavsett ordningen i vilken resurs som instanser har definierats.
+En konfiguration kan till exempel ange att en instans av den **användare** resurs beror på förekomsten av en **grupp** instans:
 
 ```powershell
 Configuration DependsOnExample {
@@ -141,14 +145,16 @@ Configuration DependsOnExample {
 ## <a name="using-new-resources-in-your-configuration"></a>Med nya resurser i din konfiguration
 
 Om du körde i föregående exempel kanske såg du att du har en varning att du använder en resurs utan att uttryckligen importera den.
-Idag DSC levereras med 12 resurser som en del av modulen PSDesiredStateConfiguration. Andra resurser i externa moduler måste placeras i `$env:PSModulePath` för att kunna identifieras av MGM. En ny cmdlet [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), kan användas för att avgöra vilka resurser som är installerade i systemet och kan användas av MGM. När dessa moduler har placerats i `$env:PSModulePath` och kan identifieras av [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), de behöver inte läsas in i din konfiguration. 
-**Importera DscResource** är en dynamisk nyckelord som kan endast identifieras inom en **Configuration** block (dvs. det inte är en cmdlet). 
+Idag DSC levereras med 12 resurser som en del av modulen PSDesiredStateConfiguration.
+Andra resurser i externa moduler måste placeras i `$env:PSModulePath` för att kunna identifieras av MGM.
+En ny cmdlet [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), kan användas för att avgöra vilka resurser som är installerade i systemet och kan användas av MGM.
+När dessa moduler har placerats i `$env:PSModulePath` och kan identifieras av [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), de behöver inte läsas in i din konfiguration.
+**Importera DscResource** är en dynamisk nyckelord som kan endast identifieras inom en **Configuration** block (dvs. det inte är en cmdlet).
 **Importera DscResource** stöder två parametrar:
-- **Modulnamn** är det rekommenderade sättet att använda **importera DscResource**. Namnet på den modul som innehåller resurser som ska importeras (samt en strängmatris Modulnamnen) accepteras. 
-- **Namnet** är namnet på resursen som ska importeras. Detta är inte ett eget namn som ”namn” som returneras av [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), men Klassnamnet används när definierar resursschemat (returneras som **ResourceType** av [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)). 
+- **Modulnamn** är det rekommenderade sättet att använda **importera DscResource**. Namnet på den modul som innehåller resurser som ska importeras (samt en strängmatris Modulnamnen) accepteras.
+- **Namnet** är namnet på resursen som ska importeras. Detta är inte ett eget namn som ”namn” som returneras av [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), men Klassnamnet används när definierar resursschemat (returneras som **ResourceType** av [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)).
 
 ## <a name="see-also"></a>Se även
 * [Windows PowerShell Desired State Configuration-översikt](overview.md)
 * [DSC-resurser](resources.md)
 * [Konfigurera den lokala Configuration Manager](metaConfig.md)
-

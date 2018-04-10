@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
+keywords: WMF, powershell, inställning
 title: Windows Management Framework (WMF)
-ms.openlocfilehash: 9a9281c5eeb771c472623bff6fa6bd6d6aa7814a
-ms.sourcegitcommit: fee03bb9802222078c8d5f6c8efb0698024406ed
+ms.openlocfilehash: 715ac6fe5df47066415a65d91a0982fd7070a426
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
 
@@ -24,8 +24,8 @@ WMF installationen lägger till eller uppdaterar följande funktioner:
 - Windows Remote Management (WinRM)
 - Windows Management Instrumentation (WMI)
 - Windows PowerShell-webbtjänster (Management OData IIS Extension)
-- Software Inventory Logging (SIL)
-- Serverhanteraren CIM-Provider
+- Loggning av programvaruinventering (SIL)
+- Server Manager CIM Provider
 
 ## <a name="wmf-release-notes"></a>WMF viktig information
 
@@ -41,7 +41,7 @@ Mer information om olika förbättringar i PowerShell och andra komponenter i en
 | Operativsystemets Version | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
 | Windows Server 2016 | Fartyg i rutan |  |  |  |  |
-| Windows 10 | Fartyg i rutan | Fartyg i rutan  | | | |  
+| Windows 10 | Fartyg i rutan | Fartyg i rutan  | | | |
 | Windows Server 2012 R2| Ja | Ja | Fartyg i rutan |  |  |
 | Windows 8.1 | Ja | Ja |  Fartyg i rutan |  |  |
 | Windows Server 2012 | Ja | Ja | Ja |  Fartyg i rutan | |
@@ -55,4 +55,3 @@ Mer information om olika förbättringar i PowerShell och andra komponenter i en
 
 **”Levereras i box”**: funktionerna i den `specified WMF` levererades i den angivna versionen av Windows och Windows Server.
 Därför kan den `specified WMF` behöver inte installeras på de angivna operativsystemversionerna.
-

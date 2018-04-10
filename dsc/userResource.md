@@ -1,17 +1,17 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: "DSC-användarresurs"
-ms.openlocfilehash: c1b8487d9adc899950d185036ada3a2fa3747417
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: DSC-användarresurs
+ms.openlocfilehash: 1c3efa8e3bf945c45834cbea7ddb0a6c3ffc5f45
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 #<a name="dsc-user-resource"></a>DSC-användaren resurs #
 
- 
+
 >Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 
@@ -37,18 +37,18 @@ User [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Egenskaper
-|  Egenskap  |  Beskrivning   | 
-|---|---| 
-| UserName| Anger namnet på kontot som du vill se till att ett visst tillstånd.| 
-| Beskrivning| Anger den beskrivning som du vill använda för användarkontot.| 
-| Inaktiverad| Anger om kontot är aktiverad. Den här egenskapen __$true__ så att det här kontot är inaktiverad och inställd på __$false__ så att den är aktiverad.| 
-| Se till att| Anger om kontot finns. Ange egenskapen ”aktuella” för att säkerställa att finns ett konto och ange den till ”saknas” så att kontot inte finns.| 
-| Fullständigt namn| Representerar en sträng med det fullständiga namnet som du vill använda för användarkontot.| 
-| Lösenord| Anger lösenordet som du vill använda för det här kontot. | 
-| PasswordChangeNotAllowed| Anger om användaren kan ändra lösenordet. Den här egenskapen __$true__ så att användaren inte kan ändra lösenordet och Ställ in den på __$false__ att tillåta användaren att ändra lösenordet. Standardvärdet är __$false__.| 
-| PasswordChangeRequired| Anger om användaren måste byta lösenord vid nästa inloggning. Den här egenskapen __$true__ om användaren måste ändra lösenordet. Standardvärdet är __$true__.| 
-| PasswordNeverExpires| Anger om lösenordet upphör att gälla. Att se till att lösenordet för det här kontot upphör aldrig att gälla, ange egenskapen till __$true__, och ange det till __$false__ om lösenordet upphör att gälla. Standardvärdet är __$false__.| 
-| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis __ResourceName__ och dess typ är __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.| 
+|  Egenskap  |  Beskrivning   |
+|---|---|
+| UserName| Anger namnet på kontot som du vill se till att ett visst tillstånd.|
+| Beskrivning| Anger den beskrivning som du vill använda för användarkontot.|
+| Inaktiverad| Anger om kontot är aktiverad. Den här egenskapen __$true__ så att det här kontot är inaktiverad och inställd på __$false__ så att den är aktiverad.|
+| Se till att| Anger om kontot finns. Ange egenskapen ”aktuella” för att säkerställa att finns ett konto och ange den till ”saknas” så att kontot inte finns.|
+| Fullständigt namn| Representerar en sträng med det fullständiga namnet som du vill använda för användarkontot.|
+| Lösenord| Anger lösenordet som du vill använda för det här kontot. |
+| PasswordChangeNotAllowed| Anger om användaren kan ändra lösenordet. Den här egenskapen __$true__ så att användaren inte kan ändra lösenordet och Ställ in den på __$false__ att tillåta användaren att ändra lösenordet. Standardvärdet är __$false__.|
+| PasswordChangeRequired| Anger om användaren måste byta lösenord vid nästa inloggning. Den här egenskapen __$true__ om användaren måste ändra lösenordet. Standardvärdet är __$true__.|
+| PasswordNeverExpires| Anger om lösenordet upphör att gälla. Att se till att lösenordet för det här kontot upphör aldrig att gälla, ange egenskapen till __$true__, och ange det till __$false__ om lösenordet upphör att gälla. Standardvärdet är __$false__.|
+| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis __ResourceName__ och dess typ är __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Exempel
 
@@ -61,4 +61,3 @@ User UserExample
     DependsOn = "[Group]GroupExample" # Configures GroupExample first
 }
 ```
-

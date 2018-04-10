@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: "Att göra ett andra hopp i PowerShell-fjärrkommunikation"
-ms.openlocfilehash: 726b4d1b7a41e9e344347543ecde26da6547bcf3
-ms.sourcegitcommit: fff6c0522508eeb408cb055ba4c9337a2759b392
+title: Att göra ett andra hopp i PowerShell-fjärrkommunikation
+ms.openlocfilehash: 893b4353c4244dc96c4b234bb4062b583a5cd36d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Att göra ett andra hopp i PowerShell-fjärrkommunikation
 
@@ -55,7 +55,7 @@ Du kan också användas obegränsad Kerberos-delegering för att göra ett andra
 
 ## <a name="kerberos-constrained-delegation"></a>Kerberos-begränsad delegering
 
-Du kan använda äldre begränsad delegering (inte resurs-baserat) för att göra ett andra hopp. 
+Du kan använda äldre begränsad delegering (inte resurs-baserat) för att göra ett andra hopp.
 
 >**Obs:** Active Directory-konton som har den **kontot är känsligt och kan inte delegeras** egenskapsuppsättningen kan inte delegeras. Mer information finns i [säkerhet fokus: analys-kontot är känsligt och kan inte delegeras' för privilegierade konton](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) och [Kerberos-autentisering verktyg och inställningar](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
@@ -89,7 +89,7 @@ I det andra hopp scenariot som beskrivs ovan, konfigurerar du _ServerC_ ange fr�
 
 - Kräver Windows Server 2012 eller senare.
 - Stöder inte ett andra hopp för WinRM.
-- Kräver behörighet att uppdatera objekt och tjänstens huvudnamn (SPN). 
+- Kräver behörighet att uppdatera objekt och tjänstens huvudnamn (SPN).
 
 ### <a name="example"></a>Exempel
 
@@ -108,8 +108,8 @@ Nu har flera tillgängliga cmdlet: en **PrincipalsAllowedToDelegateToAccount** p
 ```powershell
 PS C:\> Get-Command -ParameterName PrincipalsAllowedToDelegateToAccount
 
-CommandType Name                 ModuleName     
------------ ----                 ----------     
+CommandType Name                 ModuleName
+----------- ----                 ----------
 Cmdlet      New-ADComputer       ActiveDirectory
 Cmdlet      New-ADServiceAccount ActiveDirectory
 Cmdlet      New-ADUser           ActiveDirectory
@@ -123,10 +123,10 @@ Den **PrincipalsAllowedToDelegateToAccount** parameteruppsättningar Active Dire
 Nu ska vi ställa in de variabler som vi använder för att representera servrar:
 
 ```powershell
-# Set up variables for reuse            
-$ServerA = $env:COMPUTERNAME            
-$ServerB = Get-ADComputer -Identity ServerB            
-$ServerC = Get-ADComputer -Identity ServerC            
+# Set up variables for reuse
+$ServerA = $env:COMPUTERNAME
+$ServerB = Get-ADComputer -Identity ServerB
+$ServerC = Get-ADComputer -Identity ServerC
 ```
 
 WinRM (och därför PowerShell-fjärrkommunikation) körs som datorkontot som standard. Du kan se detta genom att titta på den **Referensdimensionerna** -egenskapen för den `winrm` tjänsten:
@@ -140,22 +140,22 @@ StartName : NT AUTHORITY\NetworkService
 För _ServerC_ att tillåta delegering från en PowerShell-fjärrkommunikation-session på _ServerB_, vi kommer ge åtkomst genom att ange den **PrincipalsAllowedToDelegateToAccount** parametern på _ServerC_ till datorobjekt _ServerB_:
 
 ```powershell
-# Grant resource-based Kerberos constrained delegation            
-Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB            
-            
-# Check the value of the attribute directly            
-$x = Get-ADComputer -Identity $ServerC -Properties msDS-AllowedToActOnBehalfOfOtherIdentity            
-$x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access            
-            
-# Check the value of the attribute indirectly            
+# Grant resource-based Kerberos constrained delegation
+Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
+
+# Check the value of the attribute directly
+$x = Get-ADComputer -Identity $ServerC -Properties msDS-AllowedToActOnBehalfOfOtherIdentity
+$x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
+
+# Check the value of the attribute indirectly
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
 Kerberos [Key Distribution Center (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) cacheminnen nekad åtkomstförsök (negativ cache) i 15 minuter. Om _ServerB_ tidigare har försökt få åtkomst till _ServerC_, måste du rensa cachen på _ServerB_ genom att anropa följande kommando:
 
 ```powershell
-Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {            
-    klist purge -li 0x3e7            
+Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
+    klist purge -li 0x3e7
 }
 ```
 
@@ -164,14 +164,14 @@ Du kan också starta om datorn eller vänta minst 15 minuter för att rensa cach
 Efter att rensa cacheminnet, du kan köra koden från _cypress_ via _ServerB_ till _ServerC_:
 
 ```powershell
-# Capture a credential            
-$cred = Get-Credential Contoso\Alice            
-            
-# Test kerberos double hop            
-Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {            
-    Test-Path \\$($using:ServerC.Name)\C$            
-    Get-Process lsass -ComputerName $($using:ServerC.Name)            
-    Get-EventLog -LogName System -Newest 3 -ComputerName $($using:ServerC.Name)            
+# Capture a credential
+$cred = Get-Credential Contoso\Alice
+
+# Test kerberos double hop
+Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
+    Test-Path \\$($using:ServerC.Name)\C$
+    Get-Process lsass -ComputerName $($using:ServerC.Name)
+    Get-EventLog -LogName System -Newest 3 -ComputerName $($using:ServerC.Name)
 }
 ```
 
@@ -180,13 +180,13 @@ I det här exemplet i `$using` variabeln används för att göra den `$ServerC` 
 Gör att flera servrar att delegera autentiseringsuppgifter för att _ServerC_, ange värdet för den **PrincipalsAllowedToDelegateToAccount** parameter på _ServerC_ till en matris som:
 
 ```powershell
-# Set up variables for each server            
-$ServerB1 = Get-ADComputer -Identity ServerB1            
-$ServerB2 = Get-ADComputer -Identity ServerB2            
-$ServerB3 = Get-ADComputer -Identity ServerB3            
-$ServerC  = Get-ADComputer -Identity ServerC            
-            
-# Grant resource-based Kerberos constrained delegation            
+# Set up variables for each server
+$ServerB1 = Get-ADComputer -Identity ServerB1
+$ServerB2 = Get-ADComputer -Identity ServerB2
+$ServerB3 = Get-ADComputer -Identity ServerB3
+$ServerC  = Get-ADComputer -Identity ServerC
+
+# Grant resource-based Kerberos constrained delegation
 Set-ADComputer -Identity $ServerC `
     -PrincipalsAllowedToDelegateToAccount @($ServerB1,$ServerB2,$ServerB3)
 ```
@@ -194,9 +194,9 @@ Set-ADComputer -Identity $ServerC `
 Om du vill göra ett andra hopp över domäner lägger du till fullständigt kvalificerat domännamn (FQDN) på domänkontrollanten i domänen som _ServerB_ tillhör:
 
 ```powershell
-# For ServerC in Contoso domain and ServerB in other domain            
-$ServerB = Get-ADComputer -Identity ServerB -Server dc1.alpineskihouse.com            
-$ServerC = Get-ADComputer -Identity ServerC            
+# For ServerC in Contoso domain and ServerB in other domain
+$ServerB = Get-ADComputer -Identity ServerB -Server dc1.alpineskihouse.com
+$ServerC = Get-ADComputer -Identity ServerC
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
 ```
 
@@ -232,7 +232,7 @@ Information om hur du använder PSSessionConfiguration och RunAs lösa andra hop
 - Kräver konfiguration av **PSSessionConfiguration** och **RunAs** på varje server som mellanliggande (_ServerB_).
 - Kräver lösenord Underhåll när du använder en domän **RunAs** konto
 
-## <a name="just-enough-administration-jea"></a>Just Enough Administration JEA)
+## <a name="just-enough-administration-jea"></a>JEA (Just Enough Administration)
 
 JEA kan du begränsa vilka kommandon som en administratör kan köras under en PowerShell-session. Den kan användas för att lösa problemet för andra hopp.
 
@@ -266,24 +266,15 @@ Du kan skicka autentiseringsuppgifter i den **ScriptBlock** parametern för ett 
 I följande exempel visas hur du skickar autentiseringsuppgifter i en **Invoke-Command** skriptblock:
 
 ```powershell
-# This works without delegation, passing fresh creds            
-# Note $Using:Cred in nested request            
-$cred = Get-Credential Contoso\Administrator            
-Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {            
-    hostname            
-    Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}            
+# This works without delegation, passing fresh creds
+# Note $Using:Cred in nested request
+$cred = Get-Credential Contoso\Administrator
+Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
+    hostname
+    Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}
 }
 ```
 
 ## <a name="see-also"></a>Se även
 
 [Säkerhetsöverväganden för PowerShell-fjärrkommunikation](WinRMSecurity.md)
-
-
-
-
-
-
-
-
- 

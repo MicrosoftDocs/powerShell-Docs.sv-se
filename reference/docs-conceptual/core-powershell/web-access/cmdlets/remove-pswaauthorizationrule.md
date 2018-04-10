@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell-cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: ta bort pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: 4d039e7e00f87bc7aebb89217251edbbb5c3f5be
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 28dbfe84827d6ccb99dce1ebb520cae66dc8c50e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="remove-pswaauthorizationrule"></a>Remove-PswaAuthorizationRule
 
@@ -40,7 +40,7 @@ Tar bort en angiven auktoriseringsregel från Windows PowerShell Web Access.
 
 Kör cmdleten utan att fråga efter bekräftelse. Som standard begär cmdlet bekräftelse innan du fortsätter.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
@@ -53,7 +53,7 @@ Kör cmdleten utan att fråga efter bekräftelse. Som standard begär cmdlet bek
 
 Anger identifierare (ID) av en eller flera regler för att ta bort.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | true                                 |
@@ -66,7 +66,7 @@ Anger identifierare (ID) av en eller flera regler för att ta bort.
 
 Anger regler för att ta bort.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | true                                 |
@@ -79,7 +79,7 @@ Anger regler för att ta bort.
 
 Uppmanar dig att bekräfta innan du kör cmdleten.
 
-|||  
+|||
 |-|-|
 | Obligatorisk?                            | falskt                                |
 | Placering?                            | Med namnet                                |
@@ -91,7 +91,7 @@ Uppmanar dig att bekräfta innan du kör cmdleten.
 
 Visar vad som skulle hända om cmdleten kördes. Cmdleten körs inte.
 
-|||  
+|||
 |-|-|
 | Obligatorisk?                            | falskt                                |
 | Placering?                            | Med namnet                                |

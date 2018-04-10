@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: 968e78beb8df77588a08a9ce8732e4abcadde4d0
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+keywords: WMF, powershell, inställning
+ms.openlocfilehash: 2c007321789ae22b4a2e048d2d64162b065f9a75
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="declare-implemented-interface"></a>Deklarera implementerat gränssnitt
 
@@ -30,4 +30,3 @@ class MyComparableBar : bar, system.IComparable
     }
 }
 ```
-

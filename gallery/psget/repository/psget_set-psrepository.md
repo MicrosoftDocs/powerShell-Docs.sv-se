@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
-title: Ange PSRepository
-ms.openlocfilehash: 2e850947b67d43254ee9d1b3c1c571167435234c
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Set-PSRepository
+ms.openlocfilehash: 0b555f31241bad15c5e99f3db0136d88ff7ab717
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="set-psrepository"></a>Ange PSRepository
+# <a name="set-psrepository"></a>Set-PSRepository
 
 Ange PSRepository anger värden för en registrerad lagringsplats.
 
@@ -25,7 +25,7 @@ Get-Command -Name Set-PSRepository -Module PowerShellGet -Syntax
 ```
 ## <a name="cmdlet-online-help-reference"></a>Cmdlet-referens för onlinehjälp
 
-[Ange PSRepository](http://go.microsoft.com/fwlink/?LinkID=517128)
+[Set-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517128)
 
 ## <a name="example-commands"></a>Exempel på kommandon
 
@@ -69,4 +69,3 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 
 ```
-

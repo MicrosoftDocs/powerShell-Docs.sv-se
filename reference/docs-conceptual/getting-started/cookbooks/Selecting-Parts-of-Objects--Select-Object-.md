@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: "Välj objekt för att välja delar av objekt"
+title: Välj objekt för att välja delar av objekt
 ms.assetid: 72e64b1a-d351-4500-9da3-24d8a71d7a92
-ms.openlocfilehash: 8c9633e80f63e1d474c46fa772108aee4f79751d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 323c57ba4462e20d9713fb74732989584f5a993f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="selecting-parts-of-objects-select-object"></a>Markera delar av objekt (Select-Object)
+
 Du kan använda den **Select-Object** för att skapa nya, anpassade Windows PowerShell-objekt som innehåller egenskaper för valt de objekt som du använder för att skapa dem. Skriv följande kommando för att skapa ett nytt objekt som innehåller endast namn och FreeSpace Win32_LogicalDisk WMI-klassen:
 
 ```
@@ -45,4 +46,3 @@ Name                                                                  FreeSpace
 ----                                                                  ---------
 C:                                                                48317.7265625
 ```
-

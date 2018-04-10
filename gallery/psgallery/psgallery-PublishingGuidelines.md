@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: galleriet, powershell, cmdlet, psgallery
-description: "Riktlinjer för utgivare"
-title: "PowerShell-galleriet publicering riktlinjer och bästa praxis"
-ms.openlocfilehash: 25bbe31bcc805808c311829598e3c29991f72aad
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+description: Riktlinjer för utgivare
+title: PowerShell-galleriet publicering riktlinjer och bästa praxis
+ms.openlocfilehash: ba9c02b07af85c02abad06f4c9141c4c425f80f3
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery publicering riktlinjer och bästa praxis
 

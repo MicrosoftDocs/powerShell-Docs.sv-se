@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Desired State Configuration-Snabbstart
-ms.openlocfilehash: e21017f24db8c90229063895c1a7e4c6f0546d0c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 25bcd46bbf62a6ebb727519a65732377363e68c0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 > Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -37,7 +37,7 @@ Skriv följande text i en textredigerare:
 </body>
 ```
 
-Spara den som `index.htm` i den `test` mappen som du skapade tidigare. 
+Spara den som `index.htm` i den `test` mappen som du skapade tidigare.
 
 ## <a name="write-the-configuration"></a>Skriva konfigurationen
 
@@ -122,7 +122,7 @@ Start-DscConfiguration .\WebsiteTest
 
 ## <a name="test-the-configuration"></a>Testa konfigurationen
 
-Du kan anropa den [Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) för att se om konfigurationen har slutförts. 
+Du kan anropa den [Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) för att se om konfigurationen har slutförts.
 
 Du kan också testa resultaten direkt, i det här fallet genom att bläddra till `http://localhost/` i en webbläsare.
 Du bör se ”Hello World” HTML-sidan som du skapade som ett första steg i det här exemplet.
@@ -132,6 +132,3 @@ Du bör se ”Hello World” HTML-sidan som du skapade som ett första steg i de
 - Lär dig mer om DSC-konfigurationer på [DSC-konfigurationer](configurations.md).
 - Se vilka DSC-resurser är tillgängliga och hur du skapar anpassade DSC-resurser på [DSC resurser](resources.md).
 - Hitta DSC-konfigurationer och resurser i den [PowerShell-galleriet](https://www.powershellgallery.com/).
-
-
-

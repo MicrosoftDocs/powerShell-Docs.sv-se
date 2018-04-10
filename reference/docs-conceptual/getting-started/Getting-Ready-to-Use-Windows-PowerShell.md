@@ -1,18 +1,18 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: "Komma igång med att använda Windows PowerShell"
+title: Förbered dig för Windows PowerShell
 ms.assetid: 6dc7052d-cc5a-4220-950f-98f963a2b587
-ms.openlocfilehash: de09c74e938f11a130864b1620d6c169006a27be
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: 5e095984286ff89958dc0a4e3d27e40eae5b2c5e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="getting-ready-to-use-windows-powershell"></a>Komma igång med att använda Windows PowerShell
+# <a name="getting-ready-to-use-windows-powershell"></a>Förbered dig för Windows PowerShell
 När Windows PowerShell är installerat och igång, Överväg följande alternativ. Du kan utföra dessa uppgifter när som helst.
 
-- **Installera hjälpfiler.** De cmdlets som ingår i Windows PowerShell 3.0 kommer inte med hjälpfiler. Du kan använda den [Update-Help](/powershell/module/microsoft.powershell.core/update-help) för att hämta och installera de senaste hjälpfilerna på datorn. När filerna har installerats kan du använda den [Get-Help](/powershell/module/microsoft.powershell.core/get-help) för att visa dem åt höger på kommandoraden. Mer information finns i [about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+- **Installera hjälpfiler.** De cmdlets som ingår i Windows PowerShell 3.0 kommer inte med hjälpfiler. Du kan använda den [Update-Help](/powershell/module/microsoft.powershell.core/update-help) för att hämta och installera de senaste hjälpfilerna på datorn. När filerna har installerats kan du använda den [Get-Help](/powershell/module/microsoft.powershell.core/get-help) för att visa dem åt höger på kommandoraden. Mer information finns i [about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_updatable_help).
 
     Du kan läsa hjälpavsnitt online även om du inte väljer att installera hjälpfiler. För att hitta onlineversionen av cmdlet-hjälpavsnittet, skriv: `Get-Help <CmdletName> -Online`. Att bläddra i Windows PowerShell hjälpavsnitt finns i [PowerShell dokumentationen](/powershell/scripting).
 
@@ -25,4 +25,3 @@ När Windows PowerShell är installerat och igång, Överväg följande alternat
 ## <a name="see-also"></a>Se även
 - [Installera Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 - [Starta Windows PowerShell](/powershell/scripting/setup/starting-windows-powershell)
-

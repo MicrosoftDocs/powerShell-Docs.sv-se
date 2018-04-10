@@ -1,13 +1,13 @@
 ---
-ms.date: 2018-02-02
+ms.date: 02/02/2018
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: "DSC-Pull-tjänsten"
-ms.openlocfilehash: d5e24dcc093c73d8ebbaa618517193dacc4f2aaf
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+title: DSC-hämtningstjänsten
+ms.openlocfilehash: 1547092d5ea6733296bf89f05dd96f70c0a000ac
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration Pull-tjänsten
 
@@ -67,7 +67,7 @@ Ett exempelskript finns nedan.
 Det enklaste sättet att konfigurera en pull-webbserver är att använda resursen xWebService ingår i modulen xPSDesiredStateConfiguration.
 Följande steg förklarar hur du använder resursen i en konfiguration som ställer in webbtjänsten.
 
-1. Anropa den [installera modulen](https://technet.microsoft.com/en-us/library/dn807162.aspx) för att installera den **xPSDesiredStateConfiguration** modul. **Obs**: **installera modulen** ingår i den **PowerShellGet** module, som ingår i PowerShell 5.0. Du kan hämta den **PowerShellGet** -modul för PowerShell 3.0 och 4.0 på [PackageManagement PowerShell-moduler Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186). 
+1. Anropa den [installera modulen](https://technet.microsoft.com/en-us/library/dn807162.aspx) för att installera den **xPSDesiredStateConfiguration** modul. **Obs**: **installera modulen** ingår i den **PowerShellGet** module, som ingår i PowerShell 5.0. Du kan hämta den **PowerShellGet** -modul för PowerShell 3.0 och 4.0 på [PackageManagement PowerShell-moduler Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
 1. Hämta ett SSL-certifikat för DSC Pull-server från en betrodd certifikatutfärdare, antingen inom din organisation eller en offentlig myndighet. Certifikatet som togs emot från myndigheten är vanligtvis i PFX-format. Installera certifikatet på den nod som blir DSC Pull-servern i standardplatsen som ska vara CERT: \LocalMachine\My. Anteckna tumavtrycket för certifikatet.
 1. Välj ett GUID som ska användas som nyckel för tjänstregistrering. Skapa ett med hjälp av PowerShell Skriv följande i PS-Kommandotolken och tryck på RETUR: '``` [guid]::newGuid()```'eller'```New-Guid```'. Den här nyckeln används av klientnoder som en delad nyckel för autentisering under registreringen. Mer information finns i avsnittet registreringsnyckel nedan.
 1. I PowerShell ISE start (F5) följande konfigurationsskript (ingår i mappen exempel i den **xPSDesiredStateConfiguration** modulen som Sample_xDscWebService.ps1). Det här skriptet konfigurerar pull-server.
@@ -127,7 +127,7 @@ Följande steg förklarar hur du använder resursen i en konfiguration som stäl
 1. Kör sedan konfigurationen skicka tumavtrycket för SSL-certifikat som den **certificateThumbPrint** parameter och en GUID-registrering nyckel som den **RegistrationKey** parameter:
 
 ```powershell
-    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store 
+    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
     # and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
     dir Cert:\LocalMachine\my
 
@@ -142,7 +142,7 @@ Följande steg förklarar hur du använder resursen i en konfiguration som stäl
 #### <a name="registration-key"></a>Nyckel för tjänstregistrering
 
 Så att klienten noder som ska registreras på servern så att de kan använda konfigurationsnamn i stället för ett konfigurations-ID, en registreringsnyckel som skapats av ovanstående konfiguration sparas i en fil med namnet `RegistrationKeys.txt` i `C:\Program Files\WindowsPowerShell\DscService`. Registreringsnyckeln som fungerar som en delad hemlighet som används under registreringen av klienten med pull-servern. Klienten genererar ett självsignerat certifikat som används för att autentisera unikt till den pull-servern när registreringen är slutförd. Tumavtrycket för certifikatet lagras lokalt och som är kopplade till URL-Adressen till den pull-servern.
-> **Obs**: registreringsnycklar stöds inte i PowerShell 4.0. 
+> **Obs**: registreringsnycklar stöds inte i PowerShell 4.0.
 
 Nyckeln måste vara i metakonfigurationen för varje målnod i som ska registreras med den här pull-servern för att kunna konfigurera en nod för att autentisera med hämtningsservern i registreringen. Observera att den **RegistrationKey** i metakonfigurationen nedan tas bort när måldatorn har registrerats och att värdet '140a952b-b9d6-406b-b416-e0f759c9c0e4' måste matcha det värde som lagras i den RegistrationKeys.txt fil på hämtningsservern. Behandla alltid nyckelvärdet registrering på ett säkert sätt, eftersom att känna till det tillåter alla måldatorn registreras på pull-servern.
 
@@ -155,7 +155,7 @@ configuration PullClientConfigID
         Settings
         {
             RefreshMode          = 'Pull'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded   = $true
         }
 
@@ -223,8 +223,8 @@ För att kunna utgör inställningen verifiera och hantera den pull-servern som 
 
     ```powershell
         # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
-         $moduleList = @("xWebAdministration", "xPhp") 
-         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList 
+         $moduleList = @("xWebAdministration", "xPhp")
+         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList
 
          # Example 2 - Package modules and mof documents from c:\LocalDepot
          Publish-DSCModuleAndMof -Source C:\LocalDepot -Force

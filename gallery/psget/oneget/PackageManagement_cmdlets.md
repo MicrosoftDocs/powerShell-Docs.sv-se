@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
 title: PackageManagement_cmdlets
-ms.openlocfilehash: 92dcebfc79bdb123e3ab3c56fc1af1f793bcb1e3
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 59dd025e01bf7a86aa70272e845ed7fbdc0974e9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="packagemanagement-cmdlets"></a>PackageManagement-Cmdlets
+# <a name="packagemanagement-cmdlets"></a>PackageManagement-cmdletar
 Detta är kärnan i PackageManagement som stöd för identifiering av programvara, installation och lager (SDII). Prova att använda cmdlets för dessa åtgärder:
 -   Find-Package
 -   Find-PackageProvider
@@ -53,7 +53,7 @@ Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nug
 ```
 
 ## <a name="find-packageprovider-cmdlethttpstechnetmicrosoftcomlibrarymt676544aspx"></a>[Hitta PackageProvider Cmdlet](https://technet.microsoft.com/library/mt676544.aspx)
-Hitta PackageProvider cmdleten hittar matchande PackageManagement leverantörer som är tillgängliga i paketet datakällor som har registrerats med PowerShellGet. Detta är paketet leverantörer som är tillgängliga för installation med cmdleten Install-PackageProvider. Som standard innehåller detta moduler som är tillgängliga i PowerShell-galleriet med 'PackageManagement' och 'Provider-taggar. 
+Hitta PackageProvider cmdleten hittar matchande PackageManagement leverantörer som är tillgängliga i paketet datakällor som har registrerats med PowerShellGet. Detta är paketet leverantörer som är tillgängliga för installation med cmdleten Install-PackageProvider. Som standard innehåller detta moduler som är tillgängliga i PowerShell-galleriet med 'PackageManagement' och 'Provider-taggar.
 
 Hitta PackageProvider hittar matchande PackageManagement leverantörer som är tillgängliga i PackageManagement azure blobstore där vi använder PackageManagement boostrapper providern för att söka efter och installera dem också.
 ```powershell
@@ -70,7 +70,7 @@ Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
 
 Find-PackageProvider -Source  C:\sharedfolder\Providers\
 Install-PackageProvider -Source C:\sharedfolder\Providers\ -Name nuget -force
-    
+
 ```
 
 ## <a name="get-package-cmdlethttpstechnetmicrosoftcomlibrarydn890704aspx"></a>[Cmdlet Get-paket](https://technet.microsoft.com/library/dn890704.aspx)
@@ -125,7 +125,7 @@ Get-PackageProvider –ListAvailable
 Import-PackageProvider –Name "Nuget" -RequiredVersion "2.8.5.201" -Verbose
 Import-PackageProvider –Name MyProvider –RequiredVersion xxxx -force
 
-As of the Windows Server Technical Preview(TP5), Install-PackageProvider does install as well as import the provider. Hence after you run find-packageprovider and install-packageprovider, the provider should be ready to use 
+As of the Windows Server Technical Preview(TP5), Install-PackageProvider does install as well as import the provider. Hence after you run find-packageprovider and install-packageprovider, the provider should be ready to use
 ```
 
 ##<a name="-install-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890711aspx"></a>[ Install-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890711.aspx)
@@ -179,10 +179,10 @@ Find-Package -source c:\test
 ```
 
 ## <a name="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx"></a>[Set-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890710.aspx)
-Denna cmdlet ändrar information om en befintlig datakälla för paketet. 
+Denna cmdlet ändrar information om en befintlig datakälla för paketet.
 ```powershell
 #Set-PackageSource changes the values for a source that has already been registered by running the Register-PackageSource cmdlet. By #running Set-PackageSource, you can change the source name and location.
-Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2 
+Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2
 ```
 
 ## <a name="uninstall-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890702aspx"></a>[Avinstallera paketet Cmdlet](https://technet.microsoft.com/en-us/library/dn890702.aspx)
@@ -200,4 +200,3 @@ Get-Package -Name jquery –Provider NuGet -Destination c:\test | Uninstall-Pack
 # Unregister a package source for the NuGet provider. You can use command Unregister-PackageSource, to disconnect with a repository, and Get-PackageSource, to discover what the repositories are associated with that provider.
 Unregister-PackageSource  -Name "NugetSource"
 ```
-

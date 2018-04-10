@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
-title: Publicera skript
-ms.openlocfilehash: 0d2fd87645d2286e87e68198844adce8909739cb
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Publish-Script
+ms.openlocfilehash: 6e273a4bacd2bf150a6fa6c4436c3c34f41078ad
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="publish-script"></a>Publicera skript
+# <a name="publish-script"></a>Publish-Script
 
 Cmdlet Publish-skriptet publicerar det angivna skriptet till online-galleriet.
 
@@ -26,7 +26,7 @@ Get-Command -Name Publish-Script -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>Cmdlet-referens för onlinehjälp
 
-[Publicera skript](http://go.microsoft.com/fwlink/?LinkId=619788)
+[Publish-Script](http://go.microsoft.com/fwlink/?LinkId=619788)
 
 ## <a name="example-commands"></a>Exempel på kommandon
 
@@ -75,4 +75,3 @@ PackageManagementProvider : NuGet
 AdditionalMetadata : {description, developmentDependency, tags, PackageManagementProvider...}
 
 ```
-

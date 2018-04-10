@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: "DSC-tjänstresurs"
-ms.openlocfilehash: a549530edc19496a68c036fecbd18b0072cc6d74
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: DSC-tjänstresurs
+ms.openlocfilehash: 59d7c0c7147bf28b92d64a25c0d67c277e0bb210
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-service-resource"></a>DSC-tjänstresurs
 
@@ -36,18 +36,18 @@ Service [string] #ResourceName
 
 ## <a name="properties"></a>Egenskaper
 
-|  Egenskap  |  Beskrivning   | 
-|---|---| 
-| Namn| Anger namnet på tjänsten. Observera att ibland Detta skiljer sig från namnet. Du kan hämta en lista över tjänster och det aktuella tillståndet med cmdleten Get-Service.| 
-| BuiltInAccount| Anger kontot du använder för tjänsten. De värden som tillåts för den här egenskapen är: **LocalService**, **LocalSystem**, och **NetworkService**.| 
-| autentiseringsuppgifter| Anger autentiseringsuppgifterna för kontot som tjänsten ska köras under. Den här egenskapen och __BuiltinAccount__ egenskapen kan inte användas tillsammans.| 
-| dependsOn| Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis __ResourceName__ och dess typ är __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.| 
-| StartupType| Anger starttypen för tjänsten. De värden som tillåts för den här egenskapen är: **automatisk**, **inaktiverad**, och **manuell**| 
-| Läge| Visar du vill säkerställa för tjänsten.| 
-| Beskrivning | Anger beskrivningen av Måltjänsten.| 
-| Visningsnamn | Anger visningsnamnet för Måltjänsten.| 
+|  Egenskap  |  Beskrivning   |
+|---|---|
+| Namn| Anger namnet på tjänsten. Observera att ibland Detta skiljer sig från namnet. Du kan hämta en lista över tjänster och det aktuella tillståndet med cmdleten Get-Service.|
+| BuiltInAccount| Anger kontot du använder för tjänsten. De värden som tillåts för den här egenskapen är: **LocalService**, **LocalSystem**, och **NetworkService**.|
+| autentiseringsuppgifter| Anger autentiseringsuppgifterna för kontot som tjänsten ska köras under. Den här egenskapen och __BuiltinAccount__ egenskapen kan inte användas tillsammans.|
+| dependsOn| Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis __ResourceName__ och dess typ är __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
+| StartupType| Anger starttypen för tjänsten. De värden som tillåts för den här egenskapen är: **automatisk**, **inaktiverad**, och **manuell**|
+| Läge| Visar du vill säkerställa för tjänsten.|
+| Beskrivning | Anger beskrivningen av Måltjänsten.|
+| Visningsnamn | Anger visningsnamnet för Måltjänsten.|
 | Se till att | Anger om Måltjänsten finns på systemet. Den här egenskapen **saknas** så att Måltjänsten inte finns. Ange värdet till **finns** (standardvärdet) säkerställer att Måltjänsten finns.|
-| Sökväg | Anger sökvägen till den binära fil för en ny tjänst.| 
+| Sökväg | Anger sökvägen till den binära fil för en ny tjänst.|
 
 ## <a name="example"></a>Exempel
 
@@ -63,8 +63,7 @@ configuration ServiceTest
             Name        = "TermService"
             StartupType = "Manual"
             State       = "Running"
-        } 
+        }
     }
 }
 ```
-

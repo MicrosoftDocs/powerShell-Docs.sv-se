@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
 title: scriptwithpseditionsupport
-ms.openlocfilehash: e6994b994cb15903560f3dd89c21383fb2cd367d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 18ce2d729199e0587ef92993db7fec44ef744ec7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Skriptet med kompatibla versioner av PowerShell
 Från och med version 5.1 finns PowerShell i olika utgåvor som anger olika funktionsuppsättningar och plattformskompatibilitet.
@@ -65,4 +65,3 @@ Find-Script -Tag PSEditon_Core
 ## <a name="more-details"></a>Mer information
 ### <a name="modules-with-pseditionsmodulemodulewithpseditionsupportmd"></a>[Moduler med PSEditions](../module/modulewithpseditionsupport.md)
 ### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[Stöd för PSEditions på PowerShellGallery](../../psgallery/psgallery_pseditions.md)
-

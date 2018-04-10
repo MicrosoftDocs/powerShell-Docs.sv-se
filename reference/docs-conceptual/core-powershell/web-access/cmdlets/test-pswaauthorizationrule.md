@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell-cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: test-pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: fb2937397616160c70b056e412e42fb8ff4c2f27
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ed6d56b2f3c4ee4ac410cdaadda312bffe506ee9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="test-pswaauthorizationrule"></a>Test-PswaAuthorizationRule
 
@@ -47,7 +47,7 @@ Parametrarna för denna cmdlet motsvarar fälten på sidan Windows PowerShell® 
 
 Anger namnet på datorn för att testa.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | true                                 |
@@ -60,7 +60,7 @@ Anger namnet på datorn för att testa.
 
 Anger namnet på sessionskonfigurationen Windows PowerShell, även kallat endpoint eller runspace, om du vill testa.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
@@ -73,7 +73,7 @@ Anger namnet på sessionskonfigurationen Windows PowerShell, även kallat endpoi
 
 Anger URI för att testa anslutningen.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | true                                 |
@@ -86,7 +86,7 @@ Anger URI för att testa anslutningen.
 
 Anger en **PSCredential** objekt för ett användarkonto som du vill använda för att testa Windows PowerShell Web Access auktoriseringsregler. Om du inte lägga till den här parametern används cmdlet det inloggade användarkontot. Få en **PSCredential** -objektet, vilket krävs för att testa auktoriseringsregler från en fjärrdator, kör den [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936) cmdlet.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
@@ -99,7 +99,7 @@ Anger en **PSCredential** objekt för ett användarkonto som du vill använda f�
 
 Anger en delmängd av regler som ska testas. Om den här parametern anges, testar denna cmdlet mot alla auktoriseringsregler.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
@@ -112,7 +112,7 @@ Anger en delmängd av regler som ska testas. Om den här parametern anges, testa
 
 Anger namnet på användaren att testa.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | true                                 |

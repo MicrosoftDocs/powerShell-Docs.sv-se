@@ -1,17 +1,19 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: "guide för arbetsflöden"
-ms.openlocfilehash: d99f23e281b8a1229c4577c3d6c3a93e4ba4973e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: guide för arbetsflöden
+ms.openlocfilehash: 2a32e7b6a92f68b96dc2865c558713e9520a584e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="psworkflow-module"></a>PSWorkflow modul
+
 Det här avsnittet innehåller hjälpämnen för den **PSWorkflow** modulen som innehåller cmdletar som stöder funktionen Windows PowerShell-arbetsflöde. Den **PSWorkflow** modulen är installerad med Windows PowerShell.
 
 ## <a name="help-topics"></a>Hjälpavsnitt
+
 [Cmdlets för arbetsflöde](http://go.microsoft.com/fwlink/?LinkID=245865)
 
 [about_Workflows](https://technet.microsoft.com/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
@@ -33,4 +35,3 @@ Det här avsnittet innehåller hjälpämnen för den **PSWorkflow** modulen som 
 [about_Suspend arbetsflöde](https://technet.microsoft.com/en-us/library/be2ded75-1eca-493e-96c1-758f92b5f199)
 
 [Verktyget Cmdlets i PowerShell-arbetsflöde](https://technet.microsoft.com/en-us/library/a5a32019-0d68-4041-935f-1b1cacaf6d3d)
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
 title: Get-InstalledScript
-ms.openlocfilehash: f35e57cdadd1448bd9032ab007d692003c4cf4a2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 668327905b0dab40119940a3134b674c452f538d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-installedscript"></a>Get-InstalledScript
 
@@ -24,7 +24,7 @@ För varje installerade skript returnerar Get-InstalledScript ett PSRepositoryIt
 - Get-InstalledScript kan filtrera med parametrarna: MinimumVersion, MaximumVersion, RequiredVersion, allaversioner.
   - Dessa parametrar är ömsesidigt uteslutande, utom MinmimumVersion och MaximumVersion.
   - De här parametrarna tillåts endast med enda Skriptnamn utan någon jokertecken.
-  - Om parametern RequiredVersion inte anges returnerar Get-InstalledScript den senaste versionen av den installerade skript som är lika med eller större än den angivna lägsta versionen eller den senaste versionen av skriptet om ingen minsta version anges. 
+  - Om parametern RequiredVersion inte anges returnerar Get-InstalledScript den senaste versionen av den installerade skript som är lika med eller större än den angivna lägsta versionen eller den senaste versionen av skriptet om ingen minsta version anges.
   - Om parametern RequiredVersion har angetts returnerar Get-InstalledScript endast versionen av installerade skript som exakt matchar den angivna versionen.
 
 ## <a name="cmdlet-syntax"></a>Cmdlet-syntax
@@ -98,4 +98,3 @@ InstalledLocation          : C:\Program Files\WindowsPowerShell\Scripts
 
 
 ```
-

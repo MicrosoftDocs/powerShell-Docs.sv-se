@@ -4,15 +4,15 @@
 
 Installera PowerShell på en Windows-klienten eller Windows Server (fungerar på Server 2008 R2, Windows 7 SP1 och senare), ladda ned MSI-paketet från vår GitHub [släpper][] sidan.
 
-MSI-filen ser ut så här-`PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+MSI-filen ser ut så här- `PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 När du har hämtat, dubbelklickar du på installationsprogrammet och följ anvisningarna.
 
 Det finns en genväg som placerats i Start-menyn vid installationen.
 
-* Paketet installeras som standard till`$env:ProgramFiles\PowerShell\`
-* Du kan starta PowerShell via Start-menyn eller`$env:ProgramFiles\PowerShell\pwsh.exe`
+* Paketet installeras som standard till `$env:ProgramFiles\PowerShell\`
+* Du kan starta PowerShell via Start-menyn eller `$env:ProgramFiles\PowerShell\pwsh.exe`
 
 ### <a name="prerequisites"></a>Förutsättningar
 
@@ -23,7 +23,7 @@ Om du vill aktivera PowerShell-fjärrkommunikation över WSMan, måste följande
   Korrigerade fullständigt (inklusive valfria paket), har stöds system redan det installeras.
 * Installera Windows Management Framework (WMF) [4.0](https://www.microsoft.com/download/details.aspx?id=40855) eller senare ([5.1](https://www.microsoft.com/download/details.aspx?id=54616)) på Windows 7 och Windows Server 2008 R2.
 
-## <a name="zip"></a>ZIP-
+## <a name="zip"></a>ZIP
 
 PowerShell binära ZIP-arkiv som aktivera avancerade distribueringsscenarier.
 Observera att du inte får kravkontrollen som MSI-paket när du använder ZIP-arkivet.

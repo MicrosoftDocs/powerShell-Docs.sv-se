@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Hantera Windows PowerShell-enheter
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: e2908246bb584291f04b67dc8635caec93d3b72e
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: cfc5418e9d2efb1a786817e1b941d75e22291742
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="managing-windows-powershell-drives"></a>Hantera Windows PowerShell-enheter
+
 En *Windows PowerShell-enhet* är en lagringsplats för data som du kan använda som en filsystemets enhet i Windows PowerShell. Windows PowerShell-providers skapa vissa enheter, som filsystemet enheter (inklusive C: och D:), registret enheter (HKCU: och HKLM:), och certifikat-enhet (Cert:), och du kan skapa egna enheter för Windows PowerShell. Dessa enheter är mycket användbara, men de är tillgängliga i Windows PowerShell. Du kan inte komma åt dem med andra Windows-verktyg, till exempel Utforskaren eller Cmd.exe.
 
 Windows PowerShell använder substantiv, **PSDrive**, för kommandon som fungerar med Windows PowerShell-enheter. För en lista över Windows PowerShell-enheter i Windows PowerShell-sessionen, använder den **Get-PSDrive** cmdlet.
@@ -39,6 +40,7 @@ Syntaxen för den **Get-PSDrive** cmdlet, ange en **Get-Command** kommandot med 
 
 ```
 PS> Get-Command -Name Get-PSDrive -Syntax
+
 Get-PSDrive [[-Name] <String[]>] [-Scope <String>] [-PSProvider <String[]>] [-V
 erbose] [-Debug] [-ErrorAction <ActionPreference>] [-ErrorVariable <String>] [-
 OutVariable <String>] [-OutBuffer <Int32>]
@@ -58,26 +60,34 @@ D          FileSystem    D:\
 
 Använd för att visa Windows PowerShell-enheter som representerar registreringsdatafilerna den **PSProvider** parametern visas bara i Windows PowerShell-enheter som stöds av registret för Windows PowerShell-providern:
 
-<pre>PS> Get-PSDrive -PSProvider Registry
+```
+PS> Get-PSDrive -PSProvider Registry
+
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
 HKCU       Registry      HKEY_CURRENT_USER
-HKLM       Registry      HKEY_LOCAL_MACHINE</pre>
+HKLM       Registry      HKEY_LOCAL_MACHINE
+```
 
 Du kan också använda standard-plats-cmdlets med Windows PowerShell-enheter:
 
-<pre>PS> Set-Location HKLM:\SOFTWARE
+```
+PS> Set-Location HKLM:\SOFTWARE
 PS> Push-Location .\Microsoft
 PS> Get-Location
+
 Path
 ----
-HKLM:\SOFTWARE\Microsoft</pre>
+HKLM:\SOFTWARE\Microsoft
+```
 
 ### <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Lägga till nya Windows PowerShell-enheter (ny PSDrive)
+
 Du kan lägga till egna Windows PowerShell-enheter med hjälp av den **ny PSDrive** kommando. Få syntaxen för den **ny PSDrive** kommandot, anger du den **Get-Command** kommandot med den **Syntax** parameter:
 
 ```
 PS> Get-Command -Name New-PSDrive -Syntax
+
 New-PSDrive [-Name] <String> [-PSProvider] <String> [-Root] <String> [-Descript
 ion <String>] [-Scope <String>] [-Credential <PSCredential>] [-Verbose] [-Debug
 ] [-ErrorAction <ActionPreference>] [-ErrorVariable <String>] [-OutVariable <St
@@ -110,11 +120,14 @@ Du refererar till den nya Windows PowerShell-enheten som du har alla enheter i W
 
 En Windows PowerShell-enhet kan göra många av de uppgifter som är mycket enklare. Till exempel ha några av de viktigaste nycklarna i Windows-registret extremt långa sökvägar, vilket gör dem krånglig att åtkomst och svårt att komma ihåg. Viktig konfigurationsinformation finns **HKEY_LOCAL_MACHINE\\programvara\\Microsoft\\Windows\\CurrentVersion**. Om du vill visa och ändra objekt i registernyckeln CurrentVersion kan skapa du en Windows PowerShell-enhet är rotad i nyckeln genom att skriva:
 
-<pre>PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
+```
+PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
 indows\CurrentVersion
+
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
-cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
+cvkey      Registry      HKLM\Software\Microsoft\Windows\...
+```
 
 Du kan ändra platsen till den **cvkey:** enhet precis som alla andra enheter:''
 
@@ -122,26 +135,30 @@ Du kan ändra platsen till den **cvkey:** enhet precis som alla andra enheter:''
 
 eller:
 
-<pre>PS> Set-Location cvkey: -PassThru
+```
+PS> Set-Location cvkey: -PassThru
+
 Path
 ----
-cvkey:\</pre>
+cvkey:\
+```
 
 Cmdlet New-PsDrive lägger till den nya enheten endast den aktuella Windows PowerShell-sessionen. Om du stänger fönstret Windows PowerShell, går den nya enheten förlorad. Använd cmdleten Export-konsolen för att exportera den aktuella Windows PowerShell-sessionen om du vill spara en Windows PowerShell-enhet, och sedan använda PowerShell.exe **PSConsoleFile** parameter för att importera den. Eller Lägg till den nya enheten i Windows PowerShell-profilen.
 
 ### <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Ta bort Windows PowerShell-enheter (ta bort PSDrive)
+
 Du kan ta bort enheter från Windows PowerShell med hjälp av den **ta bort PSDrive** cmdlet. Den **ta bort PSDrive** cmdlet är enkel att använda; för att ta bort en viss Windows PowerShell-enhet du bara ange namnet för Windows PowerShell-enhet.
 
 Om du har lagt till exempelvis den **Office:** Windows PowerShell-enhet, som visas i den **ny PSDrive** avsnittet, du kan ta bort den genom att skriva:
 
-```
-PS> Remove-PSDrive -Name Office
+```powershell
+Remove-PSDrive -Name Office
 ```
 
 Ta bort den **cvkey:** Windows PowerShell enhet, även visas i den **ny PSDrive** avsnittet använder du följande kommando:
 
-```
-PS> Remove-PSDrive -Name cvkey
+```powershell
+Remove-PSDrive -Name cvkey
 ```
 
 Det är lätt att ta bort en Windows PowerShell-enhet, men du kan inte ta bort den när du arbetar med enheten. Till exempel:
@@ -155,5 +172,5 @@ At line:1 char:15
 ```
 
 ### <a name="adding-and-removing-drives-outside-windows-powershell"></a>Lägga till och ta bort enheter utanför Windows PowerShell
-Windows PowerShell identifierar enheter som lagts till eller tas bort i Windows, inklusive nätverksenheter som är mappade, USB-enheter som är anslutna och enheter som tas bort med hjälp av antingen den **net Använd** kommando eller  **WScript.NetworkMapNetworkDrive** och **RemoveNetworkDrive** metoder från ett skript med Windows Script Host (WSH).
 
+Windows PowerShell identifierar enheter som lagts till eller tas bort i Windows, inklusive nätverksenheter som är mappade, USB-enheter som är anslutna och enheter som tas bort med hjälp av antingen den **net Använd** kommando eller  **WScript.NetworkMapNetworkDrive** och **RemoveNetworkDrive** metoder från ett skript med Windows Script Host (WSH).

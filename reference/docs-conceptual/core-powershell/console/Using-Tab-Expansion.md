@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Med fliken expanderades
+title: Använd flikexpansion
 ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
-ms.openlocfilehash: 8412bd97a95719f07b16c6671d3b8801bbfab8e3
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: 3d047bf0691c8a304d7637aa50fba6ae99709a82
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-tab-expansion"></a>Med fliken expanderades
+# <a name="using-tab-expansion"></a>Använd flikexpansion
+
 Kommandoradsverktyget tankar tillhandahåller ofta ett sätt att slutföra namnen på långa filer eller kommandon automatiskt, snabba på kommando-post och ge. Windows PowerShell kan du fylla i namn på filen och cmdlet genom att trycka på **fliken** nyckel.
 
 > [!NOTE]
@@ -45,4 +46,3 @@ PS> Get-Content C:\windows\actsetup.log
 
 > [!NOTE]
 > En begränsning med den flik utvidgas är flikar tolkas alltid som försöker slutföra ett ord. Om du kopierar och klistrar in kommandoexempel i PowerShell-konsolen, kontrollera att provet inte innehåller flikar. Om resultatet blir oförutsägbara och sannolikt inte som du tänkt.
-

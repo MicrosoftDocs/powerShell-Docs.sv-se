@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: galleriet, powershell, cmdlet, psgallery
 title: psgallery_gettingstarted
-ms.openlocfilehash: 2117712b0081db4a21f8480b458a499ed84dc512
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 599b148e141ba4205a7c774581e737a5d54bfae1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>Kom igång med PowerShell-galleriet
 
@@ -33,7 +33,7 @@ PowerShellGet kräver också den [NuGet provider](http://go.microsoft.com/fwlink
 
 Du kan köra `Install-PackageProvider -Name NuGet -Force` att automatisera hämtning och installation av NuGet-providern.
 
-  
+
 Om du har en version som är äldre än 2.8.5.201 av NuGet måste anropa följande PowerShell-cmdlets för att installera och växla till den senaste versionen av NuGet.
 
 1.  `Install-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
@@ -42,7 +42,7 @@ Om du har en version som är äldre än 2.8.5.201 av NuGet måste anropa följan
 
 Mer information finns i <http://oneget.org/> .
 
-  
+
 Obs: På grund av ändringar i paketering format rekommenderar vi du uppdaterar till den senaste versionen av PowerShellGet och PackageManagement för att installera objekt som nyligen har uppdaterats. PowerShellGet ingår i Windows 10 som du kan lära dig mer om [här](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409).
 PowerShellGet är också en del av de Windows Management Framework (WMF) 5.0, som du kan hämta [här](http://go.microsoft.com/fwlink/?LinkId=398175).
 
@@ -118,4 +118,3 @@ Uppdatera selektivt skript genom att lägga till den `-Name` parameter.
 Om du vill ta reda på vilka moduler som du har installerat från PowerShell-galleriet kan köra den [Get-InstalledModule](https://go.microsoft.com/fwlink/?LinkId=526863) cmdlet. Det här kommandot visar alla moduler som du har i systemet som har installerats direkt från PowerShell-galleriet.
 
 På samma sätt för att ta reda på vilka skript som du har installerat från PowerShell-galleriet kan köra den [Get-InstalledScript](https://go.microsoft.com/fwlink/?LinkId=619790) cmdlet. Det här kommandot listar alla skript som du har i systemet som har installerats direkt från PowerShell-galleriet.
-

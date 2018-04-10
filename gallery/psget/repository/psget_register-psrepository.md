@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
-title: Registrera PSRepository
-ms.openlocfilehash: badac5dc1157bbfa79058630c5c2f260d2151bd8
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: Register-PSRepository
+ms.openlocfilehash: 7a7d1bf56a87161f6ec735399b15b19f317282b6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="register-psrepository"></a>Registrera PSRepository
+# <a name="register-psrepository"></a>Register-PSRepository
 
 Hämtar registrerade databaser på en dator.
 
 ## <a name="description"></a>Beskrivning
 
-Cmdleten Register-PSRepository registrerar online-lagringsplatsen för PowerShell-moduler. När en databas har registrerats kan du använda det från Sök-modulen, installera modulen, och publicera-Module-cmdlets. Registrerade databasen blir standarddatabas i Sök-modulen och installera modulen. 
+Cmdleten Register-PSRepository registrerar online-lagringsplatsen för PowerShell-moduler. När en databas har registrerats kan du använda det från Sök-modulen, installera modulen, och publicera-Module-cmdlets. Registrerade databasen blir standarddatabas i Sök-modulen och installera modulen.
 
 Registrerade databaser är specifikt. De är inte registrerade i en kontext för hela systemet.
 
@@ -32,8 +32,9 @@ Get-Command -Name Register-PSRepository -Module PowerShellGet -Syntax
 
 ## <a name="example-commands"></a>Exempel på kommandon
 
-### <a name="register-a-powershell-repository"></a>Registrera en PowerShell-databas
-Du kan konfigurera PowerShellGet arbeta mot interna databaser. När en databas har registrerats kan använda du hitta modulen och installera modulen för att arbeta med den.
+### <a name="register-a-powershell-repository"></a>Registrera ett PowerShell-lager
+Du kan konfigurera PowerShellGet arbeta mot interna databaser.
+När en databas har registrerats kan använda du hitta modulen och installera modulen för att arbeta med den.
 
 ```powershell
 # Register a default repository
@@ -114,4 +115,3 @@ ScriptPublishLocation : https://customgallery.cloudapp.net/api/v2/package/
 ProviderOptions : {}
 
 ```
-

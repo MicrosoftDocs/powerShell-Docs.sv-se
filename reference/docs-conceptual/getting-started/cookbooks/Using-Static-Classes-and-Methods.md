@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: "Med hjälp av statiska klasser och metoder"
+title: Använd statiska klasser och metoder
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: fe41c7d6b45564e7b5bc2b922a18587c9745e26d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 0f2b02c3a40365ad0335118b057a4e548c9f6535
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-static-classes-and-methods"></a>Med hjälp av statiska klasser och metoder
+# <a name="using-static-classes-and-methods"></a>Använd statiska klasser och metoder
 Inte alla klasser i .NET Framework kan skapas med hjälp av **New-Object**. Om du försöker skapa till exempel en **System.Environment** eller en **System.Math** objekt med **New-Object**, du får följande felmeddelanden:
 
 ```
@@ -18,6 +18,7 @@ New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Environment.
 At line:1 char:11
 + New-Object  <<<< System.Environment
+
 PS> New-Object System.Math
 New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Math.
@@ -88,6 +89,7 @@ TickCount                               ExitCode
 Vi kan nu välja Egenskaper för att visa från System.Environment.
 
 #### <a name="displaying-static-properties-of-systemenvironment"></a>Visa statiska egenskaperna för System.Environment
+
 Egenskaper för System.Environment också är statiska och måste anges på ett annat sätt än normal egenskaper. Vi använder **::** att indikera att Windows PowerShell som vi vill arbeta med en statisk metod eller egenskap. Om du vill se det kommando som användes för att starta Windows PowerShell, vi kontrollerar den **CommandLine** egenskapen genom att skriva:
 
 ```
@@ -113,6 +115,7 @@ False
 ```
 
 ### <a name="doing-math-with-systemmath"></a>Gör beräkningar med System.Math
+
 Den statiska System.Math-klassen är användbart för att utföra vissa matematiska åtgärder. Viktiga medlemmarna i **System.Math** är främst metoder som vi visa genom att använda **Get-medlemmen**.
 
 > [!NOTE]
@@ -181,4 +184,3 @@ PS> [System.Math]::Truncate(9.3)
 PS> [System.Math]::Truncate(-9.3)
 -9
 ```
-

@@ -1,22 +1,22 @@
 ---
-description: "Mer information om tidigare versioner för önskad tillstånd Configuration DSC ()-tillägget i Azure."
-ms.date: 2018-03-14
+description: Mer information om tidigare versioner för önskad tillstånd Configuration DSC ()-tillägget i Azure.
+ms.date: 03/14/2018
 ms.topic: conceptual
 keywords: dsc, powershell, azure, extension
-title: "Versionshistorik för Azure DSC-tillägg"
+title: Versionshistorik för Azure DSC-tillägg
 author: DCtheGeek
 ms.author: dacoulte
-ms.openlocfilehash: e324ff9db2aff36a7e13c3a222e3c50f6f1c5d39
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: a183137dde302811874bd5466c35bccebca5d128
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Versionshistorik för Azure önskade tillstånd Configuration-tillägg
 
 VM-tillägget Azure önskad tillstånd Configuration (DSC) uppdateras som krävs för stöd av förbättringar och nya funktioner som levereras av Azure, Windows Server och i Windows Management Framework (WMF) som innehåller Windows PowerShell.
 
-Den här artikeln ger information om varje version av Azure DSC-VM-tillägget, IT-avdelningen miljöer har stöd för, och kommentarer och anmärkningar om nya funktioner och ändringar.
+Den här artikeln innehåller information om varje version av VM-tillägget Azure DSC vilka miljöer som har stöd för, och kommentarer och anmärkningar om nya funktioner och ändringar.
 
 ## <a name="latest-versions"></a>Senaste version
 
@@ -38,9 +38,9 @@ Den här artikeln ger information om varje version av Azure DSC-VM-tillägget, I
   - WMF 4.0
 - **Miljö:**
   - Azure
-- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installera WMF kräver en omstart). För Nano, är DSC-rollen installerad på den virtuella datorn.
+- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installera WMF kräver en omstart). För Nano Server är DSC-rollen installerad på den virtuella datorn.
 - **Nya funktioner:**
-  - Efter Githubs senaste flytta TLS 1.2, det går inte att publicera en virtuell dator till Azure Automation DSC med själv Resource Manager-mallar som är tillgängliga på Azure Marketplace eller använda DSC-tillägg för att få alla config finns på Github. Ett fel som liknar följande vid distribution av tillägget visas:
+  - Efter Githubs senaste flytta TLS 1.2, det går inte att publicera en virtuell dator till Azure Automation DSC med själv Resource Manager-mallar som är tillgängliga på Azure Marketplace eller använda DSC-tillägg för att få alla config finns på GitHub. Ett fel som liknar följande vid distribution av tillägget visas:
 
     ```json
     {
@@ -101,7 +101,7 @@ Den här artikeln ger information om varje version av Azure DSC-VM-tillägget, I
 - **OS-stöd:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows Client 7/8.1/10, Nano Server
 - **WMF stöd:** WMF 5.1, WMF 5.0 RTM, WMF 4.0-uppdateringen, WMF 4.0
 - **Miljö:** Azure
-- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installera WMF kräver en omstart). För Nano, är DSC-rollen installerad på den virtuella datorn.
+- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installera WMF kräver en omstart). För Nano Server är DSC-rollen installerad på den virtuella datorn.
 - **Nya funktioner:**
   - Programfel korrigeringar och förbättringar som gör det enklare att använda DSC Azure Automation via portalen Användargränssnittet, samt Resource Manager-mall.  Mer information finns i [standard konfigurationsskript](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/extensions-dsc-overview#default-configuration-script) i DSC-tillägg-dokumentationen.
 
@@ -111,7 +111,7 @@ Den här artikeln ger information om varje version av Azure DSC-VM-tillägget, I
 - **OS-stöd:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows Client 7/8.1/10, Nano Server
 - **WMF stöd:** WMF 5.1, WMF 5.0 RTM, WMF 4.0-uppdateringen, WMF 4.0
 - **Miljö:** Azure
-- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installera WMF kräver en omstart). För Nano, är DSC-rollen installerad på den virtuella datorn.
+- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installera WMF kräver en omstart). För Nano Server är DSC-rollen installerad på den virtuella datorn.
 - **Nya funktioner:**
   - Telemetri förbättringar.
 
@@ -121,7 +121,7 @@ Den här artikeln ger information om varje version av Azure DSC-VM-tillägget, I
 - **OS-stöd:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows Client 7/8.1/10, Nano Server
 - **WMF stöd:** WMF 5.1, WMF 5.0 RTM, WMF 4.0-uppdateringen, WMF 4.0
 - **Miljö:** Azure
-- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installera WMF kräver en omstart). För Nano, är DSC-rollen installerad på den virtuella datorn.
+- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installera WMF kräver en omstart). För Nano Server är DSC-rollen installerad på den virtuella datorn.
 - **Nya funktioner:**
   - Flera felkorrigeringar och andra mindre förbättringar har lagts till.
 
@@ -131,7 +131,7 @@ Den här artikeln ger information om varje version av Azure DSC-VM-tillägget, I
 - **OS-stöd:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1 Nano Server
 - **WMF stöd:** WMF 5.1, WMF 5.0 RTM, WMF 4.0-uppdateringen, WMF 4.0
 - **Miljö:** Azure
-- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installera WMF kräver en omstart). För Nano, är DSC-rollen installerad på den virtuella datorn.
+- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installera WMF kräver en omstart). För Nano Server är DSC-rollen installerad på den virtuella datorn.
 - **Nya funktioner:**
   - Visar VM UUID & DSC Agent-ID som tillägget metadata. Andra mindre förbättringar har lagts till.
 
@@ -141,7 +141,7 @@ Den här artikeln ger information om varje version av Azure DSC-VM-tillägget, I
 - **OS-stöd:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1 Nano Server
 - **WMF stöd:** WMF 5.1, WMF 5.0 RTM, WMF 4.0-uppdateringen, WMF 4.0
 - **Miljö:** Azure
-- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installera WMF kräver en omstart). För Nano, är DSC-rollen installerad på den virtuella datorn.
+- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installera WMF kräver en omstart). För Nano Server är DSC-rollen installerad på den virtuella datorn.
 - **Nya funktioner:**
   - Många felkorrigeringar och andra förbättringar har lagts till.
 
@@ -151,7 +151,7 @@ Den här artikeln ger information om varje version av Azure DSC-VM-tillägget, I
 - **OS-stöd:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1 Nano Server
 - **WMF stöd:** WMF 5.1, WMF 5.0 RTM, WMF 4.0-uppdateringen, WMF 4.0
 - **Miljö:** Azure
-- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installera WMF kräver en omstart). För Nano, är DSC-rollen installerad på den virtuella datorn.
+- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installera WMF kräver en omstart). För Nano Server är DSC-rollen installerad på den virtuella datorn.
 - **Nya funktioner:**
   - DSC-tillägg har nu stöd för WMF 5.1.
   - Lägre andra förbättringar har lagts till.
@@ -162,9 +162,9 @@ Den här artikeln ger information om varje version av Azure DSC-VM-tillägget, I
 - **OS-stöd:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1 Nano Server
 - **WMF stöd:** WMF 5.1 Preview, WMF 5.0 RTM, WMF 4.0-uppdateringen, WMF 4.0
 - **Miljö:** Azure
-- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installera WMF kräver en omstart). För Nano, är DSC-rollen installerad på den virtuella datorn.
+- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installera WMF kräver en omstart). För Nano Server är DSC-rollen installerad på den virtuella datorn.
 - **Nya funktioner:**
-  - DSC-tillägg finns nu på Nano Server. Den här versionen innehåller i första hand kodändringar för att köra tillägget på Nano server.
+  - DSC-tillägg finns nu på Nano Server. Den här versionen innehåller i första hand kodändringar för att köra tillägget på Nano Server.
   - Lägre andra förbättringar har lagts till.
 
 ### <a name="version-220"></a>Version 2.20
@@ -186,7 +186,7 @@ Den här artikeln ger information om varje version av Azure DSC-VM-tillägget, I
 - **Miljö:** Azure, Azure Kina Azure Government
 - **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016 Technical Preview; för andra Windows-operativsystem installeras den [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installera WMF kräver en omstart).
 - **Nya funktioner:**
-  - DSC-tillägg är nu på avgränsad till Azure Kina. Den här versionen innehåller i första hand korrigeringar för att köra tillägget på Azure Kina.
+  - DSC-tillägg är nu publicerats så att Azure Kina. Den här versionen innehåller i första hand korrigeringar för att köra tillägget på Azure Kina.
 
 ### <a name="version-218"></a>Version 2.18
 

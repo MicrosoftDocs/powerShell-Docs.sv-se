@@ -1,20 +1,22 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: "Hämta WMI-objekt får WMI-objekt"
+title: Hämta WMI-objekt får WMI-objekt
 ms.assetid: f0ddfc7d-6b5e-4832-82de-2283597ea70d
-ms.openlocfilehash: fbaac2797dd62eb03a2be581b3b5f8be6dafc0ad
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 67922426ae3f13ef5f4c70bc70bb3ce1594d3d05
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getting-wmi-objects-get-wmiobject"></a>Hämta WMI-objekt (Get-WmiObject)
 
 ## <a name="getting-wmi-objects-get-wmiobject"></a>Hämta WMI-objekt (Get-WmiObject)
+
 Windows Management Instrumentation (WMI) är en teknik för kärnor för administration av Windows system eftersom den Exponerar en stor mängd information på ett enhetligt sätt. På grund av hur mycket WMI gör möjligt, Windows PowerShell-cmdlet för att komma åt WMI-objekt **Get-WmiObject**, är en av de mest användbara för att göra arbetet. Vi kommer att diskutera hur du använder Get-WmiObject att komma åt WMI-objekt och hur du gör vissa saker med hjälp av WMI-objekt.
 
 ### <a name="listing-wmi-classes"></a>Visar en lista över WMI-klasser
+
 Det första problemet uppstår i de flesta WMI-användare försöker att ta reda på vad som kan göras med WMI. WMI-klasser som beskriver de resurser som kan hanteras. Det finns hundratals WMI-klasser, varav några innehåller dussintals egenskaper.
 
 **Get-WmiObject** löser problemet genom att göra WMI kan upptäckas. Du kan hämta en lista över de WMI-klasserna som är tillgängliga på den lokala datorn genom att skriva:
@@ -48,7 +50,7 @@ Klass-listan som returneras av fjärrdatorer kan variera beroende på det aktuel
 
 Du kan även inkludera ComputerName vid anslutning till det lokala systemet. Du kan använda den lokala datorns namn, IP-adressen (eller loopback-adressen 127.0.0.1) eller WMI-format '.' som datornamn. Om du kör Windows PowerShell på en dator med namnet Admin01 med IP-adress 192.168.1.90 returnerar följande kommandon alla WMI-klassen lista för datorn:
 
-```
+```powershell
 Get-WmiObject -List
 Get-WmiObject -List -ComputerName .
 Get-WmiObject -List -ComputerName Admin01
@@ -68,6 +70,7 @@ __Provider                              __Win32Provider
 ```
 
 ### <a name="displaying-wmi-class-details"></a>Visa information om WMI-klass
+
 Om du redan känner till namnet på en WMI-klassen kan använda du den för att hämta information direkt. Till exempel en WMI-klasser som ofta används för att hämta information om en dator är **Win32_OperatingSystem**.
 
 ```
@@ -83,7 +86,7 @@ Version         : 5.1.2600
 
 Även om vi visas alla parametrar uttryckas kommandot i en kortfattad fler sätt. Den **ComputerName** parameter är inte nödvändigt när du ansluter till det lokala systemet. Vi visar det mest vanliga fall påvisa och påminna dig om parametern. Den **Namespace** root/cimv2 som standard, men kan utelämnas samt. Slutligen kan de flesta cmdlets du utelämna namnet på gemensamma parametrar. Med Get-WmiObject, om inget namn har angetts för den första parametern, Windows PowerShell behandlas den som den **klassen** parameter. Detta innebär att det sista kommandot har utfärdats genom att skriva:
 
-```
+```powershell
 Get-WmiObject Win32_OperatingSystem
 ```
 
@@ -105,6 +108,7 @@ BuildNumber                               Property   System.String BuildNumb...
 ```
 
 #### <a name="displaying-non-default-properties-with-format-cmdlets"></a>Visa egenskaper för icke-förvalt med formatet Cmdlets
+
 Om du vill att informationen i den **Win32_OperatingSystem** klassen som inte visas som standard, kan du visa det med hjälp av den **Format** cmdlets. Skriv till exempel om du vill visa data för tillgängligt minne:
 
 ```
@@ -116,7 +120,7 @@ TotalVirtualMemorySize TotalVisibleMemory FreePhysicalMemory FreeVirtualMemory F
 ```
 
 > [!NOTE]
-> Jokertecken arbeta med egenskapsnamn i **Format-Table**, så det slutliga pipeline-elementet kan minskas till  **Format-Table-egenskapen totala*kostnadsfritt*
+> Jokertecken arbeta med egenskapsnamn i **Format-Table**, så det slutliga pipeline-elementet kan minskas till **Format-Table-egenskapen totala*, lediga *
 
 Minnesdata kan vara lättare att läsa om du formaterar som en lista genom att skriva:
 
@@ -129,4 +133,3 @@ FreePhysicalMemory     : 301876
 FreeVirtualMemory      : 2056724
 FreeSpaceInPagingFiles : 1556644
 ```
-

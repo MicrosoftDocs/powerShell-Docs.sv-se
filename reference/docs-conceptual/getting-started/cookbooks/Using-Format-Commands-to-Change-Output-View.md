@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: "Med formatet kommandon för att ändra utdata vy"
+title: Använd formatkommandon för att ändra utdatavyn
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
-ms.openlocfilehash: 0163fcb21d586fc98902d9bdcfab6fe4eb97c225
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 97d3a9e04abb61bb80a0b8c67d9fb9e885a0b91b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-format-commands-to-change-output-view"></a>Med formatet kommandon för att ändra utdata vy
+# <a name="using-format-commands-to-change-output-view"></a>Använd formatkommandon för att ändra utdatavyn
+
 Windows PowerShell har en uppsättning cmdlets som låter dig styra vilka egenskaper som visas för vissa objekt. Namnen på cmdletarna som börjar med verbet **Format**. De kan du välja en eller flera egenskaper som ska visas.
 
 Den **Format** cmdlets är **Format hela**, **Format-List**, **Format-Table**, och **Format-anpassad**. Vi kommer bara beskriver den **Format hela**, **Format-List**, och **Format-Table** cmdlets i den här handboken.
@@ -18,7 +19,7 @@ Varje format-cmdlet har standardegenskaper som ska användas om du inte anger sp
 
 Om du använder kommandot **Get-Process - namnet powershell** med två instanser av Windows PowerShell kör du hämta utdata som ser ut så här:
 
-```
+```output
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     995       9    30308      27996   152     2.73   2760 powershell
@@ -28,6 +29,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 I resten av det här avsnittet förklarar vi hur du använder **Format** -cmdletar för att ändra hur utdata från kommandot visas.
 
 ### <a name="using-format-wide-for-single-item-output"></a>Med formatet hela för Single-utdata
+
 Den **Format hela** cmdlet, visas som standard endast standardegenskapen för ett objekt. Information som associeras med varje objekt visas i en enda kolumn:
 
 ```
@@ -45,13 +47,15 @@ PS> Get-Process -Name powershell | Format-Wide -Property Id
 ```
 
 #### <a name="controlling-format-wide-display-with-column"></a>Kontrollera formatet hela bildskärm med kolumnen
+
 Med den **Format hela** cmdlet, du kan bara visa en enskild egenskap i taget. Detta gör att det är användbart om du vill visa enkla listor som visar endast ett element per rad. För att få en enkel lista, ange värdet för den **kolumnen** parameter 1 genom att skriva:
 
-```
+```powershell
 Get-Command Format-Wide -Property Name -Column 1
 ```
 
 ### <a name="using-format-list-for-a-list-view"></a>Använda Format-List för en listvy
+
 Den **Format-List** cmdlet visar ett objekt i form av en lista med varje egenskap med namnet och visas på en separat rad:
 
 ```
@@ -86,15 +90,17 @@ Id          : 3448
 ```
 
 #### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Hämta detaljerad Information genom att använda Format-List med jokertecken
+
 Den **Format-List** cmdlet kan du använda ett jokertecken som värde för dess **egenskapen** parameter. På så sätt kan du visa detaljerad information. Ofta objekt kan vara mer än vad du behöver, vilket är anledningen till Windows PowerShell inte visar alla egenskapsvärden som standard. Använd för att visa alla egenskaper för ett objekt i **Format-List-egenskapen \&#42;** kommando. Följande kommando skapar över 60 raderna i utdata för en enda process:
 
-```
+```powershell
 Get-Process -Name powershell | Format-List -Property *
 ```
 
 Även om den **Format-List** kommandot är användbara för att visa information om du vill att en översikt över utdata som innehåller många objekt, en enklare tabellvy är ofta mer användbar.
 
 ### <a name="using-format-table-for-tabular-output"></a>Med hjälp av Format-Table för Tabular utdata
+
 Om du använder den **Format-Table** med ingen egenskapsnamn som angetts för att formatera utdata från den **Get-Process** kommandot, du får exakt samma utdata som du gör utan att utföra någon formatering. Anledningen är att processer visas vanligtvis i tabellformat, eftersom de flesta Windows PowerShell-objekt.
 
 ```
@@ -107,6 +113,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 ```
 
 #### <a name="improving-format-table-output-autosize"></a>Förbättra Format-Table utdata (AutoSize)
+
 Även om en tabellvy är användbart om du vill visa en stor mängd jämförbar information, kan det vara svårt att tolka om visningen är för restriktiva för data. Till exempel om du försöker visa processen sökväg, ID, namn och företag kan hämta du trunkerat utdata för sökvägen till processen och kolumnen företag:
 
 ```
@@ -156,6 +163,7 @@ Microsoft Corporation C:\Program Files\Windows PowerShell\v1.0\powershell.exe 6
 ID-kolumnen trunkeras så att den passar in i listan i resultatet ovan och kolumnrubrikerna staplade. Ändra storlek på kolumnerna automatiskt utför alltid inte vad du vill.
 
 #### <a name="wrapping-format-table-output-in-columns-wrap"></a>Byta Format-Table utdata i kolumner (Radbryt)
+
 Du kan tvinga långa **Format-Table** data att omsluta i kolumnen visa med hjälp av den **omsluter** parameter. Med hjälp av den **omsluter** parametern enbart inte nödvändigtvis att utföra vad du förväntar dig, eftersom den använder standardinställningarna om du inte också anger **AutoSize**:
 
 ```
@@ -198,6 +206,7 @@ C:\Program Files\Windows PowerShell\v1.0\powershell.exe 2836 Microsoft Corporat
 ```
 
 #### <a name="organizing-table-output--groupby"></a>Ordna Tabellutdata (-GroupBy)
+
 En annan användbar parametern för tabular utdata-kontroll är **GroupBy**. Längre tabular listor kan i synnerhet vara svåra att jämföra. Den **GroupBy** parametern grupper utdata baserat på ett värde för egenskapen. Vi kan till exempel gruppera processer av företag för enklare kontroll utelämna företagets värdet från egenskapen lista:
 
 ```
@@ -211,4 +220,3 @@ Name         Id Path
 powershell 1956 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
 powershell 2656 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
 ```
-

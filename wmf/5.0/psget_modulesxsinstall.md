@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: f68847ba8292a277e464025c1baa17a5aa2752f5
-ms.sourcegitcommit: 4ab9a86e47b6effe8fe22ebeb81e8fadff41d31c
+keywords: WMF, powershell, inställning
+ms.openlocfilehash: f9a121c320ffb780503dbe0c278f698a6fa40289
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>Stöd för sida-vid-sida-Version på PowerShell 5.0 eller senare
 
@@ -26,7 +26,7 @@ ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.0
 Install-Module -Name PSScriptAnalyzer -RequiredVersion 1.1.1 -Repository PSGallery
 Get-Module -ListAvailable -Name PSScriptAnalyzer | Format-List Name,Version,ModuleBase
 
-Name       : PSScriptAnalyzer 
+Name       : PSScriptAnalyzer
 Version    : 1.1.1
 ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.1
 Name       : PSScriptAnalyzer
@@ -35,9 +35,8 @@ ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.0
 
 Get-InstalledModule -Name PSScriptAnalyzer -AllVersions
 
-Version    Name                                Type       Repository           Description            
--------    ----                                ----       ----------           -----------            
-1.1.0      PSScriptAnalyzer                    Module     PSGallery            PSScriptAnalyzer provides script analysis... 
+Version    Name                                Type       Repository           Description
+-------    ----                                ----       ----------           -----------
+1.1.0      PSScriptAnalyzer                    Module     PSGallery            PSScriptAnalyzer provides script analysis...
 1.1.1      PSScriptAnalyzer                    Module     PSGallery            PSScriptAnalyzer provides script analysis...
 ```
-

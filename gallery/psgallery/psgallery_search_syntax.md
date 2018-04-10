@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: galleriet, powershell, cmdlet, psgallery
 title: psgallery_search_syntax
-ms.openlocfilehash: 409ae607557af760f9cec4e3c54f39e51b5fac18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 337b4b1e702994fcbc456eb31a2d8632f5220d09
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="gallery-search-syntax"></a>Galleriet Söksyntax
+# <a name="gallery-search-syntax"></a>Gallery Search Syntax
 
 PowerShell-galleriet erbjuder en text searchbox där du kan använda ord och fraser nyckelordet uttryck för att begränsa sökresultatet.
 
@@ -49,7 +49,7 @@ Sök efter objekt med ”PSReadline” eller ”AzureRM.Profile” i ID-fältet 
 ”Id”-filtret är en understräng matchar, så om du söker efter följande:
 
     Id:"azure"
-    
+
 Du får resultat som 'AzureRM.Profile' och 'Azure.Storage'.
 
 Du kan också söka efter flera nyckelord i ett enda fält. Eller blanda och matcha fält.
@@ -71,7 +71,7 @@ För att söka alla objekt med angiven funktion.
     Functions:"Update-AzureRM"
 
 För att söka alla objekt med den angivna cmdleten.
-    
+
     Cmdlets:"Get-AzureRmEnvironment"
 
 För att söka alla objekt med det angivna namnet för DSC-resurs.
@@ -88,8 +88,7 @@ Att söka efter alla objekt med den angivna PowerShellVersion
 Slutligen, om du använder ett fält inte stöds, till exempel kommandon, vi bara ignorera det och söka i alla fält. Därför följande fråga
 
     commands:blobs storage
-    
+
 Är tolkas exakt samma sätt som den här frågan:
 
     blobs storage
-

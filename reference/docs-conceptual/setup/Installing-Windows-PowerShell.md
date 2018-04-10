@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-09
-keywords: "PowerShell cmdlet, hämta, installera, installationsprogrammet, windows 10, windows 8.1, windows 8.0, windows 7"
+ms.date: 08/09/2017
+keywords: PowerShell cmdlet, hämta, installera, installationsprogrammet, windows 10, windows 8.1, windows 8.0, windows 7
 title: Installera Windows PowerShell
-ms.openlocfilehash: dffb6ec11ce265ebc4e6bc91f631650e1af5868d
-ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
+ms.openlocfilehash: 320b271ce49768f8865c79c5c72749befe306fa4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="installing-windows-powershell"></a>Installera Windows PowerShell
 Windows PowerShell är installerat som standard i alla Windows som börjar med Windows 7 SP1 och Windows Server 2008 R2 SP1.
@@ -45,7 +45,8 @@ Versioner av Windows Server utan GUI namnges **Core** versioner och utgåvor med
 
 I alla Core-utgåvor när du loggar på servern hämta du Windows Kommandotolkens fönster.
 
-Typen `powershell` och tryck på **RETUR** starta PowerShell inuti kommandotolk-session. Typen `exit` att avsluta PowerShell-session och återgå till Kommandotolken.
+Typen `powershell` och tryck på **RETUR** starta PowerShell inuti kommandotolk-session.
+Typen `exit` att avsluta PowerShell-session och återgå till Kommandotolken.
 
 ### <a name="windows-server-desktop-editions"></a>Windows Server-Desktop-versioner
 

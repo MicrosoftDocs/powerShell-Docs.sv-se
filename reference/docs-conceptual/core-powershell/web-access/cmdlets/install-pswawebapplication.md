@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell-cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: installera pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: ce4d01fbe8a83924e7023d792c68c903a32e07d4
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c7f7768a41b6784d8c29afa1fccf0b855160b777
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
@@ -35,7 +35,7 @@ Den **Install-PswaWebApplication** cmdlet konfigurerar Windows PowerShell Web Ac
 
 Anger att ett testcertifikat skapas. Om den här parametern anges till true, och sedan denna cmdlet skapar ett testcertifikat och konfigurerar Windows PowerShell Web Access webbprogram att använda certifikat för HTTPS-begäranden. Om den här parametern är inställd på false, skapas inga certifikat eller bindning. Ange värdet till false om ett annat certifikat används för Windows PowerShell Web Access.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
@@ -48,7 +48,7 @@ Anger att ett testcertifikat skapas. Om den här parametern anges till true, och
 
 Anger namnet för ditt webbprogram. Detta visas som den sista delen av URL: en Windows PowerShell Web Access.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
@@ -61,7 +61,7 @@ Anger namnet för ditt webbprogram. Detta visas som den sista delen av URL: en W
 
 Anger namnet på webbplatsen webbserver (IIS) som du vill installera det här webbprogrammet för Windows PowerShell Web Access.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
@@ -74,7 +74,7 @@ Anger namnet på webbplatsen webbserver (IIS) som du vill installera det här we
 
 Uppmanar dig att bekräfta innan du kör cmdleten.
 
-|||  
+|||
 |-|-|
 | Obligatorisk?                            | falskt                                |
 | Placering?                            | Med namnet                                |
@@ -87,7 +87,7 @@ Uppmanar dig att bekräfta innan du kör cmdleten.
 Visar vad som skulle hända om cmdleten kördes.
 Cmdleten körs inte.
 
-|||  
+|||
 |-|-|
 | Obligatorisk?                            | falskt                                |
 | Placering?                            | Med namnet                                |

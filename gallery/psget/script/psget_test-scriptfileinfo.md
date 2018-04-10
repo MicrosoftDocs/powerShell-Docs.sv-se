@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
-title: Testa ScriptFileInfo
-ms.openlocfilehash: 0f6951b86bba352e33abe91fc76e000b7df75b49
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Test-ScriptFileInfo
+ms.openlocfilehash: 56f75007be6e952572aaed7942a1e8714d4104b0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="test-scriptfileinfo"></a>Testa ScriptFileInfo
+# <a name="test-scriptfileinfo"></a>Test-ScriptFileInfo
 
 Verifierar kommentarsblock metadata i en skriptfil.
 
@@ -26,7 +26,7 @@ Get-Command -Name Test-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
 ## <a name="cmdlet-online-help-reference"></a>Cmdlet-referens för onlinehjälp
 
-[Testa ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619791)
+[Test-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619791)
 
 ## <a name="example-commands"></a>Exempel på kommandon
 ```powershell
@@ -74,4 +74,3 @@ At line:1 char:1
     + FullyQualifiedErrorId : MissingPSScriptInfo,Test-ScriptFileInfo
 
 ```
-

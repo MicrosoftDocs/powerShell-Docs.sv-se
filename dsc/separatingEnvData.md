@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: "Avgränsa konfiguration och miljö data"
-ms.openlocfilehash: 18b18d805ac248b29526862591df5f0ff785937b
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Avgränsa konfigurations- och miljödata
+ms.openlocfilehash: c89e26105611eae59a926be1432079913c40671f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="separating-configuration-and-environment-data"></a>Avgränsa konfiguration och miljö data
+# <a name="separating-configuration-and-environment-data"></a>Avgränsa konfigurations- och miljödata
 
 >Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -26,18 +26,19 @@ En detaljerad beskrivning av den **ConfigurationData** hash-tabell, se [med konf
 
 ## <a name="a-simple-example"></a>Ett enkelt exempel
 
-Nu ska vi titta på ett väldigt enkelt exempel för att se hur det fungerar. Skapar vi en enkel konfiguration som säkerställer att **IIS** finns på vissa noder och att **Hyper-V** finns på andra: 
+Nu ska vi titta på ett väldigt enkelt exempel för att se hur det fungerar.
+Skapar vi en enkel konfiguration som säkerställer att **IIS** finns på vissa noder och att **Hyper-V** finns på andra:
 
 ```powershell
 Configuration MyDscConfiguration {
-    
+
     Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
     {
         WindowsFeature IISInstall {
             Ensure = 'Present'
             Name   = 'Web-Server'
         }
-        
+
     }
     Node $AllNodes.Where{$_.Role -eq "VMHost"}.NodeName
     {
@@ -48,7 +49,7 @@ Configuration MyDscConfiguration {
     }
 }
 
-$MyData = 
+$MyData =
 @{
     AllNodes =
     @(
@@ -75,12 +76,12 @@ Resultatet är att två MOF-filer skapas:
     Directory: C:\DscTests\MyDscConfiguration
 
 
-Mode                LastWriteTime         Length Name                                                                                                                    
-----                -------------         ------ ----                                                                                                                    
--a----        3/31/2017   5:09 PM           1968 VM-1.mof                                                                                                                
--a----        3/31/2017   5:09 PM           1970 VM-2.mof  
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        3/31/2017   5:09 PM           1968 VM-1.mof
+-a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
- 
+
 `$MyData` Anger två olika noder, med egna `NodeName` och `Role`. Konfigurationen skapas dynamiskt **nod** block med samling med noder som får från `$MyData` (särskilt `$AllNodes`) och filtrerar samlingen mot den `Role` egenskapen...
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>Med hjälp av konfigurationsdata för att definiera utveckling och produktionsmiljöer
@@ -128,7 +129,9 @@ Ska vi definiera miljödata utveckling och produktion i en fil namd `DevProdEnvD
 
 ### <a name="configuration-script-file"></a>Konfigurationsfilen för skript
 
-Nu i konfigurationen som har definierats i en `.ps1` fil, vi filtrera de noder som vi har definierat i `DevProdEnvData.psd1` med deras roll (`MSSQL`, `Dev`, eller båda), och konfigurera dem i enlighet med detta. Utvecklingsmiljön har både SQL Server och IIS på en nod, medan produktionsmiljön har dem på två olika noder. Plats-innehållet är också olika som anges av den `SiteContents` egenskaper.
+Nu i konfigurationen som har definierats i en `.ps1` fil, vi filtrera de noder som vi har definierat i `DevProdEnvData.psd1` med deras roll (`MSSQL`, `Dev`, eller båda), och konfigurera dem i enlighet med detta.
+Utvecklingsmiljön har både SQL Server och IIS på en nod, medan produktionsmiljön har dem på två olika noder.
+Plats-innehållet är också olika som anges av den `SiteContents` egenskaper.
 
 I slutet av konfigurationsskript som vi kallar konfigurationen (kompilera den till en MOF-dokument), skicka `DevProdEnvData.psd1` som den `$ConfigurationData` parameter.
 
@@ -147,7 +150,7 @@ Configuration MyWebApp
    {
         # Install prerequisites
         WindowsFeature installdotNet35
-        {            
+        {
             Ensure      = "Present"
             Name        = "Net-Framework-Core"
             Source      = "c:\software\sxs"
@@ -182,7 +185,7 @@ Configuration MyWebApp
         }
 
         # Stop the default website
-        xWebsite DefaultSite 
+        xWebsite DefaultSite
         {
             Ensure       = 'Present'
             Name         = 'Default Web Site'
@@ -203,7 +206,7 @@ Configuration MyWebApp
             Type            = 'Directory'
             DependsOn       = '[WindowsFeature]AspNet45'
 
-        }       
+        }
 
 
         # Create the new Website
@@ -232,10 +235,10 @@ När du kör den här konfigurationen skapas tre MOF-filer (en för varje med na
     Directory: C:\DscTests\MyWebApp
 
 
-Mode                LastWriteTime         Length Name                                                                                                                    
-----                -------------         ------ ----                                                                                                                    
--a----        3/31/2017   5:47 PM           2944 Prod-SQL.mof                                                                                                            
--a----        3/31/2017   5:47 PM           6994 Dev.mof                                                                                                                 
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        3/31/2017   5:47 PM           2944 Prod-SQL.mof
+-a----        3/31/2017   5:47 PM           6994 Dev.mof
 -a----        3/31/2017   5:47 PM           5338 Prod-IIS.mof
 ```
 
@@ -257,39 +260,39 @@ I det här exemplet `ConfigFileContents` används med rad:
 
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName           = “*”
             LogPath            = “C:\Logs”
         },
- 
+
         @{
             NodeName = “VM-1”
             SiteContents = “C:\Site1”
             SiteName = “Website1”
         },
- 
-        
+
+
         @{
             NodeName = “VM-2”;
             SiteContents = “C:\Site2”
             SiteName = “Website2”
         }
     );
- 
-    NonNodeData = 
+
+    NonNodeData =
     @{
         ConfigFileContents = (Get-Content C:\Template\Config.xml)
-     }   
-} 
- 
+     }
+}
+
 configuration WebsiteConfig
 {
     Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
- 
+
     node $AllNodes.NodeName
     {
         xWebsite Site
@@ -298,14 +301,14 @@ configuration WebsiteConfig
             PhysicalPath = $Node.SiteContents
             Ensure       = “Present”
         }
- 
+
         File ConfigFile
         {
             DestinationPath = $Node.SiteContents + “\\config.xml”
             Contents = $ConfigurationData.NonNodeData.ConfigFileContents
         }
     }
-} 
+}
 ```
 
 
@@ -313,4 +316,3 @@ configuration WebsiteConfig
 - [Med konfigurationsdata](configData.md)
 - [Alternativ för autentiseringsuppgifter i konfigurationsdata](configDataCredentials.md)
 - [DSC-konfigurationer](configurations.md)
-

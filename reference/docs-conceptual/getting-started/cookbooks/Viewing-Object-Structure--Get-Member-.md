@@ -1,28 +1,29 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Visa objekt struktur Get medlem
 ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
-ms.openlocfilehash: 618f34bca7bfb76ce5d48ada642a687e279c8aad
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: cc93e45e4306b3d623c1d3d1096dd20c1afc59c8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="viewing-object-structure-get-member"></a>Visa objekt strukturen (Get-medlem)
+
 Eftersom spelas upp på en central roll i Windows PowerShell, finns flera inbyggda kommandon som fungerar med valfri objekttyper. Den viktigaste är den **Get-medlemmen** kommando.
 
 Den enklaste metoden för att analysera objekten som returnerar ett kommando är att skicka utdata från kommandot den **Get-medlemmen** cmdlet. Den **Get-medlemmen** cmdlet visar formella namnet på objekttypen och en fullständig lista över dess medlemmar. Antalet element som returneras kan ibland vara överväldigande. Till exempel kan en process-objektet ha fler än 100 medlemmar.
 
 Om du vill se alla medlemmar i en Process-objektet och sidan utdata så att du kan visa alla, skriver du:
 
-```
-PS> Get-Process | Get-Member | Out-Host -Paging
+```powershell
+Get-Process | Get-Member | Out-Host -Paging
 ```
 
 Utdata från kommandot ser ut ungefär så här:
 
-```
+```output
 TypeName: System.Diagnostics.Process
 
 Name                           MemberType     Definition
@@ -68,4 +69,3 @@ Det finns över 60 egenskaper för en process. Orsaken till Windows PowerShell o
 > Windows PowerShell avgör hur du visar en objekttyp med hjälp av informationen i XML-filer som har namn som slutar på. format.ps1xml. Formatering data för process-objekt som är .NET System.Diagnostics.Process objekt, lagras i DotNetTypes.format.ps1xml.
 
 Om du behöver titta i andra egenskaper än de som visas som standard i Windows PowerShell måste att formatera utdata själv. Detta kan göras med hjälp av format-cmdlets.
-

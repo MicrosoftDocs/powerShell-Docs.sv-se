@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: "Med hjälp av välbekanta kommandonamn"
+title: Använd bekanta kommandonamn
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 5e72e721bdb9d48684092344a0169907e7e25d40
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 37fc6dfad5a2f1363254744141dcab1e13aa5066
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-familiar-command-names"></a>Med hjälp av välbekanta kommandonamn
+# <a name="using-familiar-command-names"></a>Använd bekanta kommandonamn
 Med hjälp av en mekanism kallas *alias*, Windows PowerShell kan du referera till kommandon med alternativa namn. Alias kan användare upplevelse i andra tankar återanvända vanliga kommandonamn som de redan känner till att utföra samma åtgärder i Windows PowerShell. Även om vi inte upp Windows PowerShell-alias i detalj, kan du fortfarande använda dem när du kommer igång med Windows PowerShell.
 
 Alias associerar ett kommandonamn som du skriver med ett annat kommando. Windows PowerShell har till exempel en intern funktion med namnet **rensa värden** som rensar utdatafönstret. Om du skriver en den **cls** eller **Rensa** kommando i Kommandotolken Windows PowerShell tolkar att detta är ett alias för den **rensa värden** fungerar och körs på  **Rensa värden** funktion.
@@ -21,12 +21,12 @@ Här följer en kort lista över vanliga Cmd.exe- och UNIX-kommandon som du kan 
 |||||
 |-|-|-|-|
 |cat|dir|Montera|RM|
-|CD|echo|Flytta|rmdir|
+|cd|echo|Flytta|rmdir|
 |chdir|Radera|popd|strömsparläge|
-|Rensa|H|PS|Sortera|
+|Rensa|h|ps|sort|
 |CLS|Historik|pushd|Tee|
 |Kopiera|Avsluta|pwd|typ|
-|del|LP|R|skriva|
+|del|LP|r|skriva|
 |diff|Ls|ren||
 
 Om du använder något av följande kommandon reflexively och vill veta det verkliga namnet på det interna Windows PowerShell-kommandot kan du använda den **Get-Alias** kommando:
@@ -67,4 +67,3 @@ Set-Alias : Alias is not writeable because alias gi is read-only or constant and
 At line:1 char:10
 + Set-Alias  <<<< -Name gi -Value Get-Item
 ```
-

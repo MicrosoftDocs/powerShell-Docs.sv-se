@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: galleriet, powershell, cmdlet, psgallery
 title: psgallery_items_tab
-ms.openlocfilehash: 8704091542de5c19817ab0b4f77fd98987084b5d
-ms.sourcegitcommit: 1a0a0928c1e3cae4e8df8d79b0737bd7ed6b4e47
+ms.openlocfilehash: 5058253678a4f996b080e43820fee06b35b681f4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="items-tab"></a>Fliken objekt
 
