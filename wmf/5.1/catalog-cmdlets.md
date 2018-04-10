@@ -1,46 +1,46 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
-title: Katalog-cmdlets
-ms.openlocfilehash: f0869e8c174ab127996866775ad20d056f877345
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+keywords: WMF, powershell, inställning
+title: Katalog-cmdletar
+ms.openlocfilehash: f46fb99b61ff8008c247f6db4ed57ae6e6e81b9b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="catalog-cmdlets"></a>Katalog-Cmdlets  
+# <a name="catalog-cmdlets"></a>Katalog-Cmdlets
 
-Vi har lagt till två nya cmdlet: ar i [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) modul som ska generera och verifiera filer för windows-katalogen.  
+Vi har lagt till två nya cmdlet: ar i [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) modul som ska generera och verifiera filer för windows-katalogen.
 
-## <a name="new-filecatalog"></a>Ny FileCatalog 
+## <a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
 
-`New-FileCatalog`skapar en windows-katalogfil för mappar och filer. En katalogfil innehåller hashvärden för alla filer i angiven sökväg. Användarna kan distribuera mapparna tillsammans med motsvarande katalogfil som representerar mapparna. En katalogfil kan användas av mottagaren av innehållet om några ändringar har gjorts till mapparna efter katalogen skapades.    
+`New-FileCatalog` skapar en windows-katalogfil för mappar och filer. En katalogfil innehåller hashvärden för alla filer i angiven sökväg. Användarna kan distribuera mapparna tillsammans med motsvarande katalogfil som representerar mapparna. En katalogfil kan användas av mottagaren av innehållet om några ändringar har gjorts till mapparna efter katalogen skapades.
 
 ```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
-Vi stöder skapar katalogversion 1 och 2. Version 1 används SHA1 hash-algoritm för att skapa filhash och version 2 används SHA256. Katalogversion 2 stöds inte på *Windows Server 2008 R2* och *Windows 7*. Det rekommenderas att använda katalogversion 2 om använder plattformar *Windows 8*, *Windows Server 2012* och högre.  
+Vi stöder skapar katalogversion 1 och 2. Version 1 används SHA1 hash-algoritm för att skapa filhash och version 2 används SHA256. Katalogversion 2 stöds inte på *Windows Server 2008 R2* och *Windows 7*. Det rekommenderas att använda katalogversion 2 om använder plattformar *Windows 8*, *Windows Server 2012* och högre.
 
-Ange variablerna CatalogFilePath och sökvägen för att matcha sökvägen till modulmanifestet om du vill använda det här kommandot på en befintlig modul. I exemplet nedan är modulmanifestet i C:\Program Files\Windows PowerShell\Modules\Pester. 
+Ange variablerna CatalogFilePath och sökvägen för att matcha sökvägen till modulmanifestet om du vill använda det här kommandot på en befintlig modul. I exemplet nedan är modulmanifestet i C:\Program Files\Windows PowerShell\Modules\Pester.
 
 ![](../images/NewFileCatalog.jpg)
 
-Då skapas katalogfilen. 
+Då skapas katalogfilen.
 
-![](../images/CatalogFile1.jpg)  
+![](../images/CatalogFile1.jpg)
 
-![](../images/CatalogFile2.jpg) 
+![](../images/CatalogFile2.jpg)
 
-För att verifiera integriteten hos en katalogfil (Pester.cat i ovan exmaple) bör den signeras med den [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.   
+För att verifiera integriteten hos en katalogfil (Pester.cat i ovan exmaple) bör den signeras med den [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.
 
 
-## <a name="test-filecatalog"></a>Testa FileCatalog 
+## <a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
 
-`Test-FileCatalog`verifierar katalogen som representerar en uppsättning mappar. 
+`Test-FileCatalog` verifierar katalogen som representerar en uppsättning mappar.
 
 ```powershell
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -48,5 +48,6 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 ![](../images/TestFileCatalog.jpg)
 
-Denna cmdlet jämför hash-värden för alla filer och deras relativa sökvägar som hittades i katalogfilen med de som sparas till disk. Om den identifierar eventuella matchningsfel mellan värden och sökvägar returneras statusen `ValidationFailed`. Användare kan hämta alla den här informationen med hjälp av den `Detailed` växla. Katalogen signering status visas som den `Signature` fältet, som är samma som anropar den [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet på katalogfilen. Användare kan också hoppa över en fil vid verifiering av med hjälp av den `FilesToSkip` parameter. 
-
+Denna cmdlet jämför hash-värden för alla filer och deras relativa sökvägar som hittades i katalogfilen med de som sparas till disk. Om den identifierar eventuella matchningsfel mellan värden och sökvägar returneras statusen `ValidationFailed`.
+Användare kan hämta alla den här informationen med hjälp av den `Detailed` växla. Katalogen signering status visas som den `Signature` fältet, som är samma som anropar den [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet på katalogfilen.
+Användare kan också hoppa över en fil vid verifiering av med hjälp av den `FilesToSkip` parameter.

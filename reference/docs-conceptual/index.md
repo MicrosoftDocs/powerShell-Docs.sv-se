@@ -1,6 +1,6 @@
 ---
-redirect_url: overview
-ms.openlocfilehash: e50488b6264c6b9a29553e225ae15bd88859aebf
+redirect_url: PowerShell-Scripting
+ms.openlocfilehash: 54e0b92a7d6926eb491dc9f640c20dd76fdaa8c5
 ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: sv-SE

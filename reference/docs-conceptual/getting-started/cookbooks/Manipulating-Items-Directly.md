@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Direkt manipulering av objekt
+title: Manipulera objekt direkt
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: d9aa95dcb0da2e8203cbe32d64b95bf33d914166
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 688f9194bd16793331325999c69e88df3e94c976
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="manipulating-items-directly"></a>Direkt manipulering av objekt
+# <a name="manipulating-items-directly"></a>Manipulera objekt direkt
+
 Element som du ser i Windows PowerShell-enheter, till exempel filer och mappar i systemenheter filer och registernycklar i Windows PowerShell registret enheter, kallas *objekt* i Windows PowerShell. Cmdlets för att arbeta med dessa objekt har substantivet **objektet** i sina namn.
 
 Utdata från den **Get-Command - objektet substantiv** kommando visar att det finns nio Windows PowerShell-cmdletar för objektet.
@@ -31,6 +32,7 @@ Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
 ### <a name="creating-new-items-new-item"></a>Skapa nya objekt (nytt objekt)
+
 Använd för att skapa ett nytt objekt i filsystemet i **nytt objekt** cmdlet. Inkludera den **sökväg** parameter med sökvägen till objektet och **ItemType** parametern med värdet ”fil” eller ”directory”.
 
 Till exempel vill skapa en ny katalog med namnet ”New.Directory"in enhet C:\\Temp-katalog, typ:
@@ -73,6 +75,7 @@ SKC  VC Name                           Property
 När du skriver en registersökväg Glöm kolon (**:**) i Windows PowerShell enhet namn, HKLM: och HKCU:. Utan kolon, kan Windows PowerShell inte identifiera enhetsnamnet i sökvägen.
 
 ### <a name="why-registry-values-are-not-items"></a>Varför registervärden inte är element
+
 När du använder den **Get-ChildItem** för att hitta objekt i en registernyckel visas aldrig faktiska registerposter eller deras värden.
 
 Till exempel registernyckeln **HKEY_LOCAL_MACHINE\\programvara\\Microsoft\\Windows\\CurrentVersion\\kör** innehåller vanligtvis flera registerposter som representerar program som körs när systemet startar.
@@ -81,6 +84,7 @@ Men om du använder **Get-ChildItem** för att leta efter underordnade objekt i 
 
 ```
 PS> Get-ChildItem HKLM:\Software\Microsoft\Windows\CurrentVersion\Run
+
    Hive: Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\Software\Micros
 oft\Windows\CurrentVersion\Run
 SKC  VC Name                           Property
@@ -91,10 +95,11 @@ SKC  VC Name                           Property
 Även om det skulle vara praktiskt att behandla registerposter som objekt, kan du inte ange en sökväg till en registerpost på ett sätt som garanterar att den är unik. Sökvägen notation skiljer inte mellan registerundernyckeln med namnet **kör** och **(standard)** registerpost i den **kör** undernyckel. Dessutom eftersom registret postnamnen kan innehålla ett omvänt snedstreck (**\\**), om regsitry poster objekt som du kan inte använda sökväg notation för att särskilja en registerpost med namnet  **Windows\\CurrentVersion\\kör** från undernyckeln som finns i sökvägen.
 
 ### <a name="renaming-existing-items-rename-item"></a>Byta namn på befintliga objekt (Byt namn på objekt)
+
 Du kan ändra namnet på en fil eller mapp med det **byta namnet på objektet** cmdlet. Följande kommando ändrar namnet på den **file1.txt** filen till **fileOne.txt**.
 
-```
-PS> Rename-Item -Path C:\temp\New.Directory\file1.txt fileOne.txt
+```powershell
+Rename-Item -Path C:\temp\New.Directory\file1.txt fileOne.txt
 ```
 
 Den **byta namnet på objektet** cmdlet kan ändra namnet på en fil eller mapp, men det går inte att flytta ett objekt. Kommandot misslyckas eftersom den försöker flytta filen från katalogen New.Directory till Temp-katalogen.
@@ -107,6 +112,7 @@ At line:1 char:12
 ```
 
 ### <a name="moving-items-move-item"></a>Flytta objekt (flytta objekt)
+
 Flytta en fil eller mapp med det **flytta objekt** cmdlet.
 
 Till exempel följande kommando flyttas katalogen New.Directory från enhet C:\\temp-katalogen i roten på enhet C:. Om du vill kontrollera att objektet har flyttats, innehåller den **PassThru** parameter för den **flytta objekt** cmdlet. Utan **Passthru**, **flytta objekt** cmdleten visas inte några resultat.
@@ -122,12 +128,13 @@ d----        2006-05-18  12:14 PM            New.Directory
 ```
 
 ### <a name="copying-items-copy-item"></a>Kopiera objekt (kopiera objekt)
+
 Om du är bekant med copy-åtgärder i andra, kanske beteendet för den **Copy-Item** cmdlet i Windows PowerShell för att vara annorlunda. När du kopierar ett objekt från en plats till en annan, kopierar inte innehållet som standard i Kopiera objekt.
 
 Till exempel om du kopierar den **New.Directory** katalog från enheten C: till C:\\temp-katalog, kommandot lyckas men kopieras inte filerna i katalogen New.Directory.
 
-```
-PS> Copy-Item -Path C:\New.Directory -Destination C:\temp
+```powershell
+Copy-Item -Path C:\New.Directory -Destination C:\temp
 ```
 
 Om du visar innehållet i **C:\\temp\\New.Directory**, hittar du att den inte innehåller några filer:
@@ -145,6 +152,7 @@ Kopiera hela innehållet i en mapp genom att inkludera den **Recurse** parameter
 
 ```
 PS> Copy-Item -Path C:\New.Directory -Destination C:\temp -Recurse -Force -Passthru
+
     Directory: Microsoft.Windows PowerShell.Core\FileSystem::C:\temp
 
 Mode                LastWriteTime     Length Name
@@ -159,6 +167,7 @@ Mode                LastWriteTime     Length Name
 ```
 
 ### <a name="deleting-items-remove-item"></a>Ta bort objekt (ta bort objekt)
+
 Ta bort filer och mappar genom att använda den **ta bort objektet** cmdlet. Windows PowerShell-cmdlets som **ta bort objektet**, som kan göra betydande, ångra ändringar ofta ombeds du att bekräfta när du anger dess kommandon. Till exempel om du försöker ta bort den **New.Directory** mappen, du uppmanas att bekräfta kommandot, eftersom den innehåller filer:
 
 ```
@@ -174,26 +183,26 @@ specified. If you continue, all children will be removed with the item. Are you
 
 Eftersom **Ja** är svaret som standard, ta bort mappen och dess filer, tryck på den **RETUR** nyckel. Ta bort mappen utan att bekräfta den **-Recurse** parameter.
 
-```
-PS> Remove-Item C:\temp\New.Directory -Recurse
+```powershell
+Remove-Item C:\temp\New.Directory -Recurse
 ```
 
 ### <a name="executing-items-invoke-item"></a>Köra objekt (anropa-objekt)
+
 Windows PowerShell använder den **Invoke-objektet** för att utföra en standardåtgärd för en fil eller mapp. Den här standardåtgärd bestäms av standardprogram för programmet i registret. effekten är densamma som om du dubbelklickar på objektet i Utforskaren.
 
 Anta att du kör följande kommando:
 
-```
-PS> Invoke-Item C:\WINDOWS
+```powershell
+Invoke-Item C:\WINDOWS
 ```
 
 Ett Explorer-fönster som finns i C:\\Windows visas precis som om du hade dubbelklickar på enhet C:\\Windows-mappen.
 
 Om du anropar den **Boot.ini** filen i ett system tidigare än Windows Vista:
 
-```
-PS> Invoke-Item C:\boot.ini
+```powershell
+Invoke-Item C:\boot.ini
 ```
 
 Om typen ini-filen är associerad med anteckningar öppnas boot.ini-filen i anteckningar.
-

@@ -1,53 +1,53 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Objektet ISEMenuItemCollection
+title: ISEMenuItemCollection-objektet
 ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
-ms.openlocfilehash: 7ce9132021d4d5e755503e0adb355beb388a625a
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 7e5030416df394aaa9e9d3f63978e204a7faabf1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="the-isemenuitemcollection-object"></a>Objektet ISEMenuItemCollection
-  En **ISEMenuItemCollection** objekt är en samling **ISEMenuItem** objekt. Det är en instans av klassen Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection. Ett exempel är den **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** objekt som används för att anpassa den **tillägg** menyn i Windows PowerShell® Integrated Scripting Environment (ISE).
+# <a name="the-isemenuitemcollection-object"></a>ISEMenuItemCollection-objektet
+
+En **ISEMenuItemCollection** objekt är en samling **ISEMenuItem** objekt. Det är en instans av klassen Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection. Ett exempel är den **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** objekt som används för att anpassa den **tillägg** menyn i Windows PowerShell® Integrated Scripting Environment (ISE).
 
 ## <a name="method"></a>Metod
 
-### <a name="addstring-displayname-systemmanagementautomationscriptblock-action-systemwindowsinputkeygesture-shortcut-"></a>Lägg till\(string DisplayName, System.Management.Automation.ScriptBlock åtgärd System.Windows.Input.KeyGesture genväg\)
-  Stöds i Windows PowerShell ISE 2.0 och senare. 
+### <a name="addstring-displayname-systemmanagementautomationscriptblock-action-systemwindowsinputkeygesture-shortcut-"></a>Add\(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut \)
 
- Lägger till ett menyalternativ till samlingen.
+Stöds i Windows PowerShell ISE 2.0 och senare.
 
- **DisplayName** visningsnamnet för menyn som ska läggas till.
+Lägger till ett menyalternativ till samlingen.
 
- **Åtgärden** den **System.Management.Automation.ScriptBlock** objekt som anger vad som är associerad med det här menyalternativet.
+**DisplayName** visningsnamnet för menyn som ska läggas till.
 
- **Genväg** kortkommandot för åtgärden.
+**Åtgärden** den **System.Management.Automation.ScriptBlock** objekt som anger vad som är associerad med det här menyalternativet.
 
- **Returnerar** det ISEMenuItem objektet just har lagt till.
+**Genväg** kortkommandot för åtgärden.
 
-```
+**Returnerar** det ISEMenuItem objektet just har lagt till.
+
+```powershell
 # Create an Add-ons menu with an fast access key and a shortcut.
 # Note the use of "_"  as opposed to the "&" for mapping to the fast access key letter for the menu item.
-$menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P")
+$menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, 'Alt+P')
 ```
 
 ### <a name="clear"></a>Rensa\(\)
-  Stöds i Windows PowerShell ISE 2.0 och senare. 
 
- Tar bort alla undermenyer från menyalternativet.
+Stöds i Windows PowerShell ISE 2.0 och senare.
 
-```
+Tar bort alla undermenyer från menyalternativet.
+
+```powershell
 # Remove all custom submenu items from the AddOns menu
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
-
 ```
 
 ## <a name="see-also"></a>Se även
-- [Objektet ISEMenuItem](The-ISEMenuItem-Object.md) 
-- [Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [Windows PowerShell ISE objektreferens modellen](Windows-PowerShell-ISE-Object-Model-Reference.md) 
-- [Modellen objekthierarkin ISE](The-ISE-Object-Model-Hierarchy.md)
 
-  
+- [Objektet ISEMenuItem](The-ISEMenuItem-Object.md)
+- [Syftet med Windows PowerShell ISE Scripting Object Model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)

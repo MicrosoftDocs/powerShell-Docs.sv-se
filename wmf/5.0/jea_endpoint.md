@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: c3645a6ba83081bd5ac31a13af0f67f6538db22a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, inställning
+ms.openlocfilehash: 9065315ef39129e6a28234d972fe350fd5e7e11d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="creating-and-connecting-to-a-jea-endpoint"></a>Skapa och ansluta till en slutpunkt för JEA
+# <a name="creating-and-connecting-to-a-jea-endpoint"></a>Skapa och ansluta till en JEA-slutpunkt
 Om du vill skapa en JEA-slutpunkt som du behöver skapa och registrera en särskilt konfigurerade PowerShell-Session konfigurationsfil, vilken kan genereras med den **ny PSSessionConfigurationFile** cmdlet.
 
 ```powershell
-New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc" 
+New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-Detta skapar en konfigurationsfil för sessionen som ser ut så här: 
+Detta skapar en konfigurationsfil för sessionen som ser ut så här:
 ```powershell
 @{
 
@@ -52,7 +52,7 @@ RoleDefinitions = @{
     'CONTOSO\NonAdmin_Operators' = @{
         'RoleCapabilities' = 'Maintenance' } }
 
-} 
+}
 ```
 När du skapar en JEA slutpunkt måste du ange följande parametrar för kommandot (och motsvarande nycklar i filen):
 1.  SessionType till RestrictedRemoteServer
@@ -64,7 +64,7 @@ När du skapar en JEA slutpunkt måste du ange följande parametrar för kommand
 Fältet RoleDefinitions definierar vilka grupper som hade tillgång till vilka funktioner i rollen.  En roll-funktion är en fil som definierar en uppsättning funktioner som kan användas för anslutning av användare.  Du kan skapa rollen funktioner med den **ny PSRoleCapabilityFile** kommando.
 
 ```powershell
-New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc" 
+New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
 Detta skapar en mall för rollen funktion som ser ut så här:
@@ -128,7 +128,7 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # Assemblies to load when applied to a session
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
-} 
+}
 
 ```
 Rollen funktioner måste sparas som en giltig PowerShell-modul i en katalog med namnet ”RoleCapabilities” för att användas av en JEA sessionskonfiguration. En modul kan ha flera rollen funktionsfiler, om så önskas.
@@ -138,7 +138,7 @@ För att börja konfigurera vilka cmdlets, funktioner, alias och skript som en a
 Slutligen, när du är klar med att anpassa sessionskonfigurationen och relaterade funktioner för rollen registrera den här konfigurationen och skapa slutpunkten genom att köra **Register-PSSessionConfiguration**.
 
 ```powershell
-Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
+Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
 ## <a name="connect-to-a-jea-endpoint"></a>Ansluta till en JEA slutpunkt
@@ -148,4 +148,3 @@ Ansluter till en slutpunkt för JEA fungerar på samma sätt som ansluter till a
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 När du har anslutit till sessionen JEA begränsas du kör kommandon godkända av roll-funktionerna som du har åtkomst till. Ett fel inträffar om du försöker köra ett kommando som inte är tillåtet för din roll.
-

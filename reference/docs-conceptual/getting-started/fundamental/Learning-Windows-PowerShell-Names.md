@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Learning Windows PowerShell-namn
+title: Läs mer om Windows PowerShell-namn
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 28c821c4a617b6ac775dbdda8ade3d15c3f218c3
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 381aa619a41ccacb2ff3a4cdbc2b75b7f04282d1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="learning-windows-powershell-names"></a>Learning Windows PowerShell-namn
+# <a name="learning-windows-powershell-names"></a>Läs mer om Windows PowerShell-namn
 Learning namnen på kommandon och parametrar för kommandot är en betydande tid investering med de flesta kommandoradsverktyget gränssnitt. Problemet är att det finns mycket få mönster, så det enda sättet att lära dig om du lär dig varje kommando och varje parameter som du behöver använda regelbundet.
 
 När du arbetar med ett nytt kommando eller en parameter använda du normalt inte vad du redan vet; Du måste ta och lär dig ett nytt namn. Om du tittar på hur gränssnitt växa från en liten uppsättning verktyg med inkrementell tillägg till funktioner är det enkelt att se varför strukturen är inte är standard. Med kommandonamn i synnerhet är det här kan låta logiska eftersom varje kommando är ett fristående verktyg, men det finns ett bättre sätt att hantera kommandonamn.
@@ -57,7 +57,7 @@ Cmdlet          Resume-Service                  Resume-Service [-Name] <Stri...
 Cmdlet          Set-Service                     Set-Service [-Name] <String>...
 Cmdlet          Start-Service                   Start-Service [-Name] <Strin...
 Cmdlet          Stop-Service                    Stop-Service [-Name] <String...
-Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str... 
+Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str...
 ...
 ```
 
@@ -91,4 +91,3 @@ Windows PowerShell har flera parametrar som kallas *gemensamma parametrar*. Efte
 Windows PowerShell core-cmdletarna använder standard namn liknande parametrar. Användning av parameternamn inte tillämpas, finns det uttrycklig vägledning för användning att uppmuntra standardisering.
 
 Till exempel riktlinjerna rekommenderar namn en parameter som refererar till en dator med namnet som **ComputerName**, i stället för Server, värd, System, nod eller andra vanliga alternativa ord. Bland parametern viktiga föreslagna namn är **kraft**, **undanta**, **inkludera**, **PassThru**, **sökvägen**, och **CaseSensitive**.
-

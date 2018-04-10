@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: WMF, powershell, inställning
+ms.openlocfilehash: cedda61241df4965fe5db723f03e3497f046fa44
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="extract-and-parse-structured-objects-out-of-string"></a>Extrahera och parsa strukturerade objekt utanför sträng
+# <a name="extract-and-parse-structured-objects-out-of-string"></a>Extrahera och parsa strukturerade objekt från sträng
 Det skapar också några ytterligare funktioner för ConvertFrom-String-cmdlet:
 
 -   Tar bort egenskapen text omfattning som standard. Du kan inkludera den med parametern - IncludeExtent.
@@ -67,7 +67,7 @@ Kopiera några exempel till en fil som du vill använda som mallen:
 
     Renton, WA
 
-   
+
 
 Placera klammerparenteser runt data som du vill extrahera, ger den ett namn som du gör. Eftersom den **namn** egenskapen (och dess associerade andra egenskaper) kan visas flera gånger, Använd en asterisk (\*) att indikera att detta resulterar i flera poster (i stället för att extrahera en massa egenskaper till en post):
 
@@ -90,4 +90,3 @@ Från den här uppsättningen exempel **ConvertFrom sträng** kan nu automatiskt
 > ANA Trujillo...                ANA Trujillo Redmond, WA Antonio Moreno...              Antonio Moreno Renton WA Thomas Hardy...                Thomas Hardy Seattle WA Christina Berglund...          Christina Berglund Redmond  WA Hanna Moos...                  Hanna Moos Puyallup WA
 
 Att göra ytterligare datamanipulering på extraherade text i **ExtentText** egenskapen fångar oformaterade texten som posten extraherades. Ge feedback om den här funktionen eller dela innehåll som du har problem med skrivning till exempel e-postmeddelande till <psdmfb@microsoft.com>.
-

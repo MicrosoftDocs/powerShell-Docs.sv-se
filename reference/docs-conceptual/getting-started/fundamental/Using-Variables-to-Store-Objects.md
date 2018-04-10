@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: "Använda variabler för att lagra objekt"
+title: Använd variabler för att lagra objekt
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: 9a95d421fa2686608a565987c16fecc41c3c6d20
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: e52f0a344d0ad13db42b34bed912d584c99b0e30
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-variables-to-store-objects"></a>Använda variabler för att lagra objekt
+# <a name="using-variables-to-store-objects"></a>Använd variabler för att lagra objekt
 PowerShell fungerar med objekt. PowerShell kan du skapa variabler som i stort sett heter objekt att bevara utdata för senare användning. Om du har använt för att arbeta med variabler i andra tankar Kom ihåg att PowerShell variabler objekt, inte text.
 
 Variabler anges alltid med det första tecknet $ och kan innehålla alfanumeriska tecken eller understreck i sina namn.
@@ -97,4 +97,3 @@ C:\WINDOWS
 ```
 
 Du kan också skapa och ändra miljövariabler i PowerShell. Miljövariabler som nås från Windows PowerShell stämmer överens med de vanliga reglerna för miljövariabler någon annanstans i Windows.
-

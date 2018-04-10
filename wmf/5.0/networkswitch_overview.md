@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: 4868cf657f678ee43a6c92d5ee286e9ddb490964
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: WMF, powershell, inställning
+ms.openlocfilehash: 2b6b81d250c3d745f3ab21ebadb9a657583638b0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="network-switch-management-with-powershell"></a>Växeln nätverkshantering med PowerShell
+# <a name="network-switch-management-with-powershell"></a>Hantering av nätverksväxling med PowerShell
 
 Den **Get-NetworkSwitchEthernetPort** cmdlet returnerar nu följande information med instanser:
 
@@ -70,4 +70,3 @@ PS> Get-Command *-NetworkSwitch*
 ```
 
 Mer information finns i blogginlägget för Jeffrey Snover WMF 5.0 Preview meddelande: <http://blogs.technet.com/b/windowsserver/archive/2014/04/03/windows-management-framework-v5-preview.aspx>
-

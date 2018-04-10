@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
-title: "Felsökning av åtkomstproblem i windows powershell-webbåtkomst"
-ms.openlocfilehash: 6e51df3f4c6ac196c855ad918a91394d02c7d75e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Felsökning av åtkomstproblem i windows powershell-webbåtkomst
+ms.openlocfilehash: ef476d8e386e5380cb2c9dda69180dfce8748bf4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Felsökning av åtkomstproblem i Windows PowerShell-webbåtkomst
 
@@ -130,7 +130,7 @@ Det går inte att logga in på en måldator som har angetts i auktoriseringsregl
 Auktoriseringsregler stöder inte en IPv6-adress i form av ett domännamn.
 
 Använd en IPv6-adress (som innehåller kolon) om du vill ange en måldator med hjälp av en IPv6-adress i auktoriseringsregeln.
-Både domänbaserade och numeriska (med kolon) IPv6-adresser stöds som Måldatornamn på sidan för Windows PowerShell Web Access, men inte i auktoriseringsregler. 
+Både domänbaserade och numeriska (med kolon) IPv6-adresser stöds som Måldatornamn på sidan för Windows PowerShell Web Access, men inte i auktoriseringsregler.
 
 Mer information om IPv6-adresser finns [så här fungerar IPv6](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx).
 

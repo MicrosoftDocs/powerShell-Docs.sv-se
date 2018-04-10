@@ -58,7 +58,7 @@ Om du vill använda en specifik installation av PowerShell med Visual Studio Cod
 
 1. Klicka på **Arkiv -> Inställningar -> Inställningar**
 1. Två editor fönster visas.
-   I rutan längst till höger (`settings.json`), infoga inställningen nedan lämpliga för ditt operativsystem någonstans mellan två klammerparenteser (`{` och `}`) och Ersätt  *<version>*  med den installerade PowerShell-version:
+   I rutan längst till höger (`settings.json`), infoga inställningen nedan lämpliga för ditt operativsystem någonstans mellan två klammerparenteser (`{` och `}`) och Ersätt *<version>* med den installerade PowerShell-version:
 
   ```json
     // On Windows:

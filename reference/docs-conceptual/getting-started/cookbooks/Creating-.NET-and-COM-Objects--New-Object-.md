@@ -1,18 +1,20 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: "Skapa nytt objekt för .NET och COM-objekt"
+title: Skapa nytt objekt för .NET och COM-objekt
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
-ms.openlocfilehash: 534e1a9a759d67cfc62ce658a7abddf02f767212
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 1ffd8d4afa419ec0c24321e44aa4a2f41a9bee44
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>Skapa .NET och COM-objekt (nya objekt)
+
 Det är programkomponenter med .NET Framework och COM-gränssnitt som gör att du kan utföra administrationsuppgifter för många system. Windows PowerShell kan du använda de här komponenterna så att du inte är begränsad till de uppgifter som kan utföras med hjälp av cmdlet: ar. Många av cmdletar i den första versionen av Windows PowerShell fungerar inte mot fjärrdatorer. Visar vi hur du komma runt denna begränsning vid hantering av händelseloggar med hjälp av .NET Framework **system.Diagnostics.Eventlog och** klass direkt från Windows PowerShell.
 
 ### <a name="using-new-object-for-event-log-access"></a>Med nytt objekt för åtkomst till Loggboken
+
 .NET Framework-Klassbiblioteket innehåller en klass som heter **system.Diagnostics.Eventlog och** som kan användas för att hantera händelseloggar. Du kan skapa en ny instans av en .NET Framework-klass med hjälp av den **New-Object** med den **TypeName** parameter. Till exempel skapar följande kommando en referens i händelseloggen:
 
 ```
@@ -25,6 +27,7 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 Även om kommandot har skapat en instans av klassen EventLog, innehåller instansen inte några data. Det beror på att vi inte har angett en viss händelselogg. Hur skaffar du en verklig händelselogg
 
 #### <a name="using-constructors-with-new-object"></a>Använda konstruktorer med nytt objekt
+
 Refererar till en specifik händelselogg, måste du ange namnet på loggen. **Nytt objekt** har en **ArgumentList** parameter. Argument som du skickar som värden för den här parametern används av en särskild startmetoden för objektet. Metoden anropas en *konstruktorn* eftersom den används för att skapa objektet. Till exempel för att få en referens till programloggen kan ange du strängen ”program” som ett argument:
 
 ```
@@ -39,6 +42,7 @@ Max(K) Retain OverflowAction        Entries Name
 > Eftersom de flesta av .NET Framework-kärnklasser finns i namnrymden System, försöker Windows PowerShell automatiskt hitta klasser som du anger i namnrymden System om den inte finns en matchning för typename som du anger. Det innebär att du kan ange Diagnostics.EventLog i stället för system.Diagnostics.Eventlog och.
 
 #### <a name="storing-objects-in-variables"></a>Lagra objekt i variabler
+
 Du kanske vill lagra en referens till ett objekt så att du kan använda den i den aktuella shell. Även om Windows PowerShell kan du göra mycket arbete med pipelines, inskränkning behovet av variabler, gör ibland spara referenser till objekt i variabler det enklare att hantera dessa objekt.
 
 Windows PowerShell kan du skapa variabler som är i stort sett namngivna objekt. Utdata från alla giltiga Windows PowerShell-kommando kan lagras i en variabel. Variabelnamn börjar alltid med $. Om du vill lagra program loggreferens i en variabel med namnet $AppLog, skriver du namnet på variabeln, följt av ett likhetstecken och Skriv det kommando som används för att skapa loggfilen programobjektet:
@@ -58,6 +62,7 @@ PS> $AppLog
 ```
 
 #### <a name="accessing-a-remote-event-log-with-new-object"></a>Åtkomst till en fjärrhantering av händelseloggen med nya objekt
+
 De kommandon som används i föregående avsnitt rikta den lokala datorn. den **Get-EventLog** cmdlet kan göra det. För att komma åt programloggen på en fjärrdator måste du ange både namnet på loggen och ett datornamn (eller IP-adress) som argument.
 
 ```
@@ -72,6 +77,7 @@ PS> $RemoteAppLog
 Nu när vi har en referens till en händelselogg som lagras i variabeln $RemoteAppLog uppgifter kan vi utföra på den?
 
 #### <a name="clearing-an-event-log-with-object-methods"></a>Rensa en händelselogg med objektmetoder
+
 Objekt har ofta metoder som kan användas för att utföra uppgifter. Du kan använda **Get-medlemmen** att visa vilka metoder som associeras med ett objekt. Följande kommando och valda visar några metoder i klassen händelseloggen:
 
 ```
@@ -118,7 +124,7 @@ Du kan använda **New-Object** att arbeta med COM Component Object Model ()-komp
 
 Du kan skapa WSH-objekt genom att ange dessa ProgID: **WScript.Shell**, **WScript.Network**, **Scripting.Dictionary**, och  **Scripting.FileSystemObject**. Dessa objekt skapar du följande kommandon:
 
-```
+```powershell
 New-Object -ComObject WScript.Shell
 New-Object -ComObject WScript.Network
 New-Object -ComObject Scripting.Dictionary
@@ -128,9 +134,10 @@ New-Object -ComObject Scripting.FileSystemObject
 Även om de flesta av funktionerna i de här klasserna görs tillgänglig på andra sätt i Windows PowerShell är några uppgifter som att skapa genväg fortfarande lättare att göra med hjälp av WSH-klasser.
 
 ### <a name="creating-a-desktop-shortcut-with-wscriptshell"></a>Skapa en genväg på skrivbordet med WScript.Shell
+
 En uppgift som kan utföras snabbt med ett COM-objekt är att skapa en genväg. Anta att du vill skapa en genväg på skrivbordet som länkar till arbetsmappen för Windows PowerShell. Först måste du skapa en referens till **WScript.Shell**, som vi lagrar i en variabel med namnet **$WshShell**:
 
-```
+```powershell
 $WshShell = New-Object -ComObject WScript.Shell
 ```
 
@@ -150,7 +157,6 @@ CreateShortcut           Method                IDispatch CreateShortcut (str...
 
 **Get-medlemmen** har en valfri **InputObject** parameter som används i stället för omdirigering för att ange indata för **Get-medlemmen**. Du skulle få samma utdata som visas ovan om du i stället använde kommandot **Get-medlem - InputObject $WshShell**. Om du använder **InputObject**, det behandlar argument som ett enskilt objekt. Detta innebär att om du har flera objekt i en variabel **Get-medlemmen** behandlar dem som en matris med objekt. Till exempel:
 
-
 ```
 PS> $a = 1,2,"three"
 PS> Get-Member -InputObject $a
@@ -163,7 +169,7 @@ Count              AliasProperty Count = Length
 
 Den **WScript.Shell CreateShortcut** metoden godkänner ett argument, sökvägen till genvägsfilen för att skapa. Vi kan ange den fullständiga sökvägen till skrivbordet, men det finns ett enklare sätt. Skrivbordet representeras normalt av en mapp med namnet skrivbordet i arbetsmappen för den aktuella användaren. Windows PowerShell har en variabel **$Home** som innehåller sökvägen till den här mappen. Vi kan ange sökvägen till arbetsmappen med hjälp av den här variabeln och Lägg sedan till namnet på mappen Skrivbord och namnet på genvägen till skapa genom att skriva:
 
-```
+```powershell
 $lnk = $WshShell.CreateShortcut("$Home\Desktop\PSHome.lnk")
 ```
 
@@ -191,17 +197,18 @@ TargetPath       Property     string TargetPath () {get} {set}
 
 Vi behöver ange den **TargetPath**, vilket är programmappen för Windows PowerShell och sedan spara genvägen **$lnk** genom att anropa den **spara** metod. Sökvägen till Windows PowerShell programmet lagras i variabeln **$PSHome**, så vi kan göra detta genom att skriva:
 
-```
+```powershell
 $lnk.TargetPath = $PSHome
 $lnk.Save()
 ```
 
 ### <a name="using-internet-explorer-from-windows-powershell"></a>Med hjälp av Internet Explorer från Windows PowerShell
+
 Många program (inklusive Microsoft Office-familjen av program och Internet Explorer) kan automatiseras med hjälp av COM. Internet Explorer visar några av de vanliga tekniker och problem som ingår i att arbeta med COM-baserade program.
 
 Du skapar en instans av Internet Explorer genom att ange den Internet Explorer ProgId, **InternetExplorer.Application**:
 
-```
+```powershell
 $ie = New-Object -ComObject InternetExplorer.Application
 ```
 
@@ -212,25 +219,25 @@ Detta kommando startar Internet Explorer, men göra inte den synlig. Om du skriv
 
 Genom att skriva **$ie | Get-medlemmen**, du kan visa egenskaper och metoder för Internet Explorer. Visa Internet Explorer-fönstret genom att ange egenskapen Visible till $true genom att skriva:
 
-```
+```powershell
 $ie.Visible = $true
 ```
 
 Sedan kan du gå till en specifik webbadress med hjälp av metoden analysera:
 
-```
+```powershell
 $ie.Navigate("http://www.microsoft.com/technet/scriptcenter/default.mspx")
 ```
 
 Med andra medlemmar i objektmodellen i Internet Explorer är det möjligt att hämta textinnehåll från webbsidan. Följande kommando visar HTML-texten i brödtexten för den aktuella webbsidan:
 
-```
+```powershell
 $ie.Document.Body.InnerText
 ```
 
 Stäng Internet Explorer från PowerShell genom att anropa dess Quit()-metoden:
 
-```
+```powershell
 $ie.Quit()
 ```
 
@@ -247,7 +254,7 @@ At line:1 char:16
 
 Du kan antingen ta bort de återstående referera med ett kommando som $ie = $null eller ta bort variabeln helt genom att skriva:
 
-```
+```powershell
 Remove-Variable ie
 ```
 
@@ -255,6 +262,7 @@ Remove-Variable ie
 > Det finns ingen gemensam standard för om ActiveX körbara filer avsluta eller fortsätta att köras när du tar bort en referens till en. Beroende på omständigheter som anger om programmet är synliga, om ett redigerat dokument körs i den och även om Windows PowerShell fortfarande körs programmet kan eller kan inte avslutas. Därför bör du testa avslutning beteendet för varje ActiveX körbara du vill använda i Windows PowerShell.
 
 ### <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>Visa varningar om .NET Framework radbrutet COM-objekt
+
 I vissa fall kan ett COM-objekt kan ha en associerad .NET Framework *Runtime-Callable Wrapper* eller RCW och det här kan användas av **New-Object**. Eftersom beteendet för RCW kan skilja sig från beteendet för normal COM-objektet **New-Object** har en **strikt** parametern för att varna dig om RCW åtkomst. Om du anger den **strikt** parameter och sedan skapa ett COM-objekt som använder en RCW, du får ett varningsmeddelande:
 
 ```
@@ -269,4 +277,3 @@ At line:1 char:17
 ```
 
 Även om det fortfarande skapas, varnas du att det inte är ett standard COM-objekt.
-

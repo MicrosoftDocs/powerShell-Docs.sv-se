@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, inställning"
-ms.openlocfilehash: 5dbaa126cf9ae3917c3a8787ffc5ef5ac77b19c1
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+keywords: WMF, powershell, inställning
+ms.openlocfilehash: 43b26426a76b6503a83e35ae0c02a0af69902ed6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="declare-base-class"></a>Deklarera basklass
 Du kan deklarera en Windows PowerShell-klass som bastyp för en annan Windows PowerShell-klass.
@@ -15,7 +15,7 @@ Du kan deklarera en Windows PowerShell-klass som bastyp för en annan Windows Po
 ```powershell
 class bar
 {
-   [int]foo() 
+   [int]foo()
        {
            return 100500
        }
@@ -31,7 +31,7 @@ Du kan också använda befintliga .NET Framework-typer som basklasser:
 ```powershell
 class MyIntList : system.collections.generic.list[int]
 {
-    
+
 }
 
 $list = [MyIntList]::new()
@@ -40,4 +40,3 @@ $list.Add(100)
 
 $list[0] # return 100
 ```
-

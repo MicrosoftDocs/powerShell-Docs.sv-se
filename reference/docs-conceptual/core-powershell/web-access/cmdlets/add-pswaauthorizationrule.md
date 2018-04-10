@@ -1,17 +1,17 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell-cmdlet
-ms.date: 2016-12-12
-title: "Lägg till pswaauthorizationrule"
+ms.date: 12/12/2016
+title: Lägg till pswaauthorizationrule
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 71954fc115daee4c05662d11baa2bc6a0a417896
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 07ddd4df6a776f3ef6763242f8682747b9b97061
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -62,7 +62,7 @@ Auktoriseringsregler utvärdera primära inloggning inloggningsuppgifterna för 
 
 Anger namnet på en datorgrupp i Active Directory Domain Services (AD DS) eller lokala grupper som den här regeln beviljar åtkomst.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | true                                 |
@@ -75,7 +75,7 @@ Anger namnet på en datorgrupp i Active Directory Domain Services (AD DS) eller 
 
 Anger namnet på datorn som den här regeln beviljar åtkomst.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | true                                 |
@@ -88,7 +88,7 @@ Anger namnet på datorn som den här regeln beviljar åtkomst.
 
 Anger namnet på sessionskonfigurationen för Windows PowerShell, även kallat runspace, som den här regeln beviljar åtkomst.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | true                                 |
@@ -101,7 +101,7 @@ Anger namnet på sessionskonfigurationen för Windows PowerShell, även kallat r
 
 Anger en **PSCredential** objekt för ett användarkonto som du vill använda för att ändra auktoriseringsregler för Windows PowerShell Web Access. Om du inte lägga till den här parametern används cmdlet det inloggade användarkontot. Få en **PSCredential** -objektet, vilket krävs för att lägga till auktoriseringsregler från en fjärrdator genom att köra den [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) cmdlet.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
@@ -115,7 +115,7 @@ Anger en **PSCredential** objekt för ett användarkonto som du vill använda f�
 Tvingar kommandot att köras utan bekräftelse från användaren. \
 Dessutom kan uppmanas den också att bekräfta när du anger ett enkelt eller kort datornamn (till exempel ett namn som inte är ett domännamn eller är inte fullständigt kvalificerad). Bekräftelse har begärts av säkerhetsskäl så att du kan använda enkla namn till bara lägga till en dator om datorn är i en arbetsgrupp.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
@@ -128,7 +128,7 @@ Dessutom kan uppmanas den också att bekräfta när du anger ett enkelt eller ko
 
 Anger det egna namnet för den här regeln.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
@@ -141,7 +141,7 @@ Anger det egna namnet för den här regeln.
 
 Anger namnet på en eller flera användargrupper i AD DS eller grupper som den här regeln beviljar åtkomst.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | true                                 |
@@ -155,7 +155,7 @@ Anger namnet på en eller flera användargrupper i AD DS eller grupper som den h
 Anger en eller flera användare som den här regeln beviljar åtkomst. Användarnamnet kan vara ett lokalt användarkonto på gateway-datorn eller en användare i AD DS.
 Formatet är `domain\user` eller `computer\user`.
 
-|||  
+|||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | true                                 |
@@ -217,9 +217,9 @@ Det här exemplet illustrerar hur du indatavärden user name via pipeline.
 Det här exemplet illustrerar hur alla parametrar tar värden från pipeline genom egenskapsnamn.
 
 ````PowerShell
-$o = New-Object -TypeName PSObject | 
-    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru | 
-    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru | 
+$o = New-Object -TypeName PSObject |
+    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru |
+    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru |
     Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
 
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell
