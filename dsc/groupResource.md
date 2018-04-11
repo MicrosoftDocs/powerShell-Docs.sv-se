@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
-title: "Tillgänglighetsgruppsresursen DSC"
-ms.openlocfilehash: 8a2087455a72ec1f368f890b62228b31cf4ec95a
-ms.sourcegitcommit: c72c76f6ed77b3e6f26fef3e8784b157bfc19355
+title: Tillgänglighetsgruppsresursen DSC
+ms.openlocfilehash: 6a4732439bb45e36fa9201975f12194442611002
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-group-resource"></a>Tillgänglighetsgruppsresursen DSC
 
@@ -42,7 +42,7 @@ Group [string] #ResourceName
 | Medlemmar| Använd den här egenskapen för att ersätta det aktuella gruppmedlemskapet med de angivna medlemmarna. Värdet för den här egenskapen är en matris med strängar i formuläret *domän*\\*användarnamn*. Om du anger den här egenskapen i en konfiguration, bör inte använda någon av **MembersToExclude** eller **MembersToInclude** egenskapen. Detta genererar ett fel.|
 | MembersToExclude| Ta bort medlemmar från det befintliga medlemskapet i gruppen med hjälp av den här egenskapen. Värdet för den här egenskapen är en matris med strängar i formuläret *domän*\\*användarnamn*. Om du anger den här egenskapen i en konfiguration kan du inte använda den **medlemmar** egenskapen. Detta genererar ett fel.|
 | MembersToInclude| Använd den här egenskapen för att lägga till medlemmar i det befintliga medlemskapet i gruppen. Värdet för den här egenskapen är en matris med strängar i formuläret *domän*\\*användarnamn*. Om du anger den här egenskapen i en konfiguration kan du inte använda den **medlemmar** egenskapen. Detta genererar ett fel.|
-| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis __ResourceName__ och dess typ är __ResourceType__, syntaxen för den här egenskapen är ”DependsOn =” [ResourceType] ResourceName ”''.|
+| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis __ResourceName__ och dess typ är __ResourceType__, syntaxen för den här egenskapen är ”DependsOn =”[ResourceType] ResourceName ”''.|
 
 ## <a name="example-1"></a>Exempel 1
 
