@@ -3,15 +3,18 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Metodtips för hämtningsservern
-ms.openlocfilehash: 7de523ad16aee77d87ec4d3334d296997020aa19
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d8d8667e2fc608e0c5948a0b5046bf92801b49db
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="pull-server-best-practices"></a>Metodtips för hämtningsservern
 
 >Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> Pull-Server (Windows-funktionen *DSC-Service*) är en stöds komponent i Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att börja övergång hanteras klienter [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (omfattar funktioner utöver Pull-Server på Windows Server) eller någon av community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
 
 Sammanfattning: Det här dokumentet är avsett att inkludera processen och utökningsbarhet att hjälpa tekniker som förbereder för lösningen. Information bör ge bästa praxis som identifieras av kunder och sedan verifieras av Produktteamet för att säkerställa rekommendationer framtida riktade och anses vara stabil.
 

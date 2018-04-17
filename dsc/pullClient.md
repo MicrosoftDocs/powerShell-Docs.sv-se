@@ -3,18 +3,20 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Installera en DSC pull-klient
-ms.openlocfilehash: e6d73187566db2756ae24dabe0a825fffb5ecce0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 4c56671313b93cc12ce9460ce41e1710e0d6a526
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="setting-up-a-dsc-pull-client"></a>Installera en DSC pull-klient
 
 > Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Varje målnoden måste uppmanas att använda pull-läge och angivna URL- eller platsen där den kontaktar pull-servern för att hämta konfigurationer och resurser och den bör skicka rapportdata.
+> [!IMPORTANT]
+> Pull-Server (Windows-funktionen *DSC-Service*) är en stöds komponent i Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att börja övergång hanteras klienter [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (omfattar funktioner utöver Pull-Server på Windows Server) eller någon av community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
 
+Varje målnoden måste uppmanas att använda pull-läge och angivna URL- eller platsen där den kontaktar pull-servern för att hämta konfigurationer och resurser och den bör skicka rapportdata.
 
 I följande avsnitt förklaras hur du ställer in pull-klienter:
 

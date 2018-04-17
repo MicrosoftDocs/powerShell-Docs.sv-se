@@ -1,17 +1,20 @@
 ---
-ms.date: 06/12/2017
+ms.date: 04/11/2018
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Konfigurera en DSC SMB-hämtningsserver
-ms.openlocfilehash: e9228c050d6f496e30e94404a564ed2e425a5412
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e4e313746e95af86c5d17a8de0549451b1399b6c
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Konfigurera en DSC SMB-hämtningsserver
 
 >Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> Pull-Server (Windows-funktionen *DSC-Service*) är en stöds komponent i Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att börja övergång hanteras klienter [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (omfattar funktioner utöver Pull-Server på Windows Server) eller någon av community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
 
 En DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) pull-server är en dator som värd för SMB-filresurser som gör DSC-konfigurationsfiler och DSC resurser tillgängliga för målnoder när de noderna som ber om.
 

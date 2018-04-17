@@ -3,15 +3,18 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Konfigurera en hämtningsklient med konfigurations-ID
-ms.openlocfilehash: 93e533fd4e729e1af0124ad69ca7e384e1cb3aa4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 95dfb4a182f9ecf592ae8c53e47fde4418ed6a8a
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id"></a>Konfigurera en hämtningsklient med konfigurations-ID
 
 > Gäller för: Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> Pull-Server (Windows-funktionen *DSC-Service*) är en stöds komponent i Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att börja övergång hanteras klienter [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (omfattar funktioner utöver Pull-Server på Windows Server) eller någon av community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
 
 Varje målnoden måste vara ett meddelande om att använda pull-läge och de angivna URL: en där den kontaktar pull-servern för att hämta konfigurationer. Du måste konfigurera lokala Configuration Manager (MGM) med informationen som behövs för att göra detta. Om du vill konfigurera MGM om du skapar en särskild typ av konfiguration, med den **DSCLocalConfigurationManager** attribut. Mer information om hur du konfigurerar MGM finns [konfigurera den lokala Configuration Manager](metaConfig.md).
 

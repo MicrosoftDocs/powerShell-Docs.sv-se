@@ -118,7 +118,7 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1704"></a>Ubuntu 17.04
+## <a name="ubuntu-1704"></a>Ubuntu nr 17.04 från
 
 ### <a name="installation-via-package-repository---ubuntu-1704"></a>Installation via Paketdatabasen - Ubuntu nr 17.04 från
 
@@ -588,10 +588,10 @@ När nya versioner av PowerShell släpps uppdatera Homebrews formler och uppgrad
 
 ```sh
 brew update
-brew cask reinstall powershell
+brew cask upgrade powershell
 ```
 
-> Obs: grund av [problemet i Cask](https://github.com/caskroom/homebrew-cask/issues/29301), du har för närvarande att göra en ominstallation att uppgradera.
+> Obs: Kommandona ovan kan anropas från en värd med PowerShell (pwsh), men sedan PowerShell-gränssnittet måste avslutades och angavs igen för att slutföra uppgraderingen och uppdatera värdena som visas i $PSVersionTable.
 
 [brew]: http://brew.sh/
 [cask]: https://caskroom.github.io/
@@ -703,11 +703,11 @@ Följande diagram visar beroenden för .NET Core 2.0 på olika Linux-distributio
 
 | Operativsystem                 | Beroenden |
 | ------------------ | ------------ |
-| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
-| Ubuntu 17.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
-| Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
+| Ubuntu 14.04       | libc6 ust0-libgcc1, libgssapi-krb5-2, liblttng, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Ubuntu 16.04       | libc6 ust0-libgcc1, libgssapi-krb5-2, liblttng, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
+| Ubuntu nr 17.04 från       | libc6 ust0-libgcc1, libgssapi-krb5-2, liblttng, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
+| Debian 8 (Jessie)  | libc6 ust0-libgcc1, libgssapi-krb5-2, liblttng, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Debian 9 (Stretch) | libc6 ust0-libgcc1, libgssapi-krb5-2, liblttng, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
 | CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 <br> Fedora 25 | libunwind, libcurl, openssl-bibliotek, libicu |
 | Fedora 26          | libunwind, libcurl, openssl-bibliotek, libicu, kompatibilitets-openssl10 |
 

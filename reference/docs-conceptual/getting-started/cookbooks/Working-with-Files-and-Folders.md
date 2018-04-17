@@ -3,28 +3,28 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Arbeta med filer och mappar
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-ms.openlocfilehash: e47ea00c9d90d7e04a7af0cb1348849410a6e357
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 6b1fcd438570c8708aa87e4b213f33474921d5f8
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="working-with-files-and-folders"></a>Arbeta med filer och mappar
 
-Navigera i Windows PowerShell-enheter och manipulera objekten på dem liknar manipulera filer och mappar på Windows fysiska hårddiskar. Vi upp hur du arbetar med specifika fil- och manipulation uppgifter i det här avsnittet.
+Navigera i Windows PowerShell-enheter och manipulera objekten på dem liknar manipulera filer och mappar på Windows fysiska hårddiskar. Det här avsnittet beskrivs hur du arbetar med specifika fil- och manipulation aktiviteter som använder PowerShell.
 
 ### <a name="listing-all-the-files-and-folders-within-a-folder"></a>Visar en lista över alla filer och mappar i en mapp
 
 Du kan hämta alla objekt direkt i en mapp med hjälp av **Get-ChildItem**. Lägga till valfria **kraft** parametern för att visa dolda eller system-objekt. Detta kommando visar till exempel direkt innehållet i Windows PowerShell-enhet C (vilket är samma som den fysiska Windows-enheten C):
 
 ```powershell
-Get-ChildItem -Force C:\
+Get-ChildItem -Path C:\ -Force
 ```
 
 Kommandot visas endast de direkt objekten, ungefär som använder Cmd.exe's **DIR** kommando eller **ls** i ett UNIX-gränssnitt. För att kunna visa objekten, måste du ange den **-Recurse** samt parametern. (Detta kan ta en mycket lång tid att slutföra.) Att visa allt på enhet C:
 
 ```powershell
-Get-ChildItem -Force C:\ -Recurse
+Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
 **Get-ChildItem** kan filtrera objekt med dess **sökväg**, **Filter**, **inkludera**, och **undanta** parametrar, men de är Vanligtvis baseras endast på namn. Du kan utföra komplexa filtrering baserat på andra egenskaper för objekt med hjälp av **Where-Object**.
@@ -40,33 +40,33 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 Kopieringen är klar med **Copy-Item**. Följande kommando säkerhetskopierar C:\\boot.ini till C:\\boot.bak:
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
 ```
 
-Kopiera försöket misslyckas om filen redan finns. Använd Force-parametern om du vill ersätta en befintlig plats:
+Kopiera försöket misslyckas om filen redan finns. Om du vill ersätta en befintlig plats använder den **kraft** parameter:
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak -Force
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 ```
 
 Det här kommandot fungerar även när målet är skrivskyddat.
 
-Kopiera mappen fungerar på samma sätt. Det här kommandot kopieras mappen C:\\temp\\test1 till den nya mappen c:\\temp\\DeleteMe rekursivt:
+Kopiera mappen fungerar på samma sätt. Det här kommandot kopieras mappen C:\\temp\\test1 till den nya mappen C:\\temp\\DeleteMe rekursivt:
 
 ```powershell
-Copy-Item C:\temp\test1 -Recurse c:\temp\DeleteMe
+Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
 Du kan också kopiera ett urval av objekt. I följande kopieras alla txt-filer som finns någonstans i c:\\data till c:\\temp\\text:
 
 ```powershell
-Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination c:\temp\text
+Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
 Du kan fortfarande använda andra verktyg för att kopiera system. XCOPY ROBOCOPY och COM-objekt, som den **Scripting.FileSystemObject,** alla fungerar i Windows PowerShell. Du kan till exempel använda Windows Script Host **Scripting.FileSystem COM** klassen för att säkerhetskopiera C:\\boot.ini till C:\\boot.bak:
 
 ```powershell
-(New-Object -ComObject Scripting.FileSystemObject).CopyFile('c:\boot.ini', 'c:\boot.bak')
+(New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
 ### <a name="creating-files-and-folders"></a>Skapa filer och mappar
@@ -90,7 +90,7 @@ New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 Du kan ta bort ingående objekt med hjälp av **ta bort objektet**, men du uppmanas att bekräfta borttagningen om artikeln innehåller någonting annat. Till exempel om du försöker ta bort mappen C:\\temp\\DeleteMe som innehåller andra objekt, Windows PowerShell uppmanar dig att bekräfta innan du tar bort mappen:
 
 ```
-Remove-Item C:\temp\DeleteMe
+Remove-Item -Path C:\temp\DeleteMe
 
 Confirm
 The item at C:\temp\DeleteMe has children and the -recurse parameter was not
@@ -103,7 +103,7 @@ sure you want to continue?
 Ange om du inte vill uppmanas att varje objekt som innesluts i **Recurse** parameter:
 
 ```powershell
-Remove-Item C:\temp\DeleteMe -Recurse
+Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
 ### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Mappning av en lokal mapp som en tillgänglig enhet för Windows
