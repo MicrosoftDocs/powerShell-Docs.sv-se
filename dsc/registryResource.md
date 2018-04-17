@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Resurs för DSC-registret
-ms.openlocfilehash: fcd24b1dd729dbb0abd697a4a628dce01fdd5422
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 98e9a6251cb4e55443498bd770b4c563c25c7509
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="dsc-registry-resource"></a>Resurs för DSC-registret
 
@@ -22,7 +22,7 @@ Registry [string] #ResourceName
 {
     Key = [string]
     ValueName = [string]
-    [ Ensure = [string] { Enable | Disable }  ]
+    [ Ensure = [string] { Present | Absent }  ]
     [ Force =  [bool]   ]
     [ Hex = [bool] ]
     [ DependsOn = [string[]] ]
@@ -42,10 +42,10 @@ Registry [string] #ResourceName
 | dependsOn| Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis __ResourceName__ och dess typ är __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
 | ValueData| Data för registervärdet.|
 | Värdetyp| Anger vilken typ av värdet. Typerna som stöds är:
-<ul><li>String (REG_SZ)</li>
+<ul><li>Sträng (REG_SZ)</li>
 
 
-<li>Binary (REG-BINARY)</li>
+<li>Binär (REG-BINARY)</li>
 
 
 <li>DWORD 32-bitars (REG_DWORD)</li>
@@ -54,7 +54,7 @@ Registry [string] #ResourceName
 <li>Qword 64-bitars (REG_QWORD)</li>
 
 
-<li>Multi-string (REG_MULTI_SZ)</li>
+<li>Multisträng (REG_MULTI_SZ)</li>
 
 
 <li>Utbyggbara sträng (REG_EXPAND_SZ)</li></ul>
