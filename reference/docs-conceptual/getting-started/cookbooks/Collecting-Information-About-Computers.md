@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Samla in information om datorer
 ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-ms.openlocfilehash: c914a7133a1ac0a05346233db802175f7f29c6b2
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7f5a5f6accd57a84e2bcb3d20c14640a8e028791
+ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="collecting-information-about-computers"></a>Samla in information om datorer
 
@@ -32,7 +32,7 @@ Detta returnerar information för alla datorer, oavsett om de är används eller
 Get-WmiObject -Class Win32_Desktop -ComputerName . | Select-Object -Property [a-z]*
 ```
 
-Om du vill filtrera bort metadata, använder du en pipelineoperator (|) för att skicka resultatet av kommandot Get-WmiObject till ** Select-Object - egenskapen [a – z] ***.
+Om du vill filtrera bort metadata, använder du en pipelineoperator (|) för att skicka resultatet av kommandot Get-WmiObject till `Select-Object -Property [a-z]*`.
 
 ### <a name="listing-bios-information"></a>Visar en lista över BIOS-Information
 

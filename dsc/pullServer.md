@@ -3,11 +3,11 @@ ms.date: 04/11/2018
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-hämtningstjänsten
-ms.openlocfilehash: 61b4c0e9cfe1d1d7539cd32da35d2fe50da4b0e3
-ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
+ms.openlocfilehash: 075487be68de82074750e5344a24d6d4c2f2bec5
+ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration Pull-tjänsten
 
@@ -276,3 +276,5 @@ I följande avsnitt beskrivs hur du konfigurerar pull-klienter i detalj:
 - [Windows PowerShell Desired State Configuration-översikt](overview.md)
 - [Tillämpa konfigurationer](enactingConfigurations.md)
 - [Använd en DSC-rapportserver](reportServer.md)
+- [[MS-DSCPM]: Desired State Configuration Pull modellen protokoll](https://msdn.microsoft.com/library/dn393548.aspx)
+- [[MS-DSCPM]: Desired State Configuration Pull modellen protokollet rättelser](https://msdn.microsoft.com/library/mt612824.aspx)

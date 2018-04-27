@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-konfigurationer
-ms.openlocfilehash: 8b44fd9a715c217ee198ea343cdffbfab1193625
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ffeb953048c0a65352618d2ab141ee10ead4c663
+ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="dsc-configurations"></a>DSC-konfigurationer
 
@@ -72,7 +72,7 @@ I det här exemplet, ange namnet på noden genom att skicka den som den **Comput
 ## <a name="compiling-the-configuration"></a>Kompilera konfiguration
 
 Innan du kan tillämpar en konfiguration som du behöver kompileras till en MOF-dokument.
-Det gör du genom att anropa konfigurationen som en PowerShell-funktionen.
+Det gör du genom att anropa konfigurationen som du vill anropa en PowerShell-funktion.
 Den sista raden i exemplet som innehåller namnet på konfigurationen, anropar konfigurationen.
 
 >**Obs:** för att anropa en konfiguration, funktionen måste vara i globalt scope (precis som med andra PowerShell funktioner).
