@@ -34,30 +34,40 @@ Dessutom behöver du aktivera autentisering med lösenord och eventuellt viktiga
 
 ## <a name="setup-on-windows-machine"></a>Installation på Windows-dator
 
-1. [Installera den senaste versionen av PowerShell Core för Windows] []
+1. Installera den senaste versionen av [PowerShell Core för Windows]
     - Berätta om den har stöd för SSH-fjärrkommunikation genom att titta på parameteruppsättningar för New-PSSession
+
     ```powershell
     PS> Get-Command New-PSSession -syntax
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
+
 1. Installera senaste [Win32 OpenSSH] skapa från GitHub använder den [installation] instruktioner
 1. Redigera filen sshd_config på den plats där du installerade Win32 OpenSSH
     - Kontrollera att lösenordsautentisering är aktiverat
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Lägga till en PowerShell-undersystemet post genom att ersätta `c:/program files/powershell/6.0.0/pwsh.exe` med rätt sökväg till den version som du vill använda
-    ```none
+
+    ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
     ```
+
     - Om du vill aktivera autentisering med nyckel
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Starta om tjänsten sshd
+
     ```powershell
     Restart-Service sshd
     ```
+
 1. Lägg till sökvägen där OpenSSH installeras på din sökväg Env variabel
     - Detta bör vara längs linjer `C:\Program Files\OpenSSH\`
     - Detta möjliggör ssh.exe ska finnas
@@ -66,24 +76,33 @@ Dessutom behöver du aktivera autentisering med lösenord och eventuellt viktiga
 
 1. Installera senaste [PowerShell för Linux] skapa från GitHub
 1. Installera [Ubuntu SSH] efter behov
+
     ```bash
     sudo apt install openssh-client
     sudo apt install openssh-server
     ```
+
 1. Redigera filen sshd_config på plats /etc/ssh
     - Kontrollera att lösenordsautentisering är aktiverat
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Lägga till en PowerShell-undersystemet post
-    ```none
+
+    ```
     Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
     ```
+
     - Om du vill aktivera autentisering med nyckel
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Starta om tjänsten sshd
+
     ```bash
     sudo service sshd restart
     ```
@@ -98,22 +117,31 @@ Dessutom behöver du aktivera autentisering med lösenord och eventuellt viktiga
       - Tillåt åtkomst till behöriga användare
 1. Redigera den `sshd_config` fil på plats `/private/etc/ssh/sshd_config`
     - Använd din favorit redigerare eller
+
     ```bash
     sudo nano /private/etc/ssh/sshd_config
     ```
+
     - Kontrollera att lösenordsautentisering är aktiverat
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Lägga till en PowerShell-undersystemet post
-    ```none
+
+    ```
     Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
     ```
+
     - Om du vill aktivera autentisering med nyckel
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Starta om tjänsten sshd
+
     ```bash
     sudo launchctl stop com.openssh.sshd
     sudo launchctl start com.openssh.sshd
@@ -213,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. sudo-kommando fungerar inte i fjärrsessionen till Linux-datorn.
 
-[PowerShell for Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[PowerShell Core för Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH
 [installation]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [PowerShell för Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[PowerShell för MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012
+[PowerShell för MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
