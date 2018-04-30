@@ -9,10 +9,12 @@
           items:
             - name: Installera PowerShell Core i Windows
               href: setup/Installing-PowerShell-Core-on-Windows.md
-            - name: Installera PowerShell Core i macOS och Linux
-              href: setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
+            - name: Installera PowerShell Core i Linux
+              href: setup/Installing-PowerShell-Core-on-Linux.md
+            - name: Installera PowerShell Core i macOS
+              href: setup/Installing-PowerShell-Core-on-macOS.md
             - name: Powershell Core på ARM
-              href: PowerShell-Core-on-ARM.md
+              href: setup/PowerShell-Core-on-ARM.md
         - name: Windows PowerShell
           href: ''
           items:
@@ -87,7 +89,7 @@
                   href: core-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise.md
                 - name: Använd profiler Windows PowerShell ISE
                   href: core-powershell/ise/how-to-use-profiles-in-windows-powershell-ise.md
-                - name: Använd tabbifyllning i skriptfönstret och konsolfönstret
+                - name: Använd tabbifyllning i skript- och konsolfönstret
                   href: core-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
                 - name: Använd konsolfönstret i Windows PowerShell ISE
                   href: core-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
@@ -137,15 +139,15 @@
         - name: Web Access
           href: ''
           items:
-            - name: Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst
+            - name: Auktoriseringsregler och säkerhetsfunktioner
               href: core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
-            - name: Installera och använda Windows PowerShell-webbåtkomst
+            - name: Installation
               href: core-powershell/web-access/install-and-use-windows-powershell-web-access.md
-            - name: Felsökning av åtkomstproblem i Windows PowerShell-webbåtkomst
+            - name: Felsökning av åtkomstproblem
               href: core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
             - name: Avinstallera Windows PowerShell-webbåtkomst
               href: core-powershell/web-access/uninstall-windows-powershell-web-access.md
-            - name: Användning av den webbaserade Windows PowerShell-konsolen
+            - name: Användning av den webbaserade PowerShell-konsolen
               href: core-powershell/web-access/use-the-web-based-windows-powershell-console.md
         - name: Arbetsflödesguiden
           href: core-powershell/workflows-guide.md
