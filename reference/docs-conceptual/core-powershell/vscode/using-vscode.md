@@ -25,7 +25,7 @@ Traditionella arbetsbelastningar i Windows PowerShell, se [installera Windows Po
 > [!IMPORTANT]
 > I macOS, måste du installera OpenSSL för PowerShell-tillägget ska fungera korrekt.
 > Det enklaste sättet att göra detta är att installera [Homebrew](http://brew.sh/) och kör sedan `brew install openssl`.
-> PowerShell-tillägget ska nu kunna läsas in.
+> VS-kod kan nu läsa in i PowerShell-tillägget har.
 
 - **Windows**: Följ installationsanvisningarna den [VS köra kod på Windows](https://code.visualstudio.com/docs/setup/windows) sidan
 
@@ -38,13 +38,13 @@ Traditionella arbetsbelastningar i Windows PowerShell, se [installera Windows Po
 
 - Starta **snabbt öppna** genom att trycka på **Ctrl + P** (**Cmd + P** på Mac).
 - Snabb Skriv `ext install powershell` och träffar **RETUR**.
-- Den **tillägg** vyn öppnas på på sidorutan. Välj PowerShell-tillägg från Microsoft.
-  Du ser något som nedan:
+- Den **tillägg** öppnas på på sidorutan. Välj PowerShell-tillägg från Microsoft.
+  Du bör se något som nedan:
 
   ![VSCode](../../images/vscode.png)
 
 - Klicka på den **installera** knappen på PowerShell-tillägg från Microsoft.
-- Efter installationen visas den **installera** knappen övergår i **ladda**.
+- Efter installationen finns i **installera** knappen övergår i **ladda**.
   Klicka på **ladda**.
 - När Visual Studio-koden har ladda, är du redo för redigering.
 
@@ -55,7 +55,7 @@ Avsluta Visual Studio Code **Arkiv -> Avsluta**.
 
 #### <a name="using-a-specific-installed-version-of-powershell"></a>Med hjälp av en viss version av PowerShell
 
-Om du vill använda en specifik installation av PowerShell med Visual Studio Code behöver du lägga till en ny variabel i filen med inställningar.
+Om du vill använda en specifik installation av PowerShell med Visual Studio-koden måste du lägga till en ny variabel i filen med inställningar.
 
 1. Klicka på **Arkiv -> Inställningar -> Inställningar**
 1. Två editor fönster visas.
@@ -96,7 +96,7 @@ Vi rekommenderar följande konfigurationsinställningar för Visual Studio-koden
 
 Du kan felsöka PowerShell-skript utan att öppna den mapp som innehåller PowerShell-skriptet från och med version av Visual Studio Code 1.9.
 Öppnar den PowerShell-skript med **Arkiv -> Öppna fil...** , ange en brytpunkt på en rad (tryck på F9) och tryck på F5 för att starta felsökningen.
-Felsök åtgärdsfönstret visas där du vill starta felsökningsprogrammet, steg, fortsätta och stoppa felsökning visas.
+Du bör se Debug åtgärdsfönstret visas där du vill starta felsökningsprogrammet, steg, fortsätta och stoppa felsökning.
 
 ### <a name="workspace-debugging"></a>Arbetsytan felsökning
 
@@ -120,7 +120,7 @@ Följ dessa steg för att skapa konfigurationsfilen debug:
    Välj **PowerShell**.
 
    När du gör detta skapar en katalog och en fil ”.vscode\launch.json” i roten på arbetsytemappen för Visual Studio-koden.
-   Här sparas där debug-konfiguration. Om filerna finns i en Git-lagringsplats, vill du förmodligen att genomföra launch.json-filen.
+   Här sparas där debug-konfiguration. Om filerna finns i en Git-lagringsplats måste vill du vanligtvis spara filen launch.json.
    Innehållet i filen launch.json är:
 
 ```json
@@ -153,7 +153,7 @@ Följ dessa steg för att skapa konfigurationsfilen debug:
 ```
 
 Detta representerar vanliga scenarier för felsökning.
-Men när du öppnar den här filen i redigeraren, visas en **Lägg till konfiguration...**  knappen.
+Men när du öppnar den här filen i redigeraren kan du se en **Lägg till konfiguration...**  knappen.
 Du kan trycka på knappen för att lägga till flera PowerShell debug-konfigurationer. Är en praktisk konfiguration för att lägga till **PowerShell: starta skriptet**.
 Med den här konfigurationen kan du ange en viss fil med valfria argument som ska startas när du trycker på F5 oavsett vilken fil som för närvarande är aktiv i redigeraren.
 

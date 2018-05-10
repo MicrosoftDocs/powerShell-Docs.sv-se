@@ -3,11 +3,11 @@ ms.date: 10/31/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Skydda MOF-filen
-ms.openlocfilehash: 80ef37ef1bdcb0a8b0ad343b4eab99f1bc66e116
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 00a33a5d628921bcd04aa904a1aa8ee4345af48f
+ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="securing-the-mof-file"></a>Skydda MOF-filen
 
@@ -137,7 +137,7 @@ I följande exempel:
  1. skapar ett certifikat på den **redigering nod**.
  2. exporterar certifikatet inklusive den privata nyckeln på den **redigering nod**.
  3. tar bort den privata nyckeln från den **redigering nod**, men behåller det offentliga nyckelcertifikatet i den **min** lagras.
- 4. importerar privata nyckel certifikatet till rotarkivet certifikat på den **målnoden**.
+ 4. importerar privata nyckel certifikatet till certifikatarkivet My(Personal) på den **målnoden**.
    - den måste läggas till rotarkivet så att det ska vara betrott av den **målnoden**.
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>På noden redigering: skapa och exportera certifikatet
