@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Avgränsa konfigurations- och miljödata
-ms.openlocfilehash: c89e26105611eae59a926be1432079913c40671f
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3308b83555b3a917e2aa993efcbfa0b946e44048
+ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="separating-configuration-and-environment-data"></a>Avgränsa konfigurations- och miljödata
 
@@ -90,7 +90,7 @@ Nu ska vi titta på en komplett exempel som använder en enda konfiguration för
 
  ### <a name="configuration-data-file"></a>Konfigurationsfilen för data
 
-Ska vi definiera miljödata utveckling och produktion i en fil namd `DevProdEnvData.psd1` på följande sätt:
+Ska vi definiera miljödata utveckling och produktion i en fil med namnet `DevProdEnvData.psd1` på följande sätt:
 
 ```powershell
 @{
