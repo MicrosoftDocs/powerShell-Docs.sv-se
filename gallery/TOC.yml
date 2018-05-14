@@ -1,130 +1,84 @@
 - name: Översikt
   href: readme.md
+- name: Installera PowerShellGet
+  href: installing-psget.md
+- name: Komma i gång
+  href: getting-started.md
+- name: Instruktioner
   items:
-    - name: Galleri
+    - name: Hitta objekt i galleriet
       items:
-        - name: Komma i gång
-          href: psgallery/psgallery_gettingstarted.md
-        - name: Hälsostatus
-          href: psgallery/psgallery_status.md
-        - name: Vanliga frågor och svar om galleriet
-          href: psgallery/psgallery_faqs.md
-        - name: Fliken galleriobjekt
-          href: psgallery/psgallery_items_tab.md
-        - name: Syntax för gallerisökning
-          href: psgallery/psgallery_search_syntax.md
-        - name: Objekt med kompatibla PSEditions
-          href: psgallery/psgallery_pseditions.md
-        - name: FileList-vy
-          href: psgallery/psgallery_filelist_feature.md
-        - name: Distribuera till Azure Automation
-          href: psgallery/psgallery_deploy_to_azure_automation.md
-        - name: Skapa ett PowerShellGallery-konto
-          href: psgallery/psgallery_creating_an_account.md
+        - name: Söka efter objekt
+          href: how-to/finding-items/search-syntax.md
+        - name: Söka efter PSEdition
+          href: how-to/finding-items/searching-by-psedition.md
+        - name: Filtrera sökresultaten
+          href: how-to/finding-items/filtering-items.md
+    - name: Publicera till galleriet
+      items:
         - name: Skapa och publicera objekt
-          href: psgallery/Creating-and-Publishing-an-item.md
-        - name: Publicera riktlinjer och metodtips
-          href: psgallery/psgallery-PublishingGuidelines.md
-        - name: Objektmanifest och galleriets gränssnitt
-          href: psgallery/psgallery_ItemManifestAffectingUI.md
+          href: how-to/publishing-items/publishing-an-item.md
+        - name: Skapa ett PowerShellGallery-konto
+          href: how-to/publishing-items/creating-an-account.md
         - name: Avlista objekt
-          href: psgallery/psgallery_unlist_items.md
+          href: how-to/publishing-items/unlisting-items.md
         - name: Ta bort objekt
-          href: psgallery/Deleting-Items.md
+          href: how-to/publishing-items/deleting-items.md
         - name: Hantera objektägare
-          href: psgallery/Managing-Item-Owners.md
-        - name: Rapportera missbruk
-          href: psgallery/psgallery_report_abuse.md
-        - name: Tvistlösning
-          href: psgallery/psgallery_dispute_resolution.md
+          href: how-to/publishing-items/managing-item-owners.md
+    - name: Arbeta med objekt
+      items:
+        - name: FileList-vy
+          href: how-to/working-with-items/filelist-view.md
+        - name: Distribuera till Azure Automation
+          href: how-to/working-with-items/deploy-to-azure-automation.md
+        - name: Objekt som kräver godkännande av licensen
+          href: how-to/working-with-items/items-that-require-license-acceptance.md
         - name: Kontakta objektägare
-          href: psgallery/psgallery_contacting_item_owners.md
-        - name: Kontakta administratörer
-          href: psgallery/psgallery_contacting_administrators.md
+          href: how-to/working-with-items/contacting-item-owners.md
         - name: Ge feedback via sociala medier eller kommentarer
-          href: psgallery/psgallery-SocialMediaFeedback.md
-        - name: Kräv godkännande av licensen i objektinformationen
-          href: psgallery/psgallery_requires_license_acceptance.md
-        - name: Kräv godkännande av licensen vid distribution till Azure Automation
-          href: psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md
-        - name: BNPR-efterlevnad för PowerShell-galleriet
-          href: psgallery/psgallery_gdpr_dsr.md
-- name: PowerShellGet
-  href: psget/overview.md
+          href: how-to/working-with-items/social-media-feedback.md
+- name: Begrepp
   items:
-    - name: Hämta PowerShellGet-modul
-      href: psget/get_psget_module.md
-    - name: Modul
+    - name: Publicera riktlinjer och metodtips
+      href: concepts/publishing-guidelines.md
+    - name: Objektmanifest och galleriets gränssnitt
+      href: concepts/item-manifest-affecting-ui.md
+    - name: Kräv specifika PSEditions
       items:
-        - name: Hitta moduler
-          href: psget/module/psget_find-module.md
-        - name: Hitta DSC-resurser
-          href: psget/module/psget_find-dscresource.md
-        - name: Hitta rollfunktioner
-          href: psget/module/psget_find-rolecapability.md
-        - name: Hitta kommandon
-          href: psget/module/psget_find-command.md
-        - name: Spara
-          href: psget/module/psget_save-module.md
-        - name: Installera
-          href: psget/module/psget_install-module.md
-        - name: Uppdatera
-          href: psget/module/psget_update-module.md
-        - name: Avinstallera
-          href: psget/module/psget_uninstall-module.md
-        - name: Hämta installerade moduler
-          href: psget/module/psget_get-installedmodule.md
-        - name: Uppdatera modulmanifestet
-          href: psget/module/psget_update-modulemanifest.md
-        - name: Publicera
-          href: psget/module/psget_publish-module.md
-        - name: Moduler med PSEditions
-          href: psget/module/modulewithpseditionsupport.md
-        - name: Moduler som kräver godkännande av licensen
-          href: psget/module/RequireLicenseAcceptance.md
-        - name: Förhandsversioner
-          href: psget/module/PreReleaseModule.md
-        - name: Felsökning
-          href: psget/psget_cmdlets_troubleshooting.md
-    - name: Skript
+        - name: Skapa skript med PSEditions-stöd
+          href: concepts/script-psedition-support.md
+        - name: Skapa moduler med PSEditions-stöd
+          href: concepts/module-psedition-support.md
+    - name: Kräv godkännande av licensen
       items:
-        - name: Hitta
-          href: psget/script/psget_find-script.md
-        - name: Spara
-          href: psget/script/psget_save-script.md
-        - name: Installera
-          href: psget/script/psget_install-script.md
-        - name: Uppdatera
-          href: psget/script/psget_update-script.md
-        - name: Avinstallera
-          href: psget/script/psget_uninstall-script.md
-        - name: Hämta installerade skript
-          href: psget/script/psget_get-installedscript.md
-        - name: Skapa skriptfil med metadata
-          href: psget/script/psget_new-scriptfileinfo.md
-        - name: Testa skriptfilens metadata
-          href: psget/script/psget_test-scriptfileinfo.md
-        - name: Uppdatera skriptfilens metadata
-          href: psget/script/psget_update-scriptfileinfo.md
-        - name: Publicera
-          href: psget/script/psget_publish-script.md
-        - name: Skript med PSEditions
-          href: psget/script/scriptwithpseditionsupport.md
         - name: Kräv godkännande av licensen för skript
-          href: psget/script/script_RequireLicenseAcceptance.md
-        - name: Förhandsversioner
-          href: psget/script/PreReleaseScript.md
-    - name: Hantering av informationslager
+          href: concepts/script-license-acceptance.md
+        - name: Kräv godkännande av licensen för moduler
+          href: concepts/module-license-acceptance.md
+    - name: Definiera objekt som förhandsversion
       items:
-        - name: Start av NuGet-providern och NuGet.exe
-          href: psget/repository/bootstrapping_nuget_proivder_and_exe.md
-        - name: Registrera lagringsplatsen
-          href: psget/repository/psget_register-psrepository.md
-        - name: Lista den registrerade lagringsplatsen
-          href: psget/repository/psget_get-psrepository.md
-        - name: Ändra den registrerade lagringsplatsen
-          href: psget/repository/psget_set-psrepository.md
-        - name: Avregistrera lagringsplatsen
-          href: psget/repository/psget_unregister-psrepository.md
-    - name: PackageManagement-cmdletar
-      href: psget/oneget/PackageManagement_cmdlets.md
+        - name: Definiera en modul som förhandsversion
+          href: concepts/module-prerelease-support.md
+        - name: Definiera ett skript som förhandsversion
+          href: concepts/script-prerelease-support.md
+    - name: PSScriptAnalyzer-regelprofil
+      href: concepts/scriptanalyzer-rule-profile.md
+- name: Få support
+  items:
+    - name: Rapportera missbruk
+      href: how-to/getting-support/report-abuse.md
+    - name: Tvistlösning
+      href: how-to/getting-support/dispute-resolution.md
+    - name: Kontakta administratörer
+      href: how-to/getting-support/contacting-administrators.md
+    - name: Felsökning
+      href: how-to/getting-support/troubleshooting-cmdlets.md
+    - name: Start av NuGet-providern och NuGet.exe
+      href: how-to/getting-support/bootstrapping-nuget.md
+    - name: GDPR-efterlevnad
+      href: how-to/getting-support/gdpr-dsr-policy.md
+- name: Vanliga frågor och svar om galleriet
+  href: faqs.md
+- name: PowerShellGet-cmdletar
+  href: 'https://docs.microsoft.com/powershell/module/powershellget/'
