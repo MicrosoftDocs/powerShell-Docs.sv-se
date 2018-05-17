@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: TestConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
-ms.openlocfilehash: 7815d458a9a67639a31c917510097212d104eb8a
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 2df04d317bd5e7a5c2a713d92be57c5c9a9f5e8c
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>TestConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
 

@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: DSC för Linux nxEnvironment resurs
-ms.openlocfilehash: 6d1d5e578e9a7ddda0e70063f86867de2e87a52e
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3c9f39760e0fba7fac060f29f9e808a3a434401f
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>DSC för Linux nxEnvironment resurs
 

@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 89e996942cdc2609c670e8e5ba2c576ff6342a9c
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 02aebbd2557298b1b88229fdf5f67bdd08cea452
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>PowerShellGet-cmdletar för modulhantering
 
@@ -18,22 +16,22 @@ ms.lasthandoff: 04/09/2018
 - [Get-InstalledScript](https://technet.microsoft.com/en-us/library/mt653994.aspx)
 - [Get-PSRepository](https://technet.microsoft.com/en-us/library/dn807170.aspx)
 - [Installera modulen](https://technet.microsoft.com/en-us/library/dn807162.aspx)
-- [Install-Script](https://technet.microsoft.com/en-us/library/mt653998.aspx)
+- [Skriptet för installationen](https://technet.microsoft.com/en-us/library/mt653998.aspx)
 - [New-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653995.aspx)
 - [Publicera modul](https://technet.microsoft.com/en-us/library/dn807163.aspx)
-- [Publish-Script](https://technet.microsoft.com/en-us/library/mt654003.aspx)
+- [Publicera skript](https://technet.microsoft.com/en-us/library/mt654003.aspx)
 - [Registrera PSRepository](https://technet.microsoft.com/en-us/library/dn807168.aspx)
 - [Spara-modul](https://technet.microsoft.com/en-us/library/mt653992.aspx)
-- [Save-Script](https://technet.microsoft.com/en-us/library/mt654004.aspx)
-- [Set-PSRepository](https://technet.microsoft.com/en-us/library/dn807165.aspx)
-- [Test-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt654005.aspx)
+- [Spara skriptet](https://technet.microsoft.com/en-us/library/mt654004.aspx)
+- [Ange PSRepository](https://technet.microsoft.com/en-us/library/dn807165.aspx)
+- [Testa ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt654005.aspx)
 - [Avinstallera modul](https://technet.microsoft.com/en-us/library/mt653996.aspx)
 - [Avinstallera skript](https://technet.microsoft.com/en-us/library/mt653989.aspx)
 - [Update-modul](https://technet.microsoft.com/en-us/library/dn807166.aspx)
 - [Uppdatera ModuleManifest](https://technet.microsoft.com/en-us/library/mt654002.aspx)
-- [Update-Script](https://technet.microsoft.com/en-us/library/mt653997.aspx)
+- [Skript för uppdatering](https://technet.microsoft.com/en-us/library/mt653997.aspx)
 - [Update-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653991.aspx)
-- [Unregister-PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
+- [Avregistrera PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
 
 ## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Modulen beroende installationssupport, Get-InstalledModule och avinstallera-Module-cmdlets
 - Lägga till modulen beroenden population i Publicera modul-cmdlet. RequiredModules och NestedModules listor med PSModuleInfo används för att förbereda beroendelistan av en modul som ska publiceras.

@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: ResourceSet-metoden för MSFT_DSCLocalConfigurationManager-klassen
-ms.openlocfilehash: b5f437a123bd38df21f30d11e71d2c3b36bc9f3a
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 0c9c1d33117067d76d61036d5839f0b676eb4a97
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a>ResourceSet-metoden för MSFT_DSCLocalConfigurationManager-klassen
 

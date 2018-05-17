@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: dee5e8206c61d79faadf8573a82c74d4ac0fb8e0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9ead27fd5d4f146e9062488c1c8cc22a073b922e
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>Förbättringar i felsökning av PowerShell-skript
 
@@ -42,7 +40,7 @@ Det finns nya, avancerad felsökning funktioner som gör att du kan ansluta till
 Nya cmdletar har lagts till som du kan visa en lista över aktuella körningsutrymmen i en process och bifoga Windows PowerShell-konsolen eller ISE felsökare som runspace för felsökning av skript:
 
 -   Get-Runspace
--   Debug-Runspace
+-   Felsök Runspace
 -   Aktivera RunspaceDebug
 -   Inaktivera RunspaceDebug
 -   Get-RunspaceDebug
@@ -51,5 +49,5 @@ Nya cmdletar har lagts till som du kan visa en lista över aktuella körningsutr
 
 Nu kan du koppla till alla processer för datorn med Windows PowerShell som lästs in. Du kan göra detta genom att ange i en interaktiv session med processen, på samma sätt som hur du kan ange i en interaktiv fjärrsession genom att köra cmdleten Enter-PSSession:
 
--   Enter-PSHostProcess
--   Exit-PSHostProcess
+-   Ange PSHostProcess
+-   Avsluta PSHostProcess

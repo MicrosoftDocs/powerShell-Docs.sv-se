@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-ms.topic: conceptual
 keywords: galleriet, powershell, cmdlet, psgallery, psget
 title: PowerShell-galleriet
-ms.openlocfilehash: cffb2f0182ffe9072f9fbbc7f4cdfcf28de276db
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: 65e0c427310ac20621109a6620e926a7894cf8f8
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="the-powershell-gallery"></a>PowerShell-galleriet
 

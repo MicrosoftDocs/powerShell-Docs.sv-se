@@ -1,25 +1,23 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: a282ba375c9ee796c1f3d7923f7478e200cd3b19
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f545461fd325049d0de4c651d7aa7d50d475eaca
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="packagemanagement-cmdlets"></a>PackageManagement-cmdletar
 Detta är kärnan i PackageManagement som stöd för identifiering av programvara, installation och lager (SDII). Prova att använda cmdlets för dessa åtgärder:
--   Find-Package
+-   Sök-paket
 -   Find-PackageProvider
 -   Get-Package
 -   Get-PackageProvider
 -   Get-PackageSource
--   Import-PackageProvider
+-   Importera PackageProvider
 -   Install-Package
--   Install-PackageProvider
--   Register-PackageSource
+-   Installera PackageProvider
+-   Registrera PackageSource
 -   Spara paketet
 -   Set-PackageSource
 -   Avinstallera paketet
@@ -150,7 +148,7 @@ Find-PackageProvider –Name "Gistprovider" | Install-PackageProvider -Verbose
 Install-PackageProvider –Name Gistprovider –Verbose –Scope CurrentUser
 ```
 
-## <a name="register-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890701aspx"></a>[Register-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890701.aspx)
+## <a name="register-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890701aspx"></a>[Registrera PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890701.aspx)
 Denna cmdlet lägger till en paketkälla för en angiven paket-provider.
 Varje PackageManagement provider kan ha en eller flera källor för programvara eller databaser. PackageManagement innehåller PowerShell-cmdletar för att lägga till/ta bort/fråga källan. Exempelvis kan du registrera en paketkälla för NuGet-providern:
 ```powershell
@@ -169,7 +167,7 @@ Find-Package -Name jquery -Source http://www.nuget.org/api/v2/ | Save-Package -P
 Find-Package -source c:\test
 ```
 
-## <a name="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx"></a>[Set-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890710.aspx)
+## <a name="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx"></a>[Cmdlet set-PackageSource](https://technet.microsoft.com/en-us/library/dn890710.aspx)
 Denna cmdlet ändrar information om en befintlig datakälla för paketet.
 ```powershell
 #Set-PackageSource changes the values for a source that has already been registered by running the Register-PackageSource cmdlet. By #running Set-PackageSource, you can change the source name and location.
@@ -186,7 +184,7 @@ Uninstall-Package -Name jquery –Provider NuGet -Destination c:\test
 Get-Package -Name jquery –Provider NuGet -Destination c:\test | Uninstall-Package
 ```
 
-## <a name="unregister-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890707aspx"></a>[Unregister-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890707.aspx)
+## <a name="unregister-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890707aspx"></a>[Avregistrera PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890707.aspx)
 ```powershell
 # Unregister a package source for the NuGet provider. You can use command Unregister-PackageSource, to disconnect with a repository, and Get-PackageSource, to discover what the repositories are associated with that provider.
 Unregister-PackageSource  -Name "NugetSource"

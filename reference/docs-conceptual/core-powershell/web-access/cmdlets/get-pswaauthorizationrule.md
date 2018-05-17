@@ -1,20 +1,17 @@
 ---
-description: ''
-ms.topic: article
-ms.prod: powershell
+ms.topic: reference
 keywords: PowerShell-cmdlet
 ms.date: 12/12/2016
-title: Hämta pswaauthorizationrule
-ms.technology: powershell
-ms.openlocfilehash: 74c044c329d8b6a305b86c9056a7041fb5fd046b
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: Get-PswaAuthorizationRule
+ms.openlocfilehash: d61dce18e87311d7d815a689ba675db44aaec3cb
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="get-pswaauthorizationrule"></a>Get-PswaAuthorizationRule
 
-## <a name="synopsis"></a>SYNOPSIS
+## <a name="synopsis"></a>SAMMANFATTNING
 
 Returnerar en uppsättning auktoriseringsregler för Windows PowerShell® Web Access.
 
@@ -57,7 +54,7 @@ Anger namn på auktoriseringsregler för att hämta. Den här parametern returne
 |||
 |-|-|
 | Alias                              | inget                                 |
-| Obligatorisk?                            | true                                 |
+| Obligatorisk?                            | SANT                                 |
 | Placering?                            | 2                                    |
 | Standardvärde                        | inget                                 |
 | Acceptera pipelineindata?               | True (ByValue, ByPropertyName)       |

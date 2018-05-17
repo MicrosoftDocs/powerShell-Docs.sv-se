@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: cedda61241df4965fe5db723f03e3497f046fa44
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e4588e8c69efb965cd33c273ad09a8bef8e9bf16
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>Extrahera och parsa strukturerade objekt från sträng
 Det skapar också några ytterligare funktioner för ConvertFrom-String-cmdlet:
@@ -30,7 +28,7 @@ Avgränsad parsning som standard delar inmatningen vid blanksteg och tilldelar g
 
 > 1 \[C:\\temp\] &gt; &gt; ”Hello World” | ConvertFrom sträng | Format-Table-automatiskt
 
-P1    P2
+P1 P2
 --    --
 
 Cmdleten stöder också automatiskt genererade exempel datadrivna parsning baserat på de [FlashExtract](http://research.microsoft.com/en-us/um/people/sumitg/flashextract.html) forskning arbete i [Microsoft Research](http://research.microsoft.com).
@@ -87,6 +85,6 @@ Från den här uppsättningen exempel **ConvertFrom sträng** kan nu automatiskt
 >
 > ExtentText namn stad tillstånd
 > ----------                     ----               ----     -----
-> ANA Trujillo...                ANA Trujillo Redmond, WA Antonio Moreno...              Antonio Moreno Renton WA Thomas Hardy...                Thomas Hardy Seattle WA Christina Berglund...          Christina Berglund Redmond  WA Hanna Moos...                  Hanna Moos Puyallup WA
+> ANA Trujillo...                ANA Trujillo Redmond, WA Antonio Moreno...              Antonio Moreno Renton WA Thomas Hardy...                Thomas Hardy Seattle WA Christina Berglund...          Christina Berglund Redmond WA Hanna Moos...                  Hanna Moos Puyallup WA
 
 Att göra ytterligare datamanipulering på extraherade text i **ExtentText** egenskapen fångar oformaterade texten som posten extraherades. Ge feedback om den här funktionen eller dela innehåll som du har problem med skrivning till exempel e-postmeddelande till <psdmfb@microsoft.com>.

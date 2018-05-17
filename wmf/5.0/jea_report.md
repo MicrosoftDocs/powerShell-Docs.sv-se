@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 2af56be1915c148809f52cd9040c45da160ae0a2
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7982acc111e95b4167f948314f176d53f39d3620
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="reporting-on-jea"></a>Rapportering i JEA
 Du kan använda för att rapportera om konfigurationen av JEA tillstånd:

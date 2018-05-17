@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Avgränsa konfigurations- och miljödata
-ms.openlocfilehash: 3308b83555b3a917e2aa993efcbfa0b946e44048
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: 3c7f1ba93b4438b3eb440dc1f2349eff0606ac0a
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="separating-configuration-and-environment-data"></a>Avgränsa konfigurations- och miljödata
 

@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Installera en DSC pull-klient
-ms.openlocfilehash: 4c56671313b93cc12ce9460ce41e1710e0d6a526
-ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
+ms.openlocfilehash: 7f8758bd7145518e30e9c28b74d0db5d74dfaab3
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="setting-up-a-dsc-pull-client"></a>Installera en DSC pull-klient
 

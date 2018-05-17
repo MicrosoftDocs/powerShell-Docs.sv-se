@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Använda DSC på Nano Server
-ms.openlocfilehash: 9ebc1f046893c360538009b5ecbcfb6456f92bbb
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9e26c525b48e8656a3479db9c0a760eaeb8cf58a
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="using-dsc-on-nano-server"></a>Använda DSC på Nano Server
 
@@ -33,19 +32,19 @@ Mer information om hur du installerar och använder Nano Server, samt hur du han
 
 * Alla DSC-cmdletar som finns på en fullständig version av Windows Server, inklusive följande:
   * [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx)
-  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn521621.aspx)
+  * [Ange DscLocalConfigurationManager](https://technet.microsoft.com/library/dn521621.aspx)
   * [Aktivera DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)
   * [Inaktivera DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)
   * [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
   * [Stoppa DscConfiguration](https://technet.microsoft.com/en-us/library/mt143542.aspx)
   * [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx)
   * [Testa DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)
-  * [Publish-DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx)
+  * [Publicera DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx)
   * [Uppdatera DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx)
   * [Återställ DscConfiguration](https://technet.microsoft.com/en-us/library/dn407383.aspx)
-  * [Remove-DscConfigurationDocument](https://technet.microsoft.com/en-us/library/mt143544.aspx)
+  * [Ta bort DscConfigurationDocument](https://technet.microsoft.com/en-us/library/mt143544.aspx)
   * [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx)
-  * [Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx)
+  * [Anropa DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx)
   * [Hitta DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
   * [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)
   * [Ny DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)

@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
 contributor: manikb
-ms.topic: reference
 keywords: galleriet, powershell, cmdlet, psget
 title: Skriptet med kompatibla versioner av PowerShell
-ms.openlocfilehash: 3cb82fe56e17d0bc41d75f6db69fa7b3b0fdf3f6
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: 27b50be4e99b6c6b8fa089d1d4a436a27eeb17c9
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Skriptet med kompatibla versioner av PowerShell
 

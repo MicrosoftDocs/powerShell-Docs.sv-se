@@ -1,14 +1,13 @@
 ---
 ms.date: 08/12/2017
-author: JKeithB
-ms.topic: reference
+ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: WMF 5.1-versionskommentarer
-ms.openlocfilehash: 9df21afe52e79dc248871b999afead21f8678d52
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3512d2e80501a596e1fd6d7b33d4d75286cef1b9
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="windows-management-framework-wmf-51"></a>WMF (Windows Management Framework) 5.1 #
 

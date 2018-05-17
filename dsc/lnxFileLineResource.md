@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: DSC för Linux nxFileLine resurs
-ms.openlocfilehash: 798bfa4150996622c33c77d6a5aa3be4af342f1b
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 6b927839c23478aa9916a5d23836b31fccc58484
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a>DSC för Linux nxFileLine resurs
 
@@ -30,7 +29,7 @@ nxFileLine <string> #ResourceName
 
 |  Egenskap |  Beskrivning |
 |---|---|
-| FilePath| Den fullständiga sökvägen till filen som ska hantera rader i på målnoden.|
+| filePath| Den fullständiga sökvägen till filen som ska hantera rader i på målnoden.|
 | ContainsLine| En rad för att se till att det finns i filen. Den här raden läggs till filen om den inte finns i filen. **ContainsLine** är obligatorisk, men kan anges till en tom sträng (”ContainsLine = ''') om den inte behövs.|
 | DoesNotContainPattern| Ett mönster för reguljärt uttryck för rader som inte ska finnas i filen. För alla rader som finns i filen som matchar den här reguljärt uttryck, kommer raden tas bort från filen.|
 | dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om den **ID** resursens configuration skriptblock som du vill köra först är **ResourceName** och dess typ är **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|

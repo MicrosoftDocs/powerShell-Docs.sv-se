@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: b440ea4a8208d5c576fa566a19e2de377bf5f475
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 2627b9d02788bd31a5384587406df533faf2cfaf
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="script-tracing-and-logging"></a>Skriptspårning och -loggning
 
@@ -23,8 +21,8 @@ Händelser är:
 | OpCode  | Create                                      |
 | Uppgift    | CommandStart                                |
 | Nyckelordet | Runspace                                    |
-| EventId | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
-| Meddelande | Skapa Scriptblock text (%1% 2): </br> %3 </br> ScriptBlock ID: %4 |
+| Händelse-ID | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
+| Meddelande | Skapa Scriptblock text (%1% 2): </br> %3 </br> ScriptBlock-ID: %4 |
 
 
 Den text som bifogas i meddelandet är omfattningen av skriptblocket kompileras. ID: T är ett GUID som sparas i skriptblocket livslängd.
@@ -37,7 +35,7 @@ När du aktiverar utförlig loggning funktionen skrivningar börja och sluta mar
 | OpCode  | Öppna (/ Stäng)                                         |
 | Uppgift    | CommandStart (/ CommandStop)                           |
 | Nyckelordet | Runspace                                               |
-| EventId | ScriptBlock\_anropa\_starta\_detalj (0x1009 = 4105) / </br> ScriptBlock\_anropa\_fullständig\_detalj (0x100A = 4106) |
+| Händelse-ID | ScriptBlock\_anropa\_starta\_detalj (0x1009 = 4105) / </br> ScriptBlock\_anropa\_fullständig\_detalj (0x100A = 4106) |
 | Meddelande | Igång (/ slutförda) anrop av ScriptBlock-ID: %1 </br> Runspace-ID: %2 |
 
 ID: T är GUID som representerar skriptblocket (som kan korreleras med händelse-ID 0x1008) och Runspace ID representerar runspace där skriptblocket kördes.

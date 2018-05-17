@@ -1,6 +1,13 @@
-
 ---
-MS.Date: 06/12/2017 deltagare: manikb ms.topic: referera nyckelord: galleriet, powershell, cmdlet, psget rubrik: startprogram NuGet
+ms.date: 06/12/2017
+contributor: manikb
+keywords: galleriet, powershell, cmdlet, psget
+title: Startprogram för NuGet
+ms.openlocfilehash: f707e23737361ee7f82a16150402c9e719ee0ae1
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Bootstrap NuGet-providern och NuGet.exe
 

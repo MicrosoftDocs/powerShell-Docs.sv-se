@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Alternativ för autentiseringsuppgifter i konfigurationsdata
-ms.openlocfilehash: 3f1c75c65b357220856dd8e50694eb77808dee41
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 2c6685f3b6992537d1652f172cf926b85dd634c6
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>Alternativ för autentiseringsuppgifter i konfigurationsdata
 >Gäller för: Windows PowerShell 5.0
@@ -276,7 +275,7 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 
 Ett undantag är när du använder tjänsten Azure Automation DSC, eftersom data lagras alltid krypterad (under överföring i vila i tjänsten och i vila på noden).
 
-## <a name="domain-credentials"></a>Domain Credentials
+## <a name="domain-credentials"></a>Autentiseringsuppgifter för domänen
 
 Kör exempel konfigurationsskript igen (med eller utan kryptering) fortfarande genererar den varning som använder en domän-konto för en autentiseringsuppgift inte rekommenderas.
 Med ett lokalt konto eliminerar eventuell exponering av autentiseringsuppgifter för domänen som kan användas på andra servrar.

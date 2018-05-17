@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-ms.topic: conceptual
 keywords: galleriet, powershell, cmdlet, psgallery
 title: Hantera objektägare
-ms.openlocfilehash: 20380972ffe365ec9a479073fdf7e7f0eb1ee34e
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: 10d2a433253162847028e157b5bac47b23406469
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="managing-item-owners"></a>Hantera objektägare
 

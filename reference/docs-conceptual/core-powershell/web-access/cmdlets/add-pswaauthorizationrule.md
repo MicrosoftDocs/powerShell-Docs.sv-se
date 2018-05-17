@@ -1,21 +1,18 @@
 ---
-description: ''
-ms.topic: article
-ms.prod: powershell
+ms.topic: reference
 keywords: PowerShell-cmdlet
 ms.date: 12/12/2016
-title: Lägg till pswaauthorizationrule
-ms.technology: powershell
+title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: 07ddd4df6a776f3ef6763242f8682747b9b97061
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: b8020f8b034ab24d79a96da3908e9b63bf017cd9
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
-## <a name="synopsis"></a>SYNOPSIS
+## <a name="synopsis"></a>SAMMANFATTNING
 
 Lägger till en ny auktoriseringsregel regeluppsättningen för auktorisering av Windows PowerShell® Web Access.
 
@@ -58,27 +55,27 @@ Auktoriseringsregler utvärdera primära inloggning inloggningsuppgifterna för 
 
 ## <a name="parameters"></a>Parametrar
 
-### <a name="-computergroupnameltstringgt"></a>-ComputerGroupName&lt;String&gt;
+### <a name="-computergroupnameltstringgt"></a>-ComputerGroupName&lt;sträng&gt;
 
 Anger namnet på en datorgrupp i Active Directory Domain Services (AD DS) eller lokala grupper som den här regeln beviljar åtkomst.
 
 |||
 |-|-|
 | Alias                              | inget                                 |
-| Obligatorisk?                            | true                                 |
+| Obligatorisk?                            | SANT                                 |
 | Placering?                            | Med namnet                                |
 | Standardvärde                        | inget                                 |
 | Acceptera pipelineindata?               | True (ByPropertyName)                |
 | Acceptera jokertecken?          | falskt                                |
 
-### <a name="-computernameltstringgt"></a>-ComputerName&lt;String&gt;
+### <a name="-computernameltstringgt"></a>-ComputerName&lt;sträng&gt;
 
 Anger namnet på datorn som den här regeln beviljar åtkomst.
 
 |||
 |-|-|
 | Alias                              | inget                                 |
-| Obligatorisk?                            | true                                 |
+| Obligatorisk?                            | SANT                                 |
 | Placering?                            | Med namnet                                |
 | Standardvärde                        | inget                                 |
 | Acceptera pipelineindata?               | True (ByPropertyName)                |
@@ -91,7 +88,7 @@ Anger namnet på sessionskonfigurationen för Windows PowerShell, även kallat r
 |||
 |-|-|
 | Alias                              | inget                                 |
-| Obligatorisk?                            | true                                 |
+| Obligatorisk?                            | SANT                                 |
 | Placering?                            | Med namnet                                |
 | Standardvärde                        | inget                                 |
 | Acceptera pipelineindata?               | True (ByPropertyName)                |
@@ -137,14 +134,14 @@ Anger det egna namnet för den här regeln.
 | Acceptera pipelineindata?               | True (ByPropertyName)                |
 | Acceptera jokertecken?          | falskt                                |
 
-### <a name="-usergroupnameltstringgt"></a>-UserGroupName&lt;String\[\]&gt;
+### <a name="-usergroupnameltstringgt"></a>-UserGroupName&lt;sträng\[\]&gt;
 
 Anger namnet på en eller flera användargrupper i AD DS eller grupper som den här regeln beviljar åtkomst.
 
 |||
 |-|-|
 | Alias                              | inget                                 |
-| Obligatorisk?                            | true                                 |
+| Obligatorisk?                            | SANT                                 |
 | Placering?                            | Med namnet                                |
 | Standardvärde                        | inget                                 |
 | Acceptera pipelineindata?               | True (ByPropertyName)                |
@@ -158,7 +155,7 @@ Formatet är `domain\user` eller `computer\user`.
 |||
 |-|-|
 | Alias                              | inget                                 |
-| Obligatorisk?                            | true                                 |
+| Obligatorisk?                            | SANT                                 |
 | Placering?                            | 1                                    |
 | Standardvärde                        | inget                                 |
 | Acceptera pipelineindata?               | True (ByValue, ByPropertyName)       |
@@ -251,6 +248,6 @@ Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *
 - [Remove-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592893(v=wps.630).aspx)
 - [Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)
 - [Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)
-- [Add-Member](http://go.microsoft.com/fwlink/p/?LinkId=113280)
+- [Lägg till medlem](http://go.microsoft.com/fwlink/p/?LinkId=113280)
 - [Nytt objekt](http://go.microsoft.com/fwlink/p/?LinkId=113355)
 - [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936)

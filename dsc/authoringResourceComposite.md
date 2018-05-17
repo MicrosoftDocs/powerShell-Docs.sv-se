@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: Sammansatta resurser--med hjälp av DSC-konfigurationen som en resurs
-ms.openlocfilehash: c89293fdbe9bc054a47cc6974b6bd0471f727f46
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 246cab3b437546490d650e45be263a43fd0c84c3
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Sammansatta resurser: med hjälp av DSC-konfigurationen som en resurs
 
@@ -188,7 +187,7 @@ configuration RenameVM
 }
 ```
 
-## <a name="supporting-psdscrunascredential"></a>Supporting PsDscRunAsCredential
+## <a name="supporting-psdscrunascredential"></a>Stöd för PsDscRunAsCredential
 
 >**Obs:** **PsDscRunAsCredential** stöds i PowerShell 5.0 och senare.
 

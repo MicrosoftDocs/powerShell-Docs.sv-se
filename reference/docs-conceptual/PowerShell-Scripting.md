@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: PowerShell-skript
-ms.openlocfilehash: 3304ecc3129b710a003725715803a03b68f79b45
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7de5a3f3149d8d464b34101d94a5f9430d9b0f23
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -25,18 +25,18 @@ Windows PowerShell är utformade för att förbättra kommandoradsverktyg och sk
 ### <a name="discoverability"></a>Synlighet
 Windows PowerShell gör det lätt att identifiera dess funktioner. Du hittar en lista över cmdlets som Visa och ändra Windows-tjänster, exempelvis:
 
-```
+```powershell
 Get-Command *-Service
 ```
 
 Efter att identifiera vilka cmdlet uppnår en aktivitet läsa du mer om cmdlet med hjälp av cmdleten Get-Help. Till exempel för att visa hjälp om cmdlet Get-Service, skriver du:
 
-```
+```powershell
 Get-Help Get-Service
 ```
 De flesta cmdlets genererar objekt som kan ändras och sedan återges i text som ska visas. För att förstå resultatet av denna cmdlet, pipe-utdata för cmdleten Get-medlem. Följande kommando visar information om medlemmarna i objektutdata av cmdleten Get-Service.
 
-```
+```powershell
 Get-Service | Get-Member
 ```
 

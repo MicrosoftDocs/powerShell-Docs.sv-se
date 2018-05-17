@@ -1,20 +1,17 @@
 ---
-description: ''
-ms.topic: article
-ms.prod: powershell
+ms.topic: reference
 keywords: PowerShell-cmdlet
 ms.date: 12/12/2016
-title: installera pswawebapplication
-ms.technology: powershell
-ms.openlocfilehash: c7f7768a41b6784d8c29afa1fccf0b855160b777
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: Install-PswaWebApplication
+ms.openlocfilehash: 68455d9490f7d5c33c1a928ac262a76a78ad7128
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
-## <a name="synopsis"></a>SYNOPSIS
+## <a name="synopsis"></a>SAMMANFATTNING
 
 Konfigurerar Windows PowerShell® Web Access-webbprogrammet i IIS.
 
@@ -40,7 +37,7 @@ Anger att ett testcertifikat skapas. Om den här parametern anges till true, och
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
 | Placering?                            | Med namnet                                |
-| Standardvärde                        | true                                 |
+| Standardvärde                        | SANT                                 |
 | Acceptera pipelineindata?               | falskt                                |
 | Acceptera jokertecken?          | falskt                                |
 

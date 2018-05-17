@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: a8947844df0da167961c64e1e09d5075960c95de
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 01d4989711c22db20431876c52740afb350caad0
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>Skapa PowerShell-cmdletar baserade på OData-slutpunkt
 <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Generera en Windows PowerShell-cmdlets som är baserat på en OData-slutpunkt
