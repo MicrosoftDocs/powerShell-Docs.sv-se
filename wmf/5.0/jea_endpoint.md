@@ -1,22 +1,20 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 9065315ef39129e6a28234d972fe350fd5e7e11d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 66db78cfb136f22cad9078d7113dad085ee667a5
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
-# <a name="creating-and-connecting-to-a-jea-endpoint"></a><span data-ttu-id="b2798-102">Skapa och ansluta till en JEA-slutpunkt</span><span class="sxs-lookup"><span data-stu-id="b2798-102">Creating and Connecting to a JEA Endpoint</span></span>
-<span data-ttu-id="b2798-103">Om du vill skapa en JEA-slutpunkt som du behöver skapa och registrera en särskilt konfigurerade PowerShell-Session konfigurationsfil, vilken kan genereras med den **ny PSSessionConfigurationFile** cmdlet.</span><span class="sxs-lookup"><span data-stu-id="b2798-103">To create a JEA endpoint, you need to create and register a specially-configured PowerShell Session Configuration file, which can be generated with the **New-PSSessionConfigurationFile** cmdlet.</span></span>
+# <a name="creating-and-connecting-to-a-jea-endpoint"></a><span data-ttu-id="445a4-102">Skapa och ansluta till en JEA-slutpunkt</span><span class="sxs-lookup"><span data-stu-id="445a4-102">Creating and Connecting to a JEA Endpoint</span></span>
+<span data-ttu-id="445a4-103">Om du vill skapa en JEA-slutpunkt som du behöver skapa och registrera en särskilt konfigurerade PowerShell-Session konfigurationsfil, vilken kan genereras med den **ny PSSessionConfigurationFile** cmdlet.</span><span class="sxs-lookup"><span data-stu-id="445a4-103">To create a JEA endpoint, you need to create and register a specially-configured PowerShell Session Configuration file, which can be generated with the **New-PSSessionConfigurationFile** cmdlet.</span></span>
 
 ```powershell
 New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-<span data-ttu-id="b2798-104">Detta skapar en konfigurationsfil för sessionen som ser ut så här:</span><span class="sxs-lookup"><span data-stu-id="b2798-104">This will create a session configuration file that looks like this:</span></span>
+<span data-ttu-id="445a4-104">Detta skapar en konfigurationsfil för sessionen som ser ut så här:</span><span class="sxs-lookup"><span data-stu-id="445a4-104">This will create a session configuration file that looks like this:</span></span>
 ```powershell
 @{
 
@@ -54,20 +52,20 @@ RoleDefinitions = @{
 
 }
 ```
-<span data-ttu-id="b2798-105">När du skapar en JEA slutpunkt måste du ange följande parametrar för kommandot (och motsvarande nycklar i filen):</span><span class="sxs-lookup"><span data-stu-id="b2798-105">When creating a JEA endpoint, the following parameters of the command (and corresponding keys in the file) must be set:</span></span>
-1.  <span data-ttu-id="b2798-106">SessionType till RestrictedRemoteServer</span><span class="sxs-lookup"><span data-stu-id="b2798-106">SessionType to RestrictedRemoteServer</span></span>
-2.  <span data-ttu-id="b2798-107">RunAsVirtualAccount till **$true**</span><span class="sxs-lookup"><span data-stu-id="b2798-107">RunAsVirtualAccount to **$true**</span></span>
-3.  <span data-ttu-id="b2798-108">TranscriptPath till katalogen där ”över axel” betyg sparas efter varje session</span><span class="sxs-lookup"><span data-stu-id="b2798-108">TranscriptPath to the directory where “over the shoulder” transcripts will be saved after each session</span></span>
-4.  <span data-ttu-id="b2798-109">RoleDefinitions till en hash-tabell som definierar vilka grupper som har åtkomst till vilka ”roll funktioner”.</span><span class="sxs-lookup"><span data-stu-id="b2798-109">RoleDefinitions to a hashtable that defines which groups have access to which “Role Capabilities.”</span></span>  <span data-ttu-id="b2798-110">Det här fältet definierar **som** kan göra **vad** på den här slutpunkten.</span><span class="sxs-lookup"><span data-stu-id="b2798-110">This field defines **who** can do **what** on this endpoint.</span></span>   <span data-ttu-id="b2798-111">Rollen funktioner är särskilda filer som förklaras inom kort.</span><span class="sxs-lookup"><span data-stu-id="b2798-111">Role Capabilities are special files that will be explained shortly.</span></span>
+<span data-ttu-id="445a4-105">När du skapar en JEA slutpunkt måste du ange följande parametrar för kommandot (och motsvarande nycklar i filen):</span><span class="sxs-lookup"><span data-stu-id="445a4-105">When creating a JEA endpoint, the following parameters of the command (and corresponding keys in the file) must be set:</span></span>
+1.  <span data-ttu-id="445a4-106">SessionType till RestrictedRemoteServer</span><span class="sxs-lookup"><span data-stu-id="445a4-106">SessionType to RestrictedRemoteServer</span></span>
+2.  <span data-ttu-id="445a4-107">RunAsVirtualAccount till **$true**</span><span class="sxs-lookup"><span data-stu-id="445a4-107">RunAsVirtualAccount to **$true**</span></span>
+3.  <span data-ttu-id="445a4-108">TranscriptPath till katalogen där ”över axel” betyg sparas efter varje session</span><span class="sxs-lookup"><span data-stu-id="445a4-108">TranscriptPath to the directory where “over the shoulder” transcripts will be saved after each session</span></span>
+4.  <span data-ttu-id="445a4-109">RoleDefinitions till en hash-tabell som definierar vilka grupper som har åtkomst till vilka ”roll funktioner”.</span><span class="sxs-lookup"><span data-stu-id="445a4-109">RoleDefinitions to a hashtable that defines which groups have access to which “Role Capabilities.”</span></span>  <span data-ttu-id="445a4-110">Det här fältet definierar **som** kan göra **vad** på den här slutpunkten.</span><span class="sxs-lookup"><span data-stu-id="445a4-110">This field defines **who** can do **what** on this endpoint.</span></span>   <span data-ttu-id="445a4-111">Rollen funktioner är särskilda filer som förklaras inom kort.</span><span class="sxs-lookup"><span data-stu-id="445a4-111">Role Capabilities are special files that will be explained shortly.</span></span>
 
 
-<span data-ttu-id="b2798-112">Fältet RoleDefinitions definierar vilka grupper som hade tillgång till vilka funktioner i rollen.</span><span class="sxs-lookup"><span data-stu-id="b2798-112">The RoleDefinitions field defines which groups had access to which Role Capabilities.</span></span>  <span data-ttu-id="b2798-113">En roll-funktion är en fil som definierar en uppsättning funktioner som kan användas för anslutning av användare.</span><span class="sxs-lookup"><span data-stu-id="b2798-113">A Role Capability is a file that defines a set of capabilities that will be exposed to connecting users.</span></span>  <span data-ttu-id="b2798-114">Du kan skapa rollen funktioner med den **ny PSRoleCapabilityFile** kommando.</span><span class="sxs-lookup"><span data-stu-id="b2798-114">You can create Role Capabilities with the **New-PSRoleCapabilityFile** command.</span></span>
+<span data-ttu-id="445a4-112">Fältet RoleDefinitions definierar vilka grupper som hade tillgång till vilka funktioner i rollen.</span><span class="sxs-lookup"><span data-stu-id="445a4-112">The RoleDefinitions field defines which groups had access to which Role Capabilities.</span></span>  <span data-ttu-id="445a4-113">En roll-funktion är en fil som definierar en uppsättning funktioner som kan användas för anslutning av användare.</span><span class="sxs-lookup"><span data-stu-id="445a4-113">A Role Capability is a file that defines a set of capabilities that will be exposed to connecting users.</span></span>  <span data-ttu-id="445a4-114">Du kan skapa rollen funktioner med den **ny PSRoleCapabilityFile** kommando.</span><span class="sxs-lookup"><span data-stu-id="445a4-114">You can create Role Capabilities with the **New-PSRoleCapabilityFile** command.</span></span>
 
 ```powershell
 New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
-<span data-ttu-id="b2798-115">Detta skapar en mall för rollen funktion som ser ut så här:</span><span class="sxs-lookup"><span data-stu-id="b2798-115">This will generate a template role capability that looks like this:</span></span>
+<span data-ttu-id="445a4-115">Detta skapar en mall för rollen funktion som ser ut så här:</span><span class="sxs-lookup"><span data-stu-id="445a4-115">This will generate a template role capability that looks like this:</span></span>
 ```
 @{
 
@@ -131,20 +129,20 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 }
 
 ```
-<span data-ttu-id="b2798-116">Rollen funktioner måste sparas som en giltig PowerShell-modul i en katalog med namnet ”RoleCapabilities” för att användas av en JEA sessionskonfiguration.</span><span class="sxs-lookup"><span data-stu-id="b2798-116">To be used by a JEA session configuration, Role Capabilities must be saved as a valid PowerShell module in a directory named “RoleCapabilities”.</span></span> <span data-ttu-id="b2798-117">En modul kan ha flera rollen funktionsfiler, om så önskas.</span><span class="sxs-lookup"><span data-stu-id="b2798-117">A module may have multiple role capability files, if desired.</span></span>
+<span data-ttu-id="445a4-116">Rollen funktioner måste sparas som en giltig PowerShell-modul i en katalog med namnet ”RoleCapabilities” för att användas av en JEA sessionskonfiguration.</span><span class="sxs-lookup"><span data-stu-id="445a4-116">To be used by a JEA session configuration, Role Capabilities must be saved as a valid PowerShell module in a directory named “RoleCapabilities”.</span></span> <span data-ttu-id="445a4-117">En modul kan ha flera rollen funktionsfiler, om så önskas.</span><span class="sxs-lookup"><span data-stu-id="445a4-117">A module may have multiple role capability files, if desired.</span></span>
 
-<span data-ttu-id="b2798-118">För att börja konfigurera vilka cmdlets, funktioner, alias och skript som en användare kan komma åt när du ansluter till en session JEA, att lägga till dina egna regler i filen rollen kapaciteten att följa de kommenterade ut mallar.</span><span class="sxs-lookup"><span data-stu-id="b2798-118">To start configuring which cmdlets, functions, aliases, and scripts a user may access when connecting to a JEA session, add your own rules to the Role Capability file following the commented out templates.</span></span> <span data-ttu-id="b2798-119">För en djupare inblick i hur du kan konfigurera rollen funktioner checka ut hela [upplevelse guiden](http://aka.ms/JEA).</span><span class="sxs-lookup"><span data-stu-id="b2798-119">For a deeper look into how you can configure Role Capabilities, check out the full [experience guide](http://aka.ms/JEA).</span></span>
+<span data-ttu-id="445a4-118">För att börja konfigurera vilka cmdlets, funktioner, alias och skript som en användare kan komma åt när du ansluter till en session JEA, att lägga till dina egna regler i filen rollen kapaciteten att följa de kommenterade ut mallar.</span><span class="sxs-lookup"><span data-stu-id="445a4-118">To start configuring which cmdlets, functions, aliases, and scripts a user may access when connecting to a JEA session, add your own rules to the Role Capability file following the commented out templates.</span></span> <span data-ttu-id="445a4-119">För en djupare inblick i hur du kan konfigurera rollen funktioner checka ut hela [upplevelse guiden](http://aka.ms/JEA).</span><span class="sxs-lookup"><span data-stu-id="445a4-119">For a deeper look into how you can configure Role Capabilities, check out the full [experience guide](http://aka.ms/JEA).</span></span>
 
-<span data-ttu-id="b2798-120">Slutligen, när du är klar med att anpassa sessionskonfigurationen och relaterade funktioner för rollen registrera den här konfigurationen och skapa slutpunkten genom att köra **Register-PSSessionConfiguration**.</span><span class="sxs-lookup"><span data-stu-id="b2798-120">Finally, once you have finished customizing your session configuration and related Role Capabilities, register this session configuration and create the endpoint by running **Register-PSSessionConfiguration**.</span></span>
+<span data-ttu-id="445a4-120">Slutligen, när du är klar med att anpassa sessionskonfigurationen och relaterade funktioner för rollen registrera den här konfigurationen och skapa slutpunkten genom att köra **Register-PSSessionConfiguration**.</span><span class="sxs-lookup"><span data-stu-id="445a4-120">Finally, once you have finished customizing your session configuration and related Role Capabilities, register this session configuration and create the endpoint by running **Register-PSSessionConfiguration**.</span></span>
 
 ```powershell
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-## <a name="connect-to-a-jea-endpoint"></a><span data-ttu-id="b2798-121">Ansluta till en JEA slutpunkt</span><span class="sxs-lookup"><span data-stu-id="b2798-121">Connect to a JEA Endpoint</span></span>
-<span data-ttu-id="b2798-122">Ansluter till en slutpunkt för JEA fungerar på samma sätt som ansluter till alla andra PowerShell endpoint fungerar.</span><span class="sxs-lookup"><span data-stu-id="b2798-122">Connecting to a JEA Endpoint works the same way connecting to any other PowerShell endpoint works.</span></span>  <span data-ttu-id="b2798-123">Du behöver bara ange namnet på slutpunkten JEA som ”ConfigurationName”-parametern för **New-PSSession**, **Invoke-Command**, eller **Enter-PSSession**.</span><span class="sxs-lookup"><span data-stu-id="b2798-123">You simply have to give your JEA endpoint name as the “ConfigurationName” parameter for **New-PSSession**, **Invoke-Command**, or **Enter-PSSession**.</span></span>
+## <a name="connect-to-a-jea-endpoint"></a><span data-ttu-id="445a4-121">Ansluta till en JEA slutpunkt</span><span class="sxs-lookup"><span data-stu-id="445a4-121">Connect to a JEA Endpoint</span></span>
+<span data-ttu-id="445a4-122">Ansluter till en slutpunkt för JEA fungerar på samma sätt som ansluter till alla andra PowerShell endpoint fungerar.</span><span class="sxs-lookup"><span data-stu-id="445a4-122">Connecting to a JEA Endpoint works the same way connecting to any other PowerShell endpoint works.</span></span>  <span data-ttu-id="445a4-123">Du behöver bara ange namnet på slutpunkten JEA som ”ConfigurationName”-parametern för **New-PSSession**, **Invoke-Command**, eller **Enter-PSSession**.</span><span class="sxs-lookup"><span data-stu-id="445a4-123">You simply have to give your JEA endpoint name as the “ConfigurationName” parameter for **New-PSSession**, **Invoke-Command**, or **Enter-PSSession**.</span></span>
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
-<span data-ttu-id="b2798-124">När du har anslutit till sessionen JEA begränsas du kör kommandon godkända av roll-funktionerna som du har åtkomst till.</span><span class="sxs-lookup"><span data-stu-id="b2798-124">Once you have connected to the JEA session, you will be limited to running the commands whitelisted in the Role Capabilities that you have access to.</span></span> <span data-ttu-id="b2798-125">Ett fel inträffar om du försöker köra ett kommando som inte är tillåtet för din roll.</span><span class="sxs-lookup"><span data-stu-id="b2798-125">If you try to run any command not allowed for your role, you will encounter an error.</span></span>
+<span data-ttu-id="445a4-124">När du har anslutit till sessionen JEA begränsas du kör kommandon godkända av roll-funktionerna som du har åtkomst till.</span><span class="sxs-lookup"><span data-stu-id="445a4-124">Once you have connected to the JEA session, you will be limited to running the commands whitelisted in the Role Capabilities that you have access to.</span></span> <span data-ttu-id="445a4-125">Ett fel inträffar om du försöker köra ett kommando som inte är tillåtet för din roll.</span><span class="sxs-lookup"><span data-stu-id="445a4-125">If you try to run any command not allowed for your role, you will encounter an error.</span></span>
