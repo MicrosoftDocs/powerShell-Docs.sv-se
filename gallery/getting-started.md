@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-ms.topic: conceptual
 keywords: galleriet, powershell, cmdlet, psgallery
-title: psgallery_gettingstarted
-ms.openlocfilehash: c3aafe9e76eda9acdd4787f63dc0f8c71a20d02a
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+title: Kom igång med PowerShell-galleriet
+ms.openlocfilehash: 83974698152e75efac66ea725a9c220486676d6f
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>Kom igång med PowerShell-galleriet
 

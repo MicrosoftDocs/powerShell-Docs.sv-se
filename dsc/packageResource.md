@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-Paketresurs
-ms.openlocfilehash: cfa9d53d5ea588b0ec97e5503302a451caa09e03
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 16f7f1b8fa7b84bcfdeb09fdc46db9c93113e70c
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="dsc-package-resource"></a>DSC-Paketresurs
 
@@ -42,7 +41,7 @@ Package [string] #ResourceName
 | autentiseringsuppgifter| Tillhandahåller åtkomst till paketet på en fjärrkälla. Den här egenskapen används inte för att installera paketet. Paketet installeras alltid på det lokala systemet.|
 | Se till att| Anger om paketet har installerats. Ange den här egenskapen till ”saknas” för att se till att paketet inte är installerat (eller avinstallera paketet om det är installerat). Ange att ”finns” (standardvärdet) för att säkerställa att paketet har installerats.|
 | LogPath| Anger den fullständiga sökvägen där du vill att providern ska spara en loggfil för att installera eller avinstallera paketet.|
-| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis **ResourceName** och dess typ är **ResourceType**, syntaxen för den här egenskapen är ”DependsOn =”[ResourceType] ResourceName ”''.|
+| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis **ResourceName** och dess typ är **ResourceType**, syntaxen för den här egenskapen är ”DependsOn =” [ResourceType] ResourceName ”''.|
 | Returkod| Anger den förväntade kod. Om den faktiska returkod matchar inte det förväntade värdet som anges här, konfigurationen returneras ett fel.|
 
 ## <a name="example"></a>Exempel

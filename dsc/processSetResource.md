@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 title: DSC ProcessSet resurs
-ms.openlocfilehash: d3c7383da5fd10580612527465ab621004ee7269
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 412cf1076996126f0d9b7a9a8ebbc9bdb7ecf377
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess resurs
 
@@ -43,4 +42,4 @@ WindowsProcess [string] #ResourceName
 | StandardInputPath| Dataströmmen som processen tar emot standardindata.|
 | StandardOutputPath| Sökvägen till filen som processerna skriva standardutdata. Alla befintliga filen skrivs över.|
 | WorkingDirectory| Den plats som används som den aktuella arbetskatalogen för processer.|
-| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis **ResourceName** och dess typ är **_ResourceType**, syntaxen för den här egenskapen är ”DependsOn =”[ResourceType] ResourceName ”''.|
+| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis **ResourceName** och dess typ är **_ResourceType**, syntaxen för den här egenskapen är ”DependsOn =” [ResourceType] ResourceName ”''.|
