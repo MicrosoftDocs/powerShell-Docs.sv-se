@@ -1,13 +1,4 @@
----
-ms.date: 06/12/2017
-contributor: JKeithB
-keywords: galleriet, powershell, cmdlet, psgallery, psget
-title: PowerShell-galleriet
-ms.openlocfilehash: 65e0c427310ac20621109a6620e926a7894cf8f8
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: MT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
+ och---ms.date: 06/12/2017 deltagare: JKeithB nyckelord: galleriet, powershell, cmdlet, psgallery, psget rubrik: I PowerShell-galleriet
 ---
 # <a name="the-powershell-gallery"></a>PowerShell-galleriet
 
@@ -27,9 +18,9 @@ Kolla in den [komma igång](getting-started.md) för mer information om hur du a
 
 ## <a name="supported-operating-systems"></a>Operativsystem som stöds
 
-Den **PowerShellGet** module kräver **PowerShell 3.0 eller senare**.
+Den **PowerShellGet** module kräver **Windows PowerShell 3.0 eller senare**, eller **PowerShell Core 6.0 eller nyare**.
 
-Därför **PowerShellGet** kräver en av följande operativsystem:
+En lämplig version av **Windows PowerShell** är tillgänglig för dessa operativsystem:
 
 - Windows 10
 - Windows 8.1 Pro
@@ -40,6 +31,10 @@ Därför **PowerShellGet** kräver en av följande operativsystem:
 - Windows Server 2008 R2 SP1
 
 **PowerShellGet** kräver .NET Framework 4.5 eller senare. Du kan installera .NET Framework 4.5 eller senare från [här](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+
+**PowerShell Core** stöder många operativsystem. Se [i den här artikeln](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/) för en fullständig lista.
+
+Många moduler som finns i galleriet stöder olika operativsystem och har ytterligare krav. Se dokumentationen för moduler för mer information.
 
 ## <a name="got-a-question-have-feedback"></a>En fråga? Ge feedback?
 
