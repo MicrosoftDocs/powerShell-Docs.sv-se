@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, konfiguration, installation
 description: Tillhandahåller en mekanism för att hantera lokala grupper på målnoden.
 title: DSC GroupSet resurs
-ms.openlocfilehash: 4f8fc21806fdb4eb06e0d915d5b6ca229357a210
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3d6fdcaef6053964d3fb3b709a5263d291a7c840
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet resurs
 
@@ -18,7 +17,7 @@ Den **GroupSet** resurs i Windows PowerShell önskad tillstånd Configuration (D
 
 Använd den här resursen när du vill lägga till och/eller ta bort samma lista över medlemmar i mer än en grupp, ta bort mer än en grupp eller Lägg till mer än en grupp med samma lista över medlemmar.
 
-##<a name="syntax"></a>Syntax##
+##<a name="syntax"></a>Syntaxen ##
 ```
 Group [string] #ResourceName
 {
@@ -41,7 +40,7 @@ Group [string] #ResourceName
 | Se till att| Anger om det finns grupperna. Ange den här egenskapen till ”saknas” för att se till att grupperna inte finns. Ange värdet ”finns” (standardvärdet) ser du till att grupperna finns.|
 | Medlemmar| Använd den här egenskapen för att ersätta det aktuella gruppmedlemskapet med de angivna medlemmarna. Värdet för den här egenskapen är en matris med strängar i formuläret *domän*\\*användarnamn*. Om du anger den här egenskapen i en konfiguration, bör inte använda någon av **MembersToExclude** eller **MembersToInclude** egenskapen. Detta genererar ett fel.|
 | MembersToInclude| Använd den här egenskapen för att lägga till medlemmar i det befintliga medlemskapet i gruppen. Värdet för den här egenskapen är en matris med strängar i formuläret *domän*\\*användarnamn*. Om du anger den här egenskapen i en konfiguration kan du inte använda den **medlemmar** egenskapen. Detta genererar ett fel.|
-| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis __ResourceName__ och dess typ är __ResourceType__, syntaxen för den här egenskapen är ”DependsOn =”[ResourceType] ResourceName ”''.|
+| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis __ResourceName__ och dess typ är __ResourceType__, syntaxen för den här egenskapen är ”DependsOn =” [ResourceType] ResourceName ”''.|
 
 ## <a name="example-1"></a>Exempel 1
 
