@@ -28,7 +28,7 @@ PowerShell officiellt stöder nu macOS- och Linux, inklusive:
 - Red Hat Enterprise Linux 7
 - OpenSUSE 42.2
 - Fedora 25, 26
-- macOS 10.12+
+- macOS 10.12 +
 
 Gruppen har också bidragit paket för följande plattformar, men de officiellt stöds inte:
 
@@ -172,17 +172,17 @@ PowerShell Core ändras den standardkodning som överensstämmer med bredare eko
 Detta innebär att alla inbyggda cmdlet: ar som använder den `-Encoding` parametern används den `UTF8NoBOM` värde som standard.
 Följande cmdlets som påverkas av den här ändringen:
 
-- Add-Content
+- Lägg till innehåll
 - Export-Clixml
 - Export-Csv
 - Export-PSSession
 - Format-Hex
-- Get-Content
+- Get-innehåll
 - Import-Csv
 - Out-File
 - Välj sträng
 - Skicka MailMessage
-- Set-Content
+- Set-innehåll
 
 Dessa cmdletar har också uppdaterats så att den `-Encoding` parametern accepterar universellt `System.Text.Encoding`.
 
@@ -373,7 +373,7 @@ Du hittar mer information om hur vi kan använda informationen i det här [blogg
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[breaking-changes]: https://github.com/PowerShell/PowerShell/tree/master/docs/BREAKINGCHANGES.md
+[breaking-changes]: breaking-changes-ps6.md
 [changelog]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/

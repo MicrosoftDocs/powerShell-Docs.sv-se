@@ -154,14 +154,20 @@
     - name: Nyheter
       href: ''
       items:
-        - name: Nyheter i PowerShell
-          href: whats-new/what-s-new-with-powershell.md
-        - name: Nyheter i Windows PowerShell 5.0
-          href: whats-new/what-s-new-in-windows-powershell-50.md
-        - name: Nyheter i PowerShell 5.0 ISE
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
         - name: Nyheter i PowerShell Core 6.0
           href: whats-new/what-s-new-in-powershell-core-60.md
+          items:
+            - name: Icke-bakåtkompatibla ändringar i PowerShell Core 6.0
+              href: whats-new/breaking-changes-ps6.md
+            - name: Kända problem i PowerShell Core 6.0
+              href: whats-new/known-issues-ps6.md
+        - name: Nyheter i PowerShell 5.0
+          href: whats-new/what-s-new-with-powershell.md
+          items:
+            - name: Nyheter i Windows PowerShell 5.0
+              href: whats-new/what-s-new-in-windows-powershell-50.md
+            - name: Nyheter i PowerShell 5.0 ISE
+              href: whats-new/what-s-new-in-the-powershell-50-ise.md
     - name: Supportlängd för PowerShell Core
       href: PowerShell-Core-Support.md
     - name: Läs mer
