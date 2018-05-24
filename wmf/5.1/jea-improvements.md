@@ -49,7 +49,7 @@ Du kan sedan skriva anpassade funktioner för att bearbeta de data som lagras i 
 
 I vissa fall kan en aktivitet som en användare behöver genomföra i en session JEA behöver åtkomst till resurser utanför den lokala datorn.
 När en session JEA är konfigurerad för att använda ett virtuellt konto, visas alla försök att nå dessa resurser kan komma från den lokala datorns identitet, inte virtuellt konto eller anslutna användaren.
-I TP5, finns det stöd för att köra JEA i en [Grupphanterat tjänstkonto] kontext (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), vilket gör det enklare att komma åt nätverksresurser med hjälp av en domän-identitet.
+I TP5, finns det stöd för att köra JEA i en [Grupphanterat tjänstkonto](https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx) kontext, vilket gör det enklare att komma åt nätverksresurser med hjälp av en domän-identitet.
 
 Om du vill konfigurera en JEA session ska köras under ett konto för gMSA använder du följande nya nyckel i filen PSSC:
 
