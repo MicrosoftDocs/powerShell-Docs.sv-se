@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Hjälpmedelsfunktioner i Windows PowerShell ISE
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 65d159905660f4f3e025b385626679e02a785fd7
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 272dd502ff9d220e82236c93cbffaf4e12054cfe
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Hjälpmedelsfunktioner i Windows PowerShell ISE
 
@@ -27,7 +27,7 @@ Windows PowerShell ISE stöder hög kontrast läge. För nedsatt, brytpunktsinfo
 
 - Kortkommandon
 
-- Syntaxen färg tabell och möjligheten att ändra flera andra färginställningar med hjälp av den [$psISE.Options](https://technet.microsoft.com/en-us/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) scripting objekt.
+- Syntaxen färg tabell och möjligheten att ändra flera andra färginställningar med hjälp av den [$psISE.Options](https://technet.microsoft.com/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) scripting objekt.
 
 - Storlek ändras
 
@@ -62,16 +62,16 @@ Du kan använda följande kortkommandon när du redigerar text.
 |Åtgärd|Kortkommandon|Använd i|
 |----------|----------------------|----------|
 |**Kopiera**|CTRL+C|Skriptfönster konsolfönstret|
-|**Klipp ut**|CTRL+X|Skriptfönster konsolfönstret|
+|**Klipp ut**|CTRL + X|Skriptfönster konsolfönstret|
 |**Sök i skript**|CTRL+F|Skriptfönster|
 |**Sök nästa i skript**|F3|Skriptfönster|
 |**Sök föregående i skript**|SKIFT + F3|Skriptfönster|
 |**Klistra in**|CTRL+V|Skriptfönster konsolfönstret|
-|**Redo**|CTRL+Y|Skriptfönster konsolfönstret|
-|**Ersätt i skript**|CTRL+H|Skriptfönster|
+|**Gör om**|CTRL + Y|Skriptfönster konsolfönstret|
+|**Ersätt i skript**|CTRL + H|Skriptfönster|
 |**Spara**|CTRL+S|Skriptfönster|
 |**Markera alla**|CTRL+A|Skriptfönster konsolfönstret|
-|**Ångra**|CTRL+Z|Skriptfönster konsolfönstret|
+|**Ångra**|CTRL + Z|Skriptfönster konsolfönstret|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Kortkommandon för att köra skript
 
@@ -79,11 +79,11 @@ Du kan använda följande kortkommandon när du kör skript i skriptfönstret.
 
 |Åtgärd|Kortkommando|
 |----------|---------------------|
-|**Ny**|CTRL+N|
-|**Öppna**|CTRL+O|
+|**Ny**|CTRL + N|
+|**Öppna**|CTRL + O|
 |**Kör**|F5|
 |**Kör markering**|F8|
-|**Stoppa körning**|CTRL+BREAK. CTRL + C kan användas när kontexten är entydigt (när det finns ingen text som valts).|
+|**Stoppa körning**|CTRL + BREAK. CTRL + C kan användas när kontexten är entydigt (när det finns ingen text som valts).|
 |**Fliken** (för att nästa skript)|CTRL + TABB **Obs:** att nästa skriptet fungerar endast när du har en PowerShell flik öppna, eller när du har mer än en PowerShell-flik öppen, men fokus ligger i skriptfönstret.|
 |**Fliken** (för att tidigare skript)|CTRL + SKIFT + TABB **Obs:** att föregående skriptet fungerar när du har öppnat med endast en PowerShell-fliken, eller om du har mer än en PowerShell-flik öppen och fokus ligger i skriptfönstret.|
 
@@ -94,14 +94,14 @@ Du kan använda följande kortkommandon för att anpassa vyn i Windows PowerShel
 |Åtgärd|Kortkommando|
 |----------|---------------------|
 |**Gå till konsolfönstret**|CTRL+D|
-|**Gå till Skriptfönster**|CTRL+I|
-|**Visa Skriptfönster**|CTRL+R|
-|**Dölj Skriptfönster**|CTRL+R|
+|**Gå till Skriptfönster**|CTRL + K|
+|**Visa Skriptfönster**|CTRL + R|
+|**Dölj Skriptfönster**|CTRL + R|
 ||
 |**Flytta Skriptfönster upp**|CTRL+1|
 |**Flytta Skriptfönster åt höger**|CTRL+2|
-|**Maximera Skriptfönster**|CTRL+3|
-|**Zooma In**|CTRL+PLUS SIGN|
+|**Maximera Skriptfönster**|CTRL + 3|
+|**Zooma In**|CTRL + PLUSTECKEN|
 |**Zooma ut**|CTRL + MINUSTECKEN|
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Kortkommandon för att felsöka skript
@@ -142,8 +142,8 @@ Du kan använda följande kortkommandon när du använder Windows PowerShell-fli
 
 |Åtgärd|Kortkommando|
 |----------|---------------------|
-|**Stäng fliken PowerShell**|CTRL+W|
-|**Nya PowerShell-fliken**|CTRL+T|
+|**Stäng fliken PowerShell**|CTRL + W|
+|**Nya PowerShell-fliken**|CTRL + T|
 |**Föregående PowerShell flik**|CTRL + SKIFT + TABB. Den här genvägen fungerar endast när inga filer är öppna på någon av flikarna i PowerShell.|
 |**Nästa flik för Windows PowerShell**|CTRL + TABB. Den här genvägen fungerar endast när inga filer är öppna på någon av flikarna i PowerShell.|
 
@@ -153,7 +153,7 @@ Du kan använda följande kortkommandon om du vill starta Windows PowerShell-kon
 
 |Åtgärd|Kortkommando|
 |----------|---------------------|
-|**Exit**|ALT+F4|
+|**Avsluta**|ALT+F4|
 |**Starta PowerShell.exe** (Windows PowerShell-konsol)|CTRL + SKIFT + P|
 
 ## <a name="see-also"></a>Se även

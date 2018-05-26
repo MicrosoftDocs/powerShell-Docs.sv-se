@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: WinRMSecurity
-ms.openlocfilehash: e390a84b6f7a1932afdad84c7b09ce7da2ec5370
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 43e77067e301cdf1b792cb0d24b72ee0abb3349a
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell fjärrkommunikation säkerhetsaspekter
 
@@ -71,7 +71,7 @@ I stället bör du inställningen TrustedHosts att listan över värdar som du v
 
 ### <a name="ongoing-communication"></a>En pågående kommunikation
 
-När den första autentiseringen är klar, den [PowerShell fjärrkommunikation protokollet](https://msdn.microsoft.com/en-us/library/dd357801.aspx) krypterar alla pågående kommunikation med en tillfälliga AES 256 symmetrisk nyckel.
+När den första autentiseringen är klar, den [PowerShell fjärrkommunikation protokollet](https://msdn.microsoft.com/library/dd357801.aspx) krypterar alla pågående kommunikation med en tillfälliga AES 256 symmetrisk nyckel.
 
 
 ## <a name="making-the-second-hop"></a>Gör ett andra hopp

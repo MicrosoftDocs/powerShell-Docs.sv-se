@@ -2,11 +2,11 @@
 ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
 title: använda web baserat windows powershell-konsolen
-ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 5d29a6f97fddf4b329fcc7097cf7d40d47d22cca
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Användning av den webbaserade Windows PowerShell-konsolen
 
@@ -81,7 +81,7 @@ Det enklaste sättet att konfigurera datorn för att tillåta fjärrhantering ä
 
     De autentiseringsuppgifter du använder för att skicka via Windows PowerShell Web Access-gateway är vanligtvis samma som identifieras av den fjärrdator som du vill hantera. Om du vill använda andra autentiseringsuppgifter för att hantera fjärrdatorn som du angav i steg 2, expandera den **valfria anslutningsinställningar** och anger alternativa autentiseringsuppgifter. Annars går du till steg 6.
 
-1. Om Windows PowerShell Web Access-administratören har skapat en anpassad sessionskonfiguration för Windows PowerShell Web Access-användare, skriver du namnet på Konfigurationsnamnet session i den **Konfigurationsnamnet** fältet. Mer information om sessionskonfigurationer finns [about_Session_Configurations](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+1. Om Windows PowerShell Web Access-administratören har skapat en anpassad sessionskonfiguration för Windows PowerShell Web Access-användare, skriver du namnet på Konfigurationsnamnet session i den **Konfigurationsnamnet** fältet. Mer information om sessionskonfigurationer finns [about_Session_Configurations](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 1. Behåll den **autentiseringstyp** inställd på **standard** om du har fått instruktioner att göra något annat av Windows PowerShell Web Access-administratör.
 

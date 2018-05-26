@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Att göra ett andra hopp i PowerShell-fjärrkommunikation
-ms.openlocfilehash: 893b4353c4244dc96c4b234bb4062b583a5cd36d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1d24473178bc50321a81ebf1115a20f17078844f
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Att göra ett andra hopp i PowerShell-fjärrkommunikation
 
@@ -21,7 +21,7 @@ Det finns flera sätt att åtgärda problemet. I det här avsnittet ska vi titta
 
 ## <a name="credssp"></a>CredSSP
 
-Du kan använda den [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) för autentisering. CredSSP cachelagrar autentiseringsuppgifter på fjärrservern (_ServerB_), så använder den öppnar du upp till attacker för stöld av autentiseringsuppgifter. Om fjärrdatorn äventyras, har angriparen tillgång till användarens autentiseringsuppgifter. CredSSP är inaktiverat som standard på datorer som både klienten och servern. Du bör aktivera CredSSP bara i de mest betrodda miljöerna. Till exempel en domänadministratör ansluter till en domänkontrollant, eftersom domänkontrollanten som är betrodda.
+Du kan använda den [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) för autentisering. CredSSP cachelagrar autentiseringsuppgifter på fjärrservern (_ServerB_), så använder den öppnar du upp till attacker för stöld av autentiseringsuppgifter. Om fjärrdatorn äventyras, har angriparen tillgång till användarens autentiseringsuppgifter. CredSSP är inaktiverat som standard på datorer som både klienten och servern. Du bör aktivera CredSSP bara i de mest betrodda miljöerna. Till exempel en domänadministratör ansluter till en domänkontrollant, eftersom domänkontrollanten som är betrodda.
 
 Mer information om säkerhetsfrågor när du använder CredSSP för PowerShell-fjärrkommunikation finns [oavsiktliga Sabotage: var uppmärksam på CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
 
@@ -175,7 +175,7 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-I det här exemplet i `$using` variabeln används för att göra den `$ServerC` variabeln som är synliga för _ServerB_. Mer information om den `$using` variabel, se [about_Remote_Variables](https://technet.microsoft.com/en-us/library/jj149005.aspx).
+I det här exemplet i `$using` variabeln används för att göra den `$ServerC` variabeln som är synliga för _ServerB_. Mer information om den `$using` variabel, se [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx).
 
 Gör att flera servrar att delegera autentiseringsuppgifter för att _ServerC_, ange värdet för den **PrincipalsAllowedToDelegateToAccount** parameter på _ServerC_ till en matris som:
 
@@ -212,8 +212,8 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [Hur Windows Server 2012 övergångar efter Kerberos-begränsad delegering, del 1](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
 - [Hur Windows Server 2012 övergångar efter Kerberos-begränsad delegering, del 2](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [Så här fungerar Kerberos-begränsad delegering för Azure Active Directory Application Proxy-distributioner med integrerad Windows-autentisering](http://aka.ms/kcdpaper)
-- [[MS-ADA2]: Active Directory-schemat attribut M2.210 attributet msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/en-us/library/hh554126.aspx)
-- [[MS-SFU]: tillägg för Kerberos-protokollet: tjänst för användare och begränsad delegering protokollet 1.3.2 S4U2proxy](https://msdn.microsoft.com/en-us/library/cc246079.aspx)
+- [[MS-ADA2]: Active Directory-schemat attribut M2.210 attributet msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
+- [[MS-SFU]: tillägg för Kerberos-protokollet: tjänst för användare och begränsad delegering protokollet 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
 - [Resursen baserat Kerberos-begränsad delegering](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [Fjärradministration utan begränsad delegering med PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
 
@@ -236,7 +236,7 @@ Information om hur du använder PSSessionConfiguration och RunAs lösa andra hop
 
 JEA kan du begränsa vilka kommandon som en administratör kan köras under en PowerShell-session. Den kan användas för att lösa problemet för andra hopp.
 
-Information om JEA finns [bara tillräckligt Administration](https://docs.microsoft.com/en-us/powershell/jea/overview).
+Information om JEA finns [bara tillräckligt Administration](https://docs.microsoft.com/powershell/jea/overview).
 
 ### <a name="pros"></a>Fördelar
 
@@ -249,7 +249,7 @@ Information om JEA finns [bara tillräckligt Administration](https://docs.micros
 
 ## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Skicka autentiseringsuppgifterna inuti en Invoke-Command-skriptblock
 
-Du kan skicka autentiseringsuppgifter i den **ScriptBlock** parametern för ett anrop till den [Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet.
+Du kan skicka autentiseringsuppgifter i den **ScriptBlock** parametern för ett anrop till den [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet.
 
 ### <a name="pros"></a>Fördelar
 

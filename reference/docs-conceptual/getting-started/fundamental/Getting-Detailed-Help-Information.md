@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Få detaljerad hjälpinformation
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: bb0fac4eb338354e411458fad575c726a5f0da35
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="getting-detailed-help-information"></a>Få detaljerad hjälpinformation
 Windows PowerShell innehåller detaljerade hjälpavsnitt som beskriver begrepp för Windows PowerShell och Windows PowerShell-språk. Det finns även hjälpavsnitt för varje cmdlet och providern och hjälpavsnitt för många funktioner och skript.
@@ -128,7 +128,7 @@ get-help c:\ps-test\TestScript.ps1
 
 De parametrar som utformats för att visa cmdlet hjälp som *detaljerad*, *fullständig*, *exempel*, och *parametern*arbetar för skriptet hjälp och funktionen hjälp, för. Men när du visar alla hjälp genom att skriva ”get-help \*”, för funktioner och skript inte visas.
 
-Information om hur du skriver hjälpavsnitt för funktioner och skript finns i [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af), och [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
+Information om hur du skriver hjälpavsnitt för funktioner och skript finns i [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af), och [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
 
 ## <a name="getting-help-online"></a>Få hjälp Online
 Om du är ansluten till Internet, är ett bra sätt att få hjälp att visa hjälpavsnitt online. Eftersom det är enkelt att uppdatera online avsnitt, är det troligt att ange det mest aktuella innehållet.
@@ -165,10 +165,10 @@ Den första raden i avsnittet länkarna i avsnittet visas nedan.
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-Information om hur du ska ge support online för dina hjälpavsnitt finns [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf), och se [så att skriva Cmdlet](https://go.microsoft.com/fwlink/?LinkID=123415) i MSDN library.
+Information om hur du ska ge support online för dina hjälpavsnitt finns [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf), och se [så att skriva Cmdlet](https://go.microsoft.com/fwlink/?LinkID=123415) i MSDN library.
 
 ## <a name="see-also"></a>Se även
-- [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
-- [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)
-- [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
+- [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)
+- [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)
+- [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
 - [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)

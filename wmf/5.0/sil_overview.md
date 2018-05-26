@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 4bfedd585958f84889954bd9ee022ea47ac191b2
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e7198999c17b5c0d77724a82b322e6485065225e
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="software-inventory-logging-sil"></a>Loggning av programvaruinventering (SIL)
 
-** Viktigt: ** *när du installerar WMF 5.0 på en Windows Server 2012 R2-Server som redan kör SIL, är det nödvändigt att köra cmdleten Start-SilLogging en gång efter installationen WMF som installationen avbryts felaktigt programvaran Inventera loggningsfunktionen.*
+**Viktigt:** *när du installerar WMF 5.0 på en Windows Server 2012 R2-Server som redan kör SIL, är det nödvändigt att köra cmdleten Start-SilLogging en gång efter installationen WMF som installationsprocessen felaktigt slutar den Software Inventory Logging-funktionen.*
 
 Software Inventory Logging hjälper till att minska driftskostnaderna för hämtning av korrekt information om Microsoft-programvara som installeras lokalt på en server, men speciellt över flera servrar i en IT-miljö (förutsatt att programvaran är installerad och körs hela IT-miljön). Förutsatt en ställs in kan vidarebefordra data till en aggregeringsserver, och samla in loggdata på ett ställe med en enhetlig, automatisk process.
 
