@@ -2,11 +2,11 @@
 ms.date: 06/27/2017
 keywords: PowerShell-cmdlet
 title: Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst
-ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1b4d4339efda78a5cb719921a9cb06881d119930
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst
 
@@ -112,7 +112,7 @@ Om användaren inte anger alternativa autentiseringsuppgifter används också pr
 Auktoriseringsregler kan användas för att ge användarna åtkomst till en viss sessionskonfiguration.
 Du kan skapa _begränsade körningsutrymmen_ eller sessionskonfigurationer för Windows PowerShell Web Access och ge särskilda användare att ansluta till vissa specifika sessionskonfigurationer när de loggar in på Windows PowerShell Web Access.
 Du kan använda åtkomstkontrollistor (ACL) för att avgöra vilka användare som har åtkomst till specifika slutpunkter och ytterligare begränsa åtkomsten till slutpunkten för en specifik uppsättning användare genom att använda auktoriseringsregler som beskrivs i det här avsnittet.
-Mer information om begränsade körningsutrymmen finns [skapar ett begränsat körningsutrymme](https://msdn.microsoft.com/en-us/library/dn614668).
+Mer information om begränsade körningsutrymmen finns [skapar ett begränsat körningsutrymme](https://msdn.microsoft.com/library/dn614668).
 
 ### <a name="configuring-authorization-rules"></a>Konfigurera auktoriseringsregler
 
@@ -122,7 +122,7 @@ Den andra proceduren beskriver hur du tar bort en auktoriseringsregel som inte l
 
 Om du tänker använda anpassade konfigurationer för att tillåta specifika användare att arbeta i begränsade körningsutrymmen i Windows PowerShell Web Access kan du skapa dina anpassade konfigurationer innan du lägger till auktoriseringsregler som refererar till dem.
 Du kan inte använda Windows PowerShell Web Access-cmdlets för att skapa anpassade sessionskonfigurationer.
-Mer information om hur du skapar anpassade sessionskonfigurationer finns [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+Mer information om hur du skapar anpassade sessionskonfigurationer finns [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 
 Windows PowerShell Web Access-cmdlets stöder ett jokertecken, en asterisk ( \* ).
 Jokertecken i strängar stöds inte. Använd en enda asterisk per egenskap (användare, datorer eller sessionskonfigurationer).
@@ -142,7 +142,7 @@ Jokertecken i strängar stöds inte. Använd en enda asterisk per egenskap (anv�
 2. **Valfritt steg** för att begränsa användaråtkomsten med hjälp av sessionskonfigurationer:
 
     Kontrollera att de sessionskonfigurationer som du vill använda redan finns i dina regler.
-Om de inte ännu har skapats använder du instruktionerna för att skapa sessionskonfigurationer i [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+Om de inte ännu har skapats använder du instruktionerna för att skapa sessionskonfigurationer i [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 
 3. Denna auktoriseringsregel ger en specifik användaråtkomst till en dator i nätverket som de normalt har åtkomst, med åtkomst till en specifik sessionskonfiguration som är begränsade till användaren '™ vanliga skript- och cmdlet behov. Skriv följande och tryck sedan på **Ange**.
 
@@ -253,6 +253,6 @@ Om gateway-servern kör Windows Server 2012 R2, Windows PowerShell Web Access ka
 
 ## <a name="see-also"></a>Se även
 
-- [Installera och använda Windows PowerShell-webbåtkomst](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
+- [Installera och använda Windows PowerShell-webbåtkomst](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
 - [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 - [Windows PowerShell-cmdletar för Webbåtkomst](cmdlets/web-access-cmdlets.md)
