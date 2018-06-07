@@ -42,7 +42,7 @@ Dessutom behöver du aktivera autentisering med lösenord och eventuellt viktiga
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
 
-1. Installera senaste [Win32 OpenSSH] skapa från GitHub använder den [installation] instruktioner
+1. Installera senaste [Win32-OpenSSH] skapa från GitHub använder den [installation] instruktioner
 1. Redigera filen sshd_config på den plats där du installerade Win32 OpenSSH
     - Kontrollera att lösenordsautentisering är aktiverat
 
@@ -131,7 +131,7 @@ Dessutom behöver du aktivera autentisering med lösenord och eventuellt viktiga
     - Lägga till en PowerShell-undersystemet post
 
     ```
-    Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
+    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
     ```
 
     - Om du vill aktivera autentisering med nyckel
@@ -242,8 +242,8 @@ GitCommitId                    v6.0.0-alpha.17
 1. sudo-kommando fungerar inte i fjärrsessionen till Linux-datorn.
 
 [PowerShell Core för Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
-[Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH
-[installation]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
+[Win32-OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
+[Installation]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [PowerShell för Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
 [PowerShell för MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
