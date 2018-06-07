@@ -3,21 +3,22 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Ta bort objekt från Pipeline där objekt
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: 2d89defdb1b234a9d0021fc06e1f05a95bb1bce9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 46f210e1418098f4809174cd975ab8d783580285
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753846"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Ta bort objekt från Pipeline (Where-Object)
 
 I Windows PowerShell kan du ofta generera och skicka vidare flera objekt för en pipeline än du vill. Du kan ange egenskaper för specifika objekt som ska visas med hjälp av den **Format** cmdlets, men detta hjälper inte problemet med att ta bort hela objekt från skärmen. Du kanske vill filtrera objekt före utgången av en pipeline, så att du kan utföra åtgärder på endast en delmängd av objekt som ursprungligen genererades.
 
-Windows PowerShell innehåller en **Where-Object** cmdlet som du kan testa varje objekt i pipeline och bara skicka den längsmed pipelinen om den uppfyller ett visst Testvillkor. Objekt som inte klarar testet tas bort från pipeline. Du kan ange testvillkoret som värde för den **var ObjectFilterScript** parameter.
+Windows PowerShell innehåller en `Where-Object` cmdlet som du kan testa varje objekt i pipeline och bara skicka den längsmed pipelinen om den uppfyller ett visst Testvillkor. Objekt som inte klarar testet tas bort från pipeline. Du kan ange testvillkoret som värde för den `Where-Object` **FilterScript** parameter.
 
 ### <a name="performing-simple-tests-with-where-object"></a>Utför enkla tester med Where-Object
 
-Värdet för **FilterScript** är en *skriptblock* - en eller flera Windows PowerShell-kommandon omges av klammerparenteser {} - som utvärderas till true eller false. Dessa skriptblock kan vara mycket enkla, men skapa dem kräver att veta om en annan Windows PowerShell-konceptet jämförelseoperatorer. Jämförelseoperator jämför de objekt som visas på varje sida. Jämförelseoperatorer börja med en '-' tecken och följas av ett namn. Grundläggande jämförelseoperatorer fungerar på nästan vilken typ av objekt. Mer avancerade jämförelseoperatorer kanske bara fungerar på text eller matriser.
+Värdet för **FilterScript** är en *skriptblock* -en eller flera Windows PowerShell-kommandon som omges av klammerparenteser {} -som utvärderas till true eller false. Dessa skriptblock kan vara mycket enkla, men skapa dem kräver att veta om en annan Windows PowerShell-konceptet jämförelseoperatorer. Jämförelseoperator jämför de objekt som visas på varje sida. Jämförelseoperatorer börja med en '-' tecken och följas av ett namn. Grundläggande jämförelseoperatorer fungerar på nästan vilken typ av objekt. Mer avancerade jämförelseoperatorer kanske bara fungerar på text eller matriser.
 
 > [!NOTE]
 > Som standard när du arbetar med text, är Windows PowerShell-jämförelseoperatorer inte skiftlägeskänsliga.
@@ -28,7 +29,7 @@ Symboler till exempel <>, på grund av parsning överväganden och = inte använ
 |-----------------------|-----------|--------------------------|
 |-eq|är lika med|1 - eq 1|
 |-ne|Är inte lika med|1 - ne 2|
-|-lt|Är mindre än|1 - lt 2|
+|lt-|Är mindre än|1 - lt 2|
 |-le|Är mindre än eller lika med|1 - le 2|
 |-gt|Är större än|2 - gt 1|
 |-ge|Är större än eller lika med|2 -ge 1|

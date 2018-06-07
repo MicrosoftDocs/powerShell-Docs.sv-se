@@ -1,18 +1,22 @@
 ---
-ms.date: 06/12/2017
+ms.date: 06/20/2018
 keywords: DSC, powershell, konfiguration, installation
 title: DSC PackageManagement resurs
-ms.openlocfilehash: f850c389214fe5adf139c3bd01fb60addc5ec238
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3d52934b130d59acee4d7f8a92da2c743c1eb305
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753795"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement resurs
 
-> Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0, 5.1 för Windows PowerShell
 
 Den **PackageManagement** resurs i Windows PowerShell önskad tillstånd Configuration (DSC) ger dig möjlighet att installera eller avinstallera paketet Management-paketen på målnoden. Den här resursen kräver den **PackageManagement** modulen från http://PowerShellGallery.com.
+
+> [!IMPORTANT]
+> Den **PackageManagement** modulen bör vara minst version 1.1.7.0 med följande information för egenskapen ska vara giltig.
 
 ## <a name="syntax"></a>Syntax
 
@@ -20,31 +24,35 @@ Den **PackageManagement** resurs i Windows PowerShell önskad tillstånd Configu
 PackageManagement [string] #ResourceName
 {
     Name = [string]
-    [ Source = [string] ]
-    [ Ensure = [string] { Absent | Present }  ]
-    [ RequiredVersion = [string] ]
-    [ MinimumVersion = [string] ]
-    [ MaximumVersion = [string] ]
-    [ SourceCredential = [PSCredential] ]
-    [ ProviderName = [string] ]
-    [ AdditionalParameters = [Microsoft.Management.Infrastructure.CimInstance[]] ]
+    [AdditionalParameters = [HashTable]]
+    [DependsOn = [string[]]]
+    [Ensure = [string]{ Absent | Present }]
+    [MaximumVersion = [string]]
+    [MinimumVersion = [string]]
+    [ProviderName = [string]]
+    [PsDscRunAsCredential = [PSCredential]]
+    [RequiredVersion = [string]]
+    [Source = [string]]
+    [SourceCredential = [PSCredential]]
 }
 ```
 
 ## <a name="properties"></a>Egenskaper
+
 |  Egenskap  |  Beskrivning   |
 |---|---|
 | Namn| Anger namnet på paketet som ska installeras eller avinstalleras.|
-| Källa| Anger namnet på paketkällan där paketet kan hittas. Detta kan antingen vara en URI eller en källa som har registrerats med registrera PackageSource eller PackageManagementSource DSC-resurs. DSC-resursen MSFT_PackageManagementSource kan också registrera en paketkällan.|
+| AdditionalParameters| Providern specifika hash av parametrar som skickas till `Get-Package -AdditionalArguments`. Du kan till exempel överföra ytterligare parametrar som DestinationPath för NuGet-providern.|
 | Se till att| Anger om paketet ska installeras eller avinstalleras.|
-| RequiredVersion| Anger den exakta versionen av paketet som du vill installera. Om du inte anger den här parametern installerar den senaste tillgängliga versionen av paketet som också uppfyller alla högsta version som anges av parametern MaximumVersion i den här DSC-resursen.|
-| MinimumVersion| Anger det minsta tillåtna version av paketet som du vill installera. Om du inte lägga till den här parametern anges den här DSC resurs intalls högsta tillgängliga versionen av paketet som också uppfyller eventuella maximalt angivna versionen av parametern MaximumVersion.|
-| MaximumVersion| Anger högsta tillåtna version av paketet som du vill installera. Om du inte anger den här parametern installerar den här DSC-resursen högsta numret tillgänglig version av paketet.|
+| MaximumVersion|Anger högsta tillåtna version av paketet som du vill söka efter. Om du inte lägga till den här parametern hittar den högsta tillgängliga versionen av paketet i resursen.|
+| MinimumVersion|Anger det minsta tillåtna version av paketet som du vill söka efter. Om du inte lägga till den här parametern resursen hittar den högsta tillgängliga versionen av paketet som också uppfyller alla angivna högsta version som anges av den _MaximumVersion_ parameter.|
+| ProviderName| Anger ett provider-namn för paketet som du vill begränsa sökningen paketet. Du kan hämta paketet providernamn genom att köra den `Get-PackageProvider` cmdlet.|
+| RequiredVersion| Anger den exakta versionen av paketet som du vill installera. Om du inte anger den här parametern DSC resursen installerar den senaste tillgängliga versionen av paketet som också uppfyller alla högsta version som anges av den _MaximumVersion_ parameter.|
+| Källa| Anger namnet på paketkällan där paketet kan hittas. Detta kan antingen vara en URI eller en källa som har registrerats med `Register-PackageSource` eller PackageManagementSource DSC-resurs.|
 | SourceCredential | Anger ett användarkonto som har behörighet att installera ett paket för ett angivet paket provider eller källa.|
-| ProviderName| Anger ett provider-namn för paketet som du vill begränsa sökningen paketet. Du kan hämta paketet providernamn genom att köra cmdlet Get-PackageProvider.|
-| AdditionalParameters| Providern specifika parametrar som skickas som en hash-tabell. Du kan till exempel överföra ytterligare parametrar som DestinationPath för NuGet-providern.|
 
 ## <a name="additional-parameters"></a>Ytterligare parametrar
+
 I följande tabell visas alternativ för egenskapen AdditionalParameters.
 |  Parameter  | Beskrivning   |
 |---|---|
@@ -63,7 +71,7 @@ Configuration PackageTest
         Ensure      = "Present"
         Name        = "MyNuget"
         ProviderName= "Nuget"
-        SourceUri   = "http://nuget.org/api/v2/"
+        SourceLocation   = "http://nuget.org/api/v2/"
         InstallationPolicy ="Trusted"
     }
 
@@ -72,7 +80,7 @@ Configuration PackageTest
         Ensure      = "Present"
         Name        = "psgallery"
         ProviderName= "PowerShellGet"
-        SourceUri   = "https://www.powershellgallery.com/api/v2/"
+        SourceLocation   = "https://www.powershellgallery.com/api/v2/"
         InstallationPolicy ="Trusted"
     }
 
