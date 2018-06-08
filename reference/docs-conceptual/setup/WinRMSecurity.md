@@ -3,10 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: WinRMSecurity
 ms.openlocfilehash: 43e77067e301cdf1b792cb0d24b72ee0abb3349a
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482955"
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell fjärrkommunikation säkerhetsaspekter
 

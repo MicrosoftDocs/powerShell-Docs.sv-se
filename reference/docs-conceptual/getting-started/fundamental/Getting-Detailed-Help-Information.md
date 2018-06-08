@@ -4,10 +4,11 @@ keywords: PowerShell-cmdlet
 title: Få detaljerad hjälpinformation
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
 ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483040"
 ---
 # <a name="getting-detailed-help-information"></a>Få detaljerad hjälpinformation
 Windows PowerShell innehåller detaljerade hjälpavsnitt som beskriver begrepp för Windows PowerShell och Windows PowerShell-språk. Det finns även hjälpavsnitt för varje cmdlet och providern och hjälpavsnitt för många funktioner och skript.

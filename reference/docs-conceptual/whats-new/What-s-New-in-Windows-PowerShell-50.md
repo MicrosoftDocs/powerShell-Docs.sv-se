@@ -3,10 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Vad är nytt i Windows PowerShell 5.0
 ms.openlocfilehash: f5a27c0541e21b379f88b318cbe09a0344c1b372
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483193"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Vad är nytt i Windows PowerShell 5.0
 Windows PowerShell 5.0 innehåller nya viktiga funktioner som utökar användningen, förbättrar dess användbarhet och gör att du kan styra och hantera Windows-baserade miljöer enklare och mer omfattande.
