@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Ändra datorstatus
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: 3d3983c6d9e9b11db62bd71805da51be83331fdb
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c659ad54325b0f7305f882e1cb9607062abad6a4
+ms.sourcegitcommit: 2ffb9fa92129c2001379ca2c17646466721f7165
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251525"
 ---
 # <a name="changing-computer-state"></a>Ändra datorstatus
 
@@ -49,16 +50,16 @@ Mer information och andra funktioner för metoden Win32Shutdown finns ”Win32Sh
 
 Stänga av och starta om datorer är vanligtvis samma typ av aktivitet. Verktyg som stänga av datorn normalt startar om den också, och vice versa. Det finns två enkla alternativ för att starta om en dator från Windows PowerShell. Använda Tsshutdn.exe eller Shutdown.exe med lämpliga argument. Du kan få detaljerad användningsinformation från **tsshutdn.exe /?** eller **shutdown.exe /?**.
 
-Du kan också utföra avstängning och starta om åtgärder med hjälp av **Win32_OperatingSystem** direkt från Windows PowerShell samt.
+Du kan också utföra avstängning och starta om operations direkt från Windows PowerShell samt.
 
-Om du vill stänga av datorn, använder du metoden Win32Shutdown med den **1** flaggan.
+Använd kommandot starta om datorn för att stänga av datorn
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(1)
+stop-computer
 ```
 
-Om du vill starta om operativsystemet, använder du metoden Win32Shutdown med den **2** flaggan.
+Om du vill starta om operativsystemet, använder du kommandot starta om datorn
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(2)
+restart-computer
 ```

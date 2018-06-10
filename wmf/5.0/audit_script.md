@@ -1,11 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 2627b9d02788bd31a5384587406df533faf2cfaf
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b8f175cee0a1de501b64890fdc2798f4f6421a14
+ms.sourcegitcommit: 2ffb9fa92129c2001379ca2c17646466721f7165
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251491"
 ---
 # <a name="script-tracing-and-logging"></a>Skriptspårning och -loggning
 
@@ -104,4 +105,4 @@ $sortedScripts = $created | sort { $_.Properties[0].Value }
 $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
-Precis som med alla loggning system som har en begränsad kvarhållning buffert (d.v.s. ETW-loggarna) är en attack mot denna infrastruktur att översvämma logg med falska händelser att dölja tidigare bevis. Om du vill skydda dig mot angrepp, kontrollera att du har någon form av händelseloggen samling konfigurera (d.v.s. händelse vidarebefordran av Windows, [upptäcka angriparen med övervakning av Windows händelselogg](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)) att flytta loggar ut från datorn som snart som möjligt.
+Precis som med alla loggning system som har en begränsad kvarhållning buffert (d.v.s. ETW-loggarna) är en attack mot denna infrastruktur att översvämma logg med falska händelser att dölja tidigare bevis. Om du vill skydda dig mot angrepp, kontrollera att du har någon form av händelseloggen samling konfigurera (d.v.s. händelse vidarebefordran av Windows, [upptäcka angriparen med övervakning av Windows händelselogg](https://www.iad.gov/iad/library/reports/spotting-the-adversary-with-windows-event-log-monitoring.cfm)) att flytta loggar ut från datorn som snart som möjligt.
