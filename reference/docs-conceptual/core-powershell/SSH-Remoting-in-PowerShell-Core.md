@@ -74,7 +74,7 @@ Dessutom behöver du aktivera autentisering med lösenord och eventuellt viktiga
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Installationen på datorn för Linux (Ubuntu 14.04)
 
-1. Installera senaste [PowerShell för Linux] skapa från GitHub
+1. Installera senaste [PowerShell-kärna för Linux] skapa från GitHub
 1. Installera [Ubuntu SSH] efter behov
 
     ```bash
@@ -109,7 +109,7 @@ Dessutom behöver du aktivera autentisering med lösenord och eventuellt viktiga
 
 ## <a name="setup-on-macos-machine"></a>Installation på MacOS datorn
 
-1. Installera senaste [PowerShell för MacOS] skapa
+1. Installera senaste [PowerShell-kärna för MacOS] skapa
     - Se till att SSH fjärrkommunikation är aktiverad på följande sätt:
       - Öppna `System Preferences`
       - Klicka på `Sharing`
@@ -241,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. sudo-kommando fungerar inte i fjärrsessionen till Linux-datorn.
 
-[PowerShell Core för Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[PowerShell Core för Windows]: ../setup/installing-powershell-core-on-windows.md#msi
+[PowerShell-kärna för Linux]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
+[PowerShell-kärna för MacOS]: ../setup/installing-powershell-core-on-macos.md
 [Win32-OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [Installation]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
-[PowerShell för Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[PowerShell för MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
