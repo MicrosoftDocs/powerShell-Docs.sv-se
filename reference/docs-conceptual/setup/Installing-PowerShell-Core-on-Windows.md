@@ -2,17 +2,17 @@
 
 ## <a name="msi"></a>MSI
 
-Installera PowerShell på en Windows-klienten eller Windows Server (fungerar på Server 2008 R2, Windows 7 SP1 och senare), ladda ned MSI-paketet från vår GitHub [släpper][] sidan.
+Installera PowerShell på en Windows-klienten eller Windows Server (fungerar på Server 2008 R2, Windows 7 SP1 och senare), ladda ned MSI-paketet från sidan med våra GitHub [versioner] [].
 
-MSI-filen ser ut så här- `PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+MSI-filen ser ut så här- `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 När du har hämtat, dubbelklickar du på installationsprogrammet och följ anvisningarna.
 
 Det finns en genväg som placerats i Start-menyn vid installationen.
 
-- Paketet installeras som standard till `$env:ProgramFiles\PowerShell\`
-- Du kan starta PowerShell via Start-menyn eller `$env:ProgramFiles\PowerShell\pwsh.exe`
+- Paketet installeras som standard till `$env:ProgramFiles\PowerShell\<version>`
+- Du kan starta PowerShell via Start-menyn eller `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 ### <a name="prerequisites"></a>Förutsättningar
 
@@ -126,12 +126,12 @@ Följande steg leder dig genom distributionen av PowerShell Core till en instans
 PowerShell Core stöder PowerShell fjärrkommunikation Protocol (PSRP) över SSH- och WSMan.
 Mer information finns i följande avsnitt:
 
-- [SSH fjärrkommunikation i PowerShell Core][ssh-remoting]
-- [WSMan-fjärrkommunikation i PowerShell Core][wsman-remoting]
+- [SSH fjärrkommunikation i PowerShell Core] [ssh-fjärrkommunikation]
+- [WSMan fjärrkommunikation i PowerShell Core] [wsman-fjärrkommunikation]
 
 ## <a name="artifact-installation-instructions"></a>Installationsinstruktioner för artefakt
 
-Vi publicerar ett arkiv med CoreCLR bitar på varje CI-version med [AppVeyor][].
+Vi publicerar ett arkiv med CoreCLR bitar på varje CI-version med [AppVeyor] [].
 
 Installera PowerShell Core från CoreCLR artefakten:
 
@@ -140,8 +140,4 @@ Installera PowerShell Core från CoreCLR artefakten:
 3. Extrahera zipfilen till `bin` directory
 4. `./bin/pwsh.exe`
 
-<!-- [download-center]: TODO -->
-[släpper]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+<!-- [download-center]: TODO --> [släpper]: https://github.com/PowerShell/PowerShell/releases [ssh-fjärrkommunikation]:... /Core-PowerShell/SSH-Remoting-in-PowerShell-Core.MD [wsman-fjärrkommunikation]:... /Core-PowerShell/wsman-Remoting-in-PowerShell-Core.MD [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
