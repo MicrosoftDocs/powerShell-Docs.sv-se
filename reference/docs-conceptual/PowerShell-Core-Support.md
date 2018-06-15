@@ -6,7 +6,7 @@ Därför ingår PowerShell Core inte i Licensavtal för Windows 7/8.1/10 eller W
 PowerShell Core stöds dock under traditionell Microsoft support-avtalet, inklusive [Premier][], [Microsoft Enterprise-avtal][enterprise-agreement], och [Microsoft Software Assurance][assurance].
 Du kan också betala för [stödd stöd][] för PowerShell Core arkivera en supportförfrågan för ditt problem.
 
-Vi erbjuder även [communitysupport][] på GitHub där du kan lagra ett problem, fel eller funktionsbegäran.
+Vi erbjuder även [Community-support][] på GitHub där du kan lagra ett problem, fel eller funktionsbegäran.
 Alternativt kan du hitta hjälp från andra medlemmar i gruppen på allmänna [Microsoft Community][] eller Microsoft [PowerShell teknisk Community][].
 Vi erbjuder ingen garanti det att problemet ska åtgärdas eller matchas i rimlig tid.
 Om du har problem som kräver omedelbara åtgärder, bör du använda den traditionella betald supportalternativ.
@@ -41,8 +41,8 @@ PowerShell Core stöds officiellt på följande plattformar:
 * CentOS 7
 * Red Hat Enterprise Linux 7
 * OpenSUSE 42.2
-* Fedora 25, 26
-* macOS 10.12+
+* Fedora 27, 28
+* macOS 10.12 +
 
 Gruppen har också bidragit paket för följande plattformar, men de är inte officiellt stöds:
 
@@ -52,8 +52,8 @@ Gruppen har också bidragit paket för följande plattformar, men de är inte of
 
 ## <a name="notes-on-licensing"></a>Information om licensiering
 
-PowerShell Core släpps den [MIT-licensen][].
-Under denna licens och saknas en betald supportavtal användare är begränsade till [communitysupport][].
+PowerShell Core släpps den [MIT-licens][].
+Under denna licens och saknas en betald supportavtal användare är begränsade till [community-support][].
 Microsoft ger inga garantier för tillgänglighet eller korrigeringar med community-support.
 
 ## <a name="windows-powershell-module"></a>Windows PowerShell-modulen
@@ -62,7 +62,7 @@ Stöd för PowerShell Core inte utökar till andra moduler för produkten om de 
 Till exempel med hjälp av den `ActiveDirectory` modulen som levereras som en del av Windows Server är ett scenario som inte stöds.
 
 Moduler som inte uttryckligen har stöd för PowerShell Core kan dock vara kompatibla i vissa fall.
-Genom att installera den [`WindowsPSModulePath`][] modulen, kan du lägga till Windows PowerShell `PSModulePath` till PowerShell-kärna `PSModulePath`.
+Genom att installera den [ `WindowsPSModulePath` ][] modulen, kan du lägga till Windows PowerShell `PSModulePath` till PowerShell-kärna `PSModulePath`.
 
 Installera först den `WindowsPSModulePath` modul från PowerShell-galleriet:
 
@@ -81,12 +81,12 @@ Add-WindowsPSModulePath
 [Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
-[communitysupport]: https://github.com/powershell/powershell/issues
+[Community-support]: https://github.com/powershell/powershell/issues
 [Microsoft Community]: https://answers.microsoft.com/
 [PowerShell teknisk Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [stödd stöd]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
-[MIT-licensen]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-[`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+[MIT-licens]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
+['WindowsPSModulePath']: https://www.powershellgallery.com/packages/WindowsPSModulePath/
