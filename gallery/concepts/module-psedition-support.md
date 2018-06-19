@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189524"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Moduler med kompatibla versioner av PowerShell
 
@@ -249,4 +250,4 @@ Find-Module -Tag PSEdition_Core
 
 - [Skript med PSEditions](script-psedition-support.md)
 - [Stöd för PSEditions på PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)
-- [Uppdatera modulmanifestet] (/ powershell/modulen/powershellget/update-modulemanifest)
+- [Uppdatera modulmanifestet] (/powershell/module/powershellget/update-modulemanifest)
