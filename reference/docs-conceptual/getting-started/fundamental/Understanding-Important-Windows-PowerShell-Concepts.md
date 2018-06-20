@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951094"
 ---
 # <a name="understanding-important-windows-powershell-concepts"></a>Förstå viktiga Windows PowerShell-koncept
 Windows PowerShell-designen integreras begrepp från många olika miljöer. Flera av dem är bekant för personer med erfarenhet av specifika tankar eller programmeringsmiljöer, men mycket få användarna vet om alla. Titta på några av dessa koncept ger en bra översikt över Windows-gränssnittet.

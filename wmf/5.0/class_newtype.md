@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189422"
 ---
 # <a name="new-language-features-in-powershell-50"></a>Funktioner för nya språk i PowerShell 5.0
 

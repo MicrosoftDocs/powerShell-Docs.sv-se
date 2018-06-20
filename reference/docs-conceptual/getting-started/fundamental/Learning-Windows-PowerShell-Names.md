@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953481"
 ---
 # <a name="learning-windows-powershell-names"></a>Läs mer om Windows PowerShell-namn
 Learning namnen på kommandon och parametrar för kommandot är en betydande tid investering med de flesta kommandoradsverktyget gränssnitt. Problemet är att det finns mycket få mönster, så det enda sättet att lära dig om du lär dig varje kommando och varje parameter som du behöver använda regelbundet.

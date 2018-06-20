@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953131"
 ---
 # <a name="starting-windows-powershell"></a>Starta Windows Powershell
 PowerShell är en skriptmiljö motorn DLL-fil som är inbäddade i flera värdar.  De vanligaste värden startas är interaktiva kommandoraden PowerShell.exe och interaktiva Scripting Environment PowerShell_ISE.exe.

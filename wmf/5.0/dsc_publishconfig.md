@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225682"
 ---
 # <a name="deliver-a-configuration-document-without-applying"></a>Leverera ett konfigurationsdokument av utan att använda
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950546"
 ---
 # <a name="windows-powershell-basics"></a>Grunderna i Windows PowerShell
 Grafiska användargränssnitt använda några grundläggande begrepp som är kända för de flesta användare. Användare är beroende av välbekanta av dessa gränssnitt för att utföra aktiviteter. Operativsystem ge användarna en grafisk representation av objekt som kan visas, vanligtvis med nedrullningsbara menyer för specifika funktioner och kontext menyer för att komma åt sammanhangsberoende funktioner.

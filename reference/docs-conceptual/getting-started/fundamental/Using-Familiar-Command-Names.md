@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952689"
 ---
 # <a name="using-familiar-command-names"></a>Använd bekanta kommandonamn
 Med hjälp av en mekanism kallas *alias*, Windows PowerShell kan du referera till kommandon med alternativa namn. Alias kan användare upplevelse i andra tankar återanvända vanliga kommandonamn som de redan känner till att utföra samma åtgärder i Windows PowerShell. Även om vi inte upp Windows PowerShell-alias i detalj, kan du fortfarande använda dem när du kommer igång med Windows PowerShell.

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225699"
 ---
 # <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Moduler som har stöd för deklarerar versioner som stöds (1.* osv)
 I kombination med **- MinimumVersion**, **- MaximumVersion** nu kan användare get/import-module inom ett visst intervall. Parametern stöder också **.** \*. I följande exempel visas hur det fungerar:

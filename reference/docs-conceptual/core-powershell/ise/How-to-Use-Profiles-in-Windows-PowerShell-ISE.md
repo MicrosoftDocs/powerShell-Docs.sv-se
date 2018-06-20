@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951230"
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>Använd profiler Windows PowerShell ISE
 

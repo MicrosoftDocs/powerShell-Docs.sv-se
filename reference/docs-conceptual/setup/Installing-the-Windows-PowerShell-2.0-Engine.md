@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952349"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>Installera Windows PowerShell 2.0-motorn
 Det här avsnittet beskriver hur du installerar Windows PowerShell 2.0-motorn.

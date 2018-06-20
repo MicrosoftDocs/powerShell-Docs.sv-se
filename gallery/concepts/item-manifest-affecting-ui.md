@@ -8,6 +8,7 @@ ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34049105"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Objektet manifestet värden som påverkar Gränssnittet PowerShell-galleriet
 

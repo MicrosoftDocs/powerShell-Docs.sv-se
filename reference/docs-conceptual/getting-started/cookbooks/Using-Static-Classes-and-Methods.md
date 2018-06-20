@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951859"
 ---
 # <a name="using-static-classes-and-methods"></a>Använd statiska klasser och metoder
 Inte alla klasser i .NET Framework kan skapas med hjälp av **New-Object**. Om du försöker skapa till exempel en **System.Environment** eller en **System.Math** objekt med **New-Object**, du får följande felmeddelanden:

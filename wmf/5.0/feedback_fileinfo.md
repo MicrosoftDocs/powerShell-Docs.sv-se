@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225648"
 ---
 # <a name="updates-to-fileinfo-object"></a>Uppdateringar till FileInfo-objektet
 Filversionsinformation kan vilseledande särskilt i fall där filen var korrigeras. Den här versionen av WMF 5.0 lägger till nya **FileVersionRaw** och **ProductVersionRaw** skript egenskaper FileInfo objekt. Här är egenskaperna som visas för powershell.exe (förutsatt att $pid är det PowerShell-process-ID):

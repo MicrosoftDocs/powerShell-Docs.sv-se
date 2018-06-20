@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30948218"
 ---
 # <a name="object-pipeline"></a>Objektpipeline
 Pipelines fungerar som en serie med anslutna pipe-segment. Artiklar som flyttas längsmed pipelinen släpper igenom varje segment. Om du vill skapa en pipeline i Windows PowerShell måste du ansluta kommandon tillsammans med operatorn ”|”. Utdata från varje kommando används som indata till nästa kommando.

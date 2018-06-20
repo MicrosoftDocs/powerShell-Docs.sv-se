@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952315"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Arbeta med filer, mappar och registernycklar
 

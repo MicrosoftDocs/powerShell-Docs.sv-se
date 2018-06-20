@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950975"
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a>Förbered dig för Windows PowerShell
 När Windows PowerShell är installerat och igång, Överväg följande alternativ. Du kan utföra dessa uppgifter när som helst.

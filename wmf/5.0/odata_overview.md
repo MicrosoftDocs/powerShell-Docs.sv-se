@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219556"
 ---
 # <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>Skapa PowerShell-cmdletar baserade på OData-slutpunkt
 <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Generera en Windows PowerShell-cmdlets som är baserat på en OData-slutpunkt

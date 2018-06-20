@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954338"
 ---
 # <a name="using-windows-powershell-for-administration"></a>Använd Windows PowerShell för administration
 Grundläggande målet med Windows PowerShell tillhandahåller bättre och enklare administrativ kontroll över system, interaktivt eller från skript. Det här kapitlet innehåller stegvisa lösningar på många specifika problem administrera Windows-datorer med Windows PowerShell. Även om vi inte har talat om skript eller funktioner i Windows PowerShell användarhandboken, kan lösningarna användas av skript eller funktioner senare. Vi visar exempel som innehåller funktioner som en del av lösningen för att lösa problem.
