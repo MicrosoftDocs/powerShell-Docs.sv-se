@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189796"
 ---
 # <a name="windows-management-framework-wmf-51"></a><span data-ttu-id="23a5b-103">WMF (Windows Management Framework) 5.1</span><span class="sxs-lookup"><span data-stu-id="23a5b-103">Windows Management Framework (WMF) 5.1</span></span> #
 

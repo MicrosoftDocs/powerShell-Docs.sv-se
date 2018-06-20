@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218288"
 ---
 # <a name="built-in-windows-powershell-desired-state-configuration-resources"></a><span data-ttu-id="9eb5d-103">Inbyggda Windows PowerShell Desired State Configuration-resurser</span><span class="sxs-lookup"><span data-stu-id="9eb5d-103">Built-In Windows PowerShell Desired State Configuration Resources</span></span>
 

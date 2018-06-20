@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189966"
 ---
 # <a name="resource-authoring-checklist"></a><span data-ttu-id="abc40-103">Checklista för resursskapande</span><span class="sxs-lookup"><span data-stu-id="abc40-103">Resource authoring checklist</span></span>
 <span data-ttu-id="abc40-104">Den här checklistan är en lista över rekommenderade metoder när du skapar en ny DSC-resurs.</span><span class="sxs-lookup"><span data-stu-id="abc40-104">This checklist is a list of best practices when authoring a new DSC Resource.</span></span>

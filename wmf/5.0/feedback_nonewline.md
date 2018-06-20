@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189813"
 ---
 # <a name="nonewline-parameter"></a><span data-ttu-id="a69d8-102">NoNewLine parameter</span><span class="sxs-lookup"><span data-stu-id="a69d8-102">NoNewLine parameter</span></span>
 <span data-ttu-id="a69d8-103">**Out-File**, **Lägg till innehåll**, och **Set-innehåll** har nu en ny **– NoNewline** växeln som bara tar bort en ny rad efter utdatan.</span><span class="sxs-lookup"><span data-stu-id="a69d8-103">**Out-File**, **Add-Content**, and **Set-Content** now have a new **–NoNewline** switch which simply omits a new line after the output.</span></span>

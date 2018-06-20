@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187093"
 ---
 # <a name="remove-dsc-documents"></a><span data-ttu-id="a07a5-102">Ta bort DSC-dokument</span><span class="sxs-lookup"><span data-stu-id="a07a5-102">Remove DSC documents</span></span>
 

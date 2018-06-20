@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190153"
 ---
 # <a name="test-pswaauthorizationrule"></a><span data-ttu-id="8c603-103">Test-PswaAuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="8c603-103">Test-PswaAuthorizationRule</span></span>
 

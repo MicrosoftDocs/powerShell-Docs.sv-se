@@ -8,6 +8,7 @@ ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33677322"
 ---
 # <a name="collecting-information-about-computers"></a><span data-ttu-id="6710f-103">Samla in information om datorer</span><span class="sxs-lookup"><span data-stu-id="6710f-103">Collecting Information About Computers</span></span>
 

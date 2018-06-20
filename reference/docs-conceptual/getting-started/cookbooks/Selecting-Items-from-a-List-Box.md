@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951689"
 ---
 # <a name="selecting-items-from-a-list-box"></a><span data-ttu-id="51f81-103">Välj objekt från en listruta</span><span class="sxs-lookup"><span data-stu-id="51f81-103">Selecting Items from a List Box</span></span>
 

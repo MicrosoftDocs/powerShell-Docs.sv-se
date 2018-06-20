@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34220350"
 ---
 # <a name="on-demand-pull-of-dsc-configurations"></a><span data-ttu-id="b5b46-102">PULL på begäran av DSC-konfigurationer</span><span class="sxs-lookup"><span data-stu-id="b5b46-102">On-demand PULL of DSC Configurations</span></span>
 

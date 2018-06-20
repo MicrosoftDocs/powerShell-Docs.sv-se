@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188479"
 ---
 # <a name="dsc-resource-script-debugging"></a><span data-ttu-id="e92e9-102">Skriptfelsökning av DSC-resurser</span><span class="sxs-lookup"><span data-stu-id="e92e9-102">DSC Resource Script Debugging</span></span>
 

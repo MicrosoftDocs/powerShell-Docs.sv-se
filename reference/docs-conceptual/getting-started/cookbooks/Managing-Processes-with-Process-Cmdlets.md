@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952502"
 ---
 # <a name="managing-processes-with-process-cmdlets"></a><span data-ttu-id="a9fae-103">Hantera processer med Process-cmdletar</span><span class="sxs-lookup"><span data-stu-id="a9fae-103">Managing Processes with Process Cmdlets</span></span>
 

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225682"
 ---
 # <a name="deliver-a-configuration-document-without-applying"></a><span data-ttu-id="b587a-102">Leverera ett konfigurationsdokument av utan att använda</span><span class="sxs-lookup"><span data-stu-id="b587a-102">Deliver a configuration document without applying</span></span>
 

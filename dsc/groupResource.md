@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222079"
 ---
 # <a name="dsc-group-resource"></a><span data-ttu-id="7502b-103">Tillgänglighetsgruppsresursen DSC</span><span class="sxs-lookup"><span data-stu-id="7502b-103">DSC Group Resource</span></span>
 

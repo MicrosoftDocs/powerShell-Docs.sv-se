@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190442"
 ---
 # <a name="frequently-asked-questions"></a><span data-ttu-id="1e145-103">Vanliga frågor och svar</span><span class="sxs-lookup"><span data-stu-id="1e145-103">Frequently Asked Questions</span></span>
 

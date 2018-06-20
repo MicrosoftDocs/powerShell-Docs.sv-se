@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954644"
 ---
 # <a name="appendix-1---compatibility-aliases"></a><span data-ttu-id="cee76-103">Bilaga 1 - kompatibilitet alias</span><span class="sxs-lookup"><span data-stu-id="cee76-103">Appendix 1 - Compatibility Aliases</span></span>
 

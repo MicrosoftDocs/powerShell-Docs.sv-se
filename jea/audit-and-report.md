@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188860"
 ---
 # <a name="auditing-and-reporting-on-jea"></a><span data-ttu-id="ca269-103">Granskning och rapportering av JEA</span><span class="sxs-lookup"><span data-stu-id="ca269-103">Auditing and Reporting on JEA</span></span>
 

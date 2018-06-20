@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190051"
 ---
 # <a name="credentials-options-in-configuration-data"></a><span data-ttu-id="e72fc-103">Alternativ för autentiseringsuppgifter i konfigurationsdata</span><span class="sxs-lookup"><span data-stu-id="e72fc-103">Credentials Options in Configuration Data</span></span>
 ><span data-ttu-id="e72fc-104">Gäller för: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="e72fc-104">Applies To: Windows PowerShell 5.0</span></span>

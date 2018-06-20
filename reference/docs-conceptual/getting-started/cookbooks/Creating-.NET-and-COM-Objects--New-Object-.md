@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953396"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a><span data-ttu-id="fc84c-103">Skapa .NET och COM-objekt (nya objekt)</span><span class="sxs-lookup"><span data-stu-id="fc84c-103">Creating .NET and COM Objects (New-Object)</span></span>
 

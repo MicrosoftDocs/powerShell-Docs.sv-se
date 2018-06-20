@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953413"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a><span data-ttu-id="f664d-103">Felsök skript i Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="f664d-103">How to Debug Scripts in Windows PowerShell ISE</span></span>
 

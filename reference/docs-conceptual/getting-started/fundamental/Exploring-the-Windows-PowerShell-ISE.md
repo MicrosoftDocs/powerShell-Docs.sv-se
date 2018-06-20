@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952281"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a><span data-ttu-id="fe6c2-103">Utforska Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="fe6c2-103">Exploring the Windows PowerShell ISE</span></span>
 

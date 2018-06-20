@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950975"
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a><span data-ttu-id="c4f6d-103">Förbered dig för Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="c4f6d-103">Getting Ready to Use Windows PowerShell</span></span>
 <span data-ttu-id="c4f6d-104">När Windows PowerShell är installerat och igång, Överväg följande alternativ.</span><span class="sxs-lookup"><span data-stu-id="c4f6d-104">When Windows PowerShell is installed and started, consider the following setup options.</span></span> <span data-ttu-id="c4f6d-105">Du kan utföra dessa uppgifter när som helst.</span><span class="sxs-lookup"><span data-stu-id="c4f6d-105">You can perform these tasks at any time.</span></span>

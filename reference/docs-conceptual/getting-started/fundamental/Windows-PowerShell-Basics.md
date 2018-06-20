@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950546"
 ---
 # <a name="windows-powershell-basics"></a><span data-ttu-id="32658-103">Grunderna i Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="32658-103">Windows PowerShell Basics</span></span>
 <span data-ttu-id="32658-104">Grafiska användargränssnitt använda några grundläggande begrepp som är kända för de flesta användare.</span><span class="sxs-lookup"><span data-stu-id="32658-104">Graphical user interfaces use some basic concepts that are well known to most computer users.</span></span> <span data-ttu-id="32658-105">Användare är beroende av välbekanta av dessa gränssnitt för att utföra aktiviteter.</span><span class="sxs-lookup"><span data-stu-id="32658-105">Users rely on the familiarity of those interfaces to accomplish tasks.</span></span> <span data-ttu-id="32658-106">Operativsystem ge användarna en grafisk representation av objekt som kan visas, vanligtvis med nedrullningsbara menyer för specifika funktioner och kontext menyer för att komma åt sammanhangsberoende funktioner.</span><span class="sxs-lookup"><span data-stu-id="32658-106">Operating systems present users with a graphical representation of items that can be browsed, usually with drop-down menus for accessing specific functionality and context menus for accessing context-specific functionality.</span></span>

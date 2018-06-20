@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952961"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a><span data-ttu-id="56364-103">Avinstallera Windows PowerShell-webbåtkomst</span><span class="sxs-lookup"><span data-stu-id="56364-103">Uninstall Windows PowerShell Web Access</span></span>
 

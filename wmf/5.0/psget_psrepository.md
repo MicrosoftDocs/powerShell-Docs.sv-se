@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219539"
 ---
 # <a name="register-a-powershell-repository"></a><span data-ttu-id="bbcd0-102">Registrera ett PowerShell-lager</span><span class="sxs-lookup"><span data-stu-id="bbcd0-102">Register a PowerShell Repository</span></span>
 <span data-ttu-id="bbcd0-103">Du kan konfigurera PowerShellGet ska fungera mot interna databaser.</span><span class="sxs-lookup"><span data-stu-id="bbcd0-103">You can configure PowerShellGet to operate against internal repositories.</span></span> <span data-ttu-id="bbcd0-104">Detta görs med hjälp av följande tillägg:</span><span class="sxs-lookup"><span data-stu-id="bbcd0-104">This is done by using the following additions:</span></span>

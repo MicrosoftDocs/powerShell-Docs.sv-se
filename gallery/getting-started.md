@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190170"
 ---
 # <a name="get-started-with-the-powershell-gallery"></a><span data-ttu-id="d242a-103">Kom igång med PowerShell-galleriet</span><span class="sxs-lookup"><span data-stu-id="d242a-103">Get Started with the PowerShell Gallery</span></span>
 

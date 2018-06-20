@@ -9,6 +9,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188691"
 ---
 <span data-ttu-id="3872a-103">Nätverksväxelhanterare-cmdlets kan användas för att hantera nätverksväxlar via WSMAN.</span><span class="sxs-lookup"><span data-stu-id="3872a-103">The Network Switch Manager cmdlets can be used to manage network switches over WSMAN.</span></span>
 <span data-ttu-id="3872a-104">Några cmdlets i den här modulen finns möjlighet att acceptera värden från pipelines.</span><span class="sxs-lookup"><span data-stu-id="3872a-104">A few cmdlets of this module are capable of accepting values from pipelines.</span></span>

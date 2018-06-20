@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190187"
 ---
 # <a name="jea-security-considerations"></a><span data-ttu-id="d135a-103">JEA säkerhetsaspekter</span><span class="sxs-lookup"><span data-stu-id="d135a-103">JEA Security Considerations</span></span>
 

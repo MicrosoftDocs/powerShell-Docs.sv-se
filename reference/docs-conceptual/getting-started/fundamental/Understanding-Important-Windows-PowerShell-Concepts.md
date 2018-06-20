@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951094"
 ---
 # <a name="understanding-important-windows-powershell-concepts"></a><span data-ttu-id="2b1f7-103">Förstå viktiga Windows PowerShell-koncept</span><span class="sxs-lookup"><span data-stu-id="2b1f7-103">Understanding Important Windows PowerShell Concepts</span></span>
 <span data-ttu-id="2b1f7-104">Windows PowerShell-designen integreras begrepp från många olika miljöer.</span><span class="sxs-lookup"><span data-stu-id="2b1f7-104">The Windows PowerShell design integrates concepts from many different environments.</span></span> <span data-ttu-id="2b1f7-105">Flera av dem är bekant för personer med erfarenhet av specifika tankar eller programmeringsmiljöer, men mycket få användarna vet om alla.</span><span class="sxs-lookup"><span data-stu-id="2b1f7-105">Several of them are familiar to people with experience in specific shells or programming environments, but very few people will know about all of them.</span></span> <span data-ttu-id="2b1f7-106">Titta på några av dessa koncept ger en bra översikt över Windows-gränssnittet.</span><span class="sxs-lookup"><span data-stu-id="2b1f7-106">Looking at some of these concepts provides a useful overview of the shell.</span></span>

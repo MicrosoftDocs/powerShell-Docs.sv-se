@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221962"
 ---
 # <a name="packagemanagement-cmdlets"></a><span data-ttu-id="1e368-102">PackageManagement-cmdletar</span><span class="sxs-lookup"><span data-stu-id="1e368-102">PackageManagement Cmdlets</span></span>
 <span data-ttu-id="1e368-103">Detta är kärnan i PackageManagement som stöd för identifiering av programvara, installation och lager (SDII).</span><span class="sxs-lookup"><span data-stu-id="1e368-103">This is the core of PackageManagement to support software discovery, installation, and inventory (SDII).</span></span> <span data-ttu-id="1e368-104">Prova att använda cmdlets för dessa åtgärder:</span><span class="sxs-lookup"><span data-stu-id="1e368-104">Try out the cmdlets for these operations:</span></span>

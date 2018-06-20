@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225716"
 ---
 # <a name="configure-dsc-lcm-with-new-meta-configuration-attribute"></a><span data-ttu-id="6384d-102">Konfigurera DSC MGM med nya metadata konfigurationsattributet</span><span class="sxs-lookup"><span data-stu-id="6384d-102">Configure DSC LCM with new meta-configuration attribute</span></span>
 

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219002"
 ---
 # <a name="nesting-dsc-configurations"></a><span data-ttu-id="7a897-103">För många kapslade DSC-konfigurationer</span><span class="sxs-lookup"><span data-stu-id="7a897-103">Nesting DSC configurations</span></span>
 

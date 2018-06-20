@@ -5,8 +5,10 @@ keywords: PowerShell
 title: Moduler som kräver godkännande av licensen
 ms.openlocfilehash: fe197ea271e18580a221ad4d5245b685bd81775b
 ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34049093"
 ---
 # <a name="modules-requiring-license-acceptance"></a><span data-ttu-id="31ae9-103">Moduler som kräver godkännande av licensen</span><span class="sxs-lookup"><span data-stu-id="31ae9-103">Modules Requiring License Acceptance</span></span>
 

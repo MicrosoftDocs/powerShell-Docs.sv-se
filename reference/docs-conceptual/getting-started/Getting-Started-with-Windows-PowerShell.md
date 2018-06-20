@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949493"
 ---
 # <a name="getting-started-with-windows-powershell"></a><span data-ttu-id="34833-103">Kom igång med Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="34833-103">Getting Started with Windows PowerShell</span></span>
 <span data-ttu-id="34833-104">Windows PowerShell är ett kommandoradsgränssnitt för Windows som är särskilt utformat för administratörer.</span><span class="sxs-lookup"><span data-stu-id="34833-104">Windows PowerShell is a Windows command-line shell designed especially for system administrators.</span></span> <span data-ttu-id="34833-105">Windows PowerShell innehåller en interaktiv prompt och en skriptmiljö som kan användas fristående eller i kombination.</span><span class="sxs-lookup"><span data-stu-id="34833-105">Windows PowerShell includes an interactive prompt and a scripting environment that can be used independently or in combination.</span></span>

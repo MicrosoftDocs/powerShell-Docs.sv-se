@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950751"
 ---
 # <a name="viewing-object-structure-get-member"></a><span data-ttu-id="27b2d-103">Visa objekt strukturen (Get-medlem)</span><span class="sxs-lookup"><span data-stu-id="27b2d-103">Viewing Object Structure (Get-Member)</span></span>
 

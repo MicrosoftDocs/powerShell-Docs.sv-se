@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225495"
 ---
 # <a name="declare-implemented-interface"></a><span data-ttu-id="4b12d-102">Deklarera implementerat gränssnitt</span><span class="sxs-lookup"><span data-stu-id="4b12d-102">Declare Implemented Interface</span></span>
 

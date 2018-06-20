@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188419"
 ---
 # <a name="gallery-search-syntax"></a><span data-ttu-id="69a3c-103">Galleriet Söksyntax</span><span class="sxs-lookup"><span data-stu-id="69a3c-103">Gallery Search Syntax</span></span>
 

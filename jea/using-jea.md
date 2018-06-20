@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190085"
 ---
 # <a name="using-jea"></a><span data-ttu-id="60537-103">Använda JEA</span><span class="sxs-lookup"><span data-stu-id="60537-103">Using JEA</span></span>
 
