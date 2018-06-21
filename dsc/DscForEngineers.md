@@ -1,13 +1,13 @@
 ---
 ms.date: 10/13/2017
 keywords: DSC, powershell, konfiguration, installation
-title: Desired State Configuration-översikt för beslutsfattare
-ms.openlocfilehash: f8a851c5fbc5165ebe9642c5cd60964f1584efab
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Desired State Configuration-översikt för tekniker
+ms.openlocfilehash: 30ce8bbb8bd3ea69dbf8ca509ecf523eb8fd915f
+ms.sourcegitcommit: bad40d59598ae5597051fa381986316a2d9bf6c8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189898"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36271083"
 ---
 # <a name="desired-state-configuration-overview-for-engineers"></a>Desired State Configuration-översikt för tekniker
 
@@ -101,8 +101,8 @@ Configuration Sample_Share
           Ensure      = "Present"
           Name        = "MyShare"
           Path        = "C:\Demo\Temp"
-          ReadAccess  = "Alice"
-          FullAccess  = "Bob"
+          ReadAccess  = "Bob"
+          FullAccess  = "Alice"
           Description = "This is an updated description for this share"
       }
    }

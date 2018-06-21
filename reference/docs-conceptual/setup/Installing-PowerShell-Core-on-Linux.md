@@ -1,11 +1,11 @@
-# <a name="installing-powershell-core-on-linux"></a>Installera PowerShell Core på Linux
+# <a name="installing-powershell-core-on-linux"></a>Installera PowerShell Core i Linux
 
-Stöder [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu nr 17.04 från] [ u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 25 ] [ fed25], [Fedora 26][fed26], och [båge Linux][arch].
+Supports <bpt id="p1">[</bpt>Ubuntu 14.04<ept id="p1">]</ept><bpt id="p2">[</bpt><ept id="p2">u14]</ept>, <bpt id="p3">[</bpt>Ubuntu 16.04<ept id="p3">]</ept><bpt id="p4">[</bpt><ept id="p4">u16]</ept>, <bpt id="p5">[</bpt>Ubuntu 17.04<ept id="p5">]</ept><bpt id="p6">[</bpt><ept id="p6">u17]</ept>, <bpt id="p7">[</bpt>Debian 8<ept id="p7">]</ept><bpt id="p8">[</bpt><ept id="p8">deb8]</ept>, <bpt id="p9">[</bpt>Debian 9<ept id="p9">]</ept><bpt id="p10">[</bpt><ept id="p10">deb9]</ept>, <bpt id="p11">[</bpt>CentOS 7<ept id="p11">]</ept><bpt id="p12">[</bpt><ept id="p12">cos]</ept>, <bpt id="p13">[</bpt>Red Hat Enterprise Linux (RHEL) 7<ept id="p13">]</ept><bpt id="p14">[</bpt><ept id="p14">rhel7]</ept>, <bpt id="p15">[</bpt>OpenSUSE 42.2<ept id="p15">]</ept><bpt id="p16">[</bpt><ept id="p16">opensuse]</ept>, <bpt id="p17">[</bpt>Fedora 27<ept id="p17">]</ept><bpt id="p18">[</bpt><ept id="p18">fedora]</ept>, <bpt id="p19">[</bpt>Fedora 28<ept id="p19">]</ept><bpt id="p20">[</bpt><ept id="p20">fedora]</ept>, and <bpt id="p21">[</bpt>Arch Linux<ept id="p21">]</ept><bpt id="p22">[</bpt><ept id="p22">arch]</ept>.
 
 Linux-distributioner som inte stöds officiellt, kan du använda den [PowerShell AppImage][lai].
 Du kan också försöka distribuera PowerShell binärfiler direkt med Linux [ `tar.gz` Arkiv][tar], men måste du ställa in de nödvändiga beroenden baserat på enhetens operativsystem i separata steg.
 
-Alla paket är tillgängliga på vår GitHub [släpper][] sidan.
+Alla paket är tillgängliga på vår GitHub [Versioner][] sidan.
 När paketet har installerats kör `pwsh` från en terminal.
 
 [u14]: #ubuntu-1404
@@ -16,8 +16,7 @@ När paketet har installerats kör `pwsh` från en terminal.
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
 [opensuse]: #opensuse-422
-[fed25]: #fedora-25
-[fed26]: #fedora-26
+[fedora]: #fedora
 [arch]: #arch-linux
 [lai]: #linux-appimage
 [tar]: #binary-archives
@@ -51,7 +50,7 @@ Därefter behöver du bara använda `sudo apt-get upgrade powershell` att uppdat
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Installation via direkt hämta - Ubuntu 14.04
 
-Hämta Debian-paket `powershell_6.0.2-1.ubuntu.14.04_amd64.deb` från den [släpper][] sida på Ubuntu-dator.
+Hämta Debian-paket `powershell_6.0.2-1.ubuntu.14.04_amd64.deb` från den [Versioner][] sida på Ubuntu-dator.
 
 Kör sedan följande i terminalen:
 
@@ -96,7 +95,7 @@ När du har registrerat en gång Microsoft-databasen som superanvändare, däref
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Installation via direkt hämta - Ubuntu 16.04
 
-Hämta Debian-paket `powershell_6.0.2-1.ubuntu.16.04_amd64.deb` från den [släpper][] sida på Ubuntu-dator.
+Hämta Debian-paket `powershell_6.0.2-1.ubuntu.16.04_amd64.deb` från den [Versioner][] sida på Ubuntu-dator.
 
 Kör sedan följande i terminalen:
 
@@ -141,7 +140,7 @@ När du har registrerat en gång Microsoft-databasen som superanvändare, däref
 
 ### <a name="installation-via-direct-download---ubuntu-1704"></a>Installation via direkt hämta - Ubuntu nr 17.04 från
 
-Hämta Debian-paket `powershell_6.0.2-1.ubuntu.17.04_amd64.deb` från den [släpper][] sida på Ubuntu-dator.
+Hämta Debian-paket `powershell_6.0.2-1.ubuntu.17.04_amd64.deb` från den [Versioner][] sida på Ubuntu-dator.
 
 Kör sedan följande i terminalen:
 
@@ -190,7 +189,7 @@ När du har registrerat en gång Microsoft-databasen som superanvändare, däref
 
 ### <a name="installation-via-direct-download---debian-8"></a>Installation via direkt hämta - Debian 8
 
-Hämta Debian-paket `powershell_6.0.2-1.debian.8_amd64.deb` från den [släpper][] sidan på Debian dator.
+Hämta Debian-paket `powershell_6.0.2-1.debian.8_amd64.deb` från den [Versioner][] sidan på Debian dator.
 
 Kör sedan följande i terminalen:
 
@@ -241,7 +240,7 @@ När du har registrerat en gång Microsoft-databasen som superanvändare, däref
 
 ### <a name="installation-via-direct-download---debian-9"></a>Installation via direkt hämta - Debian 9
 
-Hämta Debian-paket `powershell_6.0.2-1.debian.9_amd64.deb` från den [släpper][] sidan på Debian dator.
+Hämta Debian-paket `powershell_6.0.2-1.debian.9_amd64.deb` från den [Versioner][] sidan på Debian dator.
 
 Kör sedan följande i terminalen:
 
@@ -283,7 +282,7 @@ När du har registrerat en gång Microsoft-databasen som superanvändare, behöv
 
 ### <a name="installation-via-direct-download---centos-7"></a>Installation via direkt hämta - CentOS 7
 
-Med hjälp av [CentOS 7][], hämta RPM-paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [släpper][] sidan på CentOS dator.
+Med hjälp av [CentOS 7][], hämta RPM-paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [Versioner][] sidan på CentOS dator.
 
 Kör sedan följande i terminalen:
 
@@ -326,7 +325,7 @@ När du har registrerat en gång Microsoft-databasen som superanvändare, behöv
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installation via direkt hämta - Red Hat Enterprise Linux (RHEL) 7
 
-Hämta RPM-paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [släpper][] sida på Red Hat Enterprise Linux-dator.
+Hämta RPM-paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [Versioner][] sida på Red Hat Enterprise Linux-dator.
 
 Kör sedan följande i terminalen:
 
@@ -388,7 +387,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---opensuse-422"></a>Installation via direkt hämta - OpenSUSE 42.2
 
-Hämta RPM-paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [släpper][] sida på OpenSUSE-dator.
+Hämta RPM-paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [Versioner][] sida på OpenSUSE-dator.
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -408,58 +407,9 @@ sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v
 sudo zypper remove powershell
 ```
 
-## <a name="fedora-25"></a>Fedora 25
+## <a name="fedora"></a>Fedora
 
-### <a name="installation-via-package-repository-preferred---fedora-25"></a>Installationen via Paketdatabasen (rekommenderas) - Fedora 25
-
-PowerShell-kärna för Linux publiceras till den officiella Microsoft databaser för enkel installation (och uppdateringar).
-
-```sh
-# Register the Microsoft signature key
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-
-# Register the Microsoft RedHat repository
-curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
-
-# Update the list of products
-sudo dnf update
-
-# Install PowerShell
-sudo dnf install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-### <a name="installation-via-direct-download---fedora-25"></a>Installation via direkt hämta - Fedora 25
-
-Hämta RPM-paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [släpper][] sidan på Fedora dator.
-
-```sh
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
-```
-
-Kör sedan följande i terminalen:
-
-```sh
-sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
-```
-
-Du kan också installera RPM utan mellanliggande steg för att hämta den:
-
-```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
-```
-
-### <a name="uninstallation---fedora-25"></a>Avinstallationen - Fedora 25
-
-```sh
-sudo dnf remove powershell
-```
-
-## <a name="fedora-26"></a>Fedora 26
-
-### <a name="installation-via-package-repository-preferred---fedora-26"></a>Installationen via Paketdatabasen (rekommenderas) - Fedora 26
+### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Installationen via Paketdatabasen (rekommenderas) - Fedora 27 Fedora 28
 
 PowerShell-kärna för Linux publiceras till den officiella Microsoft databaser för enkel installation (och uppdateringar).
 
@@ -483,14 +433,13 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---fedora-26"></a>Installation via direkt hämta - Fedora 26
+### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Installation via direkt hämta - Fedora 27, Fedora 28
 
-Hämta RPM-paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [släpper][] sidan på Fedora dator.
+Hämta RPM-paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [Versioner][] sidan på Fedora dator.
 
 Kör sedan följande i terminalen:
 
 ```sh
-sudo dnf update
 sudo dnf install compat-openssl10
 sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
@@ -498,12 +447,11 @@ sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
 Du kan också installera RPM utan mellanliggande steg för att hämta den:
 
 ```sh
-sudo dnf update
 sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---fedora-26"></a>Avinstallationen - Fedora 26
+### <a name="uninstallation---fedora-27-fedora-28"></a>Avinstallationen - Fedora 27, Fedora 28
 
 ```sh
 sudo dnf remove powershell
@@ -521,14 +469,14 @@ Paket i AUR är community underhålls - stöds inte officiellt.
 
 Mer information om hur du installerar paket från AUR finns i [arkitektur Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) eller gemenskapen [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
 
-[arkitektur Linux]: https://www.archlinux.org/download/
+[Arkitektur Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
 
 ## <a name="linux-appimage"></a>Linux AppImage
 
-Med hjälp av en senaste Linux-distribution, ladda ned AppImage `powershell-6.0.1-x86_64.AppImage` från den [släpper][] sida på Linux-dator.
+Med hjälp av en senaste Linux-distribution, ladda ned AppImage `powershell-6.0.1-x86_64.AppImage` från den [Versioner][] sida på Linux-dator.
 
 Kör sedan följande i terminalen:
 
@@ -642,8 +590,8 @@ Följande diagram visar .NET Core 2.0 beroenden som stöds officiellt i olika Li
 | Ubuntu nr 17.04 från       | libc6 ust0-libgcc1, libgssapi-krb5-2, liblttng, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
 | Debian 8 (Jessie)  | libc6 ust0-libgcc1, libgssapi-krb5-2, liblttng, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Debian 9 (Stretch) | libc6 ust0-libgcc1, libgssapi-krb5-2, liblttng, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 <br> Fedora 25 | libunwind, libcurl, openssl-bibliotek, libicu |
-| Fedora 26          | libunwind, libcurl, openssl-bibliotek, libicu, kompatibilitets-openssl10 |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind, libcurl, openssl-bibliotek, libicu |
+| Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-bibliotek, libicu, kompatibilitets-openssl10 |
 
 Du måste installera de nödvändiga beroendena för målet OS i separata steg för att distribuera PowerShell binärfiler på Linux-distributioner som inte stöds officiellt.
 Till exempel vår [Amazon Linux dockerfile] [ amazon-dockerfile] installerar beroenden först och extraherar Linux `tar.gz` Arkiv.
@@ -691,5 +639,5 @@ Profilerna respektera PowerShells per värd konfiguration så värd-specifika st
 
 PowerShell respekterar den [XDG Base Directory specifikationen] [ xdg-bds] på Linux.
 
-[släpper]: https://github.com/PowerShell/PowerShell/releases/latest
+[Versioner]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
