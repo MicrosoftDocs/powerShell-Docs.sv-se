@@ -161,6 +161,8 @@
           href: lnxGroupResource.md
         - name: nxPackage-resurs
           href: lnxPackageResource.md
+        - name: nxScript-resurs
+          href: lnxScriptResource.md
         - name: nxService-resurs
           href: lnxServiceResource.md
         - name: nxSshAuthorizedKeys-resurs
