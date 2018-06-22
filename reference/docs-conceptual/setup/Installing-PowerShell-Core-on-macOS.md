@@ -1,7 +1,7 @@
-# <a name="installing-powershell-core-on-macos"></a>Installera PowerShell Core på macOS
+# <a name="installing-powershell-core-on-macos"></a>Installera PowerShell Core i macOS
 
 PowerShell Core stöder macOS 10.12 och högre.
-Alla paket är tillgängliga på vår GitHub [släpper][] sidan.
+Alla paket är tillgängliga på vår GitHub [Versioner][] sidan.
 När paketet har installerats kör `pwsh` från en terminal.
 
 ### <a name="installation-via-homebrew-on-macos-1012"></a>Installation via Homebrew på macOS 10.12
@@ -36,15 +36,14 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> Kommandona ovan kan anropas från en värd med PowerShell (pwsh), men sedan PowerShell-gränssnittet måste avslutas och startas om för att slutföra uppgraderingen.
-> och uppdatera värdena som visas i $PSVersionTable.
+> Kommandona ovan kan anropas från en värd med PowerShell (pwsh), men sedan PowerShell-gränssnittet måste avslutas och startas om för att slutföra uppgraderingen och uppdatera värdena som visas i $PSVersionTable.
 
 [brew]: http://brew.sh/
 [cask]: https://caskroom.github.io/
 
 ### <a name="installation-via-direct-download"></a>Installationen via direkt hämtning
 
-Hämta PKG `powershell-6.0.2-osx.10.12-x64.pkg` från den [släpper][] sidan på din dator macOS.
+Hämta PKG `powershell-6.0.2-osx.10.12-x64.pkg` från den [Versioner][] sidan på din dator macOS.
 
 Du kan dubbelklicka på filen och följ anvisningarna eller installera det från terminalen:
 
@@ -94,11 +93,11 @@ Om du vill ta bort de ytterligare PowerShell-sökvägarna finns på [sökvägar]
 > [!NOTE]
 > Detta är inte nödvändigt om du har installerat med Homebrew.
 
-[sökvägar]:#paths
+[Sökvägar]:#paths
 
 ## <a name="paths"></a>Sökvägar
 
-* `$PSHOME` Är `/opt/microsoft/powershell/6.0.0/`
+* `$PSHOME` Är `/usr/local/microsoft/powershell/6.0.2/`
 * Användarprofiler som ska läsas från `~/.config/powershell/profile.ps1`
 * Standardprofiler kommer att läsas från `$PSHOME/profile.ps1`
 * Moduler som användare kommer att läsas från `~/.local/share/powershell/Modules`
@@ -112,7 +111,7 @@ Så värd-specifika standardprofiler finns på `Microsoft.PowerShell_profile.ps1
 PowerShell respekterar den [XDG Base Directory specifikationen] [ xdg-bds] på macOS.
 
 Eftersom macOS är en härledning av BSD prefixet `/usr/local` används i stället för `/opt`.
-Därför `$PSHOME` är `/usr/local/microsoft/powershell/6.0.0/`, och symlink är placerad på `/usr/local/bin/pwsh`.
+Därför `$PSHOME` är `/usr/local/microsoft/powershell/6.0.2/`, och symlink är placerad på `/usr/local/bin/pwsh`.
 
-[släpper]: https://github.com/PowerShell/PowerShell/releases/latest
+[Versioner]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
