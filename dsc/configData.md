@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Med konfigurationsdata
-ms.openlocfilehash: d42c43fddb54050adcbac949e7f67f3b41b540f1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 9b0b213e2d71bfdb473fd98f8080de5c874c70e2
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189694"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940386"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Med hjälp av konfigurationsdata i DSC
 
->Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Med hjälp av inbyggda DSC **ConfigurationData** parameter, kan du definiera data som kan användas i en konfiguration.
 På så sätt kan du skapa en enkel konfiguration som kan användas för flera noder eller för olika miljöer.
@@ -25,10 +25,11 @@ Exempel på hur du använder konfigurationsdata finns [avgränsa konfiguration o
 DSC-konfigurationen tar en parameter för vanliga **ConfigurationData**, som du anger när du sammanställer konfigurationen.
 Information om kompilering konfigurationer finns [DSC-konfigurationer](configurations.md).
 
-Den **ConfigurationData** parametern är en hasthtable som måste ha minst en nyckel som heter **AllNodes**.
+Den **ConfigurationData** parametern är en hash-tabell som måste ha minst en nyckel som heter **AllNodes**.
 Det kan också ha en eller flera nycklar.
 
->**Obs:** exemplen i det här avsnittet använder en enda ytterligare nyckel (än den namngivna **AllNodes** nyckel) med namnet `NonNodeData`, men du kan innehålla valfritt antal ytterligare nycklar och ge dem vad du vill.
+> [!NOTE]
+> Exemplen i det här avsnittet använder en enda ytterligare nyckel (än den namngivna **AllNodes** nyckel) med namnet `NonNodeData`, men du kan innehålla valfritt antal ytterligare nycklar och ge dem vad du vill.
 
 ```powershell
 $MyData =
@@ -188,6 +189,7 @@ DSC innehåller tre särskilda variabler som kan användas i ett konfigurationss
 
 - **$AllNodes** refererar till hela uppsättningen av noder som definierats i **ConfigurationData**. Du kan filtrera den **AllNodes** med hjälp av **. WHERE ()** och **. ForEach()**.
 - **Noden** refererar till en särskild post i den **AllNodes** samlingen när den har filtrerats med hjälp av **. WHERE ()** eller **. ForEach()**.
+  - Du kan läsa mer om de här metoderna i [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
 - **ConfigurationData** refererar till hela hash-tabell som skickades som parametern vid kompilering av en konfiguration.
 
 ## <a name="using-non-node-data"></a>Med hjälp av data-nod
@@ -199,5 +201,6 @@ Du kan dock definiera valfritt antal ytterligare nycklar och namn som helst.
 Ett exempel på hur nod-data finns [avgränsa konfiguration och miljö data](separatingEnvData.md).
 
 ## <a name="see-also"></a>Se även
+
 - [Alternativ för autentiseringsuppgifter i konfigurationsdata](configDataCredentials.md)
 - [DSC-konfigurationer](configurations.md)

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Skapa en kontinuerlig integrering och kontinuerlig distribution pipeline med DSC
-ms.openlocfilehash: ce0f2ed79f5f96a1c38e0beaf32529aba7538963
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: faeef5022cbd984cab0620b69db19de8b84cca0e
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190561"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940352"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Skapa en kontinuerlig integrering och kontinuerlig distribution pipeline med DSC
 
@@ -36,6 +36,7 @@ Om du vill skapa och köra det här exemplet, behöver du en miljö med flera da
 Detta är den dator där du ska göra allt arbete att installera och köra exemplet.
 
 Klientdatorn måste vara en Windows-dator med följande installerat:
+
 - [Git](https://git-scm.com/)
 - en lokal git-lagringsplatsen klonad från https://github.com/PowerShell/Demo_CI
 - en textredigerare, t.ex [Visual Studio Code](https://code.visualstudio.com/)
@@ -73,21 +74,22 @@ Om du inte redan har klona Demo_CI databasen till en klientdator, gör du nu gen
 1. Navigera till TFS-servern i en webbläsare på klientdatorn.
 1. I TFS, [skapa ett nytt grupprojekt](https://www.visualstudio.com/en-us/docs/setup-admin/create-team-project) med namnet Demo_CI.
 
-    Se till att **versionskontroll** är inställd på **Git**.
+   Se till att **versionskontroll** är inställd på **Git**.
 1. Lägg till en fjärransluten i databasen som du skapade i TFS med följande kommando på klientdatorn:
 
-    `git remote add tfs <YourTFSRepoURL>`
+   `git remote add tfs <YourTFSRepoURL>`
 
-    Där `<YourTFSRepoURL>` är klon-URL: en till TFS-databasen som du skapade i föregående steg.
+   Där `<YourTFSRepoURL>` är klon-URL: en till TFS-databasen som du skapade i föregående steg.
 
-    Om du inte vet var du hittar den här URL: en kan se [klona en befintlig Git-lagringsplatsen](https://www.visualstudio.com/en-us/docs/git/tutorial/clone).
+   Om du inte vet var du hittar den här URL: en kan se [klona en befintlig Git-lagringsplatsen](https://www.visualstudio.com/en-us/docs/git/tutorial/clone).
 1. Skicka koden från din lokala lagringsplatsen till lagringsplatsen för TFS med följande kommando:
 
-    `git push tfs --all`
+   `git push tfs --all`
 1. TFS-databasen fylls med Demo_CI kod.
 
->**Obs:** det här exemplet används koden i den `ci-cd-example` grenen av Git-lagringsplatsen.
->Se till att ange den här grenen som standardförgrening i TFS-projektet och för CI/CD-utlösare som du skapar.
+> [!NOTE]
+> Det här exemplet används koden i den `ci-cd-example` grenen av Git-lagringsplatsen.
+> Se till att ange den här grenen som standardförgrening i TFS-projektet och för CI/CD-utlösare som du skapar.
 
 ## <a name="understanding-the-code"></a>Förstå koden
 
@@ -154,6 +156,8 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 ```
 
 Detta hittar de noder som har definierats som en roll `DNSServer` i den [konfigurationsdata](configData.md), som skapas av den `DevEnv.ps1` skript.
+
+Du kan läsa mer om den `Where` metod i [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
 
 Med data för att definiera noder är viktigt när du gör CI eftersom noden informationen ändras troligen mellan miljöer och använder konfigurationsdata kan du enkelt göra ändringar i noden information utan att ändra konfigurationskoden.
 
@@ -348,12 +352,12 @@ Det här steget build körs testerna enhet i skriptet Pester vi har tittat på t
 
 1. Lägg till följande rader till **innehållet**:
 
-    ```
-    initiate.ps1
-    **\deploy.ps1
-    **\Acceptance\**
-    **\Integration\**
-    ```
+   ```
+   initiate.ps1
+   **\deploy.ps1
+   **\Acceptance\**
+   **\Integration\**
+   ```
 
 1. Ange **TargetFolder** till `$(Build.ArtifactStagingDirectory)\`
 

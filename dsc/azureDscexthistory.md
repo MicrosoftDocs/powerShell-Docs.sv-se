@@ -1,14 +1,14 @@
 ---
 description: Mer information om tidigare versioner för önskad tillstånd Configuration DSC ()-tillägget i Azure.
-ms.date: 05/09/2018
+ms.date: 06/21/2018
 keywords: DSC, powershell, azure, tillägg
 title: Versionshistorik för Azure DSC-tillägg
-ms.openlocfilehash: 81dfcf81bd8f8685a0c8c81cd07bc5447e1abf94
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 25248288291b9bf8efe6ce1eef203a552cd17736
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189949"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940335"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Versionshistorik för Azure önskade tillstånd Configuration-tillägg
 
@@ -16,12 +16,12 @@ VM-tillägget Azure önskad tillstånd Configuration (DSC) uppdateras som krävs
 
 Den här artikeln innehåller information om varje version av VM-tillägget Azure DSC vilka miljöer som har stöd för, och kommentarer och anmärkningar om nya funktioner och ändringar.
 
-## <a name="latest-versions"></a>Senaste version
+## <a name="latest-version"></a>Senaste versionen
 
 ### <a name="version-276"></a>Version 2.76
 
 - **Utgivningsdatum:**
-  - 9 kan 2018
+  - 9 kan 2018 (Azure) | 21 juni 2018 (Azure Kina, Azure Government)
 - **OS-stöd:**
   - Windows Server 2016
   - Windows Server 2012 R2
@@ -36,30 +36,11 @@ Den här artikeln innehåller information om varje version av VM-tillägget Azur
   - WMF 4.0
 - **Miljö:**
   - Azure
+  - Azure Kina
+  - Azure Government
 - **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016, för andra Windows-operativsystem installeras den [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installera WMF kräver en omstart). För Nano Server är DSC-rollen installerad på den virtuella datorn.
 - **Nya funktioner:**
   - Förbättring i tillägget metadata för understatus och andra mindre felkorrigeringar.
-
-### <a name="version-219"></a>Version 2.19
-
-- **Utgivningsdatum:**
-  - 3 juni 2016
-- **OS-stöd:**
-  - Windows Server 2016 Technical Preview
-  - Windows Server 2012 R2
-  - Windows Server 2012
-  - Windows Server 2008 R2 SP1
-- **WMF stöd:**
-  - WMF 5.0 RTM
-  - WMF 4.0 uppdatera
-  - WMF 4.0
-- **Miljö:**
-  - Azure
-  - Azure Kina
-  - Azure Government
-- **Anmärkning:** den här versionen använder DSC som ingår i Windows Server 2016 Technical Preview, för andra operativsystem installeras den [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installera WMF kräver en omstart).
-- **Nya funktioner:**
-  - DSC-tillägg är nu på avgränsad till Azure Kina. Den här versionen innehåller i första hand korrigeringar för att köra tillägget på Azure Kina.
 
 ## <a name="supported-versions"></a>Versioner som stöds
 
