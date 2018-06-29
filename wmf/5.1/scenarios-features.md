@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: Nya scenarier och funktioner i WMF 5.1
-ms.openlocfilehash: 77b439e61c5802f8ddbc4a0f39923cc8c0c36fe9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b00069aad7422f86d1462a62a6c4bc8a91e46705
+ms.sourcegitcommit: 50b66cada6943784b8d3c103cebc3c1e3e286a16
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190323"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090371"
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Nya scenarier och funktioner i WMF 5.1
 
@@ -25,12 +25,12 @@ Från och med version 5.1 finns PowerShell i olika utgåvor som anger olika funk
 
 - [Fastställa körs version av PowerShell med hjälp av $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [Filtrera Get-Module resultaten av CompatiblePSEditions med PSEdition parametern](/powershell/module/microsoft.powershell.core/get-module)
-- [Förhindra körning av skript om du inte på en kompatibel version av PowerShell](/powershell/gallery/psget/script/scriptwithpseditionsupport)
-- [Deklarera en modul kompatibilitet med vissa versioner av PowerShell](/powershell/gallery/psget/module/modulewithpseditionsupport)
+- [Förhindra körning av skript om du inte på en kompatibel version av PowerShell](/powershell/gallery/concepts/script-psedition-support)
+- [Deklarera en modul kompatibilitet med vissa versioner av PowerShell](/powershell/gallery/concepts/module-psedition-support)
 
 ## <a name="catalog-cmdlets"></a>Katalog-Cmdlets
 
-Två nya cmdletar har lagts till i den [Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) modulen; dessa generera och verifiera filer för Windows-katalogen.
+Två nya cmdletar har lagts till i den [Microsoft.PowerShell.Security](/powershell/module/microsoft.powershell.security) modulen; dessa generera och verifiera filer för Windows-katalogen.
 
 ### <a name="new-filecatalog"></a>Ny FileCatalog
 --------------------------------
@@ -57,7 +57,7 @@ Då skapas katalogfilen.
 
 ![](../images/CatalogFile2.jpg)
 
-Att kontrollera integriteten för katalogfil (Pester.cat i ovanstående exempel), signera den med hjälp av [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.
+Att kontrollera integriteten för katalogfil (Pester.cat i ovanstående exempel), signera den med hjälp av [Set AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) cmdlet.
 
 ### <a name="test-filecatalog"></a>Testa FileCatalog
 --------------------------------
@@ -73,7 +73,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 Denna cmdlet Jämför filer hashvärdena och deras relativa sökvägar finns i *katalog* med de som på *disk*.
 Om den identifierar eventuella matchningsfel mellan värden och sökvägar returnerar status som *ValidationFailed*.
 Användare kan hämta den här informationen med hjälp av den *-detaljerad* parameter.
-Visar även signering status för katalogen i *signatur* -egenskap som motsvarar anropar [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet på katalogfilen.
+Visar även signering status för katalogen i *signatur* -egenskap som motsvarar anropar [Get-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Get-AuthenticodeSignature) cmdlet på katalogfilen.
 Användare kan också hoppa över en fil vid verifiering av med hjälp av den *- FilesToSkip* parameter.
 
 ## <a name="module-analysis-cache"></a>Modulen analys Cache
@@ -115,7 +115,7 @@ Tidigare fick du inte vill ange en viss modul-version. Om det fanns flera versio
 
 I WMF 5.1:
 
-- Du kan använda [ModuleSpecification konstruktor (hash-tabell)](https://msdn.microsoft.com/library/jj136290).
+- Du kan använda [ModuleSpecification konstruktor (hash-tabell)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 Den här hashtabellen har samma format som `Get-Module -FullyQualifiedName`.
 
 **Exempel:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
