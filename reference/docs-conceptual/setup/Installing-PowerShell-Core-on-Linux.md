@@ -21,6 +21,21 @@ När paketet har installerats kör `pwsh` från en terminal.
 [lai]: #linux-appimage
 [tar]: #binary-archives
 
+## <a name="installing-preview-releases"></a>Installera förhandsvisningarna
+
+När du installerar ett PowerShell Core förhandsversionen för Linux via en Paketdatabasen paketnamnet ändras från `powershell` till `powershell-preview`.
+
+Installerar via direkt hämtning ändras inte, än filnamnet.
+
+Här är en tabell med kommandona för att installera stabilt och preview-paket med hjälp av de olika paket cheferna:
+
+|Distrobution(s)|Stabil kommando | Förhandsgranskningskommandot |
+|---------------|---------------|-----------------|
+| Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
+| CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
+| openSUSE |`sudo zypper install powershell` | `sudo zypper install powershell-preview`|
+| Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
+
 ## <a name="ubuntu-1404"></a>Ubuntu 14.04
 
 ### <a name="installation-via-package-repository---ubuntu-1404"></a>Installation via Paketdatabasen - Ubuntu 14.04
@@ -59,7 +74,9 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.14.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> Observera att `dpkg -i` misslyckas med unmet beroenden; nästa kommando `apt-get install -f` matchar dessa och sedan Slutför PowerShell-paketet.
+> [!NOTE]
+> Den `dpkg -i` kommandot misslyckas med unmet beroenden.
+> Nästa kommando `apt-get install -f` löser dessa problem och slutför PowerShell-paketet.
 
 ### <a name="uninstallation---ubuntu-1404"></a>Avinstallationen - Ubuntu 14.04
 
@@ -104,7 +121,9 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> Observera att `dpkg -i` misslyckas med unmet beroenden; nästa kommando `apt-get install -f` matchar dessa och sedan Slutför PowerShell-paketet.
+> [!NOTE]
+> Den `dpkg -i` kommandot misslyckas med unmet beroenden.
+> Nästa kommando `apt-get install -f` löser dessa problem och slutför PowerShell-paketet.
 
 ### <a name="uninstallation---ubuntu-1604"></a>Avinstallationen - Ubuntu 16.04
 
@@ -114,7 +133,8 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1710"></a>Ubuntu 17.10
 
-> Obs: Stöd för Ubuntu 18.04 lagts till efter `6.1.0-preview.2`
+> [!NOTE]
+> Stöd för Ubuntu nr 17.04 från lagts till efter `6.1.0-preview.2`
 
 ### <a name="installation-via-package-repository---ubuntu-1710"></a>Installation via Paketdatabasen - Ubuntu 17.10
 
@@ -151,7 +171,9 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.17.10_amd64.deb
 sudo apt-get install -f
 ```
 
-> Observera att `dpkg -i` misslyckas med unmet beroenden; nästa kommando `apt-get install -f` matchar dessa och sedan Slutför PowerShell-paketet.
+> [!NOTE]
+> Den `dpkg -i` kommandot misslyckas med unmet beroenden.
+> Nästa kommando `apt-get install -f` löser dessa problem och slutför PowerShell-paketet.
 
 ### <a name="uninstallation---ubuntu-1710"></a>Avinstallationen - Ubuntu 17.10
 
@@ -161,7 +183,8 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
 
-> Obs: Stöd för Ubuntu 18.04 lagts till efter `6.1.0-preview.2`
+> [!NOTE]
+> Stöd för Ubuntu 18.04 lagts till efter `6.1.0-preview.2`
 
 ### <a name="installation-via-package-repository---ubuntu-1804"></a>Installation via Paketdatabasen - Ubuntu 18.04
 
@@ -198,7 +221,9 @@ sudo dpkg -i powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> Observera att `dpkg -i` misslyckas med unmet beroenden; nästa kommando `apt-get install -f` matchar dessa och sedan Slutför PowerShell-paketet.
+> [!NOTE]
+> Den `dpkg -i` kommandot misslyckas med unmet beroenden.
+> Nästa kommando `apt-get install -f` löser dessa problem och slutför PowerShell-paketet.
 
 ### <a name="uninstallation---ubuntu-1710"></a>Avinstallationen - Ubuntu 17.10
 
@@ -248,8 +273,8 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> Observera att `dpkg -i` misslyckas med unmet beroenden.
-> Nästa kommando `apt-get install -f` matchar dessa och sedan Slutför PowerShell-paketet.
+> Den `dpkg -i` kommandot misslyckas med unmet beroenden.
+> Nästa kommando `apt-get install -f` löser dessa problem och slutför PowerShell-paketet.
 
 ### <a name="uninstallation---debian-8"></a>Avinstallationen - Debian 8
 
@@ -298,10 +323,6 @@ sudo dpkg -i powershell_6.0.2-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
-> [!NOTE]
-> Observera att `dpkg -i` misslyckas med unmet beroenden.
-> Nästa kommando `apt-get install -f` matchar dessa och sedan Slutför PowerShell-paketet.
-
 ### <a name="uninstallation---debian-9"></a>Avinstallationen - Debian 9
 
 ```sh
@@ -310,6 +331,7 @@ sudo apt-get remove powershell
 
 ## <a name="centos-7"></a>CentOS 7
 
+> [!NOTE]
 > Det här paketet fungerar även på Oracle Linux 7.
 
 ### <a name="installation-via-package-repository-preferred---centos-7"></a>Installationen via Paketdatabasen (rekommenderas) - CentOS 7
@@ -396,22 +418,21 @@ sudo yum remove powershell
 
 ## <a name="opensuse-422"></a>OpenSUSE 42.2
 
-> [!NOTE]
-> När du installerar PowerShell Core `zypper` kan rapportera följande fel:
->
-> ```Output
-> Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
->  Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
->  Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
-> ```
->
-> I det här fallet kontrollerar du att en kompatibel `libcurl` bibliotek finns genom att kontrollera att följande kommando visar den `libcurl4` paketet som installerade:
->
-> ```sh
-> zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
-> ```
->
-> Välj den `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` lösning när du installerar PowerShell-paketet.
+När du installerar PowerShell Core `zypper` kan rapportera följande fel:
+
+```Output
+Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
+ Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
+ Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
+```
+
+I det här fallet kontrollerar du att en kompatibel `libcurl` bibliotek finns genom att kontrollera att följande kommando visar den `libcurl4` paketet som installerade:
+
+```sh
+zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
+```
+
+Välj den `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` lösning när du installerar PowerShell-paketet.
 
 ### <a name="installation-via-package-repository-preferred---opensuse-422"></a>Installationen via Paketdatabasen (rekommenderas) - OpenSUSE 42.2
 
@@ -458,7 +479,8 @@ sudo zypper remove powershell
 
 ## <a name="fedora"></a>Fedora
 
-> Observera Fedora 28 stöds endast i PowerShell Core 6.1 och senare.
+> [!NOTE]
+> Fedora 28 stöds endast i PowerShell Core 6.1 och senare.
 
 ### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Installationen via Paketdatabasen (rekommenderas) - Fedora 27 Fedora 28
 
@@ -510,6 +532,9 @@ sudo dnf remove powershell
 
 ## <a name="arch-linux"></a>Arkitektur Linux
 
+> [!NOTE]
+> Stöd för arkitektur är experiment.
+
 PowerShell är tillgänglig från den [arkitektur Linux][] användaren databasen (AUR).
 
 * Det kan vara kompilerat med den [senaste märkta versionen][arch-release]
@@ -527,6 +552,9 @@ Mer information om hur du installerar paket från AUR finns i [arkitektur Linux 
 
 ## <a name="linux-appimage"></a>Linux AppImage
 
+> [!NOTE]
+> Stöd för AppImage är experiment
+
 Med hjälp av en senaste Linux-distribution, ladda ned AppImage `powershell-6.0.1-x86_64.AppImage` från den [släpper][] sida på Linux-dator.
 
 Kör sedan följande i terminalen:
@@ -543,6 +571,9 @@ Det här paketet är ett enda Binärvärde som fungerar oberoende av användaren
 [appimage]: http://appimage.org/
 
 ## <a name="kali"></a>Kali
+
+> [!NOTE]
+> Stöd för kali är experiment.
 
 ### <a name="installation"></a>Installation
 
@@ -579,6 +610,9 @@ sudo dpkg -r powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 ```
 
 ## <a name="raspbian"></a>Raspbian
+
+> [!NOTE]
+> Stöd för Raspbian är experiment.
 
 För närvarande stöds endast PowerShell på Raspbian Stretch.
 

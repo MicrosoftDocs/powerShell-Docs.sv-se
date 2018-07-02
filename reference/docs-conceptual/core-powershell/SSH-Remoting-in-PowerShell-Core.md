@@ -42,7 +42,7 @@ Dessutom behöver du aktivera autentisering med lösenord och eventuellt viktiga
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
 
-1. Installera senaste [Win32-OpenSSH] skapa från GitHub använder den [installation] instruktioner
+1. Installera senaste [Win32 OpenSSH] skapa från GitHub använder den [installation] instruktioner
 1. Redigera filen sshd_config på den plats där du installerade Win32 OpenSSH
     - Kontrollera att lösenordsautentisering är aktiverat
 
@@ -54,6 +54,22 @@ Dessutom behöver du aktivera autentisering med lösenord och eventuellt viktiga
 
     ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+    ```
+    
+    > [!NOTE]
+    Det finns ett fel i OpenSSH för Windows som förhindrar att blanksteg arbetar i undersystemet körbara sökvägar.
+    Se [problemet på GitHub för mer information](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+    
+    En lösning är att skapa en symlink till installationskatalogen för Powershell som inte innehåller blanksteg:
+    
+    ```powershell
+    mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+    ```
+
+    och ange den i undersystemet:
+ 
+    ```
+    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
     ```
 
     - Om du vill aktivera autentisering med nyckel
@@ -74,7 +90,7 @@ Dessutom behöver du aktivera autentisering med lösenord och eventuellt viktiga
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Installationen på datorn för Linux (Ubuntu 14.04)
 
-1. Installera senaste [PowerShell-kärna för Linux] skapa från GitHub
+1. Installera senaste [PowerShell kärna för Linux] skapa från GitHub
 1. Installera [Ubuntu SSH] efter behov
 
     ```bash
@@ -109,7 +125,7 @@ Dessutom behöver du aktivera autentisering med lösenord och eventuellt viktiga
 
 ## <a name="setup-on-macos-machine"></a>Installation på MacOS datorn
 
-1. Installera senaste [PowerShell-kärna för MacOS] skapa
+1. Installera senaste [PowerShell kärna för MacOS] skapa
     - Se till att SSH fjärrkommunikation är aktiverad på följande sätt:
       - Öppna `System Preferences`
       - Klicka på `Sharing`
@@ -242,8 +258,8 @@ GitCommitId                    v6.0.0-alpha.17
 1. sudo-kommando fungerar inte i fjärrsessionen till Linux-datorn.
 
 [PowerShell Core för Windows]: ../setup/installing-powershell-core-on-windows.md#msi
-[PowerShell-kärna för Linux]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
-[PowerShell-kärna för MacOS]: ../setup/installing-powershell-core-on-macos.md
-[Win32-OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
+[PowerShell kärna för Linux]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
+[PowerShell kärna för MacOS]: ../setup/installing-powershell-core-on-macos.md
+[Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [Installation]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
