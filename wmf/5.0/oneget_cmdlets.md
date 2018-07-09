@@ -1,45 +1,47 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: f545461fd325049d0de4c651d7aa7d50d475eaca
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2f05fe96ec792a31fabf3aff0f9e18b40178316c
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221962"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893196"
 ---
 # <a name="packagemanagement-cmdlets"></a>PackageManagement-cmdletar
-Detta är kärnan i PackageManagement som stöd för identifiering av programvara, installation och lager (SDII). Prova att använda cmdlets för dessa åtgärder:
--   Sök-paket
--   Find-PackageProvider
--   Get-Package
--   Get-PackageProvider
--   Get-PackageSource
--   Importera PackageProvider
--   Install-Package
--   Installera PackageProvider
--   Registrera PackageSource
--   Spara paketet
--   Set-PackageSource
--   Avinstallera paketet
--   Unregister-PackageSource
 
-Du kan göra följande för att uppdatera PackageManagement sig själv som PackageManagement en PowerShell-modul:
+Det här är kärnan i PackageManagement för identifiering av programvara, installationen och inventeringen (SDII). Prova att använda cmdletarna för dessa åtgärder:
+
+- `Find-Package`
+- `Find-PackageProvider`
+- `Get-Package`
+- `Get-PackageProvider`
+- `Get-PackageSource`
+- `Import-PackageProvider`
+- `Install-Package`
+- `Install-PackageProvider`
+- `Register-PackageSource`
+- `Save-Package`
+- `Set-PackageSource`
+- `Uninstall-Package`
+- `Unregister-PackageSource`
+
+Eftersom PackageManagement är en PowerShell-modul, kan du göra följande för att uppdatera PackageManagement själva:
+
 ```powershell
-PS C:\> Install-Module PackageManagement –Force
+Install-Module PackageManagement –Force
 ```
-I det här fallet behöver du ange nytt PowerShell-session växla till den nya versionen av PackageManagement.
 
-## <a name="find-package-cmdlethttpstechnetmicrosoftcomlibrarydn890709aspx"></a>[Hitta paket-Cmdlet](https://technet.microsoft.com/library/dn890709.aspx)
-Denna cmdlet kan identifiering av programvarupaket i tillgängliga paket källor med hjälp av läsa in paketet providers.
+I det här fallet kommer du behöva ange nytt PowerShell-session att växla till den nya versionen av PackageManagement.
+
+## <a name="find-package-cmdletpowershellmodulepackagemanagementfind-package"></a>[Sök-Package-Cmdlet](/powershell/module/PackageManagement/Find-Package)
+
+Denna cmdlet kan identifiering av programvarupaket i paketkällor med hjälp av läsa in paketet providers.
+
 ```powershell
 # Find all available Windows PowerShell module packages from galleries registered
 # with PowerShellGet provider
-Find-Package -Provider PowerShellGet -Source PSGallery
-
-# Find a package from a provider that is not yet installed
-# This will bootstrap NuGet provider and then search for jquery package using NuGet
-# with <http://www.nuget.org/api/v2/> as source
+Find-Package -ProviderName PowerShellGet -Source as source
 Find-Package -Name jquery –Provider NuGet -Source http://www.nuget.org/api/v2/
 
 # Find package with name and version
@@ -50,10 +52,12 @@ Find-Package -Name jquery –Provider NuGet -Source http://www.nuget.org/api/v2/
 Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nuget.org
 ```
 
-## <a name="find-packageprovider-cmdlethttpstechnetmicrosoftcomlibrarymt676544aspx"></a>[Hitta PackageProvider Cmdlet](https://technet.microsoft.com/library/mt676544.aspx)
-Hitta PackageProvider cmdleten hittar matchande PackageManagement leverantörer som är tillgängliga i paketet datakällor som har registrerats med PowerShellGet. Detta är paketet leverantörer som är tillgängliga för installation med cmdleten Install-PackageProvider. Som standard innehåller detta moduler som är tillgängliga i PowerShell-galleriet med 'PackageManagement' och 'Provider-taggar.
+## <a name="find-packageprovider-cmdletpowershellmodulepackagemanagementfind-packageprovider"></a>[Hitta PackageProvider Cmdlet](/powershell/module/PackageManagement/Find-PackageProvider)
 
-Hitta PackageProvider hittar matchande PackageManagement leverantörer som är tillgängliga i PackageManagement azure blobstore där vi använder PackageManagement boostrapper providern för att söka efter och installera dem också.
+Den `Find-PackageProvider` cmdleten hittar matchar PackageManagement-leverantörer som är tillgängliga i paketkällorna registrerad med PowerShellGet. Det här är paketet leverantörer som är tillgängliga för installation med den `Install-PackageProvider` cmdlet. Som standard innehåller detta moduler som är tillgängliga i PowerShell-galleriet med 'PackageManagement' och 'Providern' taggar.
+
+`Find-PackageProvider` söker efter matchande PackageManagement-providers som är tillgängliga i PackageManagement azure blob store där vi använder providern för PackageManagement boostrapper för att hitta och installera dem också.
+
 ```powershell
 #Find all available package providers in PackageManagement azure blob store as well as in PowerShellGallery.com
 Find-PackageProvider
@@ -65,8 +69,10 @@ Find-PackageProvider -Name "Nuget" -AllVersions
 Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
 ```
 
-## <a name="get-package-cmdlethttpstechnetmicrosoftcomlibrarydn890704aspx"></a>[Cmdlet Get-paket](https://technet.microsoft.com/library/dn890704.aspx)
-Denna cmdlet returnerar en lista över alla programvarupaket som har installerats med hjälp av PackageManagement.
+## <a name="get-package-cmdletpowershellmodulepackagemanagementget-package"></a>[Cmdlet Get-Package](/powershell/module/PackageManagement/Get-Package)
+
+Denna cmdlet returnerar en lista över alla programvarupaket som har installerats med PackageManagement.
+
 ```powershell
 # Get all the packages installed by Programs provider
 Get-Package –Provider Programs
@@ -76,8 +82,10 @@ Get-Package –Provider Programs
 Get-Package –Provider NuGet -Destination c:\test
 ```
 
-## <a name="get-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890703aspx"></a>[Get-PackageProvider Cmdlet](https://technet.microsoft.com/en-us/library/dn890703.aspx)
-Paketet leverantörer som är inlästa och redo att användas på den lokala datorn kan inventeras med hjälp av cmdleten.
+## <a name="get-packageprovider-cmdletpowershellmodulepackagemanagementget-packageprovider"></a>[Cmdlet Get-PackageProvider](/powershell/module/PackageManagement/Get-PackageProvider)
+
+Paket-leverantörer som är inläst och klar att användas på den lokala datorn kan inventeras med hjälp av cmdleten.
+
 ```powershell
 # Get all currently loaded package providers
 Get-PackageProvider
@@ -86,9 +94,11 @@ Get-PackageProvider
 Get-PackageProvider -ListAvailable
 ```
 
-## <a name="get-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890705aspx"></a>[Get-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890705.aspx)
-Denna cmdlet hämtar en lista över paket datakällor som är registrerade för en paket-provider.
-```powershelll
+## <a name="get-packagesource-cmdletpowershellmodulepackagemanagementget-packagesource"></a>[Cmdlet Get-PackageSource](/powershell/module/PackageManagement/Get-PackageSource)
+
+Denna cmdlet hämtar en lista över paketkällorna som är registrerade för en paket-provider.
+
+```powershell
 # Get all package sources
 Get-PackageSource
 
@@ -96,8 +106,10 @@ Get-PackageSource
 Get-PackageSource –ProviderName PowerShellGet
 ```
 
-## <a name="import-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676545aspx"></a>[Importera PackageProvider Cmdlet](https://technet.microsoft.com/en-us/library/mt676545.aspx)
-Denna cmdlet lägger till paketet Management paketet providers till den aktuella sessionen.
+## <a name="import-packageprovider-cmdletpowershellmodulepackagemanagementimport-packageprovider"></a>[Importera PackageProvider Cmdlet](/powershell/module/PackageManagement/Import-PackageProvider)
+
+Denna cmdlet lägger till pakethantering paketet providers i den aktuella sessionen.
+
 ```powershell
 # Import a package provider from the local machine
 Import-PackageProvider –Name MyProvider
@@ -118,9 +130,10 @@ Import-PackageProvider –Name "Nuget" -RequiredVersion "2.8.5.201" -Verbose
 Import-PackageProvider –Name MyProvider –RequiredVersion xxxx -force
 ```
 
-##<a name="-install-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890711aspx"></a>[ Install-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890711.aspx)
+## <a name="-install-package-cmdletpowershellmodulepackagemanagementinstall-package"></a>[ Cmdlet: en Install-Package](/powershell/module/PackageManagement/Install-Package)
 
-Denna cmdlet kan installation av programvarupaket i tillgängliga paket källor med hjälp av läsa in paketet providers.
+Denna cmdlet kan installation av programvarupaket i paketkällor med hjälp av läsa in paketet providers.
+
 ```powershell
 # Install a package by name.
 # NuGet provider requires us to provide the dynamic parameter destination path
@@ -132,8 +145,10 @@ Install-Package -Name jquery -Source nuget.org -Destination c:\test
 Find-Package -Name jquery –Provider NuGet | Install-Package -Destination c:\test
 ```
 
-## <a name="install-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676543aspx"></a>[Installera PackageProvider Cmdlet](https://technet.microsoft.com/en-us/library/mt676543.aspx)
-Denna cmdlet installerar en eller flera paket Management paketet providers.
+## <a name="install-packageprovider-cmdletpowershellmodulepackagemanagementinstall-packageprovider"></a>[Installera PackageProvider Cmdlet](/powershell/module/PackageManagement/Install-PackageProvider)
+
+Denna cmdlet installerar en eller flera pakethantering paketet providers.
+
 ```powershell
 # Install a package provider from the PowerShell Gallery
 Install-PackageProvider –Name "Gistprovider" -Verbose
@@ -149,15 +164,19 @@ Find-PackageProvider –Name "Gistprovider" | Install-PackageProvider -Verbose
 Install-PackageProvider –Name Gistprovider –Verbose –Scope CurrentUser
 ```
 
-## <a name="register-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890701aspx"></a>[Registrera PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890701.aspx)
+## <a name="register-packagesource-cmdletpowershellmodulepackagemanagementregister-packagesource"></a>[Registrera PackageSource Cmdlet](/powershell/module/PackageManagement/Register-PackageSource)
+
 Denna cmdlet lägger till en paketkälla för en angiven paket-provider.
-Varje PackageManagement provider kan ha en eller flera källor för programvara eller databaser. PackageManagement innehåller PowerShell-cmdletar för att lägga till/ta bort/fråga källan. Exempelvis kan du registrera en paketkälla för NuGet-providern:
+Varje PackageManagement-provider kan ha en eller flera källor för programvara eller databaser. PackageManagement innehåller PowerShell-cmdletar för att lägga till/ta bort/fråga källan. Exempelvis kan du registrera en paketkälla för NuGet-providern:
+
 ```powershell
 Register-PackageSource -Name "NugetSource" -Location "http://www.nuget.org/api/v2" –ProviderName nuget
 ```
 
-## <a name="save-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890708aspx"></a>[Spara paketet Cmdlet](https://technet.microsoft.com/en-us/library/dn890708.aspx)
-Denna cmdlet sparar paket på den lokala datorn utan att installera dem.
+## <a name="save-package-cmdletpowershellmodulepackagemanagementsave-package"></a>[Spara-Package-Cmdlet](/powershell/module/PackageManagement/Save-Package)
+
+Denna cmdlet sparar paket till den lokala datorn utan att installera dem.
+
 ```powershell
 # Saves jquery package to c:\test using NuGetProvider
 # Notes that the -Path parameter must point to an existing location
@@ -165,18 +184,22 @@ Save-Package -Name jquery –Provider NuGet -Path c:\test
 
 # Save a package by piping.
 Find-Package -Name jquery -Source http://www.nuget.org/api/v2/ | Save-Package -Path c:\test
-Find-Package -source c:\test
+Find-Package -Source c:\test
 ```
 
-## <a name="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx"></a>[Cmdlet set-PackageSource](https://technet.microsoft.com/en-us/library/dn890710.aspx)
+## <a name="set-packagesource-cmdletpowershellmodulepackagemanagementset-packagesource"></a>[Cmdlet set-PackageSource](/powershell/module/PackageManagement/Set-PackageSource)
+
 Denna cmdlet ändrar information om en befintlig datakälla för paketet.
+
 ```powershell
 #Set-PackageSource changes the values for a source that has already been registered by running the Register-PackageSource cmdlet. By #running Set-PackageSource, you can change the source name and location.
 Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2
 ```
 
-## <a name="uninstall-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890702aspx"></a>[Avinstallera paketet Cmdlet](https://technet.microsoft.com/en-us/library/dn890702.aspx)
+## <a name="uninstall-package-cmdletpowershellmodulepackagemanagementuninstall-package"></a>[Avinstallera paketet Cmdlet](/powershell/module/PackageManagement/Uninstall-Package)
+
 Denna cmdlet avinstallerar paket som är installerade på den lokala datorn.
+
 ```powershell
 # Uninstall jquery using nuget
 Uninstall-Package -Name jquery –Provider NuGet -Destination c:\test
@@ -185,7 +208,8 @@ Uninstall-Package -Name jquery –Provider NuGet -Destination c:\test
 Get-Package -Name jquery –Provider NuGet -Destination c:\test | Uninstall-Package
 ```
 
-## <a name="unregister-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890707aspx"></a>[Avregistrera PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890707.aspx)
+## <a name="unregister-packagesource-cmdletpowershellmodulepackagemanagementunregister-packagesource"></a>[Avregistrera PackageSource Cmdlet](/powershell/module/PackageManagement/Unregister-PackageSource)
+
 ```powershell
 # Unregister a package source for the NuGet provider. You can use command Unregister-PackageSource, to disconnect with a repository, and Get-PackageSource, to discover what the repositories are associated with that provider.
 Unregister-PackageSource  -Name "NugetSource"

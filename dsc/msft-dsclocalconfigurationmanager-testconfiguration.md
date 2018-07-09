@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: TestConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
-ms.openlocfilehash: 2df04d317bd5e7a5c2a713d92be57c5c9a9f5e8c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: d746832b01310f43a7aae33dd0fa70c0928bb3e0
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219019"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893934"
 ---
 # <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>TestConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
 
-Skickar konfiguration dokumentet till hanterade noder och verifierar den aktuella konfigurationen mot dokumentet.
+Skickar konfigurationsdokumentet till hanterad nod och verifierar den aktuella konfigurationen mot dokumentet.
 
-<a name="syntax"></a>Syntax
-------
+## <a name="syntax"></a>Syntax
 
 ```mof
 uint32 TestConfiguration(
@@ -25,34 +24,30 @@ uint32 TestConfiguration(
 );
 ```
 
-<a name="parameters"></a>Parametrar
-----------
+## <a name="parameters"></a>Parametrar
 
 *configurationData* \[i\] miljödata för confuguration.
 
-*InDesiredState* \[ut\] på RETUR, anger om hanterad nod är i tillståndet anges i configuration-dokumentet.
+*InDesiredState* \[ut\] på RETUR, anger du om hanterad nod är i tillståndet anges i konfigurationsdokumentet.
 
-*ResourcesInDesiredState* \[ut\] på RETUR, innehåller en inbäddad instans av den **MSFT_ResourceInDesiredState** klass som anger resurser som ingår i tillståndet.
+*ResourcesInDesiredState* \[ut\] på return innehåller en inbäddad förekomst av den **MSFT_ResourceInDesiredState** klass som anger resurser som finns i önskat läge.
 
-*ResourcesNotInDesiredState* \[ut\] på RETUR, innehåller en inbäddad instans av den **MSFT_ResourceNotInDesiredState** klass som anger resurser som inte är i tillståndet önskade.
+*ResourcesNotInDesiredState* \[ut\] på return innehåller en inbäddad förekomst av den **MSFT_ResourceNotInDesiredState** klass som anger resurser som inte ingår i önskat läge.
 
 ## <a name="return-value"></a>Returvärde
-------------
 
-Returnerar noll på lyckade; Annars returnerar en felkod.
+Returnerar noll om åtgärden lyckades; Annars returnerar en felkod.
 
 ## <a name="remarks"></a>Anmärkningar
 
 Det här är en statisk metod.
 
 ## <a name="requirements"></a>Krav
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Se även
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

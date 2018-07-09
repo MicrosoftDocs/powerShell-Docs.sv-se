@@ -2,31 +2,31 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Använda en DSC-rapportserver
-ms.openlocfilehash: 143e0bdd9b637cee87a676ed327fe6ff3a7fd719
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bcd414e9cc6d3b321676aaab6bbc3ca1b02e80aa
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188555"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893145"
 ---
 # <a name="using-a-dsc-report-server"></a>Använda en DSC-rapportserver
 
-> Gäller för: Windows PowerShell 5.0
+Gäller för: Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> Pull-Server (Windows-funktionen *DSC-Service*) är en stöds komponent i Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att börja övergång hanteras klienter [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (omfattar funktioner utöver Pull-Server på Windows Server) eller någon av community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
+> Pull-servern (Windows-funktionen *DSC-tjänst*) är en stöds komponent i Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Rekommenderar vi att du påbörjar övergången hanterade klienter [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver Pull-servern på Windows Server) eller en av community-lösningar visas [här](pullserver.md#community-solutions-for-pull-service).
+>
+> **Obs** rapportservern som beskrivs i det här avsnittet är inte tillgänglig i PowerShell 4.0.
 
->**Obs:** rapportservern som beskrivs i det här avsnittet är inte tillgänglig i PowerShell 4.0.
-
-Den lokala Configuration Manager (MGM) för en nod kan konfigureras för att skicka rapporter om dess Konfigurationsstatus till en pull-server, som sedan kan efterfrågas hämta dessa data. Varje gång noden kontrollerar och tillämpar en konfiguration, skickar den en rapport i report server. De här rapporterna lagras i en databas på servern och kan hämtas genom att anropa reporting web service. Varje rapport innehåller information, till exempel vilka konfigurationer har tillämpats och om de lyckades, resurserna som används, eventuella fel som har genererats och start- och sluttider för.
+Den lokala Configuration Manager (LCM) för en nod kan konfigureras för att skicka rapporter om dess Konfigurationsstatus till en pull-server, som sedan kan efterfrågas för att hämta dessa data. Varje gång noden kontrollerar och tillämpar en konfiguration, skickar den en rapport på rapportservern. De här rapporterna lagras i en databas på servern och kan hämtas genom att anropa reporting web service. Varje rapport innehåller information, till exempel vilka konfigurationer har tillämpats och huruvida de lyckades, resurserna som används, eventuella fel som utlöstes, och start- och sluttider.
 
 ## <a name="configuring-a-node-to-send-reports"></a>Konfigurera en nod för att skicka rapporter
 
-Anger du en nod kan skicka rapporter till en server med hjälp av en **ReportServerWeb** blockera i MGM nodkonfiguration (information om hur du konfigurerar MGM finns [konfigurera den lokala Configuration Manager](metaConfig.md) ). Servern som noden skickar rapporter måste ställas in som pull webbserver (du inte kan skicka rapporter till en SMB-resurs). Information om hur du konfigurerar en pull-server finns i [ställer in en pull webbserver DSC](pullServer.md). Rapportservern kan vara samma tjänst från noden hämtar konfigurationer och hämtar resurser eller det kan vara en annan tjänst.
+Du berätta för en nod om rapporterna ska skickas till en server med hjälp av en **ReportServerWeb** blockera i MGM nodkonfiguration (information om hur du konfigurerar LCM finns i [konfigurerar den lokala Konfigurationshanteraren](metaConfig.md) ). Servern som noden skickar rapporter måste ställas in som en webbpullserver (du inte kan skicka rapporter till en SMB-resurs). Information om hur du konfigurerar en pull-server finns i [att konfigurera en DSC-webbpullserver](pullServer.md). Rapportservern kan vara samma tjänst som noden hämtar konfigurationer och hämtar resurser eller det kan vara en annan tjänst.
 
-I den **ReportServerWeb** block, du anger Webbadressen för pull-tjänsten och en registreringsnyckel som kallas till servern.
+I den **ReportServerWeb** block, anger du URL för pull-tjänsten och en registreringsnyckel som du känner till servern.
 
-Följande konfiguration konfigurerar en nod till pull konfigurationer från en tjänst och skickar rapporter till en tjänst på en annan server.
+Följande konfiguration konfigurerar en nod till pull-konfigurationer från en tjänst och skickar rapporter till en tjänst på en annan server.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -56,6 +56,7 @@ configuration ReportClientConfig
         }
     }
 }
+
 ReportClientConfig
 ```
 
@@ -91,20 +92,26 @@ configuration PullClientConfig
 PullClientConfig
 ```
 
->**Obs:** du namnger webbtjänsten vad du vill när du ställer in en pull-server, men **ServerURL** -egenskap måste matcha namnet på tjänsten.
+> [!NOTE]
+> Du kan kalla webbtjänsten vad du vill när du ställer in en pull-server, men **ServerURL** -egenskap måste matcha namnet på tjänsten.
 
-## <a name="getting-report-data"></a>Hämtning av rapportdata
+## <a name="getting-report-data"></a>Hämta rapportdata
 
-Rapporter skickas till pull-servern registreras i en databas på servern. Rapporterna är tillgängliga via anrop till webbtjänsten. Om du vill hämta rapporter för en viss nod skicka en HTTP-begäran till webbtjänsten för rapporten i följande format: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports` där `MyNodeAgentId` är AgentId för noden som du vill hämta rapporter. Du kan hämta AgentID för en nod genom att anropa [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) på noden.
+Rapporter som skickas till den pull-servern registreras i en databas på servern. Rapporterna är tillgängliga via anrop till webbtjänsten. Om du vill hämta rapporter för en viss nod, skicka en HTTP-begäran till webbtjänsten report i följande format: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports` där `MyNodeAgentId` är AgentId för noden som du vill hämta rapporter. Du kan hämta AgentID för en nod genom att anropa [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) på noden.
 
 Rapporterna returneras som en matris av JSON-objekt.
 
-Följande skript returnerar rapporterna för noden som kör:
+Följande skript returnerar rapporterna för noden där den körs:
 
 ```powershell
 function GetReport
 {
-    param($AgentId = "$((glcm).AgentId)", $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc")
+    param
+    (
+        $AgentId = "$((glcm).AgentId)", 
+        $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc"
+    )
+
     $requestUri = "$serviceURL/Nodes(AgentId= '$AgentId')/Reports"
     $request = Invoke-WebRequest -Uri $requestUri  -ContentType "application/json;odata=minimalmetadata;streaming=true;charset=utf-8" `
                -UseBasicParsing -Headers @{Accept = "application/json";ProtocolVersion = "2.0"} `
@@ -116,13 +123,14 @@ function GetReport
 
 ## <a name="viewing-report-data"></a>Visa rapportdata
 
-Om du anger en variabel till resultatet av den **GetReport** funktion, kan du visa enskilda fält i ett element i matrisen som returneras:
+Om du anger en variabel till resultatet av den **GetReport** funktion, kan du visa de enskilda fälten i ett element i matrisen som returneras:
 
 ```powershell
 $reports = GetReport
 $reports[1]
+```
 
-
+```output
 JobId                : 019dfbe5-f99f-11e5-80c6-001dd8b8065c
 OperationType        : Consistency
 RefreshMode          : Pull
@@ -156,19 +164,21 @@ StatusData           : {{"StartDate":"2016-04-03T06:21:43.7220000-07:00","IPV6Ad
 AdditionalData       : {}
 ```
 
-Som standard rapporterar sorteras efter **JobID**. För att få den senaste rapporten kan du sortera rapporterna efter fallande **StartTime** egenskapen och hämta först elementet i matrisen:
+Som standard rapporterna sorteras efter **JobID**. För att få den senaste rapporten kan du sortera rapporterna efter fallande **StartTime** egenskapen och hämta först elementet i matrisen:
 
 ```powershell
 $reportsByStartTime = $reports | Sort-Object {$_."StartTime" -as [DateTime] } -Descending
 $reportMostRecent = $reportsByStartTime[0]
 ```
 
-Observera att den **StatusData** egenskapen är ett objekt med ett antal egenskaper. Detta är där reporting data. Nu ska vi titta på enskilda fält i den **StatusData** -egenskapen för den senaste rapporten:
+Observera att den **StatusData** egenskapen är ett objekt med ett antal egenskaper. Detta är där de reporting data. Låt oss titta på de enskilda fälten för den **StatusData** -egenskapen för den senaste rapporten:
 
 ```powershell
 $statusData = $reportMostRecent.StatusData | ConvertFrom-Json
 $statusData
+```
 
+```output
 StartDate                  : 2016-04-04T11:21:41.2990000-07:00
 IPV6Addresses              : {2001:4898:d8:f2f2:852b:b255:b071:283b, fe80::852b:b255:b071:283b%12, ::2000:0:0:0, ::1...}
 DurationInSeconds          : 25
@@ -201,11 +211,13 @@ Locale                     : en-US
 Mode                       : Pull
 ```
 
-Detta visar att den senaste konfigurationen två resurser, och som en av dem har status som önskas, och en av dem har inte bland annat. Du kan få ett mer lättläst utdata för just den **ResourcesNotInDesiredState** egenskapen:
+Detta visar att den senaste konfigurationen kallas två resurser, och en av dem var i önskat läge och en av dem var inte bland annat. Du kan få en mer läsbara utdata visar bara **ResourcesNotInDesiredState** egenskapen:
 
 ```powershell
 $statusData.ResourcesInDesiredState
+```
 
+```output
 SourceInfo        : C:\ReportTest\Sample_xFirewall_AddFirewallRule.ps1::16::9::Archive
 ModuleName        : PSDesiredStateConfiguration
 DurationInSeconds : 2.672
@@ -219,9 +231,12 @@ ConfigurationName : Sample_ArchiveFirewall
 InDesiredState    : True
 ```
 
-Observera att de här exemplen är avsedda att ge dig en uppfattning om vad du kan göra med rapportdata. En introduktion om att arbeta med JSON i PowerShell finns [spelar med JSON och PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
+Observera att de här exemplen är tänkt att ge dig en uppfattning om vad du kan göra med rapportdata. En introduktion om att arbeta med JSON i PowerShell finns i [spelar med JSON- och PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
 
 ## <a name="see-also"></a>Se även
-- [Konfigurera den lokala Configuration Manager](metaConfig.md)
-- [Ställer in en pull webbserver DSC](pullServer.md)
-- [Konfigurera en pullklient med konfigurationsnamn](pullClientConfigNames.md)
+
+[Konfigurera den lokala Konfigurationshanteraren](metaConfig.md)
+
+[Konfigurera en DSC-webbpullserver](pullServer.md)
+
+[Konfigurera en pullklient med konfigurationsnamn](pullClientConfigNames.md)

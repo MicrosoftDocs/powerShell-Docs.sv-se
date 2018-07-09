@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: SendMetaConfigurationApply-metoden för MSFT_DSCLocalConfigurationManager-klassen
-ms.openlocfilehash: 46acd86ac52b7b6b39f06fc65af2498b4f5348ed
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b372a6c0ab9d4561dcf67026275e7d3ca6aa2584
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218849"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892965"
 ---
 # <a name="sendmetaconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>SendMetaConfigurationApply-metoden för MSFT_DSCLocalConfigurationManager-klassen
 
-Anger Local Configuration Manager-inställningar som används för att styra Configuration Agent.
+Anger de Local Configuration Manager-inställningar som används för att styra agenten Configuration.
 
-<a name="syntax"></a>Syntax
-------
+## <a name="syntax"></a>Syntax
 
 ```mof
 uint32 SendMetaConfigurationApply(
@@ -23,30 +22,26 @@ uint32 SendMetaConfigurationApply(
 );
 ```
 
-<a name="parameters"></a>Parametrar
-----------
+## <a name="parameters"></a>Parametrar
 
-*ConfigurationData* \[i\] miljödata för konfigurationen.
+*ConfigurationData* \[i\] miljödata om konfigurationen.
 
-*Tvinga* \[i\] **SANT** att tvinga konfigurationen som ska sluta.
+*Tvinga* \[i\] **SANT** att tvinga konfigurationen att stoppa.
 
 ## <a name="return-value"></a>Returvärde
-------------
 
-Returnerar noll på lyckade; Annars returnerar en felkod.
+Returnerar noll om åtgärden lyckades; Annars returnerar en felkod.
 
 ## <a name="remarks"></a>Anmärkningar
 
 Det här är en statisk metod.
 
 ## <a name="requirements"></a>Krav
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Se även
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

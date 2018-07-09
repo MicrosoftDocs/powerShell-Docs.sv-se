@@ -2,22 +2,20 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: ApplyConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klass
-ms.openlocfilehash: ef8488246b2c8614452d32009e45535f0ff2e184
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 559ff1793a18e28dad2f176bdb20eb53bc08630d
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222147"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892630"
 ---
 # <a name="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>ApplyConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klass
 
-Använder Configuration Agent för att använda den konfiguration som är i vänteläge.
+Använder Configuration-agenten för att tillämpa konfigurationen som väntar.
 
-Om det finns ingen konfiguration väntande, återställer den här metoden den aktuella konfigurationen.
-
+Om det finns ingen konfiguration väntande, lägger den här metoden den aktuella konfigurationen.
 
 ## <a name="syntax"></a>Syntax
-------
 
 ```mof
 uint32 ApplyConfiguration(
@@ -26,27 +24,23 @@ uint32 ApplyConfiguration(
 ```
 
 ## <a name="parameters"></a>Parametrar
-----------
 
 *Tvinga* \[i\] om det här är **SANT**, den aktuella konfigurationen används igen, även om det finns en konfiguration väntande.
 
 ## <a name="return-value"></a>Returvärde
-------------
 
-Returnerar noll på lyckade; Annars returnerar en felkod.
+Returnerar noll om åtgärden lyckades; Annars returnerar en felkod.
 
 ## <a name="remarks"></a>Anmärkningar
 
 Det här är en statisk metod.
 
 ## <a name="requirements"></a>Krav
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Se även
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

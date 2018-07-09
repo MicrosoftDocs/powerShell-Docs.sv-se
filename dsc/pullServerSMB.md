@@ -2,57 +2,61 @@
 ms.date: 04/11/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Konfigurera en DSC SMB-hämtningsserver
-ms.openlocfilehash: 92c03c99afd612fa2b5475e8c26991ff080584e9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1eac6c51aeca3ed573ba8fa27188103436004920
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189677"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892873"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Konfigurera en DSC SMB-hämtningsserver
 
->Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
+Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> Pull-Server (Windows-funktionen *DSC-Service*) är en stöds komponent i Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att börja övergång hanteras klienter [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (omfattar funktioner utöver Pull-Server på Windows Server) eller någon av community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
+> Pull-servern (Windows-funktionen *DSC-tjänst*) är en stöds komponent i Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Rekommenderar vi att du påbörjar övergången hanterade klienter [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver Pull-servern på Windows Server) eller en av community-lösningar visas [här](pullserver.md#community-solutions-for-pull-service).
 
-En DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) pull-server är en dator som värd för SMB-filresurser som gör DSC-konfigurationsfiler och DSC resurser tillgängliga för målnoder när de noderna som ber om.
+En DSC [SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) hämtningsservern är en dator som är värd för SMB-filresurser som gör DSC-konfigurationsfiler och DSC-resurser tillgängliga för målnoder när de noderna som ber om.
 
-Om du vill använda en SMB-pull-server för DSC, behöver du:
-- Konfigurera en SMB-filresurs på en server som kör PowerShell 4.0 eller senare
+Om du vill använda en SMB-pullserver för DSC, behöver du:
+
+- Konfigurera en SMB-filresurs på en server med PowerShell 4.0 eller senare
 - Konfigurera en klient som kör PowerShell 4.0 eller senare för att hämta från den SMB-resursen
 
-## <a name="using-the-xsmbshare-resource-to-create-an-smb-file-share"></a>Med xSmbShare resurs för att skapa en SMB-filresurs
+## <a name="using-the-xsmbshare-resource-to-create-an-smb-file-share"></a>Använda xSmbShare resursen för att skapa en SMB-filresurs
 
-Det finns ett antal sätt att konfigurera en SMB-filresurs, men vi ska titta på hur du kan göra detta med hjälp av DSC.
+Det finns ett antal sätt att konfigurera en SMB-filresurs, men låt oss titta på hur du kan göra detta med hjälp av DSC.
 
 ### <a name="install-the-xsmbshare-resource"></a>Installera xSmbShare resursen
 
-Anropa den [installera modulen](https://technet.microsoft.com/library/dn807162.aspx) för att installera den **xSmbShare** modul.
->**Obs**: **installera modulen** ingår i den **PowerShellGet** module, som ingår i PowerShell 5.0. Du kan hämta den **PowerShellGet** -modul för PowerShell 3.0 och 4.0 på [PackageManagement PowerShell-moduler Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186). Den **xSmbShare** innehåller DSC-resursen **xSmbShare**, som kan användas för att skapa en SMB filresurs.
+Anropa den [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet för att installera den **xSmbShare** modulen.
 
-### <a name="create-the-directory-and-file-share"></a>Skapa katalogen och filresursen
+> [!NOTE]
+> `Install-Module` ingår i den **PowerShellGet** modulen, som ingår i PowerShell 5.0. Du kan ladda ned den **PowerShellGet** -modulen för PowerShell 3.0 och 4.0 på [PackageManagement PowerShell-moduler förhandsversion](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
+> Den **xSmbShare** innehåller DSC-resurs **xSmbShare**, som kan användas för att skapa en SMB-filresurs.
 
-Följande konfiguration använder den [filen](fileResource.md) resurs för att skapa katalogen för resursen och **xSmbShare** resurs för att konfigurera SMB-resurs:
+### <a name="create-the-directory-and-file-share"></a>Skapa katalog och filresursen
+
+Följande konfiguration använder den [filen](fileResource.md) resursen för att skapa katalogen för resursen och **xSmbShare** resursen för att konfigurera SMB-resurs:
 
 ```powershell
-Configuration SmbShare {
+Configuration SmbShare
+{
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+    Import-DscResource -ModuleName xSmbShare
 
-Import-DscResource -ModuleName PSDesiredStateConfiguration
-Import-DscResource -ModuleName xSmbShare
+    Node localhost
+    {
 
-    Node localhost {
-
-        File CreateFolder {
-
+        File CreateFolder
+        {
             DestinationPath = 'C:\DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
-
         }
 
-        xSMBShare CreateShare {
-
+        xSMBShare CreateShare
+        {
             Name = 'DscSmbShare'
             Path = 'C:\DscSmbShare'
             FullAccess = 'admininstrator'
@@ -60,40 +64,36 @@ Import-DscResource -ModuleName xSmbShare
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
-
         }
-
     }
-
 }
 ```
 
-Konfigurationen skapar katalogen `C:\DscSmbShare` om den inte redan finns, och sedan använder katalogen som en SMB filresurs. **FullAccess** bör ges till något konto som behöver skriva till eller ta bort från filresursen och **läsåtkomst** ges till klientnoder som får konfigurationer och/eller DSC-resurser från (Detta beror på att resursen DSC körs som system-kontot som standard, så du själva datorn har åtkomst till resursen).
-
+Konfigurationen skapar katalogen `C:\DscSmbShare` om den inte redan finns, och sedan använder den katalogen som en SMB-filresurs. **FullAccess** ska ges till alla konton som krävs för att skriva till eller ta bort filresursen och **läsåtkomst** måste anges till klientnoder som få konfigurationer och/eller DSC-resurser från resursen (detta är eftersom DSC körs som system-kontot som standard, så du själva datorn har åtkomst till resursen).
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>Ge behörighet till pull-klienten
 
-Ger **läsåtkomst** noden till en klient kan noden för att få åtkomst till SMB-resursen, men inte till filer eller mappar i som delar. Du måste uttryckligen bevilja klienten noder åtkomst till SMB-delade mappen och undermappar. Vi kan göra detta med DSC genom att lägga till med hjälp av den **cNtfsPermissionEntry** resurs, som ingår i den [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) modul. Följande konfiguration lägger till en **cNtfsPermissionEntry** block som ger ReadAndExecute åtkomst till pull-klienten:
+Ge **läsåtkomst** till en klient noden kan noden för att få åtkomst till SMB-resursen, men inte till filer eller mappar i som delar. Du måste uttryckligen bevilja klienten noder åtkomst till SMB-delade mappen och undermappar. Vi kan göra detta med DSC genom att lägga till med hjälp av den **cNtfsPermissionEntry** resurs, som finns i den [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) modulen. Lägger till följande konfiguration en **cNtfsPermissionEntry** block som beviljar ReadAndExecute åtkomst till pull-klienten:
 
 ```powershell
-Configuration DSCSMB {
+Configuration DSCSMB
+{
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+    Import-DscResource -ModuleName xSmbShare
+    Import-DscResource -ModuleName cNtfsAccessControl
 
-Import-DscResource -ModuleName PSDesiredStateConfiguration
-Import-DscResource -ModuleName xSmbShare
-Import-DscResource -ModuleName cNtfsAccessControl
+    Node localhost
+    {
 
-    Node localhost {
-
-        File CreateFolder {
-
+        File CreateFolder
+        {
             DestinationPath = 'DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
-
         }
 
-        xSMBShare CreateShare {
-
+        xSMBShare CreateShare
+        {
             Name = 'DscSmbShare'
             Path = 'DscSmbShare'
             FullAccess = 'administrator'
@@ -101,61 +101,60 @@ Import-DscResource -ModuleName cNtfsAccessControl
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
-
         }
 
-        cNtfsPermissionEntry PermissionSet1 {
-
-        Ensure = 'Present'
-        Path = 'C:\DSCSMB'
-        Principal = 'myDomain\Contoso-Server$'
-        AccessControlInformation = @(
-            cNtfsAccessControlInformation
-            {
-                AccessControlType = 'Allow'
-                FileSystemRights = 'ReadAndExecute'
-                Inheritance = 'ThisFolderSubfoldersAndFiles'
-                NoPropagateInherit = $false
-            }
-        )
-        DependsOn = '[File]CreateFolder'
-
+        cNtfsPermissionEntry PermissionSet1
+        {
+            Ensure = 'Present'
+            Path = 'C:\DSCSMB'
+            Principal = 'myDomain\Contoso-Server$'
+            AccessControlInformation = @(
+                cNtfsAccessControlInformation
+                {
+                    AccessControlType = 'Allow'
+                    FileSystemRights = 'ReadAndExecute'
+                    Inheritance = 'ThisFolderSubfoldersAndFiles'
+                    NoPropagateInherit = $false
+                }
+            )
+            DependsOn = '[File]CreateFolder'
         }
-
-
     }
-
 }
 ```
 
 ## <a name="placing-configurations-and-resources"></a>Placera konfigurationer och resurser
 
-Spara konfigurationen MOF-filer och/eller DSC-resurser som du vill att klientnoder att dra in SMB-delade mappen.
+Spara konfigurationen MOF-filer och/eller DSC-resurser som du vill att klientnoder att dra in den SMB-delade mappen.
 
-Alla configuration MOF-filen måste ha namnet _ConfigurationID_MOF, där _ConfigurationID_ är värdet för den **ConfigurationID** -egenskapen för nodens target MGM. Mer information om hur du konfigurerar pull-klienter finns [installera en pull-klient med hjälp av konfigurations-ID](pullClientConfigID.md).
+Alla MOF-konfigurationsfilen måste ha namnet *ConfigurationID*.mof, där *ConfigurationID* är värdet för den **ConfigurationID** egenskapen för den målnoden MGM. Mer information om hur du konfigurerar pull-klienter finns i [konfigurera en hämtningsklient med konfigurations-ID](pullClientConfigID.md).
 
->**Obs:** måste du använda konfigurations-ID om du använder en SMB-pull-server. Konfigurationsnamn stöds inte för SMB.
+> [!NOTE]
+> Du måste använda konfigurations-ID om du använder en SMB-pullserver. Konfigurationsnamn har inte stöd för SMB.
 
-Varje Resursmodul behöver zippade och namnet enligt de följande mönster `{Module Name}_{Module Version}.zip`. Till exempel namnet en modul med namnet xWebAdminstration med en Modulversion av 3.1.2.0 'xWebAdministration_3.2.1.0.zip'. Varje version av en modul måste finnas i en enda zip-fil. Eftersom det finns endast en version av en resurs i formatet modulen lades till i WMF 5.0 med varje zip-filen stöds inte stöd för flera modulversioner i en katalog. Detta innebär att innan du paketering in DSC resurs moduler för användning med pull-server måste du göra en mindre ändring i katalogstrukturen. Moduler som innehåller DSC-resurs i WMF 5.0 standardformatet är ' {modulen mappen}\{Modulversion} \DscResources\{DSC resursmapp}\'. Innan paketering för pull-server bara ta bort den **{Modulversion}** mapp så blir sökvägen ' {modulen mappen} \DscResources\{DSC resursmapp}\'. Med den här ändringen zip-mappen som beskrivs ovan och placera dessa zip-filer i mappen SMB-resursen.
+Varje Resursmodul måste zippade och med namnet enligt i följande mönster `{Module Name}_{Module Version}.zip`. Till exempel namnet en modul med namnet xWebAdminstration med en Modulversion av 3.1.2.0 ”xWebAdministration_3.2.1.0.zip”. Varje version av en modul måste finnas i en enda zip-fil. Eftersom det inte finns endast en version av en resurs i varje zip-filen som har lagts till i WMF 5.0 med formatet modulen stöds inte stöd för flera modulversionerna i en enskild katalog. Det innebär att innan du packa upp DSC-resurs-moduler för användning med pull-server måste du göra små ändringar i katalogstrukturen. Moduler som innehåller DSC-resurs i WMF 5.0 standardformatet är `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Innan du paketering för hämtningsservern helt enkelt ta bort den `{Module version}` mapp så blir sökvägen `{Module Folder}\DscResources\{DSC Resource Folder}\`. Med den här ändringen zip-mappen som beskrivs ovan och placera dessa zip-filer i den SMB-delade mappen.
 
 ## <a name="creating-the-mof-checksum"></a>Skapa MOF-kontrollsumma
-En konfiguration MOF-fil måste kombineras med en fil kontrollsummor så att en MGM på målnoden kan validera konfigurationen.
-Om du vill skapa en kontrollsumma anropa den [ny DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet. Cmdlet tar en **sökväg** parameter som anger den mapp där konfigurationen MOF finns. Cmdleten skapar en kontrollsumma-fil med namnet `ConfigurationMOFName.mof.checksum`, där `ConfigurationMOFName` är namnet på konfigurationens mof-fil.
-Om det finns mer än en konfiguration MOF-filer i den angivna mappen, skapas en kontrollsumma för varje konfiguration i mappen.
 
-Filen kontrollsumma måste finnas i samma katalog som konfigurationsfilen MOF (`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` som standard), och har samma namn som den `.checksum` tillägg läggs.
+En MOF-konfigurationsfilen måste kopplas till en kontrollsumma-fil så att en LCM på målnoden verifiera konfigurationen.
+Om du vill skapa en kontrollsumma, anropa den [New DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) cmdlet. Cmdlet: en tar en `Path` parameter som anger den mapp där konfigurationen MOF finns. Cmdleten skapar en kontrollsumma-fil med namnet `ConfigurationMOFName.mof.checksum`, där `ConfigurationMOFName` är namnet på mof-konfigurationsfilen.
+Om det finns flera olika konfigurationer MOF-filer i en angiven mapp, skapas en kontrollsumma för varje konfiguration i mappen.
 
->**Obs**: Om du ändrar konfigurationen MOF-filen på något sätt, måste du också återskapa filen kontrollsumma.
+Filen kontrollsumma måste finnas i samma katalog som MOF-konfigurationsfilen (`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` som standard), och har samma namn som den `.checksum` tillägget sist.
 
-## <a name="setting-up-a-pull-client-for-smb"></a>Installera en pull-klient för SMB
+> [!NOTE]
+> Om du ändrar MOF-konfigurationsfilen på något sätt, måste du också återskapa filen kontrollsumma.
 
-Om du vill konfigurera en klient som tar emot konfigurationer och/eller resurser från en SMB-resurs måste du konfigurera klientens lokala Configuration Manager (MGM) med **ConfigurationRepositoryShare** och **ResourceRepositoryShare** block som anger resursen som du vill dra konfigurationer och DSC-resurser.
+## <a name="setting-up-a-pull-client-for-smb"></a>Konfigurera en hämtningsklient för SMB
 
-Mer information om hur du konfigurerar MGM finns [installera en pull-klient med hjälp av konfigurations-ID](pullClientConfigID.md).
+Om du vill konfigurera en klient som tar emot konfigurationer och/eller resurser från en SMB-resurs kan du konfigurera klientens lokala Configuration Manager (LCM) med **ConfigurationRepositoryShare** och **ResourceRepositoryShare** block som anger den resurs som ska hämta konfigurationer och DSC-resurser.
 
->**Obs:** för enkelhetens skull det här exemplet används den **PSDscAllowPlainTextPassword** att skicka lösenord i klartext för den **autentiseringsuppgifter** parameter. Information om autentiseringsuppgifter skickas säkrare finns [autentiseringsuppgifter alternativ i konfigurationsdata](configDataCredentials.md).
+Läs mer om hur du konfigurerar LCM [konfigurera en hämtningsklient med konfigurations-ID](pullClientConfigID.md).
 
->**Obs:** måste du ange en **ConfigurationID** i den **inställningar** block med en metakonfigurationen för en SMB-pull-server, även om du endast hämtar resurser.
+> [!NOTE]
+> För enkelhetens skull det här exemplet används den **PSDscAllowPlainTextPassword** att skicka lösenord i klartext till den **Credential** parametern. Läs om hur skicka autentiseringsuppgifter säkrare [alternativ för autentiseringsuppgifter i konfigurationsdata](configDataCredentials.md).
+>
+> Du **måste** anger en **ConfigurationID** i den **inställningar** block med en metaconfiguration för en SMB-hämtningsserver, även om du endast hämtar resurser.
 
 ```powershell
 $secpasswd = ConvertTo-SecureString “Pass1Word” -AsPlainText -Force
@@ -190,32 +189,26 @@ configuration SmbCredTest
 }
 
 $ConfigurationData = @{
-
     AllNodes = @(
-
         @{
-
             #the "*" means "all nodes named in ConfigData" so we don't have to repeat ourselves
-
             NodeName="localhost"
-
             PSDscAllowPlainTextPassword = $true
-
         })
-
-
-
 }
 ```
 
 ## <a name="acknowledgements"></a>Erkännanden
 
-Särskild tack vare följande:
+Speciellt tacka följande:
 
-- Mike F. Robbins vars inlägg om hur du använder SMB DSC hjälpt informera innehållet i det här avsnittet. Hans blogg är på [Mike F Robbins](http://mikefrobbins.com/).
-- Serge Nikalaichyk som skapats av **cNtfsAccessControl** modul. Källan för den här modulen är på https://github.com/SNikalaichyk/cNtfsAccessControl.
+- Mike F. Robbins vars inlägg om hur du använder SMB DSC hjälpte informera innehållet i det här avsnittet. Sin blogg var [Mike F Robbins](http://mikefrobbins.com/).
+- Serge Nikalaichyk som skapats i **cNtfsAccessControl** modulen. Källan för den här modulen är på [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl).
 
 ## <a name="see-also"></a>Se även
-- [Windows PowerShell Desired State Configuration-översikt](overview.md)
-- [Tillämpa konfigurationer](enactingConfigurations.md)
-- [Konfigurera en pullklient med konfigurations-ID](pullClientConfigID.md)
+
+[Windows PowerShell Desired State Configuration-översikt](overview.md)
+
+[Tillämpa konfigurationer](enactingConfigurations.md)
+
+[Konfigurera en pullklient med konfigurations-ID](pullClientConfigID.md)

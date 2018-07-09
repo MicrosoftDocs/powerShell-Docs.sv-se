@@ -3,21 +3,21 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery
 title: Ta bort objekt
-ms.openlocfilehash: 3f67f78d63e5cf797d00ce43f95fb3b4f62d6f7c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 454cd404437bf1c31b9a1b81cd9dd0ac81e6b0f6
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218237"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893101"
 ---
 # <a name="deleting-items"></a>Ta bort objekt
 
-PowerShell-galleriet stöder inte permanent borttagning av objekt, eftersom som vill skada vem som helst som beroende av den återstående tillgängliga.
+PowerShell-galleriet har inte stöd för permanent borttagning av objekt, eftersom som skulle skapa vem som helst som beroende av den återstående tillgängliga.
 
-I stället stöder PowerShell-galleriet ett sätt att ”ta bort” ett objekt som kan göras i sidan för hantering av objekt på webbplatsen.
-När ett objekt inte visas, visas den inte längre i sökningar och i ett objekt med både på PowerShell-galleriet och använda PowerShellGet-kommandona.
-Emellertid nedladdningsbara genom att ange dess exakt vilken version som är vad gör automatiserade skript för att fortsätta arbeta.
+I stället PowerShell-galleriet har stöd för ett sätt att ”ta bort” ett objekt som kan göras på sidan för hantering av objekt på webbplatsen.
+När ett objekt inte visas, visas den inte längre i sökningar och i någon lista, både på PowerShell-galleriet och använder PowerShellGet-kommandon.
+Emellertid nedladdningsbara genom att ange den exakta versionen, vilket kan de automatiserade skript för att fortsätta arbeta.
 
-Om du stöter på en speciell situation där du tror att ett objekt måste du ta bort kan det här hanteras manuellt av PowerShell-galleriet-teamet.
-Om det finns en upphovsrättsintrång problemet eller potentiellt skadligt innehåll, som kan vara en giltig orsak till att ta bort den.
-Du måste skicka en supportförfrågan via [PowerShell-galleriet] (http://www.PowerShellGallery.com) i så fall.
+Om du stöter på särskilda omständigheter där du tror att ett av objekten måste tas bort, kan det hanteras manuellt av PowerShell-galleriet-teamet.
+Om det finns en upphovsrättsintrång problemet eller potentiellt skadliga innehåll, som till exempel vara en giltig orsak till att ta bort den.
+Du bör skicka en supportbegäran via [PowerShell-galleriet](http://www.PowerShellGallery.com) i så fall.

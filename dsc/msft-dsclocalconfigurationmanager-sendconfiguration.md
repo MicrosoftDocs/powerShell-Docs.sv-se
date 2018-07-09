@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: SendConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
-ms.openlocfilehash: b4d4c901268344ba67d77e4dc982042bfc2abd78
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3529bc56ecba19ed0fbbf070a4e86d0692824d39
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222215"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892451"
 ---
 # <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>SendConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
 
-Skickar konfiguration dokumentet till noden hanterade och sparar den som en väntande ändring.
+Skickar konfigurationsdokumentet till hanterad nod och sparar den som en väntande ändring.
 
-<a name="syntax"></a>Syntax
-------
+## <a name="syntax"></a>Syntax
 
 ```mof
 uint32 SendConfiguration(
@@ -23,30 +22,26 @@ uint32 SendConfiguration(
 );
 ```
 
-<a name="parameters"></a>Parametrar
-----------
+## <a name="parameters"></a>Parametrar
 
-*ConfigurationData* \[i\] miljödata för konfigurationen.
+*ConfigurationData* \[i\] miljödata om konfigurationen.
 
-*Tvinga* \[i\] **SANT** att tvinga konfigurationen som ska sluta.
+*Tvinga* \[i\] **SANT** att tvinga konfigurationen att stoppa.
 
 ## <a name="return-value"></a>Returvärde
-------------
 
-Returnerar noll på lyckade; Annars returnerar en felkod.
+Returnerar noll om åtgärden lyckades; Annars returnerar en felkod.
 
 ## <a name="remarks"></a>Anmärkningar
 
 Det här är en statisk metod.
 
 ## <a name="requirements"></a>Krav
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Se även
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: StopConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
-ms.openlocfilehash: aaed29cb81e2079c4673b621b81c52e109aa7b48
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1cd887d205967c3d282143df4e6199027639230e
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218883"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893883"
 ---
 # <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>StopConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
 
-Stoppar konfigurationsändringen som pågår.
+Stoppar konfigurationsändring som håller på att skapas.
 
-<a name="syntax"></a>Syntax
-------
+## <a name="syntax"></a>Syntax
 
 ```mof
 uint32 StopConfiguration(
@@ -22,28 +21,24 @@ uint32 StopConfiguration(
 );
 ```
 
-<a name="parameters"></a>Parametrar
-----------
+## <a name="parameters"></a>Parametrar
 
-*Tvinga* \[i\] **SANT** att tvinga konfigurationen som ska sluta.
+*Tvinga* \[i\] **SANT** att tvinga konfigurationen att stoppa.
 
 ## <a name="return-value"></a>Returvärde
-------------
 
-Returnerar noll på lyckade; Annars returnerar en felkod.
+Returnerar noll om åtgärden lyckades; Annars returnerar en felkod.
 
 ## <a name="remarks"></a>Anmärkningar
 
 Det här är en statisk metod.
 
 ## <a name="requirements"></a>Krav
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Se även
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

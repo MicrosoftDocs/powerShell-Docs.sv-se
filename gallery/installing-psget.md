@@ -3,65 +3,65 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: galleriet, powershell, cmdlet, psget
 title: Installera PowerShellGet
-ms.openlocfilehash: 35be7d02ea856ea39218f05d32b43c60fa1bd53e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c385f7fbf6b688a11face9c3ebf4e6475a7b4c33
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219359"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893968"
 ---
 # <a name="installing-powershellget"></a>Installera PowerShellGet
 
-## <a name="powershellget-is-an-in-box-module-in-the-following-releases"></a>PowerShellGet är en modul i rutan i följande versioner
+## <a name="powershellget-is-an-in-box-module-in-the-following-releases"></a>PowerShellGet är en nyckelfärdig modul i följande versioner
 
-- [Windows 10](https://www.microsoft.com/windows/get-windows-10) eller senare
-- [Windows Server 2016](https://technet.microsoft.com/windows-server-docs/get-started/windows-server-2016) eller senare
-- [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/download/details.aspx?id=50395) eller senare
+- [Windows 10](https://www.microsoft.com/en-us/windows) eller senare
+- [Windows Server 2016](/windows-server/windows-server) eller senare
+- [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) eller senare
 - [PowerShell 6](https://github.com/PowerShell/PowerShell/releases)
 
-## <a name="get-powershellget-module-for-powershell-versions-30-and-40"></a>Hämta PowerShellGet modul för PowerShell version 3.0 och 4.0
+## <a name="get-powershellget-module-for-powershell-versions-30-and-40"></a>Hämta PowerShellGet-modul för PowerShell version 3.0 och 4.0
 
-- [PackageManagement MSI](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
+- [PackageManagement MSI](https://www.microsoft.com/en-us/download/details.aspx?id=51451)
 
 ## <a name="get-the-latest-version-from-powershell-gallery"></a>Hämta den senaste versionen från PowerShell-galleriet
 
-- Innan du uppdaterar PowerShellGet, bör du alltid installera den senaste Nuget-providern. Om du vill göra det kör du följande i en upphöjd PowerShell-session.
+- Innan du uppdaterar PowerShellGet, bör du alltid installera den senaste Nuget-providern. Om du vill göra det, kör du följande i en upphöjd PowerShell-session.
 
-```powershell
-Install-PackageProvider Nuget –Force
-Exit
-```
+  ```powershell
+  Install-PackageProvider Nuget –Force
+  Exit
+  ```
 
 ### <a name="for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget"></a>Du kan installera den senaste PowerShellGet för system med PowerShell 5.0 (eller senare)
 
-- Om du vill göra detta på Windows 10, kör Windows Server 2016, alla system med WMF 5.0 eller 5.1 installerat eller alla system med PowerShell 6, du följande kommandon från en upphöjd PowerShell-session.
+- Om du vill göra detta på Windows 10, kör Windows Server 2016, alla system med WMF 5.0 eller 5.1 installerad eller ett system med PowerShell 6, du följande kommandon från en upphöjd PowerShell-session.
 
-```powershell
-Install-Module –Name PowerShellGet –Force
-Exit
-```
+  ```powershell
+  Install-Module –Name PowerShellGet –Force
+  Exit
+  ```
 
-- Använda Update-modulen för att få nyare versioner.
+- Använd `Update-Module` att hämta nyare versioner.
 
-```powershell
-Update-Module -Name PowerShellGet
-Exit
-```
+  ```powershell
+  Update-Module -Name PowerShellGet
+  Exit
+  ```
 
-### <a name="for-systems-running-powershell-3-or-powershell-4-that-have-installed-the-packagemanagement-msihttpgomicrosoftcomfwlinklinkid746217clcid0x409"></a>För datorer som kör PowerShell 3 eller 4 för PowerShell, som har installerat den [PackageManagement MSI](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
+### <a name="for-systems-running-powershell-3-or-powershell-4-that-have-installed-the-packagemanagement-msihttpswwwmicrosoftcomen-usdownloaddetailsaspxid51451"></a>För system som kör PowerShell 3 eller PowerShell 4, som har installerat den [PackageManagement MSI](https://www.microsoft.com/en-us/download/details.aspx?id=51451)
 
-- Använd nedan PowerShellGet cmdlet från en upphöjd PowerShell-session för att spara modulerna till en lokal katalog
+- Använda PowerShellGet cmdleten från en upphöjd PowerShell-session nedan för att spara modulerna till en lokal katalog
 
-```powershell
-Save-Module PowerShellGet -Path C:\LocalFolder
-Exit
-```
+  ```powershell
+  Save-Module PowerShellGet -Path C:\LocalFolder
+  Exit
+  ```
 
-- Se till att PowerShellGet och PackageManagment-moduler inte har lästs in i andra processer.
+- Se till att PowerShellGet och PackageManagment moduler inte har lästs in i andra processer.
 - Ta bort innehållet i `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` och `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` mappar.
-- Öppna igen PS-konsolen med förhöjd behörighet och kör sedan följande kommandon.
+- Öppnar PS-konsolen med förhöjd behörighet och kör sedan följande kommandon.
 
-```powershell
-Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
-Copy-Item "C:\LocalFolder\PackageManagement\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
-```
+  ```powershell
+  Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
+  Copy-Item "C:\LocalFolder\PackageManagement\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
+  ```

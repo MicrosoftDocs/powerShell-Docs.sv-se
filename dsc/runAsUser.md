@@ -2,31 +2,31 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Köra DSC med autentiseringsuppgifterna för användaren
-ms.openlocfilehash: b2992ad562dea375aba980611312c7b96a23189c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 4a6c3d8b561cd0a27be07a68f1b577f7bf764254
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189711"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893917"
 ---
 # <a name="running-dsc-with-user-credentials"></a>Köra DSC med autentiseringsuppgifterna för användaren
 
-> Gäller för: Windows PowerShell 5.0, 5.1 för Windows PowerShell
+> Gäller för: Windows PowerShell 5.0, Windows PowerShell 5.1
 
-Du kan köra en DSC-resurs under en angiven uppsättning autentiseringsuppgifter med hjälp av automatiskt **PsDscRunAsCredential** egenskap i konfigurationen.
+Du kan köra en DSC-resurs under en angiven uppsättning autentiseringsuppgifter med hjälp av automatiskt **PsDscRunAsCredential** -egenskapen i konfigurationen.
 Som standard körs DSC varje resurs som system-kontot.
-Det finns tillfällen när körs som en användare är nödvändigt, till exempel installera MSI-paket i en specifik användarkontext, ställa in en användares registernycklar, åtkomst till en användarens specifika lokala katalog eller tillgång till ett nätverk delar.
+Det finns tillfällen när körs som en användare är nödvändigt, till exempel installera MSI-paket i kontexten för en viss användare, ställa in en användares registernycklar, åtkomst till en användares specifika lokal katalog eller tillgång till ett nätverk delar.
 
-Varje DSC-resursen har en **PsDscRunAsCredential** egenskap som kan anges till alla autentiseringsuppgifter (en [PSCredential](https://msdn.microsoft.com/library/ms572524(v=VS.85).aspx) objekt).
-Autentiseringsuppgifter kan vara hårdkodad som värde för egenskapen i konfigurationen eller du kan ange värdet [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx), som kommer uppmana användaren att ange autentiseringsuppgifter när konfigurationen kompileras (för information om Kompilera konfigurationer finns [konfigurationer](configurations.md).
+Alla DSC-resurser har en **PsDscRunAsCredential** egenskapen som kan ställas in att alla användarens autentiseringsuppgifter (en [PSCredential](/dotnet/api/system.management.automation.pscredential) objekt).
+Autentiseringsuppgifterna kan vara hårdkodade som värde för egenskapen i konfigurationen, eller du kan ange värdet [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential), som kommer frågar användaren om autentiseringsuppgifter när konfigurationen kompileras (för information om Kompilera konfigurationer finns i [konfigurationer](configurations.md).
 
->**Obs:** i PowerShell 5.0, med hjälp av den **PsDscRunAsCredential** egenskap i konfigurationer som anropar sammansatta resurser stöds inte.
->I PowerShell 5.1 den **PsDscRunAsCredential** egenskapen stöds i konfigurationer som anropar sammansatta resurser.
+> [!NOTE] 
+> I PowerShell 5.0, med hjälp av den **PsDscRunAsCredential** -egenskapen i konfigurationer som anropar sammansatta resurser stöds inte.
+> I PowerShell 5.1 den **PsDscRunAsCredential** egenskapen stöds i konfigurationer som anropar sammansatta resurser.
+> Den **PsDscRunAsCredential** egenskapen är inte tillgänglig i PowerShell 4.0.
 
->**Obs:** den **PsDscRunAsCredential** egenskapen är inte tillgänglig i PowerShell 4.0.
-
-I följande exempel **Get-Credential** används för att uppmana användaren att ange autentiseringsuppgifter.
-Den [registret](registryResource.md) resursen används för att ändra den registernyckel som anger bakgrundsfärgen för Windows-kommandotolksfönster.
+I följande exempel `Get-Credential` används för att fråga användaren om autentiseringsuppgifter.
+Den [registret](registryResource.md) resursen används för att ändra den registernyckel som anger bakgrundsfärgen för Windows-Kommandotolken.
 
 ```powershell
 Configuration ChangeCmdBackGroundColor
@@ -62,5 +62,7 @@ $configData = @{
 
 ChangeCmdBackGroundColor -ConfigurationData $configData
 ```
->**Obs:** det här exemplet förutsätter att du har ett giltigt certifikat i `C:\publicKeys\targetNode.cer`, och att tumavtrycket för certifikatet är värdet som visas.
->Information om hur du krypterar autentiseringsuppgifter i MOF-filer för DSC-konfigurationen finns [skydda MOF-filen](secureMOF.md).
+
+> [!NOTE]
+> Det här exemplet förutsätter att du har ett giltigt certifikat i `C:\publicKeys\targetNode.cer`, och att tumavtrycket för certifikatet är värdet som visas.
+> Information om hur du krypterar autentiseringsuppgifterna i MOF-filer för DSC-konfiguration finns i [skydda MOF-filen](secureMOF.md).

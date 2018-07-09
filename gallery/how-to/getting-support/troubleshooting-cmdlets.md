@@ -3,22 +3,22 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: galleriet, powershell, cmdlet, psget
 title: 'Felsökning av cmdlet: ar'
-ms.openlocfilehash: e8890cb6bbe661b8524d83cabf91483acbde8095
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c0a1fbcafd8c4443dc9d628c54c4c525d9701861
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219835"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892482"
 ---
 # <a name="troubleshooting-cmdlets"></a>Felsökning av cmdlet: ar
 
-## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>Så här löser du ”varning: Det gick inte att hämta paketet ditt paketnamn” problemet?
+## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>Så här löser du ”varning: paketet ditt paketnamn kunde inte hämta” problem
 
-Det har rapporterats att installera modulen eller Update-Module Ibland misslyckas på vissa datorer.
-Baserat på våra undersökningar, är det att göra med nätverksanslutningen.
-Vi uppdaterade nyligen NuGet-providern så att den kan hämta paket på ett tillförlitligt sätt.
-Här följer du anvisningarna nedan för att installera den senaste versionen av providern NuGet och sedan installera eller uppdatera din modul.
-Nu ska vi använda 'Azure-modulen som exemplet nedan.
+Rapporteras den som `Install-Module` eller `Update-Module` Ibland misslyckas på vissa datorer.
+Baserat på vår undersökning, är det att göra med nätverksanslutningen.
+Nyligen har uppdaterat vi NuGet-providern så att den kan hämta paket på ett tillförlitligt sätt.
+Du kan följa anvisningarna nedan för att installera den senaste versionen av NuGet-providern och sedan installera eller uppdatera din modul.
+Nu ska vi använda ”Azure”-modulen som exemplet nedan.
 
 ```powershell
 Install-PackageProvider NuGet -MinimumVersion 2.8.5.206 -Force
