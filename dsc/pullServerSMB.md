@@ -2,57 +2,61 @@
 ms.date: 04/11/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Konfigurera en DSC SMB-hämtningsserver
-ms.openlocfilehash: 92c03c99afd612fa2b5475e8c26991ff080584e9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1eac6c51aeca3ed573ba8fa27188103436004920
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189677"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892873"
 ---
-# <a name="setting-up-a-dsc-smb-pull-server"></a><span data-ttu-id="d4fec-103">Konfigurera en DSC SMB-hämtningsserver</span><span class="sxs-lookup"><span data-stu-id="d4fec-103">Setting up a DSC SMB pull server</span></span>
+# <a name="setting-up-a-dsc-smb-pull-server"></a><span data-ttu-id="4d320-103">Konfigurera en DSC SMB-hämtningsserver</span><span class="sxs-lookup"><span data-stu-id="4d320-103">Setting up a DSC SMB pull server</span></span>
 
-><span data-ttu-id="d4fec-104">Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="d4fec-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+<span data-ttu-id="4d320-104">Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="4d320-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="d4fec-105">Pull-Server (Windows-funktionen *DSC-Service*) är en stöds komponent i Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner.</span><span class="sxs-lookup"><span data-stu-id="d4fec-105">The Pull Server (Windows Feature *DSC-Service*) is a supported component of Windows Server however there are no plans to offer new features or capabilities.</span></span> <span data-ttu-id="d4fec-106">Vi rekommenderar att börja övergång hanteras klienter [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (omfattar funktioner utöver Pull-Server på Windows Server) eller någon av community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).</span><span class="sxs-lookup"><span data-stu-id="d4fec-106">It is recommended to begin transitioning managed clients to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (includes features beyond Pull Server on Windows Server) or one of the community solutions listed [here](pullserver.md#community-solutions-for-pull-service).</span></span>
+> <span data-ttu-id="4d320-105">Pull-servern (Windows-funktionen *DSC-tjänst*) är en stöds komponent i Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner.</span><span class="sxs-lookup"><span data-stu-id="4d320-105">The Pull Server (Windows Feature *DSC-Service*) is a supported component of Windows Server however there are no plans to offer new features or capabilities.</span></span> <span data-ttu-id="4d320-106">Rekommenderar vi att du påbörjar övergången hanterade klienter [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver Pull-servern på Windows Server) eller en av community-lösningar visas [här](pullserver.md#community-solutions-for-pull-service).</span><span class="sxs-lookup"><span data-stu-id="4d320-106">It is recommended to begin transitioning managed clients to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (includes features beyond Pull Server on Windows Server) or one of the community solutions listed [here](pullserver.md#community-solutions-for-pull-service).</span></span>
 
-<span data-ttu-id="d4fec-107">En DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) pull-server är en dator som värd för SMB-filresurser som gör DSC-konfigurationsfiler och DSC resurser tillgängliga för målnoder när de noderna som ber om.</span><span class="sxs-lookup"><span data-stu-id="d4fec-107">A DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) pull server is a computer hosting SMB file shares that make DSC configuration files and DSC resources available to target nodes when those nodes ask for them.</span></span>
+<span data-ttu-id="4d320-107">En DSC [SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) hämtningsservern är en dator som är värd för SMB-filresurser som gör DSC-konfigurationsfiler och DSC-resurser tillgängliga för målnoder när de noderna som ber om.</span><span class="sxs-lookup"><span data-stu-id="4d320-107">A DSC [SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) pull server is a computer hosting SMB file shares that make DSC configuration files and DSC resources available to target nodes when those nodes ask for them.</span></span>
 
-<span data-ttu-id="d4fec-108">Om du vill använda en SMB-pull-server för DSC, behöver du:</span><span class="sxs-lookup"><span data-stu-id="d4fec-108">To use an SMB pull server for DSC, you have to:</span></span>
-- <span data-ttu-id="d4fec-109">Konfigurera en SMB-filresurs på en server som kör PowerShell 4.0 eller senare</span><span class="sxs-lookup"><span data-stu-id="d4fec-109">Set up an SMB file share on a server running PowerShell 4.0 or higher</span></span>
-- <span data-ttu-id="d4fec-110">Konfigurera en klient som kör PowerShell 4.0 eller senare för att hämta från den SMB-resursen</span><span class="sxs-lookup"><span data-stu-id="d4fec-110">Configure a client running PowerShell 4.0 or higher to pull from that SMB share</span></span>
+<span data-ttu-id="4d320-108">Om du vill använda en SMB-pullserver för DSC, behöver du:</span><span class="sxs-lookup"><span data-stu-id="4d320-108">To use an SMB pull server for DSC, you have to:</span></span>
 
-## <a name="using-the-xsmbshare-resource-to-create-an-smb-file-share"></a><span data-ttu-id="d4fec-111">Med xSmbShare resurs för att skapa en SMB-filresurs</span><span class="sxs-lookup"><span data-stu-id="d4fec-111">Using the xSmbShare resource to create an SMB file share</span></span>
+- <span data-ttu-id="4d320-109">Konfigurera en SMB-filresurs på en server med PowerShell 4.0 eller senare</span><span class="sxs-lookup"><span data-stu-id="4d320-109">Set up an SMB file share on a server running PowerShell 4.0 or higher</span></span>
+- <span data-ttu-id="4d320-110">Konfigurera en klient som kör PowerShell 4.0 eller senare för att hämta från den SMB-resursen</span><span class="sxs-lookup"><span data-stu-id="4d320-110">Configure a client running PowerShell 4.0 or higher to pull from that SMB share</span></span>
 
-<span data-ttu-id="d4fec-112">Det finns ett antal sätt att konfigurera en SMB-filresurs, men vi ska titta på hur du kan göra detta med hjälp av DSC.</span><span class="sxs-lookup"><span data-stu-id="d4fec-112">There are a number of ways to set up an SMB file share, but let's look at how you can do this by using DSC.</span></span>
+## <a name="using-the-xsmbshare-resource-to-create-an-smb-file-share"></a><span data-ttu-id="4d320-111">Använda xSmbShare resursen för att skapa en SMB-filresurs</span><span class="sxs-lookup"><span data-stu-id="4d320-111">Using the xSmbShare resource to create an SMB file share</span></span>
 
-### <a name="install-the-xsmbshare-resource"></a><span data-ttu-id="d4fec-113">Installera xSmbShare resursen</span><span class="sxs-lookup"><span data-stu-id="d4fec-113">Install the xSmbShare resource</span></span>
+<span data-ttu-id="4d320-112">Det finns ett antal sätt att konfigurera en SMB-filresurs, men låt oss titta på hur du kan göra detta med hjälp av DSC.</span><span class="sxs-lookup"><span data-stu-id="4d320-112">There are a number of ways to set up an SMB file share, but let's look at how you can do this by using DSC.</span></span>
 
-<span data-ttu-id="d4fec-114">Anropa den [installera modulen](https://technet.microsoft.com/library/dn807162.aspx) för att installera den **xSmbShare** modul.</span><span class="sxs-lookup"><span data-stu-id="d4fec-114">Call the [Install-Module](https://technet.microsoft.com/library/dn807162.aspx) cmdlet to install the **xSmbShare** module.</span></span>
-><span data-ttu-id="d4fec-115">**Obs**: **installera modulen** ingår i den **PowerShellGet** module, som ingår i PowerShell 5.0.</span><span class="sxs-lookup"><span data-stu-id="d4fec-115">**Note**: **Install-Module** is included in the **PowerShellGet** module, which is included in PowerShell 5.0.</span></span> <span data-ttu-id="d4fec-116">Du kan hämta den **PowerShellGet** -modul för PowerShell 3.0 och 4.0 på [PackageManagement PowerShell-moduler Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).</span><span class="sxs-lookup"><span data-stu-id="d4fec-116">You can download the **PowerShellGet** module for PowerShell 3.0 and 4.0 at [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).</span></span> <span data-ttu-id="d4fec-117">Den **xSmbShare** innehåller DSC-resursen **xSmbShare**, som kan användas för att skapa en SMB filresurs.</span><span class="sxs-lookup"><span data-stu-id="d4fec-117">The **xSmbShare** contains the DSC resource **xSmbShare**, which can be used to create an SMB file share.</span></span>
+### <a name="install-the-xsmbshare-resource"></a><span data-ttu-id="4d320-113">Installera xSmbShare resursen</span><span class="sxs-lookup"><span data-stu-id="4d320-113">Install the xSmbShare resource</span></span>
 
-### <a name="create-the-directory-and-file-share"></a><span data-ttu-id="d4fec-118">Skapa katalogen och filresursen</span><span class="sxs-lookup"><span data-stu-id="d4fec-118">Create the directory and file share</span></span>
+<span data-ttu-id="4d320-114">Anropa den [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet för att installera den **xSmbShare** modulen.</span><span class="sxs-lookup"><span data-stu-id="4d320-114">Call the [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet to install the **xSmbShare** module.</span></span>
 
-<span data-ttu-id="d4fec-119">Följande konfiguration använder den [filen](fileResource.md) resurs för att skapa katalogen för resursen och **xSmbShare** resurs för att konfigurera SMB-resurs:</span><span class="sxs-lookup"><span data-stu-id="d4fec-119">The following configuration uses the [File](fileResource.md) resource to create the directory for the share and the **xSmbShare** resource to set up the SMB share:</span></span>
+> [!NOTE]
+> <span data-ttu-id="4d320-115">`Install-Module` ingår i den **PowerShellGet** modulen, som ingår i PowerShell 5.0.</span><span class="sxs-lookup"><span data-stu-id="4d320-115">`Install-Module` is included in the **PowerShellGet** module, which is included in PowerShell 5.0.</span></span> <span data-ttu-id="4d320-116">Du kan ladda ned den **PowerShellGet** -modulen för PowerShell 3.0 och 4.0 på [PackageManagement PowerShell-moduler förhandsversion](https://www.microsoft.com/en-us/download/details.aspx?id=49186).</span><span class="sxs-lookup"><span data-stu-id="4d320-116">You can download the **PowerShellGet** module for PowerShell 3.0 and 4.0 at [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).</span></span>
+> <span data-ttu-id="4d320-117">Den **xSmbShare** innehåller DSC-resurs **xSmbShare**, som kan användas för att skapa en SMB-filresurs.</span><span class="sxs-lookup"><span data-stu-id="4d320-117">The **xSmbShare** contains the DSC resource **xSmbShare**, which can be used to create an SMB file share.</span></span>
+
+### <a name="create-the-directory-and-file-share"></a><span data-ttu-id="4d320-118">Skapa katalog och filresursen</span><span class="sxs-lookup"><span data-stu-id="4d320-118">Create the directory and file share</span></span>
+
+<span data-ttu-id="4d320-119">Följande konfiguration använder den [filen](fileResource.md) resursen för att skapa katalogen för resursen och **xSmbShare** resursen för att konfigurera SMB-resurs:</span><span class="sxs-lookup"><span data-stu-id="4d320-119">The following configuration uses the [File](fileResource.md) resource to create the directory for the share and the **xSmbShare** resource to set up the SMB share:</span></span>
 
 ```powershell
-Configuration SmbShare {
+Configuration SmbShare
+{
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+    Import-DscResource -ModuleName xSmbShare
 
-Import-DscResource -ModuleName PSDesiredStateConfiguration
-Import-DscResource -ModuleName xSmbShare
+    Node localhost
+    {
 
-    Node localhost {
-
-        File CreateFolder {
-
+        File CreateFolder
+        {
             DestinationPath = 'C:\DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
-
         }
 
-        xSMBShare CreateShare {
-
+        xSMBShare CreateShare
+        {
             Name = 'DscSmbShare'
             Path = 'C:\DscSmbShare'
             FullAccess = 'admininstrator'
@@ -60,40 +64,36 @@ Import-DscResource -ModuleName xSmbShare
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
-
         }
-
     }
-
 }
 ```
 
-<span data-ttu-id="d4fec-120">Konfigurationen skapar katalogen `C:\DscSmbShare` om den inte redan finns, och sedan använder katalogen som en SMB filresurs.</span><span class="sxs-lookup"><span data-stu-id="d4fec-120">The configuration creates the directory `C:\DscSmbShare` if it doesn't already exists, and then uses that directory as an SMB file share.</span></span> <span data-ttu-id="d4fec-121">**FullAccess** bör ges till något konto som behöver skriva till eller ta bort från filresursen och **läsåtkomst** ges till klientnoder som får konfigurationer och/eller DSC-resurser från (Detta beror på att resursen DSC körs som system-kontot som standard, så du själva datorn har åtkomst till resursen).</span><span class="sxs-lookup"><span data-stu-id="d4fec-121">**FullAccess** should be given to any account that needs to write to or delete from the file share, and **ReadAccess** must be given to any client nodes that get configurations and/or DSC resources from the share ( this is because DSC runs as the system account by default, so the computer itself has to have access to the share).</span></span>
+<span data-ttu-id="4d320-120">Konfigurationen skapar katalogen `C:\DscSmbShare` om den inte redan finns, och sedan använder den katalogen som en SMB-filresurs.</span><span class="sxs-lookup"><span data-stu-id="4d320-120">The configuration creates the directory `C:\DscSmbShare` if it doesn't already exists, and then uses that directory as an SMB file share.</span></span> <span data-ttu-id="4d320-121">**FullAccess** ska ges till alla konton som krävs för att skriva till eller ta bort filresursen och **läsåtkomst** måste anges till klientnoder som få konfigurationer och/eller DSC-resurser från resursen (detta är eftersom DSC körs som system-kontot som standard, så du själva datorn har åtkomst till resursen).</span><span class="sxs-lookup"><span data-stu-id="4d320-121">**FullAccess** should be given to any account that needs to write to or delete from the file share, and **ReadAccess** must be given to any client nodes that get configurations and/or DSC resources from the share ( this is because DSC runs as the system account by default, so the computer itself has to have access to the share).</span></span>
 
+### <a name="give-file-system-access-to-the-pull-client"></a><span data-ttu-id="4d320-122">Ge behörighet till pull-klienten</span><span class="sxs-lookup"><span data-stu-id="4d320-122">Give file system access to the pull client</span></span>
 
-### <a name="give-file-system-access-to-the-pull-client"></a><span data-ttu-id="d4fec-122">Ge behörighet till pull-klienten</span><span class="sxs-lookup"><span data-stu-id="d4fec-122">Give file system access to the pull client</span></span>
-
-<span data-ttu-id="d4fec-123">Ger **läsåtkomst** noden till en klient kan noden för att få åtkomst till SMB-resursen, men inte till filer eller mappar i som delar.</span><span class="sxs-lookup"><span data-stu-id="d4fec-123">Giving **ReadAccess** to a client node allows that node to access the SMB share, but not to files or folders within that share.</span></span> <span data-ttu-id="d4fec-124">Du måste uttryckligen bevilja klienten noder åtkomst till SMB-delade mappen och undermappar.</span><span class="sxs-lookup"><span data-stu-id="d4fec-124">You have to explicitly grant client nodes access to the SMB share folder and sub-folders.</span></span> <span data-ttu-id="d4fec-125">Vi kan göra detta med DSC genom att lägga till med hjälp av den **cNtfsPermissionEntry** resurs, som ingår i den [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) modul.</span><span class="sxs-lookup"><span data-stu-id="d4fec-125">We can do this with DSC by adding using the **cNtfsPermissionEntry** resource, which is contained in the [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) module.</span></span> <span data-ttu-id="d4fec-126">Följande konfiguration lägger till en **cNtfsPermissionEntry** block som ger ReadAndExecute åtkomst till pull-klienten:</span><span class="sxs-lookup"><span data-stu-id="d4fec-126">The following configuration adds a **cNtfsPermissionEntry** block that grants ReadAndExecute access to the pull client:</span></span>
+<span data-ttu-id="4d320-123">Ge **läsåtkomst** till en klient noden kan noden för att få åtkomst till SMB-resursen, men inte till filer eller mappar i som delar.</span><span class="sxs-lookup"><span data-stu-id="4d320-123">Giving **ReadAccess** to a client node allows that node to access the SMB share, but not to files or folders within that share.</span></span> <span data-ttu-id="4d320-124">Du måste uttryckligen bevilja klienten noder åtkomst till SMB-delade mappen och undermappar.</span><span class="sxs-lookup"><span data-stu-id="4d320-124">You have to explicitly grant client nodes access to the SMB share folder and sub-folders.</span></span> <span data-ttu-id="4d320-125">Vi kan göra detta med DSC genom att lägga till med hjälp av den **cNtfsPermissionEntry** resurs, som finns i den [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) modulen.</span><span class="sxs-lookup"><span data-stu-id="4d320-125">We can do this with DSC by adding using the **cNtfsPermissionEntry** resource, which is contained in the [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) module.</span></span> <span data-ttu-id="4d320-126">Lägger till följande konfiguration en **cNtfsPermissionEntry** block som beviljar ReadAndExecute åtkomst till pull-klienten:</span><span class="sxs-lookup"><span data-stu-id="4d320-126">The following configuration adds a **cNtfsPermissionEntry** block that grants ReadAndExecute access to the pull client:</span></span>
 
 ```powershell
-Configuration DSCSMB {
+Configuration DSCSMB
+{
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+    Import-DscResource -ModuleName xSmbShare
+    Import-DscResource -ModuleName cNtfsAccessControl
 
-Import-DscResource -ModuleName PSDesiredStateConfiguration
-Import-DscResource -ModuleName xSmbShare
-Import-DscResource -ModuleName cNtfsAccessControl
+    Node localhost
+    {
 
-    Node localhost {
-
-        File CreateFolder {
-
+        File CreateFolder
+        {
             DestinationPath = 'DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
-
         }
 
-        xSMBShare CreateShare {
-
+        xSMBShare CreateShare
+        {
             Name = 'DscSmbShare'
             Path = 'DscSmbShare'
             FullAccess = 'administrator'
@@ -101,61 +101,60 @@ Import-DscResource -ModuleName cNtfsAccessControl
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
-
         }
 
-        cNtfsPermissionEntry PermissionSet1 {
-
-        Ensure = 'Present'
-        Path = 'C:\DSCSMB'
-        Principal = 'myDomain\Contoso-Server$'
-        AccessControlInformation = @(
-            cNtfsAccessControlInformation
-            {
-                AccessControlType = 'Allow'
-                FileSystemRights = 'ReadAndExecute'
-                Inheritance = 'ThisFolderSubfoldersAndFiles'
-                NoPropagateInherit = $false
-            }
-        )
-        DependsOn = '[File]CreateFolder'
-
+        cNtfsPermissionEntry PermissionSet1
+        {
+            Ensure = 'Present'
+            Path = 'C:\DSCSMB'
+            Principal = 'myDomain\Contoso-Server$'
+            AccessControlInformation = @(
+                cNtfsAccessControlInformation
+                {
+                    AccessControlType = 'Allow'
+                    FileSystemRights = 'ReadAndExecute'
+                    Inheritance = 'ThisFolderSubfoldersAndFiles'
+                    NoPropagateInherit = $false
+                }
+            )
+            DependsOn = '[File]CreateFolder'
         }
-
-
     }
-
 }
 ```
 
-## <a name="placing-configurations-and-resources"></a><span data-ttu-id="d4fec-127">Placera konfigurationer och resurser</span><span class="sxs-lookup"><span data-stu-id="d4fec-127">Placing configurations and resources</span></span>
+## <a name="placing-configurations-and-resources"></a><span data-ttu-id="4d320-127">Placera konfigurationer och resurser</span><span class="sxs-lookup"><span data-stu-id="4d320-127">Placing configurations and resources</span></span>
 
-<span data-ttu-id="d4fec-128">Spara konfigurationen MOF-filer och/eller DSC-resurser som du vill att klientnoder att dra in SMB-delade mappen.</span><span class="sxs-lookup"><span data-stu-id="d4fec-128">Save any configuration MOF files and/or DSC resources that you want client nodes to pull in the SMB share folder.</span></span>
+<span data-ttu-id="4d320-128">Spara konfigurationen MOF-filer och/eller DSC-resurser som du vill att klientnoder att dra in den SMB-delade mappen.</span><span class="sxs-lookup"><span data-stu-id="4d320-128">Save any configuration MOF files and/or DSC resources that you want client nodes to pull in the SMB share folder.</span></span>
 
-<span data-ttu-id="d4fec-129">Alla configuration MOF-filen måste ha namnet _ConfigurationID_MOF, där _ConfigurationID_ är värdet för den **ConfigurationID** -egenskapen för nodens target MGM.</span><span class="sxs-lookup"><span data-stu-id="d4fec-129">Any configuration MOF file must be named _ConfigurationID_.mof, where _ConfigurationID_ is the value of the **ConfigurationID** property of the target node's LCM.</span></span> <span data-ttu-id="d4fec-130">Mer information om hur du konfigurerar pull-klienter finns [installera en pull-klient med hjälp av konfigurations-ID](pullClientConfigID.md).</span><span class="sxs-lookup"><span data-stu-id="d4fec-130">For more information about setting up pull clients, see [Setting up a pull client using configuration ID](pullClientConfigID.md).</span></span>
+<span data-ttu-id="4d320-129">Alla MOF-konfigurationsfilen måste ha namnet *ConfigurationID*.mof, där *ConfigurationID* är värdet för den **ConfigurationID** egenskapen för den målnoden MGM.</span><span class="sxs-lookup"><span data-stu-id="4d320-129">Any configuration MOF file must be named *ConfigurationID*.mof, where *ConfigurationID* is the value of the **ConfigurationID** property of the target node's LCM.</span></span> <span data-ttu-id="4d320-130">Mer information om hur du konfigurerar pull-klienter finns i [konfigurera en hämtningsklient med konfigurations-ID](pullClientConfigID.md).</span><span class="sxs-lookup"><span data-stu-id="4d320-130">For more information about setting up pull clients, see [Setting up a pull client using configuration ID](pullClientConfigID.md).</span></span>
 
-><span data-ttu-id="d4fec-131">**Obs:** måste du använda konfigurations-ID om du använder en SMB-pull-server.</span><span class="sxs-lookup"><span data-stu-id="d4fec-131">**Note:** You must use configuration IDs if you are using an SMB pull server.</span></span> <span data-ttu-id="d4fec-132">Konfigurationsnamn stöds inte för SMB.</span><span class="sxs-lookup"><span data-stu-id="d4fec-132">Configuration names are not supported for SMB.</span></span>
+> [!NOTE]
+> <span data-ttu-id="4d320-131">Du måste använda konfigurations-ID om du använder en SMB-pullserver.</span><span class="sxs-lookup"><span data-stu-id="4d320-131">You must use configuration IDs if you are using an SMB pull server.</span></span> <span data-ttu-id="4d320-132">Konfigurationsnamn har inte stöd för SMB.</span><span class="sxs-lookup"><span data-stu-id="4d320-132">Configuration names are not supported for SMB.</span></span>
 
-<span data-ttu-id="d4fec-133">Varje Resursmodul behöver zippade och namnet enligt de följande mönster `{Module Name}_{Module Version}.zip`.</span><span class="sxs-lookup"><span data-stu-id="d4fec-133">Each resource module needs to be zipped and named according the the following pattern `{Module Name}_{Module Version}.zip`.</span></span> <span data-ttu-id="d4fec-134">Till exempel namnet en modul med namnet xWebAdminstration med en Modulversion av 3.1.2.0 'xWebAdministration_3.2.1.0.zip'.</span><span class="sxs-lookup"><span data-stu-id="d4fec-134">For example, a module named xWebAdminstration with a module version of 3.1.2.0 would be named 'xWebAdministration_3.2.1.0.zip'.</span></span> <span data-ttu-id="d4fec-135">Varje version av en modul måste finnas i en enda zip-fil.</span><span class="sxs-lookup"><span data-stu-id="d4fec-135">Each version of a module must be contained in a single zip file.</span></span> <span data-ttu-id="d4fec-136">Eftersom det finns endast en version av en resurs i formatet modulen lades till i WMF 5.0 med varje zip-filen stöds inte stöd för flera modulversioner i en katalog.</span><span class="sxs-lookup"><span data-stu-id="d4fec-136">Since there is only a single version of a resource in each zip file the module format added in WMF 5.0 with support for multiple module versions in a single directory is not supported.</span></span> <span data-ttu-id="d4fec-137">Detta innebär att innan du paketering in DSC resurs moduler för användning med pull-server måste du göra en mindre ändring i katalogstrukturen.</span><span class="sxs-lookup"><span data-stu-id="d4fec-137">This means that before packaging up DSC resource modules for use with pull server you need to make a small change to the directory structure.</span></span> <span data-ttu-id="d4fec-138">Moduler som innehåller DSC-resurs i WMF 5.0 standardformatet är ' {modulen mappen}\{Modulversion} \DscResources\{DSC resursmapp}\'.</span><span class="sxs-lookup"><span data-stu-id="d4fec-138">The default format of modules containing DSC resource in WMF 5.0 is '{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'.</span></span> <span data-ttu-id="d4fec-139">Innan paketering för pull-server bara ta bort den **{Modulversion}** mapp så blir sökvägen ' {modulen mappen} \DscResources\{DSC resursmapp}\'.</span><span class="sxs-lookup"><span data-stu-id="d4fec-139">Before packaging up for the pull server simply remove the **{Module version}** folder so the path becomes '{Module Folder}\DscResources\{DSC Resource Folder}\'.</span></span> <span data-ttu-id="d4fec-140">Med den här ändringen zip-mappen som beskrivs ovan och placera dessa zip-filer i mappen SMB-resursen.</span><span class="sxs-lookup"><span data-stu-id="d4fec-140">With this change, zip the folder as described above and place these zip files in the SMB share folder.</span></span>
+<span data-ttu-id="4d320-133">Varje Resursmodul måste zippade och med namnet enligt i följande mönster `{Module Name}_{Module Version}.zip`.</span><span class="sxs-lookup"><span data-stu-id="4d320-133">Each resource module needs to be zipped and named according the the following pattern `{Module Name}_{Module Version}.zip`.</span></span> <span data-ttu-id="4d320-134">Till exempel namnet en modul med namnet xWebAdminstration med en Modulversion av 3.1.2.0 ”xWebAdministration_3.2.1.0.zip”.</span><span class="sxs-lookup"><span data-stu-id="4d320-134">For example, a module named xWebAdminstration with a module version of 3.1.2.0 would be named 'xWebAdministration_3.2.1.0.zip'.</span></span> <span data-ttu-id="4d320-135">Varje version av en modul måste finnas i en enda zip-fil.</span><span class="sxs-lookup"><span data-stu-id="4d320-135">Each version of a module must be contained in a single zip file.</span></span> <span data-ttu-id="4d320-136">Eftersom det inte finns endast en version av en resurs i varje zip-filen som har lagts till i WMF 5.0 med formatet modulen stöds inte stöd för flera modulversionerna i en enskild katalog.</span><span class="sxs-lookup"><span data-stu-id="4d320-136">Since there is only a single version of a resource in each zip file the module format added in WMF 5.0 with support for multiple module versions in a single directory is not supported.</span></span> <span data-ttu-id="4d320-137">Det innebär att innan du packa upp DSC-resurs-moduler för användning med pull-server måste du göra små ändringar i katalogstrukturen.</span><span class="sxs-lookup"><span data-stu-id="4d320-137">This means that before packaging up DSC resource modules for use with pull server you need to make a small change to the directory structure.</span></span> <span data-ttu-id="4d320-138">Moduler som innehåller DSC-resurs i WMF 5.0 standardformatet är `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.</span><span class="sxs-lookup"><span data-stu-id="4d320-138">The default format of modules containing DSC resource in WMF 5.0 is `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.</span></span> <span data-ttu-id="4d320-139">Innan du paketering för hämtningsservern helt enkelt ta bort den `{Module version}` mapp så blir sökvägen `{Module Folder}\DscResources\{DSC Resource Folder}\`.</span><span class="sxs-lookup"><span data-stu-id="4d320-139">Before packaging up for the pull server simply remove the `{Module version}` folder so the path becomes `{Module Folder}\DscResources\{DSC Resource Folder}\`.</span></span> <span data-ttu-id="4d320-140">Med den här ändringen zip-mappen som beskrivs ovan och placera dessa zip-filer i den SMB-delade mappen.</span><span class="sxs-lookup"><span data-stu-id="4d320-140">With this change, zip the folder as described above and place these zip files in the SMB share folder.</span></span>
 
-## <a name="creating-the-mof-checksum"></a><span data-ttu-id="d4fec-141">Skapa MOF-kontrollsumma</span><span class="sxs-lookup"><span data-stu-id="d4fec-141">Creating the MOF checksum</span></span>
-<span data-ttu-id="d4fec-142">En konfiguration MOF-fil måste kombineras med en fil kontrollsummor så att en MGM på målnoden kan validera konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="d4fec-142">A configuration MOF file needs to be paired with a checksum file so that an LCM on a target node can validate the configuration.</span></span>
-<span data-ttu-id="d4fec-143">Om du vill skapa en kontrollsumma anropa den [ny DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet.</span><span class="sxs-lookup"><span data-stu-id="d4fec-143">To create a checksum, call the [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet.</span></span> <span data-ttu-id="d4fec-144">Cmdlet tar en **sökväg** parameter som anger den mapp där konfigurationen MOF finns.</span><span class="sxs-lookup"><span data-stu-id="d4fec-144">The cmdlet takes a **Path** parameter that specifies the folder where the configuration MOF is located.</span></span> <span data-ttu-id="d4fec-145">Cmdleten skapar en kontrollsumma-fil med namnet `ConfigurationMOFName.mof.checksum`, där `ConfigurationMOFName` är namnet på konfigurationens mof-fil.</span><span class="sxs-lookup"><span data-stu-id="d4fec-145">The cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`, where `ConfigurationMOFName` is the name of the configuration mof file.</span></span>
-<span data-ttu-id="d4fec-146">Om det finns mer än en konfiguration MOF-filer i den angivna mappen, skapas en kontrollsumma för varje konfiguration i mappen.</span><span class="sxs-lookup"><span data-stu-id="d4fec-146">If there are more than one configuration MOF files in the specified folder, a checksum is created for each configuration in the folder.</span></span>
+## <a name="creating-the-mof-checksum"></a><span data-ttu-id="4d320-141">Skapa MOF-kontrollsumma</span><span class="sxs-lookup"><span data-stu-id="4d320-141">Creating the MOF checksum</span></span>
 
-<span data-ttu-id="d4fec-147">Filen kontrollsumma måste finnas i samma katalog som konfigurationsfilen MOF (`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` som standard), och har samma namn som den `.checksum` tillägg läggs.</span><span class="sxs-lookup"><span data-stu-id="d4fec-147">The checksum file must be present in the same directory as the configuration MOF file (`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` by default), and have the same name with the `.checksum` extension appended.</span></span>
+<span data-ttu-id="4d320-142">En MOF-konfigurationsfilen måste kopplas till en kontrollsumma-fil så att en LCM på målnoden verifiera konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="4d320-142">A configuration MOF file needs to be paired with a checksum file so that an LCM on a target node can validate the configuration.</span></span>
+<span data-ttu-id="4d320-143">Om du vill skapa en kontrollsumma, anropa den [New DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) cmdlet.</span><span class="sxs-lookup"><span data-stu-id="4d320-143">To create a checksum, call the [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) cmdlet.</span></span> <span data-ttu-id="4d320-144">Cmdlet: en tar en `Path` parameter som anger den mapp där konfigurationen MOF finns.</span><span class="sxs-lookup"><span data-stu-id="4d320-144">The cmdlet takes a `Path` parameter that specifies the folder where the configuration MOF is located.</span></span> <span data-ttu-id="4d320-145">Cmdleten skapar en kontrollsumma-fil med namnet `ConfigurationMOFName.mof.checksum`, där `ConfigurationMOFName` är namnet på mof-konfigurationsfilen.</span><span class="sxs-lookup"><span data-stu-id="4d320-145">The cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`, where `ConfigurationMOFName` is the name of the configuration mof file.</span></span>
+<span data-ttu-id="4d320-146">Om det finns flera olika konfigurationer MOF-filer i en angiven mapp, skapas en kontrollsumma för varje konfiguration i mappen.</span><span class="sxs-lookup"><span data-stu-id="4d320-146">If there are more than one configuration MOF files in the specified folder, a checksum is created for each configuration in the folder.</span></span>
 
-><span data-ttu-id="d4fec-148">**Obs**: Om du ändrar konfigurationen MOF-filen på något sätt, måste du också återskapa filen kontrollsumma.</span><span class="sxs-lookup"><span data-stu-id="d4fec-148">**Note**: If you change the configuration MOF file in any way, you must also recreate the checksum file.</span></span>
+<span data-ttu-id="4d320-147">Filen kontrollsumma måste finnas i samma katalog som MOF-konfigurationsfilen (`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` som standard), och har samma namn som den `.checksum` tillägget sist.</span><span class="sxs-lookup"><span data-stu-id="4d320-147">The checksum file must be present in the same directory as the configuration MOF file (`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` by default), and have the same name with the `.checksum` extension appended.</span></span>
 
-## <a name="setting-up-a-pull-client-for-smb"></a><span data-ttu-id="d4fec-149">Installera en pull-klient för SMB</span><span class="sxs-lookup"><span data-stu-id="d4fec-149">Setting up a pull client for SMB</span></span>
+> [!NOTE]
+> <span data-ttu-id="4d320-148">Om du ändrar MOF-konfigurationsfilen på något sätt, måste du också återskapa filen kontrollsumma.</span><span class="sxs-lookup"><span data-stu-id="4d320-148">If you change the configuration MOF file in any way, you must also recreate the checksum file.</span></span>
 
-<span data-ttu-id="d4fec-150">Om du vill konfigurera en klient som tar emot konfigurationer och/eller resurser från en SMB-resurs måste du konfigurera klientens lokala Configuration Manager (MGM) med **ConfigurationRepositoryShare** och **ResourceRepositoryShare** block som anger resursen som du vill dra konfigurationer och DSC-resurser.</span><span class="sxs-lookup"><span data-stu-id="d4fec-150">To set up a client that pulls configurations and/or resources from an SMB share, you configure the client's Local Configuration Manager (LCM) with **ConfigurationRepositoryShare** and **ResourceRepositoryShare** blocks that specify the share from which to pull configurations and DSC resources.</span></span>
+## <a name="setting-up-a-pull-client-for-smb"></a><span data-ttu-id="4d320-149">Konfigurera en hämtningsklient för SMB</span><span class="sxs-lookup"><span data-stu-id="4d320-149">Setting up a pull client for SMB</span></span>
 
-<span data-ttu-id="d4fec-151">Mer information om hur du konfigurerar MGM finns [installera en pull-klient med hjälp av konfigurations-ID](pullClientConfigID.md).</span><span class="sxs-lookup"><span data-stu-id="d4fec-151">For more information about configuring the LCM, see [Setting up a pull client using configuration ID](pullClientConfigID.md).</span></span>
+<span data-ttu-id="4d320-150">Om du vill konfigurera en klient som tar emot konfigurationer och/eller resurser från en SMB-resurs kan du konfigurera klientens lokala Configuration Manager (LCM) med **ConfigurationRepositoryShare** och **ResourceRepositoryShare** block som anger den resurs som ska hämta konfigurationer och DSC-resurser.</span><span class="sxs-lookup"><span data-stu-id="4d320-150">To set up a client that pulls configurations and/or resources from an SMB share, you configure the client's Local Configuration Manager (LCM) with **ConfigurationRepositoryShare** and **ResourceRepositoryShare** blocks that specify the share from which to pull configurations and DSC resources.</span></span>
 
-><span data-ttu-id="d4fec-152">**Obs:** för enkelhetens skull det här exemplet används den **PSDscAllowPlainTextPassword** att skicka lösenord i klartext för den **autentiseringsuppgifter** parameter.</span><span class="sxs-lookup"><span data-stu-id="d4fec-152">**Note:** For simplicity, this example uses the **PSDscAllowPlainTextPassword** to allow passing a plaintext password to the **Credential** parameter.</span></span> <span data-ttu-id="d4fec-153">Information om autentiseringsuppgifter skickas säkrare finns [autentiseringsuppgifter alternativ i konfigurationsdata](configDataCredentials.md).</span><span class="sxs-lookup"><span data-stu-id="d4fec-153">For information about passing credentials more securely, see [Credentials Options in Configuration Data](configDataCredentials.md).</span></span>
+<span data-ttu-id="4d320-151">Läs mer om hur du konfigurerar LCM [konfigurera en hämtningsklient med konfigurations-ID](pullClientConfigID.md).</span><span class="sxs-lookup"><span data-stu-id="4d320-151">For more information about configuring the LCM, see [Setting up a pull client using configuration ID](pullClientConfigID.md).</span></span>
 
-><span data-ttu-id="d4fec-154">**Obs:** måste du ange en **ConfigurationID** i den **inställningar** block med en metakonfigurationen för en SMB-pull-server, även om du endast hämtar resurser.</span><span class="sxs-lookup"><span data-stu-id="d4fec-154">**Note:** You must specify a **ConfigurationID** in the **Settings** block of a metaconfiguration for an SMB pull server, even if you are only pulling resources.</span></span>
+> [!NOTE]
+> <span data-ttu-id="4d320-152">För enkelhetens skull det här exemplet används den **PSDscAllowPlainTextPassword** att skicka lösenord i klartext till den **Credential** parametern.</span><span class="sxs-lookup"><span data-stu-id="4d320-152">For simplicity, this example uses the **PSDscAllowPlainTextPassword** to allow passing a plaintext password to the **Credential** parameter.</span></span> <span data-ttu-id="4d320-153">Läs om hur skicka autentiseringsuppgifter säkrare [alternativ för autentiseringsuppgifter i konfigurationsdata](configDataCredentials.md).</span><span class="sxs-lookup"><span data-stu-id="4d320-153">For information about passing credentials more securely, see [Credentials Options in Configuration Data](configDataCredentials.md).</span></span>
+>
+> <span data-ttu-id="4d320-154">Du **måste** anger en **ConfigurationID** i den **inställningar** block med en metaconfiguration för en SMB-hämtningsserver, även om du endast hämtar resurser.</span><span class="sxs-lookup"><span data-stu-id="4d320-154">You **MUST** specify a **ConfigurationID** in the **Settings** block of a metaconfiguration for an SMB pull server, even if you are only pulling resources.</span></span>
 
 ```powershell
 $secpasswd = ConvertTo-SecureString “Pass1Word” -AsPlainText -Force
@@ -190,32 +189,26 @@ configuration SmbCredTest
 }
 
 $ConfigurationData = @{
-
     AllNodes = @(
-
         @{
-
             #the "*" means "all nodes named in ConfigData" so we don't have to repeat ourselves
-
             NodeName="localhost"
-
             PSDscAllowPlainTextPassword = $true
-
         })
-
-
-
 }
 ```
 
-## <a name="acknowledgements"></a><span data-ttu-id="d4fec-155">Erkännanden</span><span class="sxs-lookup"><span data-stu-id="d4fec-155">Acknowledgements</span></span>
+## <a name="acknowledgements"></a><span data-ttu-id="4d320-155">Erkännanden</span><span class="sxs-lookup"><span data-stu-id="4d320-155">Acknowledgements</span></span>
 
-<span data-ttu-id="d4fec-156">Särskild tack vare följande:</span><span class="sxs-lookup"><span data-stu-id="d4fec-156">Special thanks to the following:</span></span>
+<span data-ttu-id="4d320-156">Speciellt tacka följande:</span><span class="sxs-lookup"><span data-stu-id="4d320-156">Special thanks to the following:</span></span>
 
-- <span data-ttu-id="d4fec-157">Mike F. Robbins vars inlägg om hur du använder SMB DSC hjälpt informera innehållet i det här avsnittet.</span><span class="sxs-lookup"><span data-stu-id="d4fec-157">Mike F. Robbins, whose posts on using SMB for DSC helped inform the content in this topic.</span></span> <span data-ttu-id="d4fec-158">Hans blogg är på [Mike F Robbins](http://mikefrobbins.com/).</span><span class="sxs-lookup"><span data-stu-id="d4fec-158">His blog is at [Mike F Robbins](http://mikefrobbins.com/).</span></span>
-- <span data-ttu-id="d4fec-159">Serge Nikalaichyk som skapats av **cNtfsAccessControl** modul.</span><span class="sxs-lookup"><span data-stu-id="d4fec-159">Serge Nikalaichyk, who authored the **cNtfsAccessControl** module.</span></span> <span data-ttu-id="d4fec-160">Källan för den här modulen är på https://github.com/SNikalaichyk/cNtfsAccessControl.</span><span class="sxs-lookup"><span data-stu-id="d4fec-160">The source for this module is at https://github.com/SNikalaichyk/cNtfsAccessControl.</span></span>
+- <span data-ttu-id="4d320-157">Mike F. Robbins vars inlägg om hur du använder SMB DSC hjälpte informera innehållet i det här avsnittet.</span><span class="sxs-lookup"><span data-stu-id="4d320-157">Mike F. Robbins, whose posts on using SMB for DSC helped inform the content in this topic.</span></span> <span data-ttu-id="4d320-158">Sin blogg var [Mike F Robbins](http://mikefrobbins.com/).</span><span class="sxs-lookup"><span data-stu-id="4d320-158">His blog is at [Mike F Robbins](http://mikefrobbins.com/).</span></span>
+- <span data-ttu-id="4d320-159">Serge Nikalaichyk som skapats i **cNtfsAccessControl** modulen.</span><span class="sxs-lookup"><span data-stu-id="4d320-159">Serge Nikalaichyk, who authored the **cNtfsAccessControl** module.</span></span> <span data-ttu-id="4d320-160">Källan för den här modulen är på [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl).</span><span class="sxs-lookup"><span data-stu-id="4d320-160">The source for this module is at [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="d4fec-161">Se även</span><span class="sxs-lookup"><span data-stu-id="d4fec-161">See also</span></span>
-- [<span data-ttu-id="d4fec-162">Windows PowerShell Desired State Configuration-översikt</span><span class="sxs-lookup"><span data-stu-id="d4fec-162">Windows PowerShell Desired State Configuration Overview</span></span>](overview.md)
-- [<span data-ttu-id="d4fec-163">Tillämpa konfigurationer</span><span class="sxs-lookup"><span data-stu-id="d4fec-163">Enacting configurations</span></span>](enactingConfigurations.md)
-- [<span data-ttu-id="d4fec-164">Konfigurera en pullklient med konfigurations-ID</span><span class="sxs-lookup"><span data-stu-id="d4fec-164">Setting up a pull client using configuration ID</span></span>](pullClientConfigID.md)
+## <a name="see-also"></a><span data-ttu-id="4d320-161">Se även</span><span class="sxs-lookup"><span data-stu-id="4d320-161">See also</span></span>
+
+[<span data-ttu-id="4d320-162">Windows PowerShell Desired State Configuration-översikt</span><span class="sxs-lookup"><span data-stu-id="4d320-162">Windows PowerShell Desired State Configuration Overview</span></span>](overview.md)
+
+[<span data-ttu-id="4d320-163">Tillämpa konfigurationer</span><span class="sxs-lookup"><span data-stu-id="4d320-163">Enacting configurations</span></span>](enactingConfigurations.md)
+
+[<span data-ttu-id="4d320-164">Konfigurera en pullklient med konfigurations-ID</span><span class="sxs-lookup"><span data-stu-id="4d320-164">Setting up a pull client using configuration ID</span></span>](pullClientConfigID.md)

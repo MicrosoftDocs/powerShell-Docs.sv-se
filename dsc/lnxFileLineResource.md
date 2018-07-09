@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
-title: DSC för Linux nxFileLine resurs
-ms.openlocfilehash: 6b927839c23478aa9916a5d23836b31fccc58484
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: DSC för Linux nxFileLine-resurs
+ms.openlocfilehash: f2a989dd3a6746948e09ba94e279c02be8ebe2de
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219641"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893305"
 ---
-# <a name="dsc-for-linux-nxfileline-resource"></a><span data-ttu-id="33600-103">DSC för Linux nxFileLine resurs</span><span class="sxs-lookup"><span data-stu-id="33600-103">DSC for Linux nxFileLine Resource</span></span>
+# <a name="dsc-for-linux-nxfileline-resource"></a><span data-ttu-id="04698-103">DSC för Linux nxFileLine-resurs</span><span class="sxs-lookup"><span data-stu-id="04698-103">DSC for Linux nxFileLine Resource</span></span>
 
-<span data-ttu-id="33600-104">Den **nxFileLine** resurs i PowerShell önskad tillstånd Configuration (DSC) ger möjlighet till att hantera rader i en konfigurationsfil på en Linux-nod.</span><span class="sxs-lookup"><span data-stu-id="33600-104">The **nxFileLine** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to to manage lines within a configuration file on a Linux node.</span></span>
+<span data-ttu-id="04698-104">Den **nxFileLine** resursen i PowerShell Desired State Configuration (DSC) ger möjlighet till att hantera rader i en fil på en Linux-nod.</span><span class="sxs-lookup"><span data-stu-id="04698-104">The **nxFileLine** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to to manage lines within a configuration file on a Linux node.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="33600-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="33600-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="04698-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="04698-105">Syntax</span></span>
 
 ```
 nxFileLine <string> #ResourceName
@@ -26,21 +26,21 @@ nxFileLine <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="33600-106">Egenskaper</span><span class="sxs-lookup"><span data-stu-id="33600-106">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="04698-106">Egenskaper</span><span class="sxs-lookup"><span data-stu-id="04698-106">Properties</span></span>
 
-|  <span data-ttu-id="33600-107">Egenskap</span><span class="sxs-lookup"><span data-stu-id="33600-107">Property</span></span> |  <span data-ttu-id="33600-108">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="33600-108">Description</span></span> |
+|  <span data-ttu-id="04698-107">Egenskap</span><span class="sxs-lookup"><span data-stu-id="04698-107">Property</span></span> |  <span data-ttu-id="04698-108">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="04698-108">Description</span></span> |
 |---|---|
-| <span data-ttu-id="33600-109">filePath</span><span class="sxs-lookup"><span data-stu-id="33600-109">FilePath</span></span>| <span data-ttu-id="33600-110">Den fullständiga sökvägen till filen som ska hantera rader i på målnoden.</span><span class="sxs-lookup"><span data-stu-id="33600-110">The full path to the file to manage lines in on the target node.</span></span>|
-| <span data-ttu-id="33600-111">ContainsLine</span><span class="sxs-lookup"><span data-stu-id="33600-111">ContainsLine</span></span>| <span data-ttu-id="33600-112">En rad för att se till att det finns i filen.</span><span class="sxs-lookup"><span data-stu-id="33600-112">A line to ensure exists in the file.</span></span> <span data-ttu-id="33600-113">Den här raden läggs till filen om den inte finns i filen.</span><span class="sxs-lookup"><span data-stu-id="33600-113">This line will be appended to the file if it does not exist in the file.</span></span> <span data-ttu-id="33600-114">**ContainsLine** är obligatorisk, men kan anges till en tom sträng (”ContainsLine = ''') om den inte behövs.</span><span class="sxs-lookup"><span data-stu-id="33600-114">**ContainsLine** is mandatory, but can be set to an empty string (\`ContainsLine = ‘’\`\`) if it is not needed.</span></span>|
-| <span data-ttu-id="33600-115">DoesNotContainPattern</span><span class="sxs-lookup"><span data-stu-id="33600-115">DoesNotContainPattern</span></span>| <span data-ttu-id="33600-116">Ett mönster för reguljärt uttryck för rader som inte ska finnas i filen.</span><span class="sxs-lookup"><span data-stu-id="33600-116">A regular expression pattern for lines that should not exist in the file.</span></span> <span data-ttu-id="33600-117">För alla rader som finns i filen som matchar den här reguljärt uttryck, kommer raden tas bort från filen.</span><span class="sxs-lookup"><span data-stu-id="33600-117">For any lines that exist in the file that match this regular expression, the line will be removed from the file.</span></span>|
-| <span data-ttu-id="33600-118">dependsOn</span><span class="sxs-lookup"><span data-stu-id="33600-118">DependsOn</span></span> | <span data-ttu-id="33600-119">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats.</span><span class="sxs-lookup"><span data-stu-id="33600-119">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="33600-120">Till exempel om den **ID** resursens configuration skriptblock som du vill köra först är **ResourceName** och dess typ är **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="33600-120">For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
+| <span data-ttu-id="04698-109">FilePath</span><span class="sxs-lookup"><span data-stu-id="04698-109">FilePath</span></span>| <span data-ttu-id="04698-110">Den fullständiga sökvägen till filen för att hantera rader i på målnoden.</span><span class="sxs-lookup"><span data-stu-id="04698-110">The full path to the file to manage lines in on the target node.</span></span>|
+| <span data-ttu-id="04698-111">ContainsLine</span><span class="sxs-lookup"><span data-stu-id="04698-111">ContainsLine</span></span>| <span data-ttu-id="04698-112">En rad för att se till att det finns i filen.</span><span class="sxs-lookup"><span data-stu-id="04698-112">A line to ensure exists in the file.</span></span> <span data-ttu-id="04698-113">Den här raden kommer att läggas till filen om den inte finns i filen.</span><span class="sxs-lookup"><span data-stu-id="04698-113">This line will be appended to the file if it does not exist in the file.</span></span> <span data-ttu-id="04698-114">**ContainsLine** är obligatorisk, men kan anges till en tom sträng (`ContainsLine = ""`) om det inte behövs.</span><span class="sxs-lookup"><span data-stu-id="04698-114">**ContainsLine** is mandatory, but can be set to an empty string (`ContainsLine = ""`) if it is not needed.</span></span>|
+| <span data-ttu-id="04698-115">DoesNotContainPattern</span><span class="sxs-lookup"><span data-stu-id="04698-115">DoesNotContainPattern</span></span>| <span data-ttu-id="04698-116">Ett mönster för reguljärt uttryck för rader som inte ska finnas i filen.</span><span class="sxs-lookup"><span data-stu-id="04698-116">A regular expression pattern for lines that should not exist in the file.</span></span> <span data-ttu-id="04698-117">För alla rader som redan finns i filen som matchar den här reguljärt uttryck, tas raden bort från filen.</span><span class="sxs-lookup"><span data-stu-id="04698-117">For any lines that exist in the file that match this regular expression, the line will be removed from the file.</span></span>|
+| <span data-ttu-id="04698-118">DependsOn</span><span class="sxs-lookup"><span data-stu-id="04698-118">DependsOn</span></span> | <span data-ttu-id="04698-119">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats.</span><span class="sxs-lookup"><span data-stu-id="04698-119">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="04698-120">Till exempel om den **ID** för resursen configuration-skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="04698-120">For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
 
-## <a name="example"></a><span data-ttu-id="33600-121">Exempel</span><span class="sxs-lookup"><span data-stu-id="33600-121">Example</span></span>
+## <a name="example"></a><span data-ttu-id="04698-121">Exempel</span><span class="sxs-lookup"><span data-stu-id="04698-121">Example</span></span>
 
-<span data-ttu-id="33600-122">Det här exemplet visas hur du använder den **nxFileLine** resurs för att konfigurera den `/etc/sudoers` fil, se till att användaren: monuser är konfigurerad att inte requiretty.</span><span class="sxs-lookup"><span data-stu-id="33600-122">This example demonstrates using the **nxFileLine** resource to configure the `/etc/sudoers` file, ensuring that the user: monuser is configured to not requiretty.</span></span>
+<span data-ttu-id="04698-122">Det här exemplet visar hur du använder den **nxFileLine** resursen för att konfigurera den `/etc/sudoers` filen, vilket säkerställer att användaren: monuser är konfigurerad för att inte requiretty.</span><span class="sxs-lookup"><span data-stu-id="04698-122">This example demonstrates using the **nxFileLine** resource to configure the `/etc/sudoers` file, ensuring that the user: monuser is configured to not requiretty.</span></span>
 
-```
-Import-DSCResource -Module nx
+```powershell
+Import-DscResource -Module nx
 
 nxFileLine DoNotRequireTTY
 {

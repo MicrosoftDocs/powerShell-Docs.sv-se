@@ -2,31 +2,31 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Köra DSC med autentiseringsuppgifterna för användaren
-ms.openlocfilehash: b2992ad562dea375aba980611312c7b96a23189c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 4a6c3d8b561cd0a27be07a68f1b577f7bf764254
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189711"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893917"
 ---
-# <a name="running-dsc-with-user-credentials"></a><span data-ttu-id="52c63-103">Köra DSC med autentiseringsuppgifterna för användaren</span><span class="sxs-lookup"><span data-stu-id="52c63-103">Running DSC with user credentials</span></span>
+# <a name="running-dsc-with-user-credentials"></a><span data-ttu-id="46b38-103">Köra DSC med autentiseringsuppgifterna för användaren</span><span class="sxs-lookup"><span data-stu-id="46b38-103">Running DSC with user credentials</span></span>
 
-> <span data-ttu-id="52c63-104">Gäller för: Windows PowerShell 5.0, 5.1 för Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="52c63-104">Applies To: Windows PowerShell 5.0, Windows PowerShell 5.1</span></span>
+> <span data-ttu-id="46b38-104">Gäller för: Windows PowerShell 5.0, Windows PowerShell 5.1</span><span class="sxs-lookup"><span data-stu-id="46b38-104">Applies To: Windows PowerShell 5.0, Windows PowerShell 5.1</span></span>
 
-<span data-ttu-id="52c63-105">Du kan köra en DSC-resurs under en angiven uppsättning autentiseringsuppgifter med hjälp av automatiskt **PsDscRunAsCredential** egenskap i konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="52c63-105">You can run a DSC resource under a specified set of credentials by using the automatic **PsDscRunAsCredential** property in the configuration.</span></span>
-<span data-ttu-id="52c63-106">Som standard körs DSC varje resurs som system-kontot.</span><span class="sxs-lookup"><span data-stu-id="52c63-106">By default, DSC runs each resource as the system account.</span></span>
-<span data-ttu-id="52c63-107">Det finns tillfällen när körs som en användare är nödvändigt, till exempel installera MSI-paket i en specifik användarkontext, ställa in en användares registernycklar, åtkomst till en användarens specifika lokala katalog eller tillgång till ett nätverk delar.</span><span class="sxs-lookup"><span data-stu-id="52c63-107">There are times when running as a user is necessary, such as installing MSI packages in a specific user context, setting a user's registry keys, accessing a user's specific local directory, or accessing a network share.</span></span>
+<span data-ttu-id="46b38-105">Du kan köra en DSC-resurs under en angiven uppsättning autentiseringsuppgifter med hjälp av automatiskt **PsDscRunAsCredential** -egenskapen i konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="46b38-105">You can run a DSC resource under a specified set of credentials by using the automatic **PsDscRunAsCredential** property in the configuration.</span></span>
+<span data-ttu-id="46b38-106">Som standard körs DSC varje resurs som system-kontot.</span><span class="sxs-lookup"><span data-stu-id="46b38-106">By default, DSC runs each resource as the system account.</span></span>
+<span data-ttu-id="46b38-107">Det finns tillfällen när körs som en användare är nödvändigt, till exempel installera MSI-paket i kontexten för en viss användare, ställa in en användares registernycklar, åtkomst till en användares specifika lokal katalog eller tillgång till ett nätverk delar.</span><span class="sxs-lookup"><span data-stu-id="46b38-107">There are times when running as a user is necessary, such as installing MSI packages in a specific user context, setting a user's registry keys, accessing a user's specific local directory, or accessing a network share.</span></span>
 
-<span data-ttu-id="52c63-108">Varje DSC-resursen har en **PsDscRunAsCredential** egenskap som kan anges till alla autentiseringsuppgifter (en [PSCredential](https://msdn.microsoft.com/library/ms572524(v=VS.85).aspx) objekt).</span><span class="sxs-lookup"><span data-stu-id="52c63-108">Every DSC resource has a **PsDscRunAsCredential** property that can be set to any user credentials (a [PSCredential](https://msdn.microsoft.com/library/ms572524(v=VS.85).aspx) object).</span></span>
-<span data-ttu-id="52c63-109">Autentiseringsuppgifter kan vara hårdkodad som värde för egenskapen i konfigurationen eller du kan ange värdet [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx), som kommer uppmana användaren att ange autentiseringsuppgifter när konfigurationen kompileras (för information om Kompilera konfigurationer finns [konfigurationer](configurations.md).</span><span class="sxs-lookup"><span data-stu-id="52c63-109">The credential can be hard-coded as the value of the property in the configuration, or you can set the value to [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx), which will prompt the user for a credential when the configuration is compiled (for information about compiling configurations, see [Configurations](configurations.md).</span></span>
+<span data-ttu-id="46b38-108">Alla DSC-resurser har en **PsDscRunAsCredential** egenskapen som kan ställas in att alla användarens autentiseringsuppgifter (en [PSCredential](/dotnet/api/system.management.automation.pscredential) objekt).</span><span class="sxs-lookup"><span data-stu-id="46b38-108">Every DSC resource has a **PsDscRunAsCredential** property that can be set to any user credentials (a [PSCredential](/dotnet/api/system.management.automation.pscredential) object).</span></span>
+<span data-ttu-id="46b38-109">Autentiseringsuppgifterna kan vara hårdkodade som värde för egenskapen i konfigurationen, eller du kan ange värdet [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential), som kommer frågar användaren om autentiseringsuppgifter när konfigurationen kompileras (för information om Kompilera konfigurationer finns i [konfigurationer](configurations.md).</span><span class="sxs-lookup"><span data-stu-id="46b38-109">The credential can be hard-coded as the value of the property in the configuration, or you can set the value to [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential), which will prompt the user for a credential when the configuration is compiled (for information about compiling configurations, see [Configurations](configurations.md).</span></span>
 
-><span data-ttu-id="52c63-110">**Obs:** i PowerShell 5.0, med hjälp av den **PsDscRunAsCredential** egenskap i konfigurationer som anropar sammansatta resurser stöds inte.</span><span class="sxs-lookup"><span data-stu-id="52c63-110">**Note:** In PowerShell 5.0, using the **PsDscRunAsCredential** property in configurations calling composite resources was not supported.</span></span>
-><span data-ttu-id="52c63-111">I PowerShell 5.1 den **PsDscRunAsCredential** egenskapen stöds i konfigurationer som anropar sammansatta resurser.</span><span class="sxs-lookup"><span data-stu-id="52c63-111">In PowerShell 5.1, the **PsDscRunAsCredential** property is supported in configurations calling composite resources.</span></span>
+> [!NOTE] 
+> <span data-ttu-id="46b38-110">I PowerShell 5.0, med hjälp av den **PsDscRunAsCredential** -egenskapen i konfigurationer som anropar sammansatta resurser stöds inte.</span><span class="sxs-lookup"><span data-stu-id="46b38-110">In PowerShell 5.0, using the **PsDscRunAsCredential** property in configurations calling composite resources was not supported.</span></span>
+> <span data-ttu-id="46b38-111">I PowerShell 5.1 den **PsDscRunAsCredential** egenskapen stöds i konfigurationer som anropar sammansatta resurser.</span><span class="sxs-lookup"><span data-stu-id="46b38-111">In PowerShell 5.1, the **PsDscRunAsCredential** property is supported in configurations calling composite resources.</span></span>
+> <span data-ttu-id="46b38-112">Den **PsDscRunAsCredential** egenskapen är inte tillgänglig i PowerShell 4.0.</span><span class="sxs-lookup"><span data-stu-id="46b38-112">The **PsDscRunAsCredential** property is not available in PowerShell 4.0.</span></span>
 
-><span data-ttu-id="52c63-112">**Obs:** den **PsDscRunAsCredential** egenskapen är inte tillgänglig i PowerShell 4.0.</span><span class="sxs-lookup"><span data-stu-id="52c63-112">**Note:** The **PsDscRunAsCredential** property is not available in PowerShell 4.0.</span></span>
-
-<span data-ttu-id="52c63-113">I följande exempel **Get-Credential** används för att uppmana användaren att ange autentiseringsuppgifter.</span><span class="sxs-lookup"><span data-stu-id="52c63-113">In the following example, **Get-Credential** is used to prompt the user for credentials.</span></span>
-<span data-ttu-id="52c63-114">Den [registret](registryResource.md) resursen används för att ändra den registernyckel som anger bakgrundsfärgen för Windows-kommandotolksfönster.</span><span class="sxs-lookup"><span data-stu-id="52c63-114">The [Registry](registryResource.md) resource is used to change the registry key that specifies the background color for the Windows command prompt window.</span></span>
+<span data-ttu-id="46b38-113">I följande exempel `Get-Credential` används för att fråga användaren om autentiseringsuppgifter.</span><span class="sxs-lookup"><span data-stu-id="46b38-113">In the following example, `Get-Credential` is used to prompt the user for credentials.</span></span>
+<span data-ttu-id="46b38-114">Den [registret](registryResource.md) resursen används för att ändra den registernyckel som anger bakgrundsfärgen för Windows-Kommandotolken.</span><span class="sxs-lookup"><span data-stu-id="46b38-114">The [Registry](registryResource.md) resource is used to change the registry key that specifies the background color for the Windows command prompt window.</span></span>
 
 ```powershell
 Configuration ChangeCmdBackGroundColor
@@ -62,5 +62,7 @@ $configData = @{
 
 ChangeCmdBackGroundColor -ConfigurationData $configData
 ```
-><span data-ttu-id="52c63-115">**Obs:** det här exemplet förutsätter att du har ett giltigt certifikat i `C:\publicKeys\targetNode.cer`, och att tumavtrycket för certifikatet är värdet som visas.</span><span class="sxs-lookup"><span data-stu-id="52c63-115">**Note:** This example assumes that you have a valid certificate at `C:\publicKeys\targetNode.cer`, and that the thumbprint of that certificate is the value shown.</span></span>
-><span data-ttu-id="52c63-116">Information om hur du krypterar autentiseringsuppgifter i MOF-filer för DSC-konfigurationen finns [skydda MOF-filen](secureMOF.md).</span><span class="sxs-lookup"><span data-stu-id="52c63-116">For information about encrypting credentials in DSC configuration MOF files, see [Securing the MOF file](secureMOF.md).</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="46b38-115">Det här exemplet förutsätter att du har ett giltigt certifikat i `C:\publicKeys\targetNode.cer`, och att tumavtrycket för certifikatet är värdet som visas.</span><span class="sxs-lookup"><span data-stu-id="46b38-115">This example assumes that you have a valid certificate at `C:\publicKeys\targetNode.cer`, and that the thumbprint of that certificate is the value shown.</span></span>
+> <span data-ttu-id="46b38-116">Information om hur du krypterar autentiseringsuppgifterna i MOF-filer för DSC-konfiguration finns i [skydda MOF-filen](secureMOF.md).</span><span class="sxs-lookup"><span data-stu-id="46b38-116">For information about encrypting credentials in DSC configuration MOF files, see [Securing the MOF file](secureMOF.md).</span></span>
