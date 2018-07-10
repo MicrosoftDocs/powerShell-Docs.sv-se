@@ -1,12 +1,12 @@
 # <a name="installing-powershell-core-on-linux"></a>Installera PowerShell Core i Linux
 
-Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10][u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], and [Arch Linux][arch].
+Stöder [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10] [ u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 27 ] [ fedora], [Fedora 28][fedora], och [båge Linux][arch].
 
-Linux-distributioner som inte stöds officiellt, kan du använda den [PowerShell AppImage][lai].
-Du kan också försöka distribuera PowerShell binärfiler direkt med Linux [ `tar.gz` Arkiv][tar], men måste du ställa in de nödvändiga beroenden baserat på enhetens operativsystem i separata steg.
+För Linux-distributioner som inte stöds officiellt, kan du försöka använda den [PowerShell AppImage][lai].
+Du kan också prova att distribuera PowerShell binärfiler direkt med hjälp av Linux [ `tar.gz` Arkiv][tar], men du måste ställa in nödvändiga beroenden baserat på Operativsystemet i separata steg.
 
-Alla paket är tillgängliga på vår GitHub [släpper][] sidan.
-När paketet har installerats kör `pwsh` från en terminal.
+Alla paket finns på vår GitHub [släpper][] sidan.
+När paketet har installerats kan du köra `pwsh` från en terminal.
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
@@ -21,26 +21,26 @@ När paketet har installerats kör `pwsh` från en terminal.
 [lai]: #linux-appimage
 [tar]: #binary-archives
 
-## <a name="installing-preview-releases"></a>Installera förhandsvisningarna
+## <a name="installing-preview-releases"></a>Installera förhandsversioner
 
-När du installerar ett PowerShell Core förhandsversionen för Linux via en Paketdatabasen paketnamnet ändras från `powershell` till `powershell-preview`.
+När du installerar en förhandsversionen i PowerShell Core för Linux via en Paketdatabas paketnamnet ändras från `powershell` till `powershell-preview`.
 
-Installerar via direkt hämtning ändras inte, än filnamnet.
+Installerar via direct hämtning ändras inte, än namnet på filen.
 
-Här är en tabell med kommandona för att installera stabilt och preview-paket med hjälp av de olika paket cheferna:
+Här är en tabell med kommandon för att installera de stabila och förhandsversion paketen med olika pakethanterare:
 
 |Distrobution(s)|Stabil kommando | Förhandsgranskningskommandot |
 |---------------|---------------|-----------------|
 | Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
-| CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
-| openSUSE |`sudo zypper install powershell` | `sudo zypper install powershell-preview`|
+| CentOS, Red Hat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
+| OpenSUSE |`sudo zypper install powershell` | `sudo zypper install powershell-preview`|
 | Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
 ## <a name="ubuntu-1404"></a>Ubuntu 14.04
 
-### <a name="installation-via-package-repository---ubuntu-1404"></a>Installation via Paketdatabasen - Ubuntu 14.04
+### <a name="installation-via-package-repository---ubuntu-1404"></a>Installationen via Paketdatabasen - Ubuntu 14.04
 
-PowerShell-kärna för Linux, publiceras till paketet databaser för enkel installation (och uppdateringar).
+PowerShell Core för Linux, publiceras till paketet lagringsplatser för enkel installation (och uppdateringar).
 Detta är föredragen metod.
 
 ```sh
@@ -63,9 +63,9 @@ pwsh
 Som superanvändare, registrera Microsoft-databasen.
 Därefter behöver du bara använda `sudo apt-get upgrade powershell` att uppdatera installationen.
 
-### <a name="installation-via-direct-download---ubuntu-1404"></a>Installation via direkt hämta - Ubuntu 14.04
+### <a name="installation-via-direct-download---ubuntu-1404"></a>Installationen via Direct hämtning - Ubuntu 14.04
 
-Hämta Debian-paket `powershell_6.0.2-1.ubuntu.14.04_amd64.deb` från den [släpper][] sida på Ubuntu-dator.
+Ladda ned Debian-paket `powershell_6.0.2-1.ubuntu.14.04_amd64.deb` från den [släpper][] sidan på Ubuntu-dator.
 
 Kör sedan följande i terminalen:
 
@@ -75,8 +75,8 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> Den `dpkg -i` kommandot misslyckas med unmet beroenden.
-> Nästa kommando `apt-get install -f` löser dessa problem och slutför PowerShell-paketet.
+> Den `dpkg -i` kommandot misslyckas med motsvarar hittills ouppfyllda beroenden.
+> Nästa kommando `apt-get install -f` löser dessa problem och sedan på Slutför PowerShell-paketet.
 
 ### <a name="uninstallation---ubuntu-1404"></a>Avinstallationen - Ubuntu 14.04
 
@@ -86,9 +86,9 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
-### <a name="installation-via-package-repository---ubuntu-1604"></a>Installation via Paketdatabasen - Ubuntu 16.04
+### <a name="installation-via-package-repository---ubuntu-1604"></a>Installationen via Paketdatabasen - Ubuntu 16.04
 
-PowerShell-kärna för Linux, publiceras till paketet databaser för enkel installation (och uppdateringar).
+PowerShell Core för Linux, publiceras till paketet lagringsplatser för enkel installation (och uppdateringar).
 Detta är föredragen metod.
 
 ```sh
@@ -108,11 +108,11 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-När du har registrerat en gång Microsoft-databasen som superanvändare, därefter behöver du bara använda `sudo apt-get upgrade powershell` att uppdatera den.
+När du har registrerat Microsoft-databasen en gång som superanvändare, kommer du bara behöver använda `sudo apt-get upgrade powershell` att uppdatera den.
 
-### <a name="installation-via-direct-download---ubuntu-1604"></a>Installation via direkt hämta - Ubuntu 16.04
+### <a name="installation-via-direct-download---ubuntu-1604"></a>Installationen via Direct hämtning - Ubuntu 16.04
 
-Hämta Debian-paket `powershell_6.0.2-1.ubuntu.16.04_amd64.deb` från den [släpper][] sida på Ubuntu-dator.
+Ladda ned Debian-paket `powershell_6.0.2-1.ubuntu.16.04_amd64.deb` från den [släpper][] sidan på Ubuntu-dator.
 
 Kör sedan följande i terminalen:
 
@@ -122,8 +122,8 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> Den `dpkg -i` kommandot misslyckas med unmet beroenden.
-> Nästa kommando `apt-get install -f` löser dessa problem och slutför PowerShell-paketet.
+> Den `dpkg -i` kommandot misslyckas med motsvarar hittills ouppfyllda beroenden.
+> Nästa kommando `apt-get install -f` löser dessa problem och sedan på Slutför PowerShell-paketet.
 
 ### <a name="uninstallation---ubuntu-1604"></a>Avinstallationen - Ubuntu 16.04
 
@@ -134,11 +134,11 @@ sudo apt-get remove powershell
 ## <a name="ubuntu-1710"></a>Ubuntu 17.10
 
 > [!NOTE]
-> Stöd för Ubuntu nr 17.04 från lagts till efter `6.1.0-preview.2`
+> Stöd för Ubuntu nr 17.04 från har lagts till efter `6.1.0-preview.2`
 
-### <a name="installation-via-package-repository---ubuntu-1710"></a>Installation via Paketdatabasen - Ubuntu 17.10
+### <a name="installation-via-package-repository---ubuntu-1710"></a>Installationen via Paketdatabasen - Ubuntu 17.10
 
-PowerShell-kärna för Linux, publiceras till paketet databaser för enkel installation (och uppdateringar).
+PowerShell Core för Linux, publiceras till paketet lagringsplatser för enkel installation (och uppdateringar).
 Detta är föredragen metod.
 
 ```sh
@@ -158,11 +158,11 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-När du har registrerat en gång Microsoft-databasen som superanvändare, därefter behöver du bara använda `sudo apt-get upgrade powershell` att uppdatera den.
+När du har registrerat Microsoft-databasen en gång som superanvändare, kommer du bara behöver använda `sudo apt-get upgrade powershell` att uppdatera den.
 
-### <a name="installation-via-direct-download---ubuntu-1710"></a>Installation via direkt hämta - Ubuntu 17.10
+### <a name="installation-via-direct-download---ubuntu-1710"></a>Installationen via Direct hämtning - Ubuntu 17.10
 
-Hämta Debian-paket `powershell_6.0.2-1.ubuntu.17.10_amd64.deb` från den [släpper][] sida på Ubuntu-dator.
+Ladda ned Debian-paket `powershell_6.0.2-1.ubuntu.17.10_amd64.deb` från den [släpper][] sidan på Ubuntu-dator.
 
 Kör sedan följande i terminalen:
 
@@ -172,8 +172,8 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> Den `dpkg -i` kommandot misslyckas med unmet beroenden.
-> Nästa kommando `apt-get install -f` löser dessa problem och slutför PowerShell-paketet.
+> Den `dpkg -i` kommandot misslyckas med motsvarar hittills ouppfyllda beroenden.
+> Nästa kommando `apt-get install -f` löser dessa problem och sedan på Slutför PowerShell-paketet.
 
 ### <a name="uninstallation---ubuntu-1710"></a>Avinstallationen - Ubuntu 17.10
 
@@ -184,11 +184,11 @@ sudo apt-get remove powershell
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
 
 > [!NOTE]
-> Stöd för Ubuntu 18.04 lagts till efter `6.1.0-preview.2`
+> Stöd för Ubuntu 18.04 har lagts till efter `6.1.0-preview.2`
 
-### <a name="installation-via-package-repository---ubuntu-1804"></a>Installation via Paketdatabasen - Ubuntu 18.04
+### <a name="installation-via-package-repository---ubuntu-1804"></a>Installationen via Paketdatabasen - Ubuntu 18.04
 
-PowerShell-kärna för Linux, publiceras till paketet databaser för enkel installation (och uppdateringar).
+PowerShell Core för Linux, publiceras till paketet lagringsplatser för enkel installation (och uppdateringar).
 Detta är föredragen metod.
 
 ```sh
@@ -202,17 +202,17 @@ sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.c
 sudo apt-get update
 
 # Install PowerShell
-sudo apt-get install -y powershell
+sudo apt-get install -y powershell-preview
 
 # Start PowerShell
 pwsh
 ```
 
-När du har registrerat en gång Microsoft-databasen som superanvändare, därefter behöver du bara använda `sudo apt-get upgrade powershell` att uppdatera den.
+När du har registrerat Microsoft-databasen en gång som superanvändare, kommer du bara behöver använda `sudo apt-get upgrade powershell` att uppdatera den.
 
-### <a name="installation-via-direct-download---ubuntu-1804"></a>Installation via direkt hämta - Ubuntu 18.04
+### <a name="installation-via-direct-download---ubuntu-1804"></a>Installationen via Direct hämtning - Ubuntu 18.04
 
-Hämta Debian-paket `powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb` från den [släpper][] sida på Ubuntu-dator.
+Ladda ned Debian-paket `powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb` från den [släpper][] sidan på Ubuntu-dator.
 
 Kör sedan följande i terminalen:
 
@@ -222,8 +222,8 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> Den `dpkg -i` kommandot misslyckas med unmet beroenden.
-> Nästa kommando `apt-get install -f` löser dessa problem och slutför PowerShell-paketet.
+> Den `dpkg -i` kommandot misslyckas med motsvarar hittills ouppfyllda beroenden.
+> Nästa kommando `apt-get install -f` löser dessa problem och sedan på Slutför PowerShell-paketet.
 
 ### <a name="uninstallation---ubuntu-1710"></a>Avinstallationen - Ubuntu 17.10
 
@@ -233,9 +233,9 @@ sudo apt-get remove powershell
 
 ## <a name="debian-8"></a>Debian 8
 
-### <a name="installation-via-package-repository---debian-8"></a>Installation via Paketdatabasen - Debian 8
+### <a name="installation-via-package-repository---debian-8"></a>Installationen via Paketdatabasen – Debian 8
 
-PowerShell-kärna för Linux, publiceras till paketet databaser för enkel installation (och uppdateringar).
+PowerShell Core för Linux, publiceras till paketet lagringsplatser för enkel installation (och uppdateringar).
 Detta är föredragen metod.
 
 ```sh
@@ -259,11 +259,11 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-När du har registrerat en gång Microsoft-databasen som superanvändare, därefter behöver du bara använda `sudo apt-get upgrade powershell` att uppdatera den.
+När du har registrerat Microsoft-databasen en gång som superanvändare, kommer du bara behöver använda `sudo apt-get upgrade powershell` att uppdatera den.
 
-### <a name="installation-via-direct-download---debian-8"></a>Installation via direkt hämta - Debian 8
+### <a name="installation-via-direct-download---debian-8"></a>Installationen via Direct hämtning – Debian 8
 
-Hämta Debian-paket `powershell_6.0.2-1.debian.8_amd64.deb` från den [släpper][] sidan på Debian dator.
+Ladda ned Debian-paket `powershell_6.0.2-1.debian.8_amd64.deb` från den [släpper][] sidan på Debian dator.
 
 Kör sedan följande i terminalen:
 
@@ -273,10 +273,10 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> Den `dpkg -i` kommandot misslyckas med unmet beroenden.
-> Nästa kommando `apt-get install -f` löser dessa problem och slutför PowerShell-paketet.
+> Den `dpkg -i` kommandot misslyckas med motsvarar hittills ouppfyllda beroenden.
+> Nästa kommando `apt-get install -f` löser dessa problem och sedan på Slutför PowerShell-paketet.
 
-### <a name="uninstallation---debian-8"></a>Avinstallationen - Debian 8
+### <a name="uninstallation---debian-8"></a>Avinstallationen – Debian 8
 
 ```sh
 sudo apt-get remove powershell
@@ -284,9 +284,9 @@ sudo apt-get remove powershell
 
 ## <a name="debian-9"></a>Debian 9
 
-### <a name="installation-via-package-repository---debian-9"></a>Installation via Paketdatabasen - Debian 9
+### <a name="installation-via-package-repository---debian-9"></a>Installationen via Paketdatabasen - Debian 9
 
-PowerShell-kärna för Linux, publiceras till paketet databaser för enkel installation (och uppdateringar).
+PowerShell Core för Linux, publiceras till paketet lagringsplatser för enkel installation (och uppdateringar).
 Detta är föredragen metod.
 
 ```sh
@@ -310,11 +310,11 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-När du har registrerat en gång Microsoft-databasen som superanvändare, därefter behöver du bara använda `sudo apt-get upgrade powershell` att uppdatera den.
+När du har registrerat Microsoft-databasen en gång som superanvändare, kommer du bara behöver använda `sudo apt-get upgrade powershell` att uppdatera den.
 
-### <a name="installation-via-direct-download---debian-9"></a>Installation via direkt hämta - Debian 9
+### <a name="installation-via-direct-download---debian-9"></a>Installationen via Direct hämtning - Debian 9
 
-Hämta Debian-paket `powershell_6.0.2-1.debian.9_amd64.deb` från den [släpper][] sidan på Debian dator.
+Ladda ned Debian-paket `powershell_6.0.2-1.debian.9_amd64.deb` från den [släpper][] sidan på Debian dator.
 
 Kör sedan följande i terminalen:
 
@@ -336,7 +336,7 @@ sudo apt-get remove powershell
 
 ### <a name="installation-via-package-repository-preferred---centos-7"></a>Installationen via Paketdatabasen (rekommenderas) - CentOS 7
 
-PowerShell-kärna för Linux publiceras till den officiella Microsoft databaser för enkel installation (och uppdateringar).
+PowerShell Core för Linux publiceras till den officiella Microsoft lagringsplatser för enkel installation (och uppdateringar).
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -349,11 +349,11 @@ sudo yum install -y powershell
 pwsh
 ```
 
-När du har registrerat en gång Microsoft-databasen som superanvändare, behöver du bara använda `sudo yum update powershell` att uppdatera PowerShell.
+När du har registrerat Microsoft-databasen en gång som superanvändare, behöver du bara använda `sudo yum update powershell` att uppdatera PowerShell.
 
-### <a name="installation-via-direct-download---centos-7"></a>Installation via direkt hämta - CentOS 7
+### <a name="installation-via-direct-download---centos-7"></a>Installationen via Direct hämtning - CentOS 7
 
-Med hjälp av [CentOS 7][], hämta RPM-paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [släpper][] sidan på CentOS dator.
+Med hjälp av [CentOS 7][], hämtningspaketet RPM `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [släpper][] sidan på CentOS-dator.
 
 Kör sedan följande i terminalen:
 
@@ -377,9 +377,9 @@ sudo yum remove powershell
 
 ## <a name="red-hat-enterprise-linux-rhel-7"></a>Red Hat Enterprise Linux (RHEL) 7
 
-### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a>Installationen via Paketdatabasen (rekommenderas) - Red Hat Enterprise Linux (RHEL) 7
+### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a>Installationen via Paketdatabasen (rekommenderas) – Red Hat Enterprise Linux (RHEL) 7
 
-PowerShell-kärna för Linux publiceras till den officiella Microsoft databaser för enkel installation (och uppdateringar).
+PowerShell Core för Linux publiceras till den officiella Microsoft lagringsplatser för enkel installation (och uppdateringar).
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -392,11 +392,11 @@ sudo yum install -y powershell
 pwsh
 ```
 
-När du har registrerat en gång Microsoft-databasen som superanvändare, behöver du bara använda `sudo yum update powershell` att uppdatera PowerShell.
+När du har registrerat Microsoft-databasen en gång som superanvändare, behöver du bara använda `sudo yum update powershell` att uppdatera PowerShell.
 
-### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installation via direkt hämta - Red Hat Enterprise Linux (RHEL) 7
+### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installationen via Direct hämtning - Red Hat Enterprise Linux (RHEL) 7
 
-Hämta RPM-paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [släpper][] sida på Red Hat Enterprise Linux-dator.
+Ladda ned RPM-paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [släpper][] sidan på Red Hat Enterprise Linux-dator.
 
 Kör sedan följande i terminalen:
 
@@ -426,17 +426,17 @@ Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
  Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
 ```
 
-I det här fallet kontrollerar du att en kompatibel `libcurl` bibliotek finns genom att kontrollera att följande kommando visar den `libcurl4` paketet som installerade:
+I det här fallet kontrollerar du att en kompatibel `libcurl` biblioteket finns genom att kontrollera att följande kommando visar den `libcurl4` paketera som installerade:
 
 ```sh
 zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
 ```
 
-Välj den `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` lösning när du installerar PowerShell-paketet.
+Välj sedan den `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` lösning när du installerar PowerShell-paketet.
 
 ### <a name="installation-via-package-repository-preferred---opensuse-422"></a>Installationen via Paketdatabasen (rekommenderas) - OpenSUSE 42.2
 
-PowerShell-kärna för Linux publiceras till den officiella Microsoft databaser för enkel installation (och uppdateringar).
+PowerShell Core för Linux publiceras till den officiella Microsoft lagringsplatser för enkel installation (och uppdateringar).
 
 ```sh
 # Register the Microsoft signature key
@@ -455,9 +455,9 @@ sudo zypper install powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---opensuse-422"></a>Installation via direkt hämta - OpenSUSE 42.2
+### <a name="installation-via-direct-download---opensuse-422"></a>Installationen via Direct hämtning - OpenSUSE 42.2
 
-Hämta RPM-paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [släpper][] sida på OpenSUSE-dator.
+Ladda ned RPM-paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [släpper][] sidan på OpenSUSE-dator.
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -480,11 +480,11 @@ sudo zypper remove powershell
 ## <a name="fedora"></a>Fedora
 
 > [!NOTE]
-> Fedora 28 stöds endast i PowerShell Core 6.1 och senare.
+> Fedora 28 stöds bara i PowerShell Core 6.1 och senare.
 
-### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Installationen via Paketdatabasen (rekommenderas) - Fedora 27 Fedora 28
+### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Installationen via Paketdatabasen (rekommenderas) - Fedora 27, Fedora 28
 
-PowerShell-kärna för Linux publiceras till den officiella Microsoft databaser för enkel installation (och uppdateringar).
+PowerShell Core för Linux publiceras till den officiella Microsoft lagringsplatser för enkel installation (och uppdateringar).
 
 ```sh
 # Register the Microsoft signature key
@@ -506,9 +506,9 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Installation via direkt hämta - Fedora 27, Fedora 28
+### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Installationen via Direct hämtning - Fedora 27, Fedora 28
 
-Hämta RPM-paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [släpper][] sidan på Fedora dator.
+Ladda ned RPM-paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` från den [släpper][] sidan på Fedora-dator.
 
 Kör sedan följande i terminalen:
 
@@ -530,22 +530,22 @@ sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0
 sudo dnf remove powershell
 ```
 
-## <a name="arch-linux"></a>Arkitektur Linux
+## <a name="arch-linux"></a>Arch Linux
 
 > [!NOTE]
-> Stöd för arkitektur är experiment.
+> Stöd för arch är experimentella.
 
-PowerShell är tillgänglig från den [arkitektur Linux][] användaren databasen (AUR).
+PowerShell är tillgänglig från den [Arch Linux][] användaren lagringsplats (AUR).
 
-* Det kan vara kompilerat med den [senaste märkta versionen][arch-release]
-* Det kan sammanställas från den [senaste bekräftelse master][arch-git]
-* Den kan installeras med hjälp av den [senaste versionen binär][arch-bin]
+* Den kan sammanställas med den [senaste taggade versionen][arch-release]
+* Den kan sammanställas från den [den senaste incheckningen till master-databasen][arch-git]
+* Den kan installeras med den [senaste versionen binär][arch-bin]
 
 Paket i AUR är community underhålls - stöds inte officiellt.
 
-Mer information om hur du installerar paket från AUR finns i [arkitektur Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) eller gemenskapen [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
+Mer information om hur du installerar paket från AUR finns i den [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) eller communityn [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
 
-[Arkitektur Linux]: https://www.archlinux.org/download/
+[Arch Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
@@ -553,9 +553,9 @@ Mer information om hur du installerar paket från AUR finns i [arkitektur Linux 
 ## <a name="linux-appimage"></a>Linux AppImage
 
 > [!NOTE]
-> Stöd för AppImage är experiment
+> AppImage support är experimentella
 
-Med hjälp av en senaste Linux-distribution, ladda ned AppImage `powershell-6.0.1-x86_64.AppImage` från den [släpper][] sida på Linux-dator.
+Med hjälp av en nyligen Linux-distribution, ladda ned AppImage `powershell-6.0.1-x86_64.AppImage` från den [släpper][] sidan på Linux-dator.
 
 Kör sedan följande i terminalen:
 
@@ -565,7 +565,7 @@ chmod a+x powershell-6.0.1-x86_64.AppImage
 ```
 
 Den [AppImage][] kan du köra PowerShell utan att installera den.
-Det är en bärbar program som paketerar PowerShell och dess beroenden (inklusive .NET Core system beroenden) till ett sammanhängande paket.
+Det är en bärbar program som samlar PowerShell och dess beroenden (inklusive .NET Core systemberoenden) till ett sammanhängande paket.
 Det här paketet är ett enda Binärvärde som fungerar oberoende av användarens Linux-distribution.
 
 [appimage]: http://appimage.org/
@@ -573,7 +573,7 @@ Det här paketet är ett enda Binärvärde som fungerar oberoende av användaren
 ## <a name="kali"></a>Kali
 
 > [!NOTE]
-> Stöd för kali är experiment.
+> Stöd för kali är experimentella.
 
 ### <a name="installation"></a>Installation
 
@@ -590,7 +590,7 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 pwsh
 ```
 
-### <a name="run-powershell-in-latest-kali-kali-gnulinux-rolling-without-installing-it"></a>Kör PowerShell i senaste Kali (Kali GNU/Linux rullande) utan att installera det.
+### <a name="run-powershell-in-latest-kali-kali-gnulinux-rolling-without-installing-it"></a>Kör PowerShell i senaste Kali (Kali GNU/Linux rullande) utan att installera den
 
 ```sh
 # Grab the latest App Image
@@ -612,13 +612,13 @@ sudo dpkg -r powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 ## <a name="raspbian"></a>Raspbian
 
 > [!NOTE]
-> Stöd för Raspbian är experiment.
+> Stöd för Raspbian är experimentella.
 
 För närvarande stöds endast PowerShell på Raspbian Stretch.
 
-Även CoreCLR (och därmed PowerShell Core) fungerar bara på Pi 2 och 3 Pi enheter som andra enheter som [Pi noll](https://github.com/dotnet/coreclr/issues/10605), har en processor som stöds inte.
+Även CoreCLR (och därmed PowerShell Core) fungerar bara på Pi 2 och Pi 3-enheter som andra enheter, t.ex [Pi noll](https://github.com/dotnet/coreclr/issues/10605), har en processor som stöds inte.
 
-Hämta [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) och följ de [Installationsinstruktioner](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) att hämta till din Pi.
+Ladda ned [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) och följ de [Installationsinstruktioner](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) att hämta den till din Pi.
 
 ### <a name="installation"></a>Installation
 
@@ -639,7 +639,7 @@ tar -xvf ./powershell-6.0.2-linux-arm32.tar.gz -C ~/powershell
 ~/powershell/pwsh
 ```
 
-Du kan också skapa en symbolisk länk för att kunna starta PowerShell utan att ange sökvägen till den ”pwsh” binär
+Du kan också skapa en symbolisk länk för att kunna starta PowerShell utan att ange sökvägen till den ”pwsh” binära
 
 ```sh
 # Start PowerShell from bash with sudo to create a symbolic link
@@ -659,32 +659,32 @@ rm -rf ~/powershell
 
 ## <a name="binary-archives"></a>Binär Arkiv
 
-PowerShell binär `tar.gz` Arkiv som har angetts för Linux-plattformar för att aktivera avancerade distribueringsscenarier.
+PowerShell-binär `tar.gz` Arkiv tillhandahålls för Linux-plattformar för att aktivera avancerade scenarier.
 
 ### <a name="dependencies"></a>Beroenden
 
-PowerShell skapar bärbara binärfiler för alla Linux-distributioner.
-Men .NET Core runtime kräver olika beroenden på olika distributioner och därför PowerShell har samma funktion.
+PowerShell skapar bärbar binärfiler för alla Linux-distributioner.
+Men .NET Core runtime kräver olika beroenden på olika distributioner och kan därför PowerShell gör samma sak.
 
-Följande diagram visar .NET Core 2.0 beroenden som stöds officiellt i olika Linux-distributioner.
+Följande diagram visar de beroenden i .NET Core 2.0 som officiellt stöds i olika Linux-distributioner.
 
 | Operativsystem                 | Beroenden |
 | ------------------ | ------------ |
-| Ubuntu 14.04       | libc6 ust0-libgcc1, libgssapi-krb5-2, liblttng, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Ubuntu 16.04       | libc6 ust0-libgcc1, libgssapi-krb5-2, liblttng, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
-| Ubuntu 17.10       | libc6 ust0-libgcc1, libgssapi-krb5-2, liblttng, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
-| Ubuntu 18.04       | libc6 ust0-libgcc1, libgssapi-krb5-2, liblttng, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
-| Debian 8 (Jessie)  | libc6 ust0-libgcc1, libgssapi-krb5-2, liblttng, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Debian 9 (Stretch) | libc6 ust0-libgcc1, libgssapi-krb5-2, liblttng, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
+| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
+| Ubuntu 17.10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
+| Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
+| Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
 | CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind, libcurl, openssl-bibliotek, libicu |
 | Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-bibliotek, libicu, kompatibilitets-openssl10 |
 
-Du måste installera de nödvändiga beroendena för målet OS i separata steg för att distribuera PowerShell binärfiler på Linux-distributioner som inte stöds officiellt.
-Till exempel vår [Amazon Linux dockerfile] [ amazon-dockerfile] installerar beroenden först och extraherar Linux `tar.gz` Arkiv.
+Du måste installera de nödvändiga beroendena för målets OS i separata steg för att distribuera PowerShell-binärfiler i Linux-distributioner som inte stöds officiellt.
+Till exempel vår [Amazon Linux dockerfile] [ amazon-dockerfile] installerar beroenden först och sedan extraherar Linux `tar.gz` Arkiv.
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell/blob/master/docker/community/amazonlinux/Dockerfile
 
-### <a name="installation---binary-archives"></a>Installation – binära Arkiv
+### <a name="installation---binary-archives"></a>Installation - binär Arkiv
 
 #### <a name="linux"></a>Linux
 
@@ -715,15 +715,15 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 * `$PSHOME` är `/opt/microsoft/powershell/6.0.2/`
 * Användarprofiler som ska läsas från `~/.config/powershell/profile.ps1`
-* Standardprofiler kommer att läsas från `$PSHOME/profile.ps1`
-* Moduler som användare kommer att läsas från `~/.local/share/powershell/Modules`
-* Delade moduler kommer att läsas från `/usr/local/share/powershell/Modules`
+* Standardprofiler ska läsas från `$PSHOME/profile.ps1`
+* Moduler som användaren kommer att läsas från `~/.local/share/powershell/Modules`
+* Delade moduler ska läsas från `/usr/local/share/powershell/Modules`
 * Standardmoduler ska läsas från `$PSHOME/Modules`
 * PSReadline historik kommer att läggas till `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
-Profilerna respektera PowerShells per värd konfiguration så värd-specifika standardprofiler finns på `Microsoft.PowerShell_profile.ps1` på samma platser.
+Profilerna respekterar PowerShell-per-host-konfiguration, så värdspecifika standardprofiler finns på `Microsoft.PowerShell_profile.ps1` på samma platser.
 
-PowerShell respekterar den [XDG Base Directory specifikationen] [ xdg-bds] på Linux.
+PowerShell respekterar de [XDG Base Directory specifikationen] [ xdg-bds] i Linux.
 
 [släpper]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
