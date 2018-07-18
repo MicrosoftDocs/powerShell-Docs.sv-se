@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell cmdlet
 title: Installera och använda windows powershell-webbåtkomst
-ms.openlocfilehash: d60670954d6ab6998e905382383d60ead1129d31
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: c14da421e372f6c4c4f203b16bbd37f28a9ba255
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893764"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094270"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installera och använda Windows PowerShell-webbåtkomst
 
@@ -329,29 +329,29 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
 
    - På Windows **starta** skärmen, Skriv någon del av namnet **Internet Information Services (IIS) Manager**. Klicka på genvägen när den visas i den **appar** resultat.
 
-2. I trädvyn för IIS-hanteraren expanderar du noden för den server där Windows PowerShell Web Access har installerats på tills den **platser** mappen är synliga. Välj den **platser** mapp.
+1. I trädvyn för IIS-hanteraren expanderar du noden för den server där Windows PowerShell Web Access har installerats på tills den **platser** mappen är synliga. Välj den **platser** mapp.
 
-3. I den **åtgärder** fönstret klickar du på **Lägg till webbplats**.
+1. I den **åtgärder** fönstret klickar du på **Lägg till webbplats**.
 
-4. Skriv ett namn för webbplatsen, till exempel **Windows PowerShell-webbåtkomst**.
+1. Skriv ett namn för webbplatsen, till exempel **Windows PowerShell-webbåtkomst**.
 
-5. En programpool skapas automatiskt för den nya webbplatsen. Om du vill använda en annan programpool klickar du på **Välj** att välja en programpool som associeras med den nya webbplatsen. Välj den andra programpoolen i den **Välj programpool** dialogrutan och klicka sedan på **OK**.
+1. En programpool skapas automatiskt för den nya webbplatsen. Om du vill använda en annan programpool klickar du på **Välj** att välja en programpool som associeras med den nya webbplatsen. Välj den andra programpoolen i den **Välj programpool** dialogrutan och klicka sedan på **OK**.
 
-6. I den **fysisk sökväg** text, bläddrar till %*windir*% / Web/PowerShellWebAccess/wwwroot.
+1. I den **fysisk sökväg** text, bläddrar till %*windir*% / Web/PowerShellWebAccess/wwwroot.
 
-7. I den **typ** i den **bindning** Välj **https**.
+1. I den **typ** i den **bindning** Välj **https**.
 
-8. Tilldela ett portnummer till webbplatsen som inte redan används av en annan webbplats eller ett program. Om du vill hitta öppna portar som du kan köra den **netstat** i Kommandotolkens fönster. Standardportnumret är 443.
+1. Tilldela ett portnummer till webbplatsen som inte redan används av en annan webbplats eller ett program. Om du vill hitta öppna portar som du kan köra den **netstat** i Kommandotolkens fönster. Standardportnumret är 443.
 
    Ändra standardporten om 443 redan används av en annan webbplats, eller om det finns andra säkerhetsskäl för att ändra portnumret. Om en annan webbplats som körs på din gateway-servern använder den valda porten, visas en varning när du klickar på **OK** i den **Lägg till webbplats** dialogrutan. Du måste använda en ledig port för att köra Windows PowerShell Web Access.
 
-9. Alternativt, om det behövs för din organisation, ange ett värdnamn som passar din organisation och användare, till exempel **www.contoso.com**. Klicka på **OK**.
+1. Alternativt, om det behövs för din organisation, ange ett värdnamn som passar din organisation och användare, till exempel **www.contoso.com**. Klicka på **OK**.
 
-10. För en säkrare produktionsmiljö bör ett giltigt certifikat som har signerats av en CA användas. Du måste ange ett SSL-certifikat, eftersom användare kan endast ansluta till Windows PowerShell-webbåtkomst via en HTTPS-webbplats. Se [att konfigurera ett SSL-certifikat i IIS-hanteraren](#to-configure-an-ssl-certificate-in-iis-Manager) i det här avsnittet för mer information om hur du skaffar ett certifikat.
+1. För en säkrare produktionsmiljö bör ett giltigt certifikat som har signerats av en CA användas. Du måste ange ett SSL-certifikat, eftersom användare kan endast ansluta till Windows PowerShell-webbåtkomst via en HTTPS-webbplats. Se [att konfigurera ett SSL-certifikat i IIS-hanteraren](#to-configure-an-ssl-certificate-in-iis-Manager) i det här avsnittet för mer information om hur du skaffar ett certifikat.
 
-11. Klicka på **OK** att Stäng den **Lägg till webbplats** dialogrutan.
+1. Klicka på **OK** att Stäng den **Lägg till webbplats** dialogrutan.
 
-12. I en Windows PowerShell-session som har öppnats med utökade användarrättigheter (Kör som administratör), kör du följande skript, där *application_pool_name* representerar namnet på den programpool som du skapade i steg 4, att ge programpoolen åtkomsträttigheter till auktoriseringsfilen.
+1. I en Windows PowerShell-session som har öppnats med utökade användarrättigheter (Kör som administratör), kör du följande skript, där _application_pool_name_ representerar namnet på den programpool som du skapade i steg 4, att ge programpoolen åtkomsträttigheter till auktoriseringsfilen.
 
     ```    
     $applicationPoolName = "<application_pool_name>"
@@ -365,11 +365,11 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
     c:\windows\system32\icacls.exe $authorizationFile
     ```
 
-13. Med den nya webbplatsen vald i trädvyn för IIS-hanteraren, klickar du på **starta** i den **åtgärder** fönstret för att starta webbplatsen.
+1. Med den nya webbplatsen vald i trädvyn för IIS-hanteraren, klickar du på **starta** i den **åtgärder** fönstret för att starta webbplatsen.
 
-14. Öppna en webbläsarsession på en klientenhet. Mer information om vilka webbläsare och enheter finns i [webbläsare och klientenheter som stöder](#browser-and-client-device-support) i det här dokumentet.
+1. Öppna en webbläsarsession på en klientenhet. Mer information om vilka webbläsare och enheter finns i [webbläsare och klientenheter som stöder](#browser-and-client-device-support) i det här dokumentet.
 
-15. Öppna den nya Windows PowerShell Web Access-webbplatsen.
+1. Öppna den nya Windows PowerShell Web Access-webbplatsen.
 
     Eftersom rotwebbplatsen pekar på mappen Windows PowerShell Web Access, webbläsaren bör visa inloggningssidan för Windows PowerShell-webbåtkomst när du öppnar **https://\<*gateway_server_name* \>**. Du behöver inte lägga till **/pswa** i URL: en.
 
@@ -392,11 +392,11 @@ Mer information om Windows PowerShell-webbåtkomst auktoriseringsregler och säk
 
    - På Windows **starta** högerklickar **Windows PowerShell**, och klicka sedan på **kör som administratör**.
 
-2. ![Säkerhetsmeddelande](images/SecurityNote.jpeg) Valfria steg för att begränsa användaråtkomsten med hjälp av sessionskonfigurationer:
+1. ![Säkerhetsmeddelande](images/SecurityNote.jpeg) Valfria steg för att begränsa användaråtkomsten med hjälp av sessionskonfigurationer:
 
    Kontrollera om de sessionskonfigurationer som du vill använda i dina regler redan finns. Om de inte ännu har skapats följer du instruktionerna för att skapa sessionskonfigurationer i [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
-3. Skriv följande och tryck sedan på **Ange**.
+1. Skriv följande och tryck sedan på **Ange**.
 
    Add-PswaAuthorizationRule - UserName < domain\user | computer\user > - ComputerName < computer_name > - ConfigurationName < session_configuration_name >
 
@@ -406,7 +406,7 @@ Mer information om Windows PowerShell-webbåtkomst auktoriseringsregler och säk
 
    Add-PswaAuthorizationRule - UserName 'Contoso\JSmith' - ComputerName Contoso_214 - ConfigurationName NewAdminsOnly
 
-4. Kontrollera att regeln har skapats genom att köra den `Get-PswaAuthorizationRule` cmdlet, eller `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
+1. Kontrollera att regeln har skapats genom att köra den `Get-PswaAuthorizationRule` cmdlet, eller `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
 
    Till exempel `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
@@ -420,9 +420,9 @@ Använd alltid ett giltigt SSL-certifikat som har signerats av en certifikatutf�
 
 1. I trädvyn på IIS-hanteraren väljer du den server där Windows PowerShell-webbåtkomst är installerad.
 
-2. I innehållsfönstret dubbelklickar du på **servercertifikat**.
+1. I innehållsfönstret dubbelklickar du på **servercertifikat**.
 
-3. I den **åtgärder** fönstret, gör du något av följande. Mer information om hur du konfigurerar servercertifikat i IIS finns i [konfigurera servercertifikat i IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
+1. I den **åtgärder** fönstret, gör du något av följande. Mer information om hur du konfigurerar servercertifikat i IIS finns i [konfigurera servercertifikat i IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
 
    - Klicka på **importera** att importera ett befintligt giltigt certifikat från en plats i nätverket.
 
@@ -432,11 +432,11 @@ Använd alltid ett giltigt SSL-certifikat som har signerats av en certifikatutf�
 
    - Klicka på **skapa ett självsignerat certifikat** att skapa ett certifikat som du kan använda direkt och få det signerat senare av en CA om du vill. Ange ett eget namn för det självsignerade certifikatet, till exempel **Windows PowerShell-webbåtkomst**. Det här alternativet anses inte vara säkert och rekommenderas endast för en privat testmiljö.
 
-4. När du har skapat eller hämtat ett certifikat, väljer du den webbplats som certifikatet används (till exempel **standardwebbplats**) i trädfönstret i IIS-hanteraren och klicka sedan på **bindningar** i **Åtgärder** fönstret.
+1. När du har skapat eller hämtat ett certifikat, väljer du den webbplats som certifikatet används (till exempel **standardwebbplats**) i trädfönstret i IIS-hanteraren och klicka sedan på **bindningar** i **Åtgärder** fönstret.
 
-5. I den **Lägg till bindning för webbplats** dialogrutan lägger du till en **https** bindning för webbplatsen, om en inte sådan redan visas. Om du inte använder ett självsignerat certifikat, anger du värdnamnet från steg 3 i den här proceduren. Om du använder ett självsignerat certifikat behövs inte det här steget.
+1. I den **Lägg till bindning för webbplats** dialogrutan lägger du till en **https** bindning för webbplatsen, om en inte sådan redan visas. Om du inte använder ett självsignerat certifikat, anger du värdnamnet från steg 3 i den här proceduren. Om du använder ett självsignerat certifikat behövs inte det här steget.
 
-6. Välj det certifikat som du hämtat eller skapat i steg 3 i den här proceduren och klicka sedan på **OK**.
+1. Välj det certifikat som du hämtat eller skapat i steg 3 i den här proceduren och klicka sedan på **OK**.
 
 ## <a name="using-the-web-based-windows-powershell-console"></a>Användning av den webbaserade Windows PowerShell-konsolen
 

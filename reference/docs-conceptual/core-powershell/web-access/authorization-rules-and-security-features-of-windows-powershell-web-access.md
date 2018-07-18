@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: PowerShell cmdlet
 title: Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst
-ms.openlocfilehash: a3a743d83ae3e387ee51056042c98753104e925e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 14bb18cfc5d9826523a239aede42307a7688eaf5
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893730"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094253"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst
 
@@ -163,9 +163,8 @@ Nedan följer några exempel på det här scenariot.
 
 - En administratör har konfigurerat en privat testmiljö och vill ge alla auktoriserade nätverksanvändare åtkomst till alla datorer i nätverket som de normalt har åtkomst till, samt åtkomst alla sessionskonfigurationer som de normalt har åtkomst till. Eftersom det är en privat testmiljö skapar administratören en auktoriseringsregel som inte är säker. -Administratören kör cmdleten `Add-PswaAuthorizationRule * * *`, som använder jokertecknet **\*** att representera alla användare, alla datorer och alla konfigurationer. – Den här regeln motsvarar följande: `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
-  >[!NOTE]
-  >
-  >Den här regeln rekommenderas inte i en säker miljö och kringgår auktorisering regeln lager av säkerhet som tillhandahålls av Windows PowerShell Web Access.
+  > [!NOTE]
+  > Den här regeln rekommenderas inte i en säker miljö och kringgår auktorisering regeln lager av säkerhet som tillhandahålls av Windows PowerShell Web Access.
 
 - En administratör måste tillåta att användarna ansluter till måldatorerna i en miljö som innehåller både arbetsgrupper och domäner, där arbetsgruppsdatorer ibland används för att ansluta till måldatorerna i domäner och datorer i domäner ibland används för att ansluta till måldatorerna i arbetsgrupper. Administratören har en gateway-server *PswaServer*, i en arbetsgrupp och måldatorn *srv1.contoso.com* finns i en domän. Användaren *Chris* är en auktoriserad lokal användare av både arbetsgruppens gateway-server och måldatorn. Hans användarnamn på arbetsgruppsservern är *chrisLocal*; och hans användarnamn på måldatorn är *contoso\\chris*. För att ge åtkomst till srv1.contoso.com för Chris lägger administratören till följande regel.
 
@@ -180,10 +179,9 @@ I föregående fall upprättar en anslutning till måldatorn av Windows PowerShe
 
 1. Autentisering på arbetsgruppens gateway-server genom att lägga till ett användarnamn i formatet *server_name*\\*user_name* till auktoriseringsregeln
 
-2. Autentisering på måldatorn med hjälp av alternativa autentiseringsuppgifter som anges på sidan logga in i den **valfria anslutningsinställningar** område
+1. Autentisering på måldatorn med hjälp av alternativa autentiseringsuppgifter som anges på sidan logga in i den **valfria anslutningsinställningar** område
 
    > [!NOTE]
-   >
    > Om gatewayen och måldatorerna finns i olika arbetsgrupper eller domäner, måste en förtroenderelation upprättas mellan de två arbetsgruppsdatorerna, de två domänerna eller mellan arbetsgruppen och domänen. Den här relationen kan inte konfigureras med hjälp av Windows PowerShell-webbåtkomst cmdletar för auktoriseringsregeln. Auktoriseringsregler definierar inte en förtroenderelation mellan datorer. De kan bara auktorisera användare till att ansluta till specifika måldatorer och sessionskonfigurationer. Mer information om hur du konfigurerar en förtroenderelation mellan olika domäner finns i [skapa domän- och skogsförtroenden](https://technet.microsoft.com/library/cc794775.aspx").
    > Mer information om hur du lägger till arbetsgruppsdatorer i en lista med betrodda värdar finns i [fjärrhantering med Serverhanteraren](https://technet.microsoft.com/library/dd759202.aspx)
 
