@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: PowerShell Desired State Configuration partiella konfigurationer
-ms.openlocfilehash: 1f5ec5bd5055ccc3d83a60712aebe635f2548828
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 6d344b666421aba5745945f6148570e4c8229c1a
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893009"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093940"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration partiella konfigurationer
 
@@ -217,7 +217,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Namnge och placera configuration-dokument på hämtningsservern (ConfigurationID)
 
-Partiell konfigurationsdokument måste placeras i den angivna mappen i den **ConfigurationPath** i den `web.config` -filen för hämtningsservern (vanligtvis `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Av konfigurationsdokument måste ha namnet på följande sätt: *ConfigurationName*. * ConfigurationID8`.mof`, där *ConfigurationName* är namnet på partiell konfiguration och *ConfigurationID* definieras konfigurations-ID i LCM på målnoden. I vårt exempel ska configuration dokument namnges enligt följande:
+Partiell konfigurationsdokument måste placeras i den angivna mappen i den **ConfigurationPath** i den `web.config` -filen för hämtningsservern (vanligtvis `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Av konfigurationsdokument måste ha namnet på följande sätt: _ConfigurationName_. * ConfigurationID8`.mof`, där _ConfigurationName_ är namnet på partiell konfiguration och _ConfigurationID_ definieras konfigurations-ID i LCM på målnoden. I vårt exempel ska configuration dokument namnges enligt följande:
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -330,7 +330,6 @@ Configuration ServiceAccountConfig
 
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
-
     Node localhost
     {
         Group LocalAdmins
@@ -340,7 +339,6 @@ Configuration ServiceAccountConfig
                                   'admins@example.domain'
             Ensure              = 'Present'
             Credential          = $Credential
-
         }
 
         WindowsFeature Telnet
@@ -351,7 +349,6 @@ Configuration ServiceAccountConfig
     }
 }
 ServiceAccountConfig
-
 ```
 
 ## <a name="example-sharepointconfig-partial-configuration"></a>SharePointConfig partiellt exempelkonfiguration

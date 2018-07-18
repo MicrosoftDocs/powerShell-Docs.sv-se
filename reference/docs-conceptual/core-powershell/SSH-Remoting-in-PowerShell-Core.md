@@ -46,8 +46,8 @@ Du måste dessutom aktivera lösenordsautentisering och du kan också baserat ny
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. Installera den senaste versionen av [Win32-OpenSSH] från GitHub med hjälp av [installationsinstruktionerna]
-3. Redigera sshd_config-filen på den plats där du installerade Win32 OpenSSH
+1. Installera den senaste versionen av [Win32-OpenSSH] från GitHub med hjälp av [installationsinstruktionerna]
+1. Redigera sshd_config-filen på den plats där du installerade Win32 OpenSSH
    - Kontrollera att lösenordsautentisering är aktiverad
 
    ```
@@ -59,8 +59,8 @@ Du måste dessutom aktivera lösenordsautentisering och du kan också baserat ny
     ```
 
     > [!NOTE]
-    Det finns en bugg i OpenSSH för Windows som förhindrar att blanksteg fungerar i undersystemet körbara sökvägar.
-    Se [problemet på GitHub för mer information](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+    > Det finns en bugg i OpenSSH för Windows som förhindrar att blanksteg fungerar i undersystemet körbara sökvägar.
+    > Se [problemet på GitHub för mer information](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
     En lösning är att skapa en symlink till installationskatalogen för Powershell som inte innehåller blanksteg:
 
@@ -84,27 +84,27 @@ Du måste dessutom aktivera lösenordsautentisering och du kan också baserat ny
    PubkeyAuthentication yes
    ```
 
-4. Starta om tjänsten sshd
+1. Starta om tjänsten sshd
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. Lägga till sökvägen där OpenSSH installeras på din sökväg Env variabel
+1. Lägga till sökvägen där OpenSSH installeras på din sökväg Env variabel
    - Detta bör vara längs linjer `C:\Program Files\OpenSSH\`
    - Det möjliggör ssh.exe som ska returneras
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Installationsprogrammet på dator för Linux (Ubuntu 14.04)
 
 1. Installera den senaste versionen av [PowerShell Core för Linux] från GitHub
-2. Installera [Ubuntu SSH] vid behov
+1. Installera [Ubuntu SSH] vid behov
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. Redigera sshd_config-filen på plats /etc/ssh
+1. Redigera sshd_config-filen på plats /etc/ssh
    - Kontrollera att lösenordsautentisering är aktiverad
 
    ```
@@ -123,7 +123,7 @@ Du måste dessutom aktivera lösenordsautentisering och du kan också baserat ny
    PubkeyAuthentication yes
    ```
 
-4. Starta om tjänsten sshd
+1. Starta om tjänsten sshd
 
    ```bash
    sudo service sshd restart
@@ -137,7 +137,7 @@ Du måste dessutom aktivera lösenordsautentisering och du kan också baserat ny
      - Klicka på `Sharing`
      - Kontrollera `Remote Login` -ska stå `Remote Login: On`
      - Tillåt åtkomst till rätt användare
-2. Redigera den `sshd_config` fil på plats `/private/etc/ssh/sshd_config`
+1. Redigera den `sshd_config` fil på plats `/private/etc/ssh/sshd_config`
    - Använda din favoritredigerare eller
 
      ```bash
@@ -162,7 +162,7 @@ Du måste dessutom aktivera lösenordsautentisering och du kan också baserat ny
      PubkeyAuthentication yes
      ```
 
-3. Starta om tjänsten sshd
+1. Starta om tjänsten sshd
 
    ```bash
    sudo launchctl stop com.openssh.sshd

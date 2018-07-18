@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Objektet manifest värden som påverkar PowerShell galleriets gränssnitt
-ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 00350d3558e2bfa487fb116304956ffa7291ee05
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893485"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093981"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Objektet manifest värden som påverkar PowerShell galleriets gränssnitt
 
@@ -84,65 +84,67 @@ Referens följer vissa vanligaste taggar från och med 12/14/2017.
 I vissa fall finns liknande men kanske mindre perfekt alternativ som visas bredvid taggen.
 Det är en bra idé att använda den önskade taggen som som kommer att leda till mindre bruset och bättre sökresultat för konsumenter.
 
-| **Önskade taggen** | **Alternativ och anteckningar** |
+| Önskade taggen | Alternativ och anteckningar |
 | --- | --- |
-| **Azure** |  |
-| **DSC** | DesiredStateConfiguration är mindre önskvärda, det är för långt |
-| **ResourceManager** | ARM används för att beskriva grupp med processorer och ska inte användas för Azure Resource Manager | **DSCResourceKit** |  |
-| **SQL** |  |
-| **AWS** |  |
-| **DSCResource** |  |
-| **Automation** |  |
-| **REST** |  |
-| **ActiveDirectory** | AD används inte för närvarande ensamt  |
-| **SQLServer** |  |
-| **DBA** |  |
-| **Säkerhet** | Defense är mindre exakt |
-| **Databasen** | Databaser (plural) är mindre önskvärda |
-| **DevOps** |  |
-| **Windows** |  |
-| **Skapa** |  |
-| **Distribution** | Distribuera används mindre ofta |
-| **Molnet** |  |
-| **GIT** |  |
-| **Test** | Testningen är mindre önskvärda |
-| **VersionControl** | Versionen är mindre exakt, även om används oftare  |
-| **Loggning** | Önskad användning av loggning som en åtgärd |
-| **Log** | Prioriterade användningen av loggen som en sak |
-| **Säkerhetskopiering** |  |
-| **IaaS** |  |
-| **Linux** |  |
-| **IIS** |  |
-| **AzureAutomation** |  |
-| **Storage** |  |
-| **GitHub** |  |
-| **JSON** |  |
-| **Exchange** |  |
-| **Nätverk** | Nätverk är liknande, används mindre ofta |
-| **SharePoint** |  |
-| **Rapportering** | Rapportering är en åtgärd, rapporten är en sak |
-| **Rapporten** | Rapporten är en sak |
-| **WinRM** |  |
-| **Övervakning** |  |
-| **VSTS** |  |
-| **Excel** |  |
-| **Google** |  |
-| **Färg** |  |
-| **DNS** |  |
-| **Office365** | Stavning ut Office är att föredra. O365 används mer sällan, även om det är kortare | **Gitlab** |  |
-| **Lära** |  |
-| **AzureAD** |  |
-| **HTML** |  |
-| **Hyper-V** | Hyper-v är mindre vanligt som en etikett |
-| **Konfiguration** |  |
-| **ChatOps** |  |
-| **PackageManagement** |  |
-| **WMI** |  |
-| **Brandväggen** |  |
-| **Docker** |  |
-| **Appveyor** |  |
-| **AzureRm** | Används främst för AzureRM-moduler |
-| **ZIP** |  |
-| **MSI** |  |
-| **Mac** |  |
-| **PoshBot** |  |
+| Azure |  |
+| DSC | DesiredStateConfiguration är mindre önskvärda, det är för långt |
+| ResourceManager | ARM används för att beskriva grupp med processorer och ska inte användas för Azure Resource Manager |
+| DSCResourceKit |  |
+| SQL |  |
+| AWS |  |
+| DSCResource |  |
+| Automatisering |  |
+| REST |  |
+| ActiveDirectory | AD används inte för närvarande ensamt  |
+| SQLServer |  |
+| DBA |  |
+| Säkerhet | Defense är mindre exakt |
+| Databas | Databaser (plural) är mindre önskvärda |
+| DevOps |  |
+| Windows |  |
+| Skapa |  |
+| Distribution | Distribuera används mindre ofta |
+| Molnet |  |
+| GIT |  |
+| Testa | Testningen är mindre önskvärda |
+| VersionControl | Versionen är mindre exakt, även om används oftare  |
+| Loggning | Önskad användning av loggning som en åtgärd |
+| Logg | Prioriterade användningen av loggen som en sak |
+| Reserv |  |
+| IaaS |  |
+| Linux |  |
+| IIS |  |
+| AzureAutomation |  |
+| Lagring |  |
+| GitHub |  |
+| JSON |  |
+| Exchange |  |
+| Nätverk | Nätverk är liknande, används mindre ofta |
+| SharePoint |  |
+| Rapporter | Rapportering är en åtgärd, rapporten är en sak |
+| Rapporten | Rapporten är en sak |
+| WinRM |  |
+| Övervakning |  |
+| VSTS |  |
+| Excel |  |
+| Google |  |
+| Färg |  |
+| DNS |  |
+| Office 365 | Stavning ut Office är att föredra. O365 används mer sällan, även om det är kortare |
+| Gitlab |  |
+| Lära |  |
+| AzureAD |  |
+| HTML |  |
+| Hyper-V | Hyper-v är mindre vanligt som en etikett |
+| Konfiguration |  |
+| ChatOps |  |
+| PackageManagement |  |
+| WMI |  |
+| Brandvägg |  |
+| Docker |  |
+| Appveyor |  |
+| AzureRm | Används främst för AzureRM-moduler |
+| ZIP |  |
+| MSI |  |
+| Mac |  |
+| PoshBot |  |

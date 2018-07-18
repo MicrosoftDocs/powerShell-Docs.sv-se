@@ -1,62 +1,78 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: PowerShell cmdlet
 title: PowerShell-skript
-ms.openlocfilehash: 7de5a3f3149d8d464b34101d94a5f9430d9b0f23
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c6ba3abc2544834e2cbec16a524f79399a1d2599
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222408"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094059"
 ---
 # <a name="powershell"></a>PowerShell
 
-Byggd på .NET Framework, är PowerShell ett aktivitetsbaserat kommandoradsskal och skriptspråk; Det är speciellt avsedd för administratörer och Privilegierade användare att snabbt automatisera administrationen av flera operativsystem (Linux, macOS, Unix- och Windows) och processer som är relaterade till de program som körs på dessa operativsystem.
+Bygger på .NET Framework och är PowerShell ett uppgiftsbaserat kommandoradsgränssnitt och skriptspråk; Det är utformat särskilt för administratörer och Privilegierade användare, att automatisera snabbt administrationen av flera operativsystem (Linux, macOS, Unix- och Windows) och processer som är relaterade till de program som körs på dessa operativsystem.
 
 ## <a name="powershell-is-open-source"></a>PowerShell är öppen källkod
 
-PowerShell grundläggande källkoden är nu tillgänglig i GitHub och öppna för communitybidrag. Se [PowerShell källa på GitHub](https://github.com/powershell/powershell).
+PowerShell grundläggande källkoden är nu tillgängligt i GitHub och öppna community-bidrag.
+Se [PowerShell källkod på GitHub](https://github.com/powershell/powershell).
 
-Du kan starta med bits som du behöver [hämta PowerShell](https://github.com/PowerShell/PowerShell#get-powershell).
+Du kan börja med bits på [hämta PowerShell](https://github.com/PowerShell/PowerShell#get-powershell).
 Eller kanske, med en snabb genomgång på [komma igång](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)
 
-## <a name="powershell-design-goals"></a>PowerShell designmål
-Windows PowerShell är utformade för att förbättra kommandoradsverktyg och skript miljö genom att sedan problem och lägga till nya funktioner.
+## <a name="powershell-design-goals"></a>PowerShell-designmålen
+PowerShell har utformats för att förbättra miljön kommandorad och skript genom att långsiktigt problem och lägga till nya funktioner.
 
-### <a name="discoverability"></a>Synlighet
-Windows PowerShell gör det lätt att identifiera dess funktioner. Du hittar en lista över cmdlets som Visa och ändra Windows-tjänster, exempelvis:
+### <a name="discoverability"></a>För att göra
+PowerShell gör det enkelt att identifiera dess funktioner. Till exempel för att hitta en lista över cmdlets som Visa och ändra Windows-tjänster, skriver du:
 
 ```powershell
 Get-Command *-Service
 ```
 
-Efter att identifiera vilka cmdlet uppnår en aktivitet läsa du mer om cmdlet med hjälp av cmdleten Get-Help. Till exempel för att visa hjälp om cmdlet Get-Service, skriver du:
+Efter identifiering av vilka cmdlet uppnår en uppgift, kan du läsa mer om cmdlet: en med hjälp av den `Get-Help` cmdlet.
+Till exempel vill visa hjälp om den `Get-Service` cmdlet, typ:
 
 ```powershell
 Get-Help Get-Service
 ```
-De flesta cmdlets genererar objekt som kan ändras och sedan återges i text som ska visas. För att förstå resultatet av denna cmdlet, pipe-utdata för cmdleten Get-medlem. Följande kommando visar information om medlemmarna i objektutdata av cmdleten Get-Service.
+De flesta cmdletar sända objekt som kan ändras och sedan återges i text som ska visas.
+För att helt förstå utdata från denna cmdlet kan skicka utdata till den `Get-Member` cmdlet.
+Till exempel följande kommando visar information om medlemmarna i objektutdata av den `Get-Service` cmdlet.
 
 ```powershell
 Get-Service | Get-Member
 ```
 
 ### <a name="consistency"></a>Konsekvens
-Hantera system kan vara en komplex åtagande och verktyg som har ett konsekvent gränssnitt som hjälper för att styra inbyggd komplexitet. Varken kommandoradsverktyg eller skriptbara COM-objekt har tyvärr rapporterats för sina konsekvent.
+Hantera system kan vara en komplex åtagande och verktyg som har ett konsekvent gränssnitt bidra till att styra den inbyggda komplexiteten.
+Varken kommandoradsverktyg eller skriptbara COM-objekt har tyvärr rapporterats för sina konsekvens.
 
-Konsekvenskontroll av Windows PowerShell är en av dess primära tillgångar. Om du lär dig hur du använder Sort-Object cmdlet använda du den kunskapen för att sortera utdata från varje cmdlet. Du har inte Läs olika sortering rutiner för varje cmdlet.
+Konsekvenskontroll av PowerShell är en av dess primära tillgångar.
+Exempel: Om du lära dig hur du använder den `Sort-Object` cmdlet, du kan använda denna kunskap för att ordna resultatet av en cmdlet.
+Du behöver inte lära dig de olika sortering rutinerna för varje cmdlet.
 
-Dessutom har inte cmdlet utvecklare att utforma sorterings-funktioner för deras cmdlets. Windows PowerShell ger dem ett ramverk som tillhandahåller grundläggande funktioner och tvingar dem att vara konsekvent många aspekter av gränssnittet. Ramen eliminerar några av de alternativ som vanligtvis kvar att utvecklaren, men i RETUR gör det utvecklingen av robust och enkla att använda cmdlets mycket enklare.
+Dessutom behöver inte cmdlet-utvecklare utforma sortering funktioner för deras cmdlets.
+PowerShell ger dem ett ramverk som tillhandahåller grundläggande funktioner och tvingar dem att vara konsekvent många aspekter av gränssnittet.
+Ramverket eliminerar några av de alternativ som vanligtvis lämnas till utvecklaren, men i utbyte blir utvecklingen av robust och enkel att använda cmdlet: ar mycket enklare.
 
-### <a name="interactive-and-scripting-environments"></a>Interaktiva och Scripting miljöer
-Windows PowerShell är en kombinerad miljö interaktiva och skript som ger dig tillgång till kommandoradsverktyg och COM-objekt och också kan du använda power av .NET Framework Class Library (FCL).
+### <a name="interactive-and-scripting-environments"></a>Interaktiva och skript miljöer
+PowerShell är en kombinerad interaktiva och skript som ger dig tillgång till kommandoradsverktyg och COM-objekt och även aktiverar du kan använda kraften i .NET Framework Class Library (FCL).
 
-Den här miljön förbättrar vid Windows kommandotolk, vilket ger en interaktiv miljö med flera kommandoradsverktyg. Förbättrar också på Windows Script Host (WSH) skript, vilket gör att du kan använda flera kommandoradsverktyg och COM automation-objekt, men inte ger en interaktiv miljö.
+Den här miljön förbättrar vid Windows Kommandotolken, vilket ger en interaktiv miljö med flera kommandoradsverktyg.
+Det förbättrar också vid skript för Windows Script Host (WSH), som gör att du använder flera kommandoradsverktyg och COM automation-objekt, men inte anger en interaktiv miljö.
 
-Windows PowerShell genom att kombinera åtkomst till alla dessa funktioner, utökar möjligheten för en interaktiv användare och skript skrivaren och gör systemadministration mer användarvänlig.
+Genom att kombinera åtkomst till alla dessa funktioner kan PowerShell utökar möjligheten för den interaktiva användaren och skrivar-skriptet och gör systemadministration mer hanterbara.
 
 ### <a name="object-orientation"></a>Objektorientering
-Även om du interagerar med Windows PowerShell genom att skriva kommandon i texten är Windows PowerShell baserad på objekt, inte text. Utdata från ett kommando är ett objekt. Du kan skicka utdata-objekt till ett annat kommando som indata. Windows PowerShell innehåller därför välbekanta gränssnittet till personer som har erfarenhet av andra tankar när introduktion till en ny och kraftfull kommandoradsverktyget paradigmet. Det utökar begreppet skicka data mellan kommandon genom att skicka objekt i stället för text.
+Även om du interagerar med PowerShell genom att skriva kommandon i texten, är PowerShell baserad på objekt, inte text.
+Utdata från ett kommando är ett objekt.
+Du kan skicka objektet till ett annat kommando som indata.
+Därför innehåller PowerShell en välbekanta gränssnittet till personer som har erfarenhet av andra gränssnitt, samtidigt som introducerar nya, kraftfulla kommandoradsverktyget paradigm.
+Det är en utökad variant för att skicka data mellan kommandon genom att skicka objekt i stället för text.
 
 ### <a name="easy-transition-to-scripting"></a>Lätt att skript
-Windows PowerShell gör det enkelt att övergången från att skriva kommandon interaktivt till skapa och köra skript. Du kan skriva kommandon i Kommandotolken för Windows PowerShell att identifiera de kommandon som kan utför en uppgift. Sedan kan du spara dessa kommandon i ett betyg eller en historik innan du kopierar dem till en fil för användning som ett skript.
+PowerShell gör det enkelt att övergången från att skriva in kommandon interaktivt till skapa och köra skript.
+Du kan skriva kommandon i Kommandotolken för PowerShell för att identifiera de kommandon som utför en uppgift.
+Sedan kan du spara dessa kommandon i en avskrift eller en historik innan kopiera dem till en fil för användning som ett skript.

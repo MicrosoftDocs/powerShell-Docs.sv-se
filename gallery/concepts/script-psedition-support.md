@@ -2,15 +2,15 @@
 ms.date: 06/12/2017
 contributor: manikb
 keywords: galleriet, powershell, cmdlet, psget
-title: Skriptet med kompatibla versioner av PowerShell
-ms.openlocfilehash: 27b50be4e99b6c6b8fa089d1d4a436a27eeb17c9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Skriptet med kompatibla PowerShell-utgåvor
+ms.openlocfilehash: 386e65295641fb6932c13047246742531aeaec64
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219257"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093668"
 ---
-# <a name="script-with-compatible-powershell-editions"></a>Skriptet med kompatibla versioner av PowerShell
+# <a name="script-with-compatible-powershell-editions"></a>Skriptet med kompatibla PowerShell-utgåvor
 
 Från och med version 5.1 finns PowerShell i olika utgåvor som anger olika funktionsuppsättningar och plattformskompatibilitet.
 
@@ -53,16 +53,14 @@ At line:1 char:1
 ```
 
 PowerShell-galleriet användare kan hitta listan stöds på en viss version av PowerShell-skript.
-Skript utan PSEdition_Desktop och PSEditon_Core anses fungerar på PowerShell Desktop-versioner.
+Skript utan PSEdition_Desktop och PSEditon_Core anses fungera på PowerShell Desktop-versioner.
 
 ```powershell
-
 # Find scripts supported on PowerShell Desktop edition
 Find-Script -Tag PSEditon_Desktop
 
 # Find scripts supported on PowerShell Core editions
 Find-Script -Tag PSEditon_Core
-
 ```
 
 ## <a name="more-details"></a>Mer information

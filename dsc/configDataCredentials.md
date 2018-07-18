@@ -2,30 +2,30 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Alternativ för autentiseringsuppgifter i konfigurationsdata
-ms.openlocfilehash: 2c6685f3b6992537d1652f172cf926b85dd634c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 12bb8d8ce5fc4685e583e74d411b098320ac4fd4
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190051"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093685"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Alternativ för autentiseringsuppgifter i konfigurationsdata
 >Gäller för: Windows PowerShell 5.0
 
-## <a name="plain-text-passwords-and-domain-users"></a>Lösenord i klartext och domänanvändare
+## <a name="plain-text-passwords-and-domain-users"></a>Oformaterad textlösenord och domänanvändare
 
 DSC-konfigurationer som innehåller en autentiseringsuppgift utan kryptering genererar ett felmeddelande om lösenord i klartext.
 Dessutom genererar DSC en varning när du använder autentiseringsuppgifter för domänen.
-Använd nyckelorden DSC-konfiguration data för att ignorera dessa fel och varningar:
+Använda DSC-konfiguration data nyckelord för att ignorera dessa fel och varningar:
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
 > [!NOTE]
-> Lagra/överföring av okrypterade lösenord i klartext är inte säker. Du rekommenderas att säkra autentiseringsuppgifter genom att använda de tekniker som beskrivs senare i det här avsnittet.
-> Tjänsten Azure Automation DSC kan du centralt hantera autentiseringsuppgifter som ska kompileras i konfigurationer och lagras på ett säkert sätt.
-> Mer information finns i: [kompilering av DSC-konfigurationer / Inloggningstillgångar](/azure/automation/automation-dsc-compile#credential-assets)
+> Lagra/överföring av okrypterade lösenord i klartext är inte säker. Du rekommenderas att skydda autentiseringsuppgifter med hjälp av de metoder som beskrivs senare i det här avsnittet.
+> Tjänsten Azure Automation DSC kan du centralt hantera autentiseringsuppgifter för att kompileras i konfigurationer och lagras på ett säkert sätt.
+> Läs om: [kompilering av DSC-konfigurationer / Inloggningstillgångar](/azure/automation/automation-dsc-compile#credential-assets)
 
-Följande är ett exempel på att skicka autentiseringsuppgifter med oformaterad text:
+Följande är ett exempel på Skicka autentiseringsuppgifter med oformaterad text:
 
 ```powershell
 #Prompt user for their credentials
@@ -127,18 +127,18 @@ Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 
 ## <a name="handling-credentials-in-dsc"></a>Hantering av autentiseringsuppgifter i DSC
 
-Kör som-resurser för DSC-konfigurationen `Local System` som standard.
-Men vissa resurser behöver autentiseringsuppgifter, till exempel när den `Package` resurs ska installera programvara under ett visst användarkonto.
+DSC-konfiguration resurser kör som- `Local System` som standard.
+Men vissa resurser måste autentiseringsuppgifter, till exempel när den `Package` resurs ska installera programvara under ett visst användarkonto.
 
-Tidigare resurser används en hårdkodad `Credential` egenskapsnamn för att hantera detta.
-WMF 5.0 lagt till en automatisk `PsDscRunAsCredential` egenskap för alla resurser.
+Resurser som tidigare använde ett hårdkodat `Credential` egenskapsnamn ska hantera detta.
+WMF 5.0 har lagts till en automatisk `PsDscRunAsCredential` egenskap för alla resurser.
 Information om hur du använder `PsDscRunAsCredential`, se [kör DSC med autentiseringsuppgifterna för användaren](runAsUser.md).
-Nyare resurser och anpassade resurser kan använda automatiska egenskapen i stället för att skapa egna egenskapen för autentiseringsuppgifter.
+Nyare resurser och anpassade resurser kan använda den här automatiska egenskapen istället för att skapa sina egna egenskapen för autentiseringsuppgifter.
 
 > [!NOTE]
-> Designen för vissa resurser som använder olika autentiseringsuppgifter för en specifik orsak och de har sina egna autentiseringsuppgifter egenskaper.
+> Design av vissa resurser är använder olika autentiseringsuppgifter för en särskild anledning och de har sina egna autentiseringsegenskaper.
 
-För att hitta tillgängliga autentiseringsuppgifter egenskaperna för en resurs använder antingen `Get-DscResource -Name ResourceName -Syntax` eller Intellisense i ISE (`CTRL+SPACE`).
+För att hitta tillgängliga autentiseringsuppgifterna egenskaperna för en resurs använder antingen `Get-DscResource -Name ResourceName -Syntax` eller Intellisense i ISE (`CTRL+SPACE`).
 
 ```powershell
 PS C:\> Get-DscResource -Name Group -Syntax
@@ -156,26 +156,26 @@ Group [String] #ResourceName
 }
 ```
 
-Det här exemplet används en [grupp](https://msdn.microsoft.com/powershell/dsc/groupresource) resurs från den `PSDesiredStateConfiguration` inbyggda DSC-Resursmodul.
+Det här exemplet används en [grupp](https://msdn.microsoft.com/powershell/dsc/groupresource) resurs från den `PSDesiredStateConfiguration` inbyggda modulen för DSC-resurs.
 Det kan skapa lokala grupper och lägga till eller ta bort medlemmar.
-Accepteras både den `Credential` egenskap och automatiskt `PsDscRunAsCredential` egenskapen.
-Resursen som endast använder dock den `Credential` egenskapen.
+Den accepterar både den `Credential` egenskap och automatiskt `PsDscRunAsCredential` egenskapen.
+Resursen endast använder dock den `Credential` egenskapen.
 
-Mer information om den `PsDscRunAsCredential` egenskap, se [kör DSC med autentiseringsuppgifterna för användaren](runAsUser.md).
+Mer information om den `PsDscRunAsCredential` egenskap, finns i [kör DSC med autentiseringsuppgifterna för användaren](runAsUser.md).
 
-## <a name="example-the-group-resource-credential-property"></a>Exempel: Gruppresurser Credential-egenskapen
+## <a name="example-the-group-resource-credential-property"></a>Exempel: Gruppresurs Credential-egenskapen
 
-DSC körs under `Local System`, så den redan har behörighet att ändra lokala användare och grupper.
-Om den medlem som lagts till är ett lokalt konto, krävs inga autentiseringsuppgifter.
-Om den `Group` resurs lägger till ett domänkonto till den lokala gruppen och sedan autentiseringsuppgifter krävs.
+DSC körs under `Local System`, så att den redan har behörighet att ändra lokala användare och grupper.
+Om medlemmen har lagts till är ett lokalt konto, krävs inga autentiseringsuppgifter.
+Om den `Group` resurs lägger till ett nytt konto i den lokala gruppen och sedan en autentiseringsuppgift är nödvändigt.
 
 Anonyma frågor till Active Directory är inte tillåtna.
-Den `Credential` -egenskapen för den `Group` resursen är domänkontot som används för att fråga Active Directory.
-För de flesta ändamål det kan bero ett allmänt användarkonto som standard användarna kan *läsa* de flesta objekt i Active Directory.
+Den `Credential` egenskapen för den `Group` resurs är det domänkonto som används för att fråga Active Directory.
+För de flesta ändamål detta kan bero på ett generiskt användarkonto att som standard kan användare *läsa* de flesta objekt i Active Directory.
 
 ## <a name="example-configuration"></a>Exempel på konfiguration
 
-Följande exempelkod använder DSC för att fylla i en lokal grupp med domän:
+Följande exempelkod använder DSC för att fylla i en lokal grupp med en domänanvändare:
 
 ```powershell
 Configuration DomainCredentialExample
@@ -201,7 +201,7 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred
 ```
 
-Den här koden genereras ett fel och ett varningsmeddelande:
+Den här koden genererar ett fel och ett varningsmeddelande:
 
 ```
 ConvertTo-MOFInstance : System.InvalidOperationException error processing
@@ -225,16 +225,16 @@ for node 'localhost'.
 ```
 
 Det här exemplet har två problem:
-1. Ett fel som förklarar att lösenord i klartext inte rekommenderas
-2. En varning om att du inte använder en domän-autentiseringsuppgift
+1. Felmeddelandet förklarar att lösenord i klartext inte rekommenderas
+2. En varning om att du inte använder en domänautentiseringsuppgift
 
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
-Det första felmeddelandet har en URL till dokumentation.
-Den här länken förklarar hur du krypterar lösenord med en [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) struktur och ett certifikat.
-Mer information om certifikat och DSC [läsa inlägget](http://aka.ms/certs4dsc).
+Det första felmeddelandet har en URL med dokumentation.
+Den här länken förklarar hur du krypterar lösenord med hjälp av en [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) struktur och ett certifikat.
+Mer information om certifikat och DSC [Läs det här inlägget](http://aka.ms/certs4dsc).
 
-Om du vill framtvinga ett lösenord i oformaterad text resursen kräver den `PsDscAllowPlainTextPassword` nyckelord i konfigurationsdata avsnittet på följande sätt:
+Om du vill framtvinga ett lösenord i oformaterad text, resursen kräver den `PsDscAllowPlainTextPassword` nyckelord i konfigurationsdata avsnittet på följande sätt:
 
 ```powershell
 Configuration DomainCredentialExample
@@ -270,26 +270,24 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
 > [!NOTE]
-> `NodeName` Det går inte att vara lika med asterisk, en specifik nod-namn är obligatoriskt.
+> `NodeName` Det går inte att vara lika med asterisk, en viss nod-namn är obligatoriskt.
 
 **Microsoft avråder för att undvika lösenord på grund av en stor säkerhetsrisk.**
 
-Ett undantag är när du använder tjänsten Azure Automation DSC, eftersom data lagras alltid krypterad (under överföring i vila i tjänsten och i vila på noden).
-
 ## <a name="domain-credentials"></a>Autentiseringsuppgifter för domänen
 
-Kör exempel konfigurationsskript igen (med eller utan kryptering) fortfarande genererar den varning som använder en domän-konto för en autentiseringsuppgift inte rekommenderas.
-Med ett lokalt konto eliminerar eventuell exponering av autentiseringsuppgifter för domänen som kan användas på andra servrar.
+Som exempel konfigurationsskript igen (med eller utan kryptering), fortfarande att genererar varning som använder en domän-konto för en autentiseringsuppgift inte rekommenderas.
+Med ett lokalt konto eliminerar potentiell exponering av autentiseringsuppgifter för domänen som kan användas på andra servrar.
 
 **När du använder autentiseringsuppgifter med DSC-resurser, föredrar du ett lokalt konto under ett domänkonto när det är möjligt.**
 
-Om det finns en '\' eller ”@” i den `Username` egenskapen för autentiseringsuppgifter och sedan DSC ska behandla det som ett domänkonto.
-Det finns ett undantag för ”localhost”, ”127.0.0.1” och ”:: 1” i den som domändel av användarnamnet.
+Om det finns en ”\' eller ' @' i den `Username` egenskapen för autentiseringsuppgifter och sedan DSC behandlar det som ett domänkonto.
+Det finns ett undantag för ”localhost”, ”127.0.0.1” och ”:: 1” i domändelen i användarnamnet.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
-I DSC `Group` resurs-exemplet ovan, frågar Active Directory-domänen *kräver* ett domänkonto.
-I det här fallet lägger du till den `PSDscAllowDomainUser` egenskapen till den `ConfigurationData` blockera på följande sätt:
+I DSC `Group` resursexempel ovan, frågar ett Active Directory-domän *kräver* ett domänkonto.
+I det här fallet lägger du till den `PSDscAllowDomainUser` egenskap enligt den `ConfigurationData` blockera på följande sätt:
 
 ```powershell
 $cd = @{
@@ -304,4 +302,4 @@ $cd = @{
 }
 ```
 
-Nu skapar skriptet configuration MOF-filen med några fel eller varningar.
+Nu genererar konfigurationsskriptet MOF-filen med några fel eller varningar.

@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 66db78cfb136f22cad9078d7113dad085ee667a5
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e4910e95a417da61661aaddd98b2dc7da9f98a3d
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188436"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093726"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>Skapa och ansluta till en JEA-slutpunkt
-Om du vill skapa en JEA-slutpunkt som du behöver skapa och registrera en särskilt konfigurerade PowerShell-Session konfigurationsfil, vilken kan genereras med den **ny PSSessionConfigurationFile** cmdlet.
+Om du vill skapa en JEA-slutpunkt, måste du skapa och registrera en speciellt konfigurerad PowerShell-Session konfigurationsfil, vilken kan genereras med den **New PSSessionConfigurationFile** cmdlet.
 
 ```powershell
 New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
@@ -53,20 +53,20 @@ RoleDefinitions = @{
 
 }
 ```
-När du skapar en JEA slutpunkt måste du ange följande parametrar för kommandot (och motsvarande nycklar i filen):
+När du skapar en JEA-slutpunkt, måste du ange följande parametrar för kommandot (och motsvarande nycklar i filen):
 1.  SessionType till RestrictedRemoteServer
 2.  RunAsVirtualAccount till **$true**
-3.  TranscriptPath till katalogen där ”över axel” betyg sparas efter varje session
-4.  RoleDefinitions till en hash-tabell som definierar vilka grupper som har åtkomst till vilka ”roll funktioner”.  Det här fältet definierar **som** kan göra **vad** på den här slutpunkten.   Rollen funktioner är särskilda filer som förklaras inom kort.
+3.  TranscriptPath till katalogen där ”över axeln” avskrifter ska sparas efter varje session
+4.  RoleDefinitions till en hash-tabell som definierar vilka grupper som har åtkomst till vilka ”rollfunktioner”.  Det här fältet definierar **som** kan göra **vad** på den här slutpunkten.   Rollfunktioner är särskilda filer som förklaras inom kort.
 
 
-Fältet RoleDefinitions definierar vilka grupper som hade tillgång till vilka funktioner i rollen.  En roll-funktion är en fil som definierar en uppsättning funktioner som kan användas för anslutning av användare.  Du kan skapa rollen funktioner med den **ny PSRoleCapabilityFile** kommando.
+Fältet RoleDefinitions definierar vilka grupper som hade tillgång till vilka rollfunktioner.  En roll-funktionen är en fil som definierar en uppsättning funktioner som ska visas för användarna att ansluta.  Du kan skapa rollfunktioner med den **New PSRoleCapabilityFile** kommando.
 
 ```powershell
 New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
-Detta skapar en mall för rollen funktion som ser ut så här:
+Detta genererar en mall för roll-funktion som ser ut så här:
 ```
 @{
 
@@ -128,22 +128,24 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
 }
-
 ```
-Rollen funktioner måste sparas som en giltig PowerShell-modul i en katalog med namnet ”RoleCapabilities” för att användas av en JEA sessionskonfiguration. En modul kan ha flera rollen funktionsfiler, om så önskas.
 
-För att börja konfigurera vilka cmdlets, funktioner, alias och skript som en användare kan komma åt när du ansluter till en session JEA, att lägga till dina egna regler i filen rollen kapaciteten att följa de kommenterade ut mallar. För en djupare inblick i hur du kan konfigurera rollen funktioner checka ut hela [upplevelse guiden](http://aka.ms/JEA).
+För att användas av en JEA-sessionskonfiguration måste rollfunktioner sparas som en giltig PowerShell-modul i en katalog med namnet ”RoleCapabilities”. En modul kan ha flera funktionsfiler för rollen, om så önskas.
 
-Slutligen, när du är klar med att anpassa sessionskonfigurationen och relaterade funktioner för rollen registrera den här konfigurationen och skapa slutpunkten genom att köra **Register-PSSessionConfiguration**.
+Börja konfigurera vilka cmdlet: ar, funktioner, alias och skript som en användare kan komma åt när du ansluter till en JEA-session genom att lägga till dina egna regler till filen roll funktionen efter den kommenterade in mallar. En djupare inblick i hur du kan konfigurera rollfunktioner finns i fullständiga [uppleva guiden](http://aka.ms/JEA).
+
+Slutligen, när du är klar med att anpassa sessionskonfigurationen och relaterade rollfunktioner registrera den här sessionskonfigurationen och skapa slutpunkten genom att köra **Register-PSSessionConfiguration**.
 
 ```powershell
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-## <a name="connect-to-a-jea-endpoint"></a>Ansluta till en JEA slutpunkt
-Ansluter till en slutpunkt för JEA fungerar på samma sätt som ansluter till alla andra PowerShell endpoint fungerar.  Du behöver bara ange namnet på slutpunkten JEA som ”ConfigurationName”-parametern för **New-PSSession**, **Invoke-Command**, eller **Enter-PSSession**.
+## <a name="connect-to-a-jea-endpoint"></a>Ansluta till en JEA-slutpunkt
+
+Ansluta till en JEA-slutpunkt fungerar på samma sätt som ansluter till alla andra PowerShell-endpoint-fungerar.  Du behöver bara ange din JEA-slutpunkt-namn som ”ConfigurationName”-parametern för **New-PSSession**, **Invoke-Command**, eller **Enter-PSSession**.
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
-När du har anslutit till sessionen JEA begränsas du kör kommandon godkända av roll-funktionerna som du har åtkomst till. Ett fel inträffar om du försöker köra ett kommando som inte är tillåtet för din roll.
+
+När du har anslutit till JEA-session kan begränsas du kör kommandon godkänd av roll-funktionerna som du har åtkomst till. Ett fel inträffar om du försöker köra alla kommandon som inte är tillåten för din roll.

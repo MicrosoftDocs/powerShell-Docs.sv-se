@@ -3,30 +3,30 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: galleriet, powershell, cmdlet, psget
 title: Förhandsversioner av skript
-ms.openlocfilehash: 5b93da418b836d537491d3f1e4e29fa2e61f2f77
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7d4cec9d2b4ee5ad0b19ad5d9c68bb68747abd57
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188572"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093856"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Förhandsversioner av skript
 
-Från och med version 1.6.0 PowerShellGet och PowerShell-galleriet ger stöd för märkning versioner som är större än 1.0.0 som en förhandsversion. Innan den här funktionen har förhandsversionen begränsad till att ha en version som börjar med 0. Syftet med dessa funktioner är att ger större stöd för [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versionshantering konventionen utan att bryta bakåtkompatibilitet kompatibilitet med PowerShell version 3 och senare, eller befintliga versioner av PowerShellGet. Det här avsnittet fokuserar på skript-specifika funktioner. Motsvarande funktionerna för moduler är i den [förhandsversion modulversioner](module-prerelease-support.md) avsnittet. Med hjälp av dessa funktioner, kan utgivare identifiera ett skript som version 2.5.0-alpha och senare använda en produktionsklara version 2.5.0 som ersätter förhandsversionen.
+Från och med version 1.6.0 eller senare, ger PowerShellGet och PowerShell-galleriet stöd för taggning versioner som är större än 1.0.0 som en förhandsversion. Innan den här funktionen förhandsversioner objekt som var begränsade till att ha en version som börjar med 0. Målet med de här funktionerna är att ge bättre support för [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versionshantering konvention utan att spräcka bakåtkompatibilitet kompatibilitet med PowerShell versioner 3 och senare, eller befintliga versioner av PowerShellGet. Det här avsnittet fokuserar på skript-specifika funktioner. Motsvarande funktioner för moduler finns i den [förhandsversion modulversioner](module-prerelease-support.md) avsnittet. Med dessa funktioner kan kan utgivare identifiera ett skript som version 2.5.0-alpha och senare använda en produktionsklar version 2.5.0 som ersätter förhandsversionen.
 
-På en hög nivå förhandsversionen skript bland annat:
+På en hög nivå omfattar förhandsversioner skript-funktioner:
 
-- Lägger till ett PrereleaseString suffix Versionsträngen i manifestet skript. Om skripten har publicerats till PowerShell-galleriet, dessa data extraheras från manifestet, och används för att identifiera förhandsversionen objekt.
-- Hämta förhandsversionen objekt kräver att lägga till AllowPrerelease - flaggan i PowerShellGet kommandona Sök-skript, installationsskriptet, Update-skript och spara-skript. Om flaggan inte anges visas inte förhandsversionen objekt.
-- Skript-versioner som visas av Sök-skriptet, Get-InstalledScript och i PowerShell-galleriet visas med PrereleaseString som 2.5.0-alpha.
+- Lägga till ett PrereleaseString suffix till Versionsträngen i skriptet manifestet. Om skripten har publicerats till PowerShell-galleriet, dessa data extraheras från manifestet, och används för att identifiera objekt som förhandsversioner.
+- Hämta förhandsversionen objekt kräver att lägga till AllowPrerelease - flaggan i PowerShellGet-kommandon Find-Script installationsskriptet, Update-skript och spara skriptet. Om flaggan inte anges, visas inte förhandsversioner objekt.
+- Skript-versioner som visas av Find-Script, Get-InstalledScript, och i PowerShell-galleriet visas med PrereleaseString, som i 2.5.0-alpha.
 
-Information om funktionerna finns nedan.
+Information om funktionerna som ingår nedan.
 
 ## <a name="identifying-a-script-version-as-a-prerelease"></a>Identifierar en skriptversion som en förhandsversion
 
-PowerShellGet stöd för förhandsversioner är enklare än moduler för skript. Skriptet versionshantering stöds endast av PowerShellGet, så att det finns inga problem på grund av att lägga till förhandsversionen strängen. Lägga till ett förhandsversionen suffix till en korrekt formaterad versionssträng i skriptmetadata för för att identifiera ett skript i PowerShell-galleriet som en förhandsversion.
+PowerShellGet-stöd för förhandsversioner är enklare än moduler för skript. Skriptet versionshantering stöds endast av PowerShellGet, så det finns inga kompatibilitetsproblem på grund av att lägga till strängen som förhandsversioner. Lägga till ett förhandsversioner suffix till en korrekt formaterad versionssträng i skriptmetadata för att identifiera ett skript i PowerShell-galleriet som en förhandsversion.
 
-En exempeldelen av ett manifest för skript med en förhandsversion ser ut som följande:
+En exempel-avsnittet i ett skript-manifest med en förhandsversion som ser ut så här:
 
 ```powershell
 <#PSScriptInfo
@@ -38,31 +38,30 @@ En exempeldelen av ett manifest för skript med en förhandsversion ser ut som f
 ...
 
 #>
-
 ```
 
-Om du vill använda förhandsversionen suffix måste Versionsträngen uppfylla följande krav:
+Om du vill använda ett förhandsversioner suffix måste Versionsträngen uppfylla följande krav:
 
-- Ett förhandsversionen suffix kan endast anges när versionen är 3 segment för Major.Minor.Build.
-  Detta justerar med SemVer v1.0.0
-- Suffixet förhandsversionen är en sträng som börjar med ett bindestreck och får bestå av alfanumeriska ASCII-tecken [0-9A-a - z-]
-- Endast SemVer v1.0.0 förhandsversionen strängar stöds just nu, så suffixet förhandsversionen __får inte__ innehålla någon punkt eller + [. +], som är tillåtna i SemVer 2.0
+- Förhandsversioner suffix kan bara anges när Version är 3 segment för Major.Minor.Build.
+  Detta ligger i linje med SemVer v1.0.0
+- Förhandsversioner suffixet är en sträng som börjar med ett bindestreck och får bestå av alfanumeriska ASCII-tecken [0-9A-a - z-]
+- Endast SemVer v1.0.0 förhandsversioner strängar som stöds för tillfället så förhandsversioner suffixet __får inte__ innehålla antingen punkt eller + [. +], som är tillåtna i SemVer 2.0
 - Exempel på PrereleaseString strängar som stöds är:-alfa, -á1,-BETA, -update20171020
 
-__Förhandsversionen versionshantering inverkan på Sortera ordning och installation mappar__
+__Förhandsversioner versionshantering påverkan på sortera ordningen och installationen mappar__
 
-Sorteringsordningen ändras när du använder en förhandsversion, vilket är viktigt när du publicerar till PowerShell-galleriet, och när du installerar skript med hjälp av PowerShellGet kommandon. Om två skript versioner med versionsnumret finns, sorteringsordningen är baserad på strängdelen efter bindestreck. Så, version 2.5.0-alpha är mindre än 2.5.0-beta, vilket är mindre än 2.5.0-gamma. Om två skript har samma versionsnummer och bara har en PrereleaseString skriptet __utan__ suffixet förhandsversionen antas vara klar för produktion-version och sorteras som en högre version än förhandsutgåvan version. Exempelvis när jämföra släpper 2.5.0 och 2.5.0-beta, 2.5.0 version betraktas större av båda.
+Sorteringsordningen ändras när du använder en förhandsversion, vilket är viktigt när du publicerar PowerShell-galleriet, och när du installerar skript med hjälp av PowerShellGet-kommandon. Om två skript versioner med versionsnumret finns, sorteringsordningen är baserad på strängdelen följa bindestreck. Så, version 2.5.0-alpha är mindre än 2.5.0-beta, vilket är mindre än 2.5.0-gamma. Om två skript har samma versionsnummer och bara har en PrereleaseString skriptet __utan__ förhandsversioner suffixet antas vara produktionsklar version och kommer att sorteras som en högre version än förhandsutgåvan version. Till exempel när jämföra släpper 2.5.0 och 2.5.0-beta, 2.5.0 version betraktas det som är störst av två.
 
-När du publicerar till PowerShell-galleriet som standard måste versionen av skriptet publiceras ha en högre version än tidigare publicerade versionen som finns i PowerShell-galleriet. En utgivare kan uppdatera version 2.5.0-alpha 2.5.0-beta eller med 2.5.0 (med inga förhandsversionen suffix).
+När du publicerar PowerShell-galleriet, som standard måste versionen av skriptet publiceras ha en högre version än tidigare publicerade versionen som finns i PowerShell-galleriet. Utgivare kan uppdatera version 2.5.0-alpha 2.5.0-beta eller med 2.5.0 (med inga förhandsversioner suffix).
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Söka efter och hämta förhandsversionen objekt med PowerShellGet kommandon
+## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Att söka efter och hämta förhandsversioner objekt som använder PowerShellGet-kommandon
 
-Om förhandsversionen objekt med hjälp av PowerShellGet Sök-skript, installationsskriptet, Update-skript och spara skriptkommandon kräver att lägga till flaggan - AllowPrerelease. Om - AllowPrerelease anges inkluderas förhandsversionen objekt om de finns. Om AllowPrerelease - flaggan inte anges visas inte förhandsversionen objekt.
+Ta itu med förhandsversioner objekt som använder PowerShellGet Find-Script, installationsskriptet, Update-skript och spara skriptkommandon kräver att lägga till flaggan - AllowPrerelease. Om - AllowPrerelease anges ska förhandsversioner objekt inkluderas om de finns. Om - AllowPrerelease flaggan inte anges, visas inte förhandsversioner objekt.
 
 De enda undantagen till den här i skriptkommandon PowerShellGet är Get-InstalledScript och ibland med Uninstall-skript.
 
-- Get-InstalledScript visas alltid automatiskt informationen om förhandsversionen i Versionsträngen om den finns.
-- Avinstallera skript som standard avinstalleras den senaste versionen av ett skript om __ingen version__ har angetts. Att problemet inte har ändrats. Men om en förhandsversion anges med - RequiredVersion, måste - AllowPrerelease utföras.
+- Get-InstalledScript Visa alltid automatiskt informationen om förhandsversionen i Versionsträngen om den finns.
+- Avinstallera skript som standard avinstalleras den senaste versionen av ett skript, om __ingen version__ har angetts. Som standard har inte ändrats. Men om en förhandsversion kan anges med - RequiredVersion, måste - AllowPrerelease utföras.
 
 ## <a name="examples"></a>Exempel
 
@@ -108,7 +107,7 @@ Version         Name                                Repository           Descrip
 ```
 
 Avinstallera skriptet tar bort den aktuella versionen av ett skript när - RequiredVersion inte har angetts.
-Om - RequiredVersion anges, och är en förhandsversion, måste - AllowPrerelease läggas till kommandot.
+Om - RequiredVersion har angetts och är en förhandsversion, måste - AllowPrerelease läggas till kommandot.
 
 ``` powershell
 C:\windows\system32> Get-InstalledScript TestPackage
@@ -141,10 +140,10 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.5.0.0\PSModule.psm
 
 ## <a name="more-details"></a>Mer information
 
-- [Förhandsversionen modulversioner](module-prerelease-support.md)
-- [Sök-skript](/powershell/module/powershellget/find-script)
-- [Skriptet för installationen](/powershell/module/powershellget/install-script)
-- [Spara skriptet](/powershell/module/powershellget/save-script)
-- [Skript för uppdatering](/powershell/module/powershellget/update-script)
+- [Förhandsversioner modulversioner](module-prerelease-support.md)
+- [Find-script](/powershell/module/powershellget/find-script)
+- [Install-script](/powershell/module/powershellget/install-script)
+- [Save-script](/powershell/module/powershellget/save-script)
+- [Update-script](/powershell/module/powershellget/update-script)
 - [Get-Installedscript](/powershell/module/powershellget/get-installedscript)
-- [Avinstallera skript](/powershell/module/powershellget/uninstall-script)
+- [Avinstallera-script](/powershell/module/powershellget/uninstall-script)

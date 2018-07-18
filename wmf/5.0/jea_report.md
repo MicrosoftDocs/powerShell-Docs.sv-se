@@ -1,19 +1,22 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 7982acc111e95b4167f948314f176d53f39d3620
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2fb2e4b0c40322b5ec78fabede22a7e3ecbbd2aa
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218730"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093770"
 ---
 # <a name="reporting-on-jea"></a>Rapportering i JEA
-Du kan använda för att rapportera om konfigurationen av JEA tillstånd:
-1.  **Get-PSSessionConfiguration** returnera en lista över alla registrerade slutpunkter på en viss dator.
-2.  **Get-PSSessionCapability** för att rapportera om funktionerna som har en viss användare på en viss slutpunkt.
+
+Du kan använda för att rapportera om statusen hos din JEA-konfiguration:
+
+1. **Get-PSSessionConfiguration** returnera en lista över alla registrerade slutpunkter på en viss dator.
+1. **Get-PSSessionCapability** för att rapportera om funktionerna som har en viss användare på en viss slutpunkt.
 
 Här är ett exempel på **Get-PSSessionCapability**:
+
 ```powershell
 Get-PSSessionCapability -ConfigurationName Maintenance -Username "CONTOSO\JohnDoe"
 
@@ -35,10 +38,8 @@ Function        Measure-Object
 Function        Out-Default
 Function        Select-Object
 Cmdlet          Restart-Service                                    3.0.0.0 Microsof...
-
-
 ```
 
-Rapportera om den _åtgärder_ användare tog under en session JEA, kan du:
-1. Aktivera ”over-det axel” betyg för denna JEA slutpunkt och se katalogen betyg för en fullständig logg över åtgärder för varje användare
-2. Aktivera loggning för PowerShell-modulen och inspektera händelseloggarna PowerShell.
+Att rapportera om den _åtgärder_ användare tog i en JEA-session, kan du:
+1. Aktivera ”over-the axeln” avskrifter för denna JEA-slutpunkt och en fullständig logg över varje användares åtgärder finns i katalogen avskrift
+2. Aktivera loggning för PowerShell-modulen och Granska händelseloggarna för PowerShell.

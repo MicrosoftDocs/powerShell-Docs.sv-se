@@ -4,12 +4,12 @@ keywords: PowerShell cmdlet
 ms.date: 12/12/2016
 title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: a5e55611ac59ff5bfecee59ba2b7d7669d08f840
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: a8904ac36f7fd9fe3c649ad4ca709a98c31b63c3
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893747"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094236"
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -191,8 +191,10 @@ Denna cmdlet returnerar den ett auktorisering regelobjekt.
 
 ### <a name="example-1"></a>EXEMPEL 1
 
-Det här exemplet tilldelar åtkomst till sessionskonfigurationen *PSWAEndpoint*, ett begränsat körningsutrymme på *srv2* för användare i den *SMAdmins* grupp. \
-**Obs**: datornamnet måste vara ett fullständigt kvalificerat domännamn (FQDN). Administratörer definiera ett begränsat sessionskonfiguration eller körningsutrymmen, vilket är ett begränsat antal cmdletar och uppgifter som slutanvändarna kan köras. Definiera ett begränsat körningsutrymme kan förhindra användare från att komma åt andra datorer som inte i den tillåtna Windows PowerShell® körningsutrymmen, vilket ger en säkrare anslutning. Mer information om sessionskonfigurationer finns i [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) eller [installera och använda Windows PowerShell-webbåtkomst](../install-and-use-windows-powershell-web-access.md).
+Det här exemplet tilldelar åtkomst till sessionskonfigurationen _PSWAEndpoint_, ett begränsat körningsutrymme på _srv2_ för användare i den _SMAdmins_ grupp.
+
+> [!NOTE]
+> Datornamnet måste vara ett fullständigt kvalificerat domännamn (FQDN). Administratörer definiera ett begränsat sessionskonfiguration eller körningsutrymmen, vilket är ett begränsat antal cmdletar och uppgifter som slutanvändarna kan köras. Definiera ett begränsat körningsutrymme kan förhindra användare från att komma åt andra datorer som inte i den tillåtna Windows PowerShell® körningsutrymmen, vilket ger en säkrare anslutning. Mer information om sessionskonfigurationer finns i [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) eller [installera och använda Windows PowerShell-webbåtkomst](../install-and-use-windows-powershell-web-access.md).
 
 ```PowerShell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint
@@ -240,8 +242,10 @@ Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1
 ### <a name="example-6"></a>EXEMPEL 6
 
 Det här exemplet tillåter alla användare åtkomst till alla slutpunkter på alla datorer.
-Detta inaktiverar i stort sett auktoriseringsregler. \
-**Obs**: användning av den `*` jokertecknet rekommenderas inte för distributioner av känsliga och bör endast för testmiljöer eller används i distributioner där säkerheten minskas.
+Detta inaktiverar i stort sett regler.
+
+> [!NOTE]
+> Användning av den `*` jokertecknet rekommenderas inte för distributioner av känsliga och bör endast för testmiljöer eller används i distributioner där säkerheten minskas.
 
 ````PowerShell
 Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *

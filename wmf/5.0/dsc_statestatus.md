@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 0e8d0cb1e4afa7bc791d45bfb0b981654cb09ed5
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: b279d388754c5ee42215f21317f7b3d8089b7608
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892577"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093889"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Enhetlig och konsekvent tillstånds- och statusrepresentation
 
@@ -15,11 +15,11 @@ Ett antal förbättringar har gjorts i den här versionen för arbetsflöden som
 En representation av LCM-tillstånd och status för DSC revisited och enhetlig enligt följande regler:
 
 1. Notprocessed resource påverkar inte LCM-tillstånd och status för DSC.
-2. LCM stoppa ytterligare bearbetningsresurser när den stöter på en resurs som begär omstart.
-3. En resurs som begär omstart är inte i önskat läge tills omstart faktiskt händer.
-4. Efter en resurs som misslyckas, ser till att MGM bearbeta ytterligare resurser så länge de inte är beroende av ett fel.
-5. Den övergripande statusen som returneras av `Get-DscConfigurationStatus` cmdlet är den överordnade uppsättningen status för alla resurser.
-6. PendingReboot tillståndet är en supermängd PendingConfiguration tillstånd.
+1. LCM stoppa ytterligare bearbetningsresurser när den stöter på en resurs som begär omstart.
+1. En resurs som begär omstart är inte i önskat läge tills omstart faktiskt händer.
+1. Efter en resurs som misslyckas, ser till att MGM bearbeta ytterligare resurser så länge de inte är beroende av ett fel.
+1. Den övergripande statusen som returneras av `Get-DscConfigurationStatus` cmdlet är den överordnade uppsättningen status för alla resurser.
+1. PendingReboot tillståndet är en supermängd PendingConfiguration tillstånd.
 
    I tabellen nedan visas resulterande tillstånd och status relaterade egenskaper under några vanliga scenarier.
 

@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
-title: Resurs för DSC-registret
-ms.openlocfilehash: 8819b3704fa1a61d2be5ce11c974542f48177e09
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: DSC-Registerresurser
+ms.openlocfilehash: b77710d7a6fc599949e78c17af309ad88a1a0872
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188708"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093593"
 ---
-# <a name="dsc-registry-resource"></a>Resurs för DSC-registret
+# <a name="dsc-registry-resource"></a>DSC-Registerresurser
 
 > Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Den **registret** resurs i Windows PowerShell önskad tillstånd Configuration (DSC) tillhandahåller en mekanism för att hantera registernycklar och värden på målnoden.
+Den **registret** resursen i Windows PowerShell Desired State Configuration (DSC) ger dig möjlighet att hantera registernycklar och värden på målnoden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,35 +32,22 @@ Registry [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Egenskaper
+
 |  Egenskap  |  Beskrivning   |
 |---|---|
-| Tangent| Anger sökvägen till registernyckeln som du vill se till att ett visst tillstånd. Den här sökvägen måste innehålla strukturen.|
-| Värdenamn| Anger namnet på registervärdet. Ange den här egenskapen om du vill lägga till eller ta bort en registernyckel, en tom sträng utan att ange ValueType eller ValueData. Om du vill ändra eller ta bort en registernyckel standardvärdet, anger du den här egenskapen som en tom sträng när du anger också ValueType eller ValueData.|
-| Se till att| Anger om nyckel och värde finns. Ange egenskapen ”aktuella” för att säkerställa att de gör. Ange egenskapen till ”saknas” för att säkerställa att de inte finns. Standardvärdet är ”saknas”.|
-| Force| Om den angivna registernyckeln finns, __kraft__ skriver över den med det nya värdet. Om du tar bort en registernyckel med undernycklar, det måste vara __$true__|
-| Hex| Anger om data ska anges i hexadecimalt format. Om anges visas värdedata DWORD/QWORD i hexadecimalt format. Gäller inte för andra typer. Standardvärdet är __$false__.|
-| dependsOn| Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis __ResourceName__ och dess typ är __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
+| Tangent| Anger sökvägen till registernyckeln som du vill se till att ett visst tillstånd. Den här sökvägen måste innehålla hive.|
+| Värdenamn| Anger namnet på registervärdet. Om du vill lägga till eller ta bort en registernyckel, anger du den här egenskapen som en tom sträng utan att ange ValueType eller ValueData. Om du vill ändra eller ta bort en registernyckel standardvärdet, anger du den här egenskapen som en tom sträng när du anger också ValueType eller ValueData.|
+| Se till att| Anger om nyckeln och värdet finns. Säkerställ att de gör det genom att ange egenskapen ”aktuella”. För att säkerställa att de inte finns, ange egenskapen till ””. Standardvärdet är ”tillgänglig”.|
+| Force| Om den angivna registernyckeln finns, **kraft** skrivs över med det nya värdet. Om du tar bort en registernyckel med undernycklar, det här måste vara **$true** |
+| Hex| Anger om data anges i hexadecimalt format. Om anges visas värdedata DWORD/QWORD i hexadecimalt format. Gäller inte för andra typer. Standardvärdet är **$false**.|
+| DependsOn| Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
 | ValueData| Data för registervärdet.|
-| Värdetyp| Anger vilken typ av värdet. Typerna som stöds är:
-<ul><li>Sträng (REG_SZ)</li>
-
-
-<li>Binär (REG-BINARY)</li>
-
-
-<li>DWORD 32-bitars (REG_DWORD)</li>
-
-
-<li>Qword 64-bitars (REG_QWORD)</li>
-
-
-<li>Multisträng (REG_MULTI_SZ)</li>
-
-
-<li>Utbyggbara sträng (REG_EXPAND_SZ)</li></ul>
+| Värdetyp| Anger vilken typ av värdet. Typer som stöds är: sträng (REG_SZ), Binary (REG-BINARY), Dword 32-bitars (REG_DWORD), Qword 64-bitars (REG_QWORD), multisträng (REG_MULTI_SZ), utbyggbara sträng (REG_EXPAND_SZ) |
 
 ## <a name="example"></a>Exempel
-Det här exemplet ser till att det finns en nyckel med namnet ”ExampleKey” i den **HKEY\_lokala\_datorn** hive.
+
+Det här exemplet ser du till att det finns en nyckel med namnet ”ExampleKey” i den **HKEY\_lokala\_datorn** hive.
+
 ```powershell
 Configuration RegistryTest
 {
@@ -74,5 +61,5 @@ Configuration RegistryTest
 }
 ```
 
->**Obs:** ändra en registerinställning i den **HKEY\_aktuella\_användaren** hive kräver att konfigurationen körs med autentiseringsuppgifterna för användaren i stället för som system.
->Du kan använda den **PsDscRunAsCredential** att ange autentiseringsuppgifter för konfigurationen. Ett exempel finns [kör DSC med autentiseringsuppgifterna för användaren](runAsUser.md)
+> [!NOTE]
+> Ändra en registerinställning i den **HKEY\_aktuella\_användaren** hive kräver att konfigurationen körs med autentiseringsuppgifterna för användaren, i stället för systemet. Du kan använda den **PsDscRunAsCredential** egenskapen att ange autentiseringsuppgifter för konfigurationen. Ett exempel finns i [kör DSC med autentiseringsuppgifterna för användaren](runAsUser.md).
