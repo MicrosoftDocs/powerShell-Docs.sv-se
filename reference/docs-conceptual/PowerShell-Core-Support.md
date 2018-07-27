@@ -48,7 +48,7 @@ Plattformar som anges som `Experimental` inte stöds officiellt, men är tillgä
 | Debian 8.7 + och 9                                | Stöds   | Stöds   |
 | CentOS 7                                          | Stöds   | Stöds   |
 | Red Hat Enterprise Linux 7                        | Stöds   | Stöds   |
-| OpenSUSE 42.2                                     | Stöds   | Stöds   |
+| OpenSUSE 42.3                                     | Stöds   | Stöds   |
 | Fedora 27                                         | Stöds   | Stöds   |
 | Fedora 28                                         |             | Stöds   |
 | macOS 10.12 +                                      | Stöds   | Stöds   |
