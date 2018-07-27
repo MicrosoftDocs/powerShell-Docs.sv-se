@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-Paketresurs
-ms.openlocfilehash: 3046ba7d57776a996a0b917348a0e863db6cd0c8
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 9285df71a303c9a53dd50d450272575a64e962e7
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093811"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268678"
 ---
 # <a name="dsc-package-resource"></a>DSC-Paketresurs
 
-> Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 Den **paketet** resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att installera eller avinstallera paket, som till exempel Windows Installer och setup.exe paket på målnoden.
 
@@ -34,8 +34,8 @@ Package [string] #ResourceName
 
 ## <a name="properties"></a>Egenskaper
 
-|  Egenskap  |  Beskrivning   |
-|---|---|
+| Egenskap | Beskrivning |
+| --- | --- |
 | Namn| Anger namnet på paketet som du vill se till att ett visst tillstånd.|
 | Sökväg| Anger sökvägen där paketet finns.|
 | productId| Anger produkt-ID som unikt identifierar paketet.|
@@ -43,7 +43,7 @@ Package [string] #ResourceName
 | Autentiseringsuppgifter| Ger åtkomst till paketet på en fjärransluten källa. Den här egenskapen används inte för att installera paketet. Paketet installeras alltid på det lokala systemet.|
 | Se till att| Anger om paketet har installerats. Ange den här egenskapen till ”inte” för att kontrollera att paketet inte har installerats (eller avinstallera paketet om det är installerat). Ange den till ”Visa” (standardvärdet) för att säkerställa att paketet har installerats.|
 | LogPath| Anger den fullständiga sökvägen där du vill att providern ska spara en loggfil för att installera eller avinstallera paketet.|
-| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för den här egenskapen är ”DependsOn =” [ ResourceType] ResourceName ”''.|
+| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
 | Returkod| Anger den förväntade kod. Om den faktiska returkod matchar inte det förväntade värdet som anges här kan ett fel returneras i konfigurationen.|
 
 ## <a name="example"></a>Exempel

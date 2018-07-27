@@ -2,12 +2,12 @@
 ms.date: 06/20/2018
 keywords: DSC, powershell, konfiguration, installation
 title: DSC PackageManagement resurs
-ms.openlocfilehash: 281aee13eb005f00b23c97870eaefaa332d9c232
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892509"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268100"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement resurs
 
@@ -39,8 +39,8 @@ PackageManagement [string] #ResourceName
 
 ## <a name="properties"></a>Egenskaper
 
-|  Egenskap  |  Beskrivning   |
-|---|---|
+| Egenskap | Beskrivning |
+| --- | --- |
 | Namn| Anger namnet på paketet installeras eller avinstalleras.|
 | AdditionalParameters| Providern specifika hashtabell med parametrar som skulle skickas till `Get-Package -AdditionalArguments`. Du kan exempelvis skicka ytterligare parametrar som målsökväg för NuGet-providern.|
 | Se till att| Anger om paketet ska installeras eller avinstalleras.|
@@ -54,10 +54,11 @@ PackageManagement [string] #ResourceName
 ## <a name="additional-parameters"></a>Ytterligare parametrar
 
 I följande tabell visas alternativ för egenskapen AdditionalParameters.
-|  Parameter  | Beskrivning   |
-|---|---|
+
+| Parameter | Beskrivning |
+| --- | --- |
 | Målsökväg| Används av providrar, till exempel inbyggda Nuget-providern. Anger en plats där du vill att paketet installeras.|
-| InstallationPolicy| Används av providrar, till exempel inbyggda Nuget-providern. Anger om du litar på den paketkällan. En av: ”ej betrodda”, ”betrodd”.|
+| InstallationPolicy| Används av providrar, till exempel inbyggda Nuget-providern. Anger om du litar på den paketkällan. En av: `Untrusted`, `Trusted`.|
 
 ## <a name="example"></a>Exempel
 

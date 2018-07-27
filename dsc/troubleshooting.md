@@ -2,27 +2,26 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Felsöka DSC
-ms.openlocfilehash: 1e8bfdf3540e65e3be94bf6a9b04e7d3b14ff044
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 93a2f3728968882f78d4c050238d226b71c11ca5
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094076"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268202"
 ---
 # <a name="troubleshooting-dsc"></a>Felsöka DSC
 
->Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 Det här avsnittet beskrivs olika sätt att felsöka DSC när problem uppstår.
 
 ## <a name="winrm-dependency"></a>WinRM-beroende
 
-Windows PowerShell Desired State Configuration (DSC) är beroende av WinRM. WinRM är inte aktiverat som standard på Windows Server 2008 R2 och Windows 7. Kör ```Set-WSManQuickConfig```, utökade sessionen att aktivera WinRM i ett Windows PowerShell.
+Windows PowerShell Desired State Configuration (DSC) är beroende av WinRM. WinRM är inte aktiverat som standard på Windows Server 2008 R2 och Windows 7. Kör `Set-WSManQuickConfig`, utökade sessionen att aktivera WinRM i ett Windows PowerShell.
 
 ## <a name="using-get-dscconfigurationstatus"></a>Med hjälp av Get-DscConfigurationStatus
 
-Den [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet hämtar information om Konfigurationsstatus från en målnoden.
-Ett omfattande objekt returneras som innehåller översiktlig information om huruvida konfigurationen körningen lyckades eller inte. Du kan prova objektet för att identifiera information om Kör som-konfiguration:
+Den [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet hämtar information om Konfigurationsstatus från en målnoden. Ett omfattande objekt returneras som innehåller översiktlig information om huruvida konfigurationen körningen lyckades eller inte. Du kan prova objektet för att identifiera information om Kör som-konfiguration:
 
 - Alla resurser som inte
 - Alla resurser som har begärt en omstart
@@ -31,20 +30,20 @@ Ett omfattande objekt returneras som innehåller översiktlig information om hur
 
 Följande parameteruppsättningen returnerar statusinformation för den senaste konfigurationen som kör:
 
-```powershell
-Get-DscConfigurationStatus  [-CimSession <CimSession[]>]
-                            [-ThrottleLimit <int>]
-                            [-AsJob]
-                            [<CommonParameters>]
+```
+Get-DscConfigurationStatus [-CimSession <CimSession[]>]
+                           [-ThrottleLimit <int>]
+                           [-AsJob]
+                           [<CommonParameters>]
 ```
 Följande parameteruppsättningen returnerar statusinformation för alla tidigare konfigurationen körs:
 
-```powershell
-Get-DscConfigurationStatus  -All
-                            [-CimSession <CimSession[]>]
-                            [-ThrottleLimit <int>]
-                            [-AsJob]
-                            [<CommonParameters>]
+```
+Get-DscConfigurationStatus -All
+                           [-CimSession <CimSession[]>]
+                           [-ThrottleLimit <int>]
+                           [-AsJob]
+                           [<CommonParameters>]
 ```
 
 ## <a name="example"></a>Exempel
@@ -54,35 +53,36 @@ PS C:\> $Status = Get-DscConfigurationStatus
 
 PS C:\> $Status
 
-Status      StartDate               Type            Mode    RebootRequested     NumberOfResources
-------      ---------               ----            ----    ---------------     -----------------
-Failure     11/24/2015  3:44:56     Consistency     Push    True                36
+Status         StartDate                Type            Mode    RebootRequested        NumberOfResources
+------        ---------                ----            ----    ---------------        -----------------
+Failure        11/24/2015  3:44:56     Consistency        Push    True                36
 
 PS C:\> $Status.ResourcesNotInDesiredState
 
-ConfigurationName       :   MyService
-DependsOn               :
-ModuleName              :   PSDesiredStateConfiguration
-ModuleVersion           :   1.1
-PsDscRunAsCredential    :
-ResourceID              :   [File]ServiceDll
-SourceInfo              :   c:\git\CustomerService\Configs\MyCustomService.ps1::5::34::File
-DurationInSeconds       :   0.19
-Error                   :   SourcePath must be accessible for current configuration. The related file/directory is:
-                            \\Server93\Shared\contosoApp.dll. The related ResourceID is [File]ServiceDll
-FinalState              :
-InDesiredState          :   False
-InitialState            :
-InstanceName            :   ServiceDll
-RebootRequested         :   False
-ReosurceName            :   File
-StartDate               :   11/24/2015  3:44:56
-PSComputerName          :
+ConfigurationName     :    MyService
+DependsOn             :
+ModuleName            :    PSDesiredStateConfiguration
+ModuleVersion         :    1.1
+PsDscRunAsCredential  :
+ResourceID            :    [File]ServiceDll
+SourceInfo            :    c:\git\CustomerService\Configs\MyCustomService.ps1::5::34::File
+DurationInSeconds     :    0.19
+Error                 :    SourcePath must be accessible for current configuration. The related file/directory is:
+                           \\Server93\Shared\contosoApp.dll. The related ResourceID is [File]ServiceDll
+FinalState            :
+InDesiredState        :    False
+InitialState          :
+InstanceName          :    ServiceDll
+RebootRequested       :    False
+ReosurceName          :    File
+StartDate             :    11/24/2015  3:44:56
+PSComputerName        :
 ```
 
 ## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>Min skriptet inte köras: med hjälp av DSC loggar för att diagnostisera skriptfel
 
-Som alla Windows-programvara, DSC registrerar fel och händelser i [loggar](https://msdn.microsoft.com/library/windows/desktop/aa363632.aspx) som kan ses från den [Loggboken](http://windows.microsoft.com/windows/what-information-event-logs-event-viewer). Undersöka dessa loggar hjälper dig att förstå varför en viss åtgärd misslyckades och hur du förhindrar fel i framtiden. Skriva konfigurationsskript kan vara svårt för att underlätta spårning fel som du författare, använda DSC loggresurs för att spåra förloppet för din konfiguration i DSC analytiska händelseloggen.
+Som alla Windows-programvara, DSC registrerar fel och händelser i [loggar](https://msdn.microsoft.com/library/windows/desktop/aa363632.aspx) som kan ses från den [Loggboken](http://windows.microsoft.com/windows/what-information-event-logs-event-viewer).
+Undersöka dessa loggar hjälper dig att förstå varför en viss åtgärd misslyckades och hur du förhindrar fel i framtiden. Skriva konfigurationsskript kan vara svårt för att underlätta spårning fel som du författare, använda DSC loggresurs för att spåra förloppet för din konfiguration i DSC analytiska händelseloggen.
 
 ## <a name="where-are-dsc-event-logs"></a>Var finns DSC-händelseloggar?
 
@@ -92,16 +92,19 @@ Motsvarande PowerShell-cmdleten, [Get-WinEvent](https://technet.microsoft.com/li
 
 ```
 PS C:\> Get-WinEvent -LogName "Microsoft-Windows-Dsc/Operational"
+
    ProviderName: Microsoft-Windows-DSC
+
 TimeCreated                     Id LevelDisplayName Message
 -----------                     -- ---------------- -------
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-Enligt ovan DSCs primära loggnamn är **Microsoft -> Windows -> DSC** (andra log namn under Windows visas inte här kortfattat). Primärt namn läggs till Kanalnamn skapa loggnamn för fullständig. DSC-motorn skriver främst till tre typer av loggar: [drift, analytiska, loggar och felsökningsloggar](https://technet.microsoft.com/library/cc722404.aspx). Eftersom den analytiska och felsökningsloggar är inaktiverade som standard, bör du aktivera dem i Loggboken. Gör detta genom att öppna Loggboken genom att skriva Show-händelseloggen i Windows PowerShell; Alternativt klickar du på den **starta** knapp, klickar du på **Kontrollpanelen**, klickar du på **Administrationsverktyg**, och klicka sedan på **Loggboken**. På den **visa** menyn i Loggboken, klickar du på **visa analytiska loggar och felsökningsloggar**. Loggnamn för analytiska kanal är **Microsoft-Windows-Dsc/analytiska**, och debug-kanalen är **Microsoft-Windows-Dsc/Debug**. Du kan också använda den [wevtutil](https://technet.microsoft.com/library/cc732848.aspx) verktyg för att aktivera loggarna, enligt följande exempel.
+Enligt ovan DSCs primära loggnamn är **Microsoft -> Windows -> DSC** (andra log namn under Windows visas inte här kortfattat). Primärt namn läggs till Kanalnamn skapa loggnamn för fullständig. DSC-motorn skriver främst till tre typer av loggar: [drift, analytiska, loggar och felsökningsloggar](https://technet.microsoft.com/library/cc722404.aspx). Eftersom den analytiska och felsökningsloggar är inaktiverade som standard, bör du aktivera dem i Loggboken. Gör detta genom att öppna Loggboken genom att skriva Show-händelseloggen i Windows PowerShell; Alternativt klickar du på den **starta** knapp, klickar du på **Kontrollpanelen**, klickar du på **Administrationsverktyg**, och klicka sedan på **Loggboken**.
+På den **visa** menyn i Loggboken, klickar du på **visa analytiska loggar och felsökningsloggar**. Loggnamn för analytiska kanal är **Microsoft-Windows-Dsc/analytiska**, och debug-kanalen är **Microsoft-Windows-Dsc/Debug**. Du kan också använda den [wevtutil](https://technet.microsoft.com/library/cc732848.aspx) verktyg för att aktivera loggarna, enligt följande exempel.
 
 ```powershell
-wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
+wevtutil.exe set-log "Microsoft-Windows-Dsc/Analytic" /q:true /e:true
 ```
 
 ## <a name="what-do-dsc-logs-contain"></a>Vad innehåller DSC-loggarna?
@@ -118,8 +121,10 @@ Consistency engine was run successfully.
 
 DSC-händelser loggas i en viss struktur som gör att användaren att aggregera händelser från en DSC-jobb. Strukturen är följande:
 
-**Jobb-ID: \<Guid\>**
-**\<händelsemeddelande\>**
+```
+Job ID : <Guid>
+<Event Message>
+```
 
 ## <a name="gathering-events-from-a-single-dsc-operation"></a>Samla in händelser från en enda DSC-åtgärd
 
@@ -130,8 +135,8 @@ DSC-händelseloggarna innehålla händelser som genererats av olika DSC-åtgärd
  Step 1 : Enable analytic and debug DSC channels (Operational channel is enabled by default)
 ###########################################################################>
 
-wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
-wevtutil.exe set-log “Microsoft-Windows-Dsc/Debug” /q:True /e:true
+wevtutil.exe set-log "Microsoft-Windows-Dsc/Analytic" /q:true /e:true
+wevtutil.exe set-log "Microsoft-Windows-Dsc/Debug" /q:True /e:true
 
 <##########################################################################
  Step 2 : Perform the required DSC operation (Below is an example, you could run any DSC operation instead)
@@ -163,8 +168,11 @@ Count Name                      Group
 ----- ----                      -----
    48 {1A776B6A-5BAC-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
    40 {E557E999-5BA8-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
+
 PS C:\> $SeparateDscOperations[0].Group
+
    ProviderName: Microsoft-Windows-DSC
+
 TimeCreated                     Id LevelDisplayName Message
 -----------                     -- ---------------- -------
 12/2/2013 3:47:29 PM          4115 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
@@ -192,6 +200,7 @@ Alla händelser har [allvarlighetsnivåer](https://msdn.microsoft.com/library/dd
 
 ```
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.LevelDisplayName -contains "Error"}
+
 Count Name                      Group
 ----- ----                      -----
    38 {5BCA8BE7-5BB6-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
@@ -204,6 +213,7 @@ Count Name                      Group
 ```powershell
 PS C:\> $DateLatest = (Get-Date).AddMinutes(-30)
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.TimeCreated -gt $DateLatest}
+
 Count Name                      Group
 ----- ----                      -----
     1 {6CEC5B09-5BB0-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord}
@@ -211,9 +221,10 @@ Count Name                      Group
 
 ### <a name="3-messages-from-the-latest-operation"></a>3: meddelanden från den senaste åtgärden
 
-Den senaste åtgärden lagras i det första indexet för gruppen matris `$SeparateDscOperations`. Fråga gruppmeddelanden för index 0 returnerar alla meddelanden för den senaste åtgärden:
+Den senaste åtgärden lagras i det första indexet för gruppen matris `$SeparateDscOperations`.
+Fråga gruppmeddelanden för index 0 returnerar alla meddelanden för den senaste åtgärden:
 
-```powershelll
+```powershell
 PS C:\> $SeparateDscOperations[0].Group.Message
 Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} :
 Running consistency engine.
@@ -239,6 +250,7 @@ Displaying messages from built-in DSC resources:
 PS C:\> $myFailedEvent = ($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
 
 PS C:\> $myFailedEvent.Message
+
 Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} :
 DSC Engine Error :
  Error Message Current configuration does not exist. Execute Start-DscConfiguration command with -Path pa
@@ -265,13 +277,11 @@ TimeCreated                     Id LevelDisplayName Message
 
 ## <a name="using-xdscdiagnostics-to-analyze-dsc-logs"></a>Med hjälp av xDscDiagnostics att analysera DSC loggar
 
-**xDscDiagnostics** är en PowerShell-modul som består av flera funktioner som hjälper dig att analysera DSC-fel på din dator. Dessa funktioner kan hjälpa dig att identifiera alla lokala evenemang från senaste DSC-åtgärder eller DSC-händelser på fjärrdatorer (med giltiga autentiseringsuppgifter). Termen DSC-åtgärden är här används för att definiera en enda unika DSC körning från starten till dess slut. Till exempel `Test-DscConfiguration` skulle vara en separat DSC-åtgärd. På samma sätt kan alla andra cmdlets i DSC (till exempel `Get-DscConfiguration`, `Start-DscConfiguration`och så vidare) kan varje identifieras som separata DSC-åtgärder. Funktionerna beskrivs i [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics).
-Hjälp är tillgänglig genom att köra `Get-Help <cmdlet name>`.
+**xDscDiagnostics** är en PowerShell-modul som består av flera funktioner som hjälper dig att analysera DSC-fel på din dator. Dessa funktioner kan hjälpa dig att identifiera alla lokala evenemang från senaste DSC-åtgärder eller DSC-händelser på fjärrdatorer (med giltiga autentiseringsuppgifter). Termen DSC-åtgärden är här används för att definiera en enda unika DSC körning från starten till dess slut. Till exempel `Test-DscConfiguration` skulle vara en separat DSC-åtgärd. På samma sätt kan alla andra cmdlets i DSC (till exempel `Get-DscConfiguration`, `Start-DscConfiguration`och så vidare) kan varje identifieras som separata DSC-åtgärder. Funktionerna beskrivs i [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics). Hjälp är tillgänglig genom att köra `Get-Help <cmdlet name>`.
 
 ### <a name="getting-details-of-dsc-operations"></a>Hämtning av information om DSC-åtgärder
 
-Den `Get-xDscOperation` funktionen kan du hitta resultaten av DSC-åtgärder som körs på en eller flera datorer och returnerar ett objekt som innehåller insamling av händelser som genereras av varje DSC-åtgärd.
-I följande utdata, till exempel körs tre kommandon. Den första som skickas och de andra två misslyckades. De här resultaten returneras sammanfattas i utdata från `Get-xDscOperation`.
+Den `Get-xDscOperation` funktionen kan du hitta resultaten av DSC-åtgärder som körs på en eller flera datorer och returnerar ett objekt som innehåller insamling av händelser som genereras av varje DSC-åtgärd. I följande utdata, till exempel körs tre kommandon. Den första som skickas och de andra två misslyckades. De här resultaten returneras sammanfattas i utdata från `Get-xDscOperation`.
 
 ```powershell
 PS C:\DiagnosticsTest> Get-xDscOperation
@@ -300,7 +310,8 @@ SRV1   5          6/23/2016 4:36:51 PM  Success                                 
 
 Den `Trace-xDscOperation` cmdlet returnerar ett objekt som innehåller en uppsättning händelser, sina händelsetyper och meddelandet utdata genereras från en viss DSC-åtgärd. Vanligtvis när du hittar ett fel i någon av åtgärder med hjälp av `Get-xDscOperation`, du vill spåra den åtgärden att ta reda på vilka av händelserna orsakade ett fel.
 
-Använd den `SequenceID` parametern för att hämta händelser för en viss åtgärd för en specifik dator. Exempel: Om du anger en `SequenceID` 9, `Trace-xDscOperaion` hämta spårningen för DSC-åtgärden som var 9 från den senaste åtgärden:
+Använd den `SequenceID` parametern för att hämta händelser för en viss åtgärd för en specifik dator.
+Exempel: Om du anger en `SequenceID` 9, `Trace-xDscOperaion` hämta spårningen för DSC-åtgärden som var 9 från den senaste åtgärden:
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -SequenceID 9
@@ -367,7 +378,7 @@ PS C:\DiagnosticsTest> $Trace.Event
 
 Samma resultat som visas i `Get-WinEvent` cmdlet, till exempel i utdata nedan:
 
-```powershell
+```output
    ProviderName: Microsoft-Windows-DSC
 
 TimeCreated                     Id LevelDisplayName Message
@@ -410,6 +421,7 @@ Använd den `ComputerName` -parametern för den `Trace-xDscOperation` cmdlet fö
 ```powershell
 New-NetFirewallRule -Name "Service RemoteAdmin" -DisplayName "Remote" -Action Allow
 ```
+
 Nu kan du ange den datorn i anrop till `Trace-xDscOperation`:
 
 ```powershell
@@ -451,7 +463,8 @@ SRV2   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32
 
 ## <a name="my-resources-wont-update-how-to-reset-the-cache"></a>Mina resurser inte uppdatera: hur du återställer cachen
 
-DSC-motorn cachelagrar resurser implementeras som en PowerShell-modul för effektivitet. Detta kan emellertid orsaka problem när du redigerar en resurs och testa det samtidigt eftersom DSC laddar den cachelagrade versionen tills processen har startats om. Det enda sättet att läsa in den nya versionen DSC är att explicit avsluta processen som är värd för DSC-motorn.
+DSC-motorn cachelagrar resurser implementeras som en PowerShell-modul för effektivitet.
+Detta kan emellertid orsaka problem när du redigerar en resurs och testa det samtidigt eftersom DSC laddar den cachelagrade versionen tills processen har startats om. Det enda sättet att läsa in den nya versionen DSC är att explicit avsluta processen som är värd för DSC-motorn.
 
 På samma sätt när du kör `Start-DscConfiguration`, när du lägger till och ändra en anpassad resurs, ändringen kanske inte kan köras, såvida inte eller tills, datorn startas. Detta beror DSC körs i värdprocessen för WMI-providern (WmiPrvSE) och vanligtvis det finns många instanser av WmiPrvSE som körs på samma gång. När du startar om värdprocessen startas och cachen rensats.
 
@@ -479,10 +492,11 @@ Du kan konfigurera DSC lokala Configuration Manager (LCM) att använda `DebugMod
 
 Följande är en demonstration att visa hur `DebugMode` kan automatiskt uppdatera cachen. Först ska vi titta på standardkonfigurationen:
 
-```
+```powershell
 PS C:\> Get-DscLocalConfigurationManager
+```
 
-
+```output
 AllowModuleOverwrite           : False
 CertificateID                  :
 ConfigurationID                :
@@ -550,7 +564,7 @@ Configuration ConfigTestDebugMode
 ConfigTestDebugMode
 ```
 
-Du kan nu se att innehållet i filen ”:**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**” är **1**.
+Du kan nu se att innehållet i filen: `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` är **1**.
 
 Uppdatera nu provider-kod med hjälp av följande skript:
 

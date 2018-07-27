@@ -3,18 +3,19 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: galleriet, powershell, cmdlet, psget
 title: Skriptet med kompatibla PowerShell-utgåvor
-ms.openlocfilehash: 386e65295641fb6932c13047246742531aeaec64
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 0ab655ff1c5dd0f48ec41a16ad394251b6c70748
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093668"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267821"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Skriptet med kompatibla PowerShell-utgåvor
 
 Från och med version 5.1 finns PowerShell i olika utgåvor som anger olika funktionsuppsättningar och plattformskompatibilitet.
 
 - **Desktop Edition:** bygger på .NET Framework och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på fullständiga utgåvor av Windows, till exempel Server Core och Windows Desktop.
+
 - **Core Edition:** bygger på .NET Core och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på begränsade utgåvor av Windows som Nano Server och Windows IoT.
 
 Vilken utgåva av PowerShell som körs visas i PSEdition-egenskapen i $PSVersionTable.
@@ -34,7 +35,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-Skriptskribenter kan förhindra att ett skript körs om det inte körs på en kompatibel version av PowerShell med hjälp av parametern PSEdition på ett #requires-uttryck.
+Skriptskribenter kan förhindra att ett skript körs om den körs på en kompatibel version av PowerShell med hjälp av parametern PSEdition på ett `#requires` instruktionen.
 
 ```powershell
 Set-Content C:\script.ps1 -Value "#requires -PSEdition Core

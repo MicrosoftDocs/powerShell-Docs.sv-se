@@ -3,22 +3,22 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Hantera tjänster
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: e2388f5d73a320a69faae0772c8403a7d77f8b52
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 81fd8802215da80ce22fa3fd4750b1df6efe8206
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094178"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268083"
 ---
 # <a name="managing-services"></a>Hantera tjänster
 
-Det finns åtta kärnor cmdlet: ar, avsedd för en mängd olika uppgifter för tjänsten. Vi bara lista och ändra körningstillstånd för tjänster, men du kan hämta en lista över cmdlet: ar med hjälp av **Get-Help \*-tjänsten**, och du hittar information om varje tjänst-cmdlet med hjälp av  **Get-Help \<Cmdlet-namn\>**, till exempel **Get-Help ny tjänsten**.
+Det finns åtta kärnor cmdlet: ar, avsedd för en mängd olika uppgifter för tjänsten. Vi bara lista och ändra körningstillstånd för tjänster, men du kan hämta en lista över cmdlet: ar med hjälp av `Get-Help \*-Service`, och du hittar information om varje tjänst-cmdlet med hjälp av `Get-Help <Cmdlet-Name>`, till exempel `Get-Help New-Service`.
 
 ## <a name="getting-services"></a>Hämta tjänster
 
-Du kan hämta tjänsterna på en lokal eller fjärransluten dator med hjälp av den **Get-Service** cmdlet. Precis som med **Get-Process**med hjälp av den **Get-Service** utan parametrar returnerar alla tjänster. Du kan filtrera efter namn, även med en asterisk som jokertecken:
+Du kan hämta tjänsterna på en lokal eller fjärransluten dator med hjälp av den `Get-Service` cmdlet. Precis som med `Get-Process`med hjälp av den `Get-Service` utan parametrar returnerar alla tjänster. Du kan filtrera efter namn, även med en asterisk som jokertecken:
 
-```
+```powershell
 PS> Get-Service -Name se*
 
 Status   Name               DisplayName
@@ -30,7 +30,7 @@ Stopped  ServiceLayer       ServiceLayer
 
 Eftersom det inte är alltid uppenbart vad som är det verkliga namnet för tjänsten, kanske du vill söka efter tjänster efter visningsnamn. Du kan göra detta efter specifika namn med jokertecken eller med en lista med namn som visas:
 
-```
+```powershell
 PS> Get-Service -DisplayName se*
 
 Status   Name               DisplayName
@@ -63,7 +63,7 @@ Dessa parametrar kan bara visa värdena i DependentServices och ServicesDepended
 
 Följande kommando hämtar de tjänster som krävs för LanmanWorkstation-tjänsten.
 
-```
+```powershell
 PS> Get-Service -Name LanmanWorkstation -RequiredServices
 
 Status   Name               DisplayName
@@ -76,7 +76,7 @@ Running  NSI                Network Store Interface Service
 
 Följande kommando hämtar de tjänster som kräver LanmanWorkstation-tjänsten.
 
-```
+```powershell
 PS> Get-Service -Name LanmanWorkstation -DependentServices
 
 Status   Name               DisplayName
@@ -94,6 +94,7 @@ Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices
 ```
 
 ## <a name="stopping-starting-suspending-and-restarting-services"></a>Stoppa, starta, pausa och startar om tjänster
+
 De cmdlet: ar alla ha samma allmänna formulär. Tjänster kan anges med egna namn eller visningsnamn och ta listor och jokertecken som värden. Om du vill stoppa utskriftshanteraren, använder du:
 
 ```powershell
@@ -112,9 +113,9 @@ Om du vill pausa Utskriftshanteraren, använder du:
 Suspend-Service -Name spooler
 ```
 
-Den **Restart-Service** cmdlet fungerar på samma sätt som den andra cmdlet: ar, men vi visar några mer komplexa exempel för den. I det enklaste användningsområdet anger du namnet på tjänsten:
+Den `Restart-Service` cmdlet fungerar på samma sätt som den andra cmdlet: ar, men vi visar några mer komplexa exempel för den. I det enklaste användningsområdet anger du namnet på tjänsten:
 
-```
+```powershell
 PS> Restart-Service -Name spooler
 
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
@@ -126,7 +127,7 @@ Du ser att du får ett upprepade varningsmeddelande om utskriftshanteraren start
 
 Om du vill starta om flera tjänster kan du hämta en lista över tjänster, filtrera dem och genomföra omstarten:
 
-```
+```powershell
 PS> Get-Service | Where-Object -FilterScript {$_.CanStop} | Restart-Service
 
 WARNING: Waiting for service 'Computer Browser (Browser)' to finish stopping...
@@ -147,9 +148,10 @@ Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 
 ## <a name="setting-service-properties"></a>Egenskaper för tjänsten
 
-Cmdleten Set-Service ändrar egenskaperna för en tjänst på en lokal eller fjärransluten dator. Eftersom status för tjänsten är en egenskap, kan du använda denna cmdlet för att starta, stoppa och inaktivera en tjänst. Cmdleten Set-Service har också en startuptype för parameter som du kan ändra starttypen för tjänsten.
+Den `Set-Service` cmdlet ändrar egenskaperna för en tjänst på en lokal eller fjärransluten dator. Eftersom status för tjänsten är en egenskap, kan du använda denna cmdlet för att starta, stoppa och inaktivera en tjänst.
+Cmdleten Set-Service har också en startuptype för parameter som du kan ändra starttypen för tjänsten.
 
-För att använda Set-tjänst i Windows Vista och senare versioner av Windows, öppnar du Windows PowerShell med alternativet ”Kör som administratör”.
+Att använda `Set-Service` på Windows Vista och senare versioner av Windows, öppnar du Windows PowerShell med alternativet ”Kör som administratör”.
 
 Mer information finns i [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 

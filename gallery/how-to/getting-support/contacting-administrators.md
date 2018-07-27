@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery
 title: Kontakta galleriet administratörer
-ms.openlocfilehash: c919848e93a1f061ac0bf7dec8ef568e41212ef7
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 71c8aa15ac0c6ec57e7e1bfe3cb20cac7e2c6b29
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093830"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268661"
 ---
 # <a name="contact-gallery-administrators"></a>Kontakta galleriet administratörer
 
@@ -24,6 +24,6 @@ Du bör kontakta galleriet administratörer när:
 
 ## <a name="how-to-contact-gallery-administrators"></a>Så här galleriet kontakta administratörer
 
-1. Skicka oss ett e-postmeddelande: <cgadmin@microsoft.com>.
+1. Skicka oss ett e-postmeddelande: cgadmin@microsoft.com.
 2. Om du ska rapportera missbruk av ett objekt, hittar du rapportera missbruk länkarna artikelinformation i den vänstra panelen.
 3. Andra allmänna frågor om galleriet, skicka en fråga till [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)

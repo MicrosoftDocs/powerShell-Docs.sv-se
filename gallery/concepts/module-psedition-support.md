@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: galleriet, powershell, cmdlet, psget
 title: Moduler med kompatibla PowerShell-utgåvor
-ms.openlocfilehash: 2b11d833e7abc50f26b1581f678b9509a098c2c5
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 7f38e6e1d4f4d45814bf331f33e962e06f4e03c1
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093532"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268712"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Moduler med kompatibla PowerShell-utgåvor
 
@@ -17,7 +17,7 @@ Från och med version 5.1 finns PowerShell i olika utgåvor som anger olika funk
 - **Desktop Edition:** bygger på .NET Framework och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på fullständiga utgåvor av Windows, till exempel Server Core och Windows Desktop.
 - **Core Edition:** bygger på .NET Core och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på begränsade utgåvor av Windows som Nano Server och Windows IoT.
 
-## <a name="the-running-edition-of-powershell-is-shown-in-the-psedition-property-of-psversiontable"></a>Vilken utgåva av PowerShell som körs visas i PSEdition-egenskapen i $PSVersionTable.
+Vilken utgåva av PowerShell visas i PSEdition-egenskapen i `$PSVersionTable`.
 
 ```powershell
 $PSVersionTable
@@ -36,7 +36,9 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-## <a name="module-authors-can-declare-their-modules-to-be-compatible-with-one-or-more-powershell-editions-using-the-compatiblepseditions-module-manifest-key-this-key-is-only-supported-on-powershell-51-or-later"></a>Modulskapare kan fastställa om deras moduler är kompatibla med en eller flera PowerShell-utgåvor med hjälp av CompatiblePSEditions-modulens manifestnyckel. Den här nyckeln stöds bara på PowerShell 5.1 eller senare.
+## <a name="declaring-compatible-editions"></a>Deklarera kompatibla versioner
+
+Modulskapare kan fastställa om deras moduler är kompatibla med en eller flera PowerShell-utgåvor med hjälp av CompatiblePSEditions-modulens manifestnyckel. Den här nyckeln stöds bara på PowerShell 5.1 eller senare.
 
 > [!NOTE]
 > När ett modulmanifest anges med CompatiblePSEditions-nyckeln, kan det inte importeras på lägre versioner av PowerShell.
@@ -88,15 +90,15 @@ Desktop
 Core
 ```
 
-## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>Modulskapare kan publicera en enda modulen riktar in sig på att ena eller båda PowerShell-utgåvor (Desktop och kärnor)
+## <a name="targeting-multiple-editions"></a>Riktar in sig på flera versioner
 
-En enda modul fungerar på både Desktop- och Core-utgåvor, i modulen författare har att lägga till nödvändig kod i antingen RootModule eller i modulmanifestet med $PSEdition variabeln.
-Moduler kan ha två uppsättningar kompilerade DLL: er som både på CoreCLR och FullCLR.
-Här följer några av alternativ för att paketera din modul med logik för att läsa in rätt DLL-filer.
+Modulskapare kan publicera en enda modulen riktar in sig på att ena eller båda PowerShell-utgåvor (Desktop och Core).
+
+En enda modul fungerar på både Desktop- och Core-utgåvor, i modulen författare har att lägga till nödvändig kod i antingen RootModule eller i modulmanifestet med $PSEdition variabeln. Moduler kan ha två uppsättningar kompilerade DLL: er som både på CoreCLR och FullCLR. Här följer några av alternativ för att paketera din modul med logik för att läsa in rätt DLL-filer.
 
 ### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Alternativ 1: Paketera en modul för flera versioner och flera versioner av PowerShell
 
-#### <a name="module-folder-contents"></a>Modulen mappinnehåll
+Modulen mappinnehåll
 
 - Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
 - Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
@@ -116,7 +118,7 @@ Här följer några av alternativ för att paketera din modul med logik för att
 - Settings\ScriptingStyle.psd1
 - Settings\ScriptSecurity.psd1
 
-#### <a name="contents-of-psscriptanalyzerpsd1-file"></a>Innehållet i filen PSScriptAnalyzer.psd1
+Innehållet i filen PSScriptAnalyzer.psd1
 
 ```powershell
 @{
@@ -134,9 +136,9 @@ ModuleVersion = '1.6.1'
 }
 ```
 
-#### <a name="contents-of-psscriptanalyzerpsm1-file"></a>Innehållet i filen PSScriptAnalyzer.psm1
-
 Läser in de nödvändiga sammansättningarna beroende på den aktuella utgåvan eller versionen nedan logik.
+
+Innehållet i PSScriptAnalyzer.psm1-filen:
 
 ```powershell
 #
@@ -157,7 +159,8 @@ if (($PSVersionTable.Keys -contains "PSEdition") -and ($PSVersionTable.PSEdition
 }
 else
 {
-    if ($PSVersionTable.PSVersion -lt [Version]'5.0') {
+    if ($PSVersionTable.PSVersion -lt [Version]'5.0')
+    {
         $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'PSv3'
     }
 }
@@ -173,48 +176,43 @@ $PSModule.OnRemove = {
 
 ### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>Alternativ 2: Använd $PSEdition variabeln i PSD1-fil för att läsa in rätt DLL: er och kapslade/krävs moduler
 
-I PS 5.1 eller senare tillåts $PSEdition global variabel i modulen manifestfilen.
-Med den här variabeln kan anger modulägaren villkorlig värden i modulen manifestfilen. $PSEdition variabeln kan refereras i begränsade språkläge eller ett Data-avsnitt.
+I PS 5.1 eller senare tillåts $PSEdition global variabel i modulen manifestfilen. Med den här variabeln kan anger modulägaren villkorlig värden i modulen manifestfilen. $PSEdition variabeln kan refereras i begränsade språkläge eller ett Data-avsnitt.
 
 > [!NOTE]
-> När ett modulmanifest anges med CompatiblePSEditions-nyckel eller använder $PSEdition variabel, kan det inte importeras på lägre versioner av PowerShell.
+> När ett modulmanifest anges med CompatiblePSEditions-nyckel eller använder `$PSEdition` variabel, det går inte att importera på lägre versioner av PowerShell.
 
-#### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a>Exemplet modulen manifestfilen med CompatiblePSEditions-nyckel
+Exemplet modulen manifestfilen med CompatiblePSEditions-nyckel
 
 ```powershell
 @{
-# - - -
+    # Script module or binary module file associated with this manifest.
+    RootModule = if($PSEdition -eq 'Core')
+    {
+        'coreclr\MyCoreClrRM.dll'
+    }
+    else # Desktop
+    {
+        'clr\MyFullClrRM.dll'
+    }
 
-# Script module or binary module file associated with this manifest.
-RootModule = if($PSEdition -eq 'Core')
-{
-'coreclr\MyCoreClrRM.dll'
-}
-else # Desktop
-{
-'clr\MyFullClrRM.dll'
-}
+    # Supported PSEditions
+    CompatiblePSEditions = 'Desktop', 'Core'
 
-# Supported PSEditions
-CompatiblePSEditions = 'Desktop', 'Core'
-
-# Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-NestedModules = if($PSEdition -eq 'Core')
-{
-'coreclr\MyCoreClrNM1.dll',
-'coreclr\MyCoreClrNM2.dll'
-}
-else # Desktop
-{
-'clr\MyFullClrNM1.dll',
-'clr\MyFullClrNM2.dll'
-}
-
-# -- - -
+    # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
+    NestedModules = if($PSEdition -eq 'Core')
+    {
+        'coreclr\MyCoreClrNM1.dll',
+        'coreclr\MyCoreClrNM2.dll'
+    }
+    else # Desktop
+    {
+        'clr\MyFullClrNM1.dll',
+        'clr\MyFullClrNM2.dll'
+    }
 }
 ```
 
-#### <a name="module-contents"></a>Modulen innehållet
+### <a name="module-contents"></a>Modulen innehållet
 
 ```powershell
 dir -Recurse
@@ -223,30 +221,30 @@ dir -Recurse
 ```output
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
 
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
-d-----         7/5/2016   1:37 PM                clr
-d-----         7/5/2016   1:36 PM                coreclr
--a----         7/5/2016   1:34 PM           4906 ModuleWithEditions.psd1
+Mode           LastWriteTime   Length Name
+----           -------------   ------ ----
+d-----    7/5/2016   1:37 PM          clr
+d-----    7/5/2016   1:36 PM          coreclr
+-a----    7/5/2016   1:34 PM     4906 ModuleWithEditions.psd1
 
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\clr
 
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
--a----         7/5/2016   1:35 PM              0 MyFullClrNM1.dll
--a----         7/5/2016   1:35 PM              0 MyFullClrNM2.dll
--a----         7/5/2016   1:35 PM              0 MyFullClrRM.dl
+Mode           LastWriteTime    Length Name
+----           -------------    ------ ----
+-a----    7/5/2016   1:35 PM         0 MyFullClrNM1.dll
+-a----    7/5/2016   1:35 PM         0 MyFullClrNM2.dll
+-a----    7/5/2016   1:35 PM         0 MyFullClrRM.dl
 
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\coreclr
 
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
--a----         7/5/2016   1:35 PM              0 MyCoreClrNM1.dll
--a----         7/5/2016   1:35 PM              0 MyCoreClrNM2.dll
--a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl
+Mode           LastWriteTime   Length Name
+----           -------------   ------ ----
+-a----    7/5/2016   1:35 PM        0 MyCoreClrNM1.dll
+-a----    7/5/2016   1:35 PM        0 MyCoreClrNM2.dll
+-a----    7/5/2016   1:35 PM        0 MyCoreClrRM.dl
 ```
 
-## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditioncore"></a>PowerShell-galleriet användare kan hitta listan över moduler som stöds på en viss version av PowerShell med hjälp av taggar PSEdition_Desktop och PSEdition_Core.
+PowerShell-galleriet användare kan hitta listan över moduler som stöds på en viss version av PowerShell med hjälp av taggar PSEdition_Desktop och PSEdition_Core.
 
 Moduler utan PSEdition_Desktop och PSEdition_Core taggar anses fungera på PowerShell Desktop-versioner.
 

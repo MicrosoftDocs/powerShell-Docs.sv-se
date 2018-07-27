@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-Registerresurser
-ms.openlocfilehash: b77710d7a6fc599949e78c17af309ad88a1a0872
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 8d74473d167b70182c3a16c1d39d2a9e797afb1b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093593"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267729"
 ---
 # <a name="dsc-registry-resource"></a>DSC-Registerresurser
 
-> Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 Den **registret** resursen i Windows PowerShell Desired State Configuration (DSC) ger dig möjlighet att hantera registernycklar och värden på målnoden.
 
@@ -33,8 +33,8 @@ Registry [string] #ResourceName
 
 ## <a name="properties"></a>Egenskaper
 
-|  Egenskap  |  Beskrivning   |
-|---|---|
+| Egenskap | Beskrivning |
+| --- | --- |
 | Tangent| Anger sökvägen till registernyckeln som du vill se till att ett visst tillstånd. Den här sökvägen måste innehålla hive.|
 | Värdenamn| Anger namnet på registervärdet. Om du vill lägga till eller ta bort en registernyckel, anger du den här egenskapen som en tom sträng utan att ange ValueType eller ValueData. Om du vill ändra eller ta bort en registernyckel standardvärdet, anger du den här egenskapen som en tom sträng när du anger också ValueType eller ValueData.|
 | Se till att| Anger om nyckeln och värdet finns. Säkerställ att de gör det genom att ange egenskapen ”aktuella”. För att säkerställa att de inte finns, ange egenskapen till ””. Standardvärdet är ”tillgänglig”.|
@@ -62,4 +62,4 @@ Configuration RegistryTest
 ```
 
 > [!NOTE]
-> Ändra en registerinställning i den **HKEY\_aktuella\_användaren** hive kräver att konfigurationen körs med autentiseringsuppgifterna för användaren, i stället för systemet. Du kan använda den **PsDscRunAsCredential** egenskapen att ange autentiseringsuppgifter för konfigurationen. Ett exempel finns i [kör DSC med autentiseringsuppgifterna för användaren](runAsUser.md).
+> Ändra en registerinställning i den `HKEY\CURRENT\USER` hive kräver att konfigurationen körs med autentiseringsuppgifterna för användaren, i stället för systemet. Du kan använda den **PsDscRunAsCredential** egenskapen att ange autentiseringsuppgifter för konfigurationen. Ett exempel finns i [kör DSC med autentiseringsuppgifterna för användaren](runAsUser.md).

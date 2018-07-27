@@ -3,35 +3,32 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Objektet manifest värden som påverkar PowerShell galleriets gränssnitt
-ms.openlocfilehash: 00350d3558e2bfa487fb116304956ffa7291ee05
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 60415193129fe040b53d35b1f8701408cfc4989d
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093981"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268185"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Objektet manifest värden som påverkar PowerShell galleriets gränssnitt
 
-Det här avsnittet innehåller utgivare med översiktlig information om hur du ändrar manifest för publikationer sina PowerShell-galleriet så att funktionerna i PowerShellGet-cmdletar och PowerShell-galleriet Användargränssnittet kommer att påverkas.
-Det här innehållet är ordnad efter där ändringen tillämpas, från med mitt i navigeringsområdet till vänster. Det finns en informationsavsnittet täckande taggar, som identifierar viktiga taggar, samt några av de vanligaste taggar.
-Det finns två avsnitt som innehåller manifestet exempel:
+Det här avsnittet innehåller utgivare med översiktlig information om hur du ändrar manifest för publikationer sina PowerShell-galleriet så att funktionerna i PowerShellGet-cmdletar och PowerShell-galleriet Användargränssnittet kommer att påverkas. Det här innehållet är ordnad efter där ändringen tillämpas, från med mitt i navigeringsområdet till vänster. Det finns en informationsavsnittet täckande taggar, som identifierar viktiga taggar, samt några av de vanligaste taggar. Det finns två avsnitt som innehåller manifestet exempel:
 
 - Moduler, se [uppdatera modulen Manifest](/powershell/module/powershellget/Update-ModuleManifest)
 - Skript, se [skapa skriptfil med Metadata](/powershell/module/powershellget/New-ScriptFileInfo)
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>PowerShell-galleriet funktionselement som styrs av manifestet
 
-Tabellen nedan visar elementen på sidan för PowerShell-galleriet objekt Användargränssnittet som styrs av utgivaren.
-Varje objekt innebär att om den kan styras av manifestet modulen eller skript.
+Tabellen nedan visar elementen på sidan för PowerShell-galleriet objekt Användargränssnittet som styrs av utgivaren. Varje objekt innebär att om den kan styras av manifestet modulen eller skript.
 
 | UI-Element | Beskrivning | Modul | Skript |
 | --- | --- | --- | --- |
 | **Rubrik** | Det här är namnet på det objekt som har publicerats i galleriet  | Nej | Nej |
-| **Version** | Den version som visas är Versionsträngen i metadata och ett förhandsversioner om har angetts. Den primära delen av versionen i ett modulmanifest är ModuleVersion. För ett skript identifieras som. VERSION. Om en förhandsversion sträng anges ska det läggas till för ModuleVersion för moduler, eller angetts som en del av. VERSIONEN för skript. Det finns dokumentation för att ange förhandsversioner strängar i [moduler](/powershell/gallery/concepts/module-prerelease-support), och i [skript](/powershell/gallery/concepts/script-prerelease-support) | Ja | Ja |
+| **Version** | Den version som visas är Versionsträngen i metadata och ett förhandsversioner om har angetts. Den primära delen av versionen i ett modulmanifest är ModuleVersion. För ett skript identifieras som. VERSION. Om en förhandsversion sträng anges ska det läggas till för ModuleVersion för moduler, eller angetts som en del av. VERSIONEN för skript. Det finns dokumentation för att ange förhandsversioner strängar i [moduler](module-prerelease-support.md), och i [skript](script-prerelease-support.md) | Ja | Ja |
 | **Beskrivning** | Detta är beskrivningen i modulmanifestet och det är i ett manifest för skript-fil. BESKRIVNING | Ja | Ja |
-| **Kräv godkännande av licensen** | En modul kan kräva att användaren måste godkänna en licens genom att ändra modulmanifestet med RequireLicenseAcceptance = $true, tillhandahåller en LicenseURI och ge en license.txt-filen i roten av modulmappen. Mer information finns i den [kräver godkännande av licensen](/powershell/gallery/how-to/working-with-items/items-that-require-license-acceptance) avsnittet. | Ja | Nej |
+| **Kräv godkännande av licensen** | En modul kan kräva att användaren måste godkänna en licens genom att ändra modulmanifestet med RequireLicenseAcceptance = $true, tillhandahåller en LicenseURI och ge en license.txt-filen i roten av modulmappen. Mer information finns i den [kräver godkännande av licensen](../how-to/working-with-items/items-that-require-license-acceptance.md) avsnittet. | Ja | Nej |
 | **Versionsanmärkningar** | För moduler hämtas den här informationen från avsnittet ReleaseNotes under PSData\PrivateData. I skriptet manifest, är det den. RELEASENOTES element. | Ja | Ja |
-| **Ägare** | Ägare är en lista över användare i PowerShell-galleriet som kan uppdatera ett objekt. Listan ägare ingår inte i manifestet objekt. Ytterligare dokumentation som beskriver hur du [hantera objektägare](/powershell/gallery/how-to/publishing-items/managing-item-owners). | Nej | Nej |
+| **Ägare** | Ägare är en lista över användare i PowerShell-galleriet som kan uppdatera ett objekt. Listan ägare ingår inte i manifestet objekt. Ytterligare dokumentation som beskriver hur du [hantera objektägare](../how-to/publishing-items/managing-item-owners.md). | Nej | Nej |
 | **Författare** | Det här är inkluderade i modulmanifestet som författare och i ett skript-manifest som. FÖRFATTARE. Fältet Författare används ofta för att ange ett företag eller organisation som är associerad med ett objekt. | Ja | Ja |
 | **Copyright** | Detta är Copyright-fält i modulmanifestet, och. COPYRIGHT i ett skript-manifest. | Ja | Ja |
 | **FileList** | Fillistan ritas från paketet när den publiceras i PowerShell-galleriet. Det går inte att styra av manifest information. Obs: det finns en ytterligare .nuspec-fil som visas i listan med varje objekt i PowerShell-galleriet som inte finns när du har installerat objektet på ett system. Detta är manifest för Nuget-paketet för objektet och kan ignoreras. | Nej | Nej |
@@ -40,8 +37,8 @@ Varje objekt innebär att om den kan styras av manifestet modulen eller skript.
 | **Funktioner** | Detta tillhandahålls i modulmanifestet med FunctionsToExport. Observera att den bästa metoden är att uttryckligen listobjekt i stället för med jokertecknet ”*”, enligt som förbättrar prestanda load-modulen för användare. | Ja | Nej |
 | **DSC-resurser** | Detta har angetts i manifestet DscResourcesToExport för moduler som ska användas på PowerShell-version 5.0 och senare. Om modulen är som ska användas i PowerShell 4, bör DSCResourcesToExport inte användas eftersom den inte är en stöds manifest nyckel. (DSC var inte tillgänglig före PowerShell 4.) | Ja | Nej |
 | **Arbetsflöden** | Arbetsflöden är publiceras i PowerShell-galleriet som skript och identifieras som arbetsflöden (se [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) ett exempel) i koden. Detta styrs inte av manifestet. | Nej | Nej |
-| **Rollfunktioner** | Detta visas när modulen som publicerats i PowerShell-galleriet innehåller en eller flera roll funktionen (.psrc) filer som används av JEA. Finns i JEA-dokumentationen för mer information om [rollfunktioner](https://docs.microsoft.com/en-us/powershell/jea/role-capabilities). | Ja | Nej |
-| **PowerShell-utgåvor** | Detta har angetts i ett skript eller modulen manifest. För moduler som är avsedd att användas med PowerShell 5.0 och under detta styrs med hjälp av taggar. Använd taggen PSEdition_Desktop för skrivbordet, och Använd taggen PSEdition_Core för kärna. Moduler som används bara på PowerShell 5.1 och senare, har en CompatiblePSEditions-nyckel i huvudsakliga manifestet. Mer information om, granska funktionen PS-versionen i [i PowerShell-Get-dokumentationen](/powershell/gallery/concepts/module-psedition-support). | Ja | Ja |
+| **Rollfunktioner** | Detta visas när modulen som publicerats i PowerShell-galleriet innehåller en eller flera roll funktionen (.psrc) filer som används av JEA. Finns i JEA-dokumentationen för mer information om [rollfunktioner](/powershell/jea/role-capabilities). | Ja | Nej |
+| **PowerShell-utgåvor** | Detta har angetts i ett skript eller modulen manifest. För moduler som är avsedd att användas med PowerShell 5.0 och under detta styrs med hjälp av taggar. Använd taggen PSEdition_Desktop för skrivbordet, och Använd taggen PSEdition_Core för kärna. Moduler som används bara på PowerShell 5.1 och senare, har en CompatiblePSEditions-nyckel i huvudsakliga manifestet. Mer information om, granska funktionen PS-versionen i [i PowerShell-Get-dokumentationen](module-psedition-support.md). | Ja | Ja |
 | **Beroenden** | Beroenden är moduler i PowerShell-galleriet som deklareras i modulen som RequiredModules eller i skript-manifest som #Requires – modul (namn). | Ja | Ja |
 | **Lägsta version av Powershell** | Det kan anges i ett modulmanifest som PowerShellVersion | Ja | Nej |
 | **Versionshistorik** | Versionshistoriken visar uppdateringar för en modul i PowerShell-galleriet. Om en version av ett objekt visas med hjälp av funktionen Ta bort visas den inte i tidigare versioner utom för objektägare. | Nej | Nej |
@@ -63,26 +60,18 @@ Sidan Redigera PowerShell-galleriet artikel kan utgivare att ändra flera av de 
 - Versionskommentarer
 - Licens
 
-Den här metoden Allmänt rekommenderas inte, utom när behövs för att korrigera vad som visas för en äldre version av en modul.
-Användare som skaffar modulen ser metadata som inte matchar det som visas i PowerShell-galleriet, vilket ökar orolig för objektet.
-Detta leder ofta till frågor ska objektägare att bekräfta ändringen.
-Vi rekommenderar starkt att som helst som den här metoden används en ny version av objektet ska publiceras med samma ändringar.
+Den här metoden Allmänt rekommenderas inte, utom när behövs för att korrigera vad som visas för en äldre version av en modul. Användare som skaffar modulen ser metadata som inte matchar det som visas i PowerShell-galleriet, vilket ökar orolig för objektet. Detta leder ofta till frågor ska objektägare att bekräfta ändringen. Vi rekommenderar starkt att som helst som den här metoden används en ny version av objektet ska publiceras med samma ändringar.
 
 ## <a name="tag-details"></a>Tagginformation
 
-Taggar är enkla strängar konsumenter använder för att hitta objekt.
-Taggar är mest värdefullt när de används konsekvent över många objekt som är relaterade till samma avsnitt. Flera varianter av samma ger ord (till exempel databasen och databaser, eller test och testning) vanligtvis lite förmånen.
-Taggar är ett ords-skiftlägeskänsliga strängar och får inte innehålla tomma värden. Om en fras som du tror att användare söker efter, lägger du till att objektet beskrivning och det finns i sökresultaten. Använd Pascal gemener och versaler, bindestreck, understreck eller punkt om du vill göra dem mer läsbara. Var försiktig om hur du skapar långa, komplexa och ovanliga taggar, eftersom de ofta är felstavat.
+Taggar är enkla strängar konsumenter använder för att hitta objekt. Taggar är mest värdefullt när de används konsekvent över många objekt som är relaterade till samma avsnitt. Flera varianter av samma ger ord (till exempel databasen och databaser, eller test och testning) vanligtvis lite förmånen. Taggar är ett ords-skiftlägeskänsliga strängar och får inte innehålla tomma värden. Om en fras som du tror att användare söker efter, lägger du till att objektet beskrivning och det finns i sökresultaten. Använd Pascal gemener och versaler, bindestreck, understreck eller punkt om du vill göra dem mer läsbara.
+Var försiktig om hur du skapar långa, komplexa och ovanliga taggar, eftersom de ofta är felstavat.
 
 Det finns taggar som är viktigt att notera, som PowerShell-galleriet och PowerShellGet cmdletar behandla dem unikt. PSEdition_Desktop PSEdition_Core är de specifika exemplen och beskrivs ovan.
 
-Enligt vad som anges ovan, ange taggar ut mest värde när de är specifika och används konsekvent över många objekt.
-Som en utgivare försök att hitta de bästa taggarna du använder, är det enklaste sättet att söka i PowerShell-galleriet för taggar du funderar på att.
-Vi rekommenderar det blir många objekt som returneras och artikelbeskrivningarna anpassas med din användning av nyckeln ordet.
+Enligt vad som anges ovan, ange taggar ut mest värde när de är specifika och används konsekvent över många objekt. Som en utgivare försök att hitta de bästa taggarna du använder, är det enklaste sättet att söka i PowerShell-galleriet för taggar du funderar på att. Vi rekommenderar det blir många objekt som returneras och artikelbeskrivningarna anpassas med din användning av nyckeln ordet.
 
-Referens följer vissa vanligaste taggar från och med 12/14/2017.
-I vissa fall finns liknande men kanske mindre perfekt alternativ som visas bredvid taggen.
-Det är en bra idé att använda den önskade taggen som som kommer att leda till mindre bruset och bättre sökresultat för konsumenter.
+Referens följer vissa vanligaste taggar från och med 12/14/2017. I vissa fall finns liknande men kanske mindre perfekt alternativ som visas bredvid taggen. Det är en bra idé att använda den önskade taggen som som kommer att leda till mindre bruset och bättre sökresultat för konsumenter.
 
 | Önskade taggen | Alternativ och anteckningar |
 | --- | --- |

@@ -4,18 +4,18 @@ keywords: PowerShell cmdlet
 ms.date: 12/12/2016
 title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: a8904ac36f7fd9fe3c649ad4ca709a98c31b63c3
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: bcf897730881551ec16ce970de6a1330961b67e6
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094236"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268273"
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
 ## <a name="synopsis"></a>SAMMANFATTNING
 
-Lägger till en ny auktoriseringsregel till Windows PowerShell® Web Access auktoriseringsregeluppsättningen.
+Lägger till en ny auktoriseringsregel till Windows PowerShell-webbåtkomst auktoriseringsregeluppsättningen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -45,12 +45,11 @@ Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-Conf
 
 ## <a name="description"></a>BESKRIVNING
 
-Den **Add-PswaAuthorizationRule** cmdlet lägger till en ny auktoriseringsregel till Windows PowerShell® Web Access auktoriseringsregeluppsättningen.
+Den **Add-PswaAuthorizationRule** cmdlet lägger till en ny auktoriseringsregel till Windows PowerShell(r) Web Access auktoriseringsregeluppsättningen.
 
 Du måste ange användare, datorer och Windows PowerShell-slutpunkter för den här regeln. Du kan ange både användare och datorer genom att enskilda användarkonton och datornamn, eller genom att ange grupper.
 
-För en dator som är ansluten till en Active Directory-domän, använder cmdlet: en säkerhetsidentifierare (SID) för datorn för att skapa regeln.
-På så sätt kan du använda ett kort namn, ett fullständigt kvalificerat domännamn (FQDN) eller en IP-adress för den **datornamn** på sidan logga in.
+För en dator som är ansluten till en Active Directory-domän, använder cmdlet: en säkerhetsidentifierare (SID) för datorn för att skapa regeln. På så sätt kan du använda ett kort namn, ett fullständigt kvalificerat domännamn (FQDN) eller en IP-adress för den **datornamn** på sidan logga in.
 
 Cmdleten skapar regeln med namnet på datorn som tillhandahålls av administratören för en dator som inte är ansluten till en Active Directory-domän. För att ansluta till den här datorn, måste användaren ange datornamnet exakt som det visas i regeln.
 
@@ -66,12 +65,12 @@ Anger namnet på en datorgrupp i Active Directory Domain Services (AD DS) eller 
 
 |||
 |-|-|
-| Alias                              | inget                                 |
-| Obligatorisk?                            | SANT                                 |
-| Placering?                            | med namnet                                |
-| Standardvärde                        | inget                                 |
-| Acceptera pipelineindata?               | True (ByPropertyName)                |
-| Acceptera jokertecken?          | falskt                                |
+| Alias                     | inget                  |
+| Obligatorisk?                   | SANT                  |
+| Placering?                   | med namnet                 |
+| Standardvärde               | inget                  |
+| Acceptera pipelineindata?      | True (ByPropertyName) |
+| Acceptera jokertecken? | falskt                 |
 
 ### <a name="-computername-string"></a>-ComputerName \<sträng\>
 
@@ -79,12 +78,12 @@ Anger namnet på datorn som den här regeln beviljar åtkomst.
 
 |||
 |-|-|
-| Alias                              | inget                                 |
-| Obligatorisk?                            | SANT                                 |
-| Placering?                            | med namnet                                |
-| Standardvärde                        | inget                                 |
-| Acceptera pipelineindata?               | True (ByPropertyName)                |
-| Acceptera jokertecken?          | falskt                                |
+| Alias                     | inget                  |
+| Obligatorisk?                   | SANT                  |
+| Placering?                   | med namnet                 |
+| Standardvärde               | inget                  |
+| Acceptera pipelineindata?      | True (ByPropertyName) |
+| Acceptera jokertecken? | falskt                 |
 
 ### <a name="-configurationname-string"></a>-ConfigurationName \<sträng\>
 
@@ -92,12 +91,12 @@ Anger namnet på sessionskonfigurationen för Windows PowerShell, även kallat k
 
 |||
 |-|-|
-| Alias                              | inget                                 |
-| Obligatorisk?                            | SANT                                 |
-| Placering?                            | med namnet                                |
-| Standardvärde                        | inget                                 |
-| Acceptera pipelineindata?               | True (ByPropertyName)                |
-| Acceptera jokertecken?          | falskt                                |
+| Alias                     | inget                  |
+| Obligatorisk?                   | SANT                  |
+| Placering?                   | med namnet                 |
+| Standardvärde               | inget                  |
+| Acceptera pipelineindata?      | True (ByPropertyName) |
+| Acceptera jokertecken? | falskt                 |
 
 ### <a name="-credential--pscredential"></a>-Credential \<PSCredential\>
 
@@ -105,17 +104,16 @@ Anger en **PSCredential** objekt för ett användarkonto som du vill använda f�
 
 |||
 |-|-|
-| Alias                              | inget                                 |
-| Obligatorisk?                            | falskt                                |
-| Placering?                            | med namnet                                |
-| Standardvärde                        | inget                                 |
-| Acceptera pipelineindata?               | falskt                                |
-| Acceptera jokertecken?          | falskt                                |
+| Alias                     | inget  |
+| Obligatorisk?                   | falskt |
+| Placering?                   | med namnet |
+| Standardvärde               | inget  |
+| Acceptera pipelineindata?      | falskt |
+| Acceptera jokertecken? | falskt |
 
 ### <a name="-force"></a>-Force
 
-Tvingar kommandot att köras utan att användaren ombeds bekräfta. \
-Dessutom kan uppmanas den också att bekräfta när du anger ett enkelt eller korta datornamn (till exempel ett namn som inte är ett domännamn eller inte är fullständigt kvalificerad). Bekräftelse begärs av säkerhetsskäl så att du kan använda enkla namnet för att lägga till en dator endast om datorn är i en arbetsgrupp.
+Tvingar kommandot att köras utan att användaren ombeds bekräfta detta. Dessutom kan uppmanas den också att bekräfta när du anger ett enkelt eller korta datornamn (till exempel ett namn som inte är ett domännamn eller inte är fullständigt kvalificerad). Bekräftelse begärs av säkerhetsskäl så att du kan använda enkla namnet för att lägga till en dator endast om datorn är i en arbetsgrupp.
 
 |||
 |-|-|
@@ -154,8 +152,7 @@ Anger namnet på en eller flera användargrupper i AD DS eller lokala grupper so
 
 ### <a name="-username-string"></a>-UserName \<sträng\[\]\>
 
-Anger en eller flera användare som den här regeln beviljar åtkomst. Användarnamnet kan vara ett lokalt användarkonto på gateway-datorn eller en användare i AD DS.
-Formatet är `domain\user` eller `computer\user`.
+Anger en eller flera användare som den här regeln beviljar åtkomst. Användarnamnet kan vara ett lokalt användarkonto på gateway-datorn eller en användare i AD DS. Formatet är `domain\user` eller `computer\user`.
 
 |||
 |-|-|
@@ -168,7 +165,9 @@ Formatet är `domain\user` eller `computer\user`.
 
 ###  <a name="commonparameters"></a>\<CommonParameters\>
 
-Denna cmdlet har stöd för parametrarna:-Verbose,-Debug, - ErrorAction, -ErrorVariable,-OutBuffer och - OutVariable.
+Denna cmdlet har stöd för de vanliga parametrarna:
+
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, och -OutVariable.
 Mer information finns i [about_CommonParameters](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters).
 
 ## <a name="inputs"></a>INDATA
@@ -194,9 +193,9 @@ Denna cmdlet returnerar den ett auktorisering regelobjekt.
 Det här exemplet tilldelar åtkomst till sessionskonfigurationen _PSWAEndpoint_, ett begränsat körningsutrymme på _srv2_ för användare i den _SMAdmins_ grupp.
 
 > [!NOTE]
-> Datornamnet måste vara ett fullständigt kvalificerat domännamn (FQDN). Administratörer definiera ett begränsat sessionskonfiguration eller körningsutrymmen, vilket är ett begränsat antal cmdletar och uppgifter som slutanvändarna kan köras. Definiera ett begränsat körningsutrymme kan förhindra användare från att komma åt andra datorer som inte i den tillåtna Windows PowerShell® körningsutrymmen, vilket ger en säkrare anslutning. Mer information om sessionskonfigurationer finns i [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) eller [installera och använda Windows PowerShell-webbåtkomst](../install-and-use-windows-powershell-web-access.md).
+> Datornamnet måste vara ett fullständigt kvalificerat domännamn (FQDN). Administratörer definiera ett begränsat sessionskonfiguration eller körningsutrymmen, vilket är ett begränsat antal cmdletar och uppgifter som slutanvändarna kan köras. Definiera ett begränsat körningsutrymme kan förhindra användare från att komma åt andra datorer som inte i den tillåtna Windows PowerShell(r) körningsutrymmen, vilket ger en säkrare anslutning. Mer information om sessionskonfigurationer finns i [about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_session_configurations) eller [installera och använda Windows PowerShell-webbåtkomst](../install-and-use-windows-powershell-web-access.md).
 
-```PowerShell
+```powershell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint
 ```
 
@@ -204,8 +203,8 @@ Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\
 
 Det här exemplet tilldelar åtkomst till Windows PowerShell-session standardkonfigurationen `Microsoft.PowerShell`på *srv2* för användare i de användare som heter `contoso\user1`, `contoso\user2`, och `contoso\user3`. Denna cmdlet skapar tre regler (1 per person).
 
-```PowerShell
-Add-PswaAuthorizationRule –UserName contoso\user1, contoso\user2, contoso\user3 –ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
+```powershell
+Add-PswaAuthorizationRule -UserName contoso\user1, contoso\user2, contoso\user3 -ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
 ```
 
 ### <a name="example-3"></a>EXEMPEL 3
@@ -213,18 +212,18 @@ Add-PswaAuthorizationRule –UserName contoso\user1, contoso\user2, contoso\user
 Det här exemplet illustrerar hur du kan ange värden för användaren via pipelinen.
 
 ```powershell
-"contoso\user1","contoso\user2" | Add-pswaAuthorizationRule –ComputerName srv2.contoso.com –ConfigurationName Microsoft.PowerShell
+"contoso\user1","contoso\user2" | Add-pswaAuthorizationRule -ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
 ```
 
 ### <a name="example-4"></a>EXEMPEL 4
 
 Det här exemplet illustrerar hur alla parametrar tar värden från pipeline efter egenskapsnamn.
 
-````PowerShell
+````powershell
 $o = New-Object -TypeName PSObject |
     Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru |
     Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru |
-    Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
+    Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" -PassThru
 
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell
 ````
@@ -236,19 +235,18 @@ Det här exemplet lägger till en regel som tillåter lokal användare med namne
 Det här exemplet illustrerar ett scenario där gatewayen är i en arbetsgrupp och måldatorn finns i en domän. Regeln gäller för lokala användare på gatewayen. I Windows PowerShell-webbåtkomst på inloggningssidan, för att kunna autentisera användaren måste ange en annan uppsättning autentiseringsuppgifter i den **valfria anslutningsinställningar** området. Gateway-servern använder denna ytterligare uppsättning autentiseringsuppgifter för att autentisera användaren på måldatorn, en server med namnet *srv1.contoso.com*.
 
 ````powershell
-Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1.contoso.com –ConfigurationName Microsoft.PowerShell
+Add-PswaAuthorizationRule -UserName PswaServer\ChrisLocal -ComputerName srv1.contoso.com -ConfigurationName Microsoft.PowerShell
 ````
 
 ### <a name="example-6"></a>EXEMPEL 6
 
-Det här exemplet tillåter alla användare åtkomst till alla slutpunkter på alla datorer.
-Detta inaktiverar i stort sett regler.
+Det här exemplet tillåter alla användare åtkomst till alla slutpunkter på alla datorer. Detta inaktiverar i stort sett regler.
 
 > [!NOTE]
 > Användning av den `*` jokertecknet rekommenderas inte för distributioner av känsliga och bör endast för testmiljöer eller används i distributioner där säkerheten minskas.
 
-````PowerShell
-Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *
+````powershell
+Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *
 ````
 
 ## <a name="see-also"></a>Se även

@@ -3,24 +3,20 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: galleriet, powershell, cmdlet, psget
 title: Start av NuGet
-ms.openlocfilehash: 2d321097fda201c0d8f843b2194a161eceabe4e1
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: e82fe7bec2e6b7a321fb173cdf9a54c5a97d5f18
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094025"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267855"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Bootstrap NuGet-providern och NuGet.exe
 
-NuGet.exe ingår inte i den senaste NuGet-providern.
-För att publicera driften av en modul eller ett skript, PowerShellGet kräver binära körbara NuGet.exe.
-Endast NuGet-providern krävs för alla andra åtgärder, inklusive *hitta*, *installera*, *spara*, och *avinstallera*.
-PowerShellGet innehåller logik för att hantera antingen en kombinerad bootstrap av NuGet-providern och NuGet.exe eller bootstrap av endast NuGet-providern.
-I båda fallen görs bara en enda fråga meddelande.
-Om datorn inte är ansluten till Internet, måste användaren eller en administratör kopiera en betrodd instans av NuGet-providern och/eller NuGet.exe-filen till den frånkopplade datorn.
+NuGet.exe ingår inte i den senaste NuGet-providern. För att publicera driften av en modul eller ett skript, PowerShellGet kräver binära körbara NuGet.exe. Endast NuGet-providern krävs för alla andra åtgärder, inklusive *hitta*, *installera*, *spara*, och *avinstallera*.
+PowerShellGet innehåller logik för att hantera antingen en kombinerad bootstrap av NuGet-providern och NuGet.exe eller bootstrap av endast NuGet-providern. I båda fallen görs bara en enda fråga meddelande. Om datorn inte är ansluten till Internet, måste användaren eller en administratör kopiera en betrodd instans av NuGet-providern och/eller NuGet.exe-filen till den frånkopplade datorn.
 
 > [!NOTE]
-> Från och med version 6, ingår NuGet-providern i installationen av PowerShell. [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
+> Från och med version 6, ingår NuGet-providern i installationen av PowerShell.
 
 ## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a>Matcha fel när NuGet-providern inte har installerats på en dator som är Internet-ansluten
 
@@ -123,15 +119,11 @@ VERBOSE: Successfully published module 'Contoso' to the module publish location 
 
 ## <a name="manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet"></a>Manuellt start av NuGet-providern på en dator som inte är ansluten till Internet
 
-De processer som visas ovan förutsätter att datorn är ansluten till Internet och kan ladda ned filer från en allmän plats.
-Om detta inte är möjligt är det enda alternativet att kunna starta en virtuell dator med de processer som anges ovan och manuellt kopiera providern till isolerad nod via en betrodd offlineprocess.
-När ett privat galleri är tillgänglig som stöder en isolerad miljö är det vanligaste användningsfallet för det här scenariot.
+De processer som visas ovan förutsätter att datorn är ansluten till Internet och kan ladda ned filer från en allmän plats. Om detta inte är möjligt är det enda alternativet att kunna starta en virtuell dator med de processer som anges ovan och manuellt kopiera providern till isolerad nod via en betrodd offlineprocess. När ett privat galleri är tillgänglig som stöder en isolerad miljö är det vanligaste användningsfallet för det här scenariot.
 
 När du har genomfört processen ovan för att kunna starta en Internetansluten dator hittar du providern filer på plats:
 
-```
-C:\Program Files\PackageManagement\ProviderAssemblies\
-```
+`C:\Program Files\PackageManagement\ProviderAssemblies\`
 
 Mappen/filen strukturen för NuGet-providern blir (eventuellt med ett annat versionsnummer):
 
@@ -147,11 +139,9 @@ Kopiera dessa mappar och en fil med hjälp av en betrodd process till offline-da
 
 Förutom att processen ska kunna starta NuGet-providern manuellt om datorn som ska användas för att publicera moduler eller skript till en privat galleri med hjälp av den `Publish-Module` eller `Publish-Script` cmdlet: ar, NuGet.exe binära körbara filen måste utföras.
 
-När ett privat galleri är tillgänglig som stöder en isolerad miljö är det vanligaste användningsfallet för det här scenariot.
-Det finns två alternativ för att hämta NuGet.exe-filen.
+När ett privat galleri är tillgänglig som stöder en isolerad miljö är det vanligaste användningsfallet för det här scenariot. Det finns två alternativ för att hämta NuGet.exe-filen.
 
-Ett alternativ är att kunna starta en dator som är Internet-anslutna och kopiera filer till offline-datorer med hjälp av en betrodd process.
-Efter start av den Internetansluten datorn placeras NuGet.exe binärfilen i en av två mappar:
+Ett alternativ är att kunna starta en dator som är Internet-anslutna och kopiera filer till offline-datorer med hjälp av en betrodd process. Efter start av den Internetansluten datorn placeras NuGet.exe binärfilen i en av två mappar:
 
 Om den `Publish-Module` eller `Publish-Script` cmdlets har körts med förhöjd behörighet (som administratör):
 
@@ -165,9 +155,7 @@ Om cmdletarna utfördes som en användare utan administratörsbehörighet:
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-Ett andra alternativ är att hämta NuGet.exe från webbplatsen NuGet.Org: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) när du väljer en NugGet version för produktion-datorer, se till att det är senare än 2.8.5.208 och identifiera den version som har fått en etikett ” rekommenderade ”.
-Kom ihåg att avblockera filen om den har hämtats med hjälp av en webbläsare.
-Detta kan utföras med hjälp av den `Unblock-File` cmdlet.
+Ett andra alternativ är att hämta NuGet.exe från webbplatsen NuGet.Org: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) när du väljer en NugGet version för produktion-datorer, se till att det är senare än 2.8.5.208 och identifiera den version som har fått en etikett ” rekommenderade ”. Kom ihåg att avblockera filen om den har hämtats med hjälp av en webbläsare. Detta kan utföras med hjälp av den `Unblock-File` cmdlet.
 
 I båda fallen NuGet.exe-filen kan kopieras till valfri plats i `$env:path`, men platserna som standard är:
 

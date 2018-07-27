@@ -1,20 +1,20 @@
 ---
 ms.topic: reference
-keywords: PowerShell-cmdlet
+keywords: PowerShell cmdlet
 ms.date: 12/12/2016
 title: Install-PswaWebApplication
-ms.openlocfilehash: 68455d9490f7d5c33c1a928ac262a76a78ad7128
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 29e074b75eeb387640831229c63142e6dd5e991a
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189609"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268307"
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
 ## <a name="synopsis"></a>SAMMANFATTNING
 
-Konfigurerar Windows PowerShell® Web Access-webbprogrammet i IIS.
+Konfigurerar Windows PowerShell Web Access-webbprogram i IIS.
 
 ## <a name="syntax"></a>SYNTAX
 
@@ -25,24 +25,25 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 ## <a name="description"></a>BESKRIVNING
 
-Den **Install-PswaWebApplication** cmdlet konfigurerar Windows PowerShell Web Access-webbprogram. Denna cmdlet installerar cmdleten webbprogrammet, kopplas till en webbplats och du kan även skapa en test SSL certifikat med hjälp av den **useTestCertificate** parameter. Av säkerhetsskäl bör orsaker webbadministratörer inte använda ett testcertifikat för produktionsmiljöer.
+Den **Install-PswaWebApplication** cmdlet konfigurerar Windows PowerShell Web Access-webbprogram.
+Denna cmdlet installerar webbprogrammet, kopplar det till en webbplats och kan även skapa en test SSL certifikatet med den **useTestCertificate** parametern. För säkerhet orsaker webbadministratörer bör inte använda ett testcertifikat för produktionsmiljöer.
 
 ## <a name="parameters"></a>PARAMETRAR
 
 ### <a name="-usetestcertificate"></a>-UseTestCertificate
 
-Anger att ett testcertifikat skapas. Om den här parametern anges till true, och sedan denna cmdlet skapar ett testcertifikat och konfigurerar Windows PowerShell Web Access webbprogram att använda certifikat för HTTPS-begäranden. Om den här parametern är inställd på false, skapas inga certifikat eller bindning. Ange värdet till false om ett annat certifikat används för Windows PowerShell Web Access.
+Anger att ett testcertifikat skapas. Om den här parametern anges till true, och sedan denna cmdlet skapar ett testcertifikat och konfigurerar det webbaserade programmet i Windows PowerShell-webbåtkomst och använda certifikat för HTTPS-begäranden. Om den här parametern är inställd på false, skapas ingen certifikat eller en bindning. Ange värdet till false om ett annat certifikat används för Windows PowerShell Web Access.
 
 |||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
-| Placering?                            | Med namnet                                |
+| Placering?                            | med namnet                                |
 | Standardvärde                        | SANT                                 |
 | Acceptera pipelineindata?               | falskt                                |
 | Acceptera jokertecken?          | falskt                                |
 
-### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;sträng&gt;
+### <a name="-webapplicationname"></a>-WebApplicationName
 
 Anger namnet för ditt webbprogram. Detta visas som den sista delen av URL: en Windows PowerShell Web Access.
 
@@ -55,15 +56,15 @@ Anger namnet för ditt webbprogram. Detta visas som den sista delen av URL: en W
 | Acceptera pipelineindata?               | falskt                                |
 | Acceptera jokertecken?          | falskt                                |
 
-### <a name="-websitenameltstringgt"></a>-WebSiteName&lt;sträng&gt;
+### <a name="-websitename"></a>-WebbPlatsensNamn
 
-Anger namnet på webbplatsen webbserver (IIS) som du vill installera det här webbprogrammet för Windows PowerShell Web Access.
+Anger namnet på Web Server (IIS)-webbplats som du vill installera den här Windows PowerShell Web Access-webbprogram.
 
 |||
 |-|-|
 | Alias                              | inget                                 |
 | Obligatorisk?                            | falskt                                |
-| Placering?                            | Med namnet                                |
+| Placering?                            | med namnet                                |
 | Standardvärde                        | Default Web Site                     |
 | Acceptera pipelineindata?               | falskt                                |
 | Acceptera jokertecken?          | falskt                                |
@@ -75,7 +76,7 @@ Uppmanar dig att bekräfta innan du kör cmdleten.
 |||
 |-|-|
 | Obligatorisk?                            | falskt                                |
-| Placering?                            | Med namnet                                |
+| Placering?                            | med namnet                                |
 | Standardvärde                        | falskt                                |
 | Acceptera pipelineindata?               | falskt                                |
 | Acceptera jokertecken?          | falskt                                |
@@ -88,15 +89,14 @@ Cmdleten körs inte.
 |||
 |-|-|
 | Obligatorisk?                            | falskt                                |
-| Placering?                            | Med namnet                                |
+| Placering?                            | med namnet                                |
 | Standardvärde                        | falskt                                |
 | Acceptera pipelineindata?               | falskt                                |
 | Acceptera jokertecken?          | falskt                                |
 
 ### <a name="ltcommonparametersgt"></a>&lt;CommonParameters&gt;
 
-Denna cmdlet stöder de gemensamma parametrarna:-Verbose,-Debug, - ErrorAction, -ErrorVariable,-OutBuffer och - OutVariable.
-Mer information finns i [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216).
+Denna cmdlet har stöd för parametrarna:-Verbose,-Debug, - ErrorAction, -ErrorVariable,-OutBuffer och - OutVariable. Mer information finns i [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216).
 
 ## <a name="inputs"></a>INDATA
 
@@ -104,13 +104,13 @@ Den här cmdleten tar inga indata.
 
 ## <a name="outputs"></a>UTDATA
 
-Denna cmdlet ger inga utdata.
+Denna cmdlet genererar inga utdata.
 
 ## <a name="examples"></a>EXEMPEL
 
 ### <a name="example-1"></a>EXEMPEL 1
 
-Det här exemplet installerar PSWA webbprogrammet med standardvärden för de **WebApplicationName** (*pswa*) och **WebSiteName** (*Default Web Site* ) parametrar.
+Det här exemplet installerar PSWA webbprogrammet med standardvärden för de **WebApplicationName** (*pswa*) och **WebbPlatsensNamn** (*Default Web Site* ) parametrar.
 
 ```
 Install-PswaWebApplication
@@ -118,7 +118,7 @@ Install-PswaWebApplication
 
 ### <a name="example-2"></a>EXEMPEL 2
 
-Det här exemplet installerar PSWA webbprogrammet med ett testcertifikat, och använder standardvärden för de **WebApplicationName** och **WebSiteName** parametrar.
+Det här exemplet installerar PSWA webbprogrammet med ett testcertifikat och använder standardvärden för de **WebApplicationName** och **WebbPlatsensNamn** parametrar.
 
 ```
 Install-PswaWebApplication -UseTestCertificate
