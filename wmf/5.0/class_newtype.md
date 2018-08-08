@@ -1,22 +1,22 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 9aa7e92632c671751020687ddbfc374eeda7148b
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a96a4a58dafa01fb43f5bdffb52ef833816148e7
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189422"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587303"
 ---
-# <a name="new-language-features-in-powershell-50"></a>Funktioner för nya språk i PowerShell 5.0
+# <a name="new-language-features-in-powershell-50"></a>Nya språkfunktioner i PowerShell 5.0
 
 PowerShell 5.0 innehåller följande nya språkelement i Windows PowerShell:
 
-## <a name="class-keyword"></a>Nyckelordet class
+## <a name="class-keyword"></a>Nyckelord för klass
 
-Den **klassen** nyckelordet definierar en ny klass. Detta är sant .NET Framework-typen.
-Klassmedlemmar är offentlig men bara offentliga inom omfånget för modulen.
-Du kan inte referera till typnamn som en sträng (till exempel `New-Object` fungerar inte), och i den här versionen kan du inte använda en literal typ (till exempel `[MyClass]`) utanför filen skript-modul som klassen definierats.
+Den **klass** nyckelordet definierar en ny klass. Det här är en äkta .NET Framework-typen.
+Klassmedlemmar är offentliga men endast allmänna inom omfånget för modulen.
+Du kan inte referera till namnet på som en sträng (till exempel `New-Object` inte fungerar), och i den här versionen kan du inte använda en literal typ (till exempel `[MyClass]`) utanför skriptmodul/filen som klassen definierats.
 
 ```powershell
 class MyClass
@@ -28,7 +28,7 @@ class MyClass
 ## <a name="enum-keyword-and-enumerations"></a>Nyckelordet enum och uppräkningar
 
 Stöd för den **enum** nyckelordet har lagts till, som använder ny rad som avgränsare.
-Aktuella begränsningar: du kan inte definiera en uppräknare i sig själv, men du kan initiera en uppräkning i en annan uppräkning, som visas i följande exempel.
+Aktuella begränsningar: du kan inte definiera en uppräknare när det gäller själva, men du kan initiera en uppräkning när det gäller en annan uppräkning som visas i följande exempel.
 Dessutom kan bastypen för närvarande inte anges; Det är alltid [int].
 
 ```powershell
@@ -38,7 +38,7 @@ enum Color2
 }
 ```
 
-En Uppräkningsvärdet måste vara en konstant för parsa tid; Du kan inte ange den till resultatet för ett anropade kommando.
+En uppräknarvärdets måste vara en konstant för parsa tid; Du kan inte ange den till resultatet av en anropade kommandot.
 
 ```powershell
 enum MyEnum
@@ -50,31 +50,31 @@ enum MyEnum
 }
 ```
 
-Uppräkningar stöder beräkningar, som visas i följande exempel.
+Uppräkningar stöder aritmetiska åtgärder som visas i följande exempel.
 
 ```powershell
 enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## <a name="import-dscresource"></a>Importera DscResource
+## <a name="import-dscresource"></a>Import-DscResource
 
-**Importera DscResource** är nu ett true dynamiska nyckelord.
-PowerShell Parsar angiven modul rotmodul söker efter klasser som innehåller den **DscResource** attribut.
+**Import-DscResource** är nu ett sant dynamisk nyckelord.
+PowerShell Parsar rotmodul för den angivna modulen, söker efter klasser som innehåller den **DscResource** attribut.
 
 ## <a name="implementingassembly"></a>ImplementingAssembly
 
-Ett nytt fält **ImplementingAssembly**, har lagts till ModuleInfo. Den är inställd på dynamisk sammansättning för en skriptmodul skapas om skriptet definierar klasser eller läsa in sammansättningen för binära moduler. Den är inte inställd när ModuleType = Manifest.
+Ett nytt fält, **ImplementingAssembly**, har lagts till ModuleInfo. Den är inställd på dynamisk sammansättning som skapats för en skriptmodul om skriptet definierar klasser eller läsa in sammansättningen för binära moduler. Det har inte angetts när ModuleType = Manifest.
 
-Reflektion på den **ImplementingAssembly** fältet identifierar resurser i en modul. Det innebär att du kan identifiera resurser som skrivits i PowerShell eller andra hanterade språk.
+Reflektion på den **ImplementingAssembly** fältet har identifierat resurser i en modul. Det innebär att du kan identifiera resurser som skrivits i PowerShell eller andra hanterade språk.
 
-Fält med initierare:
+Fält med fältparameterbindningar:
 
 ```powershell
 [int] $i = 5
 ```
 
-Statiskt stöds. den fungerar som ett attribut som gör Typbegränsningar, så den kan anges i valfri ordning.
+Statisk stöds. den fungerar som ett attribut som göra Typbegränsningar, så att den kan anges i valfri ordning.
 
 ```powershell
 static [int] $count = 0
@@ -86,42 +86,42 @@ En typ är valfritt.
 $s = "hello"
 ```
 
-Alla medlemmar är offentlig.
+Alla medlemmar är offentliga.
 
-## <a name="constructors-and-instantiation"></a>Konstruktorer och instansiering
+## <a name="constructors-and-instantiation"></a>Konstruktorerna och instansiering
 
-Windows PowerShell-klasser kan ha konstruktorer; de har samma namn som sin klass. Konstruktorer kan vara överbelastad. Statiska konstruktörer stöds. Egenskaper med initiering uttryck initieras innan du kör någon kod i en konstruktor. Statiska egenskaper initieras innan innehållet i en statisk konstruktor och instans egenskaper initieras innan innehållet i icke-statisk konstruktor. För närvarande finns ingen syntax för att anropa en konstruktor från en annan konstruktor (t.ex. C\# syntaxen ”: this()"). Lösningen är att definiera en vanlig Init-metod.
+Windows PowerShell-klasser kan ha konstruktorer; de har samma namn som deras klass. Konstruktorer kan vara överbelastad. Statiska konstruktörer stöds. Egenskaper med initieringen uttryck initieras innan du kör kod i en konstruktor. Statiska egenskaper initieras innan innehållet i en statisk konstruktor och instansegenskaperna initieras innan innehållet i konstruktorn icke-statisk. För närvarande finns ingen syntax för att anropa en konstruktor från en annan konstruktor (som C\# syntax ”: this()"). Lösningen är att definiera en vanlig Init-metod.
 
-Följande är sätt initierar klasser i den här versionen.
+Här följer några sätt att initierar klasser i den här versionen.
 
-En instans skapades av genom att använda Standardkonstruktorn. Observera att New-Object inte stöds i den här versionen.
+Instansiera genom att använda Standardkonstruktorn. Observera att New-Object inte stöds i den här versionen.
 
 ```powershell
 $a = [MyClass]::new()
 ```
 
-Anropar en konstruktor med en parameter
+Anropa en konstruktör med en parameter
 
 ```powershell
 $b = [MyClass]::new(42)
 ```
 
-Skicka en matris till en konstruktor med flera parametrar
+Skicka en matris till en konstruktör med flera parametrar
 ```powershell
 $c = [MyClass]::new(@(42,43,44), "Hello")
 ```
 
-I den här versionen fungerar inte New-Object med klasser som definierats i Windows PowerShell. Även för den här versionen visas typnamnet bara lexically, vilket innebär att den inte är synlig utanför modul eller skript som definierar klassen. Funktioner som kan returnera instanser av en klass som definieras i Windows PowerShell och instanser fungerar bra utanför modul eller skript.
+I den här versionen fungerar inte New-Object med klasser som definierats i Windows PowerShell. Även den här versionen är visas namnet på bara lexically, vilket innebär att det inte är synligt utanför modulen eller skript som definierar klassen. Funktioner kan returnera instanser av en klass som definierats i Windows PowerShell och instanser som fungerar bra utanför modulen eller skript.
 
 `Get-Member -Static` Visar en lista över konstruktorer, så att du kan visa överlagringar som någon annan metod. Prestanda för den här syntaxen är också betydligt snabbare än New-Object.
 
-Startvärden statisk metod med namnet **nya** fungerar med .NET-typer som visas i följande exempel.
+Pseudo statisk metod som heter **nya** fungerar med .NET-typer, som visas i följande exempel.
 
 ```powershell
 [hashtable]::new()
 ```
 
-Du kan nu se konstruktorn överlagringar med Get-medlem eller som visas i det här exemplet:
+Du kan nu se konstruktor överlagringar med Get-Member eller som visas i det här exemplet:
 
 ```powershell
 PS> [hashtable]::new
@@ -134,7 +134,7 @@ hashtable new(int capacity, float loadFactor)
 
 ## <a name="methods"></a>Metoder
 
-En metod för Windows PowerShell-klass implementeras som en ScriptBlock som har endast ett end-block. Alla metoder är offentlig. Följande är ett exempel på att definiera en metod med namnet **EnMetod**.
+En Windows PowerShell-klassmetod implementeras som en ScriptBlock med endast ett end-block. Alla metoder är offentliga. Följande visar ett exempel på att definiera en metod med namnet **EnMetod**.
 
 ```powershell
 class MyClass
@@ -154,35 +154,35 @@ $b = [MyClass]::new()
 $b.DoSomething(42)
 ```
 
-Överlagrade metoder – det vill säga de som har samma namn som en befintlig metod men hjälp av de angivna värdena--stöds också.
+Överlagrade metoder – det vill säga de som är samma namn som en befintlig metod, men hjälp av deras angivna värden--stöds också.
 
 ## <a name="properties"></a>Egenskaper
 
-Alla egenskaper är offentlig. Egenskaper för kräver en ny rad eller semikolon. Om ingen objekttyp har angetts är egenskapstypen-objekt.
+Alla egenskaper är offentliga. Egenskaper för kräver en ny rad eller semikolon. Om ingen typ har angetts är egenskapstypen objekt.
 
 Egenskaper som använder verifiering attribut eller argumentet omvandling attribut (t.ex. `[ValidateSet("aaa")]`) fungerar som förväntat.
 
-## <a name="hidden"></a>Dolda
+## <a name="hidden"></a>Dold
 
-Ett nytt nyckelord **Hidden**, har lagts till. **Dolda** kan tillämpas på Egenskaper och metoder (inklusive konstruktorer).
+Ett nytt nyckelord, **Hidden**, har lagts till. **Dolda** kan tillämpas på Egenskaper och metoder (inklusive konstruktorer).
 
-Dolda medlemmar är offentlig men visas inte i utdata för Get-medlem om-Force läggs till.
+Dolda medlemmar är offentliga men inte visas i utdata från Get-Member såvida inte-Force parameter har lagts till.
 
-Dolda medlemmar ingår inte när fliken slutföra eller med Intellisense om inte slutförs uppstår i den klass som definierar den dolda medlemmen.
+Dolda medlemmar ingår inte när fliken slutföra eller med Intellisense såvida inte slutförs som uppstår i den klass som definierar den dolda medlemmen.
 
-Ett nytt attribut **System.Management.Automation.HiddenAttribute** har lagts till så att C#-kod kan ha samma semantik i Windows PowerShell.
+Ett nytt attribut, **System.Management.Automation.HiddenAttribute** har lagts till så att C#-kod kan ha samma semantik i Windows PowerShell.
 
-## <a name="return-types"></a>Returtyper
+## <a name="return-types"></a>Returnera typer
 
-Returtypen är kontraktet. Returvärdet konverteras till den förväntade typen. Om ingen returtyp anges är returtypen void. Det finns ingen strömning av objekt. objekt kan inte skrivas till pipelinen avsiktligt eller av misstag.
+Returtypen är ett kontrakt; Det returnera värdet konverteras till den förväntade typen. Om ingen returtyp anges är returtypen ogiltiga. Det finns ingen strömning av objekt. objekt kan inte skrivas till pipelinen avsiktligt eller av misstag.
 
 ## <a name="attributes"></a>Attribut
 
 Två nya attribut **DscResource** och **DscProperty** har lagts till.
 
-## <a name="lexical-scoping-of-variables"></a>Lexikaliskt omfattningen för variabler
+## <a name="lexical-scoping-of-variables"></a>Lexikal ange omfång för variabler
 
-Nedan visas ett exempel på hur lexikala målgrupp fungerar i den här versionen.
+Nedan visas ett exempel på hur lexikal målgrupp fungerar i den här versionen.
 
 ```powershell
 $d = 42 # Script scope
@@ -210,7 +210,7 @@ $v -eq $d # true
 
 ## <a name="end-to-end-example"></a>Slutpunkt till slutpunkt-exempel
 
-I följande exempel skapar flera nya, anpassade klasser för att implementera en HTML-dynamiska språk (DSL).
+I följande exempel skapas flera nya, anpassade klasser för att implementera en HTML-dynamiska språk (DSL).
 I exempel läggs sedan hjälpfunktioner för att skapa specifika elementtyper som en del av elementklassen, till exempel rubrik och tabeller, eftersom typer inte kan användas utanför omfånget för en modul.
 
 ```powershell
@@ -308,7 +308,7 @@ $bodyText += $Properties.foreach{TH $_}
 # Add the rows
 $bodyText += foreach ($row in $Data)
     {
-        TR (-join $Properties.Foreach{ TD ($row.$\_) } )
+        TR (-join $Properties.Foreach{ TD ($row.$_) } )
     }
 
     $table = [Element] @{

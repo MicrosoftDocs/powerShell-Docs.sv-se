@@ -1,20 +1,20 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
-title: Upprepa en aktivitet för flera objekt ForEach-Object
+keywords: PowerShell cmdlet
+title: Upprepa en uppgift för flera objekt ForEach-Object
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
-ms.openlocfilehash: 8b8002af3ade0905421760ce29cdc84b084236e9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 64d85edad4a6931b2376b95b6d1f5b4d5194399f
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30954287"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587269"
 ---
-# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Upprepa en aktivitet för flera objekt (ForEach-Object)
+# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Upprepa en uppgift för flera objekt (ForEach-Object)
 
-Den **ForEach-Object** cmdlet använder skriptblocken och $_ beskrivningen för det aktuella pipeline-objektet så att du kan köra ett kommando för varje objekt i pipelinen. Detta kan användas för att utföra vissa komplicerade uppgifter.
+Den **ForEach-Object** cmdlet använder skriptblocken och `$_` beskrivning av det aktuella pipeline-objektet så att du kan köra ett kommando för varje objekt i pipelinen. Detta kan användas för att utföra vissa komplicerade uppgifter.
 
-En situation där detta kan vara användbart manipulera data så att de blir mer användbara. Win32_LogicalDisk klassen från WMI kan till exempel användas för att returnera information om ledigt diskutrymme för varje lokal disk. Data returneras i byte, vilket gör det svårt att läsa:
+En situation där det kan vara användbart manipulera data för att göra det mer användbart. Win32_LogicalDisk klassen från WMI kan till exempel användas för att returnera information om ledigt utrymme för varje lokal disk. Data returneras när det gäller byte, men, vilket gör det svårt att läsa:
 
 ```
 PS> Get-WmiObject -Class Win32_LogicalDisk
@@ -27,20 +27,20 @@ Size         : 203912880128
 VolumeName   : Local Disk
 ```
 
-Vi kan konvertera FreeSpace värdet till megabyte genom att dividera varje värde med 1024 två gånger. efter den första divisionen data är i kilobyte efter det andra division är megabyte Du kan göra det i ett ForEach-Object-skriptblock genom att skriva:
+Vi kan konvertera FreeSpace värdet till megabyte genom att dividera varje värde med 1024 två gånger. data är i kilobyte efter första divisionen och efter den andra delen av är det megabyte. Du kan göra det i en ForEach-Object-skriptblocket genom att skriva:
 
 ```
 PS> Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {($_.FreeSpace)/1024.0/1024.0}
 48318.01171875
 ```
 
-Tyvärr är utdata nu data med ingen tillhörande etikett. Eftersom WMI-egenskaper som det är skrivskyddad, kan du konvertera FreeSpace direkt. Om du anger detta:
+Utdata är tyvärr nu data med inga associerade etiketten. Du kan inte direkt konvertera FreeSpace eftersom WMI-egenskaper som detta är skrivskyddade. Om du anger detta:
 
 ```powershell
 Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {$_.FreeSpace = ($_.FreeSpace)/1024.0/1024.0}
 ```
 
-Du får ett felmeddelande:
+Du får ett felmeddelande visas:
 
 ```output
 "FreeSpace" is a ReadOnly property.
@@ -49,4 +49,4 @@ At line:1 char:70
 eeSpace = ($_.FreeSpace)/1024.0/1024.0}
 ```
 
-Du kan ordna data genom att använda vissa avancerade, men en enklare metod är att skapa ett nytt objekt genom att använda **Select-Object**.
+Du kan ordna om data med hjälp av några avancerade tekniker, men en enklare metod är att skapa ett nytt objekt genom att använda **Select-Object**.

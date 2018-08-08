@@ -1,3 +1,14 @@
+---
+title: Supportlängd för PowerShell Core
+description: Policyer som reglerar stöd för PowerShell Core
+ms.date: 08/06/2018
+ms.openlocfilehash: 2e0ca1b9c133e6f316a40aff13365d0489059165
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587167"
+---
 # <a name="powershell-core-support-lifecycle"></a>Supportlängd för PowerShell Core
 
 PowerShell Core är en specifik uppsättning verktyg och komponenter som har levererats, installeras och konfigureras separat från Windows PowerShell.
@@ -44,7 +55,8 @@ Plattformar som anges som `Experimental` inte stöds officiellt, men är tillgä
 | Windows Server 2008 R2, 2012 R2, 2016             | Stöds   | Stöds   |
 | [Windows Server Halvårskanal][semi-annual] | Stöds   | Stöds   |
 | Ubuntu 14.04 och 16.04                           | Stöds   | Stöds   |
-| Ubuntu 17.10 och 18.04                           |             | Stöds   |
+| Ubuntu 18.04                                      |             | Stöds   |
+| Ubuntu 18.10 (via Fäst paket)                   |             | Community   |
 | Debian 8.7 + och 9                                | Stöds   | Stöds   |
 | CentOS 7                                          | Stöds   | Stöds   |
 | Red Hat Enterprise Linux 7                        | Stöds   | Stöds   |
@@ -56,6 +68,10 @@ Plattformar som anges som `Experimental` inte stöds officiellt, men är tillgä
 | Raspbian                                          | Experimentella| Community   |
 | Kali                                              | Community   | Community   |
 | AppImage (fungerar på flera Linux-plattformar)     | Community   | Community   |
+| [Fäst paket](https://snapcraft.io/powershell)   | Se kommentar    | Se kommentar    |
+
+> [!NOTE]
+> Fäst paket kommer att experimentella under en period.  När du har är vi övertygade om att snapin inte innehåller några nya supportfrågor, support följer du kör paketet på distributionsplatsen.
 
 ## <a name="platform-which-are-out-of-support"></a>Plattformen som inte längre stöds
 
@@ -65,13 +81,14 @@ Därför stöd för följande versioner av ägare för distribution och stöds i
 
 | Operativsystem       | Version | Livscykelns slut                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 26      | [Maj 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| Fedora   | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
 | Fedora   | 24      | [Augusti 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| OpenSUSE | 42.2    | [Januari 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| Fedora   | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 26      | [Maj 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
 | OpenSUSE | 42.1    | [Maj 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| Ubuntu   | nr 17.04 från   | [Januari 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| OpenSUSE | 42.2    | [Januari 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
 | Ubuntu   | 16,10   | [Juli 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
+| Ubuntu   | nr 17.04 från   | [Januari 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 17.10   | [Juli 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 
 ## <a name="notes-on-licensing"></a>Anmärkningar om licensiering
 

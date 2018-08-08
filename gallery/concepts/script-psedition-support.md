@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: galleriet, powershell, cmdlet, psget
 title: Skriptet med kompatibla PowerShell-utgåvor
-ms.openlocfilehash: 0ab655ff1c5dd0f48ec41a16ad394251b6c70748
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 2313131fe17dcd9508db514883ae3dcb837fb07e
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267821"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587218"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Skriptet med kompatibla PowerShell-utgåvor
 
@@ -45,7 +45,7 @@ Get-Content C:\script.ps1
 Get-Process -Name PowerShell
 
 C:\script.ps1
-C:\script.ps1 : The script 'script.ps1' cannot be run because it contained a "#requires" statement for PowerShell Core edition. The edition of PowerShell that is required by the script does not match the currently running PowerShell Desktop edition.
+C:\script.ps1 : The script 'script.ps1' cannot be run because it contained a "#requires" statement for PowerShell editions 'Core'. The edition of PowerShell that is required by the script does not match the currently running PowerShell Desktop edition.
 At line:1 char:1
 + C:\script.ps1
 + ~~~~~~~~~~~~~
@@ -54,14 +54,14 @@ At line:1 char:1
 ```
 
 PowerShell-galleriet användare kan hitta listan stöds på en viss version av PowerShell-skript.
-Skript utan PSEdition_Desktop och PSEditon_Core anses fungera på PowerShell Desktop-versioner.
+Skript utan PSEdition_Desktop och PSEdition_Core taggar anses fungera på PowerShell Desktop edition.
 
 ```powershell
 # Find scripts supported on PowerShell Desktop edition
-Find-Script -Tag PSEditon_Desktop
+Find-Script -Tag PSEdition_Desktop
 
-# Find scripts supported on PowerShell Core editions
-Find-Script -Tag PSEditon_Core
+# Find scripts supported on PowerShell Core edition
+Find-Script -Tag PSEdition_Core
 ```
 
 ## <a name="more-details"></a>Mer information
