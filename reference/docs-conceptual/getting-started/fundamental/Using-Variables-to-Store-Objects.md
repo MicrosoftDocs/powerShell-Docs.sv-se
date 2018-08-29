@@ -1,35 +1,37 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+ms.date: 08/27/2018
+keywords: PowerShell cmdlet
 title: Använd variabler för att lagra objekt
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: e52f0a344d0ad13db42b34bed912d584c99b0e30
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3168b64039a601857f9c684108de5770f88329e3
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953335"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134066"
 ---
-# <a name="using-variables-to-store-objects"></a><span data-ttu-id="63588-103">Använd variabler för att lagra objekt</span><span class="sxs-lookup"><span data-stu-id="63588-103">Using Variables to Store Objects</span></span>
-<span data-ttu-id="63588-104">PowerShell fungerar med objekt.</span><span class="sxs-lookup"><span data-stu-id="63588-104">PowerShell works with objects.</span></span> <span data-ttu-id="63588-105">PowerShell kan du skapa variabler som i stort sett heter objekt att bevara utdata för senare användning.</span><span class="sxs-lookup"><span data-stu-id="63588-105">PowerShell lets you create variables, essentially named objects, to preserve output for later use.</span></span> <span data-ttu-id="63588-106">Om du har använt för att arbeta med variabler i andra tankar Kom ihåg att PowerShell variabler objekt, inte text.</span><span class="sxs-lookup"><span data-stu-id="63588-106">If you are used to working with variables in other shells remember that PowerShell variables are objects, not text.</span></span>
+# <a name="using-variables-to-store-objects"></a><span data-ttu-id="ae250-103">Använda variabler för att lagra objekt</span><span class="sxs-lookup"><span data-stu-id="ae250-103">Using variables to store objects</span></span>
 
-<span data-ttu-id="63588-107">Variabler anges alltid med det första tecknet $ och kan innehålla alfanumeriska tecken eller understreck i sina namn.</span><span class="sxs-lookup"><span data-stu-id="63588-107">Variables are always specified with the initial character $, and can include any alphanumeric characters or the underscore in their names.</span></span>
+<span data-ttu-id="ae250-104">PowerShell fungerar med objekt.</span><span class="sxs-lookup"><span data-stu-id="ae250-104">PowerShell works with objects.</span></span> <span data-ttu-id="ae250-105">PowerShell kan du skapa objekt som kallas variabler.</span><span class="sxs-lookup"><span data-stu-id="ae250-105">PowerShell lets you create named objects known as variables.</span></span>
+<span data-ttu-id="ae250-106">Variabler namn kan innehålla understreck tecken kan alfanumeriska tecken.</span><span class="sxs-lookup"><span data-stu-id="ae250-106">Variables names can include the underscore character can any alphanumeric characters.</span></span> <span data-ttu-id="ae250-107">När den används i PowerShell, en variabel alltid anges med hjälp av den \$ tecken följt av namnet på variabeln.</span><span class="sxs-lookup"><span data-stu-id="ae250-107">When used in PowerShell, a variable is always specified using the \$ character followed by variable name.</span></span>
 
-### <a name="creating-a-variable"></a><span data-ttu-id="63588-108">Skapa en variabel</span><span class="sxs-lookup"><span data-stu-id="63588-108">Creating a Variable</span></span>
-<span data-ttu-id="63588-109">Du kan skapa en variabel genom att ange ett giltigt namn på variabel:</span><span class="sxs-lookup"><span data-stu-id="63588-109">You can create a variable by typing a valid variable name:</span></span>
+## <a name="creating-a-variable"></a><span data-ttu-id="ae250-108">Skapa en variabel</span><span class="sxs-lookup"><span data-stu-id="ae250-108">Creating a variable</span></span>
+
+<span data-ttu-id="ae250-109">Du kan skapa en variabel genom att skriva ett giltigt variabelnamn:</span><span class="sxs-lookup"><span data-stu-id="ae250-109">You can create a variable by typing a valid variable name:</span></span>
 
 ```
 PS> $loc
 PS>
 ```
 
-<span data-ttu-id="63588-110">Inga resultat returneras eftersom **$loc** saknar ett värde.</span><span class="sxs-lookup"><span data-stu-id="63588-110">This returns no result because **$loc** does not have a value.</span></span> <span data-ttu-id="63588-111">Du kan skapa en variabel och tilldela den ett värde i samma steg.</span><span class="sxs-lookup"><span data-stu-id="63588-111">You can create a variable and assign it a value in the same step.</span></span> <span data-ttu-id="63588-112">PowerShell skapar endast variabeln om det inte finns; Annars tilldelar det angivna värdet till en befintlig variabel.</span><span class="sxs-lookup"><span data-stu-id="63588-112">PowerShell only creates the variable if it does not exist; otherwise, it assigns the specified value to the existing variable.</span></span> <span data-ttu-id="63588-113">Att lagra din aktuella plats i variabeln **$loc**, typ:</span><span class="sxs-lookup"><span data-stu-id="63588-113">To store your current location in the variable **$loc**, type:</span></span>
+<span data-ttu-id="ae250-110">Det här exemplet returnerar inga resultat eftersom `$loc` saknar ett värde.</span><span class="sxs-lookup"><span data-stu-id="ae250-110">This example returns no result because `$loc` doesn't have a value.</span></span> <span data-ttu-id="ae250-111">Du kan skapa en variabel och tilldela den ett värde i samma steg.</span><span class="sxs-lookup"><span data-stu-id="ae250-111">You can create a variable and assign it a value in the same step.</span></span> <span data-ttu-id="ae250-112">PowerShell skapar endast variabeln om det inte finns.</span><span class="sxs-lookup"><span data-stu-id="ae250-112">PowerShell only creates the variable if it doesn't exist.</span></span>
+<span data-ttu-id="ae250-113">Annars tilldelar det angivna värdet till en befintlig variabel.</span><span class="sxs-lookup"><span data-stu-id="ae250-113">Otherwise, it assigns the specified value to the existing variable.</span></span> <span data-ttu-id="ae250-114">I följande exempel lagrar den aktuella platsen i variabeln `$loc`:</span><span class="sxs-lookup"><span data-stu-id="ae250-114">The following example stores the current location in the variable `$loc`:</span></span>
 
-```
+```powershell
 $loc = Get-Location
 ```
 
-<span data-ttu-id="63588-114">Det finns inga utdata som visas när du anger det här kommandot eftersom utdata skickas till $ lagerst.</span><span class="sxs-lookup"><span data-stu-id="63588-114">There is no output displayed when you type this command because the output is sent to $loc.</span></span> <span data-ttu-id="63588-115">I PowerShell är visas utdata en sidoeffekt av det faktum att informationen som inte annars dirigeras, skickas alltid till skärmen.</span><span class="sxs-lookup"><span data-stu-id="63588-115">In PowerShell, displayed output is a side effect of the fact that data, which is not otherwise directed, always gets sent to the screen.</span></span> <span data-ttu-id="63588-116">Att skriva $loc visar din aktuella plats:</span><span class="sxs-lookup"><span data-stu-id="63588-116">Typing $loc will show your current location:</span></span>
+<span data-ttu-id="ae250-115">PowerShell visar inga utdata när du skriver in det här kommandot.</span><span class="sxs-lookup"><span data-stu-id="ae250-115">PowerShell displays no output when you type this command.</span></span> <span data-ttu-id="ae250-116">PowerShell skickar utdata från Get-plats till `$loc`.</span><span class="sxs-lookup"><span data-stu-id="ae250-116">PowerShell sends the output of 'Get-Location' to `$loc`.</span></span> <span data-ttu-id="ae250-117">I PowerShell skickas data som inte är tilldelade eller omdirigeras till skärmen.</span><span class="sxs-lookup"><span data-stu-id="ae250-117">In PowerShell, data that isn't assigned or redirected is sent to the screen.</span></span> <span data-ttu-id="ae250-118">Att skriva `$loc` visar din aktuella plats:</span><span class="sxs-lookup"><span data-stu-id="ae250-118">Typing `$loc` shows your current location:</span></span>
 
 ```
 PS> $loc
@@ -39,9 +41,9 @@ Path
 C:\temp
 ```
 
-<span data-ttu-id="63588-117">Du kan använda **Get-medlemmen** att visa information om innehållet för variabler.</span><span class="sxs-lookup"><span data-stu-id="63588-117">You can use **Get-Member** to display information about the contents of variables.</span></span> <span data-ttu-id="63588-118">Skicka $loc till Get-medlemmen visar att det är en **PathInfo** objektet, precis som utdata från Get-plats:</span><span class="sxs-lookup"><span data-stu-id="63588-118">Piping $loc to Get-Member will show you that it is a **PathInfo** object, just like the output from Get-Location:</span></span>
+<span data-ttu-id="ae250-119">Du kan använda `Get-Member` att visa information om innehållet för variabler.</span><span class="sxs-lookup"><span data-stu-id="ae250-119">You can use `Get-Member` to display information about the contents of variables.</span></span> <span data-ttu-id="ae250-120">`Get-Member` Visar att `$loc` är en **PathInfo** objekt, precis som utdata från `Get-Location`:</span><span class="sxs-lookup"><span data-stu-id="ae250-120">`Get-Member` shows you that `$loc` is a **PathInfo** object, just like the output from `Get-Location`:</span></span>
 
-```
+```powershell
 PS> $loc | Get-Member -MemberType Property
 
    TypeName: System.Management.Automation.PathInfo
@@ -54,47 +56,47 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {...
 ProviderPath Property   System.String ProviderPath {get;}
 ```
 
-### <a name="manipulating-variables"></a><span data-ttu-id="63588-119">Ändra variabler</span><span class="sxs-lookup"><span data-stu-id="63588-119">Manipulating Variables</span></span>
-<span data-ttu-id="63588-120">PowerShell innehåller flera kommandon för att ändra variabler.</span><span class="sxs-lookup"><span data-stu-id="63588-120">PowerShell provides several commands to manipulate variables.</span></span> <span data-ttu-id="63588-121">Du kan se en fullständig lista i ett läsbart formulär genom att skriva:</span><span class="sxs-lookup"><span data-stu-id="63588-121">You can see a complete listing in a readable form by typing:</span></span>
+## <a name="manipulating-variables"></a><span data-ttu-id="ae250-121">Ändra variabler</span><span class="sxs-lookup"><span data-stu-id="ae250-121">Manipulating variables</span></span>
 
-```
+<span data-ttu-id="ae250-122">PowerShell innehåller flera kommandon för att ändra variabler.</span><span class="sxs-lookup"><span data-stu-id="ae250-122">PowerShell provides several commands to manipulate variables.</span></span> <span data-ttu-id="ae250-123">Du kan se en fullständig lista i form av en läsbar genom att skriva:</span><span class="sxs-lookup"><span data-stu-id="ae250-123">You can see a complete listing in a readable form by typing:</span></span>
+
+```powershell
 Get-Command -Noun Variable | Format-Table -Property Name,Definition -AutoSize -Wrap
 ```
 
-<span data-ttu-id="63588-122">Förutom de variabler som du skapar i den aktuella PowerShell-sessionen finns flera systemdefinierade variabler.</span><span class="sxs-lookup"><span data-stu-id="63588-122">In addition to the variables you create in your current PowerShell session, there are several system-defined variables.</span></span> <span data-ttu-id="63588-123">Du kan använda den **ta bort variabeln** cmdlet för att rensa alla variabler som inte kontrolleras av PowerShell.</span><span class="sxs-lookup"><span data-stu-id="63588-123">You can use the **Remove-Variable** cmdlet to clear out all of the variables which are not controlled by PowerShell.</span></span> <span data-ttu-id="63588-124">Skriv följande kommando för att rensa alla variabler:</span><span class="sxs-lookup"><span data-stu-id="63588-124">Type the following command to clear all variables:</span></span>
+<span data-ttu-id="ae250-124">PowerShell skapar även flera systemdefinierade variabler.</span><span class="sxs-lookup"><span data-stu-id="ae250-124">PowerShell also creates several system-defined variables.</span></span> <span data-ttu-id="ae250-125">Du kan använda den `Remove-Variable` cmdlet för att ta bort variabler som inte kontrolleras av PowerShell, från den aktuella sessionen.</span><span class="sxs-lookup"><span data-stu-id="ae250-125">You can use the `Remove-Variable` cmdlet to remove variables, which are not controlled by PowerShell, from the current session.</span></span> <span data-ttu-id="ae250-126">Skriv följande kommando för att rensa alla variabler:</span><span class="sxs-lookup"><span data-stu-id="ae250-126">Type the following command to clear all variables:</span></span>
 
-```
+```powershell
 Remove-Variable -Name * -Force -ErrorAction SilentlyContinue
 ```
 
-<span data-ttu-id="63588-125">Detta genererar tillfrågas om du ser nedan.</span><span class="sxs-lookup"><span data-stu-id="63588-125">This will produce the confirmation prompt you see below.</span></span>
+<span data-ttu-id="ae250-127">När du har kört kommandot föregående den `Get-Variable` cmdlet visar systemvariabler PowerShell.</span><span class="sxs-lookup"><span data-stu-id="ae250-127">After running the previous command, the `Get-Variable` cmdlet shows the PowerShell system variables.</span></span>
 
-```
-Confirm
-Are you sure you want to perform this action?
-Performing operation "Remove Variable" on Target "Name: Error".
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
-(default is "Y"):A
-```
+<span data-ttu-id="ae250-128">PowerShell skapar även en variabel enhet.</span><span class="sxs-lookup"><span data-stu-id="ae250-128">PowerShell also creates a variable drive.</span></span> <span data-ttu-id="ae250-129">Använd följande exempel för att visa alla PowerShell-variabler med hjälp av variabeln drive:</span><span class="sxs-lookup"><span data-stu-id="ae250-129">Use the following example to display all PowerShell variables using the variable drive:</span></span>
 
-<span data-ttu-id="63588-126">Om du kör den **Get-Variable** cmdlet, visas de återstående PowerShell-variablerna.</span><span class="sxs-lookup"><span data-stu-id="63588-126">If you then run the **Get-Variable** cmdlet, you will see the remaining PowerShell variables.</span></span> <span data-ttu-id="63588-127">Eftersom det inte finns en variabel PowerShell-enhet, kan du också visa alla PowerShell variabler genom att skriva:</span><span class="sxs-lookup"><span data-stu-id="63588-127">Since there is also a variable PowerShell drive, you can also display all PowerShell variables by typing:</span></span>
-
-```
+```powershell
 Get-ChildItem variable:
 ```
 
-### <a name="using-cmdexe-variables"></a><span data-ttu-id="63588-128">Använda Cmd.exe variabler</span><span class="sxs-lookup"><span data-stu-id="63588-128">Using Cmd.exe Variables</span></span>
-<span data-ttu-id="63588-129">Även om PowerShell inte är Cmd.exe körs i en miljö med kommandot shell och kan använda samma variabler som är tillgängliga i alla miljöer i Windows.</span><span class="sxs-lookup"><span data-stu-id="63588-129">Although PowerShell is not Cmd.exe, it runs in a command shell environment and can use the same variables available in any environment in Windows.</span></span> <span data-ttu-id="63588-130">Dessa variabler är tillgängliga via en enhet med namnet **env**:.</span><span class="sxs-lookup"><span data-stu-id="63588-130">These variables are exposed through a drive named **env**:.</span></span> <span data-ttu-id="63588-131">Du kan visa dessa variabler genom att skriva:</span><span class="sxs-lookup"><span data-stu-id="63588-131">You can view these variables by typing:</span></span>
+## <a name="using-cmdexe-variables"></a><span data-ttu-id="ae250-130">Använda Cmd.exe variabler</span><span class="sxs-lookup"><span data-stu-id="ae250-130">Using Cmd.exe variables</span></span>
 
-```
+<span data-ttu-id="ae250-131">PowerShell kan använda de samma miljövariablerna som är tillgängliga för alla Windows-processen, inklusive Cmd.exe.</span><span class="sxs-lookup"><span data-stu-id="ae250-131">PowerShell can use the same environment variables available to any Windows process, including Cmd.exe.</span></span> <span data-ttu-id="ae250-132">Dessa variabler är tillgängliga via en enhet med namnet `env:`.</span><span class="sxs-lookup"><span data-stu-id="ae250-132">These variables are exposed through a drive named `env:`.</span></span> <span data-ttu-id="ae250-133">Du kan visa dessa variabler genom att skriva följande kommando:</span><span class="sxs-lookup"><span data-stu-id="ae250-133">You can view these variables by typing the following command:</span></span>
+
+```powershell
 Get-ChildItem env:
 ```
 
-<span data-ttu-id="63588-132">Även om standard variabel cmdlets inte är avsedda att fungera med **env:** variabler, du kan fortfarande använda dem genom att ange den **env:** prefix.</span><span class="sxs-lookup"><span data-stu-id="63588-132">Although the standard variable cmdlets are not designed to work with **env:** variables, you can still use them by specifying the **env:** prefix.</span></span> <span data-ttu-id="63588-133">Till exempel om du vill se rotkatalogen operativsystem du kan använda kommandotolken- **% SystemRoot %** variabel från i PowerShell genom att skriva:</span><span class="sxs-lookup"><span data-stu-id="63588-133">For example, to see the operating system root directory, you can use the command-shell **%SystemRoot%** variable from within PowerShell by typing:</span></span>
+<span data-ttu-id="ae250-134">Standard `*-Variable` cmdletar är inte avsett att fungera med miljövariabler.</span><span class="sxs-lookup"><span data-stu-id="ae250-134">The standard `*-Variable` cmdlets aren't designed to work with environment variables.</span></span> <span data-ttu-id="ae250-135">Miljövariabler kan nås med hjälp av den `env:` enhetsprefix.</span><span class="sxs-lookup"><span data-stu-id="ae250-135">Environment variables are accessed using the `env:` drive prefix.</span></span> <span data-ttu-id="ae250-136">Till exempel den **% SystemRoot %** variabel i Cmd.exe innehåller katalognamnet för operativsystemets rot.</span><span class="sxs-lookup"><span data-stu-id="ae250-136">For example, the **%SystemRoot%** variable in Cmd.exe contains the operating system's root directory name.</span></span> <span data-ttu-id="ae250-137">I PowerShell kan du använda `$env:SystemRoot` att få åtkomst till samma värde.</span><span class="sxs-lookup"><span data-stu-id="ae250-137">In PowerShell, you use `$env:SystemRoot` to access the same value.</span></span>
 
 ```
 PS> $env:SystemRoot
 C:\WINDOWS
 ```
 
-<span data-ttu-id="63588-134">Du kan också skapa och ändra miljövariabler i PowerShell.</span><span class="sxs-lookup"><span data-stu-id="63588-134">You can also create and modify environment variables from within PowerShell.</span></span> <span data-ttu-id="63588-135">Miljövariabler som nås från Windows PowerShell stämmer överens med de vanliga reglerna för miljövariabler någon annanstans i Windows.</span><span class="sxs-lookup"><span data-stu-id="63588-135">Environment variables accessed from Windows PowerShell conform to the normal rules for environment variables elsewhere in Windows.</span></span>
+<span data-ttu-id="ae250-138">Du kan också skapa och ändra miljövariabler i PowerShell.</span><span class="sxs-lookup"><span data-stu-id="ae250-138">You can also create and modify environment variables from within PowerShell.</span></span> <span data-ttu-id="ae250-139">Miljövariabler i PowerShell följer samma regler för miljövariabler används någon annanstans i operativsystemet.</span><span class="sxs-lookup"><span data-stu-id="ae250-139">Environment variables in PowerShell follow the same rules for environment variables used elsewhere in the operating system.</span></span> <span data-ttu-id="ae250-140">I följande exempel skapas en ny miljövariabel:</span><span class="sxs-lookup"><span data-stu-id="ae250-140">The following example creates a new environment variable:</span></span>
+
+```powershell
+$env:LIB_PATH='/usr/local/lib'
+```
+
+<span data-ttu-id="ae250-141">Även om inte krävs, är det vanligt att miljövariabelnamn att använda enbart versaler.</span><span class="sxs-lookup"><span data-stu-id="ae250-141">Though not required, is it common for environment variable names to use all uppercase letters.</span></span>
