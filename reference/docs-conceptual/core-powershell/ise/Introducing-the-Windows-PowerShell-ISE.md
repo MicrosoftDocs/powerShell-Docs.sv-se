@@ -1,33 +1,31 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+ms.date: 08/14/2018
+keywords: PowerShell cmdlet
 title: Introducerar Windows PowerShell ISE
-ms.openlocfilehash: b09e64d0258d11f1f16f96b319ef232ebdfa0c49
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d27a0eb594d7271121cee59f38d096995cc98648
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952910"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133876"
 ---
 # <a name="introducing-the-windows-powershell-ise"></a>Introducerar Windows PowerShell ISE
 
-I Windows PowerShell Integrated Scripting Environment (ISE) är en värdprogram för Windows PowerShell. Windows PowerShell ISE kan du köra kommandon och skriva, testa och felsöka skript i ett enda Windows-baserade grafiska användargränssnitt med redigering, flikavslutande, syntax färgläggning, selektiv körning, sammanhangsberoende hjälp och support för höger-till-vänster-språk. Du kan använda menyalternativ och kortkommandon för att utföra många av de aktiviteter som du vill utföra i Windows PowerShell-konsolen. Till exempel när du felsöker ett skript i Windows PowerShell ISE om du vill ange en rad brytpunkt i ett skript, högerklicka på koden för och klicka sedan på **brytpunkt**.
+I Windows PowerShell Integrated Scripting Environment (ISE) är ett program för Windows PowerShell. Du kan köra kommandon och skriva, testa och felsöka skript i ett enda Windows-baserade grafiska användargränssnitt i Windows PowerShell ISE. Gränssnittet ger flerradsredigering, tabbifyllning, syntaxfärgning, selektiv körning, sammanhangsberoende hjälp och support för höger-till-vänster-språk. Menyalternativ och kortkommandon mappas till många av de uppgifter som du gör i Windows PowerShell-konsolen. Till exempel när du felsöker ett skript i Windows PowerShell ISE kan du högerklicka på en rad med kod för att konfigurera en brytpunkt.
 
-Prova funktionerna i Windows PowerShell ISE.
+Testa de här funktionerna i Windows PowerShell ISE.
 
-- Redigering: Infoga en tom rad under den aktuella raden i fönstret kommandot att trycka på SKIFT + RETUR.
-- Selektiv körning: Om du vill köra en del av ett skript, markerar du texten som du vill köra och klicka sedan på den **kör skriptet** knappen. Eller tryck på F5.
-- Sammanhangsberoende hjälp: typen **Invoke-objektet**, och tryck på F1. Hjälpfilen öppnas i hjälpavsnittet för den **Invoke-objektet** cmdlet.
+- Flerradsredigering: Infoga en tom rad under den aktuella raden i fönstret kommando, trycka på SKIFT + RETUR.
+- Selektiv körning: Om du vill köra en del av ett skript, markerar du texten som du vill köra och klicka sedan på den **kör skript** knappen. Eller tryck på F5.
+- Sammanhangsberoende hjälp: typen **Invoke-Item**, och tryck på F1. Hjälpfilen öppnas i artikeln för den **Invoke-Item** cmdlet.
 
-Windows PowerShell ISE kan du anpassa vissa aspekter av dess utseende. Har sin egen Windows PowerShell profil där du kan lagra funktioner, alias, variabler och kommandon som du använder i Windows PowerShell ISE.
+Windows PowerShell ISE kan du anpassa vissa aspekter av utseendet. Det har också sin egen Windows PowerShell-skript för profilen.
 
 ## <a name="to-start-the-windows-powershell-ise"></a>Starta Windows PowerShell ISE
 
-Gör något av följande:
+Klicka på **starta**väljer **Windows PowerShell**, och klicka sedan på **Windows PowerShell ISE**.
+Alternativt kan du ange `powershell_ise.exe` i valfritt kommandogränssnitt eller i rutan Kör.
 
-- Klicka på **starta**, peka på **alla program**, peka på **Windows PowerShell V2**, och klicka sedan på **Windows PowerShell ISE**.
-- I Windows PowerShell-konsolen Cmd.exe eller i rutan Kör, typ, **powershell_ise.exe**.
+## <a name="to-get-help-in-the-windows-powershell-ise"></a>Att få hjälp i Windows PowerShell ISE
 
-## <a name="to-get-help-in-the-windows-powershell-ise"></a>Få hjälp i Windows PowerShell ISE
-
-På den **hjälp** -menyn klickar du på **Windows PowerShell-hjälpen**. Eller tryck på F1. Filen som öppnas beskriver Windows PowerShell ISE och Windows PowerShell, inklusive alla tillgängliga från cmdlet Get-Help hjälp.
+På den **hjälpa** -menyn klickar du på **Windows PowerShell-hjälp**. Eller tryck på F1. Filen som öppnas beskriver Windows PowerShell ISE och Windows PowerShell, inklusive alla hjälpen som finns i cmdleten Get-Help.

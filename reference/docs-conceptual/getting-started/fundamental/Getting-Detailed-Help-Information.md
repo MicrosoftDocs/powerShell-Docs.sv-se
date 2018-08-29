@@ -1,175 +1,182 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+ms.date: 08/27/2018
+keywords: PowerShell cmdlet
 title: Få detaljerad hjälpinformation
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483040"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134042"
 ---
 # <a name="getting-detailed-help-information"></a>Få detaljerad hjälpinformation
-Windows PowerShell innehåller detaljerade hjälpavsnitt som beskriver begrepp för Windows PowerShell och Windows PowerShell-språk. Det finns även hjälpavsnitt för varje cmdlet och providern och hjälpavsnitt för många funktioner och skript.
 
-Du kan visa de här hjälpavsnitten i Kommandotolken eller visa senast uppdaterade versioner av dessa avsnitt i Microsoft TechNet Library. Många program som är värdar för Windows PowerShell, till exempel Windows PowerShell Integrated Scripting Environment, ange ytterligare hjälp-funktioner, till exempel sammanhangsberoende hjälp och kompilerade hjälpfilen (.chm).
+PowerShell innehåller detaljerade hjälpartiklar som förklarar PowerShell-koncept och PowerShell-språket. Det finns även hjälpartiklar för varje cmdlet och providern och för många funktioner och skript.
 
-## <a name="getting-help-for-cmdlets"></a>Få hjälp med cmdletar
-För att få hjälp om Windows PowerShell-cmdlets kan använda den [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) cmdlet. Till exempel för att få hjälp med den [Get-ChildItem [m2]](https://technet.microsoft.com/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) cmdlet, skriv:
+Du kan visa dessa hjälpartiklar i Kommandotolken eller visa den senast uppdaterade versioner av de här artiklarna i den [PowerShell](/powershell/scripting/powershell-scripting) dokumentationen online.
 
-```
-get-help get-childitem
-```
+## <a name="getting-help-for-cmdlets"></a>Få hjälp om cmdlet: ar
 
-eller
+Om du behöver hjälp om PowerShell-cmdletar, använda den [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) cmdlet. Till exempel för att få hjälp med den `Get-ChildItem` cmdlet, typ:
 
-```
-get-childitem -?
-```
-
-Du kan även få hjälp om cmdlet Get-Help. Till exempel:
-
-```
-get-help get-help
-```
-
-Om du vill hämta en lista över alla skriver cmdlet-hjälpavsnitten i sessionen, du:
-
-```
-get-help -category cmdlet
-```
-
-Använd för att visa en sida i varje hjälpavsnitt samtidigt i **hjälp** funktion eller dess alias **man**. Skriv till exempel om du vill visa hjälpen för cmdleten Get-ChildItem
-
-```
-man get-childitem
+```powershell
+Get-Help Get-ChildItem
 ```
 
 eller
 
-```
-help get-childitem
-```
-
-Använd för att visa detaljerad information om en cmdlet-, function- eller skript, inklusive beskrivningar av dess parametrar och exempel på dess användning av *detaljerad* parametern för cmdleten Get-Help. Om du vill hämta detaljerad information om cmdlet Get-ChildItem, exempelvis:
-
-```
-get-help get-childitem -detailed
+```powershell
+Get-ChildItem -?
 ```
 
-Använd för att visa allt innehåll i hjälpavsnittet den *fullständig* parametern för cmdleten Get-Help. Om du vill visa allt innehåll i hjälpavsnittet för cmdleten Get-ChildItem, exempelvis:
+Du kan även få hjälp om cmdleten Get-Help. Till exempel:
 
-```
-get-help get-childitem -full
-```
-
-Få detaljerad hjälp om parametrarna för en cmdlet, Använd den *parametern* parametern för cmdleten Get-Help. Till exempel få detaljerad hjälp för alla parametrar för cmdleten Get-ChildItem typ:
-
-```
-get-help get-childitem -parameter *
+```powershell
+Get-Help Get-Help
 ```
 
-Använd för att visa endast exemplen i ett hjälpavsnitt den *exempel* parametern för Get-Help. Om du vill visa endast exemplen i hjälpavsnittet för cmdleten Get-ChildItem, exempelvis:
+Om du vill hämta en lista över alla cmdlet hjälpartiklar i sessionen, skriver du:
 
-```
-get-help get-childitem -examples
+```powershell
+Get-Help -Category Cmdlet
 ```
 
-Information om hur du skriver hjälpavsnitt för de cmdlets som du skriver finns [så att skriva Cmdlet](https://go.microsoft.com/fwlink/?LinkID=123415) i MSDN library.
+Använd för att visa en sida med varje hjälpartikeln i taget, den `help` funktion eller dess alias `man`.
+Till exempel vill visa hjälp för den `Get-ChildItem` cmdlet, typ
+
+```powershell
+man Get-ChildItem
+```
+
+eller
+
+```powershell
+help Get-ChildItem
+```
+
+Använd för att visa detaljerad information i **detaljerat** -parametern för den `Get-Help` cmdlet. Till exempel för att få detaljerad information den `Get-ChildItem` cmdlet, typ:
+
+```powershell
+Get-Help Get-ChildItem -Detailed
+```
+
+Använd för att visa allt innehåll i hjälpartikeln den **fullständig** -parametern för den `Get-Help` cmdlet. Till exempel för att visa allt innehåll i hjälpartikeln för den `Get-ChildItem` cmdlet, typ:
+
+```powershell
+Get-Help Get-ChildItem -Full
+```
+
+Få ytterligare hjälp om parametrarna för en cmdlet, Använd den **parametern** -parametern för den `Get-Help` cmdlet. Till exempel utförlig information för alla parametrar för att hämta den `Get-ChildItem` cmdlet, typ:
+
+```powershell
+Get-Help Get-ChildItem -Parameter *
+```
+
+Använd för att visa endast i exemplen i en hjälpartikeln den **exempel** -parametern för den `Get-Help`.
+Till exempel för att visa endast i exemplen i hjälpartikeln för den `Get-ChildItem `cmdlet, typ:
+
+```powershell
+Get-Help Get-ChildItem -Examples
+```
+
+Information om hur du skriver hjälpartiklar för de cmdletar som du skriver finns i [hur du skriver hjälp för cmdleten](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).
 
 ## <a name="getting-conceptual-help"></a>Konceptuell hjälp
-Cmdleten Get-Help visar även information om konceptuella avsnitt i Windows PowerShell, inklusive information om Windows PowerShell-språk. Konceptuell hjälpavsnitt som börjar med prefixet ”about_”, till exempel about_line_editing. (Namnet på konceptuellt avsnitt måste anges på engelska även på icke-engelska versioner av Windows PowerShell.)
 
-Om du vill visa en lista över grundläggande information skriver du:
+Den `Get-Help` cmdleten visar också information om konceptuella artiklar i PowerShell, bland annat artiklar om PowerShell-språket. Konceptuell hjälp artiklar som börjar med prefixet ”about_”, till exempel about_line_editing. (Namnet på den konceptuella artikeln måste anges på engelska även på icke-engelska versioner av PowerShell.)
 
-```
-get-help about_*
-```
+Om du vill visa en lista över konceptuella artiklar, skriver du:
 
-Om du vill visa ett hjälpavsnitt, skriver du avsnittsnamnet på till exempel:
-
-```
-get-help about_command_syntax
+```powershell
+Get-Help about_*
 ```
 
-Parametrarna för Get-Help som *detaljerad*, *parametern*, och *exempel*, har ingen effekt på visning av konceptuella hjälpavsnitt.
+Om du vill visa en viss hjälpartikeln, skriver du artikelnamnet på till exempel:
+
+```powershell
+Get-Help about_command_syntax
+```
+
+Parametrarna för `Get-Help`, till exempel **detaljerat**, **parametern**, och **exempel**, har ingen effekt på visning av konceptuell hjälpartiklar.
 
 ## <a name="getting-help-about-providers"></a>Få hjälp om leverantörer
-Cmdleten Get-Help visar information om Windows PowerShell-providers. För att få hjälp för en provider, Skriv ”Get-Help” följt av providernamn. Skriv till exempel för att få hjälp för register-provider:
 
-```
-get-help registry
-```
+Den `Get-Help` cmdlet visar information om PowerShell-leverantörer. Om du vill få hjälp med en provider, skriver `Get-Help` följt av providernamn. Till exempel om du behöver hjälp för register-provider, skriver du:
 
-Om du vill hämta en lista över alla hjälpavsnitt för providern i sessionen, skriver du:
-
-```
-get-help -category provider
+```powershell
+Get-Help registry
 ```
 
-Parametrarna för Get-Help som *detaljerad*, *parametern*, och *exempel*, har ingen effekt på visning av hjälpavsnitt för providern.
+Om du vill hämta en lista över alla providern hjälpartiklar i sessionen, skriver du:
+
+```powershell
+Get-Help -Category provider
+```
+
+Parametrarna för `Get-Help`, till exempel **detaljerat**, **parametern**, och **exempel**, har ingen effekt på visning av providern hjälpartiklar.
 
 ## <a name="getting-help-about-scripts-and-functions"></a>Få hjälp om skript och funktioner
-Många skript och funktioner i Windows PowerShell har hjälpavsnitt. Använd cmdleten Get-Help om du vill visa hjälpavsnitt för skript och funktioner.
 
-Om du vill visa hjälp för en funktion, Skriv ”get-help” följt av namnet på funktionen. Om du vill få hjälp med funktionen inaktivera PSRemoting, exempelvis:
+Många skript och funktioner i PowerShell har hjälpartiklar. Använd den `Get-Help` cmdleten för att visa hjälpartiklar för skript och funktioner.
 
-```
-get-help disable-psremoting
-```
+Om du vill visa hjälpen för en funktion, skriver `Get-Help` följt av namnet på funktionen. Till exempel för att få hjälp med den `Disable-PSRemoting` skriver:
 
-Visa hjälp för ett skript, skriva den fullständiga sökvägen till skriptfilen. Om skriptet finns på en sökväg som anges i miljövariabeln Path, kan du utelämna sökvägen från kommandot.
-
-Till exempel om du har ett skript som heter ”TestScript.ps1” i din C:\\PS-Test directory vill visa hjälpavsnitt för skriptet, typ:
-
-```
-get-help c:\ps-test\TestScript.ps1
+```powershell
+Get-Help Disable-PSRemoting
 ```
 
-De parametrar som utformats för att visa cmdlet hjälp som *detaljerad*, *fullständig*, *exempel*, och *parametern*arbetar för skriptet hjälp och funktionen hjälp, för. Men när du visar alla hjälp genom att skriva ”get-help \*”, för funktioner och skript inte visas.
+Om du vill visa hjälp för ett skript, ange sökvägen till skriptfilen. Om skriptet inte är i en sökväg som anges i miljövariabeln Path måste du använda den fullständiga sökvägen.
 
-Information om hur du skriver hjälpavsnitt för funktioner och skript finns i [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af), och [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
+Exempel: Om du har ett skript som heter ”TestScript.ps1” i din C:\\PS-Test directory för att visa hjälpartikeln för skriptet, typ:
 
-## <a name="getting-help-online"></a>Få hjälp Online
-Om du är ansluten till Internet, är ett bra sätt att få hjälp att visa hjälpavsnitt online. Eftersom det är enkelt att uppdatera online avsnitt, är det troligt att ange det mest aktuella innehållet.
-
-För att få hjälp online försök den *Online* parametern för cmdleten Get-Help. Den *Online* parametern för Get-Help cmdleten fungerar endast för cmdlet hjälp fungera hjälp och skript för hjälp. Du kan inte använda den *Online* parameter med konceptuella (om) avsnitt eller hjälpavsnitt för providern. Dessutom eftersom den här funktionen är valfritt, fungerar det inte för varje cmdlet-, function- eller skript hjälpavsnitt.
-
-Men alla hjälpavsnitt som levereras med Windows PowerShell, inklusive providern hjälp och konceptuella (hjälpavsnitt), är tillgänglig online i den [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116) avsnitt i Microsoft TechNet Library.
-
-Att använda den *Online* parametern för cmdleten Get-Help använder du följande kommandoformat.
-
-```
-get-help <command-name> -online
+```powershell
+Get-Help c:\ps-test\TestScript.ps1
 ```
 
-Till exempel för att få onlineversionen av hjälpavsnittet om cmdlet Get-ChildItem, skriver du:
+De parametrar som är utformade för att visa cmdlet Help arbete för skriptet och funktionen hjälper för. Hjälp för funktioner och skript är dock inte visas när du kör `Get-Help *`.
 
+Information om hur du skriver hjälpartiklar för dina funktioner och skript finns i följande artiklar:
+
+- [about_Functions](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+
+## <a name="getting-help-online"></a>Få hjälp online
+
+Visa hjälpartiklar online är en av de bästa sätten att få hjälp. Online artiklar är lättare att uppdatera och ger det mest aktuella innehållet.
+
+Om du vill få hjälp online, använda den **Online** -parametern för den `Get-Help` cmdlet. Alla hjälpartiklar som levereras med PowerShell, inklusive providern hjälp och konceptuella (om) hjälpartiklar, är tillgängliga online i den [PowerShell](/powershell/scripting/powershell-scripting) dokumentation.
+
+> [!NOTE]
+> Du kan inte använda den **Online** parameter med konceptuella (about_ *) eller hjälpartiklar för providern.
+> Onlinehjälp är valfritt, så inte fungerar för varje cmdlet, en funktion eller ett skript.
+
+Till exempel för att få onlineversionen av hjälpavsnittet om den `Get-ChildItem` cmdlet, typ:
+
+```powershell
+Get-Help Get-ChildItem -Online
 ```
-get-help get-childitem -online
+
+PowerShell öppnas artikeln i din standardwebbläsare. Du kan också visa Webbadressen till hjälpartikeln om onlinehjälp stöds för en hjälpartikeln. Webbadressen visas i avsnittet med länkar i en hjälpartikeln.
+
+Till exempel om du vill se URL-Adressen för online-versionen av cmdleten Lägg till dator skriver du:
+
+```powershell
+Get-Help Add-Computer
 ```
 
-Om det finns en onlineversionen av hjälpavsnittet öppnas i standardwebbläsaren.
+Den första raden i avsnittet med länkar i artikeln visas nedan.
 
-Du kan också visa Internet-adress (URL) i hjälpavsnittet om hjälp online har stöd för ett hjälpavsnitt. Internet-adressen visas i avsnittet med länkar i ett hjälpavsnitt.
-
-Till exempel vill se URL: en för online-versionen av cmdlet Add-Computer skriver du:
-
-```
-get-help add-computer
+```Output
+Online version: http://go.microsoft.com/fwlink/?LinkId=821564
 ```
 
-Den första raden i avsnittet länkarna i avsnittet visas nedan.
-
-```
-Online version: http://go.microsoft.com/fwlink/?LinkID=135194
-```
-
-Information om hur du ska ge support online för dina hjälpavsnitt finns [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf), och se [så att skriva Cmdlet](https://go.microsoft.com/fwlink/?LinkID=123415) i MSDN library.
+Information om hur du ger online support för dina hjälpartiklar finns i [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
 ## <a name="see-also"></a>Se även
-- [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)
-- [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)
-- [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
-- [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
+
+- [about_Functions](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+- [Get-Help](/powershell/module/microsoft.powershell.core/get-help)

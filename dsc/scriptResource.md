@@ -1,29 +1,19 @@
 ---
-ms.date: 06/12/2017
+ms.date: 08/24/2018
 keywords: DSC, powershell, konfiguration, installation
-title: Resursen DSC-skript
-ms.openlocfilehash: 1163d454972d8ee519d1c55b77bb85979faf3536
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: DSC-skriptresurs
+ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189456"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43133901"
 ---
-# <a name="dsc-script-resource"></a>Resursen DSC-skript
+# <a name="dsc-script-resource"></a>DSC-skriptresurs
 
+> Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.x
 
-> Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
-
-Den **skriptet** resurs i Windows PowerShell önskad tillstånd Configuration (DSC) tillhandahåller en mekanism för att köra Windows PowerShell-skriptblock på målnoder. Den `Script` resursen har `GetScript`, `SetScript`, och `TestScript` egenskaper. De här egenskaperna ska anges till skriptblock som ska köras på varje målnoden.
-
-Den `GetScript` skriptblock ska returnera en hash-tabell som representerar tillståndet för den aktuella noden. Hash-tabellen får bara innehålla en nyckel `Result` och värdet måste vara av typen `String`. Det krävs inte returnerar något. DSC göra inte något med utdata från den här skriptblock.
-
-Den `TestScript` skriptblock bestämmer om den aktuella noden ska ändras. Det ska returnera `$true` om noden är uppdaterad. Det ska returnera `$false` om nodens konfiguration är inaktuell och bör uppdateras av den `SetScript` skriptblock. Den `TestScript` skriptblock anropas av DSC.
-
-Den `SetScript` skriptblock bör ändra noden. Den anropas av DSC om den `TestScript` blockera returnera `$false`.
-
-Om du behöver använda variabler i konfigurationen skriptet i den `GetScript`, `TestScript`, eller `SetScript` skriptblock som använder den `$using:` omfång (se nedan ett exempel).
-
+Den **skriptet** resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att köra Windows PowerShell-skriptblock på målnoder. Den **skriptet** resource använder `GetScript`, `SetScript`, och `TestScript` egenskaper som innehåller skriptblock som du definierar för att utföra motsvarande DSC tillstånd åtgärder.
 
 ## <a name="syntax"></a>Syntax
 
@@ -38,37 +28,68 @@ Script [string] #ResourceName
 }
 ```
 
+> [!NOTE]
+> Den `GetScript`, `TestScript`, och `SetScript` block lagras som strängar.
+
 ## <a name="properties"></a>Egenskaper
 
-|  Egenskap  |  Beskrivning   |
-|---|---|
-| GetScript| Ger ett block med Windows PowerShell-skript som körs när du anropar den [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) cmdlet. Det här blocket måste returnera en hash-tabell. Hash-tabellen får bara innehålla en nyckel **resultatet** och värdet måste vara av typen **sträng**.|
-| SetScript| Innehåller ett block med Windows PowerShell-skript. När du anropar den [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet, den **TestScript** block körs första. Om den **TestScript** blockera returnerar **$false**, **SetScript** block körs. Om den **TestScript** blockera returnerar **$true**, **SetScript** block körs inte.|
-| TestScript| Innehåller ett block med Windows PowerShell-skript. När du anropar den [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet, det här blocket körs. Om den returnerar **$false**, SetScript blocket körs. Om den returnerar **$true**, SetScript som block kommer inte att köra. Den **TestScript** block körs även när du anropar den [Test DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet. Men i det här fallet den **SetScript** block inte körs, oavsett vilket värde som TestScript blockera returnerar. Den **TestScript** block måste returnera True om den faktiska konfigurationen matchar aktuella önskad tillståndskonfiguration och FALSKT om den inte matchar. (Den aktuella tillståndskonfigurationen är den senaste konfigurationen trätt i kraft på den nod som använder DSC.)|
-| autentiseringsuppgifter| Anger autentiseringsuppgifter som ska användas för att köra detta skript om autentiseringsuppgifter krävs.|
-| dependsOn| Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis **ResourceName** och dess typ är **ResourceType**, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.
+|Egenskap|Beskrivning|
+|--------|-----------|
+|GetScript|Ett skriptblock som returnerar det aktuella tillståndet för noden.|
+|SetScript|Ett skriptblock som DSC använder för att tvinga kompatibilitet när noden inte är i önskat läge.|
+|TestScript|Ett skriptblock som avgör om noden är statusen som önskas.|
+|Autentiseringsuppgifter| Anger autentiseringsuppgifterna som används för att köra det här skriptet om autentiseringsuppgifter krävs.|
+|DependsOn| Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.
 
-## <a name="example-1"></a>Exempel 1
+### <a name="getscript"></a>GetScript
+
+DSC inte använder utdata från `GetScript`. Den [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) cmdlet körs den `GetScript` att hämta aktuell status för en nod. Det krävs inte ett returvärde från `GetScript`. Om du anger ett returvärde, det måste vara en `hashtable` som innehåller en **resultatet** nyckel vars värde är en `String`.
+
+### <a name="testscript"></a>TestScript
+
+Den `TestScript` körs av DSC för att avgöra om den `SetScript` ska köras. Om den `TestScript` returnerar `$false`, DSC körs den `SetScript` att ge önskat tillstånd för noden. Det måste returnera ett `boolean` värde. Ett resultat av `$true` anger att noden är kompatibel och `SetScript` bör utförs inte.
+
+Den [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) cmdlet, körs den `TestScript` att hämta noder kompatibiliteten med den **skriptet** resurser. Men i det här fallet den `SetScript` inte körs, oavsett vad de `TestScript` blockera returnerar.
+
+> [!NOTE]
+> Alla utdata från din `TestScript` är en del av dess returvärde. PowerShell tolkar unsuppressed utdata som inte är noll, vilket innebär att din `TestScript` returnerar `$true` oavsett dina nodens tillstånd.
+> Detta leder till oväntade resultat, falska positiva identifieringar, och orsakar problem vid felsökning.
+
+### <a name="setscript"></a>SetScript
+
+Den `SetScript` ändrar noden till enfore önskat läge. Den kommer att anropas av DSC om den `TestScript` skript block returnerar `$false`. Den `SetScript` bör har inget returvärde.
+
+## <a name="examples"></a>Exempel
+
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>Exempel 1: Skriva exempeltext med hjälp av en skriptresurs
+
+Det här exemplet testar förekomsten av `C:\TempFolder\TestFile.txt` på varje nod. Om den inte finns skapas den med hjälp av den `SetScript`. Den `GetScript` returnerar innehållet i filen och dess returnerade värdet inte används.
+
 ```powershell
 Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script ScriptExample
+    Node localhost
     {
-        SetScript =
+        Script ScriptExample
         {
-            $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
-            $sw.WriteLine("Some sample string")
-            $sw.Close()
+            SetScript = {
+                $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
+                $sw.WriteLine("Some sample string")
+                $sw.Close()
+            }
+            TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
+            GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
         }
-        TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
-        GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
     }
 }
 ```
 
-## <a name="example-2"></a>Exempel 2
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>Exempel 2: Jämför versionsinformation med hjälp av en skriptresurs
+
+Det här exemplet hämtar den *kompatibla* versionsinformation från en textfil på den redigering datorn och lagrar den i den `$version` variabeln. När du genererar nodens MOF-filen, DSC ersätter den `$using:version` variabler i varje skript blockera med värdet för den `$version` variabeln. Under körningen på *kompatibla* version lagras i en textfil på varje nod och jämfört med och uppdateras vid efterföljande körningar.
+
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -76,27 +97,30 @@ Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script UpdateConfigurationVersion
+    Node localhost
     {
-        GetScript = {
-            $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-            return @{ 'Result' = "$currentVersion" }
-        }
-        TestScript = {
-            $state = $GetScript
-            if( $state['Result'] -eq $using:version )
-            {
-                Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
-                return $true
+        Script UpdateConfigurationVersion
+        {
+            GetScript = {
+                $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+                return @{ 'Result' = "$currentVersion" }
             }
-            Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
-            return $false
-        }
-        SetScript = {
-            $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            TestScript = {
+                # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
+                $state = [scriptblock]::Create($GetScript).Invoke()
+
+                if( $state['Result'] -eq $using:version )
+                {
+                    Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
+                    return $true
+                }
+                Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+                return $false
+            }
+            SetScript = {
+                $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            }
         }
     }
 }
 ```
-
-Den här resursen skriver konfigurationens version till en textfil. Den här versionen finns på klientdatorn, men inte på någon av noderna, så att den har ska skickas till var och en av de `Script` resursens skriptblock med PowerShells `using` omfång. När genererar nodens MOF-fil, värdet för den `$version` variabeln läses från en textfil på klientdatorn. DSC-ersätter den `$using:version` variabler i varje skript blockera med värdet för den `$version` variabeln.

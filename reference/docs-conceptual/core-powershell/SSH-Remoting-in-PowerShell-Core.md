@@ -1,37 +1,39 @@
 ---
 title: PowerShell fjärrkommunikation via SSH
 description: Fjärrkommunikation i PowerShell Core med hjälp av SSH
-ms.date: 08/06/2018
-ms.openlocfilehash: 27a8fc5623796a270a2ea67aa550c9a0998e766b
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.date: 08/14/2018
+ms.openlocfilehash: 1de034d667aa9a377e5460e7eb474402c690cb42
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587507"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133885"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell fjärrkommunikation via SSH
 
 ## <a name="overview"></a>Översikt
 
-PowerShell-fjärrkommunikation använder vanligen WinRM för förhandling för anslutning och dataöverföring. SSH har valts för den här implementeringen av fjärrkörning eftersom det är nu tillgängliga för både Linux och Windows-plattformar och tillåter SANT PowerShell-fjärrkommunikation på flera plattformar. WinRM tillhandahåller dock även en robust värdmodell för PowerShell fjärrsessioner som den här implementeringen inte gör ännu. Och det innebär att PowerShell fjärrslutpunkten konfigurations- och JEA (Just Enough Administration) inte stöds ännu i den här implementeringen.
+PowerShell-fjärrkommunikation använder vanligen WinRM för förhandling för anslutning och dataöverföring. SSH är nu tillgängligt för Linux och Windows-plattformar och tillåter SANT PowerShell-fjärrkommunikation på flera plattformar.
 
-PowerShell SSH fjärrkommunikation kan du göra grundläggande session PowerShell-fjärrkommunikation mellan Windows och Linux-datorer. Detta görs genom att skapa ett PowerShell som är värd för processen på måldatorn som ett SSH-undersystem. Detta kommer så småningom att ändras till en mer allmän värdmodell som liknar hur WinRM fungerar för att stödja slutpunktskonfiguration och JEA.
+WinRM tillhandahåller en robust värdmodell för fjärrsessioner i PowerShell. som den här implementeringen SSH-baserad fjärrkommunikation för närvarande inte stöd för fjärrslutpunkten konfigurations- och JEA (Just Enough Administration).
 
-Den `New-PSSession`, `Enter-PSSession` och `Invoke-Command` cmdletarna har nu en ny parameter som anger att underlätta den här nya fjärrkommunikation-anslutningen
+SSH-fjärrkommunikation kan du göra grundläggande session PowerShell-fjärrkommunikation mellan Windows och Linux-datorer. SSH-fjärrkommunikation skapar en värdprocess för PowerShell på måldatorn som ett SSH-undersystem.
+Slutligen ska vi implementera en allmän värdmodell, liknar WinRM för slutpunktskonfiguration och JEA.
+
+Den `New-PSSession`, `Enter-PSSession`, och `Invoke-Command` cmdletarna har nu en ny parameter som angetts för den här nya fjärrkommunikation-anslutningen.
 
 ```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-Den här nya parameteruppsättningen troligen kommer att förändras men nu kan du skapa SSH flertal PSSessions att du kan interagera med från kommandoraden eller anropa kommandon och skript på. Du anger måldatorn med parametern värdnamn och ange användarnamn med användarnamnet. När du kör cmdletarna interaktivt på PowerShell-kommandoraden uppmanas du att ange ett lösenord. Men du har också möjlighet att använda SSH-nyckelautentisering och ange en sökväg till filen för privat nyckel med parametern KeyFilePath.
+Om du vill skapa en fjärrsession, anger du den target-datorn med den `HostName` parametern och ange användarnamnet med `UserName`. När du kör cmdletarna interaktivt, uppmanas du ett lösenord. Du kan också använda SSH-nyckelautentisering med hjälp av en privat nyckelfil med den `KeyFilePath` parametern.
 
 ## <a name="general-setup-information"></a>Allmänna inställningar
 
-SSH är måste vara installerat på alla datorer. Du bör installera både klienten (`ssh.exe`) och server (`sshd.exe`) så att du kan experimentera med fjärrkommunikation till och från datorerna. För Windows kommer du behöva installera [Win32-OpenSSH från GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases).
-För Linux behöver installera SSH (inklusive sshd-servern) lämpligt för din plattform. Du måste också en senaste PowerShell-version eller ett paket från GitHub med SSH-fjärrkommunikationsfunktionen.
-SSH-undersystem som används för att upprätta en PowerShell-process på fjärrdatorn och SSH-servern måste konfigureras för den. Du måste dessutom aktivera lösenordsautentisering och du kan också baserat nyckelautentisering.
+SSH måste installeras på alla datorer. Installera både SSH-klienten (`ssh.exe`) och server (`sshd.exe`) så att du kan fjärransluta till och från datorerna. För Windows, installera [Win32-OpenSSH från GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases).
+För Linux, installera SSH (inklusive sshd-servern) lämpligt för din plattform. Du måste också installera PowerShell Core från GitHub för att hämta SSH-fjärrkommunikationsfunktionen. SSH-servern måste konfigureras för att skapa ett SSH-undersystem som värd för en PowerShell-process på fjärrdatorn. Du måste också konfigurera aktivera lösenord eller en nyckel för autentisering.
 
-## <a name="setup-on-windows-machine"></a>Installera på Windows-dator
+## <a name="set-up-on-windows-machine"></a>Ställa in på Windows-dator
 
 1. Installera den senaste versionen av [PowerShell Core för Windows]
 
@@ -55,27 +57,22 @@ SSH-undersystem som används för att upprätta en PowerShell-process på fjärr
      ```
 
      ```
-     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+     Subsystem    powershell c:/program files/powershell/6.0.4/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
      > [!NOTE]
-     > Det finns en bugg i OpenSSH för Windows som förhindrar att blanksteg fungerar i undersystemet körbara sökvägar.
-     > Se [problemet på GitHub för mer information](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+     > Det finns en bugg i OpenSSH för Windows som förhindrar att blanksteg fungerar i undersystemet körbara sökvägar. Mer information finns i [problemet GitHub](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
-     En lösning är att skapa en symlink till installationskatalogen för Powershell som inte innehåller blanksteg:
+     En lösning är att skapa en symlink till installationskatalogen för Powershell som saknar blanksteg:
 
      ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.4"
      ```
 
      och sedan ange den i undersystemet:
 
      ```
      Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
-     ```
-
-     ```
-     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
    - Du kan också aktivera nyckelautentisering
@@ -90,12 +87,9 @@ SSH-undersystem som används för att upprätta en PowerShell-process på fjärr
    Restart-Service sshd
    ```
 
-5. Lägga till sökvägen där OpenSSH installeras på din sökväg Env variabel
+5. Lägga till sökvägen där OpenSSH installeras till sökvägen för miljövariabeln. Till exempel `C:\Program Files\OpenSSH\`. Den här posten kan ssh.exe ska finnas.
 
-   - Detta bör vara längs linjer `C:\Program Files\OpenSSH\`
-   - Det möjliggör ssh.exe som ska returneras
-
-## <a name="setup-on-linux-ubuntu-1404-machine"></a>Installationsprogrammet på dator för Linux (Ubuntu 14.04)
+## <a name="set-up-on-linux-ubuntu-1404-machine"></a>Ställa in på datorn för Linux (Ubuntu 14.04)
 
 1. Installera den senaste versionen av [PowerShell Core för Linux] från GitHub
 2. Installera [Ubuntu SSH] vid behov
@@ -131,7 +125,7 @@ SSH-undersystem som används för att upprätta en PowerShell-process på fjärr
    sudo service sshd restart
    ```
 
-## <a name="setup-on-macos-machine"></a>Konfigurera i Mac OS-dator
+## <a name="set-up-on-macos-machine"></a>Ställa in på Mac OS-dator
 
 1. Installera den senaste versionen av [PowerShell Core för MacOS]
 
@@ -176,7 +170,7 @@ SSH-undersystem som används för att upprätta en PowerShell-process på fjärr
 
 ## <a name="powershell-remoting-example"></a>Exempel på PowerShell-fjärrkommunikation
 
-Det enklaste sättet att testa fjärrkommunikation är att testa den på en enda dator. Här skapar jag en fjärrsession tillbaka till samma dator på en Linux-ruta. Observera att jag använder PowerShell-cmdletar från en kommandotolk, så vi se meddelanden från SSH där du ombeds att kontrollera värddator samt frågor för lösenord. Du kan göra samma sak på en Windows-dator fjärrkommunikation fungerar det och sedan remote mellan datorer genom att ändra värdnamnet.
+Det enklaste sättet att testa fjärrkommunikation är att testa den på en enda dator. I det här exemplet skapar vi en fjärrsession tillbaka till samma Linux-dator. Vi använder PowerShell cmdlets interaktivt så ser vi uppmanar från SSH där du ombeds att verifiera värddatorn och fråga om ett lösenord. Du kan göra samma sak på en Windows-dator fjärrkommunikation fungerar. Sedan remote mellan datorer genom att ändra värdnamnet.
 
 ```powershell
 #
@@ -197,9 +191,9 @@ $session
 ```
 
 ```output
- Id Name            ComputerName    ComputerType    State         ConfigurationName     Availability
- -- ----            ------------    ------------    -----         -----------------     ------------
-  1 SSH1            UbuntuVM1       RemoteMachine   Opened        DefaultShell             Available
+ Id Name   ComputerName    ComputerType    State    ConfigurationName     Availability
+ -- ----   ------------    ------------    -----    -----------------     ------------
+  1 SSH1   UbuntuVM1       RemoteMachine   Opened   DefaultShell             Available
 ```
 
 ```powershell
