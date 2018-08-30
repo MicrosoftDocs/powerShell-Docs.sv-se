@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: PowerShell cmdlet
 title: Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst
-ms.openlocfilehash: 07b85a3c7bced58b9ee8db401f0339ba6011bc96
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: e9bed3900263a51b1b8236a3c3430154a5d11886
+ms.sourcegitcommit: 31a221d982305c7f999b1afeb15e3629e9620de8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268355"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43133864"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst
 
@@ -144,7 +144,7 @@ Windows PowerShell Web Access-cmdletarna har stöd för ett jokertecken, en aste
    ```
    Get-PswaAuthorizationRule `
       -RuleName <rule-name> | Remove-PswaAuthorizationRule
-  ```
+   ```
 
 > [!NOTE]
 > Du uppmanas inte att bekräfta om du vill ta bort den angivna regeln; regeln tas bort när du trycker på **RETUR**. Du måste vara säker på att du vill ta bort auktoriseringsregeln innan du kör cmdleten `Remove-PswaAuthorizationRule`.
