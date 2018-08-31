@@ -102,7 +102,7 @@ Stöd för PowerShell Core förlängs inte till andra produkt-moduler om du inte
 Till exempel med hjälp av den `ActiveDirectory` -modulen som levereras som en del av Windows Server är ett scenario som inte stöds.
 
 Moduler som inte uttryckligen har stöd för PowerShell Core kan dock vara kompatibla i vissa fall.
-Genom att installera den [ `WindowsPSModulePath` ][] modulen, kan du lägga till Windows PowerShell `PSModulePath` till PowerShell Core `PSModulePath`.
+Genom att installera den [`WindowsPSModulePath`][] modulen, kan du lägga till Windows PowerShell `PSModulePath` till PowerShell Core `PSModulePath`.
 
 Installera först den `WindowsPSModulePath` modul från PowerShell-galleriet:
 
