@@ -3,14 +3,14 @@ ms.date: 08/27/2018
 keywords: PowerShell cmdlet
 title: Använd variabler för att lagra objekt
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: 3168b64039a601857f9c684108de5770f88329e3
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: f4254199facb914c68a487b281b30070c35550a1
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134066"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353226"
 ---
-# <a name="using-variables-to-store-objects"></a>Använda variabler för att lagra objekt
+# <a name="using-variables-to-store-objects"></a>Använd variabler för att lagra objekt
 
 PowerShell fungerar med objekt. PowerShell kan du skapa objekt som kallas variabler.
 Variabler namn kan innehålla understreck tecken kan alfanumeriska tecken. När den används i PowerShell, en variabel alltid anges med hjälp av den \$ tecken följt av namnet på variabeln.
@@ -78,15 +78,15 @@ PowerShell skapar även en variabel enhet. Använd följande exempel för att vi
 Get-ChildItem variable:
 ```
 
-## <a name="using-cmdexe-variables"></a>Använda Cmd.exe variabler
+## <a name="using-cmdexe-variables"></a>Använda cmd.exe variabler
 
-PowerShell kan använda de samma miljövariablerna som är tillgängliga för alla Windows-processen, inklusive Cmd.exe. Dessa variabler är tillgängliga via en enhet med namnet `env:`. Du kan visa dessa variabler genom att skriva följande kommando:
+PowerShell kan använda de samma miljövariablerna som är tillgängliga för alla Windows-processen, inklusive **cmd.exe**. Dessa variabler är tillgängliga via en enhet med namnet `env:`. Du kan visa dessa variabler genom att skriva följande kommando:
 
 ```powershell
 Get-ChildItem env:
 ```
 
-Standard `*-Variable` cmdletar är inte avsett att fungera med miljövariabler. Miljövariabler kan nås med hjälp av den `env:` enhetsprefix. Till exempel den **% SystemRoot %** variabel i Cmd.exe innehåller katalognamnet för operativsystemets rot. I PowerShell kan du använda `$env:SystemRoot` att få åtkomst till samma värde.
+Standard `*-Variable` cmdletar är inte avsett att fungera med miljövariabler. Miljövariabler kan nås med hjälp av den `env:` enhetsprefix. Till exempel den **% SystemRoot %** variabel i **cmd.exe** innehåller katalognamnet för operativsystemets rot. I PowerShell kan du använda `$env:SystemRoot` att få åtkomst till samma värde.
 
 ```
 PS> $env:SystemRoot

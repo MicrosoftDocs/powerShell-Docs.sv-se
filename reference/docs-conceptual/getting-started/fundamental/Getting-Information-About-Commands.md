@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell cmdlet
 title: Få information om kommandon
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-ms.openlocfilehash: f4238927f10b4204cd3e23f0b0453011f54cb04a
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 7af83e3a0e776d96e580b442430357b4ea063a72
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134018"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353178"
 ---
 # <a name="getting-information-about-commands"></a>Få information om kommandon
 
@@ -29,7 +29,7 @@ Cmdlet          Add-Type                3.1.0.0    Microsoft.PowerShell.Utility
 ...
 ```
 
-Detta utdata ser ut precis som utdata för hjälp av Cmd.exe: en tabular sammanfattning av interna kommandon. I utdrag ur den `Get-Command` kommandot utdata som visas ovan, alla kommandon som visas har en CommandType Cmdlet. En cmdlet är PowerShell-inbäddade kommandotypen. Den här typen motsvarar ungefär kommandon som `dir` och `cd` i Cmd.exe eller inbyggda kommandon i Unix gränssnitt som bash.
+Detta utdata ser ut precis som utdata för hjälp av **cmd.exe**: en tabular sammanfattning av interna kommandon. I utdrag ur den `Get-Command` kommandot utdata som visas ovan, alla kommandon som visas har en CommandType Cmdlet. En cmdlet är PowerShell-inbäddade kommandotypen. Den här typen motsvarar ungefär kommandon som `dir` och `cd` i **cmd.exe** eller inbyggda kommandon på Unix-gränssnitt som bash.
 
 Den `Get-Command` cmdlet har en **Syntax** parameter som returnerar syntaxen för varje cmdlet. I följande exempel visas hur du hämtar syntaxen för den `Get-Help` cmdlet:
 
@@ -71,7 +71,7 @@ Den här listan innehåller externa kommandon i sökvägen så att den kan inneh
 Det är mer användbart att titta på en reducerad uppsättning kommandon.
 
 > [!NOTE]
-> Asterisken (\*) används för matchning i PowerShell kommandoargumenten med jokertecken. Den \* ”matchar en eller flera tecken”. Du kan skriva `Get-Command a*` att hitta alla kommandon som börjar med bokstaven ”a”. Till skillnad från matchning med jokertecken i Cmd.exe, matchar PowerShell-jokertecken också en punkt.
+> Asterisken (\*) används för matchning i PowerShell kommandoargumenten med jokertecken. Den \* ”matchar en eller flera tecken”. Du kan skriva `Get-Command a*` att hitta alla kommandon som börjar med bokstaven ”a”. Till skillnad från matchning med jokertecken i **cmd.exe**, PowerShell-jokertecken också matchar en punkt.
 
 Använd den **CommandType** -parametern för `Get-Command` att hämta inbyggda kommandon av andra typer.
 .

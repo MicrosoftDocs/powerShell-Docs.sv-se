@@ -1,16 +1,16 @@
 ---
 ms.date: 08/24/2018
 keywords: PowerShell cmdlet
-title: Learning PowerShell-namn
+title: Lär dig PowerShell-namn
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: d4e374530c8628df0d53fd860c4b7a149c58eb60
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 44c66488a20c38d8528c92d753f6b32dda5a2dcb
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134198"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353274"
 ---
-# <a name="learning-powershell-names"></a>Learning PowerShell-namn
+# <a name="learning-powershell-names"></a>Lär dig PowerShell-namn
 
 Learning namnen på kommandon och parametrar kräver en betydande tid investering med de flesta command-line gränssnitt. Problemet är att det inte finns några mönster. Memorera är endast sättet att lära dig kommandon och parametrar som du behöver använda regelbundet.
 
@@ -19,10 +19,13 @@ Det ser ut logiska efter kommandonamn eftersom varje kommando är ett separat ve
 
 ## <a name="learning-command-names-in-traditional-shells"></a>Learning kommandonamn i traditionella gränssnitt
 
-De flesta kommandon är utformat för att hantera element av operativsystem eller program, till exempel tjänster eller processer. Kommandon har namn som kanske eller kanske inte passar i en serie. Till exempel på Windows-System, du kan använda den `net start` och `net stop` kommandon för att starta och stoppa en tjänst. **SC. EXE** är ett annat service control-verktyg för Windows. Det namnet inte passar i namngivningsmönstret för den `net` tjänsten kommandon. För hantering av affärsprocesser, Windows har det `tasklist` för att lista processer och `taskkill` kommando för att avsluta processer.
+De flesta kommandon är utformat för att hantera element av operativsystem eller program, till exempel tjänster eller processer. Kommandon har namn som kanske eller kanske inte passar i en serie. Till exempel på Windows-System, du kan använda den `net start` och `net stop` kommandon för att starta och stoppa en tjänst. **SC.exe** är ett annat service control-verktyg för Windows. Det namnet inte passar i namngivningsmönstret för den **net.exe** tjänsten kommandon. För hantering av affärsprocesser, Windows har det **tasklist.exe** för att lista processer och **taskkill.exe** kommando för att avsluta processer.
 
-De här kommandona kräver dessutom oregelbunden parametern specifikationer. Du kan inte använda den `net start` kommando för att starta en tjänst på en fjärrdator. Den `sc` kommando kan starta en tjänst på en fjärrdator.
-Men om du vill ange fjärrdatorn måste du ange prefixet dess namn med två omvända snedstreck. Om du vill starta tjänsten spooler på en fjärrdator med namnet DC01, skriver du `sc \\DC01 start spooler`. Listan aktiviteter som körs på DC01, som du använder den **/S** parametern och namnet på datorn utan omvända snedstreck. Till exempel `tasklist /S DC01`.
+De här kommandona kräver dessutom oregelbunden parametern specifikationer. Du kan inte använda den `net start` kommando för att starta en tjänst på en fjärrdator. Den **sc.exe** kommando kan starta en tjänst på en fjärrdator. Men om du vill ange fjärrdatorn måste du ange prefixet dess namn med två omvända snedstreck. Om du vill starta tjänsten spooler på en fjärrdator med namnet DC01, skriver du `sc.exe \\DC01 start spooler`.
+Listan aktiviteter som körs på DC01, som du använder den **/S** parametern och namnet på datorn utan omvända snedstreck. Till exempel `tasklist /S DC01`.
+
+> [!NOTE]
+> Innan du PowerShell v6 `sc` har ett alias för den `Set-Content` cmdlet. Att köra den **sc.exe** kommandot, måste du inkludera filnamnstillägget.
 
 Tjänster och processer är exempel på hanterbara element på en dator som har väldefinierade supportlivscykel. Du kan starta eller stoppa tjänster och processer eller hämta en lista över alla tjänster eller processer som körs. Även om det finns viktiga tekniska skillnader mellan dem, är de åtgärder du kan utföra på tjänster och processer begreppsmässigt samma. Dessutom är kan de val som vi gör att anpassa en åtgärd genom att ange parametrar vara begreppsmässigt liknas samt.
 
@@ -37,8 +40,7 @@ PowerShell har en rekommenderad uppsättning standardverb. Substantiv är mindre
 I det här exemplet på två substantiv och verb förenkla konsekvens inte lära dig mycket. Utöka listan för att en uppsättning 10 verb och substantiv 10. Nu har du bara 20 ord att förstå.
 Men orden kan kombineras för att skapa 100 distinkta kommandonamn.
 
-Det är lätt att förstå vad ett PowerShell-kommando gör genom att läsa dess namn. Kommandot för att stänga av datorn är `Stop-Computer`. Kommando för att lista alla datorer i ett nätverk är `Get-Computer`.
-Kommando för att hämta systemdatumet är `Get-Date`.
+Det är lätt att förstå vad ett PowerShell-kommando gör genom att läsa dess namn. Kommandot för att stänga av datorn är `Stop-Computer`. Kommando för att lista alla datorer i ett nätverk är `Get-Computer`. Kommando för att hämta systemdatumet är `Get-Date`.
 
 Du kan lista alla kommandon som innehåller ett visst verb med den **Verb** parametern för `Get-Command`. Till exempel vill se alla cmdletar med verbet `Get`, typ:
 

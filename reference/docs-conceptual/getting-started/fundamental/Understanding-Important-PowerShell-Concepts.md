@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: PowerShell cmdlet
 title: Förstå viktiga PowerShell-koncept
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 5f8192f962cebb8ee5e5384e39b48de811b11003
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 577ea0764a172e1821bc492417d8b4e546e31b0b
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134243"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353202"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Förstå viktiga PowerShell-koncept
 
@@ -23,10 +23,9 @@ Om du har använt text-bearbetning verktyg för att bearbeta data som tidigare, 
 
 ## <a name="the-command-family-is-extensible"></a>I kommando-familjen kan utökas
 
-Gränssnitt, till exempel Cmd.exe gör inte det möjligt för dig att utöka den inbyggda kommandouppsättningen direkt.
-Du kan skapa externa kommandoradsverktyg som körs i Cmd.exe. Men dessa externa verktyg har inte tjänster, till exempel hjälp-integrering. Cmd.exe inte automatiskt att visa att dessa externa verktyg är giltiga kommandon.
+Gränssnitt som **cmd.exe**inte gör det möjligt för dig att utöka den inbyggda kommandouppsättningen direkt. Du kan skapa externa kommandoradsverktyg som körs i **cmd.exe**. Men dessa externa verktyg har inte tjänster, till exempel hjälp-integrering. **cmd.exe**inte automatiskt att visa att dessa externa verktyg är giltiga kommandon.
 
-Inbyggda kommandona i PowerShell kallas *cmdletar* (uttalas Commando-lets). Du kan skapa egna moduler med cmdletar och funktioner med hjälp av kompilerad kod eller skript. Moduler kan lägga till cmdlets och providers i gränssnittet. PowerShell har även stöd för skript som kan jämföras med UNIX-kommandoskript och Cmd.exe batch-filer.
+Inbyggda kommandona i PowerShell kallas *cmdletar* (uttalas Commando-lets). Du kan skapa egna moduler med cmdletar och funktioner med hjälp av kompilerad kod eller skript. Moduler kan lägga till cmdlets och providers i gränssnittet. PowerShell stöder också skript som kan jämföras med UNIX-kommandoskript och **cmd.exe** batch-filer.
 
 ## <a name="powershell-handles-console-input-and-display"></a>PowerShell hanterar konsolindata och visa
 

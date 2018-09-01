@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell cmdlet
 title: Använd bekanta kommandonamn
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 08402aa5b959711c150fff89aa6747b6b43f8aa8
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: c5665f64fd832eb9c807f413a8e879f63db7f8c6
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134091"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353257"
 ---
 # <a name="using-familiar-command-names"></a>Använd bekanta kommandonamn
 
@@ -16,9 +16,9 @@ PowerShell stöder alias att referera till kommandon med alternativa namn. Alias
 
 Alias associerar ett nytt namn med ett annat kommando. Till exempel PowerShell har en intern funktion med namnet `Clear-Host` som rensar utdatafönstret. Du kan ange antingen den `cls` eller `clear` alias i Kommandotolken. PowerShell tolkar dessa alias och kör den `Clear-Host` funktion.
 
-Den här funktionen hjälper användare att lära dig PowerShell. Första, de flesta Cmd.exe- och Unix-användare har en stor kan representeras av kommandon som användarna redan känner till namnet. PowerShell-motsvarigheter kanske inte ger samma resultat. Resultatet är dock Stäng tillräckligt som användare kan fungerar utan att känna till namnet för PowerShell-kommando. ”Finger minne” är en annan större orsaken frustrationen när learning en ny kommandotolk. Om du har använt Cmd.exe i flera år, du kan skriva reflexively den `cls` kommando för att rensa skärmen. Utan alias för `Clear-Host`, du får ett felmeddelande och inte vet vad du gör för att ta bort utdata.
+Den här funktionen hjälper användare att lära dig PowerShell. Första, de flesta **cmd.exe** och Unix-användare har en stor kan representeras av kommandon som användarna redan känner till namnet. PowerShell-motsvarigheter kanske inte ger samma resultat. Resultatet är dock Stäng tillräckligt som användare kan fungerar utan att känna till namnet för PowerShell-kommando. ”Finger minne” är en annan större orsaken frustrationen när learning en ny kommandotolk. Om du har använt **cmd.exe** i flera år, kan du reflexively skriver den `cls` kommando för att rensa skärmen. Utan alias för `Clear-Host`, du får ett felmeddelande och inte vet vad du gör för att ta bort utdata.
 
-I följande lista visas några vanliga kommandon som Cmd.exe och Unix som du kan använda i PowerShell:
+I följande lista visas några vanliga **cmd.exe** och Unix-kommandon som du kan använda i PowerShell:
 
 |||||
 |-|-|-|-|
