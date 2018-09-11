@@ -2,59 +2,58 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Desired State Configuration-översikt för beslutsfattare
-ms.openlocfilehash: 70fc5c55266970165dc16eac85f6b850cf409d64
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7c36aa5fadeab8bcb381f316288d102b5ce402e2
+ms.sourcegitcommit: ac20e0faaa37142e9c6e4507a21df2f4a3fdbece
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189881"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44339845"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Desired State Configuration-översikt för beslutsfattare
 
-Det här dokumentet beskriver fördelarna med hjälp av PowerShell önskad tillstånd Configuration (DSC). Det är inte en teknisk guide.
+Det här dokumentet beskriver fördelarna med hjälp av Windows PowerShell Desired State Configuration (DSC). Det är inte en teknisk vägledning.
 
 ## <a name="what-is-desired-state-configuration"></a>Vad är Desired State Configuration?
 
-Windows PowerShell önskad tillstånd Configuration (DSC) är en plattform för hantering av konfiguration inbyggd i Windows som baseras på öppna standarder. DSC är tillräckligt flexibelt för att fungera på ett tillförlitligt sätt och konsekvent i varje steg i livscykeln för distributionen (utveckling, testa, Förproduktion, produktion) samt under skalbar.
+PowerShell Desired State Configuration är en plattform för hantering av konfiguration som är inbyggda i Windows som baseras på öppna standarder. DSC är tillräckligt flexibelt för att fungera på ett tillförlitligt och konsekvent i varje steg i livscykeln för distribution (utveckling, testning, före produktion, produktion), samt vid skala ut.
 
-DSC fokuserad på ”[konfigurationer](https://msdn.microsoft.com/powershell/dsc/configurations)”.
-En konfiguration är en lätt att läsa dokumentet som beskriver en miljö som består av datorer (”noder”) med specifika egenskaper.
-Dessa egenskaper kan vara så enkelt som att säkerställa en specifik Windows-funktionen är aktiverad eller så komplicerad som distribuerar SharePoint.
+DSC fokuserad på [konfigurationer](configurations.md).
+En konfiguration är ett enkelt att läsa dokument som beskriver en miljö som består av datorer (”noder”) med specifika egenskaper.
+Följande egenskaper kan vara lika enkelt som att se till att en specifik Windows-funktion är aktiverat eller så komplext som distribution av SharePoint.
 
 DSC har också övervakning och rapportering inbyggda.
-Om ett system som inte längre är kompatibel, DSC rera en avisering och vidta åtgärder för att korrigera systemet.
+Om ett system inte längre kompatibel, DSC utlösa en avisering och vidta åtgärder för att korrigera systemet.
 
 ## <a name="benefits-of-using-desired-state-configuration"></a>Fördelarna med att använda Desired State Configuration
 
-Konfigurationer som är utformade för att enkelt läsa, lagras och uppdateras.
-Konfigurationer deklarera tillstånd målenheterna måste vara i, i stället för att skriva instruktioner för hur du placerar dem i det aktuella tillståndet.
-Detta gör det mycket kostnadseffektivare att läsa, antar, implementera och underhålla konfigurationen med hjälp av DSC.
+Konfigurationer som är utformade för att vara enkelt läsa, lagras och uppdaterade.
+Konfigurationer deklarera målenheter tillstånd ska vara i, istället för att skriva instruktioner för hur du placerar dem i det aktuella tillståndet.
+På så sätt blir det mycket billigare att lära dig, använda, implementera och underhålla konfiguration via DSC.
 
-När du skapar konfigurationer innebär att komplexa distributionssteg avbildas som en ”enskild källa för sanningen” i en enda plats.
-Upprepade distributioner för en specifik uppsättning datorer blir mycket mindre felbenägna.
-I sin tur gör distributioner snabbare och mer tillförlitlig som gör det möjligt för kort tid på distributioner.
+Skapar konfigurationer innebär att komplexa distributionsstegen avbildas som en ”enda sanningskällan” på en enda plats.
+Upprepade distributioner av en specifik uppsättning datorer blir mycket mindre felbenägna.
+I sin tur gör distributioner snabbare och mer tillförlitlig som gör det möjligt för kort tid på komplexa distributioner.
 
-Konfigurationer är också delas via den [PowerShell-galleriet](https://powershellgallery.com) vilket innebär att vanliga scenarier och bästa praxis kanske redan finns för det arbete du behöver.
+Det går också att dela via konfigurationer i [PowerShell-galleriet](https://powershellgallery.com) vilket innebär att vanliga scenarier och bästa praxis kanske redan finns för det arbete som behöver göras.
 
 
 ## <a name="desired-state-configuration-and-devops"></a>Desired State Configuration och DevOps
 
-[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) är en kombination av personer, processer och verktyg som ger snabb distribution och iteration fokuserar på att leverera värde för slutanvändare om interna eller externa.
-DSC har utformats med DevOps i åtanke.
-Med en enda konfiguration definiera en miljö innebär att utvecklare kan koda deras krav till en konfiguration, kontrollera att konfigurationen till källkontroll och team kan enkelt distribuera kod utan att behöva gå igenom felbenägna manuella processer.
+DSC utformades med [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) i åtanke, en kombination av personer, processer och verktyg som gör det lätt att implementera och iteration fokuserar på att leverera värde till slutanvändare om interna eller externa.
+Med en enda konfiguration definiera en miljö innebär att utvecklare kan koda sina krav till en konfiguration, kontrollera att konfigurationen till källkontroll och åtgärden utvecklingsteam kan enkelt distribuera kod utan att behöva gå igenom felbenägna manuella processer.
 
-Konfigurationer är också [datadrivna](https://msdn.microsoft.com/powershell/dsc/configdata), vilket gör det enklare för ops team att identifiera och ändra miljöer utan åtgärder från utvecklare.
+Konfigurationer är också [datadrivna](configData.md), vilket gör det lättare för ops att identifiera och ändra miljöer utan inblandning av utvecklare.
 
-## <a name="desired-state-configuration-on--and-off-premises"></a>Desired State Configuration och inaktivera-lokalt
+## <a name="desired-state-configuration-on--and-off-premises"></a>Desired State Configuration på - och annan plats
 
-DSC kan användas för att hantera både lokala och ej lokala distributioner.
-Lokala lösningar kan DSC har en [hämtningsservern](https://msdn.microsoft.com/powershell/dsc/pullserver) som kan användas för att centralisera hanteringen av datorer och rapportera om deras status.
-För molnlösningar kan DSC användas överallt där Windows kan användas.
-Det finns särskilda erbjudanden från Azure som bygger på Desired State Configuration [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/), vilket centraliserar rapportering av DSC.
+DSC kan användas för att hantera både lokala och av lokala distributioner.
+Lokala lösningar, DSC har en [hämtningsservern](pullServer.md) som kan användas för att centralisera hanteringen av datorer och rapportera om deras status.
+Molnlösningar kan DSC användas var Windows kommer att kunna användas.
+Det finns även specifika erbjudanden från Azure bygger på Desired State Configuration, till exempel [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/), vilket centraliserar rapportering av DSC.
 
-## <a name="dsc-and-compatibility"></a>Kompatibilitet och DSC
+## <a name="dsc-and-compatibility"></a>DSC och kompatibilitet
 
-Även om DSC introducerades i Windows Server 2012 R2, är den tillgänglig för äldre operativsystem via Windows Management Framework (WMF)-paketet.
-Mer information om WMF kan hittas på den [PowerShell webbsida](https://msdn.microsoft.com/en-us/powershell/).
+Även om DSC introducerades i Windows Server 2012 R2, är den tillgänglig för äldre operativsystem via paketet Windows Management Framework (WMF).
+Mer information om WMF kan hittas på den [PowerShell startsidan](/powershell/).
 
-DSC kan också användas för att hantera Linux. Mer information finns i [komma igång med DSC för Linux](https://msdn.microsoft.com/en-us/powershell/dsc/lnxgettingstarted).
+DSC kan också användas för att hantera Linux. Mer information finns i [komma igång med DSC för Linux](lnxGettingStarted.md).
