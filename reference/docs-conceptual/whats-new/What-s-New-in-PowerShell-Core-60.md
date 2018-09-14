@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell Core 6.0
 description: Nya funktioner och ändringar som introducerades i PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: f0cddad223528cd0f2b4f392faeb6e08e1050c51
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 9bd59dc1821e2fb3ec2d30254ab1fac4089f0340
+ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587252"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45557240"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Nyheter i PowerShell Core 6.0
 
@@ -373,14 +373,14 @@ En fullständig lista över korrigeringar och ändringar, Kolla in vår [Ändrin
   - OS-plattform (`$PSVersionTable.OSDescription`)
   - den exakta versionen av PowerShell (`$PSVersionTable.GitCommitId`)
 
-Om du vill välja bort den här telemetrin helt enkelt ta bort `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` eller skapa `POWERSHELL_TELEMETRY_OPTOUT` miljövariabel med något av följande värden: `true`, `1` eller `yes`.
-Ta bort den här filen eller variabeln kringgår all telemetri och med före den första körningen av PowerShell.
+Om du vill välja bort den här telemetrin skapar bara `POWERSHELL_TELEMETRY_OPTOUT` miljövariabel med något av följande värden: `true`, `1` eller `yes`.
+Skapa variabeln kringgår all telemetri och med före den första körningen av PowerShell.
 Vi har även planer på att exponera informationen telemetri och de insikter vi få djupare förståelse från från telemetri i den [community instrumentpanelen][community-dashboard].
 Du hittar mer information om hur vi använder informationen i det här [blogginlägget][telemetry-blog].
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET core 2.0]: https://docs.microsoft.com/dotnet/core/
-[.NET standard]: https://docs.microsoft.com/en-us/dotnet/standard/net-standard
+[.NET standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
