@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Kom igång med Desired State Configuration (DSC) för Linux
-ms.openlocfilehash: d5a4a17fbcffbbbd6df3dd902dbd104769b7d17e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: d436fc3b451efb8a12dfdc44909824934b5fcbe4
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893604"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523052"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Kom igång med Desired State Configuration (DSC) för Linux
 
@@ -75,7 +75,7 @@ Nyckelordet Windows PowerShell-konfigurationen används för att skapa en konfig
 
 1. Importera modulen nx. Windows PowerShell-modulen nx måste innehåller schemat för inbyggda resurser för DSC för Linux och installeras på den lokala datorn och importeras i konfigurationen.
 
-   - Om du vill installera modulen nx kopiera modulkatalogen nx antingen `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` eller `$PSHOME\Modules`. Modulen nx ingår i DSC för Linux-installationspaketet (MSI). Om du vill importera modulen nx i din konfiguration, använda den `Import-DSCResource` kommando:
+   - Om du vill installera modulen nx kopiera modulkatalogen nx antingen `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` eller `$PSHOME\Modules`. Modulen nx ingår i DSC för Linux-installationspaketet. Om du vill importera modulen nx i din konfiguration, använda den `Import-DSCResource` kommando:
 
    ```powershell
    Configuration ExampleConfiguration{

@@ -1,79 +1,79 @@
 ---
 ms.date: 06/12/2017
-keywords: jea powershell säkerhet
+keywords: jea, powershell, säkerhet
 title: JEA Sessionskonfigurationer
-ms.openlocfilehash: 3e5a663be8e7aba09a2592c278224cd892c89a20
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bdf3659357045203d90e8083613e51cce657da1a
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190102"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522970"
 ---
 # <a name="jea-session-configurations"></a>JEA Sessionskonfigurationer
 
 > Gäller för: Windows PowerShell 5.0
 
-En slutpunkt för JEA är registrerad på en dator genom att skapa och registrera en konfigurationsfil för PowerShell-session på ett visst sätt.
-Fastställa sessionskonfigurationer *som* kan använda JEA slutpunkt och vilka roller de har åtkomst till.
-De kan också definiera globala inställningar som gäller för användare av en roll i JEA-sessionen.
+En JEA-slutpunkt har registrerats i ett system genom att skapa och registrera en konfigurationsfil för PowerShell-session på ett visst sätt.
+Sessionskonfigurationer fastställa *som* kan använda JEA-slutpunkt och vilka roller de har åtkomst till.
+De kan också definiera globala inställningar som gäller för användare av en roll i JEA-session.
 
-Det här avsnittet beskriver hur du skapar en konfigurationsfil för PowerShell-session och registrera en JEA slutpunkt.
+Det här avsnittet beskriver hur du skapar en konfigurationsfil för PowerShell-session och registrera en JEA-slutpunkt.
 
 ## <a name="create-a-session-configuration-file"></a>Skapa en konfigurationsfil för session
 
-Du måste ange hur den slutpunkten ska konfigureras för att kunna registrera en JEA slutpunkt.
-Det finns många alternativ att överväga här är det viktigaste att vilka som ska ha åtkomst till slutpunkten JEA, vilka roller kommer de tilldelas, vilken identitet JEA används under försättsbladen och vad ska vara namnet på slutpunkten JEA.
-Dessa definieras i konfigurationsfilen en PowerShell-session som är en PowerShell-datafil som slutar med filnamnstillägget .pssc.
+Du måste ange hur att slutpunkten ska konfigureras för att registrera en JEA-slutpunkt.
+Det finns många alternativ att överväga här det viktigaste för vilka som ska ha åtkomst till JEA-slutpunkt, vilka roller kommer de tilldelas, vilken identitet JEA använder under försättsbladen och vad är namnet på JEA-slutpunkt.
+Dessa definieras i en PowerShell-session konfigurationsfil, vilket är en PowerShell-datafil som slutar med filnamnstillägget .pssc.
 
-Kör följande kommando för att skapa en konfigurationsfil för stommen sessionen för JEA slutpunkter.
+Kör följande kommando för att skapa en konfigurationsfil för stommen session för JEA-slutpunkter.
 
 ```powershell
 New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEAEndpoint.pssc
 ```
 
 > [!TIP]
-> Endast de vanligaste konfigurationsalternativ ingår i filen stommen som standard.
-> Använd den `-Full` växel om du vill inkludera alla tillämpliga inställningar i den genererade PSSC.
+> Endast de vanligaste konfigurationsalternativ som ingår i filen stommen som standard.
+> Använd den `-Full` växel för att ta med alla tillämpliga inställningar i den genererade PSSC.
 
 Du kan öppna konfigurationsfilen session i en textredigerare.
-Den `-SessionType RestrictedRemoteServer` fältet som anger att sessionskonfigurationen kommer att användas av JEA för säker hantering.
-Sessioner som konfigureras på det här sättet kommer att fungera i [NoLanguage läge](https://technet.microsoft.com/library/dn433292.aspx) och får bara innehålla följande 8 standardkommandon (och alias) tillgängliga:
+Den `-SessionType RestrictedRemoteServer` fält anger att sessionskonfigurationen ska användas av JEA för säker hantering.
+Sessioner som konfigureras på det här sättet kommer att fungera i [NoLanguage läge](https://technet.microsoft.com/library/dn433292.aspx) och får bara innehålla följande standardkommandon för 8 (och alias) tillgängliga:
 
-- Rensa-värden (cls, rensa)
+- Clear-värd (cls, rensa)
 - Avsluta-PSSession (exsn, avsluta)
 - Get-Command (gcm)
 - Get-FormatData
 - Get-Help
-- Måttobjekt (mått)
+- Måttobjektet (mått)
 - Standard ut
 - Select-Object (Välj)
 
-Inga PowerShell-providers är tillgängliga, inte heller några externa program (körbara filer, skript osv.).
+Inga PowerShell-providers är tillgängliga, och inte heller några externa program (körbara filer, skript osv.).
 
 Det finns flera andra fält som du vill konfigurera för JEA-sessionen.
 De beskrivs i följande avsnitt.
 
-### <a name="choose-the-jea-identity"></a>Välj JEA identitet
+### <a name="choose-the-jea-identity"></a>Välj JEA-identitet
 
-JEA måste en identitet (konto) ska användas när en användare som ansluten kommandon körs i bakgrunden.
-Du bestämmer vilken identitet JEA används i konfigurationsfilen för sessionen.
+JEA måste en identitet (konto) du använder när du kör en anslutna användare kommandon i bakgrunden.
+Du bestämmer dig för vilken identitet JEA används i konfigurationsfilen för sessionen.
 
 #### <a name="local-virtual-account"></a>Lokala virtuellt konto
 
-Om de roller som stöds av den här slutpunkten JEA används för att hantera den lokala datorn, och ett lokalt administratörskonto är tillräckligt för att köra kommandon har, bör du konfigurera JEA om du vill använda ett virtuellt lokalt konto.
-Virtuella konton är tillfälliga konton som är unik för en viss användare och endast senaste under hela sin PowerShell-session.
-På en medlemsserver eller arbetsstation virtuella konton som hör till den lokala datorn **administratörer** grupp och har åtkomst till de flesta systemresurser.
-På en Active Directory-domänkontrollant virtuella konton tillhör domänens **Domänadministratörer** grupp.
+Om de roller som stöds av den här JEA-slutpunkt används för att hantera den lokala datorn och ett lokalt administratörskonto räcker för att köra kommandon har, bör du konfigurera JEA om du vill använda ett lokalt virtuellt konto.
+Virtuella konton är tillfälliga konton som är unika för en viss användare och endast senaste under av sina PowerShell-session.
+På en medlemsserver eller arbetsstation virtuella konton som hör till den lokala datorn **administratörer** gruppen och har åtkomst till de flesta systemresurser.
+På en Active Directory-domänkontrollant, virtuella konton tillhör domänens **Domänadministratörer** grupp.
 
 ```powershell
 # Setting the session to use a virtual account
 RunAsVirtualAccount = $true
 ```
 
-Om roller som stöds av sessionskonfigurationen inte kräver dessa breda behörigheter, kan du alternativt ange de säkerhetsgrupper som virtuellt konto ska tillhöra.
-De angivna säkerhetsgrupperna måste vara lokala grupper, inte grupper från en domän på en medlemsserver eller en arbetsstation.
+Om de roller som stöds av sessionskonfigurationen inte behöver sådan bred privilegier, kan du ange de säkerhetsgrupper som virtuellt konto ska tillhöra.
+De angivna säkerhetsgrupperna måste vara lokala grupper, inte grupper från en domän på en medlemsserver eller arbetsstation.
 
-När en eller flera säkerhetsgrupper anges virtuellt konto kommer inte längre tillhör administratörsgruppen lokalt eller via domänadministratör.
+När du anger en eller flera säkerhetsgrupper virtuellt konto kommer inte längre tillhör gruppen lokala administratörer.
 
 ```powershell
 # Setting the session to use a virtual account that only belongs to the NetworkOperator and NetworkAuditor local groups
@@ -84,59 +84,59 @@ RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 #### <a name="group-managed-service-account"></a>Grupphanterat tjänstkonto
 
 
-För scenarier som kräver JEA användare att komma åt nätverksresurser, till exempel andra datorer eller webbtjänster, är en grupp Hanterat tjänstkonto (gMSA) en lämpligare identitet ska användas.
-gMSA-konton får du en domän-identitet som kan användas för att autentisera mot resurser på en dator i domänen.
-Rättigheter i gMSA ger du bestäms av resurserna som du ansluter till.
-Du har automatiskt inte administratörsrättigheter på alla datorer eller tjänster om inte datorn/service uttryckligen tilldelats gMSA-kontot admin-privilegier.
+För scenarier som kräver JEA-användare att komma åt nätverksresurser, till exempel andra datorer eller webbtjänster, är ett grupphanterade tjänstkonto (gMSA) en lämpligare identitet för att använda.
+gMSA-konton får du en domänidentitet som kan användas för att autentisera mot resurser på en dator i domänen.
+Rättigheterna i gMSA ger du bestäms av resurserna som du ansluter till.
+Du har automatiskt inte administratörsrättigheter på alla datorer eller tjänster, såvida inte datorn/tjänstadministratören har uttryckligen beviljat gMSA-kontot administratörsprivilegier.
 
 ```powershell
 # Configure JEA sessions to use the gMSA account in the local computer's domain with the sAMAccountName of 'MyJEAgMSA'
 GroupManagedServiceAccount = 'Domain\MyJEAgMSA'
 ```
 
-gMSA konton bör endast användas när åtkomst till nätverksresurser krävs på olika orsaker:
+gMSA-konton bör endast användas när åtkomst till nätverksresurser krävs olika orsaker:
 
-- Det är svårare att spåra tillbaka åtgärder för att en användare när du använder ett konto för gMSA eftersom alla användare delar samma kör som-identitet. Du måste kontakta PowerShell-session betyg och loggfilerna för att korrelera användare med sina åtgärder.
+- Det är svårare att spåra tillbaka åtgärder för att en användare när du använder ett konto för gMSA eftersom alla användare delar samma kör som-identitet. Behöver du PowerShell-session betyg och loggar för att korrelera användare med sina åtgärder.
 
-- GMSA-kontot kan ha åtkomst till många nätverksresurser som anslutande användaren inte behöver åtkomst till. Alltid ett försök att begränsa gällande behörigheter i en JEA session att följa principen om minsta behörighet.
+- GMSA-kontot kan ha åtkomst till många nätverksresurser som anslutande användaren inte behöver åtkomst till. Försök alltid att begränsa gällande behörigheter i en JEA-session för att följa principen om lägsta behörighet.
 
 > [!NOTE]
-> Gruppen hanterade tjänstkonton är bara tillgängliga i Windows PowerShell 5.1 eller nyare och på domänanslutna datorer.
+> Gruppen hanterade tjänstkonton är endast tillgängliga i Windows PowerShell 5.1 eller senare och på domänanslutna datorer.
 
 
 #### <a name="more-information-about-run-as-users"></a>Mer information om Kör som-användare
 
-Mer information om Kör som identiteter och hur de factor i säkerheten för en JEA session kan hittas i den [säkerhetsaspekter](security-considerations.md) artikel.
+Mer information om Kör som identiteter och hur de ta med i säkerheten i en JEA-session finns i den [säkerhetsöverväganden](security-considerations.md) artikeln.
 
-### <a name="session-transcripts"></a>Sessionen betyg
+### <a name="session-transcripts"></a>Sessionen avskrifter
 
-Vi rekommenderar att du konfigurerar en JEA session konfigurationsfil att registreras automatiskt betyg användarnas sessioner.
-PowerShell-session betyg innehåller information om den anslutande användaren kör som-identitet som har tilldelats dem, och kommandon som körs av användaren.
-De kan vara användbara för en granskning team som behöver förstå vem som utförde en viss ändring i ett system.
+Vi rekommenderar att du konfigurerar en konfigurationsfil för JEA-sessionen att registreras automatiskt avskrifter av användarnas sessioner.
+PowerShell-session avskrifter innehåller information om den anslutande användaren, kör som-identiteten som tilldelats dem, och kommandona som körs av användaren.
+De kan vara praktiskt att en granskning team som behöver förstå vem som utförde en viss ändring av ett system.
 
-Ange en sökväg till en mapp där betyg ska lagras för att konfigurera automatisk skrivfel i konfigurationsfilen för sessionen.
+Ange en sökväg till en mapp där avskrifter ska sparas för att konfigurera automatisk avskrift i konfigurationsfilen för sessionen.
 
 ```powershell
 TranscriptDirectory = 'C:\ProgramData\JEAConfiguration\Transcripts'
 ```
 
-Den angivna mappen ska konfigureras för att förhindra att användare kan ändra eller ta bort alla data i den.
-Betyg skrivs till mappen som kontot Lokalt System som kräver Läs- och skrivbehörighet till katalogen.
-Vanliga användare bör ha ingen åtkomst till mappen och en begränsad uppsättning säkerhetsadministratörer ska ha åtkomst till att granska betyg.
+Den angivna mappen ska konfigureras för att hindra användare från att ändra eller ta bort alla data i den.
+Avskrifter skrivs till mappen som kontot Lokalt System, vilket kräver Läs- och skrivåtkomst till katalogen.
+Vanliga användare bör inte ha åtkomst till mappen och en begränsad uppsättning säkerhetsadministratörer ska ha åtkomst till att granska avskrifter.
 
 ### <a name="user-drive"></a>Enheten
 
-Om du ansluter användarna kommer att behöva kopiera filer till eller från JEA slutpunkten för att köra ett kommando, kan du aktivera enhetens användare i konfigurationsfilen för sessionen.
-Användarens enhet är en [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) som är mappad till en unik mapp för varje anslutning användare.
-Den här mappen fungerar som ett utrymme att kopiera filer till eller från systemet, utan att ge dem åtkomst till fullständig filsystemet eller exponera filsystem-providern.
+Om dina anslutande användare behöver att kopiera filer till och från JEA-slutpunkt för att köra ett kommando, kan du aktivera enheten i konfigurationsfilen för sessionen.
+Användare-enheten är en [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) som är mappad till en unik mapp för varje anslutande användaren.
+Den här mappen fungerar som ett utrymme att kopiera filer till och från systemet, utan att ge dem åtkomst till filsystemet fullständig eller exponera filsystem-providern.
 Användarens enhet innehållet är beständiga mellan sessioner för situationer där nätverksanslutningen kan avbrytas.
 
 ```powershell
 MountUserDrive = $true
 ```
 
-Som standard kan enhetens användare du lagra upp till 50MB data per användare.
-Du kan begränsa mängden data som en användare kan använda med den *UserDriveMaximumSize* fältet.
+Som standard kan på enheten du lagra upp till 50MB data per användare.
+Du kan begränsa mängden data som en användare kan använda med den *UserDriveMaximumSize* fält.
 
 ```powershell
 # Enables the user drive with a per-user limit of 500MB (524288000 bytes)
@@ -144,17 +144,17 @@ MountUserDrive = $true
 UserDriveMaximumSize = 524288000
 ```
 
-Om du inte vill att data på enheten för användaren ska vara beständig kan du konfigurera en schemalagd aktivitet på systemet att automatiskt Rensa mappen varje natt.
+Om du inte vill att data i användarens enhet ska vara beständig, kan du konfigurera en schemalagd aktivitet på systemet att automatiskt Rensa mappen varje natt.
 
 > [!NOTE]
-> Enhetens användare är endast tillgänglig i Windows PowerShell 5.1 eller nyare.
+> Användare-enheten är endast tillgängliga i Windows PowerShell 5.1 eller senare.
 
 ### <a name="role-definitions"></a>Rolldefinitioner
 
-Rolldefinitioner i en session konfigurationsfil definierar mappningen av *användare* till *roller*.
-Alla användare eller grupp som ingår i det här fältet beviljas automatiskt behörighet till slutpunkten JEA när den är registrerad.
-Varje användare eller grupp kan ingå som en nyckel i hashtabellen bara en gång, men kan tilldelas flera roller.
-Namnet på rollen funktionen ska vara namnet på filen rollen kapaciteten utan .psrc filnamnstillägget.
+Rolldefinitioner i en konfigurationsfil för sessionen definierar mappningen av *användare* till *roller*.
+Varje användare eller grupp som ingår i det här fältet kommer automatiskt att beviljas behörighet att JEA-slutpunkt när den är registrerad.
+Varje användare eller grupp kan ingå som en nyckel i hash-tabellen bara en gång, men kan tilldelas flera roller.
+Namnet på rollen funktionen ska vara namnet på rollen kapaciteten för filen, utan tillägget .psrc.
 
 ```powershell
 RoleDefinitions = @{
@@ -164,11 +164,11 @@ RoleDefinitions = @{
 }
 ```
 
-Om en användare tillhör mer än en grupp i rolldefinitionen, kommer de att få åtkomst till roller för varje.
-Om två roller ger åtkomst till samma cmdletar kan beviljas den mest Tillåtande parameteruppsättningen för användaren.
+Om en användare tillhör mer än en grupp i rolldefinitionen kan får de åtkomst till roller för var och en.
+Om två roller ger åtkomst till samma cmdlets kan beviljas den mest Tillåtande parameteruppsättningen för användaren.
 
-När du anger för lokala användare eller grupper i fältet roll definitioner, måste du använda datornamnet (inte *localhost* eller *.*) innan ett omvänt snedstreck.
-Du kan kontrollera namnet på datorn genom att kontrollera den `$env:computername` variabeln.
+När du anger lokala användare eller grupper i rollen definitioner fältet, måste du använda namnet på datorn (inte *localhost* eller *.*) innan den omvänt snedstrecken.
+Du hittar namnet på datorn genom att kontrollera den `$env:computername` variabeln.
 
 ```powershell
 RoleDefinitions = @{
@@ -176,28 +176,28 @@ RoleDefinitions = @{
 }
 ```
 
-### <a name="role-capability-search-order"></a>Sökordning för rollen kapaciteten
-I exemplet ovan visas roll funktioner refereras av enkla namnet (filnamn utan filtillägget) i filen rollen kapaciteten.
-Om flera rollen funktioner är tillgängliga på datorn med samma enkla namn, använder PowerShell dess implicit Sökordning för att välja filen effektiva rollen kapaciteten.
-Kommer det att **inte** ge åtkomst till alla rollen kapaciteten för filer med samma namn.
+### <a name="role-capability-search-order"></a>Sökordning för roll-funktion
+I exemplet ovan visas rollfunktioner refereras av filens roll funktionen fast namn (filnamn utan filtillägget).
+Om flera rollfunktioner är tillgängliga på datorn med samma fast namn, använder PowerShell dess implicita ordning för att markera filen effektiva roll funktionen.
+Kommer det att **inte** ge åtkomst till alla roll funktionsfiler med samma namn.
 
-JEA använder den `$env:PSModulePath` miljövariabeln för att avgöra vilka sökvägar för att söka efter roll funktionsfiler.
-I var och en av dessa sökvägar söker JEA efter giltig PowerShell-modulerna som innehåller en undermapp ”RoleCapabilities”.
-Precis som med importerar moduler föredrar JEA roll-funktioner som levereras med Windows till anpassad roll funktionerna med samma namn.
-För andra namnkonflikter bestäms prioritet av den ordning som räknar Windows upp filer i katalogen (inte garanterat i alfabetisk ordning).
-Den första roll kapaciteten filen hittades som matchar den önskade namn kommer att användas för den anslutande användaren.
+JEA använder den `$env:PSModulePath` miljövariabeln för att avgöra vilka sökvägar kan du söka efter roll funktionsfiler.
+I var och en av dessa sökvägar söker JEA efter giltiga PowerShell-moduler som innehåller en undermapp som ”RoleCapabilities”.
+Precis som med importerar moduler, föredrar JEA rollfunktioner som medföljer Windows till den anpassade rollen funktionerna med samma namn.
+För andra namnkonflikter bestäms prioritet av den ordning som räknar Windows upp filerna i katalogen (inte nödvändigtvis i alfabetisk ordning).
+Den första roll funktionen filen hittades som matchar önskat namn ska användas för den anslutande användaren.
 
-Eftersom sökordningen för roll-funktionen är inte deterministisk när två eller flera funktioner för rollen har samma namn, är det **rekommenderar** som kontrollerar funktioner för rollen har unika namn på din dator.
+Eftersom sökordningen för roll-funktionen är inte deterministisk när två eller fler rollfunktioner har samma namn, är det **rekommenderar vi** du se till rollfunktioner har unika namn på din dator.
 
 ### <a name="conditional-access-rules"></a>Regler för villkorlig åtkomst
 
-Alla användare och grupper som ingår i fältet RoleDefinitions beviljas automatiskt åtkomst till JEA slutpunkter.
-Regler för villkorlig åtkomst kan du förfina åtkomst och användaren måste tillhöra ytterligare säkerhetsgrupper som inte påverkar de roller som de har tilldelats.
-Detta kan vara användbart om du vill integrera ”bara i tiden” privilegierad åtkomst lösning, autentisering med smartkort eller andra flerfunktionsautentisering lösning med JEA.
+Alla användare och grupper som ingår i fältet RoleDefinitions beviljas automatiskt åtkomst till JEA-slutpunkter.
+Regler för villkorlig åtkomst kan du förfina den här åtkomsten och Kräv att användare ska tillhöra ytterligare säkerhetsgrupper som inte påverkar de roller som de är tilldelade.
+Detta kan vara användbart om du vill integrera ”just in-time” privilegierad åtkomst till hanteringslösningen, autentisering med smartkort eller andra Multi-Factor authentication-lösning med JEA.
 
 Regler för villkorlig åtkomst har definierats i fältet RequiredGroups i en konfigurationsfil för sessionen.
-Det, kan du ange en hash-tabell (du kan också kapslade) som använder 'Och' och 'Eller' för att skapa dina regler.
-Här följer några exempel på hur du använder det här fältet:
+Där kan du ange en hash-tabell (du kan också kapslade) som använder ”och” och ”eller” för att skapa dina regler.
+Här följer några exempel på hur du kan använda det här fältet:
 
 ```powershell
 # Example 1: Connecting users must belong to a security group called "elevated-jea"
@@ -215,20 +215,20 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > Regler för villkorlig åtkomst är bara tillgängliga i Windows PowerShell 5.1 eller senare.
 
 ### <a name="other-properties"></a>Andra egenskaper
-Sessionen konfigurationsfiler kan också göra allt en roll kapaciteten fil kan göra, men utan möjlighet att ge anslutande användare åtkomst till olika kommandon.
-Om du vill tillåta alla användare åtkomst till specifika cmdlet: ar, funktioner och leverantörer kan du göra det direkt i konfigurationsfilen för sessionen.
+Sessionen konfigurationsfiler kan också göra allt en roll funktionen fil kan göra, men utan möjlighet att ge den anslutande användare åtkomst till olika kommandon.
+Om du vill tillåta alla användare åtkomst till specifika cmdlet: ar, funktioner eller leverantörer kan du göra det direkt i konfigurationsfilen för sessionen.
 En fullständig lista över egenskaper som stöds i konfigurationsfilen session kör `Get-Help New-PSSessionConfigurationFile -Full`.
 
-## <a name="testing-a-session-configuration-file"></a>Testa en session-konfigurationsfil
+## <a name="testing-a-session-configuration-file"></a>Testa en konfigurationsfil för session
 
-Du kan testa en session konfigurationen med hjälp av den [Test PSSessionConfigurationFile](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) cmdlet.
-Det rekommenderas starkt att du testar din session-konfigurationsfil om du har redigerat filen pssc manuellt med hjälp av en textredigerare så syntax är korrekt.
-Om en session konfigurationsfil inte klarar det här testet, kan den inte registrerats på datorn.
+Du kan testa en session konfiguration med hjälp av den [Test PSSessionConfigurationFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) cmdlet.
+Vi rekommenderar starkt att du testar din session-konfigurationsfil om du har redigerat filen pssc manuellt med hjälp av en textredigerare så syntaxen är korrekt.
+Om en session konfigurationsfil inte skickar det här testet, kan den inte har registreras i systemet.
 
-## <a name="sample-session-configuration-file"></a>Exempelkonfigurationsfilen för session
+## <a name="sample-session-configuration-file"></a>Exempelkonfigurationsfil för session
 
-Nedan visas en komplett exempel som visar hur du skapar och validera en sessionskonfiguration för JEA.
-Observera att rolldefinitioner skapas och lagras i den `$roles` variabel för bekvämlighets skull och läsbarhet.
+Nedan visas ett komplett exempel som visar hur du skapar och validerar en sessionskonfiguration för JEA.
+Observera att rolldefinitionerna skapas och lagras i den `$roles` variabeln för bekvämlighets skull och läsbarhet.
 Det är inte ett krav att göra detta.
 
 ```powershell
@@ -242,10 +242,10 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\JEACo
 Test-PSSessionConfigurationFile -Path .\JEAConfig.pssc # should yield True
 ```
 
-## <a name="updating-session-configuration-files"></a>Uppdatera session konfigurationsfiler
+## <a name="updating-session-configuration-files"></a>Uppdaterar sessionen konfigurationsfiler
 
-Om du behöver ändra egenskaperna för en sessionskonfiguration JEA, inklusive koppling av användare till roller, måste du [avregistrera](register-jea.md#unregistering-jea-configurations) och [Omregistrera](register-jea.md) JEA sessionskonfigurationen.
-När du registrera JEA sessionskonfigurationen kan du använda en uppdaterad PowerShell-session konfigurationsfil som innehåller dina önskade ändringar.
+Om du behöver ändra egenskaperna för en JEA-sessionskonfiguration, inklusive mappningen av användare till roller måste du [avregistrera](register-jea.md#unregistering-jea-configurations) och [Omregistrera](register-jea.md) JEA-sessionskonfiguration.
+När du registrera JEA sessionskonfigurationen kan du använda en uppdaterad PowerShell-session configuration-fil som innehåller dina önskade ändringar.
 
 ## <a name="next-steps"></a>Nästa steg
 

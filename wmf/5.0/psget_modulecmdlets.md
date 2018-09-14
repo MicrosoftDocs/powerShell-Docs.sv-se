@@ -1,49 +1,49 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 02aebbd2557298b1b88229fdf5f67bdd08cea452
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 29b11e8b11f27fc5be60ea8c5cd56138326b3998
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190612"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522846"
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>PowerShellGet-cmdletar för modulhantering
 
-- [Hitta DscResource](https://technet.microsoft.com/library/mt654006.aspx)
-- [Sök-modul](https://technet.microsoft.com/library/dn807167.aspx)
-- [Sök-skript](https://technet.microsoft.com/library/mt654001.aspx)
-- [Get-InstalledModule](https://technet.microsoft.com/en-us/library/mt653990.aspx)
-- [Get-InstalledScript](https://technet.microsoft.com/en-us/library/mt653994.aspx)
-- [Get-PSRepository](https://technet.microsoft.com/en-us/library/dn807170.aspx)
-- [Installera modulen](https://technet.microsoft.com/en-us/library/dn807162.aspx)
-- [Skriptet för installationen](https://technet.microsoft.com/en-us/library/mt653998.aspx)
-- [New-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653995.aspx)
-- [Publicera modul](https://technet.microsoft.com/en-us/library/dn807163.aspx)
-- [Publicera skript](https://technet.microsoft.com/en-us/library/mt654003.aspx)
-- [Registrera PSRepository](https://technet.microsoft.com/en-us/library/dn807168.aspx)
-- [Spara-modul](https://technet.microsoft.com/en-us/library/mt653992.aspx)
-- [Spara skriptet](https://technet.microsoft.com/en-us/library/mt654004.aspx)
-- [Ange PSRepository](https://technet.microsoft.com/en-us/library/dn807165.aspx)
-- [Testa ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt654005.aspx)
-- [Avinstallera modul](https://technet.microsoft.com/en-us/library/mt653996.aspx)
-- [Avinstallera skript](https://technet.microsoft.com/en-us/library/mt653989.aspx)
-- [Update-modul](https://technet.microsoft.com/en-us/library/dn807166.aspx)
-- [Uppdatera ModuleManifest](https://technet.microsoft.com/en-us/library/mt654002.aspx)
-- [Skript för uppdatering](https://technet.microsoft.com/en-us/library/mt653997.aspx)
-- [Update-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653991.aspx)
-- [Avregistrera PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
+- [Sök-DscResource](https://technet.microsoft.com/library/mt654006.aspx)
+- [Find-Module](https://technet.microsoft.com/library/dn807167.aspx)
+- [Find-Script](https://technet.microsoft.com/library/mt654001.aspx)
+- [Get-InstalledModule](https://technet.microsoft.com/library/mt653990.aspx)
+- [Get-InstalledScript](https://technet.microsoft.com/library/mt653994.aspx)
+- [Get-PSRepository](https://technet.microsoft.com/library/dn807170.aspx)
+- [Install-Module](https://technet.microsoft.com/library/dn807162.aspx)
+- [Install-Script](https://technet.microsoft.com/library/mt653998.aspx)
+- [New-ScriptFileInfo](https://technet.microsoft.com/library/mt653995.aspx)
+- [Publicera modul](https://technet.microsoft.com/library/dn807163.aspx)
+- [Publicera-Script](https://technet.microsoft.com/library/mt654003.aspx)
+- [Register-PSRepository](https://technet.microsoft.com/library/dn807168.aspx)
+- [Save-Module](https://technet.microsoft.com/library/mt653992.aspx)
+- [Save-Script](https://technet.microsoft.com/library/mt654004.aspx)
+- [Set-PSRepository](https://technet.microsoft.com/library/dn807165.aspx)
+- [Test-ScriptFileInfo](https://technet.microsoft.com/library/mt654005.aspx)
+- [Avinstallera modulen](https://technet.microsoft.com/library/mt653996.aspx)
+- [Avinstallera-Script](https://technet.microsoft.com/library/mt653989.aspx)
+- [Uppdatera modulen](https://technet.microsoft.com/library/dn807166.aspx)
+- [Uppdatera ModuleManifest](https://technet.microsoft.com/library/mt654002.aspx)
+- [Update-Script](https://technet.microsoft.com/library/mt653997.aspx)
+- [Update-ScriptFileInfo](https://technet.microsoft.com/library/mt653991.aspx)
+- [Avregistrera PSRepository](https://technet.microsoft.com/library/dn807161.aspx)
 
-## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Modulen beroende installationssupport, Get-InstalledModule och avinstallera-Module-cmdlets
-- Lägga till modulen beroenden population i Publicera modul-cmdlet. RequiredModules och NestedModules listor med PSModuleInfo används för att förbereda beroendelistan av en modul som ska publiceras.
-- Tillagda beroende installationssupport i installera modulen och Update-Module-cmdlets. Modulen beroenden är installerade och uppdateras som standard.
-- Lägga till en IncludeDependencies - parametern för cmdleten hitta modulen med modulen beroenden i resultaten.
-- Tillagt stöd för - MaximumVersion i Sök-modulen, installera modulen och Update-Module-cmdletar.
-- Tillagda nya Get-InstalledModule och avinstallera-Module-cmdlets.
+## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Modulen beroende installationssupport, Get-InstalledModule och avinstallera-Module-cmdletar
+- Lagt till modulen beroenden population i cmdlet Publish-Module. RequiredModules och NestedModules listor med PSModuleInfo används i förbereda beroendelistan av en modul som ska publiceras.
+- Har lagts till beroende installationssupport i Install-Module och Update-Module-cmdlets. Modulberoenden installeras och uppdateras som standard.
+- Ett - IncludeDependencies-parametern har lagts till Find-Module-cmdlet för att inkludera modulberoenden i resultaten.
+- MaximumVersion - stöd på Find-Module har lagts till Install-Module och Update-Module-cmdletar.
+- Nya cmdletar har lagts Get-InstalledModule och avinstallera modulen.
 
-## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a>Stöd för PowerShellGet cmdlets demo med modulen beroenden:
+## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a>PowerShellGet-cmdletar demo med modulberoenden stöd:
 
-### <a name="ensure-that-module-dependencies-are-available-on-the-repository"></a>Kontrollera att modulen beroenden är tillgängliga i databasen:
+### <a name="ensure-that-module-dependencies-are-available-on-the-repository"></a>Se till att modulberoenden finns på lagringsplatsen:
 ```powershell
 Find-Module -Repository LocalRepo -Name RequiredModule1,RequiredModule2,RequiredModule3,NestedRequiredModule1,NestedRequiredModule2,NestedRequiredModule3 | Sort-Object -Property Name
 
@@ -57,7 +57,7 @@ Version    Name                     Repository    Description
 2.0        RequiredModule3          LocalRepo     RequiredModule3 module
 ```
 
-### <a name="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest"></a>Skapa en modul med beroenden som anges i egenskaperna RequiredModules och NestedModules för dess modulmanifestet.
+### <a name="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest"></a>Skapa en modul med beroenden som anges i egenskaperna RequiredModules och NestedModules i dess modulmanifestet.
 ```powershell
 $RequiredModules = @('RequiredModule1',
                      @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.5'; },
@@ -71,7 +71,7 @@ New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\TestDepWith
 -NestedModules $NestedRequiredModules -RequiredModules $RequiredModules -ModuleVersion "1.0" -Description "TestDepWithNestedRequiredModules1 module"
 ```
 
-###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>Publicera två versioner (**”1.0”** och **”2.0”**) för modulen TestDepWithNestedRequiredModules1 med beroenden i databasen.
+###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>Publicera två versioner (**”1.0”** och **”2.0”**) från modulen TestDepWithNestedRequiredModules1 med beroenden i databasen.
 ```powershell
 Publish-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -NuGetApiKey "MyNuGet-ApiKey-For-LocalRepo"
 ```
@@ -91,7 +91,7 @@ Version    Name                                Repository  Description
 2.0        NestedRequiredModule3               LocalRepo   NestedRequiredModule3 module
 ```
 
-### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a>Använda hitta modulen metadata för att hitta modulen beroenden.
+### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a>Använda Find-Module metadata för att hitta modulberoenden.
 ```powershell
 $psgetModuleInfo = Find-Module -Repository MSPSGallery -Name ModuleWithDependencies2
 $psgetModuleInfo.Dependencies.ModuleName
@@ -172,8 +172,8 @@ Version    Name                                Repository  Description
 2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 ```
 
-###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>Kör cmdleten Uninstall-modulen för att avinstallera en modul som du har installerat med hjälp av PowerShellGet.
-Om en annan modul beror på den modul som du vill ta bort, genererar PowerShellGet ett fel.
+###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>Kör cmdleten Uninstall-modulen om du vill avinstallera en modul som installerades med hjälp av PowerShellGet.
+Om en annan modul är beroende av den modul som du vill ta bort genererar PowerShellGet ett fel.
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
 
@@ -185,7 +185,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 + FullyQualifiedErrorId : UnableToUninstallAsOtherModulesNeedThisModule,Uninstall-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
 
-## <a name="save-module-cmdlet"></a>Spara-modul-cmdlet
+## <a name="save-module-cmdlet"></a>Cmdleten Save-Module
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
 dir C:\MySavedModuleLocation
@@ -203,12 +203,12 @@ d----- 4/21/2015 5:40 PM RequiredModule2
 d----- 4/21/2015 5:40 PM RequiredModule3
 ```
 
-## <a name="update-modulemanifest-cmdlet"></a>Uppdatera ModuleManifest cmdlet
-Den här nya cmdleten används för att uppdatera manifestfilen med indata egenskapsvärden. Det tar för alla parametrar som Test ModuleManifest.
+## <a name="update-modulemanifest-cmdlet"></a>Cmdlet: en Update-ModuleManifest
+Den här nya cmdleten används för att uppdatera manifestfilen med indata-egenskapsvärden. Det tar alla parametrar som Test ModuleManifest gör.
 
-Vi upptäcker att modulen författare mycket vill ange ”\*” i exporterade värden, till exempel FunctionsToExport, CmdletsToExport, osv. Under modulen publicering till PowerShell-galleriet fylls Ospecificerad funktioner och kommandon inte korrekt till galleriet. Därför föreslår vi modulen författare uppdatera sina manifest med rätt värden.
+Vi upptäcker att en massa modulskapare vill ange ”\*” i exporterade värden, till exempel FunctionsToExport, CmdletsToExport, osv. Vid publicering av modulen PowerShell-galleriet, är Ospecificerad funktioner och kommandon inte ifyllda korrekt till galleriet. Därför föreslår vi att modulen författare uppdatera sina manifest med rätt värden.
 
-Om du har moduler som har exporterat egenskaper fylls uppdatering ModuleManifest den angivna manifestfilen med information från exporterade funktioner, cmdletar, variabler etc:
+Om du har moduler som har exporterat egenskaper, fylls Update-ModuleManifest den angivna manifestfilen med information från exporterade funktioner, cmdletar, variabler etc:
 ```powershell
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 @{
@@ -232,7 +232,7 @@ AliasesToExport = '*'
 }
 ```
 
-Efter uppdateringen ModuleManifest:
+Efter uppdateringen-ModuleManifest:
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
@@ -257,11 +257,11 @@ CmdletsToExport = 'Test-PSGetTestCmdlet'
 }
 ```
 
-För varje modul finns också metadatafält som är kopplade till den. Du kan använda uppdateringen ModuleManifest att fylla i fälten under PrivateData för att kunna visas korrekt metadata på PowrShell galleriet.
+För varje modul finns också metadatafält som är kopplade till den. Du kan använda Update ModuleManifest för att kunna visa metadata korrekt i PowrShell-galleriet, för att fylla i fälten under PrivateData.
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1" -Tags "Tag1" -LicenseUri "http://license.com" -ProjectUri "http://project.com" -IconUri "http://icon.com" -ReleaseNotes "Test module"
 ```
-PrivateData hashtable från mallen manifestfilen har följande egenskaper:
+PrivateData hash-tabell från mallen manifestfilen har följande egenskaper:
 ```powershell
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
@@ -286,4 +286,4 @@ PrivateData = @{
     } # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
-***Obs:*** DscResourcesToExport stöds endast på den senaste PowerShell version 5.0. Vi kan inte uppdatera om du kör på en tidigare version av PowerShell.
+***Obs:*** DscResourcesToExport stöds bara på den senaste versionen av PowerShell version 5.0. Vi kan inte uppdatera fältet om du kör på föregående PowerShell-version.
