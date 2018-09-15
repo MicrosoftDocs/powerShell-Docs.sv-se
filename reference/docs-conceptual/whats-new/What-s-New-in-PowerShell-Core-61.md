@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell Core 6.1
 description: Nya funktioner och ändringar som introducerades i PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 27e7e846e9ba6ab34d83a084c2589b67a9d5cba9
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: b95b9dd504ea2a165a4689a3b28d2298644e5e68
+ms.sourcegitcommit: aa41249f153bbc6e11667ade60c878980c15abc6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557316"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45611530"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Nyheter i PowerShell Core 6.1
 
@@ -34,6 +34,11 @@ På Windows, .NET-teamet levereras de [Windows Compatibility Pack för .NET Core
 Vi har lagt till Compatibility-Pack för Windows PowerShell Core 6.1 versionen så att alla moduler eller skript som använder dessa API: er kan använda dem som det är tillgängligt.
 
 Windows Compatibility Pack gör det möjligt för PowerShell Core att använda **mer än 1900 cmdletar som levereras med Windows 10 oktober 2018 Update och Windows Server 2019**.
+
+## <a name="support-for-application-whitelisting"></a>Stöd för listan över tillåtna program
+
+PowerShell Core 6.1 har paritet med Windows PowerShell 5.1 stöd [AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) och [Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) listan över tillåtna program.
+Listan över tillåtna program gör detaljerad kontroll över vilka-binärfiler ska kunna köras tillsammans med PowerShell [begränsad språkläge](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
 
 ## <a name="performance-improvements"></a>Prestandaförbättringar
 
@@ -153,7 +158,7 @@ Manifest   1.0.0.0    NetworkSwitchManager        Desk      {Disable-NetworkSwit
 Manifest   1.0.0.0    NetworkTransition           Desk      {Add-NetIPHttpsCertBinding, Disable-NetDnsTransi...
 ```
 
-Mer information om det här beteendet Kolla in [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/2-Draft-Accepted/RFC0025-PSCore6-and-Windows-Modules.md).
+Mer information om det här beteendet Kolla in [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-PSCore6-and-Windows-Modules.md).
 
 ## <a name="markdown-cmdlets-and-rendering"></a>Markdown-cmdletar och rendering
 
