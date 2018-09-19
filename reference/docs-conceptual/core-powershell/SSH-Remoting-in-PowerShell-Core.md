@@ -2,12 +2,12 @@
 title: PowerShell fjärrkommunikation via SSH
 description: Fjärrkommunikation i PowerShell Core med hjälp av SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: 0605e2400ab23a5ca97910621a59a64d19a80bde
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: 451a55a588381cc9bec265895b2bfad6b6f6e73c
+ms.sourcegitcommit: a652b12a0b87cdd0c8eb76381ae015467dd7b8cd
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557115"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46134288"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell fjärrkommunikation via SSH
 
@@ -167,22 +167,6 @@ För Linux, installera SSH (inklusive sshd-servern) lämpligt för din plattform
    sudo launchctl stop com.openssh.sshd
    sudo launchctl start com.openssh.sshd
    ```
-
-## <a name="authentication"></a>Autentisering
-
-PowerShell fjärrkommunikation via SSH är beroende av autentiseringsutbytet mellan SSH-klient och SSH-tjänsten och implementerar inte alla autentiseringsscheman själva.
-Det innebär att alla konfigurerade autentiseringsmetoder, inklusive Multi-Factor authentication hanteras av SSH- och oberoende av PowerShell.
-Du kan till exempel konfigurera SSH-tjänsten för att kräva autentisering med offentlig nyckel som ett engångslösenord för ökad säkerhet.
-Konfigurationen av Multi-Factor authentication ligger utanför omfånget för den här dokumentationen.
-I dokumentationen för SSH på hur du konfigurerar multifaktorautentisering och verifiera den fungerar utanför PowerShell innan du försöker använda den med PowerShell-fjärrkommunikation korrekt.
-
-## <a name="authentication"></a>Autentisering
-
-PowerShell fjärrkommunikation via SSH är beroende av autentiseringsutbytet mellan SSH-klient och SSH-tjänsten och implementerar inte alla autentiseringsscheman själva.
-Det innebär att alla konfigurerade autentiseringsmetoder, inklusive Multi-Factor authentication hanteras av SSH- och oberoende av PowerShell.
-Du kan till exempel konfigurera SSH-tjänsten för att kräva autentisering med offentlig nyckel som ett engångslösenord för ökad säkerhet.
-Konfigurationen av Multi-Factor authentication ligger utanför omfånget för den här dokumentationen.
-I dokumentationen för SSH på hur du konfigurerar multifaktorautentisering och verifiera den fungerar utanför PowerShell innan du försöker använda den med PowerShell-fjärrkommunikation korrekt.
 
 ## <a name="authentication"></a>Autentisering
 
