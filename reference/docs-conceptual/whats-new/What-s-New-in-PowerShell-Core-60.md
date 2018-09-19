@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell Core 6.0
 description: Nya funktioner och ändringar som introducerades i PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: 9bd59dc1821e2fb3ec2d30254ab1fac4089f0340
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
+ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557240"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46289250"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Nyheter i PowerShell Core 6.0
 
@@ -80,7 +80,7 @@ Ett antal ändringar har gjorts på macOS och Linux för att stödja filnamnstec
   - Historiken spara sökväg finns i `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
   - Modulsökväg användare finns i `~/.local/share/powershell/Modules`
 - Stöd för fil- och namn som innehåller tecknet kolon på Unix. (#4959)
-- Stöd för Skriptnamn eller kompletta sökvägar som har kommatecken. (#4136) (Tack vare @TimCurwick!)
+- Stöd för Skriptnamn eller kompletta sökvägar som har kommatecken. (#4136) (Tack vare [ @TimCurwick ](https://github.com/TimCurwick)!)
 - Identifiera när `-LiteralPath` används för att ignorera jokertecken expansion för navigering cmdletar. (#5038)
 - Uppdatera `Get-ChildItem` att arbeta mer liknande den * nix `ls -R` och Windows `DIR /S` inbyggda kommandon.
   `Get-ChildItem` Nu returnerar de symboliska länkarna under rekursiv sökning och inte i katalogerna som dessa länkar mål. (#3780)
@@ -118,7 +118,7 @@ Ytterligare ändringar av `pwsh(.exe)` från `powershell.exe`:
   Den här ändringen kräver dock att du uttryckligen anger `-c` eller `-Command` vid försök att köra kommandon som `pwsh.exe -Command Get-Command`. (#4019)
 - PowerShell Core accepterar den `-i` (eller `-Interactive`) växel för att ange ett interaktivt gränssnitt. (#3558) Detta gör att PowerShell som ska användas som ett standardgränssnitt på Unix-plattformar.
 - Ta bort parametrar `-importsystemmodules` och `-psconsoleFile` från `pwsh.exe`. (#4995)
-- Ändra `pwsh -version` och inbyggd hjälp för `pwsh.exe` för att anpassas med andra inbyggda verktyg. (#4958 & #4931) (Tack @iSazonov)
+- Ändra `pwsh -version` och inbyggd hjälp för `pwsh.exe` för att anpassas med andra inbyggda verktyg. (#4958 & #4931) (Tack [ @iSazonov ](https://github.com/iSazonov))
 - Ogiltigt argument felmeddelanden för `-File` och `-Command` och slutkoder konsekvent med Unix-standarder (#4573)
 - Lagt till `-WindowStyle` parametern på Windows. (#4573) Paket-baserade installationer uppdateringar på icke-Windows-plattformar är på samma sätt kan uppdateringar på plats.
 
@@ -214,21 +214,21 @@ Mer information om PowerShell-jobb finns i [about_Jobs](https://msdn.microsoft.c
 
 ## <a name="semantic-versioning"></a>Semantisk versionshantering
 
-- Gjort `SemanticVersion` kompatibel med `SemVer 2.0`. (#5037) (Tack @iSazonov!)
-- Ändra standard `ModuleVersion` i `New-ModuleManifest` till `0.0.1` för att anpassas till SemVer. (#4842) (Tack @LDSpits)
-- Lagt till `semver` som en typ accelerator för `System.Management.Automation.SemanticVersion`. (#4142) (Tack vare @oising!)
+- Gjort `SemanticVersion` kompatibel med `SemVer 2.0`. (#5037) (Tack [ @iSazonov ](https://github.com/iSazonov)!)
+- Ändra standard `ModuleVersion` i `New-ModuleManifest` till `0.0.1` för att anpassas till SemVer. (#4842) (Tack [ @LDSpits ](https://github.com/LDSpits))
+- Lagt till `semver` som en typ accelerator för `System.Management.Automation.SemanticVersion`. (#4142) (Tack vare [ @oising ](https://github.com/oising)!)
 - Aktiverad jämförelse mellan en `SemanticVersion` instans och en `Version` -instans som har konstruerats med endast `Major` och `Minor` Versionsvärden.
 
 ## <a name="language-updates"></a>Språkuppdateringar
 
-- Implementera Unicode-escape-parsning så att användarna kan använda Unicode-tecken som argument, strängar eller variabelnamn. (#3958) (Tack vare @rkeithhill!)
+- Implementera Unicode-escape-parsning så att användarna kan använda Unicode-tecken som argument, strängar eller variabelnamn. (#3958) (Tack vare [ @rkeithhill ](https://github.com/rkeithhill)!)
 - Har lagts till nya escape-tecknet för ESC: `` `e``
-- Stöd för att konvertera uppräkningar för att sträng (#4318) har lagts till (tack @KirkMunro)
+- Stöd för att konvertera uppräkningar för att sträng (#4318) har lagts till (tack [ @KirkMunro ](https://github.com/KirkMunro))
 - Fast omvandling enstaka element-matris till en allmän samling. (#3170)
-- Har lagts till tecknet intervallet överlagring för den `..` operator, så `'a'..'z'` Returnerar tecknen från ”a” till ”z”. (#5026) (Tack @IISResetMe!)
+- Har lagts till tecknet intervallet överlagring för den `..` operator, så `'a'..'z'` Returnerar tecknen från ”a” till ”z”. (#5026) (Tack [ @IISResetMe ](https://github.com/IISResetMe)!)
 - Fast variabeltilldelning inte skriva över skrivskyddade variabler
 - Skicka lokala variabler över automatiska variabler till 'DottedScopes' när över hela skript-cmdlets (#4709)
-- Aktivera 'Singleline, Multiline' alternativet i delningsoperatorn (#4721) (tack @iSazonov)
+- Aktivera 'Singleline, Multiline' alternativet i delningsoperatorn (#4721) (tack [ @iSazonov ](https://github.com/iSazonov))
 
 ## <a name="engine-updates"></a>Uppdateringar till
 
@@ -240,12 +240,12 @@ Mer information om PowerShell-jobb finns i [about_Jobs](https://msdn.microsoft.c
   - `Platform`: Detta returneras av `[System.Environment]::OSVersion.Platform` anges till `Win32NT` på Windows, `Unix` på macOS, och `Unix` i Linux.
 - Ta bort den `BuildVersion` egenskap från `$PSVersionTable`.
   Den här egenskapen har alltså tätt kopplade till build-version för Windows.
-  I stället rekommenderar vi att du använder `GitCommitId` att hämta exakta build-versionen av PowerShell Core. (#3877) (Tack vare @iSazonov!)
+  I stället rekommenderar vi att du använder `GitCommitId` att hämta exakta build-versionen av PowerShell Core. (#3877) (Tack vare [ @iSazonov ](https://github.com/iSazonov)!)
 - Ta bort `ClrVersion` egenskap från `$PSVersionTable`.
   Den här egenskapen är inte relevant för .NET Core och endast har bevarats i .NET Core för specifika äldre syften kan inte tillämpas till PowerShell.
 - Lagt till tre nya automatiska variabler för att avgöra om PowerShell körs i en viss OS: `$IsWindows`, `$IsMacOs`, och `$IsLinux`.
 - Lägg till `GitCommitId` till PowerShell Core banderoll.
-  Nu du inte behöver köra `$PSVersionTable` när du startar PowerShell för att hämta versionen! (#3916) (Tack vare @iSazonov!)
+  Nu du inte behöver köra `$PSVersionTable` när du startar PowerShell för att hämta versionen! (#3916) (Tack vare [ @iSazonov ](https://github.com/iSazonov)!)
 - Lägg till en JSON-konfigurationsfil som kallas `powershell.config.json` i `$PSHome` att lagra vissa inställningar som krävs innan starttiden (t.ex. `ExecutionPolicy`).
 - Blockera inte pipeline när du kör Windows EXE
 - Aktiverade uppräkning av COM-samlingar. (#4553)
@@ -255,93 +255,93 @@ Mer information om PowerShell-jobb finns i [about_Jobs](https://msdn.microsoft.c
 ### <a name="new-cmdlets"></a>Nya cmdletar
 
 - Lägg till `Get-Uptime` till `Microsoft.PowerShell.Utility`.
-- Lägg till `Remove-Alias` kommando. (#5143) (Tack @PowershellNinja!)
-- Lägg till `Remove-Service` till Management-modulen. (#4858) (Tack @joandrsn!)
+- Lägg till `Remove-Alias` kommando. (#5143) (Tack [ @PowershellNinja ](https://github.com/PowershellNinja)!)
+- Lägg till `Remove-Service` till Management-modulen. (#4858) (Tack [ @joandrsn ](https://github.com/joandrsn)!)
 
 ### <a name="web-cmdlets"></a>Web-cmdletar
 
-- Lägg till certifikatstöd för autentisering för web-cmdletar. (#4646) (Tack @markekraus)
-- Lägg till stöd för content-huvuden i web-cmdletar. (#4494 & #4640) (Tack @markekraus)
-- Lägg till stöd för flera länk-huvud i Web-cmdletar. (#5265) (Tack @markekraus!)
+- Lägg till certifikatstöd för autentisering för web-cmdletar. (#4646) (Tack [ @markekraus ](https://github.com/markekraus))
+- Lägg till stöd för content-huvuden i web-cmdletar. (#4494 & #4640) (Tack [ @markekraus ](https://github.com/markekraus))
+- Lägg till stöd för flera länk-huvud i Web-cmdletar. (#5265) (Tack [ @markekraus ](https://github.com/markekraus)!)
 - Stöd för länken rubrik sidbrytning i web-cmdlets (#3828)
   - För `Invoke-WebRequest`, när svaret innehåller en länk-rubrik som vi skapar en RelationLink-egenskap som en ordlista som representerar de URL: er och `rel` attribut och se till att webbadresserna är absolut att göra det enklare för utvecklare att använda.
   - För `Invoke-RestMethod`, när svaret innehåller en länk-rubrik som vi Exponerar en `-FollowRelLink` växel automatiskt följa `next` `rel` länkar förrän de inte längre finns eller en gång vi når det valfria `-MaximumFollowRelLink` parametervärde.
-- Lägg till `-CustomMethod` parameter i web-cmdletar för standardmässiga metoden verb. (#3142) (Tack vare @Lee303!)
-- Lägg till `SslProtocol` stöd för Web-cmdletar. (#5329) (Tack @markekraus!)
-- Lägg till Multipart stöd i web-cmdletar. (#4782) (Tack @markekraus)
-- Lägg till `-NoProxy` i web-cmdletar så att de ignorerar systemomfattande proxyinställning. (#3447) (Tack vare @TheFlyingCorpse!)
-- Användaren Agent för webb-cmdletar nu rapporterar OS-plattform (#4937) (tack @LDSpits)
+- Lägg till `-CustomMethod` parameter i web-cmdletar för standardmässiga metoden verb. (#3142) (Tack vare [ @Lee303 ](https://github.com/Lee303)!)
+- Lägg till `SslProtocol` stöd för Web-cmdletar. (#5329) (Tack [ @markekraus ](https://github.com/markekraus)!)
+- Lägg till Multipart stöd i web-cmdletar. (#4782) (Tack [ @markekraus ](https://github.com/markekraus))
+- Lägg till `-NoProxy` i web-cmdletar så att de ignorerar systemomfattande proxyinställning. (#3447) (Tack vare [ @TheFlyingCorpse ](https://github.com/TheFlyingCorpse)!)
+- Användaren Agent för webb-cmdletar nu rapporterar OS-plattform (#4937) (tack [ @LDSpits ](https://github.com/LDSpits))
 - Lägg till `-SkipHeaderValidation` växla till webb-cmdletar för att lägga till rubriker utan att verifiera huvudets värde. (#4085)
 - Aktivera web-cmdletar för att verifiera inte HTTPS-certifikat på servern om det behövs.
-- Lägg till autentiseringsparametrar i webb-cmdletar. (#5052) (Tack @markekraus)
+- Lägg till autentiseringsparametrar i webb-cmdletar. (#5052) (Tack [ @markekraus ](https://github.com/markekraus))
   - Lägg till `-Authentication` som tillhandahåller tre alternativ: Basic, OAuth och Ägarautentisering.
   - Lägg till `-Token` att hämta ägar-token för OAuth och ägar-alternativ.
   - Lägg till `-AllowUnencryptedAuthentication` kringgå authentication som har angetts för alla transportschema än HTTPS.
-- Lägg till `-ResponseHeadersVariable` till `Invoke-RestMethod` vill aktivera avbildningsfunktionen för svarshuvuden. (#4888) (Tack @markekraus)
+- Lägg till `-ResponseHeadersVariable` till `Invoke-RestMethod` vill aktivera avbildningsfunktionen för svarshuvuden. (#4888) (Tack [ @markekraus ](https://github.com/markekraus))
 - Åtgärda web-cmdletar för att inkludera ett HTTP-svar i undantaget när Svarets statuskod inte lyckades. (#3201)
-- Ändra web cmdletar `UserAgent` från `WindowsPowerShell` till `PowerShell`. (#4914) (Tack @markekraus)
+- Ändra web cmdletar `UserAgent` från `WindowsPowerShell` till `PowerShell`. (#4914) (Tack [ @markekraus ](https://github.com/markekraus))
 - Lägg till explicita `ContentType` identifiering till `Invoke-RestMethod` (#4692)
-- Åtgärda web cmdletar `-SkipHeaderValidation` att arbeta med inte är standard användaragent-rubriker. (#4479 & #4512) (Tack @markekraus)
+- Åtgärda web cmdletar `-SkipHeaderValidation` att arbeta med inte är standard användaragent-rubriker. (#4479 & #4512) (Tack [ @markekraus ](https://github.com/markekraus))
 
 ### <a name="json-cmdlets"></a>JSON-cmdletar
 
-- Lägg till `-AsHashtable` till `ConvertFrom-Json` att returnera en `Hashtable` i stället. (#5043) (Tack @bergmeister!)
+- Lägg till `-AsHashtable` till `ConvertFrom-Json` att returnera en `Hashtable` i stället. (#5043) (Tack [ @bergmeister ](https://github.com/bergmeister)!)
 - Använd prettier Formateraren med `ConvertTo-Json` utdata. (#2787) (Tack vare @kittholland!)
 - Lägg till `Jobject` serialisering stöd till `ConvertTo-Json`. (#5141)
 - Åtgärda `ConvertFrom-Json` att deserialisera en matris med strängar från pipelinen som tillsammans skapar en fullständig JSON-sträng.
   Det löser tillfällen där nya rader skulle skapa JSON-parsning. (#3823)
 - Ta bort den `AliasProperty "Count"` definierats för `System.Array`.
-  Detta tar bort den överflödig `Count` egenskapen på vissa `ConvertFrom-Json` utdata. (#3231) (Tack vare @PetSerAl!)
+  Detta tar bort den överflödig `Count` egenskapen på vissa `ConvertFrom-Json` utdata. (#3231) (Tack vare [ @PetSerAl ](https://github.com/PetSerAl)!)
 
 ### <a name="csv-cmdlets"></a>CSV-cmdletar
 
-- Lägg till `PSTypeName` stöd för `Import-Csv` och `ConvertFrom-Csv`. (#5389) (Tack @markekraus!)
-- Kontrollera `Import-Csv` stöder `CR`, `LF`, och `CRLF` som rad avgränsare. (#5363) (Tack @iSazonov!)
-- Kontrollera `-NoTypeInformation` standard på `Export-Csv` och `ConvertTo-Csv`. (#5164) (Tack @markekraus)
+- Lägg till `PSTypeName` stöd för `Import-Csv` och `ConvertFrom-Csv`. (#5389) (Tack [ @markekraus ](https://github.com/markekraus)!)
+- Kontrollera `Import-Csv` stöder `CR`, `LF`, och `CRLF` som rad avgränsare. (#5363) (Tack [ @iSazonov ](https://github.com/iSazonov)!)
+- Kontrollera `-NoTypeInformation` standard på `Export-Csv` och `ConvertTo-Csv`. (#5164) (Tack [ @markekraus ](https://github.com/markekraus))
 
 ### <a name="service-cmdlets"></a>Cmdlet: ar
 
-- Lägg till egenskaper `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName`, och `StartupType` till den `ServiceController` objekten som returneras av `Get-Service`. (#4907) (Tack @joandrsn)
-- Lägg till funktioner för att ange autentiseringsuppgifter på `Set-Service` kommando. (#4844) (Tack @joandrsn)
+- Lägg till egenskaper `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName`, och `StartupType` till den `ServiceController` objekten som returneras av `Get-Service`. (#4907) (Tack [ @joandrsn ](https://github.com/joandrsn))
+- Lägg till funktioner för att ange autentiseringsuppgifter på `Set-Service` kommando. (#4844) (Tack [ @joandrsn ](https://github.com/joandrsn))
 
 ### <a name="other-cmdlets"></a>Andra cmdlet: ar
 
 - Lägg till en parameter till `Get-ChildItem` kallas `-FollowSymlink` som passerar symlinks på begäran med söker efter länk slingor. (#4020)
-- Uppdatera `Add-Type` för `CSharpVersion7`. (#3933) (Tack vare @iSazonov)
+- Uppdatera `Add-Type` för `CSharpVersion7`. (#3933) (Tack vare [ @iSazonov ](https://github.com/iSazonov))
 - Ta bort den `Microsoft.PowerShell.LocalAccounts` modulen på grund av användningen av stöds inte API: er tills en bättre lösning hittas. (#4302)
 - Ta bort den `*-Counter` cmdlets i `Microsoft.PowerShell.Diagnostics` på grund av användningen av stöds inte API: er tills en bättre lösning hittas. (#4303)
 - Lägg till stöd för `Invoke-Item -Path <folder>`. (#4262)
-- Lägg till `-Extension` och `-LeafBase` växlar till `Split-Path` så att du kan dela upp sökvägar mellan filnamnstillägget och resten av filnamnet. (#2721) (Tack vare @powercode!)
+- Lägg till `-Extension` och `-LeafBase` växlar till `Split-Path` så att du kan dela upp sökvägar mellan filnamnstillägget och resten av filnamnet. (#2721) (Tack vare [ @powercode ](https://github.com/powercode)!)
 - Lägg till parametrar `-Top` och `-Bottom` till `Sort-Object` för högsta/lägsta N sortera
-- Exponera en process överordnade processen genom att lägga till den `CodeProperty "Parent"` till `System.Diagnostics.Process`. (#2850) (Tack vare @powercode!)
+- Exponera en process överordnade processen genom att lägga till den `CodeProperty "Parent"` till `System.Diagnostics.Process`. (#2850) (Tack vare [ @powercode ](https://github.com/powercode)!)
 - Använda MB i stället för KB för minne kolumner i `Get-Process`
-- Lägg till `-NoNewLine` växla för `Out-String`. (#5056) (Tack @raghav710)
+- Lägg till `-NoNewLine` växla för `Out-String`. (#5056) (Tack [ @raghav710 ](https://github.com/raghav710))
 - `Move-Item` cmdlet godkänner `-Include`, `-Exclude`, och `-Filter` parametrar. (#3878)
 - Tillåt `*` som ska användas i registersökväg för `Remove-Item`. (#4866)
 - Lägg till `-Title` till `Get-Credential` och skapa en enhetlig fråga upplevelse mellan plattformar.
 - Lägg till den `-TimeOut` parameter `Test-Connection`. (#2492)
 - `Get-AuthenticodeSignature` cmdlet: ar kan nu få signatur-filtidsstämpel. (#4061)
 - Ta bort stöds inte `-ShowWindow` växla från `Get-Help`. (#4903)
-- Åtgärda `Get-Content -Delimiter` returnerade (#3706) att inte inkludera avgränsaren i matriselement (tack @mklement0)
-- Lägg till `Meta`, `Charset`, och `Transitional` parametrar för att `ConvertTo-HTML` (#4184) (tack @ergo3114)
+- Åtgärda `Get-Content -Delimiter` returnerade (#3706) att inte inkludera avgränsaren i matriselement (tack [ @mklement0 ](https://github.com/mklement0))
+- Lägg till `Meta`, `Charset`, och `Transitional` parametrar för att `ConvertTo-HTML` (#4184) (tack [ @ergo3114 ](https://github.com/ergo3114))
 - Lägg till `WindowsUBR` och `WindowsVersion` egenskaper så att `Get-ComputerInfo` resultat
 - Lägg till `-Group` parameter `Get-Verb`
-- Lägg till `ShouldProcess` stöd till `New-FileCatalog` och `Test-FileCatalog` (åtgärdar `-WhatIf` och `-Confirm`). (#3074) (Tack vare @iSazonov!)
-- Lägg till `-WhatIf` växla till `Start-Process` cmdlet (#4735) (tack @sarithsutha)
+- Lägg till `ShouldProcess` stöd till `New-FileCatalog` och `Test-FileCatalog` (åtgärdar `-WhatIf` och `-Confirm`). (#3074) (Tack vare [ @iSazonov ](https://github.com/iSazonov)!)
+- Lägg till `-WhatIf` växla till `Start-Process` cmdlet (#4735) (tack [ @sarithsutha ](https://github.com/sarithsutha))
 - Lägg till `ValidateNotNullOrEmpty` för många befintliga parametrar.
 
 ## <a name="tab-completion"></a>Tabbifyllning
 
-- Förbättrad typ inferens i tabbifyllning utifrån variabelvärden för körning. (#2744) (Tack vare @powercode!) På så sätt kan tabbifyllning i situationer som:
+- Förbättrad typ inferens i tabbifyllning utifrån variabelvärden för körning. (#2744) (Tack vare [ @powercode ](https://github.com/powercode)!) På så sätt kan tabbifyllning i situationer som:
 
   ```powershell
   $p = Get-Process
   $p | Foreach-Object Prio<tab>
   ```
 
-- Lägg till hash-tabell tabbifyllning för `-Property` av `Select-Object`. (#3625) (Tack vare @powercode)
-- Aktivera argumentet automatisk komplettering för `-ExcludeProperty` och `-ExpandProperty` av `Select-Object`. (#3443) (Tack vare @iSazonov!)
-- Åtgärda en bugg i tabbifyllning att göra `native.exe --<tab>` anropar ursprungliga komplettering. (#3633) (Tack vare @powercode!)
+- Lägg till hash-tabell tabbifyllning för `-Property` av `Select-Object`. (#3625) (Tack vare [ @powercode ](https://github.com/powercode))
+- Aktivera argumentet automatisk komplettering för `-ExcludeProperty` och `-ExpandProperty` av `Select-Object`. (#3443) (Tack vare [ @iSazonov ](https://github.com/iSazonov)!)
+- Åtgärda en bugg i tabbifyllning att göra `native.exe --<tab>` anropar ursprungliga komplettering. (#3633) (Tack vare [ @powercode ](https://github.com/powercode)!)
 
 ## <a name="breaking-changes"></a>Större ändringar
 
