@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Objektet manifest värden som påverkar PowerShell galleriets gränssnitt
-ms.openlocfilehash: 60415193129fe040b53d35b1f8701408cfc4989d
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: e7e9910504a665e464add0a83454cec64c1a0937
+ms.sourcegitcommit: 601609575a3214ea7086a3bcb586ae0d1df3d418
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268185"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46532978"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Objektet manifest värden som påverkar PowerShell galleriets gränssnitt
 
@@ -44,6 +44,8 @@ Tabellen nedan visar elementen på sidan för PowerShell-galleriet objekt Använ
 | **Versionshistorik** | Versionshistoriken visar uppdateringar för en modul i PowerShell-galleriet. Om en version av ett objekt visas med hjälp av funktionen Ta bort visas den inte i tidigare versioner utom för objektägare. | Nej | Nej |
 | **Project-webbplats** | Projektwebbplatsen har angetts för moduler i avsnittet Privatedata\PSData i modulmanifestet genom att ange en ProjectURI. I skriptet-manifestet styrs genom att ange. PROJECTURI. | Ja | Ja |
 | **Licens** | En licens länk för moduler i avsnittet Privatedata\PSData i modulmanifestet genom att ange en LicenseURI. I skriptet-manifestet styrs genom att ange. LICENSEURI. Det är viktigt att Observera att om en licens har angetts via LicenseURI eller i en modul, villkor för användning av PowerShell-galleriet ange villkor för användning av objektet. Se villkor för användning av information. | Ja | Ja |
+| **Ikonen** | En ikon kan anges för ett objekt i PowerShell-galleriet genom att ange flaggan IconURI i skriptet manifestet och i avsnittet Privatedata PSData i modulmanifestet. IconURI måste peka på en 32 x 32-avbildning med transparens bakgrund. URI: N **måste** vara en direkt bild-URL och **får inte** går du till en webbsida som innehåller avbildningen eller en fil i PowerShell-galleriet paketet. | Ja | Ja |
+
 
 ## <a name="editing-item-details"></a>Redigera information om objekt
 
