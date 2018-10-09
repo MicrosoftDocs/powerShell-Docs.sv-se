@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell Core 6.1
 description: Nya funktioner och ändringar som introducerades i PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 5e2fe3c819ed638b2c14d7d40e08b7c32953147f
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
+ms.openlocfilehash: 4e39780a0ff446993005bba6284741f3b4b02549
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289233"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851315"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Nyheter i PowerShell Core 6.1
 
@@ -197,11 +197,11 @@ och [ `Invoke-RestMethod` ](/powershell/module/microsoft.powershell.utility/invo
 
 ## <a name="remoting-improvements"></a>Förbättringar för fjärrkommunikation
 
-### <a name="powershell-direct-tries-to-use-powershell-core-first"></a>PowerShell Direct försöker först använda PowerShell Core
+### <a name="powershell-direct-for-containers-tries-to-use-powershell-core-first"></a>PowerShell Direct för behållare försöker först använda PowerShell Core
 
-[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) är en funktion i PowerShell och Hyper-V som gör det möjligt att ansluta till en Hyper-V virtuell dator utan nätverksanslutning eller andra tjänster för fjärrhantering.
+[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) är en funktion i PowerShell och Hyper-V som gör det möjligt att ansluta till en Hyper-V-dator eller behållare utan nätverksanslutning eller andra tjänster för fjärrhantering.
 
-Tidigare var ansluten PowerShell Direct med hjälp av Windows PowerShell-instansen inkorg på den virtuella datorn.
+Tidigare var ansluten PowerShell Direct med hjälp av Windows PowerShell-instansen inkorg för behållaren.
 Nu, PowerShell Direct först försöker ansluta med hjälp av alla tillgängliga `pwsh.exe` på den `PATH` miljövariabeln.
 Om `pwsh.exe` är inte tillgänglig, PowerShell Direct faller tillbaka om du vill använda `powershell.exe`.
 
@@ -310,45 +310,44 @@ På allmän begäran `Update-Help` inte längre behöver köras som administrat�
 ### <a name="new-methodsproperties-on-pscustomobject"></a>Nya metoder/egenskaper på `PSCustomObject`
 
 Tack vare [ @iSazonov ](https://github.com/iSazonov), vi har lagt till nya metoder och egenskaper som `PSCustomObject`.
-`PSCustomObject` innehåller nu en `Count` / `Length` egenskap som ger antalet objekt.
-
-Båda exemplen returnera `2` som antalet `PSCustomObjects` i samlingen.
+`PSCustomObject` innehåller nu en `Count` / `Length` egenskap som andra objekt.
 
 ```powershell
-@(
-[pscustomobject]@{foo = '1'},
-[pscustomobject]@{bar = '2' }).Length
+$PSCustomObject = [pscustomobject]@{foo = 1}
+
+$PSCustomObject.Length
+```
+
+```Output
+1
 ```
 
 ```powershell
-@(
-[pscustomobject]@{foo = '1'},
-[pscustomobject]@{bar = '2' }).Count
+$PSCustomObject.Count
+```
+
+```Output
+1
 ```
 
 Det här att fungera även `ForEach` och `Where` metoder som gör det möjligt att driva och filtrera på `PSCustomObject` objekt:
 
 ```powershell
-@(
->> [pscustomobject]@{foo = 1},
->> [pscustomobject]@{foo = 2 }).ForEach({$_.foo+1})
+$PSCustomObject.ForEach({$_.foo + 1})
 ```
 
 ```Output
 2
-3
 ```
 
 ```powershell
-@(
->> [pscustomobject]@{foo = 1},
->> [pscustomobject]@{foo = 2 }).Where({$_.foo -gt 1})
+$PSCustomObject.Where({$_.foo -gt 0})
 ```
 
 ```Output
 foo
 ---
-  2
+  1
 ```
 
 ### `Where-Object -Not`
@@ -507,7 +506,7 @@ Om du vill välja bort den här telemetrin, ange miljövariabeln `POWERSHELL_TEL
 
 Om du vill förhindra användning av okrypterade trafik kräver PowerShell-fjärrkommunikation på Unix-plattformar nu användningen av NTLM/förhandla eller HTTPS.
 
-Mer information om dessa ändringar finns [PR #6799](https://github.com/PowerShell/PowerShell/pull/6799).
+Mer information om dessa ändringar finns [problemet #6779](https://github.com/PowerShell/PowerShell/issues/6779).
 
 ### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>Ta bort `VisualBasic` som ett språk som stöds i Add-Type
 

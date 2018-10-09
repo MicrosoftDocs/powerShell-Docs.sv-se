@@ -2,12 +2,12 @@
 title: PowerShell fjärrkommunikation via SSH
 description: Fjärrkommunikation i PowerShell Core med hjälp av SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: 451a55a588381cc9bec265895b2bfad6b6f6e73c
-ms.sourcegitcommit: a652b12a0b87cdd0c8eb76381ae015467dd7b8cd
+ms.openlocfilehash: 84c3896fe28847beb03e930f933bb4a9dfad397f
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46134288"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851245"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell fjärrkommunikation via SSH
 
@@ -35,7 +35,7 @@ För Linux, installera SSH (inklusive sshd-servern) lämpligt för din plattform
 
 ## <a name="set-up-on-windows-machine"></a>Ställa in på Windows-dator
 
-1. Installera den senaste versionen av [PowerShell Core för Windows]
+1. Installera den senaste versionen av [PowerShell Core för Windows](../setup/installing-powershell-core-on-windows.md#msi)
 
    - Berätta om den har stöd för SSH-fjärrkommunikation genom att titta på parameteruppsättningar för `New-PSSession`
 
@@ -47,7 +47,7 @@ För Linux, installera SSH (inklusive sshd-servern) lämpligt för din plattform
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. Installera den senaste versionen av [Win32-OpenSSH] från GitHub med hjälp av [installationsinstruktionerna]
+2. Installera senast [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) skapa från GitHub med hjälp av den [installation](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH) instruktioner
 3. Redigera sshd_config-filen på den plats där du installerade Win32 OpenSSH
 
    - Kontrollera att lösenordsautentisering är aktiverad
@@ -91,8 +91,8 @@ För Linux, installera SSH (inklusive sshd-servern) lämpligt för din plattform
 
 ## <a name="set-up-on-linux-ubuntu-1404-machine"></a>Ställa in på datorn för Linux (Ubuntu 14.04)
 
-1. Installera den senaste versionen av [PowerShell Core för Linux] från GitHub
-2. Installera [Ubuntu SSH] vid behov
+1. Installera senast [PowerShell Core för Linux](../setup/installing-powershell-core-on-linux.md#ubuntu-1404) skapa från GitHub
+2. Installera [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html) efter behov
 
    ```bash
    sudo apt install openssh-client
@@ -127,7 +127,7 @@ För Linux, installera SSH (inklusive sshd-servern) lämpligt för din plattform
 
 ## <a name="set-up-on-macos-machine"></a>Ställa in på Mac OS-dator
 
-1. Installera den senaste versionen av [PowerShell Core för MacOS]
+1. Installera senast [PowerShell Core för MacOS](../setup/installing-powershell-core-on-macos.md) skapa
 
    - Kontrollera att SSH-fjärrkommunikation är aktiverat genom att följa dessa steg:
      - Öppna `System Preferences`
@@ -316,7 +316,5 @@ Sudo-kommando fungerar inte i fjärrsession till Linux-dator.
 [PowerShell Core för MacOS](../setup/installing-powershell-core-on-macos.md)
 
 [Win32-OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)
-
-[installationen](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

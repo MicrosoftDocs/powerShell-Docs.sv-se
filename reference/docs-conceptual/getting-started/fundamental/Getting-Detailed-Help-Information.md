@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell cmdlet
 title: Få detaljerad hjälpinformation
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: d2578604ec7c01c0b2734bd180e1babaca58b153
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134042"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851280"
 ---
 # <a name="getting-detailed-help-information"></a>Få detaljerad hjälpinformation
 
@@ -149,7 +149,7 @@ Visa hjälpartiklar online är en av de bästa sätten att få hjälp. Online ar
 Om du vill få hjälp online, använda den **Online** -parametern för den `Get-Help` cmdlet. Alla hjälpartiklar som levereras med PowerShell, inklusive providern hjälp och konceptuella (om) hjälpartiklar, är tillgängliga online i den [PowerShell](/powershell/scripting/powershell-scripting) dokumentation.
 
 > [!NOTE]
-> Du kan inte använda den **Online** parameter med konceptuella (about_ *) eller hjälpartiklar för providern.
+> Du kan inte använda den **Online** parameter med konceptuella (about_\*) eller hjälpartiklar för providern.
 > Onlinehjälp är valfritt, så inte fungerar för varje cmdlet, en funktion eller ett skript.
 
 Till exempel för att få onlineversionen av hjälpavsnittet om den `Get-ChildItem` cmdlet, typ:

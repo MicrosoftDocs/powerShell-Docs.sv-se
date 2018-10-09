@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell cmdlet
 title: Installera och använda windows powershell-webbåtkomst
-ms.openlocfilehash: 8fa965ff30cd9e0b688bcc46d01d843a0f1c2e0b
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268423"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851332"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installera och använda Windows PowerShell-webbåtkomst
 
@@ -327,7 +327,7 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
 
    Ändra standardporten om 443 redan används av en annan webbplats, eller om det finns andra säkerhetsskäl för att ändra portnumret. Om en annan webbplats som körs på din gateway-servern använder den valda porten, visas en varning när du klickar på **OK** i den **Lägg till webbplats** dialogrutan. Du måste använda en ledig port för att köra Windows PowerShell Web Access.
 
-1. Alternativt, om det behövs för din organisation, ange ett värdnamn som passar din organisation och användare, till exempel **www.contoso.com**. Klicka på **OK**.
+1. Alternativt, om det behövs för din organisation, ange ett värdnamn som passar din organisation och användare, till exempel **`www.contoso.com`**. Klicka på **OK**.
 
 1. För en säkrare produktionsmiljö bör ett giltigt certifikat som har signerats av en CA användas. Du måste ange ett SSL-certifikat, eftersom användare kan endast ansluta till Windows PowerShell-webbåtkomst via en HTTPS-webbplats. Se [att konfigurera ett SSL-certifikat i IIS-hanteraren](#to-configure-an-ssl-certificate-in-iis-Manager) i det här avsnittet för mer information om hur du skaffar ett certifikat.
 
@@ -406,7 +406,7 @@ Använd alltid ett giltigt SSL-certifikat som har signerats av en certifikatutf�
    - Klicka på **importera** att importera ett befintligt giltigt certifikat från en plats i nätverket.
    - Klicka på **skapa certifikatbegäran** att begära ett certifikat från en Certifikatutfärdare som [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), eller [GeoTrust](https://www.geotrust.com/). Certifikatets nätverksnamn måste matcha värdhuvudet i begäran.
 
-     Exempel: om klientwebbläsaren begär http://www.contoso.com/, nätverksnamn måste också vara http://www.contoso.com/. Det här är det mest säkra och rekommenderade alternativet för att tillhandahålla gateway för Windows PowerShell-webbåtkomst med ett certifikat.
+     Exempel: om klientwebbläsaren begär `http://www.contoso.com/`, nätverksnamn måste också vara `http://www.contoso.com/`. Det här är det mest säkra och rekommenderade alternativet för att tillhandahålla gateway för Windows PowerShell-webbåtkomst med ett certifikat.
 
    - Klicka på **skapa ett självsignerat certifikat** att skapa ett certifikat som du kan använda direkt och få det signerat senare av en CA om du vill. Ange ett eget namn för det självsignerade certifikatet, till exempel **Windows PowerShell-webbåtkomst**. Det här alternativet anses inte vara säkert och rekommenderas endast för en privat testmiljö.
 

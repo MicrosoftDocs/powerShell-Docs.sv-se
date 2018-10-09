@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery
 description: Riktlinjer för utgivare
 title: PowerShell-galleriet publicera riktlinjer och metodtips
-ms.openlocfilehash: 11207a312f916506f855c0e6e292752f72fc04c1
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 2ddeae9fdb33a58f97bfeb66079541bb7c5791b1
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523054"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851177"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery publicera riktlinjer och metodtips
 
@@ -39,6 +39,7 @@ Objekt som följer dessa riktlinjer är mycket mer troligt att hämtas och anvä
 - Följ [SemVer](http://semver.org/) riktlinjer för versionshantering
 - Använd vanliga taggar, enligt beskrivningen i vanliga PowerShell-galleriet taggar
 - Testa publicering med en lokal databas
+- Använda PowerShellGet för att publicera
 
 Var och en av dessa beskrivs kortfattat i avsnitten nedan.
 
@@ -215,6 +216,12 @@ Med någon av dessa lösningar, använder du Register-PSRepository för att defi
 Ytterligare en punkt om test-publicering: ett objekt som du publicerar till PowerShell-galleriet kan inte tas bort utan hjälp från operations-teamet som bekräftar att ingenting är beroende av det objekt som du vill publicera.
 Därför vi har inte stöd för PowerShell-galleriet som testar mål och kommer att kontakta alla utgivare som sker.
 
+## <a name="use-powershellget-to-publish"></a>Använda PowerShellGet för att publicera
+
+Vi rekommenderar starkt att utgivare kan använda Publish-Module och Publish-Script-cmdlets när du arbetar med PowerShell-galleriet. PowerShellGet har skapats för att undvika att komma ihåg viktig information om hur du installerar från en publicering till PowerShell-galleriet. Ibland har utgivare valt att hoppa över PowerShellGet och använda NuGet-klienten eller PackageManagement-cmdletar i stället för Publish-Module. Det finns ett antal information som är enkelt att missade, vilket resulterar i en mängd olika supportärenden.
+
+Om det finns en orsak till att du inte kan använda Publish-Module eller Publish-Script, låt oss veta. Ett problem i PowerShellGet GitHub-lagringsplatsen och ange information som gör att du kan välja NuGet eller PackageManagement. 
+
 ## <a name="recommended-workflow"></a>Rekommenderat arbetsflöde
 
 Den mest framgångsrika metoden som vi har hittat för artiklar som publiceras till PowerShell-galleriet är detta:
@@ -229,3 +236,4 @@ Den mest framgångsrika metoden som vi har hittat för artiklar som publiceras t
 - Bestäm om du vill kod logga objektet
 - När du anser att projektet är klart att användas i en produktionsmiljö, publicera en 1.0.0 version PowerShell-galleriet
 - Fortsätta att samla in feedback och iterera din kod baserat på indata från användaren
+

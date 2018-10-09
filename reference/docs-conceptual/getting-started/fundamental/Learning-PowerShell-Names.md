@@ -3,12 +3,12 @@ ms.date: 08/24/2018
 keywords: PowerShell cmdlet
 title: Lär dig PowerShell-namn
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 44c66488a20c38d8528c92d753f6b32dda5a2dcb
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
+ms.openlocfilehash: a4f7e12c2b30e8ae6d1cf5a125d613d2d7558c34
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353274"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851263"
 ---
 # <a name="learning-powershell-names"></a>Lär dig PowerShell-namn
 
@@ -92,7 +92,8 @@ Här är några av de allmänna egenskaperna hos standard parameternamn och anv�
 
 ### <a name="the-help-parameter-"></a>Hjälp-parametern (?)
 
-När du anger den `-Help` eller `-?` parametern på alla cmdletar PowerShell visar hjälpen för cmdleten. Cmdleten körs inte.
+När du anger den `-?` parametern på alla cmdletar PowerShell visar hjälpen för cmdleten.
+Cmdleten körs inte.
 
 ### <a name="common-parameters"></a>Gemensamma parametrar
 
