@@ -1,3 +1,4 @@
+items:
 - name: Översikt
   href: readme.md
 - name: Installera PowerShellGet
@@ -6,79 +7,93 @@
   href: getting-started.md
 - name: Instruktioner
   items:
-    - name: Hitta objekt i galleriet
-      items:
-        - name: Söka efter objekt
-          href: how-to/finding-items/search-syntax.md
-        - name: Söka efter PSEdition
-          href: how-to/finding-items/searching-by-psedition.md
-        - name: Filtrera sökresultaten
-          href: how-to/finding-items/filtering-items.md
-    - name: Publicera till galleriet
-      items:
-        - name: Skapa och publicera objekt
-          href: how-to/publishing-items/publishing-an-item.md
-        - name: Skapa ett PowerShellGallery-konto
-          href: how-to/publishing-items/creating-an-account.md
-        - name: Avlista objekt
-          href: how-to/publishing-items/unlisting-items.md
-        - name: Ta bort objekt
-          href: how-to/publishing-items/deleting-items.md
-        - name: Hantera objektägare
-          href: how-to/publishing-items/managing-item-owners.md
-    - name: Arbeta med objekt
-      items:
-        - name: FileList-vy
-          href: how-to/working-with-items/filelist-view.md
-        - name: Distribuera till Azure Automation
-          href: how-to/working-with-items/deploy-to-azure-automation.md
-        - name: Objekt som kräver godkännande av licensen
-          href: how-to/working-with-items/items-that-require-license-acceptance.md
-        - name: Kontakta objektägare
-          href: how-to/working-with-items/contacting-item-owners.md
-        - name: Ge feedback via sociala medier eller kommentarer
-          href: how-to/working-with-items/social-media-feedback.md
+  - name: Hitta objekt i galleriet
+    items:
+    - name: Söka efter objekt
+      href: how-to/finding-items/search-syntax.md
+    - name: Söka efter PSEdition
+      href: how-to/finding-items/searching-by-psedition.md
+    - name: Filtrera sökresultaten
+      href: how-to/finding-items/filtering-items.md
+  - name: Publicera till galleriet
+    items:
+    - name: Skapa och publicera objekt
+      href: how-to/publishing-items/publishing-an-item.md
+    - name: Skapa ett PowerShellGallery-konto
+      href: how-to/publishing-items/creating-an-account.md
+    - name: Avlista objekt
+      href: how-to/publishing-items/unlisting-items.md
+    - name: Ta bort objekt
+      href: how-to/publishing-items/deleting-items.md
+    - name: Hantera objektägare
+      href: how-to/publishing-items/managing-item-owners.md
+  - name: Arbeta med objekt
+    items:
+    - name: FileList-vy
+      href: how-to/working-with-items/filelist-view.md
+    - name: Distribuera till Azure Automation
+      href: how-to/working-with-items/deploy-to-azure-automation.md
+    - name: Manuell paketnedladdning
+      href: how-to/working-with-items/manual-download.md
+    - name: Objekt som kräver godkännande av licensen
+      href: how-to/working-with-items/items-that-require-license-acceptance.md
+    - name: Kontakta objektägare
+      href: how-to/working-with-items/contacting-item-owners.md
+    - name: Ge feedback via sociala medier eller kommentarer
+      href: how-to/working-with-items/social-media-feedback.md
+  - name: Hantera kontoprofil
+    items:
+    - name: Kontoinställningar för PowerShell-galleriet
+      href: how-to/managing-profile/managing-account.md
+    - name: Hantera API-nycklar
+      href: how-to/managing-profile/creating-apikeys.md
 - name: Begrepp
   items:
-    - name: Publicera riktlinjer och metodtips
-      href: concepts/publishing-guidelines.md
-    - name: Objektmanifest och galleriets gränssnitt
-      href: concepts/item-manifest-affecting-ui.md
-    - name: Kräv specifika PSEditions
-      items:
-        - name: Skapa skript med PSEditions-stöd
-          href: concepts/script-psedition-support.md
-        - name: Skapa moduler med PSEditions-stöd
-          href: concepts/module-psedition-support.md
-    - name: Kräv godkännande av licensen
-      items:
-        - name: Kräv godkännande av licensen för skript
-          href: concepts/script-license-acceptance.md
-        - name: Kräv godkännande av licensen för moduler
-          href: concepts/module-license-acceptance.md
-    - name: Definiera objekt som förhandsversion
-      items:
-        - name: Definiera en modul som förhandsversion
-          href: concepts/module-prerelease-support.md
-        - name: Definiera ett skript som förhandsversion
-          href: concepts/script-prerelease-support.md
-    - name: PSScriptAnalyzer-regelprofil
-      href: concepts/scriptanalyzer-rule-profile.md
+  - name: Publicera riktlinjer och metodtips
+    href: concepts/publishing-guidelines.md
+  - name: Objektmanifest och galleriets gränssnitt
+    href: concepts/item-manifest-affecting-ui.md
+  - name: Kräv specifika PSEditions
+    items:
+    - name: Skapa skript med PSEditions-stöd
+      href: concepts/script-psedition-support.md
+    - name: Skapa moduler med PSEditions-stöd
+      href: concepts/module-psedition-support.md
+  - name: Kräv godkännande av licensen
+    items:
+    - name: Kräv godkännande av licensen för skript
+      href: concepts/script-license-acceptance.md
+    - name: Kräv godkännande av licensen för moduler
+      href: concepts/module-license-acceptance.md
+  - name: Definiera objekt som förhandsversion
+    items:
+    - name: Definiera en modul som förhandsversion
+      href: concepts/module-prerelease-support.md
+    - name: Definiera ett skript som förhandsversion
+      href: concepts/script-prerelease-support.md
+  - name: PSScriptAnalyzer-regelprofil
+    href: concepts/scriptanalyzer-rule-profile.md
 - name: Få support
   items:
-    - name: Rapportera missbruk
-      href: how-to/getting-support/report-abuse.md
-    - name: Tvistlösning
-      href: how-to/getting-support/dispute-resolution.md
-    - name: Kontakta administratörer
-      href: how-to/getting-support/contacting-administrators.md
-    - name: Felsökning
-      href: how-to/getting-support/troubleshooting-cmdlets.md
-    - name: Start av NuGet-providern och NuGet.exe
-      href: how-to/getting-support/bootstrapping-nuget.md
-    - name: GDPR-efterlevnad
-      href: how-to/getting-support/gdpr-dsr-policy.md
+  - name: Rapportera missbruk
+    href: how-to/getting-support/report-abuse.md
+  - name: Tvistlösning
+    href: how-to/getting-support/dispute-resolution.md
+  - name: Kontakta administratörer
+    href: how-to/getting-support/contacting-administrators.md
+  - name: Felsökning
+    href: how-to/getting-support/troubleshooting-cmdlets.md
+  - name: Start av NuGet-providern och NuGet.exe
+    href: how-to/getting-support/bootstrapping-nuget.md
+  - name: GDPR-efterlevnad
+    href: how-to/getting-support/gdpr-dsr-policy.md
 - name: Vanliga frågor och svar om galleriet
   href: faqs.md
 - name: PowerShellGet-cmdletar
-  href: 'https://docs.microsoft.com/powershell/module/powershellget/'
+  href: https://docs.microsoft.com/powershell/module/powershellget/
+ms.openlocfilehash: 32577b81229d456922a6be9bfdc8156d337fd719
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.translationtype: HT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522930"
