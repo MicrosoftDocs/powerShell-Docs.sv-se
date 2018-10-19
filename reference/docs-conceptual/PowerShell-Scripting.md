@@ -2,17 +2,17 @@
 ms.date: 08/27/2018
 keywords: PowerShell cmdlet
 title: PowerShell-skript
-ms.openlocfilehash: 8a152ab338d42f861b7ff38de44d68db14262abb
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 07925ce8dcafd33970a703c9b241bf6f76f88d10
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851194"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49451038"
 ---
 # <a name="powershell"></a>PowerShell
 
 PowerShell är ett uppgiftsbaserat kommandoradsgränssnitt och skriptspråk som bygger på .NET.
-PowerShell hjälper administratörer och Privilegierade användare snabbt kan automatisera uppgifter som hanterar operativsystem (Linux, macOS och Windows) och processer.
+PowerShell hjälper administratörer och Privilegierade användare automatisera snabbt uppgifter som hanterar operativsystem (Linux, macOS och Windows) och processer.
 
 PowerShell-kommandon kan du hantera datorer från kommandoraden. PowerShell-providers kan du få åtkomst till datalager, till exempel registret och certifikatarkivet, lika enkelt som du har åtkomst till filsystemet. PowerShell innehåller en omfattande uttrycksparser och ett fullständigt utvecklat skriptspråk.
 

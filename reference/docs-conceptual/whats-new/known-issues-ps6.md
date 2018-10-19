@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, core
 title: Kända problem för PowerShell 6.0
-ms.openlocfilehash: e3e718be903ff2223064d5790d3d0fe554ef04cd
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268014"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49451004"
 ---
 # <a name="known-issues-for-powershell-60"></a>Kända problem för PowerShell 6.0
 
@@ -90,9 +90,9 @@ Möjligheten att skapa begränsad administration (jea JUST) fjärrkommunikation 
 
 ### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec`, och PowerShell
 
-Eftersom de flesta kommandon körs i PowerShell i minnet (till exempel Python eller Ruby) kan använda du inte sudo direkt med PowerShell built-ins. (Du kan naturligtvis köra `powershell` från sudo.) Om det är nödvändigt att köra en PowerShell-cmdlet i PowerShell med sudo, till exempel `sudo `Set-Date` 8/18/2016`, och du skulle göra `sudo powershell `Set-Date` 8/18/2016`. På samma sätt kan du inte exec en inbyggd PowerShell direkt. I stället skulle du behöva göra `exec powershell item_to_exec`.
+Eftersom de flesta kommandon körs i PowerShell i minnet (till exempel Python eller Ruby) kan använda du inte sudo direkt med PowerShell built-ins. (Du kan naturligtvis köra `pwsh` från sudo.) Om det är nödvändigt att köra en PowerShell-cmdlet i PowerShell med sudo, till exempel `sudo Set-Date 8/18/2016`, och du skulle göra `sudo pwsh Set-Date 8/18/2016`. På samma sätt kan du inte exec en inbyggd PowerShell direkt. I stället skulle du behöva göra `exec pwsh item_to_exec`.
 
-Det här problemet spåras för närvarande som en del av #3232.
+Det här problemet spåras för närvarande som en del av [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
 
 ### <a name="missing-cmdlets"></a>Cmdlet: ar som saknas
 

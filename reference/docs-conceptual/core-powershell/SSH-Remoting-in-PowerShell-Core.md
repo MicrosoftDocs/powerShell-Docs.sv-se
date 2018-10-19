@@ -2,12 +2,12 @@
 title: PowerShell fjärrkommunikation via SSH
 description: Fjärrkommunikation i PowerShell Core med hjälp av SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: 84c3896fe28847beb03e930f933bb4a9dfad397f
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 842e67e96661bca8be54aab33cbc11aa23dbd1c0
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851245"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49451073"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell fjärrkommunikation via SSH
 
@@ -15,7 +15,7 @@ ms.locfileid: "48851245"
 
 PowerShell-fjärrkommunikation använder vanligen WinRM för förhandling för anslutning och dataöverföring. SSH är nu tillgängligt för Linux och Windows-plattformar och tillåter SANT PowerShell-fjärrkommunikation på flera plattformar.
 
-WinRM tillhandahåller en robust värdmodell för fjärrsessioner i PowerShell. som den här implementeringen SSH-baserad fjärrkommunikation för närvarande inte stöd för fjärrslutpunkten konfigurations- och JEA (Just Enough Administration).
+WinRM tillhandahåller en robust värdmodell för fjärrsessioner i PowerShell. SSH-baserad fjärrkommunikation stöd för närvarande inte fjärrslutpunkten konfigurations- och JEA (Just Enough Administration).
 
 SSH-fjärrkommunikation kan du göra grundläggande session PowerShell-fjärrkommunikation mellan Windows och Linux-datorer. SSH-fjärrkommunikation skapar en värdprocess för PowerShell på måldatorn som ett SSH-undersystem.
 Slutligen ska vi implementera en allmän värdmodell, liknar WinRM för slutpunktskonfiguration och JEA.
@@ -48,7 +48,7 @@ För Linux, installera SSH (inklusive sshd-servern) lämpligt för din plattform
    ```
 
 2. Installera senast [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) skapa från GitHub med hjälp av den [installation](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH) instruktioner
-3. Redigera sshd_config-filen på den plats där du installerade Win32 OpenSSH
+3. Redigera sshd_config-filen finns på `%ProgramData%\ssh`.
 
    - Kontrollera att lösenordsautentisering är aktiverad
 
@@ -57,7 +57,7 @@ För Linux, installera SSH (inklusive sshd-servern) lämpligt för din plattform
      ```
 
      ```
-     Subsystem    powershell c:/program files/powershell/6.0.4/pwsh.exe -sshs -NoLogo -NoProfile
+     Subsystem    powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
      > [!NOTE]
@@ -66,7 +66,7 @@ För Linux, installera SSH (inklusive sshd-servern) lämpligt för din plattform
      En lösning är att skapa en symlink till installationskatalogen för Powershell som saknar blanksteg:
 
      ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.4"
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
      ```
 
      och sedan ange den i undersystemet:
