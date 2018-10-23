@@ -14,7 +14,6 @@
             "bilingual_type": "hover over",
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "layout": "conceptual",
-            "ms.locale": "en-us",
             "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "powershell",
             "ms.technology": "dsc",
@@ -32,6 +31,7 @@
             }
         ],
         "template": "op.html",
-        "dest": "dsc"
+        "dest": "dsc",
+        "markdownEngineName": "markdig"
     }
 }
