@@ -1,36 +1,38 @@
-## Microsoft Open Source Code of Conduct
+# <a name="microsoft-open-source-code-of-conduct"></a>Microsofts regler för uppförande för öppen källkod
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+Det här projektet har antagit [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) (Microsofts regler för uppförande för öppen källkod).
+Mer information finns i [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) (Vanliga frågor och svar om regler för uppförande), eller kontakta [opencode@microsoft.com](mailto:opencode@microsoft.com) med ytterligare frågor eller kommentarer.
 
-[![Build status](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)
+[![Skapa status](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)
 
-# PowerShell Documentation
+## <a name="powershell-documentation"></a>PowerShell-dokumentation
 
-Welcome to the PowerShell-Docs repository, housing the official Windows PowerShell documentation. 
+Välkommen till PowerShell-Docs-lagringsplatsen, där den officiella PowerShell-dokumentationen.
 
-## Repository Structure
-Each folder in this repo publishes to [MSDN](https://msdn.microsoft.com/en-us/powershell). The folders correspond to the following PowerShell assets:
-* [/dsc/](https://msdn.microsoft.com/en-us/powershell/dsc/) is  for the Desired State Configuration feature
-* [/gallery/](https://msdn.microsoft.com/powershell/gallery) is for the [PowerShell Gallery](https://www.powershellgallery.com/)
-* [/jea/](https://msdn.microsoft.com/powershell/jea/) is for the Just Enough Administration feature
-* [/reference/](https://msdn.microsoft.com/powershell/reference/) is for PowerShell module reference across versions 2.0, 3.0, 4.0, 5.0, 5.1, and 6.0
-  * This content will be retrieved by the `Get-Help` cmdlet in the future
-* [/scripting/](https://msdn.microsoft.com/en-us/powershell/scripting/) is general PowerShell reference content
-* [/wmf](https://msdn.microsoft.com/en-us/powershell/wmf/readme) contains release notes for the Windows Management Framework, the package used to distribute new versions of PowerShell to previous versions of Windows. 
+## <a name="repository-structure"></a>Struktur för databasen
 
+Var och en av följande översta mappar i den här lagringsplatsen innehåller en dokumentuppsättning som publiceras till [Microsoft Docs](https://docs.microsoft.com/powershell).
 
+- [/Developer/](https://docs.microsoft.com/powershell/developer/) är framtida hem för PowerShell SDK-dokumentation
+  - Vi håller på att migrera det här innehållet från MSDN
+- [/DSC/](https://docs.microsoft.com/powershell/dsc/) är för funktionen Desired State Configuration
+- [/Gallery/](https://docs.microsoft.com/powershell/gallery) avser den [PowerShell-galleriet](https://www.powershellgallery.com/)
+- [/jea/](https://docs.microsoft.com/powershell/jea/) är för funktionen Just Enough Administration
+- [/Reference/](https://docs.microsoft.com/powershell/scripting/) är för PowerShell-konceptuella artiklar och modulreferens för version 3.0, 4.0, 5.0, 5.1 och 6.0
+  - Det här innehållet är också källan till hjälpinnehåll som hämtas av den `Get-Help` cmdlet
+- [/WMF](https://docs.microsoft.com/powershell/wmf/readme) innehåller viktig information för Windows Management Framework paketet används för att distribuera nya versioner av PowerShell tidigare versioner av Windows.
 
-## Contributing
+## <a name="contributing"></a>Bidra
 
-We actively merge contributions into this repository via [pull request](https://help.github.com/articles/using-pull-requests/) into the *staging* branch. 
-Please note that before you submit a pull request you must [sign a Contribution License Agreement](https://cla.microsoft.com/) to ensure that the community is free to use your submissions.
-For more information on contributing, read our [contributions guide](CONTRIBUTING.md).
-There is a draft [style guide](./STYLE.md) to review before making contributions.
-Please use the Issue and Pull Request templates to help keep documentation consistent across versions. 
+Vi aktivt sammanfoga bidrag till den här databasen via [pull-begäran](https://help.github.com/articles/using-pull-requests/) till den *mellanlagring* gren.
+Observera att innan du skickar en pullbegäran måste du [logga ett licensavtal för bidrag](https://cla.microsoft.com/) så att communityn är kostnadsfritt att använda dina bidrag.
 
-## Licenses
+Mer information om bidrag till våra [bidragsgivarguide](CONTRIBUTING.md).
+Den deltagarguiden innehåller detaljerad information om hur du kan bidra dokumentation, föreslagna verktyg och stil och formateringskrav.
+Använd mallar för problem och Pull-begäran för att hålla dokumentationen konsekvent mellan olika versioner.
 
-There are two license files for this project. 
-The MIT License applies to the code contained in this repo.
-The Creative Commons license applies to the documentation. 
+## <a name="licenses"></a>Licenser
+
+Det finns två licensfiler för det här projektet.
+MIT-licensen gäller för koden i den här lagringsplatsen.
+Creative Commons-licens gäller för dokumentationen.
