@@ -181,14 +181,10 @@ items:
     href: getting-started/cookbooks/changing-computer-state.md
   - name: Samla in information om datorer
     href: getting-started/cookbooks/collecting-information-about-computers.md
-  - name: Skapa .NET- och COM-objekt – New-Object
-    href: getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md
   - name: Skapa en anpassad indataruta
     href: getting-started/cookbooks/creating-a-custom-input-box.md
   - name: Skapa en grafisk datumväljare
     href: getting-started/cookbooks/creating-a-graphical-date-picker.md
-  - name: Hämta WMI-objekt – Get-WmiObject
-    href: getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md
   - name: Hantera aktuell plats
     href: getting-started/cookbooks/managing-current-location.md
   - name: Hantera processer med Process-cmdletar
@@ -207,20 +203,10 @@ items:
     href: getting-started/cookbooks/performing-networking-tasks.md
   - name: Omdirigera data med Out-cmdletar
     href: getting-started/cookbooks/redirecting-data-with-out---cmdlets.md
-  - name: Ta bort objekt från pipelinen – Where-Object
-    href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
-  - name: Upprepa en uppgift för flera objekt – ForEach-Object
-    href: getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md
   - name: Välj objekt från en listruta
     href: getting-started/cookbooks/selecting-items-from-a-list-box.md
-  - name: Välj delar av objekt – Select-Object
-    href: getting-started/cookbooks/selecting-parts-of-objects--select-object-.md
-  - name: Sortera objekt
-    href: getting-started/cookbooks/sorting-objects.md
   - name: Använd formatkommandon för att ändra utdatavyn
     href: getting-started/cookbooks/using-format-commands-to-change-output-view.md
-  - name: Använd statiska klasser och metoder
-    href: getting-started/cookbooks/using-static-classes-and-methods.md
   - name: Visa objektstrukturen – Get-Member
     href: getting-started/cookbooks/viewing-object-structure--get-member-.md
   - name: Arbeta med filer och mappar
@@ -229,6 +215,21 @@ items:
     href: getting-started/cookbooks/working-with-files-folders-and-registry-keys.md
   - name: Arbeta med objekt
     href: getting-started/cookbooks/working-with-objects.md
+    items:
+    - name: Hämta WMI-objekt – Get-WmiObject
+      href: getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md
+    - name: Skapa .NET- och COM-objekt – New-Object
+      href: getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md
+    - name: Ta bort objekt från pipelinen – Where-Object
+      href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
+    - name: Välj delar av objekt – Select-Object
+      href: getting-started/cookbooks/selecting-parts-of-objects--select-object-.md
+    - name: Sortera objekt
+      href: getting-started/cookbooks/sorting-objects.md
+    - name: Upprepa en uppgift för flera objekt – ForEach-Object
+      href: getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md
+    - name: Använd statiska klasser och metoder
+      href: getting-started/cookbooks/using-static-classes-and-methods.md
   - name: Arbeta med skrivare
     href: getting-started/cookbooks/working-with-printers.md
   - name: Arbeta med registerposter
@@ -241,9 +242,9 @@ items:
     href: getting-started/cookbooks/appendix-1---compatibility-aliases.md
   - name: Bilaga 2 Skapa en anpassad PowerShell-genväg
     href: getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: 426f1336debdcd8b74b9e1954cebe49bfa7c82ea
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: e1cc2802354cbb58a8d4cc19903a62339aa333b5
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557151"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225751"
