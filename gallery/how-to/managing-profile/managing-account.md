@@ -2,15 +2,15 @@
 ms.date: 09/05/2018
 contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery
-title: PowerShell-galleriet kontoinställningar
-ms.openlocfilehash: dd7b8b3a99b5b7fbfec5d7f82b81dd6d5cfb906c
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+title: Kontoinställningar för PowerShell-galleriet
+ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523391"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002794"
 ---
-# <a name="powershell-gallery-account-settings"></a>PowerShell-galleriet kontoinställningar
+# <a name="powershell-gallery-account-settings"></a>Kontoinställningar för PowerShell-galleriet
 
 Ditt konto med PowerShell-galleriet är ett offentligt namn som är länkad till en identitet. Det identitet som är antingen en Microsoft-ID, `user@hotmail.com` eller `user@outlook.com`, eller ett Azure Active Directory (AAD)-konto.
 
@@ -34,7 +34,7 @@ När du anger en ny e-postadress skickar ett e-postmeddelande för verifiering i
 PowerShell-galleriet innehåller följande meddelandealternativ:
 
 - Användarna kan kontakta mig via PowerShell-galleriet
-- Meddela mig när ett objekt skickas till PowerShell-galleriet med hjälp av mitt konto
+- Meddela mig när ett paket som skickas till PowerShell-galleriet med hjälp av mitt konto
 
 ![Ändra e-postadress](../../Images/PSGallery_AccountEmailOptions.png)
 

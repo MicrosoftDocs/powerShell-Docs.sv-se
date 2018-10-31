@@ -2,12 +2,12 @@
 title: Med Visual Studio Code för PowerShell-utveckling
 description: Med Visual Studio Code för PowerShell-utveckling
 ms.date: 08/06/2018
-ms.openlocfilehash: 8fbaba826624199d06fe4fdc785998e0135d7fe7
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 9c06ce72c39d08e75fcb7e5cf9d5f92ae5dd8ed9
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134108"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225802"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Med Visual Studio Code för PowerShell-utveckling
 
@@ -124,12 +124,11 @@ Du kan exempelvis lägga till en konfigurationer för att:
 - Starta en interaktiv session i Felsökning
 - Bifoga felsökningsprogrammet till en värdprocess för PowerShell
 
-  Följ dessa steg för att skapa konfigurationsfilen debug:
+Följ dessa steg för att skapa konfigurationsfilen debug:
 
   1. Öppna den **felsöka** vyn genom att trycka på **Ctrl + Skift + D** (**Cmd + SKIFT + D** på Mac).
   2. Tryck på den **konfigurera** kugghjulsikonen i verktygsfältet.
-  3. Visual Studio Code uppmanas du att **Välj miljö**.
-  Välj **PowerShell**.
+  3. Visual Studio Code uppmanas du att **Välj miljö**. Välj **PowerShell**.
 
   När du gör detta skapar en katalog och en fil ”.vscode\launch.json” i roten av din arbetsytemapp Visual Studio Code.
   Det här är där din debug-konfiguration lagras. Om filerna finns i en Git-lagringsplats, vill du förmodligen att genomföra launch.json-filen.
@@ -171,9 +170,7 @@ Du kan exempelvis lägga till en konfigurationer för att:
 
   När debug-konfigurationen har upprättats kan du välja vilken konfiguration som du vill använda under en felsökningssession genom att välja en från debug konfigurationen listrutan i den **felsöka** vyns verktygsfältet.
 
-  Det finns några bloggar som hjälper dig att komma igång med hjälp av PowerShell-tillägget för Visual Studio Code
-
-Visual Studio Code:
+Det finns några bloggar som hjälper dig att komma igång med hjälp av PowerShell-tillägget för Visual Studio Code:
 
 - [PowerShell-tillägget][ps-extension]
 - [Skriv och Felsök PowerShell-skript i Visual Studio Code][debug]

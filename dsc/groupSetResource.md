@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 description: Är en mekanism för att hantera lokala grupper på målnoden.
 title: DSC GroupSet-resurs
-ms.openlocfilehash: 487a76ca7703b2c57b940b4c5bd176eada6c8019
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 6fa8e9637da896848e859dc60a42add12e973b34
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892434"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226125"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet-resurs
 
-> Gäller för: Windows Windows PowerShell 5.0
+> Gäller för: Windows PowerShell 5.0
 
 Den **GroupSet** resursen i Windows PowerShell Desired State Configuration (DSC) ger dig möjlighet att hantera lokala grupper på målnoden. Den här resursen är en [sammansatta resource](authoringResourceComposite.md) som anropar den [gruppen resource](groupResource.md) för varje grupp som anges i den `GroupName` parametern.
 

@@ -2,20 +2,20 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSC WaitForAll resurs
-ms.openlocfilehash: 4413220bb0b5eeef5fd1599f794cd551f15a2925
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 367f95caaa71ebec9c8e0a7c31fa5c0f5be27945
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221790"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226108"
 ---
 # <a name="dsc-waitforall-resource"></a>DSC WaitForAll resurs
 
 > Gäller för: Windows PowerShell 5.0 och senare
 
-Den **WaitForAll** önskade tillstånd Configuration DSC ()-resursen kan användas i ett nod-block i en [DSC-konfigurationen](configurations.md) ange beroenden på konfigurationer på andra noder.
+Den **WaitForAll** Desired State Configuration (DSC) resursen kan användas i ett nod-block i en [DSC-konfiguration](configurations.md) ange beroenden på konfigurationer på andra noder.
 
-Den här resursen lyckas om om resursen som anges av den **ResourceName** egenskapen finns i tillståndet på alla målnoder som definierats i den **nodnamn** egenskapen.
+Den här resursen lyckas om resursen har angetts av den **ResourceName** egenskapen är med önskat tillstånd på alla målnoder som definierats i den **nodnamn** egenskapen.
 
 
 ## <a name="syntax"></a>Syntax
@@ -36,14 +36,14 @@ WaitForAll [string] #ResourceName
 
 |  Egenskap  |  Beskrivning   |
 |---|---|
-| resourceName| Resursnamnet beroende. Om den här resursen tillhör en annan konfiguration, formatera namn som ”[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] ”|
-| Nodnamn| Målnoder av resursen ska beroende.|
-| RetryIntervalSec| Antalet sekunder innan du försöker igen. Minsta är 1.|
-| retryCount| Maximalt antal nya försök.|
-| ThrottleLimit| Antal datorer ansluta samtidigt. Standardvärdet är standard för nya cimsession.|
-| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Om ID för resurskonfigurationen skriptblock som du vill köra först är exempelvis __ResourceName__ och dess typ är __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
+| ResourceName| Resursnamnet förlita sig på. Om den här resursen tillhör en annan konfiguration, formatera namn som ”[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] ”|
+| Nodnamn| Målnoder resursens förlita sig på.|
+| RetryIntervalSec| Antal sekunder innan du försöker igen. Minimum är 1.|
+| retryCount| Det maximala antalet gånger att försöka igen.|
+| ThrottleLimit| Antal datorer kan ansluta samtidigt. Standardvärdet är standard för nya-cimsession.|
+| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är __ResourceName__ och är av typen __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
 
 
 ## <a name="example"></a>Exempel
 
-Ett exempel på hur du använder den här resursen finns [angett beroenden mellan noder](crossNodeDependencies.md)
+Ett exempel på hur du använder den här resursen finns i [att ange beroenden mellan noder](crossNodeDependencies.md)

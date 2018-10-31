@@ -2,12 +2,12 @@
 ms.date: 04/11/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Konfigurera en DSC SMB-hämtningsserver
-ms.openlocfilehash: 1eac6c51aeca3ed573ba8fa27188103436004920
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: ebf9ac7923a7c226bc01014d890d993d452af578
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892873"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225870"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Konfigurera en DSC SMB-hämtningsserver
 
@@ -132,7 +132,7 @@ Alla MOF-konfigurationsfilen måste ha namnet *ConfigurationID*.mof, där *Confi
 > [!NOTE]
 > Du måste använda konfigurations-ID om du använder en SMB-pullserver. Konfigurationsnamn har inte stöd för SMB.
 
-Varje Resursmodul måste zippade och med namnet enligt i följande mönster `{Module Name}_{Module Version}.zip`. Till exempel namnet en modul med namnet xWebAdminstration med en Modulversion av 3.1.2.0 ”xWebAdministration_3.2.1.0.zip”. Varje version av en modul måste finnas i en enda zip-fil. Eftersom det inte finns endast en version av en resurs i varje zip-filen som har lagts till i WMF 5.0 med formatet modulen stöds inte stöd för flera modulversionerna i en enskild katalog. Det innebär att innan du packa upp DSC-resurs-moduler för användning med pull-server måste du göra små ändringar i katalogstrukturen. Moduler som innehåller DSC-resurs i WMF 5.0 standardformatet är `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Innan du paketering för hämtningsservern helt enkelt ta bort den `{Module version}` mapp så blir sökvägen `{Module Folder}\DscResources\{DSC Resource Folder}\`. Med den här ändringen zip-mappen som beskrivs ovan och placera dessa zip-filer i den SMB-delade mappen.
+Varje Resursmodul måste zippade och med namnet enligt följande mönster `{Module Name}_{Module Version}.zip`. Till exempel namnet en modul med namnet xWebAdminstration med en Modulversion av 3.1.2.0 ”xWebAdministration_3.2.1.0.zip”. Varje version av en modul måste finnas i en enda zip-fil. Eftersom det inte finns endast en version av en resurs i varje zip-filen som har lagts till i WMF 5.0 med formatet modulen stöds inte stöd för flera modulversionerna i en enskild katalog. Det innebär att innan du packa upp DSC-resurs-moduler för användning med pull-server måste du göra små ändringar i katalogstrukturen. Moduler som innehåller DSC-resurs i WMF 5.0 standardformatet är `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Innan du paketering för hämtningsservern helt enkelt ta bort den `{Module version}` mapp så blir sökvägen `{Module Folder}\DscResources\{DSC Resource Folder}\`. Med den här ändringen zip-mappen som beskrivs ovan och placera dessa zip-filer i den SMB-delade mappen.
 
 ## <a name="creating-the-mof-checksum"></a>Skapa MOF-kontrollsumma
 

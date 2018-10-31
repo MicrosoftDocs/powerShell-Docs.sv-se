@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
-title: DSC för Linux nxFile resurs
-ms.openlocfilehash: f1eb98092049ae837d144ccf99a84fe5614144e0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: DSC för Linux nxFile-resurs
+ms.openlocfilehash: 80969ba2ea6247fcd616a301d951403a840c851d
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189864"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225717"
 ---
-# <a name="dsc-for-linux-nxfile-resource"></a>DSC för Linux nxFile resurs
+# <a name="dsc-for-linux-nxfile-resource"></a>DSC för Linux nxFile-resurs
 
-Den **nxFile** resurs i PowerShell önskad tillstånd Configuration (DSC) ger möjlighet till att hantera filer och kataloger på en Linux-nod.
+Den **nxFile** resursen i PowerShell Desired State Configuration (DSC) ger dig möjlighet att hantera filer och kataloger på en Linux-nod.
 
 ## <a name="syntax"></a>Syntax
 
@@ -39,25 +39,25 @@ nxFile <string> #ResourceName
 
 |  Egenskap |  Beskrivning |
 |---|---|
-| Målsökväg| Anger den plats där du vill kontrollera tillståndet för en fil eller katalog.|
-| Källsökväg| Anger sökvägen som du vill kopiera filen eller mappen resurs. Den här sökvägen kan vara en lokal sökväg eller en `http/https/ftp` URL. Remote `http/https/ftp` URL: er är endast när värdet för den **typen** egenskapen är filen.|
-| Se till att| Anger om du vill kontrollera om filen finns. Ange egenskapen ”aktuella” för att se till att filen finns. Ange den till ”saknas” för att se till att filen inte finns. Standardvärdet är ”saknas”.|
-| Typ| Anger om resursen som konfigureras är en katalog eller fil. Ange den här egenskapen till ”directory” för att indikera att resursen är en katalog. Ange att ”fil” för att indikera att resursen är en fil. Standardvärdet är ”fil”|
+| Målsökväg| Anger den plats där du vill kontrollera status för en fil eller katalog.|
+| Källsökväg| Anger sökvägen som du vill kopiera filen eller mappen resursen från. Den här sökvägen kan vara en lokal sökväg eller en `http/https/ftp` URL: en. Remote `http/https/ftp` URL: er är bara när värdet för den **typ** egenskapen är filen.|
+| Se till att| Anger om du vill kontrollera om filen finns. Ange egenskapen ”aktuella” för att se till att filen finns. Ange den till ”inte” för att se till att filen inte finns. Standardvärdet är ”tillgänglig”.|
+| Typ| Anger om resursen som konfigureras är en katalog eller en fil. Ange egenskapen till ”directory” för att indikera att resursen är en katalog. Ange den till ”filen” för att indikera att resursen är en fil. Standardvärdet är ”fil”|
 | Innehåll| Anger innehållet i en fil, till exempel en viss sträng.|
-| Kontrollsumma| Definierar den typ som används när du fastställer om två filerna är samma. Om **kontrollsumma** anges endast filen eller katalogen namn som används för jämförelse. Värden är: ”ctime”, ”mtime” eller ”md5”.|
-| Recurse| Anger om underkataloger ingår. Den här egenskapen **$true** att ange att du vill underkataloger som ska inkluderas. Standardvärdet är **$false**. **Obs:** den här egenskapen är endast giltig när den **typen** egenskap är inställd på katalogen.|
-| Force| Vissa åtgärder (till exempel skriver över en fil eller ta bort en katalog som inte är tom) resulterar i ett fel. Med hjälp av den **kraft** egenskapen åsidosätter sådana fel. Standardvärdet är **$false**.|
-| Länkar| Anger beteenden som önskas för symboliska länkar. Ange den här egenskapen till ”följa med” om du vill följa symboliska länkar och agera på målet länkar (till exempel. Kopiera filen i stället för länken). Ange den här egenskapen till ”hantera” för att fungera på länken (till exempel. Kopiera själva länken). Ange den här egenskapen till ”Ignorera” om du vill ignorera symboliska länkar.|
-| Grupp| Namnet på den **grupp** ska äga filen eller katalogen.|
-| Läge| Anger behörigheter för resursen i oktala eller symboliska notation. (till exempel 777 eller rwxrwxrwx). Om du använder symboliska notation, ange inte det första tecknet som anger katalog eller fil.|
-| dependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om den **ID** resursens configuration skriptblock som du vill köra först är **ResourceName** och dess typ är **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
+| Kontrollsumma| Definierar den typ som ska användas när du bestämmer om två filer är lika. Om **kontrollsumma** inte anges endast filen eller katalogen namnet används för jämförelse. Värden är: ”ctime”, ”mtime” eller ”md5”.|
+| Recurse| Anger om underkataloger ingår. Den här egenskapen **$true** att indikera att du vill att underkataloger som ska tas med. Standardvärdet är **$false**. **Obs:** den här egenskapen är endast giltig när den **typ** är inställd på katalogen.|
+| Force| Vissa åtgärder för sammansättningsfiler (till exempel att skriva över en fil eller ta bort en katalog som inte är tom) resulterar i ett fel. Med hjälp av den **kraft** egenskapen åsidosätter sådana fel. Standardvärdet är **$false**.|
+| Länkar| Anger du önskat beteende för symboliska länkar. Ange den här egenskapen ”följer” för att följa symboliska länkar och agera på mål-länkar (till exempel. Kopiera filen i stället för länken). Ange den här egenskapen till ”hantera” för att agera på länken (till exempel. kopiera länken själva). Ange den här egenskapen till ”Ignorera” ignorerar symboliska länkar.|
+| Grupp| Namnet på den **grupp** äga filen eller katalogen.|
+| Läge| Anger de önskade behörigheterna för resursen i oktala eller symboliska notation. (till exempel 777 eller rwxrwxrwx). Om du använder symboliska notation, ingår det första tecknet som anger mapp eller fil.|
+| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om den **ID** för resursen configuration-skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="additional-information"></a>Ytterligare information
 
 
-Linux och Windows använder olika radbrytningstecken i textfiler som standard och detta kan orsaka oväntade resultat när du konfigurerar vissa filer på en Linux-dator med __nxFile__. Det finns flera sätt att hantera innehåll på en Linux-fil när undvika problem som orsakas av ett oväntat radbrytningstecken:
+Linux och Windows använder olika radbrytningstecken i textfiler som standard och detta kan orsaka oväntade resultat när du konfigurerar vissa filer på en Linux-dator med __nxFile__. Det finns flera sätt att hantera innehållet i en Linux-fil samtidigt som du undviker problem som orsakas av ett oväntat radbrytningstecken:
 
-Steg 1: Kopiera filen från en fjärrkälla (http, FTP- eller https): skapa en fil på Linux med det önskade innehållet och Förbered den på en webbplats eller FTP-server som är tillgänglig noder som du vill konfigurera. Definiera den __SourcePath__ egenskap i den __nxFile__ resursen med webb- eller ftp-URL i filen.
+Steg 1: Kopiera filen från en fjärrkälla (http, https eller ftp): skapa en fil i Linux med önskade innehållet och mellanlagra dem på en webbplats eller FTP-server som är tillgängliga noder som du vill konfigurera. Definiera den __SourcePath__ -egenskapen i den __nxFile__ resurs med webb- eller ftp-URL till filen.
 
 ```
 Import-DSCResource -Module nx
@@ -76,7 +76,7 @@ nxFile resolvConf
 ```
 
 
-Steg 2: Läsa innehållet i filen i PowerShell-skript med [Get-innehåll](https://technet.microsoft.com/library/hh849787.aspx) när du har angett den __$OFS__ egenskap som ska användas radbrytningstecken Linux.
+Steg 2: Läsa filinnehållet i PowerShell-skript med [Get-innehåll](https://technet.microsoft.com/library/hh849787.aspx) när den __$OFS__ egenskapen att använda radbrytningstecken Linux.
 
 
 ```
@@ -98,7 +98,7 @@ nxFile resolvConf
 ```
 
 
-Steg 3: Använda ett PowerShell-funktionen för att ersätta Windows radbrytningar med Linux radbrytningstecken.
+Steg 3: Använda en PowerShell-funktion för att ersätta Windows radbrytningar med Linux radbrytningstecken.
 
 ```
 Function LinuxString($inputStr){
@@ -132,7 +132,7 @@ nxFile resolvConf
 
 ## <a name="example"></a>Exempel
 
-I följande exempel säkerställer att katalogen `/opt/mydir` finns och att den här katalogen finns på en fil med innehåll har angetts.
+I följande exempel ser till att katalogen `/opt/mydir` finns, och att den här katalogen finns i en fil med innehåll har angetts.
 
 ```
 Import-DSCResource -Module nx

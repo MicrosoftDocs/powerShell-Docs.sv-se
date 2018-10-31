@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: galleriet, powershell, cmdlet, psget
 title: Moduler med kompatibla PowerShell-utgåvor
-ms.openlocfilehash: 7f38e6e1d4f4d45814bf331f33e962e06f4e03c1
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 0a95b47b506fbdddbb98b455a1d10d0f08ce402b
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268712"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002692"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Moduler med kompatibla PowerShell-utgåvor
 
@@ -124,13 +124,13 @@ Innehållet i filen PSScriptAnalyzer.psd1
 @{
 
 # Author of this module
-Author = 'Microsoft Corporation'
+Author = 'Microsoft Corporation'
 
 # Script module or binary module file associated with this manifest.
-RootModule = 'PSScriptAnalyzer.psm1'
+RootModule = 'PSScriptAnalyzer.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.6.1'
+ModuleVersion = '1.6.1'
 
 # ---
 }
@@ -144,33 +144,33 @@ Innehållet i PSScriptAnalyzer.psm1-filen:
 #
 # Script module for module 'PSScriptAnalyzer'
 #
-Set-StrictMode -Version Latest
+Set-StrictMode -Version Latest
 
 # Set up some helper variables to make it easier to work with the module
-$PSModule = $ExecutionContext.SessionState.Module
-$PSModuleRoot = $PSModule.ModuleBase
+$PSModule = $ExecutionContext.SessionState.Module
+$PSModuleRoot = $PSModule.ModuleBase
 
 # Import the appropriate nested binary module based on the current PowerShell version
-$binaryModuleRoot = $PSModuleRoot
+$binaryModuleRoot = $PSModuleRoot
 
 
-if (($PSVersionTable.Keys -contains "PSEdition") -and ($PSVersionTable.PSEdition -ne 'Desktop')) {
-    $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'coreclr'
+if (($PSVersionTable.Keys -contains "PSEdition") -and ($PSVersionTable.PSEdition -ne 'Desktop')) {
+    $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'coreclr'
 }
 else
 {
-    if ($PSVersionTable.PSVersion -lt [Version]'5.0')
+    if ($PSVersionTable.PSVersion -lt [Version]'5.0')
     {
-        $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'PSv3'
-    }
+        $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'PSv3'
+    }
 }
 
-$binaryModulePath = Join-Path -Path $binaryModuleRoot -ChildPath 'Microsoft.Windows.PowerShell.ScriptAnalyzer.dll'
-$binaryModule = Import-Module -Name $binaryModulePath -PassThru
+$binaryModulePath = Join-Path -Path $binaryModuleRoot -ChildPath 'Microsoft.Windows.PowerShell.ScriptAnalyzer.dll'
+$binaryModule = Import-Module -Name $binaryModulePath -PassThru
 
 # When the module is unloaded, remove the nested binary module that was loaded with it
-$PSModule.OnRemove = {
-    Remove-Module -ModuleInfo $binaryModule
+$PSModule.OnRemove = {
+    Remove-Module -ModuleInfo $binaryModule
 }
 ```
 
@@ -260,6 +260,6 @@ Find-Module -Tag PSEdition_Core
 
 [Skript med PSEditions](script-psedition-support.md)
 
-[Stöd för PSEditions på PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)
+[Stöd för PSEditions på PowerShellGallery](../how-to/finding-packages/searching-by-psedition.md)
 
 [Uppdatera modulmanifestet](/powershell/module/powershellget/update-modulemanifest)

@@ -3,21 +3,21 @@ ms.date: 09/26/2017
 contributor: keithb
 keywords: galleriet, powershell, cmdlet, psget
 title: Förhandsversioner modulversioner
-ms.openlocfilehash: 9c3ddb623fbcb7f4b3453dd70cdc56a8dc2e9f6a
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f58b5adfeba7ed06d231c76accbd52508c7d67d6
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268627"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002777"
 ---
 # <a name="prerelease-module-versions"></a>Förhandsversioner modulversioner
 
-Från och med version 1.6.0 eller senare, ger PowerShellGet och PowerShell-galleriet stöd för taggning versioner som är större än 1.0.0 som en förhandsversion. Innan den här funktionen förhandsversioner objekt som var begränsade till att ha en version som börjar med 0. Målet med de här funktionerna är att ge bättre support för [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versionshantering konvention utan att spräcka bakåtkompatibilitet kompatibilitet med PowerShell versioner 3 och senare, eller befintliga versioner av PowerShellGet. Det här avsnittet fokuserar på modulen-specifika funktioner. Motsvarande funktioner för skript finns i den [förhandsversion versioner av skript](script-prerelease-support.md) avsnittet. Med dessa funktioner kan kan utgivare identifiera en modul eller ett skript som version 2.5.0-alpha och senare använda en produktionsklar version 2.5.0 som ersätter förhandsversionen.
+Från och med version 1.6.0 eller senare, ger PowerShellGet och PowerShell-galleriet stöd för taggning versioner som är större än 1.0.0 som en förhandsversion. Innan den här funktionen var förhandsversioner paket begränsade till att ha en version som börjar med 0. Målet med de här funktionerna är att ge bättre support för [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versionshantering konvention utan att spräcka bakåtkompatibilitet kompatibilitet med PowerShell versioner 3 och senare, eller befintliga versioner av PowerShellGet. Det här avsnittet fokuserar på modulen-specifika funktioner. Motsvarande funktioner för skript finns i den [förhandsversion versioner av skript](script-prerelease-support.md) avsnittet. Med dessa funktioner kan kan utgivare identifiera en modul eller ett skript som version 2.5.0-alpha och senare använda en produktionsklar version 2.5.0 som ersätter förhandsversionen.
 
 På en hög nivå omfattar förhandsversioner modulfunktioner:
 
-- Att lägga till en sträng som förhandsversion i avsnittet PSData i modulmanifestet identifierar modulen som en förhandsversion. Om modulen har publicerats till PowerShell-galleriet, dessa data extraheras från manifestet, och används för att identifiera objekt som förhandsversioner.
-- Hämta förhandsversionen objekt kräver att lägga till `-AllowPrerelease` flaggan för PowerShellGet-kommandon `Find-Module`, `Install-Module`, `Update-Module`, och `Save-Module`. Om flaggan inte anges, visas inte förhandsversioner objekt.
+- Att lägga till en sträng som förhandsversion i avsnittet PSData i modulmanifestet identifierar modulen som en förhandsversion. Om modulen har publicerats till PowerShell-galleriet, dessa data extraheras från manifestet, och används för att identifiera förhandsversioner paket.
+- Hämta förhandsversionen paket kräver att lägga till `-AllowPrerelease` flaggan för PowerShellGet-kommandon `Find-Module`, `Install-Module`, `Update-Module`, och `Save-Module`. Om flaggan inte anges, visas inte förhandsversioner paket.
 - Modulversionerna som visas av `Find-Module`, `Get-InstalledModule`, och i PowerShell-galleriet visas som en sträng med förhandsversioner strängen läggs, som i 2.5.0-alpha.
 
 Information om funktionerna som ingår nedan.
@@ -51,7 +51,7 @@ Villkoren för förhandsversioner sträng är:
 
 - Förhandsversioner sträng kan bara anges när ModuleVersion är 3 segment för Major.Minor.Build. Detta ligger i linje med SemVer v1.0.0.
 - Ett bindestreck är avgränsare mellan Build-nummer och förhandsversioner strängen. Ett bindestreck kan ingå i förhandsversioner strängen som det första tecknet, endast.
-- Förhandsversioner strängen kan innehålla endast ASCII alfanumeriska tecken [0-9A-a - z-]. Det är en bra idé att börja förhandsutgåvan sträng med en bokstav, eftersom det är lättare att identifiera att detta är en förhandsversion när du skannar en lista med objekt.
+- Förhandsversioner strängen kan innehålla endast ASCII alfanumeriska tecken [0-9A-a - z-]. Det är en bra idé att börja förhandsutgåvan sträng med en bokstav, eftersom det är lättare att identifiera att detta är en förhandsversion när du skannar en lista över paket.
 - Endast SemVer v1.0.0 förhandsversioner strängar stöds just nu. Förhandsversioner sträng **får inte** innehålla antingen punkt eller + [. +], som är tillåtna i SemVer 2.0.
 - Exempel på stöds förhandsversioner sträng är:-alfa, -á1,-BETA, -update20171020
 
@@ -61,9 +61,9 @@ Sorteringsordningen ändras när du använder en förhandsversion, vilket är vi
 
 När du publicerar PowerShell-galleriet, som standard måste versionen av modulen publiceras ha en högre version än tidigare publicerade versionen som finns i PowerShell-galleriet.
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Att söka efter och hämta förhandsversioner objekt som använder PowerShellGet-kommandon
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Att söka efter och hämta förhandsversioner paket med PowerShellGet-kommandon
 
-Ta itu med förhandsversioner objekt som använder-Update-modulen PowerShellGet Find-Module, Install-Module och Save-Module kommandon kräver att lägga till flaggan - AllowPrerelease. Om - AllowPrerelease anges ska förhandsversioner objekt inkluderas om de finns. Om - AllowPrerelease flaggan inte anges, visas inte förhandsversioner objekt.
+Behandlar förhandsversioner paket med hjälp av Sök-modulen PowerShellGet i Install-Module, Update-modulen och Save-Module kommandon kräver att lägga till flaggan - AllowPrerelease. Om - AllowPrerelease anges ska förhandsversioner paket inkluderas om de finns. Om - AllowPrerelease flaggan inte anges, visas inte förhandsversioner paket.
 
 De enda undantagen till den här i modulen PowerShellGet-kommandon är Get-InstalledModule och ibland med Uninstall-modulen.
 

@@ -2,20 +2,20 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Skrivhjälp för DSC-konfigurationer
-ms.openlocfilehash: 316fd69ab1eae66ebe141b2575a05b502fc261ea
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a4b5e688744b9a4519ce06d920ad8f11efeb99ad
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222671"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225700"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>Skrivhjälp för DSC-konfigurationer
 
->Gäller för: Windows Windows PowerShell 5.0
+>Gäller för: Windows PowerShell 5.0
 
-Du kan använda kommentarbaserad hjälp i DSC-konfigurationer. Användare kan komma åt hjälp genom att anropa funktionen konfiguration med `-?`, eller genom att använda den [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) cmdlet. Mer information om PowerShell kommentarbaserad hjälp finns [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).
+Du kan använda kommentarbaserad hjälp i DSC-konfigurationer. Användare kan komma åt hjälp genom att anropa funktionen konfiguration med `-?`, eller genom att använda den [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) cmdlet. Mer information om PowerShell kommentarbaserad hjälp finns i [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).
 
-I följande exempel visas ett skript som innehåller en konfiguration och kommentarbaserad hjälp för den:
+I följande exempel visas ett skript som innehåller ett konfigurations- och kommentarbaserad hjälp för den:
 
 ```powershell
 <#
@@ -50,18 +50,18 @@ This example will be labeled "EXAMPLE 2" when help is displayed to the user.
 
 configuration HelpSample1
 {
-    param([string]$ComputerName,[string]$FilePath)
-    File f
-    {
+    param([string]$ComputerName,[string]$FilePath)
+    File f
+    {
         Contents="Hello World"
-        DestinationPath = "c:\Destination.txt"
-    }
+        DestinationPath = "c:\Destination.txt"
+    }
 }
 ```
 
 ## <a name="viewing-configuration-help"></a>Visa hjälp om konfiguration
 
-Du kan visa hjälpen för en konfiguration av **Get-Help** med namnet på funktionen eller Skriv namnet på funktionen följt av `-?`. Följande är resultatet av funktionen tidigare när den skickas till **Get-Help**:
+Du kan visa hjälpen för en konfiguration med den **Get-Help** cmdlet med namnet på funktionen, eller namnet på funktionen följt av `-?`. Följande är resultatet av funktionen tidigare när skickades till **Get-Help**:
 
 ```powershell
 PS C:\> Get-Help HelpSample1

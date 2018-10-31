@@ -3,18 +3,18 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Moduler som kräver godkännande av licensen
-ms.openlocfilehash: 93f92f6e83bcf18a40c3d89eb39a154e16ca5063
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893118"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002675"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Moduler som kräver godkännande av licensen
 
 ## <a name="synopsis"></a>SAMMANFATTNING
 
-Juridiska avdelningar för vissa modulen utgivare kräva att kunder uttryckligen måste acceptera licensvillkoren innan du installerar sina modul från PowerShell-galleriet. Om en användare installerar, uppdaterar eller sparar en modul med PowerShellGet, direkt eller som ett beroende för ett annat objekt och modulen kräver att användaren godkänner en licens, måste användaren ange de accepterar licensen eller åtgärden misslyckas.
+Juridiska avdelningar för vissa modulen utgivare kräva att kunder uttryckligen måste acceptera licensvillkoren innan du installerar sina modul från PowerShell-galleriet. Om en användare installerar, uppdaterar eller sparar en modul med PowerShellGet, direkt eller som ett beroende för ett annat paket och modulen kräver att användaren godkänner en licens, måste användaren ange de accepterar licensen eller åtgärden misslyckas.
 
 ## <a name="publish-requirements-for-modules"></a>Publicera krav för moduler
 
@@ -43,7 +43,7 @@ Moduler som vill att användarna ska acceptera licensen bör uppfylla följande 
 
 - Under installationen/spara/uppdatering måste igen om en beroende-modul (något annat beroende på modulen) kräver godkännande av licensen och licens godkännande beteende (ovan) utföras.
 - Om modulversionen finns redan i den lokala katalogen som är installerad på systemet, skulle vi kringgå Licenskontroll.
-- Under installationen/spara/uppdatera åtgärden om en beroende modul måste ha en licens och godkännande av licensen inte genomförs åtgärden misslyckas och följa normala processer för det objektet kunde inte installera/spara/uppdatera.
+- Under installationen/spara/uppdatera åtgärden om en beroende modul måste ha en licens och godkännande av licensen inte genomförs åtgärden misslyckas och följa normala processer för paketet kunde inte installera/spara/uppdatera.
 
 ## <a name="impact-on--force"></a>Påverkan på - Force
 
@@ -219,6 +219,6 @@ Modulen uppdateras utan någon uppmaning att acceptera licensen.
 
 [Kräv godkännande av licensen för skript](./script-license-acceptance.md)
 
-[Kräv godkännande av licensen stöd på PowerShellGallery](../how-to/working-with-items/items-that-require-license-acceptance.md)
+[Kräv godkännande av licensen stöd på PowerShellGallery](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
 
-[Kräv godkännande av licensen vid distribuera till Azure Automation](../how-to/working-with-items/deploy-to-azure-automation.md)
+[Kräv godkännande av licensen vid distribuera till Azure Automation](../how-to/working-with-packages/deploy-to-azure-automation.md)

@@ -3,21 +3,21 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: galleriet, powershell, cmdlet, psget
 title: Förhandsversioner av skript
-ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 4e7eab682008ed57163c51fe3a61a744b347bef2
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268474"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002743"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Förhandsversioner av skript
 
-Från och med version 1.6.0 eller senare, ger PowerShellGet och PowerShell-galleriet stöd för taggning versioner som är större än 1.0.0 som en förhandsversion. Innan den här funktionen förhandsversioner objekt som var begränsade till att ha en version som börjar med 0. Målet med de här funktionerna är att ge bättre support för [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versionshantering konvention utan att spräcka bakåtkompatibilitet kompatibilitet med PowerShell versioner 3 och senare, eller befintliga versioner av PowerShellGet. Det här avsnittet fokuserar på skript-specifika funktioner. Motsvarande funktioner för moduler finns i den [förhandsversion modulversioner](module-prerelease-support.md) avsnittet. Med dessa funktioner kan kan utgivare identifiera ett skript som version 2.5.0-alpha och senare använda en produktionsklar version 2.5.0 som ersätter förhandsversionen.
+Från och med version 1.6.0 eller senare, ger PowerShellGet och PowerShell-galleriet stöd för taggning versioner som är större än 1.0.0 som en förhandsversion. Innan den här funktionen var förhandsversioner paket begränsade till att ha en version som börjar med 0. Målet med de här funktionerna är att ge bättre support för [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versionshantering konvention utan att spräcka bakåtkompatibilitet kompatibilitet med PowerShell versioner 3 och senare, eller befintliga versioner av PowerShellGet. Det här avsnittet fokuserar på skript-specifika funktioner. Motsvarande funktioner för moduler finns i den [förhandsversion modulversioner](module-prerelease-support.md) avsnittet. Med dessa funktioner kan kan utgivare identifiera ett skript som version 2.5.0-alpha och senare använda en produktionsklar version 2.5.0 som ersätter förhandsversionen.
 
 På en hög nivå omfattar förhandsversioner skript-funktioner:
 
-- Lägga till ett PrereleaseString suffix till Versionsträngen i skriptet manifestet. Om skripten har publicerats till PowerShell-galleriet, dessa data extraheras från manifestet, och används för att identifiera objekt som förhandsversioner.
-- Hämta förhandsversionen objekt kräver att lägga till AllowPrerelease - flaggan i PowerShellGet-kommandon Find-Script installationsskriptet, Update-skript och spara skriptet. Om flaggan inte anges, visas inte förhandsversioner objekt.
+- Lägga till ett PrereleaseString suffix till Versionsträngen i skriptet manifestet. Om skripten har publicerats till PowerShell-galleriet, dessa data extraheras från manifestet, och används för att identifiera förhandsversioner paket.
+- Hämta förhandsversionen paket kräver att lägga till AllowPrerelease - flaggan i PowerShellGet-kommandon Find-Script installationsskriptet, Update-skript och spara skriptet. Om flaggan inte anges, visas inte förhandsversioner paket.
 - Skript-versioner som visas av Find-Script, Get-InstalledScript, och i PowerShell-galleriet visas med PrereleaseString, som i 2.5.0-alpha.
 
 Information om funktionerna som ingår nedan.
@@ -54,9 +54,9 @@ Sorteringsordningen ändras när du använder en förhandsversion, vilket är vi
 
 När du publicerar PowerShell-galleriet, som standard måste versionen av skriptet publiceras ha en högre version än tidigare publicerade versionen som finns i PowerShell-galleriet. Utgivare kan uppdatera version 2.5.0-alpha 2.5.0-beta eller med 2.5.0 (med inga förhandsversioner suffix).
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Att söka efter och hämta förhandsversioner objekt som använder PowerShellGet-kommandon
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Att söka efter och hämta förhandsversioner paket med PowerShellGet-kommandon
 
-Ta itu med förhandsversioner objekt som använder PowerShellGet Find-Script, installationsskriptet, Update-skript och spara skriptkommandon kräver att lägga till flaggan - AllowPrerelease. Om - AllowPrerelease anges ska förhandsversioner objekt inkluderas om de finns. Om - AllowPrerelease flaggan inte anges, visas inte förhandsversioner objekt.
+Behandlar förhandsversioner paket med hjälp av PowerShellGet Find-Script, installationsskriptet, Update-skript och spara skriptkommandon kräver att lägga till flaggan - AllowPrerelease. Om - AllowPrerelease anges ska förhandsversioner paket inkluderas om de finns. Om - AllowPrerelease flaggan inte anges, visas inte förhandsversioner paket.
 
 De enda undantagen till den här i skriptkommandon PowerShellGet är Get-InstalledScript och ibland med Uninstall-skript.
 

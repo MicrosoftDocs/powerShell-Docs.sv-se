@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: Kända problem i WMF 5.1
-ms.openlocfilehash: 74e5a6763a8a780000bf876f34caa9646a2a416a
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: e59ea1b9a5282eb5727a37ce605c71724a219827
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892145"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225853"
 ---
 # <a name="known-issues-in-wmf-51"></a>Kända problem i WMF 5.1
 
@@ -33,7 +33,7 @@ Det finns två problem som du bör känna till när du använder Pester på Nano
 
 ## <a name="dsc-after-uninstall-wmf"></a>DSC efter avinstallera WMF
 
-- Avinstallera WMF tar inte bort DSC MOF-dokument från konfigurationsmappen. DSC fungerar inte korrekt om MOF-dokument innehåller nyare egenskaper som inte är tillgängliga på de äldre systemen. I det här fallet kör följande skript från en upphöjd PowerShell-konsol till att rensa DSC-tillstånd.
+- Avinstallera WMF tar inte bort DSC MOF-dokument från konfigurationsmappen. DSC fungerar inte korrekt om MOF-dokument innehåller nyare egenskaper som inte är tillgängliga på de äldre systemen. I det här fallet kör följande skript från en upphöjd PowerShell-konsol att rensa DSC-tillstånd.
 
   ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",

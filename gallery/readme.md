@@ -1,6 +1,6 @@
-# <a name="readme"></a>VIKTIG INFORMATION
+# <a name="readme"></a>VIKTIGT
 
 Den här mappen innehåller dokumentation för PowerShell-galleriet.
-Detta är konfigurerad som en separat docset i PowerShell-dokumenten lagringsplatsen.
+Detta är konfigurerat som en separat dokumentuppsättning i PowerShell-dokumentens lagringsplats.
 
-Information om bidrar till den här docset finns i PowerShell-dokumenten [deltagare guiden](https://github.com/PowerShell/PowerShell-Docs/blob/staging/CONTRIBUTING.md).
+Information om bidrar till den här dokumentuppsättning finns i PowerShell-Docs [Deltagarguiden](https://github.com/PowerShell/PowerShell-Docs/blob/staging/CONTRIBUTING.md).

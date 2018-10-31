@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: galleriet, powershell, cmdlet, psget
 title: Start av NuGet
-ms.openlocfilehash: e82fe7bec2e6b7a321fb173cdf9a54c5a97d5f18
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 6d8f106bc3b8741203e87e4c097948a843f06d6e
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267855"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002146"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Bootstrap NuGet-providern och NuGet.exe
 
