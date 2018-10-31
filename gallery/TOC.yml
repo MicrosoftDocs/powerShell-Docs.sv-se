@@ -10,37 +10,37 @@ items:
   - name: Hitta objekt i galleriet
     items:
     - name: Söka efter objekt
-      href: how-to/finding-items/search-syntax.md
+      href: how-to/finding-packages/search-syntax.md
     - name: Söka efter PSEdition
-      href: how-to/finding-items/searching-by-psedition.md
+      href: how-to/finding-packages/searching-by-psedition.md
     - name: Filtrera sökresultaten
-      href: how-to/finding-items/filtering-items.md
+      href: how-to/finding-packages/filtering-packages.md
   - name: Publicera till galleriet
     items:
     - name: Skapa och publicera objekt
-      href: how-to/publishing-items/publishing-an-item.md
+      href: how-to/publishing-packages/publishing-a-package.md
     - name: Skapa ett PowerShellGallery-konto
-      href: how-to/publishing-items/creating-an-account.md
+      href: how-to/publishing-packages/creating-an-account.md
     - name: Avlista objekt
-      href: how-to/publishing-items/unlisting-items.md
+      href: how-to/publishing-packages/unlisting-packages.md
     - name: Ta bort objekt
-      href: how-to/publishing-items/deleting-items.md
+      href: how-to/publishing-packages/deleting-packages.md
     - name: Hantera objektägare
-      href: how-to/publishing-items/managing-item-owners.md
+      href: how-to/publishing-packages/managing-package-owners.md
   - name: Arbeta med objekt
     items:
     - name: FileList-vy
-      href: how-to/working-with-items/filelist-view.md
+      href: how-to/working-with-packages/filelist-view.md
     - name: Distribuera till Azure Automation
-      href: how-to/working-with-items/deploy-to-azure-automation.md
+      href: how-to/working-with-packages/deploy-to-azure-automation.md
     - name: Manuell paketnedladdning
-      href: how-to/working-with-items/manual-download.md
+      href: how-to/working-with-packages/manual-download.md
     - name: Objekt som kräver godkännande av licensen
-      href: how-to/working-with-items/items-that-require-license-acceptance.md
+      href: how-to/working-with-packages/packages-that-require-license-acceptance.md
     - name: Kontakta objektägare
-      href: how-to/working-with-items/contacting-item-owners.md
+      href: how-to/working-with-packages/contacting-package-owners.md
     - name: Ge feedback via sociala medier eller kommentarer
-      href: how-to/working-with-items/social-media-feedback.md
+      href: how-to/working-with-packages/social-media-feedback.md
   - name: Hantera kontoprofil
     items:
     - name: Kontoinställningar för PowerShell-galleriet
@@ -52,7 +52,7 @@ items:
   - name: Publicera riktlinjer och metodtips
     href: concepts/publishing-guidelines.md
   - name: Objektmanifest och galleriets gränssnitt
-    href: concepts/item-manifest-affecting-ui.md
+    href: concepts/package-manifest-affecting-ui.md
   - name: Kräv specifika PSEditions
     items:
     - name: Skapa skript med PSEditions-stöd
@@ -91,9 +91,9 @@ items:
   href: faqs.md
 - name: PowerShellGet-cmdletar
   href: https://docs.microsoft.com/powershell/module/powershellget/
-ms.openlocfilehash: 32577b81229d456922a6be9bfdc8156d337fd719
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 386e86b4a27ea840cc688b47f597e845f041af60
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522930"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002333"
