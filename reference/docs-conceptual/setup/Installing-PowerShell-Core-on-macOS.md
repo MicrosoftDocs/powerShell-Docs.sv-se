@@ -1,13 +1,13 @@
 ---
 title: Installera PowerShell Core i macOS
 description: Information om att installera PowerShell Core på macOS
-ms.date: 08/06/2018
-ms.openlocfilehash: e226cd64f8788ae74dc72fdc0cd219923b7a2cd6
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.date: 11/02/2018
+ms.openlocfilehash: 162e841bf71d708e9db84ea1bb2dbef13924783b
+ms.sourcegitcommit: f4247d3f91d06ec392c4cd66921ce7d0456a2bd9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002367"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50998511"
 ---
 # <a name="installing-powershell-core-on-macos"></a>Installera PowerShell Core i macOS
 
@@ -15,10 +15,14 @@ PowerShell Core stöder macOS 10.12 och högre.
 Alla paket finns på vår GitHub [släpper][] sidan.
 När paketet har installerats kan du köra `pwsh` från en terminal.
 
-## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Installation av senaste stabila versionen via Homebrew i macOS 10.12 eller högre
+## <a name="about-brew"></a>Om Brew
 
 [Homebrew] [ brew] är den prioriterade Pakethanteraren för macOS.
 Om den `brew` kommandot inte finns, måste du installera Homebrew följande [instruktionerna][brew].
+
+## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Installation av senaste stabila versionen via Homebrew i macOS 10.12 eller högre
+
+Se [om Brew](#about-brew) information om Brew.
 
 Du kan nu installera PowerShell:
 
@@ -46,8 +50,7 @@ brew cask upgrade powershell
 
 ## <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>Installation av senaste förhandsversionen versionen via Homebrew i macOS 10.12 eller högre
 
-[Homebrew] [ brew] är den prioriterade Pakethanteraren för macOS.
-Om den `brew` kommandot inte finns, måste du installera Homebrew följande [instruktionerna][brew].
+Se [om Brew](#about-brew) information om Brew.
 
 När du har installerat Homebrew är det enkelt att installera PowerShell.
 Installera först [Cask versioner] [ cask-versions] som hjälper dig att installera alternativa versioner av cask paket:
@@ -90,6 +93,8 @@ Du kan dubbelklicka på filen och följ anvisningarna eller installera det från
 sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
 ```
 
+Installera [OpenSSL](#install-openssl) som krävs för PowerShell-fjärrkommunikation och CIM-åtgärder.
+
 ## <a name="binary-archives"></a>Binär Arkiv
 
 PowerShell-binär `tar.gz` Arkiv tillhandahålls för macOS-plattformen att aktivera avancerade scenarier.
@@ -111,6 +116,41 @@ sudo chmod +x /usr/local/microsoft/powershell/6.1.0/pwsh
 
 # Create the symbolic link that points to pwsh
 sudo ln -s /usr/local/microsoft/powershell/6.1.0/pwsh /usr/local/bin/pwsh
+```
+
+Installera [OpenSSL](#install-openssl) som krävs för PowerShell-fjärrkommunikation och CIM-åtgärder.
+
+## <a name="installing-dependencies"></a>Installation av beroenden
+
+### <a name="install-xcode-command-line-tools"></a>Installera XCode kommandoradsverktyg
+
+```shell
+xcode-select -install
+```
+
+### <a name="install-openssl"></a>Installera OpenSSL
+
+OpenSSL krävs för PowerShell-fjärrkommunikation och CIM-åtgärder.  Du kan installera via MacPorts eller Brew.
+
+#### <a name="install-openssl-via-brew"></a>Installera OpenSSL, via Brew
+
+Se [om Brew](#about-brew) information om Brew.
+
+Kör `brew install openssl` installera OpenSSL.
+
+#### <a name="install-openssl-via-macports"></a>Installera OpenSSL, via MacPorts
+
+1. Installera den [XCode kommandoradsverktyg](#install-xcode-command-line-tools)
+1. Installera MacPorts.
+   Se den [installationsguide](https://guide.macports.org/chunked/installing.macports.html) om du behöver mer information.
+1. Uppdatera MacPorts genom att köra `sudo port selfupdate`
+1. Uppgradera MacPorts paket genom att köra `sudo port upgrade outdated`
+1. Installera OpenSSL, genom att köra genom att köra `sudo port instal openssl`
+1. Länka biblioteken så att PowerShell kan använda den.
+
+```shell
+sudo mkdir -p /usr/local/opt/openssl
+sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
 ```
 
 ## <a name="uninstalling-powershell-core"></a>Avinstallera PowerShell Core
@@ -148,7 +188,7 @@ Så värdspecifika standardprofiler finns på `Microsoft.PowerShell_profile.ps1`
 PowerShell respekterar de [XDG Base Directory specifikationen] [ xdg-bds] på macOS.
 
 Eftersom macOS är en härledning av BSD, prefixet `/usr/local` används i stället för `/opt`.
-Därför `$PSHOME` är `/usr/local/microsoft/powershell/6.1.0/`, och symlink placeras på `/usr/local/bin/pwsh`.
+Därför `$PSHOME` är `/usr/local/microsoft/powershell/6.1.0/`, och den symboliska länken är placerad på `/usr/local/bin/pwsh`.
 
 ## <a name="additional-resources"></a>Ytterligare resurser
 
