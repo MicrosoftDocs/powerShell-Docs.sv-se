@@ -1,4 +1,4 @@
----
+﻿---
 ms.date: 06/12/2017
 contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery, psget
@@ -41,7 +41,7 @@ En lämplig version av **Windows PowerShell** är tillgänglig för dessa operat
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** kräver .NET Framework 4.5 eller senare. Du kan installera .NET Framework 4.5 eller senare från [här](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+**PowerShellGet** kräver .NET Framework 4.5 eller senare. Du kan installera .NET Framework 4.5 eller senare [här](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
 Eftersom **PowerShell Core** är plattformsoberoende och som innebär att det fungerar på Windows, Linux och MacOS, även gör **PowerShellGet** tillgänglig på dessa system. En fullständig lista över system som stöds av **PowerShell Core** Se [installera PowerShell](/powershell/scripting/setup/installing-powershell).
 
