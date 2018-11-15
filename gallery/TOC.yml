@@ -7,9 +7,9 @@ items:
   href: getting-started.md
 - name: Instruktioner
   items:
-  - name: Hitta objekt i galleriet
+  - name: Hitta paket i galleriet
     items:
-    - name: Söka efter objekt
+    - name: Söka efter paket
       href: how-to/finding-packages/search-syntax.md
     - name: Söka efter PSEdition
       href: how-to/finding-packages/searching-by-psedition.md
@@ -17,17 +17,17 @@ items:
       href: how-to/finding-packages/filtering-packages.md
   - name: Publicera till galleriet
     items:
-    - name: Skapa och publicera objekt
+    - name: Skapa och publicera paket
       href: how-to/publishing-packages/publishing-a-package.md
     - name: Skapa ett PowerShellGallery-konto
       href: how-to/publishing-packages/creating-an-account.md
-    - name: Avlista objekt
+    - name: Avlista paket
       href: how-to/publishing-packages/unlisting-packages.md
-    - name: Ta bort objekt
+    - name: Ta bort paket
       href: how-to/publishing-packages/deleting-packages.md
-    - name: Hantera objektägare
+    - name: Hantera paketägare
       href: how-to/publishing-packages/managing-package-owners.md
-  - name: Arbeta med objekt
+  - name: Arbeta med paket
     items:
     - name: FileList-vy
       href: how-to/working-with-packages/filelist-view.md
@@ -35,9 +35,9 @@ items:
       href: how-to/working-with-packages/deploy-to-azure-automation.md
     - name: Manuell paketnedladdning
       href: how-to/working-with-packages/manual-download.md
-    - name: Objekt som kräver godkännande av licensen
+    - name: Paket som kräver godkännande av licensen
       href: how-to/working-with-packages/packages-that-require-license-acceptance.md
-    - name: Kontakta objektägare
+    - name: Kontakta paketägare
       href: how-to/working-with-packages/contacting-package-owners.md
     - name: Ge feedback via sociala medier eller kommentarer
       href: how-to/working-with-packages/social-media-feedback.md
@@ -47,11 +47,13 @@ items:
       href: how-to/managing-profile/managing-account.md
     - name: Hantera API-nycklar
       href: how-to/managing-profile/creating-apikeys.md
+  - name: Arbeta med lokala PowerShellGet-lagringsplatser
+    href: how-to/working-with-local-psrepositories.md
 - name: Begrepp
   items:
   - name: Publicera riktlinjer och metodtips
     href: concepts/publishing-guidelines.md
-  - name: Objektmanifest och galleriets gränssnitt
+  - name: Paketmanifest och gallerigränssnitt
     href: concepts/package-manifest-affecting-ui.md
   - name: Kräv specifika PSEditions
     items:
@@ -65,7 +67,7 @@ items:
       href: concepts/script-license-acceptance.md
     - name: Kräv godkännande av licensen för moduler
       href: concepts/module-license-acceptance.md
-  - name: Definiera objekt som förhandsversion
+  - name: Definiera paket som förhandsversion
     items:
     - name: Definiera en modul som förhandsversion
       href: concepts/module-prerelease-support.md
@@ -91,9 +93,9 @@ items:
   href: faqs.md
 - name: PowerShellGet-cmdletar
   href: https://docs.microsoft.com/powershell/module/powershellget/
-ms.openlocfilehash: 386e86b4a27ea840cc688b47f597e845f041af60
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 123607d3ce1139511ee0006b9ec6ed2e9ae99010
+ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002333"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51619134"
