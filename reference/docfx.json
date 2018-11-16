@@ -242,7 +242,8 @@
       "ms.author": "jpjofre"
     },
     "fileMetadata": {},
-    "template": [],
-    "dest": "pscore-reference"
-  }
+        "template": [],
+        "dest": "pscore-reference",
+        "markdownEngineName": "markdig"
+    }
 }
