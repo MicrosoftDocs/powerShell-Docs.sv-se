@@ -3,12 +3,12 @@ ms.date: 08/14/2018
 keywords: PowerShell cmdlet
 title: Kommandoradshjälp för PowerShell.exe
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: c7f35511e876e8e5189d8a2b949555603d43f731
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
+ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
+ms.sourcegitcommit: 03c7672ee72698fe88a73e99702ceaadf87e702f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133849"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51691838"
 ---
 # <a name="powershellexe-command-line-help"></a>Kommandoradshjälp för PowerShell.exe
 
@@ -51,7 +51,10 @@ Anger principen för körning för den aktuella sessionen och sparar den i $env:
 
 Kör det angivna skriptet i det lokala scopet (”punkt källkod”), så att de funktioner och variabler som skriptet skapar är tillgängliga i den aktuella sessionen. Ange sökväg till skriptfilen och parametrar. **Filen** måste anges som sista parameter i kommandot. Alla värden efter den **-filen** parametern tolkas som skriptet som sökväg och parametrar skickades till skriptet.
 
-Parametrarna som skickades till skriptet skickas som literala strängar (efter tolkning av den aktuella shell). Om du är i cmd.exe och vill skicka ett miljövariabelvärde du exempelvis använder du cmd.exe syntax: `powershell -File .\test.ps1 -Sample %windir%` skriptet i det här exemplet tar emot den exakta strängen `$env:windir` och inte värdet för den i miljövariabeln: `powershell -File .\test.ps1 -Sample $env:windir`
+Parametrarna som skickades till skriptet skickas som literala strängar efter tolkning av den aktuella shell. Om du är i cmd.exe och vill skicka ett miljövariabelvärde, skulle du till exempel använda cmd.exe syntax: `powershell.exe -File .\test.ps1 -TestParam %windir%`
+
+Kör däremot `powershell.exe -File .\test.ps1 -TestParam $env:windir` i cmd.exe resultaten i skriptet tar emot den exakta strängen `$env:windir` eftersom den har ingen särskild innebörd till aktuella cmd.exe-gränssnittet.
+Den `$env:windir` formatet för variabeln miljöreferens _kan_ användas inuti en `-Command` parameter, eftersom det inte det tolkas som PowerShell-kod.
 
 ### <a name="-inputformat-text--xml"></a>\-InputFormat {Text | XML}
 
@@ -103,22 +106,31 @@ Anger formatmallen fönster för sessionen. Giltiga värden är Normal, minimera
 
 ### <a name="-command"></a>-Kommandot
 
-Kör de angivna kommandon (med några parametrar) som om de har skrivits i PowerShell-Kommandotolken. Efter körning, PowerShell avslutas om inte den `-NoExit` parameter har angetts.
-Text efter `-Command` skickas som en enda kommandorad till PowerShell. Detta skiljer sig från hur `-File` hanterar parametrar som skickas till ett skript.
+Kör de angivna kommandon (med några parametrar) som om de har skrivits i PowerShell-Kommandotolken.
+Efter körning, PowerShell avslutas om inte den **NoExit** parameter har angetts.
+Text efter `-Command` skickas som en enda kommandorad till PowerShell.
+Detta skiljer sig från hur `-File` hanterar parametrar som skickas till ett skript.
 
-Värdet för kommandot kan vara ”-”, en sträng. eller ett skriptblock. Om värdet för kommandot är ”-”, kommandotexten läses från kommandoraden.
+Värdet för `-Command` kan vara ”-”, en sträng eller ett skriptblock.
+Resultatet av kommandot returneras till överordnade gränssnittet som avserialiserade XML-objekt, inte live-objekt.
 
-Skriptblocken måste stå inom klamrar ({}). Du kan ange ett skriptblock endast när du kör PowerShell.exe i PowerShell. Resultatet av skriptet returneras till överordnade gränssnittet som avserialiserade XML-objekt, inte live-objekt.
+Om värdet för `-Command` är ”-”, kommandotexten läses från kommandoraden.
 
-Om värdet för kommandot är en sträng **kommandot** måste anges som sista parameter i kommandot eftersom några tecken har angett när kommandot tolkas som kommandoradsargument.
+När värdet för `-Command` är en sträng, **kommandot** _måste_ anges som sista parameter angetts eftersom några tecken har angett när kommandot tolkas som kommandoradsargument.
 
-Använd format för att skriva en sträng som kör ett PowerShell-kommando:
+Den **kommandot** parametern accepterar endast ett skriptblock för körning när den kan identifiera värdet som skickas till `-Command` som en ScriptBlock typ.
+Det här är _endast_ möjligt när du kör PowerShell.exe från en annan PowerShell-värd.
+ScriptBlock typ kan finnas i en befintlig variabel, returnerade från ett uttryck eller parsade genom PowerShell vara värd för som en literal skriptblock som omges av klammerparenteser `{}`, innan de skickas till PowerShell.exe.
 
-```powershell
+I cmd.exe, det finns ingen sådan funktion som ett skriptblock (eller ScriptBlock typ) så värdet som skickas till **kommandot** kommer _alltid_ vara en sträng.
+Du kan skriva ett skriptblock inuti strängen, men i stället för som körs den fungerar precis som om du har angett det i en typisk PowerShell-kommandotolk, skriva ut innehållet i skriptet blockerar tillbaka till dig.
+
+En sträng som skickas till `-Command` fortfarande körs som PowerShell, så att skriptet block av klammerparenteser krävs ofta inte i första hand när du kör från cmd.exe.
+Att köra ett infogat-skriptblock som definierats i en sträng i [anrop operatorn](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-) `&` kan användas:
+
+```console
 "& {<command>}"
 ```
-
-Citattecken anger en sträng och invoke-operatorn (&) gör att kommandot ska köras.
 
 ### <a name="-help---"></a>-Help-,?, /?
 
