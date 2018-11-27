@@ -2,12 +2,12 @@
 title: Installera PowerShell Core i Linux
 description: Information om att installera PowerShell Core på olika Linux-distributioner
 ms.date: 08/06/2018
-ms.openlocfilehash: a20384c768113ed2313591cfa8c29eeadd94f80f
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
+ms.openlocfilehash: afb11f053517af592fe42754d543f9f4a9966c5b
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50226006"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321119"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Installera PowerShell Core i Linux
 
@@ -16,7 +16,7 @@ Stöder [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04] [ u1804], [Ubun
 För Linux-distributioner som inte stöds officiellt, kan du försöka använda den [PowerShell Fäst paketet][snap].
 Du kan också prova att distribuera PowerShell binärfiler direkt med hjälp av Linux [ `tar.gz` Arkiv][tar], men du måste ställa in nödvändiga beroenden baserat på Operativsystemet i separata steg.
 
-Alla paket finns på vår GitHub [släpper][] sidan.
+Alla paket finns på vår GitHub [versioner][] sidan.
 När paketet har installerats kan du köra `pwsh` från en terminal.
 
 [u14]: #ubuntu-1404
@@ -27,7 +27,7 @@ När paketet har installerats kan du köra `pwsh` från en terminal.
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
-[opensuse]: #opensuse-423
+[opensuse]: #opensuse
 [fedora]: #fedora
 [arch]: #arch-linux
 [snap]: #snap-package
@@ -77,7 +77,7 @@ Därefter behöver du bara använda `sudo apt-get upgrade powershell` att uppdat
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Installationen via Direct hämtning - Ubuntu 14.04
 
 Ladda ned Debian-paket `powershell_6.1.0-1.ubuntu.14.04_amd64.deb`
-från den [släpper][] sidan på Ubuntu-dator.
+från den [versioner][] sidan på Ubuntu-dator.
 
 Kör sedan följande i terminalen:
 
@@ -125,7 +125,7 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, kommer
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Installationen via Direct hämtning - Ubuntu 16.04
 
 Ladda ned Debian-paket `powershell_6.1.0-1.ubuntu.16.04_amd64.deb`
-från den [släpper][] sidan på Ubuntu-dator.
+från den [versioner][] sidan på Ubuntu-dator.
 
 Kör sedan följande i terminalen:
 
@@ -176,7 +176,7 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, kommer
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Installationen via Direct hämtning - Ubuntu 18.04
 
 Ladda ned Debian-paket `powershell_6.1.0-1.ubuntu.18.04_amd64.deb`
-från den [släpper][] sidan på Ubuntu-dator.
+från den [versioner][] sidan på Ubuntu-dator.
 
 Kör sedan följande i terminalen:
 
@@ -236,7 +236,7 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, kommer
 ### <a name="installation-via-direct-download---debian-8"></a>Installationen via Direct hämtning – Debian 8
 
 Ladda ned Debian-paket `powershell_6.1.0-1.debian.8_amd64.deb`
-från den [släpper][] sidan på Debian dator.
+från den [versioner][] sidan på Debian dator.
 
 Kör sedan följande i terminalen:
 
@@ -288,7 +288,7 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, kommer
 ### <a name="installation-via-direct-download---debian-9"></a>Installationen via Direct hämtning - Debian 9
 
 Ladda ned Debian-paket `powershell_6.1.0-1.debian.9_amd64.deb`
-från den [släpper][] sidan på Debian dator.
+från den [versioner][] sidan på Debian dator.
 
 Kör sedan följande i terminalen:
 
@@ -328,7 +328,7 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, behöv
 ### <a name="installation-via-direct-download---centos-7"></a>Installationen via Direct hämtning - CentOS 7
 
 Med hjälp av [CentOS 7][], ladda ned RPM-paket `powershell-6.1.0-1.rhel.7.x86_64.rpm`
-från den [släpper][] sidan på CentOS-dator.
+från den [versioner][] sidan på CentOS-dator.
 
 Kör sedan följande i terminalen:
 
@@ -372,7 +372,7 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, behöv
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installationen via Direct hämtning - Red Hat Enterprise Linux (RHEL) 7
 
 Ladda ned RPM-paket `powershell-6.1.0-1.rhel.7.x86_64.rpm`
-från den [släpper][] sidan på Red Hat Enterprise Linux-dator.
+från den [versioner][] sidan på Red Hat Enterprise Linux-dator.
 
 Kör sedan följande i terminalen:
 
@@ -482,7 +482,7 @@ pwsh
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Installationen via Direct hämtning - Fedora 27, Fedora 28
 
 Ladda ned RPM-paket `powershell-6.1.0-1.rhel.7.x86_64.rpm`
-från den [släpper][] sidan på Fedora-dator.
+från den [versioner][] sidan på Fedora-dator.
 
 Kör sedan följande i terminalen:
 
@@ -716,5 +716,5 @@ Profilerna respekterar PowerShell-per-host-konfiguration, så värdspecifika sta
 
 PowerShell respekterar de [XDG Base Directory specifikationen] [ xdg-bds] i Linux.
 
-[släpper]: https://github.com/PowerShell/PowerShell/releases/latest
+[versioner]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

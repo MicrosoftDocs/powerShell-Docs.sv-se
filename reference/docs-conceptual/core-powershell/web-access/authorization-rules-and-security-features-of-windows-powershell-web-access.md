@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: PowerShell cmdlet
 title: Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst
-ms.openlocfilehash: e9bed3900263a51b1b8236a3c3430154a5d11886
-ms.sourcegitcommit: 31a221d982305c7f999b1afeb15e3629e9620de8
+ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "43133864"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321093"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst
 
@@ -20,19 +20,19 @@ Windows PowerShell-webbåtkomst i Windows Server 2012 R2 och Windows Server 2012
 ## <a name="configuring-authorization-rules-and-site-security"></a>Konfigurera auktoriseringsregler och säkerhet för webbplatser
 
 När Windows PowerShell Web Access har installerats och gatewayen har konfigurerats, kan användarna öppna på inloggningssidan i en webbläsare, men de kan inte logga in förrän Windows PowerShell Web Access-administratören ger dem uttrycklig åtkomst. ”Windows PowerShell Web Access-åtkomstkontroll hanteras med hjälp av uppsättning Windows PowerShell cmdlets som beskrivs i följande tabell. Det finns ingen jämförbar GUI för att lägga till eller hantera auktoriseringsregler.
-Se [Windows PowerShell-cmdletar för webbåtkomst](cmdlets/web-access-cmdlets.md).
+Se [Windows PowerShell-cmdletar för webbåtkomst](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Administratörer kan definiera `{0-n}` authentication-regler för Windows PowerShell Web Access. Standardsäkerheten är begränsande i stället för tillåtande; noll autentiseringsregler innebär att ingen användare har åtkomst till något.
 
-[Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) och [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) i Windows Server 2012 R2 inkluderar en parameter för autentiseringsuppgifter som gör det möjligt att lägga till och testa Windows PowerShell-webbåtkomst auktoriseringsregler från en fjärransluten datorn, eller från inom en aktiv Windows PowerShell Web Access-session. Som med andra Windows PowerShell-cmdletar som har en parameter för autentiseringsuppgifter, kan du ange ett PSCredential-objekt som värde för parametern. Om du vill skapa ett PSCredential-objekt som innehåller autentiseringsuppgifter som du vill skicka till en fjärrdator, kör den [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) cmdlet.
+[Add-PswaAuthorizationRule](/powershell/module/powershellwebaccess/add-pswaauthorizationrule?view=winserver2012r2-ps) och [Test-PswaAuthorizationRule](/powershell/module/powershellwebaccess/test-pswaauthorizationrule?view=winserver2012r2-ps) i Windows Server 2012 R2 inkluderar en parameter för autentiseringsuppgifter som gör det möjligt att lägga till och testa Windows PowerShell-webbåtkomst auktoriseringsregler från en fjärransluten datorn, eller från inom en aktiv Windows PowerShell Web Access-session. Som med andra Windows PowerShell-cmdletar som har en parameter för autentiseringsuppgifter, kan du ange ett PSCredential-objekt som värde för parametern. Om du vill skapa ett PSCredential-objekt som innehåller autentiseringsuppgifter som du vill skicka till en fjärrdator, kör den [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) cmdlet.
 
-Windows PowerShell Web Access authentication-regler är godkända regler. Varje regel är en definition av en tillåten anslutning mellan användare, måldatorer och viss Windows PowerShellÂ [sessionskonfigurationer](/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (kallas också slutpunkter eller _körningsutrymmen_) på måldatorerna som angetts.
+Windows PowerShell Web Access authentication-regler är godkända regler. Varje regel är en definition av en tillåten anslutning mellan användare, måldatorer och viss Windows PowerShell [sessionskonfigurationer](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1) (kallas också slutpunkter eller _körningsutrymmen_) på måldatorerna som angetts.
 Förklaringar på **körningsutrymmen** Se [början användning av PowerShell Körningsutrymmen](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
 > [!IMPORTANT]
 > En användare behöver endast att en regel är TRUE för att få åtkomst. Om en användare får åtkomst till en dator med antingen fullständig språkåtkomst eller endast åtkomst till Windows PowerShell-cmdletar för fjärrhantering, från den webbaserade konsolen kan användaren logga in (eller hopp) till andra datorer som är anslutna till den första måldatorn. Det säkraste sättet att konfigurera Windows PowerShell-webbåtkomst är att ge användarna åtkomst endast till begränsade sessionskonfigurationer som gör att de utför olika aktiviteter som normalt sett måste utföras med fjärranslutning.
 
-De cmdletar som refereras i [Windows PowerShell-cmdletar för webbåtkomst](cmdlets/web-access-cmdlets.md) kunna skapa en uppsättning åtkomstregler som används för att auktorisera en användare på Windows PowerShell Web Access-gateway. Reglerna skiljer sig från åtkomstkontrollistor (ACL) på måldatorn och ger ett extra säkerhetslager för webbåtkomst. Mer information om säkerhet finns i följande avsnitt.
+De cmdletar som refereras i [Windows PowerShell-cmdletar för webbåtkomst](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps) kunna skapa en uppsättning åtkomstregler som används för att auktorisera en användare på Windows PowerShell Web Access-gateway. Reglerna skiljer sig från åtkomstkontrollistor (ACL) på måldatorn och ger ett extra säkerhetslager för webbåtkomst. Mer information om säkerhet finns i följande avsnitt.
 
 Om användarna inte kan skicka någon av de föregående säkerhetslagren, får de ett allmänt ”åtkomst nekad”-meddelande i sina webbläsarfönster. Även om säkerhetsinformation är loggad på gateway-servern, visas inte information om hur många säkerhetslager som skickades för slutanvändarna, ej heller på vilket lager inloggnings- eller autentiseringsfelet uppstod.
 
@@ -229,4 +229,4 @@ Om gateway-servern kör Windows Server 2012 R2, Windows PowerShell Web Access ka
 
 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 
-[Windows PowerShell-cmdletar för Webbåtkomst](cmdlets/web-access-cmdlets.md)
+[Windows PowerShell-cmdletar för Webbåtkomst](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)

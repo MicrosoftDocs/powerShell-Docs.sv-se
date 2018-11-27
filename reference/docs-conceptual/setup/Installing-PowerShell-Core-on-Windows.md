@@ -2,18 +2,18 @@
 title: Installera PowerShell Core i Windows
 description: Information om att installera PowerShell Core i Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 2b21908c38796117308f2ac1219db00ff9086408
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: ba159a69df7e117e90e21dd26228b61146260475
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850987"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320899"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Installera PowerShell Core i Windows
 
 ## <a name="msi"></a>MSI
 
-Installera PowerShell på en Windows-klienten eller Windows Server (fungerar på Windows 7 SP1, Server 2008 R2 och senare), ladda ned MSI-paketet från vår GitHub [släpper][] sidan.
+Installera PowerShell på en Windows-klienten eller Windows Server (fungerar på Windows 7 SP1, Server 2008 R2 och senare), ladda ned MSI-paketet från vår GitHub [versioner][] sidan.
 
 MSI-filen som ser ut så här- `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -99,7 +99,7 @@ I båda fallen måste versionen för Windows 10 x64 ZIP paketera och kommer att 
 1. Använd din favorit zip-verktyg för att packa upp paketet till en katalog i den monterade avbildningen Nano Server.
 2. Demontera avbildningen och starta den.
 3. Anslut till Inkorgen instans av Windows PowerShell.
-4. Följ anvisningarna för att skapa en fjärrkommunikation slutpunkten med den [”en annan instans metod”](#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+4. Följ anvisningarna för att skapa en fjärrkommunikation slutpunkten med den [”en annan instans metod”](../core-powershell/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
 ### <a name="online-deployment-of-powershell-core"></a>Online distribution av PowerShell Core
 
@@ -153,7 +153,7 @@ Installera PowerShell Core från CoreCLR artefakten:
 
 <!-- [download-center]: TODO -->
 
-[släpper]: https://github.com/PowerShell/PowerShell/releases
+[versioner]: https://github.com/PowerShell/PowerShell/releases
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
