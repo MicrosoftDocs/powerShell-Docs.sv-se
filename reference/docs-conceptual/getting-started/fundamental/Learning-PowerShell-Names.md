@@ -3,16 +3,16 @@ ms.date: 08/24/2018
 keywords: PowerShell cmdlet
 title: Lär dig PowerShell-namn
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: a4f7e12c2b30e8ae6d1cf5a125d613d2d7558c34
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 6ed1f99513f00c174147876e1982c0d12869cacb
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851263"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320490"
 ---
 # <a name="learning-powershell-names"></a>Lär dig PowerShell-namn
 
-Learning namnen på kommandon och parametrar kräver en betydande tid investering med de flesta command-line gränssnitt. Problemet är att det inte finns några mönster. Memorera är endast sättet att lära dig kommandon och parametrar som du behöver använda regelbundet.
+Learning namnen på kommandon och parametrar kräver en betydande tid investering med de flesta command-line gränssnitt. Problemet är att det inte finns några mönster. Memorera är det enda sättet att lära dig kommandon och parametrar som du behöver använda regelbundet.
 
 När du arbetar med ett nytt kommando eller en parameter, det går inte att du alltid använda det du redan kan. Du måste ta och lär dig ett nytt namn. Traditionellt command-line gränssnitt börja med en liten uppsättning verktyg och växa med inkrementell tillägg. Det är enkelt att se varför det är ingen standard struktur.
 Det ser ut logiska efter kommandonamn eftersom varje kommando är ett separat verktyg. PowerShell har ett bättre sätt att hantera kommandonamn.

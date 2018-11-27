@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Felsöka DSC
-ms.openlocfilehash: 04fb1e9016c508d0e514b51b3cfd6e6f6d5c4974
-ms.sourcegitcommit: 9cabc119f4d59598e12d4a36238a311349082ff0
+ms.openlocfilehash: 844512e390200ed14df2b811dd5997b102a18dd1
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50410022"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321102"
 ---
 # <a name="troubleshooting-dsc"></a>Felsöka DSC
 
@@ -327,7 +327,7 @@ SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Job runs under the following LCM setti
 SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Operation Consistency Check or Pull completed successfully.
 ```
 
-Skicka den **GUID** tilldelats en viss DSC-åtgärd (som returneras av den `Get-xDscOperation` cmldet) att hämta händelseinformationen för den DSC-åtgärden:
+Skicka den **GUID** tilldelats en viss DSC-åtgärd (som returneras av den `Get-xDscOperation` cmdlet) att hämta händelseinformationen för den DSC-åtgärden:
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -JobID 9e0bfb6b-3a3a-11e6-9165-00155d390509

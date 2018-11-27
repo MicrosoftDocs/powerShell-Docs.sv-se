@@ -1,28 +1,28 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: PowerShell cmdlet
 title: ISEFile-objektet
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
-ms.openlocfilehash: 276e8f04a827e18999b5b3ecb08f47de4f4b23b1
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 24549720b8bc35435882533b0eb138de432ede65
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30951400"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320881"
 ---
 # <a name="the-isefile-object"></a>ISEFile-objektet
 
-En **ISEFile** -objektet representerar en fil i Windows PowerShell® Integrated Scripting Environment (ISE). Det är en instans av klassen Microsoft.PowerShell.Host.ISE.ISEFile. Det här avsnittet visar dess medlem metoder och egenskaper. Den **$psISE.CurrentFile** och filerna i samlingen filer i en PowerShell-flik är alla instanser av klassen Microsoft.PowerShell.Host.ISE.ISEFile.
+En **ISEFile** -objektet representerar en fil i Windows PowerShell® Integrated Scripting Environment (ISE). Det är en instans av klassen Microsoft.PowerShell.Host.ISE.ISEFile. Det här avsnittet visas dess medlem metoder och egenskaper. Den **$psISE.CurrentFile** filerna i samlingen filer i en PowerShell-flik är alla instanser av klassen Microsoft.PowerShell.Host.ISE.ISEFile.
 
 ## <a name="methods"></a>Metoder
 
-### <a name="save-saveencoding-"></a>Save\( \[saveEncoding\] \)
+### <a name="save-saveencoding-"></a>Spara\( \[saveEncoding\] \)
 
 Stöds i Windows PowerShell ISE 2.0 och senare.
 
-Filen sparas till disk.
+Sparar filen till disk.
 
-**\[saveEncoding\]**  – valfritt [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) ett valfritt tecken kodning parameter som ska användas för den sparade filen. Standardvärdet är **UTF8**.
+**\[saveEncoding\]**  – valfritt [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) ett valfritt tecken kodning parametern som ska användas för den sparade filen. Standardvärdet är **UTF8**.
 
 ### <a name="exceptions"></a>Undantag
 
@@ -40,20 +40,20 @@ $myfile = $psISE.CurrentFile
 $myfile.Encoding
 ```
 
-### <a name="saveasfilename-saveencoding"></a>SaveAs\(filename, \[saveEncoding\]\)
+### <a name="saveasfilename-saveencoding"></a>Spara\(filnamnet \[saveEncoding\]\)
 
 Stöds i Windows PowerShell ISE 2.0 och senare.
 
-Kodning och sparar filen med det angivna filnamnet.
+Sparar filen med det angivna filnamnet och kodning.
 
-**filnamn** -String-namn som används för att spara filen.
+**filename** -String-namn som används för att spara filen.
 
-**\[saveEncoding\]**  – valfritt [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) ett valfritt tecken kodning parameter som ska användas för den sparade filen. Standardvärdet är **UTF8**.
+**\[saveEncoding\]**  – valfritt [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) ett valfritt tecken kodning parametern som ska användas för den sparade filen. Standardvärdet är **UTF8**.
 
 ### <a name="exceptions"></a>Undantag
 
-- **System.ArgumentNullException**: den **filename** -parametern är null.
-- **System.ArgumentException**: den **filename** parameter är tom.
+- **System.ArgumentNullException**: den **filename** parametern är null.
+- **System.ArgumentException**: den **filename** parametern är tom.
 - **System.IO.IOException**: Det gick inte att spara filen.
 
 ```powershell
@@ -70,7 +70,7 @@ $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 
 Stöds i Windows PowerShell ISE 2.0 och senare.
 
-Den skrivskyddade egenskapen som hämtar den sträng som innehåller namnet på den här filen. Namnet visas på den **filen** fliken överst i redigeraren. Förekomsten av en asterisk \( \* \) anger att filen har ändringar som inte har sparats i slutet av namnet.
+Den skrivskyddade egenskapen som hämtar den sträng som innehåller visningsnamnet för den här filen. Namnet visas på den **filen** fliken högst upp i redigeraren. Förekomsten av en asterisk \( \* \) anger att filen har ändringar som inte har sparats i slutet av namnet.
 
 ```powershell
 # Shows the display name of the file.
@@ -92,7 +92,7 @@ $psISE.CurrentFile.Editor.Text
 
 Stöds i Windows PowerShell ISE 2.0 och senare.
 
-Den skrivskyddade egenskapen som hämtar ursprungliga Filkodning. Det här är en **System.Text.Encoding** objekt.
+Den skrivskyddade egenskapen som hämtar den ursprungliga Filkodning. Det här är en **System.Text.Encoding** objekt.
 
 ```powershell
 # Shows the encoding for the file.
@@ -114,7 +114,7 @@ $psISE.CurrentFile.FullPath
 
 Stöds i Windows PowerShell ISE 2.0 och senare.
 
-Den skrivskyddade boolesk egenskap returnerar **$true** om filen har sparats när den senast ändrades.
+Den skrivskyddade boolesk egenskap som returnerar **$true** om filen har sparats sedan den senast ändrades.
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.
@@ -126,7 +126,7 @@ $myfile.IsSaved
 
 Stöds i Windows PowerShell ISE 2.0 och senare.
 
-Skrivskyddad egenskap som returnerar **$true** om filen har aldrig tilldelats en rubrik.
+Skrivskyddad egenskap som returnerar **$true** om filen har aldrig fått en rubrik.
 
 ```powershell
 # Determines whether the file has never been given a title.
@@ -138,5 +138,5 @@ $psISE.CurrentFile.IsUntitled
 ## <a name="see-also"></a>Se även
 
 - [ISEFileCollectionObject](The-ISEFileCollection-Object.md)
-- [Syftet med Windows PowerShell ISE Scripting Object Model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Syftet med den Windows PowerShell ISE-Skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)

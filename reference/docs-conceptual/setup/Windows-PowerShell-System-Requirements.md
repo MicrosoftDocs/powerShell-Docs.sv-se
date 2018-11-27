@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Windows PowerShell-systemkrav
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 5e1fdb9cb4f10fd71c2d2daf693cb359fddcc5bc
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 8850cf26b0313dfb8898ccb66b4767d695860d4c
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002726"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320745"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell-systemkrav
 Det här avsnittet beskrivs systemkraven för Windows PowerShell 3.0, Windows PowerShell 4.0 och Windows PowerShell 5.0 och Windows PowerShell 5.1 och för särskilda funktioner, till exempel Windows PowerShell Integrated Scripting Environment (ISE), CIM-kommandon, och arbetsflöden.
@@ -87,9 +87,9 @@ Windows PowerShell 4.0 kräver den fullständiga installationen av Microsoft .NE
 
 Windows PowerShell 3.0 kräver den fullständiga installationen av Microsoft .NET Framework 4. Windows 8 och Windows Server 2012 innehåller Microsoft .NET Framework 4.5 som standard, vilket uppfyller det här kravet.
 
-Om du vill installera Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe), se [Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919) på Microsoft Download Center.
+Om du vill installera Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe), se [Microsoft .NET Framework 4.5](https://go.microsoft.com/fwlink/?LinkID=242919) på Microsoft Download Center.
 
-Om du vill installera den fullständiga installationen av Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe), se [Microsoft .NET Framework 4 (Webbinstallationsprogram)](http://go.microsoft.com/fwlink/?LinkID=212931) på Microsoft Download Center.
+Om du vill installera den fullständiga installationen av Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe), se [Microsoft .NET Framework 4 (Webbinstallationsprogram)](https://go.microsoft.com/fwlink/?LinkID=212931) på Microsoft Download Center.
 
 ## <a name="windows-management-framework-40"></a>Windows Management Framework 4.0
 Windows PowerShell 5.0 kräver Windows Management Framework 4.0 ska förinstalleras på Windows Server 2008 R2 SP1 och Windows 7 SP1.
@@ -138,7 +138,7 @@ Information om att lägga till eller installera Windows PowerShell 2.0-motorn oc
 ## <a name="windows-preinstallation-environment"></a>Windows Preinstallation Environment
 Windows PowerShell 2.0, Windows PowerShell 3.0 och Windows PowerShell 4.0 körs i Windows Preinstallation Environment (Windows PE). Följande cmdletar stöds dock inte.
 
-- [Background Intelligent Transfer Service (BITS)-cmdletar](http://go.microsoft.com/fwlink/?LinkId=257514)
+- [Background Intelligent Transfer Service (BITS)-cmdletar](https://go.microsoft.com/fwlink/?LinkId=257514)
 
 - [Get-händelseloggen](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 

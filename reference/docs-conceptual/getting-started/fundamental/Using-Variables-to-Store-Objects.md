@@ -3,17 +3,17 @@ ms.date: 08/27/2018
 keywords: PowerShell cmdlet
 title: Använd variabler för att lagra objekt
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: f4254199facb914c68a487b281b30070c35550a1
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
+ms.openlocfilehash: d166ec58dc658c1b134030c9a9592249ee40d4f5
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353226"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320966"
 ---
 # <a name="using-variables-to-store-objects"></a>Använd variabler för att lagra objekt
 
 PowerShell fungerar med objekt. PowerShell kan du skapa objekt som kallas variabler.
-Variabler namn kan innehålla understreck tecken kan alfanumeriska tecken. När den används i PowerShell, en variabel alltid anges med hjälp av den \$ tecken följt av namnet på variabeln.
+Variabelnamn kan innehålla understreck och alfanumeriska tecken. När den används i PowerShell, en variabel alltid anges med hjälp av den \$ tecken följt av namnet på variabeln.
 
 ## <a name="creating-a-variable"></a>Skapa en variabel
 

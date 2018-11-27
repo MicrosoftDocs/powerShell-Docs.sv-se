@@ -1,22 +1,22 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: PowerShell cmdlet
 title: Listrutor med flera val
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
-ms.openlocfilehash: 81708fd5d7204fb7d136e9d8e808303f4d3f4c30
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: a762145dc197ec7e1424b2fbdcef5e7380d13803
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30954899"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320983"
 ---
-# <a name="multiple-selection-list-boxes"></a>Flera val listrutor
+# <a name="multiple-selection-list-boxes"></a>Listrutor med flera val
 
-Använda Windows PowerShell 3.0 och senare versioner för att skapa en listruta med flera val i ett anpassat formulär för Windows.
+Använda Windows PowerShell 3.0 och senare versioner för att skapa en listruta med flera val i Form av en anpassad Windows.
 
-## <a name="create-list-box-controls-that-allow-multiple-selections"></a>Skapa lista kontroller som gör att flera markeringar
+## <a name="create-list-box-controls-that-allow-multiple-selections"></a>Skapa lista kontroller som Tillåt flera val
 
-Kopiera och klistra in följande i Windows PowerShell ISE och spara den som en Windows PowerShell-skript (.ps1).
+Kopiera och klistra in följande i Windows PowerShell ISE och spara det som ett Windows PowerShell-skript (.ps1).
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -74,19 +74,19 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-Skriptet börjar genom att läsa in två klasser i .NET Framework: **System.Drawing** och **System.Windows.Forms**. Du startar sedan en ny instans av klassen .NET Framework **System.Windows.Forms.Form**; som innehåller ett tomt formulär eller fönster som du kan börja lägga till kontroller.
+Skriptet börjar genom att läsa in två .NET Framework-klasser: **System.Drawing** och **System.Windows.Forms**. Du startar sedan en ny instans av klassen .NET Framework **System.Windows.Forms.Form**; som innehåller ett tomt formulär eller fönster som du kan börja lägga till kontroller.
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
 ```
 
-När du har skapat en instans av klassen formuläret tilldela värden till tre egenskaper i den här klassen.
+När du har skapat en instans av klassen Form tilldela värden till tre egenskaper i den här klassen.
 
-- **Text.** Detta är titeln på fönstret.
+- **Text.** Detta blir titeln på fönstret.
 
-- **Storlek.** Detta är storleken på formuläret i bildpunkter. Det här skriptet skapar ett formulär som är 300 bildpunkter av 200 bildpunkter.
+- **Storlek.** Det här är storleken på formuläret i bildpunkter. Det här skriptet skapar ett formulär som är 300 bildpunkter på bredden 200 bildpunkter.
 
-- **StartingPosition.** Den här valfria egenskapen **CenterScreen** i det här skriptet. Om du inte lägger till den här egenskapen, väljer en plats i Windows när formuläret öppnas. Genom att ange den **StartingPosition** till **CenterScreen**, du automatiskt visar formuläret på skärmen för varje gång den läses in.
+- **StartingPosition.** Den här valfria egenskapen anges till **CenterScreen** i föregående skript. Om du inte lägger till den här egenskapen, väljer en plats i Windows när formuläret öppnas. Genom att ange den **StartingPosition** till **CenterScreen**, du automatiskt visar formuläret mitt på skärmen varje gång den läses in.
 
 ```powershell
 $form.Text = 'Data Entry Form'
@@ -94,7 +94,7 @@ $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = 'CenterScreen'
 ```
 
-Skapa sedan en **OK** knappen för formuläret. Ange storlek och hur den **OK** knappen. I det här exemplet är knappen positionen 120 bildpunkter från formulärets övre kant och 75 bildpunkter från den vänstra kanten. Knappen höjden är 23 bildpunkter när knappen är 75 bildpunkter. Skriptet använder fördefinierade Windows Forms-typer för att fastställa knappen beteenden.
+Skapa sedan en **OK** knappen för formuläret. Ange storlek och beteendet för den **OK** knappen. I det här exemplet är knappen positionen 120 bildpunkter från formulärets övre kant och 75 bildpunkter från den vänstra kanten. Knappen höjden är 23 bildpunkter, medan den knapp längden är 75 bildpunkter. Skriptet använder fördefinierade Windows Forms-typer för att fastställa knappen beteenden.
 
 ```powershell
 $OKButton = New-Object System.Windows.Forms.Button
@@ -106,7 +106,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-På liknande sätt kan du skapa en **Avbryt** knappen. Den **Avbryt** knappen är 120 bildpunkter uppifrån, men 150 bildpunkter från vänster i fönstret.
+På samma sätt kan du skapa en **Avbryt** knappen. Den **Avbryt** knappen är 120 bildpunkter uppifrån, men 150 pixlar från den vänstra kanten av fönstret.
 
 ```powershell
 $CancelButton = New-Object System.Windows.Forms.Button
@@ -118,7 +118,7 @@ $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 ```
 
-Ange sedan etikettexten på fönstret som beskriver den information som du vill att användarna ska ange.
+Ange därefter etikettext på din fönster som beskriver den information du vill att användarna måste ange.
 
 ```powershell
 $label = New-Object System.Windows.Forms.Label
@@ -128,7 +128,7 @@ $label.Text = 'Please make a selection from the list below:'
 $form.Controls.Add($label)
 ```
 
-Lägg till kontrollen (i det här fallet en listruta) som gör att användarna anger du den information som du har beskrivs i din etikettext. Det finns många andra kontroller som du kan använda förutom textrutor; fler kontroller finns [System.Windows.Forms Namespace](http://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) på MSDN.
+Lägg till kontrollen (i det här fallet en listruta) som användarna kan ange den information som du har som beskrivs i din etikettext. Det finns många andra kontroller som du kan använda förutom textrutor; Läs fler kontroller [System.Windows.Forms Namespace](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) på MSDN.
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.Listbox
@@ -142,7 +142,7 @@ Här är hur du anger att du vill tillåta användare att välja flera värden i
 $listBox.SelectionMode = 'MultiExtended'
 ```
 
-I nästa avsnitt anger du de värden du vill ska visas för användarna.
+I nästa avsnitt anger du de värden som du vill ska visas för användarna.
 
 ```powershell
 [void] $listBox.Items.Add('Item 1')
@@ -152,26 +152,26 @@ I nästa avsnitt anger du de värden du vill ska visas för användarna.
 [void] $listBox.Items.Add('Item 5')
 ```
 
-Ange maximala höjd på listruta.
+Ange Listrutekontrollen maximala höjd.
 
 ```powershell
 $listBox.Height = 70
 ```
 
-Lägga till listruta i formuläret och instruerar Windows för att öppna formuläret på andra fönster och dialogrutor när den öppnas.
+Lägga till listruta i formuläret och ber Windows att öppna formuläret ovanpå andra fönster och dialogrutor när den öppnas.
 
 ```powershell
 $form.Controls.Add($listBox)
 $form.Topmost = $true
 ```
 
-Lägg till följande kod för att visa formulär i Windows.
+Lägg till följande rad med kod för att visa formuläret i Windows.
 
 ```powershell
 $result = $form.ShowDialog()
 ```
 
-Slutligen kod inuti den **om** block instruerar Windows vad ska göras med formuläret när användare väljer ett eller flera alternativ i listrutan och klicka sedan på den **OK** knappen eller tryck på den **RETUR**  nyckel.
+Koden i den **om** block instruerar Windows vad som ska göras med formuläret när användare väljer ett eller flera alternativ i listrutan och klicka sedan på den **OK** knapp eller genom att trycka på den **RETUR**  nyckel.
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
@@ -183,6 +183,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>Se även
 
-- [Hey Scripting Guy: Varför exemplen PowerShell-Gränssnittet fungerar inte?](http://go.microsoft.com/fwlink/?LinkId=506644)
+- [Hey Scripting Guy: Varför exemplen PowerShell-Gränssnittet fungerar inte?](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell-tips i veckan: flera Select-listan rutor- och mycket mer!](http://technet.microsoft.com/library/ff730950.aspx)
+- [Windows PowerShell veckans tips: flerval lista rutorna- och mycket mer!](https://technet.microsoft.com/library/ff730950.aspx)

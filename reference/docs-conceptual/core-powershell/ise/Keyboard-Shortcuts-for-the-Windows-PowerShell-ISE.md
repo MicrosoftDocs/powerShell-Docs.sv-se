@@ -1,40 +1,40 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: PowerShell cmdlet
 title: Kortkommandon för Windows PowerShell ISE
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: e17fee4cf0cc8ac7aa0bb36acde3b452919312d0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953828"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320813"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Kortkommandon för Windows PowerShell ISE
 
-Använd följande kortkommandon för att utföra åtgärder i Windows PowerShell® Integrated Scripting Environment (ISE). Windows PowerShell ISE är tillgänglig som en del av Windows Server och Windows klientoperativsystem, men kan också installeras på en del äldre Windows-operativsystem som en del av den [Windows Management Framework 4.0-paketet](http://go.microsoft.com/fwlink/?LinkID=293881).
+Du kan använda följande kortkommandon för att utföra åtgärder i Windows PowerShell® Integrated Scripting Environment (ISE). Windows PowerShell ISE är tillgänglig som en del av Windows Server- och Windows klientoperativsystem, men kan även installeras på vissa äldre Windows-operativsystem som en del av den [paketet Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881).
 
-## <a name="keyboard-shortcuts-for-editing-text"></a>Kortkommandon för textredigering
+## <a name="keyboard-shortcuts-for-editing-text"></a>Kortkommandon för att redigera text
 
 Du kan använda följande kortkommandon när du redigerar text.
 
 |Åtgärd|Kortkommandon|Använd i|
 |----------|----------------------|----------|
-|**Hjälp**|F1|Script fönstret **viktigt:** kan du ange att F1 hjälp hämtas från TechNet-biblioteket på webben eller hämtas hjälpen (se Update-Help). Klicka för att välja **verktyg**, **alternativ**, sedan på den **allmänna inställningar**fliken, ange eller ta bort **använda lokala hjälpinnehållet i stället för online-innehåll.**|
-|**Kopiera**|CTRL+C|Skript, kommando-rutan, ruta utdata|
-|**Klipp ut**|CTRL+X|Skriptfönster kommandot fönstret|
-|**Visa eller Dölj disposition**|CTRL+M|Skriptfönster|
-|**Sök i skript**|CTRL+F|Skriptfönster|
-|**Sök nästa i skript**|F3|Skriptfönster|
-|**Sök föregående i skript**|SKIFT + F3|Skriptfönster|
-|**Sök efter matchande klammerparentes**|CTRL+]|Skriptfönster|
-|**Klistra in**|CTRL+V|Skriptfönster kommandot fönstret|
-|**Redo**|CTRL+Y|Skriptfönster kommandot fönstret|
-|**Ersätt i skript**|CTRL+H|Skriptfönster|
-|**Spara**|CTRL+S|Skriptfönster|
-|**Markera alla**|CTRL+A|Skript, kommando-rutan, ruta utdata|
-|**Visa kodavsnitt**|CTRL+J|Skriptfönster kommandot fönstret|
-|**Ångra**|CTRL+Z|Skriptfönster kommandot fönstret|
+|**Hjälp**|F1|Skriptet fönstret **viktigt:** kan du ange att F1 hjälp kommer från TechNet-biblioteket på webben eller hämtas hjälpen (se Update-Help). Klicka för att välja **verktyg**, **alternativ**, sedan på den **allmänna inställningar**fliken, ställa in eller ta bort **använda lokala hjälpinnehållet i stället för onlineinnehåll.**|
+|**Kopiera**|CTRL+C|Skript, kommando fönstret, ruta utdata|
+|**Klipp ut**|CTRL + X|Skriptfönstret, kommandot fönstret|
+|**Visa eller Dölj disposition**|CTRL+M|Skriptfönstret|
+|**Hitta i skriptet**|CTRL+F|Skriptfönstret|
+|**Sök nästa i skriptet**|F3|Skriptfönstret|
+|**Sök föregående i skriptet**|SKIFT + F3|Skriptfönstret|
+|**Sök efter matchande klammerparentes**|CTRL +]|Skriptfönstret|
+|**Klistra in**|CTRL+V|Skriptfönstret, kommandot fönstret|
+|**Gör om**|CTRL + Y|Skriptfönstret, kommandot fönstret|
+|**Ersätt i skriptet**|CTRL + H|Skriptfönstret|
+|**Spara**|CTRL+S|Skriptfönstret|
+|**Markera alla**|CTRL+A|Skript, kommando fönstret, ruta utdata|
+|**Visa kodfragment**|CTRL+J|Skriptfönstret, kommandot fönstret|
+|**Ångra**|CTRL + Z|Skriptfönstret, kommandot fönstret|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Kortkommandon för att köra skript
 
@@ -42,13 +42,13 @@ Du kan använda följande kortkommandon när du kör skript i skriptfönstret.
 
 |Åtgärd|Kortkommando|
 |----------|---------------------|
-|**Ny**|CTRL+N|
-|**Öppna**|CTRL+O|
+|**Ny**|CTRL + N|
+|**Öppna**|CTRL + O|
 |**Kör**|F5|
-|**Kör markering**|F8|
-|**Stoppa körning**|CTRL+BREAK. CTRL + C kan användas när kontexten är entydigt (när det finns ingen text som valts).|
-|**Fliken** (för att nästa skript)|CTRL + TABB **Obs:** att nästa skriptet fungerar endast när du har en enda Windows PowerShell-flik öppen, eller när du har mer än en Windows PowerShell-flik öppen, men fokus ligger i skriptfönstret.|
-|**Fliken** (för att tidigare skript)|CTRL + SKIFT + TABB **Obs:** att föregående skriptet fungerar när du har en enda Windows PowerShell fliken Öppna, eller om du har mer än en Windows PowerShell-flik öppen och fokus ligger i skriptfönstret.|
+|**Kör val**|F8|
+|**Stoppa körning**|CTRL + BREAK. CTRL + C kan användas när kontexten är entydiga (när det finns ingen text är markerad).|
+|**Fliken** (till nästa skript)|CTRL + TABB **Obs:** fliken till nästa skript fungerar bara när du har en enda Windows PowerShell-flik öppnas eller när du har fler än en Windows PowerShell-flik öppnas, men fokus ligger i skriptfönstret.|
+|**Fliken** (till föregående skript)|CTRL + SKIFT + TABB **Obs:** fliken till föregående skript fungerar när du har bara en Windows PowerShell fliken öppen eller om du har fler än en Windows PowerShell-flik öppnas och fokus ligger i skriptfönstret.|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Kortkommandon för att anpassa vyn
 
@@ -58,13 +58,13 @@ Du kan använda följande kortkommandon för att anpassa vyn i Windows PowerShel
 |----------|---------------------|
 |**Gå till kommandot (v2) eller konsolen (v3 och senare) fönstret**|CTRL+D|
 |**Gå till rutan Testutdata (v2)**|CTRL + SKIFT + O|
-|**Gå till Skriptfönster**|CTRL+I|
-|**Visa Skriptfönster**|CTRL+R|
-|**Dölj Skriptfönster**|CTRL+R|
-|**Flytta Skriptfönster upp**|CTRL+1|
-|**Flytta Skriptfönster åt höger**|CTRL+2|
-|**Maximera Skriptfönster**|CTRL+3|
-|**Zooma In**|CTRL+PLUS SIGN|
+|**Gå till skriptfönstret**|CTRL + I|
+|**Visa skriptfönstret**|CTRL + R|
+|**Dölj skriptfönstret**|CTRL + R|
+|**Flytta skriptfönstret upp**|CTRL+1|
+|**Flytta skriptfönstret åt höger**|CTRL+2|
+|**Maximera skriptfönstret**|CTRL + 3|
+|**Zooma In**|CTRL + PLUSTECKEN|
 |**Zooma ut**|CTRL + MINUSTECKEN|
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Kortkommandon för att felsöka skript
@@ -73,30 +73,30 @@ Du kan använda följande kortkommandon när du felsöker skript.
 
 |Åtgärd|Kortkommando|Använd i|
 |----------|---------------------|----------|
-|**Kör/fortsätta**|F5|Skriptfönster vid felsökning av ett skript|
-|**Gå till**|F11|Skriptfönster vid felsökning av ett skript|
-|**Hoppa över**|F10|Skriptfönster vid felsökning av ett skript|
-|**Gå ut**|SKIFT + F11|Skriptfönster vid felsökning av ett skript|
-|**Visa anropsstacken**|CTRL + SKIFT + D|Skriptfönster vid felsökning av ett skript|
-|**Brytpunkter i listan**|CTRL + SKIFT + L|Skriptfönster vid felsökning av ett skript|
-|**Brytpunkt**|F9|Skriptfönster vid felsökning av ett skript|
-|**Ta bort alla brytpunkter**|CTRL + SKIFT + F9|Skriptfönster vid felsökning av ett skript|
-|**Stoppa felsökare**|SKIFT + F5|Skriptfönster vid felsökning av ett skript|
+|**Kör/fortsätta**|F5|När du felsöker ett skript skriptfönstret|
+|**Stega in**|F11|När du felsöker ett skript skriptfönstret|
+|**Hoppa över**|F10|När du felsöker ett skript skriptfönstret|
+|**Stega ut**|SKIFT + F11|När du felsöker ett skript skriptfönstret|
+|**Visa anropsstacken**|CTRL + SKIFT + D|När du felsöker ett skript skriptfönstret|
+|**Lista brytpunkter**|CTRL + SKIFT + L|När du felsöker ett skript skriptfönstret|
+|**Brytpunkt**|F9|När du felsöker ett skript skriptfönstret|
+|**Ta bort alla brytpunkter**|CTRL + SKIFT + F9|När du felsöker ett skript skriptfönstret|
+|**Stoppa felsökare**|SKIFT + F5|När du felsöker ett skript skriptfönstret|
 
 > [!NOTE]
-> Du kan också använda kortkommandon som är utformade för Windows PowerShell-konsolen när du felsöker skript i Windows PowerShell ISE. Om du vill använda dessa kortkommandon du skriver kortkommandot i fönstret kommando och tryck på RETUR.
+> Du kan också använda kortkommandon som är utformad för Windows PowerShell-konsolen när du felsöker skript i Windows PowerShell ISE. Om du vill använda dessa genvägar, måste du skriver genvägen i fönstret kommando och tryck på RETUR.
 
 |Åtgärd|Kortkommando|Använd i|
 |----------|---------------------|----------|
-|**Fortsätt**|C|Konsolfönstret vid felsökning av ett skript|
-|**Gå till**|S|Konsolfönstret vid felsökning av ett skript|
-|**Hoppa över**|V|Konsolfönstret vid felsökning av ett skript|
-|**Gå ut**|O|Konsolfönstret vid felsökning av ett skript|
-|**Upprepa senaste kommandot** (för steget till eller hoppa över)|RETUR|Konsolfönstret vid felsökning av ett skript|
-|**Visa anropsstacken**|K|Konsolfönstret vid felsökning av ett skript|
-|**Stoppa felsökningen**|Q|Konsolfönstret vid felsökning av ett skript|
-|**Visa en lista med skriptet**|L|Konsolfönstret vid felsökning av ett skript|
-|**Visa konsolen felsökning kommandon**|H eller?|Konsolfönstret vid felsökning av ett skript|
+|**Fortsätta**|C|Konsolfönstret när du felsöker ett skript|
+|**Stega in**|S|Konsolfönstret när du felsöker ett skript|
+|**Hoppa över**|V|Konsolfönstret när du felsöker ett skript|
+|**Stega ut**|O|Konsolfönstret när du felsöker ett skript|
+|**Upprepa sista kommandot** (för steget på eller hoppa över)|RETUR|Konsolfönstret när du felsöker ett skript|
+|**Visa anropsstacken**|K|Konsolfönstret när du felsöker ett skript|
+|**Stoppa felsökningen**|FRÅGOR OCH|Konsolfönstret när du felsöker ett skript|
+|**Lista över skriptet**|L|Konsolfönstret när du felsöker ett skript|
+|**Visa konsolen felsökning kommandon**|H eller?|Konsolfönstret när du felsöker ett skript|
 
 ## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Kortkommandon för Windows PowerShell-flikar
 
@@ -104,20 +104,20 @@ Du kan använda följande kortkommandon när du använder Windows PowerShell-fli
 
 |Åtgärd|Kortkommando|
 |----------|---------------------|
-|**Stäng fliken PowerShell**|CTRL+W|
-|**Nya PowerShell-fliken**|CTRL+T|
-|**Föregående PowerShell flik**|CTRL + SKIFT + TABB. Den här genvägen fungerar endast när inga filer är öppna på en Windows PowerShell-flik.|
-|**Nästa flik för Windows PowerShell**|CTRL + TABB. Den här genvägen fungerar endast när inga filer är öppna på en Windows PowerShell-flik.|
+|**Stäng PowerShell-flik**|CTRL + W|
+|**Nya PowerShell-flik**|CTRL + T|
+|**Föregående PowerShell-flik**|CTRL + SKIFT + TABB. Den här genvägen fungerar bara när det finns inga filer är öppna på alla Windows PowerShell-flik.|
+|**Nästa Windows PowerShell-flik**|CTRL + TABB. Den här genvägen fungerar bara när det finns inga filer är öppna på alla Windows PowerShell-flik.|
 
-## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Kortkommandon för att starta och avsluta
+## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Kortkommandon för att starta och avslutas
 
-Du kan använda följande kortkommandon om du vill starta Windows PowerShell-konsolen (PowerShell.exe) eller avsluta Windows PowerShell ISE.
+Du kan använda följande kortkommandon för att starta Windows PowerShell-konsolen (PowerShell.exe) eller för att avsluta Windows PowerShell ISE.
 
 |Åtgärd|Kortkommando|
 |----------|---------------------|
-|**Exit**|ALT+F4|
-|**Starta PowerShell.exe** (Windows PowerShell-konsol)|CTRL + SKIFT + P|
+|**Avsluta**|ALT+F4|
+|**Starta PowerShell.exe** (Windows PowerShell-konsolen)|CTRL + SKIFT + P|
 
 ## <a name="see-also"></a>Se även
 
-- [PowerShell Magazine: En fullständig lista över kortkommandon i Windows PowerShell ISE](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
+- [PowerShell-tidningen: Den fullständiga listan med kortkommandon för Windows PowerShell ISE](https://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)

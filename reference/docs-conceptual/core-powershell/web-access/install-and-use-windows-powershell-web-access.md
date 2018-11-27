@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell cmdlet
 title: Installera och använda windows powershell-webbåtkomst
-ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48851332"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320694"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installera och använda Windows PowerShell-webbåtkomst
 
@@ -25,7 +25,7 @@ När du har rätt gateway-konfiguration, kan användare komma åt en Windows Pow
 
 Windows PowerShell-webbåtkomst installation och konfiguration är en process i tre steg:
 
-1. [Installera Windows PowerShell-webbåtkomst](#install-windows-powershell-web-access)
+1. [Installera Windows PowerShell-webbåtkomst](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [Konfigurera gatewayen](#configure-the-gateway)
 1. [Konfigurera en regel för begränsad auktorisering](#configure-a-restrictive-authorization-rule)
 
@@ -75,7 +75,7 @@ För att använda Windows PowerShell-webbåtkomst webbaserade konsolen måste ku
 
 Du kan installera Windows PowerShell Web Access-gatewayen på en server som kör Windows Server 2012 R2 eller Windows Server 2012 med antingen Windows PowerShell-cmdlets eller genom att använda Lägg till roller och funktioner som guiden som öppnas från i Server Manager. Använda Windows PowerShell-cmdletar för snabb installation och konfiguration, enligt beskrivningen i det här avsnittet.
 
-1. [Installera Windows PowerShell-webbåtkomst](#install-Windows-powershell-web-access)
+1. [Installera Windows PowerShell-webbåtkomst](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [Konfigurera gatewayen](#configure-the-gateway)
 1. [Konfigurera en regel för begränsad auktorisering](#configure-a-restrictive-authorization-rule)
 
@@ -189,7 +189,7 @@ Som standard installerar cmdleten webbprogrammet, **pswa** (och en programpool f
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>Konfigurera en regel för begränsad auktorisering
 
-När Windows PowerShell Web Access har installerats och gatewayen har konfigurerats, kan användarna öppna på inloggningssidan i en webbläsare, men de kan inte logga in förrän Windows PowerShell Web Access-administratören ger dem uttrycklig åtkomst. Windows PowerShell Web Access-åtkomstkontroll hanteras med hjälp av uppsättning Windows PowerShell cmdlets som beskrivs i följande tabell. Det finns ingen jämförbar GUI för att lägga till eller hantera auktoriseringsregler. Mer detaljerad information om Windows PowerShell Web Access-cmdlets finns i cmdlet-referensavsnittet [Windows PowerShell-cmdletar för webbåtkomst](cmdlets/web-access-cmdlets.md).
+När Windows PowerShell Web Access har installerats och gatewayen har konfigurerats, kan användarna öppna på inloggningssidan i en webbläsare, men de kan inte logga in förrän Windows PowerShell Web Access-administratören ger dem uttrycklig åtkomst. Windows PowerShell Web Access-åtkomstkontroll hanteras med hjälp av uppsättning Windows PowerShell cmdlets som beskrivs i följande tabell. Det finns ingen jämförbar GUI för att lägga till eller hantera auktoriseringsregler. Mer detaljerad information om Windows PowerShell Web Access-cmdlets finns i cmdlet-referensavsnittet [Windows PowerShell-cmdletar för webbåtkomst](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Mer information om Windows PowerShell-webbåtkomst auktoriseringsregler och säkerhet finns i [auktoriseringsregler och säkerhet funktioner i Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
@@ -360,7 +360,7 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
 
 ### <a name="configuring-a-restrictive-authorization-rule"></a>Konfigurera en regel för begränsad auktorisering
 
-När Windows PowerShell Web Access har installerats och gatewayen har konfigurerats, kan användarna öppna på inloggningssidan i en webbläsare, men de kan inte logga in förrän Windows PowerShell Web Access-administratören ger dem uttrycklig åtkomst. Windows PowerShell Web Access-åtkomstkontroll hanteras med hjälp av uppsättning Windows PowerShell cmdlets som beskrivs i följande tabell. Det finns ingen jämförbar GUI för att lägga till eller hantera auktoriseringsregler. Mer detaljerad information om Windows PowerShell Web Access-cmdlets finns i cmdlet-referensavsnittet [Windows PowerShell-cmdletar för webbåtkomst](cmdlets/web-access-cmdlets.md).
+När Windows PowerShell Web Access har installerats och gatewayen har konfigurerats, kan användarna öppna på inloggningssidan i en webbläsare, men de kan inte logga in förrän Windows PowerShell Web Access-administratören ger dem uttrycklig åtkomst. Windows PowerShell Web Access-åtkomstkontroll hanteras med hjälp av uppsättning Windows PowerShell cmdlets som beskrivs i följande tabell. Det finns ingen jämförbar GUI för att lägga till eller hantera auktoriseringsregler. Mer detaljerad information om Windows PowerShell Web Access-cmdlets finns i cmdlet-referensavsnittet [Windows PowerShell-cmdletar för webbåtkomst](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Mer information om Windows PowerShell-webbåtkomst auktoriseringsregler och säkerhet finns i [auktoriseringsregler och säkerhet funktioner i Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
@@ -404,7 +404,7 @@ Använd alltid ett giltigt SSL-certifikat som har signerats av en certifikatutf�
 1. I den **åtgärder** fönstret, gör du något av följande. Mer information om hur du konfigurerar servercertifikat i IIS finns i [konfigurera servercertifikat i IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
 
    - Klicka på **importera** att importera ett befintligt giltigt certifikat från en plats i nätverket.
-   - Klicka på **skapa certifikatbegäran** att begära ett certifikat från en Certifikatutfärdare som [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), eller [GeoTrust](https://www.geotrust.com/). Certifikatets nätverksnamn måste matcha värdhuvudet i begäran.
+   - Klicka på **skapa certifikatbegäran** att begära ett certifikat från en Certifikatutfärdare som [VeriSign](https://www.verisign.com/), [Thawte](https://www.thawte.com/), eller [GeoTrust](https://www.geotrust.com/). Certifikatets nätverksnamn måste matcha värdhuvudet i begäran.
 
      Exempel: om klientwebbläsaren begär `http://www.contoso.com/`, nätverksnamn måste också vara `http://www.contoso.com/`. Det här är det mest säkra och rekommenderade alternativet för att tillhandahålla gateway för Windows PowerShell-webbåtkomst med ett certifikat.
 
