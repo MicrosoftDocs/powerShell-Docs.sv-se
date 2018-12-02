@@ -3,22 +3,23 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery
 title: Gallerisökning
-ms.openlocfilehash: 9aadb6771c85845cc3fa05cb56f0194b060d1c1b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004147"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742864"
 ---
 # <a name="gallery-search-syntax"></a>Gallerisökning
 
-PowerShell-galleriet erbjuder en text searchbox där du kan använda ord och fraser nyckelordet uttryck för att begränsa sökresultaten.
+Du kan söka i PowerShell-galleriet med hjälp av den [PowerShell-galleriet webbplats](https://www.powershellgallery.com/).
+Webbplats för PowerShell-galleriet erbjuder en text searchbox där du kan använda ord och fraser nyckelordet uttryck för att begränsa sökresultaten.
 
 ## <a name="search-by-keywords"></a>Sök efter nyckelord
 
     dsc azure sql
 
-Sök gör sitt bästa för att hitta relevant dokument som innehåller alla 3 nyckelord och returnera matchande dokument.
+Sök försöker hitta relevant dokument som innehåller alla 3 nyckelord och returnera matchande dokument.
 
 ## <a name="search-using-phrases-and-keywords"></a>Söka med fraser och nyckelord
 
@@ -37,10 +38,9 @@ De sökbara fälten är för närvarande ”Id”, ”Version”, ”-taggar”,
 
 ## <a name="examples"></a>Exempel
 
-    ID:"PSReadline"
-    id:"AzureRM.Profile"
-
-söker efter paket med ”PSReadline” eller ”AzureRM.Profile” i ID-fältet respektive.
+    ID:PSReadline
+    
+söker efter paket med ett ID som innehåller ”PSReadline”.
 
     Id:"AzureRM.Profile"
 
@@ -50,40 +50,35 @@ söker efter paket med ”PSReadline” eller ”AzureRM.Profile” i ID-fältet
 
     Id:"azure"
 
-Du får resultat som 'AzureRM.Profile' och 'Azure.Storage'.
+Detta ger resultat som innehåller AzureRM.Profile' och 'Azure.Storage'.
 
-Du kan också söka efter flera nyckelord i ett enda fält. Eller blanda och matcha fält.
+Du kan också söka efter flera nyckelord i ett enda fält. 
 
     id:azure tags:intellisense
-    id:azure id:storage
 
-Och du kan utföra frasen sökningar:
+Och du kan utföra frasen sökningar med dubbla citattecken:
 
     id:"azure.storage"
 
-
 Att söka efter alla paket med DSC-tagg.
 
-    Tags:"DSC"
+    Tags:DSC
 
 Att söka efter alla paket med den angivna funktionen.
 
-    Functions:"Update-AzureRM"
+    Functions:Get-TreeSize
 
 Att söka efter alla paket med angivna cmdlet.
 
-    Cmdlets:"Get-AzureRmEnvironment"
+    Cmdlets:Get-AzureRmEnvironment
 
 Att söka efter alla paket med det angivna namnet för DSC-resurs.
 
-    DscResources:"xArchive"
+    DscResources:xArchive
 
 Att söka efter alla paket med den angivna PowerShellVersion
 
-    PowerShellVersion:"5.0"
-    PowerShellVersion:"3.0"
-    PowerShellVersion:"2.0"
-
+    PowerShellVersion:2.0
 
 Slutligen, om du använder ett fält som inte stöds, till exempel kommandon, vi bara ignorera det och söka i alla fält. Så följande fråga
 

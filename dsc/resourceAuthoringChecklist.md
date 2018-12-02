@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Checklista för resursskapande
-ms.openlocfilehash: 91942a174bc6f38fa77c1925dc3c690ecf2ab34b
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 2b6e972776dba4ecc6fd1ab5c21361d653e1a469
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893563"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742847"
 ---
 # <a name="resource-authoring-checklist"></a>Checklista för resursskapande
 
@@ -85,7 +85,7 @@ If ($error.count –ne 0) {
 
 ## <a name="resource-is-idempotent-in-the-positive-case"></a>Resursen är idempotenta positivt om
 
-En av de grundläggande egenskaperna för DSC-resurser är att idempotence. Det innebär att tillämpa en DSC-konfiguration som innehåller den här resursen flera gånger kommer alltid att uppnå samma resultat. Om till exempel skapar vi en konfiguration som innehåller följande filresurs:
+En av de grundläggande egenskaperna för DSC-resurser är idempotence. Det innebär att tillämpa en DSC-konfiguration som innehåller den här resursen flera gånger kommer alltid att uppnå samma resultat. Om till exempel skapar vi en konfiguration som innehåller följande filresurs:
 
 ```powershell
 File file {

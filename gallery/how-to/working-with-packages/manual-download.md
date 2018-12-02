@@ -3,16 +3,16 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: galleriet, powershell, psgallery
 title: Manuell paketnedladdning
-ms.openlocfilehash: 0952aa4ec474850af5219fb2e0e9ee3e954b0f9a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 57baa14089b803f58c42ccb54553ecace841e34b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004144"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742830"
 ---
 # <a name="manual-package-download"></a>Manuell paketnedladdning
 
-Powershell-galleriet har stöd för ett paket laddades ned från webbplatsen direkt, utan att använda PowerShellGet-cmdletar. Paketet laddas ned som ett NuGet-paketet (.nupkg)-fil som kan sedan enkelt kopieras till en intern lagringsplats.
+Powershell-galleriet har stöd för ett paket laddades ned från webbplatsen direkt, utan att använda PowerShellGet-cmdletar. Du kan hämta alla paket som en NuGet-paketet (.nupkg)-fil som du sedan kan kopiera till en intern lagringsplats.
 
 > [!NOTE]
 > Ladda ned manuell paket är **inte** avsedd som en ersättning för cmdleten Install-Module.
@@ -45,7 +45,7 @@ Den enklaste metoden är att ta bort NuGet-specifika elementen från mappen. Det
 1. Extrahera innehållet i NuGet-paketet till en lokal mapp.
 2. Ta bort NuGet-specifika elementen från mappen.
 3. Byt namn på mappen. Standardnamnet på mappen är vanligtvis `<name>.<version>`. Versionen kan innehålla ”-förhandsversion” om modulen har märkts som en förhandsversion. Byt namn på mappen till bara modulens namn. Till exempel ”azurerm.storage.5.0.4 förhandsversion” till ”azurerm.storage”.
-4. Kopiera mappen till din PSModulePath.
+4. Kopiera mappen till en av mapparna i den `$env:PSModulePath value`. `$env:PSModulePath` är en semikolonavgränsad lista uppsättning sökvägar där PowerShell bör se ut för moduler.
 
 > [!IMPORTANT]
 > Manuell hämtning inkluderar inte eventuella beroenden som krävs av modulen. Om paketet har beroenden, måste de installeras i systemet så att den här modulen ska fungera korrekt. PowerShell-galleriet visar alla beroenden som krävs av paketet.
