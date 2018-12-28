@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: galleriet, powershell, cmdlet, psget
 title: Moduler med kompatibla PowerShell-utgåvor
-ms.openlocfilehash: 0a95b47b506fbdddbb98b455a1d10d0f08ce402b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: bda924393d37ea1596fbf0d813c10cbdea33c218
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002692"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655335"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Moduler med kompatibla PowerShell-utgåvor
 
 Från och med version 5.1 finns PowerShell i olika utgåvor som anger olika funktionsuppsättningar och plattformskompatibilitet.
 
-- **Desktop Edition:** bygger på .NET Framework och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på fullständiga utgåvor av Windows, till exempel Server Core och Windows Desktop.
-- **Core Edition:** bygger på .NET Core och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på begränsade utgåvor av Windows som Nano Server och Windows IoT.
+- **Desktop Edition:** Bygger på .NET Framework och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på fullständiga utgåvor av Windows, till exempel Server Core och Windows-skrivbordet.
+- **Core Edition:** Bygger på .NET Core och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på begränsade utgåvor av Windows som Nano Server och Windows IoT.
 
 Vilken utgåva av PowerShell visas i PSEdition-egenskapen i `$PSVersionTable`.
 
@@ -260,6 +260,6 @@ Find-Module -Tag PSEdition_Core
 
 [Skript med PSEditions](script-psedition-support.md)
 
-[Stöd för PSEditions på PowerShellGallery](../how-to/finding-packages/searching-by-psedition.md)
+[Stöd för PSEditions på PowerShellGallery](../how-to/finding-packages/searching-by-compatibility.md)
 
 [Uppdatera modulmanifestet](/powershell/module/powershellget/update-modulemanifest)

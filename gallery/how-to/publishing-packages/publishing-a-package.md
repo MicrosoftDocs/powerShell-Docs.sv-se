@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery
 title: Skapa och publicera ett objekt
-ms.openlocfilehash: ced892b558b81c3ef9575b5a01e74932515b412a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 3875c7ae8231f254e655f149c788503cb0b3077c
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004150"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655437"
 ---
 # <a name="creating-and-publishing-an-item"></a>Skapa och publicera ett objekt
 
@@ -36,7 +36,7 @@ När du har skapat ett konto kan få du API-nyckel som behövs för att publicer
 När du har loggat in med kontot visas ditt användarnamn högst upp på sidorna PowerShell-galleriet i stället för att registrera dig.
 När du klickar på ditt användarnamn tar dig till sidan mitt konto där du hittar API-nyckeln.
 
-Obs: API-nyckel behandlas så säkert som ditt inloggningsnamn och lösenord.
+Obs! API-nyckel behandlas så säkert som ditt inloggningsnamn och lösenord.
 Med den här nyckeln kan du eller någon annan, uppdatera ett objekt som du äger i PowerShell-galleriet.
 Vi rekommenderar att du uppdaterar nyckeln regelbundet, som kan göras med återställning av nyckel på sidan med mitt konto.
 
@@ -56,10 +56,11 @@ PrivateData har stöd för att lägga till nya nycklar så att de som är specif
 Manifest element som är viktigast att fylla i för objektet som du publicerar till PowerShell-galleriet är:
 
 - Skript eller Modulnamn – de som hämtas från namnen på den. Ps1 för ett skript eller. PSD1 för en modul.
-- Version – det här är en obligatorisk primärnyckel, format bör följa SemVer riktlinjer (Se metodtips för information)
-- Författare - detta är en obligatorisk primär nyckel och innehåller namnet som ska associeras med objektet (se författare och ägare, nedan)
+- Version – det här är en obligatorisk primärnyckel, format bör följa SemVer riktlinjer. Mer information finns i metodtips.
+- Författare – detta är en obligatorisk primärnyckel och innehåller namnet som ska associeras med objektet. Se författare och ägare nedan.
 - Beskrivning – det här är en obligatorisk primär nyckel som används för att kortfattat beskriver vad som gör det här objektet och alla krav för att använda den
 - ProjectURI – detta är ett rekommenderas starkt URI-fält i PSData som innehåller en länk till en Github-lagringsplats eller liknande plats där du utför utveckling på objektet
+- -Taggar – det är en stark rekommendation att tagga ditt paket baserat på dess kompatibilitet med PSEditions och plattformar. Se [publiceringsriktlinjerna](/powershell/gallery/concepts/publishing-guidelines.md#tag-your-package-with-the-compatible-pseditions-and-platforms) mer information.
 
 Författare och ägare av PowerShell-galleriet är relaterade begrepp, men matchar inte alltid.
 Objektägare är användare med PowerShell-galleriet konton som har behörighet att behålla objektet. Det kan finnas många ägare som kan uppdatera ett objekt.
@@ -104,7 +105,7 @@ De flesta av de andra alternativen i kommandoraden måste vara i manifestet data
 Om du vill undvika fel bör du försöka kommandon med hjälp av – Whatif-Verbose, innan du publicerar.
 Detta sparar ganska lång tid sedan varje gång du publicerar till PowerShell-galleriet, måste du uppdatera versionsnumret i manifest-delen av artikeln.
 
-Exempel skulle kunna vara: ' Publish-Module-sökvägen ”. \MyModule” - RequiredVersion ”0.0.1” - NugetAPIKey ”GUID” - Whatif-utförlig ' ' Publish-Script-sökvägen ”.\MyScriptFile.PS1” - NugetAPIKey ”GUID” - Whatif-utförlig ”
+Exempel är: ”Publicera-Module-sökvägen”. \MyModule ”- RequiredVersion” 0.0.1 ”- NugetAPIKey” GUID ”- Whatif-utförlig” ”publicera skript-sökvägen”.\MyScriptFile.PS1 ”- NugetAPIKey” GUID ”- Whatif-utförlig”
 
 Granska utdata noggrant och om du ser några fel eller varningar, upprepa kommandot utan - Whatif.
 

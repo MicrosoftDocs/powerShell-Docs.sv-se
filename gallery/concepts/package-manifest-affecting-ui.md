@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Paketet manifest värden som påverkar PowerShell galleriets gränssnitt
-ms.openlocfilehash: 63f5055dff6de404343f80be81a1c786147c0e33
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
+ms.openlocfilehash: dcba56d9f7edf0c08a3b9e3f2326b39a6b3be3fa
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225836"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655353"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Paketet manifest värden som påverkar PowerShell galleriets gränssnitt
 
@@ -137,5 +137,5 @@ Referens följer vissa vanligaste taggar från och med 12/14/2017. I vissa fall 
 | AzureRm | Används främst för AzureRM-moduler |
 | ZIP |  |
 | MSI |  |
-| Mac |  |
+| macOS |  |
 | PoshBot |  |

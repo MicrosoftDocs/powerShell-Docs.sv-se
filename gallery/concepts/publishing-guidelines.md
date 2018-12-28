@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery
 description: Riktlinjer för utgivare
 title: PowerShell-galleriet publicera riktlinjer och metodtips
-ms.openlocfilehash: 7e9eca8d3372ddf0b94ab42e125991b857456551
-ms.sourcegitcommit: aa1129cc2b0ae6e18918b2b0ea70c74915ed019b
+ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235413"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655403"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery publicera riktlinjer och metodtips
 
@@ -33,6 +33,7 @@ Paket som följer dessa riktlinjer är mycket mer troligt att hämtas och använ
 - Responsiva gentemot feedback
 - Ange moduler i stället för skript
 - Innehåller länkar till en projektwebbplats
+- Tagga ditt paket med kompatibla PSEdition(s) och plattformar 
 - Inkludera tester med dina moduler
 - Inkludera och/eller länka till licensvillkoren
 - Registrera din kod
@@ -93,7 +94,7 @@ Användare som ger informell feedback är viktigt att svara på, eftersom de är
 Det finns två metoder för feedback i PowerShell-galleriet:
 
 - Kontakta ägaren: Detta gör det möjligt att skicka ett e-postmeddelande till paketet ägarna. Som ägare paketet är viktigt att övervaka e-postadressen används med PowerShell-galleriet paketen och svara på problem som har skapats. En nackdel till den här metoden är att endast användare och ägare någonsin ser kommunikation, så ägare kan behöva och svara på samma fråga många gånger.
-- Kommentarer: Längst ned på sidan package är ett kommentarer.
+- Kommentarer: Sidan är en kommentarsfält längst ned i paketet.
   Fördelen med att det här systemet är att andra användare kan se kommentarer och svar, vilket minskar antalet gånger varje enskild fråga måste besvaras.
   Som paket ägare rekommenderar vi starkt att du följer alla kommentarer för varje paket.
 Se [att tillhandahålla Feedback via sociala medier eller kommentarer](../how-to/working-with-packages/social-media-feedback.md) mer information om hur du gör.
@@ -134,6 +135,16 @@ Lägga till en länk görs genom att inkludera ProjectURI i avsnittet PSData i m
         ProjectUri = 'https://github.com/powershell/powershell'
 
 När en ProjectURI tillhandahålls innehåller i PowerShell-galleriet en länk till webbplatsen projekt till vänster på sidan för paketet.
+
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Tagga ditt paket med kompatibla PSEdition(s) och plattformar 
+
+Använd följande taggar för att visa för användarna som paket ska fungera bra med deras miljö:
+
+- PSEdition_Desktop: Paket som är kompatibla med Windows PowerShell 
+- PSEdition_Core: Paket som är kompatibla med Powershell Core 
+- Windows: Paket som är kompatibla med Windows operativsystem
+- Linux: Paket som är kompatibla med Linux-operativsystem 
+- MacOS: Paket som är kompatibla med Mac-operativsystemet
 
 ## <a name="include-tests"></a>Inkludera tester
 
