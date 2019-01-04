@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Mer PowerShell-utbildning
-ms.openlocfilehash: da9dfeca3d2d2cfadf6ace0aa98007d16a548aae
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5e81801df99a55a358d1d1405bdc79f882aae92f
+ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405230"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012559"
 ---
 # <a name="more-powershell-learning"></a>Mer PowerShell-utbildning
 
@@ -29,23 +29,9 @@ Förutom hjälpen på kommandoraden ger följande resurser mer information om an
 - [Komma igång med PowerShell 3.0 Kom igång snabbt](https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-30-jump-start-8276)
 - [Avancerade verktyg och skript med PowerShell 3.0 rivstart](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8277)
 
-### <a name="script-center-learn"></a>Lär dig Script Center
+### <a name="channel-9-videos"></a>Videor från Channel 9
 
-#### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>Information om Windows PowerShell för upptagen Admin-serien
-
-- [PowerShell-SmowerShell' – varför du bör läsa Windows PowerShell-del 1](https://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [Hört genom pipelinen – hur till sammansatt Windows PowerShell-kommandon för roligt och vinst del 2](https://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [Efter leverantör? Inte knappt – en titt på Windows PowerShell-Providers del 3](https://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [Den huvudsakliga händelsen – Windows PowerShell har händelseloggar del 4](https://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [Mer än via fjärranslutning möjliga – använder Windows PowerShell för att hantera Remote Desktop del 5](https://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
-
-#### <a name="learn-it-now-before-its-an-emergency"></a>Läs den nu innan den är en nödsituation
-
-- [Windows PowerShell: Läs den nu innan den är en nödsituation, del 1](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
-- [Windows PowerShell: Läs den nu innan den är en nödsituation, del 2](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
-- [Windows PowerShell: Läs den nu innan den är en nödsituation, del 3](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
-- [Windows PowerShell: Läs den nu innan den är en nödsituation, del 4](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
-- [Windows PowerShell: Läs den nu innan den är en nödsituation, del 5](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
+Channel 9 är vår videoplattform för publicering. Det finns hundratals videor om PowerShell. [Sök efter ”PowerShell”](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated) att se vilka videor är tillgängliga.
 
 ## <a name="resources-for-windows-powershell-developers"></a>Resurser för Windows PowerShell-utvecklare
 

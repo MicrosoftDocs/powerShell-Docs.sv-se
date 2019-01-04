@@ -1,16 +1,16 @@
 ---
 ms.date: 08/24/2018
 keywords: PowerShell cmdlet
-title: Lär dig PowerShell-namn
+title: Learning PowerShell kommandonamn
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 6ed1f99513f00c174147876e1982c0d12869cacb
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 3f8ef2648709c4bb5d2eacf30fe9d8fb4f032c13
+ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405387"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012474"
 ---
-# <a name="learning-powershell-names"></a>Lär dig PowerShell-namn
+# <a name="learning-powershell-command-names"></a>Learning PowerShell kommandonamn
 
 Learning namnen på kommandon och parametrar kräver en betydande tid investering med de flesta command-line gränssnitt. Problemet är att det inte finns några mönster. Memorera är det enda sättet att lära dig kommandon och parametrar som du behöver använda regelbundet.
 

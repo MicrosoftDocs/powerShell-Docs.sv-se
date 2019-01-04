@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-resurser
-ms.openlocfilehash: 542a210ab47c650eac625108a78e76bc2cd55572
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 02e1b9856942cf28e77d83dac89681a08cf6bb74
+ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404816"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012457"
 ---
 # <a name="dsc-resources"></a>DSC-resurser
 
@@ -103,4 +103,4 @@ Configuration TestConfig
 > [!NOTE]
 > Från och med PowerShell 5.0, intellisense lades till för DSC. Den här nya funktionen kan du använda \<FLIKEN\> och \<Ctrl + blanksteg\> till automatisk komplettering nyckelnamn.
 
-![Tabbifyllning för resursen](/media/resource-tabcompletion.png)
+![Tabbifyllning för resursen](../media/resource-tabcompletion.png)
