@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Alternativ för autentiseringsuppgifter i konfigurationsdata
-ms.openlocfilehash: c4057457bf6beb2c5fc9dffef9122cd488ccdcd7
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.openlocfilehash: 10cf3456fcc7104b7dd779db30aebace54ba087a
+ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012440"
+ms.locfileid: "54046649"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Alternativ för autentiseringsuppgifter i konfigurationsdata
 >Gäller för: Windows PowerShell 5.0
@@ -115,7 +115,8 @@ configuration unencryptedPasswordDemo
     }
 }
 
-# We declared the ConfigurationData in a local variable, but we need to pass it in to our configuration function
+# We declared the ConfigurationData in a local variable, but we need to pass it
+# in to our configuration function
 # We need to invoke the configuration function we created to generate a MOF
 unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 
@@ -127,7 +128,7 @@ unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 ```
 
-Det här är ett utdrag från filen ”.mof” som skapats av konfigurationen för ”TestMachine1”. Den `System.Security.SecureString` används i konfigurationen har konverterats till oformaterad text och lagras i filen ”.mof” som en `MSF_Credential`. En `SecureString` krypteras med den aktuella användarens profilen. Detta fungerar bra med alla former av PowerShell fjärrhantering. En ”.mof”-fil är avsett att vara en fristående enbart tjänstkonfigurationens mekanism. Från och med PowerShell 5.0, krypteras MOF-filerna på en nod i vila, men inte under överföringen till noden. Det innebär att lösenord i en ”.mof”-fil visas i klartext när du tillämpar dem på en nod. För att kryptera autentiseringsuppgifter kan du behöva använda en **Hämtningsserver**. Mer information finns i [skydda MOF-filer med certifikat](./pull-server/secureMOF.md).
+Det här är ett utdrag från filen ”.mof” som skapats av konfigurationen för ”TestMachine1”. Den `System.Security.SecureString` används i konfigurationen har konverterats till oformaterad text och lagras i filen ”.mof” som en `MSF_Credential`. En `SecureString` krypteras med den aktuella användarens profilen. Detta fungerar bra med alla former av PowerShell fjärrhantering. En ”.mof”-fil är avsett att vara en fristående enbart tjänstkonfigurationens mekanism. Från och med PowerShell 5.0, krypteras MOF-filerna på en nod i vila, men inte under överföringen till noden. Det innebär att lösenord i en ”.mof”-fil visas i klartext när du tillämpar dem på en nod. För att kryptera autentiseringsuppgifter kan du behöva använda en **Hämtningsserver**. Mer information finns i [skydda MOF-filer med certifikat](../pull-server/secureMOF.md).
 
 ```syntax
 instance of MSFT_Credential as $MSFT_Credential1ref

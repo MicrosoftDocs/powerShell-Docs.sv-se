@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-resurser
-ms.openlocfilehash: 02e1b9856942cf28e77d83dac89681a08cf6bb74
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
+ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012457"
+ms.locfileid: "54046699"
 ---
 # <a name="dsc-resources"></a>DSC-resurser
 
@@ -104,3 +104,53 @@ Configuration TestConfig
 > Från och med PowerShell 5.0, intellisense lades till för DSC. Den här nya funktionen kan du använda \<FLIKEN\> och \<Ctrl + blanksteg\> till automatisk komplettering nyckelnamn.
 
 ![Tabbifyllning för resursen](../media/resource-tabcompletion.png)
+
+## <a name="built-in-resources"></a>Inbyggda resurser
+
+Förutom community-resurser finns inbyggda resurser för Windows, Linux-resurser och resurser för beroenden mellan noder. Du kan använda stegen ovan för att fastställa syntaxen för dessa resurser och hur de används. De sidor som betjänar dessa resurser har arkiverats **referens**.
+
+Inbyggda resurser för Windows
+
+* [Arkivera resursen](../reference/resources/windows/archiveResource.md)
+* [Miljöresurs](../reference/resources/windows/environmentResource.md)
+* [Filresurs](../reference/resources/windows/fileResource.md)
+* [Gruppresurs](../reference/resources/windows/groupResource.md)
+* [GroupSet-resurs](../reference/resources/windows/groupSetResource.md)
+* [Loggresurs](../reference/resources/windows/logResource.md)
+* [Paketresurs](../reference/resources/windows/packageResource.md)
+* [ProcessSet-resurs](../reference/resources/windows/ProcessSetResource.md)
+* [Registerresurser](../reference/resources/windows/registryResource.md)
+* [Skriptresurs](../reference/resources/windows/scriptResource.md)
+* [Tjänstresurs](../reference/resources/windows/serviceResource.md)
+* [ServiceSet-resurs](../reference/resources/windows/serviceSetResource.md)
+* [Användarresurs](../reference/resources/windows/userResource.md)
+* [WindowsFeature-resurs](../reference/resources/windows/windowsFeatureResource.md)
+* [WindowsFeatureSet-resurs](../reference/resources/windows/windowsFeatureSetResource.md)
+* [WindowsOptionalFeature-resurs](../reference/resources/windows/windowsOptionalFeatureResource.md)
+* [WindowsOptionalFeatureSet-resurs](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
+* [WindowsPackageCabResource resurs](../reference/resources/windows/windowsPackageCabResource.md)
+* [WindowsProcess-resurs](../reference/resources/windows/windowsProcessResource.md)
+
+[Mellan noder beroende](../configurations/crossNodeDependencies.md) resurser
+
+* [WaitForAll resurs](../reference/resources/windows/waitForAllResource.md)
+* [WaitForSome resurs](../reference/resources/windows/waitForSomeResource.md)
+* [WaitForAny resurs](../reference/resources/windows/waitForAnyResource.md)
+
+Paketet Management-resurser
+
+* [PackageManagement-resurs](../reference/resources/packagemanagement/PackageManagementDscResource.md)
+* [PackageManagementSource resurs](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
+
+Linux-resurser
+
+* [Linux Arkivera resursen](../reference/resources/linux/lnxArchiveResource.md)
+* [Miljöresurs för Linux](../reference/resources/linux/lnxEnvironmentResource.md)
+* [Linux FileLine resurs](../reference/resources/linux/lnxFileLineResource.md)
+* [Linux-filresurs](../reference/resources/linux/lnxFileResource.md)
+* [Linux Gruppresurs](../reference/resources/linux/lnxGroupResource.md)
+* [Linux Paketresurs](../reference/resources/linux/lnxPackageResource.md)
+* [Skriptresurs på Linux](../reference/resources/linux/lnxScriptResource.md)
+* [Linux-tjänstresurs](../reference/resources/linux/lnxServiceResource.md)
+* [Linux SshAuthorizedKeys resurs](../reference/resources/linux/lnxSshAuthorizedKeysResource.md)
+* [Linux användarresurs](../reference/resources/linux/lnxUserResource.md)
