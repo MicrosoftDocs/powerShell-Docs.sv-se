@@ -314,7 +314,7 @@ Med ett lokalt konto eliminerar potentiell exponering av autentiseringsuppgifter
 
 **När du använder autentiseringsuppgifter med DSC-resurser, föredrar du ett lokalt konto under ett domänkonto när det är möjligt.**
 
-Om det finns en ”\' eller ' @' i den `Username` egenskapen för autentiseringsuppgifter och sedan DSC behandlar det som ett domänkonto.
+Om det finns en ”\' eller “@” i den `Username` egenskapen för autentiseringsuppgifter och sedan DSC behandlar det som ett domänkonto.
 Det finns ett undantag för ”localhost”, ”127.0.0.1” och ”:: 1” i domändelen i användarnamnet.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
