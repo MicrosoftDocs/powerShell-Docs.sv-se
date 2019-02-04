@@ -2,14 +2,14 @@
 ms.date: 05/22/2018
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: 5c5e24527575c84e2244273992eedb12c0abaffd
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268603"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687148"
 ---
-# <a name="installation-instructions"></a><span data-ttu-id="8860e-102">Installationsinstruktioner</span><span class="sxs-lookup"><span data-stu-id="8860e-102">Installation Instructions</span></span>
+# <a name="installation-instructions"></a><span data-ttu-id="3a429-102">Installationsinstruktioner</span><span class="sxs-lookup"><span data-stu-id="3a429-102">Installation Instructions</span></span>
 
-<span data-ttu-id="8860e-103">Som förmedlas under den [utveckling](https://blogs.msdn.microsoft.com/powershell/2016/04/06/windows-management-framework-5-0-updates-and-wmf-5-1/) och [versionen av WMF 5.1](https://blogs.msdn.microsoft.com/powershell/2017/03/28/windows-management-framework-wmf-5-1-now-in-microsoft-update-catalog/), från den 1 juni 2017 användare med WMF 5.0 måste uppgradera till WMF 5.1 för att få support.</span><span class="sxs-lookup"><span data-stu-id="8860e-103">As communicated during the [development](https://blogs.msdn.microsoft.com/powershell/2016/04/06/windows-management-framework-5-0-updates-and-wmf-5-1/) and [release of WMF 5.1](https://blogs.msdn.microsoft.com/powershell/2017/03/28/windows-management-framework-wmf-5-1-now-in-microsoft-update-catalog/), starting June 1, 2017, users with WMF 5.0 must upgrade to WMF 5.1 to receive support.</span></span>
+<span data-ttu-id="3a429-103">Som förmedlas under den [utveckling](https://blogs.msdn.microsoft.com/powershell/2016/04/06/windows-management-framework-5-0-updates-and-wmf-5-1/) och [versionen av WMF 5.1](https://blogs.msdn.microsoft.com/powershell/2017/03/28/windows-management-framework-wmf-5-1-now-in-microsoft-update-catalog/), från den 1 juni 2017 användare med WMF 5.0 måste uppgradera till WMF 5.1 för att få support.</span><span class="sxs-lookup"><span data-stu-id="3a429-103">As communicated during the [development](https://blogs.msdn.microsoft.com/powershell/2016/04/06/windows-management-framework-5-0-updates-and-wmf-5-1/) and [release of WMF 5.1](https://blogs.msdn.microsoft.com/powershell/2017/03/28/windows-management-framework-wmf-5-1-now-in-microsoft-update-catalog/), starting June 1, 2017, users with WMF 5.0 must upgrade to WMF 5.1 to receive support.</span></span>
 
-<span data-ttu-id="8860e-104">Följ den [installationsanvisningar för WMF 5.1](../5.1/install-configure.md)</span><span class="sxs-lookup"><span data-stu-id="8860e-104">Please follow the [installation instructions of WMF 5.1](../5.1/install-configure.md)</span></span>
+<span data-ttu-id="3a429-104">Följ den [installationsanvisningar för WMF 5.1](../5.1/install-configure.md)</span><span class="sxs-lookup"><span data-stu-id="3a429-104">Please follow the [installation instructions of WMF 5.1](../5.1/install-configure.md)</span></span>

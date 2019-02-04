@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: a2938c168f476e5f9c38ba55ceb45fa2b95571e2
-ms.sourcegitcommit: bad40d59598ae5597051fa381986316a2d9bf6c8
+ms.openlocfilehash: ac845a461eef4f567b74f813621f6bfa38419afb
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36271185"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687848"
 ---
-# <a name="powershellget-cmdlets-for-script-management"></a><span data-ttu-id="19696-102">PowerShellGet-cmdletar för skripthantering</span><span class="sxs-lookup"><span data-stu-id="19696-102">PowerShellGet Cmdlets for Script Management</span></span>
+# <a name="powershellget-cmdlets-for-script-management"></a><span data-ttu-id="d6a9a-102">PowerShellGet-cmdletar för skripthantering</span><span class="sxs-lookup"><span data-stu-id="d6a9a-102">PowerShellGet Cmdlets for Script Management</span></span>
 
-## <a name="find-script-cmdlet"></a><span data-ttu-id="19696-103">Hitta skriptet cmdlet</span><span class="sxs-lookup"><span data-stu-id="19696-103">Find-Script cmdlet</span></span>
-<span data-ttu-id="19696-104">Hitta skript-cmdleten låter dig för att identifiera skriptfiler med andra sökvillkor som namn, tagg, filter, namn, version omfång, exakt vilken version, alla versioner, inklusive dess beroenden och från vissa eller alla registrerade databaser.</span><span class="sxs-lookup"><span data-stu-id="19696-104">Find-Script cmdlet lets you to discover the script files with different search criteria like name, tag, filter, command name, version range, exact version, all versions, including its dependencies and from specific or all registered repositories.</span></span>
+## <a name="find-script-cmdlet"></a><span data-ttu-id="d6a9a-103">Find-Script-cmdlet</span><span class="sxs-lookup"><span data-stu-id="d6a9a-103">Find-Script cmdlet</span></span>
+<span data-ttu-id="d6a9a-104">Find-Script cmdlet kan du identifiera skriptfiler med andra sökvillkor som namn, tagg, filter, kommandonamnet, versionsintervallet, exakt version, alla versioner, inklusive dess beroenden och från specifika eller alla registrerade databaser.</span><span class="sxs-lookup"><span data-stu-id="d6a9a-104">Find-Script cmdlet lets you to discover the script files with different search criteria like name, tag, filter, command name, version range, exact version, all versions, including its dependencies and from specific or all registered repositories.</span></span>
 
-<span data-ttu-id="19696-105">Exempel på användning:</span><span class="sxs-lookup"><span data-stu-id="19696-105">Example usage:</span></span>
+<span data-ttu-id="d6a9a-105">Exempel på användning:</span><span class="sxs-lookup"><span data-stu-id="d6a9a-105">Example usage:</span></span>
 ```powershell
 \# Find a script from the registered repository with ScriptSourceLocation
 Find-Script -Repository GalleryINT -Name Required-Script2
@@ -149,8 +149,8 @@ Workflow {Test-WorkflowFromScript\_Fabrikam-ClientScript}
 Command {Test-FunctionFromScript\_Fabrikam-ClientScript, Test-WorkflowFromScript\_Fabrikam-ClientScript}
 ```
 
-## <a name="save-script-cmdlet"></a><span data-ttu-id="19696-106">Spara skriptet cmdlet</span><span class="sxs-lookup"><span data-stu-id="19696-106">Save-Script cmdlet</span></span>
-<span data-ttu-id="19696-107">Spara skriptet cmdlet kan du granska skriptfilen genom att spara den på en angiven plats.</span><span class="sxs-lookup"><span data-stu-id="19696-107">Save-Script cmdlet lets you to review the script file by saving it to a specified location.</span></span>
+## <a name="save-script-cmdlet"></a><span data-ttu-id="d6a9a-106">Cmdleten Save-Script</span><span class="sxs-lookup"><span data-stu-id="d6a9a-106">Save-Script cmdlet</span></span>
+<span data-ttu-id="d6a9a-107">Save-Script cmdlet kan du granska skriptfilen genom att spara den till en angiven plats.</span><span class="sxs-lookup"><span data-stu-id="d6a9a-107">Save-Script cmdlet lets you to review the script file by saving it to a specified location.</span></span>
 ```powershell
 \# Save a script file to the specified location for the script analysis
 \# Piping the Find-Script output to Save-Script cmdlet
@@ -162,10 +162,10 @@ Version Name Author Description
 1.5 Fabrikam-ClientScript manikb Description for the Fabrikam-ClientScript script
 ```
 
-## <a name="install-script-and-get-installedscript-cmdlets"></a><span data-ttu-id="19696-108">Installationsskriptet och Get-InstalledScript-cmdlets</span><span class="sxs-lookup"><span data-stu-id="19696-108">Install-Script and Get-InstalledScript cmdlets</span></span>
-<span data-ttu-id="19696-109">Installationsskriptet cmdlet kan du installera en specifik skriptfil tillsammans med dess beroenden i det specificerade omfånget.</span><span class="sxs-lookup"><span data-stu-id="19696-109">Install-Script cmdlet lets you to install a specific script file along with its dependencies to the specified scope.</span></span> <span data-ttu-id="19696-110">Som standard installeras skript AllUsers omfånget.</span><span class="sxs-lookup"><span data-stu-id="19696-110">By default, scripts are installed to the AllUsers scope.</span></span> <span data-ttu-id="19696-111">Get-InstalledScript cmdlet kan du hämta en lista över filer som installerades med installationsskriptet cmdlet.</span><span class="sxs-lookup"><span data-stu-id="19696-111">Get-InstalledScript cmdlet lets you to get the list of script files which were installed using Install-Script cmdlet.</span></span>
+## <a name="install-script-and-get-installedscript-cmdlets"></a><span data-ttu-id="d6a9a-108">Installationsskriptet och Get-InstalledScript cmdlet: ar</span><span class="sxs-lookup"><span data-stu-id="d6a9a-108">Install-Script and Get-InstalledScript cmdlets</span></span>
+<span data-ttu-id="d6a9a-109">Installationsskriptet cmdlet kan du installera en specifik skriptfil tillsammans med dess beroenden i det specificerade omfånget.</span><span class="sxs-lookup"><span data-stu-id="d6a9a-109">Install-Script cmdlet lets you to install a specific script file along with its dependencies to the specified scope.</span></span> <span data-ttu-id="d6a9a-110">Som standard installeras skript AllUsers omfattning.</span><span class="sxs-lookup"><span data-stu-id="d6a9a-110">By default, scripts are installed to the AllUsers scope.</span></span> <span data-ttu-id="d6a9a-111">Get-InstalledScript cmdlet kan du hämta en lista över filer som har installerats med hjälp av cmdleten Install-Script.</span><span class="sxs-lookup"><span data-stu-id="d6a9a-111">Get-InstalledScript cmdlet lets you to get the list of script files which were installed using Install-Script cmdlet.</span></span>
 
-<span data-ttu-id="19696-112">Använd Obs: Om du vill tillåta hantering och lokalisering av skript när de installeras installationsskriptet skapar en standardmappen för lagring av skript på $home\Documents\WindowsPowerShell\Scripts, och lägga till mappen i din miljö för SÖKVÄGEN.</span><span class="sxs-lookup"><span data-stu-id="19696-112">Use note: To allow management and locating of scripts once they are installed, Install-script will create a default folder for storing scripts at $home\Documents\WindowsPowerShell\Scripts, and add that folder to your PATH environment.</span></span> <span data-ttu-id="19696-113">Om du ändrar sökvägen vara ett problem, kan du använda Spara skriptet i stället installationsskriptet.</span><span class="sxs-lookup"><span data-stu-id="19696-113">If modifying the path is a concern, use Save-Script instead of Install-Script.</span></span> <span data-ttu-id="19696-114">Get-InstalledScripts och avinstallera skriptet fungerar bara med skript som placeras i systemet med skriptet för installationen.</span><span class="sxs-lookup"><span data-stu-id="19696-114">Get-InstalledScripts and Uninstall-Script can only work with scripts placed on the system using Install-Script.</span></span>
+<span data-ttu-id="d6a9a-112">Använd Obs: För att tillåta hantering och lokalisering av skript när de installeras installationsskriptet skapar en standardmappen för lagring av skript på $home\Documents\WindowsPowerShell\Scripts, och lägga till mappen i PATH-miljö.</span><span class="sxs-lookup"><span data-stu-id="d6a9a-112">Use note: To allow management and locating of scripts once they are installed, Install-script will create a default folder for storing scripts at $home\Documents\WindowsPowerShell\Scripts, and add that folder to your PATH environment.</span></span> <span data-ttu-id="d6a9a-113">Om du ändrar sökvägen är ett problem kan du använda Save-Script i stället för Install-Script.</span><span class="sxs-lookup"><span data-stu-id="d6a9a-113">If modifying the path is a concern, use Save-Script instead of Install-Script.</span></span> <span data-ttu-id="d6a9a-114">Get-InstalledScripts och Avinstallationsskriptet fungerar bara med placeras i systemet med Install-Script-skript.</span><span class="sxs-lookup"><span data-stu-id="d6a9a-114">Get-InstalledScripts and Uninstall-Script can only work with scripts placed on the system using Install-Script.</span></span>
 ```powershell
 \# Install locations for scripts:
 \# Default scope is AllUsers.
@@ -221,7 +221,7 @@ InstalledLocation : C:\\Users\\manikb\\Documents\\WindowsPowerShell\\Scripts
 Installed script file is immediately available for usage.
 ```
 
-<span data-ttu-id="19696-115">Du kan också använda Get-Command – namn &lt;InstalledScriptFileName&gt; att hämta den.</span><span class="sxs-lookup"><span data-stu-id="19696-115">You can also use Get-Command –Name &lt;InstalledScriptFileName&gt; to get it.</span></span> <span data-ttu-id="19696-116">Installationsplats för två läggs till i PATH-miljövariabeln vid första användning av ett angivet omfång.</span><span class="sxs-lookup"><span data-stu-id="19696-116">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
+<span data-ttu-id="d6a9a-115">Du kan också använda Get-Command – namn &lt;InstalledScriptFileName&gt; att hämta den.</span><span class="sxs-lookup"><span data-stu-id="d6a9a-115">You can also use Get-Command –Name &lt;InstalledScriptFileName&gt; to get it.</span></span> <span data-ttu-id="d6a9a-116">Installationsplats för två läggs till i miljövariabeln PATH vid första användning av ett angivet omfång.</span><span class="sxs-lookup"><span data-stu-id="d6a9a-116">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
@@ -343,8 +343,8 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-## <a name="update-script-cmdlet"></a><span data-ttu-id="19696-117">Cmdlet skript för att uppdatera</span><span class="sxs-lookup"><span data-stu-id="19696-117">Update-Script cmdlet</span></span>
-<span data-ttu-id="19696-118">Cmdlet skript för att uppdatera kan du en uppdatering av skriptfiler som installerades med installationsskriptet cmdlet direkt på plats.</span><span class="sxs-lookup"><span data-stu-id="19696-118">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
+## <a name="update-script-cmdlet"></a><span data-ttu-id="d6a9a-117">Cmdlet: en Update-Script</span><span class="sxs-lookup"><span data-stu-id="d6a9a-117">Update-Script cmdlet</span></span>
+<span data-ttu-id="d6a9a-118">Cmdlet: en Update-skript kan du en uppdatering av skriptfiler som installerades med hjälp av cmdleten Install-Script direkt på plats.</span><span class="sxs-lookup"><span data-stu-id="d6a9a-118">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script
@@ -385,7 +385,7 @@ Version Name Type Repository Description
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
 
-## <a name="uninstall-script-cmdlet"></a><span data-ttu-id="19696-119">Avinstallera skript cmdlet</span><span class="sxs-lookup"><span data-stu-id="19696-119">Uninstall-Script cmdlet</span></span>
+## <a name="uninstall-script-cmdlet"></a><span data-ttu-id="d6a9a-119">Avinstallera skript-cmdlet</span><span class="sxs-lookup"><span data-stu-id="d6a9a-119">Uninstall-Script cmdlet</span></span>
 ```powershell
 Uninstall-Script cmdlet lets you to uninstall the installed script files.
 Get-InstalledScript | Uninstall-Script -WhatIf
@@ -422,8 +422,8 @@ At C:\\Program Files\\WindowsPowerShell\\Modules\\PowerShellGet\\1.0.0.1\\PSModu
 + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
 
-## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a><span data-ttu-id="19696-120">Nya ScriptFileInfo och testa ScriptFileInfo-cmdlets</span><span class="sxs-lookup"><span data-stu-id="19696-120">New-ScriptFileInfo and Test-ScriptFileInfo cmdlets</span></span>
-<span data-ttu-id="19696-121">Nya ScriptFileInfo cmdleten låter dig för att skapa en ny skriptfil med metadata som Version, Guid, författare och beskrivning, osv. Cmdleten test-ScriptFileInfo kan du validera och hämta skriptet filens metadata.</span><span class="sxs-lookup"><span data-stu-id="19696-121">New-ScriptFileInfo cmdlet lets you to create a new script file with metadata like Version, Guid, Author, and Description, etc. Test-ScriptFileInfo cmdlet lets you to validate and get the script file metadata.</span></span>
+## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a><span data-ttu-id="d6a9a-120">Cmdletar för nya ScriptFileInfo och Test-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="d6a9a-120">New-ScriptFileInfo and Test-ScriptFileInfo cmdlets</span></span>
+<span data-ttu-id="d6a9a-121">Ny ScriptFileInfo cmdlet kan du skapa en ny skriptfil med metadata som Version, Guid, författare och beskrivning, osv. Test-ScriptFileInfo cmdlet kan du för att verifiera och hämta skriptfilens metadata.</span><span class="sxs-lookup"><span data-stu-id="d6a9a-121">New-ScriptFileInfo cmdlet lets you to create a new script file with metadata like Version, Guid, Author, and Description, etc. Test-ScriptFileInfo cmdlet lets you to validate and get the script file metadata.</span></span>
 ```powershell
 \# Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Description "Script file description goes here"
@@ -574,8 +574,8 @@ DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
 
-## <a name="update-scriptfileinfo-cmdlet"></a><span data-ttu-id="19696-122">Uppdatera ScriptFileInfo cmdlet</span><span class="sxs-lookup"><span data-stu-id="19696-122">Update-ScriptFileInfo cmdlet</span></span>
-<span data-ttu-id="19696-123">Uppdatera ScriptFileInfo cmdlet kan du uppdatera befintliga skript filens metadata.</span><span class="sxs-lookup"><span data-stu-id="19696-123">Update-ScriptFileInfo cmdlet lets you to update the existing script file metadata.</span></span>
+## <a name="update-scriptfileinfo-cmdlet"></a><span data-ttu-id="d6a9a-122">Cmdlet: en Update-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="d6a9a-122">Update-ScriptFileInfo cmdlet</span></span>
+<span data-ttu-id="d6a9a-123">Uppdatera ScriptFileInfo cmdlet kan du uppdatera den befintliga skriptfilens metadata.</span><span class="sxs-lookup"><span data-stu-id="d6a9a-123">Update-ScriptFileInfo cmdlet lets you to update the existing script file metadata.</span></span>
 ```powershell
 \# Use Update-ScriptFileInfo cmdlet to update the script metadata
 Update-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-ScriptWithCompletePSScriptInfo.ps1 -Version 2.0
@@ -585,8 +585,8 @@ Version Name Author Description
 2.0 Demo-ScriptWithComplet... manikb my new script file
 ```
 
-## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="19696-124">Registrera PSRepository och Set-PSRepository cmdlets med skriptet delning stöd</span><span class="sxs-lookup"><span data-stu-id="19696-124">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
-<span data-ttu-id="19696-125">Använda Register-PSRepository/Set-PSRepository-cmdletar för att lägga till den **ScriptSourceLocation** och **ScriptPublishLocation** till PSRepository.</span><span class="sxs-lookup"><span data-stu-id="19696-125">Use Register-PSRepository/Set-PSRepository cmdlets to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
+## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="d6a9a-124">Register-PSRepository och Set-PSRepository cmdlets med skriptet delning support</span><span class="sxs-lookup"><span data-stu-id="d6a9a-124">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
+<span data-ttu-id="d6a9a-125">Använda Register-PSRepository/Set-PSRepository cmdletar för att lägga till den **ScriptSourceLocation** och **ScriptPublishLocation** till PSRepository.</span><span class="sxs-lookup"><span data-stu-id="d6a9a-125">Use Register-PSRepository/Set-PSRepository cmdlets to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
 ```powershell
 \# Register an GalleryINT repository with Scripts and Modules support
 Register-PSRepository -Name GalleryINT \`
@@ -643,8 +643,8 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 ```
 
-## <a name="publish-script-cmdlet"></a><span data-ttu-id="19696-126">Publicera skript cmdlet</span><span class="sxs-lookup"><span data-stu-id="19696-126">Publish-Script cmdlet</span></span>
-<span data-ttu-id="19696-127">Publicera skript-cmdleten låter dig om du vill publicera skriptfilen med giltiga metadata som Version, Guid, författare och beskrivning, osv.</span><span class="sxs-lookup"><span data-stu-id="19696-127">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc.</span></span>
+## <a name="publish-script-cmdlet"></a><span data-ttu-id="d6a9a-126">Publicera skript-cmdlet</span><span class="sxs-lookup"><span data-stu-id="d6a9a-126">Publish-Script cmdlet</span></span>
+<span data-ttu-id="d6a9a-127">Publicera skriptet cmdlet kan du publicera skriptfilen med giltig metadata som Version, Guid, författare och beskrivning, osv.</span><span class="sxs-lookup"><span data-stu-id="d6a9a-127">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc.</span></span>
 ```powershell
 \# Publish the really basic script file with required metadata
 Publish-Script -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Repository GalleryINT -NuGetApiKey cad91af7-a49c-4026-9570-a4c16564e785 -Verbose

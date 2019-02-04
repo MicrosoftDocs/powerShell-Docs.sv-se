@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 116f79a95126d0a1c579a95ec99eb5d8b75cc1e0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 4b593e9a1eca43ee7ad85fc921ae3c1d62722db9
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225495"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687862"
 ---
-# <a name="declare-implemented-interface"></a><span data-ttu-id="4b12d-102">Deklarera implementerat gränssnitt</span><span class="sxs-lookup"><span data-stu-id="4b12d-102">Declare Implemented Interface</span></span>
+# <a name="declare-implemented-interface"></a><span data-ttu-id="fecee-102">Deklarera implementerat gränssnitt</span><span class="sxs-lookup"><span data-stu-id="fecee-102">Declare Implemented Interface</span></span>
 
-<span data-ttu-id="4b12d-103">Du kan deklarera implementerade gränssnitt efter bastyper, eller omedelbart efter ett kolon (:), om det inte finns några bastypen som angetts.</span><span class="sxs-lookup"><span data-stu-id="4b12d-103">You can declare implemented interfaces after base types, or immediately after a colon (:), if there is no base type specified.</span></span> <span data-ttu-id="4b12d-104">Avgränsa alla typnamn med kommatecken.</span><span class="sxs-lookup"><span data-stu-id="4b12d-104">Separate all type names by using commas.</span></span> <span data-ttu-id="4b12d-105">Det är mycket likt C#-syntax.</span><span class="sxs-lookup"><span data-stu-id="4b12d-105">It’s very similar to C# syntax.</span></span>
+<span data-ttu-id="fecee-103">Du kan deklarera implementerade gränssnitt efter bastyper eller omedelbart efter ett kolon (:), om det finns inga bastypen som angetts.</span><span class="sxs-lookup"><span data-stu-id="fecee-103">You can declare implemented interfaces after base types, or immediately after a colon (:), if there is no base type specified.</span></span> <span data-ttu-id="fecee-104">Separera namn för alla med kommatecken.</span><span class="sxs-lookup"><span data-stu-id="fecee-104">Separate all type names by using commas.</span></span> <span data-ttu-id="fecee-105">Det är mycket lik C# syntax.</span><span class="sxs-lookup"><span data-stu-id="fecee-105">It’s very similar to C# syntax.</span></span>
 
 ```powershell
 class MyComparable : system.IComparable

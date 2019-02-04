@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: 0d3a87f3a9c3409656ea7f7263723436e1f9d48f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892808"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688919"
 ---
-# <a name="installation-of-module-dependencies"></a><span data-ttu-id="002bf-102">Installation av modulberoenden</span><span class="sxs-lookup"><span data-stu-id="002bf-102">Installation of Module Dependencies</span></span>
+# <a name="installation-of-module-dependencies"></a><span data-ttu-id="30706-102">Installation av modulberoenden</span><span class="sxs-lookup"><span data-stu-id="30706-102">Installation of Module Dependencies</span></span>
 
-<span data-ttu-id="002bf-103">Det finns nu sida-vid-sida (SxS)-modul Versionsstöd i Install-Module, Update-modulen och Publish-Module-cmdletar som körs i Windows PowerShell 5.0 eller senare.</span><span class="sxs-lookup"><span data-stu-id="002bf-103">There is now side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
-<span data-ttu-id="002bf-104">Dessutom har vi lagt till en - RequiredVersion-parameter till Publish-Module-cmdlet för att ange vilken version som ska publiceras.</span><span class="sxs-lookup"><span data-stu-id="002bf-104">Also, we have added a -RequiredVersion parameter to the Publish-Module cmdlet to specify the version to be published.</span></span> <span data-ttu-id="002bf-105">Parametern Path har nu stöd för modulen rotsökväg med version-mapp.</span><span class="sxs-lookup"><span data-stu-id="002bf-105">The Path parameter now supports the module base path with the version folder.</span></span>
+<span data-ttu-id="30706-103">Det finns nu sida-vid-sida (SxS)-modul Versionsstöd i Install-Module, Update-modulen och Publish-Module-cmdletar som körs i Windows PowerShell 5.0 eller senare.</span><span class="sxs-lookup"><span data-stu-id="30706-103">There is now side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
+<span data-ttu-id="30706-104">Dessutom har vi lagt till en - RequiredVersion-parameter till Publish-Module-cmdlet för att ange vilken version som ska publiceras.</span><span class="sxs-lookup"><span data-stu-id="30706-104">Also, we have added a -RequiredVersion parameter to the Publish-Module cmdlet to specify the version to be published.</span></span> <span data-ttu-id="30706-105">Parametern Path har nu stöd för modulen rotsökväg med version-mapp.</span><span class="sxs-lookup"><span data-stu-id="30706-105">The Path parameter now supports the module base path with the version folder.</span></span>
 
-<span data-ttu-id="002bf-106">**Install-Module-exempel:**</span><span class="sxs-lookup"><span data-stu-id="002bf-106">**Install-Module examples:**</span></span>
+<span data-ttu-id="30706-106">**Install-Module-exempel:**</span><span class="sxs-lookup"><span data-stu-id="30706-106">**Install-Module examples:**</span></span>
 ```powershell
 PS C:\windows\system32> Install-Module -Name ContosoServer -RequiredVersion 1.0 -Repository MSPSGallery
 
@@ -37,7 +37,7 @@ Version Name          Repository  Description
 2.0     ContosoServer MSPSGallery ContosoServer
 ```
 
-<span data-ttu-id="002bf-107">**Installera en modul med beroenden:**</span><span class="sxs-lookup"><span data-stu-id="002bf-107">**Install a module with dependencies:**</span></span>
+<span data-ttu-id="30706-107">**Installera en modul med beroenden:**</span><span class="sxs-lookup"><span data-stu-id="30706-107">**Install a module with dependencies:**</span></span>
 ```powershell
 PS C:\windows\system32> Get-InstalledModule
 PS C:\windows\system32> Find-Module -Repository GalleryINT -Name ModuleWithDependencies2 -IncludeDependencies
@@ -79,7 +79,7 @@ ModuleType Version Name                    ExportedCommands
 Manifest   2.0     ModuleWithDependencies2 {Get-NestedRequiredModule1, Get-NestedRequiredModule2, Get-NestedRequiredModule3, Get-NestedRequiredModule4...}
 ```
 
-<span data-ttu-id="002bf-108">**Innehållet i ModuleWithDependencies2 modulen manifestfil:**</span><span class="sxs-lookup"><span data-stu-id="002bf-108">**Contents of ModuleWithDependencies2 module manifest file:**</span></span>
+<span data-ttu-id="30706-108">**Innehållet i ModuleWithDependencies2 modulen manifestfil:**</span><span class="sxs-lookup"><span data-stu-id="30706-108">**Contents of ModuleWithDependencies2 module manifest file:**</span></span>
 ```powershell
 @{
 # Version number of this module.
@@ -149,7 +149,7 @@ PrivateData = @{
 }
 ```
 
-<span data-ttu-id="002bf-109">**Uppdatera modulen exempel:**</span><span class="sxs-lookup"><span data-stu-id="002bf-109">**Update-Module examples:**</span></span>
+<span data-ttu-id="30706-109">**Uppdatera modulen exempel:**</span><span class="sxs-lookup"><span data-stu-id="30706-109">**Update-Module examples:**</span></span>
 ```powershell
 PS C:\windows\system32> Update-Module -Name ContosoServer -RequiredVersion 1.5
 PS C:\windows\system32> Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
@@ -191,7 +191,7 @@ Version Name          Repository  Description
 2.8.1   ContosoServer MSPSGallery ContosoServer
 ```
 
-<span data-ttu-id="002bf-110">**Publicera-Module-exempel:**</span><span class="sxs-lookup"><span data-stu-id="002bf-110">**Publish-Module examples:**</span></span>
+<span data-ttu-id="30706-110">**Publicera-Module-exempel:**</span><span class="sxs-lookup"><span data-stu-id="30706-110">**Publish-Module examples:**</span></span>
 ```powershell
 ContosoServer module with different versions to be published.
 PS C:\windows\system32> Get-Module -Name ContosoServer -ListAvailable

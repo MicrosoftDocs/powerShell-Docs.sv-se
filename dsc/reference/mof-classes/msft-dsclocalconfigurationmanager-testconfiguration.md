@@ -3,17 +3,17 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: TestConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
 ms.openlocfilehash: d746832b01310f43a7aae33dd0fa70c0928bb3e0
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048653"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685671"
 ---
-# <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="01d1b-103">TestConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen</span><span class="sxs-lookup"><span data-stu-id="01d1b-103">TestConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
+# <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="26a6f-103">TestConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen</span><span class="sxs-lookup"><span data-stu-id="26a6f-103">TestConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-<span data-ttu-id="01d1b-104">Skickar konfigurationsdokumentet till hanterad nod och verifierar den aktuella konfigurationen mot dokumentet.</span><span class="sxs-lookup"><span data-stu-id="01d1b-104">Sends the configuration document to the managed node and verifies the current configuration against the document.</span></span>
+<span data-ttu-id="26a6f-104">Skickar konfigurationsdokumentet till hanterad nod och verifierar den aktuella konfigurationen mot dokumentet.</span><span class="sxs-lookup"><span data-stu-id="26a6f-104">Sends the configuration document to the managed node and verifies the current configuration against the document.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="01d1b-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="01d1b-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="26a6f-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="26a6f-105">Syntax</span></span>
 
 ```mof
 uint32 TestConfiguration(
@@ -24,30 +24,30 @@ uint32 TestConfiguration(
 );
 ```
 
-## <a name="parameters"></a><span data-ttu-id="01d1b-106">Parametrar</span><span class="sxs-lookup"><span data-stu-id="01d1b-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="26a6f-106">Parametrar</span><span class="sxs-lookup"><span data-stu-id="26a6f-106">Parameters</span></span>
 
-<span data-ttu-id="01d1b-107">*configurationData* \[i\] miljödata för confuguration.</span><span class="sxs-lookup"><span data-stu-id="01d1b-107">*configurationData* \[in\] Environment data for the confuguration.</span></span>
+<span data-ttu-id="26a6f-107">*configurationData* \[i\] miljödata för confuguration.</span><span class="sxs-lookup"><span data-stu-id="26a6f-107">*configurationData* \[in\] Environment data for the confuguration.</span></span>
 
-<span data-ttu-id="01d1b-108">*InDesiredState* \[ut\] på RETUR, anger du om hanterad nod är i tillståndet anges i konfigurationsdokumentet.</span><span class="sxs-lookup"><span data-stu-id="01d1b-108">*InDesiredState* \[out\] On return, specifies whether the managed node is in the state specified by the configuration document.</span></span>
+<span data-ttu-id="26a6f-108">*InDesiredState* \[ut\] på RETUR, anger du om hanterad nod är i tillståndet anges i konfigurationsdokumentet.</span><span class="sxs-lookup"><span data-stu-id="26a6f-108">*InDesiredState* \[out\] On return, specifies whether the managed node is in the state specified by the configuration document.</span></span>
 
-<span data-ttu-id="01d1b-109">*ResourcesInDesiredState* \[ut\] på return innehåller en inbäddad förekomst av den **MSFT_ResourceInDesiredState** klass som anger resurser som finns i önskat läge.</span><span class="sxs-lookup"><span data-stu-id="01d1b-109">*ResourcesInDesiredState* \[out\] On return, contains an embedded instance of the **MSFT_ResourceInDesiredState** class that specifies resources that are in the desired state.</span></span>
+<span data-ttu-id="26a6f-109">*ResourcesInDesiredState* \[ut\] på return innehåller en inbäddad förekomst av den **MSFT_ResourceInDesiredState** klass som anger resurser som finns i önskat läge.</span><span class="sxs-lookup"><span data-stu-id="26a6f-109">*ResourcesInDesiredState* \[out\] On return, contains an embedded instance of the **MSFT_ResourceInDesiredState** class that specifies resources that are in the desired state.</span></span>
 
-<span data-ttu-id="01d1b-110">*ResourcesNotInDesiredState* \[ut\] på return innehåller en inbäddad förekomst av den **MSFT_ResourceNotInDesiredState** klass som anger resurser som inte ingår i önskat läge.</span><span class="sxs-lookup"><span data-stu-id="01d1b-110">*ResourcesNotInDesiredState* \[out\] On return, contains an embedded instance of the **MSFT_ResourceNotInDesiredState** class that specifies resources that are not in the desired state.</span></span>
+<span data-ttu-id="26a6f-110">*ResourcesNotInDesiredState* \[ut\] på return innehåller en inbäddad förekomst av den **MSFT_ResourceNotInDesiredState** klass som anger resurser som inte ingår i önskat läge.</span><span class="sxs-lookup"><span data-stu-id="26a6f-110">*ResourcesNotInDesiredState* \[out\] On return, contains an embedded instance of the **MSFT_ResourceNotInDesiredState** class that specifies resources that are not in the desired state.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="01d1b-111">Returvärde</span><span class="sxs-lookup"><span data-stu-id="01d1b-111">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="26a6f-111">Returvärde</span><span class="sxs-lookup"><span data-stu-id="26a6f-111">Return value</span></span>
 
-<span data-ttu-id="01d1b-112">Returnerar noll om åtgärden lyckades; Annars returnerar en felkod.</span><span class="sxs-lookup"><span data-stu-id="01d1b-112">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="26a6f-112">Returnerar noll om åtgärden lyckades; Annars returnerar en felkod.</span><span class="sxs-lookup"><span data-stu-id="26a6f-112">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="01d1b-113">Anmärkningar</span><span class="sxs-lookup"><span data-stu-id="01d1b-113">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="26a6f-113">Anmärkningar</span><span class="sxs-lookup"><span data-stu-id="26a6f-113">Remarks</span></span>
 
-<span data-ttu-id="01d1b-114">Det här är en statisk metod.</span><span class="sxs-lookup"><span data-stu-id="01d1b-114">This is a static method.</span></span>
+<span data-ttu-id="26a6f-114">Det här är en statisk metod.</span><span class="sxs-lookup"><span data-stu-id="26a6f-114">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="01d1b-115">Krav</span><span class="sxs-lookup"><span data-stu-id="01d1b-115">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="26a6f-115">Krav</span><span class="sxs-lookup"><span data-stu-id="26a6f-115">Requirements</span></span>
 
-<span data-ttu-id="01d1b-116">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="01d1b-116">**MOF:** DscCore.mof</span></span>
+<span data-ttu-id="26a6f-116">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="26a6f-116">**MOF:** DscCore.mof</span></span>
 
-<span data-ttu-id="01d1b-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="01d1b-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
+<span data-ttu-id="26a6f-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="26a6f-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="01d1b-118">Se även</span><span class="sxs-lookup"><span data-stu-id="01d1b-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="26a6f-118">Se även</span><span class="sxs-lookup"><span data-stu-id="26a6f-118">See also</span></span>
 
-[<span data-ttu-id="01d1b-119">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="01d1b-119">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+[<span data-ttu-id="26a6f-119">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="26a6f-119">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)

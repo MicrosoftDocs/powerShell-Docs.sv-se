@@ -2,20 +2,20 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: cd3338ae305896e282056a871974e5f899ef6ff5
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268586"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686245"
 ---
-# <a name="reporting-on-jea"></a><span data-ttu-id="0d5d7-102">Rapportering i JEA</span><span class="sxs-lookup"><span data-stu-id="0d5d7-102">Reporting on JEA</span></span>
+# <a name="reporting-on-jea"></a><span data-ttu-id="29231-102">Rapportering i JEA</span><span class="sxs-lookup"><span data-stu-id="29231-102">Reporting on JEA</span></span>
 
-<span data-ttu-id="0d5d7-103">Du kan använda för att rapportera om statusen hos din JEA-konfiguration:</span><span class="sxs-lookup"><span data-stu-id="0d5d7-103">In order to report on the state of your JEA configuration, you can use:</span></span>
+<span data-ttu-id="29231-103">Du kan använda för att rapportera om statusen hos din JEA-konfiguration:</span><span class="sxs-lookup"><span data-stu-id="29231-103">In order to report on the state of your JEA configuration, you can use:</span></span>
 
-1. <span data-ttu-id="0d5d7-104">**Get-PSSessionConfiguration** returnera en lista över alla registrerade slutpunkter på en viss dator.</span><span class="sxs-lookup"><span data-stu-id="0d5d7-104">**Get-PSSessionConfiguration** to return a list of all registered endpoints on a given machine.</span></span>
-2. <span data-ttu-id="0d5d7-105">**Get-PSSessionCapability** för att rapportera om funktionerna som har en viss användare på en viss slutpunkt.</span><span class="sxs-lookup"><span data-stu-id="0d5d7-105">**Get-PSSessionCapability** to report on the capabilities any given user has on a specific endpoint.</span></span>
+1. <span data-ttu-id="29231-104">**Get-PSSessionConfiguration** returnera en lista över alla registrerade slutpunkter på en viss dator.</span><span class="sxs-lookup"><span data-stu-id="29231-104">**Get-PSSessionConfiguration** to return a list of all registered endpoints on a given machine.</span></span>
+2. <span data-ttu-id="29231-105">**Get-PSSessionCapability** för att rapportera om funktionerna som har en viss användare på en viss slutpunkt.</span><span class="sxs-lookup"><span data-stu-id="29231-105">**Get-PSSessionCapability** to report on the capabilities any given user has on a specific endpoint.</span></span>
 
-<span data-ttu-id="0d5d7-106">Här är ett exempel på **Get-PSSessionCapability**:</span><span class="sxs-lookup"><span data-stu-id="0d5d7-106">Here's an example of **Get-PSSessionCapability**:</span></span>
+<span data-ttu-id="29231-106">Här är ett exempel på **Get-PSSessionCapability**:</span><span class="sxs-lookup"><span data-stu-id="29231-106">Here's an example of **Get-PSSessionCapability**:</span></span>
 
 ```powershell
 Get-PSSessionCapability -ConfigurationName Maintenance -Username "CONTOSO\JohnDoe"
@@ -40,7 +40,7 @@ Function        Select-Object
 Cmdlet          Restart-Service                                    3.0.0.0 Microsof...
 ```
 
-<span data-ttu-id="0d5d7-107">Att rapportera om den _åtgärder_ användare tog i en JEA-session, kan du:</span><span class="sxs-lookup"><span data-stu-id="0d5d7-107">To report on the _actions_ users took during a JEA session, you can:</span></span>
+<span data-ttu-id="29231-107">Att rapportera om den _åtgärder_ användare tog i en JEA-session, kan du:</span><span class="sxs-lookup"><span data-stu-id="29231-107">To report on the _actions_ users took during a JEA session, you can:</span></span>
 
-1. <span data-ttu-id="0d5d7-108">Aktivera ”over-the axeln” avskrifter för denna JEA-slutpunkt och en fullständig logg över varje användares åtgärder finns i katalogen avskrift</span><span class="sxs-lookup"><span data-stu-id="0d5d7-108">Enable the "over-the-shoulder" transcripts for that JEA endpoint and consult the transcript directory for a full log of each user's actions</span></span>
-2. <span data-ttu-id="0d5d7-109">Aktivera loggning för PowerShell-modulen och Granska händelseloggarna för PowerShell.</span><span class="sxs-lookup"><span data-stu-id="0d5d7-109">Turn on PowerShell module logging and inspect the PowerShell event logs.</span></span>
+1. <span data-ttu-id="29231-108">Aktivera ”over-the axeln” avskrifter för denna JEA-slutpunkt och en fullständig logg över varje användares åtgärder finns i katalogen avskrift</span><span class="sxs-lookup"><span data-stu-id="29231-108">Enable the "over-the-shoulder" transcripts for that JEA endpoint and consult the transcript directory for a full log of each user's actions</span></span>
+2. <span data-ttu-id="29231-109">Aktivera loggning för PowerShell-modulen och Granska händelseloggarna för PowerShell.</span><span class="sxs-lookup"><span data-stu-id="29231-109">Turn on PowerShell module logging and inspect the PowerShell event logs.</span></span>
