@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-Miljöresurs
 ms.openlocfilehash: 2bc1600a9df32538d59efa712569b12fa9e3beee
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048665"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685986"
 ---
 # <a name="dsc-environment-resource"></a>DSC-Miljöresurs
 

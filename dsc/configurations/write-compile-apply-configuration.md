@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, tjänst, inställning
 title: Skriva, kompilera och tillämpa en konfiguration
 ms.openlocfilehash: fa4d98fd12202439ba7025fd8af3fa398653ca05
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404793"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684418"
 ---
 > Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -47,7 +47,7 @@ Configuration HelloWorld {
 }
 ```
 
-Spara filen som ”HelloWorld.ps1”.
+Save the file as "HelloWorld.ps1".
 
 Definiera en konfiguration är som definierar en funktion. Den **nod** block anger målnoden som ska konfigureras i det här fallet `localhost`.
 

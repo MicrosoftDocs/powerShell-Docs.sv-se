@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery
 title: Gallerisökning
 ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
-ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52742864"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684838"
 ---
 # <a name="gallery-search-syntax"></a>Gallerisökning
 

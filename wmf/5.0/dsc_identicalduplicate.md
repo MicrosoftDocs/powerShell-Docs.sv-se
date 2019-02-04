@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 3f73b7cf0cdf033cbd561b3412734692bb7decd7
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 28f4f8ae2bbddc8fb5ef9d95d3061a91fcc8ffe2
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187552"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687365"
 ---
-# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>För identiska duplicerade resurser i en konfiguration
+# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>Att tillåta identiska duplicerade resurser i en konfiguration
 
-DSC Tillåt inte och hantera motstridiga resursdefinitionerna i en konfiguration. Istället för att försöka lösa konflikten bara misslyckas. Eftersom configuration återanvändning blir mer utnyttjade genom sammansatta resurser, inträffar etc. konflikter oftare. När motstridiga resursdefinitionerna är identiska bör DSC smart och att detta. Med den här versionen stöder med flera instanser av resurs som har identiska definitioner:
+DSC Tillåt inte och hantera motstridiga resursdefinitionerna i en konfiguration. Istället för att försöka lösa konflikten, helt enkelt misslyckas det. Eftersom konfigurationen återanvändning blir mer används via sammansatta resurser, inträffar etc. konflikter oftare. När motstridiga resursdefinitionerna är identiska, ska DSC vara smart och ge detta. Den här versionen har stöder vi att ha flera resursinstanser som har identiska definitioner:
 
 ```powershell
 Configuration IIS_FrontEnd
@@ -51,9 +51,9 @@ Configuration WebApplication
 }
 ```
 
-I tidigare versioner av blir resultatet en misslyckad sammanställning på grund av en konflikt mellan WindowsFeature FE_IIS och WindowsFeature Worker_IIS instanser försöker kontrollera 'webbserver-rollen är installerad. Observera att *alla* egenskaper som konfigureras är identiska i dessa två konfigurationer. Eftersom *alla* egenskaper i dessa två resurser är identiska, resulterar detta i en lyckad sammanställning nu.
+I tidigare versioner blir resultatet en misslyckad sammanställning på grund av en konflikt mellan WindowsFeature FE_IIS och WindowsFeature Worker_IIS instanser försöker se till att ”webbserver-rollen är installerad. Observera att *alla* egenskaper som konfigureras är identiska i dessa två konfigurationer. Eftersom *alla* egenskaper i dessa två resurser är identiska, detta resulterar i en lyckad sammanställning nu.
 
-Om någon av egenskaperna skiljer sig mellan de båda resurserna de anses inte vara identiska och kompilering misslyckas:
+Om någon av egenskaperna skiljer sig mellan de två resurserna, anses inte vara identiska och kompilering misslyckas:
 
 ```powershell
 Configuration IIS_FrontEnd
@@ -94,4 +94,4 @@ Configuration WebApplication
 }
 ```
 
-Den här mycket lik konfigurationen misslyckas eftersom WindowsFeature FE_IIS WindowsFeature Worker_IIS resurser inte längre är identiska och därför är i konflikt.
+Den här mycket lik konfigurationen misslyckas eftersom WindowsFeature FE_IIS och resurserna som WindowsFeature Worker_IIS inte längre är identiska och därför står i konflikt.

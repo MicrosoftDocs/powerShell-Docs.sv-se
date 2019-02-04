@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-användarresurs
 ms.openlocfilehash: 04543351df19160a2da05ccea96e5d392d8c55bf
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048819"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687505"
 ---
 # <a name="dsc-user-resource"></a>DSC-användarresurs
 
@@ -39,7 +39,7 @@ User [string] #ResourceName
 |---|---|
 | UserName| Anger namnet på kontot som du vill se till att ett visst tillstånd.|
 | Beskrivning| Anger den beskrivning som du vill använda för användarkontot.|
-| Inaktiverad| Anger om kontot är aktiverat. Den här egenskapen `$true` så att det här kontot är inaktiverat och ange den till `$false` så att den är aktiverad.|
+| Inaktiverat| Anger om kontot är aktiverat. Den här egenskapen `$true` så att det här kontot är inaktiverat och ange den till `$false` så att den är aktiverad.|
 | Se till att| Anger om kontot finns. Ange den här egenskapen ”aktuella” så att konton som finns och ange den till ”” så att kontot inte finns.|
 | FullName| Representerar en sträng med det fullständiga namnet som du vill använda för användarkontot.|
 | Lösenord| Anger det lösenord som du vill använda för det här kontot. |

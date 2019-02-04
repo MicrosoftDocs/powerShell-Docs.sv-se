@@ -1,13 +1,13 @@
 ---
 ms.date: 08/27/2018
 keywords: PowerShell cmdlet
-title: PowerShell-skript
-ms.openlocfilehash: 07925ce8dcafd33970a703c9b241bf6f76f88d10
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+title: PowerShell Scripting
+ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405206"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685097"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -50,7 +50,7 @@ Get-Service | Get-Member
 
 ### <a name="consistency"></a>Konsekvens
 
-Hantera system kan vara en komplicerad uppgift. Verktyg som har ett konsekvent gränssnitt hjälpa till att styra den inbyggda komplexiteten. Tyvärr är inte kommandoradsverktyg och skriptbara COM-objekt känt för sin konsekvens.
+Hantera system kan vara en komplicerad uppgift. Verktyg som har ett konsekvent gränssnitt hjälpa till att styra den inbyggda komplexiteten. Tyvärr är inte kommandoradsverktyg och skriptbara COM Component Object Model ()-objekt känt för sin konsekvens.
 
 Konsekvenskontroll av PowerShell är en av dess primära tillgångar. Exempel: Om du lära dig hur du använder den `Sort-Object` cmdlet, du kan använda denna kunskap för att ordna resultatet av en cmdlet. Du behöver att lära dig de olika sortering rutinerna för varje cmdlet.
 

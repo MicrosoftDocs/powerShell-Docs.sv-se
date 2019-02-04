@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Paket- och ladda upp resurser till en Pull-Server
 ms.openlocfilehash: 29a62f96393a53c9e7da57a5e51732dcb0937194
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404757"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688807"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Paket- och ladda upp resurser till en Pull-Server
 

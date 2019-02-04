@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 9486fdbaeca66c83551564c76ce47482f77c36b9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 424e0b7a4d62fc35e5040a7e425950e887021d7e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225614"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683781"
 ---
 # <a name="call-base-class-constructor"></a>Anropa basklasskonstruktorn
 
-För att anropa en basklasskonstruktor från en underklass, använder du nyckelordet **grundläggande**:
+För att anropa en Basklasskonstruktorn från en underklass, använder du nyckelordet **grundläggande**:
 
 ```powershell
 class A
@@ -31,7 +31,7 @@ class B : A
 [B]::new().a # return 103
 ```
 
-Om en basklass har en standardkonstruktor (ingen parameter), kan du utelämna en explicit konstruktoranrop:
+Om en basklass har en standardkonstruktor (ingen parameter), kan du utesluta ett explicit konstruktorsanrop:
 
 ```powershell
 class C : B

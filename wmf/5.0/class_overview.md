@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: dfc171f9a3471f8fe7801283dd4a9b06860781a2
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5919a68c87ae8827a1b97befc653bb74713f33fe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225733"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686448"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>Skapa anpassade typer med hjälp av PowerShell-klasser
 
-Vi har förbättrat PowerShell-språk för att definiera klasser och andra användardefinierade typer med hjälp av formella syntax och semantik som liknar andra objektorienterad programmeringsspråk. Målet är att utvecklare och IT-proffs att använda PowerShell för ett brett spektrum av användningsområden, förenkla utvecklingen av PowerShell artefakter (t.ex DSC-resurser) och påskynda täckning av management.
+Vi har förbättrat PowerShell-språket för att definiera klasser och andra användardefinierade typer med hjälp av formella syntax och semantik som påminner andra objektorienterat programmeringsspråk. Målet är så att utvecklare och IT-proffs kan använda PowerShell för ett bredare spektrum av användningsfall, förenkla utvecklingen av PowerShell-artefakter (t.ex DSC-resurser) och påskynda täckning av hantering av Surface-enheter.
 
 ## <a name="supported-scenarios-in-this-release"></a>Scenarier som stöds i den här versionen
 
--   Definiera DSC-resurser och deras associerade typer med hjälp av PowerShell-språk
--   Definiera anpassade typer i PowerShell med hjälp av välbekanta objektorienterad programming konstruktioner, till exempel klasser, egenskaper, metoder och så vidare.
+-   Definiera DSC-resurser och deras associerade typer med hjälp av PowerShell-språket
+-   Definiera anpassade typer i PowerShell med hjälp av välbekanta objektorienterad programming konstruktioner som klasser, egenskaper, metoder, osv.
 -   Arv support med klassen i PowerShell och klassen grundläggande DSC-resurs
--   Felsöka typer med hjälp av PowerShell-språk
--   Skapa och hantera undantag med hjälp av formella metoder och på rätt nivå
+-   Felsöka typer med hjälp av PowerShell-språket
+-   Skapa och hantera undantag genom att använda formella mekanismer och på rätt nivå

@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell cmdlet
 title: Felsökning av åtkomstproblem i windows powershell-webbåtkomst
-ms.openlocfilehash: c9b98c7a1685679eb88b718de0351154cb84e92e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404931"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688121"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Felsökning av åtkomstproblem i Windows PowerShell-webbåtkomst
 
@@ -93,9 +93,9 @@ Använd inte en punkt (.) ensamt som representerar namnet på datorn.
 
 Parameter | Värde
 -- | --
-UserName | Server\_namn\\användaren\_namn<br/>Localhost\\användaren\_namn<br/>. \\användaren\_namn
-UserGroup | Server\_namn\\användaren\_grupp<br/>Localhost\\användaren\_grupp<br/>. \\användaren\_grupp
-ComputerGroup | Server\_namn\\datorn\_grupp<br/>Localhost\\datorn\_grupp<br/>. \\datorn\_grupp
+UserName | Server\_namn\\användaren\_namn<br/>Localhost\\user\_name<br/>. \\användaren\_namn
+UserGroup | Server\_name\\user\_group<br/>Localhost\\användaren\_grupp<br/>. \\användaren\_grupp
+ComputerGroup | Server\_name\\computer\_group<br/>Localhost\\datorn\_grupp<br/>. \\datorn\_grupp
 
 #### <a name="gateway-server-is-in-a-domain"></a>Gateway-servern finns i en domän
 
@@ -114,7 +114,7 @@ ComputerName | Servernamn
 Logga in på en gateway-server som måldator med hjälp av autentiseringsuppgifter som är formaterade som något av följande.
 
 - Server\_namn\\användaren\_namn
-- Localhost\\användaren\_namn
+- Localhost\\user\_name
 - . \\användaren\_namn
 
 ## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>En säkerhetsidentifierare (SID) visas i en auktoriseringsregel
@@ -139,4 +139,4 @@ Mer information om IPv6-adresser finns i [så här fungerar IPv6](https://techne
 
 - [Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
 - [Använd den webbaserade Windows PowerShell-konsolen](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-- [about_Remote_Requirements](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)

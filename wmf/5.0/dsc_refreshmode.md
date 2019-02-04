@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: fb9dda75abc2726f6e48cdf3cad4d8990df1cefa
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c6eef03b6cac5a0bf37016b8aaec18f296c2625e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225665"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687078"
 ---
-# <a name="additional-value-for-refreshmode-property"></a>Ytterligare värdet för egenskapen RefreshMode
+# <a name="additional-value-for-refreshmode-property"></a>Ytterligare värde för RefreshMode-egenskapen
 
-Den här versionen har en ny `RefreshMode` värde, **inaktiverade**. När det här läget, MGM om du inte gör dokumenthantering. Mer information finns i [konfigurera den lokala Configuration Manager](https://msdn.microsoft.com/powershell/dsc/metaconfig).
+Den här versionen har en ny `RefreshMode` värde, **inaktiverad**. När det här läget, MGM utför inte dokumenthantering. Mer information finns i [konfigurerar den lokala Konfigurationshanteraren](https://msdn.microsoft.com/powershell/dsc/metaconfig).

@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Arbeta med programinstallationer
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 ms.openlocfilehash: bb97ad37c4295351c0fc2e3c6e1209c8dd673f06
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53406025"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686728"
 ---
 # <a name="working-with-software-installations"></a>Arbeta med programinstallationer
 
@@ -50,7 +50,7 @@ SKUNumber         :
 Vendor            : Microsoft Corporation
 ```
 
-Du kan använda den **Get-WmiObject Filter** parametern att välja endast Microsoft .NET Framework 2.0. Eftersom det filter som används i det här kommandot är ett WMI-filter, använder WMI-frågespråket (WQL) syntax, inte Windows PowerShell-syntax. I stället:
+Du kan använda den **Get-WmiObject Filter** parametern att välja endast Microsoft .NET Framework 2.0. Eftersom det filter som används i det här kommandot är ett WMI-filter, använder WMI-frågespråket (WQL) syntax, inte Windows PowerShell-syntax. Instead,:
 
 ```powershell
 Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='Microsoft .NET Framework 2.0'"| Format-List -Property *
@@ -89,7 +89,7 @@ Nu har vi flera olika sätt att titta på program som använde Windows Installer
 
 Även om det finns inget garanterad sätt att hitta alla program på ett system, går det att hitta alla program med listor som visas i dialogrutan Lägg till eller ta bort program. Lägg till eller ta bort program söker efter de här programmen i följande registernyckel:
 
-**HKEY_LOCAL_MACHINE\\programvara\\Microsoft\\Windows\\CurrentVersion\\avinstallera**.
+**HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**.
 
 Vi kan också granska den här nyckeln för att hitta program. Om du vill göra det enklare att visa nyckeln Uninstall, kan vi ansluta en Windows PowerShell-enhet till den platsen som:
 

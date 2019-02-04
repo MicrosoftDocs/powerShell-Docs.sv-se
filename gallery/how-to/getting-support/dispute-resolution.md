@@ -4,17 +4,17 @@ contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery
 title: Tvistlösning
 ms.openlocfilehash: 2376226c14ec1a8c2bf7c9328e29f79528d2aee9
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002760"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687204"
 ---
 # <a name="dispute-resolution"></a>Tvistlösning
 
 Det här dokumentet är en rekommenderad tvist matchningsprocessen för medlemmar i communityn för att lösa tvister med andra PowerShell-galleriet utgivare.
 
-## <a name="process"></a>Processen
+## <a name="process"></a>Process
 
 1. Kontakta ägarna av paketet som du har tvist med hjälp av den **kontakta ägare** länk på sidan med paketet.
    Förklara problemet i en typ och direkt sätt.

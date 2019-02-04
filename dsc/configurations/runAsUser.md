@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
-title: Använd autentiseringsuppgifter med DSC-resurser
+title: Använda autentiseringsuppgifter med DSC-resurser
 ms.openlocfilehash: af54c286ce744cd7db0b0e2d05087f60cdf1a33c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405207"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686854"
 ---
-# <a name="use-credentials-with-dsc-resources"></a>Använd autentiseringsuppgifter med DSC-resurser
+# <a name="use-credentials-with-dsc-resources"></a>Använda autentiseringsuppgifter med DSC-resurser
 
 > Gäller för: Windows PowerShell 5.0, Windows PowerShell 5.1
 

@@ -3,11 +3,11 @@ ms.date: 08/09/2017
 keywords: PowerShell, cmdlet, hämta, installera, inställningar, windows 10, windows 8.1, windows 8.0, windows 7
 title: Installera Windows PowerShell
 ms.openlocfilehash: 1630ba445c88953b2729232ae7d80afa326f25e6
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404948"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687330"
 ---
 # <a name="installing-windows-powershell"></a>Installera Windows PowerShell
 
@@ -81,7 +81,7 @@ Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.c
 >
 > Om den ursprungliga versionen av Windows 10 inte uppdateras via Windows-uppdateringar, är versionen av PowerShell 5.0.
 
-## <a name="need-azure-powershell"></a>Behöver ha Azure PowerShell
+## <a name="need-azure-powershell"></a>Need Azure PowerShell
 
 Om du letar efter **Azure PowerShell**, du kan börja med [översikt av Azure PowerShell](/powershell/azure/overview).
 

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSC för Linux nxUser-resurs
 ms.openlocfilehash: 1b02be1559957585a2a1733630cb93440e8182f9
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048646"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686014"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>DSC för Linux nxUser-resurs
 
@@ -41,10 +41,10 @@ nxUser <string> #ResourceName
 | FullName| En sträng som innehåller det fullständiga namnet för användarkontot.|
 | Beskrivning| Beskrivning för användarkontot.|
 | Lösenord| Hash för användarnas lösenord på sätt som passar för Linux-dator. Detta är vanligtvis en saltat SHA-256 eller SHA-512 hash. Det här värdet kan genereras med kommandot mkpasswd på Debian och Ubuntu Linux. För andra Linux-distributioner kan metoden crypt i Python's Crypt biblioteket användas för att generera en hash.|
-| Inaktiverad| Anger om kontot har aktiverats. Den här egenskapen **$true** så att det här kontot är inaktiverat och ange den till **$false** så att den är aktiverad.|
+| Inaktiverat| Anger om kontot har aktiverats. Den här egenskapen **$true** så att det här kontot är inaktiverat och ange den till **$false** så att den är aktiverad.|
 | PasswordChangeRequired| Anger om användaren kan ändra lösenordet. Den här egenskapen **$true** så att användaren inte kan ändra lösenordet och ange den till **$false** att tillåta användare att ändra lösenordet. Standardvärdet är **$false**. Den här egenskapen utvärderas bara om användarkontot inte fanns tidigare och håller på att skapas.|
-| Arbetskatalog| Arbetskatalog för användaren.|
-| Grupp-ID| Primär grupp-ID för användaren.|
+| HomeDirectory| Arbetskatalog för användaren.|
+| GroupID| Primär grupp-ID för användaren.|
 | DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resursen configuration skriptblocket som du vill köra först är ”ResourceName” och ”ResourceType” är av typen, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Exempel

@@ -1,22 +1,22 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 42f323590609319388e9a0a2c7c305dfa80c2d49
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a1e90a0b96f74decb55343292b97befaf1a85f8a
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221858"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685755"
 ---
 # <a name="class-based-dsc-resources"></a>Klassbaserade DSC-resurser
 
 ## <a name="defining-dsc-resources-with-classes"></a>Definiera DSC-resurser med klasser
 
-Utifrån feedback har vi gjort redigering DSC klass-baserade resurser enklare och lättare att förstå.
-De viktiga skillnaderna mellan en klass-baserade DSC-resurs och en cmdlet DSC-resursprovidern är:
+Baserat på feedback, har vi gjort redigera DSC MOF-baserade resurser blir lättare att förstå.
+De större skillnaderna mellan en klassbaserade DSC-resurs och en cmdlet DSC-resursprovider är:
 
 * Det krävs inte en MOF-fil för schemat.
-* En **DSCResource** undermapp i mappen modul krävs inte.
-* En PowerShell-modulen fil kan innehålla flera klasser i DSC-resurs.
+* En **DSCResource** undermapp i modulmappen är inte obligatoriskt.
+* En PowerShell-filen för modulen kan innehålla flera DSC-resursklasser.
 
-Mer information finns i [skriva en anpassad DSC-resurs med PowerShell klasser](https://msdn.microsoft.com/powershell/dsc/authoringresource).
+Mer information finns i [skriva en anpassad DSC-resurs med PowerShell-klasser](https://msdn.microsoft.com/powershell/dsc/authoringresource).

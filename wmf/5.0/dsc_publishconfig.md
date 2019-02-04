@@ -1,14 +1,14 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: f929ce4684bb53c3039238ecd465f1c0e432f741
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: db4543b788ad0a5c7aa32706246446533b901d09
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225682"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684509"
 ---
-# <a name="deliver-a-configuration-document-without-applying"></a>Leverera ett konfigurationsdokument av utan att använda
+# <a name="deliver-a-configuration-document-without-applying"></a>Leverera en konfigurationsdokumentet utan att tillämpa
 
-Den [publicera DscConfiguration](https://technet.microsoft.com/library/mt517875.aspx) cmdlet kopierar en konfiguration MOF-fil till en målnod, men inte tillämpa konfigurationen.
-Den här konfigurationen används under nästa konsekvenskontroll steget, eller när du kör den [uppdatering DscConfiguration](https://technet.microsoft.com/library/mt143541.aspx) cmdlet.
+Den [publicera-DscConfiguration](https://technet.microsoft.com/library/mt517875.aspx) cmdlet kopierar en MOF-konfigurationsfilen till en målnod, men gäller inte konfigurationen.
+Den här konfigurationen tillämpas under nästa konsekvens passet eller när du kör den [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541.aspx) cmdlet.

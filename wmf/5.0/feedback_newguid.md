@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 2d6b4e3045bc8cff90576c345d1ccb97b2487426
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 90fd26f9f27d2398da839b309c17b921bb3b8521
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225597"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685111"
 ---
 # <a name="new-guid"></a>New-Guid
-Ofta skript (eller kanske skriva en DSC-resurs) kan du inte har behov av en unik identifierare. GUID fungerar bra, och det är lätt att anropa .NET Framework Guid-klassen för att generera en, men med en cmdlet gör det lättare att hitta för slutanvändare som inte är redan bekant med .NET Framework-klass:
+Ofta skript (eller kanske skriva en DSC-resurs) du har behov av en unik identifierare. GUID fungerar bra, och det är enkelt att anropa .NET Framework Guid-klassen för att generera en, men med en cmdlet gör det enklare för slutanvändare som inte är redan bekant med .NET Framework-klassen:
 
-PS C:\\ &gt; nytt Guid
+PS C:\\&gt; New-Guid
 
 GUID
 

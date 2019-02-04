@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell cmdlet
 title: Installera och använda windows powershell-webbåtkomst
-ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5517347560b25f032baa77ecc2d769fb1e74ba4f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405153"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683830"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installera och använda Windows PowerShell-webbåtkomst
 
@@ -133,10 +133,10 @@ Som standard installerar cmdleten webbprogrammet, **pswa** (och en programpool f
 
    Följande inställningar konfigureras genom att köra cmdleten. Du kan ändra dessa manuellt i konsolen för IIS-hanteraren.
 
-   - Path: / pswa
+   - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath: `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
    **Exempel**: `Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
 
@@ -158,10 +158,10 @@ Som standard installerar cmdleten webbprogrammet, **pswa** (och en programpool f
 
    Följande gatewayinställningar konfigureras genom att köra cmdleten. Du kan ändra dessa manuellt i konsolen för IIS-hanteraren. Du kan även ange värden för parametrarna `WebsiteName` och `WebApplicationName` i cmdleten `Install-PswaWebApplication`.
 
-   - Path: / pswa
+   - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath: `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
 3. Öppna konsolen för IIS-hanteraren genom att göra något av följande.
 
@@ -271,7 +271,7 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
 
 7. I den **programpoolen** , markera den programpool som du skapade i steg 3.
 
-8. I den **fysisk sökväg** fältet, välj platsen för programmet. Du kan använda standardplatsen för `%windir%/Web/PowerShellWebAccess/wwwroot`. Klicka på **OK**.
+8. I den **fysisk sökväg** fältet, välj platsen för programmet. Du kan använda standardplatsen för `$env:windir/Web/PowerShellWebAccess/wwwroot`. Klicka på **OK**.
 
 9. Följ stegen i proceduren [att konfigurera ett SSL-certifikat i IIS-hanteraren](#to-configure-an-ssl-certificate-in-iis-Manager) i det här avsnittet.
 
@@ -318,7 +318,7 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
 
 1. En programpool skapas automatiskt för den nya webbplatsen. Om du vill använda en annan programpool klickar du på **Välj** att välja en programpool som associeras med den nya webbplatsen. Välj den andra programpoolen i den **Välj programpool** dialogrutan och klicka sedan på **OK**.
 
-1. I den **fysisk sökväg** text, bläddrar till %*windir*% / Web/PowerShellWebAccess/wwwroot.
+1. I den **fysisk sökväg** text, bläddrar till % windir%/Web/PowerShellWebAccess/wwwroot.
 
 1. I den **typ** i den **bindning** Välj **https**.
 

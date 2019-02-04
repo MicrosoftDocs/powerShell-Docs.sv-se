@@ -4,11 +4,11 @@ contributor: keithb
 keywords: galleriet, powershell, cmdlet, psget
 title: Förhandsversioner modulversioner
 ms.openlocfilehash: f58b5adfeba7ed06d231c76accbd52508c7d67d6
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002777"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684278"
 ---
 # <a name="prerelease-module-versions"></a>Förhandsversioner modulversioner
 
@@ -198,6 +198,6 @@ Version         Name          Repository   Description
 - [Find-Module](/powershell/module/powershellget/find-module)
 - [Install-Module](/powershell/module/powershellget/install-module)
 - [Save-Module](/powershell/module/powershellget/save-module)
-- [Uppdatera modulen](/powershell/module/powershellget/Update-Module)
+- [Update-Module](/powershell/module/powershellget/Update-Module)
 - [Get-InstalledModule](/powershell/module/powershellget/get-installedmodule)
-- [Avinstallera modulen](/powershell/module/powershellget/uninstall-module)
+- [UnInstall-Module](/powershell/module/powershellget/uninstall-module)

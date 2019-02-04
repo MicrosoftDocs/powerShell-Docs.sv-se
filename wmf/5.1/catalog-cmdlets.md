@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: Katalog-cmdletar
 ms.openlocfilehash: ec5fc866fe27a894b23b93d3ea46ad9c0cba288e
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522896"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687309"
 ---
 # <a name="catalog-cmdlets"></a>Katalog-cmdletar
 

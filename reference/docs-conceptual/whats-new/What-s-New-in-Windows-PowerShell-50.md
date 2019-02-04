@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Vad är nytt i Windows PowerShell 5.0
-ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
-ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
+ms.openlocfilehash: 06088e4a974ed4fb2a245fb9acfa780710a8ccc4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52978903"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688639"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Vad är nytt i Windows PowerShell 5.0
 Windows PowerShell 5.0 innehåller nya viktiga funktioner som utökar användningen, förbättrar dess användbarhet och gör att du kan styra och hantera Windows-baserade miljöer enklare och mer omfattande.
@@ -38,9 +38,9 @@ Många uppdateringar och förbättringar för Windows PowerShell Desired State C
   - [Ny DscChecksum](https://technet.microsoft.com/library/dn521622.aspx) har nu stöd för UNC-sökvägar.
 
 - Nya cmdletar i den [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) modul
-  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx): utför en kontroll av pull begäran.
-  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx): stoppar en konfiguration som redan körs.
-  - [Ta bort DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx): kan du ta bort konfigurationsdokument i olika steg (väntande, tidigare eller aktuella).
+  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx):  Utför en kontroll av pull begäran.
+  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx):  Stoppar en konfiguration som redan körs.
+  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx):  Kan du ta bort konfigurationsdokument i olika faser (väntande, tidigare eller aktuella).
 
 - Förbättringar av språk
   - DependsOn stöder nu sammansatta resurser.
@@ -64,10 +64,10 @@ Många uppdateringar och förbättringar för Windows PowerShell Desired State C
 
 - Förbättringar av flexibilitet
   - LocalConfigurationManager resursen har en ny egenskap **ActionAfterReboot**.
-    - ContinueConfiguration (standardvärde): återupptar en konfiguration automatiskt när en målnoden har startats om.
-    - StopConfiguration: Inte automatiskt att återuppta en konfiguration, när en nod startas om.
+    - ContinueConfiguration (standardvärde): Återupptar automatiskt en konfiguration när en målnoden har startats om.
+    - StopConfiguration: Fortsätt inte automatiskt en konfiguration när en nod startas om.
   - Kör en konsekvenskontroll kan nu oftare än en PULL-åtgärd eller vice versa.
-  - Stöd för versionshantering: DSC kan nu identifiera ett dokument som har genererats på en nyare klient (medföljer [WMF 5.0](https://aka.ms/wmf5download)).
+  - Stöd för versionshantering:  DSC kan nu identifiera ett dokument som har genererats på en nyare klient (medföljer [WMF 5.0](https://aka.ms/wmf5download)).
 
 - Fel dataförlustskydd förbättringar
   - Modulversion har nu verkställts innan en konfiguration tillämpas.
@@ -117,7 +117,7 @@ Många uppdateringar och förbättringar för Windows PowerShell Desired State C
 - Windows PowerShell-avskrift har förbättrats för att tillämpa för alla värdbaserade program (till exempel Windows PowerShell ISE) förutom konsolvärden (**powershell.exe**). Transkription alternativ (inklusive aktiverar systemomfattande avskrifter) kan konfigureras genom att aktivera den **aktivera PowerShell avskrift** gruppolicy-inställningen finns i administrativa mallar/Windows komponenter/Windows PowerShell.
 - En ny funktion för spårning av detaljerade skript kan du aktivera detaljerad spårning och analys av Windows PowerShell skript används på ett system. När du har aktiverat detaljerad skriptet spårning av Windows PowerShell loggar alla skriptblocken händelseloggen Event Tracing för Windows (ETW) **Microsoft-Windows-PowerShell/Operational**.
 - Från och med Windows PowerShell 5.0, den nya syntaxen Cryptographic Message Syntax cmdletar stöder kryptering och dekryptering av innehåll med hjälp av IETF standardformat för att skydda kryptografiskt meddelanden som det dokumenterats i [RFC5652](https://tools.ietf.org/html/rfc5652). Cmdlet: Get-CmsMessage, skydda CmsMessage och Unprotect CmsMessage har lagts till i [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh849807.aspx) modulen.
-- Nya cmdletar i den [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) modulen, Get-Körningsutrymme, Debug Runspace, Get-RunspaceDebug, aktivera RunspaceDebug och inaktivera RunspaceDebug låter dig ange felsökningsalternativ på en körningsutrymme och starta och stoppa Felsökning på ett körningsutrymme. För felsökning av godtycklig körningsutrymmen ”det vill säga körningsutrymmen som inte är standard körningsutrymme för en Windows PowerShell-konsolen eller Windows PowerShell ISE-session'” Windows PowerShell kan du ange brytpunkter i ett skript och har lagt till brytpunkter Stoppa skriptet från körs tills du kan koppla en felsökare för att felsöka skriptet körningsutrymme. Stöd för kapslade felsökning för godtycklig körningsutrymmen har lagts till felsökningsprogram för Windows PowerShell-skript för körningsutrymmen.
+- Nya cmdletar i den [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) modulen, Get-Körningsutrymme, Debug Runspace, Get-RunspaceDebug, aktivera RunspaceDebug och inaktivera RunspaceDebug låter dig ange felsökningsalternativ på en körningsutrymme och starta och stoppa Felsökning på ett körningsutrymme. För felsökning av godtycklig körningsutrymmen (det vill säga körningsutrymmen som inte är standard körningsutrymme för en Windows PowerShell-konsolen eller Windows PowerShell ISE-session) kan Windows PowerShell du ange brytpunkter i ett skript och har lagt brytpunkter Stoppa skriptet från körs tills du kan koppla en felsökare för att felsöka skriptet körningsutrymme. Stöd för kapslade felsökning för godtycklig körningsutrymmen har lagts till felsökningsprogram för Windows PowerShell-skript för körningsutrymmen.
 - En ny Format-Hex-cmdlet har lagts till i [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) modulen. Hexadecimalt format kan du visa text eller binära data i hexadecimalt format.
 - Get-Urklipp och Set-Urklipp cmdletar har lagts till i [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) modulen; de underlättar överföringen av innehåll till och från en Windows PowerShell-session. Urklipps-cmdletar har stöd för bilder, ljudfiler, fillistor och text.
 - En ny cmdlet, Clear-RecycleBin har lagts till i [Microsoft.PowerShell.Management](https://technet.microsoft.com/library/hh849827(v=wps.640).aspx) modul; den här cmdleten förbrukade återvinningen Bin för en fast enhet som innehåller externa enheter. Som standard uppmanas du att bekräfta en Clear-RecycleBin-kommandot, eftersom egenskapen ConfirmImpact i cmdleten är inställd på ConfirmImpact.High.
@@ -134,24 +134,25 @@ Många uppdateringar och förbättringar för Windows PowerShell Desired State C
 - Du kan nu utföra modulen version verifieringen genom att köra cmdleten Test-ModuleManifest.
 - Resultatet för Get-Command-cmdlet visar nu en versionskolumn; en ny Version-egenskap har lagts till CommandInfo-klassen. Get-Command visar kommandon från flera versioner av samma modul. Egenskapen Version ingår också i härledda klasser av CmdletInfo: CmdletInfo och ApplicationInfo.
 - Get-Command har en ny parameter - ShowCommandInfo, som returnerar ShowCommand information som PSObjects. Detta är särskilt användbar funktion för när Show-kommandot har körts i Windows PowerShell ISE med hjälp av Windows PowerShell-fjärrkommunikation. Ersätter befintlig Get-SerializedCommand-funktion i modulen Microsoft.PowerShell.Utility för parametern - ShowCommandInfo Get-SerializedCommand skriptet är dock fortfarande för att stödja äldre skript.
-- En ny cmdlet Get-ItemPropertyValue kan du hämta värdet för en egenskap utan med hjälp av punktnotation. I äldre versioner av Windows PowerShell kan du till exempel köra följande kommando för att hämta värdet för egenskapen Programbas för registernyckeln PowerShellEngine: **(Get-itemproperty-egenskap-sökvägen HKLM:\\programvara\\ Microsoft\\PowerShell\\3\\PowerShellEngine-namnge ApplicationBase). ApplicationBase**. Från och med Windows PowerShell 5.0, kan du köra **Get-ItemPropertyValue-sökvägen HKLM:\\programvara\\Microsoft\\PowerShell\\3\\PowerShellEngine-namnet ApplicationBase** .
+- En ny cmdlet Get-ItemPropertyValue kan du hämta värdet för en egenskap utan med hjälp av punktnotation. Du kan till exempel köra följande kommando för att hämta värdet för egenskapen Programbas för registernyckeln PowerShellEngine i äldre versioner av Windows PowerShell: **(Get-itemproperty-egenskap-sökvägen HKLM:\\programvara\\Microsoft\\PowerShell\\3\\PowerShellEngine-namnge ApplicationBase). ApplicationBase**. Från och med Windows PowerShell 5.0, kan du köra **Get-ItemPropertyValue-sökvägen HKLM:\\programvara\\Microsoft\\PowerShell\\3\\PowerShellEngine-namnet ApplicationBase** .
 - Windows PowerShell-konsolen använder nu syntaxfärgning, precis som för Windows PowerShell ISE.
 - En ny NetworkSwitch-modulen innehåller cmdlets som hjälper dig att använda växeln, virtuellt LAN (VLAN) och grundläggande nivå 2-portkonfiguration av nätverksväxel för Windows Server 2012 R2-logotyp-certifierade nätverksväxlar.
 - Parametern FullyQualifiedName har lagts till Import-Module och Remove-Module-cmdletar för lagring av flera versioner av en enda modul.
 - Save-Help, Update-Help, Import-PSSession, Export-PSSession och Get-Command har du en ny parameter FullyQualifiedModule av typen ModuleSpecification. Lägg till den här parametern om du vill ange en modul med dess fullständigt kvalificerade namn.
 - Värdet för **$PSVersionTable.PSVersion** har uppdaterats till 5.0.
-
+- WMF 5.0 (PowerShell 5.0) innehåller den **Pester** modulen.  Lära är en enhet som xcuitest för PowerShell. Det ger ett par enkla att använda nyckelord som kan du skapa tester för dina skript. 
+ 
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Nya funktioner i Windows PowerShell Desired State Configuration
 
-- Förbättringar av Windows PowerShell-språket kan du definiera resurser för Windows PowerShell Desired State Configuration (DSC) med hjälp av klasser. Import-DscResource är nu en SANT dynamisk nyckelord. Windows PowerShell Parsar den angivna modulen '™ s rotmodul söker efter klasser som innehåller attributet DscResource. Du kan nu använda klasser för att definiera DSC-resurser, där varken en MOF-fil eller en DSCResource undermapp i modulmappen krävs. En fil för Windows PowerShell-modulen kan innehålla flera DSC-resursklasser.
+- Förbättringar av Windows PowerShell-språket kan du definiera resurser för Windows PowerShell Desired State Configuration (DSC) med hjälp av klasser. Import-DscResource är nu en SANT dynamisk nyckelord. Windows PowerShell tolkar rotmodul för den angivna modulen, söker efter klasser som innehåller attributet DscResource. Du kan nu använda klasser för att definiera DSC-resurser, där varken en MOF-fil eller en DSCResource undermapp i modulmappen krävs. En fil för Windows PowerShell-modulen kan innehålla flera DSC-resursklasser.
 - En ny parameter ThrottleLimit, har lagts till i följande cmdletar i modulen PSDesiredStateConfiguration. Lägg till parametern ThrottleLimit för att ange hur många datorer eller enheter som du vill att kommandot ska fungera på samma gång.
   - Get-DscConfiguration
   - Get-DscConfigurationStatus
   - Get-DscLocalConfigurationManager
   - Restore-DscConfiguration
   - Test-DscConfiguration
-  - Jämför-DscConfiguration
-  - Publicera DscConfiguration
+  - Compare-DscConfiguration
+  - Publish-DscConfiguration
   - Set-DscLocalConfigurationManager
   - Start-DscConfiguration
   - Update-DscConfiguration
@@ -165,8 +166,8 @@ Många uppdateringar och förbättringar för Windows PowerShell Desired State C
 - stöd för 32-bitars (x86-baserad) har lagts till för den **Configuration** nyckelord.
 - Windows PowerShell har nu stöd för anpassade hjälp för DSC-konfigurationer, som fastställs genom att lägga till \[CmdletBinding()] till funktionen skapade konfigurationen.
 - En ny **DscLocalConfigurationManager** attributet betecknar ett block med konfigurationen som en meta-konfiguration, som används för att konfigurera DSC Local Configuration Manager. Det här attributet begränsar en konfiguration som ska som innehåller endast de objekt som konfigurerar DSC Local Configuration Manager. Under bearbetning, den här konfigurationen genererar en \*. meta.mof-fil som sedan skickas till lämplig målnoder genom att köra cmdlet Set-DscLocalConfigurationManager.
-- Partiella konfigurationer tillåts nu i Windows PowerShell 5.0. Du kan leverera configuration dokument till en nod i fragment. För en nod att ta emot flera fragment av konfiguration dokument, noden '™ s Local Configuration Manager måste anges först ange förväntade fragment
-- Cross-datorsynkronisering är ny i DSC i Windows PowerShell 5.0. Med hjälp av inbyggda WaitFor\* resurser (**WaitForAll**, **WaitForAny**, och **WaitForSome**), kan du nu ange beroenden mellan datorer under konfigurationen körs utan externa orkestreringar. Dessa resurser innehåller synkronisering av nod-till-nod med hjälp av CIM-anslutningar via protokollet WS-Man. En konfiguration kan vänta på en annan dator '™ s resurstillståndet att ändra.
+- Partiella konfigurationer tillåts nu i Windows PowerShell 5.0. Du kan leverera configuration dokument till en nod i fragment. För en nod tar emot flera fragment av en konfigurationsdokumentet måste nodens Local Configuration Manager anges först ange förväntade fragment
+- Cross-datorsynkronisering är ny i DSC i Windows PowerShell 5.0. Med hjälp av inbyggda WaitFor\* resurser (**WaitForAll**, **WaitForAny**, och **WaitForSome**), kan du nu ange beroenden mellan datorer under konfigurationen körs utan externa orkestreringar. Dessa resurser innehåller synkronisering av nod-till-nod med hjälp av CIM-anslutningar via protokollet WS-Man. En konfiguration kan vänta på en annan dator resurstillståndet att ändra.
 - Bara tillräckligt Administration (JEA), en ny delegering säkerhetsfunktion, använder DSC och Windows PowerShell begränsade körningsutrymmen att hjälpa företag att säkra från dataförlust eller kompromettering av anställda, om avsiktlig och oavsiktlig. Läs mer om JEA, inklusive där du kan hämta xJEA DSC-resurs [Just Enough Administration, steg för steg](https://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx).
 - Följande nya cmdletar har lagts till modulen PSDesiredStateConfiguration.
   - En ny cmdlet Get-DscConfigurationStatus hämtar översiktlig information om Konfigurationsstatus från en målnoden. Du kan hämta status för senast eller för alla konfigurationer.
@@ -177,7 +178,7 @@ Många uppdateringar och förbättringar för Windows PowerShell Desired State C
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Nya funktioner i Windows PowerShell ISE
 
-- Du kan nu redigera fjärransluten Windows PowerShell-skript och filer i en lokal kopia av Windows PowerShell ISE genom att köra Enter-PSSession för att starta en fjärrsession på datorn som ”™ s lagra de filer du vill redigera och sedan köra **PSEdit <path and file name on the remote computer>**. Den här funktionen förenklar redigering Windows PowerShell-filer som lagras på en Server Core-installation av Windows Server, där Windows PowerShell ISE inte kan köras.
+- Du kan nu redigera fjärransluten Windows PowerShell-skript och filer i en lokal kopia av Windows PowerShell ISE genom att köra Enter-PSSession för att starta en fjärrsession på den dator som lagrar de filer du vill redigera och kör sedan **PSEdit \<sökvägen och filnamnet på fjärrdatorn\>**. Den här funktionen förenklar redigering Windows PowerShell-filer som lagras på en Server Core-installation av Windows Server, där Windows PowerShell ISE inte kan köras.
 - Cmdleten Start-avskrift stöds nu i Windows PowerShell ISE.
 - Du kan nu felsöka remote skript i Windows PowerShell ISE.
 - Ett nytt kommando **bryta alla** (Ctrl + F) delar in i felsökaren för både lokala och via en fjärranslutning med skript.
@@ -237,7 +238,7 @@ Windows PowerShell 4.0 innehåller följande nya funktioner.
 
 - Stöd har lagts till för en ny **PipelineVariable** gemensamma parametern i samband med iterativ pipelines, till exempel de som används av System Center Orchestrator, det vill säga pipelines som kör kommandon bara vänster till höger, inte bland kör med hjälp av strömning.
 - Parameterbindningen har förbättrats avsevärt för att fungera utanför fliken slutförande scenarier, till exempel med kommandon som inte finns i det aktuella körningsutrymmet.
-- Stöd för anpassad behållare aktiviteter har lagts till Windows PowerShell-arbetsflöde. Om en aktivitetsparameter är av typerna **aktivitet**, **aktivitet\[]**”” eller är en allmän uppsättning aktiviteter ”och användaren har skickat ett skriptblock med som ett argument, sedan Windows PowerShell-arbetsflöde konverterar skriptblocket till XAML, precis som med normal Windows PowerShell-skript-arbetsflöde kompilering.
+- Stöd för anpassad behållare aktiviteter har lagts till Windows PowerShell-arbetsflöde. Om en aktivitetsparameter är av typerna **aktivitet**, **aktivitet\[]** (eller är en allmän uppsättning aktiviteter) och användaren har skickat ett skriptblock med som ett argument, sedan Windows PowerShell Arbetsflödet konverterar skriptblocket till XAML, precis som med normal Windows PowerShell-skript-arbetsflöde kompilering.
 - Efter en krasch återansluter Windows PowerShell-arbetsflöde automatiskt till hanterade noder.
 - Du kan nu begränsa **Foreach-Parallel** aktivitet uttryck med hjälp av den **ThrottleLimit** egenskapen.
 - Den **ErrorAction** gemensamma parametern har ett nytt giltigt värde **Suspend**, det vill säga exklusivt för arbetsflöden.
@@ -315,7 +316,7 @@ Windows PowerShell 3.0 innehåller följande nya funktioner.
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell-arbetsflöde
 
-Windows PowerShell-arbetsflöde får du kraften hos Windows Workflow Foundation på Windows PowerShell. Du kan skriva arbetsflöden i XAML eller i Windows PowerShell-språket och kör dem precis som du vill köra en cmdlet. Den [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet hämtar workflw kommandon och [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) hämtar hjälp för arbetsflöden.
+Windows PowerShell-arbetsflöde får du kraften hos Windows Workflow Foundation på Windows PowerShell. Du kan skriva arbetsflöden i XAML eller i Windows PowerShell-språket och kör dem precis som du vill köra en cmdlet. Den [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet hämtar arbetsflödeskommandon och [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) hämtar hjälp för arbetsflöden.
 
 Arbetsflöden är sekvenser av multicomputer hanteringsaktiviteter som är långvariga, upprepbara, frekventa, stöder parallellkörning, kan kopplas ifrån, suspendable och kan startas om. Arbetsflöden kan återupptas från ett avsiktliga och oavsiktliga avbrott, till exempel ett nätverksavbrott, en omstart av Windows eller ett strömavbrott.
 
@@ -330,7 +331,7 @@ Följande är fördelarna med Windows PowerShell-arbetsflöde
 - **Persistence.** : ett arbetsflöde sparas (eller kontrollera visade) vid specifika tidpunkter som definierats av författaren så att du kan återuppta arbetsflödet från senast sparade aktivitet (eller kontrollpunkt), i stället för att starta om arbetsflödet från början.
 - **Stabilitet.** Återställning av automatisk fel. Arbetsflöden klarar planerade och oplanerade omstarter. Du kan pausa arbetsflödeskörning och återuppta arbetsflödet från den sista punkten för persistence. Arbetsflödesskapare kan ange specifika aktiviteter att köra om fel uppstår på en eller flera hanterade noder.
 - **Möjligheten att koppla ifrån, återansluta och körs i sessionen.** Användare kan ansluta och koppla från arbetsflödesservern, men arbetsflödet körs kontinuerligt. Du kan logga ut från klientdatorn eller starta om klientdatorn och övervaka arbetsflödeskörning från en annan dator utan att avbryta arbetsflödet.
-- **Schemaläggning.** Uppgifter i arbetsflödet kan schemaläggas som alla Windows PowerShell-cmdlet eller ett skript.
+- **Scheduling.** Uppgifter i arbetsflödet kan schemaläggas som alla Windows PowerShell-cmdlet eller ett skript.
 - **Arbetsflödet och begränsning av anslutningen.** Arbetsflödeskörning och anslutningar till noderna kan vara begränsad, vilket gör att scenarier för skalbarhet och hög tillgänglighet.
 
 ### <a name="windows-powershell-web-access"></a>Windows PowerShell Web Access
@@ -452,19 +453,19 @@ Nya cmdletar har lagts till i Windows PowerShell Core-installationen, inklusive 
 
 |||
 |-|-|
-|Lägg till JobTrigger|Ny JobTrigger|
-|Connect-PSSession|Ny PSSessionConfigurationFile|
+|Add-JobTrigger|Ny JobTrigger|
+|Connect-PSSession|New-PSSessionConfigurationFile|
 |ConvertFrom-Json|New-PSTransportOption|
-|ConvertTo-Json|Ny PSWorkflowExecutionOption|
+|ConvertTo-Json|New-PSWorkflowExecutionOption|
 |Inaktivera JobTrigger|Ny PSWorkflowSession|
-|Disable-ScheduledJob|Ny ScheduledJobOption|
+|Disable-ScheduledJob|New-ScheduledJobOption|
 |Koppla från PSSession|Ny-WinEvent|
-|Aktivera JobTrigger|Ta emot PSSession|
-|Aktivera-ScheduledJob|Registrera CimIndicationEvent|
+|Enable-JobTrigger|Ta emot PSSession|
+|Enable-ScheduledJob|Register-CimIndicationEvent|
 |Get-CimAssociatedInstance|Register-ScheduledJob|
 |Get-CimClass|Remove-CimInstance|
 |Get-CimInstance|Remove-CimSession|
-|Get-CimSession|Ta bort TypeData|
+|Get-CimSession|Remove-TypeData|
 |Get-ControlPanelItem|Rename-Computer|
 |Get-IseSnippet|Resume-Job|
 |Get-JobTrigger|Save-Help|
@@ -474,14 +475,14 @@ Nya cmdletar har lagts till i Windows PowerShell Core-installationen, inklusive 
 |Importera IseSnippet|Set-ScheduledJobOption|
 |Anropa AsWorkflow|Visa kommando|
 |Invoke-CimMethod|Visa ControlPanelItem|
-|Anropa RestMethod|Inaktivera jobbet|
+|Invoke-RestMethod|Suspend-Job|
 |Invoke-WebRequest|Test-PSSessionConfigurationFile|
-|Ny CimInstance|Avblockera fil|
-|Ny-CimSession|Avregistrera-ScheduledJob|
-|Ny CimSessionOption|Update-Help|
+|Ny CimInstance|Unblock-File|
+|Ny-CimSession|Unregister-ScheduledJob|
+|New-CimSessionOption|Update-Help|
 |Ny IseSnippet||
 
-### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>Förbättringar av befintliga Kärncmdletar och ProvidersWindows PowerShell 3.0 innehåller nya funktioner för befintliga cmdlets inklusive förenklad syntax och nya parametrar för följande cmdletar: dator-cmdletar, CSV-cmdlet: ar, Get-ChildItem, Get-Command Get-innehåll, Get-historik, mått-objekt, Security cmdlet: ar, Select-Object, Välj sträng, dela sökväg, startprocessen, Tee-objekt, Test-Connection, Lägg till medlem och WMI-cmdletar.
+### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>Förbättringar av befintliga Kärncmdletar och ProvidersWindows PowerShell 3.0 innehåller nya funktioner för befintliga cmdlets inklusive förenklad syntax och nya parametrar för följande cmdletar: Dator-cmdletar, CSV-cmdlet: ar, Get-ChildItem, Get-Command, Get-innehåll, Get-historik, mått-objekt, Security cmdlet: ar, Select-Object, Välj sträng, dela sökväg, startprocessen, Tee-objekt, Test-Connection, Lägg till medlem och WMI-cmdletar.
 
 Windows PowerShell-providers har också förbättrats avsevärt, inklusive stöd för provider-certifikat för att hantera certifikat för Secure Socket Layer (SSL) för Internet, stöd för autentiseringsuppgifter, beständig nätverksenheter och alternativa dataströmmar i filsystem enheter.
 

@@ -1,14 +1,14 @@
 ---
 description: Läs mer om versionshistoriken för tillägget Desired State Configuration (DSC) i Azure.
 ms.date: 06/21/2018
-keywords: DSC, powershell, azure, tillägg
+keywords: dsc, powershell, azure, extension
 title: Versionshistorik för Azure DSC-tillägg
 ms.openlocfilehash: 2c076e3beccc15e99af2327820916d7a4d28da68
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405231"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688128"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Versionshistorik för Azure Desired State Configuration-tillägg
 
@@ -84,7 +84,7 @@ Den här artikeln innehåller information om varje version av VM-tillägget Azur
 
   - I den nya versionen av tillägget tillämpas nu TLS 1.2. När du distribuerar tillägget om du redan hade AutoUpgradeMinorVersion = true i Resource Manager-mall och sedan tillägget får autoupgraded till 2,75. Manuella uppdateringar ange `TypeHandlerVersion = 2.75` i Resource Manager-mallen.
 
-### <a name="version-270---272"></a>Version 2.70 2.72
+### <a name="version-270---272"></a>Version 2.70 - 2.72
 
 - **Utgivningsdatum:** Den 13 november 2017
 - **OS-support:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows Client 7/8.1/10, Nano Server
@@ -159,7 +159,7 @@ Den här artikeln innehåller information om varje version av VM-tillägget Azur
 ### <a name="version-220"></a>Version 2.20
 
 - **Utgivningsdatum:** Den 2 augusti 2016
-- **OS-support:** Windows Server 2016 Technical Preview och Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **OS-support:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
 - **WMF stöd:** WMF 5.1 förhandsversion, WMF 5.0 RTM, WMF 4.0 uppdaterar, WMF 4.0
 - **Miljö:** Azure
 - **Anmärkning:** Den här versionen använder DSC som ingår i Windows Server 2016 Technical Preview; för andra Windows-operativsystem installeras den [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installera WMF kräver en omstart).
@@ -167,12 +167,12 @@ Den här artikeln innehåller information om varje version av VM-tillägget Azur
   - Förhandsversionen av stödet för WMF 5.1. När det publiceras för första gången, den här versionen har en valfri uppgradering och var du tvungen att ange Wmfversion = ' 5.1PP' i Resource Manager-mallar för att installera WMF 5.1-förhandsversion. Wmfversion = ”senaste” fortfarande installerar den [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). Läs mer i förhandsversionen av WMF 5.1 [den här bloggen]( https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/).
   - Mindre korrigeringar och förbättringar har lagts till.
 
-### <a name="version--219"></a>Version 2.19
+### <a name="version--219"></a>Version  2.19
 
 - **Utgivningsdatum:** 3 juni 2016
-- **OS-support:** Windows Server 2016 Technical Preview och Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **OS-support:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
 - **WMF stöd:** WMF 5.0 RTM, WMF 4.0 uppdaterar, WMF 4.0
-- **Miljö:** Azure, Azure Kina Azure Government
+- **Miljö:** Azure, Azure China, Azure Government
 - **Anmärkning:** Den här versionen använder DSC som ingår i Windows Server 2016 Technical Preview; för andra Windows-operativsystem installeras den [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installera WMF kräver en omstart).
 - **Nya funktioner:**
   - DSC-tillägget har nu publicerats i Azure i Kina. Den här versionen innehåller främst korrigeringar för att köra tillägget på Azure Kina.
@@ -180,7 +180,7 @@ Den här artikeln innehåller information om varje version av VM-tillägget Azur
 ### <a name="version-218"></a>Version 2.18
 
 - **Utgivningsdatum:** 3 juni 2016
-- **OS-support:** Windows Server 2016 Technical Preview och Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **OS-support:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
 - **WMF stöd:** WMF 5.0 RTM, WMF 4.0 uppdaterar, WMF 4.0
 - **Miljö:** Azure
 - **Anmärkning:** Den här versionen använder DSC som ingår i Windows Server 2016 Technical Preview; för andra Windows-operativsystem installeras den [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installera WMF kräver en omstart).
@@ -192,18 +192,18 @@ Den här artikeln innehåller information om varje version av VM-tillägget Azur
 ### <a name="version-217"></a>Version 2.17
 
 - **Utgivningsdatum:** 26 april 2016
-- **OS-support:** Windows Server 2016 Technical Preview och Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **OS-support:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
 - **WMF stöd:** WMF 5.0 RTM, WMF 4.0 uppdaterar, WMF 4.0
 - **Miljö:** Azure
 - **Anmärkning:** Den här versionen använder DSC som ingår i Windows Server 2016 Technical Preview; för andra Windows-operativsystem installeras den [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installera WMF kräver en omstart).
 - **Nya funktioner:**
   - Stöd för WMF 4.0 Update. Mer information om WMF 4.0-uppdateringen finns i [den här bloggen](https://blogs.msdn.microsoft.com/powershell/2016/01/19/windows-management-framework-wmf-4-0-update-now-available-for-windows-server-2012-windows-server-2008-r2-sp1-and-windows-7-sp1/).
-  - Logik för omprövning av på fel som uppstår under installationen DSC-tillägget eller när en DSC-konfiguration efter tillägg installera. Som en del av den här ändringen kommer tillägget försök installera igen om en tidigare installation misslyckades eller nytt tillämpar en DSC-konfiguration som tidigare misslyckats, för högst tre gånger tills den når uppgiftens status (lyckades/fel) eller om en ny begäran kommer. Om tillägget misslyckas på grund av ogiltig användare inställningar/användarindata, det gör inget nytt försök. I det här fallet måste tillägget anropas igen med en ny begäran och korrigera användarinställningarna för. Obs! DSC-tillägget är beroende av Azure VM-agenten för nya försök. Virtuella Azure-datoragenten anropar tillägget med den senaste misslyckade begäranden tills den når tillståndet – slutförd eller misslyckades.
+  - Logik för omprövning av på fel som uppstår under installationen DSC-tillägget eller när en DSC-konfiguration efter tillägg installera. Som en del av den här ändringen kommer tillägget försök installera igen om en tidigare installation misslyckades eller nytt tillämpar en DSC-konfiguration som tidigare misslyckats, för högst tre gånger tills den når uppgiftens status (lyckades/fel) eller om en ny begäran kommer. Om tillägget misslyckas på grund av ogiltig användare inställningar/användarindata, det gör inget nytt försök. I det här fallet måste tillägget anropas igen med en ny begäran och korrigera användarinställningarna för. Anm DSC-tillägget är beroende av Azure VM-agenten för nya försök. Virtuella Azure-datoragenten anropar tillägget med den senaste misslyckade begäranden tills den når tillståndet – slutförd eller misslyckades.
 
 ### <a name="version-216"></a>Version 2.16
 
 - **Utgivningsdatum:** Den 21 april 2016
-- **OS-support:** Windows Server 2016 Technical Preview och Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **OS-support:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
 - **WMF stöd:** WMF 5.0 RTM WMF 4.0
 - **Miljö:** Azure
 - **Anmärkning:** Den här versionen använder DSC som ingår i Windows Server 2016 Technical Preview; för andra Windows-operativsystem installeras den [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installera WMF kräver en omstart).
@@ -214,7 +214,7 @@ Den här artikeln innehåller information om varje version av VM-tillägget Azur
 ### <a name="version-215"></a>Version 2.15
 
 - **Utgivningsdatum:** Den 14 mars 2016
-- **OS-support:** Windows Server 2016 Technical Preview och Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **OS-support:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
 - **WMF stöd:** WMF 5.0 RTM WMF 4.0
 - **Miljö:** Azure
 - **Anmärkning:** Den här versionen använder DSC som ingår i Windows Server 2016 Technical Preview; för andra Windows-operativsystem installeras den [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installera WMF kräver en omstart).
@@ -227,7 +227,7 @@ Den här artikeln innehåller information om varje version av VM-tillägget Azur
 ### <a name="version-214"></a>Version 2.14
 
 - **Utgivningsdatum:** Den 25 februari 2016
-- **OS-support:** Windows Server 2016 Technical Preview och Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **OS-support:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
 - **WMF stöd:** WMF 5.0 RTM WMF 4.0
 - **Miljö:** Azure
 - **Anmärkning:** Den här versionen använder DSC som ingår i Windows Server 2016 Technical Preview; för andra Windows-operativsystem installeras den [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installera WMF kräver en omstart).

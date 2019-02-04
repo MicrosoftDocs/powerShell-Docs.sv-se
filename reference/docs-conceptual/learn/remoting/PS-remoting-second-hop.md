@@ -1,15 +1,15 @@
 ---
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet
-title: Gör det andra hoppet i PowerShell-fjärrkommunikation
+title: Göra det andra hoppet i PowerShell-fjärrkommunikation
 ms.openlocfilehash: 06ca43e3e0524d89ec6f66f6553c4c75072beaf3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404979"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684754"
 ---
-# <a name="making-the-second-hop-in-powershell-remoting"></a>Gör det andra hoppet i PowerShell-fjärrkommunikation
+# <a name="making-the-second-hop-in-powershell-remoting"></a>Göra det andra hoppet i PowerShell-fjärrkommunikation
 
 ”Andra hopp problemet” avser en situation som liknar följande:
 
@@ -213,7 +213,7 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [Hur Windows Server 2012 övergångar enkelt Kerberos-begränsad delegering, del 1](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
 - [Hur Windows Server 2012 övergångar enkelt Kerberos-begränsad delegering, del 2](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [Förstå Kerberos-begränsad delegering för Azure Active Directory Application Proxy-distributioner med integrerad Windows-autentisering](https://aka.ms/kcdpaper)
-- [[MS-ADA2]: Active Directory-schemat attribut M2.210 attributet msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
+- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
 - [[MS-SFU]: Tillägg för Kerberos-protokollet: Tjänst för användare och begränsad delegering protokollet 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
 - [Resursen baserat Kerberos-begränsad delegering](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [Fjärradministration utan begränsad delegering med hjälp av PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)

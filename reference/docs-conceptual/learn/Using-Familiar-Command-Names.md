@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell cmdlet
 title: Använd bekanta kommandonamn
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: c5665f64fd832eb9c807f413a8e879f63db7f8c6
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 3d2c681623086e061e237f08603d65150d2b1947
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53406042"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688926"
 ---
 # <a name="using-familiar-command-names"></a>Använd bekanta kommandonamn
 
@@ -22,14 +22,14 @@ I följande lista visas några vanliga **cmd.exe** och Unix-kommandon som du kan
 
 |||||
 |-|-|-|-|
-|cat|dir|Montera|RM|
-|CD|echo|Flytta|rmdir|
+|cat|dir|Montera|rm|
+|cd|echo|Flytta|rmdir|
 |chdir|Radera|popd|strömsparläge|
-|Rensa|H|PS|Sortera|
+|Rensa|h|ps|Sortera|
 |CLS|Historik|pushd|Tee|
 |Kopiera|Avsluta|pwd|typ|
 |del|LP|r|skriva|
-|diff|Ls|ren||
+|diff|ls|ren||
 
 Den `Get-Alias` cmdlet visar det verkliga namnet på den interna PowerShell-kommando som är associerade med ett alias.
 
@@ -45,7 +45,7 @@ Alias           cls -> Clear-Host
 
 ## <a name="interpreting-standard-aliases"></a>Tolka standard alias
 
-Alias vi beskrivs tidigare utformades för namn-kompatibilitet med andra kommandogränssnitt.
+Alias vi beskrivits utformades för namn-kompatibilitet med andra kommandogränssnitt.
 De flesta alias som är inbyggda i PowerShell är utformade för kortfattat. Kortare namn är lättare att typ, men är svåra att läsa om du inte vet vad de refererar till.
 
 PowerShell-alias försöker angripa mellan tydlighet och kortfattat. PowerShell använder en standarduppsättning med alias för vanliga substantiv och verb.
@@ -54,10 +54,10 @@ Exempel förkortningar:
 
 | Substantiv eller Verb | Förkortning |
 |--------------|--------------|
-| Get          | G            |
-| Ange          | S            |
-| Objekt         | Jag            |
-| Position     | L            |
+| Get          | g            |
+| Ange          | s            |
+| Artikel         | i            |
+| Position     | l            |
 | Kommando      | cm           |
 | Alias        | AL           |
 
@@ -65,11 +65,11 @@ Dessa alias är att förstå när du vet vilka snabbformat.
 
 | Cmdlet-namn    | Alias |
 |----------------|-------|
-| `Get-Item `    | GI    |
-| `Set-Item`     | Si    |
-| `Get-Location` | GL    |
-| `Set-Location` | Sl    |
-| `Get-Command`  | GCM   |
+| `Get-Item `    | gi    |
+| `Set-Item`     | si    |
+| `Get-Location` | gl    |
+| `Set-Location` | sl    |
+| `Get-Command`  | gcm   |
 | `Get-Alias`    | GAL   |
 
 När du är bekant med PowerShell-alias är det enkelt att gissa som den **sal** alias refererar till `Set-Alias`.

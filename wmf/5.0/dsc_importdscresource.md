@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: 46a278b83edb9d8e3d75b0874603710d416be3b5
-ms.sourcegitcommit: f4247d3f91d06ec392c4cd66921ce7d0456a2bd9
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50998528"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684656"
 ---
 # <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>Import-DscResource nyckelordet stöder - ModuleVersion-parametern
 
@@ -16,7 +16,7 @@ Vi har lagt till en ny parameter till den `Import-DscResource` dynamiska nyckelo
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>] [-ModuleVersion <ModuleVersion>]
 ```
 
-* **Namn på**: namnen på en eller flera resurser för att importera.
+* **Namn på**: Namn på en eller flera resurser som ska importeras.
 * **ModuleName**: Modulnamnen eller ModuleSpecification objekt i en eller flera moduler att importera.
 * **ModuleVersion**: Version av modulen att importera. Om används, måste ModuleName representera bara en modul med namnet.
 

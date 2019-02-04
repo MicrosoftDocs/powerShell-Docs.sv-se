@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 188ede0c558210a746ad0f6c6cef6f571b280878
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 8b3ebd22e03bf9bdd5f26965137a1b1ce9f47c3e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219913"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686749"
 ---
 # <a name="declare-base-class"></a>Deklarera basklass
 Du kan deklarera en Windows PowerShell-klass som bastyp för en annan Windows PowerShell-klass.

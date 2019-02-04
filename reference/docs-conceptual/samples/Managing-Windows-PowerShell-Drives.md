@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Hantera Windows PowerShell-enheter
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
 ms.openlocfilehash: cfc5418e9d2efb1a786817e1b941d75e22291742
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405435"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685188"
 ---
 # <a name="managing-windows-powershell-drives"></a>Hantera Windows PowerShell-enheter
 

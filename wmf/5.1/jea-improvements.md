@@ -5,11 +5,11 @@ keywords: WMF, powershell, inställning
 contributor: ryanpu
 title: Förbättringar av Enough Administration (jea JUST)
 ms.openlocfilehash: 66cbacb78f8a365e9c8556c7c56b3c3525de7395
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267873"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684705"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Förbättringar av Enough Administration (jea JUST)
 
@@ -81,6 +81,6 @@ RequiredGroups = @{ Or = '2FA-logon', 'smartcard-logon' }
 RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon' }}
 ```
 
-## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Fast: Virtuella konton stöds nu på Windows Server 2008 R2
+## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Åtgärdat: Virtuella konton stöds nu på Windows Server 2008 R2
 
 I WMF 5.1 kan du nu använda virtuella konton i Windows Server 2008 R2, aktivera konsekventa konfigurationer och funktionsparitet mellan Windows Server 2008 R2 - 2016. Virtuella konton förblir stöds inte när du använder JEA på Windows 7.

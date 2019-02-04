@@ -3,36 +3,36 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: Community-resurser
-ms.openlocfilehash: 144fa655d4c14656246bc6c86e7c43f1ea8dca3c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2bd006b1b873f475e04ebb00cc89d593e114cafc
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219376"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685090"
 ---
 # <a name="community-resources"></a>Community-resurser #
-> Obs: Den här informationen är preliminär och kan ändras.
+> Anm Den här informationen är preliminär och kan komma att ändras.
 
-PowerShell-teamets välkomnar uppmuntrar kundfeedback på produkten och stöder flera metoder för användare att kontakta oss.
-Några av de metoder som anges nedan kan du ge oss feedback, men vi rekommenderar att du börjar med länkarna på startsidan PowerShell.
+PowerShell-teamet välkomnar uppmuntrar kundernas feedback om produkten och stöder flera metoder för användare att kontakta oss.
+Någon av de metoder som anges nedan kan du ge feedback till oss, men vi rekommenderar att du börjar med länkar på startsidan för PowerShell.
 
-Den [PowerShell startsidan](https://microsoft.com/powershell) center information om PowerShell och har en länk direkt för ”Feedback” i menyn längst upp på sidan.
-Du kan starta det att snabbt komma åt vår kanaler.
-Det här är den rekommenderade metoden för att ge feedback, som den bibehålls aktivt över tid och ombeds du att den bästa platsen.
+Den [PowerShell startsida](https://microsoft.com/powershell) i mitten information om PowerShell och har en länk direkt för ”Feedback” på menyn längst upp på sidan.
+Du kan starta det att snabbt komma åt vårt feedback-kanaler.
+Det här är den rekommenderade metoden för att ge feedback, eftersom den aktivt bibehålls över tid och omdirigerar dig till den bästa platsen.
 
-PowerShell-team hanterar en [UserVoice forum](https://windowsserver.uservoice.com/forums/301869-powershell/) att avbilda problem och förslag med Windows PowerShell och våra tjänster.
-Det här forumet har stöd för att lägga till röster till befintliga problem, som använder PowerShell-teamet för att prioritera vårt arbete.
-Ange ord eller fraser som relaterar till problemet på sökfunktionen för att se om den har identifierats tidigare.
-Om inget matchar gärna lägga till ett nytt objekt.
-Det finns avsnitt som listas till höger för PowerShell team hanterar för olika funktionsområden.
-Du kan lägga till ditt problem i rätt område, eller lämna den i roten och PowerShell-teamet kommer placera den på rätt plats när vi går igenom den.
+PowerShell-teamet hanterar en [UserVoice-forum](https://windowsserver.uservoice.com/forums/301869-powershell/) att avbilda problem och förslag med Windows PowerShell och våra tjänster.
+Det här forumet har stöd för att lägga till röster till befintliga problem som använder PowerShell-teamet för att prioritera vårt arbete.
+Ange ord eller fraser som är relaterade till ditt problem i sökfunktionen i höger för att se om det har identifierats tidigare.
+Om inget matchar passa på att lägga till ett nytt objekt.
+Det finns avsnitt som visas till höger för olika funktionsområden som hanterar PowerShell-teamet.
+Du kan lägga till ditt problem i rätt område, eller lämna den i roten och PowerShell-teamet ska placeras på rätt plats när vi har granskat den.
 
-Användare som är bekanta med GitHub kan ge feedback om många PowerShell-funktioner genom att höja problem i den [PowerShell GitHub plats](https://github.com/powershell).
-Det finns många databaser vi underhåll och användning för öppen källkod utveckling och avbildar användare problem på den platsen.
-Några viktiga databaser till detta är:
+Användare som är bekanta med GitHub kan ge feedback på många PowerShell-funktioner genom att höja problemen i den [PowerShell GitHub-webbplatsen](https://github.com/powershell).
+Det finns många lagringsplatser vi underhåll och användning för utveckling av öppen källkod och samla in användaren problem på den platsen.
+Några viktiga databaser att påpeka är:
 
-* [PowerShell-dokumenten](https://github.com/PowerShell/powershell-docs)där all dokumentation (inklusive det här innehållet) hålls.
-* [PowerShell](https://github.com/PowerShell/powershell) är platsen för PowerShell Core, vilket är en senare version av PowerShell.
-Detta är platsen att föreslå funktionen rekommendationer eller höja problem för PowerShell Core.
-* [PowerShellGet](https://github.com/PowerShell/powershellget) databasen är för PowerShellGet modulen och cmdletar.
-* [DSCResources](https://github.com/PowerShell/DscResources) innehåller en uppsättning DSC-moduler som underhålls av PowerShell-teamet och publiceras på PowerShell-galleriet i DSC Resource Kit.
+* [PowerShell-Docs](https://github.com/PowerShell/powershell-docs), där all dokumentation (inklusive det här innehållet) bevaras.
+* [PowerShell](https://github.com/PowerShell/powershell) är platsen för PowerShell-kärna, vilket är den kommande versionen av PowerShell.
+Det här är platsen för att föreslå funktionsrekommendationer eller höja problem för PowerShell Core.
+* [PowerShellGet](https://github.com/PowerShell/powershellget) databasen är modulen PowerShellGet och cmdletar.
+* [DSCResources](https://github.com/PowerShell/DscResources) innehåller en uppsättning DSC-moduler som underhålls av PowerShell-teamet och publicerats i PowerShell-galleriet i DSC Resource Kit.

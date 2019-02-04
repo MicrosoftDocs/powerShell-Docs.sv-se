@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: MSFT_DSCLocalConfigurationManager-klass
 ms.openlocfilehash: 7f6aaf209601e99b0120407eb301d32fcfda9eb8
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048717"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685398"
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager-klass
 
@@ -28,7 +28,7 @@ class MSFT_DSCLocalConfigurationManager
 
 Den **MSFT_DSCLocalConfigurationManager** klassen har följande medlemmar:
 
-- [Metoder] []
+- [Methods][]
 
 ### <a name="methods"></a>Metoder
 
@@ -48,7 +48,7 @@ Den **MSFT_DSCLocalConfigurationManager** klassen har dessa metoder.
 | [ResourceGet](msft-dsclocalconfigurationmanager-resourceget.md)| Direkt anropar den **hämta** -metoden för en DSC-resurs.|
 | [ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| Direkt anropar den **ange** -metoden för en DSC-resurs.|
 | [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| Direkt anropar den **Test** -metoden för en DSC-resurs.|
-| [Återställning](msft-dsclocalconfigurationmanager-rollback.md)| Samlar in tillbaka till en tidigare konfiguration.|
+| [RollBack](msft-dsclocalconfigurationmanager-rollback.md)| Samlar in tillbaka till en tidigare konfiguration.|
 | [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| Skickar konfigurationsdokumentet till hanterad nod och sparar den som en väntande ändring.|
 | [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| Skickar konfigurationsdokumentet till hanterad nod och använder konfigurationen agenten för att tillämpa konfigurationen.|
 | [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| Skicka konfigurationsdokumentet till hanterad nod och börja använda Configuration agenten för att tillämpa konfigurationen. Använd GetConfigurationResultOutput för att hämta resultatet utdata.|

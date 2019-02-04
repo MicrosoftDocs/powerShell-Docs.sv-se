@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Kör fjärrkommandon
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 ms.openlocfilehash: 2001b5509acde6ec4259bb1442944958a67aa66f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405471"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688597"
 ---
 # <a name="running-remote-commands"></a>Kör fjärrkommandon
 
@@ -29,7 +29,7 @@ Dessa cmdletar omfattar:
 
 - [Starta om datorn](/powershell/module/microsoft.powershell.management/restart-computer)
 - [Testa anslutning](/powershell/module/microsoft.powershell.management/test-connection)
-- [Rensa händelselogg](/powershell/module/microsoft.powershell.management/clear-eventlog)
+- [Clear-EventLog](/powershell/module/microsoft.powershell.management/clear-eventlog)
 - [Get-händelseloggen](/powershell/module/microsoft.powershell.management/get-eventlog)
 - [Get-HotFix](/powershell/module/microsoft.powershell.management/get-hotfix)
 - [Get-Process](/powershell/module/microsoft.powershell.management/get-process)
@@ -148,12 +148,12 @@ Hjälp med fjärrkommunikation fel finns i [about_Remote_Troubleshooting](https:
 - [about_Remote_Requirements](https://technet.microsoft.com/library/da213949-134c-4741-b307-81f4492ba1bd)
 - [about_Remote_Troubleshooting](https://technet.microsoft.com/library/2f890148-8578-49ed-85ea-79a489dd6317)
 - [about_PSSessions](https://technet.microsoft.com/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
-- [about_WS Management_Cmdlets](https://technet.microsoft.com/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
+- [about_WS-Management_Cmdlets](https://technet.microsoft.com/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
 - [Anropskommandot](/powershell/module/microsoft.powershell.core/invoke-command)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 - [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [WSMan-providern](https://technet.microsoft.com/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+- [WSMan Provider](https://technet.microsoft.com/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
 
 [wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
 [ssh-remoting]: SSH-Remoting-in-PowerShell-Core.md

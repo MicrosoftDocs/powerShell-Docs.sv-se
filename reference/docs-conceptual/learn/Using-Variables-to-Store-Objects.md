@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Använd variabler för att lagra objekt
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
 ms.openlocfilehash: d166ec58dc658c1b134030c9a9592249ee40d4f5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404889"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687351"
 ---
 # <a name="using-variables-to-store-objects"></a>Använd variabler för att lagra objekt
 

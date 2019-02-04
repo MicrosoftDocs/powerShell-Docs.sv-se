@@ -1,18 +1,18 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 10f8dd0f5097260eb4a8516f9662df3d219bdfe5
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 4008a7f91af41150f26c4147135b30aa8835281c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187569"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688562"
 ---
-# <a name="test-dscconfiguration-cmdlet-supports-reference-configurations"></a>Testa DscConfiguration cmdlet har stöd för konfigurationer som referens
+# <a name="test-dscconfiguration-cmdlet-supports-reference-configurations"></a>Test-DscConfiguration-cmdleten stöder Referenskonfigurationer
 
-Cmdleten Test-DscConfiguration har uppdaterats för att tillåta testning av önskad konfigurationstillståndet för en eller flera målnoder genom att ange en konfiguration referensdokumentet att jämföra med.
+Test-DscConfiguration-cmdleten har uppdaterats för att tillåta testning av önskad konfigurationstillståndet för en eller flera målnoder genom att ange en referens konfigurationsdokumentet att jämföra med.
 
-Följande nya parameteruppsättningar använder DSC-konfigurationer i sökvägen som angetts för att testa endast och tillämpa aldrig varje konfiguration på angiven mål-noder. Precis som med Start DscConfiguration och andra DSC-cmdlets används namnet på varje MOF för att avgöra vilka målnoden för att testa konfigurationen på.
+Följande nya parameteruppsättningar använda DSC-konfigurationer i sökvägen till endast testet och tillämpa aldrig varje konfiguration för angivna noder. Precis som med Start-DscConfiguration och andra DSC-cmdletar, används namnet på varje MOF för att avgöra vilka målnoden att testa konfigurationen på.
 
 ```powershell
 Test-DscConfiguration   [-Path] <string>
@@ -29,7 +29,7 @@ Test-DscConfiguration   [-Path] <string>
                         [<CommonParameters>]
 ```
 
-Följande nya parameteruppsättningar använda en enda DSC-konfiguration för att bara testa och aldrig tillämpa konfigurationen på de angivna mål noderna.
+Följande nya parameteruppsättningar använder en enda DSC-konfiguration för att bara testa och aldrig tillämpa konfigurationen på den angivna målsökvägen nod(er).
 
 ```powershell
 Test-DscConfiguration   -ReferenceConfiguration <string>

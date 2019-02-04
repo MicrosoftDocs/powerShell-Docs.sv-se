@@ -1,20 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: db9b48c188b3bfe2e20c06875606a285922f55a6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 57152e9f62c34600df63a2db8e9683928e825d93
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219869"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685748"
 ---
-# <a name="detailed-information-about-lcm-state"></a>Detaljerad information om MGM tillstånd
+# <a name="detailed-information-about-lcm-state"></a>Detaljerad information om LCM-tillstånd
 
-Vi har gjort förbättringar i exponera information om det MGM. LCMState som returneras av Get-DscLocalConfigurationManager innehåller nu följande värden:
+Vi har gjort förbättringar i exponera information om LCM-tillstånd. LCMState som returneras av Get-DscLocalConfigurationManager kan nu ha följande värden:
 
 * **Inaktiv**
 * **Upptagen**
 * **PendingReboot**
 * **PendingConfiguration**
 
-Vi har lagt till en LCMStateDetail-egenskap som innehåller mer information om tillståndet.
+Vi har också lagt till en LCMStateDetail-egenskap som innehåller mer information om tillstånd.

@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: e6b54519d878ab572662075709beb4cf4454b0c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: d5ec95abb1d3160afc4179cff991cb5ef72d85fe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188065"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685923"
 ---
 # <a name="clipboard-cmdlets"></a>Urklipps-cmdletar
-**Get-Urklipp** och **Set Urklipp** gör det enklare att överföra innehåll till och från en Windows PowerShell-session. Till exempel om du använder Utforskaren för att kopiera tre filer till Urklipp (genom att markera dem och trycka på `ctrl-c`, till exempel), du kan sedan enkelt komma åt innehållet i Urklipp som en lista över filer:
+**Get-Urklipp** och **Set-Urklipp** gör det enklare att överföra innehåll till och från en Windows PowerShell-session. Exempel: Om du använder Windows Explorer för att kopiera tre filer till Urklipp (genom att markera dem och trycka på `ctrl-c`, till exempel), du kan sedan enkelt komma åt innehållet i Urklipp som en lista över filer:
 
 ```powershell
 PS C:\\&gt; Get-Clipboard -Format FileDropList
@@ -28,4 +28,4 @@ Mode LastWriteTime Length Name
 ```
 
 
-Cmdlet: ar för Urklipp stöder bilder, ljudfiler, fillistor och text.
+Urklipps-cmdletar har stöd för bilder, ljudfiler, fillistor och text.

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Skriva en anpassad DSC-resurs med MOF
-ms.openlocfilehash: 2dcdeb49b50e23bc8b9d87293ebb8d8ec5e7b57d
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404714"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687568"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Skriva en anpassad DSC-resurs med MOF
 
@@ -290,3 +290,16 @@ if (PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
+
+## <a name="rebooting-the-node"></a>Starta om noden
+
+Om de åtgärder som vidtas din `Set-TargetResource` funktionen kräver en omstart kan du använda en global flagga som talar om MGM om du vill starta om noden. Den här omstarten sker direkt efter den `Set-TargetResource` funktionen har slutförts.
+
+I din `Set-TargetResource` fungera, Lägg till följande rad med kod.
+
+```powershell
+# Include this line if the resource requires a system reboot.
+$global:DSCMachineStatus = 1
+```
+
+För att MGM om du vill starta om noden, den **RebootNodeIfNeeded** flaggan måste anges till `$true`. Den **ActionAfterReboot** inställningen bör också anges till **ContinueConfiguration**, vilket är standard. Läs mer om hur du konfigurerar LCM [konfigurerar den lokala Konfigurationshanteraren](../managing-nodes/metaConfig.md), eller [konfigurerar den lokala Konfigurationshanteraren (v4)](../managing-nodes/metaConfig4.md).

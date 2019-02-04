@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Starta Windows PowerShell 2.0-motorn
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
 ms.openlocfilehash: f5dd01cd93095fe15cc7e57f97f4b2920e580c22
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405296"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688933"
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>Starta Windows PowerShell 2.0-motorn
 

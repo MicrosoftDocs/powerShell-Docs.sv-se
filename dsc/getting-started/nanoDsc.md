@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Använda DSC på Nano Server
 ms.openlocfilehash: fd81fe56d16100f45d9ee2dfd8fdc303c2a6c17a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404955"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686588"
 ---
 # <a name="using-dsc-on-nano-server"></a>Använda DSC på Nano Server
 
@@ -32,21 +32,21 @@ Både sändnings- och mottagningsläge
 - Alla DSC-cmdletar som finns på en fullständig version av Windows Server, inklusive följande:
 - [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager)
 - [Set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager)
-- [Aktivera DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug)
-- [Inaktivera DscDebug](/powershell/module/PSDesiredStateConfiguration/Disable-DscDebug)
+- [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug)
+- [Disable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Disable-DscDebug)
 - [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
 - [Stop-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration)
 - [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration)
 - [Test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
-- [Publicera DscConfiguraiton](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration)
+- [Publish-DscConfiguraiton](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration)
 - [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration)
 - [Restore-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Restore-DscConfiguration)
-- [Ta bort DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
+- [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
 - [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
-- [Anropa DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource)
-- [Sök-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
+- [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource)
+- [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
 - [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)
-- [Ny DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
+- [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
 
 - Kompilera konfigurationer (se [DSC-konfigurationer](../configurations/configurations.md))
 

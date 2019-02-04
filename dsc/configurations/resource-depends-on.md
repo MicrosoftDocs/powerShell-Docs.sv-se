@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
-title: Resursberoenden använder DependsOn
+title: Resursberoenden med DependsOn
 ms.openlocfilehash: 0d060f7d99bd261b0766028b245d4d32a5e1c349
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404901"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688065"
 ---
-# <a name="resource-dependencies-using-dependson"></a>Resursberoenden använder DependsOn
+# <a name="resource-dependencies-using-dependson"></a>Resursberoenden med DependsOn
 
 När du skriver [konfigurationer](configurations.md), du lägger till [Resource block](../resources/resources.md) konfigurera aspekter av ett mål noden. När du fortsätter att lägga till resursen block kan dina konfigurationer växa ganska stora och komplicerade att hantera. En utmaning är tillämpad ordning av resource-block. Vanligtvis tillämpas resurser i den ordning som de definieras i konfigurationen. När konfigurationen växer större och mer komplexa, kan du använda den `DependsOn` för att ändra tillämpade ordningen på dina resurser genom att ange som en resurs är beroende av en annan resurs.
 

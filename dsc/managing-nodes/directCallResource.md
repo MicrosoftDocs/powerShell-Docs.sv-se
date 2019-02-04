@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Anropa DSC-resursmetoder direkt
 ms.openlocfilehash: cf237f638593706e5959e2bcc0d851b0e55baf0e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404751"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685678"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>Anropa DSC-resursmetoder direkt
 

@@ -2,12 +2,12 @@
 ms.date: 10/16/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Tillämpa konfigurationer
-ms.openlocfilehash: 4a6e7e511446ab27307683ad3d5676391e7c791c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 2a40f2055dda78cc0cb6cb05a5e14dce48be9d00
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405423"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684180"
 ---
 # <a name="enacting-configurations"></a>Tillämpa konfigurationer
 
@@ -48,6 +48,6 @@ Förstå men att den här implementeringen har begränsade funktioner och kräve
 
 I följande avsnitt förklarar hämtningstjänsten och klienter:
 
-- [Översikt över Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Översikt över Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Konfigurera en SMB-pullserver](pullServerSMB.md)
 - [Konfigurera en pullklient](pullClientConfigID.md)

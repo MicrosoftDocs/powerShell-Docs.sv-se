@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 9a9bdac652512640209c20e3deb20d7abc0142c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5ac9566979e1b761249f5cc7c62ed44047a2b9f6
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219539"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685237"
 ---
 # <a name="register-a-powershell-repository"></a>Registrera ett PowerShell-lager
-Du kan konfigurera PowerShellGet ska fungera mot interna databaser. Detta görs med hjälp av följande tillägg:
-- Registrera PSRepository: Registrerar en lagringsplats för den aktuella användaren.
-- Avregistrera PSRepository: Tar bort en registrerad lagringsplats för den aktuella användaren.
-- Set-PSRepository: Ange värden för en registrerad databas.
+Du kan konfigurera PowerShellGet att arbeta mot interna databaser. Detta görs med hjälp av följande tillägg:
+- Register-PSRepository: Registrerar en lagringsplats för den aktuella användaren.
+- Unregister-PSRepository: Tar bort en registrerad lagringsplats för den aktuella användaren.
+- Set-PSRepository: Ange värden för en registrerad lagringsplats.
 - Get-PSRepository: Hämta alla registrerade databaser för den aktuella användaren.
 
-När en databas har registrerats kan använda du hitta modulen och installera modulen för att arbeta med den.
+När en databas har registrerats kan använda du Find-Module och Install-Module för att arbeta med den.
 
 ```powershell
 \#Register a default repository

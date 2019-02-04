@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Exempelskript för systemadministration
 ms.assetid: db6334ec-ace6-436d-ab88-77aefc817511
 ms.openlocfilehash: 3c771c9568f40ec3a4bb7061c122f33bba7d0382
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53406022"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684187"
 ---
 # <a name="sample-scripts-for-system-administration"></a>Exempelskript för systemadministration
 

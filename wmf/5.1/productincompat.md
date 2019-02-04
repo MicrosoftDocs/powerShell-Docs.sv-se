@@ -2,33 +2,33 @@
 ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: d2fa3e22b049b4164e9a44e8f2d62833cab093d0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3a810a21cb959691a910a3ef3767d7885683dce8
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190034"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688695"
 ---
 # <a name="product-compatibility-status"></a>Status för produktkompatibilitet
 
 ## <a name="compatible"></a>Kompatibel:
-> System som kör följande serverprogram **kan köra** Windows Management Framework 5.1:
+> Datorer med följande serverprogram **kan köra** Windows Management Framework 5.1:
 
 - Microsoft SharePoint Server 2013
 - Skype för Business Server 2015 (_se anmärkning_)
 - Microsoft Lync Server 2013
 - System Center 2012 Configuration Manager
 
-_Obs: Skype för Business Server 2015 kompatibilitet med WMF 5.1 har testats med Windows Server 2012 R2._
+_Obs! Skype för Business Server 2015 kompatibilitet med WMF 5.1 har testats endast med Windows Server 2012 R2._
 
 ## <a name="not-tested"></a>Inte testat:
-> System som kör följande serverprogram **har inte testats** mot Windows Management Framework 5.1:
+> Datorer med följande serverprogram **inte har testat** mot Windows Management Framework 5.1:
 
 - Microsoft SharePoint Server 2010
 - System Center 2012 Virtual Machine Manager
 
 ## <a name="incompatible"></a>Inkompatibel:
-> System som kör följande serverprogram **ska inte köras** Windows Management Framework 5.1:
+> Datorer med följande serverprogram **ska inte köras** Windows Management Framework 5.1:
 
 - Microsoft Exchange Server 2013
 - Microsoft Exchange Server 2010 SP3

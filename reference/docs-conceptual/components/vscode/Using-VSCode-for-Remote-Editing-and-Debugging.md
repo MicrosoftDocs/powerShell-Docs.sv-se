@@ -1,15 +1,15 @@
 ---
-title: Med Visual Studio Code för fjärranslutna redigering och felsökning
-description: Med Visual Studio Code för fjärranslutna redigering och felsökning
+title: Använda Visual Studio Code för att fjärredigera och fjärrfelsöka
+description: Använda Visual Studio Code för att fjärredigera och fjärrfelsöka
 ms.date: 08/06/2018
-ms.openlocfilehash: bab1a629a7e9dafd5957cf93025abb18b8a4f326
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: fbc1ee3556e822b4afb2b37111d0688dc89fdab3
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655543"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688954"
 ---
-# <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Med Visual Studio Code för fjärranslutna redigering och felsökning
+# <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Använda Visual Studio Code för att fjärredigera och fjärrfelsöka
 
 För dig som har erfarenhet av ISE, du kanske kommer ihåg att du kan köra `psedit file.ps1` från integrerad konsol för att öppna filer – lokal eller fjärransluten - Högerklicka i ISE.
 
@@ -61,7 +61,7 @@ Watered ned förklaring av cmdlet: en är:
 - `Enter-PSSession -ContainerId foo` och `Enter-PSSession -VmId foo` starta en session via PowerShell Direct
 - `Enter-PSSession -HostName foo` startar en session via SSH
 
-Mer information om `Enter-PSSession`, Kolla in dokumenten [här](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6).
+Mer information om `Enter-PSSession`, Kolla in dokumenten [här](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6).
 
 Jag kommer att använda SSH för fjärrkörning eftersom jag från macOS för en Ubuntu-VM i Azure.
 

@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: d7aec1a2ba8964e877ddd7406609fe135b1eb462
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 0e79127faf3f9bf6fe7d525db5bb946daf3b93e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219750"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687638"
 ---
 # <a name="call-base-class-method"></a>Anropa basklassmetoden
 
@@ -26,7 +26,7 @@ class childClass1 : baseClass
 [childClass1]::new().foo() # return 200600
 ```
 
-För att anropa metoder i basklassen från åsidosatt implementeringar omvandlas till basklassen ([baseClass] $detta) på anrop:
+För att anropa basklass från åsidosatt implementeringar, konvertera till basklassen ([baseClass] $detta) på anrop:
 
 ```powershell
 class childClass2 : baseClass
@@ -40,7 +40,7 @@ class childClass2 : baseClass
 [childClass2]::new().foo() # return 301500
 ```
 
-Alla PowerShell metoder är virtuella. Du kan dölja icke-virtuell .NET-metoder i en underklass med samma syntax som du gör för en åsidosättning: bara deklarera metoder med samma namn och denna signatur.
+Alla PowerShell-metoder är virtuella. Du kan dölja icke-virtuell .NET-metoder i en underklass med hjälp av samma syntax som du gör en åsidosättning: bara deklarera metoder med samma namn och signatur.
 
 ```powershell
 class MyIntList : system.collections.generic.list[int]

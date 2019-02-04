@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: a96a4a58dafa01fb43f5bdffb52ef833816148e7
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587303"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688478"
 ---
 # <a name="new-language-features-in-powershell-50"></a>Nya språkfunktioner i PowerShell 5.0
 
@@ -162,7 +162,7 @@ Alla egenskaper är offentliga. Egenskaper för kräver en ny rad eller semikolo
 
 Egenskaper som använder verifiering attribut eller argumentet omvandling attribut (t.ex. `[ValidateSet("aaa")]`) fungerar som förväntat.
 
-## <a name="hidden"></a>Dold
+## <a name="hidden"></a>Hidden
 
 Ett nytt nyckelord, **Hidden**, har lagts till. **Dolda** kan tillämpas på Egenskaper och metoder (inklusive konstruktorer).
 

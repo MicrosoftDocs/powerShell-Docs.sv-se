@@ -1,22 +1,22 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 82451c550014c684958aaf0f324457db8f0d8ceb
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1c4a7ad30b04d138ba8a840968a6bf1763448ac6
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222013"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688268"
 ---
-# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>Interagera med symboliska länkar med förbättrad objektet cmdlets
+# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>Interagera med symboliska länkar med förbättrad artikel-cmdletar
 
-Att stödja symboliska länkar  **\*-objektet** och några relaterade cmdlets har utökats. Nu kan du skapa symboliska länkar i en enda, enkel rad med **New-objektet**. Lägg märke till som objekt-relaterade cmdlets (**ta bort objekt, Get-ChildItem**) fungerar i stor utsträckning till före.
+Stöd för symboliska länkar  **\*-objektet** och några relaterade har utökats. Nu kan du skapa symboliska länkar i en enda, enkel rad med **New-Item**. Du se att objekt-relaterade cmdlets (**Remove-objekt, Get-ChildItem**) fungerar väldigt likt till tidigare.
 
-Nedan visas några användningsfall av de nya funktionerna:
+Nedan visas några användningsfall för de nya funktionerna:
 
 ## <a name="new-item"></a>NYTT OBJEKT
 
-### <a name="symbolic-link-files"></a>SYMBOLISKA LÄNKEN FILER
+### <a name="symbolic-link-files"></a>SYMBOLISK LÄNK FILER
 
 ```powershell
 # Create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links to $pshome\profile.ps1
@@ -30,7 +30,7 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkFile.txt -Value $pshome\p
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkFile.txt -Value $pshome\profile.ps1
 ```
 
-### <a name="symbolic-link-directories"></a>SYMBOLISKA LÄNKEN KATALOGER
+### <a name="symbolic-link-directories"></a>SYMBOLISK LÄNK KATALOGER
 
 ```powershell
 # Create a new symbolic link directory named MySymLinkDir in C:\Temp which links to the $pshome folder

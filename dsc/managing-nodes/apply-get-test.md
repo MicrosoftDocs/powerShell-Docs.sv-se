@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
-title: Tillämpa, Get, och testa konfigurationer på en nod
+title: Tillämpa, hämta och testa konfigurationer på en nod
 ms.openlocfilehash: 41f8d2d75d3dd9621de615e7999c2690cb8ce44a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405243"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684341"
 ---
-# <a name="apply-get-and-test-configurations-on-a-node"></a>Tillämpa, Get, och testa konfigurationer på en nod
+# <a name="apply-get-and-test-configurations-on-a-node"></a>Tillämpa, hämta och testa konfigurationer på en nod
 
 Den här guiden visar hur du arbetar med konfigurationer på ett mål noden. Den här guiden har delats upp i följande steg:
 

@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Ställa in en Pull-klient med hjälp av konfigurations-ID i PowerShell 4.0
 ms.openlocfilehash: 9adc767e91ff19d373c122a0d493e7b8703d5476
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405278"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685482"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>Ställa in en Pull-klient med hjälp av konfigurations-ID i PowerShell 4.0
 
@@ -47,7 +47,7 @@ Du kan skapa ett slumpmässigt **Guid** med hjälp av exemplet nedan.
 
 Varje klient måste konfigureras i **Pull** läge och angivna pull-serveradress där dess konfiguration lagras. Då har du konfigurerar den lokala Configuration Manager (LCM) med informationen som krävs. Om du vill konfigurera LCM måste du skapa en särskild typ av konfiguration med en **LocalConfigurationManager** block. Läs mer om hur du konfigurerar LCM [konfigurerar den lokala Konfigurationshanteraren](../managing-nodes/metaConfig4.md).
 
-## <a name="http-dsc-pull-server"></a>HTTP-DSC-Hämtningsserver
+## <a name="http-dsc-pull-server"></a>HTTP DSC Pull Server
 
 Om pull-servern har konfigurerats som en webbtjänst kan du ställa in den **DownloadManagerName** till **WebDownloadManager**. Den **WebDownloadManager** kräver att du anger en **ServerUrl** till den **DownloadManagerCustomData** nyckel. Du kan också ange ett värde för **AllowUnsecureConnection**, som i exemplet nedan. Följande skript konfigurerar LCM pull konfigurationer från en server med namnet ”PullServer”.
 
@@ -69,7 +69,7 @@ Configuration PullClientConfigId
 PullClientConfigId -Output "."
 ```
 
-## <a name="smb-share"></a>SMB-resurs
+## <a name="smb-share"></a>SMB Share
 
 Om pull-servern har konfigurerats som en SMB-filresurs, i stället för en webbtjänst kan du ställa in den **DownloadManagerName** till **DscFileDownloadManager** snarare än **WebDownLoadManager**. Den **DscFileDownloadManager** kräver att du anger en **SourcePath** -egenskapen i den **DownloadManagerCustomData**. Följande skript konfigurerar MGM om du vill dra konfigurationer från en SMB-filresurs som heter ”SmbDscShare” på en server med namnet ”CONTOSO-SERVER”.
 

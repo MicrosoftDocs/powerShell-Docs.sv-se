@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Med hjälp av verktyget Resource Designer
 ms.openlocfilehash: 3fd2f06cf46602ee30dd34f8e7bd77d3c92b808f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404942"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686658"
 ---
 # <a name="using-the-resource-designer-tool"></a>Med hjälp av verktyget Resource Designer
 
@@ -181,4 +181,4 @@ Verktyget Resource Designer visar en mer cmdlet som kan användas för att testa
 [Skapa anpassade Windows PowerShell Desired State Configuration-resurser](authoringResource.md)
 
 #### <a name="other-resources"></a>Andra resurser
-[xDscResourceDesigner modul](https://www.powershellgallery.com/packages/xDscResourceDesigner/1.12.0.0)
+[xDscResourceDesigner Module](https://www.powershellgallery.com/packages/xDscResourceDesigner/1.12.0.0)

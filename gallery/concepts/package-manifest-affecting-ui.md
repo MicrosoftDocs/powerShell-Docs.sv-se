@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: PowerShell
 title: Paketet manifest värden som påverkar PowerShell galleriets gränssnitt
 ms.openlocfilehash: dcba56d9f7edf0c08a3b9e3f2326b39a6b3be3fa
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655353"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687253"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Paketet manifest värden som påverkar PowerShell galleriets gränssnitt
 
@@ -21,7 +21,7 @@ Det här avsnittet innehåller utgivare med översiktlig information om hur du �
 
 Tabellen nedan visar elementen på sidan för PowerShell-galleriet paketet Användargränssnittet som styrs av utgivaren. Varje objekt innebär att om den kan styras av manifestet modulen eller skript.
 
-| UI-Element | Beskrivning | Modul | Skript |
+| UI Element | Beskrivning | Modul | Skript |
 | --- | --- | --- | --- |
 | **Rubrik** | Det här är namnet på det paket som har publicerats i galleriet  | Nej | Nej |
 | **Version** | Den version som visas är Versionsträngen i metadata och ett förhandsversioner om har angetts. Den primära delen av versionen i ett modulmanifest är ModuleVersion. För ett skript identifieras som. VERSION. Om en förhandsversion sträng anges ska det läggas till för ModuleVersion för moduler, eller angetts som en del av. VERSIONEN för skript. Det finns dokumentation för att ange förhandsversioner strängar i [moduler](module-prerelease-support.md), och i [skript](script-prerelease-support.md) | Ja | Ja |
@@ -101,14 +101,14 @@ Referens följer vissa vanligaste taggar från och med 12/14/2017. I vissa fall 
 | VersionControl | Versionen är mindre exakt, även om används oftare  |
 | Loggning | Önskad användning av loggning som en åtgärd |
 | Logg | Prioriterade användningen av loggen som en sak |
-| Reserv |  |
+| Säkerhetskopiering |  |
 | IaaS |  |
 | Linux |  |
 | IIS |  |
 | AzureAutomation |  |
 | Lagring |  |
 | GitHub |  |
-| JSON |  |
+| Json |  |
 | Exchange |  |
 | Nätverk | Nätverk är liknande, används mindre ofta |
 | SharePoint |  |
@@ -121,7 +121,7 @@ Referens följer vissa vanligaste taggar från och med 12/14/2017. I vissa fall 
 | Google |  |
 | Färg |  |
 | DNS |  |
-| Office 365 | Stavning ut Office är att föredra. O365 används mer sällan, även om det är kortare |
+| Office365 | Stavning ut Office är att föredra. O365 används mer sällan, även om det är kortare |
 | Gitlab |  |
 | Lära |  |
 | AzureAD |  |
@@ -135,7 +135,7 @@ Referens följer vissa vanligaste taggar från och med 12/14/2017. I vissa fall 
 | Docker |  |
 | Appveyor |  |
 | AzureRm | Används främst för AzureRM-moduler |
-| ZIP |  |
+| Zip |  |
 | MSI |  |
-| macOS |  |
+| MacOS |  |
 | PoshBot |  |

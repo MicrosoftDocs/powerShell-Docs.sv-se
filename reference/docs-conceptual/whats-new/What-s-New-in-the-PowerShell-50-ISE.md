@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Nyheter i PowerShell 50 ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: f05e3f3f95c8ceec6e843b8a1c79e6f092e1b87b
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.openlocfilehash: 2d953bc4553de7720c590304d29750b84a1ef3b2
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320592"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687932"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Vad&#39;nytt i Windows PowerShell ISE
 Det här avsnittet beskrivs nya och uppdaterade funktioner som har införts i versioner av Windows PowerShell Integrated Scripting Environment (ISE).
@@ -147,11 +147,11 @@ Windows PowerShell ISE 2.0 har separata kommandot och utdata-fönster.
 
 Om du startar Windows PowerShell ISE från kommandoraden (genom att skriva **powershell_ise.exe**), kan du lägga till följande nya kommandoradsväxlar.
 
-- *-NoProfile*: startar Windows PowerShell ISE utan att köra **$profile**
+- *-NoProfile*: Startar Windows PowerShell ISE utan att köra **$profile**
 
 - *-Hjälpa*: Visar en Hjälp-fönstret
 
-- *-mta*: startar Windows PowerShell ISE i flertrådat lägenhetsnummer läge. Standardläget för åtgärden för Windows PowerShell ISE är flertrådade läge eller *- sta*.
+- *-mta*: Startar Windows PowerShell ISE i flertrådat lägenhetsnummer läge. Standardläget för åtgärden för Windows PowerShell ISE är flertrådade läge eller *- sta*.
 
 **Vilket värde medför den här ändringen?**
 
@@ -176,7 +176,7 @@ Andra funktioner för redigering av Windows PowerShell ISE är:
 
 - **Parsa fel visas** parsningsfel anges med röd understrykning. När du hovrar över ett angivet fel visar Knappbeskrivningstext problemet som hittades i koden.
 
-- **Zooma** zoomning procentandelen konsolen '™ s innehåll kan anges med hjälp av skjutreglaget (i det nedre högra hörnet av Windows PowerShell ISE-fönster) eller genom att ange kommandot **$psise.options.Zoom** i konsolfönstret.
+- **Zooma** zoomning procentandelen konsolens innehåll kan anges med hjälp av skjutreglaget (i det nedre högra hörnet av Windows PowerShell ISE-fönster) eller genom att ange kommandot **$psise.options.Zoom** i konsolfönstret.
 
 - **Rich text kopiera och klistra in** kopiera till Urklipp i Windows PowerShell ISE bevarar teckensnitt, storlek och färginformation för den ursprungliga markeringen.
 

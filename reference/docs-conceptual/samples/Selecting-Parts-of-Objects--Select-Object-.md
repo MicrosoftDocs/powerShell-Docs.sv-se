@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Välj delar av objekt Välj objekt
 ms.assetid: 72e64b1a-d351-4500-9da3-24d8a71d7a92
 ms.openlocfilehash: 323c57ba4462e20d9713fb74732989584f5a993f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53406009"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684516"
 ---
 # <a name="selecting-parts-of-objects-select-object"></a>Välj delar av objekt (Select-Object)
 

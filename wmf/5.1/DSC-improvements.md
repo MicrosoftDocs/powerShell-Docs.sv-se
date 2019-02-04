@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: DSC-förbättringar i WMF 5.1
 ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523064"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683802"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Förbättringar i Desired State Configuration (DSC) i WMF 5.1
 
@@ -206,9 +206,9 @@ Den här funktionen förhindrar att noder kör konfigurationer eller modulen fil
 ### <a name="how-to-sign-configuration-and-module"></a>Hur du registrerar konfiguration och modulen
 
 ***
-* Konfigurationsfiler (. MOF-filer): befintliga PowerShell-cmdleten [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) utökas för att stöda signering av MOF-filer.
+* Konfigurationsfiler (. MOF-filer): Befintliga PowerShell-cmdleten [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) utökas för att stöda signering av MOF-filer.
 * Moduler: Signering av moduler görs genom att registrera den motsvarande modul-katalog med följande steg:
-    1. Skapa en katalogfil: en katalogfil innehåller en uppsättning kryptografiska hash-värden eller tumavtryck.
+    1. Skapa en katalogfil: En katalogfil innehåller en uppsättning kryptografiska hash-värden eller tumavtryck.
        Varje tumavtryck motsvarar en fil som ingår i modulen.
        Ny cmdlet [New-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx), har lagts till kan du skapa en katalogfil för sina modulen.
     2. Logga katalogfilen: Använd [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) logga katalogfilen.
@@ -263,7 +263,7 @@ Den lokala Konfigurationshanteraren utför följande steg för att verifiera de 
 5. Install-Module till $env: ProgramFiles\WindowsPowerShell\Modules\
 6. Processkonfiguration
 
-> Obs: Verifiera signaturen på modul-katalog och konfigurationen utförs endast när konfigurationen tillämpas i systemet för första gången eller när modulen hämtas och installeras.
+> Anm Verifiera signaturen på modul-katalog och konfigurationen utförs endast när konfigurationen tillämpas i systemet för första gången eller när modulen hämtas och installeras.
 Konsekvenskontroll körs validerar inte signaturen för Current.mof eller dess modulberoenden.
 Om det gick inte att verifiera under alla stadier, exempelvis om konfigurationen som hämtats från hämtningsservern är osignerat, sedan bearbetningen av konfigurationen avslutas med fel som visas nedan och alla temporära filer tas bort.
 

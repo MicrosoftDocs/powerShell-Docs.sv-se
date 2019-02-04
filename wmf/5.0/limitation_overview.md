@@ -2,17 +2,17 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: 4eb2f0bac4f2169a9a06d80cb4fa214a09cdfa86
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892992"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687029"
 ---
 # <a name="known-issues-and-limitations"></a>Kända problem och begränsningar
 
 ## <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a>PowerShell genvägar bryts när den används för första gången
 
-**Lösning:** utför någon av följande åtgärder:
+**Lösning:** Gör något av följande åtgärder:
 
 1. Högerklicka på genvägen till PowerShell. Välj ”Windows PowerShell” för att starta i ett icke-upphöjd-läge.
 2. Högerklicka på genvägen till PowerShell. Högerklicka på ”Windows PowerShell” och välj ”Kör som administratör” att starta en förhöjd behörighet.
@@ -23,7 +23,7 @@ När du har utfört någon av ovanstående åtgärder, fungerar PowerShell-genv�
 
 Använda PowerShell-moduler och DSC-resurser kan resultera i fel som rapporterats om ExecutionPolicy på Windows 7.
 
-**Lösning:** inställd på ExecutionPolicy på RemoteSigned genom att köra följande kommando i en upphöjd PowerShell-session (Kör som administratör):
+**Lösning:** Ange körningsprincipen till RemoteSigned genom att köra följande kommando i en upphöjd PowerShell-session (Kör som administratör):
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
@@ -33,19 +33,19 @@ Set-ExecutionPolicy RemoteSigned
 
 Den gamla Exchange-slutpunkten omdirigerar till en ny slutpunkt. Det finns en bugg i omdirigering logik som uppstår i en krasch.
 
-**Lösning:** Anslut direkt till den nya slutpunkten.
+**Lösning:** Ansluta direkt till den nya slutpunkten.
 
 ## <a name="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2"></a>Software Inventory Logging funktionen stoppas felaktigt efter installation av WMF 5.0 på Windows Server 2012 R2
 
 När du installerar WMF 5.0 på en Windows Server 2012 R2 som redan kör SIL, stoppas felaktigt funktionen Software Inventory Logging efter installationen.
 
-**Lösning:** köra cmdleten Start-SilLogging en gång efter WMF-installationen eftersom installationsprocessen avbryts felaktigt funktionen Software Inventory Logging.
+**Lösning:** Köra cmdleten Start-SilLogging en gång efter WMF-installationen eftersom installationsprocessen avbryts felaktigt funktionen Software Inventory Logging.
 
 ## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>`Get-ChildItem` fungerar inte om - LiteralPath och -Recurse används tillsammans
 
 Om ett katalognamn innehåller ett ogiltigt jokertecken sedan `Get-ChildItem` skapas inte förväntat resultat när både - LiteralPath och -Recurse används tillsammans.
 
-**Lösning:** inte den bästa lösningen, men aktuella lösningen är att implementera rekursion i skriptet i stället för att förlita dig på cmdlet: en.
+**Lösning:** Inte den bästa lösningen, men aktuella lösningen är att implementera rekursion i skriptet i stället för att förlita dig på cmdlet: en.
 
 ## <a name="sysprep-fails-after-wmf-50-installation"></a>Sysprep misslyckas efter installationen av WMF 5.0
 

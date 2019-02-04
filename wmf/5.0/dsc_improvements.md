@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 4338364c64eff2a7a59c5ae9fe80f75760cade42
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: dc72debe0dc7e56c9e59e6903c7d6cf3025e622c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218084"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685909"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc"></a>Förbättringar i Desired State Configuration (DSC)
 
-## <a name="dsc-feedback-survey"></a>DSC-Feedback undersökning
+## <a name="dsc-feedback-survey"></a>DSC-Feedback undersökningen
 
-När du har haft tid att använda de nya PowerShell Desired State Configuration-funktioner och funktioner som introduceras i den här versionen, hjälp oss att fortsätta att produkten bättre genom att göra en snabb [WMF 5.0 RTM undersökning](https://www.surveymonkey.com/r/SGLQM5W). Den här undersökningen kan du dela din feedback om dessa nya funktioner och funktionalitet.
+När du har fått lite tid att använda de nya PowerShell Desired State Configuration-funktionerna och egenskaperna som introducerades i den här versionen, hjälp oss att fortsätta att produkten bättre genom att utföra en snabb [WMF 5.0 RTM undersökningen](https://www.surveymonkey.com/r/SGLQM5W). Den här undersökningen kan du lämna feedback om de här nya funktionerna och egenskaperna.
 
-Tack för att delta i vår undersökning! Din feedback är mycket viktiga för oss.
+Tack för att delta i enkäten! Din feedback är viktig för oss.
 
 **PSDesiredStateConfiguration Modulversion uppdateras till 1.1**
 
-Modulversionen av PsDesiredStateConfiguration har uppdaterats till 1.1. DSC-konfigurationer kompilerade på WMF 5.0 Preview Feb 2015 eller tidigare fungerar inte på PowerShell/WMF 5.0.
+Modulversionen av PsDesiredStateConfiguration har uppdaterats till 1.1. DSC-konfigurationer kompilerade WMF 5.0-förhandsgranskning februari 2015 eller tidigare fungerar inte i PowerShell/WMF 5.0.

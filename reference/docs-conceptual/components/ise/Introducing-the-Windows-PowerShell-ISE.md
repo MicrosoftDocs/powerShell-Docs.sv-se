@@ -2,12 +2,12 @@
 ms.date: 08/14/2018
 keywords: PowerShell cmdlet
 title: Introducerar Windows PowerShell ISE
-ms.openlocfilehash: 09a28b295855fd2a3c62bba8a681399dae3454f8
-ms.sourcegitcommit: 3402a478cf118c11a5642038eb117bc76553e3ab
+ms.openlocfilehash: 729c8535dbcfcd2c51070b8beac5d328375f36ae
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411590"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685104"
 ---
 # <a name="the-windows-powershell-ise"></a>Windows PowerShell ISE
 
@@ -15,8 +15,8 @@ I Windows PowerShell Integrated Scripting Environment (ISE) är ett program för
 
 ## <a name="support"></a>Support
 
-ISE introducerades med Windows PowerShell V2 och utformades igen med PowerShell V3. ISE stöds i alla versioner av Windows PowerShell upp till och inklusive Windows PowerShell V5.1 stöds. ISE är dock i maintennce läge och inga nya funktioner förmodligen kommer att läggas till.
-Dessutom finns inget stöd för ISE med PowerShell v6 och mycket mer. Användare som vill ha ett grafiskt verktyg som kan hantera PowerShell scrips och så vidare, bör [Visual Studio Code](https://code.visualstudio.com/).
+ISE introducerades med Windows PowerShell V2 och utformades igen med PowerShell V3. ISE stöds i alla versioner av Windows PowerShell upp till och inklusive Windows PowerShell V5.1 stöds. ISE, men är i underhållsläge och inga nya funktioner förmodligen kommer att läggas till.
+Dessutom finns inget stöd för ISE med PowerShell v6 och mycket mer. Användare som vill ha ett grafiskt verktyg som kan hantera PowerShell-skript, osv, bör [Visual Studio Code](https://code.visualstudio.com/).
 
 ## <a name="key-features"></a>Viktiga funktioner
 

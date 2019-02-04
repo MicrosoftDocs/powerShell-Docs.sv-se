@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery, psget
 title: Arbeta med lokala PSRepositories
 ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51619267"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688394"
 ---
 # <a name="working-with-local-powershellget-repositories"></a>Arbeta med lokala PowerShellGet-databaser
 
@@ -23,7 +23,7 @@ Den här artikeln beskriver hur du ställer in en lokal PowerShell-lagringsplats
 
 ## <a name="local-repository-types"></a>Lagringsplats-typer
 
-Det finns två sätt att skapa en lokal PSRepository: NuGet server eller filresurs. Varje typ har fördelar och nackdelar:
+Det finns två sätt att skapa en lokal PSRepository: NuGet-server eller filresurs. Varje typ har fördelar och nackdelar:
 
 NuGet-Server
 

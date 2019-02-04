@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: ISEAddOnToolCollection-objektet
 ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
 ms.openlocfilehash: ff4f19d1a85a592f2f4f09c62caa0971751bdff7
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405386"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685566"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>ISEAddOnToolCollection-objektet
 
@@ -80,6 +80,6 @@ $psISE.PowerShellTabs.Remove($newTab)
 
 ## <a name="see-also"></a>Se även
 
-- [PowerShellTab-objektet](The-PowerShellTab-Object.md)
+- [The PowerShellTab Object](The-PowerShellTab-Object.md)
 - [Syftet med den Windows PowerShell ISE-Skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)

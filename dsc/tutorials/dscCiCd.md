@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Skapa en pipeline för kontinuerlig integrering och kontinuerlig distribution med DSC
-ms.openlocfilehash: c305d9bc7e0f8c659129b5a20d0b7e8b34d09ba8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405248"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687267"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Skapa en pipeline för kontinuerlig integrering och kontinuerlig distribution med DSC
 
@@ -388,7 +388,7 @@ Nu ska vi skapa en versionsdefinition så att projektet har distribuerats till u
 
 Gör detta genom att lägga till en ny versionsdefinition som är associerade med den `InfraDNS` build-definition som du skapade tidigare.
 Se till att välja **kontinuerlig distribution** så att en ny version utlöses varje gång en ny version är klar.
-([Så här: Arbeta med definitioner av versionen](https://www.visualstudio.com/en-us/docs/build/actions/work-with-release-definitions)) och konfigurera den på följande sätt:
+([Vad är releaser? ](/azure/devops/pipelines/release/what-is-release-management)) och konfigurera den på följande sätt:
 
 Lägg till följande versionsdefinitionen:
 

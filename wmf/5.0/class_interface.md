@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 116f79a95126d0a1c579a95ec99eb5d8b75cc1e0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 4b593e9a1eca43ee7ad85fc921ae3c1d62722db9
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225495"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687862"
 ---
 # <a name="declare-implemented-interface"></a>Deklarera implementerat gränssnitt
 
-Du kan deklarera implementerade gränssnitt efter bastyper, eller omedelbart efter ett kolon (:), om det inte finns några bastypen som angetts. Avgränsa alla typnamn med kommatecken. Det är mycket likt C#-syntax.
+Du kan deklarera implementerade gränssnitt efter bastyper eller omedelbart efter ett kolon (:), om det finns inga bastypen som angetts. Separera namn för alla med kommatecken. Det är mycket lik C# syntax.
 
 ```powershell
 class MyComparable : system.IComparable

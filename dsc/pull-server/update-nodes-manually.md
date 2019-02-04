@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
-title: Uppdatera noder från en Pull-Server
+title: Uppdatera noder från en hämtningsserver
 ms.openlocfilehash: 4333a5bf82ef45f22a062942ebe93409433623f5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404648"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686105"
 ---
-# <a name="update-nodes-from-a-pull-server"></a>Uppdatera noder från en Pull-Server
+# <a name="update-nodes-from-a-pull-server"></a>Uppdatera noder från en hämtningsserver
 
 I avsnitten nedan förutsätter att du har ställt in en Pull-servern. Om du inte har konfigurerat din Pull-servern kan du använda följande guider:
 

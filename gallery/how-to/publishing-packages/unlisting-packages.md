@@ -4,13 +4,13 @@ contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery
 title: Avlista paket
 ms.openlocfilehash: fb66fd23dae1d4640056a764c31426f61f56d910
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004174"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684397"
 ---
-# <a name="unlisting-packages"></a>Ta paket
+# <a name="unlisting-packages"></a>Avlista paket
 
 **Varför tar bort ett paket från PowerShell-galleriet visas inte som ett alternativ?**
 

@@ -5,11 +5,11 @@ ms.topic: conceptual
 contributor: vaibch
 title: Växeln Nätverkshanteraren cmdletar fel
 ms.openlocfilehash: a0f84c35974b6674faba4b0f19a28bd6e2490a96
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893162"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685251"
 ---
 # <a name="network-switch-manager-cmdlets-failure"></a>Växeln Nätverkshanteraren cmdletar fel
 
@@ -22,15 +22,15 @@ Om inte ”InputObject”-parametern används bör cmdleten fortsätta att köra
 Här är listan över berörda cmdletar dvs. dessa cmdletar kan acceptera värde för parametern ”InputObject” från pipeline.
 Körningen av cmdlet misslyckas om det här värdet inte överförs från pipeline.
 
-- Inaktivera NetworkSwitchEthernetPort
-- Aktivera NetworkSwitchEthernetPort
-- Ta bort NetworkSwitchEthernetPortIPAddress
+- Disable-NetworkSwitchEthernetPort
+- Enable-NetworkSwitchEthernetPort
+- Remove-NetworkSwitchEthernetPortIPAddress
 - Set-NetworkSwitchEthernetPortIPAddress
 - Set-NetworkSwitchPortMode
 - Set-NetworkSwitchPortProperty
-- Inaktivera NetworkSwitchFeature
-- Aktivera NetworkSwitchFeature
-- Ta bort NetworkSwitchVlan
+- Disable-NetworkSwitchFeature
+- Enable-NetworkSwitchFeature
+- Remove-NetworkSwitchVlan
 - Set-NetworkSwitchVlanProperty
 
 ## <a name="resolution"></a>Lösning

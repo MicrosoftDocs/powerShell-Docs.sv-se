@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Användningsområden för Windows PowerShell ISE-skriptobjektmodellen
 ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
 ms.openlocfilehash: fd5ac2c34b173d4eba7636bb5760b1ac9abb4277
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53406002"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688730"
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Användningsområden för Windows PowerShell ISE-skriptobjektmodellen
 

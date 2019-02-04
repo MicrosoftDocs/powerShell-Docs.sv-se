@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Utforska Windows PowerShell ISE
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 ms.openlocfilehash: 059651f159fb2636a93167709134788e90d062b8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405369"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684481"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Utforska Windows PowerShell ISE
 
@@ -47,7 +47,7 @@ Följande knappar finns i verktygsfältet.
 |**Kör val**|Kör en del av ett skript.|
 |**Stoppa körning**|Stoppar ett skript som körs.|
 |**Ny Remote PowerShell-flik**|Skapar en ny PowerShell-flik som upprättar en session på en fjärrdator. En dialogruta visas och du uppmanas att ange information som krävs för att upprätta anslutningen.|
-|**Starta PowerShell.exe**|Öppna en PowerShell-konsol.|
+|**Start PowerShell.exe**|Öppna en PowerShell-konsol.|
 |**Visa skript fönstret översta**|Flyttar skriptfönstret överst på skärmen.|
 |**Visa Skriptfönster rätt**|Flyttar skriptfönstret till höger på skärmen.|
 |**Visa Skriptfönster maximerat**|Maximerar skriptfönstret.|

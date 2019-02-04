@@ -2,12 +2,12 @@
 title: WS-Management-fjärrkommunikation (WSMan) i PowerShell Core
 description: Fjärrkommunikation i PowerShell Core med WSMan
 ms.date: 08/06/2018
-ms.openlocfilehash: ce58ed88f59f32b0f83951e55de36e829f7fa3f4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53406018"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686182"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>WS-Management-fjärrkommunikation (WSMan) i PowerShell Core
 
@@ -28,7 +28,7 @@ Mer information finns på problemet [#1193](https://github.com/PowerShell/PowerS
 
 Skriptet
 
-1. Skapar en katalog för plugin-programmet i %windir%\System32\PowerShell
+1. Skapar en katalog för plugin-programmet i `$env:windir\System32\PowerShell`
 1. Kopierar pwrshplugin.dll dit
 1. Genererar en konfigurationsfil
 1. Registrerar som plugin-programmet med WinRM

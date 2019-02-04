@@ -1,20 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: e7198999c17b5c0d77724a82b322e6485065225e
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 7e87ed4bc9a86be52d4d06d3e87386a1111227c5
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482853"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686938"
 ---
 # <a name="software-inventory-logging-sil"></a>Loggning av programvaruinventering (SIL)
 
-**Viktigt:** *när du installerar WMF 5.0 på en Windows Server 2012 R2-Server som redan kör SIL, är det nödvändigt att köra cmdleten Start-SilLogging en gång efter installationen WMF som installationsprocessen felaktigt slutar den Software Inventory Logging-funktionen.*
+**VIKTIGT:** *När du installerar WMF 5.0 Windows Server 2012 R2-server som redan kör SIL, är det nödvändigt att köra cmdleten Start-SilLogging en gång när WMF installerat, eftersom installationsprocessen avbryts felaktigt funktionen Software Inventory Logging.*
 
-Software Inventory Logging hjälper till att minska driftskostnaderna för hämtning av korrekt information om Microsoft-programvara som installeras lokalt på en server, men speciellt över flera servrar i en IT-miljö (förutsatt att programvaran är installerad och körs hela IT-miljön). Förutsatt en ställs in kan vidarebefordra data till en aggregeringsserver, och samla in loggdata på ett ställe med en enhetlig, automatisk process.
+Loggning av Programvaruinventering bidrar till att minska driftskostnaderna för att få korrekt information om Microsoft-programvara som installerats lokalt på en server, men speciellt över flera servrar i en IT-miljö (förutsatt att programvaran är installerad och körs vår IT-miljö). Förutsatt att något har konfigurerats kan du vidarebefordra data till en aggregeringsserver och samla in loggdata på ett ställe med en enhetlig, automatisk process.
 
-Medan du kan också logga programinventeringsdata genom att fråga varje dator direkt, kan Programvaruinventering, genom att använda en vidarebefordringsarkitektur (över nätverket) initieras av varje server hantera de server identifiering utmaningar som är vanliga för många Software inventory scenarier och tillgångshantering. Loggning av Programvaruinventering använder SSL för att säkra data som vidarebefordras över HTTPS till en aggregeringsserver. Lagra data i en enda plats gör att blir lättare att analysera, hantera och dela vid behov.
+Medan du kan också logga programinventeringsdata genom att fråga datorerna direkt, loggning av Programvaruinventering, genom att använda en arkitektur för vidarebefordran (via nätverket) som initieras av varje server, lösa problem med datoridentifiering som server som är typiska för många Software inventory scenarier och tillgångshantering. Loggning av Programvaruinventering använder SSL för att skydda data som vidarebefordras via HTTPS till en aggregeringsserver. Lagra data i ett och samma ställe tillhandahåller data som är enklare att analysera, hantera och dela när det behövs.
 
 Ingen av dessa data skickas till Microsoft som en del av funktionen. Programvaruinventeringsdata och -funktioner är endast avsedda att användas av serverprogrammets licensierade ägare och administratörer.
 

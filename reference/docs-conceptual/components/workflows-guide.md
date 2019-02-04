@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Arbetsflödesguiden
 ms.openlocfilehash: e2c91299f064a10fd27ab195d0309a9bef6a7ded
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404990"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687624"
 ---
 # <a name="psworkflow-module"></a>PSWorkflow modul
 
@@ -23,9 +23,9 @@ Det här avsnittet innehåller hjälpavsnitt för de **PSWorkflow** modulen, som
 
 [about_ActivityCommonParameters](https://technet.microsoft.com/library/8ca60664-37c6-4257-a723-e3c41dd10122)
 
-[about_Checkpoint-arbetsflöde](https://technet.microsoft.com/library/3a309488-1e7a-4807-b83b-dedbeac3ee1c)
+[about_Checkpoint-Workflow](https://technet.microsoft.com/library/3a309488-1e7a-4807-b83b-dedbeac3ee1c)
 
-[about_Foreach-parallell](https://technet.microsoft.com/library/35704780-dde8-4f5f-9319-5b982148bba7)
+[about_Foreach-Parallel](https://technet.microsoft.com/library/35704780-dde8-4f5f-9319-5b982148bba7)
 
 [about_InlineScript](https://technet.microsoft.com/library/f88ed5a9-02d6-4bf0-a031-61198e1e7291)
 
@@ -33,6 +33,6 @@ Det här avsnittet innehåller hjälpavsnitt för de **PSWorkflow** modulen, som
 
 [about_Sequence](https://technet.microsoft.com/library/bda3f81a-be8a-43be-b0df-12bb7e193b9b)
 
-[about_Suspend-arbetsflöde](https://technet.microsoft.com/library/be2ded75-1eca-493e-96c1-758f92b5f199)
+[about_Suspend-Workflow](https://technet.microsoft.com/library/be2ded75-1eca-493e-96c1-758f92b5f199)
 
 [PowerShell-arbetsflöde för cmdlet: ar](https://technet.microsoft.com/library/a5a32019-0d68-4041-935f-1b1cacaf6d3d)

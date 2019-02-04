@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: ff2c2bd7369893d72db001ecabf63991ded0bfd5
-ms.sourcegitcommit: ac20e0faaa37142e9c6e4507a21df2f4a3fdbece
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44339879"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687421"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Enhetlig och konsekvent tillstånds- och statusrepresentation
 
@@ -25,20 +25,20 @@ I tabellen nedan visas resulterande tillstånd och status relaterade egenskaper 
 
 | Scenario                        | LCMState             | Status     | Omstart har begärts | ResourcesInDesiredState   | ResourcesNotInDesiredState |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
-| S<sub>jag</sub>                   | Inaktiv                 | Klart    | $false        | S                            | $null                          |
-| F<sub>jag</sub>                   | PendingConfiguration | Fel    | $false        | $null                        | F                              |
-| S, F                             | PendingConfiguration | Fel    | $false        | S                            | F                              |
-| F-S                             | PendingConfiguration | Fel    | $false        | S                            | F                              |
+| S<sub>i</sub>                   | Inaktiv                 | Klart    | $false        | S                            | $null                          |
+| F<sub>i</sub>                   | PendingConfiguration | Fel    | $false        | $null                        | F                              |
+| S,F                             | PendingConfiguration | Fel    | $false        | S                            | F                              |
+| F,S                             | PendingConfiguration | Fel    | $false        | S                            | F                              |
 | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Fel    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
 | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Fel    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
 | S, r                            | PendingReboot        | Klart    | $true         | S                            | r                              |
-| F-, r                            | PendingReboot        | Fel    | $true         | $null                        | F-, r                           |
+| F, r                            | PendingReboot        | Fel    | $true         | $null                        | F, r                           |
 | r, S                            | PendingReboot        | Klart    | $true         | $null                        | r                              |
 | r, F                            | PendingReboot        | Klart    | $true         | $null                        | r                              |
 
-- S<sub>jag</sub>: ett antal resurser som har tillämpats
-- F<sub>jag</sub>: ett antal resurser som används med fel
-- r: en resurs som kräver omstart
+- S<sub>i</sub>: Ett antal resurser som har tillämpats
+- F<sub>i</sub>: Ett antal resurser som används med fel
+- r: En resurs som kräver omstart
 
 ```powershell
 $LCMState = (Get-DscLocalConfigurationManager).LCMState

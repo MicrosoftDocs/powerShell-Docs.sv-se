@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: ISEEditor-objektet
 ms.openlocfilehash: 2d4c3d941035384c591ca57e809c0e3a9b852f5c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405489"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686154"
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor-objektet
 
@@ -115,7 +115,7 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 $psISE.CurrentFile.Editor.SelectCaretLine()
 ```
 
-### <a name="setcaretposition-linenumber-columnnumber-"></a>SetCaretPosition\( lineNumber antal_kolumner anger \)
+### <a name="setcaretposition-linenumber-columnnumber-"></a>SetCaretPosition\( lineNumber, columnNumber \)
 
 Stöds i Windows PowerShell ISE 2.0 och senare.
 
@@ -245,7 +245,7 @@ $myEditor.InsertText($selection.ToLower())
 
 ## <a name="see-also"></a>Se även
 
-- [ISEFile-objektet](The-ISEFile-Object.md)
-- [PowerShellTab-objektet](The-PowerShellTab-Object.md)
+- [The ISEFile Object](The-ISEFile-Object.md)
+- [The PowerShellTab Object](The-PowerShellTab-Object.md)
 - [Syftet med den Windows PowerShell ISE-Skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)

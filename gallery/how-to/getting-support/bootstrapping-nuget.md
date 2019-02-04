@@ -4,11 +4,11 @@ contributor: manikb
 keywords: galleriet, powershell, cmdlet, psget
 title: Start av NuGet
 ms.openlocfilehash: 6d8f106bc3b8741203e87e4c097948a843f06d6e
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002146"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683970"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Bootstrap NuGet-providern och NuGet.exe
 
@@ -155,7 +155,7 @@ Om cmdletarna utfördes som en användare utan administratörsbehörighet:
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-Ett andra alternativ är att hämta NuGet.exe från webbplatsen NuGet.Org: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) när du väljer en NugGet version för produktion-datorer, se till att det är senare än 2.8.5.208 och identifiera den version som har fått en etikett ” rekommenderade ”. Kom ihåg att avblockera filen om den har hämtats med hjälp av en webbläsare. Detta kan utföras med hjälp av den `Unblock-File` cmdlet.
+Ett andra alternativ är att hämta NuGet.exe från webbplatsen NuGet.Org: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) När du väljer en NugGet version för produktion-datorer, se till att det är senare än 2.8.5.208 och identifiera den version som har fått en etikett ”rekommenderade”. Kom ihåg att avblockera filen om den har hämtats med hjälp av en webbläsare. Detta kan utföras med hjälp av den `Unblock-File` cmdlet.
 
 I båda fallen NuGet.exe-filen kan kopieras till valfri plats i `$env:path`, men platserna som standard är:
 

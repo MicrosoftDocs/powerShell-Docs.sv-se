@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Kom igång med Windows PowerShell
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
 ms.openlocfilehash: 8a158427d319e43ec011898fe4e1826d48d5b951
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320847"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685552"
 ---
 # <a name="getting-started-with-windows-powershell"></a>Kom igång med Windows PowerShell
 Windows PowerShell är ett kommandoradsgränssnitt för Windows som är särskilt utformat för administratörer. Windows PowerShell innehåller en interaktiv prompt och en skriptmiljö som kan användas separat eller i kombination.

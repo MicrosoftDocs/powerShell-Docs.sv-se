@@ -1,14 +1,14 @@
-﻿---
+---
 ms.date: 06/12/2017
 contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery, psget
 title: PowerShell-galleriet
 ms.openlocfilehash: d3e3b9d8bb3d6cefd3a3bfe79b012bb1dc1d8a2d
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225626"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685461"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell-galleriet
 
@@ -41,7 +41,7 @@ En lämplig version av **Windows PowerShell** är tillgänglig för dessa operat
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** kräver .NET Framework 4.5 eller senare. Du kan installera .NET Framework 4.5 eller senare [här](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+**PowerShellGet** kräver .NET Framework 4.5 eller senare. Du kan installera .NET Framework 4.5 eller senare från [här](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
 Eftersom **PowerShell Core** är plattformsoberoende och som innebär att det fungerar på Windows, Linux och MacOS, även gör **PowerShellGet** tillgänglig på dessa system. En fullständig lista över system som stöds av **PowerShell Core** Se [installera PowerShell](/powershell/scripting/setup/installing-powershell).
 

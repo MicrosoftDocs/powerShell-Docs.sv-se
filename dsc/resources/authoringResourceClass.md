@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Skriva en anpassad DSC-resurs med PowerShell-klasser
-ms.openlocfilehash: 0759685b04688f574d72b62a15833832ad19e816
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405188"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688317"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Skriva en anpassad DSC-resurs med PowerShell-klasser
 
@@ -30,8 +30,8 @@ Skapa följande mappstruktur för att implementera en anpassad DSC-resurs med en
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1
-           MyDscResource.psd1
+        MyDscResource.psm1
+        MyDscResource.psd1
 ```
 
 ## <a name="create-the-class"></a>Skapa klassen
@@ -86,7 +86,6 @@ Den **Get()**, **Set()**, och **Test()** metoder är detsamma som det **Get-Targ
 Den här koden innehåller också funktionen CopyFile() en hjälpfunktionen som kopierar filen från **$SourcePath** till **$Path**.
 
 ```powershell
-
     <#
         This method is equivalent of the Set-TargetResource script function.
         It sets the resource to the desired state.
@@ -217,6 +216,7 @@ Den här koden innehåller också funktionen CopyFile() en hjälpfunktionen som 
 ```
 
 ### <a name="the-complete-file"></a>Den fullständiga filen
+
 Fullständig klassfil följer.
 
 ```powershell
@@ -414,7 +414,6 @@ class FileResource
 } # This module defines a class for a DSC "FileResource" provider.
 ```
 
-
 ## <a name="create-a-manifest"></a>Skapa ett manifest
 
 Om du vill göra en MOF-baserade resurs ska vara tillgängliga för DSC-motorn måste du inkludera en **DscResourcesToExport** instruktionen i manifestfilen som instruerar modulen att exportera resursen. Vår manifest ser ut så här:
@@ -497,6 +496,36 @@ class FileResource {
 }
 ```
 
+### <a name="declaring-multiple-class-resources-in-a-module"></a>Deklarerar flera klass resurser i en modul
+
+En modul kan definiera flera klassbaserade DSC-resurser. Du kan skapa mappstrukturen på följande sätt:
+
+1. Definiera den första resursen i det ”<ModuleName>.psm1” fil- och efterföljande resurser under den **DSCResources** mapp.
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- SecondResource.psm1
+   ```
+
+2. Definiera alla resurser under den **DSCResources** mapp.
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- FirstResource.psm1
+              SecondResource.psm1
+   ```
+
+> [!NOTE]
+> I exemplen ovan lägger du till PSM1 filer under den **DSCResources** till den **NestedModules** nyckeln i PSD1-fil.
+
 ### <a name="access-the-user-context"></a>Komma åt användarkontexten
 
 Du kan använda automatiska variabeln för att komma åt användarkontext från inom en anpassad resurs `$global:PsDscContext`.
@@ -510,5 +539,5 @@ if (PsDscContext.RunAsUser) {
 ```
 
 ## <a name="see-also"></a>Se även
-### <a name="concepts"></a>Begrepp
+
 [Skapa anpassade Windows PowerShell Desired State Configuration-resurser](authoringResource.md)

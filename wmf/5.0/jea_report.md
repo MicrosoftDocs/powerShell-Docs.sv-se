@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: cd3338ae305896e282056a871974e5f899ef6ff5
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268586"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686245"
 ---
 # <a name="reporting-on-jea"></a>Rapportering i JEA
 

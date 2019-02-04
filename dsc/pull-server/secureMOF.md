@@ -3,11 +3,11 @@ ms.date: 10/31/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Skydda MOF-filen
 ms.openlocfilehash: 6c2aadb75ac617d9b845ef387f292b8156bb8889
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405147"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688331"
 ---
 # <a name="securing-the-mof-file"></a>Skydda MOF-filen
 

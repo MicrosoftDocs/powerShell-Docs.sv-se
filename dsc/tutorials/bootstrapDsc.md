@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Konfigurera en virtuell dator vid första uppstart med hjälp av DSC
-ms.openlocfilehash: 7b9ebc6c818aa39365759945667426c8976997e5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 2ae6f7a85af3d08bad9e97b90efaefb2ff8410ca
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405272"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686910"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>Konfigurera en virtuell dator vid första uppstart med hjälp av DSC
 
@@ -18,16 +18,17 @@ ms.locfileid: "53405272"
 
 > [!NOTE]
 > Den **DSCAutomationHostEnabled** registernyckel som beskrivs i det här avsnittet är inte tillgänglig i PowerShell 4.0.
-> Information om hur du konfigurerar nya virtuella datorer vid första uppstart i PowerShell 4.0 finns i [vill du automatiskt konfigurera dina datorer med hjälp av DSC vid första uppstart?] > ()https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
+> Information om hur du konfigurerar nya virtuella datorer vid första uppstart i PowerShell 4.0 finns i [vill du automatiskt konfigurera dina datorer med hjälp av DSC vid första uppstart?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
 
 För att köra exemplen, behöver du:
 
-- En startbar virtuell Hårddisk att arbeta med. Du kan hämta en ISO med ett utvärderingsexemplar av Windows Server 2016 på [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). Du hittar anvisningar om hur du skapar en virtuell Hårddisk från en ISO-avbildning på [skapa startbara virtuella hårddiskar](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
+- En startbar virtuell Hårddisk att arbeta med. Du kan hämta en ISO med ett utvärderingsexemplar av Windows Server 2016 på [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
+  Du hittar anvisningar om hur du skapar en virtuell Hårddisk från en ISO-avbildning på [skapa startbara virtuella hårddiskar](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
 - En värddator som har Hyper-V aktiverat. Mer information finns i [översikt över Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11)).
 
   Du kan automatisera installationen och konfigurationen för en dator vid första uppstart med hjälp av DSC.
   Du kan göra detta genom att antingen infogar ett konfiguration MOF-dokument eller en metaconfiguration i startbara media (till exempel en virtuell Hårddisk) så att de körs under den ursprungliga startprocessen.
-  Det här beteendet anges av den [DSCAutomationHostEnabled-registernyckel](DSCAutomationHostEnabled.md) registernyckel under `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies`.
+  Det här beteendet anges av den [DSCAutomationHostEnabled-registernyckel](DSCAutomationHostEnabled.md) registernyckel under `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`.
   Som standard är värdet för den här nyckeln 2, vilket gör att DSC ska köras när datorn startas.
 
   Om du inte vill att DSC ska köras när datorn startas, ange värdet för den [DSCAutomationHostEnabled-registernyckel](DSCAutomationHostEnabled.md) registernyckeln på 0.
@@ -172,7 +173,7 @@ Du kan kontrollera detta genom att anropa den [Get-WindowsFeature](/powershell/m
 
 ## <a name="disable-dsc-at-boot-time"></a>Inaktivera DSC när datorn startas
 
-Som standard, värdet för den `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled` nyckeln har angetts till 2, vilket gör att en DSC-konfiguration för att köra om datorn är i väntande eller aktuella tillstånd. Om du inte vill att en konfiguration körs vid första uppstart måste du därför ange värdet för den här nyckeln till 0:
+Som standard, värdet för den `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\DSCAutomationHostEnabled` nyckeln har angetts till 2, vilket gör att en DSC-konfiguration för att köra om datorn är i väntande eller aktuella tillstånd. Om du inte vill att en konfiguration körs vid första uppstart måste du därför ange värdet för den här nyckeln till 0:
 
 1. Montera den virtuella Hårddisken genom att anropa den [Montera VHD](/powershell/module/hyper-v/mount-vhd) cmdlet. Till exempel:
 
@@ -186,10 +187,10 @@ Som standard, värdet för den `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Cu
    reg load HKLM\Vhd E:\Windows\System32\Config\Software`
    ```
 
-3. Navigera till den `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\*` med hjälp av PowerShell register-provider.
+3. Navigera till den `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` med hjälp av PowerShell register-provider.
 
    ```powershell
-   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies`
+   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System`
    ```
 
 4. Ändra värdet för `DSCAutomationHostEnabled` till 0.

@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: ISEFile-objektet
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 ms.openlocfilehash: 24549720b8bc35435882533b0eb138de432ede65
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405291"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685139"
 ---
 # <a name="the-isefile-object"></a>ISEFile-objektet
 
@@ -88,7 +88,7 @@ Skrivskyddad egenskap som hämtar den [editor-objekt](The-ISEEditor-Object.md) s
 $psISE.CurrentFile.Editor.Text
 ```
 
-### <a name="encoding"></a>Kodning
+### <a name="encoding"></a>Encoding
 
 Stöds i Windows PowerShell ISE 2.0 och senare.
 
@@ -137,6 +137,6 @@ $psISE.CurrentFile.IsUntitled
 
 ## <a name="see-also"></a>Se även
 
-- [ISEFileCollectionObject](The-ISEFileCollection-Object.md)
+- [The ISEFileCollectionObject](The-ISEFileCollection-Object.md)
 - [Syftet med den Windows PowerShell ISE-Skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)

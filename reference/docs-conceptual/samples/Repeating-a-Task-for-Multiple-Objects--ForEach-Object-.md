@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Upprepa en uppgift för flera objekt ForEach-Object
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
 ms.openlocfilehash: 64d85edad4a6931b2376b95b6d1f5b4d5194399f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405973"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686441"
 ---
 # <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Upprepa en uppgift för flera objekt (ForEach-Object)
 

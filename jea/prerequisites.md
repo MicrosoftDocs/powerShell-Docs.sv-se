@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: jea, powershell, säkerhet
 title: JEA-krav
 ms.openlocfilehash: acc16c0c7eec357b621c0706a66b8752ae5578cd
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893043"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688359"
 ---
 # <a name="prerequisites"></a>Förutsättningar
 
@@ -32,8 +32,8 @@ Du kan också använda JEA på datorn hem- eller arbetsnätverk:
 
 Klientoperativsystem   | JEA-tillgänglighet
 --------------------------|-----------------------------------------------------
-Windows 10 1607 +          | Förinstallerad
-Windows 10 1603 1511     | Förinstallerad, med nedsatt funktionalitet<sup>2</sup>
+Windows 10 1607+          | Förinstallerad
+Windows 10 1603, 1511     | Förinstallerad, med nedsatt funktionalitet<sup>2</sup>
 Windows 10 1507           | Inte tillgänglig
 Windows 8, 8.1            | Alla funktioner i WMF 5.1
 Windows 7                 | Funktioner<sup>1</sup> med WMF 5.1

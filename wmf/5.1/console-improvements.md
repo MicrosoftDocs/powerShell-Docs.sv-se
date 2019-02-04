@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Förbättringar i WMF 5.1
 ms.openlocfilehash: a8e82e2f973916c2ed5007eba90ee6f2b7a9a769
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892934"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687344"
 ---
 # <a name="console-improvements-in-wmf-51"></a>Förbättringar i WMF 5.1
 

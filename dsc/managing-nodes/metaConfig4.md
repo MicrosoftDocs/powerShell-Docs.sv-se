@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Konfigurera den lokala Konfigurationshanteraren i tidigare versioner av Windows PowerShell
-ms.openlocfilehash: 31ba2ecdaa5a2ff7fcfddb1791c4d00343f4b5d5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 945d2dc95304a347ec26f2f66f5a17bfefb90997
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404985"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688863"
 ---
 # <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>Konfigurera den lokala Konfigurationshanteraren i tidigare versioner av Windows PowerShell
 
@@ -34,9 +34,20 @@ Här nedan listas de lokala Configuration Manager-egenskaper som du kan ange ell
 - **Autentiseringsuppgifter**: Anger autentiseringsuppgifter (precis som med Get-Credential) krävs för att använda fjärranslutna resurser, till exempel för att kontakta tjänsten för konfiguration.
 - **DownloadManagerCustomData**: Representerar en matris som innehåller anpassade data som är specifika för Hämtningshanteraren.
 - **DownloadManagerName**: Anger namnet på konfigurationen och modulen Hämtningshanteraren.
-- **RebootNodeIfNeeded**: Vissa ändringar i konfigurationen på målnoden kan kräva den startas om för att ändringarna ska tillämpas. Med värdet **SANT**, den här egenskapen ska starta om noden när konfigurationen har helt gäller, utan ytterligare varning. Om **FALSKT** (standardvärdet), konfigurationen kommer att slutföras, men noden måste startas om manuellt för att ändringarna ska börja gälla.
+- **RebootNodeIfNeeded**: Ställ in på `$true` så att resurser för att starta om en nod med hjälp av den `$global:DSCMachineStatus` flaggan. I annat fall kommer du behöva manuellt starta om noden för alla konfigurationer som kräver. Standardvärdet är `$false`. Om du vill använda den här inställningen när ett villkor för omstart är branschrekommendationer när det gäller av något annat än DSC (till exempel Windows Installer), kombinera den här inställningen med det [xPendingReboot](https://github.com/powershell/xpendingreboot) modulen.
 - **RefreshFrequencyMins**: Används när du har ställt in en pull-tjänst. Visar frekvens (i minuter) som den lokala Konfigurationshanteraren kontaktar en pull-tjänst för att hämta den aktuella konfigurationen. Det här värdet kan anges tillsammans med ConfigurationModeFrequencyMins. När RefreshMode har angetts till PULL målnoden kontaktar pull-tjänsten med ett intervall som anges av RefreshFrequencyMins och hämtar den aktuella konfigurationen. Vid de tider som anges av ConfigurationModeFrequencyMins gäller konsekvens motorn sedan den senaste konfigurationen som hämtades till målnoden. Om RefreshFrequencyMins inte har angetts till ett heltal multipel av ConfigurationModeFrequencyMins, systemet kommer avrunda uppåt. Standardvärdet är 30.
 - **RefreshMode**: Möjliga värden är **Push** (standard) och **hämta**. I ”push”-konfigurationen måste du placera en fil på varje nod i målet, med hjälp av valfri dator. I ”pull”-läge måste du konfigurera en pull-tjänst för lokala Configuration Manager för att kontakta och få åtkomst till konfigurationsfilerna.
+
+> [!NOTE]
+> LCM startar den **ConfigurationModeFrequencyMins** cykel baserat på:
+>
+> - En ny metaconfig tillämpas med hjälp av `Set-DscLocalConfigurationManager`
+> - En omstart av datorn
+>
+> För alla villkor där en krasch som identifieras inom 30 sekunder och cykeln inträffar i processen för timer startas.
+> En samtidig åtgärd kan försena cykeln startas, om varaktigheten för den här åtgärden överskrider den konfigurera cykel frekvensen nästa timern startar inte.
+>
+> Exempelvis metaconfig är konfigurerad med en 15 minuters pull frekvens och en hämtning uppstår på T1.  Noden inte är klar för 16 minuter.  Den första 15 minuters cykeln ignoreras och nästa pull inträffar vid T1 + 15 + 15.
 
 ### <a name="example-of-updating-local-configuration-manager-settings"></a>Exempel för att uppdatera inställningarna för lokala Configuration Manager
 

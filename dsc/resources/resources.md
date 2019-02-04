@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-resurser
 ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54046699"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686070"
 ---
 # <a name="dsc-resources"></a>DSC-resurser
 
@@ -109,7 +109,7 @@ Configuration TestConfig
 
 Förutom community-resurser finns inbyggda resurser för Windows, Linux-resurser och resurser för beroenden mellan noder. Du kan använda stegen ovan för att fastställa syntaxen för dessa resurser och hur de används. De sidor som betjänar dessa resurser har arkiverats **referens**.
 
-Inbyggda resurser för Windows
+Inbyggda resurser i Windows
 
 * [Arkivera resursen](../reference/resources/windows/archiveResource.md)
 * [Miljöresurs](../reference/resources/windows/environmentResource.md)
@@ -128,7 +128,7 @@ Inbyggda resurser för Windows
 * [WindowsFeatureSet-resurs](../reference/resources/windows/windowsFeatureSetResource.md)
 * [WindowsOptionalFeature-resurs](../reference/resources/windows/windowsOptionalFeatureResource.md)
 * [WindowsOptionalFeatureSet-resurs](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
-* [WindowsPackageCabResource resurs](../reference/resources/windows/windowsPackageCabResource.md)
+* [WindowsPackageCabResource Resource](../reference/resources/windows/windowsPackageCabResource.md)
 * [WindowsProcess-resurs](../reference/resources/windows/windowsProcessResource.md)
 
 [Mellan noder beroende](../configurations/crossNodeDependencies.md) resurser
@@ -139,8 +139,8 @@ Inbyggda resurser för Windows
 
 Paketet Management-resurser
 
-* [PackageManagement-resurs](../reference/resources/packagemanagement/PackageManagementDscResource.md)
-* [PackageManagementSource resurs](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
+* [PackageManagement Resource](../reference/resources/packagemanagement/PackageManagementDscResource.md)
+* [PackageManagementSource Resource](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
 
 Linux-resurser
 

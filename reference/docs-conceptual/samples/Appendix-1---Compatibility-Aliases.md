@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Bilaga 1 Kompatibilitetsalias
 ms.assetid: 96ad921e-1a57-463e-8e60-424faf8b6ef8
 ms.openlocfilehash: 113bbee1af185f98777df5767022d54accb69447
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53406006"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684691"
 ---
 # <a name="appendix-1---compatibility-aliases"></a>Bilaga 1 - Kompatibilitetsalias
 
@@ -24,14 +24,14 @@ Alias           cls                             Clear-Host
 
 |Kommandot CMD|UNIX-kommando|PS-Kommando|PS Alias|
 |---------------|----------------|--------------|------------|
-|**dir**|**Ls**|**Get-ChildItem**|**CGI**|
-|**CLS**|**Rensa**|**Rensa värden** (funktion)|**CLS**|
-|**del, radera, rmdir**|**RM**|**Ta bort objekt**|**RI**|
-|**Kopiera**|**CP**|**Kopiera objekt**|**CI**|
-|**Flytta**|**MV**|**Flytta objekt**|**MI**|
-|**Byt namn på**|**MV**|**Byt namn på objekt**|**rni**|
-|**Typ**|**cat**|**Get-innehåll**|**global katalog**|
-|**CD**|**CD**|**Ange plats**|**Sl**|
-|**MD**|**mkdir**|**Nytt objekt**|**ni**|
+|**dir**|**ls**|**Get-ChildItem**|**gci**|
+|**CLS**|**clear**|**Rensa värden** (funktion)|**CLS**|
+|**del, radera, rmdir**|**rm**|**Ta bort objekt**|**ri**|
+|**Kopiera**|**cp**|**Kopiera objekt**|**ci**|
+|**Flytta**|**mv**|**Move-Item**|**mi**|
+|**Byt namn på**|**mv**|**Byt namn på objekt**|**rni**|
+|**Typ**|**cat**|**Get-Content**|**gc**|
+|**cd**|**cd**|**Set-Location**|**sl**|
+|**md**|**mkdir**|**Nytt objekt**|**ni**|
 |**pushd**|**pushd**|**Push-plats**|**pushd**|
-|**popd**|**popd**|**POP-plats**|**popd**|
+|**popd**|**popd**|**Pop-Location**|**popd**|

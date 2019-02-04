@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 18f77922a30e8b6fb73c08f0d218f2655a129bce
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 64a00e041bbeeea117db43116b486e83dfe923b0
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225580"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688261"
 ---
 # <a name="new-built-in-dsc-resources"></a>Nya inbyggda DSC-resurser
 
@@ -16,7 +16,7 @@ WMF 5.0 RTM har 4 nya DSC-resurser:
 * ServiceSet
 * ProcessSet
 
-Dessa resurser tillhandahåller ett enkelt sätt att konfigurera flera instanser med en enskild resurs-anrop.
+Dessa resurser innehåller ett enkelt sätt att konfigurera flera instanser med hjälp av en enskild resurs-anrop.
 
 ## <a name="windowsfeatureset"></a>WindowsFeatureSet
 

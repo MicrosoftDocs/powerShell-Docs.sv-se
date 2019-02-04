@@ -2,12 +2,12 @@
 title: Med Visual Studio Code för PowerShell-utveckling
 description: Med Visual Studio Code för PowerShell-utveckling
 ms.date: 08/06/2018
-ms.openlocfilehash: 3101fa57896996a696385801303333e4a6406d20
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 03f370d0906790b573ea42290b9ccdec2cf84f2e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404721"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686700"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Med Visual Studio Code för PowerShell-utveckling
 
@@ -63,6 +63,24 @@ Exempelvis för att skapa en ny fil, klickar du på **File -> Nytt**.
 Om du vill spara den, klickar du på **Arkiv -> Spara** och ange sedan ett filnamn, låt oss säga att `HelloWorld.ps1`.
 Stäng filen genom att klicka på ”x” bredvid namnet på filen.
 Avsluta Visual Studio Code **Arkiv -> Avsluta**.
+
+### <a name="installing-the-powershell-extension-on-restricted-systems"></a>Installera PowerShell-tillägget på begränsade system
+
+Vissa system är inställda på ett sätt som kräver alla kod signaturer som ska kontrolleras och därför kräver PowerShell redigeraren tjänster att manuellt godkänna för att köras på systemet.
+En uppdatering av grupprinciper som ändrar körningsprincipen är en trolig orsak om du har installerat tillägget PowerShell men ansluter till ett fel som:
+
+```
+Language server startup failed.
+```
+
+Öppna ett PowerShell och kör för att manuellt godkänna PowerShell redigeraren tjänster och därmed PowerShell-tillägget för VSCode:
+
+```powershell
+Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
+```
+
+Du uppmanas via ”vill du köra programvaran från denna ej betrodda utgivare”?
+Typ `R` att köra filen. Öppna Visual Studio Code och kontrollera att tillägget PowerShell fungerar korrekt. Om du fortfarande har problem med att komma igång, berätta för oss på [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
 
 #### <a name="using-a-specific-installed-version-of-powershell"></a>Med hjälp av en specifik version av PowerShell
 

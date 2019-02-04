@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: SendConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
 ms.openlocfilehash: 3529bc56ecba19ed0fbbf070a4e86d0692824d39
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048638"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683942"
 ---
 # <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>SendConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
 

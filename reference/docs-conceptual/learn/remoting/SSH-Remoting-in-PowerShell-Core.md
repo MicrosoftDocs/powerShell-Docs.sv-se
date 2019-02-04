@@ -2,12 +2,12 @@
 title: PowerShell fjärrkommunikation via SSH
 description: Fjärrkommunikation i PowerShell Core med hjälp av SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: b5c6bd70841e270c2c128601612c07af9d9aa6e4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: 87ab967a30782a6ac4d86737cd1702a0ebd6ebc5
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655301"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687134"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell fjärrkommunikation via SSH
 
@@ -47,7 +47,7 @@ SSH måste installeras på alla datorer. Installera både SSH-klienten (`ssh.exe
    ```
 
 2. Installera den senaste Win32-OpenSSH. Installationsanvisningar finns i [Installation av OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).
-3. Redigera den `sshd_config` -filen på `%ProgramData%\ssh`.
+3. Redigera den `sshd_config` -filen på `$env:ProgramData\ssh`.
 
    - Kontrollera att lösenordsautentisering är aktiverad
 

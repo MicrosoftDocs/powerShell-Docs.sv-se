@@ -1,54 +1,54 @@
 ---
 ms.date: 06/12/2017
-keywords: jea powershell säkerhet
-title: Översikt över Just Enough Administration
-ms.openlocfilehash: 3dae8b31d4d13ff9033803035c870c02fc7c38ca
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: jea, powershell, säkerhet
+title: Översikt över precis tillräcklig Administration
+ms.openlocfilehash: c097838fb25a63d42502eebf751c64c537bdd077
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222096"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686084"
 ---
 # <a name="just-enough-administration"></a>JEA (Just Enough Administration)
 
-Bara tillräckligt Administration JEA () är en säkerhetsteknik som möjliggör delegerad administration för sådant som kan hanteras med PowerShell.
-Med JEA kan du:
+Tillräckligt Administration JEA () är en säkerhetsteknik som möjliggör delegerad administration för allt som kan hanteras med PowerShell.
+JEA kan du:
 
-- **Minska antalet administratörer på dina datorer** hanterade tjänstkonton som utföra Privilegierade åtgärder för vanliga användare genom att utnyttja virtuella konton eller grupp.
-- **Begränsa vad användarna kan göra** genom att ange vilka cmdlets, funktioner och externa kommandon kan de köra.
-- **Bättre förstå vad användarna gör** med betyg och -loggarna som visar exakt vilka kommandon som en användare som körs under sin session.
+- **Minska antalet administratörer på dina datorer** genom att använda virtuella konton eller gruppen hanterade tjänstkonton som utföra Privilegierade åtgärder för vanliga användare.
+- **Begränsa vad användarna kan göra** genom att ange vilka cmdlet: ar, funktioner och externa kommandon de kan köra.
+- **Bättre förstå vad användarna gör** med avskrifter och loggar som visar exakt vilka kommandon som en användare som körs under sin session.
 
 **Varför är detta viktigt?**
 
-Mycket Privilegierade konton som används för att administrera dina servrar utgöra en säkerhetsrisk.
-Bör en angripare kompromettera något av dessa konton, kan de starta [lateral attacker](http://aka.ms/pth) inom organisationen.
-Varje konto de angripa kan ge dem åtkomst till flera konton och resurser, placerar dem även ett steg närmare stjäla företagets hemligheter, starta en denial of service-attack med mera.
+Hög behöriga konton som används för att administrera dina servrar utgöra en säkerhetsrisk.
+Bör en angripare kompromettera något av dessa konton, kan de starta [lateral attacker](http://aka.ms/pth) i hela organisationen.
+Varje konto de äventyra kan ge dem åtkomst till och med flera konton och resurser, placera dem ett steg närmare att stjäla företagets hemligheter, starta en denial of service-attack med mera.
 
-Det är inte alltid enkelt ta antingen bort administrativa privilegier.
-Överväg att ett vanligt scenario där DNS-serverrollen installeras på samma dator som din Active Directory-domänkontrollant.
-DNS-administratörer kräver lokal administratörsbehörighet för att åtgärda problem med DNS-servern, men för att göra så att du behöver göra dem till medlemmar i säkerhetsgruppen för mycket Privilegierade ”Domänadministratörer”.
-Den här metoden ger effektivt DNS-administratörer kontroll över hela domänen och åtkomst till alla resurser på den datorn.
+Det är inte alltid lätt att ta bort administrativa privilegier, antingen.
+Föreställ dig ett vanligt scenario där DNS-rollen är installerad på samma dator som din Active Directory-domänkontrollant.
+DNS-administratörer kräver behörighet som lokal administratör att åtgärda problem med DNS-servern, men för att kunna göra så att du behöver göra dem till medlemmar i gruppen med hög behörighetsnivå ”Domänadministratörer”.
+Den här metoden ger ett effektivt sätt DNS-administratörer kontroll över hela domänen och åtkomst till alla resurser på den datorn.
 
-JEA kan du lösa det här problemet genom att hjälpa dig fatta principen om *minsta privilegium*.
-Du kan konfigurera en slutpunkt för hantering med JEA för DNS-administratörer som ger dem åtkomst till alla PowerShell-kommandon som de behöver för att utföra sitt jobb, men inget mer.
-Det innebär att du kan ange lämplig åtkomst att reparera en förgiftade DNS-cache eller starta om DNS-servern utan att oavsiktligt ge dem behörighet till Active Directory eller för att bläddra i filsystemet eller potentiellt skadliga skript körs.
-Ännu bättre är när JEA sessionen är konfigurerad för att använda tillfälliga Privilegierade virtuella konton, DNS-administratörer kan ansluta till en server med hjälp av *icke-administratörer* autentiseringsuppgifter och fortfarande att kunna köra kommandon som kräver vanligen Admin-privilegier.
-Den här funktionen kan du ta bort användare från mycket Privilegierade lokala/domän-administratörsroller och istället noggrant styra vad de kan göra på varje dator.
+JEA hjälper dig att lösa problemet genom att hjälpa dig att anta principen om *lägsta behörighet*.
+Du kan konfigurera en hanteringsslutpunkt för DNS-administratörer som ger dem åtkomst till alla PowerShell-kommandon som de behöver för att utföra sitt jobb, men inget mer med JEA.
+Det innebär att du kan ange lämplig åtkomst att reparera en förgiftat DNS-cache eller starta om DNS-servern utan att ge dem oavsiktligt åtkomstbehörighet till Active Directory, eller att bläddra i filsystemet eller köra potentiellt skadliga skript.
+Dessutom finns när JEA-sessionen är konfigurerad för att använda tillfälliga Privilegierade virtuella konton, DNS-administratörer kan ansluta till servern med *icke-administratörer* autentiseringsuppgifter och fortfarande att kunna köra kommandon som kräver vanligtvis Admin-behörighet.
+Den här funktionen kan du ta bort användare från mycket Privilegierade lokal/domän-administratörsroller och istället noggrant kontrollera vad de kan utföra på varje dator.
 
 ## <a name="get-started-with-jea"></a>Kom igång med JEA
 
-Du kan börja använda JEA idag på en dator som kör Windows Server 2016 eller Windows 10.
+Du kan börja använda JEA idag på valfri dator som kör Windows Server 2016 eller Windows 10.
 Du kan också köra JEA på äldre operativsystem med en uppdatering för Windows Management Framework.
-Om du vill lära dig mer om krav för att använda JEA och lär dig hur du skapar, använder, och granska en JEA slutpunkt, ta en titt i följande avsnitt:
+Om du vill veta mer om krav för att använda JEA och lär dig hur du skapar, använder, och granska en JEA-slutpunkt, ta en titt i följande avsnitt:
 
-- [Krav för](prerequisites.md) -förklarar hur du konfigurerar miljön att använda JEA.
-- [Funktioner för rollen](role-capabilities.md) -förklarar hur du skapar roller som avgör vad en användare som tillåts i en JEA-session.
-- [Sessionskonfigurationer](session-configurations.md) -förklarar hur du konfigurerar JEA slutpunkter som mappar användare till roller och definiera JEA identiteten
-- [Registrera JEA](register-jea.md) – skapa en JEA slutpunkt och göra den tillgänglig för användare att ansluta till.
-- [Med hjälp av JEA](using-jea.md) -Läs de olika sätt som du kan använda JEA.
-- [Säkerhetsaspekter](security-considerations.md) -granska Metodtips om säkerhet och konsekvenser angående JEA konfigurationsalternativ.
-- [Granska och rapportera om JEA](audit-and-report.md) – Lär dig hur du granskar och rapportera om JEA slutpunkter.
+- [Förutsättningar](prerequisites.md) -förklarar hur du ställer in din miljö för att använda JEA.
+- [Rollfunktioner](role-capabilities.md) – beskriver hur du skapar roller som avgör vad en användare tillåts att göra i en JEA-session.
+- [Sessionskonfigurationer](session-configurations.md) -förklarar hur du konfigurerar JEA-slutpunkter som mappa användare till roller och JEA-identitet
+- [Registrera JEA](register-jea.md) – skapa en JEA-slutpunkt och göra den tillgänglig för användarna att ansluta till.
+- [Använda JEA](using-jea.md) – Lär dig de olika sätt som du kan använda JEA.
+- [Säkerhetsöverväganden](security-considerations.md) -granska säkerhetsmetoder och konsekvenserna av JEA konfigurationsalternativ.
+- [Granska och rapportera i JEA](audit-and-report.md) – Lär dig att granska och rapportera i JEA-slutpunkter.
 
-## <a name="samples-and-dsc-resource"></a>Exemplen och DSC-resurs
+## <a name="samples-and-dsc-resource"></a>Exempel och DSC-resurs
 
-Exempel JEA konfigurationer och JEA DSC-resursen finns i den [JEA GitHub-lagringsplatsen](https://github.com/PowerShell/JEA).
+Exemplet JEA konfigurationer och JEA DSC-resurs kan hittas i den [JEA GitHub-lagringsplatsen](https://github.com/PowerShell/JEA).

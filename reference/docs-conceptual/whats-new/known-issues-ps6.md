@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: PowerShell, core
 title: Kända problem för PowerShell 6.0
 ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49451004"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686763"
 ---
 # <a name="known-issues-for-powershell-60"></a>Kända problem för PowerShell 6.0
 
@@ -15,7 +15,7 @@ ms.locfileid: "49451004"
 
 Alpha versioner av PowerShell på Linux och macOS använder huvudsakligen funktionella men har några viktiga begränsningar och användningsproblem. Beta-versioner av PowerShell på Linux och macOS är mer stabilt och än alpha versioner, men fortfarande saknas vissa uppsättning funktioner och kan innehålla buggar. I vissa fall kan är dessa problem helt enkelt buggar som ännu inte har åtgärdats. I annat fall (som med standardalias för ls, cp osv) vi söker efter feedback från diskussionsgruppen om de val som vi gör.
 
-Obs: På grund av likheter med många underliggande undersystemen PowerShell på Linux och macOS tenderar att dela samma nivå av mognad vid både funktioner och buggar. Förutom enligt nedan problem i det här avsnittet gäller för båda operativsystemen.
+Anm På grund av likheter med många underliggande undersystemen PowerShell på Linux och macOS tenderar att dela samma nivå av mognad vid både funktioner och buggar. Förutom enligt nedan problem i det här avsnittet gäller för båda operativsystemen.
 
 ### <a name="case-sensitivity-in-powershell"></a>Skiftlägeskänslighet i PowerShell
 
@@ -51,7 +51,7 @@ För närvarande har PowerShell endast jokertecken expansion (globbing) för inb
 
 Se [#954](https://github.com/PowerShell/PowerShell/issues/954) att ge oss feedback om hur du förbättrar globbing upplevelsen för Linux/macOS.
 
-### <a name="net-framework-vs-net-core-framework"></a>.NET framework eller .NET Core Framework
+### <a name="net-framework-vs-net-core-framework"></a>.NET Framework vs .NET Core Framework
 
 PowerShell för Linux/macOS använder .NET Core som är en delmängd av fullständiga .NET Framework på Microsoft Windows. Det här är viktiga eftersom PowerShell ger direktåtkomst till det underliggande framework-typer, metoder, osv. Därför kan skript som körs på Windows inte köras i icke-Windows-plattformar på grund av skillnader i ramverk. Mer information om .NET Core Framework finns i <https://dotnetfoundation.org/net-core>
 
@@ -107,7 +107,7 @@ I följande tabell visas kommandon som är känt att inte fungerar i PowerShell 
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Inte tillgängligt.|De här kommandona känns inte igen. Detta bör korrigeras i en framtida version.|
 |`Get-Acl`, `Set-Acl`|Inte tillgänglig.|De här kommandona känns inte igen. Detta bör korrigeras i en framtida version.|
 |`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|Inte tillgänglig.|De här kommandona känns inte igen. Detta bör korrigeras i en framtida version.|
-|`Wait-Process`|Tillgänglig, fungerar inte korrekt. |Till exempel ”-startprocessen gvim - PassThru | Wait-processens fungerar inte; det inte går att vänta tills processen.|
+|`Wait-Process`|Tillgänglig, fungerar inte korrekt. |Till exempel `Start-Process gvim -PassThru | Wait-Process` fungerar inte; det inte går att vänta tills processen.|
 |`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Tillgängliga men fungerar inte.|Skriver ett felmeddelande om att kommandona inte fungerar. Dessa bör åtgärdas i en framtida version.|
 |`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Det finns tillgänglig men inga händelsekällor.|Eventing PowerShell-kommandon finns men de flesta av de händelsekällor används med hjälp av kommandon (till exempel System.Timers.Timer) är inte tillgängligt i Linux gör kommandona oanvändbara i version Alpha.|
 |`Set-ExecutionPolicy`|Tillgängliga men fungerar inte.|Returnerar ett meddelande som säger stöds inte på den här plattformen. Utförandepolicyn är en användare designmiljöer ”inbyggd” som hjälper till att förhindra att användaren att dyra misstag. Det är inte en säkerhetsgräns.|

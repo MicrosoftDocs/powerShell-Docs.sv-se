@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Ta bort objekt från pipelinen Where-Object
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
 ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405477"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685727"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Ta bort objekt från pipelinen (Where-Object)
 
@@ -27,9 +27,9 @@ På grund av parsning överväganden symboler till exempel <>, och = inte använ
 
 |Jämförelseoperator|Innebörd|Exempel (returnerar true)|
 |-----------------------|-----------|--------------------------|
-|-eq|är lika med|1 - eq 1|
+|-eq|är lika med|1 -eq 1|
 |-ne|Är inte lika med|1 - ne 2|
-|-lt|är mindre än|1 - lt 2|
+|-lt|är mindre än|1 -lt 2|
 |-le|Är mindre än eller lika med|1 - le 2|
 |-gt|är större än|2 - gt 1|
 |-ge|Är större än eller lika med|2 -ge 1|
@@ -101,7 +101,7 @@ De logiska operatorerna som standard visas i följande tabell.
 
 |Logisk Operator|Innebörd|Exempel (returnerar true)|
 |--------------------|-----------|--------------------------|
-|- och|Logiska och; TRUE om båda sidorna utvärderas som true|(1 - eq 1) - och (2 - eq 2).|
+|- och|Logiska och; TRUE om båda sidorna utvärderas som true|(1 -eq 1) -and (2 -eq 2)|
 |- eller|Logiska eller; SANT om endera sida är true|(1 - eq 1) - eller (1 - eq 2).|
-|-inte|Logiskt not; omvänd true och false|-inte (1 - eq 2)|
-|\!|Logiskt not; omvänd true och false|\!(1 - eq 2)|
+|-inte|Logiskt not; omvänd true och false|-not (1 -eq 2)|
+|\!|Logiskt not; omvänd true och false|\!(1 -eq 2)|
