@@ -1,0 +1,41 @@
+---
+title: Så här skapar och överför CAB-filer | Microsoft Docs
+ms.custom: ''
+ms.date: 09/13/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: article
+ms.assetid: 8d35f233-5447-48a2-a961-9fbca763262b
+caps.latest.revision: 7
+ms.openlocfilehash: 9928a0b31a57d42eb39cea1af0509613c483caf7
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "56848666"
+---
+# <a name="how-to-create-and-upload-cab-files"></a><span data-ttu-id="a1c58-102">Skapa och ladda upp CAB-filer</span><span class="sxs-lookup"><span data-stu-id="a1c58-102">How to Create and Upload CAB Files</span></span>
+
+<span data-ttu-id="a1c58-103">Det här avsnittet beskriver hur du skapar uppdateringsbar hjälp CAB-filer och överför dem till den plats där cmdletarna uppdateringsbar hjälp hittar.</span><span class="sxs-lookup"><span data-stu-id="a1c58-103">This topic explains how to create Updatable Help CAB files and upload them to the location where the Updatable Help cmdlets can find them.</span></span>
+
+## <a name="how-to-create-and-upload-updatable-help-cab-files"></a><span data-ttu-id="a1c58-104">Så här skapar och överför uppdateringsbar hjälp CAB-filer</span><span class="sxs-lookup"><span data-stu-id="a1c58-104">How to Create and Upload Updatable Help CAB Files</span></span>
+
+<span data-ttu-id="a1c58-105">Du kan använda funktionen uppdateringsbar hjälp för att leverera nya eller uppdaterade hjälpfilerna för en modul i flera språk och kulturer.</span><span class="sxs-lookup"><span data-stu-id="a1c58-105">You can use the Updatable Help feature to deliver new or updated help files for a module in multiple languages and cultures.</span></span> <span data-ttu-id="a1c58-106">En uppdateringsbar hjälp-paket för en modul som består av en HelpInfo XML-fil och en eller flera kabinettfil (. CAB-fil) filer.</span><span class="sxs-lookup"><span data-stu-id="a1c58-106">An Updatable Help package for a module consists of one HelpInfo XML file and one or more cabinet (.CAB) files.</span></span> <span data-ttu-id="a1c58-107">Varje CAB-filen innehåller hjälpfiler för modulen i en UI-kultur.</span><span class="sxs-lookup"><span data-stu-id="a1c58-107">Each CAB file contains help files for the module in one UI culture.</span></span> <span data-ttu-id="a1c58-108">Använd följande procedur för att skapa CAB-filer för uppdateringsbar hjälp.</span><span class="sxs-lookup"><span data-stu-id="a1c58-108">Use the following procedure to create CAB files for Updatable Help.</span></span>
+
+1. <span data-ttu-id="a1c58-109">Organisera hjälpfilerna för modulen av UI-kultur.</span><span class="sxs-lookup"><span data-stu-id="a1c58-109">Organize the help files for the module by UI culture.</span></span> <span data-ttu-id="a1c58-110">Varje uppdateringsbar hjälp CAB-filen innehåller hjälpfilerna för en modul i en UI-kultur.</span><span class="sxs-lookup"><span data-stu-id="a1c58-110">Each Updatable Help CAB file contains the help files for one module in one UI culture.</span></span> <span data-ttu-id="a1c58-111">Du kan leverera flera hjälp CAB-filer för modulen, var och en för en annan UI-kultur.</span><span class="sxs-lookup"><span data-stu-id="a1c58-111">You can deliver multiple help CAB files for the module, each for a different UI culture.</span></span>
+
+2. <span data-ttu-id="a1c58-112">Kontrollera som hjälpfiler omfattar endast de filtyper som tillåts för uppdateringsbar hjälp och validera dem mot ett schema för Hjälp-filen.</span><span class="sxs-lookup"><span data-stu-id="a1c58-112">Verify that help files include only the file types permitted for Updatable Help and validate them against a help file schema.</span></span> <span data-ttu-id="a1c58-113">Om den `Update-Help` cmdlet påträffar en fil som är ogiltig eller är inte en tillåten typ och installerar inte filen ogiltig stoppar installerar filer från rådgivningsnämnden för ändringar.</span><span class="sxs-lookup"><span data-stu-id="a1c58-113">If the `Update-Help` cmdlet encounters a file that is invalid or is not a permitted type, it does not install the invalid file and stops installing files from the CAB.</span></span> <span data-ttu-id="a1c58-114">En lista över tillåtna filtyper finns i [filen typer tillåts i en uppdateringsbar hjälp CAB-fil](./file-types-permitted-in-an-updatable-help-cab-file.md).</span><span class="sxs-lookup"><span data-stu-id="a1c58-114">For a list of permitted file types, see [File Types Permitted in an Updatable Help CAB File](./file-types-permitted-in-an-updatable-help-cab-file.md).</span></span>
+
+3. <span data-ttu-id="a1c58-115">Signera hjälpfilerna.</span><span class="sxs-lookup"><span data-stu-id="a1c58-115">Digitally sign the help files.</span></span> <span data-ttu-id="a1c58-116">Digitala signaturer krävs inte, men de är bästa praxis.</span><span class="sxs-lookup"><span data-stu-id="a1c58-116">Digital signatures are not required, but they are a best practice.</span></span>
+
+4. <span data-ttu-id="a1c58-117">Inkludera all hjälp filer för modulen i Användargränssnittet för kultur, inte bara de filer som är nya eller har ändrats.</span><span class="sxs-lookup"><span data-stu-id="a1c58-117">Include all of help files for the module in the UI culture, not only files that are new or have changed.</span></span> <span data-ttu-id="a1c58-118">Om CAB-filen är ofullständig, har användare som hämtar hjälpfiler för första gången eller hämta inte alla uppdateringar inte alla hjälpfiler modulen.</span><span class="sxs-lookup"><span data-stu-id="a1c58-118">If the CAB file is incomplete, users who download help files for the first time or do not download every update, will not have all of the module help files.</span></span>
+
+5. <span data-ttu-id="a1c58-119">Använd ett verktyg som skapar CAB-filer, till exempel MakeCab.exe.</span><span class="sxs-lookup"><span data-stu-id="a1c58-119">Use a utility that creates cabinet files, such as MakeCab.exe.</span></span> <span data-ttu-id="a1c58-120">Windows PowerShell innehåller inte cmdletar som skapar CAB-filer.</span><span class="sxs-lookup"><span data-stu-id="a1c58-120">Windows PowerShell does not include cmdlets that create CAB files.</span></span>
+
+6. <span data-ttu-id="a1c58-121">Namnge CAB-filer.</span><span class="sxs-lookup"><span data-stu-id="a1c58-121">Name the CAB files.</span></span> <span data-ttu-id="a1c58-122">Mer information finns i [hur du namnger en uppdateringsbar hjälp CAB-fil](./how-to-name-an-updatable-help-cab-file.md).</span><span class="sxs-lookup"><span data-stu-id="a1c58-122">For more information, see [How to Name an Updatable Help CAB File](./how-to-name-an-updatable-help-cab-file.md).</span></span>
+
+7. <span data-ttu-id="a1c58-123">Ladda upp CAB-filer för modulen till den plats som anges av den **HelpContentUri** element i HelpInfo XML-filen för modulen.</span><span class="sxs-lookup"><span data-stu-id="a1c58-123">Upload the CAB files for the module to the location that is specified by the **HelpContentUri** element in the HelpInfo XML file for the module.</span></span> <span data-ttu-id="a1c58-124">Överför sedan HelpInfo XML-filen till den plats som anges av den **HelpInfoUri** nyckeln för modulmanifestet.</span><span class="sxs-lookup"><span data-stu-id="a1c58-124">Then upload the HelpInfo XML file to the location that is specified by the **HelpInfoUri** key of the module manifest.</span></span> <span data-ttu-id="a1c58-125">Den **HelpContentUri** och **HelpInfoUri** kan peka på samma plats.</span><span class="sxs-lookup"><span data-stu-id="a1c58-125">The **HelpContentUri** and **HelpInfoUri** can point to the same location.</span></span>
+
+> [!CAUTION]
+> <span data-ttu-id="a1c58-126">Värdet för den **HelpInfoUri** nyckel och **HelpContentUri** elementet måste börja med ”http” eller ”https”.</span><span class="sxs-lookup"><span data-stu-id="a1c58-126">The value of the **HelpInfoUri** key and the **HelpContentUri** element must begin with "http" or "https".</span></span> <span data-ttu-id="a1c58-127">Värdet måste ange en plats på Internet och det får inte innehålla ett filnamn.</span><span class="sxs-lookup"><span data-stu-id="a1c58-127">The value must indicate an Internet location and it must not include a file name.</span></span>
