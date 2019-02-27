@@ -2,18 +2,18 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Använda Import-DSCResource
-ms.openlocfilehash: f22c741969b1429074e7307a00a5c014cf563089
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: ee0b2f0469c6507c8f0148138198597a9e57cdd7
+ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265509"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56803420"
 ---
 # <a name="using-import-dscresource"></a>Använda Import-DSCResource
 
-`Import-DScResource` är ett dynamiskt nyckelord som kan bara användas i ett skriptblock konfiguration. Den `Import-DSCResource` nyckelord för att importera alla resurser som behövs i konfigurationen. Resurser under `$phsome` importeras automatiskt, men den betraktas ändå bäst att explicit importera alla resurser som används i din [Configuration](Configurations.md).
+`Import-DScResource` är ett dynamiskt nyckelord som endast kan användas inuti en konfiguration-skriptblock. Den `Import-DSCResource` nyckelord att importera alla resurser som behövs i konfigurationen. Resurser under `$pshome` importeras automatiskt, men det betraktas fortfarande bästa praxis att uttryckligen importera alla resurser som används i din [Configuration](Configurations.md).
 
-Syntaxen för `Import-DSCResource` visas nedan.  När du anger moduler efter namn, är det ett krav att visa på en ny rad.
+Syntaxen för `Import-DSCResource` visas nedan.  När du anger moduler efter namn, är det ett krav att lista på en ny rad.
 
 ```syntax
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
@@ -21,14 +21,14 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
 
 |Parameter  |Beskrivning  |
 |---------|---------|
-|`-Name`|Namn för DSC-resurs som du måste importera. Om modulnamnet anges söker kommandot efter dessa DSC-resurser i den här modulen. kommandot söker annars DSC-resurser i alla sökvägar för DSC-resurs. Jokertecken stöds.|
-|`-ModuleName`|Modulnamn eller module-specifikationen.  Om du anger resurser som ska importeras från en modul görs kommandot försök att importera endast de resurserna. Om du anger modulen endast importerar kommandot alla DSC-resurser i modulen.|
+|`-Name`|Namnen för DSC-resurs som du måste importera. Om modulnamnet på har angetts, söker kommandot efter dessa DSC-resurser i den här modulen. kommandot söker annars DSC-resurser i alla sökvägar för DSC-resurs. Jokertecken stöds.|
+|`-ModuleName`|Modulnamn eller modulen-specifikationen.  Om du anger resurser som ska importeras från en modul, försöker kommandot Importera endast dessa resurser. Om du anger modulen endast importerar kommandot alla DSC-resurser i modulen.|
 
 ```powershell
 Import-DscResource -ModuleName xActiveDirectory;
 ```
 
-## <a name="example-use-import-dscresource-within-a-configuration"></a>Exempel: Använda importera DSCResource i en konfiguration
+## <a name="example-use-import-dscresource-within-a-configuration"></a>Exempel: Använda Import-DSCResource i en konfiguration
 
 ```powershell
 Configuration MSDSCConfiguration
@@ -52,44 +52,44 @@ Configuration MSDSCConfiguration
 ```
 
 > [!NOTE]
-> Att ange flera värden för namn på resursen och moduler i samma kommando stöds inte. Den kan ha icke-deterministiska beteende om vilken resurs som ska läsas in från vilken modul samma resurs finns i flera moduler. Under kommandot resulterar i fel under kompilering.
+> Att ange flera värden för namn på resursen och moduler i samma kommando stöds inte. Den kan ha icke-deterministisk beteende om vilken resurs som ska läsas in från vilken modul samma resurs finns i flera moduler. Kommandot nedan leder till fel under kompilering.
 >
 > ```powershell
 > Import-DscResource -Name UserConfigProvider*,TestLogger1 -ModuleName UserConfigProv,PsModuleForTestLogger
 > ```
 
-Saker att tänka på när du använder bara parametern Name:
+Saker att tänka på när du använder endast parametern Name:
 
-- Det är en resursintensiv åtgärd beroende på antalet moduler som installerats på datorn.
-- Den kommer att läsa in den första resursen med det namnet hittades. I fall där det finns fler än en resurs med samma namn som har installerats, det gick att läsa in fel resurs.
+- Det är en resurskrävande åtgärd beroende på antalet moduler som installerats på datorn.
+- Den läser in den första resursen hittades med det angivna namnet. I fall där det finns fler än en resurs med samma namn som är installerad, det kan läsa in fel-resursen.
 
-Den rekommenderade användningen är att ange `–ModuleName` med den `-Name` parametern, som beskrivs nedan.
+Den rekommenderade användningen är att ange `–ModuleName` med den `-Name` parameter, enligt beskrivningen nedan.
 
-Denna användning har följande fördelar:
+Den här användningen har följande fördelar:
 
-- Det minskar påverkan på prestandan genom att begränsa omfattningen av sökningen för den angivna resursen.
-- Den definierar uttryckligen modulen definiera resursen, se till att rätt resurs har lästs in.
+- Det minskar påverkan på prestanda genom att begränsa sökomfånget för den angivna resursen.
+- Den definierar uttryckligen modulen definiera resursen, att se till att rätt resurs har lästs in.
 
 > [!NOTE]
-> I PowerShell 5.0 DSC-resurser kan ha flera versioner och versioner kan installeras på en dator sida-vid-sida. Det har implementerats genom att låta flera versioner av en Resursmodul som ingår i samma modul mapp.
+> DSC-resurser kan ha flera versioner i PowerShell 5.0 och versioner kan installeras på en dator sida-vid-sida. Detta är implementerat genom att låta flera versioner av en Resursmodul som finns i samma mapp i modulen.
 > Mer information finns i [av resurser med flera versioner](sxsresource.md).
 
-## <a name="intellisense-with-import-dscresource"></a>IntelliSense med Import DSCResource
+## <a name="intellisense-with-import-dscresource"></a>IntelliSense med Import-DSCResource
 
-När du redigerar DSC-konfigurationen i ISE innehåller PowerShell IntelliSence för resurser och resursegenskaper. Resursdefinitionerna under den `$pshome` sökvägen modulen laddas automatiskt. När du importerar resurser med hjälp av den `Import-DSCResource` nyckelordet angivna resursdefinitionerna läggs och Intellisense utökas för att inkludera resursen importerade schemat.
+När du redigerar DSC-konfigurationen i ISE, innehåller PowerShell IntelliSence för resurser och resursegenskaper. Resursdefinitionerna under den `$pshome` modulsökväg läses in automatiskt. När du importerar resurser med hjälp av den `Import-DSCResource` nyckelord, angivna resursdefinitionerna läggs och Intellisense utökas för att inkludera den importerade resursen schemat.
 
 ![Resursen Intellisense](/media/resource-intellisense.png)
 
 > [!NOTE]
-> Från och med PowerShell 5.0, har flikavslutande lagts till ISE för DSC-resurser och deras egenskaper. Mer information finns i [resurser](../resources/resources.md).
+> Från och med PowerShell 5.0, har tabbifyllning lagts till ISE för DSC-resurser och deras egenskaper. Mer information finns i [resurser](../resources/resources.md).
 
-Vid kompilering av konfigurationen, använder PowerShell importerade resursdefinitionerna för att verifiera alla resurs block i konfigurationen.
-Varje resurs block verifieras med hjälp av resursens schemadefinition för följande regler.
+Vid kompilering konfigurationen använder PowerShell importerade resursdefinitionerna för att verifiera alla resurs block i konfigurationen.
+Varje resurs block har verifierats med hjälp av resursens schemadefinitionen, för följande regler.
 
-- Endast egenskaper som definierats i schemat används.
-- Datatyper av för varje egenskap är korrekta.
-- Nycklar egenskaper har angetts.
-- Ingen skrivskyddad egenskap används.
+- Endast de egenskaper som anges i schemat används.
+- Datatyperna för varje egenskap är korrekta.
+- Egenskaper för nycklar har angetts.
+- Inga skrivskyddad egenskap används.
 - Validering av värdet mappar typer.
 
 Överväg följande konfiguration:
@@ -111,41 +111,41 @@ Configuration SchemaValidationInCorrectEnumValue
 }
 ```
 
-Kompilerar den här konfigurationen leder till att ett fel.
+Kompilera den här konfigurationen uppstår ett fel.
 
 ```output
 PSDesiredStateConfiguration\WindowsFeature: At least one of the values ‘Invalid’ is not supported or valid for property ‘Ensure’ on class ‘WindowsFeature’. Please specify only supported values: Present, Absent.
 ```
 
-Verifiering av IntelliSense och schemat kan du fånga upp mer fel under parse och sammanställning tid att undvika problem vid körning.
+Verifiering av IntelliSense och schemat kan du fånga upp flera fel under parsning och kompilering tiden kan undvika komplikationer vid körning.
 
 > [!NOTE]
-> Varje DSC-resurs kan ha ett namn och en **FriendlyName** definieras av resursens schema. Nedan visas de två första raderna i ”MSFT_ServiceResource.shema.mof”.
+> Varje DSC-resurs kan ha ett namn och en **FriendlyName** definieras av schemat för den resursen. Nedan visas de två första raderna för ”MSFT_ServiceResource.shema.mof”.
 > ```syntax
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
-> När du använder den här resursen i en konfiguration, kan du ange **MSFT_ServiceResource** eller **tjänsten**.
+> När du använder den här resursen i en konfiguration, kan du ange **MSFT_ServiceResource** eller **Service**.
 
-## <a name="powershell-v4-and-v5-differences"></a>PowerShell v4 och v5 skillnader
+## <a name="powershell-v4-and-v5-differences"></a>V4 och v5 skillnader i PowerShell
 
-Det finns flera skillnader som du kan se när redigering konfigurationer i jämfört med PowerShell 4.0. PowerShell 5.0 och senare. Det här avsnittet kommer Markera skillnaderna som visas är relevanta för den här artikeln.
+Det finns flera skillnader som du ser när du redigerar konfigurationer i PowerShell 4.0 vs. PowerShell 5.0 och senare. Det här avsnittet kommer markerar skillnaderna att du kan se relevanta för den här artikeln.
 
-### <a name="multiple-resource-versions"></a>Flera resurs-versioner
+### <a name="multiple-resource-versions"></a>Flera versioner av resurs
 
-Installera och använda flera versioner av resurser sida vid sida stöds inte i PowerShell 4.0. Se till att du bara har en version av resursen installeras om du upptäcker problem importerar resurser till din konfiguration.
+Installera och använda flera versioner av resurser sida vid sida stöds inte i PowerShell 4.0. Om du upptäcker problem när du importerar resurser i din konfiguration, se till att du bara har en version av den resurs som är installerad.
 
 I bilden nedan, två versioner av den **xPSDesiredStateConfiguration** modulen är installerad.
 
-![Flera resurs versioner fast](/media/multiple-resource-versions-broken.md)
+![Flera resurs-versioner som har åtgärdats](/media/multiple-resource-versions-broken.md)
 
-Kopiera innehållet i din önskade Modulversion till den översta nivån i modul-katalog.
+Kopiera innehållet i önskad modul-version till den översta nivån i modulkatalogen.
 
-![Flera resurs versioner fast](/media/multiple-resource-versions-fixed.md)
+![Flera resurs-versioner som har åtgärdats](/media/multiple-resource-versions-fixed.md)
 
 ### <a name="resource-location"></a>Resursplats
 
-När redigering och sammanställa konfigurationer, dina resurser kan lagras i katalogen som anges av din [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path). PowerShell 4.0 i MGM kräver att alla DSC resurs moduler lagras under ”programmet Files\WindowsPowerShell\Modules” eller `$pshome\Modules`. Från och med PowerShell 5.0 kan det här kravet togs bort och resursen moduler kan lagras i katalogen som anges av `PSModulePath`.
+När redigering och kompilera konfigurationer, dina resurser kan lagras i en katalog som anges av din [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path). I PowerShell 4.0 LCM kräver alla moduler som DSC-resurs som ska lagras under ”programmet Files\WindowsPowerShell\Modules” eller `$pshome\Modules`. Från och med PowerShell 5.0 kan det här kravet togs bort och resurs-moduler kan lagras i en katalog som anges av `PSModulePath`.
 
 ## <a name="see-also"></a>Se även
 
