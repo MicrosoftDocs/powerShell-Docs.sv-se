@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
-title: Avancerad DSC-redigering för sammansättning och samarbete
-ms.openlocfilehash: 3e40ba94de0a53c1c9663553c4ec443b5e0df3fd
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+title: Förstå DSCs roll i en CI/CD-pipeline
+ms.openlocfilehash: 7aec414b3d8e61d1daa1ce796184ac34dbbb43ce
+ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405320"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56803386"
 ---
-# <a name="advanced-dsc-authoring-for-composition-and-collaboration"></a>Avancerad DSC-redigering för sammansättning och samarbete
+# <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Förstå DSCs roll i en CI/CD-pipeline
 
 Den här artikeln beskrivs olika metoder som är tillgängliga för att kombinera konfigurationer och resurser.
 Målet för varje scenario är samma, minska komplexiteten när flera konfigurationer är lämpligt att nå slutet distributionstillstånd för en server.
