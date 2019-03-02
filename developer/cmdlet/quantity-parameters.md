@@ -8,36 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8c0bd8a9-1749-4885-ab24-38c0a4d9f2cb
 caps.latest.revision: 6
-ms.openlocfilehash: 6a7c66eb94f69029b5abea85c421a0c8db646851
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7a3efc60fcc8729d833f6de070016cfd08cc9b88
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847966"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251378"
 ---
 # <a name="quantity-parameters"></a>Kvantitetsparametrar
 
 I följande tabell visas de rekommenderade namn och de funktioner för antal parametrar.
 
-Alla datatyp: Boolesk
-
-Implementera den här parametern så att `true` anger att alla resurser som bör åtgärdas i stället för en standard-delmängd av resurser. Implementera den här parametern så att `false` anger en delmängd av resurserna.
-
-Allokering datatyp: Int32
-
-Implementera den här parametern så att användaren kan ange antalet objekt att allokera.
-
-BlockCount datatyp: Int64
-
-Implementera den här parametern så att användaren kan ange antal block.
-
-Antal datatyp: Int64
-
-Implementera den här parametern så att användaren kan ange antalet.
-
-Scope-datatyp: Nyckelord
-
-Implementera den här parametern så att användaren kan ange omfång ska användas.
+|Parameter|Funktioner|
+|---|---|
+|**Alla**<br>Datatyp: Boolesk|Implementera den här parametern så att `true` anger att alla resurser som bör åtgärdas i stället för en standard-delmängd av resurser. Implementera den här parametern så att `false` anger en delmängd av resurserna.|
+|**Allokering**<br>Datatyp: Int32|Implementera den här parametern så att användaren kan ange antalet objekt att allokera.|
+|**BlockCount**<br>Datatyp: Int64|Implementera den här parametern så att användaren kan ange antal block.|
+|**Antal**<br>Datatyp: Int64|Implementera den här parametern så att användaren kan ange antalet.|
+|**Omfång**<br>Datatyp: Nyckelord|Implementera den här parametern så att användaren kan ange omfång ska användas.|
 
 ## <a name="see-also"></a>Se även
 

@@ -2,12 +2,12 @@
 title: Med Visual Studio Code för PowerShell-utveckling
 description: Med Visual Studio Code för PowerShell-utveckling
 ms.date: 08/06/2018
-ms.openlocfilehash: 03f370d0906790b573ea42290b9ccdec2cf84f2e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686700"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251395"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Med Visual Studio Code för PowerShell-utveckling
 
@@ -116,17 +116,28 @@ Vi rekommenderar följande konfigurationsinställningar för Visual Studio Code:
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "omnisharp.projectLoadTimeout": 120,
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
 }
 ```
+
+Om du inte vill att dessa inställningar påverkar alla filtyper, kan VSCode också konfigurationer per språk. Skapa en specifik språkinställning genom att ange inställningar i en `[<language-name>]` fält. Till exempel:
+
+```json
+"[powershell]": {
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
+}
+```
+
+Mer information om filen kodning i VS Code finns i [förstå Filkodning](understanding-file-encoding.md).
 
 ## <a name="debugging-with-visual-studio-code"></a>Felsöka med Visual Studio Code
 
 ### <a name="no-workspace-debugging"></a>Ingen arbetsyta felsökning
 
-Du kan felsöka PowerShell-skript utan att öppna den mapp som innehåller PowerShell-skriptet från och med Visual Studio Code-versionen 1.9.
-Öppna helt enkelt PowerShell-skriptfil med **Arkiv -> Öppna filen...** , ange en brytpunkt på rad (tryck på F9) och tryck på F5 för att starta felsökningen.
-Du bör se Debug åtgärdsfönstret visas där du kan dela i felsökare, steg, återuppta och stoppa felsökning.
+Du kan felsöka PowerShell-skript utan att öppna den mapp som innehåller PowerShell-skriptet från och med Visual Studio Code-versionen 1.9. Öppna PowerShell-skriptfil med **Arkiv -> Öppna fil...** , ange en brytpunkt på rad (tryck på F9) och tryck på F5 för att starta felsökningen. Du bör se Debug åtgärdsfönstret visas där du kan dela i felsökare, steg, återuppta och stoppa felsökning.
 
 ### <a name="workspace-debugging"></a>Felsökning av arbetsyta
 
