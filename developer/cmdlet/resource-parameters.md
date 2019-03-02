@@ -8,115 +8,47 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 460c43aa-f5c5-4a1a-a6f2-5e07db143de1
 caps.latest.revision: 5
-ms.openlocfilehash: f58e8ecb67238939e90d4c5650bddd03da3c9409
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9752570e5c997ef4da56a08df14f39b77ba37a4a
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851753"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251208"
 ---
-# <a name="resource-parameters"></a><span data-ttu-id="10f27-102">Resursparametrar</span><span class="sxs-lookup"><span data-stu-id="10f27-102">Resource Parameters</span></span>
+# <a name="resource-parameters"></a><span data-ttu-id="632df-102">Resursparametrar</span><span class="sxs-lookup"><span data-stu-id="632df-102">Resource Parameters</span></span>
 
-<span data-ttu-id="10f27-103">I följande tabell visas de rekommenderade namn och de funktioner för Resursparametrar.</span><span class="sxs-lookup"><span data-stu-id="10f27-103">The following table lists the recommended names and functionality for resource parameters.</span></span> <span data-ttu-id="10f27-104">Resurserna som kan vara sammansättningen som innehåller klassen cmdlet eller värdprogrammet som kör cmdlet: en för dessa parametrar.</span><span class="sxs-lookup"><span data-stu-id="10f27-104">For these parameters, the resources could be the assembly that contains the cmdlet class or the host application that is running the cmdlet.</span></span>
+<span data-ttu-id="632df-103">I följande tabell visas de rekommenderade namn och de funktioner för Resursparametrar.</span><span class="sxs-lookup"><span data-stu-id="632df-103">The following table lists the recommended names and functionality for resource parameters.</span></span> <span data-ttu-id="632df-104">Resurserna som kan vara sammansättningen som innehåller klassen cmdlet eller värdprogrammet som kör cmdlet: en för dessa parametrar.</span><span class="sxs-lookup"><span data-stu-id="632df-104">For these parameters, the resources could be the assembly that contains the cmdlet class or the host application that is running the cmdlet.</span></span>
 
-<span data-ttu-id="10f27-105">Programdata skriver du: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-105">Application Data type: String</span></span>
+|<span data-ttu-id="632df-105">Parameter</span><span class="sxs-lookup"><span data-stu-id="632df-105">Parameter</span></span>|<span data-ttu-id="632df-106">Funktioner</span><span class="sxs-lookup"><span data-stu-id="632df-106">Functionality</span></span>|
+|---|---|
+|<span data-ttu-id="632df-107">**Programmet**</span><span class="sxs-lookup"><span data-stu-id="632df-107">**Application**</span></span><br><span data-ttu-id="632df-108">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-108">Data type: String</span></span>|<span data-ttu-id="632df-109">Implementera den här parametern så att användaren kan ange ett program.</span><span class="sxs-lookup"><span data-stu-id="632df-109">Implement this parameter so that the user can specify an application.</span></span>|
+|<span data-ttu-id="632df-110">**Sammansättningen**</span><span class="sxs-lookup"><span data-stu-id="632df-110">**Assembly**</span></span><br><span data-ttu-id="632df-111">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-111">Data type: String</span></span>|<span data-ttu-id="632df-112">Implementera den här parametern så att användaren kan ange en sammansättning.</span><span class="sxs-lookup"><span data-stu-id="632df-112">Implement this parameter so that the user can specify an assembly.</span></span>|
+|<span data-ttu-id="632df-113">**Attributet**</span><span class="sxs-lookup"><span data-stu-id="632df-113">**Attribute**</span></span><br><span data-ttu-id="632df-114">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-114">Data type: String</span></span>|<span data-ttu-id="632df-115">Implementera den här parametern så att användaren kan ange ett attribut.</span><span class="sxs-lookup"><span data-stu-id="632df-115">Implement this parameter so that the user can specify an attribute.</span></span>|
+|<span data-ttu-id="632df-116">**Klass**</span><span class="sxs-lookup"><span data-stu-id="632df-116">**Class**</span></span><br><span data-ttu-id="632df-117">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-117">Data type: String</span></span>|<span data-ttu-id="632df-118">Implementera den här parametern så att användaren kan ange en Microsoft .NET Framework-klass.</span><span class="sxs-lookup"><span data-stu-id="632df-118">Implement this parameter so that the user can specify a Microsoft .NET Framework class.</span></span>|
+|<span data-ttu-id="632df-119">**Kluster**</span><span class="sxs-lookup"><span data-stu-id="632df-119">**Cluster**</span></span><br><span data-ttu-id="632df-120">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-120">Data type: String</span></span>|<span data-ttu-id="632df-121">Implementera den här parametern så att användaren kan ange ett kluster.</span><span class="sxs-lookup"><span data-stu-id="632df-121">Implement this parameter so that the user can specify a cluster.</span></span>|
+|<span data-ttu-id="632df-122">**kultur**</span><span class="sxs-lookup"><span data-stu-id="632df-122">**Culture**</span></span><br><span data-ttu-id="632df-123">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-123">Data type: String</span></span>|<span data-ttu-id="632df-124">Implementera den här parametern så att användaren kan ange kulturen där du vill köra cmdleten.</span><span class="sxs-lookup"><span data-stu-id="632df-124">Implement this parameter so that the user can specify the culture in which to run the cmdlet.</span></span>|
+|<span data-ttu-id="632df-125">**Domän**</span><span class="sxs-lookup"><span data-stu-id="632df-125">**Domain**</span></span><br><span data-ttu-id="632df-126">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-126">Data type: String</span></span>|<span data-ttu-id="632df-127">Implementera den här parametern så att användaren kan ange domännamnet.</span><span class="sxs-lookup"><span data-stu-id="632df-127">Implement this parameter so that the user can specify the domain name.</span></span>|
+|<span data-ttu-id="632df-128">**Drive**</span><span class="sxs-lookup"><span data-stu-id="632df-128">**Drive**</span></span><br><span data-ttu-id="632df-129">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-129">Data type: String</span></span>|<span data-ttu-id="632df-130">Implementera den här parametern så att användaren kan ange ett enhetsnamn.</span><span class="sxs-lookup"><span data-stu-id="632df-130">Implement this parameter so that the user can specify a drive name.</span></span>|
+|<span data-ttu-id="632df-131">**Händelse**</span><span class="sxs-lookup"><span data-stu-id="632df-131">**Event**</span></span><br><span data-ttu-id="632df-132">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-132">Data type: String</span></span>|<span data-ttu-id="632df-133">Implementera den här parametern så att användaren kan ange ett händelsenamn.</span><span class="sxs-lookup"><span data-stu-id="632df-133">Implement this parameter so that the user can specify an event name.</span></span>|
+|<span data-ttu-id="632df-134">**Gränssnittet**</span><span class="sxs-lookup"><span data-stu-id="632df-134">**Interface**</span></span><br><span data-ttu-id="632df-135">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-135">Data type: String</span></span>|<span data-ttu-id="632df-136">Implementera den här parametern så att användaren kan ange ett nätverksnamn för gränssnittet.</span><span class="sxs-lookup"><span data-stu-id="632df-136">Implement this parameter so that the user can specify a network interface name.</span></span>|
+|<span data-ttu-id="632df-137">**IpAddress**</span><span class="sxs-lookup"><span data-stu-id="632df-137">**IpAddress**</span></span><br><span data-ttu-id="632df-138">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-138">Data type: String</span></span>|<span data-ttu-id="632df-139">Implementera den här parametern så att användaren kan ange en IP-adress.</span><span class="sxs-lookup"><span data-stu-id="632df-139">Implement this parameter so that the user can specify an IP address.</span></span>|
+|<span data-ttu-id="632df-140">**Jobbet**</span><span class="sxs-lookup"><span data-stu-id="632df-140">**Job**</span></span><br><span data-ttu-id="632df-141">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-141">Data type: String</span></span>|<span data-ttu-id="632df-142">Implementera den här parametern så att användaren kan ange ett jobb.</span><span class="sxs-lookup"><span data-stu-id="632df-142">Implement this parameter so that the user can specify a job.</span></span>|
+|<span data-ttu-id="632df-143">**LiteralPath**</span><span class="sxs-lookup"><span data-stu-id="632df-143">**LiteralPath**</span></span><br><span data-ttu-id="632df-144">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-144">Data type: String</span></span>|<span data-ttu-id="632df-145">Implementera den här parametern så att användaren kan ange sökvägen till en resurs när jokertecken inte stöds.</span><span class="sxs-lookup"><span data-stu-id="632df-145">Implement this parameter so that the user can specify the path to a resource when wildcard characters are not supported.</span></span> <span data-ttu-id="632df-146">(Använd den **sökväg** parameter när jokertecken stöds.)</span><span class="sxs-lookup"><span data-stu-id="632df-146">(Use the **Path** parameter when wildcard characters are supported.)</span></span>|
+|<span data-ttu-id="632df-147">**Mac**</span><span class="sxs-lookup"><span data-stu-id="632df-147">**Mac**</span></span><br><span data-ttu-id="632df-148">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-148">Data type: String</span></span>|<span data-ttu-id="632df-149">Implementera den här parametern så att användaren kan ange en adress för media access controller (MAC).</span><span class="sxs-lookup"><span data-stu-id="632df-149">Implement this parameter so that the user can specify a media access controller (MAC) address.</span></span>|
+|<span data-ttu-id="632df-150">**ParentId**</span><span class="sxs-lookup"><span data-stu-id="632df-150">**ParentId**</span></span><br><span data-ttu-id="632df-151">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-151">Data type: String</span></span>|<span data-ttu-id="632df-152">Implementera den här parametern så att användaren kan ange det överordnade ID: t.</span><span class="sxs-lookup"><span data-stu-id="632df-152">Implement this parameter so that the user can specify the parent identifier.</span></span>|
+|<span data-ttu-id="632df-153">**Sökväg**</span><span class="sxs-lookup"><span data-stu-id="632df-153">**Path**</span></span><br><span data-ttu-id="632df-154">Datatyp: String, String[]</span><span class="sxs-lookup"><span data-stu-id="632df-154">Data type: String, String[]</span></span>|<span data-ttu-id="632df-155">Implementera den här parametern så att användaren kan ange sökvägar till en resurs när jokertecken stöds.</span><span class="sxs-lookup"><span data-stu-id="632df-155">Implement this parameter so that the user can indicate the paths to a resource when wildcard characters are supported.</span></span> <span data-ttu-id="632df-156">(Använd den **LiteralPath** parameter när jokertecken inte stöds.) Vi rekommenderar att du utvecklar den här parametern så att den stöder fullständiga `provider:path` syntax som används av providers.</span><span class="sxs-lookup"><span data-stu-id="632df-156">(Use the **LiteralPath** parameter when wildcard characters are not supported.) We recommend that you develop this parameter so that it supports the full `provider:path` syntax used by providers.</span></span> <span data-ttu-id="632df-157">Vi rekommenderar också att du utvecklar det så att den fungerar med så många leverantörer som möjligt.</span><span class="sxs-lookup"><span data-stu-id="632df-157">We also recommend that you develop it so that it works with as many providers as possible.</span></span>|
+|<span data-ttu-id="632df-158">**Port**</span><span class="sxs-lookup"><span data-stu-id="632df-158">**Port**</span></span><br><span data-ttu-id="632df-159">Datatyp: Integer, String</span><span class="sxs-lookup"><span data-stu-id="632df-159">Data type: Integer, String</span></span>|<span data-ttu-id="632df-160">Implementera den här parametern så att användaren kan ange ett heltalsvärde för nätverk eller ett strängvärde, till exempel ”biztalk” för andra typer av port.</span><span class="sxs-lookup"><span data-stu-id="632df-160">Implement this parameter so that the user can specify an integer value for networking or a string value such as "biztalk" for other types of port.</span></span>|
+|<span data-ttu-id="632df-161">**Skrivare**</span><span class="sxs-lookup"><span data-stu-id="632df-161">**Printer**</span></span><br><span data-ttu-id="632df-162">Datatyp: Integer, String</span><span class="sxs-lookup"><span data-stu-id="632df-162">Data type: Integer, String</span></span>|<span data-ttu-id="632df-163">Implementera den här parametern så att användaren kan ange skrivaren för cmdleten för att använda.</span><span class="sxs-lookup"><span data-stu-id="632df-163">Implement this parameter so that the user can specify the printer for the cmdlet to use.</span></span>|
+|<span data-ttu-id="632df-164">**Size**</span><span class="sxs-lookup"><span data-stu-id="632df-164">**Size**</span></span><br><span data-ttu-id="632df-165">Datatyp: Int32</span><span class="sxs-lookup"><span data-stu-id="632df-165">Data type: Int32</span></span>|<span data-ttu-id="632df-166">Implementera den här parametern så att användaren kan ange en storlek.</span><span class="sxs-lookup"><span data-stu-id="632df-166">Implement this parameter so that the user can specify a size.</span></span>|
+|<span data-ttu-id="632df-167">**TID**</span><span class="sxs-lookup"><span data-stu-id="632df-167">**TID**</span></span><br><span data-ttu-id="632df-168">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-168">Data type: String</span></span>|<span data-ttu-id="632df-169">Implementera den här parametern så att användaren kan ange en transaktion identifierare (TID) för cmdlet: en.</span><span class="sxs-lookup"><span data-stu-id="632df-169">Implement this parameter so that the user can specify a transaction identifier (TID) for the cmdlet.</span></span>|
+|<span data-ttu-id="632df-170">**Typ**</span><span class="sxs-lookup"><span data-stu-id="632df-170">**Type**</span></span><br><span data-ttu-id="632df-171">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-171">Data type: String</span></span>|<span data-ttu-id="632df-172">Implementera den här parametern så att användaren kan ange den typ av resurs som ska användas.</span><span class="sxs-lookup"><span data-stu-id="632df-172">Implement this parameter so that the user can specify the type of resource on which to operate.</span></span>|
+|<span data-ttu-id="632df-173">**URL**</span><span class="sxs-lookup"><span data-stu-id="632df-173">**URL**</span></span><br><span data-ttu-id="632df-174">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-174">Data type: String</span></span>|<span data-ttu-id="632df-175">Implementera den här parametern så att användaren kan ange en URL (Uniform Resource Locator).</span><span class="sxs-lookup"><span data-stu-id="632df-175">Implement this parameter so that the user can specify a Uniform Resource Locator (URL).</span></span>|
+|<span data-ttu-id="632df-176">**Användaren**</span><span class="sxs-lookup"><span data-stu-id="632df-176">**User**</span></span><br><span data-ttu-id="632df-177">Datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="632df-177">Data type: String</span></span>|<span data-ttu-id="632df-178">Implementera den här parametern så att användaren kan ange användarens namn eller namnet på en annan användare.</span><span class="sxs-lookup"><span data-stu-id="632df-178">Implement this parameter so that the user can specify their name or the name of another user.</span></span>|
 
-<span data-ttu-id="10f27-106">Implementera den här parametern så att användaren kan ange ett program.</span><span class="sxs-lookup"><span data-stu-id="10f27-106">Implement this parameter so that the user can specify an application.</span></span>
+## <a name="see-also"></a><span data-ttu-id="632df-179">Se även</span><span class="sxs-lookup"><span data-stu-id="632df-179">See Also</span></span>
 
-<span data-ttu-id="10f27-107">Sammansättningen datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-107">Assembly Data type: String</span></span>
+[<span data-ttu-id="632df-180">Cmdlet-parametrarna</span><span class="sxs-lookup"><span data-stu-id="632df-180">Cmdlet Parameters</span></span>](./cmdlet-parameters.md)
 
-<span data-ttu-id="10f27-108">Implementera den här parametern så att användaren kan ange en sammansättning.</span><span class="sxs-lookup"><span data-stu-id="10f27-108">Implement this parameter so that the user can specify an assembly.</span></span>
+[<span data-ttu-id="632df-181">Skriva en Windows PowerShell-Cmdlet</span><span class="sxs-lookup"><span data-stu-id="632df-181">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
 
-<span data-ttu-id="10f27-109">Attributets datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-109">Attribute Data type: String</span></span>
-
-<span data-ttu-id="10f27-110">Implementera den här parametern så att användaren kan ange ett attribut.</span><span class="sxs-lookup"><span data-stu-id="10f27-110">Implement this parameter so that the user can specify an attribute.</span></span>
-
-<span data-ttu-id="10f27-111">Klass-datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-111">Class Data type: String</span></span>
-
-<span data-ttu-id="10f27-112">Implementera den här parametern så att användaren kan ange en Microsoft .NET Framework-klass.</span><span class="sxs-lookup"><span data-stu-id="10f27-112">Implement this parameter so that the user can specify a Microsoft .NET Framework class.</span></span>
-
-<span data-ttu-id="10f27-113">Kluster-datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-113">Cluster Data type: String</span></span>
-
-<span data-ttu-id="10f27-114">Implementera den här parametern så att användaren kan ange ett kluster.</span><span class="sxs-lookup"><span data-stu-id="10f27-114">Implement this parameter so that the user can specify a cluster.</span></span>
-
-<span data-ttu-id="10f27-115">Kulturen datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-115">Culture Data type: String</span></span>
-
-<span data-ttu-id="10f27-116">Implementera den här parametern så att användaren kan ange kulturen där du vill köra cmdleten.</span><span class="sxs-lookup"><span data-stu-id="10f27-116">Implement this parameter so that the user can specify the culture in which to run the cmdlet.</span></span>
-
-<span data-ttu-id="10f27-117">Domän-datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-117">Domain Data type: String</span></span>
-
-<span data-ttu-id="10f27-118">Implementera den här parametern så att användaren kan ange domännamnet.</span><span class="sxs-lookup"><span data-stu-id="10f27-118">Implement this parameter so that the user can specify the domain name.</span></span>
-
-<span data-ttu-id="10f27-119">Enhetstyp för Data: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-119">Drive Data type: String</span></span>
-
-<span data-ttu-id="10f27-120">Implementera den här parametern så att användaren kan ange ett enhetsnamn.</span><span class="sxs-lookup"><span data-stu-id="10f27-120">Implement this parameter so that the user can specify a drive name.</span></span>
-
-<span data-ttu-id="10f27-121">Händelsedata skriver du: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-121">Event Data type: String</span></span>
-
-<span data-ttu-id="10f27-122">Implementera den här parametern så att användaren kan ange ett händelsenamn.</span><span class="sxs-lookup"><span data-stu-id="10f27-122">Implement this parameter so that the user can specify an event name.</span></span>
-
-<span data-ttu-id="10f27-123">Gränssnittstyp Data: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-123">Interface Data type: String</span></span>
-
-<span data-ttu-id="10f27-124">Implementera den här parametern så att användaren kan ange ett nätverksnamn för gränssnittet.</span><span class="sxs-lookup"><span data-stu-id="10f27-124">Implement this parameter so that the user can specify a network interface name.</span></span>
-
-<span data-ttu-id="10f27-125">IP-adress datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-125">IpAddress Data type: String</span></span>
-
-<span data-ttu-id="10f27-126">Implementera den här parametern så att användaren kan ange en IP-adress.</span><span class="sxs-lookup"><span data-stu-id="10f27-126">Implement this parameter so that the user can specify an IP address.</span></span>
-
-<span data-ttu-id="10f27-127">Jobbdata skriver du: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-127">Job Data type: String</span></span>
-
-<span data-ttu-id="10f27-128">Implementera den här parametern så att användaren kan ange ett jobb.</span><span class="sxs-lookup"><span data-stu-id="10f27-128">Implement this parameter so that the user can specify a job.</span></span>
-
-<span data-ttu-id="10f27-129">LiteralPath datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-129">LiteralPath Data type: String</span></span>
-
-<span data-ttu-id="10f27-130">Implementera den här parametern så att användaren kan ange sökvägen till en resurs när jokertecken inte stöds.</span><span class="sxs-lookup"><span data-stu-id="10f27-130">Implement this parameter so that the user can specify the path to a resource when wildcard characters are not supported.</span></span> <span data-ttu-id="10f27-131">(Använd den `Path` parameter när jokertecken stöds.)</span><span class="sxs-lookup"><span data-stu-id="10f27-131">(Use the `Path` parameter when wildcard characters are supported.)</span></span>
-
-<span data-ttu-id="10f27-132">Mac-datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-132">Mac Data type: String</span></span>
-
-<span data-ttu-id="10f27-133">Implementera den här parametern så att användaren kan ange en adress för media access controller (MAC).</span><span class="sxs-lookup"><span data-stu-id="10f27-133">Implement this parameter so that the user can specify a media access controller (MAC) address.</span></span>
-
-<span data-ttu-id="10f27-134">Datatyp ParentId: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-134">ParentId Data type: String</span></span>
-
-<span data-ttu-id="10f27-135">Implementera den här parametern så att användaren kan ange det överordnade ID: t.</span><span class="sxs-lookup"><span data-stu-id="10f27-135">Implement this parameter so that the user can specify the parent identifier.</span></span>
-
-<span data-ttu-id="10f27-136">Typ av sökväg: String, String[]</span><span class="sxs-lookup"><span data-stu-id="10f27-136">Path Data type: String, String[]</span></span>
-
-<span data-ttu-id="10f27-137">Implementera den här parametern så att användaren kan ange sökvägar till en resurs när jokertecken stöds.</span><span class="sxs-lookup"><span data-stu-id="10f27-137">Implement this parameter so that the user can indicate the paths to a resource when wildcard characters are supported.</span></span> <span data-ttu-id="10f27-138">(Använd den `LiteralPath` parameter när jokertecken inte stöds.)</span><span class="sxs-lookup"><span data-stu-id="10f27-138">(Use the `LiteralPath` parameter when wildcard characters are not supported.)</span></span>
-
-<span data-ttu-id="10f27-139">Vi rekommenderar att du utvecklar den här parametern så att den stöder fullständig ”provider: sökväg”-syntax som används av providrar.</span><span class="sxs-lookup"><span data-stu-id="10f27-139">We recommend that you develop this parameter so that it supports the full "provider:path" syntax used by providers.</span></span> <span data-ttu-id="10f27-140">Vi rekommenderar också att du utvecklar det så att den fungerar med så många leverantörer som möjligt.</span><span class="sxs-lookup"><span data-stu-id="10f27-140">We also recommend that you develop it so that it works with as many providers as possible.</span></span>
-
-<span data-ttu-id="10f27-141">Port datatyp: Integer, String</span><span class="sxs-lookup"><span data-stu-id="10f27-141">Port Data type: Integer, String</span></span>
-
-<span data-ttu-id="10f27-142">Implementera den här parametern så att användaren kan ange ett heltalsvärde för nätverk eller ett strängvärde, till exempel ”biztalk” för andra typer av port.</span><span class="sxs-lookup"><span data-stu-id="10f27-142">Implement this parameter so that the user can specify an integer value for networking or a string value such as "biztalk" for other types of port.</span></span>
-
-<span data-ttu-id="10f27-143">Skrivardata skriver du: Integer, String</span><span class="sxs-lookup"><span data-stu-id="10f27-143">Printer Data type: Integer, String</span></span>
-
-<span data-ttu-id="10f27-144">Implementera den här parametern så att användaren kan ange skrivaren för cmdleten för att använda.</span><span class="sxs-lookup"><span data-stu-id="10f27-144">Implement this parameter so that the user can specify the printer for the cmdlet to use.</span></span>
-
-<span data-ttu-id="10f27-145">Ändra storlek på datatyp: Int32</span><span class="sxs-lookup"><span data-stu-id="10f27-145">Size Data type: Int32</span></span>
-
-<span data-ttu-id="10f27-146">Implementera den här parametern så att användaren kan ange en storlek.</span><span class="sxs-lookup"><span data-stu-id="10f27-146">Implement this parameter so that the user can specify a size.</span></span>
-
-<span data-ttu-id="10f27-147">TID datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-147">TID Data type: String</span></span>
-
-<span data-ttu-id="10f27-148">Implementera den här parametern så att användaren kan ange en transaktion identifierare (TID) för cmdlet: en.</span><span class="sxs-lookup"><span data-stu-id="10f27-148">Implement this parameter so that the user can specify a transaction identifier (TID) for the cmdlet.</span></span>
-
-<span data-ttu-id="10f27-149">Skriv datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-149">Type Data type: String</span></span>
-
-<span data-ttu-id="10f27-150">Implementera den här parametern så att användaren kan ange den typ av resurs som ska användas.</span><span class="sxs-lookup"><span data-stu-id="10f27-150">Implement this parameter so that the user can specify the type of resource on which to operate.</span></span>
-
-<span data-ttu-id="10f27-151">URL: en datatyp: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-151">URL Data type: String</span></span>
-
-<span data-ttu-id="10f27-152">Implementera den här parametern så att användaren kan ange en URL (Uniform Resource Locator).</span><span class="sxs-lookup"><span data-stu-id="10f27-152">Implement this parameter so that the user can specify a Uniform Resource Locator (URL).</span></span>
-
-<span data-ttu-id="10f27-153">Användardatatypen: Sträng</span><span class="sxs-lookup"><span data-stu-id="10f27-153">User Data type: String</span></span>
-
-<span data-ttu-id="10f27-154">Implementera den här parametern så att användaren kan ange användarens namn eller namnet på en annan användare.</span><span class="sxs-lookup"><span data-stu-id="10f27-154">Implement this parameter so that the user can specify their name or the name of another user.</span></span>
-
-## <a name="see-also"></a><span data-ttu-id="10f27-155">Se även</span><span class="sxs-lookup"><span data-stu-id="10f27-155">See Also</span></span>
-
-[<span data-ttu-id="10f27-156">Cmdlet-parametrarna</span><span class="sxs-lookup"><span data-stu-id="10f27-156">Cmdlet Parameters</span></span>](./cmdlet-parameters.md)
-
-[<span data-ttu-id="10f27-157">Skriva en Windows PowerShell-Cmdlet</span><span class="sxs-lookup"><span data-stu-id="10f27-157">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
-
-[<span data-ttu-id="10f27-158">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="10f27-158">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="632df-182">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="632df-182">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
