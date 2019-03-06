@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 8c111f8f2943043e4ad2a6a8677db4afe1b3cdab
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0d83a742eae2bcde2e691860a5f2b3e5862d2de
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851830"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430051"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Skapa en Windows PowerShell-containerprovider
 
@@ -25,7 +25,6 @@ Det här avsnittet beskriver hur du skapar en Windows PowerShell-providern som f
 Leverantörer som fungerar på flera nivåer datalager kallas providers för Windows PowerShell-behållare. Men tänk på att en Windows PowerShell-providern för behållare kan användas endast när det är en behållare (inga kapslade behållare) med objekt i den. Om det finns kapslade behållare, måste du implementera en Windows PowerShell-providern för navigering. Mer information om hur du implementerar Windows PowerShell navigering-providern finns i [skapar en Windows PowerShell-providern för navigering](./creating-a-windows-powershell-navigation-provider.md).
 
 > [!NOTE]
-> Du kan ladda ned den C# källfilen (AccessDBSampleProvider04.cs) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3.0 Runtime-komponenter. Hämta anvisningar finns i [hur du installerar Windows PowerShell och ladda ned Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 > Du kan ladda ned den C# källfilen (AccessDBSampleProvider04.cs) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3.0 Runtime-komponenter. Hämta anvisningar finns i [hur du installerar Windows PowerShell och ladda ned Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Hämtade källfilerna är tillgängliga i den  **\<PowerShell-exempel >** directory.
@@ -418,7 +417,6 @@ Komplett exempel finns i [AccessDbProviderSample04 kodexempel](./accessdbprovide
 ## <a name="building-the-windows-powershell-provider"></a>Att skapa Windows PowerShell-providern
 
 Se [hur du registrerar Cmdlets, Providers och vara värd för program](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
-Se [hur du registrerar Cmdlets, Providers och vara värd för program](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Testa Windows PowerShell-providern
 
@@ -537,8 +535,6 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
 [Implementera en objekt Windows PowerShell-Provider](./creating-a-windows-powershell-item-provider.md)
 
 [Implementera en navigering Windows PowerShell-providern](./creating-a-windows-powershell-navigation-provider.md)
-
-[Hur du registrerar Cmdlets, Providers och vara värd för program](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Hur du registrerar Cmdlets, Providers och vara värd för program](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

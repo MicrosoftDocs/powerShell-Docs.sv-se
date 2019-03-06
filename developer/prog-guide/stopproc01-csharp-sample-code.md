@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 89796687-ae20-447a-a6b1-2f51b559d4e9
 caps.latest.revision: 5
-ms.openlocfilehash: a5836c0ca6812bd050959670d5b69eecb4b956c0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5a7acbfa2a283c6bda4bf159ff310f9d3e20461f
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849751"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429558"
 ---
 # <a name="stopproc01-c-sample-code"></a>StopProc01 (C#) – kodexempel
 
 Här är den fullständiga C# kod för StopProc01 exempel-cmdlet.
 
 > [!NOTE]
-> Du kan ladda ned den C# (stopproc01.cs) källfilen för cmdleten Stop-processen med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3.0 Runtime-komponenter. Hämta anvisningar finns i [hur du installerar Windows PowerShell och ladda ned Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 > Du kan ladda ned den C# (stopproc01.cs) källfilen för cmdleten Stop-processen med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3.0 Runtime-komponenter. Hämta anvisningar finns i [hur du installerar Windows PowerShell och ladda ned Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Hämtade källfilerna är tillgängliga i den  **\<PowerShell-exempel >** directory.

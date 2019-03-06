@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 48019ceb-0aeb-4cd1-8b42-79f2c29c3e65
 caps.latest.revision: 5
-ms.openlocfilehash: 616fb571caa4b6830a7cfe9794d0334ee8108653
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c3d8b4670d32a70ddac121e64488e7756d95449a
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845481"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430068"
 ---
 # <a name="stopprocesssample04-vbnet-sample-code"></a>StopProcessSample04 (VB.NET) – kodexempel
 
 Här är klar VB.NET exempelkoden för StopProc04 exempel-cmdlet. Det här är koden för den `Stop-Process` cmdlet som beskrivs i [att lägga till parametern anger att en Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md). Den `Stop-Process` cmdlet har utformats för att stoppa processer som hämtas med hjälp av cmdleten Get-processen (beskrivs i [skapa din första cmdleten](../cmdlet/creating-a-cmdlet-without-parameters.md)).
 
 > [!NOTE]
-> Du kan hämta källfilen VB.NET (stopprocesssample04.vb) för denna cmdlet för Stop-processen med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3.0 Runtime-komponenter. Hämta anvisningar finns i [hur du installerar Windows PowerShell och ladda ned Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 > Du kan hämta källfilen VB.NET (stopprocesssample04.vb) för denna cmdlet för Stop-processen med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3.0 Runtime-komponenter. Hämta anvisningar finns i [hur du installerar Windows PowerShell och ladda ned Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Hämtade källfilerna är tillgängliga i den  **\<PowerShell-exempel >** directory.

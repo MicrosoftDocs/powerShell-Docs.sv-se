@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide, providers
 ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
 caps.latest.revision: 5
-ms.openlocfilehash: a114a4b0d5a5bfcc0d072f83f0e59ca6d329a172
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 286df63e75d6372cb41c974e60e79b02bd13686e
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851298"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429677"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>Skapa en Windows PowerShell-provider
 
@@ -33,7 +33,6 @@ Windows PowerShell innehåller flera providers (till exempel filsystem-providern
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>Åtkomst till lagrade Data med hjälp av Windows PowerShell-sökvägar
 
-Windows PowerShell-providers är tillgängliga att Windows PowerShell-runtime och kommandon via programmering genom att använda Windows PowerShell-sökvägar. I de flesta fall, används dessa sökvägar för direkt åtkomst till data via providern. Dock kan vissa sökvägar matchas till provider-interna sökvägar som gör att en cmdlet för att använda icke - Windows PowerShell programgränssnitt (API: er) för att komma åt data. Mer information om hur Windows PowerShell-leverantörer fungerar i Windows PowerShell finns i [hur Windows PowerShell fungerar](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 Windows PowerShell-providers är tillgängliga att Windows PowerShell-runtime och kommandon via programmering genom att använda Windows PowerShell-sökvägar. I de flesta fall, används dessa sökvägar för direkt åtkomst till data via providern. Dock kan vissa sökvägar matchas till provider-interna sökvägar som gör att en cmdlet för att använda icke - Windows PowerShell programgränssnitt (API: er) för att komma åt data. Mer information om hur Windows PowerShell-leverantörer fungerar i Windows PowerShell finns i [hur Windows PowerShell fungerar](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 
 ## <a name="exposing-provider-cmdlets-using-windows-powershell-drives"></a>Exponera med hjälp av Windows PowerShell Cmdlets för Provider-enheter
@@ -64,8 +63,6 @@ I följande tabell visar avsnitt som innehåller kodexempel som bygger på varan
 |[Skapa en Provider för Windows PowerShell-egenskap](./creating-a-windows-powershell-property-provider.md)|Det här avsnittet visar hur du skapar en Windows PowerShell-provider som gör att användaren kan ändra egenskaperna för objekt i ett datalager.|
 
 ## <a name="see-also"></a>Se även
-
-[Så här fungerar Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [Så här fungerar Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 

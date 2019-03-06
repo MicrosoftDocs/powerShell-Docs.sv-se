@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: 30b4dbcd281f712bba8d8e3540d2282d527388e4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: be1446dbd2b244f4752e55c8137433edee8427b0
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851060"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430000"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Skapa en Windows PowerShell-objektprovider
 
 Det här avsnittet beskriver hur du skapar en Windows PowerShell-provider som kan manipulera data i ett datalager. I det här avsnittet kallas elementen i data i store för lagring av som ”objekt” av data. Det betyder kallas en provider som kan manipulera data i store en provider för Windows PowerShell-objekt.
 
 > [!NOTE]
-> Du kan ladda ned den C# källfilen (AccessDBSampleProvider03.cs) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3.0 Runtime-komponenter. Hämta anvisningar finns i [hur du installerar Windows PowerShell och ladda ned Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 > Du kan ladda ned den C# källfilen (AccessDBSampleProvider03.cs) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3.0 Runtime-komponenter. Hämta anvisningar finns i [hur du installerar Windows PowerShell och ladda ned Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Hämtade källfilerna är tillgängliga i den  **\<PowerShell-exempel >** directory.
@@ -88,7 +87,6 @@ Innan en provider för Windows PowerShell-objekt kan manipulera objekt i arkivet
 
 ## <a name="checking-for-path-validity"></a>Söker efter sökväg giltighet
 
-När du letar efter en datapost, Windows PowerShell-runtime inkluderar en Windows PowerShell-sökväg till providern, enligt definitionen i avsnittet ”PSPath begrepp” i [hur Windows PowerShell fungerar](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). En provider för Windows PowerShell-objekt måste kontrollera syntaktiska och semantisk giltigheten för alla sökvägar som skickas till den genom att implementera den [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) metod. Den här metoden returnerar `true` om sökvägen är giltig och `false` annars. Vara medveten om att implementeringen av den här metoden inte ska verifiera att objektet på sökvägen, men endast som sökvägen är syntaktiskt och semantiskt korrekt.
 När du letar efter en datapost, Windows PowerShell-runtime inkluderar en Windows PowerShell-sökväg till providern, enligt definitionen i avsnittet ”PSPath begrepp” i [hur Windows PowerShell fungerar](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). En provider för Windows PowerShell-objekt måste kontrollera syntaktiska och semantisk giltigheten för alla sökvägar som skickas till den genom att implementera den [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) metod. Den här metoden returnerar `true` om sökvägen är giltig och `false` annars. Vara medveten om att implementeringen av den här metoden inte ska verifiera att objektet på sökvägen, men endast som sökvägen är syntaktiskt och semantiskt korrekt.
 
 Här är implementeringen av den [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) metod för den här providern. Observera att den här implementeringen anropar en NormalizePath helper-metod för att konvertera alla avgränsare i sökvägen till en enhetlig.
@@ -266,11 +264,9 @@ Komplett exempel finns i [AccessDbProviderSample03 kodexempel](./accessdbprovide
 ## <a name="defining-object-types-and-formatting"></a>Definiera objekttyper och formatering
 
 När du skriver en provider, kan det vara nödvändigt att lägga till medlemmar i befintliga objekt eller definiera nya objekt. Skapa en fil för typer som Windows PowerShell kan använda för att identifiera medlemmarna i objektet och en formatfil som definierar hur objektet visas när du är klar. Läs mer om [utöka objekttyper och formatering](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
-När du skriver en provider, kan det vara nödvändigt att lägga till medlemmar i befintliga objekt eller definiera nya objekt. Skapa en fil för typer som Windows PowerShell kan använda för att identifiera medlemmarna i objektet och en formatfil som definierar hur objektet visas när du är klar. Läs mer om [utöka objekttyper och formatering](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## <a name="building-the-windows-powershell-provider"></a>Att skapa Windows PowerShell-providern
 
-Se [hur du registrerar Cmdlets, Providers och vara värd för program](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 Se [hur du registrerar Cmdlets, Providers och vara värd för program](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Testa Windows PowerShell-providern
@@ -289,16 +285,10 @@ När den här artikeln Windows PowerShell-providern är registrerad med Windows 
 
 [Utöka objekttyper och formatering](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Utöka objekttyper och formatering](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Så här fungerar Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
-
 [Så här fungerar Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [Skapa en behållare Windows PowerShell-provider](./creating-a-windows-powershell-container-provider.md)
 
 [Skapa en enhet med Windows PowerShell-provider](./creating-a-windows-powershell-drive-provider.md)
-
-[Hur du registrerar Cmdlets, Providers och vara värd för program](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Hur du registrerar Cmdlets, Providers och vara värd för program](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

@@ -2,12 +2,12 @@
 ms.date: 08/09/2017
 keywords: PowerShell, cmdlet, hämta, installera, inställningar, windows 10, windows 8.1, windows 8.0, windows 7
 title: Installera Windows PowerShell
-ms.openlocfilehash: 1630ba445c88953b2729232ae7d80afa326f25e6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687330"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429881"
 ---
 # <a name="installing-windows-powershell"></a>Installera Windows PowerShell
 
@@ -70,9 +70,9 @@ Om du vill uppdatera den befintliga versionen av PowerShell i Windows, Använd f
 
 Windows | PS 3.0 | PS 4.0 | PS 5.0 | PS 5.1 |
 --|--|--|--|--|
-Windows 10 (se Note1)<br/>Windows Server 2016 | - | - | - | installerad
-Windows 8.1<br/>Windows Server 2012 R2 | - | installerad | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
-Windows 8<br/>Windows Server 2012 | installerad | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+Windows 10 (se Note1)<br/>Windows Server 2016 | - | - | - | Installerad
+Windows 8.1<br/>Windows Server 2012 R2 | - | Installerad | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+Windows 8<br/>Windows Server 2012 | Installerad | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 
 > [!NOTE]
@@ -85,7 +85,7 @@ Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.c
 
 Om du letar efter **Azure PowerShell**, du kan börja med [översikt av Azure PowerShell](/powershell/azure/overview).
 
-I annat fall kanske du behöver är [installera och konfigurera Azure PowerShell](/powershell/azure/install-azurerm-ps)
+I annat fall kanske du behöver är [installera och konfigurera Azure PowerShell](/powershell/azure/install-az-ps)
 
 ## <a name="see-also"></a>Se även
 

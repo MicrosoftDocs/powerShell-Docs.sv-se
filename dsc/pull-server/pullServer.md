@@ -1,17 +1,15 @@
 ---
-ms.date: 04/11/2018
+ms.date: 03/04/2019
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-hämtningstjänsten
-ms.openlocfilehash: 659a8f8b2ce7d34058e789c5de336dc1f1f2abb2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 64c22bc021666026ae58a4c4fb4e3d31b25bae5c
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404991"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429966"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration-hämtningstjänsten
-
-> Gäller för: Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > Pull-servern (Windows-funktionen *DSC-tjänst*) är en stöds komponent i Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Rekommenderar vi att du påbörjar övergången hanterade klienter [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver Pull-servern på Windows Server) eller en av community-lösningar visas [här](pullserver.md#community-solutions-for-pull-service).
@@ -35,6 +33,7 @@ Azure-tjänsten kan hantera noder på plats i privat Datacenter eller i offentli
 Överväg att begränsa utgående trafik till endast publicerade Azure IP-intervall för privata miljöer där servrarna inte kan ansluta direkt till Internet, (se [Azure Datacenter IP-intervall](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
 
 Funktioner i tjänsten online som inte är för närvarande tillgängliga i pull-tjänsten på Windows Server:
+
 - Alla data krypteras vid överföring och i vila
 - Klientcertifikat skapas och hanteras automatiskt
 - Hemligheter lagra för att centralt hantera [lösenord/autentiseringsuppgifterna](/azure/automation/automation-credentials), eller [variabler](/azure/automation/automation-variables) , till exempel servernamn eller anslutningssträngar
@@ -57,7 +56,7 @@ Pull-tjänsten som erbjuds i Windows Server är en webbtjänst i IIS som använd
 Krav för att använda en pull-server:
 
 - En server som kör:
-  - WMF/PowerShell 5.0 eller senare
+  - WMF/PowerShell 4.0 eller senare
   - IIS-serverrollen
   - DSC-tjänsten
 - Vi rekommenderar några innebär att generera ett certifikat att skydda autentiseringsuppgifterna som skickas till den lokala Configuration Manager (LCM) på målnoder
@@ -71,11 +70,11 @@ Ett exempelskript finns nedan.
 |---------|---------|---------|---------|
 |MDB     |ESENT (standard), MDB |ESENT (standard), MDB|ESENT (standard), SQLServer, MDB
 
-Från och med versionen 17090 av [Windows Server, Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), SQL Server är ett alternativ som stöds för Pull-tjänsten (Windows-funktionen *DSC-tjänst*).  Detta ger ett nytt alternativ för att skala stora DSC-miljöer som inte har migrerat till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+Från och med versionen 17090 av [Windows Server, Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), SQL Server är ett alternativ som stöds för Pull-tjänsten (Windows-funktionen *DSC-tjänst*). Detta ger ett nytt alternativ för att skala stora DSC-miljöer som inte har migrerat till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
 > **Obs**: Stöd för SQL Server kommer inte att lägga till tidigare versioner av WMF 5.1 (eller tidigare) och är endast tillgängligt på Windows Server-versioner som är större än eller lika med 17090.
 
-Om du vill konfigurera pull-servern för att använda SQL Server, ange **SqlProvider** till `$true` och **SqlConnectionString** till en giltig anslutningssträng i SQL Server.  Mer information finns i [SqlClient anslutningssträngar](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
+Om du vill konfigurera pull-servern för att använda SQL Server, ange **SqlProvider** till `$true` och **SqlConnectionString** till en giltig anslutningssträng i SQL Server. Mer information finns i [SqlClient anslutningssträngar](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
 Ett exempel på konfiguration av SQL Server med **xDscWebService**, läsa [använder resursen som xDscWebService](#using-the-xdscwebservice-resource) och granska [Sample_xDscWebServiceRegistration_ UseSQLProvider.ps1 på GitHub](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
 
 ### <a name="using-the-xdscwebservice-resource"></a>Med hjälp av xDscWebService-resurs
@@ -83,10 +82,14 @@ Ett exempel på konfiguration av SQL Server med **xDscWebService**, läsa [anvä
 Det enklaste sättet att konfigurera en webbpullserver är att använda den **xDscWebService** resursmängd som ingår i den **xPSDesiredStateConfiguration** modulen.
 Följande steg beskriver hur du använder resursen i en konfiguration som konfigurerar webbtjänsten.
 
-1. Anropa den [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet för att installera den **xPSDesiredStateConfiguration** modulen. **Obs**: **Install-Module** ingår i den **PowerShellGet** modulen, som ingår i PowerShell 5.0. Du kan ladda ned den **PowerShellGet** -modulen för PowerShell 3.0 och 4.0 på [PackageManagement PowerShell-moduler förhandsversion](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
-1. Hämta ett SSL-certifikat för DSC-hämtningsservern från en betrodd certifikatutfärdare, antingen inom din organisation eller en offentlig myndighet. Certifikatet som togs emot från utfärdaren är vanligtvis i PFX-format. Installera certifikatet på den nod som blir DSC-hämtningsservern på standardplatsen, vilket ska vara CERT: \LocalMachine\My. Anteckna tumavtrycket för certifikatet.
-1. Välj ett GUID som ska användas som nyckel för tjänstregistrering. För att generera en med hjälp av PowerShell anger du följande i PS-Kommandotolken och tryck på RETUR: '``` [guid]::newGuid()```'eller'```New-Guid```'. Den här nyckeln används av klientnoder som en delad nyckel för autentisering under registreringen. Mer information finns i avsnittet registreringsnyckel nedan.
-1. I PowerShell ISE starta (F5) följande konfigurationsskript (ingår i exempel-mappen på den **xPSDesiredStateConfiguration** modulen som Sample_xDscWebServiceRegistration.ps1). Det här skriptet ställer in hämtningsservern.
+1. Anropa den [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet för att installera den **xPSDesiredStateConfiguration** modulen.
+   > [!NOTE]
+   > **Install-Module** ingår i den **PowerShellGet** modulen, som ingår i PowerShell 5.0. Du kan ladda ned den **PowerShellGet** -modulen för PowerShell 3.0 och 4.0 på [PackageManagement PowerShell-moduler förhandsversion](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
+2. Hämta ett SSL-certifikat för DSC-hämtningsservern från en betrodd certifikatutfärdare, antingen inom din organisation eller en offentlig myndighet. Certifikatet som togs emot från utfärdaren är vanligtvis i PFX-format.
+3. Installera certifikatet på den nod som blir DSC-hämtningsservern på standardplatsen, vilket ska vara `CERT:\LocalMachine\My`.
+   - Anteckna tumavtrycket för certifikatet.
+4. Välj ett GUID som ska användas som nyckel för tjänstregistrering. För att generera en med hjälp av PowerShell anger du följande i PS-Kommandotolken och tryck på RETUR: ` [guid]::newGuid()` eller `New-Guid`. Den här nyckeln används av klientnoder som en delad nyckel för autentisering under registreringen. Mer information finns i avsnittet registreringsnyckel nedan.
+5. I PowerShell ISE starta (F5) följande konfigurationsskript (ingår i exempel-mappen på den **xPSDesiredStateConfiguration** modulen som `Sample_xDscWebServiceRegistration.ps1`). Det här skriptet ställer in hämtningsservern.
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -103,6 +106,7 @@ Följande steg beskriver hur du använder resursen i en konfiguration som konfig
             [string] $RegistrationKey   # A guid that clients use to initiate conversation with pull server
         )
 
+        Import-DSCResource -ModuleName PSDesiredStateConfiguration
         Import-DSCResource -ModuleName xPSDesiredStateConfiguration
 
         Node $NodeName
@@ -126,6 +130,7 @@ Följande steg beskriver hur du använder resursen i en konfiguration som konfig
                 DependsOn               = "[WindowsFeature]DSCServiceFeature"
                 RegistrationKeyPath     = "$env:PROGRAMFILES\WindowsPowerShell\DscService"
                 AcceptSelfSignedCertificates = $true
+                UseSecurityBestPractices     = $true
                 Enable32BitAppOnWin64   = $false
             }
 
@@ -140,7 +145,7 @@ Följande steg beskriver hur du använder resursen i en konfiguration som konfig
     }
     ```
 
-1. Kör sedan konfigurationen skicka tumavtrycket för SSL-certifikat som den **certificateThumbPrint** parameter och en GUID-registrering nyckel som den **RegistrationKey** parameter:
+6. Kör sedan konfigurationen skicka tumavtrycket för SSL-certifikat som den **certificateThumbPrint** parameter och en GUID-registrering nyckel som den **RegistrationKey** parameter:
 
     ```powershell
     # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
@@ -157,9 +162,11 @@ Följande steg beskriver hur du använder resursen i en konfiguration som konfig
 #### <a name="registration-key"></a>Nyckel för tjänstregistrering
 
 För att tillåta noder som ska registreras på servern så att de kan använda namnen i stället för ett ID, en registreringsnyckel som har skapats av ovanstående konfiguration sparas i en fil med namnet `RegistrationKeys.txt` i `C:\Program Files\WindowsPowerShell\DscService`. Nyckel för tjänstregistrering fungerar som en delad hemlighet som används under den första registreringen av klienten med pull-servern. Klienten genererar ett självsignerat certifikat som används för att autentisera till hämtningsservern unikt när registreringen är slutförd. Tumavtrycket för certifikatet lagras lokalt och som är associerade med pull-serverns URL.
-> **Obs**: Registreringsnycklar stöds inte i PowerShell 4.0.
 
-Nyckel för tjänstregistrering måste finnas i metaconfiguration för alla målnoden som ska registreras med den här pull-servern för att kunna konfigurera en nod för autentisering med pull-servern. Observera att den **RegistrationKey** i metaconfiguration nedan tas bort när måldatorn har registrerats och som värdet '140a952b-b9d6-406b-b416-e0f759c9c0e4' måste matcha det värde som lagras i den RegistrationKeys.txt fil på hämtningsservern. Behandla alltid registrering nyckelvärdet på ett säkert sätt, eftersom att känna till det tillåter alla måldatorn för att registreras på pull-servern.
+> [!NOTE]
+> Registreringsnycklar stöds inte i PowerShell 4.0.
+
+Nyckel för tjänstregistrering måste finnas i metaconfiguration för alla målnoden som ska registreras med den här pull-servern för att kunna konfigurera en nod för autentisering med pull-servern. Observera att den **RegistrationKey** i metaconfiguration nedan tas bort när måldatorn har registrerats och som värdet måste matcha det värde som lagras i den `RegistrationKeys.txt` fil på hämtningsservern (” 140a952b-b9d6-406b-b416-e0f759c9c0e4 ”i det här exemplet). Behandla alltid registrering nyckelvärdet på ett säkert sätt, eftersom att känna till det tillåter alla måldatorn för att registreras på pull-servern.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -202,12 +209,14 @@ configuration Sample_MetaConfigurationToRegisterWithLessSecurePullServer
 Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $RegistrationKey -OutputPath c:\Configs\TargetNodes
 ```
 
-> **Obs**: Den **ReportServerWeb** avsnittet kan rapporterar data som ska skickas till den pull-servern.
+> [!NOTE]
+> Den **ReportServerWeb** avsnittet kan rapporterar data som ska skickas till den pull-servern.
 
 Bristen på den **ConfigurationID** egenskap i filen metaconfiguration innebär den pull-servern stöder version 2 av protokollet för pull-server så att en inledande registrering krävs.
 Däremot förekomsten av en **ConfigurationID** innebär att V1-version av protokollet för pull-server ska användas och det finns ingen registrering-bearbetning.
 
->**Obs**: I ett pushscenario finns en bugg i den aktuella versionen som gör det nödvändigt att definiera en ConfigurationID-egenskap i filen metaconfiguration för noder som aldrig har registrerat med en pull-server. Detta tvinga V1-Hämtningsserver-protokollet och undvika felmeddelanden för registrering.
+> [!NOTE]
+> I ett pushscenario finns en bugg i den aktuella versionen som gör det nödvändigt att definiera en ConfigurationID-egenskap i filen metaconfiguration för noder som aldrig har registrerat med en pull-server. Detta tvinga V1-Hämtningsserver-protokollet och undvika felmeddelanden för registrering.
 
 ## <a name="placing-configurations-and-resources"></a>Placera konfigurationer och resurser
 
@@ -217,12 +226,13 @@ De här filerna måste vara i ett visst format i för pull-servern ska kunna bea
 ### <a name="dsc-resource-module-package-format"></a>DSC resursformatet modulen paket
 
 Varje Resursmodul måste zippade och med namnet enligt följande mönster `{Module Name}_{Module Version}.zip`.
-Till exempel namnet en modul med namnet xWebAdminstration med en Modulversion av 3.1.2.0 ”xWebAdministration_3.2.1.0.zip”.
+
+Till exempel en modul med namnet xWebAdminstration med en Modulversion av 3.1.2.0 heta `xWebAdministration_3.2.1.0.zip`.
 Varje version av en modul måste finnas i en enda zip-fil.
 Eftersom det finns endast en version av en resurs i varje zip-filen, stöds inte formatet modulen har lagts till i WMF 5.0 med stöd för flera modulversionerna i en enskild katalog.
 Det innebär att innan du packa upp DSC-resurs-moduler för användning med hämtningsservern du måste göra små ändringar i katalogstrukturen.
-Moduler som innehåller DSC-resurs i WMF 5.0 standardformatet är ' {modulmappen}\{Modulversion} \DscResources\{DSC resursmapp}\'.
-Innan du paketering för hämtningsservern, ta bort den **{Modulversion}** mapp så blir sökvägen ' {modulmappen} \DscResources\{DSC resursmapp}\'.
+Moduler som innehåller DSC-resurs i WMF 5.0 standardformatet är `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
+Innan du paketering för hämtningsservern, ta bort den **{Modulversion}** mapp så blir sökvägen `{Module Folder}\DscResources\{DSC Resource Folder}\`.
 Med den här ändringen zip-mappen som beskrivs ovan och placera dessa zip-filer i den **ModulePath** mapp.
 
 Använd `New-DscChecksum {module zip file}` att skapa en kontrollsumma-fil för den nya modulen.
@@ -236,13 +246,16 @@ Cmdleten skapar en kontrollsumma-fil med namnet `ConfigurationMOFName.mof.checks
 Om det finns flera olika konfigurationer MOF-filer i en angiven mapp, skapas en kontrollsumma för varje konfiguration i mappen.
 Placera MOF-filer och deras associerade kontrollsumma filer i den **ConfigurationPath** mapp.
 
->**Obs**: Om du ändrar MOF-konfigurationsfilen på något sätt, måste du också återskapa filen kontrollsumma.
+> [!NOTE]
+> Om du ändrar MOF-konfigurationsfilen på något sätt, måste du också återskapa filen kontrollsumma.
 
 ### <a name="tooling"></a>Verktyg
 
 För att kunna utgör inställningen verifiera och hantera hämtningsservern enklare, följande verktyg ingår som exempel i den senaste versionen av modulen xPSDesiredStateConfiguration:
 
-1. En modul som hjälper med paketering moduler för DSC-resurs och konfigurationsfiler för användning på hämtningsservern. [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1). Exemplen nedan:
+1. En modul som hjälper med paketering moduler för DSC-resurs och konfigurationsfiler för användning på hämtningsservern.
+   [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1).
+   Exemplen nedan:
 
     ```powershell
         # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot

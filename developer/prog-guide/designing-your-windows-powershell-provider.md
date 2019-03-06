@@ -10,12 +10,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], designing
 ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
 caps.latest.revision: 10
-ms.openlocfilehash: 518040df4df7260a974bfda252c606a051cc35ad
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 711a85e9b2eade7b9095d7560f53610e709e380a
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847413"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429949"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Designa en Windows PowerShell-provider
 
@@ -163,8 +163,6 @@ Den [System.Management.Automation.Provider.Isecuritydescriptorcmdletprovider](/d
 ## <a name="see-also"></a>Se även
 
 [Skapa Windows PowerShell-Providers](./how-to-create-a-windows-powershell-provider.md)
-
-[Så här fungerar Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [Så här fungerar Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 

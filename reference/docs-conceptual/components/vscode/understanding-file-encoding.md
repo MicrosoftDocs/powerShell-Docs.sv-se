@@ -1,15 +1,15 @@
 ---
-title: Förstå Filkodning i VSCode och PowerShell
+title: Förstå filkodning i VSCode och PowerShell
 description: Konfigurera Filkodning i VSCode och PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: f3b133b4bee7688821a5960429e2f26b69b01e12
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: 9cf445ebd0c2bb2dbdf4438f02dafe3df3a5d1e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251729"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429813"
 ---
-# <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Förstå Filkodning i VSCode och PowerShell
+# <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Förstå filkodning i VSCode och PowerShell
 
 När du använder VS Code för att skapa och redigera PowerShell-skript, är det viktigt att dina filer sparas med Kodningsformatet för rätt tecken.
 
@@ -68,7 +68,7 @@ Det här praktiska [referens](https://www.i18nqa.com/debug/utf8-debug.html) visa
 Tillägget PowerShell samverkar med skript i ett antal olika sätt:
 
 1. När skript redigeras i VSCode, skickas innehållet från VSCode till tillägget. Den [Språk Server-protokoll][] innehåller principer för att den här innehåll som överförs i UTF-8. Det är därför inte möjligt för tillägget att hämta fel kodning.
-2. När skript körs direkt i integrerad konsol, är de läsa från filen med PowerShell direkt. TF PowerShell kodning skiljer sig från Vscode's, något går fel här.
+2. När skript körs direkt i integrerad konsol, är de läsa från filen med PowerShell direkt. Om PowerShell-kodning skiljer sig från Vscodes går något fel här.
 3. När ett skript som är öppen i VSCode refererar till ett annat skript som inte är öppen i VSCode, använder tillägget till att läsa in den skriptet innehåll från filsystemet. Tillägget PowerShell UTF-8-kodning som standard, men använder [byte-ordningsmarkering][], eller BOM, identifiering för att välja rätt kodning.
 
 Problemet uppstår när förutsatt att kodning av BOM mindre format (t.ex. [UTF-8][] utan BOM och [Windows-1252][]).
