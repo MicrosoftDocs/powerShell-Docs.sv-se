@@ -2,12 +2,12 @@
 title: Installera PowerShell Core i Linux
 description: Information om att installera PowerShell Core på olika Linux-distributioner
 ms.date: 08/06/2018
-ms.openlocfilehash: afb11f053517af592fe42754d543f9f4a9966c5b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 718be0f03f136d6eb7d78fff51abdc36f6a8f0c2
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405033"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795733"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Installera PowerShell Core i Linux
 
@@ -16,7 +16,7 @@ Stöder [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04] [ u1804], [Ubun
 För Linux-distributioner som inte stöds officiellt, kan du försöka använda den [PowerShell Fäst paketet][snap].
 Du kan också prova att distribuera PowerShell binärfiler direkt med hjälp av Linux [ `tar.gz` Arkiv][tar], men du måste ställa in nödvändiga beroenden baserat på Operativsystemet i separata steg.
 
-Alla paket finns på vår GitHub [versioner][] sidan.
+Alla paket finns på vår GitHub [Versioner][] sidan.
 När paketet har installerats kan du köra `pwsh` från en terminal.
 
 [u14]: #ubuntu-1404
@@ -44,7 +44,7 @@ Här är en tabell med kommandon för att installera de stabila och förhandsver
 |Distribution(s)|Stabil kommando | Förhandsgranskningskommandot |
 |---------------|---------------|-----------------|
 | Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
-| CentOS, Red Hat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
+| CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
 | Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
 ## <a name="ubuntu-1404"></a>Ubuntu 14.04
@@ -77,7 +77,7 @@ Därefter behöver du bara använda `sudo apt-get upgrade powershell` att uppdat
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Installationen via Direct hämtning - Ubuntu 14.04
 
 Ladda ned Debian-paket `powershell_6.1.0-1.ubuntu.14.04_amd64.deb`
-från den [versioner][] sidan på Ubuntu-dator.
+från den [Versioner][] sidan på Ubuntu-dator.
 
 Kör sedan följande i terminalen:
 
@@ -90,7 +90,7 @@ sudo apt-get install -f
 > Den `dpkg -i` kommandot misslyckas med motsvarar hittills ouppfyllda beroenden.
 > Nästa kommando `apt-get install -f` löser dessa problem och sedan på Slutför PowerShell-paketet.
 
-### <a name="uninstallation---ubuntu-1404"></a>Avinstallationen - Ubuntu 14.04
+### <a name="uninstallation---ubuntu-1404"></a>Uninstallation - Ubuntu 14.04
 
 ```sh
 sudo apt-get remove powershell
@@ -125,7 +125,7 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, kommer
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Installationen via Direct hämtning - Ubuntu 16.04
 
 Ladda ned Debian-paket `powershell_6.1.0-1.ubuntu.16.04_amd64.deb`
-från den [versioner][] sidan på Ubuntu-dator.
+från den [Versioner][] sidan på Ubuntu-dator.
 
 Kör sedan följande i terminalen:
 
@@ -145,9 +145,6 @@ sudo apt-get remove powershell
 ```
 
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
-
-> [!NOTE]
-> Stöd för Ubuntu 18.04 har lagts till efter `6.1.0-preview.2`
 
 ### <a name="installation-via-package-repository---ubuntu-1804"></a>Installationen via Paketdatabasen - Ubuntu 18.04
 
@@ -176,7 +173,7 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, kommer
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Installationen via Direct hämtning - Ubuntu 18.04
 
 Ladda ned Debian-paket `powershell_6.1.0-1.ubuntu.18.04_amd64.deb`
-från den [versioner][] sidan på Ubuntu-dator.
+från den [Versioner][] sidan på Ubuntu-dator.
 
 Kör sedan följande i terminalen:
 
@@ -198,8 +195,7 @@ sudo apt-get remove powershell
 ## <a name="ubuntu-1810"></a>Ubuntu 18.10
 
 > [!NOTE]
-> Stöd för Ubuntu 18.10 har lagts till efter `6.1.0-preview.3`.
-> Eftersom 18.10 är en daglig version, är det bara community stöds.
+> Eftersom 18.10 är en [tillfälliga versionen](https://www.ubuntu.com/about/release-cycle), det är bara [community stöds](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
 
 Installera på 18.10 stöds via `snapd`. Se [Fäst paketet] [ snap] fullständiga instruktioner;
 
@@ -236,7 +232,7 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, kommer
 ### <a name="installation-via-direct-download---debian-8"></a>Installationen via Direct hämtning – Debian 8
 
 Ladda ned Debian-paket `powershell_6.1.0-1.debian.8_amd64.deb`
-från den [versioner][] sidan på Debian dator.
+från den [Versioner][] sidan på Debian dator.
 
 Kör sedan följande i terminalen:
 
@@ -288,7 +284,7 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, kommer
 ### <a name="installation-via-direct-download---debian-9"></a>Installationen via Direct hämtning - Debian 9
 
 Ladda ned Debian-paket `powershell_6.1.0-1.debian.9_amd64.deb`
-från den [versioner][] sidan på Debian dator.
+från den [Versioner][] sidan på Debian dator.
 
 Kör sedan följande i terminalen:
 
@@ -328,7 +324,7 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, behöv
 ### <a name="installation-via-direct-download---centos-7"></a>Installationen via Direct hämtning - CentOS 7
 
 Med hjälp av [CentOS 7][], ladda ned RPM-paket `powershell-6.1.0-1.rhel.7.x86_64.rpm`
-från den [versioner][] sidan på CentOS-dator.
+från den [Versioner][] sidan på CentOS-dator.
 
 Kör sedan följande i terminalen:
 
@@ -372,7 +368,7 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, behöv
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installationen via Direct hämtning - Red Hat Enterprise Linux (RHEL) 7
 
 Ladda ned RPM-paket `powershell-6.1.0-1.rhel.7.x86_64.rpm`
-från den [versioner][] sidan på Red Hat Enterprise Linux-dator.
+från den [Versioner][] sidan på Red Hat Enterprise Linux-dator.
 
 Kör sedan följande i terminalen:
 
@@ -392,7 +388,7 @@ sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.1
 sudo yum remove powershell
 ```
 
-## <a name="opensuse"></a>OpenSUSE
+## <a name="opensuse"></a>openSUSE
 
 ### <a name="installation---opensuse-423"></a>Installation - openSUSE 42.3
 
@@ -482,7 +478,7 @@ pwsh
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Installationen via Direct hämtning - Fedora 27, Fedora 28
 
 Ladda ned RPM-paket `powershell-6.1.0-1.rhel.7.x86_64.rpm`
-från den [versioner][] sidan på Fedora-dator.
+från den [Versioner][] sidan på Fedora-dator.
 
 Kör sedan följande i terminalen:
 
@@ -659,21 +655,21 @@ Följande diagram visar de beroenden i .NET Core 2.0 som officiellt stöds i oli
 
 | Operativsystem                 | Beroenden |
 | ------------------ | ------------ |
-| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
-| Ubuntu 17.10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
-| Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
-| Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 | libunwind, libcurl, openssl-bibliotek, libicu |
-| OpenSUSE 42.3 | libcurl4 libopenssl1_0_0, libicu52_1 |
+| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
+| Ubuntu 17.10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
+| Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
+| Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 | libunwind, libcurl, openssl-libs, libicu |
+| openSUSE 42.3 | libcurl4 libopenssl1_0_0, libicu52_1 |
 | openSUSE Leap 15 | libcurl4 libopenssl1_0_0, libicu60_2 |
 | Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-bibliotek, libicu, kompatibilitets-openssl10 |
 
 Du måste installera de nödvändiga beroendena för målets OS i separata steg för att distribuera PowerShell-binärfiler i Linux-distributioner som inte stöds officiellt.
 Till exempel vår [Amazon Linux dockerfile] [ amazon-dockerfile] installerar beroenden först och sedan extraherar Linux `tar.gz` Arkiv.
 
-[amazon-dockerfile]: https://github.com/PowerShell/PowerShell/blob/master/docker/community/amazonlinux/Dockerfile
+[amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
 ### <a name="installation---binary-archives"></a>Installation - binär Arkiv
 
@@ -716,5 +712,5 @@ Profilerna respekterar PowerShell-per-host-konfiguration, så värdspecifika sta
 
 PowerShell respekterar de [XDG Base Directory specifikationen] [ xdg-bds] i Linux.
 
-[versioner]: https://github.com/PowerShell/PowerShell/releases/latest
+[Versioner]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

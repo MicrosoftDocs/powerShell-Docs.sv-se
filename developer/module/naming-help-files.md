@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bf54eac7-88c6-4108-a5f6-2f0906d1662b
 caps.latest.revision: 5
-ms.openlocfilehash: 06281a1260dbdc120867fce89e6d5c8dd0754b87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f65a90023df88fceafae1d1875ddf46b9088e2b8
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847280"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795359"
 ---
 # <a name="naming-help-files"></a>Namnge hjälpfiler
 
-Det här avsnittet beskriver hur du namnger en XML-baserade hjälpfil så att den [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet kan hitta den. Krav för namnet skiljer sig åt för varje kommando.
 Det här avsnittet beskriver hur du namnger en XML-baserade hjälpfil så att den [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet kan hitta den. Krav för namnet skiljer sig åt för varje kommando.
 
 ## <a name="cmdlet-help-files"></a>Cmdlet-hjälpfiler
@@ -30,7 +29,6 @@ I hjälpfilen en C# cmdlet måste ha namnet för sammansättningen där cmdleten
 
 Sammansättningen namnformat krävs även när sammansättningen är en kapslad modul.
 
-Till exempel den [Get-WinEvent; PSITPro5_Diagnostic; ](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) cmdlet har definierats i sammansättningen Microsoft.PowerShell.Diagnostics.dll. Den `Get-Help` cmdleten söker efter ett hjälpavsnitt för de `Get-WinEvent` cmdlet endast i filen Microsoft.PowerShell.Diagnostics.dll help.xml i modulkatalogen.
 Till exempel den [Get-WinEvent; PSITPro5_Diagnostic; ](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) cmdlet har definierats i sammansättningen Microsoft.PowerShell.Diagnostics.dll. Den `Get-Help` cmdleten söker efter ett hjälpavsnitt för de `Get-WinEvent` cmdlet endast i filen Microsoft.PowerShell.Diagnostics.dll help.xml i modulkatalogen.
 
 ## <a name="provider-help-files"></a>Providern hjälpfiler
@@ -47,7 +45,6 @@ Till exempel har certifikatleverantör definierats i sammansättningen Microsoft
 
 ## <a name="function-help-files"></a>Funktionen hjälpfiler
 
-Functions kan dokumenteras med hjälp av [kommentarbaserad hjälp](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) eller dokumenterade i en XML-hjälpfilen. När funktionen dokumenteras i en XML-fil, funktionen måste ha en `.ExternalHelp` kommentera nyckelord som associerar funktionen med XML-filen. I annat fall den `Get-Help` cmdlet kan inte hitta hjälpfilen.
 Functions kan dokumenteras med hjälp av [kommentarbaserad hjälp](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) eller dokumenterade i en XML-hjälpfilen. När funktionen dokumenteras i en XML-fil, funktionen måste ha en `.ExternalHelp` kommentera nyckelord som associerar funktionen med XML-filen. I annat fall den `Get-Help` cmdlet kan inte hitta hjälpfilen.
 
 Det finns inga tekniska krav för namnet för en funktion hjälpfilen. Ett bra tips är dock att namnge i hjälpfilen för modulen skriptet där funktionen har definierats. Till exempel har följande funktion definierats i filen Minmodul.psm1.

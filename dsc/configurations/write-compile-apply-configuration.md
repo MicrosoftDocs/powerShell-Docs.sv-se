@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, tjänst, inställning
 title: Skriva, kompilera och tillämpa en konfiguration
-ms.openlocfilehash: fa4d98fd12202439ba7025fd8af3fa398653ca05
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c884af9d92ac375457d6eb75d815ae9a9159e273
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684418"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795427"
 ---
 > Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -60,7 +60,9 @@ Kör konfiguration, som en funktion ska kompilera en ”.mof”-fil för varje n
 För att köra konfigurationen, måste du *dot-källa* ”HelloWorld.ps1” skriptet i den aktuella omfattningen.
 Mer information finns i [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).
 
+<!-- markdownlint-disable MD038 -->
 *Dot-källa* ”HelloWorld.ps1” skriptet genom att skriva in sökvägen där du sparade den, efter den `. ` (punkt, utrymme). Du kan sedan köra konfigurationen genom att anropa den som en funktion.
+<!-- markdownlint-enable MD038 -->
 
 ```powershell
 . C:\Scripts\WebsiteTest.ps1

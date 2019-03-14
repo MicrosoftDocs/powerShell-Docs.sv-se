@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: dcab755f565cd176c85ef6b9c719bceae10301b4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: be31d03b02394cb1694909cf7b65bbc2a29f6976
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845782"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795444"
 ---
 # <a name="extending-properties-for-objects"></a>Utöka egenskaper för objekt
 
@@ -101,7 +101,6 @@ I följande exempel visas den `VersionInfo` egenskapen har lagts till i den [Sys
 
 ## <a name="property-sets"></a>Egenskapsuppsättningar
 
-En egenskapsuppsättning definierar en grupp av utökade egenskaper som kan refereras av namnet på uppsättningen. Till exempel den `Property` -parametern för den [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) ange en specifik egenskapsuppsättning som ska visas. När du anger en egenskapsuppsättning visas endast de egenskaper som tillhör uppsättningen.
 En egenskapsuppsättning definierar en grupp av utökade egenskaper som kan refereras av namnet på uppsättningen. Till exempel den `Property` -parametern för den [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) ange en specifik egenskapsuppsättning som ska visas. När du anger en egenskapsuppsättning visas endast de egenskaper som tillhör uppsättningen.
 
 Det finns ingen begränsning för hur många uppsättningar med egenskaper som kan definieras för ett objekt. Men måste de egenskaperna som används för att definiera standardegenskaperna för visning av ett objekt anges inom PSStandardMembers uppsättningen. I filen Types.ps1xml typer är standard set egenskapsnamn DefaultDisplayProperty, DefaultDisplayPropertySet och DefaultKeyPropertySet. Eventuella ytterligare egenskaper som du lägger till PSStandardMembers uppsättningen ignoreras.

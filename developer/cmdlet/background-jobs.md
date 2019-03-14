@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
-ms.openlocfilehash: 9aff23647e55e8c9c41c54e5b62cedc15fb28a2d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847630"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794713"
 ---
 # <a name="background-jobs"></a>Bakgrundsjobb
 
@@ -21,7 +21,6 @@ Cmdlet: ar kan utföra sina åtgärder internt eller som ett Windows PowerShell*
 
 ## <a name="background-jobs-child-jobs-and-the-job-repository"></a>Bakgrundsjobb, underordnade jobb och jobbet databasen
 
-Objektet som returneras av cmdlet: ar som stöder bakgrundsjobb definierar jobbet. (Den [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) cmdlet även returnerar ett jobbobjekt.) Namnet på jobbet, en identifierare som används för att ange jobbet, tillståndsinformationen och det underordnade jobbet ingår i den här definitionen. Jobbet utför inte någon av arbetet. Varje bakgrundsjobbet har minst ett underordnat jobb eftersom underordnat jobb utför det faktiska arbetet. När du kör en cmdlet så att arbetet utförs i bakgrunden, cmdlet: en måste lägga till jobbet och det underordnade jobbet till en gemensam databas, kallas de *jobbet databasen*.
 Objektet som returneras av cmdlet: ar som stöder bakgrundsjobb definierar jobbet. (Den [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) cmdlet även returnerar ett jobbobjekt.) Namnet på jobbet, en identifierare som används för att ange jobbet, tillståndsinformationen och det underordnade jobbet ingår i den här definitionen. Jobbet utför inte någon av arbetet. Varje bakgrundsjobbet har minst ett underordnat jobb eftersom underordnat jobb utför det faktiska arbetet. När du kör en cmdlet så att arbetet utförs i bakgrunden, cmdlet: en måste lägga till jobbet och det underordnade jobbet till en gemensam databas, kallas de *jobbet databasen*.
 
 Mer information om hur bakgrundsjobb hanteras på kommandoraden finns i följande:

@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: baab6a56-c199-48d7-a03e-a904b1bb1baa
 caps.latest.revision: 7
-ms.openlocfilehash: 2798e8b542b2f06247955409118e75c5652b644c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6e86318573df92b9ec84056631843e0efa096a3b
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850164"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795614"
 ---
 # <a name="accessdbprovidersample06-code-sample"></a>AccessDbProviderSample06 – kodexempel
 
 Följande kod visar implementeringen av Windows PowerShell innehållsleverantören beskrivs i [skapar en Windows PowerShell-innehållsleverantör](./creating-a-windows-powershell-content-provider.md). Den här providern gör att användaren kan ändra innehållet i objekten i ett datalager.
 
 > [!NOTE]
-> Du kan ladda ned den C# källfilen (AccessDBSampleProvider06.cs) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och Microsoft .NET Framework 3.0-körtidskomponenter. Hämta anvisningar finns i [hur du installerar Windows PowerShell och ladda ned Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 > Du kan ladda ned den C# källfilen (AccessDBSampleProvider06.cs) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och Microsoft .NET Framework 3.0-körtidskomponenter. Hämta anvisningar finns i [hur du installerar Windows PowerShell och ladda ned Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Hämtade källfilerna är tillgängliga i den  **\<PowerShell-exempel >** directory.

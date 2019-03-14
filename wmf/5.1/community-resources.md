@@ -3,14 +3,14 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: Community-resurser
-ms.openlocfilehash: 2bd006b1b873f475e04ebb00cc89d593e114cafc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a26f6eefeb3beb41575675b3dd4077f056606a70
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685090"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794883"
 ---
-# <a name="community-resources"></a>Community-resurser #
+# <a name="community-resources"></a>Community-resurser
 > Anm Den här informationen är preliminär och kan komma att ändras.
 
 PowerShell-teamet välkomnar uppmuntrar kundernas feedback om produkten och stöder flera metoder för användare att kontakta oss.

@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a142aeb6-9c11-44a0-b34f-1f9470fa347b
 caps.latest.revision: 5
-ms.openlocfilehash: 6e1c8a4709988adfa59bda14eb3af52b0a79f1df
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 27c8e2c7525aba38e69e50b2b7fd3b18b8e54989
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847063"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794407"
 ---
 # <a name="stopproc-tutorial"></a>Självstudie om StopProc
 
-Det här avsnittet innehåller en självstudie för att skapa cmdlet Stop-processen, som liknar den [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet som tillhandahålls av Windows PowerShell. Den här självstudien innehåller delar av kod som illustrerar hur cmdletar implementeras och en förklaring av koden.
 Det här avsnittet innehåller en självstudie för att skapa cmdlet Stop-processen, som liknar den [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet som tillhandahålls av Windows PowerShell. Den här självstudien innehåller delar av kod som illustrerar hur cmdletar implementeras och en förklaring av koden.
 
 ## <a name="topics-in-this-tutorial"></a>Avsnitt i den här självstudien

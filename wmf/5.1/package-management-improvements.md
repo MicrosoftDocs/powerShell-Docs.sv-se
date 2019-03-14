@@ -4,16 +4,17 @@ ms.topic: conceptual
 keywords: WMF, powershell, inställning
 contributor: jianyunt, quoctruong
 title: Förbättringar av pakethantering i WMF 5.1
-ms.openlocfilehash: adcddcc94022f4961f3dd23c2cd56f2a8720049b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 30ef59ed9dc0d56636d85cc6e53523a9a73963a4
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688240"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794288"
 ---
-# <a name="improvements-to-package-management-in-wmf-51"></a>Förbättringar av pakethantering i WMF 5.1#
+# <a name="improvements-to-package-management-in-wmf-51"></a>Förbättringar av pakethantering i WMF 5.1
 
-## <a name="improvements-in-packagemanagement"></a>Förbättringar i PackageManagement ##
+## <a name="improvements-in-packagemanagement"></a>Förbättringar i PackageManagement
+
 Följande är de korrigeringar som gjorts i WMF 5.1:
 
 ### <a name="version-alias"></a>Version Alias
@@ -61,6 +62,7 @@ I WMF 5.1 PackageManagement har stöd för att söka efter och installera paket 
 ``` PowerShell
 Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 ```
+
 ### <a name="support-for-using-packagemanagement-behind-a-proxy"></a>Stöd för användning av PackageManagement bakom en proxyserver
 
 I WMF 5.1 PackageManagement tar nu bara nya proxyparametrar `-ProxyCredential` och `-Proxy`. Med dessa parametrar kan ange du proxy-URL och autentiseringsuppgifter i PackageManagement-cmdletar. System-proxyinställningar används som standard. Till exempel:

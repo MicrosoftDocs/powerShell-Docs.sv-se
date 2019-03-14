@@ -1,22 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 9849feb01cd7be41703bdd1e8cb2c5a86cccff52
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1153738fdf6f926d5d819bbf91450408dcb17f71
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685783"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794508"
 ---
 # <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>Skapa PowerShell-cmdletar baserade på OData-slutpunkt
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Skapa Windows PowerShell-cmdletar baserade på en OData-slutpunkt
---------------------------------------------------------------
+
+## <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Skapa Windows PowerShell-cmdletar baserade på en OData-slutpunkt
 
 **Export-ODataEndpointProxy** är en cmdlet som genererar en uppsättning Windows PowerShell-cmdletar baserade på funktioner som exponeras av en viss OData-slutpunkten.
 
 I följande exempel visas hur du använder den här nya cmdleten:
-
-\# Grundläggande användningsfall för Export-ODataEndpointProxy
 
 ```powershell
 Export-ODataEndpointProxy -Uri 'http://services.odata.org/v3/(S(snyobsk1hhutkb2yulwldgf1))/odata/odata.svc' -OutputModule C:\Users\user\Generated.psd1
@@ -50,8 +48,8 @@ Det finns fortfarande delar av viktiga användningsområden i utveckling för de
 -   Associationer
 -   Skicka dataströmmar
 
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>Skapa Windows PowerShell-cmdletar baserade på en OData-slutpunkt med ODataUtils
-------------------------------------------------------------------------------
+## <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>Skapa Windows PowerShell-cmdletar baserade på en OData-slutpunkt med ODataUtils
+
 Modulen ODataUtils kan generation av Windows PowerShell-cmdletar från REST-slutpunkter som har stöd för OData. Följande inkrementella förbättringar är i Microsoft.PowerShell.ODataUtils Windows PowerShell-modulen.
 -   Kanal för ytterligare information från serversidan slutpunkten till klienten.
 -   Stöd för klientsidan växling
@@ -59,6 +57,7 @@ Modulen ODataUtils kan generation av Windows PowerShell-cmdletar från REST-slut
 -   Stöd för web-begärandehuvuden
 
 Proxy-cmdletar som genereras av cmdlet: en Export-ODataEndPointProxy innehåller ytterligare information (inte nämns i $metadata används under genereringen av klientsidan proxy) från servern på klientsidan OData-slutpunkten på informationsström (en ny Windows PowerShell 5.0-funktionen). Här är ett exempel på hur du hämtar den informationen.
+
 ```powershell
 Import-Module Microsoft.PowerShell.ODataUtils -Force
 $generatedProxyModuleDir = Join-Path -Path $env:SystemDrive -ChildPath 'ODataDemoProxy'
@@ -81,6 +80,7 @@ $additionalInfo['odata.count']
 ```
 
 Du kan hämta poster från serversidan i batchar med hjälp av klientsidan sidindelning support. Detta är användbart när du måste hämta en stor mängd data från servern via nätverket.
+
 ```powershell
 $skipCount = 0
 $batchSize = 3
@@ -94,6 +94,7 @@ $skipCount += $batchSize
 ```
 
 Genererade proxy-cmdletarna har stöd för – Välj parametern som du kan använda som ett filter för att ta emot endast postegenskaperna som klienten behöver. Detta minskar mängden data som överförs över nätverket, eftersom den filtrering utförs på serversidan.
+
 ```powershell
 # In the below example only the Name property of the
 # Product record is retrieved from the server side.
@@ -101,6 +102,7 @@ Get-Product -Top 2 -AllowUnsecureConnection -AllowAdditionalData -Select Name
 ```
 
 Cmdleten Export-ODataEndpointProxy och proxy-cmdletar som genereras av det, är nu stöd för parametern rubriker (ange värden som en hashtabell), som du kan använda på channel eventuell ytterligare information som förväntas av serversidan OData-slutpunkten. I följande exempel kanaler du en prenumerationsnyckel via rubriker för tjänster som väntar en prenumerationsnyckel för autentisering.
+
 ```powershell
 # As an example, in the below command 'XXXX' is the authentication used by the
 # Export-ODataEndpointProxy cmdlet to interact with the server-side

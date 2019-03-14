@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5d4c8f84-ebd2-4405-bb10-cfc5400d4ad6
 caps.latest.revision: 6
-ms.openlocfilehash: 35efd36fd70c209e3cbeb9eff0ddf978615fffd6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 49344d32dfcef36a904772b4a7237646a63cb12a
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845600"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794645"
 ---
 # <a name="windows-powershell-formatting-files"></a>Windows PowerShell-formateringsfiler
 
@@ -26,13 +26,10 @@ DotNetTypes.Format.ps1xml definierar visningen av diverse .NET-objekt, till exem
 FileSystem.Format.ps1xml definierar visningen av filsystemsobjekt, till exempel fil- och objekt.
 
 Help.Format.ps1xml definierar olika vyer som används av den [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet, till exempel detaljerade vyer för fullständig, parametrar och exempel.
-Definierar de olika vyerna som används av den [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet, till exempel detaljerade vyer för fullständig, parametrar och exempel.
 
 PowerShellCore.Format.ps1xml definierar visningen av de objekt som genereras av Windows PowerShell core-cmdletar, till exempel objekten som returneras av den [Get-Member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member) och [Get-historik](/powershell/module/Microsoft.PowerShell.Core/Get-History) cmdletar.
-Definierar visningen av de objekt som genereras av Windows PowerShell core-cmdletar, till exempel objekten som returneras av den [Get-Member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member) och [Get-historik](/powershell/module/Microsoft.PowerShell.Core/Get-History) cmdletar.
 
 PowerShellTrace.Format.ps1xml definierar visningen av spårningsobjekt, till exempel de som genererats av den [Trace-Command](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) cmdlet.
-Definierar visningen av spårningsobjekt, till exempel de som genererats av den [Trace-Command](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) cmdlet.
 
 Registry.Format.ps1xml definierar visning av registret objekt, till exempel nyckeln och post-objekt.
 

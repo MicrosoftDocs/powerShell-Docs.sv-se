@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, core
 title: Större ändringar för PowerShell 6.0
-ms.openlocfilehash: d477a9b27e8d5df6653ee40f8b606879b60a80c7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685265"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795699"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Större ändringar för PowerShell 6.0
 
@@ -65,6 +65,10 @@ På grund av användningen av stöds inte API: er, `Microsoft.PowerShell.LocalAc
 ### <a name="-counter-cmdlets"></a>`*-Counter`-cmdletar
 
 På grund av användningen av stöds inte API: er, den `*-Counter` har tagits bort från PowerShell Core tills en bättre lösning hittas.
+
+### <a name="-eventlog-cmdlets"></a>`*-EventLog`-cmdletar
+
+På grund av användningen av stöds inte API: er, den `*-EventLog` har tagits bort från PowerShell Core. tills en bättre lösning hittas. `Get-WinEvent` och `Create-WinEvent` finns att hämta och skapa händelser i Windows.
 
 ## <a name="enginelanguage-changes"></a>Ändringar av motorn/språk
 
@@ -179,9 +183,9 @@ Namnge i PowerShell ska stämma överens med våra namngivning och följa Apples
 
 På grund av stöds inte API: er, den `LocalAccounts` modulen och `Counter` cmdletar i den `Diagnostics` modulen har tagits bort tills en bättre lösning hittas.
 
-### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Kör powershell-skript med bool parametern fungerar inte [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
+### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Kör PowerShell-skript med bool parametern fungerar inte [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-Tidigare med hjälp av powershell.exe (nu `pwsh.exe`) att köra ett PowerShell-skript med `-File` tillhandahålls inget sätt att skicka $true/$false som parametervärden. Stöd för $true/$false som parsade värden till parametrar har lagts till. Värden stöds också som för närvarande dokumenterade syntax inte fungerar.
+Tidigare med hjälp av **powershell.exe** (nu **pwsh.exe**) att köra ett PowerShell-skript med `-File` tillhandahålls inget sätt att skicka `$true` / `$false` som parameter värden. Stöd för `$true` / `$false` som parsade värden till parametrar har lagts till. Värden stöds också som för närvarande dokumenterade syntax inte fungerar.
 
 ### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Ta bort `ClrVersion` egenskap från `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
@@ -193,7 +197,7 @@ Aktivera shebang användningen av PowerShell på icke-Windows-plattformar. Det i
 
 ### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>Implementera Unicode-escape-parsning [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
 
-`` `u#### `` eller `` `u{####} `` konverteras till motsvarande Unicode-tecken. Att mata ut en literal `` `u ``, hoppa över backtick: ``` ``u ```.
+`` `u####`` eller `` `u{####}`` konverteras till motsvarande Unicode-tecken. Att mata ut en literal `` `u``, hoppa över backtick: ``` ``u```.
 
 ### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>Ändra `New-ModuleManifest` kodning till `UTF8NoBOM` på icke-Windows-plattformar [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 

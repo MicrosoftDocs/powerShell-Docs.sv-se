@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell cmdlet
 title: Använd bekanta kommandonamn
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 3d2c681623086e061e237f08603d65150d2b1947
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b61d647d882d4b2f7ea423a48319e3c104ce96c7
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688926"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795682"
 ---
 # <a name="using-familiar-command-names"></a>Använd bekanta kommandonamn
 
@@ -24,11 +24,11 @@ I följande lista visas några vanliga **cmd.exe** och Unix-kommandon som du kan
 |-|-|-|-|
 |cat|dir|Montera|rm|
 |cd|echo|Flytta|rmdir|
-|chdir|Radera|popd|strömsparläge|
+|chdir|Radera|popd|Strömsparläge|
 |Rensa|h|ps|Sortera|
 |CLS|Historik|pushd|Tee|
 |Kopiera|Avsluta|pwd|typ|
-|del|LP|r|skriva|
+|del|LP|R|Skriva|
 |diff|ls|ren||
 
 Den `Get-Alias` cmdlet visar det verkliga namnet på den interna PowerShell-kommando som är associerade med ett alias.
@@ -55,9 +55,9 @@ Exempel förkortningar:
 | Substantiv eller Verb | Förkortning |
 |--------------|--------------|
 | Get          | g            |
-| Ange          | s            |
-| Artikel         | i            |
-| Position     | l            |
+| Ange          | S            |
+| Artikel         | Jag            |
+| Position     | L            |
 | Kommando      | cm           |
 | Alias        | AL           |
 
@@ -65,7 +65,7 @@ Dessa alias är att förstå när du vet vilka snabbformat.
 
 | Cmdlet-namn    | Alias |
 |----------------|-------|
-| `Get-Item `    | gi    |
+| `Get-Item`     | gi    |
 | `Set-Item`     | si    |
 | `Get-Location` | gl    |
 | `Set-Location` | sl    |

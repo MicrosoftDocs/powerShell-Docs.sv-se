@@ -2,12 +2,12 @@
 title: Förstå filkodning i VSCode och PowerShell
 description: Konfigurera Filkodning i VSCode och PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: 9cf445ebd0c2bb2dbdf4438f02dafe3df3a5d1e2
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 73e766832d56a08bd5ef16df11899a0aab0badae
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429813"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795130"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Förstå filkodning i VSCode och PowerShell
 
@@ -55,11 +55,13 @@ När dessa byte avkodas som Windows-1252, de tolkas som tecknen `â€“`.
 
 Vissa onormalt teckensekvenser som kan visas är:
 
+<!-- markdownlint-disable MD038 -->
 - `â€“` Istället för `–`
 - `â€”` Istället för `—`
 - `Ã„2` Istället för `Ä`
 - `Â` i stället för ` ` (ett hårt blanksteg)
 - `Ã©` Istället för `é`
+<!-- markdownlint-enable MD038 -->
 
 Det här praktiska [referens](https://www.i18nqa.com/debug/utf8-debug.html) visar en lista över vanliga mönster som indikerar att en UTF-8/Windows-1252 kodningsproblem.
 

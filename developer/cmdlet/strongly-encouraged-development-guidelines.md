@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
-ms.openlocfilehash: 2bf2447eba07b74f8cc14c9820fc1c1774370b2f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c11e50913d2654b786e0e8cfeaf41454999bf75e
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845418"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794985"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Starkt rekommenderade riktlinjer för utveckling
 
@@ -107,7 +107,6 @@ Om parametern måste skilja mellan 3 värden: $true, $false och ”okänt”, se
 
 #### <a name="support-arrays-for-parameters"></a>Stöd för matriser för parametrar
 
-Användare måste ofta kan utföra samma åtgärd mot flera argument. Dessa användare bör en cmdlet accepterar en matris som parameter som indata så att en användare kan skicka argumenten till parametern som en Windows PowerShell-variabel. Till exempel den [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet: en använder en matris för strängar som identifierar namnen på processerna som ska hämtas.
 Användare måste ofta kan utföra samma åtgärd mot flera argument. Dessa användare bör en cmdlet accepterar en matris som parameter som indata så att en användare kan skicka argumenten till parametern som en Windows PowerShell-variabel. Till exempel den [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet: en använder en matris för strängar som identifierar namnen på processerna som ska hämtas.
 
 #### <a name="support-the-passthru-parameter"></a>Stöd för PassThru-parametern

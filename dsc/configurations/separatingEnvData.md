@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Avgränsa konfigurations- och miljödata
-ms.openlocfilehash: 24a92e5e4f15959498b57a1488a688d5548f3585
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687519"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794934"
 ---
 # <a name="separating-configuration-and-environment-data"></a>Avgränsa konfigurations- och miljödata
 
@@ -88,7 +88,7 @@ Mode                LastWriteTime         Length Name
 
 Nu ska vi titta på ett komplett exempel som använder en enkel konfiguration för att konfigurera både utveckling och produktion miljöer till en webbplats. I utvecklingsmiljön installeras både IIS och SQL Server på en enstaka noder. I produktionsmiljön, är IIS och SQL Server installerade på olika noder. Vi använder konfigurationsdatafilen .psd1 för att ange data för två olika miljöer.
 
- ### <a name="configuration-data-file"></a>Konfigurationsdatafilen
+### <a name="configuration-data-file"></a>Konfigurationsdatafilen
 
 Ska vi definiera miljödata utveckling och produktion i en fil med namnet `DevProdEnvData.psd1` på följande sätt:
 

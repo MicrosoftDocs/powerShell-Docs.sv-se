@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
 caps.latest.revision: 6
-ms.openlocfilehash: 08c64d4094d8ba6c551b454887331666f0694f11
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 86a0e8b7e8967280daa57faf5c323efcd3b1368b
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850052"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794203"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>Läsa in och exportera formateringsdata
 
@@ -24,16 +24,13 @@ När du har skapat din formatering fil kan behöva du uppdatera formatera data s
 Formatering filer kan läsas in i den aktuella sessionen med hjälp av följande metoder:
 
 - Du kan importera formatering filen till den aktuella sessionen från kommandoraden. Använd den [uppdatering FormatData](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData) cmdlet som beskrivs i följande procedur.
-- Du kan importera formatering filen till den aktuella sessionen från kommandoraden. Använd den [uppdatering FormatData](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData) cmdlet som beskrivs i följande procedur.
 
-- Du kan skapa ett modulmanifest som refererar till filen formatering. Moduler kan du paketera du formatering filer för distribution. Använd den [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet för att skapa manifestet, och [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet för att läsa in modulen i den aktuella sessionen. Läs mer om moduler [skriva en Windows PowerShell-modul](../module/writing-a-windows-powershell-module.md).
 - Du kan skapa ett modulmanifest som refererar till filen formatering. Moduler kan du paketera du formatering filer för distribution. Använd den [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet för att skapa manifestet, och [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet för att läsa in modulen i den aktuella sessionen. Läs mer om moduler [skriva en Windows PowerShell-modul](../module/writing-a-windows-powershell-module.md).
 
 - Du kan skapa en snapin-modul som refererar till filen formatering. Använd den [System.Management.Automation.Pssnapin.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats) att referera till filerna formatering. Det är vi rekommenderar att du använder moduler att paketet cmdlet: ar, och alla associerade formaterar och typer av filer för distribution. Läs mer om moduler [skriva en Windows PowerShell-modul](../module/writing-a-windows-powershell-module.md).
 
 - Om du anropar kommandon programmässigt, kan du lägga till en formatering filpost inledande sessionens tillstånd av körningsutrymmet där kommandona körs. Mer information om .NET-typ som används för att lägga till filen formatering finns i den [System.Management.Automation.Runspaces.Sessionstateformatentry? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateFormatEntry) klass.
 
-När en formatering fil har lästs in, läggs den till en intern lista att Windows PowerShell använder för att avgöra vilken vy som ska använda när du visar objekt på kommandoraden. Du kan åtkomstgruppen för filen formatering i början av listan, eller du kan lägga till den i slutet av listan. Det är viktigt om du läser in formatering-fil som definierar en vy för ett objekt som har en befintlig vy som definierats, till exempel när du vill ändra hur ett objekt som returneras av en Windows PowerShell core-cmdlet är att att känna till där din formatering fil läggs till i den här listan  visas. Om du läser in en formatering fil som definierar den enda vyn för ett objekt, kan du använda någon av metoderna som beskrivs ovan.  Om du läser in en formatering fil som definierar en annan vy för ett objekt, måste du använda den [uppdatering FormatData](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData) cmdlet och Lägg till åtkomstgruppen din fil till början av listan.
 När en formatering fil har lästs in, läggs den till en intern lista att Windows PowerShell använder för att avgöra vilken vy som ska använda när du visar objekt på kommandoraden. Du kan åtkomstgruppen för filen formatering i början av listan, eller du kan lägga till den i slutet av listan. Det är viktigt om du läser in formatering-fil som definierar en vy för ett objekt som har en befintlig vy som definierats, till exempel när du vill ändra hur ett objekt som returneras av en Windows PowerShell core-cmdlet är att att känna till där din formatering fil läggs till i den här listan  visas. Om du läser in en formatering fil som definierar den enda vyn för ett objekt, kan du använda någon av metoderna som beskrivs ovan.  Om du läser in en formatering fil som definierar en annan vy för ett objekt, måste du använda den [uppdatering FormatData](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData) cmdlet och Lägg till åtkomstgruppen din fil till början av listan.
 
 ## <a name="storing-your-formatting-file"></a>Lagra filen formatering
@@ -44,7 +41,6 @@ Det finns inga krav på var din formatering filer lagras på disk. Dock vi rekom
 
 1. Store formatering filen till disk.
 
-2. Kör den [uppdatering FormatData](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData) cmdlet med någon av följande kommandon.
 2. Kör den [uppdatering FormatData](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData) cmdlet med någon av följande kommandon.
 
    För att lägga till formateringen fil först i listan för att använda det här kommandot. Använd det här kommandot om du ändrar hur ett objekt visas.
@@ -59,7 +55,6 @@ Det finns inga krav på var din formatering filer lagras på disk. Dock vi rekom
    Update-FormatData -AppendPath PathToFormattingFile
    ```
 
-   När du har lagt till en fil med hjälp av den [uppdatering FormatData](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData) cmdlet, du kan inte ta bort filen från listan över när sessionen är öppet. Du måste stänga sessionen om du vill ta bort filen formatering från listan.
    När du har lagt till en fil med hjälp av den [uppdatering FormatData](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData) cmdlet, du kan inte ta bort filen från listan över när sessionen är öppet. Du måste stänga sessionen om du vill ta bort filen formatering från listan.
 
 ## <a name="exporting-format-data"></a>Format för dataexport

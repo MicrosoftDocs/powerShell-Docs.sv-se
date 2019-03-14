@@ -4,15 +4,14 @@ ms.topic: conceptual
 keywords: WMF, powershell, inställning
 contributor: keithb
 title: Installera och konfigurera WMF 5.1
-ms.openlocfilehash: e5c7968744a442b4be9f1e43a45e91429a6d6165
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e5590d48d467506270ccef4089513e1afade07be
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685062"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795580"
 ---
-# <a name="install-and-configure-wmf-51"></a>Installera och konfigurera WMF 5.1 #
-
+# <a name="install-and-configure-wmf-51"></a>Installera och konfigurera WMF 5.1
 
 ## <a name="download-and-install-the-wmf-51-package"></a>Ladda ned och installera WMF 5.1-paketet
 
@@ -67,8 +66,8 @@ Windows PowerShell Desired State Configuration (DSC) är beroende av WinRM.
 WinRM är inte aktiverat som standard på Windows Server 2008 R2 och Windows 7.
 Kör `Set-WSManQuickConfig`, utökade sessionen att aktivera WinRM i ett Windows PowerShell.
 
-
 ## <a name="install-wmf-51-for-windows-server-2012-r2-windows-server-2012-and-windows-81"></a>Installera WMF 5.1 för Windows Server 2012 R2, Windows Server 2012 och Windows 8.1
+
 **Installera från Windows Explorer (eller Utforskaren i Windows Server 2012 R2 eller Windows 8.1)**
 
 1. Navigera till den mapp dit du hämtade MSU-fil.

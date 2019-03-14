@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: e0d83a742eae2bcde2e691860a5f2b3e5862d2de
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: de75e19abc0ee440e724fba7bf578ce240fbf2df
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57430051"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795461"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Skapa en Windows PowerShell-containerprovider
 
@@ -40,7 +40,7 @@ Här är en lista över avsnitt i det här avsnittet. Läs informationen i den o
 
 - [Definiera en providerklass för Windows PowerShell-behållare](#Defining-a-Windows-PowerShell-Container-Provider-Class)
 
-- [Definiera grundfunktionen]()
+- [Definiera grundfunktionen](#defining-base-functionality)
 
 - [Hämtning av underordnade objekt](#Retrieving-Child-Items)
 
@@ -69,8 +69,6 @@ Här är en lista över avsnitt i det här avsnittet. Läs informationen i den o
 - [Koppla dynamiska parametrar till den `Copy-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Copy-Item-Cmdlet)
 
 - [Kodexempel](#Code-Sample)
-
-- [Definiera objekttyper och formatering]()
 
 - [Att skapa Windows PowerShell-providern](#Building-the-Windows-PowerShell-Provider)
 

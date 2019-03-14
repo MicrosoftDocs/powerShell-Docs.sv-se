@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-hämtningstjänsten
-ms.openlocfilehash: 64c22bc021666026ae58a4c4fb4e3d31b25bae5c
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 27effe0cd3b9d90dcfaaf1bd4e38edf3c04c9cfb
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429966"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794730"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration-hämtningstjänsten
 
@@ -88,7 +88,7 @@ Följande steg beskriver hur du använder resursen i en konfiguration som konfig
 2. Hämta ett SSL-certifikat för DSC-hämtningsservern från en betrodd certifikatutfärdare, antingen inom din organisation eller en offentlig myndighet. Certifikatet som togs emot från utfärdaren är vanligtvis i PFX-format.
 3. Installera certifikatet på den nod som blir DSC-hämtningsservern på standardplatsen, vilket ska vara `CERT:\LocalMachine\My`.
    - Anteckna tumavtrycket för certifikatet.
-4. Välj ett GUID som ska användas som nyckel för tjänstregistrering. För att generera en med hjälp av PowerShell anger du följande i PS-Kommandotolken och tryck på RETUR: ` [guid]::newGuid()` eller `New-Guid`. Den här nyckeln används av klientnoder som en delad nyckel för autentisering under registreringen. Mer information finns i avsnittet registreringsnyckel nedan.
+4. Välj ett GUID som ska användas som nyckel för tjänstregistrering. För att generera en med hjälp av PowerShell anger du följande i PS-Kommandotolken och tryck på RETUR: `[guid]::newGuid()` eller `New-Guid`. Den här nyckeln används av klientnoder som en delad nyckel för autentisering under registreringen. Mer information finns i avsnittet registreringsnyckel nedan.
 5. I PowerShell ISE starta (F5) följande konfigurationsskript (ingår i exempel-mappen på den **xPSDesiredStateConfiguration** modulen som `Sample_xDscWebServiceRegistration.ps1`). Det här skriptet ställer in hämtningsservern.
 
     ```powershell

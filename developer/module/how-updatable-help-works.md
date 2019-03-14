@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7674636e-a0f2-4587-bfc5-dd3e6ce5489e
 caps.latest.revision: 6
-ms.openlocfilehash: 8874cc18416937c4d3cb30d801f2714410304c8c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b6ae54ee6c843996c875189b6ee553be5e4f614
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850227"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794390"
 ---
 # <a name="how-updatable-help-works"></a>Så här fungerar uppdateringsbar hjälp
 
@@ -21,7 +21,6 @@ Det här avsnittet förklarar hur uppdateringsbar hjälp processer HelpInfo XML-
 
 ## <a name="the-update-help-process"></a>Update-Help-processen
 
-I följande lista beskrivs åtgärderna för den [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet när en användare kör ett kommando för att uppdatera hjälpfilerna för en modul i en viss UI-kultur.
 I följande lista beskrivs åtgärderna för den [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet när en användare kör ett kommando för att uppdatera hjälpfilerna för en modul i en viss UI-kultur.
 
 1. `Update-Help` hämtar den fjärranslutna HelpInfo XML-filen från den plats som anges av värdet för den **HelpInfoURI** nyckeln i modulmanifestet och validerar filen mot schemat. (Om du vill visa schemat, se [HelpInfo XML-Schema](./helpinfo-xml-schema.md).) Sedan `Update-Help` söker efter en lokal HelpInfo XML-filen för modulen i modulkatalogen på användarens dator.
@@ -36,7 +35,6 @@ I följande lista beskrivs åtgärderna för den [Update-Help](/powershell/modul
 
 ## <a name="the-save-help-process"></a>Save-Help-processen
 
-I följande lista beskrivs åtgärderna för den [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) och [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdletar när användaren kör kommandon för att uppdatera hjälpfiler i en filresurs och sedan använda dessa filer för att uppdatera hjälpfilerna på den användarens dator.
 I följande lista beskrivs åtgärderna för den [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) och [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdletar när användaren kör kommandon för att uppdatera hjälpfiler i en filresurs och sedan använda dessa filer för att uppdatera hjälpfilerna på den användarens dator.
 
 Den `Save-Help` cmdlet utför följande åtgärder som svar på ett kommando för att spara hjälpfilerna för en modul i en filresurs som anges av den **DestinationPath** parametern.

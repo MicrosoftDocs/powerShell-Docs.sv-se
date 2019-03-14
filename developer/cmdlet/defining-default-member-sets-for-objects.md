@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 77f94326-8ffe-4d40-bd2a-b79fb0b4a4e5
 caps.latest.revision: 8
-ms.openlocfilehash: e8185eb7221a3be0445eddc537dbca89478c74f2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2d634e7638ec0e0117d65ca0b2d08e68f0068a03
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849471"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794917"
 ---
 # <a name="defining-default-member-sets-for-objects"></a>Definiera standardmedlemsuppsättningar för objekt
 
@@ -21,7 +21,6 @@ PSStandardMembers uppsättningen används av Windows PowerShell för att definie
 
 ## <a name="member-set-for-systemdiagnosticsprocess"></a>Uppsättningen för System.Diagnostics.Process
 
-I följande exempel definierar PSStandardMembers uppsättningen egenskapsuppsättningen DefaultDisplayPropertySet för [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objekt. Den här egenskapen angiven används av den [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet.
 I följande exempel definierar PSStandardMembers uppsättningen egenskapsuppsättningen DefaultDisplayPropertySet för [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objekt. Den här egenskapen angiven används av den [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet.
 
 ```xml
@@ -44,7 +43,6 @@ I följande exempel definierar PSStandardMembers uppsättningen egenskapsuppsät
   </MemberSet>
 ```
 
-Följande utdata visar standardegenskaperna som returneras av den [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet. Endast den `Id`, `Handles`, `CPU`, och `Name` egenskaper returneras för varje processobjekt.
 Följande utdata visar standardegenskaperna som returneras av den [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet. Endast den `Id`, `Handles`, `CPU`, och `Name` egenskaper returneras för varje processobjekt.
 
 ```powershell
