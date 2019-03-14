@@ -8,48 +8,46 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0a49e3c4-6a1b-404c-aefc-134e5ce3d108
 caps.latest.revision: 11
-ms.openlocfilehash: 3d9edb9d2af8ab15764d97256f49f674255e7ee7
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.openlocfilehash: 63bcdc6b273b47f8eb743928d2eaa5ef91470df5
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56852271"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794424"
 ---
-# <a name="host05-sample"></a><span data-ttu-id="eb10f-102">Host05 – exempel</span><span class="sxs-lookup"><span data-stu-id="eb10f-102">Host05 Sample</span></span>
+# <a name="host05-sample"></a><span data-ttu-id="50acc-102">Host05 – exempel</span><span class="sxs-lookup"><span data-stu-id="50acc-102">Host05 Sample</span></span>
 
-<span data-ttu-id="eb10f-103">Det här exemplet visar hur du skapar en interaktiv konsol-baserad värd-App som läser kommandon från kommandoraden, kör kommandona och visar resultatet i konsolen.</span><span class="sxs-lookup"><span data-stu-id="eb10f-103">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span> <span data-ttu-id="eb10f-104">Den här värdprogrammet stöder också anrop till fjärrdatorer med hjälp av den [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) och [avsluta-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdletar.</span><span class="sxs-lookup"><span data-stu-id="eb10f-104">This host application also supports calls to remote computers by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.</span></span>
-<span data-ttu-id="eb10f-105">Det här exemplet visar hur du skapar en interaktiv konsol-baserad värd-App som läser kommandon från kommandoraden, kör kommandona och visar resultatet i konsolen.</span><span class="sxs-lookup"><span data-stu-id="eb10f-105">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span> <span data-ttu-id="eb10f-106">Den här värdprogrammet stöder också anrop till fjärrdatorer med hjälp av den [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) och [avsluta-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdletar.</span><span class="sxs-lookup"><span data-stu-id="eb10f-106">This host application also supports calls to remote computers by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.</span></span>
+<span data-ttu-id="50acc-103">Det här exemplet visar hur du skapar en interaktiv konsol-baserad värd-App som läser kommandon från kommandoraden, kör kommandona och visar resultatet i konsolen.</span><span class="sxs-lookup"><span data-stu-id="50acc-103">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span> <span data-ttu-id="50acc-104">Den här värdprogrammet stöder också anrop till fjärrdatorer med hjälp av den [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) och [avsluta-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdletar.</span><span class="sxs-lookup"><span data-stu-id="50acc-104">This host application also supports calls to remote computers by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="eb10f-107">Krav</span><span class="sxs-lookup"><span data-stu-id="eb10f-107">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="50acc-105">Krav</span><span class="sxs-lookup"><span data-stu-id="50acc-105">Requirements</span></span>
 
-- <span data-ttu-id="eb10f-108">Det här exemplet kräver Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="eb10f-108">This sample requires Windows PowerShell 2.0.</span></span>
+- <span data-ttu-id="50acc-106">Det här exemplet kräver Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="50acc-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-- <span data-ttu-id="eb10f-109">Det här programmet måste köras med förhöjd (Kör som administratör).</span><span class="sxs-lookup"><span data-stu-id="eb10f-109">This application must be run in elevated mode (Run as administrator).</span></span>
+- <span data-ttu-id="50acc-107">Det här programmet måste köras med förhöjd (Kör som administratör).</span><span class="sxs-lookup"><span data-stu-id="50acc-107">This application must be run in elevated mode (Run as administrator).</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="eb10f-110">Visar</span><span class="sxs-lookup"><span data-stu-id="eb10f-110">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="50acc-108">Visar</span><span class="sxs-lookup"><span data-stu-id="50acc-108">Demonstrates</span></span>
 
-- <span data-ttu-id="eb10f-111">Skapa en anpassad värd vars klasser som härleds från den [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) klass, den [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) klassen och [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) klass.</span><span class="sxs-lookup"><span data-stu-id="eb10f-111">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
+- <span data-ttu-id="50acc-109">Skapa en anpassad värd vars klasser som härleds från den [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) klass, den [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) klassen och [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) klass.</span><span class="sxs-lookup"><span data-stu-id="50acc-109">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
 
-- <span data-ttu-id="eb10f-112">Att skapa ett konsolprogram som använder dessa värden klasser för att skapa ett interaktivt Windows PowerShell-gränssnitt.</span><span class="sxs-lookup"><span data-stu-id="eb10f-112">Building a console application that uses these host classes to build an interactive Windows PowerShell shell.</span></span>
+- <span data-ttu-id="50acc-110">Att skapa ett konsolprogram som använder dessa värden klasser för att skapa ett interaktivt Windows PowerShell-gränssnitt.</span><span class="sxs-lookup"><span data-stu-id="50acc-110">Building a console application that uses these host classes to build an interactive Windows PowerShell shell.</span></span>
 
-- <span data-ttu-id="eb10f-113">Skapa en `$profile` variabeln och läser in följande profiler.</span><span class="sxs-lookup"><span data-stu-id="eb10f-113">Creating a `$profile` variable and loading the following profiles.</span></span>
+- <span data-ttu-id="50acc-111">Skapa en `$profile` variabeln och läser in följande profiler.</span><span class="sxs-lookup"><span data-stu-id="50acc-111">Creating a `$profile` variable and loading the following profiles.</span></span>
 
-  - <span data-ttu-id="eb10f-114">aktuell användare, aktuella värden</span><span class="sxs-lookup"><span data-stu-id="eb10f-114">current user, current host</span></span>
+  - <span data-ttu-id="50acc-112">aktuell användare, aktuella värden</span><span class="sxs-lookup"><span data-stu-id="50acc-112">current user, current host</span></span>
 
-  - <span data-ttu-id="eb10f-115">aktuell användare, alla värdar</span><span class="sxs-lookup"><span data-stu-id="eb10f-115">current user, all hosts</span></span>
+  - <span data-ttu-id="50acc-113">aktuell användare, alla värdar</span><span class="sxs-lookup"><span data-stu-id="50acc-113">current user, all hosts</span></span>
 
-  - <span data-ttu-id="eb10f-116">alla användare, aktuella värden</span><span class="sxs-lookup"><span data-stu-id="eb10f-116">all users, current host</span></span>
+  - <span data-ttu-id="50acc-114">alla användare, aktuella värden</span><span class="sxs-lookup"><span data-stu-id="50acc-114">all users, current host</span></span>
 
-  - <span data-ttu-id="eb10f-117">alla användare, alla värdar</span><span class="sxs-lookup"><span data-stu-id="eb10f-117">all users, all hosts</span></span>
+  - <span data-ttu-id="50acc-115">alla användare, alla värdar</span><span class="sxs-lookup"><span data-stu-id="50acc-115">all users, all hosts</span></span>
 
-- <span data-ttu-id="eb10f-118">Implementera de [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) gränssnitt.</span><span class="sxs-lookup"><span data-stu-id="eb10f-118">Implement the [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.</span></span>
+- <span data-ttu-id="50acc-116">Implementera de [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) gränssnitt.</span><span class="sxs-lookup"><span data-stu-id="50acc-116">Implement the [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.</span></span>
 
-- <span data-ttu-id="eb10f-119">Implementera de [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) gränssnittet för att stödja interaktiva fjärrkommunikation med hjälp av den [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) och [ Avsluta-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdletar.</span><span class="sxs-lookup"><span data-stu-id="eb10f-119">Implement the [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface to support interactive remoting by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.</span></span>
-- <span data-ttu-id="eb10f-120">Implementera de [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) gränssnittet för att stödja interaktiva fjärrkommunikation med hjälp av den [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) och [ Avsluta-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdletar.</span><span class="sxs-lookup"><span data-stu-id="eb10f-120">Implement the [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface to support interactive remoting by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.</span></span>
+- <span data-ttu-id="50acc-117">Implementera de [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) gränssnittet för att stödja interaktiva fjärrkommunikation med hjälp av den [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) och [ Avsluta-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdletar.</span><span class="sxs-lookup"><span data-stu-id="50acc-117">Implement the [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface to support interactive remoting by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.</span></span>
 
-## <a name="example"></a><span data-ttu-id="eb10f-121">Exempel</span><span class="sxs-lookup"><span data-stu-id="eb10f-121">Example</span></span>
+## <a name="example"></a><span data-ttu-id="50acc-118">Exempel</span><span class="sxs-lookup"><span data-stu-id="50acc-118">Example</span></span>
 
- <span data-ttu-id="eb10f-122">Det här exemplet används att ange kommandon i Kommandotolken, bearbetar dessa kommandon och skriver sedan ut resultaten.</span><span class="sxs-lookup"><span data-stu-id="eb10f-122">This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.</span></span>
+ <span data-ttu-id="50acc-119">Det här exemplet används att ange kommandon i Kommandotolken, bearbetar dessa kommandon och skriver sedan ut resultaten.</span><span class="sxs-lookup"><span data-stu-id="50acc-119">This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -403,9 +401,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="eb10f-123">Exempel</span><span class="sxs-lookup"><span data-stu-id="eb10f-123">Example</span></span>
+## <a name="example"></a><span data-ttu-id="50acc-120">Exempel</span><span class="sxs-lookup"><span data-stu-id="50acc-120">Example</span></span>
 
- <span data-ttu-id="eb10f-124">Följande kod är implementeringen av den [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) klass som används av den här värdprogrammet.</span><span class="sxs-lookup"><span data-stu-id="eb10f-124">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="eb10f-125">De element som inte har implementerats utlöser ett undantag eller returnera någonting.</span><span class="sxs-lookup"><span data-stu-id="eb10f-125">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="50acc-121">Följande kod är implementeringen av den [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) klass som används av den här värdprogrammet.</span><span class="sxs-lookup"><span data-stu-id="50acc-121">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="50acc-122">De element som inte har implementerats utlöser ett undantag eller returnera någonting.</span><span class="sxs-lookup"><span data-stu-id="50acc-122">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -636,9 +634,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="eb10f-126">Exempel</span><span class="sxs-lookup"><span data-stu-id="eb10f-126">Example</span></span>
+## <a name="example"></a><span data-ttu-id="50acc-123">Exempel</span><span class="sxs-lookup"><span data-stu-id="50acc-123">Example</span></span>
 
- <span data-ttu-id="eb10f-127">Följande kod är implementeringen av den [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) klass som används av den här värdprogrammet.</span><span class="sxs-lookup"><span data-stu-id="eb10f-127">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
+ <span data-ttu-id="50acc-124">Följande kod är implementeringen av den [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) klass som används av den här värdprogrammet.</span><span class="sxs-lookup"><span data-stu-id="50acc-124">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1155,9 +1153,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="eb10f-128">Exempel</span><span class="sxs-lookup"><span data-stu-id="eb10f-128">Example</span></span>
+## <a name="example"></a><span data-ttu-id="50acc-125">Exempel</span><span class="sxs-lookup"><span data-stu-id="50acc-125">Example</span></span>
 
- <span data-ttu-id="eb10f-129">Följande kod är implementeringen av den [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) klass som används av den här värdprogrammet.</span><span class="sxs-lookup"><span data-stu-id="eb10f-129">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="eb10f-130">De element som inte har implementerats utlöser ett undantag eller returnera någonting.</span><span class="sxs-lookup"><span data-stu-id="eb10f-130">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="50acc-126">Följande kod är implementeringen av den [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) klass som används av den här värdprogrammet.</span><span class="sxs-lookup"><span data-stu-id="50acc-126">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="50acc-127">De element som inte har implementerats utlöser ett undantag eller returnera någonting.</span><span class="sxs-lookup"><span data-stu-id="50acc-127">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1367,10 +1365,10 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="eb10f-131">Se även</span><span class="sxs-lookup"><span data-stu-id="eb10f-131">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="50acc-128">Se även</span><span class="sxs-lookup"><span data-stu-id="50acc-128">See Also</span></span>
 
- [<span data-ttu-id="eb10f-132">System.Management.Automation.Host.PSHost</span><span class="sxs-lookup"><span data-stu-id="eb10f-132">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
+ [<span data-ttu-id="50acc-129">System.Management.Automation.Host.PSHost</span><span class="sxs-lookup"><span data-stu-id="50acc-129">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [<span data-ttu-id="eb10f-133">System.Management.Automation.Host.Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="eb10f-133">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [<span data-ttu-id="50acc-130">System.Management.Automation.Host.Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="50acc-130">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [<span data-ttu-id="eb10f-134">System.Management.Automation.Host.Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="eb10f-134">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [<span data-ttu-id="50acc-131">System.Management.Automation.Host.Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="50acc-131">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
