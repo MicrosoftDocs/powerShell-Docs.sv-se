@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
 caps.latest.revision: 21
-ms.openlocfilehash: 4dfe27a5105d82fa18e35f965f92fad16d390a2a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 437b3d6bb62fdd3a74f3392ec71df360c01a1974
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848064"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056659"
 ---
 # <a name="format-schema-xml-reference"></a>XML-referens för formatschema
 
@@ -81,7 +81,7 @@ I det här avsnittet beskrivs de XML-element som används genom att formatera (F
 
 [DefaultSettings Element (Format)](./defaultsettings-element-format.md) definierar vanliga inställningar som gäller för alla vyer i filen formatering. Vanliga inställningar inkluderar visar fel, radbrytning i tabeller, definiera hur samlingar har expanderats och mycket annat.
 
-[DisplayError Element (Frmat)](./displayerror-element-format.md) anger att strängen #ERR visas när ett fel uppstår visar en typ av data.
+[DisplayError Element (Format)](./displayerror-element-format.md) anger att strängen #ERR visas när ett fel uppstår visar en typ av data.
 
 [EntrySelectedBy Element för CustomEntry för kontroller för konfiguration (Format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md) definierar vilka typer av .NET som använder definitionen av den vanliga kontrollen eller villkor som måste finnas för den här kontrollen som ska användas. Det här elementet används när du definierar en gemensam kontroll som kan användas av alla vyer i filen formatering.
 
@@ -235,7 +235,7 @@ I det här avsnittet beskrivs de XML-element som används genom att formatera (F
 
 [PropertyName-Element för SelectionCondition för GroupBy (Format)](./propertyname-element-for-selectioncondition-for-groupby-format.md) anger egenskapen .NET som utlöser villkoret. När den här egenskapen finns eller att inventera till `true`villkoret uppfylls och definitionen används. Det här elementet används när du definierar hur en ny grupp med objekt visas.
 
-[PropertyName-Element för SelectionCondition för EmtrySelectedBy för ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) anger egenskapen .NET som utlöser villkoret. När den här egenskapen finns eller att inventera till `true`villkoret uppfylls och kortet används.
+[PropertyName-Element för SelectionCondition för EntrySelectedBy för ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) anger egenskapen .NET som utlöser villkoret. När den här egenskapen finns eller att inventera till `true`villkoret uppfylls och kortet används.
 
 [PropertyName-Element för SelectionCondition för EntrySelectedBy för TableRowEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md) anger egenskapen .NET som utlöser villkoret. När den här egenskapen finns eller att inventera till `true`villkoret uppfylls och tabellposten används.
 
@@ -363,7 +363,7 @@ I det här avsnittet beskrivs de XML-element som används genom att formatera (F
 
 [TableRowEntries Element (Format)](./tablerowentries-element-for-tablecontrol-format.md) definierar raderna i tabellen.
 
-[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) definierar de data som visas i en rad i tabellen.
+[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md) definierar de data som visas i en rad i tabellen.
 
 [Textelement för CustomItem för kontroller för konfiguration (Format)](./text-element-for-customitem-for-controls-for-configuration-format.md) anger text som läggs till i de data som visas av kontroll, till exempel en etikett, hakparenteser för att skriva data och blanksteg dra in data. Det här elementet används när du definierar en gemensam kontroll som kan användas av alla vyer i filen formatering.
 
@@ -427,7 +427,7 @@ I det här avsnittet beskrivs de XML-element som används genom att formatera (F
 
 [Bredd-Element (Format)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md) anger bredden (i antal tecken) för en kolumn.
 
-[Omsluta Element (Format)](./wrap-element-for-tablerowentry-for-tablecontrl-format.md) anger att text som överskrider kolumnbredden visas på nästa rad.
+[Omsluta Element (Format)](./wrap-element-for-tablerowentry-for-tablecontrol-format.md) anger att text som överskrider kolumnbredden visas på nästa rad.
 
 [WrapTables Element (Format)](./wraptables-element-format.md) anger att data i en tabellcell flyttas till nästa rad om data är längre än bredden på kolumnen.
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
-ms.openlocfilehash: 832527ea4b042812c39934cd7e124201c6dc2ea4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850661"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057373"
 ---
 # <a name="creating-a-table-view"></a>Skapa en tabellvy
 
@@ -95,7 +95,7 @@ Följande XML-element används för att definiera en listvy:
 
 2. Den [TableColumnHeader](./tablecolumnheader-element-format.md) elementet definierar vad som visas överst i en kolumn i tabellen. Ange de här elementen i den ordning som du vill att de rubriker som visas.
 
-   Det finns ingen gräns för hur många av dessa element som du kan använda, men antalet [TableColumnHeader](./tablecolumnheader-element-format.md) element i tabellvyn måste vara lika med antalet [TableRowEntry](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) element som du använder.
+   Det finns ingen gräns för hur många av dessa element som du kan använda, men antalet [TableColumnHeader](./tablecolumnheader-element-format.md) element i tabellvyn måste vara lika med antalet [TableRowEntry](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md) element som du använder.
 
 3. Den [etikett](./label-element-for-tablecolumnheader-for-tablecontrol-format.md) elementet anger den text som visas. Det här elementet är valfritt.
 
@@ -136,7 +136,7 @@ Följande XML-element kan användas för att ange definitioner för en rad:
 
 - Den [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md) elementet anger de objekt som visas som en viss definition. Det här elementet är valfritt och krävs bara när du definierar flera [TableRowEntry](./listentry-element-for-listcontrol-format.md) element som visar olika objekt.
 
-- Den [omsluta](./wrap-element-for-tablerowentry-for-tablecontrl-format.md) elementet anger att text som överskrider kolumnbredden visas på nästa rad. Som standard trunkeras text som överskrider kolumnbredden.
+- Den [omsluta](./wrap-element-for-tablerowentry-for-tablecontrol-format.md) elementet anger att text som överskrider kolumnbredden visas på nästa rad. Som standard trunkeras text som överskrider kolumnbredden.
 
 - Den [TableColumnItems](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md) elementet definierar de egenskaper eller skript som vars värden visas i raden.
 

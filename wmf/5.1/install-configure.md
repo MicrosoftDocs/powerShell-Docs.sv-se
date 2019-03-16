@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: WMF, powershell, inställning
 contributor: keithb
 title: Installera och konfigurera WMF 5.1
-ms.openlocfilehash: e5590d48d467506270ccef4089513e1afade07be
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: c439d0851189a89a81fa38194632dc54475a001d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795580"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055994"
 ---
 # <a name="install-and-configure-wmf-51"></a>Installera och konfigurera WMF 5.1
 
@@ -34,7 +34,8 @@ Hämta WMF 5.1-paketet för operativsystemet och arkitektur som du vill installe
 
 ## <a name="install-wmf-51-for-windows-server-2008-r2-and-windows-7"></a>Installera WMF 5.1 för Windows Server 2008 R2 och Windows 7
 
-> **Obs:** Installationsinstruktioner för Windows Server 2008 R2 och Windows 7 har ändrats och skiljer sig från anvisningarna för de andra paketen. Installationsinstruktioner för Windows Server 2012 R2, Windows Server 2012 och Windows 8.1 finns nedan.
+> [!NOTE]
+> Installationsinstruktioner för Windows Server 2008 R2 och Windows 7 har ändrats och skiljer sig från anvisningarna för de andra paketen. Installationsinstruktioner för Windows Server 2012 R2, Windows Server 2012 och Windows 8.1 finns nedan.
 
 **Installera WMF 5.1 på Windows Server 2008 R2 och Windows 7**
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: cbc8ce0600553f9e9ab973d6f92ea5eafde310e2
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 40454f880b57d5b3a8a8ded21c8c97aebba027fe
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57430047"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055078"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Skapa en Windows PowerShell-navigeringsprovider
 
@@ -154,9 +154,9 @@ Navigering leverantören .NET-klass kan deklarera provider-funktionerna i Expand
 
 Som standard åsidosättningar av den här metoden bör inte flytta objekt över befintliga objekt om de [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) är inställd på `true`. Till exempel filsystem providern kopierar inte c:\temp\abc.txt över en befintlig c:\bar.txt-fil, såvida inte den [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) är inställd på `true`. Om sökvägen som angetts i den `destination` parametern finns och är en behållare i [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) egenskapen är inte obligatoriskt. I det här fallet [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) ska flytta det objektet som anges av den `path` parametern till behållaren som anges av den `destination` parametern som en underordnad.
 
-Implementeringen av den [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metoden ska anropa [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och kontrollera dess returvärdet innan du gör några ändringar i datalagret. Den här metoden används för att bekräfta körning av en åtgärd när en ändring görs i systemtillståndet, till exempel ta bort filer. [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) skickar namnet på resursen som ska ändras till användaren, med hänsyn till alla inställningar för kommandoraden eller variabler i Windows PowerShell-körningsmiljön bestämma vad som ska visas för användaren.
+Implementeringen av den [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metoden ska anropa [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och kontrollera dess returvärdet innan du gör några ändringar i datalagret. Den här metoden används för att bekräfta körning av en åtgärd när en ändring görs i systemtillståndet, till exempel ta bort filer. [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) skickar namnet på resursen som ska ändras till användaren, med hänsyn till alla inställningar för kommandoraden eller variabler i Windows PowerShell-körningsmiljön bestämma vad som ska visas för användaren.
 
-Efter anropet till [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar `true`, [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metoden ska anropa den [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) metod. Den här metoden skickar ett meddelande till användaren att godkänna feedback att säga om åtgärden bör behållas. Leverantören bör anropa [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) som ytterligare en kontroll efter ändringar av potentiellt skadliga system.
+Efter anropet till [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar `true`, [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metoden ska anropa den [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) metod. Den här metoden skickar ett meddelande till användaren att godkänna feedback att säga om åtgärden bör behållas. Leverantören bör anropa [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) som ytterligare en kontroll efter ändringar av potentiellt skadliga system.
 
 ## <a name="attaching-dynamic-parameters-to-the-move-item-cmdlet"></a>Bifoga dynamiska parametrar till cmdleten Move-objekt
 

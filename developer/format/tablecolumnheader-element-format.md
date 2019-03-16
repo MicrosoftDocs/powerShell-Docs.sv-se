@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
 caps.latest.revision: 19
-ms.openlocfilehash: 15f47c97ac5d55cb76e153af86672b3ffaf176c9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848631"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057883"
 ---
 # <a name="tablecolumnheader-element-format"></a>TableColumnHeader-element (format)
 
@@ -45,7 +45,7 @@ Ingen.
 |-------------|-----------------|
 |[Etikettelement för TableColumnHeader för TableControl (Format)](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|Valfritt element.<br /><br /> Definierar den etikett som visas överst i kolumnen. Om ingen etikett har angetts används namnet på egenskapen vars värde visas på raderna.|
 |[Bredd-Element för TableColumnHeader för TableControl (Format)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|Element som krävs.<br /><br /> Anger bredden (i antal tecken) för kolumnen.|
-|[Justering Element för TableColumbnHeader för TableControl (Format)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|Valfritt element.<br /><br /> Anger hur kolumnen etiketten ska visas. Om ingen justering anges justeras etiketten till vänster.|
+|[Justering Element för TableColumnHeader för TableControl (Format)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|Valfritt element.<br /><br /> Anger hur kolumnen etiketten ska visas. Om ingen justering anges justeras etiketten till vänster.|
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -82,7 +82,7 @@ I följande exempel visas två `TableColumnHeader` element. Det första elemente
 
 ## <a name="see-also"></a>Se även
 
-[Justering Element för TableColumnHeader för TableContrl (Format)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[Justering Element för TableColumnHeader för TableControl (Format)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
 [Skapa en tabellvy](./creating-a-table-view.md)
 

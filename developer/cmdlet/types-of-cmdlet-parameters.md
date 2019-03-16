@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6602730d-3892-4656-80c7-7bca2d14337f
 caps.latest.revision: 14
-ms.openlocfilehash: 59921a92661482b8d518b82f490c9879643543bb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f5781c0c03aca41d01a44598a9a8c00d6d21d2fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849520"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059583"
 ---
 # <a name="types-of-cmdlet-parameters"></a>Typer av cmdlet-parametrar
 
@@ -91,13 +91,13 @@ private string userName;
 
 ## <a name="switch-parameters"></a>Växla parametrar
 
-Windows PowerShell tillhandahåller en [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) typ som kan du definiera en parameter vars värde ställs automatiskt in `false` om parametern inte anges när cmdlet anropas. När det är möjligt använda växeln parametrar i stället för booleska parametrar.
+Windows PowerShell tillhandahåller en [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) typ som kan du definiera en parameter vars värde ställs automatiskt in `false` om parametern inte anges när cmdlet anropas. När det är möjligt använda växeln parametrar i stället för booleska parametrar.
 
 Överväg följande exempel. Som standard skickar inte ett utdataobjekt av pipelinen i flera Windows PowerShell-cmdletar. Dessa cmdletar har dock en `PassThru` växla parametern som åsidosätter standardbeteendet. Om den `PassThru` parametern anges när dessa cmdletar kallas, cmdleten returnerar ett utdataobjekt till pipelinen.
 
-Om du behöver ha ett standardvärde för parametern `true` om parametern inte anges i anropet du överväga att byta plats uppfattning parametern. För exemplet, i stället för ett booleskt värde för att ställa in parameterattributet `true`, deklarera egenskapen som den [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) skriver och sedan ange standardvärdet för parametern ska `false`.
+Om du behöver ha ett standardvärde för parametern `true` om parametern inte anges i anropet du överväga att byta plats uppfattning parametern. För exemplet, i stället för ett booleskt värde för att ställa in parameterattributet `true`, deklarera egenskapen som den [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) skriver och sedan ange standardvärdet för parametern ska `false`.
 
-Om du vill definiera en växlingsparametern deklarera egenskapen som den [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) skriver, enligt följande exempel.
+Om du vill definiera en växlingsparametern deklarera egenskapen som den [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) skriver, enligt följande exempel.
 
 ```csharp
 [Parameter(Position = 1)]

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
-ms.openlocfilehash: a4b228be91bba27670b26fe21e765ae942afe968
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3f6bcd2e4ef4d9c404b3a5deeaa9f25d3fa42ec1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850115"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056523"
 ---
 # <a name="required-development-guidelines"></a>Obligatoriska riktlinjer för utveckling
 
@@ -107,7 +107,7 @@ När du namnger cmdletar, Använd inte någon av följande specialtecken.
 |%|procenttecken|
 |+|plustecken|
 |=|likhetstecken|
-|~|tilda|
+|~|tilde|
 
 ### <a name="parameters-names-that-cannot-be-used-rd03"></a>Namn på parametrar som inte får återanvändas (RD03)
 
@@ -122,9 +122,9 @@ Att göra dessa anrop som cmdlet: en måste ange att den stöder begäranden om 
 > [!NOTE]
 > Om Cmdlet-attributet i cmdlet-klassen anger att cmdleten har stöd för anrop till den [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod och cmdleten inte kan göra anrop till den [ System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metoden användaren kan ändra systemet oväntat.
 
-Använd den [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod för ändringar system. En användarinställning och `Whatif` parameterkontroll den [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod. Däremot den [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) anrop utför ytterligare en kontroll efter potentiellt skadliga ändringar. Den här metoden inte kontrolleras av alla ANVÄNDARPREFERENSER eller `Whatif` parametern. Om cmdlet: anropar den [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metod, som den ska ha en `Force` parameter som förbigår anrop till dessa två metoder och som fortsätter med åtgärden. Detta är viktigt eftersom den tillåter din cmdlet som ska användas i icke-interaktivt skript och värdar.
+Använd den [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod för ändringar system. En användarinställning och `WhatIf` parameterkontroll den [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod. Däremot den [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) anrop utför ytterligare en kontroll efter potentiellt skadliga ändringar. Den här metoden inte kontrolleras av alla ANVÄNDARPREFERENSER eller `WhatIf` parametern. Om cmdlet: anropar den [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metod, som den ska ha en `Force` parameter som förbigår anrop till dessa två metoder och som fortsätter med åtgärden. Detta är viktigt eftersom den tillåter din cmdlet som ska användas i icke-interaktivt skript och värdar.
 
-Om dina cmdletar stöder dessa anrop, kan användaren avgöra om åtgärden faktiskt ska utföras. Till exempel den [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) cmdlet-anrop i [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoden innan den stoppar en uppsättning viktiga processer, inklusive System, Winlogon, och Spoolsrv processer.
+Om dina cmdletar stöder dessa anrop, kan användaren avgöra om åtgärden faktiskt ska utföras. Till exempel den [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) cmdlet-anrop i [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoden innan den stoppar en uppsättning viktiga processer, inklusive System, Winlogon, och Spoolsv processer.
 
 Läs mer om att stödja dessa metoder, [begär bekräftelse](./requesting-confirmation-from-cmdlets.md).
 

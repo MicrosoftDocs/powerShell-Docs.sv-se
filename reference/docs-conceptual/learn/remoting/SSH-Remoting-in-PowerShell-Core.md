@@ -2,12 +2,12 @@
 title: PowerShell fjärrkommunikation via SSH
 description: Fjärrkommunikation i PowerShell Core med hjälp av SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: 87ab967a30782a6ac4d86737cd1702a0ebd6ebc5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687134"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056540"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell fjärrkommunikation via SSH
 
@@ -62,7 +62,7 @@ SSH måste installeras på alla datorer. Installera både SSH-klienten (`ssh.exe
      > [!NOTE]
      > Det finns en bugg i OpenSSH för Windows som förhindrar att blanksteg fungerar i undersystemet körbara sökvägar. Mer information finns i [problemet GitHub](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
-     En lösning är att skapa en symlink till installationskatalogen för Powershell som saknar blanksteg:
+     En lösning är att skapa en symlink till installationskatalogen för PowerShell som saknar blanksteg:
 
      ```powershell
      mklink /D c:\pwsh "C:\Program Files\PowerShell\6"

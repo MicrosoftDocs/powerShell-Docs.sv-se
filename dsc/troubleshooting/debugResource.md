@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Felsöka DSC-resurser
-ms.openlocfilehash: 9b2e7dd9b42332b869c4d7fabb21bd4b5a6b8800
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683956"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055588"
 ---
 # <a name="debugging-dsc-resources"></a>Felsöka DSC-resurser
 
 > Gäller för: Windows PowerShell 5.0
 
-I PowerShell 5.0 introducerades en ny funktion i önskat tillstånd Anpassningsdelar (DSC) som hjälper dig att felsöka en DSC-resurs som en konfiguration som används.
+I PowerShell 5.0 introducerades en ny funktion i Desired State Configuration (DSC) som hjälper dig att felsöka en DSC-resurs som en konfiguration som används.
 
 ## <a name="enabling-dsc-debugging"></a>Aktivera felsökning av DSC
 Innan du kan felsöka en resurs, måste du aktivera felsökning genom att anropa den [aktivera DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) cmdlet.

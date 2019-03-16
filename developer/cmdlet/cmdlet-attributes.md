@@ -11,12 +11,12 @@ helpviewer_keywords:
 - attributes [PowerShell SDK], described
 ms.assetid: d3f4f652-d929-4c27-9358-9baa390a094c
 caps.latest.revision: 14
-ms.openlocfilehash: b06faf7204213b383b25685837941ad63dcb225b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 326cd408e86402974569fc76d5e473be5a56f0b6
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845355"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055180"
 ---
 # <a name="cmdlet-attributes"></a>Cmdlet-attribut
 
@@ -32,7 +32,7 @@ Windows PowerShell definierar flera attribut som du kan använda för att lägga
 
 [Cmdlet: en deklaration av attribut](./cmdlet-attribute-declaration.md) beskriver hur du definierar en .NET Framework-klass som en cmdlet.
 
-[Autentiseringsuppgifter för attributet deklarationen](./credential-attribute-declaration.md) beskriver hur du lägger till stöd för att konvertera strängen mata in en [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) objekt.
+[Autentiseringsuppgifter för attributet deklarationen](./credential-attribute-declaration.md) beskriver hur du lägger till stöd för att konvertera strängen mata in en [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) objekt.
 
 [OutputType-attributet deklarationen](./outputtype-attribute-declaration.md) beskriver hur du anger .NET Framework-typer som returneras av cmdlet: en.
 

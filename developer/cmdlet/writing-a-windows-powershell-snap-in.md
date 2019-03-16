@@ -10,12 +10,12 @@ helpviewer_keywords:
 - snap-ins [PowerShell SDK], PSSnapin example
 ms.assetid: 875024f4-e02b-4416-80b9-af5e5b50aad6
 caps.latest.revision: 7
-ms.openlocfilehash: d4f57c062fee09e85c290445082be745ab229985
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 0c99f4bcfe5e2d34d31714dc85a53b5e8abe0925
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795043"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057798"
 ---
 # <a name="writing-a-windows-powershell-snap-in"></a>Skriva en Windows PowerShell-snapin-modul
 
@@ -27,7 +27,7 @@ Med den här typen av snapin-modulen kan väljer du inte vilka cmdlets och provi
 
 1. Lägg till attributet RunInstallerAttribute.
 
-2. Skapa en offentlig klass som härleds från den [System.Management.Automation.Pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn) klass.
+2. Skapa en offentlig klass som härleds från den [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) klass.
 
     I det här exemplet är namnet på klassen ”GetProcPSSnapIn01”.
 

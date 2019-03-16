@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Cmdlet attribute
 ms.assetid: 1d323332-f773-4c0e-8a69-2aada765afb2
 caps.latest.revision: 12
-ms.openlocfilehash: 2bc03aaade1f18d48f65ecf5f9ee437ffaf07f92
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6887467ad5ccafe6edf8f03f531b4750133aa9e9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56852012"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058036"
 ---
 # <a name="cmdlet-attribute-declaration"></a>Deklaration av attributet Cmdlet
 
@@ -36,9 +36,9 @@ Attributet cmdleten identifierar en Microsoft .NET Framework-klass som en cmdlet
 
 `NounName` ([System.String](/dotnet/api/System.String)) krävs. Anger cmdlet-substantiv. Den här substantiv anger den resurs som cmdleten agerar på. Läs mer om cmdlet-substantiv [Cmdlet deklarationen](./cmdlet-class-declaration.md) och [starkt uppmuntras riktlinjer för utveckling](./strongly-encouraged-development-guidelines.md).
 
-`SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean)) valfritt med namnet parametern. `True` Anger att cmdleten stöder anrop till den [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metoden, vilket ger ett sätt att fråga användaren innan en åtgärd som ändrar systemet utförs cmdlet: en. `False`, standardvärdet anger att cmdleten inte stöder anrop till den [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod. Läs mer om begäranden om händelsebekräftelse [begär bekräftelse](./requesting-confirmation-from-cmdlets.md).
+`SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean)) valfritt med namnet parametern. `True` Anger att cmdleten stöder anrop till den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metoden, vilket ger ett sätt att fråga användaren innan en åtgärd som ändrar systemet utförs cmdlet: en. `False`, standardvärdet anger att cmdleten inte stöder anrop till den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod. Läs mer om begäranden om händelsebekräftelse [begär bekräftelse](./requesting-confirmation-from-cmdlets.md).
 
-`ConfirmImpact` ([System.Management.Automation.Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) valfritt med namnet parametern. Anger när åtgärden för cmdlet: en ska bekräftas av ett anrop till den [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod. [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ska endast anropas när ConfirmImpact värdet för cmdlet: en (som standard, medel) är lika med eller större än värdet för den `$ConfirmPreference` variabeln. Den här parametern anges endast när den `SupportsShouldProcess` parameter har angetts.
+`ConfirmImpact` ([System.Management.Automation.Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) valfritt med namnet parametern. Anger när åtgärden för cmdlet: en ska bekräftas av ett anrop till den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod. [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ska endast anropas när ConfirmImpact värdet för cmdlet: en (som standard, medel) är lika med eller större än värdet för den `$ConfirmPreference` variabeln. Den här parametern anges endast när den `SupportsShouldProcess` parameter har angetts.
 
 `DefaultParameterSetName` ([System.String](/dotnet/api/System.String)) valfritt med namnet parametern. Anger den standardparametern anger att Windows PowerShell-runtime försöker använda när den inte kan avgöra vilken parametern inställd på att använda. Observera att den här situationen kan tas bort genom att göra unika parametern för varje parameter som anger en obligatorisk parameter.
 
@@ -54,9 +54,9 @@ Det är ett fall där Windows PowerShell inte kan använda standardparameter ang
 
 **VerbName NounName**
 
-- Alla cmdletar som ändrar resurser utanför Windows PowerShell ska innehålla den `SupportsShouldProcess` nyckelord när Cmdlet-attributet har deklarerats, vilket gör att cmdleten för att anropa den [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metoden innan cmdlet utför åtgärden. Om den [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -anrop returnerar `false`, åtgärden bör inte vidtas. Mer information om bekräftelse begäranden genererade av den [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anropa, se [begär bekräftelse](./requesting-confirmation-from-cmdlets.md).
+- Alla cmdletar som ändrar resurser utanför Windows PowerShell ska innehålla den `SupportsShouldProcess` nyckelord när Cmdlet-attributet har deklarerats, vilket gör att cmdleten för att anropa den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metoden innan cmdlet utför åtgärden. Om den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -anrop returnerar `false`, åtgärden bör inte vidtas. Mer information om bekräftelse begäranden genererade av den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anropa, se [begär bekräftelse](./requesting-confirmation-from-cmdlets.md).
 
-Den `Confirm` och `WhatIf` cmdlet-parametrarna är endast tillgängliga för cmdletar som stöder [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anrop.
+Den `Confirm` och `WhatIf` cmdlet-parametrarna är endast tillgängliga för cmdletar som stöder [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anrop.
 
 ## <a name="example"></a>Exempel
 

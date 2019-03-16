@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7c265084-e072-46ca-9844-c3c0e275d6b0
 caps.latest.revision: 7
-ms.openlocfilehash: eb3624bea589e2ab0d7b4f76874e073b942c001f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fdf0036c68b608d254ed928ae9ac58616a856200
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851123"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059515"
 ---
 # <a name="runspace10-sample"></a>Runspace10 – exempel
 
@@ -37,7 +37,7 @@ Detta exempel visar följande.
 
 - Att lägga till kommandot i pipelinen av den [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objekt.
 
-- Extraherar egenskaperna från den [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objekt som returneras av kommandot.
+- Extraherar egenskaperna från den [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objekt som returneras av kommandot.
 
 ## <a name="example"></a>Exempel
 

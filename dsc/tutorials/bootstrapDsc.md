@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Konfigurera en virtuell dator vid första uppstart med hjälp av DSC
-ms.openlocfilehash: 2ae6f7a85af3d08bad9e97b90efaefb2ff8410ca
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f9634c330832e23fb2c6f08c5b299b55a5505ac9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686910"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059430"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>Konfigurera en virtuell dator vid första uppstart med hjälp av DSC
 
@@ -140,7 +140,7 @@ configuration PullClientBootstrap
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
    ```
 
-2. [Konfigurera en DSC-webbpullserver](../pull-server/pullServer.md), och spara den **SampleIISInistall** konfiguration till rätt mapp.
+2. [Konfigurera en DSC-webbpullserver](../pull-server/pullServer.md), och spara den **SampleIISInstall** konfiguration till rätt mapp.
 
 3. På en dator med PowerShell 5.0 eller senare, spara ovan metaconfiguration (**PullClientBootstrap**) som en PowerShell-skriptfil (.ps1).
 

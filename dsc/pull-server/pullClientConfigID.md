@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Konfigurera en Pull-klient som använder konfigurations-ID i PowerShell 5.0 och senare
-ms.openlocfilehash: 8d8cf478f9127e1b7005d1b9e832e84b11612c9c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 14db98d240bc87aca3ee985db08c14b7c65d8bb8
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405122"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055724"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Konfigurera en Pull-klient som använder konfigurations-ID i PowerShell 5.0 och senare
 
@@ -23,7 +23,8 @@ Innan du konfigurerar en pullklient, bör du ställa in en pull-server. Även om
 
 Varje målnoden kan konfigureras för att hämta konfigurationer, resurser, och även rapportera statusen. I avsnitten nedan visar hur du konfigurerar en hämtningsklient med en SMB-resursen eller HTTP DSC-Hämtningsservern. När nodens LCM uppdaterar kommer det att kontakta konfigurerade platsen för att hämta alla tilldelade konfigurationer. Om alla nödvändiga resurser inte finns på noden, kommer den automatiskt hämta dem från den konfigurerade platsen. Om noden är konfigurerad med en [Report Server](reportServer.md), kommer den sedan att rapportera status för åtgärden.
 
-> **Obs**: Det här avsnittet gäller för PowerShell 5.0. Information om hur du konfigurerar en pullklient i PowerShell 4.0 finns i [konfigurera en hämtningsklient med konfigurations-ID i PowerShell 4.0](pullClientConfigID4.md)
+> [!NOTE]
+> Det här avsnittet gäller för PowerShell 5.0. Information om hur du konfigurerar en pullklient i PowerShell 4.0 finns i [konfigurera en hämtningsklient med konfigurations-ID i PowerShell 4.0](pullClientConfigID4.md)
 
 ## <a name="configure-the-pull-client-lcm"></a>Konfigurera en pullklient LCM
 
@@ -51,7 +52,7 @@ Mer information om hur du använder **GUID** i din miljö, se [planera för GUID
 
 Varje klient måste konfigureras i **Pull** läge och angivna pull-serveradress där dess konfiguration lagras. Då har du konfigurerar den lokala Configuration Manager (LCM) med informationen som krävs. Om du vill konfigurera LCM måste du skapa en särskild typ av konfiguration, dekorerad med den **DSCLocalConfigurationManager** attribut. Läs mer om hur du konfigurerar LCM [konfigurerar den lokala Konfigurationshanteraren](../managing-nodes/metaConfig.md).
 
-### <a name="http-dsc-pull-server"></a>HTTP-DSC-Hämtningsserver
+### <a name="http-dsc-pull-server"></a>HTTP DSC Pull Server
 
 Följande skript konfigurerar LCM pull konfigurationer från en server med namnet ”CONTOSO-PullSrv”.
 
@@ -81,7 +82,7 @@ PullClientConfigID
 
 I skriptet den **ConfigurationRepositoryWeb** block definierar hämtningsservern. Den **ServerUrl** anger URL: en för DSC-Pull
 
-### <a name="smb-share"></a>SMB-resurs
+### <a name="smb-share"></a>SMB Share
 
 Följande skript konfigurerar LCM pull konfigurationer från SMB-resurs `\\SMBPullServer\Pull`.
 
@@ -117,7 +118,7 @@ Om du anger bara den **ConfigurationRepositoryWeb** eller **ConfigurationReposit
 > [!NOTE]
 > Du kan kombinera **ConfigurationRepositoryWeb** med **ResourceRepositoryShare** eller **ConfigurationRepositoryShare** med **ResourceRepositoryWeb** . Exempel på detta visas inte nedan.
 
-### <a name="http-dsc-pull-server"></a>HTTP-DSC-Hämtningsserver
+### <a name="http-dsc-pull-server"></a>HTTP DSC Pull Server
 
 Följande metaconfiguration konfigurerar en pullklient för att få dess konfigurationerna från **CONTOSO PullSrv** och dess resurser från **CONTOSO ResourceSrv**.
 
@@ -150,7 +151,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-### <a name="smb-share"></a>SMB-resurs
+### <a name="smb-share"></a>SMB Share
 
 I följande exempel visas en metaconfiguration som ställer in en klient ska pull konfigurationer från SMB-resurs `\\SMBPullServer\Configurations`, och resurser från SMB-resurs `\\SMBPullServer\Resources`.
 
@@ -211,7 +212,7 @@ PullClientConfigID
 
 Som standard skickar noder inte rapporter till en konfigurerad Pull-Server. Du kan använda en enda pull-server för konfigurationer, resurser och rapportering, men du måste skapa en **ReportRepositoryWeb** förhindra om du vill konfigurera rapportering.
 
-### <a name="http-dsc-pull-server"></a>HTTP-DSC-Hämtningsserver
+### <a name="http-dsc-pull-server"></a>HTTP DSC Pull Server
 
 I följande exempel visas en metaconfiguration som ställer in en klient till pull-konfigurationer och resurser och skicka rapportdata till en enda pull-server.
 
@@ -280,7 +281,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-### <a name="smb-share"></a>SMB-resurs
+### <a name="smb-share"></a>SMB Share
 
 En rapportserver får inte vara en SMB-resurs.
 

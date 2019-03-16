@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
 caps.latest.revision: 5
-ms.openlocfilehash: e3289e9336b863b5e0998a2beb29353c82a31f79
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9285a2f0e673de8b86084157423512bdeeda109d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847308"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058205"
 ---
 # <a name="writing-an-item-provider"></a>Skriva en objektprovider
 
@@ -46,7 +46,7 @@ Deklarera providern kan härledas från den [System.Management.Automation.Provid
 
 ### <a name="implementing-getitem"></a>Implementera GetItem
 
-Den [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) anropas av PowerShell-motorn när en användare anropar den [Microsoft.Powershell.Commands.Get-Item](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item) cmdleten på din providern. Metoden returnerar objektet på den angivna sökvägen. I exemplet Access database kontrollerar metoden om objektet är själva enheten, en tabell i databasen, eller en rad i databasen. Metoden skickar objektet till PowerShell-motorn genom att anropa den [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) metod.
+Den [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) anropas av PowerShell-motorn när en användare anropar den [Microsoft.PowerShell.Commands.Get-Item](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item) cmdleten på din providern. Metoden returnerar objektet på den angivna sökvägen. I exemplet Access database kontrollerar metoden om objektet är själva enheten, en tabell i databasen, eller en rad i databasen. Metoden skickar objektet till PowerShell-motorn genom att anropa den [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) metod.
 
 ```csharp
 protected override void GetItem(string path)
@@ -85,7 +85,7 @@ protected override void GetItem(string path)
 
 ### <a name="implementing-setitem"></a>Implementera SetItem
 
-Den [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) metoden anropas av PowerShell-motorn anrop när en användare anropar den [Microsoft.Powershell.Commands.Set-Item](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item) cmdlet . Anger värdet för objektet på den angivna sökvägen.
+Den [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) metoden anropas av PowerShell-motorn anrop när en användare anropar den [Microsoft.PowerShell.Commands.Set-Item](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item) cmdlet . Anger värdet för objektet på den angivna sökvägen.
 
 I exemplet Access-databasen är det praktiskt att ange värdet för ett objekt bara om objektet är en rad, så att metoden utlöser [NotSupportedException](http://msdn.microsoft.com/library/system.notsupportedexception\(v=vs.110\).aspx) när objektet är inte en rad.
 
@@ -145,7 +145,7 @@ protected override void SetItem(string path, object values)
 
 ### <a name="implementing-itemexists"></a>Implementera ItemExists
 
-Den [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) metoden anropas av PowerShell-motorn när en användare anropar den [Microsoft.Powershell.Commands.Test-Path](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path) cmdlet. Metoden anger om det finns ett objekt på den angivna sökvägen. Om objektet finns metoden skickar det tillbaka till PowerShell-motorn genom att anropa [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject).
+Den [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) metoden anropas av PowerShell-motorn när en användare anropar den [Microsoft.PowerShell.Commands.Test-Path](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path) cmdlet. Metoden anger om det finns ett objekt på den angivna sökvägen. Om objektet finns metoden skickar det tillbaka till PowerShell-motorn genom att anropa [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject).
 
 ```csharp
 protected override bool ItemExists(string path)

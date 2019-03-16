@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b99d53fc-0af9-426b-82ce-09955e031d4b
 caps.latest.revision: 13
-ms.openlocfilehash: d919d4ad8554e762230c1448d81b50e27c38ba99
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0fa4a5f804586c51ae6a36121f9aab041b0989cc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851970"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058053"
 ---
 # <a name="cmdlet-samples"></a>Cmdlet-exempel
 
@@ -39,7 +39,7 @@ Det här avsnittet beskrivs exempelkod som har angetts i Windows PowerShell 2.0 
 
 [StopProcessSample04 exempel](./stopprocesssample04-sample.md) det här exemplet visas hur du skriver en cmdlet som deklarerar parameteruppsättningar, anger standardparametern anger och kan acceptera en indataobjektet.
 
-[Events01 exempel](./events01-sample.md) i det här exemplet visar hur du skapar en cmdlet som används att registrera dig för händelser som skapats av [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Med denna cmdlet kan användarna till exempel registrera en åtgärd som ska köras när en fil skapas under en viss katalog. Det här exemplet kommer från den [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) basklassen.
+[Events01 exempel](./events01-sample.md) i det här exemplet visar hur du skapar en cmdlet som används att registrera dig för händelser som skapats av [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Med denna cmdlet kan användarna till exempel registrera en åtgärd som ska köras när en fil skapas under en viss katalog. Det här exemplet kommer från den [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) basklassen.
 
 ## <a name="see-also"></a>Se även
 

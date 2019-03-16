@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Windows PowerShell Integrated Scripting Environment ISE
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3002c2cb7213b1c2d7201dddf5ff3c0651fad767
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683837"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054721"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell® Integrated Scripting Environment (ISE)
 
@@ -34,7 +34,7 @@ Dessa verktyg kan visa kontroller i ett kodfragment med fönster eller loggas i 
 
 **De flesta nyligen använda listan** ingår nu i den öppna menyn för att göra det enklare att komma till de filer som du använder oftast.
 
-**Sammanfogade konsolfönstret**. I tidigare versioner av ISE fanns det separat fönster för kommandot och utdata. De nu kombineras till ett enda fönster att mer direkt imiterar vad som visas i Windows Powershell-konsolen.
+**Sammanfogade konsolfönstret**. I tidigare versioner av ISE fanns det separat fönster för kommandot och utdata. De nu kombineras till ett enda fönster att mer direkt imiterar vad som visas i Windows PowerShell-konsolen.
 
 **Kommandoradsväxlar**. Flera nya kommandoradsväxlar ger dig större kontroll över hur ISE fungerar. NoProfile - startar ISE utan att köra ett skript för profilen. -Help öppnas ett hjälpfönster med ISE. -mta startar ISE i ”flertrådad inneslutning läget”. Standardvärdet är entrådiga.
 

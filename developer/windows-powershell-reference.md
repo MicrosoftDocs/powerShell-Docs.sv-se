@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: dfda6cb68b089a30a156760345420ee80d1d3ae9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 86595ebaac32318a4e3b9a3c4b295c73fb2e1c75
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851088"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055503"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell-referens
 
@@ -47,10 +47,10 @@ Förutom SDK: N för Windows PowerShell innehåller följande resurser mer infor
 
 [System.Management.Automation.Provider](/dotnet/api/System.Management.Automation.Provider) det här namnområdet innehåller klasser, uppräkningar och gränssnitt som krävs för att implementera en Windows PowerShell-providern. I synnerhet de [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) klassen är basklassen providerklasser måste härledas från vilken alla Windows PowerShell.
 
-[Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) det här namnområdet innehåller klasser för cmdlets och providers som implementeras av Windows PowerShell. På samma sätt kan vi rekommenderar att du skapar en *dittnamn*. Kommandon namnområde för cmdletar som du implementerar.
+[Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) det här namnområdet innehåller klasser för cmdlets och providers som implementeras av Windows PowerShell. På samma sätt kan vi rekommenderar att du skapar en *dittnamn*. Kommandon namnområde för cmdletar som du implementerar.
 
 [System.Management.Automation.Host](/dotnet/api/System.Management.Automation.Host) det här namnområdet innehåller klasser, uppräkningar och gränssnitt som cmdlet: en använder för att definiera interaktionen mellan användare och Windows PowerShell.
 
-[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) det här namnområdet innehåller basklasser som används av andra klasser i namnområdet. Till exempel den [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) klassen är basklass för den [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) klass.
+[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) det här namnområdet innehåller basklasser som används av andra klasser i namnområdet. Till exempel den [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) klassen är basklass för den [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) klass.
 
 [System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) det här namnområdet innehåller klasser, uppräkningar och gränssnitt som används för att skapa ett Windows PowerShell-körningsutrymme. I det här sammanhanget är Windows PowerShell-körningsutrymmet det sammanhang där anropa en eller flera pipelines i Windows PowerShell cmdlets. Det vill säga fungerar cmdlets inom ramen för ett Windows PowerShell-körningsutrymme. Mer information aboutWindows PowerShell körningsutrymmen, se [Windows PowerShell-Körningsutrymmen](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).

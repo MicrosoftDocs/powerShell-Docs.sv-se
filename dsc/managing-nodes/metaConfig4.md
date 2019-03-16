@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Konfigurera den lokala Konfigurationshanteraren i tidigare versioner av Windows PowerShell
-ms.openlocfilehash: 945d2dc95304a347ec26f2f66f5a17bfefb90997
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cea32c9aa8144bc52f3d44f2ad852f577f6a5e6d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688863"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055316"
 ---
 # <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>Konfigurera den lokala Konfigurationshanteraren i tidigare versioner av Windows PowerShell
 
@@ -87,7 +87,8 @@ Om du vill tillämpa inställningarna, kan du använda den **Set-DscLocalConfigu
 Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 ```
 
-> **Obs**: För den **sökväg** parameter, måste du ange samma sökväg som du angav för den **OutputPath** parameter när du startade konfigurationen i exemplet ovan.
+> [!NOTE]
+> För den **sökväg** parameter, måste du ange samma sökväg som du angav för den **OutputPath** parameter när du startade konfigurationen i exemplet ovan.
 
 Om du vill visa de aktuella inställningarna för lokala Configuration Manager kan du använda den **Get-DscLocalConfigurationManager** cmdlet.
 Om du anropar den här cmdleten utan parametrar, som standard får den Local Configuration Manager-inställningarna för den nod där du kör den.

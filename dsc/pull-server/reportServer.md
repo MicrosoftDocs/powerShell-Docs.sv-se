@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Använda en DSC-rapportserver
-ms.openlocfilehash: 8647f80c311ee49a5cc4d57360472386e01b044e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 73208477a74ff3c615d7d515fcad555beabe8f32
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686581"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059277"
 ---
 # <a name="using-a-dsc-report-server"></a>Använda en DSC-rapportserver
 
@@ -16,7 +16,8 @@ Gäller för: Windows PowerShell 5.0
 > [!IMPORTANT]
 > Pull-servern (Windows-funktionen *DSC-tjänst*) är en stöds komponent i Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Rekommenderar vi att du påbörjar övergången hanterade klienter [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver Pull-servern på Windows Server) eller en av community-lösningar visas [här](pullserver.md#community-solutions-for-pull-service).
 >
-> **Obs** rapportservern som beskrivs i det här avsnittet är inte tillgänglig i PowerShell 4.0.
+> [!NOTE]
+> Rapportservern som beskrivs i det här avsnittet är inte tillgänglig i PowerShell 4.0.
 
 Den lokala Configuration Manager (LCM) för en nod kan konfigureras för att skicka rapporter om dess Konfigurationsstatus till en pull-server, som sedan kan efterfrågas för att hämta dessa data. Varje gång noden kontrollerar och tillämpar en konfiguration, skickar den en rapport på rapportservern. De här rapporterna lagras i en databas på servern och kan hämtas genom att anropa reporting web service. Varje rapport innehåller information, till exempel vilka konfigurationer har tillämpats och huruvida de lyckades, resurserna som används, eventuella fel som utlöstes, och start- och sluttider.
 

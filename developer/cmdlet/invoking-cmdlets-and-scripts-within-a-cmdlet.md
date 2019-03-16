@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e7040a5c-4a47-42df-a2ea-96b134a4ed9b
 caps.latest.revision: 10
-ms.openlocfilehash: e5dc525a6c80ce135d6d68e12968613056d447e8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f20708ff41d9a6de90090997a875ba5371eccd74
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846244"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058886"
 ---
 # <a name="invoking-cmdlets-and-scripts-within-a-cmdlet"></a>Anropa cmdlets och skript inuti en cmdlet
 
@@ -21,7 +21,7 @@ En cmdlet kan anropa andra cmdlet: ar och skript från i indata metoden-cmdlet: 
 
 ## <a name="the-invoke-method"></a>Den anropa metod
 
-Alla cmdletar kan anropa en befintlig cmdlet genom att anropa den [System.Management.Automation.Cmdlet.Invoke](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) metod inifrån indata som bearbetar metod, till exempel [ System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), det vill säga åsidosätts av cmdlet: en. Men du kan anropa dessa cmdlets som härleds direkt från den [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klass. Du kan inte anropa en cmdlet som härleds från den [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klass.
+Alla cmdletar kan anropa en befintlig cmdlet genom att anropa den [System.Management.Automation.Cmdlet.Invoke](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) metod inifrån indata som bearbetar metod, till exempel [ System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), det vill säga åsidosätts av cmdlet: en. Men du kan anropa dessa cmdlets som härleds direkt från den [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klass. Du kan inte anropa en cmdlet som härleds från den [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klass.
 
 Den [System.Management.Automation.Cmdlet.Invoke*](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) metoden har följande varianter.
 

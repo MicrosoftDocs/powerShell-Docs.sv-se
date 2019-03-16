@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell cmdlet
 title: Installera och använda windows powershell-webbåtkomst
-ms.openlocfilehash: 5517347560b25f032baa77ecc2d769fb1e74ba4f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683830"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056727"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installera och använda Windows PowerShell-webbåtkomst
 
@@ -97,7 +97,7 @@ Du kan installera Windows PowerShell Web Access-gatewayen på en server som kör
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
    > [!NOTE]
-   > Installera Windows PowerShell-webbåtkomst med hjälp av Windows PowerShell-cmdletar läggs inte hanteringsverktyg för webbserver (IIS) som standard. Om du vill installera hanteringsverktygen på samma server som Windows PowerShell Web Access-gatewayen, lägger du till den `-IncludeManagementTools` parameter i installationskommandot (enligt det här steget). Om du hanterar Windows PowerShell Web Access-webbplats från en fjärrdator måste du installera snapin-modulen IIS-hanteraren genom att installera [Remote Server Administration Toolsfor Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) eller [Remote Server Administration Verktyg för Windows 8](https://www.microsoft.com/en-us/download/details.aspx?id=28972) på den dator som du vill hantera gatewayen.
+   > Installera Windows PowerShell-webbåtkomst med hjälp av Windows PowerShell-cmdletar läggs inte hanteringsverktyg för webbserver (IIS) som standard. Om du vill installera hanteringsverktygen på samma server som Windows PowerShell Web Access-gatewayen, lägger du till den `-IncludeManagementTools` parameter i installationskommandot (enligt det här steget). Om du hanterar Windows PowerShell Web Access-webbplats från en fjärrdator måste du installera snapin-modulen IIS-hanteraren genom att installera [Remote Server Administration Tools för Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) eller [Remote Server Administration Verktyg för Windows 8](https://www.microsoft.com/en-us/download/details.aspx?id=28972) på den dator som du vill hantera gatewayen.
 
    Om du vill installera roller och funktioner på en offline-VHD, lägger du till både parametern `-ComputerName` och parametern `-VHD`. Parametern `-ComputerName` innehåller namnet på den server som du vill montera VHD:n på och parametern `-VHD` innehåller sökvägen till VHD-filen på den angivna servern.
 
@@ -178,7 +178,7 @@ Som standard installerar cmdleten webbprogrammet, **pswa** (och en programpool f
 7. I den **Lägg till bindning för webbplats** i dialogrutan den **typ** väljer **https**.
 
 8. I den **SSL-certifikat** väljer du det signerade certifikatet från den nedrullningsbara menyn.
-   Klicka på **OK**. Se [och konfigurera ett SSL-certifikat i IIS-hanteraren](#to-configure-an-ssl-certificate-in-iis-Manager) i det här avsnittet för mer information om hur du skaffar ett certifikat.
+   Klicka på **OK**. Se [och konfigurera ett SSL-certifikat i IIS-hanteraren](#to-configure-an-ssl-certificate-in-iis-manager) i det här avsnittet för mer information om hur du skaffar ett certifikat.
 
    Windows PowerShell-webbåtkomst webbprogrammet har nu konfigurerats för att använda det signerade SSL-certifikatet.
 
@@ -273,7 +273,7 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
 
 8. I den **fysisk sökväg** fältet, välj platsen för programmet. Du kan använda standardplatsen för `$env:windir/Web/PowerShellWebAccess/wwwroot`. Klicka på **OK**.
 
-9. Följ stegen i proceduren [att konfigurera ett SSL-certifikat i IIS-hanteraren](#to-configure-an-ssl-certificate-in-iis-Manager) i det här avsnittet.
+9. Följ stegen i proceduren [och konfigurera ett SSL-certifikat i IIS-hanteraren](#to-configure-an-ssl-certificate-in-iis-manager) i det här avsnittet.
 
 10. ![](images/SecurityNote.jpeg) Valfritt säkerhetssteg:
 
@@ -329,7 +329,7 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
 
 1. Alternativt, om det behövs för din organisation, ange ett värdnamn som passar din organisation och användare, till exempel **`www.contoso.com`**. Klicka på **OK**.
 
-1. För en säkrare produktionsmiljö bör ett giltigt certifikat som har signerats av en CA användas. Du måste ange ett SSL-certifikat, eftersom användare kan endast ansluta till Windows PowerShell-webbåtkomst via en HTTPS-webbplats. Se [att konfigurera ett SSL-certifikat i IIS-hanteraren](#to-configure-an-ssl-certificate-in-iis-Manager) i det här avsnittet för mer information om hur du skaffar ett certifikat.
+1. För en säkrare produktionsmiljö bör ett giltigt certifikat som har signerats av en CA användas. Du måste ange ett SSL-certifikat, eftersom användare kan endast ansluta till Windows PowerShell-webbåtkomst via en HTTPS-webbplats. Se [och konfigurera ett SSL-certifikat i IIS-hanteraren](#to-configure-an-ssl-certificate-in-iis-manager) i det här avsnittet för mer information om hur du skaffar ett certifikat.
 
 1. Klicka på **OK** att Stäng den **Lägg till webbplats** dialogrutan.
 

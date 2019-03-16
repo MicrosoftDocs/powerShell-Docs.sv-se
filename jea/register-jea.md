@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, säkerhet
 title: Registrera JEA-konfigurationer
-ms.openlocfilehash: 160aa95283da57a10aad5fdd4043adb1354a5db5
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 6fa0ce434c8e70eb718545e99417bfe034cda6bf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002914"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059447"
 ---
 # <a name="registering-jea-configurations"></a>Registrera JEA-konfigurationer
 
@@ -113,7 +113,7 @@ Configuration JEAMaintenance
 Den här konfigurationen kan sedan tillämpas på ett system av [direkt anropar den lokala Konfigurationshanteraren](https://msdn.microsoft.com/powershell/dsc/metaconfig) eller uppdatera den [pull-serverkonfiguration](https://msdn.microsoft.com/powershell/dsc/pullserver).
 
 DSC-resurs kan du ersätta standardslutpunkten Microsoft.PowerShell fjärrkommunikation.
-Om du gör det, registrerar resursen automatiskt en säkerhetskopiering unconstrainted slutpunkt med namnet ”Microsoft.PowerShell.Restricted” som har standard WinRM ACL (som tillåter Fjärrhanteringsanvändare och lokala administratörer gruppmedlemmar att komma åt den).
+Om du gör det, registrerar resursen automatiskt en säkerhetskopiering obegränsad slutpunkt med namnet ”Microsoft.PowerShell.Restricted” som har standard WinRM ACL (som tillåter Fjärrhanteringsanvändare och lokala administratörer gruppmedlemmar att komma åt den).
 
 ## <a name="unregistering-jea-configurations"></a>Avregistrerar JEA-konfigurationer
 

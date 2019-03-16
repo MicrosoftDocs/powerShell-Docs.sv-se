@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Ställa in en Pull-klient med konfigurationsnamn i PowerShell 5.0 och senare
-ms.openlocfilehash: fd038a105da7a83ecad9b571e611b65c8ec847b3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d591e2a757130ccecaf4eaf9f363f607fca82b93
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688079"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058204"
 ---
 # <a name="set-up-a-pull-client-using-configuration-names-in-powershell-50-and-later"></a>Ställa in en Pull-klient med konfigurationsnamn i PowerShell 5.0 och senare
 
@@ -23,8 +23,9 @@ Innan du konfigurerar en pullklient, bör du ställa in en pull-server. Även om
 
 Varje målnoden kan konfigureras för att hämta konfigurationer, resurser, och även rapportera statusen. I avsnitten nedan visar hur du konfigurerar en hämtningsklient med en SMB-resursen eller HTTP DSC-Hämtningsservern. När nodens LCM uppdaterar kommer det att kontakta konfigurerade platsen för att hämta alla tilldelade konfigurationer. Om alla nödvändiga resurser inte finns på noden, kommer den automatiskt hämta dem från den konfigurerade platsen. Om noden är konfigurerad med en [Report Server](reportServer.md), kommer den sedan att rapportera status för åtgärden.
 
-> **Obs**: Det här avsnittet gäller för PowerShell 5.0.
-Information om hur du konfigurerar en pullklient i PowerShell 4.0 finns i [konfigurera en hämtningsklient med konfigurations-ID i PowerShell 4.0](pullClientConfigID4.md)
+> [!NOTE]
+> Det här avsnittet gäller för PowerShell 5.0.
+> Information om hur du konfigurerar en pullklient i PowerShell 4.0 finns i [konfigurera en hämtningsklient med konfigurations-ID i PowerShell 4.0](pullClientConfigID4.md)
 
 ## <a name="configure-the-pull-client-lcm"></a>Konfigurera en pullklient LCM
 
@@ -49,7 +50,8 @@ Följande skript konfigurerar LCM pull konfigurationer från en server med namne
 - I skriptet den **ConfigurationRepositoryWeb** block definierar hämtningsservern. Den **ServerURL** egenskap anger slutpunkten för pull-servern.
 
 - Den **RegistrationKey** egenskapen är en delad nyckel mellan alla klientnoder för en pull-server och den pull-servern. Samma värde lagras i en fil på hämtningsservern.
-  > **Obs**: Registreringsnycklar fungerar bara med **web** pull-servrar. Du måste fortfarande använda **ConfigurationID** med en **SMB** hämtningsservern.
+  > [!NOTE]
+  > Registreringsnycklar fungerar bara med **web** pull-servrar. Du måste fortfarande använda **ConfigurationID** med en **SMB** hämtningsservern.
   > Information om hur du konfigurerar en pull-server med hjälp av **ConfigurationID**, se [konfigurera en hämtningsklient med konfigurations-ID](pullClientConfigId.md)
 
 - Den **ConfigurationNames** egenskapen är en matris som anger namnen på de konfigurationer som är avsedd för klient-nod.

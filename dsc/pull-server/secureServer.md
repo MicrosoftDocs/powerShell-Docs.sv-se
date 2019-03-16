@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Metodtips för hämtningsservern
-ms.openlocfilehash: da67f8fd793878b097ffb260afad0fcf5c69bb04
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686679"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057713"
 ---
 # <a name="pull-server-best-practices"></a>Metodtips för hämtningsservern
 
@@ -260,7 +260,7 @@ Kommandot begär ditt godkännande innan du laddar ned modulen.
 
 Den bästa metoden för att distribuera en DSC-hämtningsserver är att använda en DSC-konfigurationsskript. Det här dokumentet kommer att presentera skript, inklusive både grundläggande inställningar som konfigurerar bara DSC-webbtjänsten och avancerade inställningar som konfigurerar en Windows Server slutpunkt till slutpunkt inklusive DSC webbtjänst.
 
-Anm  För närvarande den `xPSDesiredStateConfiguation` DSC-modulen kräver att servern ska vara EN-US.
+Anm  För närvarande den `xPSDesiredStateConfiguration` DSC-modulen kräver att servern ska vara EN-US.
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Grundläggande konfiguration för Windows Server 2012
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e523a8e1-42e4-4633-887f-fb74b3464561
 caps.latest.revision: 12
-ms.openlocfilehash: 25b604621c90f1aa88bc1eea365e47db66e98c3d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 37689571eb1650e5991af2e7002cd037ae99dd68
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848498"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057968"
 ---
 # <a name="provider-types"></a>Typer av providers
 
@@ -65,7 +65,7 @@ Behållare-aktiverade providers Tillåt användare att hantera objekt som är be
 
 Den [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) klassen definierar följande metoder för att implementera cmdlets för specifika provider. I de flesta fall för att stödja en provider-cmdlet du måste skriva över den metod som Windows PowerShell-motorn anropar för att anropa cmdlet, som den `CopyItem` metod för den `Copy-Item` där du kan också skriva över ett annat sätt, till exempel `CopyItemDynamicParameters`, för att lägga till dynamiska parametrar till cmdleten.
 
-- Den [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) och [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) metoder som definierar hur din provider stöder den `Copy-Item` provider-cmdlet. Denna cmdlet gör att användaren kan kopiera ett objekt från en plats till en annan.
+- Den [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) och [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) metoder som definierar hur din provider stöder den `Copy-Item` provider-cmdlet. Denna cmdlet gör att användaren kan kopiera ett objekt från en plats till en annan.
 
 - Den [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) och [System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) metoder definiera hur din provider stöder den `Get-ChildItem` provider-cmdlet. Denna cmdlet används att hämta de underordnade objekten i den överordnade artikeln.
 

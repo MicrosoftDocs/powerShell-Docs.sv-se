@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
 caps.latest.revision: 9
-ms.openlocfilehash: 8cfbcacf93733667ffba63a252c86518c0919b57
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 19e96b612a8778d82cdbafb528a7ffeb01f15f99
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851998"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058835"
 ---
 # <a name="how-to-request-confirmations"></a>Begära bekräftelser
 
-Det här exemplet visar hur du anropar den [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoder för att begära bekräftelser från den användaren innan en åtgärd utförs.
+Det här exemplet visar hur du anropar den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoder för att begära bekräftelser från den användaren innan en åtgärd utförs.
 
 > [!IMPORTANT]
 > Läs mer om hur Windows PowerShell hanterar dessa begäranden [begär bekräftelse](./requesting-confirmation-from-cmdlets.md).
@@ -43,13 +43,13 @@ Det här exemplet visar hur du anropar den [System.Management.Automation.Cmdlet.
     private bool force;
     ```
 
-3. Lägg till en `if` instruktion som använder returvärdet för den [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod för att avgöra om den [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoden anropas.
+3. Lägg till en `if` instruktion som använder returvärdet för den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod för att avgöra om den [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoden anropas.
 
-4. Lägg till en andra `if` instruktion som använder returvärdet för den [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoden och värdet för den `Force` parametern för att avgöra om åtgärden bör vara utföra.
+4. Lägg till en andra `if` instruktion som använder returvärdet för den [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoden och värdet för den `Force` parametern för att avgöra om åtgärden bör vara utföra.
 
 ## <a name="example"></a>Exempel
 
-I följande kodexempel i [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoder som anropas inifrån den åsidosättning av den [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod. Du kan också anropa metoderna från andra indata metoderna.
+I följande kodexempel i [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoder som anropas från inom åsidosättningen av den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod. Du kan också anropa metoderna från andra indata metoderna.
 
 ```csharp
 protected override void ProcessRecord()

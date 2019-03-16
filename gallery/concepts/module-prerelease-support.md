@@ -3,12 +3,12 @@ ms.date: 09/26/2017
 contributor: keithb
 keywords: galleriet, powershell, cmdlet, psget
 title: Förhandsversioner modulversioner
-ms.openlocfilehash: f58b5adfeba7ed06d231c76accbd52508c7d67d6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eced067dd21082de0db653daf3b838217154f1dd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684278"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056255"
 ---
 # <a name="prerelease-module-versions"></a>Förhandsversioner modulversioner
 
@@ -169,10 +169,10 @@ C:\windows\system32> Uninstall-Module TestPackage -RequiredVersion 1.9.0-beta
 Uninstall-Module : The '-AllowPrerelease' parameter must be specified when using the Prerelease string in
 MinimumVersion, MaximumVersion, or RequiredVersion.
 At line:1 char:1
-+ Unnstall-Module TestPackage -RequiredVersion 1.9.0-beta
++ Uninstall-Module TestPackage -RequiredVersion 1.9.0-beta
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [Uninstall-Module], ArgumentException
-    + FullyQualifiedErrorId : AllowPrereleaseRequiredToUsePrereleaseStringInVersion,Uninnstall-Module
+    + FullyQualifiedErrorId : AllowPrereleaseRequiredToUsePrereleaseStringInVersion,Uninstall-Module
 
 C:\windows\system32> Uninstall-Module TestPackage -RequiredVersion 1.9.0-beta -AllowPrerelease
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions

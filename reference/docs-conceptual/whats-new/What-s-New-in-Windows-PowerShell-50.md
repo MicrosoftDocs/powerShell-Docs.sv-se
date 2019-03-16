@@ -2,19 +2,21 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Vad är nytt i Windows PowerShell 5.0
-ms.openlocfilehash: 06088e4a974ed4fb2a245fb9acfa780710a8ccc4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a21e6af9f23ac8bb3ddf84dbfa67a67f3ff93b24
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688639"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055112"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Vad är nytt i Windows PowerShell 5.0
+
 Windows PowerShell 5.0 innehåller nya viktiga funktioner som utökar användningen, förbättrar dess användbarhet och gör att du kan styra och hantera Windows-baserade miljöer enklare och mer omfattande.
 
 Windows PowerShell 5.0 är bakåtkompatibla. Cmdlet: ar, leverantörer, moduler, snapin-moduler, skript, funktioner och profiler som har utformats för Windows PowerShell 4.0, Windows PowerShell 3.0 och Windows PowerShell 2.0 Allmänt fungerar i Windows PowerShell 5.0 utan ändringar.
 
 ## <a name="installing-windows-powershell"></a>Installera Windows PowerShell
+
 Windows PowerShell 5.0 installeras som standard på Windows Server 2016 Technical Preview och Windows 10.
 
 Om du vill installera Windows PowerShell 5.0 på Windows Server 2012 R2, Windows 8.1 Enterprise eller Windows 8.1 Pro, ladda ned och installera [Windows Management Framework 5.0](https://aka.ms/wmf5download). Glöm inte att läsa hämta information och uppfyller alla systemkrav, innan du installerar Windows Management Framework 5.0.
@@ -27,6 +29,7 @@ Om du vill installera Windows PowerShell 5.0 på Windows Server 2012 R2, Windows
 - [Nya funktioner i Windows PowerShell 3.0](#new-features-in-windows-powershell-30)
 
 ## <a name="windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850"></a>Samlad (KB 3000850) för Windows PowerShell 4.0 uppdateringar i November 2014-uppdatering
+
 Många uppdateringar och förbättringar för Windows PowerShell Desired State Configuration (DSC) i Windows PowerShell 4.0 finns i den [November 2014-uppdatering för Windows RT 8.1, Windows 8.1 och Windows Server 2012 R2](https://support.microsoft.com/kb/3000850/) (KB 3000850 ). Du kan fastställa om KB 3000850 är installerad på datorn genom att köra `Get-Hotfix -Id KB3000850` i Windows PowerShell.
 
 - Uppdateringar av befintliga cmdletar i den [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) modul
@@ -140,8 +143,8 @@ Många uppdateringar och förbättringar för Windows PowerShell Desired State C
 - Parametern FullyQualifiedName har lagts till Import-Module och Remove-Module-cmdletar för lagring av flera versioner av en enda modul.
 - Save-Help, Update-Help, Import-PSSession, Export-PSSession och Get-Command har du en ny parameter FullyQualifiedModule av typen ModuleSpecification. Lägg till den här parametern om du vill ange en modul med dess fullständigt kvalificerade namn.
 - Värdet för **$PSVersionTable.PSVersion** har uppdaterats till 5.0.
-- WMF 5.0 (PowerShell 5.0) innehåller den **Pester** modulen.  Lära är en enhet som xcuitest för PowerShell. Det ger ett par enkla att använda nyckelord som kan du skapa tester för dina skript. 
- 
+- WMF 5.0 (PowerShell 5.0) innehåller den **Pester** modulen.  Lära är en enhet som xcuitest för PowerShell. Det ger ett par enkla att använda nyckelord som kan du skapa tester för dina skript.
+
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Nya funktioner i Windows PowerShell Desired State Configuration
 
 - Förbättringar av Windows PowerShell-språket kan du definiera resurser för Windows PowerShell Desired State Configuration (DSC) med hjälp av klasser. Import-DscResource är nu en SANT dynamisk nyckelord. Windows PowerShell tolkar rotmodul för den angivna modulen, söker efter klasser som innehåller attributet DscResource. Du kan nu använda klasser för att definiera DSC-resurser, där varken en MOF-fil eller en DSCResource undermapp i modulmappen krävs. En fil för Windows PowerShell-modulen kan innehålla flera DSC-resursklasser.
@@ -482,7 +485,9 @@ Nya cmdletar har lagts till i Windows PowerShell Core-installationen, inklusive 
 |New-CimSessionOption|Update-Help|
 |Ny IseSnippet||
 
-### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>Förbättringar av befintliga Kärncmdletar och ProvidersWindows PowerShell 3.0 innehåller nya funktioner för befintliga cmdlets inklusive förenklad syntax och nya parametrar för följande cmdletar: Dator-cmdletar, CSV-cmdlet: ar, Get-ChildItem, Get-Command, Get-innehåll, Get-historik, mått-objekt, Security cmdlet: ar, Select-Object, Välj sträng, dela sökväg, startprocessen, Tee-objekt, Test-Connection, Lägg till medlem och WMI-cmdletar.
+### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Förbättringar av befintliga Core-Cmdlets och Providers
+
+Windows PowerShell 3.0 innehåller nya funktioner för befintliga cmdlets inklusive förenklad syntax och nya parametrar för följande cmdletar: Dator-cmdletar, CSV-cmdlet: ar, Get-ChildItem, Get-Command, Get-innehåll, Get-historik, mått-objekt, Security cmdlet: ar, Select-Object, Välj sträng, dela sökväg, startprocessen, Tee-objekt, Test-Connection, Lägg till medlem och WMI-cmdletar.
 
 Windows PowerShell-providers har också förbättrats avsevärt, inklusive stöd för provider-certifikat för att hantera certifikat för Secure Socket Layer (SSL) för Internet, stöd för autentiseringsuppgifter, beständig nätverksenheter och alternativa dataströmmar i filsystem enheter.
 

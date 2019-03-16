@@ -12,12 +12,12 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: d1546ab0b0e6b5502f35c92c01ce148211c53db2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846671"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055658"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Skapa en Windows PowerShell-enhetsprovider
 
@@ -61,7 +61,7 @@ Mer information finns i [Design Your Windows PowerShell-providern](./designing-y
 
 Alla Windows PowerShell-leverantörer anses vara tillståndslösa, vilket innebär att din enhet-provider måste skapa all tillståndsinformation som krävs av Windows PowerShell-körningen när anropas av din provider.
 
-För den här enhetsprovidern innehåller information om tillstånd anslutningen till databasen som sparas som en del av enhetsinformationen. Här är kod som visar hur den här informationen lagras i den [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objekt som beskriver enheten:
+För den här enhetsprovidern innehåller information om tillstånd anslutningen till databasen som sparas som en del av enhetsinformationen. Här är kod som visar hur den här informationen lagras i den [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objekt som beskriver enheten:
 
 [!code-csharp[AccessDBProviderSample02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L130-L151 "AccessDBProviderSample02.cs")]
 
@@ -73,15 +73,15 @@ För att Windows PowerShell-körning för att skapa en enhet måste enheten-leve
 
 Åsidosättningen av den här metoden bör göra följande:
 
-- Kontrollera att den [System.Management.Automation.Psdriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) medlem finns och att en anslutning till datalagret kan göras.
+- Kontrollera att den [System.Management.Automation.PSDriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) medlem finns och att en anslutning till datalagret kan göras.
 
 - Skapa en enhet och fylla i medlemmen anslutning stöd i `New-PSDrive` cmdlet.
 
-- Verifiera den [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objekt för den föreslagna enheten.
+- Verifiera den [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objekt för den föreslagna enheten.
 
-- Ändra den [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objekt som beskriver enheten som har nödvändiga prestanda eller tillförlitlighetsinformation eller extra data för anropare som använder enheten.
+- Ändra den [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objekt som beskriver enheten som har nödvändiga prestanda eller tillförlitlighetsinformation eller extra data för anropare som använder enheten.
 
-- Hantera fel med den [System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) metoden och sedan återgå `null`.
+- Hantera fel med den [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) metoden och sedan återgå `null`.
 
   Den här metoden returnerar antingen enhetsinformationen som skickades till metoden eller en provider-specifik version av den.
 

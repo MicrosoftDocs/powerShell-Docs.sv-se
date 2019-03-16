@@ -2,12 +2,12 @@
 ms.date: 08/24/2018
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-skriptresurs
-ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.openlocfilehash: 86dfb74bf52d8907686bb955fd722f4fb8b9131b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048741"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054764"
 ---
 # <a name="dsc-script-resource"></a>DSC-skriptresurs
 
@@ -57,7 +57,7 @@ Den [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-
 
 ### <a name="setscript"></a>SetScript
 
-Den `SetScript` ändrar noden till enfore önskat läge. Den kommer att anropas av DSC om den `TestScript` skript block returnerar `$false`. Den `SetScript` bör har inget returvärde.
+Den `SetScript` ändrar noden om du vill framtvinga önskat läge. Den kommer att anropas av DSC om den `TestScript` skript block returnerar `$false`. Den `SetScript` bör har inget returvärde.
 
 ## <a name="examples"></a>Exempel
 

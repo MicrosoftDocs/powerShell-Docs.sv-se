@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41c56499-ee20-4821-830a-478fdcc33f83
 caps.latest.revision: 11
-ms.openlocfilehash: 59cc0514087cc52438e0d1271b8b77a7799eb32c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bc95c62222eb2806f92499257a397c2e4ec5dbab
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846580"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059073"
 ---
 # <a name="defaultsettings-element-format"></a>DefaultSettings-element (format)
 
@@ -45,7 +45,7 @@ Ingen.
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[DisplayError Element (Frmat)](./displayerror-element-format.md)|Valfritt element.<br /><br /> Anger att strängen #ERR visas när ett fel uppstår medan du visar en typ av data.|
+|[DisplayError Element (Format)](./displayerror-element-format.md)|Valfritt element.<br /><br /> Anger att strängen #ERR visas när ett fel uppstår medan du visar en typ av data.|
 |[EnumerableExpansions Element (Format)](./enumerableexpansions-element-format.md)|Valfritt element.<br /><br /> Definierar hur .NET objekt visas när de visas i vyn.|
 |[PropertyCountForTable (Format)](./propertycountfortable-element-format.md)|Valfritt element.<br /><br /> Anger det minsta antalet egenskaper som ett objekt måste ha för att visa objektet i en tabellvy.|
 |[ShowError-Element (Format)](./showerror-element-format.md)|Valfritt element.<br /><br /> Anger att en fullständig Felpost visas när ett fel uppstår medan du visar en typ av data.|
@@ -63,7 +63,7 @@ Ingen.
 
 [Konfigurationselement](./configuration-element-format.md)
 
-[DisplayError Element (Frmat)](./displayerror-element-format.md)
+[DisplayError Element (Format)](./displayerror-element-format.md)
 
 [EnumerableExpansions Element (Format)](./enumerableexpansions-element-format.md)
 

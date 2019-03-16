@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 65d04c526ef7aa112da82adb924c0789731f3850
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845040"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055435"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Skapa ett arbetsflöde med Windows PowerShell-aktiviteter
 
@@ -33,9 +33,9 @@ Följande procedurer beskriver hur du skapar ett arbetsflöde som kontrollerar d
 
 2. Skapa ett argument som heter `ComputerName` med ett argument av typen `String[]`. Det här argumentet representerar namnen på datorerna för att kontrollera och ansluta till.
 
-3. Skapa ett argument som heter `DomainCred` av typen [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential). Det här argumentet representerar domänautentiseringsuppgifter för ett domänkonto som har behörighet att ansluta en dator till domänen.
+3. Skapa ett argument som heter `DomainCred` av typen [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Det här argumentet representerar domänautentiseringsuppgifter för ett domänkonto som har behörighet att ansluta en dator till domänen.
 
-4. Skapa ett argument som heter `MachineCred` av typen [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential). Det här argumentet representerar autentiseringsuppgifter för administratör på datorerna för att kontrollera och ansluta till.
+4. Skapa ett argument som heter `MachineCred` av typen [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Det här argumentet representerar autentiseringsuppgifter för administratör på datorerna för att kontrollera och ansluta till.
 
 5. Lägg till en **ParallelForEach** aktivitet i den **sekvens** aktivitet. Ange `comp` och `ComputerName` i textrutor så att loopen upprepas elementen i den `ComputerName` matris.
 

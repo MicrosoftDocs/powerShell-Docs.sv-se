@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d5891467-8e13-484d-b7af-32e6bffab35d
 caps.latest.revision: 4
-ms.openlocfilehash: 2aca4483e500432ef9f52804e85678d2268aa4cd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b2e8f272a82ee03de306fd8eac45e109142f6284
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846909"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054806"
 ---
 # <a name="common-workflow-parameters"></a>Vanliga arbetsflödesparametrar
 
@@ -26,7 +26,7 @@ De gemensamma arbetsflödesparametrarna för är grupperade i flera kategorier p
 |Namn|Typ|Beskrivning|Kan anges av slutanvändaren vid körning?|Du kan ange installationskommandot arbetsflöde vid redigeringen?|Du kan ange installationskommandot arbetsflöde vid instansiering?|
 |----------|----------|-----------------|-----------------------------------------------------|------------------------------------------------------------|-----------------------------------------------------------|
 |PSComputerName|String[]|En lista med datornamn som du vill starta jobb.|Ja|Ja|Ja|
-|PSCredential|[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|Autentisering-autentiseringsuppgift som ska användas för inloggning till de datorer som anges av parametern PSComputerName. Den här parametern är bara giltiga om PSComputerName har angetts.|Ja|Ja|Ja|
+|PSCredential|[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Autentisering-autentiseringsuppgift som ska användas för inloggning till de datorer som anges av parametern PSComputerName. Den här parametern är bara giltiga om PSComputerName har angetts.|Ja|Ja|Ja|
 |PSPort|UInt32|Porten som ska användas för att köra arbetsflödet.|Ja|Ja|Ja|
 |PSUseSSL|Boolesk|Använda Secure Sockets Layer (SSL)-protokollet för att upprätta en säker anslutning till fjärrdatorn att köra arbetsflödet.|Ja|Ja|Ja|
 |PSConfigurationName|Sträng|Sessionskonfigurationen som används för att köra arbetsflödet.|Ja|Ja|Ja|

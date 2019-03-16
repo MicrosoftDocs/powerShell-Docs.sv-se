@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
-ms.openlocfilehash: c11e50913d2654b786e0e8cfeaf41454999bf75e
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794985"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057730"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Starkt rekommenderade riktlinjer för utveckling
 
@@ -101,7 +101,7 @@ När samma parameter används av flera cmdlets, Använd alltid samma parameterty
 
 #### <a name="parameters-that-take-true-and-false"></a>Parametrar som tar värdet är True och False
 
-Om parametern tar endast `true` och `false`, definiera parametern som typen [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter). En växlingsparametern behandlas som `true` när det anges i ett kommando. Om parametern inte ingår i ett kommando, Windows PowerShell tar hänsyn till värdet för parametern ska vara `false`. Definiera inte booleskt parametrar.
+Om parametern tar endast `true` och `false`, definiera parametern som typen [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter). En växlingsparametern behandlas som `true` när det anges i ett kommando. Om parametern inte ingår i ett kommando, Windows PowerShell tar hänsyn till värdet för parametern ska vara `false`. Definiera inte booleskt parametrar.
 
 Om parametern måste skilja mellan 3 värden: $true, $false och ”okänt”, sedan definierar en parameter av typen kan ha värdet null\<bool >.  Behovet av en 3, ”okänt” värde uppstår vanligen när cmdlet: en kan ändra en boolesk egenskap för ett objekt. I det här fallet ”okänt” innebär att inte ändra det aktuella värdet för egenskapen.
 
@@ -111,7 +111,7 @@ Användare måste ofta kan utföra samma åtgärd mot flera argument. Dessa anv�
 
 #### <a name="support-the-passthru-parameter"></a>Stöd för PassThru-parametern
 
-Som standard många cmdletar som ändrar systemet, till exempel den [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet, fungerar som ”mottagare” för objekt och inte returnerar ett resultat. Dessa cmdlet: en ska implementera den `PassThru` parameter för att tvinga cmdlet för att returnera ett-objekt. När den `PassThru` parameter har angetts, cmdleten returnerar ett objekt med hjälp av ett anrop till den [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metod. Följande kommando stoppar Calc-processen och skickar den resulterande processen till transportledningen.
+Som standard många cmdletar som ändrar systemet, till exempel den [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet, fungerar som ”mottagare” för objekt och inte returnerar ett resultat. Dessa cmdlet: en ska implementera den `PassThru` parameter för att tvinga cmdlet för att returnera ett-objekt. När den `PassThru` parameter har angetts, cmdleten returnerar ett objekt med hjälp av ett anrop till den [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metod. Följande kommando stoppar Calc-processen och skickar den resulterande processen till transportledningen.
 
 ```powershell
 Stop-Process calc -passthru
@@ -135,21 +135,21 @@ Windows PowerShell-runtime gör att användaren kan ange hur du hanterar utdata 
 
 #### <a name="support-the-writewarning-writeverbose-and-writedebug-methods"></a>Stöd för WriteWarning, WriteVerbose och WriteDebug metoder
 
-En cmdlet ska anropa den [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metod när cmdleten ska utföra en åtgärd som kan ha ett oönskade resultat. En cmdlet ska anropa den här metoden om cmdlet: en är att skriva över en skrivskyddad fil.
+En cmdlet ska anropa den [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metod när cmdleten ska utföra en åtgärd som kan ha ett oönskade resultat. En cmdlet ska anropa den här metoden om cmdlet: en är att skriva över en skrivskyddad fil.
 
-En cmdlet ska anropa den [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metod när användaren kräver detalj diskutera vad cmdleten gör. En cmdlet ska anropa den här informationen om cmdleten författaren anser att det finns scenarier som kan kräva mer information om vad cmdleten gör.
+En cmdlet ska anropa den [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metod när användaren kräver detalj diskutera vad cmdleten gör. En cmdlet ska anropa den här informationen om cmdleten författaren anser att det finns scenarier som kan kräva mer information om vad cmdleten gör.
 
-Cmdlet: en ska anropa den [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metod när en utvecklare eller produkten supporttekniker måste förstå vad har skadat cmdlet igen. Det är inte nödvändigt för cmdleten att anropa den [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) -metod i samma kod som anropar den [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metoden eftersom den `Debug` parametern anger båda uppsättningarna information.
+Cmdlet: en ska anropa den [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metod när en utvecklare eller produkten supporttekniker måste förstå vad har skadat cmdlet igen. Det är inte nödvändigt för cmdleten att anropa den [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) -metod i samma kod som anropar den [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metod eftersom den `Debug` parametern anger båda uppsättningarna information.
 
 #### <a name="support-writeprogress-for-operations-that-take-a-long-time"></a>Stöd för WriteProgress för åtgärder som tar lång tid
 
-Cmdlet-åtgärder som tar lång tid att slutföra och som inte kan köras i bakgrunden ska ha stöd för statusrapportering via periodiska anrop till den [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) metod.
+Cmdlet-åtgärder som tar lång tid att slutföra och som inte kan köras i bakgrunden ska ha stöd för statusrapportering via periodiska anrop till den [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) metod.
 
 #### <a name="use-the-host-interfaces"></a>Använd värd-gränssnitt
 
-Ibland kan en cmdlet måste kommunicera direkt med användare i stället för med hjälp av de olika skriva eller bör metoder som stöds av den [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klass. I så fall cmdlet: en måste härledas från den [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klassen och använda den [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) egenskapen. Den här egenskapen stöder olika nivåer av typen av kommunikation, inklusive PromptForChoice, fråga och WriteLine/ReadLine-typer. Högst viss nivå finns även sätt att läsa och skriva enskilda nycklar och hantera buffertar.
+Ibland kan en cmdlet måste kommunicera direkt med användare i stället för med hjälp av de olika skriva eller bör metoder som stöds av den [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klass. I så fall cmdlet: en måste härledas från den [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klassen och använda den [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) egenskapen. Den här egenskapen stöder olika nivåer av typen av kommunikation, inklusive PromptForChoice, fråga och WriteLine/ReadLine-typer. Högst viss nivå finns även sätt att läsa och skriva enskilda nycklar och hantera buffertar.
 
-Om inte en cmdlet är speciellt utformad för att generera ett grafiskt användargränssnitt (GUI), bör det inte kringgå värden med hjälp av den [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) egenskapen. Ett exempel på en cmdlet som har utformats för att generera ett grafiskt användargränssnitt är den [Out GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) cmdlet.
+Om inte en cmdlet är speciellt utformad för att generera ett grafiskt användargränssnitt (GUI), bör det inte kringgå värden med hjälp av den [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) egenskapen. Ett exempel på en cmdlet som har utformats för att generera ett grafiskt användargränssnitt är den [Out GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) cmdlet.
 
 > [!NOTE]
 > Cmdlet: ar bör inte använda den [System.Console](/dotnet/api/System.Console) API.
@@ -174,15 +174,15 @@ Om cmdlet: tillåter att användaren anger en fil eller en datakälla kan den b�
 
 Om de data som cmdleten läser eller skriver måste vara en fil, cmdleten ska ta emot indata för Windows PowerShell-sökväg och cmdlet: en ska använda den [System.Management.Automation.Sessionstate.Path](/dotnet/api/System.Management.Automation.SessionState.Path) egenskapen att översätta i Windows PowerShell-sökvägar till sökvägar som filsystemet känner igen. Specifika mekanismer är följande:
 
-- [System.Management.Automation.Pscmdlet.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pscmdlet.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
-Om de data som cmdleten läser eller skriver är endast en uppsättning strängar i stället för en fil, cmdleten ska använda providern innehållsinformationen (`Content` medlem) att läsa och skriva. Den här informationen hämtas från den [System.Management.Automation.Provider.Cmdletprovider.Invokeprovider*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) egenskapen. Dessa mekanismer kan andra datalager att delta i läsning och skrivning av data.
+Om de data som cmdleten läser eller skriver är endast en uppsättning strängar i stället för en fil, cmdleten ska använda providern innehållsinformationen (`Content` medlem) att läsa och skriva. Den här informationen hämtas från den [System.Management.Automation.Provider.CmdletProvider.InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) egenskapen. Dessa mekanismer kan andra datalager att delta i läsning och skrivning av data.
 
 #### <a name="support-wildcard-characters"></a>Stöd för jokertecken
 
@@ -206,11 +206,11 @@ Om du designar ett objekt för en cmdlet, kontrollerar du att medlemmarna mappas
 
 Redan befintliga .NET Framework-objekt som returneras av cmdlet: ar saknar ofta vissa viktiga eller praktiskt medlemmar som krävs av skriptutvecklare eller användare. Dessa saknas medlemmar kan vara särskilt viktigt för visning och för att skapa rätt medlemmen namn så att objektet korrekt kan skickas till pipelinen. Skapa en anpassad Types.ps1xml-fil för att dokumentera dessa tillämpliga medlemmar. När du skapar den här filen, rekommenderar vi följande namngivningskonvention: *< Your_Product_Name >*. Types.ps1xml.
 
-Exempelvis kan du lägga till en `Mode` skript som den [System.IO.Fileinfo](/dotnet/api/System.IO.FileInfo) Skriv för att visa attribut för en fil tydligare. Dessutom kan du lägga till en `Count` alias-egenskap enligt den [System.Array](/dotnet/api/System.Array) typ som tillåter konsekvent användning av det egenskapsnamnet (i stället för `Length`).
+Exempelvis kan du lägga till en `Mode` skript som den [System.IO.FileInfo](/dotnet/api/System.IO.FileInfo) Skriv för att visa attribut för en fil tydligare. Dessutom kan du lägga till en `Count` alias-egenskap enligt den [System.Array](/dotnet/api/System.Array) typ som tillåter konsekvent användning av det egenskapsnamnet (i stället för `Length`).
 
 ##### <a name="implement-the-icomparable-interface"></a>Implementera gränssnittet IComparable
 
-Implementera en [System.Icomparable](/dotnet/api/System.IComparable) gränssnittet på alla objekt som utdata. På så sätt kan utdata objekt som ska skickas enkelt olika cmdletar för sortering och analys.
+Implementera en [System.IComparable](/dotnet/api/System.IComparable) gränssnittet på alla objekt som utdata. På så sätt kan utdata objekt som ska skickas enkelt olika cmdletar för sortering och analys.
 
 ##### <a name="update-display-information"></a>Uppdatera visningsinformation
 
@@ -230,11 +230,11 @@ En parameter godkänner indata från pipelinen om den **parametern** attribut in
 
 #### <a name="support-the-processrecord-method"></a>Stöd för metoden ProcessRecord
 
-För att godkänna alla poster från den föregående cmdleten i pipelinen, din cmdlet måste implementera de [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod. Windows PowerShell anropar den här metoden flera gånger, en gång för varje post som skickas till din cmdlet.
+För att godkänna alla poster från den föregående cmdleten i pipelinen, din cmdlet måste implementera de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod. Windows PowerShell anropar den här metoden flera gånger, en gång för varje post som skickas till din cmdlet.
 
 ### <a name="write-single-records-to-the-pipeline-sc03"></a>Skriva enskild poster till pipelinen (SC03)
 
-När en cmdlet returnerar objekt, cmdleten ska skriva objekten direkt när de skapas. Cmdlet: en ska inte innehålla dem för att buffra dem till en kombinerad matris. De cmdletar som tar emot objekt som indata kommer sedan att kunna bearbeta, visa, eller bearbeta och visa utdata-objekt utan fördröjning. En cmdlet som genererar utdata objekt i taget ska anropa den [System.Management.Automation.Cmdlet.Writeobject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metod. En cmdlet som genererar utdata-objekt i batchar (till exempel eftersom en underliggande API: T returnerar en matris med objekt i utdata) ska anropa den [System.Managemet.Automation.Cmdlet.Writeobject](/dotnet/api/System.Managemet.Automation.Cmdlet.WriteObject) metoden med dess andra parameter ange att `true`.
+När en cmdlet returnerar objekt, cmdleten ska skriva objekten direkt när de skapas. Cmdlet: en ska inte innehålla dem för att buffra dem till en kombinerad matris. De cmdletar som tar emot objekt som indata kommer sedan att kunna bearbeta, visa, eller bearbeta och visa utdata-objekt utan fördröjning. En cmdlet som genererar utdata objekt i taget ska anropa den [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metod. En cmdlet som genererar utdata-objekt i batchar (till exempel eftersom en underliggande API: T returnerar en matris med objekt i utdata) ska anropa den [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metoden med dess andra parameter ange att `true`.
 
 ### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Kontrollera cmdletarna skiftlägeskänsliga och bevara (SC04)
 

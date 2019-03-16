@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bb4e1564-3fd3-4be3-b93e-ac90480e05c0
 caps.latest.revision: 6
-ms.openlocfilehash: 9ec6caedcb7cf20d4aab2216cd8a9707269d9452
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3130ecc69f7d1568bcbd392dd24e8cdcc3382905
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846083"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054857"
 ---
 # <a name="firstlineindent-element-for-frame-for-customcontrol-for-view-format"></a>FirstLineIndent-element för Frame för CustomControl för View (format)
 
 Anger hur många tecken som den första raden av data ska flyttas till höger. Det här elementet används när du definierar en anpassad kontroll vy.
 
-Elementet (Format) ViewDefinitions Element (Format) visa Element (Format) anpassad kontroll Element (Format) CustomEntries konfigurationselement för anpassad kontroll för Visa (Format) CustomEntry elementet för CustomEntries för vyn (Format) CustomItem elementet för CustomEntry för CutomControlView (Format) RAM-elementet för CustomItem för anpassad kontroll för Visa (Format) FirstLineIndent elementet
+Elementet (Format) ViewDefinitions Element (Format) visa Element (Format) anpassad kontroll Element (Format) CustomEntries konfigurationselement för anpassad kontroll för Visa (Format) CustomEntry elementet för CustomEntries för vyn (Format) CustomItem elementet för CustomEntry för CustomControlView (Format) RAM-elementet för CustomItem för anpassad kontroll för Visa (Format) FirstLineIndent elementet
 
 ## <a name="syntax"></a>Syntax
 

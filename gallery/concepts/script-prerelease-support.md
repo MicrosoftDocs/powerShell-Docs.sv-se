@@ -3,12 +3,12 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: galleriet, powershell, cmdlet, psget
 title: Förhandsversioner av skript
-ms.openlocfilehash: 4e7eab682008ed57163c51fe3a61a744b347bef2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c0198c2f575d2c004949ccebab49d93ce54716be
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683984"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055894"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Förhandsversioner av skript
 
@@ -120,10 +120,10 @@ C:\windows\system32> Uninstall-Script TestPackage -RequiredVersion 1.9.0-alpha
 Uninstall-Script: The '-AllowPrerelease' parameter must be specified when using the Prerelease string in
 MinimumVersion, MaximumVersion, or RequiredVersion.
 At line:1 char:1
-+ Unnstall-Script TestPackage -RequiredVersion 1.9.0-beta
++ Uninstall-Script TestPackage -RequiredVersion 1.9.0-beta
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [Uninstall-Script], ArgumentException
-    + FullyQualifiedErrorId : AllowPrereleaseRequiredToUsePrereleaseStringInVersion,Uninnstall-script
+    + FullyQualifiedErrorId : AllowPrereleaseRequiredToUsePrereleaseStringInVersion,Uninstall-script
 
 
 C:\windows\system32> Uninstall-Script TestPackage -RequiredVersion 1.9.0-alpha -AllowPrerelease

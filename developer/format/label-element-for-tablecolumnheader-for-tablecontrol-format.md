@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7196f039-2f6a-41fd-b252-5b1623ebb9f9
 caps.latest.revision: 11
-ms.openlocfilehash: 59dfd40b95d5088a711eb89cf101eb31a4b159f5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 09183a538c179f19347c3f1ed45b4ad38c2ca451
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846874"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054517"
 ---
 # <a name="label-element-for-tablecolumnheader-for-tablecontrol-format"></a>Label-element för TableColumnHeader för TableControl (format)
 
 Definierar den etikett som visas överst i en kolumn. Det här elementet används när du definierar en tabellvy.
 
-Elementet (Format) ViewDefinitions Element (Format) visa Element (Format) TableControl Element (Format) TableHeaders konfigurationselement för TableControl (Format) TableColumnHeader elementet för TableHeaders för TableControl (Format) etikett elementet för TableColumnHeader för TablControl (Format)
+Elementet (Format) ViewDefinitions Element (Format) visa Element (Format) TableControl Element (Format) TableHeaders konfigurationselement för TableControl (Format) TableColumnHeader elementet för TableHeaders för TableControl (Format) etikett elementet för TableColumnHeader för TableControl (Format)
 
 ## <a name="syntax"></a>Syntax
 

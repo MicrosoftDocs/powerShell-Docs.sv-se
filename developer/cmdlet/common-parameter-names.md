@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
 caps.latest.revision: 12
-ms.openlocfilehash: a421d151ac3fdbb763668dd6fbf775f5b91a833f
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56852166"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059668"
 ---
 # <a name="common-parameter-names"></a>Vanliga parameternamn
 
@@ -30,7 +30,7 @@ Följande parametrar läggs till i alla cmdletar och kan nås när cmdleten kör
 
 Datatyp: SwitchParameter
 
-Den här parametern anger om felsökning av programmerare på servernivå meddelanden som kan visas på kommandoraden. Dessa meddelanden är avsedda för att felsöka driften av cmdlet: en och genereras av anrop till den [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metod. Felsökningsmeddelanden behöver inte lokaliseras.
+Den här parametern anger om felsökning av programmerare på servernivå meddelanden som kan visas på kommandoraden. Dessa meddelanden är avsedda för att felsöka driften av cmdlet: en och genereras av anrop till den [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metod. Felsökningsmeddelanden behöver inte lokaliseras.
 
 ### <a name="erroraction-alias-ea"></a>ErrorAction (alias: ea)
 
@@ -60,7 +60,7 @@ Den här parametern anger antalet objekt som ska lagra i utdatabufferten innan a
 
 Datatyp: SwitchParameter
 
-Den här parametern anger om cmdleten skriver förklarande meddelanden som kan visas på kommandoraden. Dessa meddelanden är avsedda att ge mer hjälp för användaren och genereras av anrop till den [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metod.
+Den här parametern anger om cmdleten skriver förklarande meddelanden som kan visas på kommandoraden. Dessa meddelanden är avsedda att ge mer hjälp för användaren och genereras av anrop till den [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metod.
 
 ### <a name="warningaction-alias-wa"></a>WarningAction (alias: wa)
 

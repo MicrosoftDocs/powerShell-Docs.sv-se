@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0f7a74e9-764d-46ce-ab8e-8b9314ce1659
 caps.latest.revision: 12
-ms.openlocfilehash: 723619e67612b859d0acbab37eecd82141adf923
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 442565d25f60ae8e04501f3f9ffba35d486fbc8a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846076"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054951"
 ---
 # <a name="entryselectedby-element-for-listentry-for-listcontrol-format"></a>EntrySelectedBy-element för ListEntry för ListControl (format)
 
@@ -44,7 +44,7 @@ Ingen.
 |Element|Beskrivning|
 |-------------|-----------------|
 |[SelectionCondition Element för EntrySelectedBy för ListControl (Format)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|Valfritt element.<br /><br /> Definierar de villkor som måste finnas för den här listan vydefinitionen som ska användas.|
-|[SelectionSetName Element för EnrtySelectedBy för ListControl (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger en uppsättning med .NET-typer som använder den här listan vydefinitionen.|
+|[SelectionSetName Element för EntrySelectedBy för ListControl (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger en uppsättning med .NET-typer som använder den här listan vydefinitionen.|
 |[TypeName-Element för EntrySelectedBy för ListControl (Format)](./typename-element-for-entryselectedby-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger ett .NET-typ som använder den här listan vydefinitionen.|
 
 ### <a name="parent-elements"></a>Överordnade element
@@ -79,7 +79,7 @@ I följande exempel visas hur du definierar objekt för en listvy med hjälp av 
 
 [SelectionCondition Element för EntrySelectedBy för ListControl (Format)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
-[SelectionSetName Element för EnrtySelectedBy för ListControl (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[SelectionSetName Element för EntrySelectedBy för ListControl (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [TypeName-Element för EntrySelectedBy för ListControl (Format)](./typename-element-for-entryselectedby-for-listcontrol-format.md)
 

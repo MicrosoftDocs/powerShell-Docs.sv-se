@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery
 title: Ge Feedback via sociala medier eller kommentarer
-ms.openlocfilehash: a7cdcc2ff2c18fb606d077adf0bdecf57c90703f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684355"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055010"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Ge Feedback via sociala medier eller kommentarer
 
-Powershell-galleriet stöder två metoder för användare med offentliga feedback på ett paket:
+PowerShell-galleriet stöder två metoder för användare med offentliga feedback på ett paket:
 
 - Använd länkarna på den vänstra kanten ”dela” ett paket i Facebook, LinkedIn och Twitter sociala webbplatser;
 - Använd funktionen kommentaren att publicera kommentarer för ett paket, så att redigerare att se upp för kommentarer på paket som de publicerar.
@@ -26,8 +26,7 @@ Användarna måste logga in på den plats som de har valt för att kunna dela pa
 
 Användarna uppmanas att göra detta om de tycker att ett paket är något de skulle rekommendera andra.
 PowerShell-galleriet kontrolleras varje plats för sociala medier för ”resurser” på paketet och visa hur många gånger det paketet har delats i var och en av webbplatser för sociala medier.
-Eftersom detta visar antalet gånger som något har delats blir systemkodsidan andra användare som ”liking” paketet.
-
+Eftersom detta visar antalet gånger som något har delats blir det tolkas andra användare som ”liking” paketet.
 
 ## <a name="comments"></a>Kommentar
 

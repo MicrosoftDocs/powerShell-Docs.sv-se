@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, säkerhet
 title: JEA rollfunktioner
-ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522954"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055061"
 ---
 # <a name="jea-role-capabilities"></a>JEA rollfunktioner
 
@@ -58,7 +58,7 @@ I PowerShell-hjälpen innehåller flera exempel på hur du kan konfigurera filen
 
 ### <a name="allowing-powershell-cmdlets-and-functions"></a>PowerShell-cmdletar och funktioner
 
-Om du vill tillåta användare att köra PowerShell-cmdletar eller funktioner, lägger du till cmdlet eller funktionen namnet VisbibleCmdlets eller VisibleFunctions fält.
+Om du vill tillåta användare att köra PowerShell-cmdletar eller funktioner, lägger du till cmdlet eller funktionen namnet VisibleCmdlets eller VisibleFunctions fält.
 Om du är osäker på om ett kommando är en cmdlet eller funktion, kan du köra `Get-Command <name>` och kontrollera egenskapen ”CommandType” i utdata.
 
 ```powershell
@@ -101,7 +101,6 @@ Exempel                                                                         
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | Tillåter användaren att köra `My-Func` med den `Param1` parametern. Endast ”Value1” och ”Value2” kan anges för parametern.
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | Tillåter användaren att köra `My-Func` med den `Param1` parametern. Ett värde som börjar med ”contoso” kan anges för parametern.
 
-
 > [!WARNING]
 > Metodtips för säkerhet rekommenderas inte att använda jokertecken när du definierar synliga cmdletar eller funktioner.
 > I stället en lista med varje betrodd kommando för att kontrollera att inga andra kommandon som delar samma namngivningsschemat oavsiktligt har behörighet.
@@ -129,7 +128,7 @@ Ett sätt att kontrollera är att använda `net share`.
 Dock tillåter net.exe är mycket farliga eftersom administratören kan lika enkelt använda kommandot för att få administratörsprivilegier med `net group Administrators unprivilegedjeauser /add`.
 En bättre metod är att tillåta [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) som ger samma resultat men har en mycket mer begränsad omfattning.
 
-När du gör externa kommandon tillgängliga för användare i en JEA-session kan du alltid ange den fullständiga sökvägen till den körbara filen för att säkerställa att ett liknande namn (och eventuellt malicous) program som placeras någon annanstans i systemet inte körs i stället.
+När du gör externa kommandon tillgängliga för användare i en JEA-session kan du alltid ange den fullständiga sökvägen till den körbara filen för att säkerställa att ett liknande namn (och potentiellt skadliga) program som placeras någon annanstans i systemet inte körs i stället.
 
 ### <a name="allowing-access-to-powershell-providers"></a>Att tillåta åtkomst till PowerShell-providers
 
@@ -171,7 +170,6 @@ FunctionDefinitions = @{
 > [!IMPORTANT]
 > Glöm inte att lägga till namnet på din anpassade funktioner till den **VisibleFunctions** fältet så att de kan köras av JEA-användare.
 
-
 Brödtext (skriptblock) för egna funktioner körs i standardläget för språk för systemet och som inte omfattas av JEAS språk begränsningar.
 Det innebär att funktioner kan komma åt filsystem och register och köra kommandon som inte gjordes synliga i filen roll funktionen.
 Var noga med för att undvika att tillåta godtycklig kod som ska köras när du använder parametrarna och undvika rörnät indata från användaren direkt till cmdlets som `Invoke-Expression`.
@@ -211,14 +209,12 @@ Se [förstå en PowerShell-modul](https://msdn.microsoft.com/library/dd878324.as
 
 ## <a name="updating-role-capabilities"></a>Uppdaterar rollfunktioner
 
-
 Du kan uppdatera en roll funktionen fil när som helst genom att bara spara ändringar i filen roll funktionen.
 Alla nya JEA-sessioner som startas när funktionen för rollen har uppdaterats visas de ändrade funktionerna.
 
 Det är därför det är så viktigt att kontrollera åtkomst till mappen rollen funktioner.
 Endast betrodda administratörer ska kunna ändra rollen funktionsfiler.
 Om en icke betrodd användare kan ändra rollen funktionsfiler, ge enkelt sig själva åtkomst till cmdlet: ar som att de kan utöka sina privilegier.
-
 
 Kontrollera att lokalt System har läsbehörighet till rollen funktionsfiler och som innehåller moduler för administratörer som vill låsa åtkomst till rollfunktioner för.
 
@@ -256,16 +252,14 @@ $roleB = @{
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
 }
 
-# Resulting permisisons for a user who belongs to both role A and B
-# - The constraint in role B for the DisplayName parameter on Get-Service is ignored becuase of rule #4
+# Resulting permissions for a user who belongs to both role A and B
+# - The constraint in role B for the DisplayName parameter on Get-Service is ignored because of rule #4
 # - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
 $mergedAandB = @{
     VisibleCmdlets = 'Get-Service',
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
 }
 ```
-
-
 
 **VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
 

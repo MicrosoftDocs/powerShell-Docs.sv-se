@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
-ms.openlocfilehash: 5d6ad7f62c451a0013f6c52b294fac9abd0b4bf1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851424"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057900"
 ---
 # <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a>Implementera anpassad auktorisering för en Management OData-webbtjänst
 
-Med hjälp av Windows PowerShell-webbtjänsten kräver en tredje part att implementera den [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) gränssnittet för att exponera Windows PowerShell-cmdlets. Det här gränssnittet utför användarautentisering till webbtjänsten. När du har skrivit koden för att implementera gränssnittet måste du kompilera den till en DLL-fil som ska användas i webbprogrammet.
+Med hjälp av Windows PowerShell-webbtjänsten kräver en tredje part att implementera den [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) gränssnittet för att exponera Windows PowerShell-cmdlets. Det här gränssnittet utför användarautentisering till webbtjänsten. När du har skrivit koden för att implementera gränssnittet måste du kompilera den till en DLL-fil som ska användas i webbprogrammet.
 
 ## <a name="pass-through-authorization"></a>Direkt-auktorisering
 
-Det enklaste sättet att implementera den [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) gränssnittet är en direkt implementering som låter alla användare. Det här exemplet innehåller inga säkerhets- och s tillhandahålls endast som en llustration av hur du implementerar gränssnittet. En implementering av den [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) gränssnittet måste åsidosätta två metoder: [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) och [Microsoft.Management.Odata.Customauthorization.Getmembershipid*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). I det här exemplet på [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) returnerar alltid den **System.Security.Principal.WindowsIdentity** objektet som är associerat med den aktuella användaren .
+Det enklaste sättet att implementera den [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) gränssnittet är en direkt implementering som låter alla användare. Det här exemplet innehåller inga säkerhets- och s tillhandahålls endast som en illustration av hur du implementerar gränssnittet. En implementering av den [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) gränssnittet måste åsidosätta två metoder: [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) och [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). I det här exemplet på [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) returnerar alltid den **System.Security.Principal.WindowsIdentity** objektet som är associerat med den aktuella användaren.
 
 ```csharp
 namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPERLINK "VBScript:u(%227%22,30)" OData. HYPERLINK "VBScript:u(%227%22,36)" BasicPlugins
@@ -68,7 +68,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
         /// <summary>
 
-        /// Default managemnet system state key
+        /// Default management system state key
 
         /// </summary>
 
@@ -134,7 +134,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ### <a name="role-based-authorization"></a>Rollbaserad auktorisering
 
-I följande exempel implementerar en rollbaserad auktoriseringsprincip. Principen har definierats i en XML-fil som finns i katalogen huvudprogram med web.config och schemafiler MOF- och XML-mappning. Information om hur du konfigurerar schemafilen auktorisering finns i [konfigurera rollbaserad auktorisering](./configuring-role-based-authorization.md). Den första delen av exemplet implementerar den [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) och [Microsoft.Management.Odata.Customauthorization.Getmembershipid*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) metoder. I det här fallet gränssnittsmetoder anropa metoder den `RbacSystem` klass (definieras nedan) som gör det faktiska arbetet för kontroll av behörigheter för användaren.
+I följande exempel implementerar en rollbaserad auktoriseringsprincip. Principen har definierats i en XML-fil som finns i katalogen huvudprogram med web.config och schemafiler MOF- och XML-mappning. Information om hur du konfigurerar schemafilen auktorisering finns i [konfigurera rollbaserad auktorisering](./configuring-role-based-authorization.md). Den första delen av exemplet implementerar den [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) och [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) metoder. I det här fallet gränssnittsmetoder anropa metoder den `RbacSystem` klass (definieras nedan) som gör det faktiska arbetet för kontroll av behörigheter för användaren.
 
 ```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
@@ -209,7 +209,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 
     /// <summary>
     /// Keeps Configuration for the RbacSystem
-    /// It reads the RacSystem configuration for configuratin file and creates RbacConfiguration
+    /// It reads the RacSystem configuration for configuration file and creates RbacConfiguration
     /// </summary>
     [Serializable]
     [XmlRoot("RbacConfiguration")]
@@ -719,7 +719,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
             /// Indicates whether the current object is equal to another object of the object type.
             /// </summary>
             /// <param name="other">Other object instance</param>
-            /// <returns>true, if both instace are same else false</returns>
+            /// <returns>true, if both instance are same else false</returns>
             public override bool Equals(object other)
             {
                 return this.Equals(other as RbacUserInfo);
@@ -738,4 +738,4 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-Slutligen RbacSystem-klassen implementerar metoder som utför arbete för kontroll av behörigheter för användaren och returstatus auktorisering till metoder som definierats i implementeringen av den [Microsoft.Management.Odata.Customauthorization ](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) gränssnitt.
+Slutligen RbacSystem-klassen implementerar metoder som utför arbete för kontroll av behörigheter för användaren och returstatus auktorisering till metoder som definierats i implementeringen av den [Microsoft.Management.Odata.CustomAuthorization ](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) gränssnitt.

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 1bccbfab55f4ba4476678b130bd9db91eed7df80
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 35c68a2b0f8c9bd1ed4fc54c41aa427ddd75907c
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795325"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056642"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Skapa en Windows PowerShell-innehållsprovider
 
@@ -206,9 +206,9 @@ Följande villkor kan gälla för en implementering av [System.Management.Automa
 
 - Åsidosättningar av den här metoden ska som standard inte radera innehållet i objekt som är dolda från användaren, såvida inte den [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) är inställd på `true`. Ett fel ska skrivas om sökvägen representerar ett objekt som är dolda från användaren och [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) är inställd på `false`.
 
-- Implementeringen av den [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) metoden ska anropa [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess* ](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och verifiera dess returvärdet innan du gör några ändringar i datalagret. Den här metoden används för att bekräfta körning av en åtgärd när en ändring görs i datalagret som t.ex Rensa innehåll. Den [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) metoden skickar namnet på resursen som ska ändras för användaren med Windows PowerShell-runtime hantering av alla kommandoradsinställningar eller inställning variabler avgöra vad som ska visas.
+- Implementeringen av den [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) metoden ska anropa [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och verifiera dess returvärdet innan du gör några ändringar i datalagret. Den här metoden används för att bekräfta körning av en åtgärd när en ändring görs i datalagret som t.ex Rensa innehåll. Den [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) metoden skickar namnet på resursen som ska ändras för användaren med Windows PowerShell-runtime hantering av alla kommandoradsinställningar eller inställning variabler avgöra vad som ska visas.
 
-  Efter anropet till [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar `true`, [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent* ](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) metoden ska anropa den [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) metod. Den här metoden skickar ett meddelande till användaren att godkänna feedback för att kontrollera om åtgärden bör behållas. Anropet till [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) kan ytterligare en kontroll efter ändringar av potentiellt skadliga system.
+  Efter anropet till [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar `true`, [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) metoden ska anropa den [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) metod. Den här metoden skickar ett meddelande till användaren att godkänna feedback för att kontrollera om åtgärden bör behållas. Anropet till [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) kan ytterligare en kontroll efter ändringar av potentiellt skadliga system.
 
 ## <a name="attaching-dynamic-parameters-to-the-clear-content-cmdlet"></a>Bifoga dynamiska parametrar till cmdleten Clear-innehåll
 

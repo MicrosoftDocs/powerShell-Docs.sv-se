@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
-ms.openlocfilehash: a9204ca7b28fc5792ef9bd18f6b0b24964de7386
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849296"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057254"
 ---
 # <a name="public-resource-schema"></a>Schema för offentliga resurser
 
@@ -21,7 +21,7 @@ Management OData använder MOF för att definiera resurser och deras egenskaper.
 
 ## <a name="defining-a-resource"></a>Definiera en resurs
 
-Varje resurs motsvarar ett objekt som returneras av en Windows PowerShell-cmdlet. I publc resource MOF-filen definierar du en resurs genom att deklarera en klass. Klassen består av egenskaper som motsvarar egenskaperna för objektet. Till exempel i följande exempel visas den [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) klass representeras av följande MOF.
+Varje resurs motsvarar ett objekt som returneras av en Windows PowerShell-cmdlet. I den offentliga resursen MOF-filen definierar du en resurs genom att deklarera en klass. Klassen består av egenskaper som motsvarar egenskaperna för objektet. Till exempel i följande exempel visas den [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) klass representeras av följande MOF.
 
 ```csharp
 class PswsTest_Process
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-För att deklarera en entitetsegenskap som en komplex typ, kan du ange den som en `string` typ med den `EmbeddedInstance` kvalificerare, inklusive namnet på den komplexa typen. I följande exempel hshows deklarationen för en egenskap för den `PswsTest_ProcessModule` typen deklarerade i föregående exempel.
+För att deklarera en entitetsegenskap som en komplex typ, kan du ange den som en `string` typ med den `EmbeddedInstance` kvalificerare, inklusive namnet på den komplexa typen. I följande exempel visas deklarationen av en egenskap för den `PswsTest_ProcessModule` typen deklarerade i föregående exempel.
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];
@@ -63,7 +63,7 @@ För att deklarera en entitetsegenskap som en komplex typ, kan du ange den som e
 
 ### <a name="associating-entities"></a>Associera entiteter
 
-Du kan associera två entiteter med hjälp av kopplingen och AssocationClass kvalificerare. Mer information finns i [associera Management OData entiteter](./associating-management-odata-entities.md).
+Du kan associera två entiteter med hjälp av kopplingen och Associeringsklass kvalificerare. Mer information finns i [associera Management OData entiteter](./associating-management-odata-entities.md).
 
 ### <a name="derived-types"></a>Härledda typer
 
@@ -72,17 +72,16 @@ Du kan härleda en typ från en annan typ. Den härledda typen ärver alla egens
 ```csharp
 Class Product {
 
-[Key] String ProductName;
+    [Key] String ProductName;
 
 };
 
 Class DairyProduct : Product {
 
-Uint16 PercentFat;
+    Uint16 PercentFat;
 };
 Class POPProduct : Product {
 
-Boolean IsCarbonated;
+    Boolean IsCarbonated;
 };
-
 ```

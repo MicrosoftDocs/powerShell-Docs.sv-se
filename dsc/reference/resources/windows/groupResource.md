@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-Gruppresurs
-ms.openlocfilehash: 9894150f6f749fc23efd4ce2b155b18788557d1d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 123e09b54a923af942a15f80fa7291c555b4235f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687512"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054976"
 ---
 # <a name="dsc-group-resource"></a>DSC-Gruppresurs
 
@@ -60,7 +60,7 @@ Group GroupExample
 
 ## <a name="example-2"></a>Exempel 2
 
-I följande exempel visas hur du lägger till en Active Directory-användare i gruppen lokala administratörer som en del av en flera Machine labb där du redan använder en PSCredential för kontot som lokal administratör.
+I följande exempel visas hur du lägger till en Active Directory-användare i gruppen lokala administratörer som en del av en flera Machine labb där du redan använder en PSCredential för det lokala administratörskontot.
 Eftersom den används också för administratörskontot för domänen (efter befordran av domän), behöver vi sedan konvertera den här befintliga PSCredential till en domän eget autentiseringsuppgift.
 Vi kan sedan lägga till en domänanvändare i gruppen lokala administratörer på medlemsservern.
 
@@ -95,7 +95,7 @@ Group AddADUserToLocalAdminGroup {
 I följande exempel visas hur du säkerställer en lokal grupp, TigerTeamAdmins, på servern TigerTeamSource.Contoso.Com innehåller inte ett visst domänkonto Contoso\JerryG.
 
 ```powershell
-Configuration SecureTigerTeamSrouce {
+Configuration SecureTigerTeamSource {
   Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
   Node TigerTeamSource.Contoso.Com {

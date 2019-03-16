@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 4eb2f0bac4f2169a9a06d80cb4fa214a09cdfa86
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3d74217621d00dfd68cad1c45d187a9c2ffb9980
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687029"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054382"
 ---
 # <a name="known-issues-and-limitations"></a>Kända problem och begränsningar
 
@@ -54,7 +54,7 @@ Det finns två lösningar på problemet beroende på vilken version av Windows S
 **Lösning:**
 
 - För system som kör **Windows Server 2008 R2**
-  1. Öppna Powershell som administratör
+  1. Öppna PowerShell som administratör
   2. Kör följande kommando
 
      ```powershell

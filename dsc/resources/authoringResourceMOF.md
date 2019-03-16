@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Skriva en anpassad DSC-resurs med MOF
-ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f243c3e3297711e6f6346a0f813a9c017fe227c3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687568"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059736"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Skriva en anpassad DSC-resurs med MOF
 
@@ -69,7 +69,8 @@ Observera följande om den tidigare koden:
 
 Skriptet resource implementerar logiken för resursen. I den här modulen måste du inkludera tre funktioner som kallas **Get-TargetResource**, **Set-TargetResource**, och **Test-TargetResource**. Alla tre funktioner måste vidta en parameteruppsättning som är identisk med uppsättningen egenskaper som definieras i MOF-schemat som du skapade för din resurs. I detta dokument kallas den här uppsättningen egenskaper ”resursegenskaper”. Dessa tre funktioner i en fil med namnet Store <ResourceName>.psm1. I följande exempel lagras funktionerna i en fil med namnet Demo_IISWebsite.psm1.
 
-> **Obs**: När du kör samma konfigurationsskript på resursen mer än en gång, får du några fel och resursen ska befinna sig i samma tillstånd som körs skriptet en gång. För att åstadkomma detta måste du kontrollera att din **Get-TargetResource** och **Test-TargetResource** functions Låt resursen inte ändrats och den anropar den **Set-TargetResource**fungerar mer än en gång i en sekvens med samma parameter värden motsvarar alltid att anropa den en gång.
+> [!NOTE]
+> När du kör samma konfigurationsskript på resursen mer än en gång, får du några fel och resursen ska befinna sig i samma tillstånd som körs skriptet en gång. För att åstadkomma detta måste du kontrollera att din **Get-TargetResource** och **Test-TargetResource** functions Låt resursen inte ändrats och den anropar den **Set-TargetResource**fungerar mer än en gång i en sekvens med samma parameter värden motsvarar alltid att anropa den en gång.
 
 I den **Get-TargetResource** fungera implementering, använda nyckelresurs egenskapsvärdena som tillhandahålls som parametrar för att kontrollera status för den angivna resurs-instansen. Den här funktionen måste returnera en hash-tabell som listar alla resursegenskaper som nycklar och de faktiska värdena för dessa egenskaper som motsvarande värden. Följande kod innehåller ett exempel.
 

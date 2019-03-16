@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
 caps.latest.revision: 9
-ms.openlocfilehash: 2c6a4bca03ee7f62371cbc296f854464167e5a62
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cc014487a680747ad59437052f79d4576154a1cb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847791"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059685"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Snabbstart för Windows PowerShell-värd
 
@@ -112,7 +112,7 @@ Du kan skapa ett anpassat körningsutrymme som läser in endast en delmängd av 
 
 ### <a name="creating-an-initialsessionstate-object"></a>Skapa ett InitialSessionState-objekt
 
-Om du vill skapa en anpassad körningsutrymme, måste du först skapa en [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt. I följande exempel använder vi den [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) att skapa en ruspace när du har skapat en standard [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt.
+Om du vill skapa en anpassad körningsutrymme, måste du först skapa en [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt. I följande exempel använder vi den [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) att skapa ett körningsutrymme när du har skapat en standard [System.Management.Automation.Runspaces.InitialSessionState ](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt.
 
 ```csharp
 InitialSessionState iss = InitialSessionState.CreateDefault();
@@ -126,7 +126,7 @@ ps.Invoke();
 
 ### <a name="constraining-the-runspace"></a>Begränsa körningsutrymmet
 
-I exemplet ovan skapade vi en standard [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt som läser in alla av de inbyggda grundläggande Windows PowerShell. Vi också har anropat den [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) metod för att skapa ett InitialSessionState-objekt som skulle läsa in kommandona i Mirosoft.PowerShell.Core snapin-modulen. Om du vill skapa en mer begränsad körningsutrymme, måste du skapa en tom [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt genom att anropa den [ System.Management.Automation.Runspaces.InitialSessionState.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) metoden och lägger sedan till kommandon i InitialSessionState.
+I exemplet ovan skapade vi en standard [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt som läser in alla av de inbyggda grundläggande Windows PowerShell. Vi också har anropat den [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) metod för att skapa ett InitialSessionState-objekt som skulle läsa in kommandona i Microsoft.PowerShell.Core snapin-modulen. Om du vill skapa en mer begränsad körningsutrymme, måste du skapa en tom [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt genom att anropa den [ System.Management.Automation.Runspaces.InitialSessionState.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) metoden och lägger sedan till kommandon i InitialSessionState.
 
 Med hjälp av ett körningsutrymme som läser in endast de kommandon som du anger ger betydligt bättre prestanda.
 

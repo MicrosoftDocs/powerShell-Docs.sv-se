@@ -14,18 +14,18 @@ helpviewer_keywords:
 - ConfirmPreference [PowerShell Programmer's Guide], described
 ms.assetid: 37d6e87f-57b7-40bd-b645-392cf0b6e88e
 caps.latest.revision: 13
-ms.openlocfilehash: ec441831f5e3231a44c9875d1b6d2bf6280a6965
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0c0517ef7fbd5ae6434773a2dfe276f3a8c35f39
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56844991"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057413"
 ---
 # <a name="requesting-confirmation-from-cmdlets"></a>Begära bekräftelse från cmdlets
 
 Cmdlet: ar bör begära bekräftelse när de är på väg att göra en ändring i systemet som ligger utanför Windows PowerShell-miljö. Till exempel om en cmdlet är håller på att lägga till ett användarkonto eller stoppa en process, kräver cmdleten bekräftelse från användaren innan den fortsätter. Däremot om en cmdlet är att ändra en Windows PowerShell-variabel, behöver cmdleten inte bekräftelse.
 
-För att göra en begäran om händelsebekräftelse cmdlet: en anger att den stöder begäranden om händelsebekräftelse och den måste anropa den [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [ System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) (valfritt) metoder för att visa ett meddelande om bekräftelse på begäran.
+För att göra en begäran om händelsebekräftelse cmdlet: en anger att den stöder begäranden om händelsebekräftelse och den måste anropa den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) (valfritt) metoder för att visa ett meddelande om bekräftelse på begäran.
 
 ## <a name="supporting-confirmation-requests"></a>Stöd för begäranden om Händelsebekräftelse
 
@@ -40,17 +40,17 @@ I följande exempel visas en deklaration av Cmdlet attribut som har stöd för b
 
 ## <a name="calling-the-confirmation-request-methods"></a>Anropa metodbegäranden bekräftelse
 
-I cmdlet-koden anropar den [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metoden innan åtgärden som ändrar systemet utförs. Utforma cmdlet: en så att om anropet returnerar ett värde av `false`, är det inte att utföra åtgärden och cmdlet bearbetar nästa åtgärd.
+I cmdlet-koden anropar den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metoden innan åtgärden som ändrar systemet utförs. Utforma cmdlet: en så att om anropet returnerar ett värde av `false`, är det inte att utföra åtgärden och cmdlet bearbetar nästa åtgärd.
 
 ## <a name="calling-the-shouldcontinue-method"></a>Att anropa metoden ShouldContinue
 
-De flesta cmdletar begär bekräftelse via endast den [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod. Ibland kan dock kräva ytterligare bekräftelse. Dessa fall kan komplettera den [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anropa med ett anrop till den [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metod. På så sätt kan cmdlet eller provider för att få en mer detaljerad styra omfattningen av den **Ja till alla** svar på bekräfta åtgärden.
+De flesta cmdletar begär bekräftelse via endast den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod. Ibland kan dock kräva ytterligare bekräftelse. Dessa fall kan komplettera den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anropa med ett anrop till den [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metod. På så sätt kan cmdlet eller provider för att få en mer detaljerad styra omfattningen av den **Ja till alla** svar på bekräfta åtgärden.
 
-Om en cmdlet anropar den [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoden cmdlet: en måste också tillhandahålla en `Force` växla parametern. Om användaren anger `Force` när du anropar cmdleten, cmdleten fortfarande ska anropa [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess), men ska kringgås anropet till [ System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue).
+Om en cmdlet anropar den [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoden cmdlet: en måste också tillhandahålla en `Force` växla parametern. Om användaren anger `Force` när du anropar cmdleten, cmdleten fortfarande ska anropa [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess), men ska kringgås anropet till [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue).
 
-[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) genereras ett undantagsfel när den anropas från en icke-interaktiv miljö där användaren uppmanas inte. Att lägga till en `Force` parametern säkerställer att kommandot fortfarande kan utföras när den anropas i en icke-interaktiv miljö.
+[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) genereras ett undantagsfel när den anropas från en icke-interaktiv miljö där användaren uppmanas inte. Att lägga till en `Force` parametern säkerställer att kommandot fortfarande kan utföras när den anropas i en icke-interaktiv miljö.
 
-I följande exempel visas hur du anropar [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue).
+I följande exempel visas hur du anropar [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue).
 
 ```csharp
 if (ShouldProcess (...) )
@@ -62,9 +62,9 @@ if (ShouldProcess (...) )
 }
 ```
 
-Beteendet för en [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anrop kan variera beroende på miljön där cmdleten har anropats. Med hjälp av föregående riktlinjer hjälper att säkerställa att cmdleten fungerar konsekvent med andra cmdletar, oavsett värdmiljön.
+Beteendet för en [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anrop kan variera beroende på miljön där cmdleten har anropats. Med hjälp av föregående riktlinjer hjälper att säkerställa att cmdleten fungerar konsekvent med andra cmdletar, oavsett värdmiljön.
 
-Ett exempel på anropar den [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod, se [hur du begär bekräftelser](./how-to-request-confirmations.md).
+Ett exempel på anropar den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod, se [hur du begär bekräftelser](./how-to-request-confirmations.md).
 
 ## <a name="specify-the-impact-level"></a>Ange effektnivå
 
@@ -74,13 +74,13 @@ För de flesta cmdletarna behöver du inte uttryckligen ange `ConfirmImpact`.  A
 
 ## <a name="calling-non-confirmation-methods"></a>Anropa metoder för icke-bekräftelse
 
-Om cmdlet eller providern måste skicka ett meddelande men inte begär bekräftelse, kan det anropa följande tre metoder. Undvik att använda den [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metod för att skicka meddelanden av typerna eftersom [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) utdata är en med normala utdata från cmdleten eller din leverantör, vilket gör skriptet skriva svårt.
+Om cmdlet eller providern måste skicka ett meddelande men inte begär bekräftelse, kan det anropa följande tre metoder. Undvik att använda den [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metod för att skicka meddelanden av typerna eftersom [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) utdata är en med normala utdata från cmdleten eller din leverantör, vilket gör skriptet skriva svårt.
 
-- Varning användaren och fortsätt med åtgärden genom cmdlet eller providern kan anropa den [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metod.
+- Varning användaren och fortsätt med åtgärden genom cmdlet eller providern kan anropa den [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metod.
 
-- Ange ytterligare information som du kan hämta genom att använda den `Verbose` parametern, cmdlet eller providern kan anropa den [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metod.
+- Ange ytterligare information som du kan hämta genom att använda den `Verbose` parametern, cmdlet eller providern kan anropa den [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metod.
 
-- För att ge felsökning detaljnivåer för andra utvecklare eller för produktsupport, cmdlet eller providern kan anropa den [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metod. Användaren kan hämta den här informationen med hjälp av den `Debug` parametern.
+- För att ge felsökning detaljnivåer för andra utvecklare eller för produktsupport, cmdlet eller providern kan anropa den [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metod. Användaren kan hämta den här informationen med hjälp av den `Debug` parametern.
 
 Cmdlets och providers först anropa följande metoder för att begära bekräftelse innan de försöker utföra en åtgärd som ändrar ett system utanför Windows PowerShell:
 

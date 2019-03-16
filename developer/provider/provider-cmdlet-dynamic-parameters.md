@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f1069f7-8fa8-4622-9e2c-af29b0b961c2
 caps.latest.revision: 6
-ms.openlocfilehash: 803fe4ae24a4f8022639c5b6d6298100859177ce
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a50de014988336c473c565b506a73de1c864d7e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848463"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058240"
 ---
 # <a name="provider-cmdlet-dynamic-parameters"></a>Dynamiska cmdlet-parametrar för providers
 
@@ -73,7 +73,7 @@ Här är en lista över de statiska parametrar som kan användas för att lägga
 
 `Copy-Item` cmdlet: en som du kan definiera dynamiska parametrar som utlöses av den `Path`, `Destination`, och `Recurse` parametrarna för den `Copy-Item` cmdlet genom att implementera den [ System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) metod.
 
-Get-ChildItems cmdlet som du kan definiera dynamiska parametrar som utlöses av den `Path` och `Recures` parametrarna för den `Get-ChildItem` cmdlet genom att implementera den [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) och [System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) metoder.
+Get-ChildItems cmdlet som du kan definiera dynamiska parametrar som utlöses av den `Path` och `Recurse` parametrarna för den `Get-ChildItem` cmdlet genom att implementera den [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) och [System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) metoder.
 
 `Get-Content` cmdlet: en som du kan definiera dynamiska parametrar som utlöses av den `Path` -parametern för den `Get-Content` cmdlet genom att implementera den [ System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreaderdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) metod.
 
@@ -89,7 +89,7 @@ Get-ChildItems cmdlet som du kan definiera dynamiska parametrar som utlöses av 
 
 `New-ItemProperty` cmdlet: en som du kan definiera dynamiska parametrar som utlöses av den `Path`, `Name`, `PropertyType`, och `Value` parametrarna för den `New-ItemProperty` cmdlet genom att implementera den [ System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Newpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters) metod.
 
-`New-PSDrive` cmdlet: en som du kan definiera dynamiska parametrar som utlöses av den [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objektet som returneras av den `New-PSDrive` cmdlet genom att implementera den [ System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) metod.
+`New-PSDrive` cmdlet: en som du kan definiera dynamiska parametrar som utlöses av den [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objektet som returneras av den `New-PSDrive` cmdlet genom att implementera den [ System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) metod.
 
 `Remove-Item` Du kan definiera dynamiska parametrar som utlöses av den `Path` och `Recurse` parametrarna för den `Remove-Item` cmdlet genom att implementera den [ System.Management.Automation.Provider.Containercmdletprovider.Removeitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters) metod.
 

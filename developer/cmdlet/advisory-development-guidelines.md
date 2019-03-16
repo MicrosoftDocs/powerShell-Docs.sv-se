@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 97a2d3587f8f69edc92150474e94a620ff9a2f71
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845796"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056574"
 ---
 # <a name="advisory-development-guidelines"></a>Rekommenderade riktlinjer för utveckling
 
@@ -61,7 +61,7 @@ Till exempel den [Remove-Item](/powershell/module/microsoft.powershell.managemen
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>Hantera autentiseringsuppgifter via Windows PowerShell (AD03)
 
-En cmdlet bör definiera en `Credential` parameter för att representera autentiseringsuppgifter. Den här parametern måste vara av typen [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) och måste definieras med hjälp av en deklaration av autentiseringsuppgift attribut. Det här stödet meddelanderuta automatiskt för användarnamnet, lösenordet eller båda när en fullständig autentiseringsuppgift anges direkt. Mer information om attributet autentiseringsuppgifter finns i [Credential attributet deklarationen](./credential-attribute-declaration.md).
+En cmdlet bör definiera en `Credential` parameter för att representera autentiseringsuppgifter. Den här parametern måste vara av typen [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) och måste definieras med hjälp av en deklaration av autentiseringsuppgift attribut. Det här stödet meddelanderuta automatiskt för användarnamnet, lösenordet eller båda när en fullständig autentiseringsuppgift anges direkt. Mer information om attributet autentiseringsuppgifter finns i [Credential attributet deklarationen](./credential-attribute-declaration.md).
 
 ### <a name="support-encoding-parameters-ad04"></a>Stöd för kodning parametrar (AD04)
 
@@ -89,17 +89,17 @@ När du namnger .NET Framework-klass som implementerar en cmdlet, ge klassen nam
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>Om inga indata från Pipeline åsidosätter metoden BeginProcessing (AC02)
 
-Om din cmdlet inte tar emot indata från pipeline, bearbetning bör implementeras inom den [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metod. Användning av den här metoden gör att Windows PowerShell för att underhålla sortering mellan cmdlets. Den första cmdlet: i pipelinen returnerar alltid dess objekt innan de återstående cmdletarna i pipelinen prova att starta bearbetningen.
+Om din cmdlet inte tar emot indata från pipeline, bearbetning bör implementeras inom den [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metod. Användning av den här metoden gör att Windows PowerShell för att underhålla sortering mellan cmdlets. Den första cmdlet: i pipelinen returnerar alltid dess objekt innan de återstående cmdletarna i pipelinen prova att starta bearbetningen.
 
 ### <a name="to-handle-stop-requests-override-the-stopprocessing-method-ac03"></a>För att hantera åsidosätta stoppbegäran metoden StopProcessing (AC03)
 
-Åsidosätta den [System.Management.Automation.Cmdlet.Stopprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) metod så att din cmdlet kan hantera stoppsignal. Vissa cmdlets ta lång tid att slutföra deras funktion och de gör det lång tid skickar mellan anrop till Windows PowerShell-körning, till exempel när cmdleten blockerar tråd i tidskrävande RPC-anrop. Detta inkluderar cmdletar som göra anrop till den [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metod till den [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metoden och annan feedback mekanismer som kan ta lång tid att slutföra. För dessa fall kan användaren behöva skicka en stoppsignal till dessa cmdletar.
+Åsidosätta den [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) metod så att din cmdlet kan hantera stoppsignal. Vissa cmdlets ta lång tid att slutföra deras funktion och de gör det lång tid skickar mellan anrop till Windows PowerShell-körning, till exempel när cmdleten blockerar tråd i tidskrävande RPC-anrop. Detta inkluderar cmdletar som göra anrop till den [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metod till den [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metoden och annan feedback mekanismer som kan ta lång tid att slutföra. För dessa fall kan användaren behöva skicka en stoppsignal till dessa cmdletar.
 
 ### <a name="implement-the-idisposable-interface-ac04"></a>Implementera gränssnittet IDisposable (AC04)
 
-Om din cmdlet har objekt som inte kasseras (skrivna till pipelinen) av den [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoden cmdlet: kan kräva ytterligare objekt borttagning. Exempel: om cmdlet: öppnar en filreferens i dess [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metod och ser referensen öppna för användning av den [System.Management.Automation.Cmdlet.Processrecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoden, den här referensen har stängs i slutet av bearbetning.
+Om din cmdlet har objekt som inte kasseras (skrivna till pipelinen) av den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoden cmdlet: kan kräva ytterligare objekt borttagning. Exempel: om cmdlet: öppnar en filreferens i dess [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metod och ser referensen öppna för användning av den [System.Management.Automation.Cmdlet.ProcessRecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoden, den här referensen har stängs i slutet av bearbetning.
 
-Windows PowerShell-runtime anropar alltid inte den [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metod. Till exempel den [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metoden kan inte anropas om cmdlet: en har avbrutits mitt via dess drift eller om avslutande fel uppstår i någon del av cmdlet: en. Därför .NET Framework-klass för en cmdlet som kräver att objektet rensningen ska implementera hela [System.Idisposable](/dotnet/api/System.IDisposable) gränssnittet mönstret, inklusive finaliserare, så att Windows PowerShell-runtime kan anropa både den [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) och [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) metoder i slutet av bearbetning.
+Windows PowerShell-runtime anropar alltid inte den [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metod. Till exempel den [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metoden kan inte anropas om cmdlet: en har avbrutits mitt via dess drift eller om avslutande fel uppstår i någon del av cmdlet: en. Därför .NET Framework-klass för en cmdlet som kräver att objektet rensningen ska implementera hela [System.IDisposable](/dotnet/api/System.IDisposable) gränssnittet mönstret, inklusive finaliserare, så att Windows PowerShell-runtime kan anropa både den [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) och [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) metoder i slutet av bearbetning.
 
 ### <a name="use-serialization-friendly-parameter-types-ac05"></a>Använda serialisering-vänlig parametertyper (AC05)
 
@@ -117,7 +117,7 @@ Inbyggda rehydratable typer:
 
 - PSPrimitiveDictionary
 
-- SwitchParmeter
+- SwitchParameter
 
 - PSListModifier
 

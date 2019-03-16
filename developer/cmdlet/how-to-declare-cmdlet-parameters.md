@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0c0509cc-5a50-49ad-a74f-5527023d0270
 caps.latest.revision: 10
-ms.openlocfilehash: d6613889ebd2ba139ce0b3de1b8d24e4aec37d2a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 80e3e27bcf72b078c192525a843a3b3afb306529
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850591"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059175"
 ---
 # <a name="how-to-declare-cmdlet-parameters"></a>Deklarera cmdlet-parametrar
 
@@ -83,7 +83,7 @@ Läs mer om parameterattributet [parameterdeklaration för attributet](./paramet
 
 ## <a name="how-to-declare-a-switch-parameter"></a>Hur du deklarera ett växlingsparametern
 
-- Definiera en offentlig egenskap som typen [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter), och sedan deklarera parametern-attributet.
+- Definiera en offentlig egenskap som typen [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter), och sedan deklarera parametern-attributet.
 
     ```csharp
     [Parameter(Position = 1)]
@@ -116,7 +116,7 @@ Läs mer om attributet Alias [Alias attributet deklarationen](./alias-attribute-
 
 ## <a name="see-also"></a>Se även
 
-[System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)
+[System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)
 
 [Attributet parameterdeklaration](./parameter-attribute-declaration.md)
 

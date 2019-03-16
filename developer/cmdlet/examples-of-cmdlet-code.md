@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6fed2f68-ce6d-4a8f-bf21-f94f27a155c2
 caps.latest.revision: 9
-ms.openlocfilehash: 39c0814faf72cdb4b24730acb2ae429a2f465b32
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 936728d64f30a08fb9e2fa9ccef103683594aa3e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851802"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056268"
 ---
 # <a name="examples-of-cmdlet-code"></a>Exempel på cmdlet-kod
 
@@ -38,7 +38,7 @@ Det här avsnittet innehåller exempel på cmdlet-kod som du kan använda för a
 
 [Åsidosätta indata bearbetningsmetoder](./how-to-override-input-processing-methods.md) alltså den grundläggande strukturen som används för att åsidosätta BeginProcessing och ProcessRecord EndProcessing metoder.
 
-[Så här ShouldProcess supportsamtal](./how-to-request-confirmations.md) det här exemplet visar hur [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)metoder ska anropas från en cmdlet.
+[Så här ShouldProcess supportsamtal](./how-to-request-confirmations.md) det här exemplet visar hur [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoder ska anropas från en cmdlet.
 
 [Hur du stöd för transaktioner](./how-to-support-transactions.md) det här exemplet visar hur du anger att cmdleten har stöd för transaktioner och hur du implementerar vad som händer när cmdlet: en används i en transaktion.
 

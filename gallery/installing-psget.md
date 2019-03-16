@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: galleriet, powershell, cmdlet, psget
 title: Installera PowerShellGet
-ms.openlocfilehash: 5c51cb1c7ea2538cc5f8503ce6c5d80edda70e15
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 23a53a9117c9f6a7ad157b635cd7ff4b3b3444c5
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683879"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054840"
 ---
 # <a name="installing-powershellget"></a>Installera PowerShellGet
 
@@ -57,7 +57,7 @@ ms.locfileid: "55683879"
   Exit
   ```
 
-- Se till att PowerShellGet och PackageManagment moduler inte har lästs in i andra processer.
+- Se till att PowerShellGet och PackageManagement-moduler inte har lästs in i andra processer.
 - Ta bort innehållet i `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` och `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` mappar.
 - Öppnar PS-konsolen med förhöjd behörighet och kör sedan följande kommandon.
 

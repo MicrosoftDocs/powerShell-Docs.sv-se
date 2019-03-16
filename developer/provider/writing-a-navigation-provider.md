@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: a789b392bddd344ad583c93a1a55302329df9917
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f449c17e4c373c42f8a1d96fa9075940111c65bc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56852089"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056605"
 ---
 # <a name="writing-a-navigation-provider"></a>Skriva en navigeringsprovider
 
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>Implementing MakePath
 
-Den [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) metoden kopplar en angivna överordnade och sökvägen till en angivna underordnade att skapa en provider-internt sökväg (för information om sökvägen typer som leverantörer kan stödja, se [Windows PowerShell-providern översikt](./windows-powershell-provider-overview.md). PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.Powershell.Commands.Join-Path](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) cmdlet.
+Den [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) metoden kopplar en angivna överordnade och sökvägen till en angivna underordnade att skapa en provider-internt sökväg (för information om sökvägen typer som leverantörer kan stödja, se [Windows PowerShell-providern översikt](./windows-powershell-provider-overview.md). PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.PowerShell.Commands.Join-Path](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) cmdlet.
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -221,7 +221,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>Implementera MoveItem
 
-Den [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metoden flyttar ett objekt från den angivna sökvägen till den angivna målsökvägen. PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.Powershell.Commands.Move-Item](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) cmdlet.
+Den [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metoden flyttar ett objekt från den angivna sökvägen till den angivna målsökvägen. PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.PowerShell.Commands.Move-Item](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) cmdlet.
 
 ```csharp
 protected override void MoveItem(string path, string destination)

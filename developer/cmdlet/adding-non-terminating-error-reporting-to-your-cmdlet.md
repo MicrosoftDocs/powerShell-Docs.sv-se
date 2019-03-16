@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
-ms.openlocfilehash: 2f3bb481722363557c93ebbc5e6df62baeff2555
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0550dacc33f45f45ba105ca5cb4d2e5b5d675fb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851018"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056064"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Lägga till rapportering av fel som avbryter körningen i en cmdlet
 
-Cmdlet: ar kan rapportera oändliga fel genom att anropa den [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metod och fortfarande fortsätter att fungera på den aktuella indataobjektet eller på ytterligare inkommande pipeline-objekt. Det här avsnittet beskrivs hur du skapar en cmdlet som rapporterar oändliga fel från dess inkommande bearbetningsmetoder.
+Cmdlet: ar kan rapportera oändliga fel genom att anropa den [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metod och fortfarande fortsätter att fungera på den aktuella indataobjektet eller på ytterligare inkommande pipeline-objekt. Det här avsnittet beskrivs hur du skapar en cmdlet som rapporterar oändliga fel från dess inkommande bearbetningsmetoder.
 
-Cmdlet: en måste klara för oändliga fel (samt avslutande fel), en [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objekt identifierar felet. Varje Felpost identifieras med en unik sträng som kallas ”fel identifierare”. Förutom identifieraren kategorin för varje fel anges av konstanterna som definieras av en [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) uppräkning. Du kan visa fel baserat på deras kategori genom att ange den `$ErrorView` variabeln ”CategoryView”.
+Cmdlet: en måste klara för oändliga fel (samt avslutande fel), en [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objekt identifierar felet. Varje Felpost identifieras med en unik sträng som kallas ”fel identifierare”. Förutom identifieraren kategorin för varje fel anges av konstanterna som definieras av en [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) uppräkning. Du kan visa fel baserat på deras kategori genom att ange den `$ErrorView` variabeln ”CategoryView”.
 
 Mer information om felposter finns i [Windows PowerShell-felposter](./windows-powershell-error-records.md).
 
@@ -101,11 +101,11 @@ Alla cmdlets måste åsidosätta minst en av de indata som bearbetar metoder som
 > [!NOTE]
 > Cmdlet: bör hantera varje post oberoende som möjligt.
 
-Denna cmdlet Get-procedur åsidosätter den [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod för att hantera den `Name` parameter för indata från användaren eller ett skript. Den här metoden får processerna för varje begärda processnamn eller alla processer om inget namn anges. Information om den här åsidosättningen anges i [skapa din första cmdleten](./creating-a-cmdlet-without-parameters.md).
+Denna cmdlet Get-procedur åsidosätter den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod för att hantera den `Name` parameter för indata från användaren eller ett skript. Den här metoden får processerna för varje begärda processnamn eller alla processer om inget namn anges. Information om den här åsidosättningen anges i [skapa din första cmdleten](./creating-a-cmdlet-without-parameters.md).
 
 #### <a name="things-to-remember-when-reporting-errors"></a>Kom ihåg följande när du har rapporterat fel
 
-Den [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objekt som cmdleten skickar när du skriver ett fel kräver ett undantag kärnpunkter. Följ riktlinjerna .NET när du fastställer undantaget att använda. I praktiken, om felet är från samma som ett befintligt undantag, cmdleten bör använda eller härledd från detta undantag. I annat fall bör den härleda ett nytt undantag eller undantag hierarki direkt från den [System.Exception](/dotnet/api/System.Exception) klass.
+Den [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objekt som cmdleten skickar när du skriver ett fel kräver ett undantag kärnpunkter. Följ riktlinjerna .NET när du fastställer undantaget att använda. I praktiken, om felet är från samma som ett befintligt undantag, cmdleten bör använda eller härledd från detta undantag. I annat fall bör den härleda ett nytt undantag eller undantag hierarki direkt från den [System.Exception](/dotnet/api/System.Exception) klass.
 
 Tänk på följande när du skapar fel-ID (öppnas via egenskapen FullyQualifiedErrorId i klassen ErrorRecord).
 
@@ -135,7 +135,7 @@ Ett ohanterat undantag omfattas inte av Windows PowerShell under följande förh
 
 ## <a name="reporting-nonterminating-errors"></a>Rapportering oändliga fel
 
-Någon av metoderna indata kan rapportera ett oändliga fel i utdata stream med hjälp av den [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metod. Här är ett exempel från denna cmdlet för Get-processen som illustrerar anropet till [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) från inom åsidosättningen av den [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod. I det här fallet görs anropet om cmdlet: en inte kan hitta en process för en angiven process-ID.
+Någon av metoderna indata kan rapportera ett oändliga fel i utdata stream med hjälp av den [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metod. Här är ett exempel från denna cmdlet för Get-processen som illustrerar anropet till [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) från inom åsidosättningen av den [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod. I det här fallet görs anropet om cmdlet: en inte kan hitta en process för en angiven process-ID.
 
 ```csharp
 protected override void ProcessRecord()

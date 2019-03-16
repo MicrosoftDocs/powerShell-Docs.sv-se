@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Använda DSC på Nano Server
-ms.openlocfilehash: fd81fe56d16100f45d9ee2dfd8fdc303c2a6c17a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ac5eaf3885788f40e12e4f0a0f19025668280f7e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686588"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054670"
 ---
 # <a name="using-dsc-on-nano-server"></a>Använda DSC på Nano Server
 
@@ -38,7 +38,7 @@ Både sändnings- och mottagningsläge
 - [Stop-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration)
 - [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration)
 - [Test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
-- [Publish-DscConfiguraiton](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration)
+- [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration)
 - [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration)
 - [Restore-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Restore-DscConfiguration)
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
@@ -82,11 +82,11 @@ Både sändnings- och mottagningsläge
 
 - **Arkiv**
 - **Miljö**
-- **Filen**
-- **Log**
+- **Fil**
+- **log**
 - **ProcessSet**
-- **registret**
-- **Skriptet**
+- **Registret**
+- **skriptet**
 - **WindowsPackageCab**
 - **WindowsProcess**
 - **WaitForAll** (se [att ange beroenden mellan noder](../configurations/crossNodeDependencies.md))
@@ -99,7 +99,7 @@ Både sändnings- och mottagningsläge
 
   **Problem:** Ovan resurser misslyckas om specifika instans kallas två gånger (som kör samma konfiguration för två gånger)
 
-- **Tjänsten**
+- **Tjänst**
 - **ServiceSet**
 
   **Problem:** Fungerar bara för Starta/Stoppa tjänst (status). Misslyckas om någon försöker ändra andra attribut som startuptype för, autentiseringsuppgifter, beskrivning osv... Felet uppstod är ungefär:

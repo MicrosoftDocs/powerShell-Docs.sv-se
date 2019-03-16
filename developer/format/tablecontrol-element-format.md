@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1550b068-dfbc-4ae0-9aa1-72c9a680ec59
 caps.latest.revision: 15
-ms.openlocfilehash: dd48e82452e83f93e2e005c9db53bbc51d8b2eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3942c008e026b0b99db3c77af4a0152b50fffc4e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848855"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054585"
 ---
 # <a name="tablecontrol-element-format"></a>TableControl-element (format)
 
@@ -48,7 +48,7 @@ Ingen.
 |[AutoSize-Element för TableControl (Format)](./autosize-element-for-tablecontrol-format.md)|Valfritt element.<br /><br /> Anger om kolumnstorlek och antalet kolumner justeras beroende på storleken på data.|
 |[HideTableHeaders Element för TableControl (Format)](./hidetableheaders-element-format.md)|Valfritt element.<br /><br /> Anger om rubriken för tabellen inte ska visas.|
 |[TableHeaders Element för TableControl (Format)](./tableheaders-element-format.md)|Element som krävs.<br /><br /> Definierar etiketter, bredderna och justering av data för kolumner i tabellvyn.|
-|[TableRowEntries Element för TableCotrol (Format)](./tablerowentries-element-for-tablecontrol-format.md)|Valfritt element.<br /><br /> Innehåller definitioner av tabellvyn.|
+|[TableRowEntries Element för TableControl (Format)](./tablerowentries-element-for-tablecontrol-format.md)|Valfritt element.<br /><br /> Innehåller definitioner av tabellvyn.|
 
 ### <a name="parent-elements"></a>Överordnade element
 

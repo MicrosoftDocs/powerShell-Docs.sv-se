@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bcf0739e-920e-4dd8-afca-2c6d6927bc2a
 caps.latest.revision: 10
-ms.openlocfilehash: e9c59474b7e2bbc07166df8a8b4fa8099edd360f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ef3b5bab5dcafc578397bcb4f071776bbdeaced1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849051"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058274"
 ---
 # <a name="cmdlet-sets"></a>Cmdlet-uppsättningar
 
@@ -27,9 +27,9 @@ Håll följande i åtanke när du implementerar en basklass.
 
 - Åsidosätta lämpliga indata metoden i basklassen bearbetades.
 
-- Deklarera de [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attributet på alla cmdlet klasser, men inte deklarera den på basklassen.
+- Deklarera de [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attributet på alla cmdlet klasser, men inte deklarera den på basklassen.
 
-- Implementera en [System.Management.Automation.Pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn) eller [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) klassen vars namn och beskrivning återspeglar uppsättning cmdlets.
+- Implementera en [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) eller [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) klassen vars namn och beskrivning återspeglar uppsättning cmdlets.
 
 ## <a name="example"></a>Exempel
 
@@ -43,7 +43,7 @@ using System.Management.Automation;             //Windows PowerShell namespace.
 namespace Microsoft.Samples.PowerShell.Commands
 {
 
-  #region ProccessCommands
+  #region ProcessCommands
 
   /// <summary>
   /// This class implements a Stop-Proc cmdlet. The parameters
@@ -123,7 +123,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     // </summary>
     protected override void ProcessRecord()
     {
-      // Set up the wildcard chracters used in resolving
+      // Set up the wildcard characters used in resolving
       // the process names.
       WildcardOptions options = WildcardOptions.IgnoreCase |
                                 WildcardOptions.Compiled;

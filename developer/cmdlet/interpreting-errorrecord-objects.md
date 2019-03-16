@@ -8,23 +8,23 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
 caps.latest.revision: 9
-ms.openlocfilehash: d77e4daf25bfcd5e76c184f6dbdb619368627bfa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847672"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058784"
 ---
 # <a name="interpreting-errorrecord-objects"></a>Tolka ErrorRecord-objekt
 
-I de flesta fall en [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) -objektet representerar en icke-avslutande fel som genereras av ett kommando eller skript. Avslutande fel kan också ange ytterligare information i en ErrorRecord via den [System.Management.Automation.Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord) gränssnitt.
+I de flesta fall en [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -objektet representerar en icke-avslutande fel som genereras av ett kommando eller skript. Avslutande fel kan också ange ytterligare information i en ErrorRecord via den [System.Management.Automation.Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord) gränssnitt.
 
-Om du vill skriva ett Felhanteraren i ditt skript eller en värden för att hantera fel som har inträffat vid körning av kommandot eller skriptet, måste du tolka den [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektet för att avgöra om den representerar klassen för fel som du vill hantera.
+Om du vill skriva ett Felhanteraren i ditt skript eller en värden för att hantera fel som har inträffat vid körning av kommandot eller skriptet, måste du tolka den [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektet för att avgöra om den representerar klassen för fel som du vill hantera.
 
 När en cmdlet påträffar avslutande eller icke-avslutande fel, bör den skapa en Felpost som beskriver felet. Värdprogrammet måste undersöka dessa felposter och utföra åtgärder värduppdateringarna åtgärdar felet. Värdprogrammet måste också undersöka felposter för oändliga fel som kunde inte bearbeta en post, men kunde fortsätta och den måste undersöka felposter avslutande fel som orsakade att stoppa pipelinen.
 
 > [!NOTE]
-> Avslutande fel cmdleten anropar den [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) metod. För icke-avslutande fel cmdleten anropar den [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metod.
+> Avslutande fel cmdleten anropar den [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) metod. För icke-avslutande fel cmdleten anropar den [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metod.
 
 ## <a name="error-record-design"></a>Fel poster Design
 
@@ -44,13 +44,13 @@ Du kan granska flera olika delar av felposten som ska identifiera felet. Dessa d
 
 ### <a name="the-error-category"></a>Felkategori
 
-Kategorin fel på en Felpost är en av de fördefinierade konstanterna som tillhandahålls av den [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) uppräkning. Den här informationen är tillgänglig via den [System.Management.Automation.Errorrecord.Categoryinfo*](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) egenskapen för den [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objekt.
+Kategorin fel på en Felpost är en av de fördefinierade konstanterna som tillhandahålls av den [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) uppräkning. Den här informationen är tillgänglig via den [System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) egenskapen för den [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objekt.
 
 Cmdlet: en kan ange CloseError, OpenError, InvalidType, ReadError och WriteError kategorier och andra felkategorier. Värdprogrammet kan använda kategorin fel för att samla in grupper med fel.
 
 ### <a name="the-exception"></a>Undantaget
 
-Undantag som ingår i en Felpost tillhandahålls av cmdlet: en och kan nås via den [System.Management.Automation.Errorrecord.Exception*](/dotnet/api/System.Management.Automation.ErrorRecord.Exception) egenskapen för den [ System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objekt.
+Undantag som ingår i en Felpost tillhandahålls av cmdlet: en och kan nås via den [System.Management.Automation.ErrorRecord.Exception*](/dotnet/api/System.Management.Automation.ErrorRecord.Exception) egenskapen för den [ System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objekt.
 
 Vara värd för program kan använda den `is` nyckelordet identifiera att undantaget är i en viss klass eller i en härledd klass. Det är bättre att branch på undantagstyp, som visas i följande exempel.
 
@@ -70,23 +70,23 @@ I exemplet ovan är den första token fel-ID, som följs av namnet på klassen c
 
 ### <a name="other-information"></a>Övrig information
 
-Den [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objekt också innehålla information som beskriver den miljö där felet inträffade. Den här informationen innehåller sådant som felinformation och anrop information målobjektet som behandlades när felet inträffade. Även om den här informationen kan vara praktiskt att värdprogrammet, är det inte vanligt att identifiera felet. Den här informationen är tillgänglig via följande egenskaper:
+Den [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objekt också innehålla information som beskriver den miljö där felet inträffade. Den här informationen innehåller sådant som felinformation och anrop information målobjektet som behandlades när felet inträffade. Även om den här informationen kan vara praktiskt att värdprogrammet, är det inte vanligt att identifiera felet. Den här informationen är tillgänglig via följande egenskaper:
 
-[System.Management.Automation.Errorrecord.Errordetails*](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails)
+[System.Management.Automation.ErrorRecord.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails)
 
-[System.Management.Automation.Errorrecord.Invocationinfo*](/dotnet/api/System.Management.Automation.ErrorRecord.InvocationInfo)
+[System.Management.Automation.ErrorRecord.InvocationInfo](/dotnet/api/System.Management.Automation.ErrorRecord.InvocationInfo)
 
-[System.Management.Automation.Errorrecord.Targetobject*](/dotnet/api/System.Management.Automation.ErrorRecord.TargetObject)
+[System.Management.Automation.ErrorRecord.TargetObject](/dotnet/api/System.Management.Automation.ErrorRecord.TargetObject)
 
 ## <a name="see-also"></a>Se även
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)
 
 [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 
-[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
+[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
-ms.openlocfilehash: ab78bcad301215bca9b5324bdb8de863899edec6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 151b7125afe1b0d386467a0e5f89225716857ac2
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851116"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054925"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Snabbstart för Windows PowerShell-providers
 
@@ -67,7 +67,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### <a name="implementing-newdrive"></a>Implementera NewDrive
 
-Den [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) metoden anropas av Windows PowerShell-motorn när en användare anropar den [Microsoft.Powershell.Commands.New Psdrive](/dotnet/api/Microsoft.PowerShell.Commands.New-PSDrive)cmdlet som anger namnet på leverantören. Parametern PSDriveInfo skickas av Windows PowerShell-motorn och den nya enheten returneras till Windows PowerShell-motorn. Den här metoden måste deklareras i klassen som skapade ovan.
+Den [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) metoden anropas av Windows PowerShell-motorn när en användare anropar den [Microsoft.PowerShell.Commands.New PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.New-PSDrive)cmdlet som anger namnet på leverantören. Parametern PSDriveInfo skickas av Windows PowerShell-motorn och den nya enheten returneras till Windows PowerShell-motorn. Den här metoden måste deklareras i klassen som skapade ovan.
 
 Metoden kontrollerar först kontrollera att både enhetsobjektet och enheten roten som skickades i finns, returnerar `null` om någon av dem inte. Det använder sedan en konstruktor i klassen interna AccessDBPSDriveInfo för att skapa en ny enhet och en anslutning till Access-databas enheten representerar.
 
@@ -147,7 +147,7 @@ internal class AccessDBPSDriveInfo : PSDriveInfo
 
 ### <a name="implementing-removedrive"></a>Implementera RemoveDrive
 
-Den [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) metoden anropas av Windows PowerShell-motorn när en användare anropar den [Microsoft.Powershell.Commands.Remove Psdrive](/dotnet/api/Microsoft.PowerShell.Commands.Remove-PSDrive) cmdlet. -Metoden i den här providern stängs anslutningen till Access-databas.
+Den [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) metoden anropas av Windows PowerShell-motorn när en användare anropar den [Microsoft.PowerShell.Commands.Remove PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.Remove-PSDrive) cmdlet. -Metoden i den här providern stängs anslutningen till Access-databas.
 
 ```csharp
 protected override PSDriveInfo RemoveDrive(PSDriveInfo drive)

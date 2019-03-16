@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
-ms.openlocfilehash: 67e041756974dcd84e15cdb4edaf91be45122e28
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eaa927ec90df6053843f5c942357fed4c7dee966
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849058"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059498"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Skriva ett PowerShell-modulmanifest
 
@@ -77,7 +77,7 @@ I följande tabell beskrivs de element som du kan ha i ett modulmanifest
 |PowerShellVersion<br /><br /> Typ: sträng|' '|Lägsta version av Windows PowerShell-motorn som krävs av den här modulen. Aktuella giltiga värden är 1.0, 2.0, 3.0, 4.0 och 5.0.<br /><br /> Exempel: `PowerShellVersion = '5.0'`|
 |PowerShellHostName<br /><br /> Typ: sträng|' '|Anger namnet på Windows PowerShell-värden som krävs av modulen. Det här namnet kommer från Windows PowerShell. För att hitta namnet på en värdprogram i programmet, skriver du: `$host.name` .<br /><br /> Exempel: `PowerShellHostName = 'Windows PowerShell ISE Host'`|
 |PowerShellHostVersion<br /><br /> Typ: sträng|' '|Lägsta version av Windows PowerShell-värden som krävs av den här modulen.<br /><br /> Exempel: `PowerShellHostVersion = '2.0'`|
-|DotNetFrameworkVersion<br /><br /> Typ: sträng|' '|Lägsta version av Microsoft .NET Framework krävs av den här modulen.<br /><br /> Exempel: `DotNetFrameorkVersion = '3.5'`|
+|DotNetFrameworkVersion<br /><br /> Typ: sträng|' '|Lägsta version av Microsoft .NET Framework krävs av den här modulen.<br /><br /> Exempel: `DotNetFrameworkVersion = '3.5'`|
 |CLRVersion<br /><br /> Typ: sträng|' '|Lägsta version av common language runtime (CLR) krävs av den här modulen.<br /><br /> Exempel: `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> Typ: sträng|' '|Processorarkitektur (ingen, X86, Amd64) krävs av den här modulen. Giltiga värden är x86 AMD64 IA64, och inget (okänt eller odefinierat).<br /><br /> Exempel: `ProcessorArchitecture = 'x86'`|
 |RequiredModules<br /><br /> Typ: [string []]|@()|Moduler som måste importeras till den globala miljön innan du importerar den här modulen. Alla moduler som anges, såvida inte har redan lästs in läses in. (Till exempel vissa moduler kan redan läsas av en annan modul.). Det är också möjligt att ange en specifik version att läsa in med hjälp av `RequiredVersion` snarare än `ModuleVersion`. När du använder `ModuleVersion` det laddas den senaste versionen som är tillgängliga med ett minimum på den angivna versionen.<br /><br /> Exempel: `RequiredModules = @(@{ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Exempel: `RequiredModules = @(@{ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: d93cc4a05a6625d073791c067d1e9b6662c3a565
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bbe9f0213754d1cc47e0fd9a7a898bde916c0636
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847049"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055146"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Skapa en cmdlet som ändrar systemet
 
@@ -26,15 +26,15 @@ Ibland ändra en cmdlet körs av systemet, inte bara Tillståndet för Windows P
 
 En cmdlet måste göra två saker för att stödja bekräftelse.
 
-- Deklarera att cmdleten stöder bekräftelse när du anger den [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribut genom att ställa in nyckelordet SupportsShouldProcess `true`.
+- Deklarera att cmdleten stöder bekräftelse när du anger den [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribut genom att ställa in nyckelordet SupportsShouldProcess `true`.
 
-- Anropa [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) under körningen av cmdlet: en (som visas i följande exempel).
+- Anropa [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) under körningen av cmdlet: en (som visas i följande exempel).
 
 Som stöd för bekräftelse, en cmdlet exponerar den `Confirm` och `WhatIf` parametrar som tillhandahålls av Windows PowerShell och uppfyller också utveckling riktlinjer för cmdlet: ar (Mer information om cmdlet utveckling riktlinjer finns i [ Riktlinjer för utveckling av cmdlet](./cmdlet-development-guidelines.md).).
 
 ## <a name="changing-the-system"></a>Ändra systemet
 
-Av ”ändra systemet” syftar på alla cmdletar som potentiellt ändrar tillståndet för systemet utanför Windows PowerShell. Exempelvis stoppa en process, aktivera eller inaktivera ett användarkonto eller att lägga till en rad i en databastabell är alla ändringar som ska bekräftas. Däremot ändra inte systemet åtgärder som läser data eller upprätta tillfälliga anslutningar och allmänt kräver inte bekräftelse. Bekräftelse krävs inte heller för åtgärder som är begränsad till i Windows PowerShell-körning, till exempel `set-variable`. Cmdletar som kan eller inte kan göra en permanent förändring bör deklarera `SupportsShouldProcess` och anropa [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) endast om de är på väg att göra en permanent ändring.
+Av ”ändra systemet” syftar på alla cmdletar som potentiellt ändrar tillståndet för systemet utanför Windows PowerShell. Exempelvis stoppa en process, aktivera eller inaktivera ett användarkonto eller att lägga till en rad i en databastabell är alla ändringar som ska bekräftas. Däremot ändra inte systemet åtgärder som läser data eller upprätta tillfälliga anslutningar och allmänt kräver inte bekräftelse. Bekräftelse krävs inte heller för åtgärder som är begränsad till i Windows PowerShell-körning, till exempel `set-variable`. Cmdletar som kan eller inte kan göra en permanent förändring bör deklarera `SupportsShouldProcess` och anropa [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) endast om de är på väg att göra en permanent ändring.
 
 > [!NOTE]
 > ShouldProcess bekräftelse gäller enbart för cmdlet: ar. Om ett kommando eller skript ändrar driftläget för ett system genom att anropa .NET-metoder, egenskaper eller direkt eller genom att anropa program utanför Windows PowerShell, den här typen av bekräftelse inte är tillgänglig.
@@ -77,11 +77,11 @@ Följande är klassdefinitionen för denna cmdlet Stop-processen.
 public class StopProcCommand : Cmdlet
 ```
 
-Tänk som i den [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) deklarationen den `SupportsShouldProcess` nyckelord för attribut har angetts till `true` att aktivera cmdlet: en att göra anrop till [ System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). Utan den här uppsättningen med nyckelord, den `Confirm` och `WhatIf` parametrar är inte tillgänglig för användaren.
+Tänk som i den [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) deklarationen den `SupportsShouldProcess` nyckelord för attribut har angetts till `true` att aktivera cmdlet: en att göra anrop till [ System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). Utan den här uppsättningen med nyckelord, den `Confirm` och `WhatIf` parametrar är inte tillgänglig för användaren.
 
 ### <a name="extremely-destructive-actions"></a>Extremt destruktiva åtgärder
 
-Vissa åtgärder är extremt destruktiv, till exempel formatera om en aktiv hårddiskpartition. I dessa fall kan cmdleten bör ange `ConfirmImpact`  =  `ConfirmImpact.High` när deklarera den [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribut. Den här inställningen tvingar cmdlet: en till begäran om användaren ska bekräfta även om användaren inte har angett den `Confirm` parametern. Cmdlet: en utvecklare bör dock undvika överanvändning av `ConfirmImpact` för åtgärder som är bara potentiellt skadliga, till exempel ta bort ett användarkonto. Kom ihåg att om `ConfirmImpact` är inställd på [System.Management.Automation.Confirmimpact.High](/dotnet/api/System.Management.Automation.ConfirmImpact.High).
+Vissa åtgärder är extremt destruktiv, till exempel formatera om en aktiv hårddiskpartition. I dessa fall kan cmdleten bör ange `ConfirmImpact`  =  `ConfirmImpact.High` när deklarera den [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribut. Den här inställningen tvingar cmdlet: en till begäran om användaren ska bekräfta även om användaren inte har angett den `Confirm` parametern. Cmdlet: en utvecklare bör dock undvika överanvändning av `ConfirmImpact` för åtgärder som är bara potentiellt skadliga, till exempel ta bort ett användarkonto. Kom ihåg att om `ConfirmImpact` är inställd på [System.Management.Automation.Confirmimpact.High](/dotnet/api/System.Management.Automation.ConfirmImpact.High).
 
 Vissa åtgärder är inte troligt att destruktiva, även om de i teorin ändra driftläget för ett system utanför Windows PowerShell. Dessa cmdletar kan ställa in `ConfirmImpact` till [System.Management.Automation.Confirmimpact.Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0). Detta kommer kringgå begäranden om händelsebekräftelse där användaren har bett att bekräfta endast påverkan medium och hög inverkan.
 
@@ -93,7 +93,7 @@ Cmdlet Stop-Proc definierar tre parametrar: `Name`, `Force`, och `PassThru`.
 
 Den `Name` parametern motsvarar den `Name` egenskapen för inkommande processobjektet. Tänk på som det `Name` parametern i det här exemplet är obligatorisk, som cmdleten misslyckas om den inte har en namngiven process för att stoppa.
 
-Den `Force` parameter gör det möjligt för användarna att åsidosätta anrop till [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). I själva verket en cmdlet som anropar [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) bör ha en `Force` parametern så att när `Force` anges cmdleten hoppar över anropet till [ System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) och fortsätter med åtgärden. Observera att detta inte påverkar anrop till [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess).
+Den `Force` parameter gör det möjligt för användarna att åsidosätta anrop till [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). I själva verket en cmdlet som anropar [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) bör ha en `Force` parametern så att när `Force` anges cmdleten hoppar över anropet till [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) och fortsätter med åtgärden. Observera att detta inte påverkar anrop till [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess).
 
 Den `PassThru` parameter gör det möjligt för användaren att ange om cmdlet: en skickar ett objekt genom pipelinen och i det här fallet när en process har stoppats. Tänk på att den här parametern är knutna till cmdleten själv i stället för till en egenskap för indataobjektet.
 
@@ -142,7 +142,7 @@ private bool passThru;
 
 ## <a name="overriding-an-input-processing-method"></a>Åsidosätta indata metoden bearbetades
 
-Cmdlet: en måste åsidosätta indata metoden bearbetades. Följande kod visar den [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) åsidosättning som används i exemplet Stop-Proc cmdlet. För var och en begärd processnamn, den här metoden garanterar att processen inte är en särskild process, försöker stoppa processen och skickar sedan ett objekt om de `PassThru` parameter har angetts.
+Cmdlet: en måste åsidosätta indata metoden bearbetades. Följande kod visar den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) åsidosättning som används i exemplet Stop-Proc cmdlet. För var och en begärd processnamn, den här metoden garanterar att processen inte är en särskild process, försöker stoppa processen och skickar sedan ett objekt om de `PassThru` parameter har angetts.
 
 ```csharp
 protected override void ProcessRecord()
@@ -200,9 +200,9 @@ protected override void ProcessRecord()
                 processName);
 
           // It is possible that ProcessRecord is called multiple times
-          // when the Name parameter reveives objects as input from the
+          // when the Name parameter receives objects as input from the
           // pipeline. So to retain YesToAll and NoToAll input that the
-          // user may enter across mutilple calls to ProcessRecord, this
+          // user may enter across multiple calls to ProcessRecord, this
           // information is stored as private members of the cmdlet.
           if (!ShouldContinue(message, "Warning!",
                               ref yesToAll,
@@ -210,7 +210,7 @@ protected override void ProcessRecord()
           {
             continue;
           }
-        } // if (cricicalProcess...
+        } // if (criticalProcess...
         // Stop the named process.
         try
         {
@@ -246,14 +246,14 @@ protected override void ProcessRecord()
 
 ## <a name="calling-the-shouldprocess-method"></a>Att anropa metoden ShouldProcess
 
-Indata bearbetning av-metoden för cmdlet: ska anropa den [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod för att bekräfta körning av en åtgärd innan görs en ändring (till exempel ta bort filer) till löpande tillståndet för systemet. På så sätt kan Windows PowerShell-körning för att ange ”WhatIf” och ”Confirm”-beteendet i gränssnittet.
+Indata bearbetning av-metoden för cmdlet: ska anropa den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metod för att bekräfta körning av en åtgärd innan en ändring (till exempel ta bort filer) görs till körtillstånd av systemet. På så sätt kan Windows PowerShell-körning för att ange ”WhatIf” och ”Confirm”-beteendet i gränssnittet.
 
 > [!NOTE]
-> Om en cmdlet säger att den stöder ska bearbetas och inte kan se den [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anropa måste användaren kan ändra systemet oväntat.
+> Om en cmdlet säger att den stöder ska bearbetas och inte kan se den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anropa måste användaren kan ändra systemet oväntat.
 
-Anropet till [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) skickar namnet på resursen som ska ändras för användaren med Windows PowerShell-körning med hänsyn till eventuella kommandoradsinställningar eller variabler avgöra vad som ska visas för användaren.
+Anropet till [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) skickar namnet på resursen som ska ändras för användaren med Windows PowerShell-körning med hänsyn till eventuella kommandoradsinställningar eller variabler avgöra vad som ska visas för användaren.
 
-I följande exempel visas anropet till [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) från åsidosättningen av den [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -metod i den exempel-cmdlet Stop-processen.
+I följande exempel visas anropet till [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) från åsidosättningen av den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -metod i exemplet Stoppa Proc cmdlet.
 
 ```csharp
 if (!ShouldProcess(string.Format("{0} ({1})", processName,
@@ -265,9 +265,9 @@ if (!ShouldProcess(string.Format("{0} ({1})", processName,
 
 ## <a name="calling-the-shouldcontinue-method"></a>Att anropa metoden ShouldContinue
 
-Anropet till den [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoden skickar ett sekundära meddelande för användaren. Det här anropet görs efter anropet till [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) returnerar `true` och om den `Force` parametern har inte angetts `true`. Användaren kan sedan ge feedback om du vill säga om åtgärden bör vara fortsatt. Cmdlet-anrop [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) som ytterligare en kontroll för ändringar av potentiellt skadliga system eller när du vill ange Ja till alla och Nej till alla alternativ för användaren.
+Anropet till den [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoden skickar ett sekundära meddelande för användaren. Det här anropet görs efter anropet till [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) returnerar `true` och om den `Force` parametern har inte angetts `true`. Användaren kan sedan ge feedback om du vill säga om åtgärden bör vara fortsatt. Cmdlet-anrop [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) som ytterligare en kontroll för ändringar av potentiellt skadliga system eller när du vill ange Ja till alla och Nej till alla alternativ för användaren.
 
-I följande exempel visas anropet till [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) från åsidosättningen av den [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -metod i den exempel-cmdlet Stop-processen.
+I följande exempel visas anropet till [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) från åsidosättningen av den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -metod i exemplet Stoppa Proc cmdlet.
 
 ```csharp
 if (criticalProcess &&!force)
@@ -277,9 +277,9 @@ if (criticalProcess &&!force)
         processName);
 
   // It is possible that ProcessRecord is called multiple times
-  // when the Name parameter reveives objects as input from the
+  // when the Name parameter receives objects as input from the
   // pipeline. So to retain YesToAll and NoToAll input that the
-  // user may enter across mutilple calls to ProcessRecord, this
+  // user may enter across multiple calls to ProcessRecord, this
   // information is stored as private members of the cmdlet.
   if (!ShouldContinue(message, "Warning!",
                       ref yesToAll,
@@ -287,12 +287,12 @@ if (criticalProcess &&!force)
   {
     continue;
   }
-} // if (cricicalProcess...
+} // if (criticalProcess...
 ```
 
 ## <a name="stopping-input-processing"></a>Stoppar inkommande bearbetning
 
-Indata bearbetning av-metoden för en cmdlet som ändrar system måste ange ett sätt att stoppa bearbetningen av indata. När det gäller denna cmdlet Stop-processen, ett anrop görs från den [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod för att den [System.Diagnostics.Process.Kill*](/dotnet/api/System.Diagnostics.Process.Kill) metod. Eftersom den `PassThru` parametern är inställd på `true`, [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) också anropar [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) till Skicka processobjektet till pipelinen.
+Indata bearbetning av-metoden för en cmdlet som ändrar system måste ange ett sätt att stoppa bearbetningen av indata. När det gäller denna cmdlet Stop-processen, ett anrop görs från den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod för att den [System.Diagnostics.Process.Kill*](/dotnet/api/System.Diagnostics.Process.Kill) metod. Eftersom den `PassThru` parametern är inställd på `true`, [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) också anropar [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) att skicka processobjektet till pipelinen.
 
 ## <a name="code-sample"></a>Kodexempel
 

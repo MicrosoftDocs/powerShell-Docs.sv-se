@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 30abae8f-c7f7-479d-ad85-19e07ddef204
 caps.latest.revision: 10
-ms.openlocfilehash: e930e4422afd203feda6a389655ff8a355e3bec0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 81eca4f66f0057074612f2d60482b45adc36357b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848680"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059226"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-configuration-format"></a>EntrySelectedBy-element för CustomEntry för Controls för Configuration (format)
 
@@ -65,6 +65,6 @@ Varje definition måste minst ha minst en .NET-typ, val av set eller val av vill
 
 [CustomEntry Element för anpassad kontroll för kontroller för konfiguration (Format)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)
 
-[TypeName-Element för EntrySelectdBy för kontroller för konfiguration (Format)](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)
+[TypeName-Element för EntrySelectedBy för kontroller för konfiguration (Format)](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)
 
 [Skriva ett PowerShell formatering fil](./writing-a-powershell-formatting-file.md)

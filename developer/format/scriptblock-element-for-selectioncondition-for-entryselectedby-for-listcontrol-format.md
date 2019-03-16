@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4a1adad7-e864-4892-9d26-a6476a9698d2
 caps.latest.revision: 7
-ms.openlocfilehash: fd708473d04a76bcf6cf3a8f8278e1d15fb9addf
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b65d953169f6daf15fb617ce4d0303cf4cb584ee
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848673"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057781"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>ScriptBlock-element för SelectionCondition för EntrySelectedBy för ListControl (format)
 
@@ -59,7 +59,7 @@ Läs mer om de andra komponenterna i en listvy, [listvyn](./creating-a-list-view
 
 [ListEntry Element (Format)](./listentry-element-for-listcontrol-format.md)
 
-[PropertyName-Element för SelectionCondition för EmtrySelectedBy för ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)
+[PropertyName-Element för SelectionCondition för EntrySelectedBy för ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)
 
 [SelectionCondition Element för EntrySelectedBy för ListEntry (Format)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 

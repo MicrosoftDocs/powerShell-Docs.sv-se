@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b0ef4483-74b2-409c-9d00-014d1ed64cb8
 caps.latest.revision: 6
-ms.openlocfilehash: b5696c3ca1988c9a6cd9179229697b6233d8d993
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ec6154c69c3c2de9675780922d907fbf3edb6a95
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847826"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058750"
 ---
 # <a name="leftindent-element-for-frame-for-customcontrol-for-view-format"></a>LeftIndent-element för Frame för CustomControl för View (format)
 
 Anger hur många tecken som data ska flyttas från vänster marginal. Det här elementet används när du definierar en anpassad kontroll vy.
 
-Elementet (Format) ViewDefinitions Element (Format) visa Element (Format) anpassad kontroll Element (Format) CustomEntries konfigurationselement för anpassad kontroll för Visa (Format) CustomEntry elementet för CustomEntries för vyn (Format) CustomItem elementet för CustomEntry för CutomControlView (Format) RAM-elementet för CustomItem för anpassad kontroll för Visa (Format) LeftIndent elementet
+Elementet (Format) ViewDefinitions Element (Format) visa Element (Format) anpassad kontroll Element (Format) CustomEntries konfigurationselement för anpassad kontroll för Visa (Format) CustomEntry elementet för CustomEntries för vyn (Format) CustomItem elementet för CustomEntry för CustomControlView (Format) RAM-elementet för CustomItem för anpassad kontroll för Visa (Format) LeftIndent elementet
 
 ## <a name="syntax"></a>Syntax
 

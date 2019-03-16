@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 6171f96d66d0b2aa0fd9cb2a939768287c4bcb87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 28d55874960f9a64b986204411d38319ef1d0da7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849184"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059532"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Skapa en cmdlet för att komma åt ett datalager
 
-Det här avsnittet beskriver hur du skapar en cmdlet som ger åtkomst till lagrade data till en Windows PowerShell-providern. Den här typen av cmdlet: en använder infrastrukturen för Windows PowerShell-providern för Windows PowerShell-runtime och därför klassen cmdlet måste komma från den [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) basklassen.
+Det här avsnittet beskriver hur du skapar en cmdlet som ger åtkomst till lagrade data till en Windows PowerShell-providern. Den här typen av cmdlet: en använder infrastrukturen för Windows PowerShell-providern för Windows PowerShell-runtime och därför klassen cmdlet måste komma från den [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) basklassen.
 
 Välj Str-cmdlet som beskrivs här kan hitta och välja strängar i en fil eller ett objekt. De mönster som används för att identifiera strängen kan anges uttryckligen via den `Path` parametern för cmdlet: ar eller implicit via den `Script` parametern.
 
@@ -45,7 +45,7 @@ Cmdlet: en är utformad för att använda valfri provider som Windows PowerShell
 
 Det första steget i Skapa en cmdlet är alltid namngivning av cmdlet: en och deklarerar .NET-klass som implementerar cmdlet: en. Den här cmdleten identifierar vissa strängar så verb valt här heter ”Välj”, som definieras av den [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) klass. Substantiv namnet ”Str” används eftersom cmdleten agerar på strängar. Observera att cmdlet verb och substantiv namnet visas namnet på klassen cmdlet i förklaringen nedan. Läs mer om godkända cmdlet verb [Cmdlet Verb-namnen](./approved-verbs-for-windows-powershell-commands.md).
 
-.NET-klass för denna cmdlet måste komma från den [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) basklassen eftersom det ger support som krävs av Windows PowerShell-körningen för att exponera Windows PowerShell-providern infrastruktur. Observera att denna cmdlet gör också användning av .NET Framework-klasser för reguljära uttryck som [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
+.NET-klass för denna cmdlet måste komma från den [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) basklassen eftersom det ger support som krävs av Windows PowerShell-körningen för att exponera Windows PowerShell-providern infrastruktur. Observera att denna cmdlet gör också användning av .NET Framework-klasser för reguljära uttryck som [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
 
 Följande kod är klassdefinitionen för denna väljer Str-cmdlet.
 
@@ -117,7 +117,7 @@ När den här parametern anges cmdlet: en använder parameteruppsättningen stan
 
 Denna cmdlet definierar följande parametrar för support som kan användas för att ändra sökfunktioner för cmdlet: ar.
 
-Den `Script` parametern anger ett skriptblock som kan användas för att tillhandahålla en annan sökning mekanism för cmdleten. Skriptet måste innehålla de mönster som används för att matcha och returnera en [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objekt. Observera att den här parametern också är den unika parametern som identifierar den `ScriptParameterSet` parameteruppsättningen. När Windows PowerShell-runtime ser den här parametern, används parametrarna som tillhör den `ScriptParameterSet` parameteruppsättningen.
+Den `Script` parametern anger ett skriptblock som kan användas för att tillhandahålla en annan sökning mekanism för cmdleten. Skriptet måste innehålla de mönster som används för att matcha och returnera en [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objekt. Observera att den här parametern också är den unika parametern som identifierar den `ScriptParameterSet` parameteruppsättningen. När Windows PowerShell-runtime ser den här parametern, används parametrarna som tillhör den `ScriptParameterSet` parameteruppsättningen.
 
 ```csharp
 [Parameter(
@@ -195,13 +195,13 @@ internal WildcardPattern[] include = null;
 
 ### <a name="declaring-parameter-sets"></a>Deklarera parameteruppsättningar
 
-Den här cmdleten använder två parameteruppsättningar (`ScriptParameterSet` och `PatternParameterSet`, vilket är thedefault) som namnen på två parameteruppsättningar som används i dataåtkomst. `PatternParameterSet` Parameteruppsättningen standard och används när den `Pattern` parameter har angetts. `ScriptParameterSet` används när användaren anger en annan sökning mekanism via den `Script` parametern. Läs mer om parameteruppsättningar [att lägga till parametern som anger att en Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
+Den här cmdleten använder två parameteruppsättningar (`ScriptParameterSet` och `PatternParameterSet`, vilket är standard) som namnen på två parameteruppsättningar som används i dataåtkomst. `PatternParameterSet` Parameteruppsättningen standard och används när den `Pattern` parameter har angetts. `ScriptParameterSet` används när användaren anger en annan sökning mekanism via den `Script` parametern. Läs mer om parameteruppsättningar [att lägga till parametern som anger att en Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
 
 ## <a name="overriding-input-processing-methods"></a>Åsidosätta indata metoderna
 
-Cmdlet: ar måste åsidosätta en eller flera av indata metoderna för den [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klass. Läs mer om bearbetningsmetoder för inkommande, [skapa din första cmdleten](./creating-a-cmdlet-without-parameters.md).
+Cmdlet: ar måste åsidosätta en eller flera av indata metoderna för den [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klass. Läs mer om bearbetningsmetoder för inkommande, [skapa din första cmdleten](./creating-a-cmdlet-without-parameters.md).
 
-Denna cmdlet åsidosätter den [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metod för att skapa en matris med kompileras reguljära uttryck vid start. Detta ökar prestanda under sökningar som inte använder enkel matchar.
+Denna cmdlet åsidosätter den [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metod för att skapa en matris med kompileras reguljära uttryck vid start. Detta ökar prestanda under sökningar som inte använder enkel matchar.
 
 ```csharp
 protected override void BeginProcessing()
@@ -280,7 +280,7 @@ protected override void BeginProcessing()
 }// End of function BeginProcessing().
 ```
 
-Denna cmdlet även åsidosätter den [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod för att bearbeta strängen valen som användaren har gjort på kommandoraden. Den skriver resultatet av val av strängen i form av ett anpassat objekt genom att anropa en privat **MatchString** metod.
+Denna cmdlet även åsidosätter den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod för att bearbeta strängen valen som användaren har gjort på kommandoraden. Den skriver resultatet av val av strängen i form av ett anpassat objekt genom att anropa en privat **MatchString** metod.
 
 ```csharp
 protected override void ProcessRecord()
@@ -301,7 +301,7 @@ protected override void ProcessRecord()
     {
       WriteVerbose("Processing path " + path.Path);
 
-      // Check if the path represens one of the items to be
+      // Check if the path represents one of the items to be
       // excluded. If so, continue to next path.
       if (!MeetsIncludeExcludeCriteria(path.ProviderPath))
          continue;
@@ -357,7 +357,7 @@ protected override void ProcessRecord()
           }
           else
           {
-            // Add the block(line) that did notmatch to the
+            // Add the block(line) that did not match to the
             // collection of non matches , which will be stored
             // in the SessionState variable $NonMatches
             nonMatches.Add(items[0]);
@@ -391,7 +391,7 @@ protected override void ProcessRecord()
 
 ## <a name="accessing-content"></a>Åtkomst till innehåll
 
-Cmdlet: öppna providern som anges av Windows PowerShell-sökvägen så att den kan komma åt data. Den [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) objekt för körningsutrymmet används för åtkomst till providern, medan den [System.Management.Automation.Pscmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) egenskapen för den cmdlet: en används för att öppna providern. Åtkomst till innehåll tillhandahålls av hämtning av den [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) öppna objektet för providern.
+Cmdlet: öppna providern som anges av Windows PowerShell-sökvägen så att den kan komma åt data. Den [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) objekt för körningsutrymmet används för åtkomst till providern, medan den [System.Management.Automation.PSCmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) egenskapen för den cmdlet: en används för att öppna providern. Åtkomst till innehåll tillhandahålls av hämtning av den [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) öppna objektet för providern.
 
 Det här exemplet väljer Str cmdlet använder den [System.Management.Automation.Providerintrinsics.Content*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) som visar innehåll för att skanna. Det kan sedan anropa den [System.Management.Automation.Contentcmdletproviderintrinsics.Getreader*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) metoden och skicka den nödvändiga Windows PowerShell-sökvägen.
 
@@ -436,7 +436,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// This parameter must specify a PowerShell that indicates the
     /// PowerShell provider that is used to access the objects to be
     /// searched for matching patterns. This parameter should also have
-    /// a PSPath alias to provide consistancy with other cmdlets that use
+    /// a PSPath alias to provide consistency with other cmdlets that use
     /// PowerShell providers.
     /// </summary>
     /// <value>Path of the object(s) to search.</value>
@@ -517,7 +517,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// <summary>
     /// Declare a switch parameter that specifies if a case-sensitive
     /// search is performed.  If not (default), a case-insensitive search
-    /// is perfored.
+    /// is performed.
     /// </summary>
     /// <value>If True, a case-sensitive search is made.</value>
     [Parameter]
@@ -689,7 +689,7 @@ namespace Microsoft.Samples.PowerShell.Commands
         {
           WriteVerbose("Processing path " + path.Path);
 
-          // Check if the path represens one of the items to be
+          // Check if the path represents one of the items to be
           // excluded. If so, continue to next path.
           if (!MeetsIncludeExcludeCriteria(path.ProviderPath))
              continue;
@@ -745,7 +745,7 @@ namespace Microsoft.Samples.PowerShell.Commands
               }
               else
               {
-                // Add the block(line) that did notmatch to the
+                // Add the block(line) that did not match to the
                 // collection of non matches , which will be stored
                 // in the SessionState variable $NonMatches
                 nonMatches.Add(items[0]);
@@ -874,7 +874,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// <summary>
     /// Check whether the supplied name meets the include/exclude criteria.
     /// That is - it's on the include list if the include list was
-    /// specified, and not on the exclude list if the explude list was specified.
+    /// specified, and not on the exclude list if the exclude list was specified.
     /// </summary>
     /// <param name="path">path to validate</param>
     /// <returns>True if the path is acceptable.</returns>
@@ -1078,7 +1078,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     }
 
     /// <summary>
-    /// Specifiy the description of the PowerShell snap-in.
+    /// Specify the description of the PowerShell snap-in.
     /// </summary>
     public override string Description
     {

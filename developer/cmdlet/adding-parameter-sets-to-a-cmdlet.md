@@ -10,12 +10,12 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: b02a2e0d4b0a27c261b0bc05febda7826ad5276e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849100"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054993"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Lägga till parameteruppsättningar i en cmdlet
 
@@ -179,7 +179,7 @@ Observera också att den här parametern har inget alias.
 
 ## <a name="overriding-an-input-processing-method"></a>Åsidosätta indata metoden bearbetades
 
-Alla cmdlets måste åsidosätta indata metoden bearbetades, oftast det här är den [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod. I den här cmdleten den [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoden åsidosätts så att cmdleten kan bearbeta valfritt antal processer. Den innehåller en Select-instruktion som anropar en annan metod baserat på vilka parameteruppsättningen användaren har angett.
+Alla cmdlets måste åsidosätta indata metoden bearbetades, oftast det här är den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod. I den här cmdleten den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoden åsidosätts så att cmdleten kan bearbeta valfritt antal processer. Den innehåller en Select-instruktion som anropar en annan metod baserat på vilka parameteruppsättningen användaren har angett.
 
 ```csharp
 protected override void ProcessRecord()

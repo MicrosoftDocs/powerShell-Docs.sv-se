@@ -3,16 +3,16 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: galleriet, powershell, psgallery
 title: Manuell paketnedladdning
-ms.openlocfilehash: 57baa14089b803f58c42ccb54553ecace841e34b
-ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
+ms.openlocfilehash: af628f99befe50c16c2c0c60f1a352647af34ff4
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52742830"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054891"
 ---
 # <a name="manual-package-download"></a>Manuell paketnedladdning
 
-Powershell-galleriet har stöd för ett paket laddades ned från webbplatsen direkt, utan att använda PowerShellGet-cmdletar. Du kan hämta alla paket som en NuGet-paketet (.nupkg)-fil som du sedan kan kopiera till en intern lagringsplats.
+PowerShell-galleriet har stöd för ett paket laddades ned från webbplatsen direkt, utan att använda PowerShellGet-cmdletar. Du kan hämta alla paket som en NuGet-paketet (.nupkg)-fil som du sedan kan kopiera till en intern lagringsplats.
 
 > [!NOTE]
 > Ladda ned manuell paket är **inte** avsedd som en ersättning för cmdleten Install-Module.

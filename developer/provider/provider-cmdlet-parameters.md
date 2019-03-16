@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b3d09eaa-924f-4e2b-adfb-14bb729090dd
 caps.latest.revision: 8
-ms.openlocfilehash: d0fb81ee1ca1f80e216c021e1bd64771b8de4dc3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ad7f9737c646dd5cea5abb14b828236e40feac5a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849695"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057050"
 ---
 # <a name="provider-cmdlet-parameters"></a>Cmdlet-parametrar för providers
 
@@ -29,9 +29,9 @@ Statisk parametrar definieras av Windows PowerShell. Ett stort antal för dessa 
 
 `Clear-ItemProperty` cmdlet: en kan du definiera hur leverantören använder de värden som skickas till den `Path` och `Name` parametrarna för den `Clear-ItemProperty` cmdlet genom att implementera den [ System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) metod.
 
-`Copy-Item` cmdlet: en kan du definiera hur leverantören använder de värden som skickas till den `Path`, `Destination`, och `Recurse` parametrarna för den `Copy-Item` cmdlet genom att implementera den [ System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) metod.
+`Copy-Item` cmdlet: en kan du definiera hur leverantören använder de värden som skickas till den `Path`, `Destination`, och `Recurse` parametrarna för den `Copy-Item` cmdlet genom att implementera den [ System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) metod.
 
-Get-ChildItems cmdlet kan du definiera hur leverantören använder de värden som skickas till den `Path` och `Recures` parametrarna för den `Get-ChildItem` cmdlet genom att implementera den [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) och [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) metoder.
+Get-ChildItems cmdlet kan du definiera hur leverantören använder de värden som skickas till den `Path` och `Recurse` parametrarna för den `Get-ChildItem` cmdlet genom att implementera den [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) och [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) metoder.
 
 `Get-Content` cmdlet: en kan du definiera hur leverantören använder de värden som skickas till den `Path` -parametern för den `Get-Content` cmdlet genom att implementera den [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) metod.
 
@@ -45,7 +45,7 @@ Get-ChildItems cmdlet kan du definiera hur leverantören använder de värden so
 
 `New-Item` cmdlet: en kan du definiera hur leverantören använder de värden som skickas till den `Path`, `ItemType`, och `Value` parametrarna för den `New-Item` cmdlet genom att implementera den [ System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) metod.
 
-`New-ItemProperty` cmdlet: en kan du definiera hur leverantören använder de värden som skickas till den `Path`, `Name`, `PropertyType`, och `Value` parametrarna för den `New-ItemProperty` cmdlet genom att implementera den [ Microsoft.Powershell.Commands.Registryprovider.Newproperty*](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty) metod.
+`New-ItemProperty` cmdlet: en kan du definiera hur leverantören använder de värden som skickas till den `Path`, `Name`, `PropertyType`, och `Value` parametrarna för den `New-ItemProperty` cmdlet genom att implementera den [ Microsoft.PowerShell.Commands.Registryprovider.Newproperty*](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty) metod.
 
 `Remove-Item` Du kan definiera hur leverantören använder de värden som skickas till den `Path` och `Recurse` parametrarna för den `Remove-Item` cmdlet genom att implementera den [System.Management.Automation.Provider.Containercmdletprovider.Removeitem* ](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) metod.
 

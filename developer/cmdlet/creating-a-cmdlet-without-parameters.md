@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 75a45e539b45b50714951f2b992d9ecf69de4664
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850066"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054704"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Skapa en cmdlet utan parametrar
 
@@ -70,7 +70,7 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-Observera att före klassdefinitionen, den [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attributet med syntaxen `[Cmdlet(verb, noun, ...)]`, används för att identifiera den här klassen som en cmdlet. Detta är det enda obligatoriska attributet för alla cmdletar och tillåter Windows PowerShell-körning för att anropa dem korrekt. Du kan ange attributet nyckelord för ytterligare deklarera klassen om det behövs. Tänk på att attributet-deklarationen för våra exempel GetProcCommand klassen deklarerar endast substantiv och verb namnen för cmdleten Get-processen.
+Observera att före klassdefinitionen, den [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attributet med syntaxen `[Cmdlet(verb, noun, ...)]`, används för att identifiera den här klassen som en cmdlet. Detta är det enda obligatoriska attributet för alla cmdletar och tillåter Windows PowerShell-körning för att anropa dem korrekt. Du kan ange attributet nyckelord för ytterligare deklarera klassen om det behövs. Tänk på att attributet-deklarationen för våra exempel GetProcCommand klassen deklarerar endast substantiv och verb namnen för cmdleten Get-processen.
 
 > [!NOTE]
 > För alla Windows PowerShell-Attributklasser motsvarar nyckelord som du kan ange egenskaper för attributklassen.
@@ -78,27 +78,27 @@ Observera att före klassdefinitionen, den [System.Management.Automation.Cmdleta
 När du namnger klassen för cmdlet: en är en bra idé att återspegla cmdlet-namn i klassnamnet. Om du vill göra detta använder formatet ”VerbNounCommand” och Ersätt ”Verb” och ”substantiv” med verb och substantiv som används i cmdlet-namn. Visas i föregående klassdefinitionen kan cmdleten Get-Proc exemplet definierar en klass med namnet GetProcCommand som härrör från den [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) basklassen.
 
 > [!IMPORTANT]
-> Om du vill definiera en cmdlet som ansluter direkt till Windows PowerShell-runtime .NET-klass måste härledas från den [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) basklassen. Läs mer om den här klassen [och skapa en Cmdlet som definierar parameteruppsättningar](./adding-parameter-sets-to-a-cmdlet.md).
+> Om du vill definiera en cmdlet som ansluter direkt till Windows PowerShell-runtime .NET-klass måste härledas från den [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) basklassen. Läs mer om den här klassen [och skapa en Cmdlet som definierar parameteruppsättningar](./adding-parameter-sets-to-a-cmdlet.md).
 
 > [!NOTE]
 > Klass för en cmdlet måste uttryckligen markeras som offentliga. Klasser som inte är markerad som offentlig som standard till interna och kommer inte att hitta av Windows PowerShell-körningen.
 
-Windows PowerShell använder den [Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) namnrymd för dess cmdlet-klasser. Vi rekommenderar att placera dina cmdlet-klasser i ett namnområde för kommandon med ditt API-namnområde, till exempel xxx.PS.Commands.
+Windows PowerShell använder den [Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) namnrymd för dess cmdlet-klasser. Vi rekommenderar att placera dina cmdlet-klasser i ett namnområde för kommandon med ditt API-namnområde, till exempel xxx.PS.Commands.
 
 ## <a name="overriding-an-input-processing-method"></a>Åsidosätta indata metoden bearbetades
 
 Den [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klassen innehåller bearbetningsmetoder för tre huvudsakliga inkommande, varav minst en cmdlet: måste åsidosätta. Mer information om hur Windows PowerShell bearbetar poster finns i [hur Windows PowerShell fungerar](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 
-För alla typer av indata Windows PowerShell-runtime anropar [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) att aktivera bearbetning. Om din cmdlet måste utföra vissa Förbearbeta eller konfiguration, kan det göra detta genom att åsidosätta den här metoden.
+För alla typer av indata Windows PowerShell-runtime anropar [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) att aktivera bearbetning. Om din cmdlet måste utföra vissa Förbearbeta eller konfiguration, kan det göra detta genom att åsidosätta den här metoden.
 
 > [!NOTE]
 > Windows PowerShell använder termen ”post” för att beskriva uppsättningen parametervärden som anges när en cmdlet anropas.
 
-Om din cmdlet accepterar pipeline-indata, den måste åsidosätta de [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod, och eventuellt den [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)metod. Till exempel en cmdlet kan åsidosätta de båda metoderna om den samlar in alla indata med [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) och sedan fungerar på indata som helhet i stället för ett element i taget, som den `Sort-Object` cmdlet har.
+Om din cmdlet accepterar pipeline-indata, den måste åsidosätta de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod, och eventuellt den [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)metod. Till exempel en cmdlet kan åsidosätta de båda metoderna om den samlar in alla indata med [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) och sedan fungerar på indata som helhet i stället för ett element i taget, som den `Sort-Object` cmdlet har.
 
-Om din cmdlet inte tar indata från pipeline, bör det åsidosätter den [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metod. Tänk på att den här metoden används ofta i stället för [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) när cmdlet: en fungerar inte på ett element i taget, liksom vad gäller för en sortering cmdlet.
+Om din cmdlet inte tar indata från pipeline, bör det åsidosätter den [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metod. Tänk på att den här metoden används ofta i stället för [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) när cmdlet: en fungerar inte på ett element i taget, liksom vad gäller för en sortering cmdlet.
 
-Eftersom det här exemplet Get-Proc cmdlet måste ta emot indata från pipeline, åsidosätter den [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod och använder standardimplementeringar för [ System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) och [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). Den [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) åsidosättning hämtar processer och skriver dem till den från kommandoraden med hjälp av den [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metoden.
+Eftersom det här exemplet Get-Proc cmdlet måste ta emot indata från pipeline, åsidosätter den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod och använder standardimplementeringar för [ System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) och [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). Den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) åsidosättning hämtar processer och skriver dem till den från kommandoraden med hjälp av den [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metod.
 
 ```csharp
 protected override void ProcessRecord()
@@ -136,14 +136,14 @@ End Sub 'ProcessRecord
 
 - Indata metoden bearbetades kan också ta emot indata från utgående objekt av en överordnad cmdlet till pipelinen. Mer information finns i [skapar en Cmdlet för att bearbeta indata från Pipeline](./adding-parameters-that-process-pipeline-input.md). Tänk på att din cmdlet kan ta emot indata från en kombination av kommandorad och pipeline-datakällor.
 
-- Cmdleten underordnade kanske inte returnerar under en längre tid eller inte alls. Därför bör indata metoden i din cmdlet bearbetades inte har Lås under anrop till [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), särskilt lås som omfattningen som sträcker sig utanför cmdlet-instans.
+- Cmdleten underordnade kanske inte returnerar under en längre tid eller inte alls. Därför bör indata metoden i din cmdlet bearbetades inte har Lås under anrop till [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), särskilt lås som omfattningen som sträcker sig utanför cmdlet-instans.
 
 > [!IMPORTANT]
 > Cmdlet: ar aldrig ska anropa [System.Console.Writeline*](/dotnet/api/System.Console.WriteLine) eller motsvarande.
 
-- Cmdlet: kanske objektvariabler för att rensa upp när den är klar bearbetning (till exempel om den öppnas en filreferens i den [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metod och ser referensen öppna för användning av [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). Det är viktigt att komma ihåg att Windows PowerShell-runtime alltid inte anropar den [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metod som utför rensningen för objektet.
+- Cmdlet: kanske objektvariabler för att rensa upp när den är klar bearbetning (till exempel om den öppnas en filreferens i den [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metod och ser referensen öppna för användning av [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). Det är viktigt att komma ihåg att Windows PowerShell-runtime alltid inte anropar den [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metod som utför rensningen för objektet.
 
-Till exempel [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) kan inte anropas om cmdlet: en har avbrutits mitt eller om avslutande fel uppstår i någon del av cmdlet: en. Därför kan en cmdlet som kräver objektet rensningen ska implementera hela [System.Idisposable](/dotnet/api/System.IDisposable) mönstret, inklusive finaliserare, så att körningen kan anropa båda [ System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) och [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) i slutet av bearbetning.
+Till exempel [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) kan inte anropas om cmdlet: en har avbrutits mitt eller om avslutande fel uppstår i någon del av cmdlet: en. Därför kan en cmdlet som kräver objektet rensningen ska implementera hela [System.IDisposable](/dotnet/api/System.IDisposable) mönstret, inklusive finaliserare, så att körningen kan anropa båda [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) och [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) i slutet av bearbetning.
 
 ## <a name="code-sample"></a>Kodexempel
 

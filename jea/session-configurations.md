@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, säkerhet
 title: JEA Sessionskonfigurationer
-ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: b98726ea7ed3aabdfd05034c3b70118e327160cd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655471"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056608"
 ---
 # <a name="jea-session-configurations"></a>JEA Sessionskonfigurationer
 
@@ -45,7 +45,7 @@ Sessioner som konfigureras på det här sättet kommer att fungera i [NoLanguage
 - Get-FormatData
 - Get-Help
 - Måttobjektet (mått)
-- Standard ut
+- Out-Default
 - Select-Object (Välj)
 
 Inga PowerShell-providers är tillgängliga, och inte heller några externa program (körbara filer, skript osv.).
@@ -60,7 +60,7 @@ Du bestämmer dig för vilken identitet JEA används i konfigurationsfilen för 
 
 #### <a name="local-virtual-account"></a>Lokala virtuellt konto
 
-Om de roller som stöds av den här JEA-slutpunkt används för att hantera den lokala datorn och ett lokalt administratörskonto räcker för att köra kommandon har, bör du konfigurera JEA om du vill använda ett lokalt virtuellt konto.
+Om de roller som stöds av den här JEA-slutpunkt används för att hantera den lokala datorn och ett lokalt administratörskonto räcker för att köra kommandona har, bör du konfigurera JEA om du vill använda ett lokalt virtuellt konto.
 Virtuella konton är tillfälliga konton som är unika för en viss användare och endast senaste under av sina PowerShell-session.
 På en medlemsserver eller arbetsstation virtuella konton som hör till den lokala datorn **administratörer** gruppen och har åtkomst till de flesta systemresurser.
 På en Active Directory-domänkontrollant, virtuella konton tillhör domänens **Domänadministratörer** grupp.
@@ -80,6 +80,7 @@ När du anger en eller flera säkerhetsgrupper virtuellt konto kommer inte läng
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+
 > [!NOTE]
 > Virtuella konton beviljas tillfälligt inloggningen som en tjänst direkt i den lokala server säkerhetsprincipen.  Om en av VirtualAccountGroups som angetts har redan beviljats den här behörigheten i principen, kommer inte längre individuella virtuella konto har lagts till och tas bort från principen.  Detta kan vara användbart i scenarier, till exempel domänkontrollanter där ändringar i den säkerhetsprincip för domänkontrollanter granskas noggrant.  Detta är endast tillgängligt i Windows Server 2016 med November 2018 eller senare samlad och Windows Server 2019 med januari 2019 eller senare samlad.
 
@@ -104,7 +105,6 @@ gMSA-konton bör endast användas när åtkomst till nätverksresurser krävs ol
 
 > [!NOTE]
 > Gruppen hanterade tjänstkonton är endast tillgängliga i Windows PowerShell 5.1 eller senare och på domänanslutna datorer.
-
 
 #### <a name="more-information-about-run-as-users"></a>Mer information om Kör som-användare
 
@@ -179,6 +179,7 @@ RoleDefinitions = @{
 ```
 
 ### <a name="role-capability-search-order"></a>Sökordning för roll-funktion
+
 I exemplet ovan visas rollfunktioner refereras av filens roll funktionen fast namn (filnamn utan filtillägget).
 Om flera rollfunktioner är tillgängliga på datorn med samma fast namn, använder PowerShell dess implicita ordning för att markera filen effektiva roll funktionen.
 Kommer det att **inte** ge åtkomst till alla roll funktionsfiler med samma namn.
@@ -217,6 +218,7 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > Regler för villkorlig åtkomst är bara tillgängliga i Windows PowerShell 5.1 eller senare.
 
 ### <a name="other-properties"></a>Andra egenskaper
+
 Sessionen konfigurationsfiler kan också göra allt en roll funktionen fil kan göra, men utan möjlighet att ge den anslutande användare åtkomst till olika kommandon.
 Om du vill tillåta alla användare åtkomst till specifika cmdlet: ar, funktioner eller leverantörer kan du göra det direkt i konfigurationsfilen för sessionen.
 En fullständig lista över egenskaper som stöds i konfigurationsfilen session kör `Get-Help New-PSSessionConfigurationFile -Full`.

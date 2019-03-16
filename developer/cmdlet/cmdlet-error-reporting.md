@@ -14,12 +14,12 @@ helpviewer_keywords:
 - error records [PowerShell], non-terminating
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
-ms.openlocfilehash: 7b54fc220a66a47c25b3e8cba644882d31713cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 45f5934314a2871ceb921c7a66b9dfb658d0bd99
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847994"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057951"
 ---
 # <a name="cmdlet-error-reporting"></a>Cmdlet-felrapportering
 
@@ -43,7 +43,7 @@ Följande riktlinjer kan användas för att avgöra om ett feltillstånd är ett
 
 ## <a name="reporting-nonterminating-errors"></a>Rapportering oändliga fel
 
-Rapportering av ett oändliga fel ska endast göras inom cmdletens implementering av den [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metoden den [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoden eller [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metod. Dessa typer av fel rapporteras genom att anropa den [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metod som i sin tur skickar en Felpost till felströmmen.
+Rapportering av ett oändliga fel ska endast göras inom cmdletens implementering av den [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metoden den [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoden eller [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metod. Dessa typer av fel rapporteras genom att anropa den [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metod som i sin tur skickar en Felpost till felströmmen.
 
 ## <a name="reporting-terminating-errors"></a>Rapporterat avslutande fel
 
@@ -53,7 +53,7 @@ Du kan även definiera dina egna undantag för problem som är specifika för di
 
 ## <a name="error-records"></a>Felposter
 
-Windows PowerShell beskriver ett oändliga feltillstånd med [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objekt. Varje [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektet innehåller information om fel, en valfri målobjektet och information om felet.
+Windows PowerShell beskriver ett oändliga feltillstånd med [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objekt. Varje [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektet innehåller information om fel, en valfri målobjektet och information om felet.
 
 ### <a name="error-identifiers"></a>Fel-ID
 
@@ -61,7 +61,7 @@ Fel-ID: t är en enkel sträng som identifierar feltillstånd i cmdleten. Window
 
 Följande riktlinjer ska följas när du anger fel-ID.
 
-- Tilldela olika kodsökvägar olika, specifika, fel-ID: n. Varje kodsökväg som anropar [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) eller [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) ska ha sin egen fel-identifierare.
+- Tilldela olika kodsökvägar olika, specifika, fel-ID: n. Varje kodsökväg som anropar [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) eller [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) ska ha sin egen fel-identifierare.
 
 - Fel-ID måste vara unikt för CLR-undantagstyper för både avslutande och oändliga fel.
 

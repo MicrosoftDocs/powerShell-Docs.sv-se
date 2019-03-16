@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Paketet manifest värden som påverkar PowerShell galleriets gränssnitt
-ms.openlocfilehash: dcba56d9f7edf0c08a3b9e3f2326b39a6b3be3fa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687253"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058223"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Paketet manifest värden som påverkar PowerShell galleriets gränssnitt
 
@@ -40,7 +40,7 @@ Tabellen nedan visar elementen på sidan för PowerShell-galleriet paketet Anvä
 | **Rollfunktioner** | Detta visas när modulen som publicerats i PowerShell-galleriet innehåller en eller flera roll funktionen (.psrc) filer som används av JEA. Finns i JEA-dokumentationen för mer information om [rollfunktioner](/powershell/jea/role-capabilities). | Ja | Nej |
 | **PowerShell-utgåvor** | Detta har angetts i ett skript eller modulen manifest. För moduler som är avsedd att användas med PowerShell 5.0 och under detta styrs med hjälp av taggar. Använd taggen PSEdition_Desktop för skrivbordet, och Använd taggen PSEdition_Core för kärna. Moduler som används bara på PowerShell 5.1 och senare, har en CompatiblePSEditions-nyckel i huvudsakliga manifestet. Mer information om, granska funktionen PS-versionen i [i PowerShell-Get-dokumentationen](module-psedition-support.md). | Ja | Ja |
 | **Beroenden** | Beroenden är moduler i PowerShell-galleriet som deklareras i modulen som RequiredModules eller i skript-manifest som #Requires – modul (namn). | Ja | Ja |
-| **Lägsta version av Powershell** | Det kan anges i ett modulmanifest som PowerShellVersion | Ja | Nej |
+| **Lägsta version av PowerShell** | Det kan anges i ett modulmanifest som PowerShellVersion | Ja | Nej |
 | **Versionshistorik** | Versionshistoriken visar uppdateringar för en modul i PowerShell-galleriet. Om en version av ett paket är dold med hjälp av funktionen Ta bort visas den inte i tidigare versioner utom för paket-ägare. | Nej | Nej |
 | **Project-webbplats** | Projektwebbplatsen har angetts för moduler i avsnittet Privatedata\PSData i modulmanifestet genom att ange en ProjectURI. I skriptet-manifestet styrs genom att ange. PROJECTURI. | Ja | Ja |
 | **Licens** | En licens länk för moduler i avsnittet Privatedata\PSData i modulmanifestet genom att ange en LicenseURI. I skriptet-manifestet styrs genom att ange. LICENSEURI. Det är viktigt att Observera att om en licens har angetts via LicenseURI eller i en modul, villkor för användning av PowerShell-galleriet ange villkor för användning av paketet. Se villkor för användning av information. | Ja | Ja |
@@ -93,7 +93,7 @@ Referens följer vissa vanligaste taggar från och med 12/14/2017. I vissa fall 
 | Databas | Databaser (plural) är mindre önskvärda |
 | DevOps |  |
 | Windows |  |
-| Skapa |  |
+| Utveckla |  |
 | Distribution | Distribuera används mindre ofta |
 | Molnet |  |
 | GIT |  |
@@ -113,7 +113,7 @@ Referens följer vissa vanligaste taggar från och med 12/14/2017. I vissa fall 
 | Nätverk | Nätverk är liknande, används mindre ofta |
 | SharePoint |  |
 | Rapporter | Rapportering är en åtgärd, rapporten är en sak |
-| Rapporten | Rapporten är en sak |
+| Rapport | Rapporten är en sak |
 | WinRM |  |
 | Övervakning |  |
 | VSTS |  |
@@ -135,7 +135,7 @@ Referens följer vissa vanligaste taggar från och med 12/14/2017. I vissa fall 
 | Docker |  |
 | Appveyor |  |
 | AzureRm | Används främst för AzureRM-moduler |
-| Zip |  |
+| ZIP |  |
 | MSI |  |
 | MacOS |  |
 | PoshBot |  |

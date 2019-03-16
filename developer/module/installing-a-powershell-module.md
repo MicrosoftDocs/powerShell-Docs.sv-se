@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
-ms.openlocfilehash: f7899713dd273b793017adfa0a20b3ff3352b62a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851130"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059787"
 ---
 # <a name="installing-a-powershell-module"></a>Installera en PowerShell-modul
 
@@ -160,7 +160,7 @@ Om du vill aktivera Windows PowerShell-modulen identifiering funktioner att hitt
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-$p += "C:\Program Files\Fabrikam Technolgies\Fabrikam Manager\Modules\"
+$p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
@@ -228,7 +228,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-När dessa steg har slutförts, den **ListAvailable** -parametern för den [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet hämtar båda Fabrikam-moduler. Om du vill importera en viss modul, Använd den `MiminumVersion` eller `RequiredVersion` parametrarna för den [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.
+När dessa steg har slutförts, den **ListAvailable** -parametern för den [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet hämtar båda Fabrikam-moduler. Om du vill importera en viss modul, Använd den `MinimumVersion` eller `RequiredVersion` parametrarna för den [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.
 
 Om båda moduler importeras till samma session, och moduler innehåller cmdletar och arbetsflöden med samma namn, gäller de cmdletar som importeras senast i sessionen.
 

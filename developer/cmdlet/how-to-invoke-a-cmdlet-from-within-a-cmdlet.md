@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: efa4dc9c-ddee-46a3-978a-9dbb61e9bb6f
 caps.latest.revision: 12
-ms.openlocfilehash: d4564b51b74422cdaec3878b227ffc6be7c97949
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 57543a88d04eb66c9d109249a99ddd272b02ef9d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846734"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055911"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Anropa en cmdlet inifrån en cmdlet
 
@@ -24,7 +24,7 @@ Get-Process -name [a-t]
 ```
 
 > [!IMPORTANT]
-> Du kan anropa dessa cmdlets som härleds direkt från den [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klass. Du kan inte anropa en cmdlet som härleds från den [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klass.
+> Du kan anropa dessa cmdlets som härleds direkt från den [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klass. Du kan inte anropa en cmdlet som härleds från den [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klass.
 
 ## <a name="to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Anropa en cmdlet från inom en cmdlet
 
@@ -36,7 +36,7 @@ Get-Process -name [a-t]
     using Microsoft.PowerShell.Commands;  // Windows PowerShell assembly.
     ```
 
-2. Skapa en ny instans av cmdlet anropas i den inkommande metoden-cmdlet: ens bearbetades. I det här exemplet, ett objekt av typen [Microsoft.Powershell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) skapas tillsammans med den sträng som innehåller de argument som används när cmdleten har anropats.
+2. Skapa en ny instans av cmdlet anropas i den inkommande metoden-cmdlet: ens bearbetades. I det här exemplet, ett objekt av typen [Microsoft.PowerShell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) skapas tillsammans med den sträng som innehåller de argument som används när cmdleten har anropats.
 
     ```csharp
     GetProcessCommand gp = new GetProcessCommand();
@@ -55,7 +55,7 @@ Get-Process -name [a-t]
 
 ## <a name="example"></a>Exempel
 
-I det här exemplet på `Get-Process` cmdlet anropas inifrån den [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -metoden för en cmdlet.
+I det här exemplet på `Get-Process` cmdlet anropas inifrån den [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -metoden för en cmdlet.
 
 ```csharp
 using System;

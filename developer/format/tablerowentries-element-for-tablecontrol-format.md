@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d10b68ca-256c-4c58-b503-73f7777b39ae
 caps.latest.revision: 15
-ms.openlocfilehash: d93750f919c1075f173dc9ac70324cc003e36879
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 88de19be02de4933f892e02093403a82ccdd5788
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851144"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055741"
 ---
 # <a name="tablerowentries-element-for-tablecontrol-format"></a>TableRowEntries-element för TableControl (format)
 
@@ -41,7 +41,7 @@ Ingen.
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[TableRowEntry Element för TableRowEntries för TableControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|Element som krävs.<br /><br /> Definierar de data som visas i en rad i tabellen.|
+|[TableRowEntry Element för TableRowEntries för TableControl (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Element som krävs.<br /><br /> Definierar de data som visas i en rad i tabellen.|
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -84,6 +84,6 @@ I följande exempel visas en `TableRowEntries` element som definierar en rad som
 
 [TableControl Element (Format)](./tablecontrol-element-format.md)
 
-[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [Skriva ett PowerShell formatering fil](./writing-a-powershell-formatting-file.md)

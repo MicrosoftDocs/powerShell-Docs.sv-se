@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
 caps.latest.revision: 6
-ms.openlocfilehash: 86a0e8b7e8967280daa57faf5c323efcd3b1368b
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 5c5168ffd74c15066b914ad1b39d9ead947c5e7f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794203"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054194"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>Läsa in och exportera formateringsdata
 
@@ -27,7 +27,7 @@ Formatering filer kan läsas in i den aktuella sessionen med hjälp av följande
 
 - Du kan skapa ett modulmanifest som refererar till filen formatering. Moduler kan du paketera du formatering filer för distribution. Använd den [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet för att skapa manifestet, och [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet för att läsa in modulen i den aktuella sessionen. Läs mer om moduler [skriva en Windows PowerShell-modul](../module/writing-a-windows-powershell-module.md).
 
-- Du kan skapa en snapin-modul som refererar till filen formatering. Använd den [System.Management.Automation.Pssnapin.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats) att referera till filerna formatering. Det är vi rekommenderar att du använder moduler att paketet cmdlet: ar, och alla associerade formaterar och typer av filer för distribution. Läs mer om moduler [skriva en Windows PowerShell-modul](../module/writing-a-windows-powershell-module.md).
+- Du kan skapa en snapin-modul som refererar till filen formatering. Använd den [System.Management.Automation.PSSnapIn.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats) att referera till filerna formatering. Det är vi rekommenderar att du använder moduler att paketet cmdlet: ar, och alla associerade formaterar och typer av filer för distribution. Läs mer om moduler [skriva en Windows PowerShell-modul](../module/writing-a-windows-powershell-module.md).
 
 - Om du anropar kommandon programmässigt, kan du lägga till en formatering filpost inledande sessionens tillstånd av körningsutrymmet där kommandona körs. Mer information om .NET-typ som används för att lägga till filen formatering finns i den [System.Management.Automation.Runspaces.Sessionstateformatentry? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateFormatEntry) klass.
 

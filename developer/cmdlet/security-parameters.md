@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e199bba3-90d3-41ca-9d78-cb502e58508d
 caps.latest.revision: 6
-ms.openlocfilehash: c8b3f907a80d1f6125a5ac04236245503db76ed0
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: 9b4d83aeaf45eab1365dec5fbf48c3c796ed5bde
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251310"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057137"
 ---
 # <a name="security-parameters"></a>Säkerhetsparametrar
 
@@ -29,7 +29,7 @@ I följande tabell visas de rekommenderade namn och funktioner för parametrar s
 |**CertStoreLocation**<br>Datatyp: Sträng|Implementera den här parametern så att användaren kan ange platsen för arkivet. Platsen är vanligtvis en sökväg till filen.|
 |**CertSubjectName**<br>Datatyp: Sträng|Implementera den här parametern så att användaren kan ange utfärdaren av ett certifikat eller så att användaren kan ange en delsträng.|
 |**CertUsage**<br>Datatyp: Sträng|Implementera den här parametern om du vill ange nyckelanvändningen eller avancerad nyckelanvändning. Nyckeln kan representeras som en aning maskera, en aning objektidentifierare (OID) eller en sträng.|
-|**Autentiseringsuppgifter**<br>Datatyp: [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|Implementera den här parametern så att cmdleten ska automatiskt frågar användaren om ett användarnamn eller lösenord. Ett meddelande för både visas om en fullständig autentiseringsuppgift anges direkt.|
+|**Autentiseringsuppgifter**<br>Datatyp: [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Implementera den här parametern så att cmdleten ska automatiskt frågar användaren om ett användarnamn eller lösenord. Ett meddelande för både visas om en fullständig autentiseringsuppgift anges direkt.|
 |**CSPName**<br>Datatyp: Sträng|Implementera den här parametern så att användaren kan ange namnet på certifikatet service provider (CSP).|
 |**CSPType**<br>Datatyp: Heltal|Implementera den här parametern så att användaren kan ange vilken typ av CSP.|
 |**Grupp**<br>Datatyp: Sträng|Implementera den här parametern så att användaren kan ange en samling av säkerhetsobjekt för åtkomst. Mer information finns i beskrivningen av den **huvudnamn** parametern.|

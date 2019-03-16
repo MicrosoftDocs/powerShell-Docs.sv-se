@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: ffc08d2713c4bfc0938b2e07146102af8b5467d2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846804"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055044"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Lägga till användarmeddelanden i en cmdlet
 
@@ -82,7 +82,7 @@ Det finns några gränser för antalet meddelanden som cmdlet: kan skriva eller 
 
 Det första steget i Skapa en cmdlet är alltid namngivning av cmdlet: en och deklarerar .NET-klass som implementerar cmdlet: en. Alla slags cmdlet kan skriva användarmeddelanden från indata metoderna; därför i allmänhet kan du kalla den här cmdleten med alla verb som anger vilka system ändringar cmdlet utför. Läs mer om godkända cmdlet verb [Cmdlet Verb-namnen](./approved-verbs-for-windows-powershell-commands.md).
 
-Cmdlet Stop-processen har utformats för att ändra systemet. Därför kan den [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) deklarationen för .NET-klass måste innehålla den `SupportsShouldProcess` attributet nyckelord och anges till `true`.
+Cmdlet Stop-processen har utformats för att ändra systemet. Därför kan den [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) deklarationen för .NET-klass måste innehålla den `SupportsShouldProcess` attributet nyckelord och anges till `true`.
 
 Följande kod är definitionen för den här cmdlet Stop-Proc-klassen. Läs mer om den här definitionen [skapa en Cmdlet som ändrar systemet](./creating-a-cmdlet-that-modifies-the-system.md).
 
@@ -141,16 +141,16 @@ private bool passThru;
 
 ## <a name="overriding-an-input-processing-method"></a>Åsidosätta indata metoden bearbetades
 
-Cmdlet: måste åsidosätta indata metoden bearbetades, oftast blir [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). Denna cmdlet Stop-Proc åsidosätter den [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) indatametod för bearbetning. I den här implementeringen av cmdlet Stop-Proc rings samtal att skriva utförliga meddelanden och felsökningsmeddelanden varningsmeddelanden.
+Cmdlet: måste åsidosätta indata metoden bearbetades, oftast blir [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). Denna cmdlet Stop-Proc åsidosätter den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) indatametod för bearbetning. I den här implementeringen av cmdlet Stop-Proc rings samtal att skriva utförliga meddelanden och felsökningsmeddelanden varningsmeddelanden.
 
 > [!NOTE]
-> Mer information om hur den här metoden anropar den [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoder, se [Skapar en Cmdlet som ändrar systemet](./creating-a-cmdlet-that-modifies-the-system.md).
+> Mer information om hur den här metoden anropar den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoder, se [Skapar en Cmdlet som ändrar systemet](./creating-a-cmdlet-that-modifies-the-system.md).
 
 ## <a name="writing-a-verbose-message"></a>Skriva ett utförligt meddelande
 
-Den [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metod för att skriva allmän användarnivå information som är inte relaterat till specifika felvillkor. Systemadministratören kan sedan använda informationen för att fortsätta att bearbeta andra kommandon. All information som skrivits med den här metoden bör dessutom vara lokaliserade efter behov.
+Den [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metod för att skriva allmän användarnivå information som är inte relaterat till specifika felvillkor. Systemadministratören kan sedan använda informationen för att fortsätta att bearbeta andra kommandon. All information som skrivits med den här metoden bör dessutom vara lokaliserade efter behov.
 
-Följande kod från denna cmdlet Stop-Proc visar två anrop till den [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metod som du åsidosättandet av den [System.Management.Automation.Cmdlet.Processrecord* ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod.
+Följande kod från denna cmdlet Stop-Proc visar två anrop till den [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metod som du åsidosättandet av den [System.Management.Automation.Cmdlet.ProcessRecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod.
 
 ```csharp
 message = String.Format("Attempting to stop process \"{0}\".", name);
@@ -166,14 +166,14 @@ WriteVerbose(message);
 
 ## <a name="writing-a-debug-message"></a>Skriva ett meddelande för felsökning
 
-Den [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metod för att skriva felsökningsmeddelanden som kan användas för att felsöka driften av cmdlet: en. Anropet görs från indata metoden bearbetades.
+Den [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metod för att skriva felsökningsmeddelanden som kan användas för att felsöka driften av cmdlet: en. Anropet görs från indata metoden bearbetades.
 
 > [!NOTE]
-> Windows PowerShell definierar också en `Debug` parameter som anger både utförlig och felsökningsinformation. Om din cmdlet har stöd för den här parametern, det måste inte att anropa [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) i samma kod som anropar [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
+> Windows PowerShell definierar också en `Debug` parameter som anger både utförlig och felsökningsinformation. Om din cmdlet har stöd för den här parametern, det måste inte att anropa [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) i samma kod som anropar [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) .
 
-Följande två avsnitt av kod från cmdlet Stop-Proc exemplet visar anrop till den [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metod som du åsidosättandet av den [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod.
+Följande två avsnitt av kod från cmdlet Stop-Proc exemplet visar anrop till den [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metod som du åsidosättandet av den [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod.
 
-Det här debug-meddelandet skrivs omedelbart före [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anropas.
+Det här debug-meddelandet skrivs omedelbart före [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anropas.
 
 ```csharp
 message =
@@ -182,7 +182,7 @@ message =
 WriteDebug(message);
 ```
 
-Det här debug-meddelandet skrivs omedelbart före [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) anropas.
+Det här debug-meddelandet skrivs omedelbart före [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) anropas.
 
 ```csharp
 message =
@@ -192,15 +192,15 @@ WriteDebug(message);
 WriteObject(process);
 ```
 
-Windows PowerShell dirigerar automatiskt någon [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) anrop till spårning av infrastruktur och cmdletar. På så sätt kan metodanrop kan spåras till värd, en fil eller en felsökare utan att du behöver göra några extra utvecklingsarbete i cmdleten. Följande kommandorad post implementerar en spårning av åtgärd.
+Windows PowerShell dirigerar automatiskt någon [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) anrop till spårning av infrastruktur och cmdletar. På så sätt kan metodanrop kan spåras till värd, en fil eller en felsökare utan att du behöver göra några extra utvecklingsarbete i cmdleten. Följande kommandorad post implementerar en spårning av åtgärd.
 
 **PS > trace-uttrycket stop-proc-filen proc.log-kommandot stop-proc anteckningar**
 
 ## <a name="writing-a-warning-message"></a>Skriva ett varningsmeddelande
 
-Den [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metod för att skriva en varning när cmdleten ska utföra en åtgärd som kan ha ett oväntat resultat, till exempel skriva över en skrivskyddad fil.
+Den [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metod för att skriva en varning när cmdleten ska utföra en åtgärd som kan ha ett oväntat resultat, till exempel skriva över en skrivskyddad fil.
 
-Följande kod från cmdlet Stop-Proc exemplet visar anropet till den [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metod som du åsidosättandet av den [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod.
+Följande kod från cmdlet Stop-Proc exemplet visar anropet till den [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metod som du åsidosättandet av den [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod.
 
 ```csharp
  if (criticalProcess)
@@ -214,10 +214,10 @@ Följande kod från cmdlet Stop-Proc exemplet visar anropet till den [System.Man
 
 ## <a name="writing-a-progress-message"></a>Skriva ett meddelande om pågående
 
-Den [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) används för att skriva förloppsmeddelanden när cmdlet åtgärder ta lång tid att slutföra. Ett anrop till [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) skickar en [System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord) objekt som ska skickas till programmet som är värd för rendering för användaren.
+Den [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) används för att skriva förloppsmeddelanden när cmdlet åtgärder ta lång tid att slutföra. Ett anrop till [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) skickar en [System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord) objekt som ska skickas till programmet som är värd för rendering för användaren.
 
 > [!NOTE]
-> Denna cmdlet Stop-processen inte innehåller ett anrop till den [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) metod.
+> Denna cmdlet Stop-processen inte innehåller ett anrop till den [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) metod.
 
 Följande kod är ett exempel på en pågående meddelande som skrivits av en cmdlet som försöker att kopiera ett objekt.
 

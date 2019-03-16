@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
 caps.latest.revision: 5
-ms.openlocfilehash: 2d2d6a32ac910ecc0fc3b6f1e78cdde54c21b427
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bf0a73267b3cad1f50d983ebed53318ec98180e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848428"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056472"
 ---
 # <a name="writing-a-container-provider"></a>Skriva en containerprovider
 
@@ -44,7 +44,7 @@ Deklarera providern kan härledas från den [System.Management.Automation.Provid
 
 ### <a name="implementing-getchilditems"></a>Implementera GetChildItems
 
-PowerShell-motorn anrop den [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) metod när en användare anropar den [Microsoft.Powershell.Commands.Get-Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem) cmdlet. Den här metoden hämtar de objekt som är underordnade objektet på den angivna sökvägen.
+PowerShell-motorn anrop den [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) metod när en användare anropar den [Microsoft.PowerShell.Commands.Get-Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem) cmdlet. Den här metoden hämtar de objekt som är underordnade objektet på den angivna sökvägen.
 
 I Access database exempel beteendet för den [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) metod beror på vilken typ av det angivna objektet. Om objektet är enheten, sedan de underordnade objekten finns tabeller och metoden returnerar en uppsättning tabeller från databasen. Om det angivna objektet är en tabell, är underordnade raderna i tabellen. Om objektet är en rad, sedan den har inga underordnade och metoden returnerar endast den raden. Alla underordnade objekt skickas tillbaka till PowerShell-motorn genom att den [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) metod.
 
@@ -155,7 +155,7 @@ protected override void GetChildNames(string path,
 
 ### <a name="implementing-newitem"></a>Implementera NewItem
 
-Den [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) metoden skapar ett nytt objekt av den angivna typen i den angivna sökvägen. PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.Powershell.Commands.New-Item](/dotnet/api/Microsoft.PowerShell.Commands.New-Item) cmdlet.
+Den [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) metoden skapar ett nytt objekt av den angivna typen i den angivna sökvägen. PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.PowerShell.Commands.New-Item](/dotnet/api/Microsoft.PowerShell.Commands.New-Item) cmdlet.
 
 I det här exemplet implementerar metoden logik för att fastställa att sökvägen och skriva matchar. Det vill säga endast en tabell kan skapas direkt under enhet (databasen) och bara en rad kan skapas under en tabell. Om den angivna sökvägen och typen av konfigurationsobjekt inte matchar på så vis genereras metoden ett undantag.
 
@@ -333,7 +333,7 @@ protected override void NewItem(string path, string type,
 
 ### <a name="implementing-copyitem"></a>Implementera CopyItem
 
-Den [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) kopierar det angivna objektet till den angivna sökvägen. PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.Powershell.Commands.Copy-Item](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item) cmdlet. Den här metoden kan också vara rekursiv, kopierar alla underordnade objekt förutom själva objektet.
+Den [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) kopierar det angivna objektet till den angivna sökvägen. PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.PowerShell.Commands.Copy-Item](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item) cmdlet. Den här metoden kan också vara rekursiv, kopierar alla underordnade objekt förutom själva objektet.
 
 På samma sätt till den [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) metoden, den här metoden utför logik för att se till att det angivna objektet är av rätt typ. för sökvägen till som den ska kopieras. Om målsökvägen är en tabell, till exempel vara objektet som ska kopieras en rad.
 
@@ -466,7 +466,7 @@ protected override void CopyItem(string path, string copyPath, bool recurse)
 
 ### <a name="implementing-removeitem"></a>Implementera RemoveItem
 
-Den [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) metoden tar bort objektet på den angivna sökvägen. PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.Powershell.Commands.Remove-Item](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item) cmdlet.
+Den [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) metoden tar bort objektet på den angivna sökvägen. PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.PowerShell.Commands.Remove-Item](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item) cmdlet.
 
 ```csharp
 protected override void RemoveItem(string path, bool recurse)

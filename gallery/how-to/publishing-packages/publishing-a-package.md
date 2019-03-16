@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery
 title: Skapa och publicera ett objekt
-ms.openlocfilehash: 70696535a3bf540ff75a2dc43bca80cb1adf8f45
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0e0f871b5d43508735e396224fdfd1a29b1e91c0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684362"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055486"
 ---
 # <a name="creating-and-publishing-an-item"></a>Skapa och publicera ett objekt
 
@@ -75,7 +75,7 @@ Det finns några verktyg som du behöver för att köra mot din kod innan du pub
 Om manifestet informationen i dina objekt inte kan läsas av infrastrukturen som PowerShell-galleriet, kan du inte publicera.
 [Test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) ska fånga upp vanliga problem som skulle orsaka att modulen kan inte användas när den är installerad. Det måste köras för varje modul innan du publicerar den PowerShell-galleriet.
 
-På samma sätt [Test ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo) validerar metadata i ett skript och måste köras på varje skript (publicerade separat från en modul) innan du publicerar den Powershell-galleriet.
+På samma sätt [Test ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo) validerar metadata i ett skript och måste köras på varje skript (publicerade separat från en modul) innan du publicerar den PowerShell-galleriet.
 
 
 ## <a name="publishing-items"></a>Publicera objekt
@@ -87,14 +87,14 @@ Du måste använda den [Publish-Script](/powershell/module/PowerShellGet/publish
 
 De flesta av de andra alternativen i kommandoraden måste vara i manifestet data för det objekt som du publicerar, så du inte bör behöver ange dem i kommandot.
 
-Om du vill undvika fel bör du försöka kommandon med hjälp av – Whatif-Verbose, innan du publicerar. Detta sparar ganska lång tid sedan varje gång du publicerar till PowerShell-galleriet, måste du uppdatera versionsnumret i manifest-delen av artikeln.
+Om du vill undvika fel bör du försöka kommandon med hjälp av – WhatIf-Verbose, innan du publicerar. Detta sparar ganska lång tid sedan varje gång du publicerar till PowerShell-galleriet, måste du uppdatera versionsnumret i manifest-delen av artikeln.
 
 Exempel är:
 
-* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -Whatif -Verbose`
-* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -Whatif -Verbose`
+* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -WhatIf -Verbose`
+* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -WhatIf -Verbose`
 
-Granska utdata noggrant och om du ser några fel eller varningar, upprepa kommandot utan - Whatif.
+Granska utdata noggrant och om du ser några fel eller varningar, upprepa kommandot utan - WhatIf.
 
 Alla artiklar som publiceras till PowerShell-galleriet ska genomsökas efter virus och ska analyseras med hjälp av PowerShell-skript analysatorn. Eventuella problem som uppstår vid den tiden skickas tillbaka till utgivaren för matchning.
 

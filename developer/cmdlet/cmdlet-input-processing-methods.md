@@ -10,12 +10,12 @@ helpviewer_keywords:
 - virtual methods (PowerShell SDK]
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
-ms.openlocfilehash: 7f8d25e03707052b1d5b62e245caae360da11d0b
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 065214647dfa6d376b727930fe75140911095faf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794951"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059379"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Bearbetningsmetoder för cmdlet-indata
 
@@ -63,7 +63,7 @@ Ett mer detaljerat exempel på hur du använder den [System.Management.Automatio
 
 Cmdlet: ar ska åsidosätta den [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) metod för att lägga till alla efterbearbetning åtgärder som gäller för alla poster som bearbetats av cmdlet: en. Till exempel cmdlet: kan behöva Rensa objektvariabler när den har slutförts bearbetning.
 
-När Windows PowerShell bearbetar en kommando-pipeline, anropar Windows PowerShell den här metoden en gång för varje instans av cmdlet: en i pipelinen. Det är dock viktigt att komma ihåg att Windows PowerShell-runtime inte anropar den [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) metoden om cmdlet: en har avbrutits mitt via dess inkommande bearbetning eller om avslutande fel uppstår i någon del av cmdlet: en. Därför bör en cmdlet som kräver objektet Rensa implementera hela [System.Idisposable](/dotnet/api/System.IDisposable) mönstret, inklusive en finaliserare så att körningen kan anropa både den [ System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) och [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) metoder i slutet av bearbetning. Mer information om hur Windows PowerShell anropar kommando-pipeline finns i [Cmdlet bearbetar livscykel](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
+När Windows PowerShell bearbetar en kommando-pipeline, anropar Windows PowerShell den här metoden en gång för varje instans av cmdlet: en i pipelinen. Det är dock viktigt att komma ihåg att Windows PowerShell-runtime inte anropar den [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) metoden om cmdlet: en har avbrutits mitt via dess inkommande bearbetning eller om avslutande fel uppstår i någon del av cmdlet: en. Därför bör en cmdlet som kräver objektet Rensa implementera hela [System.IDisposable](/dotnet/api/System.IDisposable) mönstret, inklusive en finaliserare så att körningen kan anropa både den [ System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) och [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) metoder i slutet av bearbetning. Mer information om hur Windows PowerShell anropar kommando-pipeline finns i [Cmdlet bearbetar livscykel](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
 
 Följande kod visar en implementering av den [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) metod.
 
@@ -88,6 +88,6 @@ Ett mer detaljerat exempel på hur du använder den [System.Management.Automatio
 
 [System.Management.Automation.Cmdlet.Endprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)
 
-[System.Idisposable](/dotnet/api/System.IDisposable)
+[System.IDisposable](/dotnet/api/System.IDisposable)
 
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)

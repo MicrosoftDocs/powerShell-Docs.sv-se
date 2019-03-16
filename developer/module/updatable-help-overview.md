@@ -10,12 +10,12 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: 3f7388a9-9fa8-42bc-b294-538c9a01e30a
 caps.latest.revision: 12
-ms.openlocfilehash: 4e962890fa1d5c282a02a89f0ae2e263844c635e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f2dfb9642ba2dde38124142b659b425bbbb00f37
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847490"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057611"
 ---
 # <a name="updatable-help-overview"></a>Översikt över uppdateringsbar hjälp
 
@@ -31,7 +31,9 @@ Uppdateringsbar hjälp stöds fullt av alla Windows PowerShell-moduler i Windows
 
 Uppdateringsbar hjälp innehåller följande funktioner.
 
-- Den [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet, som avgör om användaren har de senaste hjälpfilerna för en modul och, om inte, hämtar de senaste hjälpfilerna från Internet, har packats upp dem och installerar dem i rätt modul underkataloger på den användarens dator. Användare kan använda den [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet för att visa de nyligen installerade hjälpavsnitt omedelbart. De behöver inte starta om Windows PowerShell.
+- Den [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet, som avgör om användaren har de senaste hjälpfilerna för en modul och, om inte, hämtar de senaste hjälpfilerna från Internet, har packats upp dem och installerar dem i rätt modul underkataloger på den användarens dator.
+  Användare kan använda den [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet för att visa de nyligen installerade hjälpavsnitt omedelbart.
+  De behöver inte starta om PowerShell.
 
 - Den [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) cmdlet som hämtar de senaste hjälpfilerna filer från Internet och sparar dem i en katalog i filsystemet. Användare kan använda den `Update-Help` cmdlet för att hämta hjälpfiler från systemkatalogen fil och packa upp och installera dem i modulen underkataloger på användarens dator. Den `Save-Help` cmdlet har utformats för användare som har begränsad eller ingen Internetåtkomst och för företag som vill begränsa åtkomst till Internet.
 

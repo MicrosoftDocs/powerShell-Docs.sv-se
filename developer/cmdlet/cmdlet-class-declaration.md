@@ -11,19 +11,19 @@ helpviewer_keywords:
 - declaring cmdlets [PowerShell SDK]
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
-ms.openlocfilehash: 3e410087438ac99526049f99e5c768c017a29848
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3168275423dc65fcb2e41dedd9bea275ede58397
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845726"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055095"
 ---
 # <a name="cmdlet-class-declaration"></a>Cmdlet-klassdeklaration
 
 En Microsoft .NET Framework-klass deklareras som en cmdlet genom att ange den **Cmdlet** attribut som metadata för klassen. (Den **Cmdlet** attributet är det enda obligatoriska attributet för alla cmdletar). När du anger den **Cmdlet** attribut, måste du ange verb och substantiv-paret som identifierar cmdlet: en för användaren. Och du måste beskriver funktioner i Windows PowerShell som har stöd för cmdleten. Mer information om deklarationssyntax som används för att ange den **Cmdlet** attributet, se [Cmdlet attributet deklarationen](./cmdlet-attribute-declaration.md).
 
 > [!NOTE]
-> Den **Cmdlet** attributet definieras av den [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) klass. Egenskaperna för den här klassen motsvarar deklarationsparametrar som ska användas när du deklarerar attributet.
+> Den **Cmdlet** attributet definieras av den [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) klass. Egenskaperna för den här klassen motsvarar deklarationsparametrar som ska användas när du deklarerar attributet.
 
 ## <a name="nouns"></a>Substantiv
 
@@ -57,7 +57,7 @@ När du namnger cmdlet: ar, använda Pascal gemener och versaler. Till exempel d
 
 ## <a name="see-also"></a>Se även
 
-[System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
+[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
 
 [CmdletAttribute deklaration](./cmdlet-attribute-declaration.md)
 

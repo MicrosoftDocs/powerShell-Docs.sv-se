@@ -15,12 +15,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], creating
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
-ms.openlocfilehash: e010e28ec705932063bb418b260a1087fc3eef9e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fb113086ce89e4becff9bcaf3232905fde2bf610
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846818"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055928"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>Lägga till parametrar som bearbetar kommandoradsindata
 
@@ -147,7 +147,7 @@ public string[] Name
 
 Om din cmdlet är att hantera kommandoradsverktyget indata, måste den åsidosätta lämpliga indata metoderna. Grundläggande inkommande bearbetningsmetoder som introduceras i [skapa din första cmdleten](./creating-a-cmdlet-without-parameters.md).
 
-Den **Get-Proc** cmdlet åsidosätter den [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod för att hantera den `Name` parametern indata från användaren eller ett skript. Den här metoden hämtar processer för varje begärda processnamn eller alla för processer om inget namn anges. Observera att i [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), anropet till [System.Management.Automation.Cmdlet.Writeobject%28System.Object%2Csystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) är utdata mekanism för att skicka utdata objekt till pipelinen. Den andra parametern för det här anropet `enumerateCollection`, är inställd på `true` om Windows PowerShell-runtime för att räkna upp utdata-matris med process-objekt och skriva en process i taget till kommandoraden.
+Den **Get-Proc** cmdlet åsidosätter den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod för att hantera den `Name` parametern indata från användaren eller ett skript. Den här metoden hämtar processer för varje begärda processnamn eller alla för processer om inget namn anges. Observera att i [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), anropet till [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) är utdata mekanism för att skicka utdata objekt till pipelinen. Den andra parametern för det här anropet `enumerateCollection`, är inställd på `true` om Windows PowerShell-runtime för att räkna upp utdata-matris med process-objekt och skriva en process i taget till kommandoraden.
 
 ```csharp
 protected override void ProcessRecord()

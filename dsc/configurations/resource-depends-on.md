@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Resursberoenden med DependsOn
-ms.openlocfilehash: 0d060f7d99bd261b0766028b245d4d32a5e1c349
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688065"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055707"
 ---
 # <a name="resource-dependencies-using-dependson"></a>Resursberoenden med DependsOn
 
@@ -16,7 +16,7 @@ När du skriver [konfigurationer](configurations.md), du lägger till [Resource 
 Den `DependsOn` nyckeln kan användas i valfri resurs-block. Den har definierats med samma nyckel/värde-mekanism som andra Resource-nycklar. Den `DependsOn` nyckel förväntar sig en matris med strängar med följande syntax.
 
 ```
-DependsOn = '[<Resource Type>]<Resoure Name>', '[<Resource Type>]<Resource Name'
+DependsOn = '[<Resource Type>]<Resource Name>', '[<Resource Type>]<Resource Name'
 ```
 
 I följande exempel konfigureras en brandväggsregel efter aktivering och konfigurering av den offentliga profilen.

@@ -2,12 +2,12 @@
 ms.date: 1/17/2019
 keywords: DSC, powershell, konfiguration, installation
 title: Starta om en nod
-ms.openlocfilehash: 33ecd98aa62c3dc94a8ff2213fd3e68bf0c05cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 015b82a32caefc420973651c72e272fd85baf880
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685692"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054738"
 ---
 # <a name="reboot-a-node"></a>Starta om en nod
 
@@ -54,7 +54,7 @@ xPendingReboot [String] #ResourceName
 | SkipWindowsUpdate | Hoppa över omstarter som utlöses av Windows Update.|
 | SkipPendingFileRename | Hoppa över väntar på Byt namn på omstarter. |
 | SkipCcmClientSDK | Hoppa över omstarter som utlöses av ConfigMgr-klienten. |
-| SkipComputerRename | Hoppa över startar om aktivitetsutlösaren av byter namn på datorn. |
+| SkipComputerRename | Hoppa över omstarter som utlöses av datorn byter namn på. |
 | PSDSCRunAsCredential | Stöd i v5. Kör resursen som den angivna användaren. |
 | DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`. Mer information finns i [använder DependsOn](resource-depends-on.md)|
 

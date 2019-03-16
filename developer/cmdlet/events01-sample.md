@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: 3edbcabeff0c8d84831823df11749d152b347566
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851949"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057169"
 ---
 # <a name="events01-sample"></a>Events01 – exempel
 
-Det här exemplet visar hur du skapar en cmdlet som används att registrera dig för händelser som har skapats av [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Med denna cmdlet kan användare registrera en åtgärd som ska köras när en fil skapas under en viss katalog. Det här exemplet kommer från den [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) basklassen.
+Det här exemplet visar hur du skapar en cmdlet som används att registrera dig för händelser som har skapats av [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Med denna cmdlet kan användare registrera en åtgärd som ska köras när en fil skapas under en viss katalog. Det här exemplet kommer från den [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) basklassen.
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Hur du skapar exemplet med hjälp av Visual Studio.
 
@@ -78,7 +78,7 @@ Det här exemplet kräver Windows PowerShell 2.0.
 
 Detta exempel visar följande.
 
-- Hur du skriver en cmdlet för Händelseregistrering. Cmdlet: en som härleds från den [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) klass som har stöd för vanliga parametrar till Register-* händelse-cmdletar. Cmdlet: ar som härleds från [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) behöver bara definiera sina specifika parametrar och åsidosätter den `GetSourceObject` och `GetSourceObjectEventName` abstrahera metoder.
+- Hur du skriver en cmdlet för Händelseregistrering. Cmdlet: en som härleds från den [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) klass som har stöd för vanliga parametrar till Register-* händelse-cmdletar. Cmdlet: ar som härleds från [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) behöver bara definiera sina specifika parametrar och åsidosätter den `GetSourceObject` och `GetSourceObjectEventName` abstrahera metoder.
 
 ## <a name="example"></a>Exempel
 

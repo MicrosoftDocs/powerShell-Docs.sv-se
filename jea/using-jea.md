@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, säkerhet
 title: Använda JEA
-ms.openlocfilehash: 539d280aff0b2656a5e9c710acfa468057753027
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fa3d3a3c8bc0090ec9ad788585ec5df933134173
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686861"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054687"
 ---
 # <a name="using-jea"></a>Använda JEA
 
@@ -108,7 +108,7 @@ Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredComman
 Du kan också spara via proxy-cmdletar från implicit fjärrkommunikation med [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession).
 Mer information om implicit fjärrkommunikation finns i hjälpen [Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) och [Import-Module](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/import-module).
 
-## <a name="using-jea-programatically"></a>Använda JEA programmässigt
+## <a name="using-jea-programmatically"></a>Använda JEA programmässigt
 
 JEA kan också användas i automatiseringssystem och användarprogram, till exempel interna supportavdelningen appar och webbplatser.
 Metoden som är detsamma som för att skapa appar som kommunicerar med obegränsad PowerShell-slutpunkter, med villkor för att programmet ska vara medveten om att JEA begränsar de kommandon som kan köras i fjärrsessionen.
@@ -126,10 +126,9 @@ $allowedCommands = Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'J
 $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Format-Table Name, Parameters
 ```
 
-Om du bygger en C#-app, kan du skapa ett PowerShell-körningsutrymme som ansluter till en JEA-session genom att ange konfigurationsnamnet i en [WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) objekt.
+Om du skapar en C# app, kan du skapa ett PowerShell-körningsutrymme som ansluter till en JEA-session genom att ange konfigurationsnamnet i en [WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) objekt.
 
 ```csharp
-
 // using System.Management.Automation;
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";
