@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
-ms.openlocfilehash: ec75945c5517c02fa001f0a38573c045ffcdbfd3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 633204f3b181316761746ea2679910216fb74657
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847854"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058972"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>SelectionCondition-element för EntrySelectedBy för ListControl (format)
 
@@ -44,7 +44,7 @@ Ingen.
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[PropertyName-Element för SelectionCondition för EmtrySelectedBy för ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger den .NET-egenskap som utlöser villkoret.|
+|[PropertyName-Element för SelectionCondition för EntrySelectedBy för ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger den .NET-egenskap som utlöser villkoret.|
 |[ScriptBlock Element för SelectionCondition för EntrySelectedBy för ListEntry (Format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger det skript som utlöser villkoret.|
 |[SelectionSetName Element för SelectionCondition för EntrySelectedBy för ListEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)|Valfritt element.<br /><br /> Anger uppsättningen med .NET-typer som utlöser villkoret.|
 |[TypeName-Element för SelectionCondition för EntrySelectedBy för ListEntry (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger ett .NET-typ som utlöser villkoret.|
@@ -75,7 +75,7 @@ Läs mer om andra komponenter i en listvy, [skapar en listvy](./creating-a-list-
 
 [ListEntry Element (Format)](./listentry-element-for-listcontrol-format.md)
 
-[SelectionSetName Element för EnrtySelectedBy för ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[SelectionSetName Element för EntrySelectedBy för ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [TypeName-Element för EntrySelectedBy för ListEntry (Format)](http://msdn.microsoft.com/en-us/fcd4daa6-f3fd-43f7-a468-03c582d34533)
 
