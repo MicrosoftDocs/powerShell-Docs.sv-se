@@ -10,50 +10,50 @@ helpviewer_keywords:
 - snap-ins [PowerShell SDK], PSSnapin example
 ms.assetid: 875024f4-e02b-4416-80b9-af5e5b50aad6
 caps.latest.revision: 7
-ms.openlocfilehash: d4f57c062fee09e85c290445082be745ab229985
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 0c99f4bcfe5e2d34d31714dc85a53b5e8abe0925
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795043"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057798"
 ---
-# <a name="writing-a-windows-powershell-snap-in"></a><span data-ttu-id="c55fb-102">Skriva en Windows PowerShell-snapin-modul</span><span class="sxs-lookup"><span data-stu-id="c55fb-102">Writing a Windows PowerShell Snap-in</span></span>
+# <a name="writing-a-windows-powershell-snap-in"></a><span data-ttu-id="e32cf-102">Skriva en Windows PowerShell-snapin-modul</span><span class="sxs-lookup"><span data-stu-id="e32cf-102">Writing a Windows PowerShell Snap-in</span></span>
 
-<span data-ttu-id="c55fb-103">Det här exemplet visar hur du skriver en Windows PowerShell-snapin-modul som kan användas för att registrera alla cmdletar och providers för Windows PowerShell i en sammansättning.</span><span class="sxs-lookup"><span data-stu-id="c55fb-103">This example shows how to write a Windows PowerShell snap-in that can be used to register all the cmdlets and Windows PowerShell providers in an assembly.</span></span>
+<span data-ttu-id="e32cf-103">Det här exemplet visar hur du skriver en Windows PowerShell-snapin-modul som kan användas för att registrera alla cmdletar och providers för Windows PowerShell i en sammansättning.</span><span class="sxs-lookup"><span data-stu-id="e32cf-103">This example shows how to write a Windows PowerShell snap-in that can be used to register all the cmdlets and Windows PowerShell providers in an assembly.</span></span>
 
-<span data-ttu-id="c55fb-104">Med den här typen av snapin-modulen kan väljer du inte vilka cmdlets och providers som du vill registrera.</span><span class="sxs-lookup"><span data-stu-id="c55fb-104">With this type of snap-in, you do not select which cmdlets and providers you want to register.</span></span> <span data-ttu-id="c55fb-105">Om du vill skriva en snapin-modul som kan du välja vad är registrerad, se [skriva en anpassad Windows PowerShell snapin-modul](./writing-a-custom-windows-powershell-snap-in.md).</span><span class="sxs-lookup"><span data-stu-id="c55fb-105">To write a snap-in that allows you to select what is registered, see [Writing a Custom Windows PowerShell Snap-in](./writing-a-custom-windows-powershell-snap-in.md).</span></span>
+<span data-ttu-id="e32cf-104">Med den här typen av snapin-modulen kan väljer du inte vilka cmdlets och providers som du vill registrera.</span><span class="sxs-lookup"><span data-stu-id="e32cf-104">With this type of snap-in, you do not select which cmdlets and providers you want to register.</span></span> <span data-ttu-id="e32cf-105">Om du vill skriva en snapin-modul som kan du välja vad är registrerad, se [skriva en anpassad Windows PowerShell snapin-modul](./writing-a-custom-windows-powershell-snap-in.md).</span><span class="sxs-lookup"><span data-stu-id="e32cf-105">To write a snap-in that allows you to select what is registered, see [Writing a Custom Windows PowerShell Snap-in](./writing-a-custom-windows-powershell-snap-in.md).</span></span>
 
-### <a name="writing-a-windows-powershell-snap-in"></a><span data-ttu-id="c55fb-106">Skriva en Windows PowerShell-snapin-modul</span><span class="sxs-lookup"><span data-stu-id="c55fb-106">Writing a Windows PowerShell Snap-in</span></span>
+### <a name="writing-a-windows-powershell-snap-in"></a><span data-ttu-id="e32cf-106">Skriva en Windows PowerShell-snapin-modul</span><span class="sxs-lookup"><span data-stu-id="e32cf-106">Writing a Windows PowerShell Snap-in</span></span>
 
-1. <span data-ttu-id="c55fb-107">Lägg till attributet RunInstallerAttribute.</span><span class="sxs-lookup"><span data-stu-id="c55fb-107">Add the RunInstallerAttribute attribute.</span></span>
+1. <span data-ttu-id="e32cf-107">Lägg till attributet RunInstallerAttribute.</span><span class="sxs-lookup"><span data-stu-id="e32cf-107">Add the RunInstallerAttribute attribute.</span></span>
 
-2. <span data-ttu-id="c55fb-108">Skapa en offentlig klass som härleds från den [System.Management.Automation.Pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn) klass.</span><span class="sxs-lookup"><span data-stu-id="c55fb-108">Create a public class that derives from the [System.Management.Automation.Pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn) class.</span></span>
+2. <span data-ttu-id="e32cf-108">Skapa en offentlig klass som härleds från den [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) klass.</span><span class="sxs-lookup"><span data-stu-id="e32cf-108">Create a public class that derives from the [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) class.</span></span>
 
-    <span data-ttu-id="c55fb-109">I det här exemplet är namnet på klassen ”GetProcPSSnapIn01”.</span><span class="sxs-lookup"><span data-stu-id="c55fb-109">In this example, the class name is "GetProcPSSnapIn01".</span></span>
+    <span data-ttu-id="e32cf-109">I det här exemplet är namnet på klassen ”GetProcPSSnapIn01”.</span><span class="sxs-lookup"><span data-stu-id="e32cf-109">In this example, the class name is "GetProcPSSnapIn01".</span></span>
 
-3. <span data-ttu-id="c55fb-110">Lägg till en offentlig egenskap för namnet på snapin-modulen (krävs).</span><span class="sxs-lookup"><span data-stu-id="c55fb-110">Add a public property for the name of the snap-in (required).</span></span> <span data-ttu-id="c55fb-111">När du namnger snapin-moduler, inte använda någon av följande tecken: #.</span><span class="sxs-lookup"><span data-stu-id="c55fb-111">When naming snap-ins, do not use any of the following characters: # .</span></span> <span data-ttu-id="c55fb-112">, ( ) { } [ ] & - /\ $ ; : " ' \< > ; ?</span><span class="sxs-lookup"><span data-stu-id="c55fb-112">, ( ) { } [ ] & - /\ $ ; : " ' \< > ; ?</span></span> <span data-ttu-id="c55fb-113">@ \` \*</span><span class="sxs-lookup"><span data-stu-id="c55fb-113">@ \` \*</span></span>
+3. <span data-ttu-id="e32cf-110">Lägg till en offentlig egenskap för namnet på snapin-modulen (krävs).</span><span class="sxs-lookup"><span data-stu-id="e32cf-110">Add a public property for the name of the snap-in (required).</span></span> <span data-ttu-id="e32cf-111">När du namnger snapin-moduler, inte använda någon av följande tecken: #.</span><span class="sxs-lookup"><span data-stu-id="e32cf-111">When naming snap-ins, do not use any of the following characters: # .</span></span> <span data-ttu-id="e32cf-112">, ( ) { } [ ] & - /\ $ ; : " ' \< > ; ?</span><span class="sxs-lookup"><span data-stu-id="e32cf-112">, ( ) { } [ ] & - /\ $ ; : " ' \< > ; ?</span></span> <span data-ttu-id="e32cf-113">@ \` \*</span><span class="sxs-lookup"><span data-stu-id="e32cf-113">@ \` \*</span></span>
 
-    <span data-ttu-id="c55fb-114">I det här exemplet är namnet på snapin-modulen ”GetProcPSSnapIn01”.</span><span class="sxs-lookup"><span data-stu-id="c55fb-114">In this example, the name of the snap-in is "GetProcPSSnapIn01".</span></span>
+    <span data-ttu-id="e32cf-114">I det här exemplet är namnet på snapin-modulen ”GetProcPSSnapIn01”.</span><span class="sxs-lookup"><span data-stu-id="e32cf-114">In this example, the name of the snap-in is "GetProcPSSnapIn01".</span></span>
 
-4. <span data-ttu-id="c55fb-115">Lägga till en offentlig egenskap för leverantören av snapin-modulen (krävs).</span><span class="sxs-lookup"><span data-stu-id="c55fb-115">Add a public property for the vendor of the snap-in (required).</span></span>
+4. <span data-ttu-id="e32cf-115">Lägga till en offentlig egenskap för leverantören av snapin-modulen (krävs).</span><span class="sxs-lookup"><span data-stu-id="e32cf-115">Add a public property for the vendor of the snap-in (required).</span></span>
 
-    <span data-ttu-id="c55fb-116">I det här exemplet är leverantören ”Microsoft”.</span><span class="sxs-lookup"><span data-stu-id="c55fb-116">In this example, the vendor is "Microsoft".</span></span>
+    <span data-ttu-id="e32cf-116">I det här exemplet är leverantören ”Microsoft”.</span><span class="sxs-lookup"><span data-stu-id="e32cf-116">In this example, the vendor is "Microsoft".</span></span>
 
-5. <span data-ttu-id="c55fb-117">Lägg till en offentlig egenskap för resursen leverantör av snapin-modulen (valfritt).</span><span class="sxs-lookup"><span data-stu-id="c55fb-117">Add a public property for the vendor resource of the snap-in (optional).</span></span>
+5. <span data-ttu-id="e32cf-117">Lägg till en offentlig egenskap för resursen leverantör av snapin-modulen (valfritt).</span><span class="sxs-lookup"><span data-stu-id="e32cf-117">Add a public property for the vendor resource of the snap-in (optional).</span></span>
 
-    <span data-ttu-id="c55fb-118">Leverantörsresurs-är ”GetProcPSSnapIn01 Microsoft” i det här exemplet.</span><span class="sxs-lookup"><span data-stu-id="c55fb-118">In this example, the vendor resource is "GetProcPSSnapIn01,Microsoft".</span></span>
+    <span data-ttu-id="e32cf-118">Leverantörsresurs-är ”GetProcPSSnapIn01 Microsoft” i det här exemplet.</span><span class="sxs-lookup"><span data-stu-id="e32cf-118">In this example, the vendor resource is "GetProcPSSnapIn01,Microsoft".</span></span>
 
-6. <span data-ttu-id="c55fb-119">Lägg till en offentlig egenskap för beskrivning av snapin-modulen (krävs).</span><span class="sxs-lookup"><span data-stu-id="c55fb-119">Add a public property for the description of the snap-in (required).</span></span>
+6. <span data-ttu-id="e32cf-119">Lägg till en offentlig egenskap för beskrivning av snapin-modulen (krävs).</span><span class="sxs-lookup"><span data-stu-id="e32cf-119">Add a public property for the description of the snap-in (required).</span></span>
 
-    <span data-ttu-id="c55fb-120">Beskrivningen är ”detta är en Windows PowerShell-snapin-modul som registrerar cmdleten get-proc” i det här exemplet.</span><span class="sxs-lookup"><span data-stu-id="c55fb-120">In this example, the description is "This is a Windows PowerShell snap-in that registers the get-proc cmdlet".</span></span>
+    <span data-ttu-id="e32cf-120">Beskrivningen är ”detta är en Windows PowerShell-snapin-modul som registrerar cmdleten get-proc” i det här exemplet.</span><span class="sxs-lookup"><span data-stu-id="e32cf-120">In this example, the description is "This is a Windows PowerShell snap-in that registers the get-proc cmdlet".</span></span>
 
-7. <span data-ttu-id="c55fb-121">Lägg till en offentlig egenskap för resursen beskrivning av snapin-modulen (valfritt).</span><span class="sxs-lookup"><span data-stu-id="c55fb-121">Add a public property for the description resource of the snap-in (optional).</span></span>
+7. <span data-ttu-id="e32cf-121">Lägg till en offentlig egenskap för resursen beskrivning av snapin-modulen (valfritt).</span><span class="sxs-lookup"><span data-stu-id="e32cf-121">Add a public property for the description resource of the snap-in (optional).</span></span>
 
-    <span data-ttu-id="c55fb-122">Leverantörsresurs-är ”GetProcPSSnapIn01, detta är en Windows PowerShell-snapin-modul som registrerar cmdleten get-proc” i det här exemplet.</span><span class="sxs-lookup"><span data-stu-id="c55fb-122">In this example, the vendor resource is "GetProcPSSnapIn01,This is a Windows PowerShell snap-in that registers the get-proc cmdlet".</span></span>
+    <span data-ttu-id="e32cf-122">Leverantörsresurs-är ”GetProcPSSnapIn01, detta är en Windows PowerShell-snapin-modul som registrerar cmdleten get-proc” i det här exemplet.</span><span class="sxs-lookup"><span data-stu-id="e32cf-122">In this example, the vendor resource is "GetProcPSSnapIn01,This is a Windows PowerShell snap-in that registers the get-proc cmdlet".</span></span>
 
-## <a name="example"></a><span data-ttu-id="c55fb-123">Exempel</span><span class="sxs-lookup"><span data-stu-id="c55fb-123">Example</span></span>
+## <a name="example"></a><span data-ttu-id="e32cf-123">Exempel</span><span class="sxs-lookup"><span data-stu-id="e32cf-123">Example</span></span>
 
-<span data-ttu-id="c55fb-124">Det här exemplet visar hur du skriver en Windows PowerShell-snapin-modul som kan användas för att registrera cmdleten Get-processen i Windows PowerShell-gränssnittet.</span><span class="sxs-lookup"><span data-stu-id="c55fb-124">This example shows how to write a Windows PowerShell snap-in that can be used to register the Get-Proc cmdlet in the Windows PowerShell shell.</span></span> <span data-ttu-id="c55fb-125">Tänk på att i det här exemplet fullständig sammansättningen innehåller endast GetProcPSSnapIn01 snapin-modulen klassen och klassen cmdlet Get-processen.</span><span class="sxs-lookup"><span data-stu-id="c55fb-125">Be aware that in this example, the complete assembly would contain only the GetProcPSSnapIn01 snap-in class and the Get-Proc cmdlet class.</span></span>
+<span data-ttu-id="e32cf-124">Det här exemplet visar hur du skriver en Windows PowerShell-snapin-modul som kan användas för att registrera cmdleten Get-processen i Windows PowerShell-gränssnittet.</span><span class="sxs-lookup"><span data-stu-id="e32cf-124">This example shows how to write a Windows PowerShell snap-in that can be used to register the Get-Proc cmdlet in the Windows PowerShell shell.</span></span> <span data-ttu-id="e32cf-125">Tänk på att i det här exemplet fullständig sammansättningen innehåller endast GetProcPSSnapIn01 snapin-modulen klassen och klassen cmdlet Get-processen.</span><span class="sxs-lookup"><span data-stu-id="e32cf-125">Be aware that in this example, the complete assembly would contain only the GetProcPSSnapIn01 snap-in class and the Get-Proc cmdlet class.</span></span>
 
 ```csharp
 [RunInstaller(true)]
@@ -126,8 +126,8 @@ public class GetProcPSSnapIn01 : PSSnapIn
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="c55fb-126">Se även</span><span class="sxs-lookup"><span data-stu-id="c55fb-126">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e32cf-126">Se även</span><span class="sxs-lookup"><span data-stu-id="e32cf-126">See Also</span></span>
 
-[<span data-ttu-id="c55fb-127">Hur du registrerar Cmdlets, Providers och vara värd för program</span><span class="sxs-lookup"><span data-stu-id="c55fb-127">How to Register Cmdlets, Providers, and Host Applications</span></span>](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[<span data-ttu-id="e32cf-127">Hur du registrerar Cmdlets, Providers och vara värd för program</span><span class="sxs-lookup"><span data-stu-id="e32cf-127">How to Register Cmdlets, Providers, and Host Applications</span></span>](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
-[<span data-ttu-id="c55fb-128">Windows PowerShell Shell SDK</span><span class="sxs-lookup"><span data-stu-id="c55fb-128">Windows PowerShell Shell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="e32cf-128">Windows PowerShell Shell SDK</span><span class="sxs-lookup"><span data-stu-id="e32cf-128">Windows PowerShell Shell SDK</span></span>](../windows-powershell-reference.md)

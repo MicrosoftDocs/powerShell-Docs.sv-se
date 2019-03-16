@@ -8,21 +8,21 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 48019ceb-0aeb-4cd1-8b42-79f2c29c3e65
 caps.latest.revision: 5
-ms.openlocfilehash: c3d8b4670d32a70ddac121e64488e7756d95449a
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 8d8ff5f225609fc1ae9a1df6f2e990d632224102
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57430068"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057832"
 ---
-# <a name="stopprocesssample04-vbnet-sample-code"></a><span data-ttu-id="9afbc-102">StopProcessSample04 (VB.NET) – kodexempel</span><span class="sxs-lookup"><span data-stu-id="9afbc-102">StopProcessSample04 (VB.NET) Sample Code</span></span>
+# <a name="stopprocesssample04-vbnet-sample-code"></a><span data-ttu-id="cf5e6-102">StopProcessSample04 (VB.NET) – kodexempel</span><span class="sxs-lookup"><span data-stu-id="cf5e6-102">StopProcessSample04 (VB.NET) Sample Code</span></span>
 
-<span data-ttu-id="9afbc-103">Här är klar VB.NET exempelkoden för StopProc04 exempel-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="9afbc-103">Here is the complete VB.NET sample code for the StopProc04 sample cmdlet.</span></span> <span data-ttu-id="9afbc-104">Det här är koden för den `Stop-Process` cmdlet som beskrivs i [att lägga till parametern anger att en Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).</span><span class="sxs-lookup"><span data-stu-id="9afbc-104">This is the code for the `Stop-Process` cmdlet described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).</span></span> <span data-ttu-id="9afbc-105">Den `Stop-Process` cmdlet har utformats för att stoppa processer som hämtas med hjälp av cmdleten Get-processen (beskrivs i [skapa din första cmdleten](../cmdlet/creating-a-cmdlet-without-parameters.md)).</span><span class="sxs-lookup"><span data-stu-id="9afbc-105">The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).</span></span>
+<span data-ttu-id="cf5e6-103">Här är klar VB.NET exempelkoden för StopProc04 exempel-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="cf5e6-103">Here is the complete VB.NET sample code for the StopProc04 sample cmdlet.</span></span> <span data-ttu-id="cf5e6-104">Det här är koden för den `Stop-Process` cmdlet som beskrivs i [att lägga till parametern anger att en Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).</span><span class="sxs-lookup"><span data-stu-id="cf5e6-104">This is the code for the `Stop-Process` cmdlet described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).</span></span> <span data-ttu-id="cf5e6-105">Den `Stop-Process` cmdlet har utformats för att stoppa processer som hämtas med hjälp av cmdleten Get-processen (beskrivs i [skapa din första cmdleten](../cmdlet/creating-a-cmdlet-without-parameters.md)).</span><span class="sxs-lookup"><span data-stu-id="cf5e6-105">The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="9afbc-106">Du kan hämta källfilen VB.NET (stopprocesssample04.vb) för denna cmdlet för Stop-processen med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3.0 Runtime-komponenter.</span><span class="sxs-lookup"><span data-stu-id="9afbc-106">You can download the VB.NET (stopprocesssample04.vb) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="9afbc-107">Hämta anvisningar finns i [hur du installerar Windows PowerShell och ladda ned Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="9afbc-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="cf5e6-106">Du kan hämta källfilen VB.NET (stopprocesssample04.vb) för denna cmdlet för Stop-processen med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3.0 Runtime-komponenter.</span><span class="sxs-lookup"><span data-stu-id="cf5e6-106">You can download the VB.NET (stopprocesssample04.vb) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="cf5e6-107">Hämta anvisningar finns i [hur du installerar Windows PowerShell och ladda ned Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="cf5e6-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
 >
-> <span data-ttu-id="9afbc-108">Hämtade källfilerna är tillgängliga i den  **\<PowerShell-exempel >** directory.</span><span class="sxs-lookup"><span data-stu-id="9afbc-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="cf5e6-108">Hämtade källfilerna är tillgängliga i den  **\<PowerShell-exempel >** directory.</span><span class="sxs-lookup"><span data-stu-id="cf5e6-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
 ```vb
 Imports System
@@ -258,9 +258,9 @@ ContinueForEach1:
                     "Are you sure you wish to stop the process?", processName)
 
                 ' It is possible that ProcessRecord is called multiple
-                ' when objects are recieved as inputs from a pipeline.
+                ' when objects are received as inputs from a pipeline.
                 ' So, to retain YesToAll and NoToAll input that the
-                ' user may enter across mutilple calls to this
+                ' user may enter across multiple calls to this
                 ' function, they are stored as private members of the
                 ' Cmdlet.
                 If Not ShouldContinue(message, "Warning!", yesToAll, noToAll) Then
@@ -477,8 +477,8 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[StopProcessSample04.vb](../../powershell-sdk-samples/SDK-2.0/vb/StopProcessSample04/StopProcessSample04.vb#L09-L456 "StopProcessSample04.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="9afbc-109">Se även</span><span class="sxs-lookup"><span data-stu-id="9afbc-109">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cf5e6-109">Se även</span><span class="sxs-lookup"><span data-stu-id="cf5e6-109">See Also</span></span>
 
-[<span data-ttu-id="9afbc-110">Programmeringsguide för Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="9afbc-110">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="cf5e6-110">Programmeringsguide för Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="cf5e6-110">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="9afbc-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="9afbc-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="cf5e6-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="cf5e6-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

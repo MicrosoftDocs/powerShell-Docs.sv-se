@@ -8,22 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
 caps.latest.revision: 9
-ms.openlocfilehash: 4b3fa7a54dc4096e79c4de94c8b28f4a784d4627
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d732bce1af446090c3e5741eebeba737f86c7ca8
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846748"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058019"
 ---
-# <a name="how-to-support-jobs"></a><span data-ttu-id="74be5-102">Ge stöd för jobb</span><span class="sxs-lookup"><span data-stu-id="74be5-102">How to Support Jobs</span></span>
+# <a name="how-to-support-jobs"></a><span data-ttu-id="07a64-102">Ge stöd för jobb</span><span class="sxs-lookup"><span data-stu-id="07a64-102">How to Support Jobs</span></span>
 
-<span data-ttu-id="74be5-103">Det här exemplet visar hur du ger stöd jobb när du skriver cmdletar.</span><span class="sxs-lookup"><span data-stu-id="74be5-103">This example shows how to support jobs when you write cmdlets.</span></span> <span data-ttu-id="74be5-104">Du måste inkludera koden som beskrivs i följande procedur om du vill att användare kör cmdlet: i bakgrunden.</span><span class="sxs-lookup"><span data-stu-id="74be5-104">If you want users to run your cmdlet as a background job, you must include the code described in the following procedure.</span></span> <span data-ttu-id="74be5-105">Mer information om bakgrundsjobb finns i [bakgrundsjobb](./background-jobs.md).</span><span class="sxs-lookup"><span data-stu-id="74be5-105">For more information about background jobs, see [Background Jobs](./background-jobs.md).</span></span>
+<span data-ttu-id="07a64-103">Det här exemplet visar hur du ger stöd jobb när du skriver cmdletar.</span><span class="sxs-lookup"><span data-stu-id="07a64-103">This example shows how to support jobs when you write cmdlets.</span></span> <span data-ttu-id="07a64-104">Du måste inkludera koden som beskrivs i följande procedur om du vill att användare kör cmdlet: i bakgrunden.</span><span class="sxs-lookup"><span data-stu-id="07a64-104">If you want users to run your cmdlet as a background job, you must include the code described in the following procedure.</span></span> <span data-ttu-id="07a64-105">Mer information om bakgrundsjobb finns i [bakgrundsjobb](./background-jobs.md).</span><span class="sxs-lookup"><span data-stu-id="07a64-105">For more information about background jobs, see [Background Jobs](./background-jobs.md).</span></span>
 
-## <a name="to-support-jobs"></a><span data-ttu-id="74be5-106">Stöd för jobb</span><span class="sxs-lookup"><span data-stu-id="74be5-106">To support jobs</span></span>
+## <a name="to-support-jobs"></a><span data-ttu-id="07a64-106">Stöd för jobb</span><span class="sxs-lookup"><span data-stu-id="07a64-106">To support jobs</span></span>
 
-1. <span data-ttu-id="74be5-107">Definiera en `AsJob` växla parametern så att användaren kan välja om du vill köra cmdlet: en som ett jobb.</span><span class="sxs-lookup"><span data-stu-id="74be5-107">Define an `AsJob` switch parameter so that the user can decide whether to run the cmdlet as a job.</span></span>
+1. <span data-ttu-id="07a64-107">Definiera en `AsJob` växla parametern så att användaren kan välja om du vill köra cmdlet: en som ett jobb.</span><span class="sxs-lookup"><span data-stu-id="07a64-107">Define an `AsJob` switch parameter so that the user can decide whether to run the cmdlet as a job.</span></span>
 
-    <span data-ttu-id="74be5-108">I följande exempel visas en AsJob parameterdeklaration.</span><span class="sxs-lookup"><span data-stu-id="74be5-108">The following example shows an AsJob parameter declaration.</span></span>
+    <span data-ttu-id="07a64-108">I följande exempel visas en AsJob parameterdeklaration.</span><span class="sxs-lookup"><span data-stu-id="07a64-108">The following example shows an AsJob parameter declaration.</span></span>
 
     ```csharp
     [Parameter()]
@@ -37,9 +37,9 @@ ms.locfileid: "56846748"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06AsJobParam](msh_samplesGetProc06#GetProc06AsJobParam)]  -->
 
-2. <span data-ttu-id="74be5-109">Skapa ett objekt som härleds från den [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) klass.</span><span class="sxs-lookup"><span data-stu-id="74be5-109">Create an object that derives from the [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) class.</span></span> <span data-ttu-id="74be5-110">Det här objektet kan vara en anpassad jobbobjektet eller en av jobbobjekt som tillhandahålls av Windows PowerShell, sådana en [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) objekt.</span><span class="sxs-lookup"><span data-stu-id="74be5-110">This object can be a custom job object or one of the job objects provided by Windows PowerShell, such a [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) object.</span></span>
+2. <span data-ttu-id="07a64-109">Skapa ett objekt som härleds från den [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) klass.</span><span class="sxs-lookup"><span data-stu-id="07a64-109">Create an object that derives from the [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) class.</span></span> <span data-ttu-id="07a64-110">Det här objektet kan vara en anpassad jobbobjektet eller en av jobbobjekt som tillhandahålls av Windows PowerShell, sådana en [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) objekt.</span><span class="sxs-lookup"><span data-stu-id="07a64-110">This object can be a custom job object or one of the job objects provided by Windows PowerShell, such a [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) object.</span></span>
 
-    <span data-ttu-id="74be5-111">I följande exempel visas en anpassad jobbobjektet.</span><span class="sxs-lookup"><span data-stu-id="74be5-111">The following example shows a custom job object.</span></span>
+    <span data-ttu-id="07a64-111">I följande exempel visas en anpassad jobbobjektet.</span><span class="sxs-lookup"><span data-stu-id="07a64-111">The following example shows a custom job object.</span></span>
 
     ```csharp
     private SampleJob job = new SampleJob("Get-ProcAsJob");
@@ -47,7 +47,7 @@ ms.locfileid: "56846748"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. <span data-ttu-id="74be5-112">I en post bearbetning av-metoden lägger du till en `if` -uttrycket för att identifiera om cmdleten ska köras som ett jobb.</span><span class="sxs-lookup"><span data-stu-id="74be5-112">In a record processing method, add an `if` statement to detect whether the cmdlet should run as a job.</span></span> <span data-ttu-id="74be5-113">I följande kod används den [System.Management.Automation.Cmdlet.Processrecord\*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod.</span><span class="sxs-lookup"><span data-stu-id="74be5-113">The following code uses the [System.Management.Automation.Cmdlet.Processrecord\*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.</span></span>
+3. <span data-ttu-id="07a64-112">I en post bearbetning av-metoden lägger du till en `if` -uttrycket för att identifiera om cmdleten ska köras som ett jobb.</span><span class="sxs-lookup"><span data-stu-id="07a64-112">In a record processing method, add an `if` statement to detect whether the cmdlet should run as a job.</span></span> <span data-ttu-id="07a64-113">I följande kod används den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod.</span><span class="sxs-lookup"><span data-stu-id="07a64-113">The following code uses the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.</span></span>
 
     ```csharp
     protected override void ProcessRecord()
@@ -74,7 +74,7 @@ ms.locfileid: "56846748"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06ProcessRecord](msh_samplesGetProc06#GetProc06ProcessRecord)]  -->
 
-4. <span data-ttu-id="74be5-114">Implementera klassen jobb för anpassade jobbobjekt.</span><span class="sxs-lookup"><span data-stu-id="74be5-114">For custom job objects, implement the job class.</span></span>
+4. <span data-ttu-id="07a64-114">Implementera klassen jobb för anpassade jobbobjekt.</span><span class="sxs-lookup"><span data-stu-id="07a64-114">For custom job objects, implement the job class.</span></span>
 
     ```csharp
     private class SampleJob : Job
@@ -131,7 +131,7 @@ ms.locfileid: "56846748"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobClass](msh_samplesGetProc06#GetProc06JobClass)]  -->
 
-5. <span data-ttu-id="74be5-115">Om cmdleten utför arbetet, anropa den [System.Management.Automation.Cmdlet.Writeobject\*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metod för att returnera ett processobjekt till pipelinen.</span><span class="sxs-lookup"><span data-stu-id="74be5-115">If the cmdlet performs the work, call the [System.Management.Automation.Cmdlet.Writeobject\*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method to return a process object to the pipeline.</span></span> <span data-ttu-id="74be5-116">Om arbetet utförs som ett jobb, lägger du till underordnat jobb för jobbet.</span><span class="sxs-lookup"><span data-stu-id="74be5-116">If the work is performed as a job, add child job to the job.</span></span>
+5. <span data-ttu-id="07a64-115">Om cmdleten utför arbetet, anropa den [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metod för att returnera ett processobjekt till pipelinen.</span><span class="sxs-lookup"><span data-stu-id="07a64-115">If the cmdlet performs the work, call the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method to return a process object to the pipeline.</span></span> <span data-ttu-id="07a64-116">Om arbetet utförs som ett jobb, lägger du till underordnat jobb för jobbet.</span><span class="sxs-lookup"><span data-stu-id="07a64-116">If the work is performed as a job, add child job to the job.</span></span>
 
     ```csharp
     void DoProcessLogic(bool asJob)
@@ -154,9 +154,9 @@ ms.locfileid: "56846748"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06Output](msh_samplesGetProc06#GetProc06Output)]  -->
 
-## <a name="example"></a><span data-ttu-id="74be5-117">Exempel</span><span class="sxs-lookup"><span data-stu-id="74be5-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="07a64-117">Exempel</span><span class="sxs-lookup"><span data-stu-id="07a64-117">Example</span></span>
 
-<span data-ttu-id="74be5-118">Följande exempelkod visar koden för en **Get-Proc** cmdlet som kan hämta processer internt eller med hjälp av ett bakgrundsjobb.</span><span class="sxs-lookup"><span data-stu-id="74be5-118">The following sample code shows the code for a **Get-Proc** cmdlet that can retrieve processes internally or by using a background job.</span></span>
+<span data-ttu-id="07a64-118">Följande exempelkod visar koden för en **Get-Proc** cmdlet som kan hämta processer internt eller med hjälp av ett bakgrundsjobb.</span><span class="sxs-lookup"><span data-stu-id="07a64-118">The following sample code shows the code for a **Get-Proc** cmdlet that can retrieve processes internally or by using a background job.</span></span>
 
 ```csharp
 using System;
@@ -168,7 +168,7 @@ using System.Threading;              // Thread pool namespace for posting work.
 using System.Diagnostics;            // Diagnostics namespace for retrieving
                                      // process objects.
 
-// This sample showes a cmdlet whose work can be done by the cmdlet or by using
+// This sample shows a cmdlet whose work can be done by the cmdlet or by using
 // a background job. Background jobs are executed in their own thread,
 // independent of the pipeline thread in which the cmdlet is executed.
 //

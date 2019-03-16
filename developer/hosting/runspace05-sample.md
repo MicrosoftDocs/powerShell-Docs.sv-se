@@ -8,42 +8,42 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1685cfc4-b32c-4bed-b221-e0c4482db955
 caps.latest.revision: 9
-ms.openlocfilehash: f74ff24f114ecd872ffb443c27a57b1fbe42fa23
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eb227b5fa5e91f59b6fc99981ff5affca1cf63fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850136"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056455"
 ---
-# <a name="runspace05-sample"></a><span data-ttu-id="f78f0-102">Runspace05 – exempel</span><span class="sxs-lookup"><span data-stu-id="f78f0-102">Runspace05 Sample</span></span>
+# <a name="runspace05-sample"></a><span data-ttu-id="051d2-102">Runspace05 – exempel</span><span class="sxs-lookup"><span data-stu-id="051d2-102">Runspace05 Sample</span></span>
 
-<span data-ttu-id="f78f0-103">Det här exemplet visas hur du lägger till en snapin-modul till en [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektet så att cmdleten av snapin-modulen är tillgänglig när körningsutrymmet öppnas.</span><span class="sxs-lookup"><span data-stu-id="f78f0-103">This sample shows how to add a snap-in to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the cmdlet of the snap-in is available when the runspace is opened.</span></span> <span data-ttu-id="f78f0-104">Snapin-modulen innehåller en cmdlet Get-processen (definieras av den [GetProcessSample01 exempel](../cmdlet/getprocesssample01-sample.md)) som körs synkront med hjälp av en [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objekt.</span><span class="sxs-lookup"><span data-stu-id="f78f0-104">The snap-in provides a Get-Proc cmdlet (defined by the [GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="051d2-103">Det här exemplet visas hur du lägger till en snapin-modul till en [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektet så att cmdleten av snapin-modulen är tillgänglig när körningsutrymmet öppnas.</span><span class="sxs-lookup"><span data-stu-id="051d2-103">This sample shows how to add a snap-in to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the cmdlet of the snap-in is available when the runspace is opened.</span></span> <span data-ttu-id="051d2-104">Snapin-modulen innehåller en cmdlet Get-processen (definieras av den [GetProcessSample01 exempel](../cmdlet/getprocesssample01-sample.md)) som körs synkront med hjälp av en [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objekt.</span><span class="sxs-lookup"><span data-stu-id="051d2-104">The snap-in provides a Get-Proc cmdlet (defined by the [GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="f78f0-105">Krav</span><span class="sxs-lookup"><span data-stu-id="f78f0-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="051d2-105">Krav</span><span class="sxs-lookup"><span data-stu-id="051d2-105">Requirements</span></span>
 
-<span data-ttu-id="f78f0-106">Det här exemplet kräver Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="f78f0-106">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="051d2-106">Det här exemplet kräver Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="051d2-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="f78f0-107">Visar</span><span class="sxs-lookup"><span data-stu-id="f78f0-107">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="051d2-107">Visar</span><span class="sxs-lookup"><span data-stu-id="051d2-107">Demonstrates</span></span>
 
-<span data-ttu-id="f78f0-108">Detta exempel visar följande.</span><span class="sxs-lookup"><span data-stu-id="f78f0-108">This sample demonstrates the following.</span></span>
+<span data-ttu-id="051d2-108">Detta exempel visar följande.</span><span class="sxs-lookup"><span data-stu-id="051d2-108">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="f78f0-109">Skapa en [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt.</span><span class="sxs-lookup"><span data-stu-id="f78f0-109">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="051d2-109">Skapa en [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt.</span><span class="sxs-lookup"><span data-stu-id="051d2-109">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="f78f0-110">Lägger till snapin-modulen till den [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt.</span><span class="sxs-lookup"><span data-stu-id="f78f0-110">Adding the snap-in to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="051d2-110">Lägger till snapin-modulen till den [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt.</span><span class="sxs-lookup"><span data-stu-id="051d2-110">Adding the snap-in to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="f78f0-111">Skapa en [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) objekt som använder den [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt.</span><span class="sxs-lookup"><span data-stu-id="f78f0-111">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="051d2-111">Skapa en [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) objekt som använder den [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt.</span><span class="sxs-lookup"><span data-stu-id="051d2-111">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="f78f0-112">Skapa en [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objekt som använder körningsutrymmet.</span><span class="sxs-lookup"><span data-stu-id="f78f0-112">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
+- <span data-ttu-id="051d2-112">Skapa en [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objekt som använder körningsutrymmet.</span><span class="sxs-lookup"><span data-stu-id="051d2-112">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
 
-- <span data-ttu-id="f78f0-113">Lägger till snapin-modulen get-proc cmdlet till pipelinen på den [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objekt.</span><span class="sxs-lookup"><span data-stu-id="f78f0-113">Adding the snap-in's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="051d2-113">Lägger till snapin-modulen get-proc cmdlet till pipelinen på den [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objekt.</span><span class="sxs-lookup"><span data-stu-id="051d2-113">Adding the snap-in's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="f78f0-114">Kommandot körs synkront.</span><span class="sxs-lookup"><span data-stu-id="f78f0-114">Running the command synchronously.</span></span>
+- <span data-ttu-id="051d2-114">Kommandot körs synkront.</span><span class="sxs-lookup"><span data-stu-id="051d2-114">Running the command synchronously.</span></span>
 
-- <span data-ttu-id="f78f0-115">Extraherar egenskaperna från den [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objekt som returneras av kommandot.</span><span class="sxs-lookup"><span data-stu-id="f78f0-115">Extracting properties from the [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
+- <span data-ttu-id="051d2-115">Extraherar egenskaperna från den [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objekt som returneras av kommandot.</span><span class="sxs-lookup"><span data-stu-id="051d2-115">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="f78f0-116">Exempel</span><span class="sxs-lookup"><span data-stu-id="f78f0-116">Example</span></span>
+## <a name="example"></a><span data-ttu-id="051d2-116">Exempel</span><span class="sxs-lookup"><span data-stu-id="051d2-116">Example</span></span>
 
-<span data-ttu-id="f78f0-117">Det här exemplet skapas ett körningsutrymme som använder en [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt för att definiera de element som är tillgängliga när körningsutrymmet öppnas.</span><span class="sxs-lookup"><span data-stu-id="f78f0-117">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="f78f0-118">I det här exemplet, har en snapin-modul som definierar en Get-Proc-cmdlet lagts till inledande sessionens tillstånd.</span><span class="sxs-lookup"><span data-stu-id="f78f0-118">In this sample, a snap-in that defines a Get-Proc cmdlet is added to the initial session state.</span></span>
+<span data-ttu-id="051d2-117">Det här exemplet skapas ett körningsutrymme som använder en [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt för att definiera de element som är tillgängliga när körningsutrymmet öppnas.</span><span class="sxs-lookup"><span data-stu-id="051d2-117">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="051d2-118">I det här exemplet, har en snapin-modul som definierar en Get-Proc-cmdlet lagts till inledande sessionens tillstånd.</span><span class="sxs-lookup"><span data-stu-id="051d2-118">In this sample, a snap-in that defines a Get-Proc cmdlet is added to the initial session state.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -127,6 +127,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="f78f0-119">Se även</span><span class="sxs-lookup"><span data-stu-id="f78f0-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="051d2-119">Se även</span><span class="sxs-lookup"><span data-stu-id="051d2-119">See Also</span></span>
 
-[<span data-ttu-id="f78f0-120">Skriva ett program för Windows PowerShell-värd</span><span class="sxs-lookup"><span data-stu-id="f78f0-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="051d2-120">Skriva ett program för Windows PowerShell-värd</span><span class="sxs-lookup"><span data-stu-id="051d2-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
