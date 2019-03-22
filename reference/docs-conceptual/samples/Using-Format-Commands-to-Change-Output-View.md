@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Använd formatkommandon för att ändra utdatavyn
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
-ms.openlocfilehash: 97d3a9e04abb61bb80a0b8c67d9fb9e885a0b91b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 35ccd2525d40ffd5e3f25a1abfa38904a109bde5
+ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686455"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320429"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Använd formatkommandon för att ändra utdatavyn
 
@@ -49,10 +49,20 @@ PS> Get-Process -Name powershell | Format-Wide -Property Id
 
 #### <a name="controlling-format-wide-display-with-column"></a>Kontrollera formatet företagsomfattande visning med kolumn
 
-Med den **Format hela** cmdlet, du kan bara visa en enskild egenskap i taget. Detta gör det användbart för att visa enkla listor som visar bara ett element per rad. För att få en enkel lista kan du ange värdet för den **kolumnen** parameter 1 genom att skriva:
+Med den `Format-Wide` cmdlet, du kan bara visa en enskild egenskap i taget.
+Detta gör det användbart för att visa enkla listor som visar bara ett element per rad.
+För att få en enkel lista kan du ange värdet för den **kolumnen** parameter 1 genom att skriva:
 
 ```powershell
-Get-Command Format-Wide -Property Name -Column 1
+Get-Command -Verb Format | Format-Wide -Property Noun -Column 1
+```
+
+```output
+Custom
+Hex
+List
+Table
+Wide
 ```
 
 ### <a name="using-format-list-for-a-list-view"></a>Med hjälp av Format-List för en listvy
