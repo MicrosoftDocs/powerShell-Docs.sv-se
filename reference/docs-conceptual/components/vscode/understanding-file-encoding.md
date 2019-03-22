@@ -2,12 +2,12 @@
 title: Förstå filkodning i VSCode och PowerShell
 description: Konfigurera Filkodning i VSCode och PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: 73e766832d56a08bd5ef16df11899a0aab0badae
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
+ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795130"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320412"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Förstå filkodning i VSCode och PowerShell
 
@@ -69,7 +69,7 @@ Det här praktiska [referens](https://www.i18nqa.com/debug/utf8-debug.html) visa
 
 Tillägget PowerShell samverkar med skript i ett antal olika sätt:
 
-1. När skript redigeras i VSCode, skickas innehållet från VSCode till tillägget. Den [Språk Server-protokoll][] innehåller principer för att den här innehåll som överförs i UTF-8. Det är därför inte möjligt för tillägget att hämta fel kodning.
+1. När skript redigeras i VSCode, skickas innehållet från VSCode till tillägget. Den [språk serverprotokoll][] innehåller principer för att den här innehåll som överförs i UTF-8. Det är därför inte möjligt för tillägget att hämta fel kodning.
 2. När skript körs direkt i integrerad konsol, är de läsa från filen med PowerShell direkt. Om PowerShell-kodning skiljer sig från Vscodes går något fel här.
 3. När ett skript som är öppen i VSCode refererar till ett annat skript som inte är öppen i VSCode, använder tillägget till att läsa in den skriptet innehåll från filsystemet. Tillägget PowerShell UTF-8-kodning som standard, men använder [byte-ordningsmarkering][], eller BOM, identifiering för att välja rätt kodning.
 
@@ -215,7 +215,7 @@ Observera att detta skulle sparas mellan omstarter.
 ### <a name="source-control-software"></a>Program för källkontroll
 
 Vissa verktyg för källa kontroll, till exempel git, Ignorera kodningar; Git spårar bara byte.
-Andra, kanske t.ex. TFS eller Mercurial, inte. Även vissa git-baserade verktyg är beroende av avkodning text.
+Andra, kanske som Azure DevOps- eller Mercurial, inte. Även vissa git-baserade verktyg är beroende av avkodning text.
 
 När så är fallet kontrollerar du:
 
@@ -273,5 +273,5 @@ Det finns några andra bra inlägg på kodning och konfigurera kodning i PowerSh
 [UTF-8]: https://wikipedia.org/wiki/UTF-8
 [byte-ordningsmarkering]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
-[Språk Server-protokoll]: https://microsoft.github.io/language-server-protocol/
+[språk serverprotokoll]: https://microsoft.github.io/language-server-protocol/
 [Vscodes kodning]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
