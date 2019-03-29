@@ -1,47 +1,30 @@
 ---
-ms.date: 06/12/2017
+ms.date: 03/28/2019
 contributor: manikb
 keywords: galleriet, powershell, cmdlet, psget
 title: Moduler med kompatibla PowerShell-utgåvor
-ms.openlocfilehash: bda924393d37ea1596fbf0d813c10cbdea33c218
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 425588c168a4f864fdc0c52aa53cfd748b80dc98
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684999"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623848"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Moduler med kompatibla PowerShell-utgåvor
 
 Från och med version 5.1 finns PowerShell i olika utgåvor som anger olika funktionsuppsättningar och plattformskompatibilitet.
 
-- **Desktop Edition:** Bygger på .NET Framework och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på fullständiga utgåvor av Windows, till exempel Server Core och Windows-skrivbordet.
-- **Core Edition:** Bygger på .NET Core och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på begränsade utgåvor av Windows som Nano Server och Windows IoT.
+- **Desktop Edition:** Bygger på .NET Framework, gäller för Windows PowerShell v4.0 och nedan samt Windows PowerShell 5.1 på Windows Desktop, Windows Server, Windows Server Core och de flesta andra Windows-versioner.
+- **Core Edition:** Bygger på .NET Core, gäller för PowerShell Core 6.0 och senare samt Windows PowerShell 5.1 på begränsade utgåvor av Windows, till exempel IoT för Windows och Windows Nanoserver.
 
-Vilken utgåva av PowerShell visas i PSEdition-egenskapen i `$PSVersionTable`.
-
-```powershell
-$PSVersionTable
-```
-
-```output
-Name                           Value
-----                           -----
-PSVersion                      5.1.14300.1000
-PSEdition                      Desktop
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
-CLRVersion                     4.0.30319.42000
-BuildVersion                   10.0.14300.1000
-WSManStackVersion              3.0
-PSRemotingProtocolVersion      2.3
-SerializationVersion           1.1.0.1
-```
+Mer information om PowerShell-utgåvor finns [about_PowerShell_Editions][].
 
 ## <a name="declaring-compatible-editions"></a>Deklarera kompatibla versioner
 
 Modulskapare kan fastställa om deras moduler är kompatibla med en eller flera PowerShell-utgåvor med hjälp av CompatiblePSEditions-modulens manifestnyckel. Den här nyckeln stöds bara på PowerShell 5.1 eller senare.
 
 > [!NOTE]
-> När ett modulmanifest anges med CompatiblePSEditions-nyckeln, kan det inte importeras på lägre versioner av PowerShell.
+> När ett modulmanifest anges med CompatiblePSEditions-nyckel, kan det inte importeras på PowerShell-versioner 4 och nedan.
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
@@ -49,7 +32,7 @@ $ModuleInfo = Test-ModuleManifest -Path .\TestModuleWithEdition.psd1
 $ModuleInfo.CompatiblePSEditions
 ```
 
-```output
+```Output
 Desktop
 Core
 ```
@@ -58,7 +41,7 @@ Core
 $ModuleInfo | Get-Member CompatiblePSEditions
 ```
 
-```output
+```Output
    TypeName: System.Management.Automation.PSModuleInfo
 
 Name                 MemberType Definition
@@ -72,7 +55,7 @@ När du hämtar en lista över tillgängliga moduler kan du filtrera listan efte
 Get-Module -ListAvailable -PSEdition Desktop
 ```
 
-```output
+```Output
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
 
@@ -85,7 +68,7 @@ Manifest   1.0        ModuleWithPSEditions
 Get-Module -ListAvailable -PSEdition Core | % CompatiblePSEditions
 ```
 
-```output
+```Output
 Desktop
 Core
 ```
@@ -218,7 +201,7 @@ Exemplet modulen manifestfilen med CompatiblePSEditions-nyckel
 dir -Recurse
 ```
 
-```output
+```Output
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
 
 Mode           LastWriteTime   Length Name
@@ -263,3 +246,7 @@ Find-Module -Tag PSEdition_Core
 [Stöd för PSEditions på PowerShellGallery](../how-to/finding-packages/searching-by-compatibility.md)
 
 [Uppdatera modulmanifestet](/powershell/module/powershellget/update-modulemanifest)
+
+[about_PowerShell_Editions][]
+
+[about_PowerShell_Editions]: /powershell/module/Microsoft.PowerShell.Core/About/about_PowerShell_Editions

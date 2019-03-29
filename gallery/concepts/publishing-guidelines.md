@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery
 description: Riktlinjer för utgivare
 title: PowerShell-galleriet publicera riktlinjer och metodtips
-ms.openlocfilehash: 25c359c7acbe7430762a275d8cc4a28f527ec57a
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056506"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623916"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery publicera riktlinjer och metodtips
 
@@ -145,6 +145,9 @@ Använd följande taggar för att visa för användarna som paket ska fungera br
 - Windows: Paket som är kompatibla med Windows operativsystem
 - Linux: Paket som är kompatibla med Linux-operativsystem
 - MacOS: Paket som är kompatibla med Mac-operativsystemet
+
+Sök filter på den vänstra rutan i sökresultaten genom att tagga ditt paket med kompatibla plattformar som inkluderas i galleriet. Om du använder ditt paket på GitHub, när du markera ditt paket, kan du också dra nytta av våra [PowerShell-galleriet compability sköldar](https://img.shields.io/powershellgallery/p/:packageName.svg) 
+![kompatibilitet shield](https://img.shields.io/powershellgallery/p/CosmosDB.svg).  
 
 ## <a name="include-tests"></a>Inkludera tester
 

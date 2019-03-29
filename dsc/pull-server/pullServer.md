@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-hämtningstjänsten
-ms.openlocfilehash: 00e01e6c71226e6bde48b221e4e4fcf5f346feb4
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 3cb2ca09111100f39589072a0d8e7010f9188efb
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056778"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623950"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration-hämtningstjänsten
 

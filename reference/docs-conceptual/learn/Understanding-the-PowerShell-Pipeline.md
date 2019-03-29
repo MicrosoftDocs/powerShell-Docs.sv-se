@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: PowerShell cmdlet
 title: Förstå PowerShell-förlopp
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: fc7c7f57bdce458185a0f5bdb8bc1fbbd81d0d61
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 05ab98b7261f4d41ade1788a924193eccda6318c
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404738"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623967"
 ---
 # <a name="understanding-pipelines"></a>Förstå pipelines
 
@@ -63,6 +63,18 @@ Växling också minskar CPU-belastningen eftersom bearbetning överförs till de
 
 Du kan se skillnaden Windows Aktivitetshanteraren för att övervaka CPU och minne som används av PowerShell. Kör följande kommando: `Get-ChildItem C:\Windows -Recurse`. Jämför användningen av processor och minne det här kommandot: `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`.
 
+> [!NOTE]
+> Den **växling** parametern stöds inte av alla PowerShell-värdar. Till exempel när du försöker använda den **växling** parameter i PowerShell ISE kan du se följande fel:
+>
+> ```Output
+> out-lineoutput : The method or operation is not implemented.
+> At line:1 char:1
+> + Get-ChildItem C:\Windows -Recurse | Out-Host -Paging
+> + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+>     + CategoryInfo          : NotSpecified: (:) [out-lineoutput], NotImplementedException
+>     + FullyQualifiedErrorId : System.NotImplementedException,Microsoft.PowerShell.Commands.OutLineOutputCommand
+> ```
+
 ## <a name="objects-in-the-pipeline"></a>Objekt i pipelinen
 
 När du kör en cmdlet i PowerShell, se textutdata eftersom det är nödvändigt att representera objekt som text i ett konsolfönster. Text-utdata visas inte alla egenskaper i objektet som utdata.
@@ -82,7 +94,7 @@ Textutdata är en sammanfattning av informationen, inte en fullständig återgiv
 När du skicka utdata till den `Get-Member` cmdlet du få information om objektet som returnerades av `Get-Location`.
 
 ```powershell
-PS> Get-Location | Get-Member
+Get-Location | Get-Member
 ```
 
 ```Output

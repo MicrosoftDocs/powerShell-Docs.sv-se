@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide, providers
 ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
 caps.latest.revision: 5
-ms.openlocfilehash: 286df63e75d6372cb41c974e60e79b02bd13686e
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 06910f32752668f13400f9be0767a2179133df04
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429677"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623831"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>Skapa en Windows PowerShell-provider
 
@@ -29,7 +29,7 @@ Utvecklare är Windows PowerShell-providern gränssnittet mellan användaren och
 
 Windows PowerShell innehåller flera providers (till exempel filsystem-providern, registerprovidern och Alias provider) som används för att få åtkomst till kända datalager. Mer information om providers som tillhandahålls av Windows PowerShell använder du följande kommando till onlinehjälpen:
 
-**PS > get-help about_provider**
+**PS > get-help about_providers**
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>Åtkomst till lagrade Data med hjälp av Windows PowerShell-sökvägar
 

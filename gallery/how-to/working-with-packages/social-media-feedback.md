@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery
 title: Ge Feedback via sociala medier eller kommentarer
-ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 95e5db22b94151c3974189c30f1d4e580b47eeb5
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055010"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623899"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Ge Feedback via sociala medier eller kommentarer
 
@@ -29,6 +29,10 @@ PowerShell-galleriet kontrolleras varje plats för sociala medier för ”resurs
 Eftersom detta visar antalet gånger som något har delats blir det tolkas andra användare som ”liking” paketet.
 
 ## <a name="comments"></a>Kommentar
+
+> [!IMPORTANT]
+> Livefyre-kommentarer kommer från en utomstående leverantör och längre stöds inte.
+> Livefyre-kommentarer är inte längre tillgänglig på PowerShell-galleriet Start 05/01/2019. 
 
 PowerShell-galleriet använder tjänsten LiveFyre så att användarna kan kommentera paket.
 Användare som har rekommendationer eller kommentarer kan använda den här funktionen för att ge feedback som är synlig för alla som besöker sidan package.

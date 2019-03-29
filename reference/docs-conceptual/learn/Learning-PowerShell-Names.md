@@ -3,12 +3,12 @@ ms.date: 08/24/2018
 keywords: PowerShell cmdlet
 title: Learning PowerShell kommandonamn
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 3f8ef2648709c4bb5d2eacf30fe9d8fb4f032c13
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 8d50ca03f98ed4ca8f9c09c83ae57afbf0d7888d
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688940"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623729"
 ---
 # <a name="learning-powershell-command-names"></a>Learning PowerShell kommandonamn
 
@@ -25,7 +25,7 @@ De här kommandona kräver dessutom oregelbunden parametern specifikationer. Du 
 Listan aktiviteter som körs på DC01, som du använder den **/S** parametern och namnet på datorn utan omvända snedstreck. Till exempel `tasklist /S DC01`.
 
 > [!NOTE]
-> Innan du PowerShell v6 `sc` har ett alias för den `Set-Content` cmdlet. Att köra den **sc.exe** kommandot, måste du inkludera filnamnstillägget.
+> Innan du PowerShell v6 `sc` har ett alias för den `Set-Content` cmdlet. Därför att köra den **sc.exe** kommandot i en version av PowerShell före v6, måste du inkludera det fullständiga filnamnet **sc.exe** inklusive filtillägget **exe**.
 
 Tjänster och processer är exempel på hanterbara element på en dator som har väldefinierade supportlivscykel. Du kan starta eller stoppa tjänster och processer eller hämta en lista över alla tjänster eller processer som körs. Även om det finns viktiga tekniska skillnader mellan dem, är de åtgärder du kan utföra på tjänster och processer begreppsmässigt samma. Dessutom är kan de val som vi gör att anpassa en åtgärd genom att ange parametrar vara begreppsmässigt liknas samt.
 

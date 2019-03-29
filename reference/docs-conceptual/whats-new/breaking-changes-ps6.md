@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, core
 title: Större ändringar för PowerShell 6.0
-ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795699"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623933"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Större ändringar för PowerShell 6.0
 
@@ -61,6 +61,15 @@ I stället rekommenderar vi att du kan använda CIM (även kallat WMI v2)-cmdlet
 ### <a name="microsoftpowershelllocalaccounts"></a>Microsoft.PowerShell.LocalAccounts
 
 På grund av användningen av stöds inte API: er, `Microsoft.PowerShell.LocalAccounts` har tagits bort från PowerShell Core tills en bättre lösning hittas.
+
+### <a name="-computer-cmdlets"></a>`*-Computer`-cmdletar
+
+På grund av användningen av API: er för stöds inte har följande cmdletar tagits bort från PowerShell Core tills en bättre lösning hittas.
+
+- Add-Computer
+- Checkpoint-Computer
+- Remove-Computer
+- Restore-dator
 
 ### <a name="-counter-cmdlets"></a>`*-Counter`-cmdletar
 
