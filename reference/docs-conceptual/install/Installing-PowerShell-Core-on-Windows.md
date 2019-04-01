@@ -2,18 +2,18 @@
 title: Installera PowerShell Core i Windows
 description: Information om att installera PowerShell Core i Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 7c109c7e1848af2349092c1e70fe4a7a25be54b8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 450a38a1ef2e2890059094774fcc3f2ad4fcda6e
+ms.sourcegitcommit: 8dd4394cf867005a8b9ef0bb74b744c964fbc332
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405200"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58748960"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Installera PowerShell Core i Windows
 
 ## <a name="msi"></a>MSI
 
-Installera PowerShell på en Windows-klienten eller Windows Server (fungerar på Windows 7 SP1, Server 2008 R2 och senare), ladda ned MSI-paketet från vår GitHub [versioner][] sidan.
+Installera PowerShell på en Windows-klienten eller Windows Server (fungerar på Windows 7 SP1, Server 2008 R2 och senare), ladda ned MSI-paketet från vår GitHub [Versioner][] sidan.  Rulla ned till den **tillgångar** delen av den version som du vill installera.  Vara kan dolda i tillgångar-avsnittet så att du kan behöva klicka på för att expandera den.
 
 MSI-filen som ser ut så här- `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -56,7 +56,7 @@ Windows IoT levereras med Windows PowerShell som ska användas för att distribu
    # change the destination to however you had partitioned it with sufficient
    # space for the zip and the unzipped contents
    # the path should be local to the device
-   Copy-Item .\PowerShell-6.1.0-win-arm32.zip -Destination u:\users\administrator\Downloads -ToSession $s
+   Copy-Item .\PowerShell-<version>-win-<os-arch>.zip -Destination u:\users\administrator\Downloads -ToSession $s
    ```
 
 3. Anslut till enheten och expandera arkivet
@@ -64,13 +64,13 @@ Windows IoT levereras med Windows PowerShell som ska användas för att distribu
    ```powershell
    Enter-PSSession $s
    Set-Location u:\users\administrator\downloads
-   Expand-Archive .\PowerShell-6.1.0-win-arm32.zip
+   Expand-Archive .\PowerShell-<version>-win-<os-arch>.zip
    ```
 
 4. Konfigurera fjärrkommunikation till PowerShell Core 6
 
    ```powershell
-   Set-Location .\PowerShell-6.1.0-win-arm32
+   Set-Location .\PowerShell-<version>-win-<os-arch>
    # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
@@ -81,7 +81,7 @@ Windows IoT levereras med Windows PowerShell som ska användas för att distribu
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
-   Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.6.1.0
+   Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
 
 ## <a name="deploying-on-nano-server"></a>Distribuera på Nano Server
@@ -153,7 +153,7 @@ Installera PowerShell Core från CoreCLR artefakten:
 
 <!-- [download-center]: TODO -->
 
-[versioner]: https://github.com/PowerShell/PowerShell/releases
+[Versioner]: https://github.com/PowerShell/PowerShell/releases
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
