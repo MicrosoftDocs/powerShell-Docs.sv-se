@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 1f7b5b60b202f4de0cf3d44b65057f5edd41f2b0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849646"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920398"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell-programmerare&#39;s Guide
 
@@ -57,7 +57,7 @@ Om du exponerar ett datalager som användaren ska kunna komma åt, du kan behöv
 
 Windows PowerShell innehåller standard värd programmet powershell.exe, vilket är ett konsolprogram som samverkar med användare och är värd för Windows PowerShell-körningen med hjälp av ett konsolfönster.
 
-Bara sällan behöver du skriva din egen värdprogram för Windows PowerShell, även om det finns stöd för anpassning. Ett fall där du kanske behöver ditt eget program är när du har ett krav för ett GUI-gränssnitt som är större än gränssnittet tillhandahålls av standard värdprogrammet. Vill du kanske också ett anpassat program när du baserar din GUI på kommandoraden. Mer information finns i[så här skapar du en Windows PowerShell-Värdapp](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
+Bara sällan behöver du skriva din egen värdprogram för Windows PowerShell, även om det finns stöd för anpassning. Ett fall där du kanske behöver ditt eget program är när du har ett krav för ett GUI-gränssnitt som är större än gränssnittet tillhandahålls av standard värdprogrammet. Vill du kanske också ett anpassat program när du baserar din GUI på kommandoraden. Mer information finns i [så här skapar du en Windows PowerShell-Värdapp](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
 
 ### <a name="windows-powershell-runtime"></a>Windows PowerShell-Runtime
 
@@ -99,11 +99,11 @@ Mer information om hur du börjar använda Windows PowerShell-gränssnittet finn
 
 |Ämne|Definition|
 |-----------|----------------|
-|[Så här skapar du en Windows PowerShell-providern](./how-to-create-a-windows-powershell-provider.md)|Det här avsnittet beskrivs hur du skapar en Windows PowerShell-providern för Windows PowerShell.|
+|[Skapa en Windows PowerShell-provider](./how-to-create-a-windows-powershell-provider.md)|Det här avsnittet beskrivs hur du skapar en Windows PowerShell-providern för Windows PowerShell.|
 |[Så här skapar du ett program för Windows PowerShell-värd](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|Det här avsnittet beskrivs hur du skriver ett program som manipulerar ett körningsutrymme och hur du skriver ett program som implementerar sin egen anpassade värden.|
-|[Så här skapar du en Windows PowerShell snapin-modul](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Det här avsnittet beskrivs hur du skapar en snapin-modul som används för att registrera alla cmdletar och providers i en sammansättning och hur du skapar en anpassad snapin-modul.|
-|[Så här skapar du ett konsol-gränssnitt](./how-to-create-a-console-shell.md)|Det här avsnittet beskriver hur du skapar ett konsol-gränssnitt som inte kan utökas.|
-|[Windows PowerShell-koncept](./windows-powershell-concepts.md)|Det här avsnittet innehåller begreppsrelaterad information som hjälper dig förstå Windows PowerShell med hänsyn till utvecklare.|
+|[Skapa en Windows PowerShell-snapin-modul](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Det här avsnittet beskrivs hur du skapar en snapin-modul som används för att registrera alla cmdletar och providers i en sammansättning och hur du skapar en anpassad snapin-modul.|
+|[Skapa ett konsolgränssnitt](./how-to-create-a-console-shell.md)|Det här avsnittet beskriver hur du skapar ett konsol-gränssnitt som inte kan utökas.|
+|[Begrepp relaterade till Windows PowerShell](./windows-powershell-concepts.md)|Det här avsnittet innehåller begreppsrelaterad information som hjälper dig förstå Windows PowerShell med hänsyn till utvecklare.|
 
 ## <a name="see-also"></a>Se även
 
