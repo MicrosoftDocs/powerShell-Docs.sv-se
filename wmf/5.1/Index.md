@@ -1,10 +1,15 @@
 ---
 ms.date: 08/12/2017
 ms.topic: conceptual
-keywords: 'WMF, powershell, inställning'
+keywords: WMF, powershell, inställning
 title: WMF 5.1-versionskommentarer
+ms.openlocfilehash: dd68f101e6f21256f966f7472dabc273a475a25e
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795342"
 ---
-
 # <a name="windows-management-framework-wmf-51"></a>WMF (Windows Management Framework) 5.1
 
 WMF ger användare möjlighet att uppdatera befintliga Windows-datorer till de versionerna av PowerShell-, WMI-, WinRM- och SIL (Software Inventory Logging)-komponenterna som släpptes med Windows Server 2016.
