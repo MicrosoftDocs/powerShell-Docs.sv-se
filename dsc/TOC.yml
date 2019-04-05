@@ -122,8 +122,9 @@ items:
       - name: Konfigurera en DSC HTTP-hämtningsserver
         href: pull-server/pullServer.md
     - name: Registrera en nod med en hämtningsserver
-      href: pull-server/pullClient.md
       items:
+      - name: Konfigurera en DSC-hämtningsklient
+        href: pull-server/pullClient.md
       - name: Konfigurera en hämtningsklient med konfigurationsnamn (v5)
         href: pull-server/pullClientConfigNames.md
       - name: Konfigurera en hämtningsklient med konfigurations-ID (v5)
@@ -165,7 +166,6 @@ items:
 - name: Referens
   items:
   - name: Inbyggda resurser i Windows
-    href: reference/resources/windows/builtInResource.md
     items:
     - name: Arkivera resursen
       href: reference/resources/windows/archiveResource.md
@@ -212,7 +212,6 @@ items:
     - name: WindowsProcess-resurs
       href: reference/resources/windows/windowsProcessResource.md
   - name: Inbyggda resurser i Linux
-    href: reference/resources/linux/lnxBuiltInResources.md
     items:
     - name: nxArchive-resurs
       href: reference/resources/linux/lnxArchiveResource.md
@@ -241,8 +240,9 @@ items:
     - name: PackageManagementSourceDsc Resource
       href: reference/resources/packagemanagement/PackageManagementSourceDscResource.md
   - name: MSFT_DSCLocalConfigurationManager-klass
-    href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
     items:
+    - name: Översikt
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
     - name: ApplyConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klass
       href: reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
     - name: DisableDebugConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
@@ -285,9 +285,9 @@ items:
   items:
   - name: Faktablad (white paper)
     href: further-reading/whitepapers.md
-ms.openlocfilehash: 177dc88e4a2a92104f6f2c2d4db118531274fcc4
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 68096f26178d4c33fd78e6051a3cc071bd749210
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057203"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920347"

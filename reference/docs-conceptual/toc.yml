@@ -2,10 +2,10 @@ items:
 - name: Översikt
   href: overview.md
 - name: Installera
-  href: install/installing-powershell.md
   items:
+  - name: Installera olika versioner av PowerShell
+    href: install/installing-powershell.md
   - name: PowerShell Core
-    href: ''
     items:
     - name: Installera PowerShell Core i Windows
       href: install/installing-powershell-core-on-windows.md
@@ -16,7 +16,6 @@ items:
     - name: Installera PowerShell Core i ARM
       href: install/powershell-core-on-arm.md
   - name: Windows PowerShell
-    href: ''
     items:
     - name: Installera Windows PowerShell
       href: install/installing-windows-powershell.md
@@ -25,15 +24,17 @@ items:
     - name: Windows PowerShell-systemkrav
       href: install/windows-powershell-system-requirements.md
 - name: Kom igång
-  href: getting-started/getting-started-with-windows-powershell.md
   items:
+  - name: Komma igång med PowerShell
+    href: getting-started/getting-started-with-windows-powershell.md
   - name: Starta Windows Powershell
     href: getting-started/starting-windows-powershell.md
   - name: Starta Windows PowerShell 2.0-motorn
     href: getting-started/starting-the-windows-powershell-2.0-engine.md
 - name: Lär dig PowerShell
-  href: learn/understanding-important-powershell-concepts.md
   items:
+  - name: Förstå viktiga PowerShell-koncept
+    href: learn/understanding-important-powershell-concepts.md
   - name: Lär dig PowerShell-namn
     href: learn/learning-powershell-names.md
   - name: Använd bekanta kommandonamn
@@ -50,9 +51,10 @@ items:
     href: learn/more-powershell-learning.md
   - name: Skriva flyttbara moduler
     href: learn/writing-portable-modules.md
-  - name: Kör fjärrkommandon
-    href: learn/remoting/running-remote-commands.md
+  - name: PowerShell-fjärranvändning
     items:
+    - name: Kör fjärrkommandon
+      href: learn/remoting/running-remote-commands.md
     - name: PowerShell fjärrkommunikation via SSH
       href: learn/remoting/ssh-remoting-in-powershell-core.md
     - name: WS-Management-fjärrkommunikation (WSMan) i PowerShell Core
@@ -64,22 +66,20 @@ items:
   - name: Ordlista
     href: learn/windows-powershell-glossary.md
 - name: Komponenter
-  href: ''
   items:
   - name: Konsol
-    href: ''
     items:
     - name: PowerShell.exe-kommandoradshjälp
       href: components/console/powershell.exe-command-line-help.md
     - name: Använd flikexpansion
       href: components/console/using-tab-expansion.md
   - name: ISE
-    href: components/ise/introducing-the-windows-powershell-ise.md
     items:
+    - name: Introducerar Windows PowerShell ISE
+      href: components/ise/introducing-the-windows-powershell-ise.md
     - name: Windows PowerShell® Integrated Scripting Environment (ISE)
       href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
     - name: Använd Windows PowerShell ISE
-      href: ''
       items:
       - name: Utforska Windows PowerShell ISE
         href: components/ise/exploring-the-windows-powershell-ise.md
@@ -100,7 +100,6 @@ items:
       - name: Hjälpmedelsfunktioner i Windows PowerShell ISE
         href: components/ise/accessibility-in-windows-powershell-ise.md
     - name: ISE-skriptobjektmodellen
-      href: ''
       items:
       - name: Användningsområden för Windows PowerShell ISE-skriptobjektmodellen
         href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
@@ -133,8 +132,9 @@ items:
       - name: PowerShellTab-objektet
         href: components/ise/object-model/the-powershelltab-object.md
   - name: Visual Studio Code
-    href: components/vscode/using-vscode.md
     items:
+    - name: Använda Visual Studio Code
+      href: components/vscode/using-vscode.md
     - name: Så här replikerar du ISE-upplevelsen i Visual Studio Code
       href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
     - name: Använda Visual Studio Code för att fjärredigera och fjärrfelsöka
@@ -142,7 +142,6 @@ items:
     - name: Förstå filkodning i VSCode och PowerShell
       href: components/vscode/understanding-file-encoding.md
   - name: Web Access
-    href: ''
     items:
     - name: Auktoriseringsregler och säkerhetsfunktioner
       href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
@@ -157,20 +156,21 @@ items:
   - name: Arbetsflödesguiden
     href: components/workflows-guide.md
 - name: Nyheter
-  href: ''
   items:
-  - name: Nyheter i PowerShell Core 6.1
-    href: whats-new/what-s-new-in-powershell-core-61.md
-  - name: Nyheter i PowerShell Core 6.0
-    href: whats-new/what-s-new-in-powershell-core-60.md
+  - name: Nyheter i PowerShell Core 6.x
     items:
+    - name: Nyheter i PowerShell Core 6.1
+      href: whats-new/what-s-new-in-powershell-core-61.md
+    - name: Nyheter i PowerShell Core 6.0
+      href: whats-new/what-s-new-in-powershell-core-60.md
     - name: Icke-bakåtkompatibla ändringar i PowerShell Core 6.0
       href: whats-new/breaking-changes-ps6.md
     - name: Kända problem i PowerShell Core 6.0
       href: whats-new/known-issues-ps6.md
-  - name: Nyheter i PowerShell 5.0
-    href: whats-new/what-s-new-with-powershell.md
+  - name: Nyheter i PowerShell 5.x
     items:
+    - name: Nyheter i PowerShell 5.0
+      href: whats-new/what-s-new-with-powershell.md
     - name: Nyheter i Windows PowerShell 5.0
       href: whats-new/what-s-new-in-windows-powershell-50.md
     - name: Nyheter i PowerShell 5.0 ISE
@@ -178,8 +178,9 @@ items:
 - name: Supportlängd för PowerShell Core
   href: powershell-support-lifecycle.md
 - name: Exempelskript
-  href: samples/sample-scripts-for-administration.md
   items:
+  - name: Exempelskript för administration
+    href: samples/sample-scripts-for-administration.md
   - name: Ändra datorstatus
     href: samples/changing-computer-state.md
   - name: Samla in information om datorer
@@ -187,7 +188,6 @@ items:
   - name: Skapar Get-WinEvent-frågor med FilterHashtable
     href: samples/creating-get-winEvent-queries-with-filterhashtable.md
   - name: Skapa UI-element
-    href: ''
     items:
     - name: Skapa en anpassad indataruta
       href: samples/creating-a-custom-input-box.md
@@ -220,7 +220,6 @@ items:
   - name: Arbeta med filer, mappar och registernycklar
     href: samples/working-with-files-folders-and-registry-keys.md
   - name: Arbeta med objekt
-    href: samples/working-with-objects.md
     items:
     - name: Hämta WMI-objekt – Get-WmiObject
       href: samples/getting-wmi-objects--get-wmiobject-.md
@@ -252,9 +251,9 @@ items:
     href: samples/appendix-1---compatibility-aliases.md
   - name: Bilaga 2 Skapa en anpassad PowerShell-genväg
     href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: dd9cac7e7570d6ff4c58b0255a3909f3f0612605
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: 3894ca88d01d4f84742321445b0b1e962631c10d
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320395"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920466"
