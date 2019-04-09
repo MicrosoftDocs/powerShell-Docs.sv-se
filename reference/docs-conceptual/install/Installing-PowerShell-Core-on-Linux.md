@@ -2,28 +2,27 @@
 title: Installera PowerShell Core i Linux
 description: Information om att installera PowerShell Core på olika Linux-distributioner
 ms.date: 08/06/2018
-ms.openlocfilehash: 718be0f03f136d6eb7d78fff51abdc36f6a8f0c2
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 06194550f4e73f9dd38f8cdc25f6c7f698cafce2
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795733"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293341"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Installera PowerShell Core i Linux
 
-Stöder [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04] [ u1804], [Ubuntu 18.10][u1810], [Debian 8][deb8], [Debian 9] [ deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 27][fedora], [ Fedora 28][fedora], och [båge Linux][arch].
+Stöder [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04] [ u1804], [Ubuntu 18.10][u1810], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [ openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], och [Båge Linux][arch].
 
 För Linux-distributioner som inte stöds officiellt, kan du försöka använda den [PowerShell Fäst paketet][snap].
 Du kan också prova att distribuera PowerShell binärfiler direkt med hjälp av Linux [ `tar.gz` Arkiv][tar], men du måste ställa in nödvändiga beroenden baserat på Operativsystemet i separata steg.
 
-Alla paket finns på vår GitHub [Versioner][] sidan.
+Alla paket finns på vår GitHub [släpper][] sidan.
 När paketet har installerats kan du köra `pwsh` från en terminal.
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
 [u1810]: #ubuntu-1810
-[deb8]: #debian-8
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
@@ -76,13 +75,14 @@ Därefter behöver du bara använda `sudo apt-get upgrade powershell` att uppdat
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Installationen via Direct hämtning - Ubuntu 14.04
 
-Ladda ned Debian-paket `powershell_6.1.0-1.ubuntu.14.04_amd64.deb`
-från den [Versioner][] sidan på Ubuntu-dator.
+Ladda ned Debian-paket
+`powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
+från den [släpper][] sidan på Ubuntu-dator.
 
 Kör sedan följande i terminalen:
 
 ```sh
-sudo dpkg -i powershell_6.1.0-1.ubuntu.14.04_amd64.deb
+sudo dpkg -i powershell_6.2.0-1.ubuntu.14.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -124,13 +124,14 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, kommer
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Installationen via Direct hämtning - Ubuntu 16.04
 
-Ladda ned Debian-paket `powershell_6.1.0-1.ubuntu.16.04_amd64.deb`
-från den [Versioner][] sidan på Ubuntu-dator.
+Ladda ned Debian-paket
+`powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
+från den [släpper][] sidan på Ubuntu-dator.
 
 Kör sedan följande i terminalen:
 
 ```sh
-sudo dpkg -i powershell_6.1.0-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_6.2.0-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -161,6 +162,9 @@ sudo dpkg -i packages-microsoft-prod.deb
 # Update the list of products
 sudo apt-get update
 
+# Enable the "universe" repositories
+sudo add-apt-repository universe
+
 # Install PowerShell
 sudo apt-get install -y powershell
 
@@ -172,13 +176,14 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, kommer
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Installationen via Direct hämtning - Ubuntu 18.04
 
-Ladda ned Debian-paket `powershell_6.1.0-1.ubuntu.18.04_amd64.deb`
-från den [Versioner][] sidan på Ubuntu-dator.
+Ladda ned Debian-paket
+`powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
+från den [släpper][] sidan på Ubuntu-dator.
 
 Kör sedan följande i terminalen:
 
 ```sh
-sudo dpkg -i powershell_6.1.0-1.ubuntu.18.04_amd64.deb
+sudo dpkg -i powershell_6.2.0-1.ubuntu.18.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -229,28 +234,6 @@ pwsh
 
 När du har registrerat Microsoft-databasen en gång som superanvändare, kommer du bara behöver använda `sudo apt-get upgrade powershell` att uppdatera den.
 
-### <a name="installation-via-direct-download---debian-8"></a>Installationen via Direct hämtning – Debian 8
-
-Ladda ned Debian-paket `powershell_6.1.0-1.debian.8_amd64.deb`
-från den [Versioner][] sidan på Debian dator.
-
-Kör sedan följande i terminalen:
-
-```sh
-sudo dpkg -i powershell_6.1.0-1.debian.8_amd64.deb
-sudo apt-get install -f
-```
-
-> [!NOTE]
-> Den `dpkg -i` kommandot misslyckas med motsvarar hittills ouppfyllda beroenden.
-> Nästa kommando `apt-get install -f` löser dessa problem och sedan på Slutför PowerShell-paketet.
-
-### <a name="uninstallation---debian-8"></a>Avinstallationen – Debian 8
-
-```sh
-sudo apt-get remove powershell
-```
-
 ## <a name="debian-9"></a>Debian 9
 
 ### <a name="installation-via-package-repository---debian-9"></a>Installationen via Paketdatabasen - Debian 9
@@ -283,13 +266,14 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, kommer
 
 ### <a name="installation-via-direct-download---debian-9"></a>Installationen via Direct hämtning - Debian 9
 
-Ladda ned Debian-paket `powershell_6.1.0-1.debian.9_amd64.deb`
-från den [Versioner][] sidan på Debian dator.
+Ladda ned Debian-paket
+`powershell_6.2.0-1.debian.9_amd64.deb`
+från den [släpper][] sidan på Debian dator.
 
 Kör sedan följande i terminalen:
 
 ```sh
-sudo dpkg -i powershell_6.1.0-1.debian.9_amd64.deb
+sudo dpkg -i powershell_6.2.0-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -323,19 +307,20 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, behöv
 
 ### <a name="installation-via-direct-download---centos-7"></a>Installationen via Direct hämtning - CentOS 7
 
-Med hjälp av [CentOS 7][], ladda ned RPM-paket `powershell-6.1.0-1.rhel.7.x86_64.rpm`
-från den [Versioner][] sidan på CentOS-dator.
+Med hjälp av [CentOS 7][], ladda ned RPM-paket
+`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+från den [släpper][] sidan på CentOS-dator.
 
 Kör sedan följande i terminalen:
 
 ```sh
-sudo yum install powershell-6.1.0-1.rhel.7.x86_64.rpm
+sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
 Du kan också installera RPM utan mellanliggande steg för att hämta den:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---centos-7"></a>Avinstallationen - CentOS 7
@@ -367,19 +352,20 @@ När du har registrerat Microsoft-databasen en gång som superanvändare, behöv
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installationen via Direct hämtning - Red Hat Enterprise Linux (RHEL) 7
 
-Ladda ned RPM-paket `powershell-6.1.0-1.rhel.7.x86_64.rpm`
-från den [Versioner][] sidan på Red Hat Enterprise Linux-dator.
+Ladda ned RPM-paket
+`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+från den [släpper][] sidan på Red Hat Enterprise Linux-dator.
 
 Kör sedan följande i terminalen:
 
 ```sh
-sudo yum install powershell-6.1.0-1.rhel.7.x86_64.rpm
+sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
 Du kan också installera RPM utan mellanliggande steg för att hämta den:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>Avinstallationen - Red Hat Enterprise Linux (RHEL) 7
@@ -397,19 +383,19 @@ sudo yum remove powershell
 zypper update && zypper --non-interactive install curl tar libicu52_1
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
-mkdir -p /opt/microsoft/powershell/6.1.0
+mkdir -p /opt/microsoft/powershell/6.2.0
 
 # Expand powershell to the target folder
-tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.1.0
+tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.2.0
 
 # Set execute permissions
-chmod +x /opt/microsoft/powershell/6.1.0/pwsh
+chmod +x /opt/microsoft/powershell/6.2.0/pwsh
 
 # Create the symbolic link that points to pwsh
-ln -s /opt/microsoft/powershell/6.1.0/pwsh /usr/bin/pwsh
+ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 
 # Start PowerShell
 pwsh
@@ -422,19 +408,19 @@ pwsh
 zypper update && zypper --non-interactive install curl tar gzip libopenssl1_0_0 libicu60_2
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
-mkdir -p /opt/microsoft/powershell/6.1.0
+mkdir -p /opt/microsoft/powershell/6.2.0
 
 # Expand powershell to the target folder
-tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.1.0
+tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.2.0
 
 # Set execute permissions
-chmod +x /opt/microsoft/powershell/6.1.0/pwsh
+chmod +x /opt/microsoft/powershell/6.2.0/pwsh
 
 # Create the symbolic link that points to pwsh
-ln -s /opt/microsoft/powershell/6.1.0/pwsh /usr/bin/pwsh
+ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 
 # Start PowerShell
 pwsh
@@ -477,21 +463,22 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Installationen via Direct hämtning - Fedora 27, Fedora 28
 
-Ladda ned RPM-paket `powershell-6.1.0-1.rhel.7.x86_64.rpm`
-från den [Versioner][] sidan på Fedora-dator.
+Ladda ned RPM-paket
+`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+från den [släpper][] sidan på Fedora-dator.
 
 Kör sedan följande i terminalen:
 
 ```sh
 sudo dnf install compat-openssl10
-sudo dnf install powershell-6.1.0-1.rhel.7.x86_64.rpm
+sudo dnf install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
 Du kan också installera RPM utan mellanliggande steg för att hämta den:
 
 ```sh
 sudo dnf install compat-openssl10
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-1.rhel.7.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---fedora-27-fedora-28"></a>Avinstallationen - Fedora 27, Fedora 28
@@ -612,13 +599,13 @@ Ladda ned [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) oc
 sudo apt-get install libunwind8
 
 # Grab the latest tar.gz
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-linux-arm32.tar.gz
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-linux-arm32.tar.gz
 
 # Make folder to put powershell
 mkdir ~/powershell
 
 # Unpack the tar.gz file
-tar -xvf ./powershell-6.1.0-linux-arm32.tar.gz -C ~/powershell
+tar -xvf ./powershell-6.2.0-linux-arm32.tar.gz -C ~/powershell
 
 # Start PowerShell
 ~/powershell/pwsh
@@ -677,19 +664,19 @@ Till exempel vår [Amazon Linux dockerfile] [ amazon-dockerfile] installerar ber
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-linux-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-linux-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /opt/microsoft/powershell/6.1.0
+sudo mkdir -p /opt/microsoft/powershell/6.2.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.1.0
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.2.0
 
 # Set execute permissions
-sudo chmod +x /opt/microsoft/powershell/6.1.0/pwsh
+sudo chmod +x /opt/microsoft/powershell/6.2.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /opt/microsoft/powershell/6.1.0/pwsh /usr/bin/pwsh
+sudo ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 ```
 
 ### <a name="uninstalling-binary-archives"></a>Avinstallera binära Arkiv
@@ -700,7 +687,7 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 ## <a name="paths"></a>Sökvägar
 
-* `$PSHOME` är `/opt/microsoft/powershell/6.1.0/`
+* `$PSHOME` is `/opt/microsoft/powershell/6.2.0/`
 * Användarprofiler som ska läsas från `~/.config/powershell/profile.ps1`
 * Standardprofiler ska läsas från `$PSHOME/profile.ps1`
 * Moduler som användaren kommer att läsas från `~/.local/share/powershell/Modules`

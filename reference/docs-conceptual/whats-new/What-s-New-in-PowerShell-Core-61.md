@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell Core 6.1
 description: Nya funktioner och ändringar som introducerades i PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 4e39780a0ff446993005bba6284741f3b4b02549
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851315"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293324"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Nyheter i PowerShell Core 6.1
 
@@ -18,7 +18,7 @@ En fullständig lista över ändringar, Kolla in vår [ändringsloggen på GitHu
 
 Och medan vi anropa vissa namn nedan tack till [alla community-deltagare](https://github.com/PowerShell/PowerShell/graphs/contributors) som möjligt den här versionen.
 
-## <a name="net-core-21"></a>.NET core 2.1
+## <a name="net-core-21"></a>.NET Core 2.1
 
 PowerShell Core 6.1 flyttas till .NET Core 2.1 när den var [introducerades i maj](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/), vilket resulterar i ett antal förbättringar i PowerShell, inklusive:
 
@@ -37,7 +37,7 @@ Windows Compatibility Pack gör det möjligt för PowerShell Core att använda *
 
 ## <a name="support-for-application-whitelisting"></a>Stöd för listan över tillåtna program
 
-PowerShell Core 6.1 har paritet med Windows PowerShell 5.1 stöd [AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) och [Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) listan över tillåtna program.
+PowerShell Core 6.1 har paritet med Windows PowerShell 5.1 stöd [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) och [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) listan över tillåtna program.
 Listan över tillåtna program gör detaljerad kontroll över vilka-binärfiler ska kunna köras tillsammans med PowerShell [begränsad språkläge](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
 
 ## <a name="performance-improvements"></a>Prestandaförbättringar
@@ -65,7 +65,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Ob
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | Tid (sek)   | 12.170                 | 8.493               | 7.08                |
-| Hastigheter (%) | Saknas                    | 30,2%               | 16.6%               |
+| Hastigheter (%) | Saknas                    | 30.2%               | 16.6%               |
 
 `Import-Csv` har också tagits sped avsevärt efter en regression från Windows PowerShell.
 I följande exempel används ett test CSV med 26,616 sex kolumner:
@@ -88,7 +88,7 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
 |--------------|------------------------|---------------------|------------------------|
-| Tid (sek)   | 0.259                  | 0.577               | 0,125                  |
+| Tid (sek)   | 0.259                  | 0.577               | 0.125                  |
 | Hastigheter (%) | Saknas                    | -122.8%             | 78.3% (51.7% från WPS) |
 
 ## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Kontrollera `system32` för kompatibla i box-moduler på Windows
@@ -209,7 +209,7 @@ Om `pwsh.exe` är inte tillgänglig, PowerShell Direct faller tillbaka om du vil
 
 `Enable-PSRemoting` Nu skapar två fjärrkommunikation sessionskonfigurationer:
 
-- En för den huvudsakliga versionen av PowerShell. Till exempel`PowerShell.6`. Den här slutpunkten kan förlita sig på mellan mindre versionsuppdateringar som sessionskonfigurationen ”systemomfattande” PowerShell 6
+- En för den huvudsakliga versionen av PowerShell. Till exempel `PowerShell.6`. Den här slutpunkten kan förlita sig på mellan mindre versionsuppdateringar som sessionskonfigurationen ”systemomfattande” PowerShell 6
 - En versionsspecifika sessionskonfiguration, till exempel: `PowerShell.6.1.0`
 
 Detta är användbart om du vill ha flera PowerShell 6 versioner installerade och kan nås på samma dator.
@@ -422,7 +422,7 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 Tidigare levererat PowerShell en funktion i Windows som kallas `more` som omslutna `more.com`.
 Funktionen har nu tagits bort.
 
-Även den `help` funktionen ändrats till att använda `more.com` på Windows eller systemets standard personsökare anges av `$env:PAGER` på icke-Windows-plattformar.
+Dessutom den `help` funktionen ändrats till att använda `more.com` på Windows eller systemets standard personsökare anges av `$env:PAGER` på icke-Windows-plattformar.
 
 ### <a name="cd-drivename-now-returns-users-to-the-current-working-directory-in-that-drive"></a>`cd DriveName:` Nu returnerar användare till den aktuella arbetskatalogen i den här enheten
 
@@ -483,7 +483,7 @@ Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumbe
 
 Tack vare [ @kvprasoon ](https://github.com/kvprasoon), nu har vi ett parameteralias `-lp` för alla inbyggda PowerShell-cmdletar som har en `-LiteralPath` parametern.
 
-## <a name="breaking-changes"></a>Större ändringar
+## <a name="breaking-changes"></a>Icke-bakåtkompatibla ändringar
 
 ### <a name="msi-based-installation-paths-on-windows"></a>MSI-baserad installation sökvägar på Windows
 
@@ -516,3 +516,10 @@ Visual Basic används sällan med `Add-Type`. Vi har tagit bort den här funktio
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Rensa användningsområden för `CommandTypes.Workflow` och `WorkflowInfoCleaned`
 
 Mer information om dessa ändringar finns [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708).
+
+### <a name="group-object-now-sorts-the-groups"></a>Grupp-objekt sorteras grupperna
+
+Som en del av prestandaförbättringar, `Group-Object` nu returnerar en sorterad lista över grupperna.
+Även om du inte bör förlita dig på för, kan du delas av den här ändringen om du vill lägga till den första gruppen. Beslutat att denna förbättring av prestanda var värt att ändringen eftersom effekten av att beroende på tidigare beteende är låg.
+
+Mer information om den här ändringen finns [problemet #7409](https://github.com/PowerShell/PowerShell/issues/7409).

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Omdirigera data med Out-cmdletar
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
-ms.openlocfilehash: f08879f436ce751b176af020aba21e90f09aa61f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7c601b09cc53524eb55014b8ea19a5d79cb98b0e
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687141"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293307"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Omdirigera Data med Out-* cmdlet: ar
 
@@ -68,7 +68,7 @@ Detta gäller för alla de **ut** cmdletar. En **ut** cmdlet alltid ska visas i 
 > [!NOTE]
 > Alla de **ut** cmdletar återges resultatet som text med formateringen gäller för konsolfönstret, inklusive rad längd gränser.
 
-#### <a name="paging-console-output-out-host"></a>Växling konsolens utdata (ut värd)
+## <a name="paging-console-output-out-host"></a>Växling konsolens utdata (ut värd)
 
 Som standard, Windows PowerShell skickar data till fönstret värd, vilket är exakt vad de ut värd cmdlet gör. Primär användning för den värd ut cmdlet är sidindelning data som har beskrivits tidigare. Till exempel följande kommando använder ut att ha till sidan utdata från Get-Command-cmdlet:
 
@@ -93,7 +93,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 ...
 ```
 
-#### <a name="discarding-output-out-null"></a>Tar bort utdata (ut Null)
+## <a name="discarding-output-out-null"></a>Tar bort utdata (ut Null)
 
 Den **ut Null** cmdlet har utformats för att omedelbart ta bort några indata som tas emot. Detta är användbart för att ta bort onödiga data som är tillgängliga som en sidoeffekt av som kör ett kommando. När skriver du följande kommando, du får inte något tillbaka från kommandot:
 
@@ -111,7 +111,7 @@ At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-#### <a name="printing-data-out-printer"></a>Data för utskrift (Out-skrivare)
+## <a name="printing-data-out-printer"></a>Data för utskrift (Out-skrivare)
 
 Du kan skriva ut data med hjälp av den **Out-skrivare** cmdlet. Den **Out-skrivare** cmdlet använder standardskrivaren om du inte anger namnet på en skrivare. Du kan använda valfri Windows-baserade skrivare genom att ange dess namn. Det finns inget behov av alla slags skrivare portmappning och även en riktig fysisk skrivare. Om du har Microsoft Office-dokument avbildning verktygen som installeras kan kan du till exempel skicka data till en bildfil genom att skriva:
 
@@ -119,7 +119,7 @@ Du kan skriva ut data med hjälp av den **Out-skrivare** cmdlet. Den **Out-skriv
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
 ```
 
-#### <a name="saving-data-out-file"></a>Sparar Data (out-File)
+## <a name="saving-data-out-file"></a>Sparar Data (out-File)
 
 Du kan skicka utdata till en fil i stället för konsolfönstret genom att använda den **out-File** cmdlet. Följande kommandorad skickar en lista över processer till filen **C:\\temp\\processlist.txt**:
 

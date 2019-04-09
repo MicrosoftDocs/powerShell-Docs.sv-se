@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Manipulera objekt direkt
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 5f5b6cf4a777229029743b9d9967030effc58215
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685195"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293273"
 ---
 # <a name="manipulating-items-directly"></a>Manipulera objekt direkt
 
@@ -32,7 +32,7 @@ Cmdlet          Rename-Item                     Rename-Item [-Path] <String>...
 Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
-### <a name="creating-new-items-new-item"></a>Skapa nya objekt (nya objekt)
+## <a name="creating-new-items-new-item"></a>Skapa nya objekt (nya objekt)
 
 Om du vill skapa ett nytt objekt i filsystemet, Använd den **New-Item** cmdlet. Inkludera den **sökväg** parameter med sökvägen till objektet och **ItemType** parametern med värdet ”fil” eller ”directory”.
 
@@ -75,7 +75,7 @@ SKC  VC Name                           Property
 
 När du skriver en registersökväg, måste du använda kolumnen (**:**) i Windows PowerShell enhet namn, HKLM: och HKCU:. Utan kolumnen identifieras Windows PowerShell inte enhetsbeteckning i sökvägen.
 
-### <a name="why-registry-values-are-not-items"></a>Varför registervärden finns inga objekt
+## <a name="why-registry-values-are-not-items"></a>Varför registervärden finns inga objekt
 
 När du använder den **Get-ChildItem** cmdlet för att hitta objekt i en registernyckel visas aldrig faktiska registerposterna eller deras värden.
 
@@ -95,7 +95,7 @@ SKC  VC Name                           Property
 
 Även om det skulle vara praktiskt att behandla registerposter som objekt, kan du inte ange en sökväg till en registerpost på ett sätt som säkerställer att det blir unikt. Sökvägen notation skiljer inte mellan registerundernyckeln med namnet **kör** och **(standard)** registerposten i den **kör** undernyckel. Dessutom eftersom registernamn posten kan innehålla ett omvänt snedstreck (**\\**), om registerposter objekt, så du inte kan använda beteckningen sökväg att skilja mellan en registerpost med namnet  **Windows\\CurrentVersion\\kör** från undernyckeln som finns i sökvägen.
 
-### <a name="renaming-existing-items-rename-item"></a>Byta namn på befintliga objekt (Byt namn på objekt)
+## <a name="renaming-existing-items-rename-item"></a>Byta namn på befintliga objekt (Byt namn på objekt)
 
 Du kan ändra namnet på en fil eller mapp med det **Rename-Item** cmdlet. Följande kommando byter namn på den **file1.txt** filen till **fileOne.txt**.
 
@@ -112,7 +112,7 @@ At line:1 char:12
 + Rename-Item  <<<< -Path C:\temp\New.Directory\fileOne c:\temp\fileOne.txt
 ```
 
-### <a name="moving-items-move-item"></a>Flytta objekt (flytta objekt)
+## <a name="moving-items-move-item"></a>Flytta objekt (flytta objekt)
 
 Om du vill flytta en fil eller mapp, använda den **flytta objekt** cmdlet.
 
@@ -128,7 +128,7 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  12:14 PM            New.Directory
 ```
 
-### <a name="copying-items-copy-item"></a>Kopiera objekt (Copy-Item)
+## <a name="copying-items-copy-item"></a>Kopiera objekt (Copy-Item)
 
 Om du är bekant med kopieringsåtgärder i andra gränssnitt, kanske du upptäcker beteendet för den **Copy-Item** cmdlet i Windows PowerShell är ovanliga. När du kopierar ett objekt från en plats till en annan, kopierar inte Copy-Item innehållet som standard.
 
@@ -167,7 +167,7 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-### <a name="deleting-items-remove-item"></a>Ta bort objekt (ta bort objekt)
+## <a name="deleting-items-remove-item"></a>Ta bort objekt (ta bort objekt)
 
 Ta bort filer och mappar genom att använda den **Remove-Item** cmdlet. Windows PowerShell-cmdletar, till exempel **Remove-Item**, som kan göra betydande, går inte att ångra ändringar ofta efterfrågar bekräftelse när du anger kommandona. Exempel: Om du försöker ta bort den **New.Directory** mappen du uppmanas att bekräfta kommandot, eftersom mappen innehåller filer:
 
@@ -188,7 +188,7 @@ Eftersom **Ja** är Standardsvar att ta bort mappen och dess filer, tryck på de
 Remove-Item C:\temp\New.Directory -Recurse
 ```
 
-### <a name="executing-items-invoke-item"></a>Körning av objekt (anropa-objekt)
+## <a name="executing-items-invoke-item"></a>Körning av objekt (anropa-objekt)
 
 Windows PowerShell använder den **Invoke-Item** cmdlet för att utföra en standardåtgärd för en fil eller mapp. Den här standardåtgärd bestäms av Programhanteraren standard i registret. effekten är samma som om du dubbelklickar på objektet i Utforskaren.
 

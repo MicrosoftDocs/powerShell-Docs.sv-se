@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Hantera aktuell plats
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: d1ebc9507a45841e6d4d8219e45c002990e1328c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f5e0653b2c3bbc9d2526c7a1c2ff88a8a6641695
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686511"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293194"
 ---
 # <a name="managing-current-location"></a>Hantera aktuell plats
 
@@ -16,7 +16,7 @@ När du navigerar i mappen System i Utforskaren, har du vanligtvis en specifik p
 
 Windows PowerShell använder substantivet **plats** att referera till arbetskatalogen och och implementerar en familj av cmdletar för att granska och ändra din plats.
 
-### <a name="getting-your-current-location-get-location"></a>Hämta din aktuella plats (Get-plats)
+## <a name="getting-your-current-location-get-location"></a>Hämta din aktuella plats (Get-plats)
 
 För att fastställa sökvägen till din aktuella katalogplats, ange den **Get-Location** kommando:
 
@@ -30,7 +30,7 @@ C:\Documents and Settings\PowerUser
 > [!NOTE]
 > Cmdleten Get-Location liknar den **pwd** i BASH-gränssnittet. Cmdleten Set-Location liknar den **cd** i Cmd.exe.
 
-### <a name="setting-your-current-location-set-location"></a>Ange din aktuella plats (Set-plats)
+## <a name="setting-your-current-location-set-location"></a>Ange din aktuella plats (Set-plats)
 
 Den **Get-Location** används med den **Set-Location** kommando. Den **Set-Location** kommandot kan du ange den aktuella katalogplatsen.
 
@@ -96,7 +96,7 @@ chdir -Path .. -PassThru
 sl -Path HKLM:\SOFTWARE -PassThru
 ```
 
-### <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>Spara och återkalla nyligen använda platser (Push- och Pop-plats)
+## <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>Spara och återkalla nyligen använda platser (Push- och Pop-plats)
 
 När du ändrar platser, är det bra att hålla reda på var du har varit och för att kunna gå tillbaka till föregående plats. Den **Push-Location** cmdlet i Windows PowerShell skapar en ordnad historik (”stackar”) för katalogsökvägar där du har, och du kan gå tillbaka genom historiken för katalogsökvägar med hjälp av den kompletterande  **POP-platsen** cmdlet.
 

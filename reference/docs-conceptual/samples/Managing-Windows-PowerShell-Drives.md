@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Hantera Windows PowerShell-enheter
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: cfc5418e9d2efb1a786817e1b941d75e22291742
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685188"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293256"
 ---
 # <a name="managing-windows-powershell-drives"></a>Hantera Windows PowerShell-enheter
 
@@ -82,7 +82,7 @@ Path
 HKLM:\SOFTWARE\Microsoft
 ```
 
-### <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Att lägga till nya Windows PowerShell-enheter (ny PSDrive)
+## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Att lägga till nya Windows PowerShell-enheter (ny PSDrive)
 
 Du kan lägga till egna Windows PowerShell-enheter med hjälp av den **New PSDrive** kommando. Som hämtar syntaxen för den **New-PSDrive** kommandot, ange den **Get-Command** med den **Syntax** parameter:
 
@@ -146,7 +146,7 @@ cvkey:\
 
 Cmdleten New-PsDrive lägger till den nya enheten endast till den aktuella Windows PowerShell-sessionen. Om du stänger Windows PowerShell-fönstret, går den nya enheten förlorad. Använda cmdleten Export-konsolen för att exportera den aktuella Windows PowerShell-sessionen för att spara en Windows PowerShell-enhet, och sedan använda PowerShell.exe **PSConsoleFile** parameter för att importera den. Eller Lägg till den nya enheten i din profil för Windows PowerShell.
 
-### <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Tar bort Windows PowerShell-enheter (Remove-PSDrive)
+## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Tar bort Windows PowerShell-enheter (Remove-PSDrive)
 
 Du kan ta bort enheter från Windows PowerShell med hjälp av den **Remove-PSDrive** cmdlet. Den **Remove-PSDrive** cmdlet är lätt att använda; om du vill ta bort en specifik Windows PowerShell-enhet måste du bara ange enhetsnamnet för Windows PowerShell.
 
@@ -172,6 +172,6 @@ At line:1 char:15
 + remove-psdrive  <<<< -name office
 ```
 
-### <a name="adding-and-removing-drives-outside-windows-powershell"></a>Att lägga till och ta bort enheter utanför Windows PowerShell
+## <a name="adding-and-removing-drives-outside-windows-powershell"></a>Att lägga till och ta bort enheter utanför Windows PowerShell
 
 Windows PowerShell identifierar enheter som läggs till eller tas bort i Windows, inklusive nätverksenheter som är mappade, USB-enheter som är anslutna och enheter som har tagits bort genom att använda antingen den **nätverksanv** kommando eller  **WScript.NetworkMapNetworkDrive** och **RemoveNetworkDrive** metoder från ett skript för Windows Script Host (WSH).

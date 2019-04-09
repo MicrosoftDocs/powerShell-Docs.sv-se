@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Skapa .NET- och COM-objekt nytt objekt
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
-ms.openlocfilehash: 1ffd8d4afa419ec0c24321e44aa4a2f41a9bee44
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ef8215303aacd90536d3c2ae57bc3629e202f318
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684131"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293375"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>Skapa .NET- och COM-objekt (New-Object)
 
 Det finns programvarukomponenter med .NET Framework- och COM-gränssnitt som gör det möjligt att utföra många aktiviteter för administration av system. Windows PowerShell kan du använda de här komponenterna så att du inte är begränsad till de uppgifter som kan utföras med hjälp av cmdlet: ar. Många av i denna första version av Windows PowerShell-cmdlets fungerar inte mot fjärrdatorer. Vi visar hur du kan komma runt denna begränsning vid hantering av händelseloggar genom att använda .NET Framework **system.Diagnostics.Eventlog och** klass direkt från Windows PowerShell.
 
-### <a name="using-new-object-for-event-log-access"></a>Med New-Object för händelseloggen åtkomst
+## <a name="using-new-object-for-event-log-access"></a>Med New-Object för händelseloggen åtkomst
 
 .NET Framework Class-bibliotek innehåller en klass med namnet **system.Diagnostics.Eventlog och** som kan användas för att hantera händelseloggar. Du kan skapa en ny instans av en .NET Framework-klass med hjälp av den **New-Object** cmdlet med den **TypeName** parametern. Till exempel skapar följande kommando en referens i händelseloggen:
 
@@ -27,7 +27,7 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 
 Även om kommandot har skapat en instans av klassen EventLog, innehåller instansen inte några data. Det beror på att vi inte har angett en viss händelselogg. Hur får du en verklig händelselogg?
 
-#### <a name="using-constructors-with-new-object"></a>Med New-Object konstruktorer
+### <a name="using-constructors-with-new-object"></a>Med New-Object konstruktorer
 
 Refererar till en specifik händelselogg, måste du ange namn på loggen. **New-Object** har en **ArgumentList** parametern. Argument som du skickar som värden för den här parametern används av en särskild startmetoden i-objektet. Metoden anropas en *konstruktorn* eftersom den används för att skapa objektet. Till exempel om du vill hämta en referens till programloggen anger du strängen ”program” som ett argument:
 
@@ -42,7 +42,7 @@ Max(K) Retain OverflowAction        Entries Name
 > [!NOTE]
 > Eftersom de flesta .NET Framework core klasser finns i namnrymden System, försöker Windows PowerShell automatiskt hitta klasser som du anger i namnrymden System om den inte kan hitta en matchning för typename som du anger. Det innebär att du kan ange Diagnostics.EventLog i stället för system.Diagnostics.Eventlog och.
 
-#### <a name="storing-objects-in-variables"></a>Lagra objekt i variabler
+### <a name="storing-objects-in-variables"></a>Lagra objekt i variabler
 
 Du kanske vill spara en referens till ett objekt, så att du kan använda den i det nuvarande gränssnittet. Även om Windows PowerShell kan du göra mycket arbete med pipelines inskränkning behovet av variabler, är ibland lagra referenser till objekt i variabler det mer praktiskt att ändra dessa objekt.
 
@@ -62,7 +62,7 @@ PS> $AppLog
   16,384      7 OverwriteOlder          2,160 Application
 ```
 
-#### <a name="accessing-a-remote-event-log-with-new-object"></a>Åtkomst till en fjärrhantering av händelseloggen med New-Object
+### <a name="accessing-a-remote-event-log-with-new-object"></a>Åtkomst till en fjärrhantering av händelseloggen med New-Object
 
 De kommandon som används i föregående avsnitt rikta den lokala datorn. den **Get-EventLog** cmdlet kan göra. För att komma åt programloggen på en fjärrdator, måste du ange både namnet på loggen och ett datornamn (eller IP-adress) som argument.
 
@@ -77,7 +77,7 @@ PS> $RemoteAppLog
 
 Nu när vi har en referens till en händelselogg som lagras i variabeln $RemoteAppLog vilka uppgifter kan vi utföra på den?
 
-#### <a name="clearing-an-event-log-with-object-methods"></a>Rensa en händelselogg med objektmetoder
+### <a name="clearing-an-event-log-with-object-methods"></a>Rensa en händelselogg med objektmetoder
 
 Objekt har ofta metoder som kan anropas för att utföra uppgifter. Du kan använda **Get-Member** att visa de metoder som associeras med ett objekt. Följande kommando och valda utdata visar några metoder i klassen EventLog:
 
@@ -118,7 +118,7 @@ PS> $RemoteAppLog
      512      7 OverwriteOlder              0 Application
 ```
 
-### <a name="creating-com-objects-with-new-object"></a>Skapa COM-objekt med New-Object
+## <a name="creating-com-objects-with-new-object"></a>Skapa COM-objekt med New-Object
 Du kan använda **New-Object** att arbeta med komponenter för COM Component Object Model (). Komponenter sträcker sig från de olika bibliotek som inkluderas med Windows Script Host (WSH) att ActiveX-program, till exempel Internet Explorer som är installerade på de flesta system.
 
 **New-Object** använder .NET Framework Runtime-Anropningsbara Omslutningar för att skapa COM-objekt, så att den har samma begränsningar som .NET Framework när du anropar COM-objekt. Om du vill skapa ett COM-objekt, måste du ange den **ComObject** parameter med den programmässiga identifieraren eller *ProgId* av COM-klass som du vill använda. En fullständig beskrivning av begränsningar av COM-användning och bestämma vilka ProgID är tillgängligt i ett system är utanför omfattningen för den här användarhandboken, men mest välkända objekt från miljöer, till exempel WSH kan användas i Windows PowerShell.
@@ -134,7 +134,7 @@ New-Object -ComObject Scripting.FileSystemObject
 
 Även om de flesta av funktionerna i de här klasserna görs tillgänglig på andra sätt i Windows PowerShell, är några uppgifter som att skapa genväg fortfarande lättare att göra med hjälp av WSH-klasser.
 
-### <a name="creating-a-desktop-shortcut-with-wscriptshell"></a>Skapa en genväg på skrivbordet med WScript.Shell
+## <a name="creating-a-desktop-shortcut-with-wscriptshell"></a>Skapa en genväg på skrivbordet med WScript.Shell
 
 En aktivitet som kan utföras snabbt med ett COM-objekt är att skapa en genväg. Anta att du vill skapa en genväg på skrivbordet som länkar till arbetsmappen för Windows PowerShell. Du måste först skapa en referens till **WScript.Shell**, som vi lagrar i en variabel med namnet **$WshShell**:
 
@@ -203,7 +203,7 @@ $lnk.TargetPath = $PSHome
 $lnk.Save()
 ```
 
-### <a name="using-internet-explorer-from-windows-powershell"></a>Med hjälp av Internet Explorer från Windows PowerShell
+## <a name="using-internet-explorer-from-windows-powershell"></a>Med hjälp av Internet Explorer från Windows PowerShell
 
 Många program (inklusive i Microsoft Office-familjen av program och Internet Explorer) kan automatiseras med hjälp av COM. Internet Explorer visar några av de vanliga metoder och problem som ingår i att arbeta med COM-baserade program.
 
@@ -262,7 +262,7 @@ Remove-Variable ie
 > [!NOTE]
 > Det finns ingen gemensam standard för huruvida ActiveX körbara filer avsluta eller fortsätta att köras när du tar bort en referens till en. Beroende på omständigheterna som huruvida programmet är synliga, om ett redigerat dokument körs i den och även om Windows PowerShell fortfarande körs programmet kan eller kan inte avslutas. Därför bör du testa avslutning beteendet för varje ActiveX körbara du vill använda i Windows PowerShell.
 
-### <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>Få varningar om .NET Framework-omslutna COM-objekt
+## <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>Få varningar om .NET Framework-omslutna COM-objekt
 
 I vissa fall kan en COM-objektet kan ha en associerad .NET Framework *Runtime-Anropningsbara omslutning* eller RCW och det här kommer att användas av **New-Object**. Eftersom RCW beteende kan skilja sig från beteendet för normal COM-objektet **New-Object** har en **Strict** parameter för att varna dig om RCW åtkomst. Om du anger den **Strict** parametern och sedan skapa ett COM-objekt som använder en RCW, du får ett varningsmeddelande:
 

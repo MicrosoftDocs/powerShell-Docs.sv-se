@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Ändra datorstatus
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: f2fadcedaeddfa6f8b9dd4d70738ee062b907d61
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f8a2ed6a1a0390021eb633c9af64a725146ad136
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687393"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293069"
 ---
 # <a name="changing-computer-state"></a>Ändra datorstatus
 
 Om du vill återställa en dator i Windows PowerShell använder du ett kommandoradsverktyg som standard eller en WMI-klass. Även om du använder Windows PowerShell endast för att köra verktyget, visar lära dig hur du ändrar energinivån för en dator i Windows PowerShell några av viktig information om hur du arbetar med externa verktyg i Windows PowerShell.
 
-### <a name="locking-a-computer"></a>Låsa en dator
+## <a name="locking-a-computer"></a>Låsa en dator
 
 Det enda sättet att låsa en dator direkt med standardverktyg för tillgänglig är att anropa den **LockWorkstation()** fungera i **user32.dll**:
 
@@ -28,7 +28,7 @@ När du låsa en arbetsstation medan snabbt användarbyte är aktiverat, t.ex. p
 
 Om du vill stänga av specifika sessioner på en Terminal Server använder den **tsshutdn.exe** kommandoradsverktyget.
 
-### <a name="logging-off-the-current-session"></a>Logga ut den aktuella sessionen
+## <a name="logging-off-the-current-session"></a>Logga ut den aktuella sessionen
 
 Du kan använda flera olika tekniker för att logga ut från en session på det lokala systemet. Det enklaste sättet är att använda kommandoradsverktyget Remote Desktop/Terminal Services **logoff.exe** (Mer information finns i Windows PowerShell-Kommandotolken skriver du **utloggning /?**). Om du vill logga ut den aktuella aktiva sessionen, skriver **utloggning** utan argument.
 
@@ -46,7 +46,7 @@ Ett tredje alternativ är att använda WMI. Win32_OperatingSystem-klassen har en
 
 Mer information och hitta andra funktioner i metoden Win32Shutdown finns ”Win32Shutdown metoden av the Win32_OperatingSystem-klassen” i MSDN.
 
-### <a name="shutting-down-or-restarting-a-computer"></a>Stänga av eller starta om en dator
+## <a name="shutting-down-or-restarting-a-computer"></a>Stänga av eller starta om en dator
 
 Stänga av och starta om datorer är vanligtvis samma typ av uppgift. Verktyg som stänga av datorn Allmänt startar om den också, och vice versa. Det finns två enkla alternativ för att starta om en dator från Windows PowerShell. Använd Tsshutdn.exe eller Shutdown.exe med rätt argument. Du kan få detaljerad användningsinformation från **tsshutdn.exe /?** eller **shutdown.exe /?**.
 

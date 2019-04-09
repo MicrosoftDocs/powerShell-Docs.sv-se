@@ -12,12 +12,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], verb names
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
-ms.openlocfilehash: d8a0561d6fbb4447a691c434e0518e3e16ce41e7
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: 4475b3f5e15826efbe8bab867011985cd7e2e1ae
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56852180"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293358"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>Godkända verb för PowerShell-kommandon
 
@@ -94,7 +94,7 @@ I följande tabell visas de flesta av de definierade verb.
 |[Avsluta](/dotnet/api/System.Management.Automation.VerbsCommon.Exit) (ex)|Anger den aktuella miljön eller kontext till senast använda kontexten. Till exempel den `Exit-PSSession` cmdlet placerar användaren i sessionen som användes för att starta den interaktiva sessionen. Den här verb paras ihop med `Enter`.|Använd inte verb, till exempel Pop eller ut den här åtgärden.|
 |[Hitta](/dotnet/api/System.Management.Automation.VerbsCommon.Find) (fd)|Söker efter ett objekt i en behållare som är okänd, UNDERFÖRSTÅDDA, valfri eller angivna.||
 |[Formatet](/dotnet/api/System.Management.Automation.VerbsCommon.Format) (f)|Ordnar objekt i en specificerad form eller layout.||
-|[Hämta](/dotnet/api/System.Management.Automation.VerbsCommon.Get) (g)|Anger en åtgärd som hämtar en resurs. Den här verb paras ihop med `Set`.|Använd inte verb, till exempel läsa, öppna, Cat, typ, Dir, hämta, Dump, hämta, granska, Sök eller Sök efter den här åtgärden den här åtgärden.|
+|[Hämta](/dotnet/api/System.Management.Automation.VerbsCommon.Get) (g)|Anger en åtgärd som hämtar en resurs. Den här verb paras ihop med `Set`.|Använd inte verb, till exempel läsa, öppna, Cat, typ, Dir, hämta, Dump, hämta, granska, Sök eller Sök den här åtgärden.|
 |[Dölj](/dotnet/api/System.Management.Automation.VerbsCommon.Hide) (h)|Gör en resurs oidentifierbart. Till exempel döljer en cmdlet vars namn innehåller Dölj verbet en tjänst från en användare. Den här verb paras ihop med `Show`.|Använd inte ett verb, till exempel blockera den här åtgärden.|
 |[Ansluta till](/dotnet/api/System.Management.Automation.VerbsCommon.Join) (j)|Kombinerar resurser till en resurs. Till exempel den `Join-Path` cmdlet kombinerar en sökväg med någon av dess underordnade sökvägar för att skapa en enskild sökväg. Den här verb paras ihop med `Split`.|Använd inte verb, till exempel kombinera, Unite, Anslut eller koppla den här åtgärden.|
 |[Lås](/dotnet/api/System.Management.Automation.VerbsCommon.Lock) (lk)|Skyddar en resurs. Den här verb paras ihop med `Unlock`.|Använd inte verb, till exempel begränsa eller Secure den här åtgärden.|
@@ -149,7 +149,7 @@ I följande tabell visas de flesta av de definierade verb.
 |[ConvertFrom](/dotnet/api/System.Management.Automation.VerbsData.ConvertFrom) (cf)|Konverterar en primära typ av indata (cmdlet-substantiv anger indata) till en eller flera typer av stöds utdata.|Använd inte verb, till exempel Export eller utdata ut den här åtgärden.|
 |[ConvertTo](/dotnet/api/System.Management.Automation.VerbsData.ConvertTo) (ct)|Konverterar från en eller flera typer av indata för en primär utdatatypen (cmdlet-substantiv anger utdatatypen).|För den här åtgärden inte använder verb, till exempel Import, mata in, eller i.|
 |[Demontera](/dotnet/api/System.Management.Automation.VerbsData.Dismount) (dm)|Kopplar från en namngiven entitet från en plats. Den här verb paras ihop med `Mount`.|Använd inte verb, till exempel demonteringen till eller Avlänka från den här åtgärden.|
-|[Redigera](/dotnet/api/System.Management.Automation.VerbsData.Edit) (ed)|Ändrar befintliga data genom att lägga till eller ta bort innehåll.|För den här åtgärden att inte använda verb, till exempel ändra, uppdatera eller ändra för den här åtgärden.|
+|[Redigera](/dotnet/api/System.Management.Automation.VerbsData.Edit) (ed)|Ändrar befintliga data genom att lägga till eller ta bort innehåll.|Använd inte verb, till exempel ändra, uppdatera eller ändra den här åtgärden.|
 |[Expandera](/dotnet/api/System.Management.Automation.VerbsData.Expand) (en)|Återställer data för en resurs som har komprimerats till det ursprungliga tillståndet. Den här verb paras ihop med `Compress`.|Använd inte verb, till exempel explosion eller expandera den här åtgärden.|
 |[Exportera](/dotnet/api/System.Management.Automation.VerbsData.Export) (ep)|Kapslar in primära indata till ett beständigt datalager, till exempel en fil eller till ett utbytesformat. Den här verb paras ihop med `Import`.|För den här åtgärden att inte använda verb, till exempel extrahering eller säkerhetskopiering.|
 |[Gruppen](/dotnet/api/System.Management.Automation.VerbsData.Group) (gp)|Ordnar eller kopplar en eller flera resurser.|För den här åtgärden att inte använda verb, till exempel aggregering, ordna, koppla eller genom att korrelera.|

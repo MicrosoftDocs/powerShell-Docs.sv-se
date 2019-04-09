@@ -1,14 +1,14 @@
 ---
 ms.date: 3/18/2019
-title: Skapa Get-WinEvent frågor med FilterHashtable
-ms.openlocfilehash: fae01cc8be5c1805e2aae008e1f21ed387efa325
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+title: Skapar Get-WinEvent-frågor med FilterHashtable
+ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320490"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293290"
 ---
-# <a name="creating-get-winevent-queries-with-filterhashtable"></a>Skapa Get-WinEvent frågor med FilterHashtable
+# <a name="creating-get-winevent-queries-with-filterhashtable"></a>Skapar Get-WinEvent-frågor med FilterHashtable
 
 Att läsa den ursprungliga juni 3 2014 **Scripting Guy** blogg post-, se [Använd FilterHashTable att filtrera händelseloggen med PowerShell](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/).
 
@@ -29,12 +29,12 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="blog-posts-about-enumeration"></a>Blogginlägg om uppräkning
+## <a name="blog-posts-about-enumeration"></a>Blogginlägg om uppräkning
 
 Den här artikeln innehåller information om hur du använder uppräknade värden i en hash-tabell. Mer information om uppräkning Läs dessa **Scripting Guy** blogginlägg. För att skapa en funktion som returnerar uppräknade värden, se [uppräkningar och värden](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values).
 Mer information finns i den [Scripting Guy serie blogg inlägg om uppräkningen](https://devblogs.microsoft.com/scripting/?s=about+enumeration).
 
-### <a name="hash-table-keyvalue-pairs"></a>Hash-tabell nyckel/värde-par
+## <a name="hash-table-keyvalue-pairs"></a>Hash-tabell nyckel/värde-par
 
 För att skapa effektiva frågor, använda den `Get-WinEvent` cmdlet med den **FilterHashtable** parametern.
 **FilterHashtable** accepterar en hash-tabell som ett filter för att få specifik information från Windows-händelseloggar. En hash-tabell använder **nyckel/värde** par. Mer information om hash-tabeller finns i [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
@@ -62,7 +62,7 @@ I följande tabell visar namn, datatyper, och om jokertecken godkänns för vär
 | Data         | `<String[]>`       | Nej  |
 | *            | `<String[]>`       | Nej  |
 
-### <a name="building-a-query-with-a-hash-table"></a>Att skapa en fråga med en hash-tabell
+## <a name="building-a-query-with-a-hash-table"></a>Att skapa en fråga med en hash-tabell
 
 För att kontrollera resultaten och felsöka problem, det hjälper dig för att skapa en hash-tabellen **nyckel/värde** paret åt gången. Frågan hämtar data från den **program** log. Hash-tabellen motsvarar `Get-WinEvent –LogName Application`.
 
@@ -89,7 +89,7 @@ Get-WinEvent -FilterHashtable @{
 
 Om din fråga måste hämta data från arkiverade händelseloggar, använder du den **sökväg** nyckel. Den **sökväg** värdet anger den fullständiga sökvägen till loggfilen. Mer information finns i den **Scripting Guy** blogginlägget [Använd PowerShell för att parsa sparade händelseloggarna för fel](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors).
 
-### <a name="using-enumerated-values-in-a-hash-table"></a>Använda uppräknade värden i en hash-tabell
+## <a name="using-enumerated-values-in-a-hash-table"></a>Använda uppräknade värden i en hash-tabell
 
 **Nyckelord** är nästa nyckel i hash-tabellen. Den **nyckelord** datatyp är en matris med de `[long]` värdetyp som innehåller ett stort antal. Använd följande kommando för att hitta det maximala värdet `[long]`:
 
@@ -156,7 +156,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="keywords-static-property-value-optional"></a>Nyckelord statiska egenskapsvärdet (valfritt)
+### <a name="keywords-static-property-value-optional"></a>Nyckelord statiska egenskapsvärdet (valfritt)
 
 Den **nyckelord** nyckel räknas, men du kan använda en statisk egenskapsnamn i frågan för hash-tabell.
 I stället för den returnerade strängen, egenskapsnamnet måste konverteras till ett värde med den **Value__** egenskapen.
@@ -172,7 +172,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-event-id"></a>Filtrering efter händelse-Id
+## <a name="filtering-by-event-id"></a>Filtrering efter händelse-Id
 
 Om du vill ha mer specifika data, resultatet av frågan filtreras efter **händelse-Id**. Den **händelse-Id** refereras till i hash-tabell som nyckel **ID** och värdet är en specifik **händelse-Id**. Den **Windows Loggboken** visar den **händelse-Id**. Det här exemplet används **händelse-Id 1023**.
 
@@ -187,7 +187,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-level"></a>Filtrera efter nivå
+## <a name="filtering-by-level"></a>Filtrera efter nivå
 
 För att ytterligare förfina resultaten och inkluderar endast de händelser som är fel, Använd den **nivå** nyckel.
 **Windows Loggboken** visar den **nivå** som sträng värden, men de är uppräknade värden. I hashtabellen, om du använder den **nivå** nyckeln med ett strängvärde, visas ett felmeddelande.
@@ -236,7 +236,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="level-static-property-in-enumeration-optional"></a>Nivån statisk egenskap i uppräkningen (valfritt)
+### <a name="level-static-property-in-enumeration-optional"></a>Nivån statisk egenskap i uppräkningen (valfritt)
 
 Den **nivå** nyckel räknas, men du kan använda en statisk egenskapsnamn i frågan för hash-tabell.
 I stället för den returnerade strängen, egenskapsnamnet måste konverteras till ett värde med den **Value__** egenskapen.

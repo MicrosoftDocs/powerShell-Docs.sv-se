@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Arbeta med programinstallationer
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-ms.openlocfilehash: bb97ad37c4295351c0fc2e3c6e1209c8dd673f06
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9369e3c5ac670895cd4fbd3ebc895c50efd02051
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686728"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293239"
 ---
 # <a name="working-with-software-installations"></a>Arbeta med programinstallationer
 
@@ -17,7 +17,7 @@ Program som är utformade för att använda Windows Installer kan nås via WMI *
 > [!NOTE]
 > Program som är installerade genom att kopiera vanligtvis programfilerna på datorn kan inte hanteras med hjälp av tekniker som beskrivs här. Du kan hantera de här programmen filer och mappar med hjälp av de metoder som beskrivs i avsnittet ”Arbeta med filer och mappar”.
 
-### <a name="listing-windows-installer-applications"></a>Visa en lista över Windows Installer-program
+## <a name="listing-windows-installer-applications"></a>Visa en lista över Windows Installer-program
 
 Om du vill visa de program som installeras med Windows Installer på en lokal eller fjärransluten dator, använder du följande enkla WMI-fråga:
 
@@ -85,7 +85,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 
 Nu har vi flera olika sätt att titta på program som använde Windows Installer för installationen, men vi har inte vara andra program. Eftersom de flesta program registrera sina avinstallationsprogrammet med Windows, kan vi arbeta med dem lokalt genom att söka efter dem i Windows-registret.
 
-### <a name="listing-all-uninstallable-applications"></a>Visa en lista över alla Uninstallable program
+## <a name="listing-all-uninstallable-applications"></a>Visa en lista över alla Uninstallable program
 
 Även om det finns inget garanterad sätt att hitta alla program på ett system, går det att hitta alla program med listor som visas i dialogrutan Lägg till eller ta bort program. Lägg till eller ta bort program söker efter de här programmen i följande registernyckel:
 
@@ -142,7 +142,7 @@ SKC  VC Name                           Property
   0  24 {E38C00D0-A68B-4318-A8A6-F7... {AuthorizedCDFPrefix, Comments, Conta...
 ```
 
-### <a name="installing-applications"></a>Installera program
+## <a name="installing-applications"></a>Installera program
 
 Du kan använda den **Win32_Product** klassen för att installera Windows Installer-paket via fjärranslutning eller lokalt.
 
@@ -157,7 +157,7 @@ När du installerar via fjärranslutning, måste du använda en nätverkssökvä
 
 Program som inte använder Windows Installer-tekniken kan ha programspecifika metoder för automatisk distribution. För att avgöra om det finns en metod för distribution, i dokumentationen till programmet eller kontakta tillverkaren av programmet supportsystem. I vissa fall kan även om programleverantören inte specifikt utforma programmet för installationen automation kanske installationsprogram för programvara tillverkare vissa tekniker för automatisering.
 
-### <a name="removing-applications"></a>Ta bort program
+## <a name="removing-applications"></a>Ta bort program
 
 Ta bort en Windows Installer-paketet med hjälp av Windows PowerShell fungerar på ungefär samma sätt som installerar ett paket. Här är ett exempel som väljer att avinstallera paketet baserat på dess namn. i vissa fall kan det vara enklare att filtrera med den **IdentifyingNumber**:
 
@@ -179,7 +179,7 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue('Displ
 
 Men kan dessa strängar inte användas direkt från Windows PowerShell-prompten utan några ändringar.
 
-### <a name="upgrading-windows-installer-applications"></a>Uppgradera Windows Installer-program
+## <a name="upgrading-windows-installer-applications"></a>Uppgradera Windows Installer-program
 
 Om du vill uppgradera ett program som du behöver veta namnet på programmet och sökvägen på uppgraderingspaketet för programmet. Med denna information kan du uppgradera ett program med ett enda Windows PowerShell-kommando:
 

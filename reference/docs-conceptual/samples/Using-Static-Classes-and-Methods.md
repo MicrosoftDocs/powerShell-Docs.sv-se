@@ -3,14 +3,15 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Använd statiska klasser och metoder
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: 0f2b02c3a40365ad0335118b057a4e548c9f6535
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e4caff63a1ec7295b6fe450c2915baf0cc7e31af
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687036"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293120"
 ---
 # <a name="using-static-classes-and-methods"></a>Använd statiska klasser och metoder
+
 Inte alla .NET Framework-klasser som kan skapas med hjälp av **New-Object**. Exempel: Om du försöker skapa en **System.Environment** eller en **System.Math** objekt med **New-Object**, får du följande felmeddelanden:
 
 ```
@@ -29,10 +30,12 @@ At line:1 char:11
 
 Dessa fel inträffa eftersom det finns inget sätt att skapa ett nytt objekt från de här klasserna. De här klasserna är referensbibliotek av metoder och egenskaper som inte ändrar tillstånd. Du behöver inte skapa dem, du helt enkelt använda dem för. Klasser och metoder som dessa kallas *statiska klasser* eftersom de inte har skapats raderats eller ändrats. Om du vill göra detta tydligt ger vi exempel som använder statiska klasser.
 
-### <a name="getting-environment-data-with-systemenvironment"></a>Hämta miljödata med System.Environment
+## <a name="getting-environment-data-with-systemenvironment"></a>Hämta miljödata med System.Environment
+
 Det första steget i att arbeta med ett objekt i Windows PowerShell är vanligtvis att använda Get-Member för att ta reda på vilka medlemmar som den innehåller. Processen skiljer sig något med statiska klasser, eftersom den faktiska klassen inte är ett objekt.
 
-#### <a name="referring-to-the-static-systemenvironment-class"></a>Refererar till den statiska System.Environment-klassen
+### <a name="referring-to-the-static-systemenvironment-class"></a>Refererar till den statiska System.Environment-klassen
+
 Du kan referera till en statisk klass om klassnamnet med hakparenteser. Exempel: du kan referera till **System.Environment** genom att skriva namnet inom hakparenteser. Detta visar vissa allmänna typen information:
 
 ```
@@ -89,7 +92,7 @@ TickCount                               ExitCode
 
 Nu kan vi välja Egenskaper för att visa från System.Environment.
 
-#### <a name="displaying-static-properties-of-systemenvironment"></a>Visa statiska egenskaperna för System.Environment
+### <a name="displaying-static-properties-of-systemenvironment"></a>Visa statiska egenskaperna för System.Environment
 
 Egenskaperna för System.Environment också är statiska och måste anges på ett annat sätt än normala egenskaper. Vi använder **::** som anger att Windows PowerShell som vi vill arbeta med en statisk metod eller egenskap. Om du vill se det kommando som användes för att starta Windows PowerShell, kontrollerar vi den **CommandLine** egenskapen genom att skriva:
 
@@ -115,7 +118,7 @@ PS> [System.Environment]::HasShutdownStarted
 False
 ```
 
-### <a name="doing-math-with-systemmath"></a>Gör beräkningar med System.Math
+## <a name="doing-math-with-systemmath"></a>Gör beräkningar med System.Math
 
 Den statiska System.Math-klassen är användbart för att utföra vissa matematiska operationer. Viktiga medlemmarna i **System.Math** är främst metoder, som vi kan visas med hjälp av **Get-Member**.
 

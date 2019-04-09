@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Utför nätverksuppgifter
 ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
-ms.openlocfilehash: 64c57c95a70bc4cad4b695a59d96673ed18afdf4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 250ae6e5f6431ce659b3600188d7e30e501c3247
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688247"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293137"
 ---
 # <a name="performing-networking-tasks"></a>Utför nätverksuppgifter
 
 Eftersom TCP/IP är det vanligaste nätverksprotokollet, omfattar de flesta administrationsuppgifter för på låg nivå network protocol TCP/IP. I det här avsnittet använder vi Windows PowerShell och WMI för att utföra dessa uppgifter.
 
-### <a name="listing-ip-addresses-for-a-computer"></a>Visa en lista över IP-adresser för en dator
+## <a name="listing-ip-addresses-for-a-computer"></a>Visa en lista över IP-adresser för en dator
 
 Om du vill hämta alla IP-adresser som används på den lokala datorn, använder du följande kommando:
 
@@ -48,7 +48,7 @@ IPAddress Property   System.String[] IPAddress {get;}
 
 Egenskapen IP-adress för varje nätverkskort är faktiskt en matris. Klammerparenteserna i definitionen indikerar att **IPAddress** är inte en **System.String** värde, men en matris med **System.String** värden.
 
-### <a name="listing-ip-configuration-data"></a>Visa en lista över IP-konfigurationsdata
+## <a name="listing-ip-configuration-data"></a>Visa en lista över IP-konfigurationsdata
 
 Om du vill visa detaljerad IP-konfigurationsdata för varje nätverkskort, använder du följande kommando:
 
@@ -66,7 +66,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 
 Det här kommandot returnerar detaljerad information om DHCP, DNS, Routning och andra egenskaper för mindre IP-konfiguration.
 
-### <a name="pinging-computers"></a>Skicka signaler till datorer
+## <a name="pinging-computers"></a>Skicka signaler till datorer
 
 Du kan utföra en enkel ping mot en dator med hjälp av av **Win32_PingStatus**. Följande kommando utför ping-kommandot, men returnerar långa utdata:
 
@@ -106,7 +106,7 @@ Observera att den här tekniken för att generera ett adressintervall kan använ
 $ips = 1..254 | ForEach-Object -Process {'192.168.1.' + $_}
 ```
 
-### <a name="retrieving-network-adapter-properties"></a>Hämta egenskaper för nätverkskort
+## <a name="retrieving-network-adapter-properties"></a>Hämta egenskaper för nätverkskort
 
 Tidigare i den här användarhandboken nämns vi att du kan hämta egenskaper för allmän konfiguration med hjälp av **Win32_NetworkAdapterConfiguration**. Även om det strikt sett inte är TCP/IP-information, nätverkskortinformation, till exempel MAC-adresser och typer av nätverkskort kan vara användbart för att förstå vad som händer med en dator. Använd följande kommando för att få en sammanfattning av den här informationen:
 
@@ -114,7 +114,7 @@ Tidigare i den här användarhandboken nämns vi att du kan hämta egenskaper f�
 Get-WmiObject -Class Win32_NetworkAdapter -ComputerName .
 ```
 
-### <a name="assigning-the-dns-domain-for-a-network-adapter"></a>Tilldela DNS-domän för ett nätverkskort
+## <a name="assigning-the-dns-domain-for-a-network-adapter"></a>Tilldela DNS-domän för ett nätverkskort
 
 Om du vill tilldela DNS-domän för automatisk namnmatchning, Använd den **Win32_NetworkAdapterConfiguration SetDNSDomain** metod. Eftersom du tilldelar DNS-domän för varje nätverkskortskonfiguration oberoende av varandra, måste du använda en **ForEach-Object** instruktionen ska tilldelas varje kort domänen:
 
@@ -130,11 +130,11 @@ Du kan filtrera kommandot med hjälp av den **Where-Object** cmdlet, istället f
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -ComputerName . | Where-Object -FilterScript {$_.IPEnabled} | ForEach-Object -Process {$_.SetDNSDomain('fabrikam.com')}
 ```
 
-### <a name="performing-dhcp-configuration-tasks"></a>Utför åtgärder för DHCP-konfiguration
+## <a name="performing-dhcp-configuration-tasks"></a>Utför åtgärder för DHCP-konfiguration
 
 Ändra information om DHCP innebär att arbeta med en uppsättning nätverkskort, precis som DNS-konfigurationen. Det finns flera olika åtgärder som du kan utföra med hjälp av WMI och vi ska gå igenom några av de vanliga.
 
-#### <a name="determining-dhcp-enabled-adapters"></a>Fastställa DHCP-aktiverade nätverkskort
+### <a name="determining-dhcp-enabled-adapters"></a>Fastställa DHCP-aktiverade nätverkskort
 
 För att hitta de DHCP-aktiverade nätverkskort på en dator, använder du följande kommando:
 
@@ -148,7 +148,7 @@ Du kan hämta IP-aktiverade nätverkskort om du vill exkludera kort med IP-konfi
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" -ComputerName .
 ```
 
-#### <a name="retrieving-dhcp-properties"></a>Hämta egenskaper för DHCP
+### <a name="retrieving-dhcp-properties"></a>Hämta egenskaper för DHCP
 
 Eftersom DHCP-relaterade egenskaper för ett nätverkskort som är allmänt börjar med ”DHCP” bör använda du parametern egenskapen av Format-Table för att visa endast de egenskaperna:
 
@@ -156,7 +156,7 @@ Eftersom DHCP-relaterade egenskaper för ett nätverkskort som är allmänt bör
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" -ComputerName . | Format-Table -Property DHCP*
 ```
 
-#### <a name="enabling-dhcp-on-each-adapter"></a>Aktivera DHCP på varje kort
+### <a name="enabling-dhcp-on-each-adapter"></a>Aktivera DHCP på varje kort
 
 Om du vill aktivera DHCP på alla nätverkskort, använder du följande kommando:
 
@@ -166,7 +166,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 
 Du kan använda den **Filter** instruktionen ”IPEnabled = $true och DHCPEnabled = $false” att undvika att aktivera DHCP där det redan har aktiverats, men utelämna det här steget inte orsakar fel.
 
-#### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>Lansera och förnya DHCP-lån på specifika nätverkskort
+### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>Lansera och förnya DHCP-lån på specifika nätverkskort
 
 Den **Win32_NetworkAdapterConfiguration** klassen har **ReleaseDHCPLease** och **RenewDHCPLease** metoder. Båda används på samma sätt. I allmänhet använda dessa metoder om du bara vill frigöra eller förnya adresser för en adapter i ett specifikt undernät. Det enklaste sättet att filtret nätverkskort i ett undernät är att välja endast de konfigurationer av nätverkskort som använder gatewayen för det undernätet. Till exempel släpper följande kommando alla DHCP-lån på nätverkskort på den lokala datorn som får DHCP-lån från 192.168.1.254:
 
@@ -183,7 +183,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true 
 > [!NOTE]
 > När du använder dessa metoder på en fjärrdator, Tänk på att du kan förlora åtkomsten till fjärrsystemet om du är ansluten till den via adapter med utgivna eller förnyat lånet.
 
-#### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>Lansera och förnya DHCP-lån på alla nätverkskort
+### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>Lansera och förnya DHCP-lån på alla nätverkskort
 
 Du kan utföra global DHCP-adress versioner eller förnyelser på alla kort med hjälp av den **Win32_NetworkAdapterConfiguration** metoder, **ReleaseDHCPLeaseAll** och **RenewDHCPLeaseAll** . Men kommandot måste gälla för WMI-klass i stället för en särskild adapter eftersom lanserar och förnya lån globalt utförs på klassen, inte på ett visst nätverkskort.
 
@@ -205,7 +205,7 @@ Du kan använda samma kommandoformat för att anropa den **RenewDHCPLeaseAll** m
 ( Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdapterConfiguration'} ).RenewDHCPLeaseAll()
 ```
 
-### <a name="creating-a-network-share"></a>Skapa en nätverksresurs
+## <a name="creating-a-network-share"></a>Skapa en nätverksresurs
 
 Skapa en nätverksresurs, att använda den **Win32_Share skapa** metoden:
 
@@ -219,7 +219,7 @@ Du kan också skapa resursen med hjälp av **nätverksresurs** i Windows PowerSh
 net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
 ```
 
-### <a name="removing-a-network-share"></a>Ta bort en nätverksresurs
+## <a name="removing-a-network-share"></a>Ta bort en nätverksresurs
 
 Du kan ta bort en nätverksresurs med **Win32_Share**, men processen är något annorlunda från att skapa en resurs, eftersom du behöver hämta den specifika resursen som ska tas bort, snarare än **Win32_Share** klass. Följande uttryck tar bort resurs ”TempShare”:
 
@@ -235,7 +235,7 @@ PS> net share tempshare /delete
 tempshare was deleted successfully.
 ```
 
-### <a name="connecting-a-windows-accessible-network-drive"></a>Ansluta en Windows-tillgänglig nätverksenhet
+## <a name="connecting-a-windows-accessible-network-drive"></a>Ansluta en Windows-tillgänglig nätverksenhet
 
 Den **New PSDrive** cmdletar skapar en Windows PowerShell-enhet, men enheter som skapats på detta sätt är endast tillgängliga för Windows PowerShell. Du kan använda för att skapa en ny nätverksansluten enhet, den **WScript.Network** COM-objektet. Följande kommando mappar resursen \\ \\FPS01\\användare till en lokal enhet B:
 

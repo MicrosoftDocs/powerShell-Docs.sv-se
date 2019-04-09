@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Använd formatkommandon för att ändra utdatavyn
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
-ms.openlocfilehash: 35ccd2525d40ffd5e3f25a1abfa38904a109bde5
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: fba37b1d0479bf605d8f2171da27cd1bceb9976e
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320429"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293052"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Använd formatkommandon för att ändra utdatavyn
 
@@ -29,25 +29,34 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 I resten av det här avsnittet förklarar vi hur du använder **Format** cmdletar för att ändra hur kommandots utdata visas.
 
-### <a name="using-format-wide-for-single-item-output"></a>Med hjälp av Format hela för Single-Item utdata
+## <a name="using-format-wide-for-single-item-output"></a>Med hjälp av Format hela för Single-Item utdata
 
-Den **Format hela** cmdlet, som standard visas endast standardegenskapen för ett objekt. Informationen som är associerade med varje objekt visas i en enda kolumn:
+Den `Format-Wide` cmdlet, som standard visas endast standardegenskapen för ett objekt.
+Informationen som är associerade med varje objekt visas i en enda kolumn:
 
+```powershell
+Get-Command -Verb Format | Format-Wide
 ```
-PS> Get-Process -Name powershell | Format-Wide
 
-powershell                              powershell
+```output
+Format-Custom                          Format-Hex
+Format-List                            Format-Table
+Format-Wide
 ```
 
 Du kan också ange en icke-standard-egenskap:
 
-```
-PS> Get-Process -Name powershell | Format-Wide -Property Id
-
-2760                                    3448
+```powershell
+Get-Command -Verb Format | Format-Wide -Property Noun
 ```
 
-#### <a name="controlling-format-wide-display-with-column"></a>Kontrollera formatet företagsomfattande visning med kolumn
+```output
+Custom                                 Hex
+List                                   Table
+Wide
+```
+
+### <a name="controlling-format-wide-display-with-column"></a>Kontrollera formatet företagsomfattande visning med kolumn
 
 Med den `Format-Wide` cmdlet, du kan bara visa en enskild egenskap i taget.
 Detta gör det användbart för att visa enkla listor som visar bara ett element per rad.
@@ -65,7 +74,7 @@ Table
 Wide
 ```
 
-### <a name="using-format-list-for-a-list-view"></a>Med hjälp av Format-List för en listvy
+## <a name="using-format-list-for-a-list-view"></a>Med hjälp av Format-List för en listvy
 
 Den **Format-List** cmdlet visar ett objekt i form av en lista med varje egenskap med etiketten och visas på en separat rad:
 
@@ -100,7 +109,7 @@ StartTime   : 2006-05-24 13:54:28
 Id          : 3448
 ```
 
-#### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Hämta detaljerad Information med hjälp av Format-List med jokertecken
+### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Hämta detaljerad Information med hjälp av Format-List med jokertecken
 
 Den **Format-List** cmdlet kan du använda ett jokertecken som värdet för dess **egenskapen** parametern. På så sätt kan du visa detaljerad information. Objekt omfattar ofta mer information än vad du behöver, vilket är anledningen till Windows PowerShell inte visar alla egenskapsvärden som standard. För att visa alla egenskaper för ett objekt, använda den **Format-List-egenskapen \&#42;** kommando. Följande kommando genererar över 60 rader med utdata för en enda process:
 
@@ -110,7 +119,7 @@ Get-Process -Name powershell | Format-List -Property *
 
 Även om den **Format-List** kommandot är användbart för att visa information om du vill att en översikt över utdata som innehåller många objekt, en enklare tabellvy är ofta mer användbart.
 
-### <a name="using-format-table-for-tabular-output"></a>Med hjälp av Format-Table för Tabellutdata
+## <a name="using-format-table-for-tabular-output"></a>Med hjälp av Format-Table för Tabellutdata
 
 Om du använder den **Format-Table** cmdlet med inga egenskapsnamn som angetts för att formatera utdata från den **Get-Process** kommandot får du exakt samma utdata som du gör utan att behöva genomföra några formatering. Anledningen är att processer vanligtvis visas i tabellformat, eftersom de flesta Windows PowerShell-objekt.
 
@@ -123,7 +132,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     332       9    23140        632   141     1.06   3448 powershell
 ```
 
-#### <a name="improving-format-table-output-autosize"></a>Förbättra Format-Table utdata (AutoSize)
+### <a name="improving-format-table-output-autosize"></a>Förbättra Format-Table utdata (AutoSize)
 
 Även om en tabellvy är användbart för att visa mycket jämförbar information, kan det vara svårt att tolka om skärmen är för smal för data. Till exempel om du försöker visa processen sökväg, ID, namn och företag, får du trunkerade utdata för processökvägen och kolumnen företag:
 
@@ -173,7 +182,7 @@ Microsoft Corporation C:\Program Files\Windows PowerShell\v1.0\powershell.exe 6
 
 ID-kolumnen förkortas så att den passar i listan i utdata ovan och kolumnrubrikerna staplade. Automatiskt ändra storlek på kolumnerna som gör inte alltid det du söker.
 
-#### <a name="wrapping-format-table-output-in-columns-wrap"></a>Radbrytning Format-Table utdata i kolumnerna (radbyte)
+### <a name="wrapping-format-table-output-in-columns-wrap"></a>Radbrytning Format-Table utdata i kolumnerna (radbyte)
 
 Du kan tvinga långa **Format-Table** data du omsluter inom dess Visningskolumn med hjälp av den **omsluta** parametern. Med hjälp av den **omsluta** parametern enbart inte nödvändigtvis att utföra vad du förväntar dig, eftersom det använder standardinställningarna om du inte också anger **AutoSize**:
 
@@ -216,7 +225,7 @@ C:\Program Files\Windows PowerShell\v1.0\powershell.exe 2836 Microsoft Corporat
                                                              ion
 ```
 
-#### <a name="organizing-table-output--groupby"></a>Ordna Tabellutdata (-GroupBy)
+### <a name="organizing-table-output--groupby"></a>Ordna Tabellutdata (-GroupBy)
 
 En annan användbar parametern för tabellutdata kontroll är **GroupBy**. Längre tabular listor kan i synnerhet vara svåra att jämföra. Den **GroupBy** parametern grupperar utdata baserat på ett egenskapsvärde. Vi kan exempelvis gruppera processer av företag för enklare kontroll, om du utesluter företagets värdet från egenskapen lista:
 

@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Arbeta med registernycklar
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: a9d08f2f6b5803980dec45a4e266ad66879c8c8d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e7b497ec2fccf9ba3934439a9c1e9be3cf70a705
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686952"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293205"
 ---
 # <a name="working-with-registry-keys"></a>Arbeta med registernycklar
 
 Eftersom registernycklar finns på Windows PowerShell-enheter, påminner arbeta med dem mycket om att arbeta med filer och mappar. En viktig skillnad är att varje objekt i en registerbaserade Windows PowerShell-enhet är en behållare, precis som en mapp på en filsystemets enhet. Registerposter och deras associerade värden är dock egenskaperna hos objekten inte olika objekt.
 
-### <a name="listing-all-subkeys-of-a-registry-key"></a>Visa en lista över alla undernycklar till en registernyckel
+## <a name="listing-all-subkeys-of-a-registry-key"></a>Visa en lista över alla undernycklar till en registernyckel
 
 Du kan visa alla objekt direkt i en registernyckel med hjälp av **Get-ChildItem**. Lägg till det valfria **kraft** parameter för att visa dolda eller poster. Till exempel det här kommandot visar objekt direkt i Windows PowerShell-enhet HKCU:, som motsvarar registreringsdatafilen HKEY_CURRENT_USER:
 
@@ -58,7 +58,7 @@ Get-ChildItem -Path hkcu:\ -Recurse
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
-### <a name="copying-keys"></a>Kopiera nycklar
+## <a name="copying-keys"></a>Kopiera nycklar
 
 Kopieringen är klar med **Copy-Item**. I följande kopieras HKLM:\\programvara\\Microsoft\\Windows\\CurrentVersion och alla dess egenskaper så att HKCU:\\, skapa en ny nyckel med namnet ”CurrentVersion”:
 
@@ -74,7 +74,7 @@ Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination h
 
 Du kan fortfarande använda andra verktyg som du redan har tillgängliga för att utföra filsystem kopior. Alla registerredigeringsverktygen – inklusive reg.exe och regini.exe regedit.exe—and COM-objekt som har stöd för redigering av registret (till exempel WScript.Shell och WMI StdRegProv-klassen) kan användas i Windows PowerShell.
 
-### <a name="creating-keys"></a>Hur du skapar nycklar
+## <a name="creating-keys"></a>Hur du skapar nycklar
 
 Skapa nya nycklar i registret är enklare än att skapa ett nytt objekt i ett filsystem. Eftersom alla registernycklar är behållare, behöver du inte ange objekttypen; du bara ange en explicit sökväg, till exempel:
 
@@ -88,7 +88,7 @@ Du kan också använda en provider-baserad sökväg för att ange en nyckel:
 New-Item -Path Registry::HKCU_DeleteMe
 ```
 
-### <a name="deleting-keys"></a>Ta bort nycklar
+## <a name="deleting-keys"></a>Ta bort nycklar
 
 Ta bort objekt är i stort sett desamma för alla leverantörer. Följande kommandon raderas tyst objekt:
 
@@ -97,7 +97,7 @@ Remove-Item -Path hkcu:\Software_DeleteMe
 Remove-Item -Path 'hkcu:\key with spaces in the name'
 ```
 
-### <a name="removing-all-keys-under-a-specific-key"></a>Ta bort alla nycklar Under en viss nyckel
+## <a name="removing-all-keys-under-a-specific-key"></a>Ta bort alla nycklar Under en viss nyckel
 
 Du kan ta bort ingående objekt med hjälp av **Remove-Item**, men du kommer att uppmanas att bekräfta borttagningen om objektet innehåller något annat. Exempel: om vi försöker ta bort HKCU:\\CurrentVersion-undernyckeln infogades, ser vi detta:
 

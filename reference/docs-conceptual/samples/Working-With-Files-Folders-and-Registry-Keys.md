@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Arbeta med filer, mappar och registernycklar
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: a09b127d4ba37d33cb4c0f0ce0819e645fd4b137
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685734"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293103"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Arbeta med filer, mappar och registernycklar
 
 Windows PowerShell använder substantivet **objekt** att referera till objekt som finns på en Windows PowerShell-enhet. När du hanterar filsystem för Windows PowerShell-providern, en **objekt** kan vara en fil, en mapp eller Windows PowerShell-enhet. Lista och arbeta med de här objekten är en kritisk standardaktivitet i de flesta administrativa inställningar, så vi vill diskutera dessa uppgifter i detalj.
 
-### <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Räkna upp filer, mappar och registernycklar (Get-ChildItem)
+## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Räkna upp filer, mappar och registernycklar (Get-ChildItem)
 
 Eftersom hämtar en samling objekt från en viss plats är sådan vanliga uppgift, den **Get-ChildItem** cmdlet har utformats speciellt för att returnera alla objekt som hittas i en behållare, till exempel en mapp.
 
@@ -42,7 +42,7 @@ Get-Command -Name Get-ChildItem -Syntax
 
 Dessa parametrar kan kombineras och matchas i syfte för att få stora anpassningar utdata.
 
-#### <a name="listing-all-contained-items--recurse"></a>Lista alla innehöll objekt (-Recurse)
+### <a name="listing-all-contained-items--recurse"></a>Lista alla innehöll objekt (-Recurse)
 
 Om du vill se både objekt i en Windows-mapp och alla objekt som ingår i undermapparna, använda den **Recurse** -parametern för **Get-ChildItem**. Listan visar allt inom den Windows-mappen och dess undermappar objekt. Till exempel:
 
@@ -57,7 +57,7 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-#### <a name="filtering-items-by-name--name"></a>Filtrera objekt efter namn (-namn)
+### <a name="filtering-items-by-name--name"></a>Filtrera objekt efter namn (-namn)
 
 Använd för att visa bara namnen på objekten i **namn** -parametern för **Get-Childitem**:
 
@@ -69,7 +69,7 @@ assembly
 ...
 ```
 
-#### <a name="forcibly-listing-hidden-items--force"></a>Forcerar lista dolda objekt (-Force)
+### <a name="forcibly-listing-hidden-items--force"></a>Forcerar lista dolda objekt (-Force)
 
 Objekt som är normalt osynliga i Utforskaren eller Cmd.exe inte visas i utdata från en **Get-ChildItem** kommando. Använd för att visa dolda objekt, den **kraft** -parametern för **Get-ChildItem**. Till exempel:
 
@@ -79,7 +79,7 @@ Get-ChildItem -Path C:\Windows -Force
 
 Den här parametern heter Force eftersom du kan framtvinga åsidosätta det normala beteendet för den **Get-ChildItem** kommando. Force är en term som används parameter som tvingar en åtgärd som inte normalt utför en cmdlet, även om det inte att utföra några åtgärder som äventyrar säkerheten i systemet.
 
-#### <a name="matching-item-names-with-wildcards"></a>Matchande namn med jokertecken
+### <a name="matching-item-names-with-wildcards"></a>Matchande namn med jokertecken
 
 **Get-ChildItem** kommando accepterar jokertecken i sökvägen till de objekt som ska visas.
 
@@ -122,7 +122,7 @@ Att hitta alla filer vars namn börjar med **x** eller **z**, typ:
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
-#### <a name="excluding-items--exclude"></a>Undanta objekt (-exkludera)
+### <a name="excluding-items--exclude"></a>Undanta objekt (-exkludera)
 
 Du kan utesluta specifika objekt med hjälp av den **undanta** -parametern för Get-ChildItem. På så sätt kan du utföra komplex filtrering i en enskild instruktion.
 
@@ -147,7 +147,7 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
 ```
 
-#### <a name="mixing-get-childitem-parameters"></a>Blandade Get-ChildItem parametrar
+### <a name="mixing-get-childitem-parameters"></a>Blandade Get-ChildItem parametrar
 
 Du kan använda flera av parametrarna i den **Get-ChildItem** cmdlet i samma kommando. Innan du blanda parametrar måste du kontrollera att du förstår matchning med jokertecken. Till exempel returnerar följande kommando inga resultat:
 
