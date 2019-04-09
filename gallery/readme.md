@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 298efc55d4ce44090399847671d803a388046798
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684229"
+---
 # <a name="readme"></a><span data-ttu-id="fda8d-101">VIKTIGT</span><span class="sxs-lookup"><span data-stu-id="fda8d-101">README</span></span>
 
 <span data-ttu-id="fda8d-102">Den här mappen innehåller dokumentation för PowerShell-galleriet.</span><span class="sxs-lookup"><span data-stu-id="fda8d-102">This folder contains the documentation for the PowerShell Gallery.</span></span>
