@@ -2,43 +2,57 @@
 title: Installera PowerShell Core i Windows
 description: Information om att installera PowerShell Core i Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 450a38a1ef2e2890059094774fcc3f2ad4fcda6e
-ms.sourcegitcommit: 8dd4394cf867005a8b9ef0bb74b744c964fbc332
+ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58748960"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293018"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Installera PowerShell Core i Windows
 
-## <a name="msi"></a>MSI
+Det finns flera sätt att installera PowerShell Core i Windows.
 
-Installera PowerShell på en Windows-klienten eller Windows Server (fungerar på Windows 7 SP1, Server 2008 R2 och senare), ladda ned MSI-paketet från vår GitHub [Versioner][] sidan.  Rulla ned till den **tillgångar** delen av den version som du vill installera.  Vara kan dolda i tillgångar-avsnittet så att du kan behöva klicka på för att expandera den.
+## <a name="prerequisites"></a>Förutsättningar
+
+Om du vill aktivera PowerShell-fjärrkommunikation via WSMan, måste följande krav uppfyllas:
+
+- Installera den [Universal C Runtime](https://www.microsoft.com/download/details.aspx?id=50410) på Windows-versioner före Windows 10. Det är tillgängligt via direkt ladda ned eller Windows Update. Fullständigt uppdaterad (inklusive valfria paket) har system som stöds redan det installerat.
+- Installera på Windows Management Framework (WMF) 4.0 eller senare på Windows 7 och Windows Server 2008 R2.
+
+## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Installerar MSI-paketet
+
+Installera PowerShell på en Windows-klienten eller Windows Server (fungerar på Windows 7 SP1, Server 2008 R2 och senare), ladda ned MSI-paketet från vår GitHub [versioner] []-sida. Rulla ned till den **tillgångar** delen av den version som du vill installera. Vara kan dolda i tillgångar-avsnittet så att du kan behöva klicka på för att expandera den.
 
 MSI-filen som ser ut så här- `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 När du har hämtat, dubbelklicka på installationsprogrammet och följ anvisningarna.
 
-Det finns en genväg som placeras på Start-menyn vid installationen.
+Installationsprogrammet skapar en genväg på Windows-startmenyn.
 
 - Paketet installeras som standard till `$env:ProgramFiles\PowerShell\<version>`
 - Du kan starta PowerShell via Start-menyn eller `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
-### <a name="prerequisites"></a>Förutsättningar
+### <a name="administrative-install-from-the-command-line"></a>Administrativ installation från kommandoraden
 
-Om du vill aktivera PowerShell-fjärrkommunikation via WSMan, måste följande krav uppfyllas:
+MSI-paket kan installeras från kommandoraden. Detta gör att administratörer kan distribuera paket utan interaktion från användaren. MSI-paketet för PowerShell innehåller följande egenskaper för att styra vilka installationsalternativ:
 
-- Installera den [Universal C Runtime](https://www.microsoft.com/download/details.aspx?id=50410) på Windows-versioner före Windows 10.
-  Det är tillgängligt via direkt ladda ned eller Windows Update.
-  Fullständigt uppdaterad (inklusive valfria paket) har system som stöds redan det installerat.
-- Installera på Windows Management Framework (WMF) 4.0 eller senare på Windows 7 och Windows Server 2008 R2.
+- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** -den här egenskapen styr alternativet för att lägga till den **öppna PowerShell** objekt till på snabbmenyn i Windows Explorer.
+- **ENABLE_PSREMOTING** -den här egenskapen styr alternativ för att aktivera PowerShell-fjärrkommunikation under installationen.
+- **REGISTER_MANIFEST** -den här egenskapen styr alternativ för att registrera Windows-händelseloggning manifestet.
 
-## <a name="zip"></a>ZIP
+I följande exempel visar hur du obevakat installera PowerShell Core med alla installationsalternativen aktiverat.
 
-PowerShell binära ZIP-arkiv tillhandahålls för att aktivera avancerade scenarier.
-Observera att du inte får kravkontrollen som i MSI-paket när du använder ZIP-arkivet.
-Så för fjärrkommunikation via WSMan ska fungera korrekt på Windows-versioner före Windows 10, du måste se till att den [krav](#prerequisites) är uppfyllda.
+```powershell
+msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+```
+
+En fullständig lista över kommandoradsalternativ för Msiexec.exe Se [kommandoradsalternativ](/windows/desktop/Msi/command-line-options).
+
+## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />Installerar ZIP-paketet
+
+PowerShell binära ZIP-arkiv tillhandahålls för att aktivera avancerade scenarier. Observera att du inte får kravkontrollen som i MSI-paket när du använder ZIP-arkivet. För fjärrkommunikation via WSMan ska fungera korrekt, att se till att du har uppfyllt de [krav](#prerequisites).
 
 ## <a name="deploying-on-windows-iot"></a>Distribuera på Windows IoT
 
@@ -132,28 +146,12 @@ Följande steg beskriver hur du distributionen av PowerShell Core till en pågå
 
 - Om du vill WSMan-baserad fjärrkommunikation följer du anvisningarna för att skapa en fjärrkommunikation slutpunkt med hjälp av den [”en annan instans metod”](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
-## <a name="instructions-to-create-a-remoting-endpoint"></a>Instruktioner för att skapa en slutpunkt för fjärrkommunikation
+## <a name="how-to-create-a-remoting-endpoint"></a>Så här skapar du en slutpunkt för fjärrkommunikation
 
-PowerShell Core stöder PowerShell fjärrkommunikation Protocol (PSRP) via WSMan- och SSH.
-Mer information finns i följande avsnitt:
+PowerShell Core stöder PowerShell fjärrkommunikation Protocol (PSRP) via WSMan- och SSH. Mer information finns i följande avsnitt:
 
-- [SSH fjärrkommunikation i PowerShell Core][ssh-remoting]
-- [WSMan-fjärrkommunikation i PowerShell Core][wsman-remoting]
-
-## <a name="artifact-installation-instructions"></a>Instruktioner för Installation av artefakt
-
-Vi publicerar ett arkiv med CoreCLR bitar varje CI-version med [AppVeyor][].
-
-Installera PowerShell Core från CoreCLR artefakten:
-
-1. Ladda ned ZIP-paketet från **artefakter** fliken för specifika versionen.
-2. Avblockera ZIP-filen: Högerklicka i Utforskaren -> Egenskaper -> Kontrollera 'Avblockera' box -> tillämpa
-3. Extrahera zipfilen till `bin` directory
-4. `./bin/pwsh.exe`
+- [SSH fjärrkommunikation i PowerShell Core] [ssh-fjärrkommunikation]
+- [WSMan-fjärrkommunikation i PowerShell Core] [wsman-fjärrkommunikation]
 
 <!-- [download-center]: TODO -->
-
-[Versioner]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+[släpper]: https://github.com/PowerShell/PowerShell/releases [ssh-fjärrkommunikation]:... /Core-PowerShell/SSH-Remoting-in-PowerShell-Core.MD [wsman-fjärrkommunikation]:... /Core-PowerShell/wsman-Remoting-in-PowerShell-Core.MD [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
