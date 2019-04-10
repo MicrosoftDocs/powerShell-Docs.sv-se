@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Vad är nytt i Windows PowerShell 5.0
-ms.openlocfilehash: a21e6af9f23ac8bb3ddf84dbfa67a67f3ff93b24
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
+ms.sourcegitcommit: 9194e603ac242ae733839eb773e4af7360fdd044
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055112"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59363538"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Vad är nytt i Windows PowerShell 5.0
 
@@ -210,7 +210,7 @@ Windows PowerShell 4.0 är installerat som standard på Windows 8.1 och Windows 
 
 Windows PowerShell 4.0 innehåller följande nya funktioner.
 
-### <a name="new-features-in-windows-powershell"></a>Nya funktioner i Windows PowerShell
+### <a name="a-namenew-features-in-windows-powershell-1-new-features-in-windows-powershell"></a><a name="new-features-in-windows-powershell-1" />Nya funktioner i Windows PowerShell
 
 - **Windows PowerShell Desired State Configuration** (DSC) är en ny system i Windows PowerShell 4.0, som gör det möjligt för distribution och hantering av konfigurationsdata för Programvarutjänster och miljön där de här tjänsterna körs. Läs mer om DSC [Kom igång med Windows PowerShell Desired State Configuration](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0).
 - **Save-Help** nu kan du spara hjälp för moduler som är installerade på fjärrdatorer. Du kan använda Save-Help för att hämta modulen hjälp från en Internetansluten klient (där inte alla moduler som du vill ha hjälp nödvändigtvis installeras) och sedan kopiera sparade hjälp till en delad fjärrmapp eller en fjärrdator som inte är ansluten till Internet åtkomst.
@@ -290,7 +290,7 @@ Windows PowerShell 4.0 innehåller följande nya funktioner.
 Windows PowerShell 3.0 innehåller följande nya funktioner.
 
 - [Windows PowerShell-arbetsflöde](#windows-powershell-workflow)
-- [Windows PowerShell-webbåtkomst](#windows-powershell-web-access)
+- [Windows PowerShell Web Access](#windows-powershell-web-access)
 - [Nya funktioner för Windows PowerShell ISE](#new-windows-powershell-ise-features)
 - [Stöd för Microsoft .NET Framework 4.0](#support-for-microsoft-net-framework-4)
 - [Stöd för Windows Preinstallation Environment](#support-for-windows-preinstallation-environment)
@@ -334,7 +334,7 @@ Följande är fördelarna med Windows PowerShell-arbetsflöde
 - **Persistence.** : ett arbetsflöde sparas (eller kontrollera visade) vid specifika tidpunkter som definierats av författaren så att du kan återuppta arbetsflödet från senast sparade aktivitet (eller kontrollpunkt), i stället för att starta om arbetsflödet från början.
 - **Stabilitet.** Återställning av automatisk fel. Arbetsflöden klarar planerade och oplanerade omstarter. Du kan pausa arbetsflödeskörning och återuppta arbetsflödet från den sista punkten för persistence. Arbetsflödesskapare kan ange specifika aktiviteter att köra om fel uppstår på en eller flera hanterade noder.
 - **Möjligheten att koppla ifrån, återansluta och körs i sessionen.** Användare kan ansluta och koppla från arbetsflödesservern, men arbetsflödet körs kontinuerligt. Du kan logga ut från klientdatorn eller starta om klientdatorn och övervaka arbetsflödeskörning från en annan dator utan att avbryta arbetsflödet.
-- **Scheduling.** Uppgifter i arbetsflödet kan schemaläggas som alla Windows PowerShell-cmdlet eller ett skript.
+- **Schemaläggning.** Uppgifter i arbetsflödet kan schemaläggas som alla Windows PowerShell-cmdlet eller ett skript.
 - **Arbetsflödet och begränsning av anslutningen.** Arbetsflödeskörning och anslutningar till noderna kan vara begränsad, vilket gör att scenarier för skalbarhet och hög tillgänglighet.
 
 ### <a name="windows-powershell-web-access"></a>Windows PowerShell Web Access
