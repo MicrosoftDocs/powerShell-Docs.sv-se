@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Kom igång med Desired State Configuration (DSC) för Linux
-ms.openlocfilehash: 69f087434455aae8e97ea07c79c52e493412d134
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a18b226d4b2d8b8e1ba8b4168ec6ad8f73c73c42
+ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686602"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506843"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Kom igång med Desired State Configuration (DSC) för Linux
 
@@ -115,25 +115,25 @@ Följande kod visar hur du skapar en CIMSession för DSC för Linux.
 
 ```powershell
 $Node = "ostc-dsc-01"
-$Credential = Get-Credential -UserName:"root" -Message:"Enter Password:"
+$Credential = Get-Credential -UserName "root" -Message "Enter Password:"
 
 #Ignore SSL certificate validation
-#$opt = New-CimSessionOption -UseSsl:$true -SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true
+#$opt = New-CimSessionOption -UseSsl $true -SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true
 
 #Options for a trusted SSL certificate
-$opt = New-CimSessionOption -UseSsl:$true
-$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
+$opt = New-CimSessionOption -UseSsl $true
+$Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Authentication basic -SessionOption $opt -OperationTimeoutSec 90
 ```
 
 > [!NOTE]
 > Användarens autentiseringsuppgifter måste vara rotanvändare på Linux-datorn för ”Push”-läge.
 > SSL/TLS-anslutningar stöds för DSC för Linux, den `New-CimSession` måste användas med parametern – UseSSL ange som $true.
 > SSL-certifikatet som används av OMI (för DSC) har angetts i filen: `/opt/omi/etc/omiserver.conf` med egenskaper: pemfile och nyckelfilen.
-> Om det här certifikatet inte är betrodd av den Windows-dator som du kör den [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) cmdlet på, som du kan välja att ignorera certifikatsverifiering med CIMSession-alternativ: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
+> Om det här certifikatet inte är betrodd av den Windows-dator som du kör den [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) cmdlet på, som du kan välja att ignorera certifikatsverifiering med CIMSession-alternativ: `-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
 
 Kör följande kommando för att skicka DSC-konfigurationen till Linux-noden.
 
-`Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose`
+`Start-DscConfiguration -Path:"C:\temp" -CimSession $Sess -Wait -Verbose`
 
 ### <a name="distribute-the-configuration-with-a-pull-server"></a>Distribuera konfigurationen med en pull-server
 
