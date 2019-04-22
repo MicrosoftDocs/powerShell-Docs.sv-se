@@ -4,10 +4,10 @@ keywords: PowerShell cmdlet
 title: Arbeta med registerposter
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
 ms.openlocfilehash: 667d17d0d62745a27ffef5f1912336b72f74c2a9
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59293086"
 ---
 # <a name="working-with-registry-entries"></a>Arbeta med registerposter
@@ -191,7 +191,7 @@ PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 
 Den **%d{PropertyType/** måste vara namnet på en **Microsoft.Win32.RegistryValueKind** uppräkningsmedlem i följande tabell:
 
-|%D{PropertyType/ värde|Innebörd|
+|%D{PropertyType/ värde|Betydelse|
 |----------------------|-----------|
 |Binär|Binära data|
 |DWord|Ett tal som är en giltig UInt32|

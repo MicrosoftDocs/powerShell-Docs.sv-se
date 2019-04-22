@@ -3,16 +3,16 @@ title: Installera PowerShell Core i macOS
 description: Information om att installera PowerShell Core på macOS
 ms.date: 12/12/2018
 ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59293409"
 ---
 # <a name="installing-powershell-core-on-macos"></a>Installera PowerShell Core i macOS
 
 PowerShell Core stöder macOS 10.12 och högre.
-Alla paket finns på vår GitHub [släpper][] sidan.
+Alla paket finns på vår GitHub [Versioner][] sidan.
 När paketet har installerats, köra `pwsh` från en terminal.
 
 ## <a name="about-brew"></a>Om Brew
@@ -84,9 +84,8 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>Installationen via Direct hämtning
 
-Ladda ned PKG-paketet
-`powershell-6.2.0-osx-x64.pkg`
-från den [släpper][] sida på din macOS-dator.
+Ladda ned PKG-paketet `powershell-6.2.0-osx-x64.pkg`
+från den [Versioner][] sida på din macOS-dator.
 
 Du kan dubbelklicka på filen och följ anvisningarna eller installera det från terminalen:
 
@@ -175,7 +174,7 @@ Om du vill ta bort ytterligare PowerShell-sökvägar, referera till den [sökvä
 
 ## <a name="paths"></a>Sökvägar
 
-* `$PSHOME` is `/usr/local/microsoft/powershell/6.2.0/`
+* `$PSHOME` är `/usr/local/microsoft/powershell/6.2.0/`
 * Användarprofiler som ska läsas från `~/.config/powershell/profile.ps1`
 * Standardprofiler ska läsas från `$PSHOME/profile.ps1`
 * Moduler som användaren kommer att läsas från `~/.local/share/powershell/Modules`

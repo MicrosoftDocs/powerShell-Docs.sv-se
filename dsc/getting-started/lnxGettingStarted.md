@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Kom igång med Desired State Configuration (DSC) för Linux
 ms.openlocfilehash: a18b226d4b2d8b8e1ba8b4168ec6ad8f73c73c42
-ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59506843"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Kom igång med Desired State Configuration (DSC) för Linux
@@ -30,7 +30,7 @@ I följande tabell beskrivs paket som krävs beroenden för DSC för Linux.
 |---|---|---|
 | glibc| GNU bibliotek| 2…4 – 31.30|
 | python| Python| 2.4 – 3.4|
-| omiserver| Open Management Infrastructure| 1.0.8.1|
+| omiserver| Öppen Management Infrastructure| 1.0.8.1|
 | openssl| OpenSSL-bibliotek| 0.9.8 eller 1.0|
 | ctypes| Python CTypes bibliotek| Måste matcha Python-version|
 | libcurl| cURL http-klientbibliotek| 7.15.1|

@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Vad är nytt i Windows PowerShell 5.0
 ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
-ms.sourcegitcommit: 9194e603ac242ae733839eb773e4af7360fdd044
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59363538"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Vad är nytt i Windows PowerShell 5.0
@@ -290,7 +290,7 @@ Windows PowerShell 4.0 innehåller följande nya funktioner.
 Windows PowerShell 3.0 innehåller följande nya funktioner.
 
 - [Windows PowerShell-arbetsflöde](#windows-powershell-workflow)
-- [Windows PowerShell Web Access](#windows-powershell-web-access)
+- [Windows PowerShell-webbåtkomst](#windows-powershell-web-access)
 - [Nya funktioner för Windows PowerShell ISE](#new-windows-powershell-ise-features)
 - [Stöd för Microsoft .NET Framework 4.0](#support-for-microsoft-net-framework-4)
 - [Stöd för Windows Preinstallation Environment](#support-for-windows-preinstallation-environment)
@@ -334,7 +334,7 @@ Följande är fördelarna med Windows PowerShell-arbetsflöde
 - **Persistence.** : ett arbetsflöde sparas (eller kontrollera visade) vid specifika tidpunkter som definierats av författaren så att du kan återuppta arbetsflödet från senast sparade aktivitet (eller kontrollpunkt), i stället för att starta om arbetsflödet från början.
 - **Stabilitet.** Återställning av automatisk fel. Arbetsflöden klarar planerade och oplanerade omstarter. Du kan pausa arbetsflödeskörning och återuppta arbetsflödet från den sista punkten för persistence. Arbetsflödesskapare kan ange specifika aktiviteter att köra om fel uppstår på en eller flera hanterade noder.
 - **Möjligheten att koppla ifrån, återansluta och körs i sessionen.** Användare kan ansluta och koppla från arbetsflödesservern, men arbetsflödet körs kontinuerligt. Du kan logga ut från klientdatorn eller starta om klientdatorn och övervaka arbetsflödeskörning från en annan dator utan att avbryta arbetsflödet.
-- **Schemaläggning.** Uppgifter i arbetsflödet kan schemaläggas som alla Windows PowerShell-cmdlet eller ett skript.
+- **Scheduling.** Uppgifter i arbetsflödet kan schemaläggas som alla Windows PowerShell-cmdlet eller ett skript.
 - **Arbetsflödet och begränsning av anslutningen.** Arbetsflödeskörning och anslutningar till noderna kan vara begränsad, vilket gör att scenarier för skalbarhet och hög tillgänglighet.
 
 ### <a name="windows-powershell-web-access"></a>Windows PowerShell Web Access
