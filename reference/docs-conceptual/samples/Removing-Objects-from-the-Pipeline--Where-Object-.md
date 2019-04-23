@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Ta bort objekt från pipelinen Where-Object
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
 ms.openlocfilehash: 1f7d064c7bf2dd551ea96b29762fbccad8174084
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293154"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984161"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Ta bort objekt från pipelinen (Where-Object)
 
@@ -25,7 +25,7 @@ Värdet för **FilterScript** är en *skriptblock* -en eller flera Windows Power
 
 På grund av parsning överväganden symboler till exempel <>, och = inte används som jämförelseoperatorer. I stället består jämförelseoperatorer av bokstäver. Grundläggande jämförelseoperatorer visas i följande tabell.
 
-|Jämförelseoperator|Innebörd|Exempel (returnerar true)|
+|Jämförelseoperator|Betydelse|Exempel (returnerar true)|
 |-----------------------|-----------|--------------------------|
 |-eq|är lika med|1 -eq 1|
 |-ne|Är inte lika med|1 - ne 2|
@@ -99,7 +99,7 @@ Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript { ($_.State
 
 De logiska operatorerna som standard visas i följande tabell.
 
-|Logisk Operator|Innebörd|Exempel (returnerar true)|
+|Logisk Operator|Betydelse|Exempel (returnerar true)|
 |--------------------|-----------|--------------------------|
 |- och|Logiska och; TRUE om båda sidorna utvärderas som true|(1 -eq 1) -and (2 -eq 2)|
 |- eller|Logiska eller; SANT om endera sida är true|(1 - eq 1) - eller (1 - eq 2).|

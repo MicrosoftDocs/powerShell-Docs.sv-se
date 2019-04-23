@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Samla in information om datorer
 ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
 ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293171"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984467"
 ---
 # <a name="collecting-information-about-computers"></a>Samla in information om datorer
 

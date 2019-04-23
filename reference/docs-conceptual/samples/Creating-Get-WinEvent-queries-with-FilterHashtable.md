@@ -2,11 +2,11 @@
 ms.date: 3/18/2019
 title: Skapar Get-WinEvent-frågor med FilterHashtable
 ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293290"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984229"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Skapar Get-WinEvent-frågor med FilterHashtable
 
@@ -53,7 +53,7 @@ I följande tabell visar namn, datatyper, och om jokertecken godkänns för vär
 | Loggnamn      | `<String[]>`       | Ja |
 | ProviderName | `<String[]>`       | Ja |
 | Sökväg         | `<String[]>`       | Nej  |
-| Nyckelord     | `<Long[]>`         | Nej  |
+| nyckelord     | `<Long[]>`         | Nej  |
 | ID           | `<Int32[]>`        | Nej  |
 | Nivå        | `<Int32[]>`        | Nej  |
 | startTime    | `<DateTime>`       | Nej  |
@@ -217,7 +217,7 @@ Den **nivå** nyckelns namn och uppräknade värden är följande:
 
 | Namn           | Värde |
 | -------------- | ----- |
-| Verbose        |   5   |
+| Utförlig        |   5   |
 | Informativt  |   4   |
 | Varning        |   3   |
 | Fel          |   2   |

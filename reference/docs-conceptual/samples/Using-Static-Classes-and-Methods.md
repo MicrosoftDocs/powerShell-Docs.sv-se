@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Använd statiska klasser och metoder
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
 ms.openlocfilehash: e4caff63a1ec7295b6fe450c2915baf0cc7e31af
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293120"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984008"
 ---
 # <a name="using-static-classes-and-methods"></a>Använd statiska klasser och metoder
 

@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Manipulera objekt direkt
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
 ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293273"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984382"
 ---
 # <a name="manipulating-items-directly"></a>Manipulera objekt direkt
 

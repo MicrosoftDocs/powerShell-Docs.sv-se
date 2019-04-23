@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Använd formatkommandon för att ändra utdatavyn
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
 ms.openlocfilehash: fba37b1d0479bf605d8f2171da27cd1bceb9976e
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293052"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984178"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Använd formatkommandon för att ändra utdatavyn
 
