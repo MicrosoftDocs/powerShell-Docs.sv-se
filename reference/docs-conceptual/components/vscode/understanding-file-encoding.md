@@ -2,12 +2,12 @@
 title: Förstå filkodning i VSCode och PowerShell
 description: Konfigurera Filkodning i VSCode och PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
-ms.translationtype: MT
+ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320412"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984127"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Förstå filkodning i VSCode och PowerShell
 
@@ -69,7 +69,7 @@ Det här praktiska [referens](https://www.i18nqa.com/debug/utf8-debug.html) visa
 
 Tillägget PowerShell samverkar med skript i ett antal olika sätt:
 
-1. När skript redigeras i VSCode, skickas innehållet från VSCode till tillägget. Den [språk serverprotokoll][] innehåller principer för att den här innehåll som överförs i UTF-8. Det är därför inte möjligt för tillägget att hämta fel kodning.
+1. När skript redigeras i VSCode, skickas innehållet från VSCode till tillägget. Den [Språk Server-protokoll][] innehåller principer för att den här innehåll som överförs i UTF-8. Det är därför inte möjligt för tillägget att hämta fel kodning.
 2. När skript körs direkt i integrerad konsol, är de läsa från filen med PowerShell direkt. Om PowerShell-kodning skiljer sig från Vscodes går något fel här.
 3. När ett skript som är öppen i VSCode refererar till ett annat skript som inte är öppen i VSCode, använder tillägget till att läsa in den skriptet innehåll från filsystemet. Tillägget PowerShell UTF-8-kodning som standard, men använder [byte-ordningsmarkering][], eller BOM, identifiering för att välja rätt kodning.
 
@@ -102,7 +102,7 @@ Strukturer är valfria och antagandet är inte lika populära Linux över hela v
 
 Vscodes standardkodning är UTF-8 utan BOM.
 
-Ange [Vscodes kodning][]går du till inställningar för VSCode (<kbd>Ctrl<kbd>+</kbd>,</kbd>) och ange den `"files.encoding"` inställningen:
+Ange [Vscodes kodning][]går du till inställningar för VSCode (<kbd>Ctrl</kbd>+<kbd>,</kbd>) och ange den `"files.encoding"` inställningen:
 
 ```json
 "files.encoding": "utf8bom"
@@ -273,5 +273,5 @@ Det finns några andra bra inlägg på kodning och konfigurera kodning i PowerSh
 [UTF-8]: https://wikipedia.org/wiki/UTF-8
 [byte-ordningsmarkering]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
-[språk serverprotokoll]: https://microsoft.github.io/language-server-protocol/
+[Språk Server-protokoll]: https://microsoft.github.io/language-server-protocol/
 [Vscodes kodning]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
