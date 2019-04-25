@@ -3,11 +3,11 @@ ms.date: 10/13/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Desired State Configuration-översikt för tekniker
 ms.openlocfilehash: 0e599c2218cd2df29dbd0529006be5e1ef17ce5f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079990"
 ---
 # <a name="desired-state-configuration-overview-for-engineers"></a>Desired State Configuration-översikt för tekniker
 

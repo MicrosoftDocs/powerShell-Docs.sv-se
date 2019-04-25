@@ -1,36 +1,36 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: PowerShell cmdlet
 title: Göra det andra hoppet i PowerShell-fjärrkommunikation
 ms.openlocfilehash: 1b6e5ad53346324adc7be2d013e154c8600afa4f
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086348"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Göra det andra hoppet i PowerShell-fjärrkommunikation
 
-”Andra hopp problemet” refererar till en situation som liknar följande:
+”Andra hopp problemet” avser en situation som liknar följande:
 
 1. Du är inloggad _cypress_.
-2. Från _cypress_, du startar en fjärrsession PowerShell att ansluta till _ServerB_.
-3. Ett kommando som körs på _ServerB_ via PowerShell-fjärrkommunikation session försöker få åtkomst till en resurs på _ServerC_.
-4. Åtkomst till resursen på _ServerC_ nekas, eftersom de autentiseringsuppgifter som du använde för att skapa PowerShell-fjärrkommunikation sessionen inte har skickats från _ServerB_ till _ServerC_.
+2. Från _cypress_, du startar en fjärrsession PowerShell till att ansluta till _ServerB_.
+3. Ett kommando som du kör på _ServerB_ via PowerShell-fjärrkommunikation session försöker få åtkomst till en resurs på _ServerC_.
+4. Åtkomst till resursen på _ServerC_ nekas, eftersom de autentiseringsuppgifter som du använde för att skapa PowerShell-fjärrkommunikation sessionen inte skickas från _ServerB_ till _ServerC_.
 
 Det finns flera sätt att åtgärda problemet. I det här avsnittet ska vi titta på flera av de mest populära lösningarna på problemet för andra hopp.
 
 ## <a name="credssp"></a>CredSSP
 
-Du kan använda den [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) för autentisering. CredSSP cachelagrar autentiseringsuppgifter på fjärrservern (_ServerB_), så använder den öppnar du upp till attacker för stöld av autentiseringsuppgifter. Om fjärrdatorn äventyras, har angriparen tillgång till användarens autentiseringsuppgifter. CredSSP är inaktiverat som standard på datorer som både klienten och servern. Du bör aktivera CredSSP bara i de mest betrodda miljöerna. Till exempel en domänadministratör ansluter till en domänkontrollant, eftersom domänkontrollanten som är betrodda.
+Du kan använda den [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) för autentisering. CredSSP cachelagrar autentiseringsuppgifter på fjärrservern (_ServerB_), så använder det öppnar du upp till stöldattacker av autentiseringsuppgifter. Om fjärrdatorn komprometteras har angriparen tillgång till användarens autentiseringsuppgifter. CredSSP är inaktiverad som standard på både klienten och servern datorer. Endast i de mest tillförlitliga miljöerna bör du aktivera CredSSP. Till exempel en domänadministratör ansluter till en domänkontrollant, eftersom domänkontrollanten är betrodda.
 
-Mer information om säkerhetsfrågor när du använder CredSSP för PowerShell-fjärrkommunikation finns [oavsiktliga Sabotage: Varning för CredSSP](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
+Mer information om säkerhetsfrågor när du använder CredSSP för PowerShell-fjärrkommunikation finns [oavsiktlig Sabotage: Håll CredSSP](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
 
-Läs mer om autentiseringsuppgifter stöld attacker [Mitigating Pass-the-Hash (PtH)-attacker och annan stöld av autentiseringsuppgifter](https://www.microsoft.com/en-us/download/details.aspx?id=36036).
+Mer information om stöldattacker av autentiseringsuppgifter finns i [Mitigating Pass-the-Hash (PtH)-attacker och annan stöld](https://www.microsoft.com/en-us/download/details.aspx?id=36036).
 
-Ett exempel på hur du aktiverar och använder CredSSP för PowerShell-fjärrkommunikation finns [med CredSSP för att lösa problemet andra hopp](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/).
+Ett exempel på hur du aktiverar och använder CredSSP för PowerShell-fjärrkommunikation finns i [med CredSSP för att lösa problemet andra hopp](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/).
 
-### <a name="pros"></a>Fördelar
+### <a name="pros"></a>Experter
 
 - Den fungerar för alla servrar med Windows Server 2008 eller senare.
 
@@ -41,71 +41,71 @@ Ett exempel på hur du aktiverar och använder CredSSP för PowerShell-fjärrkom
 
 ## <a name="kerberos-delegation-unconstrained"></a>Kerberos-delegering (obegränsad)
 
-Du kan också användas obegränsad Kerberos-delegering för att göra ett andra hopp. Den här metoden finns dock ingen kontroll över där delegerade autentiseringsuppgifter används.
+Du kan också använda obegränsad Kerberos-delegering för att göra det andra hoppet. Den här metoden ger dock ingen kontroll över där delegerade autentiseringsuppgifter används.
 
->**Obs:** Active Directory-konton som har den **kontot är känsligt och kan inte delegeras** egenskapsuppsättningen kan inte delegeras. Mer information finns i [säkerhet fokus: Analys-kontot är känsligt och kan inte delegeras' för privilegierade konton](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) och [Kerberos-autentisering verktyg och inställningar](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**Obs:** Active Directory-konton som har den **kontot är känsligt och kan inte delegeras** egenskapsuppsättning kan inte delegeras. Mer information finns i [Security fokus: Analys ”kontot är känsligt och kan inte delegeras” för privilegierade konton](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) och [Kerberos-autentisering verktyg och inställningar](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
-### <a name="pros"></a>Fördelar
+### <a name="pros"></a>Experter
 
-- Kräver inga särskilda kodning.
+- Kräver ingen särskild kodning.
 
 ### <a name="cons"></a>Nackdelar
 
-- Stöder inte ett andra hopp för WinRM.
-- Innehåller ingen kontroll över där autentiseringsuppgifter som ska användas, skapa en säkerhetsrisk.
+- Stöder inte det andra hoppet för WinRM.
+- Innehåller ingen kontroll över där autentiseringsuppgifter används, skapar en säkerhetsrisk.
 
 ## <a name="kerberos-constrained-delegation"></a>Kerberos-begränsad delegering
 
-Du kan använda äldre begränsad delegering (inte resurs-baserat) för att göra ett andra hopp. Konfigurera Kerberos-begränsad delegering med alternativet ”Använd valfritt autentiseringsprotokoll” så att protokollövergång.
+Du kan använda äldre begränsad delegering (inte Resursbaserad) för att göra det andra hoppet. Konfigurera Kerberos-begränsad delegering med alternativet ”Använd valfritt autentiseringsprotokoll” så att protokollövergång.
 
 > [!NOTE]
-> Active Directory-konton som har den **kontot är känsligt och kan inte delegeras** egenskapsuppsättningen kan inte delegeras. Mer information finns i [säkerhet fokus: Analys-kontot är känsligt och kan inte delegeras' för privilegierade konton](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) och [Kerberos-autentisering verktyg och inställningar](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+> Active Directory-konton som har den **kontot är känsligt och kan inte delegeras** egenskapsuppsättning kan inte delegeras. Mer information finns i [Security fokus: Analys ”kontot är känsligt och kan inte delegeras” för privilegierade konton](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) och [Kerberos-autentisering verktyg och inställningar](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
-### <a name="pros"></a>Fördelar
+### <a name="pros"></a>Experter
 
-- Kräver inga särskilda kodning
+- Kräver ingen särskild kodning
 
 ### <a name="cons"></a>Nackdelar
 
-- Stöder inte ett andra hopp för WinRM.
-- Måste vara konfigurerad på Active Directory-objekt för fjärrservern (_ServerB_).
+- Stöder inte det andra hoppet för WinRM.
+- Måste konfigureras på Active Directory-objekt på fjärrservern (_ServerB_).
 - Begränsad till en domän. Det går inte att mellan domäner eller skogar.
-- Kräver behörighet att uppdatera objekt och tjänstens huvudnamn (SPN).
+- Kräver behörighet att uppdatera objekt och tjänsthuvudnamn (SPN).
 
 ## <a name="resource-based-kerberos-constrained-delegation"></a>Resursbaserade Kerberos-begränsad delegering
 
-Använder resursbaserade Kerberos-begränsad delegering (introducerades i Windows Server 2012) måste du konfigurera delegering av autentiseringsuppgifter på serverobjektet där resurserna finns.
+Använder resursbaserade Kerberos-begränsad delegering (introducerades i Windows Server 2012) måste du konfigurera delegering av autentiseringsuppgifter på server-objekt där resurserna finns.
 I det andra hopp scenariot som beskrivs ovan, konfigurerar du _ServerC_ ange från där du ska ta emot delegerade autentiseringsuppgifter.
 
->**Obs:** Active Directory-konton som har den **kontot är känsligt och kan inte delegeras** egenskapsuppsättningen kan inte delegeras. Mer information finns i [säkerhet fokus: Analys-kontot är känsligt och kan inte delegeras' för privilegierade konton](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) och [Kerberos-autentisering verktyg och inställningar](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**Obs:** Active Directory-konton som har den **kontot är känsligt och kan inte delegeras** egenskapsuppsättning kan inte delegeras. Mer information finns i [Security fokus: Analys ”kontot är känsligt och kan inte delegeras” för privilegierade konton](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) och [Kerberos-autentisering verktyg och inställningar](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
-### <a name="pros"></a>Fördelar
+### <a name="pros"></a>Experter
 
-- Autentiseringsuppgifterna lagras inte.
-- Relativt enkelt att konfigurera med PowerShell-cmdlets--inga särskilda kodning krävs.
-- Ingen speciell domänåtkomst krävs.
-- Fungerar över domäner och skogar.
-- PowerShell-koden.
+- Autentiseringsuppgifterna har inte sparats.
+- Relativt enkelt att konfigurera med hjälp av PowerShell-cmdlets – ingen särskild kodning krävs.
+- Ingen åtkomst till särskilda domänen krävs.
+- Arbeta över domäner och skogar.
+- PowerShell-kod.
 
 ### <a name="cons"></a>Nackdelar
 
 - Kräver Windows Server 2012 eller senare.
-- Stöder inte ett andra hopp för WinRM.
-- Kräver behörighet att uppdatera objekt och tjänstens huvudnamn (SPN).
+- Stöder inte det andra hoppet för WinRM.
+- Kräver behörighet att uppdatera objekt och tjänsthuvudnamn (SPN).
 
 ### <a name="example"></a>Exempel
 
-Nu ska vi titta på en PowerShell exempel som konfigurerar resurs utifrån begränsad delegering _ServerC_ att delegerade autentiseringsuppgifter från en _ServerB_.
-Det här exemplet förutsätter att alla servrar som kör Windows Server 2012 eller senare, och att det finns minst en domänkontrollant för Windows Server 2012 varje domän där någon av servrarna tillhör.
+Låt oss titta på ett exempel som konfigurerar resursen begränsad delegering som baseras på PowerShell _ServerC_ att tillåta delegerade autentiseringsuppgifter från en _ServerB_.
+Det här exemplet förutsätts att alla servrar som kör Windows Server 2012 eller senare, och att det finns minst en domänkontrollant för Windows Server 2012 varje domän till där någon av servrarna tillhör.
 
-Innan du kan konfigurera begränsad delegering måste du lägga till den `RSAT-AD-PowerShell` funktion för att installera Active Directory PowerShell-modulen och sedan importera modulen till sessionen:
+Innan du kan konfigurera begränsad delegering, måste du lägga till den `RSAT-AD-PowerShell` för att installera Active Directory PowerShell-modulen och importera sedan modulen till sessionen:
 
 ```powershell
 PS C:\> Add-WindowsFeature RSAT-AD-PowerShell
 
 PS C:\> Import-Module ActiveDirectory
 ```
-Nu har flera tillgängliga cmdlet: en **PrincipalsAllowedToDelegateToAccount** parameter:
+Flera tillgängliga cmdlet: ar har nu en **PrincipalsAllowedToDelegateToAccount** parameter:
 
 ```powershell
 PS C:\> Get-Command -ParameterName PrincipalsAllowedToDelegateToAccount
@@ -120,9 +120,9 @@ Cmdlet      Set-ADServiceAccount ActiveDirectory
 Cmdlet      Set-ADUser           ActiveDirectory
 ```
 
-Den **PrincipalsAllowedToDelegateToAccount** parameteruppsättningar Active Directory-objektattribut **msDS-AllowedToActOnBehalfOfOtherIdentity**, som innehåller en åtkomstkontrollista (ACL) som Anger vilka konton som har behörighet att delegera autentiseringsuppgifter för det tillhörande kontot (i vårt exempel blir datorkontot för _Server_).
+Den **PrincipalsAllowedToDelegateToAccount** parametern anger Active Directory-objektattribut **msDS-AllowedToActOnBehalfOfOtherIdentity**, som innehåller en åtkomstkontrollista (ACL) som Anger vilka konton som har behörighet att delegera autentiseringsuppgifter till det associerade kontot (i vårt exempel, kommer den att datorkontot för _Server_).
 
-Nu ska vi ställa in de variabler som vi använder för att representera servrar:
+Nu ska vi konfigurera de variabler som vi använder för att representera servrar:
 
 ```powershell
 # Set up variables for reuse
@@ -131,7 +131,7 @@ $ServerB = Get-ADComputer -Identity ServerB
 $ServerC = Get-ADComputer -Identity ServerC
 ```
 
-WinRM (och därför PowerShell-fjärrkommunikation) körs som datorkontot som standard. Du kan se detta genom att titta på den **Referensdimensionerna** -egenskapen för den `winrm` tjänsten:
+WinRM (och därför PowerShell-fjärrkommunikation) körs som datorkontot som standard. Du kan se detta genom att titta på den **Referensdimensionerna** egenskapen för den `winrm` service:
 
 ```powershell
 PS C:\> Get-WmiObject win32_service -filter 'name="winrm"' | Format-List StartName
@@ -139,7 +139,7 @@ PS C:\> Get-WmiObject win32_service -filter 'name="winrm"' | Format-List StartNa
 StartName : NT AUTHORITY\NetworkService
 ```
 
-För _ServerC_ att tillåta delegering från en PowerShell-fjärrkommunikation-session på _ServerB_, vi kommer ge åtkomst genom att ange den **PrincipalsAllowedToDelegateToAccount** parametern på _ServerC_ till datorobjekt _ServerB_:
+För _ServerC_ att tillåta delegering från en PowerShell-fjärrkommunikation-session på _ServerB_, så vi beviljas åtkomst genom att ange den **PrincipalsAllowedToDelegateToAccount** parametern på _ServerC_ till datorobjekt _ServerB_:
 
 ```powershell
 # Grant resource-based Kerberos constrained delegation
@@ -153,7 +153,7 @@ $x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
-Kerberos [Key Distribution Center (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) cacheminnen nekad åtkomstförsök (negativ cache) i 15 minuter. Om _ServerB_ tidigare har försökt få åtkomst till _ServerC_, måste du rensa cachen på _ServerB_ genom att anropa följande kommando:
+Kerberos [Key Distribution Center (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) cacheminnen nekas åtkomstförsök (negativ cache) i 15 minuter. Om _ServerB_ har tidigare försökte komma åt _ServerC_, måste du rensa cacheminnet på _ServerB_ genom att aktivera följande kommando:
 
 ```powershell
 Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
@@ -161,9 +161,9 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-Du kan också starta om datorn eller vänta minst 15 minuter för att rensa cachen.
+Du kan också starta om datorn eller vänta minst 15 minuter för att rensa cacheminnet.
 
-Efter att rensa cacheminnet, du kan köra koden från _cypress_ via _ServerB_ till _ServerC_:
+Efter att rensa cacheminnet, kan du köra kod från _cypress_ via _ServerB_ till _ServerC_:
 
 ```powershell
 # Capture a credential
@@ -177,9 +177,9 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-I det här exemplet i `$using` variabeln används för att göra den `$ServerC` variabeln som är synliga för _ServerB_. Mer information om den `$using` variabel, se [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx).
+I det här exemplet på `$using` variabeln används för att göra den `$ServerC` variabeln som är synliga för _ServerB_. Mer information om den `$using` variabel, se [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx).
 
-Gör att flera servrar att delegera autentiseringsuppgifter för att _ServerC_, ange värdet för den **PrincipalsAllowedToDelegateToAccount** parameter på _ServerC_ till en matris som:
+Gör att flera servrar att delegera autentiseringsuppgifter för att _ServerC_, ange värdet för den **PrincipalsAllowedToDelegateToAccount** parametern på _ServerC_ till en matris:
 
 ```powershell
 # Set up variables for each server
@@ -193,7 +193,7 @@ Set-ADComputer -Identity $ServerC `
     -PrincipalsAllowedToDelegateToAccount @($ServerB1,$ServerB2,$ServerB3)
 ```
 
-Om du vill göra ett andra hopp över domäner lägger du till fullständigt kvalificerat domännamn (FQDN) på domänkontrollanten i domänen som _ServerB_ tillhör:
+Om du vill göra det andra hoppet i flera domäner lägger du till fullständigt kvalificerade domännamnet (FQDN) på domänkontrollanten för domänen som _ServerB_ tillhör:
 
 ```powershell
 # For ServerC in Contoso domain and ServerB in other domain
@@ -202,7 +202,7 @@ $ServerC = Get-ADComputer -Identity ServerC
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
 ```
 
-Ta bort möjligheten att delegera autentiseringsuppgifter till ServerC genom att ange värdet för den **PrincipalsAllowedToDelegateToAccount** parameter på _ServerC_ till `$null`:
+Om du vill ta bort möjligheten att delegera ServerC autentiseringsuppgifter, ange värdet för den **PrincipalsAllowedToDelegateToAccount** parametern på _ServerC_ till `$null`:
 
 ```powershell
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
@@ -211,49 +211,49 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 ### <a name="information-on-resource-based-kerberos-constrained-delegation"></a>Information om resursbaserade Kerberos-begränsad delegering
 
 - [Vad är nytt i Kerberos-autentisering](https://technet.microsoft.com/library/hh831747.aspx)
-- [Hur Windows Server 2012 övergångar efter Kerberos-begränsad delegering, del 1](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
-- [Hur Windows Server 2012 övergångar efter Kerberos-begränsad delegering, del 2](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
-- [Så här fungerar Kerberos-begränsad delegering för Azure Active Directory Application Proxy-distributioner med integrerad Windows-autentisering](https://aka.ms/kcdpaper)
+- [Hur Windows Server 2012 övergångar enkelt Kerberos-begränsad delegering, del 1](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
+- [Hur Windows Server 2012 övergångar enkelt Kerberos-begränsad delegering, del 2](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
+- [Förstå Kerberos-begränsad delegering för Azure Active Directory Application Proxy-distributioner med integrerad Windows-autentisering](https://aka.ms/kcdpaper)
 - [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
 - [[MS-SFU]: Tillägg för Kerberos-protokollet: Tjänst för användare och begränsad delegering protokollet 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
 - [Resursen baserat Kerberos-begränsad delegering](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
-- [Fjärradministration utan begränsad delegering med PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
+- [Fjärradministration utan begränsad delegering med hjälp av PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
 
 ## <a name="pssessionconfiguration-using-runas"></a>PSSessionConfiguration med RunAs
 
-Du kan skapa en sessionskonfiguration på _ServerB_ och ange dess **RunAsCredential** parameter.
+Du kan skapa en sessionskonfiguration på _ServerB_ och Ställ in dess **RunAsCredential** parametern.
 
-Information om hur du använder PSSessionConfiguration och RunAs lösa andra hopp problemet finns i [en annan lösning för flera hopp PowerShell-fjärrkommunikation](https://blogs.msdn.microsoft.com/sergey_babkins_blog/2015/03/18/another-solution-to-multi-hop-powershell-remoting/).
+Information om hur du använder PSSessionConfiguration och RunAs lösa andra hopp problemet finns i [en annan lösning till Multi-hop PowerShell-fjärrkommunikation](https://blogs.msdn.microsoft.com/sergey_babkins_blog/2015/03/18/another-solution-to-multi-hop-powershell-remoting/).
 
-### <a name="pros"></a>Fördelar
+### <a name="pros"></a>Experter
 
-- Fungerar med alla servrar med WMF 3.0 eller senare.
+- Fungerar med servrar med WMF 3.0 eller senare.
 
 ### <a name="cons"></a>Nackdelar
 
-- Kräver konfiguration av **PSSessionConfiguration** och **RunAs** på varje server som mellanliggande (_ServerB_).
+- Kräver konfiguration av **PSSessionConfiguration** och **RunAs** på varje mellanliggande server (_ServerB_).
 - Kräver lösenord Underhåll när du använder en domän **RunAs** konto
 
 ## <a name="just-enough-administration-jea"></a>JEA (Just Enough Administration)
 
-JEA kan du begränsa vilka kommandon som en administratör kan köras under en PowerShell-session. Den kan användas för att lösa problemet för andra hopp.
+JEA kan du begränsa vilka kommandon som en administratör kan köras under en PowerShell-session. Det kan användas för att lösa problemet med andra hopp.
 
-Information om JEA finns [bara tillräckligt Administration](https://docs.microsoft.com/powershell/jea/overview).
+Läs om hur JEA [Just Enough Administration](https://docs.microsoft.com/powershell/jea/overview).
 
-### <a name="pros"></a>Fördelar
+### <a name="pros"></a>Experter
 
 - Inget lösenord Underhåll när du använder ett virtuellt konto.
 
 ### <a name="cons"></a>Nackdelar
 
 - Kräver WMF 5.0 eller senare.
-- Kräver konfiguration på varje server som mellanliggande (_ServerB_).
+- Kräver konfiguration på varje mellanliggande server (_ServerB_).
 
-## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Skicka autentiseringsuppgifterna inuti en Invoke-Command-skriptblock
+## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Skicka autentiseringsuppgifter inuti en Invoke-Command-skriptblock
 
-Du kan skicka autentiseringsuppgifter i den **ScriptBlock** parametern för ett anrop till den [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet.
+Du kan skicka autentiseringsuppgifter i den **ScriptBlock** parameter för ett anrop till den [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet.
 
-### <a name="pros"></a>Fördelar
+### <a name="pros"></a>Experter
 
 - Kräver inte särskild serverkonfiguration.
 - Fungerar på en server som kör WMF 2.0 eller senare.
@@ -261,7 +261,7 @@ Du kan skicka autentiseringsuppgifter i den **ScriptBlock** parametern för ett 
 ### <a name="cons"></a>Nackdelar
 
 - Kräver en olämpliga kod-teknik.
-- Om du kör WMF 2.0 kräver olika syntax för att överföra argument till en fjärrsession.
+- Om kör WMF 2.0, kräver olika syntax för att skicka argument till en fjärrsession.
 
 ### <a name="example"></a>Exempel
 

@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: ISESnippetCollection-objektet
 ms.assetid: ae974955-4282-4cbc-8c42-0fff1904ef32
 ms.openlocfilehash: bd5ed4a1f15e0a398b7c6a17f0071cad889be4a7
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53406013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086687"
 ---
 # <a name="the-isesnippetcollection-object"></a>ISESnippetCollection-objektet
 
@@ -16,7 +16,7 @@ Den **ISESnippetCollection** objekt är en samling **ISESnippet** objekt. Samlin
 
 ## <a name="methods"></a>Metoder
 
-### <a name="load-filepathname-"></a>Läs in\( FilePathName \)
+### <a name="load-filepathname-"></a>Load\( FilePathName \)
 
 Stöds i Windows PowerShell ISE 3.0 och senare och finns inte i tidigare versioner.
 
@@ -31,6 +31,6 @@ $SnipFile = Join-Path ( Split-Path $profile) 'Snippets\MySnips.snippets.ps1xml' 
 
 ## <a name="see-also"></a>Se även
 
-- [ISESnippetObject](The-ISESnippetObject.md)
+- [The ISESnippetObject](The-ISESnippetObject.md)
 - [Syftet med den Windows PowerShell ISE-Skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)

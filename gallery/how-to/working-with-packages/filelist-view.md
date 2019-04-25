@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery
 title: FileList-funktionen i galleriet
 ms.openlocfilehash: 5f372c943c73fa8e1014657394e40eaedef5d045
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084818"
 ---
 # <a name="filelist-feature-in-the-gallery"></a>FileList-funktionen i galleriet
 

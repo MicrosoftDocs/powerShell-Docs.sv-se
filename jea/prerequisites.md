@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: jea, powershell, säkerhet
 title: JEA-krav
 ms.openlocfilehash: acc16c0c7eec357b621c0706a66b8752ae5578cd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688359"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084852"
 ---
 # <a name="prerequisites"></a>Förutsättningar
 

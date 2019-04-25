@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Kortkommandon för Windows PowerShell ISE
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
 ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086841"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Kortkommandon för Windows PowerShell ISE
 
@@ -92,7 +92,7 @@ Du kan använda följande kortkommandon när du felsöker skript.
 |**Stega in**|S|Konsolfönstret när du felsöker ett skript|
 |**Hoppa över**|V|Konsolfönstret när du felsöker ett skript|
 |**Stega ut**|O|Konsolfönstret när du felsöker ett skript|
-|**Upprepa sista kommandot** (för steget på eller hoppa över)|RETUR|Konsolfönstret när du felsöker ett skript|
+|**Upprepa sista kommandot** (för steget på eller hoppa över)|ANGE|Konsolfönstret när du felsöker ett skript|
 |**Visa anropsstacken**|K|Konsolfönstret när du felsöker ett skript|
 |**Stoppa felsökningen**|Q|Konsolfönstret när du felsöker ett skript|
 |**Lista över skriptet**|L|Konsolfönstret när du felsöker ett skript|

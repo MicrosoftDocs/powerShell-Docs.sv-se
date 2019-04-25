@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ab2a5379-299d-4c97-86a2-b639ea890fae
 caps.latest.revision: 6
 ms.openlocfilehash: 7f9066c0fe0954fadff9dc8f0c35a62c6710f516
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065605"
 ---
 # <a name="frame-element-for-customitem-for-groupby-format"></a>Frame-element för CustomItem för GroupBy (format)
 

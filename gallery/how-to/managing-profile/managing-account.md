@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: galleriet, powershell, cmdlet, psgallery
 title: Kontoinställningar för PowerShell-galleriet
 ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084528"
 ---
 # <a name="powershell-gallery-account-settings"></a>Kontoinställningar för PowerShell-galleriet
 

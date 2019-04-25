@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: b2faa062-a959-49ff-932b-a64279f8ff2e
 caps.latest.revision: 4
 ms.openlocfilehash: 6055b9ffaa3e5a71a0c2fa0d15746d63db0c6d81
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56844823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065152"
 ---
 # <a name="propertycountfortable-element-format"></a>PropertyCountForTable-element (format)
 

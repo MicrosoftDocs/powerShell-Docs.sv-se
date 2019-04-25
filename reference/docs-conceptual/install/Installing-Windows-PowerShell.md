@@ -3,11 +3,11 @@ ms.date: 08/09/2017
 keywords: PowerShell, cmdlet, hämta, installera, inställningar, windows 10, windows 8.1, windows 8.0, windows 7
 title: Installera Windows PowerShell
 ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086484"
 ---
 # <a name="installing-windows-powershell"></a>Installera Windows PowerShell
 
