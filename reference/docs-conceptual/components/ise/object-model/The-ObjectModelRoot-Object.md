@@ -3,11 +3,11 @@ ms.date: 08/25/2017
 keywords: PowerShell cmdlet
 title: ObjectModelRoot-objektet
 ms.openlocfilehash: 2670321ebac1eac4ecc8457afb796f9f260da471
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53406033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086790"
 ---
 # <a name="the-objectmodelroot-object"></a>ObjectModelRoot-objektet
 

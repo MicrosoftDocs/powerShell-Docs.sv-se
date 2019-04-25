@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: PowerShell, core
 title: Större ändringar för PowerShell 6.0
 ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085940"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Större ändringar för PowerShell 6.0
 
@@ -62,20 +62,20 @@ I stället rekommenderar vi att du kan använda CIM (även kallat WMI v2)-cmdlet
 
 På grund av användningen av stöds inte API: er, `Microsoft.PowerShell.LocalAccounts` har tagits bort från PowerShell Core tills en bättre lösning hittas.
 
-### <a name="-computer-cmdlets"></a>`*-Computer`-cmdletar
+### <a name="-computer-cmdlets"></a>`*-Computer` Cmdlet: ar
 
 På grund av användningen av API: er för stöds inte har följande cmdletar tagits bort från PowerShell Core tills en bättre lösning hittas.
 
-- Add-Computer
+- Lägg till dator
 - Checkpoint-Computer
-- Remove-Computer
+- Ta bort datorn
 - Restore-dator
 
-### <a name="-counter-cmdlets"></a>`*-Counter`-cmdletar
+### <a name="-counter-cmdlets"></a>`*-Counter` Cmdlet: ar
 
 På grund av användningen av stöds inte API: er, den `*-Counter` har tagits bort från PowerShell Core tills en bättre lösning hittas.
 
-### <a name="-eventlog-cmdlets"></a>`*-EventLog`-cmdletar
+### <a name="-eventlog-cmdlets"></a>`*-EventLog` Cmdlet: ar
 
 På grund av användningen av stöds inte API: er, den `*-EventLog` har tagits bort från PowerShell Core. tills en bättre lösning hittas. `Get-WinEvent` och `Create-WinEvent` finns att hämta och skapa händelser i Windows.
 

@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Konfigurera en Pull-klient som använder konfigurations-ID i PowerShell 5.0 och senare
 ms.openlocfilehash: 14db98d240bc87aca3ee985db08c14b7c65d8bb8
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079497"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Konfigurera en Pull-klient som använder konfigurations-ID i PowerShell 5.0 och senare
 

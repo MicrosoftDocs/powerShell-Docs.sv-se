@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Andra användbara skriptobjekt
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
 ms.openlocfilehash: ff494f375c0d43d83b2a067dbe4f2ab35a90d564
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086212"
 ---
 # <a name="other-useful-scripting-objects"></a>Andra användbara skriptobjekt
 

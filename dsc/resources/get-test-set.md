@@ -2,18 +2,18 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Get-Test-Set
-ms.openlocfilehash: e46710954679bf20f4536c6efbcbd4dafd9e629e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 6d059518a49926bc5fb56e37e7d3d4d2c66bddec
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076607"
 ---
 # <a name="get-test-set"></a>Get-Test-Set
 
 >Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-![Hämta, Test, och ange](/media/get-test-set.png)
+![Hämta, testa och tillämpa](/media/get-test-set.png)
 
 PowerShell Desired State Configuration är uppbyggd kring ett **hämta**, **Test**, och **ange** processen. DSC [resurser](resources.md) var och en innehåller metoder för att slutföra var och en av dessa åtgärder. I en [Configuration](../configurations/configurations.md), definierar du resursen förutsättningarna för att fylla i nycklar som blivit parametrar för en resurs **hämta**, **Test**, och **ange** metoder.
 
@@ -237,6 +237,6 @@ VERBOSE: Time taken for configuration job to complete is 1.379 seconds
 
 ## <a name="see-also"></a>Se även
 
-- [Översikt över Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Översikt över Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Konfigurera en SMB-pullserver](../pull-server/pullServerSMB.md)
 - [Konfigurera en pullklient](../pull-server/pullClientConfigID.md)

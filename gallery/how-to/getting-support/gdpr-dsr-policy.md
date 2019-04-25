@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,psgallery,GDPR
 title: PowerShell-galleriet GDPR-kompatibilitet
 ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084240"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>PowerShell-galleriet GDPR-kompatibilitet
 

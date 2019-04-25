@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Omdirigera data med Out-cmdletar
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
 ms.openlocfilehash: 7c601b09cc53524eb55014b8ea19a5d79cb98b0e
-ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
-ms.translationtype: HT
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59984416"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086161"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Omdirigera Data med Out-* cmdlet: ar
 

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSCAutomationHostEnabled-registernyckel
 ms.openlocfilehash: 2bccd2738b9f61efd656fdf0f98cf71affdbe781
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076503"
 ---
 >Gäller för: Windows PowerShell 5.0
 
@@ -20,7 +20,7 @@ DSC-använder den **DSCAutomationHostEnabled** registernyckel under **HKEY_LOCAL
 |---|---|
 0 | Inaktivera konfigurerar datorn vid uppstart. |
 1 | Aktivera konfigurerar datorn vid uppstart. |
-2 | Aktivera konfigurerar datorn endast om DSC är i väntande eller aktuella tillstånd. Det här är standardkonfigurationen. |
+2 | Aktivera konfigurerar datorn endast om DSC är i väntande eller aktuella tillstånd. Detta är standardvärdet. |
 
 ## <a name="see-also"></a>Se även
 

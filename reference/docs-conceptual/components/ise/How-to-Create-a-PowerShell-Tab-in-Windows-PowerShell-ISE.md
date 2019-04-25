@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Skapa en PowerShell-flik i Windows PowerShell ISE
 ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
 ms.openlocfilehash: 080fe89bf1443f51460589b445431913fa20b4b8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688135"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057748"
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>Skapa en PowerShell-flik i Windows PowerShell ISE
 

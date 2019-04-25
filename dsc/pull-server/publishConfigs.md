@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Publicera till en Pull-servern med hjälp av konfigurations-ID (v4/v5)
 ms.openlocfilehash: 0144fec43d7a8d65b79891567cc0dc3952175343
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079514"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Publicera till en Pull-servern med hjälp av konfigurations-ID (v4/v5)
 

@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Använd bekanta kommandonamn
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
 ms.openlocfilehash: b61d647d882d4b2f7ea423a48319e3c104ce96c7
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058003"
 ---
 # <a name="using-familiar-command-names"></a>Använd bekanta kommandonamn
 

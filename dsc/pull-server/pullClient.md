@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
-title: Konfigurera en pullklient med DSC
+title: Konfigurera en DSC-hämtningsklient
 ms.openlocfilehash: 54c68ac26e5388260e252ce01418170e26ddecde
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079650"
 ---
-# <a name="setting-up-a-dsc-pull-client"></a>Konfigurera en pullklient med DSC
+# <a name="setting-up-a-dsc-pull-client"></a>Konfigurera en DSC-hämtningsklient
 
 > Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
 

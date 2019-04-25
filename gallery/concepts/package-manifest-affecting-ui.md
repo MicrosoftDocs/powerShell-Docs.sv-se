@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: PowerShell
 title: Paketet manifest värden som påverkar PowerShell galleriets gränssnitt
 ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084716"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Paketet manifest värden som påverkar PowerShell galleriets gränssnitt
 
@@ -100,7 +100,7 @@ Referens följer vissa vanligaste taggar från och med 12/14/2017. I vissa fall 
 | Testa | Testningen är mindre önskvärda |
 | VersionControl | Versionen är mindre exakt, även om används oftare  |
 | Loggning | Önskad användning av loggning som en åtgärd |
-| Logg | Prioriterade användningen av loggen som en sak |
+| log | Prioriterade användningen av loggen som en sak |
 | Säkerhetskopiering |  |
 | IaaS |  |
 | Linux |  |

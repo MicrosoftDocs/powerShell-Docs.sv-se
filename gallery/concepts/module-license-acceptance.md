@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: PowerShell
 title: Moduler som kräver godkännande av licensen
 ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075230"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Moduler som kräver godkännande av licensen
 
@@ -28,7 +28,7 @@ Moduler som vill att användarna ska acceptera licensen bör uppfylla följande 
 ## <a name="impact-on-installsaveupdate-module"></a>Påverkan på Install/spara/Update-Module
 
 - Installera/spara/uppdatera cmdletar har stöd för en ny parameter – AcceptLicense som beter sig som om användaren såg licensen.
-- Om RequiredLicenseAcceptance är SANT och – AcceptLicense har inte angetts, användaren ska visas i license.txt och du uppmanas att göra med: &quot;godkänner du licensvillkoren (Ja/Nej/YesToAll/NoToAll)&quot;.
+- Om RequiredLicenseAcceptance är SANT och – AcceptLicense har inte angetts, kommer användaren att visas i license.txt och får information om: &quot;Godkänner du licensvillkoren (Ja/Nej/YesToAll/NoToAll)&quot;.
   - Om licensen är godkänt
     - **Save-Module:** modulen ska kopieras till användaren&#39;s system
     - **Install-Module:** modulen ska kopieras till användaren&#39;s system till rätt mapp (baserat på omfång)
@@ -51,7 +51,7 @@ Ange `–Force` är inte tillräckliga för att acceptera en licens. `–AcceptL
 
 ## <a name="examples"></a>EXEMPEL
 
-### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>Exempel 1: Uppdatera modulen Manifest att kräva godkännande av licensen
+### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>Exempel 1: Uppdatera modulen Manifest för att kräva godkännande av licensen
 
 ```powershell
 Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance -PrivateData @{
@@ -184,7 +184,7 @@ Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense -Path C:\Saved
 
 Modulen sparas utan någon uppmaning att acceptera licensen.
 
-### <a name="example-10-update-module-requiring-license-acceptance"></a>Exempel 10: Uppdatera modulen kräver godkännande av licensen
+### <a name="example-10-update-module-requiring-license-acceptance"></a>Exempel 10: Uppdatera modul som kräver godkännande av licensen
 
 ```powershell
 Update-Module -Name ModuleRequireLicenseAcceptance
@@ -207,7 +207,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 Det här kommandot visar licensen från filen license.txt och uppmanar användaren att acceptera licensen.
 
-### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>Exempel 11: Uppdatera modulen kräver godkännande av licensen med - AcceptLicense
+### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>Exempel 11: Uppdatera modul som kräver godkännande av licensen med - AcceptLicense
 
 ```powershell
 Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense

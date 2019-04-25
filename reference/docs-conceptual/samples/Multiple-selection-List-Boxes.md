@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Listrutor med flera val
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
 ms.openlocfilehash: a762145dc197ec7e1424b2fbdcef5e7380d13803
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684789"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057969"
 ---
 # <a name="multiple-selection-list-boxes"></a>Listrutor med flera val
 

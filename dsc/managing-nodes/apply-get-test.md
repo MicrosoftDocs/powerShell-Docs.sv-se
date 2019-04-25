@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Tillämpa, hämta och testa konfigurationer på en nod
 ms.openlocfilehash: 41f8d2d75d3dd9621de615e7999c2690cb8ce44a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684341"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079718"
 ---
 # <a name="apply-get-and-test-configurations-on-a-node"></a>Tillämpa, hämta och testa konfigurationer på en nod
 

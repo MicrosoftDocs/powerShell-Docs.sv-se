@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Arbeta med registernycklar
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
 ms.openlocfilehash: e7b497ec2fccf9ba3934439a9c1e9be3cf70a705
-ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
-ms.translationtype: HT
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59983770"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058870"
 ---
 # <a name="working-with-registry-keys"></a>Arbeta med registernycklar
 

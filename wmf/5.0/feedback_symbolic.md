@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: 3cfc2f042234f682599bb67eac592ea3f77b31b6
-ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
-ms.translationtype: HT
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59984110"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085192"
 ---
 # <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>Interagera med symboliska länkar med förbättrad artikel-cmdletar
 

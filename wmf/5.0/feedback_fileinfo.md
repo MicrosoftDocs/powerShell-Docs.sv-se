@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 63c3b8237a9883b147380dfe9cb173107cea9aa9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5280ef5ff95679dc8721be8f5f81031a4ffe796f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085269"
 ---
 # <a name="updates-to-fileinfo-object"></a>Uppdateringar till FileInfo-objektet
-Filversionsinformation kan vilseledande särskilt i fall där filen var korrigeras. Den här versionen av WMF 5.0 lägger till nya **FileVersionRaw** och **ProductVersionRaw** skript egenskaper FileInfo objekt. Här är egenskaperna som visas för powershell.exe (förutsatt att $pid är det PowerShell-process-ID):
+Kan vilseledande filversionsinformation särskilt i fall där filen var korrigeras. Den här versionen av WMF 5.0 lägger till nya **FileVersionRaw** och **ProductVersionRaw** skript egenskaper till FileInfo-objekt. Här är egenskaperna som visas för powershell.exe (förutsatt att $pid är ID för PowerShell-process):
 
 ```powershell
 PS C:\> Get-Process -Id $pid -FileVersionInfo | fl *version* -Force

@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Hämta WMI-objekt Get-WmiObject
 ms.assetid: f0ddfc7d-6b5e-4832-82de-2283597ea70d
 ms.openlocfilehash: 522822ac3ea6f08b20fa5af6c9accb48b01035d3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058258"
 ---
 # <a name="getting-wmi-objects-get-wmiobject"></a>Hämta WMI-objekt (Get-WmiObject)
 

@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: ISEFile-objektet
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 ms.openlocfilehash: 24549720b8bc35435882533b0eb138de432ede65
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057561"
 ---
 # <a name="the-isefile-object"></a>ISEFile-objektet
 
@@ -77,7 +77,7 @@ Den skrivskyddade egenskapen som hämtar den sträng som innehåller visningsnam
 $psISE.CurrentFile.DisplayName
 ```
 
-### <a name="editor"></a>Redigeraren
+### <a name="editor"></a>Redigeringsprogram
 
 Stöds i Windows PowerShell ISE 2.0 och senare.
 

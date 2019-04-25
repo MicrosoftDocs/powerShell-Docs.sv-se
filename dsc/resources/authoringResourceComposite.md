@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Sammansatta resurser – med hjälp av en DSC-konfiguration som en resurs
 ms.openlocfilehash: 2823d05e0c8feb2933ca691f9ab5149ace2f7ee3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076692"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Sammansatta resurser: Använda en DSC-konfiguration som en resurs
 
