@@ -9,58 +9,58 @@ ms.topic: article
 ms.assetid: b07a53df-64f1-49b0-8cea-c993b3f1f76b
 caps.latest.revision: 10
 ms.openlocfilehash: 1bc936b94ee6fd6239e9e3c4afcdb8f14fbe36eb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066948"
 ---
-# <a name="alignment-element-for-tablecolumnitem-for-tablecontrol-format"></a><span data-ttu-id="ba4dd-102">Alignment-element för TableColumnItem för TableControl (format)</span><span class="sxs-lookup"><span data-stu-id="ba4dd-102">Alignment Element for TableColumnItem for TableControl (Format)</span></span>
+# <a name="alignment-element-for-tablecolumnitem-for-tablecontrol-format"></a><span data-ttu-id="d9ca1-102">Alignment-element för TableColumnItem för TableControl (format)</span><span class="sxs-lookup"><span data-stu-id="d9ca1-102">Alignment Element for TableColumnItem for TableControl (Format)</span></span>
 
-<span data-ttu-id="ba4dd-103">Definierar hur data i en kolumn i raden visas.</span><span class="sxs-lookup"><span data-stu-id="ba4dd-103">Defines how the data in a column of the row is displayed.</span></span>
+<span data-ttu-id="d9ca1-103">Definierar hur data i en kolumn i raden visas.</span><span class="sxs-lookup"><span data-stu-id="d9ca1-103">Defines how the data in a column of the row is displayed.</span></span>
 
-<span data-ttu-id="ba4dd-104">Elementet (Format) ViewDefinitions Element (Format) visa Element (Format) TableControl Element (Format) TableRowEntries Element (Format) TableRowEntry Element (Format) TableColumnItems Element (Format) TableColumnItem konfigurationselement (Format) Justering Element för TableColumnItem (Format)</span><span class="sxs-lookup"><span data-stu-id="ba4dd-104">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) TableControl Element (Format) TableRowEntries Element (Format) TableRowEntry Element (Format) TableColumnItems Element (Format) TableColumnItem Element (Format) Alignment Element for TableColumnItem (Format)</span></span>
+<span data-ttu-id="d9ca1-104">Elementet (Format) ViewDefinitions Element (Format) visa Element (Format) TableControl Element (Format) TableRowEntries Element (Format) TableRowEntry Element (Format) TableColumnItems Element (Format) TableColumnItem konfigurationselement (Format) Justering Element för TableColumnItem (Format)</span><span class="sxs-lookup"><span data-stu-id="d9ca1-104">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) TableControl Element (Format) TableRowEntries Element (Format) TableRowEntry Element (Format) TableColumnItems Element (Format) TableColumnItem Element (Format) Alignment Element for TableColumnItem (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="ba4dd-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="ba4dd-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="d9ca1-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="d9ca1-105">Syntax</span></span>
 
 ```xml
 <Alignment>AlignmentType</Alignment>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="ba4dd-106">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="ba4dd-106">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="d9ca1-106">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="d9ca1-106">Attributes and Elements</span></span>
 
-<span data-ttu-id="ba4dd-107">I följande avsnitt beskrivs de attribut och underordnade element överordnade elementet i den `Alignment` element.</span><span class="sxs-lookup"><span data-stu-id="ba4dd-107">The following sections describe the attributes, child elements, and parent element of the `Alignment` element.</span></span>
+<span data-ttu-id="d9ca1-107">I följande avsnitt beskrivs de attribut och underordnade element överordnade elementet i den `Alignment` element.</span><span class="sxs-lookup"><span data-stu-id="d9ca1-107">The following sections describe the attributes, child elements, and parent element of the `Alignment` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="ba4dd-108">Attribut</span><span class="sxs-lookup"><span data-stu-id="ba4dd-108">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="d9ca1-108">Attribut</span><span class="sxs-lookup"><span data-stu-id="d9ca1-108">Attributes</span></span>
 
-<span data-ttu-id="ba4dd-109">Ingen.</span><span class="sxs-lookup"><span data-stu-id="ba4dd-109">None.</span></span>
+<span data-ttu-id="d9ca1-109">Ingen.</span><span class="sxs-lookup"><span data-stu-id="d9ca1-109">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="ba4dd-110">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="ba4dd-110">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="d9ca1-110">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="d9ca1-110">Child Elements</span></span>
 
-<span data-ttu-id="ba4dd-111">Ingen.</span><span class="sxs-lookup"><span data-stu-id="ba4dd-111">None.</span></span>
+<span data-ttu-id="d9ca1-111">Ingen.</span><span class="sxs-lookup"><span data-stu-id="d9ca1-111">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="ba4dd-112">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="ba4dd-112">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="d9ca1-112">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="d9ca1-112">Parent Elements</span></span>
 
-|<span data-ttu-id="ba4dd-113">Element</span><span class="sxs-lookup"><span data-stu-id="ba4dd-113">Element</span></span>|<span data-ttu-id="ba4dd-114">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="ba4dd-114">Description</span></span>|
+|<span data-ttu-id="d9ca1-113">Element</span><span class="sxs-lookup"><span data-stu-id="d9ca1-113">Element</span></span>|<span data-ttu-id="d9ca1-114">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="d9ca1-114">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="ba4dd-115">TableColumnItem Element (Format)</span><span class="sxs-lookup"><span data-stu-id="ba4dd-115">TableColumnItem Element (Format)</span></span>](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|<span data-ttu-id="ba4dd-116">Definierar en etikett, bredd och justering av data för en kolumn i tabellen.</span><span class="sxs-lookup"><span data-stu-id="ba4dd-116">Defines a label, the width, and the alignment of the data for a column of the table.</span></span>|
+|[<span data-ttu-id="d9ca1-115">TableColumnItem Element (Format)</span><span class="sxs-lookup"><span data-stu-id="d9ca1-115">TableColumnItem Element (Format)</span></span>](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|<span data-ttu-id="d9ca1-116">Definierar en etikett, bredd och justering av data för en kolumn i tabellen.</span><span class="sxs-lookup"><span data-stu-id="d9ca1-116">Defines a label, the width, and the alignment of the data for a column of the table.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="ba4dd-117">Textvärde</span><span class="sxs-lookup"><span data-stu-id="ba4dd-117">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="d9ca1-117">Textvärde</span><span class="sxs-lookup"><span data-stu-id="d9ca1-117">Text Value</span></span>
 
-<span data-ttu-id="ba4dd-118">Ange ett av följande värden.</span><span class="sxs-lookup"><span data-stu-id="ba4dd-118">Specify one of the following values.</span></span> <span data-ttu-id="ba4dd-119">(Dessa värden är inte skiftlägeskänsliga.)</span><span class="sxs-lookup"><span data-stu-id="ba4dd-119">(These values are not case-sensitive.)</span></span>
+<span data-ttu-id="d9ca1-118">Ange ett av följande värden.</span><span class="sxs-lookup"><span data-stu-id="d9ca1-118">Specify one of the following values.</span></span> <span data-ttu-id="d9ca1-119">(Dessa värden är inte skiftlägeskänsliga.)</span><span class="sxs-lookup"><span data-stu-id="d9ca1-119">(These values are not case-sensitive.)</span></span>
 
-<span data-ttu-id="ba4dd-120">Vänstra arbetspass data som visas i kolumnen till vänster.</span><span class="sxs-lookup"><span data-stu-id="ba4dd-120">Left Shifts the data displayed in the column to the left.</span></span> <span data-ttu-id="ba4dd-121">(Detta är standardvärdet om det här elementet inte har angetts.)</span><span class="sxs-lookup"><span data-stu-id="ba4dd-121">(This is the default if this element is not specified.)</span></span>
+<span data-ttu-id="d9ca1-120">Vänstra arbetspass data som visas i kolumnen till vänster.</span><span class="sxs-lookup"><span data-stu-id="d9ca1-120">Left Shifts the data displayed in the column to the left.</span></span> <span data-ttu-id="d9ca1-121">(Detta är standardvärdet om det här elementet inte har angetts.)</span><span class="sxs-lookup"><span data-stu-id="d9ca1-121">(This is the default if this element is not specified.)</span></span>
 
-<span data-ttu-id="ba4dd-122">Rätt arbetspass data som visas i kolumnen till höger.</span><span class="sxs-lookup"><span data-stu-id="ba4dd-122">Right Shifts the data displayed in the column to the right.</span></span>
+<span data-ttu-id="d9ca1-122">Rätt arbetspass data som visas i kolumnen till höger.</span><span class="sxs-lookup"><span data-stu-id="d9ca1-122">Right Shifts the data displayed in the column to the right.</span></span>
 
-<span data-ttu-id="ba4dd-123">Center Datacenter data som visas i kolumnen.</span><span class="sxs-lookup"><span data-stu-id="ba4dd-123">Center Centers the data displayed in the column.</span></span>
+<span data-ttu-id="d9ca1-123">Center Datacenter data som visas i kolumnen.</span><span class="sxs-lookup"><span data-stu-id="d9ca1-123">Center Centers the data displayed in the column.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="ba4dd-124">Anmärkningar</span><span class="sxs-lookup"><span data-stu-id="ba4dd-124">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="d9ca1-124">Anmärkningar</span><span class="sxs-lookup"><span data-stu-id="d9ca1-124">Remarks</span></span>
 
-<span data-ttu-id="ba4dd-125">Läs mer om komponenterna i en tabellvy, [tabellvy](./creating-a-table-view.md).</span><span class="sxs-lookup"><span data-stu-id="ba4dd-125">For more information about the components of a table view, see [Table View](./creating-a-table-view.md).</span></span>
+<span data-ttu-id="d9ca1-125">Läs mer om komponenterna i en tabellvy, [tabellvy](./creating-a-table-view.md).</span><span class="sxs-lookup"><span data-stu-id="d9ca1-125">For more information about the components of a table view, see [Table View](./creating-a-table-view.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="ba4dd-126">Se även</span><span class="sxs-lookup"><span data-stu-id="ba4dd-126">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d9ca1-126">Se även</span><span class="sxs-lookup"><span data-stu-id="d9ca1-126">See Also</span></span>
 
-[<span data-ttu-id="ba4dd-127">Tabellvy</span><span class="sxs-lookup"><span data-stu-id="ba4dd-127">Table View</span></span>](./creating-a-table-view.md)
+[<span data-ttu-id="d9ca1-127">Tabellvy</span><span class="sxs-lookup"><span data-stu-id="d9ca1-127">Table View</span></span>](./creating-a-table-view.md)
 
-[<span data-ttu-id="ba4dd-128">TableColumnItem Element (Format)</span><span class="sxs-lookup"><span data-stu-id="ba4dd-128">TableColumnItem Element (Format)</span></span>](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
+[<span data-ttu-id="d9ca1-128">TableColumnItem Element (Format)</span><span class="sxs-lookup"><span data-stu-id="d9ca1-128">TableColumnItem Element (Format)</span></span>](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
