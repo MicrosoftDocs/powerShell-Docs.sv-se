@@ -9,50 +9,50 @@ ms.topic: article
 ms.assetid: 85a53ff2-92f0-4d9b-8e13-d06d82299435
 caps.latest.revision: 6
 ms.openlocfilehash: 06ed340e3db237d4090961fef98333bd67a2a755
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065367"
 ---
-# <a name="leftindent-element-for-frame-for-controls-for-view-format"></a><span data-ttu-id="8dc34-102">LeftIndent-element för Frame för Controls för View (format)</span><span class="sxs-lookup"><span data-stu-id="8dc34-102">LeftIndent Element for Frame for Controls for View (Format)</span></span>
+# <a name="leftindent-element-for-frame-for-controls-for-view-format"></a><span data-ttu-id="59a1b-102">LeftIndent-element för Frame för Controls för View (format)</span><span class="sxs-lookup"><span data-stu-id="59a1b-102">LeftIndent Element for Frame for Controls for View (Format)</span></span>
 
-<span data-ttu-id="8dc34-103">Anger hur många tecken som data ska flyttas från vänster marginal.</span><span class="sxs-lookup"><span data-stu-id="8dc34-103">Specifies how many characters the data is shifted away from the left margin.</span></span> <span data-ttu-id="8dc34-104">Det här elementet används när du definierar kontroller som kan användas av en vy.</span><span class="sxs-lookup"><span data-stu-id="8dc34-104">This element is used when defining controls that can be used by a view.</span></span>
+<span data-ttu-id="59a1b-103">Anger hur många tecken som data ska flyttas från vänster marginal.</span><span class="sxs-lookup"><span data-stu-id="59a1b-103">Specifies how many characters the data is shifted away from the left margin.</span></span> <span data-ttu-id="59a1b-104">Det här elementet används när du definierar kontroller som kan användas av en vy.</span><span class="sxs-lookup"><span data-stu-id="59a1b-104">This element is used when defining controls that can be used by a view.</span></span>
 
-<span data-ttu-id="8dc34-105">Elementet (Format) ViewDefinitions Element (Format) visa Element (Format) kontroller Element (Format) kontroll konfigurationselement för kontroller för att visa (Format) anpassad kontroll Element för kontroll för kontroller för att visa (Format) CustomEntries Element för Anpassad kontroll för Visa (Format) CustomEntry elementet för CustomEntries för kontroller för att visa (Format) CustomItem Element för CustomEntry för kontroller för att visa (Format) RAM-Element för CustomItem för kontroller för att visa (Format) LeftIndent Element av bildruta från Kontroller av vy (Format)</span><span class="sxs-lookup"><span data-stu-id="8dc34-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) Controls Element (Format) Control Element for Controls for View (Format) CustomControl Element for Control for Controls for View (Format) CustomEntries Element for CustomControl for View (Format) CustomEntry Element for CustomEntries for Controls for View (Format) CustomItem Element for CustomEntry for Controls for View (Format) Frame Element for CustomItem for Controls for View (Format) LeftIndent Element of Frame of Controls of View (Format)</span></span>
+<span data-ttu-id="59a1b-105">Elementet (Format) ViewDefinitions Element (Format) visa Element (Format) kontroller Element (Format) kontroll konfigurationselement för kontroller för att visa (Format) anpassad kontroll Element för kontroll för kontroller för att visa (Format) CustomEntries Element för Anpassad kontroll för Visa (Format) CustomEntry elementet för CustomEntries för kontroller för att visa (Format) CustomItem Element för CustomEntry för kontroller för att visa (Format) RAM-Element för CustomItem för kontroller för att visa (Format) LeftIndent Element av bildruta från Kontroller av vy (Format)</span><span class="sxs-lookup"><span data-stu-id="59a1b-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) Controls Element (Format) Control Element for Controls for View (Format) CustomControl Element for Control for Controls for View (Format) CustomEntries Element for CustomControl for View (Format) CustomEntry Element for CustomEntries for Controls for View (Format) CustomItem Element for CustomEntry for Controls for View (Format) Frame Element for CustomItem for Controls for View (Format) LeftIndent Element of Frame of Controls of View (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="8dc34-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="8dc34-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="59a1b-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="59a1b-106">Syntax</span></span>
 
 ```xml
 <LeftIndent>CharactersToShift</LeftIndent>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="8dc34-107">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="8dc34-107">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="59a1b-107">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="59a1b-107">Attributes and Elements</span></span>
 
-<span data-ttu-id="8dc34-108">I följande avsnitt beskrivs attribut, underordnade element och överordnade elementet i den `LeftIndent` element.</span><span class="sxs-lookup"><span data-stu-id="8dc34-108">The following sections describe attributes, child elements, and parent element of the `LeftIndent` element.</span></span>
+<span data-ttu-id="59a1b-108">I följande avsnitt beskrivs attribut, underordnade element och överordnade elementet i den `LeftIndent` element.</span><span class="sxs-lookup"><span data-stu-id="59a1b-108">The following sections describe attributes, child elements, and parent element of the `LeftIndent` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="8dc34-109">Attribut</span><span class="sxs-lookup"><span data-stu-id="8dc34-109">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="59a1b-109">Attribut</span><span class="sxs-lookup"><span data-stu-id="59a1b-109">Attributes</span></span>
 
-<span data-ttu-id="8dc34-110">Ingen.</span><span class="sxs-lookup"><span data-stu-id="8dc34-110">None.</span></span>
+<span data-ttu-id="59a1b-110">Ingen.</span><span class="sxs-lookup"><span data-stu-id="59a1b-110">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="8dc34-111">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="8dc34-111">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="59a1b-111">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="59a1b-111">Child Elements</span></span>
 
-<span data-ttu-id="8dc34-112">Ingen.</span><span class="sxs-lookup"><span data-stu-id="8dc34-112">None.</span></span>
+<span data-ttu-id="59a1b-112">Ingen.</span><span class="sxs-lookup"><span data-stu-id="59a1b-112">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="8dc34-113">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="8dc34-113">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="59a1b-113">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="59a1b-113">Parent Elements</span></span>
 
-|<span data-ttu-id="8dc34-114">Element</span><span class="sxs-lookup"><span data-stu-id="8dc34-114">Element</span></span>|<span data-ttu-id="8dc34-115">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="8dc34-115">Description</span></span>|
+|<span data-ttu-id="59a1b-114">Element</span><span class="sxs-lookup"><span data-stu-id="59a1b-114">Element</span></span>|<span data-ttu-id="59a1b-115">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="59a1b-115">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="8dc34-116">Ramens Element för CustomItem för kontroller för att visa (Format)</span><span class="sxs-lookup"><span data-stu-id="8dc34-116">Frame Element for CustomItem for Controls for View (Format)</span></span>](./frame-element-for-customitem-for-controls-for-view-format.md)|<span data-ttu-id="8dc34-117">Definierar hur data visas, till exempel ändra datatypen till vänster eller höger.</span><span class="sxs-lookup"><span data-stu-id="8dc34-117">Defines how the data is displayed, such as shifting the data to the left or right.</span></span>|
+|[<span data-ttu-id="59a1b-116">Ramens Element för CustomItem för kontroller för att visa (Format)</span><span class="sxs-lookup"><span data-stu-id="59a1b-116">Frame Element for CustomItem for Controls for View (Format)</span></span>](./frame-element-for-customitem-for-controls-for-view-format.md)|<span data-ttu-id="59a1b-117">Definierar hur data visas, till exempel ändra datatypen till vänster eller höger.</span><span class="sxs-lookup"><span data-stu-id="59a1b-117">Defines how the data is displayed, such as shifting the data to the left or right.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="8dc34-118">Textvärde</span><span class="sxs-lookup"><span data-stu-id="8dc34-118">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="59a1b-118">Textvärde</span><span class="sxs-lookup"><span data-stu-id="59a1b-118">Text Value</span></span>
 
-<span data-ttu-id="8dc34-119">Ange antalet tecken som du vill flytta data till vänster.</span><span class="sxs-lookup"><span data-stu-id="8dc34-119">Specify the number of characters that you want to shift the data to the left.</span></span>
+<span data-ttu-id="59a1b-119">Ange antalet tecken som du vill flytta data till vänster.</span><span class="sxs-lookup"><span data-stu-id="59a1b-119">Specify the number of characters that you want to shift the data to the left.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="8dc34-120">Anmärkningar</span><span class="sxs-lookup"><span data-stu-id="8dc34-120">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="59a1b-120">Anmärkningar</span><span class="sxs-lookup"><span data-stu-id="59a1b-120">Remarks</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="8dc34-121">Se även</span><span class="sxs-lookup"><span data-stu-id="8dc34-121">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="59a1b-121">Se även</span><span class="sxs-lookup"><span data-stu-id="59a1b-121">See Also</span></span>
 
-[<span data-ttu-id="8dc34-122">Ramens Element för CustomItem för kontroller för att visa (Format)</span><span class="sxs-lookup"><span data-stu-id="8dc34-122">Frame Element for CustomItem for Controls for View (Format)</span></span>](./frame-element-for-customitem-for-controls-for-view-format.md)
+[<span data-ttu-id="59a1b-122">Ramens Element för CustomItem för kontroller för att visa (Format)</span><span class="sxs-lookup"><span data-stu-id="59a1b-122">Frame Element for CustomItem for Controls for View (Format)</span></span>](./frame-element-for-customitem-for-controls-for-view-format.md)
 
-[<span data-ttu-id="8dc34-123">Skriva ett PowerShell formatering fil</span><span class="sxs-lookup"><span data-stu-id="8dc34-123">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="59a1b-123">Skriva ett PowerShell formatering fil</span><span class="sxs-lookup"><span data-stu-id="59a1b-123">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)

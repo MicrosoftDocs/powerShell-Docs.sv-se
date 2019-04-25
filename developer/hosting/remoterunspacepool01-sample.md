@@ -9,35 +9,35 @@ ms.topic: article
 ms.assetid: dffedd31-c10d-4e11-a9ee-4fdfe9a869e8
 caps.latest.revision: 8
 ms.openlocfilehash: 894c995474d4bf5b7fe11c1289c4500371c9dd43
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082761"
 ---
-# <a name="remoterunspacepool01-sample"></a><span data-ttu-id="62fd8-102">RemoteRunspacePool01 – exempel</span><span class="sxs-lookup"><span data-stu-id="62fd8-102">RemoteRunspacePool01 Sample</span></span>
+# <a name="remoterunspacepool01-sample"></a><span data-ttu-id="e96b2-102">RemoteRunspacePool01 – exempel</span><span class="sxs-lookup"><span data-stu-id="e96b2-102">RemoteRunspacePool01 Sample</span></span>
 
-<span data-ttu-id="62fd8-103">Detta exempel visar hur du skapar poolen fjärrkörningsutrymme och hur du kör flera kommandon samtidigt med hjälp av den här poolen.</span><span class="sxs-lookup"><span data-stu-id="62fd8-103">This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.</span></span>
+<span data-ttu-id="e96b2-103">Detta exempel visar hur du skapar poolen fjärrkörningsutrymme och hur du kör flera kommandon samtidigt med hjälp av den här poolen.</span><span class="sxs-lookup"><span data-stu-id="e96b2-103">This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="62fd8-104">Krav</span><span class="sxs-lookup"><span data-stu-id="62fd8-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="e96b2-104">Krav</span><span class="sxs-lookup"><span data-stu-id="e96b2-104">Requirements</span></span>
 
- <span data-ttu-id="62fd8-105">Det här exemplet kräver Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="62fd8-105">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="e96b2-105">Det här exemplet kräver Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="e96b2-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="62fd8-106">Visar</span><span class="sxs-lookup"><span data-stu-id="62fd8-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="e96b2-106">Visar</span><span class="sxs-lookup"><span data-stu-id="e96b2-106">Demonstrates</span></span>
 
-- <span data-ttu-id="62fd8-107">Skapa en [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objekt.</span><span class="sxs-lookup"><span data-stu-id="62fd8-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="e96b2-107">Skapa en [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objekt.</span><span class="sxs-lookup"><span data-stu-id="e96b2-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="62fd8-108">Ange den [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) och [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) egenskaperna för den [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objekt.</span><span class="sxs-lookup"><span data-stu-id="62fd8-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="e96b2-108">Ange den [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) och [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) egenskaperna för den [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objekt.</span><span class="sxs-lookup"><span data-stu-id="e96b2-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="62fd8-109">Skapar ett fjärrkörningsutrymme som använder den [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objekt för att upprätta anslutningen.</span><span class="sxs-lookup"><span data-stu-id="62fd8-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
+- <span data-ttu-id="e96b2-109">Skapar ett fjärrkörningsutrymme som använder den [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objekt för att upprätta anslutningen.</span><span class="sxs-lookup"><span data-stu-id="e96b2-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
 
-- <span data-ttu-id="62fd8-110">Kör den [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) och [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlet: ar samtidigt med fjärrkörningsutrymme poolen.</span><span class="sxs-lookup"><span data-stu-id="62fd8-110">Running the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlets concurrently by using the remote runspace pool.</span></span>
+- <span data-ttu-id="e96b2-110">Kör den [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) och [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlet: ar samtidigt med fjärrkörningsutrymme poolen.</span><span class="sxs-lookup"><span data-stu-id="e96b2-110">Running the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlets concurrently by using the remote runspace pool.</span></span>
 
-- <span data-ttu-id="62fd8-111">Stänger fjärrkörningsutrymme poolen om du vill frigöra fjärranslutningen.</span><span class="sxs-lookup"><span data-stu-id="62fd8-111">Closing the remote runspace pool to release the remote connection.</span></span>
+- <span data-ttu-id="e96b2-111">Stänger fjärrkörningsutrymme poolen om du vill frigöra fjärranslutningen.</span><span class="sxs-lookup"><span data-stu-id="e96b2-111">Closing the remote runspace pool to release the remote connection.</span></span>
 
-## <a name="example"></a><span data-ttu-id="62fd8-112">Exempel</span><span class="sxs-lookup"><span data-stu-id="62fd8-112">Example</span></span>
+## <a name="example"></a><span data-ttu-id="e96b2-112">Exempel</span><span class="sxs-lookup"><span data-stu-id="e96b2-112">Example</span></span>
 
- <span data-ttu-id="62fd8-113">Detta exempel visar hur du skapar poolen fjärrkörningsutrymme och hur du kör flera kommandon samtidigt med hjälp av den här poolen.</span><span class="sxs-lookup"><span data-stu-id="62fd8-113">This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.</span></span>
+ <span data-ttu-id="e96b2-113">Detta exempel visar hur du skapar poolen fjärrkörningsutrymme och hur du kör flera kommandon samtidigt med hjälp av den här poolen.</span><span class="sxs-lookup"><span data-stu-id="e96b2-113">This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.</span></span>
 
 ```csharp
 namespace Samples
@@ -132,4 +132,4 @@ namespace Samples
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="62fd8-114">Se även</span><span class="sxs-lookup"><span data-stu-id="62fd8-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e96b2-114">Se även</span><span class="sxs-lookup"><span data-stu-id="e96b2-114">See Also</span></span>
