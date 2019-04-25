@@ -4,23 +4,23 @@ schema: 2.0.0
 keywords: PowerShell
 title: Kräver godkännande av licensen för skript
 ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084682"
 ---
-# <a name="requiring-license-acceptance-for-scripts"></a><span data-ttu-id="572a3-103">Kräver godkännande av licensen för skript</span><span class="sxs-lookup"><span data-stu-id="572a3-103">Requiring license acceptance for scripts</span></span>
+# <a name="requiring-license-acceptance-for-scripts"></a><span data-ttu-id="b6ee8-103">Kräver godkännande av licensen för skript</span><span class="sxs-lookup"><span data-stu-id="b6ee8-103">Requiring license acceptance for scripts</span></span>
 
-<span data-ttu-id="572a3-104">Godkännande av licensen finns inte stöd för skript.</span><span class="sxs-lookup"><span data-stu-id="572a3-104">License Acceptance is not supported for scripts.</span></span> <span data-ttu-id="572a3-105">Ett scenario där ett skript beror på en modul som kräver godkännande av licensen stöds dock.</span><span class="sxs-lookup"><span data-stu-id="572a3-105">However, the scenario where a script depends on a module that requires license acceptance is supported.</span></span>
+<span data-ttu-id="b6ee8-104">Godkännande av licensen finns inte stöd för skript.</span><span class="sxs-lookup"><span data-stu-id="b6ee8-104">License Acceptance is not supported for scripts.</span></span> <span data-ttu-id="b6ee8-105">Ett scenario där ett skript beror på en modul som kräver godkännande av licensen stöds dock.</span><span class="sxs-lookup"><span data-stu-id="b6ee8-105">However, the scenario where a script depends on a module that requires license acceptance is supported.</span></span>
 
-<span data-ttu-id="572a3-106">Skriptet commands(Install-Script/Save-Script/Update-Script) stöd för en ny parameter - AcceptLicense som fungerar som om användaren såg licensen.</span><span class="sxs-lookup"><span data-stu-id="572a3-106">Script commands(Install-Script/Save-Script/Update-Script) support a new parameter -AcceptLicense that behaves as though user saw the license.</span></span> <span data-ttu-id="572a3-107">Om inte anges - AcceptLicense; användaren ska visas license.txt för beroende modulen och du uppmanas att acceptera licensen.</span><span class="sxs-lookup"><span data-stu-id="572a3-107">If -AcceptLicense is not specified; the user will be shown license.txt for dependent module and prompted to accept the license.</span></span>
+<span data-ttu-id="b6ee8-106">Skriptet commands(Install-Script/Save-Script/Update-Script) stöd för en ny parameter - AcceptLicense som fungerar som om användaren såg licensen.</span><span class="sxs-lookup"><span data-stu-id="b6ee8-106">Script commands(Install-Script/Save-Script/Update-Script) support a new parameter -AcceptLicense that behaves as though user saw the license.</span></span> <span data-ttu-id="b6ee8-107">Om inte anges - AcceptLicense; användaren ska visas license.txt för beroende modulen och du uppmanas att acceptera licensen.</span><span class="sxs-lookup"><span data-stu-id="b6ee8-107">If -AcceptLicense is not specified; the user will be shown license.txt for dependent module and prompted to accept the license.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="572a3-108">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="572a3-108">EXAMPLES</span></span>
+## <a name="examples"></a><span data-ttu-id="b6ee8-108">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="b6ee8-108">EXAMPLES</span></span>
 
-### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a><span data-ttu-id="572a3-109">Exempel 1: Installera skript med beroenden som kräver godkännande av licensen</span><span class="sxs-lookup"><span data-stu-id="572a3-109">Example 1: Install Script with dependencies requiring license acceptance</span></span>
+### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a><span data-ttu-id="b6ee8-109">Exempel 1: Installera skript med beroenden som kräver godkännande av licensen</span><span class="sxs-lookup"><span data-stu-id="b6ee8-109">Example 1: Install Script with dependencies requiring license acceptance</span></span>
 
-<span data-ttu-id="572a3-110">Skriptet ScriptRequireLicenseAcceptance är beroende av modulen ”ModuleRequireLicenseAcceptance”.</span><span class="sxs-lookup"><span data-stu-id="572a3-110">Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'.</span></span> <span data-ttu-id="572a3-111">Användaren uppmanas att acceptera licensen.</span><span class="sxs-lookup"><span data-stu-id="572a3-111">User is prompted to Accept License.</span></span>
+<span data-ttu-id="b6ee8-110">Skriptet ScriptRequireLicenseAcceptance är beroende av modulen ”ModuleRequireLicenseAcceptance”.</span><span class="sxs-lookup"><span data-stu-id="b6ee8-110">Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'.</span></span> <span data-ttu-id="b6ee8-111">Användaren uppmanas att acceptera licensen.</span><span class="sxs-lookup"><span data-stu-id="b6ee8-111">User is prompted to Accept License.</span></span>
 
 ```PowerShell
 PS> Install-Script -Name ScriptRequireLicenseAcceptance
@@ -38,16 +38,16 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a><span data-ttu-id="572a3-112">Exempel 2: Installera skript med beroenden som kräver godkännande av licensen och -AcceptLicense</span><span class="sxs-lookup"><span data-stu-id="572a3-112">Example 2: Install Script with dependencies requiring license acceptance and -AcceptLicense</span></span>
+### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a><span data-ttu-id="b6ee8-112">Exempel 2: Installera skript med beroenden som kräver godkännande av licensen och -AcceptLicense</span><span class="sxs-lookup"><span data-stu-id="b6ee8-112">Example 2: Install Script with dependencies requiring license acceptance and -AcceptLicense</span></span>
 
-<span data-ttu-id="572a3-113">Skriptet ScriptRequireLicenseAcceptance är beroende av modulen ”ModuleRequireLicenseAcceptance”.</span><span class="sxs-lookup"><span data-stu-id="572a3-113">Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'.</span></span> <span data-ttu-id="572a3-114">Användaren behöver inte ange att acceptera licensen eftersom - AcceptLicense har angetts.</span><span class="sxs-lookup"><span data-stu-id="572a3-114">User is not prompted to accept license as -AcceptLicense is specified.</span></span>
+<span data-ttu-id="b6ee8-113">Skriptet ScriptRequireLicenseAcceptance är beroende av modulen ”ModuleRequireLicenseAcceptance”.</span><span class="sxs-lookup"><span data-stu-id="b6ee8-113">Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'.</span></span> <span data-ttu-id="b6ee8-114">Användaren behöver inte ange att acceptera licensen eftersom - AcceptLicense har angetts.</span><span class="sxs-lookup"><span data-stu-id="b6ee8-114">User is not prompted to accept license as -AcceptLicense is specified.</span></span>
 
 ```PowerShell
 PS> Install-Script -Name ScriptRequireLicenseAcceptance -AcceptLicense
 ```
 
-## <a name="more-details"></a><span data-ttu-id="572a3-115">Mer information</span><span class="sxs-lookup"><span data-stu-id="572a3-115">More details</span></span>
+## <a name="more-details"></a><span data-ttu-id="b6ee8-115">Mer information</span><span class="sxs-lookup"><span data-stu-id="b6ee8-115">More details</span></span>
 
-- [<span data-ttu-id="572a3-116">Kräv godkännande av licensen stöd för moduler</span><span class="sxs-lookup"><span data-stu-id="572a3-116">Require License Acceptance support for Modules</span></span>](module-license-acceptance.md)
-- [<span data-ttu-id="572a3-117">Kräv godkännande av licensen stöd på PowerShellGallery</span><span class="sxs-lookup"><span data-stu-id="572a3-117">Require License Acceptance support on PowerShellGallery</span></span>](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
-- [<span data-ttu-id="572a3-118">Kräv godkännande av licensen vid distribuera till Azure Automation</span><span class="sxs-lookup"><span data-stu-id="572a3-118">Require License Acceptance on Deploy to Azure Automation</span></span>](../how-to/working-with-packages/deploy-to-azure-automation.md)
+- [<span data-ttu-id="b6ee8-116">Kräv godkännande av licensen stöd för moduler</span><span class="sxs-lookup"><span data-stu-id="b6ee8-116">Require License Acceptance support for Modules</span></span>](module-license-acceptance.md)
+- [<span data-ttu-id="b6ee8-117">Kräv godkännande av licensen stöd på PowerShellGallery</span><span class="sxs-lookup"><span data-stu-id="b6ee8-117">Require License Acceptance support on PowerShellGallery</span></span>](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
+- [<span data-ttu-id="b6ee8-118">Kräv godkännande av licensen vid distribuera till Azure Automation</span><span class="sxs-lookup"><span data-stu-id="b6ee8-118">Require License Acceptance on Deploy to Azure Automation</span></span>](../how-to/working-with-packages/deploy-to-azure-automation.md)
