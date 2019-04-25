@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 14208e3b5d5c2fef80fa42a87cc00aeee81bd042
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b8940ded189d822a5a2cd40773ef5146353611cc
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189915"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059006"
 ---
-# <a name="cryptographic-message-syntax-cms-cmdlets"></a>Cryptographic Message Syntax (CMS) cmdlets
+# <a name="cryptographic-message-syntax-cms-cmdlets"></a>Cryptographic Message Syntax CMS-cmdletar
 
-Syntax för kryptografiska meddelanden-cmdlets stöd för kryptering och dekryptering av innehåll med hjälp av format för IETF-standard för att skydda kryptografiskt meddelanden som det dokumenterats i [RFC5652](https://tools.ietf.org/html/rfc5652).
+Syntaxen Cryptographic Message Syntax-cmdletarna har stöd för kryptering och dekryptering av innehåll med hjälp av IETF standardformat för att skydda kryptografiskt meddelanden som det dokumenterats i [RFC5652](https://tools.ietf.org/html/rfc5652).
 
 ```powershell
 Get-CmsMessage [-Content] <string>
@@ -25,13 +25,13 @@ Unprotect-CmsMessage [-Path] <string> [[-To] <CmsMessageRecipient[]>] [-IncludeC
 Unprotect-CmsMessage [-LiteralPath] <string> [[-To] <CmsMessageRecipient[]>] [-IncludeContext]
 ```
 
-CMS-kryptering standard implementerar kryptering med offentlig nyckel, där nycklar används för att kryptera innehållet (den *offentliga nyckel*) och nycklar som används för att dekryptera innehållet (den *privat nyckel*) är separat.
+Standard CMS krypteringen implementerar kryptering med offentlig nyckel, där nycklarna som används för att kryptera innehållet (den *offentlig nyckel*) och alla nycklarna som används för att dekryptera innehåll (den *privata nyckeln*) är separata.
 
-Din offentliga nyckel kan delas brett och är inte känsliga data. Om allt innehåll krypteras med den här offentliga nyckeln kan kan bara din privata nyckel dekryptera den. Mer information finns i [offentliga nycklar](https://en.wikipedia.org/wiki/Public-key_cryptography).
+Din offentliga nyckel kan delas brett och är inte känsliga data. Om allt innehåll som är krypterade med den offentliga nyckeln kan kan bara din privata nyckel dekryptera den. Mer information finns i [kryptografi med offentliga nycklar](https://en.wikipedia.org/wiki/Public-key_cryptography).
 
-Om du vill för att identifiera i PowerShell kräver krypteringscertifikat en identifierare för unik nyckelanvändning (EKU) att identifiera dem som data krypteringscertifikat (till exempel identifierare för ”kodsignering”, krypterade e).
+Om du vill bli uppmärksammad i PowerShell, kräver krypteringscertifikat en identifierare för unika nyckelanvändning (EKU) att identifiera dem som data krypteringscertifikat (t.ex. ID: n för ”kodsignering”, krypterade e).
 
-Här är ett exempel på hur du skapar ett certifikat som är bra för kryptering av dokument:
+Här är ett exempel för att skapa ett certifikat som är bra för kryptering av dokument:
 
 ```powershell
 (Change the text in **Subject** to your name, email, or other identifier), and put in a file (i.e.: DocumentEncryption.inf):
@@ -60,7 +60,7 @@ Kör sedan:
 certreq -new DocumentEncryption.inf DocumentEncryption.cer
 ```
 
-Och du kan nu kryptera och dekryptera innehåll:
+Och nu kan kryptera och dekryptera innehåll:
 
 ```powershell
 $protected = "Hello World" | Protect-CmsMessage -To "\*me@somewhere.com\*[](mailto:*leeholm@microsoft.com*)"
@@ -80,14 +80,14 @@ $protected | Unprotect-CmsMessage
 Hello World
 ```
 
-En parameter av typen **CMSMessageRecipient** stöder identifierare i följande format:
-- Ett faktiska certifikat (som hämtades från providern certifikat)
+Någon parameter av typen **CMSMessageRecipient** stöder identifierare i följande format:
+- Ett verkligt certifikat (som hämtas från certifikatleverantör)
 - Sökvägen till i en fil som innehåller certifikatet
-- Sökvägen till en katalog som innehåller certifikat
+- Sökvägen till en katalog som innehåller certifikatet
 - Tumavtrycket för certifikatet (används för att leta i certifikatarkivet)
 - Ämnesnamnet för certifikatet (används för att leta i certifikatarkivet)
 
-Du kan använda för att visa dokumentet krypteringscertifikat i providern certifikatet, den **- DocumentEncryptionCert** dynamic-parametern:
+Om du vill visa dokumentet krypteringscertifikat i certifikatleverantör, du kan använda den **- DocumentEncryptionCert** dynamisk parameter:
 
 ```powershell
 dir -DocumentEncryptionCert

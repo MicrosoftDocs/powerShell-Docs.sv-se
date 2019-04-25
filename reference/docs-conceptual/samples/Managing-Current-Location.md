@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Hantera aktuell plats
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
 ms.openlocfilehash: f5e0653b2c3bbc9d2526c7a1c2ff88a8a6641695
-ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
-ms.translationtype: HT
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59984433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086263"
 ---
 # <a name="managing-current-location"></a>Hantera aktuell plats
 

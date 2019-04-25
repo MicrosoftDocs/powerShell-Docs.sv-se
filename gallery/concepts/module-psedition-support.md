@@ -4,11 +4,11 @@ contributor: manikb
 keywords: galleriet, powershell, cmdlet, psget
 title: Moduler med kompatibla PowerShell-utgåvor
 ms.openlocfilehash: 425588c168a4f864fdc0c52aa53cfd748b80dc98
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623848"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084733"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Moduler med kompatibla PowerShell-utgåvor
 
@@ -79,7 +79,7 @@ Modulskapare kan publicera en enda modulen riktar in sig på att ena eller båda
 
 En enda modul fungerar på både Desktop- och Core-utgåvor, i modulen författare har att lägga till nödvändig kod i antingen RootModule eller i modulmanifestet med $PSEdition variabeln. Moduler kan ha två uppsättningar kompilerade DLL: er som både på CoreCLR och FullCLR. Här följer några av alternativ för att paketera din modul med logik för att läsa in rätt DLL-filer.
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Alternativ 1: Paketera en modul för flera versioner och flera versioner av PowerShell
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Option 1: Paketera en modul för flera versioner och flera versioner av PowerShell
 
 Modulen mappinnehåll
 

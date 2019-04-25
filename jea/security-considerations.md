@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, säkerhet
 title: JEA-säkerhetsaspekter
-ms.openlocfilehash: ede727f0f30412d520712d6ba855ba2008375d9a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9526e141517601ae3b6d6932cd3536fdf49aa9a6
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084784"
 ---
 # <a name="jea-security-considerations"></a>JEA-säkerhetsaspekter
 
@@ -127,7 +127,7 @@ Anta exempelvis att följande roll funktionen post:
 ```
 
 Den här rollen-funktionen kan användare köra alla PowerShell-cmdlet med substantiv ”Process” från modulen Microsoft.PowerShell.Management.
-Användare kan behöva använda cmdletar som `Get-Process` att förstå vilka program som körs på systemet och `Stop-Process` avstannat att avsluta några program.
+Användare kan behöva använda cmdletar som `Get-Process` att förstå vilka program som körs på systemet och `Stop-Process` att avsluta alla program som inte svarar.
 Den här posten också kan dock `Start-Process`, som kan användas för att starta en godtycklig program med fullständig administratörsbehörighet.
 Programmet inte behöver installeras lokalt på datorn, så att en angripare kan bara starta ett program på en filresurs som ger de anslutande användarbehörigheter för lokal administratör och kör skadlig kod ”.
 

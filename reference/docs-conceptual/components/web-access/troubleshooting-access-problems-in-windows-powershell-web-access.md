@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: PowerShell cmdlet
 title: Felsökning av åtkomstproblem i windows powershell-webbåtkomst
 ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086603"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Felsökning av åtkomstproblem i Windows PowerShell-webbåtkomst
 
@@ -47,7 +47,7 @@ Det här problemet är specifikt för Internet Explorer.
 
 Detta kan inträffa om en användare har loggat in med ett domännamn som innehåller kinesiska tecken, eller om ett eller flera kinesiska tecken ingår i namnet på gateway-servern.
 
-#### <a name="workaround"></a>Lösning
+#### <a name="workaround"></a>Lösning:
 
 1. [Installera och köra Internet Explorer 10](https://ie.microsoft.com/testdrive/info/downloads/Default.html)
 1. Ändra Internet Explorer **dokumentläge** att ställa in *IE10* standarder.
@@ -101,13 +101,13 @@ ComputerGroup | Server\_name\\computer\_group<br/>Localhost\\datorn\_grupp<br/>.
 
 Parameter | Värde
 -- | --
-ComputerName | Fullständigt kvalificerat namn på gateway-server eller Localhost
+Datornamn | Fullständigt kvalificerat namn på gateway-server eller Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>Gateway-servern finns i en arbetsgrupp
 
 Parameter | Värde
 -- | --
-ComputerName | Servernamn
+Datornamn | Servernamn
 
 ### <a name="gateway-credentials"></a>Gateway-autentiseringsuppgifter
 

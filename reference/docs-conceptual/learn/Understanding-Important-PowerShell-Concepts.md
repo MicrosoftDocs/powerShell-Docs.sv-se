@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Förstå viktiga PowerShell-koncept
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
 ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058598"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Förstå viktiga PowerShell-koncept
 
@@ -38,6 +38,6 @@ Eftersom PowerShell automatiskt tolkar och bearbetar command line den **-?** Par
 > Om du kör en grafisk programmet i PowerShell, öppnas fönstret för programmet.
 > PowerShell intervenes endast när bearbetning av kommandoraden indata du anger eller programutdata som returneras till konsolfönstret. Den påverkar inte hur programmet fungerar internt.
 
-## <a name="powershell-uses-some-c-syntax"></a>PowerShell använder vissa C#-syntax
+## <a name="powershell-uses-some-c-syntax"></a>PowerShell använder vissa C# syntax
 
-PowerShell bygger på .NET Framework. Den delar vissa syntaxfunktioner och nyckelord med programmeringsspråket C#. Lära sig PowerShell kan göra det enklare att lära dig C#. Om du redan är bekant med C#, göra dessa likheter lära sig PowerShell enklare.
+PowerShell bygger på .NET Framework. Den delar vissa syntaxfunktioner och nyckelord med det C# programmeringsspråket. Lära sig PowerShell kan göra det enklare att lära dig C#. Om du redan är bekant med C#, dessa likheter kan göra lära sig PowerShell enklare.

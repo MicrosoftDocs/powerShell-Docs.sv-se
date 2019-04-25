@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: f411bfde063615d6ba7c01b8ed50e0b5b9ae6d70
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085172"
 ---
 # <a name="product-compatibility-status"></a>Status för produktkompatibilitet
 

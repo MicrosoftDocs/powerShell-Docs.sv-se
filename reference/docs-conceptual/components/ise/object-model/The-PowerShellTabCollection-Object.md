@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: PowerShellTabCollection-objektet
 ms.assetid: 81f4bf4a-83bf-415e-8378-1703792fbb58
 ms.openlocfilehash: d9088b26de35360b8258d3f15924b3010a986d15
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086626"
 ---
 # <a name="the-powershelltabcollection-object"></a>PowerShellTabCollection-objektet
 
@@ -27,7 +27,7 @@ $newTab = $psISE.PowerShellTabs.Add()
 $newTab.DisplayName = 'Brand New Tab'
 ```
 
-### <a name="removemicrosoftpowershellhostisepowershelltab-pstab"></a>Ta bort\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
+### <a name="removemicrosoftpowershellhostisepowershelltab-pstab"></a>Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
 
 Stöds i Windows PowerShell ISE 2.0 och senare.
 
@@ -64,6 +64,6 @@ $psISE.PowerShellTabs.SelectedPowerShellTab = $oldTab
 
 ## <a name="see-also"></a>Se även
 
-- [PowerShellTab-objektet](The-PowerShellTab-Object.md)
+- [The PowerShellTab Object](The-PowerShellTab-Object.md)
 - [Syftet med den Windows PowerShell ISE-Skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)

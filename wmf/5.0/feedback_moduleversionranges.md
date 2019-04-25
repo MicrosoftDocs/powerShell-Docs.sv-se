@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: f491e30859cbe6cbaa58f94389382ff231c52956
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e2c9233734a6ede04e8ec2bbad05950cbb31cbba
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225699"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057520"
 ---
-# <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Moduler som har stöd för deklarerar versioner som stöds (1.* osv)
-I kombination med **- MinimumVersion**, **- MaximumVersion** nu kan användare get/import-module inom ett visst intervall. Parametern stöder också **.** \*. I följande exempel visas hur det fungerar:
+# <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Modulstöd för att deklarera versionsintervall (1.*, osv)
+I kombination med **- MinimumVersion**, **- MaximumVersion** nu tillåter användare att get/import-module inom specifika intervall. Parametern stöder också **.** \*. I följande exempel visas hur det fungerar:
 
-Nu kan du kombinera **- MinimumVersion** och **- MaximumVersion** importera modul i särskilda intervall:
+Nu, kan du kombinera **- MinimumVersion** och **- MaximumVersion** importera modul inom specifika intervall:
 
 ```powershell
 PS C:\> Import-Module psreadline -Verbose -MinimumVersion 1.0 -MaximumVersion 1.2.*

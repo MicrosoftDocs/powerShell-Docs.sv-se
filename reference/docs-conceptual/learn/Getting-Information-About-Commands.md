@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Få information om kommandon
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ms.openlocfilehash: 7af83e3a0e776d96e580b442430357b4ea063a72
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057714"
 ---
 # <a name="getting-information-about-commands"></a>Få information om kommandon
 
@@ -74,7 +74,7 @@ Det är mer användbart att titta på en reducerad uppsättning kommandon.
 > Asterisken (\*) används för matchning i PowerShell kommandoargumenten med jokertecken. Den \* ”matchar en eller flera tecken”. Du kan skriva `Get-Command a*` att hitta alla kommandon som börjar med bokstaven ”a”. Till skillnad från matchning med jokertecken i **cmd.exe**, PowerShell-jokertecken också matchar en punkt.
 
 Använd den **CommandType** -parametern för `Get-Command` att hämta inbyggda kommandon av andra typer.
-.
+cmdlet.
 
 Om du vill ha kommando-alias som är tilldelade smeknamn kommandon, skriver du:
 

@@ -3,13 +3,13 @@ ms.date: 08/09/2018
 keywords: installera, windows, linux, macOS, ARM, raspbian
 title: Installera PowerShell
 ms.openlocfilehash: b89f11c36459bd0b03693d89ae3ff6f1327ea755
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685083"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059040"
 ---
-# <a name="installing-various-versions-of-powershell"></a>Installation av olika versioner av PowerShell
+# <a name="installing-various-versions-of-powershell"></a>Installera olika versioner av PowerShell
 
 Under åren har har många versioner av PowerShell. Windows PowerShell har från början, bygger på .NET Framework och fungerade endast i Windows. Med den aktuella versionen PowerShell Core använder .NET Core 2.x som dess runtime. PowerShell Core stöder Windows, macOS och Linux-plattformar.
 

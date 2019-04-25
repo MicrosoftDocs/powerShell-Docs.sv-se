@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: ISEAddOnTool-objektet
 ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
 ms.openlocfilehash: e091f37601c7a4fdaf5deff8c668b18ee7369e74
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687904"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086807"
 ---
 # <a name="the-iseaddontool-object"></a>ISEAddOnTool-objektet
 

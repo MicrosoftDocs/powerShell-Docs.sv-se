@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: ISEMenuItemCollection-objektet
 ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
 ms.openlocfilehash: 7e5030416df394aaa9e9d3f63978e204a7faabf1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086705"
 ---
 # <a name="the-isemenuitemcollection-object"></a>ISEMenuItemCollection-objektet
 

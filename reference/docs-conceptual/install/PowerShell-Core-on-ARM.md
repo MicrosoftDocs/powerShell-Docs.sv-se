@@ -3,11 +3,11 @@ title: Installera PowerShell Core i ARM
 description: Installera PowerShell Core på ARM-baserade system
 ms.date: 08/06/2018
 ms.openlocfilehash: 1f41df9120461da55e35dfe4c2ec4ddefbc5b36e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684082"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086501"
 ---
 # <a name="powershell-core-on-arm"></a>Powershell Core på ARM
 

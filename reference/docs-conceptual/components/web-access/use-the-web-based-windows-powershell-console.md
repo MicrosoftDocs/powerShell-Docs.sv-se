@@ -3,13 +3,13 @@ ms.date: 08/23/2017
 keywords: PowerShell cmdlet
 title: använda web baserat windows powershell-konsolen
 ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086655"
 ---
-# <a name="use-the-web-based-windows-powershell-console"></a>Användning av den webbaserade Windows PowerShell-konsolen
+# <a name="use-the-web-based-windows-powershell-console"></a>Använd den webbaserade Windows PowerShell-konsolen
 
 Uppdaterad: 24 juni 2013
 
@@ -26,11 +26,11 @@ Det här avsnittet beskriver hur du logga in och börja använda Windows PowerSh
 Det här avsnittet beskrivs inte hur du använder Windows PowerShell eller kör cmdletar eller skript.
 Information om hur du använder Windows PowerShell och skript resurser finns i den [Se även](#see-also) i slutet av det här avsnittet.
 
-## <a name="supported-browsers-and-client-devices"></a>Webbläsare och klientenheter som stöds
+## <a name="supported-browsers-and-client-devices"></a>Vilka webbläsare och klientenheter
 
 Windows PowerShell Web Access har stöd för följande webbläsare.
 Även om mobila webbläsare inte stöds officiellt, kan många kanske köra den webbaserade Windows PowerShell-konsolen.
-Andra webbläsare som accepterar cookies, kör JavaScript och kör HTTPS-webbplatser förväntas fungera, men är inte testade officiellt.
+Andra webbläsare som accepterar cookies, kör JavaScript och kör HTTPS-webbplatser förväntas fungera, men är inte officiellt testas.
 
 ### <a name="supported-desktop-computer-browsers"></a>Datorwebbläsare som stöds
 
@@ -44,18 +44,18 @@ Andra webbläsare som accepterar cookies, kör JavaScript och kör HTTPS-webbpla
 
 - Windows Phone 7 och 7.5
 - Google Android WebKit 3.1, webbläsaren Android 2.2.1 (Kernel 2.6)
-- Apple Safari för iPhones operativsystem 5.0.1
+- Apple Safari för Iphones operativsystem 5.0.1
 - Apple Safari för iPad 2-operativsystem 5.0.1
 
-### <a name="browser-requirements"></a>Krav på webbläsare
+### <a name="browser-requirements"></a>Webbläsarkrav
 
 För att använda Windows PowerShell-webbåtkomst webbaserade konsolen måste kunna webbläsaren göra följande.
 
 - Tillåt cookies från gateway-webbplatsen för Windows PowerShell Web Access.
-- Kunna öppna och läsa HTTPS-sidor.
-- Öppna och köra webbplatser som använder JavaScript.
+- Att kunna öppna och läsa HTTPS-sidor.
+- Öppna och kör webbplatser som använder JavaScript.
 
-## <a name="signing-in-to-windows-powershell-web-access"></a>Logga in på Windows PowerShell Web Access
+## <a name="signing-in-to-windows-powershell-web-access"></a>Logga in på Windows PowerShell-webbåtkomst
 
 Windows PowerShell Web Access-administratör ger dig en URL som är adressen till din webbplats för organisationer som Windows PowerShell-webbåtkomst gateway.
 Som standard är webbplatsadressen *https://\<server_name\>/pswa*.
@@ -66,7 +66,7 @@ Mer information om hur du konfigurerar din dator för att tillåta fjärrhanteri
 
 Det enklaste sättet att konfigurera datorn för att tillåta fjärrhantering är att köra den **Enable-PSRemoting - force** på datorn, i en Windows PowerShell-session som har öppnats med utökade användarrättigheter (**Kör som administratör**).
 
-### <a name="to-sign-in-to-windows-powershell-web-access"></a>Så här loggar du in på Windows PowerShell Web Access
+### <a name="to-sign-in-to-windows-powershell-web-access"></a>Logga in på Windows PowerShell-webbåtkomst
 
 1. Öppna Windows PowerShell Web Access-webbplatsen i ett webbläsarfönster eller flik.
 
@@ -94,21 +94,21 @@ Något av följande loggar ut dig från en webbaserade Windows PowerShell-sessio
 
 - Klicka på **logga ut** i det nedre högra hörnet av konsolen. (Endast Windows Server 2012)
 
-- Klicka på **spara** eller **avsluta** i det nedre högra hörnet av konsolen (endast Windows Server 2012 R2). Klicka på **spara** sparar och stänger Windows PowerShell-webbåtkomst sessionen; du kan återansluta till sessionen senare. När du loggar in på Windows PowerShell-webbåtkomst igen, visar Windows PowerShell-webbåtkomst en lista över dina sparade sessioner. Du kan välja och återansluta till en sparad session eller starta en ny session. Det maximala antalet öppna sessioner som användare tillåts ha, både sparade och aktiva, har konfigurerats av gateway-administratören.
+- Klicka på **spara** eller **avsluta** i det nedre högra hörnet av konsolen (endast Windows Server 2012 R2). Klicka på **spara** sparar och stänger Windows PowerShell-webbåtkomst sessionen; du kan återansluta till sessionen senare. När du loggar in på Windows PowerShell-webbåtkomst igen, visar Windows PowerShell-webbåtkomst en lista över dina sparade sessioner. Du kan välja och återansluta till en sparad session eller starta en ny session. Det maximala antalet öppna sessioner som användare tillåts både sparade och aktiva, har konfigurerats av gateway-administratören.
 
     Klicka på **avsluta** loggar du ut från Windows PowerShell Web Access-sessionen utan att spara den.
 
-- Om du försöker logga in för att hantera en annan fjärrdator i samma webbläsarsession eller i en ny flik i samma webbläsarsession. (Detta gäller inte om gateway-servern kör Windows Server 2012 R2 Windows PowerShell-webbåtkomst som körs på Windows Server 2012 R2 tillåter att flera användarsessioner på nya flikar i samma webbläsarsession.) Mer information om hur du använder flera aktiva sessioner på samma dator finns i ansluta till flera måldatorer samtidigt i den [begränsningar i den webbaserade konsolen](#limitations-of-the-web-based-console) i det här avsnittet.
+- Om du försöker logga in att hantera en annan fjärrdator i samma webbläsarsession eller i en ny flik i samma webbläsarsession. (Detta gäller inte om gateway-servern kör Windows Server 2012 R2 Windows PowerShell-webbåtkomst som körs på Windows Server 2012 R2 tillåter att flera användarsessioner på nya flikar i samma webbläsarsession.) Mer information om hur du använder flera aktiva sessioner på samma dator finns i ansluta till flera måldatorer samtidigt i den [begränsningar i den webbaserade konsolen](#limitations-of-the-web-based-console) i det här avsnittet.
 
 - 20 minuters inaktivitet i sessionen. Gateway-administratören kan anpassa tidsgränsen för inaktivitet; Mer information finns i [sessionshantering](authorization-rules-and-security-features-of-windows-powershell-web-access.md#session-management).
 
-    - Om du är frånkopplad från en session i den webbaserade konsolen på grund av ett nätverksfel eller andra oplanerade avstängningar eller fel, och inte eftersom du har stängt sessionen själv, fortsätter att köra Windows PowerShell Web Access är anslutna till mål dator tills tidsgränsen på klientsidan uppnås. Denna tidsgräns är som standard är 20 minuter och har konfigurerats av gateway-administratören. Sessionen kopplas från när antingen standardvärdet 20 minuter eller den tidsperiod som angetts av gateway-administratören uppnås, beroende på vilken som är kortast.
+    - Om du är frånkopplad från en session i den webbaserade konsolen på grund av ett nätverksfel eller andra oplanerade avstängningar eller fel, och inte eftersom du har stängt sessionen själv, fortsätter att köra Windows PowerShell Web Access är anslutna till mål dator tills tidsgränsen på klientsidan uppnås. Denna tidsgräns som standard är 20 minuter och har konfigurerats av gateway-administratören. Sessionen kopplas från när antingen standardvärdet 20 minuter eller efter tidsgränsen som angetts av gatewayadministratören, beroende på vilket som är kortare.
 
         Om gateway-servern kör Windows Server 2012 R2, Windows PowerShell Web Access kan användarna återansluta till sparade sessioner vid ett senare tillfälle, men du kan inte se eller återansluta till sparade sessioner förrän tidsgränsen som angetts av gateway-administratören har upphörde att gälla.
 
-- Stänga webbläsarfönster eller flikar.
+- Stänga webbläsarfönster eller flik.
 
-- Stäng av klientenheten där webbläsaren körs eller koppla bort den från nätverket.
+- Stänga av klientenheten där webbläsaren är körs eller koppla från den från nätverket.
 
 - Kör den **avsluta** i webbkonsolen. Det här kommandot fungerar inte om sessionskonfigurationen som du är ansluten till har konfigurerats för att stödja [NoLanguage](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pslanguagemode.aspx) läge, eller är i ett begränsat körningsutrymme.
 
@@ -126,9 +126,9 @@ Merparten av Windows PowerShell-värdfunktionen är tillgänglig i Windows Power
 
   Windows PowerShell-webbåtkomst visar en förlopps-GUI för cmdletar för att rapportera förlopp, men endast på den högsta nivån som visas.
 
-- Ändring av indatafärg.
+- Indatafärg.
 
-  Indatafärgen (både förgrund och bakgrund) går inte att ändra. Utdatastilen för varningar, utförligt läge och felmeddelanden går att ändra genom att köra ett skript.
+  Indatafärgen (både förgrund och bakgrund) kan inte ändras. Formatet för utdata, varningar, utförligt läge, och felmeddelanden går att ändra genom att köra ett skript.
 
 - PSHostRawUserInterface.
 
@@ -143,25 +143,25 @@ Merparten av Windows PowerShell-värdfunktionen är tillgänglig i Windows Power
 Funktionsnyckel | Åtgärd
 -- | --
 Ctrl+C | I Windows PowerShell Web Access **Ctrl + C** används av webbläsaren för att kopiera innehållet. Konsolen har en **Avbryt** knapp och användarna kan också använda **Ctrl + Q** att avbryta kommandon.
-Alt-mellanslag, e, l | Bläddrar genom skärmbufferten
-Alt+mellanslag, e, f | Söker efter text i skärmbufferten
-Alt+mellanslag, e, k | Markerar text som ska kopieras från skärmbufferten
-Alt+mellanslag, e, p | Klistra in innehållet i Urklipp i Windows PowerShell-konsolen
-Alt+mellanslag, c | Stäng Windows PowerShell-konsolen
-Ctrl+Break | Tvinga Windows PowerShell-fönstret stängs
-Ctrl+Home | Raderar från början av den aktuella kommandoraden
+ALT-mellanslag, e, l | Bläddrar genom skärmbufferten
+ALT + mellanslag, e, f | Sök efter text i skärmbufferten
+ALT + mellanslag, e, k | Markera text som ska kopieras från skärmbufferten
+ALT + mellanslag, e, p | Klistra in innehållet i Urklipp i Windows PowerShell-konsolen
+ALT + mellanslag, c | Stäng Windows PowerShell-konsolen
+Ctrl + Break | Tvinga Windows PowerShell-fönstret stängs
+Ctrl+Home | Tar bort från början av den aktuella kommandoraden
 Ctrl+End | Raderar till slutet av kommandoraden
-F1 | Flyttar markören ett tecken till höger på kommandoraden
+F1 | Flytta markören ett tecken till höger på kommandoraden
 F2 | Skapar ett nytt kommando genom att kopiera ditt senaste kommando upp till det tecken som du skriver
 F3 | Slutför kommandoraden med innehåll från din senaste kommandorad
 F4 | Tar bort tecken från markörens position
-F5 | Söker bakåt genom kommandohistoriken. Om du vill ha tillgång till kommandon i kommandohistoriken i Windows PowerShell Web Access, klickar du på den **historik** rullningsknapparna i den webbaserade konsolen.
-F7 | Väljer ett kommando interaktivt från kommandohistoriken
+F5 | Sök bakåt genom kommandohistoriken. Om du vill ha tillgång till kommandon i kommandohistoriken i Windows PowerShell Web Access, klickar du på den **historik** rullningsknapparna i den webbaserade konsolen.
+F7 | Välj ett kommando interaktivt från kommandohistoriken
 F8 | Skanningshistoriken visar kommandon som matchar aktuell text
 F9 | Kör ett visst numrerat kommando från historiken
 Page Up | Kör det första kommandot i historiken
 Page Down | Kör det sista kommandot i historiken
-Alt+F7 | Rensar listan med kommandohistorik
+Alt+F7 | Rensa i listan med kommandohistorik
 
 ### <a name="limitations-of-the-web-based-console"></a>Begränsningar i den webbaserade konsolen
 
@@ -169,23 +169,23 @@ Alt+F7 | Rensar listan med kommandohistorik
 
     Du kan stöta på i dubbelhopp (eller ansluta till en annan dator från den första anslutningen) begränsningen om du försöker skapa eller arbeta i en ny session med hjälp av Windows PowerShell Web Access. Windows PowerShell-webbåtkomst använder ett fjärrstyrt körningsutrymme och för närvarande **PowerShell.exe** stöder inte upprätta en fjärranslutning till en annan dator från ett fjärrkörningsutrymme. Om du försöker ansluta till en andra fjärrdator från en befintlig anslutning med hjälp av den **Enter-PSSession** cmdlet, till exempel kan du olika fel inträffa, t.ex. €modulens hämta nätverksresurser.
 
-    Om du vill undvika dubbelhopp fel bör administratören konfigurera CredSSP-autentisering i din nätverksmiljö för organisationer. Mer information om hur du konfigurerar CredSSP-autentisering finns i [CredSSP för fjärrkommunikation andra hopp](https://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx) på Microsofts webbplats. Du kan också ange explicita autentiseringsuppgifter när du vill hantera en andra fjärrdator. Implicita autentiseringsuppgifter kommer troligen inte att tillåta ett andra hopp.
+    Om du vill undvika dubbelhopp fel bör administratören konfigurera CredSSP-autentisering i din nätverksmiljö för organisationer. Mer information om hur du konfigurerar CredSSP-autentisering finns i [CredSSP för fjärrkommunikation andra hopp](https://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx) på Microsofts webbplats. Du kan också ange explicita autentiseringsuppgifter när du vill hantera en andra fjärrdator; implicita autentiseringsuppgifter kommer troligen inte att tillåta ett andra hopp.
 
 - Fjärrkommunikation
 
-    Windows PowerShell-webbåtkomst använder och har samma begränsningar som en fjärransluten Windows PowerShell-session. Kommandon som direkt anropar Windows-konsolens API:er, till exempel för konsolbaserade redigerare eller textbaserade menyprogram, fungerar inte eftersom kommandona inte kan läsas eller skrivas till standardindata, utdata och fel-pipes. Därför kommandon som startar en körbar fil, som **notepad.exe**, eller visa ett grafiskt användargränssnitt, till exempel `OpenGridView` eller `ogv`, fungerar inte. Din upplevelse påverkas av det här beteendet; för dig visas den Windows PowerShell-webbåtkomst inte svarar på kommandot.
+    Windows PowerShell-webbåtkomst använder och har samma begränsningar som en fjärransluten Windows PowerShell-session. Kommandon som direkt anropar Windows-konsolens API: er, till exempel för konsolbaserade redigerare eller textbaserade menyprogram, fungerar inte eftersom kommandona inte läsa eller skriva till standard indata, utdata och fel-pipes. Därför kommandon som startar en körbar fil, som **notepad.exe**, eller visa ett grafiskt användargränssnitt, till exempel `OpenGridView` eller `ogv`, fungerar inte. Din upplevelse påverkas av det här beteendet; för dig visas den Windows PowerShell-webbåtkomst inte svarar på kommandot.
 
 - Tabbifyllning
 
-    Tabbifyllning fungerar inte i en sessionskonfiguration med ett begränsat körningsutrymme eller som finns i **NoLanguage** läge. Även om administratörer kan konfigurera en session att stödja flikavslutande, rekommenderas det inte av säkerhetsskäl eftersom det kan exponera följande information för obehöriga användare.
+    Tabbifyllning fungerar inte i en sessionskonfiguration med ett begränsat körningsutrymme eller som finns i **NoLanguage** läge. Även om administratörer kan konfigurera en session för att stödja tabbifyllning, rekommenderas det inte av säkerhetsskäl eftersom det kan exponera följande information för obehöriga användare.
 
-    - Interna sökvägar till systemfiler
+    - Interna sökvägar
 
     - Delade mappar på interna datorer
 
     - Variabler i körningsutrymmet
 
-    - Inlästa typer eller .NET Framework-namnområden
+    - Inlästa typer eller.NET Framework-namnområden
 
     - Miljövariabler
 
@@ -201,7 +201,7 @@ Alt+F7 | Rensar listan med kommandohistorik
 
 - Beständiga Windows PowerShell-sessioner (återanslutning).
 
-    När du tidsgränsen för Windows PowerShell Web Access-gatewayen, har kommer fjärranslutningen mellan gatewayen och måldatorn stängts. Detta stoppar alla cmdletar eller skript som för närvarande används. Du uppmuntras att använda Windows PowerShell **-jobbet** infrastruktur när du utför tidskrävande uppgifter så att du kan starta jobb, koppla från datorn, återansluta senare och ha jobben kvar. En annan fördel med **-jobbet** cmdletar är att du kan starta dem med hjälp av Windows PowerShell Web Access, logga ut och sedan återansluta senare, antingen genom att köra Windows PowerShell Web Access eller en annan värd (till exempel Windows PowerShell Integrerad skriptmiljö (ISE)).
+    När du tidsgränsen för Windows PowerShell Web Access-gatewayen, har kommer fjärranslutningen mellan gatewayen och måldatorn stängts. Detta stoppar alla cmdletar eller skript som finns i processen. Du uppmuntras att använda Windows PowerShell **-jobbet** infrastruktur när du utför tidskrävande uppgifter så att du kan starta jobb, koppla från datorn, återansluta senare och ha jobben kvar. En annan fördel med **-jobbet** cmdletar är att du kan starta dem med hjälp av Windows PowerShell Web Access, logga ut och sedan återansluta senare, antingen genom att köra Windows PowerShell Web Access eller en annan värd (till exempel Windows PowerShell Integrerad skriptmiljö (ISE)).
 
 - Ändra storlek på konsolen.
 
@@ -209,7 +209,7 @@ Alt+F7 | Rensar listan med kommandohistorik
 
     - Dra och justera storleken på konsolfönstret med musen
 
-    - Ändra höjd- och breddegenskaperna med ett grafiskt användargränssnitt för konsolegenskaper
+    - Ändra höjden och bredden egenskaperna med ett grafiskt användargränssnitt för konsolegenskaper
 
     - Ändra höjden och bredden på konsolfönstren med en cmdlet
 
@@ -222,7 +222,7 @@ Alt+F7 | Rensar listan med kommandohistorik
 
             $Host.UI.RawUI.WindowSize = $newSize
 
-        Du kan ändra höjden på konsolen på ett liknande sätt.
+        Du kan ändra höjden på konsolen på samma sätt.
 
         Ytterligare exempel för att anpassa konsolvyn finns i den [Windows PowerShell-teamets blogg](https://blogs.msdn.com/b/powershell/).
 

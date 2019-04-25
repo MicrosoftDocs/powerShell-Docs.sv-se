@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Nyheter i PowerShell 50 ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
 ms.openlocfilehash: 2d953bc4553de7720c590304d29750b84a1ef3b2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058190"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Vad&#39;nytt i Windows PowerShell ISE
 Det här avsnittet beskrivs nya och uppdaterade funktioner som har införts i versioner av Windows PowerShell Integrated Scripting Environment (ISE).

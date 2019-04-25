@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: ff2c2bd7369893d72db001ecabf63991ded0bfd5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058989"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Enhetlig och konsekvent tillstånds- och statusrepresentation
 
@@ -31,10 +31,10 @@ I tabellen nedan visas resulterande tillstånd och status relaterade egenskaper 
 | F,S                             | PendingConfiguration | Fel    | $false        | S                            | F                              |
 | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Fel    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
 | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Fel    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
-| S, r                            | PendingReboot        | Klart    | $true         | S                            | r                              |
+| S, r                            | PendingReboot        | Klart    | $true         | S                            | R                              |
 | F, r                            | PendingReboot        | Fel    | $true         | $null                        | F, r                           |
-| r, S                            | PendingReboot        | Klart    | $true         | $null                        | r                              |
-| r, F                            | PendingReboot        | Klart    | $true         | $null                        | r                              |
+| r, S                            | PendingReboot        | Klart    | $true         | $null                        | R                              |
+| r, F                            | PendingReboot        | Klart    | $true         | $null                        | R                              |
 
 - S<sub>i</sub>: Ett antal resurser som har tillämpats
 - F<sub>i</sub>: Ett antal resurser som används med fel

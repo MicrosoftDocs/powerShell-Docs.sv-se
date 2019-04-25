@@ -2,11 +2,11 @@
 ms.date: 05/22/2018
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: 5c5e24527575c84e2244273992eedb12c0abaffd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057272"
 ---
 # <a name="installation-instructions"></a>Installationsinstruktioner
 

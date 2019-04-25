@@ -1,18 +1,18 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: b8c3cbc056bb085e8319637571e7a2ce5cd77685
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: f30f43265d9daa47383e42f0f8abf4844365ea6d
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187069"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057965"
 ---
-# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a>Cmdlet Set-DscLocalConfigurationManager stöder - force-parametern
+# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a>Cmdleten set-DscLocalConfigurationManager stöder - force-parametern
 
-Vi har lagt till en stöd för nya parametern cmdlet Set-DscLocalConfigurationManager. Detta gör att användaren att återställa meta-konfigurationen på datorn deterministiskt när andra åtgärder som konsekvenskontroll körs i bakgrunden som den kommer att orsaka alla pågående åtgärder som ska stoppas.
+Vi har lagt till ett stöd för ny parameter till cmdleten Set-DscLocalConfigurationManager. Detta gör att användarna att återställa meta-konfigurationen på datorn deterministiskt när andra åtgärder som konsekvenskontroll körs i bakgrunden eftersom det gör alla åtgärder som ska stoppas.
 
-Det ser ut så här upplevelsen när du försöker konfigurera meta utan – Force-parametern.
+Upplevelsen ser ut så här när du försöker ange meta-konfiguration utan – Force-parametern.
 ```powershell
 PS C:\\Configs&gt; Set-DscLocalConfigurationManager -Path .\\MetaTest1\\ -Verbose
 VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target "MSFT\_DSCLocalConfigurationManager".
@@ -27,7 +27,7 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Set-DscLocalConfigurationManager finished in 0.046 seconds.
 ```
 
-När vi använder – tvinga den har uppdaterar meta konfigurationen systemet genom att avbryta den aktuella åtgärden på datorn.
+När vi använder – tvinga den har uppdaterar meta-konfigurationen på datorn genom att avbryta den aktuella åtgärden som körs på datorn.
 ```powershell
 PS C:\\Configs&gt; Set-DscLocalConfigurationManager -Path .\\MetaTest1\\ -Verbose -Force
 VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target "MSFT\_DSCLocalConfigurationManager".

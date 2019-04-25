@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: PowerShellTab-objektet
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 ms.openlocfilehash: 577e2aaaddf3071801816d9ae91dbf0006dd5072
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057680"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab-objektet
 
@@ -166,7 +166,7 @@ Skrivskyddad egenskap som hämtar utdatafönstret för aktuellt [redigeraren](Th
 $psISE.CurrentPowerShellTab.output.clear()
 ```
 
-### <a name="prompt"></a>Fråga
+### <a name="prompt"></a>fråga
 
 Stöds i Windows PowerShell ISE 2.0 och senare.
 

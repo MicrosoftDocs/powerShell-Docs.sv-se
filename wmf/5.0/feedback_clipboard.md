@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: d5ec95abb1d3160afc4179cff991cb5ef72d85fe
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057306"
 ---
 # <a name="clipboard-cmdlets"></a>Urklipps-cmdletar
 **Get-Urklipp** och **Set-Urklipp** gör det enklare att överföra innehåll till och från en Windows PowerShell-session. Exempel: Om du använder Windows Explorer för att kopiera tre filer till Urklipp (genom att markera dem och trycka på `ctrl-c`, till exempel), du kan sedan enkelt komma åt innehållet i Urklipp som en lista över filer:

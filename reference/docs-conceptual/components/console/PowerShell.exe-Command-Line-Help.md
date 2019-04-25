@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Kommandoradshjälp för PowerShell.exe
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
 ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058521"
 ---
 # <a name="powershellexe-command-line-help"></a>Kommandoradshjälp för PowerShell.exe
 
@@ -72,7 +72,7 @@ Inte avsluta när du har kört startkommandon.
 
 Döljer copyright popup-meddelandet vid start.
 
-### <a name="-noninteractive"></a>-Icke-interaktiv
+### <a name="-noninteractive"></a>-NonInteractive
 
 Inte presentera en interaktiv prompt för användaren.
 
@@ -132,12 +132,12 @@ Att köra ett infogat-skriptblock som definierats i en sträng i [anrop operator
 "& {<command>}"
 ```
 
-### <a name="-help---"></a>-Help-,?, /?
+### <a name="-help---"></a>-Help, -?, /?
 
 Visar syntaxen för powershell.exe. Om du skriver ett PowerShell.exe-kommando i PowerShell, Lägg till åtkomstgruppen kommandoparametrarna med ett bindestreck (-), inte ett snedstreck (/). Du kan använda ett bindestreck eller snedstreck i Cmd.exe.
 
 > [!NOTE]
-> Felsökningsanteckning: Startar vissa program i Windows PowerShell konsolen inte med en LastExitCode av 0xc0000142 i PowerShell 2.0.
+> Felsökningsmeddelande: Startar vissa program i Windows PowerShell konsolen inte med en LastExitCode av 0xc0000142 i PowerShell 2.0.
 
 ## <a name="examples"></a>EXEMPEL
 

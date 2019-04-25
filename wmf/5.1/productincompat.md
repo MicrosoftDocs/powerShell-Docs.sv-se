@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: 3a810a21cb959691a910a3ef3767d7885683dce8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084937"
 ---
 # <a name="product-compatibility-status"></a>Status för produktkompatibilitet
 
@@ -19,7 +19,7 @@ ms.locfileid: "55688695"
 - Microsoft Lync Server 2013
 - System Center 2012 Configuration Manager
 
-_Obs! Skype för Business Server 2015 kompatibilitet med WMF 5.1 har testats endast med Windows Server 2012 R2._
+_Obs: Skype för Business Server 2015 kompatibilitet med WMF 5.1 har testats endast med Windows Server 2012 R2._
 
 ## <a name="not-tested"></a>Inte testat:
 > Datorer med följande serverprogram **inte har testat** mot Windows Management Framework 5.1:

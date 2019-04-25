@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Få detaljerad hjälpinformation
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
 ms.openlocfilehash: e58814f512aa2c5914f92f942cf2a4a76956ee20
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794577"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086535"
 ---
 # <a name="getting-detailed-help-information"></a>Få detaljerad hjälpinformation
 

@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: PowerShell cmdlet
 title: avinstallera windows powershell-webbåtkomst
 ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058157"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>Avinstallera Windows PowerShell-webbåtkomst
 
@@ -19,7 +19,7 @@ Stegen i det här avsnittet Ta bort Windows PowerShell Web Access webbplats och 
 
 ## <a name="notify-users"></a>Meddela användare
 
-Innan du börjar, meddela användare av den webbaserade konsolen att du kommer ta bort webbplatsen.
+Innan du börjar, meddela användare om den webbaserade konsolen att du tar bort webbplatsen.
 
 Avinstallera Windows PowerShell-webbåtkomst avinstalleras inte IIS eller andra funktioner som installerades automatiskt, eftersom Windows PowerShell-webbåtkomst kräver dem för att köras.
 Avinstallationsprocessen lämnar kvar installerade funktioner som Windows PowerShell-webbåtkomst var beroende; Du kan avinstallera de funktionerna separat, om det behövs.
@@ -42,13 +42,13 @@ med Windows PowerShell-cmdlets.
     -   På Windows **starta** klickar du på **Windows PowerShell**.
 
 2. Typ `Uninstall-PswaWebApplication`, och tryck sedan på **RETUR**.
-   1. Om du har angett ditt eget, anpassade webbplatsnamn, lägg då till `-WebsiteName`-parametern till ditt kommando och ange webbplatsnamnet.
+   1. Om du har angett dina egna, anpassade webbplatsnamn, lägger du till den `-WebsiteName` parameter i kommandot och ange namnet på webbplatsen.
 
         `Uninstall-PswaWebApplication -WebsiteName <web-site-name>`
    1. Om du har använt ett anpassat webbprogram (inte standardprogrammet, **pswa**, lägga till den `-WebApplicationName` parameter i kommandot och ange namnet på webbprogrammet.
 
         `Uninstall-PswaWebApplication -WebApplicationName <web-application-name>`
-   1. Om du använder ett testcertifikat, lägger du till parametern `DeleteTestCertificate` till cmdleten, på det sätt som visas i följande exempel.
+   1. Om du använder ett testcertifikat, lägger du till den `DeleteTestCertificate` parameter till cmdleten, som visas i följande exempel.
 
         `Uninstall-PswaWebApplication -DeleteTestCertificate`
 
@@ -60,11 +60,11 @@ med Windows PowerShell-cmdlets.
 
     -   På Windows **starta** högerklickar **Windows PowerShell**, och klicka sedan på **kör som administratör**.
 
-1. Skriv följande och tryck sedan på **RETUR**, där *computer_name* motsvarar en fjärrserver från vilken du vill ta bort Windows PowerShell Web Access. Parametern `-Restart`, startar automatiskt om målservrar om det krävs för borttagningen.
+1. Skriv följande och tryck sedan på **RETUR**, där *computer_name* motsvarar en fjärrserver från vilken du vill ta bort Windows PowerShell Web Access. Den `-Restart` parametern startar om målservrarna automatiskt om det behövs genom borttagning.
 
         Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -Restart
 
-    För att ta bort roller och funktioner från en offline-VHD, behöver du lägga till både `-ComputerName`-parametern och `-VHD`-parametern. Parametern `-ComputerName` innehåller namnet på den server som du vill montera VHD:n på och parametern `-VHD` innehåller sökvägen till VHD-filen på den angivna servern.
+    Om du vill ta bort roller och funktioner från en offline-VHD, måste du lägga till både den `-ComputerName` parametern och `-VHD` parametern. Den `-ComputerName` parametern innehåller namnet på den server som du vill montera den virtuella Hårddisken och `-VHD` parametern innehåller sökvägen till VHD-filen på den angivna servern.
 
         Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -Restart
 
@@ -79,7 +79,7 @@ I det här avsnittet hjälper dig att avinstallera både Windows PowerShell Web 
 ### <a name="step-1-delete-the-web-application-using-iis-manager"></a>Steg 1: Ta bort webbprogrammet med IIS-hanteraren
 
 
-1. Öppna konsolen för IIS-hanteraren genom att göra något av följande. Om den redan är öppen, går du vidare till nästa steg.
+1. Öppna konsolen IIS-hanteraren genom att göra något av följande. Om den redan är öppen, går du vidare till nästa steg.
 
     -   Starta Serverhanteraren genom att klicka på Windows-skrivbordet **Serverhanteraren** i Aktivitetsfältet. På den **verktyg** menyn i Serverhanteraren klickar du på **Internet Information Services (IIS) Manager**.
 
@@ -99,7 +99,7 @@ I det här avsnittet hjälper dig att avinstallera både Windows PowerShell Web 
 >
 > Certifikatet tas inte bort under avinstallationen.
 >
-> Om du skapat ett självsignerat certifikat eller om du använde ett testcertfikat och vill ta bort det, radera certifikatet i IIS-hanteraren.
+> Ta bort certifikatet i IIS-hanteraren om du har skapat ett självsignerat certifikat eller använde ett testcertfikat och vill ta bort den.
 
 ### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>Steg 2: Avinstallera Windows PowerShell-webbåtkomst med hjälp av guiden Ta bort roller och funktioner
 
@@ -111,7 +111,7 @@ I det här avsnittet hjälper dig att avinstallera både Windows PowerShell Web 
 
 1. På den **hantera** -menyn klickar du på **ta bort roller och funktioner**.
 
-1. På den **väljer målservern** väljer du den server eller offline-VHD som du vill ta bort en funktion. Du kan välja en offline-VHD genom att först välja på vilken server VHD:n ska monteras och sedan välja VHD-filen. När du har valt målservern, klickar du på **nästa**.
+1. På den **väljer målservern** väljer du den server eller offline-VHD som du vill ta bort en funktion. Först väljer du den server som du vill montera den virtuella Hårddisken för att välja en offline-VHD, och sedan välja VHD-filen. När du har valt målservern, klickar du på **nästa**.
 
 1. Klicka på **nästa** igen för att gå vidare till den **Borttagningsfunktioner** sidan.
 

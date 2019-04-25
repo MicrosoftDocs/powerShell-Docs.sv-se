@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: PowerShell-motorn förbättringar i WMF 5.1
 ms.openlocfilehash: 738f72b910de7d44f48309013237d523d0dd40a4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687449"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62055572"
 ---
 # <a name="powershell-engine-improvements"></a>Förbättringar av PowerShell-motorn
 
@@ -32,7 +32,7 @@ Några exempel förbättringar (dina resultat kan variera beroende på din maski
 
 > [!Note]
 > En ändring som rör start kan påverka vissa scenarier som inte stöds.
-> PowerShell läser inte längre filerna `$pshome\*.ps1xml` – de här filerna har konverterats till C# för att undvika att vissa fil och CPU overhead bearbeta XML-filer.
+> PowerShell läser inte längre filerna `$pshome\*.ps1xml` – de här filerna har konverterats till C# att undvika att vissa fil- och CPU-belastning som bearbeta XML-filerna.
 > Filerna som finns kvar till support V2 sida vid sida, så om du ändrar filens innehåll, men inte har någon effekt till V5, endast V2.
 > Observera att ändra innehållet i filerna har aldrig ett scenario som stöds.
 

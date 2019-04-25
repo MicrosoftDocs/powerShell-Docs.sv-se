@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Windows PowerShell-ordlista
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057385"
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell-ordlista
 
@@ -22,7 +22,7 @@ ms.locfileid: "53405465"
 |dynamisk parameter|En parameter som läggs till i en Windows PowerShell-cmdleten, funktion eller skript på vissa villkor. Cmdlet: ar, funktioner, leverantörer och skript kan lägga till dynamiska parametrar.|
 |formatering fil|En Windows PowerShell-XML-fil som har det. format.ps1xml tillägget och som definierar hur Windows PowerShell visar ett objekt baserat på dess typ för .NET Framework.|
 |Global sessionstillstånd|Sessionstillstånd som innehåller de data som är tillgänglig för användare av en Windows PowerShell-session.|
-|Värden|Det gränssnitt som Windows PowerShell-motorn använder för att kommunicera med användaren. Till exempel anger värden hur anvisningarna hanteras mellan Windows PowerShell och användaren.|
+|värd|Det gränssnitt som Windows PowerShell-motorn använder för att kommunicera med användaren. Till exempel anger värden hur anvisningarna hanteras mellan Windows PowerShell och användaren.|
 |värdprogrammet|Ett program som läser in Windows PowerShell-motorn i processen och används för att utföra åtgärder.|
 |indata metoden bearbetades|En metod som en cmdlet kan använda för att bearbeta posterna som tas emot som indata. Inkommande bearbetning-sätt är att metoden BeginProcessing, metoden ProcessRecord, metoden EndProcessing och StopProcessing-metoden.|
 |manifest-modulen|En Windows PowerShell-modul som har ett manifest och vars RootModule-nyckel är tom.|
@@ -30,9 +30,9 @@ ms.locfileid: "53405465"
 |modulen sessionstillstånd|Sessionstillstånd med de offentliga och privata data på en Windows PowerShell-modulen. Privata data i den här sessionstillstånd är inte tillgänglig för användare av en Windows PowerShell-session.|
 |icke-avslutande fel|Ett fel som inte hindrar Windows PowerShell inte kan fortsätta att bearbeta kommandot.|
 |substantiv|Ord som följer bindestreck i en Windows PowerShell cmdlet-namn. Substantivet beskriver de resurser som cmdlet: en fungerar.|
-|parameteruppsättning|En grupp med parametrar som kan användas i samma kommando för att utföra en viss åtgärd.|
+|Parameteruppsättning|En grupp med parametrar som kan användas i samma kommando för att utföra en viss åtgärd.|
 |pipe|I Windows PowerShell, för att skicka resultaten från föregående kommando som indata till nästa kommando i pipelinen.|
-|Pipeline|En serie kommandon som är anslutna via pipeline-operatorer (&#124;) (ASCII 124). Varje pipelineoperatorn skickar resultaten från föregående kommando som indata till nästa kommando.|
+|pipeline|En serie kommandon som är anslutna via pipeline-operatorer (&#124;) (ASCII 124). Varje pipelineoperatorn skickar resultaten från föregående kommando som indata till nästa kommando.|
 |PSSession|En typ av Windows PowerShell-session som har skapats kan hanteras och avslutades av användaren.|
 |rotmodul|Modulen som anges i nyckeln RootModule i ett modulmanifest.|
 |körningsutrymme|I Windows PowerShell, driftmiljön där varje kommando i en pipeline körs.|
@@ -42,16 +42,16 @@ ms.locfileid: "53405465"
 |Shell|Kommandotolken som används för att skicka kommandon till operativsystemet.|
 |växlingsparametern|En parameter som inte har ett argument.|
 |avslutande fel|Ett fel som förhindrar att Windows PowerShell kommandot bearbetades.|
-|transaktionen|En atomisk enhet för arbete. Arbete i en transaktion måste slutföras som helhet. Om någon del av transaktionen misslyckas, inte hela transaktionen.|
+|Transaktionen|En atomisk enhet för arbete. Arbete i en transaktion måste slutföras som helhet. Om någon del av transaktionen misslyckas, inte hela transaktionen.|
 |typer av fil|En Windows PowerShell-XML-fil som har tillägget .ps1xml och som utökar egenskaperna för Microsoft .NET Framework-typer i Windows PowerShell.|
-|Verb|Ord som föregår bindestreck i en Windows PowerShell cmdlet-namn. Verbet beskriver den åtgärd som utförs av cmdlet: en.|
+|verb|Ord som föregår bindestreck i en Windows PowerShell cmdlet-namn. Verbet beskriver den åtgärd som utförs av cmdlet: en.|
 |Windows PowerShell|Ett kommandoradsgränssnitt och uppgiftsbaserad skriptteknik som tillhandahåller omfattande kontroll för IT-administratörer och automatisering av administrationsuppgifter.|
 |Windows PowerShell-kommando|Element i en pipeline som orsakar en åtgärd som ska utföras. Windows PowerShell-kommandon är antingen angett på tangentbordet eller anropas via programmering.|
 |Datafil för Windows PowerShell|En textfil med filnamnstillägget .psd1. Windows PowerShell använder filer för olika ändamål, till exempel lagra modulen manifest data och lagra översatta strängar för skriptet nationella inställningar.|
 |Windows PowerShell-enhet|En virtuell enhet som ger direktåtkomst till ett datalager. Det kan definieras av en Windows PowerShell-providern eller skapas på kommandoraden. Enheter som skapats på kommandoraden är session-specifika enheter och försvinner när sessionen är stängd.|
-|Windows PowerShell® Integrated Scripting Environment (ISE)|Ett värdprogram för Windows PowerShell som gör det möjligt att köra kommandon och att skriva, testa och felsöka skript i ett eget, syntax färg, Unicode-kompatibel miljö.|
+|Windows PowerShell ISE (Integrated Scripting Environment)|Ett värdprogram för Windows PowerShell som gör det möjligt att köra kommandon och att skriva, testa och felsöka skript i ett eget, syntax färg, Unicode-kompatibel miljö.|
 |Windows PowerShell-modulen|En självständig återanvändbara enhet där du kan partitionera, ordna och abstrahera dina Windows PowerShell-kod. En modul kan innehålla cmdlets, providers, funktioner, variabler och andra typer av resurser som kan importeras som en enda enhet.|
-|Windows PowerShell-provider|Ett Microsoft .NET Framework-baserade program som tillhandahåller data i ett specialiserade datalager i Windows PowerShell så att du kan visa och hantera den.|
+|Windows PowerShell-providern|Ett Microsoft .NET Framework-baserade program som tillhandahåller data i ett specialiserade datalager i Windows PowerShell så att du kan visa och hantera den.|
 |Windows PowerShell-skript|Ett skript som är skriven i Windows PowerShell-språket.|
 |Windows PowerShell-skriptfil|En fil med tillägget .ps1 och som innehåller ett skript som är skriven i Windows PowerShell-språket.|
 |Snapin-modulen för Windows PowerShell|En resurs som definierar en uppsättning cmdlets och leverantörer av Microsoft .NET Framework-typer som kan läggas till i Windows PowerShell-miljö.|

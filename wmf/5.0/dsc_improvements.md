@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: dc72debe0dc7e56c9e59e6903c7d6cf3025e622c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058241"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc"></a>Förbättringar i Desired State Configuration (DSC)
 

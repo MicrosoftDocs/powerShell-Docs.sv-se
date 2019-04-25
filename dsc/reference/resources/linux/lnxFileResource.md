@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSC för Linux nxFile-resurs
 ms.openlocfilehash: 80969ba2ea6247fcd616a301d951403a840c851d
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078035"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC för Linux nxFile-resurs
 
@@ -40,7 +40,7 @@ nxFile <string> #ResourceName
 |  Egenskap |  Beskrivning |
 |---|---|
 | Målsökväg| Anger den plats där du vill kontrollera status för en fil eller katalog.|
-| Källsökväg| Anger sökvägen som du vill kopiera filen eller mappen resursen från. Den här sökvägen kan vara en lokal sökväg eller en `http/https/ftp` URL: en. Remote `http/https/ftp` URL: er är bara när värdet för den **typ** egenskapen är filen.|
+| SourcePath| Anger sökvägen som du vill kopiera filen eller mappen resursen från. Den här sökvägen kan vara en lokal sökväg eller en `http/https/ftp` URL: en. Remote `http/https/ftp` URL: er är bara när värdet för den **typ** egenskapen är filen.|
 | Se till att| Anger om du vill kontrollera om filen finns. Ange egenskapen ”aktuella” för att se till att filen finns. Ange den till ”inte” för att se till att filen inte finns. Standardvärdet är ”tillgänglig”.|
 | Typ| Anger om resursen som konfigureras är en katalog eller en fil. Ange egenskapen till ”directory” för att indikera att resursen är en katalog. Ange den till ”filen” för att indikera att resursen är en fil. Standardvärdet är ”fil”|
 | Innehåll| Anger innehållet i en fil, till exempel en viss sträng.|

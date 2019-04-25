@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d7286443-eed4-43d5-b809-50cdcdcba088
 caps.latest.revision: 4
 ms.openlocfilehash: 23518c625fe1138e1bd2bcc895274cb21d7daf8a
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56852215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083050"
 ---
 # <a name="creating-a-custom-user-interface"></a>Skapa ett anpassat användargränssnitt
 

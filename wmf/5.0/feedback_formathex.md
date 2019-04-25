@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
-ms.openlocfilehash: 61a914cc05c4ca9592196c925e232224d193f9d8
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 32a1a10ac30f4bccfdbdd4a1e4ca4ea9459a19af
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218220"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058071"
 ---
 # <a name="format-hex"></a>Format-Hex
 **Hexadecimalt format** kan du visa text eller binära data i hexadecimalt format, se [hexadecimalt Format](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)
@@ -18,7 +18,7 @@ Visa innehållet i en sträng i hexadecimalt format.
 "This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
 ```
 
-Utdata:
+Utdata
 ```
 PS C:\> This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
 

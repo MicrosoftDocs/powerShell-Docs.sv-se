@@ -1,15 +1,15 @@
 ---
 ms.date: 06/20/2018
 keywords: DSC, powershell, konfiguration, installation
-title: DSC PackageManagementSource resurs
+title: DSC PackageManagementSource Resource
 ms.openlocfilehash: e51b5318288bef458567dd4b58d17caaea3ed69b
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077593"
 ---
-# <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource resurs
+# <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource Resource
 
 > Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0, Windows PowerShell 5.1
 
@@ -42,7 +42,7 @@ PackageManagementSource [String] #ResourceName
 | ProviderName| Anger namnet på providern OneGet genom vilka du kan interop med paketkällan.|
 | SourceLocation| Anger URI för paketkällan.|
 | Se till att| Anger om paketkällan ska registreras eller avregistreras.|
-| InstallationPolicy| Används av providrar, till exempel inbyggda Nuget-providern. Anger om du litar på den paketkällan. En av: ”Ej betrodd”, betrodd ””.|
+| InstallationPolicy| Används av providrar, till exempel inbyggda Nuget-providern. Anger om du litar på den paketkällan. En av: "Untrusted", "Trusted".|
 | SourceCredential| Ger åtkomst till paketet på en fjärransluten källa.|
 
 ## <a name="example"></a>Exempel

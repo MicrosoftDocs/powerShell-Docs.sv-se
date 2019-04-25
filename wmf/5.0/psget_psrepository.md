@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: 5ac9566979e1b761249f5cc7c62ed44047a2b9f6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685237"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058020"
 ---
 # <a name="register-a-powershell-repository"></a>Registrera ett PowerShell-lager
 Du kan konfigurera PowerShellGet att arbeta mot interna databaser. Detta görs med hjälp av följande tillägg:

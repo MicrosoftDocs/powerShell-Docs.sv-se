@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: ISEOptions-objektet
 ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
 ms.openlocfilehash: e756da21aaa5465f7fa6a90563b4180f0c89e87b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057782"
 ---
 # <a name="the-iseoptions-object"></a>ISEOptions-objektet
 
@@ -249,7 +249,7 @@ Anger namn på för närvarande används i både skriptfönstret och konsolföns
 $psISE.Options.FontName = 'Courier New'
 ```
 
-### <a name="fontsize"></a>Teckenstorlek
+### <a name="fontsize"></a>FontSize
 
 Stöds i Windows PowerShell ISE 2.0 och senare.
 

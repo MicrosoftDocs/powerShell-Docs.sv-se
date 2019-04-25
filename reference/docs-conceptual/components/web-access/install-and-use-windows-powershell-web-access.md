@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: PowerShell cmdlet
 title: Installera och använda windows powershell-webbåtkomst
 ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056727"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058582"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installera och använda Windows PowerShell-webbåtkomst
 
@@ -19,7 +19,7 @@ Gäller för: Windows Server 2012 R2, Windows Server 2012
 
 Windows PowerShell Web Access som först introducerades i Windows Server 2012, som fungerar som en Windows PowerShell-gateway, att tillhandahålla en webbaserad Windows PowerShell-konsol som är inriktad på en fjärrdator. Det gör att IT-proffs att köra Windows PowerShell-kommandon och skript från en Windows PowerShell-konsol i en webbläsare, utan Windows PowerShell, fjärrhanteringsprogramvara eller webbläsare plugin-programmet installeras på klientenheten. Allt som krävs för att köra den webbaserade Windows PowerShell-konsolen är en korrekt konfigurerad Windows PowerShell Web Access-gateway och en webbläsare som stöder JavaScript och accepterar cookies.
 
-Exempel på klientenheter är bärbara datorer, datorer i hemmet, lånade datorer, tablet-datorer, webbkiosker, datorer som inte kör ett Windows-baserat operativsystem och webbläsare i mobiltelefoner. IT-proffs kan utföra kritiska hanteringsuppgifter på Windows-baserade fjärrservrar från enheter som har tillgång till en Internetanslutning och en webbläsare.
+Exempel på klientenheter är bärbara datorer, icke-datorer, lånade datorer, surfplattor, datorer, webbkiosker, datorer som inte kör ett Windows-baserade operativsystem och webbläsare i mobiltelefoner. IT-proffs kan utföra kritiska hanteringsuppgifter på Windows-baserade fjärrservrar från enheter som har åtkomst till en Internetanslutning och en webbläsare.
 
 När du har rätt gateway-konfiguration, kan användare komma åt en Windows PowerShell-konsol med hjälp av en webbläsare. När användarna öppnar den skyddade Windows PowerShell Web Access-webbplatsen, kan de köra en webbaserad Windows PowerShell-konsol efter en lyckad autentisering.
 
@@ -35,18 +35,18 @@ Det här avsnittet ger inte djupgående vägledning för IIS-webbserver-åtgärd
 
 Följande diagram visar hur Windows PowerShell-webbåtkomst fungerar.
 
-![Diagram för Windows PowerShell Web Access](images/Windows-PowerShell-Web-Access-diagram.jpg)
+![Windows PowerShell Web Access-diagram](images/Windows-PowerShell-Web-Access-diagram.jpg)
 
 ## <a name="requirements-for-running-windows-powershell-web-access"></a>Krav för att köra Windows PowerShell-webbåtkomst
 
 Windows PowerShell-webbåtkomst kräver webbserver (IIS), .NET Framework 4.5 och Windows PowerShell 3.0 eller Windows PowerShell 4.0 körs på servern som du vill köra gatewayen. Du kan installera Windows PowerShell-webbåtkomst på en server som kör Windows Server 2012 R2 eller Windows Server 2012 med hjälp av antingen Lägg till roller och funktioner som guiden i Serverhanteraren eller Windows PowerShell-cmdletarna för distribution för Serverhanteraren. När du installerar Windows PowerShell-webbåtkomst med hjälp av Serverhanteraren eller dess distributionscmdletar, läggs nödvändiga roller och funktioner automatiskt som en del av installationen.
 
-Windows PowerShell Web Access kan fjärranslutna användare för åtkomst till datorer i organisationen med hjälp av Windows PowerShell i en webbläsare. Även om Windows PowerShell-webbåtkomst är ett praktiskt och kraftfullt hanteringsverktyg, webbaserad åtkomst säkerhetsrisk och bör konfigureras så säkert som möjligt. Vi rekommenderar att administratörer som konfigurerar Windows PowerShell Web Access-gatewayen använder tillgängliga säkerhetsskikt, både i cmdlet-baserade auktoriseringsregler som ingår i Windows PowerShell-webbåtkomst och säkerhet lager som är tillgängliga i webbserver ( IIS) och program från tredje part. Den här dokumentationen innehåller både oskyddade exempel som rekommenderas bara för testmiljöer och exempel som rekommenderas för säker distribution.
+Windows PowerShell Web Access kan fjärranslutna användare för åtkomst till datorer i organisationen med hjälp av Windows PowerShell i en webbläsare. Även om Windows PowerShell-webbåtkomst är ett praktiskt och kraftfullt hanteringsverktyg, webbaserad åtkomst säkerhetsrisk och bör konfigureras så säkert som möjligt. Vi rekommenderar att administratörer som konfigurerar Windows PowerShell Web Access-gatewayen använder tillgängliga säkerhetsskikt, både i cmdlet-baserade auktoriseringsregler som ingår i Windows PowerShell-webbåtkomst och säkerhet lager som är tillgängliga i webbserver ( IIS) och program från tredje part. Den här dokumentationen innehåller både oskyddade exempel som rekommenderas endast för testmiljöer och exempel som rekommenderas för säker distribution.
 
-## <a name="browser-and-client-device-support"></a>Stöd för webbläsare och klientenheter
+## <a name="browser-and-client-device-support"></a>Stöd för webbläsare och klientenheter enheter
 
 Windows PowerShell Web Access har stöd för följande webbläsare. Även om mobila webbläsare inte stöds officiellt, kan många kanske köra den webbaserade Windows PowerShell-konsolen.
-Andra webbläsare som accepterar cookies, kör JavaScript och kör HTTPS-webbplatser förväntas fungera, men är inte testade officiellt.
+Andra webbläsare som accepterar cookies, kör JavaScript och kör HTTPS-webbplatser förväntas fungera, men är inte officiellt testas.
 
 ### <a name="supported-desktop-computer-browsers"></a>Datorwebbläsare som stöds
 
@@ -60,16 +60,16 @@ Andra webbläsare som accepterar cookies, kör JavaScript och kör HTTPS-webbpla
 
 - Windows Phone 7 och 7.5
 - Google Android WebKit 3.1, webbläsaren Android 2.2.1 (Kernel 2.6)
-- Apple Safari för iPhones operativsystem 5.0.1
+- Apple Safari för Iphones operativsystem 5.0.1
 - Apple Safari för iPad 2-operativsystem 5.0.1
 
-### <a name="browser-requirements"></a>Krav på webbläsare
+### <a name="browser-requirements"></a>Webbläsarkrav
 
 För att använda Windows PowerShell-webbåtkomst webbaserade konsolen måste kunna webbläsaren göra följande.
 
 - Tillåt cookies från gateway-webbplatsen för Windows PowerShell Web Access.
-- Kunna öppna och läsa HTTPS-sidor.
-- Öppna och köra webbplatser som använder JavaScript.
+- Att kunna öppna och läsa HTTPS-sidor.
+- Öppna och kör webbplatser som använder JavaScript.
 
 ## <a name="recommended-quick-deployment"></a>Rekommenderade snabb distribution
 
@@ -81,7 +81,7 @@ Du kan installera Windows PowerShell Web Access-gatewayen på en server som kör
 
 ### <a name="install-windows-powershell-web-access-using-powershell-cmdlets"></a>Installera Windows PowerShell-webbåtkomst med hjälp av PowerShell-cmdletar
 
-#### <a name="to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets"></a>Så här installerar du Windows PowerShell-webbåtkomst med hjälp av Windows PowerShell-cmdletar
+#### <a name="to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets"></a>Installera Windows PowerShell-webbåtkomst med hjälp av Windows PowerShell-cmdlets
 
 1. Gör något av följande för att öppna en Windows PowerShell-session med utökade användarrättigheter.
 
@@ -92,14 +92,14 @@ Du kan installera Windows PowerShell Web Access-gatewayen på en server som kör
    > I Windows PowerShell 3.0 och 4.0 finns behöver du inte importera serverhanterar-modulen i Windows PowerShell-sessionen innan du kör cmdletar som ingår i modulen. En modul importeras automatiskt första gången du kör en cmdlet som ingår i modulen.
    > Dessutom är Windows PowerShell-cmdletar inte skiftlägeskänsliga.
 
-1. Skriv följande och tryck sedan på **RETUR**, där *computer_name* representerar en fjärrdator där du vill installera Windows PowerShell Web Access, om tillämpligt. Parametern `-Restart` startar om målservrarna automatiskt om det krävs.
+1. Skriv följande och tryck sedan på **RETUR**, där *computer_name* representerar en fjärrdator där du vill installera Windows PowerShell Web Access, om tillämpligt. Den `-Restart` parametern startar om målservrarna automatiskt om det behövs.
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
    > [!NOTE]
    > Installera Windows PowerShell-webbåtkomst med hjälp av Windows PowerShell-cmdletar läggs inte hanteringsverktyg för webbserver (IIS) som standard. Om du vill installera hanteringsverktygen på samma server som Windows PowerShell Web Access-gatewayen, lägger du till den `-IncludeManagementTools` parameter i installationskommandot (enligt det här steget). Om du hanterar Windows PowerShell Web Access-webbplats från en fjärrdator måste du installera snapin-modulen IIS-hanteraren genom att installera [Remote Server Administration Tools för Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) eller [Remote Server Administration Verktyg för Windows 8](https://www.microsoft.com/en-us/download/details.aspx?id=28972) på den dator som du vill hantera gatewayen.
 
-   Om du vill installera roller och funktioner på en offline-VHD, lägger du till både parametern `-ComputerName` och parametern `-VHD`. Parametern `-ComputerName` innehåller namnet på den server som du vill montera VHD:n på och parametern `-VHD` innehåller sökvägen till VHD-filen på den angivna servern.
+   Om du vill installera roller och funktioner på en offline-VHD, måste du lägga till både den `-ComputerName` parametern och `-VHD` parametern. Den `-ComputerName` parametern innehåller namnet på den server som du vill montera den virtuella Hårddisken och `-VHD` parametern innehåller sökvägen till VHD-filen på den angivna servern.
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
@@ -109,14 +109,14 @@ Du kan installera Windows PowerShell Web Access-gatewayen på en server som kör
 
 ### <a name="configure-the-gateway"></a>Konfigurera gatewayen
 
-Den **Install-PswaWebApplication** cmdlet är ett snabbt sätt att hämta Windows PowerShell-webbåtkomst konfigurerats. Även om du kan lägga till parametern `UseTestCertificate` i cmdleten `Install-PswaWebApplication` för att installera ett självsignerat SSL-certifikat för teständamål, är det här inte säkert; för en säker produktionsmiljö bör du alltid använda ett giltigt SSL-certifikat som har signerats av en certifikatutfärdare (CA). Administratörer kan ersätta testcertifikatet med ett eget signerat certifikat med hjälp av konsolen för IIS-hanteraren.
+Den **Install-PswaWebApplication** cmdlet är ett snabbt sätt att hämta Windows PowerShell-webbåtkomst konfigurerats. Du kan lägga till den `UseTestCertificate` parametern till den `Install-PswaWebApplication` cmdlet för att installera ett självsignerat SSL-certifikat för teständamål, är det här inte är säkert; för en säker produktionsmiljö alltid använda ett giltigt SSL-certifikat som har signerats av en certifikatutfärdare (CA). Administratörer kan ersätta Testcertifikatet med ett signerat certifikat för valfri med hjälp av IIS Manager-konsolen.
 
 Du kan slutföra konfigurationen av Windows PowerShell-webbåtkomst antingen genom att köra den `Install-PswaWebApplication` cmdlet eller genom att utföra gränssnittsbaserade konfigurationssteg i IIS-hanteraren.
-Som standard installerar cmdleten webbprogrammet, **pswa** (och en programpool för den, **pswa_pool**) i den **Default Web Site** behållare som visas i IIS-hanteraren; om det önskade kan instruera du cmdleten ändra plats standardbehållaren för webbprogrammet. IIS-hanteraren erbjuder konfigurationsalternativ som är tillgängliga för webbprogram, till exempel för att ändra portnumret eller SSL-certifikat.
+Som standard installerar cmdleten webbprogrammet, **pswa** (och en programpool för den, **pswa_pool**) i den **Default Web Site** behållare som visas i IIS-hanteraren; om det önskade kan instruera du cmdleten ändra plats standardbehållaren för webbprogrammet. IIS-hanteraren erbjuder konfigurationsalternativ som är tillgängliga för webbprogram, till exempel ändra portnumret eller Secure Sockets Layer (SSL)-certifikat.
 
 > **![Säkerhetsmeddelande](images/securitynote.jpeg) säkerhetsmeddelande** vi rekommenderar att administratörer konfigurerar gatewayen att använda ett giltigt certifikat som har signerats av en Certifikatutfärdare.
 
-#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>Så här konfigurerar du gatewayen för Windows PowerShell-webbåtkomst med ett testcertifikat med hjälp av Install-PswaWebApplication
+#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>Konfigurera gatewayen för Windows PowerShell-webbåtkomst med ett testcertifikat med hjälp av Install-PswaWebApplication
 
 1. Gör något av följande för att öppna en Windows PowerShell-session.
 
@@ -127,11 +127,11 @@ Som standard installerar cmdleten webbprogrammet, **pswa** (och en programpool f
 
    `Install-PswaWebApplication -UseTestCertificate`
 
-   > **![Säkerhetsmeddelande](images/securitynote.jpeg) säkerhetsmeddelande** den `UseTestCertificate` parametern bör endast användas i en privat testmiljö. För en säker produktionsmiljö bör ett giltigt certifikat som har signerats av en CA användas.
+   > **![Säkerhetsmeddelande](images/securitynote.jpeg) säkerhetsmeddelande** den `UseTestCertificate` parametern bör endast användas i en privat testmiljö. För en säker produktionsmiljö bör du använda ett giltigt certifikat som har signerats av en Certifikatutfärdare.
 
-   Kör cmdlet installerar Windows PowerShell Web Access-webbprogrammet i behållaren för IIS-standardwebbplatsen. Cmdleten skapar den infrastruktur som krävs för att köra Windows PowerShell-webbåtkomst på standardwebbplatsen, `https://<server_name>/pswa`. Om du vill installera webbprogrammet på en annan webbplats, anger du webbplatsnamnet genom att lägga till parametern `WebSiteName`. Du ändrar namnet på webbprogrammet (standard är `pswa`) genom att lägga till parametern `WebApplicationName`.
+   Kör cmdlet installerar Windows PowerShell Web Access-webbprogrammet i behållaren för IIS-standardwebbplatsen. Cmdleten skapar den infrastruktur som krävs för att köra Windows PowerShell-webbåtkomst på standardwebbplatsen, `https://<server_name>/pswa`. Om du vill installera webbprogrammet på en annan webbplats, anger du webbplatsnamnet genom att lägga till den `WebSiteName` parametern. Ändra namnet på webbprogrammet (standard är `pswa`), Lägg till den `WebApplicationName` parametern.
 
-   Följande inställningar konfigureras genom att köra cmdleten. Du kan ändra dessa manuellt i konsolen för IIS-hanteraren.
+   Följande inställningar konfigureras genom att köra cmdlet. Du kan ändra dessa manuellt i IIS Manager-konsolen om du vill.
 
    - Path: /pswa
    - ApplicationPool: pswa_pool
@@ -145,7 +145,7 @@ Som standard installerar cmdleten webbprogrammet, **pswa** (och en programpool f
    > [!NOTE]
    > Du kan inte logga in förrän användare har beviljats åtkomst till webbplatsen genom att lägga till auktoriseringsregler. Mer information finns i [konfigurera en regel för begränsad auktorisering](#configure-a-restrictive-authorization-rule) och [auktoriseringsregler och säkerhet funktioner i Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
-#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>Så här konfigurerar du gatewayen för Windows PowerShell-webbåtkomst med ett äkta certifikat med hjälp av Install-PswaWebApplication och IIS-hanteraren
+#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>Konfigurera gatewayen för Windows PowerShell-webbåtkomst med ett äkta certifikat med hjälp av Install-PswaWebApplication och IIS-hanteraren
 
 1. Gör något av följande för att öppna en Windows PowerShell-session.
 
@@ -156,14 +156,14 @@ Som standard installerar cmdleten webbprogrammet, **pswa** (och en programpool f
 
    `Install-PswaWebApplication`
 
-   Följande gatewayinställningar konfigureras genom att köra cmdleten. Du kan ändra dessa manuellt i konsolen för IIS-hanteraren. Du kan även ange värden för parametrarna `WebsiteName` och `WebApplicationName` i cmdleten `Install-PswaWebApplication`.
+   Följande gatewayinställningar konfigureras genom att köra cmdlet. Du kan ändra dessa manuellt i IIS Manager-konsolen om du vill. Du kan även ange värden för den `WebsiteName` och `WebApplicationName` parametrarna för den `Install-PswaWebApplication` cmdlet.
 
    - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
    - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
-3. Öppna konsolen för IIS-hanteraren genom att göra något av följande.
+3. Öppna konsolen IIS-hanteraren genom att göra något av följande.
 
    - Starta Serverhanteraren genom att klicka på Windows-skrivbordet **Serverhanteraren** i Aktivitetsfältet. På den **verktyg** menyn i Serverhanteraren klickar du på **Internet Information Services (IIS) Manager**.
    - På Windows **starta** klickar du på **Serverhanteraren**.
@@ -193,14 +193,14 @@ När Windows PowerShell Web Access har installerats och gatewayen har konfigurer
 
 Mer information om Windows PowerShell-webbåtkomst auktoriseringsregler och säkerhet finns i [auktoriseringsregler och säkerhet funktioner i Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
-#### <a name="to-add-a-restrictive-authorization-rule"></a>Så här lägger du till en regel för begränsad auktorisering
+#### <a name="to-add-a-restrictive-authorization-rule"></a>Att lägga till en regel för begränsad auktorisering
 
 1. Gör något av följande för att öppna en Windows PowerShell-session med utökade användarrättigheter.
 
    - Högerklicka på Windows-skrivbordet **Windows PowerShell** Aktivitetsfältet och klickar sedan på **Kör som administratör**.
    - På Windows **starta** högerklickar **Windows PowerShell**, och klicka sedan på **kör som administratör**.
 
-2. Valfria steg för att begränsa användaråtkomsten med hjälp av sessionskonfigurationer: Kontrollera om de sessionskonfigurationer som du vill använda i dina regler redan finns. Om de inte ännu har skapats följer du instruktionerna för att skapa sessionskonfigurationer i [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+2. Valfritt steg för att begränsa användaråtkomst med hjälp av sessionskonfigurationer: Kontrollera att sessionskonfigurationer som du vill använda i dina regler redan finns. Om de inte ännu har skapats följer du instruktionerna för att skapa sessionskonfigurationer i [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Skriv följande och tryck sedan på **Ange**.
 
@@ -208,7 +208,7 @@ Mer information om Windows PowerShell-webbåtkomst auktoriseringsregler och säk
 
    Denna auktoriseringsregel ger en viss användaråtkomst till en dator i nätverket som de normalt har åtkomst till, med åtkomst till en viss sessionskonfiguration som är begränsad till användarens vanliga skript och cmdlet-behov.
 
-   I följande exempel beviljas en användare med namnet `JSmith` i `Contoso`-domänen åtkomst för att hantera datorn `Contoso_214`, och använda en sessionskonfiguration med namnet `NewAdminsOnly`.
+   I följande exempel en användare med namnet `JSmith` i den `Contoso` domän beviljas åtkomst att hantera datorn `Contoso_214`, och använda en sessionskonfiguration med namnet `NewAdminsOnly`.
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
@@ -235,26 +235,26 @@ När du har installerat Windows PowerShell Web Access kan du anpassa konfigurati
 3. På den **Välj installationstyp** väljer **rollbaserad eller funktionsbaserad installation**.
    Klicka på **Nästa**.
 
-4. På den **väljer målservern** sidan väljer du en server från serverpoolen, eller en offline-VHD. Du kan välja en offline-VHD som målserver genom att först välja på vilken server VHD:n ska monteras och sedan välja VHD-filen. Information om hur du lägger till servrar i serverpoolen finns i Server Manager-hjälpen. När du har valt målservern, klickar du på **nästa**.
+4. På den **väljer målservern** sidan väljer du en server från serverpoolen, eller en offline-VHD. Först väljer du den server som du vill montera den virtuella Hårddisken för att välja en offline-VHD som målserver, och sedan välja VHD-filen. Information om hur du lägger till servrar i serverpoolen finns i Server Manager-hjälpen. När du har valt målservern, klickar du på **nästa**.
 
 5. På den **Välj vilka funktioner du** sidan i guiden expanderar **Windows PowerShell**, och välj sedan **Windows PowerShell-webbåtkomst**.
 
-6. Observera att du uppmanas att lägga till nödvändiga funktioner, till exempel .NET Framework 4.5 och rolltjänster för Webbserver (IIS). Lägg till nödvändiga funktioner och fortsätt.
+6. Observera att du uppmanas att lägga till nödvändiga funktioner, till exempel .NET Framework 4.5 och rolltjänster för webbserver (IIS). Lägg till nödvändiga funktioner och fortsätta.
 
    > [!NOTE]
    > Installera Windows PowerShell-webbåtkomst med hjälp av Lägg till roller och funktioner som guiden installerar även webbserver (IIS), inklusive snapin-modulen IIS-hanteraren. Snapin-modulen och andra hanteringsverktyg för IIS installeras som standard om du använder guiden Lägg till roller och funktioner. Om du installerar Windows PowerShell-webbåtkomst med hjälp av Windows PowerShell-cmdlets som beskrivs i följande procedur, läggs inte hanteringsverktyg som standard.
 
 7. På den **Bekräfta installationsinställningarna** om funktionsfilerna för Windows PowerShell-webbåtkomst inte lagras på målservern som du valde i steg 4, klickar du på **anger en alternativ källsökväg**, och ange sökvägen till funktionsfilerna. Annars klickar du på **installera**.
 
-8. När du klickar på **installera**, **Installationsförlopp** sidan visas installationens förlopp, resultat och meddelanden som varningar, fel eller efter installationen konfigurationssteg som är krävs för Windows PowerShell Web Access. När du har installerat Windows PowerShell-webbåtkomst uppmanas du att granska filen Viktigt, som innehåller grundläggande obligatoriska konfigurationsanvisningar för gatewayen. Instruktionerna finns också i det här avsnittet. Sökvägen till filen Viktigt är `C:\Windows\Web\PowerShellWebAccess\wwwroot\README.txt`.
+8. När du klickar på **installera**, **Installationsförlopp** sidan visas installationens förlopp, resultat och meddelanden som varningar, fel eller efter installationen konfigurationssteg som är krävs för Windows PowerShell Web Access. När du har installerat Windows PowerShell-webbåtkomst uppmanas du att granska filen Viktigt, som innehåller grundläggande obligatoriska konfigurationsanvisningar för gatewayen. Dessa anvisningar ingår även i det här avsnittet. Sökvägen till filen Viktigt är `C:\Windows\Web\PowerShellWebAccess\wwwroot\README.txt`.
 
 ### <a name="configure-the-gateway"></a>Konfigurera gatewayen
 
-Anvisningarna i det här avsnittet är för att installera Windows PowerShell Web Access-webbprogram i en underkatalog och inte i rotkatalogen för din webbplats. Den här proceduren motsvarar de åtgärder som utförs av cmdleten `Install-PswaWebApplication`. Det här avsnittet innehåller också anvisningar för hur du använder IIS-hanteraren för att konfigurera Windows PowerShell Web Access-gateway som en rotwebbplats.
+Anvisningarna i det här avsnittet är för att installera Windows PowerShell Web Access-webbprogram i en underkatalog och inte i rotkatalogen för din webbplats. Den här proceduren motsvarar GUI-baserade åtgärder som utförs av den `Install-PswaWebApplication` cmdlet. Det här avsnittet innehåller också anvisningar för hur du använder IIS-hanteraren för att konfigurera Windows PowerShell Web Access-gateway som en rotwebbplats.
 
-#### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>Så här använder du IIS-hanteraren för att konfigurera gatewayen på en befintlig webbplats
+#### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>Du använder IIS-hanteraren för att konfigurera gatewayen på en befintlig webbplats
 
-1. Öppna konsolen för IIS-hanteraren genom att göra något av följande.
+1. Öppna konsolen IIS-hanteraren genom att göra något av följande.
 
    - Starta Serverhanteraren genom att klicka på Windows-skrivbordet **Serverhanteraren** i Aktivitetsfältet. På den **verktyg** menyn i Serverhanteraren klickar du på **Internet Information Services (IIS) Manager**.
    - På Windows **starta** skärmen, Skriv någon del av namnet **Internet Information Services (IIS) Manager**. Klicka på genvägen när den visas i den **appar** resultat.
@@ -267,7 +267,7 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
 
 5. Högerklicka på webbplatsen (till exempel **standardwebbplats**) till vilken du vill lägga till Windows PowerShell Web Access-webbplats och klicka sedan på **Lägg till program**.
 
-6. I den **Alias** fältet, anger du pswa eller ett annat alias. Aliaset blir namnet på den virtuella katalogen. Till exempel **pswa** i följande URL representerar det alias som angetts i det här steget: `https://<server-name>/pswa`.
+6. I den **Alias** fältet, anger du pswa eller ett annat alias. Aliaset blir namnet på virtuella katalogen. Till exempel **pswa** i följande URL representerar det alias som angetts i det här steget: `https://<server-name>/pswa`.
 
 7. I den **programpoolen** , markera den programpool som du skapade i steg 3.
 
@@ -278,7 +278,7 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
 10. ![](images/SecurityNote.jpeg) Valfritt säkerhetssteg:
 
     Med webbplatsen vald i trädvyn, dubbelklickar du på **SSL-inställningar** i innehållsfönstret.
-    Välj **Kräv SSL**, och sedan i den **åtgärder** fönstret klickar du på **tillämpa**. Valfritt: i den **SSL-inställningar** fönstret kan du kräva att användare som ansluter till Windows PowerShell Web Access-webbplatsen har klientcertifikat. Klientcertifikat hjälper att kontrollera identiteten på användare med klientenheter. Läs mer om hur klientcertifikat kan öka säkerheten för Windows PowerShell-webbåtkomst [auktoriseringsregler och säkerhet funktioner i Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md) i den här guiden.
+    Välj **Kräv SSL**, och sedan i den **åtgärder** fönstret klickar du på **tillämpa**. Valfritt: i den **SSL-inställningar** fönstret kan du kräva att användare som ansluter till Windows PowerShell Web Access-webbplatsen har klientcertifikat. Klientcertifikat hjälper för att kontrollera identiteten på en klientanvändare för enheten. Läs mer om hur klientcertifikat kan öka säkerheten för Windows PowerShell-webbåtkomst [auktoriseringsregler och säkerhet funktioner i Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md) i den här guiden.
 
 11. Öppna en webbläsarsession på en klientenhet. Mer information om vilka webbläsare och enheter finns i [webbläsare och klientenheter som stöder](#browser-and-client-device-support) i det här avsnittet.
 
@@ -297,15 +297,15 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
     c:\windows\system32\icacls.exe $authorizationFile /grant ('"' + "IIS AppPool\$applicationPoolName" + '":R') > $null
     ```
 
-    Kör följande kommando om du vill visa befintliga åtkomsträttigheter för auktoriseringsfilen:
+    Om du vill visa befintliga åtkomsträttigheter för auktoriseringsfilen, kör du följande kommando:
 
     ```powershell
     c:\windows\system32\icacls.exe $authorizationFile
     ```
 
-#### <a name="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate"></a>Så här använder du IIS-hanteraren för att konfigurera gatewayen som en rotwebbplats med ett testcertifikat
+#### <a name="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate"></a>Du använder IIS-hanteraren för att konfigurera gatewayen som en rotwebbplats med ett testcertifikat
 
-1. Öppna konsolen för IIS-hanteraren genom att göra något av följande.
+1. Öppna konsolen IIS-hanteraren genom att göra något av följande.
 
    - Starta Serverhanteraren genom att klicka på Windows-skrivbordet **Serverhanteraren** i Aktivitetsfältet. På den **verktyg** menyn i Serverhanteraren klickar du på **Internet Information Services (IIS) Manager**.
    - På Windows **starta** skärmen, Skriv någon del av namnet **Internet Information Services (IIS) Manager**. Klicka på genvägen när den visas i den **appar** resultat.
@@ -325,11 +325,11 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
 1. Tilldela ett portnummer till webbplatsen som inte redan används av en annan webbplats eller ett program.
    Om du vill hitta öppna portar som du kan köra den **netstat** i Kommandotolkens fönster. Standardportnumret är 443.
 
-   Ändra standardporten om 443 redan används av en annan webbplats, eller om det finns andra säkerhetsskäl för att ändra portnumret. Om en annan webbplats som körs på din gateway-servern använder den valda porten, visas en varning när du klickar på **OK** i den **Lägg till webbplats** dialogrutan. Du måste använda en ledig port för att köra Windows PowerShell Web Access.
+   Ändra standardporten om 443 redan används med en annan webbplats, eller om du har andra säkerhetsskäl för att ändra portnumret. Om en annan webbplats som körs på din gateway-servern använder den valda porten, visas en varning när du klickar på **OK** i den **Lägg till webbplats** dialogrutan. Du måste använda en ledig port för att köra Windows PowerShell Web Access.
 
 1. Alternativt, om det behövs för din organisation, ange ett värdnamn som passar din organisation och användare, till exempel **`www.contoso.com`**. Klicka på **OK**.
 
-1. För en säkrare produktionsmiljö bör ett giltigt certifikat som har signerats av en CA användas. Du måste ange ett SSL-certifikat, eftersom användare kan endast ansluta till Windows PowerShell-webbåtkomst via en HTTPS-webbplats. Se [och konfigurera ett SSL-certifikat i IIS-hanteraren](#to-configure-an-ssl-certificate-in-iis-manager) i det här avsnittet för mer information om hur du skaffar ett certifikat.
+1. För en säkrare produktionsmiljö rekommenderar vi att tillhandahålla ett giltigt certifikat som har signerats av en Certifikatutfärdare. Du måste ange ett SSL-certifikat, eftersom användare kan endast ansluta till Windows PowerShell-webbåtkomst via en HTTPS-webbplats. Se [och konfigurera ett SSL-certifikat i IIS-hanteraren](#to-configure-an-ssl-certificate-in-iis-manager) i det här avsnittet för mer information om hur du skaffar ett certifikat.
 
 1. Klicka på **OK** att Stäng den **Lägg till webbplats** dialogrutan.
 
@@ -341,7 +341,7 @@ Anvisningarna i det här avsnittet är för att installera Windows PowerShell We
    c:\windows\system32\icacls.exe $authorizationFile /grant ('"' + "IIS AppPool\$applicationPoolName" + '":R') > $null
    ```
 
-   Kör följande kommando om du vill visa befintliga åtkomsträttigheter för auktoriseringsfilen:
+   Om du vill visa befintliga åtkomsträttigheter för auktoriseringsfilen, kör du följande kommando:
 
    ```powershell
    c:\windows\system32\icacls.exe $authorizationFile
@@ -371,9 +371,9 @@ Mer information om Windows PowerShell-webbåtkomst auktoriseringsregler och säk
    - Högerklicka på Windows-skrivbordet **Windows PowerShell** Aktivitetsfältet och klickar sedan på **Kör som administratör**.
    - På Windows **starta** högerklickar **Windows PowerShell**, och klicka sedan på **kör som administratör**.
 
-1. ![Säkerhetsmeddelande](images/SecurityNote.jpeg) Valfria steg för att begränsa användaråtkomsten med hjälp av sessionskonfigurationer:
+1. ![Säkerhetsmeddelande](images/SecurityNote.jpeg) Valfritt steg för att begränsa användaråtkomst med hjälp av sessionskonfigurationer:
 
-   Kontrollera om de sessionskonfigurationer som du vill använda i dina regler redan finns. Om de inte ännu har skapats följer du instruktionerna för att skapa sessionskonfigurationer i [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+   Kontrollera att sessionskonfigurationer som du vill använda i dina regler redan finns. Om de inte ännu har skapats följer du instruktionerna för att skapa sessionskonfigurationer i [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 1. Skriv följande och tryck sedan på **Ange**.
 
@@ -381,7 +381,7 @@ Mer information om Windows PowerShell-webbåtkomst auktoriseringsregler och säk
 
    Denna auktoriseringsregel ger en viss användaråtkomst till en dator i nätverket som de normalt har åtkomst till med åtkomst till en viss sessionskonfiguration som är begränsad till användaren '™ s vanliga skript och cmdlet-behov.
 
-   I följande exempel beviljas en användare med namnet `JSmith` i `Contoso`-domänen åtkomst för att hantera datorn `Contoso_214`, och använda en sessionskonfiguration med namnet `NewAdminsOnly`.
+   I följande exempel en användare med namnet `JSmith` i den `Contoso` domän beviljas åtkomst att hantera datorn `Contoso_214`, och använda en sessionskonfiguration med namnet `NewAdminsOnly`.
 
    `Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
@@ -393,9 +393,9 @@ Mer information om Windows PowerShell-webbåtkomst auktoriseringsregler och säk
 
 ## <a name="configure-a-genuine-certificate"></a>Konfigurera ett äkta certifikat
 
-Använd alltid ett giltigt SSL-certifikat som har signerats av en certifikatutfärdare (CA) för en säker produktionsmiljö. I proceduren i det här avsnittet beskrivs hur du hämtar och installerar ett giltigt SSL-certifikat från en CA.
+Använd alltid ett giltigt SSL-certifikat som har signerats av en certifikatutfärdare (CA) för en säker produktionsmiljö. I det här avsnittet beskriver hur du hämtar och installerar ett giltigt SSL-certifikat från en Certifikatutfärdare.
 
-### <a name="to-configure-an-ssl-certificate-in-iis-manager"></a>Så här konfigurerar du ett SSL-certifikat i IIS-hanteraren
+### <a name="to-configure-an-ssl-certificate-in-iis-manager"></a>Konfigurera ett SSL-certifikat i IIS-hanteraren
 
 1. I trädvyn på IIS-hanteraren väljer du den server där Windows PowerShell-webbåtkomst är installerad.
 
@@ -408,15 +408,15 @@ Använd alltid ett giltigt SSL-certifikat som har signerats av en certifikatutf�
 
      Exempel: om klientwebbläsaren begär `http://www.contoso.com/`, nätverksnamn måste också vara `http://www.contoso.com/`. Det här är det mest säkra och rekommenderade alternativet för att tillhandahålla gateway för Windows PowerShell-webbåtkomst med ett certifikat.
 
-   - Klicka på **skapa ett självsignerat certifikat** att skapa ett certifikat som du kan använda direkt och få det signerat senare av en CA om du vill. Ange ett eget namn för det självsignerade certifikatet, till exempel **Windows PowerShell-webbåtkomst**. Det här alternativet anses inte vara säkert och rekommenderas endast för en privat testmiljö.
+   - Klicka på **skapa ett självsignerat certifikat** att skapa ett certifikat som du kan använda direkt och få det signerat senare av en CA om du vill. Ange ett eget namn för det självsignerade certifikatet, till exempel **Windows PowerShell-webbåtkomst**. Det här alternativet anses inte vara säker och rekommenderas endast för en privat testmiljö.
 
 1. När du har skapat eller hämtat ett certifikat, väljer du den webbplats som certifikatet används (till exempel **standardwebbplats**) i trädfönstret i IIS-hanteraren och klicka sedan på **bindningar** i **Åtgärder** fönstret.
 
-1. I den **Lägg till bindning för webbplats** dialogrutan lägger du till en **https** bindning för webbplatsen, om en inte sådan redan visas. Om du inte använder ett självsignerat certifikat, anger du värdnamnet från steg 3 i den här proceduren. Om du använder ett självsignerat certifikat behövs inte det här steget.
+1. I den **Lägg till bindning för webbplats** dialogrutan lägger du till en **https** bindning för webbplatsen, om en inte sådan redan visas. Om du inte använder ett självsignerat certifikat, anger du värdnamnet från steg 3 i den här proceduren. Det här steget är inte obligatoriskt om du använder ett självsignerat certifikat.
 
 1. Välj det certifikat som du hämtat eller skapat i steg 3 i den här proceduren och klicka sedan på **OK**.
 
-## <a name="using-the-web-based-windows-powershell-console"></a>Användning av den webbaserade Windows PowerShell-konsolen
+## <a name="using-the-web-based-windows-powershell-console"></a>Med hjälp av den webbaserade Windows PowerShell-konsolen
 
 När Windows PowerShell Web Access har installerats och gateway-konfigurationen har slutförts enligt anvisningarna i det här avsnittet, är Windows PowerShell-webbaserad konsol klart att användas. Mer information om att komma igång i den webbaserade konsolen finns i [använda webbaserade Windows PowerShell-konsolen](use-the-web-based-windows-powershell-console.md).
 
