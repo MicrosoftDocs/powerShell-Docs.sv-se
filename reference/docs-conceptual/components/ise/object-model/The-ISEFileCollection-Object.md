@@ -4,25 +4,25 @@ keywords: PowerShell cmdlet
 title: ISEFileCollection-objektet
 ms.assetid: 0f86a427-ea38-4bce-85f8-06c98d30d508
 ms.openlocfilehash: eb4b2784820cbe51f662fd2fd945d8760ef9dbff
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684600"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086756"
 ---
-# <a name="the-isefilecollection-object"></a><span data-ttu-id="c739f-103">ISEFileCollection-objektet</span><span class="sxs-lookup"><span data-stu-id="c739f-103">The ISEFileCollection Object</span></span>
+# <a name="the-isefilecollection-object"></a><span data-ttu-id="0b8b8-103">ISEFileCollection-objektet</span><span class="sxs-lookup"><span data-stu-id="0b8b8-103">The ISEFileCollection Object</span></span>
 
-<span data-ttu-id="c739f-104">Den **ISEFileCollection** objekt är en samling **ISEFile** objekt.</span><span class="sxs-lookup"><span data-stu-id="c739f-104">The **ISEFileCollection** object is a collection of **ISEFile** objects.</span></span> <span data-ttu-id="c739f-105">Ett exempel är $psISE.CurrentPowerShellTab.Files-samling.</span><span class="sxs-lookup"><span data-stu-id="c739f-105">An example is the $psISE.CurrentPowerShellTab.Files collection.</span></span>
+<span data-ttu-id="0b8b8-104">Den **ISEFileCollection** objekt är en samling **ISEFile** objekt.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-104">The **ISEFileCollection** object is a collection of **ISEFile** objects.</span></span> <span data-ttu-id="0b8b8-105">Ett exempel är $psISE.CurrentPowerShellTab.Files-samling.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-105">An example is the $psISE.CurrentPowerShellTab.Files collection.</span></span>
 
-## <a name="methods"></a><span data-ttu-id="c739f-106">Metoder</span><span class="sxs-lookup"><span data-stu-id="c739f-106">Methods</span></span>
+## <a name="methods"></a><span data-ttu-id="0b8b8-106">Metoder</span><span class="sxs-lookup"><span data-stu-id="0b8b8-106">Methods</span></span>
 
-### <a name="add-fullpath-"></a><span data-ttu-id="c739f-107">Lägg till\( \[fullPath\] \)</span><span class="sxs-lookup"><span data-stu-id="c739f-107">Add\( \[fullPath\] \)</span></span>
+### <a name="add-fullpath-"></a><span data-ttu-id="0b8b8-107">Lägg till\( \[fullPath\] \)</span><span class="sxs-lookup"><span data-stu-id="0b8b8-107">Add\( \[fullPath\] \)</span></span>
 
-<span data-ttu-id="c739f-108">Stöds i Windows PowerShell ISE 2.0 och senare.</span><span class="sxs-lookup"><span data-stu-id="c739f-108">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="0b8b8-108">Stöds i Windows PowerShell ISE 2.0 och senare.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-108">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="c739f-109">Skapar och returnerar en ny namnlös fil och lägger till den i samlingen.</span><span class="sxs-lookup"><span data-stu-id="c739f-109">Creates and returns a new untitled file and adds it to the collection.</span></span> <span data-ttu-id="c739f-110">Den **IsUntitled** egenskapen för den nyligen skapade filen är **$true**.</span><span class="sxs-lookup"><span data-stu-id="c739f-110">The **IsUntitled** property of the newly created file is **$true**.</span></span>
+<span data-ttu-id="0b8b8-109">Skapar och returnerar en ny namnlös fil och lägger till den i samlingen.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-109">Creates and returns a new untitled file and adds it to the collection.</span></span> <span data-ttu-id="0b8b8-110">Den **IsUntitled** egenskapen för den nyligen skapade filen är **$true**.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-110">The **IsUntitled** property of the newly created file is **$true**.</span></span>
 
-<span data-ttu-id="c739f-111">**\[fullPath\]**  – valfritt sträng fullständigt angivna sökvägen till filen.</span><span class="sxs-lookup"><span data-stu-id="c739f-111">**\[fullPath\]** - Optional string The fully specified path of the file.</span></span> <span data-ttu-id="c739f-112">Ett undantag genereras om du inkluderar den **fullPath** parameter och en relativ sökväg, eller om du använder ett filnamn i stället för den fullständiga sökvägen.</span><span class="sxs-lookup"><span data-stu-id="c739f-112">An exception is generated if you include the **fullPath** parameter and a relative path, or if you use a file name instead of the full path.</span></span>
+<span data-ttu-id="0b8b8-111">**\[fullPath\]**  – valfritt sträng fullständigt angivna sökvägen till filen.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-111">**\[fullPath\]** - Optional string The fully specified path of the file.</span></span> <span data-ttu-id="0b8b8-112">Ett undantag genereras om du inkluderar den **fullPath** parameter och en relativ sökväg, eller om du använder ett filnamn i stället för den fullständiga sökvägen.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-112">An exception is generated if you include the **fullPath** parameter and a relative path, or if you use a file name instead of the full path.</span></span>
 
 ```powershell
 # Adds a new untitled file to the collection of files in the current PowerShell tab.
@@ -32,15 +32,15 @@ $newFile = $psISE.CurrentPowerShellTab.Files.Add()
 $psISE.CurrentPowerShellTab.Files.Add("$pshome\Examples\profile.ps1")
 ```
 
-### <a name="remove-file-force-"></a><span data-ttu-id="c739f-113">Ta bort\( filen \[kraft\] \)</span><span class="sxs-lookup"><span data-stu-id="c739f-113">Remove\( File, \[Force\] \)</span></span>
+### <a name="remove-file-force-"></a><span data-ttu-id="0b8b8-113">Ta bort\( filen \[kraft\] \)</span><span class="sxs-lookup"><span data-stu-id="0b8b8-113">Remove\( File, \[Force\] \)</span></span>
 
-<span data-ttu-id="c739f-114">Stöds i Windows PowerShell ISE 2.0 och senare.</span><span class="sxs-lookup"><span data-stu-id="c739f-114">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="0b8b8-114">Stöds i Windows PowerShell ISE 2.0 och senare.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-114">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="c739f-115">Tar bort en angiven fil från den aktuella PowerShell-fliken.</span><span class="sxs-lookup"><span data-stu-id="c739f-115">Removes a specified file from the current PowerShell tab.</span></span>
+<span data-ttu-id="0b8b8-115">Tar bort en angiven fil från den aktuella PowerShell-fliken.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-115">Removes a specified file from the current PowerShell tab.</span></span>
 
-<span data-ttu-id="c739f-116">**Filen** -sträng The ISEFile-fil som du vill ta bort från samlingen.</span><span class="sxs-lookup"><span data-stu-id="c739f-116">**File** - String The ISEFile file that you want to remove from the collection.</span></span> <span data-ttu-id="c739f-117">Om filen inte har sparats, utlöser ett undantag i den här metoden.</span><span class="sxs-lookup"><span data-stu-id="c739f-117">If the file has not been saved, this method throws an exception.</span></span> <span data-ttu-id="c739f-118">Använd den **tvinga** växla parametern om du vill framtvinga borttagning av en ej sparade filer.</span><span class="sxs-lookup"><span data-stu-id="c739f-118">Use the **Force** switch parameter to force the removal of an unsaved file.</span></span>
+<span data-ttu-id="0b8b8-116">**Filen** -sträng The ISEFile-fil som du vill ta bort från samlingen.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-116">**File** - String The ISEFile file that you want to remove from the collection.</span></span> <span data-ttu-id="0b8b8-117">Om filen inte har sparats, utlöser ett undantag i den här metoden.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-117">If the file has not been saved, this method throws an exception.</span></span> <span data-ttu-id="0b8b8-118">Använd den **tvinga** växla parametern om du vill framtvinga borttagning av en ej sparade filer.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-118">Use the **Force** switch parameter to force the removal of an unsaved file.</span></span>
 
-<span data-ttu-id="c739f-119">**\[Framtvinga\]**  -valfritt booleskt om **$true**, ger behörighet att ta bort filen även om det inte har sparats efter senaste användning.</span><span class="sxs-lookup"><span data-stu-id="c739f-119">**\[Force\]** - optional Boolean If set to **$true**, grants permission to remove the file even if it has not been saved after last use.</span></span> <span data-ttu-id="c739f-120">Standardvärdet är **$false**.</span><span class="sxs-lookup"><span data-stu-id="c739f-120">The default is **$false**.</span></span>
+<span data-ttu-id="0b8b8-119">**\[Framtvinga\]**  -valfritt booleskt om **$true**, ger behörighet att ta bort filen även om det inte har sparats efter senaste användning.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-119">**\[Force\]** - optional Boolean If set to **$true**, grants permission to remove the file even if it has not been saved after last use.</span></span> <span data-ttu-id="0b8b8-120">Standardvärdet är **$false**.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-120">The default is **$false**.</span></span>
 
 ```powershell
 # Removes the first opened file from the file collection associated with the current PowerShell tab.
@@ -53,13 +53,13 @@ $firstfile = $psISE.CurrentPowerShellTab.Files[0]
 $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 ```
 
-### <a name="setselectedfile-selectedfile-"></a><span data-ttu-id="c739f-121">SetSelectedFile\( selectedFile \)</span><span class="sxs-lookup"><span data-stu-id="c739f-121">SetSelectedFile\( selectedFile \)</span></span>
+### <a name="setselectedfile-selectedfile-"></a><span data-ttu-id="0b8b8-121">SetSelectedFile\( selectedFile \)</span><span class="sxs-lookup"><span data-stu-id="0b8b8-121">SetSelectedFile\( selectedFile \)</span></span>
 
-<span data-ttu-id="c739f-122">Stöds i Windows PowerShell ISE 2.0 och senare.</span><span class="sxs-lookup"><span data-stu-id="c739f-122">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="0b8b8-122">Stöds i Windows PowerShell ISE 2.0 och senare.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-122">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="c739f-123">Väljer den fil som anges av den **selectedFile** parametern.</span><span class="sxs-lookup"><span data-stu-id="c739f-123">Selects the file that is specified by the **selectedFile** parameter.</span></span>
+<span data-ttu-id="0b8b8-123">Väljer den fil som anges av den **selectedFile** parametern.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-123">Selects the file that is specified by the **selectedFile** parameter.</span></span>
 
-<span data-ttu-id="c739f-124">**selectedFile** -Microsoft.PowerShell.Host.ISE.ISEFile The ISEFile-fil som du vill välja.</span><span class="sxs-lookup"><span data-stu-id="c739f-124">**selectedFile** - Microsoft.PowerShell.Host.ISE.ISEFile The ISEFile file that you want to select.</span></span>
+<span data-ttu-id="0b8b8-124">**selectedFile** -Microsoft.PowerShell.Host.ISE.ISEFile The ISEFile-fil som du vill välja.</span><span class="sxs-lookup"><span data-stu-id="0b8b8-124">**selectedFile** - Microsoft.PowerShell.Host.ISE.ISEFile The ISEFile file that you want to select.</span></span>
 
 ```powershell
 # Selects the specified file.
@@ -67,8 +67,8 @@ $firstfile = $psISE.CurrentPowerShellTab.Files[0]
 $psISE.CurrentPowerShellTab.Files.SetSelectedFile($firstfile)
 ```
 
-## <a name="see-also"></a><span data-ttu-id="c739f-125">Se även</span><span class="sxs-lookup"><span data-stu-id="c739f-125">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0b8b8-125">Se även</span><span class="sxs-lookup"><span data-stu-id="0b8b8-125">See Also</span></span>
 
-- [<span data-ttu-id="c739f-126">The ISEFile Object</span><span class="sxs-lookup"><span data-stu-id="c739f-126">The ISEFile Object</span></span>](The-ISEFile-Object.md)
-- [<span data-ttu-id="c739f-127">Syftet med den Windows PowerShell ISE-Skriptobjektmodellen</span><span class="sxs-lookup"><span data-stu-id="c739f-127">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [<span data-ttu-id="c739f-128">Hierarki för ISE-objektmodellen</span><span class="sxs-lookup"><span data-stu-id="c739f-128">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
+- [<span data-ttu-id="0b8b8-126">The ISEFile Object</span><span class="sxs-lookup"><span data-stu-id="0b8b8-126">The ISEFile Object</span></span>](The-ISEFile-Object.md)
+- [<span data-ttu-id="0b8b8-127">Syftet med den Windows PowerShell ISE-Skriptobjektmodellen</span><span class="sxs-lookup"><span data-stu-id="0b8b8-127">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [<span data-ttu-id="0b8b8-128">Hierarki för ISE-objektmodellen</span><span class="sxs-lookup"><span data-stu-id="0b8b8-128">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
