@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DisableDebugConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
 ms.openlocfilehash: ec5a401de4cb93f302f8572c0408e3f32d8876ad
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078902"
 ---
 # <a name="disabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>DisableDebugConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d17e0d66-42ea-4e4c-a85b-3ca09b146492
 caps.latest.revision: 6
 ms.openlocfilehash: cc0742b86a7a36e5712707c077fd1952691f3f4b
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067577"
 ---
 # <a name="property-parameters"></a>Egenskapsparametrar
 
@@ -36,7 +36,7 @@ I följande tabell visas de rekommenderade namn och funktioner för Egenskapspar
 |**Regex**<br>Datatyp: SwitchParameter|Implementera den här parametern så att reguljära uttryck används när parametern anges. När den här parametern anges, löses inte jokertecken.|
 |**Speed**<br>Datatyp: Int32|Implementera den här parametern så att användaren kan ange överföringshastigheten. Användaren anger den här parametern för resursen.|
 |**tillstånd**<br>Datatyp: Nyckelordet matris|Implementera den här parametern så att användaren kan ange namnen på delstater, till exempel Tangent ned.|
-|**Värde**<br>Datatyp: Objekt|Implementera den här parametern så att användaren kan ange ett värde att förse cmdlet: en.|
+|**Värde**<br>Datatyp: Object|Implementera den här parametern så att användaren kan ange ett värde att förse cmdlet: en.|
 |**Version**<br>Datatyp: Sträng|Implementera den här parametern så att användaren kan ange vilken version av egenskapen.|
 
 ## <a name="see-also"></a>Se även

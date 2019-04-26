@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, resurs, galleriet, inställning
 title: Installera ytterligare DSC-resurser
 ms.openlocfilehash: ecaf176230ccd934b57b1c27d72ff83e6ba906e9
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080092"
 ---
 # <a name="install-additional-dsc-resources"></a>Installera ytterligare DSC-resurser
 
@@ -20,15 +20,15 @@ Det här är en lista över OOB-resurser som ingår i PowerShell 4.0 och en besk
 
 |Resurs  |Beskrivning  |
 |---------|---------|
-|**Filen**|Kontrollerar tillståndet för filer och kataloger. Kopierar filer från en **källa** till en **mål** och uppdaterar dem när de **källa** ändringar genom att jämföra datum, kontrollsummor och hashvärden.|
+|**Fil**|Kontrollerar tillståndet för filer och kataloger. Kopierar filer från en **källa** till en **mål** och uppdaterar dem när de **källa** ändringar genom att jämföra datum, kontrollsummor och hashvärden.|
 |**Arkiv**|Har packats upp Arkiv och en angiven plats. Verifierar Arkiv med en angiven **kontrollsumma**.|
 |**Miljö**|Hanterar miljövariabler.|
 |**Grupp**|Hanterar lokala grupper och styr medlemskap.|
-|**Log**|Skriver meddelanden till den `Microsoft-Windows-Desired State Configuration/Analytic` händelseloggen.|
+|**log**|Skriver meddelanden till den `Microsoft-Windows-Desired State Configuration/Analytic` händelseloggen.|
 |**Paketet**|Installerar eller avinstallerar paket med hjälp av **argument**, **LogPath**, **ReturnCode**, andra inställningar.|
-|**registret**|Hanterar registernycklar och värden.|
-|**Skriptet**|Låter dig utforma din egen [get testmängd](../resources/get-test-set.md) skript block.|
-|**Tjänsten**|Konfigurerar Windows-tjänster.|
+|**Registret**|Hanterar registernycklar och värden.|
+|**skriptet**|Låter dig utforma din egen [get testmängd](../resources/get-test-set.md) skript block.|
+|**Tjänst**|Konfigurerar Windows-tjänster.|
 |**Användaren** |Hanterar lokala användare och attribut.|
 |**WindowsFeature**|Hanterar roller och funktioner.|
 |**WindowsProcess**|Konfigurerar Windows-processer.|

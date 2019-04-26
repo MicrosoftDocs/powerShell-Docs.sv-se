@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Med hjälp av verktyget Resource Designer
 ms.openlocfilehash: 3fd2f06cf46602ee30dd34f8e7bd77d3c92b808f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076675"
 ---
 # <a name="using-the-resource-designer-tool"></a>Med hjälp av verktyget Resource Designer
 
@@ -26,7 +26,7 @@ Parameternamnet beskrivning
 * **Användarnamn**: Nyckelegenskapen som unikt identifierar en användare.
 * **Se till att**: Anger om användarkontot ska vara närvarande eller saknade. Den här parametern har bara två möjliga värden.
 * **DomainCredential**: Domänlösenordet för användaren.
-* **Lösenord**: Önskad lösenordet för användaren att godkänna en konfiguration för att ändra användarens lösenord om det behövs.
+* **lösenord**: Önskad lösenordet för användaren att godkänna en konfiguration för att ändra användarens lösenord om det behövs.
 
 Egenskaperna skapar vi använder den **New xDscResourceProperty** cmdlet. Följande PowerShell-kommandon skapar de egenskaper som beskrivs ovan.
 

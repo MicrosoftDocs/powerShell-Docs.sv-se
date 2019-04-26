@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSC för Linux nxService-resurs
 ms.openlocfilehash: fe8043995205649378725f2ab0a78e19313739c9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077701"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>DSC för Linux nxService-resurs
 
@@ -31,7 +31,7 @@ nxService <string> #ResourceName
 | Egenskap | Beskrivning |
 |---|---|
 | Namn| Namnet på tjänsten/daemon för att konfigurera.|
-| Domänkontrollant| Typ av tjänsthanteraren för att använda när du konfigurerar tjänsten.|
+| domänkontrollant| Typ av tjänsthanteraren för att använda när du konfigurerar tjänsten.|
 | Aktiverad| Anger om tjänsten startar vid start.|
 | Tillstånd| Anger om tjänsten körs. Ange den här egenskapen till ”Stoppad” för att säkerställa att tjänsten inte körs. Ange den till ”körs” för att säkerställa att tjänsten inte körs.|
 | DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om den **ID** för resursen configuration-skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|

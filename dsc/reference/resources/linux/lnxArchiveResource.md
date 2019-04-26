@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSC för Linux nxArchive-resurs
 ms.openlocfilehash: 800954478f149e29c22d1a88304c3be9950f109a
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048713"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078052"
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>DSC för Linux nxArchive-resurs
 
@@ -31,7 +31,7 @@ nxArchive <string> #ResourceName
 
 |  Egenskap |  Beskrivning |
 |---|---|
-| Källsökväg| Anger källsökvägen för arkivfilen. Detta bör vara en .tar .zip, eller..GZ-filen. |
+| SourcePath| Anger källsökvägen för arkivfilen. Detta bör vara en .tar .zip, eller..GZ-filen. |
 | Målsökväg| Anger den plats där du vill kontrollera arkivinnehållet extraheras.|
 | Kontrollsumma| Definierar den typ som ska användas när du bestämmer om käll-arkivet har uppdaterats. Värden är: ”ctime”, ”mtime” eller ”md5”. Standardvärdet är ”md5”.|
 | Force| Vissa åtgärder för sammansättningsfiler (till exempel att skriva över en fil eller ta bort en katalog som inte är tom) resulterar i ett fel. Med hjälp av den **kraft** egenskapen åsidosätter sådana fel. Standardvärdet är **$false**.|

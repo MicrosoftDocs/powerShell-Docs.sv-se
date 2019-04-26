@@ -9,13 +9,13 @@ ms.topic: article
 ms.assetid: 6e4e0cf6-19e0-44b8-8b40-d6f6075276cf
 caps.latest.revision: 5
 ms.openlocfilehash: 489d8bcdabe904d6a3d2bc6cdb9d7e23d09cbef2
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075196"
 ---
-# <a name="activity-parameters"></a>Aktivitetsparametrar
+# <a name="activity-parameters"></a>Parametrarna för aktiviteten
 
 I följande tabell visas de rekommenderade namn och de funktioner för parametrarna för aktiviteten.
 
@@ -39,7 +39,7 @@ I följande tabell visas de rekommenderade namn och de funktioner för parametra
 |**Force**<br>Datatyp: SwitchParameter|Implementera den här parametern för att ange att användaren kan utföra en åtgärd även om begränsningar uppstår när parametern har angetts. Parametern tillåter inte att säkerheten äventyras. Den här parametern kan till exempel en användare skriver över en skrivskyddad fil.|
 |**Inkludera**<br>Datatyp: String[]|Implementera den här parametern så att användaren kan innehålla något i en aktivitet. Läs mer om hur du använder filter för inkommande trafik, [Filter indataparametrar](input-filter-parameters.md).|
 |**Inkrementell**<br>Datatyp: SwitchParameter|Implementera den här parametern om du vill ange att bearbetning utförs stegvis när parametern har angetts. Den här parametern kan till exempel en användare att utföra inkrementella säkerhetskopieringar som säkerhetskopierar filer endast sedan den senaste säkerhetskopieringen.|
-|**InputObject**<br>Datatyp: Objekt|Implementera den här parametern när cmdlet: en hämtar indata från andra cmdletar. När du definierar en **InputObject** parametern alltid ange den **ValueFromPipeline** nyckelord när du deklarerar den **parametern** attribut. Läs mer om hur du använder filter för inkommande trafik, [Filter indataparametrar](./input-filter-parameters.md).|
+|**InputObject**<br>Datatyp: Object|Implementera den här parametern när cmdlet: en hämtar indata från andra cmdletar. När du definierar en **InputObject** parametern alltid ange den **ValueFromPipeline** nyckelord när du deklarerar den **parametern** attribut. Läs mer om hur du använder filter för inkommande trafik, [Filter indataparametrar](./input-filter-parameters.md).|
 |**Infoga**<br>Datatyp: SwitchParameter|Implementera den här parametern så att cmdleten infogar ett objekt när parametern har angetts.|
 |**Interaktiv**<br>Datatyp: SwitchParameter|Implementera den här parametern så att cmdleten fungerar interaktivt med användaren när parametern anges.|
 |**intervall**<br>Datatyp: Hash-tabell|Implementera den här parametern så att användaren kan ange en hash-tabell över nyckelord som innehåller värdena. I följande exempel visar exempelvärden för den **intervall** parameter: `-interval @{ResumeScan=15; Retry=3}`.|
