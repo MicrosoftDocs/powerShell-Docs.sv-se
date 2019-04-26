@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
-ms.openlocfilehash: dbccaf5b8e48a1c4d924bc0ec4ea09b25e10adf0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 30e98bfcf06b1720005a73ee8294aeba7e1ae066
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083509"
 ---
-# <a name="examples-of-comment-based-help"></a><span data-ttu-id="34b5d-102">Exempel på kommentarsbaserad hjälp</span><span class="sxs-lookup"><span data-stu-id="34b5d-102">Examples of Comment-Based Help</span></span>
+# <a name="examples-of-comment-based-help"></a><span data-ttu-id="a2a90-102">Exempel på kommentarsbaserad hjälp</span><span class="sxs-lookup"><span data-stu-id="a2a90-102">Examples of Comment-Based Help</span></span>
 
-<span data-ttu-id="34b5d-103">Det här avsnittet innehåller exempel som visar hur du använder kommentarbaserad hjälp för skript och funktioner.</span><span class="sxs-lookup"><span data-stu-id="34b5d-103">This topic includes example that demonstrate how to use comment-based help for scripts and functions.</span></span>
+<span data-ttu-id="a2a90-103">Det här avsnittet innehåller exempel som visar hur du använder kommentarbaserad hjälp för skript och funktioner.</span><span class="sxs-lookup"><span data-stu-id="a2a90-103">This topic includes example that demonstrate how to use comment-based help for scripts and functions.</span></span>
 
-## <a name="example-1-comment-based-help-for-a-function"></a><span data-ttu-id="34b5d-104">Exempel 1: Kommentarbaserad hjälp för en funktion</span><span class="sxs-lookup"><span data-stu-id="34b5d-104">Example 1: Comment-Based Help for a Function</span></span>
+## <a name="example-1-comment-based-help-for-a-function"></a><span data-ttu-id="a2a90-104">Exempel 1: Kommentarbaserad hjälp för en funktion</span><span class="sxs-lookup"><span data-stu-id="a2a90-104">Example 1: Comment-Based Help for a Function</span></span>
 
- <span data-ttu-id="34b5d-105">Följande exempelfunktion innehåller kommentarbaserad hjälp.</span><span class="sxs-lookup"><span data-stu-id="34b5d-105">The following sample function includes comment-based Help.</span></span>
+ <span data-ttu-id="a2a90-105">Följande exempelfunktion innehåller kommentarbaserad hjälp.</span><span class="sxs-lookup"><span data-stu-id="a2a90-105">The following sample function includes comment-based Help.</span></span>
 
 ```powershell
 function Add-Extension
@@ -71,7 +71,7 @@ function Add-Extension
 }
 ```
 
-<span data-ttu-id="34b5d-106">Följande utdata visar resultatet av kommandot Get-Help som visar hjälpen för funktionen Lägg till tillägget.</span><span class="sxs-lookup"><span data-stu-id="34b5d-106">The following output shows the results of a Get-Help command that displays the help for the Add-Extension function.</span></span>
+<span data-ttu-id="a2a90-106">Följande utdata visar resultatet av kommandot Get-Help som visar hjälpen för funktionen Lägg till tillägget.</span><span class="sxs-lookup"><span data-stu-id="a2a90-106">The following output shows the results of a Get-Help command that displays the help for the Add-Extension function.</span></span>
 
 ```powershell
 C:\PS> get-help add-extension -full
@@ -141,11 +141,11 @@ C:\PS> get-help add-extension -full
             Set-Item
 ```
 
-## <a name="example-2-comment-based-help-for-a-script"></a><span data-ttu-id="34b5d-107">Exempel 2: Kommentarbaserad hjälp för ett skript</span><span class="sxs-lookup"><span data-stu-id="34b5d-107">Example 2: Comment-Based Help for a Script</span></span>
+## <a name="example-2-comment-based-help-for-a-script"></a><span data-ttu-id="a2a90-107">Exempel 2: Kommentarbaserad hjälp för ett skript</span><span class="sxs-lookup"><span data-stu-id="a2a90-107">Example 2: Comment-Based Help for a Script</span></span>
 
-<span data-ttu-id="34b5d-108">Följande exempelfunktion innehåller kommentarbaserad hjälp.</span><span class="sxs-lookup"><span data-stu-id="34b5d-108">The following sample function includes comment-based Help.</span></span>
+<span data-ttu-id="a2a90-108">Följande exempelfunktion innehåller kommentarbaserad hjälp.</span><span class="sxs-lookup"><span data-stu-id="a2a90-108">The following sample function includes comment-based Help.</span></span>
 
-<span data-ttu-id="34b5d-109">Lägg märke till tomma rader mellan avslutande **#>** och `Param` instruktionen.</span><span class="sxs-lookup"><span data-stu-id="34b5d-109">Notice the blank lines between the closing **#>** and the `Param` statement.</span></span> <span data-ttu-id="34b5d-110">I ett skript som inte har en `Param` -instruktionen, det måste finnas minst två tomma rader mellan sista kommentaren i hjälpavsnittet och första funktionsdeklarationen.</span><span class="sxs-lookup"><span data-stu-id="34b5d-110">In a script that does not have a `Param` statement, there must be at least two blank lines between the final comment in the Help topic and the first function declaration.</span></span> <span data-ttu-id="34b5d-111">Utan dessa tomma rader associerar Get-Help hjälpavsnittet med hjälp av funktionen i stället för skriptet.</span><span class="sxs-lookup"><span data-stu-id="34b5d-111">Without these blank lines, Get-Help associates the Help topic with the function, instead of the script.</span></span>
+<span data-ttu-id="a2a90-109">Lägg märke till tomma rader mellan avslutande **#>** och `Param` instruktionen.</span><span class="sxs-lookup"><span data-stu-id="a2a90-109">Notice the blank lines between the closing **#>** and the `Param` statement.</span></span> <span data-ttu-id="a2a90-110">I ett skript som inte har en `Param` -instruktionen, det måste finnas minst två tomma rader mellan sista kommentaren i hjälpavsnittet och första funktionsdeklarationen.</span><span class="sxs-lookup"><span data-stu-id="a2a90-110">In a script that does not have a `Param` statement, there must be at least two blank lines between the final comment in the Help topic and the first function declaration.</span></span> <span data-ttu-id="a2a90-111">Utan dessa tomma rader associerar Get-Help hjälpavsnittet med hjälp av funktionen i stället för skriptet.</span><span class="sxs-lookup"><span data-stu-id="a2a90-111">Without these blank lines, Get-Help associates the Help topic with the function, instead of the script.</span></span>
 
 ```powershell
 <#
@@ -185,7 +185,7 @@ param ([string]$InputPath, [string]$OutPutPath)
 function Get-Data { }
 ```
 
-<span data-ttu-id="34b5d-112">Följande kommando hämtar skriptet hjälp.</span><span class="sxs-lookup"><span data-stu-id="34b5d-112">The following command gets the script Help.</span></span> <span data-ttu-id="34b5d-113">Eftersom skriptet inte är n måste en katalog som anges i miljövariabeln Path på kommandot Get-Help som hämtar skriptet hjälp med att ange skriptets sökväg.</span><span class="sxs-lookup"><span data-stu-id="34b5d-113">Because the script is not n a directory that is listed in the Path environment variable, the Get-Help command that gets the script Help must specify the script path.</span></span>
+<span data-ttu-id="a2a90-112">Följande kommando hämtar skriptet hjälp.</span><span class="sxs-lookup"><span data-stu-id="a2a90-112">The following command gets the script Help.</span></span> <span data-ttu-id="a2a90-113">Eftersom skriptet inte är n måste en katalog som anges i miljövariabeln Path på kommandot Get-Help som hämtar skriptet hjälp med att ange skriptets sökväg.</span><span class="sxs-lookup"><span data-stu-id="a2a90-113">Because the script is not n a directory that is listed in the Path environment variable, the Get-Help command that gets the script Help must specify the script path.</span></span>
 
 ```powershell
 C:\PS> get-help c:\ps-test\update-month.ps1 -full
@@ -255,9 +255,9 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
             RELATED LINKS
 ```
 
-## <a name="example-3-parameter-descriptions-in-a-param-statement"></a><span data-ttu-id="34b5d-114">Exempel 3: Beskrivningar av parametern i en Param-instruktion</span><span class="sxs-lookup"><span data-stu-id="34b5d-114">Example 3: Parameter Descriptions in a Param Statement</span></span>
+## <a name="example-3-parameter-descriptions-in-a-param-statement"></a><span data-ttu-id="a2a90-114">Exempel 3: Beskrivningar av parametern i en Param-instruktion</span><span class="sxs-lookup"><span data-stu-id="a2a90-114">Example 3: Parameter Descriptions in a Param Statement</span></span>
 
-<span data-ttu-id="34b5d-115">Det här exemplet visar hur du infogar parameterdescriptions i den `Param` av en funktion eller ett skript.</span><span class="sxs-lookup"><span data-stu-id="34b5d-115">This example show how to insert parameterdescriptions in the `Param` statement of a function or script.</span></span> <span data-ttu-id="34b5d-116">Det här formatet är mest användbara när parametern är kort.</span><span class="sxs-lookup"><span data-stu-id="34b5d-116">This format is most useful when the parameter descriptions are brief.</span></span>
+<span data-ttu-id="a2a90-115">Det här exemplet visar hur du infogar parameterdescriptions i den `Param` av en funktion eller ett skript.</span><span class="sxs-lookup"><span data-stu-id="a2a90-115">This example show how to insert parameterdescriptions in the `Param` statement of a function or script.</span></span> <span data-ttu-id="a2a90-116">Det här formatet är mest användbara när parametern är kort.</span><span class="sxs-lookup"><span data-stu-id="a2a90-116">This format is most useful when the parameter descriptions are brief.</span></span>
 
 ```powershell
 function Add-Extension
@@ -282,11 +282,11 @@ function Add-Extension
     #>
 ```
 
-<span data-ttu-id="34b5d-117">Resultatet är samma som resultat till exempel 1.</span><span class="sxs-lookup"><span data-stu-id="34b5d-117">The results are the same as the results for Example 1.</span></span> <span data-ttu-id="34b5d-118">Get-Help tolkar parameterbeskrivningar som om de har åtföljas av den `.Parameter` nyckelord.</span><span class="sxs-lookup"><span data-stu-id="34b5d-118">Get-Help interprets the parameter descriptions as though they were accompanied by the `.Parameter` keyword.</span></span>
+<span data-ttu-id="a2a90-117">Resultatet är samma som resultat till exempel 1.</span><span class="sxs-lookup"><span data-stu-id="a2a90-117">The results are the same as the results for Example 1.</span></span> <span data-ttu-id="a2a90-118">Get-Help tolkar parameterbeskrivningar som om de har åtföljas av den `.Parameter` nyckelord.</span><span class="sxs-lookup"><span data-stu-id="a2a90-118">Get-Help interprets the parameter descriptions as though they were accompanied by the `.Parameter` keyword.</span></span>
 
-## <a name="example-4--redirecting-to-an-xml-file"></a><span data-ttu-id="34b5d-119">Exempel 4:  Omdirigera till en XML-fil</span><span class="sxs-lookup"><span data-stu-id="34b5d-119">Example 4:  Redirecting to an XML File</span></span>
+## <a name="example-4--redirecting-to-an-xml-file"></a><span data-ttu-id="a2a90-119">Exempel 4:  Omdirigera till en XML-fil</span><span class="sxs-lookup"><span data-stu-id="a2a90-119">Example 4:  Redirecting to an XML File</span></span>
 
-<span data-ttu-id="34b5d-120">Du kan skriva XML-baserade hjälpavsnitt för funktioner och skript.</span><span class="sxs-lookup"><span data-stu-id="34b5d-120">You can write XML-based Help topics for functions and scripts.</span></span> <span data-ttu-id="34b5d-121">Även om det är enklare att implementera kommentarbaserad hjälp, krävs XML-baserade hjälp om du vill ha mer exakt kontroll över hjälpinnehållet eller om du översätta hjälpavsnitt till flera språk. I följande exempel visas de första raderna i skriptet uppdatering Month.ps1.</span><span class="sxs-lookup"><span data-stu-id="34b5d-121">Although comment-based Help is easier to implement, XML-based Help is required if you want more precise control over Help content or if you are translating Help topics into multiple languages.The following example shows the first few lines of the Update-Month.ps1 script.</span></span> <span data-ttu-id="34b5d-122">Skriptet använder den `.ExternalHelp` nyckelord för att ange sökvägen till en XML-baserade hjälpavsnitt för skriptet.</span><span class="sxs-lookup"><span data-stu-id="34b5d-122">The script uses the `.ExternalHelp` keyword to specify the path to an XML-based Help topic for the script.</span></span>
+<span data-ttu-id="a2a90-120">Du kan skriva XML-baserade hjälpavsnitt för funktioner och skript.</span><span class="sxs-lookup"><span data-stu-id="a2a90-120">You can write XML-based Help topics for functions and scripts.</span></span> <span data-ttu-id="a2a90-121">Även om det är enklare att implementera kommentarbaserad hjälp, krävs XML-baserade hjälp om du vill ha mer exakt kontroll över hjälpinnehållet eller om du översätta hjälpavsnitt till flera språk. I följande exempel visas de första raderna i skriptet uppdatering Month.ps1.</span><span class="sxs-lookup"><span data-stu-id="a2a90-121">Although comment-based Help is easier to implement, XML-based Help is required if you want more precise control over Help content or if you are translating Help topics into multiple languages.The following example shows the first few lines of the Update-Month.ps1 script.</span></span> <span data-ttu-id="a2a90-122">Skriptet använder den `.ExternalHelp` nyckelord för att ange sökvägen till en XML-baserade hjälpavsnitt för skriptet.</span><span class="sxs-lookup"><span data-stu-id="a2a90-122">The script uses the `.ExternalHelp` keyword to specify the path to an XML-based Help topic for the script.</span></span>
 
 ```powershell
 #  .ExternalHelp C:\MyScripts\Update-Month-Help.xml
@@ -296,7 +296,7 @@ function Add-Extension
     function Get-Data { }
 ```
 
-<span data-ttu-id="34b5d-123">I följande exempel visar användningen av den `.ExternalHelp` nyckelord i en funktion.</span><span class="sxs-lookup"><span data-stu-id="34b5d-123">The following example shows the use of the `.ExternalHelp` keyword in a function.</span></span>
+<span data-ttu-id="a2a90-123">I följande exempel visar användningen av den `.ExternalHelp` nyckelord i en funktion.</span><span class="sxs-lookup"><span data-stu-id="a2a90-123">The following example shows the use of the `.ExternalHelp` keyword in a function.</span></span>
 
 ```powershell
 function Add-Extension
@@ -309,9 +309,9 @@ function Add-Extension
 }
 ```
 
-## <a name="example-5--redirecting-to-a-different-help-topic"></a><span data-ttu-id="34b5d-124">Exempel 5:  Omdirigera till ett annat hjälpavsnitt</span><span class="sxs-lookup"><span data-stu-id="34b5d-124">Example 5:  Redirecting to a Different Help Topic</span></span>
+## <a name="example-5--redirecting-to-a-different-help-topic"></a><span data-ttu-id="a2a90-124">Exempel 5:  Omdirigera till ett annat hjälpavsnitt</span><span class="sxs-lookup"><span data-stu-id="a2a90-124">Example 5:  Redirecting to a Different Help Topic</span></span>
 
-<span data-ttu-id="34b5d-125">Följande kod är ett utdrag från början av inbyggt `Help` funktion i Windows PowerShell, som visar en skärmbild av hjälptext i taget.</span><span class="sxs-lookup"><span data-stu-id="34b5d-125">The following code is an excerpt from the beginning of the built-in `Help` function in Windows PowerShell, which displays one screen of Help text at a time.</span></span> <span data-ttu-id="34b5d-126">Eftersom hjälpavsnittet för cmdleten Get-Help beskriver hjälpfunktionen, hjälpfunktionen använder den `.ForwardHelpTargetName` och `.ForwardHelpCategory` nyckelord för att omdirigera användaren till Get-Help cmdlet-hjälpavsnittet.</span><span class="sxs-lookup"><span data-stu-id="34b5d-126">Because the Help topic for the Get-Help cmdlet describes the Help function, the Help function uses the `.ForwardHelpTargetName` and `.ForwardHelpCategory` keywords to redirect the user to the Get-Help cmdlet Help topic.</span></span>
+<span data-ttu-id="a2a90-125">Följande kod är ett utdrag från början av inbyggt `Help` funktion i Windows PowerShell, som visar en skärmbild av hjälptext i taget.</span><span class="sxs-lookup"><span data-stu-id="a2a90-125">The following code is an excerpt from the beginning of the built-in `Help` function in Windows PowerShell, which displays one screen of Help text at a time.</span></span> <span data-ttu-id="a2a90-126">Eftersom hjälpavsnittet för cmdleten Get-Help beskriver hjälpfunktionen, hjälpfunktionen använder den `.ForwardHelpTargetName` och `.ForwardHelpCategory` nyckelord för att omdirigera användaren till Get-Help cmdlet-hjälpavsnittet.</span><span class="sxs-lookup"><span data-stu-id="a2a90-126">Because the Help topic for the Get-Help cmdlet describes the Help function, the Help function uses the `.ForwardHelpTargetName` and `.ForwardHelpCategory` keywords to redirect the user to the Get-Help cmdlet Help topic.</span></span>
 
 ```powershell
 function help
@@ -329,7 +329,7 @@ function help
     ...
 ```
 
-<span data-ttu-id="34b5d-127">Följande kommando använder den här funktionen.</span><span class="sxs-lookup"><span data-stu-id="34b5d-127">The following command uses this feature.</span></span> <span data-ttu-id="34b5d-128">När en användare skriver ett Get-Help-kommando för hjälpfunktionen visas visar hjälpavsnittet för cmdleten Get-Help Get-Help.</span><span class="sxs-lookup"><span data-stu-id="34b5d-128">When a user types a Get-Help command for the Help function, Get-Help displays the Help topic for the Get-Help cmdlet.</span></span>
+<span data-ttu-id="a2a90-127">Följande kommando använder den här funktionen.</span><span class="sxs-lookup"><span data-stu-id="a2a90-127">The following command uses this feature.</span></span> <span data-ttu-id="a2a90-128">När en användare skriver ett Get-Help-kommando för hjälpfunktionen visas visar hjälpavsnittet för cmdleten Get-Help Get-Help.</span><span class="sxs-lookup"><span data-stu-id="a2a90-128">When a user types a Get-Help command for the Help function, Get-Help displays the Help topic for the Get-Help cmdlet.</span></span>
 
 ```powershell
 C:\PS> get-help help
