@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 9bd9d599-faa7-4154-ac36-1f35ccf8e320
 caps.latest.revision: 7
 ms.openlocfilehash: 5ad28cfbc73628ba818e42b87128d8f4ad273bda
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081449"
 ---
-# <a name="runspace02-vbnet-code-sample"></a><span data-ttu-id="41e72-102">Runspace02 (VB.NET) – kodexempel</span><span class="sxs-lookup"><span data-stu-id="41e72-102">Runspace02 (VB.NET) Code Sample</span></span>
+# <a name="runspace02-vbnet-code-sample"></a><span data-ttu-id="9f3c2-102">Runspace02 (VB.NET) – kodexempel</span><span class="sxs-lookup"><span data-stu-id="9f3c2-102">Runspace02 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="41e72-103">Här är VB.NET källkoden för Runspace02-exemplet.</span><span class="sxs-lookup"><span data-stu-id="41e72-103">Here is the VB.NET source code for the Runspace02 sample.</span></span> <span data-ttu-id="41e72-104">Det här exemplet används den [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) klassen för att köra den `Get-Process` cmdlet synkront.</span><span class="sxs-lookup"><span data-stu-id="41e72-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously.</span></span> <span data-ttu-id="41e72-105">Windows-formulär och databindning används sedan för att visa resultatet i en DataGridView-kontroll.</span><span class="sxs-lookup"><span data-stu-id="41e72-105">Windows Forms and data binding are then used to display the results in a DataGridView control.</span></span>
+<span data-ttu-id="9f3c2-103">Här är VB.NET källkoden för Runspace02-exemplet.</span><span class="sxs-lookup"><span data-stu-id="9f3c2-103">Here is the VB.NET source code for the Runspace02 sample.</span></span> <span data-ttu-id="9f3c2-104">Det här exemplet används den [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) klassen för att köra den `Get-Process` cmdlet synkront.</span><span class="sxs-lookup"><span data-stu-id="9f3c2-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously.</span></span> <span data-ttu-id="9f3c2-105">Windows-formulär och databindning används sedan för att visa resultatet i en DataGridView-kontroll.</span><span class="sxs-lookup"><span data-stu-id="9f3c2-105">Windows Forms and data binding are then used to display the results in a DataGridView control.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="41e72-106">Kodexempel</span><span class="sxs-lookup"><span data-stu-id="41e72-106">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="9f3c2-106">Kodexempel</span><span class="sxs-lookup"><span data-stu-id="9f3c2-106">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -86,6 +86,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace02.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace02/Runspace02.vb#L09-L68 "Runspace02.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="41e72-107">Se även</span><span class="sxs-lookup"><span data-stu-id="41e72-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9f3c2-107">Se även</span><span class="sxs-lookup"><span data-stu-id="9f3c2-107">See Also</span></span>
 
-[<span data-ttu-id="41e72-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="41e72-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="9f3c2-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="9f3c2-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

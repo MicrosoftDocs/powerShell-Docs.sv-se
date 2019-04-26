@@ -9,63 +9,63 @@ ms.topic: article
 ms.assetid: b7bed607-369b-4507-87fa-f6011c2f1970
 caps.latest.revision: 9
 ms.openlocfilehash: 2ce146df05ef876d9c17f560628ebac2c39e57bf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067273"
 ---
-# <a name="stopprocesssample01-sample"></a><span data-ttu-id="d8b56-102">StopProcessSample01 – exempel</span><span class="sxs-lookup"><span data-stu-id="d8b56-102">StopProcessSample01 Sample</span></span>
+# <a name="stopprocesssample01-sample"></a><span data-ttu-id="76cd4-102">StopProcessSample01 – exempel</span><span class="sxs-lookup"><span data-stu-id="76cd4-102">StopProcessSample01 Sample</span></span>
 
-<span data-ttu-id="d8b56-103">Det här exemplet visar hur du skriver en cmdlet som efterfrågar feedback från användaren innan den försöker stoppa en process och hur du implementerar en `PassThru` parameter som anger att användaren vill cmdleten returnerar ett objekt.</span><span class="sxs-lookup"><span data-stu-id="d8b56-103">This sample shows how to write a cmdlet that requests feedback from the user before it attempts to stop a process, and how to implement a `PassThru` parameter indicating that the user wants the cmdlet to return an object.</span></span> <span data-ttu-id="d8b56-104">Denna cmdlet liknar den `Stop-Process` cmdlet som tillhandahålls av Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="d8b56-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="76cd4-103">Det här exemplet visar hur du skriver en cmdlet som efterfrågar feedback från användaren innan den försöker stoppa en process och hur du implementerar en `PassThru` parameter som anger att användaren vill cmdleten returnerar ett objekt.</span><span class="sxs-lookup"><span data-stu-id="76cd4-103">This sample shows how to write a cmdlet that requests feedback from the user before it attempts to stop a process, and how to implement a `PassThru` parameter indicating that the user wants the cmdlet to return an object.</span></span> <span data-ttu-id="76cd4-104">Denna cmdlet liknar den `Stop-Process` cmdlet som tillhandahålls av Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="76cd4-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="d8b56-105">Hur du skapar exemplet med hjälp av Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="d8b56-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="76cd4-105">Hur du skapar exemplet med hjälp av Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="76cd4-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="d8b56-106">Navigera till mappen StopProcessSample01 med Windows PowerShell 2.0 SDK för installerade.</span><span class="sxs-lookup"><span data-stu-id="d8b56-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample01 folder.</span></span> <span data-ttu-id="d8b56-107">Standardplatsen är C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01.</span><span class="sxs-lookup"><span data-stu-id="d8b56-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01.</span></span>
+1. <span data-ttu-id="76cd4-106">Navigera till mappen StopProcessSample01 med Windows PowerShell 2.0 SDK för installerade.</span><span class="sxs-lookup"><span data-stu-id="76cd4-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample01 folder.</span></span> <span data-ttu-id="76cd4-107">Standardplatsen är C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01.</span><span class="sxs-lookup"><span data-stu-id="76cd4-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01.</span></span>
 
-2. <span data-ttu-id="d8b56-108">Dubbelklicka på ikonen för lösningsfilen (.sln).</span><span class="sxs-lookup"><span data-stu-id="d8b56-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="d8b56-109">Exempelprojektet öppnas i Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="d8b56-109">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="76cd4-108">Dubbelklicka på ikonen för lösningsfilen (.sln).</span><span class="sxs-lookup"><span data-stu-id="76cd4-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="76cd4-109">Exempelprojektet öppnas i Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="76cd4-109">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="d8b56-110">I den **skapa** menyn och välj **skapa lösning**.</span><span class="sxs-lookup"><span data-stu-id="d8b56-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="76cd4-110">I den **skapa** menyn och välj **skapa lösning**.</span><span class="sxs-lookup"><span data-stu-id="76cd4-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="d8b56-111">Biblioteket för exemplet skapas i standardmappar \bin eller \bin\debug.</span><span class="sxs-lookup"><span data-stu-id="d8b56-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="76cd4-111">Biblioteket för exemplet skapas i standardmappar \bin eller \bin\debug.</span><span class="sxs-lookup"><span data-stu-id="76cd4-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="d8b56-112">Hur du kör exemplet</span><span class="sxs-lookup"><span data-stu-id="d8b56-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="76cd4-112">Hur du kör exemplet</span><span class="sxs-lookup"><span data-stu-id="76cd4-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="d8b56-113">Skapa följande modulmappen:</span><span class="sxs-lookup"><span data-stu-id="d8b56-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="76cd4-113">Skapa följande modulmappen:</span><span class="sxs-lookup"><span data-stu-id="76cd4-113">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample01`
 
-2. <span data-ttu-id="d8b56-114">Kopiera exemplet sammansättningen till modulmappen.</span><span class="sxs-lookup"><span data-stu-id="d8b56-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="76cd4-114">Kopiera exemplet sammansättningen till modulmappen.</span><span class="sxs-lookup"><span data-stu-id="76cd4-114">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="d8b56-115">Starta Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="d8b56-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="76cd4-115">Starta Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="76cd4-115">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="d8b56-116">Kör följande kommando för att läsa in sammansättningen i Windows PowerShell:</span><span class="sxs-lookup"><span data-stu-id="d8b56-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="76cd4-116">Kör följande kommando för att läsa in sammansättningen i Windows PowerShell:</span><span class="sxs-lookup"><span data-stu-id="76cd4-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample01`
 
-5. <span data-ttu-id="d8b56-117">Kör följande kommando för att köra cmdleten:</span><span class="sxs-lookup"><span data-stu-id="d8b56-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="76cd4-117">Kör följande kommando för att köra cmdleten:</span><span class="sxs-lookup"><span data-stu-id="76cd4-117">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="d8b56-118">Krav</span><span class="sxs-lookup"><span data-stu-id="d8b56-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="76cd4-118">Krav</span><span class="sxs-lookup"><span data-stu-id="76cd4-118">Requirements</span></span>
 
-<span data-ttu-id="d8b56-119">Det här exemplet kräver Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="d8b56-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="76cd4-119">Det här exemplet kräver Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="76cd4-119">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="d8b56-120">Visar</span><span class="sxs-lookup"><span data-stu-id="d8b56-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="76cd4-120">Visar</span><span class="sxs-lookup"><span data-stu-id="76cd4-120">Demonstrates</span></span>
 
-<span data-ttu-id="d8b56-121">Detta exempel visar följande.</span><span class="sxs-lookup"><span data-stu-id="d8b56-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="76cd4-121">Detta exempel visar följande.</span><span class="sxs-lookup"><span data-stu-id="76cd4-121">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="d8b56-122">Deklarera en cmdlet-klass med hjälp av Cmdlet-attributet.</span><span class="sxs-lookup"><span data-stu-id="d8b56-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="76cd4-122">Deklarera en cmdlet-klass med hjälp av Cmdlet-attributet.</span><span class="sxs-lookup"><span data-stu-id="76cd4-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="d8b56-123">Deklarera en cmdlet parametrar med parametern-attributet.</span><span class="sxs-lookup"><span data-stu-id="d8b56-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="76cd4-123">Deklarera en cmdlet parametrar med parametern-attributet.</span><span class="sxs-lookup"><span data-stu-id="76cd4-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="d8b56-124">Anropa ShouldProcess-metoden för att begära bekräftelse.</span><span class="sxs-lookup"><span data-stu-id="d8b56-124">Calling the ShouldProcess method to request confirmation.</span></span>
+- <span data-ttu-id="76cd4-124">Anropa ShouldProcess-metoden för att begära bekräftelse.</span><span class="sxs-lookup"><span data-stu-id="76cd4-124">Calling the ShouldProcess method to request confirmation.</span></span>
 
-- <span data-ttu-id="d8b56-125">Implementera en `PassThru` parameter som anger om användaren vill cmdlet för att returnera ett-objekt.</span><span class="sxs-lookup"><span data-stu-id="d8b56-125">Implementing a `PassThru` parameter that indicates if the user wants the cmdlet to return an object.</span></span> <span data-ttu-id="d8b56-126">Som standard returnerar denna cmdlet inte ett objekt till pipelinen.</span><span class="sxs-lookup"><span data-stu-id="d8b56-126">By default, this cmdlet does not return an object to the pipeline.</span></span>
+- <span data-ttu-id="76cd4-125">Implementera en `PassThru` parameter som anger om användaren vill cmdlet för att returnera ett-objekt.</span><span class="sxs-lookup"><span data-stu-id="76cd4-125">Implementing a `PassThru` parameter that indicates if the user wants the cmdlet to return an object.</span></span> <span data-ttu-id="76cd4-126">Som standard returnerar denna cmdlet inte ett objekt till pipelinen.</span><span class="sxs-lookup"><span data-stu-id="76cd4-126">By default, this cmdlet does not return an object to the pipeline.</span></span>
 
-## <a name="example"></a><span data-ttu-id="d8b56-127">Exempel</span><span class="sxs-lookup"><span data-stu-id="d8b56-127">Example</span></span>
+## <a name="example"></a><span data-ttu-id="76cd4-127">Exempel</span><span class="sxs-lookup"><span data-stu-id="76cd4-127">Example</span></span>
 
-<span data-ttu-id="d8b56-128">Det här exemplet visas hur du implementerar en `PassThru` parameter som anger att användaren vill cmdlet för att returnera ett-objekt och hur du begär Användarfeedback genom anrop till den `ShouldProcess` och `ShouldContinue` metoder.</span><span class="sxs-lookup"><span data-stu-id="d8b56-128">This sample shows how to implement a `PassThru` parameter that indicates that the user wants the cmdlet to return an object, and how to request user feedback by calls to the `ShouldProcess` and `ShouldContinue` methods.</span></span>
+<span data-ttu-id="76cd4-128">Det här exemplet visas hur du implementerar en `PassThru` parameter som anger att användaren vill cmdlet för att returnera ett-objekt och hur du begär Användarfeedback genom anrop till den `ShouldProcess` och `ShouldContinue` metoder.</span><span class="sxs-lookup"><span data-stu-id="76cd4-128">This sample shows how to implement a `PassThru` parameter that indicates that the user wants the cmdlet to return an object, and how to request user feedback by calls to the `ShouldProcess` and `ShouldContinue` methods.</span></span>
 
 ```csharp
 using System;
@@ -263,6 +263,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="d8b56-129">Se även</span><span class="sxs-lookup"><span data-stu-id="d8b56-129">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="76cd4-129">Se även</span><span class="sxs-lookup"><span data-stu-id="76cd4-129">See Also</span></span>
 
-[<span data-ttu-id="d8b56-130">Skriva en Windows PowerShell-Cmdlet</span><span class="sxs-lookup"><span data-stu-id="d8b56-130">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="76cd4-130">Skriva en Windows PowerShell-Cmdlet</span><span class="sxs-lookup"><span data-stu-id="76cd4-130">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
