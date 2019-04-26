@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Arbeta med objekt
 ms.assetid: 7ecc94a4-015c-4459-ae58-85289ea09030
 ms.openlocfilehash: 5d86e1658286055f8a7dc57d488a6adcef577a10
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684740"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085991"
 ---
 # <a name="working-with-objects"></a>Arbeta med objekt
 

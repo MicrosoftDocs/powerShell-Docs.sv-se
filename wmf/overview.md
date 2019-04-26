@@ -3,11 +3,11 @@ ms.date: 04/19/2019
 keywords: WMF, powershell, inställning
 title: Windows Management Framework (WMF)
 ms.openlocfilehash: 6d25b4025bbc86f6be0e5c74db9f1fbe6705d816
-ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
-ms.translationtype: HT
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59984328"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62055453"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
 

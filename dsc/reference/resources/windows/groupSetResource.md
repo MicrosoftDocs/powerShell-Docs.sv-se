@@ -4,11 +4,11 @@ keywords: DSC, powershell, konfiguration, installation
 description: Är en mekanism för att hantera lokala grupper på målnoden.
 title: DSC GroupSet-resurs
 ms.openlocfilehash: afe4c4d33ac5620c411481e93d76a1f90c26deb9
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077185"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet-resurs
 

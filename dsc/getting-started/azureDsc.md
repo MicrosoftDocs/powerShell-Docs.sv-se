@@ -3,11 +3,11 @@ ms.date: 03/15/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Använda DSC på Microsoft Azure
 ms.openlocfilehash: 54a317a415ff12c3d270897f414cba88716f0728
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404654"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079888"
 ---
 # <a name="using-dsc-on-microsoft-azure"></a>Använda DSC på Microsoft Azure
 

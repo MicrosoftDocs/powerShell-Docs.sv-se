@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: fcf2adf67f36edb534df3e2a849459fb20e1c2de
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085362"
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>Extrahera och parsa strukturerade objekt från sträng
 

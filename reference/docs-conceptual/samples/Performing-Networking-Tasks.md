@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Utför nätverksuppgifter
 ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
 ms.openlocfilehash: 250ae6e5f6431ce659b3600188d7e30e501c3247
-ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
-ms.translationtype: HT
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59984273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058292"
 ---
 # <a name="performing-networking-tasks"></a>Utför nätverksuppgifter
 

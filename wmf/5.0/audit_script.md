@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: 28cd186ab3a08a0da4ff81f5a21514f239770d13
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058088"
 ---
 # <a name="script-tracing-and-logging"></a>Skriptspårning och -loggning
 
@@ -18,7 +18,7 @@ Händelserna är:
 
 | Kanal | Operativa                                 |
 |---------|---------------------------------------------|
-| Nivå   | Verbose                                     |
+| Nivå   | Utförlig                                     |
 | OpCode  | Create                                      |
 | Uppgift    | CommandStart                                |
 | Nyckelord | körningsutrymme                                    |
@@ -32,7 +32,7 @@ När du aktiverar utförlig loggning kan funktionen skrivningar börja och sluta
 
 | Kanal | Operativa                                            |
 |---------|--------------------------------------------------------|
-| Nivå   | Verbose                                                |
+| Nivå   | Utförlig                                                |
 | OpCode  | Öppna (/ Stäng)                                         |
 | Uppgift    | CommandStart (/ CommandStop)                           |
 | Nyckelord | körningsutrymme                                               |

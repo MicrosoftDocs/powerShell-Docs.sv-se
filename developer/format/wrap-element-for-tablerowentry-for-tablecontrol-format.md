@@ -9,13 +9,13 @@ ms.topic: article
 ms.assetid: 64087c6c-2abd-446d-b837-7d3ee03a6874
 caps.latest.revision: 11
 ms.openlocfilehash: 102fe1b9c3bd04562aa296f390ec549d5f8f35e9
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58059850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083611"
 ---
-# <a name="wrap-element-for-tablerowentry-for-tablecontrol--format"></a>Omsluta Element för TableRowEntry för TableControl (Format)
+# <a name="wrap-element-for-tablerowentry-for-tablecontrol--format"></a>Wrap-element för TableRowEntry för TableControl (format)
 
 Anger att text som överskrider kolumnbredden visas på nästa rad. Som standard trunkeras text som överskrider kolumnbredden.
 

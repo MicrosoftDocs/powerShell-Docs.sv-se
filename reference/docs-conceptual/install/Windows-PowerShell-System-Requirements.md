@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Windows PowerShell-systemkrav
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 164ccefa050373064977108aaa13a3ecbeb28713
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: a9a7dc434d26876d6747526ad3ef6fa598376ac1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058315"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell-systemkrav
 Det här avsnittet beskrivs systemkraven för Windows PowerShell 3.0, Windows PowerShell 4.0 och Windows PowerShell 5.0 och Windows PowerShell 5.1 och för särskilda funktioner, till exempel Windows PowerShell Integrated Scripting Environment (ISE), CIM-kommandon, och arbetsflöden.
@@ -36,7 +36,7 @@ Windows PowerShell 5.1 körs på följande versioner av Windows.
 
 - Installera Windows 7 med Service Pack 1, [Windows Management Framework 5.1](https://aka.ms/wmf5download) att köra Windows PowerShell 5.1
 
-Windows PowerShell 5.0 (Superceeded av Windows PowerShell 5.1) körs på följande versioner av Windows.
+Windows PowerShell 5.0 (ersatt med Windows PowerShell 5.1) körs på följande versioner av Windows.
 
 - Windows Server 2019, högre version som installeras som standard
 
@@ -78,7 +78,7 @@ Windows PowerShell 3.0 körs på följande versioner av Windows.
 
 - Windows Server 2008 med Service Pack 2, installera [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) att köra Windows PowerShell 3.0
 
-## <a name="microsoft-net-framework-requirements"></a>Microsoft .NET Framework-krav
+## <a name="microsoft-net-framework-requirements"></a>Microsoft .NET Framework Requirements
 Windows PowerShell 5.1 kräver den fullständiga installationen av Microsoft .NET Framework 4.5. Windows 8.1 och Windows Server 2012 R2 inkluderar Microsoft .NET Framework 4.5 som standard.
 
 Windows PowerShell 5.0 kräver den fullständiga installationen av Microsoft .NET Framework 4.5. Windows 8.1 och Windows Server 2012 R2 inkluderar Microsoft .NET Framework 4.5 som standard.
@@ -108,17 +108,17 @@ Windows PowerShell är ett konsol-baserade program som inte kräver ett grafiskt
 
 Men vissa objekt, till exempel följande, kräver ett grafiskt användargränssnitt. Mer information finns i hjälpavsnittet för varje objekt.
 
-- Windows PowerShell® Integrated Scripting Environment (ISE)
+- Windows PowerShell ISE (Integrated Scripting Environment)
 
 - Cmdletar
 
-    1.  [Out-GridView.](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview)
+    1.  [Out-GridView](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview)
 
     2.  [Visa kommando](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
 
     3.  [Visa ControlPanelItem](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
 
-    4.  [Visa händelseloggen](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
+    4.  [Show-EventLog](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
 
 - Parametrar
 

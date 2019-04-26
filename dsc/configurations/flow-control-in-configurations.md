@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Villkorssatser och slingor i konfigurationer
 ms.openlocfilehash: 0073d94d28afbb45bb635442129a6cddde4c805a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080143"
 ---
 # <a name="conditional-statements-and-loops-in-configurations"></a>Villkorssatser och slingor i konfigurationer
 

@@ -4,11 +4,11 @@ keywords: PowerShell cmdlet
 title: Installera Windows PowerShell 2.0-motorn
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
 ms.openlocfilehash: b625b61b4e191402074f57ea2e942f800dbbcd53
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684075"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058326"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>Installera Windows PowerShell 2.0-motorn
 Det här avsnittet beskriver hur du installerar Windows PowerShell 2.0-motorn.

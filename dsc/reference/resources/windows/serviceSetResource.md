@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSC ServiceSet-resurs
 ms.openlocfilehash: 5694c2abc5c0caf0098670b629af464b35125583
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076845"
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet-resurs
 

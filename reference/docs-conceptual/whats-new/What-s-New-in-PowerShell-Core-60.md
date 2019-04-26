@@ -3,11 +3,11 @@ title: Nyheter i PowerShell Core 6.0
 description: Nya funktioner och ändringar som introducerades i PowerShell Core 6.0
 ms.date: 08/06/2018
 ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059023"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Nyheter i PowerShell Core 6.0
 
@@ -22,7 +22,7 @@ PowerShell Core exponerar även API-uppsättning som erbjuds av .NET Core 2.0 so
 Windows PowerShell används .NET Framework-körning som värd för PowerShell-motorn.
 Det innebär att Windows PowerShell exponerar API-uppsättning som erbjuds av .NET Framework.
 
-API: er som delas mellan .NET Core och .NET Framework har definierats som en del av [.NET Standard][].
+API: er som delas mellan .NET Core och .NET Framework har definierats som en del av [.NET-standard][].
 
 Mer information om hur detta påverkar modulen/skript-kompatibilitet mellan PowerShell Core och Windows PowerShell finns i [Backwards kompatibilitet med Windows PowerShell](#backwards-compatibility-with-windows-powershell).
 
@@ -39,7 +39,7 @@ PowerShell officiellt stöder nu macOS och Linux, inklusive:
 - Red Hat Enterprise Linux 7
 - OpenSUSE 42.2
 - Fedora 25, 26
-- macOS 10.12 +
+- macOS 10.12+
 
 Paket för följande plattformar också har bidragit med vår community, men de officiellt stöds inte:
 
@@ -125,7 +125,7 @@ Ytterligare ändringar av `pwsh(.exe)` från `powershell.exe`:
 ## <a name="backwards-compatibility-with-windows-powershell"></a>Bakåtkompatibilitet kompatibilitet med Windows PowerShell
 
 Målet med PowerShell Core är att förbli som kompatibel som möjligt med Windows PowerShell.
-PowerShell Core använder [.NET Standard][] 2.0 och binär kompatibilitet med befintliga .NET-sammansättningar.
+PowerShell Core använder [.NET-standard][] 2.0 och binär kompatibilitet med befintliga .NET-sammansättningar.
 Många PowerShell-moduler är beroende av dessa sammansättningar (ofta tider DLL: er), så att .NET Standard gör att de kan fortsätta att arbeta med .NET Core.
 PowerShell Core innehåller också en tumregel att leta i kända mappar, t.ex. där den globala sammansättningscachen vanligtvis finns på disken – för att hitta beroenden i .NET Framework-DLL.
 
@@ -137,7 +137,7 @@ I vissa fall, på grund av ett saknat beroende i den underliggande .NET lager fu
 
 De flesta av de moduler som levereras som en del av Windows (till exempel `DnsClient`, `Hyper-V`, `NetTCPIP`, `Storage`och så vidare) och andra Microsoft-produkter inklusive Azure och Office har inte varit *uttryckligen* portas till. NET Core ännu.
 PowerShell-teamet arbetar med dessa grupper och team att validera och porten deras befintliga moduler PowerShell Core.
-Med .NET Standard och [CDXLM][], många av dessa traditionella Windows PowerShell-moduler verkar fungera i PowerShell Core, men de har inte formellt verifierats och formellt stöds inte.
+Med .NET Standard och [CDXML][], många av dessa traditionella Windows PowerShell-moduler verkar fungera i PowerShell Core, men de har inte formellt verifierats och formellt stöds inte.
 
 Genom att installera den [ `WindowsPSModulePath` ] [ windowspsmodulepath] modulen, kan du använda Windows PowerShell-moduler genom att lägga till Windows PowerShell `PSModulePath` till PowerShell Core `PSModulePath`.
 
@@ -183,17 +183,17 @@ PowerShell Core ändras den standardkodning som överensstämmer med bredare eko
 Det innebär att alla inbyggda cmdletar som använder den `-Encoding` parametern används den `UTF8NoBOM` värdet som standard.
 Följande cmdletar påverkas av den här ändringen:
 
-- Lägg till innehåll
+- Add-Content
 - Export-Clixml
 - Export-Csv
 - Export-PSSession
 - Format-Hex
-- Get-innehåll
+- Get-Content
 - Import-Csv
 - Out-File
 - Välj-sträng
 - Send-MailMessage
-- Set-innehåll
+- Set-Content
 
 Dessa cmdletar har också uppdaterats så att den `-Encoding` parametern accepterar universellt `System.Text.Encoding`.
 
@@ -234,9 +234,9 @@ Mer information om PowerShell-jobb finns i [about_Jobs](https://msdn.microsoft.c
 
 - `$PSVersionTable` har fyra nya egenskaper:
   - `PSEdition`: Detta är inställt på `Core` på PowerShell Core och `Desktop` på Windows PowerShell
-  - `GitCommitId`: Det här är ID: T för Git-incheckning för Git-gren eller tagg där PowerShell har skapats.
+  - `GitCommitId`: Detta är ID: T för Git-incheckning för Git-gren eller tagg där PowerShell har skapats.
     På utgivna versioner kommer det sannolikt att samma som `PSVersion`.
-  - `OS`: Det här är en sträng för OS-version som returneras av `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
+  - `OS`: Detta är en sträng för OS-version som returneras av `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
   - `Platform`: Detta returneras av `[System.Environment]::OSVersion.Platform` anges till `Win32NT` på Windows, `Unix` på macOS, och `Unix` i Linux.
 - Ta bort den `BuildVersion` egenskap från `$PSVersionTable`.
   Den här egenskapen har alltså tätt kopplade till build-version för Windows.
@@ -343,7 +343,7 @@ Mer information om PowerShell-jobb finns i [about_Jobs](https://msdn.microsoft.c
 - Aktivera argumentet automatisk komplettering för `-ExcludeProperty` och `-ExpandProperty` av `Select-Object`. (#3443) (Tack vare [ @iSazonov ](https://github.com/iSazonov)!)
 - Åtgärda en bugg i tabbifyllning att göra `native.exe --<tab>` anropar ursprungliga komplettering. (#3633) (Tack vare [ @powercode ](https://github.com/powercode)!)
 
-## <a name="breaking-changes"></a>Större ändringar
+## <a name="breaking-changes"></a>Icke-bakåtkompatibla ändringar
 
 Vi har lanserat ett antal icke-bakåtkompatibla ändringar i PowerShell Core 6.0.
 Mer information om dem i detalj, finns i [icke-bakåtkompatibla ändringar i PowerShell Core 6.0][breaking-changes].
@@ -365,7 +365,7 @@ Mer information om dem i detalj, finns i [icke-bakåtkompatibla ändringar i Pow
 Vi har gjort *många* förbättringar av prestanda i PowerShell, inklusive i starttiden för olika inbyggda cmdletar och interaktion med inbyggda binärfiler.
 
 Vi har också åtgärdat ett antal buggar i PowerShell Core.
-En fullständig lista över korrigeringar och ändringar, Kolla in vår [Ändringslogg][] på GitHub.
+En fullständig lista över korrigeringar och ändringar, Kolla in vår [ändringsloggen][] på GitHub.
 
 ## <a name="telemetry"></a>Telemetri
 
@@ -379,20 +379,20 @@ Vi har även planer på att exponera informationen telemetri och de insikter vi 
 Du hittar mer information om hur vi använder informationen i det här [blogginlägget][telemetry-blog].
 
 [github]: https://github.com/PowerShell/PowerShell
-[.NET core 2.0]: https://docs.microsoft.com/dotnet/core/
-[.NET standard]: https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
+[.NET-standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
 [breaking-changes]: breaking-changes-ps6.md
-[Ändringslogg]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
+[ändringsloggen]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
-[.NET standard]: https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET-standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET-bloggen]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
 [VANLIGA FRÅGOR OCH SVAR]: https://github.com/dotnet/standard/blob/master/docs/faq.md
-[CDXLM]: https://msdn.microsoft.com/library/jj542525(v=vs.85).aspx
+[CDXML]: https://msdn.microsoft.com/library/jj542525(v=vs.85).aspx
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
 [docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
 [windowspsmodulepath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
