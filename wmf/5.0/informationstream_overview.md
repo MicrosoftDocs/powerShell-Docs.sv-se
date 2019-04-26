@@ -2,15 +2,15 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: e61f59f8f7634853c9f6e0d3923939543ff04f20
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085668"
 ---
-# <a name="information-stream"></a><span data-ttu-id="f7869-102">Informationsström</span><span class="sxs-lookup"><span data-stu-id="f7869-102">Information Stream</span></span>
+# <a name="information-stream"></a><span data-ttu-id="51888-102">Informationsström</span><span class="sxs-lookup"><span data-stu-id="51888-102">Information Stream</span></span>
 
-<span data-ttu-id="f7869-103">En ny strukturerade informationsström kan nu användas för att överföra strukturerade data mellan ett skript och dess värd.</span><span class="sxs-lookup"><span data-stu-id="f7869-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="f7869-104">**Skriv-Host** har också uppdaterats för att generera dess utdata till informationsström där du kan nu avbilda eller inaktivera den.</span><span class="sxs-lookup"><span data-stu-id="f7869-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="f7869-105">Den nya **skriva Information** cmdlet (tillsammans med en motsvarande WriteInformation-API) som används med **- InformationVariable** och **- InformationAction** gemensamma parametrar möjliggör mer flexibilitet och funktion.</span><span class="sxs-lookup"><span data-stu-id="f7869-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
+<span data-ttu-id="51888-103">En ny strukturerade informationsström kan nu användas för att överföra strukturerade data mellan ett skript och dess värd.</span><span class="sxs-lookup"><span data-stu-id="51888-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="51888-104">**Skriv-Host** har också uppdaterats för att generera dess utdata till informationsström där du kan nu avbilda eller inaktivera den.</span><span class="sxs-lookup"><span data-stu-id="51888-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="51888-105">Den nya **skriva Information** cmdlet (tillsammans med en motsvarande WriteInformation-API) som används med **- InformationVariable** och **- InformationAction** gemensamma parametrar möjliggör mer flexibilitet och funktion.</span><span class="sxs-lookup"><span data-stu-id="51888-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
 
 ```powershell
 PS C:\Users\demo> ## Here's a typical PowerShell script
