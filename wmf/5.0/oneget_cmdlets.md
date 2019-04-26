@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: 042e9a30068d32dc5860255bdec960371121d866
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795104"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085311"
 ---
 # <a name="packagemanagement-cmdlets"></a>PackageManagement-cmdletar
 

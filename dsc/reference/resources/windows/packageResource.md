@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-Paketresurs
 ms.openlocfilehash: 9285df71a303c9a53dd50d450272575a64e962e7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077202"
 ---
 # <a name="dsc-package-resource"></a>DSC-Paketresurs
 
@@ -38,7 +38,7 @@ Package [string] #ResourceName
 | --- | --- |
 | Namn| Anger namnet på paketet som du vill se till att ett visst tillstånd.|
 | Sökväg| Anger sökvägen där paketet finns.|
-| productId| Anger produkt-ID som unikt identifierar paketet.|
+| ProductId| Anger produkt-ID som unikt identifierar paketet.|
 | Argument| Visar en sträng med argument som exakt så som kommer att skickas till paketet.|
 | Autentiseringsuppgifter| Ger åtkomst till paketet på en fjärransluten källa. Den här egenskapen används inte för att installera paketet. Paketet installeras alltid på det lokala systemet.|
 | Se till att| Anger om paketet har installerats. Ange den här egenskapen till ”inte” för att kontrollera att paketet inte har installerats (eller avinstallera paketet om det är installerat). Ange den till ”Visa” (standardvärdet) för att säkerställa att paketet har installerats.|

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
 caps.latest.revision: 9
 ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058784"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067645"
 ---
 # <a name="interpreting-errorrecord-objects"></a>Tolka ErrorRecord-objekt
 
@@ -68,7 +68,7 @@ FQID har utformats för att granskas som en sträng. Dock finnas fall där det f
 
 I exemplet ovan är den första token fel-ID, som följs av namnet på klassen cmdlet. Fel-ID kan vara en enskild token eller det kan vara en punkt-avgränsade identifierare som tillåter förgreningar enligt om kontroll av identifierare. Använd inte blanksteg eller skiljetecken i fel-identifierare. Det är särskilt viktigt att inte använda ett kommatecken; ett kommatecken används av Windows PowerShell för att avgränsa identifierare och klassnamn cmdlet.
 
-### <a name="other-information"></a>Övrig information
+### <a name="other-information"></a>Annan Information
 
 Den [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objekt också innehålla information som beskriver den miljö där felet inträffade. Den här informationen innehåller sådant som felinformation och anrop information målobjektet som behandlades när felet inträffade. Även om den här informationen kan vara praktiskt att värdprogrammet, är det inte vanligt att identifiera felet. Den här informationen är tillgänglig via följande egenskaper:
 

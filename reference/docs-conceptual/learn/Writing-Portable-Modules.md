@@ -3,11 +3,11 @@ ms.date: 12/14/2018
 keywords: PowerShell cmdlet
 title: Skriva bärbar moduler
 ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747729"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086416"
 ---
 # <a name="portable-modules"></a>Bärbar moduler
 
@@ -25,7 +25,7 @@ Den `RootModule` egenskapen i modulmanifestet ska anges till namnet på sammans�
 
 ### <a name="the-net-portability-analyzer-aka-apiport"></a>.NET portabilitet Analyzer (även kallat APIPort)
 
-Till port moduler som skrivits för Windows PowerShell för att arbeta med PowerShell Core, börja med den [.NET portabilitet Analyzer][]. Kör det här verktyget mot din kompilerad sammansättning att avgöra om .NET API: er används i modulen är kompatibla med .NET Framework, .NET Core och andra .NET-körningar. Verktyget föreslår alternativa API: er om de finns. Annars kan du behöva lägga till [runtime kontroller][] och begränsa funktioner som inte ingår i specifika körningar.
+Till port moduler som skrivits för Windows PowerShell för att arbeta med PowerShell Core, börja med den [.NET portabilitet Analyzer][]. Kör det här verktyget mot din kompilerad sammansättning att avgöra om .NET API: er används i modulen är kompatibla med .NET Framework, .NET Core och andra .NET-körningar. Verktyget föreslår alternativa API: er om de finns. Annars kan du behöva lägga till [Runtime-kontroller][] och begränsa funktioner som inte ingår i specifika körningar.
 
 ## <a name="creating-a-new-module"></a>Skapa en ny modul
 
@@ -164,7 +164,7 @@ I följande avsnitt beskrivs i detalj några av de tekniker som används av den 
 
 ## <a name="net-standard-library"></a>.NET-standardbibliotek
 
-[.NET standard][] är en formella specifikation av .NET API: er som är tillgängliga i alla .NET-implementeringar. Hanterad kod som riktar in sig på .NET Standard fungerar med .NET Framework och .NET Core-versioner som är kompatibla med den versionen av .NET-Standard.
+[.NET-standard][] är en formella specifikation av .NET API: er som är tillgängliga i alla .NET-implementeringar. Hanterad kod som riktar in sig på .NET Standard fungerar med .NET Framework och .NET Core-versioner som är kompatibla med den versionen av .NET-Standard.
 
 > [!NOTE]
 > Även om ett API kan finnas i .NET Standard API-implementering i .NET Core kan vara en `PlatformNotSupportedException` vid körning, så för att verifiera kompatibilitet med Windows PowerShell och PowerShell Core bästa praxis är att köra tester för i båda miljöerna.
@@ -254,13 +254,13 @@ Exempel:
 ```
 
 <!-- reference links -->
-[.NET framework]: /dotnet/framework/
-[.NET core]: /dotnet/core/
+[.NET Framework]: /dotnet/framework/
+[.NET Core]: /dotnet/core/
 [PSSnapIn]: /dotnet/api/system.management.automation.pssnapin
 [New-ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
-[runtime kontroller]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
+[Runtime-kontroller]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
-[.NET standard]: /dotnet/standard/net-standard
+[.NET-standard]: /dotnet/standard/net-standard
 [PowerShell Standard]: https://github.com/PowerShell/PowerShellStandard
 [PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [PowerShell-galleriet]: https://www.powershellgallery.com

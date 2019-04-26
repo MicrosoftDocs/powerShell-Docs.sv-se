@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSC WaitForAll resurs
 ms.openlocfilehash: 1e891f1aecbdbe641973669f71f22664ad8ea16c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076931"
 ---
 # <a name="dsc-waitforall-resource"></a>DSC WaitForAll resurs
 
@@ -38,7 +38,7 @@ WaitForAll [string] #ResourceName
 | ResourceName| Resursnamnet förlita sig på. Om den här resursen tillhör en annan konfiguration, formatera namn som ”[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] ”|
 | Nodnamn| Målnoder resursens förlita sig på.|
 | RetryIntervalSec| Antal sekunder innan du försöker igen. Minimum är 1.|
-| retryCount| Det maximala antalet gånger att försöka igen.|
+| RetryCount| Det maximala antalet gånger att försöka igen.|
 | ThrottleLimit| Antal datorer kan ansluta samtidigt. Standardvärdet är standard för nya-cimsession.|
 | DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är __ResourceName__ och är av typen __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
 

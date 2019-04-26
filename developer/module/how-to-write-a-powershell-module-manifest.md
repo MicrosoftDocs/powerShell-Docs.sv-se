@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
-ms.openlocfilehash: eaa927ec90df6053843f5c942357fed4c7dee966
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 93a8c11099a9883127bca87422e1acaebfd2c093
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082308"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Skriva ett PowerShell-modulmanifest
 
@@ -80,7 +80,7 @@ I följande tabell beskrivs de element som du kan ha i ett modulmanifest
 |DotNetFrameworkVersion<br /><br /> Typ: sträng|' '|Lägsta version av Microsoft .NET Framework krävs av den här modulen.<br /><br /> Exempel: `DotNetFrameworkVersion = '3.5'`|
 |CLRVersion<br /><br /> Typ: sträng|' '|Lägsta version av common language runtime (CLR) krävs av den här modulen.<br /><br /> Exempel: `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> Typ: sträng|' '|Processorarkitektur (ingen, X86, Amd64) krävs av den här modulen. Giltiga värden är x86 AMD64 IA64, och inget (okänt eller odefinierat).<br /><br /> Exempel: `ProcessorArchitecture = 'x86'`|
-|RequiredModules<br /><br /> Typ: [string []]|@()|Moduler som måste importeras till den globala miljön innan du importerar den här modulen. Alla moduler som anges, såvida inte har redan lästs in läses in. (Till exempel vissa moduler kan redan läsas av en annan modul.). Det är också möjligt att ange en specifik version att läsa in med hjälp av `RequiredVersion` snarare än `ModuleVersion`. När du använder `ModuleVersion` det laddas den senaste versionen som är tillgängliga med ett minimum på den angivna versionen.<br /><br /> Exempel: `RequiredModules = @(@{ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Exempel: `RequiredModules = @(@{ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
+|RequiredModules<br /><br /> Typ: [string []]|@()|Moduler som måste importeras till den globala miljön innan du importerar den här modulen. Alla moduler som anges, såvida inte har redan lästs in läses in. (Till exempel vissa moduler kan redan läsas av en annan modul.). Det är också möjligt att ange en specifik version att läsa in med hjälp av `RequiredVersion` snarare än `ModuleVersion`. När du använder `ModuleVersion` det laddas den senaste versionen som är tillgängliga med ett minimum på den angivna versionen.<br /><br /> Exempel: `RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Exempel: `RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
 |RequiredAssemblies<br /><br /> Typ: [string []]|@()|Sammansättningar som måste läsas innan du importerar den här modulen.<br /><br /> Observera att till skillnad från RequiredModules, PowerShell att läsa in RequiredAssemblies om de inte redan lästs in.|
 |ScriptsToProcess<br /><br /> Typ: [string []]|@()|(.Ps1) skriptfiler som körs i uppringarens sessionstillstånd när modulen har importerats. Detta kan vara den globala sessionen tillstånd eller, för kapslade moduler, sessionstillstånd för en annan modul. Du kan använda skripten för att förbereda en miljö, precis som du använder ett inloggningsskript.<br /><br /> Dessa skript körs innan någon av de moduler som anges i manifestet har lästs in.|
 |TypesToProcess<br /><br /> Type: [Object[]]|@()|Skriv filer (.ps1xml) som ska läsas in när du importerar den här modulen.|

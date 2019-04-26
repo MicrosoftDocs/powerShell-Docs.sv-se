@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSC-Registerresurser
 ms.openlocfilehash: e0ae1a4a27edc08c4e6ccd47786426917eb1ccb4
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076964"
 ---
 # <a name="dsc-registry-resource"></a>DSC-Registerresurser
 
@@ -36,7 +36,7 @@ Registry [string] #ResourceName
 | Egenskap | Beskrivning |
 | --- | --- |
 | Tangent| Anger sökvägen till registernyckeln som du vill se till att ett visst tillstånd. Den här sökvägen måste innehålla hive.|
-| Värdenamn| Anger namnet på registervärdet. Om du vill lägga till eller ta bort en registernyckel, anger du den här egenskapen som en tom sträng utan att ange ValueType eller ValueData. Om du vill ändra eller ta bort en registernyckel standardvärdet, anger du den här egenskapen som en tom sträng när du anger också ValueType eller ValueData.|
+| ValueName| Anger namnet på registervärdet. Om du vill lägga till eller ta bort en registernyckel, anger du den här egenskapen som en tom sträng utan att ange ValueType eller ValueData. Om du vill ändra eller ta bort en registernyckel standardvärdet, anger du den här egenskapen som en tom sträng när du anger också ValueType eller ValueData.|
 | Se till att| Anger om nyckeln och värdet finns. Säkerställ att de gör det genom att ange egenskapen ”aktuella”. För att säkerställa att de inte finns, ange egenskapen till ””. Standardvärdet är ”tillgänglig”.|
 | Force| Om den angivna registernyckeln finns, **kraft** skrivs över med det nya värdet. Om du tar bort en registernyckel med undernycklar, det här måste vara **$true** |
 | Hex| Anger om data anges i hexadecimalt format. Om anges visas värdedata DWORD/QWORD i hexadecimalt format. Gäller inte för andra typer. Standardvärdet är **$false**.|

@@ -1,15 +1,15 @@
 ---
-title: Hur du replikerar ISE-upplevelsen i Visual Studio Code
-description: Hur du replikerar ISE-upplevelsen i Visual Studio Code
+title: Så här replikerar du ISE-upplevelsen i Visual Studio Code
+description: Så här replikerar du ISE-upplevelsen i Visual Studio Code
 ms.date: 08/06/2018
 ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012491"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058530"
 ---
-# <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Hur du replikerar ISE-upplevelsen i Visual Studio Code
+# <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Så här replikerar du ISE-upplevelsen i Visual Studio Code
 
 PowerShell-tillägget för VSCode inte söker efter slutförd funktionsparitet med PowerShell ISE, men det finns funktioner för att göra VSCode-upplevelsen mer naturligt för användare av ISE.
 
@@ -17,11 +17,11 @@ Det här dokumentet försöker listinställningar som du kan konfigurera i VSCod
 
 ## <a name="key-bindings"></a>Nyckelbindningar
 
-| Funktion                              | ISE-bindning                  | VSCode-bindning                              |
+| Funktion                              | ISE-bindning                  | VSCode Binding                              |
 | ----------------                      | -----------                  | --------------                              |
-| Felsökare för avbrott och reparation          | <kbd>CTRL</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
+| Felsökare för avbrott och reparation          | <kbd>Ctrl</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
 | Köra aktuell rad/markerad text | <kbd>F8</kbd>                | <kbd>F8</kbd>                               |
-| Lista tillgängliga kodfragment               | <kbd>CTRL</kbd>+<kbd>J</kbd> | <kbd>CTRL</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
+| Lista tillgängliga kodfragment               | <kbd>Ctrl</kbd>+<kbd>J</kbd> | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
 
 ### <a name="custom-key-bindings"></a>Den anpassade nyckeln bindningar
 

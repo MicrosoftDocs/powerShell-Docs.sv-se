@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Skriva en anpassad DSC-resurs med PowerShell-klasser
 ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076726"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Skriva en anpassad DSC-resurs med PowerShell-klasser
 
@@ -483,7 +483,7 @@ Mer information finns i [kör DSC med autentiseringsuppgifterna för användaren
 Den **DscResource()** attributet tar en valfri parameter **RunAsCredential**.
 Den här parametern antar ett av tre värden:
 
-- `Optional` **PsDscRunAsCredential** är valfritt för konfigurationer som anropar den här resursen. Det här är standardkonfigurationen.
+- `Optional` **PsDscRunAsCredential** är valfritt för konfigurationer som anropar den här resursen. Detta är standardvärdet.
 - `Mandatory` **PsDscRunAsCredential** måste användas för alla konfigurationer som anropar den här resursen.
 - `NotSupported` Konfigurationer som anropar den här resursen kan inte använda **PsDscRunAsCredential**.
 - `Default` Samma som `Optional`.

@@ -3,11 +3,11 @@ ms.date: 06/20/2018
 keywords: DSC, powershell, konfiguration, installation
 title: DSC PackageManagement resurs
 ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077627"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement resurs
 

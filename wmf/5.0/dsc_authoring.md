@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 ms.openlocfilehash: ec4ae8e4b2ef0ec226cb75607f7aaf34b48f6b76
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085651"
 ---
 # <a name="authoring-improvements-using-powershell-ise"></a>Redigeringsförbättringar med PowerShell ISE
 

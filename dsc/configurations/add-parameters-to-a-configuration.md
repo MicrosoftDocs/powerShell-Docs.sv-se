@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, resurs, galleriet, inställning
 title: Lägga till parametrar i en konfiguration
 ms.openlocfilehash: 15213404f0cdd6416baf1f83af91b8f5279cc97f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080268"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Lägga till parametrar i en konfiguration
 
