@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
-ms.openlocfilehash: 9ddb3bc172c66314603d2be4df5192a76c92e05d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082234"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229330"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>Skriva en binär PowerShell-modul
 
@@ -29,7 +29,10 @@ Följande procedur beskriver hur du skapar och installerar en binär PowerShell-
 
 2. Om det behövs skapar du resten av din lösning: (fler cmdlet: ar, XML-filer och så vidare) och beskriver dem med ett modulmanifest.
 
-   Förutom som beskriver cmdlet-sammansättningar i din lösning, beskrivs ett modulmanifest hur du vill att din modul exporteras och importeras, vilka cmdletar visas och vilka ytterligare filer hamnar i modulen. Som nämnts tidigare men kan PowerShell behandla en binär cmdlet som en modul med inget extra arbete. Ett modulmanifest är därför användbart främst för att kombinera flera filer till ett enda paket eller uttryckligen styra publicering för en angiven sammansättning. Mer information finns i [hur du skriver en PowerShell-modulen Manifest](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
+   Förutom som beskriver cmdlet-sammansättningar i din lösning, beskrivs ett modulmanifest hur du vill att din modul exporteras och importeras, vilka cmdletar visas och vilka ytterligare filer hamnar i modulen.
+   Som nämnts tidigare men kan PowerShell behandla en binär cmdlet som en modul med inget extra arbete.
+   Ett modulmanifest är därför användbart främst för att kombinera flera filer till ett enda paket eller uttryckligen styra publicering för en angiven sammansättning.
+   Mer information finns i [hur du skriver en PowerShell-modulen Manifest](how-to-write-a-powershell-module-manifest.md).
 
    Följande kod är ett mycket enkelt C# kodblock som innehåller tre cmdletar i samma fil som kan användas som en modul.
 
@@ -82,7 +85,9 @@ Följande procedur beskriver hur du skapar och installerar en binär PowerShell-
 
 Cmdlets och providers som finns i snapin-modulen sammansättningar kan läsas som binära moduler. När snapin-modulen-sammansättningar läses som binära moduler, cmdlets och providers i snapin-modulen är tillgängliga för användare, men snapin-modulen-klassen i sammansättningen ignoreras och snapin-modulen är inte registrerad. Därför kan inte snapin-cmdletar som tillhandahålls av Windows PowerShell identifiera snapin-modulen även om cmdlets och providers är tillgängliga för sessionen.
 
-Dessutom kan inte importeras alla filer för formatering eller typer som refereras av snapin-modulen som en del av en binär modul. Om du vill importera filerna formatering och typer måste du skapa ett modulmanifest. Se, [hur du skriver ett PowerShell-modulen Manifest](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
+Dessutom kan inte importeras alla filer för formatering eller typer som refereras av snapin-modulen som en del av en binär modul.
+Om du vill importera filerna formatering och typer måste du skapa ett modulmanifest.
+Se, [hur du skriver ett PowerShell-modulen Manifest](how-to-write-a-powershell-module-manifest.md).
 
 ## <a name="see-also"></a>Se även
 

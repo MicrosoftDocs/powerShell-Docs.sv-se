@@ -8,26 +8,29 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068138"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229303"
 ---
 # <a name="events01-sample"></a>Events01 – exempel
 
-Det här exemplet visar hur du skapar en cmdlet som används att registrera dig för händelser som har skapats av [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Med denna cmdlet kan användare registrera en åtgärd som ska köras när en fil skapas under en viss katalog. Det här exemplet kommer från den [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) basklassen.
+Det här exemplet visar hur du skapar en cmdlet som används att registrera dig för händelser som har skapats av [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).
+Med denna cmdlet kan användare registrera en åtgärd som ska köras när en fil skapas under en viss katalog.
+Det här exemplet kommer från den [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) basklassen.
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Hur du skapar exemplet med hjälp av Visual Studio.
 
-1. Navigera till mappen Events01 med Windows PowerShell 2.0 SDK för installerade. Standardplatsen är C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01.
+1. Navigera till mappen Events01 med Windows PowerShell 2.0 SDK för installerade.
+   Standardplatsen är `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.
 
-2. Dubbelklicka på ikonen för lösningsfilen (.sln). Exempelprojektet öppnas i Microsoft Visual Studio.
+2. Dubbelklicka på ikonen för lösningsfilen (.sln).
+   Exempelprojektet öppnas i Microsoft Visual Studio.
 
 3. I den **skapa** menyn och välj **skapa lösning**.
-
-    Biblioteket för exemplet skapas i standardmappar \bin eller \bin\debug.
+   Biblioteket för exemplet skapas i standard `\bin` eller `\bin\debug` mappar.
 
 ### <a name="how-to-run-the-sample"></a>Hur du kör exemplet
 
@@ -78,11 +81,14 @@ Det här exemplet kräver Windows PowerShell 2.0.
 
 Detta exempel visar följande.
 
-- Hur du skriver en cmdlet för Händelseregistrering. Cmdlet: en som härleds från den [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) klass som har stöd för vanliga parametrar till Register-* händelse-cmdletar. Cmdlet: ar som härleds från [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) behöver bara definiera sina specifika parametrar och åsidosätter den `GetSourceObject` och `GetSourceObjectEventName` abstrahera metoder.
+### <a name="how-to-write-a-cmdlet-for-event-registration"></a>Hur du skriver en cmdlet för Händelseregistrering
+
+Cmdlet: en som härleds från den [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) klass som har stöd för parametrar som är gemensamma för den `Register-*Event` cmdletar.
+Cmdlet: ar som härleds från [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) behöver bara definiera sina specifika parametrar och åsidosätter den `GetSourceObject` och `GetSourceObjectEventName` abstrahera metoder.
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar hur du registrerar för händelser som skapats av [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).
+Det här exemplet visar hur du registrerar för händelser som skapats av [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).
 
 ```csharp
 namespace Sample
@@ -183,4 +189,4 @@ namespace Sample
 
 ## <a name="see-also"></a>Se även
 
-[Skriva en Windows PowerShell-Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+[Skriva en Windows PowerShell-Cmdlet](writing-a-windows-powershell-cmdlet.md)

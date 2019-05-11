@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 30183927-6f0e-4717-b6f5-f07a6e134cfb
 caps.latest.revision: 6
-ms.openlocfilehash: f2f6b9af7740b1231881294c2f32bf97b5a1568b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 37a297228eb33ff75daf94a12635d42b52c6cc9f
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62064517"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229311"
 ---
 # <a name="scriptblock-element-for-groupby-format"></a>ScriptBlock-element för GroupBy (format)
 
@@ -51,14 +51,14 @@ Ange det skript som ska utvärderas.
 
 ## <a name="remarks"></a>Anmärkningar
 
-Windows PowerShell startar en ny grupp när det här skriptet ändras.
+PowerShell startar en ny grupp när det här skriptet ändras.
 
-När det här elementet har angetts ska du inte ange den [PropertyName](http://msdn.microsoft.com/en-us/396dede0-039a-4a87-a5ef-3ecabb729676) element att starta en ny grupp.
+När det här elementet har angetts ska du inte ange den [PropertyName](propertyname-element-for-groupby-format.md) element att starta en ny grupp.
 
 ## <a name="see-also"></a>Se även
 
-[PropertyName-Element för GroupBy (Format)](./propertyname-element-for-groupby-format.md)
+[PropertyName-Element för GroupBy (Format)](propertyname-element-for-groupby-format.md)
 
-[GroupBy-Element för Visa (Format)](./groupby-element-for-view-format.md)
+[GroupBy-Element för Visa (Format)](groupby-element-for-view-format.md)
 
-[Skriva ett PowerShell formatering fil](./writing-a-powershell-formatting-file.md)
+[Skriva ett PowerShell formatering fil](writing-a-powershell-formatting-file.md)

@@ -8,26 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
-ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082200"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229450"
 ---
 # <a name="installing-a-powershell-module"></a>Installera en PowerShell-modul
 
-När du har skapat din PowerShell-modulen, kommer troligen du att installera modulen på ett system, så att du eller andra kan använda den. Generellt sett består detta bara modulen filerna kopieras (.psm1, eller binära sammansättningen, modulmanifestet, och andra tillhörande filer) till en katalog på datorn. För ett mycket små projekt, och detta kan vara lika enkelt som att kopiera och klistra in filerna med Windows Explorer till en fjärransluten dator. men för större lösningar kan du använda en mer avancerad installationsprocess. Oavsett hur du får din modul till systemet, kan PowerShell använda flera olika tekniker som låter användarna hitta och använda dina moduler. (Mer information finns i [importera en PowerShell-modul](./importing-a-powershell-module.md).) Största problemet för installation därför se till att PowerShell kommer att kunna hitta din modul.
-
-Det här avsnittet består av följande underavsnitt:
-
-- Regler för att installera moduler
-
-- Var du vill installera moduler
-
-- Installera flera versioner av en modul
-
-- Hantering av kommandot namnet står i konflikt
+När du har skapat din PowerShell-modulen, kommer troligen du att installera modulen på ett system, så att du eller andra kan använda den. Generellt sett består detta av modulen filerna kopieras (.psm1, eller binära sammansättningen, modulmanifestet, och andra tillhörande filer) till en katalog på datorn. För ett mycket små projekt, och detta kan vara lika enkelt som att kopiera och klistra in filerna med Windows Explorer till en fjärransluten dator. men för större lösningar kan du använda en mer avancerad installationsprocess. Oavsett hur du får din modul till systemet, kan PowerShell använda flera olika tekniker som låter användarna hitta och använda dina moduler. Största problemet för installation därför se till att PowerShell kommer att kunna hitta din modul. Mer information finns i [importera en PowerShell-modul](./importing-a-powershell-module.md).
 
 ## <a name="rules-for-installing-modules"></a>Regler för att installera moduler
 
@@ -41,14 +31,14 @@ Den **PSModulePath** miljövariabeln ($Env: PSModulePath) innehåller platserna 
 
 Som standard den **PSModulePath** miljövariabelvärdet innehåller följande system och användaren modulen kataloger, men du kan lägga till och redigera värdet.
 
-- $PSHome\Modules (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
+- `$PSHome\Modules` (% Windir%\System32\WindowsPowerShell\v1.0\Modules)
 
   > [!WARNING]
   > Den här platsen är reserverad för moduler som medföljer Windows. Installera inte moduler till den här platsen.
 
-- $Home\Documents\WindowsPowerShell\Modules (% UserProfile%\Documents\WindowsPowerShell\Modules)
+- `$Home\Documents\WindowsPowerShell\Modules` (% UserProfile%\Documents\WindowsPowerShell\Modules)
 
-- $Env: ProgramFiles\WindowsPowerShell\Modules (% ProgramFiles%\WindowsPowerShell\Modules)
+- `$Env:ProgramFiles\WindowsPowerShell\Modules` (% ProgramFiles%\WindowsPowerShell\Modules)
 
   Att hämta värdet för den **PSModulePath** miljövariabeln, använda någon av följande kommandon.
 
@@ -60,7 +50,6 @@ Som standard den **PSModulePath** miljövariabelvärdet innehåller följande sy
   Att lägga till en modulsökväg till värdet för den **PSModulePath** miljövariabeln värde, använder du följande kommandoformat. Det här formatet använder den **SetEnvironmentVariable** -metoden för den **System.Environment** klassen för att göra en ändring av sessionen oberoende den **PSModulePath** miljö variabeln.
 
   ```powershell
-
   #Save the current value in the $p variable.
   $p = [Environment]::GetEnvironmentVariable("PSModulePath")
 
@@ -77,7 +66,7 @@ Som standard den **PSModulePath** miljövariabelvärdet innehåller följande sy
 
 ### <a name="use-the-correct-module-directory-name"></a>Använd rätt modul katalognamn
 
-En ”välformulerad” modul är en modul som lagras i en mapp med samma namn som det grundläggande namnet på minst en fil i modulkatalogen. Om en modul inte är korrekt formaterad, känner Windows PowerShell inte igen det som en modul.
+En giltig modul är en modul som lagras i en mapp med samma namn som det grundläggande namnet på minst en fil i modulkatalogen. Om en modul inte är korrekt formaterad, känner Windows PowerShell inte igen det som en modul.
 
 ”Huvudnamnet” för en fil är namn utan filnamnstillägget. I en giltig modul, måste namnet på den katalog som innehåller filerna som modulen matcha det grundläggande namnet på minst en fil i modulen.
 
@@ -122,9 +111,7 @@ Det här avsnittet beskrivs var i filsystemet för att installera Windows PowerS
 
 Om du skapar en egen modul eller få en modul från en annan part, till exempel en community-webbplatsen för Windows PowerShell, och du vill att modulen ska vara tillgängliga för ditt konto endast, installera modulen i katalogen användarspecifika moduler.
 
-```
-$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
-```
+`$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 Katalogen användarspecifika moduler läggs till i värdet för den **PSModulePath** miljövariabeln som standard.
 
@@ -132,9 +119,7 @@ Katalogen användarspecifika moduler läggs till i värdet för den **PSModulePa
 
 Om du vill att en modul ska vara tillgängliga för alla användarkonton på datorn, installera modulen på platsen för programmet.
 
-```
-$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
-```
+`$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 > [!NOTE]
 > Plats för programfiler läggs till värdet för miljövariabeln PSModulePath som standard i Windows PowerShell 4.0 och senare. För tidigare versioner av Windows PowerShell kan du manuellt skapa programfiler plats ((%ProgramFiles%\WindowsPowerShell\Modules) och lägga till den här sökvägen i miljövariabeln PSModulePath enligt beskrivningen ovan.
@@ -160,7 +145,7 @@ Om du vill aktivera Windows PowerShell-modulen identifiering funktioner att hitt
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-$p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
+$p += ";C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
@@ -168,7 +153,7 @@ $p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 
 Om en modul används av flera komponenter i en produkt eller genom att flera versioner av en produkt, installera modulen i en modul-specifika underkatalog i underkatalogen %ProgramFiles%\Common Files\Modules.
 
-I följande exempel installeras Fabrikam-modulen i en underkatalog för Fabrikam i underkatalogen %ProgramFiles%\Common Files\Modules. Observera att varje modul finns i en egen underkatalog i underkatalogen moduler.
+I följande exempel Fabrikam-modulen installeras i en underkatalog för Fabrikam till den `%ProgramFiles%\Common Files\Modules` underkatalog. Observera att varje modul finns i en egen underkatalog i underkatalogen moduler.
 
 ```
 C:\Program Files
@@ -177,7 +162,6 @@ C:\Program Files
       Fabrikam
         Fabrikam.psd1 (module manifest)
         Fabrikam.dll (module assembly)
-
 ```
 
 Sedan kan installationsprogrammet säkerställer värdet för den **PSModulePath** miljövariabeln innehåller sökvägen i underkatalogen moduler vanliga filer.
@@ -198,9 +182,7 @@ $p = $q -join ';'
 Använd följande procedur för att installera flera versioner av samma modul.
 
 1. Skapa en katalog för varje version av modulen. Inkludera versionsnumret i katalognamnet.
-
 2. Skapa ett modulmanifest för varje version av modulen. I värdet för den **ModuleVersion** nyckeln i manifestet, ange versionsnummer för modulen. Spara manifestfilen (.psd1) i katalogen versionsspecifika för modulen.
-
 3. Lägg till sökvägen till rotmappen modulen till värdet för den **PSModulePath** miljövariabeln, som visas i följande exempel.
 
 Om du vill importera en viss version av modulen, slutanvändaren kan använda den `MinimumVersion` eller `RequiredVersion` parametrarna för den [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.

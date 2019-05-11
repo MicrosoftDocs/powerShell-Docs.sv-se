@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, säkerhet
 title: JEA rollfunktioner
-ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 528b41c0e2ffdcfed3251fb0f714c649e7290761
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084801"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229549"
 ---
 # <a name="jea-role-capabilities"></a>JEA rollfunktioner
 
@@ -183,6 +183,8 @@ En begränsad cmdlet i en JEA-sessionen kommer att få samma beteende när anrop
 
 Om du skriver en massa egna funktioner, kan det vara enklare att placera dem i en [PowerShell skriptmodul](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx).
 Du kan sedan göra dessa funktioner synliga i JEA-sessionen med hjälp av fältet VisibleFunctions precis som med inbyggda och tredjeparts-moduler.
+
+För fliken slutförande ska fungera korrekt i JEA-sessioner du inkludera den inbyggda funktionen `tabexpansion2` i den **VisibleFunctions** lista.
 
 ## <a name="place-role-capabilities-in-a-module"></a>Placera rollfunktioner i en modul
 

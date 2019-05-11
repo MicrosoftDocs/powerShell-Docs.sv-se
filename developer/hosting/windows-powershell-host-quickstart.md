@@ -8,16 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
 caps.latest.revision: 9
-ms.openlocfilehash: cc014487a680747ad59437052f79d4576154a1cb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9a080b6db7416ae6bf65a1b0353e9f17a56cc6c5
+ms.sourcegitcommit: 00cf9a99972ce40db7c25b9a3fc6152dec6bddb6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082557"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64530615"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Snabbstart för Windows PowerShell-värd
 
-Om du vill vara värd för Windows PowerShell i ditt program, som du använder den [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) klass. Den här klassen innehåller metoder som skapar en pipeline med kommandon och sedan köra dessa kommandon i ett körningsutrymme. Det enklaste sättet att skapa ett program är att använda standard-körningsutrymmet. Standard-körningsutrymme innehåller alla core Windows PowerShell-kommandon. Om du vill att programmet att exponera en delmängd av Windows PowerShell-kommandon, måste du skapa en anpassad körningsutrymme.
+Om du vill vara värd för Windows PowerShell i ditt program, som du använder den [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) klass.
+Den här klassen innehåller metoder som skapar en pipeline med kommandon och sedan köra dessa kommandon i ett körningsutrymme.
+Det enklaste sättet att skapa ett program är att använda standard-körningsutrymmet.
+Standard-körningsutrymme innehåller alla core Windows PowerShell-kommandon.
+Om du vill att programmet att exponera en delmängd av Windows PowerShell-kommandon, måste du skapa en anpassad körningsutrymme.
 
 ## <a name="using-the-default-runspace"></a>Med hjälp av standard-körningsutrymmet
 
@@ -25,7 +29,9 @@ Om du vill starta, vi använda standard-körningsutrymme och använda metoderna 
 
 ### <a name="addcommand"></a>AddCommand
 
-Du använder den [System.Management.Automation.Powershell.AddCommand*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) -metoden för den [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) klassen för att lägga till kommandon i pipelinen. Anta exempelvis att du vill hämta en lista över processer som körs på datorn. Sättet att köra det här kommandot är som följer.
+Du använder den [System.Management.Automation.Powershell.AddCommand](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) metod för att lägga till kommandon i pipelinen.
+Anta exempelvis att du vill hämta en lista över processer som körs på datorn.
+Sättet att köra det här kommandot är som följer.
 
 1. Skapa en [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) objekt.
 
@@ -45,11 +51,14 @@ Du använder den [System.Management.Automation.Powershell.AddCommand*](/dotnet/a
    ps.Invoke();
    ```
 
-Om du anropar den [System.Management.Automation.Powershell.AddCommand*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) metod som är mer än en gång innan du anropar den [System.Management.Automation.Powershell.Invoke*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) metod, resultatet av den första kommandot skickas till andra och så vidare. Om du inte vill skicka resultatet av en föregående kommando för att ett kommando lägger du till den genom att anropa den [System.Management.Automation.Powershell.AddStatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) i stället.
+Om du anropar metoden AddCommand mer än en gång innan du anropar den [System.Management.Automation.Powershell.Invoke](/dotnet/api/System.Management.Automation.PowerShell.Invoke) metod, resultatet av det första kommandot skickas till andra och så vidare.
+Om du inte vill skicka resultatet av en föregående kommando för att ett kommando lägger du till den genom att anropa den [System.Management.Automation.Powershell.AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) i stället.
 
 ### <a name="addparameter"></a>AddParameter
 
-Föregående exempel körs ett enda kommando utan några parametrar. Du kan lägga till parametrar i kommandot med hjälp av den [System.Management.Automation.PSCommand.AddParameter*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) metod till exempel följande kod hämtar en lista över alla processer som namnges `PowerShell` som körs på den datorn.
+Föregående exempel körs ett enda kommando utan några parametrar.
+Du kan lägga till parametrar i kommandot med hjälp av den [System.Management.Automation.PSCommand.AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) metod.
+Till exempel följande kod hämtar en lista över alla processer som namnges `PowerShell` körs på datorn.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -57,7 +66,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
-Du kan lägga till ytterligare parametrar genom att anropa [System.Management.Automation.PSCommand.AddParameter*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) upprepade gånger.
+Du kan lägga till ytterligare parametrar genom att anropa metoden AddParameter upprepade gånger.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -66,7 +75,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
-Du kan också lägga till en ordlista över parameternamn och värden som genom att anropa den [System.Management.Automation.PowerShell.AddParameters*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) metod.
+Du kan också lägga till en ordlista över parameternamn och värden som genom att anropa den [System.Management.Automation.PowerShell.AddParameters](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) metod.
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
@@ -81,7 +90,8 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
-Du kan simulera batchbearbetning med hjälp av den [System.Management.Automation.PowerShell.AddStatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) metod, som lägger till en ytterligare instruktion i slutet av din pipeline för följande kod hämtar en lista över processer som körs med namnet `PowerShell`, och sedan hämtar listan över aktiva tjänster.
+Du kan simulera batchbearbetning med hjälp av den [System.Management.Automation.PowerShell.AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) metod, som lägger till en ytterligare instruktion i slutet av pipelinen.
+Följande kod hämtar en lista över processer som körs med namnet `PowerShell`, och sedan hämtar listan över aktiva tjänster.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -92,14 +102,18 @@ ps.Invoke();
 
 ### <a name="addscript"></a>AddScript
 
-Du kan köra ett befintligt skript genom att anropa den [System.Management.Automation.PowerShell.AddScript*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) metod. I följande exempel lägger till ett skript till pipelinen och kör den. Det här exemplet förutsätter att det finns redan ett skript som heter `MyScript.ps1` i en mapp med namnet `D:\PSScripts`.
+Du kan köra ett befintligt skript genom att anropa den [System.Management.Automation.PowerShell.AddScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript) metod.
+I följande exempel lägger till ett skript till pipelinen och kör den.
+Det här exemplet förutsätter att det finns redan ett skript som heter `MyScript.ps1` i en mapp med namnet `D:\PSScripts`.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
-Det finns också en version av den [System.Management.Automation.PowerShell.AddScript*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) metod som tar en boolesk parameter som heter `useLocalScope`. Om den här parametern anges till `true`, och sedan skriptet körs i det lokala scopet. Följande kod körs skriptet i det lokala scopet.
+Det finns också en version av metoden AddScript som använder en boolesk parameter som heter `useLocalScope`.
+Om den här parametern anges till `true`, och sedan skriptet körs i det lokala scopet.
+Följande kod körs skriptet i det lokala scopet.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -108,11 +122,15 @@ ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 
 ## <a name="creating-a-custom-runspace"></a>Skapa en anpassad körningsutrymme
 
-Du kan skapa ett anpassat körningsutrymme som läser in endast en delmängd av alla kommandon som angivna medan standard-körningsutrymmet som används i föregående exempel har lästs in alla core Windows PowerShell-kommandon. Du kanske vill göra detta för att förbättra prestanda (läser in fler kommandon är en träff prestanda), eller för att begränsa möjligheterna för användaren att utföra åtgärder. Ett körningsutrymme som exponerar endast ett begränsat antal kommandon kallas för ett begränsat körningsutrymme. Om du vill skapa ett begränsat körningsutrymme som du använder den [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) och [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) klasser.
+Du kan skapa ett anpassat körningsutrymme som läser in endast en delmängd av alla kommandon som angivna medan standard-körningsutrymmet som används i föregående exempel har lästs in alla core Windows PowerShell-kommandon.
+Du kanske vill göra detta för att förbättra prestanda (läser in fler kommandon är en träff prestanda), eller för att begränsa möjligheterna för användaren att utföra åtgärder.
+Ett körningsutrymme som exponerar endast ett begränsat antal kommandon kallas för ett begränsat körningsutrymme.
+Om du vill skapa ett begränsat körningsutrymme som du använder den [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) och [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) klasser.
 
 ### <a name="creating-an-initialsessionstate-object"></a>Skapa ett InitialSessionState-objekt
 
-Om du vill skapa en anpassad körningsutrymme, måste du först skapa en [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt. I följande exempel använder vi den [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) att skapa ett körningsutrymme när du har skapat en standard [System.Management.Automation.Runspaces.InitialSessionState ](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt.
+Om du vill skapa en anpassad körningsutrymme, måste du först skapa en [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt.
+I följande exempel använder vi den [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) att skapa ett körningsutrymme när du har skapat ett standard InitialSessionState-objekt.
 
 ```csharp
 InitialSessionState iss = InitialSessionState.CreateDefault();
@@ -126,11 +144,15 @@ ps.Invoke();
 
 ### <a name="constraining-the-runspace"></a>Begränsa körningsutrymmet
 
-I exemplet ovan skapade vi en standard [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt som läser in alla av de inbyggda grundläggande Windows PowerShell. Vi också har anropat den [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) metod för att skapa ett InitialSessionState-objekt som skulle läsa in kommandona i Microsoft.PowerShell.Core snapin-modulen. Om du vill skapa en mer begränsad körningsutrymme, måste du skapa en tom [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt genom att anropa den [ System.Management.Automation.Runspaces.InitialSessionState.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) metoden och lägger sedan till kommandon i InitialSessionState.
+I exemplet ovan skapade vi en standard [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt som läser in alla av de inbyggda grundläggande Windows PowerShell.
+Vi också har anropat den [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) metod för att skapa ett InitialSessionState-objekt som skulle läsa in kommandona i Microsoft.PowerShell.Core snapin-modulen.
+Om du vill skapa en mer begränsad körningsutrymme, måste du skapa en tom InitialSessionState objekt genom att anropa den [System.Management.Automation.Runspaces.InitialSessionState.Create](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) metod, och Lägg sedan till kommandon för att den InitialSessionState.
 
 Med hjälp av ett körningsutrymme som läser in endast de kommandon som du anger ger betydligt bättre prestanda.
 
-Du använder metoderna i den [System.Management.Automation.Runspaces.SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) klassen för att definiera-cmdletar för inledande sessionens tillstånd. I följande exempel skapar en tom inledande sessionstillstånd, och sedan definierar och lägger till den `Get-Command` och `Import-Module` kommandon för att det inledande sessionstillståndet. Vi sedan skapa ett körningsutrymme begränsas av den första sessionstillstånd och kör kommandon i den körningsutrymme.
+Du använder metoderna i den [System.Management.Automation.Runspaces.SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) klassen för att definiera-cmdletar för inledande sessionens tillstånd.
+I följande exempel skapar en tom inledande sessionstillstånd, och sedan definierar och lägger till den `Get-Command` och `Import-Module` kommandon för att det inledande sessionstillståndet.
+Vi sedan skapa ett körningsutrymme begränsas av den första sessionstillstånd och kör kommandon i den körningsutrymme.
 
 Skapa det första sessionstillståndet.
 

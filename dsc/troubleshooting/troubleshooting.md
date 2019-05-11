@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Felsöka DSC
-ms.openlocfilehash: 5ee1b68f4f769426fea3c8e10738c3bb6ef94480
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076556"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229534"
 ---
 # <a name="troubleshooting-dsc"></a>Felsöka DSC
 
@@ -627,6 +627,21 @@ onlyProperty                            PSComputerName
 ------------                            --------------
 14                                      localhost
 ```
+
+## <a name="dsc-returns-unexpected-response-code-internalservererror-when-registering-with-windows-pull-server"></a>DSC returnerar ”oväntad svarskod InternalServerError” när registrerar med Windows-Hämtningsserver
+
+Följande fel kan uppstå när du använder en metaconfiguration till en server för att registrera den med en instans av Windows-Hämtningsserver.
+
+```PowerShell
+Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server 
+https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned unexpected response code InternalServerError. .
+    + CategoryInfo          : InvalidResult: (root/Microsoft/...gurationManager:String) [], CimException
+    + FullyQualifiedErrorId : RegisterDscAgentUnsuccessful,Microsoft.PowerShell.DesiredStateConfiguration.Commands.RegisterDscAgentCommand
+    + PSComputerName        : <computername>
+```
+
+Detta kan inträffa när det certifikat som används på servern för att kryptera trafiken har ett eget namn (CN) som skiljer sig från DNS-namn som används av noden för att matcha URL: en.
+Uppdatera Windows-Hämtningsserver-instans för att använda ett certifikat med ett korrigerad namn.
 
 ## <a name="see-also"></a>Se även
 

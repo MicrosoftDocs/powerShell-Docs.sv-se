@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], described
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
-ms.openlocfilehash: f8a8c9300d1ac811c7fbbf7050dd24f78306db8f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 14200aed2fb94c37c8b8af29650f602945e7ac1c
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068478"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229359"
 ---
 # <a name="cmdlet-overview"></a>Översikt över cmdlets
 
@@ -38,19 +38,53 @@ Du kan läsa in sammansättningen som innehåller klassen direkt med hjälp av d
 
 Följande villkor används ofta i dokumentationen för Windows PowerShell-cmdlet:
 
-- **Cmdlet-attributet**: Ett .NET Framework-attribut som används för att deklarera en cmdlet-klass som en cmdlet. Även om Windows PowerShell använder flera attribut som är valfria, är Cmdlet-attributet obligatoriskt. Läs mer om det här attributet [Cmdlet attributet deklarationen](./cmdlet-attribute-declaration.md).
+### <a name="cmdlet-attribute"></a>Cmdlet-attribut
 
-- **Cmdlet-parameter**: Offentliga egenskaper som definierar de parametrar som är tillgänglig för användaren eller för det program som kör cmdlet: en. Cmdlet: ar kan ha krävt namngivna, namngivna, och *växla* parametrar. Växla parametrar kan du definiera parametrar som utvärderas bara om parametrarna har angetts i anropet. Mer information om de olika typerna av parametrar finns i [Cmdlet-parametrarna](./cmdlet-parameters.md).
+Ett .NET Framework-attribut som används för att deklarera en cmdlet-klass som en cmdlet.
+Även om PowerShell använder flera attribut som är valfria, är Cmdlet-attributet obligatoriskt.
+Läs mer om det här attributet [Cmdlet attributet deklarationen](cmdlet-attribute-declaration.md).
 
-- **Parameteruppsättningen**: En grupp med parametrar som kan användas i samma kommando för att utföra en viss åtgärd. En cmdlet kan ha flera parameteruppsättningar, men varje parameteruppsättningen måste ha minst en parameter som är unik. Cmdlet: en bra design rekommenderar att parametern unika också vara en obligatorisk parameter. Läs mer om parameteruppsättningar [cmdlet: en Parameter anger](./cmdlet-parameter-sets.md).
+### <a name="cmdlet-parameter"></a>Cmdlet-parameter
 
-- **Dynamisk parameter**: En parameter som läggs till i cmdleten vid körning. Dynamiska parametrar läggs normalt till cmdlet: en när en annan parameter har angetts till ett specifikt värde. Mer information om dynamiska parametrar finns i [dynamiska parametrar för cmdleten](./cmdlet-dynamic-parameters.md).
+Offentliga egenskaper som definierar de parametrar som är tillgänglig för användaren eller för det program som kör cmdlet: en.
+Cmdlet: ar kan ha krävt namngivna, namngivna, och *växla* parametrar.
+Växla parametrar kan du definiera parametrar som utvärderas bara om parametrarna har angetts i anropet.
+Mer information om de olika typerna av parametrar finns i [Cmdlet-parametrarna](cmdlet-parameters.md).
 
-- **Bearbetning av indatametod**: En metod som en cmdlet kan använda för att bearbeta posterna som tas emot som indata. Inkommande bearbetning sätt är att den [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metoden den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoden den [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metoden och [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) metod. När du implementerar en cmdlet, måste du åsidosätta minst en av de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), och [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metoder. Normalt den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoden är den metod som du åsidosätta eftersom det kallas för varje post som cmdlet bearbetar. Däremot den [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metod och [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metoden anropas en gång för att utföra bearbeta data i förväg eller efter bearbetning av posterna. Läs mer om de här metoderna [metoder för bearbetning av indata](./cmdlet-input-processing-methods.md).
+### <a name="parameter-set"></a>Parameteruppsättning
 
-- **ShouldProcess funktionen**: Windows PowerShell kan du skapa cmdletar som frågar användaren om feedback innan cmdleten gör en ändring i systemet. Om du vill använda denna funktion kan cmdlet: en måste deklarera att den stöder funktionen ShouldProcess när du deklarera Cmdlet-attributet och cmdlet: en måste anropa den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoder från inom indata metoden bearbetades. Läs mer om hur du den funktionalitet som ShouldProcess [begär bekräftelse](./requesting-confirmation-from-cmdlets.md).
+En grupp med parametrar som kan användas i samma kommando för att utföra en viss åtgärd.
+En cmdlet kan ha flera parameteruppsättningar, men varje parameteruppsättningen måste ha minst en parameter som är unik.
+Cmdlet: en bra design rekommenderar att parametern unika också vara en obligatorisk parameter.
+Läs mer om parameteruppsättningar [cmdlet: en Parameter anger](cmdlet-parameter-sets.md).
 
-- **Transaktionen**: En logisk grupp av kommandon som behandlas som en enskild uppgift. Uppgiften misslyckas automatiskt om ett kommando i gruppen misslyckas och användaren har möjlighet att godkänna eller avvisa de åtgärder som utförs i transaktionen. Om du vill delta i en transaktion måste cmdleten deklarera att den stöder transaktioner när Cmdlet-attributet har deklarerats. Stöd för transaktioner introducerades i Windows PowerShell 2.0. Mer information om transaktioner finns [Windows PowerShell-transaktioner](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710).
+### <a name="dynamic-parameter"></a>dynamisk parameter
+
+En parameter som läggs till i cmdleten vid körning.
+Dynamiska parametrar läggs normalt till cmdlet: en när en annan parameter har angetts till ett specifikt värde.
+Mer information om dynamiska parametrar finns i [dynamiska parametrar för cmdleten](cmdlet-dynamic-parameters.md).
+
+### <a name="input-processing-method"></a>indata metoden bearbetades
+
+En metod som en cmdlet kan använda för att bearbeta posterna som tas emot som indata.
+Inkommande bearbetning sätt är att den [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metoden den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoden den [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metoden och [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) metod. När du implementerar en cmdlet, måste du åsidosätta minst en av de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), och [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metoder.
+Normalt den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoden är den metod som du åsidosätta eftersom det kallas för varje post som cmdlet bearbetar.
+Däremot den [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metod och [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metoden anropas en gång för att utföra bearbeta data i förväg eller efter bearbetning av posterna.
+Läs mer om de här metoderna [metoder för bearbetning av indata](cmdlet-input-processing-methods.md).
+
+### <a name="shouldprocess-feature"></a>ShouldProcess-funktionen
+
+PowerShell kan du skapa cmdletar som frågar användaren om feedback innan cmdleten gör en ändring i systemet.
+Om du vill använda denna funktion kan cmdlet: en måste deklarera att den stöder funktionen ShouldProcess när du deklarera Cmdlet-attributet och cmdlet: en måste anropa den [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoder från inom indata metoden bearbetades.
+Läs mer om hur du den funktionalitet som ShouldProcess [begär bekräftelse](requesting-confirmation-from-cmdlets.md).
+
+### <a name="transaction"></a>Transaktionen
+
+En logisk grupp av kommandon som behandlas som en enskild uppgift.
+Uppgiften misslyckas automatiskt om ett kommando i gruppen misslyckas och användaren har möjlighet att godkänna eller avvisa de åtgärder som utförs i transaktionen.
+Om du vill delta i en transaktion måste cmdleten deklarera att den stöder transaktioner när Cmdlet-attributet har deklarerats.
+Stöd för transaktioner introducerades i Windows PowerShell 2.0.
+Mer information om transaktioner finns [så Support transaktioner](how-to-support-transactions.md).
 
 ## <a name="how-cmdlets-differ-from-commands"></a>Hur cmdletar skiljer sig från kommandon
 
