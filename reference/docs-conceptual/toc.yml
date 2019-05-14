@@ -68,7 +68,7 @@
   items:
     - name: Konsol
       items:
-        - name: PowerShell.exe-kommandoradshjälp
+        - name: Kommandoradsalternativ för PowerShell
           href: components/console/powershell.exe-command-line-help.md
         - name: Använd flikexpansion
           href: components/console/using-tab-expansion.md
