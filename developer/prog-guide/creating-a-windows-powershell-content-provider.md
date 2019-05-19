@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 35c68a2b0f8c9bd1ed4fc54c41aa427ddd75907c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d7e237514b4db4bce3366836d3b6e0cd340bf107
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081928"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855011"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Skapa en Windows PowerShell-innehållsprovider
 
@@ -28,36 +28,6 @@ Det här avsnittet beskriver hur du skapar en Windows PowerShell-provider som g�
 > Hämtade källfilerna är tillgängliga i den  **\<PowerShell-exempel >** directory.
 >
 > Läs mer om andra Windows PowerShell-providern implementeringar [designa din Windows PowerShell-providern](./designing-your-windows-powershell-provider.md).
-
-I följande lista innehåller avsnitt i det här avsnittet. Om du är bekant med att skriva en Windows PowerShell-innehållsleverantör, Läs avsnitten i den ordning som de visas. Om du är bekant med att skriva en Windows PowerShell-innehållsleverantör, gå direkt till den information du behöver.
-
-- [Definiera providerklass för Windows PowerShell-innehåll](#Define-the-Windows-PowerShell-Content-Provider-Class)
-
-- [Definiera grundfunktionen](#Define-Functionality-of-Base-Class)
-
-- [Implementera en Content läsare](#Implementing-a-Content-Reader)
-
-- [Implementera en Content-skrivare](#Implementing-a-Content-Writer)
-
-- [Hämtning av innehåll läsaren](#Retrieving-the-Content-Reader)
-
-- [Koppla dynamiska parametrar till den `Get-Content` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Content-Cmdlet)
-
-- [Hämtning av innehåll skrivaren](#Retrieving-the-Content-Writer)
-
-- [Den dynamiska parametrar till Add_Content och `Set-Content` cmdlet: ar](#Attaching-Dynamic-Parameters-to-the-Add-Content-and-Set-Content-Cmdlets)
-
-- [Rensa innehåll](#Clearing-Content)
-
-- [Koppla dynamiska parametrar till den `Clear-Content` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Clear-Content-Cmdlet)
-
-- [Kodexempel](#Code-Sample)
-
-- [Definiera objekttyper och formatering](#defining-object-types-and-formatting)
-
-- [Att skapa Windows PowerShell-providern](#Building-the-Windows-PowerShell-Provider)
-
-- [Testa Windows PowerShell-providern](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="define-the-windows-powershell-content-provider-class"></a>Definiera providerklass för Windows PowerShell-innehåll
 

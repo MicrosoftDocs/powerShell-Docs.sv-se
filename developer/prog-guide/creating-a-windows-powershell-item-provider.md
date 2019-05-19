@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: f2c9e10f0dc392399cf062500b7f28b3d1c07f6e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6f91fd53d41dd72c99f8fbc7bc7b863322d88787
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081877"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855055"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Skapa en Windows PowerShell-objektprovider
 
@@ -30,44 +30,6 @@ Det här avsnittet beskriver hur du skapar en Windows PowerShell-provider som ka
 > Läs mer om andra Windows PowerShell-providern implementeringar [designa din Windows PowerShell-providern](./designing-your-windows-powershell-provider.md).
 
 Windows PowerShell-objekt-providern som beskrivs i det här avsnittet hämtar dataobjekt från en Access-databas. I det här fallet är ett ”objekt” antingen en tabell i Access-databas eller en rad i en tabell.
-
-I följande lista innehåller avsnitt i det här avsnittet. Om du är bekant med att skriva en provider för Windows PowerShell-objekt, läsa dessa avsnitt i den ordning som de visas. Om du är bekant med att skriva en provider för Windows PowerShell-objekt, gå direkt till den information du behöver:
-
-- [Definiera providerklass för Windows PowerShell-objekt](#Defining-the-Windows-PowerShell-Item-Provider-Class)
-
-- [Definiera grundfunktionen](#Defining-Base-Functionality)
-
-- [Söker efter sökväg giltighet](#Checking-for-Path-Validity)
-
-- [Avgör om det finns ett objekt](#Determining-if-an-Item-Exists)
-
-- [Koppla dynamiska parametrar till den `Test-Path` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Test-Path-Cmdlet)
-
-- [Hämtar ett objekt](#Retrieving-an-Item)
-
-- [Koppla dynamiska parametrar till den `Get-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Item-Cmdlet)
-
-- [Ange ett objekt](#Setting-an-Item)
-
-- [Koppla dynamiska parametrar till den `Set-Item` Cmdlet](#Retrieving-Dynamic-Parameters-for-SetItem)
-
-- [Om du avmarkerar ett objekt](#Clearing-an-Item)
-
-- [Bifoga dynamiska parametrar till cmdleten Clear-objekt](#Retrieve-Dynamic-Parameters-for-ClearItem)
-
-- [Utför en standardåtgärd för ett objekt](#Performing-a-Default-Action-for-an-Item)
-
-- [Hämtning av dynamiska parametrar för InvokeDefaultAction](#Retrieve-Dynamic-Parameters-for-InvokeDefaultAction)
-
-- [Implementera Hjälpmetoder och klasser](#Implementing-Helper-Methods-and-Classes)
-
-- [Kodexempel](#Code-Sample)
-
-- [Definiera objekttyper och formatering](#Defining-Object-Types-and-Formatting)
-
-- [Att skapa Windows PowerShell-providern](#Building-the-Windows-PowerShell-provider)
-
-- [Testa Windows PowerShell-providern](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-item-provider-class"></a>Definiera providerklass för Windows PowerShell-objekt
 
@@ -223,7 +185,7 @@ Den här providern objektet implementerar inte den här metoden. Följande kod �
 
 ## <a name="implementing-helper-methods-and-classes"></a>Implementera Hjälpmetoder och klasser
 
-Den här providern objektet implementerar flera hjälpmetoder och klasser som används av offentligt åsidosätta metoder som definieras av Windows PowerShell. Koden för dessa hjälpmetoder och klasser som visas i den [kodexempel](#Code-Sample) avsnittet.
+Den här providern objektet implementerar flera hjälpmetoder och klasser som används av offentligt åsidosätta metoder som definieras av Windows PowerShell. Koden för dessa hjälpmetoder och klasser som visas i den [kodexempel](#code-sample) avsnittet.
 
 ### <a name="normalizepath-method"></a>NormalizePath metod
 

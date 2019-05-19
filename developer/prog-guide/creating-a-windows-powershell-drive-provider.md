@@ -12,38 +12,18 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 2696d78cae7739310b7684161b597ce436dabe92
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055658"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855209"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Skapa en Windows PowerShell-enhetsprovider
 
 Det här avsnittet beskriver hur du skapar en provider för Windows PowerShell-enhet som är ett sätt att komma åt ett datalager genom en Windows PowerShell-enhet. Den här typen av providern kallas också Windows PowerShell-enhet providers. Windows PowerShell-enheter som används av providern ger metoder för att ansluta till datalagret.
 
 Windows PowerShell-enhet-providern som beskrivs här ger åtkomst till en Microsoft Access-databas. För den här providern Windows PowerShell-enhet är databasen (det är möjligt att lägga till valfritt antal enheter till en leverantör av enhet), de översta behållarna rotmapp representerar tabeller i databasen och objekten i behållarna representerar raderna i tabeller.
-
-Här är en lista över avsnitt i det här avsnittet. Om du är bekant med att skriva en provider för Windows PowerShell-enhet kan du läsa dessa avsnitt i den ordning som de visas. Men om du är bekant med att skriva en enhetsprovidern, gå direkt till den information du behöver.
-
-- [Definiera klassen Windows PowerShell-providern](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Definiera grundfunktionen](#Defining-Base-Functionality)
-
-- [Skapar statusinformation för enhet](#Creating-Drive-State-Information)
-
-- [Skapa en enhet](#Creating-a-Drive)
-
-- [Bifoga dynamiska parametrar till NewDrive](#Attaching-Dynamic-Parameters-to-NewDrive)
-
-- [Ta bort en enhet](#Removing-a-Drive)
-
-- [Initiering av standard-enheter](#Initializing-Default-Drives)
-
-- [Kodexempel](#Code-Sample)
-
-- [Testa Provider för Windows PowerShell-enhet](#Testing-the-Windows-PowerShell-Drive-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Definiera klassen Windows PowerShell-providern
 

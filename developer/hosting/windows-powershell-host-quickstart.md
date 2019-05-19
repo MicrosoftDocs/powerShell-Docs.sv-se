@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
 caps.latest.revision: 9
-ms.openlocfilehash: 9a080b6db7416ae6bf65a1b0353e9f17a56cc6c5
-ms.sourcegitcommit: 00cf9a99972ce40db7c25b9a3fc6152dec6bddb6
+ms.openlocfilehash: 390eb2d0153c65967d8c0711c852aa6e13fe4660
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64530615"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855103"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Snabbstart för Windows PowerShell-värd
 
@@ -68,10 +68,10 @@ PowerShell.Create().AddCommand("Get-Process")
 
 Du kan lägga till ytterligare parametrar genom att anropa metoden AddParameter upprepade gånger.
 
-```csharp
-PowerShell.Create().AddCommand("Get-Process")
-                   .AddParameter("Name", "PowerShell")
-                   .AddParameter("Id", "12768")
+```csharp                   
+PowerShell.Create().AddCommand("Get-ChildItem")
+                   .AddParameter("Path", @"c:\Windows")
+                   .AddParameter("Filter", "*.exe")
                    .Invoke();
 ```
 
@@ -79,9 +79,9 @@ Du kan också lägga till en ordlista över parameternamn och värden som genom 
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
-parameters.Add("Name", "PowerShell");
+parameters.Add("Path", @"c:\Windows");
+parameters.Add("Filter", "*.exe");
 
-parameters.Add("Id", "12768");
 PowerShell.Create().AddCommand("Get-Process")
    .AddParameters(parameters)
       .Invoke()

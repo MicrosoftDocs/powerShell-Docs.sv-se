@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateLength attribute
 ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
 caps.latest.revision: 13
-ms.openlocfilehash: 3a4c5f279ce8587eeb5d583376ea3d2286210b83
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4d3cdccc0fe3e24b1221e41beef4821b613aab93
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067169"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855147"
 ---
 # <a name="validatelength-attribute-declaration"></a>Deklaration av attributet ValidateLength
 
@@ -37,7 +37,7 @@ Attributet ValidateLength anger minsta och högsta antalet tillåtna tecken för
 
 ## <a name="remarks"></a>Anmärkningar
 
-- Läs mer om hur du deklarera det här attributet [så deklarera indata valideringsregler](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b).
+- Läs mer om hur du deklarera det här attributet [så deklarera indata valideringsregler](./how-to-validate-parameter-input.md).
 
 - När det här attributet inte används, kan motsvarande Parameterargumentet vara av valfri längd.
 

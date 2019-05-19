@@ -11,34 +11,18 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: bd52dc8aee7975d0899083a5c2f595b17690dc33
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: def0ac2ff98575beb29c3c2a7d91a5a5c53e648e
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068767"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854986"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Lägga till parametrar som bearbetar pipelineindata
 
 En källa för indata för en cmdlet är ett objekt till pipelinen som kommer från en överordnad-cmdlet. Det här avsnittet beskrivs hur du lägger till en parameter till cmdleten Get-processen (beskrivs i [skapa din första cmdleten](./creating-a-cmdlet-without-parameters.md)) så att cmdleten kan bearbeta pipelineobjekt.
 
 Denna cmdlet Get-processen använder en `Name` parameter som godkänner indata från ett pipeline-objekt, hämtar information om från den lokala datorn baserat på angivna namnen och visar information om processerna på kommandoraden.
-
-Ämnena i det här avsnittet omfattar följande:
-
-- [Definiera klassen Cmdlet](#Defining-the-Cmdlet-Class)
-
-- [Definiera indata från Pipeline](#Defining-Input-from-the-Pipeline)
-
-- [Åsidosätta indata metoden bearbetades](#Overriding-an-Input-Processing-Method)
-
-- [Kodexempel](#Code-Sample)
-
-- [Definiera objekttyper och formatering](#Defining-Object-Types-and-Formatting)
-
-- [Att skapa cmdleten](#Building-the-Cmdlet)
-
-- [Testa cmdleten](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>Definiera klassen Cmdlet
 

@@ -2,12 +2,12 @@
 title: Med Visual Studio Code för PowerShell-utveckling
 description: Med Visual Studio Code för PowerShell-utveckling
 ms.date: 08/06/2018
-ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0d796460511b273771eacb03d0df4d90e1e9c322
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086740"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854402"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Med Visual Studio Code för PowerShell-utveckling
 
@@ -82,27 +82,72 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 Du uppmanas via ”vill du köra programvaran från denna ej betrodda utgivare”?
 Typ `R` att köra filen. Öppna Visual Studio Code och kontrollera att tillägget PowerShell fungerar korrekt. Om du fortfarande har problem med att komma igång, berätta för oss på [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
 
-#### <a name="using-a-specific-installed-version-of-powershell"></a>Med hjälp av en specifik version av PowerShell
+#### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>Välja en version av PowerShell för att använda i tillägget
 
-Om du vill använda en specifik installation av PowerShell med Visual Studio Code kan behöva du lägga till en ny variabel i filen med inställningar.
+Med PowerShell Core installation sida vid sida med Windows PowerShell, är det nu möjligt att en viss version av PowerShell med PowerShell-tillägget. Använd följande här för att välja versionen:
 
-1. Klicka på **Arkiv -> Inställningar -> Inställningar**
-1. Två rapportredigerarens fönster visas.
-   I fönstret höger (`settings.json`), infoga inställningen nedan lämpliga för ditt operativsystem någonstans mellan de två klammerparenteser (`{` och `}`) och Ersätt **\<version\>** med den installerade versionen av PowerShell:
+1. Öppna kommandot utbud (<kbd>Ctrl</kbd>+<kbd>SKIFT</kbd>+<kbd>P</kbd> på Windows och Linux, <kbd>Cmd</kbd> + <kbd>SKIFT</kbd>+<kbd>P</kbd> på macOS).
+1. Sök efter ”Session”.
+1. Klicka på ”PowerShell: Visa Session menyn ”.
+1. Välj versionen av PowerShell som du vill använda från listan – till exempel PowerShell Core ””.
 
-   ```json
-    // On Windows:
-    "powershell.powerShellExePath": "c:/Program Files/PowerShell/<version>/pwsh.exe"
+>[!IMPORTANT]
+> Den här funktionen tittar på några välkända sökvägar i olika operativsystem för att identifiera platser för installation av PowerShell. Om du har installerat PowerShell på en icke-vanliga plats kan den inte visas först i menyn Session. Du kan utöka menyn sessionen genom att [att lägga till dina egna anpassade sökvägar](#adding-your-own-powershell-paths-to-the-session-menu) enligt beskrivningen nedan.
 
-    // On Linux:
-    "powershell.powerShellExePath": "/opt/microsoft/powershell/<version>/pwsh"
+>[!NOTE]
+> Det finns ett annat sätt att komma till menyn session. När en PowerShell-fil är öppna i redigeringsprogram, visas en grön versionsnumret i det nedre högra hörnet. Klicka på det här versionsnumret kommer du till menyn session.
 
-    // On macOS:
-    "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
-   ```
+##### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>Att lägga till egna PowerShell-sökvägar till menyn session
 
-1. Ersätt inställningen med sökvägen till den önskade PowerShell körbar
-1. Spara filen och starta om Visual Studio Code
+Du kan lägga till andra körbara sökvägar PowerShell session-menyn genom att VS Code.
+
+Lägg till ett objekt i listan `powershell.powerShellAdditionalExePaths` eller skapa listan om den inte finns i din `settings.json`:
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    // other settings...
+}
+```
+
+Varje objekt måste ha:
+
+* `exePath`: Sökvägen till den `pwsh` eller `powershell` körbara.
+* `versionName`: Den text som visas i menyn session.
+
+Du kan ange standard PowerShell-version du använder med hjälp av den `powershell.powerShellDefaultVersion` inställningen av inställningen detta i texten visas i menyn session (även kallat den `versionName` i den senaste inställningen):
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    "powershell.powerShellDefaultVersion": "Downloaded PowerShell",
+    
+    // other settings...
+}
+```
+
+När du har ställt in den här inställningen kan starta om Visual Studio Code eller använda den i ”utvecklare: Läs in på nytt fönster ”utbud Kommandoåtgärden att uppdatera aktuella vscode-fönstret.
+
+Om du öppnar menyn sessionen, kommer du nu se ditt ytterligare PowerShell-versioner!
+
+> [!NOTE]
+> Om du skapar PowerShell från källan, är det här ett bra sätt att testa din lokal version av PowerShell.
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Konfigurationsinställningar för Visual Studio Code
 

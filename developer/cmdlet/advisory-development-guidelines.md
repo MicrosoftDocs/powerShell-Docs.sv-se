@@ -8,42 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068801"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854868"
 ---
 # <a name="advisory-development-guidelines"></a>Rekommenderade riktlinjer för utveckling
 
 Det här avsnittet beskriver riktlinjer som du bör överväga för att säkerställa bra upplevelser för utveckling och användare. Ibland kan de gäller, och ibland kan de inte.
-
-## <a name="design-guidelines"></a>Designriktlinjer
-
-- [Stöd för en InputObject-Parameter (AD01)](./advisory-development-guidelines.md#AD01)
-
-- [Stöd för parametern Force (AD02)](./advisory-development-guidelines.md#AD02)
-
-- [Hantera autentiseringsuppgifter via Windows PowerShell (AD03)](./advisory-development-guidelines.md#AD03)
-
-- [Stöd för kodning parametrar (AD04)](./advisory-development-guidelines.md#AD04)
-
-- [Test-cmdlet: ar ska returnera ett booleskt värde (AD05)](./advisory-development-guidelines.md#AD05)
-
-## <a name="code-guidelines"></a>Riktlinjer för kod
-
-- [Följ namnkonventioner för cmdlet: en klass (AC01)](./advisory-development-guidelines.md#AC01)
-
-- [Om inga indata från Pipeline åsidosätter metoden BeginProcessing (AC02)](./advisory-development-guidelines.md#AC02)
-
-- [För att hantera åsidosätta stoppbegäran metoden StopProcessing (AC03)](./advisory-development-guidelines.md#AC03)
-
-- [Implementera gränssnittet IDisposable (AC04)](./advisory-development-guidelines.md#AC04)
-
-- [Använda serialisering-vänlig parametertyper (AC05)](./advisory-development-guidelines.md#AC05)
-
-- [Använd SecureString för känsliga Data (AC06)](./advisory-development-guidelines.md#AC06)
 
 ## <a name="design-guidelines"></a>Designriktlinjer
 

@@ -8,24 +8,14 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
-ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0210b5ed3104777541692a0e78e7d3b16f9c8256
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083390"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855139"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Lägga till syntax till ett cmdlet-hjälpavsnitt
-
-- [Parameterattribut](#Parameter-Attributes)
-
-- [Parameterattribut värde](#Parameter-Value-Attributes)
-
-- [Samla Information om Syntax](#Gathering-Syntax-Information)
-
-- [Koda Syntaxdiagrammet XML](#Coding-the-Syntax-Diagram-XML)
-
-## <a name="things-to-know-about-the-syntax-diagram-in-cmdlet-help"></a>Att känna till om Syntaxdiagrammet i Cmdlet-hjälpen
 
 Innan du börjar koda XML för syntaxdiagrammet i hjälpfilen cmdlet Läs det här avsnittet för att få en tydlig bild av typ av data som du måste ange, till exempel parameterattribut och hur dessa data visas i syntaxdiagrammet...
 
@@ -166,7 +156,7 @@ Normalt parametervärden som fungerar som platshållare krävs och literal param
 
 ## <a name="coding-the-syntax-diagram-xml"></a>Koda Syntaxdiagrammet XML
 
-Noden syntax i XML-filen börjar omedelbart efter att noden beskrivning som slutar med den \</maml:description > taggen. Läs om hur insamlingen av data som används i syntaxdiagrammet [samla in Syntaxinformationen](#Gathering-Syntax-Information).
+Noden syntax i XML-filen börjar omedelbart efter att noden beskrivning som slutar med den \</maml:description > taggen. Läs om hur insamlingen av data som används i syntaxdiagrammet [samla in Syntaxinformationen](#gathering-syntax-information).
 
 ### <a name="adding-a-syntax-node"></a>Lägger till en Syntax-nod
 
@@ -210,7 +200,7 @@ I följande exempel innehåller ett syntax-noden som har syntax objekt noder fö
 
 Varje parameter som lagts till i noden syntax objekt har angetts i ett par \<kommandoparameter: > taggar. Du behöver ett par \<kommandoparameter: >-taggar för varje parameter som ingår i parameteruppsättningen, med undantag för de gemensamma parametrarna som tillhandahålls av Windows PowerShell?
 
-Attribut för att öppna \<kommandoparameter: > taggen avgöra hur parametern visas i syntaxdiagrammet. Information om parameterattribut finns [Parameterattribut](#Parameter-Attributes).
+Attribut för att öppna \<kommandoparameter: > taggen avgöra hur parametern visas i syntaxdiagrammet. Information om parameterattribut finns [Parameterattribut](#parameter-attributes).
 
 > [!NOTE]
 > Den \<kommandoparameter: > taggen har stöd för ett underordnat element \<maml:description > vars innehåll aldrig visas. Beskrivningar av parametern har angetts i Parameternoden i XML-filen. Att undvika inkonsekvenser mellan informationen i objektet syntax bodes och Parameternoden utelämna den (\<maml:description > eller lämna det tomt.

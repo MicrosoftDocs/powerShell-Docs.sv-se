@@ -15,34 +15,16 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], creating
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
-ms.openlocfilehash: fb113086ce89e4becff9bcaf3232905fde2bf610
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c9ad84c5bcb6826fcf51db9a1f1a578a65a1f275
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068818"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854955"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>Lägga till parametrar som bearbetar kommandoradsindata
 
 En källa av indata för en cmdlet är från kommandoraden. Det här avsnittet beskrivs hur du lägger till en parameter för att den **Get-Proc** cmdlet (som beskrivs i [skapa din första Cmdlet](./creating-a-cmdlet-without-parameters.md)) så att cmdleten kan bearbeta indata från den lokala datorn utifrån explicit objekt skickades till cmdlet: en. Den **Get-Proc** cmdlet som beskrivs här hämtar processer baserat på deras namn och visar information om processerna i en kommandotolk.
-
-I följande avsnitt finns i det här avsnittet:
-
-- [Definiera klassen Cmdlet](#Defining-the-Cmdlet-Class)
-
-- [Deklarera parametrar](#Declaring-Parameters)
-
-- [Stöd för parameterverifieringen](#Supporting-Parameter-Validation)
-
-- [Åsidosätta indata metoden bearbetades](#Overriding-an-Input-Processing-Method)
-
-- [Kodexempel](#Code-Sample)
-
-- [Definiera objekttyper och formatering](#Defining-Object-Types-and-Formatting)
-
-- [Att skapa cmdleten](#Building-the-Cmdlet)
-
-- [Testa cmdleten](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>Definiera klassen Cmdlet
 

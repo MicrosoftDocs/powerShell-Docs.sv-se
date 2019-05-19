@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 138c6a43937e72fffaa2a09243e500e9822e6111
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068784"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854927"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Lägga till användarmeddelanden i en cmdlet
 
@@ -51,32 +51,6 @@ Cmdlet: ar kan skriva flera olika typer av meddelanden som visas för användare
 - Utvecklingsrapporten meddelanden som innehåller information om hur mycket fungerar cmdlet: en har slutförts när du utför en åtgärd som tar lång tid.
 
 Det finns några gränser för antalet meddelanden som cmdlet: kan skriva eller typen av meddelanden som cmdlet: skriver. Varje meddelande skrivs genom att göra ett specifikt anrop från i indata metoden av cmdlet: bearbetades.
-
-## <a name="the-stopproc-cmdlet"></a>Cmdleten StopProc
-
-Ämnena i det här avsnittet omfattar följande:
-
-- [Definiera cmdleten](#Defining-the-Cmdlet)
-
-- [Definiera parametrar för ändring av systemet](#Defining-Parameters-for-System-Modification)
-
-- [Åsidosätta indata metoden bearbetades](#Overriding-an-Input-Processing-Method)
-
-- [Skriva ett utförligt meddelande](#Writing-a-Verbose-Message)
-
-- [Skriva ett meddelande för felsökning](#Writing-a-Debug-Message)
-
-- [Skriva ett varningsmeddelande](#Writing-a-Warning-Message)
-
-- [Skriva ett meddelande om pågående](#Writing-a-Progress-Message)
-
-- [Kodexempel](#Code-Sample)
-
-- [Definiera objekttyper och formatering](#Define-Object-Types-and-Formatting)
-
-- [Att skapa cmdleten](#Building-the-Cmdlet)
-
-- [Testa cmdleten](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>Definiera cmdleten
 

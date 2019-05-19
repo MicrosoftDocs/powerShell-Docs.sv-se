@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 28d55874960f9a64b986204411d38319ef1d0da7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068359"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854853"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Skapa en cmdlet för att komma åt ett datalager
 
@@ -22,24 +22,6 @@ Det här avsnittet beskriver hur du skapar en cmdlet som ger åtkomst till lagra
 Välj Str-cmdlet som beskrivs här kan hitta och välja strängar i en fil eller ett objekt. De mönster som används för att identifiera strängen kan anges uttryckligen via den `Path` parametern för cmdlet: ar eller implicit via den `Script` parametern.
 
 Cmdlet: en är utformad för att använda valfri provider som Windows PowerShell som härleds från [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). Cmdlet: en kan till exempel ange filsystem-provider eller variabel providern som tillhandahålls av Windows PowerShell. Mer information aboutWindows PowerShell-providers, se [designa din Windows PowerShell-providern](../prog-guide/designing-your-windows-powershell-provider.md).
-
-Ämnena i det här avsnittet omfattar följande:
-
-- [Definiera klassen Cmdlet](#Defining-the-Cmdlet-Class)
-
-- [Definiera parametrar för dataåtkomst](#Declaring-the-Path-Parameter)
-
-- [Åsidosätta indata metoderna](#Overriding-Input-Processing-Methods)
-
-- [Åtkomst till innehåll](#Accessing-Content)
-
-- [Kodexempel](#Code-Sample)
-
-- [Definiera objekttyper och formatering](#Declaring-Search-Support-Parameters)
-
-- [Att skapa cmdleten](#Building-the-Cmdlet)
-
-- [Testa cmdleten](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>Definiera klassen Cmdlet
 
@@ -397,7 +379,7 @@ Det här exemplet väljer Str cmdlet använder den [System.Management.Automation
 
 ## <a name="code-sample"></a>Kodexempel
 
-Följande kod visar implementeringen av den här versionen av denna väljer Str-cmdlet. Observera att den här koden innehåller klassen cmdlet och privata metoder som används av cmdlet: en Windows PowerShell snapin-koden för att registrera cmdlet: en. Mer information om hur du registrerar cmdleten finns i [att skapa cmdleten](#Building-the-Cmdlet).
+Följande kod visar implementeringen av den här versionen av denna väljer Str-cmdlet. Observera att den här koden innehåller klassen cmdlet och privata metoder som används av cmdlet: en Windows PowerShell snapin-koden för att registrera cmdlet: en. Mer information om hur du registrerar cmdleten finns i [att skapa cmdleten](#building-the-cmdlet).
 
 ```csharp
 //

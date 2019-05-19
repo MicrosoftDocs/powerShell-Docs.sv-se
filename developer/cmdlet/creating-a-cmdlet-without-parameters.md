@@ -11,32 +11,16 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7f10acf59dedbb4af17bc5250e8624282ba22656
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068342"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854970"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Skapa en cmdlet utan parametrar
 
 Det här avsnittet beskriver hur du skapar en cmdlet som hämtar information från den lokala datorn utan att använda parametrar och skriver informationen till pipelinen. Cmdlet: en som beskrivs här är en Get-Proc-cmdlet som hämtar information om processerna på den lokala datorn och visar informationen på kommandoraden.
-
-Ämnena i det här avsnittet omfattar följande:
-
-- [Namngivning av cmdlet: en](#Naming-the-Cmdlet)
-
-- [Definiera klassen Cmdlet](#Defining-the-Cmdlet-Class)
-
-- [Åsidosätta indata metoden bearbetades](#Overriding-an-Input-Processing-Method)
-
-- [Kodexempel](#Code-Sample)
-
-- [Definiera objekttyper och formatering](#Defining-Object-Types-and-Formatting)
-
-- [Att skapa cmdleten](#Building-the-Cmdlet)
-
-- [Testa cmdleten](#Testing-the-Cmdlet)
 
 > [!NOTE]
 > Tänk på att när du skriver cmdletar referenssammansättningar Windows PowerShell® hämtas på disk (som standard i C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0). De är inte installerad i Global Assembly Cache (GAC).

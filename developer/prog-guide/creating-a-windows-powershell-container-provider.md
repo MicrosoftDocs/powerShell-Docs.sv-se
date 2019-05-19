@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 33effed9a96cf1b9ee5f1a50b60a1937526db9d1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9e7da13ff559e802d52df475f2a555baeeeef983
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081911"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855183"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Skapa en Windows PowerShell-containerprovider
 
@@ -35,44 +35,6 @@ Windows PowerShell-container-providern som beskrivs här definierar databasen so
 
 > [!CAUTION]
 > Tänk på att den här designen förutsätter en databas som har ett fält med namn-ID och att fältet är LongInteger.
-
-Här är en lista över avsnitt i det här avsnittet. Läs informationen i den ordning som det visas om du inte är bekant med att skriva en Windows PowerShell-providern för behållaren. Men om du är bekant med att skriva en Windows PowerShell-providern för behållare, gå direkt till den information du behöver.
-
-- [Definiera en providerklass för Windows PowerShell-behållare](#Defining-a-Windows-PowerShell-Container-Provider-Class)
-
-- [Definiera grundfunktionen](#defining-base-functionality)
-
-- [Hämtning av underordnade objekt](#Retrieving-Child-Items)
-
-- [Koppla dynamiska parametrar till den `Get-ChildItem` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet)
-
-- [Hämtning av underordnade objektnamn](#Retrieving-Child-Item-Names)
-
-- [Koppla dynamiska parametrar till den `Get-ChildItem` Cmdlet (namn)](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet-(Name))
-
-- [Byta namn på objekt](#Renaming-Items)
-
-- [Koppla dynamiska parametrar till den `Rename-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Rename-Item-Cmdlet)
-
-- [Skapa nya objekt](#Creating-New-Items)
-
-- [Koppla dynamiska parametrar till den `New-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-New-Item-Cmdlet)
-
-- [Tar bort ett objekt](#Removing-Items)
-
-- [Koppla dynamiska parametrar till den `Remove-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Remove-Item-Cmdlet)
-
-- [Fråga efter underordnade objekt](#Querying-for-Child-Items)
-
-- [Klara objekt](#Copying-Items)
-
-- [Koppla dynamiska parametrar till den `Copy-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Copy-Item-Cmdlet)
-
-- [Kodexempel](#Code-Sample)
-
-- [Att skapa Windows PowerShell-providern](#Building-the-Windows-PowerShell-Provider)
-
-- [Testa Windows PowerShell-providern](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-a-windows-powershell-container-provider-class"></a>Definiera en providerklass för Windows PowerShell-behållare
 
@@ -398,7 +360,7 @@ Följande villkor kan tillkomma för din implementering av [System.Management.Au
 
 - Implementeringen av [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) ansvarar för att förhindra oändlig rekursion när Cirkulära länkar och liknande. Ett lämpligt avslutande undantag måste undantagsfel för att återspegla dessa villkor.
 
-- Implementeringen av den [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) metoden ska anropa [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och kontrollera dess returvärdet innan du gör några ändringar i datalagret. Efter anropet till [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar true, den [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) metoden ska anropa den [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) metod som ytterligare en kontroll efter ändringar av potentiellt skadliga system. Läs mer om att anropa metoderna [Byt namn på objekt](#Renaming-Items).
+- Implementeringen av den [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) metoden ska anropa [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och kontrollera dess returvärdet innan du gör några ändringar i datalagret. Efter anropet till [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar true, den [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) metoden ska anropa den [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) metod som ytterligare en kontroll efter ändringar av potentiellt skadliga system. Läs mer om att anropa metoderna [Byt namn på objekt](#renaming-items).
 
 ## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>Bifoga dynamiska parametrar till Cmdlet Copy-Item
 

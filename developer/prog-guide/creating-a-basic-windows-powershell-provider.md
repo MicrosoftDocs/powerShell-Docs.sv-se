@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], base provider
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
-ms.openlocfilehash: 19cc3817016d96e1412a5f3506e9d694ba55b48d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5ebc22067b20f0e1d35d31d5f33e599f50cb7564
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082081"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855069"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Skapa en grundläggande Windows PowerShell-provider
 
@@ -26,22 +26,6 @@ Som nämnts tidigare grundläggande providern som beskrivs här implementerar me
 
 > [!NOTE]
 > Du hittar ett exempel på den här providern i filen AccessDBSampleProvider01.cs som tillhandahålls av Windows PowerShell.
-
-Följande: avsnitt i det här avsnittet
-
-- [Definiera klassen Windows PowerShell-providern](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Definiera Provider-specifik statusinformation](#Defining-Provider-Specific-State-Information)
-
-- [Initiering av providern](#Initializing-the-Provider)
-
-- [Starta dynamiska parametrar](#Start-Dynamic-Parameters)
-
-- [Avinitierar providern](#Uninitializing-the-Provider)
-
-- [Kodexempel](#Code-Sample)
-
-- [Testa Windows PowerShell-providern](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Definiera klassen Windows PowerShell-providern
 
@@ -77,7 +61,7 @@ Den här grundläggande providern åsidosätts inte den här metoden. Följande 
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStart](Msh_samplesaccessdbprov01#accessdbprov01ProviderStart)]  -->
 
-Providern kan upprätthålla tillståndet för provider-specifik information som beskrivs i [definiera Provider-specifik Data tillstånd](#Defining-Provider-Specific-State-Information). I det här fallet din implementering måste åsidosätta de [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) metod för att returnera en instans av den härledda klassen.
+Providern kan upprätthålla tillståndet för provider-specifik information som beskrivs i [definiera Provider-specifik Data tillstånd](#defining-provider-specific-state-information). I det här fallet din implementering måste åsidosätta de [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) metod för att returnera en instans av den härledda klassen.
 
 ## <a name="start-dynamic-parameters"></a>Starta dynamiska parametrar
 

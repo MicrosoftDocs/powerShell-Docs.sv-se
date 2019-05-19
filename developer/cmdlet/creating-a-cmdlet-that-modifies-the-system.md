@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: bbe9f0213754d1cc47e0fd9a7a898bde916c0636
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068456"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854921"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Skapa en cmdlet som ändrar systemet
 
@@ -42,28 +42,6 @@ Av ”ändra systemet” syftar på alla cmdletar som potentiellt ändrar tillst
 ## <a name="the-stopproc-cmdlet"></a>Cmdleten StopProc
 
 Det här avsnittet beskrivs en Stop-Proc-cmdlet som försöker avsluta processer som hämtas med hjälp av cmdleten Get-processen (beskrivs i [skapa din första cmdleten](./creating-a-cmdlet-without-parameters.md)).
-
-Ämnena i det här avsnittet omfattar följande:
-
-- [Definiera cmdleten](#Defining-the-Cmdlet)
-
-- [Definiera parametrar för ändring av systemet](#Defining-Parameters-for-System-Modification)
-
-- [Åsidosätta indata metoden bearbetades](#Overriding-an-Input-Processing-Method)
-
-- [Att anropa metoden ShouldProcess](#Calling-the-ShouldProcess-Method)
-
-- [Att anropa metoden ShouldContinue](#Calling-the-ShouldContinue-Method)
-
-- [Stoppar inkommande bearbetning](#Stopping-Input-Processing)
-
-- [Kodexempel](#Code-Sample)
-
-- [Definiera objekttyper och formatering](#Defining-Object-Types-and-Formatting)
-
-- [Att skapa cmdleten](#Building-the-Cmdlet)
-
-- [Testa cmdleten](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>Definiera cmdleten
 

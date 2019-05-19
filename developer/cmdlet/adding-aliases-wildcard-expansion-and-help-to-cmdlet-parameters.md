@@ -8,40 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: db664e589f625855b5a33a02c522d6b238ad2810
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 946b71e4480a47ac6ccd6930be445d7efb4fb62d
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62075264"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854899"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Lägga till alias, jokerteckenexpansion och hjälp i cmdlet-parametrar
 
 Det här avsnittet beskrivs hur du lägger till alias och jokertecken expansion och hjälp med att meddelanden till parametrarna för cmdleten Stop-processen (beskrivs i [skapa en Cmdlet som ändrar systemet](./creating-a-cmdlet-that-modifies-the-system.md)).
 
 Denna cmdlet Stop-Proc försöker avsluta processer som hämtas med hjälp av cmdleten Get-processen (beskrivs i [skapa din första cmdleten](./creating-a-cmdlet-without-parameters.md)).
-
-Ämnena i det här avsnittet omfattar följande:
-
-- [Definiera cmdleten](#Defining-the-Cmdlet)
-
-- [Definiera parametrar för ändring av systemet](#Defining-Parameters-for-System-Modification)
-
-- [Definiera ett Parameteralias](#Defining-a-Parameter-Alias)
-
-- [Skapa hjälp för parametrar](#Creating-Help-for-Parameters)
-
-- [Åsidosätta indata metoden bearbetades](#Overriding-an-Input-Processing-Method)
-
-- [Stöd för jokertecken Expansion](#Supporting-Wildcard-Expansion)
-
-- [Kodexempel](#Defining-a-Parameter-Alias)
-
-- [Definiera objekttyper och formatering](#Define-Object-Types-and-Formatting)
-
-- [Att skapa cmdleten](#Building-the-Cmdlet)
-
-- [Testa cmdleten](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>Definiera cmdleten
 

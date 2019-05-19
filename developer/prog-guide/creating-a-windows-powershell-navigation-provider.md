@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: 40454f880b57d5b3a8a8ded21c8c97aebba027fe
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5f7a61e261399d3d2abe62fe4523e8c9895d5ad4
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081860"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855179"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Skapa en Windows PowerShell-navigeringsprovider
 
@@ -33,34 +33,6 @@ Providern som beskrivs här kan Användarhanteraren en Access-databas som en enh
 
 > [!CAUTION]
 > Tänk på att den här designen förutsätter en databas som har ett fält med namn-ID och att fältet är LongInteger.
-
-I följande lista innehåller avsnitt i det här avsnittet. Om du är bekant med att skriva en Windows PowerShell-providern för navigering, kan du läsa informationen i den ordning som det visas. Men om du är bekant med att skriva en Windows PowerShell-providern för navigering, gå direkt till den information du behöver.
-
-- [Definiera en PS navigering providerklass](#Define-the-Windows-PowerShell-provider)
-
-- [Definiera grundfunktionen](#Defining-Base-Functionality)
-
-- [Skapa en PS-sökväg](#Creating-a-Windows-PowerShell-Path)
-
-- [Hämtning av den överordnade sökvägen](#Retrieving-the-Parent-Path)
-
-- [Hämtar namnet på underordnade sökväg](#Retrieve-the-Child-Path-Name)
-
-- [Avgör om ett objekt är en behållare](#Determining-if-an-Item-is-a-Container)
-
-- [Flyttar ett objekt](#Moving-an-Item)
-
-- [Koppla dynamiska parametrar till den `Move-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Move-Item-Cmdlet)
-
-- [Normaliserar en relativ sökväg](#Normalizing-a-Relative-Path)
-
-- [Kodexempel](#Code-Sample)
-
-- [Definiera objekttyper och formatering](#Defining-Object-Types-and-Formatting)
-
-- [Att skapa Windows PowerShell-providern](#Building-the-Windows-PowerShell-provider)
-
-- [Testa Windows PowerShell-providern](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="define-the-windows-powershell-provider"></a>Definiera Windows PowerShell-providern
 
