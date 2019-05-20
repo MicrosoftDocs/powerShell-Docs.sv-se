@@ -1,211 +1,47 @@
-- name: Översikt över Windows Management Framework (WMF)
+- name: Windows Management Framework (WMF)
   href: overview.md
-- name: WMF 5.1
+- name: Installation
   items:
-    - name: WMF 5.1-versionskommentarer
-      href: 5.1/release-notes.md
-    - name: Nya scenarier och funktioner
-      items:
-        - name: Nya scenarier och funktioner
-          href: 5.1/scenarios-features.md
-        - name: Förbättringar i Desired State Configuration (DSC)
-          href: 5.1/DSC-improvements.md
-        - name: Förbättringar i PowerShell-konsolen
-          href: 5.1/console-improvements.md
-        - name: Förbättringar i PowerShell-motorn
-          href: 5.1/engine-improvements.md
-        - name: Förbättringar i pakethanteringen
-          href: 5.1/package-management-improvements.md
-        - name: Förbättringar i JEA
-          href: 5.1/jea-improvements.md
-        - name: Katalog-cmdletar
-          href: 5.1/catalog-cmdlets.md
-        - name: Korrigerade buggar i WMF 5.1
-          href: 5.1/bugfixes.md
-    - name: Installera och konfigurera
-      href: 5.1/install-configure.md
-    - name: Kända problem
-      href: 5.1/known-issues.md
-    - name: Kompatibilitet
-      href: 5.1/Compatibility.md
-    - name: Produktkompatibilitet
-      href: 5.1/productincompat.md
-- name: WMF 5.0
+    - name: Installera och konfigurera WMF 5.1
+      href: setup/install-configure.md
+    - name: Avinstallera WMF 5.0
+      href: setup/uninstall.md
+- name: Nyheter
+  expanded: true
   items:
-    - name: Viktig information om WMF 5.0
-      href: 5.0/releasenotes.md
-    - name: Installationsinformation
-      href: 5.0/requirements.md
-    - name: Kända problem och begränsningar
-      href: 5.0/limitation_overview.md
-    - name: Kända problem med Desired State Configuration (DSC)
-      href: 5.0/limitation_dsc.md
+    - name: Versionsinformation för WMF 5.x
+      href: whats-new/release-notes.md
+    - name: Felkorrigeringar i WMF 5.1
+      href: whats-new/bugfixes.md
+    - name: Nya och uppdaterade cmdletar
+      href: whats-new/new-updated-cmdlets.md
+    - name: Skapa anpassade typer med hjälp av PowerShell-klasser
+      href: whats-new/class-overview.md
+    - name: Konsolförbättringar i WMF 5.1
+      href: whats-new/console-improvements.md
+    - name: Förbättringar i felsökning av PowerShell-skript
+      href: whats-new/debug-overview.md
+    - name: Skriptspårning och -loggning
+      href: whats-new/script-logging.md
+    - name: DSC-förbättringar i WMF 5.1
+      href: whats-new/DSC-improvements.md
+    - name: Förbättringar i PowerShell-motorn i WMF 5.1
+      href: whats-new/engine-improvements.md
+    - name: Informationsström
+      href: whats-new/informationstream-overview.md
+    - name: Förbättringar i JEA (Just Enough Administration)
+      href: whats-new/jea-improvements.md
+    - name: Förbättringar i pakethanteringen i WMF 5.1
+      href: whats-new/package-management-improvements.md
+    - name: Loggning av programvaruinventering (SIL)
+      href: whats-new/sil-overview.md
     - name: Status för produktkompatibilitet
-      href: 5.0/productincompat.md
-    - name: Scenarier som är aktiverade via WMF 5.0
-      items:
-        - name: JEA (Just Enough Administration)
-          items:
-            - name: Översikt över JEA
-              href: 5.0/jea_overview.md
-            - name: Skapa och ansluta till en JEA-slutpunkt
-              href: 5.0/jea_endpoint.md
-            - name: Rapportering i JEA
-              href: 5.0/jea_report.md
-        - name: Skapa anpassade typer med hjälp av PowerShell-klasser
-          items:
-            - name: Översikt
-              href: 5.0/class_overview.md
-            - name: Definiera anpassade typer
-              href: 5.0/class_newtype.md
-            - name: Deklarera basklass
-              href: 5.0/class_base.md
-            - name: Deklarera implementerat gränssnitt
-              href: 5.0/class_interface.md
-            - name: Anropa basklasskonstruktorn
-              href: 5.0/class_baseconstructor.md
-            - name: Anropa basklassmetoden
-              href: 5.0/class_basemethod.md
-        - name: Förbättringar i felsökning av PowerShell-skript
-          href: 5.0/debug_overview.md
-        - name: Förbättringar i Desired State Configuration (DSC)
-          items:
-            - name: Översikt över DSC-förbättringar
-              href: 5.0/dsc_improvements.md
-            - name: Konfigurationer
-              items:
-                - name: Ange beroenden mellan noder
-                  href: 5.0/dsc_waitfor.md
-                - name: 'Krypterade MOF:ar'
-                  href: 5.0/dsc_encryptedmof.md
-                - name: Hjälpsupport för DSC-konfiguration
-                  href: 5.0/dsc_confighelp.md
-                - name: Redigeringsförbättringar med PowerShell ISE
-                  href: 5.0/dsc_authoring.md
-                - name: Tillåta identiska duplicerade resurser i en konfiguration
-                  href: 5.0/dsc_identicalduplicate.md
-                - name: Import-DscResource Keyword Supports -ModuleVersion-parametern
-                  href: 5.0/dsc_importdscresource.md
-                - name: WOW64-stöd för konfigurationsnyckelord
-                  href: 5.0/dsc_wow64.md
-            - name: Resurser
-              items:
-                - name: Klassbaserade DSC-resurser
-                  href: 5.0/dsc_classbasedresource.md
-                - name: Skriptfelsökning av DSC-resurser
-                  href: 5.0/dsc_resourcedebugging.md
-                - name: Automatiskt stöd för RunAs för DSC-resurser
-                  href: 5.0/dsc_runas.md
-                - name: Stöd för versionshantering sida vid sida för DSC-resurser
-                  href: 5.0/dsc_sxsresource.md
-                - name: Nya In-box-resurser
-                  href: 5.0/dsc_newresources.md
-            - name: Lokal konfigurationshanterare
-              items:
-                - name: Konfigurera nod med flera konfigurationsfragment
-                  href: 5.0/dsc_partialconfig.md
-                - name: Stöd för blandade RefreshModes
-                  href: 5.0/dsc_partialconfig_mixedmode.md
-                - name: Konfigurera DSC-motorn med nytt attribut
-                  href: 5.0/dsc_metaconfiguration.md
-                - name: Detaljerad information om LCM-tillstånd
-                  href: 5.0/dsc_lcmstate.md
-                - name: Frekvenserna för RefreshMode och ConfigurationMode behöver inte vara multiplar av varandra
-                  href: 5.0/dsc_freqnomultiple.md
-                - name: Ytterligare värde för RefreshMode-egenskapen
-                  href: 5.0/dsc_refreshmode.md
-            - name: Cmdletar
-              items:
-                - name: Information om konfigurationsstatus
-                  href: 5.0/dsc_getconfigurationstatus.md
-                - name: Test-DscConfiguration-cmdleten stöder referenskonfigurationer
-                  href: 5.0/dsc_testconfiguration.md
-                - name: Direktåtkomst till DSC-resursmetoder
-                  href: 5.0/dsc_directaccess.md
-                - name: Leverera konfigurationsdokumentet utan att tillämpa
-                  href: 5.0/dsc_publishconfig.md
-                - name: Ta bort DSC-dokument
-                  href: 5.0/dsc_removeconfigdoc.md
-                - name: Enhetlig och konsekvent tillstånds- och statusrepresentation
-                  href: 5.0/dsc_statestatus.md
-                - name: Cmdleten Set-DscLocalConfigurationManager stöder parametern -Force
-                  href: 5.0/dsc_setdsclcm.md
-            - name: Pull-läge
-              items:
-                - name: PULL på begäran av DSC-konfigurationer
-                  href: 5.0/dsc_updateconfig.md
-                - name: 'Separation av nod- och konfigurations-ID:er'
-                  href: 5.0/dsc_nodeid.md
-                - name: 'Separation av konfigurations-, resurs och rapportlager'
-                  href: 5.0/dsc_repository.md
-                - name: Rapportera konfigurationsstatus till en central plats
-                  href: 5.0/dsc_reporting.md
-        - name: Granska PowerShell-användning med transkription och loggning
-          items:
-            - name: Översikt över granskning
-              href: 5.0/audit_overview.md
-            - name: Utökade transkriptionsalternativ
-              href: 5.0/audit_transcript.md
-            - name: Skriptspårning och -loggning
-              href: 5.0/audit_script.md
-            - name: Cmdletar för CMS (Cryptographic Message Syntax)
-              href: 5.0/audit_cms.md
-        - name: 'Programidentifiering, installation och inventering med PackageManagement'
-          items:
-            - name: Översikt över PackageManagement
-              href: 5.0/oneget_overview.md
-            - name: PackageManagement-cmdletar
-              href: 5.0/oneget_cmdlets.md
-        - name: 'PowerShell-modulidentifiering, installation och inventering med PowerShellGet'
-          items:
-            - name: Översikt över PowerShellGet-moduler
-              href: 5.0/psget_module_overview.md
-            - name: Registrera ett PowerShell-lager
-              href: 5.0/psget_psrepository.md
-            - name: Versionsstöd sida vid sida i PowerShell 5.0 eller senare
-              href: 5.0/psget_modulesxsinstall.md
-            - name: Installation av modulberoenden
-              href: 5.0/psget_moduledependency.md
-            - name: PowerShellGet-cmdletar för modulhantering
-              href: 5.0/psget_modulecmdlets.md
-        - name: 'PowerShell-skriptidentifiering, installation och hantering med PowerShellGet'
-          items:
-            - name: Översikt över PowerShellGet-skript
-              href: 5.0/psget_script_overview.md
-            - name: PowerShellGet-cmdletar för skripthantering
-              href: 5.0/psget_scriptcmdlets.md
-        - name: Nya och uppdaterade cmdletar baserade på feedback från communityn
-          items:
-            - name: Nya och uppdaterade cmdletar baserade på feedback från communityn
-            - name: Symboliska länkar med artikel-cmdletar
-              href: 5.0/feedback_symbolic.md
-            - name: Cmdletar för arkiv
-              href: 5.0/feedback_archive.md
-            - name: Cmdletar för urklipp
-              href: 5.0/feedback_clipboard.md
-            - name: Convert-String
-              href: 5.0/feedback_convertstring.md
-            - name: Extrahera och parsa strukturerade objekt från sträng
-              href: 5.0/feedback_convertfromString.md
-            - name: Format-Hex
-              href: 5.0/feedback_formathex.md
-            - name: NoNewLine-parametern
-              href: 5.0/feedback_nonewline.md
-            - name: New-TemporaryFile
-              href: 5.0/feedback_tempfile.md
-            - name: New-Guid
-              href: 5.0/feedback_newguid.md
-            - name: Get-ChildItem har parametern -Depth
-              href: 5.0/feedback_getchilditem.md
-            - name: Uppdateringar till FileInfo-objektet
-              href: 5.0/feedback_fileinfo.md
-            - name: 'Modulstöd för att deklarera versionsintervall (1.*, osv.)'
-              href: 5.0/feedback_moduleversionranges.md
-        - name: Informationsström
-          href: 5.0/informationstream_overview.md
-        - name: Skapa PowerShell-cmdletar baserade på OData-slutpunkt
-          href: 5.0/odata_overview.md
-        - name: Hantering av nätverksväxling med PowerShell
-          href: 5.0/networkswitch_overview.md
-        - name: Loggning av programvaruinventering (SIL)
-          href: 5.0/sil_overview.md
+      href: whats-new/compatibility.md
+- name: Kända problem
+  items:
+    - name: Kända problem i WMF 5.0
+      href: known-issues/known-issues-50.md
+    - name: Kända problem i WMF 5.1
+      href: known-issues/known-issues-51.md
+    - name: Kända problem och begränsningar i DSC
+      href: known-issues/known-issues-dsc.md
