@@ -2,12 +2,12 @@
 title: Med Visual Studio Code för PowerShell-utveckling
 description: Med Visual Studio Code för PowerShell-utveckling
 ms.date: 08/06/2018
-ms.openlocfilehash: 0d796460511b273771eacb03d0df4d90e1e9c322
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 5badffd49252e0d72ae2c20d3147ad4b1e92d5ed
+ms.sourcegitcommit: cf1a281cce9f7239c440c90f8b2798d32a13778d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854402"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882563"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Med Visual Studio Code för PowerShell-utveckling
 
@@ -84,7 +84,7 @@ Typ `R` att köra filen. Öppna Visual Studio Code och kontrollera att tillägge
 
 #### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>Välja en version av PowerShell för att använda i tillägget
 
-Med PowerShell Core installation sida vid sida med Windows PowerShell, är det nu möjligt att en viss version av PowerShell med PowerShell-tillägget. Använd följande här för att välja versionen:
+Med PowerShell Core installation sida vid sida med Windows PowerShell, är det nu möjligt att använda en viss version av PowerShell i PowerShell-tillägget. Använd följande här för att välja versionen:
 
 1. Öppna kommandot utbud (<kbd>Ctrl</kbd>+<kbd>SKIFT</kbd>+<kbd>P</kbd> på Windows och Linux, <kbd>Cmd</kbd> + <kbd>SKIFT</kbd>+<kbd>P</kbd> på macOS).
 1. Sök efter ”Session”.
