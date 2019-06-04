@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Skapa anpassade typer med hjälp av PowerShell-klasser
-ms.openlocfilehash: 0dd5bbaca50abb746e15a7bb64a706c7eceee905
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: c2c50fb65ce4931fcf6ae529b4146df391c831c4
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65856240"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470928"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>Skapa anpassade typer med hjälp av PowerShell-klasser
 
@@ -21,7 +21,7 @@ PowerShell 5.0 har lagts till med möjligheten att definiera klasser och andra a
 - Felsöka typer med hjälp av PowerShell-språket
 - Skapa och hantera undantag genom att använda formella mekanismer och på rätt nivå
 
-# <a name="declare-base-class"></a>Deklarera basklass
+## <a name="declare-base-class"></a>Deklarera basklass
 
 Du kan deklarera en PowerShell-klass som bastyp för en annan PowerShell-klass.
 
@@ -54,7 +54,7 @@ $list.Add(100)
 $list[0] # return 100
 ```
 
-# <a name="call-base-class-constructor"></a>Anropa basklasskonstruktorn
+### <a name="call-base-class-constructor"></a>Anropa basklasskonstruktorn
 
 För att anropa en Basklasskonstruktorn från en underklass, använder du nyckelordet **grundläggande**:
 
@@ -86,7 +86,7 @@ class C : B
 }
 ```
 
-# <a name="call-base-class-method"></a>Anropa basklassmetoden
+### <a name="call-base-class-method"></a>Anropa basklassmetoden
 
 Du kan åsidosätta befintliga metoder i underklasser. Gör detta genom att deklarera metoder med samma namn och signatur:
 
@@ -135,7 +135,7 @@ $list.Add(100)
 $list[0] # return 200
 ```
 
-# <a name="declare-implemented-interface"></a>Deklarera implementerat gränssnitt
+### <a name="declare-implemented-interface"></a>Deklarera implementerat gränssnitt
 
 Du kan deklarera implementerade gränssnitt efter bastyper eller omedelbart efter ett kolon (:), om det finns inga bastypen som angetts. Separera namn för alla med kommatecken. Den liknar C# syntax.
 
@@ -157,11 +157,11 @@ class MyComparableBar : bar, system.IComparable
 }
 ```
 
-# <a name="new-language-features-in-powershell-50"></a>Nya språkfunktioner i PowerShell 5.0
+## <a name="new-language-features-in-powershell-50"></a>Nya språkfunktioner i PowerShell 5.0
 
 PowerShell 5.0 innehåller följande nya språkliga elementen i PowerShell:
 
-## <a name="class-keyword"></a>Nyckelord för klass
+### <a name="class-keyword"></a>Nyckelord för klass
 
 Den `class` nyckelordet definierar en ny klass. Det här är en äkta .NET Framework-typen. Klassmedlemmar är offentliga men endast allmänna inom omfånget för modulen. Du kan inte referera till namnet på som en sträng (till exempel `New-Object` inte fungerar), och i den här versionen kan du inte använda en literal typ (till exempel `[MyClass]`) utanför filen skript eller modulen som klassen definierats.
 
@@ -172,7 +172,7 @@ class MyClass
 }
 ```
 
-## <a name="enum-keyword-and-enumerations"></a>Nyckelordet enum och uppräkningar
+### <a name="enum-keyword-and-enumerations"></a>Nyckelordet enum och uppräkningar
 
 Stöd för den `enum` nyckelordet har lagts till, som använder ny rad som avgränsare. Du kan inte för närvarande kan definiera en uppräknare när det gäller själva. Dock kan du initiera en uppräkning när det gäller en annan uppräkning som visas i följande exempel. Bastypen kan inte anges; Det är alltid `[int]`.
 
@@ -202,11 +202,11 @@ enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## <a name="import-dscresource"></a>Import-DscResource
+### <a name="import-dscresource"></a>Import-DscResource
 
 `Import-DscResource` är nu ett sant dynamisk nyckelord. PowerShell Parsar rotmodul för den angivna modulen, söker efter klasser som innehåller den **DscResource** attribut.
 
-## <a name="implementingassembly"></a>ImplementingAssembly
+### <a name="implementingassembly"></a>ImplementingAssembly
 
 Ett nytt fält, **ImplementingAssembly**, har lagts till **ModuleInfo**. Den är inställd på dynamisk sammansättning som skapats för en skriptmodul om skriptet definierar klasser eller läsa in sammansättningen för binära moduler. Det har inte angetts när **ModuleType** är **Manifest**.
 
@@ -232,11 +232,11 @@ $s = "hello"
 
 Alla medlemmar är offentliga.
 
-## <a name="constructors-and-instantiation"></a>Konstruktorerna och instansiering
+### <a name="constructors-and-instantiation"></a>Konstruktorerna och instansiering
 
 PowerShell-klasser kan ha konstruktorer. De har samma namn som deras klass. Konstruktorer kan vara överbelastad. Statiska konstruktörer stöds. Egenskaper med initieringen uttryck initieras innan du kör kod i en konstruktor. Statiska egenskaper initieras innan innehållet i en statisk konstruktor och instansegenskaperna initieras innan innehållet i konstruktorn icke-statisk. För närvarande finns ingen syntax för att anropa en konstruktor från en annan konstruktor (som C\# syntax ”: this()"). Lösningen är att definiera ett vanligt `Init()` metod.
 
-### <a name="creating-instances"></a>Skapa instanser
+#### <a name="creating-instances"></a>Skapa instanser
 
 > [!NOTE]
 > I PowerShell 5.0 `New-Object` fungerar inte med klasser som definieras i PowerShell. Dessutom visas typnamnet bara lexically, vilket innebär att det inte är synligt utanför modulen eller skript som definierar klassen. Funktioner kan returnera instanser av en klass som definierats i PowerShell. Dessa instanser fungerar utanför modulen eller skript.
@@ -265,7 +265,7 @@ Metoden pseudo statiska `new()` fungerar med .NET-typer, som visas i följande e
 [hashtable]::new()
 ```
 
-### <a name="discovering-constructors"></a>Identifiera konstruktorer
+#### <a name="discovering-constructors"></a>Identifiera konstruktorer
 
 Du kan nu se konstruktor överlagringar med `Get-Member`, eller som visas i det här exemplet:
 
@@ -280,7 +280,7 @@ hashtable new(int capacity, float loadFactor)
 
 `Get-Member -Static` Visar en lista över konstruktorer, så att du kan visa överlagringar som någon annan metod. Prestanda för den här syntaxen är också betydligt snabbare än `New-Object`.
 
-## <a name="methods"></a>Metoder
+### <a name="methods"></a>Metoder
 
 En PowerShell-klassmetod implementeras som en **ScriptBlock** som har endast ett end-block. Alla metoder är offentliga. Följande visar ett exempel på att definiera en metod med namnet **EnMetod**.
 
@@ -304,29 +304,29 @@ $b.DoSomething(42)
 
 Överlagrade metoder stöds också.
 
-## <a name="properties"></a>Egenskaper
+### <a name="properties"></a>Egenskaper
 
 Alla egenskaper är offentliga. Egenskaper för kräver en ny rad eller semikolon. Om ingen typ har angetts är egenskapstypen objekt.
 
 Egenskaper som använder verifiering eller argumentet omvandling attribut (t.ex. `[ValidateSet("aaa")]`) fungerar som förväntat.
 
-## <a name="hidden"></a>Hidden
+### <a name="hidden"></a>Hidden
 
 Ett nytt nyckelord, `Hidden`, har lagts till. `Hidden` kan tillämpas på Egenskaper och metoder (inklusive konstruktorer).
 
-Dolda medlemmar är offentliga men inte visas i utdata från `Get-Member` såvida inte-Force parameter har lagts till. Dolda medlemmar ingår inte när fliken slutföra eller med Intellisense såvida inte slutförs som uppstår i den klass som definierar den dolda medlemmen.
+Dolda medlemmar är offentliga men inte visas i utdata från `Get-Member` såvida inte den `-Force` parameter har lagts till. Dolda medlemmar ingår inte när fliken slutföra eller med Intellisense såvida inte slutförs som uppstår i den klass som definierar den dolda medlemmen.
 
 Ett nytt attribut, **System.Management.Automation.HiddenAttribute** har lagts till så att C\# kod kan ha samma semantik i PowerShell.
 
-## <a name="return-types"></a>Returnera typer
+### <a name="return-types"></a>Returnera typer
 
-Returtypen är ett kontrakt. Det returnera värdet konverteras till den förväntade typen. Om ingen returtyp anges returtypen är **void**. Det finns ingen strömning av objekt. Bbjects kan inte skrivas till pipelinen avsiktligt eller av misstag.
+Returtypen är ett kontrakt. Det returnera värdet konverteras till den förväntade typen. Om ingen returtyp anges returtypen är **void**. Det finns ingen strömning av objekt. Objekt kan inte skrivas till pipelinen avsiktligt eller av misstag.
 
-## <a name="attributes"></a>Attribut
+### <a name="attributes"></a>Attribut
 
 Två nya attribut **DscResource** och **DscProperty** har lagts till.
 
-## <a name="lexical-scoping-of-variables"></a>Lexikal ange omfång för variabler
+### <a name="lexical-scoping-of-variables"></a>Lexikal ange omfång för variabler
 
 Nedan visas ett exempel på hur lexikal målgrupp fungerar i den här versionen.
 

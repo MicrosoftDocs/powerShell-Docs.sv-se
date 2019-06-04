@@ -2,12 +2,12 @@
 ms.date: 12/14/2018
 keywords: PowerShell cmdlet
 title: Skriva bärbar moduler
-ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 237f6aaea0ed019c54d04a8477d7a456edf00910
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086416"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470990"
 ---
 # <a name="portable-modules"></a>Bärbar moduler
 
@@ -17,11 +17,12 @@ Windows PowerShell är avsedd för [.NET Framework][] medan PowerShell Core är 
 
 ### <a name="porting-a-pssnapin"></a>Porta en PSSnapIn
 
-PowerShell SnapIns (PSSnapIn) stöds inte i PowerShell Core. Dock är det enkelt att konvertera en PSSnapIn till en PowerShell-modul. Registreringskod PSSnapIn är vanligtvis i en enda källa-fil av en klass som härleds från [PSSnapIn][]. Ta bort den här källfilen från build; Det är inte längre behövs.
+PowerShell [snapin-modulen](/powershell/developer/cmdlet/modules-and-snap-ins) stöds inte i PowerShell Core. Dock är det enkelt att konvertera en PSSnapIn till en PowerShell-modul. Registreringskod PSSnapIn är vanligtvis i en enda källa-fil av en klass som härleds från [PSSnapIn][].
+Ta bort den här källfilen från build; Det är inte längre behövs.
 
-Använd [New-ModuleManifest][] att skapa en ny modulmanifestet som ersätter behovet av PSSnapIn Registreringskod. Vissa värden från PSSnapIn (till exempel beskrivning) kan återanvändas i modulmanifestet.
+Använd [New-ModuleManifest][] att skapa en ny modulmanifestet som ersätter behovet av PSSnapIn Registreringskod. Vissa värden från den **PSSnapIn** (till exempel **beskrivning**) kan återanvändas i modulmanifestet.
 
-Den `RootModule` egenskapen i modulmanifestet ska anges till namnet på sammansättningen (dll) som implementerar cmdletarna.
+Den **RootModule** egenskapen i modulmanifestet ska anges till namnet på sammansättningen (dll) som implementerar cmdletarna.
 
 ### <a name="the-net-portability-analyzer-aka-apiport"></a>.NET portabilitet Analyzer (även kallat APIPort)
 

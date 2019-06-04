@@ -2,12 +2,12 @@
 title: Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: article
-ms.openlocfilehash: 600d43874d9eda04d556a0ece198026dde9174c3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7627ab336ddc40ab47c3017eed77c78bbdac4e7f
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080466"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470822"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
@@ -22,7 +22,7 @@ Den grundläggande informationen som behövs för att starta med hjälp av Windo
 
 ## <a name="windows-powershell-documents-on-msdn"></a>Windows PowerShell-dokument på MSDN
 
-- [Installera Windows PowerShell SDK](https://msdn.microsoft.com/en-us/library/ff458115.aspx) innehåller information om hur du installerar Windows PowerShell SDK: N.
+- [Installera Windows PowerShell SDK](./installing-the-windows-powershell-sdk.md) innehåller information om hur du installerar Windows PowerShell SDK: N.
 
 - [Skriva ett Windows PowerShell-modul](./module/writing-a-windows-powershell-module.md) innehåller information för administratörer, skript, utvecklare och cmdlet-utvecklare som måste du paketera och distribuera sina Windows PowerShell-lösningar.
 

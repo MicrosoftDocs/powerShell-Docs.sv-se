@@ -3,12 +3,12 @@ ms.date: 11/13/2018
 keywords: PowerShell cmdlet
 title: Avkoda ett PowerShell-kommando från en process som körs
 author: randomnote1
-ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086246"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470962"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>Avkoda ett PowerShell-kommando från en process som körs
 
@@ -33,7 +33,7 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>Visa processen
 
-Brödtexten i det kommando som kör PowerShell lagras i den **CommandLine** egenskapen för den [Win32_Process][] klass. Om kommandot är en [kodad kommandot][], **CommandLine** egenskap innehåller strängen ”EncodedCommand”. Med den här informationen kan kan kommandot kodade inte ta bort dold via följande process.
+Brödtexten i det kommando som kör PowerShell lagras i den **CommandLine** egenskapen för den [Win32_Process][] klass. Om kommandot är en kodad kommando den **CommandLine** egenskap innehåller strängen ”EncodedCommand”. Med den här informationen kan kan kommandot kodade inte ta bort dold via följande process.
 
 Starta PowerShell som administratör. Det är viktigt att PowerShell kör som administratör, annars returneras inga resultat vid frågor till processer som körs.
 
@@ -107,4 +107,3 @@ DecodedCommand :
 [Schemaläggaren]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [SQL Server Agent]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
-[kodad kommandot]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-

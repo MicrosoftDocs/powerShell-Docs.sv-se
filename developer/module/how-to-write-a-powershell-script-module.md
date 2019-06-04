@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ed7645ea-5e52-4a45-81a7-aa3c2d605cde
 caps.latest.revision: 16
-ms.openlocfilehash: e8b7151538235cdf7183b78aa8df7e596d6bcfd9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b2a929a1724f77f0516ad24cfd90f6d6053ed19e
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848918"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470795"
 ---
 # <a name="how-to-write-a-powershell-script-module"></a>Skriva en PowerShell-skriptmodul
 
@@ -27,9 +27,9 @@ Du kan skapa en skriptmodul genom att spara ett giltigt PowerShell-skript till e
 
 1. Ta ett befintligt PowerShell.skript och spara skriptet med ett .psm1-tillägg.
 
-   Spara skriptet med .psm1 tillägget innebär att du kan använda modulen-cmdlets som [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), på den. Dessa cmdletar finns främst så att du enkelt kan importera och exportera din kod till andra användares system. (Den alternativa lösningen skulle vara att ladda upp din kod på andra system och källkod punkt i active minnet, vilket inte är en mycket skalbar lösning.) Mer information finns i den **modul-cmdlet: ar och variabler** i avsnittet [Windows PowerShell-moduler](./understanding-a-windows-powershell-module.md) Observera att som standard alla funktioner i ditt skript kommer att vara tillgänglig för användare som importerar dina .psm1 filen, men egenskaper kommer inte.
+   Spara skriptet med .psm1 tillägget innebär att du kan använda modulen-cmdlets som [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), på den. Dessa cmdletar finns främst så att du enkelt kan importera och exportera din kod till andra användares system. (Den alternativa lösningen skulle vara att ladda upp din kod på andra system och källkod punkt i active minnet, vilket inte är en mycket skalbar lösning.) Mer information finns i den **modul-cmdlet: ar och variabler** i avsnittet [Windows PowerShell-moduler](./understanding-a-windows-powershell-module.md) Observera som alla funktioner i ditt skript som standard är tillgänglig för användare som importerar .psm1-fil men egenskaper visas inte.
 
-   Ett exempel PowerShell-skriptet berättigade Show-kalendern, är tillgängliga i slutet av det här avsnittet.
+   Ett exempel PowerShell-skriptet berättigade `Show-Calendar`, finns i slutet av det här avsnittet.
 
    ```powershell
    function Show-Calendar {
@@ -45,7 +45,7 @@ Du kan skapa en skriptmodul genom att spara ett giltigt PowerShell-skript till e
    }
    ```
 
-2. Om du vill styra användarnas åtkomst till vissa funktioner eller egenskaper kan anropa [Export ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) i slutet av skriptet.
+2. För att styra användarnas åtkomst till vissa funktioner eller egenskaper, anropa [Export ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) i slutet av skriptet.
 
    Exempelkoden längst ned på sidan har en enda funktion, vilket som standard skulle exponeras. Vi rekommenderar dock att du explicit anropa reda på vilka funktioner du vill exponera, enligt beskrivningen i följande kod:
 
@@ -65,9 +65,9 @@ Du kan skapa en skriptmodul genom att spara ett giltigt PowerShell-skript till e
    Import-Module GenericModule
    ```
 
-4. Om du vill att beskriva din modul i PowerShell-hjälpen-systemet, kan du göra det med hjälp för standard-kommentarer i filen eller med en ytterligare hjälpfilen.
+4. För att beskriva din modul till PowerShell-hjälpen, kan du antingen använda hjälp standard kommentarer i filen eller skapa en ytterligare hjälpfilen.
 
-   Kodexemplet längst ned i det här avsnittet innehåller hjälpinformationen i kommentarerna. Om du väljer så måste kan du också skriva utökade XML-filer som innehåller ytterligare hjälpinnehållet. Mer information finns i [skriva hjälp för Windows PowerShell-moduler](./writing-help-for-windows-powershell-modules.md).
+   Kodexemplet längst ned i det här avsnittet innehåller hjälpinformationen i kommentarerna. Du kan också skriva utökade XML-filer som innehåller ytterligare hjälpinnehållet. Mer information finns i [skriva hjälp för Windows PowerShell-moduler](./writing-help-for-windows-powershell-modules.md).
 
 5. Om du har ytterligare moduler, XML-filer eller annat innehåll som du vill packa upp med modulen kan göra du det med ett modulmanifest.
 
@@ -75,15 +75,17 @@ Du kan skapa en skriptmodul genom att spara ett giltigt PowerShell-skript till e
 
 6. Om du vill installera och köra din modul, spara modulen till en lämplig PowerShell-sökvägar och göra ett anrop till `Import-Module`.
 
-   Sökvägar där du kan installera din modul finns i den `$env:PSModulePath` global variabel. Till exempel en sökväg till att spara en modul i ett system är `%SystemRoot%/users/<user>/Documents/WindowsPowerShell/Modules/<moduleName>`. Glöm inte att skapa en mapp för din modul finns i, även om det är bara en enda .psm1-fil. Om du inte sparade din modul till en av dessa sökvägar, skulle du behöva skicka in platsen för din modul i anropet till `Import-Module`. (Annars PowerShell skulle inte att hitta det.) Från och med PowerShell 3.0, om du har din modul på en av de PowerShell-modul sökvägarna, du behöver inte uttryckligen importera den: helt enkelt att be en användare som anropar funktionen automatiskt laddas den. Läs mer på modul-sökväg, [importera en PowerShell-modul](./importing-a-powershell-module.md) och [PSModulePath miljövariabel](./modifying-the-psmodulepath-installation-path.md).
+   Sökvägar där du kan installera din modul finns i den `$env:PSModulePath` global variabel. Till exempel en sökväg till att spara en modul i ett system är `%SystemRoot%/users/<user>/Documents/WindowsPowerShell/Modules/<moduleName>`. Glöm inte att skapa en mapp för din modul finns i, även om det är bara en enda .psm1-fil. Om du inte sparade din modul till en av dessa sökvägar, skulle du behöva skicka in platsen för din modul i anropet till `Import-Module`. (Annars PowerShell skulle inte att hitta det.) Från och med PowerShell 3.0, om du har placerat modulens i en av de PowerShell-modul sökvägarna, behöver du inte uttryckligen importera den. Du modulen läses in automatiskt när en användare anropar funktionen.
+   Läs mer på modul-sökväg, [importera en PowerShell-modul](./importing-a-powershell-module.md) och [PSModulePath miljövariabel](./modifying-the-psmodulepath-installation-path.md).
 
 7. Ta bort en modul från aktiva tjänsten genom att göra ett anrop till [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module).
 
-Observera att [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) tar bort din modul från aktiva minne – det faktiskt raderas den inte från där du sparade filerna för modulen.
+   Observera att [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) tar bort din modul från aktiva minne – det faktiskt raderas den inte från där du sparade filerna för modulen.
 
 ### <a name="show-calendar-code-example"></a>Visa kalender-kodexempel
 
-I följande exempel är ett enkelt skript-modul som innehåller en enkel funktion som heter Show-kalender. Den här funktionen visar en visuell representation av en kalender. Exemplet innehåller dessutom PowerShell-hjälpen-strängar för sammanfattning, beskrivning, parametervärden och exempel. Observera att den sista raden med kod indikerar att funktionen Show-kalender exporteras som en modul medlem när modulen har importerats.
+I följande exempel är ett enkelt skript-modul som innehåller en funktion med namnet `Show-Calendar`.
+Den här funktionen visar en visuell representation av en kalender. Exemplet innehåller dessutom PowerShell-hjälpen-strängar för sammanfattning, beskrivning, parametervärden och exempel. Observera att den sista raden med kod säkerställer att den `Show-Calendar` funktionen exporteras som en modul medlem när modulen har importerats.
 
 ```powershell
 <#
@@ -217,10 +219,10 @@ while($start -le $end)
     $calendar = $weeks | Format-Table $dayNames -AutoSize | Out-String
 
     ## Add a centered header.
-    $width = ($calendar.Split("'n") | Measure-Object -Maximum Length).Maximum
+    $width = ($calendar.Split("`n") | Measure-Object -Maximum Length).Maximum
     $header = "{0:MMMM yyyy}" -f $start
     $padding = " " * (($width - $header.Length) / 2)
-    $displayCalendar = " 'n" + $padding + $header + "'n " + $calendar
+    $displayCalendar = " `n" + $padding + $header + "`n " + $calendar
     $displayCalendar.TrimEnd()
 
     ## Move to the next month.
