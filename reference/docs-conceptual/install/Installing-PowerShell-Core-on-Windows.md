@@ -2,12 +2,12 @@
 title: Installera PowerShell Core i Windows
 description: Information om att installera PowerShell Core i Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 5a3c43e27f0027cfbeeefab33b045e618e0ff045
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: e716e24ba47c0c109ab302b4b1a9254d7110ddef
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854368"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470999"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Installera PowerShell Core i Windows
 
@@ -52,7 +52,7 @@ En fullständig lista över kommandoradsalternativ för Msiexec.exe Se [kommando
 
 ## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />Installerar ZIP-paketet
 
-PowerShell binära ZIP-arkiv tillhandahålls för att aktivera avancerade scenarier. Observera att du inte får kravkontrollen som i MSI-paket när du använder ZIP-arkivet. För fjärrkommunikation via WSMan ska fungera korrekt, att se till att du har uppfyllt de [krav](#prerequisites).
+PowerShell binära ZIP-arkiv tillhandahålls för att aktivera avancerade scenarier. Observera att du inte får kravkontrollen som i MSI-paket när du använder ZIP-arkivet. Se till att du har uppfyllt för fjärrkommunikation via WSMan ska fungera korrekt i [krav](#prerequisites).
 
 ## <a name="deploying-on-windows-iot"></a>Distribuera på Windows IoT
 
