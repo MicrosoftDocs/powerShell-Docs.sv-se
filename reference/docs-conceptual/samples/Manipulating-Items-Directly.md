@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Manipulera objekt direkt
-ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 50aed569cf6b876297abe3cf1544eba70f6279ce
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086229"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030123"
 ---
 # <a name="manipulating-items-directly"></a>Manipulera objekt direkt
 
@@ -73,7 +72,7 @@ SKC  VC Name                           Property
   0   0 _Test                          {}
 ```
 
-När du skriver en registersökväg, måste du använda kolumnen (**:**) i Windows PowerShell enhet namn, HKLM: och HKCU:. Utan kolumnen identifieras Windows PowerShell inte enhetsbeteckning i sökvägen.
+När du skriver en registersökväg, måste du använda kolumnen ( **:** ) i Windows PowerShell enhet namn, HKLM: och HKCU:. Utan kolumnen identifieras Windows PowerShell inte enhetsbeteckning i sökvägen.
 
 ## <a name="why-registry-values-are-not-items"></a>Varför registervärden finns inga objekt
 
@@ -93,7 +92,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Även om det skulle vara praktiskt att behandla registerposter som objekt, kan du inte ange en sökväg till en registerpost på ett sätt som säkerställer att det blir unikt. Sökvägen notation skiljer inte mellan registerundernyckeln med namnet **kör** och **(standard)** registerposten i den **kör** undernyckel. Dessutom eftersom registernamn posten kan innehålla ett omvänt snedstreck (**\\**), om registerposter objekt, så du inte kan använda beteckningen sökväg att skilja mellan en registerpost med namnet  **Windows\\CurrentVersion\\kör** från undernyckeln som finns i sökvägen.
+Även om det skulle vara praktiskt att behandla registerposter som objekt, kan du inte ange en sökväg till en registerpost på ett sätt som säkerställer att det blir unikt. Sökvägen notation skiljer inte mellan registerundernyckeln med namnet **kör** och **(standard)** registerposten i den **kör** undernyckel. Dessutom eftersom registernamn posten kan innehålla ett omvänt snedstreck ( **\\** ), om registerposter objekt, så du inte kan använda beteckningen sökväg att skilja mellan en registerpost med namnet  **Windows\\CurrentVersion\\kör** från undernyckeln som finns i sökvägen.
 
 ## <a name="renaming-existing-items-rename-item"></a>Byta namn på befintliga objekt (Byt namn på objekt)
 

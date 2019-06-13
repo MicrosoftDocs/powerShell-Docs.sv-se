@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: ISEFileCollection-objektet
-ms.assetid: 0f86a427-ea38-4bce-85f8-06c98d30d508
-ms.openlocfilehash: eb4b2784820cbe51f662fd2fd945d8760ef9dbff
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 96db51ee921cc0fa34803091d563bc6e118643b6
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086756"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030528"
 ---
 # <a name="the-isefilecollection-object"></a>ISEFileCollection-objektet
 

@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Hantera aktuell plats
-ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: f5e0653b2c3bbc9d2526c7a1c2ff88a8a6641695
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 42ab56759dec882d140f813c8614e578957722b3
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086263"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030198"
 ---
 # <a name="managing-current-location"></a>Hantera aktuell plats
 
@@ -50,9 +49,9 @@ C:\WINDOWS
 
 Den **- PassThru** parametern kan användas med många Set-kommandon i Windows PowerShell för att returnera information om resultatet i fall där det finns inga standardutdata.
 
-Du kan ange sökvägar i förhållande till din aktuella plats på samma sätt som du skulle i de flesta UNIX- och Windows kommandot gränssnitt. I standard-notation för relativa sökvägar, en period (**.**) representerar din aktuella mapp och ett dubbelt period (**...** ) representerar den överordnade katalogen i din aktuella plats.
+Du kan ange sökvägar i förhållande till din aktuella plats på samma sätt som du skulle i de flesta UNIX- och Windows kommandot gränssnitt. I standard-notation för relativa sökvägar, en period ( **.** ) representerar din aktuella mapp och ett dubbelt period ( **...** ) representerar den överordnade katalogen i din aktuella plats.
 
-Exempel: Om du är i den **C:\\Windows** mapp, en period (**.**) representerar **C:\\Windows** och dubbel perioder (**...** ) representerar **C:**. Du kan ändra från din aktuella plats i roten på C:-enheten genom att skriva:
+Exempel: Om du är i den **C:\\Windows** mapp, en period ( **.** ) representerar **C:\\Windows** och dubbel perioder ( **...** ) representerar **C:** . Du kan ändra från din aktuella plats i roten på C:-enheten genom att skriva:
 
 ```
 PS> Set-Location -Path .. -PassThru
@@ -62,7 +61,7 @@ Path
 C:\
 ```
 
-Samma teknik som fungerar på Windows PowerShell-enheter som inte är enheter, till exempel **HKLM:**. Du kan ange din plats och HKLM\\programvarunyckel i registret genom att skriva:
+Samma teknik som fungerar på Windows PowerShell-enheter som inte är enheter, till exempel **HKLM:** . Du kan ange din plats och HKLM\\programvarunyckel i registret genom att skriva:
 
 ```
 PS> Set-Location -Path HKLM:\SOFTWARE -PassThru

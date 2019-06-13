@@ -2,13 +2,12 @@
 ms.date: 08/23/2018
 keywords: PowerShell cmdlet
 title: Förstå viktiga PowerShell-koncept
-ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f9af370db46ea47dbccbabb7cc90fc27b8f2765
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058598"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030979"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Förstå viktiga PowerShell-koncept
 
@@ -31,7 +30,7 @@ Inbyggda kommandona i PowerShell kallas *cmdletar* (uttalas Commando-lets). Du k
 
 När du skriver ett kommando bearbetar PowerShell alltid kommandoradsverktyget indata direkt. PowerShell också formaterar utdata som visas på skärmen. Den här skillnaden är betydande, eftersom det arbete som krävs för varje cmdlet. Det innebär att du kan alltid göra saker på samma sätt med en cmdlet. Cmdlet: en utvecklare behöver inte skriva kod för att parsa kommandoradsargument eller formatera utdata.
 
-Traditionella kommandoradsverktyg har egna scheman för att begära och visa hjälp. Vissa kommandoradsverktyg använder **/?** att utlösa det bidrar till att visa; andra använda **-?**, **/H**, eller till och med **//**. Vissa visas hjälp i ett GUI-fönster i stället för i konsolen visas. Om du använder parametern fel, kan verktyget Ignorera vad du har angett och köra en uppgift automatiskt.
+Traditionella kommandoradsverktyg har egna scheman för att begära och visa hjälp. Vissa kommandoradsverktyg använder **/?** att utlösa det bidrar till att visa; andra använda **-?** , **/H**, eller till och med **//** . Vissa visas hjälp i ett GUI-fönster i stället för i konsolen visas. Om du använder parametern fel, kan verktyget Ignorera vad du har angett och köra en uppgift automatiskt.
 Eftersom PowerShell automatiskt tolkar och bearbetar command line den **-?** Parametern innebär alltid ”visa hjälp för det här kommandot”.
 
 > [!NOTE]

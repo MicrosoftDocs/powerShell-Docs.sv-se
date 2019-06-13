@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Ändra datorstatus
-ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: f8a2ed6a1a0390021eb633c9af64a725146ad136
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 80692ad7c56aa13e55d4997cfec289ffb3605458
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086331"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030276"
 ---
 # <a name="changing-computer-state"></a>Ändra datorstatus
 
@@ -30,7 +29,7 @@ Om du vill stänga av specifika sessioner på en Terminal Server använder den *
 
 ## <a name="logging-off-the-current-session"></a>Logga ut den aktuella sessionen
 
-Du kan använda flera olika tekniker för att logga ut från en session på det lokala systemet. Det enklaste sättet är att använda kommandoradsverktyget Remote Desktop/Terminal Services **logoff.exe** (Mer information finns i Windows PowerShell-Kommandotolken skriver du **utloggning /?**). Om du vill logga ut den aktuella aktiva sessionen, skriver **utloggning** utan argument.
+Du kan använda flera olika tekniker för att logga ut från en session på det lokala systemet. Det enklaste sättet är att använda kommandoradsverktyget Remote Desktop/Terminal Services **logoff.exe** (Mer information finns i Windows PowerShell-Kommandotolken skriver du **utloggning /?** ). Om du vill logga ut den aktuella aktiva sessionen, skriver **utloggning** utan argument.
 
 Du kan också använda den **shutdown.exe** verktyget med utloggningsalternativet dess:
 
@@ -48,7 +47,7 @@ Mer information och hitta andra funktioner i metoden Win32Shutdown finns ”Win3
 
 ## <a name="shutting-down-or-restarting-a-computer"></a>Stänga av eller starta om en dator
 
-Stänga av och starta om datorer är vanligtvis samma typ av uppgift. Verktyg som stänga av datorn Allmänt startar om den också, och vice versa. Det finns två enkla alternativ för att starta om en dator från Windows PowerShell. Använd Tsshutdn.exe eller Shutdown.exe med rätt argument. Du kan få detaljerad användningsinformation från **tsshutdn.exe /?** eller **shutdown.exe /?**.
+Stänga av och starta om datorer är vanligtvis samma typ av uppgift. Verktyg som stänga av datorn Allmänt startar om den också, och vice versa. Det finns två enkla alternativ för att starta om en dator från Windows PowerShell. Använd Tsshutdn.exe eller Shutdown.exe med rätt argument. Du kan få detaljerad användningsinformation från **tsshutdn.exe /?** eller **shutdown.exe /?** .
 
 Du kan också utföra avstängning och starta om åtgärder direkt från Windows PowerShell samt.
 

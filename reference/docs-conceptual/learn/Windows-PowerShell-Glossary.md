@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Windows PowerShell-ordlista
-ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0827ec771b1744b87a8c0f0ddf48438f9ba484b2
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057385"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030350"
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell-ordlista
 
@@ -22,7 +21,7 @@ ms.locfileid: "62057385"
 |dynamisk parameter|En parameter som läggs till i en Windows PowerShell-cmdleten, funktion eller skript på vissa villkor. Cmdlet: ar, funktioner, leverantörer och skript kan lägga till dynamiska parametrar.|
 |formatering fil|En Windows PowerShell-XML-fil som har det. format.ps1xml tillägget och som definierar hur Windows PowerShell visar ett objekt baserat på dess typ för .NET Framework.|
 |Global sessionstillstånd|Sessionstillstånd som innehåller de data som är tillgänglig för användare av en Windows PowerShell-session.|
-|värd|Det gränssnitt som Windows PowerShell-motorn använder för att kommunicera med användaren. Till exempel anger värden hur anvisningarna hanteras mellan Windows PowerShell och användaren.|
+|host|Det gränssnitt som Windows PowerShell-motorn använder för att kommunicera med användaren. Till exempel anger värden hur anvisningarna hanteras mellan Windows PowerShell och användaren.|
 |värdprogrammet|Ett program som läser in Windows PowerShell-motorn i processen och används för att utföra åtgärder.|
 |indata metoden bearbetades|En metod som en cmdlet kan använda för att bearbeta posterna som tas emot som indata. Inkommande bearbetning-sätt är att metoden BeginProcessing, metoden ProcessRecord, metoden EndProcessing och StopProcessing-metoden.|
 |manifest-modulen|En Windows PowerShell-modul som har ett manifest och vars RootModule-nyckel är tom.|

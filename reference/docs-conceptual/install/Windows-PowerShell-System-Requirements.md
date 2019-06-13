@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Windows PowerShell-systemkrav
-ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: a9a7dc434d26876d6747526ad3ef6fa598376ac1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 95625efdaea55014f6e6f27c1e8d4c196c89f99c
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058315"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67028868"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell-systemkrav
 Det här avsnittet beskrivs systemkraven för Windows PowerShell 3.0, Windows PowerShell 4.0 och Windows PowerShell 5.0 och Windows PowerShell 5.1 och för särskilda funktioner, till exempel Windows PowerShell Integrated Scripting Environment (ISE), CIM-kommandon, och arbetsflöden.

@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Installera Windows PowerShell 2.0-motorn
-ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
-ms.openlocfilehash: b625b61b4e191402074f57ea2e942f800dbbcd53
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a2b78755e7e44e2523baee5477fadc94eab485b1
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058326"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030961"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>Installera Windows PowerShell 2.0-motorn
 Det här avsnittet beskriver hur du installerar Windows PowerShell 2.0-motorn.
@@ -53,7 +52,7 @@ Använd följande procedurer för att lägga till Windows PowerShell 2.0-motorn 
 
 2. På den **installationstyp** väljer **rollbaserad eller funktionsbaserad installation**.
 
-3. På den **funktioner** expanderar den **funktioner i .NET 3.5 Framework** noden och väljer **.NET Framework 3.5 (omfattar .NET 2.0 och 3.0)**.
+3. På den **funktioner** expanderar den **funktioner i .NET 3.5 Framework** noden och väljer **.NET Framework 3.5 (omfattar .NET 2.0 och 3.0)** .
 
     De andra alternativen under den noden krävs inte för Windows PowerShell 2.0-motorn.
 

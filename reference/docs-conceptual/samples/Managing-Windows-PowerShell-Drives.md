@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Hantera Windows PowerShell-enheter
-ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 32efa282fb787753942e43acab53c7b6eaeb88e3
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057833"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030141"
 ---
 # <a name="managing-windows-powershell-drives"></a>Hantera Windows PowerShell-enheter
 
@@ -117,7 +116,7 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 > [!NOTE]
 > I allmänhet är sökvägar inte skiftlägeskänsliga.
 
-Du refererar till den nya Windows PowerShell-enheten som du gör att alla enheter i Windows PowerShell - efter dess namn följt av ett kolon (**:**).
+Du refererar till den nya Windows PowerShell-enheten som du gör att alla enheter i Windows PowerShell - efter dess namn följt av ett kolon ( **:** ).
 
 En Windows PowerShell-enhet kan göra många av de uppgifter som är mycket enklare. Till exempel ha några av de viktigaste nycklarna i Windows-registret extremt långa sökvägar, vilket gör dem krånglig att åtkomst och svårt att komma ihåg. Viktig konfigurationsinformation finns **HKEY_LOCAL_MACHINE\\programvara\\Microsoft\\Windows\\CurrentVersion**. Om du vill visa och ändra objekt i registernyckeln CurrentVersion, kan du skapa en Windows PowerShell-enhet är rotad i nyckeln genom att skriva:
 

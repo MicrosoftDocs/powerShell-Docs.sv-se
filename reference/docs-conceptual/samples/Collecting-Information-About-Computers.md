@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell cmdlet
 title: Samla in information om datorer
-ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5dc8fcc5f12fdf9e3fc8151d3e50b8b660262c62
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058343"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030846"
 ---
 # <a name="collecting-information-about-computers"></a>Samla in information om datorer
 
@@ -18,7 +17,7 @@ Dessutom behandlas data som objekt som finns i samlingar med ett eller flera obj
 Eftersom Windows PowerShell även fungerar med objekt och har en pipeline som gör att du kan hantera en eller flera objekt på samma sätt kan du utföra vissa avancerade åtgärder med mycket lite av allmän WMI-åtkomst.
 
 Följande exempel visar hur du samlar in specifik information med hjälp av `Get-CimInstance` mot en valfri dator.
-Vi anger den **ComputerName** med punkt-värde för parametern (**.**), som representerar den lokala datorn.
+Vi anger den **ComputerName** med punkt-värde för parametern ( **.** ), som representerar den lokala datorn.
 Du kan ange ett namn eller IP-adress som är associerade med en annan dator som du kan nå via WMI.
 Om du vill hämta information om den lokala datorn, kan du utelämna den **ComputerName** parametern.
 
