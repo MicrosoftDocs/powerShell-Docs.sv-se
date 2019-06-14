@@ -2,10 +2,12 @@
   "build_entry_point": "docs",
   "docsets_to_publish": [
     {
-      "docset_name": "PowerShell_PowerShell-docs_dsc",
-      "build_source_folder": "dsc",
-      "build_output_subfolder": "dsc",
-      "locale": "sv-SE",
+      "docset_name": "developer-docs",
+      "build_source_folder": "developer",
+      "build_output_subfolder": "developer-docs",
+      "locale": "sv-se",
+      "monikers": [],
+      "moniker_ranges": [],
       "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content",
@@ -14,12 +16,27 @@
       },
       "build_entry_point": "docs",
       "template_folder": "_themes"
+    },
+    {
+      "docset_name": "PowerShell_PowerShell-docs_dsc",
+      "build_source_folder": "dsc",
+      "build_output_subfolder": "dsc",
+      "locale": "sv-se",
+      "open_to_public_contributors": false,
+      "type_mapping": {
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "docs",
+      "template_folder": "_themes",
+      "version": 0
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_gallery",
       "build_source_folder": "gallery",
       "build_output_subfolder": "gallery",
-      "locale": "sv-SE",
+      "locale": "sv-se",
       "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content",
@@ -27,13 +44,14 @@
         "RestApi": "Content"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes"
+      "template_folder": "_themes",
+      "version": 0
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_jea",
       "build_source_folder": "jea",
       "build_output_subfolder": "jea",
-      "locale": "sv-SE",
+      "locale": "sv-se",
       "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content",
@@ -41,13 +59,14 @@
         "RestApi": "Content"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes"
+      "template_folder": "_themes",
+      "version": 0
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_reference",
       "build_source_folder": "reference",
       "build_output_subfolder": "reference",
-      "locale": "sv-SE",
+      "locale": "sv-se",
       "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content",
@@ -56,13 +75,25 @@
         "AzurePSModulePage": "Content"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes"
+      "template_folder": "_themes",
+      "version": 0,
+      "customized_template_paths": [
+        "_dependentPackages/azurecli.plugins/azurecli"
+      ],
+      "customized_tasks": {
+        "docset_prebuild": [
+          "_dependentPackages/CommonPlugins/tools/PowerShellReference.ps1"
+        ]
+      },
+      "monikerPath": [
+        "mapping/monikerMapping.json"
+      ]
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_wmf",
       "build_source_folder": "wmf",
       "build_output_subfolder": "wmf",
-      "locale": "sv-SE",
+      "locale": "sv-se",
       "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content",
@@ -70,10 +101,12 @@
         "RestApi": "Content"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes"
+      "template_folder": "_themes",
+      "version": 0
     }
   ],
   "notification_subscribers": [],
+  "sync_notification_subscribers": [],
   "branches_to_filter": [
     "live-sxs",
     "master-sxs"
@@ -81,17 +114,24 @@
   "git_repository_url_open_to_public_contributors": "https://github.com/PowerShell/PowerShell-Docs",
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
-  "need_preview_pull_request": false,
+  "need_preview_pull_request": true,
+  "enable_incremental_build": true,
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
-      "url": "https://github.com/Microsoft/templates.docs.msft.sv-SE",
+      "url": "https://github.com/Microsoft/templates.docs.msft.sv-se",
+      "branch": "master",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "powershell-sdk-samples",
+      "url": "https://github.com/MicrosoftDocs/powershell-sdk-samples",
       "branch": "master",
       "branch_mapping": {}
     },
     {
       "path_to_root": "_repo.en-us",
-      "url": "https://github.com/PowerShell/PowerShell-Docs",
+      "url": "https://github.com/MicrosoftDocs/PowerShell-Docs",
       "branch": "live",
       "branch_mapping": {
         "live": "live",
@@ -99,7 +139,9 @@
       }
     }
   ],
+  "branch_target_mapping": {},
   "need_generate_pdf_url_template": false,
+  "targets": {},
   "dependent_packages": [
     {
       "path_to_root": "_dependentPackages/azurecli.plugins",
