@@ -8,27 +8,32 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5ae707db-52e0-408c-87fa-b35c42eaaab1
 caps.latest.revision: 5
-ms.openlocfilehash: 3a7c47487b632d00643fce0aa082e0dc9a9bb626
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9140d03e046def2fbbcc2a842b9ea1b9e1fa2985
+ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082999"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263833"
 ---
 # <a name="creating-an-initialsessionstate"></a>Skapa en InitialSessionState
 
-Windows PowerShell-kommandon körs i ett körningsutrymme. Om du vill vara värd för Windows PowerShell i ditt program, måste du skapa en [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) objekt. Varje körningsutrymme har en [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektet som är associerat med den. Den [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) anger egenskaperna för körningsutrymme, till exempel vilka kommandon, variabler och moduler som är tillgängliga för den körningsutrymme.
+PowerShell-kommandon körs i ett körningsutrymme.
+Om du vill vara värd för PowerShell i ditt program, måste du skapa en [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) objekt.
+Varje körningsutrymme har en [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektet som är associerat med den.
+InitialSessionState anger egenskaperna för körningsutrymme, till exempel vilka kommandon, variabler och moduler som är tillgängliga för den körningsutrymme.
 
 ## <a name="create-a-default-initialsessionstate"></a>Skapa en standardprincip för InitialSessionState
 
- Den [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault)och [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) metoder kan användas Skapa [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt. [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) skapar en InitialSessionState med alla inbyggda kommandon som lästs in, samtidigt som [ System.Management.Automation.Runspaces.Initialsessionstate.Createdefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) läser in endast de kommandon som krävs till värd Windows PowerShell (kommandon från Microsoft.PowerShell.Core-modulen.
+Den [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) och [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) metoderna i den **InitialSessionState** klassen kan användas för att skapa en **InitialSessionState**objekt.
+Den **CreateDefault** metoden skapar en **InitialSessionState** med alla inbyggda kommandon som lästs in, samtidigt som den **CreateDefault2** metoden läser in endast kommandon krävs för att värden PowerShell (kommandon från modulen Microsoft.PowerShell.Core).
 
- Om du vill att ytterligare begränsa kommandona som är tillgängliga i din värdapp måste du skapa ett begränsat körningsutrymme. Information finns i Skapa en begränsad körningsutrymme.
+Om du vill att ytterligare begränsa kommandona som är tillgängliga i din värdapp måste du skapa ett begränsat körningsutrymme.
+Mer information finns i [skapar en begränsad körningsutrymme](creating-a-constrained-runspace.md).
 
- Följande kod visar hur du skapar en InitialSessionState, tilldela den till ett körningsutrymme, Lägg till kommandon till pipelinen i den körningsutrymme och anropa kommandon. Mer information om att lägga till och anropa kommandon finns i lägga till och anropa kommandon.
+Följande kod visar hur du skapar en **InitialSessionState**, tilldela den till ett körningsutrymme, Lägg till kommandon till pipelinen i den körningsutrymme och anropa kommandon.
+Mer information om att lägga till och anropa kommandon finns i [när du lägger till och anropa kommandon](adding-and-invoking-commands.md).
 
 ```csharp
-
 namespace SampleHost
 {
   using System;
@@ -60,9 +65,9 @@ namespace SampleHost
       Runspace rs = RunspaceFactory.CreateRunspace(iss);
       rs.Open();
 
-      // Call the PowerShell.Create() method to create the PowerShell
-      // object,and then specify the runspace and commands to the pipeline.
-      // and  create the command pipeline.
+      // Call the PowerShell.Create() method to create the PowerShell object,
+      // and then specify the runspace and commands to the pipeline.
+      // and create the command pipeline.
       PowerShell ps = PowerShell.Create();
       ps.Runspace = rs;
       ps.AddCommand("Get-Variable");
@@ -73,15 +78,15 @@ namespace SampleHost
 
       // Call the PowerShell.Invoke() method to run
       // the pipeline synchronously.
-        foreach (PSObject result in ps.Invoke())
-        {
-          Console.WriteLine("{0,-20}{1}",
-                  result.Members["Name"].Value,
-                  result.Members["Value"].Value);
-        } // End foreach.
+      foreach (PSObject result in ps.Invoke())
+      {
+        Console.WriteLine("{0,-20}{1}",
+            result.Members["Name"].Value,
+            result.Members["Value"].Value);
+      } // End foreach.
 
-        // Close the runspace to free resources.
-        rs.Close();
+      // Close the runspace to free resources.
+      rs.Close();
 
     } // End Main.
   } // End SampleHost.
@@ -90,4 +95,6 @@ namespace SampleHost
 
 ## <a name="see-also"></a>Se även
 
- [Skapa en begränsad körningsutrymme](./creating-a-constrained-runspace.md)
+[Skapa en begränsad körningsutrymme](creating-a-constrained-runspace.md)
+
+[Att lägga till och anropa kommandon](adding-and-invoking-commands.md)
