@@ -8,27 +8,32 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5ae707db-52e0-408c-87fa-b35c42eaaab1
 caps.latest.revision: 5
-ms.openlocfilehash: 3a7c47487b632d00643fce0aa082e0dc9a9bb626
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9140d03e046def2fbbcc2a842b9ea1b9e1fa2985
+ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082999"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263833"
 ---
-# <a name="creating-an-initialsessionstate"></a><span data-ttu-id="f93b0-102">Skapa en InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="f93b0-102">Creating an InitialSessionState</span></span>
+# <a name="creating-an-initialsessionstate"></a><span data-ttu-id="0e3b6-102">Skapa en InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="0e3b6-102">Creating an InitialSessionState</span></span>
 
-<span data-ttu-id="f93b0-103">Windows PowerShell-kommandon körs i ett körningsutrymme.</span><span class="sxs-lookup"><span data-stu-id="f93b0-103">Windows PowerShell commands run in a runspace.</span></span> <span data-ttu-id="f93b0-104">Om du vill vara värd för Windows PowerShell i ditt program, måste du skapa en [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) objekt.</span><span class="sxs-lookup"><span data-stu-id="f93b0-104">To host Windows PowerShell in your application, you must create a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span> <span data-ttu-id="f93b0-105">Varje körningsutrymme har en [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektet som är associerat med den.</span><span class="sxs-lookup"><span data-stu-id="f93b0-105">Every runspace has an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object associated with it.</span></span> <span data-ttu-id="f93b0-106">Den [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) anger egenskaperna för körningsutrymme, till exempel vilka kommandon, variabler och moduler som är tillgängliga för den körningsutrymme.</span><span class="sxs-lookup"><span data-stu-id="f93b0-106">The [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) specifies characteristics of the runspace, such as which commands, variables, and modules are available for that runspace.</span></span>
+<span data-ttu-id="0e3b6-103">PowerShell-kommandon körs i ett körningsutrymme.</span><span class="sxs-lookup"><span data-stu-id="0e3b6-103">PowerShell commands run in a runspace.</span></span>
+<span data-ttu-id="0e3b6-104">Om du vill vara värd för PowerShell i ditt program, måste du skapa en [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) objekt.</span><span class="sxs-lookup"><span data-stu-id="0e3b6-104">To host PowerShell in your application, you must create a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span>
+<span data-ttu-id="0e3b6-105">Varje körningsutrymme har en [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektet som är associerat med den.</span><span class="sxs-lookup"><span data-stu-id="0e3b6-105">Every runspace has an [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object associated with it.</span></span>
+<span data-ttu-id="0e3b6-106">InitialSessionState anger egenskaperna för körningsutrymme, till exempel vilka kommandon, variabler och moduler som är tillgängliga för den körningsutrymme.</span><span class="sxs-lookup"><span data-stu-id="0e3b6-106">The InitialSessionState specifies characteristics of the runspace, such as which commands, variables, and modules are available for that runspace.</span></span>
 
-## <a name="create-a-default-initialsessionstate"></a><span data-ttu-id="f93b0-107">Skapa en standardprincip för InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="f93b0-107">Create a default InitialSessionState</span></span>
+## <a name="create-a-default-initialsessionstate"></a><span data-ttu-id="0e3b6-107">Skapa en standardprincip för InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="0e3b6-107">Create a default InitialSessionState</span></span>
 
- <span data-ttu-id="f93b0-108">Den [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault)och [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault2\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) metoder kan användas Skapa [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objekt.</span><span class="sxs-lookup"><span data-stu-id="f93b0-108">The [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault)and [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault2\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) methods can be used to create [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objects.</span></span> <span data-ttu-id="f93b0-109">[System.Management.Automation.Runspaces.Initialsessionstate.Createdefault\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) skapar en InitialSessionState med alla inbyggda kommandon som lästs in, samtidigt som [ System.Management.Automation.Runspaces.Initialsessionstate.Createdefault2\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) läser in endast de kommandon som krävs till värd Windows PowerShell (kommandon från Microsoft.PowerShell.Core-modulen.</span><span class="sxs-lookup"><span data-stu-id="f93b0-109">[System.Management.Automation.Runspaces.Initialsessionstate.Createdefault\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) creates an InitialSessionState with all of the built-in commands loaded, while [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault2\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) loads only the commands required to host Windows PowerShell (the commands from the Microsoft.PowerShell.Core module.</span></span>
+<span data-ttu-id="0e3b6-108">Den [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) och [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) metoderna i den **InitialSessionState** klassen kan användas för att skapa en **InitialSessionState**objekt.</span><span class="sxs-lookup"><span data-stu-id="0e3b6-108">The [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) and [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) methods of the **InitialSessionState** class can be used to create an **InitialSessionState** object.</span></span>
+<span data-ttu-id="0e3b6-109">Den **CreateDefault** metoden skapar en **InitialSessionState** med alla inbyggda kommandon som lästs in, samtidigt som den **CreateDefault2** metoden läser in endast kommandon krävs för att värden PowerShell (kommandon från modulen Microsoft.PowerShell.Core).</span><span class="sxs-lookup"><span data-stu-id="0e3b6-109">The **CreateDefault** method creates an **InitialSessionState** with all of the built-in commands loaded, while the **CreateDefault2** method loads only the commands required to host PowerShell (the commands from the Microsoft.PowerShell.Core module).</span></span>
 
- <span data-ttu-id="f93b0-110">Om du vill att ytterligare begränsa kommandona som är tillgängliga i din värdapp måste du skapa ett begränsat körningsutrymme.</span><span class="sxs-lookup"><span data-stu-id="f93b0-110">If you want to further limit the commands available in your host application you need to create a constrained runspace.</span></span> <span data-ttu-id="f93b0-111">Information finns i Skapa en begränsad körningsutrymme.</span><span class="sxs-lookup"><span data-stu-id="f93b0-111">For information, see Creating a constrained runspace.</span></span>
+<span data-ttu-id="0e3b6-110">Om du vill att ytterligare begränsa kommandona som är tillgängliga i din värdapp måste du skapa ett begränsat körningsutrymme.</span><span class="sxs-lookup"><span data-stu-id="0e3b6-110">If you want to further limit the commands available in your host application you need to create a constrained runspace.</span></span>
+<span data-ttu-id="0e3b6-111">Mer information finns i [skapar en begränsad körningsutrymme](creating-a-constrained-runspace.md).</span><span class="sxs-lookup"><span data-stu-id="0e3b6-111">For information, see [Creating a constrained runspace](creating-a-constrained-runspace.md).</span></span>
 
- <span data-ttu-id="f93b0-112">Följande kod visar hur du skapar en InitialSessionState, tilldela den till ett körningsutrymme, Lägg till kommandon till pipelinen i den körningsutrymme och anropa kommandon.</span><span class="sxs-lookup"><span data-stu-id="f93b0-112">The following code shows how to create an InitialSessionState, assign it to a runspace, add commands to the pipeline in that runspace, and invoke the commands.</span></span> <span data-ttu-id="f93b0-113">Mer information om att lägga till och anropa kommandon finns i lägga till och anropa kommandon.</span><span class="sxs-lookup"><span data-stu-id="f93b0-113">For more information about adding and invoking commands, see Adding and invoking commands.</span></span>
+<span data-ttu-id="0e3b6-112">Följande kod visar hur du skapar en **InitialSessionState**, tilldela den till ett körningsutrymme, Lägg till kommandon till pipelinen i den körningsutrymme och anropa kommandon.</span><span class="sxs-lookup"><span data-stu-id="0e3b6-112">The following code shows how to create an **InitialSessionState**, assign it to a runspace, add commands to the pipeline in that runspace, and invoke the commands.</span></span>
+<span data-ttu-id="0e3b6-113">Mer information om att lägga till och anropa kommandon finns i [när du lägger till och anropa kommandon](adding-and-invoking-commands.md).</span><span class="sxs-lookup"><span data-stu-id="0e3b6-113">For more information about adding and invoking commands, see [Adding and invoking commands](adding-and-invoking-commands.md).</span></span>
 
 ```csharp
-
 namespace SampleHost
 {
   using System;
@@ -60,9 +65,9 @@ namespace SampleHost
       Runspace rs = RunspaceFactory.CreateRunspace(iss);
       rs.Open();
 
-      // Call the PowerShell.Create() method to create the PowerShell
-      // object,and then specify the runspace and commands to the pipeline.
-      // and  create the command pipeline.
+      // Call the PowerShell.Create() method to create the PowerShell object,
+      // and then specify the runspace and commands to the pipeline.
+      // and create the command pipeline.
       PowerShell ps = PowerShell.Create();
       ps.Runspace = rs;
       ps.AddCommand("Get-Variable");
@@ -73,21 +78,23 @@ namespace SampleHost
 
       // Call the PowerShell.Invoke() method to run
       // the pipeline synchronously.
-        foreach (PSObject result in ps.Invoke())
-        {
-          Console.WriteLine("{0,-20}{1}",
-                  result.Members["Name"].Value,
-                  result.Members["Value"].Value);
-        } // End foreach.
+      foreach (PSObject result in ps.Invoke())
+      {
+        Console.WriteLine("{0,-20}{1}",
+            result.Members["Name"].Value,
+            result.Members["Value"].Value);
+      } // End foreach.
 
-        // Close the runspace to free resources.
-        rs.Close();
+      // Close the runspace to free resources.
+      rs.Close();
 
     } // End Main.
   } // End SampleHost.
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="f93b0-114">Se även</span><span class="sxs-lookup"><span data-stu-id="f93b0-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0e3b6-114">Se även</span><span class="sxs-lookup"><span data-stu-id="0e3b6-114">See Also</span></span>
 
- [<span data-ttu-id="f93b0-115">Skapa en begränsad körningsutrymme</span><span class="sxs-lookup"><span data-stu-id="f93b0-115">Creating a constrained runspace</span></span>](./creating-a-constrained-runspace.md)
+[<span data-ttu-id="0e3b6-115">Skapa en begränsad körningsutrymme</span><span class="sxs-lookup"><span data-stu-id="0e3b6-115">Creating a constrained runspace</span></span>](creating-a-constrained-runspace.md)
+
+[<span data-ttu-id="0e3b6-116">Att lägga till och anropa kommandon</span><span class="sxs-lookup"><span data-stu-id="0e3b6-116">Adding and invoking commands</span></span>](adding-and-invoking-commands.md)
