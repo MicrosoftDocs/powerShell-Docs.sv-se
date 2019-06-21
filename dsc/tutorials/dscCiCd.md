@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Skapa en pipeline för kontinuerlig integrering och kontinuerlig distribution med DSC
-ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076491"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301499"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Skapa en pipeline för kontinuerlig integrering och kontinuerlig distribution med DSC
 
@@ -22,10 +22,10 @@ En automatiserad CI/CD-pipeline kan du uppdatera programvara snabbare och mer ti
 
 Om du vill använda det här exemplet, bör du känna till följande:
 
-- CI-CD-begrepp. En bra referens finns på [The Release Pipeline modellen](http://aka.ms/thereleasepipelinemodelpdf).
+- CI-CD-begrepp. En bra referens finns på [The Release Pipeline modellen](https://aka.ms/thereleasepipelinemodelpdf).
 - [Git](https://git-scm.com/) källkontroll
 - Den [Pester](https://github.com/pester/Pester) xcuitest
-- [Team Foundation Server](https://www.visualstudio.com/tfs/)
+- [Team Foundation Server](https://visualstudio.microsoft.com/tfs/)
 
 ## <a name="what-you-will-need"></a>Vad du behöver
 
@@ -44,7 +44,7 @@ Klientdatorn måste vara en Windows-dator med följande installerat:
 ### <a name="tfssrv1"></a>TFSSrv1
 
 Den dator som är värd för TFS-servern där du definierar din version och utgåva.
-Den här datorn måste ha [Team Foundation Server 2017](https://www.visualstudio.com/tfs/) installerad.
+Den här datorn måste ha [Team Foundation Server 2017](https://visualstudio.microsoft.com/tfs/) installerad.
 
 ### <a name="buildagent"></a>BuildAgent
 
@@ -157,7 +157,7 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 
 Detta söker efter alla noder som har definierats som har rollen `DNSServer` i den [konfigurationsdata](../configurations/configData.md), som skapas av den `DevEnv.ps1` skript.
 
-Du kan läsa mer om den `Where` -metod i [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
+Du kan läsa mer om den `Where` -metod i [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 Det är viktigt att med konfigurationsdata för att definiera noder när du gör CI eftersom nodinformation troligen kommer att förändras mellan miljöer och använder konfigurationsdata kan du enkelt göra ändringar i noden information utan att ändra konfigurationskoden.
 
@@ -319,7 +319,7 @@ Testskriptet integration använder en blandning av [Pester](https://github.com/p
 
 Nu när vi har överfört vår kod till TFS och tittat på vad det gör vi definiera vår build.
 
-Här kan upp vi endast byggsteg som du lägger till i bygget. Mer information om hur du skapar en byggesdefinition i TFS, finns i [skapa och kön en byggesdefinition](/azure/devops/pipelines/get-started-designer).
+Här kan upp vi endast byggsteg som du lägger till i bygget. Mer information om hur du skapar en byggesdefinition i TFS, finns i [skapa och kön en byggesdefinition](/azure/devops/pipelines/create-first-pipeline).
 
 Skapa en ny build-definition (Välj den **tom** mall) med namnet ”InfraDNS”.
 Lägg till följande steg för att du build-definition:
@@ -377,7 +377,7 @@ Nu vi ställer in en utlösare som gör att projektet att skapa helst en ändrin
 1. I TFS, klickar du på den **Build & Release** fliken
 1. Välj den `DNS Infra` build-definition klicka sedan på **redigera**
 1. Klicka på den **utlösare** fliken
-1. Välj **kontinuerlig integrering (CI)**, och välj `refs/heads/ci-cd-example` i listrutan gren
+1. Välj **kontinuerlig integrering (CI)** , och välj `refs/heads/ci-cd-example` i listrutan gren
 1. Klicka på **spara** och sedan **OK**
 
 Nu ändras något i TFS git-lagringsplats utlösare en automatisk build.
@@ -388,7 +388,7 @@ Nu ska vi skapa en versionsdefinition så att projektet har distribuerats till u
 
 Gör detta genom att lägga till en ny versionsdefinition som är associerade med den `InfraDNS` build-definition som du skapade tidigare.
 Se till att välja **kontinuerlig distribution** så att en ny version utlöses varje gång en ny version är klar.
-([Vad är releaser? ](/azure/devops/pipelines/release/what-is-release-management)) och konfigurera den på följande sätt:
+([Vad är releaser? ](/azure/devops/pipelines/release/)) och konfigurera den på följande sätt:
 
 Lägg till följande versionsdefinitionen:
 

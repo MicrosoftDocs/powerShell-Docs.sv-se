@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Nya och uppdaterade cmdletar
-ms.openlocfilehash: 9ec31c89c0bc4b111b40e2d4725fa0782a573204
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65856247"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298659"
 ---
 # <a name="new-and-updated-cmdlets"></a>Nya och uppdaterade cmdletar
 
@@ -39,7 +39,7 @@ Mer information finns i följande avsnitt:
 
 ## <a name="cryptographic-message-syntax-cms-cmdlets"></a>Cryptographic Message Syntax CMS-cmdletar
 
-Syntaxen Cryptographic Message Syntax-cmdletarna har stöd för kryptering och dekryptering av innehåll med hjälp av IETF standardformat för att skydda kryptografiskt meddelanden som det dokumenterats i [RFC5652](https://tools.ietf.org/html/rfc5652).
+Syntaxen Cryptographic Message Syntax-cmdletarna har stöd för kryptering och dekryptering av innehåll med hjälp av IETF standardformat för att skydda kryptografiskt meddelanden som det dokumenterats i [RFC5652](https://tools.ietf.org/html/rfc5652.html).
 
 Standard CMS krypteringen implementerar kryptering med offentlig nyckel, där nyckeln används för att kryptera innehållet (den *offentlig nyckel*) och den nyckel som används för att dekryptera innehåll (den *privata nyckeln*) är separata.
 
@@ -47,9 +47,9 @@ Din offentliga nyckel kan delas brett och är inte känsliga data. Allt innehål
 
 Mer information finns i följande avsnitt:
 
-- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage.md)
-- [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage.md)
-- [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/rotect-CmsMessage.md)
+- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage)
+- [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)
+- [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/unprotect-CmsMessage)
 
 Certifikat krävs en identifierare för unika nyckelanvändning (EKU), som ”kodsignering” eller ”krypterad Mail', för att identifiera dem som certifikat för kryptering av data i PowerShell. Om du vill visa dokumentet krypteringscertifikat i certifikatleverantör, du kan använda den **DocumentEncryptionCert** dynamisk parameter för `Get-ChildItem`:
 
@@ -145,6 +145,7 @@ e19d6ea5-3cc2-4db9-8095-0cdaed5a703d
 "a single " | Add-Content -Path Example.txt -NoNewline
 "sentence." | Add-Content -Path Example.txt -NoNewline
 Get-Content .\Example.txt
+```
 
 ```Output
 This is a single sentence.

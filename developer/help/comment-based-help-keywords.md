@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ab90ec96-77f5-42e3-9c7e-2f4156ec207f
 caps.latest.revision: 6
-ms.openlocfilehash: af8a151070d26ffe236800076115c964f625e572
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 534a6c9a43326c8a01b2181c7a799286fa4d3997
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083543"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301535"
 ---
 # <a name="comment-based-help-keywords"></a>Nyckelord för kommentarsbaserad hjälp
 
@@ -23,7 +23,7 @@ Det här avsnittet listar och beskriver nyckelord i kommentarbaserad hjälp.
 
 Följande är giltiga kommentarbaserad hjälp nyckelorden. De listas i den ordning som de normalt visas i ett hjälpavsnitt tillsammans med deras avsedda användning. Dessa nyckelord kan visas i vilken ordning som helst i kommentarbaserad hjälp och de är inte skiftlägeskänsliga.
 
-Observera att den `.ExternalHelp` nyckelordet har företräde framför alla andra kommentarbaserad hjälp-nyckelord. När `.ExternalHelp` finns, den [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdleten visas inte kommentarbaserad hjälp, även om det går inte att hitta en hjälpfil som överensstämmer med värdet för nyckelordet.
+Observera att den `.ExternalHelp` nyckelordet har företräde framför alla andra kommentarbaserad hjälp-nyckelord. När `.ExternalHelp` finns, den [Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand) cmdleten visas inte kommentarbaserad hjälp, även om det går inte att hitta en hjälpfil som överensstämmer med värdet för nyckelordet.
 
 `.Synopsis` En kort beskrivning av funktionen eller skript. Det här nyckelordet användas endast en gång i varje avsnitt.
 
@@ -61,9 +61,9 @@ Den `.Link` nyckelordet innehåll kan även innehålla en identifierare URI (Uni
 
 `.ExternalHelp` `<XML Help File>` Anger sökvägen och/eller namnet på en XML-baserade hjälpfilen för skript eller funktioner.
 
-Den `.ExternalHelp` nyckelordet meddelar den [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdlet för att få hjälp med skript eller funktioner i en XML-baserade-fil. Den **. ExternalHelp** nyckelordet krävs när du använder en XML-baserade hjälpfilen för skript eller funktioner. Utan detta kommer `Get-Help` kommer inte att hitta en hjälpfilen för den funktion eller ett skript.
+Den `.ExternalHelp` nyckelordet meddelar den [Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand) cmdlet för att få hjälp med skript eller funktioner i en XML-baserade-fil. Den **. ExternalHelp** nyckelordet krävs när du använder en XML-baserade hjälpfilen för skript eller funktioner. Utan detta kommer `Get-Help` kommer inte att hitta en hjälpfilen för den funktion eller ett skript.
 
-Den `.ExternalHelp` nyckelordet har företräde framför alla andra kommentarbaserad hjälp-nyckelord. När `.ExternalHelp` finns, den [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdleten visas inte kommentarbaserad hjälp, även om det går inte att hitta en hjälpfil som överensstämmer med värdet för nyckelordet.
+Den `.ExternalHelp` nyckelordet har företräde framför alla andra kommentarbaserad hjälp-nyckelord. När `.ExternalHelp` finns, den [Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand) cmdleten visas inte kommentarbaserad hjälp, även om det går inte att hitta en hjälpfil som överensstämmer med värdet för nyckelordet.
 
 När funktionen exporteras av en skriptmodul, värdet för `.ExternalHelp` ska vara ett filnamn utan sökväg. `Get-Help` söker efter filen i en underkatalog för språkspecifika till modulkatalogen. Det finns inga krav för filnamnet, men ett bra tips är att använda följande filformat för avbildningsnamn: `<ScriptModule>.psm1-help.xml`.
 

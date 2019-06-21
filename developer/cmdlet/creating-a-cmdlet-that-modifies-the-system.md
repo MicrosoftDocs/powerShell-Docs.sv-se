@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854921"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301387"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Skapa en cmdlet som ändrar systemet
 
@@ -59,7 +59,7 @@ Tänk som i den [System.Management.Automation.CmdletAttribute](/dotnet/api/Syste
 
 ### <a name="extremely-destructive-actions"></a>Extremt destruktiva åtgärder
 
-Vissa åtgärder är extremt destruktiv, till exempel formatera om en aktiv hårddiskpartition. I dessa fall kan cmdleten bör ange `ConfirmImpact`  =  `ConfirmImpact.High` när deklarera den [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribut. Den här inställningen tvingar cmdlet: en till begäran om användaren ska bekräfta även om användaren inte har angett den `Confirm` parametern. Cmdlet: en utvecklare bör dock undvika överanvändning av `ConfirmImpact` för åtgärder som är bara potentiellt skadliga, till exempel ta bort ett användarkonto. Kom ihåg att om `ConfirmImpact` är inställd på [System.Management.Automation.Confirmimpact.High](/dotnet/api/System.Management.Automation.ConfirmImpact.High).
+Vissa åtgärder är extremt destruktiv, till exempel formatera om en aktiv hårddiskpartition. I dessa fall kan cmdleten bör ange `ConfirmImpact`  =  `ConfirmImpact.High` när deklarera den [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribut. Den här inställningen tvingar cmdlet: en till begäran om användaren ska bekräfta även om användaren inte har angett den `Confirm` parametern. Cmdlet: en utvecklare bör dock undvika överanvändning av `ConfirmImpact` för åtgärder som är bara potentiellt skadliga, till exempel ta bort ett användarkonto. Kom ihåg att om `ConfirmImpact` är inställd på [System.Management.Automation.ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **hög**.
 
 Vissa åtgärder är inte troligt att destruktiva, även om de i teorin ändra driftläget för ett system utanför Windows PowerShell. Dessa cmdletar kan ställa in `ConfirmImpact` till [System.Management.Automation.Confirmimpact.Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0). Detta kommer kringgå begäranden om händelsebekräftelse där användaren har bett att bekräfta endast påverkan medium och hög inverkan.
 
@@ -278,11 +278,11 @@ För hela C# exempelkoden, se [StopProcessSample01 exempel](./stopprocesssample0
 
 ## <a name="defining-object-types-and-formatting"></a>Definiera objekttyper och formatering
 
-Windows PowerShell skickar information mellan cmdlet: ar med .net-objekt. Därför måste en cmdlet kan behöva definiera sin egen typ eller cmdlet: en kan behöva utöka en befintlig typ som tillhandahålls av en annan cmdlet. Läs mer om att definiera nya typer eller utöka befintliga typer [utöka objekttyper och formatering](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell skickar information mellan cmdlet: ar med .net-objekt. Därför måste en cmdlet kan behöva definiera sin egen typ eller cmdlet: en kan behöva utöka en befintlig typ som tillhandahålls av en annan cmdlet. Läs mer om att definiera nya typer eller utöka befintliga typer [utöka objekttyper och formatering](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Att skapa cmdleten
 
-När du implementerar en cmdlet, måste den vara registrerad med Windows PowerShell via en Windows PowerShell-snapin-modul. Mer information om hur du registrerar cmdlets finns i [hur du registrera Cmdlets och Providers värdprogram](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+När du implementerar en cmdlet, måste den vara registrerad med Windows PowerShell via en Windows PowerShell-snapin-modul. Mer information om hur du registrerar cmdlets finns i [hur du registrera Cmdlets och Providers värdprogram](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Testa cmdleten
 
@@ -354,9 +354,9 @@ Följande utdata visas.
 
 [Att lägga till parametrar som bearbetar av kommandoraden](./adding-parameters-that-process-command-line-input.md)
 
-[Utöka objekttyper och formatering](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Utöka objekttyper och formatering](/previous-versions//ms714665(v=vs.85))
 
-[Hur du registrerar Cmdlets, Providers och vara värd för program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Hur du registrerar Cmdlets, Providers och vara värd för program](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 

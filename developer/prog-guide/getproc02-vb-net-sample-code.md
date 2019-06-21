@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f3497546-5b3a-4e29-84ba-cd9747be64b3
 caps.latest.revision: 6
-ms.openlocfilehash: 821d0dd327529614322e446bfb30d128d1b6a7f3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4ec63ed32bd2906f5b027523aa0f253b51a5d873
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081605"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301336"
 ---
 # <a name="getproc02-vbnet-sample-code"></a>GetProc02 (VB.NET) – kodexempel
 
-Följande kod visar implementeringen av en `Get-Process` cmdlet som accepterar kommandoradsverktyget indata. Observera att den här implementeringen definierar en `Name` parametern så att kommandoraden indata och använder den [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) metod som utdata mekanism för att skicka utdata objekt till pipelinen.
+Följande kod visar implementeringen av en `Get-Process` cmdlet som accepterar kommandoradsverktyget indata. Observera att den här implementeringen definierar en `Name` parametern så att kommandoraden indata och använder den [WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) metod som utdata-mekanism för att skicka utdata objekt till den pipeline.
 
 ## <a name="code-sample"></a>Kodexempel
 

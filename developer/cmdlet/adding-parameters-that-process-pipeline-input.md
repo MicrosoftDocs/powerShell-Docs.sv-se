@@ -11,12 +11,12 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: def0ac2ff98575beb29c3c2a7d91a5a5c53e648e
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 34643d20c16f8cc45e7fb20dc2a87d78b18bbf10
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854986"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298632"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Lägga till parametrar som bearbetar pipelineindata
 
@@ -77,7 +77,7 @@ Föregående deklarationen anger den `ValueFromPipeline` nyckelord till `true` s
 
 Om din cmdlet är att hantera indata från pipeline, måste den åsidosätta lämplig in metoderna. Grundläggande inkommande bearbetningsmetoder som introduceras i [skapa din första cmdleten](./creating-a-cmdlet-without-parameters.md).
 
-Denna cmdlet Get-procedur åsidosätter den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod för att hantera den `Name` parametern indata från användaren eller ett skript. Den här metoden får processerna för varje begärda processnamn eller alla processer om inget namn anges. Observera att [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), anropet till [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) är utdata mekanism för att skicka utdata objekt till pipelinen. Den andra parametern för det här anropet `enumerateCollection`, är inställd på `true` som talar om Windows PowerShell-körning för att räkna upp processen objektmatris och skriva en process i taget till kommandoraden.
+Denna cmdlet Get-procedur åsidosätter den [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metod för att hantera den `Name` parametern indata från användaren eller ett skript. Den här metoden får processerna för varje begärda processnamn eller alla processer om inget namn anges. Observera att [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), anropet till [WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) utdata-mekanism för att skicka utdata objekt till den pipeline. Den andra parametern för det här anropet `enumerateCollection`, är inställd på `true` som talar om Windows PowerShell-körning för att räkna upp processen objektmatris och skriva en process i taget till kommandoraden.
 
 ```csharp
 protected override void ProcessRecord()
@@ -130,11 +130,11 @@ För hela C# exempelkoden, se [GetProcessSample03 exempel](./getprocesssample03-
 
 ## <a name="defining-object-types-and-formatting"></a>Definiera objekttyper och formatering
 
-Windows PowerShell skickar information mellan cmdlet: ar med .net-objekt. Därför måste en cmdlet kan behöva definiera sin egen typ eller cmdlet: en kan behöva utöka en befintlig typ som tillhandahålls av en annan cmdlet. Läs mer om att definiera nya typer eller utöka befintliga typer [utöka objekttyper och formatering](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell skickar information mellan cmdlet: ar med .net-objekt. Därför måste en cmdlet kan behöva definiera sin egen typ eller cmdlet: en kan behöva utöka en befintlig typ som tillhandahålls av en annan cmdlet. Läs mer om att definiera nya typer eller utöka befintliga typer [utöka objekttyper och formatering](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Att skapa cmdleten
 
-Efter tillämpning av en cmdlet måste den vara registrerad med Windows PowerShell via en Windows PowerShell-snapin-modul. Mer information om hur du registrerar cmdlets finns i [hur du registrera Cmdlets och Providers värdprogram](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Efter tillämpning av en cmdlet måste den vara registrerad med Windows PowerShell via en Windows PowerShell-snapin-modul. Mer information om hur du registrerar cmdlets finns i [hur du registrera Cmdlets och Providers värdprogram](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Testa cmdleten
 
@@ -180,9 +180,9 @@ Följande utdata visas.
 
 [Skapa din första cmdlet:](./creating-a-cmdlet-without-parameters.md)
 
-[Utöka objekttyper och formatering](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Utöka objekttyper och formatering](/previous-versions//ms714665(v=vs.85))
 
-[Hur du registrerar Cmdlets, Providers och vara värd för program](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Hur du registrerar Cmdlets, Providers och vara värd för program](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell-referens](../windows-powershell-reference.md)
 
