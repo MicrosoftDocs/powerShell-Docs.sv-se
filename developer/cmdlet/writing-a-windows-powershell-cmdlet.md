@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a82aba91-71af-447d-b9ef-b6b6ac7d9de4
 caps.latest.revision: 19
-ms.openlocfilehash: 743efcf23174a9521925c5c19dd670979bc0c523
-ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
+ms.openlocfilehash: 1b8ff219e275279fdf603fc2336a8052e64f3a95
+ms.sourcegitcommit: b8427ec6fbacee08da1a580743c338524179d0cc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67263826"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67389087"
 ---
 # <a name="writing-a-windows-powershell-cmdlet"></a>Skriva en Windows PowerShell-cmdlet
 
@@ -26,8 +26,6 @@ ms.locfileid: "67263826"
 [Windows PowerShell-Cmdlet-koncept](./windows-powershell-cmdlet-concepts.md) det här avsnittet beskrivs vilka cmdletar är och hur de fungerar.
 
 [Exempel på Cmdlet-kod](./examples-of-cmdlet-code.md) det här avsnittet innehåller exempelkod som du kan använda för att börja skriva din egen cmdletar.
-
-[Skriva formatering filer för Cmdlet-utdata](../format/writing-a-powershell-formatting-file.md) i det här avsnittet beskrivs hur du skapar formateras. Formateras definierar hur PowerShell visar objekt på kommandoraden.
 
 [Självstudier för skrivning cmdletar](./tutorials-for-writing-cmdlets.md) det här avsnittet innehåller självstudier som du kan använda för att lära dig grunderna bakom cmdlet-kod.
 
