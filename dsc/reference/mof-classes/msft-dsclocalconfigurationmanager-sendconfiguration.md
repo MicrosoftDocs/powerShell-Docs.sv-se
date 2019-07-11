@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
-title: SendConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
-ms.openlocfilehash: 3529bc56ecba19ed0fbbf070a4e86d0692824d39
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: SendConfiguration-metoden
+ms.openlocfilehash: 4feba090bc58844659c2329a304dd9805255564f
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078392"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734324"
 ---
-# <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="75cd5-103">SendConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen</span><span class="sxs-lookup"><span data-stu-id="75cd5-103">SendConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
+# <a name="sendconfiguration-method"></a><span data-ttu-id="d1c38-103">SendConfiguration-metoden</span><span class="sxs-lookup"><span data-stu-id="d1c38-103">SendConfiguration method</span></span>
 
-<span data-ttu-id="75cd5-104">Skickar konfigurationsdokumentet till hanterad nod och sparar den som en väntande ändring.</span><span class="sxs-lookup"><span data-stu-id="75cd5-104">Sends the configuration document to the managed node and saves it as a pending change.</span></span>
+<span data-ttu-id="d1c38-104">Skickar konfigurationsdokumentet till hanterad nod och sparar den som en väntande ändring.</span><span class="sxs-lookup"><span data-stu-id="d1c38-104">Sends the configuration document to the managed node and saves it as a pending change.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="75cd5-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="75cd5-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="d1c38-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="d1c38-105">Syntax</span></span>
 
 ```mof
 uint32 SendConfiguration(
@@ -22,26 +22,26 @@ uint32 SendConfiguration(
 );
 ```
 
-## <a name="parameters"></a><span data-ttu-id="75cd5-106">Parametrar</span><span class="sxs-lookup"><span data-stu-id="75cd5-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="d1c38-106">Parametrar</span><span class="sxs-lookup"><span data-stu-id="d1c38-106">Parameters</span></span>
 
-<span data-ttu-id="75cd5-107">*ConfigurationData* \[i\] miljödata om konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="75cd5-107">*ConfigurationData* \[in\] The environment data for the configuration.</span></span>
+<span data-ttu-id="d1c38-107">*ConfigurationData* \[i\] miljödata om konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="d1c38-107">*ConfigurationData* \[in\] The environment data for the configuration.</span></span>
 
-<span data-ttu-id="75cd5-108">*Tvinga* \[i\] **SANT** att tvinga konfigurationen att stoppa.</span><span class="sxs-lookup"><span data-stu-id="75cd5-108">*force* \[in\] **true** to force the configuration to stop.</span></span>
+<span data-ttu-id="d1c38-108">*Tvinga* \[i\] **SANT** att tvinga konfigurationen att stoppa.</span><span class="sxs-lookup"><span data-stu-id="d1c38-108">*force* \[in\] **true** to force the configuration to stop.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="75cd5-109">Returvärde</span><span class="sxs-lookup"><span data-stu-id="75cd5-109">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="d1c38-109">Returvärde</span><span class="sxs-lookup"><span data-stu-id="d1c38-109">Return value</span></span>
 
-<span data-ttu-id="75cd5-110">Returnerar noll om åtgärden lyckades; Annars returnerar en felkod.</span><span class="sxs-lookup"><span data-stu-id="75cd5-110">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="d1c38-110">Returnerar noll om åtgärden lyckades; Annars returnerar en felkod.</span><span class="sxs-lookup"><span data-stu-id="d1c38-110">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="75cd5-111">Anmärkningar</span><span class="sxs-lookup"><span data-stu-id="75cd5-111">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="d1c38-111">Anmärkningar</span><span class="sxs-lookup"><span data-stu-id="d1c38-111">Remarks</span></span>
 
-<span data-ttu-id="75cd5-112">Det här är en statisk metod.</span><span class="sxs-lookup"><span data-stu-id="75cd5-112">This is a static method.</span></span>
+<span data-ttu-id="d1c38-112">Det här är en statisk metod.</span><span class="sxs-lookup"><span data-stu-id="d1c38-112">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="75cd5-113">Krav</span><span class="sxs-lookup"><span data-stu-id="75cd5-113">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="d1c38-113">Krav</span><span class="sxs-lookup"><span data-stu-id="d1c38-113">Requirements</span></span>
 
-<span data-ttu-id="75cd5-114">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="75cd5-114">**MOF:** DscCore.mof</span></span>
+<span data-ttu-id="d1c38-114">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="d1c38-114">**MOF:** DscCore.mof</span></span>
 
-<span data-ttu-id="75cd5-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="75cd5-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
+<span data-ttu-id="d1c38-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="d1c38-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="75cd5-116">Se även</span><span class="sxs-lookup"><span data-stu-id="75cd5-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d1c38-116">Se även</span><span class="sxs-lookup"><span data-stu-id="d1c38-116">See also</span></span>
 
-[<span data-ttu-id="75cd5-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="75cd5-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+[<span data-ttu-id="d1c38-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="d1c38-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
