@@ -19,7 +19,10 @@
     - name: Komma igång med DSC på Azure Virtual Machines
       href: getting-started/azureDSCexthistory.md
 - name: Snabbstarter
+  expanded: true
   items:
+    - name: Skapa en konfiguration från grupprincipen
+      href: quickstarts/gpo-quickstart.md
     - name: Skapa en webbplats med DSC
       href: quickstarts/website-quickStart.md
 - name: Konfigurationer
@@ -102,7 +105,7 @@
           href: managing-nodes/apply-get-test.md
         - name: Konfigurera den lokala konfigurationshanteraren (v5)
           href: managing-nodes/metaConfig.md
-        - name: Konfigurera den lokala konfigurationshanteraren (v4)
+        - name: Konfigurera LCM i PowerShell 4.0
           href: managing-nodes/metaConfig4.md
         - name: Anropa DSC-resursmetoder direkt
           href: managing-nodes/directCallResource.md
@@ -242,43 +245,43 @@
       items:
         - name: Översikt
           href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
-        - name: ApplyConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klass
+        - name: ApplyConfiguration-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
-        - name: DisableDebugConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: DisableDebugConfiguration-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
-        - name: EnableDebugConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: EnableDebugConfiguration-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
-        - name: GetConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: GetConfiguration-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfiguration.md
-        - name: GetConfigurationResultOutput-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: GetConfigurationResultOutput-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
-        - name: GetConfigurationStatus-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: GetConfigurationStatus-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationstatus.md
-        - name: GetMetaConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: GetMetaConfiguration-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getmetaconfiguration.md
-        - name: PerformRequiredConfigurationChecks-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: PerformRequiredConfigurationChecks-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
-        - name: RemoveConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: RemoveConfiguration-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-removeconfiguration.md
-        - name: ResourceGet-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: ResourceGet-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceget.md
-        - name: ResourceSet-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: ResourceSet-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceset.md
-        - name: ResourceTest-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: ResourceTest-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourcetest.md
-        - name: RollBack-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: RollBack-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-rollback.md
-        - name: SendConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: SendConfiguration-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfiguration.md
-        - name: SendConfigurationApply-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: SendConfigurationApply-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapply.md
-        - name: SendConfigurationApplyAsync-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: SendConfigurationApplyAsync-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
-        - name: SendMetaConfigurationApply-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: SendMetaConfigurationApply-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
-        - name: StopConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: StopConfiguration-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-stopconfiguration.md
-        - name: TestConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+        - name: TestConfiguration-metoden
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md
 - name: Mer information
   items:
