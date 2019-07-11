@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 555baec08539403d3c15d1eca2b23eec0a874e49
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854853"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733944"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Skapa en cmdlet för att komma åt ett datalager
 
@@ -72,7 +72,7 @@ Observera att den här parametern tillhör två olika parameteruppsättningar oc
 
 Två [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribut deklarerar att den `Path` parametern tillhör den `ScriptParameterSet` och `PatternParameterSet`. Läs mer om parameteruppsättningar [att lägga till parametern som anger att en Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
 
-Den [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attributet deklarerar en `PSPath` alias för den `Path` parametern. Det rekommenderas starkt att deklarera det här aliaset för att få konsekvens med andra cmdletar som har åtkomst till Windows PowerShell-providers. Mer information aboutWindows PowerShell sökvägar, finns i ”PowerShell sökväg begrepp” i [hur Windows PowerShell fungerar](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Den [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attributet deklarerar en `PSPath` alias för den `Path` parametern. Det rekommenderas starkt att deklarera det här aliaset för att få konsekvens med andra cmdletar som har åtkomst till Windows PowerShell-providers. Mer information aboutWindows PowerShell sökvägar, finns i ”PowerShell sökväg begrepp” i [hur Windows PowerShell fungerar](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="declaring-the-pattern-parameter"></a>Deklarera Mönsterparametern
 
@@ -379,7 +379,7 @@ Det här exemplet väljer Str cmdlet använder den [System.Management.Automation
 
 ## <a name="code-sample"></a>Kodexempel
 
-Följande kod visar implementeringen av den här versionen av denna väljer Str-cmdlet. Observera att den här koden innehåller klassen cmdlet och privata metoder som används av cmdlet: en Windows PowerShell snapin-koden för att registrera cmdlet: en. Mer information om hur du registrerar cmdleten finns i [att skapa cmdleten](#building-the-cmdlet).
+Följande kod visar implementeringen av den här versionen av denna väljer Str-cmdlet. Observera att den här koden innehåller klassen cmdlet och privata metoder som används av cmdlet: en Windows PowerShell snapin-koden för att registrera cmdlet: en. Mer information om hur du registrerar cmdleten finns i [att skapa cmdleten](#Defining-the-Cmdlet-Class).
 
 ```csharp
 //
@@ -1090,7 +1090,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="building-the-cmdlet"></a>Att skapa cmdleten
 
-När du implementerar en cmdlet, måste du registrera den med Windows PowerShell via en Windows PowerShell-snapin-modul. Mer information om hur du registrerar cmdlets finns i [hur du registrera Cmdlets och Providers värdprogram](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+När du implementerar en cmdlet, måste du registrera den med Windows PowerShell via en Windows PowerShell-snapin-modul. Mer information om hur du registrerar cmdlets finns i [hur du registrera Cmdlets och Providers värdprogram](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Testa cmdleten
 
@@ -1214,7 +1214,7 @@ När din cmdlet har registrerats med Windows PowerShell kan testa du den genom a
 
 ## <a name="see-also"></a>Se även
 
-[Så här skapar du en Windows PowerShell-Cmdlet](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Så här skapar du en Windows PowerShell-Cmdlet](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
 [Skapa din första cmdlet:](./creating-a-cmdlet-without-parameters.md)
 
@@ -1222,8 +1222,8 @@ När din cmdlet har registrerats med Windows PowerShell kan testa du den genom a
 
 [Utforma din Windows PowerShell-providern](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[Så här fungerar Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Så här fungerar Windows PowerShell](/previous-versions//ms714658(v=vs.85))
 
-[Hur du registrerar Cmdlets, Providers och vara värd för program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Hur du registrerar Cmdlets, Providers och vara värd för program](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

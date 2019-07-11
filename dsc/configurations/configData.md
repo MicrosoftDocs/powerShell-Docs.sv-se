@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Med hjälp av konfigurationsdata
-ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080228"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727219"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Med hjälp av konfigurationsdata i DSC
 
@@ -187,11 +187,11 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 DSC tillhandahåller följande särskilda variabler som kan användas i ett konfigurationsskript:
 
-- **$AllNodes** refererar till hela uppsättningen av noder som definierats i **ConfigurationData**. Du kan filtrera den **AllNodes** samlingen med hjälp av **. WHERE ()** och **. ForEach()**.
+- **$AllNodes** refererar till hela uppsättningen av noder som definierats i **ConfigurationData**. Du kan filtrera den **AllNodes** samlingen med hjälp av **. WHERE ()** och **. ForEach()** .
 - **ConfigurationData** refererar till hela hash-tabellen som skickas som parametern när kompilera en konfiguration.
 - **MyTypeName** innehåller den [configuration](configurations.md) variabeln används i namnet. Till exempel i konfigurationen `MyDscConfiguration`, `$MyTypeName` har värdet `MyDscConfiguration`.
-- **Noden** refererar till en viss post i den **AllNodes** samling när den har filtrerats med hjälp av **. WHERE ()** eller **. ForEach()**.
-  - Du kan läsa mer om de här metoderna i [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
+- **Noden** refererar till en viss post i den **AllNodes** samling när den har filtrerats med hjälp av **. WHERE ()** eller **. ForEach()** .
+  - Du kan läsa mer om de här metoderna i [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 ## <a name="using-non-node-data"></a>Använda icke-nod-data
 

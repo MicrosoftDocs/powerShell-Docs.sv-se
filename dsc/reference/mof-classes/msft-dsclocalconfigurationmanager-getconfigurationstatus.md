@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
-title: GetConfigurationStatus-metoden för MSFT_DSCLocalConfigurationManager-klassen
-ms.openlocfilehash: c66ccc4eefaef2d0c3a68fa8a96c5abb9bda6e4c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: GetConfigurationStatus-metoden
+ms.openlocfilehash: 83b30ba2612d962fcf2fa658d07d18fb2d91ccc7
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078783"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734507"
 ---
-# <a name="getconfigurationstatus-method-of-the-msftdsclocalconfigurationmanager-class"></a>GetConfigurationStatus-metoden för MSFT_DSCLocalConfigurationManager-klassen
+# <a name="getconfigurationstatus-method"></a>GetConfigurationStatus-metoden
 
 Hämta statushistorik konfiguration.
 

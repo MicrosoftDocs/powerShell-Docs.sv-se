@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
-title: SendConfigurationApply-metoden för MSFT_DSCLocalConfigurationManager-klassen
-ms.openlocfilehash: da3a08307122ab38ee4a6fd5d4a9b97579a988f7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: SendConfigurationApply-metoden
+ms.openlocfilehash: 11b9d435bbaac1600d25ff074b6c55b236a8378b
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078268"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727017"
 ---
-# <a name="sendconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>SendConfigurationApply-metoden för MSFT_DSCLocalConfigurationManager-klassen
+# <a name="sendconfigurationapply-method"></a>SendConfigurationApply-metoden
 
 Skickar konfigurationsdokumentet till hanterad nod och använder konfigurationen agenten för att tillämpa konfigurationen.
 

@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell cmdlet
 title: Felsökning av åtkomstproblem i windows powershell-webbåtkomst
-ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 66e913504cf0c34f8d9ab18b088fb06173aca24c
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086603"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733861"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Felsökning av åtkomstproblem i Windows PowerShell-webbåtkomst
 
@@ -35,7 +35,7 @@ Fel kan inträffa på grund av något av följande.
 
   Kontrollera fjärrhantering är aktiverat på den dator som användaren försöker ansluta.
 
-  Mer information finns i [hur du konfigurerar din dator för fjärrkommunikation](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
+  Mer information finns i [hur du konfigurerar din dator för fjärrkommunikation](/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
 
 ## <a name="internal-server-error"></a>Internt serverfel
 
@@ -101,13 +101,13 @@ ComputerGroup | Server\_name\\computer\_group<br/>Localhost\\datorn\_grupp<br/>.
 
 Parameter | Värde
 -- | --
-Datornamn | Fullständigt kvalificerat namn på gateway-server eller Localhost
+ComputerName | Fullständigt kvalificerat namn på gateway-server eller Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>Gateway-servern finns i en arbetsgrupp
 
 Parameter | Värde
 -- | --
-Datornamn | Servernamn
+ComputerName | Servernamn
 
 ### <a name="gateway-credentials"></a>Gateway-autentiseringsuppgifter
 

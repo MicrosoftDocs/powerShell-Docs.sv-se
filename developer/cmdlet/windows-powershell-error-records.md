@@ -13,12 +13,12 @@ helpviewer_keywords:
 - error category string [PowerShell SDK]
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
-ms.openlocfilehash: f6f5e50c55b477cbbeeaaf4f3ea665d5dc07758c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067050"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735077"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell-felposter
 
@@ -60,9 +60,9 @@ Använd följande riktlinjer för att generera fel-ID när du skapar felposter:
 
 ## <a name="error-category"></a>Felkategori
 
-När du skapar en Felpost kan ange vilken typ av fel med någon av konstanterna som definieras av den [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) uppräkning. Windows PowerShell använder kategorin fel för att visa information om fel när användare anger den `$ErrorView` variabeln `"CategoryView"`.
+När du skapar en Felpost kan ange vilken typ av fel med någon av konstanterna som definieras av den [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) uppräkning. Windows PowerShell använder kategorin fel för att visa information om fel när användare anger den `$ErrorView` variabeln `"CategoryView"`.
 
-Undvik att använda den [System.Management.Automation.Errorcategory.Notspecified](/dotnet/api/System.Management.Automation.ErrorCategory.NotSpecified) konstant. Om du har all information om felet eller den åtgärd som orsakade felet, Välj den kategori som bäst beskriver felet eller åtgärden, även om kategorin inte är perfekt.
+Undvik att använda den [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **NotSpecified** konstant. Om du har all information om felet eller den åtgärd som orsakade felet, Välj den kategori som bäst beskriver felet eller åtgärden, även om kategorin inte är perfekt.
 
 Informationen som visas av Windows PowerShell kallas kategorivyn strängen och är byggd från egenskaperna för den [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo) klass. (Den här klassen är tillgängligt via felet [System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) egenskap.)
 
@@ -72,7 +72,7 @@ Informationen som visas av Windows PowerShell kallas kategorivyn strängen och �
 
 I följande lista beskrivs den information som visas:
 
-- Kategori: En Windows PowerShell-definierade [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) konstant.
+- Kategori: En Windows PowerShell-definierade [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) konstant.
 
 - Målnamn: Som standard objektets namn cmdleten bearbetade när felet uppstod. Eller en annan cmdlet-definierade sträng.
 
@@ -88,9 +88,9 @@ När du utvecklar en Felpost för en cmdlet standardfelmeddelande för felet kom
 
 Ersättning meddelandet kommer från en [System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) objekt. Använd någon av följande konstruktorer i det här objektet eftersom de ger ytterligare lokaliseringsinformation som kan användas av Windows PowerShell.
 
-- [ErrorDetails.ErrorDetails (objekt-Cmdlet, String, String,\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Använd den här konstruktorn om din mall-strängen är en resurssträng i samma sammansättning där cmdleten har implementerats eller om du vill läsa in mallen strängen via en åsidosättning av den [System.Management.Automation.Cmdlet.GetResourceString ](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) metod.
+- [ErrorDetails(Cmdlet, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): Använd den här konstruktorn om din mall-strängen är en resurssträng i samma sammansättning där cmdleten har implementerats eller om du vill läsa in mallen strängen via en åsidosättning av den [System.Management.Automation.Cmdlet.GetResourceString ](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) metod.
 
-- [ErrorDetails.ErrorDetails (objekt-sammansättningen, String, String,\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Använd den här konstruktorn om mall-strängen är i en annan sammansättning och du inte läser in den via en åsidosättning av [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
+- [ErrorDetails(Assembly, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): Använd den här konstruktorn om mall-strängen är i en annan sammansättning och du inte läser in den via en åsidosättning av [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
 
 Ersättning meddelandet ska följa designriktlinjer för .NET Framework för att skriva undantag meddelanden med en viss skillnad. Tillståndet för riktlinjer som undantag meddelanden ska vara skrivna för utvecklare. De här meddelandena ska vara skrivna för cmdlet-användaren.
 
@@ -110,7 +110,7 @@ När en cmdlet använder [System.Management.Automation.Cmdlet.WriteError](/dotne
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)
+[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 

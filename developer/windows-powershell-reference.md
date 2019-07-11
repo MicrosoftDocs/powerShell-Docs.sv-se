@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: 86595ebaac32318a4e3b9a3c4b295c73fb2e1c75
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080509"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733748"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell-referens
 
@@ -53,4 +53,4 @@ Förutom SDK: N för Windows PowerShell innehåller följande resurser mer infor
 
 [System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) det här namnområdet innehåller basklasser som används av andra klasser i namnområdet. Till exempel den [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) klassen är basklass för den [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) klass.
 
-[System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) det här namnområdet innehåller klasser, uppräkningar och gränssnitt som används för att skapa ett Windows PowerShell-körningsutrymme. I det här sammanhanget är Windows PowerShell-körningsutrymmet det sammanhang där anropa en eller flera pipelines i Windows PowerShell cmdlets. Det vill säga fungerar cmdlets inom ramen för ett Windows PowerShell-körningsutrymme. Mer information aboutWindows PowerShell körningsutrymmen, se [Windows PowerShell-Körningsutrymmen](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).
+[System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) det här namnområdet innehåller klasser, uppräkningar och gränssnitt som används för att skapa ett Windows PowerShell-körningsutrymme. I det här sammanhanget är Windows PowerShell-körningsutrymmet det sammanhang där anropa en eller flera pipelines i Windows PowerShell cmdlets. Det vill säga fungerar cmdlets inom ramen för ett Windows PowerShell-körningsutrymme. Mer information aboutWindows PowerShell körningsutrymmen, se [Windows PowerShell-Körningsutrymmen](https://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).

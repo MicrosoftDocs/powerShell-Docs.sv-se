@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 7f10acf59dedbb4af17bc5250e8624282ba22656
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 2685215f41c96955fc662d5eee27fc0e7a31da83
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854970"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733964"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Skapa en cmdlet utan parametrar
 
@@ -71,7 +71,7 @@ Windows PowerShell använder den [Microsoft.PowerShell.Commands](/dotnet/api/Mic
 
 ## <a name="overriding-an-input-processing-method"></a>Åsidosätta indata metoden bearbetades
 
-Den [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klassen innehåller bearbetningsmetoder för tre huvudsakliga inkommande, varav minst en cmdlet: måste åsidosätta. Mer information om hur Windows PowerShell bearbetar poster finns i [hur Windows PowerShell fungerar](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Den [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klassen innehåller bearbetningsmetoder för tre huvudsakliga inkommande, varav minst en cmdlet: måste åsidosätta. Mer information om hur Windows PowerShell bearbetar poster finns i [hur Windows PowerShell fungerar](/previous-versions//ms714658(v=vs.85)).
 
 För alla typer av indata Windows PowerShell-runtime anropar [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) att aktivera bearbetning. Om din cmdlet måste utföra vissa Förbearbeta eller konfiguration, kan det göra detta genom att åsidosätta den här metoden.
 
@@ -135,11 +135,11 @@ För hela C# exempelkoden, se [GetProcessSample01 exempel](./getprocesssample01-
 
 ## <a name="defining-object-types-and-formatting"></a>Definiera objekttyper och formatering
 
-Windows PowerShell skickar information mellan cmdlet: ar med .NET-objekt. Därför måste en cmdlet kan behöva definiera sin egen typ eller cmdlet: en kan behöva utöka en befintlig typ som tillhandahålls av en annan cmdlet. Läs mer om att definiera nya typer eller utöka befintliga typer [utöka objekttyper och formatering](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell skickar information mellan cmdlet: ar med .NET-objekt. Därför måste en cmdlet kan behöva definiera sin egen typ eller cmdlet: en kan behöva utöka en befintlig typ som tillhandahålls av en annan cmdlet. Läs mer om att definiera nya typer eller utöka befintliga typer [utöka objekttyper och formatering](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Att skapa cmdleten
 
-När du implementerar en cmdlet, måste du registrera den med Windows PowerShell via en Windows PowerShell-snapin-modul. Mer information om hur du registrerar cmdlets finns i [hur du registrera Cmdlets och Providers värdprogram](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+När du implementerar en cmdlet, måste du registrera den med Windows PowerShell via en Windows PowerShell-snapin-modul. Mer information om hur du registrerar cmdlets finns i [hur du registrera Cmdlets och Providers värdprogram](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Testa cmdleten
 
@@ -260,13 +260,13 @@ När din cmdlet har registrerats med Windows PowerShell kan testa du den genom a
 
 [Skapa en Cmdlet för att bearbeta indata från Pipeline](./adding-parameters-that-process-pipeline-input.md)
 
-[Så här skapar du en Windows PowerShell-Cmdlet](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Så här skapar du en Windows PowerShell-Cmdlet](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Utöka objekttyper och formatering](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Utöka objekttyper och formatering](/previous-versions//ms714665(v=vs.85))
 
-[Så här fungerar Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Så här fungerar Windows PowerShell](/previous-versions//ms714658(v=vs.85))
 
-[Hur du registrerar Cmdlets, Providers och vara värd för program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Hur du registrerar Cmdlets, Providers och vara värd för program](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell-referens](../windows-powershell-reference.md)
 

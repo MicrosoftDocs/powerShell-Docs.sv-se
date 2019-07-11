@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 0d4addc0a064873701ae15c204dbd335f3374ab7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81f6c8cd75ccea9e711cd8f6d6daa6cca5a499a0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080923"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734862"
 ---
 # <a name="windows-powershell-provider-overview"></a>Översikt över Windows PowerShell-providers
 
@@ -27,7 +27,7 @@ Du kan ange standard-enheter – enheter som skapas automatiskt när providern �
 
 ## <a name="type-of-providers"></a>Typ av Providers
 
-Det finns flera typer av leverantörer, som har olika funktioner. En provider implementeras som en klass som härleds från en av de underordnade objekten för den [System.Management.Automation.Sessionstatecategory.Cmdletprovider](/dotnet/api/System.Management.Automation.SessionStateCategory.CmdletProvider) klass. Information om de olika typerna av leverantörer finns i [providertyper](./provider-types.md).
+Det finns flera typer av leverantörer, som har olika funktioner. En provider implementeras som en klass som härleds från en av de underordnade objekten för den [System.Management.Automation.SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory?view=pscore-6.2.0) **CmdletProvider** klass. Information om de olika typerna av leverantörer finns i [providertyper](./provider-types.md).
 
 ## <a name="provider-cmdlets"></a>Cmdlets för providers
 
@@ -63,7 +63,7 @@ Leverantörer kan definiera dynamiska parametrar som läggs till en provider-cmd
 
 ## <a name="provider-capabilities"></a>Provider-funktioner
 
-Den [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) uppräkning definierar ett antal funktioner som har stöd för leverantörer. Dessa inkluderar möjligheten att använda jokertecken, filtrera objekt och stöd för transaktioner. Funktioner för en provider lägger du till en lista med värden för den [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -uppräkningen, i kombination med en logisk `OR` åtgärd, som den [ System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) egenskapen (den andra parametern för attributet) för den [System.Management.Automation.Provider.Cmdletproviderattribute ](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribut för providerklassen. Till exempel följande attribut anger att providern stöder den [System.Management.Automation.Provider.Providercapabilities.Shouldprocess](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.ShouldProcess) och [ System.Management.Automation.Provider.Providercapabilities.Transactions](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.Transactions) funktioner.
+Den [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) uppräkning definierar ett antal funktioner som har stöd för leverantörer. Dessa inkluderar möjligheten att använda jokertecken, filtrera objekt och stöd för transaktioner. Funktioner för en provider lägger du till en lista med värden för den [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -uppräkningen, i kombination med en logisk `OR` åtgärd, som den [ System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) egenskapen (den andra parametern för attributet) för den [System.Management.Automation.Provider.Cmdletproviderattribute ](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribut för providerklassen. Till exempel följande attribut anger att providern stöder den [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** och [ System.Management.Automation.Provider.ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **transaktioner** funktioner.
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]

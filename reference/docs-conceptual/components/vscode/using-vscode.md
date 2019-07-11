@@ -2,19 +2,19 @@
 title: Med Visual Studio Code för PowerShell-utveckling
 description: Med Visual Studio Code för PowerShell-utveckling
 ms.date: 08/06/2018
-ms.openlocfilehash: 5badffd49252e0d72ae2c20d3147ad4b1e92d5ed
-ms.sourcegitcommit: cf1a281cce9f7239c440c90f8b2798d32a13778d
+ms.openlocfilehash: 6a0da6e060693dc7cfc08d40fd658414dc23d660
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882563"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733886"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Med Visual Studio Code för PowerShell-utveckling
 
 Förutom den [PowerShell ISE][ise], PowerShell är också väl stöds i Visual Studio Code.
 Dessutom stöds ISE inte med PowerShell Core Visual Studio Code har stöd för PowerShell Core på alla plattformar (Windows, macOS och Linux)
 
-Du kan använda Visual Studio Code på Windows med PowerShell version 5 med hjälp av Windows 10 eller genom att installera [Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395) för äldre Windows-operativsystem (t.ex. Windows 8.1, osv.).
+Du kan använda Visual Studio Code på Windows med PowerShell version 5 med hjälp av Windows 10 eller genom att installera [Windows Management Framework 5.0 RTM](https://devblogs.microsoft.com/powershell/windows-management-framework-wmf-5-0-rtm-is-now-available-via-the-microsoft-update-catalog/) för äldre Windows-operativsystem (t.ex. Windows 8.1, osv.).
 
 Kontrollera att PowerShell finns i systemet innan du startar den.
 Moderna arbetsbelastningar i Windows, macOS och Linux finns här:

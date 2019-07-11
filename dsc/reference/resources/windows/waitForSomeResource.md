@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSC WaitForSome resurs
-ms.openlocfilehash: 888da1810f0a9233579bad5eef8d5dd556947c61
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2260f37002171154a6f2c3996b2af1bd9120039d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076862"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726764"
 ---
 # <a name="dsc-waitforsome-resource"></a>DSC WaitForSome resurs
 
@@ -17,6 +17,9 @@ Den **WaitForSome** Desired State Configuration (DSC) resursen kan användas i e
 
 Den här resursen lyckas om resursen har angetts av den **ResourceName** egenskapen är i ett minsta antal noder önskade tillstånd (anges av **NodeCount**) definieras av den **nodnamn**  egenskapen.
 
+> [!NOTE]
+> **WaitForSome** resource använder Windows Remote Management för att kontrollera tillståndet hos andra noder.
+> Läs mer om port och säkerhetskrav för WinRM [säkerhetsöverväganden för PowerShell-fjärrkommunikation](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## <a name="syntax"></a>Syntax
 

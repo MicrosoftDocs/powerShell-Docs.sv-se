@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: f449c17e4c373c42f8a1d96fa9075940111c65bc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: edb4d9944a527391983e068ddf07f4fac415c3f9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080874"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734728"
 ---
 # <a name="writing-a-navigation-provider"></a>Skriva en navigeringsprovider
 
@@ -25,7 +25,7 @@ Mer information om Windows PowerShell-providrar finns i [Windows PowerShell-prov
 
 ## <a name="implementing-navigation-methods"></a>Implementera navigeringsmetoderna
 
-Den [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) klassen implementerar metoderna som stöder kapslade behållare, relativa sökvägar och flytta objekt. En fullständig lista över dessa metoder, se [NavigationCmdletProvider metoder](http://msdn.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider_methods\(v=vs.85\).aspx).
+Den [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) klassen implementerar metoderna som stöder kapslade behållare, relativa sökvägar och flytta objekt. En fullständig lista över dessa metoder, se [NavigationCmdletProvider metoder](/dotnet/api/system.management.automation.provider.navigationcmdletprovider?view=pscore-6.2.0#methods).
 
 > [!NOTE]
 > Det här avsnittet bygger på informationen i [Windows PowerShell-providern Snabbstart](./windows-powershell-provider-quickstart.md). Det här avsnittet beskriver inte grunderna för hur du ställer in ett provider-projekt eller hur du implementerar metoderna som ärvts från den [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) klass som skapar och tar bort enheter. Det här avsnittet beskriver också inte hur du implementerar metoderna som exponeras av den [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) eller [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) klasser. Ett exempel som visar hur du implementerar artikel-cmdletar finns i [skriva en provider med objektet](./writing-an-item-provider.md). Ett exempel som visar hur du implementerar container-cmdletar finns i [skriva en behållare provider](./writing-a-container-provider.md).
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>Implementing MakePath
 
-Den [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) metoden kopplar en angivna överordnade och sökvägen till en angivna underordnade att skapa en provider-internt sökväg (för information om sökvägen typer som leverantörer kan stödja, se [Windows PowerShell-providern översikt](./windows-powershell-provider-overview.md). PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.PowerShell.Commands.Join-Path](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) cmdlet.
+Den [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) metoden kopplar en angivna överordnade och sökvägen till en angivna underordnade att skapa en provider-internt sökväg (för information om sökvägen typer som leverantörer kan stödja, se [Windows PowerShell-providern översikt](./windows-powershell-provider-overview.md). PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.PowerShell.Commands.JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) cmdlet.
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -221,7 +221,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>Implementera MoveItem
 
-Den [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metoden flyttar ett objekt från den angivna sökvägen till den angivna målsökvägen. PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.PowerShell.Commands.Move-Item](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) cmdlet.
+Den [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metoden flyttar ett objekt från den angivna sökvägen till den angivna målsökvägen. PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.PowerShell.Commands.MoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.moveitemcommand) cmdlet.
 
 ```csharp
 protected override void MoveItem(string path, string destination)

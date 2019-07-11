@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguration, installation
 title: Ange beroenden mellan noder
-ms.openlocfilehash: 1bdfbd9f8a94809d6bf410eff525e1c877fb6aad
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 62e553d894897ae1908745c2788b7b7b9cbe50ff
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080211"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734683"
 ---
 # <a name="specifying-cross-node-dependencies"></a>Ange beroenden mellan noder
 
@@ -55,14 +55,22 @@ WaitForSome [String] #ResourceName
 
 Alla **WaitForXXXX** dela följande syntax nycklar.
 
-|  Egenskapen |  Beskrivning av || RetryIntervalSec | Antal sekunder innan du försöker igen. Minimum är 1. | | RetryCount | Det maximala antalet nya försök. | | ThrottleLimit | Antal datorer kan ansluta samtidigt. Standardvärdet är `New-CimSession` standard. | | DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Mer information finns i [DependsOn](resource-depends-on.md)|| PsDscRunAsCredential | Se [med hjälp av DSC med autentiseringsuppgifterna för användaren](./runAsUser.md) |
-
+|Egenskap|  Beskrivning   |
+|---------|---------------------|
+| RetryIntervalSec| Antal sekunder innan du försöker igen. Minimum är 1.|
+| RetryCount| Det maximala antalet gånger att försöka igen.|
+| ThrottleLimit| Antal datorer kan ansluta samtidigt. Standardvärdet är `New-CimSession` standard.|
+| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Mer information finns i [DependsOn](resource-depends-on.md)|
+| PsDscRunAsCredential | Se [med hjälp av DSC med autentiseringsuppgifterna för användaren](./runAsUser.md) |
 
 ## <a name="using-waitforxxxx-resources"></a>Använda WaitForXXXX resurser
 
-Varje **WaitForXXXX** resurs ska vänta tills de angivna resurserna skulle bli klart på den angivna noden. Andra resurser i samma konfiguration kan sedan *beror på* den **WaitForXXXX** resursen med hjälp av den **DependsOn** nyckel.
+Varje **WaitForXXXX** resurs ska vänta tills de angivna resurserna skulle bli klart på den angivna noden.
+Andra resurser i samma konfiguration kan sedan *beror på* den **WaitForXXXX** resursen med hjälp av den **DependsOn** nyckel.
 
 Till exempel i följande konfiguration målnoden väntar på den **xADDomain** resurs ska slutföras på den **MyDC** nod med maximalt antal 30 återförsök, med 15-sekunder intervall, innan den målnoden kan ansluta till domänen.
+
+Som standard den **WaitForXXX** resurser prova en gång och sedan misslyckas. Även om det inte krävs, vill du förmodligen att ange en **RetryCount** och **RetryIntervalSec**.
 
 ```powershell
 Configuration JoinDomain
@@ -111,7 +119,9 @@ Configuration JoinDomain
 
 När du kompilera konfigurationen, genereras två MOF-filerna. Gäller både MOF-filerna för Målnoder med hjälp av den [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet
 
->**Obs:** Som standard WaitForXXX resurser försök en gång och sedan misslyckas. Även om det inte krävs, vill du förmodligen att ange en **RetryCount** och **RetryIntervalSec**.
+> [!NOTE]
+> **WaitForXXX** resurser använda Windows Remote Management för att kontrollera tillståndet hos andra noder.
+> Läs mer om port och säkerhetskrav för WinRM [säkerhetsöverväganden för PowerShell-fjärrkommunikation](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## <a name="see-also"></a>Se även
 

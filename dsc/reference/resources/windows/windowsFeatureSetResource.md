@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: DSC WindowsFeatureSet-resurs
-ms.openlocfilehash: 8b7c7e72dd58459bd19cb723e5790a82841515c0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8a64168d9ad0d6a6c40eb0398cc734fa93a247dc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076794"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726785"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet-resurs
 
@@ -36,9 +36,9 @@ WindowsFeatureSet [string] #ResourceName
 
 ## <a name="properties"></a>Egenskaper
 
-|  Egenskap  |  Beskrivning   |
+|  Egenskap  |  Description   |
 |---|---|
-| Namn| Namnen på de roller och funktioner som du vill kontrollera läggs till eller tas bort. Det här är samma som den **namn** egenskapen för den [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) cmdlet, och inte visningsnamnet för roller eller funktioner.|
+| Namn| Namnen på de roller och funktioner som du vill kontrollera läggs till eller tas bort. Det här är samma som den **namn** egenskapen för den [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) cmdlet, och inte visningsnamnet för roller eller funktioner.|
 | Autentiseringsuppgifter| Autentiseringsuppgifterna som används för att lägga till eller ta bort roller och funktioner.|
 | Se till att| Anger om roller och funktioner har lagts till. För att säkerställa att de roller och funktioner är har lagts till, ange den här egenskapen ”aktuella” för att säkerställa att bort roller och funktioner, egenskapen till ””.|
 | IncludeAllSubFeature| Den här egenskapen **$true** att inkludera alla nödvändiga underfunktioner med funktioner som du anger med den **namn** egenskapen.|

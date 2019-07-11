@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 44a9c970d32dc6f98456227f8b02101280541dd9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081095"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734886"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell-programmerare&#39;s Guide
 
@@ -37,7 +37,7 @@ I traditionella kommandot utveckling krävs att skriva en parameter-parser, bind
 
 Windows PowerShell finns flera typer av kommandon som du kan använda under utveckling. Dessa kommandon omfattar: funktioner, filter, skript, alias och körbara filer (program). Den huvudsakliga kommandotypen som beskrivs i den här guiden är ett enkelt, liten kommando kallas en ”cmdlet”. Windows PowerShell tillhandahåller en uppsättning cmdlets för och stöd fullständigt för cmdleten anpassning så att de passar din miljö. Windows PowerShell-runtime bearbetar alla kommandotyper precis som cmdlet: ar med pipelines.
 
-Förutom kommandon stöder olika anpassningsbara Windows PowerShell-leverantörer som gör tillgängliga specifika uppsättningar av cmdlets i Windows PowerShell. Gränssnittet fungerar i Windows PowerShell-angivna värdprogrammet (Windows PowerShell.exe), men den kan även nås från ett anpassat program som du kan utveckla för att uppfylla specifika krav. Mer information finns i [hur Windows PowerShell fungerar](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Förutom kommandon stöder olika anpassningsbara Windows PowerShell-leverantörer som gör tillgängliga specifika uppsättningar av cmdlets i Windows PowerShell. Gränssnittet fungerar i Windows PowerShell-angivna värdprogrammet (Windows PowerShell.exe), men den kan även nås från ett anpassat program som du kan utveckla för att uppfylla specifika krav. Mer information finns i [hur Windows PowerShell fungerar](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="windows-powershell-cmdlets"></a>Windows PowerShell-Cmdlets
 
@@ -51,17 +51,17 @@ Utföra administrativa uppgifter, kan användaren behöva granska data som lagra
 
 Windows PowerShell innehåller flera leverantörer av Windows PowerShell. Register-provider stöder till exempel navigering och hantering av Windows-registret. Registernycklar visas i form av objekt och registervärden behandlas som egenskaper.
 
-Om du exponerar ett datalager som användaren ska kunna komma åt, du kan behöva skriva en egen Windows PowerShell-providern enligt beskrivningen i [skapar Windows PowerShell-Providers](./how-to-create-a-windows-powershell-provider.md). Mer information aboutWindows PowerShell-providers, se [hur Windows PowerShell fungerar](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Om du exponerar ett datalager som användaren ska kunna komma åt, du kan behöva skriva en egen Windows PowerShell-providern enligt beskrivningen i [skapar Windows PowerShell-Providers](./how-to-create-a-windows-powershell-provider.md). Mer information aboutWindows PowerShell-providers, se [hur Windows PowerShell fungerar](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="host-application"></a>Värdprogrammet
 
 Windows PowerShell innehåller standard värd programmet powershell.exe, vilket är ett konsolprogram som samverkar med användare och är värd för Windows PowerShell-körningen med hjälp av ett konsolfönster.
 
-Bara sällan behöver du skriva din egen värdprogram för Windows PowerShell, även om det finns stöd för anpassning. Ett fall där du kanske behöver ditt eget program är när du har ett krav för ett GUI-gränssnitt som är större än gränssnittet tillhandahålls av standard värdprogrammet. Vill du kanske också ett anpassat program när du baserar din GUI på kommandoraden. Mer information finns i [så här skapar du en Windows PowerShell-Värdapp](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
+Bara sällan behöver du skriva din egen värdprogram för Windows PowerShell, även om det finns stöd för anpassning. Ett fall där du kanske behöver ditt eget program är när du har ett krav för ett GUI-gränssnitt som är större än gränssnittet tillhandahålls av standard värdprogrammet. Vill du kanske också ett anpassat program när du baserar din GUI på kommandoraden. Mer information finns i [så här skapar du en Windows PowerShell-Värdapp](/powershell/developer/hosting/writing-a-windows-powershell-host-application).
 
 ### <a name="windows-powershell-runtime"></a>Windows PowerShell-Runtime
 
-Windows PowerShell-runtime är motorn för körning som implementerar kommandot bearbetning. Den innehåller de klasser som tillhandahåller gränssnittet mellan program och Windows PowerShell-kommandon och leverantörer. Windows PowerShell-runtime implementeras som ett körningsutrymme-objekt för den aktuella Windows PowerShell-sessionen, vilket är den driftsmiljö som gränssnittet och kommandon kör. Information, se [hur Windows PowerShell fungerar](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Windows PowerShell-runtime är motorn för körning som implementerar kommandot bearbetning. Den innehåller de klasser som tillhandahåller gränssnittet mellan program och Windows PowerShell-kommandon och leverantörer. Windows PowerShell-runtime implementeras som ett körningsutrymme-objekt för den aktuella Windows PowerShell-sessionen, vilket är den driftsmiljö som gränssnittet och kommandon kör. Information, se [hur Windows PowerShell fungerar](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="windows-powershell-language"></a>Windows PowerShell-språket
 
@@ -81,7 +81,7 @@ Windows PowerShell ger åtkomst till en mängd olika objekt, till exempel .NET o
 
   Med ETS kan du skapa nya flexibla ”typer” som är kompatibla med Windows PowerShell-språket. Om du är en .NET-utvecklare kan du kan arbeta med objekt med samma semantik som Windows PowerShell-språket gäller för skript, till exempel, för att avgöra om ett objekt utvärderas till `true`.
 
-  Läs mer om ETS och hur Windows PowerShell använder objekt [Windows PowerShell-objektet koncept](http://msdn.microsoft.com/en-us/12700631-be23-4e6b-9bf0-81ea0d166353).
+  Läs mer om ETS och hur Windows PowerShell använder objekt [Windows PowerShell-objektet koncept](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6).
 
 ## <a name="programming-for-windows-powershell"></a>Programmera för Windows PowerShell
 
@@ -100,7 +100,7 @@ Mer information om hur du börjar använda Windows PowerShell-gränssnittet finn
 |Ämne|Definition|
 |-----------|----------------|
 |[Så här skapar du en Windows PowerShell-providern](./how-to-create-a-windows-powershell-provider.md)|Det här avsnittet beskrivs hur du skapar en Windows PowerShell-providern för Windows PowerShell.|
-|[Så här skapar du ett program för Windows PowerShell-värd](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|Det här avsnittet beskrivs hur du skriver ett program som manipulerar ett körningsutrymme och hur du skriver ett program som implementerar sin egen anpassade värden.|
+|[Så här skapar du ett program för Windows PowerShell-värd](/powershell/developer/hosting/writing-a-windows-powershell-host-application)|Det här avsnittet beskrivs hur du skriver ett program som manipulerar ett körningsutrymme och hur du skriver ett program som implementerar sin egen anpassade värden.|
 |[Så här skapar du en Windows PowerShell snapin-modul](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Det här avsnittet beskrivs hur du skapar en snapin-modul som används för att registrera alla cmdletar och providers i en sammansättning och hur du skapar en anpassad snapin-modul.|
 |[Så här skapar du ett konsol-gränssnitt](./how-to-create-a-console-shell.md)|Det här avsnittet beskriver hur du skapar ett konsol-gränssnitt som inte kan utökas.|
 |[Windows PowerShell-koncept](./windows-powershell-concepts.md)|Det här avsnittet innehåller begreppsrelaterad information som hjälper dig förstå Windows PowerShell med hänsyn till utvecklare.|

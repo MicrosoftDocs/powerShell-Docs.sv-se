@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
 caps.latest.revision: 5
-ms.openlocfilehash: bf0a73267b3cad1f50d983ebed53318ec98180e0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 48ab9102e8f1b17b3b533cc3b0aa1dacef0e2076
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080857"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734824"
 ---
 # <a name="writing-a-container-provider"></a>Skriva en containerprovider
 
@@ -25,7 +25,7 @@ Mer information om Windows PowerShell-providrar finns i [Windows PowerShell-prov
 
 ## <a name="implementing-container-methods"></a>Implementera metoder för behållare
 
-Den [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) klassen implementerar metoder som stöd för behållare, och skapa, kopiera och ta bort objekt. En fullständig lista över dessa metoder, se [ContainerCmdletProvider metoder](http://msdn.microsoft.com/library/system.management.automation.provider.containercmdletprovider_methods\(v=vs.85\).aspx).
+Den [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) klassen implementerar metoder som stöd för behållare, och skapa, kopiera och ta bort objekt. En fullständig lista över dessa metoder, se [System.Management.Automation.Provider.ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider?view=pscore-6.2.0#methods).
 
 > [!NOTE]
 > Det här avsnittet bygger på informationen i [Windows PowerShell-providern Snabbstart](./windows-powershell-provider-quickstart.md). Det här avsnittet beskriver inte grunderna för hur du ställer in ett provider-projekt eller hur du implementerar metoderna som ärvts från den [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) klass som skapar och tar bort enheter. Det här avsnittet beskriver också inte hur du implementerar metoderna som exponeras av den [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) klass. Ett exempel som visar hur du implementerar artikel-cmdletar finns i [skriva en provider med objektet](./writing-an-item-provider.md).
@@ -44,7 +44,7 @@ Deklarera providern kan härledas från den [System.Management.Automation.Provid
 
 ### <a name="implementing-getchilditems"></a>Implementera GetChildItems
 
-PowerShell-motorn anrop den [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) metod när en användare anropar den [Microsoft.PowerShell.Commands.Get-Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem) cmdlet. Den här metoden hämtar de objekt som är underordnade objektet på den angivna sökvägen.
+PowerShell-motorn anrop den [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) metod när en användare anropar den [Microsoft.PowerShell.Commands.GetChildItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.Getchilditemcommand) cmdlet. Den här metoden hämtar de objekt som är underordnade objektet på den angivna sökvägen.
 
 I Access database exempel beteendet för den [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) metod beror på vilken typ av det angivna objektet. Om objektet är enheten, sedan de underordnade objekten finns tabeller och metoden returnerar en uppsättning tabeller från databasen. Om det angivna objektet är en tabell, är underordnade raderna i tabellen. Om objektet är en rad, sedan den har inga underordnade och metoden returnerar endast den raden. Alla underordnade objekt skickas tillbaka till PowerShell-motorn genom att den [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) metod.
 
@@ -155,7 +155,7 @@ protected override void GetChildNames(string path,
 
 ### <a name="implementing-newitem"></a>Implementera NewItem
 
-Den [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) metoden skapar ett nytt objekt av den angivna typen i den angivna sökvägen. PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.PowerShell.Commands.New-Item](/dotnet/api/Microsoft.PowerShell.Commands.New-Item) cmdlet.
+Den [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) metoden skapar ett nytt objekt av den angivna typen i den angivna sökvägen. PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.PowerShell.Commands.NewItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.newitemcommand) cmdlet.
 
 I det här exemplet implementerar metoden logik för att fastställa att sökvägen och skriva matchar. Det vill säga endast en tabell kan skapas direkt under enhet (databasen) och bara en rad kan skapas under en tabell. Om den angivna sökvägen och typen av konfigurationsobjekt inte matchar på så vis genereras metoden ett undantag.
 
@@ -333,7 +333,7 @@ protected override void NewItem(string path, string type,
 
 ### <a name="implementing-copyitem"></a>Implementera CopyItem
 
-Den [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) kopierar det angivna objektet till den angivna sökvägen. PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.PowerShell.Commands.Copy-Item](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item) cmdlet. Den här metoden kan också vara rekursiv, kopierar alla underordnade objekt förutom själva objektet.
+Den [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) kopierar det angivna objektet till den angivna sökvägen. PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.PowerShell.Commands.CopyItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.copyitemcommand) cmdlet. Den här metoden kan också vara rekursiv, kopierar alla underordnade objekt förutom själva objektet.
 
 På samma sätt till den [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) metoden, den här metoden utför logik för att se till att det angivna objektet är av rätt typ. för sökvägen till som den ska kopieras. Om målsökvägen är en tabell, till exempel vara objektet som ska kopieras en rad.
 
@@ -466,7 +466,7 @@ protected override void CopyItem(string path, string copyPath, bool recurse)
 
 ### <a name="implementing-removeitem"></a>Implementera RemoveItem
 
-Den [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) metoden tar bort objektet på den angivna sökvägen. PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.PowerShell.Commands.Remove-Item](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item) cmdlet.
+Den [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) metoden tar bort objektet på den angivna sökvägen. PowerShell-motorn anropar den här metoden när en användare anropar den [Microsoft.PowerShell.Commands.RemoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.removeitemcommand) cmdlet.
 
 ```csharp
 protected override void RemoveItem(string path, bool recurse)

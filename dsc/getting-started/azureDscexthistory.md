@@ -3,12 +3,12 @@ description: Läs mer om versionshistoriken för tillägget Desired State Config
 ms.date: 06/21/2018
 keywords: dsc, powershell, azure, extension
 title: Versionshistorik för Azure DSC-tillägg
-ms.openlocfilehash: 2c076e3beccc15e99af2327820916d7a4d28da68
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6d821e53e9206d99425e8c83f6d90986c7c28b63
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079752"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734656"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Versionshistorik för Azure Desired State Configuration-tillägg
 
@@ -164,7 +164,7 @@ Den här artikeln innehåller information om varje version av VM-tillägget Azur
 - **Miljö:** Azure
 - **Anmärkning:** Den här versionen använder DSC som ingår i Windows Server 2016 Technical Preview; för andra Windows-operativsystem installeras den [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installera WMF kräver en omstart).
 - **Nya funktioner:**
-  - Förhandsversionen av stödet för WMF 5.1. När det publiceras för första gången, den här versionen har en valfri uppgradering och var du tvungen att ange Wmfversion = ' 5.1PP' i Resource Manager-mallar för att installera WMF 5.1-förhandsversion. Wmfversion = ”senaste” fortfarande installerar den [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). Läs mer i förhandsversionen av WMF 5.1 [den här bloggen]( https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/).
+  - Förhandsversionen av stödet för WMF 5.1. När det publiceras för första gången, den här versionen har en valfri uppgradering och var du tvungen att ange Wmfversion = ' 5.1PP' i Resource Manager-mallar för att installera WMF 5.1-förhandsversion. Wmfversion = ”senaste” fortfarande installerar den [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). Läs mer i förhandsversionen av WMF 5.1 [den här bloggen](https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/).
   - Mindre korrigeringar och förbättringar har lagts till.
 
 ### <a name="version--219"></a>Version  2.19

@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
 title: Metodtips för hämtningsservern
-ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a3c4ca039b1e061a9246848bef6aeecebcd89011
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079208"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727190"
 ---
 # <a name="pull-server-best-practices"></a>Metodtips för hämtningsservern
 
 Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> Pull-servern (Windows-funktionen *DSC-tjänst*) är en stöds komponent i Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Rekommenderar vi att du påbörjar övergången hanterade klienter [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver Pull-servern på Windows Server) eller en av community-lösningar visas [här](pullserver.md#community-solutions-for-pull-service).
+> Pull-servern (Windows-funktionen *DSC-tjänst*) är en stöds komponent i Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Rekommenderar vi att du påbörjar övergången hanterade klienter [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver Pull-servern på Windows Server) eller en av community-lösningar visas [här](/powershell/dsc/pull-server/pullserver#community-solutions-for-pull-service).
 
 Sammanfattning: Det här dokumentet är avsett att inkludera processen och utökningsbarhet för att hjälpa teknikerna som förbereder för lösningen. Information bör ge bästa praxis som identifieras av kunder och sedan godkänt produktteam för att kontrollera rekommendationer är framtida riktar sig mot och anses vara stabil.
 
@@ -50,9 +50,9 @@ Windows PowerShell tillhandahåller en uppsättning språktillägg för Desired 
 En pull-server är en centraliserad tjänst för att lagra konfigurationer som kommer att vara tillgänglig för målnoder.
 
 Pull-serverrollen kan distribueras som en Web Server-instans eller en SMB-filresurs. Funktionen web server innehåller ett OData-gränssnitt och att inkludera välja funktioner för målnoder att rapportera tillbaka en bekräftelse av lyckats eller misslyckats eftersom konfigurationer tillämpas. Den här funktionen är användbar i miljöer där det finns ett stort antal målnoder.
-När du har konfigurerat en målnod (kallas även en klient) för att peka på hämtningsservern den senaste konfigurationen data och eventuella nödvändiga skript hämtas och tillämpas. Detta kan inträffa som en enstaka distribution eller som ett nytt förekommer jobb som den gör också hämtningsservern en viktig tillgång för att hantera ändring i stor skala. Mer information finns i [Windows PowerShell Desired State Configuration hämta servrar](/powershell/dsc/pullServer) och
+När du har konfigurerat en målnod (kallas även en klient) för att peka på hämtningsservern den senaste konfigurationen data och eventuella nödvändiga skript hämtas och tillämpas. Detta kan inträffa som en enstaka distribution eller som ett nytt förekommer jobb som den gör också hämtningsservern en viktig tillgång för att hantera ändring i stor skala. Mer information finns i [Windows PowerShell Desired State Configuration hämta servrar](/powershell/dsc/pullServer/pullserver) och
 
-[Skicka och hämta Configuration lägen](/powershell/dsc/pullServer).
+[Skicka och hämta Configuration lägen](/powershell/dsc/pullServer/pullserver).
 
 ## <a name="configuration-planning"></a>Planera konfiguration
 

@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
-ms.openlocfilehash: c45e802605bf0b4fd84a8847787bcc937b7f417b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19de0fd33cd764c161366c8161adf46c2247482b
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081452"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735014"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Runspace01 (VB.NET) – kodexempel
 
-Här följer kodexempel för körningsutrymmet som beskrivs i [och skapa en konsolen programmet som kör ett kommando som angetts](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e). Om du vill göra detta måste programmet anropar ett körningsutrymme och anropar sedan ett kommando. (Observera att det här programmet inte anger konfigurationsinformation för körningsutrymme eller gör det uttryckligen skapa en pipeline.) Kommandot som anropas är den `Get-Process` cmdlet.
+Här följer kodexempel för körningsutrymmet som beskrivs i [och skapa en konsolen programmet som kör ett kommando som angetts](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). Om du vill göra detta måste programmet anropar ett körningsutrymme och anropar sedan ett kommando. (Observera att det här programmet inte anger konfigurationsinformation för körningsutrymme eller gör det uttryckligen skapa en pipeline.) Kommandot som anropas är den `Get-Process` cmdlet.
 
 ## <a name="code-sample"></a>Kodexempel
 

@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
-title: DisableDebugConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
-ms.openlocfilehash: ec5a401de4cb93f302f8572c0408e3f32d8876ad
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: DisableDebugConfiguration-metoden
+ms.openlocfilehash: e3eab98c734b3fd1593ceb2b5d4b40fa69a3bf97
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078902"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727170"
 ---
-# <a name="disabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>DisableDebugConfiguration-metoden för MSFT_DSCLocalConfigurationManager-klassen
+# <a name="disabledebugconfiguration-method"></a>DisableDebugConfiguration-metoden
 
 Inaktiverar felsökning av DSC-resurs.
 

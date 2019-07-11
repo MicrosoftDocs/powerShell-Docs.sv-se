@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguration, installation
-title: ResourceTest-metoden för MSFT_DSCLocalConfigurationManager-klassen
-ms.openlocfilehash: e7645b0c6b93b96cb01f72c1c92d468f7642ea13
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: ResourceTest-metoden
+ms.openlocfilehash: ff06fd645a94055e79aa0f8d20f2f06e16483720
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078562"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727074"
 ---
-# <a name="resourcetest-method-of-the-msftdsclocalconfigurationmanager-class"></a>ResourceTest-metoden för MSFT_DSCLocalConfigurationManager-klassen
+# <a name="resourcetest-method"></a>ResourceTest-metoden
 
 Direkt anropar den **Test** -metoden för en DSC-resurs.
 
