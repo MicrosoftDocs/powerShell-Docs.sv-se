@@ -2,16 +2,16 @@
 title: Nyheter i PowerShell Core 6.0
 description: Nya funktioner och ändringar som introducerades i PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1218a38398f4d86829cf2b4ba6a3a882675eaab
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62059023"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843923"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Nyheter i PowerShell Core 6.0
 
-[PowerShell Core 6.0] [ github] är en ny version av PowerShell som är plattformsoberoende (Windows, macOS och Linux), öppen källkod och byggd för heterogena miljöer och hybridmoln.
+[PowerShell Core 6.0][github] är en ny version av PowerShell som är plattformsoberoende (Windows, macOS och Linux), öppen källkod och byggd för heterogena miljöer och hybridmoln.
 
 ## <a name="moved-from-net-framework-to-net-core"></a>Flyttas från .NET Framework till .NET Core
 
@@ -139,7 +139,7 @@ De flesta av de moduler som levereras som en del av Windows (till exempel `DnsCl
 PowerShell-teamet arbetar med dessa grupper och team att validera och porten deras befintliga moduler PowerShell Core.
 Med .NET Standard och [CDXML][], många av dessa traditionella Windows PowerShell-moduler verkar fungera i PowerShell Core, men de har inte formellt verifierats och formellt stöds inte.
 
-Genom att installera den [ `WindowsPSModulePath` ] [ windowspsmodulepath] modulen, kan du använda Windows PowerShell-moduler genom att lägga till Windows PowerShell `PSModulePath` till PowerShell Core `PSModulePath`.
+Genom att installera den [ `WindowsPSModulePath` ][windowspsmodulepath] modulen, kan du använda Windows PowerShell-moduler genom att lägga till Windows PowerShell `PSModulePath` till PowerShell Core `PSModulePath`.
 
 Installera först den `WindowsPSModulePath` modul från PowerShell-galleriet:
 
@@ -295,9 +295,10 @@ Mer information om PowerShell-jobb finns i [about_Jobs](https://msdn.microsoft.c
 
 ### <a name="csv-cmdlets"></a>CSV-cmdletar
 
+- `Import-Csv` Nu har stöd för utökat loggfilsformat för W3C (#2482) (tack [ @iSazonov ](https://github.com/iSazonov)!)
 - Lägg till `PSTypeName` stöd för `Import-Csv` och `ConvertFrom-Csv`. (#5389) (Tack [ @markekraus ](https://github.com/markekraus)!)
 - Kontrollera `Import-Csv` stöder `CR`, `LF`, och `CRLF` som rad avgränsare. (#5363) (Tack [ @iSazonov ](https://github.com/iSazonov)!)
-- Kontrollera `-NoTypeInformation` standard på `Export-Csv` och `ConvertTo-Csv`. (#5164) (Tack [ @markekraus ](https://github.com/markekraus))
+- Kontrollera `-NoTypeInformation` standard på `Export-Csv` och `ConvertTo-Csv`. (#5164) (Tack [ @markekraus ](https://github.com/markekraus)!)
 
 ### <a name="service-cmdlets"></a>Cmdlet: ar
 

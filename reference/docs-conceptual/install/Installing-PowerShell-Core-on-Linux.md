@@ -2,16 +2,18 @@
 title: Installera PowerShell Core i Linux
 description: Information om att installera PowerShell Core på olika Linux-distributioner
 ms.date: 08/06/2018
-ms.openlocfilehash: 0a7c9549c37222bf599e4bdb9e36c91288191bb3
-ms.sourcegitcommit: 00cf9a99972ce40db7c25b9a3fc6152dec6bddb6
+ms.openlocfilehash: 32d6c0e718ca798af2f6a5d796c3ca362e7befd9
+ms.sourcegitcommit: 13e170e8bff29d3d5f854c874de88f53c5e5ef20
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64530629"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829427"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Installera PowerShell Core i Linux
 
-Stöder [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [ openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], och [Båge Linux][arch].
+Stöder [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810],  [Debian 9][deb9],
+[CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse],
+[Fedora 27][fedora], [Fedora 28] [fedora], och [Arch Linux][arch].
 
 För Linux-distributioner som inte stöds officiellt, kan du försöka använda den [PowerShell Fäst paketet][snap].
 Du kan också prova att distribuera PowerShell binärfiler direkt med hjälp av Linux [ `tar.gz` Arkiv][tar], men du måste ställa in nödvändiga beroenden baserat på Operativsystemet i separata steg.
@@ -199,7 +201,7 @@ sudo apt-get remove powershell
 > [!NOTE]
 > Eftersom 18.10 är en [tillfälliga versionen](https://www.ubuntu.com/about/release-cycle), det är bara [community stöds](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
 
-Installera på 18.10 stöds via `snapd`. Se [Fäst paketet] [ snap] fullständiga instruktioner;
+Installera på 18.10 stöds via `snapd`. Se [Fäst paketet][snap] fullständiga instruktioner;
 
 ## <a name="debian-8"></a>Debian 8
 
@@ -588,8 +590,18 @@ Ladda ned [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) oc
 ### <a name="installation---raspbian"></a>Installation - Raspbian
 
 ```sh
-# Install prerequisites
-sudo apt-get install libunwind8
+###################################
+# Prerequisites
+
+# Update package lists
+sudo apt-get update
+
+# Install libunwind8 and libssl1.0
+# Regex is used to ensure that we do not install libssl1.0-dev, as it is a variant that is not required
+sudo apt-get install '^libssl1.0.[0-9]$' libunwind8 -y
+
+###################################
+# Download and extract PowerShell
 
 # Grab the latest tar.gz
 wget https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-linux-arm32.tar.gz
@@ -647,7 +659,7 @@ Följande diagram visar de beroenden i .NET Core 2.0 som officiellt stöds i oli
 | Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-bibliotek, libicu, kompatibilitets-openssl10 |
 
 Du måste installera de nödvändiga beroendena för målets OS i separata steg för att distribuera PowerShell-binärfiler i Linux-distributioner som inte stöds officiellt.
-Till exempel vår [Amazon Linux dockerfile] [ amazon-dockerfile] installerar beroenden först och sedan extraherar Linux `tar.gz` Arkiv.
+Till exempel vår [Amazon Linux dockerfile][amazon-dockerfile] installerar beroenden först och sedan extraherar Linux `tar.gz` Arkiv.
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
@@ -690,7 +702,7 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 Profilerna respekterar PowerShell-per-host-konfiguration, så värdspecifika standardprofiler finns på `Microsoft.PowerShell_profile.ps1` på samma platser.
 
-PowerShell respekterar de [XDG Base Directory specifikationen] [ xdg-bds] i Linux.
+PowerShell respekterar de [XDG Base Directory specifikationen][xdg-bds] i Linux.
 
 [Versioner]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

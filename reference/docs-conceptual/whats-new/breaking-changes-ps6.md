@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, core
 title: Större ändringar för PowerShell 6.0
-ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085940"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843947"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Större ändringar för PowerShell 6.0
 
@@ -15,7 +15,7 @@ ms.locfileid: "62085940"
 
 ### <a name="powershell-workflow"></a>PowerShell-arbetsflöde
 
-[PowerShell-arbetsflöde] [ workflow] är en funktion i Windows PowerShell som bygger på [Windows Workflow Foundation (WF)] [ workflow-foundation] som gör möljligt robust runbooks för tidskrävande eller parallelliserad uppgifter.
+[PowerShell-arbetsflöde][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation] som gör det möjligt att skapa robusta runbooks för tidskrävande eller parallelliserad uppgifter.
 
 På grund av bristen på stöd för Windows Workflow Foundation i .NET Core, vi kommer inte att fortsätta att stödja PowerShell-arbetsflöden i PowerShell Core.
 
@@ -26,7 +26,7 @@ I framtiden kommer vill vi aktivera inbyggda parallellitet/samtidighet i PowerSh
 
 ### <a name="custom-snap-ins"></a>Anpassade snapin-moduler
 
-[PowerShell-snapin-moduler] [ snapin] är en föregångare till PowerShell-moduler som inte har införandet i PowerShell-communityn.
+[PowerShell-snapin-moduler][snapin] är en föregångare till PowerShell-moduler som inte har införandet i PowerShell-communityn.
 
 På grund av komplexiteten med stöd för snapin-moduler och deras bristande användning i communityn, stöder vi inte längre anpassade snapin-moduler i PowerShell Core.
 
@@ -113,9 +113,13 @@ Tidigare, om `-Verbose` eller `-Debug` angavs, den overrode beteendet för `$Err
 
 När ett API returnerar bara `null`, Invoke-RestMethod serialisering av detta som strängen `"null"` i stället för `$null`. Den här ändringen åtgärdar logiken i `Invoke-RestMethod` att korrekt serialisera ett giltigt enskilt value JSON `null` literal som `$null`.
 
-### <a name="remove--computername-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Ta bort `-ComputerName` från `*-Computer` cmdletar [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Ta bort `-Protocol` från `*-Computer` cmdletar [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
-På grund av problem med RPC-fjärrkommunikation i CoreFX (särskilt på icke-Windows-plattformar) och att säkerställa en konsekvent fjärrkommunikationsupplevelse i PowerShell, den `-ComputerName` parametern har tagits bort från den `\*-Computer` cmdletar. Använd `Invoke-Command` istället för som ett sätt att köra cmdlet: ar via en fjärranslutning.
+På grund av problem med RPC-fjärrkommunikation i CoreFX (särskilt på icke-Windows-plattformar) och att säkerställa en konsekvent fjärrkommunikationsupplevelse i PowerShell, den `-Protocol` parametern har tagits bort från den `\*-Computer` cmdletar. Det stöds inte längre DCOM för fjärrkommunikation. Följande cmdletar har endast stöd för WSMAN-fjärrkommunikation:
+
+- Rename-Computer
+- Starta om datorn
+- Stop-Computer
 
 ### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Ta bort `-ComputerName` från `*-Service` cmdletar [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
@@ -159,7 +163,7 @@ Följande funktioner har tagits bort eftersom de inte stöds i PowerShell Core o
 
 ### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>Ta bort `RunspaceConfiguration` stöder [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
 
-Tidigare, när du skapar ett PowerShell-körningsutrymme programmässigt med hjälp av API du kan använda en äldre [ `RunspaceConfiguration` ] [ runspaceconfig] eller det nyare [ `InitialSessionState` ] [ iss]. Den här ändringen inte längre stöd för `RunspaceConfiguration` och stöder endast `InitialSessionState`.
+Tidigare, när du skapar ett PowerShell-körningsutrymme programmässigt med hjälp av API du kan använda en äldre [ `RunspaceConfiguration` ][runspaceconfig] or the newer [`InitialSessionState`][iss]. Den här ändringen inte längre stöd för `RunspaceConfiguration` och stöder endast `InitialSessionState`.
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
