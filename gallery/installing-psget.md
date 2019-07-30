@@ -1,65 +1,65 @@
 ---
 ms.date: 06/12/2017
 contributor: manikb
-keywords: galleriet, powershell, cmdlet, psget
+keywords: Galleri, PowerShell, cmdlet, psget
 title: Installera PowerShellGet
-ms.openlocfilehash: 23a53a9117c9f6a7ad157b635cd7ff4b3b3444c5
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2d3ba8c4d4d4c7ee023c7e6a948a29d8f47ea242
+ms.sourcegitcommit: 8d47eb41445ffaf10fcd68874e397c9a1703d898
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62075281"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68601413"
 ---
-# <a name="installing-powershellget"></a><span data-ttu-id="50acc-103">Installera PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="50acc-103">Installing PowerShellGet</span></span>
+# <a name="installing-powershellget"></a><span data-ttu-id="0ecf2-103">Installera PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="0ecf2-103">Installing PowerShellGet</span></span>
 
-## <a name="powershellget-is-an-in-box-module-in-the-following-releases"></a><span data-ttu-id="50acc-104">PowerShellGet är en nyckelfärdig modul i följande versioner</span><span class="sxs-lookup"><span data-stu-id="50acc-104">PowerShellGet is an in-box module in the following releases</span></span>
+## <a name="powershellget-is-an-in-box-module-in-the-following-releases"></a><span data-ttu-id="0ecf2-104">PowerShellGet är en modul i box i följande versioner</span><span class="sxs-lookup"><span data-stu-id="0ecf2-104">PowerShellGet is an in-box module in the following releases</span></span>
 
-- <span data-ttu-id="50acc-105">[Windows 10](https://www.microsoft.com/windows) eller senare</span><span class="sxs-lookup"><span data-stu-id="50acc-105">[Windows 10](https://www.microsoft.com/windows) or newer</span></span>
-- <span data-ttu-id="50acc-106">[Windows Server 2016](/windows-server/windows-server) eller senare</span><span class="sxs-lookup"><span data-stu-id="50acc-106">[Windows Server 2016](/windows-server/windows-server) or newer</span></span>
-- <span data-ttu-id="50acc-107">[Windows Management Framework (WMF) 5.0](https://www.microsoft.com/download/details.aspx?id=50395) eller senare</span><span class="sxs-lookup"><span data-stu-id="50acc-107">[Windows Management Framework (WMF) 5.0](https://www.microsoft.com/download/details.aspx?id=50395) or newer</span></span>
-- [<span data-ttu-id="50acc-108">PowerShell 6</span><span class="sxs-lookup"><span data-stu-id="50acc-108">PowerShell 6</span></span>](https://github.com/PowerShell/PowerShell/releases)
+- <span data-ttu-id="0ecf2-105">[Windows 10](https://www.microsoft.com/windows) eller senare</span><span class="sxs-lookup"><span data-stu-id="0ecf2-105">[Windows 10](https://www.microsoft.com/windows) or newer</span></span>
+- <span data-ttu-id="0ecf2-106">[Windows Server 2016](/windows-server/windows-server) eller senare</span><span class="sxs-lookup"><span data-stu-id="0ecf2-106">[Windows Server 2016](/windows-server/windows-server) or newer</span></span>
+- <span data-ttu-id="0ecf2-107">[Windows Management Framework (WMF) 5,0](https://www.microsoft.com/download/details.aspx?id=50395) eller senare</span><span class="sxs-lookup"><span data-stu-id="0ecf2-107">[Windows Management Framework (WMF) 5.0](https://www.microsoft.com/download/details.aspx?id=50395) or newer</span></span>
+- [<span data-ttu-id="0ecf2-108">PowerShell 6</span><span class="sxs-lookup"><span data-stu-id="0ecf2-108">PowerShell 6</span></span>](https://github.com/PowerShell/PowerShell/releases)
 
-## <a name="get-powershellget-module-for-powershell-versions-30-and-40"></a><span data-ttu-id="50acc-109">Hämta PowerShellGet-modul för PowerShell version 3.0 och 4.0</span><span class="sxs-lookup"><span data-stu-id="50acc-109">Get PowerShellGet module for PowerShell versions 3.0 and 4.0</span></span>
+## <a name="get-powershellget-module-for-powershell-versions-30-and-40"></a><span data-ttu-id="0ecf2-109">Hämta PowerShellGet-modul för PowerShell-versionerna 3,0 och 4,0</span><span class="sxs-lookup"><span data-stu-id="0ecf2-109">Get PowerShellGet module for PowerShell versions 3.0 and 4.0</span></span>
 
-- [<span data-ttu-id="50acc-110">PackageManagement MSI</span><span class="sxs-lookup"><span data-stu-id="50acc-110">PackageManagement MSI</span></span>](https://www.microsoft.com/download/details.aspx?id=51451)
+- [<span data-ttu-id="0ecf2-110">PackageManagement-MSI</span><span class="sxs-lookup"><span data-stu-id="0ecf2-110">PackageManagement MSI</span></span>](https://www.microsoft.com/download/details.aspx?id=51451)
 
-## <a name="get-the-latest-version-from-powershell-gallery"></a><span data-ttu-id="50acc-111">Hämta den senaste versionen från PowerShell-galleriet</span><span class="sxs-lookup"><span data-stu-id="50acc-111">Get the latest version from PowerShell Gallery</span></span>
+## <a name="get-the-latest-version-from-powershell-gallery"></a><span data-ttu-id="0ecf2-111">Hämta den senaste versionen från PowerShell-galleriet</span><span class="sxs-lookup"><span data-stu-id="0ecf2-111">Get the latest version from PowerShell Gallery</span></span>
 
-- <span data-ttu-id="50acc-112">Innan du uppdaterar PowerShellGet, bör du alltid installera den senaste Nuget-providern.</span><span class="sxs-lookup"><span data-stu-id="50acc-112">Before updating PowerShellGet, you should always install the latest Nuget provider.</span></span> <span data-ttu-id="50acc-113">Om du vill göra det, kör du följande i en upphöjd PowerShell-session.</span><span class="sxs-lookup"><span data-stu-id="50acc-113">To do that, run the following in an elevated PowerShell session.</span></span>
+- <span data-ttu-id="0ecf2-112">Innan du uppdaterar PowerShellGet bör du alltid installera den senaste NuGet-providern.</span><span class="sxs-lookup"><span data-stu-id="0ecf2-112">Before updating PowerShellGet, you should always install the latest Nuget provider.</span></span> <span data-ttu-id="0ecf2-113">Det gör du genom att köra följande i en upphöjd PowerShell-session.</span><span class="sxs-lookup"><span data-stu-id="0ecf2-113">To do that, run the following in an elevated PowerShell session.</span></span>
 
   ```powershell
-  Install-PackageProvider Nuget –Force
+  Install-PackageProvider Nuget -Force
   Exit
   ```
 
-### <a name="for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget"></a><span data-ttu-id="50acc-114">Du kan installera den senaste PowerShellGet för system med PowerShell 5.0 (eller senare)</span><span class="sxs-lookup"><span data-stu-id="50acc-114">For systems with PowerShell 5.0 (or newer) you can install the latest PowerShellGet</span></span>
+### <a name="for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget"></a><span data-ttu-id="0ecf2-114">För system med PowerShell 5,0 (eller senare) kan du installera den senaste PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="0ecf2-114">For systems with PowerShell 5.0 (or newer) you can install the latest PowerShellGet</span></span>
 
-- <span data-ttu-id="50acc-115">Om du vill göra detta på Windows 10, kör Windows Server 2016, alla system med WMF 5.0 eller 5.1 installerad eller ett system med PowerShell 6, du följande kommandon från en upphöjd PowerShell-session.</span><span class="sxs-lookup"><span data-stu-id="50acc-115">To do this on Windows 10, Windows Server 2016, any system with WMF 5.0 or 5.1 installed, or any system with PowerShell 6, run the following commands from an elevated PowerShell session.</span></span>
+- <span data-ttu-id="0ecf2-115">Om du vill göra detta på Windows 10, Windows Server 2016, alla system med WMF 5,0 eller 5,1 installerade, eller ett system med PowerShell 6, kör du följande kommandon från en upphöjd PowerShell-session.</span><span class="sxs-lookup"><span data-stu-id="0ecf2-115">To do this on Windows 10, Windows Server 2016, any system with WMF 5.0 or 5.1 installed, or any system with PowerShell 6, run the following commands from an elevated PowerShell session.</span></span>
 
   ```powershell
-  Install-Module –Name PowerShellGet –Force
+  Install-Module -Name PowerShellGet -Force
   Exit
   ```
 
-- <span data-ttu-id="50acc-116">Använd `Update-Module` att hämta nyare versioner.</span><span class="sxs-lookup"><span data-stu-id="50acc-116">Use `Update-Module` to get newer versions.</span></span>
+- <span data-ttu-id="0ecf2-116">Använd `Update-Module` för att hämta nyare versioner.</span><span class="sxs-lookup"><span data-stu-id="0ecf2-116">Use `Update-Module` to get newer versions.</span></span>
 
   ```powershell
   Update-Module -Name PowerShellGet
   Exit
   ```
 
-### <a name="for-systems-running-powershell-3-or-powershell-4-that-have-installed-the-packagemanagement-msihttpswwwmicrosoftcomdownloaddetailsaspxid51451"></a><span data-ttu-id="50acc-117">För system som kör PowerShell 3 eller PowerShell 4, som har installerat den [PackageManagement MSI](https://www.microsoft.com/download/details.aspx?id=51451)</span><span class="sxs-lookup"><span data-stu-id="50acc-117">For systems running PowerShell 3 or PowerShell 4, that have installed the [PackageManagement MSI](https://www.microsoft.com/download/details.aspx?id=51451)</span></span>
+### <a name="for-systems-running-powershell-3-or-powershell-4-that-have-installed-the-packagemanagement-msihttpswwwmicrosoftcomdownloaddetailsaspxid51451"></a><span data-ttu-id="0ecf2-117">För system som kör PowerShell 3 eller PowerShell 4, som har installerat [PACKAGEMANAGEMENT MSI](https://www.microsoft.com/download/details.aspx?id=51451)</span><span class="sxs-lookup"><span data-stu-id="0ecf2-117">For systems running PowerShell 3 or PowerShell 4, that have installed the [PackageManagement MSI](https://www.microsoft.com/download/details.aspx?id=51451)</span></span>
 
-- <span data-ttu-id="50acc-118">Använda PowerShellGet cmdleten från en upphöjd PowerShell-session nedan för att spara modulerna till en lokal katalog</span><span class="sxs-lookup"><span data-stu-id="50acc-118">Use below PowerShellGet cmdlet from an elevated PowerShell session to save the modules to a local directory</span></span>
+- <span data-ttu-id="0ecf2-118">Använd nedanstående PowerShellGet-cmdlet från en upphöjd PowerShell-session för att spara modulerna i en lokal katalog</span><span class="sxs-lookup"><span data-stu-id="0ecf2-118">Use below PowerShellGet cmdlet from an elevated PowerShell session to save the modules to a local directory</span></span>
 
   ```powershell
   Save-Module PowerShellGet -Path C:\LocalFolder
   Exit
   ```
 
-- <span data-ttu-id="50acc-119">Se till att PowerShellGet och PackageManagement-moduler inte har lästs in i andra processer.</span><span class="sxs-lookup"><span data-stu-id="50acc-119">Ensure that PowerShellGet and PackageManagement modules are not loaded in any other processes.</span></span>
-- <span data-ttu-id="50acc-120">Ta bort innehållet i `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` och `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` mappar.</span><span class="sxs-lookup"><span data-stu-id="50acc-120">Delete contents of `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` and  `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` folders.</span></span>
-- <span data-ttu-id="50acc-121">Öppnar PS-konsolen med förhöjd behörighet och kör sedan följande kommandon.</span><span class="sxs-lookup"><span data-stu-id="50acc-121">Re-open the PS Console with elevated permissions then run the following commands.</span></span>
+- <span data-ttu-id="0ecf2-119">Se till att PowerShellGet-och PackageManagement-modulerna inte har lästs in i någon annan process.</span><span class="sxs-lookup"><span data-stu-id="0ecf2-119">Ensure that PowerShellGet and PackageManagement modules are not loaded in any other processes.</span></span>
+- <span data-ttu-id="0ecf2-120">Ta bort innehåll `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` i `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` och mappar.</span><span class="sxs-lookup"><span data-stu-id="0ecf2-120">Delete contents of `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` and  `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` folders.</span></span>
+- <span data-ttu-id="0ecf2-121">Öppna PS-konsolen igen med utökade behörigheter och kör sedan följande kommandon.</span><span class="sxs-lookup"><span data-stu-id="0ecf2-121">Re-open the PS Console with elevated permissions then run the following commands.</span></span>
 
   ```powershell
   Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
