@@ -12,6 +12,8 @@
   items:
     - name: Komma igång med DSC för Linux
       href: getting-started/lnxGettingStarted.md
+    - name: Komma igång med DSC för Windows
+      href: getting-started/winGettingStarted.md
     - name: Komma igång med DSC på Nano
       href: getting-started/nanoDSC.md
     - name: Komma igång med DSC i Azure Automation
