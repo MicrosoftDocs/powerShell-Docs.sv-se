@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+keywords: DSC, PowerShell, konfiguration, installation
 title: Skriva en DSC-resurs med en enskild instans (metodtips)
-ms.openlocfilehash: 9494964b1b13eaa082ad5cbc279b4586bb7211cc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4d9e07c6aaa064f808a03d4252e8d352b82183ec
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076573"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986557"
 ---
-# <a name="writing-a-single-instance-dsc-resource-best-practice"></a><span data-ttu-id="33f9e-103">Skriva en DSC-resurs med en enskild instans (metodtips)</span><span class="sxs-lookup"><span data-stu-id="33f9e-103">Writing a single-instance DSC resource (best practice)</span></span>
+# <a name="writing-a-single-instance-dsc-resource-best-practice"></a><span data-ttu-id="3294a-103">Skriva en DSC-resurs med en enskild instans (metodtips)</span><span class="sxs-lookup"><span data-stu-id="3294a-103">Writing a single-instance DSC resource (best practice)</span></span>
 
-><span data-ttu-id="33f9e-104">**Obs:** Det här avsnittet beskrivs bästa praxis för att definiera en DSC-resurs som tillåter bara en instans i en konfiguration.</span><span class="sxs-lookup"><span data-stu-id="33f9e-104">**Note:** This topic describes a best practice for defining a DSC resource that allows only a single instance in a configuration.</span></span> <span data-ttu-id="33f9e-105">Det finns för närvarande ingen inbyggd DSC-funktion för att göra detta.</span><span class="sxs-lookup"><span data-stu-id="33f9e-105">Currently, there is no built-in DSC feature to do this.</span></span> <span data-ttu-id="33f9e-106">Som kan ändras i framtiden.</span><span class="sxs-lookup"><span data-stu-id="33f9e-106">That might change in the future.</span></span>
+><span data-ttu-id="3294a-104">**Obs:** I det här avsnittet beskrivs bästa praxis för att definiera en DSC-resurs som bara tillåter en enda instans i en konfiguration.</span><span class="sxs-lookup"><span data-stu-id="3294a-104">**Note:** This topic describes a best practice for defining a DSC resource that allows only a single instance in a configuration.</span></span> <span data-ttu-id="3294a-105">Det finns för närvarande ingen inbyggd DSC-funktion för detta.</span><span class="sxs-lookup"><span data-stu-id="3294a-105">Currently, there is no built-in DSC feature to do this.</span></span> <span data-ttu-id="3294a-106">Detta kan ändras i framtiden.</span><span class="sxs-lookup"><span data-stu-id="3294a-106">That might change in the future.</span></span>
 
-<span data-ttu-id="33f9e-107">Det finns situationer där du inte vill att en resurs som ska användas flera gånger i en konfiguration.</span><span class="sxs-lookup"><span data-stu-id="33f9e-107">There are situations where you don't want to allow a resource to be used multiple times in a configuration.</span></span> <span data-ttu-id="33f9e-108">Till exempel i en föregående implementering av den [xTimeZone](https://github.com/PowerShell/xTimeZone) resurs, en konfiguration kan anropa resursen flera gånger, tidszonen till en annan inställning i varje block för resursen:</span><span class="sxs-lookup"><span data-stu-id="33f9e-108">For example, in a previous implementation of the [xTimeZone](https://github.com/PowerShell/xTimeZone) resource, a configuration could call the resource multiple times, setting the time zone to a different setting in each resource block:</span></span>
+<span data-ttu-id="3294a-107">Det finns situationer där du inte vill tillåta att en resurs används flera gånger i en konfiguration.</span><span class="sxs-lookup"><span data-stu-id="3294a-107">There are situations where you don't want to allow a resource to be used multiple times in a configuration.</span></span> <span data-ttu-id="3294a-108">I en tidigare implementering av [xTimeZone](https://github.com/PowerShell/xTimeZone) -resursen kan en konfiguration exempelvis anropa resursen flera gånger, vilket ställer in tids zonen till en annan inställning i varje resurs block:</span><span class="sxs-lookup"><span data-stu-id="3294a-108">For example, in a previous implementation of the [xTimeZone](https://github.com/PowerShell/xTimeZone) resource, a configuration could call the resource multiple times, setting the time zone to a different setting in each resource block:</span></span>
 
 ```powershell
 Configuration SetTimeZone
@@ -46,10 +46,10 @@ Configuration SetTimeZone
 }
 ```
 
-<span data-ttu-id="33f9e-109">Detta beror på det sätt som DSC resursnycklar fungerar.</span><span class="sxs-lookup"><span data-stu-id="33f9e-109">This is because of the way DSC resource keys work.</span></span> <span data-ttu-id="33f9e-110">En resurs måste ha minst en nyckelegenskap.</span><span class="sxs-lookup"><span data-stu-id="33f9e-110">A resource must have at least one key property.</span></span> <span data-ttu-id="33f9e-111">En resursinstans anses vara unika om kombinationen av värdena för alla viktiga egenskaper är unikt.</span><span class="sxs-lookup"><span data-stu-id="33f9e-111">A resource instance is considered unique if the combination of the values of all of its key properties is unique.</span></span> <span data-ttu-id="33f9e-112">I den tidigare implementeringen i [xTimeZone](https://github.com/PowerShell/xTimeZone) resurs hade endast en egenskap--**tidszon**, som måste vara en nyckel.</span><span class="sxs-lookup"><span data-stu-id="33f9e-112">In its previous implementation, the [xTimeZone](https://github.com/PowerShell/xTimeZone) resource had only one property--**TimeZone**, which was required to be a key.</span></span> <span data-ttu-id="33f9e-113">Därför skulle en konfiguration, till exempel det ovanstående kompilera och kör utan varning.</span><span class="sxs-lookup"><span data-stu-id="33f9e-113">Because of this, a configuration such as the one above would compile and run without warning.</span></span> <span data-ttu-id="33f9e-114">Var och en av de **xTimeZone** resource block anses vara unika.</span><span class="sxs-lookup"><span data-stu-id="33f9e-114">Each of the **xTimeZone** resource blocks is considered unique.</span></span> <span data-ttu-id="33f9e-115">Detta innebär att konfigurationen ska tillämpas upprepade gånger på noden och cykling tidszonen fram och tillbaka.</span><span class="sxs-lookup"><span data-stu-id="33f9e-115">This would cause the configuration to be repeatedly applied to the node, cycling the timezone back and forth.</span></span>
+<span data-ttu-id="3294a-109">Detta beror på hur DSC-resursens nycklar fungerar.</span><span class="sxs-lookup"><span data-stu-id="3294a-109">This is because of the way DSC resource keys work.</span></span> <span data-ttu-id="3294a-110">En resurs måste ha minst en nyckel egenskap.</span><span class="sxs-lookup"><span data-stu-id="3294a-110">A resource must have at least one key property.</span></span> <span data-ttu-id="3294a-111">En resurs instans betraktas som unik om kombinationen av värdena för alla nyckel egenskaper är unik.</span><span class="sxs-lookup"><span data-stu-id="3294a-111">A resource instance is considered unique if the combination of the values of all of its key properties is unique.</span></span> <span data-ttu-id="3294a-112">I den tidigare implementeringen hade [xTimeZone](https://github.com/PowerShell/xTimeZone) -resursen bara en egenskap--**timezone**, som krävdes för att vara en nyckel.</span><span class="sxs-lookup"><span data-stu-id="3294a-112">In its previous implementation, the [xTimeZone](https://github.com/PowerShell/xTimeZone) resource had only one property--**TimeZone**, which was required to be a key.</span></span> <span data-ttu-id="3294a-113">Därför skulle en konfiguration som ovan kompileras och köras utan varning.</span><span class="sxs-lookup"><span data-stu-id="3294a-113">Because of this, a configuration such as the one above would compile and run without warning.</span></span> <span data-ttu-id="3294a-114">Var och en av **xTimeZone** -resurs blocken betraktas som unika.</span><span class="sxs-lookup"><span data-stu-id="3294a-114">Each of the **xTimeZone** resource blocks is considered unique.</span></span> <span data-ttu-id="3294a-115">Detta skulle göra att konfigurationen upprepas flera gånger på noden, och att den försätts i timezone och tillbaka.</span><span class="sxs-lookup"><span data-stu-id="3294a-115">This would cause the configuration to be repeatedly applied to the node, cycling the timezone back and forth.</span></span>
 
-<span data-ttu-id="33f9e-116">Att kontrollera att en konfiguration kan tidszonen för en målnoden bara en gång, resursen har uppdaterats för att lägga till en andra egenskap **IsSingleInstance**, som blev nyckelegenskapen.</span><span class="sxs-lookup"><span data-stu-id="33f9e-116">To ensure that a configuration could set the time zone for a target node only once, the resource was updated to add a second property, **IsSingleInstance**, that became the key property.</span></span>
-<span data-ttu-id="33f9e-117">Den **IsSingleInstance** har begränsat till ett enda värde, ”Yes” med hjälp av en **ValueMap**.</span><span class="sxs-lookup"><span data-stu-id="33f9e-117">The **IsSingleInstance** was limited to a single value, "Yes" by using a **ValueMap**.</span></span> <span data-ttu-id="33f9e-118">Det gamla MOF-schemat för resursen var:</span><span class="sxs-lookup"><span data-stu-id="33f9e-118">The old MOF schema for the resource was:</span></span>
+<span data-ttu-id="3294a-116">För att säkerställa att en konfiguration bara kan ställa in tids zonen för en målnod en gång, uppdaterades resursen för att lägga till en andra egenskap, **IsSingleInstance**, som blev nyckel egenskapen.</span><span class="sxs-lookup"><span data-stu-id="3294a-116">To ensure that a configuration could set the time zone for a target node only once, the resource was updated to add a second property, **IsSingleInstance**, that became the key property.</span></span>
+<span data-ttu-id="3294a-117">**IsSingleInstance** var begränsad till ett enda värde, "Ja" med hjälp av en **ValueMap**.</span><span class="sxs-lookup"><span data-stu-id="3294a-117">The **IsSingleInstance** was limited to a single value, "Yes" by using a **ValueMap**.</span></span> <span data-ttu-id="3294a-118">Det gamla MOF-schemat för resursen var:</span><span class="sxs-lookup"><span data-stu-id="3294a-118">The old MOF schema for the resource was:</span></span>
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -59,7 +59,7 @@ class xTimeZone : OMI_BaseResource
 };
 ```
 
-<span data-ttu-id="33f9e-119">Det uppdaterade MOF-schemat för resursen är:</span><span class="sxs-lookup"><span data-stu-id="33f9e-119">The updated MOF schema for the resource is:</span></span>
+<span data-ttu-id="3294a-119">Det uppdaterade MOF-schemat för resursen är:</span><span class="sxs-lookup"><span data-stu-id="3294a-119">The updated MOF schema for the resource is:</span></span>
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -70,7 +70,7 @@ class xTimeZone : OMI_BaseResource
 };
 ```
 
-<span data-ttu-id="33f9e-120">Resurs-skriptet har också uppdaterats om du vill använda den nya parametern.</span><span class="sxs-lookup"><span data-stu-id="33f9e-120">The resource script was also updated to use the new parameter.</span></span> <span data-ttu-id="33f9e-121">Här är gammal resurs-skriptet:</span><span class="sxs-lookup"><span data-stu-id="33f9e-121">Here is the old resource script:</span></span>
+<span data-ttu-id="3294a-120">Resurs skriptet har också uppdaterats för att använda den nya parametern.</span><span class="sxs-lookup"><span data-stu-id="3294a-120">The resource script was also updated to use the new parameter.</span></span> <span data-ttu-id="3294a-121">Här är resurs skriptet ändrat:</span><span class="sxs-lookup"><span data-stu-id="3294a-121">Here how the resource script was changed:</span></span>
 
 ```powershell
 function Get-TargetResource
@@ -102,10 +102,9 @@ function Get-TargetResource
     $returnValue
 }
 
-
 function Set-TargetResource
 {
-    [CmdletBinding(SupportsShouldProcess=$true)]
+    [CmdletBinding()]
     param
     (
         [parameter(Mandatory = $true)]
@@ -122,24 +121,24 @@ function Set-TargetResource
     #Output the result of Get-TargetResource function.
     $CurrentTimeZone = Get-TimeZone
 
-    if($PSCmdlet.ShouldProcess("'$TimeZone'","Replace the System Time Zone"))
+    Write-Verbose -Message "Replace the System Time Zone to $TimeZone"
+    
+    try
     {
-        try
+        if($CurrentTimeZone -ne $TimeZone)
         {
-            if($CurrentTimeZone -ne $TimeZone)
-            {
-                Write-Verbose -Verbose "Setting the TimeZone"
-                Set-TimeZone -TimeZone $TimeZone}
-            else
-            {
-                Write-Verbose -Verbose "TimeZone already set to $TimeZone"
-            }
+            Write-Verbose -Verbose "Setting the TimeZone"
+            Set-TimeZone -TimeZone $TimeZone
         }
-        catch
+        else
         {
-            $ErrorMsg = $_.Exception.Message
-            Write-Verbose -Verbose $ErrorMsg
+            Write-Verbose -Verbose "TimeZone already set to $TimeZone"
         }
+    }
+    catch
+    {
+        $ErrorMsg = $_.Exception.Message
+        Write-Verbose -Verbose $ErrorMsg
     }
 }
 
@@ -203,7 +202,7 @@ Function Set-TimeZone {
 Export-ModuleMember -Function *-TargetResource
 ```
 
-<span data-ttu-id="33f9e-122">Observera att den **tidszon** egenskaper är inte en nyckel.</span><span class="sxs-lookup"><span data-stu-id="33f9e-122">Notice that the **TimeZone** property is no longer a key.</span></span> <span data-ttu-id="33f9e-123">Om en konfiguration som försöker ange tidszonen två gånger (med hjälp av två olika **xTimeZone** block med olika **tidszon** värden), försök att kompilera konfigurationen visas ett felmeddelande:</span><span class="sxs-lookup"><span data-stu-id="33f9e-123">Now, if a configuration attempts to set the time zone twice (by using two different **xTimeZone** blocks with different **TimeZone** values), attempting to compile the configuration will cause an error:</span></span>
+<span data-ttu-id="3294a-122">Observera att egenskapen **timezone** inte längre är en nyckel.</span><span class="sxs-lookup"><span data-stu-id="3294a-122">Notice that the **TimeZone** property is no longer a key.</span></span> <span data-ttu-id="3294a-123">Om en konfiguration försöker ställa in tids zonen två gånger (genom att använda två olika **xTimeZone** -block med olika **timezone** -värden), kommer försök att kompilera konfigurationen att orsaka ett fel:</span><span class="sxs-lookup"><span data-stu-id="3294a-123">Now, if a configuration attempts to set the time zone twice (by using two different **xTimeZone** blocks with different **TimeZone** values), attempting to compile the configuration will cause an error:</span></span>
 
 ```powershell
 Test-ConflictingResources : A conflict was detected between resources '[xTimeZone]TimeZoneExample (::15::10::xTimeZone)' and
