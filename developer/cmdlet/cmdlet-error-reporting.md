@@ -1,5 +1,5 @@
 ---
-title: Cmdlet-felrapportering | Microsoft Docs
+title: Fel rapportering för cmdlet | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -14,79 +14,80 @@ helpviewer_keywords:
 - error records [PowerShell], non-terminating
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
-ms.openlocfilehash: 45f5934314a2871ceb921c7a66b9dfb658d0bd99
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068597"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986313"
 ---
-# <a name="cmdlet-error-reporting"></a>Cmdlet-felrapportering
+# <a name="cmdlet-error-reporting"></a>Fel rapportering för cmdlet
 
-Cmdlet: ar bör rapportera fel på olika sätt beroende på om felen avslutande fel eller oändliga fel. Avslutande fel är fel som gör att avslutas omedelbart pipelinen eller fel som uppstår när det finns ingen anledning att fortsätta bearbetningen. Oändliga fel är dessa fel som rapporterar ett aktuella feltillstånd, men cmdlet: en kan fortsätta att bearbeta inkommande objekt. Normalt meddelas användaren om problemet med oändliga fel, men cmdleten fortsätter att bearbeta nästa inkommande objekt.
+-Cmdletar bör rapportera fel på olika sätt beroende på om felen avslutar fel eller om fel inte avslutas. Att avsluta fel är fel som leder till att pipelinen avslutas omedelbart eller fel som inträffar när det inte finns någon anledning att fortsätta att bearbeta. Fel som inte avslutas är de fel som rapporterar ett aktuellt fel tillstånd, men cmdleten kan fortsätta att bearbeta inobjekten. Om det inte finns några fel, meddelas användaren vanligt vis om problemet, men cmdleten fortsätter att bearbeta nästa indata-objekt.
 
-## <a name="terminating-and-nonterminating-errors"></a>Avslutande och oändliga fel
+## <a name="terminating-and-nonterminating-errors"></a>Avsluta och avbryta fel
 
-Följande riktlinjer kan användas för att avgöra om ett feltillstånd är ett avslutande fel eller ett oändliga fel.
+Följande rikt linjer kan användas för att avgöra om ett fel tillstånd är ett avslutande fel eller ett fel som inte kan avslutas.
 
-- Felet hindrar din cmdlet bearbetar eventuella ytterligare indata objekt? I så, fall är detta ett avslutande fel.
+- Hindrar fel villkoret att din cmdlet bearbetar ytterligare indata-objekt? I så fall är det ett avslutande fel.
 
-- Beror felet på ett visst inkommande objekt eller en delmängd av inkommande objekt? I så, fall är detta ett oändliga fel.
+- Är fel tillståndet relaterat till ett speciellt indatamängds objekt eller en delmängd av inobjekten? Om så är fallet, är det ett fel som inte avslutas.
 
-- Cmdlet: en tar emot flera inkommande objekt, till exempel att bearbetningen kan fungera i en annan indataobjektet? I så, fall är detta ett oändliga fel.
+- Accepterar cmdleten flera indata, så att bearbetningen kan lyckas på ett annat indata-objekt? Om så är fallet, är det ett fel som inte avslutas.
 
-- Cmdletar som kan acceptera flera inkommande objekt ska välja mellan vad avslutas och oändliga fel, även när en viss situation gäller bara en enda indataobjektet.
+- -Cmdletar som kan acceptera flera inobjekt bör bestämma mellan vad som avslutas och inte avslutande fel, även om en viss situation endast gäller för ett enda inobjekt.
 
-- Cmdlet: ar kan ta emot valfritt antal inkommande objekt och skicka valfritt antal objekt som slutfört eller fel innan du utlöser ett avslutande undantag. Det finns ingen relation mellan antal inkommande objekt som tagits emot och antalet lyckade och fel objekt skickas.
+- Cmdletar kan ta emot valfritt antal inobjekt och skicka valfritt antal lyckade eller felaktiga objekt innan ett avslutande undantag utlöses. Det finns ingen relation mellan antalet mottagna inobjekt och antalet lyckade och felaktiga objekt som har skickats.
 
-- Cmdletar som kan acceptera bara 0 – 1 indata objekt och generera bara 0 – 1 utdata objekt ska hantera fel som avslutande fel och generera avslutande undantag.
+- Cmdletar som bara kan acceptera 0-1-indata-objekt och endast genererar 0-1-utdatafiler bör behandla fel som avslutas och generera undantags fel.
 
-## <a name="reporting-nonterminating-errors"></a>Rapportering oändliga fel
+## <a name="reporting-nonterminating-errors"></a>Rapportera fel som inte avslutas
 
-Rapportering av ett oändliga fel ska endast göras inom cmdletens implementering av den [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metoden den [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoden eller [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metod. Dessa typer av fel rapporteras genom att anropa den [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metod som i sin tur skickar en Felpost till felströmmen.
+Rapportering av ett fel som inte avslutas bör alltid utföras inom cmdletens implementering av metoden [system. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) , metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) eller metoden [system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Dessa typer av fel rapporteras genom att anropa metoden [system. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) , som i sin tur skickar en felpost till fel strömmen.
 
-## <a name="reporting-terminating-errors"></a>Rapporterat avslutande fel
+## <a name="reporting-terminating-errors"></a>Rapportera avslutande fel
 
-Avslutande fel som rapporteras genom att utlösa undantag eller genom att anropa den [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) metod. Tänk på att cmdletarna kan även fånga upp och igen utlöser undantag, till exempel OutOfMemory, men de behöver inte igen detta görs som Windows PowerShell-runtime ska fånga upp dem också.
+Avslutande fel rapporteras genom att Utlös ande undantag eller genom att anropa metoden [system. Management. Automation. cmdlet. ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) . Tänk på att cmdlets också kan fånga upp och återanvända undantag, till exempel **OutOfMemory**, men de behöver inte rethrowa undantag eftersom PowerShell-körningen även kommer att fånga dem.
 
-Du kan även definiera dina egna undantag för problem som är specifika för din situation eller lägga till ytterligare information till en befintlig undantag med dess Felpost.
+Du kan också definiera egna undantag för problem som är specifika för din situation eller lägga till ytterligare information i ett befintligt undantag med hjälp av fel posten.
 
-## <a name="error-records"></a>Felposter
+## <a name="error-records"></a>Fel poster
 
-Windows PowerShell beskriver ett oändliga feltillstånd med [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objekt. Varje [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektet innehåller information om fel, en valfri målobjektet och information om felet.
+PowerShell Beskriver ett fel tillstånd som inte avslutas med [system. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -objekt. Varje-objekt innehåller information om fel kategori, ett valfritt mål objekt och information om fel tillståndet.
 
-### <a name="error-identifiers"></a>Fel-ID
+### <a name="error-identifiers"></a>Fel identifierare
 
-Fel-ID: t är en enkel sträng som identifierar feltillstånd i cmdleten. Windows PowerShell kombinerar den här identifieraren för en cmdlet-identifierare för att skapa ett fullständigt fel-ID som kan användas senare när du filtrerar felströmmar eller logga fel vid svar på specifika fel eller med andra användarspecifika aktiviteter.
+Fel identifieraren är en enkel sträng som identifierar fel tillståndet i cmdleten.
+PowerShell kombinerar den här identifieraren med en cmdlet-identifierare för att skapa en fullständigt kvalificerad fel identifierare som kan användas senare vid filtrering av fel strömmar eller loggnings fel, vid svar på särskilda fel eller med andra användarspecifika aktiviteter.
 
-Följande riktlinjer ska följas när du anger fel-ID.
+Följande rikt linjer bör följas när du anger fel identifierare:
 
-- Tilldela olika kodsökvägar olika, specifika, fel-ID: n. Varje kodsökväg som anropar [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) eller [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) ska ha sin egen fel-identifierare.
+- Tilldela olika kod Sök vägar olika, mycket detaljerade Varje kod Sök väg som anropar [system. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) eller [system. Management. Automation. cmdlet. ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) ska ha en egen fel identifierare.
 
-- Fel-ID måste vara unikt för CLR-undantagstyper för både avslutande och oändliga fel.
+- Fel identifierare ska vara unika för CLR-typer (Common Language Runtime) för både avslutande och inte avslutande fel.
 
-- Ändra inte semantiken för en identifierare som fel mellan versioner av dina cmdlet eller Windows PowerShell-providern. När semantiken för ett fel-ID har upprättats, bör det förblir konstant under hela livscykeln för cmdlet:.
+- Ändra inte semantiken för en fel identifierare mellan versioner av cmdleten eller PowerShell-providern. När semantiken för en fel identifierare har upprättats bör den vara konstant under hela livs cykeln för din cmdlet.
 
-- Använd ett unikt fel-ID för en viss typ av CLR-undantag för avslutande fel. Om undantagstyp ändras, använder du en ny fel-identifierare.
+- Om du vill avbryta fel använder du en unik fel identifierare för en viss CLR-undantags typ. Om undantags typen ändras använder du en ny fel-ID.
 
-- För oändliga fel, kan du använda ett specifikt fel-ID för ett specifikt objekt som indata.
+- Använd en unik fel identifierare för ett bestämt inobjekt för att avbryta fel.
 
-- Välj text för identifierare som motsvarar tersely fel har rapporterats. Använd inte blanksteg eller skiljetecken.
+- Välj text för den identifierare som tersely motsvarar det fel som rapporteras. Använd inte blank steg eller skiljetecken.
 
-- Generera inte fel-ID som inte är reproducerbar. Till exempel generera inte identifierare som innehåller ett process-ID. Fel-ID är användbara endast när de motsvarar identifierare som ses av andra användare som upplever samma problem.
+- Generera inte fel identifierare som inte är nyproducerade. Generera till exempel inte identifierare som innehåller en process identifierare. Fel identifierare är bara användbara när de motsvarar identifierare som visas av andra användare som har samma problem.
 
-### <a name="error-categories"></a>Felkategorier
+### <a name="error-categories"></a>Fel kategorier
 
-Felkategorier använder för att gruppera fel för slutanvändaren. Windows PowerShell definierar dessa kategorier och cmdlets och providers för Windows PowerShell måste välja mellan dem när du genererar en Felpost.
+Fel kategorier används för att gruppera fel för användaren. PowerShell definierar dessa kategorier och cmdlets och PowerShell-leverantörer måste välja mellan dem när fel posten skapas.
 
-En beskrivning av felet kategorier som är tillgängliga finns i den [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) uppräkning. I allmänhet bör du undvika att använda NoError och UndefinedError GenericError när det är möjligt.
+En beskrivning av de fel kategorier som är tillgängliga finns i uppräkningen [system. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) . I allmänhet bör du undvika att använda **noerror**, **UndefinedError**och **GenericError** när det är möjligt.
 
-Användare kan visa fel baserat på kategori när de har ”`$ErrorView`” till ”CategoryView”.
+Användare kan visa fel baserat på kategori när de har `$ErrorView` angetts till **CategoryView**.
 
 ## <a name="see-also"></a>Se även
 
-[Windows PowerShell-Cmdlets](./cmdlet-overview.md)
+[Cmdlet-översikt](./cmdlet-overview.md)
 
-[Cmdlet-utdata](./types-of-cmdlet-output.md)
+[Typer av cmdlet-utdata](./types-of-cmdlet-output.md)
 
-[Windows PowerShell Shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell-referens](../windows-powershell-reference.md)

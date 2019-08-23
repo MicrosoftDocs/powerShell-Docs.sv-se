@@ -1,170 +1,186 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: galleriet, powershell, cmdlet, psgallery
-description: Riktlinjer för utgivare
-title: PowerShell-galleriet publicera riktlinjer och metodtips
-ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+contributor: JKeithB, SydneyhSmith
+keywords: Galleri, PowerShell, cmdlet, psgallery
+description: Rikt linjer för utgivare
+title: PowerShell-galleriet publicerings rikt linjer och metod tips
+ms.openlocfilehash: b470dbd81e79d2a6a228b8c89f85e57c03803ede
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084665"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986499"
 ---
-# <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery publicera riktlinjer och metodtips
+# <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery publicerings rikt linjer och metod tips
 
-Det här avsnittet beskriver rekommenderade steg som används av Microsoft-team så att de paket som publicerats i PowerShell-galleriet kommer användas brett och ge användarna, baserat på hur PowerShell-galleriet hanterar manifest data och på feedback från stora högt värde antal användare för PowerShell-galleriet.
-Paket som har publicerats till att följa dessa riktlinjer ska troligare att de kan installeras, betrodda, och attrahera fler användare.
+I det här avsnittet beskrivs rekommenderade steg som används av Microsoft-team för att säkerställa att de paket som publiceras till PowerShell-galleriet är allmänt tagna och ger användarna ett högt värde, baserat på hur PowerShell-galleriet hanterar manifest data och om feedback från stor antalet PowerShell-galleriet användare.
+Paket som publiceras enligt dessa rikt linjer kommer att bli mer sannolika att installeras, vara betrodda och locka fler användare.
 
-Nedan följer riktlinjer för vad som är ett bra PowerShell Gallery-paket, vilka valfria Manifest inställningar som är viktigast, förbättra din kod med feedback från första granskare och [Powershell-skript Analyzer](https://aka.ms/psscriptanalyzer), versionshantering din modul, dokumentation, tester och exempel på hur du använder vad du har delat.
-Mycket av den här dokumentationen följer riktlinjerna för publicering [hög kvalitet DSC-resurs moduler](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
+Nedan följer rikt linjer för vad som gör ett bra PowerShell-galleriet-paket, vilka valfria manifest inställningar som är viktigast, vilket förbättrar din kod med feedback från inledande granskare och [PowerShell script Analyzer](https://aka.ms/psscriptanalyzer), versions hantering av modulen. dokumentation, test & exempel för hur du kan använda det du har delat.
+Mycket av den här dokumentationen följer rikt linjerna för att publicera [moduler för hög kvalitet DSC-resurs](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
-Säkerhetsnivån publicering av ett paket till PowerShell-galleriet, se [skapa och publicera ett paket](/powershell/gallery/how-to/publishing-packages/publishing-a-package).
+Mechanics för att publicera ett paket till PowerShell-galleriet finns i [skapa och publicera ett paket](/powershell/gallery/how-to/publishing-packages/publishing-a-package).
 
-Feedback om dessa riktlinjer välkomnade. Om du har feedback, öppna problem i vår [Github-dokumentationslagringsplatsen](https://github.com/powershell/powershell-docs/issues).
+Feedback om dessa rikt linjer är välkomna. Om du har feedback kan du öppna problem i vår [dokumentations databas för GitHub](https://github.com/powershell/powershell-docs/issues).
 
-## <a name="best-practices-for-publishing-packages"></a>Metodtips för att publicera paket
+## <a name="best-practices-for-publishing-packages"></a>Metod tips för publicering av paket
 
-Följande metodtips är vad användare med PowerShell-galleriet objekt säger är viktigt och visas i nominell prioritetsordning.
-Paket som följer dessa riktlinjer är mycket mer troligt att hämtas och användas av andra.
+Följande metod tips är vad användare av PowerShell-galleriet objekt säger är viktigt och visas i den nominella prioritets ordningen.
+Paket som följer dessa rikt linjer är mycket mer sannolika att laddas ned och antas av andra.
 
-- Använda PSScriptAnalyzer
-- Inkludera dokumentation och exempel
-- Responsiva gentemot feedback
-- Ange moduler i stället för skript
-- Innehåller länkar till en projektwebbplats
-- Tagga ditt paket med kompatibla PSEdition(s) och plattformar
-- Inkludera tester med dina moduler
-- Inkludera och/eller länka till licensvillkoren
-- Registrera din kod
-- Följ [SemVer](http://semver.org/) riktlinjer för versionshantering
-- Använd vanliga taggar, enligt beskrivningen i vanliga PowerShell-galleriet taggar
-- Testa publicering med en lokal databas
+- Använd PSScriptAnalyzer
+- Ta med dokumentation och exempel
+- Svara på feedback
+- Tillhandahålla moduler i stället för skript
+- Ange länkar till en projekt webbplats
+- Tagga ditt paket med de kompatibla PSEdition och plattformarna
+- Ta med tester med dina moduler
+- Inkludera och/eller länka till licens villkoren
+- Signera din kod
+- Följ [SemVer](http://semver.org/) -rikt linjerna för versions hantering
+- Använd vanliga taggar, enligt beskrivningen i vanliga PowerShell-galleriet-Taggar
+- Testa publiceringen med hjälp av en lokal lagrings plats
 - Använda PowerShellGet för att publicera
 
-Var och en av dessa beskrivs kortfattat i avsnitten nedan.
+Var och en av dessa omfattas kortfattat i avsnitten nedan.
 
-## <a name="use-psscriptanalyzer"></a>Använda PSScriptAnalyzer
+## <a name="use-psscriptanalyzer"></a>Använd PSScriptAnalyzer
 
-[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) är ett analysverktyg för statisk kod som fungerar på PowerShell-kod.
-PSScriptAnalyzer identifierar de vanligaste problemen som visas i PowerShell-kod och ofta en rekommendation för hur du löser problemet.
-Verktyget är enkel att använda och kategoriserar problem som fel (allvarligt, måste åtgärdas), varning (behöver granskas och bör åtgärdas) och Information (värt att checka ut Metodtips för).
-Alla paket som publicerats i PowerShell-galleriet ska genomsökas med PSScriptAnalyzer och eventuella fel rapporteras tillbaka till ägare och måste åtgärdas.
+[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) är ett kostnads fritt statiskt kod analys verktyg som fungerar med PowerShell-kod.
+PSScriptAnalyzer kommer att identifiera de vanligaste problemen som visas i PowerShell-koden och ofta en rekommendation för hur du kan åtgärda problemet.
+Verktyget är enkelt att använda och kategoriserar problemen som fel (allvarligt, måste åtgärdas), varning (måste granskas & bör åtgärdas) och information (värt att kolla för bästa praxis).
+Alla paket som publiceras till PowerShell-galleriet genomsöks med hjälp av PSScriptAnalyzer och eventuella fel rapporteras tillbaka till ägaren och måste åtgärdas.
 
-Det bästa sättet är att köra `Invoke-ScriptAnalyzer` med `-Recurse` och `-Severity` varning.
+Den bästa metoden är att köra `Invoke-ScriptAnalyzer` med `-Recurse` och `-Severity` varning.
 
 Granska resultaten och se till att:
 
-- Alla fel har korrigerats eller åtgärdas i dokumentationen
-- Alla varningar granskas och åtgärdas om tillämpligt
+- Alla fel korrigeras eller åtgärdas i dokumentationen
+- Alla varningar granskas och åtgärdas där det är tillämpligt
 
-Användare som skaffar paket från PowerShell-galleriet rekommenderas att köra PSScriptAnalyzer och utvärdera alla fel och varningar.
-Användare är mycket troligt att kontakta paketets ägare om de ser att det finns ett fel som rapporterats av PSScriptAnalyzer.
-Om det finns en bra anledning för ditt paket att hålla kod som flaggas som ett fel, kan du lägga till informationen i dokumentationen för att förhindra att svara på samma fråga många gånger.
+Användare som köper paket från PowerShell-galleriet är starkt uppmanade att köra PSScriptAnalyzer och utvärdera alla fel och varningar.
+Användare kan förmodligen kontakta paket ägare om de ser att det finns ett fel rapporterat av PSScriptAnalyzer.
+Om det finns en övertygande anledning för ditt paket att behålla kod som flaggats som ett fel, lägger du till den informationen i dokumentationen för att undvika att behöva besvara samma fråga flera gånger.
 
-## <a name="include-documentation-and-examples"></a>Inkludera dokumentation och exempel
+## <a name="include-documentation-and-examples"></a>Ta med dokumentation och exempel
 
-Dokumentation och exempel är det bästa sättet att se till att användare kan dra nytta av någon delad kod.
+Dokumentation och exempel är det bästa sättet att se till att användarna kan dra nytta av all delad kod.
 
-Dokumentation är det mest användbara som ska ingå i paket som publicerats i PowerShell-galleriet.
-Användarna kringgå Allmänt paket utan dokumentation, eftersom alternativet är att läsa kod för att förstå vad paketet är och hur du använder den.
-Det finns flera artiklar om hur du ger dokumentation med PowerShell-paket, inklusive:
+Dokumentation är det som är mest användbart att inkludera i paket som publiceras till PowerShell-galleriet.
+Användarna kommer normalt att kringgå paket utan dokumentation, eftersom alternativet är att läsa koden för att förstå vad paketet är och hur det används.
+Det finns flera artiklar om hur du tillhandahåller dokumentation med PowerShell-paket, inklusive:
 
-- Riktlinjer för att tillhandahålla hjälp finns i [hur du skriver hjälp för cmdleten](https://go.microsoft.com/fwlink/?LinkID=123415)
-- Skapar cmdlet-hjälpen, vilket är den bästa metoden för PowerShell-skript, funktion eller cmdlet.
-  Information om hur du skapar cmdlet-hjälpen börjar du med [hur du skriver hjälp för cmdleten](https://go.microsoft.com/fwlink/?LinkID=123415).
-  Om du vill lägga till hjälp i ett skript, se [om kommentar baserat hjälpa](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
-- Många moduler kan du även innehålla dokumentation i textformat, till exempel MarkDown-filer.
-  Detta kan vara särskilt användbart när det finns en projektwebbplats i Github, där Markdown är ett hårt belastat format.
-  Det bästa sättet är att använda [Markdown i Github](https://help.github.com/categories/writing-on-github/)
+- Rikt linjer för att tillhandahålla hjälp finns i [så här skriver du cmdlet-hjälpen](https://go.microsoft.com/fwlink/?LinkID=123415)
+- Skapa cmdlet-hjälpen, som är den bästa metoden för PowerShell-skript,-funktioner eller-cmdlet.
+  Om du vill ha mer information om hur du skapar cmdlet-hjälpen börjar [du med hur du skriver cmdlet-hjälpen](https://go.microsoft.com/fwlink/?LinkID=123415).
+  Information om hur du lägger till hjälp i ett skript finns i [om Kommentering baserad hjälp](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
+- Många moduler innehåller också dokumentation i text format, till exempel MarkDown-filer.
+  Detta kan vara särskilt användbart när det finns en projekt webbplats i GitHub, där markdown är ett mycket använt format.
+  Den bästa metoden är att använda [GitHub markdown](https://help.github.com/categories/writing-on-github/)
 
-Exemplen visar användare hur paketet är avsedd att användas.
-Många utvecklare står det att de titta på exempel innan dokumentationen för att förstå hur du använder något.
-Den bästa typen av exempel visa grundläggande användning, plus en simulerad realistisk användningsfall och koden är väl kommenterade.
-Exempel på moduler som publicerats i PowerShell-galleriet ska vara i en exempel-mapp under roten för modulen.
+Exempel visar användare hur paketet är avsett att användas.
+Många utvecklare säger att de tittar på exempel före dokumentationen för att förstå hur man använder något.
+De bästa typerna av exempel visar grundläggande användning, plus ett simulerat realistiskt användnings fall och koden är väl kommenterad.
+Exempel på moduler som publiceras till PowerShell-galleriet ska finnas i mappen exempel under modul roten.
 
-Ett bra mönster exempel finns i den [PSDscResource modulen](https://www.powershellgallery.com/packages/PSDscResources) under mappen Examples\RegistryResource.
-Det finns fyra exempel användningsfall med en kort beskrivning överst i varje fil som dokument vad som visas.
+Ett utmärkt mönster för exempel finns i [PSDscResource-modulen](https://www.powershellgallery.com/packages/PSDscResources) under mappen Examples\RegistryResource.
+Det finns fyra exempel på användnings fall med en kort beskrivning längst upp i varje fil som dokumenten visas.
+
+## <a name="manage-dependencies"></a>Hantera beroenden
+
+Det är viktigt att ange moduler som modulen är beroende av i manifestet för modulen.
+Detta gör det möjligt för slutanvändaren att inte behöva oroa sig för att installera rätt versioner av moduler som ditt tar ett beroende på.
+Om du vill ange beroende moduler ska du använda fältet obligatorisk modul i manifestet för modulen.
+Detta läser in moduler som visas i den globala miljön innan du importerar modulen om de inte redan har lästs in. (Vissa moduler kan till exempel redan läsas in av en annan modul.).
+Det är också möjligt att ange en angiven version som ska läsas in med fältet RequiredVersion i stället för fältet ModuleVersion. När du använder ModuleVersion laddas den senaste versionen som är tillgänglig med minst den angivna versionen.
+När du inte använder fältet RequiredVersion för att ange en speciell version är det viktigt att övervaka versions uppdateringar av den obligatoriska modulen.
+Det är särskilt viktigt att vara medveten om eventuella bryta ändringar som kan påverka användar upplevelsen med modulen.
+
+```powershell
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+```
 
 ## <a name="respond-to-feedback"></a>Svara på feedback
 
-Paketet ägare som ska svarar på feedback värderas mycket av communityn.
-Användare som ger informell feedback är viktigt att svara på, eftersom de är intresserad av i paketet för att testa för att förbättra den.
+Paket ägare som svarar korrekt på feedback är mycket värdefulla för communityn.
+Användare som tillhandahåller informell feedback är viktiga att svara på, eftersom de är tillräckligt intressanta i paketet för att försöka hjälpa till att förbättra det.
 
-Det finns två metoder för feedback i PowerShell-galleriet:
+Det finns två återkopplings metoder som är tillgängliga i PowerShell-galleriet:
 
-- Kontakta ägaren: Detta gör det möjligt att skicka ett e-postmeddelande till paketet ägarna. Som ägare paketet är viktigt att övervaka e-postadressen används med PowerShell-galleriet paketen och svara på problem som har skapats. En nackdel till den här metoden är att endast användare och ägare någonsin ser kommunikation, så ägare kan behöva och svara på samma fråga många gånger.
-- Kommentarer: Sidan är en kommentarsfält längst ned i paketet.
-  Fördelen med att det här systemet är att andra användare kan se kommentarer och svar, vilket minskar antalet gånger varje enskild fråga måste besvaras.
-  Som paket ägare rekommenderar vi starkt att du följer alla kommentarer för varje paket.
-Se [att tillhandahålla Feedback via sociala medier eller kommentarer](../how-to/working-with-packages/social-media-feedback.md) mer information om hur du gör.
+- Kontakt ägare: Detta gör att en användare kan skicka ett e-postmeddelande till paketets ägare (er). Som paket ägare är det viktigt att övervaka den e-postadress som används med PowerShell-galleriet-paket och svara på problem som aktive ras. Den enda nack delen med den här metoden är att endast användaren och ägaren kommer att se kommunikationen, så att ägaren kan behöva besvara samma fråga flera gånger.
+- Comment Längst ned på sidan paket finns ett kommentar fält.
+  Fördelen med det här systemet är att andra användare kan se kommentarer och svar, vilket minskar antalet gånger som en enskild fråga måste besvaras.
+  Som paket ägare rekommenderar vi starkt att du följer de kommentarer som gjorts för varje paket.
+Mer information om hur du gör detta finns i [ge feedback via sociala medier eller kommentarer](../how-to/working-with-packages/social-media-feedback.md) .
 
-Ägare som svarar på feedback på konstruktiva sätt uppskattas av communityn.
-Använda möjligheten i rapporten för att begära mer information om det behövs, tillhandahålla en lösning eller identifiera om en uppdatering korrigerar ett problem.
+Ägare som svarar på feedback informellt uppskattas av communityn.
+Använd affärs möjligheten i rapporten om du vill begära mer information om det behövs, ange en lösning eller identifiera om en uppdatering åtgärdar ett problem.
 
-Om det finns olämplig beteende som observerats från någon av dessa kommunikationskanaler, använder du funktionen Rapportera missbruk i PowerShell-galleriet för att kontakta galleri-administratörer.
+Om det är olämpligt beteende som observerats från någon av dessa kommunikations kanaler kan du kontakta Galleri administratörerna genom att använda funktionen rapport missbruk i PowerShell-galleriet.
 
 ## <a name="modules-versus-scripts"></a>Moduler jämfört med skript
 
-Dela ett skript med andra användare är bra och ger andra exempel på hur du löser problem som de kan ha.
-Problemet är att skript i PowerShell-galleriet är enkel filer utan separat dokumentation, exempel och tester.
+Att dela ett skript med andra användare är bra och ger andra exempel på hur de kan lösa problem.
+Problemet är att skript i PowerShell-galleriet är enstaka filer utan separat dokumentation, exempel och test.
 
-PowerShell-moduler har en mappstruktur som gör att flera mappar och filer som ska ingå i paketet.
-Modulstrukturen gör, inklusive de andra paketen som vi lista som bästa praxis: cmdleten hjälp, dokumentation, exempel och tester.
-Den största nackdelen är att ett skript i en modul måste visas och används som en funktion.
+PowerShell-moduler har en mappstruktur som tillåter att flera mappar och filer tas med i paketet.
+Modul strukturen gör det möjligt att inkludera andra paket som vi listar som bästa praxis: cmdlet-hjälp, dokumentation, exempel och test.
+Den största nack delen är att ett skript i en modul måste exponeras och användas som en funktion.
 Information om hur du skapar en modul finns i [skriva en Windows PowerShell-modul](http://go.microsoft.com/fwlink/?LinkId=144916).
 
 Det finns situationer där ett skript ger en bättre upplevelse för användaren, särskilt med DSC-konfigurationer.
-Det är bra för DSC-konfigurationer att publicera konfigurationen som ett skript med en medföljande modul som innehåller den docs, exempel och tester.
-Skriptet innehåller tillhörande modulen med RequiredModules = @(namnet på modulen).
+Den bästa metoden för DSC-konfigurationer är att publicera konfigurationen som ett skript med en tillhör ande modul som innehåller dokument, exempel och test.
+Skriptet listar den tillhör ande modulen med hjälp av RequiredModules = @ (namnet på modulen).
 Den här metoden kan användas med alla skript.
 
-Fristående skript som följer de rekommenderade metoderna ger verkliga värdet till andra användare.
-Tillhandahåller kommentarbaserad dokumentation och en länk till en plats för projektet rekommenderas starkt när du publicerar ett skript i PowerShell-galleriet.
+Fristående skript som följer de andra bästa metoderna ger användare ett verkligt värde.
+Det rekommenderas att tillhandahålla kommenterad dokumentation och en länk till en projekt webbplats när du publicerar ett skript till PowerShell-galleriet.
 
-## <a name="provide-a-link-to-a-project-site"></a>Ange en länk till en projektwebbplats
+## <a name="provide-a-link-to-a-project-site"></a>Ange en länk till en projekt webbplats
 
-En plats för projektet är där en utgivare kan interagera direkt med användarna av sina PowerShell-galleriet-paket.
-Användare föredrar paket som tillhandahåller detta, eftersom den låter dem att få information om paketet enklare.
-Många paket i PowerShell-galleriet har utvecklats i GitHub, tillhandahålls andra av organisationer med en dedikerad webbnärvaro.
-Var och en av dessa kan betraktas som en projektwebbplats.
+En projekt webbplats är den plats där en utgivare kan interagera direkt med användare av sina PowerShell-galleriet-paket.
+Användare föredrar paket som tillhandahåller detta, eftersom det gör det möjligt för dem att få information om paketet enklare.
+Många paket i PowerShell-galleriet utvecklas i GitHub, andra tillhandahålls av organisationer med en särskild webb närvaro.
+Var och en av dessa kan betraktas som en projekt webbplats.
 
-Lägga till en länk görs genom att inkludera ProjectURI i avsnittet PSData i manifestet på följande sätt:
+Att lägga till en länk görs genom att inkludera ProjectURI i PSData-avsnittet i manifestet på följande sätt:
 
         # A URL to the main website for this project.
         ProjectUri = 'https://github.com/powershell/powershell'
 
-När en ProjectURI tillhandahålls innehåller i PowerShell-galleriet en länk till webbplatsen projekt till vänster på sidan för paketet.
+När en ProjectURI anges kommer PowerShell-galleriet att innehålla en länk till projekt webbplatsen till vänster på paket sidan.
 
-## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Tagga ditt paket med kompatibla PSEdition(s) och plattformar
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Tagga ditt paket med de kompatibla PSEdition och plattformarna
 
-Använd följande taggar för att visa för användarna som paket ska fungera bra med sin miljö:
+Använd följande taggar för att demonstrera användare vars paket fungerar bra med deras miljö:
 
 - PSEdition_Desktop : Paket som är kompatibla med Windows PowerShell
-- PSEdition_Core: Paket som är kompatibla med PowerShell Core
-- Windows: Paket som är kompatibla med Windows operativsystem
-- Linux: Paket som är kompatibla med Linux-operativsystem
-- MacOS: Paket som är kompatibla med Mac-operativsystemet
+- PSEdition_Core : Paket som är kompatibla med PowerShell Core
+- Aktivitets Paket som är kompatibla med operativ systemet Windows
+- Linux Paket som är kompatibla med Linux-operativsystem
+- MacOS Paket som är kompatibla med Mac-operativsystemet
 
-Sök filter på den vänstra rutan i sökresultaten genom att tagga ditt paket med kompatibla plattformar som inkluderas i galleriet. Om du använder ditt paket på GitHub, när du markera ditt paket, kan du också dra nytta av våra [PowerShell-galleriet compability sköldar](https://img.shields.io/powershellgallery/p/:packageName.svg) 
-![kompatibilitet shield](https://img.shields.io/powershellgallery/p/CosmosDB.svg).  
+Genom att tagga ditt paket med de kompatibla plattformarna kommer det att tas med i Galleri Sök filter i det vänstra fönstret i Sök resultatet. Om du är värd för ditt paket på GitHub kan du, när du taggar ditt paket, också dra nytta av vår [skärm med PowerShell-galleriet-komprimerings sköld](https://img.shields.io/powershellgallery/p/:packageName.svg) 
+![.](https://img.shields.io/powershellgallery/p/CosmosDB.svg)  
 
-## <a name="include-tests"></a>Inkludera tester
+## <a name="include-tests"></a>Ta med tester
 
-Inklusive tester med öppen källkod är viktigt att användare, eftersom det ger dem assurance om vad du validera och innehåller information om hur din kod fungerar. Tillåter även användare att se till att de inte skadar din ursprungliga funktioner om de ändrar koden så att de passar deras miljö.
+Att inkludera tester med kod med öppen källkod är viktigt för användarna, eftersom det ger dem garantier för vad du validerar och ger information om hur koden fungerar. Det gör det också möjligt för användarna att se till att de inte bryter dina ursprungliga funktioner om de ändrar koden så att den passar deras miljö.
 
-Vi rekommenderar starkt att testerna ska skrivas till att dra nytta av Testramverk Pester som har utformats speciellt för PowerShell.
-Lära finns i [GitHub](https://github.com/Pester/Pester), [PowerShell-galleriet](https://www.powershellgallery.com/packages/Pester/), och levereras i Windows 10, Windows Server 2016, WMF 5.0 och WMF 5.1.
+Vi rekommenderar starkt att tester skrivs för att dra nytta av pester test Framework, som har utformats specifikt för PowerShell.
+Pester finns i [GitHub](https://github.com/Pester/Pester), [PowerShell-galleriet](https://www.powershellgallery.com/packages/Pester/)och fartyg i Windows 10, Windows Server 2016, WMF 5,0 och WMF 5,1.
 
-Den [Pester projektwebbplatsen i GitHub](https://github.com/Pester/Pester) innehåller bra dokumentation om hur du skriver Pester tester från att komma igång med bästa praxis.
+[Projekt webbplatsen pester i GitHub](https://github.com/Pester/Pester) innehåller bra dokumentation om hur du skriver pester-tester, från komma igång till bästa praxis.
 
-Mål för testtäckning framhävs den [hög kvalitet Resource modulen dokumentation](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md), testa koden täckning rekommenderas med 70%-enhet.
+Målen för test täckningen anropas i dokumentationen för [resurs modulen med hög kvalitet](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md), med 70% enhets test kod täckning rekommenderas.
 
-## <a name="include-andor-link-to-license-terms"></a>Inkludera och/eller länka till licensvillkoren
+## <a name="include-andor-link-to-license-terms"></a>Inkludera och/eller länka till licens villkoren
 
-Alla paket som publicerats i PowerShell-galleriet måste ange licensvillkoren eller vara bunden av licensen som ingår i den [användningsvillkor](https://www.powershellgallery.com/policies/Terms) under ”bilaga A”.
-Det bästa sättet att ange en annan licens är att tillhandahålla en länk till licensen med hjälp av LicenseURI i PSData.
-Du hittar ett exempel i avsnittet om rekommenderade Manifest fält.
+Alla paket som har publicerats till PowerShell-galleriet måste ange licens villkoren eller vara kopplade till den licens som ingår i [användnings villkoren](https://www.powershellgallery.com/policies/Terms) under "Visa A".
+Den bästa metoden för att ange en annan licens är att tillhandahålla en länk till licensen med hjälp av LicenseURI i PSData.
+Du hittar ett exempel i avsnittet rekommenderade manifest fält.
 
 ```powershell
 PrivateData = @{
@@ -177,80 +193,80 @@ PrivateData = @{
         LicenseUri = 'http://www.apache.org/licenses/LICENSE-2.0'
 ```
 
-## <a name="sign-your-code"></a>Registrera din kod
+## <a name="sign-your-code"></a>Signera din kod
 
-Kodsignering förser användare med den högsta säkerhetsnivån för vem som publicerade paketet och att kopian av koden de förvärva är exakt vad utgivaren är.
-Läs mer om kodsignering Allmänt i [introduktion till Code Signing](http://go.microsoft.com/fwlink/?LinkId=106296).
-PowerShell har stöd för verifiering av kodsignering via två primära sätt:
+Kod signering ger användare den högsta garanti nivån för vem som har publicerat paketet och att kopian av den kod de får är exakt vad utgivaren har publicerat.
+Mer information om kod signering finns i [Introduktion till kod signering](http://go.microsoft.com/fwlink/?LinkId=106296).
+PowerShell stöder validering av kod signering genom två primära metoder:
 
-- Signering skriptfiler
-- Katalogen som registrerar en modul
+- Signera skriptfiler
+- Katalog som signerar en modul
 
-Det är ett välkänt tillvägagångssätt till att säkerställa att koden som körs har skapats av en pålitlig källa och har inte ändrats för att registrera PowerShell-filer.
-Information om hur du registrerar PowerShell-skriptfiler beskrivs i den [om signering](/powershell/module/microsoft.powershell.core/about/about_signing) avsnittet.
-Översikt, kan en signatur läggas till någon. Ps1-fil som PowerShell kontrollerar när skriptet har lästs in.
-PowerShell kan begränsas med hjälp av den [körningsprincipen](/powershell/module/microsoft.powershell.core/about/about_execution_policies) cmdletar för att kontrollera användningen av signerade skript.
+Att signera PowerShell-filer är en väl etablerad metod för att säkerställa att den kod som körs har producerats av en tillförlitlig källa och inte har ändrats.
+Information om hur du signerar PowerShell-skriptfiler beskrivs i avsnittet [om signering](/powershell/module/microsoft.powershell.core/about/about_signing) .
+I Översikt kan du lägga till en signatur i valfri. PS1-fil som PowerShell validerar när skriptet läses in.
+PowerShell kan begränsas med hjälp av cmdletar för [körnings principer](/powershell/module/microsoft.powershell.core/about/about_execution_policies) för att säkerställa att signerade skript används.
 
-Catalog signering moduler är en funktion som introducerades i PowerShell i version 5.1.
-Hur du registrerar en modul beskrivs i den [katalog-cmdletar](/powershell/wmf/5.1/catalog-cmdlets) avsnittet.
-I Översikt görs catalog signering genom att skapa en katalogfil som innehåller ett hash-värde för varje fil i modulen, och sedan registrera filen.
-PowerShellGet-publicera modulen, install-module, save-module och update-module-cmdletar ska kontrollera signaturen för att säkerställa att den är giltig och bekräfta sedan att hash-värde för varje paket matchar vad som finns i katalogen.
-Om en tidigare version av modulen är installerad på systemet, bekräftar install-module att signering utfärdaren av den nya versionen matchar den tidigare installerade.
-Katalogen signering fungerar med, men ersätter inte signering skriptfiler. PowerShell validerar inte katalogen signaturer på modulen inläsningstid.
+Moduler för katalog signering är en funktion som har lagts till i PowerShell i version 5,1.
+Hur du signerar en modul beskrivs i avsnittet [katalog](/powershell/wmf/5.1/catalog-cmdlets) -cmdletar.
+I översikten görs en katalog signering genom att skapa en katalog fil som innehåller ett hash-värde för varje fil i modulen och sedan signera filen.
+Cmdletarna PowerShellGet Publish-module, Save-module och Update-module kontrollerar signaturen för att kontrol lera att den är giltig och bekräftar sedan att hash-värdet för varje paket matchar vad som finns i katalogen.
+Om en tidigare version av modulen är installerad på systemet bekräftar installations modulen att signerings utfärdaren för den nya versionen matchar vad som tidigare har installerats.
+Katalog signering fungerar med, men ersätter inte signerings skript filer. PowerShell validerar inte Catalog-signaturer vid inläsning av modul.
 
-## <a name="follow-semver-guidelines-for-versioning"></a>Följ SemVer riktlinjer för versionshantering
+## <a name="follow-semver-guidelines-for-versioning"></a>Följ SemVer-rikt linjerna för versions hantering
 
-[SemVer](http://semver.org/) är en offentlig konvention som beskriver hur du strukturerar och ändra en version för att tillåta enkel tolkning av ändringar.
-Version för ditt paket måste inkluderas i manifestet data.
+[SemVer](http://semver.org/) är en offentlig konvention som beskriver hur du strukturerar och ändrar en version för att möjliggöra enkel tolkning av ändringar.
+Versionen för paketet måste ingå i manifest data.
 
-- Versionen ska vara strukturerade som 3 numeriska block avgränsade med punkter, som i 0.1.1 eller 4.11.192
-- Versioner som börjar med ”0” tyda på att paketet är ännu inte klara för produktion och den första siffran endast ska börja med ”0” om det är bara tal används
-- Ändringar i den första siffran (1.9.9999 2.0.0) anger högre och den icke-bakåtkompatibel ändringarna mellan versionerna
-- Ändringar i den andra siffran (1.1 1.2) visar funktionen på servernivå ändringar, till exempel att lägga till nya cmdlet: ar till en modul
-- Ändringar i det tredje talet anger bakåtkompatibla ändringar, till exempel nya parametrar, uppdaterade exempel eller nya test
-- När versioner, PowerShell om du vill sortera versionerna som strängar, så 1.01.0 behandlas som är större än 1.001.0
+- Versionen ska struktureras som 3 numeriska block åtskilda med punkter, som i 0.1.1 eller 4.11.192
+- Versioner som börjar med "0" visar att paketet inte är klart för produktion och att det första talet bara börjar med "0" om det är det enda antal som används
+- Ändringar i det första talet (1.9.9999 till 2.0.0) visar viktiga och avbrytande ändringar mellan versionerna
+- Ändringar av det andra talet (1,1 till 1,2) visar ändringar på funktions nivå, till exempel att lägga till nya cmdletar i en modul
+- Ändringar i det tredje talet indikerar icke-brytande ändringar, till exempel nya parametrar, uppdaterade exempel eller nya tester
+- När du visar versioner sorterar PowerShell versionerna som strängar, så 1.01.0 kommer att behandlas som större än 1.001.0
 
-PowerShell skapades innan SemVer publicerades, så den ger stöd för de flesta men inte alla element i SemVer, särskilt:
+PowerShell skapades innan SemVer publicerades, vilket ger stöd för de flesta men inte alla element i SemVer, särskilt:
 
-- Det stöder inte förhandsversioner strängar i versionsnummer. Detta är användbart när en utgivare önskar att leverera en förhandsversionen av en ny huvudversion när du har angett en version 1.0.0. Detta kommer att stödjas i en framtida version av PowerShell-galleriet och PowerShellGet-cmdletar.
-- PowerShell och PowerShell-galleriet kan du version strängar med 1, 2 och 4 segment. Riktlinjerna följde inte de många tidig moduler och produktversioner från Microsoft innehåller versionsinformation eftersom en 4 blockera tal (till exempel 5.1.14393.1066). Baserat på en versionshantering av ignoreras dessa skillnader.
+- Den har inte stöd för för hands versions strängar i versions nummer. Detta är användbart när en utgivare vill leverera en för hands version av en ny huvud version när du har angett en version 1.0.0. Detta kommer att stödjas i en framtida version av PowerShell-galleriet-och PowerShellGet-cmdletar.
+- PowerShell och PowerShell-galleriet tillåta versions strängar med 1, 2 och 4 segment. Många tidiga moduler följer inte rikt linjerna och produkt utgåvorna från Microsoft inkluderar build-information som ett fjärde block med nummer (till exempel 5.1.14393.1066). Dessa skillnader ignoreras från en versions synpunkt.
 
-## <a name="test-using-a-local-repository"></a>Testa med en lokal databas
+## <a name="test-using-a-local-repository"></a>Testa med en lokal lagrings plats
 
-PowerShell-galleriet är inte avsedd att vara målet för att testa publiceringsprocessen.
-Det bästa sättet att testa slutpunkt till slutpunkt-processen för publicering till PowerShell-galleriet är att installera och använda en egen lokal databas.
-Detta kan göras på flera sätt, inklusive:
+PowerShell-galleriet är inte avsedd att vara ett mål för att testa publicerings processen.
+Det bästa sättet att testa processen från slut punkt till slut punkt för att publicera till PowerShell-galleriet är att konfigurera och använda din egen lokala lagrings plats.
+Detta kan göras på några sätt, t. ex.:
 
-- Konfigurera en lokal PowerShell-galleriet-instans med hjälp av den [PS privat galleri projekt](https://github.com/PowerShell/PSPrivateGallery) i Github. Det här preview-projektet kan du ställa in en instans av PowerShell-galleriet som du kan styra och användning för dina tester.
-- Konfigurera en [interna Nuget databas](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/). Detta kräver mer arbete att ställa in, men har fördelen med att verifiera några fler krav, särskilt verifiera användning av en API-nyckel och om beroenden finns i målet när du publicerar.
-- Konfigurera en filresurs som test ”databas”. Är det enkelt att ställa in, men eftersom det är en filresurs verifieringar som anges ovan inte kommer att äga rum. En potentiella fördelar är i det här fallet att filresursen kontrollerar inte (obligatoriskt) API-nyckel, så du kan använda samma nyckel sätt för att publicera i PowerShell-galleriet.
+- Konfigurera en lokal PowerShell-galleriet instans med hjälp av [projektet PS, privat Galleri](https://github.com/PowerShell/PSPrivateGallery) i GitHub. I det här för hands versionen av projektet får du hjälp att skapa en instans av PowerShell-galleriet som du kan styra och använda för dina tester.
+- Konfigurera en [intern NuGet-lagringsplats](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/). Detta kräver mer arbete för att konfigureras, men har fördelen att du verifierar några av kraven, särskilt att validera användningen av en API-nyckel och om beroenden finns i målet när du publicerar.
+- Konfigurera en fil resurs som test "databas". Detta är enkelt att konfigurera, men eftersom det är en fil resurs kommer de verifieringar som anges ovan inte att äga rum. En potentiell fördel i detta fall är att fil resursen inte kontrollerar (obligatoriskt) API-nyckeln, så du kan använda samma nyckel som du vill publicera till PowerShell-galleriet.
 
-Med någon av dessa lösningar, använder du Register-PSRepository för att definiera en ny ”databas”, som du använder i egenskapen - lagringsplatsen för Publish-Module.
+Med någon av dessa lösningar använder du register-PSRepository för att definiera en ny "lagrings plats", som du använder i egenskapen--lagringsplats för Publish-module.
 
-Ytterligare en punkt om test-publicering: alla paket som du publicerar till PowerShell-galleriet kan inte tas bort utan hjälp från operations-teamet som bekräftar att ingenting är beroende av det paket som du vill publicera.
-Därför vi har inte stöd för PowerShell-galleriet som testar mål och kommer att kontakta alla utgivare som sker.
+En ytterligare punkt om test publicering: alla paket som du publicerar till PowerShell-galleriet kan inte tas bort utan hjälp från Operations-teamet, som bekräftar att inget är beroende av det paket som du vill publicera.
+Därför stöder vi inte PowerShell-galleriet som ett test mål och kommer att kontakta alla utgivare som gör det.
 
 ## <a name="use-powershellget-to-publish"></a>Använda PowerShellGet för att publicera
 
-Vi rekommenderar starkt att utgivare kan använda Publish-Module och Publish-Script-cmdlets när du arbetar med PowerShell-galleriet.
-PowerShellGet har skapats för att undvika att komma ihåg viktig information om att installera från och publicering till PowerShell-galleriet.
-Ibland har utgivare valt att hoppa över PowerShellGet och använda NuGet-klienten eller PackageManagement-cmdletar i stället för Publish-Module.
-Det finns ett antal information som är enkelt att missade, vilket resulterar i en mängd olika supportärenden.
+Vi rekommenderar starkt att utgivare använder cmdletarna Publish-module och Publish-script när de arbetar med PowerShell-galleriet.
+PowerShellGet har skapats för att hjälpa dig att undvika att komma ihåg viktig information om hur du installerar från och publicerar till PowerShell-galleriet.
+Ibland har utgivare valt att hoppa över PowerShellGet och använda NuGet-klienten, eller PackageManagement-cmdletar, i stället för Publish-modul.
+Det finns ett antal information som är lätt att missa, vilket resulterar i en rad olika support förfrågningar.
 
-Om det finns en orsak till att du inte kan använda Publish-Module eller Publish-Script, låt oss veta.
-Ett problem i PowerShellGet GitHub-lagringsplatsen och ange information som gör att du kan välja NuGet eller PackageManagement.
+Om det finns en anledning till att du inte kan använda Publish-modul eller publicera skript, kan du berätta för oss.
+Skriv ett problem i PowerShellGet GitHub-lagrings platsen och ange information som gör det möjligt att välja NuGet eller PackageManagement.
 
-## <a name="recommended-workflow"></a>Rekommenderat arbetsflöde
+## <a name="recommended-workflow"></a>Rekommenderat arbets flöde
 
-Den mest framgångsrika metoden som vi har hittat för paket som publicerats i PowerShell-galleriet är detta:
+Den mest fungerande metoden vi har hittat för paket som publicerats till PowerShell-galleriet är följande:
 
-- Inledande utveckling i en plats för ett projekt med öppen källkod. PowerShell-teamet använder Github.
-- Använd feedback från granskare och [Powershell-skript Analyzer](https://aka.ms/psscriptanalyzer) att hämta koden för att stabilt läge
-- Inkludera dokumentation, så att andra vet hur du använder ditt arbete
-- Testa publishing åtgärden med en lokal databas.
-- Publicera en stabil eller Alpha-versionen till PowerShell-galleriet, se till att inkludera den dokumentation och en länk till projektwebbplatsen
-- Samla in feedback och iterera om koden i din projektwebbplats och sedan publicera stabil uppdateringar till PowerShell-galleriet
-- Lägg till exempel och Pester tester i ditt projekt och din modul
-- Bestäm om du vill kod logga ditt paket
-- När du anser att projektet är klart att användas i en produktionsmiljö, publicera en 1.0.0 version PowerShell-galleriet
-- Fortsätta att samla in feedback och iterera din kod baserat på indata från användaren
+- Gör den inledande utvecklingen på en Project-webbplats med öppen källkod. PowerShell-teamet använder GitHub.
+- Använd feedback från granskare och [PowerShell script Analyzer](https://aka.ms/psscriptanalyzer) för att få koden att vara stabil
+- Ta med dokumentation, så att andra vet hur man använder ditt arbete
+- Testa publicerings åtgärden med hjälp av en lokal lagrings plats.
+- Publicera en stabil eller alfa version till PowerShell-galleriet och se till att lägga till dokumentationen och länka till din projekt webbplats
+- Samla in feedback och iterera på koden i din projekt webbplats och publicera sedan stabila uppdateringar på PowerShell-galleriet
+- Lägg till exempel och pester-tester i projektet och modulen
+- Bestäm om du vill koda signera ditt paket
+- När du tycker att projektet är redo att användas i en produktions miljö, publicerar du en 1.0.0-version till PowerShell-galleriet
+- Fortsätt att samla in feedback och iterera på din kod baserat på användarindata

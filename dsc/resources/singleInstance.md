@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+keywords: DSC, PowerShell, konfiguration, installation
 title: Skriva en DSC-resurs med en enskild instans (metodtips)
-ms.openlocfilehash: 9494964b1b13eaa082ad5cbc279b4586bb7211cc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4d9e07c6aaa064f808a03d4252e8d352b82183ec
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076573"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986557"
 ---
 # <a name="writing-a-single-instance-dsc-resource-best-practice"></a>Skriva en DSC-resurs med en enskild instans (metodtips)
 
->**Obs:** Det här avsnittet beskrivs bästa praxis för att definiera en DSC-resurs som tillåter bara en instans i en konfiguration. Det finns för närvarande ingen inbyggd DSC-funktion för att göra detta. Som kan ändras i framtiden.
+>**Obs:** I det här avsnittet beskrivs bästa praxis för att definiera en DSC-resurs som bara tillåter en enda instans i en konfiguration. Det finns för närvarande ingen inbyggd DSC-funktion för detta. Detta kan ändras i framtiden.
 
-Det finns situationer där du inte vill att en resurs som ska användas flera gånger i en konfiguration. Till exempel i en föregående implementering av den [xTimeZone](https://github.com/PowerShell/xTimeZone) resurs, en konfiguration kan anropa resursen flera gånger, tidszonen till en annan inställning i varje block för resursen:
+Det finns situationer där du inte vill tillåta att en resurs används flera gånger i en konfiguration. I en tidigare implementering av [xTimeZone](https://github.com/PowerShell/xTimeZone) -resursen kan en konfiguration exempelvis anropa resursen flera gånger, vilket ställer in tids zonen till en annan inställning i varje resurs block:
 
 ```powershell
 Configuration SetTimeZone
@@ -46,10 +46,10 @@ Configuration SetTimeZone
 }
 ```
 
-Detta beror på det sätt som DSC resursnycklar fungerar. En resurs måste ha minst en nyckelegenskap. En resursinstans anses vara unika om kombinationen av värdena för alla viktiga egenskaper är unikt. I den tidigare implementeringen i [xTimeZone](https://github.com/PowerShell/xTimeZone) resurs hade endast en egenskap--**tidszon**, som måste vara en nyckel. Därför skulle en konfiguration, till exempel det ovanstående kompilera och kör utan varning. Var och en av de **xTimeZone** resource block anses vara unika. Detta innebär att konfigurationen ska tillämpas upprepade gånger på noden och cykling tidszonen fram och tillbaka.
+Detta beror på hur DSC-resursens nycklar fungerar. En resurs måste ha minst en nyckel egenskap. En resurs instans betraktas som unik om kombinationen av värdena för alla nyckel egenskaper är unik. I den tidigare implementeringen hade [xTimeZone](https://github.com/PowerShell/xTimeZone) -resursen bara en egenskap--**timezone**, som krävdes för att vara en nyckel. Därför skulle en konfiguration som ovan kompileras och köras utan varning. Var och en av **xTimeZone** -resurs blocken betraktas som unika. Detta skulle göra att konfigurationen upprepas flera gånger på noden, och att den försätts i timezone och tillbaka.
 
-Att kontrollera att en konfiguration kan tidszonen för en målnoden bara en gång, resursen har uppdaterats för att lägga till en andra egenskap **IsSingleInstance**, som blev nyckelegenskapen.
-Den **IsSingleInstance** har begränsat till ett enda värde, ”Yes” med hjälp av en **ValueMap**. Det gamla MOF-schemat för resursen var:
+För att säkerställa att en konfiguration bara kan ställa in tids zonen för en målnod en gång, uppdaterades resursen för att lägga till en andra egenskap, **IsSingleInstance**, som blev nyckel egenskapen.
+**IsSingleInstance** var begränsad till ett enda värde, "Ja" med hjälp av en **ValueMap**. Det gamla MOF-schemat för resursen var:
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -70,7 +70,7 @@ class xTimeZone : OMI_BaseResource
 };
 ```
 
-Resurs-skriptet har också uppdaterats om du vill använda den nya parametern. Här är gammal resurs-skriptet:
+Resurs skriptet har också uppdaterats för att använda den nya parametern. Här är resurs skriptet ändrat:
 
 ```powershell
 function Get-TargetResource
@@ -102,10 +102,9 @@ function Get-TargetResource
     $returnValue
 }
 
-
 function Set-TargetResource
 {
-    [CmdletBinding(SupportsShouldProcess=$true)]
+    [CmdletBinding()]
     param
     (
         [parameter(Mandatory = $true)]
@@ -122,24 +121,24 @@ function Set-TargetResource
     #Output the result of Get-TargetResource function.
     $CurrentTimeZone = Get-TimeZone
 
-    if($PSCmdlet.ShouldProcess("'$TimeZone'","Replace the System Time Zone"))
+    Write-Verbose -Message "Replace the System Time Zone to $TimeZone"
+    
+    try
     {
-        try
+        if($CurrentTimeZone -ne $TimeZone)
         {
-            if($CurrentTimeZone -ne $TimeZone)
-            {
-                Write-Verbose -Verbose "Setting the TimeZone"
-                Set-TimeZone -TimeZone $TimeZone}
-            else
-            {
-                Write-Verbose -Verbose "TimeZone already set to $TimeZone"
-            }
+            Write-Verbose -Verbose "Setting the TimeZone"
+            Set-TimeZone -TimeZone $TimeZone
         }
-        catch
+        else
         {
-            $ErrorMsg = $_.Exception.Message
-            Write-Verbose -Verbose $ErrorMsg
+            Write-Verbose -Verbose "TimeZone already set to $TimeZone"
         }
+    }
+    catch
+    {
+        $ErrorMsg = $_.Exception.Message
+        Write-Verbose -Verbose $ErrorMsg
     }
 }
 
@@ -203,7 +202,7 @@ Function Set-TimeZone {
 Export-ModuleMember -Function *-TargetResource
 ```
 
-Observera att den **tidszon** egenskaper är inte en nyckel. Om en konfiguration som försöker ange tidszonen två gånger (med hjälp av två olika **xTimeZone** block med olika **tidszon** värden), försök att kompilera konfigurationen visas ett felmeddelande:
+Observera att egenskapen **timezone** inte längre är en nyckel. Om en konfiguration försöker ställa in tids zonen två gånger (genom att använda två olika **xTimeZone** -block med olika **timezone** -värden), kommer försök att kompilera konfigurationen att orsaka ett fel:
 
 ```powershell
 Test-ConflictingResources : A conflict was detected between resources '[xTimeZone]TimeZoneExample (::15::10::xTimeZone)' and

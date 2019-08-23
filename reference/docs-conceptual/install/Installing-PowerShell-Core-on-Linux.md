@@ -2,16 +2,16 @@
 title: Installera PowerShell Core i Linux
 description: Information om hur du installerar PowerShell Core på olika Linux-distributioner
 ms.date: 07/19/2019
-ms.openlocfilehash: 929b153ef784f3203cd31a0e2fc52e744a07532f
-ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
+ms.openlocfilehash: be11a2a873af71c193730d0a9e723da2dc70a62d
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68372197"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986732"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Installera PowerShell Core i Linux
 
-Stöder [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE kliv 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], och [båge Linux][arch].
+Stöder [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Ubuntu 19,04][u1904], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE skottår 15][opensuse], [Fedora 27 ][fedora], [Fedora 28][fedora]och [båge Linux][arch].
 
 För Linux-distributioner som inte stöds officiellt kan du försöka installera PowerShell med hjälp av [PowerShell-Snap-paketet][snap]. Du kan också prova att distribuera PowerShell-binärfiler direkt med [ `tar.gz` ][tar]Linux-arkivet, men du måste konfigurera de nödvändiga beroendena baserat på operativ systemet i separata steg.
 
@@ -20,6 +20,7 @@ Alla paket är tillgängliga på vår GitHub [releases][] sida. När paketet har
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
 [u1810]: #ubuntu-1810
+[u1904]: #ubuntu-1904
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
@@ -142,10 +143,17 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1810"></a>Ubuntu 18,10
 
-> [!NOTE]
-> Eftersom 18,10 är en [tillfällig version](https://www.ubuntu.com/about/release-cycle)stöds den bara av [communityn](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
+Installationen stöds via `snapd`. Instruktioner finns i [snapin-paket][snap].
 
-Installation på 18,10 stöds via `snapd`. Se [snapin-paket][snap] för fullständiga instruktioner.
+> [!NOTE]
+> Ubuntu 18,10 är en [tillfällig version](https://www.ubuntu.com/about/release-cycle) som [stöds](../powershell-support-lifecycle.md)av communityn.
+
+## <a name="ubuntu-1904"></a>Ubuntu 19,04
+
+Installationen stöds via `snapd`. Instruktioner finns i [snapin-paket][snap].
+
+> [!NOTE]
+> Ubuntu 19,04 är en [tillfällig version](https://www.ubuntu.com/about/release-cycle) som [stöds](../powershell-support-lifecycle.md)av communityn.
 
 ## <a name="debian-8"></a>Debian 8
 
