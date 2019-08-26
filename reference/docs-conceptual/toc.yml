@@ -52,6 +52,24 @@
       href: learn/writing-portable-modules.md
     - name: PowerShell-fjärranvändning
       items:
+        - name: JEA (Just Enough Administration)
+          items:
+            - name: Översikt
+              href: learn/remoting/jea/overview.md
+            - name: Förutsättningar
+              href: learn/remoting/jea/prerequisites.md
+            - name: Rollfunktioner
+              href: learn/remoting/jea/role-capabilities.md
+            - name: Sessionskonfigurationer
+              href: learn/remoting/jea/session-configurations.md
+            - name: Registrera JEA
+              href: learn/remoting/jea/register-jea.md
+            - name: Använda JEA
+              href: learn/remoting/jea/using-jea.md
+            - name: Säkerhetsaspekter
+              href: learn/remoting/jea/security-considerations.md
+            - name: Granska och rapportera i JEA
+              href: learn/remoting/jea/audit-and-report.md
         - name: Kör fjärrkommandon
           href: learn/remoting/running-remote-commands.md
         - name: PowerShell fjärrkommunikation via SSH
