@@ -1,73 +1,83 @@
 ---
-title: Stöd för jokertecken i Cmdlet-parametrarna | Microsoft Docs
+title: Ge stöd för jokertecken i cmdlet-parametrar
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/26/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- wildcards [PowerShell Programmer's Guide]
-- parameters [PowerShell Programmer's Guide], wildcards
-ms.assetid: 9b26e1e9-9350-4a5a-aad5-ddcece658d93
-caps.latest.revision: 12
-ms.openlocfilehash: 6c762d3889bc4b649252390625525db4735f4c1d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19644c5bc186a5554d6b134a67fc7c4d7aa7b64c
+ms.sourcegitcommit: a02ccbeaa17c0e513d6c4a21b877c88ac7725458
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067407"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104452"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>Ge stöd för jokertecken i cmdlet-parametrar
 
-Du får ofta att utforma en cmdlet för att köra mot en grupp med resurser i stället för mot en enskild resurs. Till exempel behöva en cmdlet att hitta alla filer i ett datalager som har samma namn eller tillägg. Du måste tillhandahålla support för jokertecken när du utformar en cmdlet som ska köras mot en grupp med resurser.
+Du måste ofta utforma en cmdlet för att kunna köras mot en grupp resurser i stället för till en enda resurs. En cmdlet kan till exempel behöva hitta alla filer i ett data lager som har samma namn eller tillägg. Du måste ge stöd för jokertecken när du skapar en cmdlet som ska köras mot en grupp med resurser.
 
 > [!NOTE]
-> Använda jokertecken är kallas ibland *globbing*.
+> Användning av jokertecken kallas ibland *globbing*.
 
 ## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>Windows PowerShell-cmdletar som använder jokertecken
 
- Många Windows PowerShell-cmdletar stöder jokertecken för sina parametervärden. Till exempel nästan alla cmdlet som har en `Name` eller `Path` parametern har stöd för jokertecken för dessa parametrar. (Även om de flesta cmdletar som har en `Path` parametern också ha en `LiteralPath` parameter som inte stöder jokertecken.) Följande kommando visar hur ett jokertecken används för att returnera alla cmdletar i den aktuella sessionen vars namn innehåller Get-verbet.
+ Många Windows PowerShell-cmdlets stöder jokertecken för sina parameter värden. Till exempel nästan alla cmdletar som har en `Name` - `Path` eller-parameter stöder jokertecken för dessa parametrar. (Även om de flesta cmdletar som `Path` har en parameter också `LiteralPath` har en parameter som inte stöder jokertecken.) Följande kommando visar hur ett jokertecken används för att returnera alla cmdletar i den aktuella sessionen vars namn innehåller verbet get.
 
- **PS > get-kommandot get -\***
+ `Get-Command get-*`
 
-## <a name="supported-wildcard-characters"></a>Jokertecken stöds
+## <a name="supported-wildcard-characters"></a>Jokertecken som stöds
 
-Windows PowerShell har stöd för följande jokertecken.
+Windows PowerShell stöder följande jokertecken.
 
-|Jokertecken|Beskrivning|Exempel|Matchningar|Matchar inte|
-|------------------------|-----------------|-------------|-------------|--------------------|
-|*|Matchar noll eller flera tecken, med början vid den angivna positionen|a*|En, ag, Apple||
-|?|Matchningar anycharacter vid den angivna positionen|?n|En i, på|kördes|
-|[ ]|Matchar ett teckenintervall|[a-l]ook|bok, Cooköarna, utseende|tog|
-|[ ]|Matchar de angivna tecken|[bc]ook|bok, Cooköarna|Titta|
+| Användning |                             Beskrivning                             |  Exempel   |     Matchningar      | Matchar inte |
+| -------- | ------------------------------------------------------------------- | ---------- | ---------------- | -------------- |
+| *        | Matchar noll eller flera tecken, med början vid den angivna positionen | `a*`       | A, AG, Apple     |                |
+| ?        | Matchar alla bokstäver vid angiven position                     | `?n`       | En, i, på       | kördes            |
+| [ ]      | Matchar ett tecken intervall                                       | `[a-l]ook` | bok, Cook, utseende | Nook, vidtog     |
+| [ ]      | Matchar de angivna tecknen                                    | `[bn]ook`  | bok, Nook       | laga, titta     |
 
-När du utformar cmdletar som stöder jokertecken Tillåt kombinationer av jokertecken. Till exempel följande kommando använder de `Get-ChildItem` cmdlet för att hämta alla txt-filer som finns i mappen c:\Techdocs och som börjar med ”a” till ”l”.
+När du utformar cmdletar som stöder jokertecken kan du använda kombinationer av jokertecken. Följande kommando använder `Get-ChildItem` till exempel cmdleten för att hämta alla. txt-filer som finns i mappen c:\Techdocs och som börjar med bokstäverna "a" till "l".
 
-**Get-childitem c:\techdocs\\[a-l]\*.txt**
+`Get-ChildItem c:\techdocs\[a-l]\*.txt`
 
-Föregående kommando använder jokertecknet intervallet **[a-l]** att ange att filnamnet ska börja med tecknen ”a” till ”l”. Kommandot använder sedan den * jokertecknet som platshållare för några tecken mellan den första bokstaven i filnamnet och filnamnstillägget .txt.
+Föregående kommando använder området jokertecken `[a-l]` för att ange att fil namnet ska börja med tecknen "a" till och med "l" och `*` använder jokertecknet som plats hållare för alla tecken mellan den första bokstaven i fil namnet och tillägget **. txt** .
 
-I följande exempel används ett intervall med jokerteckensmönster som utesluter bokstaven ”d” men innehåller alla andra bokstäver från ”a” till ”f”.
+I följande exempel används ett mönster med jokertecken som utesluter bokstaven "d", men innehåller alla andra bokstäver från "a" till "f".
 
-**Get-childitem c:\techdocs\\[a-cef]\*.txt**
+`Get-ChildItem c:\techdocs\[a-cef]\*.txt`
 
-## <a name="handling-literal-characters-in-wildcard-patterns"></a>Hantering av vanliga tecken i mönster med jokertecken
+## <a name="handling-literal-characters-in-wildcard-patterns"></a>Hantera tecken i mönster med jokertecken
 
-Om mönstret med jokertecken som du anger innehåller vanliga tecken, använder du backtick citattecken (') som escape-tecken. När du anger strängtecken programmässigt kan du använda en enda backtick. När du anger strängtecken i Kommandotolken, använder du två grava accenter. Följande mönster innehåller till exempel två hakparenteser som måste vidtas bokstavligt.
+Om det jokertecken du anger innehåller litterala tecken som inte ska tolkas som jokertecken använder du bakstrecks tecknet`` ` ``() som ett escape-tecken. Om du anger litterala tecken int PowerShell-API: et använder du ett enda baktick. Använd två baktick när du anger litterala tecken i PowerShell-Kommandotolken.
 
-”John Smith \`[*”] ”(anges via programmering)
+Följande mönster innehåller till exempel två hakparenteser som måste beaktas bokstavligen.
 
-”John Smith \` \`[*\`”] ”(som anges i Kommandotolken)
+När det används i PowerShell-API: et använder du:
 
-Det här mönstret matchar ”John Smith [marknadsföring]” eller ”John Smith [utveckling]”.
+- "John Svensson \`[*"] "
+
+När det används från PowerShell-Kommandotolken:
+
+- "John Svensson \` \`[*\`"] "
+
+Det här mönstret matchar "John Svensson [Marketing]" eller "John Svensson [Development]". Till exempel:
+
+```
+PS> "John Smith [Marketing]" -like "John Smith ``[*``]"
+True
+
+PS> "John Smith [Development]" -like "John Smith ``[*``]"
+True
+```
 
 ## <a name="cmdlet-output-and-wildcard-characters"></a>Cmdlet-utdata och jokertecken
 
-Om cmdlet-parametrarna har stöd för jokertecken, genererar en cmdlet-åtgärd vanligtvis matrisutdata. Ibland kan det vara bra utan att stödja en matris som utdata eftersom användaren kan använda endast en post i taget. Till exempel den `Set-Location` cmdlet har stöd för en matris som utdata eftersom användaren anger en enda plats. Cmdlet: en har fortfarande stöd för jokertecken i den här instansen, men tvingas av lösningen till en enda plats.
+När cmdlet-parametrarna har stöd för jokertecken genererar åtgärden vanligt vis en mat ris utmatning.
+Ibland är det ingen mening att stödja mat ris utdata eftersom användaren bara kan använda ett enda objekt. Till exempel `Set-Location` stöder cmdleten inte mat ris utdata eftersom användaren bara anger en enda plats. I den här instansen stöder cmdlet: en fortfarande jokertecken, men den framtvingar matchning till en enda plats.
 
 ## <a name="see-also"></a>Se även
 
-[Skriva en Windows PowerShell-Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+[Skriva en Windows PowerShell-cmdlet](./writing-a-windows-powershell-cmdlet.md)
 
 [WildcardPattern-klass](/dotnet/api/system.management.automation.wildcardpattern)
