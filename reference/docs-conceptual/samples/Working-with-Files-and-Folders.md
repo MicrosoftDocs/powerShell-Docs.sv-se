@@ -1,35 +1,35 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Arbeta med filer och mappar
-ms.openlocfilehash: 0f7cb233918b59475417ec49b611ecc25a94ebe1
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 743e261d2f5e8bfa39f2731fca7fea6e5678c711
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030686"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215530"
 ---
 # <a name="working-with-files-and-folders"></a>Arbeta med filer och mappar
 
-Navigera i Windows PowerShell-enheter och manipulera objekt på dem liknar manipulera filer och mappar på Windows fysiska hårddiskar. Det här avsnittet beskrivs hur du arbetar med specifika fil- och manipulering av uppgifter-med hjälp av PowerShell.
+Att navigera genom Windows PowerShell-enheter och ändra objekten på dem liknar att manipulera filer och mappar på fysiska Windows-diskar. I det här avsnittet beskrivs hur du hanterar vissa åtgärder för att manipulera filer och mappar med hjälp av PowerShell.
 
-## <a name="listing-all-the-files-and-folders-within-a-folder"></a>Visa en lista över alla filer och mappar i en mapp
+## <a name="listing-all-the-files-and-folders-within-a-folder"></a>Visar alla filer och mappar i en mapp
 
-Du kan hämta alla objekt direkt i en mapp med hjälp av **Get-ChildItem**. Lägg till det valfria **kraft** parameter för att visa dolda eller poster. Det här kommandot visar till exempel direkt innehållet i Windows PowerShell-enhet C (som är samma som den fysiska Windows-enheten C):
+Du kan hämta alla objekt direkt i en mapp med hjälp av **Get-ChildItem**. Lägg till den valfria **Force** -parametern om du vill visa dolda eller system objekt. Detta kommando visar till exempel direkt innehållet i Windows PowerShell-enhet C (som är samma som den fysiska Windows-enheten C):
 
 ```powershell
 Get-ChildItem -Path C:\ -Force
 ```
 
-Kommandot visas endast direkt inneslutna objekten, ungefär som med Cmd.exe's **DIR** kommando eller **ls** i ett UNIX-gränssnitt. Du vill visa objekten, måste du ange den **-Recurse** parametern samt. (Det kan ta en mycket lång tid att slutföra.) Visa en lista över allt på enhet C:
+Kommandot visar bara de objekt som finns direkt, ungefär som att använda CMD. Exes **dir** -kommando eller **ls** i ett UNIX-gränssnitt. Du måste ange parametern **-rekursivt** för att kunna visa befintliga objekt. (Det kan ta mycket lång tid att slutföra.) Så här visar du allt på C-enheten:
 
 ```powershell
 Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
-**Get-ChildItem** kan filtrera objekt med dess **sökväg**, **Filter**, **inkludera**, och **undanta** parametrar, men de är Vanligtvis baseras endast på namnet. Du kan utföra komplex filtrering baserat på andra egenskaper för objekt med hjälp av **Where-Object**.
+**Get-ChildItem** kan filtrera objekt med dess **sökväg**, **filtrera**, **Inkludera**och **exkludera** parametrar, men de är vanligt vis endast baserade på namn. Du kan utföra komplex filtrering baserat på andra egenskaper för objekt genom att använda **Where-Object**.
 
-Kommandot söker efter alla körbara filer i mappen program som senast ändrades efter den 1 oktober 2005 och som varken är mindre än 1 MB eller större än 10 MB:
+Följande kommando hittar alla körbara filer i mappen program som senast ändrades efter den 1 oktober 2005 och som inte är mindre än 1 MB eller större än 10 megabyte:
 
 ```powershell
 Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -FilterScript {($_.LastWriteTime -gt '2005-10-01') -and ($_.Length -ge 1mb) -and ($_.Length -le 10mb)}
@@ -37,33 +37,33 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 
 ## <a name="copying-files-and-folders"></a>Kopiera filer och mappar
 
-Kopieringen är klar med **Copy-Item**. Följande kommando säkerhetskopierar C:\\boot.ini till C:\\boot.bak:
+Kopieringen görs med **Kopiera objekt**. Följande kommando säkerhetskopierar c:\\Boot. ini till C:\\Boot. bak:
 
 ```powershell
 Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
 ```
 
-Kopiera försöket misslyckas om filen redan finns. Om du vill skriva över en befintlig mål, använda den **kraft** parameter:
+Om målfilen redan finns, Miss lyckas kopierings försöket. Om du vill skriva över ett redan befintligt mål använder du parametern **Force** :
 
 ```powershell
 Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 ```
 
-Det här kommandot fungerar även när målet är skrivskyddad.
+Kommandot fungerar även om målet är skrivskyddat.
 
-Kopiera mappen fungerar på samma sätt. Det här kommandot kopierar mappen C:\\temp\\test1 till den nya mappen C:\\temp\\DeleteMe rekursivt:
+Kopiering av mappar fungerar på samma sätt. Det här kommandot kopierar mappen c:\\Temp\\TEST1 till den nya mappen c:\\Temp\\DeleteMe rekursivt:
 
 ```powershell
 Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
-Du kan också kopiera ett urval av objekt. I följande kopieras alla txt-filer som finns var som helst i c:\\data till c:\\temp\\text:
+Du kan också kopiera ett urval av objekt. Följande kommando kopierar alla. txt-filer som finns var som helst\\i c: data\\till\\c: Temp-text:
 
 ```powershell
 Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
-Du kan fortfarande använda andra verktyg för att kopiera system. XCOPY ROBOCOPY och COM-objekt, till exempel den **Scripting.FileSystemObject,** användas i Windows PowerShell. Du kan till exempel använda Windows Script Host **Scripting.FileSystem COM** klassen för att säkerhetskopiera C:\\boot.ini till C:\\boot.bak:
+Du kan fortfarande använda andra verktyg för att utföra fil system kopior. XCOPY-, ROBOCOPY-och COM-objekt, till exempel **Scripting. FileSystemObject,** allt arbete i Windows PowerShell. Du kan till exempel använda Windows Script Host **Scripting. filesystem com-** klassen för att säkerhetskopiera C:\\Boot. ini till C:\\Boot. bak:
 
 ```powershell
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
@@ -71,15 +71,15 @@ Du kan fortfarande använda andra verktyg för att kopiera system. XCOPY ROBOCOP
 
 ## <a name="creating-files-and-folders"></a>Skapa filer och mappar
 
-Skapa nya objekt fungerar på samma på alla Windows PowerShell-leverantörer. Om en Windows PowerShell-providern har mer än en typ av objekt, till exempel filsystem Windows PowerShell-providern skiljer mellan kataloger och filer, måste du ange vilken typ av objekt.
+Att skapa nya objekt fungerar likadant på alla Windows PowerShell-leverantörer. Om en Windows PowerShell-provider har fler än en typ av objekt, till exempel Windows PowerShell-providern för fil systemet skiljer sig mellan kataloger och filer, måste du ange objekt typen.
 
-Det här kommandot skapar en ny mapp C:\\temp\\ny mapp:
+Det här kommandot skapar en ny mapp C\\:\\Temp ny mapp:
 
 ```powershell
 New-Item -Path 'C:\temp\New Folder' -ItemType Directory
 ```
 
-Det här kommandot skapar en ny tom fil C:\\temp\\ny mapp\\fil.txt
+Det här kommandot skapar en ny tom fil C\\:\\Temp New\\Folder File. txt
 
 ```powershell
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
@@ -87,7 +87,7 @@ New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 
 ## <a name="removing-all-files-and-folders-within-a-folder"></a>Ta bort alla filer och mappar i en mapp
 
-Du kan ta bort ingående objekt med hjälp av **Remove-Item**, men du kommer att uppmanas att bekräfta borttagningen om objektet innehåller något annat. Exempel: Om du försöker ta bort mappen C:\\temp\\DeleteMe som innehåller andra objekt, Windows PowerShell uppmanas du att bekräfta innan du tar bort mappen:
+Du kan ta bort objekt som finns i **Remove-item**, men du uppmanas att bekräfta borttagningen om objektet innehåller något annat. Om du till exempel försöker ta bort mappen C:\\Temp\\-DeleteMe som innehåller andra objekt, uppmanas du i Windows PowerShell att bekräfta innan du tar bort mappen:
 
 ```
 Remove-Item -Path C:\temp\DeleteMe
@@ -100,25 +100,27 @@ sure you want to continue?
 (default is "Y"):
 ```
 
-Om du inte vill uppmanas att varje ingående objekt anger du den **Recurse** parameter:
+Om du inte vill bli tillfrågad om varje objekt som ingår, anger du parametern **rekursivt** :
 
 ```powershell
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-## <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Mappa en lokal mapp som en tillgänglig Windows-enhet
+## <a name="mapping-a-local-folder-as-a-drive"></a>Mappa en lokal mapp som en enhet
 
-Du kan också mappa en lokal mapp med hjälp av den **subst** kommando. Följande kommando skapar en lokal enhet P: rotad i den lokala katalogen för programfiler:
+Du kan också mappa en lokal mapp med kommandot **New-PSDrive** . Följande kommando skapar en lokal enhet P: rotad i katalogen lokala program filer, som endast visas från PowerShell-sessionen:
 
 ```powershell
-subst p: $env:programfiles
+New-PSDrive -Name P -Root $env:ProgramFiles -PSProvider FileSystem
 ```
 
-Precis som med nätverksenheter, mappade enheter i Windows PowerShell med hjälp av **subst** visas direkt för Windows PowerShell-gränssnittet.
+Precis som med nätverks enheter är enheter som mappas i Windows PowerShell direkt synliga för Windows PowerShell-gränssnittet.
+För att du ska kunna skapa en mappad enhet som visas i Utforskaren, krävs parametern **-persist** . Dock kan endast fjärrsökvägar användas med persist.
 
-## <a name="reading-a-text-file-into-an-array"></a>Läser en textfil i en matris
 
-En av de vanliga storage format för textdata är i en fil med separata rader behandlas som distinkta dataelement. Den **Get-innehåll** cmdlet kan användas för att läsa en hel fil i ett steg som visas här:
+## <a name="reading-a-text-file-into-an-array"></a>Läsa en textfil i en matris
+
+Ett av de vanligaste lagrings formaten för text data finns i en fil med separata rader som behandlas som distinkta data element. Cmdleten **Get-Content** kan användas för att läsa en hel fil i ett enda steg, som du ser här:
 
 ```
 PS> Get-Content -Path C:\boot.ini
@@ -132,17 +134,17 @@ multi(0)disk(0)rdisk(0)partition(1)\WINDOWS=" Microsoft Windows XP Professional
 with Data Execution Prevention" /noexecute=optin /fastdetect
 ```
 
-**Get-innehåll** redan behandlar data läses från filen som en matris med ett element per rad i filinnehållet. Du kan kontrollera detta genom att markera den **längd** av returnerat innehåll:
+**Get-Content** behandlar redan data som läses från filen som en matris, med ett element per rad med fil innehåll. Du kan bekräfta detta genom att kontrol lera **längden** på det returnerade innehållet:
 
 ```
 PS> (Get-Content -Path C:\boot.ini).Length
 6
 ```
 
-Det här kommandot är mest användbara för att hämta en lista över information i Windows PowerShell direkt. Du kan till exempel lagra en lista med datornamn eller IP-adresser i en fil C:\\temp\\domainMembers.txt med ett namn på varje rad i filen. Du kan använda **Get-innehåll** hämtar filinnehållet och placerar dem i variabeln **$Computers**:
+Det här kommandot är mest användbart för att hämta listor med information till Windows PowerShell direkt. Du kan till exempel lagra en lista med dator namn eller IP-adresser i en fil C:\\Temp\\domainMembers. txt med ett namn på varje rad i filen. Du kan använda **Get-Content** för att hämta fil innehållet och placera dem i variabeln **$Computers**:
 
 ```powershell
 $Computers = Get-Content -Path C:\temp\DomainMembers.txt
 ```
 
-**$Computers** är nu en matris som innehåller namnet på en dator i varje element.
+**$Computers** är nu en matris som innehåller ett dator namn i varje element.

@@ -1,45 +1,55 @@
 ---
-title: 'Så här importerar du cmdlet: ar med moduler | Microsoft Docs'
+title: Så här importerar du cmdlets med hjälp av moduler | Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/28/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a41d9e5f-de6f-47b7-9601-c108609320d0
 caps.latest.revision: 8
-ms.openlocfilehash: c007bb11324e10ffd100797dccd9e6ab0d09a73e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2f145795a57c988da0cb4ed294142aa141c53cae
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067985"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215272"
 ---
 # <a name="how-to-import-cmdlets-using-modules"></a>Importera cmdlets med hjälp av moduler
 
-Det här avsnittet beskriver hur du importerar cmdlet: ar till en Windows PowerShell-session med hjälp av en binär modul.
+I den här artikeln beskrivs hur du importerar cmdletar till en PowerShell-session med hjälp av en binär modul.
 
 > [!NOTE]
-> Medlemmarna i moduler kan innehålla cmdlets, providers, funktioner, variabler, alias och mycket mer. Snapin-moduler kan innehålla endast-cmdlets och providers.
+> Medlemmar i moduler kan omfatta cmdlets, providrar, functions, variabler, alias och mycket mer. Snapin-moduler kan bara innehålla cmdlets och providers.
 
-## <a name="how-to-load-cmdlets-using-a-module"></a>Hur du läser in cmdlet: ar med en modul
+## <a name="how-to-load-cmdlets-using-a-module"></a>Så här läser du in cmdletar med hjälp av en modul
 
-1. Skapa en modul-mapp som har samma namn som sammansättningsfilen där cmdletarna har implementerats. I den här proceduren modulmappen skapas i den `system32` mapp.
+1. Skapa en modul som har samma namn som den sammansättnings fil där cmdletarna implementeras. I den här proceduren skapas mappen modul i Windows `system32` -mappen.
 
    `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
 
-2. Se till att den `PSModulePath` miljövariabeln innehåller sökvägen till den nya modulmappen. Som standard systemmappen har redan lagts till i `PSModulePath` miljövariabeln.
+1. Kontrol lera att `PSModulePath` miljövariabeln innehåller sökvägen till din nya modul-mapp. Som standard har System-mappen redan lagts till `PSModulePath` i miljövariabeln. Om du vill `PSModulePath`Visa skriver du `$env:PSModulePath`:.
 
-3. Kopiera cmdlet-sammansättningen i modulmappen.
+1. Kopiera cmdlet-sammansättningen till module-mappen.
 
-4. Kör följande kommando för att lägga till cmdlets till sessionen:
+1. Lägg till en modul för manifest`.psd1`fil () i modulens rotmapp. PowerShell använder modulen manifest för att importera modulen. Mer information finns i [så här skriver du ett manifest för PowerShell-modul](../module/how-to-write-a-powershell-module-manifest.md).
 
-   `import-module [Module_Name]`
+1. Kör följande kommando för att lägga till cmdletarna i sessionen:
 
-   Den här proceduren kan användas för att testa dina cmdlets. Det lägger till alla cmdletar i sammansättningen till sessionen. Mer information om de olika typerna av moduler, olika sätt att läsa in moduler och hur du begränsar den del av en modul som exporteras, finns i [skriva en Windows PowerShell-modul](../module/writing-a-windows-powershell-module.md).
+   `Import-Module [Module_Name]`
+
+   Den här proceduren kan användas för att testa dina cmdletar. Den lägger till alla cmdletar i sammansättningen till sessionen. Mer information om moduler finns i [skriva en Windows PowerShell-modul](../module/writing-a-windows-powershell-module.md).
 
 ## <a name="see-also"></a>Se även
 
-[Skriva en Windows PowerShell-Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+[Så här skriver du ett manifest för PowerShell-modul](../module/how-to-write-a-powershell-module-manifest.md)
+
+[Importera en PowerShell-modul](../module/importing-a-powershell-module.md)
+
+[Importera-modul](/powershell/module/Microsoft.PowerShell.Core/Import-Module)
 
 [Installera moduler](../module/installing-a-powershell-module.md)
+
+[Ändra installations Sök vägen för PSModulePath](../module/modifying-the-psmodulepath-installation-path.md)
+
+[Skriva en Windows PowerShell-cmdlet](./writing-a-windows-powershell-cmdlet.md)

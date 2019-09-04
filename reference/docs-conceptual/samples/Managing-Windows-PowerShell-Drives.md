@@ -1,19 +1,19 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Hantera Windows PowerShell-enheter
-ms.openlocfilehash: 32efa282fb787753942e43acab53c7b6eaeb88e3
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 5d1aba459caeaab2542e17e74534da6713b0faa9
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030141"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215520"
 ---
 # <a name="managing-windows-powershell-drives"></a>Hantera Windows PowerShell-enheter
 
-En *Windows PowerShell-enhet* är en lagringsplats för data som du har åtkomst till som en filsystemets enhet på Windows PowerShell. Windows PowerShell-providers skapa vissa enheter för dig, som filsystemet enheter (inklusive C: och D:), registret enheter (HKCU: och HKLM:), och den certifikat-enheten (Cert:), och du kan skapa egna Windows PowerShell-enheter. Dessa enheter är mycket användbara, men de är tillgängliga i Windows PowerShell. Du kan inte komma åt dem från andra Windows-verktyg, till exempel Utforskaren eller Cmd.exe.
+En *Windows PowerShell-enhet* är en data lager plats som du kan komma åt som en fil system enhet i Windows PowerShell. Windows PowerShell-providern skapar några enheter åt dig, till exempel fil system enheter (inklusive C: och D:), register enheterna (HKCU: och HKLM:) och certifikat enheten (cert:) och du kan skapa egna Windows PowerShell-enheter. De här enheterna är mycket användbara, men de är bara tillgängliga i Windows PowerShell. Du kan inte komma åt dem genom att använda andra Windows-verktyg, till exempel Utforskaren eller cmd. exe.
 
-Windows PowerShell använder substantiv, **PSDrive**, för kommandona som fungerar med Windows PowerShell-enheter. En lista med Windows PowerShell-enheter i Windows PowerShell-sessionen, använda den **Get-PSDrive** cmdlet.
+Windows PowerShell använder substantiv, **PSDrive**, för kommandon som fungerar med Windows PowerShell-enheter. Om du vill ha en lista över Windows PowerShell-enheter i Windows PowerShell-sessionen använder du cmdleten **Get-PSDrive** .
 
 ```
 PS> Get-PSDrive
@@ -32,11 +32,11 @@ HKLM       Registry      HKEY_LOCAL_MACHINE
 Variable   Variable
 ```
 
-Även om enheterna i visningen variera med enheter på datorn, på listan ser ut ungefär som utdata från den **Get-PSDrive** kommandot ovan.
+Även om enheterna i visningen varierar med enheterna i systemet, kommer listan att se ut ungefär som utdata från kommandot **Get-PSDrive** som visas ovan.
 
-Enheter är en delmängd av Windows PowerShell-enheter. Du kan identifiera filen systemenheter av filsystem posten i kolumnen providern. (Filen systemenheter i Windows PowerShell stöds av filsystem för Windows PowerShell-providern.)
+Fil Systems enheter är en delmängd av Windows PowerShell-enheterna. Du kan identifiera fil system enheterna med posten FileSystem i kolumnen Provider. (Fil system enheter i Windows PowerShell stöds av Windows PowerShell-providern.)
 
-Se syntaxen för den **Get-PSDrive** cmdlet, ange ett **Get-Command** med den **Syntax** parameter:
+Om du vill se syntaxen för **Get-PSDrive** -cmdleten skriver du ett **get-kommando-** kommando med parametern **syntax** :
 
 ```
 PS> Get-Command -Name Get-PSDrive -Syntax
@@ -46,7 +46,7 @@ erbose] [-Debug] [-ErrorAction <ActionPreference>] [-ErrorVariable <String>] [-
 OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-Den **PSProvider** parametern kan du visa endast i Windows PowerShell-enheter som stöds av en viss provider. För att visa endast de Windows PowerShell-enheter som stöds av filsystem för Windows PowerShell-providern, exempelvis en **Get-PSDrive** med den **PSProvider** parametern och  **Filsystem** värde:
+Med parametern **PSProvider** kan du bara visa de Windows PowerShell-enheter som stöds av en viss Provider. Om du till exempel bara vill visa de Windows PowerShell-enheter som stöds av Windows PowerShell-filprovidern, skriver du in kommandot **Get-PSDrive** med parametern **PSProvider** och värdet **filesystem** :
 
 ```
 PS> Get-PSDrive -PSProvider FileSystem
@@ -58,7 +58,7 @@ C          FileSystem    C:\                           ...nd Settings\PowerUser
 D          FileSystem    D:\
 ```
 
-Du kan visa de Windows PowerShell-enheter som representerar registreringsdatafilerna den **PSProvider** att visa endast i Windows PowerShell-enheter som stöds av registerprovidern för Windows PowerShell:
+Om du vill visa de Windows PowerShell-enheter som representerar registreringsdatafiler använder du parametern **PSProvider** för att endast visa de Windows PowerShell-enheter som stöds av Windows PowerShell-registernyckeln:
 
 ```
 PS> Get-PSDrive -PSProvider Registry
@@ -69,7 +69,7 @@ HKCU       Registry      HKEY_CURRENT_USER
 HKLM       Registry      HKEY_LOCAL_MACHINE
 ```
 
-Du kan också använda standard-plats-cmdlets med Windows PowerShell-enheter:
+Du kan också använda standard plats-cmdlet: ar med Windows PowerShell-enheter:
 
 ```
 PS> Set-Location HKLM:\SOFTWARE
@@ -81,9 +81,9 @@ Path
 HKLM:\SOFTWARE\Microsoft
 ```
 
-## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Att lägga till nya Windows PowerShell-enheter (ny PSDrive)
+## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Lägga till nya Windows PowerShell-enheter (New-PSDrive)
 
-Du kan lägga till egna Windows PowerShell-enheter med hjälp av den **New PSDrive** kommando. Som hämtar syntaxen för den **New-PSDrive** kommandot, ange den **Get-Command** med den **Syntax** parameter:
+Du kan lägga till egna Windows PowerShell-enheter med kommandot **New-PSDrive** . Hämta syntaxen för kommandot **New-PSDrive** genom att ange kommandot **Get-kommandot** med parametern **syntax** :
 
 ```
 PS> Get-Command -Name New-PSDrive -Syntax
@@ -94,19 +94,18 @@ ion <String>] [-Scope <String>] [-Credential <PSCredential>] [-Verbose] [-Debug
 ring>] [-OutBuffer <Int32>] [-WhatIf] [-Confirm]
 ```
 
-Om du vill skapa en ny Windows PowerShell-enhet, måste du ange tre parametrar:
+Om du vill skapa en ny Windows PowerShell-enhet måste du ange tre parametrar:
 
-- Ett namn för enheten (du kan använda valfritt giltigt namn för Windows PowerShell)
+- Ett namn på enheten (du kan använda alla giltiga Windows PowerShell-namn)
 
-- PSProvider (Använd ”filsystem” i sökvägar för system och ”registret” för registret platser)
+- PSProvider (Använd "FileSystem" för fil system platser och "Registry" för register platser)
 
-- Roten, det vill säga sökväg till roten i den nya enheten
+- Roten, det vill säga sökvägen till roten för den nya enheten
 
-Du kan till exempel skapa en enhet med namnet ”Office” som är mappad till den mapp som innehåller Microsoft Office-program på datorn, till exempel **C:\\programfiler\\Microsoft Office\\OFFICE11**. För att skapa enheten, skriver du följande kommando:
+Du kan till exempel skapa en enhet med namnet "Office" som är mappad till den mapp som innehåller Microsoft Office-program på datorn, till exempel **C:\\program files\\Microsoft Office\\Office11**. Skriv följande kommando för att skapa enheten:
 
 ```
-PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Micr
-osoft Office\OFFICE11"
+PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Microsoft Office\OFFICE11"
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
@@ -114,24 +113,25 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 ```
 
 > [!NOTE]
-> I allmänhet är sökvägar inte skiftlägeskänsliga.
+> I allmänhet är sökvägar inte Skift läges känsliga.
 
-Du refererar till den nya Windows PowerShell-enheten som du gör att alla enheter i Windows PowerShell - efter dess namn följt av ett kolon ( **:** ).
+Du kan referera till den nya Windows PowerShell-enheten på samma sätt som du gör med Windows PowerShell-enheter – efter dess namn följt av ett kolon ( **:** ).
 
-En Windows PowerShell-enhet kan göra många av de uppgifter som är mycket enklare. Till exempel ha några av de viktigaste nycklarna i Windows-registret extremt långa sökvägar, vilket gör dem krånglig att åtkomst och svårt att komma ihåg. Viktig konfigurationsinformation finns **HKEY_LOCAL_MACHINE\\programvara\\Microsoft\\Windows\\CurrentVersion**. Om du vill visa och ändra objekt i registernyckeln CurrentVersion, kan du skapa en Windows PowerShell-enhet är rotad i nyckeln genom att skriva:
+En Windows PowerShell-enhet kan göra många aktiviteter mycket enklare. Några av de viktigaste nycklarna i Windows-registret har till exempel extremt långa sökvägar, vilket gör det svårt att komma åt och svårt att komma ihåg. Viktig konfigurations information finns under **HKEY_LOCAL_MACHINE\\Software\\\\Microsoft\\Windows CurrentVersion**. Om du vill visa och ändra objekt i register nyckeln CurrentVersion, kan du skapa en Windows PowerShell-enhet som är rotad i nyckeln genom att skriva:
 
 ```
-PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
-indows\CurrentVersion
+PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\Windows\CurrentVersion
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
 cvkey      Registry      HKLM\Software\Microsoft\Windows\...
 ```
 
-Du kan ändra platsen till den **cvkey:** enhet precis som alla andra enheter:''
+Du kan sedan ändra plats till **cvkey:** enheten på samma sätt som med andra enheter:
 
-`PS> cd cvkey:`
+```
+PS> cd cvkey:
+```
 
 eller:
 
@@ -143,25 +143,25 @@ Path
 cvkey:\
 ```
 
-Cmdleten New-PsDrive lägger till den nya enheten endast till den aktuella Windows PowerShell-sessionen. Om du stänger Windows PowerShell-fönstret, går den nya enheten förlorad. Använda cmdleten Export-konsolen för att exportera den aktuella Windows PowerShell-sessionen för att spara en Windows PowerShell-enhet, och sedan använda PowerShell.exe **PSConsoleFile** parameter för att importera den. Eller Lägg till den nya enheten i din profil för Windows PowerShell.
+Cmdlet: en New-PsDrive lägger bara till den nya enheten till den aktuella Windows PowerShell-sessionen. Om du stänger Windows PowerShell-fönstret går den nya enheten förlorad. Om du vill spara en Windows PowerShell-enhet använder du cmdleten export-Console för att exportera den aktuella Windows PowerShell-sessionen och använder sedan PowerShell. exe **PSConsoleFile** -parametern för att importera den. Eller Lägg till den nya enheten i Windows PowerShell-profilen.
 
-## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Tar bort Windows PowerShell-enheter (Remove-PSDrive)
+## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Ta bort Windows PowerShell-enheter (Remove-PSDrive)
 
-Du kan ta bort enheter från Windows PowerShell med hjälp av den **Remove-PSDrive** cmdlet. Den **Remove-PSDrive** cmdlet är lätt att använda; om du vill ta bort en specifik Windows PowerShell-enhet måste du bara ange enhetsnamnet för Windows PowerShell.
+Du kan ta bort enheter från Windows PowerShell med cmdleten **Remove-PSDrive** . Cmdlet: en **Remove-PSDrive** är enkel att använda. Om du vill ta bort en Windows PowerShell-enhet anger du bara namnet på Windows PowerShell-enheten.
 
-Exempel: Om du har lagt till den **Office:** Windows PowerShell-enhet, enligt den **New PSDrive** avsnittet, kan du radera den genom att skriva:
+Om du till exempel har lagt till **kontoret:** Windows PowerShell-enhet, som du ser i avsnittet **New-PSDrive** , kan du ta bort den genom att skriva:
 
 ```powershell
 Remove-PSDrive -Name Office
 ```
 
-Att ta bort den **cvkey:** Windows PowerShell enhet, även visas i den **New PSDrive** avsnittet använder du följande kommando:
+Ta bort **cvkey:** Windows PowerShell-enhet, som också visas i avsnittet **New-PSDrive** , använder du följande kommando:
 
 ```powershell
 Remove-PSDrive -Name cvkey
 ```
 
-Det är enkelt att ta bort en Windows PowerShell-enhet, men du kan inte ta bort den när du arbetar med enheten. Till exempel:
+Det är enkelt att ta bort en Windows PowerShell-enhet, men du kan inte ta bort den när du befinner dig i enheten. Till exempel:
 
 ```
 PS> cd office:
@@ -171,6 +171,6 @@ At line:1 char:15
 + remove-psdrive  <<<< -name office
 ```
 
-## <a name="adding-and-removing-drives-outside-windows-powershell"></a>Att lägga till och ta bort enheter utanför Windows PowerShell
+## <a name="adding-and-removing-drives-outside-windows-powershell"></a>Lägga till och ta bort enheter utanför Windows PowerShell
 
-Windows PowerShell identifierar enheter som läggs till eller tas bort i Windows, inklusive nätverksenheter som är mappade, USB-enheter som är anslutna och enheter som har tagits bort genom att använda antingen den **nätverksanv** kommando eller  **WScript.NetworkMapNetworkDrive** och **RemoveNetworkDrive** metoder från ett skript för Windows Script Host (WSH).
+Windows PowerShell identifierar fil Systems enheter som läggs till eller tas bort i Windows, inklusive nätverks enheter som är mappade, USB-enheter som är anslutna och enheter som tas bort med hjälp av kommandot **net use** eller  **WScript. NetworkMapNetworkDrive** -och **RemoveNetworkDrive** -metoder från ett Windows Script Host-skript (WSH).

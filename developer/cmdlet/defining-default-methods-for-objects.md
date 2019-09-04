@@ -8,25 +8,26 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 53fe744a-485f-4c21-9623-1cb546372211
 caps.latest.revision: 9
-ms.openlocfilehash: af554cde5e888f2a008028010332caa473151622
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 346a194c6b4c81aa61a6331cdb62ae380a17bb1e
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733973"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215289"
 ---
 # <a name="defining-default-methods-for-objects"></a>Definiera standardmetoder för objekt
 
-När du utökar .NET Framework-objekt kan du lägga till kod metoder och skript metoder till objekt. XML-filen som används för att definiera dessa metoder beskrivs i följande avsnitt.
+När du utökar .NET Framework objekt kan du lägga till kod metoder och skript metoder i objekten.
+Den XML som används för att definiera dessa metoder beskrivs i följande avsnitt.
 
 > [!NOTE]
-> Exemplen i följande avsnitt kommer från filen Types.ps1xml typer i installationskatalogen för Windows PowerShell (`$pshome`).
+> Exemplen i följande avsnitt är från `Types.ps1xml` typ filen i installations katalogen för Windows PowerShell (`$PSHOME`). Mer information finns i [About types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
 
 ## <a name="code-methods"></a>Kod metoder
 
-En metod som koden refererar till en statisk metod för ett .NET Framework-objekt.
+En kod metod refererar till en statisk metod för ett .NET Framework-objekt.
 
-I följande exempel visas den **ConvertLargeIntegerToInt64** metod har lagts till i den [System.Xml.Xmlnode? Displayproperty = Fullname](/dotnet/api/System.Xml.XmlNode) typen. Den [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) elementet definierar metoden utökade som en metod för kod. Den [namn](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name) elementet anger namnet på den utökade metoden. Och [CodeReference](/dotnet/api/system.management.automation.pscodemethod.codereference?view=pscore-6.2.0#System_Management_Automation_PSCodeMethod_CodeReference) elementet anger metoden som statisk. (Du kan också lägga till den [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) element till medlemmarna i den [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0) element.)
+I följande exempel läggs metoden **toString** till i typen [system. xml. XmlNode](/dotnet/api/System.Xml.XmlNode) . [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) -elementet definierar den utökade metoden som en Code-metod. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name) anger namnet på den utökade metoden. Och [CodeReference](/dotnet/api/system.management.automation.pscodemethod.codereference?view=pscore-6.2.0#System_Management_Automation_PSCodeMethod_CodeReference) -elementet anger den statiska metoden. Du kan också lägga till elementet [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) i medlemmarna i [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0) -elementet.
 
 ```xml
 <Type>
@@ -35,7 +36,7 @@ I följande exempel visas den **ConvertLargeIntegerToInt64** metod har lagts til
     <CodeMethod>
       <Name>ToString</Name>
       <CodeReference>
-        <TypeName>Microsoft.PowerShell.ToStringCodemethods</TypeName>
+        <TypeName>Microsoft.PowerShell.ToStringCodeMethods</TypeName>
         <MethodName>XmlNode</MethodName>
       </CodeReference>
     </CodeMethod>
@@ -43,9 +44,9 @@ I följande exempel visas den **ConvertLargeIntegerToInt64** metod har lagts til
 </Type>
 ```
 
-## <a name="script-methods"></a>Skript-metoder
+## <a name="script-methods"></a>Skript metoder
 
-En metod för skriptet definierar en metod som vars värde är utdata från ett skript. I följande exempel visas den **ConvertToDateTime** metod har lagts till i den [System.Management.Managementobject? Displayproperty = Fullname](/dotnet/api/System.Management.ManagementObject) typen. Den [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0) elementet definierar metoden utökade som en metod för skriptet. Den [namn](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name) elementet anger namnet på den utökade metoden. Och [skriptet](/dotnet/api/system.management.automation.psscriptmethod.script?view=pscore-6.2.0#System_Management_Automation_PSScriptMethod_Script) elementet anger det skript som genererar metoden värdet. (Du kan också lägga till den [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0) element till medlemmarna i den [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0) element.)
+En skript metod definierar en metod vars värde är utdata från ett skript. I följande exempel läggs **ConvertToDateTime** -metoden till i typen [system. Management. ManagementObject](/dotnet/api/System.Management.ManagementObject) . [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0) -elementet definierar den utökade metoden som en skript metod. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name) anger namnet på den utökade metoden. Och [skript](/dotnet/api/system.management.automation.psscriptmethod.script?view=pscore-6.2.0#System_Management_Automation_PSScriptMethod_Script) elementet anger det skript som genererar metod svärdet. Du kan också lägga till elementet [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0) i medlemmarna i [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0) -elementet.
 
 ```xml
 <Type>
@@ -63,4 +64,4 @@ En metod för skriptet definierar en metod som vars värde är utdata från ett 
 
 ## <a name="see-also"></a>Se även
 
-[Skriva en Windows PowerShell-Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+[Skriva en Windows PowerShell-cmdlet](./writing-a-windows-powershell-cmdlet.md)
