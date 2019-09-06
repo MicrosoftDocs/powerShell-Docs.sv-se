@@ -1,0 +1,99 @@
+### YamlMime:Landing
+title: Exempel skript för system administration
+summary: En samling exempel vägleder dig genom scenarier för att administrera system med PowerShell.
+metadata:
+  title: Exempel skript för system administration
+  description: En samling exempel vägleder dig genom scenarier för att administrera system med PowerShell.
+  ms.topic: landing-page
+  author: sdwheeler
+  ms.author: sewhee
+  ms.date: 09/05/2019
+  ms.openlocfilehash: 95ed43cf713f79d8b648a0f3af77fe2e0119f9c4
+  ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 09/05/2019
+  ms.locfileid: "70392639"
+landingContent:
+- title: Arbeta med objekt
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Visa objekt struktur
+      url: ./viewing-object-structure--get-member-.md
+    - text: Välja delar av objekt
+      url: ./selecting-parts-of-objects--select-object-.md
+    - text: Filtrera objekt i pipelinen
+      url: ./removing-objects-from-the-pipeline--where-object-.md
+    - text: Sortera objekt
+      url: ./sorting-objects.md
+    - text: Upprepa en uppgift för flera objekt
+      url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
+    - text: Skapa .NET-och COM-objekt
+      url: ./creating-.net-and-com-objects--new-object-.md
+    - text: Använd statiska klasser och metoder
+      url: ./using-static-classes-and-methods.md
+    - text: Hämta WMI-objekt – Get-WmiObject
+      url: ./getting-wmi-objects--get-wmiobject-.md
+- title: Hantera datorer
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Ändra datorstatus
+      url: ./changing-computer-state.md
+    - text: Samla in information om datorer
+      url: ./collecting-information-about-computers.md
+    - text: Skapar Get-WinEvent-frågor med FilterHashtable
+      url: ./creating-get-winEvent-queries-with-filterhashtable.md
+- title: Hantera processer & tjänster
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Hantera processer med Process-cmdletar
+      url: ./managing-processes-with-process-cmdlets.md
+    - text: Hantera tjänster
+      url: ./managing-services.md
+    - text: Hantera Windows PowerShell-enheter
+      url: ./managing-windows-powershell-drives.md
+    - text: Arbeta med skrivare
+      url: ./working-with-printers.md
+    - text: Utför nätverksuppgifter
+      url: ./performing-networking-tasks.md
+    - text: Arbeta med programinstallationer
+      url: ./working-with-software-installations.md
+    - text: Avkoda ett PowerShell-kommando från en process som körs
+      url: ./decode-powershell-command-from-a-running-process.md
+- title: Arbeta med utdata
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Omdirigera data med Out*-cmdletar
+      url: ./redirecting-data-with-out---cmdlets.md
+    - text: Använd formatkommandon för att ändra utdatavyn
+      url: ./using-format-commands-to-change-output-view.md
+- title: Hantera enheter & filer
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Hantera aktuell plats
+      url: ./managing-current-location.md
+    - text: Arbeta med filer och mappar
+      url: ./working-with-files-and-folders.md
+    - text: Arbeta med filer, mappar och registernycklar
+      url: ./working-with-files-folders-and-registry-keys.md
+    - text: Arbeta med registerposter
+      url: ./working-with-registry-entries.md
+    - text: Arbeta med registernycklar
+      url: ./working-with-registry-keys.md
+- title: Skapa UI-element
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Skapa en anpassad indataruta
+      url: ./creating-a-custom-input-box.md
+    - text: Skapa en grafisk datumväljare
+      url: ./creating-a-graphical-date-picker.md
+    - text: Listrutor med flera val
+      url: ./multiple-selection-list-boxes.md
+    - text: Välj objekt från en listruta
+      url: ./selecting-items-from-a-list-box.md

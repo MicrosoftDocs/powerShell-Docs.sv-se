@@ -1,69 +1,75 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Ändra datorstatus
-ms.openlocfilehash: 80692ad7c56aa13e55d4997cfec289ffb3605458
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: de3e31e358548943a015b7bba275c4461202b20f
+ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030276"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386290"
 ---
 # <a name="changing-computer-state"></a>Ändra datorstatus
 
-Om du vill återställa en dator i Windows PowerShell använder du ett kommandoradsverktyg som standard eller en WMI-klass. Även om du använder Windows PowerShell endast för att köra verktyget, visar lära dig hur du ändrar energinivån för en dator i Windows PowerShell några av viktig information om hur du arbetar med externa verktyg i Windows PowerShell.
+Om du vill återställa en dator i Windows PowerShell använder du antingen ett standard kommando rads verktyg, WMI eller CIM-klass. Även om du bara använder Windows PowerShell för att köra verktyget, kan du lära dig hur du ändrar datorns energi tillstånd i Windows PowerShell. här visas några viktiga detaljer om hur du arbetar med externa verktyg i Windows PowerShell.
 
 ## <a name="locking-a-computer"></a>Låsa en dator
 
-Det enda sättet att låsa en dator direkt med standardverktyg för tillgänglig är att anropa den **LockWorkstation()** fungera i **user32.dll**:
+Det enda sättet att låsa en dator direkt med de standard verktyg som är tillgängliga är att anropa funktionen **LockWorkstation ()** i **user32. dll**:
 
 ```
 rundll32.exe user32.dll,LockWorkStation
 ```
 
-Det här kommandot låses omedelbart arbetsstationen. Den använder *rundll32.exe*, som kör Windows-dll: er (och sparar sina bibliotek för upprepad användning) att köra user32.dll, ett bibliotek med Windows-hanteringsfunktioner.
+Det här kommandot låser arbets stationen omedelbart. Den använder *rundll32. exe*, som kör Windows-DLL: er (och sparar deras bibliotek för upprepad användning) för att köra user32. dll, ett bibliotek med Windows Management-funktioner.
 
-När du låsa en arbetsstation medan snabbt användarbyte är aktiverat, t.ex. på Windows XP datorn visar inloggningsskärmen för användaren i stället för att starta den aktuella användaren skärmsläckaren.
+När du låser en arbets Station medan snabbt användar byte är aktiverat, till exempel på Windows XP, visar datorn inloggnings skärmen för användare i stället för att starta den aktuella användarens skärmsläckare.
 
-Om du vill stänga av specifika sessioner på en Terminal Server använder den **tsshutdn.exe** kommandoradsverktyget.
+Om du vill stänga av vissa sessioner på en Terminal Server använder du kommando rads verktyget **tsshutdn. exe** .
 
 ## <a name="logging-off-the-current-session"></a>Logga ut den aktuella sessionen
 
-Du kan använda flera olika tekniker för att logga ut från en session på det lokala systemet. Det enklaste sättet är att använda kommandoradsverktyget Remote Desktop/Terminal Services **logoff.exe** (Mer information finns i Windows PowerShell-Kommandotolken skriver du **utloggning /?** ). Om du vill logga ut den aktuella aktiva sessionen, skriver **utloggning** utan argument.
+Du kan använda flera olika tekniker för att logga ut från en session på det lokala systemet. Det enklaste sättet är att använda kommando rads verktyget fjärr skrivbord/Terminal Services, **LOGOFF. exe** (mer information finns i Windows PowerShell-prompten genom att skriva **LOGOFF/?** ). Logga ut den aktuella aktiva sessionen genom att skriva **LOGOFF** utan argument.
 
-Du kan också använda den **shutdown.exe** verktyget med utloggningsalternativet dess:
+Du kan också använda **Shutdown. exe** -verktyget med dess utloggnings alternativ:
 
 ```
 shutdown.exe -l
 ```
 
-Ett tredje alternativ är att använda WMI. Win32_OperatingSystem-klassen har en Win32Shutdown-metod. Anropa metoden med flaggan 0 initierar utloggning:
+Ett annat alternativ är att använda WMI. Win32_OperatingSystem-klassen har en Win32Shutdown-metod. När du anropar metoden med flaggan 0 påbörjas utloggning:
 
 ```powershell
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(0)
 ```
 
-Mer information och hitta andra funktioner i metoden Win32Shutdown finns ”Win32Shutdown metoden av the Win32_OperatingSystem-klassen” i MSDN.
+Mer information och hitta andra funktioner i Win32Shutdown-metoden finns i "Win32Shutdown-metoden för klassen Win32_OperatingSystem" i MSDN.
+
+Slutligen kan du använda CIM med samma Win32_OperatingSystem-klass enligt beskrivningen ovan i WMI-metoden.
+
+```powershell
+Get-CIMInstance -Classname Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
+```
 
 ## <a name="shutting-down-or-restarting-a-computer"></a>Stänga av eller starta om en dator
 
-Stänga av och starta om datorer är vanligtvis samma typ av uppgift. Verktyg som stänga av datorn Allmänt startar om den också, och vice versa. Det finns två enkla alternativ för att starta om en dator från Windows PowerShell. Använd Tsshutdn.exe eller Shutdown.exe med rätt argument. Du kan få detaljerad användningsinformation från **tsshutdn.exe /?** eller **shutdown.exe /?** .
+Att stänga av och starta om datorer är vanligt vis samma typer av uppgift. Verktyg som stänger av en dator startar normalt även om det, och vice versa. Det finns två enkla alternativ för att starta om en dator från Windows PowerShell. Använd antingen tsshutdn. exe eller Shutdown. exe med lämpliga argument. Du kan få detaljerad användnings information från **tsshutdn. exe/?** eller **Shutdown. exe/?** .
 
-Du kan också utföra avstängning och starta om åtgärder direkt från Windows PowerShell samt.
+Du kan också utföra åtgärder för avstängning och omstart direkt från Windows PowerShell.
 
-Om du vill stänga av datorn, använder du kommandot Stop-Computer
+Om du vill stänga av datorn använder du kommandot Stop-Computer
 
 ```powershell
 Stop-Computer
 ```
 
-Om du vill starta om operativsystemet, använder du kommandot Restart-Computer
+Starta om operativ systemet genom att använda kommandot Restart-Computer
 
 ```powershell
 Restart-Computer
 ```
 
-Om du vill framtvinga en omedelbar omstart av datorn, Använd parametern - Force.
+Använd parametern-Force om du vill framtvinga en omedelbar omstart av datorn.
 
 ```powershell
 Restart-Computer -Force
