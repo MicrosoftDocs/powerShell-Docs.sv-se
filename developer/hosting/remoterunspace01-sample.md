@@ -1,5 +1,5 @@
 ---
-title: RemoteRunspace01 exemplet | Microsoft Docs
+title: RemoteRunspace01-exempel | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: 302f00ef-e145-4668-a26a-03bc96ef4b8f
 caps.latest.revision: 10
 ms.openlocfilehash: 9cc6933858f4f37e4fa8b3bbe9afb69a73c68572
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059651"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70737583"
 ---
-# <a name="remoterunspace01-sample"></a><span data-ttu-id="f41cb-102">RemoteRunspace01 – exempel</span><span class="sxs-lookup"><span data-stu-id="f41cb-102">RemoteRunspace01 Sample</span></span>
+# <a name="remoterunspace01-sample"></a><span data-ttu-id="68070-102">RemoteRunspace01 – exempel</span><span class="sxs-lookup"><span data-stu-id="68070-102">RemoteRunspace01 Sample</span></span>
 
-<span data-ttu-id="f41cb-103">Det här exemplet visar hur du skapar ett fjärrkörningsutrymme som används för att upprätta en fjärranslutning.</span><span class="sxs-lookup"><span data-stu-id="f41cb-103">This sample shows how to create a remote runspace that is used to establish a remote connection.</span></span>
+<span data-ttu-id="68070-103">Det här exemplet visar hur du skapar en fjärran sluten körnings utrymme som används för att upprätta en fjärr anslutning.</span><span class="sxs-lookup"><span data-stu-id="68070-103">This sample shows how to create a remote runspace that is used to establish a remote connection.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="f41cb-104">Krav</span><span class="sxs-lookup"><span data-stu-id="f41cb-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="68070-104">Krav</span><span class="sxs-lookup"><span data-stu-id="68070-104">Requirements</span></span>
 
- <span data-ttu-id="f41cb-105">Det här exemplet kräver Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="f41cb-105">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="68070-105">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="68070-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="f41cb-106">Visar</span><span class="sxs-lookup"><span data-stu-id="f41cb-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="68070-106">Visat</span><span class="sxs-lookup"><span data-stu-id="68070-106">Demonstrates</span></span>
 
-- <span data-ttu-id="f41cb-107">Skapa en [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objekt.</span><span class="sxs-lookup"><span data-stu-id="f41cb-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="68070-107">Skapar ett [system. Management. Automation. körnings utrymmen. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -objekt.</span><span class="sxs-lookup"><span data-stu-id="68070-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="f41cb-108">Ange den [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) och [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) egenskaperna för den [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objekt.</span><span class="sxs-lookup"><span data-stu-id="f41cb-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="68070-108">Ange [system. Management. Automation. körnings utrymmen. Runspaceconnectioninfo. OperationTimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) och [system. Management. Automation. körnings utrymmen. Runspaceconnectioninfo. opentimey \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) egenskaper för [ System. Management. Automation. körnings utrymmen. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -objektet.</span><span class="sxs-lookup"><span data-stu-id="68070-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="f41cb-109">Skapar ett fjärrkörningsutrymme som använder den [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objekt för att upprätta anslutningen.</span><span class="sxs-lookup"><span data-stu-id="f41cb-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
+- <span data-ttu-id="68070-109">Skapa en fjärran sluten körnings utrymme som använder objektet [system. Management. Automation. körnings utrymmen. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) för att upprätta en fjärr anslutning.</span><span class="sxs-lookup"><span data-stu-id="68070-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
 
-- <span data-ttu-id="f41cb-110">Stänger fjärrkörningsutrymme Frisläpp fjärranslutningen.</span><span class="sxs-lookup"><span data-stu-id="f41cb-110">Closing the remote runspace to release the remote connection.</span></span>
+- <span data-ttu-id="68070-110">Stänger fjärr-körnings utrymme för att frigöra fjärr anslutningen.</span><span class="sxs-lookup"><span data-stu-id="68070-110">Closing the remote runspace to release the remote connection.</span></span>
 
-## <a name="example"></a><span data-ttu-id="f41cb-111">Exempel</span><span class="sxs-lookup"><span data-stu-id="f41cb-111">Example</span></span>
+## <a name="example"></a><span data-ttu-id="68070-111">Exempel</span><span class="sxs-lookup"><span data-stu-id="68070-111">Example</span></span>
 
-<span data-ttu-id="f41cb-112">Det här exemplet definierar en fjärranslutning och använder sedan den anslutningsinformationen för att upprätta en fjärranslutning.</span><span class="sxs-lookup"><span data-stu-id="f41cb-112">This sample defines a remote connection and then uses that connection information to establish a remote connection.</span></span>
+<span data-ttu-id="68070-112">Det här exemplet definierar en fjärr anslutning och använder sedan denna anslutnings information för att upprätta en fjärr anslutning.</span><span class="sxs-lookup"><span data-stu-id="68070-112">This sample defines a remote connection and then uses that connection information to establish a remote connection.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
