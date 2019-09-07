@@ -1,5 +1,5 @@
 ---
-title: RemoteRunspace01 exemplet | Microsoft Docs
+title: RemoteRunspace01-exempel | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: 302f00ef-e145-4668-a26a-03bc96ef4b8f
 caps.latest.revision: 10
 ms.openlocfilehash: 9cc6933858f4f37e4fa8b3bbe9afb69a73c68572
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059651"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70737583"
 ---
 # <a name="remoterunspace01-sample"></a>RemoteRunspace01 – exempel
 
-Det här exemplet visar hur du skapar ett fjärrkörningsutrymme som används för att upprätta en fjärranslutning.
+Det här exemplet visar hur du skapar en fjärran sluten körnings utrymme som används för att upprätta en fjärr anslutning.
 
 ## <a name="requirements"></a>Krav
 
- Det här exemplet kräver Windows PowerShell 2.0.
+ Det här exemplet kräver Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Visar
+## <a name="demonstrates"></a>Visat
 
-- Skapa en [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objekt.
+- Skapar ett [system. Management. Automation. körnings utrymmen. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -objekt.
 
-- Ange den [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) och [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) egenskaperna för den [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objekt.
+- Ange [system. Management. Automation. körnings utrymmen. Runspaceconnectioninfo. OperationTimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) och [system. Management. Automation. körnings utrymmen. Runspaceconnectioninfo. opentimey *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) egenskaper för [ System. Management. Automation. körnings utrymmen. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -objektet.
 
-- Skapar ett fjärrkörningsutrymme som använder den [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objekt för att upprätta anslutningen.
+- Skapa en fjärran sluten körnings utrymme som använder objektet [system. Management. Automation. körnings utrymmen. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) för att upprätta en fjärr anslutning.
 
-- Stänger fjärrkörningsutrymme Frisläpp fjärranslutningen.
+- Stänger fjärr-körnings utrymme för att frigöra fjärr anslutningen.
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet definierar en fjärranslutning och använder sedan den anslutningsinformationen för att upprätta en fjärranslutning.
+Det här exemplet definierar en fjärr anslutning och använder sedan denna anslutnings information för att upprätta en fjärr anslutning.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
