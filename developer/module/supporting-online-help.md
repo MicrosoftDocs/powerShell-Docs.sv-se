@@ -1,5 +1,5 @@
 ---
-title: Stöd för onlinehjälp | Microsoft Docs
+title: Support online-hjälp | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,48 +8,48 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3204599c-7159-47aa-82ec-4a476f461027
 caps.latest.revision: 7
-ms.openlocfilehash: b76f45299d11dc10c8b16ed80f87c7f1fcc5ed65
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5c5707d1c533e0498c6794b60f4499e530e25813
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082149"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848090"
 ---
 # <a name="supporting-online-help"></a>Stöd för onlinehjälp
 
-Från och med Windows PowerShell 3.0, det finns två sätt att stödja den `Get-Help` Online funktionen för Windows PowerShell-kommandon. Det här avsnittet förklarar hur du implementerar den här funktionen för olika kommandotyper.
+Från och med Windows PowerShell 3,0 finns det två sätt att stödja `Get-Help` funktionen online för Windows PowerShell-kommandon. I det här avsnittet beskrivs hur du implementerar den här funktionen för olika kommando typer.
 
 ## <a name="about-online-help"></a>Om onlinehjälp
 
-Onlinehjälp har alltid varit en viktig del av Windows PowerShell. Även om den `Get-Help` cmdlet visar hjälpavsnitt i Kommandotolken, många användare föredrar upplevelsen läsa online, inklusive färgkodning, hyperlänkar och dela idéer i Community-innehåll och wiki-baserade dokument. Innan du ankomsten av uppdateringsbar hjälp tillhandahålls onlinehjälp viktigast av allt, den senaste versionen av hjälpfilerna.
+Direkt hjälpen har alltid varit en viktig del av Windows PowerShell. Även om `Get-Help` cmdlet: en visar hjälp avsnitt i kommando tolken, föredrar många användare upplevelsen av att läsa online, inklusive färg kodning, hyperlänkar och dela idéer i Community-innehåll och wiki-baserade dokument. För det viktigaste, före ankomsten av den uppdaterings bara hjälpen, tillhandahöll online-hjälpen den senaste versionen av hjälpfilerna.
 
-Med ankomsten av uppdateringsbar hjälp i Windows PowerShell 3.0 spelar fortfarande en viktig roll i onlinehjälpen. Förutom den flexibla användarupplevelsen hjälper onlinehjälp användare som inte vill eller kan inte använda uppdateringsbar hjälp för att hämta hjälpavsnitt.
+Med ankomsten för uppdaterings bar hjälp i Windows PowerShell 3,0 spelar online-hjälpen fortfarande en viktig roll. Förutom den flexibla användar upplevelsen ger online-hjälpen hjälp till användare som inte kan använda uppdaterings bara hjälp för att hämta hjälp ämnen.
 
-## <a name="how-get-help--online-works"></a>Hur Get-Help-Online fungerar
+## <a name="how-get-help--online-works"></a>Hur Get-Help – Online fungerar
 
-Att hjälpa användarna att hitta online hjälpavsnitt för kommandon i `Get-Help` kommandot har en Online-parameter som öppnar onlineversionen av hjälpavsnittet för ett kommando i användarens standardwebbläsare.
+För att hjälpa användarna att hitta Onlines hjälp avsnitt för kommandon `Get-Help` , har kommandot en online-version som öppnar online-versionen av hjälp avsnittet för ett kommando i användarens standard webbläsare.
 
-Till exempel följande kommando öppnar hjälpen för den `Invoke-Command` cmdlet.
+Följande kommando öppnar till exempel hjälp avsnittet online för `Invoke-Command` cmdleten.
 
 ```powershell
 Get-Help Invoke-Command -Online
 ```
 
-Att implementera `Get-Help` -Online, den `Get-Help` cmdlet ser ut för en identifierare URI (Uniform Resource) för onlineversion hjälpavsnitt på följande platser.
+För att `Get-Help` implementera – online `Get-Help` söker cmdleten efter en Uniform Resource Identifier (URI) i hjälp avsnittet online-version på följande platser.
 
-- Den första länken i avsnittet med länkar i hjälpavsnittet för kommandot. Hjälpavsnittet måste installeras på användarens dator. Den här funktionen introducerades i Windows PowerShell 2.0.
+- Den första länken i avsnittet relaterade länkar i hjälp avsnittet för kommandot. Hjälp avsnittet måste vara installerat på användarens dator. Den här funktionen introducerades i Windows PowerShell 2,0.
 
-- HelpUri-egenskapen för alla kommandon. HelpUri-egenskapen är tillgänglig även när hjälpavsnittet för kommandot inte är installerad på användarens dator. Den här funktionen introducerades i Windows PowerShell 3.0.
+- Egenskapen HelpUri för ett kommando. Egenskapen HelpUri är tillgänglig även om hjälp avsnittet för kommandot inte är installerat på användarens dator. Den här funktionen introducerades i Windows PowerShell 3,0.
 
-  `Get-Help` söker efter en URI i den första posten i avsnittet länkarna innan du hämtar värdet för HelpUri-egenskapen. Du kan åsidosätta den genom att ange ett annat värde i den första relaterad länk om egenskapens värde är felaktig eller har ändrats. Den första relaterade länken fungerar dock bara när hjälpavsnitten installeras på användarens dator.
+  `Get-Help`söker efter en URI i den första posten i avsnittet relaterade länkar innan du hämtar värdet för egenskapen HelpUri. Om egenskap svärdet är felaktigt eller har ändrats kan du åsidosätta det genom att ange ett annat värde i den första relaterade länken. Den första relaterade länken fungerar dock bara när hjälp avsnitten är installerade på användarens dator.
 
-## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>Att lägga till en URI för första relaterade länken i ett hjälpavsnitt för kommandot
+## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>Lägga till en URI till den första relaterade länken i ett kommando hjälp avsnitt
 
-Du kan använda `Get-Help` -Online för alla kommandon genom att lägga till en giltig URI till den första posten i avsnittet med länkar i XML-baserade hjälpavsnittet för kommandot. Det här alternativet är endast giltig i XML-baserade hjälpavsnitt och fungerar bara när hjälpavsnittet installeras på användarens dator. När hjälpavsnittet är installerad och URI: N har fyllts i det här värdet har företräde framför den **HelpUri** egenskapen för kommandot. Information om XML-baserade hjälpavsnitt för kommandon finns i [Writing XML-Based hjälpavsnitt för kommandon](../help/writing-xml-based-help-topics-for-commands.md).
+Du kan stödja `Get-Help` – online för alla kommandon genom att lägga till en giltig URI till den första posten i avsnittet relaterade länkar i det XML-baserade hjälp avsnittet för kommandot. Det här alternativet är endast giltigt i XML-baserade hjälp avsnitt och fungerar bara när hjälp avsnittet är installerat på användarens dator. När hjälp avsnittet är installerat och URI fylls i, prioriteras det här värdet framför kommandots **HelpUri** -egenskap.
 
-För att stödja den här funktionen, URI: N måste finnas i den `maml:uri` elementet under först `maml:relatedLinks/maml:navigationLink` elementet i den `maml:relatedLinks` element.
+För att stödja den här funktionen måste URI: n visas `maml:uri` i elementet under det `maml:relatedLinks/maml:navigationLink` första elementet i `maml:relatedLinks` elementet.
 
-Följande XML visar korrekt placering av URI: N. Den ”onlineversion”: texten i den `maml:linkText` element är en bra idé, men det är inte obligatoriskt.
+Följande XML visar rätt placering av URI: n. Texten "online version:" i `maml:linkText` elementet är bästa praxis, men det är inte obligatoriskt.
 
 ```xml
 
@@ -65,25 +65,25 @@ Följande XML visar korrekt placering av URI: N. Den ”onlineversion”: texten
 </maml:relatedLinks>
 ```
 
-## <a name="adding-the-helpuri-property-to-a-command"></a>Att lägga till HelpUri-egenskapen till ett kommando
+## <a name="adding-the-helpuri-property-to-a-command"></a>Lägga till egenskapen HelpUri i ett kommando
 
-Det här avsnittet visar hur du lägger till HelpUri-egenskapen till kommandon för olika typer.
+I det här avsnittet visas hur du lägger till egenskapen HelpUri i kommandon av olika typer.
 
-### <a name="adding-a-helpuri-property-to-a-cmdlet"></a>Att lägga till HelpUri-egenskapen för en Cmdlet
+### <a name="adding-a-helpuri-property-to-a-cmdlet"></a>Lägga till en HelpUri-egenskap till en cmdlet
 
-För cmdletar som skrivits i C#, lägga till en **HelpUri** attributet till Cmdlet-klassen. Värdet för attributet måste vara en URI som börjar med ”http” eller ”https”.
+För cmdletar som skrivits C#i lägger du till ett **HelpUri** -attribut i cmdlet-klassen. Värdet för attributet måste vara en URI som börjar med "http" eller "https".
 
-Följande kod visar HelpUri-attributet för den `Get-History` cmdlet-klass.
+Följande kod visar HelpUri-attributet för `Get-History` cmdlet-klassen.
 
 ```
 [Cmdlet(VerbsCommon.Get, "History", HelpUri = "http://go.microsoft.com/fwlink/?LinkID=001122")]
 ```
 
-### <a name="adding-a-helpuri-property-to-an-advanced-function"></a>Att lägga till HelpUri-egenskapen i en avancerad funktion
+### <a name="adding-a-helpuri-property-to-an-advanced-function"></a>Lägga till en HelpUri-egenskap i en avancerad funktion
 
-För avancerade funktioner, lägger du till en **HelpUri** egenskap enligt den **CmdletBinding** attribut. Värdet på egenskapen måste vara en URI som börjar med ”http” eller ”https”.
+För avancerade funktioner lägger du till en **HelpUri** -egenskap till attributet **CmdletBinding** . Värdet för egenskapen måste vara en URI som börjar med "http" eller "https".
 
-Följande kod visar HelpUri-attributet för funktionen New-kalender
+Följande kod visar attributet HelpUri för funktionen New-Calendar
 
 ```powershell
 
@@ -92,24 +92,24 @@ function New-Calendar {
     HelpURI="http://go.microsoft.com/fwlink/?LinkID=01122")]
 ```
 
-### <a name="adding-a-helpuri-attribute-to-a-cim-command"></a>Att lägga till HelpUri-attributet i en CIM-kommando
+### <a name="adding-a-helpuri-attribute-to-a-cim-command"></a>Lägga till ett HelpUri-attribut till ett CIM-kommando
 
-CIM-kommandon, lägger du till en **HelpUri** attributet den **CmdletMetadata** elementet i filen CDXLM. Värdet för attributet måste vara en URI som börjar med ”http” eller ”https”.
+För CIM-kommandon lägger du till ett **HelpUri** -attribut till **CmdletMetadata** -elementet i cdxlm-filen. Värdet för attributet måste vara en URI som börjar med "http" eller "https".
 
-Följande kod visar HelpUri-attributet Start-Debug CIM-kommandot
+Följande kod visar attributet HelpUri för CIM-kommandot start-debug
 
 ```
 <CmdletMetadata Verb="Debug" HelpUri="http://go.microsoft.com/fwlink/?LinkID=001122"/>
 ```
 
-### <a name="adding-a-helpuri-attribute-to-a-workflow"></a>Att lägga till HelpUri-attributet i ett arbetsflöde
+### <a name="adding-a-helpuri-attribute-to-a-workflow"></a>Lägga till ett HelpUri-attribut i ett arbets flöde
 
-Arbetsflöden som är skrivna i Windows PowerShell-språket, lägger du till en **. ExternalHelp** kommentar direktiv i arbetsflödet-koden. Värdet för direktivet måste vara en URI som börjar med ”http” eller ”https”.
+För arbets flöden som är skrivna på Windows PowerShell-språket lägger du till ett **. ExternalHelp** kommentars direktiv till arbets flödes koden. Värdet för direktivet måste vara en URI som börjar med "http" eller "https".
 
 > [!NOTE]
-> HelpUri-egenskapen stöds inte för XAML-baserade arbetsflöden i Windows PowerShell.
+> Egenskapen HelpUri stöds inte för XAML-baserade arbets flöden i Windows PowerShell.
 
-Följande kod visar den. ExternalHelp direktiv i en arbetsflödesfil.
+Följande kod visar. ExternalHelp-direktiv i en arbets flödes fil.
 
 ```powershell
 # .ExternalHelp "http://go.microsoft.com/fwlink/?LinkID=138338"

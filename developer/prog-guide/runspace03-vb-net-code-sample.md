@@ -1,5 +1,5 @@
 ---
-title: RunSpace03 (VB.NET)-kodexempel | Microsoft Docs
+title: Kod exempel för RunSpace03 (VB.NET) | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,23 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
 caps.latest.revision: 6
-ms.openlocfilehash: 6c625c325e491135af3e5c8d58eead62e89ccb4a
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 0931fe7a606b09475084203eaf9fa263ea1cd5f8
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67734978"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848013"
 ---
 # <a name="runspace03-vbnet-code-sample"></a>RunSpace03 (VB.NET) – kodexempel
 
-Här är VB.NET källkoden för konsolprogrammet som beskrivs i [och skapa en konsolen program som använder ett skript som angetts](fd). Det här exemplet används den [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) klassen för att köra ett skript som hämtar bearbeta information för listan över processnamn som skickades till skriptet. Den visar hur du skickar in objekt till ett skript och hur du hämtar felobjekt samt utdata-objekt.
+Här är VB.NET-källkoden för konsol programmet som beskrivs i avsnittet "skapa ett konsol program som kör ett angivet skript". I det här exemplet används klassen [system. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) för att köra ett skript som hämtar process information för listan över process namn som skickas till skriptet. Den visar hur du skickar indata-objekt till ett skript och hur du hämtar fel objekt samt utgående objekt.
 
 > [!NOTE]
-> Du kan hämta källfilen VB.NET (runspace03.vb) för det här exemplet med hjälp av Windows Software Development Kit för Windows Vista och Microsoft .NET Framework 3.0-körtidskomponenter. Hämta anvisningar finns i [hur du installerar Windows PowerShell och ladda ned Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
->
-> Hämtade källfilerna är tillgängliga i den  **\<PowerShell-exempel >** directory.
+> Du kan ladda ned VB.NET-källfilen (runspace03. VB) för det här exemplet med hjälp av Windows Software Development Kit för Windows Vista och Microsoft .NET Framework 3,0 Runtime Components. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/developer/installing-the-windows-powershell-sdk).
+> De hämtade källfilerna är tillgängliga i  **\<PowerShell-exemplen >** Directory.
 
-## <a name="code-sample"></a>Kodexempel
+## <a name="code-sample"></a>Kod exempel
 
 ```vb
 Imports System
@@ -108,6 +107,6 @@ End Namespace
 
 ## <a name="see-also"></a>Se även
 
-[Programmeringsguide för Windows PowerShell](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer ' s guide](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

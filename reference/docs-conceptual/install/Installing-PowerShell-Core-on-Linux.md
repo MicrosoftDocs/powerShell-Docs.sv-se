@@ -2,12 +2,12 @@
 title: Installera PowerShell Core i Linux
 description: Information om hur du installerar PowerShell Core på olika Linux-distributioner
 ms.date: 07/19/2019
-ms.openlocfilehash: be11a2a873af71c193730d0a9e723da2dc70a62d
-ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
+ms.openlocfilehash: 7d7c9a9f915f0a6e735a7baec1ec56e9c205a155
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69986732"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848179"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Installera PowerShell Core i Linux
 
@@ -146,14 +146,14 @@ sudo apt-get remove powershell
 Installationen stöds via `snapd`. Instruktioner finns i [snapin-paket][snap].
 
 > [!NOTE]
-> Ubuntu 18,10 är en [tillfällig version](https://www.ubuntu.com/about/release-cycle) som [stöds](../powershell-support-lifecycle.md)av communityn.
+> Ubuntu 18,10 är en [tillfällig version](https://www.ubuntu.com/about/release-cycle) som [stöds av communityn](../powershell-support-lifecycle.md).
 
 ## <a name="ubuntu-1904"></a>Ubuntu 19,04
 
 Installationen stöds via `snapd`. Instruktioner finns i [snapin-paket][snap].
 
 > [!NOTE]
-> Ubuntu 19,04 är en [tillfällig version](https://www.ubuntu.com/about/release-cycle) som [stöds](../powershell-support-lifecycle.md)av communityn.
+> Ubuntu 19,04 är en [tillfällig version](https://www.ubuntu.com/about/release-cycle) som [stöds av communityn](../powershell-support-lifecycle.md).
 
 ## <a name="debian-8"></a>Debian 8
 
@@ -166,7 +166,7 @@ Den bästa metoden är följande:
 ```sh
 # Install system components
 sudo apt-get update
-sudo apt-get install curl apt-transport-https
+sudo apt-get install -y curl apt-transport-https
 
 # Import the public repository GPG keys
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
@@ -197,7 +197,7 @@ Den bästa metoden är följande:
 ```sh
 # Install system components
 sudo apt-get update
-sudo apt-get install curl gnupg apt-transport-https
+sudo apt-get install -y curl gnupg apt-transport-https
 
 # Import the public repository GPG keys
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
@@ -441,7 +441,7 @@ PowerShell är tillgängligt från användar lagrings platsen för [Båge Linux]
 
 * Den kan kompileras med den [senaste taggade versionen][arch-release]
 * Den kan kompileras från det [senaste genomförandeet till Master][arch-git]
-* Den kan installeras med den [senaste versionen][arch-bin] av binärfilen
+* Den kan installeras med den [senaste versionen av binärfilen][arch-bin]
 
 Paketen i AUR är grupperade. Det finns inget statligt stöd.
 

@@ -1,5 +1,5 @@
 ---
-title: Windows PowerShell-exempelkoden | Microsoft Docs
+title: Exempel kod för Windows PowerShell | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,50 +8,51 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1106829a-8ddc-454e-bbdd-ade15d4bffb4
 caps.latest.revision: 7
-ms.openlocfilehash: 4154aeb22b5dde7806f3af133559d471e82bb981
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: e9df44b17453e9f73f6eb388d9cbc8a69fce4ba2
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733774"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70847995"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell-exempelkod
 
-Windows PowerShell® exempel är tillgängliga via Windows SDK. Det här avsnittet innehåller exempelkoden som finns i Windows SDK-prov.
+Windows PowerShell®-exempel är tillgängliga via Windows SDK. Det här avsnittet innehåller exempel koden som finns i Windows SDK exempel.
 
 > [!NOTE]
-> När Windows SDK: N installeras en **exempel** katalog skapas alla Windows PowerShell-exempel är tillgängliga. En standardinstallation katalog är **C:\Program Files\Microsoft SDKs\Windows\v6.0**. Starta Windows PowerShell och skriv **”cd Samples\SysMgmt\PowerShell”** att hitta katalogen Windows PowerShell-exempel. I detta dokument, Windows PowerShell-exempel directory kallas  **\<PowerShell-exempel >** .
+> När Windows SDK installeras skapas en **exempel** katalog där alla Windows PowerShell-exempel görs tillgängliga. En typisk installations katalog är **C:\Program\Microsoft SDKs\Windows\v6.0**.
+> Starta Windows PowerShell och skriv **"CD Samples\SysMgmt\PowerShell"** för att hitta mappen Windows PowerShell-exempel. I det här dokumentet kallas  **\<** Windows PowerShell-exempel katalogen PowerShell-exempel >.
 
-## <a name="sample-code-listing"></a>Exempel på kodlista
+## <a name="sample-code-listing"></a>Exempel kod lista
 
 |Exempelkod|Beskrivning|
 |-----------------|-----------------|
-|[AccessDbProviderSample01 kodexempel](./accessdbprovidersample01-code-sample.md)|Detta är providern som beskrivs i [skapar en grundläggande Windows PowerShell-providern](./creating-a-basic-windows-powershell-provider.md).|
-|[AccessDbProviderSample02 kodexempel](./accessdbprovidersample02-code-sample.md)|Detta är providern som beskrivs i [skapar en Windows PowerShell Drive Provider](./creating-a-windows-powershell-drive-provider.md).|
-|[AccessDbProviderSample03 kodexempel](./accessdbprovidersample03-code-sample.md)|Detta är providern som beskrivs i [skapar en Windows PowerShell-providern för objektet](./creating-a-windows-powershell-item-provider.md).|
-|[AccessDbProviderSample04 kodexempel](./accessdbprovidersample04-code-sample.md)|Detta är providern som beskrivs i [skapar en Windows PowerShell-providern för behållaren](./creating-a-windows-powershell-container-provider.md).|
-|[AccessDbProviderSample05 kodexempel](./accessdbprovidersample05-code-sample.md)|Detta är providern som beskrivs i [skapar en Windows PowerShell-providern för navigering](./creating-a-windows-powershell-navigation-provider.md).|
-|[AccessDbProviderSample06 kodexempel](./accessdbprovidersample06-code-sample.md)|Detta är providern som beskrivs i [skapar en Windows PowerShell-innehållsleverantör](./creating-a-windows-powershell-content-provider.md).|
-|[GetProc01 kodexempel](./getproc01-code-samples.md)|Det här är grundläggande `Get-Process` cmdlet-exemplet som beskrivs i [skapa din första cmdleten](../cmdlet/creating-a-cmdlet-without-parameters.md).|
-|[GetProc02 kodexempel](./getproc02-code-samples.md)|Det här är den `Get-Process` cmdlet-exemplet som beskrivs i [att lägga till parametrar som processen Command-Line indata](../cmdlet/adding-parameters-that-process-command-line-input.md).|
-|[GetProc03 kodexempel](./getproc03-code-samples.md)|Det här är den `Get-Process` cmdlet-exemplet som beskrivs i [att lägga till parametrar som indata från Pipeline processen](../cmdlet/adding-parameters-that-process-pipeline-input.md).|
-|[GetProc04 kodexempel](./getproc04-code-samples.md)|Det här är den `Get-Process` cmdlet-exemplet som beskrivs i [att lägga till oändliga felrapportering om du till din Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
-|[GetProc05 kodexempel](./getproc05-code-samples.md)|Detta `Get-Process` cmdlet liknar den cmdlet som beskrivs i [att lägga till oändliga felrapportering om du till din Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
-|[StopProc01 kodexempel](./stopproc01-code-samples.md)|Det här är den `Stop-Process` cmdlet-exemplet som beskrivs i [skapar en Cmdlet som ändrar systemet](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md).|
-|[StopProcessSample04 kodexempel](./stopprocesssample04-code-samples.md)|Det här är den `Stop-Process` cmdlet-exemplet som beskrivs i [att lägga till parametern anger att en Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).|
-|[Runspace01 kodexempel](./runspace01-code-samples.md)|Dessa är kodexempel för körningsutrymmet som beskrivs i [och skapa en konsolen programmet som kör ett kommando som angetts](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).|
-|[Runspace02 kodexempel](./runspace02-code-samples.md)|Det här exemplet används den [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) klassen för att köra den `Get-Process` cmdlet synkront.|
-|[RunSpace03 kodexempel](./runspace03-code-samples.md)|Dessa är kodexempel för körningsutrymmet som beskrivs i [och skapa en konsolen program som använder ett skript som angetts](fd).|
-|[RunSpace04 kodexempel](./runspace04-code-samples.md)|Det här är ett kodexempel på för ett körningsutrymme som använder den [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) klassen för att köra ett skript som genererar ett avslutande fel.|
-|[RunSpace05 kodexempel](./runspace05-code-sample.md)|Det här är källkoden för Runspace05-exemplet som beskrivs i [konfigurerar en Körningsutrymme med RunspaceConfiguration](https://msdn.microsoft.com/en-us/42681d19-2d05-4975-befd-afb1990e79b2).|
-|[RunSpace06 kodexempel](./runspace06-code-sample.md)|Det här är källkoden för Runspace06-exemplet som beskrivs i [konfigurerar ett Körningsutrymme som en Windows PowerShell snapin-modulen](https://msdn.microsoft.com/en-us/a7289ee8-9732-49ee-91c7-d533e9538b83).|
-|[RunSpace07 kodexempel](./runspace07-code-sample.md)|Det här är källkoden för Runspace07-exemplet som beskrivs i [skapar ett program som lägger till konsolkommandon för en Pipeline](https://msdn.microsoft.com/en-us/01eb7808-e97b-4905-80be-9e2fa38c262e).|
-|[RunSpace08 kodexempel](./runspace08-code-sample.md)|Det här är källkoden för Runspace08-exemplet som beskrivs i [skapar ett program som lägger till Konsolparametrar till ett kommando](https://msdn.microsoft.com/en-us/848b2b46-60f1-4a86-b448-cfc7c0cccfba).|
-|[RunSpace09 kodexempel](./runspace09-code-sample.md)|Det här är källkoden för Runspace09-exemplet som beskrivs i [skapar en konsolen program som anropar en Pipeline asynkront](https://msdn.microsoft.com/en-us/198c1c94-2a06-457e-93ce-c0d910618e47).|
-|[RunSpace10 kodexempel](./runspace10-code-sample.md)|Det här är källkoden för Runspace10 samplet, som lägger till en cmdlet för att [System.Management.Automation.Runspaces.Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration) och använder sedan den ändrade konfigurationsinformationen för att skapa körningsutrymmet.|
+|[AccessDbProviderSample01 kod exempel](./accessdbprovidersample01-code-sample.md)|Detta är den provider som beskrivs i [skapa en grundläggande Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md).|
+|[AccessDbProviderSample02 kod exempel](./accessdbprovidersample02-code-sample.md)|Det här är den provider som beskrivs i [skapa en Windows PowerShell-enhets leverantör](./creating-a-windows-powershell-drive-provider.md).|
+|[AccessDbProviderSample03 kod exempel](./accessdbprovidersample03-code-sample.md)|Detta är den provider som beskrivs i [skapa en Windows PowerShell-dataprovider](./creating-a-windows-powershell-item-provider.md).|
+|[AccessDbProviderSample04 kod exempel](./accessdbprovidersample04-code-sample.md)|Detta är den provider som beskrivs i [skapa en Windows PowerShell container-Provider](./creating-a-windows-powershell-container-provider.md).|
+|[AccessDbProviderSample05 kod exempel](./accessdbprovidersample05-code-sample.md)|Detta är den provider som beskrivs i [skapa en Windows PowerShell-navigerings leverantör](./creating-a-windows-powershell-navigation-provider.md).|
+|[AccessDbProviderSample06 kod exempel](./accessdbprovidersample06-code-sample.md)|Detta är den provider som beskrivs i [skapa en Windows PowerShell-innehålls leverantör](./creating-a-windows-powershell-content-provider.md).|
+|[GetProc01 kod exempel](./getproc01-code-samples.md)|Det här är det `Get-Process` grundläggande cmdlet-exemplet som beskrivs i [skapa din första cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md).|
+|[GetProc02 kod exempel](./getproc02-code-samples.md)|Detta är `Get-Process` det cmdlet-exempel som beskrivs i [lägga till parametrar som bearbetar kommando rads indatatyper](../cmdlet/adding-parameters-that-process-command-line-input.md).|
+|[GetProc03 kod exempel](./getproc03-code-samples.md)|Detta är `Get-Process` det cmdlet-exempel som beskrivs i [lägga till parametrar som bearbetar pipeline-inflöden](../cmdlet/adding-parameters-that-process-pipeline-input.md).|
+|[GetProc04 kod exempel](./getproc04-code-samples.md)|Detta är det `Get-Process` cmdlet-exempel som beskrivs i [lägga till fel rapportering som inte avslutas till din cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
+|[GetProc05 kod exempel](./getproc05-code-samples.md)|Denna `Get-Process` cmdlet liknar den cmdlet som beskrivs i [lägga till fel rapportering som inte avslutas till din cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
+|[StopProc01 kod exempel](./stopproc01-code-samples.md)|Detta är det `Stop-Process` cmdlet-exempel som beskrivs i [skapa en cmdlet som ändrar systemet](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md).|
+|[StopProcessSample04 kod exempel](./stopprocesssample04-code-samples.md)|Detta är `Stop-Process` det cmdlet-exempel som beskrivs i [lägga till parameter uppsättningar i en cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).|
+|[Runspace01 kod exempel](./runspace01-code-samples.md)|Detta är kod exemplen för körnings utrymme som beskrivs i [skapa ett konsol program som kör ett angivet kommando](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).|
+|[Runspace02 kod exempel](./runspace02-code-samples.md)|I det här exemplet används klassen [system. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) för att `Get-Process` köra cmdleten synkront.|
+|[RunSpace03 kod exempel](./runspace03-code-samples.md)|Detta är kod exemplen för körnings utrymme som beskrivs i "skapa ett konsol program som kör ett angivet skript".|
+|[RunSpace04 kod exempel](./runspace04-code-samples.md)|Det här är ett kod exempel för en körnings utrymme som använder klassen [system. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) för att köra ett skript som genererar ett avslutande fel.|
+|[RunSpace05 kod exempel](./runspace05-code-sample.md)|Det här är käll koden för Runspace05-exemplet som beskrivs i [Konfigurera en körnings utrymme med hjälp av RunspaceConfiguration](https://msdn.microsoft.com/en-us/42681d19-2d05-4975-befd-afb1990e79b2).|
+|[RunSpace06 kod exempel](./runspace06-code-sample.md)|Det här är käll koden för Runspace06-exemplet som beskrivs i [Konfigurera en körnings utrymme med hjälp av en Windows PowerShell-snapin-modul](https://msdn.microsoft.com/en-us/a7289ee8-9732-49ee-91c7-d533e9538b83).|
+|[RunSpace07 kod exempel](./runspace07-code-sample.md)|Det här är käll koden för Runspace07-exemplet som beskrivs i [skapa ett konsol program som lägger till kommandon i en pipeline](https://msdn.microsoft.com/en-us/01eb7808-e97b-4905-80be-9e2fa38c262e).|
+|[RunSpace08 kod exempel](./runspace08-code-sample.md)|Det här är käll koden för Runspace08-exemplet som beskrivs i [skapa ett konsol program som lägger till parametrar till ett kommando](https://msdn.microsoft.com/en-us/848b2b46-60f1-4a86-b448-cfc7c0cccfba).|
+|[RunSpace09 kod exempel](./runspace09-code-sample.md)|Det här är käll koden för Runspace09-exemplet som beskrivs i [skapa ett konsol program som anropar en pipeline asynkront](https://msdn.microsoft.com/en-us/198c1c94-2a06-457e-93ce-c0d910618e47).|
+|[RunSpace10 kod exempel](./runspace10-code-sample.md)|Det här är käll koden för Runspace10-exemplet, som lägger till en cmdlet till [system. Management. Automation. körnings utrymmen. Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration) och använder sedan den ändrade konfigurations informationen för att skapa körnings utrymme.|
 
 ## <a name="see-also"></a>Se även
 
-[Programmeringsguide för Windows PowerShell](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer ' s guide](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

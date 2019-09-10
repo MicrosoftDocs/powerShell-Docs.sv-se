@@ -4,30 +4,30 @@ ms.topic: conceptual
 keywords: WMF, powershell, inställning
 contributor: keithb
 title: Installera och konfigurera WMF 5.1
-ms.openlocfilehash: cb223844c2a214846e7206bcb476fac9154fda4b
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 241f52be011e1afc87d25c9a934db0c1e0361b76
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65856149"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848126"
 ---
-# <a name="install-and-configure-wmf-51"></a>Installera och konfigurera WMF 5.1
+# <a name="install-and-configure-wmf-51"></a>Installera och konfigurera WMF 5,1
 
 > [!IMPORTANT]
-> WMF 5.0 har ersatts av WMF 5.1. Användare med WMF 5.0 måste uppgradera till WMF 5.1 för att få support.
-> **WMF 5.1 kräver .NET Framework 4.5.2** (eller senare). Installationen lyckas, men viktiga funktioner kommer att misslyckas om .NET 4.5.2 (eller senare) har inte installerats.
+> WMF 5,0 ersätts av WMF 5,1. Användare med WMF 5,0 måste uppgradera till WMF 5,1 för att få support.
+> **WMF 5,1 kräver .NET Framework 4.5.2** (eller senare). Installationen kommer att lyckas, men viktiga funktioner kommer att Miss lyckas om .NET 4.5.2 (eller senare) inte är installerat.
 
-## <a name="download-and-install-the-wmf-51-package"></a>Ladda ned och installera WMF 5.1-paketet
+## <a name="download-and-install-the-wmf-51-package"></a>Hämta och installera WMF 5,1-paketet
 
-Hämta WMF 5.1-paketet för operativsystemet och arkitektur som du vill installera den på:
+Hämta WMF 5,1-paketet för det operativ system och den arkitektur som du vill installera den på:
 
-| Operativsystem       | Förutsättningar           | Paketet länkar                          |
+| Operativsystem       | Förutsättningar           | Paket länkar                          |
 |------------------------|-------------------------|----------------------------------------|
 | Windows Server 2012 R2 |                         | [Win8.1AndW2K12R2-KB3191564-x64.msu][] |
 | Windows Server 2012    |                         | [W2K12-KB3191565-x64.msu][]            |
 | Windows Server 2008 R2 | [.NET Framework 4.5.2][]| [Win7AndW2K8R2-KB3191566-x64.ZIP][]    |
-| Windows 8.1            |                         | **x64:** [Win8.1AndW2K12R2-KB3191564-x64.msu][]</br>**x86:** [Win8.1-KB3191564-x86.msu][] |
-| Windows 7 SP1          | [.NET Framework 4.5.2][]| **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP][]</br>**x86:** [Win7-KB3191566-x86.ZIP][] |
+| Windows 8.1            |                         | **x** [Win8.1AndW2K12R2-KB3191564-x64.msu][]</br>**x86** [Win8.1-KB3191564-x86.msu][] |
+| Windows 7 SP1          | [.NET Framework 4.5.2][]| **x** [Win7AndW2K8R2-KB3191566-x64.ZIP][]</br>**x86** [Win7-KB3191566-x86.ZIP][] |
 
 [.NET Framework 4.5.2]: https://www.microsoft.com/download/details.aspx?id=42642
 [W2K12-KB3191565-x64.msu]: https://go.microsoft.com/fwlink/?linkid=839513
@@ -36,58 +36,58 @@ Hämta WMF 5.1-paketet för operativsystemet och arkitektur som du vill installe
 [Win8.1-KB3191564-x86.msu]: https://go.microsoft.com/fwlink/?linkid=839521
 [Win8.1AndW2K12R2-KB3191564-x64.msu]: https://go.microsoft.com/fwlink/?linkid=839516
 
-- WMF 5.1 förhandsversion måste avinstalleras innan du installerar WMF 5.1 RTM.
-- WMF 5.1 kan installeras direkt via WMF 5.0 eller WMF 4.0.
-- Det är **krävs inte** att installera WMF 4.0 innan du installerar WMF 5.1 på Windows 7 och Windows Server 2008 R2.
+- WMF 5,1 Preview måste avinstalleras innan du installerar WMF 5,1 RTM.
+- WMF 5,1 kan installeras direkt över WMF 5,0 eller WMF 4,0.
+- Du **behöver inte** installera WMF 4,0 innan du installerar WMF 5,1 på Windows 7 och windows Server 2008 R2.
 
-## <a name="install-wmf-51-for-windows-server-2008-r2-and-windows-7"></a>Installera WMF 5.1 för Windows Server 2008 R2 och Windows 7
+## <a name="install-wmf-51-for-windows-server-2008-r2-and-windows-7"></a>Installera WMF 5,1 för Windows Server 2008 R2 och Windows 7
 
 > [!NOTE]
-> Installationsinstruktioner för Windows Server 2008 R2 och Windows 7 har ändrats och skiljer sig från anvisningarna för de andra paketen. Installationsinstruktioner för Windows Server 2012 R2, Windows Server 2012 och Windows 8.1 finns nedan.
+> Installations anvisningar för Windows Server 2008 R2 och Windows 7 har ändrats och skiljer sig från anvisningarna för de andra paketen. Installations anvisningar för Windows Server 2012 R2, Windows Server 2012 och Windows 8,1 finns nedan.
 
-### <a name="installing-wmf-51-on-windows-server-2008-r2-and-windows-7"></a>Installera WMF 5.1 på Windows Server 2008 R2 och Windows 7
+### <a name="wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1"></a>WMF 5,1-krav för Windows Server 2008 R2 SP1 och Windows 7 SP1
 
-1. Navigera till den mapp dit du hämtade ZIP-filen.
+Installationen av WMF 5,1 på antingen Windows Server 2008 R2 SP1 eller Windows 7 SP1 kräver följande:
 
-2. Högerklicka på ZIP-filen och välj ”extrahera alla...”. ZIP-filen innehåller 2 filer: en MSU- och installera WMF5.1.PS1-skriptfilen. När du har packat upp ZIP-filen, kan du kopiera innehållet till en dator som kör Windows 7 eller Windows Server 2008 R2.
+- Senaste service pack måste vara installerat.
+- WMF 3,0 **får inte** vara installerat. Installation av WMF 5,1 över WMF 3,0 leder till förlust av **PSModulePath** (`$env:PSModulePath`), vilket kan orsaka att andra program Miss lyckas. Innan du installerar WMF 5,1 måste du antingen avinstallera WMF 3,0 eller spara **PSModulePath** och sedan återställa den manuellt när WMF 5,1-installationen är klar.
+- WMF 5,1 kräver minst [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642).
+  Du kan installera Microsoft .NET Framework 4.5.2 genom att följa anvisningarna på hämtnings platsen.
 
-3. När innehållet för ZIP-filen, öppna PowerShell som administratör och navigera till mappen som innehåller innehållet i ZIP-filen.
+### <a name="installing-wmf-51-on-windows-server-2008-r2-and-windows-7"></a>Installera WMF 5,1 på Windows Server 2008 R2 och Windows 7
 
-4. Kör skriptet Install-Wmf5.1.ps1 i den mappen och följ instruktionerna. Det här skriptet ska kontrollera krav på den lokala datorn och installera WMF 5.1 om kraven har uppfyllts. Kraven finns nedan.
+1. Navigera till den mapp där du laddade ned ZIP-filen.
 
-   Installera WMF5.1.ps1 använder följande parametrar för att underlätta automatisera installationen på Windows Server 2008 R2 och Windows 7:
+2. Högerklicka på ZIP-filen och välj **extrahera alla..** .. ZIP-filen innehåller två filer: en MSU-och `Install-WMF5.1.ps1` skript fil. När du har packat upp ZIP-filen kan du kopiera innehållet till alla datorer som kör Windows 7 eller Windows Server 2008 R2.
 
-   - AcceptEula: När den här parametern finns LICENSAVTALET godkänns automatiskt och visas inte.
-   - AllowRestart: Den här parametern kan endast användas om AcceptEula har angetts. Om den här parametern ingår och en omstart krävs när du har installerat WMF 5.1, sker omstarten utan att fråga direkt när installationen har slutförts.
+3. När du har extraherat ZIP-filens innehåll öppnar du PowerShell som administratör och navigerar sedan till den mapp som innehåller innehållet i ZIP-filen.
 
-### <a name="wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1"></a>WMF 5.1 krav för Windows Server 2008 R2 SP1 och Windows 7 SP1
+4. `Install-WMF5.1.ps1` Kör skriptet i mappen och följ instruktionerna. Det här skriptet kontrollerar kraven på den lokala datorn och installerar WMF 5,1 om kraven är uppfyllda. Kraven visas nedan.
 
-Installation av WMF 5.1 på Windows Server 2008 R2 SP1 eller Windows 7 SP1 kräver följande:
+   `Install-WMF5.1.ps1`använder följande parametrar för att under lätta automatiserad installation av Windows Server 2008 R2 och Windows 7:
 
-- Senaste servicepack måste vara installerad.
-- WMF 3.0 **får inte** installeras. Installera WMF 5.1 via WMF 3.0 resulterar i förlust av PSModulePath, vilket kan orsaka att andra program att misslyckas. Innan du installerar WMF 5.1 måste antingen avinstallera WMF 3.0, eller spara PSModulePath och sedan återställa det manuellt efter att WMF 5.1-installationen är klar.
-- WMF 5.1 kräver minst [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642).
-  Du kan installera Microsoft .NET Framework 4.5.2 genom att följa anvisningarna i nedladdningsplatsen.
+   - **AcceptEula**: När den här parametern tas med godkänns licens avtalet automatiskt och visas inte.
+   - **AllowRestart**: Den här parametern kan endast användas om AcceptEula har angetts. Om den här parametern tas med och en omstart krävs efter installation av WMF 5,1 sker omstarten utan att du tillförar omedelbart efter att installationen har slutförts.
 
 ## <a name="winrm-dependency"></a>WinRM-beroende
 
-Windows PowerShell Desired State Configuration (DSC) är beroende av WinRM. WinRM är inte aktiverat som standard på Windows Server 2008 R2 och Windows 7. Kör `Set-WSManQuickConfig`, utökade sessionen att aktivera WinRM i ett Windows PowerShell.
+Windows PowerShell Desired State Configuration (DSC) är beroende av WinRM. WinRM är inte aktiverat som standard på Windows Server 2008 R2 och Windows 7. Kör `Set-WSManQuickConfig`, i en upphöjd Windows PowerShell-session, för att aktivera WinRM.
 
-## <a name="install-wmf-51-for-windows-server-2012-r2-windows-server-2012-and-windows-81"></a>Installera WMF 5.1 för Windows Server 2012 R2, Windows Server 2012 och Windows 8.1
+## <a name="install-wmf-51-for-windows-server-2012-r2-windows-server-2012-and-windows-81"></a>Installera WMF 5,1 för Windows Server 2012 R2, Windows Server 2012 och Windows 8,1
 
-### <a name="install-from-windows-file-explorer"></a>Installera från Windows Utforskaren
+### <a name="install-from-windows-file-explorer"></a>Installera från Utforskaren i Windows
 
-1. Navigera till den mapp dit du hämtade MSU-fil.
-2. Dubbelklicka på MSU att köra den.
+1. Navigera till den mapp som du laddade ned MSU-filen till.
+2. Dubbelklicka på MSU för att köra det.
 
-### <a name="installing-from-the-command-prompt"></a>Installera från Kommandotolken
+### <a name="installing-from-the-command-prompt"></a>Installera från kommando tolken
 
-1. När du hämtat rätt paket för datorns arkitektur, öppna ett kommandotolksfönster med utökade användarrättigheter (Kör som administratör). På installationsalternativet Server Core av Windows Server 2012 R2, Windows Server 2012 eller Windows Server 2008 R2 SP1 öppnas kommandotolk med förhöjd behörighet som standard.
-2. Ändra sökvägen till mappen dit du har hämtat eller kopierade WMF 5.1-installationspaketet.
+1. När du har hämtat rätt paket för datorns arkitektur öppnar du ett kommando tolks fönster med utökade användar rättigheter (kör som administratör). På Server Core-installations alternativen för Windows Server 2012 R2, Windows Server 2012 eller Windows Server 2008 R2 SP1 öppnas kommando tolken med utökade användar rättigheter som standard.
+2. Ändra kataloger till mappen där du har laddat ned eller kopierat WMF 5,1-installations paketet.
 3. Kör något av följande kommandon:
-   - Kör på datorer som kör Windows Server 2012 R2 eller Windows 8.1 x64 `Win8.1AndW2K12R2-KB3191564-x64.msu /quiet`.
-   - Kör på datorer som kör Windows Server 2012, `W2K12-KB3191565-x64.msu /quiet`.
-   - Kör på datorer som kör Windows 8.1 x86 `Win8.1-KB3191564-x86.msu /quiet`.
+   - På datorer som kör Windows Server 2012 R2 eller Windows 8,1 x64 kör `Win8.1AndW2K12R2-KB3191564-x64.msu /quiet`du.
+   - På datorer som kör Windows Server 2012 kör `W2K12-KB3191565-x64.msu /quiet`du.
+   - På datorer som kör Windows 8,1 x86 kör `Win8.1-KB3191564-x86.msu /quiet`du.
 
 > [!NOTE]
-> Installera WMF 5.1 kräver en omstart. Med hjälp av den `/quiet` alternativet startar om systemet utan varning. Använd den `/norestart` alternativet för att undvika att starta om. WMF 5.1 kommer inte installeras förrän du har startats om.
+> Installation av WMF 5,1 kräver en omstart. Om du använder alternativet startas systemet om utan varning. `/quiet` `/norestart` Använd alternativet för att undvika att starta om. WMF 5,1 kommer dock inte att installeras förrän du har startat om.

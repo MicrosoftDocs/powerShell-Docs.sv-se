@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
-ms.openlocfilehash: cc4877242a16a9caa99564aeaae985f85e38791e
-ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
+ms.openlocfilehash: 59839e9b8b6f2a56f2f1a9c755f2f1a85deb34aa
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70737587"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848116"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>Lägga till dynamiska parametrar i ett hjälpavsnitt för providers
 
@@ -23,7 +23,7 @@ I det här avsnittet beskrivs hur du fyller i avsnittet **dynamiska parametrar**
 
 De dynamiska parametrar som dokumenteras i ett hjälp avsnitt om providern är de dynamiska parametrar som providern lägger till i cmdleten eller funktionen när-cmdleten eller-funktionen används i leverantörs enheten.
 
-Dynamiska parametrar kan också dokumenteras i anpassad cmdlet-hjälp för en provider. När du skriver både hjälpen för Provider och anpassad cmdlet-hjälp för en provider, inkluderar du den dynamiska parameter dokumentationen i båda dokumenten. Mer information om anpassad cmdlet-hjälp finns i [skriva Windows PowerShell anpassad cmdlet-hjälp för providers](./writing-custom-cmdlet-help-for-windows-powershell-providers.md).
+Dynamiska parametrar kan också dokumenteras i anpassad cmdlet-hjälp för en provider. När du skriver både hjälpen för Provider och anpassad cmdlet-hjälp för en provider, inkluderar du den dynamiska parameter dokumentationen i båda dokumenten.
 
 Om en provider inte implementerar några dynamiska parametrar innehåller leverantörens hjälp avsnitt ett tomt `DynamicParameters` element.
 
