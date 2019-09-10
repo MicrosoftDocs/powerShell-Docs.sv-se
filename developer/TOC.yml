@@ -887,39 +887,13 @@
         - name: Skriva hjälp för Windows PowerShell-cmdlets
           href: ./help/writing-help-for-windows-powershell-cmdlets.md
         - name: Skriva hjälp för Windows PowerShell-providers
-          href: ./help/writing-help-for-windows-powershell-providers.md
           items:
-            - name: Skapa ett hjälpavsnitt för providers
-              href: ./help/how-to-create-a-provider-help-topic.md
-            - name: Lägga till providernamnet
-              href: ./help/how-to-add-the-provider-name.md
-            - name: Lägga till providerenheterna
-              href: ./help/how-to-add-the-provider-drives.md
-            - name: Lägga till providersammanfattningen
-              href: ./help/how-to-add-the-provider-synopsis.md
-            - name: Lägga till en providerbeskrivning
-              href: ./help/how-to-add-a-provider-description.md
-            - name: Lägga till funktioner
-              href: ./help/how-to-add-capabilities.md
-            - name: Lägga till uppgifter i ett hjälpavsnitt för providers
-              href: ./help/how-to-add-tasks-to-a-provider-help-topic.md
             - name: Lägga till dynamiska parametrar i ett hjälpavsnitt för providers
               href: ./help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
-            - name: Lägga till anteckningar i ett hjälpavsnitt för providers
-              href: ./help/how-to-add-notes-to-a-provider-help-topic.md
             - name: Lägga till ett ”Se även”-avsnitt i ett hjälpavsnitt för providers
               href: ./help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
         - name: Skriva hjälp för Windows PowerShell-skript och -funktioner
           href: ./help/writing-help-for-windows-powershell-scripts-and-functions.md
-          items:
-            - name: Skriva XML-baserade hjälpavsnitt för skript och funktioner
-              href: ./help/writing-xml-based-help-topics-for-scripts-and-functions.md
-        - name: Skriva hjälp för Windows PowerShell-snapin-moduler
-          href: ./help/writing-help-for-windows-powershell-snap-ins.md
-        - name: Skriva anpassad cmdlet-hjälp för Windows PowerShell-providers
-          href: ./help/writing-custom-cmdlet-help-for-windows-powershell-providers.md
-        - name: Skriva ”Om”-hjälp för Windows PowerShell
-          href: ./help/writing-windows-powershell-about-help.md
         - name: Skriva kommentarsbaserade hjälpavsnitt
           href: ./help/writing-comment-based-help-topics.md
           items:
@@ -936,7 +910,6 @@
             - name: Exempel på kommentarsbaserad hjälp
               href: ./help/examples-of-comment-based-help.md
         - name: Skriva XML-baserade hjälpavsnitt för kommandon
-          href: ./help/writing-xml-based-help-topics-for-commands.md
           items:
             - name: Skapa cmdlet-hjälpfilen
               href: ./help/how-to-create-the-cmdlet-help-file.md
