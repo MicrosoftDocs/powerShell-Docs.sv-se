@@ -1,10 +1,14 @@
-- name: PowerShell
-  tocHref: /powershell/
-  topicHref: /powershell
+- name: Docs
+  tocHref: /
+  topicHref: /
   items:
-    - name: Skriptning
-      tocHref: /powershell/scripting/
-      topicHref: /powershell/scripting/index
-    - name: Skriptning
-      tocHref: /powershell/module/
-      topicHref: /powershell/scripting/index
+    - name: PowerShell
+      tocHref: /powershell/
+      topicHref: /powershell
+      items:
+        - name: Skriptning
+          tocHref: /powershell/scripting/
+          topicHref: /powershell/scripting/index
+        - name: Skriptning
+          tocHref: /powershell/module/
+          topicHref: /powershell/scripting/index
