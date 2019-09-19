@@ -1,9 +1,9 @@
 ### YamlMime:Landing
-title: <span data-ttu-id="fe519-101">Exempel skript för system administration</span><span class="sxs-lookup"><span data-stu-id="fe519-101">Sample scripts for system administration</span></span>
-summary: <span data-ttu-id="fe519-102">En samling exempel vägleder dig genom scenarier för att administrera system med PowerShell.</span><span class="sxs-lookup"><span data-stu-id="fe519-102">A collection of examples walks through scenarios for administering systems with PowerShell.</span></span>
+title: Exempel skript för system administration
+summary: En samling exempel vägleder dig genom scenarier för att administrera system med PowerShell.
 metadata:
-  title: <span data-ttu-id="fe519-103">Exempel skript för system administration</span><span class="sxs-lookup"><span data-stu-id="fe519-103">Sample scripts for system administration</span></span>
-  description: <span data-ttu-id="fe519-104">En samling exempel vägleder dig genom scenarier för att administrera system med PowerShell.</span><span class="sxs-lookup"><span data-stu-id="fe519-104">A collection of examples walks through scenarios for administering systems with PowerShell.</span></span>
+  title: Exempel skript för system administration
+  description: En samling exempel vägleder dig genom scenarier för att administrera system med PowerShell.
   ms.topic: landing-page
   author: sdwheeler
   ms.author: sewhee
@@ -15,85 +15,85 @@ metadata:
   ms.lasthandoff: 09/05/2019
   ms.locfileid: "70392639"
 landingContent:
-- title: <span data-ttu-id="fe519-105">Arbeta med objekt</span><span class="sxs-lookup"><span data-stu-id="fe519-105">Working with objects</span></span>
+- title: Arbeta med objekt
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="fe519-106">Visa objekt struktur</span><span class="sxs-lookup"><span data-stu-id="fe519-106">Viewing object structure</span></span>
+    - text: Visa objekt struktur
       url: ./viewing-object-structure--get-member-.md
-    - text: <span data-ttu-id="fe519-107">Välja delar av objekt</span><span class="sxs-lookup"><span data-stu-id="fe519-107">Selecting parts of object</span></span>
+    - text: Välja delar av objekt
       url: ./selecting-parts-of-objects--select-object-.md
-    - text: <span data-ttu-id="fe519-108">Filtrera objekt i pipelinen</span><span class="sxs-lookup"><span data-stu-id="fe519-108">Filtering objects in the pipeline</span></span>
+    - text: Filtrera objekt i pipelinen
       url: ./removing-objects-from-the-pipeline--where-object-.md
-    - text: <span data-ttu-id="fe519-109">Sortera objekt</span><span class="sxs-lookup"><span data-stu-id="fe519-109">Sorting objects</span></span>
+    - text: Sortera objekt
       url: ./sorting-objects.md
-    - text: <span data-ttu-id="fe519-110">Upprepa en uppgift för flera objekt</span><span class="sxs-lookup"><span data-stu-id="fe519-110">Repeating a task for multiple objects</span></span>
+    - text: Upprepa en uppgift för flera objekt
       url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
-    - text: <span data-ttu-id="fe519-111">Skapa .NET-och COM-objekt</span><span class="sxs-lookup"><span data-stu-id="fe519-111">Creating .NET and COM objects</span></span>
+    - text: Skapa .NET-och COM-objekt
       url: ./creating-.net-and-com-objects--new-object-.md
-    - text: <span data-ttu-id="fe519-112">Använd statiska klasser och metoder</span><span class="sxs-lookup"><span data-stu-id="fe519-112">Using static classes and methods</span></span>
+    - text: Använd statiska klasser och metoder
       url: ./using-static-classes-and-methods.md
-    - text: <span data-ttu-id="fe519-113">Hämta WMI-objekt – Get-WmiObject</span><span class="sxs-lookup"><span data-stu-id="fe519-113">Getting WMI objects - Get-WmiObject</span></span>
+    - text: Hämta WMI-objekt – Get-WmiObject
       url: ./getting-wmi-objects--get-wmiobject-.md
-- title: <span data-ttu-id="fe519-114">Hantera datorer</span><span class="sxs-lookup"><span data-stu-id="fe519-114">Managing computers</span></span>
+- title: Hantera datorer
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="fe519-115">Ändra datorstatus</span><span class="sxs-lookup"><span data-stu-id="fe519-115">Changing computer state</span></span>
+    - text: Ändra datorstatus
       url: ./changing-computer-state.md
-    - text: <span data-ttu-id="fe519-116">Samla in information om datorer</span><span class="sxs-lookup"><span data-stu-id="fe519-116">Collecting information about computers</span></span>
+    - text: Samla in information om datorer
       url: ./collecting-information-about-computers.md
-    - text: <span data-ttu-id="fe519-117">Skapar Get-WinEvent-frågor med FilterHashtable</span><span class="sxs-lookup"><span data-stu-id="fe519-117">Creating Get-WinEvent queries with FilterHashtable</span></span>
+    - text: Skapar Get-WinEvent-frågor med FilterHashtable
       url: ./creating-get-winEvent-queries-with-filterhashtable.md
-- title: <span data-ttu-id="fe519-118">Hantera processer & tjänster</span><span class="sxs-lookup"><span data-stu-id="fe519-118">Managing processes & services</span></span>
+- title: Hantera processer & tjänster
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="fe519-119">Hantera processer med Process-cmdletar</span><span class="sxs-lookup"><span data-stu-id="fe519-119">Managing processes with process cmdlets</span></span>
+    - text: Hantera processer med Process-cmdletar
       url: ./managing-processes-with-process-cmdlets.md
-    - text: <span data-ttu-id="fe519-120">Hantera tjänster</span><span class="sxs-lookup"><span data-stu-id="fe519-120">Managing services</span></span>
+    - text: Hantera tjänster
       url: ./managing-services.md
-    - text: <span data-ttu-id="fe519-121">Hantera Windows PowerShell-enheter</span><span class="sxs-lookup"><span data-stu-id="fe519-121">Managing Windows PowerShell drives</span></span>
+    - text: Hantera Windows PowerShell-enheter
       url: ./managing-windows-powershell-drives.md
-    - text: <span data-ttu-id="fe519-122">Arbeta med skrivare</span><span class="sxs-lookup"><span data-stu-id="fe519-122">Working with printers</span></span>
+    - text: Arbeta med skrivare
       url: ./working-with-printers.md
-    - text: <span data-ttu-id="fe519-123">Utför nätverksuppgifter</span><span class="sxs-lookup"><span data-stu-id="fe519-123">Performing networking tasks</span></span>
+    - text: Utför nätverksuppgifter
       url: ./performing-networking-tasks.md
-    - text: <span data-ttu-id="fe519-124">Arbeta med programinstallationer</span><span class="sxs-lookup"><span data-stu-id="fe519-124">Working with software installations</span></span>
+    - text: Arbeta med programinstallationer
       url: ./working-with-software-installations.md
-    - text: <span data-ttu-id="fe519-125">Avkoda ett PowerShell-kommando från en process som körs</span><span class="sxs-lookup"><span data-stu-id="fe519-125">Decode a PowerShell command from a running process</span></span>
+    - text: Avkoda ett PowerShell-kommando från en process som körs
       url: ./decode-powershell-command-from-a-running-process.md
-- title: <span data-ttu-id="fe519-126">Arbeta med utdata</span><span class="sxs-lookup"><span data-stu-id="fe519-126">Working with output</span></span>
+- title: Arbeta med utdata
   linkLists:
   - linkListType: concept
     links:
-    - text: <span data-ttu-id="fe519-127">Omdirigera data med Out\*-cmdletar</span><span class="sxs-lookup"><span data-stu-id="fe519-127">Redirecting data with Out-\* cmdlets</span></span>
+    - text: Omdirigera data med Out*-cmdletar
       url: ./redirecting-data-with-out---cmdlets.md
-    - text: <span data-ttu-id="fe519-128">Använd formatkommandon för att ändra utdatavyn</span><span class="sxs-lookup"><span data-stu-id="fe519-128">Using format commands to change output view</span></span>
+    - text: Använd formatkommandon för att ändra utdatavyn
       url: ./using-format-commands-to-change-output-view.md
-- title: <span data-ttu-id="fe519-129">Hantera enheter & filer</span><span class="sxs-lookup"><span data-stu-id="fe519-129">Managing drives & files</span></span>
+- title: Hantera enheter & filer
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="fe519-130">Hantera aktuell plats</span><span class="sxs-lookup"><span data-stu-id="fe519-130">Managing current location</span></span>
+    - text: Hantera aktuell plats
       url: ./managing-current-location.md
-    - text: <span data-ttu-id="fe519-131">Arbeta med filer och mappar</span><span class="sxs-lookup"><span data-stu-id="fe519-131">Working with files and folders</span></span>
+    - text: Arbeta med filer och mappar
       url: ./working-with-files-and-folders.md
-    - text: <span data-ttu-id="fe519-132">Arbeta med filer, mappar och registernycklar</span><span class="sxs-lookup"><span data-stu-id="fe519-132">Working with files folders and registry keys</span></span>
+    - text: Arbeta med filer, mappar och registernycklar
       url: ./working-with-files-folders-and-registry-keys.md
-    - text: <span data-ttu-id="fe519-133">Arbeta med registerposter</span><span class="sxs-lookup"><span data-stu-id="fe519-133">Working with registry entries</span></span>
+    - text: Arbeta med registerposter
       url: ./working-with-registry-entries.md
-    - text: <span data-ttu-id="fe519-134">Arbeta med registernycklar</span><span class="sxs-lookup"><span data-stu-id="fe519-134">Working with registry keys</span></span>
+    - text: Arbeta med registernycklar
       url: ./working-with-registry-keys.md
-- title: <span data-ttu-id="fe519-135">Skapa UI-element</span><span class="sxs-lookup"><span data-stu-id="fe519-135">Creating UI elements</span></span>
+- title: Skapa UI-element
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="fe519-136">Skapa en anpassad indataruta</span><span class="sxs-lookup"><span data-stu-id="fe519-136">Creating a custom input box</span></span>
+    - text: Skapa en anpassad indataruta
       url: ./creating-a-custom-input-box.md
-    - text: <span data-ttu-id="fe519-137">Skapa en grafisk datumväljare</span><span class="sxs-lookup"><span data-stu-id="fe519-137">Creating a graphical date picker</span></span>
+    - text: Skapa en grafisk datumväljare
       url: ./creating-a-graphical-date-picker.md
-    - text: <span data-ttu-id="fe519-138">Listrutor med flera val</span><span class="sxs-lookup"><span data-stu-id="fe519-138">Multiple selection list boxes</span></span>
+    - text: Listrutor med flera val
       url: ./multiple-selection-list-boxes.md
-    - text: <span data-ttu-id="fe519-139">Välj objekt från en listruta</span><span class="sxs-lookup"><span data-stu-id="fe519-139">Selecting items from a list box</span></span>
+    - text: Välj objekt från en listruta
       url: ./selecting-items-from-a-list-box.md
