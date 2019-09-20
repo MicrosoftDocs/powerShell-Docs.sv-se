@@ -1,5 +1,5 @@
 ---
-title: TableColumnItem Element för TableColumnItems för TableControl (Format) | Microsoft Docs
+title: TableColumnItem-element för TableColumnItems för TableControl (format) | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,61 +8,62 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ef8395aa-4b31-48c0-a0b8-b481fd0b3738
 caps.latest.revision: 15
-ms.openlocfilehash: 159f943f6bfb33c5403b5714380631351523789f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9e6cffc7476ef01124d95ecbf287d9788b0324c9
+ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62063946"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143587"
 ---
-# <a name="tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format"></a><span data-ttu-id="009a4-102">TableColumnItem-element för TableColumnItems för TableControl (format)</span><span class="sxs-lookup"><span data-stu-id="009a4-102">TableColumnItem Element for TableColumnItems for TableControl (Format)</span></span>
+# <a name="tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format"></a><span data-ttu-id="5c05e-102">TableColumnItem-element för TableColumnItems för TableControl (format)</span><span class="sxs-lookup"><span data-stu-id="5c05e-102">TableColumnItem Element for TableColumnItems for TableControl (Format)</span></span>
 
-<span data-ttu-id="009a4-103">Definierar egenskapen eller skript som vars värde visas i kolumnen i raden.</span><span class="sxs-lookup"><span data-stu-id="009a4-103">Defines the property or script whose value is displayed in the column of the row.</span></span>
+<span data-ttu-id="5c05e-103">Definierar egenskapen eller skriptet vars värde visas i kolumnen på raden.</span><span class="sxs-lookup"><span data-stu-id="5c05e-103">Defines the property or script whose value is displayed in the column of the row.</span></span>
 
-<span data-ttu-id="009a4-104">Elementet (Format) ViewDefinitions Element (Format) visa Element (Format) TableControl Element (Format) TableRowEntries konfigurationselement för TableControl (Format) TableRowEntry elementet för TableRowEntries för TableControl (Format) TableColumnItems Element för TableControlEntry för TableControl (Format) TableColumnItem elementet för TableColumnItems för TableControl (Format)</span><span class="sxs-lookup"><span data-stu-id="009a4-104">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) TableControl Element (Format) TableRowEntries Element for TableControl (Format) TableRowEntry Element for TableRowEntries for TableControl (Format) TableColumnItems Element for TableControlEntry for TableControl (Format) TableColumnItem Element for TableColumnItems for TableControl (Format)</span></span>
+<span data-ttu-id="5c05e-104">Konfigurations element (format) ViewDefinitions element (format) View-element (format) TableControl element (format) TableRowEntries-element för TableControl (format) TableRowEntry-element för TableRowEntries (format) TableColumnItems-element för TableControlEntry för TableControl (format) TableColumnItem-elementet för TableColumnItems för TableControl (format)</span><span class="sxs-lookup"><span data-stu-id="5c05e-104">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) TableControl Element (Format) TableRowEntries Element for TableControl (Format) TableRowEntry Element for TableRowEntries for TableControl (Format) TableColumnItems Element for TableControlEntry for TableControl (Format) TableColumnItem Element for TableColumnItems for TableControl (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="009a4-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="009a4-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="5c05e-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="5c05e-105">Syntax</span></span>
 
 ```xml
 <TableColumnItem>
   <Alignment>Left, Right, or Center</Alignment>
+  <FormatString>FormatPattern</FormatString>
   <PropertyName>Nameof.NetProperty</PropertyName>
   <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 </TableColumnItem>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="009a4-106">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="009a4-106">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="5c05e-106">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="5c05e-106">Attributes and Elements</span></span>
 
-<span data-ttu-id="009a4-107">I följande avsnitt beskrivs de attribut och underordnade element överordnade elementet i den `TableColumnItem` element.</span><span class="sxs-lookup"><span data-stu-id="009a4-107">The following sections describe the attributes, child elements, and parent element of the `TableColumnItem` element.</span></span>
+<span data-ttu-id="5c05e-107">I följande avsnitt beskrivs attributen, underordnade element och `TableColumnItem` elementets överordnade element.</span><span class="sxs-lookup"><span data-stu-id="5c05e-107">The following sections describe the attributes, child elements, and parent element of the `TableColumnItem` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="009a4-108">Attribut</span><span class="sxs-lookup"><span data-stu-id="009a4-108">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="5c05e-108">Attribut</span><span class="sxs-lookup"><span data-stu-id="5c05e-108">Attributes</span></span>
 
-<span data-ttu-id="009a4-109">Ingen.</span><span class="sxs-lookup"><span data-stu-id="009a4-109">None.</span></span>
+<span data-ttu-id="5c05e-109">Ingen.</span><span class="sxs-lookup"><span data-stu-id="5c05e-109">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="009a4-110">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="009a4-110">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="5c05e-110">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="5c05e-110">Child Elements</span></span>
 
-|<span data-ttu-id="009a4-111">Element</span><span class="sxs-lookup"><span data-stu-id="009a4-111">Element</span></span>|<span data-ttu-id="009a4-112">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="009a4-112">Description</span></span>|
+|<span data-ttu-id="5c05e-111">Element</span><span class="sxs-lookup"><span data-stu-id="5c05e-111">Element</span></span>|<span data-ttu-id="5c05e-112">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="5c05e-112">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="009a4-113">Justering Element för TableColumnItem för TableControl (Format)</span><span class="sxs-lookup"><span data-stu-id="009a4-113">Alignment Element for TableColumnItem for TableControl (Format)</span></span>](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)|<span data-ttu-id="009a4-114">Valfritt element.</span><span class="sxs-lookup"><span data-stu-id="009a4-114">Optional element.</span></span><br /><br /> <span data-ttu-id="009a4-115">Definierar hur data i en kolumn i raden visas.</span><span class="sxs-lookup"><span data-stu-id="009a4-115">Defines how the data in a column of the row is displayed.</span></span>|
-|[<span data-ttu-id="009a4-116">FormatString-Element för TableColumnItem för TableControl (Format)</span><span class="sxs-lookup"><span data-stu-id="009a4-116">FormatString Element for TableColumnItem for TableControl (Format)</span></span>](./formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md)|<span data-ttu-id="009a4-117">Anger ett formatmönster som används för att formatera data i kolumnen i raden.</span><span class="sxs-lookup"><span data-stu-id="009a4-117">Specifies a format pattern that is used to format the data in the column of the row.</span></span>|
-|[<span data-ttu-id="009a4-118">PropertyName-Element för TableColumnItem för TableControl (Format)</span><span class="sxs-lookup"><span data-stu-id="009a4-118">PropertyName Element for TableColumnItem for TableControl (Format)</span></span>](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)|<span data-ttu-id="009a4-119">Valfritt element.</span><span class="sxs-lookup"><span data-stu-id="009a4-119">Optional element.</span></span><br /><br /> <span data-ttu-id="009a4-120">Anger namnet på egenskapen vars värde visas.</span><span class="sxs-lookup"><span data-stu-id="009a4-120">Specifies the name of the property whose value is displayed.</span></span>|
-|[<span data-ttu-id="009a4-121">ScriptBlock Element för TableColumnItem för TableControl (Format)</span><span class="sxs-lookup"><span data-stu-id="009a4-121">ScriptBlock Element for TableColumnItem for TableControl (Format)</span></span>](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)|<span data-ttu-id="009a4-122">Valfritt element.</span><span class="sxs-lookup"><span data-stu-id="009a4-122">Optional element.</span></span><br /><br /> <span data-ttu-id="009a4-123">Anger skriptet vars värde visas i kolumnen i en rad.</span><span class="sxs-lookup"><span data-stu-id="009a4-123">Specifies the script whose value is displayed in the column of a row.</span></span>|
+|[<span data-ttu-id="5c05e-113">Justerings element för TableColumnItem för TableControl (format)</span><span class="sxs-lookup"><span data-stu-id="5c05e-113">Alignment Element for TableColumnItem for TableControl (Format)</span></span>](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)|<span data-ttu-id="5c05e-114">Valfritt element.</span><span class="sxs-lookup"><span data-stu-id="5c05e-114">Optional element.</span></span><br /><br /> <span data-ttu-id="5c05e-115">Definierar hur data i en kolumn i raden visas.</span><span class="sxs-lookup"><span data-stu-id="5c05e-115">Defines how the data in a column of the row is displayed.</span></span>|
+|[<span data-ttu-id="5c05e-116">FormatString-element för TableColumnItem för TableControl (format)</span><span class="sxs-lookup"><span data-stu-id="5c05e-116">FormatString Element for TableColumnItem for TableControl (Format)</span></span>](./formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md)|<span data-ttu-id="5c05e-117">Anger ett format mönster som används för att formatera data i kolumnen i raden.</span><span class="sxs-lookup"><span data-stu-id="5c05e-117">Specifies a format pattern that is used to format the data in the column of the row.</span></span>|
+|[<span data-ttu-id="5c05e-118">PropertyName-element för TableColumnItem för TableControl (format)</span><span class="sxs-lookup"><span data-stu-id="5c05e-118">PropertyName Element for TableColumnItem for TableControl (Format)</span></span>](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)|<span data-ttu-id="5c05e-119">Valfritt element.</span><span class="sxs-lookup"><span data-stu-id="5c05e-119">Optional element.</span></span><br /><br /> <span data-ttu-id="5c05e-120">Anger namnet på den egenskap vars värde visas.</span><span class="sxs-lookup"><span data-stu-id="5c05e-120">Specifies the name of the property whose value is displayed.</span></span>|
+|[<span data-ttu-id="5c05e-121">Script block-element för TableColumnItem för TableControl (format)</span><span class="sxs-lookup"><span data-stu-id="5c05e-121">ScriptBlock Element for TableColumnItem for TableControl (Format)</span></span>](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)|<span data-ttu-id="5c05e-122">Valfritt element.</span><span class="sxs-lookup"><span data-stu-id="5c05e-122">Optional element.</span></span><br /><br /> <span data-ttu-id="5c05e-123">Anger det skript vars värde visas i kolumnen i en rad.</span><span class="sxs-lookup"><span data-stu-id="5c05e-123">Specifies the script whose value is displayed in the column of a row.</span></span>|
 
-### <a name="parent-elements"></a><span data-ttu-id="009a4-124">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="009a4-124">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="5c05e-124">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="5c05e-124">Parent Elements</span></span>
 
-|<span data-ttu-id="009a4-125">Element</span><span class="sxs-lookup"><span data-stu-id="009a4-125">Element</span></span>|<span data-ttu-id="009a4-126">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="009a4-126">Description</span></span>|
+|<span data-ttu-id="5c05e-125">Element</span><span class="sxs-lookup"><span data-stu-id="5c05e-125">Element</span></span>|<span data-ttu-id="5c05e-126">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="5c05e-126">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="009a4-127">TableColumnItems Element för TableControlEntry för TableControl (Format)</span><span class="sxs-lookup"><span data-stu-id="009a4-127">TableColumnItems Element for TableControlEntry for TableControl (Format)</span></span>](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|<span data-ttu-id="009a4-128">Definierar egenskaper eller skript som vars värden visas i raden.</span><span class="sxs-lookup"><span data-stu-id="009a4-128">Defines the properties or scripts whose values are displayed in the row.</span></span>|
+|[<span data-ttu-id="5c05e-127">TableColumnItems-element för TableControlEntry för TableControl (format)</span><span class="sxs-lookup"><span data-stu-id="5c05e-127">TableColumnItems Element for TableControlEntry for TableControl (Format)</span></span>](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|<span data-ttu-id="5c05e-128">Definierar de egenskaper eller skript vars värden visas på raden.</span><span class="sxs-lookup"><span data-stu-id="5c05e-128">Defines the properties or scripts whose values are displayed in the row.</span></span>|
 
-## <a name="remarks"></a><span data-ttu-id="009a4-129">Anmärkningar</span><span class="sxs-lookup"><span data-stu-id="009a4-129">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="5c05e-129">Anmärkningar</span><span class="sxs-lookup"><span data-stu-id="5c05e-129">Remarks</span></span>
 
-<span data-ttu-id="009a4-130">Du kan ange en egenskap för ett objekt eller ett skript i varje kolumn i raden.</span><span class="sxs-lookup"><span data-stu-id="009a4-130">You can specify a property of an object or a script in each column of the row.</span></span> <span data-ttu-id="009a4-131">Om inga underordnade element anges objektet är en platshållare och inga data visas.</span><span class="sxs-lookup"><span data-stu-id="009a4-131">If no child elements are specified, the item is a placeholder, and no data is displayed.</span></span>
+<span data-ttu-id="5c05e-130">Du kan ange en egenskap för ett objekt eller ett skript i varje kolumn i raden.</span><span class="sxs-lookup"><span data-stu-id="5c05e-130">You can specify a property of an object or a script in each column of the row.</span></span> <span data-ttu-id="5c05e-131">Om inga underordnade element anges, är objektet en plats hållare och inga data visas.</span><span class="sxs-lookup"><span data-stu-id="5c05e-131">If no child elements are specified, the item is a placeholder, and no data is displayed.</span></span>
 
-<span data-ttu-id="009a4-132">Läs mer om komponenterna i en tabellvy, [skapar en tabellvy](./creating-a-table-view.md).</span><span class="sxs-lookup"><span data-stu-id="009a4-132">For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).</span></span>
+<span data-ttu-id="5c05e-132">Mer information om komponenterna i en tabellvy finns i [skapa en tabellvy](./creating-a-table-view.md).</span><span class="sxs-lookup"><span data-stu-id="5c05e-132">For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="009a4-133">Exempel</span><span class="sxs-lookup"><span data-stu-id="009a4-133">Example</span></span>
+## <a name="example"></a><span data-ttu-id="5c05e-133">Exempel</span><span class="sxs-lookup"><span data-stu-id="5c05e-133">Example</span></span>
 
-<span data-ttu-id="009a4-134">Det här exemplet visar en `TableColumnItem` element som visar värdet för den `Status` egenskapen för den [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objekt.</span><span class="sxs-lookup"><span data-stu-id="009a4-134">This example shows a `TableColumnItem` element that displays the value of the `Status` property of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object.</span></span>
+<span data-ttu-id="5c05e-134">Det här exemplet visar `TableColumnItem` ett-element som visar värdet `Status` på egenskapen för [system. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) -objektet.</span><span class="sxs-lookup"><span data-stu-id="5c05e-134">This example shows a `TableColumnItem` element that displays the value of the `Status` property of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object.</span></span>
 
 ```xml
 <TableColumnItem>
@@ -72,18 +73,18 @@ ms.locfileid: "62063946"
 
 ```
 
-## <a name="see-also"></a><span data-ttu-id="009a4-135">Se även</span><span class="sxs-lookup"><span data-stu-id="009a4-135">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5c05e-135">Se även</span><span class="sxs-lookup"><span data-stu-id="5c05e-135">See Also</span></span>
 
-[<span data-ttu-id="009a4-136">Skapa en tabellvy</span><span class="sxs-lookup"><span data-stu-id="009a4-136">Creating a Table View</span></span>](./creating-a-table-view.md)
+[<span data-ttu-id="5c05e-136">Skapa en tabellvy</span><span class="sxs-lookup"><span data-stu-id="5c05e-136">Creating a Table View</span></span>](./creating-a-table-view.md)
 
-[<span data-ttu-id="009a4-137">Justering Element för TableColumnItem för TableControl (Format)</span><span class="sxs-lookup"><span data-stu-id="009a4-137">Alignment Element for TableColumnItem for TableControl (Format)</span></span>](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)
+[<span data-ttu-id="5c05e-137">Justerings element för TableColumnItem för TableControl (format)</span><span class="sxs-lookup"><span data-stu-id="5c05e-137">Alignment Element for TableColumnItem for TableControl (Format)</span></span>](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)
 
-[<span data-ttu-id="009a4-138">TableColumnItems Element (Format)</span><span class="sxs-lookup"><span data-stu-id="009a4-138">TableColumnItems Element (Format)</span></span>](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)
+[<span data-ttu-id="5c05e-138">TableColumnItems-element (format)</span><span class="sxs-lookup"><span data-stu-id="5c05e-138">TableColumnItems Element (Format)</span></span>](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)
 
-[<span data-ttu-id="009a4-139">FormatString-Element för TableColumnItem för TableControl (Format)</span><span class="sxs-lookup"><span data-stu-id="009a4-139">FormatString Element for TableColumnItem for TableControl (Format)</span></span>](./formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md)
+[<span data-ttu-id="5c05e-139">FormatString-element för TableColumnItem för TableControl (format)</span><span class="sxs-lookup"><span data-stu-id="5c05e-139">FormatString Element for TableColumnItem for TableControl (Format)</span></span>](./formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md)
 
-[<span data-ttu-id="009a4-140">PropertyName-Element för TableColumnItem för TableControl (Format)</span><span class="sxs-lookup"><span data-stu-id="009a4-140">PropertyName Element for TableColumnItem for TableControl (Format)</span></span>](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)
+[<span data-ttu-id="5c05e-140">PropertyName-element för TableColumnItem för TableControl (format)</span><span class="sxs-lookup"><span data-stu-id="5c05e-140">PropertyName Element for TableColumnItem for TableControl (Format)</span></span>](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)
 
-[<span data-ttu-id="009a4-141">ScriptBlock Element för TableColumnItem för TableControl (Format)</span><span class="sxs-lookup"><span data-stu-id="009a4-141">ScriptBlock Element for TableColumnItem for TableControl (Format)</span></span>](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)
+[<span data-ttu-id="5c05e-141">Script block-element för TableColumnItem för TableControl (format)</span><span class="sxs-lookup"><span data-stu-id="5c05e-141">ScriptBlock Element for TableColumnItem for TableControl (Format)</span></span>](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)
 
-[<span data-ttu-id="009a4-142">Skriva ett PowerShell formatering fil</span><span class="sxs-lookup"><span data-stu-id="009a4-142">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="5c05e-142">Skriva en fil med PowerShell-formatering</span><span class="sxs-lookup"><span data-stu-id="5c05e-142">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)

@@ -1,5 +1,5 @@
 ---
-title: Skapa fjärransluten körningsutrymmen | Microsoft Docs
+title: Skapar fjärran körnings utrymmen | Microsoft Docs
 ms.custom: ''
 ms.date: 09/12/2016
 ms.reviewer: ''
@@ -8,30 +8,30 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 057a666f-731b-423d-9d80-7be6b1836244
 caps.latest.revision: 5
-ms.openlocfilehash: f6cc69df8afe64cea867f5d7f9a7d45753a54d6f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c97b0dfc12d96f99c53383d3578579f1988efd52
+ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082982"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143541"
 ---
-# <a name="creating-remote-runspaces"></a><span data-ttu-id="38031-102">Skapa fjärranslutna körningsutrymmen</span><span class="sxs-lookup"><span data-stu-id="38031-102">Creating remote runspaces</span></span>
+# <a name="creating-remote-runspaces"></a><span data-ttu-id="791e4-102">Skapa fjärranslutna körningsutrymmen</span><span class="sxs-lookup"><span data-stu-id="791e4-102">Creating remote runspaces</span></span>
 
-<span data-ttu-id="38031-103">Windows PowerShell-kommandon som tar en `ComputerName` parametern kan köras på alla datorer som kör Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="38031-103">Windows PowerShell commands that take a `ComputerName` parameter can be run on any computer that runs Windows PowerShell.</span></span> <span data-ttu-id="38031-104">Att köra kommandon som inte hämtas en `ComputerName` parameter, du kan använda WS-Management för att konfigurera ett körningsutrymme som ansluter till en angiven dator och kör kommandon på datorn.</span><span class="sxs-lookup"><span data-stu-id="38031-104">To run commands that do not take a `ComputerName` parameter, you can use WS-Management to configure a runspace that connects to a specified computer, and run commands on that computer.</span></span>
+<span data-ttu-id="791e4-103">PowerShell-kommandon som tar en **computername** -parameter kan köras på alla datorer som kör PowerShell.</span><span class="sxs-lookup"><span data-stu-id="791e4-103">PowerShell commands that take a **ComputerName** parameter can be run on any computer that runs PowerShell.</span></span> <span data-ttu-id="791e4-104">Om du vill köra kommandon som inte tar en **computername** -parameter kan du använda WS-Management för att konfigurera en körnings utrymme som ansluter till en angiven dator och kör kommandon på den datorn.</span><span class="sxs-lookup"><span data-stu-id="791e4-104">To run commands that don't take a **ComputerName** parameter, you can use WS-Management to configure a runspace that connects to a specified computer, and run commands on that computer.</span></span>
 
-## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a><span data-ttu-id="38031-105">Med en WSManConnection för att skapa ett fjärrkörningsutrymme</span><span class="sxs-lookup"><span data-stu-id="38031-105">Using a WSManConnection to create a remote runspace</span></span>
+## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a><span data-ttu-id="791e4-105">Använda en WSManConnection för att skapa en fjärran sluten körnings utrymme</span><span class="sxs-lookup"><span data-stu-id="791e4-105">Using a WSManConnection to create a remote runspace</span></span>
 
- <span data-ttu-id="38031-106">Om du vill skapa ett körningsutrymme som ansluter till en fjärrdator som du skapar en [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objekt.</span><span class="sxs-lookup"><span data-stu-id="38031-106">To create a runspace that connects to a remote computer, you create a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span> <span data-ttu-id="38031-107">Du anger mål-slutpunkt för anslutningen genom att ange den [System.Management.Automation.Runspaces.Wsmanconnectioninfo.Connectionuri\*](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) egenskapen för objektet.</span><span class="sxs-lookup"><span data-stu-id="38031-107">You specify the target endpoint for the connection by setting the [System.Management.Automation.Runspaces.Wsmanconnectioninfo.Connectionuri\*](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) property of the object.</span></span> <span data-ttu-id="38031-108">Du sedan skapa ett körningsutrymme genom att anropa den [System.Management.Automation.Runspaces.Runspacefactory.Createrunspace\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) metoden, ange den [System.Management.Automation.Runspaces.Wsmanconnectioninfo ](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objekt som den `connectionInfo` parametern.</span><span class="sxs-lookup"><span data-stu-id="38031-108">You then create a runspace by calling the [System.Management.Automation.Runspaces.Runspacefactory.Createrunspace\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) method, specifying the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object as the `connectionInfo` parameter.</span></span>
+ <span data-ttu-id="791e4-106">Om du vill skapa en körnings utrymme som ansluter till en fjärrdator skapar du ett [system. Management. Automation. körnings utrymmen. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -objekt.</span><span class="sxs-lookup"><span data-stu-id="791e4-106">To create a runspace that connects to a remote computer, you create a [System.Management.Automation.Runspaces.WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span> <span data-ttu-id="791e4-107">Du anger mål slut punkten för anslutningen genom att ange egenskapen [system. Management. Automation. körnings utrymmen. WSManConnectionInfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) för objektet.</span><span class="sxs-lookup"><span data-stu-id="791e4-107">You specify the target endpoint for the connection by setting the [System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) property of the object.</span></span> <span data-ttu-id="791e4-108">Sedan skapar du en körnings utrymme genom att anropa metoden [system. Management. Automation. körnings utrymmen. RunspaceFactory. CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) , och anger `connectionInfo` objektet [system. Management. Automation. körnings utrymmen. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) som ProfileServiceApplicationProxy.</span><span class="sxs-lookup"><span data-stu-id="791e4-108">You then create a runspace by calling the [System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) method, specifying the [System.Management.Automation.Runspaces.WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object as the `connectionInfo` parameter.</span></span>
 
- <span data-ttu-id="38031-109">I följande exempel visas hur du skapar ett körningsutrymme som ansluter till en fjärrdator.</span><span class="sxs-lookup"><span data-stu-id="38031-109">The following example shows how to create a runspace that connects to a remote computer.</span></span> <span data-ttu-id="38031-110">I det här exemplet `RemoteComputerUri` används som en platshållare för faktiska URI för en fjärrdator.</span><span class="sxs-lookup"><span data-stu-id="38031-110">In the example, `RemoteComputerUri` is used as a placeholder for the actual URI of a remote computer.</span></span>
+ <span data-ttu-id="791e4-109">I följande exempel visas hur du skapar en körnings utrymme som ansluter till en fjärrdator.</span><span class="sxs-lookup"><span data-stu-id="791e4-109">The following example shows how to create a runspace that connects to a remote computer.</span></span> <span data-ttu-id="791e4-110">I exemplet `RemoteComputerUri` används som plats hållare för den faktiska URI: n för en fjärrdator.</span><span class="sxs-lookup"><span data-stu-id="791e4-110">In the example, `RemoteComputerUri` is used as a placeholder for the actual URI of a remote computer.</span></span>
 
 ```csharp
 namespace Samples
 {
   using System;
   using System.Collections.ObjectModel;
-  using System.Management.Automation;            // Windows PowerShell namespace.
-  using System.Management.Automation.Runspaces;  // Windows PowerShell namespace.
+  using System.Management.Automation;            // PowerShell namespace.
+  using System.Management.Automation.Runspaces;  // PowerShell namespace.
 
   /// <summary>
   /// This class contains the Main entry point for this host application.
@@ -48,10 +48,11 @@ namespace Samples
       // Create a WSManConnectionInfo object using the default constructor
       // to connect to the "localHost". The WSManConnectionInfo object can
       // also be used to specify connections to remote computers.
-      WSManConnectionInfo connectionInfo = new WSManConnectionInfo();
+      Uri RemoteComputerUri = new uri("http://Server01:5985/WSMAN");
+      WSManConnectionInfo connectionInfo = new WSManConnectionInfo(RemoteComputerUri);
 
       // Set the OperationTimeout property and OpenTimeout properties.
-      // The OperationTimeout property is used to tell Windows PowerShell
+      // The OperationTimeout property is used to tell PowerShell
       // how long to wait (in milliseconds) before timing out for an
       // operation. The OpenTimeout property is used to tell Windows
       // PowerShell how long to wait (in milliseconds) before timing out
