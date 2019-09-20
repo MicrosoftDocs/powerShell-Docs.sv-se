@@ -194,6 +194,55 @@
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
 - name: Supportlängd för PowerShell Core
   href: powershell-support-lifecycle.md
+- name: Windows Management Framework (WMF)
+  items:
+    - name: Översikt
+      href: wmf/overview.md
+    - name: Installation
+      items:
+        - name: Installera och konfigurera WMF 5.1
+          href: wmf/setup/install-configure.md
+        - name: Avinstallera WMF 5.0
+          href: wmf/setup/uninstall.md
+    - name: Nyheter
+      expanded: true
+      items:
+        - name: Versionsinformation för WMF 5.x
+          href: wmf/whats-new/release-notes.md
+        - name: Felkorrigeringar i WMF 5.1
+          href: wmf/whats-new/bugfixes.md
+        - name: Nya och uppdaterade cmdletar
+          href: wmf/whats-new/new-updated-cmdlets.md
+        - name: Skapa anpassade typer med hjälp av PowerShell-klasser
+          href: wmf/whats-new/class-overview.md
+        - name: Konsolförbättringar i WMF 5.1
+          href: wmf/whats-new/console-improvements.md
+        - name: Förbättringar i felsökning av PowerShell-skript
+          href: wmf/whats-new/debug-overview.md
+        - name: Skriptspårning och -loggning
+          href: wmf/whats-new/script-logging.md
+        - name: DSC-förbättringar i WMF 5.1
+          href: wmf/whats-new/DSC-improvements.md
+        - name: Förbättringar i PowerShell-motorn i WMF 5.1
+          href: wmf/whats-new/engine-improvements.md
+        - name: Informationsström
+          href: wmf/whats-new/informationstream-overview.md
+        - name: Förbättringar i JEA (Just Enough Administration)
+          href: wmf/whats-new/jea-improvements.md
+        - name: Förbättringar i pakethanteringen i WMF 5.1
+          href: wmf/whats-new/package-management-improvements.md
+        - name: Loggning av programvaruinventering (SIL)
+          href: wmf/whats-new/sil-overview.md
+        - name: Status för produktkompatibilitet
+          href: wmf/whats-new/compatibility.md
+    - name: Kända problem
+      items:
+        - name: Kända problem i WMF 5.0
+          href: wmf/known-issues/known-issues-50.md
+        - name: Kända problem i WMF 5.1
+          href: wmf/known-issues/known-issues-51.md
+        - name: Kända problem och begränsningar i DSC
+          href: wmf/known-issues/known-issues-dsc.md
 - name: Exempelskript
   items:
     - name: Exempelskript för administration
