@@ -1,14 +1,13 @@
 ---
-ms.openlocfilehash: 962d61aac474a04387151de150af75b3f8d62e40
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 3f78dfdac647a95e85501863e66d5b9491dd35a4
+ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62055419"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143529"
 ---
-# <a name="readme"></a>VIKTIGT
+# <a name="readme"></a>FILEN
 
-Den här mappen innehåller dokumentation för Windows Management Framework (WMF).
-Detta är konfigurerat som en separat dokumentuppsättning i PowerShell-dokumentens lagringsplats.
+WMF-innehållet har flyttats till [referens/dokument – konceptuell/WMF](https://github.com/MicrosoftDocs/PowerShell-Docs/tree/staging/reference/docs-conceptual/wmf).
 
-Information om bidrar till den här dokumentuppsättning finns i PowerShell-Docs [Deltagarguiden](https://github.com/PowerShell/PowerShell-Docs/blob/staging/CONTRIBUTING.md).
+Den här mappstrukturen krävs för omdirigering. Det kan tas bort när SEO gör att omdirigeringen är onödig.
