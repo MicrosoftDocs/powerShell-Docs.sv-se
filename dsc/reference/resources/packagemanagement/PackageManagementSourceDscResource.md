@@ -1,53 +1,64 @@
 ---
-ms.date: 06/20/2018
-keywords: DSC, powershell, konfiguration, installation
-title: DSC PackageManagementSource Resource
-ms.openlocfilehash: e51b5318288bef458567dd4b58d17caaea3ed69b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
+title: DSC PackageManagementSource-resurs
+ms.openlocfilehash: 20b7851e44751d4bd0add718d2f7294d5215ab70
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077593"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324573"
 ---
-# <a name="dsc-packagemanagementsource-resource"></a><span data-ttu-id="6cc8e-103">DSC PackageManagementSource Resource</span><span class="sxs-lookup"><span data-stu-id="6cc8e-103">DSC PackageManagementSource Resource</span></span>
+# <a name="dsc-packagemanagementsource-resource"></a><span data-ttu-id="6f15b-103">DSC PackageManagementSource-resurs</span><span class="sxs-lookup"><span data-stu-id="6f15b-103">DSC PackageManagementSource Resource</span></span>
 
-> <span data-ttu-id="6cc8e-104">Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0, Windows PowerShell 5.1</span><span class="sxs-lookup"><span data-stu-id="6cc8e-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0, Windows PowerShell 5.1</span></span>
+> <span data-ttu-id="6f15b-104">Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x</span><span class="sxs-lookup"><span data-stu-id="6f15b-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.x</span></span>
 
-<span data-ttu-id="6cc8e-105">Den **PackageManagementSource** resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att registrera eller avregistrera pakethantering källor på målnoden.</span><span class="sxs-lookup"><span data-stu-id="6cc8e-105">The **PackageManagementSource** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to register or unregister Package Management sources on a target node.</span></span> <span data-ttu-id="6cc8e-106">**Paketet Management datakällor som registrerats på så sätt registreras under systemkontexten kan användas av System-kontot eller av DSC-motorn.**</span><span class="sxs-lookup"><span data-stu-id="6cc8e-106">**Package Management sources registered in this way are registered under the System context, usable by the System account or by the DSC engine.**</span></span> <span data-ttu-id="6cc8e-107">Den här resursen kräver den **PackageManagement** modulen, som är tillgängliga från http://PowerShellGallery.com.</span><span class="sxs-lookup"><span data-stu-id="6cc8e-107">This resource requires the **PackageManagement** module, available from http://PowerShellGallery.com.</span></span>
+<span data-ttu-id="6f15b-105">**PackageManagementSource** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att registrera eller avregistrera paket hanterings källor på en målnod.</span><span class="sxs-lookup"><span data-stu-id="6f15b-105">The **PackageManagementSource** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to register or unregister Package Management sources on a target node.</span></span>
+<span data-ttu-id="6f15b-106">**Paket hanterings källor som registreras på det här sättet registreras under system kontexten, vilket kan användas av system kontot eller av DSC-motorn.**</span><span class="sxs-lookup"><span data-stu-id="6f15b-106">**Package Management sources registered in this way are registered under the System context, usable by the System account or by the DSC engine.**</span></span> <span data-ttu-id="6f15b-107">Den här resursen kräver modulen **PackageManagement** , som är tillgänglig från [PowerShell-galleriet](https://PowerShellGallery.com).</span><span class="sxs-lookup"><span data-stu-id="6f15b-107">This resource requires the **PackageManagement** module, available from the [PowerShell Gallery](https://PowerShellGallery.com).</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="6cc8e-108">Den **PackageManagement** modul bör vara minst version 1.1.7.0 för egenskapen följande ska vara giltig.</span><span class="sxs-lookup"><span data-stu-id="6cc8e-108">The **PackageManagement** module should be at least version 1.1.7.0 for the following property information to be correct.</span></span>
+> <span data-ttu-id="6f15b-108">**PackageManagement** -modulen måste vara minst version 1.1.7.0 för att följande egenskaps information ska vara korrekt.</span><span class="sxs-lookup"><span data-stu-id="6f15b-108">The **PackageManagement** module should be at least version 1.1.7.0 for the following property information to be correct.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="6cc8e-109">Syntax</span><span class="sxs-lookup"><span data-stu-id="6cc8e-109">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="6f15b-109">Syntax</span><span class="sxs-lookup"><span data-stu-id="6f15b-109">Syntax</span></span>
 
-```
+```Syntax
 PackageManagementSource [String] #ResourceName
 {
     Name = [string]
     ProviderName = [string]
     SourceLocation = [string]
-    [DependsOn = [string[]]]
-    [Ensure = [string]{ Absent | Present }]
-    [InstallationPolicy = [string]{ Trusted | Untrusted }]
-    [PsDscRunAsCredential = [PSCredential]]
-    [SourceCredential = [PSCredential]]
+    [ InstallationPolicy = [string]{ Trusted | Untrusted } ]
+    [ SourceCredential = [PSCredential] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string]{ Absent | Present } ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="6cc8e-110">Egenskaper</span><span class="sxs-lookup"><span data-stu-id="6cc8e-110">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="6f15b-110">properties</span><span class="sxs-lookup"><span data-stu-id="6f15b-110">Properties</span></span>
 
-|  <span data-ttu-id="6cc8e-111">Egenskap</span><span class="sxs-lookup"><span data-stu-id="6cc8e-111">Property</span></span>  |  <span data-ttu-id="6cc8e-112">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="6cc8e-112">Description</span></span>   |
+|<span data-ttu-id="6f15b-111">Egenskap</span><span class="sxs-lookup"><span data-stu-id="6f15b-111">Property</span></span> |<span data-ttu-id="6f15b-112">Description</span><span class="sxs-lookup"><span data-stu-id="6f15b-112">Description</span></span> |
 |---|---|
-| <span data-ttu-id="6cc8e-113">Namn</span><span class="sxs-lookup"><span data-stu-id="6cc8e-113">Name</span></span>| <span data-ttu-id="6cc8e-114">Anger namnet på paketkällan för att registreras eller avregistreras på datorn.</span><span class="sxs-lookup"><span data-stu-id="6cc8e-114">Specifies the name of the package source to be registered or unregistered on your system.</span></span>|
-| <span data-ttu-id="6cc8e-115">ProviderName</span><span class="sxs-lookup"><span data-stu-id="6cc8e-115">ProviderName</span></span>| <span data-ttu-id="6cc8e-116">Anger namnet på providern OneGet genom vilka du kan interop med paketkällan.</span><span class="sxs-lookup"><span data-stu-id="6cc8e-116">Specifies the name of the OneGet provider through which you can interop with the package source.</span></span>|
-| <span data-ttu-id="6cc8e-117">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="6cc8e-117">SourceLocation</span></span>| <span data-ttu-id="6cc8e-118">Anger URI för paketkällan.</span><span class="sxs-lookup"><span data-stu-id="6cc8e-118">Specifies the URI of the package source.</span></span>|
-| <span data-ttu-id="6cc8e-119">Se till att</span><span class="sxs-lookup"><span data-stu-id="6cc8e-119">Ensure</span></span>| <span data-ttu-id="6cc8e-120">Anger om paketkällan ska registreras eller avregistreras.</span><span class="sxs-lookup"><span data-stu-id="6cc8e-120">Determines whether the package source is to be registered or unregistered.</span></span>|
-| <span data-ttu-id="6cc8e-121">InstallationPolicy</span><span class="sxs-lookup"><span data-stu-id="6cc8e-121">InstallationPolicy</span></span>| <span data-ttu-id="6cc8e-122">Används av providrar, till exempel inbyggda Nuget-providern.</span><span class="sxs-lookup"><span data-stu-id="6cc8e-122">Used by providers such as the built-in Nuget Provider.</span></span> <span data-ttu-id="6cc8e-123">Anger om du litar på den paketkällan.</span><span class="sxs-lookup"><span data-stu-id="6cc8e-123">Determines whether you trust the package's source.</span></span> <span data-ttu-id="6cc8e-124">En av: "Untrusted", "Trusted".</span><span class="sxs-lookup"><span data-stu-id="6cc8e-124">One of: "Untrusted", "Trusted".</span></span>|
-| <span data-ttu-id="6cc8e-125">SourceCredential</span><span class="sxs-lookup"><span data-stu-id="6cc8e-125">SourceCredential</span></span>| <span data-ttu-id="6cc8e-126">Ger åtkomst till paketet på en fjärransluten källa.</span><span class="sxs-lookup"><span data-stu-id="6cc8e-126">Provides access to the package on a remote source.</span></span>|
+|<span data-ttu-id="6f15b-113">Name</span><span class="sxs-lookup"><span data-stu-id="6f15b-113">Name</span></span> |<span data-ttu-id="6f15b-114">Anger namnet på den paket källa som ska registreras eller avregistreras i systemet.</span><span class="sxs-lookup"><span data-stu-id="6f15b-114">Specifies the name of the package source to be registered or unregistered on your system.</span></span> |
+|<span data-ttu-id="6f15b-115">ProviderName</span><span class="sxs-lookup"><span data-stu-id="6f15b-115">ProviderName</span></span> |<span data-ttu-id="6f15b-116">Anger namnet på den OneGet-provider som du kan interopa med paket källan.</span><span class="sxs-lookup"><span data-stu-id="6f15b-116">Specifies the name of the OneGet provider through which you can interop with the package source.</span></span> |
+|<span data-ttu-id="6f15b-117">SourceLocation</span><span class="sxs-lookup"><span data-stu-id="6f15b-117">SourceLocation</span></span> |<span data-ttu-id="6f15b-118">Anger URI för paket källan.</span><span class="sxs-lookup"><span data-stu-id="6f15b-118">Specifies the URI of the package source.</span></span> |
+|<span data-ttu-id="6f15b-119">InstallationPolicy</span><span class="sxs-lookup"><span data-stu-id="6f15b-119">InstallationPolicy</span></span> |<span data-ttu-id="6f15b-120">Används av leverantörer, till exempel den inbyggda NuGet-providern.</span><span class="sxs-lookup"><span data-stu-id="6f15b-120">Used by providers such as the built-in Nuget Provider.</span></span> <span data-ttu-id="6f15b-121">Bestämmer om du litar på paketets källa.</span><span class="sxs-lookup"><span data-stu-id="6f15b-121">Determines whether you trust the package's source.</span></span> <span data-ttu-id="6f15b-122">En av: **Ej betrodd** eller **betrodd**.</span><span class="sxs-lookup"><span data-stu-id="6f15b-122">One of: **Untrusted** or **Trusted**.</span></span> |
+|<span data-ttu-id="6f15b-123">SourceCredential</span><span class="sxs-lookup"><span data-stu-id="6f15b-123">SourceCredential</span></span> |<span data-ttu-id="6f15b-124">Ger åtkomst till paketet på en fjärran sluten källa.</span><span class="sxs-lookup"><span data-stu-id="6f15b-124">Provides access to the package on a remote source.</span></span> |
 
-## <a name="example"></a><span data-ttu-id="6cc8e-127">Exempel</span><span class="sxs-lookup"><span data-stu-id="6cc8e-127">Example</span></span>
+## <a name="common-properties"></a><span data-ttu-id="6f15b-125">Gemensamma egenskaper</span><span class="sxs-lookup"><span data-stu-id="6f15b-125">Common properties</span></span>
 
-<span data-ttu-id="6cc8e-128">Det här exemplet registrerar den http://nuget.org paketet datakällan med den **PackageManagementSource** DSC-resurs.</span><span class="sxs-lookup"><span data-stu-id="6cc8e-128">This example registers the http://nuget.org package source using the **PackageManagementSource** DSC resource.</span></span>
+|<span data-ttu-id="6f15b-126">Egenskap</span><span class="sxs-lookup"><span data-stu-id="6f15b-126">Property</span></span> |<span data-ttu-id="6f15b-127">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="6f15b-127">Description</span></span> |
+|---|---|
+|<span data-ttu-id="6f15b-128">DependsOn</span><span class="sxs-lookup"><span data-stu-id="6f15b-128">DependsOn</span></span> |<span data-ttu-id="6f15b-129">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS.</span><span class="sxs-lookup"><span data-stu-id="6f15b-129">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="6f15b-130">Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen.</span><span class="sxs-lookup"><span data-stu-id="6f15b-130">For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span> |
+|<span data-ttu-id="6f15b-131">Kontrol</span><span class="sxs-lookup"><span data-stu-id="6f15b-131">Ensure</span></span> |<span data-ttu-id="6f15b-132">Anger om paket källan ska registreras eller avregistreras.</span><span class="sxs-lookup"><span data-stu-id="6f15b-132">Determines whether the package source is to be registered or unregistered.</span></span> <span data-ttu-id="6f15b-133">Standardvärdet finns **.**</span><span class="sxs-lookup"><span data-stu-id="6f15b-133">The default value is **Present**.</span></span> |
+|<span data-ttu-id="6f15b-134">PsDscRunAsCredential</span><span class="sxs-lookup"><span data-stu-id="6f15b-134">PsDscRunAsCredential</span></span> |<span data-ttu-id="6f15b-135">Anger autentiseringsuppgifter för att köra hela resursen som.</span><span class="sxs-lookup"><span data-stu-id="6f15b-135">Sets the credential for running the entire resource as.</span></span> |
+
+> [!NOTE]
+> <span data-ttu-id="6f15b-136">Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter.</span><span class="sxs-lookup"><span data-stu-id="6f15b-136">The **PsDscRunAsCredential** common property was added in WMF 5.0 to allow running any DSC resource in the context of other credentials.</span></span> <span data-ttu-id="6f15b-137">Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).</span><span class="sxs-lookup"><span data-stu-id="6f15b-137">For more information, see [Use Credentials with DSC Resources](../../../configurations/runasuser.md).</span></span>
+
+## <a name="example"></a><span data-ttu-id="6f15b-138">Exempel</span><span class="sxs-lookup"><span data-stu-id="6f15b-138">Example</span></span>
+
+<span data-ttu-id="6f15b-139">I `https://nuget.org` det här exemplet registreras paket källan med hjälp av **PackageManagementSource** DSC-resursen.</span><span class="sxs-lookup"><span data-stu-id="6f15b-139">This example registers the `https://nuget.org` package source using the **PackageManagementSource** DSC resource.</span></span>
 
 ```powershell
 Configuration PackageManagementSourceTest
@@ -57,7 +68,7 @@ Configuration PackageManagementSourceTest
         Ensure      = "Present"
         Name        = "MyNuget"
         ProviderName= "Nuget"
-        SourceLocation   = "http://nuget.org/api/v2/"
+        SourceLocation   = "https://api.nuget.org/api/v3/"
         InstallationPolicy ="Trusted"
     }
 }

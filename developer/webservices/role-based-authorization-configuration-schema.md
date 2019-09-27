@@ -1,5 +1,5 @@
 ---
-title: Rollbaserad auktorisering konfigurationsschema | Microsoft Docs
+title: Konfigurations schema för rollbaserad auktorisering | Microsoft Docs
 ms.custom: ''
 ms.date: 09/12/2016
 ms.reviewer: ''
@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4ba6d1d2-7055-4fef-b752-a5ae8b4eeb65
 caps.latest.revision: 7
-ms.openlocfilehash: 50a02e9a7522fc04b407329f513670215ad051cf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0a4d4b0cd2c9672ea9b11698258916ae1d0520c0
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080551"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323043"
 ---
-# <a name="role-based-authorization-configuration-schema"></a><span data-ttu-id="7d42c-102">Konfigurationsschema för rollbaserad auktorisering</span><span class="sxs-lookup"><span data-stu-id="7d42c-102">Role-Based Authorization Configuration Schema</span></span>
+# <a name="role-based-authorization-configuration-schema"></a><span data-ttu-id="4f617-102">Konfigurationsschema för rollbaserad auktorisering</span><span class="sxs-lookup"><span data-stu-id="4f617-102">Role-Based Authorization Configuration Schema</span></span>
 
-<span data-ttu-id="7d42c-103">Den [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) exemplet använder XML-filer för att konfigurera principen för auktorisering.</span><span class="sxs-lookup"><span data-stu-id="7d42c-103">The [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) sample uses XML files to configure the authorization policy.</span></span> <span data-ttu-id="7d42c-104">Följande XSD definierar ett schema som används för de här filerna.</span><span class="sxs-lookup"><span data-stu-id="7d42c-104">The following XSD defines the schema used for these files.</span></span>
+<span data-ttu-id="4f617-103">I [PswsRoleBasedPlugins](https://go.microsoft.com/fwlink/?LinkId=243041) -exemplet används XML-filer för att konfigurera auktoriseringsprincipen.</span><span class="sxs-lookup"><span data-stu-id="4f617-103">The [PswsRoleBasedPlugins](https://go.microsoft.com/fwlink/?LinkId=243041) sample uses XML files to configure the authorization policy.</span></span> <span data-ttu-id="4f617-104">Följande XSD definierar det schema som används för de här filerna.</span><span class="sxs-lookup"><span data-stu-id="4f617-104">The following XSD defines the schema used for these files.</span></span>
 
 ```
 <?xml version="1.0" encoding="utf-8"?>

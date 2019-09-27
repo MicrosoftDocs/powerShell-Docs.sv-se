@@ -1,61 +1,66 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxPackage-resurs
-ms.openlocfilehash: 64bb89a95bd6cbaea4e74b8a9979de52428fef3f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4091cbbd5e34a84b9011870da4bda93281378347
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077882"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324753"
 ---
-# <a name="dsc-for-linux-nxpackage-resource"></a><span data-ttu-id="f6f0f-103">DSC för Linux nxPackage-resurs</span><span class="sxs-lookup"><span data-stu-id="f6f0f-103">DSC for Linux nxPackage Resource</span></span>
+# <a name="dsc-for-linux-nxpackage-resource"></a><span data-ttu-id="7a30b-103">DSC för Linux nxPackage-resurs</span><span class="sxs-lookup"><span data-stu-id="7a30b-103">DSC for Linux nxPackage Resource</span></span>
 
-<span data-ttu-id="f6f0f-104">Den **nxPackage** resursen i PowerShell Desired State Configuration (DSC) ger dig möjlighet att hantera paket på en Linux-nod.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-104">The **nxPackage** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage packages on a Linux node.</span></span>
+<span data-ttu-id="7a30b-104">**NxPackage** -resursen i PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera paket på en Linux-nod.</span><span class="sxs-lookup"><span data-stu-id="7a30b-104">The **nxPackage** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage packages on a Linux node.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="f6f0f-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="f6f0f-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="7a30b-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="7a30b-105">Syntax</span></span>
 
-```
+```Syntax
 nxPackage <string> #ResourceName
 {
     Name = <string>
-    [ Ensure = <string> { Absent | Present }  ]
     [ PackageManager = <string> { Yum | Apt | Zypper } ]
     [ PackageGroup = <bool>]
     [ Arguments = <string> ]
     [ ReturnCode = <uint32> ]
-    [ LogPath = <string> ]
+    [ FilePath = <string> ]
     [ DependsOn = <string[]> ]
-
+    [ Ensure = <string> { Absent | Present }  ]
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="f6f0f-106">Egenskaper</span><span class="sxs-lookup"><span data-stu-id="f6f0f-106">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="7a30b-106">properties</span><span class="sxs-lookup"><span data-stu-id="7a30b-106">Properties</span></span>
 
-|  <span data-ttu-id="f6f0f-107">Egenskap</span><span class="sxs-lookup"><span data-stu-id="f6f0f-107">Property</span></span> |  <span data-ttu-id="f6f0f-108">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="f6f0f-108">Description</span></span> |
+|<span data-ttu-id="7a30b-107">Egenskap</span><span class="sxs-lookup"><span data-stu-id="7a30b-107">Property</span></span> |<span data-ttu-id="7a30b-108">Description</span><span class="sxs-lookup"><span data-stu-id="7a30b-108">Description</span></span> |
 |---|---|
-| <span data-ttu-id="f6f0f-109">Namn</span><span class="sxs-lookup"><span data-stu-id="f6f0f-109">Name</span></span>| <span data-ttu-id="f6f0f-110">Namnet på paketet som du vill se till att ett visst tillstånd.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-110">The name of the package for which you want to ensure a specific state.</span></span>|
-| <span data-ttu-id="f6f0f-111">Se till att</span><span class="sxs-lookup"><span data-stu-id="f6f0f-111">Ensure</span></span>| <span data-ttu-id="f6f0f-112">Anger om du vill kontrollera om paketet.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-112">Determines whether to check if the package exists.</span></span> <span data-ttu-id="f6f0f-113">Ange egenskapen ”aktuella” för att se till att paketet finns.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-113">Set this property to "Present" to ensure the package exists.</span></span> <span data-ttu-id="f6f0f-114">Ange den till ”inte” för att se till att paketet inte finns.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-114">Set it to "Absent" to ensure the package does not exist.</span></span> <span data-ttu-id="f6f0f-115">Standardvärdet är ”tillgänglig”.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-115">The default value is "Present".</span></span>|
-| <span data-ttu-id="f6f0f-116">PackageManager</span><span class="sxs-lookup"><span data-stu-id="f6f0f-116">PackageManager</span></span>| <span data-ttu-id="f6f0f-117">Värden som stöds är ”yum”, ”apt” och ”zypper”.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-117">Supported values are "yum", "apt", and "zypper".</span></span> <span data-ttu-id="f6f0f-118">Anger package manager att använda när du installerar paket.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-118">Specifies the package manager to use when installing packages.</span></span> <span data-ttu-id="f6f0f-119">Om **FilePath** anges, används den angivna sökvägen för att installera paketet.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-119">If **FilePath** is specified, the provided path will be used to install the package.</span></span> <span data-ttu-id="f6f0f-120">I annat fall används en pakethanterare att installera paketet från en förkonfigurerad lagringsplats.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-120">Otherwise, a Package Manager will be used to install the package from a pre-configured repository.</span></span> <span data-ttu-id="f6f0f-121">Om varken **PackageManager** eller **FilePath** har angetts, standard-Pakethanteraren för systemet används.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-121">If neither **PackageManager** nor **FilePath** are provided, the default package manager for the system will be used.</span></span>|
-| <span data-ttu-id="f6f0f-122">FilePath</span><span class="sxs-lookup"><span data-stu-id="f6f0f-122">FilePath</span></span>| <span data-ttu-id="f6f0f-123">Sökvägen där paketet finns</span><span class="sxs-lookup"><span data-stu-id="f6f0f-123">The file path where the package resides</span></span>|
-| <span data-ttu-id="f6f0f-124">PackageGroup</span><span class="sxs-lookup"><span data-stu-id="f6f0f-124">PackageGroup</span></span>| <span data-ttu-id="f6f0f-125">Om **$true**, **namn** förväntas vara namnet på en paketeringsgrupp för användning med en **PackageManager**.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-125">If **$true**, the **Name** is expected to be the name of a package group for use with a **PackageManager**.</span></span> <span data-ttu-id="f6f0f-126">**PacakgeGroup** är inte giltig när du anger en **FilePath**.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-126">**PacakgeGroup** is not valid when providing a **FilePath**.</span></span>|
-| <span data-ttu-id="f6f0f-127">Argument</span><span class="sxs-lookup"><span data-stu-id="f6f0f-127">Arguments</span></span>| <span data-ttu-id="f6f0f-128">En sträng med argument som exakt så som kommer att skickas till paketet.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-128">A string of arguments that will be passed to the package exactly as provided.</span></span>|
-| <span data-ttu-id="f6f0f-129">Returkod</span><span class="sxs-lookup"><span data-stu-id="f6f0f-129">ReturnCode</span></span>| <span data-ttu-id="f6f0f-130">Den förväntade returkod.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-130">The expected return code.</span></span> <span data-ttu-id="f6f0f-131">Om den faktiska returkod matchar inte det förväntade värdet som anges här kan ett fel returneras i konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-131">If the actual return code does not match the expected value provided here, the configuration will return an error.</span></span>|
-| <span data-ttu-id="f6f0f-132">DependsOn</span><span class="sxs-lookup"><span data-stu-id="f6f0f-132">DependsOn</span></span> | <span data-ttu-id="f6f0f-133">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-133">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="f6f0f-134">Till exempel om den **ID** för resursen configuration-skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-134">For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
+|<span data-ttu-id="7a30b-109">Name</span><span class="sxs-lookup"><span data-stu-id="7a30b-109">Name</span></span> |<span data-ttu-id="7a30b-110">Namnet på det paket som du vill säkerställa ett speciellt tillstånd för.</span><span class="sxs-lookup"><span data-stu-id="7a30b-110">The name of the package for which you want to ensure a specific state.</span></span> |
+|<span data-ttu-id="7a30b-111">PackageManager</span><span class="sxs-lookup"><span data-stu-id="7a30b-111">PackageManager</span></span> |<span data-ttu-id="7a30b-112">De värden som stöds är **yum**, **apt**och **zypper**.</span><span class="sxs-lookup"><span data-stu-id="7a30b-112">Supported values are **yum**, **apt**, and **zypper**.</span></span> <span data-ttu-id="7a30b-113">Anger vilken paket hanterare som ska användas för att installera paket.</span><span class="sxs-lookup"><span data-stu-id="7a30b-113">Specifies the package manager to use when installing packages.</span></span> <span data-ttu-id="7a30b-114">Om **sökväg anges används** den angivna sökvägen för att installera paketet.</span><span class="sxs-lookup"><span data-stu-id="7a30b-114">If **FilePath** is specified, the provided path will be used to install the package.</span></span> <span data-ttu-id="7a30b-115">Annars kommer en paket hanterare att användas för att installera paketet från en förkonfigurerad lagrings plats.</span><span class="sxs-lookup"><span data-stu-id="7a30b-115">Otherwise, a Package Manager will be used to install the package from a pre-configured repository.</span></span> <span data-ttu-id="7a30b-116">Om varken **PackageManager** eller **sökväg** anges används standard paket hanteraren för systemet.</span><span class="sxs-lookup"><span data-stu-id="7a30b-116">If neither **PackageManager** nor **FilePath** are provided, the default package manager for the system will be used.</span></span> |
+|<span data-ttu-id="7a30b-117">PackageGroup</span><span class="sxs-lookup"><span data-stu-id="7a30b-117">PackageGroup</span></span> |<span data-ttu-id="7a30b-118">Om `$true` **namnet** förväntas vara namnet på en paket grupp som ska användas med en **PackageManager**.</span><span class="sxs-lookup"><span data-stu-id="7a30b-118">If `$true`, the **Name** is expected to be the name of a package group for use with a **PackageManager**.</span></span> <span data-ttu-id="7a30b-119">**PackageGroup** är inte giltig vid en **fil Sök väg**.</span><span class="sxs-lookup"><span data-stu-id="7a30b-119">**PackageGroup** is not valid when providing a **FilePath**.</span></span> |
+|<span data-ttu-id="7a30b-120">Argument</span><span class="sxs-lookup"><span data-stu-id="7a30b-120">Arguments</span></span> |<span data-ttu-id="7a30b-121">En sträng med argument som skickas till paketet exakt som det anges.</span><span class="sxs-lookup"><span data-stu-id="7a30b-121">A string of arguments that will be passed to the package exactly as provided.</span></span> |
+|<span data-ttu-id="7a30b-122">ReturnCode</span><span class="sxs-lookup"><span data-stu-id="7a30b-122">ReturnCode</span></span> |<span data-ttu-id="7a30b-123">Den förväntade retur koden.</span><span class="sxs-lookup"><span data-stu-id="7a30b-123">The expected return code.</span></span> <span data-ttu-id="7a30b-124">Om den faktiska retur koden inte matchar det förväntade värdet här, returnerar konfigurationen ett fel.</span><span class="sxs-lookup"><span data-stu-id="7a30b-124">If the actual return code does not match the expected value provided here, the configuration will return an error.</span></span> |
+|<span data-ttu-id="7a30b-125">FilePath</span><span class="sxs-lookup"><span data-stu-id="7a30b-125">FilePath</span></span> |<span data-ttu-id="7a30b-126">Sökvägen till filen där paketet finns.</span><span class="sxs-lookup"><span data-stu-id="7a30b-126">The file path where the package resides.</span></span> |
 
-## <a name="example"></a><span data-ttu-id="f6f0f-135">Exempel</span><span class="sxs-lookup"><span data-stu-id="f6f0f-135">Example</span></span>
+## <a name="common-properties"></a><span data-ttu-id="7a30b-127">Gemensamma egenskaper</span><span class="sxs-lookup"><span data-stu-id="7a30b-127">Common properties</span></span>
 
-<span data-ttu-id="f6f0f-136">I följande exempel ser till att paket med namnet ”httpd” är installerad på en Linux-dator med ”Yum”-Pakethanteraren.</span><span class="sxs-lookup"><span data-stu-id="f6f0f-136">The following example ensures that the package named "httpd" is installed on a Linux computer, using the “Yum” package manager.</span></span>
+|<span data-ttu-id="7a30b-128">Egenskap</span><span class="sxs-lookup"><span data-stu-id="7a30b-128">Property</span></span> |<span data-ttu-id="7a30b-129">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="7a30b-129">Description</span></span> |
+|---|---|
+|<span data-ttu-id="7a30b-130">DependsOn</span><span class="sxs-lookup"><span data-stu-id="7a30b-130">DependsOn</span></span> |<span data-ttu-id="7a30b-131">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS.</span><span class="sxs-lookup"><span data-stu-id="7a30b-131">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="7a30b-132">Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen.</span><span class="sxs-lookup"><span data-stu-id="7a30b-132">For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span> |
+|<span data-ttu-id="7a30b-133">Kontrol</span><span class="sxs-lookup"><span data-stu-id="7a30b-133">Ensure</span></span> |<span data-ttu-id="7a30b-134">Avgör om det finns ett paket som ska kontrol leras.</span><span class="sxs-lookup"><span data-stu-id="7a30b-134">Determines whether to check if the package exists.</span></span> <span data-ttu-id="7a30b-135">Ange att den här egenskapen **finns** för att se till att paketet finns.</span><span class="sxs-lookup"><span data-stu-id="7a30b-135">Set this property to **Present** to ensure the package exists.</span></span> <span data-ttu-id="7a30b-136">Ange det som **frånvarande** för att säkerställa att paketet inte finns.</span><span class="sxs-lookup"><span data-stu-id="7a30b-136">Set it to **Absent** to ensure the package does not exist.</span></span> <span data-ttu-id="7a30b-137">Standardvärdet finns **.**</span><span class="sxs-lookup"><span data-stu-id="7a30b-137">The default value is **Present**.</span></span> |
 
-```
+## <a name="example"></a><span data-ttu-id="7a30b-138">Exempel</span><span class="sxs-lookup"><span data-stu-id="7a30b-138">Example</span></span>
+
+<span data-ttu-id="7a30b-139">I följande exempel ser du till att paketet med namnet "httpd" är installerat på en Linux-dator med hjälp av paket hanteraren "yum".</span><span class="sxs-lookup"><span data-stu-id="7a30b-139">The following example ensures that the package named "httpd" is installed on a Linux computer, using the "Yum" package manager.</span></span>
+
+```powershell
 Import-DSCResource -Module nx
 
-Node $node {
-nxPackage httpd
+Node $node
 {
-    Name = "httpd"
-    Ensure = "Present"
-    PackageManager = "Yum"
-}
+    nxPackage httpd
+    {
+        Name = "httpd"
+        Ensure = "Present"
+        PackageManager = "Yum"
+    }
 }
 ```

@@ -1,33 +1,33 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+keywords: DSC, PowerShell, konfiguration, installation
 title: Avgränsa konfigurations- och miljödata
-ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b16243fc9096f786a25ed20868e94a3aa85e403e
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080041"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323252"
 ---
-# <a name="separating-configuration-and-environment-data"></a><span data-ttu-id="e7d2f-103">Avgränsa konfigurations- och miljödata</span><span class="sxs-lookup"><span data-stu-id="e7d2f-103">Separating configuration and environment data</span></span>
+# <a name="separating-configuration-and-environment-data"></a><span data-ttu-id="13619-103">Avgränsa konfigurations- och miljödata</span><span class="sxs-lookup"><span data-stu-id="13619-103">Separating configuration and environment data</span></span>
 
-><span data-ttu-id="e7d2f-104">Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="e7d2f-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+><span data-ttu-id="13619-104">Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0</span><span class="sxs-lookup"><span data-stu-id="13619-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="e7d2f-105">Det kan vara praktiskt att dela de data som används i en DSC-konfiguration från själva-konfigurationen med hjälp av konfigurationsdata.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-105">It can be useful to separate the data used in a DSC configuration from the configuration itself by using configuration data.</span></span>
-<span data-ttu-id="e7d2f-106">Du kan använda en enda konfiguration för flera miljöer genom att göra detta.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-106">By doing this, you can use a single configuration for multiple environments.</span></span>
+<span data-ttu-id="13619-105">Det kan vara praktiskt att separera de data som används i en DSC-konfiguration från själva konfigurationen med hjälp av konfigurations data.</span><span class="sxs-lookup"><span data-stu-id="13619-105">It can be useful to separate the data used in a DSC configuration from the configuration itself by using configuration data.</span></span>
+<span data-ttu-id="13619-106">Genom att göra detta kan du använda en enda konfiguration för flera miljöer.</span><span class="sxs-lookup"><span data-stu-id="13619-106">By doing this, you can use a single configuration for multiple environments.</span></span>
 
-<span data-ttu-id="e7d2f-107">Exempelvis om du utvecklar ett program, kan du använda en konfiguration för utvecklings-och produktionsmiljöer och Använd konfigurationsdata för att ange data för varje miljö.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-107">For example, if you are developing an application, you can use one configuration for both development and production environments, and use configuration data to specify data for each environment.</span></span>
+<span data-ttu-id="13619-107">Om du till exempel utvecklar ett program kan du använda en konfiguration för både utvecklings-och produktions miljöer och använda konfigurations data för att ange data för varje miljö.</span><span class="sxs-lookup"><span data-stu-id="13619-107">For example, if you are developing an application, you can use one configuration for both development and production environments, and use configuration data to specify data for each environment.</span></span>
 
-## <a name="what-is-configuration-data"></a><span data-ttu-id="e7d2f-108">Vad är konfigurationsdata?</span><span class="sxs-lookup"><span data-stu-id="e7d2f-108">What is configuration data?</span></span>
+## <a name="what-is-configuration-data"></a><span data-ttu-id="13619-108">Vad är konfigurations data?</span><span class="sxs-lookup"><span data-stu-id="13619-108">What is configuration data?</span></span>
 
-<span data-ttu-id="e7d2f-109">Konfigurationsdata är data som definieras i en hash-tabell och skickas till en DSC-konfiguration när du kompilerar den konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-109">Configuration data is data that is defined in a hashtable and passed to a DSC configuration when you compile that configuration.</span></span>
+<span data-ttu-id="13619-109">Konfigurations data är data som definieras i en hash-hash och skickas till en DSC-konfiguration när du kompilerar den konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="13619-109">Configuration data is data that is defined in a hashtable and passed to a DSC configuration when you compile that configuration.</span></span>
 
-<span data-ttu-id="e7d2f-110">En detaljerad beskrivning av den **ConfigurationData** hash-tabell, se [med konfigurationsdata](configData.md).</span><span class="sxs-lookup"><span data-stu-id="e7d2f-110">For a detailed description of the **ConfigurationData** hashtable, see [Using configuration data](configData.md).</span></span>
+<span data-ttu-id="13619-110">En detaljerad beskrivning av **ConfigurationData** -hash-tabellen finns i [använda konfigurations data](configData.md).</span><span class="sxs-lookup"><span data-stu-id="13619-110">For a detailed description of the **ConfigurationData** hashtable, see [Using configuration data](configData.md).</span></span>
 
-## <a name="a-simple-example"></a><span data-ttu-id="e7d2f-111">Ett enkelt exempel</span><span class="sxs-lookup"><span data-stu-id="e7d2f-111">A simple example</span></span>
+## <a name="a-simple-example"></a><span data-ttu-id="13619-111">Ett enkelt exempel</span><span class="sxs-lookup"><span data-stu-id="13619-111">A simple example</span></span>
 
-<span data-ttu-id="e7d2f-112">Nu ska vi titta på ett väldigt enkelt exempel och se hur det fungerar.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-112">Let's look at a very simple example to see how this works.</span></span>
-<span data-ttu-id="e7d2f-113">Vi skapar en enda konfiguration som säkerställer att **IIS** finns på vissa noder och att **Hyper-V** finns på andra:</span><span class="sxs-lookup"><span data-stu-id="e7d2f-113">We'll create a single configuration that ensures that **IIS** is present on some nodes, and that **Hyper-V** is present on others:</span></span>
+<span data-ttu-id="13619-112">Nu ska vi titta på ett mycket enkelt exempel för att se hur det fungerar.</span><span class="sxs-lookup"><span data-stu-id="13619-112">Let's look at a very simple example to see how this works.</span></span>
+<span data-ttu-id="13619-113">Vi ska skapa en enda konfiguration som garanterar att **IIS** finns på vissa noder och att **Hyper-V** finns på andra:</span><span class="sxs-lookup"><span data-stu-id="13619-113">We'll create a single configuration that ensures that **IIS** is present on some nodes, and that **Hyper-V** is present on others:</span></span>
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -68,9 +68,9 @@ $MyData =
 MyDscConfiguration -ConfigurationData $MyData
 ```
 
-<span data-ttu-id="e7d2f-114">Den sista raden i det här skriptet kompilerar konfigurationen, skicka `$MyData` som värde **ConfigurationData** parametern.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-114">The last line in this script compiles the configuration, passing `$MyData` as the value **ConfigurationData** parameter.</span></span>
+<span data-ttu-id="13619-114">Den sista raden i det här skriptet kompilerar konfigurationen och skickar `$MyData` den som **ConfigurationData** -parameter.</span><span class="sxs-lookup"><span data-stu-id="13619-114">The last line in this script compiles the configuration, passing `$MyData` as the value **ConfigurationData** parameter.</span></span>
 
-<span data-ttu-id="e7d2f-115">Resultatet är att två MOF-filer skapas:</span><span class="sxs-lookup"><span data-stu-id="e7d2f-115">The result is that two MOF files are created:</span></span>
+<span data-ttu-id="13619-115">Resultatet är att två MOF-filer skapas:</span><span class="sxs-lookup"><span data-stu-id="13619-115">The result is that two MOF files are created:</span></span>
 
 ```
     Directory: C:\DscTests\MyDscConfiguration
@@ -82,15 +82,15 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
 
-<span data-ttu-id="e7d2f-116">`$MyData` Anger två olika noder, var och en med sin egen `NodeName` och `Role`.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-116">`$MyData` specifies two different nodes, each with its own `NodeName` and `Role`.</span></span> <span data-ttu-id="e7d2f-117">Konfigurationen skapas dynamiskt **nod** block genom att utföra uppsättningen noder får från `$MyData` (mer specifikt `$AllNodes`) och filtrerar samlingen mot den `Role` egenskap...</span><span class="sxs-lookup"><span data-stu-id="e7d2f-117">The configuration dynamically creates **Node** blocks by taking the collection of nodes it gets from `$MyData` (specifically, `$AllNodes`) and filters that collection against the `Role` property..</span></span>
+<span data-ttu-id="13619-116">`$MyData`anger två olika noder, var och en med `NodeName` sin `Role`egen och.</span><span class="sxs-lookup"><span data-stu-id="13619-116">`$MyData` specifies two different nodes, each with its own `NodeName` and `Role`.</span></span> <span data-ttu-id="13619-117">Konfigurationen skapar automatiskt **Node** -block genom att ta med noderna från `$MyData` (särskilt, `$AllNodes` `Role` ) och filter som insamlingen mot egenskapen.</span><span class="sxs-lookup"><span data-stu-id="13619-117">The configuration dynamically creates **Node** blocks by taking the collection of nodes it gets from `$MyData` (specifically, `$AllNodes`) and filters that collection against the `Role` property..</span></span>
 
-## <a name="using-configuration-data-to-define-development-and-production-environments"></a><span data-ttu-id="e7d2f-118">Med konfigurationsdata för att definiera miljöer för utveckling och produktion</span><span class="sxs-lookup"><span data-stu-id="e7d2f-118">Using configuration data to define development and production environments</span></span>
+## <a name="using-configuration-data-to-define-development-and-production-environments"></a><span data-ttu-id="13619-118">Använda konfigurations data för att definiera utvecklings-och produktions miljöer</span><span class="sxs-lookup"><span data-stu-id="13619-118">Using configuration data to define development and production environments</span></span>
 
-<span data-ttu-id="e7d2f-119">Nu ska vi titta på ett komplett exempel som använder en enkel konfiguration för att konfigurera både utveckling och produktion miljöer till en webbplats.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-119">Let's look at a complete example that uses a single configuration to set up both development and production environments of a website.</span></span> <span data-ttu-id="e7d2f-120">I utvecklingsmiljön installeras både IIS och SQL Server på en enstaka noder.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-120">In the development environment, both IIS and SQL Server are installed on a single nodes.</span></span> <span data-ttu-id="e7d2f-121">I produktionsmiljön, är IIS och SQL Server installerade på olika noder.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-121">In the production environment, IIS and SQL Server are installed on separate nodes.</span></span> <span data-ttu-id="e7d2f-122">Vi använder konfigurationsdatafilen .psd1 för att ange data för två olika miljöer.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-122">We'll use a configuration data .psd1 file to specify the data for the two different environments.</span></span>
+<span data-ttu-id="13619-119">Nu ska vi titta på ett komplett exempel som använder en enda konfiguration för att konfigurera både utvecklings-och produktions miljöer för en webbplats.</span><span class="sxs-lookup"><span data-stu-id="13619-119">Let's look at a complete example that uses a single configuration to set up both development and production environments of a website.</span></span> <span data-ttu-id="13619-120">I utvecklings miljön är både IIS och SQL Server installerade på en enda nod.</span><span class="sxs-lookup"><span data-stu-id="13619-120">In the development environment, both IIS and SQL Server are installed on a single nodes.</span></span> <span data-ttu-id="13619-121">I produktions miljön är IIS och SQL Server installerade på separata noder.</span><span class="sxs-lookup"><span data-stu-id="13619-121">In the production environment, IIS and SQL Server are installed on separate nodes.</span></span> <span data-ttu-id="13619-122">Vi använder en konfigurations data. psd1-fil för att ange data för de två olika miljöerna.</span><span class="sxs-lookup"><span data-stu-id="13619-122">We'll use a configuration data .psd1 file to specify the data for the two different environments.</span></span>
 
-### <a name="configuration-data-file"></a><span data-ttu-id="e7d2f-123">Konfigurationsdatafilen</span><span class="sxs-lookup"><span data-stu-id="e7d2f-123">Configuration data file</span></span>
+### <a name="configuration-data-file"></a><span data-ttu-id="13619-123">Konfigurations data fil</span><span class="sxs-lookup"><span data-stu-id="13619-123">Configuration data file</span></span>
 
-<span data-ttu-id="e7d2f-124">Ska vi definiera miljödata utveckling och produktion i en fil med namnet `DevProdEnvData.psd1` på följande sätt:</span><span class="sxs-lookup"><span data-stu-id="e7d2f-124">We'll define the development and production environment data in a file named `DevProdEnvData.psd1` as follows:</span></span>
+<span data-ttu-id="13619-124">Vi definierar utvecklings-och produktions miljö data i en fil med namnet `DevProdEnvData.psd1` enligt följande:</span><span class="sxs-lookup"><span data-stu-id="13619-124">We'll define the development and production environment data in a file named `DevProdEnvData.psd1` as follows:</span></span>
 
 ```powershell
 @{
@@ -127,17 +127,17 @@ Mode                LastWriteTime         Length Name
 }
 ```
 
-### <a name="configuration-script-file"></a><span data-ttu-id="e7d2f-125">Konfigurationsfilen för skript</span><span class="sxs-lookup"><span data-stu-id="e7d2f-125">Configuration script file</span></span>
+### <a name="configuration-script-file"></a><span data-ttu-id="13619-125">Konfigurations skript fil</span><span class="sxs-lookup"><span data-stu-id="13619-125">Configuration script file</span></span>
 
-<span data-ttu-id="e7d2f-126">Nu, i konfigurationen, som definieras i en `.ps1` filen, filtrerar vi de noder som vi definierade i `DevProdEnvData.psd1` efter deras roll (`MSSQL`, `Dev`, eller båda), och konfigurera dem enlighet med detta.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-126">Now, in the configuration, which is defined in a `.ps1` file, we filter the nodes we defined in `DevProdEnvData.psd1` by their role (`MSSQL`, `Dev`, or both), and configure them accordingly.</span></span>
-<span data-ttu-id="e7d2f-127">Utvecklingsmiljön har både SQL Server och IIS på en nod, medan produktionsmiljön har dem på två olika noder.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-127">The development environment has both the SQL Server and IIS on one node, while the production environment has them on two different nodes.</span></span>
-<span data-ttu-id="e7d2f-128">Innehållet på webbplatsen är också olika, enligt den `SiteContents` egenskaper.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-128">The site contents is also different, as specified by the `SiteContents` properties.</span></span>
+<span data-ttu-id="13619-126">I-konfigurationen, som `.ps1` definieras i en fil, filtrerar vi sedan de noder som vi definierade i `DevProdEnvData.psd1` av deras roll (`MSSQL`, `Dev`eller båda) och konfigurerar dem därefter.</span><span class="sxs-lookup"><span data-stu-id="13619-126">Now, in the configuration, which is defined in a `.ps1` file, we filter the nodes we defined in `DevProdEnvData.psd1` by their role (`MSSQL`, `Dev`, or both), and configure them accordingly.</span></span>
+<span data-ttu-id="13619-127">Utvecklings miljön har både SQL Server och IIS på en nod, medan produktions miljön har dem på två olika noder.</span><span class="sxs-lookup"><span data-stu-id="13619-127">The development environment has both the SQL Server and IIS on one node, while the production environment has them on two different nodes.</span></span>
+<span data-ttu-id="13619-128">Webbplatsens innehåll är också olika, som anges av `SiteContents` egenskaperna.</span><span class="sxs-lookup"><span data-stu-id="13619-128">The site contents is also different, as specified by the `SiteContents` properties.</span></span>
 
-<span data-ttu-id="e7d2f-129">I slutet av konfigurationsskriptet som vi kallar konfigurationen (kompilera den till en MOF-dokument), skicka `DevProdEnvData.psd1` som den `$ConfigurationData` parametern.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-129">At the end of the configuration script, we call the configuration (compile it into a MOF document), passing `DevProdEnvData.psd1` as the `$ConfigurationData` parameter.</span></span>
+<span data-ttu-id="13619-129">I slutet av konfigurations skriptet anropar vi konfigurationen (kompilera den till ett MOF-dokument) och skickar `DevProdEnvData.psd1` den `$ConfigurationData` som parameter.</span><span class="sxs-lookup"><span data-stu-id="13619-129">At the end of the configuration script, we call the configuration (compile it into a MOF document), passing `DevProdEnvData.psd1` as the `$ConfigurationData` parameter.</span></span>
 
-><span data-ttu-id="e7d2f-130">**Obs:** Den här konfigurationen kräver modulerna `xSqlPs` och `xWebAdministration` installeras på målnoden.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-130">**Note:** This configuration requires the modules `xSqlPs` and `xWebAdministration` to be installed on the target node.</span></span>
+><span data-ttu-id="13619-130">**Obs:** Den här konfigurationen kräver att `xSqlPs` modulerna och `xWebAdministration` installeras på målnoden.</span><span class="sxs-lookup"><span data-stu-id="13619-130">**Note:** This configuration requires the modules `xSqlPs` and `xWebAdministration` to be installed on the target node.</span></span>
 
-<span data-ttu-id="e7d2f-131">Nu ska vi definiera konfigurationen i en fil med namnet `MyWebApp.ps1`:</span><span class="sxs-lookup"><span data-stu-id="e7d2f-131">Let's define the configuration in a file named `MyWebApp.ps1`:</span></span>
+<span data-ttu-id="13619-131">Vi definierar konfigurationen i en fil med namnet `MyWebApp.ps1`:</span><span class="sxs-lookup"><span data-stu-id="13619-131">Let's define the configuration in a file named `MyWebApp.ps1`:</span></span>
 
 ```powershell
 Configuration MyWebApp
@@ -229,7 +229,7 @@ Configuration MyWebApp
 MyWebApp -ConfigurationData DevProdEnvData.psd1
 ```
 
-<span data-ttu-id="e7d2f-132">När du kör den här konfigurationen skapas tre MOF-filer (en för var och en med namnet post i den **AllNodes** matris):</span><span class="sxs-lookup"><span data-stu-id="e7d2f-132">When you run this configuration, three MOF files are created (one for each named entry in the **AllNodes** array):</span></span>
+<span data-ttu-id="13619-132">När du kör den här konfigurationen skapas tre MOF-filer (en för varje namngiven post i **AllNodes** -matrisen):</span><span class="sxs-lookup"><span data-stu-id="13619-132">When you run this configuration, three MOF files are created (one for each named entry in the **AllNodes** array):</span></span>
 
 ```
     Directory: C:\DscTests\MyWebApp
@@ -242,21 +242,21 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:47 PM           5338 Prod-IIS.mof
 ```
 
-## <a name="using-non-node-data"></a><span data-ttu-id="e7d2f-133">Använda icke-nod-data</span><span class="sxs-lookup"><span data-stu-id="e7d2f-133">Using non-node data</span></span>
+## <a name="using-non-node-data"></a><span data-ttu-id="13619-133">Använda data som inte är noder</span><span class="sxs-lookup"><span data-stu-id="13619-133">Using non-node data</span></span>
 
-<span data-ttu-id="e7d2f-134">Du kan lägga till ytterligare nycklar till den **ConfigurationData** hash-tabell för data som inte är specifika för en nod.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-134">You can add additional keys to the **ConfigurationData** hashtable for data that is not specific to a node.</span></span>
-<span data-ttu-id="e7d2f-135">Följande konfiguration garanterar att finns två webbplatser.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-135">The following configuration ensures the presence of two websites.</span></span>
-<span data-ttu-id="e7d2f-136">Data för varje webbplats har definierats i den **AllNodes** matris.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-136">Data for each website are defined in the **AllNodes** array.</span></span>
-<span data-ttu-id="e7d2f-137">Filen `Config.xml` används för båda webbplatserna, så vi definiera den i en ytterligare nyckel med namnet `NonNodeData`.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-137">The file `Config.xml` is used for both websites, so we define it in an additional key with the name `NonNodeData`.</span></span>
-<span data-ttu-id="e7d2f-138">Observera att du kan ha så många ytterligare knappar som du vill ha och du kan kalla dem vad du vill.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-138">Note that you can have as many additional keys as you want, and you can name them anything you want.</span></span>
-<span data-ttu-id="e7d2f-139">`NonNodeData` inte är ett reserverat ord, det är precis vad vi valt att namnge den extra nyckeln.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-139">`NonNodeData` is not a reserved word, it is just what we decided to name the additional key.</span></span>
+<span data-ttu-id="13619-134">Du kan lägga till ytterligare nycklar i **ConfigurationData** -hashen för data som inte är en del av en nod.</span><span class="sxs-lookup"><span data-stu-id="13619-134">You can add additional keys to the **ConfigurationData** hashtable for data that is not specific to a node.</span></span>
+<span data-ttu-id="13619-135">Följande konfiguration säkerställer förekomsten av två webbplatser.</span><span class="sxs-lookup"><span data-stu-id="13619-135">The following configuration ensures the presence of two websites.</span></span>
+<span data-ttu-id="13619-136">Data för varje webbplats definieras i **AllNodes** -matrisen.</span><span class="sxs-lookup"><span data-stu-id="13619-136">Data for each website are defined in the **AllNodes** array.</span></span>
+<span data-ttu-id="13619-137">Filen `Config.xml` används för båda webbplatserna, så vi definierar den i ytterligare en nyckel med namnet `NonNodeData`.</span><span class="sxs-lookup"><span data-stu-id="13619-137">The file `Config.xml` is used for both websites, so we define it in an additional key with the name `NonNodeData`.</span></span>
+<span data-ttu-id="13619-138">Observera att du kan ha så många ytterligare nycklar som du vill, och du kan ge dem ett namn som du vill.</span><span class="sxs-lookup"><span data-stu-id="13619-138">Note that you can have as many additional keys as you want, and you can name them anything you want.</span></span>
+<span data-ttu-id="13619-139">`NonNodeData`är inte ett reserverat ord, det är bara det vi valde att ge den nya nyckeln.</span><span class="sxs-lookup"><span data-stu-id="13619-139">`NonNodeData` is not a reserved word, it is just what we decided to name the additional key.</span></span>
 
-<span data-ttu-id="e7d2f-140">Du har åtkomst till ytterligare nycklar med hjälp av en särskild variabel **$ConfigurationData**.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-140">You access additional keys by using the special variable **$ConfigurationData**.</span></span>
-<span data-ttu-id="e7d2f-141">I det här exemplet `ConfigFileContents` nås med rad:</span><span class="sxs-lookup"><span data-stu-id="e7d2f-141">In this example, `ConfigFileContents` is accessed with the line:</span></span>
+<span data-ttu-id="13619-140">Du får åtkomst till ytterligare nycklar med hjälp av den särskilda variabeln **$ConfigurationData**.</span><span class="sxs-lookup"><span data-stu-id="13619-140">You access additional keys by using the special variable **$ConfigurationData**.</span></span>
+<span data-ttu-id="13619-141">I det här exemplet `ConfigFileContents` kan du komma åt raden:</span><span class="sxs-lookup"><span data-stu-id="13619-141">In this example, `ConfigFileContents` is accessed with the line:</span></span>
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
  ```
- <span data-ttu-id="e7d2f-142">i den `File` resource block.</span><span class="sxs-lookup"><span data-stu-id="e7d2f-142">in the `File` resource block.</span></span>
+ <span data-ttu-id="13619-142">`File` i resurs blocket.</span><span class="sxs-lookup"><span data-stu-id="13619-142">in the `File` resource block.</span></span>
 
 
 ```powershell
@@ -265,21 +265,21 @@ $MyData =
     AllNodes =
     @(
         @{
-            NodeName           = “*”
-            LogPath            = “C:\Logs”
+            NodeName           = "*"
+            LogPath            = "C:\Logs"
         },
 
         @{
-            NodeName = “VM-1”
-            SiteContents = “C:\Site1”
-            SiteName = “Website1”
+            NodeName = "VM-1"
+            SiteContents = "C:\Site1"
+            SiteName = "Website1"
         },
 
 
         @{
-            NodeName = “VM-2”;
-            SiteContents = “C:\Site2”
-            SiteName = “Website2”
+            NodeName = "VM-2"
+            SiteContents = "C:\Site2"
+            SiteName = "Website2"
         }
     );
 
@@ -299,12 +299,12 @@ configuration WebsiteConfig
         {
             Name         = $Node.SiteName
             PhysicalPath = $Node.SiteContents
-            Ensure       = “Present”
+            Ensure       = "Present"
         }
 
         File ConfigFile
         {
-            DestinationPath = $Node.SiteContents + “\\config.xml”
+            DestinationPath = $Node.SiteContents + "\\config.xml"
             Contents = $ConfigurationData.NonNodeData.ConfigFileContents
         }
     }
@@ -312,7 +312,7 @@ configuration WebsiteConfig
 ```
 
 
-## <a name="see-also"></a><span data-ttu-id="e7d2f-143">Se även</span><span class="sxs-lookup"><span data-stu-id="e7d2f-143">See Also</span></span>
-- [<span data-ttu-id="e7d2f-144">Med hjälp av konfigurationsdata</span><span class="sxs-lookup"><span data-stu-id="e7d2f-144">Using configuration data</span></span>](configData.md)
-- [<span data-ttu-id="e7d2f-145">Alternativ för autentiseringsuppgifter i konfigurationsdata</span><span class="sxs-lookup"><span data-stu-id="e7d2f-145">Credentials Options in Configuration Data</span></span>](configDataCredentials.md)
-- [<span data-ttu-id="e7d2f-146">DSC-konfigurationer</span><span class="sxs-lookup"><span data-stu-id="e7d2f-146">DSC Configurations</span></span>](configurations.md)
+## <a name="see-also"></a><span data-ttu-id="13619-143">Se även</span><span class="sxs-lookup"><span data-stu-id="13619-143">See Also</span></span>
+- [<span data-ttu-id="13619-144">Använda konfigurations data</span><span class="sxs-lookup"><span data-stu-id="13619-144">Using configuration data</span></span>](configData.md)
+- [<span data-ttu-id="13619-145">Alternativ för autentiseringsuppgifter i konfigurations data</span><span class="sxs-lookup"><span data-stu-id="13619-145">Credentials Options in Configuration Data</span></span>](configDataCredentials.md)
+- [<span data-ttu-id="13619-146">DSC-konfigurationer</span><span class="sxs-lookup"><span data-stu-id="13619-146">DSC Configurations</span></span>](configurations.md)

@@ -1,55 +1,62 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
 title: DSC ServiceSet-resurs
-ms.openlocfilehash: 5694c2abc5c0caf0098670b629af464b35125583
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 97c25f46940d69ed6c696e2692e29131e9a997b0
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076845"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324119"
 ---
-# <a name="dsc-serviceset-resource"></a><span data-ttu-id="c51db-103">DSC ServiceSet-resurs</span><span class="sxs-lookup"><span data-stu-id="c51db-103">DSC ServiceSet Resource</span></span>
+# <a name="dsc-serviceset-resource"></a><span data-ttu-id="791f2-103">DSC ServiceSet-resurs</span><span class="sxs-lookup"><span data-stu-id="791f2-103">DSC ServiceSet Resource</span></span>
 
-> <span data-ttu-id="c51db-104">Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="c51db-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="791f2-104">Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x</span><span class="sxs-lookup"><span data-stu-id="791f2-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.x</span></span>
 
-<span data-ttu-id="c51db-105">Den **ServiceSet** resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att hantera tjänster på målnoden.</span><span class="sxs-lookup"><span data-stu-id="c51db-105">The **ServiceSet** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage services on the target node.</span></span> <span data-ttu-id="c51db-106">Den här resursen är en [sammansatta resource](../../../resources/authoringResourceComposite.md) som anropar den [tjänsten resource](serviceResource.md) för varje tjänst som anges i den `Name` egenskapen.</span><span class="sxs-lookup"><span data-stu-id="c51db-106">This resource is a [composite resource](../../../resources/authoringResourceComposite.md) that calls the [Service resource](serviceResource.md) for each service specified in the `Name` property.</span></span>
+<span data-ttu-id="791f2-105">**ServiceSet** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera tjänster på målnoden.</span><span class="sxs-lookup"><span data-stu-id="791f2-105">The **ServiceSet** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage services on the target node.</span></span> <span data-ttu-id="791f2-106">Den här resursen är en [sammansatt resurs](../../../resources/authoringResourceComposite.md) som anropar [tjänst resursen](serviceResource.md) för varje tjänst som anges i egenskapen **Name** .</span><span class="sxs-lookup"><span data-stu-id="791f2-106">This resource is a [composite resource](../../../resources/authoringResourceComposite.md) that calls the [Service resource](serviceResource.md) for each service specified in the **Name** property.</span></span>
 
-<span data-ttu-id="c51db-107">Använd den här resursen när du vill konfigurera ett antal tjänster till samma tillstånd.</span><span class="sxs-lookup"><span data-stu-id="c51db-107">Use this resource when you want to configure a number of services to the same state.</span></span>
+<span data-ttu-id="791f2-107">Använd den här resursen när du vill konfigurera ett antal tjänster till samma tillstånd.</span><span class="sxs-lookup"><span data-stu-id="791f2-107">Use this resource when you want to configure a number of services to the same state.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="c51db-108">Syntax</span><span class="sxs-lookup"><span data-stu-id="c51db-108">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="791f2-108">Syntax</span><span class="sxs-lookup"><span data-stu-id="791f2-108">Syntax</span></span>
 
-```
-Service [string] #ResourceName
+```Syntax
+ServiceSet [string] #ResourceName
 {
     Name = [string[]]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ State = [string] { Running | Stopped }  ]
-    [ Ensure = [string] { Absent | Present }  ]
     [ Credential = [PSCredential] ]
     [ DependsOn = [string[]] ]
-
+    [ Ensure = [string] { Absent | Present }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="c51db-109">Egenskaper</span><span class="sxs-lookup"><span data-stu-id="c51db-109">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="791f2-109">properties</span><span class="sxs-lookup"><span data-stu-id="791f2-109">Properties</span></span>
 
-|  <span data-ttu-id="c51db-110">Egenskap</span><span class="sxs-lookup"><span data-stu-id="c51db-110">Property</span></span>  |  <span data-ttu-id="c51db-111">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="c51db-111">Description</span></span>   |
+|<span data-ttu-id="791f2-110">Egenskap</span><span class="sxs-lookup"><span data-stu-id="791f2-110">Property</span></span> |<span data-ttu-id="791f2-111">Description</span><span class="sxs-lookup"><span data-stu-id="791f2-111">Description</span></span> |
 |---|---|
-| <span data-ttu-id="c51db-112">Namn</span><span class="sxs-lookup"><span data-stu-id="c51db-112">Name</span></span>| <span data-ttu-id="c51db-113">Anger tjänstnamn.</span><span class="sxs-lookup"><span data-stu-id="c51db-113">Indicates the service names.</span></span> <span data-ttu-id="c51db-114">Observera att ibland Detta skiljer sig från namn som visas.</span><span class="sxs-lookup"><span data-stu-id="c51db-114">Note that sometimes this is different from the display names.</span></span> <span data-ttu-id="c51db-115">Du kan hämta en lista över tjänsterna samt enheternas aktuella status med den [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) cmdlet.</span><span class="sxs-lookup"><span data-stu-id="c51db-115">You can get a list of the services and their current state with the [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) cmdlet.</span></span>|
-| <span data-ttu-id="c51db-116">Startuptype för</span><span class="sxs-lookup"><span data-stu-id="c51db-116">StartupType</span></span>| <span data-ttu-id="c51db-117">Anger starttypen för tjänsten.</span><span class="sxs-lookup"><span data-stu-id="c51db-117">Indicates the startup type for the service.</span></span> <span data-ttu-id="c51db-118">De värden som tillåts för den här egenskapen är: **Automatisk**, **inaktiverad**, och **manuell**</span><span class="sxs-lookup"><span data-stu-id="c51db-118">The values that are allowed for this property are: **Automatic**, **Disabled**, and **Manual**</span></span>|
-| <span data-ttu-id="c51db-119">BuiltInAccount</span><span class="sxs-lookup"><span data-stu-id="c51db-119">BuiltInAccount</span></span>| <span data-ttu-id="c51db-120">Anger kontot du använder för tjänsterna.</span><span class="sxs-lookup"><span data-stu-id="c51db-120">Indicates the sign-in account to use for the services.</span></span> <span data-ttu-id="c51db-121">De värden som tillåts för den här egenskapen är: **LocalService**, **LocalSystem**, och **NetworkService**.</span><span class="sxs-lookup"><span data-stu-id="c51db-121">The values that are allowed for this property are: **LocalService**, **LocalSystem**, and **NetworkService**.</span></span>|
-| <span data-ttu-id="c51db-122">Tillstånd</span><span class="sxs-lookup"><span data-stu-id="c51db-122">State</span></span>| <span data-ttu-id="c51db-123">Visar status du vill säkerställa för tjänster: **Stoppad** eller **kör**.</span><span class="sxs-lookup"><span data-stu-id="c51db-123">Indicates the state you want to ensure for the services: **Stopped** or **Running**.</span></span>|
-| <span data-ttu-id="c51db-124">Se till att</span><span class="sxs-lookup"><span data-stu-id="c51db-124">Ensure</span></span>| <span data-ttu-id="c51db-125">Anger om tjänsterna som finns på systemet.</span><span class="sxs-lookup"><span data-stu-id="c51db-125">Indicates whether the services exist on the system.</span></span> <span data-ttu-id="c51db-126">Den här egenskapen **frånvarande** att se till att tjänsterna inte finns.</span><span class="sxs-lookup"><span data-stu-id="c51db-126">Set this property to **Absent** to ensure that the services do not exist.</span></span> <span data-ttu-id="c51db-127">Ange värdet till **finns** (standardvärdet) säkerställer att mål-tjänster finns.</span><span class="sxs-lookup"><span data-stu-id="c51db-127">Setting it to **Present** (the default value) ensures that target services exist.</span></span>|
-| <span data-ttu-id="c51db-128">Autentiseringsuppgifter</span><span class="sxs-lookup"><span data-stu-id="c51db-128">Credential</span></span>| <span data-ttu-id="c51db-129">Anger autentiseringsuppgifterna för kontot som tjänstresursen kommer att köras under.</span><span class="sxs-lookup"><span data-stu-id="c51db-129">Indicates credentials for the account that the service resource will run under.</span></span> <span data-ttu-id="c51db-130">Den här egenskapen och **BuiltinAccount** egenskapen kan inte användas tillsammans.</span><span class="sxs-lookup"><span data-stu-id="c51db-130">This property and the **BuiltinAccount** property cannot be used together.</span></span>|
-| <span data-ttu-id="c51db-131">DependsOn</span><span class="sxs-lookup"><span data-stu-id="c51db-131">DependsOn</span></span>| <span data-ttu-id="c51db-132">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats.</span><span class="sxs-lookup"><span data-stu-id="c51db-132">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="c51db-133">Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är *ResourceName* och är av typen *ResourceType*, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="c51db-133">For example, if the ID of the resource configuration script block that you want to run first is *ResourceName* and its type is *ResourceType*, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
+|<span data-ttu-id="791f2-112">Name</span><span class="sxs-lookup"><span data-stu-id="791f2-112">Name</span></span> |<span data-ttu-id="791f2-113">Anger tjänst namn.</span><span class="sxs-lookup"><span data-stu-id="791f2-113">Indicates the service names.</span></span> <span data-ttu-id="791f2-114">Observera att ibland skiljer det sig från visnings namnen.</span><span class="sxs-lookup"><span data-stu-id="791f2-114">Note that sometimes this is different from the display names.</span></span> <span data-ttu-id="791f2-115">Du kan hämta en lista över tjänsterna och deras aktuella status med `Get-Service` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="791f2-115">You can get a list of the services and their current state with the `Get-Service` cmdlet.</span></span> |
+|<span data-ttu-id="791f2-116">Startuptype tjänst</span><span class="sxs-lookup"><span data-stu-id="791f2-116">StartupType</span></span> |<span data-ttu-id="791f2-117">Anger start typen för tjänsterna.</span><span class="sxs-lookup"><span data-stu-id="791f2-117">Indicates the startup type for the services.</span></span> <span data-ttu-id="791f2-118">De värden som tillåts för den här egenskapen är: **Automatiskt**, **inaktiverat**och **manuellt**.</span><span class="sxs-lookup"><span data-stu-id="791f2-118">The values that are allowed for this property are: **Automatic**, **Disabled**, and **Manual**.</span></span> |
+|<span data-ttu-id="791f2-119">BuiltInAccount</span><span class="sxs-lookup"><span data-stu-id="791f2-119">BuiltInAccount</span></span> |<span data-ttu-id="791f2-120">Anger det inloggnings konto som ska användas för tjänsterna.</span><span class="sxs-lookup"><span data-stu-id="791f2-120">Indicates the sign-in account to use for the services.</span></span> <span data-ttu-id="791f2-121">De värden som tillåts för den här egenskapen är: **LocalService**, **LocalSystem**och **NetworkService**.</span><span class="sxs-lookup"><span data-stu-id="791f2-121">The values that are allowed for this property are: **LocalService**, **LocalSystem**, and **NetworkService**.</span></span> |
+|<span data-ttu-id="791f2-122">State</span><span class="sxs-lookup"><span data-stu-id="791f2-122">State</span></span> |<span data-ttu-id="791f2-123">Anger det tillstånd som du vill säkerställa för tjänsterna: **Stoppas** eller **körs**inte.</span><span class="sxs-lookup"><span data-stu-id="791f2-123">Indicates the state you want to ensure for the services: **Stopped** or **Running**.</span></span> |
+|<span data-ttu-id="791f2-124">Certifiering</span><span class="sxs-lookup"><span data-stu-id="791f2-124">Credential</span></span> |<span data-ttu-id="791f2-125">Anger autentiseringsuppgifter för det konto som tjänst resursen kommer att köras under.</span><span class="sxs-lookup"><span data-stu-id="791f2-125">Indicates credentials for the account that the service resource will run under.</span></span> <span data-ttu-id="791f2-126">Den här egenskapen och egenskapen **BuiltinAccount** kan inte användas tillsammans.</span><span class="sxs-lookup"><span data-stu-id="791f2-126">This property and the **BuiltinAccount** property cannot be used together.</span></span> |
 
+## <a name="common-properties"></a><span data-ttu-id="791f2-127">Gemensamma egenskaper</span><span class="sxs-lookup"><span data-stu-id="791f2-127">Common properties</span></span>
 
+|<span data-ttu-id="791f2-128">Egenskap</span><span class="sxs-lookup"><span data-stu-id="791f2-128">Property</span></span> |<span data-ttu-id="791f2-129">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="791f2-129">Description</span></span> |
+|---|---|
+|<span data-ttu-id="791f2-130">DependsOn</span><span class="sxs-lookup"><span data-stu-id="791f2-130">DependsOn</span></span> |<span data-ttu-id="791f2-131">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS.</span><span class="sxs-lookup"><span data-stu-id="791f2-131">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="791f2-132">Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen.</span><span class="sxs-lookup"><span data-stu-id="791f2-132">For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span> |
+|<span data-ttu-id="791f2-133">Kontrol</span><span class="sxs-lookup"><span data-stu-id="791f2-133">Ensure</span></span> |<span data-ttu-id="791f2-134">Anger om tjänsterna finns i systemet.</span><span class="sxs-lookup"><span data-stu-id="791f2-134">Indicates whether the services exist on the system.</span></span> <span data-ttu-id="791f2-135">Ange den här egenskapen som **saknas** för att säkerställa att tjänsterna inte finns.</span><span class="sxs-lookup"><span data-stu-id="791f2-135">Set this property to **Absent** to ensure that the services do not exist.</span></span> <span data-ttu-id="791f2-136">Att ställa in det för att **Visa** garanterar att mål tjänsterna finns.</span><span class="sxs-lookup"><span data-stu-id="791f2-136">Setting it to **Present** ensures that target services exist.</span></span> <span data-ttu-id="791f2-137">Standardvärdet finns **.**</span><span class="sxs-lookup"><span data-stu-id="791f2-137">The default value is **Present**.</span></span> |
+|<span data-ttu-id="791f2-138">PsDscRunAsCredential</span><span class="sxs-lookup"><span data-stu-id="791f2-138">PsDscRunAsCredential</span></span> |<span data-ttu-id="791f2-139">Anger autentiseringsuppgifter för att köra hela resursen som.</span><span class="sxs-lookup"><span data-stu-id="791f2-139">Sets the credential for running the entire resource as.</span></span> |
 
-## <a name="example"></a><span data-ttu-id="c51db-134">Exempel</span><span class="sxs-lookup"><span data-stu-id="c51db-134">Example</span></span>
+> [!NOTE]
+> <span data-ttu-id="791f2-140">Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter.</span><span class="sxs-lookup"><span data-stu-id="791f2-140">The **PsDscRunAsCredential** common property was added in WMF 5.0 to allow running any DSC resource in the context of other credentials.</span></span> <span data-ttu-id="791f2-141">Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).</span><span class="sxs-lookup"><span data-stu-id="791f2-141">For more information, see [Use Credentials with DSC Resources](../../../configurations/runasuser.md).</span></span>
 
-<span data-ttu-id="c51db-135">Följande konfiguration startar tjänsterna ”Windows ljud” och ”Remote Desktop Services”.</span><span class="sxs-lookup"><span data-stu-id="c51db-135">The following configuration starts the "Windows Audio" and "Remote Desktop Services" services.</span></span>
+## <a name="example"></a><span data-ttu-id="791f2-142">Exempel</span><span class="sxs-lookup"><span data-stu-id="791f2-142">Example</span></span>
+
+<span data-ttu-id="791f2-143">Följande konfiguration startar tjänsterna Windows Audio och Fjärrskrivbordstjänster.</span><span class="sxs-lookup"><span data-stu-id="791f2-143">The following configuration starts the "Windows Audio" and "Remote Desktop Services" services.</span></span>
 
 ```powershell
 configuration ServiceSetTest
@@ -57,7 +64,6 @@ configuration ServiceSetTest
     Import-DscResource -ModuleName PSDesiredStateConfiguration
     Node localhost
     {
-
         ServiceSet ServiceSetExample
         {
             Name        = @("TermService", "Audiosrv")

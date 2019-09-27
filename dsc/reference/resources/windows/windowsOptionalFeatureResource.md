@@ -1,46 +1,55 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
-title: DSC-WindowsOptionalFeature-resurs
-ms.openlocfilehash: 390caefd2ad190afc651b22ed1beb5cf1d604527
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
+title: DSC WindowsOptionalFeature-resurs
+ms.openlocfilehash: 7312edcaeb47427bf4736f466a9ed41bd7c31f6a
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076766"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323901"
 ---
-# <a name="dsc-windowsoptionalfeature-resource"></a><span data-ttu-id="8266d-103">DSC-WindowsOptionalFeature-resurs</span><span class="sxs-lookup"><span data-stu-id="8266d-103">DSC WindowsOptionalFeature Resource</span></span>
+# <a name="dsc-windowsoptionalfeature-resource"></a><span data-ttu-id="a0b78-103">DSC WindowsOptionalFeature-resurs</span><span class="sxs-lookup"><span data-stu-id="a0b78-103">DSC WindowsOptionalFeature Resource</span></span>
 
-> <span data-ttu-id="8266d-104">Gäller för: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="8266d-104">Applies To: Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="a0b78-104">Gäller för: Windows PowerShell 5. x</span><span class="sxs-lookup"><span data-stu-id="a0b78-104">Applies To: Windows PowerShell 5.x</span></span>
 
-<span data-ttu-id="8266d-105">Den **WindowsOptionalFeature** resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att säkerställa att valfria funktioner är aktiverade på målnoden.</span><span class="sxs-lookup"><span data-stu-id="8266d-105">The **WindowsOptionalFeature** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to ensure that optional features are enabled on a target node.</span></span>
+<span data-ttu-id="a0b78-105">**WindowsOptionalFeature** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att säkerställa att valfria funktioner aktive ras på en målnod.</span><span class="sxs-lookup"><span data-stu-id="a0b78-105">The **WindowsOptionalFeature** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to ensure that optional features are enabled on a target node.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="8266d-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="8266d-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="a0b78-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="a0b78-106">Syntax</span></span>
 
-```
+```Syntax
 WindowsOptionalFeature [string] #ResourceName
 {
     Name = [string]
-    [ Ensure = [string] { Enable | Disable }  ]
-    [ Source = [string] ]
+    [ Source = [string[]] ]
     [ NoWindowsUpdateCheck = [bool] ]
     [ RemoveFilesOnDisable = [bool] ]
     [ LogLevel = [string] { ErrorsOnly | ErrorsAndWarning | ErrorsAndWarningAndInformation }  ]
     [ LogPath = [string] ]
     [ DependsOn = [string[]] ]
-
+    [ Ensure = [string] { Enable | Disable }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="8266d-107">Egenskaper</span><span class="sxs-lookup"><span data-stu-id="8266d-107">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="a0b78-107">properties</span><span class="sxs-lookup"><span data-stu-id="a0b78-107">Properties</span></span>
 
-|  <span data-ttu-id="8266d-108">Egenskap</span><span class="sxs-lookup"><span data-stu-id="8266d-108">Property</span></span>  |  <span data-ttu-id="8266d-109">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="8266d-109">Description</span></span>   |
+|<span data-ttu-id="a0b78-108">Egenskap</span><span class="sxs-lookup"><span data-stu-id="a0b78-108">Property</span></span> |<span data-ttu-id="a0b78-109">Description</span><span class="sxs-lookup"><span data-stu-id="a0b78-109">Description</span></span> |
 |---|---|
-| <span data-ttu-id="8266d-110">Namn</span><span class="sxs-lookup"><span data-stu-id="8266d-110">Name</span></span>| <span data-ttu-id="8266d-111">Anger namnet på den funktion som du vill se till att är aktiverat eller inaktiverat.</span><span class="sxs-lookup"><span data-stu-id="8266d-111">Indicates the name of the feature that you want to ensure is enabled or disabled.</span></span>|
-| <span data-ttu-id="8266d-112">Se till att</span><span class="sxs-lookup"><span data-stu-id="8266d-112">Ensure</span></span>| <span data-ttu-id="8266d-113">Anger om funktionen är aktiverad.</span><span class="sxs-lookup"><span data-stu-id="8266d-113">Specifies whether the feature is enabled.</span></span> <span data-ttu-id="8266d-114">För att säkerställa att funktionen är aktiverad, Ställ in den här egenskapen till ”aktivera” för att säkerställa att funktionen är inaktiverad, egenskapen till ”inaktivera”.</span><span class="sxs-lookup"><span data-stu-id="8266d-114">To ensure that the feature is enabled, set this property to "Enable" To ensure that the feature is disabled, set the property to "Disable".</span></span>|
-| <span data-ttu-id="8266d-115">Källa</span><span class="sxs-lookup"><span data-stu-id="8266d-115">Source</span></span>| <span data-ttu-id="8266d-116">Inte implementerat.</span><span class="sxs-lookup"><span data-stu-id="8266d-116">Not implemented.</span></span>|
-| <span data-ttu-id="8266d-117">NoWindowsUpdateCheck</span><span class="sxs-lookup"><span data-stu-id="8266d-117">NoWindowsUpdateCheck</span></span>| <span data-ttu-id="8266d-118">Anger om DISM kontaktar Windows Update (WU) när du söker efter källfilerna för att aktivera en funktion.</span><span class="sxs-lookup"><span data-stu-id="8266d-118">Specifies whether DISM contacts Windows Update (WU) when searching for the source files to enable a feature.</span></span> <span data-ttu-id="8266d-119">Om $true DISM inte kontaktar WU.</span><span class="sxs-lookup"><span data-stu-id="8266d-119">If $true, DISM does not contact WU.</span></span>|
-| <span data-ttu-id="8266d-120">RemoveFilesOnDisable</span><span class="sxs-lookup"><span data-stu-id="8266d-120">RemoveFilesOnDisable</span></span>| <span data-ttu-id="8266d-121">Inställd **$true** att ta bort alla filer som är associerade med funktionen när den är inaktiverad (det vill säga när **Kontrollera** anges till ””).</span><span class="sxs-lookup"><span data-stu-id="8266d-121">Set to **$true** to remove all files associated with the feature when it is disabled (that is, when **Ensure** is set to "Absent").</span></span>|
-| <span data-ttu-id="8266d-122">Loggnivå</span><span class="sxs-lookup"><span data-stu-id="8266d-122">LogLevel</span></span>| <span data-ttu-id="8266d-123">Den maximala utdatanivån som visas i loggarna.</span><span class="sxs-lookup"><span data-stu-id="8266d-123">The maximum output level shown in the logs.</span></span> <span data-ttu-id="8266d-124">Godkända värden är: ”ErrorsOnly” (endast fel loggas), ”ErrorsAndWarning” (fel och varningar loggas), och ”ErrorsAndWarningAndInformation” (fel, varningar och felsökningsinformation loggas).</span><span class="sxs-lookup"><span data-stu-id="8266d-124">The accepted values are: "ErrorsOnly" (only errors are logged), "ErrorsAndWarning" (errors and warnings are logged), and "ErrorsAndWarningAndInformation" (errors, warnings, and debug information are logged).</span></span>|
-| <span data-ttu-id="8266d-125">LogPath</span><span class="sxs-lookup"><span data-stu-id="8266d-125">LogPath</span></span>| <span data-ttu-id="8266d-126">Sökvägen till en loggfil där du vill att resursprovidern att logga in igen.</span><span class="sxs-lookup"><span data-stu-id="8266d-126">The path to a log file where you want the resource provider to log the operation.</span></span>|
-| <span data-ttu-id="8266d-127">DependsOn</span><span class="sxs-lookup"><span data-stu-id="8266d-127">DependsOn</span></span>| <span data-ttu-id="8266d-128">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats.</span><span class="sxs-lookup"><span data-stu-id="8266d-128">Specifies that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="8266d-129">Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är __ResourceName__ och är av typen __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="8266d-129">For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
+|<span data-ttu-id="a0b78-110">Name</span><span class="sxs-lookup"><span data-stu-id="a0b78-110">Name</span></span> |<span data-ttu-id="a0b78-111">Anger namnet på den funktion som du vill se är aktive rad eller inaktive rad.</span><span class="sxs-lookup"><span data-stu-id="a0b78-111">Indicates the name of the feature that you want to ensure is enabled or disabled.</span></span> |
+|<span data-ttu-id="a0b78-112">Source</span><span class="sxs-lookup"><span data-stu-id="a0b78-112">Source</span></span> |<span data-ttu-id="a0b78-113">Inte implementerad.</span><span class="sxs-lookup"><span data-stu-id="a0b78-113">Not implemented.</span></span> |
+|<span data-ttu-id="a0b78-114">NoWindowsUpdateCheck</span><span class="sxs-lookup"><span data-stu-id="a0b78-114">NoWindowsUpdateCheck</span></span> |<span data-ttu-id="a0b78-115">Anger om DISM-kontakter Windows Update (WU) vid sökning efter källfiler för att aktivera en funktion.</span><span class="sxs-lookup"><span data-stu-id="a0b78-115">Specifies whether DISM contacts Windows Update (WU) when searching for the source files to enable a feature.</span></span> <span data-ttu-id="a0b78-116">Om `$true`inte DISM kontaktar Wu.</span><span class="sxs-lookup"><span data-stu-id="a0b78-116">If `$true`, DISM does not contact WU.</span></span> |
+|<span data-ttu-id="a0b78-117">RemoveFilesOnDisable</span><span class="sxs-lookup"><span data-stu-id="a0b78-117">RemoveFilesOnDisable</span></span> |<span data-ttu-id="a0b78-118">Ange till `$true` om du vill ta bort alla filer som är associerade med funktionen när **Se** till att den är inställd på **frånvarande**.</span><span class="sxs-lookup"><span data-stu-id="a0b78-118">Set to `$true` to remove all files associated with the feature when **Ensure** is set to **Absent**.</span></span> |
+|<span data-ttu-id="a0b78-119">Loggnivå</span><span class="sxs-lookup"><span data-stu-id="a0b78-119">LogLevel</span></span> |<span data-ttu-id="a0b78-120">Den högsta utmatnings nivån som visas i loggarna.</span><span class="sxs-lookup"><span data-stu-id="a0b78-120">The maximum output level shown in the logs.</span></span> <span data-ttu-id="a0b78-121">Godkända värden är: **ErrorsOnly**, **ErrorsAndWarning**och **ErrorsAndWarningAndInformation**.</span><span class="sxs-lookup"><span data-stu-id="a0b78-121">The accepted values are: **ErrorsOnly**, **ErrorsAndWarning**, and **ErrorsAndWarningAndInformation**.</span></span> |
+|<span data-ttu-id="a0b78-122">LogPath</span><span class="sxs-lookup"><span data-stu-id="a0b78-122">LogPath</span></span> |<span data-ttu-id="a0b78-123">Sökvägen till logg filen där du vill att resurs leverantören ska logga åtgärden.</span><span class="sxs-lookup"><span data-stu-id="a0b78-123">The path to a log file where you want the resource provider to log the operation.</span></span> |
+
+## <a name="common-properties"></a><span data-ttu-id="a0b78-124">Gemensamma egenskaper</span><span class="sxs-lookup"><span data-stu-id="a0b78-124">Common properties</span></span>
+
+|<span data-ttu-id="a0b78-125">Egenskap</span><span class="sxs-lookup"><span data-stu-id="a0b78-125">Property</span></span> |<span data-ttu-id="a0b78-126">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="a0b78-126">Description</span></span> |
+|---|---|
+|<span data-ttu-id="a0b78-127">DependsOn</span><span class="sxs-lookup"><span data-stu-id="a0b78-127">DependsOn</span></span> |<span data-ttu-id="a0b78-128">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS.</span><span class="sxs-lookup"><span data-stu-id="a0b78-128">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="a0b78-129">Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen.</span><span class="sxs-lookup"><span data-stu-id="a0b78-129">For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span> |
+|<span data-ttu-id="a0b78-130">Kontrol</span><span class="sxs-lookup"><span data-stu-id="a0b78-130">Ensure</span></span> |<span data-ttu-id="a0b78-131">Anger om funktionen är aktive rad.</span><span class="sxs-lookup"><span data-stu-id="a0b78-131">Specifies whether the feature is enabled.</span></span> <span data-ttu-id="a0b78-132">För att se till att funktionen är aktive rad ställer du in den här egenskapen på _Aktivera_.</span><span class="sxs-lookup"><span data-stu-id="a0b78-132">To ensure that the feature is enabled, set this property to _Enable_.</span></span> <span data-ttu-id="a0b78-133">För att se till att funktionen är inaktive rad ställer du in egenskapen på _inaktivera_.</span><span class="sxs-lookup"><span data-stu-id="a0b78-133">To ensure that the feature is disabled, set the property to _Disable_.</span></span> <span data-ttu-id="a0b78-134">Standardvärdet är _Enable_.</span><span class="sxs-lookup"><span data-stu-id="a0b78-134">The default value is _Enable_.</span></span> |
+|<span data-ttu-id="a0b78-135">PsDscRunAsCredential</span><span class="sxs-lookup"><span data-stu-id="a0b78-135">PsDscRunAsCredential</span></span> |<span data-ttu-id="a0b78-136">Anger autentiseringsuppgifter för att köra hela resursen som.</span><span class="sxs-lookup"><span data-stu-id="a0b78-136">Sets the credential for running the entire resource as.</span></span> |
+
+> [!NOTE]
+> <span data-ttu-id="a0b78-137">Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter.</span><span class="sxs-lookup"><span data-stu-id="a0b78-137">The **PsDscRunAsCredential** common property was added in WMF 5.0 to allow running any DSC resource in the context of other credentials.</span></span> <span data-ttu-id="a0b78-138">Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).</span><span class="sxs-lookup"><span data-stu-id="a0b78-138">For more information, see [Use Credentials with DSC Resources](../../../configurations/runasuser.md).</span></span>

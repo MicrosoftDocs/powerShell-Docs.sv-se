@@ -1,48 +1,59 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
-title: DSC-WindowsFeature-resurs
-ms.openlocfilehash: 7a57f4b2797ab3bb202aea8b2543d1e3f14074e9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
+title: DSC WindowsFeature-resurs
+ms.openlocfilehash: d3384b1f45324df6b6b209f25b64d9d77615ad7f
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076709"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323812"
 ---
-# <a name="dsc-windowsfeature-resource"></a><span data-ttu-id="6440a-103">DSC-WindowsFeature-resurs</span><span class="sxs-lookup"><span data-stu-id="6440a-103">DSC WindowsFeature Resource</span></span>
+# <a name="dsc-windowsfeature-resource"></a><span data-ttu-id="0b052-103">DSC WindowsFeature-resurs</span><span class="sxs-lookup"><span data-stu-id="0b052-103">DSC WindowsFeature Resource</span></span>
 
-> <span data-ttu-id="6440a-104">Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="6440a-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="0b052-104">Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x</span><span class="sxs-lookup"><span data-stu-id="0b052-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.x</span></span>
 
-<span data-ttu-id="6440a-105">Den **WindowsFeature** resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att säkerställa att roller och funktioner läggs till eller tas bort på målnoden.</span><span class="sxs-lookup"><span data-stu-id="6440a-105">The **WindowsFeature** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to ensure that roles and features are added or removed on a target node.</span></span>
+<span data-ttu-id="0b052-105">**WindowsFeature** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att se till att roller och funktioner läggs till eller tas bort på en målnod.</span><span class="sxs-lookup"><span data-stu-id="0b052-105">The **WindowsFeature** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to ensure that roles and features are added or removed on a target node.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="6440a-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="6440a-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="0b052-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="0b052-106">Syntax</span></span>
 
-```
+```Syntax
 WindowsFeature [string] #ResourceName
 {
     Name = [string]
     [ Credential = [PSCredential] ]
-    [ Ensure = [string] { Absent | Present }  ]
     [ IncludeAllSubFeature = [bool] ]
     [ LogPath = [string] ]
-    [ DependsOn = [string[]] ]
     [ Source = [string] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Absent | Present }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="6440a-107">Egenskaper</span><span class="sxs-lookup"><span data-stu-id="6440a-107">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="0b052-107">properties</span><span class="sxs-lookup"><span data-stu-id="0b052-107">Properties</span></span>
 
-|  <span data-ttu-id="6440a-108">Egenskap</span><span class="sxs-lookup"><span data-stu-id="6440a-108">Property</span></span>  |  <span data-ttu-id="6440a-109">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="6440a-109">Description</span></span>   |
+|<span data-ttu-id="0b052-108">Egenskap</span><span class="sxs-lookup"><span data-stu-id="0b052-108">Property</span></span> |<span data-ttu-id="0b052-109">Description</span><span class="sxs-lookup"><span data-stu-id="0b052-109">Description</span></span> |
 |---|---|
-| <span data-ttu-id="6440a-110">Namn</span><span class="sxs-lookup"><span data-stu-id="6440a-110">Name</span></span>| <span data-ttu-id="6440a-111">Anger namnet på rollen eller funktionen som du vill kontrollera läggs till eller tas bort.</span><span class="sxs-lookup"><span data-stu-id="6440a-111">Indicates the name of the role or feature that you want to ensure is added or removed.</span></span> <span data-ttu-id="6440a-112">Det här är samma som den __namn__ egenskap från den [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) cmdlet, och inte visningsnamnet för rollen eller funktionen.</span><span class="sxs-lookup"><span data-stu-id="6440a-112">This is the same as the __Name__ property from the [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) cmdlet, and not the display name of the role or feature.</span></span>|
-| <span data-ttu-id="6440a-113">Autentiseringsuppgifter</span><span class="sxs-lookup"><span data-stu-id="6440a-113">Credential</span></span>| <span data-ttu-id="6440a-114">Anger autentiseringsuppgifterna som används för att lägga till eller ta bort roll eller funktion.</span><span class="sxs-lookup"><span data-stu-id="6440a-114">Indicates the credentials to use to add or remove the role or feature.</span></span>|
-| <span data-ttu-id="6440a-115">Se till att</span><span class="sxs-lookup"><span data-stu-id="6440a-115">Ensure</span></span>| <span data-ttu-id="6440a-116">Anger om rollen eller funktionen läggs till.</span><span class="sxs-lookup"><span data-stu-id="6440a-116">Indicates if the role or feature is added.</span></span> <span data-ttu-id="6440a-117">Om du vill se till att rollen eller funktionen är har lagts till, ange den här egenskapen ”aktuella” för att se till att rollen eller funktionen tas bort, egenskapen till ””.</span><span class="sxs-lookup"><span data-stu-id="6440a-117">To ensure that the role or feature is added, set this property to "Present" To ensure that the role or feature is removed, set the property to "Absent".</span></span>|
-| <span data-ttu-id="6440a-118">IncludeAllSubFeature</span><span class="sxs-lookup"><span data-stu-id="6440a-118">IncludeAllSubFeature</span></span>| <span data-ttu-id="6440a-119">Den här egenskapen __$true__ att säkerställa att tillståndet för alla obligatoriska underfunktioner med tillståndet för funktionen som du anger med den __namn__ egenskapen.</span><span class="sxs-lookup"><span data-stu-id="6440a-119">Set this property to __$true__ to ensure the state of all required subfeatures with the state of the feature you specify with the __Name__ property.</span></span>|
-| <span data-ttu-id="6440a-120">LogPath</span><span class="sxs-lookup"><span data-stu-id="6440a-120">LogPath</span></span>| <span data-ttu-id="6440a-121">Anger sökvägen till en loggfil där du vill att resursprovidern att logga in igen.</span><span class="sxs-lookup"><span data-stu-id="6440a-121">Indicates the path to a log file where you want the resource provider to log the operation.</span></span>|
-| <span data-ttu-id="6440a-122">DependsOn</span><span class="sxs-lookup"><span data-stu-id="6440a-122">DependsOn</span></span>| <span data-ttu-id="6440a-123">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats.</span><span class="sxs-lookup"><span data-stu-id="6440a-123">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="6440a-124">Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är __ResourceName__ och är av typen __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="6440a-124">For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
-| <span data-ttu-id="6440a-125">Källa</span><span class="sxs-lookup"><span data-stu-id="6440a-125">Source</span></span>| <span data-ttu-id="6440a-126">Anger platsen för källfilen för installationen, om det behövs.</span><span class="sxs-lookup"><span data-stu-id="6440a-126">Indicates the location of the source file to use for installation, if necessary.</span></span>|
+|<span data-ttu-id="0b052-110">Name</span><span class="sxs-lookup"><span data-stu-id="0b052-110">Name</span></span> |<span data-ttu-id="0b052-111">Anger namnet på den roll eller funktion som du vill se till att den läggs till eller tas bort.</span><span class="sxs-lookup"><span data-stu-id="0b052-111">Indicates the name of the role or feature that you want to ensure is added or removed.</span></span> <span data-ttu-id="0b052-112">Detta är samma som egenskapen **Name** från cmdleten [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) och inte visnings namnet för rollen eller funktionen.</span><span class="sxs-lookup"><span data-stu-id="0b052-112">This is the same as the **Name** property from the [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) cmdlet, and not the display name of the role or feature.</span></span> |
+|<span data-ttu-id="0b052-113">Certifiering</span><span class="sxs-lookup"><span data-stu-id="0b052-113">Credential</span></span> |<span data-ttu-id="0b052-114">Anger de autentiseringsuppgifter som ska användas för att lägga till eller ta bort rollen eller funktionen.</span><span class="sxs-lookup"><span data-stu-id="0b052-114">Indicates the credentials to use to add or remove the role or feature.</span></span> |
+|<span data-ttu-id="0b052-115">IncludeAllSubFeature</span><span class="sxs-lookup"><span data-stu-id="0b052-115">IncludeAllSubFeature</span></span> |<span data-ttu-id="0b052-116">Ange den här egenskapen `$true` till för att se till att alla nödvändiga underfunktioner har statusen för den funktion som du anger med egenskapen **Name** .</span><span class="sxs-lookup"><span data-stu-id="0b052-116">Set this property to `$true` to ensure the state of all required subfeatures with the state of the feature you specify with the **Name** property.</span></span> |
+|<span data-ttu-id="0b052-117">LogPath</span><span class="sxs-lookup"><span data-stu-id="0b052-117">LogPath</span></span> |<span data-ttu-id="0b052-118">Anger sökvägen till en loggfil där du vill att resurs leverantören ska logga åtgärden.</span><span class="sxs-lookup"><span data-stu-id="0b052-118">Indicates the path to a log file where you want the resource provider to log the operation.</span></span> |
+|<span data-ttu-id="0b052-119">Source</span><span class="sxs-lookup"><span data-stu-id="0b052-119">Source</span></span> |<span data-ttu-id="0b052-120">Anger platsen för den käll fil som ska användas för installation, om det behövs.</span><span class="sxs-lookup"><span data-stu-id="0b052-120">Indicates the location of the source file to use for installation, if necessary.</span></span> |
 
-## <a name="example"></a><span data-ttu-id="6440a-127">Exempel</span><span class="sxs-lookup"><span data-stu-id="6440a-127">Example</span></span>
+## <a name="common-properties"></a><span data-ttu-id="0b052-121">Gemensamma egenskaper</span><span class="sxs-lookup"><span data-stu-id="0b052-121">Common properties</span></span>
+
+|<span data-ttu-id="0b052-122">Egenskap</span><span class="sxs-lookup"><span data-stu-id="0b052-122">Property</span></span> |<span data-ttu-id="0b052-123">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="0b052-123">Description</span></span> |
+|---|---|
+|<span data-ttu-id="0b052-124">DependsOn</span><span class="sxs-lookup"><span data-stu-id="0b052-124">DependsOn</span></span> |<span data-ttu-id="0b052-125">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS.</span><span class="sxs-lookup"><span data-stu-id="0b052-125">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="0b052-126">Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen.</span><span class="sxs-lookup"><span data-stu-id="0b052-126">For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span> |
+|<span data-ttu-id="0b052-127">Kontrol</span><span class="sxs-lookup"><span data-stu-id="0b052-127">Ensure</span></span> |<span data-ttu-id="0b052-128">Anger om rollen eller funktionen har lagts till.</span><span class="sxs-lookup"><span data-stu-id="0b052-128">Indicates if the role or feature is added.</span></span> <span data-ttu-id="0b052-129">Om du vill se till att rollen eller funktionen har lagts till ställer du in den här egenskapen som **tillgänglig**.</span><span class="sxs-lookup"><span data-stu-id="0b052-129">To ensure that the role or feature is added, set this property to **Present**.</span></span> <span data-ttu-id="0b052-130">För att säkerställa att rollen eller funktionen tas bort ställer du in egenskapen på **saknas**.</span><span class="sxs-lookup"><span data-stu-id="0b052-130">To ensure that the role or feature is removed, set the property to **Absent**.</span></span> <span data-ttu-id="0b052-131">Standardvärdet finns **.**</span><span class="sxs-lookup"><span data-stu-id="0b052-131">The default value is **Present**.</span></span> |
+|<span data-ttu-id="0b052-132">PsDscRunAsCredential</span><span class="sxs-lookup"><span data-stu-id="0b052-132">PsDscRunAsCredential</span></span> |<span data-ttu-id="0b052-133">Anger autentiseringsuppgifter för att köra hela resursen som.</span><span class="sxs-lookup"><span data-stu-id="0b052-133">Sets the credential for running the entire resource as.</span></span> |
+
+> [!NOTE]
+> <span data-ttu-id="0b052-134">Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter.</span><span class="sxs-lookup"><span data-stu-id="0b052-134">The **PsDscRunAsCredential** common property was added in WMF 5.0 to allow running any DSC resource in the context of other credentials.</span></span> <span data-ttu-id="0b052-135">Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).</span><span class="sxs-lookup"><span data-stu-id="0b052-135">For more information, see [Use Credentials with DSC Resources](../../../configurations/runasuser.md).</span></span>
+
+## <a name="example"></a><span data-ttu-id="0b052-136">Exempel</span><span class="sxs-lookup"><span data-stu-id="0b052-136">Example</span></span>
+
 ```powershell
 WindowsFeature RoleExample
 {

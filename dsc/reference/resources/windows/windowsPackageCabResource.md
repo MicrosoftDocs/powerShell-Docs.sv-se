@@ -1,48 +1,54 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
 title: DSC WindowsPackageCab-resurs
-ms.openlocfilehash: 035944e7ca5c7469250c48a19b79f2f2d5d38e9a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: ec465b2c3b1d180ba46ee24a61f2be1129148962
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076947"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323824"
 ---
-# <a name="dsc-windowspackagecab-resource"></a><span data-ttu-id="f1327-103">DSC WindowsPackageCab-resurs</span><span class="sxs-lookup"><span data-stu-id="f1327-103">DSC WindowsPackageCab Resource</span></span>
+# <a name="dsc-windowspackagecab-resource"></a><span data-ttu-id="0d763-103">DSC WindowsPackageCab-resurs</span><span class="sxs-lookup"><span data-stu-id="0d763-103">DSC WindowsPackageCab Resource</span></span>
 
-> <span data-ttu-id="f1327-104">Gäller för: Windows PowerShell 5.1 och senare</span><span class="sxs-lookup"><span data-stu-id="f1327-104">Applies To: Windows PowerShell 5.1 and later</span></span>
+> <span data-ttu-id="0d763-104">Gäller för: Windows PowerShell 5,1</span><span class="sxs-lookup"><span data-stu-id="0d763-104">Applies To: Windows PowerShell 5.1</span></span>
 
-<span data-ttu-id="f1327-105">Den **WindowsPackageCab** resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att installera eller avinstallera Windows CAB-paket på målnoden.</span><span class="sxs-lookup"><span data-stu-id="f1327-105">The **WindowsPackageCab** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to install or uninstall Windows cabinet (.cab) packages on a target node.</span></span>
+<span data-ttu-id="0d763-105">**WindowsPackageCab** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att installera eller avinstallera Windows kabinett paket (. cab) på en målnod.</span><span class="sxs-lookup"><span data-stu-id="0d763-105">The **WindowsPackageCab** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to install or uninstall Windows cabinet (.cab) packages on a target node.</span></span>
 
-<span data-ttu-id="f1327-106">Målnoden måste ha installerat DISM PowerShell-modulen.</span><span class="sxs-lookup"><span data-stu-id="f1327-106">The target node must have the DISM PowerShell module installed.</span></span> <span data-ttu-id="f1327-107">Mer information finns i [Använd DISM i Windows PowerShell](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14).</span><span class="sxs-lookup"><span data-stu-id="f1327-107">For information, see [Use DISM in Windows PowerShell](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14).</span></span>
+<span data-ttu-id="0d763-106">Målnod måste ha DISM PowerShell-modulen installerad.</span><span class="sxs-lookup"><span data-stu-id="0d763-106">The target node must have the DISM PowerShell module installed.</span></span> <span data-ttu-id="0d763-107">Mer information finns i [använda DISM i Windows PowerShell](/windows-hardware/manufacture/desktop/use-dism-in-windows-powershell-s14).</span><span class="sxs-lookup"><span data-stu-id="0d763-107">For information, see [Use DISM in Windows PowerShell](/windows-hardware/manufacture/desktop/use-dism-in-windows-powershell-s14).</span></span>
 
+## <a name="syntax"></a><span data-ttu-id="0d763-108">Syntax</span><span class="sxs-lookup"><span data-stu-id="0d763-108">Syntax</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="f1327-108">Syntax</span><span class="sxs-lookup"><span data-stu-id="f1327-108">Syntax</span></span>
-
-```
+```Syntax
 {
     Name = [string]
-    Ensure = [string] { Absent | Present }
     SourcePath = [string]
     [ LogPath = [string] ]
     [ DependsOn = [string[]] ]
+    Ensure = [string] { Absent | Present }
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="f1327-109">Egenskaper</span><span class="sxs-lookup"><span data-stu-id="f1327-109">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="0d763-109">properties</span><span class="sxs-lookup"><span data-stu-id="0d763-109">Properties</span></span>
 
-|  <span data-ttu-id="f1327-110">Egenskap</span><span class="sxs-lookup"><span data-stu-id="f1327-110">Property</span></span>  |  <span data-ttu-id="f1327-111">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="f1327-111">Description</span></span>   |
+|<span data-ttu-id="0d763-110">Egenskap</span><span class="sxs-lookup"><span data-stu-id="0d763-110">Property</span></span> |<span data-ttu-id="0d763-111">Description</span><span class="sxs-lookup"><span data-stu-id="0d763-111">Description</span></span> |
 |---|---|
-| <span data-ttu-id="f1327-112">Namn</span><span class="sxs-lookup"><span data-stu-id="f1327-112">Name</span></span>| <span data-ttu-id="f1327-113">Anger namnet på paketet för du vill se till att ett visst tillstånd.</span><span class="sxs-lookup"><span data-stu-id="f1327-113">Indicates the name of the package for you want to ensure a specific state.</span></span>|
-| <span data-ttu-id="f1327-114">Se till att</span><span class="sxs-lookup"><span data-stu-id="f1327-114">Ensure</span></span>| <span data-ttu-id="f1327-115">Anger om paketet har installerats.</span><span class="sxs-lookup"><span data-stu-id="f1327-115">Indicates if the package is installed.</span></span> <span data-ttu-id="f1327-116">Ange den här egenskapen till ”inte” för att kontrollera att paketet inte har installerats (eller avinstallera paketet om det är installerat).</span><span class="sxs-lookup"><span data-stu-id="f1327-116">Set this property to "Absent" to ensure the package is not installed (or uninstall the package if it is installed).</span></span> <span data-ttu-id="f1327-117">Ange den till ”Visa” (standardvärdet) för att säkerställa att paketet har installerats.</span><span class="sxs-lookup"><span data-stu-id="f1327-117">Set it to "Present" (the default value) to ensure the package is installed.</span></span>|
-| <span data-ttu-id="f1327-118">Sökväg</span><span class="sxs-lookup"><span data-stu-id="f1327-118">Path</span></span>| <span data-ttu-id="f1327-119">Anger sökvägen där paketet finns.</span><span class="sxs-lookup"><span data-stu-id="f1327-119">Indicates the path where the package resides.</span></span>|
-| <span data-ttu-id="f1327-120">LogPath</span><span class="sxs-lookup"><span data-stu-id="f1327-120">LogPath</span></span>| <span data-ttu-id="f1327-121">Anger den fullständiga sökvägen där du vill att providern ska spara en loggfil för att installera eller avinstallera paketet.</span><span class="sxs-lookup"><span data-stu-id="f1327-121">Indicates the full path where you want the provider to save a log file to install or uninstall the package.</span></span>|
-| <span data-ttu-id="f1327-122">DependsOn</span><span class="sxs-lookup"><span data-stu-id="f1327-122">DependsOn</span></span> | <span data-ttu-id="f1327-123">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats.</span><span class="sxs-lookup"><span data-stu-id="f1327-123">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="f1327-124">Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för den här egenskapen är ”DependsOn =” [ ResourceType] ResourceName ”''.</span><span class="sxs-lookup"><span data-stu-id="f1327-124">For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is \`DependsOn = "[ResourceType]ResourceName"\`\`.</span></span>|
+|<span data-ttu-id="0d763-112">Name</span><span class="sxs-lookup"><span data-stu-id="0d763-112">Name</span></span> |<span data-ttu-id="0d763-113">Anger namnet på det paket som du vill säkerställa ett speciellt tillstånd för.</span><span class="sxs-lookup"><span data-stu-id="0d763-113">Indicates the name of the package for you want to ensure a specific state.</span></span> |
+|<span data-ttu-id="0d763-114">Sök</span><span class="sxs-lookup"><span data-stu-id="0d763-114">SourcePath</span></span> |<span data-ttu-id="0d763-115">Anger sökvägen dit paketet finns.</span><span class="sxs-lookup"><span data-stu-id="0d763-115">Indicates the path where the package resides.</span></span> |
+|<span data-ttu-id="0d763-116">LogPath</span><span class="sxs-lookup"><span data-stu-id="0d763-116">LogPath</span></span> |<span data-ttu-id="0d763-117">Anger den fullständiga sökvägen dit du vill att providern ska spara en loggfil för att installera eller avinstallera paketet.</span><span class="sxs-lookup"><span data-stu-id="0d763-117">Indicates the full path where you want the provider to save a log file to install or uninstall the package.</span></span> |
 
-## <a name="example"></a><span data-ttu-id="f1327-125">Exempel</span><span class="sxs-lookup"><span data-stu-id="f1327-125">Example</span></span>
+## <a name="common-properties"></a><span data-ttu-id="0d763-118">Gemensamma egenskaper</span><span class="sxs-lookup"><span data-stu-id="0d763-118">Common properties</span></span>
 
-<span data-ttu-id="f1327-126">Följande exempelkonfiguration tar indataparametrar och säkerställer att CAB-filen som anges av den `$Name` parametern är installerad.</span><span class="sxs-lookup"><span data-stu-id="f1327-126">The following example configuration takes input parameters, and ensures that the .cab file specified by the `$Name` parameter is installed.</span></span>
+|<span data-ttu-id="0d763-119">Egenskap</span><span class="sxs-lookup"><span data-stu-id="0d763-119">Property</span></span> |<span data-ttu-id="0d763-120">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="0d763-120">Description</span></span> |
+|---|---|
+|<span data-ttu-id="0d763-121">DependsOn</span><span class="sxs-lookup"><span data-stu-id="0d763-121">DependsOn</span></span> |<span data-ttu-id="0d763-122">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS.</span><span class="sxs-lookup"><span data-stu-id="0d763-122">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="0d763-123">Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen.</span><span class="sxs-lookup"><span data-stu-id="0d763-123">For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span> |
+|<span data-ttu-id="0d763-124">Kontrol</span><span class="sxs-lookup"><span data-stu-id="0d763-124">Ensure</span></span> |<span data-ttu-id="0d763-125">Anger om paketet är installerat.</span><span class="sxs-lookup"><span data-stu-id="0d763-125">Indicates if the package is installed.</span></span> <span data-ttu-id="0d763-126">Ange den här egenskapen som **saknas** för att se till att paketet inte är installerat (eller avinstallera paketet om det är installerat).</span><span class="sxs-lookup"><span data-stu-id="0d763-126">Set this property to **Absent** to ensure the package is not installed (or uninstall the package if it is installed).</span></span> <span data-ttu-id="0d763-127">Ange att det är **tillgängligt** för att se till att paketet är installerat.</span><span class="sxs-lookup"><span data-stu-id="0d763-127">Set it to **Present** to ensure the package is installed.</span></span> <span data-ttu-id="0d763-128">**Se till att** det finns en obligatorisk egenskap för **WindowsPackageCab** -resursen.</span><span class="sxs-lookup"><span data-stu-id="0d763-128">**Ensure** is a required property on the **WindowsPackageCab** resource.</span></span> |
+|<span data-ttu-id="0d763-129">PsDscRunAsCredential</span><span class="sxs-lookup"><span data-stu-id="0d763-129">PsDscRunAsCredential</span></span> |<span data-ttu-id="0d763-130">Anger autentiseringsuppgifter för att köra hela resursen som.</span><span class="sxs-lookup"><span data-stu-id="0d763-130">Sets the credential for running the entire resource as.</span></span> |
+
+## <a name="example"></a><span data-ttu-id="0d763-131">Exempel</span><span class="sxs-lookup"><span data-stu-id="0d763-131">Example</span></span>
+
+<span data-ttu-id="0d763-132">Följande exempel konfiguration använder indataparametrar och säkerställer att CAB-filen som anges av `$Name` parametern är installerad.</span><span class="sxs-lookup"><span data-stu-id="0d763-132">The following example configuration takes input parameters, and ensures that the .cab file specified by the `$Name` parameter is installed.</span></span>
 
 ```powershell
 Configuration Sample_WindowsPackageCab

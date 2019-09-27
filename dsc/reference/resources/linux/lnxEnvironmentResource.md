@@ -1,59 +1,63 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxEnvironment-resurs
-ms.openlocfilehash: 763ec560faa6adaf42aef3c21c9045be95f780bc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 55c1b2402e23c1042ed48b40c1084aa63c515b36
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078018"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324829"
 ---
-# <a name="dsc-for-linux-nxenvironment-resource"></a><span data-ttu-id="30b97-103">DSC för Linux nxEnvironment-resurs</span><span class="sxs-lookup"><span data-stu-id="30b97-103">DSC for Linux nxEnvironment Resource</span></span>
+# <a name="dsc-for-linux-nxenvironment-resource"></a><span data-ttu-id="b8b55-103">DSC för Linux nxEnvironment-resurs</span><span class="sxs-lookup"><span data-stu-id="b8b55-103">DSC for Linux nxEnvironment Resource</span></span>
 
-<span data-ttu-id="30b97-104">Den **nxEnvironment** resursen i PowerShell Desired State Configuration (DSC) ger dig möjlighet att hantera systemmiljövariabler på en Linux-nod.</span><span class="sxs-lookup"><span data-stu-id="30b97-104">The **nxEnvironment** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage system environment variables on a Linux node.</span></span>
+<span data-ttu-id="b8b55-104">**NxEnvironment** -resursen i PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera systemmiljövariabler på en Linux-nod.</span><span class="sxs-lookup"><span data-stu-id="b8b55-104">The **nxEnvironment** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage system environment variables on a Linux node.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="30b97-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="30b97-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="b8b55-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="b8b55-105">Syntax</span></span>
 
-```
+```Syntax
 nxEnvironment <string> #ResourceName
 {
     Name = <string>
     [ Value = <string>
-    [ Ensure = <string> { Absent | Present }  ]
     [ Path = <bool> }
     [ DependsOn = <string[]> ]
-
+    [ Ensure = <string> { Absent | Present }  ]
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="30b97-106">Egenskaper</span><span class="sxs-lookup"><span data-stu-id="30b97-106">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="b8b55-106">properties</span><span class="sxs-lookup"><span data-stu-id="b8b55-106">Properties</span></span>
 
-|  <span data-ttu-id="30b97-107">Egenskap</span><span class="sxs-lookup"><span data-stu-id="30b97-107">Property</span></span> |  <span data-ttu-id="30b97-108">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="30b97-108">Description</span></span> |
+|<span data-ttu-id="b8b55-107">Egenskap</span><span class="sxs-lookup"><span data-stu-id="b8b55-107">Property</span></span> |<span data-ttu-id="b8b55-108">Description</span><span class="sxs-lookup"><span data-stu-id="b8b55-108">Description</span></span> |
 |---|---|
-| <span data-ttu-id="30b97-109">Namn</span><span class="sxs-lookup"><span data-stu-id="30b97-109">Name</span></span>| <span data-ttu-id="30b97-110">Anger namnet på den miljövariabel som du vill se till att ett visst tillstånd.</span><span class="sxs-lookup"><span data-stu-id="30b97-110">Indicates the name of the environment variable for which you want to ensure a specific state.</span></span>|
-| <span data-ttu-id="30b97-111">Värde</span><span class="sxs-lookup"><span data-stu-id="30b97-111">Value</span></span>| <span data-ttu-id="30b97-112">Värdet som tilldelas miljövariabeln.</span><span class="sxs-lookup"><span data-stu-id="30b97-112">The value to assign to the environment variable.</span></span>|
-| <span data-ttu-id="30b97-113">Se till att</span><span class="sxs-lookup"><span data-stu-id="30b97-113">Ensure</span></span>| <span data-ttu-id="30b97-114">Anger om du vill kontrollera om variabeln.</span><span class="sxs-lookup"><span data-stu-id="30b97-114">Determines whether to check if the variable exists.</span></span> <span data-ttu-id="30b97-115">Ange egenskapen ”aktuella” så variabeln finns.</span><span class="sxs-lookup"><span data-stu-id="30b97-115">Set this property to "Present" to ensure the variable exists.</span></span> <span data-ttu-id="30b97-116">Ange den till ”” så variabeln inte finns.</span><span class="sxs-lookup"><span data-stu-id="30b97-116">Set it to "Absent" to ensure the variable does not exist.</span></span> <span data-ttu-id="30b97-117">Standardvärdet är ”tillgänglig”.</span><span class="sxs-lookup"><span data-stu-id="30b97-117">The default value is "Present".</span></span>|
-| <span data-ttu-id="30b97-118">Sökväg</span><span class="sxs-lookup"><span data-stu-id="30b97-118">Path</span></span>| <span data-ttu-id="30b97-119">Definierar miljövariabeln som konfigureras.</span><span class="sxs-lookup"><span data-stu-id="30b97-119">Defines the environment variable that is being configured.</span></span> <span data-ttu-id="30b97-120">Den här egenskapen **$true** om variabeln är den **sökväg** variabeln, i annat fall väljer **$false**.</span><span class="sxs-lookup"><span data-stu-id="30b97-120">Set this property to **$true** if the variable is the **Path** variable; otherwise, set it to **$false**.</span></span> <span data-ttu-id="30b97-121">Standardvärdet är **$false**.</span><span class="sxs-lookup"><span data-stu-id="30b97-121">The default is **$false**.</span></span> <span data-ttu-id="30b97-122">Om variabeln som konfigureras är den **sökväg** variabeln, värdet tillhandahålls via de **värdet** egenskapen kommer att läggas till det befintliga värdet.</span><span class="sxs-lookup"><span data-stu-id="30b97-122">If the variable being configured is the **Path** variable, the value provided through the **Value** property will be appended to the existing value.</span></span>|
-| <span data-ttu-id="30b97-123">DependsOn</span><span class="sxs-lookup"><span data-stu-id="30b97-123">DependsOn</span></span> | <span data-ttu-id="30b97-124">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats.</span><span class="sxs-lookup"><span data-stu-id="30b97-124">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="30b97-125">Till exempel om den **ID** för resursen configuration-skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="30b97-125">For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
+|<span data-ttu-id="b8b55-109">Name</span><span class="sxs-lookup"><span data-stu-id="b8b55-109">Name</span></span> |<span data-ttu-id="b8b55-110">Anger namnet på den miljö variabel som du vill säkerställa ett speciellt tillstånd för.</span><span class="sxs-lookup"><span data-stu-id="b8b55-110">Indicates the name of the environment variable for which you want to ensure a specific state.</span></span> |
+|<span data-ttu-id="b8b55-111">Value</span><span class="sxs-lookup"><span data-stu-id="b8b55-111">Value</span></span> |<span data-ttu-id="b8b55-112">Värdet som ska tilldelas miljövariabeln.</span><span class="sxs-lookup"><span data-stu-id="b8b55-112">The value to assign to the environment variable.</span></span> |
+|<span data-ttu-id="b8b55-113">`Path`</span><span class="sxs-lookup"><span data-stu-id="b8b55-113">Path</span></span> |<span data-ttu-id="b8b55-114">Definierar den miljö variabel som konfigureras.</span><span class="sxs-lookup"><span data-stu-id="b8b55-114">Defines the environment variable that is being configured.</span></span> <span data-ttu-id="b8b55-115">Ange den här egenskapen `$true` till om variabeln är **sökvägsvariabeln** . annars anger du den som `$false`.</span><span class="sxs-lookup"><span data-stu-id="b8b55-115">Set this property to `$true` if the variable is the **Path** variable; otherwise, set it to `$false`.</span></span> <span data-ttu-id="b8b55-116">Standardvärdet är `$false`.</span><span class="sxs-lookup"><span data-stu-id="b8b55-116">The default is `$false`.</span></span> <span data-ttu-id="b8b55-117">Om variabeln som konfigureras är **sökvägsvariabeln,** läggs värdet som anges via egenskapen **Value** till i det befintliga värdet.</span><span class="sxs-lookup"><span data-stu-id="b8b55-117">If the variable being configured is the **Path** variable, the value provided through the **Value** property will be appended to the existing value.</span></span> |
 
-## <a name="additional-information"></a><span data-ttu-id="30b97-126">Ytterligare information</span><span class="sxs-lookup"><span data-stu-id="30b97-126">Additional Information</span></span>
+## <a name="common-properties"></a><span data-ttu-id="b8b55-118">Gemensamma egenskaper</span><span class="sxs-lookup"><span data-stu-id="b8b55-118">Common properties</span></span>
 
-* <span data-ttu-id="30b97-127">Om **sökväg** saknas eller är inställd på **$false**, miljövariabler hanteras i `/etc/environment`.</span><span class="sxs-lookup"><span data-stu-id="30b97-127">If **Path** is absent or set to **$false**, environment variables are managed in `/etc/environment`.</span></span> <span data-ttu-id="30b97-128">Ditt program eller skript som kan kräva konfiguration källa den `/etc/environment` filen för att komma åt de hanterade miljövariablerna.</span><span class="sxs-lookup"><span data-stu-id="30b97-128">Your programs or scripts may require configuration to source the `/etc/environment` file to access the managed environment variables.</span></span>
-* <span data-ttu-id="30b97-129">Om **sökväg** är inställd på **$true**, miljövariabeln hanteras i filen `/etc/profile.d/DSCenvironment.sh`.</span><span class="sxs-lookup"><span data-stu-id="30b97-129">If **Path** is set to **$true**, the environment variable is managed in the file `/etc/profile.d/DSCenvironment.sh`.</span></span> <span data-ttu-id="30b97-130">Den här filen kommer att skapas om det inte finns.</span><span class="sxs-lookup"><span data-stu-id="30b97-130">This file will be created if it does not exist.</span></span> <span data-ttu-id="30b97-131">Om **Kontrollera** anges till ”saknas” och **sökväg** är inställd på **$true**, en befintlig miljövariabel endast tas bort från `/etc/profile.d/DSCenvironment.sh` och inte från andra filer.</span><span class="sxs-lookup"><span data-stu-id="30b97-131">If **Ensure** is set to "Absent" and **Path** is set to **$true**, an existing environment variable will only be removed from `/etc/profile.d/DSCenvironment.sh` and not from other files.</span></span>
+|<span data-ttu-id="b8b55-119">Egenskap</span><span class="sxs-lookup"><span data-stu-id="b8b55-119">Property</span></span> |<span data-ttu-id="b8b55-120">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="b8b55-120">Description</span></span> |
+|---|---|
+|<span data-ttu-id="b8b55-121">DependsOn</span><span class="sxs-lookup"><span data-stu-id="b8b55-121">DependsOn</span></span> |<span data-ttu-id="b8b55-122">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS.</span><span class="sxs-lookup"><span data-stu-id="b8b55-122">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="b8b55-123">Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen.</span><span class="sxs-lookup"><span data-stu-id="b8b55-123">For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span> |
+|<span data-ttu-id="b8b55-124">Kontrol</span><span class="sxs-lookup"><span data-stu-id="b8b55-124">Ensure</span></span> |<span data-ttu-id="b8b55-125">Anger om variabeln finns eller inte.</span><span class="sxs-lookup"><span data-stu-id="b8b55-125">Determines whether to check if the variable exists.</span></span> <span data-ttu-id="b8b55-126">Ange att den här egenskapen ska **användas** för att se till att variabeln finns.</span><span class="sxs-lookup"><span data-stu-id="b8b55-126">Set this property to **Present** to ensure the variable exists.</span></span> <span data-ttu-id="b8b55-127">Ange det som **frånvarande** för att se till att variabeln inte finns.</span><span class="sxs-lookup"><span data-stu-id="b8b55-127">Set it to **Absent** to ensure the variable does not exist.</span></span> <span data-ttu-id="b8b55-128">Standardvärdet finns **.**</span><span class="sxs-lookup"><span data-stu-id="b8b55-128">The default value is **Present**.</span></span> |
 
-## <a name="example"></a><span data-ttu-id="30b97-132">Exempel</span><span class="sxs-lookup"><span data-stu-id="30b97-132">Example</span></span>
+## <a name="additional-information"></a><span data-ttu-id="b8b55-129">Ytterligare information</span><span class="sxs-lookup"><span data-stu-id="b8b55-129">Additional Information</span></span>
 
-<span data-ttu-id="30b97-133">I följande exempel visas hur du använder den **nxEnvironment** resursen för att se till att **TestEnvironmentVariable** finns och har värdet ”Test-Value”.</span><span class="sxs-lookup"><span data-stu-id="30b97-133">The following example shows how to use the **nxEnvironment** resource to ensure that **TestEnvironmentVariable** is present and has the value "Test-Value".</span></span> <span data-ttu-id="30b97-134">Om **TestEnvironmentVariable** är inte finns skapas den.</span><span class="sxs-lookup"><span data-stu-id="30b97-134">If **TestEnvironmentVariable** is not present, it will be created.</span></span>
+- <span data-ttu-id="b8b55-130">Om **sökvägen** saknas eller anges till `$false`hanteras miljövariabler i. `/etc/environment`</span><span class="sxs-lookup"><span data-stu-id="b8b55-130">If **Path** is absent or set to `$false`, environment variables are managed in `/etc/environment`.</span></span>
+  <span data-ttu-id="b8b55-131">Dina program eller skript kan behöva konfigureras för att `/etc/environment` käll filen ska kunna komma åt de hanterade miljövariablerna.</span><span class="sxs-lookup"><span data-stu-id="b8b55-131">Your programs or scripts may require configuration to source the `/etc/environment` file to access the managed environment variables.</span></span>
+- <span data-ttu-id="b8b55-132">Om **sökväg** är inställd på `$true`hanteras miljövariabeln i filen. `/etc/profile.d/DSCenvironment.sh`</span><span class="sxs-lookup"><span data-stu-id="b8b55-132">If **Path** is set to `$true`, the environment variable is managed in the file `/etc/profile.d/DSCenvironment.sh`.</span></span> <span data-ttu-id="b8b55-133">Den här filen kommer att skapas om den inte finns.</span><span class="sxs-lookup"><span data-stu-id="b8b55-133">This file will be created if it does not exist.</span></span> <span data-ttu-id="b8b55-134">Om alternativet för **att se** till att värdet **saknas** och **sökvägen** är inställt på `$true`, tas en befintlig miljö `/etc/profile.d/DSCenvironment.sh` variabel bara bort från och inte från andra filer.</span><span class="sxs-lookup"><span data-stu-id="b8b55-134">If **Ensure** is set to **Absent** and **Path** is set to `$true`, an existing environment variable will only be removed from `/etc/profile.d/DSCenvironment.sh` and not from other files.</span></span>
 
-```
+## <a name="example"></a><span data-ttu-id="b8b55-135">Exempel</span><span class="sxs-lookup"><span data-stu-id="b8b55-135">Example</span></span>
+
+<span data-ttu-id="b8b55-136">I följande exempel visas hur du använder **nxEnvironment** -resursen för att se till att **TestEnvironmentVariable** finns och har värdet "test-Value".</span><span class="sxs-lookup"><span data-stu-id="b8b55-136">The following example shows how to use the **nxEnvironment** resource to ensure that **TestEnvironmentVariable** is present and has the value "Test-Value".</span></span> <span data-ttu-id="b8b55-137">Om **TestEnvironmentVariable** inte finns kommer den att skapas.</span><span class="sxs-lookup"><span data-stu-id="b8b55-137">If **TestEnvironmentVariable** is not present, it will be created.</span></span>
+
+```powershell
 Import-DSCResource -Module nx
-
 
 nxEnvironment EnvironmentExample
 {
-    Ensure = “Present”
-    Name = “TestEnvironmentVariable”
-    Value = “TestValue”
+    Ensure = "Present"
+    Name = "TestEnvironmentVariable"
+    Value = "TestValue"
 }
 ```
