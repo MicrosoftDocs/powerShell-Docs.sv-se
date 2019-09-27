@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Använda Import-DSCResource
-ms.openlocfilehash: e1c2c06d756a70c2de516f330e3123235ce740ba
-ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
+ms.openlocfilehash: 735b2c2b4ae5101ded333768f00b46cb54d541b0
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70215399"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323020"
 ---
 # <a name="using-import-dscresource"></a>Använda Import-DSCResource
 
@@ -104,8 +104,8 @@ Configuration SchemaValidationInCorrectEnumValue
     {
         WindowsFeature ROLE1
         {
-            Name = “Telnet-Client”
-            Ensure = “Invalid”
+            Name = "Telnet-Client"
+            Ensure = "Invalid"
         }
     }
 }
@@ -114,7 +114,7 @@ Configuration SchemaValidationInCorrectEnumValue
 Att kompilera den här konfigurationen resulterar i ett fel.
 
 ```output
-PSDesiredStateConfiguration\WindowsFeature: At least one of the values ‘Invalid’ is not supported or valid for property ‘Ensure’ on class ‘WindowsFeature’. Please specify only supported values: Present, Absent.
+PSDesiredStateConfiguration\WindowsFeature: At least one of the values 'Invalid' is not supported or valid for property 'Ensure' on class 'WindowsFeature'. Please specify only supported values: Present, Absent.
 ```
 
 Med IntelliSense och schema validering kan du fånga fler fel under parsning och kompilering, vilket undviker komplikationer vid körnings tillfället.

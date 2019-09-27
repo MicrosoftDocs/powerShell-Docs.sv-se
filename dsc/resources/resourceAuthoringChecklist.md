@@ -1,22 +1,22 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+keywords: DSC, PowerShell, konfiguration, installation
 title: Checklista för resursskapande
-ms.openlocfilehash: 7b1a096bba1b729c096b6689178ee022e12e4634
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c0a18169b5e9f6ba0c3848b00725731453763611
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076590"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323567"
 ---
 # <a name="resource-authoring-checklist"></a>Checklista för resursskapande
 
-Den här checklistan är en lista över bästa praxis när du redigerar en ny DSC-resurs.
+Den här check listan är en lista över bästa metoder när du redigerar en ny DSC-resurs.
 
-## <a name="resource-module-contains-psd1-file-and-schemamof-for-every-resource"></a>Resurs-modulen innehåller .psd1 fil- och schema.mof för alla resurser
+## <a name="resource-module-contains-psd1-file-and-schemamof-for-every-resource"></a>Resource module innehåller. psd1-filen och schema. MOF för varje resurs
 
-Kontrollera att din resurs har en korrekt struktur och innehåller alla nödvändiga filer. Varje resurs-modulen bör innehålla en .psd1-fil och alla icke sammansatta resurser ska ha schema.mof fil. Resurser som inte innehåller schemat visas inte av `Get-DscResource` och användare kommer inte att kunna använda intellisense när du skriver kod mot dessa moduler i ISE.
-Katalogstruktur för xRemoteFile resurs, som är en del av den [xPSDesiredStateConfiguration resource modulen](https://github.com/PowerShell/xPSDesiredStateConfiguration), ser ut så här:
+Kontrol lera att resursen har rätt struktur och innehåller alla filer som krävs. Varje modul ska innehålla en. psd1-fil och varje icke-sammansatt resurs ska ha schema. MOF-fil. Resurser som inte innehåller schemat visas inte av `Get-DscResource` och användarna kommer inte att kunna använda IntelliSense-funktionen för att skriva kod mot dessa moduler i ISE.
+Katalog strukturen för xRemoteFile-resursen, som är en del av [modulen xPSDesiredStateConfiguration](https://github.com/PowerShell/xPSDesiredStateConfiguration), ser ut så här:
 
 ```
 xPSDesiredStateConfiguration
@@ -33,59 +33,59 @@ xPSDesiredStateConfiguration
     xPSDesiredStateConfiguration.psd1
 ```
 
-## <a name="resource-and-schema-are-correct"></a>Resurs- och schema är korrekta
+## <a name="resource-and-schema-are-correct"></a>Resurs och schema är korrekta
 
-Verifiera resursschemat (*. schema.mof) fil. Du kan använda den [DSC-resurs Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) för att utveckla och testa ditt schema.
-Se till att:
+Kontrol lera resurs schema filen (*. schema. MOF). Du kan använda [DSC Resource designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) för att utveckla och testa ditt schema.
+Kontrol lera att:
 
-- Egenskapstyperna är korrekta (t.ex. Använd inte sträng för egenskaper som accepterar numeriska värden, bör du använda UInt32 eller andra numeriska typer i stället)
-- Egenskapsattribut har angetts korrekt som: ([nyckel], [krävs], [skriva], [Läs])
-- Minst en parameter i schemat har markeras som [nyckel]
-- [Läs] egenskapen inte användas samtidigt tillsammans med någon av: [krävs], [key], [skriva]
-- Om flera kvalificerare anges förutom [Läs], prioriteras [key]
-- Om [skriva] och [krävs] har angetts och sedan [krävs] har prioritet
-- ValueMap anges i förekommande fall exempel:
+- Egenskaps typerna är korrekta (t. ex. Använd inte sträng för egenskaper som accepterar numeriska värden bör du använda UInt32 eller andra numeriska typer i stället)
+- Egenskaps attribut anges korrekt som: ([key], [required], [Write], [Read])
+- Minst en parameter i schemat måste markeras som [key]
+- [Read]-egenskapen är inte tillsammans med någon av: [required], [key], [Write]
+- Om flera kvalificerare anges utom [Läs], har [key] företräde
+- Om [Write] och [required] anges prioriteras [required]
+- ValueMap anges där lämpligt exempel:
 
   ```
   [Read, ValueMap{"Present", "Absent"}, Values{"Present", "Absent"}, Description("Says whether DestinationPath exists on the machine")] String Ensure;
   ```
 
-- Eget namn har angetts och bekräftar att DSC namngivningskonventioner
+- Eget namn anges och bekräftar till namn konventioner för DSC
 
   Exempel: `[ClassVersion("1.0.0.0"), FriendlyName("xRemoteFile")]`
 
-- Varje fält har beskrivning. PowerShell GitHub-lagringsplatsen har bra exempel som [det. schema.mof för xRemoteFile](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCResources/MSFT_xRemoteFile/MSFT_xRemoteFile.schema.mof)
+- Varje fält har meningsfull beskrivning. PowerShell-GitHub-lagringsplatsen har användbara exempel, till exempel [. schema. MOF för xRemoteFile](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCResources/MSFT_xRemoteFile/MSFT_xRemoteFile.schema.mof)
 
-Dessutom bör du använda **Test-xDscResource** och **Test-xDscSchema** cmdlet: ar från [DSC-resurs Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) att automatiskt kontrollera resurs och schema:
+Dessutom bör du använda **test-xDscResource** och **test-xDscSchema-cmdlet:** ar från [DSC Resource designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) för att automatiskt verifiera resursen och schemat:
 
 ```
 Test-xDscResource <Resource_folder>
 Test-xDscSchema <Path_to_resource_schema_file>
 ```
 
-Till exempel:
+Exempel:
 
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-## <a name="resource-loads-without-errors"></a>Resurs som läses in utan fel
+## <a name="resource-loads-without-errors"></a>Resurs inläsningar utan fel
 
-Kontrollera om resurs-modulen kan läsas.
-Detta kan ske manuellt, genom att köra `Import-Module <resource_module> -force` och bekräftar att inga fel har inträffat eller skriva av automatiserad testning. Vid det senare kan du följa den här strukturen i ditt fall test:
+Kontrol lera om modulen kan läsas in korrekt.
+Detta kan uppnås manuellt, genom att `Import-Module <resource_module> -force` köra och bekräfta att inga fel har inträffat, eller genom att skriva test automatisering. I det senare fallet kan du följa den här strukturen i test fallet:
 
 ```powershell
 $error = $null
 Import-Module <resource_module> –force
 If ($error.count –ne 0) {
-    Throw “Module was not imported correctly. Errors returned: $error”
+    Throw "Module was not imported correctly. Errors returned: $error"
 }
 ```
 
-## <a name="resource-is-idempotent-in-the-positive-case"></a>Resursen är idempotenta positivt om
+## <a name="resource-is-idempotent-in-the-positive-case"></a>Resursen är idempotenta i det positiva fallet
 
-En av de grundläggande egenskaperna för DSC-resurser är idempotence. Det innebär att tillämpa en DSC-konfiguration som innehåller den här resursen flera gånger kommer alltid att uppnå samma resultat. Om till exempel skapar vi en konfiguration som innehåller följande filresurs:
+En av de grundläggande egenskaperna hos DSC-resurser är idempotence. Det innebär att att tillämpa en DSC-konfiguration som innehåller resursen flera gånger kommer alltid att uppnå samma resultat. Om vi till exempel skapar en konfiguration som innehåller följande fil resurs:
 
 ```powershell
 File file {
@@ -94,63 +94,63 @@ File file {
 }
 ```
 
-Efter att ha tillämpat den för första gången filen test.txt ska visas i `C:\test` mapp. Efterföljande körningar av samma konfiguration bör dock inte ändra tillståndet för datorn (t.ex. inga kopior av den `test.txt` filen måste ha skapats).
-Att säkerställa att en resurs är idempotent upprepade gånger kan du anropa `Set-TargetResource` när testning av resursen direkt eller anropa `Start-DscConfiguration` flera gånger vid testning från slutpunkt till slutpunkt. Resultatet bör vara samma efter varje körning.
+När du har tillämpat det för första gången ska filen test. txt visas `C:\test` i mappen. Efterföljande körningar av samma konfiguration bör dock inte ändra datorns tillstånd (t. ex. inga kopior av `test.txt` filen skapas).
+För att se till att en resurs är idempotenta kan `Set-TargetResource` du upprepade gånger anropa när du testar resursen `Start-DscConfiguration` direkt eller anropa flera gånger när du utför testningen. Resultatet bör vara detsamma efter varje körning.
 
-## <a name="test-user-modification-scenario"></a>Testa Användarscenario för ändring av
+## <a name="test-user-modification-scenario"></a>Testa användar ändrings scenario
 
-Genom att ändra tillståndet för datorn och sedan köra DSC, kan du kontrollera att `Set-TargetResource` och `Test-TargetResource` fungerar korrekt. Här är vad du ska göra:
+Genom att ändra datorns tillstånd och sedan köra DSC igen, kan du kontrol lera att `Set-TargetResource` och `Test-TargetResource` fungerar korrekt. Här följer några steg som du bör vidta:
 
-1. Börja med resursen inte i önskat läge.
+1. Starta med resursen inte i önskat tillstånd.
 2. Kör konfiguration med din resurs
-3. Kontrollera `Test-DscConfiguration` returnerar värdet True
-4. Ändra den konfigurerade artikeln om du vill ha slut på önskat tillstånd
-5. Kontrollera `Test-DscConfiguration` returnerar false
+3. Verifiera `Test-DscConfiguration` returnerar true
+4. Ändra det konfigurerade objektet så att det inte är i önskat tillstånd
+5. Verifiera `Test-DscConfiguration` returnerar falskt
 
-Här är ett mer konkreta exempel med hjälp av Registerresurser:
+Här är ett mer konkret exempel med hjälp av register resurser:
 
-1. Börja med registernyckeln inte i önskat läge
-2. Kör `Start-DscConfiguration` med en konfiguration för att placera den i önskat läge och kontrollera att den skickar.
-3. Kör `Test-DscConfiguration` och kontrollera att den returnerar true
-4. Ändra värdet för nyckeln så att det inte är i önskat läge
-5. Kör `Test-DscConfiguration` och kontrollera att den returnerar FALSKT
-6. `Get-TargetResource` funktionen har verifierats med hjälp av `Get-DscConfiguration`
+1. Starta med register nyckeln har inte önskat tillstånd
+2. Kör `Start-DscConfiguration` med en konfiguration för att ställa in den med önskat tillstånd och kontrol lera att den är klar.
+3. Kör `Test-DscConfiguration` och kontrol lera att den returnerar true
+4. Ändra värdet för nyckeln så att det inte är i önskat tillstånd
+5. Kör `Test-DscConfiguration` och kontrol lera att den returnerar false
+6. `Get-TargetResource`funktionerna har verifierats med hjälp av`Get-DscConfiguration`
 
-`Get-TargetResource` ska returnera information om det aktuella tillståndet för resursen. Se till att testa den genom att anropa `Get-DscConfiguration` när du använder konfigurationen och verifierar som korrekt utdata visar det aktuella tillståndet för datorn. Det är viktigt att testa den separat, eftersom eventuella problem i det här området inte visas när du anropar `Start-DscConfiguration`.
+`Get-TargetResource`ska returnera information om resursens aktuella tillstånd. Se till att testa den genom att `Get-DscConfiguration` anropa efter att du har tillämpat konfigurationen och verifiera att utdata stämmer överens med datorns aktuella tillstånd. Det är viktigt att testa det separat, eftersom eventuella problem i det här avsnittet inte visas vid `Start-DscConfiguration`anrop.
 
-## <a name="call-getsettest-targetresource-functions-directly"></a>Anropa **Get/Set/Test-TargetResource** fungerar direkt
+## <a name="call-getsettest-targetresource-functions-directly"></a>Anropa **Get/Set/test-TargetResource-** funktioner direkt
 
-Kontrollera att du testar den **Get/Set/Test-TargetResource** funktioner som implementerats i din resurs genom att anropa dem direkt och verifiera att de fungerar som förväntat.
+Se till att testa funktionerna **Get/Set/test-TargetResource** som implementerats i din resurs genom att anropa dem direkt och kontrol lera att de fungerar som förväntat.
 
-## <a name="verify-end-to-end-using-start-dscconfiguration"></a>Kontrollera från slutpunkt till slutpunkt med hjälp av **Start-DscConfiguration**
+## <a name="verify-end-to-end-using-start-dscconfiguration"></a>Verifiera slut punkt till slut punkt med **Start-DscConfiguration**
 
-Testa **Get/Set/Test-TargetResource** funktioner genom att anropa dem direkt är viktigt, men inte alla problem som identifieras det här sättet. Du bör fokusera betydande del av testet om hur du använder `Start-DscConfiguration` eller pull-servern. Detta är hur användare kommer att använda resursen, så att underskatta inte betydelsen av den här typen av testerna.
+Testa **Get/Set/test-TargetResource-** funktioner genom att anropa dem direkt, men alla problem kommer inte att upptäckas på det sättet. Du bör fokusera en betydande del av testningen på `Start-DscConfiguration` att använda eller hämtnings servern. Detta är i själva verket hur användarna kommer att använda resursen, så funktionen underskattar inte betydelsen av den här typen av tester.
 Möjliga typer av problem:
 
-- Autentiseringsuppgifter/Session fungera annorlunda eftersom DSC-agenten körs som en tjänst.  Glöm inte att testa alla funktionerna här från slutpunkt till slutpunkt.
-- Utdata genom att fel `Start-DscConfiguration` kan skilja sig från de som visas när du anropar den `Set-TargetResource` fungera direkt.
+- Autentiseringsuppgiften/sessionen kan fungera annorlunda eftersom DSC-agenten körs som en tjänst.  Se till att testa alla funktioner som slutar att avslutas.
+- Fel utdata i `Start-DscConfiguration` kan skilja sig från de som visas när `Set-TargetResource` funktionen anropas direkt.
 
-## <a name="test-compatability-on-all-dsc-supported-platforms"></a>Testa kompatibilitet på alla DSC-plattformar som stöds
+## <a name="test-compatability-on-all-dsc-supported-platforms"></a>Testa kompatibilitet på alla plattformar som stöds av DSC
 
-Resursen ska fungera för alla plattformar som DSC som stöds (Windows Server 2008 R2 och senare). Installera den senaste WMF (Windows Management Framework) på ditt operativsystem för att hämta den senaste versionen av DSC. Om din resurs inte fungerar på några av de här plattformarna avsiktligt, ska ett specifikt felmeddelande returneras. Kontrollera också att din resurs kontrollerar om cmdlets som du anropar finns på en viss dator. Windows Server 2012 lagt till ett stort antal nya cmdletar som inte är tillgängliga på Windows Server 2008R2, även med WMF installerats.
+Resursen ska fungera på alla plattformar som stöds av DSC (Windows Server 2008 R2 och senare). Installera den senaste versionen av WMF (Windows Management Framework) på ditt operativ system för att få den senaste versionen av DSC. Om resursen inte fungerar på vissa av dessa plattformar efter design ska ett visst fel meddelande returneras. Kontrol lera också att din resurs kontrollerar om cmdlets som du anropar finns på en viss dator. Windows Server 2012 har lagt till ett stort antal nya cmdletar som inte är tillgängliga på Windows Server-2008R2, även med WMF installerat.
 
-## <a name="verify-on-windows-client-if-applicable"></a>Kontrollera på klienten för Windows (om tillämpligt)
+## <a name="verify-on-windows-client-if-applicable"></a>Verifiera på Windows-klienten (om tillämpligt)
 
-Ett mycket vanligt test gap verifierar resursen endast på server-versioner av Windows. Många resurser är också utformad för att arbeta med klient-SKU: er, så om det är true i ditt fall Glöm inte att testa den på dessa plattformar samt.
+Ett mycket vanligt test glapp verifierar bara resursen på Server versioner av Windows. Många resurser är också utformade för att fungera på klient-SKU: er, så om det är sant i ditt fall kan du inte glömma att testa det på dessa plattformar.
 
-## <a name="get-dscresource-lists-the-resource"></a>Get-DSCResource visar resursen
+## <a name="get-dscresource-lists-the-resource"></a>Get-Dscresource Keyword Supports visar resursen
 
-När du har distribuerat modulen anropar `Get-DscResource` bör lista din resurs bland annat som ett resultat. Om du inte hittar din resurs i listan, kontrollera att filen schema.mof för den här resursen finns.
+När du har `Get-DscResource` distribuerat modulen ska du ange en lista över din resurs bland andra som ett resultat. Om du inte hittar din resurs i listan ser du till att schema. MOF-filen för resursen finns.
 
-## <a name="resource-module-contains-examples"></a>Resurs-modulen innehåller exempel
+## <a name="resource-module-contains-examples"></a>Resurs modulen innehåller exempel
 
-Skapa goda exempel som hjälper andra att förstå hur du använder den. Det är viktigt, särskilt eftersom många användare hantera exempelkod som dokumentation.
+Skapa kvalitets exempel som hjälper andra att förstå hur de används. Detta är viktigt, särskilt eftersom många användare behandlar exempel kod som dokumentation.
 
-- Först bestämmer du exemplen som ska inkluderas med modulen – minimum, du bör täcker de viktigaste användningsfallen för din resurs:
-- Om din modul innehåller flera resurser som behöver samarbeta i ett scenario för slutpunkt till slutpunkt, är grundläggande slutpunkt till slutpunkt-exempel helst första.
-- Första exemplen ska vara mycket enkelt sätt – hur du kommer igång med dina resurser i små hanterbara delar (t.ex. Skapa en ny virtuell Hårddisk)
-- Efterföljande exempel bör bygger på dessa exempel (t.ex. Skapa en virtuell dator från en virtuell Hårddisk, ta bort virtuell dator, ändra VM) och visa avancerade funktioner (t.ex. Skapa en virtuell dator med dynamiskt minne)
-- Exempelkonfigurationer bör parametriseras (alla värden som ska överföras till konfigurationen som parametrar och det bör finnas några hårdkodade värden):
+- Först bör du bestämma de exempel som ska ingå i modulen – du bör minst omfatta de viktigaste användnings fallen för din resurs:
+- Om din modul innehåller flera resurser som behöver fungera tillsammans för ett scenario från slut punkt till slut punkt skulle det första exemplet vara bäst.
+- De inledande exemplen bör vara väldigt enkla – hur du kommer igång med dina resurser i små hanterbara segment (t. ex. skapa en ny virtuell hård disk)
+- Efterföljande exempel bör bygga på dessa exempel (t. ex. skapa en virtuell dator från en virtuell hård disk, ta bort virtuell dator, ändra VM) och Visa avancerade funktioner (t. ex. skapa en virtuell dator med dynamiskt minne)
+- Exempel på konfigurationer ska vara parameterstyrda (alla värden ska skickas till konfigurationen som parametrar och det får inte finnas några hårdkodad-värden):
 
   ```powershell
   configuration Sample_xRemoteFile_DownloadFile
@@ -187,10 +187,10 @@ Skapa goda exempel som hjälper andra att förstå hur du använder den. Det är
   }
   ```
 
-- Det är en bra idé att inkludera (kommenterade ut) exempel på hur du anropar konfigurationen med de faktiska värdena i slutet av exempelskriptet.
-  Till exempel i konfigurationen ovan den inte nödvändigtvis uppenbart att det bästa sättet att ange UserAgent:
+- Det är en bra idé att inkludera (kommentera ut) exempel på hur du anropar konfigurationen med de faktiska värdena i slutet av exempel skriptet.
+  I konfigurationen ovan är det till exempel inte nödvändigt vis uppenbart att det bästa sättet att ange UserAgent är:
 
-  `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer` I så fall kan en kommentar tydliggöra avsedda körningen av konfigurationen:
+  `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer`I så fall kan en kommentar klargöra den avsedda körningen av konfigurationen:
 
   ```powershell
   <#
@@ -203,27 +203,27 @@ Skapa goda exempel som hjälper andra att förstå hur du använder den. Det är
   #>
   ```
 
-- Varje exempel skriva i en kort beskrivning som förklarar vad det gör och innebörden av parametrarna.
-- Se till exempel räcker för de flesta viktiga scenarier för din resurs och om det inte finns något saknas, kontrollera att de alla köra och placera dator i önskat läge.
+- För varje exempel skriver du en kort beskrivning som förklarar vad det gör och syftet med parametrarna.
+- Se till att exemplen tar upp de flesta viktiga scenarier för din resurs, och om inget saknas, kontrollerar du att alla kör och sätter datorn i önskat tillstånd.
 
-## <a name="error-messages-are-easy-to-understand-and-help-users-solve-problems"></a>Felmeddelanden är lätta att förstå och hjälper användarna att lösa problem
+## <a name="error-messages-are-easy-to-understand-and-help-users-solve-problems"></a>Fel meddelanden är lätta att förstå och hjälpa användare att lösa problem
 
-Bra felmeddelanden bör vara:
+Fel meddelanden bör vara:
 
-- Det: Det största problemet med felmeddelanden är de ofta inte finns, så se till att de är det inte.
-- Lätt att förstå: Mänskliga läsbar, inte otydligt felkoder
-- Exakt: Beskriv vad som är exakt problemet
-- Informell: Råd hur du löser problemet
-- Korrekt: Inte klandra användare eller göra dem att känna sig felaktigt
+- Föreligg Det största problemet med fel meddelanden är att de ofta inte finns, så se till att de finns där.
+- Lätt att förstå: Läslig, inga dolda felkoder
+- Noga Beskriv vad som är exakt med problemet
+- Informell Råd om hur du löser problemet
+- Avslutningen Klandra inte användaren eller gör så att de känner sig dåligt
 
-Kontrollera att du har kontrollerat fel i scenarier från slutpunkt till slutpunkt (med hjälp av `Start-DscConfiguration`), eftersom de kan skilja sig från dem som returneras när du kör resursfunktioner direkt.
+Se till att kontrol lera om det finns fel i end to `Start-DscConfiguration`end-scenarier (med), eftersom de kan skilja sig från de som returneras när du kör resurs funktionerna direkt.
 
-## <a name="log-messages-are-easy-to-understand-and-informative-including-verbose-debug-and-etw-logs"></a>Loggmeddelanden är lätt att förstå och informativa (inklusive – verbose, – felsökning och ETW-loggar)
+## <a name="log-messages-are-easy-to-understand-and-informative-including-verbose-debug-and-etw-logs"></a>Logg meddelanden är lätta att förstå och informativt (inklusive – utförliga,-felsöka och ETW-loggar)
 
-Kontrollera att loggarna för utdata av resursen är lätt att förstå och ange värdet för användaren. Resurser bör utdata all information som kan vara användbara för användaren, men flera loggar är inte alltid bättre. Du bör undvika redundans och skickar data som inte har ytterligare värde – inte göra någon Gå igenom hundratals loggposter för att kunna hitta vad de letar efter. Naturligtvis kan inga loggar är inte en godtagbar lösning på problemet antingen.
+Se till att de loggar som returneras av resursen är lätta att förstå och ange värde för användaren. Resurserna bör returnera all information som kan vara till hjälp för användaren, men fler loggar är inte alltid bättre. Du bör undvika redundans och att mata ut data som inte ger ytterligare värde – gör inte någon att gå igenom hundratals logg poster för att hitta det du söker. Det är naturligtvis ingen acceptabel lösning för det här problemet.
 
-När du testar kan du bör också analysera utförliga loggar och felsökningsloggar (genom att köra `Start-DscConfiguration` med `–Verbose` och `–Debug` växlar på rätt sätt), samt som ETW-loggar. Om du vill se DSC ETW-loggar, gå till Loggboken och öppnar du följande mapp: Program och tjänster från Microsoft - Windows - Desired State Configuration.  Som standard det ska vara användningskanal, men se till att du aktiverar analytiska och felsöka kanaler innan du kör konfigurationen.
-Om du vill aktivera analytiska/Debug kanaler, kan du köra skriptet nedan:
+När du testar bör du även analysera utförliga och felsöka loggar (genom att `Start-DscConfiguration` köra `–Verbose` med `–Debug` och växlar på lämpligt sätt), samt ETW-loggar. Om du vill se DSC ETW loggar går du till Loggboken och öppnar följande mapp: Program och tjänster-Microsoft-Windows-önskad tillstånds konfiguration.  Som standard kommer det att finnas en drifts kanal, men se till att du aktiverar analys-och fel söknings kanaler innan du kör konfigurationen.
+Om du vill aktivera analytiska/felsöka kanaler kan du köra skriptet nedan:
 
 ```powershell
 $statusEnabled = $true
@@ -239,10 +239,10 @@ if($statusEnabled -eq $log.IsEnabled)
 Invoke-Expression $commandToExecute
 ```
 
-## <a name="resource-implementation-does-not-contain-hardcoded-paths"></a>Resurs-implementering innehåller inte hårdkodad sökvägar
+## <a name="resource-implementation-does-not-contain-hardcoded-paths"></a>Resurs implementeringen innehåller inte hårdkodad-sökvägar
 
-Kontrollera att det finns inga hårdkodad sökvägar i resurs-implementeringen särskilt om de antar även språk (en-us), eller om det uppstår systemvariabler som kan användas.
-Om din resurs behöver åtkomst till specifika sökvägar kan använda miljövariabler i stället för hardcoding sökväg, eftersom det kan skilja sig på andra datorer.
+Se till att det inte finns några hårdkodad sökvägar i resurs implementeringen, särskilt om de antar språk (en-US) eller om det finns systemvariabler som kan användas.
+Om din resurs behöver åtkomst till vissa sökvägar använder du miljövariabler istället för att hårdkoda sökvägen, eftersom den kan vara annorlunda på andra datorer.
 
 Exempel:
 
@@ -260,43 +260,43 @@ $tempPath = Join-Path $env:temp "MyResource"
 $programFilesPath = ${env:ProgramFiles(x86)}
 ```
 
-## <a name="resource-implementation-does-not-contain-user-information"></a>Resurs-implementering innehåller inte användarinformation
+## <a name="resource-implementation-does-not-contain-user-information"></a>Resurs implementeringen innehåller ingen användar information
 
-Kontrollera att det finns inga e-post namn, kontoinformation eller namnen på personer i koden.
+Se till att det inte finns några e-postnamn, konto information eller namn på personer i koden.
 
-## <a name="resource-was-tested-with-validinvalid-credentials"></a>Resursen har testats med giltig/ogiltigt autentiseringsuppgifter
+## <a name="resource-was-tested-with-validinvalid-credentials"></a>Resursen har testats med giltiga/ogiltiga autentiseringsuppgifter
 
-Om din resurs tar en autentiseringsuppgift som parameter:
+Om din resurs tar emot autentiseringsuppgifter som parameter:
 
-- Kontrollera att resursen fungerar när lokalt System (eller datorkontot för fjärranslutna resurser) inte har åtkomst.
-- Kontrollera att resursen fungerar med en autentiseringsuppgift som angetts för hämta, ange och testa
-- Om din resurs har åtkomst till resurser, kan du testa alla varianter som du behöver stöd, till exempel:
-  - Standard windows-resurser.
+- Kontrol lera att resursen fungerar när det lokala systemet (eller dator kontot för fjär resurser) inte har åtkomst.
+- Kontrol lera att resursen fungerar med autentiseringsuppgifter som angetts för Get-, set-och test
+- Om resursen har åtkomst till resurser testar du alla varianter som du behöver stödja, till exempel:
+  - Standard resurser i Windows.
   - DFS-resurser.
-  - SAMBA resurser (om du vill stödja Linux.)
+  - SAMBA i resurser (om du vill ha stöd för Linux.)
 
-## <a name="resource-does-not-require-interactive-input"></a>Resursen kräver ingen interaktiva indata
+## <a name="resource-does-not-require-interactive-input"></a>Resursen kräver inte interaktiva ingångar
 
-**Get/Set/Test-TargetResource** funktioner ska köras automatiskt och måste inte väntar för användarens indata under alla stadier av körning (t.ex. Du bör inte använda `Get-Credential` i dessa funktioner). Om du vill ange användarens indata bör du ange till konfigurationen som parameter under fasen för kompilering.
+**Get/Set/test-TargetResource-** funktioner ska köras automatiskt och får inte vänta på användarens indata i körnings fasen (t. ex. bör du `Get-Credential` inte använda i dessa funktioner). Om du behöver ange användarens indata, bör du skicka den till konfigurationen som en parameter under kompilerings fasen.
 
-## <a name="resource-functionality-was-thoroughly-tested"></a>Resursen funktioner testat noggrant
+## <a name="resource-functionality-was-thoroughly-tested"></a>Resurs funktionen har testats grundligt
 
-Den här checklistan innehåller objekt som är viktiga för att testa och/eller ofta missat. Det blir massa tester, främst funktionella som som är specifika för den resurs du vill testa och anges inte här. Glöm inte negativt testfall.
+Den här check listan innehåller objekt som är viktiga för att testas och/eller som ofta saknas. Det kommer att finnas flera tester, främst funktioner som är speciella för den resurs som du testar och som inte nämns här. Glöm inte om negativa test fall.
 
-## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Rekommendation: Resurs-modulen innehåller testerna mapp med ResourceDesignerTests.ps1 skript
+## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Bästa praxis: Resurs modulen innehåller mappen tester med skriptet ResourceDesignerTests. ps1
 
-Det är en bra idé att skapa mappen ”test” i resource-modul, skapa `ResourceDesignerTests.ps1` filen och Lägg till testerna via **Test-xDscResource** och **Test xDscSchema** för alla resurser i de angivna modulen.
-På så sätt kan du snabbt Validera scheman för alla resurser från den angivna moduler och gör en förstånd kontrollera innan du publicerar.
-För xRemoteFile, `ResourceTests.ps1` bör se ut så enkelt som:
+Det är en bra idé att skapa mappen "tester" i modulen resurs, skapa `ResourceDesignerTests.ps1` fil och lägga till tester med **test-xDscResource** och **test-xDscSchema** för alla resurser i en specifik modul.
+På så sätt kan du snabbt verifiera scheman för alla resurser från de aktuella modulerna och göra en Sanity kontroll innan du publicerar.
+För xRemoteFile `ResourceTests.ps1` kan se så enkelt som:
 
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>Rekommendation: Resursmapp innehåller resurs designerskriptet för att generera schemat
+## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>Bästa praxis: Resursens mapp innehåller ett Resource designer-skript för att skapa schema
 
-Varje resurs ska innehålla ett resurs-designerskriptet som genererar en mof-schemat för resursen. Den här filen ska placeras i `<ResourceName>\ResourceDesignerScripts` och ges namnet generera `<ResourceName>Schema.ps1` för xRemoteFile resurs den här filen skulle anropas `GenerateXRemoteFileSchema.ps1` och innehålla:
+Varje resurs ska innehålla ett Resource designer-skript som genererar ett MOF-schema för resursen. Den här filen ska placeras i `<ResourceName>\ResourceDesignerScripts` och vara namngiven som `<ResourceName>Schema.ps1` generate för xRemoteFile-resurs den här `GenerateXRemoteFileSchema.ps1` filen skulle anropas och innehålla:
 
 ```powershell
 $DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
@@ -310,11 +310,11 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile
 ```
 
-## <a name="best-practice-resource-supports--whatif"></a>Rekommendation: Resursen stöder - WhatIf
+## <a name="best-practice-resource-supports--whatif"></a>Bästa praxis: Resurs stöder-WhatIf
 
-Om din resurs fungerar ”farliga” åtgärder, är det en bra idé att implementera `-WhatIf` funktioner. När det är klart kontrollerar du att `-WhatIf` utdata korrekt beskriver åtgärder som skulle hända om kommandot utfördes utan `-WhatIf` växla.
-Kontrollera också att åtgärder inte körs (det görs inga ändringar till nodens tillstånd) när `–WhatIf` finns ett skjutreglage.
-Anta exempelvis att vi testar File-resursen. Nedan visas enkel konfiguration, vilket skapar filen `test.txt` med innehåll ”test”:
+Om din resurs utför "farliga" åtgärder är det en bra idé att implementera `-WhatIf` funktioner. När du är klar kontrollerar du att `-WhatIf` utdata korrekt beskriver åtgärder som skulle inträffa om kommandot kördes utan `-WhatIf` växel.
+Kontrol lera också att åtgärderna inte körs (inga ändringar i nodens status görs) när `–WhatIf` växeln är tillgänglig.
+Vi antar till exempel att vi testar fil resursen. Nedan visas en enkel konfiguration som skapar `test.txt` en fil med innehållet "test":
 
 ```powershell
 configuration config
@@ -331,7 +331,7 @@ configuration config
 config
 ```
 
-Om vi kompilera och kör sedan konfigurationen med den `-WhatIf` växel, utdata tala om för oss exakt vad som skulle hända när vi kör konfigurationen. Konfigurationen själva men har inte utförts (`test.txt` filen skapades inte).
+Om vi kompilerar och sedan kör konfigurationen med `-WhatIf` växeln, säger utdata till oss exakt vad som skulle hända när vi kör konfigurationen. Själva konfigurationen utfördes dock inte (`test.txt` filen skapades inte).
 
 ```powershell
 Start-DscConfiguration -Path .\config -ComputerName localhost -Wait -Verbose -WhatIf
@@ -360,4 +360,4 @@ VERBOSE: [X]: LCM:  [ End    Set      ]    in  0.1050 seconds.
 VERBOSE: Operation 'Invoke CimMethod' complete.
 ```
 
-Den här listan är inte uttömmande men den täcker många viktiga problem som kan uppstå när du utformar, utvecklar och testar DSC-resurser.
+Den här listan är inte fullständig, men den täcker många viktiga problem som kan uppstå vid design, utveckling och testning av DSC-resurser.

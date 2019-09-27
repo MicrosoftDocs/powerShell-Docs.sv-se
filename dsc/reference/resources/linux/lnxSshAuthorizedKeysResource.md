@@ -1,56 +1,61 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxSshAuthorizedKeys-resurs
-ms.openlocfilehash: d4cdb727a94a5e89e8401769f24977d49bcf4929
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6e008efcbff2e679650d0bc3d5b8b573f6ef83e0
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077712"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324649"
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>DSC för Linux nxSshAuthorizedKeys-resurs
 
-Den **nxAuthorizedKeys** resurs i PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera behörighet ssh-nycklar för en angiven användare.
+**NxAuthorizedKeys** -resursen i PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera behöriga SSH-nycklar för en angiven användare.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```Syntax
 nxAuthorizedKeys <string> #ResourceName
 {
     KeyComment = <string>
-    [ Ensure = <string> { Absent | Present }  ]
     [ Username = <string> ]
     [ Key = <string> ]
     [ DependsOn = <string[]> ]
-
+    [ Ensure = <string> { Absent | Present }  ]
 }
 ```
 
-## <a name="properties"></a>Egenskaper
+## <a name="properties"></a>properties
 
-|  Egenskap |  Beskrivning |
+|Egenskap |Beskrivning |
 |---|---|
-| KeyComment| En unik kommentar för nyckeln. Det här används för att unikt identifiera nycklar.|
-| Se till att| Anger om nyckeln har definierats. Ange den här egenskapen till ”inte” för att se till att nyckeln inte finns i användarens auktoriserad nyckelfil. Ange den ”aktuella” för att se till att nyckeln har definierats i användarens auktoriserade nyckelfilen.|
-| Användarnamn| Användarnamnet för att hantera ssh behörighet nycklar för. Om du inte har definierats, är standardanvändaren ”rot”.|
-| Tangent| Innehållet i nyckeln. Detta krävs om **Kontrollera** är inställd på ”tillgänglig”.|
-| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om den **ID** för resursen configuration-skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
+|Kommentar |En unik kommentar för nyckeln. Detta används för att identifiera nycklar unikt. |
+|Användarnamn |Användar namnet för hantering av SSH-auktoriserade nycklar för. Om den inte är definierad är standard användaren **roten**. |
+|Nyckel |Nyckelns innehåll. Detta **är obligatoriskt om alternativet** är angivet som **tillgängligt**.|
+
+## <a name="common-properties"></a>Gemensamma egenskaper
+
+|Egenskap |Beskrivning |
+|---|---|
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|Kontrol |Anger om nyckeln har definierats. Ange den här egenskapen som **saknas** för att se till att nyckeln inte finns i användarens auktoriserade nyckel fil. Ange att den **finns** för att säkerställa att nyckeln definieras i användarens auktoriserade nyckel fil. |
 
 ## <a name="example"></a>Exempel
 
-Följande exempel definierar en offentlig ssh auktoriserad nyckel för användaren ”monuser”.
+I följande exempel definieras en offentlig SSH-auktoriserad nyckel för användaren "monuser".
 
-```
+```powershell
 Import-DSCResource -Module nx
 
-Node $node {
-
-nxSshAuthorizedKeys myKey{
-   KeyComment = "myKey"
-   Ensure = "Present"
-   Key = 'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEA0b+0xSd07QXRifm3FXj7Pn/DblA6QI5VAkDm6OivFzj3U6qGD1VJ6AAxWPCyMl/qhtpRtxZJDu/TxD8AyZNgc8aN2CljN1hOMbBRvH2q5QPf/nCnnJRaGsrxIqZjyZdYo9ZEEzjZUuMDM5HI1LA9B99k/K6PK2Bc1NLivpu7nbtVG2tLOQs+GefsnHuetsRMwo/+c3LtwYm9M0XfkGjYVCLO4CoFuSQpvX6AB3TedUy6NZ0iuxC0kRGg1rIQTwSRcw+McLhslF0drs33fw6tYdzlLBnnzimShMuiDWiT37WqCRovRGYrGCaEFGTG2e0CN8Co8nryXkyWc6NSDNpMzw== rsa-key-20150401'
-   UserName = "monuser"
-}
+Node $node
+{
+    nxSshAuthorizedKeys myKey
+    {
+        KeyComment = "myKey"
+        Ensure = "Present"
+        Key = 'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEA0b+0xSd07QXRifm3FXj7Pn/DblA6QI5VAkDm6OivFzj3U6qGD1VJ6AAxWPCyMl/qhtpRtxZJDu/TxD8AyZNgc8aN2CljN1hOMbBRvH2q5QPf/nCnnJRaGsrxIqZjyZdYo9ZEEzjZUuMDM5HI1LA9B99k/K6PK2Bc1NLivpu7nbtVG2tLOQs+GefsnHuetsRMwo/+c3LtwYm9M0XfkGjYVCLO4CoFuSQpvX6AB3TedUy6NZ0iuxC0kRGg1rIQTwSRcw+McLhslF0drs33fw6tYdzlLBnnzimShMuiDWiT37WqCRovRGYrGCaEFGTG2e0CN8Co8nryXkyWc6NSDNpMzw== rsa-key-20150401'
+        UserName = "monuser"
+    }
 }
 ```

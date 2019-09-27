@@ -1,62 +1,62 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, konfiguration, installation
+keywords: DSC, PowerShell, konfiguration, installation
 title: Konfigurera LCM i PowerShell 4.0
-ms.openlocfilehash: a7d8a1d8dea5ca4c2cdf53b8c02e498be20dab60
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 747b15c483c79a7ecbb62214ef5a59f8dc137bd4
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67734616"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324920"
 ---
 # <a name="configuring-the-lcm-in-powershell-40"></a>Konfigurera LCM i PowerShell 4.0
 
->Gäller för: Windows PowerShell 4.0
+>Gäller för: Windows PowerShell 4,0
 
-**Information relaterad till Windows PowerShell 5.0 och senare finns i [konfigurerar den lokala Konfigurationshanteraren](metaConfig.md).**
+**Information som rör Windows PowerShell 5,0 och senare finns i [Konfigurera den lokala Configuration Manager](metaConfig.md).**
 
-Lokal konfigurationshanterare är Windows PowerShell Desired State Configuration (DSC)-motor.
-Den körs på alla målnoder och den är ansvarig för att anropa configuration-resurser som ingår i ett DSC-konfigurationsskript.
-Det här avsnittet visar en lista över egenskaper för lokal konfigurationshanterare och beskriver hur du kan ändra inställningarna för lokala Konfigurationshanteraren på målnoden.
+Local Configuration Manager är DSC-motorn (Desired State Configuration) för Windows PowerShell.
+Den körs på alla målnod och ansvarar för att anropa konfigurations resurserna som ingår i ett DSC-konfigurations skript.
+I det här avsnittet visas egenskaperna för lokala Configuration Manager och hur du kan ändra de lokala Configuration Manager inställningarna på en målnod.
 
-## <a name="local-configuration-manager-properties"></a>Egenskaper för lokala Configuration Manager
+## <a name="local-configuration-manager-properties"></a>Egenskaper för lokal Configuration Manager
 
-Här nedan listas de lokala Configuration Manager-egenskaper som du kan ange eller hämta.
+I följande lista visas de lokala Configuration Manager egenskaper som du kan ange eller hämta.
 
-- **AllowModuleOverwrite**: Styr huruvida nya konfigurationer som laddats ned från konfigurationstjänsten ska kunna skriva över gamla på målnoden. Möjliga värden är True och False.
-- **CertificateID**: Tumavtrycket för ett certifikat som används för att skydda autentiseringsuppgifter som angavs i en konfiguration. Mer information finns i [behöver du säkra autentiseringsuppgifter i Windows PowerShell Desired State Configuration?](https://blogs.msdn.microsoft.com/powershell/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration/).
-- **ConfigurationID**: Anger ett GUID som används för att hämta en viss fil från en pull-tjänsten. GUID som säkerställer att rätt konfigurationsfilen är tillgänglig.
-- **ConfigurationMode**: Anger hur den lokala Konfigurationshanteraren faktiskt tillämpar konfigurationen målnoder. Det kan ta följande värden:
-  - **ApplyOnly**: Med det här alternativet DSC gäller konfigurationen av och gör ingenting ytterligare såvida inte en ny konfiguration har identifierats, antingen genom att du skicka en ny konfiguration direkt till målet nod eller om du ansluter till en pull-tjänst och DSC identifierar en ny konfiguration när den kontaktar pull-tjänsten. Om målet nodkonfiguration drifts, utförs ingen åtgärd.
-  - **ApplyAndMonitor**: Med det här alternativet (som är standard), DSC gäller alla nya konfigurationer, oavsett om skickas av dig direkt till målnoden eller identifierats på en pull-tjänst. Om konfigurationen av målnoden drifts från konfigurationsfilen, rapporterar DSC därefter avvikelse i loggarna. Mer information om DSC-loggning finns i [med hjälp av händelseloggar för att diagnostisera fel i Desired State Configuration](http://blogs.msdn.com/b/powershell/archive/2014/01/03/using-event-logs-to-diagnose-errors-in-desired-state-configuration.aspx).
-  - **ApplyAndAutoCorrect**: Med det här alternativet gäller DSC eventuella nya konfigurationer om skickas av dig direkt till målnoden eller identifierats på en pull-tjänst. Därefter om konfigurationen av målnoden drifts från konfigurationsfilen, DSC rapporterar avvikelse i loggarna och försöker sedan justera nodkonfiguration mål att ta med konfigurationsfilen.
-- **ConfigurationModeFrequencyMins**: Visar frekvens (i minuter) som bakgrundsprogrammet för DSC försöka införa den aktuella konfigurationen på målnoden. Standardvärdet är 15. Det här värdet kan anges tillsammans med RefreshMode. När RefreshMode har angetts till PULL målnoden kontaktar tjänsten för konfiguration vid ett intervall som anges av RefreshFrequencyMins och hämtar den aktuella konfigurationen. Oavsett vilket värde för RefreshMode, gäller vid de tider som anges av ConfigurationModeFrequencyMins, konsekvens-motorn den senaste konfigurationen som hämtades till målnoden. RefreshFrequencyMins ska anges till ett heltal multipel av ConfigurationModeFrequencyMins.
-- **Autentiseringsuppgifter**: Anger autentiseringsuppgifter (precis som med Get-Credential) krävs för att använda fjärranslutna resurser, till exempel för att kontakta tjänsten för konfiguration.
-- **DownloadManagerCustomData**: Representerar en matris som innehåller anpassade data som är specifika för Hämtningshanteraren.
-- **DownloadManagerName**: Anger namnet på konfigurationen och modulen Hämtningshanteraren.
-- **RebootNodeIfNeeded**: Ställ in på `$true` så att resurser för att starta om en nod med hjälp av den `$global:DSCMachineStatus` flaggan. I annat fall kommer du behöva manuellt starta om noden för alla konfigurationer som kräver. Standardvärdet är `$false`. Om du vill använda den här inställningen när ett villkor för omstart är branschrekommendationer när det gäller av något annat än DSC (till exempel Windows Installer), kombinera den här inställningen med det [xPendingReboot](https://github.com/powershell/xpendingreboot) modulen.
-- **RefreshFrequencyMins**: Används när du har ställt in en pull-tjänst. Visar frekvens (i minuter) som den lokala Konfigurationshanteraren kontaktar en pull-tjänst för att hämta den aktuella konfigurationen. Det här värdet kan anges tillsammans med ConfigurationModeFrequencyMins. När RefreshMode har angetts till PULL målnoden kontaktar pull-tjänsten med ett intervall som anges av RefreshFrequencyMins och hämtar den aktuella konfigurationen. Vid de tider som anges av ConfigurationModeFrequencyMins gäller konsekvens motorn sedan den senaste konfigurationen som hämtades till målnoden. Om RefreshFrequencyMins inte har angetts till ett heltal multipel av ConfigurationModeFrequencyMins, systemet kommer avrunda uppåt. Standardvärdet är 30.
-- **RefreshMode**: Möjliga värden är **Push** (standard) och **hämta**. I ”push”-konfigurationen måste du placera en fil på varje nod i målet, med hjälp av valfri dator. I ”pull”-läge måste du konfigurera en pull-tjänst för lokala Configuration Manager för att kontakta och få åtkomst till konfigurationsfilerna.
+- **AllowModuleOverwrite**: Styr huruvida nya konfigurationer som hämtas från konfigurations tjänsten tillåts skriva över de gamla på målnoden. Möjliga värden är true och false.
+- **CertificateID**: Tumavtryck för ett certifikat som används för att skydda autentiseringsuppgifter som skickas i en konfiguration. Mer information finns i [vill du skydda autentiseringsuppgifter i Windows PowerShell Desired State Configuration?](https://blogs.msdn.microsoft.com/powershell/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration/).
+- **ConfigurationID**: Anger ett GUID som används för att hämta en viss konfigurations fil från en pull-tjänst. GUID ser till att rätt konfigurations fil används.
+- **ConfigurationMode**: Anger hur den lokala Configuration Manager faktiskt tillämpar konfigurationen på målnoden. Det kan ha följande värden:
+  - **ApplyOnly**: Med det här alternativet tillämpar DSC konfigurationen och gör ingenting ytterligare om inte en ny konfiguration identifieras, antingen genom att du skickar en ny konfiguration direkt till målnoden eller om du ansluter till en pull-tjänst och DSC identifierar en ny konfiguration när den kontrollerar med pull-tjänsten. Ingen åtgärd vidtas om nodens konfigurations riktning används.
+  - **ApplyAndMonitor**: Med det här alternativet (som är standard) använder DSC alla nya konfigurationer, oavsett om de skickas direkt till målnoden eller identifieras i en pull-tjänst. Därefter, om konfigurationen av mål noden går från konfigurations filen, rapporterar DSC den avvikelsen i loggarna. Mer information om DSC-loggning finns i [använda händelse loggar för att diagnostisera fel i önskad tillstånds konfiguration](https://blogs.msdn.com/b/powershell/archive/2014/01/03/using-event-logs-to-diagnose-errors-in-desired-state-configuration.aspx).
+  - **ApplyAndAutoCorrect**: Med det här alternativet använder DSC alla nya konfigurationer, oavsett om de skickas direkt till målnoden eller identifieras i en pull-tjänst. Därefter, om konfigurationen av mål noden går från konfigurations filen, rapporterar DSC den avvikelsen i loggarna och försöker sedan justera konfigurationen för målnoden så att konfigurations filen är kompatibel.
+- **ConfigurationModeFrequencyMins**: Representerar den frekvens (i minuter) som bakgrunds programmet för DSC försöker implementera den aktuella konfigurationen på målnoden. Standardvärdet är 15. Det här värdet kan anges tillsammans med RefreshMode. När RefreshMode är inställt på Hämta kontaktar målnoden konfigurations tjänsten med ett intervall som anges av RefreshFrequencyMins och hämtar den aktuella konfigurationen. Oavsett RefreshMode-värdet, med det intervall som anges av ConfigurationModeFrequencyMins, tillämpar konsekvens motorn den senaste konfigurationen som hämtades till målnoden. RefreshFrequencyMins ska anges till ett heltals multipel av ConfigurationModeFrequencyMins.
+- **Autentiseringsuppgift**: Anger autentiseringsuppgifter (som med Get-Credential) som krävs för att komma åt fjär resurser, t. ex. för att kontakta konfigurations tjänsten.
+- **DownloadManagerCustomData**: Representerar en matris som innehåller anpassade data som är speciella för hämtnings hanteraren.
+- **DownloadManagerName**: Anger namnet på konfigurations-och modulens hämtnings hanterare.
+- **RebootNodeIfNeeded**: Ange det här `$true` för att tillåta resurser att starta om noden `$global:DSCMachineStatus` med hjälp av flaggan. Annars måste du starta om noden manuellt för alla konfigurationer som kräver det. Standardvärdet är `$false`. Om du vill använda den här inställningen när ett villkor för omstart utförs av något annat än DSC (till exempel Windows Installer) kombinerar du den här inställningen med [xPendingReboot](https://github.com/powershell/xpendingreboot) -modulen.
+- **RefreshFrequencyMins**: Används när du har konfigurerat en pull-tjänst. Representerar den frekvens (i minuter) som den lokala Configuration Manager kontaktar en pull-tjänst för att hämta den aktuella konfigurationen. Det här värdet kan anges tillsammans med ConfigurationModeFrequencyMins. När RefreshMode är inställt på Hämta kontaktar målnoden den pull-tjänst med ett intervall som anges av RefreshFrequencyMins och hämtar den aktuella konfigurationen. Vid det intervall som anges av ConfigurationModeFrequencyMins tillämpar konsekvens motorn den senaste konfigurationen som hämtades till målnoden. Om RefreshFrequencyMins inte är inställt på ett heltals multipel av ConfigurationModeFrequencyMins, kommer systemet att avrundas. Standardvärdet är 30.
+- **RefreshMode**: Möjliga värden är **push** (standard) och **pull**. I "push"-konfigurationen måste du placera en konfigurations fil på varje målnod med valfri klient dator. I läget "pull" måste du konfigurera en pull-tjänst för lokala Configuration Manager att kontakta och komma åt konfigurationsfilerna.
 
 > [!NOTE]
-> LCM startar den **ConfigurationModeFrequencyMins** cykel baserat på:
+> LCM startar **ConfigurationModeFrequencyMins** -cykeln baserat på:
 >
-> - En ny metaconfig tillämpas med hjälp av `Set-DscLocalConfigurationManager`
-> - En omstart av datorn
+> - En ny Metaconfig tillämpas med hjälp av`Set-DscLocalConfigurationManager`
+> - Omstart av datorn
 >
-> För alla villkor där en krasch som identifieras inom 30 sekunder och cykeln inträffar i processen för timer startas.
-> En samtidig åtgärd kan försena cykeln startas, om varaktigheten för den här åtgärden överskrider den konfigurera cykel frekvensen nästa timern startar inte.
+> För alla villkor där timer-processen upplever en krasch, kommer den att identifieras inom 30 sekunder och cykeln startas om.
+> En samtidig åtgärd kan fördröja cykeln från att startas, om den här åtgärdens varaktighet överskrider den konfigurerade cykel frekvensen, kommer nästa timer inte att starta.
 >
-> Exempelvis metaconfig är konfigurerad med en 15 minuters pull frekvens och en hämtning uppstår på T1.  Noden inte är klar för 16 minuter.  Den första 15 minuters cykeln ignoreras och nästa pull inträffar vid T1 + 15 + 15.
+> Metaconfig konfigureras till exempel med en frekvens på 15 minuter och hämtning sker vid T1.  Noden slutförs inte i 16 minuter.  Den första 15 minuters cykeln ignoreras och nästa hämtning sker vid T1 + 15 + 15.
 
-### <a name="example-of-updating-local-configuration-manager-settings"></a>Exempel för att uppdatera inställningarna för lokala Configuration Manager
+### <a name="example-of-updating-local-configuration-manager-settings"></a>Exempel på uppdatering av inställningar för lokala Configuration Manager
 
-Du kan uppdatera Local Configuration Manager-inställningarna för en målnoden genom att inkludera en **LocalConfigurationManager** blockera i blocket nod i ett konfigurationsskript som visas i följande exempel.
+Du kan uppdatera de lokala Configuration Manager inställningarna för en målnod genom att inkludera ett **LocalConfigurationManager** -block inuti Node-blocket i ett konfigurations skript, som du ser i följande exempel.
 
 ```powershell
 Configuration ExampleConfig
 {
-    Node “Server001”
+    Node "Server001"
     {
         LocalConfigurationManager
         {
@@ -80,16 +80,16 @@ Configuration ExampleConfig
 ExampleConfig -OutputPath "c:\users\public\dsc"
 ```
 
-Köra skript i det förra exemplet genererar en MOF-fil som anger och lagrar sedan önskade inställningar.
-Om du vill tillämpa inställningarna, kan du använda den **Set-DscLocalConfigurationManager** cmdlet, enligt följande exempel.
+Att köra skriptet i föregående exempel genererar en MOF-fil som anger och lagrar önskade inställningar.
+Om du vill tillämpa inställningarna kan du använda cmdleten **set-DscLocalConfigurationManager** , som visas i följande exempel.
 
 ```powershell
 Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 ```
 
 > [!NOTE]
-> För den **sökväg** parameter, måste du ange samma sökväg som du angav för den **OutputPath** parameter när du startade konfigurationen i exemplet ovan.
+> För parametern **Path** måste du ange samma sökväg som du angav för parametern **OutputPath** när du anropade konfigurationen i föregående exempel.
 
-Om du vill visa de aktuella inställningarna för lokala Configuration Manager kan du använda den **Get-DscLocalConfigurationManager** cmdlet.
-Om du anropar den här cmdleten utan parametrar, som standard får den Local Configuration Manager-inställningarna för den nod där du kör den.
-Om du vill ange en annan nod, använda den **CimSession** parameter med denna cmdlet.
+Du kan använda cmdleten **Get-DscLocalConfigurationManager** för att se de aktuella inställningarna för lokal Configuration Manager.
+Om du anropar denna cmdlet utan parametrar hämtas de lokala Configuration Manager inställningarna för den nod som du kör den på som standard.
+Om du vill ange en annan nod använder du parametern **CimSession** med denna cmdlet.

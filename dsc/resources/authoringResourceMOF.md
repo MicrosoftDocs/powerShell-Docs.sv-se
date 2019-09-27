@@ -1,27 +1,27 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+keywords: DSC, PowerShell, konfiguration, installation
 title: Skriva en anpassad DSC-resurs med MOF
-ms.openlocfilehash: f243c3e3297711e6f6346a0f813a9c017fe227c3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 24e9d15bcbe1eddd297daeb04e0713c443e52c38
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076743"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323778"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Skriva en anpassad DSC-resurs med MOF
 
-> Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
-I det här avsnittet ska vi definiera schemat för en anpassad resurs i Windows PowerShell Desired State Configuration (DSC) i en MOF-fil och implementera resursen i en Windows PowerShell-skriptfil. Den här anpassade resursen är för att skapa och underhålla en webbplats.
+I det här avsnittet definierar vi schemat för en anpassad DSC-resurs (Windows PowerShell Desired State Configuration) i en MOF-fil och implementerar resursen i en Windows PowerShell-skriptfil. Den här anpassade resursen används för att skapa och underhålla en webbplats.
 
-## <a name="creating-the-mof-schema"></a>Skapa MOF-schema
+## <a name="creating-the-mof-schema"></a>Skapa MOF-schemat
 
-Schemat definierar egenskaperna för din resurs som kan konfigureras med en DSC-konfigurationsskript.
+Schemat definierar egenskaperna för din resurs som kan konfigureras med ett DSC-konfigurations skript.
 
 ### <a name="folder-structure-for-a-mof-resource"></a>Mappstruktur för en MOF-resurs
 
-Skapa följande mappstruktur för att implementera en anpassad DSC-resurs med en MOF-schema. MOF-schemat har definierats i filen Demo_IISWebsite.schema.mof och resurs-skript har definierats i Demo_IISWebsite.psm1. Alternativt kan du skapa ett manifest (psd1)-filen för modulen.
+Skapa följande mappstruktur om du vill implementera en anpassad DSC-resurs med ett MOF-schema. MOF-schemat definieras i filen Demo_IISWebsite. schema. MOF och resurs skriptet definieras i Demo_IISWebsite. psm1. Du kan också skapa en modul manifest fil (psd1).
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -33,11 +33,11 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
                 |- Demo_IISWebsite.schema.mof (file, required)
 ```
 
-Observera att det är nödvändigt att skapa en mapp med namnet DSCResources under den översta mappen, och att mapp för varje resurs måste ha samma namn som resursen.
+Observera att det är nödvändigt att skapa en mapp med namnet DSCResources under mappen på den översta nivån och att mappen för varje resurs måste ha samma namn som resursen.
 
-### <a name="the-contents-of-the-mof-file"></a>Innehållet i MOF-filen
+### <a name="the-contents-of-the-mof-file"></a>MOF-filens innehåll
 
-Följande är ett exempel MOF-fil som kan användas för en anpassad webbplats-resurs. Om du vill följa det här exemplet sparar det här schemat till en fil och anropa filen *Demo_IISWebsite.schema.mof*.
+Följande är ett exempel på en MOF-fil som kan användas för en anpassad webbplats resurs. Om du vill följa det här exemplet sparar du schemat till en fil och anropar filen *Demo_IISWebsite. schema. MOF*.
 
 ```
 [ClassVersion("1.0.0"), FriendlyName("Website")]
@@ -54,25 +54,25 @@ class Demo_IISWebsite : OMI_BaseResource
 };
 ```
 
-Observera följande om den tidigare koden:
+Observera följande om föregående kod:
 
-* `FriendlyName` Definierar namnet som du kan använda för att referera till den här anpassade resursen i DSC-konfigurationsskript. I det här exemplet `Website` motsvarar det egna namnet `Archive` för inbyggt Arkiv-resursen.
-* Den klass som du definierar för din anpassade resurs måste komma från `OMI_BaseResource`.
-* Typ-kvalificerare `[Key]`på en egenskap som anger att den här egenskapen är en unik identifikation resursinstans. Minst en `[Key]` egenskapen måste anges.
-* Den `[Required]` kvalificerare anger att egenskapen krävs (ett värde måste anges i alla konfigurationsskript som använder den här resursen).
-* Den `[write]` kvalificerare anger att den här egenskapen är valfri när du använder den anpassade resursen i ett konfigurationsskript. Den `[read]` kvalificerare tyder på att en egenskap inte kan anges av en konfiguration är enbart för rapportering.
-* `Values` begränsar vilka värden som kan tilldelas till egenskapen i listan över värden som definierats i `ValueMap`. Mer information finns i [ValueMap och värdet kvalificerare](/windows/desktop/WmiSdk/value-map).
-* Inklusive en egenskap kallas `Ensure` med värden `Present` och `Absent` i din resurs bör som ett sätt att bibehålla en konsekvent format med inbyggda DSC-resurser.
-* Namnge schemafilen för anpassade på följande sätt: `classname.schema.mof`, där `classname` är den identifierare som följer den `class` nyckelord i din schemadefinition.
+* `FriendlyName`definierar det namn som du kan använda för att referera till den här anpassade resursen i DSC-konfigurations skript. I det här exemplet `Website` motsvarar det egna namnet `Archive` för den inbyggda Arkiv resursen.
+* Den klass som du definierar för din anpassade resurs måste vara härledd från `OMI_BaseResource`.
+* Typen Qualifier, `[Key]`i en egenskap anger att den här egenskapen unikt identifierar resurs instansen. Minst en `[Key]` egenskap krävs.
+* `[Required]` Kvalificeraren anger att egenskapen är obligatorisk (ett värde måste anges i alla konfigurations skript som använder den här resursen).
+* `[write]` Kvalificeraren anger att den här egenskapen är valfri när du använder den anpassade resursen i ett konfigurations skript. `[read]` Kvalificeraren anger att en egenskap inte kan ställas in av en konfiguration och endast är avsedd för rapportering.
+* `Values`begränsar de värden som kan tilldelas till egenskapen till listan över värden som definierats i `ValueMap`. Mer information finns i [ValueMap och värde kvalificerare](/windows/desktop/WmiSdk/value-map).
+* Att inkludera en egenskap `Ensure` som kallas `Present` med `Absent` värden och i din resurs rekommenderas som ett sätt att underhålla ett konsekvent format med inbyggda DSC-resurser.
+* Namnge schema filen för din anpassade resurs enligt följande: `classname.schema.mof`, där `classname` är identifieraren som följer `class` nyckelordet i schema definitionen.
 
-### <a name="writing-the-resource-script"></a>Skriva skript för resursen
+### <a name="writing-the-resource-script"></a>Skriver resurs skriptet
 
-Skriptet resource implementerar logiken för resursen. I den här modulen måste du inkludera tre funktioner som kallas **Get-TargetResource**, **Set-TargetResource**, och **Test-TargetResource**. Alla tre funktioner måste vidta en parameteruppsättning som är identisk med uppsättningen egenskaper som definieras i MOF-schemat som du skapade för din resurs. I detta dokument kallas den här uppsättningen egenskaper ”resursegenskaper”. Dessa tre funktioner i en fil med namnet Store <ResourceName>.psm1. I följande exempel lagras funktionerna i en fil med namnet Demo_IISWebsite.psm1.
+Resurs skriptet implementerar logiken för resursen. I den här modulen måste du inkludera tre funktioner som kallas **Get-TargetResource**, **set-TargetResource**och **test-TargetResource**. Alla tre funktioner måste ha en parameter uppsättning som är identisk med uppsättningen med egenskaper som definierats i MOF-schemat som du skapade för din resurs. I det här dokumentet kallas den här uppsättningen egenskaper för "resurs egenskaper". Lagra dessa tre funktioner i en fil med <ResourceName>namnet. psm1. I följande exempel lagras funktionerna i en fil med namnet Demo_IISWebsite. psm1.
 
 > [!NOTE]
-> När du kör samma konfigurationsskript på resursen mer än en gång, får du några fel och resursen ska befinna sig i samma tillstånd som körs skriptet en gång. För att åstadkomma detta måste du kontrollera att din **Get-TargetResource** och **Test-TargetResource** functions Låt resursen inte ändrats och den anropar den **Set-TargetResource**fungerar mer än en gång i en sekvens med samma parameter värden motsvarar alltid att anropa den en gång.
+> När du kör samma konfigurations skript på din resurs mer än en gång, bör du få inga fel och resursen ska finnas kvar i samma tillstånd som att köra skriptet en gång. För att åstadkomma detta måste du kontrol lera att funktionerna **Get-TargetResource** och **test-TargetResource** lämnar resursen oförändrade och att anropa funktionen **set-TargetResource** mer än en gång i en sekvens med samma parameter värdena motsvarar alltid att anropa det en gång.
 
-I den **Get-TargetResource** fungera implementering, använda nyckelresurs egenskapsvärdena som tillhandahålls som parametrar för att kontrollera status för den angivna resurs-instansen. Den här funktionen måste returnera en hash-tabell som listar alla resursegenskaper som nycklar och de faktiska värdena för dessa egenskaper som motsvarande värden. Följande kod innehåller ett exempel.
+I funktionen **Get-TargetResource** -funktion använder du de nyckel resurs egenskaps värden som anges som parametrar för att kontrol lera status för den angivna resurs instansen. Den här funktionen måste returnera en hash-tabell som visar alla resurs egenskaper som nycklar och de faktiska värdena för dessa egenskaper som motsvarande värden. Följande kod visar ett exempel.
 
 ```powershell
 # DSC uses the Get-TargetResource function to fetch the status of the resource instance specified in the parameters for the target machine
@@ -123,13 +123,13 @@ function Get-TargetResource
 }
 ```
 
-Beroende på de värden som har angetts för resursegenskaper i konfigurationsskript, den **Set-TargetResource** måste göra något av följande:
+Beroende på vilka värden som anges för resurs egenskaperna i konfigurations skriptet måste **set-TargetResource** göra något av följande:
 
 * Skapa en ny webbplats
 * Uppdatera en befintlig webbplats
 * Ta bort en befintlig webbplats
 
-I följande exempel illustrerar detta.
+I följande exempel visas detta.
 
 ```powershell
 # The Set-TargetResource function is used to create, delete or configure a website on the target machine.
@@ -166,9 +166,9 @@ function Set-TargetResource
 }
 ```
 
-Slutligen den **Test-TargetResource** funktion måste vidta samma parameter anges som **Get-TargetResource** och **Set-TargetResource**. I din implementering av **Test-TargetResource**, kontrollera status för resursinstans som har angetts i parametrarna för viktiga. Om den aktuella statusen för resursinstansen inte matchar de värden som anges i parameteruppsättningen, returnerar **$false**. Annars returneras **$true**.
+Slutligen måste **test-TargetResource** -funktionen ta samma parameter uppsättning som **Get-TargetResource** och **set-TargetResource**. I din implementering av **test-TargetResource**kontrollerar du statusen för den resurs instans som anges i nyckel parametrarna. Om resurs instansens faktiska status inte matchar värdena som anges i parameter uppsättningen returnerar **$false**. Annars returnerar **$True**.
 
-I följande kod implementerar den **Test TargetResource** funktion.
+I följande kod implementeras funktionen **test-TargetResource** .
 
 ```powershell
 function Test-TargetResource
@@ -215,13 +215,13 @@ $result
 }
 ```
 
-**Obs**: För enklare felsökning kan använda den **Write-Verbose** cmdlet i din implementering av föregående tre funktioner.
->Denna cmdlet skriver text till den utförliga meddelandeströmmen.
->Som standard visas inte den utförliga meddelandeströmmen, men du kan visa den genom att ändra värdet för den **$VerbosePreference** variabel eller med hjälp av den **utförlig** parameter i DSC-cmdlet: ar = ny.
+**Obs**: För enklare fel sökning använder du cmdleten **Write-Verbose** i din implementering av de föregående tre funktionerna.
+>Denna cmdlet skriver text till data strömmen för utförliga meddelanden.
+>Den utförliga meddelande strömmen visas som standard inte, men du kan visa den genom att ändra värdet för variabeln **$VerbosePreference** eller genom att använda **verbose** -parametern i DSC-cmdletar = ny.
 
-### <a name="creating-the-module-manifest"></a>Skapa modulmanifestet
+### <a name="creating-the-module-manifest"></a>Skapar modulens manifest
 
-Använd slutligen den **New-ModuleManifest** cmdlet för att definiera en <ResourceName>.psd1 fil för anpassad resurs. När du anropar denna cmdlet, referera till skriptfilen för modulen (.psm1) som beskrivs i föregående avsnitt. Inkludera **Get-TargetResource**, **Set-TargetResource**, och **Test TargetResource** i listan med funktioner för att exportera. Följande är en exempel-manifestfilen.
+Använd slutligen cmdleten **New-ModuleManifest** för att definiera en <ResourceName>. psd1-fil för din anpassade resurspool. När du anropar denna cmdlet refererar du till script module-filen (. psm1) som beskrivs i föregående avsnitt. Inkludera **Get-TargetResource**, **set-TargetResource**och **test-TargetResource** i listan över funktioner som ska exporteras. Följande är ett exempel på en manifest fil.
 
 ```powershell
 # Module manifest for module 'Demo.IIS.Website'
@@ -277,14 +277,14 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 
 ## <a name="supporting-psdscrunascredential"></a>Stöd för PsDscRunAsCredential
 
->**Obs:** **PsDscRunAsCredential** stöds i PowerShell 5.0 och senare.
+>**Obs:** **PsDscRunAsCredential** stöds i PowerShell 5,0 och senare.
 
-Den **PsDscRunAsCredential** egenskapen kan användas i [DSC-konfigurationer](../configurations/configurations.md) resource förhindra om du vill ange att resursen ska köras under en angiven uppsättning autentiseringsuppgifter.
-Mer information finns i [kör DSC med autentiseringsuppgifterna för användaren](../configurations/runAsUser.md).
+Du kan använda egenskapen **PsDscRunAsCredential** i resurs blocket [DSC-konfigurationer](../configurations/configurations.md) för att ange att resursen ska köras under en angiven uppsättning autentiseringsuppgifter.
+Mer information finns i [köra DSC med](../configurations/runAsUser.md)användarautentiseringsuppgifter.
 
-Du kan använda automatiska variabeln för att komma åt användarkontext från inom en anpassad resurs `$PsDscContext`.
+Om du vill komma åt användar kontexten inifrån en anpassad resurs kan du använda den `$PsDscContext`automatiska variabeln.
 
-Följande kod skulle till exempel skriva användarkontext där resursen körs till en dataström med utförliga utdata:
+Till exempel kan följande kod skriva användar kontexten som resursen körs till i utförlig utdataström:
 
 ```powershell
 if (PsDscContext.RunAsUser) {
@@ -294,13 +294,13 @@ if (PsDscContext.RunAsUser) {
 
 ## <a name="rebooting-the-node"></a>Starta om noden
 
-Om de åtgärder som vidtas din `Set-TargetResource` funktionen kräver en omstart kan du använda en global flagga som talar om MGM om du vill starta om noden. Den här omstarten sker direkt efter den `Set-TargetResource` funktionen har slutförts.
+Om de åtgärder som vidtas `Set-TargetResource` i funktionen kräver omstart kan du använda en global flagga för att instruera LCM att starta om noden. Den här omstarten sker `Set-TargetResource` direkt efter att funktionen har slutförts.
 
-I din `Set-TargetResource` fungera, Lägg till följande rad med kod.
+I din `Set-TargetResource` funktion lägger du till följande kodrad.
 
 ```powershell
 # Include this line if the resource requires a system reboot.
 $global:DSCMachineStatus = 1
 ```
 
-För att MGM om du vill starta om noden, den **RebootNodeIfNeeded** flaggan måste anges till `$true`. Den **ActionAfterReboot** inställningen bör också anges till **ContinueConfiguration**, vilket är standard. Läs mer om hur du konfigurerar LCM [konfigurerar den lokala Konfigurationshanteraren](../managing-nodes/metaConfig.md), eller [konfigurerar den lokala Konfigurationshanteraren (v4)](../managing-nodes/metaConfig4.md).
+För att LCM ska kunna starta om noden måste flaggan **RebootNodeIfNeeded** anges till `$true`. Inställningen **ActionAfterReboot** bör också ställas in på **ContinueConfiguration**, vilket är standardvärdet. Mer information om hur du konfigurerar LCM finns i [Konfigurera den lokala Configuration Manager](../managing-nodes/metaConfig.md)eller [konfigurera den lokala Configuration Manager (v4)](../managing-nodes/metaConfig4.md).

@@ -1,46 +1,46 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
-title: Alternativ för autentiseringsuppgifter i konfigurationsdata
-ms.openlocfilehash: 2a326e45bbbad7bd2362b66b88bf61b98df7b02e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+keywords: DSC, PowerShell, konfiguration, installation
+title: Alternativ för autentiseringsuppgifter i konfigurations data
+ms.openlocfilehash: 660c3643f7eb2e9ccb91bd992747fb9d5da0ccdb
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080160"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323290"
 ---
-# <a name="credentials-options-in-configuration-data"></a>Alternativ för autentiseringsuppgifter i konfigurationsdata
+# <a name="credentials-options-in-configuration-data"></a>Alternativ för autentiseringsuppgifter i konfigurations data
 
->Gäller för: Windows PowerShell 5.0
+>Gäller för: Windows PowerShell 5,0
 
-## <a name="plain-text-passwords-and-domain-users"></a>Oformaterad textlösenord och domänanvändare
+## <a name="plain-text-passwords-and-domain-users"></a>Lösen ord för oformaterad text och domän användare
 
-DSC-konfigurationer som innehåller en autentiseringsuppgift utan kryptering genererar ett felmeddelande om lösenord i klartext.
-Dessutom genererar DSC en varning när du använder autentiseringsuppgifter för domänen.
-Använda DSC-konfiguration data nyckelord för att ignorera dessa fel och varningar:
+DSC-konfigurationer som innehåller en autentiseringsuppgift utan kryptering genererar ett fel meddelande om lösen ord med oformaterad text.
+DSC kommer också att generera en varning när du använder domänautentiseringsuppgifter.
+För att ignorera dessa fel och varnings meddelanden använder du nyckelorden DSC-konfigurations data:
 
 - **PsDscAllowPlainTextPassword**
 - **PsDscAllowDomainUser**
 
 > [!NOTE]
-> Lagra/överföring av okrypterade lösenord i klartext är inte säker. Du rekommenderas att skydda autentiseringsuppgifter med hjälp av de metoder som beskrivs senare i det här avsnittet.
-> Tjänsten Azure Automation DSC kan du centralt hantera autentiseringsuppgifter för att kompileras i konfigurationer och lagras på ett säkert sätt.
-> Läs om: [Kompilera DSC-konfigurationer / Autentiseringstillgångar](/azure/automation/automation-dsc-compile#credential-assets)
+> Det är vanligt vis inte säkert att lagra/överföra okrypterade lösen ord okrypterade. Att skydda autentiseringsuppgifter genom att använda de metoder som beskrivs senare i det här avsnittet rekommenderas.
+> Med tjänsten Azure Automation DSC kan du centralt hantera autentiseringsuppgifter som ska kompileras i konfigurationer och lagras på ett säkert sätt.
+> Mer information finns i: [Kompilera DSC-konfigurationer/Credential-tillgångar](/azure/automation/automation-dsc-compile#credential-assets)
 
-## <a name="handling-credentials-in-dsc"></a>Hantering av autentiseringsuppgifter i DSC
+## <a name="handling-credentials-in-dsc"></a>Hantera autentiseringsuppgifter i DSC
 
-DSC-konfiguration resurser kör som- `Local System` som standard.
-Men vissa resurser måste autentiseringsuppgifter, till exempel när den `Package` resurs ska installera programvara under ett visst användarkonto.
+DSC-konfigurations resurser `Local System` körs som standard.
+Vissa resurser behöver dock en autentiseringsuppgift, till exempel när `Package` resursen måste installera program vara under ett visst användar konto.
 
-Resurser som tidigare använde ett hårdkodat `Credential` egenskapsnamn ska hantera detta.
-WMF 5.0 har lagts till en automatisk `PsDscRunAsCredential` egenskap för alla resurser.
-Information om hur du använder `PsDscRunAsCredential`, se [kör DSC med autentiseringsuppgifterna för användaren](runAsUser.md).
-Nyare resurser och anpassade resurser kan använda den här automatiska egenskapen istället för att skapa sina egna egenskapen för autentiseringsuppgifter.
+Tidigare resurser använde ett hårdkodat `Credential` egenskaps namn för att hantera detta.
+WMF 5,0 har lagt till `PsDscRunAsCredential` en automatisk egenskap för alla resurser.
+Information om hur du `PsDscRunAsCredential`använder finns i [köra DSC med användarautentiseringsuppgifter](runAsUser.md).
+Nya resurser och anpassade resurser kan använda denna automatiska egenskap i stället för att skapa egna egenskaper för autentiseringsuppgifter.
 
 > [!NOTE]
-> Design av vissa resurser är använder olika autentiseringsuppgifter för en särskild anledning och de har sina egna autentiseringsegenskaper.
+> Designen av vissa resurser är att använda flera autentiseringsuppgifter av en viss anledning och de har sina egna egenskaper för autentiseringsuppgifter.
 
-För att hitta tillgängliga autentiseringsuppgifterna egenskaperna för en resurs använder antingen `Get-DscResource -Name ResourceName -Syntax` eller Intellisense i ISE (`CTRL+SPACE`).
+Om du vill hitta tillgängliga egenskaper för autentiseringsuppgifter på en resurs `Get-DscResource -Name ResourceName -Syntax` använder du antingen eller IntelliSense: en`CTRL+SPACE`i Ise ().
 
 ```powershell
 PS C:\> Get-DscResource -Name Group -Syntax
@@ -58,26 +58,26 @@ Group [String] #ResourceName
 }
 ```
 
-Det här exemplet används en [grupp](../resources/resources.md) resurs från den `PSDesiredStateConfiguration` inbyggda modulen för DSC-resurs.
-Det kan skapa lokala grupper och lägga till eller ta bort medlemmar.
-Den accepterar både den `Credential` egenskap och automatiskt `PsDscRunAsCredential` egenskapen.
-Resursen endast använder dock den `Credential` egenskapen.
+I det här exemplet används en [grupp](../resources/resources.md) resurs `PSDesiredStateConfiguration` från den inbyggda DSC-modulen.
+Den kan skapa lokala grupper och lägga till eller ta bort medlemmar.
+Både `Credential` egenskapen och den automatiska `PsDscRunAsCredential` egenskapen accepteras.
+Resursen använder `Credential` dock endast-egenskapen.
 
-Mer information om den `PsDscRunAsCredential` egenskap, finns i [kör DSC med autentiseringsuppgifterna för användaren](runAsUser.md).
+Mer information om `PsDscRunAsCredential` egenskapen finns i [köra DSC med](runAsUser.md)användarautentiseringsuppgifter.
 
-## <a name="example-the-group-resource-credential-property"></a>Exempel: Gruppresurs Credential-egenskapen
+## <a name="example-the-group-resource-credential-property"></a>Exempel: Egenskapen autentiseringsuppgifter för grupp resurs
 
-DSC körs under `Local System`, så att den redan har behörighet att ändra lokala användare och grupper.
-Om medlemmen har lagts till är ett lokalt konto, krävs inga autentiseringsuppgifter.
-Om den `Group` resurs lägger till ett nytt konto i den lokala gruppen och sedan en autentiseringsuppgift är nödvändigt.
+DSC körs under `Local System`, så den har redan behörighet att ändra lokala användare och grupper.
+Om medlemmen som har lagts till är ett lokalt konto krävs ingen autentiseringsuppgift.
+`Group` Om resursen lägger till ett domän konto i den lokala gruppen är en autentiseringsuppgift nödvändig.
 
 Anonyma frågor till Active Directory är inte tillåtna.
-Den `Credential` egenskapen för den `Group` resurs är det domänkonto som används för att fråga Active Directory.
-För de flesta ändamål detta kan bero på ett generiskt användarkonto att som standard kan användare *läsa* de flesta objekt i Active Directory.
+`Group` Resursens egenskap är det domän konto som används för att fråga Active Directory. `Credential`
+Detta kan vara ett allmänt användar konto, eftersom användare som standard kan *läsa* de flesta objekt i Active Directory.
 
 ## <a name="example-configuration"></a>Exempel på konfiguration
 
-Följande exempelkod använder DSC för att fylla i en lokal grupp med en domänanvändare:
+I följande exempel kod används DSC för att fylla i en lokal grupp med en domän användare:
 
 ```powershell
 Configuration DomainCredentialExample
@@ -103,7 +103,7 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred
 ```
 
-Den här koden genererar ett fel och ett varningsmeddelande:
+Den här koden genererar både ett fel och ett varnings meddelande:
 
 ```
 ConvertTo-MOFInstance : System.InvalidOperationException error processing property 'Credential' OF
@@ -134,18 +134,18 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
 
 Det här exemplet har två problem:
 
-1. Felmeddelandet förklarar att lösenord i klartext inte rekommenderas
-2. En varning om att du inte använder en domänautentiseringsuppgift
+1. Ett fel förklarar att lösen ord för oformaterad text inte rekommenderas
+2. En varning om att använda en domän behörighet
 
-Flaggorna **PSDSCAllowPlainTextPassword** och **PSDSCAllowDomainUser** Ignorera fel- och varningsstatusmeddelanden som informerar användaren om risken i fråga.
+Flaggorna **PSDSCAllowPlainTextPassword** och **PSDSCAllowDomainUser** undertrycker felet och varningen som informerar användaren om risken.
 
 ## <a name="psdscallowplaintextpassword"></a>PSDSCAllowPlainTextPassword
 
-Det första felmeddelandet har en URL med dokumentation.
-Den här länken förklarar hur du krypterar lösenord med hjälp av en [ConfigurationData](./configData.md) struktur och ett certifikat.
-Mer information om certifikat och DSC [Läs det här inlägget](http://aka.ms/certs4dsc).
+Det första fel meddelandet har en URL med dokumentation.
+Den här länken förklarar hur du krypterar lösen ord med hjälp av en [ConfigurationData](./configData.md) -struktur och ett certifikat.
+Mer information om certifikat och DSC [finns i det här inlägget](https://aka.ms/certs4dsc).
 
-Om du vill framtvinga ett lösenord i oformaterad text, resursen kräver den `PsDscAllowPlainTextPassword` nyckelord i konfigurationsdata avsnittet på följande sätt:
+För att framtvinga ett lösen ord för oformaterad text kräver `PsDscAllowPlainTextPassword` resursen nyckelordet i avsnittet konfigurations data på följande sätt:
 
 ```powershell
 $password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
@@ -179,9 +179,9 @@ $cd = @{
 DomainCredentialExample -ConfigurationData $cd
 ```
 
-### <a name="localhostmof"></a>localhost.mof
+### <a name="localhostmof"></a>localhost. MOF
 
-Den **PSDSCAllowPlainTextPassword** flaggan kräver att användaren bekräftar risken för att lagra lösenord i oformaterad text i en MOF-fil. I den genererade MOF-filen, även om en **PSCredential** objekt som innehåller en **SecureString** har använts, lösenorden visas fortfarande som oformaterad text. Det här är den enda gången som autentiseringsuppgifterna är tillgängliga. Få åtkomst till MOF-filen på så sätt får alla komma åt administratörskontot.
+**PSDSCAllowPlainTextPassword** -flaggan kräver att användaren bekräftar risken för att lösen ord för oformaterad text ska lagras i en MOF-fil. I den genererade MOF-filen, även om ett **PSCredential** -objekt som innehåller en **SecureString** användes, visas lösen orden fortfarande som oformaterad text. Detta är den enda tidpunkt då autentiseringsuppgifterna exponeras. Om du får åtkomst till den här MOF-filen får vem som helst åtkomst till administratörs kontot.
 
 ```
 /*
@@ -218,31 +218,31 @@ ModuleVersion = "1.0";
 
 ### <a name="credentials-in-transit-and-at-rest"></a>Autentiseringsuppgifter vid överföring och i vila
 
-- Den **PSDscAllowPlainTextPassword** -flagga gör kompileringen av MOF-filer som innehåller lösenord i klartext.
-  Vidta åtgärder vid lagring MOF-filer som innehåller lösenord i klartext.
-- När MOF-filen levereras till en nod i **Push** läge, WinRM krypterar kommunikation för att skydda lösenord i klartext, såvida inte du åsidosätta standardinställningen med den **AllowUnencrypted** parametern.
-  - Kryptera MOF med ett certifikat skyddar MOF-filen i viloläge innan den har kopplats till en nod.
-- I **Pull** läge, som du kan konfigurera Windows-hämtningsservern för att använda HTTPS för att kryptera trafik med hjälp av det protokoll som anges i Internet Information Server. Mer information finns i artiklarna [konfigurera en DSC-hämtningsklient](../pull-server/pullclient.md) och [skydda MOF-filer med certifikat](../pull-server/secureMOF.md).
-  - I den [Azure Automation-Tillståndskonfiguration](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) service, Pull-trafik krypteras alltid.
-- På noden och MOF-filer krypteras på plats från och med PowerShell 5.0.
-  - Filer är krypterade i vila i PowerShell 4.0 MOF om de är krypterade med ett certifikat när de skickas eller hämtas till noden.
+- Flaggan **PSDscAllowPlainTextPassword** tillåter KOMPILERING av MOF-filer som innehåller lösen ord i klartext.
+  Vidta försiktighets åtgärder när du lagrar MOF-filer som innehåller lösen ord för klartext.
+- När MOF-filen levereras till en nod i **push** -läge krypterar WinRM kommunikationen för att skydda lösen ordet för klartext om du inte åsidosätter standardvärdet med parametern **AllowUnencrypted** .
+  - Kryptering av MOF med ett certifikat skyddar MOF-filen i vila innan den tillämpas på en nod.
+- I **pull** -läge kan du konfigurera Windows pull server för att använda HTTPS för att kryptera trafik med protokollet som anges i Internet Information Server. Mer information finns i artikeln om att konfigurera [en DSC-pull-klient](../pull-server/pullclient.md) och [skydda MOF-filer med certifikat](../pull-server/secureMOF.md).
+  - Pull-trafik är alltid krypterad i [Azure Automation tillstånds konfigurations](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) tjänsten.
+- På noden krypteras MOF-filer i vila från och med PowerShell 5,0.
+  - I PowerShell 4,0 MOF-filer okrypterade i rest om de inte krypteras med ett certifikat när de skickas eller hämtas till noden.
 
-**Microsoft avråder för att undvika lösenord på grund av en stor säkerhetsrisk.**
+**Microsoft rekommenderar att lösen ord för oformaterad text undviks på grund av en betydande säkerhets risk.**
 
-## <a name="domain-credentials"></a>Domain Credentials
+## <a name="domain-credentials"></a>Domänautentiseringsuppgifter
 
-Som exempel konfigurationsskript igen (med eller utan kryptering), fortfarande att genererar varning som använder en domän-konto för en autentiseringsuppgift inte rekommenderas.
-Med ett lokalt konto eliminerar potentiell exponering av autentiseringsuppgifter för domänen som kan användas på andra servrar.
+Om du kör exempel konfigurations skriptet igen (med eller utan kryptering), genererar fortfarande varningen att ett domän konto för en autentiseringsuppgift inte rekommenderas.
+Genom att använda ett lokalt konto elimineras potentiell exponering för domänautentiseringsuppgifter som kan användas på andra servrar.
 
-**När du använder autentiseringsuppgifter med DSC-resurser, föredrar du ett lokalt konto under ett domänkonto när det är möjligt.**
+**När du använder autentiseringsuppgifter med DSC-resurser föredrar du ett lokalt konto över ett domän konto när det är möjligt.**
 
-Om det finns en ”\\” eller ”\@” i den `Username` egenskapen för autentiseringsuppgifter och sedan DSC behandlar det som ett domänkonto.
-Det finns ett undantag för ”localhost”, ”127.0.0.1” och ”:: 1” i domändelen i användarnamnet.
+Om det finns en\\\@eller i `Username` egenskapen för autentiseringsuppgiften, kommer DSC att behandla det som ett domän konto.
+Det finns ett undantag för "localhost", "127.0.0.1" och ":: 1" i domän delen av användar namnet.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
-I DSC `Group` resursexempel ovan, frågar ett Active Directory-domän *kräver* ett domänkonto.
-I det här fallet lägger du till den `PSDscAllowDomainUser` egenskap enligt den `ConfigurationData` blockera på följande sätt:
+I DSC `Group` -resursens exempel ovan *kräver* en förfrågan till en Active Directory domän ett domän konto.
+I det här fallet lägger `PSDscAllowDomainUser` du till egenskapen `ConfigurationData` i blocket enligt följande:
 
 ```powershell
 $password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
@@ -277,4 +277,4 @@ $cd = @{
 DomainCredentialExample -ConfigurationData $cd
 ```
 
-Nu genererar konfigurationsskriptet MOF-filen med några fel eller varningar.
+Nu kommer konfigurations skriptet att generera MOF-filen utan fel eller varningar.

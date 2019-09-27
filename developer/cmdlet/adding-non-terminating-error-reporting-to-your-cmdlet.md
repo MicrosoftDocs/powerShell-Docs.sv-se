@@ -1,5 +1,5 @@
 ---
-title: 'Att lägga till icke-avslutande fel som rapporterar till cmdlet: | Microsoft Docs'
+title: Lägga till icke-avslutande fel rapportering till din cmdlet | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,33 +8,33 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
-ms.openlocfilehash: 3741982f81efa04d8fe7ab448fba5f2fdf4b0c01
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a4426abec96cd922360aeef8c157b4e9f41a15b9
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068872"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322878"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Lägga till rapportering av fel som avbryter körningen i en cmdlet
 
-Cmdlet: ar kan rapportera oändliga fel genom att anropa den [System.Management.Automation.Cmdlet.WriteError][] metod och fortfarande fortsätter att fungera på den aktuella indataobjektet eller på ytterligare inkommande pipeline-objekt.
-Det här avsnittet beskrivs hur du skapar en cmdlet som rapporterar oändliga fel från dess inkommande bearbetningsmetoder.
+-Cmdletar kan rapportera icke-avslutande fel genom att anropa metoden [system. Management. Automation. cmdlet. WriteError][] och fortfarande fortsätta att använda det aktuella indatamängdet eller på ytterligare inkommande pipelines-objekt.
+I det här avsnittet beskrivs hur du skapar en-cmdlet som rapporterar att det inte går att avsluta fel från dess metoder för bearbetning av indata.
 
-Cmdlet: en måste klara för oändliga fel (samt avslutande fel), en [System.Management.Automation.ErrorRecord][] objekt identifierar felet.
-Varje Felpost identifieras med en unik sträng som kallas ”fel-ID”.
-Förutom identifieraren kategorin för varje fel anges av konstanterna som definieras av en [System.Management.Automation.ErrorCategory][] uppräkning.
-Du kan visa fel baserat på deras kategori genom att ange den `$ErrorView` variabeln ”CategoryView”.
+För att inte avsluta fel (och avsluta fel) måste cmdleten skicka ett [system. Management. Automation. ErrorRecord][] -objekt som identifierar felet.
+Varje felpost identifieras av en unik sträng som kallas "fel identifierare".
+Förutom identifieraren anges kategorin för varje fel av konstanter som definieras av en [system. Management. Automation. ErrorCategory][] -uppräkning.
+Användaren kan visa fel baserat på deras kategori genom att ange `$ErrorView` variabeln till "CategoryView".
 
-Mer information om felposter finns i [Windows PowerShell-felposter](./windows-powershell-error-records.md).
+Mer information om fel poster finns i [fel poster för Windows PowerShell](./windows-powershell-error-records.md).
 
 ## <a name="defining-the-cmdlet"></a>Definiera cmdleten
 
-Det första steget i Skapa en cmdlet är alltid namngivning av cmdlet: en och deklarerar .NET-klass som implementerar cmdlet: en.
-Denna cmdlet hämtar information om, så verb valt här heter ”hämta”.
-(Du kan bearbeta kommandoradsverktyget indata för nästan alla slags cmdlet som kan hämta information.) Läs mer om godkända cmdlet verb [Cmdlet Verb-namnen](approved-verbs-for-windows-powershell-commands.md).
+Det första steget i att skapa en cmdlet namnger alltid cmdleten och deklarerar den .NET-klass som implementerar cmdleten.
+Den här cmdleten hämtar process information, så verbet som väljs här är "Get".
+(Nästan alla sorters cmdlets som kan hämta information kan bearbeta kommando rads indata.) Mer information om godkända cmdlet-verb finns i [cmdlet-verb](approved-verbs-for-windows-powershell-commands.md).
 
-Följande är definitionen för denna cmdlet Get-processen.
-Information om den här definitionen anges i [skapa din första cmdleten](creating-a-cmdlet-without-parameters.md).
+Följande är definitionen för den här cmdleten Get-proc.
+Information om den här definitionen anges i [skapa din första cmdlet](creating-a-cmdlet-without-parameters.md).
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "proc")]
@@ -49,10 +49,10 @@ Public Class GetProcCommand
 
 ## <a name="defining-parameters"></a>Definiera parametrar
 
-Om det behövs måste cmdlet: definiera parametrar för bearbetning av indata.
-Denna cmdlet Get-Proc definierar en **namn** parametern enligt beskrivningen i [att lägga till parametrar som processen Command-Line indata](adding-parameters-that-process-command-line-input.md).
+Vid behov måste cmdleten definiera parametrar för att bearbeta indata.
+Den här cmdleten Get-proc definierar en **namn** parameter enligt beskrivningen i [lägga till parametrar som bearbetar kommando rads indatatyper](adding-parameters-that-process-command-line-input.md).
 
-Här är parameterdeklaration för den **namn** -parametern för denna cmdlet Get-processen.
+Här är parameter deklarationen för **namn** parametern för Get-proc-cmdleten.
 
 ```csharp
 [Parameter(
@@ -84,63 +84,63 @@ Public Property Name() As String()
 End Property
 ```
 
-## <a name="overriding-input-processing-methods"></a>Åsidosätta indata metoderna
+## <a name="overriding-input-processing-methods"></a>Åsidosätta metoder för bearbetning av indata
 
-Alla cmdlets måste åsidosätta minst en av de indata som bearbetar metoder som tillhandahålls av den [System.Management.Automation.Cmdlet][] klass.
-Dessa metoder beskrivs i [skapa din första cmdleten](creating-a-cmdlet-without-parameters.md).
+Alla cmdletar måste åsidosätta minst en av de metoder för bearbetning av indata som tillhandahålls av klassen [system. Management. Automation. cmdlet][] .
+Dessa metoder beskrivs i [skapa din första cmdlet](creating-a-cmdlet-without-parameters.md).
 
 > [!NOTE]
-> Cmdlet: bör hantera varje post oberoende som möjligt.
+> Din cmdlet ska hantera varje post så oberoende som möjligt.
 
-Denna cmdlet Get-procedur åsidosätter den [System.Management.Automation.Cmdlet.ProcessRecord][] metod för att hantera den **namn** parameter för indata från användaren eller ett skript.
-Den här metoden får processerna för varje begärda processnamn eller alla processer om inget namn anges.
-Information om den här åsidosättningen anges i [skapa din första cmdleten](creating-a-cmdlet-without-parameters.md).
+Den här cmdleten Get-proc åsidosätter metoden [system. Management. Automation. cmdlet. ProcessRecord][] för att hantera **namn** parametern för indata som tillhandahålls av användaren eller ett skript.
+Med den här metoden hämtas processerna för varje begärt process namn eller alla processer om inget namn anges.
+Information om den här åsidosättningen anges i [skapa din första cmdlet](creating-a-cmdlet-without-parameters.md).
 
-### <a name="things-to-remember-when-reporting-errors"></a>Kom ihåg följande när du har rapporterat fel
+### <a name="things-to-remember-when-reporting-errors"></a>Saker att komma ihåg när du rapporterar fel
 
-Den [System.Management.Automation.ErrorRecord][] objekt som cmdleten skickar när du skriver ett fel kräver ett undantag kärnpunkter.
-Följ riktlinjerna .NET när du fastställer undantaget att använda.
-I praktiken, om felet är från samma som ett befintligt undantag, cmdleten bör använda eller härledd från detta undantag.
-I annat fall bör den härleda ett nytt undantag eller undantag hierarki direkt från den [System.Exception][] klass.
+Objektet [system. Management. Automation. ErrorRecord][] som cmdleten skickar när ett fel skrivs måste ha ett undantag i kärnan.
+Följ .NET-rikt linjerna när du avgör vilket undantag som ska användas.
+I princip, om felet är semantiskt på samma sätt som ett befintligt undantag, ska cmdlet: en använda eller härleda från det undantaget.
+Annars bör den härleda en ny undantags-eller undantags hierarki direkt från [system. Exception][] -klassen.
 
-Tänk på följande när du skapar fel-ID (öppnas via egenskapen FullyQualifiedErrorId i klassen ErrorRecord).
+Tänk på följande när du skapar fel identifierare (nås via egenskapen FullyQualifiedErrorId för ErrorRecord-klassen).
 
-- Använd strängar som är avsedda för diagnostiskt syfte så att vid kontroll av fullständigt kvalificerat ID kan du fastställa vilka felet är och där felet kommer ifrån.
+- Använd strängar som är avsedda för diagnostiska syfte så att när du inspekterar den fullständigt kvalificerade identifieraren kan du fastställa vad felet är och var felet kom från.
 
-- En korrekt formaterad fullständiga fel-ID kan vara på följande sätt.
+- En välformulerad fullständigt kvalificerad fel identifierare kan vara följande.
 
 `CommandNotFoundException,Microsoft.PowerShell.Commands.GetCommandCommand`
 
-Observera att i föregående exempel fel-ID (första token) betecknar felet och den återstående delen indikerar var felet kommer ifrån.
+Observera att fel identifieraren (den första token) i föregående exempel bestämmer vad felet är och den återstående delen anger var felet kom från.
 
-- Fel-ID kan vara en punkt avgränsade token som kan tolkas i granskning för mer komplicerade scenarier.
-  På så sätt kan du för grenen på delar av fel-ID samt felkategori identifierare och fel.
+- För mer komplexa scenarier kan fel identifieraren vara en punktavgränsad punktavgränsad token som kan analyseras vid inspektion.
+  På så sätt kan du för grenar om delar av fel identifieraren samt fel-och fel kategorin.
 
-Cmdlet: en ska tilldela specifika fel-ID till olika kodsökvägar.
-Tänk på följande information för tilldelning av fel-ID:
+Cmdleten ska tilldela vissa fel identifierare till olika kod Sök vägar.
+Tänk på följande när du ska tilldela fel identifierare:
 
-- En identifierare som fel ska förblir konstant under cmdlet hela livscykel.
-  Ändra inte semantiken för en identifierare som fel mellan cmdlet-versioner.
+- En fel-ID bör vara konstant under hela cmdlet-livs cykeln.
+  Ändra inte semantiken för en fel identifierare mellan cmdlet-versioner.
 
-- Använd text efter ett fel-ID som motsvarar tersely fel har rapporterats.
-  Använd inte blanksteg eller skiljetecken.
+- Använd texten för en fel identifierare som tersely motsvarar det fel som rapporteras.
+  Använd inte blank steg eller skiljetecken.
 
-- Har din cmdleten som genererar endast fel-ID som är reproducerbar.
-  Den ska till exempel inte skapa en identifierare som innehåller ett process-ID.
-  Fel-ID är användbara för en användare bara när de motsvarar identifierare som ses av andra användare som upplever samma problem.
+- Låt din cmdlet generera endast fel identifierare som är reproducerbara.
+  Det ska till exempel inte generera en identifierare som innehåller en process identifierare.
+  Fel identifierare är bara användbara för en användare när de motsvarar identifierare som visas av andra användare som har samma problem.
 
-Ett ohanterat undantag omfattas inte av PowerShell under följande förhållanden:
+Ohanterade undantag fångas inte av PowerShell i följande fall:
 
-- Om en cmdlet skapar en ny tråd och kod som körs i den tråd kastar ett ohanterat undantag, kommer inte att fånga felet PowerShell och kommer att avsluta processen.
+- Om en cmdlet skapar en ny tråd och kod som körs i den tråden ger upphov till ett ohanterat undantag, kommer PowerShell inte att fånga fel meddelandet och kommer att avsluta processen.
 
-- Om ett objekt har kod i dess destruktorn eller Dispose metoder som orsakar ett ohanterat undantag, kommer inte att fånga felet PowerShell och kommer att avsluta processen.
+- Om ett objekt har kod i sin destruktorn eller tar bort metoder som orsakar ett ohanterat undantag, kommer PowerShell inte att fånga fel meddelandet och kommer att avsluta processen.
 
-## <a name="reporting-nonterminating-errors"></a>Rapportering oändliga fel
+## <a name="reporting-nonterminating-errors"></a>Rapportera fel som inte avslutas
 
-Någon av metoderna indata kan rapportera ett oändliga fel i utdata stream med hjälp av den [System.Management.Automation.Cmdlet.WriteError][] metod.
+Någon av metoderna för bearbetning av indata kan rapportera ett fel som inte kan avslutas till utdataströmmen med hjälp av metoden [system. Management. Automation. cmdlet. WriteError][] .
 
-Här är ett exempel från denna cmdlet för Get-processen som illustrerar anropet till [System.Management.Automation.Cmdlet.WriteError][] från inom åsidosättningen av den [System.Management.Automation.Cmdlet.ProcessRecord][] metod.
-I det här fallet görs anropet om cmdlet: en inte kan hitta en process för en angiven process-ID.
+Här är ett kod exempel från den här cmdleten Get-proc som illustrerar anropet till [system. Management. Automation. cmdlet. WriteError][] inifrån åsidosättningen av metoden [system. Management. Automation. cmdlet. ProcessRecord][] .
+I det här fallet görs anropet om cmdleten inte kan hitta någon process för en angiven process-ID.
 
 ```csharp
 protected override void ProcessRecord()
@@ -180,38 +180,38 @@ protected override void ProcessRecord()
   }
 ```
 
-### <a name="things-to-remember-about-writing-nonterminating-errors"></a>Kom ihåg följande om hur du skriver oändliga fel
+### <a name="things-to-remember-about-writing-nonterminating-errors"></a>Saker att komma ihåg om att skriva fel som inte avslutas
 
-Cmdlet: en måste generera ett specifikt fel-ID för varje specifik indataobjektet för ett oändliga fel.
+För ett fel som inte är avslutande måste cmdleten generera en angiven fel identifierare för varje angivet inobjekt.
 
-En cmdlet måste ofta ändrar PowerShell-åtgärden som produceras av en oändliga fel.
-Det kan göra detta genom att definiera den `ErrorAction` och `ErrorVariable` parametrar.
-Om definierar den `ErrorAction` parametern cmdlet: en anger användaralternativen [System.Management.Automation.ActionPreference][], du kan också direkt påverka åtgärden genom att ange den `$ErrorActionPreference` variabeln.
+En cmdlet behöver ofta ändra PowerShell-åtgärden som genereras av ett fel som inte går att avsluta.
+Det kan du göra genom att `ErrorAction` Definiera parametrarna och. `ErrorVariable`
+Om du definierar `ErrorAction` parametern, visar cmdleten användar alternativen [system. Management. Automation. Åtgärdsinställning][]. du kan också direkt påverka `$ErrorActionPreference` åtgärden genom att ställa in variabeln.
 
-Cmdlet: en kan spara oändliga fel i en variabel med det `ErrorVariable` parametern, som inte påverkas av inställningen för `ErrorAction`.
-Fel kan läggas till en befintlig variabel fel genom att lägga till ett plustecken (+) framför variabelnamnet.
+Cmdleten kan spara icke-avslutande fel i en variabel med hjälp `ErrorVariable` av parametern, som inte påverkas av inställningen för. `ErrorAction`
+Fel kan läggas till i en befintlig felvariabel genom att lägga till ett plus tecken (+) framför variabelns namn.
 
-## <a name="code-sample"></a>Kodexempel
+## <a name="code-sample"></a>Kod exempel
 
-För hela C# exempelkoden, se [GetProcessSample04 exempel](./getprocesssample04-sample.md).
+Den fullständiga C# exempel koden finns i [GetProcessSample04-exempel](./getprocesssample04-sample.md).
 
-## <a name="define-object-types-and-formatting"></a>Definiera objekttyper och formatering
+## <a name="define-object-types-and-formatting"></a>Definiera objekt typer och formatering
 
 PowerShell skickar information mellan cmdlet: ar med .NET-objekt.
-Därför måste en cmdlet kan behöva definiera sin egen typ eller cmdlet: en kan behöva utöka en befintlig typ som tillhandahålls av en annan cmdlet.
-Läs mer om att definiera nya typer eller utöka befintliga typer [utöka objekttyper och formatering](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Därför kan en cmdlet behöva definiera en egen typ, annars kan cmdleten behöva utöka en befintlig typ som tillhandahålls av en annan cmdlet.
+Mer information om hur du definierar nya typer eller utökar befintliga typer finns i [utöka objekt typer och formatering](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
-## <a name="building-the-cmdlet"></a>Att skapa cmdleten
+## <a name="building-the-cmdlet"></a>Skapa cmdleten
 
-När du implementerar en cmdlet, måste du registrera den med Windows PowerShell via en Windows PowerShell-snapin-modul.
-Mer information om hur du registrerar cmdlets finns i [hur du registrera Cmdlets och Providers värdprogram](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+När du har implementerat en cmdlet måste du registrera den med Windows PowerShell via en Windows PowerShell-snapin-modul.
+Mer information om att registrera cmdlets finns i [så här registrerar du cmdlets, providers och värd program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-cmdlet"></a>Testa cmdleten
 
-När din cmdlet har registrerats med PowerShell kan testa du den genom att köra det på kommandoraden.
-Nu ska vi testa exempel Get-Proc-cmdlet för att se om den rapporterar ett fel:
+När din cmdlet har registrerats med PowerShell kan du testa den genom att köra den på kommando raden.
+Nu ska vi testa cmdleten Get-PROC för att se om den rapporterar ett fel:
 
-- Starta PowerShell och Använd cmdleten Get-processen för att hämta processer med namnet ”TEST”.
+- Starta PowerShell och Använd cmdleten Get-PROC för att hämta processerna med namnet "TEST".
 
     ```powershell
     PS> get-proc -name test
@@ -227,24 +227,24 @@ Följande utdata visas.
 
 ## <a name="see-also"></a>Se även
 
-[Att lägga till parametrar som indata för Process-pipelinen](./adding-parameters-that-process-pipeline-input.md)
+[Lägga till parametrar som bearbetar pipeline-inflöden](./adding-parameters-that-process-pipeline-input.md)
 
-[Att lägga till parametrar som bearbetar av kommandoraden](./adding-parameters-that-process-command-line-input.md)
+[Lägga till parametrar som bearbetar kommando rads indatatyper](./adding-parameters-that-process-command-line-input.md)
 
-[Skapa din första cmdlet:](./creating-a-cmdlet-without-parameters.md)
+[Skapa din första cmdlet](./creating-a-cmdlet-without-parameters.md)
 
-[Utöka objekttyper och formatering](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Utöka objekt typer och formatering](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Hur du registrerar Cmdlets, Providers och vara värd för program](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Registrera cmdlets, providers och värd program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Windows PowerShell-referens](../windows-powershell-reference.md)
 
 [Cmdlet-exempel](./cmdlet-samples.md)
 
-[System.Exception]: /dotnet/api/System.Exception
-[System.Management.Automation.ActionPreference]: /dotnet/api/System.Management.Automation.ActionPreference
-[System.Management.Automation.Cmdlet.ProcessRecord]: /dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord
-[System.Management.Automation.Cmdlet.WriteError]: /dotnet/api/System.Management.Automation.Cmdlet.WriteError
-[System.Management.Automation.Cmdlet]: /dotnet/api/System.Management.Automation.Cmdlet
-[System.Management.Automation.ErrorCategory]: /dotnet/api/System.Management.Automation.ErrorCategory
-[System.Management.Automation.ErrorRecord]: /dotnet/api/System.Management.Automation.ErrorRecord
+[System. Exception]: /dotnet/api/System.Exception
+[System. Management. Automation. Åtgärdsinställning]: /dotnet/api/System.Management.Automation.ActionPreference
+[System. Management. Automation. cmdlet. ProcessRecord]: /dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord
+[System. Management. Automation. cmdlet. WriteError]: /dotnet/api/System.Management.Automation.Cmdlet.WriteError
+[System. Management. Automation. cmdlet]: /dotnet/api/System.Management.Automation.Cmdlet
+[System. Management. Automation. ErrorCategory]: /dotnet/api/System.Management.Automation.ErrorCategory
+[System. Management. Automation. ErrorRecord]: /dotnet/api/System.Management.Automation.ErrorRecord

@@ -1,53 +1,64 @@
 ---
-ms.date: 06/20/2018
-keywords: DSC, powershell, konfiguration, installation
-title: DSC PackageManagementSource Resource
-ms.openlocfilehash: e51b5318288bef458567dd4b58d17caaea3ed69b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
+title: DSC PackageManagementSource-resurs
+ms.openlocfilehash: 20b7851e44751d4bd0add718d2f7294d5215ab70
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077593"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324573"
 ---
-# <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource Resource
+# <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource-resurs
 
-> Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0, Windows PowerShell 5.1
+> Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
-Den **PackageManagementSource** resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att registrera eller avregistrera pakethantering källor på målnoden. **Paketet Management datakällor som registrerats på så sätt registreras under systemkontexten kan användas av System-kontot eller av DSC-motorn.** Den här resursen kräver den **PackageManagement** modulen, som är tillgängliga från http://PowerShellGallery.com.
+**PackageManagementSource** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att registrera eller avregistrera paket hanterings källor på en målnod.
+**Paket hanterings källor som registreras på det här sättet registreras under system kontexten, vilket kan användas av system kontot eller av DSC-motorn.** Den här resursen kräver modulen **PackageManagement** , som är tillgänglig från [PowerShell-galleriet](https://PowerShellGallery.com).
 
 > [!IMPORTANT]
-> Den **PackageManagement** modul bör vara minst version 1.1.7.0 för egenskapen följande ska vara giltig.
+> **PackageManagement** -modulen måste vara minst version 1.1.7.0 för att följande egenskaps information ska vara korrekt.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```Syntax
 PackageManagementSource [String] #ResourceName
 {
     Name = [string]
     ProviderName = [string]
     SourceLocation = [string]
-    [DependsOn = [string[]]]
-    [Ensure = [string]{ Absent | Present }]
-    [InstallationPolicy = [string]{ Trusted | Untrusted }]
-    [PsDscRunAsCredential = [PSCredential]]
-    [SourceCredential = [PSCredential]]
+    [ InstallationPolicy = [string]{ Trusted | Untrusted } ]
+    [ SourceCredential = [PSCredential] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string]{ Absent | Present } ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Egenskaper
+## <a name="properties"></a>properties
 
-|  Egenskap  |  Beskrivning   |
+|Egenskap |Description |
 |---|---|
-| Namn| Anger namnet på paketkällan för att registreras eller avregistreras på datorn.|
-| ProviderName| Anger namnet på providern OneGet genom vilka du kan interop med paketkällan.|
-| SourceLocation| Anger URI för paketkällan.|
-| Se till att| Anger om paketkällan ska registreras eller avregistreras.|
-| InstallationPolicy| Används av providrar, till exempel inbyggda Nuget-providern. Anger om du litar på den paketkällan. En av: "Untrusted", "Trusted".|
-| SourceCredential| Ger åtkomst till paketet på en fjärransluten källa.|
+|Name |Anger namnet på den paket källa som ska registreras eller avregistreras i systemet. |
+|ProviderName |Anger namnet på den OneGet-provider som du kan interopa med paket källan. |
+|SourceLocation |Anger URI för paket källan. |
+|InstallationPolicy |Används av leverantörer, till exempel den inbyggda NuGet-providern. Bestämmer om du litar på paketets källa. En av: **Ej betrodd** eller **betrodd**. |
+|SourceCredential |Ger åtkomst till paketet på en fjärran sluten källa. |
+
+## <a name="common-properties"></a>Gemensamma egenskaper
+
+|Egenskap |Beskrivning |
+|---|---|
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|Kontrol |Anger om paket källan ska registreras eller avregistreras. Standardvärdet finns **.** |
+|PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
+
+> [!NOTE]
+> Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter. Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet registrerar den http://nuget.org paketet datakällan med den **PackageManagementSource** DSC-resurs.
+I `https://nuget.org` det här exemplet registreras paket källan med hjälp av **PackageManagementSource** DSC-resursen.
 
 ```powershell
 Configuration PackageManagementSourceTest
@@ -57,7 +68,7 @@ Configuration PackageManagementSourceTest
         Ensure      = "Present"
         Name        = "MyNuget"
         ProviderName= "Nuget"
-        SourceLocation   = "http://nuget.org/api/v2/"
+        SourceLocation   = "https://api.nuget.org/api/v3/"
         InstallationPolicy ="Trusted"
     }
 }

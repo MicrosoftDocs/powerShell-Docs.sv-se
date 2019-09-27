@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: Förbättringar i pakethanteringen i WMF 5.1
-ms.openlocfilehash: 24ff05d6bf5993826106f1a1d2cee6dad363d1e2
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: cb19c2d71391b5729ce9d73fc6b033270f8db307
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71145168"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325124"
 ---
 # <a name="improvements-to-package-management-in-wmf-51"></a>Förbättringar i pakethanteringen i WMF 5.1
 
@@ -55,7 +55,7 @@ När du installerar paket ändrar du datorns tillstånd. I WMF 5,1 loggar Packag
 
 ## <a name="support-for-basic-authentication"></a>Stöd för grundläggande autentisering
 
-I WMF 5,1 har PackageManagement stöd för att söka efter och installera paket från en lagrings plats som kräver grundläggande autentisering. Du kan ange dina autentiseringsuppgifter till `Find-Package` -och `Install-Package` -cmdletarna. Till exempel:
+I WMF 5,1 har PackageManagement stöd för att söka efter och installera paket från en lagrings plats som kräver grundläggande autentisering. Du kan ange dina autentiseringsuppgifter till `Find-Package` -och `Install-Package` -cmdletarna. Exempel:
 
 ```powershell
 Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
@@ -63,8 +63,8 @@ Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 
 ## <a name="support-for-using-packagemanagement-behind-a-proxy"></a>Stöd för att använda PackageManagement bakom en proxy
 
-I WMF 5,1 tar PackageManagement nu nya proxyadresser `-ProxyCredential` och. `-Proxy` Med dessa parametrar kan du ange proxy-URL och autentiseringsuppgifter till PackageManagement-cmdletar. Som standard används systemproxy-inställningar. Till exempel:
+I WMF 5,1 tar PackageManagement nu nya proxyadresser `-ProxyCredential` och. `-Proxy` Med dessa parametrar kan du ange proxy-URL och autentiseringsuppgifter till PackageManagement-cmdletar. Som standard används systemproxy-inställningar. Exempel:
 
 ```powershell
-Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)
+Find-Package -Source https://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)
 ```

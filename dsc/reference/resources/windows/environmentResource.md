@@ -1,45 +1,56 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
-title: DSC-Miljöresurs
-ms.openlocfilehash: 2bc1600a9df32538d59efa712569b12fa9e3beee
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
+title: DSC-miljö-resurs
+ms.openlocfilehash: d6d3b4a2086be28fbfa2bf200acef9b13b7b7825
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077542"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324481"
 ---
-# <a name="dsc-environment-resource"></a>DSC-Miljöresurs
+# <a name="dsc-environment-resource"></a>DSC-miljö-resurs
 
-> Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
-Den __miljö__ resursen i Windows PowerShell Desired State Configuration (DSC) ger dig möjlighet att hantera systemets miljövariabler.
+**Miljö** resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera systemmiljövariabler.
 
 ## <a name="syntax"></a>Syntax
-``` mof
+
+```Syntax
 Environment [string] #ResourceName
 {
     Name = [string]
-    [ Ensure = [string] { Absent | Present }  ]
     [ Path = [bool] ]
-    [ DependsOn = [string[]] ]
     [ Value = [string] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Absent | Present }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Egenskaper
+## <a name="properties"></a>properties
 
-|  Egenskap  |  Beskrivning   |
+|Egenskap |Description |
 |---|---|
-| Namn| Anger namnet på den miljövariabel som du vill se till att ett visst tillstånd.|
-| Se till att| Anger om det finns en variabel. Den här egenskapen __finns__ att skapa miljövariabeln om det inte finns eller se till att värdet matchar vad som är tillgängligt via den __värdet__ egenskapen om variabeln redan finns. Ange den till __frånvarande__ att ta bort variabeln om den finns.|
-| Sökväg| Definierar miljövariabeln som konfigureras. Den här egenskapen __$true__ om variabeln är den __sökväg__ variabeln, i annat fall väljer __$false__. Standardvärdet är __$false__. Om variabeln som konfigureras är den __sökväg__ variabeln, värdet tillhandahålls via de __värdet__ egenskapen kommer att läggas till det befintliga värdet.|
-| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är __ResourceName__ och är av typen __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
-| Värde| Värdet som tilldelas miljövariabeln.|
+|Name |Anger namnet på den miljö variabel som du vill säkerställa ett speciellt tillstånd för. |
+|`Path` |Definierar den miljö variabel som konfigureras. Ange den här egenskapen `$true` till om variabeln är **sökvägsvariabeln** . annars anger du den som `$false`. Standardvärdet är `$false`. Om variabeln som konfigureras är **sökvägsvariabeln,** läggs värdet som anges via egenskapen **Value** till i det befintliga värdet. |
+|Value |Värdet som ska tilldelas miljövariabeln. |
+
+## <a name="common-properties"></a>Gemensamma egenskaper
+
+|Egenskap |Beskrivning |
+|---|---|
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|Kontrol |Anger om en variabel finns. Ange att den här egenskapen ska **användas** för att skapa miljövariabeln om den inte finns eller för att säkerställa att dess värde matchar det som tillhandahålls via egenskapen **Value** om variabeln redan finns. Ange det som **frånvarande** för att ta bort variabeln om den finns. |
+|PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
+
+> [!NOTE]
+> Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter. Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).
 
 ## <a name="example"></a>Exempel
 
-I följande exempel ser till att __TestEnvironmentVariable__ finns och har värdet __Provvärde__. Om det inte finns skapas den.
+I följande exempel ser du att TestEnvironmentVariable finns och att det har värdet _TestValue_. Om den inte finns skapas den av.
 
 ```powershell
 Environment EnvironmentExample

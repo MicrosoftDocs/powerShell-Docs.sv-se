@@ -1,55 +1,62 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
-title: DSC WaitForSome resurs
-ms.openlocfilehash: 2260f37002171154a6f2c3996b2af1bd9120039d
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
+title: DSC WaitForSome-resurs
+ms.openlocfilehash: 91589c84518a2bd0f4816d11aa011dec1d5305e1
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67726764"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324016"
 ---
-# <a name="dsc-waitforsome-resource"></a>DSC WaitForSome resurs
+# <a name="dsc-waitforsome-resource"></a>DSC WaitForSome-resurs
 
-> Gäller för: Windows PowerShell 5.0 och senare
+> Gäller för: Windows PowerShell 5. x
 
-Den **WaitForSome** Desired State Configuration (DSC) resursen kan användas i ett nod-block i en [DSC-konfiguration](../../../configurations/configurations.md) ange beroenden på konfigurationer på andra noder.
+Du kan använda den **WAITFORSOME** DSC-resursen (Desired State Configuration) i ett Node-block i en [DSC-konfiguration](../../../configurations/configurations.md) för att ange beroenden för konfigurationer på andra noder.
 
-Den här resursen lyckas om resursen har angetts av den **ResourceName** egenskapen är i ett minsta antal noder önskade tillstånd (anges av **NodeCount**) definieras av den **nodnamn**  egenskapen.
+Den här resursen slutförs om resursen som anges av egenskapen **resourceName** har önskat tillstånd på ett minsta antal noder (anges av **NodeCount**) som definieras av egenskapen **nodnamn** .
 
 > [!NOTE]
-> **WaitForSome** resource använder Windows Remote Management för att kontrollera tillståndet hos andra noder.
-> Läs mer om port och säkerhetskrav för WinRM [säkerhetsöverväganden för PowerShell-fjärrkommunikation](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
+> **WaitForSome** -resursen använder Windows Remote Management för att kontrol lera status för andra noder. Mer information om port-och säkerhets krav för WinRM finns i [säkerhets överväganden för PowerShell-fjärrkommunikation](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## <a name="syntax"></a>Syntax
 
-```
+```Syntax
 WaitForSome [String] #ResourceName
 {
     NodeCount = [UInt32]
     NodeName = [string[]]
     ResourceName = [string]
-    [DependsOn = [string[]]]
-    [PsDscRunAsCredential = [PSCredential]]
-    [RetryCount = [UInt32]]
-    [RetryIntervalSec = [UInt64]]
-    [ThrottleLimit = [UInt32]]
+    [ RetryCount = [UInt32] ]
+    [ RetryIntervalSec = [UInt64] ]
+    [ ThrottleLimit = [UInt32] ]
+    [ DependsOn = [string[]] ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Egenskaper
+## <a name="properties"></a>properties
 
-|  Egenskap  |  Beskrivning   |
+|Egenskap |Beskrivning |
 |---|---|
-| NodeCount| Minsta antalet noder som måste vara i önskat läge för den här resursen ska lyckas.|
-| Nodnamn| Målnoder resursens förlita sig på.|
-| ResourceName| Resursnamnet förlita sig på. Om den här resursen tillhör en annan konfiguration, formatera namn som ”[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] ”|
-| RetryIntervalSec| Antal sekunder innan du försöker igen. Minimum är 1.|
-| RetryCount| Det maximala antalet gånger att försöka igen.|
-| ThrottleLimit| Antal datorer kan ansluta samtidigt. Standardvärdet är standard för nya-cimsession.|
-| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är __ResourceName__ och är av typen __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
-| PsDscRunAsCredential | Se [med hjälp av DSC med autentiseringsuppgifterna för användaren](https://docs.microsoft.com/powershell/dsc/runasuser) |
+|NodeCount |Det minsta antalet noder som måste ha önskat tillstånd för att resursen ska lyckas. |
+|NodeName |Målvärdena för resursen som är beroende av. |
+|ResourceName |Resurs namnet som är beroende av. Om den här resursen tillhör en annan konfiguration formaterar du namnet som `[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]`. |
+|RetryIntervalSec |Antalet sekunder innan nytt försök. Minimivärdet är 1. |
+|retryCount |Det maximala antalet försök att försöka igen. |
+|ThrottleLimit |Antal datorer som ska anslutas samtidigt. Standardvärdet är `New-CimSession` standard. |
+
+## <a name="common-properties"></a>Gemensamma egenskaper
+
+|Egenskap |Beskrivning |
+|---|---|
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
+
+> [!NOTE]
+> Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter. Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).
 
 ## <a name="example"></a>Exempel
 
-Ett exempel på hur du använder den här resursen finns i [att ange beroenden mellan noder](../../../configurations/crossNodeDependencies.md)
+Ett exempel på hur du använder den här resursen finns i [ange beroenden mellan noder](../../../configurations/crossNodeDependencies.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Schemalägga jobb med Windows PowerShell API: et | Microsoft Docs'
+title: Schemalägga jobb med Windows PowerShell API | Microsoft Docs
 ms.custom: ''
 ms.date: 09/12/2016
 ms.reviewer: ''
@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
-ms.openlocfilehash: 8e1d2feff0665f169966f7d5e99540088e66bdfb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: bdced961d91088dd75be347b7b74b22467c8c9be
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080364"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322949"
 ---
-# <a name="scheduling-jobs-with-the-powershell-api"></a>Schemalägga jobb med PowerShell-API
+# <a name="scheduling-jobs-with-the-powershell-api"></a>Schemalägga jobb med PowerShell-API: et
 
-Du kan använda de objekt som exponeras av den **Microsoft.PowerShell.ScheduledJob** namnområdet för att göra följande:
+Du kan använda objekten som exponeras av namn området **Microsoft. PowerShell. ScheduledJob** för att göra följande:
 
 - Skapa ett schemalagt jobb.
 - Definiera när jobbet körs.
@@ -25,7 +25,7 @@ Du kan använda de objekt som exponeras av den **Microsoft.PowerShell.ScheduledJ
 
 ## <a name="triggering-the-job"></a>Utlösa jobbet
 
-Det första steget i att skapa ett schemalagt jobb är som anger när jobbet ska köras. Gör detta genom att skapa och konfigurera en **Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger** objekt. Följande kod skapar en utlösare som schemalägger ett jobb ska köras en gång i framtiden 20 sekunder.
+Det första steget när du skapar ett schemalagt jobb är att ange när jobbet ska köras. Gör detta genom att skapa och konfigurera ett **Microsoft. PowerShell. ScheduledJob. ScheduledJobTrigger** -objekt. Följande kod skapar en utlösare som schemalägger ett jobb att köras en gång i 20 sekunder i framtiden.
 
 ```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
@@ -40,18 +40,18 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 ## <a name="defining-the-job"></a>Definiera jobbet
 
-Du kan definiera ett PowerShell-jobb genom att skapa en ordlista som parameter. Följande parametrar stöds:
+Du definierar ett PowerShell-jobb genom att skapa en parameter ord lista. Följande parametrar stöds:
 
-|Parameternamn|Beskrivning|
+|Parameter namn|Beskrivning|
 |--------------------|-----------------|
 |**Namn**|Namnet på jobbet.|
-|**ScriptBock**|Ett PowerShell-skriptblock som anger vad som gör jobbet.|
-|**FilePath**|Sökväg till en fil som innehåller ett PowerShell-skriptblock om du vill ange vad som gör jobbet.|
-|**InitializationScript**|Ett PowerShell-skriptblock som initierar jobbet.|
-|**ArgumentList**|En matris med objekt som anger argument som jobbet tar.|
-|**RunAs32**|Ett booleskt värde som anger om jobbet körs i en 32-bitarsprocess.|
+|**ScriptBock**|Ett PowerShell-skript block som anger vad jobbet gör.|
+|**FilePath**|Sökväg till en fil som innehåller ett PowerShell-skript block för att ange vad jobbet gör.|
+|**InitializationScript**|Ett PowerShell-skript block som initierar jobbet.|
+|**Argument List**|En matris med objekt som anger argument som jobbet tar.|
+|**RunAs32**|Ett booleskt värde som anger om jobbet ska köras i en 32-bitars process.|
 
-Följande kod skapar ett katalogobjekt för parametern och anger den **namn** och **ScriptBlock** parametrar.
+Följande kod skapar ett objekt i parameter ord listan och anger **namnet** och **script block** -parametrarna.
 
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
@@ -64,9 +64,9 @@ string schedJobDefName = "MySampleSchedJob";
 
 ```
 
-## <a name="creating-the-invocation-and-job-definition-objects"></a>Skapa anrop och jobbet definition objekt
+## <a name="creating-the-invocation-and-job-definition-objects"></a>Skapa anrops-och jobb definitions objekt
 
-Du kan sedan skapa `ScheduledJobInvocationInfo` och `ScheduledJobDefinition` objekt som ska köra jobbet som visas i följande exempel:
+Sedan kan du `ScheduledJobInvocationInfo` skapa `ScheduledJobDefinition` och objekt för att köra jobbet som det visas i följande exempel:
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
@@ -82,9 +82,9 @@ ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
 
 ```
 
-## <a name="registering-the-job-with-the-task-scheduler"></a>Registrera jobbet med Schemaläggaren
+## <a name="registering-the-job-with-the-task-scheduler"></a>Jobbet registreras med Schemaläggaren
 
-Följande kod registrerar jobbet med den [Schemaläggaren i Windows](http://go.microsoft.com/fwlink/?LinkId=251817).
+Följande kod registrerar jobbet med [Schemaläggaren i Windows](https://go.microsoft.com/fwlink/?LinkId=251817).
 
 ```csharp
 schedJobDefinition.Register();
@@ -93,9 +93,9 @@ schedJobDefinition.Register();
 
 ```
 
-## <a name="complete-code-example"></a>Fullständiga koden exempel
+## <a name="complete-code-example"></a>Fullständigt kod exempel
 
-Följande är klar kodexemplet från vilken de tidigare kodfragmenten vidtogs.
+Följande är det fullständiga kod exemplet som användes i föregående kodfragment.
 
 ```csharp
 using System;

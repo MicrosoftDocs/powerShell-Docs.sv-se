@@ -1,23 +1,23 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
-title: DSC-Paketresurs
-ms.openlocfilehash: 9285df71a303c9a53dd50d450272575a64e962e7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
+title: Resurs för DSC-paket
+ms.openlocfilehash: efac07b4b051564cadd5aa1542a6afda6cd453ad
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077202"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324298"
 ---
-# <a name="dsc-package-resource"></a>DSC-Paketresurs
+# <a name="dsc-package-resource"></a>Resurs för DSC-paket
 
-_Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0_
+> Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
-Den **paketet** resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att installera eller avinstallera paket, som till exempel Windows Installer och setup.exe paket på målnoden.
+**Paket** resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att installera eller avinstallera paket, t. ex. Windows Installer-och setup. exe-paket, på en målnod.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```Syntax
 Package [string] #ResourceName
 {
     Name = [string]
@@ -25,30 +25,40 @@ Package [string] #ResourceName
     ProductId = [string]
     [ Arguments = [string] ]
     [ Credential = [PSCredential] ]
-    [ Ensure = [string] { Absent | Present }  ]
     [ LogPath = [string] ]
-    [ DependsOn = [string[]] ]
     [ ReturnCode = [UInt32[]] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Absent | Present }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Egenskaper
+## <a name="properties"></a>properties
 
-| Egenskap | Beskrivning |
-| --- | --- |
-| Namn| Anger namnet på paketet som du vill se till att ett visst tillstånd.|
-| Sökväg| Anger sökvägen där paketet finns.|
-| ProductId| Anger produkt-ID som unikt identifierar paketet.|
-| Argument| Visar en sträng med argument som exakt så som kommer att skickas till paketet.|
-| Autentiseringsuppgifter| Ger åtkomst till paketet på en fjärransluten källa. Den här egenskapen används inte för att installera paketet. Paketet installeras alltid på det lokala systemet.|
-| Se till att| Anger om paketet har installerats. Ange den här egenskapen till ”inte” för att kontrollera att paketet inte har installerats (eller avinstallera paketet om det är installerat). Ange den till ”Visa” (standardvärdet) för att säkerställa att paketet har installerats.|
-| LogPath| Anger den fullständiga sökvägen där du vill att providern ska spara en loggfil för att installera eller avinstallera paketet.|
-| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
-| Returkod| Anger den förväntade kod. Om den faktiska returkod matchar inte det förväntade värdet som anges här kan ett fel returneras i konfigurationen.|
+|Egenskap |Description |
+|---|---|
+|Name |Anger namnet på det paket som du vill säkerställa ett speciellt tillstånd för. |
+|`Path` |Anger sökvägen dit paketet finns. |
+|ProductId |Anger det produkt-ID som unikt identifierar paketet. |
+|Argument |Visar en sträng med argument som skickas till paketet exakt som de anges. |
+|Certifiering |Ger åtkomst till paketet på en fjärran sluten källa. Den här egenskapen används inte för att installera paketet. Paketet är alltid installerat på det lokala systemet. |
+|LogPath |Anger den fullständiga sökvägen dit du vill att providern ska spara en loggfil för att installera eller avinstallera paketet. |
+|ReturnCode |Anger den förväntade retur koden. Om den faktiska retur koden inte matchar det förväntade värdet här, returnerar konfigurationen ett fel. |
+
+## <a name="common-properties"></a>Gemensamma egenskaper
+
+|Egenskap |Beskrivning |
+|---|---|
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|Kontrol |Anger om paketet är installerat. Ange den här egenskapen som **saknas** för att se till att paketet inte är installerat (eller avinstallera paketet om det är installerat). Ange att det är **tillgängligt** för att se till att paketet är installerat. Standardvärdet finns **.** |
+|PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
+
+> [!NOTE]
+> Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter. Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet kör MSI-installationsprogrammet som finns på den angivna sökvägen och har angiven produkt-ID.
+Det här exemplet kör msi-installationsprogrammet som finns på den angivna sökvägen och har det angivna produkt-ID: t.
 
 ```powershell
 Configuration PackageTest

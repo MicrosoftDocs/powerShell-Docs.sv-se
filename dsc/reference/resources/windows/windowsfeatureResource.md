@@ -1,48 +1,59 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
-title: DSC-WindowsFeature-resurs
-ms.openlocfilehash: 7a57f4b2797ab3bb202aea8b2543d1e3f14074e9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
+title: DSC WindowsFeature-resurs
+ms.openlocfilehash: d3384b1f45324df6b6b209f25b64d9d77615ad7f
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076709"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323812"
 ---
-# <a name="dsc-windowsfeature-resource"></a>DSC-WindowsFeature-resurs
+# <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature-resurs
 
-> Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
-Den **WindowsFeature** resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att säkerställa att roller och funktioner läggs till eller tas bort på målnoden.
+**WindowsFeature** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att se till att roller och funktioner läggs till eller tas bort på en målnod.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```Syntax
 WindowsFeature [string] #ResourceName
 {
     Name = [string]
     [ Credential = [PSCredential] ]
-    [ Ensure = [string] { Absent | Present }  ]
     [ IncludeAllSubFeature = [bool] ]
     [ LogPath = [string] ]
-    [ DependsOn = [string[]] ]
     [ Source = [string] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Absent | Present }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Egenskaper
+## <a name="properties"></a>properties
 
-|  Egenskap  |  Beskrivning   |
+|Egenskap |Description |
 |---|---|
-| Namn| Anger namnet på rollen eller funktionen som du vill kontrollera läggs till eller tas bort. Det här är samma som den __namn__ egenskap från den [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) cmdlet, och inte visningsnamnet för rollen eller funktionen.|
-| Autentiseringsuppgifter| Anger autentiseringsuppgifterna som används för att lägga till eller ta bort roll eller funktion.|
-| Se till att| Anger om rollen eller funktionen läggs till. Om du vill se till att rollen eller funktionen är har lagts till, ange den här egenskapen ”aktuella” för att se till att rollen eller funktionen tas bort, egenskapen till ””.|
-| IncludeAllSubFeature| Den här egenskapen __$true__ att säkerställa att tillståndet för alla obligatoriska underfunktioner med tillståndet för funktionen som du anger med den __namn__ egenskapen.|
-| LogPath| Anger sökvägen till en loggfil där du vill att resursprovidern att logga in igen.|
-| DependsOn| Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är __ResourceName__ och är av typen __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
-| Källa| Anger platsen för källfilen för installationen, om det behövs.|
+|Name |Anger namnet på den roll eller funktion som du vill se till att den läggs till eller tas bort. Detta är samma som egenskapen **Name** från cmdleten [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) och inte visnings namnet för rollen eller funktionen. |
+|Certifiering |Anger de autentiseringsuppgifter som ska användas för att lägga till eller ta bort rollen eller funktionen. |
+|IncludeAllSubFeature |Ange den här egenskapen `$true` till för att se till att alla nödvändiga underfunktioner har statusen för den funktion som du anger med egenskapen **Name** . |
+|LogPath |Anger sökvägen till en loggfil där du vill att resurs leverantören ska logga åtgärden. |
+|Source |Anger platsen för den käll fil som ska användas för installation, om det behövs. |
+
+## <a name="common-properties"></a>Gemensamma egenskaper
+
+|Egenskap |Beskrivning |
+|---|---|
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|Kontrol |Anger om rollen eller funktionen har lagts till. Om du vill se till att rollen eller funktionen har lagts till ställer du in den här egenskapen som **tillgänglig**. För att säkerställa att rollen eller funktionen tas bort ställer du in egenskapen på **saknas**. Standardvärdet finns **.** |
+|PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
+
+> [!NOTE]
+> Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter. Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).
 
 ## <a name="example"></a>Exempel
+
 ```powershell
 WindowsFeature RoleExample
 {

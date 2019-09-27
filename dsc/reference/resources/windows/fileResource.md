@@ -1,23 +1,23 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-filresurs
-ms.openlocfilehash: b5bc2c305b8cfccbd044274811df631264a24279
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4c6945d4cdcbc64ac6d52db563823efe8fd0247e
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077338"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324503"
 ---
 # <a name="dsc-file-resource"></a>DSC-filresurs
 
-> Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
-File-resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att hantera filer och mappar på målnoden. Den **DestinationPath** och **SourcePath** måste båda vara tillgängliga för målet noden.
+**Fil** resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera filer och mappar på målnoden. **DestinationPath** och **SourcePath** måste båda vara tillgängliga för målnoden.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```Syntax
 File [string] #ResourceName
 {
     DestinationPath = [string]
@@ -25,60 +25,60 @@ File [string] #ResourceName
     [ Checksum = [string] { CreatedDate | ModifiedDate | SHA-1 | SHA-256 | SHA-512 } ]
     [ Contents = [string] ]
     [ Credential = [PSCredential] ]
-    [ Ensure = [string] { Absent | Present } ]
     [ Force = [bool] ]
     [ Recurse = [bool] ]
-    [ DependsOn = [string[]] ]
     [ SourcePath = [string] ]
     [ Type = [string] { Directory | File } ]
     [ MatchSource = [bool] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Absent | Present } ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Egenskaper
+## <a name="properties"></a>properties
 
-|Egenskap       |Beskrivning                                                                   |Obligatorisk|Standard|
-|---------------|------------------------------------------------------------------------------|--------|-------|
-|Målsökväg|Plats på målnoden, som du vill se till att är `Present` eller `Absent`.|Ja|Nej|
-|Attribut     |Önskat tillstånd attribut för den aktuella filen eller katalogen. Giltiga värden är **Arkiv**, **Hidden**, **ReadOnly**, och **System**.|Nej|Inga|
-|Kontrollsumma      |Typen kontrollsumma ska användas för att fastställa om två filer är lika. Giltiga värden är: SHA-1, SHA-256, SHA-512, createdDate, modifieddate kunde.|Nej|Endast namnet filen eller katalogen jämförs med.|
-|Innehåll       |Endast giltigt när det används med `File` typen. Anger att kontrollera att innehållet är `Present` eller `Absent` från den aktuella filen. |Nej|Inga|
-|Autentiseringsuppgifter     |De autentiseringsuppgifter som krävs för att komma åt resurser, till exempel källfiler.|Nej|Datorkontot för målnoden. (*se anmärkning*)|
-|Se till att         |Önskat tillstånd för målfilen eller katalogen. |Nej|**Närvarande**|
-|Force          |Åsidosätter åtgärder för dataåtkomst som skulle resultera i ett fel (till exempel att skriva över en fil eller ta bort en katalog som inte är tom).|Nej|`$false`|
-|Recurse        |Endast giltigt när det används med `Directory` typen. Utför tillstånd åtgärden rekursivt på alla underkataloger.|Nej|`$false`|
-|DependsOn      |Anger ett beroende för angivna resurserna. Den här resursen körs bara när åtgärden har körts för alla beroende resurser. Du kan ange beroende resurser med hjälp av syntaxen `"[ResourceType]ResourceName"`. See [about_DependsOn](../../../configurations/resource-depends-on.md)|Nej|Inga|
-|SourcePath     |Sökvägen som du vill kopiera filen eller mappen resursen från.|Nej|Inga|
-|Typ           |Typ av resurs som håller på att konfigureras. Giltiga värden är `Directory` och `File`.|Nej|`File`|
-|MatchSource    |Anger om resursen ska övervaka för nya filer som lagts till i källkatalogen efter den första kopian. Värdet `$true` anger att inga nya källfiler efter den inledande kopian ska kopieras till målet. Om inställd `$False`, resursen cachelagrar innehållet i källkatalogen och ignorerar eventuella filer som läggs till efter den första kopian.|Nej|`$false`|
+|Egenskap |Beskrivning |
+|---|---|
+|DestinationPath |Platsen, på målnoden, du vill se **till att den** **finns** eller **saknas** . |
+|Attribut |Det önskade tillstånd för attributen för mål filen eller katalogen. Giltiga värden är _Arkiv_, _dold_, _ReadOnly_och _system_. |
+|Kontrollsumma |Den typ av kontroll summa som ska användas för att avgöra om två filer är identiska. Giltiga värden är: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. |
+|Innehåll |Endast giltigt när det används med en **typ** **fil**. Anger innehållet som ska **vara** **tillgängligt** eller **saknas** i mål filen. |
+|Certifiering |De autentiseringsuppgifter som krävs för att få åtkomst till resurser, till exempel källfiler. |
+|Force |Åsidosätter åtkomst åtgärder som resulterar i ett fel (till exempel att skriva över en fil eller ta bort en katalog som inte är tom). Standardvärdet `$false`är. |
+|Rekursivt |Endast giltigt när det används med **typ** **katalog**. Utför tillstånds åtgärden rekursivt till alla under kataloger. Standardvärdet `$false`är. |
+|Sök |Sökvägen som filen eller mappen ska kopieras från. |
+|type |Typ av resurs som konfigureras. Giltiga värden är **katalog** och **fil**. Standardvärdet är **File**. |
+|MatchSource |Anger om resursen ska övervakas för nya filer som har lagts till i käll katalogen efter den första kopian. Värdet `$true` anger att efter den ursprungliga kopian ska alla nya källfiler kopieras till målet. Om värdet `$false`är, cachelagrar resursen innehållet i käll katalogen och ignorerar eventuella filer som lagts till efter den ursprungliga kopian. Standardvärdet `$false`är. |
 
 > [!WARNING]
-> Om du inte anger ett värde för `Credential` eller `PSRunAsCredential` (PS V.5) resursen använda datorkontot på målnoden att komma åt den `SourcePath`.  När den `SourcePath` är en UNC-resurs, detta kan resultera i ett ”åtkomst nekad”-fel. Kontrollera dina behörigheter är inställda i enlighet med detta eller Använd den `Credential` eller `PSRunAsCredential` egenskaper för att ange det konto som ska användas.
+> Om du inte anger något värde för **Credential** eller **PSRunAsCredential**använder resursen dator kontot för målnoden för att få åtkomst till **SourcePath**. När **SourcePath** är en UNC-resurs kan detta resultera i ett "åtkomst nekad"-fel. Kontrol lera att dina behörigheter har angetts, eller Använd egenskaperna **Credential** eller **PSRunAsCredential** för att ange det konto som ska användas.
 
-## <a name="present-vs-absent"></a>Presentera vs. Saknas
+## <a name="common-properties"></a>Gemensamma egenskaper
 
-Varje DSC-resurs utför olika åtgärder baserat på värdet som du anger för den `Ensure` egenskapen. De värden som du anger för ovanstående egenskaper anger tillstånd-åtgärd utförs.
+|Egenskap |Beskrivning |
+|---|---|
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|Kontrol |Anger om filen och **innehållet** på **målet** ska finnas eller inte. Ange att den här egenskapen **finns för att se till att** filen finns. Ange det som **frånvarande** för att se till att de inte finns. Standardvärdet finns **.** |
+|PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 
-### <a name="existence"></a>Förekomst
+> [!NOTE]
+> Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter. Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).
 
-Om du bara anger en `DestinationPath`, resursen ser till att sökvägen finns (`Present`) eller så finns inte (`Absent`).
+### <a name="additional-information"></a>Ytterligare information
 
-### <a name="copy-operations"></a>Kopieringsåtgärder
-
-När du anger en `SourcePath` och en `DestinationPath` med en `Type` värdet för **Directory**, resursbiblioteket för kopior som källa till målsökväg. Egenskaperna `Recurse`, `Force`, och `MatchSource` ändra typen av kopieringsåtgärden utförs, medan `Credential` avgör vilket konto du använder för att komma åt källkatalogen.
-
-### <a name="limitations"></a>Begränsningar
-
-Om du har angett ett värde av `ReadOnly` för den `Attributes` egenskapen tillsammans med en `DestinationPath`, `Ensure = "Present"` skulle skapa den angivna sökvägen, medan `Contents` skulle ange filens innehåll.  En `Absent` tillstånd-åtgärd skulle ignorera den `Attributes` egenskapen helt och hållet, och ta bort alla filer i den angivna sökvägen.
+- Om du bara anger en **DestinationPath**, ser resursen till att sökvägen finns om den **finns eller inte** finns om den **saknas**.
+- När du anger en **SourcePath** och en **DestinationPath** med ett **typ** värde för **katalog**, kopieras käll katalogen till mål Sök vägen med resursen. Egenskaperna **rekursivt**, **Force**och **MatchSource** ändrar vilken typ av kopierings åtgärd som utförs, medan **autentiseringsuppgiften** avgör vilket konto som ska användas för åtkomst till käll katalogen.
+- Om du har angett värdet **ReadOnly** för egenskapen **attribut** tillsammans med en **DestinationPath**, **Se till att** det **finns** en sökväg för att skapa den angivna sökvägen, medan **innehållet** skulle ange innehållet i filen. Inställningen för **att se till att** ingen **kommer att ignorera** egenskapen **attributs** fullständigt och ta bort alla filer på den angivna sökvägen.
 
 ## <a name="example"></a>Exempel
 
-I följande exempel kopierar en katalog och dess underkataloger från en pull-server till en målnod med hjälp av File-resursen. Om åtgärden lyckas Log-resurs skriver ett bekräftelsemeddelande till händelseloggen.
+I följande exempel kopieras en katalog och dess under kataloger från en pull-server till en målnod med hjälp av fil resursen. Om åtgärden lyckas skriver logg resursen ett bekräftelse meddelande till händelse loggen.
 
-Källkatalogen är en UNCsökväg (`\\PullServer\DemoSource`) delas från Pull-servern. Den `Recurse` egenskapen säkerställer att alla underkataloger kopieras även.
+Käll katalogen är en UNC-sökväg (`\\PullServer\DemoSource`) som delas från hämtnings servern. Egenskapen **rekursivt** säkerställer att alla under kataloger också kopieras.
 
 > [!IMPORTANT]
-> LCM på mål-noden körs i kontexten för kontot Lokalt system som standard. Att bevilja åtkomst till den **SourcePath**, ge den målnoden datorkonto behörighet. Den **Credential** och **PSDSCRunAsCredential** (v5) både ändra kontexten LCM-används för att komma åt den **SourcePath**. Du behöver att bevilja åtkomst till det konto som ska användas för att komma åt den **SourcePath**.
+> LCM på målnoden körs i kontexten för det lokala system kontot som standard. Om du vill bevilja åtkomst till **SourcePath**, ger du målnoden dator konto rätt behörigheter. Både **autentiseringsuppgiften** och **PSDSCRunAsCredential** ändrar den kontext som LCM använder för att få åtkomst till **SourcePath**. Du måste fortfarande bevilja åtkomst till det konto som ska användas för åtkomst till **SourcePath**.
 
 ```powershell
 Configuration FileResourceDemo
@@ -104,4 +104,4 @@ Configuration FileResourceDemo
 }
 ```
 
-För mer på med **autentiseringsuppgifter** i DSC Se [kör som användare](../../../configurations/runAsUser.md) eller [Config autentiseringsuppgifter](../../../configurations/configDataCredentials.md).
+Mer information om hur du använder **autentiseringsuppgifter** i DSC finns i [Kör som-användare](../../../configurations/runAsUser.md) eller [autentiseringsuppgifter för konfigurations data](../../../configurations/configDataCredentials.md).

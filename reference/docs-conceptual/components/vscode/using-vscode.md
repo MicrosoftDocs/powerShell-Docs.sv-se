@@ -1,107 +1,95 @@
 ---
-title: Med Visual Studio Code för PowerShell-utveckling
-description: Med Visual Studio Code för PowerShell-utveckling
+title: Använda Visual Studio Code för PowerShell-utveckling
+description: Använda Visual Studio Code för PowerShell-utveckling
 ms.date: 08/06/2018
-ms.openlocfilehash: 6a0da6e060693dc7cfc08d40fd658414dc23d660
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 0e082b74f99d214749f10224fb5aaf41e2ef8951
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733886"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325236"
 ---
-# <a name="using-visual-studio-code-for-powershell-development"></a>Med Visual Studio Code för PowerShell-utveckling
+# <a name="using-visual-studio-code-for-powershell-development"></a>Använda Visual Studio Code för PowerShell-utveckling
 
-Förutom den [PowerShell ISE][ise], PowerShell är också väl stöds i Visual Studio Code.
-Dessutom stöds ISE inte med PowerShell Core Visual Studio Code har stöd för PowerShell Core på alla plattformar (Windows, macOS och Linux)
+Förutom [POWERSHELL ISE][ise], stöds även PowerShell i Visual Studio Code (VSCode). Dessutom stöds inte ISE med PowerShell Core, medan VSCode stöds för PowerShell Core på alla plattformar (Windows, macOS och Linux)
 
-Du kan använda Visual Studio Code på Windows med PowerShell version 5 med hjälp av Windows 10 eller genom att installera [Windows Management Framework 5.0 RTM](https://devblogs.microsoft.com/powershell/windows-management-framework-wmf-5-0-rtm-is-now-available-via-the-microsoft-update-catalog/) för äldre Windows-operativsystem (t.ex. Windows 8.1, osv.).
+Du kan använda VSCode i Windows med PowerShell version 5 med hjälp av Windows 10 eller genom att installera [Windows Management Framework 5,0 RTM](https://devblogs.microsoft.com/powershell/windows-management-framework-wmf-5-0-rtm-is-now-available-via-the-microsoft-update-catalog/) för Windows oss på en äldre nivå (t. ex. Windows 8,1 osv.).
 
-Kontrollera att PowerShell finns i systemet innan du startar den.
-Moderna arbetsbelastningar i Windows, macOS och Linux finns här:
+Innan du startar det kontrollerar du att PowerShell finns i systemet. För moderna arbets belastningar på Windows, macOS och Linux, se:
 
-- [Installera PowerShell Core i Linux][install-pscore-linux]
-- [Installera PowerShell Core i macOS][install-pscore-macos]
-- [Installera PowerShell Core i Windows][install-pscore-windows]
+- [Installera PowerShell Core på Linux][install-pscore-linux]
+- [Installera PowerShell Core på macOS][install-pscore-macos]
+- [Installera PowerShell Core på Windows][install-pscore-windows]
 
-Traditionella Windows PowerShell-arbetsbelastningar, se [installera Windows PowerShell][install-winps].
+För traditionella Windows PowerShell-arbetsbelastningar, se [Installera Windows PowerShell][install-winps].
 
-## <a name="editing-with-visual-studio-code"></a>Redigera med Visual Studio Code
+## <a name="editing-with-vscode"></a>Redigera med VSCode
 
-### <a name="1-installing-visual-studio-codehttpscodevisualstudiocomdocssetupsetup-overview"></a>[1. Installera Visual Studio Code](https://code.visualstudio.com/Docs/setup/setup-overview)
+1. [Installerar VSCode](https://code.visualstudio.com/Docs/setup/setup-overview)
 
-- **Linux**: Följ installationsanvisningarna på den [som körs på Linux i VS Code](https://code.visualstudio.com/docs/setup/linux) sidan
+   - **Linux**: följ installations anvisningarna på sidan för att [köra VSCode på Linux](https://code.visualstudio.com/docs/setup/linux)
+   - **MacOS**: följ installations anvisningarna på sidan för att [köra VSCode på MacOS](https://code.visualstudio.com/docs/setup/mac)
 
-- **macOS**: Följ installationsanvisningarna på den [köra VS-kod i Mac OS](https://code.visualstudio.com/docs/setup/mac) sidan
+     > [!IMPORTANT]
+     > På macOS måste du installera OpenSSL för att PowerShell-tillägget ska fungera korrekt. Det enklaste sättet att göra detta är att installera [homebrew](https://brew.sh/) och sedan köra `brew install openssl`. VSCode kan nu läsa in PowerShell-tillägget.
 
-  > [!IMPORTANT]
-  > I macOS, måste du installera OpenSSL för PowerShell-tillägget ska fungera korrekt.
-  > Det enklaste sättet att göra detta är att installera [Homebrew](https://brew.sh/) och kör sedan `brew install openssl`.
-  > VS Code kan nu läsa in PowerShell-tillägget har.
+   - **Windows**: följ installations anvisningarna på sidan för att [köra VSCode på Windows](https://code.visualstudio.com/docs/setup/windows)
 
-- **Windows**: Följ installationsanvisningarna på den [köra VS Code på Windows](https://code.visualstudio.com/docs/setup/windows) sidan
+2. Installera PowerShell-tillägg
 
-### <a name="2-installing-powershell-extension"></a>2. Installera PowerShell-tillägget
+   - Starta VSCode-appen genom att:
+     - **Windows**: skriva `code` in PowerShell-sessionen
+     - **Linux**: skriva `code` in i terminalen
+     - **MacOS**: skriva `code` in i terminalen
+   - **Öppna snabb** start genom att trycka på <kbd>CTRL</kbd>+<kbd>P</kbd> (<kbd>cmd</kbd>+<kbd>p</kbd> på Mac).
+   - Skriv `ext install powershell` och tryck på **RETUR**i snabb öppning.
+   - Vyn **tillägg** öppnas i sido fältet. Välj PowerShell-tillägget från Microsoft.
+     Du bör se något som liknar följande:
 
-- Starta Visual Studio Code app genom att:
-  - **Windows**: att skriva `code` i PowerShell-sessionen
-  - **Linux**: att skriva `code` i terminalen
-  - **macOS**: att skriva `code` i terminalen
+     ![VSCode](../../images/using-vscode/vscode.png)
 
-- Starta **snabb öppna** genom att trycka på **Ctrl + P** (**Cmd + P** på Mac).
-- Snabb Skriv `ext install powershell` och därefter **RETUR**.
-- Den **tillägg** öppnas i Sidopanel. Välj tillägget PowerShell från Microsoft.
-  Du bör se ut ungefär som nedan:
+   - Klicka på knappen **Installera** i PowerShell-tillägget från Microsoft.
+   - Efter installationen ser knappen **Installera** att **läsas in igen**. Klicka på **Läs in igen**.
+   - När VSCode har lästs in på nytt är du redo för redigering.
 
-  ![VSCode](../../images/vscode.png)
-
-- Klicka på den **installera** knappen på PowerShell-tillägget från Microsoft.
-- Efter installationen visas den **installera** knappen övergår i **Reload**.
-  Klicka på **Reload**.
-- När Visual Studio Code har läs in igen, är det dags för redigering.
-
-Exempelvis för att skapa en ny fil, klickar du på **File -> Nytt**.
-Om du vill spara den, klickar du på **Arkiv -> Spara** och ange sedan ett filnamn, låt oss säga att `HelloWorld.ps1`.
-Stäng filen genom att klicka på ”x” bredvid namnet på filen.
-Avsluta Visual Studio Code **Arkiv -> Avsluta**.
+Om du till exempel vill skapa en ny fil klickar du på **fil-> ny**. Spara genom att klicka på **Arkiv-> Spara** och ange ett fil namn, låt oss säga `HelloWorld.ps1`. Stäng filen genom att klicka på "x" bredvid fil namnet. Avsluta VSCode genom att avsluta **File->** .
 
 ### <a name="installing-the-powershell-extension-on-restricted-systems"></a>Installera PowerShell-tillägget på begränsade system
 
-Vissa system är inställda på ett sätt som kräver alla kod signaturer som ska kontrolleras och därför kräver PowerShell redigeraren tjänster att manuellt godkänna för att köras på systemet.
-En uppdatering av grupprinciper som ändrar körningsprincipen är en trolig orsak om du har installerat tillägget PowerShell men ansluter till ett fel som:
+Vissa system har kon figurer ATS på ett sätt som kräver att alla kod-signaturer kontrol leras, vilket kräver att PowerShell Editor-tjänster godkänns manuellt för att köras i systemet. En grupprincip uppdatering som ändrar körnings principen är en sannolik orsak om du har installerat PowerShell-tillägget men når ett fel som:
 
 ```
 Language server startup failed.
 ```
 
-Öppna ett PowerShell och kör för att manuellt godkänna PowerShell redigeraren tjänster och därmed PowerShell-tillägget för VSCode:
+Om du vill godkänna PowerShell Editor-tjänster manuellt och därmed PowerShell-tillägget för VSCode öppnar du en PowerShell-prompt och kör:
 
 ```powershell
 Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
 ```
 
-Du uppmanas via ”vill du köra programvaran från denna ej betrodda utgivare”?
-Typ `R` att köra filen. Öppna Visual Studio Code och kontrollera att tillägget PowerShell fungerar korrekt. Om du fortfarande har problem med att komma igång, berätta för oss på [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
+Du uppmanas att använda "vill du köra program vara från den här ej betrodda utgivaren?" Skriv `R` för att köra filen. Öppna sedan VSCode och kontrol lera att PowerShell-tillägget fungerar korrekt. Om du fortfarande har problem med att komma igång kan du berätta om [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
 
-#### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>Välja en version av PowerShell för att använda i tillägget
+#### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>Välja en version av PowerShell som ska användas med tillägget
 
-Med PowerShell Core installation sida vid sida med Windows PowerShell, är det nu möjligt att använda en viss version av PowerShell i PowerShell-tillägget. Använd följande här för att välja versionen:
+Med PowerShell Core-installation sida vid sida med Windows PowerShell, är det nu möjligt att använda en viss version av PowerShell med PowerShell-tillägget. Använd följande steg för att välja version:
 
-1. Öppna kommandot utbud (<kbd>Ctrl</kbd>+<kbd>SKIFT</kbd>+<kbd>P</kbd> på Windows och Linux, <kbd>Cmd</kbd> + <kbd>SKIFT</kbd>+<kbd>P</kbd> på macOS).
-1. Sök efter ”Session”.
-1. Klicka på ”PowerShell: Visa Session menyn ”.
-1. Välj versionen av PowerShell som du vill använda från listan – till exempel PowerShell Core ””.
+1. Öppna kommandot pall (<kbd>CTRL</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd> på Windows & Linux, <kbd>cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> på MacOS).
+1. Sök efter "session".
+1. Klicka på "PowerShell: Visa session-menyn ".
+1. Välj den version av PowerShell som du vill använda från listan, till exempel "PowerShell Core".
 
->[!IMPORTANT]
-> Den här funktionen tittar på några välkända sökvägar i olika operativsystem för att identifiera platser för installation av PowerShell. Om du har installerat PowerShell på en icke-vanliga plats kan den inte visas först i menyn Session. Du kan utöka menyn sessionen genom att [att lägga till dina egna anpassade sökvägar](#adding-your-own-powershell-paths-to-the-session-menu) enligt beskrivningen nedan.
+> [!IMPORTANT]
+> Den här funktionen söker efter några välkända sökvägar på olika operativ system för att identifiera installations platser för PowerShell. Om du har installerat PowerShell på en icke-typisk plats kan det hända att den inte visas inlednings vis i session-menyn. Du kan utöka session-menyn genom [att lägga till egna anpassade sökvägar](#adding-your-own-powershell-paths-to-the-session-menu) enligt beskrivningen nedan.
 
 >[!NOTE]
-> Det finns ett annat sätt att komma till menyn session. När en PowerShell-fil är öppna i redigeringsprogram, visas en grön versionsnumret i det nedre högra hörnet. Klicka på det här versionsnumret kommer du till menyn session.
+> Det finns ett annat sätt att komma till session-menyn. När en PowerShell-fil är öppen i redigeraren visas ett grönt versions nummer längst ned till höger. Om du klickar på det här versions numret visas session-menyn.
 
-##### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>Att lägga till egna PowerShell-sökvägar till menyn session
+##### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>Lägga till egna PowerShell-sökvägar i session-menyn
 
-Du kan lägga till andra körbara sökvägar PowerShell session-menyn genom att VS Code.
+Du kan lägga till andra körbara sökvägar för PowerShell i sessionen via en VSCode-inställning.
 
-Lägg till ett objekt i listan `powershell.powerShellAdditionalExePaths` eller skapa listan om den inte finns i din `settings.json`:
+Lägg till ett objekt i listan `powershell.powerShellAdditionalExePaths` eller skapa listan om den inte finns i din: `settings.json`
 
 ```json
 {
@@ -113,17 +101,17 @@ Lägg till ett objekt i listan `powershell.powerShellAdditionalExePaths` eller s
             "versionName": "Downloaded PowerShell"
         }
     ],
-    
+
     // other settings...
 }
 ```
 
 Varje objekt måste ha:
 
-* `exePath`: Sökvägen till den `pwsh` eller `powershell` körbara.
-* `versionName`: Den text som visas i menyn session.
+* `exePath`: Sökvägen till eller `powershell` den `pwsh` körbara filen.
+* `versionName`: Den text som visas i session-menyn.
 
-Du kan ange standard PowerShell-version du använder med hjälp av den `powershell.powerShellDefaultVersion` inställningen av inställningen detta i texten visas i menyn session (även kallat den `versionName` i den senaste inställningen):
+Du kan ange vilken standard version av PowerShell som ska användas `powershell.powerShellDefaultVersion` med inställningen genom att ställa in den på texten som visas i session-menyn `versionName` (aka i den sista inställningen):
 
 ```json
 {
@@ -135,25 +123,25 @@ Du kan ange standard PowerShell-version du använder med hjälp av den `powershe
             "versionName": "Downloaded PowerShell"
         }
     ],
-    
+
     "powershell.powerShellDefaultVersion": "Downloaded PowerShell",
-    
+
     // other settings...
 }
 ```
 
-När du har ställt in den här inställningen kan starta om Visual Studio Code eller använda den i ”utvecklare: Läs in på nytt fönster ”utbud Kommandoåtgärden att uppdatera aktuella vscode-fönstret.
+När du har angett den här inställningen startar du om VSCode eller använder "Developer: Läs in kommando åtgärd för att läsa in den aktuella VSCode-fönstret igen.
 
-Om du öppnar menyn sessionen, kommer du nu se ditt ytterligare PowerShell-versioner!
+Om du öppnar session-menyn visas nu ytterligare PowerShell-versioner!
 
 > [!NOTE]
-> Om du skapar PowerShell från källan, är det här ett bra sätt att testa din lokal version av PowerShell.
+> Om du skapar PowerShell från källa är det ett bra sätt att testa din lokala version av PowerShell.
 
-#### <a name="configuration-settings-for-visual-studio-code"></a>Konfigurationsinställningar för Visual Studio Code
+#### <a name="configuration-settings-for-vscode"></a>Konfigurations inställningar för VSCode
 
-Med hjälp av stegen i föregående stycke kan du lägga till konfigurationsinställningar i `settings.json`.
+Genom att följa stegen i föregående stycke kan du lägga till konfigurations inställningar `settings.json`i.
 
-Vi rekommenderar följande konfigurationsinställningar för Visual Studio Code:
+Vi rekommenderar följande konfigurations inställningar för VSCode:
 
 ```json
 {
@@ -167,7 +155,7 @@ Vi rekommenderar följande konfigurationsinställningar för Visual Studio Code:
 }
 ```
 
-Om du inte vill att dessa inställningar påverkar alla filtyper, kan VSCode också konfigurationer per språk. Skapa en specifik språkinställning genom att ange inställningar i en `[<language-name>]` fält. Till exempel:
+Om du inte vill att de här inställningarna ska påverka alla filtyper kan VSCode också använda konfigurationer för flera språk. Skapa en språkspecifik inställning genom att placera inställningarna i `[<language-name>]` ett fält. Exempel:
 
 ```json
 "[powershell]": {
@@ -176,37 +164,32 @@ Om du inte vill att dessa inställningar påverkar alla filtyper, kan VSCode ock
 }
 ```
 
-Mer information om filen kodning i VS Code finns i [förstå Filkodning](understanding-file-encoding.md).
+Mer information om fil kodning i VSCode finns i [förstå fil kodning](understanding-file-encoding.md).
 
-## <a name="debugging-with-visual-studio-code"></a>Felsöka med Visual Studio Code
+## <a name="debugging-with-vscode"></a>Fel sökning med VSCode
 
-### <a name="no-workspace-debugging"></a>Ingen arbetsyta felsökning
+### <a name="no-workspace-debugging"></a>Ingen fel sökning på arbets ytan
 
-Du kan felsöka PowerShell-skript utan att öppna den mapp som innehåller PowerShell-skriptet från och med Visual Studio Code-versionen 1.9. Öppna PowerShell-skriptfil med **Arkiv -> Öppna fil...** , ange en brytpunkt på rad (tryck på F9) och tryck på F5 för att starta felsökningen. Du bör se Debug åtgärdsfönstret visas där du kan dela i felsökare, steg, återuppta och stoppa felsökning.
+Från och med VSCode version 1,9 kan du felsöka PowerShell-skript utan att behöva öppna mappen som innehåller PowerShell-skriptet. Öppna PowerShell-skriptfilen med **fil-> öppna fil...** , ange en Bryt punkt på en rad (tryck på <kbd>F9</kbd>) och tryck sedan på <kbd>F5</kbd> för att starta fel sökningen. Du bör se fönstret fel söknings åtgärder som gör att du kan dela upp i fel sökning, steg, återuppta och stoppa fel sökning.
 
-### <a name="workspace-debugging"></a>Felsökning av arbetsyta
+### <a name="workspace-debugging"></a>Fel sökning av arbets yta
 
-Felsökning av arbetsytan refererar till felsökning i samband med en mapp som du har öppnat i Visual Studio Code med **Öppna mapp...**  från den **filen** menyn.
-Den mapp som du öppnar är vanligtvis projektmappen PowerShell och/eller roten för Git-lagringsplatsen.
+Fel sökning av arbets ytan avser fel sökning i kontexten för en mapp som du har öppnat i Visual Studio Code med **Öppna mapp...** från menyn **Arkiv** . Mappen som du öppnar är vanligt vis din PowerShell-projektmapp och/eller roten för git-lagringsplatsen.
 
-Även i det här läget kan starta du felsökning markerade PowerShell-skriptet genom att bara trycka på F5.
-Dock kan arbetsytan felsökning du definiera konfigurationer med flera debug än bara felsökning öppna filen.
-Du kan exempelvis lägga till en konfigurationer för att:
+Även i det här läget kan du börja felsöka det markerade PowerShell-skriptet genom att helt enkelt trycka på <kbd>F5</kbd>. Med fel sökning av arbets yta kan du dock definiera flera fel söknings konfigurationer förutom att bara Felsöka den öppna filen. Du kan till exempel lägga till en konfiguration för att:
 
-- Starta Pester tester i felsökningsprogrammet
-- Starta en viss fil med argumenten i Felsökning
-- Starta en interaktiv session i Felsökning
-- Bifoga felsökningsprogrammet till en värdprocess för PowerShell
+- Starta pester-tester i fel söknings programmet
+- Starta en speciell fil med argument i fel söknings programmet
+- Starta en interaktiv session i fel söknings programmet
+- Koppla fel söknings programmet till en PowerShell-värd process
 
-Följ dessa steg för att skapa konfigurationsfilen debug:
+Följ de här stegen för att skapa en fel söknings konfigurations fil:
 
-  1. Öppna den **felsöka** vyn genom att trycka på **Ctrl + Skift + D** (**Cmd + SKIFT + D** på Mac).
-  2. Tryck på den **konfigurera** kugghjulsikonen i verktygsfältet.
-  3. Visual Studio Code uppmanas du att **Välj miljö**. Välj **PowerShell**.
+  1. Öppna vyn **fel sökning** genom att trycka på <kbd>CTRL</kbd>+<kbd>Shift</kbd>+<kbd>d</kbd> (<kbd>cmd</kbd>+<kbd>Shift</kbd>+<kbd>d</kbd> på Mac).
+  2. Klicka på ikonen **Konfigurera** kugg hjul i verktygsfältet.
+  3. VSCode där du ombeds att **välja miljö**. Välj **PowerShell**.
 
-  När du gör detta skapar en katalog och en fil ”.vscode\launch.json” i roten av din arbetsytemapp Visual Studio Code.
-  Det här är där din debug-konfiguration lagras. Om filerna finns i en Git-lagringsplats, vill du förmodligen att genomföra launch.json-filen.
-  Innehållet i launch.json-filen är:
+  När du gör detta skapar VSCode en katalog och en fil ". vscode\launch.JSON" i roten i din arbetsytans mapp. Det är här som din fel söknings konfiguration lagras. Om filerna finns på en git-lagringsplats vill du vanligt vis allokera filen Launch. JSON. Innehållet i filen Launch. JSON är:
 
   ```json
   {
@@ -237,24 +220,21 @@ Följ dessa steg för att skapa konfigurationsfilen debug:
   }
   ```
 
-  Detta representerar vanliga scenarier för felsökning.
-  Men när du öppnar den här filen i redigeraren kan du se en **Lägg till konfiguration...**  knappen.
-  Du kan trycka på knappen för att lägga till fler konfigurationer för felsökning av PowerShell. Är en praktisk konfiguration för att lägga till **PowerShell: Starta skriptet**.
-  Med den här konfigurationen kan du ange en viss fil med valfria argument som ska startas varje gång du trycker på F5 oavsett vilken fil som är aktiva i redigeraren.
+  Detta representerar vanliga fel söknings scenarier. När du öppnar den här filen i redigeraren visas dock knappen **Lägg till konfiguration...** . Du kan klicka på den här knappen för att lägga till fler PowerShell-felsöknings konfigurationer. En praktisk konfiguration för att lägga **till är PowerShell: Starta skript**. Med den här konfigurationen kan du ange en fil med valfria argument som ska startas när du trycker på <kbd>F5</kbd> oavsett vilken fil som för närvarande är aktiv i redigeraren.
 
-  När debug-konfigurationen har upprättats kan du välja vilken konfiguration som du vill använda under en felsökningssession genom att välja en från debug konfigurationen listrutan i den **felsöka** vyns verktygsfältet.
+  När du har upprättat fel söknings konfigurationen kan du välja vilken konfiguration du vill använda under en felsökningssession genom att välja en från List rutan Felsök konfiguration i verktygsfältet för **fel** söknings läge.
 
-Det finns några bloggar som hjälper dig att komma igång med hjälp av PowerShell-tillägget för Visual Studio Code:
+Det finns några Bloggar som kan vara till hjälp för att komma igång med PowerShell-tillägget för Visual Studio Code:
 
-- [PowerShell-tillägget][ps-extension]
-- [Skriv och Felsök PowerShell-skript i Visual Studio Code][debug]
-- [Felsökning av Visual Studio Code-vägledning][vscode-guide]
-- [Felsökning av PowerShell i Visual Studio Code][ps-vscode]
+- [PowerShell-tillägg][ps-extension]
+- [Skriva och felsöka PowerShell-skript i Visual Studio Code][debug]
+- [Fel sökning av Visual Studio Code-vägledning][vscode-guide]
+- [Felsöka PowerShell i Visual Studio Code][ps-vscode]
 - [Kom igång med PowerShell-utveckling i Visual Studio Code][getting-started]
-- [Visual Studio Code redigeringsfunktioner för PowerShell-utveckling – del 1][editing-part1]
-- [Visual Studio Code redigeringsfunktioner för PowerShell-utveckling – del 2][editing-part2]
-- [Felsökning av PowerShell-skriptet i Visual Studio Code – del 1][debugging-part1]
-- [Felsökning av PowerShell-skriptet i Visual Studio Code – del 2][debugging-part2]
+- [Visual Studio Code Editing-funktioner för PowerShell-utveckling – del 1][editing-part1]
+- [Visual Studio Code Editing-funktioner för PowerShell-utveckling – del 2][editing-part2]
+- [Felsöka PowerShell-skript i Visual Studio Code – del 1][debugging-part1]
+- [Felsöka PowerShell-skript i Visual Studio Code – del 2][debugging-part2]
 
 [ise]: ../ise/Introducing-the-Windows-PowerShell-ISE.md
 [install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-Linux.md
@@ -271,6 +251,6 @@ Det finns några bloggar som hjälper dig att komma igång med hjälp av PowerSh
 [debugging-part1]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/06/debugging-powershell-script-in-visual-studio-code-part-1/
 [debugging-part2]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/13/debugging-powershell-script-in-visual-studio-code-part-2/
 
-## <a name="powershell-extension-for-visual-studio-code"></a>PowerShell-tillägget för Visual Studio Code
+## <a name="powershell-extension-for-vscode"></a>PowerShell-tillägg för VSCode
 
-Tillägget PowerShell källkoden finns på [GitHub](https://github.com/PowerShell/vscode-powershell).
+Du hittar PowerShell-tilläggets källkod på [GitHub](https://github.com/PowerShell/vscode-powershell).

@@ -1,5 +1,5 @@
 ---
-title: Skapa en Windows PowerShell-objekt-Provider | Microsoft Docs
+title: Skapa en Windows PowerShell-dataprovider | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -11,246 +11,246 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: 6f91fd53d41dd72c99f8fbc7bc7b863322d88787
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: c60da62a06fcb40b6970d4209e991e57af733f33
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855055"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323200"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Skapa en Windows PowerShell-objektprovider
 
-Det här avsnittet beskriver hur du skapar en Windows PowerShell-provider som kan manipulera data i ett datalager. I det här avsnittet kallas elementen i data i store för lagring av som ”objekt” av data. Det betyder kallas en provider som kan manipulera data i store en provider för Windows PowerShell-objekt.
+I det här avsnittet beskrivs hur du skapar en Windows PowerShell-provider som kan manipulera data i ett data lager. I det här avsnittet kallas elementen för data i arkivet som "objekt" i data lagret. Därför kallas en provider som kan manipulera data i arkivet som en Windows PowerShell-DataProvider.
 
 > [!NOTE]
-> Du kan ladda ned den C# källfilen (AccessDBSampleProvider03.cs) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3.0 Runtime-komponenter. Hämta anvisningar finns i [hur du installerar Windows PowerShell och ladda ned Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
+> Du kan ladda ned C# käll filen (AccessDBSampleProvider03.CS) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
-> Hämtade källfilerna är tillgängliga i den  **\<PowerShell-exempel >** directory.
+> De hämtade källfilerna är tillgängliga i  **\<PowerShell-exemplen >** Directory.
 >
-> Läs mer om andra Windows PowerShell-providern implementeringar [designa din Windows PowerShell-providern](./designing-your-windows-powershell-provider.md).
+> Mer information om implementeringar av andra Windows PowerShell-leverantörer finns i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md).
 
-Windows PowerShell-objekt-providern som beskrivs i det här avsnittet hämtar dataobjekt från en Access-databas. I det här fallet är ett ”objekt” antingen en tabell i Access-databas eller en rad i en tabell.
+Windows PowerShell-dataleverantören som beskrivs i det här avsnittet hämtar data objekt från en Access-databas. I det här fallet är ett "objekt" antingen en tabell i Access-databasen eller en rad i en tabell.
 
-## <a name="defining-the-windows-powershell-item-provider-class"></a>Definiera providerklass för Windows PowerShell-objekt
+## <a name="defining-the-windows-powershell-item-provider-class"></a>Definiera Windows PowerShell-klassen för objekt leverantörer
 
-En provider för Windows PowerShell-objekt måste definiera en .NET-klass som härleds från den [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) basklassen. Följande är klassdefinitionen för providern objektet som beskrivs i det här avsnittet.
+En Windows PowerShell-dataprovider måste definiera en .NET-klass som är härledd från Bask Lassen [system. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) . Följande är klass definitionen för den artikel leverantör som beskrivs i det här avsnittet.
 
 [!code-csharp[AccessDBProviderSample03.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L34-L36 "AccessDBProviderSample03.cs")]
 
-Observera att i det här klassdefinitionen, den [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribut innehåller två parametrar. Den första parametern anger ett användarvänligt namn för providern som används av Windows PowerShell. Den andra parametern anger de specifika funktioner i Windows PowerShell som providern visar Windows PowerShell-runtime under bearbetning av kommandot. Det finns inga har lagts till specifika funktioner för Windows PowerShell för den här providern.
+Observera att i den här klass definitionen innehåller attributet [system. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) två parametrar. Den första parametern anger ett användarvänligt namn för den provider som används av Windows PowerShell. Den andra parametern anger de Windows PowerShell-funktioner som providern exponerar för Windows PowerShell-körningsmiljön under kommando bearbetning. För den här providern finns det inga Windows PowerShell-funktioner som har lagts till.
 
-## <a name="defining-base-functionality"></a>Definiera grundfunktionen
+## <a name="defining-base-functionality"></a>Definiera grundläggande funktioner
 
-Mer information finns i [Design Your Windows PowerShell-providern](./designing-your-windows-powershell-provider.md), [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) klassen härleds från flera klasser som angav olika Provider-funktionalitet. En provider för Windows PowerShell-objekt, därför måste definiera alla funktioner som tillhandahålls av dessa klasser.
+Enligt beskrivningen i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md)härleds klassen [system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) från flera andra klasser som tillhandahöll olika funktioner i providern. En Windows PowerShell-dataprovider måste därför definiera alla funktioner som tillhandahålls av dessa klasser.
 
-Mer information om hur du implementerar funktioner för att lägga till sessionen-specifika initieringsinformation och för att frisläppa resurser som används av providern finns i [skapar en grundläggande Windows PowerShell-providern](./creating-a-basic-windows-powershell-provider.md). De flesta leverantörer, inklusive providern som beskrivs här, kan dock använda standardimplementering av den här funktionen som tillhandahålls av Windows PowerShell.
+Mer information om hur du implementerar funktioner för att lägga till datorspecifik initierings information och för att frigöra resurser som används av providern finns i [skapa en grundläggande Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md). De flesta leverantörer, inklusive providern som beskrivs här, kan dock använda standard implementeringen av den här funktionen som tillhandahålls av Windows PowerShell.
 
-Innan en provider för Windows PowerShell-objekt kan manipulera objekt i arkivet, den måste implementera-metoderna i den [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) basklassen får tillgång till datalagret. Läs mer om hur du implementerar den här klassen [skapar en Windows PowerShell Drive Provider](./creating-a-windows-powershell-drive-provider.md).
+Innan Windows PowerShell-dataleverantören kan manipulera objekten i arkivet måste den implementera metoderna i Bask Lassen [system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) för att få åtkomst till data lagret. Mer information om hur du implementerar den här klassen finns i [skapa en provider för Windows PowerShell-enheter](./creating-a-windows-powershell-drive-provider.md).
 
-## <a name="checking-for-path-validity"></a>Söker efter sökväg giltighet
+## <a name="checking-for-path-validity"></a>Söker efter Sök vägs giltighet
 
-När du letar efter en datapost, Windows PowerShell-runtime inkluderar en Windows PowerShell-sökväg till providern, enligt definitionen i avsnittet ”PSPath begrepp” i [hur Windows PowerShell fungerar](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). En provider för Windows PowerShell-objekt måste kontrollera syntaktiska och semantisk giltigheten för alla sökvägar som skickas till den genom att implementera den [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) metod. Den här metoden returnerar `true` om sökvägen är giltig och `false` annars. Vara medveten om att implementeringen av den här metoden inte ska verifiera att objektet på sökvägen, men endast som sökvägen är syntaktiskt och semantiskt korrekt.
+När du letar efter ett data objekt, tillhandahåller Windows PowerShell-körningsmiljön en Windows PowerShell-sökväg till providern, enligt definitionen i avsnittet "PSPath-koncept" i [hur Windows PowerShell fungerar](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). En Windows PowerShell-dataprovider måste verifiera syntaktisk och semantisk giltigheten för alla vägar som skickas till den genom att implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) . Den här metoden `true` returnerar om sökvägen är giltig och `false` annars. Tänk på att implementeringen av den här metoden inte ska verifiera att objektet finns på sökvägen, men bara att sökvägen är syntaktiskt och semantiskt korrekt.
 
-Här är implementeringen av den [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) metod för den här providern. Observera att den här implementeringen anropar en NormalizePath helper-metod för att konvertera alla avgränsare i sökvägen till en enhetlig.
+Här är implementeringen av metoden [system. Management. Automation. Provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) för den här providern. Observera att den här implementeringen anropar en NormalizePath Helper-metod för att konvertera alla avgränsare i sökvägen till en enhetlig.
 
 [!code-csharp[AccessDBProviderSample03.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L274-L298 "AccessDBProviderSample03.cs")]
 
-## <a name="determining-if-an-item-exists"></a>Avgör om det finns ett objekt
+## <a name="determining-if-an-item-exists"></a>Avgöra om ett objekt finns
 
-När du har verifierat sökvägen, måste Windows PowerShell-runtime bestämma om det finns ett objekt av data i sökvägen. För att stödja den här typen av fråga, provider för Windows PowerShell-objektet implementerar den [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) metod. Den här metoden returnerar `true` ett objekt påträffades vid den angivna sökvägen och `false` (standard) annars.
+När du har verifierat sökvägen måste Windows PowerShell-körningsmiljön avgöra om ett data objekt finns på den sökvägen. För att stödja den här typen av fråga implementerar Windows PowerShell-dataprovidern [system. Management. Automation. Provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) -metoden. Den här metoden `true` returnerar ett objekt som finns på den angivna sökvägen `false` och (standard).
 
-Här är implementeringen av den [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) metod för den här providern. Observera att den här metoden anropar hjälpmetoder PathIsDrive och ChunkPath GetTable och använder en provider definierats DatabaseTableInfo objekt.
+Här är implementeringen av metoden [system. Management. Automation. Provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) för den här providern. Observera att den här metoden anropar metoderna PathIsDrive, ChunkPath och GetTable Helper och använder ett Provider definierat DatabaseTableInfo-objekt.
 
 [!code-csharp[AccessDBProviderSample03.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L229-L267 "AccessDBProviderSample03.cs")]
 
-#### <a name="things-to-remember-about-implementing-itemexists"></a>Kom ihåg följande om hur du implementerar ItemExists
+#### <a name="things-to-remember-about-implementing-itemexists"></a>Saker att komma ihåg om att implementera ItemExists
 
-Följande villkor kan tillkomma för din implementering av [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists):
+Följande villkor kan gälla för din implementering av [system. Management. Automation. Provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists):
 
-- När du definierar providerklassen, en provider för Windows PowerShell-objekt kan deklarera provider-funktionerna i ExpandWildcards, Filter, inkludera eller exkludera, från den [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)uppräkning. I dessa fall är implementeringen av den [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) metod måste se till att sökvägen skickas till metoden uppfyller kraven för de angivna funktionerna. Gör detta genom metoden ska komma åt egenskapen lämplig, till exempel, [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) och [ System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) egenskaper.
+- När du definierar Provider-klassen kan en Windows PowerShell-dataprovider deklarera ExpandWildcards, filtrera, ta med eller undanta från, från [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -uppräkningen. I dessa fall måste implementeringen av metoden [system. Management. Automation. Provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) se till att den sökväg som skickas till metoden uppfyller kraven för de angivna funktionerna. För att göra detta ska metoden komma åt lämplig egenskap, till exempel [system. Management. Automation. Provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) och [system. Management. Automation. Provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) egenskaper.
 
-- Implementeringen av den här metoden bör hantera någon form av åtkomst till det objekt som kan göra objektet som är synliga för användaren. Till exempel om en användare har skrivbehörighet till en fil via filsystemet provider (som tillhandahålls av Windows PowerShell), men inte läsbehörighet kan filen fortfarande finns och [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) returnerar `true`. Implementeringen kan kräva kontrollerar en överordnad artikel om du vill se om det underordnade objektet kan ingå.
+- Implementeringen av den här metoden bör hantera alla former av åtkomst till objektet som kan göra objektet synligt för användaren. Om en användare till exempel har Skriv behörighet till en fil via fil systemets Provider (som tillhandahålls av Windows PowerShell), men inte Läs åtkomst, finns filen fortfarande och [system. Management. Automation. Provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) returnerar `true`. Din implementering kan kräva att ett överordnat objekt kontrol leras för att se om det underordnade objektet kan räknas upp.
 
-## <a name="attaching-dynamic-parameters-to-the-test-path-cmdlet"></a>Bifoga dynamiska parametrar till cmdleten Test-Path
+## <a name="attaching-dynamic-parameters-to-the-test-path-cmdlet"></a>Bifoga dynamiska parametrar till test-Path-cmdleten
 
-Ibland den `Test-Path` cmdlet: en som anropar [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) kräver ytterligare parametrar som anges dynamiskt vid körning. Att tillhandahålla dessa dynamiska parametrar i Windows PowerShell objekt leverantören måste implementera de [System.Management.Automation.Provider.Itemcmdletprovider.Itemexistsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters) metod. Den här metoden hämtar de dynamiska parametrarna för objektet på den angivna sökvägen och returnerar ett objekt med egenskaper och fält med parsning attribut som liknar en cmdlet-klass eller en [ System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) objekt. Windows PowerShell-runtime använder det returnerade objektet för att lägga till parametrar till den `Test-Path` cmdlet.
+Ibland kräver cmdleten som anropar [system. Management. Automation. Provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) ytterligare parametrar som anges dynamiskt vid körning. `Test-Path` För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell-dataleverantören implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Itemexistsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters) . Den här metoden hämtar dynamiska parametrar för objektet på den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller en [system. Management. Automation. Runtimedefinedparameterdictionary ](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna `Test-Path` i cmdleten.
 
-Den här providern för Windows PowerShell-objektet implementerar inte den här metoden. Följande kod är dock standardimplementering av den här metoden.
+Den här Windows PowerShell-dataprovidern implementerar inte den här metoden. Följande kod är dock standard implementeringen av den här metoden.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovideritemexistdynamicparameters](Msh_samplestestcmdlets#testprovideritemexistdynamicparameters)]  -->
 
 ## <a name="retrieving-an-item"></a>Hämtar ett objekt
 
-Om du vill hämta ett objekt, provider för Windows PowerShell-objekt måste åsidosätta [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) metod för att stödja anrop från den `Get-Item` cmdlet. Den här metoden skriver objekt med den [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) metod.
+För att hämta ett objekt, måste Windows PowerShell-dataleverantören åsidosätta metoden [system. Management. Automation. Provider. Itemcmdletprovider. getItem, *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) för att `Get-Item` stödja anrop från cmdleten. Med den här metoden skrivs objektet med hjälp av metoden [system. Management. Automation. Provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) .
 
-Här är implementeringen av den [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) metod för den här providern. Observera att den här metoden använder hjälpmetoder GetTable och GetRow för att hämta objekt som är antingen tabeller i Access-databas eller rader i en datatabell.
+Här är implementeringen av metoden [system. Management. Automation. Provider. Itemcmdletprovider. getItem, *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) för den här providern. Observera att den här metoden använder GetTable-och GetRow-hjälp metoder för att hämta objekt som är antingen tabeller i Access-databasen eller-raderna i en data tabell.
 
 [!code-csharp[AccessDBProviderSample03.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L132-L163 "AccessDBProviderSample03.cs")]
 
-#### <a name="things-to-remember-about-implementing-getitem"></a>Kom ihåg följande om hur du implementerar GetItem
+#### <a name="things-to-remember-about-implementing-getitem"></a>Saker att komma ihåg om att implementera getItem,
 
-Följande villkor kan gälla för en implementering av [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem):
+Följande villkor kan gälla för en implementering av [system. Management. Automation. Provider. Itemcmdletprovider. getItem, *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem):
 
-- När du definierar providerklassen, en provider för Windows PowerShell-objekt kan deklarera provider-funktionerna i ExpandWildcards, Filter, inkludera eller exkludera, från den [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)uppräkning. I dessa fall är implementeringen av [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) måste se till att sökvägen skickas till metoden uppfyller dessa krav. Gör detta genom metoden ska komma åt egenskapen lämplig, till exempel, [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) och [ System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) egenskaper.
+- När du definierar Provider-klassen kan en Windows PowerShell-dataprovider deklarera ExpandWildcards, filtrera, ta med eller undanta från, från [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -uppräkningen. I dessa fall måste implementeringen av [system. Management. Automation. Provider. Itemcmdletprovider. getItem, *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) se till att den sökväg som skickas till metoden uppfyller dessa krav. För att göra detta ska metoden komma åt lämplig egenskap, till exempel [system. Management. Automation. Provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) och [system. Management. Automation. Provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) egenskaper.
 
-- Som standard åsidosättningar av den här metoden ska inte att hämta objekt som vanligtvis är dolda från användaren, såvida inte den [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) är inställd på `true`. Till exempel den [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) metod för filsystem providern kontrollerar den [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) egenskapen innan den försöker anropa [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) efter dolda filer.
+- Åsidosättningar av den här metoden bör som standard inte hämta objekt som är allmänt dolda från användaren, om inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) har angetts till `true`. Till exempel kontrollerar [system. Management. Automation. Provider. Itemcmdletprovider. getItem, *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) -metoden för fil system providern [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) -egenskapen innan den försöker anropa [System. Management. Automation. Provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) för dolda filer eller systemfiler.
 
-## <a name="attaching-dynamic-parameters-to-the-get-item-cmdlet"></a>Bifoga dynamiska parametrar till cmdleten Get-objekt
+## <a name="attaching-dynamic-parameters-to-the-get-item-cmdlet"></a>Koppla dynamiska parametrar till cmdleten Get-Item
 
-Ibland den `Get-Item` cmdlet kräver ytterligare parametrar som anges dynamiskt vid körning. Att tillhandahålla dessa dynamiska parametrar i Windows PowerShell objekt leverantören måste implementera de [System.Management.Automation.Provider.Itemcmdletprovider.Getitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters) metod. Den här metoden hämtar de dynamiska parametrarna för objektet på den angivna sökvägen och returnerar ett objekt med egenskaper och fält med parsning attribut som liknar en cmdlet-klass eller en [ System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) objekt. Windows PowerShell-runtime använder det returnerade objektet för att lägga till parametrar till den `Get-Item` cmdlet.
+Ibland kräver `Get-Item` cmdleten ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell-dataleverantören implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Getitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters) . Den här metoden hämtar dynamiska parametrar för objektet på den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller en [system. Management. Automation. Runtimedefinedparameterdictionary ](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna `Get-Item` i cmdleten.
 
-Den här providern implementerar inte den här metoden. Följande kod är dock standardimplementering av den här metoden.
+Den här providern implementerar inte den här metoden. Följande kod är dock standard implementeringen av den här metoden.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetitemdynamicparameters](Msh_samplestestcmdlets#testprovidergetitemdynamicparameters)]  -->
 
 ## <a name="setting-an-item"></a>Ange ett objekt
 
-Om du vill ange ett objekt, provider för Windows PowerShell-objekt måste åsidosätta de [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) metod för att stödja anrop från den `Set-Item` cmdlet. Den här metoden anger värdet för objektet på den angivna sökvägen.
+Om du vill ange ett objekt måste Windows PowerShell-dataleverantören åsidosätta metoden [system. Management. Automation. Provider. Itemcmdletprovider. setItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) för att stödja `Set-Item` anrop från cmdleten. Den här metoden anger värdet för objektet på den angivna sökvägen.
 
-Den här leverantören inte ger en åsidosättning för den [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) metod. Följande är dock standardimplementering av den här metoden.
+Den här providern ger ingen åsidosättning för metoden [system. Management. Automation. Provider. Itemcmdletprovider. setItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) . Följande är dock standard implementeringen av den här metoden.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidersetitem](Msh_samplestestcmdlets#testprovidersetitem)]  -->
 
-#### <a name="things-to-remember-about-implementing-setitem"></a>Kom ihåg följande om hur du implementerar SetItem
+#### <a name="things-to-remember-about-implementing-setitem"></a>Saker att komma ihåg om att implementera SetItem
 
-Följande villkor kan tillkomma för din implementering av [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem):
+Följande villkor kan gälla för din implementering av [system. Management. Automation. Provider. Itemcmdletprovider. setItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem):
 
-- När du definierar providerklassen, en provider för Windows PowerShell-objekt kan deklarera provider-funktionerna i ExpandWildcards, Filter, inkludera eller exkludera, från den [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)uppräkning. I dessa fall är implementeringen av [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) måste se till att sökvägen skickas till metoden uppfyller dessa krav. Gör detta genom metoden ska komma åt egenskapen lämplig, till exempel, [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) och [ System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) egenskaper.
+- När du definierar Provider-klassen kan en Windows PowerShell-dataprovider deklarera ExpandWildcards, filtrera, ta med eller undanta från, från [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -uppräkningen. I dessa fall måste implementeringen av [system. Management. Automation. Provider. Itemcmdletprovider. setItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) se till att den sökväg som skickas till metoden uppfyller dessa krav. För att göra detta ska metoden komma åt lämplig egenskap, till exempel [system. Management. Automation. Provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) och [system. Management. Automation. Provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) egenskaper.
 
-- Som standard åsidosättningar av den här metoden inte ställa in eller skriva objekt som är dolda från användaren, såvida inte den [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) är inställd på `true`. Ett fel ska skickas till den [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) metod om sökvägen representerar ett dolda objekt och [ System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) är inställd på `false`.
+- Åsidosättningar av den här metoden bör som standard inte ange eller skriva objekt som är dolda från användaren, om inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) anges till `true`. Ett fel bör skickas till metoden [system. Management. Automation. Provider. Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) om sökvägen representerar ett dolt objekt och [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) har angetts till `false`.
 
-- Implementeringen av den [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) metoden ska anropa [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)och verifiera dess returvärdet innan du gör några ändringar i datalagret. Den här metoden används för att bekräfta körning av en åtgärd när en ändring görs till datalagret, till exempel ta bort filer. Den [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) metoden skickar namnet på resursen som ska ändras för användaren med Windows PowerShell-körning med hänsyn till eventuella kommandoradsinställningar eller preferensvariabler avgöra vad som ska visas.
+- Din implementering av metoden [system. Management. Automation. Provider. Itemcmdletprovider. setItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) måste anropa [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och verifiera dess retur värde innan du gör eventuella ändringar i data lagret. Den här metoden används för att bekräfta körning av en åtgärd när en ändring görs i data lagret, t. ex. borttagning av filer. Metoden [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) skickar namnet på resursen som ska ändras till användaren, med Windows PowerShell-körningsmiljön med hänsyn till alla kommando rads inställningar eller variabler i bestämmer vad som ska visas.
 
-  Efter anropet till [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar `true`, [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)metoden ska anropa den [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) metod. Den här metoden skickar ett meddelande till användaren att godkänna feedback för att kontrollera om åtgärden bör behållas. Anropet till [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) kan ytterligare en kontroll efter ändringar av potentiellt skadliga system.
+  Efter att anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar `true`, anropar [metoden system. Management. Automation. Provider. Itemcmdletprovider. setItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) [metoden Metoden system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Den här metoden skickar ett meddelande till användaren för att tillåta feedback för att kontrol lera om åtgärden ska fortsätta. Anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) tillåter ytterligare kontroll av potentiellt skadliga system ändringar.
 
-## <a name="retrieving-dynamic-parameters-for-setitem"></a>Hämtning av dynamiska parametrar för SetItem
+## <a name="retrieving-dynamic-parameters-for-setitem"></a>Hämtar dynamiska parametrar för SetItem
 
-Ibland den `Set-Item` cmdlet kräver ytterligare parametrar som anges dynamiskt vid körning. Att tillhandahålla dessa dynamiska parametrar i Windows PowerShell objekt leverantören måste implementera de [System.Management.Automation.Provider.Itemcmdletprovider.Setitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters) metod. Den här metoden hämtar de dynamiska parametrarna för objektet på den angivna sökvägen och returnerar ett objekt med egenskaper och fält med parsning attribut som liknar en cmdlet-klass eller en [ System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) objekt. Windows PowerShell-runtime använder det returnerade objektet för att lägga till parametrar till den `Set-Item` cmdlet.
+Ibland kräver `Set-Item` cmdleten ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell-dataleverantören implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Setitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters) . Den här metoden hämtar dynamiska parametrar för objektet på den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller en [system. Management. Automation. Runtimedefinedparameterdictionary ](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna `Set-Item` i cmdleten.
 
-Den här providern implementerar inte den här metoden. Följande kod är dock standardimplementering av den här metoden.
+Den här providern implementerar inte den här metoden. Följande kod är dock standard implementeringen av den här metoden.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidersetitemdynamicparameters](Msh_samplestestcmdlets#testprovidersetitemdynamicparameters)]  -->
 
-## <a name="clearing-an-item"></a>Om du avmarkerar ett objekt
+## <a name="clearing-an-item"></a>Rensa ett objekt
 
-Om du vill avmarkera ett objekt av Windows PowerShell-providern för objektet implementerar den [System.Management.Automation.Provider.Itemcmdletprovider.Clearitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) metod för att stödja anrop från den `Clear-Item` cmdlet. Den här metoden raderar dataobjektet på den angivna sökvägen.
+För att rensa ett objekt implementerar Windows PowerShell-dataprovidern [system. Management. Automation. Provider. Itemcmdletprovider. Clearitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) -metoden för att stödja anrop `Clear-Item` från cmdleten. Med den här metoden raderas dataobjektet vid den angivna sökvägen.
 
-Den här providern implementerar inte den här metoden. Följande kod är dock standardimplementering av den här metoden.
+Den här providern implementerar inte den här metoden. Följande kod är dock standard implementeringen av den här metoden.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderclearitem](Msh_samplestestcmdlets#testproviderclearitem)]  -->
 
-#### <a name="things-to-remember-about-implementing-clearitem"></a>Kom ihåg följande om hur du implementerar ClearItem
+#### <a name="things-to-remember-about-implementing-clearitem"></a>Saker att komma ihåg om att implementera ClearItem
 
-Följande villkor kan gälla för en implementering av [System.Management.Automation.Provider.Itemcmdletprovider.Clearitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem):
+Följande villkor kan gälla för en implementering av [system. Management. Automation. Provider. Itemcmdletprovider. Clearitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem):
 
-- När du definierar providerklassen, en provider för Windows PowerShell-objekt kan deklarera provider-funktionerna i ExpandWildcards, Filter, inkludera eller exkludera, från den [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)uppräkning. I dessa fall är implementeringen av [System.Management.Automation.Provider.Itemcmdletprovider.Clearitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) måste se till att sökvägen skickas till metoden uppfyller dessa krav. Gör detta genom metoden ska komma åt egenskapen lämplig, till exempel, [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) och [ System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) egenskaper.
+- När du definierar Provider-klassen kan en Windows PowerShell-dataprovider deklarera ExpandWildcards, filtrera, ta med eller undanta från, från [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -uppräkningen. I dessa fall måste implementeringen av [system. Management. Automation. Provider. Itemcmdletprovider. Clearitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) se till att den sökväg som skickas till metoden uppfyller dessa krav. För att göra detta ska metoden komma åt lämplig egenskap, till exempel [system. Management. Automation. Provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) och [system. Management. Automation. Provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) egenskaper.
 
-- Som standard åsidosättningar av den här metoden inte ställa in eller skriva objekt som är dolda från användaren, såvida inte den [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) är inställd på `true`. Ett fel ska skickas till den [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) metod om sökvägen representerar ett objekt som är dolda från användaren och [ System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) är inställd på `false`.
+- Åsidosättningar av den här metoden bör som standard inte ange eller skriva objekt som är dolda från användaren, om inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) anges till `true`. Ett fel bör skickas till metoden [system. Management. Automation. Provider. Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) om sökvägen representerar ett objekt som är dolt från användaren och [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) är Ange till `false`.
 
-- Implementeringen av den [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) metoden ska anropa [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)och verifiera dess returvärdet innan du gör några ändringar i datalagret. Den här metoden används för att bekräfta körning av en åtgärd när en ändring görs till datalagret, till exempel ta bort filer. Den [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) metoden skickar namnet på resursen som ska ändras till användaren med Windows PowerShell-runtime och hantera alla kommandoradsinställningar och inställningar variabler avgöra vad som ska visas.
+- Din implementering av metoden [system. Management. Automation. Provider. Itemcmdletprovider. setItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) måste anropa [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och verifiera dess retur värde innan du gör eventuella ändringar i data lagret. Den här metoden används för att bekräfta körning av en åtgärd när en ändring görs i data lagret, t. ex. borttagning av filer. Metoden [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) skickar namnet på resursen som ska ändras till användaren, med Windows PowerShell-körningsmiljön och hanterar alla kommando rads inställningar eller variabler i bestämmer vad som ska visas.
 
-  Efter anropet till [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar `true`, [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)metoden ska anropa den [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) metod. Den här metoden skickar ett meddelande till användaren att godkänna feedback för att kontrollera om åtgärden bör behållas. Anropet till [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) kan ytterligare en kontroll efter ändringar av potentiellt skadliga system.
+  Efter att anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar `true`, anropar [metoden system. Management. Automation. Provider. Itemcmdletprovider. setItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) [metoden Metoden system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Den här metoden skickar ett meddelande till användaren för att tillåta feedback för att kontrol lera om åtgärden ska fortsätta. Anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) tillåter ytterligare kontroll av potentiellt skadliga system ändringar.
 
 ## <a name="retrieve-dynamic-parameters-for-clearitem"></a>Hämta dynamiska parametrar för ClearItem
 
-Ibland den `Clear-Item` cmdlet kräver ytterligare parametrar som anges dynamiskt vid körning. Att tillhandahålla dessa dynamiska parametrar i Windows PowerShell objekt leverantören måste implementera de [System.Management.Automation.Provider.Itemcmdletprovider.Clearitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters) metod. Den här metoden hämtar de dynamiska parametrarna för objektet på den angivna sökvägen och returnerar ett objekt med egenskaper och fält med parsning attribut som liknar en cmdlet-klass eller en [ System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) objekt. Windows PowerShell-runtime använder det returnerade objektet för att lägga till parametrar till den `Clear-Item` cmdlet.
+Ibland kräver `Clear-Item` cmdleten ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell-dataleverantören implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Clearitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters) . Den här metoden hämtar dynamiska parametrar för objektet på den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller en [system. Management. Automation. Runtimedefinedparameterdictionary ](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna `Clear-Item` i cmdleten.
 
-Den här providern objektet implementerar inte den här metoden. Följande kod är dock standardimplementering av den här metoden.
+Den här objekt leverantören implementerar inte den här metoden. Följande kod är dock standard implementeringen av den här metoden.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderclearitemdynamicparameters](Msh_samplestestcmdlets#testproviderclearitemdynamicparameters)]  -->
 
-## <a name="performing-a-default-action-for-an-item"></a>Utför en standardåtgärd för ett objekt
+## <a name="performing-a-default-action-for-an-item"></a>Utföra en standard åtgärd för ett objekt
 
-En provider för Windows PowerShell-objekt kan implementera den [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) metod för att stödja anrop från den `Invoke-Item` cmdleten, där leverantören att Utför en standardåtgärd för objektet på den angivna sökvägen. Filsystem-providern kan till exempel använda den här metoden för att anropa ShellExecute för ett specifikt objekt.
+En Windows PowerShell-dataprovider kan implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) för att stödja anrop från `Invoke-Item` cmdleten, vilket gör att providern kan utföra en standard åtgärd för objektet på den angivna sökvägen. Fil Systems leverantören kan till exempel använda den här metoden för att anropa ShellExecute för ett enskilt objekt.
 
-Den här providern implementerar inte den här metoden. Följande kod är dock standardimplementering av den här metoden.
+Den här providern implementerar inte den här metoden. Följande kod är dock standard implementeringen av den här metoden.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderinvokedefaultaction](Msh_samplestestcmdlets#testproviderinvokedefaultaction)]  -->
 
-#### <a name="things-to-remember-about-implementing-invokedefaultaction"></a>Kom ihåg följande om hur du implementerar InvokeDefaultAction
+#### <a name="things-to-remember-about-implementing-invokedefaultaction"></a>Saker att komma ihåg om att implementera InvokeDefaultAction
 
-Följande villkor kan gälla för en implementering av [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction):
+Följande villkor kan gälla för en implementering av [system. Management. Automation. Provider. Itemcmdletprovider. Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction):
 
-- När du definierar providerklassen, en provider för Windows PowerShell-objekt kan deklarera provider-funktionerna i ExpandWildcards, Filter, inkludera eller exkludera, från den [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)uppräkning. I dessa fall är implementeringen av [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) måste se till att sökvägen skickas till metoden uppfyller dessa krav. Gör detta genom metoden ska komma åt egenskapen lämplig, till exempel, [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) och [ System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) egenskaper.
+- När du definierar Provider-klassen kan en Windows PowerShell-dataprovider deklarera ExpandWildcards, filtrera, ta med eller undanta från, från [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -uppräkningen. I dessa fall måste implementeringen av [system. Management. Automation. Provider. Itemcmdletprovider. Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) se till att den sökväg som skickas till metoden uppfyller dessa krav. För att göra detta ska metoden komma åt lämplig egenskap, till exempel [system. Management. Automation. Provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) och [system. Management. Automation. Provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) egenskaper.
 
-- Som standard åsidosättningar av den här metoden inte ställa in eller skriva objekt som är dolda från användaren, såvida inte den [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) är inställd på `true`. Ett fel ska skickas till den [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) metod om sökvägen representerar ett objekt som är dolda från användaren och [ System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) är inställd på `false`.
+- Åsidosättningar av den här metoden bör som standard inte ange eller skriva dolda objekt från användaren om inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) anges till `true`. Ett fel bör skickas till metoden [system. Management. Automation. Provider. Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) om sökvägen representerar ett objekt som är dolt från användaren och [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) är Ange till `false`.
 
 ## <a name="retrieve-dynamic-parameters-for-invokedefaultaction"></a>Hämta dynamiska parametrar för InvokeDefaultAction
 
-Ibland den `Invoke-Item` cmdlet kräver ytterligare parametrar som anges dynamiskt vid körning. Att tillhandahålla dessa dynamiska parametrar i Windows PowerShell objekt leverantören måste implementera de [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultactiondynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters) metod. Den här metoden hämtar de dynamiska parametrarna för objektet på den angivna sökvägen och returnerar ett objekt med egenskaper och fält med parsning attribut som liknar en cmdlet-klass eller en [ System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) objekt. Windows PowerShell-runtime använder det returnerade objektet för att lägga till dynamiska parametrar till den `Invoke-Item` cmdlet.
+Ibland kräver `Invoke-Item` cmdleten ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell-dataleverantören implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Invokedefaultactiondynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters) . Den här metoden hämtar dynamiska parametrar för objektet på den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller en [system. Management. Automation. Runtimedefinedparameterdictionary ](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till dynamiska parametrar `Invoke-Item` till cmdleten.
 
-Den här providern objektet implementerar inte den här metoden. Följande kod är dock standardimplementering av den här metoden.
+Den här objekt leverantören implementerar inte den här metoden. Följande kod är dock standard implementeringen av den här metoden.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderinvokedefaultactiondynamicparameters](Msh_samplestestcmdlets#testproviderinvokedefaultactiondynamicparameters)]  -->
 
-## <a name="implementing-helper-methods-and-classes"></a>Implementera Hjälpmetoder och klasser
+## <a name="implementing-helper-methods-and-classes"></a>Implementera hjälp metoder och klasser
 
-Den här providern objektet implementerar flera hjälpmetoder och klasser som används av offentligt åsidosätta metoder som definieras av Windows PowerShell. Koden för dessa hjälpmetoder och klasser som visas i den [kodexempel](#code-sample) avsnittet.
+Den här objekt leverantören implementerar flera hjälp metoder och klasser som används av de metoder för allmän åsidosättning som definieras av Windows PowerShell. Koden för dessa hjälp metoder och klasser visas i avsnittet [kod exempel](#code-sample) .
 
-### <a name="normalizepath-method"></a>NormalizePath metod
+### <a name="normalizepath-method"></a>NormalizePath-metod
 
-Den här providern objektet implementerar en NormalizePath helper-metod för att kontrollera att sökvägen har ett enhetligt format. Det format som anges använder ett omvänt snedstreck (\\) som avgränsare.
+Den här objekt leverantören implementerar en NormalizePath Helper-metod för att se till att sökvägen har ett enhetligt format. Det angivna formatet använder ett omvänt\\snedstreck () som avgränsare.
 
-### <a name="pathisdrive-method"></a>PathIsDrive metod
+### <a name="pathisdrive-method"></a>PathIsDrive-metod
 
-Den här providern objektet implementerar en PathIsDrive helper-metod för att avgöra om den angivna sökvägen är faktiskt enhetsnamnet.
+Den här artikel leverantören implementerar en PathIsDrive Helper-metod för att avgöra om den angivna sökvägen faktiskt är enhets namnet.
 
-### <a name="chunkpath-method"></a>ChunkPath metod
+### <a name="chunkpath-method"></a>ChunkPath-metod
 
-Den här providern objektet implementerar en ChunkPath hjälpkomponentmetod som bryter den angivna sökvägen så att providern kan identifiera dess enskilda element. Returnerar en matris bestående av sökväg-element.
+Den här objekt leverantören implementerar en ChunkPath Helper-metod som delar upp den angivna sökvägen så att providern kan identifiera de enskilda elementen. Den returnerar en matris som består av Sök vägs elementen.
 
-### <a name="gettable-method"></a>GetTable metod
+### <a name="gettable-method"></a>GetTable-metod
 
-Den här providern objektet implementerar helper GetTables-metoden som returnerar ett DatabaseTableInfo-objekt som representerar information om den tabellen som angetts i anropet.
+Den här objekt leverantören implementerar GetTables Helper-metoden som returnerar ett DatabaseTableInfo-objekt som representerar information om den tabell som anges i anropet.
 
-### <a name="getrow-method"></a>GetRow-metoden
+### <a name="getrow-method"></a>GetRow-metod
 
-Den [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) av providern objektet anropar GetRows helper-metod. Den här helper-metoden hämtar ett DatabaseRowInfo-objekt som representerar information om den angivna raden i tabellen.
+Metoden [system. Management. Automation. Provider. Itemcmdletprovider. getItem, *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) för den här objekt leverantören anropar GetRows Helper-metoden. Den här hjälp metoden hämtar ett DatabaseRowInfo-objekt som representerar information om den angivna raden i tabellen.
 
 ### <a name="databasetableinfo-class"></a>DatabaseTableInfo-klass
 
-Den här providern objektet definierar en DatabaseTableInfo-klass som representerar en samling av informationen i en datatabell i databasen. Den här klassen liknar den [System.IO.Directoryinfo](/dotnet/api/System.IO.DirectoryInfo) klass.
+Den här objekt leverantören definierar en DatabaseTableInfo-klass som representerar en samling information i en data tabell i databasen. Den här klassen liknar klassen [system. io. Directoryinfo](/dotnet/api/System.IO.DirectoryInfo) .
 
-Objekt-providern exemplet definierar en DatabaseTableInfo.GetTables-metod som returnerar en uppsättning tabellobjekt definierar tabellerna i databasen. Den här metoden innehåller ett try-/ catch-block för att säkerställa att alla databasfel visas som en rad med noll poster.
+Exempel objekt leverantören definierar en DatabaseTableInfo. GetTables-metod som returnerar en samling tabell informations objekt som definierar tabellerna i databasen. Den här metoden inkluderar ett try/catch-block för att se till att alla databas fel visas som en rad med noll poster.
 
 ### <a name="databaserowinfo-class"></a>DatabaseRowInfo-klass
 
-Den här providern objektet definierar DatabaseRowInfo fonthelper-klass som representerar en rad i en tabell i databasen. Den här klassen liknar den [System.IO.FileInfo](/dotnet/api/System.IO.FileInfo) klass.
+Den här objekt leverantören definierar DatabaseRowInfo Helper-klassen som representerar en rad i en tabell i databasen. Den här klassen liknar klassen [system. io. fileinfo](/dotnet/api/System.IO.FileInfo) .
 
-Exempel-leverantör definierar en DatabaseRowInfo.GetRows metod för att returnera en samling rad information objekt för den angivna tabellen. Den här metoden innehåller ett try-/ catch-block för att fånga undantag. Eventuella fel leder ingen information om raden.
+Exempel leverantören definierar en DatabaseRowInfo. GetRows-metod för att returnera en samling rad informations objekt för den angivna tabellen. Den här metoden inkluderar ett try/catch-block för trap-undantag. Eventuella fel ger ingen rad information.
 
-## <a name="code-sample"></a>Kodexempel
+## <a name="code-sample"></a>Kod exempel
 
-Komplett exempel finns i [AccessDbProviderSample03 kodexempel](./accessdbprovidersample03-code-sample.md).
+Fullständig exempel kod finns i [kod exemplet för AccessDbProviderSample03](./accessdbprovidersample03-code-sample.md).
 
-## <a name="defining-object-types-and-formatting"></a>Definiera objekttyper och formatering
+## <a name="defining-object-types-and-formatting"></a>Definiera objekt typer och formatering
 
-När du skriver en provider, kan det vara nödvändigt att lägga till medlemmar i befintliga objekt eller definiera nya objekt. Skapa en fil för typer som Windows PowerShell kan använda för att identifiera medlemmarna i objektet och en formatfil som definierar hur objektet visas när du är klar. Läs mer om [utöka objekttyper och formatering](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+När du skriver en provider kan det vara nödvändigt att lägga till medlemmar i befintliga objekt eller definiera nya objekt. När du är färdig skapar du en typ fil som Windows PowerShell kan använda för att identifiera medlemmar i objektet och en format fil som definierar hur objektet visas. Mer information om finns i [utöka objekt typer och formatering](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
-## <a name="building-the-windows-powershell-provider"></a>Att skapa Windows PowerShell-providern
+## <a name="building-the-windows-powershell-provider"></a>Skapa Windows PowerShell-providern
 
-Se [hur du registrerar Cmdlets, Providers och vara värd för program](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Se [hur du registrerar cmdlets, providers och värd program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Testa Windows PowerShell-providern
 
-När den här artikeln Windows PowerShell-providern är registrerad med Windows PowerShell du bara testa basic och driva funktionerna i providern. Om du vill testa manipulering av objekt, måste du även implementera container-funktioner som beskrivs i [implementera en behållare Windows PowerShell-providern](./creating-a-windows-powershell-container-provider.md).
+När den här Windows PowerShell-dataleverantören har registrerats med Windows PowerShell kan du bara testa bas-och enhets funktionerna i providern. Om du vill testa manipuleringen av objekt måste du också implementera behållar funktioner som beskrivs i [implementera en container Windows PowerShell-Provider](./creating-a-windows-powershell-container-provider.md).
 
 ## <a name="see-also"></a>Se även
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 
-[Programmeringsguide för Windows PowerShell](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer ' s guide](./windows-powershell-programmer-s-guide.md)
 
-[Skapa Windows PowerShell-Providers](./how-to-create-a-windows-powershell-provider.md)
+[Skapa Windows PowerShell-leverantörer](./how-to-create-a-windows-powershell-provider.md)
 
-[Designa din Windows PowerShell-providern](./designing-your-windows-powershell-provider.md)
+[Designa din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md)
 
-[Utöka objekttyper och formatering](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Utöka objekt typer och formatering](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Så här fungerar Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Så här fungerar Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
-[Skapa en behållare Windows PowerShell-provider](./creating-a-windows-powershell-container-provider.md)
+[Skapa en container Windows PowerShell-Provider](./creating-a-windows-powershell-container-provider.md)
 
-[Skapa en enhet med Windows PowerShell-provider](./creating-a-windows-powershell-drive-provider.md)
+[Skapa en Windows PowerShell-Provider för enhet](./creating-a-windows-powershell-drive-provider.md)
 
-[Hur du registrerar Cmdlets, Providers och vara värd för program](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Registrera cmdlets, providers och värd program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

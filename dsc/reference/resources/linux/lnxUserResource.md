@@ -1,25 +1,24 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxUser-resurs
-ms.openlocfilehash: 1b02be1559957585a2a1733630cb93440e8182f9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6d7b52809741813af7fa80b1c6372b267aff4777
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077661"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324622"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>DSC för Linux nxUser-resurs
 
-Den **nxUser** resursen i PowerShell Desired State Configuration (DSC) ger dig möjlighet att hantera lokala användare på en Linux-nod.
+**NxUser** -resursen i PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera lokala användare på en Linux-nod.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```Syntax
 nxUser <string> #ResourceName
 {
     UserName = <string>
-    [ Ensure = <string> { Absent | Present }  ]
     [ FullName = <string> ]
     [ Description = <string> ]
     [ Password = <string> ]
@@ -28,46 +27,52 @@ nxUser <string> #ResourceName
     [ HomeDirectory = <string> ]
     [ GroupID = <string> ]
     [ DependsOn = <string[]> ]
-
+    [ Ensure = <string> { Absent | Present }  ]
 }
 ```
 
-## <a name="properties"></a>Egenskaper
+## <a name="properties"></a>properties
 
-|  Egenskap |  Anger namnet på kontot som du vill se till att ett visst tillstånd. |
+|Egenskap |Anger det konto namn som du vill säkerställa ett speciellt tillstånd för. |
 |---|---|
-| UserName| Anger den plats där du vill kontrollera status för en fil eller katalog.|
-| Se till att| Anger om kontot finns. Ange den här egenskapen ”aktuella” så att konton som finns och ange den till ”” så att kontot inte finns.|
-| FullName| En sträng som innehåller det fullständiga namnet för användarkontot.|
-| Beskrivning| Beskrivning för användarkontot.|
-| Lösenord| Hash för användarnas lösenord på sätt som passar för Linux-dator. Detta är vanligtvis en saltat SHA-256 eller SHA-512 hash. Det här värdet kan genereras med kommandot mkpasswd på Debian och Ubuntu Linux. För andra Linux-distributioner kan metoden crypt i Python's Crypt biblioteket användas för att generera en hash.|
-| Inaktiverat| Anger om kontot har aktiverats. Den här egenskapen **$true** så att det här kontot är inaktiverat och ange den till **$false** så att den är aktiverad.|
-| PasswordChangeRequired| Anger om användaren kan ändra lösenordet. Den här egenskapen **$true** så att användaren inte kan ändra lösenordet och ange den till **$false** att tillåta användare att ändra lösenordet. Standardvärdet är **$false**. Den här egenskapen utvärderas bara om användarkontot inte fanns tidigare och håller på att skapas.|
-| HomeDirectory| Arbetskatalog för användaren.|
-| GroupID| Primär grupp-ID för användaren.|
-| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resursen configuration skriptblocket som du vill köra först är ”ResourceName” och ”ResourceType” är av typen, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
+|UserName |Anger den plats där du vill kontrol lera statusen för en fil eller katalog. |
+|FullName |En sträng som innehåller det fullständiga namnet som ska användas för användar kontot. |
+|Beskrivning |Beskrivning av användar kontot. |
+|lösenordsinställning |Hash för användarens lösen ord i rätt format för Linux-datorn. Detta är vanligt vis en saltad SHA-256-eller SHA-512-Hash. I Debian och Ubuntu Linux kan det här värdet genereras med `mkpasswd` kommandot. För andra Linux-distributioner kan du använda metoden cryption för python: s krypterings bibliotek för att generera hashen. |
+|Inaktiverad |Anger om kontot är aktiverat. Ange den här egenskapen `$true` till för att säkerställa att det här kontot är inaktiverat `$false` och ange det för att säkerställa att det är aktiverat. |
+|PasswordChangeRequired |Anger om användaren kan ändra lösen ordet. Ange den här egenskapen `$true` till om du vill se till att användaren inte kan ändra lösen ordet och `$false` ange det som tillåter användaren att ändra lösen ordet. Standardvärdet är `$false`. Den här egenskapen utvärderas bara om användar kontot inte fanns tidigare och skapas. |
+|HomeDirectory |Användarens Hem Katalog. |
+|GroupID |Användarens primära grupp-ID. |
+
+## <a name="common-properties"></a>Gemensamma egenskaper
+
+|Egenskap |Beskrivning |
+|---|---|
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|Kontrol |Anger om kontot finns. Ange att den här egenskapen **finns för att** se till att kontot finns och att det inte finns **något att se** till att kontot inte finns. |
 
 ## <a name="example"></a>Exempel
 
-I följande exempel säkerställer att användare ”monuser” finns och är medlem i gruppen ”DBusers”.
+I följande exempel ser du till att användaren "monuser" finns och är medlem i gruppen "DBusers".
 
-```
+```powershell
 Import-DSCResource -Module nx
 
-Node $node {
-nxUser UserExample{
-   UserName = "monuser"
-   Description = "Monitoring user"
-   Password  =    '$6$fZAne/Qc$MZejMrOxDK0ogv9SLiBP5J5qZFBvXLnDu8HY1Oy7ycX.Y3C7mGPUfeQy3A82ev3zIabhDQnj2ayeuGn02CqE/0'
-   Ensure = "Present"
-   HomeDirectory = "/home/monuser"
-}
+Node $node
+{
+   nxUser UserExample{
+      UserName = "monuser"
+      Description = "Monitoring user"
+      Password  =    '$6$fZAne/Qc$MZejMrOxDK0ogv9SLiBP5J5qZFBvXLnDu8HY1Oy7ycX.Y3C7mGPUfeQy3A82ev3zIabhDQnj2ayeuGn02CqE/0'
+      Ensure = "Present"
+      HomeDirectory = "/home/monuser"
+   }
 
-nxGroup GroupExample{
-   GroupName = "DBusers"
-   Ensure = "Present"
-   MembersToInclude = "monuser"
-   DependsOn = "[nxUser]UserExample"
-}
+   nxGroup GroupExample{
+      GroupName = "DBusers"
+      Ensure = "Present"
+      MembersToInclude = "monuser"
+      DependsOn = "[nxUser]UserExample"
+   }
 }
 ```

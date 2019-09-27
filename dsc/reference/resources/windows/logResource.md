@@ -1,46 +1,56 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
-title: DSC-Loggresurs
-ms.openlocfilehash: 1f94a2d847a4ef63f81e2fb83d1a0f76f5677b09
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
+title: DSC-logg resurs
+ms.openlocfilehash: a1b7bf44fbaf36a3adaf0666e9f0a754fa3f6ee1
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077236"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324357"
 ---
-# <a name="dsc-log-resource"></a>DSC-Loggresurs
+# <a name="dsc-log-resource"></a>DSC-logg resurs
 
-> _Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0_
+> Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
-Den __Log__ resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att skriva meddelanden till Microsoft-Windows-Desired State Configuration / analytiska händelseloggen.
+**Logg** resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att skriva meddelanden till Microsoft-Windows-önskad tillstånds konfiguration/analytisk händelse logg.
 
-```
-Syntax
+## <a name="syntax"></a>Syntax
 
+```Syntax
 Log [string] #ResourceName
 {
     Message = [string]
     [ DependsOn = [string[]] ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
 > [!NOTE]
-> Endast de operativa loggarna för DSC är aktiverade som standard. Innan den analytiska loggen kommer att vara tillgängliga eller synliga, måste vara aktiverat. Mer information finns i [där är DSC-händelseloggar?](../../../troubleshooting/troubleshooting.md#where-are-dsc-event-logs).
+> Som standard är bara drift loggar för DSC aktiverade. Innan den analytiska loggen blir tillgänglig eller synlig måste den vara aktive rad. Mer information finns i [var är DSC-händelseloggar?](../../../troubleshooting/troubleshooting.md#where-are-dsc-event-logs).
 
-## <a name="properties"></a>Egenskaper
+## <a name="properties"></a>properties
 
-| Egenskap | Beskrivning |
-| --- | --- |
-| Meddelande| Anger vilket meddelande som du vill skriva till händelseloggen Microsoft-Windows-Desired tillstånd Configuration/analytiska.|
-| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här loggmeddelande skrivs. Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för den här egenskapen är `DependsOn = '[ResourceType]ResourceName'`.|
+|Egenskap |Beskrivning |
+|---|---|
+|Message |Anger det meddelande som du vill skriva till Microsoft-Windows-önskad tillstånds konfiguration/analytisk händelse logg. |
+
+## <a name="common-properties"></a>Gemensamma egenskaper
+
+|Egenskap |Beskrivning |
+|---|---|
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
+
+> [!NOTE]
+> Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter. Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visar hur du inkludera ett meddelande i händelseloggen Microsoft-Windows-Desired tillstånd Configuration/analytiska.
+I följande exempel visas hur du inkluderar ett meddelande i Microsoft-Windows-Desired State Configuration/analytisk händelse logg.
 
 > [!NOTE]
-> Om du kör [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) med den här resursen har konfigurerats, returnerar den alltid **$false**.
+> Om du kör [test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) med den här resursen konfigurerad kommer den alltid att returnera **$false**.
 
 ```powershell
 Configuration logResourceTest

@@ -1,53 +1,53 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
-title: Med hjälp av verktyget Resource Designer
-ms.openlocfilehash: 3fd2f06cf46602ee30dd34f8e7bd77d3c92b808f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+keywords: DSC, PowerShell, konfiguration, installation
+title: Använda Resource designer-verktyget
+ms.openlocfilehash: 4f678f4586c75c830bf876b891fe4784aa3b4e95
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076675"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323763"
 ---
-# <a name="using-the-resource-designer-tool"></a>Med hjälp av verktyget Resource Designer
+# <a name="using-the-resource-designer-tool"></a>Använda Resource designer-verktyget
 
-> Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
-Resurs-Designer-verktyget är en uppsättning cmdletar som exponeras av den **xDscResourceDesigner** modulen som gör det enklare skapa resurser i Windows PowerShell Desired State Configuration (DSC). Cmdletar i den här resursen hjälper dig att skapa MOF-schemat och skriptmodul katalogstrukturen för din nya resursen. Mer information om DSC-resurser finns i [skapa anpassade Windows PowerShell Desired State Configuration resurser](authoringResource.md).
-I det här avsnittet skapar vi en DSC-resurs som hanterar Active Directory-användare.
-Använd den [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet för att installera den **xDscResourceDesigner** modulen.
+Resource designer-verktyget är en uppsättning cmdlets som exponeras av **xDscResourceDesigner** -modulen som gör det enklare att skapa Windows PowerShell-resurser för Desired State Configuration (DSC). Cmdletarna i den här resursen hjälper dig att skapa MOF-schemat,-modulen och katalog strukturen för den nya resursen. Mer information om DSC-resurser finns i avsnittet om hur du [skapar anpassade Windows PowerShell Desired State Configuration-resurser](authoringResource.md).
+I det här avsnittet ska vi skapa en DSC-resurs som hanterar Active Directory användare.
+Använd cmdleten [install-module](/powershell/module/PowershellGet/Install-Module) för att installera **xDscResourceDesigner** -modulen.
 
->**Obs**: **Install-Module** ingår i den **PowerShellGet** modulen, som ingår i PowerShell 5.0. Du kan ladda ned den **PowerShellGet** -modulen för PowerShell 3.0 och 4.0 på [PackageManagement PowerShell-moduler förhandsversion](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
+>**Obs**: **Install-module** ingår i **PowerShellGet** -modulen, som ingår i PowerShell 5,0. Du kan hämta **PowerShellGet** -modulen för för hands versionen av PowerShell 3,0 och 4,0 i [PackageManagement PowerShell-moduler](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
 
-## <a name="creating-resource-properties"></a>Skapa resursegenskaper
-Det första vi behöver göra är att avgöra om egenskaper som resursen visas. I det här exemplet definierar vi en Active Directory-användare med följande egenskaper.
+## <a name="creating-resource-properties"></a>Skapar resurs egenskaper
+Det första vi behöver göra är att bestämma vilka egenskaper som resursen ska exponera. I det här exemplet ska vi definiera en Active Directory användare med följande egenskaper.
 
-Parameternamnet beskrivning
-* **Användarnamn**: Nyckelegenskapen som unikt identifierar en användare.
-* **Se till att**: Anger om användarkontot ska vara närvarande eller saknade. Den här parametern har bara två möjliga värden.
-* **DomainCredential**: Domänlösenordet för användaren.
-* **lösenord**: Önskad lösenordet för användaren att godkänna en konfiguration för att ändra användarens lösenord om det behövs.
+Beskrivning av parameter namn
+* **Användar namn**: Nyckel egenskap som unikt identifierar en användare.
+* **Se till att**: Anger om användar kontot ska finnas eller saknas. Den här parametern har bara två möjliga värden.
+* **DomainCredential**: Användarens domän lösen ord.
+* **Lösen ord**: Det önskade lösen ordet för användaren att tillåta en konfiguration att ändra användarens lösen ord om det behövs.
 
-Egenskaperna skapar vi använder den **New xDscResourceProperty** cmdlet. Följande PowerShell-kommandon skapar de egenskaper som beskrivs ovan.
+Vi använder cmdleten **New-xDscResourceProperty** för att skapa egenskaperna. Följande PowerShell-kommandon skapar de egenskaper som beskrivs ovan.
 
 ```powershell
 $UserName = New-xDscResourceProperty –Name UserName -Type String -Attribute Key
-$Ensure = New-xDscResourceProperty –Name Ensure -Type String -Attribute Write –ValidateSet “Present”, “Absent”
+$Ensure = New-xDscResourceProperty –Name Ensure -Type String -Attribute Write –ValidateSet "Present", "Absent"
 $DomainCredential = New-xDscResourceProperty –Name DomainCredential -Type PSCredential -Attribute Write
 $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
 
 ## <a name="create-the-resource"></a>Skapa resursen
 
-Nu när egenskaper för resursen har skapats, kan du anropa den **New xDscResource** cmdlet för att skapa resursen. Den **New xDscResource** cmdleten tar i listan över egenskaper som parametrar. Det tar också sökvägen där modulen ska skapas, namnet på den nya resursen och namnet på modulen där den finns. Följande PowerShell-kommando skapar resursen.
+Nu när resurs egenskaperna har skapats kan vi anropa cmdleten **New-xDscResource** för att skapa resursen. Cmdlet: en **New-xDscResource** använder listan över egenskaper som parametrar. Det tar också vägen där modulen ska skapas, namnet på den nya resursen och namnet på modulen där den finns. Följande PowerShell-kommando skapar resursen.
 
 ```powershell
-New-xDscResource –Name Demo_ADUser –Property $UserName, $Ensure, $DomainCredential, $Password –Path ‘C:\Program Files\WindowsPowerShell\Modules’ –ModuleName Demo_DSCModule
+New-xDscResource –Name Demo_ADUser –Property $UserName, $Ensure, $DomainCredential, $Password –Path 'C:\Program Files\WindowsPowerShell\Modules' –ModuleName Demo_DSCModule
 ```
 
-Den **New xDscResource** cmdlet skapar MOF-schemat, ett stommen resurs-skript, krävs katalogstrukturen för din nya resursen och ett manifest för den modul som visar den nya resursen.
+Cmdlet: en **New-xDscResource** skapar MOF-schemat, ett Skeleton-resurs skript, den katalog struktur som krävs för den nya resursen och ett manifest för modulen som exponerar den nya resursen.
 
-Schemat MOF-filen finns på **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.schema.mof**, och dess innehåll är följande.
+MOF-schemafilen finns i **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.schema.MOF**och dess innehåll är som följer.
 
 ```
 [ClassVersion("1.0.0.0"), FriendlyName("Demo_ADUser")]
@@ -60,7 +60,7 @@ class Demo_ADUser : OMI_BaseResource
 };
 ```
 
-Skriptet resurs var **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.psm1**. Den omfattar inte den faktiska logiken för att implementera en resurs, som du måste lägga till dig själv. Innehållet i stommen skript är som följer.
+Resurs skriptet är i **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.psm1**. Den innehåller inte den faktiska logiken för att implementera resursen, som du måste lägga till själv. Innehållet i Skeleton-skriptet är som följer.
 
 ```powershell
 function Get-TargetResource
@@ -162,23 +162,23 @@ Export-ModuleMember -Function *-TargetResource
 
 ## <a name="updating-the-resource"></a>Uppdaterar resursen
 
-Om du vill lägga till eller ändra listan över resursens kan du anropa den **uppdatering xDscResource** cmdlet. Cmdleten uppdaterar resursen med en ny parameterlista. Om du har redan lagt till logik i skriptet resursen, lämnas den intakta.
+Om du behöver lägga till eller ändra parameter listan för resursen kan du anropa cmdleten **Update-xDscResource** . Cmdleten uppdaterar resursen med en ny parameter lista. Om du redan har lagt till logik i resurs skriptet lämnas det kvar.
 
-Anta exempelvis att du vill inkludera den senaste loggen för användaren i vår resurs. I stället för att skriva resursen igen helt kan du anropa den **New-xDscResourceProperty** att skapa den nya egenskapen och sedan anropa **uppdatering xDscResource** och Lägg till din nya egenskapen till den egenskapslistan.
+Anta till exempel att du vill inkludera den senaste inloggnings tiden för användaren i vår resurs. I stället för att skriva resursen igen fullständigt kan du anropa **New-xDscResourceProperty** för att skapa den nya egenskapen och sedan anropa **Update-xDscResource** och lägga till din nya egenskap i listan egenskaper.
 
 ```powershell
-$lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtable –Attribute Write –Description “For mapping users to their last log on time”
-Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
+$lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtable –Attribute Write –Description "For mapping users to their last log on time"
+Update-xDscResource –Name 'Demo_ADUser' –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
 ```
 
-## <a name="testing-a-resource-schema"></a>Testa ett resurs-schema
+## <a name="testing-a-resource-schema"></a>Testa ett resurs schema
 
-Verktyget Resource Designer visar en mer cmdlet som kan användas för att testa giltigheten hos ett MOF-schema som du har skrivit manuellt. Anropa den **Test xDscSchema** cmdlet, ange sökvägen för en resurs MOF-schemat som en parameter. Cmdlet: en kommer utdata eventuella fel i schemat.
+Verktyget Resource Designer visar en eller flera cmdlets som kan användas för att testa giltigheten för ett MOF-schema som du har skrivit manuellt. Anropa **test-xDscSchema** -cmdleten och skicka sökvägen till ett MOF-resursnamn som en parameter. Cmdleten kommer att mata ut eventuella fel i schemat.
 
 ### <a name="see-also"></a>Se även
 
 #### <a name="concepts"></a>Begrepp
-[Skapa anpassade Windows PowerShell Desired State Configuration-resurser](authoringResource.md)
+[Bygg anpassade resurser för Desired Configuration för Windows PowerShell](authoringResource.md)
 
 #### <a name="other-resources"></a>Andra resurser
-[xDscResourceDesigner Module](https://www.powershellgallery.com/packages/xDscResourceDesigner/1.12.0.0)
+[xDscResourceDesigner-modul](https://www.powershellgallery.com/packages/xDscResourceDesigner/1.12.0.0)

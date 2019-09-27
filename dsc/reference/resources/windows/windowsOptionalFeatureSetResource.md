@@ -1,49 +1,57 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
 title: DSC WindowsOptionalFeatureSet-resurs
-ms.openlocfilehash: c27d026e01bbb443a82112e37f1d199fb3482e49
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: f378006a6c362ee9890d70dd76fb552dd262a544
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076981"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323844"
 ---
 # <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet-resurs
 
-> Gäller för: Windows PowerShell 5.0
+> Gäller för: Windows PowerShell 5. x
 
-Den **WindowsOptionalFeatureSet** resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att säkerställa att valfria funktioner är aktiverade på målnoden.
-Den här resursen är en [sammansatta resource](../../../resources/authoringResourceComposite.md) som anropar den [WindowsOptionalFeature-resurs](windowsOptionalFeatureResource.md) för varje funktion som anges i den `Name` egenskapen.
+**WindowsOptionalFeatureSet** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att säkerställa att valfria funktioner aktive ras på en målnod. Den här resursen är en [sammansatt resurs](../../../resources/authoringResourceComposite.md) som anropar [WindowsOptionalFeature-resursen](windowsOptionalFeatureResource.md) för varje funktion som anges i egenskapen **Name** .
 
-Använd den här resursen när du vill konfigurera ett antal Windows valfria funktioner till samma tillstånd.
+Använd den här resursen när du vill konfigurera ett antal Windows-valfria funktioner till samma tillstånd.
 
 ## <a name="syntax"></a>Syntax
 
-```
-WindowsOptionalFeature [string] #ResourceName
+```Syntax
+WindowsOptionalFeatureSet [string] #ResourceName
 {
     Name = [string[]]
-    [ Ensure = [string] { Enable | Disable }  ]
     [ Source = [string] ]
     [ RemoveFilesOnDisable = [bool] ]
     [ LogPath = [string] ]
     [ NoWindowsUpdateCheck = [bool] ]
     [ LogLevel = [string] { ErrorsOnly | ErrorsAndWarning | ErrorsAndWarningAndInformation }  ]
     [ DependsOn = [string[]] ]
-
+    [ Ensure = [string] { Enable | Disable }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Egenskaper
+## <a name="properties"></a>properties
 
-|  Egenskap  |  Beskrivning   |
+|Egenskap |Description |
 |---|---|
-| Namn| Anger namnet på de funktioner som du vill se till att är aktiverade eller inaktiverade.|
-| Se till att| Anger om funktionerna är aktiverade. För att säkerställa att funktionerna är aktiverade, ange den här egenskapen till ”aktivera” för att säkerställa att funktionerna är inaktiverade, egenskapen till ”inaktivera”.|
-| Källa| Inte implementerat.|
-| NoWindowsUpdateCheck| Anger om DISM kontaktar Windows Update (WU) när du söker efter källfilerna för att aktivera funktioner. Om $true DISM inte kontaktar WU.|
-| RemoveFilesOnDisable| Inställd **$true** att ta bort alla filer som är associerade med funktioner när de är inaktiverade (det vill säga när **Kontrollera** anges till ””).|
-| Loggnivå| Den maximala utdatanivån som visas i loggarna. Godkända värden är: ”ErrorsOnly” (endast fel loggas), ”ErrorsAndWarning” (fel och varningar loggas), och ”ErrorsAndWarningAndInformation” (fel, varningar och felsökningsinformation loggas).|
-| LogPath| Sökvägen till en loggfil där du vill att resursprovidern att logga in igen.|
-| DependsOn| Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är __ResourceName__ och är av typen __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
+|Name |Anger namnet på de funktioner som du vill se är aktiverade eller inaktiverade. |
+|Source |Inte implementerad. |
+|NoWindowsUpdateCheck |Anger om DISM-kontakter Windows Update (WU) vid sökning efter källfiler för att aktivera funktioner. Om `$true`inte DISM kontaktar Wu. |
+|RemoveFilesOnDisable |Ange till `$true` om du vill ta bort alla filer som är associerade med funktionerna när **Se** till att de är inställda på **frånvarande**. |
+|Loggnivå |Den högsta utmatnings nivån som visas i loggarna. Godkända värden är: **ErrorsOnly**, **ErrorsAndWarning**och **ErrorsAndWarningAndInformation**. |
+|LogPath |Sökvägen till logg filen där du vill att resurs leverantören ska logga åtgärden. |
+
+## <a name="common-properties"></a>Gemensamma egenskaper
+
+|Egenskap |Beskrivning |
+|---|---|
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|Kontrol |Anger om funktionerna är aktiverade. För att se till att funktionerna är aktiverade ställer du in egenskapen på **Aktivera**. För att se till att funktionerna är inaktiverade ställer du in egenskapen på **inaktivera**. Standardvärdet är **Enable**. |
+|PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
+
+> [!NOTE]
+> Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter. Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).

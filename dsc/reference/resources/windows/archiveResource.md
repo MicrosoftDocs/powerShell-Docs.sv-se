@@ -1,53 +1,64 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
-title: DSC-Arkivera resursen
-ms.openlocfilehash: d5ccd242d000a0907c6768f30923764be6bf20a3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
+title: DSC-Arkiv resurs
+ms.openlocfilehash: ddabe1a623783fe213b8059f47851184d5253fc5
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077559"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324485"
 ---
-# <a name="dsc-archive-resource"></a>DSC-Arkivera resursen
+# <a name="dsc-archive-resource"></a>DSC-Arkiv resurs
 
-> Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
-Arkivera resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att packa upp arkivfiler (.zip) på en specifik sökväg.
+Arkiv resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att packa upp arkiv (zip-filer) vid en angiven sökväg.
 
 ## <a name="syntax"></a>Syntax
-```MOF
+
+```Syntax
 Archive [string] #ResourceName
 {
     Destination = [string]
     Path = [string]
     [ Checksum = [string] { CreatedDate | ModifiedDate | SHA-1 | SHA-256 | SHA-512 } ]
-    [ DependsOn = [string[]] ]
-    [ Ensure = [string] { Absent | Present } ]
     [ Force = [bool] ]
     [ Validate = [bool] ]
+    [ Ensure = [string] { Absent | Present } ]
+    [ DependsOn = [string[]] ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Egenskaper
+## <a name="properties"></a>properties
 
-|  Egenskap  |  Beskrivning   |
+|Egenskap |Beskrivning |
 |---|---|
-| Mål| Anger den plats där du vill kontrollera arkivinnehållet extraheras.|
-| Sökväg| Anger källsökvägen för arkivfilen.|
-| __Kontrollsumma__| Definierar den typ som ska användas när du bestämmer om två filer är lika. Om __kontrollsumma__ inte anges endast filen eller katalogen namnet används för jämförelse. Giltiga värden är: SHA-1, SHA-256, SHA-512, createdDate, modifieddate kunde none (standard). Om du anger __kontrollsumma__ utan __verifiera__, konfigurationen misslyckas.|
-| Se till att| Avgör om du vill kontrollera om innehållet i arkivet på den __mål__. Den här egenskapen __finns__ att säkerställa att innehållet finns. Ange den till __frånvarande__ att se till att de inte finns. Standardvärdet är __finns__.|
-| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resursen configuration skriptblocket som du vill köra först ResourceName och dess typ är __ResourceType__, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
-| Verifiera| Använder egenskapen kontrollsumma för att avgöra om arkivet matchar signaturen. Om du anger kontrollsumma utan att verifiera misslyckas konfigurationen. Om du anger verifiera utan kontrollsumma, används en SHA-256-kontrollsumma som standard.|
-| Force| Vissa åtgärder för sammansättningsfiler (till exempel att skriva över en fil eller ta bort en katalog som inte är tom) resulterar i ett fel. Med hjälp av egenskapen Force åsidosätter sådana fel. Standardvärdet är FALSKT.|
+|Destination |Anger den plats där du vill se till att Arkiv innehållet extraheras. |
+|`Path` |Anger Arkiv filens käll Sök väg. |
+|Kontrollsumma |Definierar den typ som ska användas för att avgöra om två filer är identiska. Om ingen **kontroll Summa** anges används bara fil-eller katalog namnet för jämförelse. Giltiga värden är: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. Om du anger **kontroll Summa** utan att validera, kommer konfigurationen att Miss **förklaras**. |
+|Force |Vissa fil åtgärder (till exempel att skriva över en fil eller ta bort en katalog som inte är tom) resulterar i ett fel. Om du använder **Force** -egenskapen åsidosätts sådana fel. Standardvärdet är **false**. |
+|kontrollerar| Använder egenskapen **kontroll Summa** för att avgöra om arkivet matchar signaturen. Om du anger **kontroll Summa** utan att validera, kommer konfigurationen att Miss **förklaras**. Om du anger **Verifiera** utan **kontroll Summa**används en _SHA-256-_ **kontrollsumma** som standard. |
+
+## <a name="common-properties"></a>Gemensamma egenskaper
+
+|Egenskap |Beskrivning |
+|---|---|
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|Kontrol |Avgör om du ska kontrol lera om arkivets innehåll finns vid **målet**. Ange att den här egenskapen **finns för att** se till att innehållet finns. Ange det som **frånvarande** för att se till att de inte finns. Standardvärdet finns **.** |
+|PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
+
+> [!NOTE]
+> Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter. Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visar hur du använder Arkivera resursen så att innehållet i en arkivfil kallas Test.zip finns och har extraherats vid ett givet mål.
+Följande exempel visar hur du använder Arkiv resursen för att kontrol lera att innehållet i en arkivfil som heter `Test.zip` finns och extraheras vid ett angivet mål.
 
-```
+```powershell
 Archive ArchiveExample {
-    Ensure = "Present"  # You can also set Ensure to "Absent"
+    Ensure = "Present"
     Path = "C:\Users\Public\Documents\Test.zip"
     Destination = "C:\Users\Public\Documents\ExtractionPath"
 }

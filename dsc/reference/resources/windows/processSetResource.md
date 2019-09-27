@@ -1,47 +1,55 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
 title: DSC ProcessSet-resurs
-ms.openlocfilehash: 91a2d5b562864addcb8e11062916d291448bbf57
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 72925d3a9516f5c0040427773a3b1d66034667bb
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077117"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324252"
 ---
-# <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess-resurs
+# <a name="dsc-processset-resource"></a>DSC ProcessSet-resurs
 
-_Gäller för: Windows PowerShell 5.0_
+> Gäller för: Windows PowerShell 5. x
 
-Den **ProcessSet** resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att konfigurera processer på målnoden. Den här resursen är en [sammansatta resource](../../../resources/authoringResourceComposite.md) som anropar den [WindowsProcess-resurs](windowsProcessResource.md) för varje grupp som anges i den `GroupName` parametern.
+**ProcessSet** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism som konfigurerar processer på en målnod.
 
 ## <a name="syntax"></a>Syntax
 
-```
-WindowsProcess [string] #ResourceName
+```Syntax
+ProcessSet [string] #ResourceName
 {
-    Arguments = [string]
     Path = [string]
     [ Credential = [PSCredential] ]
-    [ Ensure = [string] { Absent | Present }  ]
     [ StandardOutputPath = [string] ]
     [ StandardErrorPath = [string] ]
     [ StandardInputPath = [string] ]
     [ WorkingDirectory = [string] ]
     [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Absent | Present }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Egenskaper
+## <a name="properties"></a>properties
 
-| Egenskap | Beskrivning |
-| --- | --- |
-| Argument| En sträng som innehåller argument ska skickas till processen som – är. Om du vill ange flera argument kan du placera dem på den här strängen.|
-| Sökväg| Sökvägar till processen körbara filer. Om dessa är namnen på de körbara filerna (inte fullständigt kvalificerade sökvägar), DSC-resurs söker miljön **sökväg** variabeln (`$env:Path`) och hitta filerna. Om värdena för den här egenskapen är fullständigt kvalificerade sökvägar, DSC kommer inte att använda den **sökväg** miljövariabeln och hitta filerna och genererar ett fel om någon av sökvägarna som inte finns. Relativa sökvägar är inte tillåtna.|
-| Autentiseringsuppgifter| Anger autentiseringsuppgifterna för att starta processen.|
-| Se till att| Anger om processerna som finns. Ange egenskapen ”aktuella” så att processen finns. Annars kan ange den till ””. Standardvärdet är ”tillgänglig”.|
-| StandardErrorPath| Sökvägen som processerna skriva standardfel. Alla befintliga filer kommer att skrivas över.|
-| StandardInputPath| Dataströmmen som processen tar emot standardindata.|
-| StandardOutputPath| Sökvägen till filen som processerna skriva standardutdata. Alla befintliga filer kommer att skrivas över.|
-| WorkingDirectory| Den plats som används som den aktuella arbetskatalogen för processer.|
-| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är **ResourceName** och är av typen **_ResourceType**, syntaxen för den här egenskapen är `DependsOn = "[ResourceType]ResourceName"` .|
+|Egenskap |Beskrivning |
+|---|---|
+|`Path` |Sökvägen till den körbara filen för processen. Om dessa är namnen på de körbara filerna (inte fullständigt kvalificerade sökvägar) kommer DSC-resursen att söka i `$env:Path` miljövariabeln för att hitta filerna. Om värdet för den här egenskapen är fullständigt kvalificerade sökvägar använder `$env:Path` DSC inte miljövariabeln för att hitta filerna och genererar ett fel om någon av Sök vägarna inte finns. Relativa sökvägar är inte tillåtna. |
+|Certifiering |Anger autentiseringsuppgifterna för att starta processen. |
+|StandardErrorPath |Sökvägen till vilken processerna skriver standard fel. En befintlig fil skrivs över. |
+|StandardInputPath |Den data ström som processen tar emot standar in från. |
+|StandardOutputPath |Sökvägen till filen som processerna skriver till standard utdata till. En befintlig fil skrivs över. |
+|WorkingDirectory |Den plats som används som den aktuella arbets katalogen för processerna. |
+
+## <a name="common-properties"></a>Gemensamma egenskaper
+
+|Egenskap |Beskrivning |
+|---|---|
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|Kontrol |Anger om processerna finns. Ange att den här egenskapen **finns** för att se till att processen finns. Annars anger du det som **frånvarande**. Standardvärdet finns **.** |
+|PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
+
+> [!NOTE]
+> Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter. Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).

@@ -1,21 +1,21 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxService-resurs
-ms.openlocfilehash: fe8043995205649378725f2ab0a78e19313739c9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6bb58796c4deff1153f932f61c328d84f8c4d2ca
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077701"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324645"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>DSC för Linux nxService-resurs
 
-Den **nxService** resurs i PowerShell Desired State Configuration (DSC) är en mekanism för att hantera tjänster på en Linux-nod.
+**NxService** -resursen i PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera tjänster på en Linux-nod.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```Syntax
 nxService <string> #ResourceName
 {
     Name = <string>
@@ -26,28 +26,34 @@ nxService <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>Egenskaper
+## <a name="properties"></a>properties
 
-| Egenskap | Beskrivning |
+|Egenskap |Description |
 |---|---|
-| Namn| Namnet på tjänsten/daemon för att konfigurera.|
-| domänkontrollant| Typ av tjänsthanteraren för att använda när du konfigurerar tjänsten.|
-| Aktiverad| Anger om tjänsten startar vid start.|
-| Tillstånd| Anger om tjänsten körs. Ange den här egenskapen till ”Stoppad” för att säkerställa att tjänsten inte körs. Ange den till ”körs” för att säkerställa att tjänsten inte körs.|
-| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om den **ID** för resursen configuration-skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = "[ResourceType]ResourceName"`.|
+|Name |Namnet på tjänsten/daemon som ska konfigureras. |
+|Domänkontrollant |Typ av tjänst kontrollant som ska användas när tjänsten konfigureras. |
+|Aktiverad |Anger om tjänsten startar vid start. |
+|State |Anger om tjänsten körs. Ange att den här egenskapen ska **stoppas** för att säkerställa att tjänsten inte körs. Ange att den ska **köras** för att säkerställa att tjänsten körs. |
+
+## <a name="common-properties"></a>Gemensamma egenskaper
+
+|Egenskap |Beskrivning |
+|---|---|
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
 
 ## <a name="additional-information"></a>Ytterligare information
 
-Den **nxService** resurs skapar inte en tjänstdefinition eller ett skript för tjänsten om den inte finns. Du kan använda PowerShell Desired State Configuration **nxFile** resursen att hantera förekomsten eller innehållet i tjänstdefinitionsfilen eller skript.
+**NxService** -resursen skapar inte någon tjänst definition eller ett skript för tjänsten om den inte finns. Du kan använda PowerShell- **nxFile** resurs resurs för att hantera förekomst eller innehåll i tjänst definitions filen eller skriptet.
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visas konfigurationen för tjänsten ”httpd” (för Apache HTTP Server), som registrerats med den **SystemD** tjänsthanteraren.
+I följande exempel visas konfigurationen av tjänsten "httpd" (för Apache HTTP-server) som är registrerad hos **system** tjänst hanteraren.
 
 ```powershell
 Import-DSCResource -Module nx
 
-Node $node {
+Node $node
+{
     #Apache Service
     nxService ApacheService {
         Name = 'httpd'

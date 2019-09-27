@@ -1,5 +1,5 @@
 ---
-title: Skriva ett program för Windows PowerShell-värd | Microsoft Docs
+title: Skriva ett Windows PowerShell-värdprogram | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,33 +8,33 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 1aaf936aa22af5c4a4b8c2fa4e6b3bbd2cff6d20
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: b44708b3bbcb974a6178323dff2302b7da121af6
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855091"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323499"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>Skriva ett Windows PowerShell-värdprogram
 
-Du kan vara värd för Windows PowerShell i ditt program. Värdprogrammet kan definiera runspace där kommandon är köra, öppna sessioner på en lokal dator eller fjärrdator och anropa kommandon synkront eller asynkront, beroende på dina behov för programmet.
+Du kan vara värd för Windows PowerShell i ditt program. Värd programmet kan definiera körnings utrymme där kommandon körs, öppna sessioner på en lokal eller fjärran sluten dator och anropa kommandona antingen synkront eller asynkront baserat på programmets behov.
 
-I följande avsnitt beskriver hur du skapar ett program som är värd för Windows PowerShell.
+I följande avsnitt förklaras hur du skapar ett program som är värd för Windows PowerShell.
 
 ## <a name="in-this-section"></a>I detta avsnitt
 
-[Snabbstart för Windows PowerShell-värd](./windows-powershell-host-quickstart.md) tillhandahåller instruktioner och kodexempel för att komma igång med att skapa vara värd för program.
+[Snabb start för Windows PowerShell-värd](./windows-powershell-host-quickstart.md) Innehåller instruktioner och kod exempel för att komma igång med att skapa värd program.
 
-[Skapa Körningsutrymmen](./creating-runspaces.md) en samling hjälpavsnitt som beskriver hur du skapar körningsutrymmen för att köra Windows PowerShell-kommando i ett program.
+[Skapar körnings utrymmen](./creating-runspaces.md) En uppsättning ämnen som förklarar hur du skapar körnings utrymmen för att köra Windows PowerShell-kommandot i ett värd program.
 
-[Att lägga till och anropa kommandon](./adding-and-invoking-commands.md) förklarar hur du skapar och kör en pipeline för kommandot i din värdapp...
+[Lägga till och anropa kommandon](./adding-and-invoking-commands.md) Förklarar hur du skapar och kör en kommando pipeline i värd programmet..
 
-[Skapa fjärransluten körningsutrymmen](./creating-remote-runspaces.md) förklarar hur du ansluter ett körningsutrymme till en fjärrdator.
+[Skapar fjärran körnings utrymmen](./creating-remote-runspaces.md) Förklarar hur du ansluter en körnings utrymme till en fjärrdator.
 
-[Skapa ett anpassat användargränssnitt](./creating-a-custom-user-interface.md) Introduces anpassade användarinställningar gränssnitt och innehåller länkar till exempel.
+[Skapa ett anpassat användar gränssnitt](./creating-a-custom-user-interface.md) Introducerar anpassade användar gränssnitt och innehåller länkar till exempel.
 
-[Vara värd för programmet exempel](./host-application-samples.md) det här avsnittet innehåller exempel på fullständiga värd för program.
+[Värd program exempel](./host-application-samples.md) Det här avsnittet innehåller exempel på kompletta värd program.
 
 ## <a name="see-also"></a>Se även
 
-[Windows PowerShell](http://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)
+[Windows PowerShell](https://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)

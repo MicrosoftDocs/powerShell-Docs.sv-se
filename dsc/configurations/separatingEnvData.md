@@ -1,33 +1,33 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+keywords: DSC, PowerShell, konfiguration, installation
 title: Avgränsa konfigurations- och miljödata
-ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b16243fc9096f786a25ed20868e94a3aa85e403e
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080041"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323252"
 ---
 # <a name="separating-configuration-and-environment-data"></a>Avgränsa konfigurations- och miljödata
 
->Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
-Det kan vara praktiskt att dela de data som används i en DSC-konfiguration från själva-konfigurationen med hjälp av konfigurationsdata.
-Du kan använda en enda konfiguration för flera miljöer genom att göra detta.
+Det kan vara praktiskt att separera de data som används i en DSC-konfiguration från själva konfigurationen med hjälp av konfigurations data.
+Genom att göra detta kan du använda en enda konfiguration för flera miljöer.
 
-Exempelvis om du utvecklar ett program, kan du använda en konfiguration för utvecklings-och produktionsmiljöer och Använd konfigurationsdata för att ange data för varje miljö.
+Om du till exempel utvecklar ett program kan du använda en konfiguration för både utvecklings-och produktions miljöer och använda konfigurations data för att ange data för varje miljö.
 
-## <a name="what-is-configuration-data"></a>Vad är konfigurationsdata?
+## <a name="what-is-configuration-data"></a>Vad är konfigurations data?
 
-Konfigurationsdata är data som definieras i en hash-tabell och skickas till en DSC-konfiguration när du kompilerar den konfigurationen.
+Konfigurations data är data som definieras i en hash-hash och skickas till en DSC-konfiguration när du kompilerar den konfigurationen.
 
-En detaljerad beskrivning av den **ConfigurationData** hash-tabell, se [med konfigurationsdata](configData.md).
+En detaljerad beskrivning av **ConfigurationData** -hash-tabellen finns i [använda konfigurations data](configData.md).
 
 ## <a name="a-simple-example"></a>Ett enkelt exempel
 
-Nu ska vi titta på ett väldigt enkelt exempel och se hur det fungerar.
-Vi skapar en enda konfiguration som säkerställer att **IIS** finns på vissa noder och att **Hyper-V** finns på andra:
+Nu ska vi titta på ett mycket enkelt exempel för att se hur det fungerar.
+Vi ska skapa en enda konfiguration som garanterar att **IIS** finns på vissa noder och att **Hyper-V** finns på andra:
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -68,7 +68,7 @@ $MyData =
 MyDscConfiguration -ConfigurationData $MyData
 ```
 
-Den sista raden i det här skriptet kompilerar konfigurationen, skicka `$MyData` som värde **ConfigurationData** parametern.
+Den sista raden i det här skriptet kompilerar konfigurationen och skickar `$MyData` den som **ConfigurationData** -parameter.
 
 Resultatet är att två MOF-filer skapas:
 
@@ -82,15 +82,15 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
 
-`$MyData` Anger två olika noder, var och en med sin egen `NodeName` och `Role`. Konfigurationen skapas dynamiskt **nod** block genom att utföra uppsättningen noder får från `$MyData` (mer specifikt `$AllNodes`) och filtrerar samlingen mot den `Role` egenskap...
+`$MyData`anger två olika noder, var och en med `NodeName` sin `Role`egen och. Konfigurationen skapar automatiskt **Node** -block genom att ta med noderna från `$MyData` (särskilt, `$AllNodes` `Role` ) och filter som insamlingen mot egenskapen.
 
-## <a name="using-configuration-data-to-define-development-and-production-environments"></a>Med konfigurationsdata för att definiera miljöer för utveckling och produktion
+## <a name="using-configuration-data-to-define-development-and-production-environments"></a>Använda konfigurations data för att definiera utvecklings-och produktions miljöer
 
-Nu ska vi titta på ett komplett exempel som använder en enkel konfiguration för att konfigurera både utveckling och produktion miljöer till en webbplats. I utvecklingsmiljön installeras både IIS och SQL Server på en enstaka noder. I produktionsmiljön, är IIS och SQL Server installerade på olika noder. Vi använder konfigurationsdatafilen .psd1 för att ange data för två olika miljöer.
+Nu ska vi titta på ett komplett exempel som använder en enda konfiguration för att konfigurera både utvecklings-och produktions miljöer för en webbplats. I utvecklings miljön är både IIS och SQL Server installerade på en enda nod. I produktions miljön är IIS och SQL Server installerade på separata noder. Vi använder en konfigurations data. psd1-fil för att ange data för de två olika miljöerna.
 
-### <a name="configuration-data-file"></a>Konfigurationsdatafilen
+### <a name="configuration-data-file"></a>Konfigurations data fil
 
-Ska vi definiera miljödata utveckling och produktion i en fil med namnet `DevProdEnvData.psd1` på följande sätt:
+Vi definierar utvecklings-och produktions miljö data i en fil med namnet `DevProdEnvData.psd1` enligt följande:
 
 ```powershell
 @{
@@ -127,17 +127,17 @@ Ska vi definiera miljödata utveckling och produktion i en fil med namnet `DevPr
 }
 ```
 
-### <a name="configuration-script-file"></a>Konfigurationsfilen för skript
+### <a name="configuration-script-file"></a>Konfigurations skript fil
 
-Nu, i konfigurationen, som definieras i en `.ps1` filen, filtrerar vi de noder som vi definierade i `DevProdEnvData.psd1` efter deras roll (`MSSQL`, `Dev`, eller båda), och konfigurera dem enlighet med detta.
-Utvecklingsmiljön har både SQL Server och IIS på en nod, medan produktionsmiljön har dem på två olika noder.
-Innehållet på webbplatsen är också olika, enligt den `SiteContents` egenskaper.
+I-konfigurationen, som `.ps1` definieras i en fil, filtrerar vi sedan de noder som vi definierade i `DevProdEnvData.psd1` av deras roll (`MSSQL`, `Dev`eller båda) och konfigurerar dem därefter.
+Utvecklings miljön har både SQL Server och IIS på en nod, medan produktions miljön har dem på två olika noder.
+Webbplatsens innehåll är också olika, som anges av `SiteContents` egenskaperna.
 
-I slutet av konfigurationsskriptet som vi kallar konfigurationen (kompilera den till en MOF-dokument), skicka `DevProdEnvData.psd1` som den `$ConfigurationData` parametern.
+I slutet av konfigurations skriptet anropar vi konfigurationen (kompilera den till ett MOF-dokument) och skickar `DevProdEnvData.psd1` den `$ConfigurationData` som parameter.
 
->**Obs:** Den här konfigurationen kräver modulerna `xSqlPs` och `xWebAdministration` installeras på målnoden.
+>**Obs:** Den här konfigurationen kräver att `xSqlPs` modulerna och `xWebAdministration` installeras på målnoden.
 
-Nu ska vi definiera konfigurationen i en fil med namnet `MyWebApp.ps1`:
+Vi definierar konfigurationen i en fil med namnet `MyWebApp.ps1`:
 
 ```powershell
 Configuration MyWebApp
@@ -229,7 +229,7 @@ Configuration MyWebApp
 MyWebApp -ConfigurationData DevProdEnvData.psd1
 ```
 
-När du kör den här konfigurationen skapas tre MOF-filer (en för var och en med namnet post i den **AllNodes** matris):
+När du kör den här konfigurationen skapas tre MOF-filer (en för varje namngiven post i **AllNodes** -matrisen):
 
 ```
     Directory: C:\DscTests\MyWebApp
@@ -242,21 +242,21 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:47 PM           5338 Prod-IIS.mof
 ```
 
-## <a name="using-non-node-data"></a>Använda icke-nod-data
+## <a name="using-non-node-data"></a>Använda data som inte är noder
 
-Du kan lägga till ytterligare nycklar till den **ConfigurationData** hash-tabell för data som inte är specifika för en nod.
-Följande konfiguration garanterar att finns två webbplatser.
-Data för varje webbplats har definierats i den **AllNodes** matris.
-Filen `Config.xml` används för båda webbplatserna, så vi definiera den i en ytterligare nyckel med namnet `NonNodeData`.
-Observera att du kan ha så många ytterligare knappar som du vill ha och du kan kalla dem vad du vill.
-`NonNodeData` inte är ett reserverat ord, det är precis vad vi valt att namnge den extra nyckeln.
+Du kan lägga till ytterligare nycklar i **ConfigurationData** -hashen för data som inte är en del av en nod.
+Följande konfiguration säkerställer förekomsten av två webbplatser.
+Data för varje webbplats definieras i **AllNodes** -matrisen.
+Filen `Config.xml` används för båda webbplatserna, så vi definierar den i ytterligare en nyckel med namnet `NonNodeData`.
+Observera att du kan ha så många ytterligare nycklar som du vill, och du kan ge dem ett namn som du vill.
+`NonNodeData`är inte ett reserverat ord, det är bara det vi valde att ge den nya nyckeln.
 
-Du har åtkomst till ytterligare nycklar med hjälp av en särskild variabel **$ConfigurationData**.
-I det här exemplet `ConfigFileContents` nås med rad:
+Du får åtkomst till ytterligare nycklar med hjälp av den särskilda variabeln **$ConfigurationData**.
+I det här exemplet `ConfigFileContents` kan du komma åt raden:
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
  ```
- i den `File` resource block.
+ `File` i resurs blocket.
 
 
 ```powershell
@@ -265,21 +265,21 @@ $MyData =
     AllNodes =
     @(
         @{
-            NodeName           = “*”
-            LogPath            = “C:\Logs”
+            NodeName           = "*"
+            LogPath            = "C:\Logs"
         },
 
         @{
-            NodeName = “VM-1”
-            SiteContents = “C:\Site1”
-            SiteName = “Website1”
+            NodeName = "VM-1"
+            SiteContents = "C:\Site1"
+            SiteName = "Website1"
         },
 
 
         @{
-            NodeName = “VM-2”;
-            SiteContents = “C:\Site2”
-            SiteName = “Website2”
+            NodeName = "VM-2"
+            SiteContents = "C:\Site2"
+            SiteName = "Website2"
         }
     );
 
@@ -299,12 +299,12 @@ configuration WebsiteConfig
         {
             Name         = $Node.SiteName
             PhysicalPath = $Node.SiteContents
-            Ensure       = “Present”
+            Ensure       = "Present"
         }
 
         File ConfigFile
         {
-            DestinationPath = $Node.SiteContents + “\\config.xml”
+            DestinationPath = $Node.SiteContents + "\\config.xml"
             Contents = $ConfigurationData.NonNodeData.ConfigFileContents
         }
     }
@@ -313,6 +313,6 @@ configuration WebsiteConfig
 
 
 ## <a name="see-also"></a>Se även
-- [Med hjälp av konfigurationsdata](configData.md)
-- [Alternativ för autentiseringsuppgifter i konfigurationsdata](configDataCredentials.md)
+- [Använda konfigurations data](configData.md)
+- [Alternativ för autentiseringsuppgifter i konfigurations data](configDataCredentials.md)
 - [DSC-konfigurationer](configurations.md)

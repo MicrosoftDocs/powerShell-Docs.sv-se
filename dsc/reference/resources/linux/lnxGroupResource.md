@@ -1,52 +1,59 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxGroup-resurs
-ms.openlocfilehash: c61b6ab4a8c56d085b5297dcfc7582187d54f946
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 098ae2e8ab183934ec3c185c0fd237731b1353dc
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077871"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324773"
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>DSC för Linux nxGroup-resurs
 
-Den **nxGroup** resursen i PowerShell Desired State Configuration (DSC) ger dig möjlighet att hantera lokala grupper på en Linux-nod.
+**NxGroup** -resursen i PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera lokala grupper på en Linux-nod.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```Syntax
 nxGroup <string> #ResourceName
 {
     GroupName = <string>
-    [ Ensure = <string> { Absent | Present } ]
     [ Members = <string[]> ]
     [ MembersToInclude = <string[]> ]
     [ MembersToExclude = <string[]> ]
+    [ PreferredGroupID = <string> ]
     [ DependsOn = <string[]> ]
+    [ Ensure = <string> { Absent | Present } ]
 }
 ```
 
-## <a name="properties"></a>Egenskaper
+## <a name="properties"></a>properties
 
-|  Egenskap |  Beskrivning |
+|Egenskap |Beskrivning |
 |---|---|
-| Gruppnamn| Anger namnet på gruppen som du vill se till att ett visst tillstånd.|
-| Se till att| Anger om du vill kontrollera om gruppen. Ange egenskapen ”aktuella” för att se till att gruppen finns. Ange den till ”inte” för att se till att gruppen inte finns. Standardvärdet är ”tillgänglig”.|
-| Medlemmar| Anger de medlemmar som utgör gruppen.|
-| MembersToInclude| Anger de användare som du vill se till att är medlemmar i gruppen.|
-| MembersToExclude| Anger de användare som du vill se till att inte är medlemmar i gruppen.|
-| PreferredGroupID| Anger om möjligt grupp-id till det angivna värdet. Om grupp-id används, används nästa tillgängliga grupp-id.|
-| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om den **ID** för resursen configuration-skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för detta Egenskapen är `DependsOn = '[ResourceType]ResourceName'`.|
+|Namn |Anger namnet på den grupp som du vill säkerställa ett speciellt tillstånd för. |
+|Members |Anger de medlemmar som utgör gruppen. |
+|MembersToInclude |Anger de användare som du vill ska vara medlemmar i gruppen. |
+|MembersToExclude |Anger de användare som du vill säkerställa inte är medlemmar i gruppen. |
+|PreferredGroupID |Anger grupp-ID till det angivna värdet om det är möjligt. Om grupp-ID: t används för närvarande används nästa tillgängliga grupp-ID. |
+
+## <a name="common-properties"></a>Gemensamma egenskaper
+
+|Egenskap |Beskrivning |
+|---|---|
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|Kontrol |Anger om gruppen finns eller inte. Ange att den här egenskapen **finns för att** säkerställa att gruppen finns. Ange det som **frånvarande** för att se till att gruppen inte finns. Standardvärdet finns **.** |
 
 ## <a name="example"></a>Exempel
 
-I följande exempel säkerställer att användare monuser finns och är medlem i gruppen 'DBusers'.
+I följande exempel ser du till att användaren ' monuser ' finns och är medlem i gruppen ' DBusers '.
 
 ```powershell
 Import-DSCResource -Module nx
 
-Node $node {
+Node $node
+{
     nxUser UserExample {
        UserName = 'monuser'
        Description = 'Monitoring user'

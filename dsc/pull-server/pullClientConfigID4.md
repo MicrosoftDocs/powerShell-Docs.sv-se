@@ -1,33 +1,33 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, konfiguration, installation
-title: Ställa in en Pull-klient med hjälp av konfigurations-ID i PowerShell 4.0
-ms.openlocfilehash: 9adc767e91ff19d373c122a0d493e7b8703d5476
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+keywords: DSC, PowerShell, konfiguration, installation
+title: 'Konfigurera en pull-klient med konfigurations-ID: n i PowerShell 4,0'
+ms.openlocfilehash: 9259c624c8725f7d76f61e9ad7caa42e1bfa308c
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079480"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324882"
 ---
-# <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>Ställa in en Pull-klient med hjälp av konfigurations-ID i PowerShell 4.0
+# <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>Konfigurera en pull-klient med konfigurations-ID: n i PowerShell 4,0
 
->Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
 > [!IMPORTANT]
-> Pull-servern (Windows-funktionen *DSC-tjänst*) är en stöds komponent i Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Rekommenderar vi att du påbörjar övergången hanterade klienter [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver Pull-servern på Windows Server) eller en av community-lösningar visas [här](pullserver.md#community-solutions-for-pull-service).
+> Hämtnings servern (Windows Feature *DSC-tjänst*) är en komponent som stöds av Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att du börjar överföra hanterade klienter till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver hämtnings servern på Windows Server) eller någon av de community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
 
-Innan du konfigurerar en pullklient, bör du ställa in en pull-server. Även om den här ordningen inte är obligatoriskt, hjälper till med felsökning och hjälper dig att säkerställa att registreringen har lyckats. Om du vill konfigurera en pull-server kan du använda följande guider:
+Innan du konfigurerar en pull-klient bör du konfigurera en hämtnings Server. Även om den här ordningen inte krävs, hjälper den med fel sökning och hjälper dig att se till att registreringen lyckades. Om du vill konfigurera en hämtnings Server kan du använda följande guider:
 
-- [Konfigurera en DSC SMB-Hämtningsserver](pullServerSmb.md)
-- [Konfigurera en DSC HTTP-Hämtningsserver](pullServer.md)
+- [Konfigurera en DSC SMB-pull-server](pullServerSmb.md)
+- [Konfigurera en DSC HTTP-pull-server](pullServer.md)
 
-Varje målnoden kan konfigureras för att hämta konfigurationer, resurser, och även rapportera statusen. I avsnitten nedan visar hur du konfigurerar en hämtningsklient med en SMB-resursen eller HTTP DSC-Hämtningsservern. När nodens LCM uppdaterar kommer det att kontakta konfigurerade platsen för att hämta alla tilldelade konfigurationer. Om alla nödvändiga resurser inte finns på noden, kommer den automatiskt hämta dem från den konfigurerade platsen. Om noden är konfigurerad med en [Report Server](reportServer.md), kommer den sedan att rapportera status för åtgärden.
+Varje målnod kan konfigureras för att ladda ned konfigurationer, resurser och till och med rapportera dess status. I avsnitten nedan visas hur du konfigurerar en pull-klient med en SMB-resurs eller HTTP DSC-pull-server. När nodens LCM uppdateras, kommer den att kontakta den konfigurerade platsen för att ladda ned alla tilldelade konfigurationer. Om det inte finns några nödvändiga resurser på noden hämtas de automatiskt från den konfigurerade platsen. Om noden har kon figurer ATS med en [rapport Server](reportServer.md), kommer den att rapportera statusen för åtgärden.
 
-## <a name="configure-the-pull-client-lcm"></a>Konfigurera en pullklient LCM
+## <a name="configure-the-pull-client-lcm"></a>Konfigurera LCM för pull-klienten
 
-Kör något av exemplen nedan skapar en ny utdata-mapp med namnet **PullClientConfigID** och det placerar en metaconfiguration MOF-fil. I det här fallet metaconfiguration MOF-filen namnet `localhost.meta.mof`.
+Om du kör något av exemplen nedan skapas en ny mapp med namnet **PullClientConfigID** och en metaconfiguration MOF-fil placeras där. I det här fallet får MOF-filen metaconfiguration namnet `localhost.meta.mof`.
 
-Om du vill tillämpa konfigurationen av genom att anropa den **Set-DscLocalConfigurationManager** cmdlet, med den **sökväg** inställd på platsen för metaconfiguration MOF-filen. Till exempel:
+Om du vill använda konfigurationen anropar du cmdleten **set-DscLocalConfigurationManager** med **sökvägen** inställd på platsen för MOF-filen för metaconfiguration. Exempel:
 
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientConfigId –Verbose.
@@ -35,21 +35,21 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## <a name="configuration-id"></a>Konfigurations-ID
 
-Exemplen nedan set den **ConfigurationID** egenskapen för MGM om du vill en **Guid** som tidigare hade skapats för detta ändamål. Den **ConfigurationID** är vad LCM används för att hitta lämplig konfiguration på hämtningsservern. MOF-konfigurationsfilen på hämtningsservern måste ha namnet `ConfigurationID.mof`, där *ConfigurationID* är värdet för den **ConfigurationID** egenskapen för den målnoden MGM. Mer information finns i [publicera konfigurationer för att en Pull-servern (v4/v5)](publishConfigs.md).
+I exemplen nedan anges egenskapen **ConfigurationID** för LCM till ett **GUID** som tidigare har skapats för detta ändamål. **ConfigurationID** är vad LCM använder för att hitta rätt konfiguration på hämtnings servern. MOF-konfigurationsfilen på hämtnings servern måste namnges `ConfigurationID.mof`, där *ConfigurationID* är värdet för egenskapen **ConfigurationID** för målnoden LCM. Mer information finns i [publicera konfigurationer till en pull-server (v4/V5)](publishConfigs.md).
 
-Du kan skapa ett slumpmässigt **Guid** med hjälp av exemplet nedan.
+Du kan skapa ett slumpmässigt **GUID** med hjälp av exemplet nedan.
 
 ```powershell
 [System.Guid]::NewGuid()
 ```
 
-## <a name="set-up-a-pull-client-to-download-configurations"></a>Konfigurera en Pull-klient för att ladda ned konfigurationer
+## <a name="set-up-a-pull-client-to-download-configurations"></a>Konfigurera en pull-klient för att hämta konfigurationer
 
-Varje klient måste konfigureras i **Pull** läge och angivna pull-serveradress där dess konfiguration lagras. Då har du konfigurerar den lokala Configuration Manager (LCM) med informationen som krävs. Om du vill konfigurera LCM måste du skapa en särskild typ av konfiguration med en **LocalConfigurationManager** block. Läs mer om hur du konfigurerar LCM [konfigurerar den lokala Konfigurationshanteraren](../managing-nodes/metaConfig4.md).
+Varje klient måste konfigureras i **pull** -läge och tilldelas URL-adressen till pull-servern där konfigurationen lagras. Om du vill göra detta måste du konfigurera den lokala Configuration Manager (LCM) med nödvändig information. Om du vill konfigurera LCM skapar du en särskild typ av konfiguration med ett **LocalConfigurationManager** -block. Mer information om hur du konfigurerar LCM finns i [Konfigurera den lokala Configuration Manager](../managing-nodes/metaConfig4.md).
 
-## <a name="http-dsc-pull-server"></a>HTTP DSC Pull Server
+## <a name="http-dsc-pull-server"></a>HTTP DSC-hämtnings Server
 
-Om pull-servern har konfigurerats som en webbtjänst kan du ställa in den **DownloadManagerName** till **WebDownloadManager**. Den **WebDownloadManager** kräver att du anger en **ServerUrl** till den **DownloadManagerCustomData** nyckel. Du kan också ange ett värde för **AllowUnsecureConnection**, som i exemplet nedan. Följande skript konfigurerar LCM pull konfigurationer från en server med namnet ”PullServer”.
+Om hämtnings servern har kon figurer ATS som en webb tjänst ställer du in **DownloadManagerName** på **WebDownloadManager**. **WebDownloadManager** kräver att du anger en **ServerURL** till **DownloadManagerCustomData** -nyckeln. Du kan också ange ett värde för **AllowUnsecureConnection**, som i exemplet nedan. Följande skript konfigurerar LCM för att hämta konfigurationer från en server med namnet "PullServer".
 
 ```powershell
 Configuration PullClientConfigId
@@ -63,15 +63,15 @@ Configuration PullClientConfigId
         RefreshFrequencyMins = 30;
         ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
-        DownloadManagerCustomData = @{ServerUrl = "http://PullServer:8080/PSDSCPullServer/PSDSCPullServer.svc"; AllowUnsecureConnection = “TRUE”}
+        DownloadManagerCustomData = @{ServerUrl = "http://PullServer:8080/PSDSCPullServer/PSDSCPullServer.svc"; AllowUnsecureConnection = "TRUE"}
     }
 }
 PullClientConfigId -Output "."
 ```
 
-## <a name="smb-share"></a>SMB Share
+## <a name="smb-share"></a>SMB-resurs
 
-Om pull-servern har konfigurerats som en SMB-filresurs, i stället för en webbtjänst kan du ställa in den **DownloadManagerName** till **DscFileDownloadManager** snarare än **WebDownLoadManager**. Den **DscFileDownloadManager** kräver att du anger en **SourcePath** -egenskapen i den **DownloadManagerCustomData**. Följande skript konfigurerar MGM om du vill dra konfigurationer från en SMB-filresurs som heter ”SmbDscShare” på en server med namnet ”CONTOSO-SERVER”.
+Om hämtnings servern har kon figurer ATS som en SMB-filresurs i stället för en webb tjänst anger du **DownloadManagerName** till **DscFileDownloadManager** snarare än **WebDownLoadManager**. **DscFileDownloadManager** kräver att du anger en **SourcePath** -egenskap i **DownloadManagerCustomData**. Följande skript konfigurerar LCM för att hämta konfigurationer från en SMB-resurs med namnet "SmbDscShare" på en server med namnet "CONTOSO-SERVER".
 
 ```powershell
 Configuration PullClientConfigId
@@ -93,12 +93,12 @@ PullClientConfigId -Output "."
 
 ## <a name="next-steps"></a>Nästa steg
 
-När pull-klienten har konfigurerats kan använda du följande guider för att utföra nästa steg:
+När pull-klienten har kon figurer ATS kan du använda följande guider för att utföra nästa steg:
 
-- [Publicera konfigurationer till en Pull-Server (v4/v5)](publishConfigs.md)
-- [Paket- och ladda upp resurser till en Pull-Server (v4)](package-upload-resources.md)
+- [Publicera konfigurationer till en pull-server (v4/V5)](publishConfigs.md)
+- [Paketera och ladda upp resurser till en pull-server (v4)](package-upload-resources.md)
 
 ## <a name="see-also"></a>Se även
 
-- [Konfigurera en DSC-webbpullserver](pullServer.md)
-- [Konfigurera en DSC SMB-hämtningsserver](pullServerSMB.md)
+- [Konfigurera en DSC-webb hämtnings Server](pullServer.md)
+- [Konfigurera en DSC SMB-pull-server](pullServerSMB.md)

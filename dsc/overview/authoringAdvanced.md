@@ -1,121 +1,121 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
-title: Förstå DSCs roll i en CI/CD-pipeline
-ms.openlocfilehash: 7aec414b3d8e61d1daa1ce796184ac34dbbb43ce
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+keywords: DSC, PowerShell, konfiguration, installation
+title: Förstå DSC-rollen i en CI/CD-pipeline
+ms.openlocfilehash: a8e2e6ef4634216ae7468384b8e1f4d849bb997a
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079853"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324966"
 ---
-# <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Förstå DSCs roll i en CI/CD-pipeline
+# <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Förstå DSC-rollen i en CI/CD-pipeline
 
-Den här artikeln beskrivs olika metoder som är tillgängliga för att kombinera konfigurationer och resurser.
-Målet för varje scenario är samma, minska komplexiteten när flera konfigurationer är lämpligt att nå slutet distributionstillstånd för en server.
-Ett exempel på detta är flera team som bidrar till resultatet av en serverdistribution, till exempel en programägaren programtillståndet och ett centralt team lanserar ändringar i säkerheten.
-Här beskrivs de olika delarna i varje metod, inklusive fördelar och risker.
+I den här artikeln beskrivs vilka typer av metoder som är tillgängliga för att kombinera konfigurationer och resurser.
+Målet för varje scenario är detsamma, för att minska komplexiteten när flera konfigurationer föredras för att uppnå ett slut tillstånd för Server distribution.
+Ett exempel på detta är flera team som bidrar till resultatet av en Server distribution, till exempel en program ägare som upprätthåller program tillstånd och ett centralt team som släpper ut ändringar i säkerhets bas linjerna.
+Olika delarna för varje metod inklusive de fördelar och risker som beskrivs här.
 
 ![Pipeline](../images/Pipeline.jpg)
 
-## <a name="types-of-collaborative-authoring-techniques"></a>Typer av samarbetsfunktioner redigering tekniker
+## <a name="types-of-collaborative-authoring-techniques"></a>Typer av tekniker för samarbets redigering
 
-Det finns två lösningar som skapats till lokala Configuration Manager för att aktivera detta begrepp:
+Det finns två lösningar som är inbyggda i lokala Configuration Manager för att aktivera det här konceptet:
 
-| Begrepp | Detaljerad Information
+| Begrepp | Detaljerad information
 |-|-
-| Partiella konfigurationer | [Dokumentation](../pull-server/partialConfigs.md)
-| Sammansatta resurser | [Dokumentation](../resources/authoringResourceComposite.md)
+| Partiella konfigurationer | [Handlingar](../pull-server/partialConfigs.md)
+| Sammansatta resurser | [Handlingar](../resources/authoringResourceComposite.md)
 
-## <a name="understanding-the-impact-of-each-approach"></a>Förstå effekten av varje metod
+## <a name="understanding-the-impact-of-each-approach"></a>Förstå påverkan av varje metod
 
-Någon av dessa lösningar kan användas för att hantera resultatet av en server-distribution.
-Det finns betydande skillnader i effekten av att använda varje metod.
+Du kan använda någon av dessa lösningar för att hantera resultatet av en Server distribution.
+Det finns dock betydande skillnader i effekten av att använda varje metod.
 
 ## <a name="partial-configurations"></a>Partiella konfigurationer
 
-När du använder partiella konfigurationer, har Local Configuration Manager konfigurerats för att hantera konfigurationer med flera oberoende av varandra.
-Konfigurationer kompileras oberoende av varandra och sedan tilldelad till noden.
-Detta kräver LCM konfigureras i förväg med namnet på varje konfiguration.
+När du använder partiella konfigurationer konfigureras lokala Configuration Manager för att hantera flera konfigurationer oberoende av varandra.
+Konfigurationer kompileras oberoende och tilldelas sedan till noden.
+Detta kräver att LCM konfigureras i förväg med namnet på varje konfiguration.
 
 ![PartialConfiguration](../images/PartialConfiguration.jpg)
 
-Partiella konfigurationer ange två eller fler, teams fullständig kontroll över konfigurationen för en server, ofta utan kommunikations- eller samarbetstjänster.
+Partiella konfigurationer ger två eller fler team fullständig kontroll över konfigurationen av en server, ofta utan fördelarna med kommunikation eller samarbete.
 
-Kunder har angett feedback som detta kan leda till konflikter, oavsiktlig åsidosättningar och i slutänden förlust av SANT Konfigurationskontroll av tillgången.
+Kunderna har fått feedback om att detta kan leda till resurs konflikter, oavsiktliga åsidosättningar och i slut ändan av den verkliga konfigurations kontrollen för till gången.
 
-Kunder har dessutom som feedback att varje styra team konfigurationsändringar är sannolikt inte kommer att testas helt via en releasepipeline när du använder den här modellen, vilket leder till oväntade resultat i produktion.
+Kunder har dessutom fått feedback om att när du använder den här modellen, är varje ändring av team konfigurations ändringar troligen inte helt testade genom en versions pipeline, vilket leder till oväntade resultat i produktionen.
 
-**Det är viktigt att en enda pipeline kan användas för att utvärdera alla ändringar versionen till servrar.**
+**Det är viktigt att en enda pipeline används för att utvärdera alla ändringar som släpps på servrar.**
 
-På bilden nedan Team B släpper sina partiell konfiguration till teamet A. Team A och kör sina tester mot en server med båda konfigurationer som används.
-I den här modellen har endast en utfärdaren behörighet att göra ändringar i produktion.
+I bilden nedan släpper team B sin del konfiguration till Team A. Team A kör sedan sina tester mot en server med båda konfigurationerna applicerade.
+I den här modellen har endast en myndighet behörighet att göra ändringar i produktionen.
 
 ![PartialSinglePipeline](../images/PartialSinglePipeline.jpg)
 
-När det krävs ändringar från teamet B, bör de skicka en Pull-begäran mot Team A: s källmiljö för kontrollen.
-Grupp A skulle sedan granska ändringarna med automatiserad testning och släpp till produktion när det inte är säker på att ändringarna inte orsakar fel i program eller tjänster som hanteras av servern.
+När ändringar krävs från Team B bör de skicka in en pull-begäran mot gruppens käll kontroll miljö.
+Team A granskar sedan ändringarna med test automatisering och släpp till produktion när det är säkert att ändringarna inte orsakar fel i de program eller tjänster som servern är värd för.
 
 ## <a name="composite-resources"></a>Sammansatta resurser
 
-En sammansatt resurs är helt enkelt en DSC-konfiguration som paketerad som en resurs.
-Det finns inga särskilda krav för att konfigurera LCM att acceptera sammansatta resurser.
-Resurserna som används i en ny konfiguration och en enda sammanställning resulterar i en MOF-filen.
+En sammansatt resurs är helt enkelt en DSC-konfiguration som paketeras som en resurs.
+Det finns inga särskilda krav för att konfigurera LCM för att godkänna sammansatta resurser.
+Resurserna används i en ny konfiguration och ett enda kompilerings resultat i en MOF-fil.
 
 ![CompositeResource](../images/CompositeResource.jpg)
 
 Det finns två vanliga scenarier för sammansatta resurser.
-Först är att minska komplexiteten och abstrakt unika begrepp.
-Andra är att tillåta baslinjer som ska paketeras för ett program-teamet på ett säkert sätt distribuerar via sina releasepipeline till produktion när du har klarat alla tester.
+Det första är att minska komplexiteten och abstrakta unika begrepp.
+Det andra är att tillåta att bas linjer paketeras för att en program grupp ska kunna distribueras genom sin versions pipeline till produktion när alla tester har slutförts.
 
 ```PowerShell
 Configuration Name
 {
   File 1
   {
-    Ensure = “Present”
-    Path = “c:\inetpub\file1.zip”
-    Source = “http://uri/file1.zip”
+    Ensure = "Present"
+    Path = "c:\inetpub\file1.zip"
+    Source = "http://uri/file1.zip"
   }
   Service A
   {
-    Ensure = “Present”
-    Name = “ServiceA”
-    Status = “Running”
+    Ensure = "Present"
+    Name = "ServiceA"
+    Status = "Running"
   }
   SecurityBaseline Settings
   {
-    Ensure = “Present”
-    Datacenter = “NorthAmerica”
+    Ensure = "Present"
+    Datacenter = "NorthAmerica"
   }
 }
 ```
 
-Sammansatta resurser för enklare både sammansättning och samarbete med hjälp av en pipeline när du skapar operativa mognad
+Sammansatta resurser befordrar både komposition och samarbete med en pipeline samtidigt som drifts tiden skapas
 
-Du kanske redan använder sammansatta resurser utan att märker det.
+Du kanske redan använder sammansatta resurser utan att realisera den.
 Ett exempel är **ServiceSet**.
-Den här resursen hanterar tillståndet för flera Windows-tjänster utan att skriva dem individuellt.
-Namnegenskapen accepterar en matris med strängar att ange namnet på varje tjänst.
-När konfigurationen kompileras innehåller MOF en unik Service-avsnittet för var och en av de namn som skickats till ServiceSet.
+Den här resursen hanterar statusen för flera Windows-tjänster utan att lista dem separat.
+Egenskapen Name accepterar en sträng mat ris som anger namnet på varje tjänst.
+När konfigurationen kompileras innehåller MOF ett unikt tjänst avsnitt för varje namn som skickas till ServiceSet.
 
-Organisationer kan ha ”agenter” eller ”mellanprogram” som ska installeras på varje server.
-En sammansatt resurs är det bästa svaret för att hantera beroenden, installationen och konfigurationen av verktyg och hjälpmedel.
+Organisationer kan ha "agenter" eller "mellanprogram" som ska installeras på alla servrar.
+En sammansatt resurs är det bästa svaret på att hantera beroenden, installation och konfiguration av sådana verktyg och verktyg.
 
-Den person eller grupp som ansvarar för lösningar som sträcker sig över flera servrar skapar du en konfiguration som innehåller deras krav.
-Sedan skulle konfigurationen vara paketerad som sammansatta resurser genom att använda instruktionerna i dokumentationen till sammansatta resource.
-Slutligen den nya sammansatta resursen ska publiceras till en plats, till exempel en filresurs eller NuGet flöde där applikationsteam kan använda den i sina konfigurationer.
+Den person eller det team som ansvarar för lösningar som sträcker sig över flera servrar redigerar en konfiguration som innehåller deras krav.
+Därefter paketeras konfigurationen som en sammansatt resurs med hjälp av anvisningarna i den sammansatta resurs dokumentationen.
+Slutligen bör den nya sammansatta resursen publiceras på en plats, till exempel en fil resurs eller ett NuGet-flöde där program team kan använda den i sina konfigurationer.
 
-Varje gång som teamet släpper en ny version, skulle de öka versionsnumret i modulmanifestet för sina sammansatta resursen.
-Programteam innehåller sammansatta resurs i konfigurationen som de skapar för att hantera beroenden.
-När Operations/Security Team släpper en ny version av resursen, meddela de programteam av en ny ändring.
+Varje gången gruppen frigör en ny version, ökar versions numret i modulens manifest för sin sammansatta resurs.
+Program teamen innehåller den sammansatta resursen i konfigurationen som de skapar för att hantera program beroenden.
+När drift-/säkerhets teamen släpper en ny version av sin resurs, meddelar de program teamen om en ny ändring.
 
-Programteam kan utlöser en släppning till produktion där den enda förändringen är att baslinjer.
-Det ger dock en möjlighet att utvärdera påverkan på program innan du risken för avbrott i tjänsten.
+Program teamen kan utlösa en version till produktion där den enda ändringen är till bas linjer.
+Detta ger dock en möjlighet att utvärdera program som påverkar risken för avbrott i tjänsten.
 
-Obs! – Feedback om användningen av sammansatta resurser har inkluderat kritik för att ändringarna kräver när koden kompileras och lanserar en ny MOF.
+Obs! feedback om användningen av sammansatta resurser har inkluderat Criticism som gör att ändringar kräver att kompilera och släppa en ny MOF.
 Det här är avsiktligt.
-Varje ny version av configuration bör innehålla en statisk referens till en specifik version av varje resurs och bör verifieras genom tester innan de når produktionen servernoder.
-Hur du testar och publicerar ändringar från källkontroll skapar en säker miljö för att frisläppa ändring i små och ofta batchar.
+Varje ny konfigurations utgåva bör innehålla en statisk referens till en speciell version av varje resurs och bör verifieras av tester innan de når till produktions serverns noder.
+Processen för att testa och släppa ändringar från käll kontrollen skapar en säker miljö för att släppa ändringar i små och ofta förekommande batchar.
 
-Mer information om hur du använder distributions-pipelines för att hantera grundläggande infrastruktur finns i faktabladet: [Pipeline-modellen versionen](../further-reading/whitepapers.md).
+Mer information om hur du använder versions pipelines för att hantera kärn infrastrukturen finns i fakta bladet: [Modellen för versions pipeline](../further-reading/whitepapers.md).

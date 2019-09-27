@@ -1,68 +1,78 @@
 ---
-ms.date: 06/20/2018
-keywords: DSC, powershell, konfiguration, installation
-title: DSC PackageManagement resurs
-ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
+title: DSC PackageManagement-resurs
+ms.openlocfilehash: dfc23bfabbc45041e15c56a29a77c5bdda430a30
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077627"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324612"
 ---
-# <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement resurs
+# <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement-resurs
 
-Gäller för: Windows PowerShell 4.0, Windows PowerShell 5.0, Windows PowerShell 5.1
+Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0, Windows PowerShell 5,1
 
-Den **PackageManagement** resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att installera eller avinstallera pakethantering paket på målnoden. Den här resursen kräver den **PackageManagement** modulen, som är tillgängliga från [ http://PowerShellGallery.com ](http://PowerShellGallery.com).
+**PackageManagement** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att installera eller avinstallera paket hanterings paket på en målnod. Den här resursen kräver **PackageManagement** -modulen som är [http://PowerShellGallery.com](https://PowerShellGallery.com)tillgänglig från.
 
 > [!IMPORTANT]
-> Den **PackageManagement** modul bör vara minst version 1.1.7.0 för egenskapen följande ska vara giltig.
+> **PackageManagement** -modulen måste vara minst version 1.1.7.0 för att följande egenskaps information ska vara korrekt.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```Syntax
 PackageManagement [string] #ResourceName
 {
     Name = [string]
-    [AdditionalParameters = [HashTable]]
-    [DependsOn = [string[]]]
-    [Ensure = [string]{ Absent | Present }]
-    [MaximumVersion = [string]]
-    [MinimumVersion = [string]]
-    [ProviderName = [string]]
-    [PsDscRunAsCredential = [PSCredential]]
-    [RequiredVersion = [string]]
-    [Source = [string]]
-    [SourceCredential = [PSCredential]]
+    [ AdditionalParameters = [HashTable] ]
+    [ MaximumVersion = [string] ]
+    [ MinimumVersion = [string] ]
+    [ ProviderName = [string] ]
+    [ RequiredVersion = [string] ]
+    [ Source = [string] ]
+    [ SourceCredential = [PSCredential] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string]{ Absent | Present } ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Egenskaper
+## <a name="properties"></a>properties
 
-| Egenskap | Beskrivning |
-| --- | --- |
-| Namn| Anger namnet på paketet installeras eller avinstalleras.|
-| AdditionalParameters| Providern specifika hashtabell med parametrar som skulle skickas till `Get-Package -AdditionalArguments`. Du kan exempelvis skicka ytterligare parametrar som målsökväg för NuGet-providern.|
-| Se till att| Anger om paketet ska installeras eller avinstalleras.|
-| MaximumVersion|Anger det högsta tillåtna version av det paket som du vill söka efter. Om du inte lägga till den här parametern hittar den senaste tillgängliga versionen av paketet i resursen.|
-| MinimumVersion|Anger den lägsta tillåtna versionen på det paket som du vill söka efter. Om du inte lägga till den här parametern resursen hittar den högsta tillgängliga versionen av paketet som också uppfyller alla högsta angivna version som anges av den _MaximumVersion_ parametern.|
-| ProviderName| Anger ett namn på providern som du vill begränsa sökningen paketet. Du kan hämta paketet providernamn genom att köra den `Get-PackageProvider` cmdlet.|
-| RequiredVersion| Anger den exakta versionen av det paket som du vill installera. Om du inte anger den här parametern, den här DSC-resursen installerar den senaste tillgängliga versionen av paketet som också uppfyller alla högsta version som anges av den _MaximumVersion_ parametern.|
-| Källa| Anger namnet på paketkällan där paketet kan hittas. Detta kan vara en URI eller en källa som har registrerats med `Register-PackageSource` eller PackageManagementSource DSC-resurs.|
-| SourceCredential | Anger ett användarkonto som har behörighet att installera ett paket för en angiven paket-providern eller källa.|
+|Egenskap |Description |
+|---|---|
+|Name |Anger namnet på det paket som ska installeras eller avinstalleras. |
+|AdditionalParameters |Leverantörsspecifik hash-information för parametrar som skulle skickas till `Get-Package -AdditionalArguments`. För NuGet-Provider kan du till exempel skicka ytterligare parametrar som DestinationPath. |
+|MaximumVersion |Anger den högsta tillåtna versionen för det paket som du vill hitta. Om du inte lägger till den här parametern hittar resursen den högsta tillgängliga versionen av paketet. |
+|MinimumVersion |Anger den lägsta tillåtna versionen för det paket som du vill hitta. Om du inte lägger till den här parametern hittar resursen den högsta tillgängliga versionen av paketet som också uppfyller den högsta version som anges av parametern **MaximumVersion** . |
+|ProviderName |Anger ett paket leverantörs namn som du vill använda för att begränsa pakets ökningen. Du kan hämta paket leverantörs namn genom att `Get-PackageProvider` köra cmdleten. |
+|RequiredVersion |Anger den exakta versionen av paketet som du vill installera. Om du inte anger den här parametern installerar DSC-resursen den senaste tillgängliga versionen av paketet som också uppfyller den högsta version som anges av parametern **MaximumVersion** . |
+|Source |Anger namnet på paket källan där paketet kan hittas. Detta kan antingen vara en URI eller en källa som registrerats med `Register-PackageSource` eller PackageManagementSource DSC-resurs. |
+|SourceCredential |Anger ett användar konto som har behörighet att installera ett paket för en angiven paket leverantör eller källa. |
 
 ## <a name="additional-parameters"></a>Ytterligare parametrar
 
 I följande tabell visas alternativ för egenskapen AdditionalParameters.
 
-| Parameter | Beskrivning |
-| --- | --- |
-| Målsökväg| Används av providrar, till exempel inbyggda Nuget-providern. Anger en plats där du vill att paketet installeras.|
-| InstallationPolicy| Används av providrar, till exempel inbyggda Nuget-providern. Anger om du litar på den paketkällan. En av: `Untrusted`, `Trusted`.|
+|Parameter |Beskrivning |
+|---|---|
+|DestinationPath |Används av leverantörer, till exempel den inbyggda NuGet-providern. Anger en fil Sök väg dit du vill att paketet ska installeras. |
+|InstallationPolicy |Används av leverantörer, till exempel den inbyggda NuGet-providern. Bestämmer om du litar på paketets källa. En av: **Ej betrodd** eller **betrodd**. |
+
+## <a name="common-properties"></a>Gemensamma egenskaper
+
+|Egenskap |Beskrivning |
+|---|---|
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|Kontrol |Anger om paketet ska installeras eller avinstalleras. Standardvärdet finns **.** |
+|PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
+
+> [!NOTE]
+> Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter. Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet installerar den **JQuery** NuGet-paketet och **GistProvider** PowerShell-modulen med den **PackageManagement** DSC-resurs. Det här exemplet ser först till källor för paket som krävs är tillgängliga och sedan definierar det förväntade tillståndet för den **JQuery** och **GistProvider** paket (NuGet och PowerShell, respektive).
+I det här exemplet installeras **jQuery** NuGet-paketet och **GistProvider** PowerShell-modulen med hjälp av **PackageManagement** DSC-resursen. Det här exemplet säkerställer först att de nödvändiga paket källorna är tillgängliga och definierar sedan det förväntade läget för **jQuery** -och **GistProvider** -paketen (NuGet respektive PowerShell).
 
 ```powershell
 Configuration PackageTest
@@ -81,7 +91,7 @@ Configuration PackageTest
         Ensure      = "Present"
         Name        = "psgallery"
         ProviderName= "PowerShellGet"
-        SourceLocation   = "https://www.powershellgallery.com/api/v2/"
+        SourceLocation   = "https://www.powershellgallery.com/api/v2"
         InstallationPolicy ="Trusted"
     }
 

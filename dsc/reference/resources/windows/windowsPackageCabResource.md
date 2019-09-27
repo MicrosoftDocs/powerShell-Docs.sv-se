@@ -1,48 +1,54 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguration, installation
+ms.date: 09/20/2019
+keywords: DSC, PowerShell, konfiguration, installation
 title: DSC WindowsPackageCab-resurs
-ms.openlocfilehash: 035944e7ca5c7469250c48a19b79f2f2d5d38e9a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: ec465b2c3b1d180ba46ee24a61f2be1129148962
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076947"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323824"
 ---
 # <a name="dsc-windowspackagecab-resource"></a>DSC WindowsPackageCab-resurs
 
-> Gäller för: Windows PowerShell 5.1 och senare
+> Gäller för: Windows PowerShell 5,1
 
-Den **WindowsPackageCab** resursen i Windows PowerShell Desired State Configuration (DSC) är en mekanism för att installera eller avinstallera Windows CAB-paket på målnoden.
+**WindowsPackageCab** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att installera eller avinstallera Windows kabinett paket (. cab) på en målnod.
 
-Målnoden måste ha installerat DISM PowerShell-modulen. Mer information finns i [Använd DISM i Windows PowerShell](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14).
-
+Målnod måste ha DISM PowerShell-modulen installerad. Mer information finns i [använda DISM i Windows PowerShell](/windows-hardware/manufacture/desktop/use-dism-in-windows-powershell-s14).
 
 ## <a name="syntax"></a>Syntax
 
-```
+```Syntax
 {
     Name = [string]
-    Ensure = [string] { Absent | Present }
     SourcePath = [string]
     [ LogPath = [string] ]
     [ DependsOn = [string[]] ]
+    Ensure = [string] { Absent | Present }
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Egenskaper
+## <a name="properties"></a>properties
 
-|  Egenskap  |  Beskrivning   |
+|Egenskap |Description |
 |---|---|
-| Namn| Anger namnet på paketet för du vill se till att ett visst tillstånd.|
-| Se till att| Anger om paketet har installerats. Ange den här egenskapen till ”inte” för att kontrollera att paketet inte har installerats (eller avinstallera paketet om det är installerat). Ange den till ”Visa” (standardvärdet) för att säkerställa att paketet har installerats.|
-| Sökväg| Anger sökvägen där paketet finns.|
-| LogPath| Anger den fullständiga sökvägen där du vill att providern ska spara en loggfil för att installera eller avinstallera paketet.|
-| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har konfigurerats. Till exempel om ID för resurskonfigurationen skriptblock som du vill köra först är **ResourceName** och är av typen **ResourceType**, syntaxen för den här egenskapen är ”DependsOn =” [ ResourceType] ResourceName ”''.|
+|Name |Anger namnet på det paket som du vill säkerställa ett speciellt tillstånd för. |
+|Sök |Anger sökvägen dit paketet finns. |
+|LogPath |Anger den fullständiga sökvägen dit du vill att providern ska spara en loggfil för att installera eller avinstallera paketet. |
+
+## <a name="common-properties"></a>Gemensamma egenskaper
+
+|Egenskap |Beskrivning |
+|---|---|
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|Kontrol |Anger om paketet är installerat. Ange den här egenskapen som **saknas** för att se till att paketet inte är installerat (eller avinstallera paketet om det är installerat). Ange att det är **tillgängligt** för att se till att paketet är installerat. **Se till att** det finns en obligatorisk egenskap för **WindowsPackageCab** -resursen. |
+|PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 
 ## <a name="example"></a>Exempel
 
-Följande exempelkonfiguration tar indataparametrar och säkerställer att CAB-filen som anges av den `$Name` parametern är installerad.
+Följande exempel konfiguration använder indataparametrar och säkerställer att CAB-filen som anges av `$Name` parametern är installerad.
 
 ```powershell
 Configuration Sample_WindowsPackageCab
