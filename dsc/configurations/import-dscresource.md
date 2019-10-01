@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Använda Import-DSCResource
-ms.openlocfilehash: 735b2c2b4ae5101ded333768f00b46cb54d541b0
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: f6c1260bac7d4c545f5a6bc4c098ca90ebb186b5
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71323020"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692436"
 ---
 # <a name="using-import-dscresource"></a>Använda Import-DSCResource
 
@@ -16,16 +16,17 @@ ms.locfileid: "71323020"
 Syntaxen för `Import-DSCResource` visas nedan.  När du anger moduler efter namn är det ett krav för att lista var och en på en ny rad.
 
 ```syntax
-Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
+Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>] [-ModuleVersion <ModuleVersion>]
 ```
 
 |Parameter  |Beskrivning  |
 |---------|---------|
 |`-Name`|DSC-resursens namn som du måste importera. Om modulnamnet anges söker kommandot efter dessa DSC-resurser i den här modulen. Annars söker kommandot igenom DSC-resurserna i alla DSC-resurs Sök vägar. Jokertecken stöds.|
 |`-ModuleName`|Modulens namn eller modulens specifikation.  Om du anger vilka resurser som ska importeras från en modul försöker kommandot endast importera resurserna. Om du bara anger modulen importeras alla DSC-resurser i modulen.|
+|`-ModuleVersion`|Från och med PowerShell 5,0 kan du ange vilken version av en modul som en konfiguration ska använda. Mer information finns i [Importera en angiven version av en installerad resurs](sxsresource.md).|
 
 ```powershell
-Import-DscResource -ModuleName xActiveDirectory;
+Import-DscResource -ModuleName xActiveDirectory
 ```
 
 ## <a name="example-use-import-dscresource-within-a-configuration"></a>Exempel: Använd import-Dscresource Keyword Supports i en konfiguration
@@ -35,7 +36,7 @@ Configuration MSDSCConfiguration
 {
     # Search for and imports Service, File, and Registry from the module PSDesiredStateConfiguration.
     Import-DSCResource -ModuleName PSDesiredStateConfiguration -Name Service, File, Registry
-    
+
     # Search for and import Resource1 from the module that defines it.
     # If only –Name parameter is used then resources can belong to different PowerShell modules as well.
     # TimeZone resource is from the ComputerManagementDSC module which is not installed by default.
@@ -47,7 +48,8 @@ Configuration MSDSCConfiguration
     # Search for and import all DSC resources inside the module PSDesiredStateConfiguration.
     # When specifying the modulename parameter, it is a requirement to list each on a new line.
     Import-DSCResource -ModuleName PSDesiredStateConfiguration
-    Import-DSCResource -ModuleName ComputerManagementDsc
+    # In PowerShell 5.0 and later, you can specify a ModuleVersion parameter
+    Import-DSCResource -ModuleName ComputerManagementDsc -ModuleVersion 6.0.0.0
 ...
 ```
 
@@ -146,6 +148,10 @@ Kopiera innehållet i den önskade modulens version till den översta nivån i m
 ### <a name="resource-location"></a>Resurs plats
 
 När du redigerar och kompilerar konfigurationer kan dina resurser lagras i valfri katalog som anges av din [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path). I PowerShell 4,0 kräver LCM att alla DSC-resurspooler lagras under "program Files\WindowsPowerShell\Modules" eller `$pshome\Modules`. Från och med PowerShell 5,0 togs detta krav bort och resurspooler kan lagras i valfri katalog som anges av `PSModulePath`.
+
+### <a name="moduleversion-added"></a>ModuleVersion tillagt
+
+Med början i PowerShell 5,0 kan du med parametern `-ModuleVersion` ange vilken version av en modul som ska användas i konfigurationen.
 
 ## <a name="see-also"></a>Se även
 

@@ -1,21 +1,21 @@
 ---
 ms.date: 08/23/2017
-keywords: PowerShell cmdlet
-title: Felsökning av åtkomstproblem i windows powershell-webbåtkomst
-ms.openlocfilehash: 66e913504cf0c34f8d9ab18b088fb06173aca24c
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+keywords: PowerShell, cmdlet
+title: fel sökning av åtkomst problem i Windows PowerShell-Webbåtkomst
+ms.openlocfilehash: 74cebbe418fecd21567ba9ecc7c561b51ac008fd
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733861"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692239"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Felsökning av åtkomstproblem i Windows PowerShell-webbåtkomst
 
-Uppdaterad: Juni 24 2013 (omarbetad 23 augusti 2017)
+Samlingsuppdateras 24 juni 2013 (ändrad 23 augusti 2017)
 
 Gäller för: Windows Server 2012 R2, Windows Server 2012
 
-I följande avsnitt identifiera några vanliga problem vid försök att ansluta till en fjärrdator med hjälp av Windows PowerShell-webbåtkomst och innehåller förslag för att lösa problemen.
+I följande avsnitt beskrivs några vanliga problem vid försök att ansluta till en fjärrdator med hjälp av Windows PowerShell-webbåtkomst och förslag på hur du kan lösa problemen.
 
 ## <a name="sign-in-failure"></a>Inloggningsfel
 
@@ -23,23 +23,23 @@ Fel kan inträffa på grund av något av följande.
 
 - En auktoriseringsregel som ger användaren åtkomst till datorn, eller en specifik sessionskonfiguration på fjärrdatorn, saknas.
 
-  Windows PowerShell Web Access-säkerheten är begränsad; användare måste beviljas explicit åtkomst till fjärrdatorer med hjälp av auktoriseringsregler.
+  Säkerheten i Windows PowerShell-webbåtkomsten är begränsad. användare måste beviljas explicit åtkomst till fjärrdatorer med hjälp av auktoriseringsregler.
 
-  Mer information om hur du skapar auktoriseringsregler finns i [auktoriseringsregler och säkerhet funktioner i Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
+  Mer information om hur du skapar auktoriseringsregler finns i [auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 - Användaren har inte auktoriserad åtkomst till måldatorn. Detta bestäms av åtkomstkontrollistor (ACL).
 
-  Mer information finns i [inloggning till Windows PowerShell-webbåtkomst](use-the-web-based-windows-powershell-console.md#signing-in-to-windows-powershell-web-access), eller Windows PowerShell-teamets blogg.
+  Mer information finns i [Logga in på Windows PowerShell-webbåtkomst](use-the-web-based-windows-powershell-console.md#signing-in-to-windows-powershell-web-access)eller Windows PowerShell-teamets blogg.
 
-- Windows PowerShell fjärrhantering inte kanske är aktiverat på måldatorn.
+- Windows PowerShell-fjärrhantering kanske inte är aktiverat på mål datorn.
 
-  Kontrollera fjärrhantering är aktiverat på den dator som användaren försöker ansluta.
+  Kontrol lera att fjärrhantering har Aktiver ATS på den dator som användaren försöker ansluta till.
 
-  Mer information finns i [hur du konfigurerar din dator för fjärrkommunikation](/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
+  Mer information finns i [så här konfigurerar du din dator för fjärr kommunikation](/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
 
-## <a name="internal-server-error"></a>Internt serverfel
+## <a name="internal-server-error"></a>Internt Server fel
 
-När användare försöker logga in på Windows PowerShell-webbåtkomst i Internet Explorer, visas en **internt serverfel** sidan eller *Internet Explorer* slutar svara.
+När användarna försöker logga in på Windows PowerShell-webbåtkomsten i ett Internet Explorer-fönster visas sidan **internt Server fel** eller *Internet Explorer* slutar svara.
 
 Det här problemet är specifikt för Internet Explorer.
 
@@ -49,94 +49,94 @@ Detta kan inträffa om en användare har loggat in med ett domännamn som inneh�
 
 #### <a name="workaround"></a>Lösning:
 
-1. [Installera och köra Internet Explorer 10](https://ie.microsoft.com/testdrive/info/downloads/Default.html)
-1. Ändra Internet Explorer **dokumentläge** att ställa in *IE10* standarder.
-   1. Tryck på **F12** att öppna konsolen utvecklingsverktyg
-   1. I Internet Explorer 10 klickar du på **Webbläsarläge**, och välj sedan *Internet Explorer 10*.
-   1. Klicka på **dokumentläge**, och klicka sedan på *IE10* standarder.
-   1. Tryck på **F12** igen för att stänga konsolen utvecklingsverktyg.
+1. Installera och kör Internet Explorer 10
+1. Ändra inställningen för **dokument läge** i Internet Explorer till *IE10* -standarder.
+   1. Öppna Utvecklarverktyg-konsolen genom att trycka på **F12**
+   1. I Internet Explorer 10 klickar du på **webb läsar läge**och väljer sedan *Internet Explorer 10*.
+   1. Klicka på **dokument läge**och klicka sedan på *IE10* -standarder.
+   1. Tryck på **F12** igen för att stänga utvecklarverktyg-konsolen.
 1. Inaktivera automatisk proxykonfiguration i Internet Explorer 10.
-   1. Klicka på **verktyg**, och klicka sedan på **Internetalternativ**.
-   1. I den **Internetalternativ** dialogrutan den **anslutningar** fliken **LAN-inställningar**.
-   1. Rensa den **automatisk identifiering av inställningar** markerar du kryssrutan. Klicka på **OK**, och klicka sedan på **OK** igen för att stänga den *Internetalternativ* dialogrutan.
+   1. Klicka på **verktyg**och sedan på **Internet alternativ**.
+   1. I dialog rutan **Internet alternativ** på fliken **anslutningar** klickar du på LAN- **Inställningar**.
+   1. Avmarkera kryss rutan **Automatisk identifiering av inställningar** . Klicka på **OK**och sedan på **OK** igen för att stänga dialog rutan *Internet alternativ* .
 
 ## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>Det går inte att ansluta till en fjärrdator
 
-Om måldatorn är medlem i en arbetsgrupp, använder du följande syntax för att ange ditt användarnamn och logga in på datorn: `<workgroup_name>\<user_name>`
+Om mål datorn är medlem i en arbets grupp använder du följande syntax för att ange ditt användar namn och logga in på datorn: `<workgroup_name>\<user_name>`
 
 ## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>Det går inte att hitta hanteringsverktyg för Webbserver (IIS), trots att rollen har installerats
 
-Om du har installerat Windows PowerShell-webbåtkomst med hjälp av den `Install-WindowsFeature` cmdlet, management är inte hanteringsverktygen installerade såvida inte den `-IncludeManagementTools` parametern har lagts till i cmdleten.
+Om du har installerat Windows PowerShell-webbåtkomst med hjälp av cmdleten `Install-WindowsFeature` installeras inte hanterings verktygen om inte parametern `-IncludeManagementTools` läggs till i cmdleten.
 
-Ett exempel finns i [installera Windows PowerShell-webbåtkomst med hjälp av Windows PowerShell-cmdlets](install-and-use-windows-powershell-web-access.md#to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets).
+Ett exempel finns i [Installera Windows PowerShell-webbåtkomst med hjälp av Windows PowerShell-cmdlets](install-and-use-windows-powershell-web-access.md#to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets).
 
-Du kan lägga till IIS Manager-konsolen och andra IIS-hanteringsverktygen att du behöver, genom att välja verktyg i en **guiden Lägg till roller och funktioner** session som är riktad till gateway-servern.
-Lägg till roller och funktioner som guiden öppnas från i Server Manager.
+Du kan lägga till konsolen IIS-hanteraren och andra hanterings verktyg för IIS som du behöver genom att välja verktygen i **guiden Lägg till roller och funktioner i guiden Lägg till roller och funktioner** som är mål för Gateway-servern.
+Guiden Lägg till roller och funktioner öppnas inifrån Serverhanteraren.
 
-## <a name="windows-powershell-web-access-website-is-not-accessible"></a>Windows PowerShell Web Access-webbplatsen är inte tillgänglig
+## <a name="windows-powershell-web-access-website-is-not-accessible"></a>Webbplatsen för Windows PowerShell-webbåtkomst är inte tillgänglig
 
-Om Förbättrad säkerhetskonfiguration är aktiverad i Internet Explorer (IE ESC), kan du lägga till Windows PowerShell Web Access-webbplatsen i listan över betrodda platser.
+Om förbättrad säkerhets konfiguration är aktive rad i Internet Explorer (IE ESC) kan du lägga till webbplatsen för Windows PowerShell-webbåtkomsten i listan över betrodda platser.
 
-En mindre rekommenderade metod, på grund av säkerhetsrisker, är att inaktivera IE ESC.
-Du kan inaktivera IE ESC i panelen Egenskaper på sidan lokal Server i Server Manager.
+En mindre rekommenderad metod, på grund av säkerhets risker, är att inaktivera IE ESC.
+Du kan inaktivera IE ESC i panelen egenskaper på sidan för den lokala servern i Serverhanteraren.
 
-## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>Ett autentiseringsfel inträffade. Kontrollera att du har behörighet att ansluta till måldatorn.
+## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>Ett auktoriseringsfel inträffade. Kontrollera att du har behörighet att ansluta till måldatorn.
 
-Ovanstående felmeddelande visas vid försök att ansluta när gateway-servern är måldatorn och finns också i en arbetsgrupp.
+Ovanstående fel meddelande visas vid försök att ansluta när Gateway-servern är mål datorn och även finns i en arbets grupp.
 
-När gateway-servern också är målservern och det är i en arbetsgrupp, ange användarnamn, datornamn och användargruppnamn.
-Använd inte en punkt (.) ensamt som representerar namnet på datorn.
+Om Gateway-servern också är mål servern och finns i en arbets grupp, anger du användar namn, dator namn och användar grupp namn.
+Använd inte en punkt (.) för att representera dator namnet.
 
-### <a name="scenarios-and-proper-values"></a>Scenarier och rätt värden
+### <a name="scenarios-and-proper-values"></a>Scenarier och lämpliga värden
 
 #### <a name="all-cases"></a>Alla fall
 
-Parameter | Värde
+Parameter | Value
 -- | --
-UserName | Server\_namn\\användaren\_namn<br/>Localhost\\user\_name<br/>. \\användaren\_namn
-UserGroup | Server\_name\\user\_group<br/>Localhost\\användaren\_grupp<br/>. \\användaren\_grupp
-ComputerGroup | Server\_name\\computer\_group<br/>Localhost\\datorn\_grupp<br/>. \\datorn\_grupp
+UserName | Server @ no__t-0name @ no__t-1user @ no__t-2name<br/>Localhost @ no__t-0user @ no__t-1name<br/>. \\user @ no__t-1name
+UserGroup | Server @ no__t-0name @ no__t-1user @ no__t-2group<br/>Localhost @ no__t-0user @ no__t-1group<br/>. \\user @ no__t-1group
+ComputerGroup | Server @ no__t-0name @ no__t-1computer @ no__t-2group<br/>Localhost @ no__t-0computer @ no__t-1group<br/>. \\computer @ no__t-1group
 
 #### <a name="gateway-server-is-in-a-domain"></a>Gateway-servern finns i en domän
 
-Parameter | Värde
+Parameter | Value
 -- | --
-ComputerName | Fullständigt kvalificerat namn på gateway-server eller Localhost
+Datornamn | Fullständigt kvalificerat namn på gateway-server eller Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>Gateway-servern finns i en arbetsgrupp
 
-Parameter | Värde
+Parameter | Value
 -- | --
-ComputerName | Servernamn
+Datornamn | servernamn
 
 ### <a name="gateway-credentials"></a>Gateway-autentiseringsuppgifter
 
 Logga in på en gateway-server som måldator med hjälp av autentiseringsuppgifter som är formaterade som något av följande.
 
-- Server\_namn\\användaren\_namn
-- Localhost\\user\_name
-- . \\användaren\_namn
+- Server @ no__t-0name @ no__t-1user @ no__t-2name
+- Localhost @ no__t-0user @ no__t-1name
+- . \\user @ no__t-1name
 
-## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>En säkerhetsidentifierare (SID) visas i en auktoriseringsregel
+## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>En säkerhets identifierare (SID) visas i en auktoriseringsregel
 
-En säkerhetsidentifierare (SID) visas i en auktoriseringsregel i stället syntaxen användaren\_namn/dator\_namn.
+En säkerhets identifierare (SID) visas i en auktoriseringsregel i stället för syntaxen User @ no__t-0name/Computer @ no__t-1name.
 
 Antingen är regeln inte längre giltig eller så misslyckades frågan till Active Directory Domain Services.
-En auktoriseringsregel är vanligtvis inte giltig i scenarier där gateway-servern har funnits en gång i en arbetsgrupp, men senare har anslutits till en domän
+En auktoriseringsregel är vanligt vis inte giltig i scenarier där Gateway-servern har varit i en tid i en arbets grupp, men senare har anslutits till en domän
 
-## <a name="cannot-sign-in-with-rule-as-an-ipv6-address-with-a-domain"></a>Det går inte att logga in med regeln som en IPv6-adress med en domän
+## <a name="cannot-sign-in-with-rule-as-an-ipv6-address-with-a-domain"></a>Det går inte att logga in med regel som en IPv6-adress med en domän
 
 Det går inte att logga in på en måldator som har angetts i auktoriseringsregler som en IPv6-adress med en domän.
 
 Auktoriseringsregler stöder inte en IPv6-adress i form av ett domännamn.
 
 Använd en IPv6-adress (som innehåller kolon) om du vill ange en måldator med hjälp av en IPv6-adress i auktoriseringsregeln.
-Både domän och numeriska (med kolon) IPv6-adresser stöds som Måldatornamn på inloggningssidan för Windows PowerShell Web Access, men inte i auktoriseringsregler.
+Både domän-och numeriska (med kolon) IPv6-adresser stöds som mål dator namn på inloggnings sidan för Windows PowerShell-webbåtkomst, men inte i auktoriseringsregler.
 
 Mer information om IPv6-adresser finns i [så här fungerar IPv6](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx).
 
 ## <a name="see-also"></a>Se även
 
-- [Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
+- [Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-Webbåtkomst](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
 - [Använd den webbaserade Windows PowerShell-konsolen](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
 - [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
