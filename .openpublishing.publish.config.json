@@ -8,7 +8,7 @@
       "locale": "sv-se",
       "monikers": [],
       "moniker_ranges": [],
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
@@ -22,7 +22,7 @@
       "build_source_folder": "dsc",
       "build_output_subfolder": "dsc",
       "locale": "sv-se",
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
@@ -37,22 +37,7 @@
       "build_source_folder": "gallery",
       "build_output_subfolder": "gallery",
       "locale": "sv-se",
-      "open_to_public_contributors": false,
-      "type_mapping": {
-        "Conceptual": "Content",
-        "ManagedReference": "Content",
-        "RestApi": "Content"
-      },
-      "build_entry_point": "docs",
-      "template_folder": "_themes",
-      "version": 0
-    },
-    {
-      "docset_name": "PowerShell_PowerShell-docs_jea",
-      "build_source_folder": "jea",
-      "build_output_subfolder": "jea",
-      "locale": "sv-se",
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
@@ -67,7 +52,7 @@
       "build_source_folder": "reference",
       "build_output_subfolder": "reference",
       "locale": "sv-se",
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
@@ -94,7 +79,7 @@
       "build_source_folder": "wmf",
       "build_output_subfolder": "wmf",
       "locale": "sv-se",
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
@@ -108,14 +93,18 @@
   "notification_subscribers": [],
   "sync_notification_subscribers": [],
   "branches_to_filter": [
-    "live-sxs",
-    "master-sxs"
+    "live-oldev",
+    "live"
   ],
-  "git_repository_url_open_to_public_contributors": "https://github.com/PowerShell/PowerShell-Docs",
+  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/powerShell-Docs.sv-se",
+  "git_repository_branch_open_to_public_contributors": "live",
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
-  "need_preview_pull_request": true,
+  "need_preview_pull_request": false,
   "enable_incremental_build": true,
+  "contribution_branch_mappings": {
+    "live-sxs": "live"
+  },
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
@@ -137,11 +126,19 @@
         "live": "live",
         "master": "master"
       }
+    },
+    {
+      "path_to_root": "_themes",
+      "url": "https://github.com/Microsoft/templates.docs.msft.sv-SE",
+      "branch": "master",
+      "branch_mapping": {}
     }
   ],
   "branch_target_mapping": {},
   "need_generate_pdf_url_template": false,
   "targets": {},
+  "need_generate_pdf": false,
+  "need_generate_intellisense": false,
   "dependent_packages": [
     {
       "path_to_root": "_dependentPackages/azurecli.plugins",
@@ -152,9 +149,9 @@
     {
       "path_to_root": "_dependentPackages/CommonPlugins",
       "target_framework": "net45",
-      "version": "latest-prerelease",
+      "version": "latest",
       "id": "Microsoft.OpenPublishing.CommonPlugins",
-      "nuget_feed": "https://www.myget.org/F/op-dev/api/v2"
+      "nuget_feed": "https://www.myget.org/F/op/api/v2"
     }
   ]
 }
