@@ -51,7 +51,9 @@
       "docset_name": "PowerShell_PowerShell-docs_reference",
       "build_source_folder": "reference",
       "build_output_subfolder": "reference",
-      "locale": "sv-se",
+      "locale": "sv-SE",
+      "monikers": [],
+      "moniker_ranges": [],
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
