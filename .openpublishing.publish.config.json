@@ -48,10 +48,25 @@
       "version": 0
     },
     {
+      "docset_name": "PowerShell_PowerShell-docs_jea",
+      "build_source_folder": "jea",
+      "build_output_subfolder": "jea",
+      "locale": "sv-se",
+      "open_to_public_contributors": true,
+      "type_mapping": {
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "docs",
+      "template_folder": "_themes",
+      "version": 0
+    },
+    {
       "docset_name": "PowerShell_PowerShell-docs_reference",
       "build_source_folder": "reference",
       "build_output_subfolder": "reference",
-      "locale": "sv-SE",
+      "locale": "sv-se",
       "monikers": [],
       "moniker_ranges": [],
       "open_to_public_contributors": true,
@@ -127,12 +142,6 @@
         "live": "live",
         "master": "master"
       }
-    },
-    {
-      "path_to_root": "_themes",
-      "url": "https://github.com/Microsoft/templates.docs.msft.sv-SE",
-      "branch": "master",
-      "branch_mapping": {}
     }
   ],
   "branch_target_mapping": {},
