@@ -1,0 +1,58 @@
+---
+ms.date: 06/12/2017
+keywords: DSC, PowerShell, konfiguration, installation
+title: Desired State Configuration-översikt för beslutsfattare
+ms.openlocfilehash: ce554d4bb994d4b1816d9d9c24599e4ef0e1c593
+ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71941763"
+---
+# <a name="desired-state-configuration-overview-for-decision-makers"></a><span data-ttu-id="145ec-103">Desired State Configuration-översikt för beslutsfattare</span><span class="sxs-lookup"><span data-stu-id="145ec-103">Desired State Configuration Overview for Decision Makers</span></span>
+
+<span data-ttu-id="145ec-104">Det här dokumentet beskriver affärs fördelarna med att använda Windows PowerShell Desired State Configuration (DSC).</span><span class="sxs-lookup"><span data-stu-id="145ec-104">This document describes the business benefits of using Windows PowerShell Desired State Configuration (DSC).</span></span> <span data-ttu-id="145ec-105">Det är inte en teknisk guide.</span><span class="sxs-lookup"><span data-stu-id="145ec-105">It is not a technical guide.</span></span>
+
+## <a name="what-is-desired-state-configuration"></a><span data-ttu-id="145ec-106">Vad är önskad tillstånds konfiguration?</span><span class="sxs-lookup"><span data-stu-id="145ec-106">What Is Desired State Configuration?</span></span>
+
+<span data-ttu-id="145ec-107">PowerShell Desired State Configuration är en plattform för konfigurations hantering som är inbyggd i Windows och som baseras på öppna standarder.</span><span class="sxs-lookup"><span data-stu-id="145ec-107">PowerShell Desired State Configuration is a configuration management platform built into Windows that is based on open standards.</span></span> <span data-ttu-id="145ec-108">DSC är tillräckligt flexibelt för att fungera på ett tillförlitligt och konsekvent sätt i varje steg i livs cykel för distributionen (utveckling, testning, för produktion, produktion) samt vid utskalning.</span><span class="sxs-lookup"><span data-stu-id="145ec-108">DSC is flexible enough to function reliably and consistently in each stage of the deployment lifecycle (development, test, pre-production, production), as well as during scale-out.</span></span>
+
+<span data-ttu-id="145ec-109">DSC-Center runt [konfigurationer](../configurations/configurations.md).</span><span class="sxs-lookup"><span data-stu-id="145ec-109">DSC centers around [configurations](../configurations/configurations.md).</span></span>
+<span data-ttu-id="145ec-110">En konfiguration är ett lättläst dokument som beskriver en miljö som består av datorer ("noder") med särskilda egenskaper.</span><span class="sxs-lookup"><span data-stu-id="145ec-110">A configuration is an easy-to-read document that describes an environment made up of computers ("nodes") with specific characteristics.</span></span>
+<span data-ttu-id="145ec-111">Dessa egenskaper kan vara så enkla som att se till att en speciell Windows-funktion är aktive rad eller så komplex som att distribuera SharePoint.</span><span class="sxs-lookup"><span data-stu-id="145ec-111">These characteristics can be as simple as ensuring a specific Windows feature is enabled or as complex as deploying SharePoint.</span></span>
+
+<span data-ttu-id="145ec-112">DSC har även inbyggd övervakning och rapportering.</span><span class="sxs-lookup"><span data-stu-id="145ec-112">DSC also has monitoring and reporting built in.</span></span>
+<span data-ttu-id="145ec-113">Om ett system inte längre är kompatibelt kan DSC utlösa en avisering och agera för att korrigera systemet.</span><span class="sxs-lookup"><span data-stu-id="145ec-113">If a system is no longer compliant, DSC can raise an alert and act to correct the system.</span></span>
+
+## <a name="benefits-of-using-desired-state-configuration"></a><span data-ttu-id="145ec-114">Fördelar med att använda önskad tillstånds konfiguration</span><span class="sxs-lookup"><span data-stu-id="145ec-114">Benefits of Using Desired State Configuration</span></span>
+
+<span data-ttu-id="145ec-115">Konfigurationer är utformade för att enkelt kunna läsas, lagras och uppdateras.</span><span class="sxs-lookup"><span data-stu-id="145ec-115">Configurations are designed to be easily read, stored, and updated.</span></span>
+<span data-ttu-id="145ec-116">Konfigurationer deklarerar de tillstånds mål enheterna ska vara i, i stället för att skriva instruktioner för hur de ska placeras i det aktuella läget.</span><span class="sxs-lookup"><span data-stu-id="145ec-116">Configurations declare the state target devices should be in, instead of writing instructions for how to put them in that state.</span></span>
+<span data-ttu-id="145ec-117">Detta gör det mycket billigare att lära sig, införa, implementera och underhålla konfigurationen via DSC.</span><span class="sxs-lookup"><span data-stu-id="145ec-117">This makes it much less costly to learn, adopt, implement, and maintain configuration through DSC.</span></span>
+
+<span data-ttu-id="145ec-118">Att skapa konfigurationer innebär att komplexa distributions steg samlas in som en "sanningen"-källa på en enda plats.</span><span class="sxs-lookup"><span data-stu-id="145ec-118">Creating configurations means that complex deployment steps are captured as a "single source of truth" in a single location.</span></span>
+<span data-ttu-id="145ec-119">Detta gör upprepade distributioner av en speciell uppsättning datorer mycket mindre fel känsliga.</span><span class="sxs-lookup"><span data-stu-id="145ec-119">This makes repeated deployments of a specific set of machines much less error-prone.</span></span>
+<span data-ttu-id="145ec-120">I sin tur gör distributioner snabbare och mer tillförlitligt vilket gör det enklare att utföra komplexa distributioner.</span><span class="sxs-lookup"><span data-stu-id="145ec-120">In turn, making deployments faster and more reliable which enables a quick turnaround on complex deployments.</span></span>
+
+<span data-ttu-id="145ec-121">Konfigurationer kan också delas via [PowerShell-galleriet](https://powershellgallery.com) betydelse vanliga scenarier och bästa praxis kanske redan finns för det arbete som måste utföras.</span><span class="sxs-lookup"><span data-stu-id="145ec-121">Configurations are also shareable via the [PowerShell Gallery](https://powershellgallery.com) meaning common scenarios and best practices might already exist for the work that needs to be done.</span></span>
+
+
+## <a name="desired-state-configuration-and-devops"></a><span data-ttu-id="145ec-122">Önskad tillstånds konfiguration och DevOps</span><span class="sxs-lookup"><span data-stu-id="145ec-122">Desired State Configuration and DevOps</span></span>
+
+<span data-ttu-id="145ec-123">DSC utformades med [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) i åtanke, en kombination av personer, processer och verktyg som möjliggör snabb distribution och upprepning fokuserar på att leverera värde för slutanvändare, oavsett om de är interna eller externa.</span><span class="sxs-lookup"><span data-stu-id="145ec-123">DSC was designed with [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) in mind, a combination of people, processes, and tools that allow for rapid deployment and iteration focused on delivering value to end users whether internal or external.</span></span>
+<span data-ttu-id="145ec-124">Att ha en enda konfiguration definiera en miljö innebär att utvecklare kan koda sina krav i en konfiguration, kontrol lera konfigurationen i käll kontrollen och att åtgärds team enkelt kan distribuera kod utan att behöva gå igenom fel känsliga manuella processer.</span><span class="sxs-lookup"><span data-stu-id="145ec-124">Having a single configuration define an environment means that developers can encode their requirements into a configuration, check that configuration into source control, and operation teams can easily deploy code without having to go through error-prone manual processes.</span></span>
+
+<span data-ttu-id="145ec-125">Konfigurationer är också [data drivna](../configurations/configData.md), vilket gör det enklare för OPS att identifiera och ändra miljöer utan utvecklarens medverkan.</span><span class="sxs-lookup"><span data-stu-id="145ec-125">Configurations are also [data-driven](../configurations/configData.md), which makes it easier for ops to identify and change environments without developer intervention.</span></span>
+
+## <a name="desired-state-configuration-on-premises-and-off-premises"></a><span data-ttu-id="145ec-126">Önskad tillstånds konfiguration lokalt och lokalt</span><span class="sxs-lookup"><span data-stu-id="145ec-126">Desired State Configuration On-Premises and Off-Premises</span></span>
+<span data-ttu-id="145ec-127">DSC kan användas för att hantera både lokala och lokala distributioner.</span><span class="sxs-lookup"><span data-stu-id="145ec-127">DSC can be used to manage both on-premise and off-premise deployments.</span></span>
+<span data-ttu-id="145ec-128">För lokala lösningar har DSC en [pull-server](../pull-server/pullServer.md) som kan användas för att centralisera hanteringen av datorer och rapportera om deras status.</span><span class="sxs-lookup"><span data-stu-id="145ec-128">For on-premise solutions, DSC has a [pull server](../pull-server/pullServer.md) that can be used to centralize management of machines and report on their status.</span></span>
+<span data-ttu-id="145ec-129">För moln lösningar kan DSC användas överallt där Windows kan användas.</span><span class="sxs-lookup"><span data-stu-id="145ec-129">For cloud solutions, DSC is usable wherever Windows is usable.</span></span>
+<span data-ttu-id="145ec-130">Det finns också speciella erbjudanden från Azure som bygger på önskad tillstånds konfiguration, till exempel [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/), som centraliserar rapportering av DSC.</span><span class="sxs-lookup"><span data-stu-id="145ec-130">There are also specific offerings from Azure built on Desired State Configuration, such as [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/), which centralizes reporting of DSC.</span></span>
+
+## <a name="dsc-and-compatibility"></a><span data-ttu-id="145ec-131">DSC och kompatibilitet</span><span class="sxs-lookup"><span data-stu-id="145ec-131">DSC and Compatibility</span></span>
+
+<span data-ttu-id="145ec-132">Även om DSC introducerades i Windows Server 2012 R2, är det tillgängligt för äldre operativ system via Windows Management Framework (WMF)-paketet.</span><span class="sxs-lookup"><span data-stu-id="145ec-132">Although DSC was introduced in Windows Server 2012 R2, it is available for down-level operating systems via the Windows Management Framework (WMF) package.</span></span>
+<span data-ttu-id="145ec-133">Mer information om WMF finns på [Start sidan för PowerShell](/powershell/).</span><span class="sxs-lookup"><span data-stu-id="145ec-133">More information about the WMF can be found on the [PowerShell homepage](/powershell/).</span></span>
+
+<span data-ttu-id="145ec-134">DSC kan också användas för att hantera Linux.</span><span class="sxs-lookup"><span data-stu-id="145ec-134">DSC can also be used to manage Linux.</span></span> <span data-ttu-id="145ec-135">Mer information finns i [komma igång med DSC för Linux](../getting-started/lnxGettingStarted.md).</span><span class="sxs-lookup"><span data-stu-id="145ec-135">For more information, see [Getting Started with DSC for Linux](../getting-started/lnxGettingStarted.md).</span></span>
