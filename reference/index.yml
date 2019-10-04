@@ -1,0 +1,156 @@
+### YamlMime:Hub
+title: Dokumentation för PowerShell
+summary: Officiell produktdokumentation för PowerShell
+brand: windows
+metadata:
+  title: Dokumentation för PowerShell
+  ms.topic: hub-page
+  ms.collection: collection
+  author: sdwheeler
+  ms.author: sewhee
+  ms.date: 09/04/2019
+  ms.openlocfilehash: 126576a54dd28e3561bb41e51783f802ec27241c
+  ms.sourcegitcommit: ed34aa38436e8036beba7ef23c8b426419022cfa
+  ms.translationtype: HT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 10/02/2019
+  ms.locfileid: "71835422"
+highlightedContent:
+  items:
+  - title: Översikt
+    itemType: get-started
+    url: https://docs.microsoft.com/powershell/scripting/overview
+  - title: Konfiguration och installation
+    itemType: download
+    url: https://docs.microsoft.com/powershell/scripting/install/installing-powershell
+  - title: Exempelskript
+    itemType: how-to-guide
+    url: https://docs.microsoft.com/powershell/scripting/samples/sample-scripts-for-administration
+  - title: PowerShell-galleriet
+    itemType: deploy
+    url: http://www.powershellgallery.com/
+  - title: PowerShell Module Browser
+    itemType: reference
+    url: https://docs.microsoft.com/powershell/module/
+  - title: PowerShell på GitHub
+    itemType: architecture
+    url: https://github.com/PowerShell/PowerShell
+productDirectory:
+  title: PowerShell-utgåvor + verktyg
+  summary: Tillgängliga utgåvor, verktyg och teknik som stöder PowerShell
+  items:
+  - title: PowerShell 5.1
+    imageSrc: ./media/index/powershell_128.svg
+    links:
+    - url: https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell
+      text: Installera Windows PowerShell
+    - url: https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-windows-powershell-50
+      text: Nyheter i PowerShell 5.x
+  - title: PowerShell Core
+    imageSrc: ./media/index/ps_black_128.svg
+    links:
+    - url: https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows
+      text: Installera PowerShell Core på Windows
+    - url: https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-linux
+      text: Installera PowerShell Core på Linux
+    - url: https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos
+      text: Installera PowerShell Core på macOS
+    - url: https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-62
+      text: Nyheter i PowerShell 6.2
+  - title: PowerShell-galleriet
+    imageSrc: ./media/index/avatar_128.svg
+    links:
+    - url: https://www.powershellgallery.com/
+      text: PowerShell-galleriet
+    - url: https://docs.microsoft.com/powershell/gallery/overview
+      text: Vad är PowerShell-galleriet
+    - url: https://docs.microsoft.com/powershell/gallery/concepts/publishing-guidelines
+      text: Rekommenderade metoder
+    - url: https://docs.microsoft.com/powershell/gallery/faqs
+      text: Vanliga frågor och svar
+  - title: PowerShell DSC
+    imageSrc: https://docs.microsoft.com/media/common/i_config-tools.svg
+    links:
+    - url: https://docs.microsoft.com/powershell/dsc/overview/overview
+      text: Översikt över DSC
+    - url: https://docs.microsoft.com/powershell/dsc/getting-started/lnxgettingstarted
+      text: Komma igång med DSC för Linux
+    - url: https://dsccommunity.org/
+      text: DSC Community
+  - title: Resurser för utvecklare
+    imageSrc: https://docs.microsoft.com/media/common/i_code-edit.svg
+    links:
+    - url: https://docs.microsoft.com/powershell/developer
+      text: Dokumentation för PowerShell SDK
+    - url: https://docs.microsoft.com/dotnet/api/?view=pscore-6.2.0
+      text: PowerShell Core SDK 6.2.0 API-referens
+    - url: https://code.visualstudio.com/docs/languages/powershell
+      text: PowerShell-tillägg för Visual Studio Code
+    - url: https://docs.microsoft.com/powershell/scripting/components/vscode/using-vscode-for-remote-editing-and-debugging
+      text: Använda VSCode för att fjärredigera och fjärrfelsöka
+  - title: Närliggande tekniker
+    imageSrc: https://docs.microsoft.com/media/common/i_tools.svg
+    links:
+    - url: https://docs.microsoft.com/powershell/wmf/
+      text: Windows Management Framework
+    - url: https://docs.microsoft.com/powershell/windows/get-started?view=win10-ps
+      text: PowerShell-moduler för hantering av Windows
+    - url: https://aka.ms/cloudshell/powershell-docs
+      text: PowerShell i Azure Cloud Shell
+    - url: https://docs.microsoft.com/powershell/azure/overview
+      text: Azure PowerShell
+    - url: https://docs.microsoft.com/azure/automation/automation-runbook-types
+      text: Azure Automation Runbook-rutiner
+    - url: https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-powershell
+      text: Azure Functions med PowerShell
+tools:
+  title: Community-resurser
+  summary: Få kontakt med andra PowerShell-användare
+  items:
+  - title: Användargrupper
+    imageSrc: https://docs.microsoft.com/media/hubs/powershell/i_group.svg
+    url: https://aka.ms/psusergroup
+  - title: TechNet-forum
+    imageSrc: https://docs.microsoft.com/media/hubs/powershell/i_group-feedback.svg
+    url: https://social.technet.microsoft.com/forums/home?forum=winserverpowershell
+  - title: DSC Community
+    imageSrc: https://docs.microsoft.com/media/hubs/powershell/i_group-feedback.svg
+    url: https://dsccommunity.org/
+  - title: PowerShell.org
+    imageSrc: https://docs.microsoft.com/media/hubs/powershell/i_group-feedback.svg
+    url: https://powershell.org/
+  - title: StackOverFlow
+    imageSrc: https://docs.microsoft.com/media/hubs/powershell/logo_stackoverflow.svg
+    url: https://stackoverflow.com/questions/tagged/powershell
+  - title: r/PowerShell
+    imageSrc: https://docs.microsoft.com/media/hubs/powershell/logo_reddit.svg
+    url: https://www.reddit.com/r/PowerShell/
+  - title: PowerShell på Slack
+    imageSrc: https://docs.microsoft.com/media/logos/logo-slack.svg
+    url: http://poshcode.org/slack
+  - title: PowerShell på Discord
+    imageSrc: ./media/index/discord.svg
+    url: http://poshcode.org/discord
+  - title: Digital konst
+    imageSrc: https://docs.microsoft.com/media/hubs/powershell/i_digital-art.svg
+    url: digital-art.md
+additionalContent:
+  sections:
+  - title: PowerShell-teamet
+    summary: Kommunicera med PowerShell-teamet
+    items:
+    - title: Officiell PowerShell-blogg
+      summary: Officiella nyheter och meddelanden
+      url: https://devblogs.microsoft.com/powershell/
+    - title: PowerShell-teamet på Twitter
+      summary: Nyheter om PowerShell 280 tecken i taget
+      url: https://twitter.com/PowerShell_Team
+    - title: PowerShell UserVoice
+      summary: Platsen för buggar i Windows PowerShell
+      url: https://windowsserver.uservoice.com/forums/301869-powershell
+    - title: GitHub-problem
+      summary: Platsen för buggar i den aktuella versionen
+      url: https://github.com/powershell/powershell/issues
+    - title: Hej, skriptdoktorn! Blogg
+      summary: En plats där du kan lära dig mer om PowerShell och automatisering
+      url: https://devblogs.microsoft.com/scripting/
