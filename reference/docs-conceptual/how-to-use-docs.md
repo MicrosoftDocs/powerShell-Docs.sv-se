@@ -2,12 +2,12 @@
 ms.date: 09/25/2019
 keywords: PowerShell, cmdlet
 title: Använda PowerShell-dokumentationen
-ms.openlocfilehash: 403cb155dcd18560267fd360a9277004a5e2510d
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 9e3d5828d6bdb4ef14701994f146354a041efaea
+ms.sourcegitcommit: a80bb79b85deab8ae3c21de56d1ee432fdd92628
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71328751"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281645"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>Använda PowerShell-dokumentationen
 
@@ -27,6 +27,18 @@ Som standard visar den här webbplatsen dokumentationen för den senaste utgivna
 Använd versions väljaren överst på sidan för att välja den version av PowerShell som du vill använda.
 
 ![versions väljare](images/how-to-use-docs/picker-vall.gif)
+
+Du kan kontrol lera vilken version av PowerShell du använder genom att kontrol lera `$PSversionTable.PSVersion`-värdet. I följande exempel visas utdata för Windows PowerShell v 5.1.
+
+```powershell
+$PSVersionTable.PSVersion
+```
+
+```Output
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+5      1      18362  145
+```
 
 ## <a name="searching-for-articles"></a>Söker efter artiklar
 
