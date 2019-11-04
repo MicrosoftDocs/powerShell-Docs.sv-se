@@ -2,23 +2,30 @@
 title: Installera PowerShell Core i macOS
 description: Information om hur du installerar PowerShell Core på macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: a53cb5b7e159635dac45fb9ca3df28e86dffc653
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: ad1306e99261e8e6e2fd49d3199d863929c31e92
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71325264"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444434"
 ---
 # <a name="installing-powershell-core-on-macos"></a>Installera PowerShell Core i macOS
 
 PowerShell Core stöder macOS 10,12 och högre.
-Alla paket är tillgängliga på vår GitHub [][] -releases-sida.
-När paketet har installerats kör `pwsh` du från en Terminal.
+Alla paket är tillgängliga på vår GitHub- [releases][] -sida.
+När paketet har installerats kör du `pwsh` från en Terminal.
+
+> [!TIP]
+> Om du redan har installerat [.net Core SDK](/dotnet/core/sdk) är det enkelt att installera PowerShell som ett [globalt .net-verktyg](/dotnet/core/tools/global-tools).
+>
+> ```
+> dotnet tool install --global PowerShell
+> ```
 
 ## <a name="about-brew"></a>Om Brew
 
 [Homebrew][brew] är den föredragna paket hanteraren för MacOS.
-Om kommandot inte hittas måste du installera homebrew enligt [deras instruktioner.][brew] `brew`
+Om `brew` kommandot inte hittas måste du installera homebrew enligt [deras instruktioner][brew].
 Annars kan du installera PowerShell via [direkt hämtning](#installation-via-direct-download) eller från [binära Arkiv](#binary-archives).
 
 ## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Installation av den senaste stabila versionen via homebrew på macOS 10,12 eller senare
@@ -85,8 +92,8 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>Installation via direkt hämtning
 
-Ladda ned PKG-paketet`powershell-6.2.0-osx-x64.pkg`
-från sidan [utgåvor][] till din MacOS-dator.
+Ladda ned PKG-paketet `powershell-6.2.0-osx-x64.pkg`
+från sidan [releases][] till din MacOS-dator.
 
 Du kan dubbelklicka på filen och följa anvisningarna eller installera den från terminalen:
 
@@ -98,7 +105,7 @@ Installera [openssl](#install-openssl). OpenSSL krävs för PowerShell-fjärrkom
 
 ## <a name="binary-archives"></a>Binära Arkiv
 
-PowerShell- `tar.gz` binärfiler tillhandahålls för MacOS-plattformen för att aktivera avancerade distributions scenarier.
+PowerShell Binary `tar.gz`-Arkiv tillhandahålls för macOS-plattformen för att aktivera avancerade distributions scenarier.
 
 ### <a name="installing-binary-archives-on-macos"></a>Installera binära Arkiv på macOS
 
@@ -137,16 +144,16 @@ OpenSSL krävs för PowerShell-fjärrkommunikation och CIM-åtgärder. Du kan in
 
 Mer information om Brew finns i [About Brew](#about-brew) .
 
-Kör `brew install openssl`för att installera openssl.
+Kör `brew install openssl`för att installera OpenSSL.
 
 #### <a name="install-openssl-via-macports"></a>Installera OpenSSL via MacPorts
 
 1. Installera [kommando rads verktygen för Xcode](#install-xcode-command-line-tools).
 1. Installera MacPorts.
    Om du behöver instruktioner kan du läsa mer i [installations guiden](https://guide.macports.org/chunked/installing.macports.html)för.
-1. Uppdatera MacPorts genom att `sudo port selfupdate`köra.
-1. Uppgradera MacPorts-paket genom `sudo port upgrade outdated`att köra.
-1. Installera OpenSSL genom att `sudo port install openssl`köra.
+1. Uppdatera MacPorts genom att köra `sudo port selfupdate`.
+1. Uppgradera MacPorts-paket genom att köra `sudo port upgrade outdated`.
+1. Installera OpenSSL genom att köra `sudo port install openssl`.
 1. Länka biblioteken för att göra dem tillgängliga för PowerShell:
 
 ```sh
@@ -168,28 +175,28 @@ Om du har installerat PowerShell via direkt hämtning måste PowerShell tas bort
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ```
 
-Om du vill ta bort ytterligare PowerShell-sökvägar läser du avsnittet [sökvägar](#paths) i det här dokumentet och `sudo rm`tar bort Sök vägarna med.
+Om du vill ta bort ytterligare PowerShell-sökvägar läser du avsnittet [sökvägar](#paths) i det här dokumentet och tar bort Sök vägarna med `sudo rm`.
 
 > [!NOTE]
 > Detta är inte nödvändigt om du har installerat med homebrew.
 
 ## <a name="paths"></a>Sökvägar
 
-* `$PSHOME`utgör`/usr/local/microsoft/powershell/6.2.0/`
-* Användar profilerna kommer att läsas från`~/.config/powershell/profile.ps1`
-* Standard profiler kommer att läsas från`$PSHOME/profile.ps1`
-* Användarens moduler kommer att läsas från`~/.local/share/powershell/Modules`
-* Delade moduler kommer att läsas från`/usr/local/share/powershell/Modules`
-* Standardmoduler kommer att läsas från`$PSHOME/Modules`
-* PSReadline historik registreras i`~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+* `$PSHOME` är `/usr/local/microsoft/powershell/6.2.0/`
+* Användar profilerna kommer att läsas från `~/.config/powershell/profile.ps1`
+* Standard profiler kommer att läsas från `$PSHOME/profile.ps1`
+* Användarens moduler kommer att läsas från `~/.local/share/powershell/Modules`
+* Delade moduler kommer att läsas från `/usr/local/share/powershell/Modules`
+* Standardmoduler kommer att läsas från `$PSHOME/Modules`
+* PSReadline-historik registreras för `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 Profilerna respekterar PowerShell-konfigurationen per värd.
-Så att den standardinställda värdbaserade profilen `Microsoft.PowerShell_profile.ps1` finns på samma platser.
+Så att den standardinställda värdbaserade profilen finns på `Microsoft.PowerShell_profile.ps1` på samma platser.
 
 PowerShell respekterar [xdg-bas katalog specifikationen][xdg-bds] på MacOS.
 
-Eftersom MacOS är en härledning av BSD används prefixet `/usr/local` i stället för. `/opt`
-Så, `$PSHOME` är `/usr/local/microsoft/powershell/6.2.0/`och den symboliska länken placeras på `/usr/local/bin/pwsh`.
+Eftersom macOS är en härledning av BSD, används prefixet `/usr/local` i stället för `/opt`.
+Därför är `$PSHOME` `/usr/local/microsoft/powershell/6.2.0/`och den symboliska länken placeras på `/usr/local/bin/pwsh`.
 
 ## <a name="additional-resources"></a>Ytterligare resurser
 
@@ -201,5 +208,5 @@ Så, `$PSHOME` är `/usr/local/microsoft/powershell/6.2.0/`och den symboliska l�
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[utgåvor]: https://github.com/PowerShell/PowerShell/releases/latest
+[releases]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

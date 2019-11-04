@@ -2,12 +2,12 @@
 title: Installera Windows PowerShell SDK:n
 ms.date: 09/13/2016
 ms.topic: article
-ms.openlocfilehash: da1b3dbb8a599aee2cdbab9115aedcab0b4c78c9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72357514"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444501"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Installera Windows PowerShell SDK:n
 
@@ -17,24 +17,21 @@ I följande avsnitt beskrivs hur du installerar PowerShell SDK i olika versioner
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Installera Windows PowerShell 3,0 SDK för Windows 8 och Windows Server 2012
 
-Windows PowerShell 3,0 installeras automatiskt med Windows 8 och Windows Server 2012. Dessutom kan du hämta och installera referens sammansättningarna för Windows PowerShell 3,0 som en del av Windows 8 SDK. Med dessa sammansättningar kan du skriva cmdlets, providers och värd program för Windows PowerShell 3,0. När du installerar Windows SDK för Windows 8 installeras Windows PowerShell-sammansättningarna automatiskt i mappen referens sammansättning i \Program Files (x86) \Reference Assemblies\Microsoft\WindowsPowerShell\3.0. Mer information finns på webbplatsen för hämtning av Windows 8 SDK. Kod exempel för Windows PowerShell är också tillgängliga i utvecklings centret.
-Mer information finns i exempel sidan Skriv bords kod på webbplatsen för dev Center.
-
-Dessutom är Windows PowerShell 3,0 bakåtkompatibelt – kompatibelt med Windows PowerShell 2,0 SDK, som innehåller ett antal kod exempel. Mer information om hur du hämtar Windows PowerShell 2,0 SDK finns nedan. (Observera att även om kod exemplen 2,0 är kompatibla med Windows 8 och Windows PowerShell 3,0 kan du inte installera Windows PowerShell 2,0 på en Windows 8-plattform.)
+Windows PowerShell 3,0 installeras automatiskt med Windows 8 och Windows Server 2012. Dessutom kan du hämta och installera referens sammansättningarna för Windows PowerShell 3,0 som en del av Windows 8 SDK. Med dessa sammansättningar kan du skriva cmdlets, providers och värd program för Windows PowerShell 3,0. När du installerar Windows SDK för Windows 8 installeras Windows PowerShell-sammansättningarna automatiskt i mappen referens sammansättning i `\Program Files
+(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`. Mer information finns på webbplatsen för hämtning av Windows 8 SDK. Kod exempel för Windows PowerShell är också tillgängliga i utvecklings Center i [Windows PowerShell 3,0 SDK Sample Pack](https://code.msdn.microsoft.com/Windows-PowerShell-30-SDK-9a34641d).
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Installera Windows PowerShell 3,0 SDK för Windows 7 och Windows Server 2008 R2
 
-PowerShell 2,0 installeras automatiskt av Windows 7 och Windows Server 2008 R2. Dessutom kan du installera PowerShell 3,0 på dessa system. (Mer information finns i installera Windows PowerShell.). Som det beskrivs ovan kan du också installera Windows 8 SDK på Windows 7 och Windows Server 2008 R2.
+PowerShell 2,0 installeras automatiskt av Windows 7 och Windows Server 2008 R2. Dessutom kan du installera PowerShell 3,0 på dessa system. Du kan också installera Windows 8 SDK på Windows 7 och Windows Server 2008 R2 enligt beskrivningen ovan.
 
 ## <a name="installing-windows-powershell-20-sdk-for-windows-7-vista-xp-server-2003-and-server-2008"></a>Installera Windows PowerShell 2,0 SDK för Windows 7, Vista, XP, Server 2003 och Server 2008
 
-Windows PowerShell 2,0 SDK innehåller referens sammansättningar som behövs för att skriva cmdlets, providrar och värdbaserade program och innehåller C# exempel kod som kan användas som start punkt när du börjar skriva kod.
-
-Information om hur du installerar detta SDK finns i Windows PowerShell 2,0 SDK.
+Windows PowerShell 2,0 SDK innehåller referens sammansättningar som behövs för att skriva cmdlets, providrar och värdbaserade program och innehåller C# exempel kod som kan användas som start punkt när du börjar skriva kod. Du kan hämta kod exemplen från [https://www.microsoft.com/download/details.aspx?id=2560](https://www.microsoft.com/download/details.aspx?id=2560).
 
 ### <a name="reference-assemblies"></a>Referens sammansättningar
 
-Referens sammansättningar installeras på följande plats som standard: c:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\V1.0.
+Referens sammansättningar installeras på följande plats som standard: `c:\Program Files\Reference
+Assemblies\Microsoft\WindowsPowerShell\V1.0`.
 
 > [!NOTE]
 >
@@ -43,14 +40,15 @@ Referens sammansättningar installeras på följande plats som standard: c:\Prog
 
 ### <a name="samples"></a>Exempel
 
-Kod exempel installeras som standard på följande plats: C:\Program Files\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\. Följande avsnitt innehåller en kort beskrivning av vad varje exempel gör.
+Kod exempel installeras som standard på följande plats: `C:\Program Files\Microsoft
+SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. Följande avsnitt innehåller en kort beskrivning av vad varje exempel gör.
 
 #### <a name="cmdlet-samples"></a>Cmdlet-exempel
 
 - GetProcessSample01 – visar hur du skriver en enkel cmdlet som hämtar alla processer på den lokala datorn.
 - GetProcessSample02 – visar hur du lägger till parametrar till cmdleten. Cmdleten använder ett eller flera process namn och returnerar de matchande processerna.
 - GetProcessSample03 – visar hur du lägger till parametrar som accepterar ininformation från pipelinen.
-- GetProcessSample04 – visar hur du hanterar ej avslutande fel.
+- GetProcessSample04 – visar hur du hanterar icke-avslutande fel.
 - GetProcessSample05 – visar hur du visar en lista över angivna processer.
 - MarkeraObjekt-visar hur du skriver ett filter för att endast välja vissa objekt.
 - SelectString – visar hur du söker efter angivna mönster i filer.

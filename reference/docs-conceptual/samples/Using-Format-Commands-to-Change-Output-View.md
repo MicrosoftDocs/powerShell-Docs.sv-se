@@ -1,241 +1,261 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+ms.date: 10/22/2019
+keywords: PowerShell, cmdlet
 title: Använd formatkommandon för att ändra utdatavyn
-ms.openlocfilehash: a1712dade1e7508c0c4a004685bd1bb04a126f74
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 9d9854362b5150a99bdd0c02518599840c1fd42d
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030069"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444421"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Använd formatkommandon för att ändra utdatavyn
 
-Windows PowerShell har en uppsättning cmdletar som gör det möjligt att styra vilka egenskaper som visas för vissa objekt. Namnen på alla cmdletar börjar med verbet **Format**. De kan du välja en eller flera egenskaper för att visa.
+PowerShell har en uppsättning cmdletar som gör att du kan styra hur egenskaper visas för specifika objekt. Namnen på alla cmdletar börjar med verb `Format`. De låter dig välja vilka egenskaper du vill visa.
 
-Den **Format** cmdlet: ar är **Format hela**, **Format-List**, **Format-Table**, och **Format-anpassad**. Vi kommer endast att beskriva den **Format hela**, **Format-List**, och **Format-Table** cmdletar i den här användarhandboken.
-
-Varje format-cmdlet har standardegenskaper som ska användas om du inte anger specifika egenskaper som ska visas. Varje cmdlet använder även samma parameternamnet **egenskapen**, för att ange vilka egenskaper som du vill visa. Eftersom **Format hela** visar bara en enda egenskap, dess **egenskapen** parametern tar bara ett enda värde, men egenskapen parametrarna för **Format-List** och **Format-Table** accepterar en lista över egenskapsnamn.
-
-Om du använder kommandot **Get-Process - namnet powershell** med två instanser av Windows PowerShell kör du får utdata som ser ut så här:
-
-```output
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-    995       9    30308      27996   152     2.73   2760 powershell
-    331       9    23284      29084   143     1.06   3448 powershell
+```powershell
+Get-Command -Verb Format -Module Microsoft.PowerShell.Utility
 ```
 
-I resten av det här avsnittet förklarar vi hur du använder **Format** cmdletar för att ändra hur kommandots utdata visas.
+```Output
+CommandType     Name               Version    Source
+-----------     ----               -------    ------
+Cmdlet          Format-Custom      6.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Format-Hex         6.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Format-List        6.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Format-Table       6.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Format-Wide        6.1.0.0    Microsoft.PowerShell.Utility
+```
 
-## <a name="using-format-wide-for-single-item-output"></a>Med hjälp av Format hela för Single-Item utdata
+I den här artikeln beskrivs cmdletarna `Format-Wide`, `Format-List`och `Format-Table`.
 
-Den `Format-Wide` cmdlet, som standard visas endast standardegenskapen för ett objekt.
-Informationen som är associerade med varje objekt visas i en enda kolumn:
+Varje objekt typ i PowerShell har standard egenskaper som används när du inte anger vilka egenskaper som ska visas. Varje cmdlet använder också samma **egenskaps** parameter för att ange vilka egenskaper som du vill visa. Eftersom `Format-Wide` endast visar en enskild egenskap, har **egenskaps** parametern bara ett enda värde, men egenskaps parametrarna för `Format-List` och `Format-Table` acceptera en lista med egenskaps namn.
+
+I det här exemplet visar standardutdata för `Get-Process` cmdlet att vi har två instanser av Internet Explorer igång.
+
+```powershell
+Get-Process -Name iexplore
+```
+
+Standardformat för **process** objekt visar de egenskaper som visas här:
+
+```Output
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+     32    25.52      10.25      13.11   12808   1 iexplore
+     52    11.46      26.46       3.55   21748   1 iexplore
+```
+
+## <a name="using-format-wide-for-single-item-output"></a>Använda hel skärms läge för utdata med ett enda objekt
+
+I `Format-Wide`-cmdleten visas som standard endast objektets standard egenskap. Informationen som är kopplad till varje objekt visas i en enda kolumn:
 
 ```powershell
 Get-Command -Verb Format | Format-Wide
 ```
 
-```output
-Format-Custom                          Format-Hex
-Format-List                            Format-Table
+```Output
+Format-Custom          Format-Hex
+Format-List            Format-Table
 Format-Wide
 ```
 
-Du kan också ange en icke-standard-egenskap:
+Du kan också ange en egenskap som inte är standard:
 
 ```powershell
 Get-Command -Verb Format | Format-Wide -Property Noun
 ```
 
-```output
-Custom                                 Hex
-List                                   Table
+```Output
+Custom                 Hex
+List                   Table
 Wide
 ```
 
-### <a name="controlling-format-wide-display-with-column"></a>Kontrollera formatet företagsomfattande visning med kolumn
+### <a name="controlling-format-wide-display-with-column"></a>Kontrol lera format – bred skärm med kolumn
 
-Med den `Format-Wide` cmdlet, du kan bara visa en enskild egenskap i taget.
-Detta gör det användbart för att visa enkla listor som visar bara ett element per rad.
-För att få en enkel lista kan du ange värdet för den **kolumnen** parameter 1 genom att skriva:
+Med `Format-Wide`-cmdlet: en kan du bara visa en enskild egenskap i taget. Detta gör det användbart för att visa stora listor i flera kolumner.
 
 ```powershell
-Get-Command -Verb Format | Format-Wide -Property Noun -Column 1
+Get-Command -Verb Format | Format-Wide -Property Noun -Column 3
 ```
 
-```output
-Custom
-Hex
-List
-Table
-Wide
-```
-
-## <a name="using-format-list-for-a-list-view"></a>Med hjälp av Format-List för en listvy
-
-Den **Format-List** cmdlet visar ett objekt i form av en lista med varje egenskap med etiketten och visas på en separat rad:
+```Output
+Custom                 Hex                  List
+Table                  Wide
 
 ```
-PS> Get-Process -Name powershell | Format-List
 
-Id      : 2760
-Handles : 1242
-CPU     : 3.03125
-Name    : powershell
+## <a name="using-format-list-for-a-list-view"></a>Använda format-lista för att visa en listvy
 
-Id      : 3448
-Handles : 328
-CPU     : 1.0625
-Name    : powershell
-```
-
-Du kan ange alla egenskaper som du vill:
-
-```
-PS> Get-Process -Name powershell | Format-List -Property ProcessName,FileVersion
-,StartTime,Id
-
-ProcessName : powershell
-FileVersion : 1.0.9567.1
-StartTime   : 2006-05-24 13:42:00
-Id          : 2760
-
-ProcessName : powershell
-FileVersion : 1.0.9567.1
-StartTime   : 2006-05-24 13:54:28
-Id          : 3448
-```
-
-### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Hämta detaljerad Information med hjälp av Format-List med jokertecken
-
-Den **Format-List** cmdlet kan du använda ett jokertecken som värdet för dess **egenskapen** parametern. På så sätt kan du visa detaljerad information. Objekt omfattar ofta mer information än vad du behöver, vilket är anledningen till Windows PowerShell inte visar alla egenskapsvärden som standard. För att visa alla egenskaper för ett objekt, använda den **Format-List-egenskapen \&#42;** kommando. Följande kommando genererar över 60 rader med utdata för en enda process:
+Cmdleten `Format-List` visar ett objekt i form av en lista, där varje egenskap har etiketten och visas på en separat rad:
 
 ```powershell
-Get-Process -Name powershell | Format-List -Property *
+Get-Process -Name iexplore | Format-List
 ```
 
-Även om den **Format-List** kommandot är användbart för att visa information om du vill att en översikt över utdata som innehåller många objekt, en enklare tabellvy är ofta mer användbart.
+```Output
+Id      : 12808
+Handles : 578
+CPU     : 13.140625
+SI      : 1
+Name    : iexplore
 
-## <a name="using-format-table-for-tabular-output"></a>Med hjälp av Format-Table för Tabellutdata
-
-Om du använder den **Format-Table** cmdlet med inga egenskapsnamn som angetts för att formatera utdata från den **Get-Process** kommandot får du exakt samma utdata som du gör utan att behöva genomföra några formatering. Anledningen är att processer vanligtvis visas i tabellformat, eftersom de flesta Windows PowerShell-objekt.
-
-```
-PS> Get-Process -Name powershell | Format-Table
-
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-   1488       9    31568      29460   152     3.53   2760 powershell
-    332       9    23140        632   141     1.06   3448 powershell
-```
-
-### <a name="improving-format-table-output-autosize"></a>Förbättra Format-Table utdata (AutoSize)
-
-Även om en tabellvy är användbart för att visa mycket jämförbar information, kan det vara svårt att tolka om skärmen är för smal för data. Till exempel om du försöker visa processen sökväg, ID, namn och företag, får du trunkerade utdata för processökvägen och kolumnen företag:
-
-```
-PS> Get-Process -Name powershell | Format-Table -Property Path,Name,Id,Company
-
-Path                Name                                 Id Company
-----                ----                                 -- -------
-C:\Program Files... powershell                         2836 Microsoft Corpor...
+Id      : 21748
+Handles : 641
+CPU     : 3.59375
+SI      : 1
+Name    : iexplore
 ```
 
-Om du anger den **AutoSize** parameter när du kör den **Format-Table** kommandot Windows PowerShell beräknas kolumnbredder baserat på de faktiska data som du kommer att visa. Detta gör det **sökväg** kolumnen läsbar, men kolumnen företag förblir trunkerat:
+Du kan ange så många egenskaper du vill:
 
-```
-PS> Get-Process -Name powershell | Format-Table -Property Path,Name,Id,Company -
-AutoSize
-
-Path                                                    Name         Id Company
-----                                                    ----         -- -------
-C:\Program Files\Windows PowerShell\v1.0\powershell.exe powershell 2836 Micr...
+```powershell
+Get-Process -Name iexplore | Format-List -Property ProcessName,FileVersion,StartTime,Id
 ```
 
-Den **Format-Table** cmdlet kan fortfarande trunkera data, men det kommer bara göra det i slutet av skärmen. Andra egenskaper än den senaste som visas, ges så mycket storlek som de behöver för sin längsta dataelement kan inte visas korrekt. Du kan se att företagets namn är synligt men trunkeras sökvägen om du växlar mellan platserna för **sökväg** och **företagets** i den **egenskapen** värdelista:
+```Output
+ProcessName : iexplore
+FileVersion : 11.00.18362.1 (WinBuild.160101.0800)
+StartTime   : 10/22/2019 11:23:58 AM
+Id          : 12808
 
-```
-PS> Get-Process -Name powershell | Format-Table -Property Company,Name,Id,Path -
-AutoSize
-
-Company               Name         Id Path
--------               ----         -- ----
-Microsoft Corporation powershell 2836 C:\Program Files\Windows PowerShell\v1...
-```
-
-Den **Format-Table** kommandot förutsätter att det kommer allt närmare en egenskap som är i början av egenskapslistan ju viktigare det är. Så görs ett försök att visa egenskaperna för närmaste början helt. Om den **Format-Table** kommandot kan inte visas alla egenskaper kan det ta bort vissa kolumner som visningen och skicka någon varning. Du kan se det här beteendet om du gör **namn** egenskapen senaste i listan:
-
-```
-PS> Get-Process -Name powershell | Format-Table -Property Company,Path,Id,Name -
-AutoSize
-
-WARNING: column "Name" does not fit into the display and was removed.
-
-Company               Path                                                    I
-                                                                              d
--------               ----                                                    -
-Microsoft Corporation C:\Program Files\Windows PowerShell\v1.0\powershell.exe 6
+ProcessName : iexplore
+FileVersion : 11.00.18362.1 (WinBuild.160101.0800)
+StartTime   : 10/22/2019 11:23:57 AM
+Id          : 21748
 ```
 
-ID-kolumnen förkortas så att den passar i listan i utdata ovan och kolumnrubrikerna staplade. Automatiskt ändra storlek på kolumnerna som gör inte alltid det du söker.
+### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Få detaljerad information med hjälp av format-lista med jokertecken
 
-### <a name="wrapping-format-table-output-in-columns-wrap"></a>Radbrytning Format-Table utdata i kolumnerna (radbyte)
+Med hjälp av cmdleten `Format-List` kan du använda ett jokertecken som värde för dess **egenskaps** parameter. På så sätt kan du Visa detaljerad information. Objekt innehåller ofta mer information än vad du behöver, vilket är anledningen till att PowerShell inte visar alla egenskaps värden som standard. Om du vill visa alla egenskaper för ett objekt använder du kommandot **format-List-Property \&#42;** . Följande kommando genererar över 60 rader utdata för en enda process:
 
-Du kan tvinga långa **Format-Table** data du omsluter inom dess Visningskolumn med hjälp av den **omsluta** parametern. Med hjälp av den **omsluta** parametern enbart inte nödvändigtvis att utföra vad du förväntar dig, eftersom det använder standardinställningarna om du inte också anger **AutoSize**:
-
-```
-PS> Get-Process -Name powershell | Format-Table -Wrap -Property Name,Id,Company,
-Path
-
-Name                                 Id Company             Path
-----                                 -- -------             ----
-powershell                         2836 Microsoft Corporati C:\Program Files\Wi
-                                        on                  ndows PowerShell\v1
-                                                            .0\powershell.exe
+```powershell
+Get-Process -Name iexplore | Format-List -Property *
 ```
 
-En fördel med den **omsluta** parametern påverkar i sig är att det inte fördröjer bearbetar mycket. Om du gör en rekursiv fil lista över ett stort directory-system, det kan ta mycket lång tid och använder mycket minne innan den visas de första utdata-objekten om du använder **AutoSize**.
+Även om `Format-List` kommandot är användbart för att visa information, är en enklare tabellvy ofta mer användbar om du vill ha en översikt över utdata som innehåller många objekt.
 
-Om du inte är orolig över systembelastning har sedan **AutoSize** fungerar bra med de **omsluta** parametern. De inledande kolumnerna reduceras alltid så mycket bredd som de behöver för att visa objekten i en rad, precis som när du anger **AutoSize** utan den **omsluta** parametern. Den enda skillnaden är att den sista kolumnen hanteras om det behövs:
+## <a name="using-format-table-for-tabular-output"></a>Använda format tabell för tabell data
 
-```
-PS> Get-Process -Name powershell | Format-Table -Wrap -AutoSize -Property Name,I
-d,Company,Path
+Om du använder `Format-Table`-cmdlet utan några egenskaps namn för att formatera utdata från `Get-Process` kommandot får du exakt samma utdata som du gör utan en `Format`-cmdlet. Som standard visar PowerShell **process** objekt i tabell format.
 
-Name         Id Company               Path
-----         -- -------               ----
-powershell 2836 Microsoft Corporation C:\Program Files\Windows PowerShell\v1.0\
-                                      powershell.exe
+```powershell
+Get-Service -Name win* | Format-Table
 ```
 
-Vissa kolumner kan inte visas om du anger de bredaste kolumnerna först, så är det säkrast att ange de minsta dataelementen först. I följande exempel vi ange mycket brett sökvägselementet först och även med radbrytning, vi fortfarande förlorar sista **namn** kolumn:
-
-```
-PS> Get-Process -Name powershell | Format-Table -Wrap -AutoSize -Property Path,I
-d,Company,Name
-
-WARNING: column "Name" does not fit into the display and was removed.
-
-Path                                                      Id Company
-----                                                      -- -------
-C:\Program Files\Windows PowerShell\v1.0\powershell.exe 2836 Microsoft Corporat
-                                                             ion
+```Output
+Status   Name               DisplayName
+------   ----               -----------
+Running  WinDefend          Windows Defender Antivirus Service
+Running  WinHttpAutoProx... WinHTTP Web Proxy Auto-Discovery Se...
+Running  Winmgmt            Windows Management Instrumentation
+Running  WinRM              Windows Remote Management (WS-Manag...
 ```
 
-### <a name="organizing-table-output--groupby"></a>Ordna Tabellutdata (-GroupBy)
+### <a name="improving-format-table-output-autosize"></a>Förbättra format – tabellens utdata (AutoSize)
 
-En annan användbar parametern för tabellutdata kontroll är **GroupBy**. Längre tabular listor kan i synnerhet vara svåra att jämföra. Den **GroupBy** parametern grupperar utdata baserat på ett egenskapsvärde. Vi kan exempelvis gruppera processer av företag för enklare kontroll, om du utesluter företagets värdet från egenskapen lista:
+Även om en tabellvy är användbar för att visa massor av information kan det vara svårt att tolka om visningen är för smal för data. I föregående exempel trunkeras utdata. Om du anger parametern **AutoSize** när du kör kommandot `Format-Table`, beräknar PowerShell kolumn bredden baserat på de faktiska data som visas. Det gör kolumnerna läsbara.
 
+```powershell
+Get-Service -Name win* | Format-Table -AutoSize
 ```
-PS> Get-Process -Name powershell | Format-Table -Wrap -AutoSize -Property Name,I
-d,Path -GroupBy Company
 
-   Company: Microsoft Corporation
+```Output
+Status  Name                DisplayName
+------  ----                -----------
+Running WinDefend           Windows Defender Antivirus Service
+Running WinHttpAutoProxySvc WinHTTP Web Proxy Auto-Discovery Service
+Running Winmgmt             Windows Management Instrumentation
+Running WinRM               Windows Remote Management (WS-Management)
+```
 
-Name         Id Path
-----         -- ----
-powershell 1956 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
-powershell 2656 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
+`Format-Table` cmdleten kan fortfarande trunkera data, men de trunkeras bara i slutet av skärmen. Andra egenskaper än den sista som visas, har samma storlek som de behöver för att det ska visas på rätt data element.
+
+```powershell
+Get-Service -Name win* | Format-Table -Property Name,Status,StartType,DisplayName,DependentServices -AutoSize
+```
+
+```Output
+Name                 Status StartType DisplayName                               DependentServi
+                                                                                ces
+----                 ------ --------- -----------                               --------------
+WinDefend           Running Automatic Windows Defender Antivirus Service        {}
+WinHttpAutoProxySvc Running    Manual WinHTTP Web Proxy Auto-Discovery Service  {NcaSvc, iphl…
+Winmgmt             Running Automatic Windows Management Instrumentation        {vmms, TPHKLO…
+WinRM               Running Automatic Windows Remote Management (WS-Management) {}
+```
+
+Kommandot `Format-Table` förutsätter att egenskaperna är listade i prioritetsordning. Det försöker då att helt Visa egenskaperna närmast början. Om kommandot `Format-Table` inte kan visa alla egenskaper tas vissa kolumner bort från visningen. Du kan se det här beteendet i **DependentServices** -egenskapen i föregående exempel.
+
+### <a name="wrapping-format-table-output-in-columns-wrap"></a>Rad brytnings format – tabellens utdata i kolumner (radbyte)
+
+Du kan tvinga långvariga `Format-Table` data att figursättas i sin visnings kolumn med hjälp av parametern **wrap** . **Det går** inte att använda den omslutna parametern, eftersom den använder standardinställningar om du inte också anger **AutoSize**:
+
+```powershell
+Get-Service -Name win* | Format-Table -Property Name,Status,StartType,DisplayName,DependentServices -Wrap
+```
+
+```Output
+Name                 Status StartType DisplayName                               DependentServi
+                                                                                ces
+----                 ------ --------- -----------                               --------------
+WinDefend           Running Automatic Windows Defender Antivirus Service        {}
+WinHttpAutoProxySvc Running    Manual WinHTTP Web Proxy Auto-Discovery Service  {NcaSvc,
+                                                                                iphlpsvc}
+Winmgmt             Running Automatic Windows Management Instrumentation        {vmms,
+                                                                                TPHKLOAD,
+                                                                                SUService,
+                                                                                smstsmgr…}
+WinRM               Running Automatic Windows Remote Management (WS-Management) {}
+```
+
+Att använda **wrap** -parametern i sig saktar inte ned bearbetningen väldigt mycket. Att använda **AutoSize** för att formatera en rekursiv fil listning av en stor katalog struktur kan dock ta lång tid och använda mycket minne innan de första utmatnings objekten visas.
+
+Om du inte bekymrar dig om system belastningen **fungerar** autopassering bra med **wrap** -parametern.
+De ursprungliga kolumnerna använder fortfarande så mycket bredd som det behövs för att visa objekt på en rad, men den sista kolumnen är omsluten, om det behövs.
+
+> [!NOTE]
+> Vissa kolumner kanske inte visas när du anger de bredaste kolumnerna först. För bästa resultat anger du de minsta data elementen först.
+
+I följande exempel anger vi de bredaste egenskaperna först.
+
+```powershell
+Get-Process -Name iexplore | Format-Table -Wrap -AutoSize -Property FileVersion,Path,Name,Id
+```
+
+Med rad brytning utelämnas kolumnen slutligt **ID** :
+
+```Output
+FileVersion                          Path                                                  Nam
+                                                                                           e
+-----------                          ----                                                  ---
+11.00.18362.1 (WinBuild.160101.0800) C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE iex
+                                                                                           plo
+                                                                                           re
+11.00.18362.1 (WinBuild.160101.0800) C:\Program Files\Internet Explorer\iexplore.exe       iex
+                                                                                           plo
+                                                                                           re
+```
+
+### <a name="organizing-table-output--groupby"></a>Organisera tabellens utdata (-GroupBy)
+
+En annan användbar parameter för kontroll av tabellens utdata är **groupby**. Längre tabell listor kan vara svåra att jämföra. Parametern **groupby** grupperar utdata baserat på ett egenskaps värde. Vi kan till exempel gruppera tjänster efter **StartType** för enklare granskning och utelämna **StartType** -värdet från egenskaps listan:
+
+```powershell
+Get-Service -Name win* | Sort-Object StartType | Format-Table -GroupBy StartType
+```
+
+```Output
+   StartType: Automatic
+Status   Name               DisplayName
+------   ----               -----------
+Running  WinDefend          Windows Defender Antivirus Service
+Running  Winmgmt            Windows Management Instrumentation
+Running  WinRM              Windows Remote Management (WS-Managem…
+
+   StartType: Manual
+Status   Name               DisplayName
+------   ----               -----------
+Running  WinHttpAutoProxyS… WinHTTP Web Proxy Auto-Discovery Serv…
 ```

@@ -2,12 +2,12 @@
 title: Installera PowerShell Core i Linux
 description: Information om hur du installerar PowerShell Core på olika Linux-distributioner
 ms.date: 07/19/2019
-ms.openlocfilehash: fc5a278f0fc10733a0d60fb856d0400332ba2719
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 3159de2d64d9c473e00b58c9f9c52b6d1c7779af
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72350196"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444413"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Installera PowerShell Core i Linux
 
@@ -30,6 +30,13 @@ Alla paket är tillgängliga på vår GitHub- [releases][] -sida. När paketet h
 [arch]: #arch-linux
 [snap]: #snap-package
 [tar]: #binary-archives
+
+> [!TIP]
+> Om du redan har installerat [.net Core SDK](/dotnet/core/sdk) är det enkelt att installera PowerShell som ett [globalt .net-verktyg](/dotnet/core/tools/global-tools).
+>
+> ```
+> dotnet tool install --global PowerShell
+> ```
 
 ## <a name="installing-preview-releases"></a>Installera för hands versioner
 
@@ -242,7 +249,7 @@ sudo apt-get remove powershell
 
 ### <a name="installation-via-direct-download---debian-10"></a>Installation via direkt hämtning – Debian 10
 
-Ladda ned tar. gz-paketet `powershell_7.0.0-preview-7-linux-x64.tar.gz` från sidan [releases][] till Debian-datorn.
+Hämta paketet med tar. gz-paketet `powershell_7.0.0-preview-7-linux-x64.tar.gz` från sidan [releases][] till Debian-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -289,7 +296,7 @@ pwsh-preview
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>Installation via direkt hämtning – Alpine 3,9 och 3,10
 
-Ladda ned tar. gz-paketet `powershell_7.0.0-preview-7-linux-x64.tar.gz` från sidan [releases][] till Alpine Machine.
+Hämta paketet tar. gz-paketet `powershell_7.0.0-preview-7-linux-x64.tar.gz` från sidan [releases][] till Alpine Machine.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -399,7 +406,7 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installation via direkt hämtning – Red Hat Enterprise Linux (RHEL) 7
 
-Ladda ned RPM-paketet `powershell-6.2.0-1.rhel.7.x86_64.rpm` från sidan [releases][] till datorn Red Hat Enterprise Linux.
+Hämta RPM-paketet `powershell-6.2.0-1.rhel.7.x86_64.rpm` från sidan [releases][] till datorn Red Hat Enterprise Linux.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -511,7 +518,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-28-29-and-30"></a>Installation via direkt hämtning-Fedora 28, 29 och 30
 
-Ladda ned RPM-paketet `powershell-6.2.0-1.rhel.7.x86_64.rpm` från sidan [releases][] till Fedora-datorn.
+Hämta RPM-paketet `powershell-6.2.0-1.rhel.7.x86_64.rpm` från sidan [releases][] till Fedora-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -536,7 +543,7 @@ sudo dnf remove powershell
 ## <a name="arch-linux"></a>Båge Linux
 
 > [!NOTE]
-> Stöd för båge är experimentellt.
+> Stöd för båge stöds inte officiellt av Microsoft och underhålls av communityn.
 
 PowerShell är tillgängligt från användar lagrings platsen för [Båge Linux][] (AUR).
 
@@ -598,6 +605,9 @@ sudo snap remove powershell-preview
 ```
 
 ## <a name="kali"></a>Kali
+
+> [!NOTE]
+> Kali-support stöds inte officiellt av Microsoft och underhålls av communityn.
 
 ### <a name="installation---kali"></a>Installation – Kali
 
@@ -746,9 +756,9 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 * Användarens moduler kommer att läsas från `~/.local/share/powershell/Modules`
 * Delade moduler kommer att läsas från `/usr/local/share/powershell/Modules`
 * Standardmoduler kommer att läsas från `$PSHOME/Modules`
-* PSReadline-historik registreras i `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+* PSReadline-historik registreras för `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
-Profilerna respekterar PowerShell: s konfiguration per värd, så att de standardinställda standardspecifika Profilerna finns på `Microsoft.PowerShell_profile.ps1` på samma platser.
+Profilerna respekterar PowerShell: s konfiguration per värd, så att de standardinställda värdbaserade profilerna finns på `Microsoft.PowerShell_profile.ps1` på samma platser.
 
 PowerShell respekterar [xdg-bas katalog specifikationen][xdg-bds] i Linux.
 
