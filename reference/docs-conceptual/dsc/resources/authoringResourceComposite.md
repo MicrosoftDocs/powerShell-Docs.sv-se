@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Sammansatta resurser – använda en DSC-konfiguration som en resurs
-ms.openlocfilehash: ef8d5665e552da01977c2f21a43246c72bb7155f
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 7fa6ee56d4706b96fb47123c7aa00c4df6256492
+ms.sourcegitcommit: 14b50e5446f69729f72231f5dc6f536cdd1084c3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71942225"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73933830"
 ---
-# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Sammansatta resurser: Använda en DSC-konfiguration som en resurs
+# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Sammansatta resurser: använda en DSC-konfiguration som en resurs
 
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
-I verkliga situationer kan konfigurationer bli långa och komplexa, anropa många olika resurser och ange ett stort antal egenskaper. För att hjälpa dig att hantera den här komplexiteten kan du använda en Windows PowerShell-konfiguration för Desired State Configuration (DSC) som resurs för andra konfigurationer. Vi kallar den här sammansatta resursen. En sammansatt resurs är en DSC-konfiguration som tar parametrar. Konfigurationens parametrar fungerar som egenskaper för resursen. Konfigurationen sparas som en fil med fil namns tillägget **. schema. psm1** , och i stället för både MOF-schemat och resurs skriptet i en typisk DSC-resurs (mer information om DSC-resurser finns i [Windows PowerShell Desired State Konfigurations resurser](resources.md).
+I verkliga situationer kan konfigurationer bli långa och komplexa, anropa många olika resurser och ange ett stort antal egenskaper. För att hjälpa dig att hantera den här komplexiteten kan du använda en Windows PowerShell-konfiguration för Desired State Configuration (DSC) som resurs för andra konfigurationer. Vi kallar den här sammansatta resursen. En sammansatt resurs är en DSC-konfiguration som tar parametrar. Konfigurationens parametrar fungerar som egenskaper för resursen. Konfigurationen sparas som en fil med fil namns tillägget **. schema. psm1** , och i stället för både MOF-schemat och resurs skriptet i en typisk DSC-resurs (mer information om DSC-resurser finns i [Windows PowerShell Desired State Configuration Resources](resources.md).
 
 ## <a name="creating-the-composite-resource"></a>Skapar den sammansatta resursen
 
@@ -158,10 +158,8 @@ Resursen kan nu upptäckas med hjälp av cmdleten Get-Dscresource Keyword Suppor
 Nu ska vi skapa en konfiguration som anropar den sammansatta resursen. Den här konfigurationen anropar den sammansatta xVirtualMachine-resursen för att skapa en virtuell dator och anropar sedan **xComputer** -resursen för att byta namn på den.
 
 ```powershell
-
 configuration RenameVM
 {
-
     Import-DscResource -Module xVirtualMachine
     Node localhost
     {
@@ -188,14 +186,37 @@ configuration RenameVM
 }
 ```
 
+Du kan också använda den här resursen för att skapa flera virtuella datorer genom att skicka en matris med namn på virtuella datorer till xVirtualMachine-resursen.
+
+```PowerShell
+Configuration MultipleVms
+{
+    Import-DscResource -Module xVirtualMachine
+    Node localhost
+    {
+        xVirtualMachine VMs
+        {
+            VMName = "IIS01", "SQL01", "SQL02"
+            SwitchName = "Internal"
+            SwitchType = "Internal"
+            VhdParentPath = "C:\Demo\VHD\RTM.vhd"
+            VHDPath = "C:\Demo\VHD"
+            VMStartupMemory = 1024MB
+            VMState = "Running"
+        }
+    }
+}
+```
+
 ## <a name="supporting-psdscrunascredential"></a>Stöd för PsDscRunAsCredential
 
->**Obs:** **PsDscRunAsCredential** stöds i PowerShell 5,0 och senare.
+> [!NOTE]
+> **PsDscRunAsCredential** stöds i PowerShell 5,0 och senare.
 
 Du kan använda egenskapen **PsDscRunAsCredential** i resurs blocket [DSC-konfigurationer](../configurations/configurations.md) för att ange att resursen ska köras under en angiven uppsättning autentiseringsuppgifter.
 Mer information finns i [köra DSC med](../configurations/runAsUser.md)användarautentiseringsuppgifter.
 
-Om du vill komma åt användar kontexten inifrån en anpassad resurs kan du använda den `$PsDscContext`automatiska variabeln.
+Om du vill komma åt användar kontexten inifrån en anpassad resurs kan du använda den automatiska variabeln `$PsDscContext`.
 
 Till exempel kan följande kod skriva användar kontexten som resursen körs till i utförlig utdataström:
 

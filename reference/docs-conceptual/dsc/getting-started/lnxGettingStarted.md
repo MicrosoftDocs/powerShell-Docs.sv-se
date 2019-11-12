@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Kom igång med önskad tillstånds konfiguration (DSC) för Linux
-ms.openlocfilehash: 523b91741dba57a98ac6e7ba660a776568af7065
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: b1bc9b9fafd89a1af0f967de38a817bff1f3ffe3
+ms.sourcegitcommit: 14b50e5446f69729f72231f5dc6f536cdd1084c3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71941903"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73933838"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Kom igång med önskad tillstånds konfiguration (DSC) för Linux
 
@@ -28,8 +28,8 @@ I följande tabell beskrivs de nödvändiga paket beroendena för DSC för Linux
 
 |  Nödvändigt paket |  Beskrivning |  Lägsta version |
 |---|---|---|
-| glibc| GNU-bibliotek| 2…4 – 31.30|
-| Python| Python| 2.4 – 3.4|
+| glibc| GNU-bibliotek| 2\... 4 – 31,30|
+| python| Python| 2,4 – 3,4|
 | omiserver| Öppna hanterings infrastruktur| 1.0.8.1|
 | openssl| OpenSSL-bibliotek| 0.9.8 eller 1,0|
 | ctypes| Python CTypes-bibliotek| Måste matcha python-version|
@@ -41,12 +41,12 @@ Du måste installera [Open Management Infrastructure (OMI)](https://github.com/M
 
 ### <a name="installing-omi"></a>Installerar OMI
 
-Önskad tillstånds konfiguration för Linux kräver att CIM-servern Open Management Infrastructure (OMI), version 1.0.8.1 eller senare. OMI kan laddas ned från den öppna gruppen: [Öppna hanterings infrastruktur (OMI)](https://github.com/Microsoft/omi).
+Önskad tillstånds konfiguration för Linux kräver att CIM-servern Open Management Infrastructure (OMI), version 1.0.8.1 eller senare. OMI kan laddas ned från den öppna gruppen: [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi).
 
-Installera OMI genom att installera det paket som är lämpligt för Linux-systemet (. rpm eller. deb) och OpenSSL-version (ssl_098 eller ssl_100) och arkitektur (x64/x86). RPM-paket är lämpliga för CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server och Oracle Linux. DEB-paket är lämpliga för Debian GNU/Linux och Ubuntu Server. Ssl_098-paketen är lämpliga för datorer med OpenSSL 0.9.8 installerade medan ssl_100-paketen är lämpliga för datorer med OpenSSL 1,0 installerat.
+Installera OMI genom att installera det paket som är lämpligt för Linux-systemet (. rpm eller. deb) och OpenSSL-versionen (ssl_098 eller ssl_100) och arkitekturen (x64/x86). RPM-paket är lämpliga för CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server och Oracle Linux. DEB-paket är lämpliga för Debian GNU/Linux och Ubuntu Server. De ssl_098-paketen är lämpliga för datorer med OpenSSL 0.9.8 installerade medan ssl_100-paket är lämpliga för datorer med OpenSSL 1,0 installerat.
 
 > [!NOTE]
-> Om du vill fastställa den installerade OpenSSL-versionen kör `openssl version`du kommandot.
+> För att fastställa den installerade OpenSSL-versionen kör du kommandot `openssl version`.
 
 Kör följande kommando för att installera OMI på ett CentOS 7 x64-system.
 
@@ -56,7 +56,7 @@ Kör följande kommando för att installera OMI på ett CentOS 7 x64-system.
 
 DSC för Linux är tillgängligt för hämtning [här](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/tag/v1.1.1-294).
 
-Installera DSC genom att installera det paket som är lämpligt för Linux-systemet (. rpm eller. deb) och OpenSSL-versionen (ssl_098 eller ssl_100) och arkitekturen (x64/x86). RPM-paket är lämpliga för CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server och Oracle Linux. DEB-paket är lämpliga för Debian GNU/Linux och Ubuntu Server. Ssl_098-paketen är lämpliga för datorer med OpenSSL 0.9.8 installerade medan ssl_100-paketen är lämpliga för datorer med OpenSSL 1,0 installerat.
+Installera DSC genom att installera det paket som är lämpligt för Linux-systemet (. rpm eller. deb) och OpenSSL-versionen (ssl_098 eller ssl_100) och arkitekturen (x64/x86). RPM-paket är lämpliga för CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server och Oracle Linux. DEB-paket är lämpliga för Debian GNU/Linux och Ubuntu Server. De ssl_098-paketen är lämpliga för datorer med OpenSSL 0.9.8 installerade medan ssl_100-paket är lämpliga för datorer med OpenSSL 1,0 installerat.
 
 > [!NOTE]
 > För att fastställa den installerade OpenSSL-versionen kör du kommandot openssl-versionen.
@@ -75,7 +75,7 @@ Nyckelordet Windows PowerShell-konfiguration används för att skapa en konfigur
 
 1. Importera NX-modulen. Windows PowerShell-modulen NX innehåller schemat för inbyggda resurser för DSC för Linux och måste installeras på den lokala datorn och importeras i konfigurationen.
 
-   - Om du vill installera NX-modulen kopierar du NX-modulens `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` katalog `$PSHOME\Modules`till antingen eller. NX-modulen ingår i installations paketet DSC för Linux. Om du vill importera NX-modulen i konfigurationen använder du `Import-DSCResource` kommandot:
+   - Om du vill installera NX-modulen kopierar du NX-modulens katalog till antingen `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` eller `$PSHOME\Modules`. NX-modulen ingår i installations paketet DSC för Linux. Om du vill importera NX-modulen i konfigurationen använder du kommandot `Import-DSCResource`:
 
    ```powershell
    Configuration ExampleConfiguration{
@@ -127,9 +127,9 @@ $Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Aut
 
 > [!NOTE]
 > För "push"-läge måste användarens autentiseringsuppgifter vara rot användaren på Linux-datorn.
-> Endast SSL/TLS-anslutningar stöds för DSC för Linux. `New-CimSession` måste användas med parametern – UseSSL inställd på $True.
-> SSL-certifikatet som används av OMI (för DSC) anges i filen: `/opt/omi/etc/omiserver.conf` med egenskaperna: pemfile och KeyFile.
-> Om det här certifikatet inte är betrott av Windows-datorn som du kör cmdleten [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) på, kan du välja att ignorera certifikat validering med alternativen för CimSession:`-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
+> Endast SSL/TLS-anslutningar stöds för DSC för Linux, `New-CimSession` måste användas med parametern – UseSSL inställd på $true.
+> SSL-certifikatet som används av OMI (för DSC) anges i filen: `/etc/opt/omi/conf/omiserver.conf` med egenskaperna: pemfile och KeyFile.
+> Om det här certifikatet inte är betrott av Windows-datorn som du kör cmdleten [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) på, kan du välja att ignorera certifikat validering med alternativen för CimSession: `-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
 
 Kör följande kommando för att skicka DSC-konfigurationen till Linux-noden.
 
@@ -141,11 +141,11 @@ Konfigurationer kan distribueras till en Linux-dator med en pull-server, precis 
 
 ### <a name="working-with-configurations-locally"></a>Arbeta med konfigurationer lokalt
 
-DSC för Linux innehåller skript för att arbeta med konfiguration från den lokala Linux-datorn. Skripten hittar du i `/opt/microsoft/dsc/Scripts` och inkluderar följande:
+DSC för Linux innehåller skript för att arbeta med konfiguration från den lokala Linux-datorn. Dessa skript finns i `/opt/microsoft/dsc/Scripts` och innehåller följande:
 
 - GetDscConfiguration.py
 
-Returnerar den aktuella konfigurationen som tillämpas på datorn. Liknar cmdlet: en för Windows `Get-DscConfiguration` PowerShell cmdlet.
+Returnerar den aktuella konfigurationen som tillämpas på datorn. Liknar Windows PowerShell-cmdlet `Get-DscConfiguration`-cmdlet.
 
 `# sudo ./GetDscConfiguration.py`
 
