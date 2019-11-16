@@ -2,12 +2,12 @@
 ms.date: 09/06/2019
 keywords: PowerShell, cmdlet
 title: Nyheter i PowerShell 5,0 ISE
-ms.openlocfilehash: a719baef0da1600f0a5377e1b72c81b67e37eef2
-ms.sourcegitcommit: a74ae7ed089301992fed201fbe55d827a622afa0
+ms.openlocfilehash: f687c409a1a4b0e6b872863e9f132f7cf5baff20
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70746229"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117515"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Vad är nytt i Windows PowerShell 5,0 ISE
 
@@ -36,11 +36,11 @@ Med tillägget av IntelliSense är det lättare att identifiera cmdlets och synt
 
 När du skriver cmdlets i Windows PowerShell ISE visas en rullnings bar och klickande meny, så att du kan bläddra och välja lämpliga kommandon.
 
-## <a name="snippets"></a>Kodfragment
+## <a name="snippets"></a>kodfragment
 
 > Tillagt i ISE 3,0
 
-*Kodfragment* är korta avsnitt med Windows PowerShell-kod som du kan infoga i de skript som du skapar i Windows PowerShell ISE. Windows PowerShell ISE levereras med en standard uppsättning kod avsnitt. Du kan lägga till kodfragment med hjälp `New-Snippet` av cmdleten när du arbetar i Windows PowerShell ISE.
+*Kodfragment* är korta avsnitt med Windows PowerShell-kod som du kan infoga i de skript som du skapar i Windows PowerShell ISE. Windows PowerShell ISE levereras med en standard uppsättning kod avsnitt. Du kan lägga till kodfragment med hjälp av `New-Snippet` cmdlet när du arbetar i Windows PowerShell ISE.
 
 **Vilket värde lägger den här ändringen till?**
 
@@ -110,7 +110,7 @@ De separata kommando-och utdatafönstret som var tillgängliga i den första ver
 - Fel indikation
 - Fullständigt Unicode-stöd
 - <kbd>F1</kbd> Sammanhangs beroende hjälp
-- <kbd></kbd>CTRL+<kbd>F1</kbd> kontext känsligt show-kommando
+- <kbd>Ctrl</kbd>+<kbd>F1</kbd> kontext känsligt show-Command
 - Komplext skript och stöd från höger till vänster
 - Stöd för teckensnitt
 - Förhindra
@@ -131,9 +131,9 @@ Windows PowerShell ISE 2,0 har separata kommando-och utmatnings fönster.
 
 Om du startar Windows PowerShell ISE från kommando raden (genom att skriva **powershell_ise. exe**) kan du lägga till följande nya kommando rads växlar.
 
-- `-NoProfile`: Startar Windows PowerShell ISE utan att köra`$profile`
-- `-Help`: Visar ett hjälp fönster
-- `-mta`: Startar Windows PowerShell ISE i flertrådade Apartment-läge. Standard åtgärds läget för Windows PowerShell ISE är ett entrådat Apartment-läge, `-sta`eller.
+- `-NoProfile`: startar Windows PowerShell ISE utan att köra `$profile`
+- `-Help`: visar ett hjälp fönster
+- `-mta`: börjar Windows PowerShell ISE i flertrådadt Apartment-läge. Standard åtgärds läget för Windows PowerShell ISE är ett entrådat Apartment-läge, eller `-sta`.
 
 **Vilket värde lägger den här ändringen till?**
 
@@ -150,13 +150,13 @@ Windows PowerShell ISE 2,0 känner inte igen kommando rads växlarna.
 Andra Windows PowerShell ISE redigerings funktioner är:
 
 - Syntax för **XML-syntax** – Windows PowerShell ISE nu XML-syntax för färger på samma sätt som i Windows PowerShell-syntaxen.
-- **Matchning av klamrar** – Windows PowerShell ISE innehåller matchning och markering av klamrar och kan användas på följande sätt: (Använd kommandot **gå till matchning** eller <kbd>CTRL</kbd>+<kbd>)</kbd> för att hitta den avslutande klammerparentesen, om du har en inledande klammerparentes markerad).
-- **Dispositionsvy** Skript fönstret stöder disposition, vilket gör det möjligt att dölja eller expandera avsnitt i kod genom att klicka på plus eller minus tecken i vänstermarginalen. Du kan använda klammerparenteser eller `#region` taggarna och `#endregion` för att markera början eller slutet av ett komprimerbart avsnitt. Tryck på <kbd>CTRL</kbd>+<kbd>M</kbd>om du vill visa eller dölja alla regioner.
+- **Matchning av klamrar** – Windows PowerShell ISE innehåller matchning och markering av klamrar och kan användas på följande sätt: (om du till exempel använder kommandot **gå till matchning** eller <kbd>CTRL</kbd>+<kbd>]</kbd> hittar du en avslutande klammerparentes, om du har valt en inledande klammerparentes).
+- **Dispositionsvy** Skript fönstret stöder disposition, vilket gör det möjligt att dölja eller expandera avsnitt i kod genom att klicka på plus eller minus tecken i vänstermarginalen. Du kan använda klammerparenteser eller taggarna `#region` och `#endregion` för att markera början eller slutet av ett komprimerbart avsnitt. Om du vill visa eller dölja alla regioner trycker du på <kbd>Ctrl</kbd>+<kbd>M</kbd>.
 - **Dra och släpp text redigering** – Windows PowerShell ISE stöder nu text redigering med dra och släpp. Du kan välja ett valfritt textblock och dra texten till en annan plats i redigeraren eller till-konsolen för att flytta texten. Om du håller ned <kbd>CTRL</kbd> -tangenten medan du drar den markerade texten, kopieras texten till den nya platsen när du släpper mus knappen. I den här versionen av Windows PowerShell ISE när du drar och släpper filer till Windows PowerShell ISE Windows PowerShell ISE öppnar filen.
 - **Fel vid visning av parsningsfel** – parsa fel visas med röda understrykningar. När du hovrar över ett indikerat fel visas det problem som påträffades i koden i knapp beskrivnings texten.
-- **Zooma** – zoomnings procenten för konsolens innehåll kan ställas in med hjälp av skjutreglaget Zooma (i det nedre högra hörnet i Windows PowerShell ISE-fönstret) eller genom att `$psise.options.Zoom` ange kommandot i konsol fönstret.
+- **Zooma** – zoomnings procenten för konsolens innehåll kan ställas in med hjälp av skjutreglaget Zooma (i det nedre högra hörnet i Windows PowerShell ISE-fönstret) eller genom att ange kommandot `$psise.options.Zoom` i konsol fönstret.
 - **RTF-kopiering och Inklistrings** kopiering till urklipp i Windows PowerShell ISE bevarar teckensnitt, storlek och färg information för den ursprungliga markeringen.
-- **Block markering** – du kan välja ett textblock genom att hålla ned <kbd>Alt</kbd> -tangenten medan du väljer text i skript fönstret med musen, eller genom att trycka på <kbd>Alt</kbd>+<kbd>Shift</kbd>+-<kbd>pilen</kbd>.
+- **Block markering** – du kan välja ett textblock genom att hålla ned <kbd>Alt</kbd> -tangenten medan du väljer text i skript fönstret med musen, eller genom att trycka på <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>pilen</kbd>.
 
 **Vilket värde lägger den här ändringen till?**
 
@@ -170,9 +170,9 @@ Dessa redigerings förbättringar fanns inte i Windows PowerShell ISE 2,0.
 
 > Tillagt i PowerShell 3,0
 
-Om du trycker på <kbd>F1</kbd> när markören finns i en cmdlet, eller om du har en del av en-cmdlet markerad, öppnas den nya hjälp visningen av Sammanhangs beroende hjälp om den markerade cmdleten. **Om** du vill visa hjälp för Windows PowerShell `operators` skriver du i konsol fönstret och trycker sedan på <kbd>F1</kbd>.
+Om du trycker på <kbd>F1</kbd> när markören finns i en cmdlet, eller om du har en del av en-cmdlet markerad, öppnas den nya hjälp visningen av Sammanhangs beroende hjälp om den markerade cmdleten. **Om** du vill visa hjälp för Windows PowerShell skriver du `operators` i konsol fönstret och trycker sedan på <kbd>F1</kbd>.
 
-Innan du använder den här funktionen kan du hämta den senaste versionen av hjälp avsnitten för Windows PowerShell från Microsofts webbplats. Den enklaste metoden för att hämta hjälp avsnitten är att köra `Update-Help` cmdleten i konsol fönstret när du kör Windows PowerShell ISE som administratör.
+Innan du använder den här funktionen kan du hämta den senaste versionen av hjälp avsnitten för Windows PowerShell från Microsofts webbplats. Den enklaste metoden för att hämta hjälp avsnitten är att köra cmdleten `Update-Help` i konsol fönstret när du kör Windows PowerShell ISE som administratör.
 
 Du kan ändra var <kbd>F1</kbd> -nyckeln söker efter hjälp. På menyn **verktyg**/**alternativ** på fliken **allmänna inställningar** under **andra inställningar**, kan du ange eller avmarkera kryss rutan **Använd lokalt hjälp innehåll i stället för online-innehåll**. När det här alternativet är markerat söker klienten efter cmdlet-hjälpen i den nedladdade hjälpen i mappen moduler. Om kryss rutan är avmarkerad söker klienten efter hjälp online.
 
@@ -188,17 +188,17 @@ Om <kbd>du</kbd> trycker på F1 i tidigare versioner av Windows PowerShell ISE �
 
 > Tillagt i PowerShell 3,0
 
-Med `Show-Command` cmdleten kan du skapa eller köra en cmdlet eller funktion genom att fylla i ett grafiskt formulär. I formuläret kan användarna arbeta med Windows PowerShell i en grafisk miljö.
-`Show-Command`aktiverar även avancerade skript för att skapa ett snabb Windows PowerShell-baserat GUI.
+Med `Show-Command` cmdlet kan du skapa eller köra en cmdlet eller funktion genom att fylla i ett grafiskt formulär. I formuläret kan användarna arbeta med Windows PowerShell i en grafisk miljö.
+`Show-Command` aktiverar även avancerade skript för att skapa ett snabb Windows PowerShell-baserat GUI.
 
 **Vilket värde lägger den här ändringen till?**
 
-Genom att `Show-Command` använda i dina Windows PowerShell-skript kan du ge användarna en grafisk miljö som de är bekanta med. `Show-Command`kan även hjälpa introduktions användare att lära sig Windows PowerShell.
+Genom att använda `Show-Command` i dina Windows PowerShell-skript kan du ge användarna en grafisk miljö som de är bekanta med. `Show-Command` kan också hjälpa inledande användare att lära sig Windows PowerShell.
 
 **Vad fungerar annorlunda?**
 
-`Show-Command`är New Windows PowerShell ISE 3,0.
+`Show-Command` är nytt Windows PowerShell ISE 3,0.
 
 ## <a name="see-also"></a>Se även
 
-Mer information om hur du använder Windows PowerShell ISE finns i [utforska Windows PowerShell Integrated Scripting Environment](../getting-started/fundamental/exploring-the-windows-powershell-ise.md).
+Mer information om hur du använder Windows PowerShell ISE finns i [utforska Windows PowerShell Integrated Scripting Environment](../components/ise/exploring-the-windows-powershell-ise.md).

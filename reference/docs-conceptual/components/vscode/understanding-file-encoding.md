@@ -1,45 +1,46 @@
 ---
 title: Förstå filkodning i VSCode och PowerShell
-description: Konfigurera Filkodning i VSCode och PowerShell
+description: Konfigurera fil kodning i VSCode och PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 3283e1262c8eb26906429ecf195cfa0b122b330f
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058445"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117405"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Förstå filkodning i VSCode och PowerShell
 
-När du använder VS Code för att skapa och redigera PowerShell-skript, är det viktigt att dina filer sparas med Kodningsformatet för rätt tecken.
+När du använder VS Code för att skapa och redigera PowerShell-skript är det viktigt att filerna sparas med rätt tecken kodnings format.
 
-## <a name="what-is-file-encoding-and-why-is-it-important"></a>Vad är Filkodning och varför är det viktigt?
+## <a name="what-is-file-encoding-and-why-is-it-important"></a>Vad är fil kodning och varför är det viktigt?
 
-VSCode hanterar gränssnittet mellan en mänsklig anger teckensträngar till en buffert och läsning/skrivning block byte i filsystemet. När en fil sparas i VSCode används en textkodning för att göra detta.
+VSCode hanterar gränssnittet mellan en mänsklig genom att ange tecken strängar i en buffert och läsning/skrivning av byte till fil systemet. När VSCode sparar en fil använder den en text kodning för att avgöra vilka byte som varje tecken blir.
 
-När PowerShell körs ett skript konvertera den på samma sätt kan byte i en fil till tecken att rekonstruera filen i ett PowerShell-program. Eftersom VSCode skriver filen och PowerShell läser filen, måste de använda samma kodning system. Den här processen för att tolka ett PowerShell-skript slutar: *byte* -> *tecken* -> *token*  ->   *abstrakt syntax trädet* -> *körning*.
+När PowerShell kör ett skript måste det på samma sätt konvertera byte i en fil till tecken för att återskapa filen till ett PowerShell-program. Eftersom VSCode skriver filen och PowerShell läser in filen måste de använda samma kodnings system. Den här processen för att parsa ett PowerShell-skript går: *byte* -> *tecken* -> *tokens* -> *abstrakta sökträd* -> *körning*.
 
-Både VSCode och PowerShell installeras med en användningstyperna kodning standardkonfiguration. Standardkodning som används av PowerShell har dock ändrats med lanseringen av PowerShell Core (v6.x). Om du vill kontrollera att du har inga problem med PowerShell eller PowerShell-tillägget i VSCode, måste du konfigurera inställningarna för VSCode och PowerShell korrekt.
+Både VSCode och PowerShell installeras med en lämpliga standard kodnings konfiguration. Den standard kodning som används av PowerShell har dock ändrats med versionen av PowerShell Core (V6. x). För att se till att du inte har några problem med PowerShell eller PowerShell-tillägget i VSCode, måste du konfigurera dina VSCode-och PowerShell-inställningar korrekt.
 
-## <a name="common-causes-of-encoding-issues"></a>Vanliga orsaker till kodningsproblem
+## <a name="common-causes-of-encoding-issues"></a>Vanliga orsaker till kodnings problem
 
-Kodning problem vid kodning av VSCode eller skriptfilen inte matchar den förväntade kodningen av PowerShell. Det finns inget sätt för PowerShell för att automatiskt avgöra Filkodning.
+Kodnings problem inträffar när kodningen för VSCode eller skript filen inte matchar den förväntade kodningen av PowerShell. Det finns inget sätt för PowerShell att automatiskt avgöra fil kodningen.
 
-Det är mer sannolikt att ha kodning problem när du använder tecken som inte finns i den [7-bitars ASCII-teckenuppsättningen](https://ascii.cl/). Till exempel:
+Det är mer troligt att du har problem med kodningen när du använder tecken som inte är i [ASCII-teckenuppsättningen med sju bitar](https://ascii.cl/). Till exempel:
 
-- Accent över latinska tecken (`É`, `ü`)
-- Icke-latinska tecken som Kyrillisk (`Д`, `Ц`)
-- Han kinesiska (`脚`, `本`)
+- Utökade tecken som inte är bokstäver, t. ex. tank streck (`—`), hårt blank steg (` `) eller vänster dubbla citat tecken (`“`)
+- Accenttecken (latinskt) tecken (`É`, `ü`)
+- Icke-latinska tecken som kyrilliska (`Д``Ц`)
+- CJK-tecken (`本`, `화`, `が`)
 
-Vanliga orsaker till kodningsproblem är:
+Vanliga orsaker till kodnings problem är:
 
-- Kodningar av VSCode och PowerShell har inte ändrats från standardvärdena. För PowerShell 5.1 och under standard skiljer kodning sig från Vscode's.
-- Någon annan redigerare som har öppnat och skriva över filen i en ny kodning. Detta händer ofta med ISE.
-- Filen checkas in källkontroll i en kodning som skiljer sig från vilka VSCode eller PowerShell förväntas. Detta kan inträffa när medarbetare använder redigerare med olika konfigurationer för kodning.
+- Kodningarna för VSCode och PowerShell har inte ändrats från sina standardvärden. För PowerShell 5,1 och lägre är standard kodningen annorlunda än VSCode.
+- En annan redigerare har öppnat och överskrivit filen i en ny kodning. Detta händer ofta med ISE.
+- Filen checkas in i käll kontroll i en kodning som skiljer sig från vad VSCode eller PowerShell förväntar sig. Detta kan inträffa när medarbetare använder redigerare med olika kodnings konfigurationer.
 
-### <a name="how-to-tell-when-you-have-encoding-issues"></a>Så här avgör du när du har kodningsproblem
+### <a name="how-to-tell-when-you-have-encoding-issues"></a>Så här ser du när du har kodnings problem
 
-Ofta kodningsfel uppträder som parsa fel i skript. Om du hittar onormalt teckensekvenser i skriptet kan vara detta problemet. I exemplet nedan ett tankstreck (`–`) visas som tecknen `â€“`:
+Kodnings fel visas ofta som tolknings fel i skript. Om du hittar konstig teckensekvens i skriptet kan det vara problemet. I exemplet nedan visas ett kort streck (`–`) som de tecken `â€“`:
 
 ```Output
 Send-MailMessage : A positional parameter cannot be found that accepts argument 'Testing FuseMail SMTP...'.
@@ -50,59 +51,59 @@ At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtp
     + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SendMailMessage
 ```
 
-Det här problemet uppstår eftersom VSCode kodar tecknet `–` i UTF-8 som byte `0xE2 0x80 0x93`.
-När dessa byte avkodas som Windows-1252, de tolkas som tecknen `â€“`.
+Det här problemet beror på att VSCode kodar tecken `–` i UTF-8 som de byte `0xE2 0x80 0x93`.
+När dessa byte avkodas som Windows-1252 tolkas de som de tecken som `â€“`.
 
-Vissa onormalt teckensekvenser som kan visas är:
+Några konstig teckensekvens som du kan se är:
 
 <!-- markdownlint-disable MD038 -->
-- `â€“` Istället för `–`
-- `â€”` Istället för `—`
-- `Ã„2` Istället för `Ä`
-- `Â` i stället för ` ` (ett hårt blanksteg)
-- `Ã©` Istället för `é`
+- `â€“` i stället för `–`
+- `â€”` i stället för `—`
+- `Ã„2` i stället för `Ä`
+- `Â` i stället för ` ` (ett hårt blank steg)
+- `Ã©` i stället för `é`
 <!-- markdownlint-enable MD038 -->
 
-Det här praktiska [referens](https://www.i18nqa.com/debug/utf8-debug.html) visar en lista över vanliga mönster som indikerar att en UTF-8/Windows-1252 kodningsproblem.
+Den här praktiska [referensen](https://www.i18nqa.com/debug/utf8-debug.html) listar vanliga mönster som indikerar ett kodnings problem med UTF-8/Windows-1252.
 
 ## <a name="how-the-powershell-extension-in-vscode-interacts-with-encodings"></a>Hur PowerShell-tillägget i VSCode interagerar med kodningar
 
-Tillägget PowerShell samverkar med skript i ett antal olika sätt:
+PowerShell-tillägget samverkar med skript på flera olika sätt:
 
-1. När skript redigeras i VSCode, skickas innehållet från VSCode till tillägget. Den [Språk Server-protokoll][] innehåller principer för att den här innehåll som överförs i UTF-8. Det är därför inte möjligt för tillägget att hämta fel kodning.
-2. När skript körs direkt i integrerad konsol, är de läsa från filen med PowerShell direkt. Om PowerShell-kodning skiljer sig från Vscodes går något fel här.
-3. När ett skript som är öppen i VSCode refererar till ett annat skript som inte är öppen i VSCode, använder tillägget till att läsa in den skriptet innehåll från filsystemet. Tillägget PowerShell UTF-8-kodning som standard, men använder [byte-ordningsmarkering][], eller BOM, identifiering för att välja rätt kodning.
+1. När skript redige ras i VSCode skickas innehållet av VSCode till tillägget. [Språk server protokoll][] bestämmer att det här innehållet överförs i UTF-8. Därför är det inte möjligt för tillägget att få fel kodning.
+2. När skript körs direkt i den integrerade konsolen läses de in från filen med PowerShell direkt. Om PowerShell-kodning skiljer sig från VSCode kan något gå fel här.
+3. När ett skript som är öppet i VSCode refererar till ett annat skript som inte är öppet i VSCode, återgår tillägget till att läsa in skriptets innehåll från fil systemet. PowerShell-tillägget är standardvärdet UTF-8-kodning, men använder [byte-ordnings markering][], eller struktur, identifiering för att välja rätt kodning.
 
-Problemet uppstår när förutsatt att kodning av BOM mindre format (t.ex. [UTF-8][] utan BOM och [Windows-1252][]).
-PowerShell-tillägget som standard UTF-8. Tillägget kan inte ändra Vscodes kodningsinställningar.
-Mer information finns i [utfärda #824](https://github.com/Microsoft/vscode/issues/824).
+Problemet inträffar när du antar kodningen för BOM-mindre format (t. ex. [UTF-8][] utan strukturliste och [Windows-1252][]).
+PowerShell-tillägget är standardvärdet UTF-8. Tillägget kan inte ändra VSCode kodnings inställningar.
+Mer information finns i avsnittet om [problem #824](https://github.com/Microsoft/vscode/issues/824).
 
 ## <a name="choosing-the-right-encoding"></a>Välja rätt kodning
 
 Olika system och program kan använda olika kodningar:
 
-- I .NET Standard är på webben och i Linux-världen UTF-8 nu den dominerande kodningen.
-- Många .NET Framework-program använder [UTF-16][]. Historiska skäl, kallas ibland ”Unicode”, en term där du nu refererar till den mest omfattande [standard](https://en.wikipedia.org/wiki/Unicode) som innehåller både UTF-8 och UTF-16.
-- På Windows fortsätta många interna program som skrevs innan Unicode att använda Windows-1252 som standard.
+- I .NET standard, på webben och i Linux-världen är UTF-8 nu den dominerande kodningen.
+- I många .NET Framework program används [UTF-16][]. Av historiska skäl kallas detta ibland "Unicode", en term som nu refererar till en bred [standard](https://en.wikipedia.org/wiki/Unicode) som innehåller både UTF-8 och UTF-16.
+- I Windows fortsätter många inbyggda program som i förväg med Unicode att använda Windows-1252 som standard.
 
-Unicode-kodningar har också konceptet med en byte-ordning markera (BOM). Strukturer inträffa i början av texten som talar om för en avkodare vilken kodning med hjälp av texten. För multibyte kodningar Strukturen anger även [endianness](https://en.wikipedia.org/wiki/Endianness) för kodningen. Strukturer är avsedda att vara byte som skrivfel uppstår i icke-Unicode-text, vilket gör att en rimlig gissning att texten är Unicode när det finns en struktur.
+Unicode-kodningar har också begreppet ett byte-ordnings tecken (BOM). Strukturer sker i början av texten för att ange en avkodare som kodar texten. För kodningar med flera byte anger strukturen också [endian](https://en.wikipedia.org/wiki/Endianness) -koden. Strukturer är utformade för att vara byte som sällan förekommer i icke-Unicode-text, vilket ger en rimlig gissning att texten är Unicode när en struktur finns.
 
-Strukturer är valfria och antagandet är inte lika populära Linux över hela världen eftersom en pålitlig konvention UTF-8 används överallt. De flesta Linux-program förutsätter att mata in text är kodat i UTF-8. Även om många program i Linux identifierar och hanterar en struktur, ett tal inte, vilket leder till artefakter i texten ändras med dessa program.
+Strukturer är valfria och deras införande är inte lika populärt i Linux-världen, eftersom en pålitlig konvention av UTF-8 används överallt. De flesta Linux-program förutsätter att text ingången kodas i UTF-8. Många Linux-program kommer att känna igen och hantera en struktur korrekt, men en siffra gör inte, vilket leder till artefakter i text som manipuleras med dessa program.
 
 **Därför**:
 
-- Om du arbetar huvudsakligen med Windows-program och Windows PowerShell, bör du föredrar en kodning som UTF-8 med BOM eller UTF-16.
-- Om du arbetar på olika plattformar, bör du föredrar UTF-8 med BOM.
-- Om du arbetar huvudsakligen i Linux-associerade kontexter bör du föredrar UTF-8 utan BOM.
-- Windows-1252 och latin 1 är i stort sett äldre kodningar som du bör undvika att om möjligt.
-  Men kan vissa äldre Windows-program bero på dem.
-- Det är också värt att skriptet är att registrera [encoding-beroende](https://github.com/PowerShell/PowerShell/issues/3466), vilket innebär att en ändring av kodning på ett signerade skript kräver uppsägning.
+- Om du arbetar i första hand med Windows-program och Windows PowerShell bör du föredra en kodning som UTF-8 med BOM eller UTF-16.
+- Om du arbetar på olika plattformar bör du hellre använda UTF-8 med BOM.
+- Om du arbetar huvudsakligen i Linux-associerade kontexter bör du hellre UTF-8 utan struktur.
+- Windows-1252 och Latin-1 är i princip äldre kodningar som du bör undvika om möjligt.
+  Vissa äldre Windows-program kan dock vara beroende av dem.
+- Det är också värt att notera att skript signering är [kodnings beroende](https://github.com/PowerShell/PowerShell/issues/3466), vilket innebär att en ändring av kodningen på ett signerat skript kräver omregistrering.
 
 ## <a name="configuring-vscode"></a>Konfigurera VSCode
 
-Vscodes standardkodning är UTF-8 utan BOM.
+VSCode standard encoding är UTF-8 utan struktur.
 
-Ange [Vscodes kodning][]går du till inställningar för VSCode (<kbd>Ctrl</kbd>+<kbd>,</kbd>) och ange den `"files.encoding"` inställningen:
+Om du vill ange [VSCode kodning][]går du till VSCode-inställningarna (<kbd>CTRL</kbd>+<kbd>,</kbd>) och anger inställningen `"files.encoding"`:
 
 ```json
 "files.encoding": "utf8bom"
@@ -110,21 +111,21 @@ Ange [Vscodes kodning][]går du till inställningar för VSCode (<kbd>Ctrl</kbd>
 
 Några möjliga värden är:
 
-- `utf8`: [UTF-8] utan BOM
-- `utf8bom`: [UTF-8] med BOM
-- `utf16le`: Little endian [UTF-16]
-- `utf16be`: Big endian [UTF-16]
+- `utf8`: [UTF-8] utan struktur
+- `utf8bom`: [UTF-8] med struktur
+- `utf16le`: lite endian [UTF-16]
+- `utf16be`: big endian [UTF-16]
 - `windows1252`: [Windows-1252]
 
-Du bör få en listruta för detta i vyn GUI eller visa Completion-händelser för den i JSON.
+Du bör få en listruta för detta i vyn grafiskt eller om du har slutfört den i JSON-vyn.
 
-Du kan också lägga till följande Autodetect kodning när det är möjligt:
+Du kan också lägga till följande för att automatiskt identifiera kodning när det är möjligt:
 
 ```json
 "files.autoGuessEncoding": true
 ```
 
-Om du inte vill att dessa inställningar påverkar alla filtyper, kan VSCode också konfigurationer per språk. Skapa en språkspecifik inställning genom att ange inställningar i en `[<language-name>]` fält. Till exempel:
+Om du inte vill att de här inställningarna ska påverka alla filtyper kan VSCode också använda konfigurationer för flera språk. Skapa en språkspecifik inställning genom att lägga till inställningar i ett `[<language-name>]`s fält. Till exempel:
 
 ```json
 "[powershell]": {
@@ -135,12 +136,12 @@ Om du inte vill att dessa inställningar påverkar alla filtyper, kan VSCode ock
 
 ## <a name="configuring-powershell"></a>Konfigurera PowerShell
 
-PowerShell-standardkodning varierar beroende på version:
+PowerShell: s standard kodning varierar beroende på version:
 
-- I PowerShell 6 + är standardkodning UTF-8 utan BOM på alla plattformar.
-- Windows PowerShell, standardkodning är vanligtvis Windows-1252, en utökning av [latin 1][], även kallad ISO 8859-1.
+- I PowerShell 6 + är standard kodningen UTF-8 utan struktur på alla plattformar.
+- I Windows PowerShell är standard kodningen vanligt vis Windows-1252, ett tillägg på [Latin-1][], även kallat ISO 8859-1.
 
-Du kan hitta din standardkodning med detta i PowerShell 5 +:
+I PowerShell 5 + kan du hitta din standard kodning med följande:
 
 ```powershell
 [psobject].Assembly.GetTypes() | Where-Object { $_.Name -eq 'ClrFacade'} |
@@ -149,7 +150,7 @@ Du kan hitta din standardkodning med detta i PowerShell 5 +:
   }
 ```
 
-Följande [skriptet](https://gist.github.com/rjmholt/3d8dd4849f718c914132ce3c5b278e0e) kan användas för att fastställa vad kodning PowerShell-sessionen härleder för ett skript utan en struktur.
+Följande [skript](https://gist.github.com/rjmholt/3d8dd4849f718c914132ce3c5b278e0e) kan användas för att avgöra vilken kodning din PowerShell-session härleds för ett skript utan en struktur.
 
 ```powershell
 $badBytes = [byte[]]@(0xC3, 0x80)
@@ -182,21 +183,21 @@ finally
 }
 ```
 
-Det är möjligt att konfigurera PowerShell för att använda en viss kodning som vanligtvis med profilinställningar. Se följande artiklar:
+Det är möjligt att konfigurera PowerShell för att använda en specifik kodning som oftare använder profil inställningar. Se följande artiklar:
 
-- [@mklement0]'s [svar om PowerShell kodning på StackOverflow](https://stackoverflow.com/a/40098904).
-- [@rkeithhill]'s [blogginlägget om hantering av BOM utan UTF-8 indata i PowerShell](https://rkeithhill.wordpress.com/2010/05/26/handling-native-exe-output-encoding-in-utf8-with-no-bom/).
+- [@mklement0s ] [svar om PowerShell-kodning på StackOverflow](https://stackoverflow.com/a/40098904).
+- [@rkeithhills ] [blogg inlägg om att hantera STRUKTURLISTE-mindre UTF-8-indata i PowerShell](https://rkeithhill.wordpress.com/2010/05/26/handling-native-exe-output-encoding-in-utf8-with-no-bom/).
 
-Det går inte att tvinga PowerShell för att använda en specifik inkommande kodning. PowerShell 5.1 och under Windows-1252-kodning när det finns inga BOM som standard. Det är bäst att spara skript i en Unicode-format med en struktur för samverkan skäl.
+Det går inte att tvinga PowerShell att använda en speciell kodning för inkodning. PowerShell 5,1 och nedan används som standard för Windows-1252-kodning när det inte finns någon struktur. Av samverkans orsaker är det bäst att spara skript i Unicode-format med en struktur.
 
 > [!IMPORTANT]
-> Verktyg från någon annan har den touch PowerShell skript kan påverkas av valen kodning eller koda om skripten till en annan kodning.
+> Andra verktyg som du kan använda för att trycka PowerShell-skript kan påverkas av kodnings alternativen eller koda om skripten till en annan kodning.
 
 ### <a name="existing-scripts"></a>Befintliga skript
 
-Skript redan i filsystemet kan behöva kodas igen till din nya valda kodning. I det nedre fältet för VSCode visas etiketten UTF-8. Klicka om du vill öppna Åtgärdsfältet och välj **spara med kodning**. Du kan nu välja en ny kodning för filen. Se [Vscodes kodning][] fullständiga instruktioner.
+Skript som redan finns i fil systemet kan behöva kodas om till den nya valda kodningen. I det nedre fältet i VSCode visas etiketten UTF-8. Klicka på den för att öppna åtgärds fältet och välj **Spara med kodning**. Nu kan du välja en ny kodning för filen. Se [VSCode kodning][] för fullständiga instruktioner.
 
-Om du vill koda om flera filer kan använda du följande skript:
+Om du behöver Omkoda flera filer kan du använda följande skript:
 
 ```powershell
 Get-ChildItem *.ps1 -Recurse | ForEach-Object {
@@ -205,73 +206,73 @@ Get-ChildItem *.ps1 -Recurse | ForEach-Object {
 }
 ```
 
-### <a name="the-powershell-integrated-scripting-environment-ise"></a>PowerShell Integrated Scripting Environment (ISE)
+### <a name="the-powershell-integrated-scripting-environment-ise"></a>PowerShell (Integrated Scripting Environment)
 
-Du behöver synkronisera dina kodning inställningar om du också redigera skript med hjälp av PowerShell ISE.
+Om du också redigerar skript med hjälp av PowerShell ISE måste du synkronisera dina kodnings inställningar där.
 
-ISE bör respektera en struktur, men det är också möjligt att använda reflektion till [Ange kodning](https://bensonxion.wordpress.com/2012/04/25/powershell-ise-default-saveas-encoding/).
-Observera att detta skulle sparas mellan omstarter.
+ISE bör svara på en struktur, men det är också möjligt att använda reflektion för att [Ange kodningen](https://bensonxion.wordpress.com/2012/04/25/powershell-ise-default-saveas-encoding/).
+Observera att detta inte behålls mellan starter.
 
-### <a name="source-control-software"></a>Program för källkontroll
+### <a name="source-control-software"></a>Käll kontroll program vara
 
-Vissa verktyg för källa kontroll, till exempel git, Ignorera kodningar; Git spårar bara byte.
-Andra, kanske som Azure DevOps- eller Mercurial, inte. Även vissa git-baserade verktyg är beroende av avkodning text.
+Vissa käll kontroll verktyg, till exempel git, ignorera kodningar; git spårar bara bytena.
+Andra, som Azure DevOps eller Mercurial, kanske inte. Även vissa git-baserade verktyg är beroende av avkodning av text.
 
-När så är fallet kontrollerar du:
+I så fall måste du se till att:
 
-- Konfigurera textkodning i din källkontroll för att matcha din VSCode-konfiguration.
-- Se till att alla filer är markerade i källkontrollen i den relevanta kodningen.
-- Vara försiktig med ändringar i kodningen emot via källkontroll. Ett nyckel tecken på detta är en diff som anger ändringar men där ingenting verkar har ändrats (eftersom byte har men har inte).
+- Konfigurera text kodningen i käll kontrollen så att den matchar din VSCode-konfiguration.
+- Se till att alla filer är markerade med käll kontroll i relevant kodning.
+- Försiktig ändringar i kodningen som tagits emot via käll kontroll. Ett nyckel tecken på detta är en skillnad som indikerar ändringar men där inget verkar ha ändrats (eftersom byte har tecken, men inte).
 
-### <a name="collaborators-environments"></a>Medarbetare-miljöer
+### <a name="collaborators-environments"></a>Samarbets miljöer
 
-Se till att dina medarbetare på alla filer som du delar inte har inställningar som åsidosätter kodningen genom att behöva koda PowerShell-filer på konfigurerar källkontroll.
+Se till att dina medarbetare på alla filer som du delar inte har några inställningar som åsidosätter din kodning genom att koda om PowerShell-filer om du vill konfigurera käll kontroll.
 
 ### <a name="other-programs"></a>Andra program
 
-Alla andra program som läser eller skriver ett PowerShell-skript kan koda om den.
+Alla andra program som läser eller skriver ett PowerShell-skript kan koda det igen.
 
 Några exempel är:
 
-- Du kan använda Urklipp för att kopiera och klistra in ett skript. Detta är vanligt i scenarier som:
-  - Kopierar ett skript till en virtuell dator
-  - Kopierar ett skript från ett e-postmeddelande eller en webbsida
-  - Kopierar ett skript till eller från ett Microsoft Word- eller PowerPoint-dokument
-- Andra textredigerare, till exempel:
-  - Anteckningar
+- Använd Urklipp för att kopiera och klistra in ett skript. Detta är vanligt i scenarier som:
+  - Kopiera ett skript till en virtuell dator
+  - Kopiera ett skript från ett e-postmeddelande eller en webb sida
+  - Kopiera ett skript till eller från ett Microsoft Word-eller PowerPoint-dokument
+- Andra text redigerare, till exempel:
+  - Block
   - vim
-  - Alla andra PowerShell-Skriptredigeraren
-- Redigera verktyg, som text:
+  - Andra PowerShell-skript redigerare
+- Text redigerings verktyg, t. ex.:
   - `Get-Content`/`Set-Content`/`Out-File`
-  - PowerShell-omdirigering operatörer som `>` och `>>`
+  - Operatorer för PowerShell-omdirigering som `>` och `>>`
   - `sed`/`awk`
-- Filen överföringsprogram, t.ex.:
-  - En webbläsare, när du laddar ned skript
-  - En filresurs
+- Fil överförings program, t. ex.:
+  - En webbläsare, vid hämtning av skript
+  - En fil resurs
 
-Vissa av verktygen kan hantera i byte i stället för text, men andra erbjuder kodning konfigurationer. I de fall där du behöver konfigurera en kodning kan behöva du blir samma som redigeringsprogram kodning för att förhindra problem.
+Några av dessa verktyg behandlar byte i stället för text, men andra erbjuder kodnings konfigurationer. I de fall där du behöver konfigurera en kodning måste du göra den densamma som din redigerings kodning för att förhindra problem.
 
-## <a name="other-resources-on-encoding-in-powershell"></a>Andra resurser på kodning i PowerShell
+## <a name="other-resources-on-encoding-in-powershell"></a>Andra resurser för kodning i PowerShell
 
-Det finns några andra bra inlägg på kodning och konfigurera kodning i PowerShell som är värda att en läsning:
+Det finns några andra bra inlägg på kodning och konfigurering av kodning i PowerShell som är värda en läsning:
 
-- [@mklement0]'s [sammanfattning av PowerShell kodning på StackOverflow](https://stackoverflow.com/questions/40098771/changing-powershells-default-output-encoding-to-utf-8)
-- Tidigare problem öppnas på vscode-PowerShell för kodning problem:
+- [@mklement0] [Sammanfattning av PowerShell-kodning på StackOverflow](https://stackoverflow.com/questions/40098771/changing-powershells-default-output-encoding-to-utf-8)
+- Tidigare problem öppnades på VSCode-PowerShell för kodnings problem:
   - [#1308](https://github.com/PowerShell/vscode-powershell/issues/1308)
   - [#1628](https://github.com/PowerShell/vscode-powershell/issues/1628)
   - [#1680](https://github.com/PowerShell/vscode-powershell/issues/1680)
   - [#1744](https://github.com/PowerShell/vscode-powershell/issues/1744)
   - [#1751](https://github.com/PowerShell/vscode-powershell/issues/1751)
-- [Klassiskt *Johan på programvara* Skriv upp om Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
-- [Kodning i .NET Standard](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
+- [Den klassiska *Joel om program vara* skriver upp om Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
+- [Kodning i .NET standard](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
 
 
 [@mklement0]: https://github.com/mklement0
 [@rkeithhill]: https://github.com/rkeithhill
 [Windows-1252]: https://wikipedia.org/wiki/Windows-1252
-[latin 1]: https://wikipedia.org/wiki/ISO/IEC_8859-1
+[Latin-1]: https://wikipedia.org/wiki/ISO/IEC_8859-1
 [UTF-8]: https://wikipedia.org/wiki/UTF-8
-[byte-ordningsmarkering]: https://wikipedia.org/wiki/Byte_order_mark
+[byte-ordnings markering]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
-[Språk Server-protokoll]: https://microsoft.github.io/language-server-protocol/
-[Vscodes kodning]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
+[Språk server protokoll]: https://microsoft.github.io/language-server-protocol/
+[VSCode kodning]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support

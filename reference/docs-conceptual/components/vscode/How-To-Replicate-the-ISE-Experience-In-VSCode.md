@@ -2,113 +2,130 @@
 title: Så här replikerar du ISE-upplevelsen i Visual Studio Code
 description: Så här replikerar du ISE-upplevelsen i Visual Studio Code
 ms.date: 08/06/2018
-ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d5542e9a3a48b1ae64356309be669418edf6c79e
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058530"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117468"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Så här replikerar du ISE-upplevelsen i Visual Studio Code
 
-PowerShell-tillägget för VSCode inte söker efter slutförd funktionsparitet med PowerShell ISE, men det finns funktioner för att göra VSCode-upplevelsen mer naturligt för användare av ISE.
+Även om PowerShell-tillägget för VSCode inte söker efter slut på funktions paritet med PowerShell ISE finns det funktioner för att göra VSCode-upplevelsen mer naturlig för användare av ISE.
 
-Det här dokumentet försöker listinställningar som du kan konfigurera i VSCode för att användaren ska få lite mer bekant jämfört med ISE.
+Det här dokumentet försöker visa en lista över inställningar som du kan konfigurera i VSCode för att göra det enklare att komma åt användarna jämfört med ISE.
 
-## <a name="key-bindings"></a>Nyckelbindningar
+## <a name="key-bindings"></a>Nyckel bindningar
 
-| Funktion                              | ISE-bindning                  | VSCode Binding                              |
+| Funktion                              | ISE-bindning                  | VSCode-bindning                              |
 | ----------------                      | -----------                  | --------------                              |
-| Felsökare för avbrott och reparation          | <kbd>Ctrl</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
-| Köra aktuell rad/markerad text | <kbd>F8</kbd>                | <kbd>F8</kbd>                               |
+| Avbryta och bryta fel sökning          | <kbd>Ctrl</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
+| Kör aktuell rad/markerad text | <kbd>F8</kbd>                | <kbd>F8</kbd>                               |
 | Lista tillgängliga kodfragment               | <kbd>Ctrl</kbd>+<kbd>J</kbd> | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
 
-### <a name="custom-key-bindings"></a>Den anpassade nyckeln bindningar
+### <a name="custom-key-bindings"></a>Anpassade nyckel bindningar
 
-Du kan [konfigurera egna nyckelbindningar](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings) i VSCode samt.
+Du kan också [Konfigurera dina egna nyckel bindningar](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings) i VSCode.
 
-## <a name="tab-completion"></a>Tabbifyllning
+## <a name="simplified-ise-like-ui"></a>Förenklat ISE – liknande gränssnitt
 
-Lägg till den här inställningen om du vill aktivera fler ISE-liknande tabbifyllning:
+Om du vill förenkla Visual Studio Code-ANVÄNDARGRÄNSSNITTET för att se närmare användar gränssnittet för ISE, använder du följande två inställningar:
 
 ```json
-"editor.tabCompletion": "on"
+"workbench.activityBar.visible": false,
+"debug.openDebug": "neverOpen",
+```
+
+Avsnittet "aktivitets fält" och "Felsök sid List" visas i den röda rutan:
+
+![avsnittet är markerat och innehåller aktivitets fält och sid list för fel sökning](images/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+
+Slut resultatet ser ut så här:
+
+![Förenklad vy av VS Code](images/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
+
+## <a name="tab-completion"></a>Slut för ande flik
+
+Lägg till den här inställningen om du vill aktivera fler ISE-liknande flikar:
+
+```json
+"editor.tabCompletion": "on",
 ```
 
 > [!NOTE]
-> Den här inställningen har lagts till direkt till VSCode (i stället för i tillägget). Sitt beteende bestäms av VSCode direkt och kan inte ändras av tillägget.
+> Den här inställningen lades till direkt i VSCode (i stället för i tillägget). Dess beteende bestäms av VSCode direkt och kan inte ändras av tillägget.
 
-## <a name="no-focus-on-console-when-executing"></a>Inga fokus på konsolen när du kör
+## <a name="no-focus-on-console-when-executing"></a>Ingen fokus på konsolen vid körning
 
-Att hålla fokus i redigeraren när du kör med <kbd>F8</kbd>:
+För att behålla fokus i redigeraren när du kör med <kbd>F8</kbd>:
 
 ```json
 "powershell.integratedConsole.focusConsoleOnExecute": false
 ```
 
-Standardvärdet är `true` för hjälpmedel.
+Standardvärdet är `true` i tillgänglighets syfte.
 
-## <a name="dont-start-integrated-console-on-startup"></a>Starta inte integrerad konsol vid start
+## <a name="dont-start-integrated-console-on-startup"></a>Starta inte den integrerade konsolen vid start
 
-Om du vill stoppa integrerad konsol vid start, ange:
+Stoppa den integrerade konsolen vid start genom att ange:
 
 ```json
 "powershell.integratedConsole.showOnStartup": false
 ```
 
 > [!NOTE]
-> Bakgrunden PowerShell-processen startar fortfarande eftersom som ger IntelliSense, analys av skriptet, symbol navigering osv. Men kommer inte att visas i konsolen.
+> PowerShell-processen för bakgrunden kommer fortfarande att starta eftersom den innehåller IntelliSense, skript analys, symbol navigering osv. Men konsolen visas inte.
 
-## <a name="assume-files-are-powershell-by-default"></a>Anta att filer är PowerShell som standard
+## <a name="assume-files-are-powershell-by-default"></a>Anta att filerna är PowerShell som standard
 
-Registrera dig som PowerShell som standard för att se nya/Namnlös filer:
-
-```json
-"files.defaultLanguage": "powershell"
-```
-
-## <a name="color-scheme"></a>Färgschema
-
-Det finns ett antal ISE teman för VSCode för att göra redigeraren Se mycket mer likt ISE.
-
-I den [Kommandopalett] typ `theme` att hämta `Preferences: Color Theme` och tryck på <kbd>RETUR</kbd>.
-I listrutan, väljer `PowerShell ISE`.
-
-Du kan ange den här tema i inställningarna med:
+Om du vill skapa nya/namnlösa filer registrerar du som PowerShell som standard:
 
 ```json
-"workbench.colorTheme": "PowerShell ISE"
+"files.defaultLanguage": "powershell",
 ```
 
-## <a name="powershell-command-explorer"></a>PowerShell-kommando Explorer
+## <a name="color-scheme"></a>Färg schema
 
-Tack vare verk som tillhör [ @corbob ](https://github.com/corbob), PowerShell-tillägget har början av en egen kommandot explorer.
+Det finns ett antal ISE-teman som är tillgängliga för VSCode för att göra redigeraren att se mycket mer som ISE.
 
-I den [Kommandopalett], ange `PowerShell Command Explorer` och tryck på <kbd>RETUR</kbd>.
+I [Kommando palett] typ `theme` för att hämta `Preferences: Color Theme` och tryck på <kbd>RETUR</kbd>.
+I list rutan väljer du `PowerShell ISE`.
+
+Du kan ange det här temat i inställningarna med:
+
+```json
+"workbench.colorTheme": "PowerShell ISE",
+```
+
+## <a name="powershell-command-explorer"></a>PowerShell kommando Utforskaren
+
+Till [@corbob](https://github.com/corbob)kommer PowerShell-tillägget att ha början av en egen kommando Utforskare.
+
+I [Kommando palett]anger du `PowerShell Command Explorer` och trycker på <kbd>RETUR</kbd>.
 
 ## <a name="open-in-the-ise"></a>Öppna i ISE
 
-Om du hamnar vill öppna en fil i ISE ändå kan du använda <kbd>SKIFT</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd>.
+Om du vill öppna en fil i ISE ändå kan du använda <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd>.
 
 ## <a name="other-resources"></a>Andra resurser
 
 - 4sysops har [en bra artikel](https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/) om hur du konfigurerar VSCode för att vara mer som ISE.
-- Mike F Robbins har [ett bra inlägg](https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/) om hur du konfigurerar VSCode.
-- Lär dig PowerShell har [en utmärkt Skriv upp](https://www.learnpwsh.com/setup-vs-code-for-powershell/) på att få VSCode installationsprogrammet för PowerShell.
+- Mike F Robbins har [en bra post](https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/) för att ställa in VSCode.
+- Lär dig mer om PowerShell har [en utmärkt Skriv åtgärd](https://www.learnpwsh.com/setup-vs-code-for-powershell/) för att hämta VSCode-installationsprogrammet för PowerShell.
 
 ## <a name="more-settings"></a>Fler inställningar
 
-Om du känner av fler sätt att göra VSCode känna dig mer bekant för ISE-användare kan bidra till det här dokumentet. Om det finns en konfiguration för kompatibilitet som du letar efter, men du kan inte hitta några sätt att göra det möjligt för [öppna ett ärende](https://github.com/PowerShell/vscode-powershell/issues/new/choose) och fråga!
+Om du känner till fler sätt att göra VSCode mer bekant för ISE-användare, bidrar till det här dokumentet. Om det finns en kompatibilitetsrapport som du letar efter, men du inte hittar något sätt att aktivera den, [öppnar du ett ärende](https://github.com/PowerShell/vscode-powershell/issues/new/choose) och ber om det!
 
-Vi är alltid glada över att acceptera pull-begäranden och bidrag samt!
+Vi är alltid glada att kunna ta emot pull och bidrag även!
 
-## <a name="vscode-tips"></a>Tips för VSCode
+## <a name="vscode-tips"></a>VSCode-tips
 
-### <a name="command-palette"></a>Kommandopalett
+### <a name="command-palette"></a>Kommando palett
 
-<kbd>F1</kbd> eller <kbd>Ctrl</kbd>+<kbd>SKIFT</kbd>+<kbd>P</kbd> (<kbd>Cmd</kbd> + <kbd> Flytta</kbd>+<kbd>P</kbd> på macOS)
+<kbd>F1</kbd> ELLER <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (<kbd>cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> på MacOS)
 
 Ett praktiskt sätt att köra kommandon i VSCode.
-Mer information finns i [VSCode docs](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
+Mer information finns i [VSCode-dokumenten](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
 
-[Kommandopalett]: #command-palette
+[Kommando palett]: #command-palette

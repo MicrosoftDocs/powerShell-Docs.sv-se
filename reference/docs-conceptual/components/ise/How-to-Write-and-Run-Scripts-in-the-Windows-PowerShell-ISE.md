@@ -1,152 +1,152 @@
 ---
 ms.date: 08/14/2018
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Skriv och kör skript i Windows PowerShell ISE
-ms.openlocfilehash: 4a08d7d206d103dcb398964d7ce75bea1e76559a
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: be54e26965a6d2f1472059820080a6a06c47dd26
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67028968"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117567"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Skriv och kör skript i Windows PowerShell ISE
 
-Den här artikeln beskriver hur du skapa, redigera, köra och spara skript i skriptfönstret.
+Den här artikeln beskriver hur du skapar, redigerar, kör och sparar skript i fönstret skript.
 
-## <a name="how-to-create-and-run-scripts"></a>Hur du skapar och kör skript
+## <a name="how-to-create-and-run-scripts"></a>Så här skapar och kör du skript
 
-Du kan öppna och redigera Windows PowerShell-filer i skriptfönstret. Specifika filtyper intressanta i Windows PowerShell är skriptfiler (.ps1), skriptfiler data (.psd1) och modulen skriptfiler (.psm1). De här filtyperna är färgade i skriptfönstret redigeraren syntax. Andra vanliga filtyper som du kan öppna i skriptfönstret är konfigurationsfiler (.ps1xml), XML-filer och textfiler.
+Du kan öppna och redigera Windows PowerShell-filer i skript fönstret. Specifika filtyper av intresse i Windows PowerShell är skriptfiler (. ps1), skriptfiler (. psd1) och filer för skript-modul (. psm1). Dessa filtyper är syntax som är färgade i redigerings fönstret för skript. Andra vanliga filtyper som du kan öppna i skript fönstret är konfigurationsfiler (. ps1xml), XML-filer och textfiler.
 
 > [!NOTE]
-> Windows PowerShell-körningsprincipen avgör om du kan köra skript och läsa in Windows PowerShell-profiler och konfigurationsfiler. Standardprincipen för körning begränsad, förhindrar alla skript från att köras och förhindrar inläsning av profiler. Om du vill ändra körningsprincipen för att tillåta profiler att läsa in och används, se [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy) och [about_Signing](/powershell/module/microsoft.powershell.core/about/about_signing).
+> Windows PowerShell-körnings principen avgör om du kan köra skript och läsa in Windows PowerShell-profiler och konfigurationsfiler. Standard körnings principen, som är begränsad, förhindrar att alla skript körs och förhindrar inläsning av profiler. Om du vill ändra körnings principen så att profiler kan läsas in och användas, se [set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy) och [about_Signing](/powershell/module/microsoft.powershell.core/about/about_signing).
 
-### <a name="to-create-a-new-script-file"></a>Du skapar en ny skriptfil
+### <a name="to-create-a-new-script-file"></a>Så här skapar du en ny skript fil
 
-I verktygsfältet klickar du på **New**, eller på den **filen** -menyn klickar du på **New**. Den skapade filen visas i en ny flik i filen under den aktuella PowerShell-fliken. Kom ihåg att PowerShell-flikar visas bara när det finns fler än en. Som standard skapas en fil av typen skript (.ps1), men den kan sparas med ett nytt namn och tillägg. Flera skriptfiler kan skapas i samma PowerShell-flik.
+I verktygsfältet klickar du på **nytt**eller på **nytt**på **Arkiv** -menyn. Den skapade filen visas på fliken ny fil på fliken aktuell PowerShell. kom ihåg att PowerShell-flikarna bara visas när det finns fler än en. Som standard skapas en fil av typen script (. ps1), men den kan sparas med ett nytt namn och tillägg. Du kan skapa flera skriptfiler på samma PowerShell-flik.
 
 ### <a name="to-open-an-existing-script"></a>Öppna ett befintligt skript
 
-I verktygsfältet klickar du på **öppna**, eller på den **filen** -menyn klickar du på **öppna**. I den **öppna** dialogrutan väljer du den fil du vill öppna. Öppna filen visas i en ny flik.
+Klicka på **Öppna**i verktygsfältet, eller klicka på **Öppna**på **Arkiv** -menyn. I dialog rutan **Öppna** väljer du den fil som du vill öppna. Den öppna filen visas på en ny flik.
 
-### <a name="to-close-a-script-tab"></a>Stäng fliken ett skript
+### <a name="to-close-a-script-tab"></a>Stänga en skript-flik
 
-Klickar du på den **Stäng** ikonen (X) av fliken fil som du vill stänga eller Välj den **filen** menyn och klickar på **Stäng**.
+Klicka på ikonen **Stäng** (X) på fliken Arkiv som du vill stänga eller Välj menyn **Arkiv** och klicka på **Stäng**.
 
-Om filen har ändrats sedan den senast sparades, uppmanas du att spara eller ta bort den.
+Om filen har ändrats sedan den senast sparades uppmanas du att spara eller ta bort den.
 
-### <a name="to-display-the-file-path"></a>Att visa sökvägen till filen
+### <a name="to-display-the-file-path"></a>Så här visar du sökvägen till filen
 
-På fliken Arkiv, pekar du på namnet på filen. Den fullständiga sökvägen till skriptfilen visas i en knappbeskrivning.
+Peka på fil namnet på fliken fil. Den fullständigt kvalificerade sökvägen till skript filen visas i en knapp beskrivning.
 
-### <a name="to-run-a-script"></a>Att köra ett skript
+### <a name="to-run-a-script"></a>Köra ett skript
 
-I verktygsfältet klickar du på **kör skript**, eller på den **filen** -menyn klickar du på **kör**.
+I verktygsfältet klickar du på **Kör skript**eller på **Arkiv** -menyn och sedan på **Kör**.
 
-### <a name="to-run-a-portion-of-a-script"></a>Att köra en del av ett skript
+### <a name="to-run-a-portion-of-a-script"></a>Köra en del av ett skript
 
-1. I skriptfönstret, väljer du en del av ett skript.
-2. På den **filen** -menyn klickar du på **kör**, eller i verktygsfältet klickar du på **kör**.
+1. I fönstret skript väljer du en del av ett skript.
+2. På **Arkiv** -menyn klickar du på **Kör markering**eller på verktygsfältet klickar du på **Kör markering**.
 
-### <a name="to-stop-a-running-script"></a>Stoppa en som kör skript
+### <a name="to-stop-a-running-script"></a>Stoppa ett skript som körs
 
-Det finns flera sätt att sluta köra skriptet.
+Det finns flera sätt att stoppa ett skript som körs.
 
-- Klicka på **stoppa åtgärden** i verktygsfältet
+- Klicka på **stoppa åtgärd** i verktygsfältet
 - Tryck på CTRL + BREAK
-- Välj den **filen** menyn och klickar på **stoppa åtgärden**.
+- Välj menyn **Arkiv** och klicka på **stoppa åtgärd**.
 
-Att trycka på **CTRL + C** fungerar även om inte text är markerad kan i så fall **CTRL + C** mappar till kopieringsfunktionen för den markerade texten.
+Tryck på **CTRL + c** fungerar även om inte en text är markerad, där **CTRL + C** mappar till kopierings funktionen för den markerade texten.
 
-## <a name="how-to-write-and-edit-text-in-the-script-pane"></a>Hur du skriver och redigerar text i skriptfönstret
+## <a name="how-to-write-and-edit-text-in-the-script-pane"></a>Skriva och redigera text i skript fönstret
 
-Du kan kopiera, klippa ut, klistra in, söka och ersätta text i skriptfönstret. Du kan också ångra och gör om den senaste åtgärden som du precis har utfört. Kortkommandon för dessa åtgärder är samma kortkommandon som används för alla Windows-program.
+Du kan kopiera, klippa ut, klistra in, söka och ersätta text i skript fönstret. Du kan också ångra och göra om den senaste åtgärden som du nyss utförde. Kortkommandona för dessa åtgärder är samma kortkommandon som används för alla Windows-program.
 
-### <a name="to-enter-text-in-the-script-pane"></a>Ange text i skriptfönstret
+### <a name="to-enter-text-in-the-script-pane"></a>Ange text i skript fönstret
 
-1. Flytta markören till skriptfönstret genom att klicka i skriptfönstret eller genom att klicka på **går du till skriptfönstret** i den **visa** menyn.
-2. Skapa ett skript. Syntaxfärgning och tabbifyllning ger en rikare redigering upplevelse i Windows PowerShell ISE.
-3. Se [så Använd Tabbifyllning i skriptfönstret och konsolfönstret](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) mer information om hur du använder funktionen fliken slutförande för enklare att skriva.
+1. Flytta markören till skript fönstret genom att klicka någonstans i skript fönstret eller genom att klicka på **gå till skript fönstret** i menyn **Visa** .
+2. Skapa ett skript. Syntax färgning och TABB-ifyllnad ger en mer omfattande redigerings upplevelse i Windows PowerShell ISE.
+3. Mer information om hur du använder funktionen för slut för ande av flikar finns [i skript fönstret och konsol fönstret](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) .
 
-### <a name="to-find-text-in-the-script-pane"></a>Söka efter text i skriptfönstret
+### <a name="to-find-text-in-the-script-pane"></a>Hitta text i skript fönstret
 
-1. Du kan hitta text var som helst genom att trycka på **CTRL + F** eller på den **redigera** -menyn klickar du på **hitta i skriptet**.
-2. Om du vill hitta text efter markören, trycker du på **F3** eller på den **redigera** -menyn klickar du på **Sök nästa i skriptet**.
-3. Om du vill hitta text före markören, trycker du på **SKIFT + F3** eller på den **redigera** -menyn klickar du på **Sök föregående i skriptet**.
+1. Om du vill söka efter text var som helst, trycker du på **CTRL + F** eller klickar på **Sök i skript**på **Redigera** -menyn.
+2. Om du vill hitta text efter markören trycker du på **F3** eller på menyn **Redigera** klickar du på **Sök nästa i skript**.
+3. Om du vill hitta text före markören trycker du på **Shift + F3** eller på **Redigera** -menyn och klickar på **Sök föregående i skript**.
 
-### <a name="to-find-and-replace-text-in-the-script-pane"></a>Söka efter och ersätta texten i skriptfönstret
+### <a name="to-find-and-replace-text-in-the-script-pane"></a>Söka efter och ersätta text i skript fönstret
 
-Tryck på **CTRL + H** eller på den **redigera** -menyn klickar du på **ersättas i skriptet**. Ange den text som du vill att hitta och ersättningstexten, tryck på **RETUR**.
+Tryck på **CTRL + H** eller på **Redigera** -menyn, klicka på **Ersätt i skript**. Ange den text som du vill söka efter och ersättnings texten och tryck sedan på **RETUR**.
 
-### <a name="to-go-to-a-particular-line-of-text-in-the-script-pane"></a>Gå till en viss rad med text i skriptfönstret
+### <a name="to-go-to-a-particular-line-of-text-in-the-script-pane"></a>För att gå till en viss textrad i skript fönstret
 
-1. I skriptfönstret, trycker du på **CTRL + G** eller på den **redigera** -menyn klickar du på **går du till rad**.
+1. Tryck på **CTRL + G** eller på **Redigera** -menyn i rutan skript och klicka på **gå till rad**.
 
-2. Ange ett radnummer.
+2. Ange ett rad nummer.
 
-### <a name="to-copy-text-in-the-script-pane"></a>Kopiera text i skriptfönstret
+### <a name="to-copy-text-in-the-script-pane"></a>Kopiera text i skript fönstret
 
-1. I skriptfönstret, väljer du den text som du vill kopiera.
+1. I rutan skript väljer du den text som du vill kopiera.
 
-2. Tryck på **CTRL + C** i verktygsfältet klickar du på den **kopia** ikonen eller på den **redigera** -menyn klickar du på **kopia**.
+2. Tryck på **CTRL + C** eller, i verktygsfältet, klicka på **Kopiera** -ikonen eller på **Redigera** -menyn och klicka på **Kopiera**.
 
-### <a name="to-cut-text-in-the-script-pane"></a>Att klippa ut text i skriptfönstret
+### <a name="to-cut-text-in-the-script-pane"></a>Klippa ut text i skript fönstret
 
-1. I skriptfönstret, väljer du den text som du vill minska.
-2. Tryck på **CTRL + X** i verktygsfältet klickar du på den **klipp ut** ikon, eller på den **redigera** -menyn klickar du på **klipp ut**.
+1. I rutan skript väljer du den text som du vill klippa ut.
+2. Tryck på **CTRL + X** eller, i verktygsfältet, klicka på **Klipp ut** -ikonen eller på **Redigera** -menyn och klicka på **Klipp ut**.
 
-### <a name="to-paste-text-into-the-script-pane"></a>Klistra in text i skriptfönstret
+### <a name="to-paste-text-into-the-script-pane"></a>Klistra in text i skript fönstret
 
-Tryck på **CTRL + V** i verktygsfältet klickar du på den **klistra in** ikon, eller på den **redigera** -menyn klickar du på **klistra in**.
+Tryck på **CTRL + V** eller, i verktygsfältet, klicka på ikonen **Klistra in** eller på **Redigera** -menyn och klicka på **Klistra in**.
 
-### <a name="to-undo-an-action-in-the-script-pane"></a>Ångra en åtgärd i skriptfönstret
+### <a name="to-undo-an-action-in-the-script-pane"></a>Ångra en åtgärd i skript fönstret
 
-Tryck på **CTRL + Z** i verktygsfältet klickar du på den **ångra** ikon, eller på den **redigera** -menyn klickar du på **ångra**.
+Tryck på **CTRL + Z** eller, i verktygsfältet, klicka på **Ångra** -ikonen eller på **Redigera** -menyn och klicka på **Ångra**.
 
-### <a name="to-redo-an-action-in-the-script-pane"></a>Att göra om en åtgärd i skriptfönstret
+### <a name="to-redo-an-action-in-the-script-pane"></a>Göra om en åtgärd i skript fönstret
 
-Tryck på **CTRL + Y** i verktygsfältet klickar du på den **gör om** ikon, eller på den **redigera** -menyn klickar du på **gör om**.
+Tryck på **CTRL + Y** eller, i verktygsfältet, klicka på ikonen **gör** om eller på **Redigera** -menyn och klicka på **gör**om.
 
-## <a name="how-to-save-a-script"></a>Hur du sparar ett skript
+## <a name="how-to-save-a-script"></a>Så här sparar du ett skript
 
-En asterisk visas bredvid namnet på skriptet för att markera en fil som inte har sparats sedan det ändrades. Asterisken försvinner när filen sparas.
+En asterisk visas bredvid skript namnet för att markera en fil som inte har sparats sedan den ändrades. Asterisken försvinner när filen sparas.
 
-### <a name="to-save-a-script"></a>Spara ett skript
+### <a name="to-save-a-script"></a>Så här sparar du ett skript
 
-Tryck på **CTRL + S** i verktygsfältet klickar du på den **spara** ikonen eller på den **filen** -menyn klickar du på **spara**.
+Tryck på **CTRL + S** eller, klicka på ikonen **Spara** i verktygsfältet, eller klicka på **Spara**på **Arkiv** -menyn.
 
 ### <a name="to-save-and-name-a-script"></a>Spara och namnge ett skript
 
-1. På den **filen** -menyn klickar du på **Spara som**. Den **Spara som** dialogrutan visas.
-2. I den **filnamn** anger du ett namn för filen.
-3. I den **filformat** väljer du en viss filtyp. Till exempel i den **filformat** väljer ”PowerShell-skript (\*.ps1)”.
+1. Klicka på **Spara som**på **Arkiv** -menyn. Dialog rutan **Spara som** visas.
+2. Ange ett namn på filen i rutan **fil namn** .
+3. I rutan fil **format** väljer du en filtyp. I rutan **fil format** väljer du exempelvis PowerShell-skript (\*. ps1).
 4. Klicka på **Spara**.
 
-### <a name="to-save-a-script-in-ascii-encoding"></a>Spara ett skript i ASCII-kodning
+### <a name="to-save-a-script-in-ascii-encoding"></a>Så här sparar du ett skript i ASCII-kodning
 
-Som standard sparar Windows PowerShell ISE nya skriptfiler (.ps1), skriptfiler data (.psd1) och modulen skriptfiler (.psm1) som Unicode (BigEndianUnicode) som standard. Â vill spara ett skript i en annan kodning, till exempel ASCII (ANSI), använder den **spara** eller **spara** metoder på det [$psISE.CurrentFile](object-model/the-ise-object-model-hierarchy.md) objekt.
+Som standard sparar Windows PowerShell ISE nya skriptfiler (. ps1), skript data filer (. psd1) och skriptfiler (. psm1) som Unicode (BigEndianUnicode) som standard. Om du vill spara ett skript i en annan kodning, t. ex. ASCII (ANSI), använder du metoderna **Save** eller **savee** som på objektet [$psISE. CurrentFile](object-model/the-ise-object-model-hierarchy.md) .
 
-Följande kommando sparar ett nytt skript som MyScript.ps1 med ASCII-kodning.
+Följande kommando sparar ett nytt skript som skript. ps1 med ASCII-kodning.
 
 ```powershell
 $psISE.CurrentFile.SaveAs("MyScript.ps1", [System.Text.Encoding]::ASCII)
 ```
 
-Följande kommando ersätter den aktuella skriptfilen med en fil med samma namn men med ASCII-kod.
+Följande kommando ersätter den aktuella skript filen med en fil med samma namn, men med ASCII-kodning.
 
 ```powershell
 $psISE.CurrentFile.Save([System.Text.Encoding]::ASCII)
 ```
 
-Följande kommando hämtar kodning av den aktuella filen.
+Följande kommando hämtar kodningen för den aktuella filen.
 
 ```powershell
 $psISE.CurrentFile.encoding
 ```
 
-Windows PowerShell ISE stöder följande kodningsalternativ: ASCII, BigEndianUnicode, Unicode, UTF32, UTF7, UTF8 och standard. Värdet för standardalternativet varierar beroende på systemet.
+Windows PowerShell ISE stöder följande kodnings alternativ: ASCII, BigEndianUnicode, Unicode, UTF32, UTF7, UTF8 och default. Värdet för standard alternativet varierar i systemet.
 
-Windows PowerShell ISE inte ändra kodningen skriptfiler när du använder spara eller spara som kommandon.
+Windows PowerShell ISE ändrar inte kodningen för skriptfiler när du använder Spara-eller Spara som-kommandon.
 
 ## <a name="see-also"></a>Se även
 
-- [Utforska Windows PowerShell ISE](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
+- [Utforska Windows PowerShell ISE](exploring-the-windows-powershell-ise.md)
