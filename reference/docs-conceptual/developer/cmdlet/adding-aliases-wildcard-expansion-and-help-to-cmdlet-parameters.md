@@ -1,5 +1,5 @@
 ---
-title: Lägga till alias, expansion med jokertecken och hjälp till cmdlet-parametrar | Microsoft Docs
+title: Adding Aliases, Wildcard Expansion, and Help to Cmdlet Parameters | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: bc921537062e35aa203fa3ee95d3b7211c89cb28
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: d210a852a90d94df2ab360dd86f0b83a396330e3
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72359504"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74415655"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Lägga till alias, jokerteckenexpansion och hjälp i cmdlet-parametrar
 
-I det här avsnittet beskrivs hur du lägger till alias, expansion av jokertecken och hjälp meddelanden till parametrarna i cmdleten Stop-proc (beskrivs i [skapa en cmdlet som ändrar systemet](./creating-a-cmdlet-that-modifies-the-system.md)).
+This section describes how to add aliases, wildcard expansion, and Help messages to the parameters of the Stop-Proc cmdlet (described in [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)).
 
-Den här cmdleten Stop-proc försöker stoppa processer som hämtas med hjälp av cmdleten Get-proc (beskrivs i [skapa din första cmdlet](./creating-a-cmdlet-without-parameters.md)).
+This Stop-Proc cmdlet attempts to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)).
 
-## <a name="defining-the-cmdlet"></a>Definiera cmdleten
+## <a name="defining-the-cmdlet"></a>Defining the Cmdlet
 
-Det första steget i att skapa en cmdlet namnger alltid cmdleten och deklarerar den .NET-klass som implementerar cmdleten. Eftersom du skriver en cmdlet för att ändra systemet bör den namnges. Eftersom denna cmdlet stoppar system processer använder den verbet "Stop", som definieras av klassen [system. Management. Automation. Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) , med Substantiv "proc" för att indikera processen. Mer information om godkända cmdlet-verb finns i [cmdlet-verb](./approved-verbs-for-windows-powershell-commands.md).
+The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. Because you are writing a cmdlet to change the system, it should be named accordingly. Because this cmdlet stops system processes, it uses the verb "Stop", defined by the [System.Management.Automation.Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) class, with the noun "Proc" to indicate process. For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
 
-Följande kod är klass definitionen för den här Stop-proc-cmdleten.
+The following code is the class definition for this Stop-Proc cmdlet.
 
 ```csharp
 [Cmdlet(VerbsLifecycle.Stop, "proc",
@@ -33,15 +33,15 @@ Följande kod är klass definitionen för den här Stop-proc-cmdleten.
 public class StopProcCommand : Cmdlet
 ```
 
-## <a name="defining-parameters-for-system-modification"></a>Definiera parametrar för system ändring
+## <a name="defining-parameters-for-system-modification"></a>Defining Parameters for System Modification
 
-Din cmdlet måste definiera parametrar som stöder system ändringar och feedback från användare. Cmdleten bör definiera en `Name`-parameter eller motsvarande så att cmdleten kan ändra systemet med en viss typ av identifierare. Dessutom bör cmdleten Definiera parametrarna `Force` och `PassThru`. Mer information om dessa parametrar finns i [skapa en cmdlet som ändrar systemet](./creating-a-cmdlet-that-modifies-the-system.md).
+Your cmdlet needs to define parameters that support system modifications and user feedback. The cmdlet should define a `Name` parameter or equivalent so that the cmdlet will be able to modify the system by some sort of identifier. In addition, the cmdlet should define the `Force` and `PassThru` parameters. For more information about these parameters, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
 
-## <a name="defining-a-parameter-alias"></a>Definiera ett parameter Ali Aset
+## <a name="defining-a-parameter-alias"></a>Defining a Parameter Alias
 
-Ett parameter Ali Aset kan vara ett alternativt namn eller ett väldefinierat kort namn eller kort namn för en cmdlet-parameter. I båda fallen är syftet med att använda alias att förenkla användar posten från kommando raden. Windows PowerShell stöder parameter-alias via attributet [system. Management. Automation. Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) , som använder deklarationssyntax [alias ()].
+A parameter alias can be an alternate name or a well-defined 1-letter or 2-letter short name for a cmdlet parameter. In both cases, the goal of using aliases is to simplify user entry from the command line. Windows PowerShell supports parameter aliases through the [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribute, which uses the declaration syntax [Alias()].
 
-Följande kod visar hur ett alias läggs till i parametern `Name`.
+The following code shows how an alias is added to the `Name` parameter.
 
 ```csharp
 /// <summary>
@@ -64,13 +64,13 @@ public string[] Name
 private string[] processNames;
 ```
 
-Förutom att använda attributet [system. Management. Automation. Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) , utför Windows PowerShell-körningen partiell namn matchning, även om inga alias anges. Om din cmdlet till exempel har en `FileName`-parameter och det är den enda parameter som börjar med `F`, kan användaren ange `Filename`, `Filenam`, `File`, `Fi` eller `F` och fortfarande identifiera posten som `FileName`-parameter.
+In addition to using the [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribute, the Windows PowerShell runtime performs partial name matching, even if no aliases are specified. For example, if your cmdlet has a `FileName` parameter and that is the only parameter that starts with `F`, the user could enter `Filename`, `Filenam`, `File`, `Fi`, or `F` and still recognize the entry as the `FileName` parameter.
 
-## <a name="creating-help-for-parameters"></a>Skapar hjälp för parametrar
+## <a name="creating-help-for-parameters"></a>Creating Help for Parameters
 
-Med Windows PowerShell kan du skapa hjälp för cmdlet-parametrar. Gör detta för alla parametrar som används för system ändringar och feedback från användare. För varje parameter som stöd för hjälp kan du ange nyckelordet `HelpMessage` i attributet [system. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) -attribut. Det här nyckelordet definierar texten som ska visas för användaren för hjälp med att använda-parametern. Du kan också ange nyckelordet `HelpMessageBaseName` för att identifiera bas namnet för en resurs som ska användas för meddelandet. Om du anger det här nyckelordet måste du också ange ett nyckelord för `HelpMessageResourceId` för att ange resurs-ID.
+Windows PowerShell allows you to create Help for cmdlet parameters. Do this for any parameter used for system modification and user feedback. For each parameter to support Help, you can set the `HelpMessage` attribute keyword in the [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribute declaration. This keyword defines the text to display to the user for assistance in using the parameter. You can also set the `HelpMessageBaseName` keyword to identify the base name of a resource to use for the message. If you set this keyword, you must also set the `HelpMessageResourceId` keyword to specify the resource identifier.
 
-Följande kod från denna Stop-proc-cmdlet definierar nyckelordet `HelpMessage` för parametern `Name`.
+The following code from this Stop-Proc cmdlet defines the `HelpMessage` attribute keyword for the `Name` parameter.
 
 ```csharp
 /// <summary>
@@ -86,32 +86,32 @@ Följande kod från denna Stop-proc-cmdlet definierar nyckelordet `HelpMessage` 
 )]
 ```
 
-## <a name="overriding-an-input-processing-method"></a>Åsidosätta en metod för bearbetning av indata
+## <a name="overriding-an-input-processing-method"></a>Overriding an Input Processing Method
 
-Din cmdlet måste åsidosätta en metod för bearbetning av indata, oftast är detta [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). När du ändrar systemet bör cmdleten anropa metoden [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) för att tillåta användaren att ge feedback innan en ändring görs. Mer information om dessa metoder finns i [skapa en cmdlet som ändrar systemet](./creating-a-cmdlet-that-modifies-the-system.md).
+Your cmdlet must override an input processing method, most often this will be [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). When modifying the system, the cmdlet should call the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods to allow the user to provide feedback before a change is made. For more information about these methods, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
 
-## <a name="supporting-wildcard-expansion"></a>Stöd för expansion med jokertecken
+## <a name="supporting-wildcard-expansion"></a>Supporting Wildcard Expansion
 
-Om du vill tillåta att flera objekt väljs kan din cmdlet använda klassen [system. Management. Automation. Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern) och [system. Management. Automation. Wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions) för att ge stöd för stöd för jokertecken för parameter ingångar. Exempel på mönster för jokertecken är LSA *, @no__t -0. txt och [a-c] \*. Använd det bakre citat tecknet (") som ett escape-tecken när mönstret innehåller ett tecken som ska användas bokstavligen.
+To allow the selection of multiple objects, your cmdlet can use the [System.Management.Automation.Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern) and [System.Management.Automation.Wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions) classes to provide wildcard expansion support for parameter input. Examples of wildcard patterns are lsa*, \*.txt, and [a-c]\*. Use the back-quote character (`) as an escape character when the pattern contains a character that should be used literally.
 
-Jokertecken för fil-och Sök vägs namn är exempel på vanliga scenarier där cmdleten kanske vill tillåta stöd för Path-indata när valet av flera objekt krävs. Ett vanligt fall är i fil systemet, där en användare vill se alla filer som finns i den aktuella mappen.
+Wildcard expansions of file and path names are examples of common scenarios where the cmdlet may want to allow support for path inputs when the selection of multiple objects is required. A common case is in the file system, where a user wants to see all files residing in the current folder.
 
-Du bör ha en anpassad matchning av jokertecken som matchar implementeringen sällan. I det här fallet ska din cmdlet ha stöd för antingen den fullständiga POSIX 1003,2, 3,13-specifikationen för expansion av jokertecken eller följande förenklade del mängd:
+You should need a customized wildcard pattern matching implementation only rarely. In this case, your cmdlet should support either the full POSIX 1003.2, 3.13 specification for wildcard expansion or the following simplified subset:
 
-- **Frågetecken (?).** Matchar alla bokstäver på den angivna platsen.
+- **Question mark (?).** Matches any character at the specified location.
 
-- **Asterisk (\*).** Matchar noll eller flera tecken som börjar på den angivna platsen.
+- **Asterisk (\*).** Matches zero or more characters starting at the specified location.
 
-- **Öppna hak paren tes ([).** Introducerar ett mönster paren tes uttryck som kan innehålla tecken eller ett tecken intervall. Om ett intervall krävs används ett bindestreck (-) för att ange intervallet.
+- **Open bracket ([).** Introduces a pattern bracket expression that can contain characters or a range of characters. If a range is required, a hyphen (-) is used to indicate the range.
 
-- **Avslutande hak paren tes (]).** Avslutar ett mönster paren tes uttryck.
+- **Close bracket (]).** Ends a pattern bracket expression.
 
-- **Escape-tecken för back citat (').** Anger att nästa Character ska tas i bokstavligen. Tänk på att när du anger ett back citat tecken från kommando raden (i stället för att ange det program mässigt), måste Escape-tecknet för back-offerten anges två gånger.
+- **Back-quote escape character (`).** Indicates that the next character should be taken literally. Be aware that when specifying the back-quote character from the command line (as opposed to specifying it programmatically), the back-quote escape character must be specified twice.
 
 > [!NOTE]
-> Mer information om mönster för jokertecken finns i [stödjande jokertecken i cmdlet-parametrar](./supporting-wildcard-characters-in-cmdlet-parameters.md).
+> For more information about wildcard patterns, see [Supporting Wildcards in Cmdlet Parameters](./supporting-wildcard-characters-in-cmdlet-parameters.md).
 
-Följande kod visar hur du ställer in jokertecken och definierar mönster för jokertecken som används för att matcha parametern `Name` för denna cmdlet.
+The following code shows how to set wildcard options and define the wildcard pattern used for resolving the `Name` parameter for this cmdlet.
 
 ```csharp
 WildcardOptions options = WildcardOptions.IgnoreCase |
@@ -119,7 +119,7 @@ WildcardOptions options = WildcardOptions.IgnoreCase |
 WildcardPattern wildcard = new WildcardPattern(name,options);
 ```
 
-Följande kod visar hur du testar om process namnet matchar det definierade jokertecken. Observera att, i det här fallet, om process namnet inte matchar mönstret, fortsätter cmdleten på för att hämta nästa process namn.
+The following code shows how to test whether the process name matches the defined wildcard pattern. Notice that, in this case, if the process name does not match the pattern, the cmdlet continues on to get the next process name.
 
 ```csharp
 if (!wildcard.IsMatch(processName))
@@ -128,29 +128,29 @@ if (!wildcard.IsMatch(processName))
 }
 ```
 
-## <a name="code-sample"></a>Kod exempel
+## <a name="code-sample"></a>Code Sample
 
-Den fullständiga C# exempel koden finns i [StopProcessSample03-exempel](./stopprocesssample03-sample.md).
+For the complete C# sample code, see [StopProcessSample03 Sample](./stopprocesssample03-sample.md).
 
-## <a name="define-object-types-and-formatting"></a>Definiera objekt typer och formatering
+## <a name="define-object-types-and-formatting"></a>Define Object Types and Formatting
 
-Windows PowerShell skickar information mellan cmdlets med .net-objekt. Därför kan en cmdlet behöva definiera en egen typ, eller så kan cmdleten behöva utöka en befintlig typ som tillhandahålls av en annan cmdlet. Mer information om hur du definierar nya typer eller utökar befintliga typer finns i [utöka objekt typer och formatering](/previous-versions//ms714665(v=vs.85)).
+Windows PowerShell passes information between cmdlets using .Net objects. Consequently, a cmdlet may need to define its own type, or the cmdlet may need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85)).
 
-## <a name="building-the-cmdlet"></a>Skapa cmdleten
+## <a name="building-the-cmdlet"></a>Building the Cmdlet
 
-När du har implementerat en cmdlet måste den vara registrerad med Windows PowerShell via en Windows PowerShell-snapin-modul. Mer information om att registrera cmdlets finns i [så här registrerar du cmdlets, providers och värd program](/previous-versions//ms714644(v=vs.85)).
+After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
 
-## <a name="testing-the-cmdlet"></a>Testa cmdleten
+## <a name="testing-the-cmdlet"></a>Testing the Cmdlet
 
-När din cmdlet har registrerats med Windows PowerShell kan du testa den genom att köra den på kommando raden. Nu ska vi testa samplet Stop-proc-cmdlet. Mer information om hur du använder cmdlets från kommando raden finns i [komma igång med Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. Let's test the sample Stop-Proc cmdlet. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
-- Starta Windows PowerShell och använd Stop-PROC för att stoppa en process med ProcessName-aliaset för parametern `Name`.
+- Start Windows PowerShell and use Stop-Proc to stop a process using the ProcessName alias for the `Name` parameter.
 
     ```powershell
     PS> stop-proc -ProcessName notepad
     ```
 
-Följande utdata visas.
+The following output appears.
 
     ```
     Confirm
@@ -159,13 +159,13 @@ Följande utdata visas.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-- Gör följande på kommando raden. Eftersom namn parametern är obligatorisk uppmanas du att ange den. Anger du "!?" visar den hjälp text som är kopplad till parametern.
+- Make the following entry on the command line. Because the Name parameter is mandatory, you are prompted for it. Entering "!?" brings up the help text associated with the parameter.
 
     ```powershell
     PS> stop-proc
     ```
 
-Följande utdata visas.
+The following output appears.
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -176,13 +176,13 @@ Följande utdata visas.
     Name[0]: notepad
     ```
 
-- Gör nu följande post för att stoppa alla processer som matchar jokertecknet "* anmärkning @ no__t-0". Du uppmanas att stoppa varje process som matchar mönstret.
+- Now make the following entry to stop all processes that match the wildcard pattern "*note\*". You are prompted before stopping each process that matches the pattern.
 
     ```powershell
     PS> stop-proc -Name *note*
     ```
 
-Följande utdata visas.
+The following output appears.
 
     ```
     Confirm
@@ -191,7 +191,7 @@ Följande utdata visas.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-Följande utdata visas.
+The following output appears.
 
     ```
     Confirm
@@ -200,7 +200,7 @@ Följande utdata visas.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-Följande utdata visas.
+The following output appears.
 
     ```
     Confirm
@@ -211,14 +211,14 @@ Följande utdata visas.
 
 ## <a name="see-also"></a>Se även
 
-[Skapa en cmdlet som ändrar systemet](./creating-a-cmdlet-that-modifies-the-system.md)
+[Create a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[Så här skapar du en Windows PowerShell-cmdlet](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[How to Create a Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Utöka objekt typer och formatering](/previous-versions//ms714665(v=vs.85))
+[Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85))
 
-[Registrera cmdlets, providers och värd program](/previous-versions//ms714644(v=vs.85))
+[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))
 
-[Stöd för jokertecken i cmdlet-parametrar](./supporting-wildcard-characters-in-cmdlet-parameters.md)
+[Supporting Wildcards in Cmdlet Parameters](./supporting-wildcard-characters-in-cmdlet-parameters.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

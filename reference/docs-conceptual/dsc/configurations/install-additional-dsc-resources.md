@@ -1,51 +1,51 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, PowerShell, resurs, Galleri, installation
-title: Installera ytterligare DSC-resurser
-ms.openlocfilehash: ecaf176230ccd934b57b1c27d72ff83e6ba906e9
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+keywords: dsc,powershell,resource,gallery,setup
+title: Install Additional DSC Resources
+ms.openlocfilehash: 7a6a935349358e11a77d2f00c0bf88e0ad18c097
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71942323"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417791"
 ---
-# <a name="install-additional-dsc-resources"></a>Installera ytterligare DSC-resurser
+# <a name="install-additional-dsc-resources"></a>Install Additional DSC Resources
 
-PowerShell innehåller flera färdiga resurser för önskad tillstånds konfiguration (DSC). **PSDesiredStateConfiguration** -modulen innehåller alla OOB DSC-resurser som är tillgängliga på din speciella instans av PowerShell.
+PowerShell includes several Out-of-the-box resources for Desired State Configuration (DSC). The **PSDesiredStateConfiguration** module contains all of the OOB DSC resources available on your specific instance of PowerShell.
 
-Det här är en lista över OOB-resurser som ingår i PowerShell 4,0 och en beskrivning av resursens funktioner.
+This is a list of the OOB resources included in PowerShell 4.0 and a description of the resource's capabilities.
 
 > [!NOTE]
-> Det här är en ofullständig lista eftersom antalet OOB-resurser har växt med varje version av PowerShell.
+> This is an incomplete list, as the number of OOB resources has grown with each version of PowerShell.
 
-|Resource  |Beskrivning  |
+|Resurs  |Beskrivning  |
 |---------|---------|
-|**Fil**|Styr tillstånd för filer och kataloger. Kopierar filer från en **källa** till ett **mål** och uppdaterar dem när **källan** ändras genom att jämföra datum, kontroll summor och hash-värden.|
-|**Arkiv**|Packar upp arkiv och en angiven plats. Validerar arkiven med en angiven **kontroll Summa**.|
-|**Miljö**|Hanterar miljövariabler.|
-|**Grupp**|Hanterar medlemskap i lokala grupper och kontroll grupper.|
-|**log**|Skriver meddelanden till händelse loggen `Microsoft-Windows-Desired State Configuration/Analytic`.|
-|**Paketfilerna**|Installerar eller avinstallerar paket med **argument**, **LogPath**, **ReturnCode**, andra inställningar.|
-|**Registernyckeln**|Hanterar register nycklar och värden.|
-|**Över**|Gör att du kan skapa egna skript block för [Get-test-uppsättning](../resources/get-test-set.md) .|
-|**Tjänst**|Konfigurerar Windows-tjänster.|
-|**Användarvänlig** |Hanterar lokala användare och attribut.|
-|**WindowsFeature**|Hanterar roller och funktioner.|
-|**WindowsProcess**|Konfigurerar Windows-processer.|
+|**File**|Controls the state of files and directories. Copies files from a **Source** to a **Destination** and updates them when the **Source** changes by comparing dates, checksums, and hashes.|
+|**Archive**|Unpacks archives and a specified location. Validates the archives with a specified **Checksum**.|
+|**Environment**|Manages environment variables.|
+|**Grupp**|Manages local groups and controls group membership.|
+|**Log**|Writes messages to the `Microsoft-Windows-Desired State Configuration/Analytic` event log.|
+|**Package**|Installs or uninstalls packages using **Arguments**, **LogPath**, **ReturnCode**, other settings.|
+|**Registry**|Manages registry keys and values.|
+|**Script**|Allows you to design your own [get-test-set](../resources/get-test-set.md) script blocks.|
+|**Service**|Configures Windows services.|
+|**User** |Manages local users and attributes.|
+|**WindowsFeature**|Manages roles and features.|
+|**WindowsProcess**|Configures Windows processes.|
 
-OOB-resurserna gör det möjligt att använda en lämplig start punkt för vanliga åtgärder. Om OOB-resurserna inte uppfyller dina behov kan du skriva en egen [anpassad resurs](../resources/authoringResource.md). Innan du skriver en anpassad resurs för att lösa problemet bör du titta igenom det stora antalet DSC-resurser som redan har skapats av både Microsoft och PowerShell-communityn.
+The OOB resources allow a good starting point for common operations. If the OOB resources do not meet your needs, you can write your own [Custom Resource](../resources/authoringResource.md). Before you write a custom resource to solve your problem, you should look through the vast number of DSC resources that have already been created by both Microsoft and the PowerShell community.
 
-Du hittar DSC-resurser i både [PowerShell-galleriet](https://www.powershellgallery.com/) -och [GitHub](https://github.com/). Du kan också installera DSC-resurser direkt från PowerShell-konsolen med hjälp av [PowerShellGet](/powershell/module/powershellget/).
+You can find DSC resources in both the [PowerShell Gallery](https://www.powershellgallery.com/) and [GitHub](https://github.com/). You can also install DSC resources directly from the PowerShell console using [PowerShellGet](/powershell/module/powershellget/).
 
 ## <a name="installing-powershellget"></a>Installera PowerShellGet
 
-Om du vill kontrol lera om du redan har **PowerShell** , eller om du vill ha hjälp med att installera den, kan du läsa följande guide: [Installerar PowerShellGet](/powershell/gallery/installing-psget).
+To determine if you already have **PowerShell** get, or to get help installing it, see the following guide: [Installing PowerShellGet](/powershell/scripting/gallery/installing-psget).
 
-## <a name="finding-dsc-resources-using-powershellget"></a>Hitta DSC-resurser med PowerShellGet
+## <a name="finding-dsc-resources-using-powershellget"></a>Finding DSC resources using PowerShellGet
 
-När **PowerShellGet** har installerats på systemet kan du söka efter och installera DSC-resurser som finns i [PowerShell-galleriet](https://www.powershellgallery.com/).
+Once **PowerShellGet** is installed on your system, you can find and install DSC resources hosted in the [PowerShell Gallery](https://www.powershellgallery.com/).
 
-Använd först cmdleten [find-dscresource Keyword Supports](/powershell/module/powershellget/find-dscresource) för att hitta DSC-resurser. När du kör `Find-DSCResource` för första gången, visas följande uppmanad att installera "NuGet Provider".
+First, use the [Find-DSCResource](/powershell/module/powershellget/find-dscresource) cmdlet to find DSC resources. When you run `Find-DSCResource` for the first time, you see the following prompt to install the "NuGet provider".
 
 ```
 PS> Find-DSCResource
@@ -59,15 +59,15 @@ install and import the NuGet provider now?
 [Y] Yes  [N] No  [?] Help (default is "Y"):
 ```
 
-När du har tryckt på "y" installeras "NuGet"-providern. du ser en lista över DSC-resurser som du kan installera från PowerShell-galleriet.
+After pressing 'y', the "NuGet" provider is installed, you see a list of DSC resources that you can install from the PowerShell Gallery.
 
 > [!NOTE]
-> Listan visas inte eftersom den är mycket stor.
+> List is not shown because it is very large.
 
-Du kan också ange parametern `-Name` med jokertecken eller `-Filter`-parameter utan jokertecken för att begränsa sökningen. Det här exemplet försöker hitta en "TimeZone" DSC-resurs med hjälp av jokertecken.
+You can also specify the `-Name` parameter using wildcards, or `-Filter` parameter without wildcards to narrow down your search. This example attempts to find a "TimeZone" DSC resource using the wildcards.
 
 > [!IMPORTANT]
-> För närvarande finns det ett fel i cmdleten `Find-DSCResource` som förhindrar användning av jokertecken i både parametrarna `-Name` och @no__t 2. I det andra exemplet nedan visas en lösning med `Where-Object`.
+> Currently there is a bug in the `Find-DSCResource` cmdlet that prevents using wildcards in both the `-Name` and `-Filter` parameters. The second example below shows a workaround using `Where-Object`.
 
 ```
 PS> Find-DSCResource -Name *Time*
@@ -90,7 +90,7 @@ xSqlServerSQLDataRoot               1.0.0      mlSqlServerDSC                   
 xSqlServerStartupParam              1.0.0      mlSqlServerDSC                      PSGallery
 ```
 
-Du kan också använda `Where-Object` för att hitta DSC-resurser med mer detaljerad filtrering. Den här metoden går långsammare än att använda inbyggda filtrerings parametrar.
+You can also use `Where-Object` to find DSC resources with more granular filtering. This approach will be slower than using built in filtering parameters.
 
 ```
 PS> Find-DSCResource | Where-Object {$_.Name -like "Time*"}
@@ -100,16 +100,16 @@ Name                                Version    ModuleName                       
 TimeZone                            6.0.0.0    ComputerManagementDsc               PSGallery
 ```
 
-Mer information om filtrering finns i [Where-Object](/powershell/module/microsoft.powershell.core/where-object).
+For more information on filtering, see [Where-Object](/powershell/module/microsoft.powershell.core/where-object).
 
-## <a name="installing-dsc-resources-using-powershellget"></a>Installera DSC-resurser med PowerShellGet
+## <a name="installing-dsc-resources-using-powershellget"></a>Installing DSC Resources using PowerShellGet
 
-Om du vill installera en DSC-resurs använder du cmdleten [install-module](/powershell/module/PowershellGet/Install-Module) och anger namnet på modulen som visas under **Modulnamn** i Sök resultatet.
+To install a DSC resource, use the [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet, specifying the name of the module shown under **Module** name in your search results.
 
-"TimeZone"-resursen finns i modulen "ComputerManagementDSC", så att är den modul som det här exemplet installerar.
+The "TimeZone" resource exists in the "ComputerManagementDSC" module, so that is the module this example installs.
 
 > [!NOTE]
-> Om du inte har betrott PowerShell-galleriet ser du varningen nedan och ber om bekräftelse och instruerar dig att undvika efterföljande frågor om installationer.
+> If you have not trusted the PowerShell gallery, you see the warning below asking for confirmation, and instructing you how to avoid subsequent prompts on installs.
 
 ```
 PS> Install-Module -Name ComputerManagementDSC
@@ -121,7 +121,7 @@ InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure yo
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Tryck på "y" för att fortsätta installera modulen. Efter installationen kan du kontrol lera att den nya resursen är installerad med hjälp av [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource).
+Press 'y' to continue installing the module. After install, you can verify that your new resource is installed using [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource).
 
 ```
 PS> Get-DSCResource -Name TimeZone -Syntax
@@ -135,7 +135,7 @@ TimeZone [String] #ResourceName
 }
 ```
 
-Du kan också visa andra resurser i den nyligen installerade modulen genom att ange parametern `-ModuleName`.
+You can also view other resources in your newly installed module, by specifying the `-ModuleName` parameter.
 
 ```
 PS> Get-DSCResource -Module ComputerManagementDSC
@@ -153,4 +153,4 @@ PowerShell      VirtualMemory             ComputerManagementDsc          6.0.0.0
 
 ## <a name="see-also"></a>Se även
 
-- [Vad är resurser?](../resources/resources.md)
+- [What are Resources?](../resources/resources.md)

@@ -1,38 +1,43 @@
 ---
 ms.date: 08/14/2018
-keywords: PowerShell cmdlet
+keywords: powershell,cmdlet
 title: Introducerar Windows PowerShell ISE
-ms.openlocfilehash: 729c8535dbcfcd2c51070b8beac5d328375f36ae
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 1723c11f38966cfffec9a6b3e4cb7b2304f19e7a
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057433"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416282"
 ---
-# <a name="the-windows-powershell-ise"></a>Windows PowerShell ISE
+# <a name="the-windows-powershell-ise"></a>The Windows PowerShell ISE
 
-I Windows PowerShell Integrated Scripting Environment (ISE) är ett program för Windows PowerShell. Du kan köra kommandon och skriva, testa och felsöka skript i ett enda Windows-baserade grafiska användargränssnitt i ISE. ISE ger flerradsredigering, tabbifyllning, syntaxfärgning, selektiv körning, sammanhangsberoende hjälp och support för höger-till-vänster-språk. Menyalternativ och kortkommandon mappas till många av de uppgifter som du gör i Windows PowerShell-konsolen. Till exempel när du felsöker ett skript i ISE kan du högerklicka på en rad med kod i redigeringsfönstret för att konfigurera en brytpunkt.
+The Windows PowerShell Integrated Scripting Environment (ISE) is a host application for Windows PowerShell. In the ISE, you can run commands and write, test, and debug scripts in a single Windows-based graphic user interface. The ISE provides multiline editing, tab completion, syntax coloring, selective execution, context-sensitive help, and support for right-to-left languages. Menu items and keyboard shortcuts are mapped to many of the same tasks that you would do in the Windows PowerShell console. For example, when you debug a script in the ISE, you can right-click on a line of code in the edit pane to set a breakpoint.
 
 ## <a name="support"></a>Support
 
-ISE introducerades med Windows PowerShell V2 och utformades igen med PowerShell V3. ISE stöds i alla versioner av Windows PowerShell upp till och inklusive Windows PowerShell V5.1 stöds. ISE, men är i underhållsläge och inga nya funktioner förmodligen kommer att läggas till.
-Dessutom finns inget stöd för ISE med PowerShell v6 och mycket mer. Användare som vill ha ett grafiskt verktyg som kan hantera PowerShell-skript, osv, bör [Visual Studio Code](https://code.visualstudio.com/).
+The ISE was first introduced with Windows PowerShell V2 and was re-designed with PowerShell V3. The ISE is supported in all supported versions of Windows PowerShell up to and including Windows PowerShell V5.1.
+
+> [!NOTE]
+> The PowerShell ISE is no longer in active feature development. As a shipping component of Windows, it continues to be officially supported for security and high-priority servicing fixes.
+> We currently have no plans to remove the ISE from Windows.
+>
+> There is no support for the ISE in PowerShell v6 and beyond. Users looking for replacement for the ISE should use [Visual Studio Code](https://code.visualstudio.com/) with the [PowerShell Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell).
 
 ## <a name="key-features"></a>Viktiga funktioner
 
-Viktiga funktioner i Windows PowerShell ISE:
+Key features in Windows PowerShell ISE include:
 
-- Flerradsredigering: Infoga en tom rad under den aktuella raden i fönstret kommandot, trycka på SKIFT + RETUR.
-- Selektiv körning: Om du vill köra en del av ett skript, markerar du texten som du vill köra och klicka sedan på den **kör skript** knappen. Eller tryck på F5.
-- Sammanhangsberoende hjälp: Typ **Invoke-Item**, och tryck på F1. Hjälpfilen öppnas i artikeln för den **Invoke-Item** cmdlet.
+- Multiline editing: To insert a blank line under the current line in the Command pane, press <kbd>SHIFT</kbd>+<kbd>ENTER</kbd>.
+- Selective execution: To run part of a script, select the text you want to run, and then click the **Run Script** button. Or, press <kbd>F5</kbd>.
+- Context-sensitive help: Type `Invoke-Item`, and then press <kbd>F1</kbd>. The Help file opens to the article for the `Invoke-Item` cmdlet.
 
-Windows PowerShell ISE kan du anpassa vissa aspekter av utseendet. Det har också sin egen Windows PowerShell-skript för profilen.
+The Windows PowerShell ISE lets you customize some aspects of its appearance. It also has its own Windows PowerShell profile script.
 
-## <a name="to-start-the-windows-powershell-ise"></a>Starta Windows PowerShell ISE
+## <a name="to-start-the-windows-powershell-ise"></a>To start the Windows PowerShell ISE
 
-Klicka på **starta**väljer **Windows PowerShell**, och klicka sedan på **Windows PowerShell ISE**.
-Alternativt kan du ange `powershell_ise.exe` i valfritt kommandogränssnitt eller i rutan Kör.
+Click **Start**, select **Windows PowerShell**, and then click **Windows PowerShell ISE**.
+Alternately, you can type `powershell_ise.exe` in any command shell or in the Run box.
 
-## <a name="to-get-help-in-the-windows-powershell-ise"></a>Att få hjälp i Windows PowerShell ISE
+## <a name="to-get-help-in-the-windows-powershell-ise"></a>To get Help in the Windows PowerShell ISE
 
-På den **hjälpa** -menyn klickar du på **Windows PowerShell-hjälp**. Eller tryck på F1. Filen som öppnas beskriver Windows PowerShell ISE och Windows PowerShell, inklusive alla hjälpen som finns i cmdleten Get-Help.
+On the **Help** menu, click **Windows PowerShell Help**. Or, press <kbd>F1</kbd>. The file that opens describes Windows PowerShell ISE and Windows PowerShell, including all the help available from the `Get-Help` cmdlet.

@@ -1,22 +1,22 @@
 ---
 ms.date: 07/10/2019
-keywords: Jea, PowerShell, säkerhet
-title: JEA-krav
-ms.openlocfilehash: 8fca5c068412e86acfdb8bed400699f721b76191
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+keywords: jea,powershell,security
+title: JEA Prerequisites
+ms.openlocfilehash: 1833bacf49eebcccefc10f7c85a39732559c1a97
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2019
-ms.locfileid: "70017939"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416723"
 ---
 # <a name="prerequisites"></a>Förutsättningar
 
-Bara tillräckligt med administration är en funktion som ingår i PowerShell 5,0 och högre. I den här artikeln beskrivs förutsättningar som måste vara uppfyllda för att börja använda JEA.
+Just Enough Administration is a feature included in PowerShell 5.0 and higher. This article describes the prerequisites that must be satisfied to start using JEA.
 
 
-## <a name="check-which-version-of-powershell-is-installed"></a>Kontrol lera vilken version av PowerShell som är installerad
+## <a name="check-which-version-of-powershell-is-installed"></a>Check which version of PowerShell is installed
 
-Om du vill kontrol lera vilken version av PowerShell som är installerad i systemet `$PSVersionTable` kontrollerar du variabeln i en Windows PowerShell-prompt.
+To check which version of PowerShell is installed on your system, check the `$PSVersionTable` variable in a Windows PowerShell prompt.
 
 ```powershell
 $PSVersionTable.PSVersion
@@ -28,82 +28,82 @@ Major  Minor  Build  Revision
 5      1      14393  1000
 ```
 
-JEA är tillgängligt med PowerShell 5,0 och högre. För alla funktioner rekommenderar vi att du installerar den senaste versionen av PowerShell som är tillgänglig för ditt system. I följande tabell beskrivs JEA tillgänglighet för Windows Server:
+JEA is available with PowerShell 5.0 and higher. For full functionality, it's recommended that you install the latest version of PowerShell available for your system. The following table describes JEA's availability on Windows Server:
 
-| Serveroperativ system |                JEA tillgänglighet                |
+| Server Operating System |                JEA Availability                |
 | ----------------------- | ---------------------------------------------- |
-| Windows Server 2016 +    | Förinstallerad                                   |
-| Windows Server 2012 R2  | Fullständiga funktioner med WMF 5,1                |
-| Windows Server 2012     | Fullständiga funktioner med WMF 5,1                |
-| Windows Server 2008 R2  | Begränsad funktionalitet<sup>1</sup> med WMF 5,1 |
+| Windows Server 2016+    | Preinstalled                                   |
+| Windows Server 2012 R2  | Full functionality with WMF 5.1                |
+| Windows Server 2012     | Full functionality with WMF 5.1                |
+| Windows Server 2008 R2  | Reduced functionality<sup>1</sup> with WMF 5.1 |
 
-Du kan också använda JEA på din hem-eller arbets dator:
+You can also use JEA on your home or work computer:
 
-| Klient operativ system |                   JEA tillgänglighet                   |
+| Client Operating System |                   JEA Availability                   |
 | ----------------------- | ---------------------------------------------------- |
-| Windows 10 1607 +        | Förinstallerad                                         |
-| Windows 10 1603, 1511   | Förinstallerad med begränsad funktionalitet<sup>2</sup> |
+| Windows 10 1607+        | Preinstalled                                         |
+| Windows 10 1603, 1511   | Preinstalled, with reduced functionality<sup>2</sup> |
 | Windows 10 1507         | Inte tillgänglig                                        |
-| Windows 8, 8,1          | Fullständiga funktioner med WMF 5,1                      |
-| Windows 7               | Begränsad funktionalitet<sup>1</sup> med WMF 5,1       |
+| Windows 8, 8.1          | Full functionality with WMF 5.1                      |
+| Windows 7               | Reduced functionality<sup>1</sup> with WMF 5.1       |
 
-- <sup>1</sup> Jea kan inte konfigureras för användning av grupphanterade tjänst konton i Windows Server 2008 R2 eller Windows 7. Virtuella konton och andra JEA- funktioner stöds.
+- <sup>1</sup> JEA can't be configured to use group-managed service accounts on Windows Server 2008 R2 or Windows 7. Virtual accounts and other JEA features *are* supported.
 
-- <sup>2</sup> följande Jea-funktioner stöds inte i Windows 10-versionerna 1511 och 1603:
+- <sup>2</sup> The following JEA features aren't supported on Windows 10 versions 1511 and 1603:
 
-  - Köra som ett grupphanterat tjänst konto
-  - Regler för villkorlig åtkomst i konfigurationer för sessioner
-  - Användar enheten
-  - Bevilja åtkomst till lokala användar konton
+  - Running as a group-managed service account
+  - Conditional access rules in session configurations
+  - The user drive
+  - Granting access to local user accounts
 
-  Om du vill ha stöd för dessa funktioner uppdaterar du Windows till version 1607 (uppdaterings uppdatering) eller högre.
+  To get support for these features, update Windows to version 1607 (Anniversary Update) or higher.
 
-### <a name="install-windows-management-framework"></a>Installera Windows Management Framework
+### <a name="install-windows-management-framework"></a>Install Windows Management Framework
 
-Om du kör en äldre version av PowerShell kan du behöva uppdatera systemet med den senaste WMF-uppdateringen (Windows Management Framework). Mer information finns i WMF- [dokumentationen](/powershell/wmf/overview).
+If you're running an older version of PowerShell, you may need to update your system with the latest Windows Management Framework (WMF) update. For more information, see the [WMF documentation](/powershell/scripting/wmf/overview).
 
-Vi rekommenderar att du testar din arbets belastnings kompatibilitet med WMF innan du uppgraderar alla dina servrar.
+It's recommended that you test your workload's compatibility with WMF before upgrading all of your servers.
 
-Windows 10-användare bör installera de senaste funktions uppdateringarna för att hämta den aktuella versionen av Windows PowerShell.
+Windows 10 users should install the latest feature updates to obtain the current version of Windows PowerShell.
 
-## <a name="enable-powershell-remoting"></a>Aktivera PowerShell-fjärrkommunikation
+## <a name="enable-powershell-remoting"></a>Enable PowerShell Remoting
 
-PowerShell-fjärrkommunikation tillhandahåller den grund som JEA bygger på. Det är nödvändigt att se till att PowerShell-fjärrkommunikation är aktiverat och ordentligt säkert innan du kan använda JEA. Mer information finns i [WinRM Security](/powershell/scripting/learn/remoting/winrmsecurity).
+PowerShell Remoting provides the foundation on which JEA is built. It's necessary to ensure PowerShell Remoting is enabled and properly secured before you can use JEA. For more information, see [WinRM Security](/powershell/scripting/learn/remoting/winrmsecurity).
 
-PowerShell-fjärrkommunikation är aktiverat som standard på Windows Server 2012, 2012 R2 och 2016. Du kan aktivera PowerShell-fjärrkommunikation genom att köra följande kommando i ett upphöjd PowerShell-fönster.
+PowerShell Remoting is enabled by default on Windows Server 2012, 2012 R2, and 2016. You can enable PowerShell Remoting by running the following command in an elevated PowerShell window.
 
 ```powershell
 Enable-PSRemoting
 ```
 
-## <a name="enable-powershell-module-and-script-block-logging-optional"></a>Aktivera PowerShell-modul och skript Blocks loggning (valfritt)
+## <a name="enable-powershell-module-and-script-block-logging-optional"></a>Enable PowerShell module and script block logging (optional)
 
-Följande steg aktiverar loggning för alla PowerShell-åtgärder i systemet. Loggning av PowerShell-modul krävs inte för JEA, men vi rekommenderar att du aktiverar loggning för att se till att de kommandon som användare kör loggas på en central plats.
+The following steps enable logging for all PowerShell actions on your system. PowerShell Module Logging isn't required for JEA, however it's recommended you turn on logging to ensure the commands users run are logged in a central location.
 
-Du kan konfigurera PowerShell-modulens loggnings princip med grupprincip.
+You can configure the PowerShell Module Logging policy using Group Policy.
 
-1. Öppna redigerare för lokalt grupprincipobjekt på en arbets Station eller ett grupprincip objekt i konsolen grupprinciphantering på en Active Directory-domän kontrollant
-2. Navigera till **dator konfiguration\\administrativa mallar\\Windows-\\komponenter Windows PowerShell**
-3. Dubbelklicka på **Aktivera modul loggning**
-4. Klicka på **aktive rad**
-5. I avsnittet alternativ klickar du på **Visa** bredvid Modulnamn
-6. Skriv `*` i popup-fönstret för att logga kommandon från alla moduler.
-7. Klicka på **OK** för att ange principen
-8. Dubbelklicka på **Aktivera loggning av PowerShell-skriptkommando**
-9. Klicka på **aktive rad**
-10. Klicka på **OK** för att ange principen
-11. (Endast på domänanslutna datorer) Kör `gpupdate` eller vänta tills Grupprincip att bearbeta den uppdaterade principen och tillämpa inställningarna
+1. Open the Local Group Policy Editor on a workstation or a Group Policy Object in the Group Policy Management Console on an Active Directory Domain Controller
+2. Navigate to **Computer Configuration\\Administrative Templates\\Windows Components\\Windows PowerShell**
+3. Double-click on **Turn on Module Logging**
+4. Click **Enabled**
+5. In the Options section, click on **Show** next to Module Names
+6. Type `*` in the pop-up window to log commands from all modules.
+7. Click **OK** to set the policy
+8. Double-click on **Turn on PowerShell Script Block Logging**
+9. Click **Enabled**
+10. Click **OK** to set the policy
+11. (On domain-joined machines only) Run `gpupdate` or wait for Group Policy to process the updated policy and apply the settings
 
-Du kan också aktivera PowerShell-avskrifter i hela systemet genom grupprincip.
+You can also enable system-wide PowerShell transcription through Group Policy.
 
 ## <a name="next-steps"></a>Nästa steg
 
-[Skapa en roll funktions fil](role-capabilities.md)
+[Create a role capability file](role-capabilities.md)
 
-[Skapa en konfigurations fil för sessionen](session-configurations.md)
+[Create a session configuration file](session-configurations.md)
 
 ## <a name="see-also"></a>Se även
 
-[WinRM-säkerhet](/powershell/scripting/learn/remoting/winrmsecurity)
+[WinRM Security](/powershell/scripting/learn/remoting/winrmsecurity)
 
-[PowerShell ♥ det blå teamet](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)
+[PowerShell ♥ the Blue Team](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)

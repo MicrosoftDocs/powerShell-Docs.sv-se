@@ -1,5 +1,5 @@
 ---
-title: Skapa en Windows PowerShell-navigerings leverantör | Microsoft Docs
+title: Creating a Windows PowerShell Navigation Provider | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -11,168 +11,168 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: d08e348a46b97a8b7d31f9360b29c5eedaa68ea6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: f73e732ca9416b906b3647c5090dfa04ad940484
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72357199"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416193"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Skapa en Windows PowerShell-navigeringsprovider
 
-I det här avsnittet beskrivs hur du skapar en Windows PowerShell-navigerings leverantör som kan navigera i data lagret. Den här typen av provider stöder rekursiva kommandon, kapslade behållare och relativa sökvägar.
+This topic describes how to create a Windows PowerShell navigation provider that can navigate the data store. This type of provider supports recursive commands, nested containers, and relative paths.
 
 > [!NOTE]
-> Du kan ladda ned C# käll filen (AccessDBSampleProvider05.CS) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/developer/installing-the-windows-powershell-sdk).
+> You can download the C# source file (AccessDBSampleProvider05.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** .
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 >
-> Mer information om implementeringar av andra Windows PowerShell-leverantörer finns i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md).
+> For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
 
-Leverantören som beskrivs här aktiverar användaren som hanterar en Access-databas som en enhet så att användaren kan navigera till data tabellerna i databasen. När du skapar en egen navigerings leverantör kan du implementera metoder som kan göra enhets kvalificerade sökvägar nödvändiga för navigering, normalisera relativa sökvägar, flytta objekt i data lagret, samt metoder som får underordnade namn, hämta den överordnade sökvägen till ett objekt och testa för att identifiera om ett objekt är en behållare.
+The provider described here enables the user handle an Access database as a drive so that the user can navigate to the data tables in the database. When creating your own navigation provider, you can implement methods that can make drive-qualified paths required for navigation, normalize relative paths, move items of the data store, as well as methods that get child names, get the parent path of an item, and test to identify if an item is a container.
 
 > [!CAUTION]
-> Tänk på att den här designen förutsätter en databas som har ett fält med namn-ID, och att fält typen är LongInteger.
+> Be aware that this design assumes a database that has a field with the name ID, and that the type of the field is LongInteger.
 
-## <a name="define-the-windows-powershell-provider"></a>Definiera Windows PowerShell-providern
+## <a name="define-the-windows-powershell-provider"></a>Define the Windows PowerShell provider
 
-En Windows PowerShell-navigerings leverantör måste skapa en .NET-klass som härleds från Bask Lassen [system. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) . Här är klass definitionen för den navigerings leverantör som beskrivs i det här avsnittet.
+A Windows PowerShell navigation provider must create a .NET class that derives from the [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) base class. Here is the class definition for the navigation provider described in this section.
 
 [!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32 "AccessDBProviderSample05.cs")]
 
-Observera att i den här providern innehåller attributet [system. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) två parametrar. Den första parametern anger ett användarvänligt namn för den provider som används av Windows PowerShell. Den andra parametern anger de Windows PowerShell-funktioner som providern exponerar för Windows PowerShell-körningsmiljön under kommando bearbetning. Det finns inga Windows PowerShell-funktioner som har lagts till för den här providern.
+Note that in this provider, the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribute includes two parameters. The first parameter specifies a user-friendly name for the provider that is used by Windows PowerShell. The second parameter specifies the Windows PowerShell specific capabilities that the provider exposes to the Windows PowerShell runtime during command processing. For this provider, there are no Windows PowerShell specific capabilities that are added.
 
-## <a name="defining-base-functionality"></a>Definiera grundläggande funktioner
+## <a name="defining-base-functionality"></a>Defining Base Functionality
 
-Enligt beskrivningen i [utforma din PS-Provider](./designing-your-windows-powershell-provider.md)härleds klassen [system. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) från flera andra klasser som tillhandahöll olika funktioner i providern. En Windows PowerShell-navigerings leverantör måste därför definiera alla funktioner som tillhandahålls av dessa klasser.
+As described in [Design Your PS Provider](./designing-your-windows-powershell-provider.md), the [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) base class derives from several other classes that provided different provider functionality. A Windows PowerShell navigation provider, therefore, must define all of the functionality provided by those classes.
 
-Om du vill implementera funktioner för att lägga till datorspecifik initierings information och släppa resurser som används av providern, se [skapa en grundläggande PS-Provider](./creating-a-basic-windows-powershell-provider.md). De flesta leverantörer (inklusive leverantören som beskrivs här) kan dock använda standard implementeringen av den här funktionen i Windows PowerShell.
+To implement functionality for adding session-specific initialization information and for releasing resources that are used by the provider, see [Creating a Basic PS Provider](./creating-a-basic-windows-powershell-provider.md). However, most providers (including the provider described here) can use the default implementation of this functionality provided by Windows PowerShell.
 
-För att få åtkomst till data lagret via en Windows PowerShell-enhet måste du implementera metoderna i Bask Lassen [system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . Mer information om hur du implementerar dessa metoder finns i [skapa en provider för Windows PowerShell-enheter](./creating-a-windows-powershell-drive-provider.md).
+To get access to the data store through a Windows PowerShell drive, you must implement the methods of the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) base class. For more information about implementing these methods, see [Creating a Windows PowerShell Drive Provider](./creating-a-windows-powershell-drive-provider.md).
 
-Om du vill ändra objekt i ett data lager, till exempel hämta, ange och rensa objekt, måste providern implementera de metoder som tillhandahålls av Bask Lassen [system. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) . Mer information om hur du implementerar dessa metoder finns i [skapa en Windows PowerShell-dataprovider](./creating-a-windows-powershell-item-provider.md).
+To manipulate the items of a data store, such as getting, setting, and clearing items, the provider must implement the methods provided by the [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) base class. For more information about implementing these methods, see [Creating an Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).
 
-För att komma till underordnade objekt, eller deras namn, för data lagret, samt metoder för att skapa, kopiera, byta namn på och ta bort objekt, måste du implementera de metoder som tillhandahålls av Bask Lassen [system. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) . Mer information om hur du implementerar dessa metoder finns i [skapa en Windows PowerShell container-Provider](./creating-a-windows-powershell-container-provider.md).
+To get to the child items, or their names, of the data store, as well as methods that create, copy, rename, and remove items, you must implement the methods provided by the [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) base class. For more information about implementing these methods, see [Creating a Windows PowerShell Container Provider](./creating-a-windows-powershell-container-provider.md).
 
-## <a name="creating-a-windows-powershell-path"></a>Skapa en Windows PowerShell-sökväg
+## <a name="creating-a-windows-powershell-path"></a>Creating a Windows PowerShell Path
 
-Windows PowerShell-navigerings leverantör använder en provider-intern Windows PowerShell-sökväg för att navigera i objekt i data lagret. För att skapa en provider – intern sökväg måste providern implementera metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) för att stödja anrop från cmdlet: en kombinations Sök väg. Den här metoden kombinerar en överordnad och underordnad sökväg till en provider – intern sökväg med en providerspecifika Sök vägs avgränsare mellan de överordnade och underordnade Sök vägarna.
+Windows PowerShell navigation provider use a provider-internal Windows PowerShell path to navigate the items of the data store. To create a provider-internal path the provider must implement the [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method to supports calls from the Combine-Path cmdlet. This method combines a parent and child path into a provider-internal path, using a provider-specific path separator between the parent and child paths.
 
-Standard implementeringen tar sökvägar med "/" eller "\\" som Sök vägs avgränsare, normaliserar Sök vägs avgränsaren till "\\", kombinerar de överordnade och underordnade Sök vägs delarna med avgränsaren, och returnerar sedan en sträng som innehåller de kombinerade Sök vägarna.
+The default implementation takes paths with "/" or "\\" as the path separator, normalizes the path separator to "\\", combines the parent and child path parts with the separator between them, and then returns a string that contains the combined paths.
 
-Den här navigerings leverantören implementerar inte den här metoden. Följande kod är dock standard implementeringen av metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) .
+This navigation provider does not implement this method. However, the following code is the default implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidermakepath](Msh_samplestestcmdlets#testprovidermakepath)]  -->
 
-#### <a name="things-to-remember-about-implementing-makepath"></a>Saker att komma ihåg om att implementera MakePath
+#### <a name="things-to-remember-about-implementing-makepath"></a>Things to Remember About Implementing MakePath
 
-Följande villkor kan gälla för din implementering av [system. Management. Automation. Provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath):
+The following conditions may apply to your implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath):
 
-- Din implementering av metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) ska inte verifiera sökvägen som en giltig fullständig sökväg i namn området för providern. Tänk på att varje parameter bara kan representera en del av en sökväg, och de kombinerade delarna kanske inte genererar en fullständigt kvalificerad sökväg. Till exempel kan metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) för fil systemets Provider ta emot "Windows\System32" i parametern `parent` och "ABC. dll" i parametern `child`. Metoden ansluter till dessa värden med avgränsaren "\\" och returnerar "windows\system32\abc.dll", vilket inte är en fullständigt kvalificerad fil system Sök väg.
+- Your implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method should not validate the path as a legal fully-qualified path in the provider namespace. Be aware that each parameter can only represent a part of a path, and the combined parts might not generate a fully-qualified path. For example, the [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method for the filesystem provider might receive "windows\system32" in the `parent` parameter and "abc.dll" in the `child` parameter. The method joins these values with the "\\" separator and returns "windows\system32\abc.dll", which is not a fully-qualified file system path.
 
   > [!IMPORTANT]
-  > De Sök vägs delar som anges i anropet till [system. Management. Automation. Provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) kan innehålla tecken som inte tillåts i Providerns namn område. Dessa tecken används förmodligen för expansion av jokertecken och implementeringen av den här metoden bör inte ta bort dem.
+  > The path parts provided in the call to [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) might contain characters not allowed in the provider namespace. These characters are most likely used for wildcard expansion and the implementation of this method should not remove them.
 
-## <a name="retrieving-the-parent-path"></a>Hämtar överordnad sökväg
+## <a name="retrieving-the-parent-path"></a>Retrieving the Parent Path
 
-Windows PowerShell-navigerings leverantörer implementerar metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Getparentpath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath) för att hämta den överordnade delen av den angivna fullständiga eller delvis providerspecifika sökvägen. Metoden tar bort den underordnade delen av sökvägen och returnerar den överordnade Sök vägs delen. Parametern `root` anger den fullständigt kvalificerade sökvägen till roten på en enhet. Den här parametern kan vara null eller tom om en monterad enhet inte används för hämtnings åtgärden. Om en rot anges måste metoden returnera en sökväg till en behållare i samma träd som roten.
+Windows PowerShell navigation providers implement the [System.Management.Automation.Provider.Navigationcmdletprovider.Getparentpath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath) method to retrieve the parent part of the indicated full or partial provider-specific path. The method removes the child part of the path and returns the parent path part. The `root` parameter specifies the fully-qualified path to the root of a drive. This parameter can be null or empty if a mounted drive is not in use for the retrieval operation. If a root is specified, the method must return a path to a container in the same tree as the root.
 
-Exempel navigerings leverantören åsidosätter inte den här metoden, men använder standard implementeringen. Den accepterar sökvägar som använder både "/" och "\\" som avgränsare. Det normaliserar först sökvägen till att bara ha "\\"-avgränsare och delar sedan upp den överordnade sökvägen från den senaste "\\" och returnerar den överordnade sökvägen.
+The sample navigation provider does not override this method, but uses the default implementation. It accepts paths that use both "/" and "\\" as path separators. It first normalizes the path to have only "\\" separators, then splits the parent path off at the last "\\" and returns the parent path.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetparentpath](Msh_samplestestcmdlets#testprovidergetparentpath)]  -->
 
-#### <a name="to-remember-about-implementing-getparentpath"></a>Kom ihåg att implementera GetParentPath
+#### <a name="to-remember-about-implementing-getparentpath"></a>To Remember About Implementing GetParentPath
 
-Din implementering av metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Getparentpath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath) ska dela upp sökvägen lexikalt på Sök vägs avgränsaren för Providerns namn område. Till exempel använder fil namns leverantören den här metoden för att leta efter den sista "\\" och returnerar allt till vänster om avgränsaren.
+Your implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Getparentpath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath) method should split the path lexically on the path separator for the provider namespace. For example, the filesystem provider uses this method to look for the last "\\" and returns everything to the left of the separator.
 
-## <a name="retrieve-the-child-path-name"></a>Hämta namnet på den underordnade sökvägen
+## <a name="retrieve-the-child-path-name"></a>Retrieve the Child Path Name
 
-Navigerings leverantören implementerar metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Getchildname *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName) för att hämta namnet (löv element) för underordnat objekt som finns i den angivna fullständiga eller partiella providerspecifik sökväg.
+Your navigation provider implements the [System.Management.Automation.Provider.Navigationcmdletprovider.Getchildname*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName) method to retrieve the name (leaf element) of the child of the item located at the indicated full or partial provider-specific path.
 
-Exempel navigerings leverantören åsidosätter inte den här metoden. Standard implementeringen visas nedan. Den accepterar sökvägar som använder både "/" och "\\" som avgränsare. Det normaliserar först sökvägen till att bara ha "\\"-avgränsare och delar sedan upp den överordnade sökvägen från den senaste "\\" och returnerar namnet på den underordnade Sök vägs delen.
+The sample navigation provider does not override this method. The default implementation is shown below. It accepts paths that use both "/" and "\\" as path separators. It first normalizes the path to have only "\\" separators, then splits the parent path off at the last "\\" and returns the name of the child path part.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetchildname](Msh_samplestestcmdlets#testprovidergetchildname)]  -->
 
-#### <a name="things-to-remember-about-implementing-getchildname"></a>Saker att komma ihåg om att implementera GetChildName
+#### <a name="things-to-remember-about-implementing-getchildname"></a>Things to Remember About Implementing GetChildName
 
-Din implementering av metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Getchildname *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName) ska dela upp sökvägen lexikalt på Sök vägs avgränsaren. Om den angivna sökvägen inte innehåller några Sök vägs avgränsare ska metoden returnera sökvägen oförändrad.
+Your implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Getchildname*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName) method should split the path lexically on the path separator. If the supplied path contains no path separators, the method should return the path unmodified.
 
 > [!IMPORTANT]
-> Sökvägen som anges i anropet till den här metoden kan innehålla tecken som är ogiltiga i namn området för providern. De här tecknen används förmodligen för matchning av jokertecken eller reguljära uttryck, och implementeringen av den här metoden bör inte ta bort dem.
+> The path provided in the call to this method might contain characters that are illegal in the provider namespace. These characters are most likely used for wildcard expansion or regular expression matching, and the implementation of this method should not remove them.
 
-## <a name="determining-if-an-item-is-a-container"></a>Avgöra om ett objekt är en behållare
+## <a name="determining-if-an-item-is-a-container"></a>Determining if an Item is a Container
 
-Navigerings leverantören kan implementera metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Isitemcontainer *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) för att avgöra om den angivna sökvägen indikerar en behållare. Det returnerar true om sökvägen representerar en behållare och annars FALSE. Användaren behöver den här metoden för att kunna använda cmdleten `Test-Path` för den angivna sökvägen.
+The navigation provider can implement the [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) method to determine if the specified path indicates a container. It returns true if the path represents a container, and false otherwise. The user needs this method to be able to use the `Test-Path` cmdlet for the supplied path.
 
-Följande kod visar implementeringen [system. Management. Automation. Provider. Navigationcmdletprovider. Isitemcontainer *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) i vår exempel navigerings leverantör. Metoden kontrollerar att den angivna sökvägen är korrekt och om tabellen finns och returnerar true om sökvägen indikerar en behållare.
+The following code shows the [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) implementation in our sample navigation provider. The method verifies that  the specified path is correct and if the table exists, and returns true if the path indicates a container.
 
 [!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L847-L872 "AccessDBProviderSample05.cs")]
 
-#### <a name="things-to-remember-about-implementing-isitemcontainer"></a>Saker att komma ihåg om att implementera IsItemContainer
+#### <a name="things-to-remember-about-implementing-isitemcontainer"></a>Things to Remember About Implementing IsItemContainer
 
-Din navigerings leverantörs .NET-klass kan deklarera leverantörs funktioner i ExpandWildcards, filtrera, ta med eller undanta, från uppräkningen [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . I det här fallet måste implementeringen av [system. Management. Automation. Provider. Navigationcmdletprovider. Isitemcontainer *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) se till att den angivna sökvägen uppfyller kraven. För att göra detta ska metoden komma åt lämplig egenskap, till exempel egenskapen [system. Management. Automation. Provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .
+Your navigation provider .NET class might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In this case, the implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) needs to ensure that the path passed meets requirements. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) property.
 
-## <a name="moving-an-item"></a>Flytta ett objekt
+## <a name="moving-an-item"></a>Moving an Item
 
-Som stöd för `Move-Item`-cmdlet implementerar navigerings leverantören [system. Management. Automation. Provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) -metoden. Den här metoden flyttar det objekt som anges av parametern `path` till behållaren på den sökväg som anges i parametern `destination`.
+In support of the `Move-Item` cmdlet, your navigation provider implements the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method. This method moves the item specified by the `path` parameter to the container at the path supplied in the `destination` parameter.
 
-Exempel navigerings leverantören åsidosätter inte metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) . Följande är standard implementeringen.
+The sample navigation provider does not override the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method. The following is the default implementation.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidermoveitem](Msh_samplestestcmdlets#testprovidermoveitem)]  -->
 
-#### <a name="things-to-remember-about-implementing-moveitem"></a>Saker att komma ihåg om att implementera MoveItem
+#### <a name="things-to-remember-about-implementing-moveitem"></a>Things to Remember About Implementing MoveItem
 
-Din navigerings leverantörs .NET-klass kan deklarera leverantörs funktioner i ExpandWildcards, filtrera, ta med eller undanta, från uppräkningen [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . I det här fallet måste implementeringen av [system. Management. Automation. Provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) se till att den angivna sökvägen uppfyller kraven. För att göra detta ska metoden komma åt lämplig egenskap, till exempel egenskapen **CmdletProvider. exclud** .
+Your navigation provider .NET class might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In this case, the implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) must ensure that the path passed meets requirements. To do this, the method should access the appropriate property, for example, the **CmdletProvider.Exclude** property.
 
-Åsidosättningar av den här metoden bör som standard inte flytta objekt över befintliga objekt om inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) anges till `true`. Till exempel kommer inte fil Systems leverantören att kopiera c:\temp\abc.txt över en befintlig c:\bar.txt-fil om inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) anges till `true`. Om sökvägen som anges i parametern `destination` finns och är en behållare, krävs inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) . I det här fallet ska [system. Management. Automation. Provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) flytta objektet som anges av parametern `path` till den behållare som anges av parametern `destination` som underordnad.
+By default, overrides of this method should not move objects over existing objects unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. For example, the filesystem provider will not copy c:\temp\abc.txt over an existing c:\bar.txt file unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. If the path specified in the `destination` parameter exists and is a container, the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is not required. In this case, [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) should move the item indicated by the `path` parameter to the container indicated by the `destination` parameter as a child.
 
-Din implementering av metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) ska anropa [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och kontrol lera dess retur värde innan göra ändringar i data lagret. Den här metoden används för att bekräfta körning av en åtgärd när en ändring görs i system tillstånd, t. ex. borttagning av filer. [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) skickar namnet på den resurs som ska ändras till användaren, med Windows PowerShell-körningsmiljön med hänsyn till eventuella kommando rads inställningar eller variabler för att fastställa vad som ska visas för användaren.
+Your implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and check its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to system state, for example, deleting files. [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sends the name of the resource to be changed to the user, with the Windows PowerShell runtime taking into account any command line settings or preference variables in determining what should be displayed to the user.
 
-Efter anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar `true`, metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) anropar [ Metoden system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Den här metoden skickar ett meddelande till användaren för att ge feedback till att säga om åtgärden bör fortsätta. Leverantören bör anropa [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) som en ytterligare kontroll för potentiellt skadliga system ändringar.
+After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a message to the user to allow feedback to say if the operation should be continued. Your provider should call [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) as an additional check for potentially dangerous system modifications.
 
-## <a name="attaching-dynamic-parameters-to-the-move-item-cmdlet"></a>Bifoga dynamiska parametrar till flytt-item-cmdleten
+## <a name="attaching-dynamic-parameters-to-the-move-item-cmdlet"></a>Attaching Dynamic Parameters to the Move-Item Cmdlet
 
-Ibland kräver cmdleten `Move-Item` ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar måste navigerings leverantören implementera metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Moveitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters) för att hämta de nödvändiga parametervärdena från objektet vid angiven sökväg och returnera ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt.
+Sometimes the `Move-Item` cmdlet requires additional parameters that are provided dynamically at runtime. To provide these dynamic parameters, the navigation provider must implement the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters) method to get the required parameter values from the item at the indicated path, and return an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object.
 
-Den här navigerings leverantören implementerar inte den här metoden. Följande kod är dock standard implementeringen av [system. Management. Automation. Provider. Navigationcmdletprovider. Moveitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters).
+This navigation provider does not implement this method. However, the following code is the default implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters).
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidermoveitemdynamicparameters](Msh_samplestestcmdlets#testprovidermoveitemdynamicparameters)]  -->
 
-## <a name="normalizing-a-relative-path"></a>Normalisera en relativ sökväg
+## <a name="normalizing-a-relative-path"></a>Normalizing a Relative Path
 
-Navigerings leverantören implementerar metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) för att normalisera den fullständigt kvalificerade sökvägen som anges i parametern `path` som relativ till sökvägen anges av parametern `basePath`. Metoden returnerar en sträng representation av den normaliserade sökvägen. Ett fel skrivs om parametern `path` anger en sökväg som inte finns.
+Your navigation provider implements the [System.Management.Automation.Provider.Navigationcmdletprovider.Normalizerelativepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) method to normalize the fully-qualified path indicated in the `path` parameter as being relative to the path specified by the `basePath` parameter. The method returns a string representation of the normalized path. It writes an error if the `path` parameter specifies a nonexistent path.
 
-Exempel navigerings leverantören åsidosätter inte den här metoden. Följande är standard implementeringen.
+The sample navigation provider does not override this method. The following is the default implementation.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidernormalizepath](Msh_samplestestcmdlets#testprovidernormalizepath)]  -->
 
-#### <a name="things-to-remember-about-implementing-normalizerelativepath"></a>Saker att komma ihåg om att implementera NormalizeRelativePath
+#### <a name="things-to-remember-about-implementing-normalizerelativepath"></a>Things to Remember About Implementing NormalizeRelativePath
 
-Din implementering av [system. Management. Automation. Provider. Navigationcmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) ska parsa parametern `path`, men den behöver inte använda helt syntaktisk tolkning. Du uppmanas att utforma den här metoden för att använda sökvägen för att leta upp Sök vägs informationen i data lagret och skapa en sökväg som matchar Skift läget och syntaxen för standardiserad sökväg.
+Your implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Normalizerelativepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) should parse the `path` parameter, but it does not have to use purely syntactical parsing. You are encouraged to design this method to use the path to look up the path information in the data store and create a path that matches the casing and standardized path syntax.
 
-## <a name="code-sample"></a>Kod exempel
+## <a name="code-sample"></a>Code Sample
 
-Fullständig exempel kod finns i [kod exemplet för AccessDbProviderSample05](./accessdbprovidersample05-code-sample.md).
+For complete sample code, see [AccessDbProviderSample05 Code Sample](./accessdbprovidersample05-code-sample.md).
 
-## <a name="defining-object-types-and-formatting"></a>Definiera objekt typer och formatering
+## <a name="defining-object-types-and-formatting"></a>Defining Object Types and Formatting
 
-Det är möjligt för en provider att lägga till medlemmar i befintliga objekt eller definiera nya objekt. Mer information finns i[utöka objekt typer och formatering](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+It is possible for a provider to add members to existing objects or define new objects. For more information, see[Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
-## <a name="building-the-windows-powershell-provider"></a>Skapa Windows PowerShell-providern
+## <a name="building-the-windows-powershell-provider"></a>Building the Windows PowerShell provider
 
-Mer information finns i [så här registrerar du cmdlets, providers och värd program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+For more information, see [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
-## <a name="testing-the-windows-powershell-provider"></a>Testa Windows PowerShell-providern
+## <a name="testing-the-windows-powershell-provider"></a>Testing the Windows PowerShell provider
 
-När din Windows PowerShell-provider har registrerats med Windows PowerShell kan du testa den genom att köra cmdlets som stöds på kommando raden, inklusive cmdletar som gjorts tillgängliga av härledning. I det här exemplet kommer exempel navigerings leverantören att testa.
+When your Windows PowerShell provider has been registered with Windows PowerShell, you can test it by running the supported cmdlets on the command line, including cmdlets made available by derivation. This example will test the sample navigation provider.
 
-1. Kör det nya gränssnittet och Använd `Set-Location`-cmdleten för att ange sökvägen för att ange Access-databasen.
+1. Run your new shell and use the `Set-Location` cmdlet to set the path to indicate the Access database.
 
    ```powershell
    Set-Location mydb:
    ```
 
-2. Kör nu cmdleten `Get-Childitem` för att hämta en lista över databas objekt, som är tillgängliga databas tabeller. För varje tabell hämtar denna cmdlet också antalet tabell rader.
+2. Now run the `Get-Childitem` cmdlet to retrieve a list of the database items, which are the available database tables. For each table, this cmdlet also retrieves the number of table rows.
 
    ```powershell
    Get-ChildItem | Format-Table rowcount,name -AutoSize
@@ -199,13 +199,13 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
          29   Suppliers
    ```
 
-3. Använd cmdleten `Set-Location` igen för att ange platsen för tabellen anställdas data.
+3. Use the `Set-Location` cmdlet again to set the location of the Employees data table.
 
    ```powershell
    Set-Location Employees
    ```
 
-4. Nu ska vi använda cmdleten `Get-Location` för att hämta sökvägen till tabellen anställda.
+4. Let's now use the `Get-Location` cmdlet to retrieve the path to the Employees table.
 
    ```powershell
    Get-Location
@@ -217,7 +217,7 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
    mydb:\Employees
    ```
 
-5. Använd nu skickas-cmdleten `Get-Childitem` till `Format-Table`-cmdleten. Den här uppsättningen cmdlet: ar hämtar objekten för data tabellen anställda, som är tabell rader. De formateras som de anges av cmdleten `Format-Table`.
+5. Now use the `Get-Childitem` cmdlet piped to the `Format-Table` cmdlet. This set of cmdlets retrieves the items for the Employees data table, which are the table rows. They are formatted as specified by the `Format-Table` cmdlet.
 
    ```powershell
    Get-ChildItem | Format-Table rownumber,psiscontainer,data -AutoSize
@@ -237,7 +237,7 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
    8           False            System.Data.DataRow
    ```
 
-6. Nu kan du köra cmdleten `Get-Item` för att hämta objekten för rad 0 i tabellen anställdas data.
+6. You can now run the `Get-Item` cmdlet to retrieve the items for row 0 of the Employees data table.
 
    ```powershell
    Get-Item 0
@@ -254,7 +254,7 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
    RowNumber      : 0
    ```
 
-7. Använd cmdleten `Get-Item` igen för att hämta medarbetar data för objekten på rad 0.
+7. Use the `Get-Item` cmdlet again to retrieve the employee data for the items in row 0.
 
    ```powershell
    (Get-Item 0).data
@@ -286,16 +286,16 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
 
 ## <a name="see-also"></a>Se även
 
-[Skapa Windows PowerShell-leverantörer](./how-to-create-a-windows-powershell-provider.md)
+[Creating Windows PowerShell providers](./how-to-create-a-windows-powershell-provider.md)
 
-[Utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md)
+[Design Your Windows PowerShell provider](./designing-your-windows-powershell-provider.md)
 
-[Utöka objekt typer och formatering](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Implementera en container Windows PowerShell-Provider](./creating-a-windows-powershell-container-provider.md)
+[Implement a Container Windows PowerShell provider](./creating-a-windows-powershell-container-provider.md)
 
-[Registrera cmdlets, providers och värd program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
-[Windows PowerShell Programmer ' s guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

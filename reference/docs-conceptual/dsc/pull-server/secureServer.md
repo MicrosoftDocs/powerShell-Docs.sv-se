@@ -1,268 +1,268 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, PowerShell, konfiguration, installation
+keywords: dsc,powershell,configuration,setup
 title: Metodtips för hämtningsservern
-ms.openlocfilehash: a3c4ca039b1e061a9246848bef6aeecebcd89011
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 5cb47598b11f7884dddf1440cec21afeab49bebb
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71941651"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417724"
 ---
 # <a name="pull-server-best-practices"></a>Metodtips för hämtningsservern
 
-Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
+Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> Hämtnings servern (Windows Feature *DSC-tjänst*) är en komponent som stöds av Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att du börjar överföra hanterade klienter till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver hämtnings servern på Windows Server) eller någon av de community-lösningar som anges [här](/powershell/dsc/pull-server/pullserver#community-solutions-for-pull-service).
+> The Pull Server (Windows Feature *DSC-Service*) is a supported component of Windows Server however there are no plans to offer new features or capabilities. It is recommended to begin transitioning managed clients to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (includes features beyond Pull Server on Windows Server) or one of the community solutions listed [here](/powershell/scripting/dsc/pull-server/pullserver#community-solutions-for-pull-service).
 
-Drag Det här dokumentet är avsett att omfatta processer och utöknings barhet för att hjälpa tekniker som förbereder lösningen. Informationen bör ge bästa praxis som identifieras av kunder och sedan verifieras av produkt teamet för att säkerställa att rekommendationerna är stabila och anses stabila.
+Summary: This document is intended to include process and extensibility to assist engineers who are preparing for the solution. Details should provide best practices as identified by customers and then validated by the product team to ensure recommendations are future facing and considered stable.
 
-| |Dokument information|
+| |Doc Info|
 |:---|:---|
-Författare | Michael Greene
+Author | Michael Greene
 Granskare | Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic
-Publicerad | April, 2015
+Published | April, 2015
 
-## <a name="abstract"></a>Abstrakt
+## <a name="abstract"></a>Abstract
 
-Det här dokumentet är utformat för att ge den officiella vägledningen för alla som planerar för en Windows PowerShell Desired State Configuration-hämtning av hämtnings servrar. En pull-server är en enkel tjänst som bara tar några minuter att distribuera. Även om det här dokumentet kommer att erbjuda teknisk instruktions vägledning som kan användas i en distribution, är värdet för det här dokumentet som en referens för bästa praxis och vad du behöver tänka på innan du distribuerar.
-Läsarna bör ha grundläggande kunskaper om DSC och de termer som används för att beskriva de komponenter som ingår i en DSC-distribution. Mer information finns i avsnittet [Översikt över Desired State Configuration i Windows PowerShell](/powershell/dsc/overview) .
-Eftersom DSC förväntas utvecklas på Cloud takt förväntas den underliggande tekniken, inklusive hämtnings servern, att utvecklas och introducera nya funktioner. Det här dokumentet innehåller en versions tabell i bilagan som innehåller referenser till tidigare versioner och referenser till kommande lösningar för att uppmuntra de vanliga designerna.
+This document is designed to provide official guidance for anyone planning for a Windows PowerShell Desired State Configuration pull server implementation. A pull server is a simple service that should take only minutes to deploy. Although this document will offer technical how-to guidance that can be used in a deployment, the value of this document is as a reference for best practices and what to think about before deploying.
+Readers should have basic familiarity with DSC, and the terms used to describe the components that are included in a DSC deployment. For more information, see the [Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview)  topic.
+As DSC is expected to evolve at cloud cadence, the underlying technology including pull server is also expected to evolve and to introduce new capabilities. This document includes a version table in the appendix that provides references to previous releases and references to future looking solutions to encourage forward-looking designs.
 
-De två huvud avsnitten i det här dokumentet:
+The two major sections of this document:
 
-- Konfigurations planering
-- Installations guide
+- Configuration Planning
+- Installation Guide
 
-### <a name="versions-of-the-windows-management-framework"></a>Versioner av Windows Management Framework
+### <a name="versions-of-the-windows-management-framework"></a>Versions of the Windows Management Framework
 
-Informationen i det här dokumentet är avsedd att användas för Windows Management Framework 5,0. Även om WMF 5,0 inte krävs för att distribuera och använda en hämtnings Server är version 5,0 fokus i det här dokumentet.
+The information in this document is intended to apply to Windows Management Framework 5.0. While WMF 5.0 is not required for deploying and operating a pull server, version 5.0 is the focus of this document.
 
 ### <a name="windows-powershell-desired-state-configuration"></a>Windows PowerShell Desired State Configuration
 
-Önskad tillstånds konfiguration (DSC) är en hanterings plattform som gör det möjligt att distribuera och hantera konfigurations data med hjälp av en bransch-syntax med namnet Managed Object Format (MOF) som beskriver Common Information Model (CIM). Ett projekt med öppen källkod, öppen hanterings infrastruktur (OMI), finns för att utveckla dessa standarder på olika plattformar, inklusive Linux-och nätverks maskin varu operativ system. Mer information finns i DMTF- [sidan länka till MOF-specifikationer](https://www.dmtf.org/standards/cim)och [OMI-dokument och-källa](https://collaboration.opengroup.org/omi/documents.php).
+Desired State Configuration (DSC) is a management platform that enables deploying and managing configuration data by using an industry syntax named the Managed Object Format (MOF) to describe the Common Information Model (CIM). An open source project, Open Management Infrastructure (OMI), exists to further development of these standards across platforms including Linux and network hardware operating systems. For more information, see the [DMTF page linking to MOF specifications](https://www.dmtf.org/standards/cim), and [OMI Documents and Source](https://collaboration.opengroup.org/omi/documents.php).
 
-Windows PowerShell innehåller en uppsättning språk tillägg för önskad tillstånds konfiguration som du kan använda för att skapa och hantera deklarativ konfigurationer.
+Windows PowerShell provides a set of language extensions for Desired State Configuration that you can use to create and manage declarative configurations.
 
-### <a name="pull-server-role"></a>Hämta server roll
+### <a name="pull-server-role"></a>Pull server role
 
-En pull-server tillhandahåller en centraliserad tjänst för att lagra konfigurationer som kommer att vara tillgängliga för mål noder.
+A pull server provides a centralized service to store configurations that will be accessible to target nodes.
 
-Hämtnings Server rollen kan distribueras antingen som en webb Server instans eller en SMB-filresurs. Webb server funktionen innehåller ett OData-gränssnitt och kan även inkludera funktioner för målnoden för att rapportera om en bekräftelse eller ett haveri som har tillämpats. Den här funktionen är användbar i miljöer där det finns ett stort antal mål noder.
-När du har konfigurerat en målnod (kallas även en klient) för att peka på hämtnings servern, laddas de senaste konfigurations data och eventuella skript som krävs ned och tillämpas. Detta kan ske vid en enstaka distribution eller som ett jobb som körs på nytt, vilket även gör hämtnings servern till en viktig till gång för att hantera förändringar i skala. Mer information finns i [Windows PowerShell Desired State Configuration pull-servrar](/powershell/dsc/pullServer/pullserver) och
+The pull server role can be deployed as either a Web Server instance or an SMB file share. The web server capability includes an OData interface and can optionally include capabilities for target nodes to report back confirmation of success or failure as configurations are applied. This functionality is useful in environments where there are a large number of target nodes.
+After configuring a target node (also referred to as a client) to point to the pull server the latest configuration data and any required scripts are downloaded and applied. This can happen as a one-time deployment or as a re-occurring job which also makes the pull server an important asset for managing change at scale. For more information, see [Windows PowerShell Desired State Configuration Pull Servers](/powershell/scripting/dsc/pullServer/pullserver) and
 
-[Konfigurations lägen för push och hämtning](/powershell/dsc/pullServer/pullserver).
+[Push and Pull Configuration Modes](/powershell/scripting/dsc/pullServer/pullserver).
 
-## <a name="configuration-planning"></a>Konfigurations planering
+## <a name="configuration-planning"></a>Configuration planning
 
-För distribution av företags program vara finns det information som kan samlas in i förväg för att planera för rätt arkitektur och förberedas för de steg som krävs för att slutföra distributionen. I följande avsnitt finns information om hur du förbereder och de organisatoriska anslutningar som sannolikt kommer att behöva inträffa i förväg.
+For any enterprise software deployment there is information that can be collected in advance to help plan for the correct architecture and to be prepared for the steps required to complete the deployment. The following sections provide information regarding how to prepare and the organizational connections that will likely need to happen in advance.
 
 ### <a name="software-requirements"></a>Programvarukrav
 
-För att kunna distribuera en pull-server krävs DSC-funktionen i Windows Server. Den här funktionen introducerades i Windows Server 2012 och har uppdaterats genom pågående versioner av Windows Management Framework (WMF).
+Deployment of a pull server requires the DSC Service feature of Windows Server. This feature was introduced in Windows Server 2012, and has been updated through ongoing releases of Windows Management Framework (WMF).
 
-### <a name="software-downloads"></a>Hämtning av program vara
+### <a name="software-downloads"></a>Software downloads
 
-Förutom att installera det senaste innehållet från Windows Update, finns det två hämtnings bara filer som anses vara bästa praxis för att distribuera en DSC-pull-server: Den senaste versionen av Windows Management Framework och en DSC-modul för att automatisera hämtningen av Server etablering.
+In addition to installing the latest content from Windows Update, there are two downloads considered best practice to deploy a DSC pull server: The latest version of Windows Management Framework, and a DSC module to automate pull server provisioning.
 
 ### <a name="wmf"></a>WMF
 
-Windows Server 2012 R2 innehåller en funktion som kallas DSC-tjänsten. Funktionen DSC-tjänst tillhandahåller hämtnings Server funktioner, inklusive binärfiler som stöder OData-slutpunkten.
-WMF ingår i Windows Server och uppdateras på en smidig takt mellan Windows Server-versioner. [Nya versioner av WMF 5,0](https://www.microsoft.com/en-us/download/details.aspx?id=54616) kan innehålla uppdateringar av DSC-tjänstens funktion. Av den anledningen är det bäst att ladda ned den senaste versionen av WMF och granska viktig information för att ta reda på om versionen innehåller en uppdatering av DSC-tjänstens funktion. Du bör också läsa avsnittet i viktig information som anger om design status för en uppdatering eller ett scenario visas som stabil eller experimentell.
-För att möjliggöra en smidig lanserings cykel kan enskilda funktioner deklareras som stabila, vilket innebär att funktionen är redo att användas i en produktions miljö även om WMF lanseras i för hands versionen.
-Andra funktioner som tidigare har uppdaterats av WMF-versioner (mer information finns i versions kommentarerna för WMF):
+Windows Server 2012 R2 includes a feature named the DSC Service. The DSC Service feature provides the pull server functionality, including the binaries that support the OData endpoint.
+WMF is included in Windows Server and is updated on an agile cadence between Windows Server releases. [New versions of WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=54616)  can include updates to the DSC Service feature. For this reason, it is a best practice to download the latest release of WMF and to review the release notes to determine if the release includes an update to the DSC service feature. You should also review the section of the release notes that indicates whether the design status for an update or scenario is listed as stable or experimental.
+To allow for an agile release cycle, individual features can be declared stable, which indicates the feature is ready to be used in a production environment even while WMF is released in preview.
+Other features that have historically been updated by WMF releases (see the WMF Release Notes for further detail):
 
-- Windows PowerShell Windows PowerShell-integrerat skript
-- Environment (ISE) Windows PowerShell-webbtjänster (hantering OData
-- IIS-tillägg) Windows PowerShell Desired State Configuration (DSC)
+- Windows PowerShell Windows PowerShell Integrated Scripting
+- Environment (ISE) Windows PowerShell Web Services (Management OData
+- IIS Extension)  Windows PowerShell Desired State Configuration (DSC)
 - Windows Remote Management (WinRM) Windows Management Instrumentation (WMI)
 
-### <a name="dsc-resource"></a>DSC-resurs
+### <a name="dsc-resource"></a>DSC resource
 
-En pull-Server-distribution kan för enklas genom att tillhandahålla tjänsten med hjälp av ett DSC-konfigurations skript. Det här dokumentet innehåller konfigurations skript som kan användas för att distribuera en produktions klar Server-nod. Om du vill använda konfigurations skripten krävs en DSC-modul som inte ingår i Windows Server. Namnet på den obligatoriska modulen är **xPSDesiredStateConfiguration**, som innehåller DSC- **xDscWebService**. XPSDesiredStateConfiguration-modulen kan hämtas [här](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d).
+A pull server deployment can be simplified by provisioning the service using a DSC configuration script. This document includes configuration scripts that can be used to deploy a production ready server node. To use the configuration scripts, a DSC module is required that is not included in Windows Server. The required module name is **xPSDesiredStateConfiguration**, which includes the DSC resource **xDscWebService**. The xPSDesiredStateConfiguration module can be downloaded [here](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d).
 
-Använd cmdleten `Install-Module` från **PowerShellGet** -modulen.
+Use the `Install-Module` cmdlet from the **PowerShellGet** module.
 
 ```powershell
 Install-Module xPSDesiredStateConfiguration
 ```
 
-Modulen **PowerShellGet** hämtar modulen till:
+The **PowerShellGet** module will download the module to:
 
 `C:\Program Files\Windows PowerShell\Modules`
 
-Planerings uppgift|
+Planning task|
 ---|
-Har du åtkomst till installationsfilerna för Windows Server 2012 R2?|
-Kommer distributions miljön att ha Internet åtkomst för att hämta WMF och modulen från Onlinegalleri?|
-Hur installerar du de senaste säkerhets uppdateringarna efter att du har installerat operativ systemet?|
-Kommer miljön att ha Internet åtkomst för att hämta uppdateringar eller kommer att ha en lokal Windows Server Update Services (WSUS)-Server?|
-Har du åtkomst till Windows Server-installationsfiler som redan innehåller uppdateringar via offline-inmatning?|
+Do you have access to the installation files for Windows Server 2012 R2?|
+Will the deployment environment have Internet access to download WMF and the module from the online gallery?|
+How will you install the latest security updates after installing the operating system?|
+Will the environment have Internet access to obtain updates, or will it have a local Windows Server Update Services (WSUS) server?|
+Do you have access to Windows Server installation files that already include updates through offline injection?|
 
 ### <a name="hardware-requirements"></a>Maskinvarukrav
 
-Hämtnings Server distributioner stöds på både fysiska och virtuella servrar. Storleks kraven för hämtnings servern överensstämmer med kraven för Windows Server 2012 R2.
+Pull server deployments are supported on both physical and virtual servers. The sizing requirements for pull server align with the requirements for Windows Server 2012 R2.
 
-REGISTRERA 1,4 GHz 64-bitars processor minne: 512 MB disk utrymme: 32 GB nätverk: Gigabit Ethernet-kort
+CPU: 1.4 GHz 64-bit processor Memory: 512 MB Disk Space: 32 GB Network: Gigabit Ethernet Adapter
 
-Planerings uppgift|
+Planning task|
 ---|
-Kommer du att distribuera på en fysisk maskin vara eller en Virtualization-plattform?|
-Vad är processen för att begära en ny server för mål miljön?|
-Vilken är den genomsnittliga leverans tiden för en server att bli tillgänglig?|
-Vilken storleks server kommer du att begära?|
+Will you deploy on physical hardware or on a virtualization platform?|
+What is the process to request a new server for your target environment?|
+What is the average turnaround time for a server to become available?|
+What size server will you request?|
 
 ### <a name="accounts"></a>Konton
 
-Det finns inga tjänst konto krav för att distribuera en pull-serverinstans.
-Det finns dock scenarier där webbplatsen kan köras i kontexten för ett lokalt användar konto.
-Om det till exempel finns behov av att komma åt en lagrings resurs för webbplats innehåll och antingen Windows-servern eller enheten som är värd för lagrings resursen inte är domänansluten.
+There are no service account requirements to deploy a pull server instance.
+However, there are scenarios where the website could run in the context of a local user account.
+For example, if there is a need to access a storage share for website content and either the Windows Server or the device hosting the storage share are not domain joined.
 
-### <a name="dns-records"></a>DNS-poster
+### <a name="dns-records"></a>DNS records
 
-Du behöver ett server namn som du kan använda när du konfigurerar klienter för att arbeta med en pull-server-miljö.
-I test miljöer används vanligt vis serverns värdnamn, eller så kan IP-adressen för servern användas om DNS-namnmatchning inte är tillgänglig.
-I produktions miljöer eller i en labb miljö som är avsedd att representera en produktions distribution är det bästa sättet att skapa en DNS CNAME-post.
+You will need a server name to use when configuring clients to work with a pull server environment.
+In test environments, typically the server hostname is used, or the IP address for the server can be used if DNS name resolution is not available.
+In production environments or in a lab environment that is intended to represent a production deployment, the best practice is to create a DNS CNAME record.
 
-Med en DNS CNAME kan du skapa ett alias för att referera till värd posten (A).
-Avsikten med den extra namn posten är att öka flexibiliteten om en ändring krävs i framtiden.
-En CNAME kan hjälpa till att isolera klient konfigurationen så att ändringar i Server miljön, till exempel att ersätta en hämtnings Server eller lägga till ytterligare pull-servrar, kräver ingen motsvarande ändring i klient konfigurationen.
+A DNS CNAME allows you to create an alias to refer to your host (A) record.
+The intent of the additional name record is to increase flexibility should a change be required in the future.
+A CNAME can help to isolate the client configuration so that changes to the server environment, such as replacing a pull server or adding additional pull servers, will not require a corresponding change to the client configuration.
 
-Behåll lösnings arkitekturen i åtanke när du väljer ett namn för DNS-posten.
-Om du använder belastnings utjämning måste certifikatet som används för att skydda trafik över HTTPS dela samma namn som DNS-posten.
+When choosing a name for the DNS record, keep the solution architecture in mind.
+If using load balancing, the certificate used to secure traffic over HTTPS will need to share the same name as the DNS record.
 
-Scenario |Bästa praxis
+Scenario |Best Practice
 :---|:---
-Testmiljö |Återskapa den planerade produktions miljön, om möjligt. Ett server namn är lämpligt för enkla konfigurationer. Om DNS inte är tillgängligt kan en IP-adress användas i stället för ett värdnamn.|
-Distribution av en nod |Skapa en DNS CNAME-post som pekar på serverns värdnamn.|
+Testmiljö |Reproduce the planned production environment, if possible. A server hostname is suitable for simple configurations. If DNS is not available, an IP address may be used in lieu of a hostname.|
+Single Node Deployment |Create a DNS CNAME record that points to the server hostname.|
 
-Mer information finns i [Konfigurera DNS Round Robin i Windows Server](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10)).
+For more information, see [Configuring DNS Round Robin in Windows Server](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10)).
 
-Planerings uppgift|
+Planning task|
 ---|
-Vet du vem du ska kontakta så att DNS-poster skapas och ändras?|
-Vad är genomsnittet för en begäran om en DNS-post?|
-Behöver du begära statiska värdnamn (A) för servrar?|
-Vad kommer du att begära som CNAME?|
-Om det behövs, vilken typ av belastnings Utjämnings lösning kommer du att använda? (se avsnittet med rubriken belastnings utjämning för mer information)|
+Do you know who to contact to have DNS records created and changed?|
+What is the average turnaround for a request for a DNS record?|
+Do you need to request static Hostname (A) records for servers?|
+What will you request as a CNAME?|
+If needed, what type of Load Balancing solution will you utilize? (see section titled Load Balancing for details)|
 
-### <a name="public-key-infrastructure"></a>Infrastruktur för offentliga nycklar
+### <a name="public-key-infrastructure"></a>Public Key Infrastructure
 
-De flesta organisationer i dag kräver att nätverks trafik, särskilt trafik som inkluderar sådana känsliga data som servrar konfigureras, måste verifieras och/eller krypteras under överföringen.
-Även om det är möjligt att distribuera en pull-server med HTTP som underlättar klient begär anden i klartext, är det en bra idé att skydda trafiken med HTTPS. Tjänsten kan konfigureras att använda HTTPS med en uppsättning parametrar i DSC- **xPSDesiredStateConfiguration**.
+Most organizations today require that network traffic, especially traffic that includes such sensitive data as how servers are configured, must be validated and/or encrypted during transit.
+While it is possible to deploy a pull server using HTTP which facilitates client requests in clear text, it is a best practice to secure traffic using HTTPS. The service can be configured to use HTTPS using a set of parameters in the DSC resource **xPSDesiredStateConfiguration**.
 
-Certifikat kraven för säker HTTPS-trafik för hämtnings servern skiljer sig inte från att skydda andra HTTPS-webbplatser. **Webb server** mal len i en Windows Server Certificate Services uppfyller de funktioner som krävs.
+The certificate requirements to secure HTTPS traffic for pull server are not different than securing any other HTTPS web site. The **Web Server** template in a Windows Server Certificate Services satisfies the required capabilities.
 
-Planerings uppgift|
+Planning task|
 ---|
-Om du inte automatiserar certifikat begär Anden måste du kontakta för att begära ett certifikat?|
-Vilken är den genomsnittliga leveransen för begäran?|
-Hur överförs certifikat filen till dig?|
-Hur överförs certifikatets privata nyckel till dig?|
-Hur länge är standard förfallo tiden?|
-Har du kvittat dig på ett DNS-namn för pull Server-miljön, som du kan använda för certifikat namnet?|
+If certificate requests are not automated, who will you need to contact to requests a certificate?|
+What is the average turnaround for the request?|
+How will the certificate file be transferred to you?|
+How will the certificate private key be transferred to you?|
+How long is the default expiration time?|
+Have you settled on a DNS name for the pull server environment, that you can use for the certificate name?|
 
-### <a name="choosing-an-architecture"></a>Välja en arkitektur
+### <a name="choosing-an-architecture"></a>Choosing an architecture
 
-En hämtnings Server kan distribueras med antingen en webb tjänst som finns på IIS eller en SMB-filresurs. I de flesta fall ger alternativet för webb tjänsten större flexibilitet. Det är inte ovanligt att HTTPS-trafik passerar nätverks gränserna, medan SMB-trafik ofta filtreras eller blockeras mellan nätverk. Webb tjänsten erbjuder också alternativet att inkludera en inställnings Server eller Web repor ting Manager (båda ämnen som ska åtgärdas i en framtida version av det här dokumentet) som ger en mekanism för klienter att rapportera status tillbaka till en server för centraliserad synlighet.
-SMB innehåller ett alternativ för miljöer där en princip anger att en webb server inte ska användas och andra miljö krav som gör en webb server roll olämplig.
-I båda fallen måste du komma ihåg att utvärdera kraven för signering och kryptering av trafik. HTTPS-, SMB-signering och IPSEC-principer är alla alternativ som är värda att beakta.
+A pull server can be deployed using either a web service hosted on IIS, or an SMB file share. In most situations, the web service option will provide greater flexibility. It is not uncommon for HTTPS traffic to traverse network boundaries, whereas SMB traffic is often filtered or blocked between networks. The web service also offers the option to include a Conformance Server or Web Reporting Manager (both topics to be addressed in a future version of this document) that provide a mechanism for clients to report status back to a server for centralized visibility.
+SMB provides an option for environments where policy dictates that a web server should not be utilized, and for other environmental requirements that make a web server role undesirable.
+In either case, remember to evaluate the requirements for signing and encrypting traffic. HTTPS, SMB signing, and IPSEC policies are all options worth considering.
 
 #### <a name="load-balancing"></a>Belastningsutjämning
 
-Klienter som interagerar med webb tjänsten gör en begäran om information som returneras i ett enda svar. Inga sekventiella begär Anden krävs, så det är inte nödvändigt för belastnings Utjämnings plattformen att säkerställa att sessioner upprätthålls på en enskild server vid varje tidpunkt.
+Clients interacting with the web service make a request for information that is returned in a single response. No sequential requests are required, so it is not necessary for the load balancing platform to ensure sessions are maintained on a single server at any point in time.
 
-Planerings uppgift|
+Planning task|
 ---|
-Vilken lösning ska användas för belastnings Utjämnings trafik mellan servrar?|
-Om du använder en maskinvarubaserad belastningsutjämnare, som tar en förfrågan om att lägga till en ny konfiguration till enheten?|
-Vad är genomsnittet för en begäran om att konfigurera en ny belastningsutjämnad webb tjänst?|
-Vilken information kommer att krävas för begäran?|
-Behöver du begära ytterligare en IP-adress eller teamet som ansvarar för belastnings Utjämnings referensen?|
-Har du de DNS-poster som behövs och kommer att krävas av teamet som ansvarar för att konfigurera belastnings Utjämnings lösningen?|
-Kräver belastnings Utjämnings lösningen att PKI hanteras av enheten eller kan den belastningsutjämna HTTPS-trafik så länge det inte finns några krav för sessionen?|
+What solution will be used for load balancing traffic across servers?|
+If using a hardware load balancer, who will take a request to add a new configuration to the device?|
+What is the average turnaround for a request to configure a new load balanced web service?|
+What information will be required for the request?|
+Will you need to request an additional IP or will the team responsible for load balancing handle that?|
+Do you have the DNS records needed, and will this be required by the team responsible for configuring the load balancing solution?|
+Does the load balancing solution require that PKI be handled by the device or can it load balance HTTPS traffic as long as there are no session requirements?|
 
-### <a name="staging-configurations-and-modules-on-the-pull-server"></a>Mellanlagring av konfigurationer och moduler på hämtnings servern
+### <a name="staging-configurations-and-modules-on-the-pull-server"></a>Staging configurations and modules on the pull server
 
-Som en del av konfigurations planeringen måste du tänka på vilka DSC-moduler och konfigurationer som ska hanteras av hämtnings servern. För konfigurations planering är det viktigt att du har en grundläggande förståelse för hur du förbereder och distribuerar innehåll till en pull-server.
+As part of configuration planning, you will need to think about which DSC modules and configurations will be hosted by the pull server. For the purpose of configuration planning it is important to have a basic understanding of how to prepare and deploy content to a pull server.
 
-I framtiden kommer det här avsnittet att expanderas och ingå i en funktions guide för DSC-pull-server.  Guiden diskuterar dag till dags process för att hantera moduler och konfigurationer över tid med automatisering.
+In the future, this section will be expanded and included in an Operations Guide for DSC Pull Server.  The guide will discuss the day to day process for managing modules and configurations over time with automation.
 
-#### <a name="dsc-modules"></a>DSC-moduler
+#### <a name="dsc-modules"></a>DSC modules
 
-Klienter som begär en konfiguration kommer att behöva de DSC-moduler som krävs. En funktion i pull-servern är att automatisera distributionen på begäran av DSC-moduler till klienter. Om du distribuerar en hämtnings Server för första gången, kanske som labb eller koncept bevis, kommer du troligen att vara beroende av DSC-moduler som är tillgängliga från offentliga databaser, till exempel PowerShell-galleriet eller PowerShell.org GitHub-lagringsplatsen för DSC-moduler .
+Clients that request a configuration will need the required DSC modules. A functionality of the pull server is to automate distribution on demand of DSC modules to clients. If you are deploying a pull server for the first time, perhaps as a lab or proof of concept, you are likely going to depend on DSC modules that are available from public repositories such as the PowerShell Gallery or the PowerShell.org GitHub repositories for DSC modules.
 
-Det är viktigt att komma ihåg att även för betrodda onlinekällor som PowerShell-galleriet, alla moduler som hämtas från ett offentligt lager bör granskas av någon med PowerShell-upplevelse och kunskap om miljön där modulerna kommer att används innan de används i produktionen. När du slutför den här uppgiften är det en lämplig tid att söka efter ytterligare en nytto Last i modulen som kan tas bort, till exempel dokumentation och exempel skript. Detta minskar nätverks bandbredden per klient i den första begäran, när moduler ska laddas ned över nätverket från server till klient.
+It is critical to remember that even for trusted online sources such as the PowerShell Gallery, any module that is downloaded from a public repository should be reviewed by someone with PowerShell experience and knowledge of the environment where the modules will be used prior to being used in production. While completing this task it is a good time to check for any additional payload in the module that can be removed such as documentation and example scripts. This will reduce the network bandwidth per client in their first request, when modules will be downloaded over the network from server to client.
 
-Varje modul måste paketeras i ett särskilt format, en ZIP-fil med namnet ModuleName_Version. zip som innehåller modulens nytto Last. När filen har kopierats till servern måste en kontroll Summa fil skapas. När klienter ansluter till servern används kontroll summan för att kontrol lera att innehållet i DSC-modulen inte har ändrats sedan den publicerades.
+Each module must be packaged in a specific format, a ZIP file named ModuleName_Version.zip that contains the module payload. After the file is copied to the server a checksum file must be created. When clients connect to the server, the checksum is used to verify the content of the DSC module has not changed since it was published.
 
 ```powershell
 New-DscChecksum -ConfigurationPath .\ -OutPath .\
 ```
 
-Planerings uppgift|
+Planning task|
 ---|
-Om du planerar en test-eller labb miljö vars scenarier är nyckel att verifiera?|
-Finns det offentligt tillgängliga moduler som innehåller resurser för att omfatta allt du behöver eller behöver du redigera dina egna resurser?|
-Kommer din miljö att ha Internet åtkomst för att hämta offentliga moduler?|
-Vem kommer att ansvara för att granska DSC-moduler?|
-Om du planerar en produktions miljö vad kommer du att använda som lokal lagrings plats för att lagra DSC-moduler?|
-Accepterar Central team DSC-moduler från program team? Vad kommer processen att vara?|
-Kommer du att automatisera paketering, kopiering och skapande av en kontroll summa för produktions klara DSC-moduler till servern från din lagrings platsen?|
-Är ditt team ansvarigt för att hantera Automation-plattformen också?|
+If you are planning a test or lab environment which scenarios are key to validate?|
+Are there publicly available modules that contain resources to cover everything you need or will you need to author your own resources?|
+Will your environment have Internet access to retrieve public modules?|
+Who will be responsible for reviewing DSC modules?|
+If you are planning a production environment what will you use as a local repository for storing DSC modules?|
+Will a central team accept DSC modules from application teams? What will the process be?|
+Will you automate packaging, copying, and creating a checksum for production-ready DSC modules to the server, from your source repo?|
+Will your team be responsible for managing the automation platform as well?|
 
-#### <a name="dsc-configurations"></a>DSC-konfigurationer
+#### <a name="dsc-configurations"></a>DSC configurations
 
-Syftet med en pull-server är att tillhandahålla en central mekanism för att distribuera DSC-konfigurationer till klient-noder. Konfigurationerna lagras på servern som MOF-dokument.
-Varje dokument får ett unikt **GUID**-namn. När klienterna är konfigurerade för att ansluta till en pull-server får de också **GUID** för den konfiguration de bör begära. Det här systemet med referenser till konfigurationer efter **GUID** garanterar global unikhet och är flexibelt så att en konfiguration kan tillämpas med granularitet per nod, eller som en roll konfiguration som omfattar många servrar som ska ha identiska konfigurationer.
+The purpose of a pull server is to provide a centralized mechanism for distributing DSC configurations to client nodes. The configurations are stored on the server as MOF documents.
+Each document will be named with a unique **Guid**. When clients are configured to connect with a pull server, they are also given the **Guid** for the configuration they should request. This system of referencing configurations by **Guid** guarantees global uniqueness and is flexible such that a configuration can be applied with granularity per node, or as a role configuration that spans many servers that should have identical configurations.
 
-#### <a name="guids"></a>GUID
+#### <a name="guids"></a>Guids
 
-Planering av konfigurations- **GUID** är värda ytterligare uppmärksamhet vid användning av en pull-Server-distribution. Det finns inget särskilt krav för att hantera **GUID** och processen är förmodligen unik för varje miljö. Processen kan vara mellan enkla och komplexa: en centralt lagrad CSV-fil, en enkel SQL-tabell, en CMDB eller en komplex lösning som kräver integrering med ett annat verktyg eller en program varu lösning. Det finns två allmänna metoder:
+Planning for configuration **Guids** is worth additional attention when thinking through a pull server deployment. There is no specific requirement for how to handle **Guids** and the process is likely to be unique for each environment. The process can range from simple to complex: a centrally stored CSV file, a simple SQL table, a CMDB, or a complex solution requiring integration with another tool or software solution. There are two general approaches:
 
-- **Tilldelning av GUID per server** – ger ett mått på att varje server konfiguration kontrol leras individuellt. Detta ger en nivå av precision kring uppdateringar och kan fungera bra i miljöer med några få servrar.
-- **Tilldela GUID per server roll** – alla servrar som utför samma funktion, till exempel webb servrar, använder samma GUID för att referera till nödvändiga konfigurations data.  Tänk på att om många servrar delar samma GUID, så uppdateras alla samtidigt när konfigurationen ändras.
+- **Assigning Guids per server** — Provides a measure of assurance that every server configuration is controlled individually. This provides a level of precision around updates and can work well in environments with few servers.
+- **Assigning Guids per server role** — All servers that perform the same function, such as web servers, use the same GUID to reference the required configuration data.  Be aware that if many servers share the same GUID, all of them would be updated simultaneously when the configuration changes.
 
-  GUID är något som ska betraktas som känsliga data eftersom det kan utnyttjas av någon med skadlig avsikt för att få information om hur servrar distribueras och konfigureras i din miljö. Mer information finns i avsnittet om att [allokera GUID i PowerShell Desired State Configuration pull-läge](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/).
+  The GUID is something that should be considered sensitive data because it could be leveraged by someone with malicious intent to gain intelligence about how servers are deployed and configured in your environment. For more information, see [Securely allocating Guids in PowerShell Desired State Configuration Pull Mode](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/).
 
-Planerings uppgift|
+Planning task|
 ---|
-Vem kommer att ansvara för att kopiera konfigurationer till pull-servermappen när de är klara?|
-Vad kommer processen att bli av om konfigurationer har skapats av ett program team?|
-Kommer du att använda en lagrings plats för att lagra konfigurationer när de skapas, i flera team?|
-Automatiseras processen med att kopiera konfigurationer till servern och skapa en kontroll Summa när de är klara?|
-Hur mappar du GUID till servrar eller roller och var kommer det att lagras?|
-Vad ska du använda som en process för att konfigurera klient datorer och hur kommer det att integreras med processen för att skapa och lagra konfigurations-GUID?|
+Who will be responsible for copying configurations in to the pull server folder when they are ready?|
+If Configurations are authored by an application team, what will the process be to hand them off?|
+Will you leverage a repository to store configurations as they are being authored, across teams?|
+Will you automate the process of copying configurations to the server and creating a checksum when they are ready?|
+How will you map Guids to servers or roles, and where will this be stored?|
+What will you use as a process to configure client machines, and how will it integrate with your process for creating and storing Configuration Guids?|
 
-## <a name="installation-guide"></a>Installations guide
+## <a name="installation-guide"></a>Installation Guide
 
-*Scripts som anges i det här dokumentet är stabila exempel. Granska alltid skript noggrant innan du kör dem i en produktions miljö.*
+*Scripts given in this document are stable examples. Always review scripts carefully before executing them in a production environment.*
 
 ### <a name="prerequisites"></a>Förutsättningar
 
-Använd följande kommando för att kontrol lera versionen av PowerShell på servern.
+To verify the version of PowerShell on your server use the following command.
 
 ```powershell
 $PSVersionTable.PSVersion
 ```
 
-Uppgradera om möjligt till den senaste versionen av Windows Management Framework.
-Sedan laddar du ned `xPsDesiredStateConfiguration`-modulen med hjälp av följande kommando.
+If possible, upgrade to the latest version of Windows Management Framework.
+Next, download the `xPsDesiredStateConfiguration` module using the following command.
 
 ```powershell
 Install-Module xPSDesiredStateConfiguration
 ```
 
-Kommandot ber om ditt godkännande innan du laddar ned modulen.
+The command will ask for your approval before downloading the module.
 
-### <a name="installation-and-configuration-scripts"></a>Installations-och konfigurations skript
+### <a name="installation-and-configuration-scripts"></a>Installation and configuration scripts
 
-Den bästa metoden för att distribuera en DSC-pull-server är att använda ett DSC-konfigurations skript. Det här dokumentet visar skript, inklusive både grundläggande inställningar som endast konfigurerar DSC-webbtjänsten och avancerade inställningar som konfigurerar en Windows Server från slut punkt till slut punkt inklusive DSC-webbtjänst.
+The best method to deploy a DSC pull server is to use a DSC configuration script. This document will present scripts including both basic settings that would configure only the DSC web service and advanced settings that would configure a Windows Server end-to-end including DSC web service.
 
-Anm  För närvarande kräver DSC-modulen i `xPSDesiredStateConfiguration` att servern är EN-US-språkvariant.
+Note:  Currently the `xPSDesiredStateConfiguration` DSC module requires the server to be EN-US locale.
 
-### <a name="basic-configuration-for-windows-server-2012"></a>Grundläggande konfiguration för Windows Server 2012
+### <a name="basic-configuration-for-windows-server-2012"></a>Basic configuration for Windows Server 2012
 
 ```powershell
 # This is a very basic Configuration to deploy a pull server instance in a lab environment on Windows Server 2012.
@@ -295,7 +295,7 @@ PullServer -OutputPath 'C:\PullServerConfig\'
 Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 ```
 
-### <a name="advanced-configuration-for-windows-server-2012-r2"></a>Avancerad konfiguration för Windows Server 2012 R2
+### <a name="advanced-configuration-for-windows-server-2012-r2"></a>Advanced configuration for Windows Server 2012 R2
 
 ```powershell
 # This is an advanced Configuration example for Pull Server production deployments on Windows Server 2012 R2.
@@ -485,7 +485,7 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 # .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share'
 ```
 
-### <a name="verify-pull-server-functionality"></a>Verifiera hämtning av Server funktioner
+### <a name="verify-pull-server-functionality"></a>Verify pull server functionality
 
 ```powershell
 # This function is meant to simplify a check against a DSC pull server. If you do not use the default service URL, you will need to adjust accordingly.
@@ -504,7 +504,7 @@ StatusReport
 Node
 ```
 
-### <a name="configure-clients"></a>Konfigurera klienter
+### <a name="configure-clients"></a>Configure clients
 
 ```powershell
 Configuration PullClient {
@@ -529,23 +529,23 @@ PullClient -ID 'INSERTGUID' -Server 'INSERTSERVER' -Output 'C:\DSCConfig\'
 Set-DscLocalConfigurationManager -ComputerName 'Localhost' -Path 'C:\DSCConfig\' -Verbose
 ```
 
-## <a name="additional-references-snippets-and-examples"></a>Ytterligare referenser, kodfragment och exempel
+## <a name="additional-references-snippets-and-examples"></a>Additional references, snippets, and examples
 
-Det här exemplet visar hur du manuellt initierar en klient anslutning (kräver WMF5) för testning.
+This example shows how to manually initiate a client connection (requires WMF5) for testing.
 
 ```powershell
 Update-DscConfiguration –Wait -Verbose
 ```
 
-Cmdlet: en [Add-DnsServerResourceRecordName](http://bit.ly/1G1H31L) används för att lägga till en typ CNAME-post i en DNS-zon.
+The [Add-DnsServerResourceRecordName](http://bit.ly/1G1H31L) cmdlet is used to add a type CNAME record to a DNS zone.
 
-PowerShell-funktionen för att [skapa en kontroll summa och publicera DSC MOF till SMB pull server](https://gallery.technet.microsoft.com/scriptcenter/PowerShell-Function-to-3bc4b7f0) genererar automatiskt den nödvändiga kontroll summan och kopierar sedan både MOF-konfigurationen och kontroll summornas filer till SMB-pull-servern.
+The PowerShell Function to [Create a Checksum and Publish DSC MOF to SMB Pull Server](https://gallery.technet.microsoft.com/scriptcenter/PowerShell-Function-to-3bc4b7f0) automatically generates the required checksum, and then copies both the MOF configuration and checksum files to the SMB pull server.
 
-## <a name="appendix---understanding-odata-service-data-file-types"></a>Tillägg – förstå ODATA-tjänstens data fil typer
+## <a name="appendix---understanding-odata-service-data-file-types"></a>Appendix - Understanding ODATA service data file types
 
-En datafil lagras för att skapa information under distributionen av en pull-server som inkluderar OData-webbtjänsten. Vilken typ av fil som används beror på operativ systemet, enligt beskrivningen nedan.
+A data file is stored to create information during deployment of a pull server that includes the OData web service. The type of file depends on the operating system, as described below.
 
-- **Windows Server 2012** Filtypen är alltid. mdb
-- **Windows Server 2012 R2** Filtypen används som standard till. edb om inte en. mdb anges i konfigurationen
+- **Windows Server 2012** The file type will always be   .mdb
+- **Windows Server 2012 R2** The file type will default to .edb unless a .mdb is specified in the configuration
 
-I det [avancerade exempel skriptet](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) för att installera en hämtnings server hittar du också ett exempel på hur du automatiskt kontrollerar inställningarna för Web. config-filen för att förhindra eventuella fel som orsakas av filtypen.
+In the [Advanced example script](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) for installing a Pull Server, you will also find an example of how to automatically control the web.config file settings to prevent any chance of error caused by file type.

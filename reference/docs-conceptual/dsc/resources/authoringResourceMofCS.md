@@ -1,28 +1,28 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, PowerShell, konfiguration, installation
-title: Redigera en DSC-resurs iC#
-ms.openlocfilehash: 6f2bb4d411237f13e2735c2e5f630b4f40dc6842
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+keywords: dsc,powershell,configuration,setup
+title: Authoring a DSC resource in C#
+ms.openlocfilehash: a19559c225dd91eceed397df91dd584a577cd7d4
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71942204"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417691"
 ---
-# <a name="authoring-a-dsc-resource-in-c"></a>Redigera en DSC-resurs i C @ no__t-0
+# <a name="authoring-a-dsc-resource-in-c"></a>Authoring a DSC resource in C\#
 
-> Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Normalt implementeras en anpassad DSC-resurs (Windows PowerShell Desired State Configuration) i ett PowerShell-skript. Du kan dock också implementera funktionerna i en anpassad DSC-resurs genom att skriva cmdletar i C#. En introduktion till hur du skriver cmdletar C#i finns i [skriva en Windows PowerShell-cmdlet](/powershell/developer/windows-powershell).
+Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script. However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#. For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell).
 
-Förutom att implementera resursen i C# som-cmdlets, är processen för att skapa MOF-schemat, skapa mappstrukturen, importera och använda din anpassade DSC-resurs samma som beskrivs i [skriva en anpassad DSC-resurs med MOF](authoringResourceMOF.md).
+Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).
 
-## <a name="writing-a-cmdlet-based-resource"></a>Skriva en cmdlet-baserad resurs
-I det här exemplet ska vi implementera en enkel resurs som hanterar en textfil och dess innehåll.
+## <a name="writing-a-cmdlet-based-resource"></a>Writing a cmdlet-based resource
+For this example, we will implement a simple resource that manages a text file and its contents.
 
-### <a name="writing-the-mof-schema"></a>Skriva MOF-schemat
+### <a name="writing-the-mof-schema"></a>Writing the MOF schema
 
-Följande är definition av MOF-resurs.
+The following is the MOF resource definition.
 
 ```
 [ClassVersion("1.0.0"), FriendlyName("xDemoFile")]
@@ -34,19 +34,19 @@ class MSFT_XDemoFile : OMI_BaseResource
 };
 ```
 
-### <a name="setting-up-the-visual-studio-project"></a>Skapa Visual Studio-projektet
-#### <a name="setting-up-a-cmdlet-project"></a>Konfigurera ett cmdlet-projekt
+### <a name="setting-up-the-visual-studio-project"></a>Setting up the Visual Studio project
+#### <a name="setting-up-a-cmdlet-project"></a>Setting up a cmdlet project
 
-1. Öppna Visual Studio.
-1. Skapa ett C# projekt och ange namnet.
-1. Välj **klass bibliotek** från tillgängliga projektmallar.
+1. Open Visual Studio.
+1. Create a C# project and provide the name.
+1. Select **Class Library** from the available project templates.
 1. Klicka på **Ok**.
-1. Lägg till en sammansättnings referens i system. Automation. Management. dll i projektet.
-1. Ändra sammansättnings namnet så att det matchar resurs namnet. I det här fallet ska sammansättningen ha namnet **MSFT_XDemoFile**.
+1. Add an assembly reference to System.Automation.Management.dll to your project.
+1. Change the assembly name to match the resource name. In this case, the assembly should be named **MSFT_XDemoFile**.
 
-### <a name="writing-the-cmdlet-code"></a>Skriver cmdlet-koden
+### <a name="writing-the-cmdlet-code"></a>Writing the cmdlet code
 
-I följande C# kod implementeras cmdletarna **Get-TargetResource**, **set-TargetResource**och **test-TargetResource** .
+The following C# code implements the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** cmdlets.
 
 ```C#
 
@@ -262,9 +262,9 @@ namespace cSharpDSCResourceExample
 }
 ```
 
-### <a name="deploying-the-resource"></a>Distribuera resursen
+### <a name="deploying-the-resource"></a>Deploying the resource
 
-Den kompilerade DLL-filen ska sparas i en fil struktur som liknar en skript-baserad resurs. Följande är mappstrukturen för den här resursen.
+The compiled dll file should be saved in a file structure similar to a script-based resource. The following is the folder structure for this resource.
 
 ```
 $env: psmodulepath (folder)
@@ -279,6 +279,6 @@ $env: psmodulepath (folder)
 
 ### <a name="see-also"></a>Se även
 #### <a name="concepts"></a>Begrepp
-[Skriva en anpassad DSC-resurs med MOF](authoringResourceMOF.md)
+[Writing a custom DSC resource with MOF](authoringResourceMOF.md)
 #### <a name="other-resources"></a>Andra resurser
-[Skriva en Windows PowerShell-cmdlet](/powershell/developer/windows-powershell)
+[Writing a Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell)

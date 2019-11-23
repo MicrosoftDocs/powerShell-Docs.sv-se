@@ -1,17 +1,17 @@
 ---
-ms.date: 10/22/2019
-keywords: PowerShell, cmdlet
+ms.date: 11/22/2019
+keywords: powershell,cmdlet
 title: Använd formatkommandon för att ändra utdatavyn
-ms.openlocfilehash: 9d9854362b5150a99bdd0c02518599840c1fd42d
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.openlocfilehash: f270d5ec5efe5caf506d6a8a45285990996f6ae6
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73444421"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417584"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Använd formatkommandon för att ändra utdatavyn
 
-PowerShell har en uppsättning cmdletar som gör att du kan styra hur egenskaper visas för specifika objekt. Namnen på alla cmdletar börjar med verb `Format`. De låter dig välja vilka egenskaper du vill visa.
+PowerShell has a set of cmdlets that allow you to control how properties are displayed for particular objects. The names of all the cmdlets begin with the verb `Format`. They let you select which properties you want to show.
 
 ```powershell
 Get-Command -Verb Format -Module Microsoft.PowerShell.Utility
@@ -27,17 +27,17 @@ Cmdlet          Format-Table       6.1.0.0    Microsoft.PowerShell.Utility
 Cmdlet          Format-Wide        6.1.0.0    Microsoft.PowerShell.Utility
 ```
 
-I den här artikeln beskrivs cmdletarna `Format-Wide`, `Format-List`och `Format-Table`.
+This article describes the `Format-Wide`, `Format-List`, and `Format-Table` cmdlets.
 
-Varje objekt typ i PowerShell har standard egenskaper som används när du inte anger vilka egenskaper som ska visas. Varje cmdlet använder också samma **egenskaps** parameter för att ange vilka egenskaper som du vill visa. Eftersom `Format-Wide` endast visar en enskild egenskap, har **egenskaps** parametern bara ett enda värde, men egenskaps parametrarna för `Format-List` och `Format-Table` acceptera en lista med egenskaps namn.
+Each object type in PowerShell has default properties that are used when you don't specify which properties to display. Each cmdlet also uses the same **Property** parameter to specify which properties you want to display. Because `Format-Wide` only shows a single property, its **Property** parameter only takes a single value, but the property parameters of `Format-List` and `Format-Table` accept a list of property names.
 
-I det här exemplet visar standardutdata för `Get-Process` cmdlet att vi har två instanser av Internet Explorer igång.
+In this example, the default output of `Get-Process` cmdlet shows that we have two instances of Internet Explorer running.
 
 ```powershell
 Get-Process -Name iexplore
 ```
 
-Standardformat för **process** objekt visar de egenskaper som visas här:
+The default format for **Process** objects displays the properties shown here:
 
 ```Output
  NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
@@ -46,9 +46,9 @@ Standardformat för **process** objekt visar de egenskaper som visas här:
      52    11.46      26.46       3.55   21748   1 iexplore
 ```
 
-## <a name="using-format-wide-for-single-item-output"></a>Använda hel skärms läge för utdata med ett enda objekt
+## <a name="using-format-wide-for-single-item-output"></a>Using Format-Wide for Single-Item Output
 
-I `Format-Wide`-cmdleten visas som standard endast objektets standard egenskap. Informationen som är kopplad till varje objekt visas i en enda kolumn:
+The `Format-Wide` cmdlet, by default, displays only the default property of an object. The information associated with each object is displayed in a single column:
 
 ```powershell
 Get-Command -Verb Format | Format-Wide
@@ -60,7 +60,7 @@ Format-List            Format-Table
 Format-Wide
 ```
 
-Du kan också ange en egenskap som inte är standard:
+You can also specify a non-default property:
 
 ```powershell
 Get-Command -Verb Format | Format-Wide -Property Noun
@@ -72,9 +72,9 @@ List                   Table
 Wide
 ```
 
-### <a name="controlling-format-wide-display-with-column"></a>Kontrol lera format – bred skärm med kolumn
+### <a name="controlling-format-wide-display-with-column"></a>Controlling Format-Wide Display with Column
 
-Med `Format-Wide`-cmdlet: en kan du bara visa en enskild egenskap i taget. Detta gör det användbart för att visa stora listor i flera kolumner.
+With the `Format-Wide` cmdlet, you can only display a single property at a time. This makes it useful for displaying large lists in multiple columns.
 
 ```powershell
 Get-Command -Verb Format | Format-Wide -Property Noun -Column 3
@@ -86,9 +86,9 @@ Table                  Wide
 
 ```
 
-## <a name="using-format-list-for-a-list-view"></a>Använda format-lista för att visa en listvy
+## <a name="using-format-list-for-a-list-view"></a>Using Format-List for a List View
 
-Cmdleten `Format-List` visar ett objekt i form av en lista, där varje egenskap har etiketten och visas på en separat rad:
+The `Format-List` cmdlet displays an object in the form of a listing, with each property labeled and displayed on a separate line:
 
 ```powershell
 Get-Process -Name iexplore | Format-List
@@ -108,7 +108,7 @@ SI      : 1
 Name    : iexplore
 ```
 
-Du kan ange så många egenskaper du vill:
+You can specify as many properties as you want:
 
 ```powershell
 Get-Process -Name iexplore | Format-List -Property ProcessName,FileVersion,StartTime,Id
@@ -126,19 +126,19 @@ StartTime   : 10/22/2019 11:23:57 AM
 Id          : 21748
 ```
 
-### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Få detaljerad information med hjälp av format-lista med jokertecken
+### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Getting Detailed Information by Using Format-List with Wildcards
 
-Med hjälp av cmdleten `Format-List` kan du använda ett jokertecken som värde för dess **egenskaps** parameter. På så sätt kan du Visa detaljerad information. Objekt innehåller ofta mer information än vad du behöver, vilket är anledningen till att PowerShell inte visar alla egenskaps värden som standard. Om du vill visa alla egenskaper för ett objekt använder du kommandot **format-List-Property \&#42;** . Följande kommando genererar över 60 rader utdata för en enda process:
+The `Format-List` cmdlet lets you use a wildcard as the value of its **Property** parameter. This lets you display detailed information. Often, objects include more information than you need, which is why PowerShell doesn't show all property values by default. To show all of properties of an object, use the `Format-List -Property *` command. The following command generates over 60 lines of output for a single process:
 
 ```powershell
 Get-Process -Name iexplore | Format-List -Property *
 ```
 
-Även om `Format-List` kommandot är användbart för att visa information, är en enklare tabellvy ofta mer användbar om du vill ha en översikt över utdata som innehåller många objekt.
+Although the `Format-List` command is useful for showing detail, if you want an overview of output that includes many items, a simpler tabular view is often more useful.
 
-## <a name="using-format-table-for-tabular-output"></a>Använda format tabell för tabell data
+## <a name="using-format-table-for-tabular-output"></a>Using Format-Table for Tabular Output
 
-Om du använder `Format-Table`-cmdlet utan några egenskaps namn för att formatera utdata från `Get-Process` kommandot får du exakt samma utdata som du gör utan en `Format`-cmdlet. Som standard visar PowerShell **process** objekt i tabell format.
+If you use the `Format-Table` cmdlet with no property names specified to format the output of the `Get-Process` command, you get exactly the same output as you do without a `Format` cmdlet. By default, PowerShell displays **Process** objects in a tabular format.
 
 ```powershell
 Get-Service -Name win* | Format-Table
@@ -153,9 +153,9 @@ Running  Winmgmt            Windows Management Instrumentation
 Running  WinRM              Windows Remote Management (WS-Manag...
 ```
 
-### <a name="improving-format-table-output-autosize"></a>Förbättra format – tabellens utdata (AutoSize)
+### <a name="improving-format-table-output-autosize"></a>Improving Format-Table Output (AutoSize)
 
-Även om en tabellvy är användbar för att visa massor av information kan det vara svårt att tolka om visningen är för smal för data. I föregående exempel trunkeras utdata. Om du anger parametern **AutoSize** när du kör kommandot `Format-Table`, beräknar PowerShell kolumn bredden baserat på de faktiska data som visas. Det gör kolumnerna läsbara.
+Although a tabular view is useful for displaying lots of information, it may be difficult to interpret if the display is too narrow for the data. In the previous example, the output is truncated. If you specify the **AutoSize** parameter when you run the `Format-Table` command, PowerShell calculates column widths based on the actual data displayed. This makes the columns readable.
 
 ```powershell
 Get-Service -Name win* | Format-Table -AutoSize
@@ -170,7 +170,7 @@ Running Winmgmt             Windows Management Instrumentation
 Running WinRM               Windows Remote Management (WS-Management)
 ```
 
-`Format-Table` cmdleten kan fortfarande trunkera data, men de trunkeras bara i slutet av skärmen. Andra egenskaper än den sista som visas, har samma storlek som de behöver för att det ska visas på rätt data element.
+The `Format-Table` cmdlet might still truncate data, but it only truncates at the end of the screen. Properties, other than the last one displayed, are given as much size as they need for their longest data element to display correctly.
 
 ```powershell
 Get-Service -Name win* | Format-Table -Property Name,Status,StartType,DisplayName,DependentServices -AutoSize
@@ -186,11 +186,11 @@ Winmgmt             Running Automatic Windows Management Instrumentation        
 WinRM               Running Automatic Windows Remote Management (WS-Management) {}
 ```
 
-Kommandot `Format-Table` förutsätter att egenskaperna är listade i prioritetsordning. Det försöker då att helt Visa egenskaperna närmast början. Om kommandot `Format-Table` inte kan visa alla egenskaper tas vissa kolumner bort från visningen. Du kan se det här beteendet i **DependentServices** -egenskapen i föregående exempel.
+The `Format-Table` command assumes that properties are listed in order of importance. So it attempts to fully display the properties nearest the beginning. If the `Format-Table` command can't display all the properties, it removes some columns from the display. You can see this behavior in the **DependentServices** property previous example.
 
-### <a name="wrapping-format-table-output-in-columns-wrap"></a>Rad brytnings format – tabellens utdata i kolumner (radbyte)
+### <a name="wrapping-format-table-output-in-columns-wrap"></a>Wrapping Format-Table Output in Columns (Wrap)
 
-Du kan tvinga långvariga `Format-Table` data att figursättas i sin visnings kolumn med hjälp av parametern **wrap** . **Det går** inte att använda den omslutna parametern, eftersom den använder standardinställningar om du inte också anger **AutoSize**:
+You can force lengthy `Format-Table` data to wrap within its display column by using the **Wrap** parameter. Using the **Wrap** parameter may not do what you expect, since it uses default settings if you don't also specify **AutoSize**:
 
 ```powershell
 Get-Service -Name win* | Format-Table -Property Name,Status,StartType,DisplayName,DependentServices -Wrap
@@ -210,21 +210,21 @@ Winmgmt             Running Automatic Windows Management Instrumentation        
 WinRM               Running Automatic Windows Remote Management (WS-Management) {}
 ```
 
-Att använda **wrap** -parametern i sig saktar inte ned bearbetningen väldigt mycket. Att använda **AutoSize** för att formatera en rekursiv fil listning av en stor katalog struktur kan dock ta lång tid och använda mycket minne innan de första utmatnings objekten visas.
+Using the **Wrap** parameter by itself doesn't slow down processing very much. However, using **AutoSize** to format a recursive file listing of a large directory structure can take a long time and use lots of memory before displaying the first output items.
 
-Om du inte bekymrar dig om system belastningen **fungerar** autopassering bra med **wrap** -parametern.
-De ursprungliga kolumnerna använder fortfarande så mycket bredd som det behövs för att visa objekt på en rad, men den sista kolumnen är omsluten, om det behövs.
+If you aren't concerned about system load, then **AutoSize** works well with the **Wrap** parameter.
+The initial columns still use as much width as needed to display items on one line, but the final column is wrapped, if necessary.
 
 > [!NOTE]
-> Vissa kolumner kanske inte visas när du anger de bredaste kolumnerna först. För bästa resultat anger du de minsta data elementen först.
+> Some columns may not be displayed when you specify the widest columns first. For best results, specify the smallest data elements first.
 
-I följande exempel anger vi de bredaste egenskaperna först.
+In the following example, we specify the widest properties first.
 
 ```powershell
 Get-Process -Name iexplore | Format-Table -Wrap -AutoSize -Property FileVersion,Path,Name,Id
 ```
 
-Med rad brytning utelämnas kolumnen slutligt **ID** :
+Even with wrapping, the final **Id** column is omitted:
 
 ```Output
 FileVersion                          Path                                                  Nam
@@ -238,9 +238,9 @@ FileVersion                          Path                                       
                                                                                            re
 ```
 
-### <a name="organizing-table-output--groupby"></a>Organisera tabellens utdata (-GroupBy)
+### <a name="organizing-table-output--groupby"></a>Organizing Table Output (-GroupBy)
 
-En annan användbar parameter för kontroll av tabellens utdata är **groupby**. Längre tabell listor kan vara svåra att jämföra. Parametern **groupby** grupperar utdata baserat på ett egenskaps värde. Vi kan till exempel gruppera tjänster efter **StartType** för enklare granskning och utelämna **StartType** -värdet från egenskaps listan:
+Another useful parameter for tabular output control is **GroupBy**. Longer tabular listings in particular may be hard to compare. The **GroupBy** parameter groups output based on a property value. For example, we can group services by **StartType** for easier inspection, omitting the **StartType** value from the property listing:
 
 ```powershell
 Get-Service -Name win* | Sort-Object StartType | Format-Table -GroupBy StartType

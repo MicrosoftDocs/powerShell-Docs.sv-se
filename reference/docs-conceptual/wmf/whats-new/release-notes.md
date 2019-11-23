@@ -3,39 +3,39 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: Versionsinformation för WMF 5.x
-ms.openlocfilehash: 8924240a4bbedcd34bc68b7cacdd23189a3716d6
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71145021"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416498"
 ---
-# <a name="windows-management-framework-wmf-5x-release-notes"></a>Viktig information om Windows Management Framework (WMF) 5. x
+# <a name="windows-management-framework-wmf-5x-release-notes"></a>Windows Management Framework (WMF) 5.x Release Notes
 
-## <a name="wmf-50-changes"></a>WMF 5,0-ändringar
+## <a name="wmf-50-changes"></a>WMF 5.0 Changes
 
-- PowerShell 5,0 lägger till en ny strukturerad **informations** ström
-- Förbättringar av DSC, inklusive fyra nya DSC-resurser:
+- PowerShell 5.0 adds a new structured **Information** stream
+- Improvements to DSC including four new DSC resources:
   - WindowsFeatureSet
   - WindowsOptionalFeatureSet
   - ServiceSet
   - ProcessSet
-- Lade till bara tillräckligt med administration för att aktivera rollbaserad administration via PowerShell-fjärrkommunikation
-- PowerShell 5,0 utökar språket till att inkludera användardefinierade klasser och uppräkningar
-- Förbättrade fel söknings funktioner i PowerShell ISE och ytterligare fjärrfelsökning
-- PowerShellGet-och PackageManagement-modulerna har lagts till
-- Förbättrat PowerShell-skript, loggning och avskrifter
-- Lägg till cmdletar för kryptografiskt meddelande-syntax
-- WMF 5,0 innehåller NetworkSwitchManager-modulen för Windows
-- Modulen Microsoft. PowerShell. ODataUtils har lagts till
-- Stöd för Software Inventory Logging (SIL) har lagts till
-- Sever New eller Update-cmdletar som svar på användar förfrågningar och problem
+- Added Just Enough Administration to enable role-based administration through PowerShell remoting
+- PowerShell 5.0 extends the language to include user-defined classes and enumerations
+- Improved debugging features in PowerShell ISE and added remote debugging
+- Added the PowerShellGet and PackageManagement modules
+- Enhanced PowerShell script logging and transcripts
+- Add Cryptographic Message Syntax cmdlets
+- WMF 5.0 includes the NetworkSwitchManager module for Windows
+- Added the Microsoft.PowerShell.ODataUtils module
+- Added support for Software Inventory Logging (SIL)
+- Sever new or update cmdlets in response to user requests and issues
 
-## <a name="wmf-51-changes"></a>WMF 5,1-ändringar
+## <a name="wmf-51-changes"></a>WMF 5.1 Changes
 
-WMF 5,1 innehåller komponenterna PowerShell, WMI, WinRM och Software Inventory Logging (SIL) som släpptes med Windows Server 2016. WMF 5,1 kan installeras på Windows 7, Windows 8,1, Windows Server 2008 R2, 2012 och 2012 R2, och innehåller flera förbättringar över WMF 5,0, inklusive:
+WMF 5.1 includes the PowerShell, WMI, WinRM, and Software Inventory Logging (SIL) components that were released with Windows Server 2016. WMF 5.1 can be installed on Windows 7, Windows 8.1, Windows Server 2008 R2, 2012, and 2012 R2, and provides several improvements over WMF 5.0 including:
 
-- Nya cmdletar
+- New cmdlets
 - PowerShellGet-förbättringarna omfattar att framtvinga signerade moduler och installera JEA-moduler
 - PackageManagement har lagt till stöd för containrar, CBS-installation, EXE-baserad installation, CAB-paket
 - Felsökningsförbättringar för DSC- och PowerShell-klasser
@@ -43,66 +43,66 @@ WMF 5,1 innehåller komponenterna PowerShell, WMI, WinRM och Software Inventory 
 - Svar på ett antal förfrågningar och problem från användare
 
 > [!IMPORTANT]
-> Innan du installerar WMF 5,1 på Windows Server 2008 eller Windows 7 kontrollerar du att WMF 3,0 inte är installerat. Mer information finns i [WMF 5,1-krav för Windows Server 2008 R2 SP1 och Windows 7 SP1](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1).
+> Before you install WMF 5.1 on Windows Server 2008 or Windows 7, confirm that WMF 3.0 isn't installed. For more information, see [WMF 5.1 Prerequisites for Windows Server 2008 R2 SP1 and Windows 7 SP1](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1).
 
 ## <a name="powershell-editions"></a>PowerShell-utgåvor
 
-Från och med version 5,1 är PowerShell tillgängligt i olika versioner som kännetecknar varierande funktions uppsättningar och plattformens kompatibilitet.
+Starting with version 5.1, PowerShell is available in different editions that denote varying feature sets and platform compatibility.
 
-- **Desktop Edition:** Bygger på .NET Framework och ger kompatibilitet med skript och moduler som mål versioner av PowerShell som körs på fullständiga versioner av Windows, till exempel Server Core och Windows Desktop.
-- **Core-utgåva:** Bygger på .NET Core och ger kompatibilitet med skript och moduler som mål versioner av PowerShell som körs på begränsade versioner av Windows, till exempel Nano Server och Windows IoT.
+- **Desktop Edition:** bygger på .NET Framework och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på fullständiga utgåvor av Windows, till exempel Server Core och Windows Desktop.
+- **Core Edition:** bygger på .NET Core och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på begränsade utgåvor av Windows som Nano Server och Windows IoT.
 
-### <a name="learn-more-about-using-powershell-editions"></a>Lär dig mer om att använda PowerShell-versioner
+### <a name="learn-more-about-using-powershell-editions"></a>Learn more about using PowerShell Editions
 
-- [Bestämma vilken version av PowerShell som körs med hjälp av $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
-- [Filtrera get-module-resultat efter CompatiblePSEditions med parametern PSEdition](/powershell/module/microsoft.powershell.core/get-module)
-- [Förhindra skript körning om den inte körs på en kompatibel version av PowerShell](/powershell/gallery/concepts/script-psedition-support)
-- [Deklarera en moduls kompatibilitet för vissa PowerShell-versioner](/powershell/gallery/concepts/module-psedition-support)
+- [Determine running edition of PowerShell using $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
+- [Filter Get-Module results by CompatiblePSEditions using PSEdition parameter](/powershell/module/microsoft.powershell.core/get-module)
+- [Prevent script execution unless run on a compatible edition of PowerShell](/powershell/scripting/gallery/concepts/script-psedition-support)
+- [Declare a module's compatibility to specific PowerShell versions](/powershell/scripting/gallery/concepts/module-psedition-support)
 
-## <a name="module-analysis-cache"></a>Modul analys-cache
+## <a name="module-analysis-cache"></a>Module Analysis Cache
 
-Från och med WMF 5,1 ger PowerShell kontroll över filen som används för att cachelagra data om en modul, till exempel de kommandon som exporteras.
+Starting with WMF 5.1, PowerShell provides control over the file that is used to cache data about a module, such as the commands it exports.
 
-Som standard lagras cacheminnet i filen `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`. Cachen läses normalt vid start vid sökning efter ett kommando och skrivs i en bakgrunds tråd någon gång efter att en modul har importer ATS.
+By default, this cache is stored in the file `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`. The cache is typically read at startup while searching for a command and is written on a background thread sometime after a module is imported.
 
-Om du vill ändra standard platsen för cacheminnet anger du `$env:PSModuleAnalysisCachePath` miljövariabeln innan du startar PowerShell. Ändringar i denna miljö variabel påverkar bara underordnade processer. Värdet bör ge en fullständig sökväg (inklusive fil namnet) som PowerShell har behörighet att skapa och skriva filer. Om du vill inaktivera filcachen ställer du in det här värdet på en ogiltig plats, till exempel:
+To change the default location of the cache, set the `$env:PSModuleAnalysisCachePath` environment variable before starting PowerShell. Changes to this environment variable will only affect children processes. The value should name a full path (including filename) that PowerShell has permission to create and write files. To disable the file cache, set this value to an invalid location, for example:
 
 ```powershell
 $env:PSModuleAnalysisCachePath = 'nul'
 ```
 
-Detta anger sökvägen till en ogiltig enhet. Om PowerShell inte kan skriva till sökvägen returneras inget fel, men du kan se fel rapportering med hjälp av en spårning:
+This sets the path to an invalid device. If PowerShell can't write to the path, no error is returned, but you can see error reporting by using a tracer:
 
 ```powershell
 Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
 ```
 
-När du skriver ut cacheminnet söker PowerShell efter moduler som inte längre finns för att undvika en onödigt stor cache. Ibland är de här kontrollerna inte önskvärda, i så fall kan du inaktivera dem genom att ställa in:
+When writing out the cache, PowerShell will check for modules that no longer exist to avoid an unnecessarily large cache. Sometimes these checks are not desirable, in which case you can turn them off by setting:
 
 ```powershell
 $env:PSDisableModuleAnalysisCacheCleanup = 1
 ```
 
-Att ställa in den här miljövariabeln börjar gälla direkt i den aktuella processen.
+Setting this environment variable will take effect immediately in the current process.
 
-## <a name="specifying-module-version"></a>Anger modul version
+## <a name="specifying-module-version"></a>Specifying module version
 
-I WMF 5,1 `using module` fungerar samma sätt som för andra modulbaserade konstruktioner i PowerShell.
-Tidigare hade du inget sätt att ange en viss version av modulen. om det finns flera versioner, resulterade det i ett fel.
+In WMF 5.1, `using module` behaves the same way as other module-related constructions in PowerShell.
+Previously, you had no way to specify a particular module version; if there were multiple versions present, this resulted in an error.
 
-I WMF 5,1:
+In WMF 5.1:
 
-- Du kan använda [ModuleSpecification-konstruktorn (hash)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
+- You can use [ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 
-  Den här hash-tabellen har samma format `Get-Module -FullyQualifiedName`som.
+  This hash table has the same format as `Get-Module -FullyQualifiedName`.
 
-  **Exempel:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
+  **Example:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
-- Om det finns flera versioner av modulen använder PowerShell **samma lösnings logik** som `Import-Module` och returnerar inte ett fel – samma beteende som `Import-Module` och `Import-DscResource`.
+- If there are multiple versions of the module, PowerShell uses the **same resolution logic** as `Import-Module` and doesn't return an error--the same behavior as `Import-Module` and `Import-DscResource`.
 
-## <a name="improvements-to-pester"></a>Förbättringar av pester
+## <a name="improvements-to-pester"></a>Improvements to Pester
 
-I WMF 5,1 har den version av pester som medföljer PowerShell uppdaterats från 3.3.5 till 3.4.0.
-Den här uppdateringen ger bättre beteende för pester på Nano Server.
+In WMF 5.1, the version of Pester that ships with PowerShell has been updated from 3.3.5 to 3.4.0.
+This update enables better behavior for Pester on Nano Server.
 
-Du kan granska ändringar av skadegörare genom att inspektera [ändringsloggen](https://github.com/pester/Pester/blob/master/CHANGELOG.md) i GitHub-lagringsplatsen.
+You can review the changes in Pest by inspecting the [ChangeLog](https://github.com/pester/Pester/blob/master/CHANGELOG.md) in the GitHub repository.
