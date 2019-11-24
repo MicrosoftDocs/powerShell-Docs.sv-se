@@ -45,7 +45,7 @@ Mode                LastWriteTime     Length Name
 -a----       11/27/2018   7:29 AM     2.13KB server02.mof
 ```
 
-Använd cmdleten [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) för att tillämpa en konfiguration. Parametern `-Path` anger en katalog där ". MOF"-filer finns. Om ingen `-Computername` anges försöker `Start-DSCConfiguration` tillämpa varje konfiguration till dator namnet som anges med namnet på. MOF-filen (@no__t -2computername\>.mof). Ange `-Verbose` till `Start-DSCConfiguration` om du vill visa mer utförliga utdata.
+Använd cmdleten [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) för att tillämpa en konfiguration. Parametern `-Path` anger en katalog där ". MOF"-filer finns. Om ingen `-Computername` anges försöker `Start-DSCConfiguration` tillämpa varje konfiguration på dator namnet som anges av namnet på. MOF-filen (\<ComputerName\>. MOF). Ange `-Verbose` för att `Start-DSCConfiguration` för att se mer utförlig utdata.
 
 ```powershell
 Start-DSCConfiguration -Path C:\Temp\ -Verbose
@@ -79,7 +79,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 50     Job50           Configuratio... Completed     True            server02             Start-DSCConfiguration...
 ```
 
-Om du vill se **utförliga** utdata använder du följande kommandon för att visa **utförlig** data ström för varje **ChildJob**. Mer information om PowerShell-jobb finns i [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).
+Om du vill se **utförliga** utdata använder du följande kommandon för att visa **utförlig** data ström för varje **ChildJob**. Mer information om PowerShell-jobb finns [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).
 
 ```powershell
 # View the verbose output of the localhost job using array indexing.
@@ -101,7 +101,7 @@ An LCM method call arrived from computer SERVER01 with user sid S-1-5-21-1245250
 Operation 'Invoke CimMethod' complete.
 ```
 
-Från och med PowerShell 5,0 lades parametern `-UseExisting` till `Start-DSCConfiguration`. Genom att ange `-UseExisting` instruerar du cmdleten att använda den befintliga tillämpade konfigurationen i stället för en som anges av parametern `-Path`.
+Från och med PowerShell 5,0 lades parametern `-UseExisting` till `Start-DSCConfiguration`. Genom att ange `-UseExisting`instruerar du cmdleten att använda den befintliga tillämpade konfigurationen i stället för en som anges av parametern `-Path`.
 
 ```powershell
 Start-DSCConfiguration -UseExisting -Verbose -Wait
@@ -109,13 +109,13 @@ Start-DSCConfiguration -UseExisting -Verbose -Wait
 
 ## <a name="test-a-configuration"></a>Testa en konfiguration
 
-Du kan testa en aktuell konfiguration med hjälp av [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration). `Test-DSCConfiguration` returnerar `True` om noden är kompatibel och `False` om den inte gör det.
+Du kan testa en aktuell konfiguration med hjälp av [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration). `Test-DSCConfiguration` kommer att returnera `True` om noden är kompatibel och `False` om den inte är det.
 
 ```powershell
 Test-DSCConfiguration
 ```
 
-Från och med PowerShell 5,0 lades parametern `-Detailed` till som returnerar ett objekt med samlingar för **ResourcesInDesiredState** och **ResourcesNotInDesiredState**
+Från och med PowerShell 5,0 lades `-Detailed`-parametern till som returnerar ett objekt med samlingar för **ResourcesInDesiredState** och **ResourcesNotInDesiredState**
 
 ```powershell
 Test-DSCConfiguration -Detailed
@@ -162,7 +162,7 @@ CimClassName         : MSFT_FileDirectoryConfiguration
 
 ## <a name="get-configuration-status"></a>Hämta konfigurations status
 
-Med början i PowerShell 5,0 cmdleten [Get-DSCConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) kan du se historiken över tillämpade konfigurationer på noden. PowerShell DSC håller koll på de senaste {{N}} konfigurationerna som tillämpas i **push** -eller **pull** -läge. Detta omfattar alla *konsekvens* kontroller som utförs av LCM. Som standard visar `Get-DSCConfigurationStatus` endast den sista historik posten.
+Med början i PowerShell 5,0 cmdleten [Get-DSCConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) kan du se historiken över tillämpade konfigurationer på noden. PowerShell DSC håller koll på de senaste {{N}} konfigurationerna som tillämpas i **push** -eller **pull** -läge. Detta omfattar alla *konsekvens* kontroller som utförs av LCM. Som standard visas endast den sista historik posten i `Get-DSCConfigurationStatus`.
 
 ```powershell
 Get-DSCConfigurationStatus
@@ -174,7 +174,7 @@ Status     StartDate                 Type            Mode  RebootRequested      
 Success    11/27/2018 7:18:40 AM     Consistency     PUSH  False                1
 ```
 
-Använd parametern `-All` om du vill se all konfigurations status historik.
+Använd parametern `-All` om du vill visa all konfigurations status historik.
 
 > [!NOTE]
 > Utdata trunkeras för det kortfattat.
@@ -219,6 +219,6 @@ Från och med PowerShell 5,0 lades cmdleten [Publish-DSCConfiguration](/powershe
 Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer" -Credential (get-credential Contoso\webadministrator)
 ```
 
-## <a name="see-also"></a>Se även
+## <a name="see-also"></a>Se också
 
 - [Hämta, testa och ange](../resources/get-test-set.md)

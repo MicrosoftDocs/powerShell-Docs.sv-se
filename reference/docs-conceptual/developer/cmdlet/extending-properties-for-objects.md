@@ -20,13 +20,13 @@ ms.locfileid: "72355540"
 När du utökar .NET Framework objekt kan du lägga till egenskaper för alias, kod egenskaper, antecknings egenskaper, skript egenskaper och egenskaps uppsättningar för objekten. XML-filen som definierar dessa egenskaper beskrivs i följande avsnitt.
 
 > [!NOTE]
-> Exemplen i följande avsnitt är från standard `Types.ps1xml`-filtypen i installations katalogen för PowerShell (`$PSHOME`). Mer information finns i [About types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
+> Exemplen i följande avsnitt är från standard `Types.ps1xml` typ filen i installations katalogen för PowerShell (`$PSHOME`). Mer information finns i [About types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
 
 ## <a name="alias-properties"></a>Egenskaper för alias
 
 En alias-egenskap definierar ett nytt namn för en befintlig egenskap.
 
-I följande exempel läggs **Count** -egenskapen till i [system. mat ris](/dotnet/api/System.Array) typen. [AliasProperty](/dotnet/api/system.management.automation.psaliasproperty) -elementet definierar den utökade egenskapen som en alias-egenskap. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name) anger det nya namnet. Och [ReferencedMemberName](/dotnet/api/system.management.automation.psaliasproperty.referencedmembername) -elementet anger den befintliga egenskapen som aliaset refererar till. Du kan också lägga till elementet `AliasProperty` till medlemmarna i [MemberSet](/dotnet/api/system.management.automation.psmemberset) -elementet.
+I följande exempel läggs **Count** -egenskapen till i [system. mat ris](/dotnet/api/System.Array) typen. [AliasProperty](/dotnet/api/system.management.automation.psaliasproperty) -elementet definierar den utökade egenskapen som en alias-egenskap. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name) anger det nya namnet. Och [ReferencedMemberName](/dotnet/api/system.management.automation.psaliasproperty.referencedmembername) -elementet anger den befintliga egenskapen som aliaset refererar till. Du kan också lägga till `AliasProperty`-elementet till medlemmarna i [MemberSet](/dotnet/api/system.management.automation.psmemberset) -elementet.
 
 ```xml
 <Type>
@@ -44,7 +44,7 @@ I följande exempel läggs **Count** -egenskapen till i [system. mat ris](/dotne
 
 En kod egenskap refererar till en statisk egenskap för ett .NET Framework-objekt.
 
-I följande exempel läggs egenskapen **mode** till i typen [system. io. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) . [CodeProperty](/dotnet/api/system.management.automation.pscodeproperty) -elementet definierar den utökade egenskapen som en kod egenskap. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name) anger namnet på den utökade egenskapen. Och [GetCodeReference](/dotnet/api/system.management.automation.pscodeproperty.gettercodereference) -elementet definierar den statiska metoden som den utökade egenskapen refererar till. Du kan också lägga till elementet `CodeProperty` till medlemmarna i [MemberSet](/dotnet/api/system.management.automation.psmemberset) -elementet.
+I följande exempel läggs egenskapen **mode** till i typen [system. io. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) . [CodeProperty](/dotnet/api/system.management.automation.pscodeproperty) -elementet definierar den utökade egenskapen som en kod egenskap. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name) anger namnet på den utökade egenskapen. Och [GetCodeReference](/dotnet/api/system.management.automation.pscodeproperty.gettercodereference) -elementet definierar den statiska metoden som den utökade egenskapen refererar till. Du kan också lägga till `CodeProperty`-elementet till medlemmarna i [MemberSet](/dotnet/api/system.management.automation.psmemberset) -elementet.
 
 ```xml
 <Type>
@@ -65,7 +65,7 @@ I följande exempel läggs egenskapen **mode** till i typen [system. io. Directo
 
 En antecknings egenskap definierar en egenskap med ett statiskt värde.
 
-I följande exempel läggs **status** egenskapen, vars värde alltid **lyckas**, till i [system. io. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) -typen. [NoteProperty](/dotnet/api/system.management.automation.psnoteproperty) -elementet definierar den utökade egenskapen som en antecknings egenskap. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name) anger namnet på den utökade egenskapen. [Värdet](/dotnet/api/system.management.automation.psnoteproperty.value) -elementet anger det statiska värdet för den utökade egenskapen. Du kan också lägga till elementet `NoteProperty` i medlemmarna i [MemberSet](/dotnet/api/system.management.automation.psmemberset) -elementet.
+I följande exempel läggs **status** egenskapen, vars värde alltid **lyckas**, till i [system. io. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) -typen. [NoteProperty](/dotnet/api/system.management.automation.psnoteproperty) -elementet definierar den utökade egenskapen som en antecknings egenskap. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name) anger namnet på den utökade egenskapen. [Värdet](/dotnet/api/system.management.automation.psnoteproperty.value) -elementet anger det statiska värdet för den utökade egenskapen. `NoteProperty`-elementet kan också läggas till i medlemmarna i [MemberSet](/dotnet/api/system.management.automation.psmemberset) -elementet.
 
 ```xml
 <Type>
@@ -83,7 +83,7 @@ I följande exempel läggs **status** egenskapen, vars värde alltid **lyckas**,
 
 En skript egenskap definierar en egenskap vars värde är utdata från ett skript.
 
-I följande exempel läggs egenskapen **VersionInfo** till i typen [system. io. fileinfo](/dotnet/api/System.IO.FileInfo) . [ScriptProperty](/dotnet/api/system.management.automation.psscriptproperty) -elementet definierar den utökade egenskapen som en skript egenskap. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name) anger namnet på den utökade egenskapen. Och [GetScriptBlock](/dotnet/api/system.management.automation.psscriptproperty.getterscript) -elementet anger det skript som genererar egenskap svärdet. Du kan också lägga till elementet `ScriptProperty` till medlemmarna i [MemberSet](/dotnet/api/system.management.automation.psmemberset) -elementet.
+I följande exempel läggs egenskapen **VersionInfo** till i typen [system. io. fileinfo](/dotnet/api/System.IO.FileInfo) . [ScriptProperty](/dotnet/api/system.management.automation.psscriptproperty) -elementet definierar den utökade egenskapen som en skript egenskap. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name) anger namnet på den utökade egenskapen. Och [GetScriptBlock](/dotnet/api/system.management.automation.psscriptproperty.getterscript) -elementet anger det skript som genererar egenskap svärdet. Du kan också lägga till `ScriptProperty`-elementet till medlemmarna i [MemberSet](/dotnet/api/system.management.automation.psmemberset) -elementet.
 
 ```xml
 <Type>
@@ -102,12 +102,12 @@ I följande exempel läggs egenskapen **VersionInfo** till i typen [system. io. 
 ## <a name="property-sets"></a>Egenskaps uppsättningar
 
 En egenskaps uppsättning definierar en grupp utökade egenskaper som kan refereras till i uppsättningens namn.
-**Egenskaps** parametern [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table)
- kan till exempel ange en speciell egenskaps uppsättning som ska visas. När en egenskaps uppsättning anges visas endast de egenskaper som tillhör uppsättningen.
+Till exempel kan [format-tabellens](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) **egenskaps** parameter
+ange en angiven egenskap som ska visas. När en egenskaps uppsättning anges visas endast de egenskaper som tillhör uppsättningen.
 
-Det finns ingen begränsning för antalet egenskaps uppsättningar som kan definieras för ett objekt. Egenskaps uppsättningarna som används för att definiera standard visnings egenskaperna för ett objekt måste dock anges i **PSStandardMembers** -medlems uppsättningen. I filen `Types.ps1xml` skriver du standard namnen för egenskaps uppsättningar, inklusive **DefaultDisplayProperty**, **DefaultDisplayPropertySet**och **DefaultKeyPropertySet**. Eventuella ytterligare egenskaps uppsättningar som du lägger till i **PSStandardMembers** -medlems uppsättningen ignoreras.
+Det finns ingen begränsning för antalet egenskaps uppsättningar som kan definieras för ett objekt. Egenskaps uppsättningarna som används för att definiera standard visnings egenskaperna för ett objekt måste dock anges i **PSStandardMembers** -medlems uppsättningen. I `Types.ps1xml` typer-filen inkluderar standard egenskaperna för egenskaps uppsättning namnen **DefaultDisplayProperty**, **DefaultDisplayPropertySet**och **DefaultKeyPropertySet**. Eventuella ytterligare egenskaps uppsättningar som du lägger till i **PSStandardMembers** -medlems uppsättningen ignoreras.
 
-I följande exempel läggs egenskaps uppsättningen **DefaultDisplayPropertySet** till i **PSStandardMembers** -medlems uppsättningen för [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) -typen. [PropertySet](/dotnet/api/system.management.automation.pspropertyset) -elementet definierar gruppen med egenskaper. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name) anger namnet på egenskaps uppsättningen. Och [ReferencedProperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames) -elementet anger egenskaperna för uppsättningen. Du kan också lägga till elementet `PropertySet` till medlemmarna i [typ](/dotnet/api/system.management.automation.pstypename) elementet.
+I följande exempel läggs egenskaps uppsättningen **DefaultDisplayPropertySet** till i **PSStandardMembers** -medlems uppsättningen för [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) -typen. [PropertySet](/dotnet/api/system.management.automation.pspropertyset) -elementet definierar gruppen med egenskaper. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name) anger namnet på egenskaps uppsättningen. Och [ReferencedProperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames) -elementet anger egenskaperna för uppsättningen. Du kan också lägga till `PropertySet`-elementet till medlemmar av [typen](/dotnet/api/system.management.automation.pstypename) element.
 
 ```xml
 <Type>
@@ -130,7 +130,7 @@ I följande exempel läggs egenskaps uppsättningen **DefaultDisplayPropertySet*
 </Type>
 ```
 
-## <a name="see-also"></a>Se även
+## <a name="see-also"></a>Se också
 
 [Om types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)
 

@@ -23,9 +23,9 @@ uint32 PerformRequiredConfigurationChecks(
 
 ## <a name="parameters"></a>Parametrar
 
-*Flags* \[in @ no__t-2 en bitmask som anger vilken typ av konsekvens kontroll som ska köras. Följande värden är giltiga och kan kombineras med hjälp av en bitvis **or** -åtgärd:
+*Flaggor* \[i\] en bitmask som anger vilken typ av konsekvens kontroll som ska köras. Följande värden är giltiga och kan kombineras med hjälp av en bitvis **or** -åtgärd:
 
-|Value |Beskrivning |
+|Värde |Description |
 |:--- |:---|
 |**1** | En normal konsekvens kontroll. |
 |**2** | En fortsättning på konsekvens kontroll efter en omstart. Värdet får inte kombineras med andra värden. |
@@ -36,16 +36,16 @@ uint32 PerformRequiredConfigurationChecks(
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Detta är en statisk metod.
 
 ## <a name="requirements"></a>Krav
 
-**-** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
 
-## <a name="see-also"></a>Se även
+## <a name="see-also"></a>Se också
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

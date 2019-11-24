@@ -17,7 +17,7 @@ ms.locfileid: "72359222"
 ---
 # <a name="stopprocesssample02-sample"></a>StopProcessSample02 – exempel
 
-Det här exemplet visar hur du skriver en cmdlet som skriver fel sökning (WriteDebug), utförliga (WriteVerbose) och varnings meddelanden (WriteWarning) medan processer stoppas på den lokala datorn. Denna cmdlet liknar den `Stop-Process`-cmdlet som tillhandahålls av Windows PowerShell 2,0.
+Det här exemplet visar hur du skriver en cmdlet som skriver fel sökning (WriteDebug), utförliga (WriteVerbose) och varnings meddelanden (WriteWarning) medan processer stoppas på den lokala datorn. Denna cmdlet liknar `Stop-Process`-cmdleten som tillhandahålls av Windows PowerShell 2,0.
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Så här skapar du exemplet med hjälp av Visual Studio.
 
@@ -69,7 +69,7 @@ Det här exemplet demonstrerar följande.
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar hur du skriver fel söknings-, utförliga och varnings meddelanden med hjälp av metoderna `WriteDebug`, `WriteVerbose` och @no__t 2.
+Det här exemplet visar hur du skriver fel söknings-, utförliga och varnings meddelanden med hjälp av metoderna `WriteDebug`, `WriteVerbose`och `WriteWarning`.
 
 ```csharp
 using System;

@@ -49,7 +49,7 @@ Följande rikt linjer bör följas när du utformar cmdlets för att säkerstäl
 
 Substantiv som används i cmdlet-namn måste vara särskilt så att användaren kan identifiera dina cmdletar. Prefix för generiska substantiv som "Server" med en förkortad version av produkt namnet. Om t. ex. ett substantiv refererar till en server som kör en instans av Microsoft SQL Server, använder du ett substantiv som "SQLServer". Kombinationen av vissa Substantiv och den korta listan över godkända verb gör det möjligt för användaren att snabbt upptäcka och förutse funktioner samtidigt som du undviker duplicering mellan cmdlet-namn.
 
-För att förbättra användar upplevelsen ska det substantiv som du väljer för ett cmdlet-namn vara singular. Använd till exempel namnet `Get-Process` i stället för **Get-Processes**. Det är bäst att följa den här regeln för alla cmdlet-namn, även om en cmdlet förmodligen fungerar på mer än ett objekt.
+För att förbättra användar upplevelsen ska det substantiv som du väljer för ett cmdlet-namn vara singular. Använd exempelvis namnet `Get-Process` i stället för **Get-processs**. Det är bäst att följa den här regeln för alla cmdlet-namn, även om en cmdlet förmodligen fungerar på mer än ett objekt.
 
 ### <a name="use-pascal-case-for-cmdlet-names-sd02"></a>Använd Pascal-fall för cmdlet-namn (SD02)
 
@@ -57,11 +57,11 @@ Använd Pascal-fall för parameter namn. Med andra ord skriver du in den första
 
 ### <a name="parameter-design-guidelines-sd03"></a>Rikt linjer för parameter design (SD03)
 
-En cmdlet behöver parametrar som tar emot data som den måste fungera på och parametrar som anger information som används för att fastställa egenskaperna för åtgärden. En cmdlet kan till exempel ha en `Name`-parameter som tar emot data från pipelinen, och cmdleten kan ha en `Force`-parameter för att ange att cmdleten kan tvingas utföra åtgärden. Det finns ingen gräns för antalet parametrar som en cmdlet kan definiera.
+En cmdlet behöver parametrar som tar emot data som den måste fungera på och parametrar som anger information som används för att fastställa egenskaperna för åtgärden. En cmdlet kan till exempel ha en `Name` parameter som tar emot data från pipelinen, och cmdleten kan ha en `Force`-parameter för att ange att cmdleten kan tvingas utföra åtgärden. Det finns ingen gräns för antalet parametrar som en cmdlet kan definiera.
 
 #### <a name="use-standard-parameter-names"></a>Använd standard parameter namn
 
-Din cmdlet ska använda standard parameter namn så att användaren snabbt kan fastställa vad en viss parameter innebär. Om ett mer särskilt namn krävs, Använd ett standard parameter namn och ange sedan ett mer särskilt namn som alias. Till exempel har cmdleten `Get-Service` en parameter som har ett generiskt namn (`Name`) och ett mer särskilt alias (`ServiceName`). Båda villkoren kan användas för att ange parametern.
+Din cmdlet ska använda standard parameter namn så att användaren snabbt kan fastställa vad en viss parameter innebär. Om ett mer särskilt namn krävs, Använd ett standard parameter namn och ange sedan ett mer särskilt namn som alias. Till exempel har `Get-Service`-cmdleten en parameter som har ett generiskt namn (`Name`) och ett mer särskilt alias (`ServiceName`). Båda villkoren kan användas för att ange parametern.
 
 Mer information om parameter namn och deras data typer finns i [rikt linjer för cmdlet-parameter namn och funktioner](./standard-cmdlet-parameter-names-and-types.md).
 
@@ -73,7 +73,7 @@ Plural-parameter namn ska endast användas i de fall där parameterns värde all
 
 #### <a name="use-pascal-case-for-parameter-names"></a>Använd Pascal-fall för parameter namn
 
-Använd Pascal-fall för parameter namn. Med andra ord skriver du in den första bokstaven i varje ord i parameter namnet, inklusive den första bokstaven i namnet. Parameter namnet `ErrorAction` använder till exempel rätt Skift läge. Följande parameter namn använder felaktig kapitalisering:
+Använd Pascal-fall för parameter namn. Med andra ord skriver du in den första bokstaven i varje ord i parameter namnet, inklusive den första bokstaven i namnet. Parameter namnet `ErrorAction` till exempel använda rätt Skift läge. Följande parameter namn använder felaktig kapitalisering:
 
 - `errorAction`
 
@@ -97,13 +97,13 @@ Parametrar ska definieras som .NET Framework typer för att ge bättre parameter
 
 #### <a name="use-consistent-parameter-types"></a>Använd konsekventa parameter typer
 
-Använd alltid samma parameter typ när samma parameter används av flera cmdletar.  Om till exempel parametern `Process` är en [system. Int16](/dotnet/api/System.Int16) -typ för en cmdlet ska du inte göra parametern `Process` för en annan cmdlet: en [system. Uint16](/dotnet/api/System.UInt16) -typ.
+Använd alltid samma parameter typ när samma parameter används av flera cmdletar.  Om `Process` parametern till exempel är en [system. Int16](/dotnet/api/System.Int16) -typ för en cmdlet ska du inte göra `Process`-parametern för en annan cmdlet: en [system. Uint16](/dotnet/api/System.UInt16) -typ.
 
 #### <a name="parameters-that-take-true-and-false"></a>Parametrar som tar sant och falskt
 
-Om parametern bara tar `true` och `false` definierar du parametern som Type [system. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter). En växel parameter behandlas som `true` när den anges i ett kommando. Om parametern inte ingår i ett kommando, anser Windows PowerShell värdet för parametern som ska `false`. Definiera inte booleska parametrar.
+Om parametern bara tar `true` och `false`definierar du parametern som Type [system. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter). En växel parameter behandlas som `true` när den anges i ett kommando. Om parametern inte ingår i ett kommando, anser Windows PowerShell värdet för parametern som ska `false`. Definiera inte booleska parametrar.
 
-Om parametern behöver särskilja mellan tre värden: $true, $false och "ospecificerad", definierar du en parameter av typen Nullable @ no__t-0bool >.  Behovet av ett tredje, "Ospecificerat" värde inträffar vanligt vis när cmdleten kan ändra en Boolean-egenskap för ett objekt. I det här fallet "Ospecificerat" innebär att egenskapens aktuella värde inte ändras.
+Om parametern behöver särskilja mellan tre värden: $true, $false och "ospecificerad", definierar du en parameter av typen Nullable\<bool >.  Behovet av ett tredje, "Ospecificerat" värde inträffar vanligt vis när cmdleten kan ändra en Boolean-egenskap för ett objekt. I det här fallet "Ospecificerat" innebär att egenskapens aktuella värde inte ändras.
 
 #### <a name="support-arrays-for-parameters"></a>Stöd mat ris för parametrar
 
@@ -131,7 +131,7 @@ När parameter uppsättningar används definieras standard parameter uppsättnin
 
 Använd rikt linjerna i det här avsnittet för att ge feedback till användaren. Den här feedbacken gör att användaren kan vara medveten om vad som händer i systemet och fatta bättre administrativa beslut.
 
-Med Windows PowerShell-körningsmiljön kan en användare ange hur utdata ska hanteras från varje anrop till metoden `Write` genom att ange en inställnings variabel. Användaren kan ange flera variabler, inklusive en variabel som avgör om systemet ska visa information och en variabel som avgör om systemet ska fråga användaren innan ytterligare åtgärder vidtas.
+Med Windows PowerShell-körningsmiljön kan en användare ange hur utdata ska hanteras från varje anrop till `Write`-metoden genom att ange en inställnings variabel. Användaren kan ange flera variabler, inklusive en variabel som avgör om systemet ska visa information och en variabel som avgör om systemet ska fråga användaren innan ytterligare åtgärder vidtas.
 
 #### <a name="support-the-writewarning-writeverbose-and-writedebug-methods"></a>Stöd för metoderna WriteWarning, WriteVerbose och WriteDebug
 
@@ -139,7 +139,7 @@ En cmdlet ska anropa metoden [system. Management. Automation. cmdlet. WriteWarni
 
 En cmdlet ska anropa metoden [system. Management. Automation. cmdlet. WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) när användaren behöver information om vad cmdleten gör. Till exempel ska en-cmdlet anropa den här informationen om cmdlet-författaren anser att det finns scenarier som kan kräva mer information om vad cmdleten gör.
 
-Cmdleten ska anropa metoden [system. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) när en utvecklare eller en produkt support tekniker måste förstå vad som har skadat cmdlet-åtgärden. Det är inte nödvändigt att cmdleten anropar metoden [system. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) i samma kod som anropar metoden [system. Management. Automation. cmdlet. WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) eftersom parametern `Debug` visar både informations uppsättningar.
+Cmdleten ska anropa metoden [system. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) när en utvecklare eller en produkt support tekniker måste förstå vad som har skadat cmdlet-åtgärden. Det är inte nödvändigt att cmdleten anropar metoden [system. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) i samma kod som anropar metoden [system. Management. Automation. cmdlet. WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) eftersom parametern `Debug` visar båda uppsättningarna med information.
 
 #### <a name="support-writeprogress-for-operations-that-take-a-long-time"></a>Stöd för WriteProgress för åtgärder som tar lång tid
 
@@ -170,7 +170,7 @@ Definiera en parameter genom att deklarera en offentlig egenskap för cmdlet-kla
 
 Windows PowerShell-sökvägen är mekanismen för att normalisera åtkomst till namn områden. När du tilldelar en Windows PowerShell-sökväg till en parameter i cmdleten kan användaren definiera en anpassad "enhet" som fungerar som en genväg till en angiven sökväg. När en användare anger en sådan enhet, kan lagrade data, till exempel data i registret, användas på ett konsekvent sätt.
 
-Om din cmdlet gör det möjligt för användaren att ange en fil eller en data källa, bör den definiera en parameter av typen [system. String](/dotnet/api/System.String). Om mer än en enhet stöds måste typen vara en matris. Namnet på parametern ska vara `Path`, med ett alias för `PSPath`. Dessutom ska parametern `Path` ha stöd för jokertecken. Om stöd för jokertecken inte är obligatoriskt definierar du en `LiteralPath`-parameter.
+Om din cmdlet gör det möjligt för användaren att ange en fil eller en data källa, bör den definiera en parameter av typen [system. String](/dotnet/api/System.String). Om mer än en enhet stöds måste typen vara en matris. Namnet på parametern måste vara `Path`, med ett alias för `PSPath`. Dessutom ska parametern `Path` ha stöd för jokertecken. Om du inte behöver stöd för jokertecken definierar du en `LiteralPath` parameter.
 
 Om data som cmdleten läser eller skriver måste vara en fil, ska cmdleten acceptera Windows PowerShell Path-indata och cmdleten ska använda egenskapen [system. Management. Automation. sessionState. Path](/dotnet/api/System.Management.Automation.SessionState.Path) för att översätta Windows PowerShell-sökvägar till sökvägar som fil systemet känner igen. De olika mekanismerna omfattar följande metoder:
 
@@ -206,7 +206,7 @@ Om du skapar ett objekt för en cmdlet bör du se till att dess medlemmar mappar
 
 Befintliga .NET Framework objekt som returneras av cmdlets ofta saknar vissa viktiga eller praktiska medlemmar som krävs av skript utvecklaren eller användaren. De medlemmar som saknas kan vara särskilt viktiga för att visa och för att skapa rätt medlems namn så att objektet kan skickas korrekt till pipelinen. Skapa en anpassad types. ps1xml-fil för att dokumentera de nödvändiga medlemmarna. När du skapar den här filen rekommenderar vi följande namngivnings konvention: *< Your_Product_Name >* . Types. ps1xml.
 
-Du kan till exempel lägga till en skript egenskap `Mode` till typen [system. io. fileinfo](/dotnet/api/System.IO.FileInfo) för att visa attributen för en fil tydligare. Dessutom kan du lägga till egenskapen `Count` alias till [system. mat ris](/dotnet/api/System.Array) typen för att tillåta en konsekvent användning av egenskaps namnet (i stället för `Length`).
+Du kan till exempel lägga till en `Mode` skript egenskap i typen [system. io. fileinfo](/dotnet/api/System.IO.FileInfo) för att visa attributen för en fil tydligare. Dessutom kan du lägga till en `Count` Ali Aset-egenskap till [system. mat ris](/dotnet/api/System.Array) typen för att tillåta konsekvent användning av egenskaps namnet (i stället för `Length`).
 
 ##### <a name="implement-the-icomparable-interface"></a>Implementera IComparable-gränssnittet
 
@@ -220,13 +220,13 @@ Om visningen för ett objekt inte ger det förväntade resultatet skapar du en a
 
 #### <a name="implement-for-the-middle-of-a-pipeline"></a>Implementera mitt i en pipeline
 
-Implementera en cmdlet förutsatt att den kommer att anropas från mitten av en pipeline (det vill säga andra cmdlets skapar indata eller förbrukar utdata). Du kan till exempel anta att cmdleten `Get-Process`, eftersom den genererar data, endast används som första cmdlet i en pipeline. Men eftersom den här cmdleten är avsedd för mitten av en pipeline, tillåter den här cmdleten tidigare cmdletar eller data i pipelinen att ange vilka processer som ska hämtas.
+Implementera en cmdlet förutsatt att den kommer att anropas från mitten av en pipeline (det vill säga andra cmdlets skapar indata eller förbrukar utdata). Du kan till exempel anta att `Get-Process`-cmdleten, eftersom den genererar data, endast används som första cmdlet i en pipeline. Men eftersom den här cmdleten är avsedd för mitten av en pipeline, tillåter den här cmdleten tidigare cmdletar eller data i pipelinen att ange vilka processer som ska hämtas.
 
 #### <a name="support-input-from-the-pipeline"></a>Stöd för ininformation från pipelinen
 
 I varje parameter uppsättning för en cmdlet inkluderar du minst en parameter som stöder indatamängden från pipelinen. Stöd för pipeline-indata gör att användaren kan hämta data eller objekt, skicka dem till rätt parameter uppsättning och skicka resultaten direkt till en-cmdlet.
 
-En parameter accepterar ininformation från pipelinen om attributet **parameter** innehåller nyckelordet `ValueFromPipeline`, nyckelordet `ValueFromPipelineByPropertyName` eller båda nyckelorden i dess deklaration. Om ingen av parametrarna i en parameter uppsättning stöder `ValueFromPipeline`-eller `ValueFromPipelineByPropertyName`-nyckelorden, kan cmdleten inte meningsfullt placeras efter en annan cmdlet eftersom den kommer att ignorera eventuella pipeline-inflöden.
+En parameter accepterar ininformation från pipelinen om attributet **parameter** innehåller nyckelordet `ValueFromPipeline`, `ValueFromPipelineByPropertyName`-nyckelordet eller båda nyckelorden i dess deklaration. Om ingen av parametrarna i en parameter uppsättning stöder `ValueFromPipeline` eller `ValueFromPipelineByPropertyName` nyckelord, kan cmdleten inte meningsfullt placeras efter en annan cmdlet eftersom den ignorerar eventuella pipeline-inflöden.
 
 #### <a name="support-the-processrecord-method"></a>Stöd för metoden ProcessRecord
 
@@ -234,7 +234,7 @@ Om du vill acceptera alla poster från föregående cmdlet i pipelinen måste di
 
 ### <a name="write-single-records-to-the-pipeline-sc03"></a>Skriv enskilda poster till pipelinen (SC03)
 
-När en cmdlet returnerar objekt ska cmdleten skriva objekten direkt när de genereras. Cmdleten bör inte innehålla dem för att buffra dem i en kombinerad matris. De cmdletar som tar emot objekten som indata kommer sedan att kunna bearbeta, Visa eller bearbeta och visa utdata utan fördröjning. En cmdlet som genererar utdata en i taget bör anropa metoden [system. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) . En cmdlet som genererar utdata i batchar (till exempel eftersom ett underliggande API returnerar en matris med utgående objekt) bör anropa metoden [system. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) med den andra parametern inställd på `true`.
+När en cmdlet returnerar objekt ska cmdleten skriva objekten direkt när de genereras. Cmdleten bör inte innehålla dem för att buffra dem i en kombinerad matris. De cmdletar som tar emot objekten som indata kommer sedan att kunna bearbeta, Visa eller bearbeta och visa utdata utan fördröjning. En cmdlet som genererar utdata en i taget bör anropa metoden [system. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) . En cmdlet som genererar utdata i batchar (till exempel eftersom ett underliggande API returnerar en matris med utgående objekt) bör anropa metoden [system. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) med dess andra parameter inställd på `true`.
 
 ### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Gör cmdletar Skift läges okänsliga och Skift läges bevarande (SC04)
 

@@ -64,10 +64,10 @@ DSC-resursschemat definieras som egenskaper för klassen. Vi deklarerar tre egen
 
 Observera att egenskaperna ändras efter attribut. Innebörden av attributen är följande:
 
-- **DscProperty (nyckel)** : Egenskapen måste anges. Egenskapen är en nyckel. Värdena för alla egenskaper som har marker ATS som nycklar måste kombineras för att unikt identifiera en resurs instans i en konfiguration.
-- **DscProperty (obligatorisk)** : Egenskapen måste anges.
-- **DscProperty (NotConfigurable)** : Egenskapen är skrivskyddad. Egenskaper som marker ATS med det här attributet kan inte anges med en konfiguration, men de fylls med **Get ()** -metoden när den är tillgänglig.
-- **DscProperty ()** : Egenskapen kan konfigureras, men det är inte obligatoriskt.
+- **DscProperty (nyckel)** : egenskapen är obligatorisk. Egenskapen är en nyckel. Värdena för alla egenskaper som har marker ATS som nycklar måste kombineras för att unikt identifiera en resurs instans i en konfiguration.
+- **DscProperty (obligatorisk)** : egenskapen är obligatorisk.
+- **DscProperty (NotConfigurable)** : egenskapen är skrivskyddad. Egenskaper som marker ATS med det här attributet kan inte anges med en konfiguration, men de fylls med **Get ()** -metoden när den är tillgänglig.
+- **DscProperty ()** : egenskapen kan konfigureras, men det är inte obligatoriskt.
 
 Egenskaperna **$Path** och **$SourcePath** är båda strängarna. **$CreationTime** är en [datetime](/dotnet/api/system.datetime) -egenskap. Egenskapen **$ensure** är en uppräknings typ som definieras enligt följande.
 
@@ -454,7 +454,7 @@ PowerShellVersion = '5.0'
 
 ## <a name="test-the-resource"></a>Testa resursen
 
-När du har sparat klass-och manifest filerna i mappstrukturen enligt beskrivningen ovan, kan du skapa en konfiguration som använder den nya resursen. Information om hur du kör en DSC-konfiguration finns i [Konfigurera konfigurationer](../pull-server/enactingConfigurations.md). Följande konfiguration kommer att kontrol lera om filen finns på `c:\test\test.txt` och kopierar filen från `c:\test.txt` (du bör skapa `c:\test.txt` innan du kör konfigurationen).
+När du har sparat klass-och manifest filerna i mappstrukturen enligt beskrivningen ovan, kan du skapa en konfiguration som använder den nya resursen. Information om hur du kör en DSC-konfiguration finns i [Konfigurera konfigurationer](../pull-server/enactingConfigurations.md). Följande konfiguration kommer att kontrol lera om filen finns `c:\test\test.txt` finns, och kopierar, om inte, filen från `c:\test.txt` (du bör skapa `c:\test.txt` innan du kör konfigurationen).
 
 ```powershell
 Configuration Test
@@ -484,7 +484,7 @@ Attributet **dscresource Keyword Supports ()** använder en valfri parameter **R
 Den här parametern använder ett av tre värden:
 
 - `Optional` **PsDscRunAsCredential** är valfritt för konfigurationer som anropar den här resursen. Detta är standardvärdet.
-- `Mandatory`- **PsDscRunAsCredential** måste användas för alla konfigurationer som anropar den här resursen.
+- `Mandatory` **PsDscRunAsCredential** måste användas för alla konfigurationer som anropar den här resursen.
 - `NotSupported` konfigurationer som anropar den här resursen kan inte använda **PsDscRunAsCredential**.
 - `Default` samma som `Optional`.
 
@@ -500,7 +500,7 @@ class FileResource {
 
 En modul kan definiera flera klassbaserade DSC-resurser. Du kan skapa mappstrukturen på följande sätt:
 
-1. Definiera den första resursen i filen "@no__t -0. psm1" och efterföljande resurser under mappen **DSCResources** .
+1. Definiera den första resursen i filen "<ModuleName>. psm1" och efterföljande resurser i mappen **DSCResources** .
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -528,7 +528,7 @@ En modul kan definiera flera klassbaserade DSC-resurser. Du kan skapa mappstrukt
 
 ### <a name="access-the-user-context"></a>Komma åt användar kontexten
 
-Om du vill komma åt användar kontexten inifrån en anpassad resurs kan du använda den `$global:PsDscContext`automatiska variabeln.
+Om du vill komma åt användar kontexten inifrån en anpassad resurs kan du använda den automatiska variabeln `$global:PsDscContext`.
 
 Till exempel kan följande kod skriva användar kontexten som resursen körs till i utförlig utdataström:
 

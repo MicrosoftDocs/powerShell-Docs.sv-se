@@ -26,28 +26,28 @@ uint32 ResourceTest(
 
 ## <a name="parameters"></a>Parametrar
 
-*ResourceType* \[in @ no__t-2 namnet på resursen som ska anropas.
+*Resurs-\[i*\] namnet på resursen som ska anropas.
 
-*Modulnamn* \[in @ no__t-2 namnet på den modul som innehåller resursen som ska anropas.
+*Modulnamn* \[i\] namnet på den modul som innehåller resursen som ska anropas.
 
-*resourceProperty* \[in @ no__t-2 anger resursens egenskaps namn och dess värde i en hash-tabell som nyckel respektive värde. Använd cmdleten [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) för att identifiera resurs egenskaper och deras typer.
+*resourceProperty* \[i\] anger resursens egenskaps namn och dess värde i en hash-tabell som nyckel respektive värde. Använd cmdleten [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) för att identifiera resurs egenskaper och deras typer.
 
-*InDesiredState* \[out @ no__t-2 vid retur anges den här egenskapen till **Sant** om målnoden är i önskat tillstånd.
+*InDesiredState* \[ut\] vid retur anges den här egenskapen till **Sant** om målnoden är i önskat tillstånd.
 
 ## <a name="return-value"></a>Returvärde
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Detta är en statisk metod.
 
 ## <a name="requirements"></a>Krav
 
-**-** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
 
-## <a name="see-also"></a>Se även
+## <a name="see-also"></a>Se också
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

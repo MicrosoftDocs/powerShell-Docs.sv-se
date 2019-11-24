@@ -17,7 +17,7 @@ ms.locfileid: "72356135"
 ---
 # <a name="stopprocesssample01-sample"></a>StopProcessSample01 – exempel
 
-Det här exemplet visar hur du skriver en cmdlet som begär feedback från användaren innan den försöker stoppa en process och hur du implementerar en `PassThru`-parameter som anger att cmdleten ska returnera ett objekt. Denna cmdlet liknar den `Stop-Process`-cmdlet som tillhandahålls av Windows PowerShell 2,0.
+Det här exemplet visar hur du skriver en cmdlet som begär feedback från användaren innan den försöker stoppa en process och hur du implementerar en `PassThru` parameter som anger att cmdleten ska returnera ett objekt. Denna cmdlet liknar `Stop-Process`-cmdleten som tillhandahålls av Windows PowerShell 2,0.
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Så här skapar du exemplet med hjälp av Visual Studio.
 
@@ -61,11 +61,11 @@ Det här exemplet demonstrerar följande.
 
 - Anropar ShouldProcess-metoden för att begära bekräftelse.
 
-- Implementera en `PassThru`-parameter som anger om användaren vill att cmdleten ska returnera ett objekt. Som standard returnerar denna cmdlet inget objekt till pipelinen.
+- Implementera en `PassThru` parameter som anger om användaren vill att cmdleten ska returnera ett objekt. Som standard returnerar denna cmdlet inget objekt till pipelinen.
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar hur du implementerar en `PassThru`-parameter som visar att användaren vill att cmdleten ska returnera ett objekt och hur du begär feedback via anrop till metoderna `ShouldProcess` och @no__t 2.
+Det här exemplet visar hur du implementerar en `PassThru` parameter som indikerar att-cmdleten ska returnera ett objekt och hur du begär feedback via anrop till `ShouldProcess` och `ShouldContinue` metoder.
 
 ```csharp
 using System;

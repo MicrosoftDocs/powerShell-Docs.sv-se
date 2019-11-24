@@ -17,17 +17,17 @@ ms.locfileid: "72359155"
 ---
 # <a name="users-requesting-confirmation"></a>Användare som begär bekräftelse
 
-När du anger ett värde för `true` för parametern `SupportsShouldProcess` i deklarationen för cmdlet-attribut kan användarna ange `Confirm`-parametern i kommando tolken.
+När du anger ett värde för `true` för `SupportsShouldProcess`-parametern för cmdlet-attributets deklaration, kan användarna ange `Confirm`-parametern i kommando tolken.
 
-I Standard miljön kan användarna ange parametern `Confirm` eller `"-Confirm:$true` så att bekräftelse begärs när metoden [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anropas. Detta kringgår [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) bekräftelse förfrågningar, även för åtgärder med hög påverkan.
+I Standard miljön kan användare ange `Confirm` parameter eller `"-Confirm:$true` så att en bekräftelse begärs när metoden [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anropas. Detta kringgår [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) bekräftelse förfrågningar, även för åtgärder med hög påverkan.
 
-Om `Confirm` inte anges, bekräftar [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anrops begär Anden om inställnings variabeln @no__t 2 är lika med eller större än den `ConfirmImpact` inställningen för cmdleten eller providern. Standardvärdet för `$ConfirmPreference` är högt. I Standard miljön är det därför bara-cmdletar och-providers som anger en bekräftelse av åtgärden som kräver hög påverkan.
+Om `Confirm` inte anges bekräftar [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anrops begär Anden om inställningen `$ConfirmPreference` är lika med eller större än `ConfirmImpact` inställningen för cmdleten eller providern. Standardinställningen för `$ConfirmPreference` är hög. I Standard miljön är det därför bara-cmdletar och-providers som anger en bekräftelse av åtgärden som kräver hög påverkan.
 
-Om `Confirm` är falskt eller om `"-Confirm:$false` har angetts, begär anropet [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) från användaren, och skal variabeln `$ConfirmPreference` ignoreras.
+Om `Confirm` är falskt eller om `"-Confirm:$false` anges, begär [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) förfrågningar från användaren och `$ConfirmPreference` Shell-variabeln ignoreras.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
-- För-cmdlets och providers som anger `SupportsShouldProcess`, men inte `ConfirmImpact`, hanteras dessa åtgärder som "medelhög påverkan"-åtgärder, och de kommer inte att fråga som standard. Deras effekt nivå är mindre än standardinställningen för variabeln `$ConfirmPreference`.
+- För cmdlets och providers som anger `SupportsShouldProcess`, men inte `ConfirmImpact`, hanteras dessa åtgärder som "medelhög påverkan"-åtgärder och de kommer inte att fråga som standard. Deras effekt nivå är mindre än standardinställningen för variabeln `$ConfirmPreference`.
 
 - Om användaren anger parametern `Verbose` kommer de att meddelas om åtgärden även om de inte uppmanas att bekräfta.
 

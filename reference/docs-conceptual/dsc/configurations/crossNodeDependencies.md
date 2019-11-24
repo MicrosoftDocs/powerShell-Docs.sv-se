@@ -15,13 +15,13 @@ ms.locfileid: "71942057"
 
 DSC tillhandahåller särskilda resurser, **WaitForAll**, **WaitForAny**och **WaitForSome** som kan användas i konfigurationer för att ange beroenden för konfigurationer på andra noder. Funktionerna för dessa resurser är följande:
 
-- **WaitForAll**: Lyckas om den angivna resursen har önskat tillstånd på alla målnod som definierats i egenskapen **nodnamn** .
-- **WaitForAny**: Lyckas om den angivna resursen har önskat tillstånd på minst en av de målattribut som definierats i egenskapen **nodnamn** .
-- **WaitForSome**: Anger en **NodeCount** -egenskap, förutom en **nodnamn** -egenskap. Resursen slutförs om resursen har önskat tillstånd på ett minsta antal noder (anges av **NodeCount**) som definieras av egenskapen **nodnamn** .
+- **WaitForAll**: lyckas om den angivna resursen har önskat tillstånd på alla målnod som definierats i egenskapen **nodnamn** .
+- **WaitForAny**: lyckas om den angivna resursen har önskat tillstånd på minst en av de målattribut som definierats i egenskapen **nodnamn** .
+- **WaitForSome**: anger en **NodeCount** -egenskap, förutom en **nodnamn** -egenskap. Resursen slutförs om resursen har önskat tillstånd på ett minsta antal noder (anges av **NodeCount**) som definieras av egenskapen **nodnamn** .
 
 ## <a name="syntax"></a>Syntax
 
-**WaitForAll** -och **WaitForAny** -resurserna delar samma syntax. Ersätt \<ResourceType @ no__t-1 i exemplet nedan med antingen **WaitForAny** eller **WaitForAll**.
+**WaitForAll** -och **WaitForAny** -resurserna delar samma syntax. Ersätt \<ResourceType\> i exemplet nedan med antingen **WaitForAny** eller **WaitForAll**.
 Precis som nyckelordet **DependsOn** måste du formatera namnet som "[resourcetype] resourcename". Om resursen tillhör en separat [konfiguration](configurations.md)inkluderar du **ConfigurationName** i den formaterade strängen "[resourcetype] resourceName:: [ConfigurationName]:: [ConfigurationName]". **Nodnamn** är den dator eller nod som den aktuella resursen ska vänta på.
 
 ```
@@ -55,10 +55,10 @@ WaitForSome [String] #ResourceName
 
 Alla **WaitForXXXX** delar följande syntax nycklar.
 
-|Egenskap|  Beskrivning   |
+|Egenskap|  Description   |
 |---------|---------------------|
 | RetryIntervalSec| Antalet sekunder innan nytt försök. Minimivärdet är 1.|
-| retryCount| Det maximala antalet försök att försöka igen.|
+| RetryCount| Det maximala antalet försök att försöka igen.|
 | ThrottleLimit| Antal datorer som ska anslutas samtidigt. Standardvärdet är `New-CimSession` standard.|
 | DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Mer information finns i [DependsOn](resource-depends-on.md)|
 | PsDscRunAsCredential | Se [använda DSC med](./runAsUser.md) användarautentiseringsuppgifter |

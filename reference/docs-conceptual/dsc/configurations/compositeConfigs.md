@@ -51,9 +51,9 @@ Configuration NestedFileConfig
 }
 ```
 
-I det här exemplet använder `FileConfig` två obligatoriska parametrar, **CopyFrom** och **CopyTo**, som används som värden för egenskaperna **SourcePath** och **DestinationPath** i resurs blocket `File`.
-@No__t-0-konfigurations anrop `FileConfig` som om den vore en resurs.
-Egenskaperna i resurs blocket `NestedConfig` (**CopyFrom** och **CopyTo**) är parametrarna för @no__t 3-konfigurationen.
+I det här exemplet tar `FileConfig` två obligatoriska parametrar, **CopyFrom** och **CopyTo**, som används som värden för egenskaperna **SourcePath** och **DestinationPath** i resurs blocket `File`.
+`NestedConfig` konfigurations anrop `FileConfig` som om det var en resurs.
+Egenskaperna i `NestedConfig` Resource block (**CopyFrom** och **CopyTo**) är parametrarna i `FileConfig`-konfigurationen.
 
 ## <a name="see-also"></a>Se även
 

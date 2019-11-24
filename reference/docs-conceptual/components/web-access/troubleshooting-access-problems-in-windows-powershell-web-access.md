@@ -11,7 +11,7 @@ ms.locfileid: "71692239"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Felsökning av åtkomstproblem i Windows PowerShell-webbåtkomst
 
-Samlingsuppdateras 24 juni 2013 (ändrad 23 augusti 2017)
+Uppdaterad: 24 juni 2013 (ändrad 23 augusti 2017)
 
 Gäller för: Windows Server 2012 R2, Windows Server 2012
 
@@ -52,13 +52,13 @@ Detta kan inträffa om en användare har loggat in med ett domännamn som inneh�
 1. Installera och kör Internet Explorer 10
 1. Ändra inställningen för **dokument läge** i Internet Explorer till *IE10* -standarder.
    1. Öppna Utvecklarverktyg-konsolen genom att trycka på **F12**
-   1. I Internet Explorer 10 klickar du på **webb läsar läge**och väljer sedan *Internet Explorer 10*.
+   1. I Internet Explorer 10 klickar du på **Webbläsarläge** och väljer sedan *Internet Explorer 10*.
    1. Klicka på **dokument läge**och klicka sedan på *IE10* -standarder.
-   1. Tryck på **F12** igen för att stänga utvecklarverktyg-konsolen.
+   1. Tryck på **F12** igen för att stänga konsolen Utvecklingsverktyg.
 1. Inaktivera automatisk proxykonfiguration i Internet Explorer 10.
    1. Klicka på **verktyg**och sedan på **Internet alternativ**.
-   1. I dialog rutan **Internet alternativ** på fliken **anslutningar** klickar du på LAN- **Inställningar**.
-   1. Avmarkera kryss rutan **Automatisk identifiering av inställningar** . Klicka på **OK**och sedan på **OK** igen för att stänga dialog rutan *Internet alternativ* .
+   1. I dialogrutan **Internetalternativ** på fliken **Anslutningar** klickar du på **LAN-inställningar**.
+   1. Avmarkera kryssrutan **Automatisk identifiering av inställningar**. Klicka på **OK** och klicka sedan på **OK** igen för att stänga dialogrutan *Internetalternativ*.
 
 ## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>Det går inte att ansluta till en fjärrdator
 
@@ -66,7 +66,7 @@ Om mål datorn är medlem i en arbets grupp använder du följande syntax för a
 
 ## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>Det går inte att hitta hanteringsverktyg för Webbserver (IIS), trots att rollen har installerats
 
-Om du har installerat Windows PowerShell-webbåtkomst med hjälp av cmdleten `Install-WindowsFeature` installeras inte hanterings verktygen om inte parametern `-IncludeManagementTools` läggs till i cmdleten.
+Om du har installerat Windows PowerShell-webbåtkomst med hjälp av `Install-WindowsFeature`-cmdleten installeras inte hanterings verktygen om inte parametern `-IncludeManagementTools` läggs till i cmdleten.
 
 Ett exempel finns i [Installera Windows PowerShell-webbåtkomst med hjälp av Windows PowerShell-cmdlets](install-and-use-windows-powershell-web-access.md#to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets).
 
@@ -80,7 +80,7 @@ Om förbättrad säkerhets konfiguration är aktive rad i Internet Explorer (IE 
 En mindre rekommenderad metod, på grund av säkerhets risker, är att inaktivera IE ESC.
 Du kan inaktivera IE ESC i panelen egenskaper på sidan för den lokala servern i Serverhanteraren.
 
-## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>Ett auktoriseringsfel inträffade. Kontrollera att du har behörighet att ansluta till måldatorn.
+## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>Ett auktoriseringsfel inträffade. Kontrol lera att du har behörighet att ansluta till mål datorn.
 
 Ovanstående fel meddelande visas vid försök att ansluta när Gateway-servern är mål datorn och även finns i en arbets grupp.
 
@@ -91,21 +91,21 @@ Använd inte en punkt (.) för att representera dator namnet.
 
 #### <a name="all-cases"></a>Alla fall
 
-Parameter | Value
+Parameter | Värde
 -- | --
-UserName | Server @ no__t-0name @ no__t-1user @ no__t-2name<br/>Localhost @ no__t-0user @ no__t-1name<br/>. \\user @ no__t-1name
-UserGroup | Server @ no__t-0name @ no__t-1user @ no__t-2group<br/>Localhost @ no__t-0user @ no__t-1group<br/>. \\user @ no__t-1group
-ComputerGroup | Server @ no__t-0name @ no__t-1computer @ no__t-2group<br/>Localhost @ no__t-0computer @ no__t-1group<br/>. \\computer @ no__t-1group
+UserName | Server\_namn\\användarens\_namn<br/>Localhost\\användar\_namn<br/>.\\användarens\_namn
+UserGroup | Server\_namn\\användar\_grupp<br/>Localhost\\användar\_grupp<br/>.\_grupp för\\användare
+ComputerGroup | Server\_namn\\dator\_grupp<br/>Localhost\\dator\_grupp<br/>.\\dator\_grupp
 
 #### <a name="gateway-server-is-in-a-domain"></a>Gateway-servern finns i en domän
 
-Parameter | Value
+Parameter | Värde
 -- | --
 Datornamn | Fullständigt kvalificerat namn på gateway-server eller Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>Gateway-servern finns i en arbetsgrupp
 
-Parameter | Value
+Parameter | Värde
 -- | --
 Datornamn | servernamn
 
@@ -113,13 +113,13 @@ Datornamn | servernamn
 
 Logga in på en gateway-server som måldator med hjälp av autentiseringsuppgifter som är formaterade som något av följande.
 
-- Server @ no__t-0name @ no__t-1user @ no__t-2name
-- Localhost @ no__t-0user @ no__t-1name
-- . \\user @ no__t-1name
+- Server\_namn\\användarens\_namn
+- Localhost\\användar\_namn
+- .\\användarens\_namn
 
 ## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>En säkerhets identifierare (SID) visas i en auktoriseringsregel
 
-En säkerhets identifierare (SID) visas i en auktoriseringsregel i stället för syntaxen User @ no__t-0name/Computer @ no__t-1name.
+En säkerhets identifierare (SID) visas i en auktoriseringsregel i stället för syntaxen användare\_namn/dator\_namn.
 
 Antingen är regeln inte längre giltig eller så misslyckades frågan till Active Directory Domain Services.
 En auktoriseringsregel är vanligt vis inte giltig i scenarier där Gateway-servern har varit i en tid i en arbets grupp, men senare har anslutits till en domän

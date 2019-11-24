@@ -22,5 +22,5 @@ En DSC-resurs är en Windows PowerShell-modul. Modulen innehåller både schemat
 * [Skriva en anpassad DSC-resurs med MOF](authoringResourceMOF.md)
 * [Implementera en DSC-resurs iC#](authoringResourceMofCS.md)
 * [Skriva en anpassad DSC-resurs med PowerShell-klasser](authoringResourceClass.md)
-* [Composite resurser: Använda en DSC-konfiguration som en resurs @ no__t-0
+* [Sammansatta resurser: använda en DSC-konfiguration som en resurs](authoringResourceComposite.md)
 * [Använda Resource designer-verktyget](authoringResourceMofDesigner.md)

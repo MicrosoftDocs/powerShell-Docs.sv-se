@@ -24,24 +24,24 @@ uint32 GetConfiguration(
 
 ## <a name="parameters"></a>Parametrar
 
-*configurationData* \[in @ no__t-2 anger de konfigurations data som ska skickas.
+*configurationData* \[i\] anger de konfigurations data som ska skickas.
 
-*konfigurationer* \[out @ no__t-2 vid retur, innehåller en inbäddad instans av konfigurationerna.
+*konfigurationer* \[ut\] vid retur innehåller en inbäddad instans av konfigurationerna.
 
 ## <a name="return-value"></a>Returvärde
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Detta är en statisk metod.
 
 ## <a name="requirements"></a>Krav
 
-**-** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
 
-## <a name="see-also"></a>Se även
+## <a name="see-also"></a>Se också
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

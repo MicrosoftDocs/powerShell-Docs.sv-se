@@ -22,7 +22,7 @@ Du måste ofta utforma en cmdlet för att kunna köras mot en grupp resurser i s
 
 ## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>Windows PowerShell-cmdletar som använder jokertecken
 
- Många Windows PowerShell-cmdlets stöder jokertecken för sina parameter värden. Till exempel, nästan alla cmdletar som har en `Name`-eller `Path`-parameter stöder jokertecken för dessa parametrar. (Även om de flesta cmdletar som har en `Path`-parameter också har en `LiteralPath`-parameter som inte har stöd för jokertecken.) Följande kommando visar hur ett jokertecken används för att returnera alla cmdletar i den aktuella sessionen vars namn innehåller verbet get.
+ Många Windows PowerShell-cmdlets stöder jokertecken för sina parameter värden. Till exempel är nästan alla cmdletar som har en `Name`-eller `Path`-parameter stöd för jokertecken för dessa parametrar. (Även om de flesta cmdletar som har en `Path` parameter också har en `LiteralPath`-parameter som inte har stöd för jokertecken.) Följande kommando visar hur ett jokertecken används för att returnera alla cmdletar i den aktuella sessionen vars namn innehåller verbet get.
 
  `Get-Command get-*`
 
@@ -30,7 +30,7 @@ Du måste ofta utforma en cmdlet för att kunna köras mot en grupp resurser i s
 
 Windows PowerShell stöder följande jokertecken.
 
-| Användning |                             Beskrivning                             |  Exempel   |     Matchningar      | Matchar inte |
+| Användning |                             Description                             |  Exempel   |     Matchar      | Matchar inte |
 | -------- | ------------------------------------------------------------------- | ---------- | ---------------- | -------------- |
 | *        | Matchar noll eller flera tecken, med början vid den angivna positionen | `a*`       | A, AG, Apple     |                |
 | ?        | Matchar alla bokstäver vid angiven position                     | `?n`       | En, i, på       | kördes            |
@@ -41,7 +41,7 @@ När du utformar cmdletar som stöder jokertecken kan du använda kombinationer 
 
 `Get-ChildItem c:\techdocs\[a-l]\*.txt`
 
-Föregående kommando använder jokertecknet `[a-l]` för att ange att fil namnet ska börja med tecknen "a" till och med "l" och använder jokertecknet `*` som plats hållare för alla tecken mellan den första bokstaven i fil namnet och **. txt** tillägg.
+I föregående kommando används jokertecknet jokertecken `[a-l]` för att ange att fil namnet ska börja med tecknen "a" till och med "l", och att jokertecken `*` används som plats hållare för alla tecken mellan den första bokstaven i fil namnet och **. txt** -tillägget.
 
 I följande exempel används ett mönster med jokertecken som utesluter bokstaven "d", men innehåller alla andra bokstäver från "a" till "f".
 
@@ -55,13 +55,13 @@ Följande mönster innehåller till exempel två hakparenteser som måste beakta
 
 När det används i PowerShell-API: et använder du:
 
-- "John Svensson \` [*]"
+- "John Svensson \`[*]"
 
 När det används från PowerShell-Kommandotolken:
 
-- "John Svensson \` @ no__t-1 [* \`"] "
+- "John Svensson \`\`[*\`]"
 
-Det här mönstret matchar "John Svensson [Marketing]" eller "John Svensson [Development]". Till exempel:
+Det här mönstret matchar "John Svensson [Marketing]" eller "John Svensson [Development]". Exempel:
 
 ```
 PS> "John Smith [Marketing]" -like "John Smith ``[*``]"
@@ -74,7 +74,7 @@ True
 ## <a name="cmdlet-output-and-wildcard-characters"></a>Cmdlet-utdata och jokertecken
 
 När cmdlet-parametrarna har stöd för jokertecken genererar åtgärden vanligt vis en mat ris utmatning.
-Ibland är det ingen mening att stödja mat ris utdata eftersom användaren bara kan använda ett enda objekt. Till exempel stöder inte cmdleten `Set-Location` mat ris utdata eftersom användaren bara anger en enda plats. I den här instansen stöder cmdlet: en fortfarande jokertecken, men den framtvingar matchning till en enda plats.
+Ibland är det ingen mening att stödja mat ris utdata eftersom användaren bara kan använda ett enda objekt. `Set-Location`-cmdleten stöder till exempel inte mat ris utdata eftersom användaren bara anger en enda plats. I den här instansen stöder cmdlet: en fortfarande jokertecken, men den framtvingar matchning till en enda plats.
 
 ## <a name="see-also"></a>Se även
 

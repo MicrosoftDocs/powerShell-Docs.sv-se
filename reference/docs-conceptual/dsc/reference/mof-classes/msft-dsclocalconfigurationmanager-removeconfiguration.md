@@ -24,30 +24,30 @@ uint32 RemoveConfiguration(
 
 ## <a name="parameters"></a>Parametrar
 
-*Stage* \[in @ no__t-2 anger vilket konfigurations dokument som ska tas bort. Följande värden är giltiga:
+*Steg* \[i\] anger vilket konfigurations dokument som ska tas bort. Följande värden är giltiga:
 
-|Value |Beskrivning |
+|Värde |Description |
 |:--- |:---|
 |**1** | **Aktuellt** konfigurations dokument (aktuell. MOF). |
 |**2** | **Väntande** konfigurations dokument (väntar. MOF).  |
 |**4** | **Föregående** konfigurations dokument (föregående. MOF). |
 
-*Framtvinga* \[in @ no__t-2 **True** för att framtvinga borttagning av konfigurationen.
+*Tvinga* \[i\] **True** att framtvinga borttagning av konfigurationen.
 
 ## <a name="return-value"></a>Returvärde
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Detta är en statisk metod.
 
 ## <a name="requirements"></a>Krav
 
-**-** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
 
-## <a name="see-also"></a>Se även
+## <a name="see-also"></a>Se också
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

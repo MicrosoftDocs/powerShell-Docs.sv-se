@@ -26,5 +26,5 @@ Om modulen som distribueras till Azure Automation kräver licens godkännande, v
 
 ## <a name="more-details"></a>Mer information
 
-[Kräv licens godkännande på PowerShellGet](../../concepts/module-license-acceptance.md)
+[Kräv licens godkännande i PowerShellGet](../../concepts/module-license-acceptance.md)
 [Azure Automation webbplats](/azure/automation)

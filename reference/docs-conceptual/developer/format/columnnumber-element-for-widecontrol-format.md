@@ -29,7 +29,7 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `ColumnNumber`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `ColumnNumber`-elementet.
 
 ### <a name="attributes"></a>Attribut
 
@@ -41,7 +41,7 @@ Ingen.
 
 ### <a name="parent-elements"></a>Överordnade element
 
-|Element|Beskrivning|
+|Element|Description|
 |-------------|-----------------|
 |[WideControl-element (format)](./widecontrol-element-format.md)|Definierar ett brett List format (enskilt värde) för vyn.|
 
@@ -49,9 +49,9 @@ Ingen.
 
 Ange ett positivt heltals värde.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
-När du definierar en bred vy kan du lägga till elementet `AutoSize` eller elementet @no__t 1, men du kan inte lägga till båda.
+När du definierar en bred vy kan du lägga till `AutoSize`-elementet eller `ColumnNumber`-elementet, men du kan inte lägga till båda.
 
 Mer information om komponenterna i en bred vy finns i [skapa en bred vy](./creating-a-wide-view.md).
 

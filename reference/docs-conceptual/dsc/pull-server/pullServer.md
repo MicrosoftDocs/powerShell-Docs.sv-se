@@ -90,7 +90,7 @@ Följande steg beskriver hur du använder resursen i en konfiguration som konfig
 3. Installera certifikatet på den nod som ska bli DSC-pull-server på standard platsen, vilket ska vara `CERT:\LocalMachine\My`.
    - Anteckna tumavtryck för certifikatet.
 4. Välj en GUID som ska användas som registrerings nyckel. Om du vill generera en med PowerShell anger du följande vid PS-prompten och trycker på RETUR: `[guid]::newGuid()` eller `New-Guid`. Den här nyckeln används av-klient noder som en delad nyckel för att autentisera vid registreringen. Mer information finns i avsnittet registrerings nyckel nedan.
-5. I PowerShell ISE startar du (F5) följande konfigurations skript (som finns i mappen exempel i **xPSDesiredStateConfiguration** -modulen som `Sample_xDscWebServiceRegistration.ps1`). Det här skriptet konfigurerar hämtnings servern.
+5. Starta (F5) följande konfigurations skript i PowerShell ISE (ingår i mappen exempel i **xPSDesiredStateConfiguration** -modulen som `Sample_xDscWebServiceRegistration.ps1`). Det här skriptet konfigurerar hämtnings servern.
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -167,7 +167,7 @@ Om du vill tillåta att klusternoder registreras på servern så att de kan anv�
 > [!NOTE]
 > Registrerings nycklar stöds inte i PowerShell 4,0.
 
-För att du ska kunna konfigurera en nod att autentisera med hämtnings servern måste registrerings nyckeln finnas i metaconfiguration för alla målnod som ska registreras med den här hämtnings servern. Observera att **RegistrationKey** i metaconfiguration nedan tas bort när mål datorn har registrerats och att värdet måste matcha det värde som lagras i `RegistrationKeys.txt`-filen på hämtnings servern (" 140a952b-b9d6-406b-b416-e0f759c9c0e4 ' i det här exemplet). Behandla alltid registrerings nyckel svärdet på ett säkert sätt, eftersom du vet att alla mål datorer kan registreras på hämtnings servern.
+För att du ska kunna konfigurera en nod att autentisera med hämtnings servern måste registrerings nyckeln finnas i metaconfiguration för alla målnod som ska registreras med den här hämtnings servern. Observera att **RegistrationKey** i metaconfiguration nedan tas bort när mål datorn har registrerats och att värdet måste matcha det värde som lagras i `RegistrationKeys.txt`-filen på hämtnings servern (' 140a952b-b9d6-406b-b416-e0f759c9c0e4 ' för det här exemplet). Behandla alltid registrerings nyckel svärdet på ett säkert sätt, eftersom du vet att alla mål datorer kan registreras på hämtnings servern.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -232,8 +232,8 @@ Till exempel skulle en modul med namnet xWebAdminstration med en modul version a
 Varje version av en modul måste finnas i en enda zip-fil.
 Eftersom det bara finns en enda version av en resurs i varje zip-fil stöds inte modulfönstret som lagts till i WMF 5,0 med stöd för flera versioner i en enda katalog.
 Det innebär att innan du packar upp DSC-resurspooler för användning med pull-server måste du göra en liten ändring i katalog strukturen.
-Standardformat för moduler som innehåller DSC-resurser i WMF `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`5,0 är.
-Innan du packar upp för pull-servern tar du bort mappen **{module version}** så att sökvägen blir `{Module Folder}\DscResources\{DSC Resource Folder}\`.
+Standardformat för moduler som innehåller DSC-resurs i WMF 5,0 är `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
+Innan du packar upp för hämtnings servern tar du bort mappen **{module version}** så att sökvägen blir `{Module Folder}\DscResources\{DSC Resource Folder}\`.
 Med den här ändringen zip-mappen enligt beskrivningen ovan och placera dessa zip-filer i mappen **ModulePath** .
 
 Använd `New-DscChecksum {module zip file}` för att skapa en kontroll Summa fil för den nyligen tillagda modulen.
@@ -243,7 +243,7 @@ Använd `New-DscChecksum {module zip file}` för att skapa en kontroll Summa fil
 En konfigurations-MOF-fil måste kombineras med en kontroll Summa fil så att en LCM på en målnod kan verifiera konfigurationen.
 Om du vill skapa en kontroll Summa anropar du cmdleten [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DscChecksum) .
 Cmdlet: en använder en **Sök vägs** parameter som anger den mapp där MOF-konfigurationsfilen finns.
-Cmdleten skapar en kontroll Summa fil `ConfigurationMOFName.mof.checksum`med namnet `ConfigurationMOFName` , där är namnet på MOF-konfigurationsfilen.
+Cmdleten skapar en kontroll Summa fil med namnet `ConfigurationMOFName.mof.checksum`, där `ConfigurationMOFName` är namnet på MOF-konfigurationsfilen.
 Om det finns fler än en konfigurations-MOF-fil i den angivna mappen skapas en kontroll summa för varje konfiguration i mappen.
 Placera MOF-filerna och deras associerade kontroll Summa filer i mappen **ConfigurationPath** .
 
@@ -285,10 +285,10 @@ I följande avsnitt beskrivs hur du konfigurerar pull-klienter i detalj:
 - [Konfigurera en DSC-pull-klient med hjälp av konfigurations namn](pullClientConfigNames.md)
 - [Partiella konfigurationer](partialConfigs.md)
 
-## <a name="see-also"></a>Se även
+## <a name="see-also"></a>Se också
 
 - [Översikt över önskad tillstånds konfiguration i Windows PowerShell](../overview/overview.md)
 - [Tillämpa konfigurationer](enactingConfigurations.md)
 - [Använd en DSC-rapportserver](reportServer.md)
-- [ [MS-DSCP]: Protokoll för Desired State Configuration pull-modell @ no__t-0
-- [ [MS-DSCP]: Önskad tillstånds konfiguration hämtnings modell protokoll errata @ no__t-0
+- [[MS-DSCP]: protokoll för Desired State Configuration pull-modell](https://msdn.microsoft.com/library/dn393548.aspx)
+- [[MS-DSCP]: protokoll för önskad tillstånds konfiguration pull-errata](https://msdn.microsoft.com/library/mt612824.aspx)

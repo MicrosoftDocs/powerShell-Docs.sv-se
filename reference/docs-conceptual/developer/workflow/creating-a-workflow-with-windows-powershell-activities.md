@@ -23,7 +23,7 @@ Följande procedurer beskriver hur du skapar ett arbets flöde som kontrollerar 
 
 ### <a name="setting-up-the-project"></a>Konfigurerar projektet
 
-1. Följ proceduren i [lägga till Windows PowerShell-aktiviteter i Visual Studio-verktygslådan](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md) för att skapa ett arbets flödes projekt och lägga till aktiviteterna från [Microsoft. PowerShell. Activities](/dotnet/api/Microsoft.PowerShell.Activities) och [Microsoft. PowerShell. Management. Activities ](/dotnet/api/Microsoft.PowerShell.Management.Activities)sammansättningar till verktygs lådan.
+1. Följ proceduren i [lägga till Windows PowerShell-aktiviteter i Visual Studio-verktygslådan](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md) för att skapa ett arbets flödes projekt och lägga till aktiviteterna från sammansättningarna [Microsoft. PowerShell. Activities](/dotnet/api/Microsoft.PowerShell.Activities) och [Microsoft. PowerShell. Management. Activities](/dotnet/api/Microsoft.PowerShell.Management.Activities) i verktygs lådan.
 
 2. Lägg till system. Management. Automation, Microsoft. PowerShell. Activities, system. Management, Microsoft. PowerShell. Management. Activities och Microsoft. PowerShell. commands. Management för projektet som referens sammansättningar.
 
@@ -31,13 +31,13 @@ Följande procedurer beskriver hur du skapar ett arbets flöde som kontrollerar 
 
 1. Lägg till en **sekvens** -aktivitet i arbets flödet.
 
-2. Skapa ett argument med namnet `ComputerName` och argument typen `String[]`. Det här argumentet representerar namnen på de datorer som ska kontrol leras och anslutas.
+2. Skapa ett argument med namnet `ComputerName` med en argument typ `String[]`. Det här argumentet representerar namnen på de datorer som ska kontrol leras och anslutas.
 
 3. Skapa ett argument med namnet `DomainCred` av typen [system. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Det här argumentet representerar domänautentiseringsuppgifter för ett domän konto som har behörighet att ansluta en dator till domänen.
 
 4. Skapa ett argument med namnet `MachineCred` av typen [system. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Det här argumentet representerar autentiseringsuppgifterna för en administratör på de datorer som ska kontrol leras och anslutas.
 
-5. Lägg till en **ParallelForEach** -aktivitet i **sekvens** -aktiviteten. Ange `comp` och `ComputerName` i text rutorna så att loopen upprepas genom elementen i `ComputerName`-matrisen.
+5. Lägg till en **ParallelForEach** -aktivitet i **sekvens** -aktiviteten. Ange `comp` och `ComputerName` i text rutorna så att loopen upprepas genom elementen i `ComputerName` matrisen.
 
 6. Lägg till en **sekvens** -aktivitet i bröd texten i **ParallelForEach** -aktiviteten. Ange egenskapen **DisplayName** för sekvensen till `JoinDomain`.
 
@@ -67,14 +67,15 @@ Följande procedurer beskriver hur du skapar ett arbets flöde som kontrollerar 
     |Egenskap|Värde|
     |--------------|-----------|
     |**Namnet**|fysiskt|
-    |**Certifiering**|MachineCred|
+    |**Autentiseringsuppgifter**|MachineCred|
     |**Söker**|Microsoft. PowerShell. commands. WaitForServiceTypes. PowerShell|
-    |**Inför**|Sant|
-    |Vänta|Sant|
+    |**Inför**|True|
+    |Vänta|True|
     |PSComputerName|{""}|
 
 13. Lägg till en **GetWmiObject** -aktivitet i **JoinDomain** -sekvensen efter **RestartComputer** -aktiviteten. Redigera egenskaperna så att de är samma som föregående **GetWmiObject** -aktivitet.
 
     När du är färdig med procedurerna bör fönstret arbets flödes design se ut så här.
 
-    ![JoinDomain XAML i Workflow Designer @ no__t-1![JoinDomain XAML i Workflow Designer](../media/joindomainworkflow.png "JoinDomainWorkflow")
+    ![JoinDomain XAML i Workflow Designer](../media/joindomainworkflow.png)
+    ![JoinDomain XAML i Workflow Designer](../media/joindomainworkflow.png "JoinDomainWorkflow")

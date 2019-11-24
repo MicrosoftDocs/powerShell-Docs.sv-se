@@ -30,7 +30,7 @@ Det här exemplet härleds från Bask Lassen [Microsoft. PowerShell. commands. O
    Detta öppnar exempelprojektet i Microsoft Visual Studio.
 
 3. I menyn **build** väljer du **build-lösning**.
-   Biblioteket för exemplet skapas i standard `\bin`-eller `\bin\debug`-mappar.
+   Biblioteket för exemplet skapas i standard `\bin`-eller `\bin\debug`-mapparna.
 
 ### <a name="how-to-run-the-sample"></a>Så här kör du exemplet
 
@@ -83,8 +83,8 @@ Det här exemplet demonstrerar följande.
 
 ### <a name="how-to-write-a-cmdlet-for-event-registration"></a>Så här skriver du en cmdlet för händelse registrering
 
-Cmdleten härleds från klassen [Microsoft. PowerShell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) , som ger stöd för parametrar som är gemensamma för cmdletarna `Register-*Event`.
-Cmdletar som är härledda från [Microsoft. PowerShell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) behöver bara definiera sina specifika parametrar och åsidosätta de abstrakta metoderna `GetSourceObject` och @no__t 2.
+Cmdleten härleds från klassen [Microsoft. PowerShell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) , som ger stöd för parametrar som är gemensamma för de `Register-*Event`-cmdletarna.
+Cmdletar som är härledda från [Microsoft. PowerShell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) behöver bara definiera sina specifika parametrar och åsidosätta `GetSourceObject` och `GetSourceObjectEventName` abstrakta metoder.
 
 ## <a name="example"></a>Exempel
 

@@ -23,22 +23,22 @@ uint32 GetMetaConfiguration(
 
 ## <a name="parameters"></a>Parametrar
 
-*MetaConfiguration* \[out @ no__t-2 vid retur innehåller en inbäddad instans av **MSFT_DSCMetaConfiguration** -klassen som definierar inställningarna.
+*MetaConfiguration* \[ut\] vid retur innehåller en inbäddad instans av **MSFT_DSCMetaConfiguration** -klassen som definierar inställningarna.
 
 ## <a name="return-value"></a>Returvärde
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Detta är en statisk metod.
 
 ## <a name="requirements"></a>Krav
 
-**-** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
 
-## <a name="see-also"></a>Se även
+## <a name="see-also"></a>Se också
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

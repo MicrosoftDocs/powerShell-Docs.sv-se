@@ -25,26 +25,26 @@ uint32 GetConfigurationResultOutput(
 
 ## <a name="parameters"></a>Parametrar
 
-*jobId* \[in @ no__t-2 ID för det jobb som utdata ska hämtas till.
+*jobId* \[i\] ID: t för det jobb som utdata ska hämtas till.
 
-*resumeOutputBookmark* \[in @ no__t-2 anger att utdata ska vara en fortsättning från ett tidigare bok märke.
+*resumeOutputBookmark* \[i\] anger att utdata ska vara en fortsättning från ett tidigare bok märke.
 
-*utdata* \[out @ no__t-2 utdata för det angivna jobbet.
+*utdata* \[ut\] utdata för det angivna jobbet.
 
 ## <a name="return-value"></a>Returvärde
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Detta är en statisk metod.
 
 ## <a name="requirements"></a>Krav
 
-**-** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
 
-## <a name="see-also"></a>Se även
+## <a name="see-also"></a>Se också
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

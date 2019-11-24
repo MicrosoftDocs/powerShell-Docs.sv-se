@@ -17,7 +17,7 @@ ms.locfileid: "72355015"
 ---
 # <a name="formatting-displayed-data"></a>Formatera data som visas
 
-Du kan ange hur enskilda data punkter i listan, tabellen eller den breda vyn ska visas. Du kan använda elementet `FormatString` när du definierar objekt i vyn, eller så kan du använda elementet `ScriptBlock` för att anropa metoden @no__t 2 på data.
+Du kan ange hur enskilda data punkter i listan, tabellen eller den breda vyn ska visas. Du kan använda `FormatString`-elementet när du definierar objekt i vyn, eller så kan du använda `ScriptBlock`-elementet för att anropa `FormatString`-metoden för data.
 
 ## <a name="using-the-formatstring-element"></a>Använda FormatString-elementet
 

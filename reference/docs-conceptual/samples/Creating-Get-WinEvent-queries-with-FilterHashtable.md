@@ -55,12 +55,12 @@ I följande tabell visas nyckel namnen, data typerna och om jokertecken accepter
 | LogName        | `<String[]>`    | Ja                          |
 | ProviderName   | `<String[]>`    | Ja                          |
 | Sökväg           | `<String[]>`    | Nej                           |
-| Nyckelord       | `<Long[]>`      | Nej                           |
+| nyckelord       | `<Long[]>`      | Nej                           |
 | ID             | `<Int32[]>`     | Nej                           |
 | Nivå          | `<Int32[]>`     | Nej                           |
 | /St      | `<DateTime>`    | Nej                           |
 | Slut        | `<DateTime>`    | Nej                           |
-| UserID         | `<SID>`         | Nej                           |
+| Användar-ID         | `<SID>`         | Nej                           |
 | Data           | `<String[]>`    | Nej                           |
 | `<named-data>` | `<String[]>`    | Nej                           |
 
@@ -155,7 +155,7 @@ De uppräknade värdena dokumenteras i **.NET Framework**. Mer information finns
 
 **Nyckelords** namnen och de uppräknade värdena är följande:
 
-| Namn             |  Värde            |
+| Name             |  Värde            |
 | ---------------- | ------------------|
 | AuditFailure     | 4503599627370496  |
 | AuditSuccess     | 9007199254740992  |
@@ -180,9 +180,9 @@ Get-WinEvent -FilterHashtable @{
 ### <a name="keywords-static-property-value-optional"></a>Nyckelord statiskt egenskaps värde (valfritt)
 
 **Nyckelords** nyckeln räknas upp, men du kan använda ett statiskt egenskaps namn i hash-tabellens fråga.
-I stället för att använda den returnerade strängen måste egenskaps namnet konverteras till ett värde med egenskapen **Value _ _** .
+I stället för att använda den returnerade strängen måste egenskaps namnet konverteras till ett värde med egenskapen **Value__** .
 
-Följande skript använder till exempel egenskapen **Value _ _** .
+Följande skript använder till exempel egenskapen **Value__** .
 
 ```powershell
 $C = [System.Diagnostics.Eventing.Reader.StandardEventKeywords]::EventLogClassic
@@ -236,13 +236,13 @@ De uppräknade värdena dokumenteras i **.NET Framework**. Mer information finns
 
 **Nivå** nyckelns namn och uppräknade värden är följande:
 
-| Namn           | Värde |
+| Name           | Värde |
 | -------------- | ----- |
-| Verbose        |   5   |
+| Utförlig        |   5   |
 | Informativt  |   4   |
 | Varning        |   3   |
 | Fel          |   2   |
-| Kritiskt       |   1   |
+| Kritisk       |   1   |
 | LogAlways      |   0   |
 
 Hash-tabellen för den slutförda frågan innehåller nyckeln, **nivån**och värdet, **2**.
@@ -260,9 +260,9 @@ Get-WinEvent -FilterHashtable @{
 ### <a name="level-static-property-in-enumeration-optional"></a>Nivå statisk egenskap i uppräkning (valfritt)
 
 **Nivå** nyckeln räknas upp, men du kan använda ett statiskt egenskaps namn i hash-tabellens fråga.
-I stället för att använda den returnerade strängen måste egenskaps namnet konverteras till ett värde med egenskapen **Value _ _** .
+I stället för att använda den returnerade strängen måste egenskaps namnet konverteras till ett värde med egenskapen **Value__** .
 
-Följande skript använder till exempel egenskapen **Value _ _** .
+Följande skript använder till exempel egenskapen **Value__** .
 
 ```powershell
 $C = [System.Diagnostics.Eventing.Reader.StandardEventLevel]::Informational

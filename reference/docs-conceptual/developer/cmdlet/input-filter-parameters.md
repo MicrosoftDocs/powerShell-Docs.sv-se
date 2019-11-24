@@ -17,13 +17,13 @@ ms.locfileid: "72355498"
 ---
 # <a name="input-filter-parameters"></a>Lägga till filterparametrar
 
-En cmdlet kan definiera `Filter`, `Include`-och `Exclude`-parametrar som filtrerar uppsättningen inobjekt som cmdleten påverkar.
+En cmdlet kan definiera `Filter`, `Include`och `Exclude` parametrar som filtrerar uppsättningen inobjekt som cmdleten påverkar.
 
-Normalt anges insamlings objekt av en `InputObject`-, `Path`-eller `Name`-parameter. En cmdlet kan till exempel ha en `Path`-parameter som accepterar flera sökvägar med hjälp av jokertecken, och varje sökväg pekar på ett inobjekt. Används tillsammans kvalificerar parametrarna `Filter`, `Include` och @no__t 2 ytterligare de sökvägar som cmdleten fungerar på varje gång den anropas.
+Normalt anges insamlings objekt av en `InputObject`-, `Path`-eller `Name`-parameter. En cmdlet kan till exempel ha en `Path` parameter som accepterar flera sökvägar med hjälp av jokertecken, och varje sökväg pekar på ett inobjekt. Tillsammans är parametrarna `Filter`, `Include`och `Exclude` ytterligare kvalificerade Sök vägarna som cmdleten fungerar på varje gång den anropas.
 
 ## <a name="include-and-exclude-parameters"></a>Inkludera och exkludera parametrar
 
-Parametrarna `Include` och `Exclude` identifierar de objekt som ingår i eller undantas från uppsättningen indatamängder som skickas till cmdleten. Använd de här parametrarna när filtret kan uttryckas i standard språket jokertecken. (Mer information om jokertecken finns i [stödjande jokertecken i cmdlet-parametrar](./supporting-wildcard-characters-in-cmdlet-parameters.md).) Parametern `Include` innehåller alla objekt vars namn matchar inkluderings filtret. Parametern `Exclude` utesluter alla objekt vars namn matchar filtret.
+Parametrarna `Include` och `Exclude` identifierar de objekt som ingår i eller undantas från den uppsättning indataportar som skickas till cmdleten. Använd de här parametrarna när filtret kan uttryckas i standard språket jokertecken. (Mer information om jokertecken finns i [stödjande jokertecken i cmdlet-parametrar](./supporting-wildcard-characters-in-cmdlet-parameters.md).) Parametern `Include` innehåller alla objekt vars namn matchar inkluderings filtret. Parametern `Exclude` utesluter alla objekt vars namn matchar filtret.
 
 ## <a name="filter-parameter"></a>Filter parameter
 

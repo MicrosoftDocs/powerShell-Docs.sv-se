@@ -24,24 +24,24 @@ uint32 SendMetaConfigurationApply(
 
 ## <a name="parameters"></a>Parametrar
 
-*ConfigurationData* \[in @ no__t-2 miljö data för konfigurationen.
+*ConfigurationData* \[i\] miljö data för konfigurationen.
 
-*tvinga* \[in @ no__t-2 **True** så att konfigurationen stoppas.
+*tvinga* \[i\] **Sant** för att tvinga konfigurationen att stoppas.
 
 ## <a name="return-value"></a>Returvärde
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Detta är en statisk metod.
 
 ## <a name="requirements"></a>Krav
 
-**-** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
 
-## <a name="see-also"></a>Se även
+## <a name="see-also"></a>Se också
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
