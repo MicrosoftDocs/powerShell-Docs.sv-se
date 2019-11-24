@@ -9,13 +9,13 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 10/04/2019
 ms.locfileid: "71941868"
 ---
-# <a name="apply-get-and-test-configurations-on-a-node"></a><span data-ttu-id="34407-103">Tillämpa, hämta och testa konfigurationer på en nod</span><span class="sxs-lookup"><span data-stu-id="34407-103">Apply, Get, and Test Configurations on a Node</span></span>
+# <a name="apply-get-and-test-configurations-on-a-node"></a><span data-ttu-id="13c62-103">Tillämpa, hämta och testa konfigurationer på en nod</span><span class="sxs-lookup"><span data-stu-id="13c62-103">Apply, Get, and Test Configurations on a Node</span></span>
 
-<span data-ttu-id="34407-104">I den här guiden får du lära dig hur du arbetar med konfigurationer på en målnod.</span><span class="sxs-lookup"><span data-stu-id="34407-104">This guide will show you how to work with Configurations on a target Node.</span></span> <span data-ttu-id="34407-105">Den här guiden är uppdelad i följande steg:</span><span class="sxs-lookup"><span data-stu-id="34407-105">This guide is broken up into the following steps:</span></span>
+<span data-ttu-id="13c62-104">I den här guiden får du lära dig hur du arbetar med konfigurationer på en målnod.</span><span class="sxs-lookup"><span data-stu-id="13c62-104">This guide will show you how to work with Configurations on a target Node.</span></span> <span data-ttu-id="13c62-105">Den här guiden är uppdelad i följande steg:</span><span class="sxs-lookup"><span data-stu-id="13c62-105">This guide is broken up into the following steps:</span></span>
 
-## <a name="apply-a-configuration"></a><span data-ttu-id="34407-106">Använd en konfiguration</span><span class="sxs-lookup"><span data-stu-id="34407-106">Apply a Configuration</span></span>
+## <a name="apply-a-configuration"></a><span data-ttu-id="13c62-106">Använd en konfiguration</span><span class="sxs-lookup"><span data-stu-id="13c62-106">Apply a Configuration</span></span>
 
-<span data-ttu-id="34407-107">Vi måste generera en ". MOF"-fil för att kunna tillämpa och hantera en konfiguration.</span><span class="sxs-lookup"><span data-stu-id="34407-107">In order to apply and manage a Configuration, we need to generate a ".mof" file.</span></span> <span data-ttu-id="34407-108">Följande kod visar en enkel konfiguration som kommer att användas i den här guiden.</span><span class="sxs-lookup"><span data-stu-id="34407-108">The following code will represent a simple Configuration that will be used throughout this guide.</span></span>
+<span data-ttu-id="13c62-107">Vi måste generera en ". MOF"-fil för att kunna tillämpa och hantera en konfiguration.</span><span class="sxs-lookup"><span data-stu-id="13c62-107">In order to apply and manage a Configuration, we need to generate a ".mof" file.</span></span> <span data-ttu-id="13c62-108">Följande kod visar en enkel konfiguration som kommer att användas i den här guiden.</span><span class="sxs-lookup"><span data-stu-id="13c62-108">The following code will represent a simple Configuration that will be used throughout this guide.</span></span>
 
 ```powershell
 Configuration Sample
@@ -36,7 +36,7 @@ Configuration Sample
 Sample -OutputPath "C:\Temp\"
 ```
 
-<span data-ttu-id="34407-109">Om du kompilerar den här konfigurationen skickas två ". MOF"-filer.</span><span class="sxs-lookup"><span data-stu-id="34407-109">Compiling this configuration will yield two ".mof" files.</span></span>
+<span data-ttu-id="13c62-109">Om du kompilerar den här konfigurationen skickas två ". MOF"-filer.</span><span class="sxs-lookup"><span data-stu-id="13c62-109">Compiling this configuration will yield two ".mof" files.</span></span>
 
 ```output
 Mode                LastWriteTime     Length Name
@@ -45,13 +45,13 @@ Mode                LastWriteTime     Length Name
 -a----       11/27/2018   7:29 AM     2.13KB server02.mof
 ```
 
-<span data-ttu-id="34407-110">Använd cmdleten [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) för att tillämpa en konfiguration.</span><span class="sxs-lookup"><span data-stu-id="34407-110">To apply a Configuration, use the [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet.</span></span> <span data-ttu-id="34407-111">Parametern `-Path` anger en katalog där ". MOF"-filer finns.</span><span class="sxs-lookup"><span data-stu-id="34407-111">The `-Path` parameter specifies a directory where ".mof" files reside.</span></span> <span data-ttu-id="34407-112">Om ingen `-Computername` anges försöker `Start-DSCConfiguration` tillämpa varje konfiguration till dator namnet som anges med namnet på. MOF-filen (@no__t -2computername\>.mof).</span><span class="sxs-lookup"><span data-stu-id="34407-112">If no `-Computername` is specified, `Start-DSCConfiguration` will attempt to apply each Configuration to the computer name specified by the name of the '.mof' file (\<computername\>.mof).</span></span> <span data-ttu-id="34407-113">Ange `-Verbose` till `Start-DSCConfiguration` om du vill visa mer utförliga utdata.</span><span class="sxs-lookup"><span data-stu-id="34407-113">Specify `-Verbose` to `Start-DSCConfiguration` to see more verbose output.</span></span>
+<span data-ttu-id="13c62-110">Använd cmdleten [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) för att tillämpa en konfiguration.</span><span class="sxs-lookup"><span data-stu-id="13c62-110">To apply a Configuration, use the [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet.</span></span> <span data-ttu-id="13c62-111">Parametern `-Path` anger en katalog där ". MOF"-filer finns.</span><span class="sxs-lookup"><span data-stu-id="13c62-111">The `-Path` parameter specifies a directory where ".mof" files reside.</span></span> <span data-ttu-id="13c62-112">Om ingen `-Computername` anges försöker `Start-DSCConfiguration` tillämpa varje konfiguration på dator namnet som anges av namnet på. MOF-filen (\<ComputerName\>. MOF).</span><span class="sxs-lookup"><span data-stu-id="13c62-112">If no `-Computername` is specified, `Start-DSCConfiguration` will attempt to apply each Configuration to the computer name specified by the name of the '.mof' file (\<computername\>.mof).</span></span> <span data-ttu-id="13c62-113">Ange `-Verbose` för att `Start-DSCConfiguration` för att se mer utförlig utdata.</span><span class="sxs-lookup"><span data-stu-id="13c62-113">Specify `-Verbose` to `Start-DSCConfiguration` to see more verbose output.</span></span>
 
 ```powershell
 Start-DSCConfiguration -Path C:\Temp\ -Verbose
 ```
 
-<span data-ttu-id="34407-114">Om `-Wait` inte anges visas ett jobb som skapats.</span><span class="sxs-lookup"><span data-stu-id="34407-114">If `-Wait` is not specified, you see one job created.</span></span> <span data-ttu-id="34407-115">Jobbet som skapas kommer att ha en **ChildJob** för varje ". MOF"-fil som bearbetas av `Start-DSCConfiguration`.</span><span class="sxs-lookup"><span data-stu-id="34407-115">The job created will have one **ChildJob** for each ".mof" file processed by `Start-DSCConfiguration`.</span></span>
+<span data-ttu-id="13c62-114">Om `-Wait` inte anges visas ett jobb som skapats.</span><span class="sxs-lookup"><span data-stu-id="13c62-114">If `-Wait` is not specified, you see one job created.</span></span> <span data-ttu-id="13c62-115">Jobbet som skapas kommer att ha en **ChildJob** för varje ". MOF"-fil som bearbetas av `Start-DSCConfiguration`.</span><span class="sxs-lookup"><span data-stu-id="13c62-115">The job created will have one **ChildJob** for each ".mof" file processed by `Start-DSCConfiguration`.</span></span>
 
 ```output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
@@ -59,13 +59,13 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 45     Job45           Configuratio... Running       True            localhost,server02   Start-DSCConfiguration...
 ```
 
-<span data-ttu-id="34407-116">Om en konfiguration tar lång tid och du vill stoppa den, kan du använda [Stop-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration) för att stoppa programmet på den lokala noden.</span><span class="sxs-lookup"><span data-stu-id="34407-116">If a Configuration is taking a long time and you want to stop it, you can use [Stop-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration) to stop application on the local Node.</span></span>
+<span data-ttu-id="13c62-116">Om en konfiguration tar lång tid och du vill stoppa den, kan du använda [Stop-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration) för att stoppa programmet på den lokala noden.</span><span class="sxs-lookup"><span data-stu-id="13c62-116">If a Configuration is taking a long time and you want to stop it, you can use [Stop-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration) to stop application on the local Node.</span></span>
 
 ```powershell
 Stop-DSCConfiguration -Force
 ```
 
-<span data-ttu-id="34407-117">När du är klar kan du Visa jobbets status genom det jobb objekt som returneras av [Get-Job](/powershell/module/microsoft.powershell.core/get-job).</span><span class="sxs-lookup"><span data-stu-id="34407-117">Once complete, you can view the status of the jobs through the job object returned by [Get-Job](/powershell/module/microsoft.powershell.core/get-job).</span></span>
+<span data-ttu-id="13c62-117">När du är klar kan du Visa jobbets status genom det jobb objekt som returneras av [Get-Job](/powershell/module/microsoft.powershell.core/get-job).</span><span class="sxs-lookup"><span data-stu-id="13c62-117">Once complete, you can view the status of the jobs through the job object returned by [Get-Job](/powershell/module/microsoft.powershell.core/get-job).</span></span>
 
 ```powershell
 $job = Get-Job
@@ -79,7 +79,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 50     Job50           Configuratio... Completed     True            server02             Start-DSCConfiguration...
 ```
 
-<span data-ttu-id="34407-118">Om du vill se **utförliga** utdata använder du följande kommandon för att visa **utförlig** data ström för varje **ChildJob**.</span><span class="sxs-lookup"><span data-stu-id="34407-118">To see the **Verbose** output, use the following commands to view the **Verbose** stream for each **ChildJob**.</span></span> <span data-ttu-id="34407-119">Mer information om PowerShell-jobb finns i [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).</span><span class="sxs-lookup"><span data-stu-id="34407-119">For more about PowerShell jobs, see [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).</span></span>
+<span data-ttu-id="13c62-118">Om du vill se **utförliga** utdata använder du följande kommandon för att visa **utförlig** data ström för varje **ChildJob**.</span><span class="sxs-lookup"><span data-stu-id="13c62-118">To see the **Verbose** output, use the following commands to view the **Verbose** stream for each **ChildJob**.</span></span> <span data-ttu-id="13c62-119">Mer information om PowerShell-jobb finns [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).</span><span class="sxs-lookup"><span data-stu-id="13c62-119">For more about PowerShell jobs, see [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).</span></span>
 
 ```powershell
 # View the verbose output of the localhost job using array indexing.
@@ -101,37 +101,37 @@ An LCM method call arrived from computer SERVER01 with user sid S-1-5-21-1245250
 Operation 'Invoke CimMethod' complete.
 ```
 
-<span data-ttu-id="34407-120">Från och med PowerShell 5,0 lades parametern `-UseExisting` till `Start-DSCConfiguration`.</span><span class="sxs-lookup"><span data-stu-id="34407-120">Beginning in PowerShell 5.0, the `-UseExisting` parameter was added to `Start-DSCConfiguration`.</span></span> <span data-ttu-id="34407-121">Genom att ange `-UseExisting` instruerar du cmdleten att använda den befintliga tillämpade konfigurationen i stället för en som anges av parametern `-Path`.</span><span class="sxs-lookup"><span data-stu-id="34407-121">By specifying `-UseExisting`, you instruct the cmdlet to use the existing applied Configuration instead of one specified by the `-Path` parameter.</span></span>
+<span data-ttu-id="13c62-120">Från och med PowerShell 5,0 lades parametern `-UseExisting` till `Start-DSCConfiguration`.</span><span class="sxs-lookup"><span data-stu-id="13c62-120">Beginning in PowerShell 5.0, the `-UseExisting` parameter was added to `Start-DSCConfiguration`.</span></span> <span data-ttu-id="13c62-121">Genom att ange `-UseExisting`instruerar du cmdleten att använda den befintliga tillämpade konfigurationen i stället för en som anges av parametern `-Path`.</span><span class="sxs-lookup"><span data-stu-id="13c62-121">By specifying `-UseExisting`, you instruct the cmdlet to use the existing applied Configuration instead of one specified by the `-Path` parameter.</span></span>
 
 ```powershell
 Start-DSCConfiguration -UseExisting -Verbose -Wait
 ```
 
-## <a name="test-a-configuration"></a><span data-ttu-id="34407-122">Testa en konfiguration</span><span class="sxs-lookup"><span data-stu-id="34407-122">Test a Configuration</span></span>
+## <a name="test-a-configuration"></a><span data-ttu-id="13c62-122">Testa en konfiguration</span><span class="sxs-lookup"><span data-stu-id="13c62-122">Test a Configuration</span></span>
 
-<span data-ttu-id="34407-123">Du kan testa en aktuell konfiguration med hjälp av [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).</span><span class="sxs-lookup"><span data-stu-id="34407-123">You can test a currently applied Configuration using [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).</span></span> <span data-ttu-id="34407-124">`Test-DSCConfiguration` returnerar `True` om noden är kompatibel och `False` om den inte gör det.</span><span class="sxs-lookup"><span data-stu-id="34407-124">`Test-DSCConfiguration` will return `True` if the Node is compliant, and `False` if it is not.</span></span>
+<span data-ttu-id="13c62-123">Du kan testa en aktuell konfiguration med hjälp av [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).</span><span class="sxs-lookup"><span data-stu-id="13c62-123">You can test a currently applied Configuration using [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).</span></span> <span data-ttu-id="13c62-124">`Test-DSCConfiguration` kommer att returnera `True` om noden är kompatibel och `False` om den inte är det.</span><span class="sxs-lookup"><span data-stu-id="13c62-124">`Test-DSCConfiguration` will return `True` if the Node is compliant, and `False` if it is not.</span></span>
 
 ```powershell
 Test-DSCConfiguration
 ```
 
-<span data-ttu-id="34407-125">Från och med PowerShell 5,0 lades parametern `-Detailed` till som returnerar ett objekt med samlingar för **ResourcesInDesiredState** och **ResourcesNotInDesiredState**</span><span class="sxs-lookup"><span data-stu-id="34407-125">Beginning in PowerShell 5.0, the `-Detailed` parameter was added which returns an object with collections for **ResourcesInDesiredState** and **ResourcesNotInDesiredState**</span></span>
+<span data-ttu-id="13c62-125">Från och med PowerShell 5,0 lades `-Detailed`-parametern till som returnerar ett objekt med samlingar för **ResourcesInDesiredState** och **ResourcesNotInDesiredState**</span><span class="sxs-lookup"><span data-stu-id="13c62-125">Beginning in PowerShell 5.0, the `-Detailed` parameter was added which returns an object with collections for **ResourcesInDesiredState** and **ResourcesNotInDesiredState**</span></span>
 
 ```powershell
 Test-DSCConfiguration -Detailed
 ```
 
-<span data-ttu-id="34407-126">Från och med PowerShell 5,0 kan du testa en konfiguration utan att använda den.</span><span class="sxs-lookup"><span data-stu-id="34407-126">Beginning in PowerShell 5.0 you can test a Configuration without applying it.</span></span> <span data-ttu-id="34407-127">Parametern `-ReferenceConfiguration` accepterar sökvägen till en ". MOF"-fil för att testa noden mot.</span><span class="sxs-lookup"><span data-stu-id="34407-127">The `-ReferenceConfiguration` parameter accepts the path of a ".mof" file to test the Node against.</span></span> <span data-ttu-id="34407-128">Inga **uppsättnings** åtgärder vidtas mot noden.</span><span class="sxs-lookup"><span data-stu-id="34407-128">No **Set** actions are taken against the Node.</span></span> <span data-ttu-id="34407-129">I PowerShell 4,0 finns det lösningar för att testa en konfiguration utan att använda den, men de beskrivs inte här.</span><span class="sxs-lookup"><span data-stu-id="34407-129">In PowerShell 4.0, there are workarounds to test a Configuration without applying it, but they are not discussed here.</span></span>
+<span data-ttu-id="13c62-126">Från och med PowerShell 5,0 kan du testa en konfiguration utan att använda den.</span><span class="sxs-lookup"><span data-stu-id="13c62-126">Beginning in PowerShell 5.0 you can test a Configuration without applying it.</span></span> <span data-ttu-id="13c62-127">Parametern `-ReferenceConfiguration` accepterar sökvägen till en ". MOF"-fil för att testa noden mot.</span><span class="sxs-lookup"><span data-stu-id="13c62-127">The `-ReferenceConfiguration` parameter accepts the path of a ".mof" file to test the Node against.</span></span> <span data-ttu-id="13c62-128">Inga **uppsättnings** åtgärder vidtas mot noden.</span><span class="sxs-lookup"><span data-stu-id="13c62-128">No **Set** actions are taken against the Node.</span></span> <span data-ttu-id="13c62-129">I PowerShell 4,0 finns det lösningar för att testa en konfiguration utan att använda den, men de beskrivs inte här.</span><span class="sxs-lookup"><span data-stu-id="13c62-129">In PowerShell 4.0, there are workarounds to test a Configuration without applying it, but they are not discussed here.</span></span>
 
-## <a name="get-configuration-values"></a><span data-ttu-id="34407-130">Hämta konfigurations värden</span><span class="sxs-lookup"><span data-stu-id="34407-130">Get Configuration Values</span></span>
+## <a name="get-configuration-values"></a><span data-ttu-id="13c62-130">Hämta konfigurations värden</span><span class="sxs-lookup"><span data-stu-id="13c62-130">Get Configuration Values</span></span>
 
-<span data-ttu-id="34407-131">Cmdlet [: en get-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) returnerar de aktuella värdena för alla konfigurerade resurser i den aktuella konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="34407-131">The [Get-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) cmdlet returns the current values for any configured resources in the currently applied Configuration.</span></span>
+<span data-ttu-id="13c62-131">Cmdlet [: en get-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) returnerar de aktuella värdena för alla konfigurerade resurser i den aktuella konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="13c62-131">The [Get-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) cmdlet returns the current values for any configured resources in the currently applied Configuration.</span></span>
 
 ```powershell
 Get-DSCConfiguration
 ```
 
-<span data-ttu-id="34407-132">Utdata från vår exempel konfiguration skulle se ut så här om de tillämpas korrekt.</span><span class="sxs-lookup"><span data-stu-id="34407-132">Output from our sample Configuration would look like this if applied successfully.</span></span>
+<span data-ttu-id="13c62-132">Utdata från vår exempel konfiguration skulle se ut så här om de tillämpas korrekt.</span><span class="sxs-lookup"><span data-stu-id="13c62-132">Output from our sample Configuration would look like this if applied successfully.</span></span>
 
 ```output
 ConfigurationName    : Sample
@@ -160,9 +160,9 @@ PSComputerName       :
 CimClassName         : MSFT_FileDirectoryConfiguration
 ```
 
-## <a name="get-configuration-status"></a><span data-ttu-id="34407-133">Hämta konfigurations status</span><span class="sxs-lookup"><span data-stu-id="34407-133">Get Configuration Status</span></span>
+## <a name="get-configuration-status"></a><span data-ttu-id="13c62-133">Hämta konfigurations status</span><span class="sxs-lookup"><span data-stu-id="13c62-133">Get Configuration Status</span></span>
 
-<span data-ttu-id="34407-134">Med början i PowerShell 5,0 cmdleten [Get-DSCConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) kan du se historiken över tillämpade konfigurationer på noden.</span><span class="sxs-lookup"><span data-stu-id="34407-134">Beginning in PowerShell 5.0 the [Get-DSCConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) cmdlet allows you to see the history of applied Configurations to the node.</span></span> <span data-ttu-id="34407-135">PowerShell DSC håller koll på de senaste {{N}} konfigurationerna som tillämpas i **push** -eller **pull** -läge.</span><span class="sxs-lookup"><span data-stu-id="34407-135">PowerShell DSC keeps track of the last {{N}} Configurations applied in **Push** or **Pull** mode.</span></span> <span data-ttu-id="34407-136">Detta omfattar alla *konsekvens* kontroller som utförs av LCM.</span><span class="sxs-lookup"><span data-stu-id="34407-136">This includes any *consistency* checks executed by the LCM.</span></span> <span data-ttu-id="34407-137">Som standard visar `Get-DSCConfigurationStatus` endast den sista historik posten.</span><span class="sxs-lookup"><span data-stu-id="34407-137">By default, `Get-DSCConfigurationStatus` shows you the last history entry only.</span></span>
+<span data-ttu-id="13c62-134">Med början i PowerShell 5,0 cmdleten [Get-DSCConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) kan du se historiken över tillämpade konfigurationer på noden.</span><span class="sxs-lookup"><span data-stu-id="13c62-134">Beginning in PowerShell 5.0 the [Get-DSCConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) cmdlet allows you to see the history of applied Configurations to the node.</span></span> <span data-ttu-id="13c62-135">PowerShell DSC håller koll på de senaste {{N}} konfigurationerna som tillämpas i **push** -eller **pull** -läge.</span><span class="sxs-lookup"><span data-stu-id="13c62-135">PowerShell DSC keeps track of the last {{N}} Configurations applied in **Push** or **Pull** mode.</span></span> <span data-ttu-id="13c62-136">Detta omfattar alla *konsekvens* kontroller som utförs av LCM.</span><span class="sxs-lookup"><span data-stu-id="13c62-136">This includes any *consistency* checks executed by the LCM.</span></span> <span data-ttu-id="13c62-137">Som standard visas endast den sista historik posten i `Get-DSCConfigurationStatus`.</span><span class="sxs-lookup"><span data-stu-id="13c62-137">By default, `Get-DSCConfigurationStatus` shows you the last history entry only.</span></span>
 
 ```powershell
 Get-DSCConfigurationStatus
@@ -174,10 +174,10 @@ Status     StartDate                 Type            Mode  RebootRequested      
 Success    11/27/2018 7:18:40 AM     Consistency     PUSH  False                1
 ```
 
-<span data-ttu-id="34407-138">Använd parametern `-All` om du vill se all konfigurations status historik.</span><span class="sxs-lookup"><span data-stu-id="34407-138">Use the `-All` parameter to see all Configuration Status history.</span></span>
+<span data-ttu-id="13c62-138">Använd parametern `-All` om du vill visa all konfigurations status historik.</span><span class="sxs-lookup"><span data-stu-id="13c62-138">Use the `-All` parameter to see all Configuration Status history.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="34407-139">Utdata trunkeras för det kortfattat.</span><span class="sxs-lookup"><span data-stu-id="34407-139">Output is truncated for brevity.</span></span>
+> <span data-ttu-id="13c62-139">Utdata trunkeras för det kortfattat.</span><span class="sxs-lookup"><span data-stu-id="13c62-139">Output is truncated for brevity.</span></span>
 
 ```powershell
 Get-DSCConfigurationStatus -All
@@ -198,27 +198,27 @@ Success    11/27/2018 6:18:40 AM     Consistency     PUSH  False                
 Success    11/27/2018 6:03:44 AM     Consistency     PUSH  False                2
 ```
 
-## <a name="manage-configuration-documents"></a><span data-ttu-id="34407-140">Hantera konfigurations dokument</span><span class="sxs-lookup"><span data-stu-id="34407-140">Manage Configuration Documents</span></span>
+## <a name="manage-configuration-documents"></a><span data-ttu-id="13c62-140">Hantera konfigurations dokument</span><span class="sxs-lookup"><span data-stu-id="13c62-140">Manage Configuration Documents</span></span>
 
-<span data-ttu-id="34407-141">LCM hanterar nodens konfiguration genom att arbeta med **konfigurations dokument**.</span><span class="sxs-lookup"><span data-stu-id="34407-141">The LCM manages the Configuration of the Node by working with **Configuration Documents**.</span></span> <span data-ttu-id="34407-142">Dessa ". MOF"-filer finns i katalogen "C:\Windows\System32\Configuration".</span><span class="sxs-lookup"><span data-stu-id="34407-142">These ".mof" files reside in the "C:\Windows\System32\Configuration" directory.</span></span>
+<span data-ttu-id="13c62-141">LCM hanterar nodens konfiguration genom att arbeta med **konfigurations dokument**.</span><span class="sxs-lookup"><span data-stu-id="13c62-141">The LCM manages the Configuration of the Node by working with **Configuration Documents**.</span></span> <span data-ttu-id="13c62-142">Dessa ". MOF"-filer finns i katalogen "C:\Windows\System32\Configuration".</span><span class="sxs-lookup"><span data-stu-id="13c62-142">These ".mof" files reside in the "C:\Windows\System32\Configuration" directory.</span></span>
 
-<span data-ttu-id="34407-143">Från och med PowerShell 5,0 gör [Remove-DSCConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument) att du kan ta bort filerna ". MOF" för att stoppa framtida konsekvens kontroller eller ta bort en konfiguration som har fel när den tillämpas.</span><span class="sxs-lookup"><span data-stu-id="34407-143">Beginning in PowerShell 5.0 the [Remove-DSCConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument) allows you to remove the ".mof" files to stop future consistency checks or remove a Configuration that has errors when applied.</span></span> <span data-ttu-id="34407-144">Med parametern `-Stage` kan du ange vilken ". MOF"-fil som du vill ta bort.</span><span class="sxs-lookup"><span data-stu-id="34407-144">The `-Stage` parameter allows you to specify which ".mof" file you want to remove.</span></span>
+<span data-ttu-id="13c62-143">Från och med PowerShell 5,0 gör [Remove-DSCConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument) att du kan ta bort filerna ". MOF" för att stoppa framtida konsekvens kontroller eller ta bort en konfiguration som har fel när den tillämpas.</span><span class="sxs-lookup"><span data-stu-id="13c62-143">Beginning in PowerShell 5.0 the [Remove-DSCConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument) allows you to remove the ".mof" files to stop future consistency checks or remove a Configuration that has errors when applied.</span></span> <span data-ttu-id="13c62-144">Med parametern `-Stage` kan du ange vilken ". MOF"-fil som du vill ta bort.</span><span class="sxs-lookup"><span data-stu-id="13c62-144">The `-Stage` parameter allows you to specify which ".mof" file you want to remove.</span></span>
 
 ```powershell
 Remove-DSCConfigurationDocument -Stage Current
 ```
 
 > [!NOTE]
-> <span data-ttu-id="34407-145">I PowerShell 4,0 kan du fortfarande ta bort dessa ". MOF"-filer direkt med [Remove-item](/powershell/module/microsoft.powershell.management/remove-item).</span><span class="sxs-lookup"><span data-stu-id="34407-145">In PowerShell 4.0, you can still remove these ".mof" files directly using [Remove-Item](/powershell/module/microsoft.powershell.management/remove-item).</span></span>
+> <span data-ttu-id="13c62-145">I PowerShell 4,0 kan du fortfarande ta bort dessa ". MOF"-filer direkt med [Remove-item](/powershell/module/microsoft.powershell.management/remove-item).</span><span class="sxs-lookup"><span data-stu-id="13c62-145">In PowerShell 4.0, you can still remove these ".mof" files directly using [Remove-Item](/powershell/module/microsoft.powershell.management/remove-item).</span></span>
 
-## <a name="publish-configurations"></a><span data-ttu-id="34407-146">Publicera konfigurationer</span><span class="sxs-lookup"><span data-stu-id="34407-146">Publish Configurations</span></span>
+## <a name="publish-configurations"></a><span data-ttu-id="13c62-146">Publicera konfigurationer</span><span class="sxs-lookup"><span data-stu-id="13c62-146">Publish Configurations</span></span>
 
-<span data-ttu-id="34407-147">Från och med PowerShell 5,0 lades cmdleten [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) till.</span><span class="sxs-lookup"><span data-stu-id="34407-147">Beginning in PowerShell 5.0, the [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) cmdlet was added.</span></span> <span data-ttu-id="34407-148">Med den här cmdleten kan du publicera en ". MOF"-fil på fjärrdatorer utan att använda den.</span><span class="sxs-lookup"><span data-stu-id="34407-148">This cmdlet allows you to publish a ".mof" file to remote computers, without applying it.</span></span>
+<span data-ttu-id="13c62-147">Från och med PowerShell 5,0 lades cmdleten [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) till.</span><span class="sxs-lookup"><span data-stu-id="13c62-147">Beginning in PowerShell 5.0, the [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) cmdlet was added.</span></span> <span data-ttu-id="13c62-148">Med den här cmdleten kan du publicera en ". MOF"-fil på fjärrdatorer utan att använda den.</span><span class="sxs-lookup"><span data-stu-id="13c62-148">This cmdlet allows you to publish a ".mof" file to remote computers, without applying it.</span></span>
 
 ```powershell
 Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer" -Credential (get-credential Contoso\webadministrator)
 ```
 
-## <a name="see-also"></a><span data-ttu-id="34407-149">Se även</span><span class="sxs-lookup"><span data-stu-id="34407-149">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="13c62-149">Se också</span><span class="sxs-lookup"><span data-stu-id="13c62-149">See also</span></span>
 
-- [<span data-ttu-id="34407-150">Hämta, testa och ange</span><span class="sxs-lookup"><span data-stu-id="34407-150">Get, Test, and Set</span></span>](../resources/get-test-set.md)
+- [<span data-ttu-id="13c62-150">Hämta, testa och ange</span><span class="sxs-lookup"><span data-stu-id="13c62-150">Get, Test, and Set</span></span>](../resources/get-test-set.md)

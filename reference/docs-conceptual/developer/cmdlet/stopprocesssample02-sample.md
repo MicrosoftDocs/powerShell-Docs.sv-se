@@ -15,61 +15,61 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72359222"
 ---
-# <a name="stopprocesssample02-sample"></a><span data-ttu-id="efa1f-102">StopProcessSample02 – exempel</span><span class="sxs-lookup"><span data-stu-id="efa1f-102">StopProcessSample02 Sample</span></span>
+# <a name="stopprocesssample02-sample"></a><span data-ttu-id="7808e-102">StopProcessSample02 – exempel</span><span class="sxs-lookup"><span data-stu-id="7808e-102">StopProcessSample02 Sample</span></span>
 
-<span data-ttu-id="efa1f-103">Det här exemplet visar hur du skriver en cmdlet som skriver fel sökning (WriteDebug), utförliga (WriteVerbose) och varnings meddelanden (WriteWarning) medan processer stoppas på den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="efa1f-103">This sample shows how to write a cmdlet that writes debug (WriteDebug), verbose (WriteVerbose), and warning (WriteWarning) messages while stopping processes on the local computer.</span></span> <span data-ttu-id="efa1f-104">Denna cmdlet liknar den `Stop-Process`-cmdlet som tillhandahålls av Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="efa1f-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="7808e-103">Det här exemplet visar hur du skriver en cmdlet som skriver fel sökning (WriteDebug), utförliga (WriteVerbose) och varnings meddelanden (WriteWarning) medan processer stoppas på den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="7808e-103">This sample shows how to write a cmdlet that writes debug (WriteDebug), verbose (WriteVerbose), and warning (WriteWarning) messages while stopping processes on the local computer.</span></span> <span data-ttu-id="7808e-104">Denna cmdlet liknar `Stop-Process`-cmdleten som tillhandahålls av Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="7808e-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="efa1f-105">Så här skapar du exemplet med hjälp av Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="efa1f-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="7808e-105">Så här skapar du exemplet med hjälp av Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="7808e-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="efa1f-106">Öppna Windows Internet Explorer och gå till katalogen StopProcessSample02 i katalogen samples.</span><span class="sxs-lookup"><span data-stu-id="efa1f-106">Open Windows Internet Explorer and navigate to the StopProcessSample02 directory under the Samples directory.</span></span>
+1. <span data-ttu-id="7808e-106">Öppna Windows Internet Explorer och gå till katalogen StopProcessSample02 i katalogen samples.</span><span class="sxs-lookup"><span data-stu-id="7808e-106">Open Windows Internet Explorer and navigate to the StopProcessSample02 directory under the Samples directory.</span></span>
 
-    <span data-ttu-id="efa1f-107">Med Windows PowerShell 2,0 SDK installerat navigerar du till mappen StopProcessSample02</span><span class="sxs-lookup"><span data-stu-id="efa1f-107">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample02 folder.</span></span> <span data-ttu-id="efa1f-108">Standard platsen är C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.</span><span class="sxs-lookup"><span data-stu-id="efa1f-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.</span></span>
+    <span data-ttu-id="7808e-107">Med Windows PowerShell 2,0 SDK installerat navigerar du till mappen StopProcessSample02</span><span class="sxs-lookup"><span data-stu-id="7808e-107">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample02 folder.</span></span> <span data-ttu-id="7808e-108">Standard platsen är C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.</span><span class="sxs-lookup"><span data-stu-id="7808e-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.</span></span>
 
-2. <span data-ttu-id="efa1f-109">Dubbelklicka på ikonen för lösnings filen (. SLN).</span><span class="sxs-lookup"><span data-stu-id="efa1f-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="efa1f-110">Detta öppnar exempelprojektet i Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="efa1f-110">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="7808e-109">Dubbelklicka på ikonen för lösnings filen (. SLN).</span><span class="sxs-lookup"><span data-stu-id="7808e-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="7808e-110">Detta öppnar exempelprojektet i Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="7808e-110">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="efa1f-111">I menyn **build** väljer du **build-lösning**.</span><span class="sxs-lookup"><span data-stu-id="efa1f-111">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="7808e-111">I menyn **build** väljer du **build-lösning**.</span><span class="sxs-lookup"><span data-stu-id="7808e-111">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="efa1f-112">Biblioteket för exemplet skapas i standardmappen \Bin eller \Bin\Debug.</span><span class="sxs-lookup"><span data-stu-id="efa1f-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="7808e-112">Biblioteket för exemplet skapas i standardmappen \Bin eller \Bin\Debug.</span><span class="sxs-lookup"><span data-stu-id="7808e-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="efa1f-113">Så här kör du exemplet</span><span class="sxs-lookup"><span data-stu-id="efa1f-113">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="7808e-113">Så här kör du exemplet</span><span class="sxs-lookup"><span data-stu-id="7808e-113">How to run the sample</span></span>
 
-1. <span data-ttu-id="efa1f-114">Skapa följande modul-mapp:</span><span class="sxs-lookup"><span data-stu-id="efa1f-114">Create the following module folder:</span></span>
+1. <span data-ttu-id="7808e-114">Skapa följande modul-mapp:</span><span class="sxs-lookup"><span data-stu-id="7808e-114">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample02`
 
-2. <span data-ttu-id="efa1f-115">Kopiera exempel sammansättningen till module-mappen.</span><span class="sxs-lookup"><span data-stu-id="efa1f-115">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="7808e-115">Kopiera exempel sammansättningen till module-mappen.</span><span class="sxs-lookup"><span data-stu-id="7808e-115">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="efa1f-116">Starta Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="efa1f-116">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="7808e-116">Starta Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="7808e-116">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="efa1f-117">Kör följande kommando för att läsa in sammansättningen i Windows PowerShell:</span><span class="sxs-lookup"><span data-stu-id="efa1f-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="7808e-117">Kör följande kommando för att läsa in sammansättningen i Windows PowerShell:</span><span class="sxs-lookup"><span data-stu-id="7808e-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample02`
 
-5. <span data-ttu-id="efa1f-118">Kör följande kommando för att köra cmdleten:</span><span class="sxs-lookup"><span data-stu-id="efa1f-118">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="7808e-118">Kör följande kommando för att köra cmdleten:</span><span class="sxs-lookup"><span data-stu-id="7808e-118">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="efa1f-119">Krav</span><span class="sxs-lookup"><span data-stu-id="efa1f-119">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="7808e-119">Krav</span><span class="sxs-lookup"><span data-stu-id="7808e-119">Requirements</span></span>
 
-<span data-ttu-id="efa1f-120">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="efa1f-120">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="7808e-120">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="7808e-120">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="efa1f-121">Visat</span><span class="sxs-lookup"><span data-stu-id="efa1f-121">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="7808e-121">Visat</span><span class="sxs-lookup"><span data-stu-id="7808e-121">Demonstrates</span></span>
 
-<span data-ttu-id="efa1f-122">Det här exemplet demonstrerar följande.</span><span class="sxs-lookup"><span data-stu-id="efa1f-122">This sample demonstrates the following.</span></span>
+<span data-ttu-id="7808e-122">Det här exemplet demonstrerar följande.</span><span class="sxs-lookup"><span data-stu-id="7808e-122">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="efa1f-123">Deklarera en cmdlet-klass med hjälp av cmdlet-attributet.</span><span class="sxs-lookup"><span data-stu-id="efa1f-123">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="7808e-123">Deklarera en cmdlet-klass med hjälp av cmdlet-attributet.</span><span class="sxs-lookup"><span data-stu-id="7808e-123">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="efa1f-124">Deklarera en cmdlet-parameter genom att använda attributet parameter.</span><span class="sxs-lookup"><span data-stu-id="efa1f-124">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="7808e-124">Deklarera en cmdlet-parameter genom att använda attributet parameter.</span><span class="sxs-lookup"><span data-stu-id="7808e-124">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="efa1f-125">Skriver utförliga meddelanden.</span><span class="sxs-lookup"><span data-stu-id="efa1f-125">Writing verbose messages.</span></span> <span data-ttu-id="efa1f-126">Mer information om den metod som används för att skriva utförliga meddelanden finns i [system. Management. Automation. cmdlet. WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span><span class="sxs-lookup"><span data-stu-id="efa1f-126">For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span></span>
+- <span data-ttu-id="7808e-125">Skriver utförliga meddelanden.</span><span class="sxs-lookup"><span data-stu-id="7808e-125">Writing verbose messages.</span></span> <span data-ttu-id="7808e-126">Mer information om den metod som används för att skriva utförliga meddelanden finns i [system. Management. Automation. cmdlet. WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span><span class="sxs-lookup"><span data-stu-id="7808e-126">For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span></span>
 
-- <span data-ttu-id="efa1f-127">Skriver fel meddelanden.</span><span class="sxs-lookup"><span data-stu-id="efa1f-127">Writing error messages.</span></span> <span data-ttu-id="efa1f-128">Mer information om den metod som används för att skriva fel meddelanden finns i [system. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span><span class="sxs-lookup"><span data-stu-id="efa1f-128">For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span></span>
+- <span data-ttu-id="7808e-127">Skriver fel meddelanden.</span><span class="sxs-lookup"><span data-stu-id="7808e-127">Writing error messages.</span></span> <span data-ttu-id="7808e-128">Mer information om den metod som används för att skriva fel meddelanden finns i [system. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span><span class="sxs-lookup"><span data-stu-id="7808e-128">For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span></span>
 
-- <span data-ttu-id="efa1f-129">Skriver varnings meddelanden.</span><span class="sxs-lookup"><span data-stu-id="efa1f-129">Writing warning messages.</span></span> <span data-ttu-id="efa1f-130">Mer information om vilken metod som används för att skriva varnings meddelanden finns i [system. Management. Automation. cmdlet. WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span><span class="sxs-lookup"><span data-stu-id="efa1f-130">For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span></span>
+- <span data-ttu-id="7808e-129">Skriver varnings meddelanden.</span><span class="sxs-lookup"><span data-stu-id="7808e-129">Writing warning messages.</span></span> <span data-ttu-id="7808e-130">Mer information om vilken metod som används för att skriva varnings meddelanden finns i [system. Management. Automation. cmdlet. WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span><span class="sxs-lookup"><span data-stu-id="7808e-130">For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span></span>
 
-## <a name="example"></a><span data-ttu-id="efa1f-131">Exempel</span><span class="sxs-lookup"><span data-stu-id="efa1f-131">Example</span></span>
+## <a name="example"></a><span data-ttu-id="7808e-131">Exempel</span><span class="sxs-lookup"><span data-stu-id="7808e-131">Example</span></span>
 
-<span data-ttu-id="efa1f-132">Det här exemplet visar hur du skriver fel söknings-, utförliga och varnings meddelanden med hjälp av metoderna `WriteDebug`, `WriteVerbose` och @no__t 2.</span><span class="sxs-lookup"><span data-stu-id="efa1f-132">This sample shows how to write debug, verbose, and warning messages by using the `WriteDebug`, `WriteVerbose`, and `WriteWarning` methods.</span></span>
+<span data-ttu-id="7808e-132">Det här exemplet visar hur du skriver fel söknings-, utförliga och varnings meddelanden med hjälp av metoderna `WriteDebug`, `WriteVerbose`och `WriteWarning`.</span><span class="sxs-lookup"><span data-stu-id="7808e-132">This sample shows how to write debug, verbose, and warning messages by using the `WriteDebug`, `WriteVerbose`, and `WriteWarning` methods.</span></span>
 
 ```csharp
 using System;
@@ -310,6 +310,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="efa1f-133">Se även</span><span class="sxs-lookup"><span data-stu-id="efa1f-133">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7808e-133">Se även</span><span class="sxs-lookup"><span data-stu-id="7808e-133">See Also</span></span>
 
-[<span data-ttu-id="efa1f-134">Skriva en Windows PowerShell-cmdlet</span><span class="sxs-lookup"><span data-stu-id="efa1f-134">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="7808e-134">Skriva en Windows PowerShell-cmdlet</span><span class="sxs-lookup"><span data-stu-id="7808e-134">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
