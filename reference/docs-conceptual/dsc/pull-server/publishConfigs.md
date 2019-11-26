@@ -1,7 +1,7 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
-title: Publish to a Pull Server using Configuration IDs (v4/v5)
+keywords: DSC, PowerShell, konfiguration, installation
+title: 'Publicera till en pull-server med konfigurations-ID: n (v4/V5)'
 ms.openlocfilehash: 3b094308338e62c783b19f4d3bb41634feee63f6
 ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
@@ -9,18 +9,18 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74417252"
 ---
-# <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Publish to a Pull Server using Configuration IDs (v4/v5)
+# <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Publicera till en pull-server med konfigurations-ID: n (v4/V5)
 
-The sections below assume that you have already set up a Pull Server. If you haven't set up your Pull Server, you can use the following guides:
+I avsnitten nedan förutsätts att du redan har konfigurerat en hämtnings Server. Om du inte har konfigurerat din pull-server kan du använda följande guider:
 
-- [Set up a DSC SMB Pull Server](pullServerSmb.md)
-- [Set up a DSC HTTP Pull Server](pullServer.md)
+- [Konfigurera en DSC SMB-pull-server](pullServerSmb.md)
+- [Konfigurera en DSC HTTP-pull-server](pullServer.md)
 
-Each target node can be configured to download configurations, resources, and even report its status. This article shows you how to upload resources so they're available to be downloaded, and configure clients to automatically download resources. When the node receives an assigned Configuration, through **Pull** or **Push** (v5), it automatically downloads any resources required by the Configuration from the location specified in the Local Configuration Manager (LCM).
+Varje målnod kan konfigureras för att ladda ned konfigurationer, resurser och till och med rapportera dess status. Den här artikeln visar hur du laddar upp resurser så att de kan laddas ned och konfigurera klienterna så att de automatiskt laddar ned resurser. När noden får en tilldelad konfiguration via **pull** eller **push** (V5) laddar den automatiskt ned eventuella resurser som krävs av konfigurationen från den plats som anges i den lokala Configuration Manager (LCM).
 
-## <a name="compile-configurations"></a>Compile configurations
+## <a name="compile-configurations"></a>Kompilera konfigurationer
 
-The first step to storing [Configurations](../configurations/configurations.md) on a Pull Server, is to compile them into `.mof` files. To make a configuration generic, and applicable to more clients, use `localhost` in your Node block. The example below shows a Configuration shell that uses `localhost` instead of a specific client name.
+Det första steget för att lagra [konfigurationer](../configurations/configurations.md) på en pull-server är att kompilera dem till `.mof` filer. Om du vill göra en konfiguration generisk och tillämplig på fler klienter använder du `localhost` i Node-blocket. Exemplet nedan visar ett konfigurations gränssnitt som använder `localhost` i stället för ett angivet klient namn.
 
 ```powershell
 Configuration GenericConfig
@@ -33,21 +33,21 @@ Configuration GenericConfig
 GenericConfig
 ```
 
-Once you've compiled your generic configuration, you should have a `localhost.mof` file.
+När du har kompilerat den allmänna konfigurationen bör du ha en `localhost.mof`-fil.
 
-## <a name="renaming-the-mof-file"></a>Renaming the MOF file
+## <a name="renaming-the-mof-file"></a>Byta namn på MOF-filen
 
-You can store Configuration `.mof` files on a Pull Server by **ConfigurationName** or **ConfigurationID**. Depending on how you plan to set up your pull clients, you can choose a section below to properly rename your compiled `.mof` files.
+Du kan lagra konfigurations `.mof` filer på en pull-server av **ConfigurationName** eller **ConfigurationID**. Beroende på hur du planerar att konfigurera dina pull-klienter kan du välja ett avsnitt nedan för att byta namn på dina kompilerade `.mof`-filer på ett korrekt sätt.
 
-### <a name="configuration-ids-guid"></a>Configuration IDs (GUID)
+### <a name="configuration-ids-guid"></a>Konfigurations-ID (GUID)
 
-You'll need to rename your `localhost.mof` file to `<GUID>.mof` file. You can create a random **Guid** using the example below, or by using the [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) cmdlet.
+Du måste byta namn på `localhost.mof`-filen till `<GUID>.mof`-fil. Du kan skapa ett slumpmässigt **GUID** med hjälp av exemplet nedan eller med hjälp av cmdleten [New-GUID](/powershell/module/microsoft.powershell.utility/new-guid) .
 
 ```powershell
 [System.Guid]::NewGuid()
 ```
 
-Sample Output
+Exempel på utdata
 
 ```Output
 Guid
@@ -55,41 +55,41 @@ Guid
 64856475-939e-41fb-aba5-4469f4006059
 ```
 
-You can then rename your `.mof` file using any acceptable method. The example below, uses the [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) cmdlet.
+Du kan sedan byta namn på `.mof`-filen med en acceptabel metod. Exemplet nedan använder cmdleten [rename-item](/powershell/module/microsoft.powershell.management/rename-item) .
 
 ```powershell
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
 ```
 
-For more information about using **Guids** in your environment, see [Plan for Guids](/powershell/scripting/dsc/secureserver#guids).
+Mer information om hur du använder **GUID** i din miljö finns i [Planera för GUID](/powershell/scripting/dsc/secureserver#guids).
 
-### <a name="configuration-names"></a>Configuration names
+### <a name="configuration-names"></a>Konfigurations namn
 
-You'll need to rename your `localhost.mof` file to `<Configuration Name>.mof` file. In the following example, the configuration name from the previous section is used. You can then rename your `.mof` file using any acceptable method. The example below, uses the [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) cmdlet.
+Du måste byta namn på `localhost.mof`-filen till `<Configuration Name>.mof`-fil. I följande exempel används konfigurations namnet från föregående avsnitt. Du kan sedan byta namn på `.mof`-filen med en acceptabel metod. Exemplet nedan använder cmdleten [rename-item](/powershell/module/microsoft.powershell.management/rename-item) .
 
 ```powershell
 Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
 ```
 
-## <a name="create-the-checksum"></a>Create the checkSum
+## <a name="create-the-checksum"></a>Skapa kontroll summan
 
-Each `.mof` file stored on a Pull Server, or SMB share needs to have an associated `.checksum` file.
-This file lets clients know when the associated `.mof` file has changed and should be downloaded again.
+Varje `.mof`-fil som lagras på en pull-server eller SMB-resurs måste ha en tillhör ande `.checksum`-fil.
+Den här filen låter klienter veta när den associerade `.mof`-filen har ändrats och ska laddas ned igen.
 
-You can create a **CheckSum** with the [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) cmdlet. You can also run `New-DSCCheckSum` against a directory of files using the `-Path` parameter.
-If a checksum already exists, you can force it to be re-created with the `-Force` parameter. The following example specified a directory containing the `.mof` file from the previous section, and uses the `-Force` parameter.
+Du kan skapa en **kontroll Summa** med cmdleten [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) . Du kan också köra `New-DSCCheckSum` mot en katalog med filer med hjälp av `-Path`-parametern.
+Om det redan finns en kontroll summa kan du tvinga den att skapas igen med `-Force`-parametern. I följande exempel angavs en katalog som innehåller `.mof`-filen från föregående avsnitt och använder parametern `-Force`.
 
 ```powershell
 New-DscChecksum -Path '.\' -Force
 ```
 
-No output will be shown, but you should now see a `<GUID or Configuration Name>.mof.checksum` file.
+Inga utdata visas, men nu bör du se en `<GUID or Configuration Name>.mof.checksum`-fil.
 
-## <a name="where-to-store-mof-files-and-checksums"></a>Where to store MOF files and checkSums
+## <a name="where-to-store-mof-files-and-checksums"></a>Var du ska lagra MOF-filer och kontroll summor
 
-### <a name="on-a-dsc-http-pull-server"></a>On a DSC HTTP Pull Server
+### <a name="on-a-dsc-http-pull-server"></a>På en DSC HTTP-pull-server
 
-When you set up your HTTP Pull Server, as explained in [Set up a DSC HTTP Pull Server](pullServer.md), you specify directories for the **ModulePath** and **ConfigurationPath** keys. The **ModulePath** key indicates where a module's packaged `.zip` files should be stored. The **ConfigurationPath** indicates where any `.mof` files and `.checksum` files should be stored.
+När du konfigurerar din HTTP-pull-server, enligt beskrivningen i [Konfigurera en DSC HTTP-pull-server](pullServer.md), anger du kataloger för nycklarna **ModulePath** och **ConfigurationPath** . Nyckeln **ModulePath** anger var en moduls paketerade `.zip` filer ska lagras. **ConfigurationPath** anger var `.mof` filer och `.checksum` filer ska lagras.
 
 ```powershell
     xDscWebService PSDSCPullServer
@@ -102,10 +102,10 @@ When you set up your HTTP Pull Server, as explained in [Set up a DSC HTTP Pull S
 
 ```
 
-### <a name="on-an-smb-share"></a>On an SMB share
+### <a name="on-an-smb-share"></a>På en SMB-resurs
 
-When you set up a Pull Client to use an SMB share, you specify a **ConfigurationRepositoryShare**.
-All `.mof` files and `.checksum` files should be stored in the **SourcePath** directory from the **ConfigurationRepositoryShare** block.
+När du konfigurerar en pull-klient för att använda en SMB-resurs anger du en **ConfigurationRepositoryShare**.
+Alla `.mof`-filer och `.checksum` filer ska lagras i **SourcePath** -katalogen från **ConfigurationRepositoryShare** -blocket.
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -116,14 +116,14 @@ ConfigurationRepositoryShare SMBPullServer
 
 ## <a name="next-steps"></a>Nästa steg
 
-Next, you'll want to configure Pull Clients to pull the specified configuration. For more information, see one of the following guides:
+Härnäst ska du konfigurera pull-klienter för att hämta den angivna konfigurationen. Mer information finns i någon av följande guider:
 
-- [Set up a Pull Client using Configuration IDs (v4)](pullClientConfigId4.md)
-- [Set up a Pull Client using Configuration IDs (v5)](pullClientConfigId.md)
-- [Set up a Pull Client using Configuration Names (v5)](pullClientConfigNames.md)
+- [Konfigurera en pull-klient med hjälp av konfigurations-ID: n (v4)](pullClientConfigId4.md)
+- [Konfigurera en pull-klient med konfigurations-ID: n (V5)](pullClientConfigId.md)
+- [Konfigurera en pull-klient med konfigurations namn (V5)](pullClientConfigNames.md)
 
-## <a name="see-also"></a>Se även
+## <a name="see-also"></a>Se också
 
-- [Set up a DSC SMB Pull Server](pullServerSmb.md)
-- [Set up a DSC HTTP Pull Server](pullServer.md)
-- [Package and Upload Resources to a Pull Server](package-upload-resources.md)
+- [Konfigurera en DSC SMB-pull-server](pullServerSmb.md)
+- [Konfigurera en DSC HTTP-pull-server](pullServer.md)
+- [Paketera och ladda upp resurser till en hämtnings Server](package-upload-resources.md)

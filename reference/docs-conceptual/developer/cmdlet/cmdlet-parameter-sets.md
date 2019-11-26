@@ -1,5 +1,5 @@
 ---
-title: Cmdlet Parameter Sets | Microsoft Docs
+title: Cmdlet-parameter uppsättningar | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -15,49 +15,49 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74415680"
 ---
-# <a name="cmdlet-parameter-sets"></a>Cmdlet parameter sets
+# <a name="cmdlet-parameter-sets"></a>Cmdlet-parameter uppsättningar
 
-PowerShell uses parameter sets to enable you to write a single cmdlet that can do different actions for different scenarios. Parameter sets enable you to expose different parameters to the user. And, to return different information based on the parameters specified by the user.
+PowerShell använder parameter uppsättningar för att ge dig möjlighet att skriva en enda cmdlet som kan utföra olika åtgärder för olika scenarier. Parameter uppsättningar gör att du kan exponera olika parametrar för användaren. Och för att returnera annan information baserat på de parametrar som anges av användaren.
 
-## <a name="examples-of-parameter-sets"></a>Examples of parameter sets
+## <a name="examples-of-parameter-sets"></a>Exempel på parameter uppsättningar
 
-For example, the PowerShell `Get-EventLog` cmdlet returns different information depending on whether the user specifies the **List** or **LogName** parameter. If the **List** parameter is specified, the cmdlet returns information about the log files themselves but not the event information they contain. If the **LogName** parameter is specified, the cmdlet returns information about the events in a specific event log. The **List** and **LogName** parameters identify two separate parameter sets.
+Till exempel returnerar PowerShell `Get-EventLog`-cmdleten olika information beroende på om användaren anger **list** -eller **LogName** -parametern. Om **list** parametern anges, returnerar cmdleten information om själva loggfilerna, men inte den händelse information som de innehåller. Om parametern **LogName** anges returnerar cmdleten information om händelserna i en specifik händelse logg. **List** -och **LogName** -parametrarna identifierar två separata parameter uppsättningar.
 
-## <a name="unique-parameter"></a>Unique parameter
+## <a name="unique-parameter"></a>Unik parameter
 
-Each parameter set must have a unique parameter that the PowerShell runtime uses to expose the appropriate parameter set. If possible, the unique parameter should be a mandatory parameter. When a parameter is mandatory, the user must specify the parameter, and the PowerShell runtime uses that parameter to identify the parameter set. The unique parameter can't be mandatory if your cmdlet is designed to run without specifying any parameters.
+Varje parameter uppsättning måste ha en unik parameter som PowerShell-körningsmiljön använder för att exponera rätt parameter uppsättning. Om möjligt ska den unika parametern vara en obligatorisk parameter. När en parameter är obligatorisk måste användaren ange parametern och PowerShell-körningsmiljön använder den parametern för att identifiera parameter uppsättningen. Den unika parametern kan inte vara obligatorisk om din cmdlet är avsedd att köras utan att några parametrar anges.
 
-## <a name="multiple-parameter-sets"></a>Multiple parameter sets
+## <a name="multiple-parameter-sets"></a>Flera parameter uppsättningar
 
-In the following illustration, the left column shows three valid parameter sets. **Parameter A** is unique to the first parameter set, **parameter B** is unique to the second parameter set, and **parameter C** is unique to the third parameter set. In the right column, the parameter sets don't have a unique parameter.
+I följande bild visas tre giltiga parameter uppsättningar i den vänstra kolumnen. **Parametern A** är unik för den första parameter uppsättningen, **parametern B** är unik för den andra parameter uppsättningen och **parametern C** är unik för den tredje parameter uppsättningen. Parameter uppsättningarna i den högra kolumnen har ingen unik parameter.
 
 ![ps_parametersets](../media/ps-parametersets.gif)
 
-## <a name="parameter-set-requirements"></a>Parameter set requirements
+## <a name="parameter-set-requirements"></a>Krav för parameter uppsättning
 
-The following requirements apply to all parameter sets.
+Följande krav gäller för alla parameter uppsättningar.
 
-- Each parameter set must have at least one unique parameter. If possible, make this parameter a mandatory parameter.
+- Varje parameter uppsättning måste ha minst en unik parameter. Om möjligt ska du göra denna parameter till en obligatorisk parameter.
 
-- A parameter set that contains multiple positional parameters must define unique positions for each parameter. No two positional parameters can specify the same position.
+- En parameter uppsättning som innehåller flera positions parametrar måste definiera unika positioner för varje parameter. Det går inte att ange samma position med två positions parametrar.
 
-- Only one parameter in a set can declare the `ValueFromPipeline` keyword with a value of `true`.
-  Multiple parameters can define the `ValueFromPipelineByPropertyName` keyword with a value of `true`.
+- Endast en parameter i en mängd kan deklarera `ValueFromPipeline` nyckelordet med värdet `true`.
+  Flera parametrar kan definiera nyckelordet `ValueFromPipelineByPropertyName` med värdet `true`.
 
-- If no parameter set is specified for a parameter, the parameter belongs to all parameter sets.
+- Om ingen parameter uppsättning anges för en parameter, tillhör parametern alla parameter uppsättningar.
 
 > [!NOTE]
-> For a cmdlet or function, there is a limit of 32 parameter sets.
+> För en cmdlet eller funktion finns det en gräns på 32 parameter uppsättningar.
 
-## <a name="default-parameter-sets"></a>Default parameter sets
+## <a name="default-parameter-sets"></a>Standard parameter uppsättningar
 
-When multiple parameter sets are defined, you can use the `DefaultParameterSetName` keyword of the **Cmdlet** attribute to specify the default parameter set. PowerShell uses the default parameter set if it can't determine the parameter set to use based on the information provided by the command. For more information about the **Cmdlet** attribute, see [Cmdlet Attribute Declaration](./cmdlet-attribute-declaration.md).
+När du har definierat flera parameter uppsättningar kan du använda nyckelordet `DefaultParameterSetName` för **cmdlet** -attributet för att ange standard parameter uppsättningen. PowerShell använder standard parameter uppsättningen om den inte kan avgöra vilken parameter som ska användas baserat på den information som tillhandahålls av kommandot. Mer information om **cmdlet** -attributet finns i [deklaration av cmdlet-attribut](./cmdlet-attribute-declaration.md).
 
-## <a name="declaring-parameter-sets"></a>Declaring parameter sets
+## <a name="declaring-parameter-sets"></a>Deklarera parameter uppsättningar
 
-To create a parameter set, you must specify the `ParameterSetName` keyword when you declare the **Parameter** attribute for every parameter in the parameter set. For parameters that belong to multiple parameter sets, add a **Parameter** attribute for each parameter set. This attribute enables you to define the parameter differently for each parameter set. For example, you can define a parameter as mandatory in one set and optional in another. However, each parameter set must contain one unique parameter. For more information, see [Parameter Attribute Declaration](parameter-attribute-declaration.md).
+Om du vill skapa en parameter uppsättning måste du ange `ParameterSetName` nyckelordet när du deklarerar attributet **parameter** för varje parameter i parameter uppsättningen. För parametrar som tillhör flera parameter uppsättningar lägger du till ett **parameter** -attribut för varje parameter uppsättning. Med det här attributet kan du definiera parametern på olika sätt för varje parameter uppsättning. Du kan till exempel definiera en parameter som obligatorisk i en uppsättning och valfri i en annan. Varje parameter uppsättning måste dock innehålla en unik parameter. Mer information finns i [deklaration av parameter attribut](parameter-attribute-declaration.md).
 
-In the following example, the **UserName** parameter is the unique parameter of the `Test01` parameter set, and the **ComputerName** parameter is the unique parameter of the `Test02` parameter set. The **SharedParam** parameter belongs to both sets and is mandatory for the `Test01` parameter set but optional for the `Test02` parameter set.
+I följande exempel är parametern **username** den unika parametern för den `Test01` parameter uppsättningen och parametern **computername** är den unika parametern för den `Test02` parameter uppsättningen. Parametern **SharedParam** tillhör båda uppsättningarna och är obligatorisk för parametern `Test01`, men valfritt för `Test02`-parameter uppsättningen.
 
 ```csharp
 [Parameter(Position = 0, Mandatory = true, ParameterSetName = "Test01")]

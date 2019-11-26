@@ -1,7 +1,7 @@
 ---
 ms.date: 07/10/2019
-keywords: jea,powershell,security
-title: JEA Role Capabilities
+keywords: Jea, PowerShell, säkerhet
+title: JEA roll funktioner
 ms.openlocfilehash: 613557d03bb481f9280a06ca1506166a18b4dab2
 ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
@@ -9,61 +9,61 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74416798"
 ---
-# <a name="jea-role-capabilities"></a>JEA Role Capabilities
+# <a name="jea-role-capabilities"></a>JEA roll funktioner
 
-When creating a JEA endpoint, you need to define one or more role capabilities that describe what someone can do in a JEA session. A role capability is a PowerShell data file with the `.psrc` extension that lists all the cmdlets, functions, providers, and external programs that are made available to connecting users.
+När du skapar en JEA-slutpunkt måste du definiera en eller flera roll funktioner som beskriver vad någon kan göra i en JEA-session. En roll funktion är en PowerShell-datafil med `.psrc`-tillägget som visar alla cmdletar, funktioner, providers och externa program som görs tillgängliga för att ansluta användare.
 
-## <a name="determine-which-commands-to-allow"></a>Determine which commands to allow
+## <a name="determine-which-commands-to-allow"></a>Ta reda på vilka kommandon som tillåts
 
-The first step in creating a role capability file is to consider what the users need access to. The requirements gathering process can take a while, but it's an important process. Giving users access to too few cmdlets and functions can prevent them from getting their job done. Allowing access to too many cmdlets and functions can allow users to do more than you intended and weaken your security stance.
+Det första steget i att skapa en roll kapacitets fil är att fundera över vad användarna behöver åtkomst till. Processen för att samla in krav kan ta en stund, men det är en viktig process. Att ge användare åtkomst till för få cmdlets och funktioner kan hindra dem från att få jobbet utfört. Att tillåta åtkomst till för många cmdletar och funktioner kan göra det möjligt för användare att göra mer än vad du avsåg och minska din säkerhets virtualiseringsprodukter från.
 
-How you go about this process depends on your organization and goals. The following tips can help ensure you're on the right path.
+Hur du fortsätter med den här processen beror på din organisation och dina mål. Följande tips kan vara till hjälp för att se till att du har rätt sökväg.
 
-1. **Identify** the commands users are using to get their jobs done. This may involve surveying IT staff, checking automation scripts, or analyzing PowerShell session transcripts and logs.
-2. **Update** use of command-line tools to PowerShell equivalents, where possible, for the best auditing and JEA customization experience. External programs can't be constrained as granularly as native PowerShell cmdlets and functions in JEA.
-3. **Restrict** the scope of the cmdlets to only allow specific parameters or parameter values. This is especially important if users should manage only part of a system.
-4. **Create** custom functions to replace complex commands or commands that are difficult to constrain in JEA. A simple function that wraps a complex command or applies additional validation logic can offer additional control for admins and end-user simplicity.
-5. **Test** the scoped list of allowable commands with your users or automation services, and adjust as necessary.
+1. **Identifiera** de kommandon som användare använder för att få jobben gjorda. Detta kan innebära att undersöka IT-personal, kontrol lera automatiserings skript eller analysera PowerShell-sessions avskrifter och loggar.
+2. **Uppdatera** användningen av kommando rads verktyg till PowerShell-motsvarigheter, där det är möjligt, för den bästa gransknings-och Jea anpassnings upplevelsen. Externa program kan inte vara begränsade som inbyggda PowerShell-cmdlets och Functions i JEA.
+3. **Begränsa** cmdlets definitions området så att endast vissa parametrar eller parameter värden tillåts. Detta är särskilt viktigt om användarna endast ska hantera en del av ett system.
+4. **Skapa** anpassade funktioner för att ersätta komplexa kommandon eller kommandon som är svåra att begränsa i Jea. En enkel funktion som omsluter ett komplext kommando eller använder ytterligare validerings logik kan ge ytterligare kontroll för administratörer och slutanvändarens enkelhet.
+5. **Testa** den begränsade listan över tillåtna kommandon med dina användare eller Automation-tjänster och justera efter behov.
 
-### <a name="examples-of-potentially-dangerous-commands"></a>Examples of potentially dangerous commands
+### <a name="examples-of-potentially-dangerous-commands"></a>Exempel på potentiellt farliga kommandon
 
-Careful selection of commands is important to ensure the JEA endpoint doesn't allow the user to elevate their permissions.
+Ett noggrant urval av kommandon är viktigt för att se till att JEA-slutpunkten inte tillåter att användaren höjer sina behörigheter.
 
 > [!IMPORTANT]
-> Essential information required for user successCommands in a JEA session are often run with elevated privileges.
+> Nödvändig information som krävs för användarens successCommands i en JEA-session körs ofta med utökade privilegier.
 
-The following table contains examples of commands that can be used maliciously if allowed in an unconstrained state. This isn't an exhaustive list and should only be used as a cautionary starting point.
+Följande tabell innehåller exempel på kommandon som kan användas skadligt om de tillåts i ett obegränsat tillstånd. Detta är inte en fullständig lista och bör endast användas som en varnings start punkt.
 
-|                                            Risk                                            |                                Exempel                                |                                                                              Related commands                                                                              |
+|                                            Risk                                            |                                Exempel                                |                                                                              Relaterade kommandon                                                                              |
 | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Granting the connecting user admin privileges to bypass JEA                                | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`, `Add-LocalGroupMember`, `net.exe`, `dsadd.exe`                                                                                                        |
-| Running arbitrary code, such as malware, exploits, or custom scripts to bypass protections | `Start-Process -FilePath '\\san\share\malware.exe'`                   | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob` |
+| Bevilja den anslutande användar administratörs behörighet att kringgå JEA                                | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`, `Add-LocalGroupMember`, `net.exe`, `dsadd.exe`                                                                                                        |
+| Köra godtycklig kod, till exempel skadlig kod, sårbarheter eller anpassade skript för att kringgå skydd | `Start-Process -FilePath '\\san\share\malware.exe'`                   | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob` |
 
-## <a name="create-a-role-capability-file"></a>Create a role capability file
+## <a name="create-a-role-capability-file"></a>Skapa en roll funktions fil
 
-You can create a new PowerShell role capability file with the [New-PSRoleCapabilityFile](/powershell/module/microsoft.powershell.core/new-psrolecapabilityfile?view=powershell-6) cmdlet.
+Du kan skapa en ny funktion för PowerShell-roll med cmdleten [New-PSRoleCapabilityFile](/powershell/module/microsoft.powershell.core/new-psrolecapabilityfile?view=powershell-6) .
 
 ```powershell
 New-PSRoleCapabilityFile -Path .\MyFirstJEARole.psrc
 ```
 
-The resulting role capability file should be edited to allow the commands required for the role. The PowerShell help documentation contains several examples of how you can configure the file.
+Den resulterande roll funktions filen bör redige ras för att tillåta de kommandon som krävs för rollen. PowerShell-hjälpens dokumentation innehåller flera exempel på hur du kan konfigurera filen.
 
-### <a name="allowing-powershell-cmdlets-and-functions"></a>Allowing PowerShell cmdlets and functions
+### <a name="allowing-powershell-cmdlets-and-functions"></a>Tillåta PowerShell-cmdlets och Functions
 
-To authorize users to run PowerShell cmdlets or functions, add the cmdlet or function name to the VisibleCmdlets or VisibleFunctions fields. If you aren't sure whether a command is a cmdlet or function, you can run `Get-Command <name>` and check the **CommandType** property in the output.
+Om du vill auktorisera användare att köra PowerShell-cmdletar eller-funktioner lägger du till cmdleten eller funktions namnet i fälten VisibleCmdlets eller VisibleFunctions. Om du inte är säker på om ett kommando är en cmdlet eller funktion kan du köra `Get-Command <name>` och kontrol lera egenskapen **CommandType** i utdata.
 
 ```powershell
 VisibleCmdlets = 'Restart-Computer', 'Get-NetIPAddress'
 ```
 
-Sometimes the scope of a specific cmdlet or function is too broad for your users' needs. A DNS admin, for example, probably only needs access to restart the DNS service. In multi-tenant environments, tenants have access to self-service management tools. Tenants should be limited to managing their own resources. For these cases, you can restrict which parameters are exposed from the cmdlet or function.
+Ibland är omfattningen av en speciell cmdlet eller funktion för bred för användarnas behov. En DNS-administratör, till exempel, behöver förmodligen bara åtkomst för att starta om DNS-tjänsten. I miljöer med flera klienter har klienter till gång till självbetjänings hanterings verktyg. Klienterna bör begränsas till att hantera sina egna resurser. I dessa fall kan du begränsa vilka parametrar som exponeras från cmdleten eller funktionen.
 
 ```powershell
 VisibleCmdlets = @{ Name = 'Restart-Computer'; Parameters = @{ Name = 'Name' }}
 ```
 
-In more advanced scenarios, you may also need to restrict the values a user may use with these parameters. Role capabilities let you define a set of values or a regular expression pattern that determine what input is allowed.
+I mer avancerade scenarier kan du också behöva begränsa de värden som en användare kan använda med dessa parametrar. Med roll funktioner kan du definiera en uppsättning värden eller ett mönster för reguljära uttryck som avgör vilka indatatyper som tillåts.
 
 ```powershell
 VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; ValidateSet = 'Dns', 'Spooler' }},
@@ -71,62 +71,62 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 ```
 
 > [!NOTE]
-> The [common PowerShell parameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters) are always allowed, even if you restrict the available parameters.
-> You should not explicitly list them in the Parameters field.
+> [Vanliga PowerShell-parametrar](/powershell/module/microsoft.powershell.core/about/about_commonparameters) tillåts alltid, även om du begränsar de tillgängliga parametrarna.
+> Du bör inte uttryckligen lista dem i parameter fältet.
 
-The table below describes the various ways you can customize a visible cmdlet or function.
-You can mix and match any of the below in the **VisibleCmdlets** field.
+I tabellen nedan beskrivs de olika sätt som du kan anpassa en synlig cmdlet eller funktion på.
+Du kan blanda och matcha något av följande i fältet **VisibleCmdlets** .
 
-|                                           Exempel                                           |                                                             Use case                                                              |
+|                                           Exempel                                           |                                                             Användningsfall                                                              |
 | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `'My-Func'` eller `@{ Name = 'My-Func' }`                                                      | Allows the user to run `My-Func` without any restrictions on the parameters.                                                      |
-| `'MyModule\My-Func'`                                                                        | Allows the user to run `My-Func` from the module `MyModule` without any restrictions on the parameters.                           |
-| `'My-*'`                                                                                    | Allows the user to run any cmdlet or function with the verb `My`.                                                                 |
-| `'*-Func'`                                                                                  | Allows the user to run any cmdlet or function with the noun `Func`.                                                               |
-| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`              | Allows the user to run `My-Func` with the `Param1` and `Param2` parameters. Any value can be supplied to the parameters.          |
-| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}` | Allows the user to run `My-Func` with the `Param1` parameter. Only "Value1" and "Value2" can be supplied to the parameter.        |
-| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`    | Allows the user to run `My-Func` with the `Param1` parameter. Any value starting with "contoso" can be supplied to the parameter. |
+| `'My-Func'` eller `@{ Name = 'My-Func' }`                                                      | Tillåter att användaren kör `My-Func` utan begränsningar för parametrarna.                                                      |
+| `'MyModule\My-Func'`                                                                        | Gör att användaren kan köra `My-Func` från modulen `MyModule` utan begränsningar för parametrarna.                           |
+| `'My-*'`                                                                                    | Tillåter användaren att köra valfri cmdlet eller funktion med verb `My`.                                                                 |
+| `'*-Func'`                                                                                  | Tillåter användaren att köra valfri cmdlet eller funktion med Substantiv `Func`.                                                               |
+| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`              | Tillåter att användaren kör `My-Func` med parametrarna `Param1` och `Param2`. Alla värden kan anges för parametrarna.          |
+| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}` | Tillåter att användaren kör `My-Func` med parametern `Param1`. Endast "värde1" och "värde2" kan anges för parametern.        |
+| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`    | Tillåter att användaren kör `My-Func` med parametern `Param1`. Alla värden som börjar med "contoso" kan anges för parametern. |
 
 > [!WARNING]
-> For best security practices, it is not recommended to use wildcards when defining visible cmdlets or functions. Instead, you should explicitly list each trusted command to ensure no other commands that share the same naming scheme are unintentionally authorized.
+> För bästa säkerhets praxis rekommenderar vi inte att jokertecken används när du definierar synliga cmdlets eller functions. I stället bör du uttryckligen lista varje betrott kommando för att se till att inga andra kommandon som delar samma namngivnings schema oavsiktligt har behörighet.
 
-You can't apply both a **ValidatePattern** and **ValidateSet** to the same cmdlet or function.
+Du kan inte använda både en **ValidatePattern** och **ValidateSet** för samma cmdlet eller funktion.
 
-If you do, the **ValidatePattern** overrides the **ValidateSet**.
+Om du gör det åsidosätter **ValidatePattern** **ValidateSet**.
 
-For more information about **ValidatePattern**, check out [this *Hey, Scripting Guy!* post](https://devblogs.microsoft.com/scripting/validate-powershell-parameters-before-running-the-script/) and the [PowerShell Regular Expressions](/powershell/module/microsoft.powershell.core/about/about_regular_expressions) reference content.
+Mer information om **ValidatePattern**finns i [det här *Hey, Scripting Guy!* post](https://devblogs.microsoft.com/scripting/validate-powershell-parameters-before-running-the-script/) och PowerShell-referensen för [vanliga uttryck](/powershell/module/microsoft.powershell.core/about/about_regular_expressions) .
 
-### <a name="allowing-external-commands-and-powershell-scripts"></a>Allowing external commands and PowerShell scripts
+### <a name="allowing-external-commands-and-powershell-scripts"></a>Tillåta externa kommandon och PowerShell-skript
 
-To allow users to run executables and PowerShell scripts (.ps1) in a JEA session, you have to add the full path to each program in the **VisibleExternalCommands** field.
+Om du vill tillåta användare att köra körbara filer och PowerShell-skript (. ps1) i en JEA-session måste du lägga till den fullständiga sökvägen till varje program i fältet **VisibleExternalCommands** .
 
 ```powershell
 VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Contoso\Scripts\UpdateITSoftware.ps1'
 ```
 
-Where possible, to use PowerShell cmdlet or function equivalents for any external executables you authorize since you have control over the parameters allowed with PowerShell cmdlets and functions.
+Om möjligt kan du använda PowerShell-cmdlet eller Function-motsvarigheter för alla externa körbara filer som du godkänner eftersom du har kontroll över de parametrar som tillåts med PowerShell-cmdlets och functions.
 
-Many executables allow you to read the current state and then change it by providing different parameters.
+Med många körbara filer kan du läsa det aktuella läget och sedan ändra det genom att ange olika parametrar.
 
-For example, consider the role of a file server admin that manages network shares hosted on a system. One way of managing shares is to use `net share`. However, allowing **net.exe** is dangerous because the user could use the command to gain admin privileges with `net group Administrators unprivilegedjeauser /add`. A more secure option is to allow [Get-SmbShare](/powershell/module/smbshare/get-smbshare), which achieves the same result but has a much more limited scope.
+Anta till exempel rollen som en fil Server administratör som hanterar nätverks resurser som finns på ett system. Ett sätt att hantera resurser är att använda `net share`. Att tillåta **net. exe** är dock farligt eftersom användaren kan använda kommandot för att få administratörs behörighet med `net group Administrators unprivilegedjeauser /add`. Ett säkrare alternativ är att tillåta [Get-SmbShare](/powershell/module/smbshare/get-smbshare), vilket ger samma resultat men har ett mycket mer begränsat omfång.
 
-When making external commands available to users in a JEA session, always specify the complete path to the executable. This prevents the execution of similarly named and potentially malicious programs located elsewhere on the system.
+När du gör externa kommandon tillgängliga för användare i en JEA-session ska du alltid ange den fullständiga sökvägen till den körbara filen. Detta förhindrar körning av liknande namngivna och potentiellt skadliga program som finns på andra platser i systemet.
 
-### <a name="allowing-access-to-powershell-providers"></a>Allowing access to PowerShell providers
+### <a name="allowing-access-to-powershell-providers"></a>Tillåta åtkomst till PowerShell-leverantörer
 
-By default, no PowerShell providers are available in JEA sessions. This reduces the risk of sensitive information and configuration settings being disclosed to the connecting user.
+Som standard är inga PowerShell-leverantörer tillgängliga i JEA-sessioner. Detta minskar risken för känslig information och konfigurations inställningar som visas för den anslutande användaren.
 
-When necessary, you can allow access to the PowerShell providers using the `VisibleProviders` command. For a full list of providers, run `Get-PSProvider`.
+Vid behov kan du ge åtkomst till PowerShell-providers med hjälp av kommandot `VisibleProviders`. För en fullständig lista över leverantörer, kör `Get-PSProvider`.
 
 ```powershell
 VisibleProviders = 'Registry'
 ```
 
-For simple tasks that require access to the file system, registry, certificate store, or other sensitive providers, consider writing a custom function that works with the provider on the user's behalf. The functions, cmdlets, and external programs available in a JEA session aren't subject to the same constraints as JEA. They can access any provider by default. Also consider using the [user drive](session-configurations.md#user-drive) when copying files to or from a JEA endpoint is required.
+För enkla uppgifter som kräver åtkomst till fil systemet, registret, certifikat arkivet eller andra känsliga leverantörer kan du överväga att skriva en anpassad funktion som fungerar med providern för användarens räkning. De funktioner, cmdletar och externa program som är tillgängliga i en JEA-session omfattas inte av samma begränsningar som JEA. De kan komma åt alla leverantörer som standard. Överväg också att använda [användar enheten](session-configurations.md#user-drive) när du kopierar filer till eller från en Jea-slutpunkt krävs.
 
-### <a name="creating-custom-functions"></a>Creating custom functions
+### <a name="creating-custom-functions"></a>Skapa anpassade funktioner
 
-You can author custom functions in a role capability file to simplify complex tasks for your end users. Custom functions are also useful when you require advanced validation logic for cmdlet parameter values. You can write simple functions in the **FunctionDefinitions** field:
+Du kan skapa anpassade funktioner i en roll funktions fil för att förenkla komplexa uppgifter för slutanvändarna. Anpassade funktioner är också användbara när du behöver avancerad validerings logik för cmdlet-parametervärdena. Du kan skriva enkla funktioner i fältet **FunctionDefinitions** :
 
 ```powershell
 VisibleFunctions = 'Get-TopProcess'
@@ -144,22 +144,22 @@ FunctionDefinitions = @{
 ```
 
 > [!IMPORTANT]
-> Don't forget to add the name of your custom functions to the **VisibleFunctions** field so they can be run by the JEA users.
+> Glöm inte att lägga till namnet på dina anpassade funktioner i fältet **VisibleFunctions** så att de kan köras av Jea-användare.
 
-The body (script block) of custom functions runs in the default language mode for the system and isn't subject to JEA's language constraints. This means that functions can access the file system and registry, and run commands that weren't made visible in the role capability file. Take care to avoid running arbitrary code when using parameters. Avoid piping user input directly into cmdlets like `Invoke-Expression`.
+Texten (skript blocket) för anpassade funktioner körs i standard språk läge för systemet och omfattas inte av JEA språk begränsningar. Det innebär att funktioner kan komma åt fil systemet och registret, och köra kommandon som inte har gjorts synliga i den roll kapacitets filen. Ta hand om att undvika att köra godtycklig kod när du använder parametrar. Undvik att skicka indata från användaren direkt till cmdlets som `Invoke-Expression`.
 
-In the above example, notice that the fully qualified module name (FQMN) `Microsoft.PowerShell.Utility\Select-Object` was used instead of the shorthand `Select-Object`.
-Functions defined in role capability files are still subject to the scope of JEA sessions, which includes the proxy functions JEA creates to constrain existing commands.
+I exemplet ovan ser du att det fullständigt kvalificerade modulnamnet (FQMN) `Microsoft.PowerShell.Utility\Select-Object` användes i stället för det stenografiska `Select-Object`.
+Funktioner som definieras i roll kapacitets filer omfattas fortfarande av omfånget för JEA-sessioner, som innehåller proxy-funktionerna JEA skapar för att begränsa befintliga kommandon.
 
-By default, `Select-Object` is a constrained cmdlet in all JEA sessions that doesn't allow the selection of arbitrary properties on objects. To use the unconstrained `Select-Object` in functions, you must explicitly request the full implementation using the FQMN. Any constrained cmdlet in a JEA session has the same constraints when invoked from a function. For more information, see [about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence).
+Som standard är `Select-Object` en begränsad cmdlet i alla JEA-sessioner som inte tillåter val av godtyckliga egenskaper för objekt. Om du vill använda den obegränsade `Select-Object` i functions måste du uttryckligen begära den fullständiga implementeringen med hjälp av FQMN. Alla begränsade cmdlets i en JEA-session har samma begränsningar när de anropas från en funktion. Mer information finns i [about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence).
 
-If you're writing several custom functions, it's more convenient to put them in a PowerShell script module. You make those functions visible in the JEA session using the **VisibleFunctions** field like you would with built-in and third-party modules.
+Om du skriver flera anpassade funktioner är det mer praktiskt att använda dem i en PowerShell-modul för-skript. Du gör dessa funktioner synliga i JEA-sessionen med hjälp av **VisibleFunctions** -fältet på samma sätt som med inbyggda moduler och moduler från tredje part.
 
-For tab completion to work properly in JEA sessions you must include the built-in function `tabexpansion2` in the **VisibleFunctions** list.
+För att avslutning av flikar ska fungera korrekt i JEA-sessioner måste du inkludera den inbyggda funktionen `tabexpansion2` i **VisibleFunctions** -listan.
 
-## <a name="place-role-capabilities-in-a-module"></a>Place role capabilities in a module
+## <a name="place-role-capabilities-in-a-module"></a>Placera roll funktioner i en modul
 
-In order for PowerShell to find a role capability file, it must be stored in a **RoleCapabilities** folder in a PowerShell module. The module can be stored in any folder included in the `$env:PSModulePath` environment variable, however you shouldn't place it in System32 or a folder where the untrusted, connecting users could modify the files. Below is an example of creating a basic PowerShell script module called **ContosoJEA** in the `$env:ProgramFiles` path.
+För att PowerShell ska kunna hitta en roll funktions fil måste den lagras i en **RoleCapabilities** -mapp i en PowerShell-modul. Modulen kan lagras i en mapp som ingår i `$env:PSModulePath`-miljövariabeln, men du bör inte placera den i system32 eller en mapp där det inte är betrott, och ansluta användare kan ändra filerna. Nedan visas ett exempel på hur du skapar en grundläggande PowerShell-modul med namnet **ContosoJEA** i `$env:ProgramFiles` sökväg.
 
 ```powershell
 # Create a folder for the module
@@ -177,36 +177,36 @@ New-Item -ItemType Directory $rcFolder
 Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
-For more information about PowerShell modules, see [Understanding a PowerShell Module](/powershell/scripting/developer/windows-powershell).
+Mer information om PowerShell-moduler finns i [förstå en PowerShell-modul](/powershell/scripting/developer/windows-powershell).
 
-## <a name="updating-role-capabilities"></a>Updating role capabilities
+## <a name="updating-role-capabilities"></a>Uppdaterar roll funktioner
 
-You can edit a role capability file to update the settings at any time. Any new JEA sessions started after the role capability has been updated will reflect the revised capabilities.
+Du kan redigera en roll funktions fil om du vill uppdatera inställningarna när som helst. Alla nya JEA-sessioner som startas efter att roll kapaciteten har uppdaterats visar de ändrade funktionerna.
 
-This is why controlling access to the role capabilities folder is so important. Only highly trusted administrators should be allowed to change role capability files. If an untrusted user can change role capability files, they can easily give themselves access to cmdlets that allow them to elevate their privileges.
+Det är därför viktigt att kontrol lera åtkomsten till mappen roll funktioner. Endast hög betrodda administratörer bör kunna ändra roll kapacitets filer. Om en ej betrodd användare kan ändra roll kapacitets filer kan de enkelt ge sig till gång till cmdletar som gör att de kan höja sina privilegier.
 
-For administrators looking to lock down access to the role capabilities, ensure Local System has read access to the role capability files and containing modules.
+För administratörer som vill låsa åtkomst till roll funktionerna kontrollerar du att lokalt system har Läs behörighet till roll kapacitets filerna och innehåller moduler.
 
-## <a name="how-role-capabilities-are-merged"></a>How role capabilities are merged
+## <a name="how-role-capabilities-are-merged"></a>Så här sammanfogas roll funktioner
 
-Users are granted access to all matching role capabilities in the [session configuration file](session-configurations.md) when they enter a JEA session. JEA tries to give the user the most permissive set of commands allowed by any of the roles.
+Användare beviljas åtkomst till alla matchande roll funktioner i [konfigurations filen för sessionen](session-configurations.md) när de anger en Jea-session. JEA försöker ge användaren den mest tillåtna uppsättningen kommandon som tillåts av någon av rollerna.
 
-### <a name="visiblecmdlets-and-visiblefunctions"></a>VisibleCmdlets and VisibleFunctions
+### <a name="visiblecmdlets-and-visiblefunctions"></a>VisibleCmdlets och VisibleFunctions
 
-The most complex merge logic affects cmdlets and functions, which can have their parameters and parameter values limited in JEA.
+Den mest komplexa sammanslagnings logiken påverkar cmdletar och funktioner, vilket kan ha sina parametrar och parameter värden begränsade i JEA.
 
-The rules are as follows:
+Reglerna är följande:
 
-1. If a cmdlet is only made visible in one role, it is visible to the user with any applicable parameter constraints.
-2. If a cmdlet is made visible in more than one role, and each role has the same constraints on the cmdlet, the cmdlet is visible to the user with those constraints.
-3. If a cmdlet is made visible in more than one role, and each role allows a different set of parameters, the cmdlet and all the parameters defined across every role are visible to the user.
-   If one role doesn't have constraints on the parameters, all parameters are allowed.
-4. If one role defines a validate set or validate pattern for a cmdlet parameter, and the other role allows the parameter but does not constrain the parameter values, the validate set or pattern is ignored.
-5. If a validate set is defined for the same cmdlet parameter in more than one role, all values from all validate sets are allowed.
-6. If a validate pattern is defined for the same cmdlet parameter in more than one role, any values that match any of the patterns are allowed.
-7. If a validate set is defined in one or more roles, and a validate pattern is defined in another role for the same cmdlet parameter, the validate set is ignored and rule (6) applies to the remaining validate patterns.
+1. Om en cmdlet bara görs synlig i en roll, är den synlig för användaren med eventuella tillämpliga parameter begränsningar.
+2. Om en cmdlet görs synlig i mer än en roll och varje roll har samma begränsningar i cmdleten, visas cmdleten för användaren med dessa begränsningar.
+3. Om en cmdlet görs synlig i mer än en roll, och varje roll tillåter en annan uppsättning parametrar, visas cmdleten och alla parametrar som definierats för varje roll för användaren.
+   Om en roll inte har begränsningar för parametrarna, tillåts alla parametrar.
+4. Om en roll definierar en verifierad uppsättning eller verifiera mönster för en cmdlet-parameter, och den andra rollen tillåter parametern men inte begränsar parameter värden, ignoreras verifierings uppsättningen eller mönstret.
+5. Om en verifierings uppsättning har definierats för samma cmdlet-parameter i mer än en roll, tillåts alla värden från alla validerings uppsättningar.
+6. Om ett verifierings mönster har definierats för samma cmdlet-parameter i mer än en roll, tillåts alla värden som matchar någon av mönstren.
+7. Om en verifierings uppsättning definieras i en eller flera roller, och ett verifierings mönster definieras i en annan roll för samma cmdlet-parameter, ignoreras verifierings uppsättningen och regel (6) gäller för de återstående verifierings mönstren.
 
-Below is an example of how roles are merged according to these rules:
+Nedan visas ett exempel på hur roller slås samman enligt följande regler:
 
 ```powershell
 # Role A Visible Cmdlets
@@ -238,11 +238,11 @@ $mergedAandB = @{
 
 ### <a name="visibleexternalcommands-visiblealiases-visibleproviders-scriptstoprocess"></a>VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess
 
-All other fields in the role capability file are added to a cumulative set of allowable external commands, aliases, providers, and startup scripts. Any command, alias, provider, or script available in one role capability is available to the JEA user.
+Alla andra fält i roll kapacitets filen läggs till i en kumulativ uppsättning tillåtna externa kommandon, alias, providers och start skript. Alla kommandon, alias, providers och skript som är tillgängliga i en roll kapacitet är tillgängliga för JEA-användaren.
 
-Be careful to ensure that the combined set of providers from one role capability and cmdlets/functions/commands from another don't allow users unintentional access to system resources.
-For example, if one role allows the `Remove-Item` cmdlet and another allows the `FileSystem` provider, you are at risk of a JEA user deleting arbitrary files on your computer. Additional information about identifying users' effective permissions can be found in the [auditing JEA](audit-and-report.md) article.
+Var noga med att se till att den kombinerade uppsättningen med providers från en roll kapacitet och cmdlets/Functions/commands från andra inte tillåter användare oavsiktlig åtkomst till system resurser.
+Om en roll till exempel tillåter `Remove-Item`-cmdleten och en annan tillåter `FileSystem` leverantören, riskerar du att en JEA användare tar bort godtyckliga filer på datorn. Ytterligare information om att identifiera användares gällande behörigheter finns i artikeln [granskning Jea](audit-and-report.md) .
 
 ## <a name="next-steps"></a>Nästa steg
 
-[Create a session configuration file](session-configurations.md)
+[Skapa en konfigurations fil för sessionen](session-configurations.md)

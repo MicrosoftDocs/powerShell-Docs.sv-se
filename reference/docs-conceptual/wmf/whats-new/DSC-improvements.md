@@ -10,33 +10,33 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74416669"
 ---
-# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Improvements in Desired State Configuration (DSC) in WMF 5.1
+# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Förbättringar i önskad tillstånds konfiguration (DSC) i WMF 5,1
 
-## <a name="dsc-class-resource-improvements"></a>DSC class resource improvements
+## <a name="dsc-class-resource-improvements"></a>Förbättringar av DSC-klass resurser
 
-In WMF 5.1, we have fixed the following known issues:
+I WMF 5,1 har vi åtgärdat följande kända problem:
 
-- Get-DscConfiguration may return empty values (null) or errors if a complex/hash table type is returned by Get() function of a class-based DSC resource.
-- Get-DscConfiguration returns error if RunAs credential is used in DSC configuration.
-- Class-based resource cannot be used in a composite configuration.
-- Start-DscConfiguration hangs if class-based resource has a property of its own type.
-- Class-based resource cannot be used as an exclusive resource.
+- Get-DscConfiguration kan returnera tomma värden (null) eller fel om en komplex/hash-tabell typ returneras av Get ()-funktionen för en klassbaserade DSC-resurs.
+- Get-DscConfiguration returnerar fel om RunAs-autentiseringsuppgiften används i DSC-konfigurationen.
+- Det går inte att använda klassbaserade resurser i en sammansatt konfiguration.
+- Start-DscConfiguration låser sig om klassbaserade resurser har en egenskap av en egen typ.
+- Det går inte att använda klassbaserade resurser som en exklusiv resurs.
 
-## <a name="dsc-resource-debugging-improvements"></a>DSC resource debugging improvements
+## <a name="dsc-resource-debugging-improvements"></a>Förbättringar av DSC-felsökning
 
-In WMF 5.0, the PowerShell debugger did not stop at the class-based resource method (Get/Set/Test) directly. In WMF 5.1, the debugger stops at the class-based resource method in the same way as for MOF-based resources methods.
+I WMF 5,0 stoppades inte PowerShell-felsökning vid den klassbaserade resurs metoden (Hämta/ange/testa) direkt. I WMF 5,1 stoppar fel söknings programmet vid den klassbaserade resurs metoden på samma sätt som för MOF-baserade resurs metoder.
 
-## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>DSC pull client supports TLS 1.1 and TLS 1.2
+## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>DSC pull-klienten har stöd för TLS 1,1 och TLS 1,2
 
-Previously, the DSC pull client only supported SSL3.0 and TLS1.0 over HTTPS connections. When forced to use more secure protocols, the pull client would stop functioning. In WMF 5.1, the DSC pull client no longer supports SSL 3.0 and adds support for the more secure TLS 1.1 and TLS 1.2 protocols.
+Tidigare stöddes endast SSL 3.0 och TLS 1.0 över HTTPS-pull-klienten. När du tvingas använda fler säkra protokoll slutar pull-klienten att fungera. I WMF 5,1 stöder DSC-pull-klienten inte längre SSL 3,0 och lägger till stöd för de säkrare TLS 1,1-och TLS 1,2-protokollen.
 
-## <a name="improved-pull-server-registration"></a>Improved pull server registration
+## <a name="improved-pull-server-registration"></a>Förbättrad registrering av hämtnings servrar
 
-In the earlier versions of WMF, simultaneous registrations/reporting requests to a DSC pull server while using the ESENT database would lead to LCM failing to register and/or report. In such cases, the event logs on the pull server has the error "Instance Name already in use." This was caused by an incorrect pattern being used to access the ESENT database in a multi-threaded scenario. In WMF 5.1, this issue has been fixed. Concurrent registrations or reporting (involving ESENT database) works fine in WMF 5.1. This issue is applicable only to the ESENT database and does not apply to the OLEDB database.
+I tidigare versioner av WMF skulle samtidiga registreringar/rapporterings begär anden till en DSC-pull-server när du använder ESENT-databasen leda till att LCM inte kan registreras och/eller rapporteras. I sådana fall har händelse loggarna på hämtnings servern fel "instans namnet används redan". Detta orsakades av ett felaktigt mönster som användes för att komma åt ESENT-databasen i ett scenario med flera trådar. Det här problemet har åtgärd ATS i WMF 5,1. Samtidiga registreringar eller rapportering (som inbegriper ESENT-databasen) fungerar bra i WMF 5,1. Det här problemet gäller endast för ESENT-databasen och gäller inte för OLEDB-databasen.
 
-## <a name="enable-circular-log-on-esent-database-instance"></a>Enable Circular log on ESENT database instance
+## <a name="enable-circular-log-on-esent-database-instance"></a>Aktivera cirkulär inloggning på en ESENT-databas instans
 
-In eariler version of DSC-PullServer, the ESENT database log files were filling up the disk space of the pullserver becouse the database instance was being created without circular logging. In this release, you have the option to control the circular logging behavior of the instance using the web.config of the pullserver. By default CircularLogging is set to TRUE.
+I eariler-versionen av DSC-PullServer, fyller ESENT-databasens loggfiler upp disk utrymmet för PullServer-becouse som databas instansen skapades utan cirkulär loggning. I den här versionen har du möjlighet att styra det cirkulära loggnings beteendet för instansen med hjälp av Web. config för pullserver. Som standard har CircularLogging angetts till TRUE.
 
 ```xml
 <appSettings>
@@ -47,48 +47,21 @@ In eariler version of DSC-PullServer, the ESENT database log files were filling 
   </appSettings>
 ```
 
-## <a name="wow64-support-for-configuration-keyword"></a>WOW64 support for Configuration Keyword
+## <a name="wow64-support-for-configuration-keyword"></a>WOW64-stöd för konfigurations nyckelord
 
-The `Configuration` keyword is now supported in WOW64 on a 64-bit computer. This means that a DSC configuration can be defined and compiled within a 32-bit process such as Windows PowerShell ISE (x86) running on a 64-bit computer.
+`Configuration`-nyckelordet stöds nu i WOW64 på en 64-bitars dator. Det innebär att en DSC-konfiguration kan definieras och kompileras i en 32-bitars process som Windows PowerShell ISE (x86) som körs på en 64-bitars dator.
 
-## <a name="pull-partial-configuration-naming-convention"></a>Pull partial configuration naming convention
+## <a name="pull-partial-configuration-naming-convention"></a>Hämta partiell konfiguration namngivnings konvention
 
-In the previous release, the naming convention for a partial configuration was that the MOF file name in the pull server/service should match the partial configuration name specified in the local configuration manager settings that in turn must match the configuration name embedded in the MOF file.
+I den tidigare versionen var namngivnings konventionen för en partiell konfiguration att MOF-filnamnet i pull-servern/tjänsten ska matcha det partiella konfigurations namn som anges i den lokala Configuration Manager-inställningarna som i sin tur måste matcha konfigurations namnet som är inbäddat i MOF-filen.
 
-See the snapshots below:
+Se ögonblicks bilderna nedan:
 
-- Local configuration settings which defines a partial configuration that a node is allowed to receive.
+- Lokala konfigurations inställningar som definierar en delvis konfiguration som en nod får ta emot.
 
-  ![Sample metaconfiguration](../images/DSC-improvements/MetaConfigPartialOne.png)
+  ![Exempel på metaconfiguration](../images/DSC-improvements/MetaConfigPartialOne.png)
 
-- Sample partial configuration definition
-
-  ```powershell
-  Configuration PartialOne
-  {
-      Node('localhost')
-      {
-          File test
-          {
-              DestinationPath = "$env:TEMP\partialconfigexample.txt"
-              Contents = 'Partial Config Example'
-          }
-      }
-  }
-  PartialOne
-  ```
-
-- 'ConfigurationName' embedded in the generated MOF file.
-
-  ![Sample generated mof file](../images/DSC-improvements/PartialGeneratedMof.png)
-
-- FileName in the pull configuration repository
-
-  ![FileName in Configuration Repository](../images/DSC-improvements/PartialInConfigRepository.png)
-
-  Azure Automation service name generated MOF files as `<ConfigurationName>.<NodeName>.mof`. So the configuration below compiles to PartialOne.localhost.mof.
-
-  This made it impossible to pull one of your partial configuration from Azure Automation service.
+- Exempel på partiell konfigurations definition
 
   ```powershell
   Configuration PartialOne
@@ -105,9 +78,36 @@ See the snapshots below:
   PartialOne
   ```
 
-  In WMF 5.1, a partial configuration in the pull server/service can be named as `<ConfigurationName>.<NodeName>.mof`. Moreover, if a machine is pulling a single configuration from a pull server/service then the configuration file on the pull server configuration repository can have any file name. This naming flexibility allows you to manage your nodes partially by Azure Automation service, where some configuration for your node is coming from Azure Automation DSC and with a partial configuration that you manage locally.
+- ' ConfigurationName ' Embedded i den genererade MOF-filen.
 
-  The metaconfiguration below sets up a node to be managed both locally as well as by Azure Automation service.
+  ![Exempel på genererad MOF-fil](../images/DSC-improvements/PartialGeneratedMof.png)
+
+- Fil namn i hämtnings konfigurationens lagrings plats
+
+  ![Fil namn i konfigurations lager](../images/DSC-improvements/PartialInConfigRepository.png)
+
+  Azure Automation tjänst namn genererade MOF-filer som `<ConfigurationName>.<NodeName>.mof`. Konfigurationen nedan kompileras till PartialOne. localhost. mof.
+
+  Detta gjorde det omöjligt att hämta en delvis konfiguration från Azure Automation-tjänsten.
+
+  ```powershell
+  Configuration PartialOne
+  {
+      Node('localhost')
+      {
+          File test
+          {
+              DestinationPath = "$env:TEMP\partialconfigexample.txt"
+              Contents = 'Partial Config Example'
+          }
+      }
+  }
+  PartialOne
+  ```
+
+  I WMF 5,1 kan en del konfiguration i pull-servern/-tjänsten namnges som `<ConfigurationName>.<NodeName>.mof`. Dessutom, om en dator hämtar en enda konfiguration från en pull-server/tjänst, kan konfigurations filen på lagrings serverns konfigurations lagring ha alla fil namn. Den här namn flexibiliteten gör att du kan hantera dina noder delvis av Azure Automation tjänst, där viss konfiguration för noden kommer från Azure Automation DSC och med en delvis konfiguration som du hanterar lokalt.
+
+  Metaconfiguration nedan ställer in en nod som ska hanteras både lokalt och per Azure Automation tjänst.
 
   ```powershell
   [DscLocalConfigurationManager()]
@@ -145,13 +145,13 @@ See the snapshots below:
   Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
   ```
 
-## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>Using PsDscRunAsCredential with DSC composite resources
+## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>Använda PsDscRunAsCredential med sammansatta DSC-resurser
 
-We have added support for using [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) with DSC [Composite](/powershell/scripting/dsc/authoringresourcecomposite) resources.
+Vi har lagt till stöd för att använda [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) med [SAMMANsatta](/powershell/scripting/dsc/authoringresourcecomposite) DSC-resurser.
 
-You can now specify a value for **PsDscRunAsCredential** when using composite resources inside configurations. When specified, all resources run inside a composite resource as a RunAs user. If a composite resource calls another composite resource, all those resources are also executed as RunAs user. RunAs credentials are propagated to any level of the composite resource hierarchy. If any resource inside a composite resource specifies its own value for **PsDscRunAsCredential**, a merge error results during configuration compilation.
+Nu kan du ange ett värde för **PsDscRunAsCredential** när du använder sammansatta resurser i konfigurationer. När det här anges körs alla resurser i en sammansatt resurs som en RunAs-användare. Om en sammansatt resurs anropar en annan sammansatt resurs körs alla dessa resurser också som RunAs-användare. RunAs-autentiseringsuppgifter sprids till valfri nivå i den sammansatta resursens hierarki. Om en resurs i en sammansatt resurs anger sitt eget värde för **PsDscRunAsCredential**uppstår ett sammanfognings fel vid konfigurations kompilering.
 
-This example shows usage with the [WindowsFeatureSet](/powershell/scripting/dsc/reference/resources/windows/windowsfeaturesetresource) composite resource included in PSDesiredStateConfiguration module.
+Det här exemplet visar användningen med den sammansatta [WindowsFeatureSet](/powershell/scripting/dsc/reference/resources/windows/windowsfeaturesetresource) -resursen som ingår i PSDesiredStateConfiguration-modulen.
 
 ```powershell
 Configuration InstallWindowsFeature
@@ -184,9 +184,9 @@ $configData = @{
 InstallWindowsFeature -ConfigurationData $configData
 ```
 
-## <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>Allowing for Identical Duplicate Resources in a Configuration
+## <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>Tillåta identiska duplicerade resurser i en konfiguration
 
-DSC does not allow or handle conflicting resource definitions within a configuration. Instead of trying to resolve the conflict, it simply fails. As configuration reuse becomes more utilized through composite resources, etc. conflicts will occur more often. When conflicting resource definitions are identical, DSC should be smart and allow this. With this release, we support having multiple resource instances that have identical definitions:
+DSC tillåter eller hanterar inte resurs definitioner som är i konflikt med varandra i en konfiguration. I stället för att försöka lösa konflikten fungerar det bara. När återanvändning av konfigurationen blir mer utnyttjad via sammansatta resurser, så inträffar konflikter oftare. När resurs definitionerna i konflikt är identiska bör DSC vara smart och tillåta detta. I den här versionen stöder vi flera resurs instanser som har identiska definitioner:
 
 ```powershell
 Configuration IIS_FrontEnd
@@ -227,29 +227,29 @@ Configuration WebApplication
 }
 ```
 
-In previous releases, the result would be a failed compilation due to a conflict between the WindowsFeature FE_IIS and WindowsFeature Worker_IIS instances trying to ensure the 'Web-Server' role is installed. Notice that *all* of the properties that are being configured are identical in these two configurations. Since *all* of the properties in these two resources are identical, this will result in a successful compilation now.
+I tidigare versioner skulle resultatet bli en misslyckad kompilering på grund av en konflikt mellan FE_IIS-och WindowsFeature-Worker_IIS instanser som försöker se till att rollen webb server är installerad. Observera att *alla* egenskaper som konfigureras är identiska i de här två konfigurationerna. Eftersom *alla* egenskaper i de här två resurserna är identiska, leder det till en lyckad kompilering nu.
 
-If any of the properties are different between the two resources, they will not be considered identical and compilation will fail.
+Om någon av egenskaperna skiljer sig mellan de två resurserna kommer de inte att anses vara identiska och kompileringen kommer inte att fungera.
 
-## <a name="dsc-module-and-configuration-signing-validations"></a>DSC module and configuration signing validations
+## <a name="dsc-module-and-configuration-signing-validations"></a>Validering av DSC-modul och konfigurations signering
 
-In DSC, configurations and modules are distributed to managed computers from the pull server. If the pull server is compromised, an attacker can potentially modify the configurations and modules on the pull server and have it distributed to all managed nodes.
+I DSC distribueras konfigurationer och moduler till hanterade datorer från pull-servern. Om hämtnings servern komprometteras kan en angripare ändra konfigurationerna och modulerna på pull-servern och distribuera dem till alla hanterade noder.
 
-In WMF 5.1, DSC supports validating the digital signatures on catalog and configuration (.MOF) files. This feature prevents nodes from executing configurations or module files which are not signed by a trusted signer or which have been tampered with after they have been signed by trusted signer.
+I WMF 5,1 stöder DSC validering av de digitala signaturerna i katalogen och konfigurationen (. MOF-filer. Den här funktionen förhindrar att noder kör konfigurationer eller modulblad som inte har signerats av en betrodd undertecknare eller som har ändrats efter att de har signerats av en betrodd undertecknare.
 
-### <a name="how-to-sign-configuration-and-module"></a>How to sign configuration and module
+### <a name="how-to-sign-configuration-and-module"></a>Så här signerar du konfiguration och modul
 
-- Configuration Files (.MOFs): The existing PowerShell cmdlet [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) is extended to support signing of MOF files.
-- Modules: Signing of modules is done by signing the corresponding module catalog using the following steps:
-  1. Create a catalog file: A catalog file contains a collection of cryptographic hashes or thumbprints. Each thumbprint corresponds to a file that is included in the module. The new cmdlet [New-FileCatalog](/powershell/module/microsoft.powershell.security/new-filecatalog), has been added to enable users to create a catalog file for their module.
-  2. Sign the catalog file: Use [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) to sign the catalog file.
-  3. Place the catalog file inside the module folder. By convention, module catalog file should be placed under the module folder with the same name as the module.
+- Konfigurationsfiler (. MOF: ar): den befintliga PowerShell-cmdleten [set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) har utökats för att stödja signering av MOF-filer.
+- Moduler: signering av moduler görs genom att du signerar motsvarande modul katalog med hjälp av följande steg:
+  1. Skapa en katalog fil: en katalog fil innehåller en samling kryptografiska hash-värden eller tumavtrycken. Varje tumavtryck motsvarar en fil som ingår i modulen. Den nya cmdleten [New-FileCatalog](/powershell/module/microsoft.powershell.security/new-filecatalog)har lagts till för att göra det möjligt för användare att skapa en katalog fil för sin modul.
+  2. Signera katalog filen: Använd [set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) för att signera katalog filen.
+  3. Placera katalog filen i mappen modul. Per konvention bör modulens katalog fil placeras under mappen module med samma namn som modulen.
 
-### <a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>LocalConfigurationManager settings to enable signing validations
+### <a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>LocalConfigurationManager-inställningar för att aktivera signerings valideringar
 
-#### <a name="pull"></a>Pull
+#### <a name="pull"></a>Hämta
 
-The LocalConfigurationManager of a node performs signing validation of modules and configurations based on its current settings. By default, signature validation is disabled. Signature validation can enabled by adding the ‘SignatureValidation’ block to the meta-configuration definition of the node as shown below:
+LocalConfigurationManager för en nod utför signerings valideringen av moduler och konfigurationer baserat på dess aktuella inställningar. Som standard är verifiering av signaturer inaktiverat. Verifiering av signaturen kan aktive ras genom att SignatureValidation-blocket läggs till i definitionen av meta-konfigurationen för noden enligt nedan:
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -277,33 +277,33 @@ EnableSignatureValidation
 Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 ```
 
-Setting the above metaconfiguration on a node enables signature validation on downloaded configurations and modules. The Local Configuration Manager performs the following steps to verify the digital signatures.
+Genom att ställa in ovanstående metaconfiguration på en nod kan du verifiera signaturen på nedladdade konfigurationer och moduler. Den lokala Configuration Manager utför följande steg för att verifiera de digitala signaturerna.
 
-1. Verify the signature on a configuration file (.MOF) is valid using the `Get-AuthenticodeSignature` cmdlet.
-2. Verify the certificate authority that authorized the signer is trusted.
-3. Download module/resource dependencies of the configuration to a temp location.
-4. Verify the signature of the catalog included inside the module.
-   - Find a `<moduleName>.cat` file and verify its signature using `Get-AuthenticodeSignature`.
-   - Verify the certification authority that authenticated the signer is trusted.
-   - Verify the content of the modules has not been tampered using the new cmdlet `Test-FileCatalog`.
-5. `Install-Module` to `$env:ProgramFiles\WindowsPowerShell\Modules\`
-6. Process configuration
+1. Verifiera signaturen för en konfigurations fil (. MOF) är giltig med `Get-AuthenticodeSignature`-cmdleten.
+2. Verifiera den certifikat utfärdare som har behörighet att signeraren är betrodd.
+3. Hämta modul/resurs beroenden för konfigurationen till en tillfällig plats.
+4. Kontrol lera signaturen för katalogen som ingår i modulen.
+   - Hitta en `<moduleName>.cat`-fil och verifiera signaturen med hjälp av `Get-AuthenticodeSignature`.
+   - Verifiera att den certifikat utfärdare som autentiserat signeraren är betrodd.
+   - Kontrol lera att innehållet i modulerna inte har ändrats med den nya cmdleten `Test-FileCatalog`.
+5. `Install-Module` till `$env:ProgramFiles\WindowsPowerShell\Modules\`
+6. Process konfiguration
 
 > [!NOTE]
-> Signature validation on module-catalog and configuration is only performed when the configuration is applied to the system for the first time or when the module is downloaded and installed.
-> Consistency runs do not validate the signature of Current.mof or its module dependencies. If verification has failed at any stage, for instance, if the configuration pulled from the pull server is unsigned, then processing of the configuration terminates with the error shown below and all temporary files are deleted.
+> Verifiering av signaturen för modul-katalog och konfiguration utförs bara när konfigurationen tillämpas på systemet för första gången eller när modulen laddas ned och installeras.
+> Konsekvens körningar verifierar inte signaturen för current. MOF eller dess beroenden. Om verifieringen Miss lyckas i något skede, till exempel om konfigurationen som hämtades från hämtnings servern är osignerad, avslutas bearbetningen av konfigurationen med det fel som visas nedan och alla temporära filer tas bort.
 
-![Sample Error Output Configuration](../images/DSC-improvements/PullUnsignedConfigFail.png)
+![Exempel på utdata-konfiguration](../images/DSC-improvements/PullUnsignedConfigFail.png)
 
-Similarly, pulling a module whose catalog is not signed results in the following error:
+På samma sätt kan du hämta en modul vars katalog inte är signerade resultat i följande fel:
 
-![Sample Error Output Module](../images/DSC-improvements/PullUnisgnedCatalog.png)
+![Exempel på utdata-modul](../images/DSC-improvements/PullUnisgnedCatalog.png)
 
 #### <a name="push"></a>Push
 
-A configuration delivered by using push might be tampered with at its source before it delivered to the node. The Local Configuration Manager performs similar signature validation steps for pushed or published configuration(s). Below is a complete example of signature validation for push.
+En konfiguration som levereras med push-teknik kan manipuleras på källan innan den skickas till noden. Den lokala Configuration Manager utför liknande validerings steg för signaturer för push-eller publicerad konfiguration (er). Nedan visas ett fullständigt exempel på verifiering av signaturen för push.
 
-- Enable signature validation on the node.
+- Aktivera verifiering av signatur på noden.
 
   ```powershell
   [DSCLocalConfigurationManager()]
@@ -323,7 +323,7 @@ A configuration delivered by using push might be tampered with at its source bef
   Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
   ```
 
-- Create a sample configuration file.
+- Skapa en exempel konfigurations fil.
 
   ```powershell
   # Sample configuration
@@ -339,7 +339,7 @@ A configuration delivered by using push might be tampered with at its source bef
   Test
   ```
 
-- Try pushing the unsigned configuration file in to the node.
+- Försök att skicka den osignerade konfigurations filen till noden.
 
   ```powershell
   Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
@@ -347,10 +347,10 @@ A configuration delivered by using push might be tampered with at its source bef
 
   ![ErrorUnsignedMofPushed](../images/DSC-improvements/PushUnsignedMof.png)
 
-- Sign the configuration file using code-signing certificate.
+- Signera konfigurations filen med kod signerings certifikat.
 
   ![SignMofFile](../images/DSC-improvements/SignMofFile.png)
 
-- Try pushing the signed MOF file.
+- Försök att skicka den signerade MOF-filen.
 
   ![PushSignedMofFile](../images/DSC-improvements/PushSignedMof.png)

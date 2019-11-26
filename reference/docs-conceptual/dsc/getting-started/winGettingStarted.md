@@ -1,7 +1,7 @@
 ---
 ms.date: 08/15/2019
-keywords: dsc,powershell,configuration,setup
-title: Get started with Desired State Configuration (DSC) for Windows
+keywords: DSC, PowerShell, konfiguration, installation
+title: Kom igång med önskad tillstånds konfiguration (DSC) för Windows
 ms.openlocfilehash: a9346b96693acdbad9bacbd4b6ca85971e17a3d1
 ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
@@ -9,14 +9,14 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74417761"
 ---
-# <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Get started with Desired State Configuration (DSC) for Windows
+# <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Kom igång med önskad tillstånds konfiguration (DSC) för Windows
 
-This topic explains how to get started using PowerShell Desired State Configuration (DSC) for Windows.
-For general information about DSC, see [Get Started with Windows PowerShell Desired State Configuration](../overview/overview.md).
+I det här avsnittet beskrivs hur du kommer igång med PowerShell (Desired State Configuration) för Windows.
+Allmän information om DSC finns i [Kom igång med önskad tillstånds konfiguration i Windows PowerShell](../overview/overview.md).
 
-## <a name="supported-windows-operation-system-versions"></a>Supported Windows operation system versions
+## <a name="supported-windows-operation-system-versions"></a>Operativ system versioner som stöds i Windows
 
-The following versions are supported:
+Följande versioner stöds:
 
 - Windows Server 2019
 - Windows Server 2016
@@ -24,30 +24,30 @@ The following versions are supported:
 - Windows Server 2012
 - Windows Server 2008 R2 SP1
 - Windows 10
-- Windows 8.1
+- Windows 8.1
 - Windows 7
 
-The [Microsoft Hyper-V Server](/windows-server/virtualization/hyper-v/hyper-v-server-2016) standalone product sku does not contain an implementation of Desired State Configuraion so it cannot be managed by PowerShell DSC or Azure Automation State Configuration.
+Den fristående produkt-SKU: n för [Microsoft Hyper-V server](/windows-server/virtualization/hyper-v/hyper-v-server-2016) innehåller ingen implementering av önskade tillstånds agentkonfigurationerna så att den inte kan hanteras av PowerShell DSC eller Azure Automation tillstånds konfiguration.
 
-## <a name="installing-dsc"></a>Installing DSC
+## <a name="installing-dsc"></a>Installerar DSC
 
-PowerShell Desired State Configuration is included in Windows and updated through Windows Management Framework.
-The latest version is [Windows Management Framework 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616).
+PowerShell Desired State Configuration ingår i Windows och uppdateras via Windows Management Framework.
+Den senaste versionen är [Windows Management Framework 5,1](https://www.microsoft.com/en-us/download/details.aspx?id=54616).
 
 > [!NOTE]
-> You do not need to enable the Windows Server feature 'DSC-Service' to manage a machine using DSC.
-> That feature is only needed when building a Windows Pull Server instance.
+> Du behöver inte aktivera Windows Server-funktionen "DSC-service" för att kunna hantera en dator med DSC.
+> Funktionen behövs bara när du skapar en Windows pull Server-instans.
 
-## <a name="using-dsc-for-windows"></a>Using DSC for Windows
+## <a name="using-dsc-for-windows"></a>Använda DSC för Windows
 
-The following sections explain how to create and run DSC configurations on Windows computers.
+I följande avsnitt beskrivs hur du skapar och kör DSC-konfigurationer på Windows-datorer.
 
-### <a name="creating-a-configuration-mof-document"></a>Creating a configuration MOF document
+### <a name="creating-a-configuration-mof-document"></a>Skapa ett MOF-dokument för konfiguration
 
-The Windows PowerShell Configuration keyword is used to create a configuration.
-The following steps describe the creation of a configuration document using Windows PowerShell.
+Nyckelordet Windows PowerShell-konfiguration används för att skapa en konfiguration.
+Följande steg beskriver hur du skapar ett konfigurations dokument med hjälp av Windows PowerShell.
 
-#### <a name="define-a-configuration-and-generate-the-configuration-document"></a>Define a configuration and generate the configuration document:
+#### <a name="define-a-configuration-and-generate-the-configuration-document"></a>Definiera en konfiguration och generera konfigurations dokumentet:
 
 ```powershell
 Configuration EnvironmentVariable_Path
@@ -71,43 +71,43 @@ Configuration EnvironmentVariable_Path
 
 EnvironmentVariable_Path -OutputPath:"C:\EnvironmentVariable_Path"
 ```
-#### <a name="install-a-module-containing-dsc-resources"></a>Install a module containing DSC resources
+#### <a name="install-a-module-containing-dsc-resources"></a>Installera en modul som innehåller DSC-resurser
 
-Windows PowerShell Desired State Configuration includes built-in modules containing DSC resources.
-You can also load modules from external sources such as the PowerShell Gallery, using the PowerShellGet cmdlets.
+Windows PowerShell Desired State Configuration inkluderar inbyggda moduler som innehåller DSC-resurser.
+Du kan också läsa in moduler från externa källor som PowerShell-galleriet med hjälp av PowerShellGet-cmdletar.
 
 `Install-Module 'PSDscResources' -Verbose`
 
-#### <a name="apply-the-configuration-to-the-machine"></a>Apply the configuration to the machine
+#### <a name="apply-the-configuration-to-the-machine"></a>Tillämpa konfigurationen på datorn
 
-Configuration documents (MOF files) can be applied to the machine using the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet.
+Konfigurations dokument (MOF-filer) kan tillämpas på datorn med cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) .
 
 `Start-DscConfiguration -Path 'C:\EnvironmentVariable_Path' -Wait -Verbose`
 
-#### <a name="get-the-current-state-of-the-configuration"></a>Get the current state of the configuration
+#### <a name="get-the-current-state-of-the-configuration"></a>Hämta konfigurationens aktuella tillstånd
 
-The [Get-DscConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) cmdlet queries the current status of the machine and returns the current values for the configuration.
+Cmdlet [: en get-DscConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) frågar efter datorns aktuella status och returnerar de aktuella värdena för konfigurationen.
 
 `Get-DscConfiguration`
 
-The [Get-DscLocalConfigurationManager](/powershell/module/psdesiredstateconfiguration/get-dscLocalConfigurationManager) cmdlet returns the current meta-configuration applied to the machine.
+Cmdlet: en [Get-DscLocalConfigurationManager](/powershell/module/psdesiredstateconfiguration/get-dscLocalConfigurationManager) returnerar den aktuella meta-konfigurationen som tillämpas på datorn.
 
 `Get-DscLocalConfigurationManager`
 
-#### <a name="remove-the-current-configuration-from-a-machine"></a>Remove the current configuration from a machine
+#### <a name="remove-the-current-configuration-from-a-machine"></a>Ta bort den aktuella konfigurationen från en dator
 
-The [Remove-DscConfigurationDocument](/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument)
+[Remove-DscConfigurationDocument](/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument)
 
 `Remove-DscConfigurationDocument -Stage Current -Verbose`
 
-#### <a name="configure-settings-in-local-configuration-manager"></a>Configure settings in Local Configuration Manager
+#### <a name="configure-settings-in-local-configuration-manager"></a>Konfigurera inställningar i lokala Configuration Manager
 
-Apply a Meta Configuration MOF file to the machine using the [Set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) cmdlet.
-Requires the path to the Meta Configuration MOF.
+Använd en MOF-fil för meta-konfiguration på datorn med cmdleten [set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) .
+Kräver sökvägen till MOF för meta-konfiguration.
 
 `Set-DSCLocalConfigurationManager -Path 'c:\metaconfig\localhost.meta.mof' -Verbose`
 
-## <a name="windows-powershell-desired-state-configuration-log-files"></a>Windows PowerShell Desired State Configuration log files
+## <a name="windows-powershell-desired-state-configuration-log-files"></a>Loggfiler för önskad tillstånds konfiguration i Windows PowerShell
 
-Logs for DSC are written to Windows Event Log in the path `Microsoft-Windows-Dsc/Operational`.
-Additional logs for debugging purposes can be enabled following the steps in [Where Are DSC Event Logs](/powershell/scripting/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs).
+Loggar för DSC skrivs till händelse loggen i Windows i sökvägen `Microsoft-Windows-Dsc/Operational`.
+Ytterligare loggar för fel sökning kan aktive ras enligt stegen i [var DSC-händelseloggar](/powershell/scripting/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs).

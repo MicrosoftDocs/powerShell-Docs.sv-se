@@ -1,7 +1,7 @@
 ---
 ms.date: 11/15/2019
-keywords: powershell,core
-title: Breaking Changes for PowerShell 6.0
+keywords: PowerShell, Core
+title: Bryta ändringar för PowerShell 6,0
 ms.openlocfilehash: a1dac42bcda8e1258a99ef281691a9d4c5986b53
 ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
@@ -9,43 +9,43 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74417556"
 ---
-# <a name="breaking-changes-for-powershell-6x"></a>Breaking Changes for PowerShell 6.x
+# <a name="breaking-changes-for-powershell-6x"></a>Bryta ändringar för PowerShell 6. x
 
-## <a name="features-no-longer-available-in-powershell-core"></a>Features no longer available in PowerShell Core
+## <a name="features-no-longer-available-in-powershell-core"></a>Funktioner som inte längre är tillgängliga i PowerShell Core
 
-### <a name="powershell-workflow"></a>PowerShell Workflow
+### <a name="powershell-workflow"></a>PowerShell-arbetsflöde
 
-[PowerShell Workflow][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation] that enables the creation of robust runbooks for long-running or parallelized tasks.
+[PowerShell-arbetsflöde][workflow] är en funktion i Windows PowerShell som bygger ovanpå [Windows Workflow Foundation (WF)][workflow-foundation] som gör det möjligt att skapa robusta Runbooks för långvariga eller parallella uppgifter.
 
-Due to the lack of support for Windows Workflow Foundation in .NET Core, we will not continue to support PowerShell Workflow in PowerShell Core.
+På grund av brist på stöd för Windows Workflow Foundation i .NET Core kommer vi inte att fortsätta att stödja PowerShell-arbetsflöde i PowerShell Core.
 
-In the future, we would like to enable native parallelism/concurrency in the PowerShell language without the need for PowerShell Workflow.
+I framtiden skulle vi vilja aktivera inbyggd parallellitet/samtidighet i PowerShell-språket utan att behöva använda PowerShell-arbetsflöde.
 
-If there is a need to use checkpoints to resume a script after the OS restarts, we recommend using Task Scheduler to run a script on OS startup, but the script would need to maintain its own state (like persisting it to a file).
+Om du behöver använda kontroll punkter för att återuppta ett skript efter det att operativ systemet har startats om, rekommenderar vi att du använder Schemaläggaren för att köra ett skript på Start av operativ systemet, men skriptet måste ha ett eget tillstånd (som att spara det i en fil).
 
 [workflow]: /powershell/scripting/components/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
 
-### <a name="custom-snap-ins"></a>Custom snap-ins
+### <a name="custom-snap-ins"></a>Anpassade snapin-moduler
 
-[PowerShell snap-ins][snapin] are a predecessor to PowerShell modules that do not have widespread adoption in the PowerShell community.
+[PowerShell-snapin-moduler][snapin] är en föregående aktivitet till PowerShell-moduler som inte har omfattande antagande i PowerShell-communityn.
 
-Due to the complexity of supporting snap-ins and their lack of usage in the community, we no longer support custom snap-ins in PowerShell Core.
+På grund av komplexiteten vid stöd för snapin-moduler och deras brist på användning i communityn stöder vi inte längre anpassade snapin-moduler i PowerShell Core.
 
-Today, this breaks the `ActiveDirectory` and `DnsClient` modules in Windows and Windows Server.
+Idag tar detta upp `ActiveDirectory` och `DnsClient` modulerna i Windows och Windows Server.
 
 [snapin]: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssnapins
 
-### <a name="wmi-v1-cmdlets"></a>WMI v1 cmdlets
+### <a name="wmi-v1-cmdlets"></a>WMI v1-cmdletar
 
-Due to the complexity of supporting two sets of WMI-based modules, we removed the WMI v1 cmdlets from PowerShell Core:
+På grund av komplexiteten med stöd för två uppsättningar WMI-baserade moduler tog vi bort WMI v1-cmdletar från PowerShell Core:
 
 - `Get-WmiObject`
 - `Invoke-WmiMethod`
 - `Register-WmiEvent`
 - `Set-WmiInstance`
 
-Instead, we recommend that you the use the CIM (aka WMI v2) cmdlets which provide the same functionality with new functionality and a redesigned syntax:
+I stället rekommenderar vi att du använder CIM-cmdletarna (aka WMI v2) som tillhandahåller samma funktioner med nya funktioner och en omdesignad syntax:
 
 - `Get-CimAssociatedInstance`
 - `Get-CimClass`
@@ -60,194 +60,194 @@ Instead, we recommend that you the use the CIM (aka WMI v2) cmdlets which provid
 - `Remove-CimSession`
 - `Set-CimInstance`
 
-### <a name="microsoftpowershelllocalaccounts"></a>Microsoft.PowerShell.LocalAccounts
+### <a name="microsoftpowershelllocalaccounts"></a>Microsoft. PowerShell. LocalAccounts
 
-Due to the use of unsupported APIs, `Microsoft.PowerShell.LocalAccounts` has been removed from PowerShell Core until a better solution is found.
+På grund av användning av API: er som inte stöds har `Microsoft.PowerShell.LocalAccounts` tagits bort från PowerShell Core tills en bättre lösning har hittats.
 
-### <a name="-computer-cmdlets"></a>`*-Computer` cmdlets
+### <a name="-computer-cmdlets"></a>`*-Computer`-cmdletar
 
-Due to the use of unsupported APIs, the following cmdlets have been removed from PowerShell Core until a better solution is found.
+På grund av användning av API: er som inte stöds har följande cmdlets tagits bort från PowerShell Core tills en bättre lösning har hittats.
 
-- Add-Computer
+- Lägg till dator
 - Checkpoint-Computer
-- Remove-Computer
-- Restore-Computer
+- Ta bort dator
+- Återställa-dator
 
-### <a name="-counter-cmdlets"></a>`*-Counter` cmdlets
+### <a name="-counter-cmdlets"></a>`*-Counter`-cmdletar
 
-Due to the use of unsupported APIs, the `*-Counter` has been removed from PowerShell Core until a better solution is found.
+På grund av användning av API: er som inte stöds har `*-Counter` tagits bort från PowerShell Core tills en bättre lösning har hittats.
 
-### <a name="-eventlog-cmdlets"></a>`*-EventLog` cmdlets
+### <a name="-eventlog-cmdlets"></a>`*-EventLog`-cmdletar
 
-Due to the use of unsupported APIs, the `*-EventLog` has been removed from PowerShell Core. until a better solution is found. `Get-WinEvent` and `Create-WinEvent` are available to get and create events on Windows.
+På grund av användning av API: er som inte stöds har `*-EventLog` tagits bort från PowerShell-kärnan. tills en bättre lösning har hittats. `Get-WinEvent` och `Create-WinEvent` är tillgängliga för att hämta och skapa händelser i Windows.
 
-## <a name="enginelanguage-changes"></a>Engine/language changes
+## <a name="enginelanguage-changes"></a>Motor/språk ändringar
 
-### <a name="rename-powershellexe-to-pwshexe-5101httpsgithubcompowershellpowershellissues5101"></a>Rename `powershell.exe` to `pwsh.exe` [#5101](https://github.com/PowerShell/PowerShell/issues/5101)
+### <a name="rename-powershellexe-to-pwshexe-5101httpsgithubcompowershellpowershellissues5101"></a>Byt namn på `powershell.exe` till `pwsh.exe` [#5101](https://github.com/PowerShell/PowerShell/issues/5101)
 
-In order to give users a deterministic way to call PowerShell Core on Windows (as opposed to Windows PowerShell), the PowerShell Core binary was changed to `pwsh.exe` on Windows and `pwsh` on non-Windows platforms.
+För att ge användarna ett deterministiskt sätt att anropa PowerShell Core på Windows (till skillnad från Windows PowerShell) ändrades binärfilen för PowerShell-kärnan till `pwsh.exe` i Windows och `pwsh` på andra plattformar än Windows-plattformar.
 
-The shortened name is also consistent with naming of shells on non-Windows platforms.
+Det förkortade namnet är också konsekvent med namngivning av gränssnitt på andra plattformar än Windows-plattformar.
 
-### <a name="dont-insert-line-breaks-to-output-except-for-tables-5193httpsgithubcompowershellpowershellissues5193"></a>Don't insert line breaks to output (except for tables) [#5193](https://github.com/PowerShell/PowerShell/issues/5193)
+### <a name="dont-insert-line-breaks-to-output-except-for-tables-5193httpsgithubcompowershellpowershellissues5193"></a>Infoga inte rad brytningar i utdata (förutom tabeller) [#5193](https://github.com/PowerShell/PowerShell/issues/5193)
 
-Previously, output was aligned to the width of the console and line breaks were added at the end width of the console, meaning the output didn't get reformatted as expected if the terminal was resized. This change was not applied to tables, as the line breaks are necessary to keep the columns aligned.
+Tidigare var utdata justerade till bredden på konsolen och rad brytningarna lades till i konsolens slut punkt, vilket innebär att resultatet inte blev omformaterat som förväntat om terminalfönstret ändrades. Den här ändringen tillämpades inte i tabeller eftersom rad brytningar krävs för att hålla kolumnerna justerade.
 
-### <a name="skip-null-element-check-for-collections-with-a-value-type-element-type-5432httpsgithubcompowershellpowershellissues5432"></a>Skip null-element check for collections with a value-type element type [#5432](https://github.com/PowerShell/PowerShell/issues/5432)
+### <a name="skip-null-element-check-for-collections-with-a-value-type-element-type-5432httpsgithubcompowershellpowershellissues5432"></a>Hoppa över null-Elements kontroll för samlingar med en värde typs element typ [#5432](https://github.com/PowerShell/PowerShell/issues/5432)
 
-For the `Mandatory` parameter and `ValidateNotNull` and `ValidateNotNullOrEmpty` attributes, skip the null-element check if the collection's element type is value type.
+För parametern `Mandatory` och `ValidateNotNull` och `ValidateNotNullOrEmpty` attribut, hoppar du över värdet null-element om samlingens element typ är värdetyp.
 
-### <a name="change-outputencoding-to-use-utf-8-nobom-encoding-rather-than-ascii-5369httpsgithubcompowershellpowershellissues5369"></a>Change `$OutputEncoding` to use `UTF-8 NoBOM` encoding rather than ASCII [#5369](https://github.com/PowerShell/PowerShell/issues/5369)
+### <a name="change-outputencoding-to-use-utf-8-nobom-encoding-rather-than-ascii-5369httpsgithubcompowershellpowershellissues5369"></a>Ändra `$OutputEncoding` att använda `UTF-8 NoBOM` encoding i stället för ASCII [#5369](https://github.com/PowerShell/PowerShell/issues/5369)
 
-The previous encoding, ASCII (7-bit), would result in incorrect alteration of the output in some cases. This change is to make `UTF-8 NoBOM` default, which preserves Unicode output with an encoding supported by most tools and operating systems.
+Föregående kodning, ASCII (7-bitars), resulterar i en felaktig ändring av utdata i vissa fall. Den här ändringen är att göra `UTF-8 NoBOM` standard, vilket bevarar Unicode-utdata med en kodning som stöds av de flesta verktyg och operativ system.
 
-### <a name="remove-allscope-from-most-default-aliases-5268httpsgithubcompowershellpowershellissues5268"></a>Remove `AllScope` from most default aliases [#5268](https://github.com/PowerShell/PowerShell/issues/5268)
+### <a name="remove-allscope-from-most-default-aliases-5268httpsgithubcompowershellpowershellissues5268"></a>Ta bort `AllScope` från de flesta Standardalias [#5268](https://github.com/PowerShell/PowerShell/issues/5268)
 
-To speed up scope creation, `AllScope` was removed from most default aliases. `AllScope` was left for a few frequently used aliases where the lookup was faster.
+För att påskynda skapandet av ett område, har `AllScope` tagits bort från de flesta Standardalias. `AllScope` lämnades för några vanliga alias där sökningen var snabbare.
 
-### <a name="-verbose-and--debug-no-longer-overrides-erroractionpreference-5113httpsgithubcompowershellpowershellissues5113"></a>`-Verbose` and `-Debug` no longer overrides `$ErrorActionPreference` [#5113](https://github.com/PowerShell/PowerShell/issues/5113)
+### <a name="-verbose-and--debug-no-longer-overrides-erroractionpreference-5113httpsgithubcompowershellpowershellissues5113"></a>`-Verbose` och `-Debug` inte längre åsidosätter `$ErrorActionPreference` [#5113](https://github.com/PowerShell/PowerShell/issues/5113)
 
-Previously, if `-Verbose` or `-Debug` were specified, it overrode the behavior of `$ErrorActionPreference`. With this change, `-Verbose` and `-Debug` no longer affect the behavior of `$ErrorActionPreference`.
+Tidigare, om `-Verbose` eller `-Debug` har angetts, overrode funktionen för `$ErrorActionPreference`. Med den här ändringen påverkar `-Verbose` och `-Debug` inte längre `$ErrorActionPreference`ens beteende.
 
-## <a name="cmdlet-changes"></a>Cmdlet changes
+## <a name="cmdlet-changes"></a>Cmdlet-ändringar
 
-### <a name="invoke-restmethod-doesnt-return-useful-info-when-no-data-is-returned-5320httpsgithubcompowershellpowershellissues5320"></a>Invoke-RestMethod doesn't return useful info when no data is returned. [#5320](https://github.com/PowerShell/PowerShell/issues/5320)
+### <a name="invoke-restmethod-doesnt-return-useful-info-when-no-data-is-returned-5320httpsgithubcompowershellpowershellissues5320"></a>Invoke-RestMethod returnerar inte värdefull information när inga data returneras. [#5320](https://github.com/PowerShell/PowerShell/issues/5320)
 
-When an API returns just `null`, Invoke-RestMethod was serializing this as the string `"null"` instead of `$null`. This change fixes the logic in `Invoke-RestMethod` to properly serialize a valid single value JSON `null` literal as `$null`.
+När ett API returnerar bara `null`, serialiserade Invoke-RestMethod detta som strängen `"null"` i stället för `$null`. Med den här ändringen åtgärdas logiken i `Invoke-RestMethod` för korrekt serialisering av ett giltigt JSON-`null` literalt värde som `$null`.
 
-### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Remove `-Protocol` from `*-Computer` cmdlets [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Ta bort `-Protocol` från `*-Computer`-cmdletar [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
-Due to issues with RPC remoting in CoreFX (particularly on non-Windows platforms) and ensuring a consistent remoting experience in PowerShell, the `-Protocol` parameter was removed from the `\*-Computer` cmdlets. DCOM is no longer supported for remoting. The following cmdlets only support WSMAN remoting:
+På grund av problem med RPC-fjärrkommunikation i CoreFX (särskilt på plattformar som inte är Windows) och säkerställer en konsekvent fjärrhantering i PowerShell, har parametern `-Protocol` tagits bort från `\*-Computer`-cmdlet: arna. DCOM stöds inte längre för fjärr kommunikation. Följande cmdletar stöder bara WSMAN-fjärr kommunikation:
 
-- Rename-Computer
-- Restart-Computer
-- Stop-Computer
+- Byt namn – dator
+- Starta om datorn
+- Stoppa – dator
 
-### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Remove `-ComputerName` from `*-Service` cmdlets [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
+### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Ta bort `-ComputerName` från `*-Service`-cmdletar [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
-In order to encourage the consistent use of PSRP, the `-ComputerName` parameter was removed from `*-Service` cmdlets.
+För att uppmuntra en konsekvent användning av PSRP har parametern `-ComputerName` tagits bort från `*-Service`-cmdletar.
 
-### <a name="fix-get-item--literalpath-ab-if-ab-doesnt-actually-exist-to-return-error-5197httpsgithubcompowershellpowershellissues5197"></a>Fix `Get-Item -LiteralPath a*b` if `a*b` doesn't actually exist to return error [#5197](https://github.com/PowerShell/PowerShell/issues/5197)
+### <a name="fix-get-item--literalpath-ab-if-ab-doesnt-actually-exist-to-return-error-5197httpsgithubcompowershellpowershellissues5197"></a>Korrigera `Get-Item -LiteralPath a*b` om `a*b` faktiskt inte finns för att returnera fel [#5197](https://github.com/PowerShell/PowerShell/issues/5197)
 
-Previously, `-LiteralPath` given a wildcard would treat it the same as `-Path` and if the wildcard found no files, it would silently exit. Correct behavior should be that `-LiteralPath` is literal so if the file doesn't exist, it should error. Change is to treat wildcards used with `-Literal` as literal.
+Tidigare skulle `-LiteralPath` med ett jokertecken behandla det på samma sätt som `-Path` och om jokertecken inte hittas skulle det leda till tyst slut. Korrekt beteende bör vara att `-LiteralPath` är Literal så om filen inte finns, bör den innehålla fel. Ändra är att hantera jokertecken som används med `-Literal` som literal.
 
-### <a name="import-csv-should-apply-pstypenames-upon-import-when-type-information-is-present-in-the-csv-5134httpsgithubcompowershellpowershellissues5134"></a>`Import-Csv` should apply `PSTypeNames` upon import when type information is present in the CSV [#5134](https://github.com/PowerShell/PowerShell/issues/5134)
+### <a name="import-csv-should-apply-pstypenames-upon-import-when-type-information-is-present-in-the-csv-5134httpsgithubcompowershellpowershellissues5134"></a>`Import-Csv` bör gälla `PSTypeNames` vid import när typ information finns i CSV- [#5134](https://github.com/PowerShell/PowerShell/issues/5134)
 
-Previously, objects exported using `Export-CSV` with `TypeInformation` imported with `ConvertFrom-Csv` were not retaining the type information. This change adds the type information to `PSTypeNames` member if available from the CSV file.
+Tidigare har objekt som exporter ATS med `Export-CSV` med `TypeInformation` som importer ATS med `ConvertFrom-Csv` inte bevaras av typ informationen. Den här ändringen lägger till typ informationen till `PSTypeNames` medlem om den är tillgänglig från CSV-filen.
 
-### <a name="-notypeinformation-should-be-default-on-export-csv-5131httpsgithubcompowershellpowershellissues5131"></a>`-NoTypeInformation` should be default on `Export-Csv` [#5131](https://github.com/PowerShell/PowerShell/issues/5131)
+### <a name="-notypeinformation-should-be-default-on-export-csv-5131httpsgithubcompowershellpowershellissues5131"></a>`-NoTypeInformation` ska vara standard på `Export-Csv` [#5131](https://github.com/PowerShell/PowerShell/issues/5131)
 
-This change was made to address customer feedback on the default behavior of `Export-CSV` to include type information.
+Den här ändringen gjordes för att lösa kundfeedback om standard beteendet för `Export-CSV` att inkludera typ information.
 
-Previously, the cmdlet would output a comment as the first line containing the type name of the object. The change is to suppress this by default as it's not understood by most tools. Use `-IncludeTypeInformation` to retain the previous behavior.
+Tidigare skulle cmdleten skriva en kommentar som den första raden som innehåller objektets typnamn. Ändringen är att ignorera detta som standard eftersom det inte tolkas av de flesta verktyg. Använd `-IncludeTypeInformation` för att behålla det tidigare beteendet.
 
-### <a name="web-cmdlets-should-warn-when--credential-is-sent-over-unencrypted-connections-5112httpsgithubcompowershellpowershellissues5112"></a>Web Cmdlets should warn when `-Credential` is sent over unencrypted connections [#5112](https://github.com/PowerShell/PowerShell/issues/5112)
+### <a name="web-cmdlets-should-warn-when--credential-is-sent-over-unencrypted-connections-5112httpsgithubcompowershellpowershellissues5112"></a>Webb-cmdletar ska varna när `-Credential` skickas via okrypterade anslutningar [#5112](https://github.com/PowerShell/PowerShell/issues/5112)
 
-When using HTTP, content including passwords are sent as clear-text. This change is to not allow this by default and return an error if credentials are being passed in an insecure manner. Users can bypass this by using the `-AllowUnencryptedAuthentication` switch.
+När du använder HTTP skickas innehåll inklusive lösen ord som klartext. Den här ändringen är att inte tillåta detta som standard och returnera ett fel om autentiseringsuppgifterna skickas på ett osäkert sätt. Användare kan kringgå detta genom att använda `-AllowUnencryptedAuthentication` växeln.
 
-## <a name="api-changes"></a>API changes
+## <a name="api-changes"></a>API-ändringar
 
-### <a name="remove-addtypecommandbase-class-5407httpsgithubcompowershellpowershellissues5407"></a>Remove `AddTypeCommandBase` class [#5407](https://github.com/PowerShell/PowerShell/issues/5407)
+### <a name="remove-addtypecommandbase-class-5407httpsgithubcompowershellpowershellissues5407"></a>Ta bort `AddTypeCommandBase` klass [#5407](https://github.com/PowerShell/PowerShell/issues/5407)
 
-The `AddTypeCommandBase` class was removed from `Add-Type` to improve performance. This class is only used by the Add-Type cmdlet and should not impact users.
+`AddTypeCommandBase`-klassen togs bort från `Add-Type` för att förbättra prestandan. Den här klassen används endast av cmdleten Add-Type och bör inte påverka användare.
 
-### <a name="unify-cmdlets-with-parameter--encoding-to-be-of-type-systemtextencoding-5080httpsgithubcompowershellpowershellissues5080"></a>Unify cmdlets with parameter `-Encoding` to be of type `System.Text.Encoding` [#5080](https://github.com/PowerShell/PowerShell/issues/5080)
+### <a name="unify-cmdlets-with-parameter--encoding-to-be-of-type-systemtextencoding-5080httpsgithubcompowershellpowershellissues5080"></a>Förena cmdlets med parameter `-Encoding` att vara av typen `System.Text.Encoding` [#5080](https://github.com/PowerShell/PowerShell/issues/5080)
 
-The `-Encoding` value `Byte` has been removed from the filesystem provider cmdlets. A new parameter, `-AsByteStream`, is now used to specify that a byte stream is required as input or that the output is a stream of bytes.
+`-Encoding` värde `Byte` har tagits bort från cmdletarna för fil Systems Provider. En ny parameter, `-AsByteStream`, används nu för att ange att en byte-dataström krävs som indata eller att utdata är en data ström i byte.
 
-### <a name="add-better-error-message-for-empty-and-null--uformat-parameter-5055httpsgithubcompowershellpowershellissues5055"></a>Add better error message for empty and null `-UFormat` parameter [#5055](https://github.com/PowerShell/PowerShell/issues/5055)
+### <a name="add-better-error-message-for-empty-and-null--uformat-parameter-5055httpsgithubcompowershellpowershellissues5055"></a>Lägg till bättre fel meddelande för Tom och null `-UFormat` parameter [#5055](https://github.com/PowerShell/PowerShell/issues/5055)
 
-Previously, when passing an empty format string to `-UFormat`, an unhelpful error message would appear. A more descriptive error has been added.
+När en tom format sträng skulle skickas till `-UFormat`visas ett fel meddelande om att ett fel meddelande visas. Ett mer beskrivande fel har lagts till.
 
-### <a name="clean-up-console-code-4995httpsgithubcompowershellpowershellissues4995"></a>Clean up console code [#4995](https://github.com/PowerShell/PowerShell/issues/4995)
+### <a name="clean-up-console-code-4995httpsgithubcompowershellpowershellissues4995"></a>Rensa konsol kod [#4995](https://github.com/PowerShell/PowerShell/issues/4995)
 
-The following features were removed as they are not supported in PowerShell Core, and there are no plans to add support as they exist for legacy reasons for Windows PowerShell: `-psconsolefile` switch and code, `-importsystemmodules` switch and code, and font changing code.
+Följande funktioner har tagits bort eftersom de inte stöds i PowerShell Core, och det finns inga planer på att lägga till stöd som de finns för äldre skäl för Windows PowerShell: `-psconsolefile` växel och kod, `-importsystemmodules` växlar och kod och kod för teckensnitts ändring.
 
-### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>Removed `RunspaceConfiguration` support [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
+### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>Har tagits bort `RunspaceConfiguration`-support [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
 
-Previously, when creating a PowerShell runspace programmatically using the API you could use the legacy [`RunspaceConfiguration`][runspaceconfig] or the newer [`InitialSessionState`][iss]. This change removed support for `RunspaceConfiguration` and only supports `InitialSessionState`.
+När du tidigare skapade en PowerShell-körnings utrymme via programmering med hjälp av API: et kan du använda den äldre [`RunspaceConfiguration`][runspaceconfig] eller den nyare [`InitialSessionState`][iss]. Den här ändringen tog bort stöd för `RunspaceConfiguration` och stöder bara `InitialSessionState`.
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
 
-### <a name="commandinvocationintrinsicsinvokescript-bind-arguments-to-input-instead-of-args-4923httpsgithubcompowershellpowershellissues4923"></a>`CommandInvocationIntrinsics.InvokeScript` bind arguments to `$input` instead of `$args` [#4923](https://github.com/PowerShell/PowerShell/issues/4923)
+### <a name="commandinvocationintrinsicsinvokescript-bind-arguments-to-input-instead-of-args-4923httpsgithubcompowershellpowershellissues4923"></a>`CommandInvocationIntrinsics.InvokeScript` binda argument till `$input` i stället för `$args` [#4923](https://github.com/PowerShell/PowerShell/issues/4923)
 
-An incorrect position of a parameter resulted in the args passed as input instead of as args.
+En felaktig position av en parameter resulterade i argumenten som angavs som indatamängd i stället för som argument.
 
-### <a name="remove-unsupported--showwindow-switch-from-get-help-4903httpsgithubcompowershellpowershellissues4903"></a>Remove unsupported `-showwindow` switch from `Get-Help` [#4903](https://github.com/PowerShell/PowerShell/issues/4903)
+### <a name="remove-unsupported--showwindow-switch-from-get-help-4903httpsgithubcompowershellpowershellissues4903"></a>Ta bort `-showwindow` växel från `Get-Help` som inte stöds [#4903](https://github.com/PowerShell/PowerShell/issues/4903)
 
-`-showwindow` relies on WPF, which is not supported on CoreCLR.
+`-showwindow` är beroende av WPF, vilket inte stöds på CoreCLR.
 
-### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866httpsgithubcompowershellpowershellissues4866"></a>Allow * to be used in registry path for `Remove-Item` [#4866](https://github.com/PowerShell/PowerShell/issues/4866)
+### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866httpsgithubcompowershellpowershellissues4866"></a>Tillåt att * används i register Sök väg för `Remove-Item` [#4866](https://github.com/PowerShell/PowerShell/issues/4866)
 
-Previously, `-LiteralPath` given a wildcard would treat it the same as `-Path` and if the wildcard found no files, it would silently exit. Correct behavior should be that `-LiteralPath` is literal so if the file doesn't exist, it should error. Change is to treat wildcards used with `-Literal` as literal.
+Tidigare skulle `-LiteralPath` med ett jokertecken behandla det på samma sätt som `-Path` och om jokertecken inte hittas skulle det leda till tyst slut. Korrekt beteende bör vara att `-LiteralPath` är Literal så om filen inte finns, bör den innehålla fel. Ändra är att hantera jokertecken som används med `-Literal` som literal.
 
-### <a name="fix-set-service-failing-test-4802httpsgithubcompowershellpowershellissues4802"></a>Fix `Set-Service` failing test [#4802](https://github.com/PowerShell/PowerShell/issues/4802)
+### <a name="fix-set-service-failing-test-4802httpsgithubcompowershellpowershellissues4802"></a>Korrigera `Set-Service` att testet inte fungerar [#4802](https://github.com/PowerShell/PowerShell/issues/4802)
 
-Previously, if `New-Service -StartupType foo` was used, `foo` was ignored and the service was created with some default startup type. This change is to explicitly throw an error for an invalid startup type.
+Tidigare, om `New-Service -StartupType foo` användes, ignorerades `foo` och tjänsten skapades med en typ av standard starttyp. Den här ändringen är att explicit utlösa ett fel för en ogiltig starttyp.
 
-### <a name="rename-isosx-to-ismacos-4700httpsgithubcompowershellpowershellissues4700"></a>Rename `$IsOSX` to `$IsMacOS` [#4700](https://github.com/PowerShell/PowerShell/issues/4700)
+### <a name="rename-isosx-to-ismacos-4700httpsgithubcompowershellpowershellissues4700"></a>Byt namn på `$IsOSX` till `$IsMacOS` [#4700](https://github.com/PowerShell/PowerShell/issues/4700)
 
-The naming in PowerShell should be consistent with our naming and conform to Apple's use of macOS instead of OSX. However, for readability and consistently we are staying with Pascal casing.
+Namngivningen i PowerShell bör vara konsekvent med vår namn och överensstämmer med Apples användning av macOS i stället för OSX. Men för att kunna läsa och ständigt kan vi hålla sig till Pascal-höljet.
 
-### <a name="make-error-message-consistent-when-invalid-script-is-passed-to--file-better-error-when-passed-ambiguous-argument-4573httpsgithubcompowershellpowershellissues4573"></a>Make error message consistent when invalid script is passed to -File, better error when passed ambiguous argument [#4573](https://github.com/PowerShell/PowerShell/issues/4573)
+### <a name="make-error-message-consistent-when-invalid-script-is-passed-to--file-better-error-when-passed-ambiguous-argument-4573httpsgithubcompowershellpowershellissues4573"></a>Gör fel meddelandet konsekvent när ogiltigt skript skickas till fil, vilket är ett bättre fel när ett tvetydigt argument har skickats [#4573](https://github.com/PowerShell/PowerShell/issues/4573)
 
-Change the exit codes of `pwsh.exe` to align with Unix conventions
+Ändra avslutnings koderna för `pwsh.exe` så att de överensstämmer med UNIX-konventioner
 
-### <a name="removal-of-localaccount-and-cmdlets-from--diagnostics-modules-4302httpsgithubcompowershellpowershellissues4302-4303httpsgithubcompowershellpowershellissues4303"></a>Removal of `LocalAccount` and cmdlets from  `Diagnostics` modules. [#4302](https://github.com/PowerShell/PowerShell/issues/4302) [#4303](https://github.com/PowerShell/PowerShell/issues/4303)
+### <a name="removal-of-localaccount-and-cmdlets-from--diagnostics-modules-4302httpsgithubcompowershellpowershellissues4302-4303httpsgithubcompowershellpowershellissues4303"></a>Borttagning av `LocalAccount` och cmdlets från `Diagnostics` moduler. [#4302](https://github.com/PowerShell/PowerShell/issues/4302) [#4303](https://github.com/PowerShell/PowerShell/issues/4303)
 
-Due to unsupported APIs, the `LocalAccounts` module and the `Counter` cmdlets in the `Diagnostics` module were removed until a better solution is found.
+På grund av API: er som inte stöds har `LocalAccounts`-modulen och `Counter`-cmdletar i modulen `Diagnostics` tagits bort tills en bättre lösning har hittats.
 
-### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Executing PowerShell script with bool parameter does not work [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
+### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Det går inte att köra PowerShell-skriptet med bool-parametern [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-Previously, using **powershell.exe** (now **pwsh.exe**) to execute a PowerShell script using `-File` provided no way to pass `$true`/`$false` as parameter values. Support for `$true`/`$false` as parsed values to parameters was added. Switch values are also supported as currently documented syntax doesn't work.
+Tidigare använde **PowerShell. exe** (nu **pwsh. exe**) för att köra ett powershell-skript med `-File` angav inget sätt att skicka `$true`/`$false` som parameter värden. Stöd för `$true`/`$false` som parsade värden till parametrar har lagts till. Växlings värden stöds också som för närvarande dokumenterad syntax fungerar inte.
 
-### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Remove `ClrVersion` property from `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
+### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Ta bort `ClrVersion` egenskap från `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
-The `ClrVersion` property of `$PSVersionTable` is not useful with CoreCLR, end users should not be using that value to determine compatibility.
+Egenskapen `ClrVersion` för `$PSVersionTable` är inte användbar med CoreCLR, slutanvändare ska inte använda det värdet för att fastställa kompatibiliteten.
 
-### <a name="change-positional-parameter-for-powershellexe-from--command-to--file-4019httpsgithubcompowershellpowershellissues4019"></a>Change positional parameter for `powershell.exe` from `-Command` to `-File` [#4019](https://github.com/PowerShell/PowerShell/issues/4019)
+### <a name="change-positional-parameter-for-powershellexe-from--command-to--file-4019httpsgithubcompowershellpowershellissues4019"></a>Ändra positions parameter för `powershell.exe` från `-Command` till `-File` [#4019](https://github.com/PowerShell/PowerShell/issues/4019)
 
-Enable shebang use of PowerShell on non-Windows platforms. This means on Unix based systems, you can make a script executable that would invoke PowerShell automatically rather than explicitly invoking `pwsh`. This also means that you can now do things like `powershell foo.ps1` or `powershell fooScript` without specifying `-File`. However, this change now requires that you explicitly specify `-c` or `-Command` when trying to do things like `powershell.exe Get-Command`.
+Aktivera Shebang användning av PowerShell på andra plattformar än Windows-plattformar. Det innebär att du kan göra en körbar skript fil som anropar PowerShell automatiskt i stället för att explicit anropa `pwsh`när du använder UNIX-baserade system. Det innebär också att du nu kan göra saker som `powershell foo.ps1` eller `powershell fooScript` utan att ange `-File`. Den här ändringen kräver dock att du uttryckligen anger `-c` eller `-Command` när du försöker göra saker som `powershell.exe Get-Command`.
 
-### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>Implement Unicode escape parsing [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
+### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>Implementera tolkning av Unicode-Escape [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
 
-`` `u####`` or `` `u{####}`` is converted to the corresponding Unicode character. To output a literal `` `u``, escape the backtick: ``` ``u```.
+`` `u####`` eller `` `u{####}`` konverteras till motsvarande Unicode-tecken. Om du vill mata ut en literal `` `u``kan du undanta bakticket: ``` ``u```.
 
-### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>Change `New-ModuleManifest` encoding to `UTF8NoBOM` on non-Windows platforms [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
+### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>Ändra `New-ModuleManifest` encoding till `UTF8NoBOM` på andra plattformar än Windows-plattformar [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 
-Previously, `New-ModuleManifest` creates psd1 manifests in UTF-16 with BOM, creating a problem for Linux tools. This breaking change changes the encoding of `New-ModuleManifest` to be UTF (no BOM) in non-Windows platforms.
+Tidigare skapade `New-ModuleManifest` psd1-manifest i UTF-16 med BOM, vilket skapar ett problem för Linux-verktyg. Den här avbrytande ändringen ändrar kodningen för `New-ModuleManifest` till UTF (ingen BOM) på andra plattformar än Windows-plattformar.
 
-### <a name="prevent-get-childitem-from-recursing-into-symlinks-1875-3780httpsgithubcompowershellpowershellissues3780"></a>Prevent `Get-ChildItem` from recursing into symlinks (#1875). [#3780](https://github.com/PowerShell/PowerShell/issues/3780)
+### <a name="prevent-get-childitem-from-recursing-into-symlinks-1875-3780httpsgithubcompowershellpowershellissues3780"></a>Förhindra att `Get-ChildItem` återkommer till symlinks (#1875). [#3780](https://github.com/PowerShell/PowerShell/issues/3780)
 
-This change brings `Get-ChildItem` more in line with the Unix `ls -r` and the Windows `dir /s` native commands. Like the mentioned commands, the cmdlet displays symbolic links to directories found during recursion, but does not recurse into them.
+Den här ändringen ger `Get-ChildItem` mer i rad med UNIX-`ls -r` och inbyggda Windows `dir /s`-kommandon. Precis som de nämnda kommandona visar cmdleten symboliska länkar till kataloger som hittades under rekursion, men rekursivt inte in dem.
 
-### <a name="fix-get-content--delimiter-to-not-include-the-delimiter-in-the-returned-lines-3706httpsgithubcompowershellpowershellissues3706"></a>Fix `Get-Content -Delimiter` to not include the delimiter in the returned lines [#3706](https://github.com/PowerShell/PowerShell/issues/3706)
+### <a name="fix-get-content--delimiter-to-not-include-the-delimiter-in-the-returned-lines-3706httpsgithubcompowershellpowershellissues3706"></a>Korrigera `Get-Content -Delimiter` att inte inkludera avgränsaren i de returnerade raderna [#3706](https://github.com/PowerShell/PowerShell/issues/3706)
 
-Previously, the output while using `Get-Content -Delimiter` was inconsistent and inconvenient as it required further processing of the data to remove the delimiter. This change removes the delimiter in returned lines.
+Tidigare var de utdata som användes när du använde `Get-Content -Delimiter` inkonsekventa och praktiska eftersom det krävde ytterligare bearbetning av data för att ta bort avgränsaren. Den här ändringen tar bort avgränsaren i returnerade rader.
 
-### <a name="implement-format-hex-in-c-3320httpsgithubcompowershellpowershellissues3320"></a>Implement Format-Hex in C# [#3320](https://github.com/PowerShell/PowerShell/issues/3320)
+### <a name="implement-format-hex-in-c-3320httpsgithubcompowershellpowershellissues3320"></a>Implementera format-hex i C# [#3320](https://github.com/PowerShell/PowerShell/issues/3320)
 
-The `-Raw` parameter is now a "no-op" (in that it does nothing). Going forward all of the output will be displayed with a true representation of numbers that includes all of the bytes for its type (what the `-Raw` parameter was formally doing prior to this change).
+Parametern `-Raw` är nu "No-OP" (i så fall inget). Om du fortsätter kommer alla utdata att visas med en sann representation av siffror som innehåller alla byte för dess typ (vilken `-Raw` parameter utfördes innan ändringen).
 
-### <a name="powershell-as-a-default-shell-doesnt-work-with-script-command-3319httpsgithubcompowershellpowershellissues3319"></a>PowerShell as a default shell doesn't work with script command [#3319](https://github.com/PowerShell/PowerShell/issues/3319)
+### <a name="powershell-as-a-default-shell-doesnt-work-with-script-command-3319httpsgithubcompowershellpowershellissues3319"></a>PowerShell som standard gränssnitt fungerar inte med skript kommandot [#3319](https://github.com/PowerShell/PowerShell/issues/3319)
 
-On Unix, it is a convention for shells to accept `-i` for an interactive shell and many tools expect this behavior (`script` for example, and when setting PowerShell as the default shell) and calls the shell with the `-i` switch. This change is breaking in that `-i` previously could be used as short hand to match `-inputformat`, which now needs to be `-in`.
+I UNIX är det en konvention för gränssnitt att acceptera `-i` för ett interaktivt gränssnitt och många verktyg förväntar sig detta beteende (`script` till exempel och när du ställer in PowerShell som standard gränssnitt) och anropar gränssnittet med `-i`-växeln. Den här ändringen delas upp i `-i` tidigare kunde användas som kort hand för att matcha `-inputformat`som nu måste vara `-in`.
 
-### <a name="typo-fix-in-get-computerinfo-property-name-3167httpsgithubcompowershellpowershellissues3167"></a>Typo fix in Get-ComputerInfo property name [#3167](https://github.com/PowerShell/PowerShell/issues/3167)
+### <a name="typo-fix-in-get-computerinfo-property-name-3167httpsgithubcompowershellpowershellissues3167"></a>Skriv åtgärd i get-ComputerInfo egenskaps namn [#3167](https://github.com/PowerShell/PowerShell/issues/3167)
 
-`BiosSerialNumber` was misspelled as `BiosSeralNumber` and has been changed to the correct spelling.
+`BiosSerialNumber` skrevs felstavat som `BiosSeralNumber` och har ändrats till rätt stavning.
 
-### <a name="add-get-stringhash-and-get-filehash-cmdlets-3024httpsgithubcompowershellpowershellissues3024"></a>Add `Get-StringHash` and `Get-FileHash` cmdlets [#3024](https://github.com/PowerShell/PowerShell/issues/3024)
+### <a name="add-get-stringhash-and-get-filehash-cmdlets-3024httpsgithubcompowershellpowershellissues3024"></a>Lägg till `Get-StringHash`-och `Get-FileHash`-cmdletar [#3024](https://github.com/PowerShell/PowerShell/issues/3024)
 
-This change is that some hash algorithms are not supported by CoreFX, therefore they are no longer available:
+Den här ändringen är att vissa hash-algoritmer inte stöds av CoreFX, vilket innebär att de inte längre är tillgängliga:
 
 - `MACTripleDES`
 - `RIPEMD160`
 
-### <a name="add-validation-on-get--cmdlets-where-passing-null-returns-all-objects-instead-of-error-2672httpsgithubcompowershellpowershellissues2672"></a>Add validation on `Get-*` cmdlets where passing $null returns all objects instead of error [#2672](https://github.com/PowerShell/PowerShell/issues/2672)
+### <a name="add-validation-on-get--cmdlets-where-passing-null-returns-all-objects-instead-of-error-2672httpsgithubcompowershellpowershellissues2672"></a>Lägg till verifiering på `Get-*`-cmdletar där skicka $null returnerar alla objekt i stället för fel [#2672](https://github.com/PowerShell/PowerShell/issues/2672)
 
-Passing `$null` to any of the following now throws an error:
+Att skicka `$null` till något av följande genererar nu ett fel:
 
 - `Get-Credential -UserName`
 - `Get-Event -SourceIdentifier`
@@ -265,30 +265,30 @@ Passing `$null` to any of the following now throws an error:
 - `Get-WmiObject -Class`
 - `Get-WmiObject -Property`
 
-### <a name="add-support-w3c-extended-log-file-format-in-import-csv-2482httpsgithubcompowershellpowershellissues2482"></a>Add support W3C Extended Log File Format in `Import-Csv` [#2482](https://github.com/PowerShell/PowerShell/issues/2482)
+### <a name="add-support-w3c-extended-log-file-format-in-import-csv-2482httpsgithubcompowershellpowershellissues2482"></a>Lägg till stöd för utökat logg fils format för W3C i `Import-Csv` [#2482](https://github.com/PowerShell/PowerShell/issues/2482)
 
-Previously, the `Import-Csv` cmdlet cannot be used to directly import the log files in W3C extended log format and additional action would be required. With this change, W3C extended log format is supported.
+Tidigare kan `Import-Csv`-cmdleten inte användas för att importera loggfilerna direkt i utökat logg format för W3C och ytterligare åtgärder krävs. Med den här ändringen stöds W3C Extended Log-formatet.
 
-### <a name="parameter-binding-problem-with-valuefromremainingarguments-in-ps-functions-2035httpsgithubcompowershellpowershellissues2035"></a>Parameter binding problem with `ValueFromRemainingArguments` in PS functions [#2035](https://github.com/PowerShell/PowerShell/issues/2035)
+### <a name="parameter-binding-problem-with-valuefromremainingarguments-in-ps-functions-2035httpsgithubcompowershellpowershellissues2035"></a>Parameter bindnings problem med `ValueFromRemainingArguments` i PS-funktioner [#2035](https://github.com/PowerShell/PowerShell/issues/2035)
 
-`ValueFromRemainingArguments` now returns the values as an array instead of a single value which itself is an array.
+`ValueFromRemainingArguments` returnerar nu värdena som en matris i stället för ett enda värde som är en matris.
 
-### <a name="buildversion-is-removed-from-psversiontable-1415httpsgithubcompowershellpowershellissues1415"></a>`BuildVersion` is removed from `$PSVersionTable` [#1415](https://github.com/PowerShell/PowerShell/issues/1415)
+### <a name="buildversion-is-removed-from-psversiontable-1415httpsgithubcompowershellpowershellissues1415"></a>`BuildVersion` tas bort från `$PSVersionTable` [#1415](https://github.com/PowerShell/PowerShell/issues/1415)
 
-Remove the `BuildVersion` property from `$PSVersionTable`. This property was tied to the Windows build version. Instead, we recommend that you use `GitCommitId` to retrieve the exact build version of PowerShell Core.
+Ta bort egenskapen `BuildVersion` från `$PSVersionTable`. Den här egenskapen är kopplad till Windows build-versionen. I stället rekommenderar vi att du använder `GitCommitId` för att hämta den exakta versionen av PowerShell Core.
 
-### <a name="changes-to-web-cmdlets"></a>Changes to Web Cmdlets
+### <a name="changes-to-web-cmdlets"></a>Ändringar av webb-cmdletar
 
-The underlying .NET API of the Web Cmdlets has been changed to `System.Net.Http.HttpClient`. This change provides many benefits. However, this change along with a lack of interoperability with Internet Explorer have resulted in several breaking changes within `Invoke-WebRequest` and `Invoke-RestMethod`.
+De underliggande .NET API: erna för webb-cmdletar har ändrats till `System.Net.Http.HttpClient`. Den här ändringen ger många fördelar. Men den här ändringen tillsammans med en brist på interoperabilitet med Internet Explorer har resulterat i flera större ändringar i `Invoke-WebRequest` och `Invoke-RestMethod`.
 
-- `Invoke-WebRequest` now supports basic HTML Parsing only. `Invoke-WebRequest` always returns a `BasicHtmlWebResponseObject` object. The `ParsedHtml` and `Forms` properties have been removed.
-- `BasicHtmlWebResponseObject.Headers` values are now `String[]` instead of `String`.
-- `BasicHtmlWebResponseObject.BaseResponse` is now a `System.Net.Http.HttpResponseMessage` object.
-- The `Response` property on Web Cmdlet exceptions is now a `System.Net.Http.HttpResponseMessage` object.
-- Strict RFC header parsing is now default for the `-Headers` and `-UserAgent` parameter. This can be bypassed with `-SkipHeaderValidation`.
-- `file://` and `ftp://` URI schemes are no longer supported.
-- `System.Net.ServicePointManager` settings are no longer honored.
-- There is currently no certificate based authentication available on macOS.
-- Use of `-Credential` over an `http://` URI will result in an error. Use an `https://` URI or supply the `-AllowUnencryptedAuthentication` parameter to suppress the error.
-- `-MaximumRedirection` now produces a terminating error when redirection attempts exceed the provided limit instead of returning the results of the last redirection.
-- In PowerShell 6.2, a change was made to default to UTF-8 encoding for JSON responses. When a charset is not supplied for a JSON response, the default encoding should be UTF-8 per RFC 8259.
+- `Invoke-WebRequest` stöder nu endast grundläggande HTML-parsning. `Invoke-WebRequest` returnerar alltid ett `BasicHtmlWebResponseObject`-objekt. Egenskaperna för `ParsedHtml` och `Forms` har tagits bort.
+- `BasicHtmlWebResponseObject.Headers` värden är nu `String[]` i stället för `String`.
+- `BasicHtmlWebResponseObject.BaseResponse` är nu ett `System.Net.Http.HttpResponseMessage`-objekt.
+- Egenskapen `Response` i Web cmdlet-undantag är nu ett `System.Net.Http.HttpResponseMessage` objekt.
+- Strikt rubrik tolkning för RFC är nu standard för `-Headers` och `-UserAgent` parameter. Detta kan kringgås med `-SkipHeaderValidation`.
+- `file://`-och `ftp://`-URI-scheman stöds inte längre.
+- `System.Net.ServicePointManager` inställningar inte längre används.
+- Det finns för närvarande ingen certifikatbaserad autentisering tillgänglig på macOS.
+- Om du använder `-Credential` över en `http://` URI resulterar det i ett fel. Använd en `https://`-URI eller ange parametern `-AllowUnencryptedAuthentication` för att ignorera felet.
+- `-MaximumRedirection` skapar nu ett avslutande fel när omdirigerings försöken överskrider den angivna gränsen i stället för att returnera resultatet av den senaste omdirigeringen.
+- I PowerShell 6,2 gjordes en ändring som standard till UTF-8-kodning för JSON-svar. Om ingen teckenuppsättning anges för ett JSON-svar ska standard kodningen vara UTF-8 per RFC 8259.

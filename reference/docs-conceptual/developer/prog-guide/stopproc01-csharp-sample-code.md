@@ -1,5 +1,5 @@
 ---
-title: StopProc01 (C#) Sample Code | Microsoft Docs
+title: StopProc01 (C#) exempel kod | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,17 +17,17 @@ ms.locfileid: "74417840"
 ---
 # <a name="stopproc01-c-sample-code"></a>StopProc01 (C#) – kodexempel
 
-Here is the complete C# code for the StopProc01 sample cmdlet.
+Här är den fullständiga C# koden för StopProc01-exempel-cmdleten.
 
 > [!NOTE]
-> You can download the C# (stopproc01.cs) source file for the Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> Du kan ladda ned C# (stopproc01.CS) käll filen för Stop-proc-cmdlet: en med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** .
 
 [!code-csharp[StopProcessSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample01/StopProcessSample01.cs#L11-L212 "StopProcessSample01.cs")]
 
 ## <a name="see-also"></a>Se även
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer ' s guide](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

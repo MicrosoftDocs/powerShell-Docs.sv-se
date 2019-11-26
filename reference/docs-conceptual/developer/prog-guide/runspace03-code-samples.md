@@ -1,5 +1,5 @@
 ---
-title: RunSpace03 Code Samples | Microsoft Docs
+title: RunSpace03-kod exempel | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,21 +17,21 @@ ms.locfileid: "74417989"
 ---
 # <a name="runspace03-code-samples"></a>RunSpace03 – kodexempel
 
-Here are the code samples for the runspace described in "Creating a Console Application That Runs a Specified Script".
+Här är kod exemplen för körnings utrymme som beskrivs i "skapa ett konsol program som kör ett angivet skript".
 
 > [!NOTE]
-> You can download the C# source file (runspace03.cs) and the VB.NET source file (runspace03.vb) for this sample using the Microsoft Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> Du kan ladda ned C# käll filen (runspace03.CS) och VB.net-källfilen (runspace03. VB) för det här exemplet med hjälp av Microsoft Windows Software Development Kit för Windows Vista och Microsoft .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** .
 
-For complete sample code, see the following topics.
+Fullständig exempel kod finns i följande avsnitt.
 
-| Språk |                                 Ämne                                 |
+| Språk |                                 Avsnitt                                 |
 | -------- | --------------------------------------------------------------------- |
-| C#       | [RunSpace03 (C#) Code Sample](./runspace03-csharp-code-sample.md)     |
-| VB.NET   | [RunSpace03 (VB.NET) Code Sample](./runspace03-vb-net-code-sample.md) |
+| C#       | [Kod exempelC#för RunSpace03 ()](./runspace03-csharp-code-sample.md)     |
+| VB.NET   | [Kod exempel för RunSpace03 (VB.NET)](./runspace03-vb-net-code-sample.md) |
 
 ## <a name="see-also"></a>Se även
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer ' s guide](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

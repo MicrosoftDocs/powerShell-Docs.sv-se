@@ -1,6 +1,6 @@
 ---
 title: Supportlängd för PowerShell Core
-description: Policies governing support for PowerShell Core
+description: Principer som styr support för PowerShell Core
 ms.date: 08/06/2018
 ms.openlocfilehash: 27738514fc84105a0339eafcdbb540b7d3790052
 ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
@@ -11,142 +11,142 @@ ms.locfileid: "74416299"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Supportlängd för PowerShell Core
 
-PowerShell Core is a distinct set of tools and components that is shipped, installed, and configured separately from Windows PowerShell. So, PowerShell Core isn't included in the Windows 7/8.1/10 or Windows Server licensing agreements.
+PowerShell Core är en distinkt uppsättning verktyg och komponenter som levereras, installeras och konfigureras separat från Windows PowerShell. Därför ingår inte PowerShell-kärnan i licens avtalen för Windows 7/8.1/10 eller Windows Server.
 
-However, PowerShell Core is supported under traditional Microsoft support agreements, including [Premier][], [Microsoft Enterprise Agreements][enterprise-agreement], and [Microsoft Software Assurance][assurance].
-You can also pay for [assisted support][] for PowerShell Core by filing a support request for your problem.
+PowerShell Core stöds dock i traditionella Microsofts support avtal, inklusive [Högsta][], [Microsoft Enterprise Agreement][enterprise-agreement]och [Microsoft Software Assurance][assurance].
+Du kan också betala för [assisterad support][] för PowerShell Core genom att skicka en support förfrågan om ditt problem.
 
-## <a name="community-support"></a>Community Support
+## <a name="community-support"></a>Community-support
 
-We also offer [community support][] on GitHub where you can file an issue, bug, or feature request.
-Also, you may find help from other members of the community in the Microsoft [PowerShell Tech Community][] or any of the forums listed in the community section of [PowerShell][pshub] hub page. We offer no guarantee there that the community will address or resolve your issue in a timely manner. If you have a problem that requires immediate attention, you should use the traditional, paid support options.
+Vi erbjuder också [Community-support][] på GitHub där du kan skicka ett problem, en bugg eller en funktions förfrågan.
+Du kan också få hjälp från andra medlemmar i communityn i Microsoft PowerShell- [PowerShell-Tech-community][] eller något av de forum som anges i avsnittet Community på sidan [PowerShell][pshub] -hubb. Vi erbjuder ingen garanti där communityn kommer att åtgärda problemet inom rimlig tid. Om du har ett problem som kräver omedelbar uppmärksamhet bör du använda de traditionella, avgiftsbelagda support alternativen.
 
-## <a name="lifecycle-of-powershell-core"></a>Lifecycle of PowerShell Core
+## <a name="lifecycle-of-powershell-core"></a>Livs cykel för PowerShell Core
 
-PowerShell Core is adopting the [Microsoft Modern Lifecycle Policy][modern]. This support lifecycle is intended to keep customers up-to-date with the latest versions.
+PowerShell Core antar [Microsofts moderna livs cykel policy][modern]. Den här support livs cykeln är avsedd att hålla kunderna uppdaterade med de senaste versionerna.
 
-The version 6.x branch of PowerShell Core will be updated approximately once every six months (examples: 6.0, 6.1, 6.2, etc.)
-
-> [!IMPORTANT]
-> You must update within six months after each new minor version release to continue receiving support.
-
-For example, if PowerShell Core 6.1 is released on July 1, 2018, you would be expected to update to PowerShell Core 6.1 by January 1, 2019 to maintain support.
+Grenen version 6. x av PowerShell Core kommer att uppdateras ungefär en gång var sjätte månad (exempel: 6,0, 6,1, 6,2 osv.)
 
 > [!IMPORTANT]
-> You must update within 30 days after each new patch version release to continue receiving support.
+> Du måste uppdatera inom sex månader efter att varje ny del versions version fortsätter att få support.
 
-For example, If you're running PowerShell Core 6.1 and 6.1.3 was released on February 19, 2019, you would be expected to update to PowerShell Core 6.1.3 by March 21, 2019, which is 30 days after the release to maintain support. If any fixes are found to be required, the fixes will be released in our next cumulative update.
+Om exempelvis PowerShell Core 6,1 lanseras den 1 juli 2018 förväntas du uppdatera till PowerShell Core 6,1 före den 1 januari 2019 för att underhålla supporten.
 
-The Modern Lifecycle Policy also requires that Microsoft give customers 12 months notice before discontinuing support for a product (that is, PowerShell Core).
+> [!IMPORTANT]
+> Du måste uppdatera inom 30 dagar efter att varje ny korrigerings version släpps för att fortsätta få support.
 
-Eventually, we expect PowerShell Core will adopt the long-term servicing approach. In this servicing approach, we would require only servicing and security updates to stay in support on a specific branch/version of 6.x.
+Om du till exempel kör PowerShell Core 6,1 och 6.1.3 släpptes den 19 februari 2019 förväntas du uppdatera till PowerShell Core 6.1.3 senast 21 mars 2019, vilket är 30 dagar efter att stödet har släppts. Om det finns några korrigeringar som krävs kommer korrigeringarna att lanseras i nästa kumulativa uppdatering.
 
-## <a name="supported-platforms"></a>Supported platforms
+Den moderna livs cykel policyn kräver också att Microsoft ger kunderna tolv månaders varsel innan de kan avbryta supporten för en produkt (dvs. PowerShell Core).
 
-To confirm if your platform and version of PowerShell Core are officially supported, see the following table.
+Slutligen förväntar vi sig att PowerShell Core kommer att anta den långsiktiga etablerings metoden. I den här underhålls metoden behöver vi bara underhålla och uppdatera säkerhets uppdateringar för att hålla stöd för en speciell gren/version av 6. x.
 
-Our community has also contributed packages for some platforms, but they aren't officially supported. These packages are marked as `Community` in the table.
+## <a name="supported-platforms"></a>Plattformar som stöds
 
-Platforms listed as `Experimental` aren't officially supported, but are available for experimentation and feedback.
+För att bekräfta om din plattform och version av PowerShell Core stöds officiellt, se följande tabell.
+
+Vår community har också bidragit med paket för vissa plattformar, men de stöds inte officiellt. Dessa paket markeras som `Community` i tabellen.
+
+Plattformar som anges som `Experimental` stöds inte officiellt, men är tillgängliga för experimentering och feedback.
 
 | Plattform                                          |      6.2      |    7.0    |
 |---------------------------------------------------|:-------------:|:---------:|
-| Windows 7, 8.1, and 10                            |   Stöds   | Stöds |
+| Windows 7, 8,1 och 10                            |   Stöds   | Stöds |
 | Windows Server 2008 R2, 2012 R2, 2016             |   Stöds   | Stöds |
-| [Windows Server Semi-Annual Channel][semi-annual] |   Stöds   | Stöds |
-| Ubuntu 16.04 and 18.04                            |   Stöds   | Stöds |
-| Ubuntu 18.10 (via Snap Package)                   |   Community   | Community |
-| Ubuntu 19.04 (via Snap Package)                   |   Community   | Community |
+| [Windows Server, halvårs kanal][semi-annual] |   Stöds   | Stöds |
+| Ubuntu 16,04 och 18,04                            |   Stöds   | Stöds |
+| Ubuntu 18,10 (via Snap-paket)                   |   Community   | Community |
+| Ubuntu 19,04 (via Snap-paket)                   |   Community   | Community |
 | Debian 9                                          |   Stöds   | Stöds |
-| Debian 10                                         | Not Supported | Stöds |
+| Debian 10                                         | Stöds inte | Stöds |
 | CentOS 7                                          |   Stöds   | Stöds |
 | Red Hat Enterprise Linux 7                        |   Stöds   | Stöds |
-| openSUSE 42.3                                     |   Stöds   | Stöds |
+| openSUSE 42,3                                     |   Stöds   | Stöds |
 | Fedora 28                                         |   Stöds   | Stöds |
-| Fedora 29, 30                                     | Not Supported | Stöds |
-| Alpine 3.8                                        |   See Note    | See Note  |
-| Alpine 3.9 and 3.10                               | Not Supported | See Note  |
-| macOS 10.12+                                      |   Stöds   | Stöds |
-| Arch                                              |   Community   | Community |
+| Fedora 29, 30                                     | Stöds inte | Stöds |
+| Alpina 3,8                                        |   Se Obs!    | Se Obs!  |
+| Alpina 3,9 och 3,10                               | Stöds inte | Se Obs!  |
+| macOS 10.12 +                                      |   Stöds   | Stöds |
+| Båge                                              |   Community   | Community |
 | Raspbian                                          |   Community   | Community |
 | Kali                                              |   Community   | Community |
-| AppImage (works on multiple Linux platforms)      |   Community   | Community |
-| [Snap Package](https://snapcraft.io/powershell)   |   See note    | See note  |
+| AppImage (fungerar på flera Linux-plattformar)      |   Community   | Community |
+| [Snapin-paket](https://snapcraft.io/powershell)   |   Se Obs!    | Se Obs!  |
 
 > [!NOTE]
-> Snap packages are supported the same as the distribution you're running the package on.
+> Snapin-paket stöds på samma sätt som den distribution som du kör paketet på.
 
 > [!NOTE]
-> CIM, PowerShell Remoting, and DSC are not supported on Alpine.
+> CIM, PowerShell-fjärrkommunikation och DSC stöds inte på Alpina.
 
-## <a name="powershell-releases-end-of-life"></a>PowerShell releases end-of-life
+## <a name="powershell-releases-end-of-life"></a>Slut på livs längd för PowerShell-versioner
 
-Based on [Lifecycle of PowerShell Core](#lifecycle-of-powershell-core), the following table lists the dates when various releases will no longer be supported.
+Baserat på [livs cykeln för PowerShell Core](#lifecycle-of-powershell-core)visar följande tabell de datum då olika versioner inte längre kommer att stödjas.
 
-| Version | End-of-life                   |
+| Version | Livs längd                   |
 |---------|-------------------------------|
-| 6.0     | February 13, 2019             |
-| 6.1     | September 28, 2019            |
-| 6.2     | 6 months after 7 releases     |
+| 6.0     | 13 februari 2019             |
+| 6.1     | 28 september 2019            |
+| 6.2     | 6 månader efter 7 utgåvor     |
 
-## <a name="unsupported-platforms"></a>Unsupported platforms
+## <a name="unsupported-platforms"></a>Plattformar som inte stöds
 
-When a platform version reaches end-of-life as defined by the platform owner, PowerShell Core will also cease to support that platform version. Previously released packages will remain available for customers needing access but formal support and updates of any kind will no longer be provided.
+När en plattforms version når livs längd som definieras av plattforms ägaren, kommer PowerShell-kärnan också upphöra att stödja den plattforms versionen. Tidigare utgivna paket är fortfarande tillgängliga för kunder som behöver åtkomst men formell support och uppdateringar av någon typ kommer inte längre att tillhandahållas.
 
-So, the distribution owners ended support for the following versions and aren't supported.
+Distributions ägarna avslutade därför stödet för följande versioner och stöds inte.
 
-| Plattform | Version | End of Life                                                                                 |
+| Plattform | Version | Uttjänta                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 24      | [August 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
+| Fedora   | 24      | [2017 augusti](https://fedoramagazine.org/fedora-24-eol/)                                    |
 | Fedora   | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
-| Fedora   | 26      | [May 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| openSUSE | 42.1    | [May 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| openSUSE | 42.2    | [January 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
-| Ubuntu   | 16.10   | [July 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
-| Ubuntu   | 17.04   | [January 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
-| Ubuntu   | 17.10   | [July 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
-| Debian   | 8       | [June 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
+| Fedora   | 26      | [Maj 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
+| openSUSE | 42.1    | [Maj 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
+| openSUSE | 42,2    | [Januari 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| Ubuntu   | 16,10   | [Juli 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
+| Ubuntu   | 17,04   | [Januari 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 17,10   | [Juli 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
+| Debian   | 8       | [2018 juni](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
 | Fedora   | 27      | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
 | Ubuntu   | 14.04   | [April 2019](https://wiki.ubuntu.com/Releases)                                              |
 
-## <a name="notes-on-licensing"></a>Notes on licensing
+## <a name="notes-on-licensing"></a>Anteckningar om licensiering
 
-PowerShell Core is released under the [MIT license][]. Under this license, and without a paid support agreement, users are limited to [community support][]. With community support, Microsoft makes no guarantees of responsiveness or fixes.
+PowerShell-kärnan släpps under [MIT-licens][]. Under den här licensen och utan ett betalt support avtal är användare begränsade till [Community-support][]. Med community-support ger Microsoft inga garantier för svars tider eller korrigeringar.
 
-## <a name="windows-powershell-module"></a>Windows PowerShell Module
+## <a name="windows-powershell-module"></a>Windows PowerShell-modul
 
-Support for PowerShell Core doesn't include product modules, unless those modules explicitly support PowerShell Core. For example, using the `ActiveDirectory` module that ships as part of Windows Server is an unsupported scenario.
+Stöd för PowerShell Core inkluderar inte produktmallar, om inte dessa moduler uttryckligen stöder PowerShell-kärnan. Exempel: med `ActiveDirectory`-modulen som levereras som en del av Windows Server, är ett scenario som inte stöds.
 
-However, modules that don't explicitly support PowerShell Core may be compatible in some cases. By installing the [WindowsPSModulePath][] module, you can add the Windows PowerShell `PSModulePath` to your PowerShell Core `PSModulePath`.
+Moduler som inte uttryckligen stöder PowerShell-kärnan kan dock vara kompatibla i vissa fall. Genom att installera [WindowsPSModulePath][] -modulen kan du lägga till Windows PowerShell-`PSModulePath` till PowerShell Core-`PSModulePath`.
 
-First, install the **WindowsPSModulePath** module from the PowerShell Gallery:
+Först installerar du **WindowsPSModulePath** -modulen från PowerShell-galleriet:
 
 ```powershell
 # Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
-After installing this module, run the `Add-WindowsPSModulePath` cmdlet to add the Windows PowerShell `PSModulePath` to PowerShell Core:
+När du har installerat den här modulen kan du köra cmdleten `Add-WindowsPSModulePath` för att lägga till Windows PowerShell-`PSModulePath` till PowerShell-kärnan:
 
 ```powershell
 # Add this line to your profile if you always want Windows PowerShell PSModulePath
 Add-WindowsPSModulePath
 ```
 
-## <a name="experimental-features"></a>Experimental features
+## <a name="experimental-features"></a>Experimentella funktioner
 
-[Experimental features][] are limited to [community support](#community-support).
+[Experimentella funktioner][] är begränsade till [Community-support](#community-support).
 
-[Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
+[Högsta]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
-[community support]: https://github.com/powershell/powershell/issues
+[Community-support]: https://github.com/powershell/powershell/issues
 [pshub]: https://docs.microsoft.com/powershell
-[PowerShell Tech Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
-[assisted support]: https://support.microsoft.com/assistedsupportproducts
+[PowerShell-Tech-community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
+[assisterad support]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
-[MIT license]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
+[MIT-licens]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
-[Experimental features]: /powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6#experimentalfeatures
+[Experimentella funktioner]: /powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6#experimentalfeatures

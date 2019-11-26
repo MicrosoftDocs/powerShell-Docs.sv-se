@@ -1,7 +1,7 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
-title: PowerShell Desired State Configuration partial configurations
+keywords: DSC, PowerShell, konfiguration, installation
+title: PowerShell Desired State Configuration, delvis konfigurationer
 ms.openlocfilehash: 379ecf804329f318e9604c1af43a60a0e24551f1
 ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
@@ -9,21 +9,21 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74417737"
 ---
-# <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration partial configurations
+# <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration, delvis konfigurationer
 
-_Applies To: Windows PowerShell 5.0 and later._
+_Gäller för: Windows PowerShell 5,0 och senare._
 
-In PowerShell 5.0, Desired State Configuration (DSC) allows configurations to be delivered in fragments and from multiple sources. The Local Configuration Manager (LCM) on the target node puts the fragments together before applying them as a single configuration. This capability allows sharing control of configuration between teams or individuals. For example, if two or more teams of developers are collaborating on a service, they might each want to create configurations to manage their part of the service. Each of these configurations could be pulled from different pull servers, and they could be added at different stages of development. Partial configurations also allow different individuals or teams to control different aspects of configuring nodes without having to coordinate the editing of a single configuration document. For example, one team might be responsible for deploying a VM and operating system, while another team might deploy other applications and services on that VM. With partial configurations, each team can create its own configuration, without either of them being unnecessarily complicated.
+I PowerShell 5,0 tillåter önskad tillstånds konfiguration (DSC) konfigurationer att levereras i fragment och från flera källor. Den lokala Configuration Manager (LCM) på målnoden placerar fragmenten tillsammans innan de tillämpas som en enda konfiguration. Den här funktionen gör det möjligt att dela kontroll över konfigurationen mellan team eller individer. Om två eller flera team utvecklare samarbetar med en tjänst kan de exempelvis var och en vilja skapa konfigurationer för att hantera sin del av tjänsten. Var och en av dessa konfigurationer kan hämtas från olika hämtnings servrar och de kan läggas till i olika utvecklings steg. Partiella konfigurationer gör det också möjligt för olika individer eller team att styra olika aspekter av konfigurering av noder utan att behöva koordinera redigeringen av ett enda konfigurations dokument. Ett team kan till exempel vara ansvarigt för att distribuera en virtuell dator och ett operativ system, medan ett annat team kan distribuera andra program och tjänster på den virtuella datorn. Med del konfigurationer kan varje team skapa en egen konfiguration, utan att något av dem är onödigt komplicerat.
 
-You can use partial configurations in push mode, pull mode, or a combination of the two.
+Du kan använda partiella konfigurationer i push-läge, pull-läge eller en kombination av de två.
 
-## <a name="partial-configurations-in-push-mode"></a>Partial configurations in push mode
+## <a name="partial-configurations-in-push-mode"></a>Partiella konfigurationer i push-läge
 
-To use partial configurations in push mode, you configure the LCM on the target node to receive the partial configurations. Each partial configuration must be pushed to the target by using the `Publish-DSCConfiguration` cmdlet. The target node then combines the partial configuration into a single configuration, and you can apply the configuration by calling the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet.
+Om du vill använda partiella konfigurationer i push-läge konfigurerar du LCM på målnoden för att ta emot del konfigurationerna. Varje del konfiguration måste flyttas till målet med hjälp av `Publish-DSCConfiguration`-cmdleten. Målnoden kombinerar sedan den partiella konfigurationen till en enda konfiguration och du kan tillämpa konfigurationen genom att anropa cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) .
 
-### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Configuring the LCM for push-mode partial configurations
+### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Konfigurera LCM för ofullständiga konfigurationer i push-läge
 
-To configure the LCM for partial configurations in push mode, you create a **DSCLocalConfigurationManager** configuration with one **PartialConfiguration** block for each partial configuration. For more information about configuring the LCM, see [Windows Configuring the Local Configuration Manager](/powershell/scripting/dsc/metaConfig). The following example shows an LCM configuration that expects two partial configurations—one that deploys the OS, and one that deploys and configures SharePoint.
+Om du vill konfigurera LCM för partiella konfigurationer i push-läge, skapar du en **DSCLocalConfigurationManager** -konfiguration med ett **PartialConfiguration** -block för varje del konfiguration. Mer information om hur du konfigurerar LCM finns i [Windows konfigurera den lokala Configuration Manager](/powershell/scripting/dsc/metaConfig). I följande exempel visas en LCM-konfiguration som förväntar sig två delar av konfigurationer – en som distribuerar operativ systemet och en som distribuerar och konfigurerar SharePoint.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -48,16 +48,16 @@ configuration PartialConfigDemo
 PartialConfigDemo
 ```
 
-The **RefreshMode** for each partial configuration is set to "Push". The names of the **PartialConfiguration** blocks (in this case, "ServiceAccountConfig" and "SharePointConfig") must match exactly the names of the configurations that are pushed to the target node.
+**RefreshMode** för varje delvis konfiguration anges till "push". Namnen på **PartialConfiguration** -blocken (i det här fallet "ServiceAccountConfig" och "SharePointConfig") måste matcha exakt namnen på de konfigurationer som flyttas till målnoden.
 
 > [!Note]
-> The named of each **PartialConfiguration** block must match the actual name of the configuration as it is specified in the configuration script, not the name of the MOF file, which should be either the name of the target node or `localhost`.
+> Namnet på varje **PartialConfiguration** -block måste matcha det faktiska namnet på konfigurationen som det anges i konfigurations skriptet, inte namnet på MOF-filen, som antingen ska vara namnet på målnoden eller `localhost`.
 
-### <a name="publishing-and-starting-push-mode-partial-configurations"></a>Publishing and starting push-mode partial configurations
+### <a name="publishing-and-starting-push-mode-partial-configurations"></a>Publicera och starta partiella konfigurationer i push-läge
 
-You then call [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) for each configuration, passing the folders that contain the configuration documents as the **Path** parameters. `Publish-DSCConfiguration`places the configuration MOF files to the target nodes. After publishing both configurations, you can call `Start-DSCConfiguration –UseExisting` on the target node.
+Sedan anropar du [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) för varje konfiguration och skickar mapparna som innehåller konfigurations dokumenten som **Sök vägs** parametrar. `Publish-DSCConfiguration`placerar MOF-filerna för konfiguration på målnoden. När du har publicerat båda konfigurationerna kan du anropa `Start-DSCConfiguration –UseExisting` på målnoden.
 
-For example, if you have compiled the following configuration MOF documents on the authoring node:
+Om du till exempel har kompilerat följande konfiguration MOF-dokument på noden redigering:
 
 ```powershell
 Get-ChildItem -Recurse
@@ -84,7 +84,7 @@ Mode                LastWriteTime         Length Name
 -a----       11/17/2016   4:14 PM           1930 TestVM.mof
 ```
 
-You would publish and run the configurations as follows:
+Du publicerar och kör konfigurationerna på följande sätt:
 
 ```powershell
 Publish-DscConfiguration .\ServiceAccountConfig -ComputerName 'TestVM'
@@ -99,19 +99,19 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 ```
 
 > [!Note]
-> The user running the [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) cmdlet must have administrator privileges on the target node.
+> Användaren som kör cmdleten [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) måste ha administratörs behörighet på målnoden.
 
-## <a name="partial-configurations-in-pull-mode"></a>Partial configurations in pull mode
+## <a name="partial-configurations-in-pull-mode"></a>Partiella konfigurationer i pull-läge
 
-Partial configurations can be pulled from one or more pull servers (for more information about pull servers, see [Windows PowerShell Desired State Configuration Pull Servers](pullServer.md). To do this, you have to configure the LCM on the target node to pull the partial configurations, and name and locate the configuration documents properly on the pull servers.
+Partiella konfigurationer kan hämtas från en eller flera hämtnings servrar (mer information om hämtnings servrar finns i [Windows PowerShell Desired State Configuration pull-servrar](pullServer.md). Om du vill göra detta måste du konfigurera LCM på målnoden för att hämta de partiella konfigurationerna och namnge och hitta de konfigurations dokument som är korrekt på pull-servrarna.
 
-### <a name="configuring-the-lcm-for-pull-node-configurations"></a>Configuring the LCM for pull node configurations
+### <a name="configuring-the-lcm-for-pull-node-configurations"></a>Konfigurera LCM för pull-nodkonfigurationer
 
-To configure the LCM to pull partial configurations from a pull server, you define the pull server in either a **ConfigurationRepositoryWeb** (for an HTTP pull server) or **ConfigurationRepositoryShare** (for an SMB pull server) block. You then create **PartialConfiguration** blocks that refer to the pull server by using the **ConfigurationSource** property. You also need to create a **Settings** block to specify that the LCM uses pull mode, and to specify the **ConfigurationNames** or **ConfigurationID** that the pull server and target node use to identify the configurations. The following meta-configuration defines an HTTP pull server named CONTOSO-PullSrv and two partial configurations that use that pull server.
+Om du vill konfigurera LCM för att hämta partiella konfigurationer från en pull-server definierar du hämtnings servern i antingen en **ConfigurationRepositoryWeb** (för en http-pull-server) eller **CONFIGURATIONREPOSITORYSHARE** (för SMB pull server)-block. Sedan skapar du **PartialConfiguration** -block som refererar till pull-servern med hjälp av egenskapen **ConfigurationSource** . Du måste också skapa ett **inställnings** block för att ange att LCM använder pull-läge och för att ange **ConfigurationNames** eller **ConfigurationID** som pull-servern och mål-noden använder för att identifiera konfigurationerna. Följande meta-konfiguration definierar en HTTP pull-server med namnet CONTOSO-PullSrv och två ofullständiga konfigurationer som använder den hämtnings servern.
 
-For more information about configuring the LCM using **ConfigurationNames**, see [Setting up a pull client using configuration names](pullClientConfigNames.md). For information about configuring the LCM using **ConfigurationID**, see [Setting up a pull client using configuration ID](pullClientConfigID.md).
+Mer information om hur du konfigurerar LCM med hjälp av **ConfigurationNames**finns i [Konfigurera en pull-klient med hjälp av konfigurations namn](pullClientConfigNames.md). Information om hur du konfigurerar LCM med hjälp av **ConfigurationID**finns i [Konfigurera en pull-klient med konfigurations-ID](pullClientConfigID.md).
 
-#### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configuration-names"></a>Configuring the LCM for pull mode configurations using configuration names
+#### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configuration-names"></a>Konfigurera LCM för pull-läge-konfigurationer med hjälp av konfigurations namn
 
 ```powershell
 [DscLocalConfigurationManager()]
@@ -148,7 +148,7 @@ Configuration PartialConfigDemoConfigNames
 }
 ```
 
-#### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configurationid"></a>Configuring the LCM for pull mode configurations using ConfigurationID
+#### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configurationid"></a>Konfigurera LCM för pull-läge-konfigurationer med ConfigurationID
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -187,22 +187,22 @@ configuration PartialConfigDemoConfigID
 PartialConfigDemo
 ```
 
-You can pull partial configurations from more than one pull server—you would just need to define each pull server, and then refer to the appropriate pull server in each **PartialConfiguration** block.
+Du kan hämta delvis konfigurationer från fler än en pull-server – du behöver bara definiera varje pull-server och sedan referera till lämplig pull-server i varje **PartialConfiguration** -block.
 
-After creating the meta-configuration, you must run it to create a configuration document (a MOF file), and then call [Set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) to configure the LCM.
+När du har skapat meta-konfigurationen måste du köra den för att skapa ett konfigurations dokument (en MOF-fil) och sedan anropa [set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) för att konfigurera LCM.
 
-### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>Naming and placing the configuration documents on the pull server (ConfigurationNames)
+### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>Namnge och placera konfigurations dokumenten på pull-servern (ConfigurationNames)
 
-The partial configuration documents must be placed in the folder specified as the **ConfigurationPath** in the `web.config` file for the pull server (typically `C:\Program
+De partiella konfigurations dokumenten måste placeras i den mapp som anges som **ConfigurationPath** i `web.config`-filen för pull-servern (vanligt vis `C:\Program
 Files\WindowsPowerShell\DscService\Configuration`).
 
-#### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>Naming configuration documents on the pull server in PowerShell 5.1
+#### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>Namnge konfigurations dokument på hämtnings servern i PowerShell 5,1
 
-If you are pulling only one partial configuration from an individual pull server, the configuration document can have any name. If you are pulling more than one partial configuration from a pull server, the configuration document can be named either `<ConfigurationName>.mof`, where *ConfigurationName* is the name of the partial configuration, or `<ConfigurationName>.<NodeName>.mof`, where *ConfigurationName* is the name of the partial configuration, and *NodeName* is the name of the target node. This allows you to pull configurations from Azure Automation DSC pull server.
+Om du bara hämtar en delvis konfiguration från en enskild hämtnings Server kan konfigurations dokumentet ha ett namn. Om du hämtar fler än en partiell konfiguration från en pull-server, kan konfigurations dokumentet antingen namnges `<ConfigurationName>.mof`, där *ConfigurationName* är namnet på den partiella konfigurationen eller `<ConfigurationName>.<NodeName>.mof`, där *ConfigurationName* är namnet på den partiella konfigurationen och *nodnamn* är namnet på mål-noden. På så sätt kan du hämta konfigurationer från Azure Automation DSC-pull-server.
 
-#### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>Naming configuration documents on the pull server in PowerShell 5.0
+#### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>Namnge konfigurations dokument på hämtnings servern i PowerShell 5,0
 
-The configuration documents must be named as follows: `ConfigurationName.mof`, where *ConfigurationName* is the name of the partial configuration. For our example, the configuration documents should be named as follows:
+Konfigurations dokumenten måste ha följande namn: `ConfigurationName.mof`, där *ConfigurationName* är namnet på den partiella konfigurationen. I vårt exempel ska konfigurations dokumenten namnges enligt följande:
 
 ```
 ServiceAccountConfig.mof
@@ -211,9 +211,9 @@ SharePointConfig.mof
 SharePointConfig.mof.checksum
 ```
 
-### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Naming and placing the configuration documents on the pull server (ConfigurationID)
+### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Namnge och placera konfigurations dokumenten på pull-servern (ConfigurationID)
 
-The partial configuration documents must be placed in the folder specified as the **ConfigurationPath** in the `web.config` file for the pull server (typically `C:\Program Files\WindowsPowerShell\DscService\Configuration`). The configuration documents must be named as follows: `<ConfigurationName>.<ConfigurationID>.mof`, where _ConfigurationName_ is the name of the partial configuration and _ConfigurationID_ is the configuration ID defined in the LCM on the target node. For our example, the configuration documents should be named as follows:
+De partiella konfigurations dokumenten måste placeras i den mapp som anges som **ConfigurationPath** i `web.config`-filen för pull-servern (vanligt vis `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Konfigurations dokumenten måste namnges enligt följande: `<ConfigurationName>.<ConfigurationID>.mof`, där _ConfigurationName_ är namnet på den partiella konfigurationen och _ConfigurationID_ är det konfigurations-ID som definierats i LCM på målnoden. I vårt exempel ska konfigurations dokumenten namnges enligt följande:
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -222,15 +222,15 @@ SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
 SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
 ```
 
-### <a name="running-partial-configurations-from-a-pull-server"></a>Running partial configurations from a pull server
+### <a name="running-partial-configurations-from-a-pull-server"></a>Köra partiella konfigurationer från en hämtnings Server
 
-After the LCM on the target node has been configured, and the configuration documents have been created and properly named on the pull server, the target node will pull the partial configurations, combine them, and apply the resulting configuration at regular intervals as specified by the **RefreshFrequencyMins** property of the LCM. If you want to force a refresh, you can call the [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration) cmdlet, to pull the configurations, and then `Start-DSCConfiguration –UseExisting` to apply them.
+När LCM på mål noden har kon figurer ATS och konfigurations dokumenten har skapats och på rätt sätt har namngetts på hämtnings servern, hämtar målnoden de ofullständiga konfigurationerna, kombinerar dem och tillämpar den resulterande konfigurationen med jämna mellanrum som anges i egenskapen **RefreshFrequencyMins** för LCM. Om du vill framtvinga en uppdatering kan du anropa cmdleten [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration) för att hämta konfigurationerna och sedan `Start-DSCConfiguration –UseExisting` tillämpa dem.
 
-## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>Partial configurations in mixed push and pull modes
+## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>Partiella konfigurationer i blandade push-och pull-lägen
 
-You can also mix push and pull modes for partial configurations. That is, you could have one partial configuration that is pulled from a pull server, while another partial configuration is pushed. Specify the refresh mode for each partial configuration as described in the previous sections. For example, the following meta-configuration describes the same example, with the `ServiceAccountConfig` partial configuration in pull mode and the `SharePointConfig` partial configuration in push mode.
+Du kan också blanda push-och pull-lägen för partiella konfigurationer. Det innebär att du kan ha en delvis konfiguration som hämtas från en pull-server, medan en annan del av konfigurationen skickas. Ange uppdaterings läget för varje partiell konfiguration enligt beskrivningen i föregående avsnitt. Följande meta-konfiguration beskriver till exempel samma exempel, med `ServiceAccountConfig` partiell konfiguration i pull-läge och `SharePointConfig` partiell konfiguration i push-läge.
 
-### <a name="mixed-push-and-pull-modes-using-configurationnames"></a>Mixed push and pull modes using ConfigurationNames
+### <a name="mixed-push-and-pull-modes-using-configurationnames"></a>Blandade push-och pull-lägen med ConfigurationNames
 
 ```powershell
 [DscLocalConfigurationManager()]
@@ -269,7 +269,7 @@ Configuration PartialConfigDemoConfigNames
 }
 ```
 
-### <a name="mixed-push-and-pull-modes-using-configurationid"></a>Mixed push and pull modes using ConfigurationID
+### <a name="mixed-push-and-pull-modes-using-configurationid"></a>Blandade push-och pull-lägen med ConfigurationID
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -307,12 +307,12 @@ configuration PartialConfigDemo
 PartialConfigDemo
 ```
 
-Note that the **RefreshMode** specified in the Settings block is "Pull", but the **RefreshMode** for the `SharePointConfig` partial configuration is "Push".
+Observera att **RefreshMode** som anges i inställnings blocket är "pull", men **RefreshMode** för `SharePointConfig` partiella konfigurationen är "push".
 
-Name and locate the configuration MOF files as described above for their respective refresh modes.
-Call `Publish-DSCConfiguration` to publish the `SharePointConfig` partial configuration, and either wait for the `ServiceAccountConfig` configuration to be pulled from the pull server, or force a refresh by calling [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration).
+Namnge och leta upp MOF-filerna för konfigurationen enligt beskrivningen ovan för respektive uppdaterings läge.
+Anropa `Publish-DSCConfiguration` för att publicera `SharePointConfig` partiella konfigurationen och antingen väntar på att `ServiceAccountConfig` konfigurationen ska hämtas från hämtnings servern eller framtvinga en uppdatering genom att anropa [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration).
 
-## <a name="example-serviceaccountconfig-partial-configuration"></a>Example ServiceAccountConfig Partial Configuration
+## <a name="example-serviceaccountconfig-partial-configuration"></a>Exempel ServiceAccountConfig delvis konfiguration
 
 ```powershell
 Configuration ServiceAccountConfig
@@ -347,7 +347,7 @@ Configuration ServiceAccountConfig
 ServiceAccountConfig
 ```
 
-## <a name="example-sharepointconfig-partial-configuration"></a>Example SharePointConfig Partial Configuration
+## <a name="example-sharepointconfig-partial-configuration"></a>Exempel SharePointConfig delvis konfiguration
 
 ```powershell
 Configuration SharePointConfig
@@ -375,6 +375,6 @@ SharePointConfig
 
 ## <a name="see-also"></a>Se även
 
-[Windows PowerShell Desired State Configuration Pull Servers](pullServer.md)
+[Hämtnings servrar för önskad tillstånds konfiguration i Windows PowerShell](pullServer.md)
 
-[Windows Configuring the Local Configuration Manager](../managing-nodes/metaConfig.md)
+[Windows konfigurerar den lokala Configuration Manager](../managing-nodes/metaConfig.md)
