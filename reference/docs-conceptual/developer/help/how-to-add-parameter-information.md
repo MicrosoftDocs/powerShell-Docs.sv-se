@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: cf6c1442-60aa-477a-8f30-ab02b1b11039
 caps.latest.revision: 7
 ms.openlocfilehash: d4a5fc934a41b00f89862674e44e4540680674f7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353286"
 ---
 # <a name="how-to-add-parameter-information"></a>Lägga till parameterinformation
@@ -157,7 +157,7 @@ Innehållet i parameter avsnittet ska överensstämma med innehållet i SYNTAX-a
 
 Här är några saker att komma ihåg när du lägger till parametrar.
 
-- Attributen för parametern visas inte i alla vyer i hjälp avsnittet för cmdleten. De visas dock i en tabell som följer med parameter beskrivningen när användaren ombeds att använda den fullständiga (Get-Help \<cmdletname >-full) eller parametern (Get-Help \<cmdletname >-parameter) i avsnittet.
+- Attributen för parametern visas inte i alla vyer i hjälp avsnittet för cmdleten. De visas dock i en tabell som följer parameter beskrivningen när användaren ombeds att använda den fullständiga (Get-Help \<CmdletName >-full) eller parameter (Get-Help \<CmdletName >-parameter) i avsnittet.
 
 - Parameter beskrivningen är en av de viktigaste delarna i ett cmdlet-hjälp ämne. Beskrivningen måste vara kortfattad, samt grundlig. Kom också ihåg att om parameter beskrivningen blir för lång, t. ex. När två parametrar interagerar med varandra, kan du lägga till mer innehåll i avsnittet anteckningar i hjälp avsnittet för cmdleten.
 
@@ -173,9 +173,9 @@ Standardvärdet för parametern är det värde som används om parametern inte a
 
 Standardvärdet hjälper användaren att förstå effekterna av att inte använda-parametern. Beskriv standardvärdet särskilt, till exempel "aktuell katalog" eller "installations katalog för Windows PowerShell ($pshome)" för en valfri sökväg. Du kan också skriva en mening som beskriver standardvärdet, till exempel följande mening som används för parametern `PassThru`: "om PassThru inte anges skickar inte cmdleten objekt nedåt i pipelinen."  Eftersom värdet visas mittemot fält namnet "**Standardvärde**", behöver du inte ta med termen "standardvärde" i posten.
 
-Standardvärdet för parametern visas inte i alla vyer i hjälp avsnittet för cmdleten. Den visas dock i en tabell (tillsammans med parametervärdena) efter parameter beskrivningen när användaren ombeds att göra en fullständig (Get-Help \<cmdletname >-fullständig) eller parameter (Get-Help \<cmdletname >-parameter) i avsnittet.
+Standardvärdet för parametern visas inte i alla vyer i hjälp avsnittet för cmdleten. Den visas dock i en tabell (tillsammans med parametervärdena) efter parameter beskrivningen när användaren ombeds att använda den fullständiga (Get-Help \<CmdletName >-full) eller parameter (Get-Help \<CmdletName >-parameter) i avsnittet.
 
-Följande XML visar ett par med `<dev:defaultValue>`-taggar som har lagts till i noden `<command:parameter>`. Observera att standardvärdet följer omedelbart efter att du har stängt `</command:parameterValue>`-taggen (när parametervärdet har angetts) eller taggen avslutande `</maml:description>` i parameter beskrivningen. Namn.
+Följande XML visar ett par med `<dev:defaultValue>` taggar som har lagts till i noden `<command:parameter>`. Observera att standardvärdet följer omedelbart efter stängnings `</command:parameterValue>`s tag gen (när parametervärdet har angetts) eller taggen för stängnings `</maml:description>` i parameter beskrivningen. Namn.
 
 ```xml
 <command:parameters>
@@ -197,9 +197,9 @@ Lägg till värden för uppräknade typer
 
 Om parametern har flera värden eller värden för en uppräknings typ kan du använda en valfri \<dev: possibleValues >-nod. Med den här noden kan du ange ett namn och en beskrivning för flera värden.
 
-Tänk på att beskrivningarna av de uppräknade värdena inte visas i någon av de standardvyer som visas av cmdleten `Get-Help`, men andra hjälp visnings program kan visa det här innehållet i sina vyer.
+Tänk på att beskrivningarna av de uppräknade värdena inte visas i någon av de standardvyer som visas av `Get-Help`-cmdleten, men andra hjälp visnings program kan visa det här innehållet i sina vyer.
 
-Följande XML visar en `<dev:possibleValues>`-nod med två angivna värden.
+Följande XML visar en `<dev:possibleValues>` nod med två angivna värden.
 
 ```xml
 <command:parameters>

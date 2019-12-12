@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 7196f039-2f6a-41fd-b252-5b1623ebb9f9
 caps.latest.revision: 11
 ms.openlocfilehash: 09183a538c179f19347c3f1ed45b4ad38c2ca451
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356044"
 ---
 # <a name="label-element-for-tablecolumnheader-for-tablecontrol-format"></a>Label-element för TableColumnHeader för TableControl (format)
@@ -30,7 +30,7 @@ Konfigurations element (format) ViewDefinitions element (format) View element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet för elementet `Label`. Endast en etikett tillåts för varje kolumn.
+I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `Label`-elementet. Endast en etikett tillåts för varje kolumn.
 
 ### <a name="attributes"></a>Attribut
 
@@ -46,7 +46,7 @@ Ingen.
 |-------------|-----------------|
 |[TableColumnHeader-element för TableHeaders för TableControl (format)](./tablecolumnheader-element-format.md)|Definierar en etikett, bredd och justering för data i en kolumn i tabellen.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange texten som visas överst i kolumnen i tabellen. Det finns inga begränsade tecken för kolumn etiketten.
 
@@ -58,7 +58,7 @@ Mer information om komponenterna i en tabellvy finns i [skapa en tabellvy](./cre
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar ett `TableColumnHeader`-element vars etikett är "kolumn 1".
+I det här exemplet visas ett `TableColumnHeader`-element vars etikett är "kolumn 1".
 
 ```xml
 <TableColumnHeader>

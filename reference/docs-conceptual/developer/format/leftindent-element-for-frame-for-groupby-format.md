@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 72f272db-455f-44db-9ab4-6475390a83c4
 caps.latest.revision: 6
 ms.openlocfilehash: 907ee7d070e5ac02464dc58eb32504cb0721f663
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356030"
 ---
 # <a name="leftindent-element-for-frame-for-groupby-format"></a>LeftIndent-element för Frame för GroupBy (format)
@@ -29,7 +29,7 @@ Konfigurations element (format) ViewDefinitions element (format) visnings elemen
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och ett överordnat element för elementet `LeftIndent`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `LeftIndent`-elementet.
 
 ### <a name="attributes"></a>Attribut
 
@@ -45,7 +45,7 @@ Ingen.
 |-------------|-----------------|
 |[Ram element för CustomItem för GroupBy (format)](./frame-element-for-customitem-for-groupby-format.md)|Definierar hur data visas, till exempel att flytta data till vänster eller höger.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange antalet tecken som du vill flytta data till vänster.
 

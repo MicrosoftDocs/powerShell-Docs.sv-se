@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Syntax för Galleri sökning
 ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71329157"
 ---
 # <a name="gallery-search-syntax"></a>Syntax för Galleri sökning
@@ -26,7 +26,7 @@ Sök försöker hitta relevanta dokument som innehåller alla tre nyckelord och 
     "azure sql" deployment
 
 Ange en fras mellan citat tecken ("") ändra sökningen så att den söker efter den specifika frasen i stället för separata nyckelord.
-Matchning av dokument bör vanligt vis innehålla den exakta frasen "Azure SQL", inklusive variationer på versaler, t. ex. "Azure SQL" och innehåller vanligt vis ordet "Deployment".
+Matchning av dokument bör vanligt vis innehålla den exakta frasen "Azure SQL", inklusive variationer i versaler, t. ex. "Azure SQL" och innehåller vanligt vis ordet "Deployment".
 
 ## <a name="filtering-on-fields"></a>Filtrera på fält
 

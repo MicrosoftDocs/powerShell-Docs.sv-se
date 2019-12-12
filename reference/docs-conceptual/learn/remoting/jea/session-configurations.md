@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: Jea, PowerShell, säkerhet
 title: JEA
 ms.openlocfilehash: 650d0d11ef13605847d0822249e29e3491180629
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70017883"
 ---
 # <a name="jea-session-configurations"></a>JEA
@@ -22,7 +22,7 @@ För att registrera en JEA-slutpunkt måste du ange hur slut punkten ska konfigu
 - Vilken identitet JEA använder under försättsblad
 - Namnet på JEA-slutpunkten
 
-De här alternativen definieras i en PowerShell-datafil med ett `.pssc` tillägg som kallas för en PowerShell-sessions konfigurations fil. Konfigurations filen för sessionen kan redige ras med valfri text redigerare.
+De här alternativen definieras i en PowerShell-datafil med ett `.pssc`-tillägg som kallas för en PowerShell-sessions konfigurations fil. Konfigurations filen för sessionen kan redige ras med valfri text redigerare.
 
 Kör följande kommando för att skapa en tom mall konfigurations fil.
 
@@ -31,22 +31,22 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 ```
 
 > [!TIP]
-> Endast de vanligaste konfigurations alternativen ingår i mallfilen som standard. `-Full` Använd växeln för att inkludera alla tillämpliga inställningar i den genererade PSSC.
+> Endast de vanligaste konfigurations alternativen ingår i mallfilen som standard. Använd `-Full` växeln för att inkludera alla tillämpliga inställningar i den genererade PSSC.
 
-`-SessionType RestrictedRemoteServer` Fältet indikerar att konfigurationen av sessionen används av Jea för säker hantering. Sessioner av den här typen körs i nolanguage-läge och har bara åtkomst till följande standard kommandon (och alias):
+I fältet `-SessionType RestrictedRemoteServer` anges att konfigurationen används av JEA för säker hantering. Sessioner av den här typen körs i **Nolanguage** -läge och har bara åtkomst till följande standard kommandon (och alias):
 
 - Clear-Host (CLS, Clear)
 - Exit-PSSession (exsn, exit)
 - Get-Command (GCM)
 - Get-FormatData
-- Get – hjälp
+- Get-Help
 - Mått – objekt (mått)
 - Ut-standard
 - Select-Object (Välj)
 
 Det finns inga tillgängliga PowerShell-providrar eller externa program (körbara filer eller skript).
 
-Mer information om språk lägen finns i [about_Language_modes](/powershell/module/microsoft.powershell.core/about/about_language_modes).
+Mer information om språk lägen finns [about_Language_modes](/powershell/module/microsoft.powershell.core/about/about_language_modes).
 
 ### <a name="choose-the-jea-identity"></a>Välj identiteten JEA
 
@@ -132,7 +132,7 @@ Om du inte vill att data i användar enheten ska vara beständiga kan du konfigu
 
 Mer information om PSDrives finns i [Hantera PowerShell-enheter](/powershell/scripting/samples/managing-windows-powershell-drives).
 
-### <a name="role-definitions"></a>Roll definitioner
+### <a name="role-definitions"></a>Rolldefinitioner
 
 Roll definitioner i en sessions konfigurations fil definierar mappningen av **användare** till **roller**. Varje användare eller grupp som ingår i det här fältet beviljas behörighet till JEA-slutpunkten när den har registrerats.
 Varje användare eller grupp kan endast inkluderas som en nyckel i hash-tabellen en gång, men de kan tilldelas flera roller. Namnet på roll kapaciteten bör vara namnet på roll funktions filen, utan `.psrc` tillägget.
@@ -147,7 +147,7 @@ RoleDefinitions = @{
 
 Om en användare tillhör fler än en grupp i roll definitionen får de åtkomst till rollerna för var och en. När två roller beviljar åtkomst till samma cmdletar beviljas användaren den mest tillåtna parameter uppsättningen.
 
-När du anger lokala användare eller grupper i fältet roll definitioner, se till att använda dator namnet, inte **localhost** eller jokertecken. Du kan kontrol lera dator namnet genom att inspektera `$env:COMPUTERNAME` variabeln.
+När du anger lokala användare eller grupper i fältet roll definitioner, se till att använda dator namnet, inte **localhost** eller jokertecken. Du kan kontrol lera dator namnet genom att granska `$env:COMPUTERNAME` variabeln.
 
 ```powershell
 RoleDefinitions = @{
@@ -159,7 +159,7 @@ RoleDefinitions = @{
 
 Som du ser i exemplet ovan refereras roll funktioner av bas namnet för roll funktions filen. Bas namnet för en fil är fil namnet utan fil namns tillägget. Om flera roll funktioner är tillgängliga i systemet med samma namn, använder PowerShell den implicita Sök ordningen för att välja den effektiva roll kapacitets filen. JEA ger **inte** åtkomst till alla roll kapacitets filer med samma namn.
 
-Jea använder `$env:PSModulePath` miljövariabeln för att avgöra vilka sökvägar som ska genomsökas efter roll kapacitets filer. I var och en av dessa sökvägar söker JEA efter giltiga PowerShell-moduler som innehåller undermappen "RoleCapabilities". Precis som med importera moduler föredrar JEA roll funktioner som medföljer Windows till anpassade roll funktioner med samma namn.
+JEA använder miljövariabeln `$env:PSModulePath` för att avgöra vilka sökvägar som ska genomsökas efter roll kapacitets filer. I var och en av dessa sökvägar söker JEA efter giltiga PowerShell-moduler som innehåller undermappen "RoleCapabilities". Precis som med importera moduler föredrar JEA roll funktioner som medföljer Windows till anpassade roll funktioner med samma namn.
 
 För alla andra namn konflikter bestäms prioriteten i den ordning som Windows räknar upp filerna i katalogen. Ordningen är inte garanterat alfabetisk. Den första roll funktions filen som matchar det angivna namnet används för den anslutande användaren. Eftersom Sök ordningen för roll funktioner inte är deterministisk, rekommenderar vi **starkt** att roll funktionerna har unika fil namn.
 
@@ -188,15 +188,15 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ### <a name="other-properties"></a>Andra egenskaper
 
 Konfigurationsfiler för sessioner kan också göra allt en roll funktions fil kan göra, precis utan möjligheten att ge användarna åtkomst till olika kommandon. Om du vill ge alla användare åtkomst till vissa cmdletar, funktioner eller providrar kan du göra det direkt i konfigurations filen för sessionen.
-En fullständig lista över vilka egenskaper som stöds i konfigurations filen för sessionen `Get-Help New-PSSessionConfigurationFile -Full`körs.
+En fullständig lista över vilka egenskaper som stöds i konfigurations filen för sessionen får du genom att köra `Get-Help New-PSSessionConfigurationFile -Full`.
 
 ## <a name="testing-a-session-configuration-file"></a>Testa en konfigurations fil för sessionen
 
-Du kan testa en sessions konfiguration med cmdleten [test-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile) . Vi rekommenderar att du testar din konfigurations fil för `.pssc` sessionen om du har redigerat filen manuellt. Testet ser till att syntaxen är korrekt. Om en sessions konfigurations fil Miss lyckas med det här testet kan den inte registreras i systemet.
+Du kan testa en sessions konfiguration med cmdleten [test-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile) . Vi rekommenderar att du testar din konfigurations fil för sessionen om du har redigerat `.pssc`-filen manuellt. Testet ser till att syntaxen är korrekt. Om en sessions konfigurations fil Miss lyckas med det här testet kan den inte registreras i systemet.
 
 ## <a name="sample-session-configuration-file"></a>Exempel på konfigurations fil för sessionen
 
-I följande exempel visas hur du skapar och validerar en sessionshantering för JEA. Roll definitionerna skapas och lagras i `$roles` variabeln för bekvämlighet och läsbarhet. Det är inte nödvändigt att göra det.
+I följande exempel visas hur du skapar och validerar en sessionshantering för JEA. Roll definitionerna skapas och lagras i `$roles`-variabeln för bekvämlighet och läsbarhet. Det är inte nödvändigt att göra det.
 
 ```powershell
 $roles = @{

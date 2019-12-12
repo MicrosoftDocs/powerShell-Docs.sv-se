@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
 caps.latest.revision: 13
 ms.openlocfilehash: 81b1ed95669f51ba554f6f99031d098e239f02e0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356177"
 ---
 # <a name="parameter-attribute-declaration"></a>Deklaration av attributet Parameter
@@ -40,7 +40,7 @@ Attributet parameter identifierar en offentlig egenskap för cmdlet-klassen som 
 
 `ValueFromPipeline` ([system. Boolean](/dotnet/api/System.Boolean)) valfri namngiven parameter. `True` anger att cmdlet-parametern tar sitt värde från ett pipeline-objekt. Ange det här nyckelordet om cmdleten har åtkomst till det fullständiga objektet, inte bara en egenskap för objektet. Standardvärdet är `false`.
 
-`ValueFromPipelineByPropertyName` ([system. Boolean](/dotnet/api/System.Boolean)) valfri namngiven parameter. `True` anger att cmdlet-parametern tar värdet från en egenskap för ett pipeline-objekt som har antingen samma namn eller samma alias som denna parameter. Om till exempel cmdleten har en `Name`-parameter och pipelinen också har en `Name`-egenskap, tilldelas värdet för egenskapen `Name` till parametern `Name` för cmdleten. Standardvärdet är `false`.
+`ValueFromPipelineByPropertyName` ([system. Boolean](/dotnet/api/System.Boolean)) valfri namngiven parameter. `True` anger att cmdlet-parametern tar värdet från en egenskap för ett pipeline-objekt som har antingen samma namn eller samma alias som denna parameter. Om till exempel cmdleten har en `Name`-parameter och pipelinen också har en `Name` egenskap, tilldelas värdet för egenskapen `Name` till `Name`-parametern för cmdleten. Standardvärdet är `false`.
 
 `ValueFromRemainingArguments` ([system. Boolean](/dotnet/api/System.Boolean)) valfri namngiven parameter. `True` anger att cmdlet-parametern accepterar alla återstående argument som skickas till cmdleten. Standardvärdet är `false`.
 
@@ -60,7 +60,7 @@ Attributet parameter identifierar en offentlig egenskap för cmdlet-klassen som 
 
 - Om du anger positions parametrar begränsar du antalet positions parametrar i en parameter till mindre än fem. Positions parametrar behöver inte vara sammanhängande. Positionerna 5, 100 och 250 fungerar på samma sätt som positionerna 0, 1 och 2.
 
-- Om nyckelordet `Position` inte anges, måste cmdlet-parametern refereras av dess namn.
+- Om nyckelordet `Position` inte anges måste cmdlet-parametern refereras till med dess namn.
 
 - Tänk på följande när du använder parameter uppsättningar:
 

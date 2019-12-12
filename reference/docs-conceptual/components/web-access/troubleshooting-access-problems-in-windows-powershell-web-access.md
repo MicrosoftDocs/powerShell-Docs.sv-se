@@ -3,10 +3,10 @@ ms.date: 08/23/2017
 keywords: PowerShell, cmdlet
 title: fel sökning av åtkomst problem i Windows PowerShell-Webbåtkomst
 ms.openlocfilehash: 74cebbe418fecd21567ba9ecc7c561b51ac008fd
-ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71692239"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Felsökning av åtkomstproblem i Windows PowerShell-webbåtkomst
@@ -52,13 +52,13 @@ Detta kan inträffa om en användare har loggat in med ett domännamn som inneh�
 1. Installera och kör Internet Explorer 10
 1. Ändra inställningen för **dokument läge** i Internet Explorer till *IE10* -standarder.
    1. Öppna Utvecklarverktyg-konsolen genom att trycka på **F12**
-   1. I Internet Explorer 10 klickar du på **Webbläsarläge** och väljer sedan *Internet Explorer 10*.
+   1. I Internet Explorer 10 klickar du på **webb läsar läge**och väljer sedan *Internet Explorer 10*.
    1. Klicka på **dokument läge**och klicka sedan på *IE10* -standarder.
-   1. Tryck på **F12** igen för att stänga konsolen Utvecklingsverktyg.
+   1. Tryck på **F12** igen för att stänga utvecklarverktyg-konsolen.
 1. Inaktivera automatisk proxykonfiguration i Internet Explorer 10.
    1. Klicka på **verktyg**och sedan på **Internet alternativ**.
-   1. I dialogrutan **Internetalternativ** på fliken **Anslutningar** klickar du på **LAN-inställningar**.
-   1. Avmarkera kryssrutan **Automatisk identifiering av inställningar**. Klicka på **OK** och klicka sedan på **OK** igen för att stänga dialogrutan *Internetalternativ*.
+   1. I dialog rutan **Internet alternativ** på fliken **anslutningar** klickar du på LAN- **Inställningar**.
+   1. Avmarkera kryss rutan **Automatisk identifiering av inställningar** . Klicka på **OK**och sedan på **OK** igen för att stänga dialog rutan *Internet alternativ* .
 
 ## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>Det går inte att ansluta till en fjärrdator
 
@@ -80,7 +80,7 @@ Om förbättrad säkerhets konfiguration är aktive rad i Internet Explorer (IE 
 En mindre rekommenderad metod, på grund av säkerhets risker, är att inaktivera IE ESC.
 Du kan inaktivera IE ESC i panelen egenskaper på sidan för den lokala servern i Serverhanteraren.
 
-## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>Ett auktoriseringsfel inträffade. Kontrol lera att du har behörighet att ansluta till mål datorn.
+## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>Ett auktoriseringsfel inträffade. Kontrollera att du har behörighet att ansluta till måldatorn.
 
 Ovanstående fel meddelande visas vid försök att ansluta när Gateway-servern är mål datorn och även finns i en arbets grupp.
 
@@ -101,13 +101,13 @@ ComputerGroup | Server\_namn\\dator\_grupp<br/>Localhost\\dator\_grupp<br/>.\\da
 
 Parameter | Värde
 -- | --
-Datornamn | Fullständigt kvalificerat namn på gateway-server eller Localhost
+ComputerName | Fullständigt kvalificerat namn på gateway-server eller Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>Gateway-servern finns i en arbetsgrupp
 
 Parameter | Värde
 -- | --
-Datornamn | servernamn
+ComputerName | Servernamn
 
 ### <a name="gateway-credentials"></a>Gateway-autentiseringsuppgifter
 

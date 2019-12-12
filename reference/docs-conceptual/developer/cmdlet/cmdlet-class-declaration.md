@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
 ms.openlocfilehash: 979025ad5c34ab73dcc23d0e38ffb9acc431f15a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354889"
 ---
 # <a name="cmdlet-class-declaration"></a>Cmdlet-klassdeklaration
@@ -53,7 +53,7 @@ Följande kod är definitionen för en GetProc-cmdlet-klass. Observera att Pasca
 
 ## <a name="pascal-casing"></a>Pascal-hölje
 
-När du namnger cmdletar använder du Pascal-Skift läge. Till exempel visar `Get-Item`-och `Get-ItemProperty`-cmdlets det korrekta sättet att använda versaler när du namnger cmdlets.
+När du namnger cmdletar använder du Pascal-Skift läge. Till exempel visar cmdletarna `Get-Item` och `Get-ItemProperty` det korrekta sättet att använda versaler när du namnger cmdletar.
 
 ## <a name="see-also"></a>Se även
 

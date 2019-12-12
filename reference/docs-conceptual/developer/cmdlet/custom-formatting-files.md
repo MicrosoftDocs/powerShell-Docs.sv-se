@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 85d27545-8097-4010-9947-6d8b3ce2eac0
 caps.latest.revision: 15
 ms.openlocfilehash: 71c1c181058c5646c817b90d9832976a78c6c7de
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359417"
 ---
 # <a name="custom-formatting-files"></a>Anpassade formateringsfiler
@@ -40,7 +40,7 @@ Anpassad vy visar en anpassningsbar vy av objekt egenskaper eller skript Blocks 
 
 ## <a name="view-xml-elements"></a>Visa XML-element
 
-I följande exempel visas de XML-taggar som används för att definiera en tabellvy som innehåller två kolumner. [ViewDefinitions](../format/viewdefinitions-element-format.md) -elementet är behållar elementet för alla vyer som definierats i format filen. Elementet [View](../format/view-element-format.md) definierar den aktuella vyn för tabeller, listor, bred eller anpassad. I varje vy anger [Name](../format/name-element-for-view-format.md) -elementet namnet på vyn, [ViewSelectedBy](../format/viewselectedby-element-format.md) -elementet definierar de objekt som använder vyn och de olika kontroll elementen (till exempel elementet `TableControl`) definierar formatet för vyn.
+I följande exempel visas de XML-taggar som används för att definiera en tabellvy som innehåller två kolumner. [ViewDefinitions](../format/viewdefinitions-element-format.md) -elementet är behållar elementet för alla vyer som definierats i format filen. Elementet [View](../format/view-element-format.md) definierar den aktuella vyn för tabeller, listor, bred eller anpassad. I varje vy anger [Name](../format/name-element-for-view-format.md) -elementet namnet på vyn, [ViewSelectedBy](../format/viewselectedby-element-format.md) -elementet definierar de objekt som använder vyn och de olika kontroll elementen (till exempel `TableControl` element) definierar formatet för vyn.
 
 ```xml
 ViewDefinitions

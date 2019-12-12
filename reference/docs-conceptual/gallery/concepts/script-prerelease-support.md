@@ -4,10 +4,10 @@ contributor: keithb
 keywords: Galleri, PowerShell, cmdlet, psget
 title: För hands versioner av skript
 ms.openlocfilehash: c0198c2f575d2c004949ccebab49d93ce54716be
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71329178"
 ---
 # <a name="prerelease-versions-of-scripts"></a>För hands versioner av skript
@@ -61,7 +61,7 @@ Hantering av för hands versioner av paket med PowerShellGet find-skript, instal
 De enda undantagen till detta i PowerShellGet-skript kommandon är get-InstalledScript och vissa fall med Uninstall-script.
 
 - Get-InstalledScript visar alltid för hands versions informationen automatiskt i versions strängen om den finns.
-- Uninstall-skriptet avinstallerar som standard den senaste versionen av ett skript om **ingen version** har angetts. Beteendet har inte ändrats. Men om en för hands version anges med `-RequiredVersion`, `-AllowPrerelease` krävs det.
+- Uninstall-skriptet avinstallerar som standard den senaste versionen av ett skript om **ingen version** har angetts. Beteendet har inte ändrats. Men om en för hands version anges med `-RequiredVersion`, krävs `-AllowPrerelease`.
 
 ## <a name="examples"></a>Exempel
 

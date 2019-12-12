@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: 'Konfigurera en pull-klient med konfigurations-ID: n i PowerShell 4,0'
 ms.openlocfilehash: 9259c624c8725f7d76f61e9ad7caa42e1bfa308c
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942785"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>Konfigurera en pull-klient med konfigurations-ID: n i PowerShell 4,0
@@ -27,7 +27,7 @@ Varje målnod kan konfigureras för att ladda ned konfigurationer, resurser och 
 
 Om du kör något av exemplen nedan skapas en ny mapp med namnet **PullClientConfigID** och en metaconfiguration MOF-fil placeras där. I det här fallet får MOF-filen metaconfiguration namnet `localhost.meta.mof`.
 
-Om du vill använda konfigurationen anropar du cmdleten **set-DscLocalConfigurationManager** med **sökvägen** inställd på platsen för MOF-filen för metaconfiguration. Exempel:
+Om du vill använda konfigurationen anropar du cmdleten **set-DscLocalConfigurationManager** med **sökvägen** inställd på platsen för MOF-filen för metaconfiguration. Till exempel:
 
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientConfigId –Verbose.
@@ -35,7 +35,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## <a name="configuration-id"></a>Konfigurations-ID
 
-I exemplen nedan anges egenskapen **ConfigurationID** för LCM till ett **GUID** som tidigare har skapats för detta ändamål. **ConfigurationID** är vad LCM använder för att hitta rätt konfiguration på hämtnings servern. MOF-konfigurationsfilen på hämtnings servern måste namnges `ConfigurationID.mof`, där *ConfigurationID* är värdet för egenskapen **ConfigurationID** för målnoden LCM. Mer information finns i [publicera konfigurationer till en pull-server (v4/V5)](publishConfigs.md).
+I exemplen nedan anges egenskapen **ConfigurationID** för LCM till ett **GUID** som tidigare har skapats för detta ändamål. **ConfigurationID** är vad LCM använder för att hitta rätt konfiguration på hämtnings servern. MOF-konfigurationsfilen på hämtnings servern måste namnges `ConfigurationID.mof`, där *ConfigurationID* är värdet för egenskapen **CONFIGURATIONID** för målnoden LCM. Mer information finns i [publicera konfigurationer till en pull-server (v4/V5)](publishConfigs.md).
 
 Du kan skapa ett slumpmässigt **GUID** med hjälp av exemplet nedan.
 

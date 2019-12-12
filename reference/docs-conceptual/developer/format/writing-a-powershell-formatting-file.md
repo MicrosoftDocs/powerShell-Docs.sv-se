@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 39acce45-5144-43ba-894d-a4ce782fa67d
 caps.latest.revision: 13
 ms.openlocfilehash: f89f0009972d5237d71cb8f0d1c53cd0ae614b67
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353412"
 ---
 # <a name="writing-a-powershell-formatting-file"></a>Skriva en PowerShell-formateringsfil
@@ -21,7 +21,7 @@ ms.locfileid: "72353412"
 
 ## <a name="in-this-section"></a>I detta avsnitt
 
-[Formaterar fil översikt](./formatting-file-overview.md) Beskriver vad en format fil är och de allmänna komponenterna i en formateringsinformation, inklusive vanliga funktioner som kan definieras i filen, de olika typer av format vyer som kan definieras för .NET-objekt och ett förenklat exempel på XML som används för att definiera en tabell v a.
+[Formaterar fil översikt](./formatting-file-overview.md) Beskriver vad en format fil är och de allmänna komponenterna i en formateringsinformation, inklusive vanliga funktioner som kan definieras i filen, de olika typer av format vyer som kan definieras för .NET-objekt och ett förenklat exempel på XML som används för att definiera en tabellvy.
 
 [Formatera fil koncept](./formatting-file-concepts.md) Innehåller information som du kan behöva känna till när du skapar egna formateringsattribut, till exempel de olika typer av vyer som du kan definiera och särskilda komponenter i dessa vyer.
 

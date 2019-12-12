@@ -4,10 +4,10 @@ contributor: manikb
 keywords: Galleri, PowerShell, cmdlet, psget
 title: Starta NuGet
 ms.openlocfilehash: 6d8f106bc3b8741203e87e4c097948a843f06d6e
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71329143"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Starta NuGet-providern och NuGet. exe
@@ -137,13 +137,13 @@ Kopiera de här mapparna och filen med en betrodd process till offline-datorerna
 
 ## <a name="manually-bootstrapping-nugetexe-to-support-publish-operations-on-a-machine-that-is-not-connected-to-the-internet"></a>Starta NuGet. exe manuellt för att stödja publicerings åtgärder på en dator som inte är ansluten till Internet
 
-Förutom processen att manuellt starta NuGet-providern, om datorn ska användas för att publicera moduler eller skript till ett privat galleri med hjälp av `Publish-Module` eller `Publish-Script` -cmdletar, krävs den binära körbara filen NuGet. exe.
+Förutom processen att manuellt starta NuGet-providern, om datorn ska användas för att publicera moduler eller skript till ett privat galleri med hjälp av `Publish-Module`-eller `Publish-Script`-cmdletar, krävs den binära körbara filen NuGet. exe.
 
 Det vanligaste användnings fallet för det här scenariot är när ett privat galleri är tillgängligt för att stödja en isolerad miljö. Det finns två alternativ för att hämta filen NuGet. exe.
 
 Ett alternativ är att starta en dator som är ansluten till Internet och kopiera filerna till de frånkopplade datorerna med en betrodd process. När den anslutna Internet-datorn har startats finns NuGet. exe-binärfilen i en av två mappar:
 
-Om cmdletarna `Publish-Script`ellerkördes med förhöjd behörighet (som administratör): `Publish-Module`
+Om `Publish-Module`-eller `Publish-Script`-cmdletar kördes med förhöjd behörighet (som administratör):
 
 ```powershell
 $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
@@ -155,11 +155,11 @@ Om cmdletarna kördes som en användare utan förhöjd behörighet:
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-Ett andra alternativ är att ladda ned NuGet. exe från NuGet.Org-webbplatsen: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads)När du väljer en liten mängd-version för produktions datorer kontrollerar du att den är senare än 2.8.5.208 och identifierar den version som har etiketten "rekommenderas". Kom ihåg att avblockera filen om den hämtades med hjälp av en webbläsare. Detta kan utföras med hjälp `Unblock-File` av cmdleten.
+Ett andra alternativ är att ladda ned NuGet. exe från NuGet.Org-webbplatsen: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) när du väljer en liten mängd-version för produktions datorer kontrollerar du att den är senare än 2.8.5.208 och identifierar versionen som har etiketten "rekommenderas". Kom ihåg att avblockera filen om den hämtades med hjälp av en webbläsare. Detta kan utföras med hjälp av `Unblock-File`-cmdleten.
 
-I båda fallen kan filen NuGet. exe kopieras till vilken plats som helst i `$env:path`, men standard platserna är:
+I båda fallen kan filen NuGet. exe kopieras till valfri plats i `$env:path`, men standard platserna är:
 
-Så här gör du den körbara filen tillgänglig så att `Publish-Module` alla `Publish-Script` användare kan använda och cmdlet: ar:
+Så här gör du den körbara filen tillgänglig så att alla användare kan använda `Publish-Module`-och `Publish-Script`-cmdlet: ar:
 
 ```powershell
 $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet

@@ -13,16 +13,16 @@ helpviewer_keywords:
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
 ms.openlocfilehash: 4475b3f5e15826efbe8bab867011985cd7e2e1ae
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359470"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>Godkända verb för PowerShell-kommandon
 
 PowerShell använder ett verb-Substantiv-par för namn på cmdlets och för deras härledda Microsoft .NET Framework-klasser.
-Till exempel används cmdleten `Get-Command` som tillhandahålls av PowerShell för att hämta alla kommandon som är registrerade i PowerShell.
+`Get-Command`-cmdleten som tillhandahålls av PowerShell används till exempel för att hämta alla kommandon som är registrerade i PowerShell.
 Verbets del av namnet identifierar den åtgärd som cmdleten utför.
 Substantiv delen av namnet identifierar den entitet som åtgärden utförs på.
 
@@ -61,23 +61,23 @@ Följande lista innehåller rikt linjer som du bör tänka på när du väljer v
 Följande liknande verb representerar olika åtgärder.
 
 ### <a name="new-vs-set"></a>Ny vs. Set
-Verbet `New` används för att skapa en ny resurs.
-Verbet `Set` används för att ändra en befintlig resurs, om den inte finns, till exempel `Set-Variable`-cmdlet.
+`New` verbet används för att skapa en ny resurs.
+`Set` verbet används för att ändra en befintlig resurs, om du vill kan du skapa resursen om den inte finns, till exempel `Set-Variable`-cmdlet.
 
 ### <a name="find-vs-search"></a>Sök vs. search
-Verbet `Find` används för att söka efter ett objekt.
-Verbet `Search` används för att skapa en referens till en resurs i en behållare.
+`Find` verbet används för att söka efter ett objekt.
+`Search` verbet används för att skapa en referens till en resurs i en behållare.
 
 ### <a name="get-vs-read"></a>Hämta kontra läsa
-Verbet `Get` används för att hämta en resurs, till exempel en fil.
-Verbet `Read` används för att hämta information från en källa, till exempel en fil.
+`Get` verbet används för att hämta en resurs, till exempel en fil.
+`Read` verbet används för att hämta information från en källa, till exempel en fil.
 
 ### <a name="invoke-vs-start"></a>Invoke vs. start
-Verbet `Invoke` används för att utföra en åtgärd som vanligt vis är en synkron åtgärd, till exempel köra ett kommando.
-Verbet `Start` används för att påbörja en åtgärd som vanligt vis är en asynkron åtgärd, till exempel starta en process.
+`Invoke` verbet används för att utföra en åtgärd som vanligt vis är en synkron åtgärd, till exempel köra ett kommando.
+`Start` verbet används för att påbörja en åtgärd som vanligt vis är en asynkron åtgärd, till exempel starta en process.
 
 ### <a name="ping-vs-test"></a>Ping mot test
-Använd verbet `Test`.
+Använd `Test` verbet.
 
 ## <a name="common-verbs"></a>Vanliga verb
 
@@ -86,11 +86,11 @@ I följande tabell visas de flesta av de definierade verben.
 
 |Verb (alias)|Åtgärd|Kommentar|
 |--------------------|------------|--------------|
-|[Lägg till](/dotnet/api/System.Management.Automation.VerbsCommon.Add) (a)|Lägger till en resurs i en behållare eller bifogar ett objekt till ett annat objekt. Till exempel lägger `Add-Content`-cmdlet: en till innehåll i en fil. Verbet är länkat till `Remove`.|För den här åtgärden ska du inte använda verb som Lägg till, bifoga, sammanfoga eller infoga.|
+|[Lägg till](/dotnet/api/System.Management.Automation.VerbsCommon.Add) (a)|Lägger till en resurs i en behållare eller bifogar ett objekt till ett annat objekt. Till exempel lägger `Add-Content`-cmdleten till innehåll i en fil. Verbet är länkat till `Remove`.|För den här åtgärden ska du inte använda verb som Lägg till, bifoga, sammanfoga eller infoga.|
 |[Rensa](/dotnet/api/System.Management.Automation.VerbsCommon.Clear) (cl)|Tar bort alla resurser från en behållare men tar inte bort behållaren. Till exempel tar cmdleten `Clear-Content` bort innehållet i en fil men tar inte bort filen.|För den här åtgärden ska du inte använda verb som flush, Erase, release, avmarkera, unset eller upphäver.|
 |[Stäng](/dotnet/api/System.Management.Automation.VerbsCommon.Close) (CS)|Ändrar status för en resurs så att den blir otillgänglig, otillgänglig eller oanvändbar. Verbet är länkat till `Open.`||
-|[Kopiera](/dotnet/api/System.Management.Automation.VerbsCommon.Copy) (CP)|Kopierar en resurs till ett annat namn eller till en annan behållare. Till exempel kan `Copy-Item`-cmdleten som används för att komma åt lagrade data kopiera ett objekt från en plats i data lagret till en annan plats.|För den här åtgärden ska du inte använda verb som duplicera, klona, replikera eller synkronisera.|
-|[RETUR](/dotnet/api/System.Management.Automation.VerbsCommon.Enter) (et)|Anger en åtgärd som gör det möjligt för användaren att flytta till en resurs. Till exempel placerar `Enter-PSSession`-cmdlet användaren i en interaktiv session. Verbet är länkat till `Exit`.|Använd inte verb som push eller Into för den här åtgärden.|
+|[Kopiera](/dotnet/api/System.Management.Automation.VerbsCommon.Copy) (CP)|Kopierar en resurs till ett annat namn eller till en annan behållare. Till exempel, `Copy-Item`-cmdleten som används för att komma åt lagrade data, kopierar ett objekt från en plats i data lagret till en annan plats.|För den här åtgärden ska du inte använda verb som duplicera, klona, replikera eller synkronisera.|
+|[RETUR](/dotnet/api/System.Management.Automation.VerbsCommon.Enter) (et)|Anger en åtgärd som gör det möjligt för användaren att flytta till en resurs. `Enter-PSSession`-cmdleten placerar till exempel användaren i en interaktiv session. Verbet är länkat till `Exit`.|Använd inte verb som push eller Into för den här åtgärden.|
 |[Avsluta](/dotnet/api/System.Management.Automation.VerbsCommon.Exit) (t ex)|Anger den aktuella miljön eller kontexten till den senast använda kontexten. Till exempel placerar `Exit-PSSession`-cmdlet användaren i sessionen som användes för att starta den interaktiva sessionen. Verbet är länkat till `Enter`.|För den här åtgärden ska du inte använda verb som pop eller out.|
 |[Sök](/dotnet/api/System.Management.Automation.VerbsCommon.Find) (fd)|Söker efter ett objekt i en behållare som är okänt, underförstådd, valfri eller angiven.||
 |[Format](/dotnet/api/System.Management.Automation.VerbsCommon.Format) (f)|Ordnar objekt i en angiven form eller layout.||
@@ -98,22 +98,22 @@ I följande tabell visas de flesta av de definierade verben.
 |[Dölj](/dotnet/api/System.Management.Automation.VerbsCommon.Hide) (h)|Gör en resurs okänd. Till exempel kan en-cmdlet som innehåller namnet Dölj verb dölja en tjänst från en användare. Verbet är länkat till `Show`.|Använd inte ett verb, till exempel block, för den här åtgärden.|
 |[Anslut](/dotnet/api/System.Management.Automation.VerbsCommon.Join) (j)|Kombinerar resurser till en resurs. Till exempel kombinerar cmdleten `Join-Path` en sökväg med en av dess underordnade sökvägar för att skapa en enskild sökväg. Verbet är länkat till `Split`.|För den här åtgärden ska du inte använda verb som kombinera, Unita, Connect eller Association.|
 |[Lås](/dotnet/api/System.Management.Automation.VerbsCommon.Lock) (LK)|Skyddar en resurs. Verbet är länkat till `Unlock`.|För den här åtgärden ska du inte använda verb som begränsa eller skydda.|
-|[Flytta](/dotnet/api/System.Management.Automation.VerbsCommon.Move) (m)|Flyttar en resurs från en plats till en annan. Till exempel flyttar `Move-Item`-cmdleten ett objekt från en plats i data lagret till en annan plats.|För den här åtgärden ska du inte använda verb som överföring, namn eller migrera.|
-|[Ny](/dotnet/api/System.Management.Automation.VerbsCommon.New) (n)|Skapar en resurs. (Verbet `Set` kan också användas när du skapar en resurs som innehåller data, till exempel `Set-Variable`-cmdlet.)|För den här åtgärden ska du inte använda verb som skapa, skapa, skapa, skapa eller allokera.|
+|[Flytta](/dotnet/api/System.Management.Automation.VerbsCommon.Move) (m)|Flyttar en resurs från en plats till en annan. `Move-Item`-cmdleten flyttar till exempel ett objekt från en plats i data lagret till en annan plats.|För den här åtgärden ska du inte använda verb som överföring, namn eller migrera.|
+|[Ny](/dotnet/api/System.Management.Automation.VerbsCommon.New) (n)|Skapar en resurs. (`Set` verbet kan också användas när du skapar en resurs som innehåller data, till exempel `Set-Variable`-cmdleten.)|För den här åtgärden ska du inte använda verb som skapa, skapa, skapa, skapa eller allokera.|
 |[Öppna](/dotnet/api/System.Management.Automation.VerbsCommon.Open) (OP)|Ändrar status för en resurs för att göra den tillgänglig, tillgänglig eller användbar. Verbet är länkat till `Close`.||
 |[Optimera](/dotnet/api/System.Management.Automation.VerbsCommon.Optimize) (om)|Ökar effektiviteten för en resurs.||
-|[Pop](/dotnet/api/System.Management.Automation.VerbsCommon.Pop) (pop)|Tar bort ett objekt från toppen av en stack. Till exempel ändrar cmdleten `Pop-Location` den aktuella platsen till den plats som senast skickades till stacken.||
-|[Push](/dotnet/api/System.Management.Automation.VerbsCommon.Push) (PU)|Lägger till ett objekt överst i en stack. Till exempel push-cmdleten `Push-Location` skickar den aktuella platsen till stacken.||
+|[Pop](/dotnet/api/System.Management.Automation.VerbsCommon.Pop) (pop)|Tar bort ett objekt från toppen av en stack. `Pop-Location`-cmdleten ändrar till exempel den aktuella platsen till den plats som senast skickades till stacken.||
+|[Push](/dotnet/api/System.Management.Automation.VerbsCommon.Push) (PU)|Lägger till ett objekt överst i en stack. Till exempel pushar `Push-Location` cmdleten den aktuella platsen till stacken.||
 |[Gör om](/dotnet/api/System.Management.Automation.VerbsCommon.Redo) (re)|Återställer en resurs till det tillstånd som har gjorts om.||
 |[Ta bort](/dotnet/api/System.Management.Automation.VerbsCommon.Remove) (r)|Tar bort en resurs från en behållare. Till exempel tar cmdleten `Remove-Variable` bort en variabel och dess värde. Verbet är länkat till `Add`.|För den här åtgärden ska du inte använda verb som rensa, klipp ut, ta bort, ignorera eller radera.|
-|[Byt namn](/dotnet/api/System.Management.Automation.VerbsCommon.Rename) (RN)|Ändrar namnet på en resurs. Till exempel är cmdleten `Rename-Item`, som används för att komma åt lagrade data, ändringar i namnet på ett objekt i data lagret.|Använd inte ett verb, till exempel Change, för den här åtgärden.|
+|[Byt namn](/dotnet/api/System.Management.Automation.VerbsCommon.Rename) (RN)|Ändrar namnet på en resurs. Till exempel är `Rename-Item`-cmdleten, som används för att komma åt lagrade data, ändra namnet på ett objekt i data lagret.|Använd inte ett verb, till exempel Change, för den här åtgärden.|
 |[Återställ](/dotnet/api/System.Management.Automation.VerbsCommon.Reset) (RS)|Återställer en resurs tillbaka till ursprungligt tillstånd.||
 |[Sök](/dotnet/api/System.Management.Automation.VerbsCommon.Search) (SR)|Skapar en referens till en resurs i en behållare.|För den här åtgärden ska du inte använda verb som Sök eller hitta.|
-|[Välj](/dotnet/api/System.Management.Automation.VerbsCommon.Select) (SC)|Söker efter en resurs i en behållare. Till exempel söker `Select-String`-cmdlet text i strängar och filer.|För den här åtgärden ska du inte använda verb som Sök eller hitta.|
-|[Set](/dotnet/api/System.Management.Automation.VerbsCommon.Set) (s)|Ersätter data på en befintlig resurs eller skapar en resurs som innehåller vissa data. Till exempel ändrar cmdleten `Set-Date` system klockan på den lokala datorn. (Verbet `New` kan också användas för att skapa en resurs.) Verbet är länkat till `Get`.|För den här åtgärden ska du inte använda verb som skriva, återställa, tilldela eller konfigurera.|
+|[Välj](/dotnet/api/System.Management.Automation.VerbsCommon.Select) (SC)|Söker efter en resurs i en behållare. Till exempel söker cmdleten `Select-String` efter text i strängar och filer.|För den här åtgärden ska du inte använda verb som Sök eller hitta.|
+|[Set](/dotnet/api/System.Management.Automation.VerbsCommon.Set) (s)|Ersätter data på en befintlig resurs eller skapar en resurs som innehåller vissa data. `Set-Date`-cmdleten ändrar till exempel system tiden på den lokala datorn. (`New` verbet kan också användas för att skapa en resurs.) Verbet är länkat till `Get`.|För den här åtgärden ska du inte använda verb som skriva, återställa, tilldela eller konfigurera.|
 |[Visa](/dotnet/api/System.Management.Automation.VerbsCommon.Show) (SH)|Gör en resurs synlig för användaren. Verbet är länkat till `Hide`.|För den här åtgärden ska du inte använda verb som visning eller framställning.|
 |[Hoppa över](/dotnet/api/System.Management.Automation.VerbsCommon.Skip) (SK)|Hoppar över en eller flera resurser eller punkter i en sekvens.|För den här åtgärden ska du inte använda ett verb som bypass eller hoppa.|
-|[Dela](/dotnet/api/System.Management.Automation.VerbsCommon.Split) (SL)|Separerar delar av en resurs. Till exempel returnerar cmdleten `Split-Path` olika delar av en sökväg. Verbet är länkat till `Join`.|Använd inte något annat verb för den här åtgärden.|
+|[Dela](/dotnet/api/System.Management.Automation.VerbsCommon.Split) (SL)|Separerar delar av en resurs. Till exempel returnerar `Split-Path`-cmdleten olika delar av en sökväg. Verbet är länkat till `Join`.|Använd inte något annat verb för den här åtgärden.|
 |[Steg](/dotnet/api/System.Management.Automation.VerbsCommon.Step) (st)|Flyttar till nästa punkt eller resurs i en sekvens.||
 |[Växel](/dotnet/api/System.Management.Automation.VerbsCommon.Switch) (SW)|Anger en åtgärd som växlar mellan två resurser, t. ex. för att ändra mellan två platser, ansvars områden eller tillstånd.||
 |[Ångra](/dotnet/api/System.Management.Automation.VerbsCommon.Undo) (UN)|Anger en resurs till sitt tidigare tillstånd.||
@@ -153,14 +153,14 @@ I följande tabell visas de flesta av de definierade verben.
 |[Expandera](/dotnet/api/System.Management.Automation.VerbsData.Expand) (en)|Återställer data för en resurs som har komprimerats till ursprungs läget. Verbet är länkat till `Compress`.|För den här åtgärden ska du inte använda verb som explodera eller expandera.|
 |[Exportera](/dotnet/api/System.Management.Automation.VerbsData.Export) (EP)|Kapslar in primär indata i ett beständigt data lager, till exempel en fil eller till ett Interchange Format. Verbet är länkat till `Import`.|För den här åtgärden ska du inte använda verb som extrahera eller säkerhetskopiera.|
 |[Grupp](/dotnet/api/System.Management.Automation.VerbsData.Group) (GP)|Ordnar eller associerar en eller flera resurser.|För den här åtgärden ska du inte använda verb som agg regering, arrangera, associera eller korrelera.|
-|[Importera](/dotnet/api/System.Management.Automation.VerbsData.Import) (IP)|Skapar en resurs från data som lagras i ett beständigt data lager (till exempel en fil) eller i ett Interchange Format. Till exempel importerar `Import-CSV`-cmdleten data från en fil med kommaavgränsade värden (CSV) till objekt som kan användas av andra cmdletar. Verbet är länkat till `Export`.|För den här åtgärden ska du inte använda verb som BulkLoad eller load.|
+|[Importera](/dotnet/api/System.Management.Automation.VerbsData.Import) (IP)|Skapar en resurs från data som lagras i ett beständigt data lager (till exempel en fil) eller i ett Interchange Format. `Import-CSV`-cmdlet importerar till exempel data från en fil med kommaavgränsade värden (CSV) till objekt som kan användas av andra cmdletar. Verbet är länkat till `Export`.|För den här åtgärden ska du inte använda verb som BulkLoad eller load.|
 |[Initiera](/dotnet/api/System.Management.Automation.VerbsData.Initialize) (in)|Förbereder en resurs för användning och ställer in den till ett standard tillstånd.|För den här åtgärden ska du inte använda verb som radera, init, förnya, återskapa, initiera om eller konfigurera.|
 |[Gräns](/dotnet/api/System.Management.Automation.VerbsData.Limit) (l)|Tillämpar begränsningar för en resurs.|Använd inte ett verb som kvot för den här åtgärden.|
 |[Sammanslagning](/dotnet/api/System.Management.Automation.VerbsData.Merge) (mg)|Skapar en enskild resurs från flera resurser.|För den här åtgärden ska du inte använda verb som kombinera eller delta.|
 |[Montera](/dotnet/api/System.Management.Automation.VerbsData.Mount) (MT)|Bifogar en namngiven entitet till en plats. Verbet är länkat till `Dismount`.|Använd inte verbet Connect för att utföra den här åtgärden.|
 |[Ut](/dotnet/api/System.Management.Automation.VerbsData.Out) (o)|Skickar data från miljön. Till exempel skickar `Out-Printer`-cmdleten data till en skrivare.||
 |[Publicera](/dotnet/api/System.Management.Automation.VerbsData.Publish) (PB)|Gör en resurs tillgänglig för andra. Verbet är länkat till `Unpublish`.|För den här åtgärden ska du inte använda verb som distribuera, frigör eller installera.|
-|[Återställ](/dotnet/api/System.Management.Automation.VerbsData.Restore) (RR)|Anger en resurs till ett fördefinierat tillstånd, till exempel ett tillstånd som anges av `Checkpoint`. Till exempel startar cmdleten `Restore-Computer` en system återställning på den lokala datorn.|För den här åtgärden ska du inte använda verb som Repair, Return, Undo eller Fix.|
+|[Återställ](/dotnet/api/System.Management.Automation.VerbsData.Restore) (RR)|Anger en resurs till ett fördefinierat tillstånd, till exempel ett tillstånd som anges av `Checkpoint`. `Restore-Computer`-cmdleten startar till exempel en system återställning på den lokala datorn.|För den här åtgärden ska du inte använda verb som Repair, Return, Undo eller Fix.|
 |[Spara](/dotnet/api/System.Management.Automation.VerbsData.Save) (sv)|Bevarar data för att undvika förlust.||
 |[Synkronisera](/dotnet/api/System.Management.Automation.VerbsData.Sync) (sy)|Säkerställer att två eller flera resurser är i samma tillstånd.|För den här åtgärden ska du inte använda verb som replikera, tvinga eller matcha.|
 |[Avpublicera](/dotnet/api/System.Management.Automation.VerbsData.Unpublish) (UB)|Gör en resurs otillgänglig för andra. Verbet är länkat till `Publish`.|För den här åtgärden ska du inte använda verb som avinstallera, Återställ eller Dölj.|
@@ -175,7 +175,7 @@ I följande tabell visas de flesta av de definierade verben.
 |--------------------|------------|--------------|
 |[Felsöka](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Debug) (dB)|Undersöker en resurs för att diagnosticera drifts problem.|Använd inte ett verb, till exempel diagnostisera, för den här åtgärden.|
 |[Mått](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Measure) (MS)|Identifierar resurser som används av en angiven åtgärd eller hämtar statistik om en resurs.|För den här åtgärden ska du inte använda verb som beräkna, Bestäm eller analysera.|
-|[Ping](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Ping) (PI)|Använd verbet `Test`.||
+|[Ping](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Ping) (PI)|Använd `Test` verbet.||
 |[Reparera](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Repair) (RP)|Återställer en resurs till ett användbart villkor|För den här åtgärden ska du inte använda verb som Fix eller Restore.|
 |[Lösning](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Resolve) (RV)|Mappar en kort representation av en resurs till en mer fullständig representation.|För den här åtgärden ska du inte använda verb som Expand eller Bestäm.|
 |[Testa](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Test) (t)|Verifierar åtgärden eller konsekvensen för en resurs.|För den här åtgärden ska du inte använda verb som diagnostisera, analysera, rädda eller verifiera.|
@@ -195,21 +195,21 @@ I följande tabell visas de flesta av de definierade verben.
 |[Bekräfta](/dotnet/api/System.Management.Automation.VerbsLifecycle.Confirm) (CN)|Bekräftar, verifierar eller verifierar status för en resurs eller process.|För den här åtgärden ska du inte använda verb som bekräfta, Godkänn, certifiera, verifiera eller verifiera.|
 |[Neka](/dotnet/api/System.Management.Automation.VerbsLifecycle.Deny) (DN)|Nekar, objekt, blockerar eller motsätter sig statusen för en resurs eller process.|För den här åtgärden ska du inte använda verb som blockera, objekt, neka eller avvisa.|
 |[Distribuera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Deploy) (DP)|Skickar ett program, en webbplats eller en lösning till ett fjärrmål [s] på ett sådant sätt att en konsument av lösningen kan komma åt den när distributionen har slutförts|Det här verbet har lagts till i PowerShell V6|
-|[Inaktivera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Disable) (d)|Konfigurerar en resurs till ett otillgängligt eller inaktivt tillstånd. Till exempel gör en Bryt punkt inaktiv i `Disable-PSBreakpoint`-cmdleten. Verbet är länkat till `Enable`.|Använd inte verb som stanna eller Dölj för den här åtgärden.|
-|[Aktivera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Enable) (e)|Konfigurerar en resurs till ett tillgängligt eller aktivt tillstånd. Till exempel gör en Bryt punkt aktiv i `Enable-PSBreakpoint`-cmdleten. Verbet är länkat till `Disable`.|För den här åtgärden ska du inte använda verb som start eller BEGIN.|
+|[Inaktivera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Disable) (d)|Konfigurerar en resurs till ett otillgängligt eller inaktivt tillstånd. `Disable-PSBreakpoint`-cmdleten gör till exempel en Bryt punkt inaktiv. Verbet är länkat till `Enable`.|Använd inte verb som stanna eller Dölj för den här åtgärden.|
+|[Aktivera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Enable) (e)|Konfigurerar en resurs till ett tillgängligt eller aktivt tillstånd. `Enable-PSBreakpoint`-cmdleten gör till exempel en Bryt punkt aktiv. Verbet är länkat till `Disable`.|För den här åtgärden ska du inte använda verb som start eller BEGIN.|
 |[Installera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Install) (är)|Placerar en resurs på en plats och eventuellt initierar den. Verbet är länkat till `Uninstall`.|För den här åtgärden ska du inte använda verb som installation.|
 |[Anropa](/dotnet/api/System.Management.Automation.VerbsLifecycle.Invoke) (i)|Utför en åtgärd, till exempel köra ett kommando eller en metod.|För den här åtgärden ska du inte använda verb som kör eller starta.|
 |[Registrera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Register) (RG)|Skapar en post för en resurs i en lagrings plats, till exempel en databas. Verbet är länkat till `Unregister`.||
 |[Begäran](/dotnet/api/System.Management.Automation.VerbsLifecycle.Request) (RQ)|Frågar efter en resurs eller ber om behörighet.||
-|[Starta om](/dotnet/api/System.Management.Automation.VerbsLifecycle.Restart) (RT)|Stoppar en åtgärd och startar sedan den igen. Till exempel stoppas cmdleten `Restart-Service` och startar sedan en tjänst.|Använd inte ett verb, till exempel Recycle, för den här åtgärden.|
-|[Fortsätt](/dotnet/api/System.Management.Automation.VerbsLifecycle.Resume) (ru)|Startar en åtgärd som har pausats. Till exempel startar cmdleten `Resume-Service` en tjänst som har pausats. Verbet är länkat till `Suspend`.||
-|[Starta](/dotnet/api/System.Management.Automation.VerbsLifecycle.Start) (sa)|Initierar en åtgärd. Till exempel startar cmdleten `Start-Service` en tjänst. Verbet är länkat till `Stop`.|För den här åtgärden ska du inte använda verb som starta, initiera eller starta.|
+|[Starta om](/dotnet/api/System.Management.Automation.VerbsLifecycle.Restart) (RT)|Stoppar en åtgärd och startar sedan den igen. Till exempel stoppas `Restart-Service`-cmdleten och startar sedan en tjänst.|Använd inte ett verb, till exempel Recycle, för den här åtgärden.|
+|[Fortsätt](/dotnet/api/System.Management.Automation.VerbsLifecycle.Resume) (ru)|Startar en åtgärd som har pausats. `Resume-Service`-cmdleten startar till exempel en tjänst som har pausats. Verbet är länkat till `Suspend`.||
+|[Starta](/dotnet/api/System.Management.Automation.VerbsLifecycle.Start) (sa)|Initierar en åtgärd. `Start-Service`-cmdleten startar till exempel en tjänst. Verbet är länkat till `Stop`.|För den här åtgärden ska du inte använda verb som starta, initiera eller starta.|
 |[Stoppa](/dotnet/api/System.Management.Automation.VerbsLifecycle.Stop) (SP)|Avvecklar en aktivitet. Verbet är länkat till `Start`.|För den här åtgärden ska du inte använda verb som End, Kill, Terminate eller Cancel.|
 |[Skicka](/dotnet/api/System.Management.Automation.VerbsLifecycle.Submit) (SB)|Visar en resurs för godkännande.|Använd inte ett verb, till exempel post, för den här åtgärden.|
-|[Pausa](/dotnet/api/System.Management.Automation.VerbsLifecycle.Suspend) (SS)|Pausar en aktivitet. Till exempel pausar cmdleten `Suspend-Service` en tjänst. Verbet är länkat till `Resume`.|För den här åtgärden ska du inte använda ett verb som Pause.|
+|[Pausa](/dotnet/api/System.Management.Automation.VerbsLifecycle.Suspend) (SS)|Pausar en aktivitet. Till exempel pausar `Suspend-Service` cmdleten en tjänst. Verbet är länkat till `Resume`.|För den här åtgärden ska du inte använda ett verb som Pause.|
 |[Avinstallera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Uninstall) (US)|Tar bort en resurs från en angiven plats. Verbet är länkat till `Install`.||
 |[Avregistrera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Unregister) (din)|Tar bort posten för en resurs från en lagrings plats. Verbet är länkat till `Register`.|För den här åtgärden ska du inte använda ett verb som ta bort.|
-|[Vänta](/dotnet/api/System.Management.Automation.VerbsLifecycle.Wait) (w)|Pausar en åtgärd tills en angiven händelse inträffar. Till exempel pausar `Wait-Job`-cmdleten åtgärder tills ett eller flera bakgrunds jobb är slutförda.|För den här åtgärden ska du inte använda verb som vilo läge eller paus.|
+|[Vänta](/dotnet/api/System.Management.Automation.VerbsLifecycle.Wait) (w)|Pausar en åtgärd tills en angiven händelse inträffar. Till exempel pausar `Wait-Job` cmdleten åtgärder tills ett eller flera bakgrunds jobb har slutförts.|För den här åtgärden ska du inte använda verb som vilo läge eller paus.|
 
 ## <a name="security-verbs"></a>Säkerhetsverb
 

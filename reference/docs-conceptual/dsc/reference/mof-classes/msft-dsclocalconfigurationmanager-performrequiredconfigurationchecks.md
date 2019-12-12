@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: PerformRequiredConfigurationChecks-metoden
 ms.openlocfilehash: 909e3a48d08e0220ab0efc6a03bea7ead5d9843e
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942687"
 ---
 # <a name="performrequiredconfigurationchecks-method"></a>PerformRequiredConfigurationChecks-metoden
@@ -25,7 +25,7 @@ uint32 PerformRequiredConfigurationChecks(
 
 *Flaggor* \[i\] en bitmask som anger vilken typ av konsekvens kontroll som ska köras. Följande värden är giltiga och kan kombineras med hjälp av en bitvis **or** -åtgärd:
 
-|Värde |Description |
+|Värde |Beskrivning |
 |:--- |:---|
 |**1** | En normal konsekvens kontroll. |
 |**2** | En fortsättning på konsekvens kontroll efter en omstart. Värdet får inte kombineras med andra värden. |
@@ -36,7 +36,7 @@ uint32 PerformRequiredConfigurationChecks(
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Kommentarer
+## <a name="remarks"></a>Anmärkningar
 
 Detta är en statisk metod.
 
@@ -46,6 +46,6 @@ Detta är en statisk metod.
 
 **Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
 
-## <a name="see-also"></a>Se också
+## <a name="see-also"></a>Se även
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

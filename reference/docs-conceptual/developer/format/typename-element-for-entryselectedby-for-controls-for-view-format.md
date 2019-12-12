@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 52003450-07ca-41e5-b075-8b6b03fc6e88
 caps.latest.revision: 6
 ms.openlocfilehash: 30215734ef832d778b08d3d7be224ff8d88b0579
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353671"
 ---
 # <a name="typename-element-for-entryselectedby-for-controls-for-view-format"></a>TypeName-element för EntrySelectedBy för Controls för View (format)
@@ -30,7 +30,7 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `TypeName`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `TypeName`-elementet.
 
 ### <a name="attributes"></a>Attribut
 
@@ -46,7 +46,7 @@ Ingen.
 |-------------|-----------------|
 |[EntrySelectedBy-element för CustomEntry för kontroller för vy (format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|Definierar de .NET-typer som använder den här kontroll definitionen eller det villkor som måste finnas för att den här definitionen ska kunna användas.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange det fullständigt kvalificerade namnet för .NET-typen, t. ex. `System.IO.DirectoryInfo`.
 

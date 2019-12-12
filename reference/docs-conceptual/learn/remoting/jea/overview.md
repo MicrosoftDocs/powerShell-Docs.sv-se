@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: Jea, PowerShell, säkerhet
 title: Översikt över bara tillräckligt med administration
 ms.openlocfilehash: 4b74e5be9558810748a8844a325c8213e1b3ebc9
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70017862"
 ---
 # <a name="just-enough-administration"></a>JEA (Just Enough Administration)
@@ -19,7 +19,7 @@ Bara tillräckligt med administration (JEA) är en säkerhets teknik som möjlig
 
 **Varför är JEA viktigt?**
 
-Konton med hög privilegier som används för att administrera dina servrar utgör en allvarlig säkerhets risk. Om en angripare kompromettera ett av dessa konton kan de starta laterala [angrepp](https://aka.ms/pth) i hela organisationen. Varje komprometterat konto ger en angripare åtkomst till ännu fler konton och resurser och ger dem ett steg närmare att stjäla företags hemligheter, starta en denial-of-service-attack och mer.
+Konton med hög privilegier som används för att administrera dina servrar utgör en allvarlig säkerhets risk. Om en angripare kompromettera ett av dessa konton kan de starta [laterala angrepp](https://aka.ms/pth) i hela organisationen. Varje komprometterat konto ger en angripare åtkomst till ännu fler konton och resurser och ger dem ett steg närmare att stjäla företags hemligheter, starta en denial-of-service-attack och mer.
 
 Det är inte alltid lätt att ta bort administratörs behörighet, vare sig. Överväg det vanliga scenariot där DNS-rollen är installerad på samma dator som din Active Directory-domän-styrenhet. Dina DNS-administratörer måste ha lokal administratörs behörighet för att åtgärda problem med DNS-servern. Men för att göra det måste du göra dem till medlemmar i säkerhets gruppen privilegierade **domän administratörer** . Den här metoden ger dig en effektiv kontroll av DNS-administratörer över hela domänen och åtkomst till alla resurser på den datorn.
 
@@ -31,4 +31,4 @@ Mer information om kraven för att använda JEA finns i artikeln [krav](prerequi
 
 ## <a name="samples-and-dsc-resource"></a>Exempel och DSC-resurs
 
-Exempel på JEA-konfigurationer och JEA DSC-resursen finns i [Jea GitHub](https://github.com/PowerShell/JEA)-lagringsplatsen.
+Exempel på JEA-konfigurationer och JEA DSC-resursen finns i [Jea GitHub-lagringsplatsen](https://github.com/PowerShell/JEA).

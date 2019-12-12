@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3351d237-e8c2-4ec5-9500-4eceadb407c2
 caps.latest.revision: 11
 ms.openlocfilehash: e7158711c60d13c745bbdfab9b1b9fc7d98b34e2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356065"
 ---
 # <a name="label-element-for-groupby-format"></a>Label-element för GroupBy (format)
@@ -45,7 +45,7 @@ Ingen.
 |-------------|-----------------|
 |[GroupBy-element för vy (format)](./groupby-element-for-view-format.md)|Definierar hur en ny grupp av objekt visas.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange texten som visas när Windows PowerShell påträffar en ny egenskap eller ett nytt skript värde.
 

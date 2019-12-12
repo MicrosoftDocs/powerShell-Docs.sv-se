@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
 ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359359"
 ---
 # <a name="events01-sample"></a>Events01 – exempel
@@ -32,7 +32,7 @@ Det här exemplet härleds från Bask Lassen [Microsoft. PowerShell. commands. O
 3. I menyn **build** väljer du **build-lösning**.
    Biblioteket för exemplet skapas i standard `\bin`-eller `\bin\debug`-mapparna.
 
-### <a name="how-to-run-the-sample"></a>Så här kör du exemplet
+### <a name="how-to-run-the-sample"></a>Köra exemplet
 
 1. Skapa följande modul-mapp:
 
@@ -77,7 +77,7 @@ A file was created in the TEMP directory
 
 Det här exemplet kräver Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Visat
+## <a name="demonstrates"></a>Demonstrationer
 
 Det här exemplet demonstrerar följande.
 

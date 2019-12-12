@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 46905eb9-64d7-4c55-9c2a-7bc7bf04e14b
 caps.latest.revision: 10
 ms.openlocfilehash: 6c2e5891a8e3f24969c12a2e57dc5ae8caa68e41
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356352"
 ---
 # <a name="how-to-declare-parameter-sets"></a>Deklarera parameteruppsättningar
@@ -20,11 +20,11 @@ ms.locfileid: "72356352"
 Det här exemplet visar hur du definierar två parameter uppsättningar när du deklarerar parametrarna för en cmdlet. Varje parameter uppsättning har både en unik parameter och en delad parameter som används av båda parameter uppsättningarna. Mer information om parameter uppsättningar, inklusive hur du anger standard parameter uppsättningen, finns i [cmdlet parameter](./cmdlet-parameter-sets.md)Sets.
 
 > [!IMPORTANT]
-> När det är möjligt definierar du den unika parametern för en parameter uppsättning som en obligatorisk parameter. Men om du vill att din cmdlet ska köras utan att ange några parametrar, kan den unika parametern vara en valfri parameter. Till exempel är den unika parametern för cmdleten `Get-Command` valfri.
+> När det är möjligt definierar du den unika parametern för en parameter uppsättning som en obligatorisk parameter. Men om du vill att din cmdlet ska köras utan att ange några parametrar, kan den unika parametern vara en valfri parameter. Till exempel är den unika parametern för `Get-Command` cmdleten valfri.
 
 ## <a name="how-to-define-two-parameter-sets"></a>Definiera två parameter uppsättningar
 
-1. Lägg till nyckelordet `ParameterSet` till attributet parameter för den unika parametern för den första parameter uppsättningen.
+1. Lägg till nyckelordet `ParameterSet` till parametern parameter för den första parameter uppsättningens unika parameter.
 
    ```csharp
    [Parameter(Position = 0, Mandatory = true,
@@ -50,7 +50,7 @@ Det här exemplet visar hur du definierar två parameter uppsättningar när du 
    private string computerName;
    ```
 
-3. För den parameter som tillhör båda parameter uppsättningarna lägger du till ett parameter-attribut för varje parameter uppsättning och lägger sedan till nyckelordet `ParameterSet` i varje uppsättning. I varje parameter-attribut kan du ange hur parametern definieras. En parameter kan vara valfri i en uppsättning och obligatorisk i en annan.
+3. För den parameter som tillhör båda parameter uppsättningarna lägger du till ett parameter-attribut för varje parameter uppsättning och lägger sedan till `ParameterSet` nyckelordet i varje uppsättning. I varje parameter-attribut kan du ange hur parametern definieras. En parameter kan vara valfri i en uppsättning och obligatorisk i en annan.
 
    ```csharp
    [Parameter(Mandatory= true, ParameterSetName = "Test01")]

@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-gruppresurs
 ms.openlocfilehash: 695a914683c6daff44dd2a6c94b6353acf881030
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942442"
 ---
 # <a name="dsc-group-resource"></a>DSC-gruppresurs
@@ -32,29 +32,29 @@ Group [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
 |Namn |Namnet på den grupp som du vill säkerställa ett speciellt tillstånd för. |
-|Certifiering |De autentiseringsuppgifter som krävs för att komma åt fjär resurser. Det här kontot måste ha rätt Active Directory behörighet för att lägga till alla icke-lokala konton i gruppen. annars inträffar ett fel när konfigurationen körs på målnoden.
+|Autentiseringsuppgift |De autentiseringsuppgifter som krävs för att komma åt fjär resurser. Det här kontot måste ha rätt Active Directory behörighet för att lägga till alla icke-lokala konton i gruppen. annars inträffar ett fel när konfigurationen körs på målnoden.
 |Beskrivning |Beskrivning av gruppen. |
-|Members |Använd den här egenskapen för att ersätta det aktuella grupp medlemskapet med de angivna medlemmarna. Värdet för den här egenskapen är en matris med strängar i formuläret `Domain\UserName`. Om du ställer in den här egenskapen i en konfiguration ska du inte använda någon av egenskaperna **MembersToExclude** eller **MembersToInclude** . Detta genererar ett fel. |
-|MembersToExclude |Använd den här egenskapen för att ta bort medlemmar från det befintliga medlemskapet i gruppen. Värdet för den här egenskapen är en matris med strängar i formuläret `Domain\UserName`. Om du ställer in den här egenskapen i en konfiguration ska du inte använda egenskapen **medlemmar** . Detta genererar ett fel. |
-|MembersToInclude |Använd den här egenskapen för att lägga till medlemmar i det befintliga medlemskapet i gruppen. Värdet för den här egenskapen är en matris med strängar i formuläret `Domain\UserName`. Om du ställer in den här egenskapen i en konfiguration ska du inte använda egenskapen **medlemmar** . Om du gör det skapas ett fel. |
+|Medlemmar |Använd den här egenskapen för att ersätta det aktuella grupp medlemskapet med de angivna medlemmarna. Värdet för den här egenskapen är en matris med strängar i formulär `Domain\UserName`. Om du ställer in den här egenskapen i en konfiguration ska du inte använda någon av egenskaperna **MembersToExclude** eller **MembersToInclude** . Detta genererar ett fel. |
+|MembersToExclude |Använd den här egenskapen för att ta bort medlemmar från det befintliga medlemskapet i gruppen. Värdet för den här egenskapen är en matris med strängar i formulär `Domain\UserName`. Om du ställer in den här egenskapen i en konfiguration ska du inte använda egenskapen **medlemmar** . Detta genererar ett fel. |
+|MembersToInclude |Använd den här egenskapen för att lägga till medlemmar i det befintliga medlemskapet i gruppen. Värdet för den här egenskapen är en matris med strängar i formulär `Domain\UserName`. Om du ställer in den här egenskapen i en konfiguration ska du inte använda egenskapen **medlemmar** . Om du gör det skapas ett fel. |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"`. |
 |Kontrol |Anger om gruppen finns. Ange den här egenskapen som **saknas** för att säkerställa att gruppen inte finns. Att ställa in det för att **Visa** garanterar att gruppen finns. Standardvärdet finns **.** |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 
 > [!NOTE]
 > Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter. Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).
 
-## <a name="example-1-ensure-group-is-not-present"></a>Exempel 1: Se till att gruppen inte finns
+## <a name="example-1-ensure-group-is-not-present"></a>Exempel 1: kontrol lera att gruppen inte finns
 
 I följande exempel visas hur du ser till att en grupp med namnet "TestGroup" saknas.
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 81a91c74-6229-4b64-aa2b-9123e8b7e9e5
 caps.latest.revision: 11
 ms.openlocfilehash: be35f6e9e2ad0b2d9a21a91c053aa0f70cafaf9c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353559"
 ---
 # <a name="typename-element-for-entryselectedby-for-wideentry-format"></a>TypeName-element för EntrySelectedBy för WideEntry (format)
@@ -29,7 +29,7 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet för elementet `TypeName`.
+I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `TypeName`-elementet.
 
 ### <a name="attributes"></a>Attribut
 
@@ -45,7 +45,7 @@ Ingen.
 |-------------|-----------------|
 |[EntrySelectedBy-element för WideEntry (format)](./entryselectedby-element-for-wideentry-format.md)|Definierar de .NET-typer som använder den här breda posten eller det villkor som måste finnas för att den här posten ska kunna användas.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange det fullständigt kvalificerade namnet för .NET-typen, t. ex. `System.IO.DirectoryInfo`.
 

@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-logg resurs
 ms.openlocfilehash: a1b7bf44fbaf36a3adaf0666e9f0a754fa3f6ee1
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942449"
 ---
 # <a name="dsc-log-resource"></a>DSC-logg resurs
@@ -29,17 +29,17 @@ Log [string] #ResourceName
 > [!NOTE]
 > Som standard är bara drift loggar för DSC aktiverade. Innan den analytiska loggen blir tillgänglig eller synlig måste den vara aktive rad. Mer information finns i [var är DSC-händelseloggar?](../../../troubleshooting/troubleshooting.md#where-are-dsc-event-logs).
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
-|Message |Anger det meddelande som du vill skriva till Microsoft-Windows-önskad tillstånds konfiguration/analytisk händelse logg. |
+|Meddelande |Anger det meddelande som du vill skriva till Microsoft-Windows-önskad tillstånds konfiguration/analytisk händelse logg. |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"`. |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 
 > [!NOTE]

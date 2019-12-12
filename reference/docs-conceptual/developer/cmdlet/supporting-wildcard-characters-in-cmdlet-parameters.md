@@ -7,10 +7,10 @@ ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.openlocfilehash: 19644c5bc186a5554d6b134a67fc7c4d7aa7b64c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356142"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>Ge stöd för jokertecken i cmdlet-parametrar
@@ -30,7 +30,7 @@ Du måste ofta utforma en cmdlet för att kunna köras mot en grupp resurser i s
 
 Windows PowerShell stöder följande jokertecken.
 
-| Användning |                             Description                             |  Exempel   |     Matchar      | Matchar inte |
+| Användning |                             Beskrivning                             |  Exempel   |     Matchningar      | Matchar inte |
 | -------- | ------------------------------------------------------------------- | ---------- | ---------------- | -------------- |
 | *        | Matchar noll eller flera tecken, med början vid den angivna positionen | `a*`       | A, AG, Apple     |                |
 | ?        | Matchar alla bokstäver vid angiven position                     | `?n`       | En, i, på       | kördes            |
@@ -61,7 +61,7 @@ När det används från PowerShell-Kommandotolken:
 
 - "John Svensson \`\`[*\`]"
 
-Det här mönstret matchar "John Svensson [Marketing]" eller "John Svensson [Development]". Exempel:
+Det här mönstret matchar "John Svensson [Marketing]" eller "John Svensson [Development]". Till exempel:
 
 ```
 PS> "John Smith [Marketing]" -like "John Smith ``[*``]"

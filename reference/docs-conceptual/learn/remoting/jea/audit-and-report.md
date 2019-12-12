@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: Jea, PowerShell, säkerhet
 title: Granskning och rapportering av JEA
 ms.openlocfilehash: 2afefe83acecc1fc3643d49766120ffecc25378f
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70017925"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Granskning och rapportering av JEA
@@ -46,7 +46,7 @@ $jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{
 
 ## <a name="find-available-role-capabilities-on-the-machine"></a>Hitta tillgängliga roll funktioner på datorn
 
-Jea hämtar roll funktioner från `.psrc` filerna som lagras i mappen **RoleCapabilities** i en PowerShell-modul. Följande funktion hittar alla roll funktioner som är tillgängliga på en dator.
+JEA hämtar roll funktioner från `.psrc` filer som lagras i mappen **RoleCapabilities** i en PowerShell-modul. Följande funktion hittar alla roll funktioner som är tillgängliga på en dator.
 
 ```powershell
 function Find-LocalRoleCapability {
@@ -73,7 +73,7 @@ function Find-LocalRoleCapability {
 ## <a name="check-effective-rights-for-a-specific-user"></a>Kontrol lera gällande rättigheter för en speciell användare
 
 Cmdlet [: en get-PSSessionCapability](/powershell/module/microsoft.powershell.core/Get-PSSessionCapability) räknar upp alla kommandon som är tillgängliga på en Jea-slutpunkt baserat på användarens grupp medlemskap.
-Resultatet av `Get-PSSessionCapability` är identiskt med den angivna användaren som körs `Get-Command -CommandType All` i en Jea-session.
+Resultatet av `Get-PSSessionCapability` är identiskt med den angivna användaren som kör `Get-Command -CommandType All` i en JEA-session.
 
 ```powershell
 Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\Alice'
@@ -120,7 +120,7 @@ Machine: SERVER01 (Microsoft Windows NT 10.0.14393.0)
 [...]
 ```
 
-Bröd texten i avskriften innehåller information om varje kommando som användaren anropade. Den exakta syntaxen för kommandot som används är inte tillgänglig i JEA-sessioner på grund av hur kommandon omvandlas för PowerShell-fjärrkommunikation. Du kan dock fortfarande bestämma det effektiva kommando som kördes. Nedan visas ett exempel på en avskrifts- `Get-Service Dns` kodfragment från en användare som körs i en Jea-session:
+Bröd texten i avskriften innehåller information om varje kommando som användaren anropade. Den exakta syntaxen för kommandot som används är inte tillgänglig i JEA-sessioner på grund av hur kommandon omvandlas för PowerShell-fjärrkommunikation. Du kan dock fortfarande bestämma det effektiva kommando som kördes. Nedan visas ett exempel på en avskrifts-kodfragment från en användare som kör `Get-Service Dns` i en JEA-session:
 
 ```
 PS>CommandInvocation(Get-Service): "Get-Service"
@@ -131,9 +131,9 @@ PS>CommandInvocation(Get-Service): "Get-Service"
 Running  Dns                DNS Server
 ```
 
-En **CommandInvocation** -rad skrivs för varje kommando som en användare kör. **ParameterBindings** spelar in varje parameter och värde som medföljer kommandot. I det tidigare exemplet kan du se att parameter **namnet** angavs med värdet **DNS** för `Get-Service` cmdleten.
+En **CommandInvocation** -rad skrivs för varje kommando som en användare kör. **ParameterBindings** spelar in varje parameter och värde som medföljer kommandot. I det tidigare exemplet kan du se att parameter **namnet** angavs med värdet Dns för `Get-Service` **-** cmdleten.
 
-Utdata från varje kommando utlöser även en **CommandInvocation**, vanligt vis `Out-Default`till. **InputObject** för `Out-Default` är PowerShell-objektet som returnerades från kommandot. Informationen om objektet skrivs ut några rader nedan, och mimicking vad användaren skulle ha sett.
+Utdata från varje kommando utlöser även en **CommandInvocation**, vanligt vis till `Out-Default`. **InputObject** för `Out-Default` är PowerShell-objektet som returnerades från kommandot. Informationen om objektet skrivs ut några rader nedan, och mimicking vad användaren skulle ha sett.
 
 ## <a name="see-also"></a>Se även
 

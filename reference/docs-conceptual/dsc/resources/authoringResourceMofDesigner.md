@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Använda Resource designer-verktyget
 ms.openlocfilehash: 4f678f4586c75c830bf876b891fe4784aa3b4e95
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941182"
 ---
 # <a name="using-the-resource-designer-tool"></a>Använda Resource designer-verktyget
@@ -17,16 +17,16 @@ Resource designer-verktyget är en uppsättning cmdlets som exponeras av **xDscR
 I det här avsnittet ska vi skapa en DSC-resurs som hanterar Active Directory användare.
 Använd cmdleten [install-module](/powershell/module/PowershellGet/Install-Module) för att installera **xDscResourceDesigner** -modulen.
 
->**Obs**: **Install-module** ingår i **PowerShellGet** -modulen, som ingår i PowerShell 5,0. Du kan hämta **PowerShellGet** -modulen för för hands versionen av PowerShell 3,0 och 4,0 i [PackageManagement PowerShell-moduler](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
+>**Obs!** **install-module** ingår i **PowerShellGet** -modulen, som ingår i PowerShell 5,0. Du kan hämta **PowerShellGet** -modulen för för hands versionen av PowerShell 3,0 och 4,0 i [PackageManagement PowerShell-moduler](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
 
 ## <a name="creating-resource-properties"></a>Skapar resurs egenskaper
 Det första vi behöver göra är att bestämma vilka egenskaper som resursen ska exponera. I det här exemplet ska vi definiera en Active Directory användare med följande egenskaper.
 
 Beskrivning av parameter namn
-* **Användar namn**: Nyckel egenskap som unikt identifierar en användare.
-* **Se till att**: Anger om användar kontot ska finnas eller saknas. Den här parametern har bara två möjliga värden.
-* **DomainCredential**: Användarens domän lösen ord.
-* **Lösen ord**: Det önskade lösen ordet för användaren att tillåta en konfiguration att ändra användarens lösen ord om det behövs.
+* **Användar namn**: nyckel egenskap som unikt identifierar en användare.
+* **Se till att**: anger om användar kontot ska finnas eller saknas. Den här parametern har bara två möjliga värden.
+* **DomainCredential**: användarens domän lösen ord.
+* **Lösen ord**: det önskade lösen ordet för användaren så att en konfiguration kan ändra användarens lösen ord om det behövs.
 
 Vi använder cmdleten **New-xDscResourceProperty** för att skapa egenskaperna. Följande PowerShell-kommandon skapar de egenskaper som beskrivs ovan.
 
@@ -47,7 +47,7 @@ New-xDscResource –Name Demo_ADUser –Property $UserName, $Ensure, $DomainCred
 
 Cmdlet: en **New-xDscResource** skapar MOF-schemat, ett Skeleton-resurs skript, den katalog struktur som krävs för den nya resursen och ett manifest för modulen som exponerar den nya resursen.
 
-MOF-schemafilen finns i **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.schema.MOF**och dess innehåll är som följer.
+MOF-schemafilen finns i **C:\Program files\windowspowershell\modules\ Demo_DSCModule \dscresources\ Demo_ADUser \ Demo_ADUser. schema. MOF**och dess innehåll är som följer.
 
 ```
 [ClassVersion("1.0.0.0"), FriendlyName("Demo_ADUser")]
@@ -60,7 +60,7 @@ class Demo_ADUser : OMI_BaseResource
 };
 ```
 
-Resurs skriptet är i **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.psm1**. Den innehåller inte den faktiska logiken för att implementera resursen, som du måste lägga till själv. Innehållet i Skeleton-skriptet är som följer.
+Resurs skriptet finns i **C:\Program files\windowspowershell\modules\ Demo_DSCModule \dscresources\ Demo_ADUser \ Demo_ADUser. psm1**. Den innehåller inte den faktiska logiken för att implementera resursen, som du måste lägga till själv. Innehållet i Skeleton-skriptet är som följer.
 
 ```powershell
 function Get-TargetResource

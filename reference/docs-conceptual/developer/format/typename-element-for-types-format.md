@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0595b99e-b438-4240-b47b-555cf0316f33
 caps.latest.revision: 15
 ms.openlocfilehash: bd5baa03c2050b2c3bbe1d7697c253d923175d39
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72358738"
 ---
 # <a name="typename-element-for-types-format"></a>TypeName-element för Types (format)
@@ -29,7 +29,7 @@ Konfigurations element (format) SelectionSets-element (format) SelectionSet-elem
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet för elementet `TypeName`. Minst ett `TypeName`-element måste ingå i urvals uppsättningen.
+I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `TypeName`-elementet. Minst ett `TypeName`-element måste ingå i urvals uppsättningen.
 
 ### <a name="attributes"></a>Attribut
 
@@ -45,7 +45,7 @@ Ingen.
 |-------------|-----------------|
 |[Typ element (format)](./types-element-for-selectionset-format.md)|Definierar de .NET-objekt som finns i urvals uppsättningen.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange det fullständigt kvalificerade namnet för .NET-typen.
 
@@ -53,7 +53,7 @@ Ange det fullständigt kvalificerade namnet för .NET-typen.
 
 Du kan använda urvals uppsättningar när du har en uppsättning relaterade objekt som du vill referera till genom att använda ett enda namn, till exempel en uppsättning objekt som är relaterade till arv. När du definierar dina vyer kan du ange en uppsättning objekt genom att använda namnet på urvals uppsättningen i stället för att visa alla objekt i varje vy.
 
-Vanliga urvals uppsättningar anges med deras namn när du definierar vyerna för format filen. I dessa fall anger det underordnade elementet `SelectionSetName` för elementet `ViewSelectedBy` för vyn. Olika poster i en vy kan dock också ange en markerings uppsättning som endast gäller för posten i vyn. Mer information om urvals uppsättningar finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
+Vanliga urvals uppsättningar anges med deras namn när du definierar vyerna för format filen. I dessa fall anger `SelectionSetName` underordnat element i `ViewSelectedBy`-elementet för vyn mängden. Olika poster i en vy kan dock också ange en markerings uppsättning som endast gäller för posten i vyn. Mer information om urvals uppsättningar finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
 
 ## <a name="example"></a>Exempel
 

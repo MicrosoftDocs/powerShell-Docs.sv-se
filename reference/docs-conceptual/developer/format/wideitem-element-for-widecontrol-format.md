@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 17352fc4-ba83-4f04-86bc-f591765d85a8
 caps.latest.revision: 18
 ms.openlocfilehash: fa9eda3ea1028c27dbfb3eb04747af3b817c1a81
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353405"
 ---
 # <a name="wideitem-element-for-widecontrol-format"></a>WideItem-element för WideControl (format)
@@ -33,7 +33,7 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet för elementet `WideItem`. Elementet `FormatString` är valfritt. Du måste dock ange ett `PropertyName`-eller `ScriptBlock`-element, men du kan inte ange båda.
+I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `WideItem`-elementet. `FormatString`-elementet är valfritt. Du måste dock ange ett `PropertyName`-eller `ScriptBlock`-element, men du kan inte ange båda.
 
 ### <a name="attributes"></a>Attribut
 
@@ -59,7 +59,7 @@ Mer information om komponenterna i en bred vy finns i [wide View](./creating-a-w
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visas ett `WideEntry`-element som definierar ett enda `WideItem`-element. Elementet `WideItem` definierar egenskapen eller skriptet vars värde visas i vyn.
+I följande exempel visas ett `WideEntry`-element som definierar ett enskilt `WideItem`-element. `WideItem`-elementet definierar egenskapen eller skriptet vars värde visas i vyn.
 
 ```xml
 <WideEntry>

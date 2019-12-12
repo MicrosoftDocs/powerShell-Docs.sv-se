@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: Jea, PowerShell, säkerhet
 title: Använda JEA
 ms.openlocfilehash: 8f3cc9186c61a2ae5b64eb3dc4f72ca83f1a58c5
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70017897"
 ---
 # <a name="using-jea"></a>Använda JEA
@@ -32,7 +32,7 @@ Enter-PSSession -ComputerName localhost -ConfigurationName JEAMaintenance -Crede
 
 Om det aktuella användar kontot har åtkomst till JEA-slutpunkten kan du utelämna parametern för **autentiseringsuppgifter** .
 
-När PowerShell-prompten ändras `[localhost]: PS>` till dig när du vet att du nu interagerar med Jea-sessionen. Du kan köra `Get-Command` för att kontrol lera vilka kommandon som är tillgängliga. Kontakta administratören om du vill veta om det finns några begränsningar för de tillgängliga parametrarna eller tillåtna parameter värden.
+När PowerShell-prompten ändras till `[localhost]: PS>` du veta att du nu interagerar med den fjärranslutna JEA-sessionen. Du kan köra `Get-Command` för att kontrol lera vilka kommandon som är tillgängliga. Kontakta administratören om du vill veta om det finns några begränsningar för de tillgängliga parametrarna eller tillåtna parameter värden.
 
 Kom ihåg att JEA-sessioner körs i nolanguage-läge. Några av de sätt som du vanligt vis använder PowerShell är kanske inte tillgängliga. Du kan till exempel inte använda variabler för att lagra data eller granska egenskaperna för objekt som returneras från-cmdletar. I följande exempel visas två metoder för att få samma kommandon att fungera i läget nolanguage.
 
@@ -72,9 +72,9 @@ Get-JEACommand
 ```
 
 > [!IMPORTANT]
-> Vissa system kanske inte kan importera en hel JEA-session på grund av begränsningar i standard-cmdletarna för JEA. Du kan komma runt detta genom att bara importera de kommandon du behöver från Jea-sessionen genom att uttryckligen ange deras `-CommandName` namn till parametern. En framtida uppdatering löser problemet med att importera hela JEA-sessioner på berörda system.
+> Vissa system kanske inte kan importera en hel JEA-session på grund av begränsningar i standard-cmdletarna för JEA. Du kan komma runt detta genom att bara importera de kommandon du behöver från JEA-sessionen genom att uttryckligen ange namnen på `-CommandName`-parametern. En framtida uppdatering löser problemet med att importera hela JEA-sessioner på berörda system.
 
-Om du inte kan importera en JEA-session på grund av JEA-begränsningar på standard parametrarna följer du stegen nedan för att filtrera bort standard kommandona från den importerade uppsättningen. Du kan fortsätta använda kommandon som `Select-Object`, men du kommer bara att använda den lokala versionen som är installerad på datorn i stället för den som importer ATS från Jea-sessionen.
+Om du inte kan importera en JEA-session på grund av JEA-begränsningar på standard parametrarna följer du stegen nedan för att filtrera bort standard kommandona från den importerade uppsättningen. Du kan fortsätta använda kommandon som `Select-Object`, men du kommer bara att använda den lokala versionen som är installerad på datorn i stället för den som importer ATS från JEA-sessionen.
 
 ```powershell
 # Create a new PSSession to your JEA endpoint
@@ -104,7 +104,7 @@ För enkla, enkelriktade uppgifter kan du använda [Invoke-Command](/powershell/
 Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Process; Get-Service }
 ```
 
-Du kan kontrol lera vilka kommandon som är tillgängliga för användning när du ansluter till en Jea `Get-Command` -session genom att köra och iterera genom resultaten för att kontrol lera de tillåtna parametrarna.
+Du kan kontrol lera vilka kommandon som är tillgängliga för användning när du ansluter till en JEA-session genom att köra `Get-Command` och iterera genom resultaten för att kontrol lera de tillåtna parametrarna.
 
 ```powershell
 $allowedCommands = Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Command }
@@ -155,12 +155,12 @@ using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 
 ## <a name="using-jea-with-powershell-direct"></a>Använda JEA med PowerShell Direct
 
-Hyper-V i Windows 10 och Windows Server 2016 erbjuder [PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct), en funktion som gör att Hyper-v-administratörer kan hantera virtuella datorer med PowerShell oavsett nätverks konfigurationen eller inställningar för fjärrhantering på den virtuella datorn datorspecifika.
+Hyper-V i Windows 10 och Windows Server 2016 erbjuder [PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct), en funktion som gör att Hyper-v-administratörer kan hantera virtuella datorer med PowerShell oavsett nätverks konfigurationen eller inställningar för fjärrhantering på den virtuella datorn.
 
 Du kan använda PowerShell Direct med JEA för att ge en Hyper-V-administratör begränsad åtkomst till den virtuella datorn.
 Detta kan vara användbart om du tappar bort nätverks anslutningen till den virtuella datorn och behöver en data Center administratör för att åtgärda nätverks inställningarna.
 
-Ingen ytterligare konfiguration krävs för att använda JEA via PowerShell Direct. Men gäst operativ systemet som körs i den virtuella datorn måste vara Windows 10, Windows Server 2016 eller senare. Hyper-V-administratören kan ansluta till Jea-slutpunkten med `-VMName` hjälp `-VMId` av parametrarna eller på PSRemoting-cmdlet: ar:
+Ingen ytterligare konfiguration krävs för att använda JEA via PowerShell Direct. Men gäst operativ systemet som körs i den virtuella datorn måste vara Windows 10, Windows Server 2016 eller senare. Hyper-V-administratören kan ansluta till JEA-slutpunkten med hjälp av `-VMName`-eller `-VMId`-parametrarna på PSRemoting-cmdlet: ar:
 
 ```powershell
 # Entering a JEA session using PowerShell Direct when the VM name is unique

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d9100ab7-fbdc-4c0d-bb56-57669ef42b95
 caps.latest.revision: 9
 ms.openlocfilehash: 316e54d11647aedc1552a0bb74b943de7e4e3588
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353531"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>TypeName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)
@@ -29,7 +29,7 @@ DefaultSettings-element för konfigurations element (format) EnumerableExpansion
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `TypeName`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `TypeName`-elementet.
 
 ### <a name="attributes"></a>Attribut
 
@@ -45,7 +45,7 @@ Ingen.
 |-------------|-----------------|
 |[SelectionCondition-element för EntrySelectedBy för EnumerableExpansion (format)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)|Definierar det villkor som måste finnas för att expandera samlings objekt i den här definitionen.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange det fullständigt kvalificerade namnet för .NET-typen, t. ex. `System.IO.DirectoryInfo`.
 

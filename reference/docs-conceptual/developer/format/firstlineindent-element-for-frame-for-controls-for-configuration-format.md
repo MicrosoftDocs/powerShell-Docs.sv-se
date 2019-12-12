@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2f489720-11f6-4019-940e-07f423d4278d
 caps.latest.revision: 6
 ms.openlocfilehash: c5b2d971fe1590116f96b024ae8769334768acf2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354609"
 ---
 # <a name="firstlineindent-element-for-frame-for-controls-for-configuration-format"></a>FirstLineIndent-element för Frame för Controls för Configuration (format)
@@ -29,7 +29,7 @@ Konfigurations element (format) styr element i konfigurations-(format) kontroll 
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och ett överordnat element för elementet `FirstLineIndent`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `FirstLineIndent`-elementet.
 
 ### <a name="attributes"></a>Attribut
 
@@ -45,7 +45,7 @@ Ingen.
 |-------------|-----------------|
 |[Ram element för CustomItem för kontroll av konfiguration (format)](./frame-element-for-customitem-for-controls-for-configuration-format.md)|Definierar hur data visas, till exempel att flytta data till vänster eller höger.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange antalet tecken som du vill flytta den första raden i data.
 

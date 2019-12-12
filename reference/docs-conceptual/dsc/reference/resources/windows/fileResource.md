@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-filresurs
 ms.openlocfilehash: 4c6945d4cdcbc64ac6d52db563823efe8fd0247e
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942456"
 ---
 # <a name="dsc-file-resource"></a>DSC-filresurs
@@ -36,7 +36,7 @@ File [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
@@ -44,12 +44,12 @@ File [string] #ResourceName
 |Attribut |Det önskade tillstånd för attributen för mål filen eller katalogen. Giltiga värden är _Arkiv_, _dold_, _ReadOnly_och _system_. |
 |Kontrollsumma |Den typ av kontroll summa som ska användas för att avgöra om två filer är identiska. Giltiga värden är: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. |
 |Innehåll |Endast giltigt när det används med en **typ** **fil**. Anger innehållet som ska **vara** **tillgängligt** eller **saknas** i mål filen. |
-|Certifiering |De autentiseringsuppgifter som krävs för att få åtkomst till resurser, till exempel källfiler. |
-|Force |Åsidosätter åtkomst åtgärder som resulterar i ett fel (till exempel att skriva över en fil eller ta bort en katalog som inte är tom). Standardvärdet `$false`är. |
-|Rekursivt |Endast giltigt när det används med **typ** **katalog**. Utför tillstånds åtgärden rekursivt till alla under kataloger. Standardvärdet `$false`är. |
+|Autentiseringsuppgift |De autentiseringsuppgifter som krävs för att få åtkomst till resurser, till exempel källfiler. |
+|Force |Åsidosätter åtkomst åtgärder som resulterar i ett fel (till exempel att skriva över en fil eller ta bort en katalog som inte är tom). Standardvärdet är `$false`. |
+|Rekursivt |Endast giltigt när det används med **typ** **katalog**. Utför tillstånds åtgärden rekursivt till alla under kataloger. Standardvärdet är `$false`. |
 |Sök |Sökvägen som filen eller mappen ska kopieras från. |
-|type |Typ av resurs som konfigureras. Giltiga värden är **katalog** och **fil**. Standardvärdet är **File**. |
-|MatchSource |Anger om resursen ska övervakas för nya filer som har lagts till i käll katalogen efter den första kopian. Värdet `$true` anger att efter den ursprungliga kopian ska alla nya källfiler kopieras till målet. Om värdet `$false`är, cachelagrar resursen innehållet i käll katalogen och ignorerar eventuella filer som lagts till efter den ursprungliga kopian. Standardvärdet `$false`är. |
+|Typ |Typ av resurs som konfigureras. Giltiga värden är **katalog** och **fil**. Standardvärdet är **File**. |
+|MatchSource |Anger om resursen ska övervakas för nya filer som har lagts till i käll katalogen efter den första kopian. Ett värde av `$true` anger att efter den ursprungliga kopian ska eventuella nya källfiler kopieras till målet. Om värdet är `$false`cachelagrar resursen innehållet i käll katalogen och ignorerar eventuella filer som lagts till efter den ursprungliga kopian. Standardvärdet är `$false`. |
 
 > [!WARNING]
 > Om du inte anger något värde för **Credential** eller **PSRunAsCredential**använder resursen dator kontot för målnoden för att få åtkomst till **SourcePath**. När **SourcePath** är en UNC-resurs kan detta resultera i ett "åtkomst nekad"-fel. Kontrol lera att dina behörigheter har angetts, eller Använd egenskaperna **Credential** eller **PSRunAsCredential** för att ange det konto som ska användas.
@@ -58,7 +58,7 @@ File [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"`. |
 |Kontrol |Anger om filen och **innehållet** på **målet** ska finnas eller inte. Ange att den här egenskapen **finns för att se till att** filen finns. Ange det som **frånvarande** för att se till att de inte finns. Standardvärdet finns **.** |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
 ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354917"
 ---
 # <a name="background-jobs"></a>Bakgrundsjobb
@@ -35,7 +35,7 @@ Mer information om hur bakgrunds jobb hanteras på kommando raden finns i följa
 
 Om du vill skriva en-cmdlet som kan köras som ett bakgrunds jobb måste du utföra följande uppgifter:
 
-- Definiera en växel parameter för `asJob` så att användaren kan bestämma om cmdleten ska köras som ett bakgrunds jobb.
+- Definiera en `asJob` växel parameter så att användaren kan bestämma om du vill köra cmdleten som ett bakgrunds jobb.
 
 - Skapa ett objekt som härleds från klassen [system. Management. Automation. job](/dotnet/api/System.Management.Automation.Job) . Objektet kan vara ett anpassat jobb objekt eller ett jobb objekt som tillhandahålls av Windows PowerShell, till exempel ett [system. Management. Automation. Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) -objekt.
 
@@ -85,7 +85,7 @@ Startar ett bakgrunds jobb i Windows PowerShell.
 
 Stoppar ett bakgrunds jobb i Windows PowerShell.
 
-[Vänta – jobb](/powershell/module/Microsoft.PowerShell.Core/Wait-Job)
+[Wait-Job](/powershell/module/Microsoft.PowerShell.Core/Wait-Job)
 
 Ignorerar kommando tolken tills en eller flera av de Windows PowerShell-bakgrunds jobb som körs i sessionen är slutförda.
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d837d5d4-ed2e-4d84-a306-0b5d2ad2d0bf
 caps.latest.revision: 24
 ms.openlocfilehash: 2361c1117757569bef0815018c75764430a9e7a8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353447"
 ---
 # <a name="view-element-format"></a>View-element (format)
@@ -38,7 +38,7 @@ Konfigurations element (format) ViewDefinitions element (format) Visa element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet för elementet `View`. Du måste ange ett och endast ett av de underordnade elementen för kontrollen och du måste ange namnet på vyn och de objekt som använder vyn. Definiera anpassade kontroller, gruppera objekt och ange om vyn är out-of-band är valfri.
+I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `View`-elementet. Du måste ange ett och endast ett av de underordnade elementen för kontrollen och du måste ange namnet på vyn och de objekt som använder vyn. Definiera anpassade kontroller, gruppera objekt och ange om vyn är out-of-band är valfri.
 
 ### <a name="attributes"></a>Attribut
 
@@ -77,7 +77,7 @@ Mer information om komponenterna i olika vyer och anpassade kontroller finns i f
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar ett `View`-element som definierar en tabellvy för objektet [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) .
+I det här exemplet visas ett `View`-element som definierar en tabellvy för objektet [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) .
 
 ```xml
 <ViewDefinitions>

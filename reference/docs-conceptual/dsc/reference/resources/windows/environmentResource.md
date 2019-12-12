@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-miljö-resurs
 ms.openlocfilehash: d6d3b4a2086be28fbfa2bf200acef9b13b7b7825
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942484"
 ---
 # <a name="dsc-environment-resource"></a>DSC-miljö-resurs
@@ -29,19 +29,19 @@ Environment [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Egenskaper
 
-|Egenskap |Description |
+|Egenskap |Beskrivning |
 |---|---|
-|Name |Anger namnet på den miljö variabel som du vill säkerställa ett speciellt tillstånd för. |
-|`Path` |Definierar den miljö variabel som konfigureras. Ange den här egenskapen `$true` till om variabeln är **sökvägsvariabeln** . annars anger du den som `$false`. Standardvärdet är `$false`. Om variabeln som konfigureras är **sökvägsvariabeln,** läggs värdet som anges via egenskapen **Value** till i det befintliga värdet. |
-|Value |Värdet som ska tilldelas miljövariabeln. |
+|Namn |Anger namnet på den miljö variabel som du vill säkerställa ett speciellt tillstånd för. |
+|Sökväg |Definierar den miljö variabel som konfigureras. Ange den här egenskapen som `$true` om variabeln är variabeln **Path** ; Annars anger du det till `$false`. Standardvärdet är `$false`. Om variabeln som konfigureras är **sökvägsvariabeln,** läggs värdet som anges via egenskapen **Value** till i det befintliga värdet. |
+|Värde |Värdet som ska tilldelas miljövariabeln. |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"`. |
 |Kontrol |Anger om en variabel finns. Ange att den här egenskapen ska **användas** för att skapa miljövariabeln om den inte finns eller för att säkerställa att dess värde matchar det som tillhandahålls via egenskapen **Value** om variabeln redan finns. Ange det som **frånvarande** för att ta bort variabeln om den finns. |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 715ea055-037b-46ad-b70f-87b3f5134403
 caps.latest.revision: 14
 ms.openlocfilehash: 2742be0389a1bf04af100a490a59c0d938165811
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72358707"
 ---
 # <a name="widecontrol-element-format"></a>WideControl-element (format)
@@ -33,7 +33,7 @@ Konfigurations element (format) ViewDefinitions element (format) Visa element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `WideControl`-elementet. Det går inte att ange `AutoSize`-och `ColumnNumber`-element samtidigt.
+I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `WideControl`-elementet. Du kan inte ange `AutoSize` och `ColumnNumber` element på samma tid.
 
 ### <a name="attributes"></a>Attribut
 
@@ -55,7 +55,7 @@ Ingen.
 
 ## <a name="remarks"></a>Anmärkningar
 
-När du definierar en bred vy kan du lägga till elementet `AutoSize` eller `ColumnNumber`, men du kan inte lägga till båda.
+När du definierar en bred vy kan du lägga till `AutoSize`-elementet eller `ColumnNumber`, men du kan inte lägga till båda.
 
 I de flesta fall krävs bara en definition för varje bred vy, men det är möjligt att ha flera definitioner om du vill använda samma vy för att visa olika .NET-objekt. I dessa fall kan du ange en separat definition för varje objekt eller uppsättning objekt.
 

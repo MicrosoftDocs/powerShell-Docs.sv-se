@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 290d38e3-b9bd-4382-9671-2e28b32b7260
 caps.latest.revision: 6
 ms.openlocfilehash: a4036b1e9de85da7e0029e02cca9e0eaed462f70
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353461"
 ---
 # <a name="typename-element-for-selectioncondition-for-groupby-format"></a>TypeName-element för SelectionCondition för GroupBy (format)
@@ -30,7 +30,7 @@ Konfigurations element (format) ViewDefinitions element (format) visnings elemen
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `TypeName`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `TypeName`-elementet.
 
 ### <a name="attributes"></a>Attribut
 
@@ -46,13 +46,13 @@ Ingen.
 |-------------|-----------------|
 |[SelectionCondition-element för EntrySelectedBy för GroupBy (format)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|Definierar ett villkor som måste finnas för att den kontroll definition som ska användas.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange det fullständigt kvalificerade namnet för .NET-typen, t. ex. `System.IO.DirectoryInfo`.
 
 ## <a name="remarks"></a>Anmärkningar
 
-När det här elementet har angetts kan du inte ange ett `SelectionSetName`-element. Mer information om hur du definierar urvals villkor finns i [definiera villkor för att visa data](./defining-conditions-for-displaying-data.md).
+När det här elementet har angetts kan du inte ange `SelectionSetName`-elementet. Mer information om hur du definierar urvals villkor finns i [definiera villkor för att visa data](./defining-conditions-for-displaying-data.md).
 
 ## <a name="see-also"></a>Se även
 

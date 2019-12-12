@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galleri, PowerShell, psgallery, GDPR
 title: PowerShell-galleriet GDPR-kompatibilitet
 ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71329066"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>PowerShell-galleriet GDPR-kompatibilitet
@@ -16,10 +16,10 @@ ms.locfileid: "71329066"
 
 I maj 2018 trädde en europeisk sekretess lagstiftning, allmän dataskyddsförordning (GDPR).
 GDPR ålägger nya regler för företag, myndigheter, ideella organisationer och andra organisationer som tillhandahåller varor och tjänster till personer i EU, eller som samlar in och analyserar data som är kopplade till EU-invånare.
-GDPR gäller oavsett var du befinner dig.
+GDPR gäller oavsett var organisationen har sin verksamhet.
 
 > [!NOTE]
-> Den här artikeln innehåller anvisningar för hur du tar bort personliga data från PowerShell-galleriet och kan användas för att stödja dina skyldigheter enligt GDPR. Om du vill ha allmän information om GDPR kan du läsa [avsnittet GDPR på service Trust-portalen](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+> Den här artikeln innehåller anvisningar för hur du tar bort personliga data från PowerShell-galleriet och kan användas för att stödja dina skyldigheter enligt GDPR. Om du letar efter allmän information om GDPR finns den i [GDPR-avsnittet i Service Trust-portalen](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
 ## <a name="personally-identifiable-data"></a>Personligt identifierbara data
 
@@ -41,20 +41,20 @@ Informationen nedan visar hur du kan hämta alla paket som du har publicerat i P
 
 I följande avsnitt beskrivs hur PowerShell-galleriet stöder DSR (data subject requests) genom att förklara hur du exporterar information som lagras i PowerShell-galleriet och hur du begär borttagning av den här informationen.
 
-### <a name="email"></a>Email
+### <a name="email"></a>E-post
 
 E-postkorrespondens kan vara något av följande:
 
 - E-post som skickas till ägare av PowerShell-galleriet-paket om kod analysen upptäcker ett problem med ett paket som de har publicerat till PowerShell-galleriet
-- E-post som skickas av någon till PowerShell-galleriets teamet med hjälp av e-postadressen på sidan kontakta oss[cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)
+- E-post som skickas av någon till PowerShell-galleriet teamet med hjälp av e-postadressen på sidan kontakta oss [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)
 - Registrerade användare som använder funktionen "kontakta ägare" i PowerShell-galleriet för att skicka e-post till ägaren av ett paket i PowerShell-galleriet
 
 E-postmeddelanden som skickas av eller till PowerShell-galleriet har en bevarande princip på 90 dagar för att stödja möjliga säkerhets undersökningar bör skadlig kod identifieras på PowerShell-galleriet.
 E-postmeddelanden tas bort av en princip efter 90 dagar.
 
 Du kan begära kopior av alla e-postmeddelanden som skickas till eller från din e-postadress och PowerShell-galleriet inom de föregående 90 dagarna.
-Skicka ett e-postmeddelande till [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com), med rubriken: "DSR-begäran om e-post som är relaterad till det här kontot".
-Ange vilken information du begär i meddelandets brödtext (till exempel: Skicka alla e-postmeddelanden som skickas till eller tas emot från den här e-postadressen.) Alla e-postmeddelanden som involverar din e-postadress inom 90 dagar från det att begäran skickas inom 7 arbets dagar.
+Skicka ett e-postmeddelande till [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)med rubriken: "DSR-begäran om e-post som är relaterad till det här kontot" för att begära denna korrespondens.
+Ange vilken information du begär i meddelandets brödtext (till exempel: skicka alla e-postmeddelanden som skickas till eller tas emot från den här e-postadressen.) Alla e-postmeddelanden som involverar din e-postadress inom 90 dagar från det att begäran skickas inom 7 arbets dagar.
 
 ### <a name="powershell-gallery-account-information"></a>PowerShell-galleriet konto information
 
@@ -92,8 +92,8 @@ Du uppmanas att ange författaren och en mapp i systemet där du vill att pakete
 
 ## <a name="deleting-personal-data-from-the-powershell-gallery"></a>Ta bort personliga data från PowerShell-galleriet
 
-Om du vill ta bort ditt PowerShell-galleriet-konto eller paket som du äger i PowerShell-galleriet skickar cgadmin@microsoft.com du e-post till med rubriken: "GDPR-begäran om objekt som är relaterade till det här kontot".
-I bröd texten i meddelande läget, vilken information som du vill ta bort. Exempel:
+Om du vill ta bort ditt PowerShell-galleriet-konto eller paket som du äger i PowerShell-galleriet skickar du e-post till cgadmin@microsoft.com med rubriken: "GDPR-begäran om objekt som är relaterade till det här kontot".
+I bröd texten i meddelande läget, vilken information som du vill ta bort. Till exempel:
 
 - Ta bort version x. y. z för mitt pakets paket namn.
 - Ta bort alla versioner av mitt pakets paket namn.

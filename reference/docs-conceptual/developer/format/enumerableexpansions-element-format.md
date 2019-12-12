@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 50c33892-2ade-44c2-906c-81e5f5ca21f2
 caps.latest.revision: 9
 ms.openlocfilehash: 1ecbda8a3b623757517019105e3b1ee46ccbb55c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354735"
 ---
 # <a name="enumerableexpansions-element-format"></a>EnumerableExpansions-element (format)
@@ -31,7 +31,7 @@ Konfigurations element (format) DefaultSettings-element (format) EnumerableExpan
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `EnumerableExpansions`. Det finns ingen gräns för antalet underordnade element som du kan använda.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `EnumerableExpansions`-elementet. Det finns ingen gräns för antalet underordnade element som du kan använda.
 
 ### <a name="attributes"></a>Attribut
 

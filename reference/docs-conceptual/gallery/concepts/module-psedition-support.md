@@ -4,10 +4,10 @@ contributor: manikb
 keywords: Galleri, PowerShell, cmdlet, psget
 title: Moduler med kompatibla PowerShell-versioner
 ms.openlocfilehash: 425588c168a4f864fdc0c52aa53cfd748b80dc98
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71329192"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Moduler med kompatibla PowerShell-versioner
@@ -17,7 +17,7 @@ Från och med version 5.1 finns PowerShell i olika utgåvor som anger olika funk
 - **Desktop Edition:** Byggd på .NET Framework gäller för Windows PowerShell v 4.0 och tidigare samt Windows PowerShell 5,1 på Windows Desktop, Windows Server, Windows Server Core och de flesta andra Windows-versioner.
 - **Core-utgåva:** Bygger på .NET Core som gäller för PowerShell Core 6,0 och senare samt Windows PowerShell 5,1 på mindre Windows-versioner som Windows IoT och Windows Nanoserver.
 
-Mer information om PowerShell-versioner finns i [about_PowerShell_Editions][].
+Mer information om PowerShell-versioner finns [about_PowerShell_Editions][].
 
 ## <a name="declaring-compatible-editions"></a>Deklarera kompatibla utgåvor
 
@@ -79,7 +79,7 @@ Core
 
 En enda modul kan fungera både i Desktop-och Core-versioner, i den här modulen måste författaren lägga till nödvändig logik i antingen RootModule eller i modulens manifest med $PSEdition variabeln. Moduler kan ha två uppsättningar med kompilerade dll: er riktade till både CoreCLR och FullCLR. Här följer några alternativ för att paketera modulen med logik för att läsa in rätt DLL-filer.
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Alternativ 1: Paketera en modul för att rikta in dig på flera versioner och flera utgåvor av PowerShell
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Alternativ 1: paketera en modul för att rikta in dig på flera versioner och flera utgåvor av PowerShell
 
 Mappinnehåll i moduler
 
@@ -162,7 +162,7 @@ $PSModule.OnRemove = {
 I PS 5,1 eller senare tillåts $PSEdition global variabel i manifest filen för modulen. Med den här variabeln kan modulen författare ange de villkorliga värdena i manifest filen för modulen. $PSEdition variabeln kan refereras i begränsat språk läge eller i ett data avsnitt.
 
 > [!NOTE]
-> När ett modul-manifest har angetts med CompatiblePSEditions-nyckeln eller `$PSEdition` använder variabeln, kan den inte importeras i lägre versioner av PowerShell.
+> När ett modul-manifest har angetts med CompatiblePSEditions-nyckeln eller använder `$PSEdition` variabel, kan det inte importeras i lägre versioner av PowerShell.
 
 Manifest fil för exempel modul med CompatiblePSEditions-nyckel
 
@@ -227,7 +227,7 @@ Mode           LastWriteTime   Length Name
 -a----    7/5/2016   1:35 PM        0 MyCoreClrRM.dl
 ```
 
-PowerShell-galleriet användare kan hitta listan över moduler som stöds i en angiven PowerShell-utgåva med taggarna PSEdition_Desktop och PSEdition_Core.
+PowerShell-galleriet användare kan hitta listan över moduler som stöds på en angiven PowerShell-version med hjälp av Taggar PSEdition_Desktop och PSEdition_Core.
 
 Moduler utan PSEdition_Desktop-och PSEdition_Core-Taggar anses fungera bra på PowerShell Desktop-versioner.
 

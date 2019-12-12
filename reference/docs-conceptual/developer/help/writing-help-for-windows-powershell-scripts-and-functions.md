@@ -9,16 +9,16 @@ ms.topic: article
 ms.assetid: 859a6e22-75b1-43d4-ba62-62c107803b37
 caps.latest.revision: 7
 ms.openlocfilehash: af989fb2eeba6b68f2e3e6506f3f60d5be6f7d8a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357808"
 ---
 # <a name="writing-help-for-powershell-scripts-and-functions"></a>Skriva hjälp för PowerShell-skript och-funktioner
 
 PowerShell-skript och-funktioner bör vara fullständigt dokumenterade när de delas med andra.
-Cmdleten `Get-Help` visar hjälp avsnitten för skript och funktioner i samma format som det visar hjälp för cmdlets och alla `Get-Help`-parametrar fungerar i hjälp avsnitten för skript och funktioner.
+I `Get-Help`-cmdleten visas hjälp avsnitten för skript och funktioner i samma format som det visar hjälp för cmdlets och alla `Get-Help` parametrar fungerar i hjälp avsnitten för skript och funktioner.
 
 PowerShell-skript kan innehålla ett hjälp avsnitt om skript och hjälp avsnitt om varje funktion i skriptet.
 Funktioner som delas oberoende av skript kan innehålla egna hjälp avsnitt.
@@ -30,14 +30,14 @@ I det här dokumentet beskrivs formatet och rätt placering av hjälp avsnitten,
 ### <a name="comment-based-help"></a>Kommenterings-baserad hjälp
 Hjälp avsnittet som beskriver ett skript eller en funktion kan implementeras som en uppsättning kommentarer i skriptet eller funktionen.
 När du skriver en kommenterings-baserad hjälp för ett skript och funktioner i ett skript, bör du tänka noga noga med reglerna för att placera den kommenterade hjälpen.
-Placeringen avgör om cmdleten `Get-Help` associerar hjälp avsnittet med skriptet eller en funktion.
-Mer information om hur du skriver kommentarer baserade hjälp avsnitt finns i [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
+Placeringen avgör om `Get-Help` cmdlet associerar hjälp avsnittet med skriptet eller en funktion.
+Mer information om hur du skriver kommentarer baserade hjälp avsnitt finns [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
 ### <a name="xml-based-command-help"></a>Hjälp för XML-baserat kommando
 Hjälp avsnittet som beskriver ett skript eller en funktion kan implementeras i en XML-fil som använder kommandot hjälp schema för kommandot.
-Om du vill associera skriptet eller funktionen med XML-filen använder du kommentar nyckelordet `ExternalHelp` följt av XML-filens sökväg och namn.
+Om du vill associera skriptet eller funktionen med XML-filen använder du nyckelordet `ExternalHelp` comment följt av XML-filens sökväg och namn.
 
-När kommentars nyckelordet `ExternalHelp` finns företräde framför den kommenterade hjälpen, även om `Get-Help` inte kan hitta en hjälpfil som matchar värdet för `ExternalHelp`-nyckelordet.
+När nyckelordet `ExternalHelp` kommentar finns företräde framför den kommenterade hjälpen, även om `Get-Help` inte kan hitta en hjälpfil som matchar värdet för `ExternalHelp`-nyckelordet.
 
 ### <a name="online-help"></a>Onlinehjälp
 Du kan publicera dina hjälp avsnitt på Internet och sedan dirigera `Get-Help` för att öppna ämnena.

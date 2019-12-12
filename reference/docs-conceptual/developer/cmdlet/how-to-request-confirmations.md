@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
 caps.latest.revision: 9
 ms.openlocfilehash: 19e96b612a8778d82cdbafb528a7ffeb01f15f99
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359336"
 ---
 # <a name="how-to-request-confirmations"></a>Begära bekräftelser
@@ -49,7 +49,7 @@ Det här exemplet visar hur du anropar metoderna [system. Management. Automation
 
 ## <a name="example"></a>Exempel
 
-I följande kod exempel anropas metoderna [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) från åsidosättningen av [ Metoden system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) . Men du kan också anropa dessa metoder från andra metoder för bearbetning av indata.
+I följande kod exempel anropas metoderna [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [system. Management](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) . Automation. cmdlet. ShouldContinue från åsidosättningen av metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) . Men du kan också anropa dessa metoder från andra metoder för bearbetning av indata.
 
 ```csharp
 protected override void ProcessRecord()

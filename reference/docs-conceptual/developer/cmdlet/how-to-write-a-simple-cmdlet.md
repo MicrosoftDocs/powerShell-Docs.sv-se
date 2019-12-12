@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 137543d8-0012-4cba-bcd6-98b25aac83bb
 caps.latest.revision: 9
 ms.openlocfilehash: 8271512d06047f3ff5e45f81d971ffe2c1f6afd7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356254"
 ---
 # <a name="how-to-write-a-cmdlet"></a>Så här skriver du en cmdlet
 
-Den här artikeln visar hur du skriver en cmdlet. Cmdleten `Send-Greeting` tar ett enda användar namn som indata och skriver sedan en hälsning till användaren. Även om cmdleten inte fungerar mycket, visar det här exemplet de viktigaste avsnitten i en cmdlet.
+Den här artikeln visar hur du skriver en cmdlet. `Send-Greeting`-cmdleten använder ett enda användar namn som indata och skriver sedan en hälsning till användaren. Även om cmdleten inte fungerar mycket, visar det här exemplet de viktigaste avsnitten i en cmdlet.
 
 ## <a name="steps-to-write-a-cmdlet"></a>Steg för att skriva en cmdlet
 

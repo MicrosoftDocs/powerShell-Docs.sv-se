@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d10b68ca-256c-4c58-b503-73f7777b39ae
 caps.latest.revision: 15
 ms.openlocfilehash: 88de19be02de4933f892e02093403a82ccdd5788
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72358786"
 ---
 # <a name="tablerowentries-element-for-tablecontrol-format"></a>TableRowEntries-element för TableControl (format)
@@ -51,7 +51,7 @@ Ingen.
 
 ## <a name="remarks"></a>Anmärkningar
 
-Du måste ange ett eller flera `TableRowEntry`-element för tabellvy. Det finns ingen övre gräns för antalet `TableRowEntry`-element som kan läggas till eller som är deras inbördes ordning.
+Du måste ange ett eller flera `TableRowEntry` element för tabellvy. Det finns ingen övre gräns för antalet `TableRowEntry`-element som kan läggas till eller är deras inbördes ordning.
 
 Mer information om komponenterna i en tabellvy finns i [skapa en tabellvy](./creating-a-table-view.md).
 

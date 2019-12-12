@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxFile-resurs
 ms.openlocfilehash: be5f098d2fe1c8b354c07e6a8f882b8fdf00e1db
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942561"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC för Linux nxFile-resurs
@@ -34,18 +34,18 @@ nxFile <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
 |DestinationPath |Anger den plats där du vill kontrol lera statusen för en fil eller katalog. |
-|Sök |Anger sökvägen från vilken du vill kopiera filen eller mappens resurs. Sökvägen kan vara en lokal sökväg eller en `http/https/ftp` URL. Fjärranslutna `http/https/ftp` URL: er stöds bara när värdet för **Type** -egenskapen är **File**. |
-|type |Anger om den resurs som konfigureras är en katalog eller en fil. Ange den här egenskapen som **katalog** för att ange att resursen är en katalog. Ange den som **fil** för att ange att resursen är en fil. Standardvärdet är **File**. |
+|Sök |Anger sökvägen från vilken du vill kopiera filen eller mappens resurs. Sökvägen kan vara en lokal sökväg eller en `http/https/ftp`-URL. Fjärr`http/https/ftp`-URL: er stöds bara när värdet för **Type** -egenskapen är **File**. |
+|Typ |Anger om den resurs som konfigureras är en katalog eller en fil. Ange den här egenskapen som **katalog** för att ange att resursen är en katalog. Ange den som **fil** för att ange att resursen är en fil. Standardvärdet är **File**. |
 |Innehåll |Anger innehållet i en fil, till exempel en viss sträng. |
 |Kontrollsumma |Definierar den typ som ska användas för att avgöra om två filer är identiska. Om ingen **kontroll Summa** anges används bara fil-eller katalog namnet för jämförelse. Värdena är: **ctime**, **mtime**eller **MD5**. |
-|Rekursivt |Anger om under kataloger ingår. Ange den här egenskapen `$true` som anger att du vill att under kataloger ska tas med. Standardvärdet är `$false`. Den här egenskapen är endast giltig när egenskapen **Type** har angetts till **Directory**. |
+|Rekursivt |Anger om under kataloger ingår. Ange den här egenskapen till `$true` för att indikera att du vill att under kataloger ska tas med. Standardvärdet är `$false`. Den här egenskapen är endast giltig när egenskapen **Type** har angetts till **Directory**. |
 |Force |Vissa fil åtgärder (till exempel att skriva över en fil eller ta bort en katalog som inte är tom) resulterar i ett fel. Om du använder **Force** -egenskapen åsidosätts sådana fel. Standardvärdet är `$false`. |
-|Länkar |Anger det önskade beteendet för symboliska länkar. Ange den här egenskapen som **ska följas för att följa** symboliska länkar och agera på länk målet. Kopiera till exempel filen i stället för länken. Ange den här egenskapen som ska **hanteras** för att agera på länken. Kopiera till exempel själva länken. Ange den här egenskapen som **Ignorera** om du vill ignorera symboliska länkar. |
+|Links |Anger det önskade beteendet för symboliska länkar. Ange den här egenskapen som **ska följas för att följa** symboliska länkar och agera på länk målet. Kopiera till exempel filen i stället för länken. Ange den här egenskapen som ska **hanteras** för att agera på länken. Kopiera till exempel själva länken. Ange den här egenskapen som **Ignorera** om du vill ignorera symboliska länkar. |
 |Grupp |Namnet på **gruppen** som har behörighet till filen eller katalogen. |
 |Läge |Anger önskade behörigheter för resursen, i oktalt eller symbolisk notation. Till exempel **777** eller **rwxrwxrwx**. Om du använder symbolisk notation ska du inte ange det första tecknen som anger katalog eller fil. |
 |Ägare |Namnet på gruppen som ska äga filen eller katalogen. |
@@ -54,7 +54,7 @@ nxFile <string> #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"`. |
 |Kontrol |Avgör om du ska kontrol lera om filen finns. Ange att den här egenskapen **finns för att se till att** filen finns. Ange det som **frånvarande** för att se till att filen inte finns. Standardvärdet finns **.** |
 
 ## <a name="additional-information"></a>Ytterligare information
@@ -132,7 +132,7 @@ Linux och Windows använder olika rad brytnings tecken i textfiler som standard 
 
 ## <a name="example"></a>Exempel
 
-I följande exempel ser du till att `/opt/mydir` katalogen finns och att en fil med angivet innehåll finns i katalogen.
+I följande exempel ser du till att katalogen `/opt/mydir` finns och att en fil med angivet innehåll finns i katalogen.
 
 ```powershell
 Import-DSCResource -Module nx

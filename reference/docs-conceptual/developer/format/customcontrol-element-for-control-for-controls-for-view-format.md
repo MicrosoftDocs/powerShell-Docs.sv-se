@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eee505c3-ff2c-4bfb-b48a-037ec34bce72
 caps.latest.revision: 8
 ms.openlocfilehash: a0c8548dd916a5b32a56462058858f887a9d5803
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354784"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-view-format"></a>CustomControl-element för Control för Controls för View (format)
@@ -31,7 +31,7 @@ Konfigurations element (format) ViewDefinitions element (format) Visa element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `CustomControl`. Du måste ange ett underordnat element.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `CustomControl`-elementet. Du måste ange ett underordnat element.
 
 ### <a name="attributes"></a>Attribut
 

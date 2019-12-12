@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 66d8c63c-6ce4-480d-ad65-e777052c3818
 caps.latest.revision: 6
 ms.openlocfilehash: dc8f1058448a0cf9720014972b736694de759404
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353657"
 ---
 # <a name="text-element-for-customitem-for-groupby-format"></a>Text-element för CustomItem för GroupBy (format)
@@ -29,7 +29,7 @@ Konfigurations element (format) ViewDefinitions element (format) visnings elemen
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `Text`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `Text`-elementet.
 
 ### <a name="attributes"></a>Attribut
 
@@ -45,7 +45,7 @@ Ingen.
 |-------------|-----------------|
 |[CustomItem-element för CustomEntry för GroupBy (format)](./customitem-element-for-customentry-for-groupby-format.md)|Definierar en kontroll för den anpassade kontrollen.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange texten för en kontroll för data som du vill visa.
 

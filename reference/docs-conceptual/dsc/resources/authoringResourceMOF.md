@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skriva en anpassad DSC-resurs med MOF
 ms.openlocfilehash: 24e9d15bcbe1eddd297daeb04e0713c443e52c38
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941210"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Skriva en anpassad DSC-resurs med MOF
@@ -56,21 +56,21 @@ class Demo_IISWebsite : OMI_BaseResource
 
 Observera följande om föregående kod:
 
-* `FriendlyName`definierar det namn som du kan använda för att referera till den här anpassade resursen i DSC-konfigurations skript. I det här exemplet `Website` motsvarar det egna namnet `Archive` för den inbyggda Arkiv resursen.
-* Den klass som du definierar för din anpassade resurs måste vara härledd från `OMI_BaseResource`.
-* Typen Qualifier, `[Key]`i en egenskap anger att den här egenskapen unikt identifierar resurs instansen. Minst en `[Key]` egenskap krävs.
-* `[Required]` Kvalificeraren anger att egenskapen är obligatorisk (ett värde måste anges i alla konfigurations skript som använder den här resursen).
-* `[write]` Kvalificeraren anger att den här egenskapen är valfri när du använder den anpassade resursen i ett konfigurations skript. `[read]` Kvalificeraren anger att en egenskap inte kan ställas in av en konfiguration och endast är avsedd för rapportering.
-* `Values`begränsar de värden som kan tilldelas till egenskapen till listan över värden som definierats i `ValueMap`. Mer information finns i [ValueMap och värde kvalificerare](/windows/desktop/WmiSdk/value-map).
-* Att inkludera en egenskap `Ensure` som kallas `Present` med `Absent` värden och i din resurs rekommenderas som ett sätt att underhålla ett konsekvent format med inbyggda DSC-resurser.
-* Namnge schema filen för din anpassade resurs enligt följande: `classname.schema.mof`, där `classname` är identifieraren som följer `class` nyckelordet i schema definitionen.
+* `FriendlyName` definierar namnet som du kan använda för att referera till den här anpassade resursen i DSC-konfigurations skript. I det här exemplet motsvarar `Website` det egna namnet `Archive` för den inbyggda Arkiv resursen.
+* Den klass som du definierar för din anpassade resurs måste härledas från `OMI_BaseResource`.
+* Typen Qualifier, `[Key]`, för en egenskap anger att den här egenskapen unikt identifierar resurs instansen. Minst en `[Key]` egenskap krävs.
+* `[Required]`-kvalificeraren anger att egenskapen är obligatorisk (ett värde måste anges i alla konfigurations skript som använder den här resursen).
+* `[write]`-kvalificeraren anger att den här egenskapen är valfri när du använder den anpassade resursen i ett konfigurations skript. `[read]`-kvalificeraren anger att en egenskap inte kan ställas in av en konfiguration och endast är avsedd för rapportering.
+* `Values` begränsar de värden som kan tilldelas till egenskapen till listan över värden som definierats i `ValueMap`. Mer information finns i [ValueMap och värde kvalificerare](/windows/desktop/WmiSdk/value-map).
+* Att inkludera en egenskap som kallas `Ensure` med värden `Present` och `Absent` i din resurs rekommenderas som ett sätt att underhålla ett konsekvent format med inbyggda DSC-resurser.
+* Namnge schema filen för din anpassade resurs enligt följande: `classname.schema.mof`, där `classname` är identifieraren som följer `class`-nyckelordet i schema definitionen.
 
 ### <a name="writing-the-resource-script"></a>Skriver resurs skriptet
 
-Resurs skriptet implementerar logiken för resursen. I den här modulen måste du inkludera tre funktioner som kallas **Get-TargetResource**, **set-TargetResource**och **test-TargetResource**. Alla tre funktioner måste ha en parameter uppsättning som är identisk med uppsättningen med egenskaper som definierats i MOF-schemat som du skapade för din resurs. I det här dokumentet kallas den här uppsättningen egenskaper för "resurs egenskaper". Lagra dessa tre funktioner i en fil med <ResourceName>namnet. psm1. I följande exempel lagras funktionerna i en fil med namnet Demo_IISWebsite. psm1.
+Resurs skriptet implementerar logiken för resursen. I den här modulen måste du inkludera tre funktioner som kallas **Get-TargetResource**, **set-TargetResource**och **test-TargetResource**. Alla tre funktioner måste ha en parameter uppsättning som är identisk med uppsättningen med egenskaper som definierats i MOF-schemat som du skapade för din resurs. I det här dokumentet kallas den här uppsättningen egenskaper för "resurs egenskaper". Lagra dessa tre funktioner i en fil med namnet <ResourceName>. psm1. I följande exempel lagras funktionerna i en fil med namnet Demo_IISWebsite. psm1.
 
 > [!NOTE]
-> När du kör samma konfigurations skript på din resurs mer än en gång, bör du få inga fel och resursen ska finnas kvar i samma tillstånd som att köra skriptet en gång. För att åstadkomma detta måste du kontrol lera att funktionerna **Get-TargetResource** och **test-TargetResource** lämnar resursen oförändrade och att anropa funktionen **set-TargetResource** mer än en gång i en sekvens med samma parameter värdena motsvarar alltid att anropa det en gång.
+> När du kör samma konfigurations skript på din resurs mer än en gång, bör du få inga fel och resursen ska finnas kvar i samma tillstånd som att köra skriptet en gång. För att åstadkomma detta måste du se till att funktionerna **Get-TargetResource** och **test-TargetResource** lämnar resursen oförändrade och att anropet till funktionen **set-TargetResource** mer än en gång i en sekvens med samma parameter värden alltid motsvarar att anropa den en gång.
 
 I funktionen **Get-TargetResource** -funktion använder du de nyckel resurs egenskaps värden som anges som parametrar för att kontrol lera status för den angivna resurs instansen. Den här funktionen måste returnera en hash-tabell som visar alla resurs egenskaper som nycklar och de faktiska värdena för dessa egenskaper som motsvarande värden. Följande kod visar ett exempel.
 
@@ -215,7 +215,7 @@ $result
 }
 ```
 
-**Obs**: För enklare fel sökning använder du cmdleten **Write-Verbose** i din implementering av de föregående tre funktionerna.
+**Obs!** för enklare fel sökning använder du cmdleten **Write-Verbose** i din implementering av föregående tre funktioner.
 >Denna cmdlet skriver text till data strömmen för utförliga meddelanden.
 >Den utförliga meddelande strömmen visas som standard inte, men du kan visa den genom att ändra värdet för variabeln **$VerbosePreference** eller genom att använda **verbose** -parametern i DSC-cmdletar = ny.
 
@@ -282,7 +282,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 Du kan använda egenskapen **PsDscRunAsCredential** i resurs blocket [DSC-konfigurationer](../configurations/configurations.md) för att ange att resursen ska köras under en angiven uppsättning autentiseringsuppgifter.
 Mer information finns i [köra DSC med](../configurations/runAsUser.md)användarautentiseringsuppgifter.
 
-Om du vill komma åt användar kontexten inifrån en anpassad resurs kan du använda den `$PsDscContext`automatiska variabeln.
+Om du vill komma åt användar kontexten inifrån en anpassad resurs kan du använda den automatiska variabeln `$PsDscContext`.
 
 Till exempel kan följande kod skriva användar kontexten som resursen körs till i utförlig utdataström:
 
@@ -294,9 +294,9 @@ if (PsDscContext.RunAsUser) {
 
 ## <a name="rebooting-the-node"></a>Starta om noden
 
-Om de åtgärder som vidtas `Set-TargetResource` i funktionen kräver omstart kan du använda en global flagga för att instruera LCM att starta om noden. Den här omstarten sker `Set-TargetResource` direkt efter att funktionen har slutförts.
+Om åtgärderna som vidtas i din `Set-TargetResource` funktion kräver en omstart, kan du använda en global flagga för att instruera LCM att starta om noden. Den här omstarten sker direkt efter att funktionen `Set-TargetResource` slutförts.
 
-I din `Set-TargetResource` funktion lägger du till följande kodrad.
+I din `Set-TargetResource`-funktion lägger du till följande kodrad.
 
 ```powershell
 # Include this line if the resource requires a system reboot.

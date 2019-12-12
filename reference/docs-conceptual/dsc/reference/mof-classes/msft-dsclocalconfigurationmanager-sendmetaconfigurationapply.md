@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: SendMetaConfigurationApply-metoden
 ms.openlocfilehash: b2e420bafb8ea22aea43800f6e429d3ed785d1e8
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942596"
 ---
 # <a name="sendmetaconfigurationapply-method"></a>SendMetaConfigurationApply-metoden
@@ -32,7 +32,7 @@ uint32 SendMetaConfigurationApply(
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Kommentarer
+## <a name="remarks"></a>Anmärkningar
 
 Detta är en statisk metod.
 
@@ -42,6 +42,6 @@ Detta är en statisk metod.
 
 **Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
 
-## <a name="see-also"></a>Se också
+## <a name="see-also"></a>Se även
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

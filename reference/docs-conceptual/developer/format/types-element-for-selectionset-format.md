@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4606fec0-ff31-4d36-af68-227405335ec3
 caps.latest.revision: 15
 ms.openlocfilehash: 0427367efa2c8a7e352d718706d1341a0c8e3621
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72358744"
 ---
 # <a name="types-element-for-selectionset-format"></a>Types-element för SelectionSet (format)
@@ -32,7 +32,7 @@ Konfigurations element (format) SelectionSets-element (format) SelectionSet elem
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet för elementet `Types`. Det måste finnas minst ett underordnat element, men det finns ingen övre gräns för antalet underordnade element som kan läggas till.
+I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `Types`-elementet. Det måste finnas minst ett underordnat element, men det finns ingen övre gräns för antalet underordnade element som kan läggas till.
 
 ### <a name="attributes"></a>Attribut
 
@@ -56,7 +56,7 @@ De objekt som definieras av det här elementet utgör en urvals uppsättning som
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar ett `SelectionSet`-element som definierar fyra .NET-typer.
+I det här exemplet visas ett `SelectionSet`-element som definierar fyra .NET-typer.
 
 ```xml
 <SelectionSets>

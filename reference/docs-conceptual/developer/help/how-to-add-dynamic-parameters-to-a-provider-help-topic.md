@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
 ms.openlocfilehash: 59839e9b8b6f2a56f2f1a9c755f2f1a85deb34aa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353307"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>Lägga till dynamiska parametrar i ett hjälpavsnitt för providers
@@ -29,7 +29,7 @@ Om en provider inte implementerar några dynamiska parametrar innehåller hjälp
 
 ### <a name="to-add-dynamic-parameters"></a>Lägga till dynamiska parametrar
 
-1. I filen *AssemblyName*. dll-Help. xml i elementet `providerHelp` lägger du till ett `DynamicParameters`-element. Elementet `DynamicParameters` bör visas efter elementet `Tasks` och före `RelatedLinks`-elementet.
+1. Lägg till ett `DynamicParameters`-element i `providerHelp`-elementet i filen *AssemblyName*. dll-Help. xml. `DynamicParameters`-elementet ska visas efter `Tasks`-elementet och före `RelatedLinks`-elementet.
 
    Till exempel:
 
@@ -46,7 +46,7 @@ Om en provider inte implementerar några dynamiska parametrar innehåller hjälp
 
    Om providern inte implementerar några dynamiska parametrar kan `DynamicParameters`-elementet vara tomt.
 
-2. I elementet `DynamicParameters` för varje dynamisk parameter lägger du till ett `DynamicParameter`-element.
+2. Lägg till ett `DynamicParameter`-element för varje dynamisk parameter i `DynamicParameters`-elementet.
 
    Till exempel:
 
@@ -64,7 +64,7 @@ Om en provider inte implementerar några dynamiska parametrar innehåller hjälp
    |Namn|Anger parameter namnet.|
    |CmdletSupported|Anger cmdletarna där parametern är giltig. Ange en kommaavgränsad lista med cmdlet-namn.|
 
-   Till exempel är följande XML-dokument `Encoding` dynamisk parameter som Windows PowerShell-filleverantören lägger till i `Add-Content`, `Get-Content`, `Set-Content` cmdletar.
+   Till exempel är följande XML-dokument `Encoding` dynamiska parametern som Windows PowerShell-providern lägger till i `Add-Content``Get-Content``Set-Content` cmdlets.
 
     ```xml
     <DynamicParameters/>
@@ -75,9 +75,9 @@ Om en provider inte implementerar några dynamiska parametrar innehåller hjälp
 
     ```
 
-4. I varje `DynamicParameter`-element lägger du till ett `Type`-element. Elementet `Type` är en behållare för elementet `Name` som innehåller .NET-typen för den dynamiska parameterns värde.
+4. I varje `DynamicParameter`-element lägger du till ett `Type`-element. `Type`-elementet är en behållare för det `Name`-element som innehåller .NET-typen för den dynamiska parameterns värde.
 
-   Följande XML visar till exempel att .NET-typen för parametern `Encoding` är dynamisk är [Microsoft. PowerShell. commands. FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding) -uppräkningen.
+   Följande XML visar till exempel att .NET-typen för parametern `Encoding` Dynamic är [Microsoft. PowerShell. commands. FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding) -uppräkning.
 
     ```xml
     <DynamicParameters/>
@@ -91,9 +91,9 @@ Om en provider inte implementerar några dynamiska parametrar innehåller hjälp
     </DynamicParameters>
     ```
 
-5. Lägg till elementet `Description`, som innehåller en kort beskrivning av den dynamiska parametern. När du skriver beskrivningen använder du rikt linjerna för alla cmdlet-parametrar i [så här lägger du till parameter information](./how-to-add-parameter-information.md).
+5. Lägg till `Description`-elementet som innehåller en kort beskrivning av den dynamiska parametern. När du skriver beskrivningen använder du rikt linjerna för alla cmdlet-parametrar i [så här lägger du till parameter information](./how-to-add-parameter-information.md).
 
-   Följande XML innehåller till exempel en beskrivning av den dynamiska parametern `Encoding`.
+   Följande XML innehåller till exempel en beskrivning av parametern `Encoding` Dynamic.
 
     ```xml
     <DynamicParameters/>
@@ -108,18 +108,18 @@ Om en provider inte implementerar några dynamiska parametrar innehåller hjälp
     </DynamicParameters>
     ```
 
-6. Lägg till elementet `PossibleValues` och dess underordnade element. Tillsammans beskriver de här elementen värdena för den dynamiska parametern. Det här elementet är utformat för uppräknade värden. Om den dynamiska parametern inte tar ett värde, t. ex. är fallet med en växlings parameter, eller om värdena inte kan räknas upp, lägger du till ett tomt `PossibleValues`-element.
+6. Lägg till `PossibleValues`-elementet och dess underordnade element. Tillsammans beskriver de här elementen värdena för den dynamiska parametern. Det här elementet är utformat för uppräknade värden. Om den dynamiska parametern inte tar ett värde, t. ex. är fallet med en växlings parameter, eller om värdena inte kan räknas upp, lägger du till ett tomt `PossibleValues`-element.
 
-   I följande tabell visas och beskrivs elementet `PossibleValues` och dess underordnade element.
+   I följande tabell visas och beskrivs `PossibleValues`-elementet och dess underordnade element.
 
    |Elementnamn|Beskrivning|
    |------------------|-----------------|
    |PossibleValues|Det här elementet är en behållare. De underordnade elementen beskrivs nedan. Lägg till ett `PossibleValues`-element i varje leverantörs hjälp avsnitt. Elementet kan vara tomt.|
    |PossibleValue|Det här elementet är en behållare. De underordnade elementen beskrivs nedan. Lägg till ett `PossibleValue`-element för varje värde för den dynamiska parametern.|
    |Värde|Anger värde namnet.|
-   |Beskrivning|Det här elementet innehåller ett `Para`-element. Texten i elementet `Para` beskriver det värde som namnges i elementet `Value`.|
+   |Beskrivning|Det här elementet innehåller ett `Para`-element. Texten i `Para`-elementet beskriver det värde som namnges i `Value`-elementet.|
 
-   Följande XML visar till exempel ett `PossibleValue`-element i den dynamiska parametern `Encoding`.
+   Följande XML visar till exempel ett `PossibleValue`-element i parametern `Encoding` dynamisk.
 
     ```xml
     <DynamicParameters/>
@@ -140,7 +140,7 @@ Om en provider inte implementerar några dynamiska parametrar innehåller hjälp
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visas elementet `DynamicParameters` i den dynamiska parametern `Encoding`.
+I följande exempel visas `DynamicParameters`-elementet i parametern `Encoding` dynamisk.
 
 ```xml
 <DynamicParameters/>

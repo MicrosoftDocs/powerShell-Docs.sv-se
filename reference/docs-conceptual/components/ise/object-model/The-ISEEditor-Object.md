@@ -1,23 +1,23 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: ISEEditor-objektet
 ms.openlocfilehash: 2d4c3d941035384c591ca57e809c0e3a9b852f5c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62086773"
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor-objektet
 
-En **ISEEditor** objekt är en instans av klassen Microsoft.PowerShell.Host.ISE.ISEEditor. Konsolfönstret är en **ISEEditor** objekt. Varje [ISEFile](The-ISEFile-Object.md) objekt har en tillhörande **ISEEditor** objekt. I följande avsnitt listas de metoder och egenskaper för en **ISEEditor** objekt.
+Ett **ISEEditor** -objekt är en instans av klassen Microsoft. PowerShell. Host. ISE. ISEEditor. Konsol fönstret är ett **ISEEditor** -objekt. Varje [ISEFile](The-ISEFile-Object.md) -objekt har ett associerat **ISEEditor** -objekt. I följande avsnitt listas metoder och egenskaper för ett **ISEEditor** -objekt.
 
 ## <a name="methods"></a>Metoder
 
 ### <a name="clear"></a>Rensa\(\)
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
 Tar bort texten i redigeraren.
 
@@ -28,22 +28,22 @@ $psISE.CurrentPowerShellTab.ConsolePane.Clear()
 
 ### <a name="ensurevisibleint-linenumber"></a>EnsureVisible\(int lineNumber\)
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Rullar redigeraren så att raden som som motsvarar det angivna **lineNumber** parametervärdet är synliga. Den genererar ett undantag om angivna radnumret är utanför intervallet för 1, senaste radnummer, som definierar giltiga radnumren.
+Rullar i redigeraren så att den rad som motsvarar det angivna värdet för parametern **lineNumber** är synlig. Ett undantag genereras om det angivna rad numret ligger utanför intervallet 1, sista rad numret, som definierar giltiga rad nummer.
 
-**lineNumber** antalet rader som ska göras synliga.
+**lineNumber** Numret på raden som ska göras synlig.
 
 ```powershell
 # Scrolls the text in the Script pane so that the fifth line is in view.
 $psISE.CurrentFile.Editor.EnsureVisible(5)
 ```
 
-### <a name="focus"></a>Fokus\(\)
+### <a name="focus"></a>Fokusera\(\)
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Anger fokus till redigeraren.
+Ställer in fokus på redigeraren.
 
 ```powershell
 # Sets focus to the Console pane.
@@ -52,13 +52,13 @@ $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 
 ### <a name="getlinelengthint-linenumber-"></a>GetLineLength\(int lineNumber \)
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Hämtar radlängden som ett heltal för raden som anges av radnumret.
+Hämtar rad längden som ett heltal för raden som anges av rad numret.
 
-**lineNumber** antalet rader som längden ska hämtas.
+**lineNumber** Numret på den linje som längden ska hämtas från.
 
-**Returnerar** radlängden för raden i det angivna radnumret.
+**Returnerar** Rad längden för raden vid det angivna rad numret.
 
 ```powershell
 # Gets the length of the first line in the text of the Command pane.
@@ -67,9 +67,9 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
 ### <a name="gotomatch"></a>GoToMatch\(\)
 
-Stöds i Windows PowerShell ISE 3.0 och senare och finns inte i tidigare versioner.
+Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Flyttar av cirkumflexet matchande tecken till om den **CanGoToMatch** egenskapen för redigeraren-objektet är **$true**, som uppstår när av cirkumflexet är omedelbart före en vänsterparentes eller hakparentes klammerparentes - \(,\[, {- eller omedelbart efter att en avslutande parentes, hakparenteser och klammerparentes - \),\],}.  Av cirkumflexet är placerad före ett inledande tecken eller efter ett avslutande tecken. Om den **CanGoToMatch** egenskapen är **$false**, och sedan på den här metoden gör ingenting.
+Flyttar cirkumflexet till det matchande tecknet om egenskapen **CanGoToMatch** för Editor-objektet är **$True**, vilket inträffar när cirkumflexet är omedelbart före en inledande parentes, hak paren tes eller \(klammerparentes,\[, {-eller omedelbart efter en högerparentes, hakparenteser eller klammerparenteser-\),\],}.  Cirkumflexet placeras före ett inledande tecken eller efter ett avslutande tecken. Om egenskapen **CanGoToMatch** är **$false**gör den här metoden ingenting.
 
 ```powershell
 # Goes to the matching character if CanGoToMatch() is $true
@@ -78,35 +78,35 @@ $psISE.CurrentPowerShellTab.ConsolePane.GoToMatch()
 
 ### <a name="inserttext-text-"></a>InsertText\( text \)
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Ersätter markeringen med text eller infogar text i den aktuella hatt positionen.
+Ersätter markeringen med text eller infogar text vid den aktuella cirkumflexens position.
 
-**text** -sträng texten som ska infogas.
+**text** – sträng texten som ska infogas.
 
-Se den [skript exempel](#scripting-example) senare i det här avsnittet.
+Se [skript exemplet](#scripting-example) senare i det här avsnittet.
 
-### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Välj\( startLine, startColumn, endLine, endColumn \)
+### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Välj\( startLine, startColumn, SourceLocation, endColumn \)
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Markerar text från den **startLine**, **startColumn**, **endLine**, och **endColumn** parametrar.
+Markerar texten från parametrarna **startline**, **startColumn**, **SourceLocation**och **endColumn** .
 
-**startLine** -heltal den rad där valet startar.
+**startline** – heltals linjen där valet börjar.
 
-**startColumn** -heltal kolumnen i raden start där valet startar.
+**startColumn** – Integer kolumnen i Start raden där markeringen börjar.
 
-**endLine** -heltal den rad där markeringen slutar.
+**SourceLocation** – heltals linjen där markeringen slutar.
 
-**endColumn** -heltal kolumnen i raden slutet där markeringen slutar.
+**endColumn** – Markera kolumnen i slut raden där markeringen slutar.
 
-Se den [skript exempel](#scripting-example) senare i det här avsnittet.
+Se [skript exemplet](#scripting-example) senare i det här avsnittet.
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Markerar text som innehåller för närvarande av cirkumflexet hela raden.
+Markerar hela text raden som för närvarande innehåller cirkumflex.
 
 ```powershell
 # First, set the caret position on line 5.
@@ -117,13 +117,13 @@ $psISE.CurrentFile.Editor.SelectCaretLine()
 
 ### <a name="setcaretposition-linenumber-columnnumber-"></a>SetCaretPosition\( lineNumber, columnNumber \)
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Anger hatt radnumret och kolumnnumret. Den genererar ett undantag om radnumret hatt eller hatt kolumnnummer utanför deras respektive giltiga intervall.
+Anger cirkumflexens position i rad numret och kolumn numret. Ett undantag utlöses om antingen cirkumflexets rad nummer eller cirkumflex kolumn numret inte är av respektive giltiga intervall.
 
-**lineNumber** -heltal radnumret cirkumflexet.
+**lineNumber** – heltals markörens rad nummer.
 
-**antal_kolumner anger** -heltal kolumnnummer cirkumflexet.
+**columnNumber** – heltal för kolumn numret i cirkumflexet.
 
 ```powershell
 # Set the CaretPosition.
@@ -132,9 +132,9 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 
 ### <a name="toggleoutliningexpansion"></a>ToggleOutliningExpansion\(\)
 
-Stöds i Windows PowerShell ISE 3.0 och senare och finns inte i tidigare versioner.
+Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Gör alla dispositionsavsnitt visa eller dölja.
+Gör så att alla dispositions avsnitt expanderas eller komprimeras.
 
 ```powershell
 # Toggle the outlining expansion
@@ -145,9 +145,9 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
 ### <a name="cangotomatch"></a>CanGoToMatch
 
-Stöds i Windows PowerShell ISE 3.0 och senare och finns inte i tidigare versioner.
+Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Skrivskyddad boolesk egenskap att indikera om av cirkumflexet är bredvid en parentes, hakparenteser och klammerparentes - \( \), \[ \], {}. Om av cirkumflexet är omedelbart före det inledande tecknet eller direkt efter det avslutande tecknet i ett par så att den här egenskapens värde är **$true**. Annars är **$false**.
+Den skrivskyddade booleska egenskapen som anger om cirkumflexet infaller vid en parentes, hak paren tes eller klammerparentes, \(\)\[\]{}. Om cirkumflexet är omedelbart före det inledande tecknet eller omedelbart efter det avslutande tecknet i ett par, är det här egenskap svärdet **$True**. Annars är det **$false**.
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace
@@ -156,9 +156,9 @@ $psISE.CurrentFile.Editor.CanGoToMatch
 
 ### <a name="caretcolumn"></a>CaretColumn
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Skrivskyddad egenskap som hämtar kolumnnummer som motsvarar positionen för av cirkumflexet.
+Den skrivskyddade egenskapen som hämtar kolumn numret som motsvarar cirkumflexens position.
 
 ```powershell
 # Get the CaretColumn.
@@ -167,9 +167,9 @@ $psISE.CurrentFile.Editor.CaretColumn
 
 ### <a name="caretline"></a>CaretLine
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Skrivskyddad egenskap som hämtar antalet rader som innehåller av cirkumflexet.
+Den skrivskyddade egenskapen som hämtar numret på den rad som innehåller cirkumflexen.
 
 ```powershell
 # Get the CaretLine.
@@ -178,9 +178,9 @@ $psISE.CurrentFile.Editor.CaretLine
 
 ### <a name="caretlinetext"></a>CaretLineText
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Den skrivskyddade egenskapen som får fullständig rad med text som innehåller av cirkumflexet.
+Den skrivskyddade egenskapen som hämtar den fullständiga text raden som innehåller cirkumflex.
 
 ```powershell
 # Get all of the text on the line that contains the caret.
@@ -189,9 +189,9 @@ $psISE.CurrentFile.Editor.CaretLineText
 
 ### <a name="linecount"></a>LineCount
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Den skrivskyddade egenskapen som hämtar rader räknas från redigeraren.
+Den skrivskyddade egenskapen som hämtar rad antalet från redigeraren.
 
 ```powershell
 # Get the LineCount.
@@ -200,21 +200,21 @@ $psISE.CurrentFile.Editor.LineCount
 
 ### <a name="selectedtext"></a>SelectedText
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
 Den skrivskyddade egenskapen som hämtar den markerade texten från redigeraren.
 
-Se den [skript exempel](#scripting-example) senare i det här avsnittet.
+Se [skript exemplet](#scripting-example) senare i det här avsnittet.
 
 ### <a name="text"></a>Text
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Läs/Skriv-egenskapen som hämtar eller anger texten i redigeraren.
+Egenskapen Läs/skriv som hämtar eller anger texten i redigeraren.
 
-Se den [skript exempel](#scripting-example) senare i det här avsnittet.
+Se [skript exemplet](#scripting-example) senare i det här avsnittet.
 
-## <a name="scripting-example"></a>Exempel-skript
+## <a name="scripting-example"></a>Skript exempel
 
 ```powershell
 # This illustrates how you can use the length of a line to
@@ -245,7 +245,7 @@ $myEditor.InsertText($selection.ToLower())
 
 ## <a name="see-also"></a>Se även
 
-- [The ISEFile Object](The-ISEFile-Object.md)
-- [The PowerShellTab Object](The-PowerShellTab-Object.md)
-- [Syftet med den Windows PowerShell ISE-Skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [ISEFile-objektet](The-ISEFile-Object.md)
+- [PowerShellTab-objektet](The-PowerShellTab-Object.md)
+- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)

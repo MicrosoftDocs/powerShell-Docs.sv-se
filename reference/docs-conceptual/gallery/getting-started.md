@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Kom igång med PowerShell-galleriet
 ms.openlocfilehash: ee3fe7d9c65ad1a8f9ffd2ddec0f4ce6659bc3d5
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71329164"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Komma igång med PowerShell-galleriet
@@ -23,11 +23,11 @@ Du kan hitta paket i PowerShell-galleriet med hjälp av **Sök** kontrollen på 
 
 Du kan filtrera resultat från galleriet med hjälp av följande parametrar:
 
-- Name
+- Namn
 - AllVersions
 - MinimumVersion
 - RequiredVersion
-- Tagga
+- Tagg
 - Inkluderar
 - Dscresource Keyword Supports
 - RoleCapability
@@ -42,13 +42,13 @@ När du har identifierat ett paket som du är intresse rad av kanske du vill vet
 
 Om du upptäcker ett paket som du tycker att du inte har publicerat i en godkänd tro klickar du på **rapportera missbruk** på paketets sida.
 
-Om du kör [Sök-modul][] eller [Sök – skript][]kan du visa dessa data i det returnerade PSGetModuleInfo-objektet. Att köra `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` returnerar till exempel data i PSReadLine-modulen i galleriet.
+Om du kör [Sök-modul][] eller [Sök – skript][]kan du visa dessa data i det returnerade PSGetModuleInfo-objektet. Om du till exempel kör `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` returnerar data i modulen PSReadLine i galleriet.
 
 ## <a name="downloading-packages-from-the-powershell-gallery"></a>Hämta paket från PowerShell-galleriet
 
 Vi uppmuntrar följande process när du laddar ned paket från PowerShell-galleriet:
 
-### <a name="inspect"></a>allmänt
+### <a name="inspect"></a>Granska
 
 Om du vill ladda ned ett paket från galleriet för granskning kör du antingen cmdleten [Spara-modul][] eller [Spara – skript][] , beroende på paket typen. På så sätt kan du spara paketet lokalt utan att installera det och granska paket innehållet. Kom ihåg att ta bort det sparade paketet manuellt.
 
@@ -60,13 +60,13 @@ Om du upptäcker ett paket som du tycker att du inte har publicerat i en godkän
 
 Om du vill installera ett paket från galleriet för användning kör du antingen cmdleten [Installera-modul][] eller [Installera – skript][] , beroende på typ av paket.
 
-[Installera-modul][] installerar modulen `$env:ProgramFiles\WindowsPowerShell\Modules` som standard.
-Detta kräver ett administratörs konto. Om du lägger till `-Scope CurrentUser` parametern installeras modulen till. `$env:USERPROFILE\Documents\WindowsPowerShell\Modules`
+[Installera-modul][] installerar modulen till `$env:ProgramFiles\WindowsPowerShell\Modules` som standard.
+Detta kräver ett administratörs konto. Om du lägger till `-Scope CurrentUser`-parametern installeras modulen på `$env:USERPROFILE\Documents\WindowsPowerShell\Modules`.
 
 [Installera – skript][] installerar skriptet till `$env:ProgramFiles\WindowsPowerShell\Scripts` som standard.
-Detta kräver ett administratörs konto. Om du lägger till `-Scope CurrentUser` parametern installeras skriptet till. `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts`
+Detta kräver ett administratörs konto. Om du lägger till parametern `-Scope CurrentUser` installeras skriptet till `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts`.
 
-Som standard installerar [Installera-modul][] och [Installera – skript][] den senaste versionen av ett paket. Lägg till `-RequiredVersion` parametern om du vill installera en äldre version av paketet.
+Som standard installerar [Installera-modul][] och [Installera – skript][] den senaste versionen av ett paket. Om du vill installera en äldre version av paketet lägger du till `-RequiredVersion`-parametern.
 
 ### <a name="deploy"></a>Distribuera
 
@@ -76,9 +76,9 @@ Mer information om Azure Automation finns i [Azure Automation](/azure/automation
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>Uppdaterar paket från PowerShell-galleriet
 
-Om du vill uppdatera paket som är installerade från PowerShell-galleriet kör du antingen cmdleten [Update-module] [] eller [Update-Script] []. När körs utan ytterligare parametrar försöker [Update-module] [] uppdatera alla moduler som installerats genom att köra [Installera-modul][]. Om du vill uppdatera moduler selektivt `-Name` lägger du till parametern.
+Om du vill uppdatera paket som är installerade från PowerShell-galleriet kör du antingen cmdleten [Update-module] [] eller [Update-Script] []. När körs utan ytterligare parametrar försöker [Update-module] [] uppdatera alla moduler som installerats genom att köra [Installera-modul][]. Om du vill uppdatera moduler selektivt lägger du till parametern `-Name`.
 
-På samma sätt försöker [Update-Script] [] också uppdatera alla skript som installeras genom att köra [Installera – skript][]när de körs utan ytterligare parametrar. Om du vill uppdatera skript selektivt `-Name` lägger du till parametern.
+På samma sätt försöker [Update-Script] [] också uppdatera alla skript som installeras genom att köra [Installera – skript][]när de körs utan ytterligare parametrar. Om du vill uppdatera skript selektivt lägger du till parametern `-Name`.
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>List paket som du har installerat från PowerShell-galleriet
 

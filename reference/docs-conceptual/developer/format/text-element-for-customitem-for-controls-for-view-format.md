@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5d3ecec9-cc95-482e-9ee0-4e4e353b6357
 caps.latest.revision: 6
 ms.openlocfilehash: 7ce29ef8f58f52ecca68b10a4818ffe7c1bfbf27
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353678"
 ---
 # <a name="text-element-for-customitem-for-controls-for-view-format"></a>Text-element för CustomItem för Controls för View (format)
@@ -29,7 +29,7 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `Text`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `Text`-elementet.
 
 ### <a name="attributes"></a>Attribut
 
@@ -45,7 +45,7 @@ Ingen.
 |-------------|-----------------|
 |[CustomItem-element för CustomEntry för kontroller för vy (format)](./customitem-element-for-customentry-for-controls-for-view-format.md)|Definierar vilka data som visas av kontrollen och hur de visas.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange texten för en kontroll för data som du vill visa.
 

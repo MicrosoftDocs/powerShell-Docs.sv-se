@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b7bed607-369b-4507-87fa-f6011c2f1970
 caps.latest.revision: 9
 ms.openlocfilehash: 2ce146df05ef876d9c17f560628ebac2c39e57bf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356135"
 ---
 # <a name="stopprocesssample01-sample"></a>StopProcessSample01 – exempel
@@ -29,7 +29,7 @@ Det här exemplet visar hur du skriver en cmdlet som begär feedback från anvä
 
     Biblioteket för exemplet skapas i standardmappen \Bin eller \Bin\Debug.
 
-### <a name="how-to-run-the-sample"></a>Så här kör du exemplet
+### <a name="how-to-run-the-sample"></a>Köra exemplet
 
 1. Skapa följande modul-mapp:
 
@@ -51,7 +51,7 @@ Det här exemplet visar hur du skriver en cmdlet som begär feedback från anvä
 
 Det här exemplet kräver Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Visat
+## <a name="demonstrates"></a>Demonstrationer
 
 Det här exemplet demonstrerar följande.
 

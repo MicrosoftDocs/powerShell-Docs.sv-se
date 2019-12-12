@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
 ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354812"
 ---
 # <a name="creating-a-table-view"></a>Skapa en tabellvy
@@ -21,7 +21,7 @@ I en tabellvy visas data i en eller flera kolumner. Varje rad i tabellen represe
 
 ## <a name="a-table-view-display"></a>Visa en tabellvy
 
-I följande exempel visas hur Windows PowerShell visar objektet [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) som returneras av cmdleten [Get-service](/powershell/module/microsoft.powershell.management/get-service) . För det här objektet har Windows PowerShell definierat en tabellvy som visar egenskapen `Status`, egenskapen `Name` (den här egenskapen är en alias-egenskap för egenskapen `ServiceName`) och egenskapen `DisplayName`. Varje rad i tabellen representerar ett objekt som returneras av cmdleten.
+I följande exempel visas hur Windows PowerShell visar objektet [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) som returneras av cmdleten [Get-service](/powershell/module/microsoft.powershell.management/get-service) . För det här objektet har Windows PowerShell definierat en tabellvy som visar egenskapen `Status`, egenskapen `Name` (den här egenskapen är en Ali Aset för egenskapen `ServiceName`) och egenskapen `DisplayName`. Varje rad i tabellen representerar ett objekt som returneras av cmdleten.
 
 ```output
 Status   Name               DisplayName
@@ -232,7 +232,7 @@ Följande XML-element kan användas för att ange ett format mönster:
 
 - [FormatString](./label-element-for-listitem-for-listcontrol-format.md) -elementet anger ett format mönster som definierar hur egenskapen eller skriptets värde visas.
 
-I följande exempel kallas metoden `ToString` för att formatera värdet för skriptet. Skript kan anropa vilken metod som helst av ett objekt. Det innebär att om ett objekt har en metod, till exempel `ToString`, som har formateringsegenskaper, kan skriptet anropa metoden för att formatera utdata för skriptet.
+I följande exempel kallas metoden `ToString` för att formatera skriptets värde. Skript kan anropa vilken metod som helst av ett objekt. Det innebär att om ett objekt har en metod, till exempel `ToString`, som har formateringsegenskaper, kan skriptet anropa metoden för att formatera utdata för skriptet.
 
 ```xml
 <ListItem>

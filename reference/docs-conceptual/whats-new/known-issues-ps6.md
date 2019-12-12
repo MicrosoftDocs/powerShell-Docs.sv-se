@@ -3,10 +3,10 @@ ms.date: 05/17/2018
 keywords: PowerShell, Core
 title: Kända problem för PowerShell 6,0
 ms.openlocfilehash: e84dd2f7deefcc64aea09585e7ce24dc1e8515fc
-ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71692211"
 ---
 # <a name="known-issues-for-powershell-60"></a>Kända problem för PowerShell 6,0
@@ -21,7 +21,7 @@ Obs! på grund av likheter av många underliggande under system är PowerShell p
 
 Tidigare har PowerShell varit enhetligt Skift läges okänsligt, med några undantag. På UNIX-liknande operativ system är fil systemet främst Skift läges känsligt och PowerShell följer standard i fil systemet. Detta visas på flera olika sätt, uppenbara och icke-uppenbara.
 
-#### <a name="directly"></a>Rakt
+#### <a name="directly"></a>Direkt
 
 - När du anger en fil i PowerShell måste du använda rätt Skift läge.
 
@@ -102,7 +102,7 @@ Ett stort antal kommandon (cmdlets) som normalt är tillgängliga i PowerShell �
 
 I följande tabell visas kommandon som är kända för att inte fungera i PowerShell på Linux/macOS.
 
-|Kommandon|Användnings tillstånd|Anteckningar|
+|Kommandon|Användnings tillstånd|Obs!|
 |--------|-----------------|-----|
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Inte tillgängligt.|De här kommandona kommer inte att identifieras. Detta bör åtgärdas i en framtida version.|
 |`Get-Acl`, `Set-Acl`|Inte tillgänglig.|De här kommandona kommer inte att identifieras. Detta bör åtgärdas i en framtida version.|

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c0506928-db92-4ec4-855f-6f3592a383ae
 caps.latest.revision: 6
 ms.openlocfilehash: 5ead806d956ebbef95eeffc42bb39ef784208017
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353650"
 ---
 # <a name="typename-element-for-entryselectedby-for-enumerableexpansion-format"></a>TypeName-element för EntrySelectedBy för EnumerableExpansion (format)
@@ -30,7 +30,7 @@ Konfigurations element (format) DefaultSettings-element (format) EnumerableExpan
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `TypeName`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `TypeName`-elementet.
 
 ### <a name="attributes"></a>Attribut
 
@@ -46,7 +46,7 @@ Ingen.
 |-------------|-----------------|
 |[EntrySelectedBy-element för EnumerableExpansion (format)](./entryselectedby-element-for-enumerableexpansion-format.md)|Definierar de .NET-typer som använder den här definitionen eller det villkor som måste finnas för att den här definitionen ska kunna användas.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange det fullständigt kvalificerade namnet för .NET-typen, t. ex. `System.IO.DirectoryInfo`.
 

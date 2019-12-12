@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: a97a98ee-ffc0-42f0-a9a6-b0717b39c798
 caps.latest.revision: 5
 ms.openlocfilehash: 7aa6fa407e509a31c4066c4f73ae01b02b2f338c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356163"
 ---
 # <a name="outputtype-attribute-declaration"></a>Deklaration av attributet OutputType
 
-Attributet `OutputType` identifierar de .NET Framework typer som returneras av en cmdlet, funktion eller skript.
+Attributet `OutputType` identifierar de .NET Frameworks typer som returneras av en cmdlet, funktion eller skript.
 
 ## <a name="syntax"></a>Syntax
 

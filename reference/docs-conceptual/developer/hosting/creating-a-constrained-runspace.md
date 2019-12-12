@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 59125e65-7030-40bb-9926-756120b2d952
 caps.latest.revision: 5
 ms.openlocfilehash: 20ac1e2af8e047b8b572d86a55439676aa8df25c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357766"
 ---
 # <a name="creating-a-constrained-runspace"></a>Skapa ett begränsat körningsutrymme
 
-Av prestanda-eller säkerhets skäl kanske du vill begränsa vilka Windows PowerShell-kommandon som är tillgängliga för värd programmet. Om du vill göra det skapar du en tom [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) genom att anropa metoden [system. Management. Automation. körnings utrymmen. Initialsessionstate. Create *](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) och lägger sedan till bara de kommandon som du vill använda få.
+Av prestanda-eller säkerhets skäl kanske du vill begränsa vilka Windows PowerShell-kommandon som är tillgängliga för värd programmet. Om du vill göra det skapar du en tom [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) genom att anropa metoden [system. Management. Automation. körnings utrymmen. Initialsessionstate. Create *](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) och lägger sedan till endast de kommandon som du vill använda.
 
  Om du använder en körnings utrymme som bara läser in de kommandon som du anger får du avsevärt bättre prestanda.
 

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Bygg anpassade resurser för Desired Configuration för Windows PowerShell
 ms.openlocfilehash: f0f35e8d0083d302f142f2215c9f28fee411eb07
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941175"
 ---
 # <a name="build-custom-windows-powershell-desired-state-configuration-resources"></a>Bygg anpassade resurser för Desired Configuration för Windows PowerShell

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e199bba3-90d3-41ca-9d78-cb502e58508d
 caps.latest.revision: 6
 ms.openlocfilehash: 9b4d83aeaf45eab1365dec5fbf48c3c796ed5bde
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359354"
 ---
 # <a name="security-parameters"></a>Säkerhetsparametrar
@@ -29,20 +29,20 @@ I följande tabell visas rekommenderade namn och funktioner för parametrar som 
 |**CertStoreLocation**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange platsen för certifikat arkivet. Platsen är vanligt vis en fil Sök väg.|
 |**CertSubjectName**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange utfärdaren av ett certifikat eller så att användaren kan ange en under sträng.|
 |**CertUsage**<br>Datatyp: sträng|Implementera den här parametern för att ange nyckel användningen eller den förbättrade nyckel användningen. Nyckeln kan representeras som en bitmask, en bit, en objekt identifierare (OID) eller en sträng.|
-|**Certifiering**<br>Datatyp: [system. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Implementera den här parametern så att cmdleten automatiskt kommer att uppmana användaren att ange ett användar namn eller lösen ord. En prompt för båda visas om en fullständig autentiseringsuppgift inte anges direkt.|
+|**Autentiseringsuppgifter**<br>Datatyp: [system. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Implementera den här parametern så att cmdleten automatiskt kommer att uppmana användaren att ange ett användar namn eller lösen ord. En prompt för båda visas om en fullständig autentiseringsuppgift inte anges direkt.|
 |**CSPName**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange namnet på certifikat tjänst leverantören (CSP).|
 |**CSPType**<br>Datatyp: heltal|Implementera den här parametern så att användaren kan ange typen av CSP.|
 |**Grupp**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en samling med huvud konton för åtkomst. Mer information finns i beskrivningen av **huvud** parametern.|
 |**Nyckelalgoritm**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange vilken algoritm för nyckel skapande som ska användas för säkerhet.|
 |**KeyContainerName**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange namnet på nyckel behållaren.|
 |**Nyckel längd**<br>Datatyp: heltal|Implementera den här parametern så att användaren kan ange längden på nyckeln i bitar.|
-|**Reparation**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en åtgärd som kan utföras på ett skyddat objekt.|
+|**Åtgärd**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en åtgärd som kan utföras på ett skyddat objekt.|
 |**Viktigaste**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en unik identifierbar entitet för åtkomst.|
 |**Grupperna**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange rätt en cmdlet måste utföra en åtgärd för en viss entitet.|
 |**Privilegier**<br>Datatyp: matris med privilegier|Implementera den här parametern så att användaren kan ange de rättigheter som en cmdlet måste utföra för att utföra åtgärden för en viss post.|
-|**Rollinnehavaren**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en uppsättning åtgärder som kan utföras av en entitet.|
+|**Role**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en uppsättning åtgärder som kan utföras av en entitet.|
 |**SaveCred**<br>Datatyp: SwitchParameter|Implementera den här parametern så att autentiseringsuppgifterna som tidigare sparades av användaren används när parametern anges.|
-|**Utrymme**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange gruppen med skyddade objekt för cmdleten.|
+|**Omfång**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange gruppen med skyddade objekt för cmdleten.|
 |**SID**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en unik identifierare som representerar ett huvud konto.|
 |**Pålitlig**<br>Datatyp: SwitchParameter|Implementera den här parametern så att förtroende nivåer stöds när parametern anges.|
 |**TrustLevel**<br>Datatyp: nyckelord|Implementera den här parametern så att användaren kan ange den förtroende nivå som stöds. Exempel: möjliga värden är Internet, intranät och FullTrust.|

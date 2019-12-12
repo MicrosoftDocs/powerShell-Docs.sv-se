@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
 caps.latest.revision: 5
 ms.openlocfilehash: f776f13fe743a3f5f67de0d94883e3f754040ffc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357759"
 ---
 # <a name="adding-and-invoking-commands"></a>Lägga till och anropa kommandon
@@ -21,7 +21,7 @@ När du har skapat en körnings utrymme kan du lägga till Windows-PowerShellcom
 
 ## <a name="creating-a-pipeline"></a>Skapa en pipeline
 
- Klassen [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) innehåller flera metoder för att lägga till kommandon, parametrar och skript i pipelinen. Du kan anropa pipelinen synkront genom att anropa en överlagring av metoden [system. Management. Automation. PowerShell. Invoke *](/dotnet/api/System.Management.Automation.PowerShell.Invoke) eller asynkront genom att anropa en överlagring av [systemet. Management. Automation. PowerShell. BeginInvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) och sedan metoden [system. Management. Automation. PowerShell. EndInvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) .
+ Klassen [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) innehåller flera metoder för att lägga till kommandon, parametrar och skript i pipelinen. Du kan anropa pipelinen synkront genom att anropa en överlagring av metoden [system. Management. Automation. PowerShell. Invoke *](/dotnet/api/System.Management.Automation.PowerShell.Invoke) eller asynkront genom att anropa en överlagring av [system. Management. Automation. PowerShell. BeginInvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) och sedan metoden [system. Management. Automation. PowerShell. EndInvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) .
 
 ### <a name="addcommand"></a>AddCommand
 
@@ -47,7 +47,7 @@ När du har skapat en körnings utrymme kan du lägga till Windows-PowerShellcom
 
 ### <a name="addparameter"></a>AddParameter
 
- I föregående exempel körs ett enda kommando utan några parametrar. Du kan lägga till parametrar till kommandot med hjälp av metoden [system. Management. Automation. Pscommand. Addparameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) , exempel: följande kod hämtar en lista över alla processer som heter `PowerShell` som körs på datorn.
+ I föregående exempel körs ett enda kommando utan några parametrar. Du kan lägga till parametrar till kommandot med hjälp av metoden [system. Management. Automation. Pscommand. Addparameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) , exempel: följande kod hämtar en lista över alla processer som heter `PowerShell` körs på datorn.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -79,7 +79,7 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
- Du kan simulera batching med hjälp av metoden [system. Management. Automation. PowerShell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , som lägger till ytterligare en instruktion i slutet av pipelinen. följande kod hämtar en lista över processer som körs med namnet `PowerShell` och hämtar listan över tjänster som körs.
+ Du kan simulera batching med hjälp av metoden [system. Management. Automation. PowerShell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , som lägger till ytterligare en instruktion i slutet av pipelinen. följande kod hämtar en lista över processer som körs med namnet `PowerShell`och hämtar sedan listan över tjänster som körs.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -97,7 +97,7 @@ PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- Det finns också en version av metoden [system. Management. Automation. PowerShell. Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) som tar en boolesk parameter med namnet `useLocalScope`. Om den här parametern är inställd på `true` körs skriptet i det lokala omfånget. Följande kod kommer att köra skriptet i det lokala omfånget.
+ Det finns också en version av metoden [system. Management. Automation. PowerShell. Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) som tar en boolesk parameter med namnet `useLocalScope`. Om den här parametern är inställd på `true`körs skriptet i det lokala omfånget. Följande kod kommer att köra skriptet i det lokala omfånget.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -138,7 +138,7 @@ namespace HostPS1e
 
 ### <a name="invoking-a-pipeline-asynchronously"></a>Anropa en pipeline asynkront
 
- Du anropar en pipeline asynkront genom att anropa en överlagring av [system. Management. Automation. PowerShell. BeginInvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) för att skapa ett [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) -objekt och sedan anropa [system. Management. Automation. PowerShell. EndInvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) -metod.
+ Du anropar en pipeline asynkront genom att anropa en överlagring av [system. Management. Automation. PowerShell. BeginInvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) för att skapa ett [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) -objekt och sedan anropa metoden [system. Management. Automation. PowerShell. EndInvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) .
 
  I följande exempel visas hur du anropar en pipeline asynkront.
 

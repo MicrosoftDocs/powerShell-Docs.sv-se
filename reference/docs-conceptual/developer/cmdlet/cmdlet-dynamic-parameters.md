@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8ae2196d-d6c8-4101-8805-4190d293af51
 caps.latest.revision: 13
 ms.openlocfilehash: 19d31f6b619dff23e7e35bb53d2397f4f41eb728
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359444"
 ---
 # <a name="cmdlet-dynamic-parameters"></a>Dynamiska cmdlet-parametrar

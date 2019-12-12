@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: acdeef4d-3554-4f39-a7e6-a684e3848fd7
 caps.latest.revision: 19
 ms.openlocfilehash: efc1c5d1338889ecd0be7150b7733842ce78979e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72358732"
 ---
 # <a name="viewselectedby-element-format"></a>ViewSelectedBy-element (format)
@@ -32,7 +32,7 @@ ViewDefinitions-element (format) Visa element (format) ViewSelectedBy-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `ViewSelectedBy`-elementet. Det här elementet måste innehålla minst ett underordnat element `TypeName` eller `SelectionSetName`. Det finns ingen gräns för antalet underordnade element som kan anges eller som är deras inbördes ordning.
+I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `ViewSelectedBy`-elementet. Det här elementet måste innehålla minst ett `TypeName` eller `SelectionSetName` underordnat element. Det finns ingen gräns för antalet underordnade element som kan anges eller som är deras inbördes ordning.
 
 ### <a name="attributes"></a>Attribut
 
@@ -55,7 +55,7 @@ Ingen.
 
 Mer information om hur det här elementet används i olika vyer finns i [tabellvy komponenter](./creating-a-table-view.md), [list Visa](./creating-a-list-view.md)komponenter, [wide View-komponenter](./creating-a-wide-view.md)och [anpassade kontroll komponenter](./creating-custom-controls.md).
 
-Elementet `SelectionSetName` används när format filen definierar en uppsättning objekt som visas av flera vyer. Mer information om hur urvals uppsättningar definieras och refereras till finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
+`SelectionSetName`-elementet används när format filen definierar en uppsättning objekt som visas av flera vyer. Mer information om hur urvals uppsättningar definieras och refereras till finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
 
 ## <a name="example"></a>Exempel
 

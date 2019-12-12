@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
 caps.latest.revision: 9
 ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356219"
 ---
 # <a name="interpreting-errorrecord-objects"></a>Tolka ErrorRecord-objekt
 
 I de flesta fall representerar ett [system. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -objekt ett icke-avslutande fel som genereras av ett kommando eller skript. Om du avslutar fel kan du också ange ytterligare information i en ErrorRecord via gränssnittet [system. Management. Automation. Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord) .
 
-Om du vill skriva en fel hanterare i skriptet eller en värd för att hantera vissa fel som inträffar under kommando-eller skript körningen måste du tolka objektet [system. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) för att avgöra om det representerar klassen för fel som du vill hantera.
+Om du vill skriva en fel hanterare i skriptet eller en värd för att hantera vissa fel som inträffar under kommando-eller skript körningen måste du tolka objektet [system. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) för att avgöra om det representerar den klass av fel som du vill hantera.
 
 När en cmdlet påträffar ett avslutande eller icke-avslutande fel, ska den skapa en fel post som beskriver fel tillståndet. Värd programmet måste undersöka dessa fel poster och utföra de åtgärder som gör att felet minimeras. Värd programmet måste också undersöka fel poster för fel som inte kan bearbeta en post, men som kan fortsätta, och det måste undersöka fel poster för att avsluta fel som orsakade att pipelinen stoppades.
 
@@ -68,7 +68,7 @@ FQID är utformad för att kontrol leras som en enskild sträng. Det finns dock 
 
 I föregående exempel är den första token fel identifieraren, som följs av namnet på cmdlet-klassen. Fel identifieraren kan vara en enskild token, eller så kan den vara en punktavgränsad identifierare som gör det möjligt att kontrol lera identifieringen av identifieraren. Använd inte blank steg eller interpunktion i fel identifieraren. Det är särskilt viktigt att inte använda ett kommatecken. ett kommatecken används av Windows PowerShell för att avgränsa identifieraren och cmdlet-klassens namn.
 
-### <a name="other-information"></a>Annan information
+### <a name="other-information"></a>Övrig information
 
 Objektet [system. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) kan också innehålla information som beskriver miljön där felet uppstod. Den här informationen omfattar objekt som fel information, information om anrop och det mål objekt som bearbetades när felet uppstod. Även om den här informationen kan vara användbar för värd programmet, används vanligt vis inte för att identifiera felet. Den här informationen är tillgänglig via följande egenskaper:
 

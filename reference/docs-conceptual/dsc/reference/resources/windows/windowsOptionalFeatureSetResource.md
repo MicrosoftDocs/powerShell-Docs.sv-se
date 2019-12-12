@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC WindowsOptionalFeatureSet-resurs
 ms.openlocfilehash: f378006a6c362ee9890d70dd76fb552dd262a544
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941189"
 ---
 # <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet-resurs
@@ -34,14 +34,14 @@ WindowsOptionalFeatureSet [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Egenskaper
 
-|Egenskap |Description |
+|Egenskap |Beskrivning |
 |---|---|
-|Name |Anger namnet på de funktioner som du vill se är aktiverade eller inaktiverade. |
-|Source |Inte implementerad. |
-|NoWindowsUpdateCheck |Anger om DISM-kontakter Windows Update (WU) vid sökning efter källfiler för att aktivera funktioner. Om `$true`inte DISM kontaktar Wu. |
-|RemoveFilesOnDisable |Ange till `$true` om du vill ta bort alla filer som är associerade med funktionerna när **Se** till att de är inställda på **frånvarande**. |
+|Namn |Anger namnet på de funktioner som du vill se är aktiverade eller inaktiverade. |
+|Källa |Inte implementerat. |
+|NoWindowsUpdateCheck |Anger om DISM-kontakter Windows Update (WU) vid sökning efter källfiler för att aktivera funktioner. Om `$true`kan DISM inte kontakta WU. |
+|RemoveFilesOnDisable |Ange till `$true` om du vill ta bort alla filer som är associerade med funktionerna när **Se** till att de har angetts som **frånvarande**. |
 |Loggnivå |Den högsta utmatnings nivån som visas i loggarna. Godkända värden är: **ErrorsOnly**, **ErrorsAndWarning**och **ErrorsAndWarningAndInformation**. |
 |LogPath |Sökvägen till logg filen där du vill att resurs leverantören ska logga åtgärden. |
 
@@ -49,7 +49,7 @@ WindowsOptionalFeatureSet [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"`. |
 |Kontrol |Anger om funktionerna är aktiverade. För att se till att funktionerna är aktiverade ställer du in egenskapen på **Aktivera**. För att se till att funktionerna är inaktiverade ställer du in egenskapen på **inaktivera**. Standardvärdet är **Enable**. |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 

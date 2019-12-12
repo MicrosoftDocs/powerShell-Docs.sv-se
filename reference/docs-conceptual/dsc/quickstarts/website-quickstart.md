@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Snabb start – skapa en webbplats med DSC
 ms.openlocfilehash: d98607939ccd3cc5e660936d8c0a6d54fce7d65f
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942729"
 ---
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
@@ -14,7 +14,7 @@ ms.locfileid: "71942729"
 # <a name="quickstart---create-a-website-with-dsc"></a>Snabb start – skapa en webbplats med DSC
 
 Den här övningen beskriver hur du skapar och tillämpar en Desired State Configuration (DSC)-konfiguration från början till slut.
-Exemplet som vi ska använda ser till att en server har aktiverat funktionen `Web-Server` (IIS) och att innehållet för en enkel "Hello World"-webbplats finns i katalogen `inetpub\wwwroot` på den servern.
+Exemplet som vi ska använda ser till att en server har aktiverat funktionen `Web-Server` (IIS) och att innehållet för en enkel "Hello World"-webbplats finns i `inetpub\wwwroot` katalogen på den servern.
 
 En översikt över vad DSC är och hur det fungerar finns i [Översikt över önskad tillstånds konfiguration för besluts fattare](../overview/decisionMaker.md).
 
@@ -26,7 +26,7 @@ Om du vill köra det här exemplet behöver du en dator som kör Windows Server 
 
 Först skapar vi HTML-filen som vi ska använda som webbplats innehåll.
 
-I rotmappen skapar du en mapp med namnet `test`.
+Skapa en mapp med namnet `test`i rotmappen.
 
 Skriv följande text i en text redigerare:
 
@@ -74,7 +74,7 @@ Spara filen som `WebsiteTest.ps1`.
 
 Du kan se att det ser ut som en PowerShell-funktion, med tillägg av den nyckelords **konfiguration** som används före namnet på funktionen.
 
-**Node** -blocket anger den målnod som ska konfigureras i det här `localhost`fallet.
+**Node** -blocket anger den målnod som ska konfigureras i det här fallet `localhost`.
 
 Konfigurationen anropar två [resurser](../resources/resources.md), **WindowsFeature** och **fil**.
 Resurser gör jobbet för att säkerställa att målnoden är i det tillstånd som definieras av konfigurationen.
@@ -111,7 +111,7 @@ Det är den här filen som sedan kan användas på målnoden.
 
 Nu när du har kompilerat MOF kan du tillämpa konfigurationen på målnoden (i det här fallet den lokala datorn) genom att anropa cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) .
 
-@No__t-0-cmdleten anger den [lokala Configuration Manager (LCM)](../managing-nodes/metaConfig.md), som är en motor för DSC, för att tillämpa konfigurationen.
+`Start-DscConfiguration`-cmdleten anger den [lokala Configuration Manager (LCM)](../managing-nodes/metaConfig.md), som är motorn för DSC, för att tillämpa konfigurationen.
 LCM fungerar som att anropa DSC-resurserna för att tillämpa konfigurationen.
 
 I en PowerShell-konsol navigerar du till samma mapp där du sparade konfigurationen och kör följande kommando:
