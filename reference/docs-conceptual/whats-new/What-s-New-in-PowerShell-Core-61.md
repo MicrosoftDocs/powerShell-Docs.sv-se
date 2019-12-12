@@ -1,102 +1,102 @@
 ---
-title: Nyheter i PowerShell Core 6.1
-description: Nya funktioner och ändringar som introducerades i PowerShell Core 6.1
+title: Nyheter i PowerShell Core 6,1
+description: Nya funktioner och ändringar som lanseras i PowerShell Core 6,1
 ms.date: 09/13/2018
 ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62086144"
 ---
-# <a name="whats-new-in-powershell-core-61"></a>Nyheter i PowerShell Core 6.1
+# <a name="whats-new-in-powershell-core-61"></a>Nyheter i PowerShell Core 6,1
 
-Nedan visas ett urval av några av de nya funktioner och ändringar som har införts i PowerShell Core 6.1.
+Nedan visas några av de viktigaste nya funktionerna och ändringarna som har introducerats i PowerShell Core 6,1.
 
-Det finns också **ton** av ”tråkiga” som gör att PowerShell snabbare och mer tillförlitliga (plus utbudet felkorrigeringar)!
-En fullständig lista över ändringar, Kolla in vår [ändringsloggen på GitHub](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md).
+Det finns också **massor** av "tråkigae-saker" som gör PowerShell snabbare och mer stabilt (plus massor och massor av fel korrigeringar)!
+En fullständig lista över ändringar finns [i vår ändringsloggen på GitHub](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md).
 
-Och medan vi anropa vissa namn nedan tack till [alla community-deltagare](https://github.com/PowerShell/PowerShell/graphs/contributors) som möjligt den här versionen.
+Och vi kallar några namn nedan och tackar dig till [alla deltagare i communityn](https://github.com/PowerShell/PowerShell/graphs/contributors) som gjorde den här versionen möjlig.
 
 ## <a name="net-core-21"></a>.NET Core 2.1
 
-PowerShell Core 6.1 flyttas till .NET Core 2.1 när den var [introducerades i maj](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/), vilket resulterar i ett antal förbättringar i PowerShell, inklusive:
+PowerShell Core 6,1 flyttades till .NET Core 2,1 efter att den [släpptes i kan](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/), vilket resulterar i ett antal förbättringar av PowerShell, inklusive:
 
-- prestandaförbättringar (se [nedan](#performance-improvements))
-- Alpine Linux-support (förhandsversion)
-- [Stöd för .NET-globala verktyg](/dotnet/core/tools/global-tools) – kommer snart att PowerShell
+- prestanda förbättringar (se [nedan](#performance-improvements))
+- Stöd för Alpine Linux (för hands version)
+- [Stöd för globalt .net-verktyg](/dotnet/core/tools/global-tools) – kommer snart till PowerShell
 - [`Span<T>`](/dotnet/api/system.span-1?view=netcore-2.1)
 
 ## <a name="windows-compatibility-pack-for-net-core"></a>Windows Compatibility Pack för .NET Core
 
-På Windows, .NET-teamet levereras de [Windows Compatibility Pack för .NET Core](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/), en uppsättning sammansättningar som lägger till ett antal bort API: er till .NET Core för Windows.
+I Windows levererade .NET-teamet [Windows Compatibility Pack för .net Core](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/), en uppsättning sammansättningar som lägger till ett antal borttagna API: er tillbaka till .net core i Windows.
 
-Vi har lagt till Compatibility-Pack för Windows PowerShell Core 6.1 versionen så att alla moduler eller skript som använder dessa API: er kan använda dem som det är tillgängligt.
+Vi har lagt till Windows-kompatibilitetspaketet till PowerShell Core 6,1-versionen så att moduler eller skript som använder dessa API: er kan vara beroende av att de är tillgängliga.
 
-Windows Compatibility Pack gör det möjligt för PowerShell Core att använda **mer än 1900 cmdletar som levereras med Windows 10 oktober 2018 Update och Windows Server 2019**.
+Windows-kompatibilitetspaketet gör det möjligt för PowerShell Core att använda **mer än 1900 cmdlets som levereras med Windows 10 oktober 2018 Update och Windows Server 2019**.
 
-## <a name="support-for-application-whitelisting"></a>Stöd för listan över tillåtna program
+## <a name="support-for-application-whitelisting"></a>Stöd för program vit listning
 
-PowerShell Core 6.1 har paritet med Windows PowerShell 5.1 stöd [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) och [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) listan över tillåtna program.
-Listan över tillåtna program gör detaljerad kontroll över vilka-binärfiler ska kunna köras tillsammans med PowerShell [begränsad språkläge](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
+PowerShell Core 6,1 har paritet med Windows PowerShell 5,1 som stöder [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) -och [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) -vit listning.
+Med Application vit listning kan du få detaljerad kontroll över vilka binärfiler som får köras med PowerShell- [begränsat språk läge](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
 
 ## <a name="performance-improvements"></a>Prestandaförbättringar
 
-PowerShell Core 6.0 gjort några betydande förbättringar.
-PowerShell Core 6.1 fortsätter att förbättra hastigheten på vissa åtgärder.
+PowerShell Core 6,0 gjorde några betydande prestanda förbättringar.
+PowerShell Core 6,1 fortsätter att förbättra hastigheten på vissa åtgärder.
 
-Till exempel `Group-Object` har sped med 66%:
+`Group-Object` har till exempel sped upp med 66%:
 
 ```powershell
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-Object }
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
+|              | Windows PowerShell 5.1 | PowerShell Core 6,0 | PowerShell Core 6,1 |
 |--------------|------------------------|---------------------|---------------------|
-| Tid (sek)   | 25.178                 | 19.653              | 6.641               |
-| Hastigheter (%) | Saknas                    | 21.9%               | 66.2%               |
+| Tid (sek)   | 25,178                 | 19,653              | 6,641               |
+| Hastighets anslutning (%) | Saknas                    | 21,9%               | 66,2%               |
 
-På samma sätt har sortering scenarier som den här förbättrats med mer än 15%:
+På samma sätt har sorterings scenarier som det här förbättrats med mer än 15%:
 
 ```powershell
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Object }
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
+|              | Windows PowerShell 5.1 | PowerShell Core 6,0 | PowerShell Core 6,1 |
 |--------------|------------------------|---------------------|---------------------|
-| Tid (sek)   | 12.170                 | 8.493               | 7.08                |
-| Hastigheter (%) | Saknas                    | 30.2%               | 16.6%               |
+| Tid (sek)   | 12,170                 | 8,493               | 7,08                |
+| Hastighets anslutning (%) | Saknas                    | 30,2%               | 16,6%               |
 
-`Import-Csv` har också tagits sped avsevärt efter en regression från Windows PowerShell.
-I följande exempel används ett test CSV med 26,616 sex kolumner:
+`Import-Csv` har också varit spedt märkbart efter en regression från Windows PowerShell.
+I följande exempel används en test-CSV med 26 616 rader och sex kolumner:
 
 ```powershell
 Measure-Command {$a = Import-Csv foo.csv}
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
+|              | Windows PowerShell 5.1 | PowerShell Core 6,0 | PowerShell Core 6,1    |
 |--------------|------------------------|---------------------|------------------------|
-| Tid (sek)   | 0.441                  | 1.069               | 0.268                  |
-| Hastigheter (%) | Saknas                    | -142.4%             | 74.9% (39.2. % från WPS) |
+| Tid (sek)   | 0,441                  | 1,069               | 0,268                  |
+| Hastighets anslutning (%) | Saknas                    | – 142,4%             | 74,9% (39,2% från WPS) |
 
-Till sist konvertering från JSON till `PSObject` har varit sped med mer än 50% sedan Windows PowerShell.
-I följande exempel används en ~ 2MB test JSON-fil:
+Slutligen har konverteringen från JSON till `PSObject` sped upp med mer än 50% sedan Windows PowerShell.
+I följande exempel används ~ 2 MB test-JSON-fil:
 
 ```powershell
 Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
+|              | Windows PowerShell 5.1 | PowerShell Core 6,0 | PowerShell Core 6,1    |
 |--------------|------------------------|---------------------|------------------------|
-| Tid (sek)   | 0.259                  | 0.577               | 0.125                  |
-| Hastigheter (%) | Saknas                    | -122.8%             | 78.3% (51.7% från WPS) |
+| Tid (sek)   | 0,259                  | 0,577               | 0,125                  |
+| Hastighets anslutning (%) | Saknas                    | – 122,8%             | 78,3% (51,7% från WPS) |
 
-## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Kontrollera `system32` för kompatibla i box-moduler på Windows
+## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Kontrol lera `system32` för kompatibla moduler i Windows
 
-Vi har uppdaterat ett antal inbyggda PowerShell-moduler för att markera dem som kompatibel med PowerShell Core i Windows 10 1809 update och Windows Server 2019.
+I Windows 10 1809-uppdateringen och Windows Server 2019 har vi uppdaterat ett antal inbyggda PowerShell-moduler för att markera dem som kompatibla med PowerShell Core.
 
-När PowerShell Core 6.1 startas automatiskt inkluderar `$windir\System32` som en del av den `PSModulePath` miljövariabeln.
-Men det endast visar moduler att `Get-Module` och `Import-Module` om dess `CompatiblePSEdition` är markerad som kompatibel med `Core`.
+När PowerShell Core 6,1 startar, kommer den automatiskt att inkludera `$windir\System32` som en del av `PSModulePath`-miljövariabeln.
+Det exponerar dock bara moduler för att `Get-Module` och `Import-Module` om dess `CompatiblePSEdition` är markerad som kompatibel med `Core`.
 
 
 ```powershell
@@ -104,7 +104,7 @@ Get-Module -ListAvailable
 ```
 
 > [!NOTE]
-> Du kan se olika tillgängliga moduler beroende på vilka roller och funktioner installeras.
+> Du kan se olika tillgängliga moduler beroende på vilka roller och funktioner som är installerade.
 
 ```Output
 ...
@@ -130,8 +130,8 @@ Manifest   2.0.0.0    TrustedPlatformModule               Core,Desk {Get-Tpm, In
 ...
 ```
 
-Du kan åsidosätta detta beteende om du vill visa alla moduler med den `-SkipEditionCheck` växla parametern.
-Vi har även lagt till en `PSEdition` egenskap till tabellutdata.
+Du kan åsidosätta det här beteendet för att visa alla moduler med hjälp av parametern `-SkipEditionCheck` switch.
+Vi har också lagt till en `PSEdition`-egenskap i tabellens utdata.
 
 ```powershell
 Get-Module Net* -ListAvailable -SkipEditionCheck
@@ -158,77 +158,77 @@ Manifest   1.0.0.0    NetworkSwitchManager        Core,Desk {Disable-NetworkSwit
 Manifest   1.0.0.0    NetworkTransition           Core,Desk {Add-NetIPHttpsCertBinding, Disable-NetDnsTransi...
 ```
 
-Mer information om det här beteendet Kolla in [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-PSCore6-and-Windows-Modules.md).
+Mer information om det här problemet finns i [PowerShell-RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-PSCore6-and-Windows-Modules.md).
 
 ## <a name="markdown-cmdlets-and-rendering"></a>Markdown-cmdletar och rendering
 
-Markdown är en standard för att skapa läsbara klartext dokument med enkla format som kan återges i HTML-format.
+Markdown är en standard för att skapa läsbara klartext-dokument med grundläggande formatering som kan återges i HTML.
 
-Vi har lagt till vissa cmdlets i 6.1 så att du kan konvertera och rendera Markdown-dokument i konsolen, inklusive:
+Vi har lagt till några cmdletar i 6,1 som gör det möjligt att konvertera och återge markdown-dokument i-konsolen, inklusive:
 
 - `ConvertFrom-Markdown`
 - `Get-MarkdownOption`
 - `Set-MarkdownOption`
 - `Show-Markdown`
 
-Till exempel `Show-Markdown` visas med en Markdown-fil i konsolen:
+`Show-Markdown` återger till exempel en MARKDOWN-fil i-konsolen:
 
-![Visa Markdown-exempel](./images/markdown_example.png)
+![Visa markdown-exempel](./images/markdown_example.png)
 
 Mer information om hur dessa cmdlets fungerar finns i [denna RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md).
 
-## <a name="experimental-feature-flags"></a>Experimentell funktion flaggor
+## <a name="experimental-feature-flags"></a>Experimentella funktions flaggor
 
-Vi har aktiverat stöd för [experimentella funktioner][]. Detta gör att PowerShell-utvecklare att leverera nya funktioner och få feedback innan designen är klar. Det här sättet vi Undvik att göra ändringar som design utvecklas.
+Vi har aktiverat stöd för [experimentella funktioner][]. Detta gör att PowerShell-utvecklare kan leverera nya funktioner och få feedback innan designen är klar. På så sätt undviker vi att göra ändringar när designen utvecklas.
 
-Använd `Get-ExperimentalFeature` att hämta en lista över tillgängliga experimentella funktioner. Du kan aktivera eller inaktivera dessa funktioner via `Enable-ExperimentalFeature` och `Disable-ExperimentalFeature`.
+Använd `Get-ExperimentalFeature` för att hämta en lista över tillgängliga experimentella funktioner. Du kan aktivera eller inaktivera dessa funktioner med `Enable-ExperimentalFeature` och `Disable-ExperimentalFeature`.
 
-Du kan läsa mer om den här funktionen i [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
+Du kan lära dig mer om den här funktionen i [PowerShell-RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
 
-## <a name="web-cmdlet-improvements"></a>Förbättringar för Web-cmdlet
+## <a name="web-cmdlet-improvements"></a>Förbättringar av webb-cmdlet
 
-Tack vare [ @markekraus ](https://github.com/markekraus), en hela slew förbättringar har gjorts i vår webb-cmdletar: [`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)
-och [ `Invoke-RestMethod` ](/powershell/module/microsoft.powershell.utility/invoke-restmethod).
+Tack vare [@markekraus](https://github.com/markekraus)har en hel sväng av förbättringar gjorts till våra webb-cmdlets: [`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)
+och [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke-restmethod).
 
-- [PR #6109](https://github.com/PowerShell/PowerShell/pull/6109) -standard kodning inställt UTF-8 för `application-json` svar
-- [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018)  -  `-SkipHeaderValidation` parametern så att `Content-Type` rubriker som inte är standardkompatibel
-- [PR #5972](https://github.com/PowerShell/PowerShell/pull/5972)  -  `Form` parametern för förenklad `multipart/form-data` stöd
-- [PR #6338](https://github.com/PowerShell/PowerShell/pull/6338) - kompatibla, skiftlägesokänslig hantering av nycklar för relationen
-- [PR #6447](https://github.com/PowerShell/PowerShell/pull/6447) – Lägg till `-Resume` parametern för web-cmdletar
+- [PR #6109](https://github.com/PowerShell/PowerShell/pull/6109) – standard kodningen anges till UTF-8 för `application-json` svar
+- [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) - `-SkipHeaderValidation`-parameter för att tillåta `Content-Type` huvuden som inte är standarder-kompatibla
+- [PR #5972](https://github.com/PowerShell/PowerShell/pull/5972) - `Form`-parameter som stöd för förenklad `multipart/form-data` support
+- [PR #6338](https://github.com/PowerShell/PowerShell/pull/6338) -kompatibel, SKIFT läges okänslig hantering av Relations nycklar
+- [PR #6447](https://github.com/PowerShell/PowerShell/pull/6447) – lägg till `-Resume` parameter för webb-cmdletar
 
-## <a name="remoting-improvements"></a>Förbättringar för fjärrkommunikation
+## <a name="remoting-improvements"></a>Förbättringar av fjärrkommunikation
 
-### <a name="powershell-direct-for-containers-tries-to-use-powershell-core-first"></a>PowerShell Direct för behållare försöker först använda PowerShell Core
+### <a name="powershell-direct-for-containers-tries-to-use-powershell-core-first"></a>PowerShell Direct för behållare försöker använda PowerShell Core först
 
-[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) är en funktion i PowerShell och Hyper-V som gör det möjligt att ansluta till en Hyper-V-dator eller behållare utan nätverksanslutning eller andra tjänster för fjärrhantering.
+[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) är en funktion i PowerShell och Hyper-v som gör att du kan ansluta till en virtuell Hyper-V-dator eller-behållare utan nätverks anslutning eller andra tjänster för fjärrhantering.
 
-Tidigare var ansluten PowerShell Direct med hjälp av Windows PowerShell-instansen inkorg för behållaren.
-Nu, PowerShell Direct först försöker ansluta med hjälp av alla tillgängliga `pwsh.exe` på den `PATH` miljövariabeln.
-Om `pwsh.exe` är inte tillgänglig, PowerShell Direct faller tillbaka om du vill använda `powershell.exe`.
+Tidigare anslöt PowerShell Direct till med Windows PowerShell-instansen inkorg på behållaren.
+Nu försöker PowerShell Direct först ansluta med valfri tillgänglig `pwsh.exe` på den `PATH` miljövariabeln.
+Om `pwsh.exe` inte är tillgänglig går PowerShell Direct tillbaka för att använda `powershell.exe`.
 
-### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a>`Enable-PSRemoting` skapar nu separata fjärrkommunikation slutpunkter för förhandsversioner
+### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a>`Enable-PSRemoting` skapar nu separata Fjärrslutpunkter för för hands versioner
 
-`Enable-PSRemoting` Nu skapar två fjärrkommunikation sessionskonfigurationer:
+`Enable-PSRemoting` skapar nu två konfigurationer för fjärrsessioner:
 
-- En för den huvudsakliga versionen av PowerShell. Till exempel `PowerShell.6`. Den här slutpunkten kan förlita sig på mellan mindre versionsuppdateringar som sessionskonfigurationen ”systemomfattande” PowerShell 6
-- En versionsspecifika sessionskonfiguration, till exempel: `PowerShell.6.1.0`
+- En för den högre versionen av PowerShell. Till exempel `PowerShell.6`. Den här slut punkten som kan förlita sig på en del versions uppdateringar som "system-bred" PowerShell 6-session konfiguration
+- En versions bestämd sessionsinformation, till exempel: `PowerShell.6.1.0`
 
-Detta är användbart om du vill ha flera PowerShell 6 versioner installerade och kan nås på samma dator.
+Det här beteendet är användbart om du vill ha flera PowerShell 6-versioner installerade och tillgängliga på samma dator.
 
-Dessutom förhandsversioner av PowerShell nu få sina egna fjärrkommunikation sessionskonfigurationer efter körning i `Enable-PSRemoting` cmdlet:
+Dessutom hämtar för hands versioner av PowerShell sina egna konfigurationer för fjärrsessioner när du har kört `Enable-PSRemoting`-cmdlet:
 
 ```powershell
 C:\WINDOWS\system32> Enable-PSRemoting
 ```
 
-Dina utdata kan skilja sig om du inte har konfigurerat WinRM innan.
+Dina utdata kan vara olika om du inte har konfigurerat WinRM tidigare.
 
 ```Output
 WinRM is already set up to receive requests on this computer.
 WinRM is already set up for remote management on this computer.
 ```
 
-Sedan kan du se separata PowerShell-sessionskonfigurationer för förhandsversionen och stabil bygger på PowerShell 6 och för varje specifik version.
+Sedan kan du se separata PowerShell-sessionsbaserade för för hands versionen och stabila versioner av PowerShell 6, och för varje enskild version.
 
 ```powershell
 Get-PSSessionConfiguration
@@ -260,28 +260,28 @@ RunAsUser     :
 Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators AccessAllowed, BUILTIN\Remote Management Users AccessAllowed
 ```
 
-### <a name="userhostport-syntax-supported-for-ssh"></a>`user@host:port` syntax som stöds för SSH
+### <a name="userhostport-syntax-supported-for-ssh"></a>`user@host:port`-syntax som stöds för SSH
 
-SSH-klienter normalt stöder en anslutningssträng i formatet `user@host:port`.
-Med hjälp av SSH som ett protokoll för PowerShell-fjärrkommunikation, har vi lagt till stöd för det här formatet för anslutningssträngen:
+SSH-klienter stöder vanligt vis en anslutnings sträng i formatet `user@host:port`.
+Med tillägget av SSH som ett protokoll för PowerShell-fjärrkommunikation har vi lagt till stöd för det här formatet för anslutnings strängen:
 
 `Enter-PSSession -HostName fooUser@ssh.contoso.com:2222`
 
-## <a name="msi-option-to-add-explorer-shell-context-menu-on-windows"></a>MSI-alternativet att lägga till snabbmenyn i explorer-gränssnittet på Windows
+## <a name="msi-option-to-add-explorer-shell-context-menu-on-windows"></a>MSI-alternativ för att lägga till Explorer Shell snabb menyn i Windows
 
-Tack vare [ @bergmeister ](https://github.com/bergmeister), nu kan du aktivera en snabbmeny på Windows. Nu kan du öppna din systemomfattande installation av PowerShell 6.1 från valfri mapp i Windows Explorer:
+Tack för att du [@bergmeister](https://github.com/bergmeister)kan du nu aktivera en snabb meny i Windows. Nu kan du öppna din systemomfattande installation av PowerShell 6,1 från valfri mapp i Utforskaren i Windows:
 
-![Shell-snabbmenyn för PowerShell 6](./images/shell_context_menu.png)
+![Snabb menyn i Shell för PowerShell 6](./images/shell_context_menu.png)
 
 ## <a name="goodies"></a>Godbitar
 
-### <a name="run-as-administrator-in-the-windows-shortcut-jump-list"></a>”Kör som administratör” i listan över Windows genväg hopp
+### <a name="run-as-administrator-in-the-windows-shortcut-jump-list"></a>"Kör som administratör" i Windows Shortcuts snabb lista
 
-Tack vare [ @bergmeister ](https://github.com/bergmeister), genvägen PowerShell Core jump-listan innehåller nu ”kör som administratör”:
+Tack vare att du [@bergmeister](https://github.com/bergmeister)innehåller PowerShell Core-genvägens snabb lista nu "kör som administratör":
 
-![Kör som administratör i PowerShell 6 jump-listan](./images/jumplist.png)
+![Kör som administratör i snabb listan för PowerShell 6](./images/jumplist.png)
 
-### <a name="cd---returns-to-previous-directory"></a>`cd -` Returnerar föregående katalog
+### <a name="cd---returns-to-previous-directory"></a>`cd -` återgår till föregående katalog
 
 ```powershell
 C:\Windows\System32> cd C:\
@@ -297,21 +297,21 @@ PS /usr/bin> cd -
 PS /etc>
 ```
 
-Dessutom `cd` och `cd --` ändra till `$HOME`.
+Du kan också `cd` och `cd --` ändra till `$HOME`.
 
 ### `Test-Connection`
 
-Tack vare [ @iSazonov ](https://github.com/iSazonov), [ `Test-Connection` ](/powershell/module/microsoft.powershell.management/test-connection) cmdlet har varit portas till PowerShell Core.
+Tack vare att du [@iSazonov](https://github.com/iSazonov)har [`Test-Connection`](/powershell/module/microsoft.powershell.management/test-connection) -cmdlet har tilldelats PowerShell-kärnan.
 
-### <a name="update-help-as-non-admin"></a>`Update-Help` som icke-administratörer
+### <a name="update-help-as-non-admin"></a>`Update-Help` som icke-administratör
 
-På allmän begäran `Update-Help` inte längre behöver köras som administratör.
-`Update-Help` som standard nu sparar hjälper till att en användarspecifika mapp.
+På den populära efter frågan behöver `Update-Help` inte längre köras som administratör.
+`Update-Help` är nu standard att spara hjälp till en mapp med användar omfång.
 
-### <a name="new-methodsproperties-on-pscustomobject"></a>Nya metoder/egenskaper på `PSCustomObject`
+### <a name="new-methodsproperties-on-pscustomobject"></a>Nya metoder/egenskaper för `PSCustomObject`
 
-Tack vare [ @iSazonov ](https://github.com/iSazonov), vi har lagt till nya metoder och egenskaper som `PSCustomObject`.
-`PSCustomObject` innehåller nu en `Count` / `Length` egenskap som andra objekt.
+Tack vare [@iSazonov](https://github.com/iSazonov)har vi lagt till nya metoder och egenskaper att `PSCustomObject`.
+`PSCustomObject` innehåller nu en `Count`/`Length` egenskap som andra objekt.
 
 ```powershell
 $PSCustomObject = [pscustomobject]@{foo = 1}
@@ -331,7 +331,7 @@ $PSCustomObject.Count
 1
 ```
 
-Det här att fungera även `ForEach` och `Where` metoder som gör det möjligt att driva och filtrera på `PSCustomObject` objekt:
+Det här arbetet innehåller också `ForEach` och `Where` metoder som gör att du kan använda och filtrera på `PSCustomObject`-objekt:
 
 ```powershell
 $PSCustomObject.ForEach({$_.foo + 1})
@@ -353,23 +353,23 @@ foo
 
 ### `Where-Object -Not`
 
-Tack vare @SimonWahlin, vi har lagt till den `-Not` parameter `Where-Object`.
-Du kan nu filtrera ett objekt på pipelinen för icke-förekomsten av en egenskap eller ett egenskapsvärde för null/tomt.
+Tack vare @SimonWahlinhar vi lagt till `-Not`-parametern för att `Where-Object`.
+Nu kan du filtrera ett objekt i pipelinen för att det inte finns någon egenskap, eller ett egenskaps värde som är null/tomt.
 
-Det här kommandot returnerar till exempel alla tjänster som inte har några definierade beroende tjänster:
+Det här kommandot returnerar till exempel alla tjänster som inte har några beroende tjänster definierade:
 
 ```powershell
 Get-Service | Where-Object -Not DependentServices
 ```
 
-### <a name="new-modulemanifest-creates-a-bom-less-utf-8-document"></a>`New-ModuleManifest` skapar ett BOM utan UTF-8-dokument
+### <a name="new-modulemanifest-creates-a-bom-less-utf-8-document"></a>`New-ModuleManifest` skapar ett struktur löst UTF-8-dokument
 
-Med vår övergång till BOM utan UTF-8 i PowerShell 6.0 kan vi har uppdaterat den `New-ModuleManifest` cmdlet för att skapa ett BOM utan UTF-8-dokument i stället för en UTF-16 något.
+Med tanke på vår flytt till BOM-mindre UTF-8 i PowerShell 6,0 har vi uppdaterat `New-ModuleManifest`-cmdleten för att skapa ett BOM-mindre UTF-8-dokument i stället för ett UTF-16 1.
 
-### <a name="conversions-from-psmethod-to-delegate"></a>Konverteringar från PSMethod till ombud
+### <a name="conversions-from-psmethod-to-delegate"></a>Konverteringar från PSMethod till delegate
 
-Tack vare [ @powercode ](https://github.com/powercode), vi nu stöd för konvertering av en `PSMethod` till ett ombud.
-Du kan till exempel skicka `PSMethod` `[M]::DoubleStrLen` som ett ombud värde i `[M]::AggregateString`:
+Tack vare att vi [@powercode](https://github.com/powercode)stöder vi nu konverteringen av ett `PSMethod` till ett ombud.
+Detta gör att du kan göra saker som att skicka `PSMethod` `[M]::DoubleStrLen` som ett ombuds värde i `[M]::AggregateString`:
 
 ```powershell
 class M {
@@ -387,11 +387,11 @@ class M {
 [M]::AggregateString((gci).Name, [M]::DoubleStrLen)
 ```
 
-Mer information om den här ändringen finns [PR #5287](https://github.com/PowerShell/PowerShell/pull/5287).
+Om du vill ha mer information om den här ändringen kan du kolla in [PR #5287](https://github.com/PowerShell/PowerShell/pull/5287).
 
-### <a name="standard-deviation-in-measure-object"></a>Standardavvikelsen i `Measure-Object`
+### <a name="standard-deviation-in-measure-object"></a>Standard avvikelse i `Measure-Object`
 
-Tack vare [ @CloudyDino ](https://github.com/CloudyDino), vi har lagt till en `StandardDeviation` egenskap `Measure-Object`:
+Tack vare [@CloudyDino](https://github.com/CloudyDino)har vi lagt till en `StandardDeviation`-egenskap för att `Measure-Object`:
 
 ```powershell
 Get-Process | Measure-Object -Property CPU -AllStats
@@ -409,7 +409,7 @@ Property          : CPU
 
 ### `GetPfxCertificate -Password`
 
-Tack vare [ @maybe-hello-world ](https://github.com/maybe-hello-world), `Get-PfxCertificate` har nu den `Password` parametern, som tar en `SecureString`. På så sätt kan du använda den icke-interaktivt:
+Tack vare [@maybe-hello-world](https://github.com/maybe-hello-world)har `Get-PfxCertificate` nu `Password`-parametern, som tar en `SecureString`. På så sätt kan du använda den icke-interaktivt:
 
 ```powershell
 $certFile = '\\server\share\pwd-protected.pfx'
@@ -418,22 +418,22 @@ $certPass = Read-Host -AsSecureString -Prompt 'Enter the password for certificat
 $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).ThumbPrint
 ```
 
-### <a name="removal-of-the-more-function"></a>Borttagning av den `more` funktion
+### <a name="removal-of-the-more-function"></a>Borttagning av funktionen `more`
 
-Tidigare levererat PowerShell en funktion i Windows som kallas `more` som omslutna `more.com`.
+Tidigare levererade PowerShell en funktion i Windows med namnet `more` som omslutte `more.com`.
 Funktionen har nu tagits bort.
 
-Dessutom den `help` funktionen ändrats till att använda `more.com` på Windows eller systemets standard personsökare anges av `$env:PAGER` på icke-Windows-plattformar.
+Dessutom ändrades `help`-funktionen till att använda `more.com` i Windows eller systemets standard-pager som anges av `$env:PAGER` på andra plattformar än Windows-plattformar.
 
-### <a name="cd-drivename-now-returns-users-to-the-current-working-directory-in-that-drive"></a>`cd DriveName:` Nu returnerar användare till den aktuella arbetskatalogen i den här enheten
+### <a name="cd-drivename-now-returns-users-to-the-current-working-directory-in-that-drive"></a>`cd DriveName:` returnerar nu användare till den aktuella arbets katalogen på den enheten
 
-Tidigare med hjälp av `Set-Location` eller `cd` att återgå till en PSDrive skickas användarna till standardplatsen för den här enheten.
+Tidigare använde `Set-Location` eller `cd` för att återgå till en PSDrive som har skickat användare till standard platsen för den enheten.
 
-Tack vare [ @mcbobke ](https://github.com/mcbobke), användarna skickas nu till den senaste kända aktuella arbetskatalogen för den aktuella sessionen.
+Tack vare [@mcbobke](https://github.com/mcbobke)skickas nu användare till den senast kända aktuella arbets katalogen för den sessionen.
 
-### <a name="windows-powershell-type-accelerators"></a>Acceleratorer för Windows PowerShell-typ
+### <a name="windows-powershell-type-accelerators"></a>Windows PowerShell-typ acceleratorer
 
-Vi inkluderat följande typ-acceleratorer för att göra det lättare att arbeta med sina respektive typer i Windows PowerShell:
+I Windows PowerShell inkluderade vi följande typ acceleratorer för att göra det enklare att arbeta med sina respektive typer:
 
 - `[adsi]`: `System.DirectoryServices.DirectoryEntry`
 - `[adsisearcher]`: `System.DirectoryServices.DirectorySearcher`
@@ -441,17 +441,17 @@ Vi inkluderat följande typ-acceleratorer för att göra det lättare att arbeta
 - `[wmiclass]`: `System.Management.ManagementClass`
 - `[wmisearcher]`: `System.Management.ManagementObjectSearcher`
 
-Dessa typ acceleratorer inkluderades inte i PowerShell 6, men har lagts till PowerShell 6.1 som körs på Windows.
+Dessa typ acceleratorer inkluderades inte i PowerShell 6, men har lagts till i PowerShell 6,1 som körs i Windows.
 
-Dessa typer är användbara enkelt konstruera AD och WMI-objekt.
+De här typerna är användbara för att enkelt konstruera AD-och WMI-objekt.
 
-Du kan till exempel fråga genom att använda LDAP:
+Du kan till exempel fråga med LDAP:
 
 ```powershell
 [adsi]'LDAP://CN=FooUse,OU=People,DC=contoso,DC=com'
 ```
 
-Följande exempel skapas ett Win32_OperatingSystem CIM-objekt:
+I följande exempel skapas ett Win32_OperatingSystem CIM-objekt:
 
 ```powershell
 [wmi]"Win32_OperatingSystem=@"
@@ -466,7 +466,7 @@ SerialNumber    : 12345-67890-ABCDE-F0123
 Version         : 10.0.18234
 ```
 
-Det här exemplet returnerar ett ManagementClass objekt för Win32_OperatingSystem-klassen.
+Det här exemplet returnerar ett ManagementClass-objekt för Win32_OperatingSystem-klassen.
 
 ```powershell
 [wmiclass]"Win32_OperatingSystem"
@@ -482,48 +482,48 @@ Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumbe
 
 ### <a name="-lp-alias-for-all--literalpath-parameters"></a>`-lp` alias för alla `-LiteralPath` parametrar
 
-Tack vare [ @kvprasoon ](https://github.com/kvprasoon), nu har vi ett parameteralias `-lp` för alla inbyggda PowerShell-cmdletar som har en `-LiteralPath` parametern.
+Tack vare att du [@kvprasoon](https://github.com/kvprasoon)har vi nu ett parameter ali Aset `-lp` för alla inbyggda PowerShell-cmdletar som har en `-LiteralPath`-parameter.
 
 ## <a name="breaking-changes"></a>Icke-bakåtkompatibla ändringar
 
-### <a name="msi-based-installation-paths-on-windows"></a>MSI-baserad installation sökvägar på Windows
+### <a name="msi-based-installation-paths-on-windows"></a>MSI-baserade installations Sök vägar i Windows
 
-På Windows installerar MSI-paketet nu till följande sökväg:
+I Windows installeras nu MSI-paketet på följande sökväg:
 
-- `$env:ProgramFiles\PowerShell\6\` för att säkra installera 6.x
-- `$env:ProgramFiles\PowerShell\6-preview\` för att installera förhandsversion 6.x
+- `$env:ProgramFiles\PowerShell\6\` för en stabil installation av 6. x
+- `$env:ProgramFiles\PowerShell\6-preview\` för för hands versionen av 6. x
 
-Den här ändringen gör att PowerShell Core kan vara uppdaterad/underhålls av Microsoft Update.
+Den här ändringen ser till att PowerShell-kärnan kan uppdateras/servas av Microsoft Update.
 
-Mer information finns i [PowerShell RFC0026](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0026-MSI-Installation-Path.md).
+Mer information finns i PowerShell- [RFC0026](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0026-MSI-Installation-Path.md).
 
-### <a name="telemetry-can-only-be-disabled-with-an-environment-variable"></a>Telemetri kan endast inaktiveras med en miljövariabel
+### <a name="telemetry-can-only-be-disabled-with-an-environment-variable"></a>Telemetri kan bara inaktive ras med en miljö variabel
 
-PowerShell Core skickar grundläggande telemetridata till Microsoft när den startas. Data innehåller namn på operativsystem, operativsystemversion och PowerShell-version. Den här informationen gör det möjligt för oss att bättre förstå de miljöer där PowerShell används och gör det möjligt för oss att prioritera nya funktioner och korrigeringar.
+PowerShell-kärnan skickar grundläggande telemetridata till Microsoft när den startas. Datan innehåller operativ systemets namn, OS-version och PowerShell-version. Med den här informationen kan vi bättre förstå de miljöer där PowerShell används och göra det möjligt för oss att prioritera nya funktioner och korrigeringar.
 
-Om du vill välja bort den här telemetrin, ange miljövariabeln `POWERSHELL_TELEMETRY_OPTOUT` till `true`, `yes`, eller `1`. Vi har inte längre stöd för borttagning av filen `DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` att inaktivera telemetri.
+Om du vill inaktivera den här Telemetrin ställer du in miljövariabeln `POWERSHELL_TELEMETRY_OPTOUT` till `true`, `yes`eller `1`. Vi stöder inte längre borttagning av filen `DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` att inaktivera telemetri.
 
-### <a name="disallowed-basic-auth-over-http-in-powershell-remoting-on-unix-platforms"></a>Tillåts inte grundläggande autentisering över HTTP i PowerShell-fjärrkommunikation för Unix-plattformar
+### <a name="disallowed-basic-auth-over-http-in-powershell-remoting-on-unix-platforms"></a>Otillåten grundläggande autentisering över HTTP i PowerShell-fjärrkommunikation på UNIX-plattformar
 
-Om du vill förhindra användning av okrypterade trafik kräver PowerShell-fjärrkommunikation på Unix-plattformar nu användningen av NTLM/förhandla eller HTTPS.
+För att förhindra användning av okrypterad trafik, kräver PowerShell-fjärrkommunikation på UNIX-plattformar att NTLM/Negotiate eller HTTPS används nu.
 
-Mer information om dessa ändringar finns [problemet #6779](https://github.com/PowerShell/PowerShell/issues/6779).
+Mer information om dessa ändringar finns i [problem #6779](https://github.com/PowerShell/PowerShell/issues/6779).
 
-### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>Ta bort `VisualBasic` som ett språk som stöds i Add-Type
+### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>Borttagen `VisualBasic` som ett språk som stöds i tilläggs typen
 
-Tidigare kunde du kompilera Visual Basic kod med den `Add-Type` cmdlet.
-Visual Basic används sällan med `Add-Type`. Vi har tagit bort den här funktionen för att minska storleken på PowerShell.
+Tidigare kunde du kompilera Visual Basic kod med hjälp av `Add-Type`-cmdleten.
+Visual Basic användes sällan med `Add-Type`. Vi har tagit bort den här funktionen för att minska storleken på PowerShell.
 
-### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Rensa användningsområden för `CommandTypes.Workflow` och `WorkflowInfoCleaned`
+### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Rensad användning av `CommandTypes.Workflow` och `WorkflowInfoCleaned`
 
-Mer information om dessa ändringar finns [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708).
+Mer information om dessa ändringar finns i [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708).
 
-### <a name="group-object-now-sorts-the-groups"></a>Grupp-objekt sorteras grupperna
+### <a name="group-object-now-sorts-the-groups"></a>Gruppera objekt sorterar nu grupperna
 
-Som en del av prestandaförbättringar, `Group-Object` nu returnerar en sorterad lista över grupperna.
-Även om du inte bör förlita dig på för, kan du delas av den här ändringen om du vill lägga till den första gruppen. Beslutat att denna förbättring av prestanda var värt att ändringen eftersom effekten av att beroende på tidigare beteende är låg.
+Som en del av prestanda förbättringen returnerar `Group-Object` nu en sorterad lista över grupperna.
+Även om du inte bör förlita dig på ordern, kan du bryta den här ändringen om du ville ha den första gruppen. Vi beslutade att den här prestanda förbättringen var värt förändringen eftersom effekten av att vara beroende av tidigare beteende är låg.
 
-Mer information om den här ändringen finns [problemet #7409](https://github.com/PowerShell/PowerShell/issues/7409).
+Mer information om den här ändringen finns i [problem #7409](https://github.com/PowerShell/PowerShell/issues/7409).
 
 <!-- URL references -->
 [Experimentella funktioner]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features

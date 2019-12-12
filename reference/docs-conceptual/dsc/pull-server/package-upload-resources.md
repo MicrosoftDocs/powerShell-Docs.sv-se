@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Paketera och ladda upp resurser till en hämtnings Server
 ms.openlocfilehash: 29a62f96393a53c9e7da57a5e51732dcb0937194
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942246"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Paketera och ladda upp resurser till en hämtnings Server
@@ -37,7 +37,7 @@ Resurs arkivet måste ha namnet med följande format:
 {ModuleName}_{Version}.zip
 ```
 
-I exemplet ovan ska "xPSDesiredStateConfiguration. zip" byta namn till "xPSDesiredStateConfiguration_ 8.4.4.0. zip".
+I exemplet ovan ska "xPSDesiredStateConfiguration. zip" byta namn till "xPSDesiredStateConfiguration_8.4.4.0. zip".
 
 ### <a name="create-checksums"></a>Skapa kontroll summor
 
@@ -47,7 +47,7 @@ När modulen har komprimerats och bytt namn måste du skapa en **kontroll Summa*
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 ```
 
-Inga utdata visas, men nu bör du se en "xPSDesiredStateConfiguration_-8.4.4.0. zip. kontroll Summa". Du kan också köra `New-DSCCheckSum` mot en katalog med filer med hjälp av parametern `-Path`. Om det redan finns en kontroll summa kan du tvinga den att skapas igen med parametern `-Force`.
+Inga utdata visas, men nu bör du se en "xPSDesiredStateConfiguration_8.4.4.0. zip. kontroll Summa". Du kan också köra `New-DSCCheckSum` mot en katalog med filer med hjälp av `-Path`-parametern. Om det redan finns en kontroll summa kan du tvinga den att skapas igen med `-Force`-parametern.
 
 ### <a name="where-to-store-resource-archives"></a>Var resurs Arkiv ska lagras
 

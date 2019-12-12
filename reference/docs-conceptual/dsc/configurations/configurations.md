@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-konfigurationer
 ms.openlocfilehash: d7749ec88f9cca3e29c6b38d61fb73776af7ceb4
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942330"
 ---
 # <a name="dsc-configurations"></a>DSC-konfigurationer
@@ -32,9 +32,9 @@ Configuration MyDscConfiguration {
 MyDscConfiguration
 ```
 
-Spara skriptet som en `.ps1` fil.
+Spara skriptet som en `.ps1`-fil.
 
-## <a name="configuration-syntax"></a>Syntax för konfiguration
+## <a name="configuration-syntax"></a>Konfigurationssyntax
 
 Ett konfigurations skript består av följande delar:
 
@@ -73,7 +73,7 @@ Configuration MyDscConfiguration
 MyDscConfiguration
 ```
 
-**Node** -blocket kan också acceptera flera dator namn. I exemplet ovan kan du antingen använda `-ComputerName` parametern eller skicka en kommaavgränsad lista med datorer direkt till **Node** -blocket.
+**Node** -blocket kan också acceptera flera dator namn. I exemplet ovan kan du antingen använda `-ComputerName` parameter eller skicka en kommaavgränsad lista med datorer direkt till **Node** -blocket.
 
 ```powershell
 MyDscConfiguration -ComputerName "localhost", "Server01"
@@ -159,7 +159,7 @@ Om du körde föregående exempel kanske du har märkt att du har fått en varni
 Idag levereras DSC med 12 resurser som en del av PSDesiredStateConfiguration-modulen.
 
 Cmdleten [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)kan användas för att avgöra vilka resurser som är installerade i systemet och som är tillgängliga för användning av LCM.
-När de här modulerna har placerats i `$env:PSModulePath` och är korrekt identifierade av [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)måste de fortfarande läsas in i konfigurationen.
+När de här modulerna har placerats i `$env:PSModulePath` och identifieras korrekt av [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource), måste de fortfarande läsas in i konfigurationen.
 
 **Import-dscresource Keyword Supports** är ett dynamiskt nyckelord som bara kan identifieras i ett **konfigurations** block, men det är inte en cmdlet.
 **Import-dscresource Keyword Supports** stöder två parametrar:
@@ -167,7 +167,7 @@ När de här modulerna har placerats i `$env:PSModulePath` och är korrekt ident
 - **Modulnamn** är det rekommenderade sättet att använda **import-dscresource Keyword Supports**. Den accepterar namnet på modulen som innehåller de resurser som ska importeras (samt en sträng mat ris med Modulnamn).
 - **Namn** är namnet på den resurs som ska importeras. Detta är inte det egna namnet som returneras som "name" av [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource), men det klass namn som används för att definiera resurs schema (returnerat som **resourcetype** av [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)).
 
-Mer information om hur du `Import-DSCResource`använder finns i [using import-dscresource Keyword Supports](import-dscresource.md)
+Mer information om hur du använder `Import-DSCResource`finns i [using import-dscresource Keyword Supports](import-dscresource.md)
 
 ## <a name="powershell-v4-and-v5-differences"></a>Skillnader mellan PowerShell v4 och v5
 

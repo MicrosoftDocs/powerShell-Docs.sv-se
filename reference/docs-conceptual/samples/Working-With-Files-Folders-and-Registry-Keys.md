@@ -1,23 +1,23 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Arbeta med filer, mappar och registernycklar
 ms.openlocfilehash: 0c8716c384827d0816e2847ff81232c14638681b
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030754"
 ---
-# <a name="working-with-files-folders-and-registry-keys"></a>Arbeta med filer, mappar och registernycklar
+# <a name="working-with-files-folders-and-registry-keys"></a>Arbeta med filer, mappar och register nycklar
 
-Windows PowerShell använder substantivet **objekt** att referera till objekt som finns på en Windows PowerShell-enhet. När du hanterar filsystem för Windows PowerShell-providern, en **objekt** kan vara en fil, en mapp eller Windows PowerShell-enhet. Lista och arbeta med de här objekten är en kritisk standardaktivitet i de flesta administrativa inställningar, så vi vill diskutera dessa uppgifter i detalj.
+Windows PowerShell använder **objektet** Substantiv för att referera till objekt som finns på en Windows PowerShell-enhet. När du hanterar Windows PowerShell-filsystem-providern kan ett **objekt** vara en fil, en mapp eller Windows PowerShell-enheten. Att lista och arbeta med dessa objekt är en viktig grundläggande uppgift i de flesta administrativa inställningar, så vi vill diskutera dessa uppgifter i detalj.
 
-## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Räkna upp filer, mappar och registernycklar (Get-ChildItem)
+## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Räkna upp filer, mappar och register nycklar (Get-ChildItem)
 
-Eftersom hämtar en samling objekt från en viss plats är sådan vanliga uppgift, den **Get-ChildItem** cmdlet har utformats speciellt för att returnera alla objekt som hittas i en behållare, till exempel en mapp.
+Eftersom hämtning av en samling av objekt från en viss plats är en sådan vanlig uppgift, är cmdleten **Get-ChildItem** utformad för att returnera alla objekt som finns i en behållare, till exempel en mapp.
 
-Om du vill returnera alla filer och mappar som finns direkt i mappen C:\\Windows, typ:
+Om du vill returnera alla filer och mappar som finns direkt i mappen C:\\Windows, skriver du:
 
 ```
 PS> Get-ChildItem -Path C:\Windows
@@ -31,19 +31,19 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-Listan liknar vad som skulle visas när du anger den **dir** i **Cmd.exe**, eller **ls** i en UNIX-kommandogränssnittet.
+Listan ser ut ungefär som du ser när du anger kommandot **dir** i **cmd. exe**eller kommandot **ls** i ett UNIX-kommando gränssnitt.
 
-Du kan utföra mycket komplex listor med hjälp av parametrarna för den **Get-ChildItem** cmdlet. Vi ska titta på några scenarier bredvid. Du kan se syntaxen i **Get-ChildItem** cmdlet genom att skriva:
+Du kan utföra mycket komplexa listor genom att använda parametrarna för **Get-ChildItem** -cmdlet: en. Vi kommer att titta på några scenarier härnäst. Du kan se syntaxen **Get-ChildItem** -cmdleten genom att skriva:
 
 ```powershell
 Get-Command -Name Get-ChildItem -Syntax
 ```
 
-Dessa parametrar kan kombineras och matchas i syfte för att få stora anpassningar utdata.
+Dessa parametrar kan kombineras och matchas för att få mycket anpassade utdata.
 
-### <a name="listing-all-contained-items--recurse"></a>Lista alla innehöll objekt (-Recurse)
+### <a name="listing-all-contained-items--recurse"></a>Visar alla objekt som finns (-rekursivt)
 
-Om du vill se både objekt i en Windows-mapp och alla objekt som ingår i undermapparna, använda den **Recurse** -parametern för **Get-ChildItem**. Listan visar allt inom den Windows-mappen och dess undermappar objekt. Till exempel:
+Om du vill se både objekten i en Windows-mapp och alla objekt som ingår i undermapparna använder du parametern **rekursivt** för **Get-ChildItem**. I listan visas allting i Windows-mappen och objekten i dess undermappar. Till exempel:
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS -Recurse
@@ -58,7 +58,7 @@ Mode                LastWriteTime     Length Name
 
 ### <a name="filtering-items-by-name--name"></a>Filtrera objekt efter namn (-namn)
 
-Använd för att visa bara namnen på objekten i **namn** -parametern för **Get-Childitem**:
+Om du bara vill visa objekt namn använder du **Name** -parametern för **Get-Childitem**:
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS -Name
@@ -68,31 +68,31 @@ assembly
 ...
 ```
 
-### <a name="forcibly-listing-hidden-items--force"></a>Forcerar lista dolda objekt (-Force)
+### <a name="forcibly-listing-hidden-items--force"></a>Tvångs lista över dolda objekt (-Force)
 
-Objekt som är normalt osynliga i Utforskaren eller Cmd.exe inte visas i utdata från en **Get-ChildItem** kommando. Använd för att visa dolda objekt, den **kraft** -parametern för **Get-ChildItem**. Till exempel:
+Objekt som normalt är osynliga i Utforskaren eller cmd. exe visas inte i utdata från ett **Get-ChildItem** -kommando. Använd parametern **Force** för **Get-ChildItem**om du vill visa dolda objekt. Till exempel:
 
 ```powershell
 Get-ChildItem -Path C:\Windows -Force
 ```
 
-Den här parametern heter Force eftersom du kan framtvinga åsidosätta det normala beteendet för den **Get-ChildItem** kommando. Force är en term som används parameter som tvingar en åtgärd som inte normalt utför en cmdlet, även om det inte att utföra några åtgärder som äventyrar säkerheten i systemet.
+Den här parametern heter Force eftersom du kan framtvinga åsidosättning av det normala beteendet för kommandot **Get-ChildItem** . Force är en mycket Använd parameter som tvingar fram en åtgärd som en cmdlet normalt inte utför, även om den inte kommer att utföra någon åtgärd som äventyrar säkerheten i systemet.
 
-### <a name="matching-item-names-with-wildcards"></a>Matchande namn med jokertecken
+### <a name="matching-item-names-with-wildcards"></a>Matchande objekt namn med jokertecken
 
-**Get-ChildItem** kommando accepterar jokertecken i sökvägen till de objekt som ska visas.
+Kommandot **Get-ChildItem** accepterar jokertecken i sökvägen för objekten som ska listas.
 
-Eftersom matchning med jokertecken hanteras av Windows PowerShell-motorn, alla cmdletar som accepterar jokertecken använder samma notation och har samma matchande beteende. Windows PowerShell med jokertecken notation innehåller:
+Eftersom matchning av jokertecken hanteras av Windows PowerShell-motorn, använder alla cmdlets som accepterar jokertecken samma notation och har samma matchnings beteende. Jokertecken i Windows PowerShell innehåller:
 
-- Asterisk (\*) matchar noll eller flera förekomster av valfritt tecken.
+- Asterisk (\*) matchar noll eller flera förekomster av tecken.
 
-- Frågetecken (?) matchar exakt 1 tecken.
+- Frågetecken (?) matchar exakt ett tecken.
 
-- Vänster hakparentes (\[) tecken och tecken som höger hakparentes (]) omger du en uppsättning tecken som ska matchas.
+- Vänster hak paren tes tecken (\[) och höger hak paren tes (]) omger en uppsättning tecken som ska matchas.
 
-Här följer några exempel på hur det fungerar med jokertecken-specifikationen.
+Här följer några exempel på hur wildcard-specifikation fungerar.
 
-Att hitta alla filer i katalogen Windows med suffixet **.log** och fem tecken i det grundläggande namnet, anger du följande kommando:
+Om du vill hitta alla filer i Windows-katalogen med suffixet **. log** och exakt fem tecken i bas namnet anger du följande kommando:
 
 ```
 PS> Get-ChildItem -Path C:\Windows\?????.log
@@ -109,25 +109,25 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-Att hitta alla filer som börjar med bokstaven **x** i Windows-katalogen, skriver du:
+Om du vill hitta alla filer som börjar med bokstaven **x** i Windows-katalogen skriver du:
 
 ```powershell
 Get-ChildItem -Path C:\Windows\x*
 ```
 
-Att hitta alla filer vars namn börjar med **x** eller **z**, typ:
+Om du vill hitta alla filer vars namn börjar med **x** eller **z**skriver du:
 
 ```powershell
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
-### <a name="excluding-items--exclude"></a>Undanta objekt (-exkludera)
+### <a name="excluding-items--exclude"></a>Uteslut objekt (-exkludera)
 
-Du kan utesluta specifika objekt med hjälp av den **undanta** -parametern för Get-ChildItem. På så sätt kan du utföra komplex filtrering i en enskild instruktion.
+Du kan exkludera vissa objekt med hjälp av parametern **exclude** för Get-ChildItem. På så sätt kan du utföra komplex filtrering i ett enda uttryck.
 
-Anta exempelvis att du försöker att hitta Windows Time Service DLL-filen i mappen System32 och allt du kan komma ihåg om DLL-namn är att den börjar med ”W” och innehåller ”32”.
+Anta till exempel att du försöker hitta Windows Time Service-DLL i mappen System32, och allt du kan komma ihåg om DLL-namnet är att det börjar med "W" och innehåller "32".
 
-Ett uttryck som **w\&#42; 32\&#42;. DLL-filen** hittar alla DLL: er som uppfyller villkoren, men det kan också returnera Windows 95 och 16-bitars Windows kompatibilitet DLL-filer som innehåller ”95” eller ”16” i sina namn. Du kan hoppa över filer som har någon av dessa siffror i sina namn med hjälp av den **undanta** parametern med mönstret  **\&#42;\[ 9516]\&#42;** :
+Ett uttryck som **w\&#42; 32\&#42;. DLL** hittar alla DLL: er som uppfyller villkoren, men kan också returnera windows 95-och 16-bitars Windows-kompatibla dll: er som innehåller "95" eller "16" i namnen. Du kan utelämna filer som har något av dessa nummer i namnen med hjälp av parametern **exclude** med mönstret **\&#42;\[9516]\&#42;** :
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*
@@ -146,19 +146,19 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
 ```
 
-### <a name="mixing-get-childitem-parameters"></a>Blandade Get-ChildItem parametrar
+### <a name="mixing-get-childitem-parameters"></a>Blanda get-ChildItem-parametrar
 
-Du kan använda flera av parametrarna i den **Get-ChildItem** cmdlet i samma kommando. Innan du blanda parametrar måste du kontrollera att du förstår matchning med jokertecken. Till exempel returnerar följande kommando inga resultat:
+Du kan använda flera av parametrarna för **Get-ChildItem** -cmdlet: en i samma kommando. Innan du blandar parametrar bör du vara säker på att du förstår matchning med jokertecken. Följande kommando returnerar till exempel inga resultat:
 
 ```powershell
 Get-ChildItem -Path C:\Windows\*.dll -Recurse -Exclude [a-y]*.dll
 ```
 
-Det finns inga resultat, även om det finns två DLL: er som börjar med bokstaven ”z” i Windows-mappen.
+Det finns inga resultat, även om det finns två dll: er som börjar med bokstaven "z" i Windows-mappen.
 
-Inga resultat returnerades eftersom vi angav jokertecknet som en del av sökvägen. Även om kommandot har rekursiv, den **Get-ChildItem** cmdlet begränsade objekten till dem som ingår i Windows-mappen med namn som slutar med ”dll”.
+Inga resultat returnerades eftersom vi har angett jokertecknet som en del av sökvägen. Även om kommandot var rekursivt, har cmdleten **Get-ChildItem** begränsat objekten till de som finns i Windows-mappen med namn som slutar med ". dll".
 
-Om du vill ange en rekursiv sökning efter filer vars namn matchar ett särskilt mönster, använda den **-inkludera** parametern.
+Om du vill ange en rekursiv sökning efter filer vars namn matchar ett särskilt mönster använder du parametern **-include** .
 
 ```
 PS> Get-ChildItem -Path C:\Windows -Include *.dll -Recurse -Exclude [a-y]*.dll

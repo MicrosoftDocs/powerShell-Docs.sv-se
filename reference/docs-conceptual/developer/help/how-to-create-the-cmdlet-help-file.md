@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
 caps.latest.revision: 17
 ms.openlocfilehash: 08e05939f8aee42f2cd502a3da7a528d8460dec1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353265"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>Skapa cmdlet-hjälpfilen
@@ -36,7 +36,7 @@ I det här avsnittet beskrivs hur du skapar en giltig XML-fil som innehåller in
 
    I följande tabell visas XML-elementet för varje nod, följt av en beskrivning av varje nod.
 
-   |Nodfel|Beskrivning|
+   |Nod|Beskrivning|
    |----------|-----------------|
    |`<details>`|Lägger till innehåll för avsnittet namn och sammanfattning i hjälpen för cmdlet. Mer information finns i [så här lägger du till cmdlet-namn och-sammanfattning](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md).|
    |`<maml:description>`|Lägger till innehåll i BESKRIVNINGs avsnittet i hjälp avsnittet för cmdleten. Mer information finns i [avsnittet så här lägger du till den detaljerade beskrivningen i en cmdlet-hjälpfil](./how-to-add-a-cmdlet-description.md).|

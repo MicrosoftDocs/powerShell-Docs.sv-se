@@ -1,36 +1,36 @@
 ---
 ms.date: 08/27/2018
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Använd bekanta kommandonamn
 ms.openlocfilehash: 30b33bc8739975c1a40e51c04a3ee4e426c199e7
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030891"
 ---
 # <a name="using-familiar-command-names"></a>Använd bekanta kommandonamn
 
-PowerShell stöder alias att referera till kommandon med alternativa namn. Alias kan användare med upplevelsen i andra gränssnitt för att använda vanliga kommandonamn som de redan känner för liknande åtgärder i PowerShell.
+PowerShell stöder alias för att referera till kommandon med alternativa namn. Med aliasering kan användare i andra gränssnitt använda vanliga kommando namn som de redan känner till för liknande åtgärder i PowerShell.
 
-Alias associerar ett nytt namn med ett annat kommando. Till exempel PowerShell har en intern funktion med namnet `Clear-Host` som rensar utdatafönstret. Du kan ange antingen den `cls` eller `clear` alias i Kommandotolken. PowerShell tolkar dessa alias och kör den `Clear-Host` funktion.
+Alias associerar ett nytt namn med ett annat kommando. PowerShell har till exempel en intern funktion med namnet `Clear-Host` som rensar utdatafönstret. Du kan ange antingen `cls` eller `clear` alias i en kommando tolk. PowerShell tolkar dessa alias och kör funktionen `Clear-Host`.
 
-Den här funktionen hjälper användare att lära dig PowerShell. Första, de flesta **cmd.exe** och Unix-användare har en stor kan representeras av kommandon som användarna redan känner till namnet. PowerShell-motsvarigheter kanske inte ger samma resultat. Resultatet är dock Stäng tillräckligt som användare kan fungerar utan att känna till namnet för PowerShell-kommando. ”Finger minne” är en annan större orsaken frustrationen när learning en ny kommandotolk. Om du har använt **cmd.exe** i flera år, kan du reflexively skriver den `cls` kommando för att rensa skärmen. Utan alias för `Clear-Host`, du får ett felmeddelande och inte vet vad du gör för att ta bort utdata.
+Den här funktionen hjälper användare att lära sig PowerShell. Först har de flesta **cmd. exe** -och UNIX-användare en stor repertoaren av kommandon som användarna redan känner till med namn. PowerShell-motsvarigheterna kanske inte genererar identiska resultat. Resultaten är dock tillräckligt nära att användarna kan arbeta utan att känna till PowerShell-kommando namnet. "Finger minne" är en annan stor källa för att lära sig ett nytt kommando gränssnitt. Om du har använt **cmd. exe** för år kan du ange `cls` kommandot för att rensa skärmen. Utan alias för `Clear-Host`får du ett fel meddelande och vet inte vad du ska göra för att rensa utdata.
 
-I följande lista visas några vanliga **cmd.exe** och Unix-kommandon som du kan använda i PowerShell:
+I följande lista visas några av de vanliga **cmd. exe** -och UNIX-kommandon som du kan använda i PowerShell:
 
 |||||
 |-|-|-|-|
-|cat|dir|Montera|rm|
-|cd|echo|Flytta|rmdir|
-|chdir|Radera|popd|Strömsparläge|
-|Rensa|h|ps|Sortera|
-|CLS|Historik|pushd|Tee|
-|Kopiera|Avsluta|pwd|typ|
-|del|LP|R|Skriva|
-|diff|ls|ren||
+|lat|tillämpning|insättning|RM|
+|cd|echo|flytta|rmdir|
+|chdir|radera|POPD|Spar|
+|Rensa|h|PS|sortera|
+|CLS|Historik|PUSHD|tee|
+|exemplar|döda|PWD|typ|
+|Backsteg|LP|R|skriva|
+|differensområden|LS|Outlook||
 
-Den `Get-Alias` cmdlet visar det verkliga namnet på den interna PowerShell-kommando som är associerade med ett alias.
+`Get-Alias`-cmdleten visar det verkliga namnet på det ursprungliga PowerShell-kommandot som är associerat med ett alias.
 
 ```powershell
 PS> Get-Alias cls
@@ -42,40 +42,40 @@ CommandType     Name                               Version    Source
 Alias           cls -> Clear-Host
 ```
 
-## <a name="interpreting-standard-aliases"></a>Tolka standard alias
+## <a name="interpreting-standard-aliases"></a>Tolka Standardalias
 
-Alias vi beskrivits utformades för namn-kompatibilitet med andra kommandogränssnitt.
-De flesta alias som är inbyggda i PowerShell är utformade för kortfattat. Kortare namn är lättare att typ, men är svåra att läsa om du inte vet vad de refererar till.
+De alias som vi beskrivit tidigare har utformats för namn-kompatibilitet med andra kommando gränssnitt.
+De flesta alias som är inbyggda i PowerShell är utformade för det kortfattat. Kortare namn är enklare att skriva, men det är svårt att läsa om du inte vet vad de refererar till.
 
-PowerShell-alias försöker angripa mellan tydlighet och kortfattat. PowerShell använder en standarduppsättning med alias för vanliga substantiv och verb.
+PowerShell-alias försöker kompromissa mellan klarhet och det kortfattat. PowerShell använder en standard uppsättning alias för vanliga Substantiv och verb.
 
 Exempel förkortningar:
 
-| Substantiv eller Verb | Förkortning |
+| Substantiv eller verb | Förkortning |
 |--------------|--------------|
 | Get          | g            |
-| Ange          | S            |
+| Ange          | s            |
 | Artikel         | Jag            |
 | Position     | L            |
-| Kommando      | cm           |
-| Alias        | AL           |
+| Kommando      | 210           |
+| Alias        | Al           |
 
-Dessa alias är att förstå när du vet vilka snabbformat.
+Dessa alias är begripliga när du känner till stenografiska namn.
 
 | Cmdlet-namn    | Alias |
 |----------------|-------|
-| `Get-Item`     | gi    |
-| `Set-Item`     | si    |
-| `Get-Location` | gl    |
-| `Set-Location` | sl    |
-| `Get-Command`  | gcm   |
-| `Get-Alias`    | GAL   |
+| `Get-Item`     | eter    |
+| `Set-Item`     | Si    |
+| `Get-Location` | huvud    |
+| `Set-Location` | SL    |
+| `Get-Command`  | GCM   |
+| `Get-Alias`    | gal   |
 
-När du är bekant med PowerShell-alias är det enkelt att gissa som den **sal** alias refererar till `Set-Alias`.
+När du är bekant med PowerShell-alias är det enkelt att gissa att **sal** -aliaset refererar till `Set-Alias`.
 
-## <a name="creating-new-aliases"></a>Skapa nytt alias
+## <a name="creating-new-aliases"></a>Skapa nya alias
 
-Du kan skapa egna alias med hjälp av den `Set-Alias` cmdlet. Till exempel skapa följande instruktioner standard cmdlet-alias som beskrivits tidigare:
+Du kan skapa egna alias med hjälp av `Set-Alias`-cmdleten. Följande uttryck skapar till exempel standard-cmdlet-alias som tidigare diskuterats:
 
 ```powershell
 Set-Alias -Name gi -Value Get-Item
@@ -85,8 +85,8 @@ Set-Alias -Name sl -Value Set-Location
 Set-Alias -Name gcm -Value Get-Command
 ```
 
-Internt PowerShell använder liknande kommandon under starten, men dessa alias är inte kan ändras.
-Om du försöker köra något av följande kommandon, får du ett felmeddelande om att aliaset som inte kan ändras. Till exempel:
+Internt använder PowerShell liknande kommandon vid start, men dessa alias kan inte ändras.
+Om du försöker köra ett av dessa kommandon får du ett fel som förklarar att aliaset inte kan ändras. Till exempel:
 
 ```
 PS> Set-Alias -Name gi -Value Get-Item

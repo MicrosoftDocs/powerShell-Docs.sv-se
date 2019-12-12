@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
 ms.openlocfilehash: 0210b5ed3104777541692a0e78e7d3b16f9c8256
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353272"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Lägga till syntax till ett cmdlet-hjälpavsnitt
@@ -37,7 +37,7 @@ Innan du börjar koda XML för syntax-diagrammet i cmdlet-hjälpen läser du det
 
   - Om värdet är true (ByValue) kan du skicka pipe-information till-parametern. Indatamängden är associerad med ("bind till") parametern även om egenskaps namnet och objekt typen inte matchar den förväntade typen. Windows PowerShell? med parameter bindnings komponenter försöker du konvertera inmatarna till rätt typ och växlar kommandot endast när det inte går att konvertera typen. Endast en parameter i en parameter uppsättning kan associeras med värde.
 
-  - Om värdet är true (ByPropertyName) kan du skicka pipe-information till-parametern. Inmatarna är dock bara kopplade till parametern när parameter namnet matchar namnet på en egenskap för objektet. Om parameter namnet till exempel är `Path`, associeras objekt skickas till cmdleten endast när objektet har en egenskap med namnet Path.
+  - Om värdet är true (ByPropertyName) kan du skicka pipe-information till-parametern. Inmatarna är dock bara kopplade till parametern när parameter namnet matchar namnet på en egenskap för objektet. Om parameter namnet till exempel är `Path`associeras objekt skickas till cmdleten endast när objektet har en egenskap med namnet Path.
 
   - Om det här värdet är sant (ByValue, ByPropertyName) kan du skicka pipe-värden till-parametern med egenskaps namn eller värde. Endast en parameter i en parameter uppsättning kan associeras med värde.
 
@@ -90,7 +90,7 @@ Vanligt vis krävs parameter värden som är plats hållare och parameter värde
 
    Se till att ange parametrarna WhatIf och Confirm om cmdleten stöder ShouldProcess.
 
-   Visa inte vanliga parametrar (till exempel verbose, debug och ErrorAction) i ditt syntax-diagram. @No__t-0-cmdleten lägger till den informationen åt dig när hjälp avsnittet visas.
+   Visa inte vanliga parametrar (till exempel verbose, debug och ErrorAction) i ditt syntax-diagram. `Get-Help`-cmdleten lägger till den informationen åt dig när hjälp avsnittet visas.
 
 3. Lägg till parameter värden. I Windows PowerShell? representeras parameter värden av deras .NET-typ. Typ namnet kan dock förkortas, till exempel "String" för system. String.
 
@@ -156,11 +156,11 @@ Vanligt vis krävs parameter värden som är plats hållare och parameter värde
 
 ## <a name="coding-the-syntax-diagram-xml"></a>Koda XML för syntax diagram
 
-Nodens syntax i XML-koden börjar omedelbart efter noden Description, som slutar med taggen \</MAML: Beskrivning >. Information om hur du samlar in data som används i syntax-diagrammet finns i [samla in syntax information](#gathering-syntax-information).
+Nodens syntax i XML-koden börjar omedelbart efter noden Description, som slutar med taggen \</MAML: Description >. Information om hur du samlar in data som används i syntax-diagrammet finns i [samla in syntax information](#gathering-syntax-information).
 
 ### <a name="adding-a-syntax-node"></a>Lägga till en syntax-nod
 
-Det syntax diagram som visas i hjälp avsnittet om cmdleten genereras från data i noden syntax i XML-koden. Noden syntax omges av ett par om \<command: syntax > taggar. Med varje parameter uppsättning i cmdleten som anges i ett par med \<command: syntaxitem >-taggar. Det finns ingen gräns för antalet \<command: syntaxitem >-taggar som du kan lägga till.
+Det syntax diagram som visas i hjälp avsnittet om cmdleten genereras från data i noden syntax i XML-koden. Noden syntax omges av ett par om \<Command: syntax > taggar. Med varje parameter uppsättning i cmdleten som anges i ett par med \<kommandot: syntaxitem > taggar. Det finns ingen gräns för antalet \<kommandot: syntaxitem > taggar som du kan lägga till.
 
 I följande exempel visas en syntax-nod som innehåller noder för syntaxfel för två parameter uppsättningar.
 
@@ -181,7 +181,7 @@ I följande exempel visas en syntax-nod som innehåller noder för syntaxfel fö
 
 ### <a name="adding-the-cmdlet-name-to-the-parameter-set-data"></a>Lägga till cmdlet-namnet i parameter uppsättnings data
 
-Varje parameter uppsättning i cmdleten anges i en nod för ett syntax-objekt. Varje syntax-Artikelnod börjar med ett par med \<maml: Name >-taggar som innehåller namnet på cmdleten.
+Varje parameter uppsättning i cmdleten anges i en nod för ett syntax-objekt. Varje syntax-Artikelnod börjar med ett par med \<MAML: Name >-taggar som innehåller namnet på cmdleten.
 
 I följande exempel finns en syntax-nod som innehåller noder för kommandosyntaxen för två parameter uppsättningar.
 
@@ -198,12 +198,12 @@ I följande exempel finns en syntax-nod som innehåller noder för kommandosynta
 
 ### <a name="adding-parameters"></a>Parametrar läggs till
 
-Varje parameter som läggs till i syntax-noden anges i ett par med \<command: parameter > taggar. Du behöver ett par med \<command: parameter > taggar för varje parameter som ingår i parameter uppsättningen, med undantag för de gemensamma parametrar som tillhandahålls av Windows PowerShell?.
+Varje parameter som läggs till i syntax-noden anges i ett par med \<kommandot: parameter > taggar. Du behöver ett par med \<kommandot: parameter > taggar för varje parameter som ingår i parameter uppsättningen, med undantag för de gemensamma parametrar som tillhandahålls av Windows PowerShell?.
 
-Attributen för den inledande \<command: parametern > tag anger hur parametern visas i syntax-diagrammet. Information om parameter-attribut finns i [parameter-attribut](#parameter-attributes).
+Attributen för öppnings \<kommandot: parameter > tag avgör hur parametern visas i syntax-diagrammet. Information om parameter-attribut finns i [parameter-attribut](#parameter-attributes).
 
 > [!NOTE]
-> Parametern \<command: parameter > stöder ett underordnat element \<maml: Description > vars innehåll aldrig visas. Parameter beskrivningar anges i noden parameter i XML-filen. Undvik inkonsekvenser mellan informationen i Bodes och noden parameter genom att utelämna (\<maml: Description > eller lämna det tomt.
+> Kommandot \<: parametern > tag stöder ett underordnat element \<MAML: Description > vars innehåll aldrig visas. Parameter beskrivningar anges i noden parameter i XML-filen. Undvik inkonsekvenser mellan informationen i Bodes och noden parameter genom att utelämna (\<MAML: Description > eller lämna det tomt.
 
 I följande exempel finns en nod för sökobjekt för en parameter uppsättning med två parametrar.
 

@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Hantera paket ägare
 ms.openlocfilehash: 5cf26a7195ac446177cbb7f3a055e8e0a78569cc
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71329024"
 ---
 # <a name="managing-package-owners"></a>Hantera paket ägare
@@ -34,7 +34,7 @@ När ett paket har publicerats till PowerShell-galleriet är det enkelt att bjud
 5. Ett e-postmeddelande skickas sedan till den nya medägaren som en inbjudan att bli ägare till ett paket.
 6. När användaren klickar på länken är de en fullständig samägare med fullständig kontroll över ett paket, inklusive möjligheten att ta bort andra användare som ägare.
 
-**OBS**: Tills den nya ägaren bekräftar ägarskapet visas de *inte* som ägare till ett paket.
+**Obs!** tills den nya ägaren bekräftar ägarskapet visas de *inte* som ägare till ett paket.
 När du visar sidan **Hantera ägare** visas posten "väntar på godkännande" i aktuella ägare.
 Den inbjudan kan tas bort. precis som andra ägare kan tas bort.
 Den här processen av inbjudningar förhindrar att användare lägger till andra användare felaktigt som ägare till sina paket.

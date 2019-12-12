@@ -3,10 +3,10 @@ ms.date: 10/30/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Felsöka DSC
 ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942414"
 ---
 # <a name="troubleshooting-dsc"></a>Felsöka DSC
@@ -26,7 +26,7 @@ Windows PowerShell Desired State Configuration (DSC) är beroende av WinRM. WinR
 - Alla resurser som misslyckats
 - Alla resurser som begärde en omstart
 - Inställningar för meta-konfiguration vid körning av konfigurations körning
-- annat.
+- O.s.v.
 
 Följande parameter uppsättning returnerar statusinformation för den senaste konfigurations körningen:
 

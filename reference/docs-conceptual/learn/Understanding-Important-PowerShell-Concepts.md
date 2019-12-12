@@ -1,42 +1,42 @@
 ---
 ms.date: 08/23/2018
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Förstå viktiga PowerShell-koncept
 ms.openlocfilehash: 8f9af370db46ea47dbccbabb7cc90fc27b8f2765
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030979"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Förstå viktiga PowerShell-koncept
 
-PowerShell-design integrerar begrepp från många olika miljöer. Flera av begrepp som är välkända för personer med erfarenhet av gränssnitt eller programmeringsmiljöer. Men vet många om alla. Titta på några av de här koncepten ger en bra översikt över gränssnittet.
+PowerShell-designen integrerar koncept från många olika miljöer. Flera av begreppen är bekanta med personer med erfarenhet av gränssnitt eller programmerings miljöer. Det kan dock ta några personer att veta mer om dem. Att titta på några av de här begreppen är en användbar översikt över gränssnittet.
 
-## <a name="output-is-object-based"></a>Utdata är objektbaserad
+## <a name="output-is-object-based"></a>Utdata är Object-baserad
 
-Till skillnad från traditionella command-line gränssnitt, har PowerShell-cmdletarna utformats utan objekt.
-Ett objekt är strukturerad information som är mer än bara sträng med tecken som visas på skärmen. Kommandoutdata alltid har extra information som du kan använda om du behöver den.
+Till skillnad från traditionella kommando rads gränssnitt är PowerShell-cmdletar utformade för att hantera objekt.
+Ett objekt är strukturerad information som är mer än bara den sträng med tecken som visas på skärmen. Kommandoutdata innehåller alltid ytterligare information som du kan använda om du behöver den.
 
-Om du har använt text-bearbetning verktyg för att bearbeta data som tidigare, hittar du att de fungerar annorlunda när de används i PowerShell. I de flesta fall behöver du inte text-process-verktyg för att extrahera specifik information. Du har direkt åtkomst till delar av data med standard syntax för PowerShell-objekt.
+Om du har använt text bearbetnings verktyg för att bearbeta data tidigare kommer du att se att de fungerar annorlunda när de används i PowerShell. I de flesta fall behöver du inte text bearbetnings verktyg för att extrahera speciell information. Du får direkt åtkomst till delar av data med hjälp av standardsyntaxen för PowerShell-objekt.
 
-## <a name="the-command-family-is-extensible"></a>I kommando-familjen kan utökas
+## <a name="the-command-family-is-extensible"></a>Kommando serien är utöknings bar
 
-Gränssnitt som **cmd.exe** inte gör det möjligt för dig att utöka den inbyggda kommandouppsättningen direkt. Du kan skapa externa kommandoradsverktyg som körs i **cmd.exe**. Men dessa externa verktyg har inte tjänster, till exempel hjälp-integrering. **cmd.exe** inte automatiskt att visa att dessa externa verktyg är giltiga kommandon.
+Gränssnitt som **cmd. exe** ger dig inte möjlighet att utöka den inbyggda kommando uppsättningen direkt. Du kan skapa externa kommando rads verktyg som körs i **cmd. exe**. Men dessa externa verktyg saknar tjänster, till exempel hjälp integrering. **cmd. exe** vet inte automatiskt att dessa externa verktyg är giltiga kommandon.
 
-Inbyggda kommandona i PowerShell kallas *cmdletar* (uttalas Commando-lets). Du kan skapa egna moduler med cmdletar och funktioner med hjälp av kompilerad kod eller skript. Moduler kan lägga till cmdlets och providers i gränssnittet. PowerShell stöder också skript som kan jämföras med UNIX-kommandoskript och **cmd.exe** batch-filer.
+Inbyggda kommandon i PowerShell kallas *cmdlets* (uttalat kommando-tillåter). Du kan skapa dina egna cmdlets-moduler och-funktioner med hjälp av kompilerade kod eller skript. Moduler kan lägga till cmdlets och providers i gränssnittet. PowerShell stöder också skript som är likvärdiga med UNIX Shell-skript och kommandofiler för **cmd. exe** .
 
-## <a name="powershell-handles-console-input-and-display"></a>PowerShell hanterar konsolindata och visa
+## <a name="powershell-handles-console-input-and-display"></a>PowerShell hanterar inmatade konsoler och visar
 
-När du skriver ett kommando bearbetar PowerShell alltid kommandoradsverktyget indata direkt. PowerShell också formaterar utdata som visas på skärmen. Den här skillnaden är betydande, eftersom det arbete som krävs för varje cmdlet. Det innebär att du kan alltid göra saker på samma sätt med en cmdlet. Cmdlet: en utvecklare behöver inte skriva kod för att parsa kommandoradsargument eller formatera utdata.
+När du skriver ett kommando bearbetar PowerShell alltid kommando rads indatamängden direkt. PowerShell formaterar också utdata som visas på skärmen. Den här skillnaden är viktig eftersom den minskar det arbete som krävs för varje cmdlet. Det garanterar att du alltid kan göra saker på samma sätt med alla cmdletar. Cmdlet-utvecklare behöver inte skriva kod för att parsa kommando rads argumenten eller formatera utdata.
 
-Traditionella kommandoradsverktyg har egna scheman för att begära och visa hjälp. Vissa kommandoradsverktyg använder **/?** att utlösa det bidrar till att visa; andra använda **-?** , **/H**, eller till och med **//** . Vissa visas hjälp i ett GUI-fönster i stället för i konsolen visas. Om du använder parametern fel, kan verktyget Ignorera vad du har angett och köra en uppgift automatiskt.
-Eftersom PowerShell automatiskt tolkar och bearbetar command line den **-?** Parametern innebär alltid ”visa hjälp för det här kommandot”.
+Traditionella kommando rads verktyg har egna scheman för att begära och Visa hjälp. Vissa kommando rads verktyg använder **/?** för att utlösa hjälp visningen. andra använder **-?** , **/h**eller till och med **//** . Vissa visar hjälpen i ett GUI-fönster, i stället för i konsolens visning. Om du använder fel parameter kan verktyget ignorera det du skrev och börja köra en uppgift automatiskt.
+Eftersom PowerShell automatiskt tolkar och bearbetar kommando raden **–?** parameter innebär alltid "Visa mig hjälp för det här kommandot".
 
 > [!NOTE]
-> Om du kör en grafisk programmet i PowerShell, öppnas fönstret för programmet.
-> PowerShell intervenes endast när bearbetning av kommandoraden indata du anger eller programutdata som returneras till konsolfönstret. Den påverkar inte hur programmet fungerar internt.
+> Om du kör ett grafiskt program i PowerShell öppnas fönstret för programmet.
+> PowerShell inverkar bara vid bearbetning av kommando rads indata som du anger eller programutdata som returneras till konsol fönstret. Det påverkar inte hur programmet fungerar internt.
 
-## <a name="powershell-uses-some-c-syntax"></a>PowerShell använder vissa C# syntax
+## <a name="powershell-uses-some-c-syntax"></a>PowerShell använder en C# viss syntax
 
-PowerShell bygger på .NET Framework. Den delar vissa syntaxfunktioner och nyckelord med det C# programmeringsspråket. Lära sig PowerShell kan göra det enklare att lära dig C#. Om du redan är bekant med C#, dessa likheter kan göra lära sig PowerShell enklare.
+PowerShell bygger på .NET Framework. Den delar vissa syntax funktioner och nyckelord med C# programmeringsspråket. Med Learning PowerShell kan du göra det mycket enklare C#att lära dig. Om du redan är bekant med C#kan dessa likheter göra det enklare att lära sig PowerShell.

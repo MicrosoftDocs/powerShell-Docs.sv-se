@@ -1,21 +1,21 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Sortera objekt
 ms.openlocfilehash: ed78e7e333f3468781c9cd96df2194fbdfebe753
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030783"
 ---
 # <a name="sorting-objects"></a>Sortera objekt
 
-Vi kan ordna data som visas så att de blir enklare att skanna med hjälp av den `Sort-Object` cmdlet. `Sort-Object` tar namnet på en eller flera egenskaper för att sortera efter och returnerar data som sorterats genom att värdena för dessa egenskaper.
+Vi kan organisera visade data så att de blir enklare att söka igenom med hjälp av `Sort-Object` cmdlet. `Sort-Object` tar namnet på en eller flera egenskaper att sortera på och returnerar data sorterade efter värdena för dessa egenskaper.
 
 ## <a name="basic-sorting"></a>Grundläggande sortering
 
-Överväg att problemet med att visa en lista över undermappar och filer i den aktuella katalogen.
+Ta hänsyn till problemet med att lista under kataloger och filer i den aktuella katalogen.
 Om vi vill sortera efter **LastWriteTime** och sedan efter **namn**, kan vi göra det genom att skriva:
 
 ```powershell
@@ -39,7 +39,7 @@ LastWriteTime          Name
 ...
 ```
 
-Du kan också sortera objekten i omvänd ordning genom att ange den **fallande** växla parametern.
+Du kan också sortera objekten i omvänd ordning genom att ange parametern för **fallande** växel.
 
 ```powershell
 Get-ChildItem |
@@ -64,14 +64,14 @@ LastWriteTime          Name
 11/6/2017 10:10:11 AM  .localization-config
 ```
 
-## <a name="using-hash-tables"></a>Med hjälp av hash-tabeller
+## <a name="using-hash-tables"></a>Använda hash-tabeller
 
-Du kan sortera olika egenskaper i olika ordning med hjälp av hash-tabeller i en matris.
-Varje hashtabellen använder en **uttryck** nyckel för att ange egenskapsnamnet på som sträng och en **stigande** eller **fallande** för att ange sorteringsordning genom `$true` eller `$false`.
-Den **uttryck** nyckeln är obligatorisk.
+Du kan sortera olika egenskaper i olika beställningar genom att använda hash-tabeller i en matris.
+Varje hash-tabell använder en **uttrycks** nyckel för att ange egenskaps namnet som sträng och en **stigande** eller **fallande** nyckel för att ange sorterings ordningen genom att `$true` eller `$false`.
+**Uttrycks** nyckeln är obligatorisk.
 Den **stigande** eller **fallande** nyckeln är valfri.
 
-I följande exempel sorterar objekt i fallande **LastWriteTime** ordning och stigande **namn** ordning.
+I följande exempel sorteras objekt i fallande **LastWriteTime** ordning och stigande **namn** ordning.
 
 ```powershell
 Get-ChildItem |
@@ -91,10 +91,10 @@ LastWriteTime          Name
 ...
 ```
 
-Du kan också ange en scriptblock till den **uttryck** nyckel.
-När du kör den `Sort-Object` cmdlet, körs scriptblock och resultatet används för sortering.
+Du kan också ange en script block till **uttrycks** nyckeln.
+När du kör `Sort-Object`-cmdleten körs script block och resultatet används för sortering.
 
-I följande exempel sorterar objekt i fallande ordning efter tidsintervallet mellan **CreationTime** och **LastWriteTime**.
+I följande exempel sorteras objekt i fallande ordning efter tidsintervallet mellan **CreationTime** och **LastWriteTime**.
 
 ```powershell
 Get-ChildItem |
@@ -118,27 +118,27 @@ LastWriteTime          CreationTime
 
 ## <a name="tips"></a>Tips
 
-Du kan utelämna den **egenskapen** parameternamnet på följande:
+Du kan utelämna **egenskaps** parameterns namn enligt följande:
 
 ```powershell
 Sort-Object LastWriteTime, Name
 ```
 
-Förutom, du kan referera till `Sort-Object` av dess inbyggda alias `sort`:
+Förutom kan du referera till `Sort-Object` med dess inbyggda alias `sort`:
 
 ```powershell
 sort LastWriteTime, Name
 ```
 
-Nycklar i hash-tabeller för att sortera kan förkortas på följande:
+Nycklarna i hash-tabellerna för sortering kan förkortas enligt följande:
 
 ```powershell
 Sort-Object @{ e = 'LastWriteTime'; d = $true }, @{ e = 'Name'; a = $true }
 ```
 
-I det här exemplet på **e** står för **uttryck**, **d** står för **fallande**, och **en** står för **stigande**.
+I det här exemplet står **e** står för **uttrycket**, **d** står för **fallande**och **en** står för **stigande**.
 
-För att förbättra läsbarheten, kan du placera hash-tabeller i en separat variabel:
+För att förbättra läsbarheten kan du placera hash-tabellerna i en separat variabel:
 
 ```powershell
 $order = @(

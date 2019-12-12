@@ -1,65 +1,65 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Samla in information om datorer
 ms.openlocfilehash: 5dc8fcc5f12fdf9e3fc8151d3e50b8b660262c62
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030846"
 ---
 # <a name="collecting-information-about-computers"></a>Samla in information om datorer
 
-Cmdlet: ar från **CimCmdlets** modul är den viktigaste cmdletar för allmänna aktiviteter på systemnivå.
-Alla inställningar för kritiskt undersystem exponeras via WMI.
-Dessutom behandlas data som objekt som finns i samlingar med ett eller flera objekt med WMI.
-Eftersom Windows PowerShell även fungerar med objekt och har en pipeline som gör att du kan hantera en eller flera objekt på samma sätt kan du utföra vissa avancerade åtgärder med mycket lite av allmän WMI-åtkomst.
+Cmdlets från **CimCmdlets** -modulen är de viktigaste cmdletarna för allmänna system hanterings uppgifter.
+Alla inställningar för viktiga under system exponeras via WMI.
+Dessutom behandlar WMI data som objekt som finns i samlingar av ett eller flera objekt.
+Eftersom Windows PowerShell även fungerar med objekt och har en pipeline som gör att du kan hantera enskilda eller flera objekt på samma sätt, kan du med hjälp av allmän WMI-åtkomst utföra vissa avancerade uppgifter med mycket lite arbete.
 
-Följande exempel visar hur du samlar in specifik information med hjälp av `Get-CimInstance` mot en valfri dator.
-Vi anger den **ComputerName** med punkt-värde för parametern ( **.** ), som representerar den lokala datorn.
-Du kan ange ett namn eller IP-adress som är associerade med en annan dator som du kan nå via WMI.
-Om du vill hämta information om den lokala datorn, kan du utelämna den **ComputerName** parametern.
+Följande exempel visar hur du samlar in speciell information med hjälp av `Get-CimInstance` mot en godtycklig dator.
+Vi anger parametern **computername** med det punkt värde ( **.** ) som representerar den lokala datorn.
+Du kan ange ett namn eller en IP-adress som är kopplad till en dator som du kan komma åt via WMI.
+Om du vill hämta information om den lokala datorn kan du utelämna parametern **computername** .
 
-## <a name="listing-desktop-settings"></a>Visa en lista över inställningar för fjärrskrivbord
+## <a name="listing-desktop-settings"></a>Visa Skriv bords inställningar
 
-Vi börjar med ett kommando som samlar in information om datorerna på den lokala datorn.
+Vi börjar med ett kommando som samlar in information om Skriv bordets på den lokala datorn.
 
 ```powershell
 Get-CimInstance -ClassName Win32_Desktop -ComputerName .
 ```
 
-Detta returnerar information för alla datorer, oavsett om de är används eller inte.
+Detta returnerar information för alla skriv bord, oavsett om de används eller inte.
 
 > [!NOTE]
-> Information som returneras av vissa WMI-klasser kan vara mycket detaljerade och ofta innehålla metadata om WMI-klass.
-Eftersom de flesta av dessa metadataegenskaper har namn som börjar med **Cim**, du kan filtrera egenskaper med hjälp av `Select-Object`.
-Ange den **- ExcludeProperty** med ”Cim *” som värde för parametern.
+> Information som returneras av vissa WMI-klasser kan vara mycket detaljerad och innehåller ofta metadata om WMI-klassen.
+Eftersom de flesta av dessa metadata-egenskaper har namn som börjar med **CIM**kan du filtrera egenskaperna med hjälp av `Select-Object`.
+Ange parametern **-ExcludeProperty** med "CIM *" som värde.
 Till exempel:
 
 ```powershell
 Get-CimInstance -ClassName Win32_Desktop -ComputerName . | Select-Object -ExcludeProperty "CIM*"
 ```
 
-Om du vill filtrera bort metadata, använder du en pipelineoperator (|) för att skicka resultatet av den `Get-CimInstance` för att `Select-Object -ExcludeProperty "CIM*"`.
+Om du vill filtrera bort metadata använder du en pipeline-operator (|) för att skicka resultatet från kommandot `Get-CimInstance` till `Select-Object -ExcludeProperty "CIM*"`.
 
-## <a name="listing-bios-information"></a>Visa en lista över BIOS-informationen
+## <a name="listing-bios-information"></a>Visa BIOS-information
 
-WMI **Win32_BIOS** klass returnerar ganska compact och fullständig information om systemets BIOS på den lokala datorn:
+WMI- **Win32_BIOS** -klassen returnerar ganska kompakt och fullständig information om systemets BIOS på den lokala datorn:
 
 ```powershell
 Get-CimInstance -ClassName Win32_BIOS -ComputerName .
 ```
 
-## <a name="listing-processor-information"></a>Visa en lista över processorinformation
+## <a name="listing-processor-information"></a>Lista processor information
 
-Du kan hämta information om allmänna med hjälp av WMI **Win32_Processor** class, även om du förmodligen vill filtrera informationen:
+Du kan hämta allmän processor information med hjälp av WMI: s **Win32_Processor** -klass, men du kommer förmodligen att vilja filtrera informationen:
 
 ```powershell
 Get-CimInstance -ClassName Win32_Processor -ComputerName . | Select-Object -ExcludeProperty "CIM*"
 ```
 
-För en allmän beskrivningssträng av processortypen, kan du bara returnera den **SystemType** egenskapen:
+För en generisk beskrivnings sträng för processor familjen kan du bara returnera egenskapen **SystemType** :
 
 ```powershell
 Get-CimInstance -ClassName Win32_ComputerSystem -ComputerName . | Select-Object -Property SystemType
@@ -69,10 +69,10 @@ SystemType
 X86-based PC
 ```
 
-## <a name="listing-computer-manufacturer-and-model"></a>Visa en lista över datortillverkare och modell
+## <a name="listing-computer-manufacturer-and-model"></a>Visa dator tillverkare och modell
 
-Datorinformation för modellen är även tillgänglig från **Win32_ComputerSystem**.
-Visad standardutdata behöver inte någon filtrering för att tillhandahålla OEM-data:
+Information om dator modeller är också tillgänglig från **Win32_ComputerSystem**.
+De utdata som visas som standard kommer inte att behöva filtreras för att tillhandahålla OEM-data:
 
 ```powershell
 Get-CimInstance -ClassName Win32_ComputerSystem
@@ -84,18 +84,18 @@ Name PrimaryOwnerName Domain    TotalPhysicalMemory Model                   Manu
 MyPC Jane Doe         WORKGROUP 804765696           DA243A-ABA 6415cl NA910 Compaq Presario 06
 ```
 
-Dina utdata från kommandon som detta tillhandahåller som returnera information direkt från viss maskinvara, är endast lika bra som de data du har.
-Viss information är inte korrekt konfigurerad av maskinvarutillverkare och kan därför vara otillgängliga.
+Dina utdata från kommandon som det här, som returnerar information direkt från viss maskin vara, är bara lika användbara som de data du har.
+Viss information är inte korrekt konfigurerad av maskin varu tillverkare och kan därför vara otillgänglig.
 
-## <a name="listing-installed-hotfixes"></a>Lista över installerade snabbkorrigeringar
+## <a name="listing-installed-hotfixes"></a>Visar installerade snabb korrigeringar
 
-Du kan lista alla installerade snabbkorrigeringar med hjälp av **Win32_QuickFixEngineering**:
+Du kan visa en lista med alla installerade snabb korrigeringar med **Win32_QuickFixEngineering**:
 
 ```powershell
 Get-CimInstance -ClassName Win32_QuickFixEngineering -ComputerName .
 ```
 
-Den här klassen returnerar en lista med snabbkorrigeringar som ser ut så här:
+Den här klassen returnerar en lista med snabb korrigeringar som ser ut så här:
 
 ```output
 Source Description     HotFixID  InstalledBy   InstalledOn PSComputerName
@@ -103,8 +103,8 @@ Source Description     HotFixID  InstalledBy   InstalledOn PSComputerName
        Security Update KB4048951 Administrator 12/16/2017  .
 ```
 
-För mer kortfattad utdata du undanta vissa egenskaper.
-Även om du kan använda den `Get-CimInstance`'s **egenskapen** parametern för att välja endast de **HotFixID**, göra så kommer att returnera mer information, eftersom alla metadata visas som standard:
+För fler kortfattad-utdata kanske du vill utesluta vissa egenskaper.
+Även om du kan använda `Get-CimInstance`ens **egenskaps** parameter för att välja endast **HotFixID**, returnerar faktiskt mer information, eftersom alla metadata visas som standard:
 
 ```powershell
 Get-CimInstance -ClassName Win32_QuickFixEngineering -ComputerName . -Property HotFixID
@@ -129,8 +129,8 @@ CimInstanceProperties : {Caption, Description, InstallDate, Name...}
 CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ```
 
-Ytterligare data returneras, eftersom egenskapen-parametern i `Get-CimInstance` begränsar egenskaperna som returneras från WMI-klassinstanser inte objektet som returneras till Windows PowerShell.
-För att minska utdata kan använda `Select-Object`:
+Ytterligare data returneras, eftersom egenskaps parametern i `Get-CimInstance` begränsar egenskaperna som returneras från WMI-klass instanser, inte det objekt som returneras till Windows PowerShell.
+Använd `Select-Object`för att minska utdata:
 
 ```powershell
 Get-CimInstance -ClassName Win32_QuickFixEngineering -ComputerName . -Property HotFixId | Select-Object -Property HotFixId
@@ -142,17 +142,17 @@ HotFixId
 KB4048951
 ```
 
-## <a name="listing-operating-system-version-information"></a>Visa en lista över versionsinformation för operativsystemet
+## <a name="listing-operating-system-version-information"></a>Visar information om operativ systemets version
 
-Den **Win32_OperatingSystem** klassegenskaper inkludera information om version och service pack.
-Du kan uttryckligen välja endast de här egenskaperna för att hämta en sammanfattning från **Win32_OperatingSystem**:
+**Win32_OperatingSystem** klass egenskaper innehåller versions-och service pack information.
+Du kan uttryckligen välja endast dessa egenskaper för att hämta en versions informations Sammanfattning från **Win32_OperatingSystem**:
 
 ```powershell
 Get-CimInstance -ClassName Win32_OperatingSystem -ComputerName . | Select-Object -Property BuildNumber,BuildType,OSType,ServicePackMajorVersion,ServicePackMinorVersion
 ```
 
-Du kan också använda jokertecken med den `Select-Object`'s **egenskapen** parametern.
-Eftersom alla egenskaper från och med antingen **skapa** eller **ServicePack** är viktigt att du använder här kan vi kan förkorta det till följande format:
+Du kan också använda jokertecken med `Select-Object`**egenskaps** parameter.
+Eftersom alla egenskaper som börjar med antingen **build** eller **servicepack** är viktiga för användning här kan vi förkorta detta till följande format:
 
 ```powershell
 Get-CimInstance -ClassName Win32_OperatingSystem -ComputerName . | Select-Object -Property Build*,OSType,ServicePack*
@@ -166,25 +166,25 @@ ServicePackMajorVersion : 0
 ServicePackMinorVersion : 0
 ```
 
-## <a name="listing-local-users-and-owner"></a>Visa en lista över lokala användare och ägare
+## <a name="listing-local-users-and-owner"></a>Lista lokala användare och ägare
 
-Lokala Allmänt användarinformation – antalet licensierade användare, aktuellt antal användare och ägarens namn – finns bland ett urval av **Win32_OperatingSystem**' klassegenskaper.
-Du kan uttryckligen välja vilka egenskaper som ska visas så här:
+Lokal allmän användar information – antal licensierade användare, Aktuellt antal användare och ägarnamn – kan hittas med ett val av **Win32_OperatingSystem** klass egenskaper.
+Du kan uttryckligen välja vilka egenskaper som ska visas:
 
 ```powershell
 Get-CimInstance -ClassName Win32_OperatingSystem -ComputerName . | Select-Object -Property NumberOfLicensedUsers,NumberOfUsers,RegisteredUser
 ```
 
-En mer kortfattad version med jokertecken är:
+En mer kortfattad-version med jokertecken är:
 
 ```powershell
 Get-CimInstance -ClassName Win32_OperatingSystem -ComputerName . | Select-Object -Property *user*
 ```
 
-## <a name="getting-available-disk-space"></a>Hämta ledigt diskutrymme
+## <a name="getting-available-disk-space"></a>Hämtar tillgängligt disk utrymme
 
-Om du vill se diskutrymme och ledigt utrymme för lokala enheter, kan du använda Win32_LogicalDisk WMI-klass.
-Du behöver se bara instanser med en DriveType av 3 – värdet WMI använder för fasta hårddiskar.
+Om du vill se disk utrymme och ledigt utrymme för lokala enheter kan du använda klassen Win32_LogicalDisk WMI.
+Du behöver bara se instanser med en DriveType av 3 – värdet för WMI använder fasta hård diskar.
 
 ```powershell
 Get-CimInstance -ClassName Win32_LogicalDisk -Filter "DriveType=3" -ComputerName .
@@ -202,18 +202,18 @@ FreeSpace 109839607808
 Size      326846914560
 ```
 
-## <a name="getting-logon-session-information"></a>Hämta inloggningsinformation för Session
+## <a name="getting-logon-session-information"></a>Hämta information om inloggningssession
 
-Du kan få allmän information om inloggningssessioner som är kopplade till användare via den **Win32_LogonSession** WMI-klass:
+Du kan få allmän information om inloggnings sessioner som är associerade med användare via klassen **Win32_LogonSession** WMI:
 
 ```powershell
 Get-CimInstance -ClassName Win32_LogonSession -ComputerName .
 ```
 
-## <a name="getting-the-user-logged-on-to-a-computer"></a>Hämta användaren loggat in på en dator
+## <a name="getting-the-user-logged-on-to-a-computer"></a>Få användaren inloggad på en dator
 
-Du kan visa användare som är anslutna till en viss dator med hjälp av Win32_ComputerSystem.
-Det här kommandot returnerar endast användare som är anslutna till systemet skrivbordet:
+Du kan visa användaren som är inloggad på ett visst dator system med hjälp av Win32_ComputerSystem.
+Det här kommandot returnerar bara den användare som är inloggad på system Skriv bordet:
 
 ```powershell
 Get-CimInstance -ClassName Win32_ComputerSystem -Property UserName -ComputerName .
@@ -221,7 +221,7 @@ Get-CimInstance -ClassName Win32_ComputerSystem -Property UserName -ComputerName
 
 ## <a name="getting-local-time-from-a-computer"></a>Hämta lokal tid från en dator
 
-Du kan hämta den aktuella lokala tiden på en specifik dator med hjälp av den **Win32_LocalTime** WMI-klass.
+Du kan hämta den aktuella lokala tiden på en speciell dator med hjälp av **Win32_LocalTime** WMI-klassen.
 
 ```powershell
 Get-CimInstance -ClassName Win32_LocalTime -ComputerName .
@@ -239,17 +239,17 @@ Year         : 2017
 PSComputerName : .
 ```
 
-## <a name="displaying-service-status"></a>Visa Status för tjänsten
+## <a name="displaying-service-status"></a>Visar tjänst status
 
-Om du vill visa status för alla tjänster på en specifik dator som du lokalt kan använda den `Get-Service` cmdlet.
-För fjärranslutna datorer, kan du använda den **Win32_Service** WMI-klass.
-Om du även använder `Select-Object` att filtrera resultaten till **Status**, **namn**, och **DisplayName**, utdataformat blir nästan identisk från `Get-Service`:
+Om du vill visa status för alla tjänster på en speciell dator kan du använda `Get-Service`-cmdlet: en lokalt.
+För fjärrsystem kan du använda klassen **Win32_Service** WMI.
+Om du också använder `Select-Object` för att filtrera resultaten till **status**, **namn**och **DisplayName**, är utdataformatet nästan identiskt med `Get-Service`:
 
 ```powershell
 Get-CimInstance -ClassName Win32_Service -ComputerName . | Select-Object -Property Status,Name,DisplayName
 ```
 
-Om du vill tillåta fullständig visning av namn för tillfällig trafik med mycket långa namn, kanske du vill använda `Format-Table` med den **AutoSize** och **omsluta** parametrar för att optimera kolumnbredd och Tillåt långa namn du omsluter i stället för trunkerades:
+Om du vill tillåta hela visningen av namn för tillfälliga tjänster med extremt långa namn, kanske du vill använda `Format-Table` med parametrarna **AutoSize** och **wrap** för att optimera kolumn bredden och tillåta långa namn att figursättas i stället för att trunkeras:
 
 ```powershell
 Get-CimInstance -ClassName Win32_Service -ComputerName . | Format-Table -Property Status,Name,DisplayName -AutoSize -Wrap

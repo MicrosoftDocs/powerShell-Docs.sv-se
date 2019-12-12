@@ -1,13 +1,13 @@
 ---
 ms.date: 06/09/2017
 schema: 2.0.0
-keywords: PowerShell
+keywords: powershell
 title: Kräver godkännande av licens för skript
 ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328898"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>Kräver godkännande av licens för skript
@@ -16,9 +16,9 @@ Licens godkännande stöds inte för skript. Scenariot där ett skript är beroe
 
 Skript kommandon (install-script/Save-script/Update-script) har stöd för en ny parameter-AcceptLicense som beter sig som om användaren såg licensen. IF-AcceptLicense har inte angetts; användaren kommer att se License. txt för en beroende modul och uppmanas att godkänna licensen.
 
-## <a name="examples"></a>FLER
+## <a name="examples"></a>EXEMPEL
 
-### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>Exempel 1: Installera skript med beroenden som kräver licens godkännande
+### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>Exempel 1: installera skript med beroenden som kräver licens godkännande
 
 Skriptet ' ScriptRequireLicenseAcceptance ' är beroende av modulen ' ModuleRequireLicenseAcceptance '. Användaren uppmanas att godkänna licens.
 
@@ -38,7 +38,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Exempel 2: Installera skript med beroenden som kräver licens godkännande och-AcceptLicense
+### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Exempel 2: installera skript med beroenden som kräver licens godkännande och-AcceptLicense
 
 Skriptet ' ScriptRequireLicenseAcceptance ' är beroende av modulen ' ModuleRequireLicenseAcceptance '. Användaren uppmanas inte att godkänna licensen eftersom-AcceptLicense har angetts.
 

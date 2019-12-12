@@ -1,56 +1,56 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: ISE-objektmodellhierarkin
 ms.openlocfilehash: 0159707b1050c412a74da3d3ca02a46cea982556
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62057731"
 ---
 # <a name="the-ise-object-model-hierarchy"></a>ISE-objektmodellhierarkin
 
-Det här avsnittet visar hierarkin med objekt som är en del av Windows PowerShell Integrated Scripting Environment (ISE).
-Windows PowerShell ISE ingår i Windows PowerShell 3.0 och Windows PowerShell 4.0.
-Klicka på ett objekt för att ta dig till referensdokumentation för den klass som definierar objektet.
+I det här avsnittet visas hierarkin för objekt som ingår i Windows PowerShell ISE (Integrated Scripting Environment).
+Windows PowerShell ISE ingår i Windows PowerShell 3,0 och i Windows PowerShell 4,0.
+Klicka på ett objekt för att ta dig till referens dokumentationen för den klass som definierar objektet.
 
 ## <a name="psise-object"></a>$psISE objekt
 
-Den **$psISE** objektet är den [rotobjektet](The-ObjectModelRoot-Object.md) i hierarkin för Windows PowerShell ISE-objektet.
-Finns på den översta nivån, är följande objekt tillgängliga för skript:
+**$PsISE** -objektet är [rotobjektet](The-ObjectModelRoot-Object.md) för hierarkin Windows PowerShell ISE objekt.
+På den översta nivån gör den följande objekt tillgängliga för skript:
 
-## <a name="psisecurrentfilethe-isefile-objectmd"></a>[$psISE.CurrentFile](The-ISEFile-Object.md)
+## <a name="psisecurrentfilethe-isefile-objectmd"></a>[$psISE. CurrentFile](The-ISEFile-Object.md)
 
-Den **$psISE.CurrentFile** objekt är en instans av den [ISEFile](The-ISEFile-Object.md) klass.
+Objektet **$psISE. CurrentFile** är en instans av klassen [ISEFile](The-ISEFile-Object.md) .
 
-## <a name="psisecurrentpowershelltabthe-powershelltab-objectmd"></a>[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)
+## <a name="psisecurrentpowershelltabthe-powershelltab-objectmd"></a>[$psISE. CurrentPowerShellTab](The-PowerShellTab-Object.md)
 
-Den **$psISE.CurrentPowerShellTab** objekt är en instans av den [PowerShellTab](The-PowerShellTab-Object.md) klass.
+Objektet **$psISE. CurrentPowerShellTab** är en instans av klassen [PowerShellTab](The-PowerShellTab-Object.md) .
 
-## <a name="psisecurrentvisiblehorizontaltool"></a>$psISE.CurrentVisibleHorizontalTool
+## <a name="psisecurrentvisiblehorizontaltool"></a>$psISE. CurrentVisibleHorizontalTool
 
-Den **$psISE.CurrentVisibleHorizontalTool** objekt är en instans av den [ISEAddOnTool](The-ISEAddOnTool-Object.md) klass.
-Verktyget installerat tillägg som för närvarande är dockad representerar mot överkanten av Windows PowerShell ISE-fönster.
+Objektet **$psISE. CurrentVisibleHorizontalTool** är en instans av klassen [ISEAddOnTool](The-ISEAddOnTool-Object.md) .
+Den representerar det installerade tilläggs verktyget som för närvarande är dockat till den övre kanten i Windows PowerShell ISEs fönstret.
 
-## <a name="psisecurrentvisibleverticaltool"></a>$psISE.CurrentVisibleVerticalTool
+## <a name="psisecurrentvisibleverticaltool"></a>$psISE. CurrentVisibleVerticalTool
 
-Den **$psISE.CurrentVisibleHorizontalTool** objekt är en instans av den [ISEAddOnTool](The-ISEAddOnTool-Object.md) klass.
-Den motsvarar verktyget installerat tillägg som för närvarande är dockad till den högra kanten av Windows PowerShell ISE-fönster.
+Objektet **$psISE. CurrentVisibleHorizontalTool** är en instans av klassen [ISEAddOnTool](The-ISEAddOnTool-Object.md) .
+Den representerar det installerade tilläggs verktyget som för närvarande är dockat till den högra kanten i Windows PowerShell ISEs fönstret.
 
-## <a name="psiseoptionsthe-iseoptions-objectmd"></a>[$psISE.Options](The-ISEOptions-Object.md)
+## <a name="psiseoptionsthe-iseoptions-objectmd"></a>[$psISE. alternativ](The-ISEOptions-Object.md)
 
-Den **$psISE.Options** objekt är en instans av den [ISEOptions](The-ISEOptions-Object.md) klass.
-ISEOptions-objektet representerar olika inställningar för Windows PowerShell ISE.
-Det är en instans av klassen Microsoft.PowerShell.Host.ISE.ISEOptions.
+Objektet **$psISE. Options** är en instans av klassen [ISEOptions](The-ISEOptions-Object.md) .
+Objektet ISEOptions representerar olika inställningar för Windows PowerShell ISE.
+Det är en instans av klassen Microsoft. PowerShell. Host. ISE. ISEOptions.
 
-## <a name="psisepowershelltabsthe-powershelltabcollection-objectmd"></a>[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)
+## <a name="psisepowershelltabsthe-powershelltabcollection-objectmd"></a>[$psISE. PowerShellTabs](The-PowerShellTabCollection-Object.md)
 
-Den **$psISE.PowerShellTabs** objekt är en instans av den [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) klass.
-Det är en samling med alla öppna PowerShell flikar som representerar de tillgängliga Windows PowerShell kör miljöer på den lokala datorn eller på anslutna fjärrdatorer.
-Varje medlem i samlingen är en instans av den [PowerShellTab](The-PowerShellTab-Object.md) klass.
+Objektet **$psISE. PowerShellTabs** är en instans av klassen [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) .
+Det är en samling av alla öppna PowerShell-flikar som representerar de tillgängliga Windows PowerShell-körnings miljöerna på den lokala datorn eller på anslutna fjärrdatorer.
+Varje medlem i samlingen är en instans av klassen [PowerShellTab](The-PowerShellTab-Object.md) .
 
 ## <a name="see-also"></a>Se även
 
-- [Syftet med den Windows PowerShell ISE-Skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)

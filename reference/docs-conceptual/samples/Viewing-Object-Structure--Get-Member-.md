@@ -1,27 +1,27 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
-title: Visa objektstrukturen Get-Member
+keywords: PowerShell, cmdlet
+title: Visa objekt strukturen Hämta medlem
 ms.openlocfilehash: 80b36abd303a708195f12d96511e616178d11b5a
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030715"
 ---
-# <a name="viewing-object-structure-get-member"></a>Visa objektstrukturen (Get-Member)
+# <a name="viewing-object-structure-get-member"></a>Visa objekt struktur (Get-Member)
 
-Eftersom objekt spelar en central roll i Windows PowerShell, det finns flera inbyggda kommandon som utformats för att fungera med godtyckliga objekttyper. Den viktigaste är den **Get-Member** kommando.
+Eftersom objekt spelar en sådan central roll i Windows PowerShell finns det flera inbyggda kommandon som är utformade för att fungera med valfria objekt typer. Den viktigaste en är kommandot **Get-Member** .
 
-Den enklaste tekniken för att analysera de objekt som returnerar ett kommando är att skicka utdata från kommandot den **Get-Member** cmdlet. Den **Get-Member** cmdlet visar formella namnet på objekttypen och en fullständig lista över dess medlemmar. Antalet element som returneras kan ibland vara överväldigande. Ett processobjekt kan exempelvis ha fler än 100 medlemmar.
+Den enklaste metoden för att analysera de objekt som ett kommando returnerar är att skicka tillbaka kommandots utdata till cmdleten **Get-Member** . Cmdleten **Get-Member** visar det formella namnet på objekt typen och en fullständig lista över dess medlemmar. Antalet element som returneras kan ibland vara överbelastat. Ett process objekt kan till exempel ha över 100 medlemmar.
 
-Om du vill se alla medlemmar i en processobjektet och sidan utdata så att du kan visa allt det, skriver du:
+Om du vill se alla medlemmar i ett process objekt och sidan utdata så att du kan visa allt, skriver du:
 
 ```powershell
 Get-Process | Get-Member | Out-Host -Paging
 ```
 
-Utdata från det här kommandot ska se ut ungefär så här:
+Utdata från det här kommandot ser ut ungefär så här:
 
 ```output
 TypeName: System.Diagnostics.Process
@@ -38,7 +38,7 @@ add_Disposed                   Method         System.Void add_Disposed(Event...
 ...
 ```
 
-Vi kan göra den här lång lista med information mer användbara genom att filtrera för element som vi vill se. Den **Get-Member** kommandot kan du visa endast medlemmar som är egenskaper. Det finns flera typer av egenskaper. Cmdlet visar egenskaper för alla typer av om vi ger den **Get-Member MemberType** parametern till värdet **egenskaper**. Den resulterande listan är fortfarande mycket långa, men lite mer hanterbara:
+Vi kan göra den här långa listan över information mer användbar genom filtrering av element som vi vill se. Med kommandot **Get-Member** kan du bara lista medlemmar som är egenskaper. Det finns flera typer av egenskaper. Cmdleten visar egenskaper av valfri typ om vi ställer in parametern **Get-Member MemberType** på värde **egenskaperna**. Den resulterande listan är fortfarande mycket lång, men en lite mer hanterbar:
 
 ```
 PS> Get-Process | Get-Member -MemberType Properties
@@ -61,11 +61,11 @@ Path                       ScriptProperty System.Object Path {get=$this.Main...
 ```
 
 > [!NOTE]
-> Tillåtna värden för MemberType är AliasProperty, CodeProperty, egenskapen, NoteProperty, ScriptProperty, egenskaper, PropertySet, metod, CodeMethod, ScriptMethod, metoder, ParameterizedProperty, delmängd och alla.
+> De tillåtna värdena för MemberType är AliasProperty, CodeProperty, Property, NoteProperty, ScriptProperty, Properties, PropertySet, Method, CodeMethod, ScriptMethod, metoder, ParameterizedProperty, MemberSet och alla.
 
-Det finns över 60 egenskaper för en process. Orsaken till Windows PowerShell ofta visar endast ett fåtal egenskaper för alla välkända objekt som visar alla resulterar i ett svårhanterligt mängd information.
+Det finns över 60 egenskaper för en process. Orsaken till att Windows PowerShell ofta visar att det bara finns en fåtal av egenskaperna för ett välkänt objekt är att alla kan ge en ohanterad mängd information.
 
 > [!NOTE]
-> Windows PowerShell avgör hur du vill visa en objekttyp med hjälp av information som lagras i XML-filer som har namn som slutar på. format.ps1xml. Formatering data för process-objekt, vilket är .NET System.Diagnostics.Process objekt, lagras i DotNetTypes.format.ps1xml.
+> Windows PowerShell avgör hur du visar en objekt typ genom att använda information som lagras i XML-filer med namn som slutar med. format. ps1xml. Formatering av data för process objekt, som är .NET system. Diagnostics. process-objekt, lagras i DotNetTypes. format. ps1xml.
 
-Om du vill titta på andra egenskaper än de som Windows PowerShell visar som standard kommer du behöva formatera utdata själv. Detta kan göras med hjälp av format-cmdlets.
+Om du behöver titta på andra egenskaper än de som Windows PowerShell visar som standard, behöver du bara formatera utdata. Detta kan göras med hjälp av format-cmdletar.

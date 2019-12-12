@@ -4,10 +4,10 @@ contributor: Farehar
 keywords: Galleri, PowerShell, psgallery
 title: Kräv godkännande av licens
 ms.openlocfilehash: eaed248895d14bd455d2d8d3c2222d8848eeccae
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328989"
 ---
 # <a name="require-license-acceptance"></a>Kräv godkännande av licens

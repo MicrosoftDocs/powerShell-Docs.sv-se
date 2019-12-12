@@ -1,21 +1,21 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
-title: Arbetsflödesguiden
+keywords: PowerShell, cmdlet
+title: arbets flödes guide
 ms.openlocfilehash: e2c91299f064a10fd27ab195d0309a9bef6a7ded
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62058955"
 ---
-# <a name="psworkflow-module"></a>PSWorkflow modul
+# <a name="psworkflow-module"></a>PSWorkflow-modul
 
-Det här avsnittet innehåller hjälpavsnitt för de **PSWorkflow** modulen, som innehåller cmdletar som stöder funktionen Windows PowerShell-arbetsflöde. Den **PSWorkflow** modulen installeras med Windows PowerShell.
+Det här avsnittet innehåller hjälp avsnitten för **PSWorkflow** -modulen, som innehåller cmdletar som har stöd för Windows PowerShell Workflow-funktionen. **PSWorkflow** -modulen installeras med Windows PowerShell.
 
-## <a name="help-topics"></a>Hjälpavsnitt
+## <a name="help-topics"></a>Hjälp avsnitt
 
-[Cmdlet: ar för arbetsflöde](https://go.microsoft.com/fwlink/?LinkID=245865)
+[Arbets flödes-cmdletar](https://go.microsoft.com/fwlink/?LinkID=245865)
 
 [about_Workflows](https://technet.microsoft.com/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
 
@@ -23,9 +23,9 @@ Det här avsnittet innehåller hjälpavsnitt för de **PSWorkflow** modulen, som
 
 [about_ActivityCommonParameters](https://technet.microsoft.com/library/8ca60664-37c6-4257-a723-e3c41dd10122)
 
-[about_Checkpoint-Workflow](https://technet.microsoft.com/library/3a309488-1e7a-4807-b83b-dedbeac3ee1c)
+[about_Checkpoint – arbets flöde](https://technet.microsoft.com/library/3a309488-1e7a-4807-b83b-dedbeac3ee1c)
 
-[about_Foreach-Parallel](https://technet.microsoft.com/library/35704780-dde8-4f5f-9319-5b982148bba7)
+[about_Foreach – parallell](https://technet.microsoft.com/library/35704780-dde8-4f5f-9319-5b982148bba7)
 
 [about_InlineScript](https://technet.microsoft.com/library/f88ed5a9-02d6-4bf0-a031-61198e1e7291)
 
@@ -33,6 +33,6 @@ Det här avsnittet innehåller hjälpavsnitt för de **PSWorkflow** modulen, som
 
 [about_Sequence](https://technet.microsoft.com/library/bda3f81a-be8a-43be-b0df-12bb7e193b9b)
 
-[about_Suspend-Workflow](https://technet.microsoft.com/library/be2ded75-1eca-493e-96c1-758f92b5f199)
+[about_Suspend – arbets flöde](https://technet.microsoft.com/library/be2ded75-1eca-493e-96c1-758f92b5f199)
 
-[PowerShell-arbetsflöde för cmdlet: ar](https://technet.microsoft.com/library/a5a32019-0d68-4041-935f-1b1cacaf6d3d)
+[PowerShell-cmdletar för arbets flödes verktyg](https://technet.microsoft.com/library/a5a32019-0d68-4041-935f-1b1cacaf6d3d)

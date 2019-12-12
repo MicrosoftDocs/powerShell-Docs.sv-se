@@ -4,10 +4,10 @@ contributor: keithb
 keywords: Galleri, PowerShell, cmdlet, psget
 title: Versioner av för hands versions modul
 ms.openlocfilehash: eced067dd21082de0db653daf3b838217154f1dd
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328940"
 ---
 # <a name="prerelease-module-versions"></a>Versioner av för hands versions modul
@@ -17,8 +17,8 @@ Från och med version 1.6.0, PowerShellGet och PowerShell-galleriet ge stöd fö
 På en hög nivå inkluderar funktionerna för för hands versions modulen:
 
 - Om du lägger till en för hands versions sträng i avsnittet PSData i modulen manifest identifieras modulen som en för hands version. När modulen publiceras till PowerShell-galleriet extraheras dessa data från manifestet och används för att identifiera för hands versions paket.
-- För att hämta för hands paket måste `-AllowPrerelease` du lägga till flaggan i `Find-Module`PowerShellGet `Install-Module`- `Update-Module`kommandona `Save-Module`,, och. Om ingen flagga anges visas inte för hands versions paket.
-- Modul versioner som visas `Find-Module`av `Get-InstalledModule`, och i PowerShell-galleriet, visas som en enskild sträng med för hands versions strängen, som i 2.5.0-alpha.
+- Hämtning av för hands paket kräver att du lägger till `-AllowPrerelease` flagga i PowerShellGet-kommandon `Find-Module`, `Install-Module`, `Update-Module`och `Save-Module`. Om ingen flagga anges visas inte för hands versions paket.
+- Modul versioner som visas av `Find-Module`, `Get-InstalledModule`och i PowerShell-galleriet visas som en enskild sträng med för hands versions strängen, som i 2.5.0-alpha.
 
 Information om funktionerna finns nedan.
 
@@ -110,7 +110,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PSModule.psm1:
     + FullyQualifiedErrorId : NoMatchFoundForCriteria,Microsoft.PowerShell.PackageManagement.Cmdlets.FindPackage
 ```
 
-Föregående kommando misslyckades eftersom-AllowPrerelease inte har angetts. Att `-AllowPrerelease` lägga till leder till att det lyckas.
+Föregående kommando misslyckades eftersom-AllowPrerelease inte har angetts. Om du lägger till `-AllowPrerelease` blir resultatet klart.
 
 ```powershell
 Install-module TestPackage -RequiredVersion 1.9.0-alpha -AllowPrerelease
@@ -123,7 +123,7 @@ Version         Name          Repository  Description
 1.9.0-alpha     TestPackage   PSGallery   Package used to validate changes to the PowerShe...
 ```
 
-Installation sida vid sida av versioner av en modul som bara skiljer sig på grund av den angivna för hands versionen stöds inte. När du installerar en modul med PowerShellGet installeras olika versioner av samma modul sida vid sida genom att skapa ett mappnamn med hjälp av ModuleVersion. ModuleVersion, utan för hands versions strängen, används för mappnamnet. Om en användare installerar modulen version 2.5.0-alpha installeras den i `MyModule\2.5.0` mappen. Om användaren sedan installerar 2.5.0-beta kommer 2.5.0-Beta-versionen **skriva över** innehållet i mappen `MyModule\2.5.0`. En fördel med den här metoden är att det inte är nödvändigt att avinstallera för hands versionen när du har installerat produktions klara versioner. Exemplet nedan visar vad som förväntas:
+Installation sida vid sida av versioner av en modul som bara skiljer sig på grund av den angivna för hands versionen stöds inte. När du installerar en modul med PowerShellGet installeras olika versioner av samma modul sida vid sida genom att skapa ett mappnamn med hjälp av ModuleVersion. ModuleVersion, utan för hands versions strängen, används för mappnamnet. Om en användare installerar modulen version 2.5.0-alpha installeras den i mappen `MyModule\2.5.0`. Om användaren sedan installerar 2.5.0-beta kommer 2.5.0-Beta-versionen **skriva över** innehållet i mappen `MyModule\2.5.0`. En fördel med den här metoden är att det inte är nödvändigt att avinstallera för hands versionen när du har installerat produktions klara versioner. Exemplet nedan visar vad som förväntas:
 
 ``` powershell
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions

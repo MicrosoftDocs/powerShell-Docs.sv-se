@@ -1,53 +1,53 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Användningsområden för Windows PowerShell ISE-skriptobjektmodellen
 ms.openlocfilehash: e59593ef06911c709e92fa7a1eabd96d2636ca30
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030906"
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Användningsområden för Windows PowerShell ISE-skriptobjektmodellen
 
-Objekt som är associerade med form och funktion i Windows PowerShell Integrated Scripting Environment (ISE). Referens för objektmodell innehåller information om medlemmen egenskaper och metoder som exponerar dessa objekt. Exempel som visar hur du kan använda skript för direkt åtkomst till dessa metoder och egenskaper. Scripting object model gör det enklare att följande intervall av uppgifter.
+Objekt är kopplade till form och funktion i Windows PowerShell ISE (Integrated Scripting Environment). Objekt modell referensen innehåller information om medlems egenskaper och metoder som dessa objekt exponerar. Exempel finns för att visa hur du kan använda skript för att komma åt dessa metoder och egenskaper direkt. Skript objekt modellen gör följande olika uppgifter enklare.
 
 ## <a name="customizing-the-appearance-of-windows-powershell-ise"></a>Anpassa utseendet på Windows PowerShell ISE
 
-Du kan använda object model för att ändra inställningar för program och alternativ. Exempelvis kan ändra du dem på följande sätt:
+Du kan använda objekt modellen för att ändra program inställningar och-alternativ. Du kan till exempel ändra dem på följande sätt:
 
-- Du kan ändra färg på fel, varningar, utförlig utdata och utdata för felsökning.
-- Du kan hämta eller ange bakgrundsfärgerna för kommando-fönstret och utdatarutan skriptfönstret.
-- Du kan ange förgrundsfärgen för utdatarutan.
-- Du kan ange namn och storlek för Windows PowerShell ISE.
-- Du kan konfigurera varningar. Den här inställningen innehåller varningar som utfärdas när en fil öppnas i flera PowerShell-flikar, eller när du kör ett skript i filen innan filen har sparats.
-- Du kan växla mellan en vy där skriptfönstret och utdatarutan är sida-vid-sida och en vy där skriptfönstret är ovanpå utdatarutan. Du kan docka fönstret kommando till längst ned eller upp i utdatarutan.
+- Du kan ändra färg på fel, varningar, utförliga utdata och fel söknings utdata.
+- Du kan hämta eller ange bakgrunds färger för kommando fönstret, fönstret utdata och skript fönstret.
+- Du kan ställa in förgrunds färgen för fönstret utdata.
+- Du kan ange teckensnitts namn och tecken storlek för Windows PowerShell ISE.
+- Du kan konfigurera varningar. Den här inställningen innehåller varningar som utfärdas när en fil öppnas i flera PowerShell-flikar eller när ett skript i filen körs innan filen har sparats.
+- Du kan växla mellan en vy där skript fönstret och utdatafönstret visas sida vid sida och en vy där skript fönstret visas överst i fönstret utdata. Du kan docka kommando fönstret längst ned eller överst i fönstret utdata.
 
-## <a name="enhancing-the-functionality-of-windows-powershell-ise"></a>Utöka funktionerna i Windows PowerShell ISE
+## <a name="enhancing-the-functionality-of-windows-powershell-ise"></a>Förbättra funktionerna i Windows PowerShell ISE
 
-Du kan använda object model för att förbättra funktionerna i Windows PowerShell ISE. Du kan till exempel:
+Du kan använda objekt modellen för att förbättra funktionerna i Windows PowerShell ISE. Du kan till exempel:
 
-- Lägga till och ändra instansen av Windows PowerShell ISE själva. Om du vill ändra menyerna, kan du exempelvis lägga till nya menyalternativ och mappa nya menyalternativ till skript.
-- Skapa skript som kan utför vissa uppgifter som du kan utföra med hjälp av menykommandon och knappar i Windows PowerShell ISE. Du kan till exempel lägga till, ta bort eller välja en PowerShell-flik.
-- Komplettera aktiviteter som kan utföras med hjälp av menykommandon och knappar. Exempelvis kan du byta namn på en PowerShell-flik.
-- Ändra text buffertar för fönstret kommando, utdatarutan och skriptfönstret som är associerade med en fil. Du kan till exempel:
+- Lägg till och ändra instansen för Windows PowerShell ISE. Om du till exempel vill ändra menyerna kan du lägga till nya meny alternativ och mappa de nya meny alternativen till skript.
+- Skapa skript som utför några av de uppgifter som du kan utföra med hjälp av meny kommandona och knapparna i Windows PowerShell ISE. Du kan till exempel lägga till, ta bort eller välja en PowerShell-flik.
+- Komplettera uppgifter som kan utföras med hjälp av Meny kommandon och knappar. Du kan till exempel byta namn på en PowerShell-flik.
+- Ändra textbuffertar för kommando fönstret, fönstret utdata och skript fönstret som är associerade med en fil. Du kan till exempel:
   - Hämta eller ange all text.
-  - Hämta eller ange en textmarkering.
-  - Köra ett skript eller köra en del av ett skript.
-  - Rulla en rad i vyn.
-  - Infoga text vid en hatt position.
-  - Välj ett block med text.
-  - Hämta den senaste radnummer.
-- Utföra åtgärder för sammansättningsfiler. Du kan till exempel:
-  - Öppna en fil, sparar en fil eller spara en fil med hjälp av ett annat namn.
-  - Avgör om en fil har ändrats efter det senast sparades.
-  - Hämta namnet på filen.
+  - Hämta eller ange ett text val.
+  - Kör ett skript eller kör en vald del av ett skript.
+  - Rulla en rad till vyn.
+  - Infoga text i cirkumflex.
+  - Välj ett textblock.
+  - Hämta det sista rad numret.
+- Utför fil åtgärder. Du kan till exempel:
+  - Öppna en fil, spara en fil eller spara en fil med hjälp av ett annat namn.
+  - Avgör om en fil har ändrats efter att den senast sparades.
+  - Hämta fil namnet.
   - Välj en fil.
 
 ## <a name="automating-tasks"></a>Automatisera uppgifter
 
-Du kan använda skript: objektmodell för att skapa kortkommandon för återkommande åtgärder.
+Du kan använda skript objekt modellen för att skapa kortkommandon för frekventa åtgärder.
 
 ## <a name="see-also"></a>Se även
 

@@ -4,15 +4,15 @@ contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Kontoinställningar för PowerShell-galleriet
 ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328863"
 ---
 # <a name="powershell-gallery-account-settings"></a>Kontoinställningar för PowerShell-galleriet
 
-Ditt PowerShell-galleriet-konto är ett offentligt synligt namn som är länkat till en identitet. Identiteten är antingen ett Microsoft-ID, `user@hotmail.com` t `user@outlook.com`. ex., eller ett Azure Active Directory-konto (AAD).
+Ditt PowerShell-galleriet-konto är ett offentligt synligt namn som är länkat till en identitet. Identiteten är antingen ett Microsoft-ID, t. ex. `user@hotmail.com` eller `user@outlook.com`eller ett konto för Azure Active Directory (AAD).
 
 PowerShell-galleriet innehåller följande konto inställningar:
 
@@ -39,7 +39,7 @@ PowerShell-galleriet innehåller följande meddelande alternativ:
 ![Ändra e-postadress](../../Images/PSGallery_AccountEmailOptions.png)
 
 Som anges på sidan kan inte kritiska meddelanden från PowerShell-galleriet inaktive ras.
-Exempel på dessa är:
+Dessa omfattar:
 
 - Säkerhets meddelanden
 - Meddelanden om konto hantering från PowerShell-galleriet administratörer
@@ -81,6 +81,6 @@ När 2FA har Aktiver ATS måste du autentisera med hjälp av de konfigurerade fo
 > [!IMPORTANT]
 > Om du aktiverar tvåfaktorautentisering för PowerShell-galleriets platsen behöver du inte aktivera 2FA för all användning av ditt inloggnings konto. Mer information finns i [om](https://support.microsoft.com/help/12408/microsoft-account-about-two-step-verification)tvåstegsverifiering.
 
-## <a name="change-your-profile-picture"></a>Ändra profil bilden
+## <a name="change-your-profile-picture"></a>Ändra din profilbild
 
 PowerShell-galleriet förlitar sig på Gravatar för att lagra och visa den bild som är associerad med din profil. Om du vill uppdatera din profil avbildning går du till [Gravatar.com](http://www.gravatar.com/).

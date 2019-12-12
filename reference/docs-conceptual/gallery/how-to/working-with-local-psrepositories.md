@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery, psget
 title: Arbeta med lokala PSRepositories
 ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328835"
 ---
 # <a name="working-with-local-powershellget-repositories"></a>Arbeta med lokala PowerShellGet-databaser
@@ -31,10 +31,10 @@ NuGet-Server
 | --- | --- |
 | Liknar PowerShellGallery-funktioner | En app med flera nivåer kräver åtgärder som planerar & |
 | NuGet integreras med Visual Studio, andra verktyg | Autentiserings modell och NuGet Accounts Management krävs |
-| NuGet stöder metadata i `.Nupkg` paket | Publicering kräver hantering av API-nyckel & underhåll |
+| NuGet stöder metadata i `.Nupkg`-paket | Publicering kräver hantering av API-nyckel & underhåll |
 | Tillhandahåller sökning, paket administration osv. | |
 
-Fil resurs
+Filresurs
 
 | Fördelar| Nackdelar |
 | --- | --- |
@@ -60,7 +60,7 @@ Se till att användarna har behörighet att komma åt fil resursen för en fil r
 
 ## <a name="registering-a-local-repository"></a>Registrera en lokal lagrings plats
 
-Innan du kan använda en lagrings plats måste du registrera den med `Register-PSRepository` hjälp av kommandot.
+Innan du kan använda en lagrings plats måste du registrera den med kommandot `Register-PSRepository`.
 I exemplen nedan är **InstallationPolicy** inställt på *betrott*, enligt det antagande att du litar på din egen lagrings plats.
 
 ```powershell
@@ -73,7 +73,7 @@ Register-PSRepository -Name LocalPSRepo -SourceLocation '\\localhost\PSRepoLocal
 
 Anteckna skillnaden mellan de två kommandona som hanterar **ScriptSourceLocation**. För en fil resursbaserade databaser måste **SourceLocation** och **ScriptSourceLocation** matcha. För en webbaserad lagrings plats måste de vara olika, så i det här exemplet läggs ett efterföljande "/" till i **SourceLocation**.
 
-Om du vill att det nyligen skapade PSRepository ska vara standard lagrings platsen måste du avregistrera alla andra PSRepositories. Exempel:
+Om du vill att det nyligen skapade PSRepository ska vara standard lagrings platsen måste du avregistrera alla andra PSRepositories. Till exempel:
 
 ```powershell
 Unregister-PSRepository -Name PSGallery
@@ -94,11 +94,11 @@ När du har registrerat den lokala PSRepository kan du publicera den på din lok
 
 ### <a name="publishing-a-module-you-authored"></a>Publicera en modul som du har skapat
 
-Använd `Publish-Module` och`Publish-Script` för att publicera modulen i din lokala PSRepository på samma sätt som du gör för PowerShell-galleriet.
+Använd `Publish-Module` och `Publish-Script` för att publicera modulen till din lokala PSRepository på samma sätt som du gör för PowerShell-galleriet.
 
 - Ange plats för koden
 - Ange en API-nyckel
-- Ange namnet på databasen. Till exempel, `-PSRepository LocalPSRepo`
+- Ange namnet på databasen. Till exempel `-PSRepository LocalPSRepo`
 
 > [!NOTE]
 > Du måste skapa ett konto på NuGet-servern och sedan logga in för att generera och spara API-nyckeln.
@@ -144,11 +144,11 @@ Det är svårt att distribuera PowerShellGet i miljöer som kräver att system k
 Om du vill starta en offline-distribution måste du:
 
 - Hämta och installera OfflinePowerShellGetDeploy-datorn och dina frånkopplade system
-- Ladda ned PowerShellGet och dess beroenden på det Internet-anslutna systemet `Save-PowerShellGetForOffline` med cmdleten
+- Ladda ned PowerShellGet och dess beroenden på det Internet-anslutna systemet med hjälp av `Save-PowerShellGetForOffline` cmdlet
 - Kopiera PowerShellGet och dess beroenden från det Internet-anslutna systemet till det frånkopplade systemet
-- `Install-PowerShellGetOffline` Använd på det frånkopplade systemet för att placera PowerShellGet och dess beroenden i rätt mappar
+- Använd `Install-PowerShellGetOffline` på det frånkopplade systemet för att placera PowerShellGet och dess beroenden i rätt mappar
 
-Följande kommandon används `Save-PowerShellGetForOffline` för att skicka alla komponenter till en mapp`f:\OfflinePowerShellGet`
+Följande kommandon använder `Save-PowerShellGetForOffline` för att flytta alla komponenter till en mapp `f:\OfflinePowerShellGet`
 
 ```powershell
 # Requires -RunAsAdministrator
@@ -161,7 +161,7 @@ Import-Module F:\OfflinePowerShellGetDeploy
 Save-PowerShellGetForOffline -LocalFolder 'F:\OfflinePowerShellGet'
 ```
 
-I det här läget måste du göra innehållet `F:\OfflinePowerShellGet` tillgängligt för de frånkopplade systemen. `Install-PowerShellGetOffline` Kör cmdleten för att installera PowerShellGet på det frånkopplade systemet.
+I det här läget måste du göra innehållet i `F:\OfflinePowerShellGet` tillgängligt för de frånkopplade systemen. Kör cmdleten `Install-PowerShellGetOffline` för att installera PowerShellGet på det frånkopplade systemet.
 
 > [!NOTE]
 > Det är viktigt att du inte kör PowerShellGet i PowerShell-sessionen innan du kör de här kommandona. När PowerShellGet har lästs in i sessionen går det inte att uppdatera komponenterna. Om du startar PowerShellGet av misstag, avslutar du och startar om PowerShell.

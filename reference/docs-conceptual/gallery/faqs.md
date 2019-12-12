@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: PowerShell-galleriet vanliga frågor
 ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328877"
 ---
 # <a name="frequently-asked-questions"></a>Vanliga frågor och svar
@@ -36,14 +36,14 @@ Mer information om hur du kör dessa cmdlets finns på fliken publicera eller l�
 
 **Du behöver inte registrera eller logga in på galleriet för att installera eller Spara paket.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Jag fick "Det gick inte att bearbeta begäran. Den angivna API-nyckeln är ogiltig eller har inte behörighet att komma åt det angivna paketet. Fjärrservern returnerade ett fel: (403) förbjudet. " fel när jag försökte publicera ett paket till PowerShell-galleriet. Vad betyder det?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Jag fick "Det gick inte att bearbeta begäran. Den angivna API-nyckeln är ogiltig eller har inte behörighet att komma åt det angivna paketet. Fjärrservern returnerade ett fel: (403) tillåts inte. " fel när jag försökte publicera ett paket till PowerShell-galleriet. Vad betyder det?
 
 Det här felet kan inträffa av följande orsaker:
 
 - **Den angivna API-nyckeln är ogiltig.**
      Se till att du har angett en giltig API-nyckel från ditt konto. Visa din profil sida för att hämta din API-nyckel.
 - **Det angivna paket namnet ägs inte av dig.**
-     Om du har bekräftat att din API-nyckel är korrekt, kan det finnas redan ett paket med samma namn som det som du försöker använda. Paketet kan ha avvisats av ägaren, och i så fall visas det inte i några Sök resultat. Du kan kontrol lera om det redan finns ett paket med samma namn genom att öppna en webbläsare och navigera till paketets informations `https://www.powershellgallery.com/packages/<packageName>`sida:. Om du till exempel navigerar direkt `https://www.powershellgallery.com/packages/pester` till går du till pester-modulens informations sida, oavsett om den är listad eller inte. Om det redan finns ett paket med ett namn som är i konflikt och inte finns med i listan kan du:
+     Om du har bekräftat att din API-nyckel är korrekt, kan det finnas redan ett paket med samma namn som det som du försöker använda. Paketet kan ha avvisats av ägaren, och i så fall visas det inte i några Sök resultat. Du kan kontrol lera om det redan finns ett paket med samma namn genom att öppna en webbläsare och navigera till paketets informations sida: `https://www.powershellgallery.com/packages/<packageName>`. Om du till exempel navigerar direkt till `https://www.powershellgallery.com/packages/pester` går du till sidan med pester-modulens information, oavsett om den är listad eller inte. Om det redan finns ett paket med ett namn som är i konflikt och inte finns med i listan kan du:
     - Välj ett annat namn för ditt paket.
     - Kontakta ägare till det befintliga paketet.
 
@@ -93,9 +93,9 @@ Alla skript som innehåller följande information i sitt PSScriptInfo-avsnitt ka
 
 Skriv det du söker i text rutan. Om du till exempel vill hitta moduler som är relaterade till Azure SQL skriver du bara "Azure SQL". Vår sökmotor söker efter dessa nyckelord i alla publicerade paket, inklusive titlar, beskrivningar och över metadata. Sedan, baserat på en viktad kvalitets poäng, visas närmaste matchningar. Du kan också söka efter ett särskilt fält med fält: "value"-syntax i Sök frågan för följande fält:
 
-- Tags
+- Taggar
 - Funktioner
-- Cmdlet: ar
+- Cmdletar
 - DscResources
 - PowerShellVersion
 
@@ -156,9 +156,9 @@ Bild 1: PowerShellGet-arkitektur
 
 I allmänhet rekommenderar vi att du väljer den senaste versionen av PowerShellGet-modulen (Observera att .NET 4,5 krävs).
 
-**PowerShellGet** -modulen kräver **PowerShell 3,0 eller senare**.
+För **PowerShellGet**-modulen krävs **PowerShell version 3.0 eller senare**.
 
-Därför kräver **PowerShellGet** något av följande operativ system:
+Det innebär att **PowerShellGet** kräver något av följande operativsystem:
 
 - Windows 10
 - Windows 8.1 Pro
@@ -168,7 +168,7 @@ Därför kräver **PowerShellGet** något av följande operativ system:
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** kräver också .NET Framework 4,5 eller senare. Du kan installera .NET Framework 4,5 eller senare [här](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+**PowerShellGet** kräver också att du har .NET Framework 4.5 eller senare. Du kan installera .NET Framework 4.5 eller senare [här](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
 ## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>Är det möjligt att reservera namn för paket som ska publiceras i framtiden?
 

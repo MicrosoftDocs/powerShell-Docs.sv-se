@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 49f8267c-d887-4d7d-b9b7-80dc624b1261
 caps.latest.revision: 4
 ms.openlocfilehash: d199c53a748ac57bb2a5f998b5056e39d3e80c0d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353251"
 ---
 # <a name="placing-comment-based-help-in-scripts"></a>Lägga till kommentarsbaserat hjälp i skript
 
-I det här avsnittet beskrivs var du kan placera den kommenterade hjälpen för ett skript så att `Get-Help`-cmdleten associerar det kommenterande hjälp avsnittet med skript och inte med funktioner som kan finnas i skriptet.
+I det här avsnittet beskrivs var du kan placera den kommenterade hjälpen för ett skript så att `Get-Help` cmdlet associerar det kommenterade hjälp avsnittet med skript och inte med funktioner som kan finnas i skriptet.
 
 ## <a name="where-to-place-comment-based-help-for-a-script"></a>Var du vill placera kommenterad hjälp för ett skript
 

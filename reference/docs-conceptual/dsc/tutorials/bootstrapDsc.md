@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Konfigurera en virtuell dator vid första uppstart med hjälp av DSC
 ms.openlocfilehash: f9634c330832e23fb2c6f08c5b299b55a5505ac9
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942407"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>Konfigurera en virtuell dator vid första uppstart med hjälp av DSC
@@ -38,8 +38,8 @@ Om du vill köra de här exemplen behöver du:
 - Inaktivera DSC vid start tid
 
 > [!NOTE]
-> Du kan mata in både `Pending.mof` och `MetaConfig.mof` i en dator på samma tidpunkt.
-> Om båda filerna finns, prioriteras inställningarna i `MetaConfig.mof`.
+> Du kan mata in både `Pending.mof` och `MetaConfig.mof` till en dator samtidigt.
+> Om båda filerna finns, prioriteras de inställningar som anges i `MetaConfig.mof`.
 
 ## <a name="inject-a-configuration-mof-document-into-a-vhd"></a>Mata in ett konfigurations-MOF-dokument till en virtuell hård disk
 
@@ -66,7 +66,7 @@ Configuration SampleIISInstall
 
 ### <a name="to-inject-the-configuration-mof-document-on-the-vhd"></a>Så här infogar du MOF-dokumentet för konfiguration på den virtuella hård disken
 
-1. Montera den virtuella hård disken som du vill använda för att mata in konfigurationen genom att anropa cmdleten [Mount-VHD](/powershell/module/hyper-v/mount-vhd) . Exempel:
+1. Montera den virtuella hård disken som du vill använda för att mata in konfigurationen genom att anropa cmdleten [Mount-VHD](/powershell/module/hyper-v/mount-vhd) . Till exempel:
 
    ```powershell
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
@@ -84,13 +84,13 @@ Configuration SampleIISInstall
    ```
 
 5. Då skapas en `localhost.mof`-fil i en ny mapp med namnet `SampleIISInstall`.
-   Byt namn på och flytta filen till rätt plats på den virtuella hård disken som `Pending.mof` med hjälp av cmdleten [Move-item](/powershell/module/microsoft.powershell.management/move-item) . Exempel:
+   Byt namn på och flytta filen till rätt plats på den virtuella hård disken som `Pending.mof` med hjälp av cmdleten [Move-item](/powershell/module/microsoft.powershell.management/move-item) . Till exempel:
 
    ```powershell
        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
    ```
 
-6. Demontera den virtuella hård disken genom att anropa cmdleten [demontera-VHD](/powershell/module/hyper-v/dismount-vhd) . Exempel:
+6. Demontera den virtuella hård disken genom att anropa cmdleten [demontera-VHD](/powershell/module/hyper-v/dismount-vhd) . Till exempel:
 
    ```powershell
    Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
@@ -103,8 +103,8 @@ Du kan kontrol lera detta genom att anropa cmdleten [Get-WindowsFeature](/powers
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>Mata in en DSC-metaconfiguration i en virtuell hård disk
 
-Du kan också konfigurera en dator för att hämta en konfiguration vid första uppstarten genom att mata in en metaconfiguration (se [Konfigurera den lokala Configuration Manager (LCM)](../managing-nodes/metaConfig.md)) i den virtuella hård disken som dess `MetaConfig.mof`-fil.
-Om register nyckeln **dscautomationhostenabled registernyckel** har angetts till 2 (standardvärdet), kommer DSC att tillämpa metaconfiguration som definieras av `MetaConfig.mof` på LCM när datorn startas för första gången.
+Du kan också konfigurera en dator för att hämta en konfiguration vid första uppstarten genom att mata in en metaconfiguration (se [Konfigurera den lokala Configuration Manager (LCM)](../managing-nodes/metaConfig.md)) i den virtuella hård disken som dess `MetaConfig.mof` fil.
+Om register nyckeln **dscautomationhostenabled registernyckel** har angetts till 2 (standardvärdet), kommer DSC att tillämpa metaconfiguration som definierats av `MetaConfig.mof` till LCM när datorn startas för första gången.
 Om metaconfiguration anger att LCM ska hämta konfigurationer från en pull-server kommer datorn att försöka hämta en konfiguration från den hämtnings servern vid första uppstarten.
 Information om hur du konfigurerar en DSC-pull-server finns i [Konfigurera en DSC-webb hämtnings Server](../pull-server/pullServer.md).
 
@@ -134,7 +134,7 @@ configuration PullClientBootstrap
 
 ### <a name="to-inject-the-metaconfiguration-mof-document-on-the-vhd"></a>För att mata in MOF-dokumentet metaconfiguration på den virtuella hård disken
 
-1. Montera den virtuella hård disken där du vill mata in metaconfiguration genom att anropa cmdleten [Mount-VHD](/powershell/module/hyper-v/mount-vhd) . Exempel:
+1. Montera den virtuella hård disken där du vill mata in metaconfiguration genom att anropa cmdleten [Mount-VHD](/powershell/module/hyper-v/mount-vhd) . Till exempel:
 
    ```powershell
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
@@ -160,7 +160,7 @@ configuration PullClientBootstrap
    Move-Item -Path C:\DSCTest\PullClientBootstrap\localhost.meta.mof -Destination E:\Windows\System32\Configuration\MetaConfig.mof
    ```
 
-7. Demontera den virtuella hård disken genom att anropa cmdleten [demontera-VHD](/powershell/module/hyper-v/dismount-vhd) . Exempel:
+7. Demontera den virtuella hård disken genom att anropa cmdleten [demontera-VHD](/powershell/module/hyper-v/dismount-vhd) . Till exempel:
 
    ```powershell
    Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
@@ -173,21 +173,21 @@ Du kan kontrol lera detta genom att anropa cmdleten [Get-WindowsFeature](/powers
 
 ## <a name="disable-dsc-at-boot-time"></a>Inaktivera DSC vid start tid
 
-Som standard är värdet för nyckeln `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\DSCAutomationHostEnabled` inställt på 2, vilket gör att en DSC-konfiguration kan köras om datorn är i vänte läge eller nuvarande tillstånd. Om du inte vill att en konfiguration ska köras vid första uppstarten måste du ange värdet för den här nyckeln till 0:
+Som standard är värdet för `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\DSCAutomationHostEnabled`-nyckeln inställt på 2, vilket gör att en DSC-konfiguration kan köras om datorn är i vänte läge eller nuvarande tillstånd. Om du inte vill att en konfiguration ska köras vid första uppstarten måste du ange värdet för den här nyckeln till 0:
 
-1. Montera den virtuella hård disken genom att anropa cmdleten [Mount-VHD](/powershell/module/hyper-v/mount-vhd) . Exempel:
+1. Montera den virtuella hård disken genom att anropa cmdleten [Mount-VHD](/powershell/module/hyper-v/mount-vhd) . Till exempel:
 
    ```powershell
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
    ```
 
-2. Läs in register `HKLM\Software`-undernyckeln från den virtuella hård disken genom att anropa `reg load`.
+2. Läs in registret `HKLM\Software` under nyckeln från den virtuella hård disken genom att anropa `reg load`.
 
    ```powershell
    reg load HKLM\Vhd E:\Windows\System32\Config\Software`
    ```
 
-3. Navigera till `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` med hjälp av PowerShell-registernyckeln.
+3. Navigera till `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` med hjälp av PowerShell-huvudprovidern.
 
    ```powershell
    Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System`
