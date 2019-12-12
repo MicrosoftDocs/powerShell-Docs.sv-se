@@ -1,17 +1,17 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Använd statiska klasser och metoder
 ms.openlocfilehash: 437e7b430f37224de7c617e120e37c3efcd7787a
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030745"
 ---
-# <a name="using-static-classes-and-methods"></a><span data-ttu-id="15f65-103">Använd statiska klasser och metoder</span><span class="sxs-lookup"><span data-stu-id="15f65-103">Using Static Classes and Methods</span></span>
+# <a name="using-static-classes-and-methods"></a><span data-ttu-id="275ff-103">Använd statiska klasser och metoder</span><span class="sxs-lookup"><span data-stu-id="275ff-103">Using Static Classes and Methods</span></span>
 
-<span data-ttu-id="15f65-104">Inte alla .NET Framework-klasser som kan skapas med hjälp av **New-Object**.</span><span class="sxs-lookup"><span data-stu-id="15f65-104">Not all .NET Framework classes can be created by using **New-Object**.</span></span> <span data-ttu-id="15f65-105">Exempel: Om du försöker skapa en **System.Environment** eller en **System.Math** objekt med **New-Object**, får du följande felmeddelanden:</span><span class="sxs-lookup"><span data-stu-id="15f65-105">For example, if you try to create a **System.Environment** or a **System.Math** object with **New-Object**, you will get the following error messages:</span></span>
+<span data-ttu-id="275ff-104">Det går inte att skapa alla .NET Framework klasser med **New-Object**.</span><span class="sxs-lookup"><span data-stu-id="275ff-104">Not all .NET Framework classes can be created by using **New-Object**.</span></span> <span data-ttu-id="275ff-105">Om du till exempel försöker skapa ett **system. Environment** -eller **system. math** -objekt med **New-Object**får du följande fel meddelanden:</span><span class="sxs-lookup"><span data-stu-id="275ff-105">For example, if you try to create a **System.Environment** or a **System.Math** object with **New-Object**, you will get the following error messages:</span></span>
 
 ```
 PS> New-Object System.Environment
@@ -27,15 +27,15 @@ At line:1 char:11
 + New-Object  <<<< System.Math
 ```
 
-<span data-ttu-id="15f65-106">Dessa fel inträffa eftersom det finns inget sätt att skapa ett nytt objekt från de här klasserna.</span><span class="sxs-lookup"><span data-stu-id="15f65-106">These errors occur because there is no way to create a new object from these classes.</span></span> <span data-ttu-id="15f65-107">De här klasserna är referensbibliotek av metoder och egenskaper som inte ändrar tillstånd.</span><span class="sxs-lookup"><span data-stu-id="15f65-107">These classes are reference libraries of methods and properties that do not change state.</span></span> <span data-ttu-id="15f65-108">Du behöver inte skapa dem, du helt enkelt använda dem för.</span><span class="sxs-lookup"><span data-stu-id="15f65-108">You don't need to create them, you simply use them.</span></span> <span data-ttu-id="15f65-109">Klasser och metoder som dessa kallas *statiska klasser* eftersom de inte har skapats raderats eller ändrats.</span><span class="sxs-lookup"><span data-stu-id="15f65-109">Classes and methods such as these are called *static classes* because they are not created, destroyed, or changed.</span></span> <span data-ttu-id="15f65-110">Om du vill göra detta tydligt ger vi exempel som använder statiska klasser.</span><span class="sxs-lookup"><span data-stu-id="15f65-110">To make this clear we will provide examples that use static classes.</span></span>
+<span data-ttu-id="275ff-106">Felen beror på att det inte finns något sätt att skapa ett nytt objekt från dessa klasser.</span><span class="sxs-lookup"><span data-stu-id="275ff-106">These errors occur because there is no way to create a new object from these classes.</span></span> <span data-ttu-id="275ff-107">Dessa klasser är referens bibliotek av metoder och egenskaper som inte ändrar tillstånd.</span><span class="sxs-lookup"><span data-stu-id="275ff-107">These classes are reference libraries of methods and properties that do not change state.</span></span> <span data-ttu-id="275ff-108">Du behöver inte skapa dem. du använder dem bara.</span><span class="sxs-lookup"><span data-stu-id="275ff-108">You don't need to create them, you simply use them.</span></span> <span data-ttu-id="275ff-109">Klasser och metoder som dessa kallas *statiska klasser* eftersom de inte har skapats, förstörts eller ändrats.</span><span class="sxs-lookup"><span data-stu-id="275ff-109">Classes and methods such as these are called *static classes* because they are not created, destroyed, or changed.</span></span> <span data-ttu-id="275ff-110">För att göra det här tydligt kommer vi att tillhandahålla exempel som använder statiska klasser.</span><span class="sxs-lookup"><span data-stu-id="275ff-110">To make this clear we will provide examples that use static classes.</span></span>
 
-## <a name="getting-environment-data-with-systemenvironment"></a><span data-ttu-id="15f65-111">Hämta miljödata med System.Environment</span><span class="sxs-lookup"><span data-stu-id="15f65-111">Getting Environment Data with System.Environment</span></span>
+## <a name="getting-environment-data-with-systemenvironment"></a><span data-ttu-id="275ff-111">Hämta miljö data med system. Environment</span><span class="sxs-lookup"><span data-stu-id="275ff-111">Getting Environment Data with System.Environment</span></span>
 
-<span data-ttu-id="15f65-112">Det första steget i att arbeta med ett objekt i Windows PowerShell är vanligtvis att använda Get-Member för att ta reda på vilka medlemmar som den innehåller.</span><span class="sxs-lookup"><span data-stu-id="15f65-112">Usually, the first step in working with an object in Windows PowerShell is to use Get-Member to find out what members it contains.</span></span> <span data-ttu-id="15f65-113">Processen skiljer sig något med statiska klasser, eftersom den faktiska klassen inte är ett objekt.</span><span class="sxs-lookup"><span data-stu-id="15f65-113">With static classes, the process is a little different because the actual class is not an object.</span></span>
+<span data-ttu-id="275ff-112">Det första steget i att arbeta med ett objekt i Windows PowerShell är vanligt vis att använda Get-Member för att ta reda på vilka medlemmar det innehåller.</span><span class="sxs-lookup"><span data-stu-id="275ff-112">Usually, the first step in working with an object in Windows PowerShell is to use Get-Member to find out what members it contains.</span></span> <span data-ttu-id="275ff-113">Med statiska klasser är processen lite annorlunda eftersom den faktiska klassen inte är ett objekt.</span><span class="sxs-lookup"><span data-stu-id="275ff-113">With static classes, the process is a little different because the actual class is not an object.</span></span>
 
-### <a name="referring-to-the-static-systemenvironment-class"></a><span data-ttu-id="15f65-114">Refererar till den statiska System.Environment-klassen</span><span class="sxs-lookup"><span data-stu-id="15f65-114">Referring to the Static System.Environment Class</span></span>
+### <a name="referring-to-the-static-systemenvironment-class"></a><span data-ttu-id="275ff-114">Referera till den statiska system. Environment-klassen</span><span class="sxs-lookup"><span data-stu-id="275ff-114">Referring to the Static System.Environment Class</span></span>
 
-<span data-ttu-id="15f65-115">Du kan referera till en statisk klass om klassnamnet med hakparenteser.</span><span class="sxs-lookup"><span data-stu-id="15f65-115">You can refer to a static class by surrounding the class name with square brackets.</span></span> <span data-ttu-id="15f65-116">Exempel: du kan referera till **System.Environment** genom att skriva namnet inom hakparenteser.</span><span class="sxs-lookup"><span data-stu-id="15f65-116">For example, you can refer to **System.Environment** by typing the name within brackets.</span></span> <span data-ttu-id="15f65-117">Detta visar vissa allmänna typen information:</span><span class="sxs-lookup"><span data-stu-id="15f65-117">Doing so displays some generic type information:</span></span>
+<span data-ttu-id="275ff-115">Du kan referera till en statisk klass genom att omge klass namnet med hakparenteser.</span><span class="sxs-lookup"><span data-stu-id="275ff-115">You can refer to a static class by surrounding the class name with square brackets.</span></span> <span data-ttu-id="275ff-116">Du kan till exempel referera till **system. Environment** genom att skriva namnet inom hakparenteser.</span><span class="sxs-lookup"><span data-stu-id="275ff-116">For example, you can refer to **System.Environment** by typing the name within brackets.</span></span> <span data-ttu-id="275ff-117">Då visas viss allmän typ information:</span><span class="sxs-lookup"><span data-stu-id="275ff-117">Doing so displays some generic type information:</span></span>
 
 ```
 PS> [System.Environment]
@@ -46,11 +46,11 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> <span data-ttu-id="15f65-118">Som vi nämnde tidigare Windows PowerShell automatiskt läggs '**System.** '</span><span class="sxs-lookup"><span data-stu-id="15f65-118">As we mentioned previously, Windows PowerShell automatically prepends '**System.**'</span></span> <span data-ttu-id="15f65-119">Ange namn när du använder **New-Object**.</span><span class="sxs-lookup"><span data-stu-id="15f65-119">to type names when you use **New-Object**.</span></span> <span data-ttu-id="15f65-120">Samma sak som händer när du använder en inom hakparenteser namn, så att du kan ange  **\[System.Environment]** som  **\[miljö]** .</span><span class="sxs-lookup"><span data-stu-id="15f65-120">The same thing happens when using a bracketed type name, so you can specify **\[System.Environment]** as **\[Environment]**.</span></span>
+> <span data-ttu-id="275ff-118">Som vi nämnt tidigare prepends "system" automatiskt i Windows PowerShell **.**</span><span class="sxs-lookup"><span data-stu-id="275ff-118">As we mentioned previously, Windows PowerShell automatically prepends '**System.**'</span></span> <span data-ttu-id="275ff-119">för att skriva namn när du använder **nytt-objekt**.</span><span class="sxs-lookup"><span data-stu-id="275ff-119">to type names when you use **New-Object**.</span></span> <span data-ttu-id="275ff-120">Samma sak händer när du använder ett namn för en klammer, så du kan ange **\[system. Environment]** som **\[miljö]** .</span><span class="sxs-lookup"><span data-stu-id="275ff-120">The same thing happens when using a bracketed type name, so you can specify **\[System.Environment]** as **\[Environment]**.</span></span>
 
-<span data-ttu-id="15f65-121">Den **System.Environment** klassen innehåller allmän information om arbetsmiljö för den aktuella processen, vilket är powershell.exe när du arbetar i Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="15f65-121">The **System.Environment** class contains general information about the working environment for the current process, which is powershell.exe when working within Windows PowerShell.</span></span>
+<span data-ttu-id="275ff-121">Klassen **system. Environment** innehåller allmän information om arbets miljön för den aktuella processen, som är PowerShell. exe när du arbetar i Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="275ff-121">The **System.Environment** class contains general information about the working environment for the current process, which is powershell.exe when working within Windows PowerShell.</span></span>
 
-<span data-ttu-id="15f65-122">Om du vill visa detaljer för den här klassen genom att skriva  **\[System.Environment] | Get-Member**, typen av objekt som ska rapporteras som **System.RuntimeType** , inte **System.Environment**:</span><span class="sxs-lookup"><span data-stu-id="15f65-122">If you try to view details of this class by typing **\[System.Environment] | Get-Member**, the object type is reported as being **System.RuntimeType** , not **System.Environment**:</span></span>
+<span data-ttu-id="275ff-122">Om du försöker visa information om den här klassen genom att skriva **\[system. Environment] | Hämta medlem**, objekt typen rapporteras som **system. RuntimeType** , inte **system. Environment**:</span><span class="sxs-lookup"><span data-stu-id="275ff-122">If you try to view details of this class by typing **\[System.Environment] | Get-Member**, the object type is reported as being **System.RuntimeType** , not **System.Environment**:</span></span>
 
 ```
 PS> [System.Environment] | Get-Member
@@ -58,7 +58,7 @@ PS> [System.Environment] | Get-Member
    TypeName: System.RuntimeType
 ```
 
-<span data-ttu-id="15f65-123">Om du vill visa statiska medlemmar med Get-Member, ange den **Statiska** parameter:</span><span class="sxs-lookup"><span data-stu-id="15f65-123">To view static members with Get-Member, specify the **Static** parameter:</span></span>
+<span data-ttu-id="275ff-123">Om du vill visa statiska medlemmar med Get-Member anger du den **statiska** parametern:</span><span class="sxs-lookup"><span data-stu-id="275ff-123">To view static members with Get-Member, specify the **Static** parameter:</span></span>
 
 ```
 PS> [System.Environment] | Get-Member -Static
@@ -89,18 +89,18 @@ WorkingSet                 Property   static System.Int64 WorkingSet {get;}
 TickCount                               ExitCode
 ```
 
-<span data-ttu-id="15f65-124">Nu kan vi välja Egenskaper för att visa från System.Environment.</span><span class="sxs-lookup"><span data-stu-id="15f65-124">We can now select properties to view from System.Environment.</span></span>
+<span data-ttu-id="275ff-124">Nu kan vi välja egenskaper att visa från system. Environment.</span><span class="sxs-lookup"><span data-stu-id="275ff-124">We can now select properties to view from System.Environment.</span></span>
 
-### <a name="displaying-static-properties-of-systemenvironment"></a><span data-ttu-id="15f65-125">Visa statiska egenskaperna för System.Environment</span><span class="sxs-lookup"><span data-stu-id="15f65-125">Displaying Static Properties of System.Environment</span></span>
+### <a name="displaying-static-properties-of-systemenvironment"></a><span data-ttu-id="275ff-125">Visar statiska egenskaper för system. Environment</span><span class="sxs-lookup"><span data-stu-id="275ff-125">Displaying Static Properties of System.Environment</span></span>
 
-<span data-ttu-id="15f65-126">Egenskaperna för System.Environment också är statiska och måste anges på ett annat sätt än normala egenskaper.</span><span class="sxs-lookup"><span data-stu-id="15f65-126">The properties of System.Environment are also static, and must be specified in a different way than normal properties.</span></span> <span data-ttu-id="15f65-127">Vi använder **::** som anger att Windows PowerShell som vi vill arbeta med en statisk metod eller egenskap.</span><span class="sxs-lookup"><span data-stu-id="15f65-127">We use **::** to indicate to Windows PowerShell that we want to work with a static method or property.</span></span> <span data-ttu-id="15f65-128">Om du vill se det kommando som användes för att starta Windows PowerShell, kontrollerar vi den **CommandLine** egenskapen genom att skriva:</span><span class="sxs-lookup"><span data-stu-id="15f65-128">To see the command that was used to launch Windows PowerShell, we check the **CommandLine** property by typing:</span></span>
+<span data-ttu-id="275ff-126">Egenskaperna för system. Environment är också statiska och måste anges på ett annat sätt än för normala egenskaper.</span><span class="sxs-lookup"><span data-stu-id="275ff-126">The properties of System.Environment are also static, and must be specified in a different way than normal properties.</span></span> <span data-ttu-id="275ff-127">Vi använder **::** för att indikera för Windows PowerShell att vi vill arbeta med en statisk metod eller egenskap.</span><span class="sxs-lookup"><span data-stu-id="275ff-127">We use **::** to indicate to Windows PowerShell that we want to work with a static method or property.</span></span> <span data-ttu-id="275ff-128">För att se kommandot som användes för att starta Windows PowerShell, kontrollerar vi egenskapen **CommandLine** genom att skriva:</span><span class="sxs-lookup"><span data-stu-id="275ff-128">To see the command that was used to launch Windows PowerShell, we check the **CommandLine** property by typing:</span></span>
 
 ```
 PS> [System.Environment]::Commandline
 "C:\Program Files\Windows PowerShell\v1.0\powershell.exe"
 ```
 
-<span data-ttu-id="15f65-129">Om du vill kontrollera operativsystemets version, visa egenskapen OSVersion genom att skriva:</span><span class="sxs-lookup"><span data-stu-id="15f65-129">To check the operating system version, display the OSVersion property by typing:</span></span>
+<span data-ttu-id="275ff-129">Kontrol lera operativ system versionen genom att visa egenskapen OSVersion genom att skriva:</span><span class="sxs-lookup"><span data-stu-id="275ff-129">To check the operating system version, display the OSVersion property by typing:</span></span>
 
 ```
 PS> [System.Environment]::OSVersion
@@ -110,21 +110,21 @@ PS> [System.Environment]::OSVersion
             Win32NT Service Pack 2      5.1.2600.131072     Microsoft Windows...
 ```
 
-<span data-ttu-id="15f65-130">Vi kan kontrollera om datorn är håller på att avslutas genom att visa den **HasShutdownStarted** egenskapen:</span><span class="sxs-lookup"><span data-stu-id="15f65-130">We can check whether the computer is in the process of shutting down by displaying the **HasShutdownStarted** property:</span></span>
+<span data-ttu-id="275ff-130">Vi kan kontrol lera om datorn håller på att stängas av genom att visa egenskapen **HasShutdownStarted** :</span><span class="sxs-lookup"><span data-stu-id="275ff-130">We can check whether the computer is in the process of shutting down by displaying the **HasShutdownStarted** property:</span></span>
 
 ```
 PS> [System.Environment]::HasShutdownStarted
 False
 ```
 
-## <a name="doing-math-with-systemmath"></a><span data-ttu-id="15f65-131">Gör beräkningar med System.Math</span><span class="sxs-lookup"><span data-stu-id="15f65-131">Doing Math with System.Math</span></span>
+## <a name="doing-math-with-systemmath"></a><span data-ttu-id="275ff-131">Gör matematik med system. math</span><span class="sxs-lookup"><span data-stu-id="275ff-131">Doing Math with System.Math</span></span>
 
-<span data-ttu-id="15f65-132">Den statiska System.Math-klassen är användbart för att utföra vissa matematiska operationer.</span><span class="sxs-lookup"><span data-stu-id="15f65-132">The System.Math static class is useful for performing some mathematical operations.</span></span> <span data-ttu-id="15f65-133">Viktiga medlemmarna i **System.Math** är främst metoder, som vi kan visas med hjälp av **Get-Member**.</span><span class="sxs-lookup"><span data-stu-id="15f65-133">The important members of **System.Math** are mostly methods, which we can display by using **Get-Member**.</span></span>
+<span data-ttu-id="275ff-132">Den statiska klassen system. math är användbar för att utföra vissa matematiska åtgärder.</span><span class="sxs-lookup"><span data-stu-id="275ff-132">The System.Math static class is useful for performing some mathematical operations.</span></span> <span data-ttu-id="275ff-133">De viktiga medlemmarna i **system. matematik** är huvudsakligen metoder som vi kan visa med hjälp av **Get-Member**.</span><span class="sxs-lookup"><span data-stu-id="275ff-133">The important members of **System.Math** are mostly methods, which we can display by using **Get-Member**.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="15f65-134">System.Math har flera metoder med samma namn, men de åtskiljs av typ av deras parametrar.</span><span class="sxs-lookup"><span data-stu-id="15f65-134">System.Math has several methods with the same name, but they are distinguished by the type of their parameters.</span></span>
+> <span data-ttu-id="275ff-134">System. matematik har flera metoder med samma namn, men de åtskiljs av typen av parametrar.</span><span class="sxs-lookup"><span data-stu-id="275ff-134">System.Math has several methods with the same name, but they are distinguished by the type of their parameters.</span></span>
 
-<span data-ttu-id="15f65-135">Skriv följande kommando för att listas metoderna för den **System.Math** klass.</span><span class="sxs-lookup"><span data-stu-id="15f65-135">Type the following command to list the methods of the **System.Math** class.</span></span>
+<span data-ttu-id="275ff-135">Skriv följande kommando för att lista metoderna i klassen **system. math** .</span><span class="sxs-lookup"><span data-stu-id="275ff-135">Type the following command to list the methods of the **System.Math** class.</span></span>
 
 ```
 PS> [System.Math] | Get-Member -Static -MemberType Methods
@@ -163,7 +163,7 @@ Tanh            Method     static System.Double Tanh(Double value)
 Truncate        Method     static System.Decimal Truncate(Decimal d), static...
 ```
 
-<span data-ttu-id="15f65-136">Då visas flera matematiska metoder.</span><span class="sxs-lookup"><span data-stu-id="15f65-136">This displays several mathematical methods.</span></span> <span data-ttu-id="15f65-137">Här är en lista över kommandon som visar hur några av de vanliga metoderna fungerar:</span><span class="sxs-lookup"><span data-stu-id="15f65-137">Here is a list of commands that demonstrate how some of the common methods work:</span></span>
+<span data-ttu-id="275ff-136">Detta visar flera matematiska metoder.</span><span class="sxs-lookup"><span data-stu-id="275ff-136">This displays several mathematical methods.</span></span> <span data-ttu-id="275ff-137">Här är en lista med kommandon som visar hur några av de vanliga metoderna fungerar:</span><span class="sxs-lookup"><span data-stu-id="275ff-137">Here is a list of commands that demonstrate how some of the common methods work:</span></span>
 
 ```
 PS> [System.Math]::Sqrt(9)

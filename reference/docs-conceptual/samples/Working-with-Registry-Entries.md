@@ -1,22 +1,22 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Arbeta med registerposter
 ms.openlocfilehash: c1fd6f57f13240eb2039f2d5756796678800aee0
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030730"
 ---
-# <a name="working-with-registry-entries"></a><span data-ttu-id="21d7b-103">Arbeta med registerposter</span><span class="sxs-lookup"><span data-stu-id="21d7b-103">Working with Registry Entries</span></span>
+# <a name="working-with-registry-entries"></a><span data-ttu-id="dc854-103">Arbeta med registerposter</span><span class="sxs-lookup"><span data-stu-id="dc854-103">Working with Registry Entries</span></span>
 
-<span data-ttu-id="21d7b-104">Eftersom registerposter är egenskaper för nycklar och därför kan inte direkt sökas, behöver vi dra ett något annat sätt när du arbetar med dem.</span><span class="sxs-lookup"><span data-stu-id="21d7b-104">Because registry entries are properties of keys and, as such, cannot be directly browsed, we need to take a slightly different approach when working with them.</span></span>
+<span data-ttu-id="dc854-104">Eftersom register poster är egenskaper för nycklar och inte kan bläddras direkt, måste vi ta en något annorlunda metod när du arbetar med dem.</span><span class="sxs-lookup"><span data-stu-id="dc854-104">Because registry entries are properties of keys and, as such, cannot be directly browsed, we need to take a slightly different approach when working with them.</span></span>
 
-## <a name="listing-registry-entries"></a><span data-ttu-id="21d7b-105">Visa en lista över registerposter</span><span class="sxs-lookup"><span data-stu-id="21d7b-105">Listing Registry Entries</span></span>
+## <a name="listing-registry-entries"></a><span data-ttu-id="dc854-105">Visar register poster</span><span class="sxs-lookup"><span data-stu-id="dc854-105">Listing Registry Entries</span></span>
 
-<span data-ttu-id="21d7b-106">Det finns många olika sätt att undersöka registerposter.</span><span class="sxs-lookup"><span data-stu-id="21d7b-106">There are many different ways to examine registry entries.</span></span> <span data-ttu-id="21d7b-107">Det enklaste sättet är att få de kolumner som är associerade med en nyckel.</span><span class="sxs-lookup"><span data-stu-id="21d7b-107">The simplest way is to get the property names associated with a key.</span></span> <span data-ttu-id="21d7b-108">Till exempel vill visa namnen på de posterna i registernyckeln `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`, använda `Get-Item`.</span><span class="sxs-lookup"><span data-stu-id="21d7b-108">For example, to see the names of the entries in the registry key `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`, use `Get-Item`.</span></span> <span data-ttu-id="21d7b-109">Registernycklar har en egenskap med samlingsnamnet ”Property” som är en lista över registerposter i nyckeln.</span><span class="sxs-lookup"><span data-stu-id="21d7b-109">Registry keys have a property with the generic name of "Property" that is a list of registry entries in the key.</span></span>
-<span data-ttu-id="21d7b-110">Följande kommando väljer egenskapen egenskapen och utökar objekt så att de visas i en lista:</span><span class="sxs-lookup"><span data-stu-id="21d7b-110">The following command selects the Property property and expands the items so that they are displayed in a list:</span></span>
+<span data-ttu-id="dc854-106">Det finns många olika sätt att undersöka register poster.</span><span class="sxs-lookup"><span data-stu-id="dc854-106">There are many different ways to examine registry entries.</span></span> <span data-ttu-id="dc854-107">Det enklaste sättet är att hämta egenskaps namnen som är associerade med en nyckel.</span><span class="sxs-lookup"><span data-stu-id="dc854-107">The simplest way is to get the property names associated with a key.</span></span> <span data-ttu-id="dc854-108">Om du till exempel vill visa namnen på posterna i register nyckeln `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`använder du `Get-Item`.</span><span class="sxs-lookup"><span data-stu-id="dc854-108">For example, to see the names of the entries in the registry key `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`, use `Get-Item`.</span></span> <span data-ttu-id="dc854-109">Register nycklar har en egenskap med det generiska namnet "Property" som är en lista över register poster i nyckeln.</span><span class="sxs-lookup"><span data-stu-id="dc854-109">Registry keys have a property with the generic name of "Property" that is a list of registry entries in the key.</span></span>
+<span data-ttu-id="dc854-110">Följande kommando väljer egenskapen egenskap och utökar objekten så att de visas i en lista:</span><span class="sxs-lookup"><span data-stu-id="dc854-110">The following command selects the Property property and expands the items so that they are displayed in a list:</span></span>
 
 ```powershell
 Get-Item -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion |
@@ -31,7 +31,7 @@ CommonFilesDir
 ProductId
 ```
 
-<span data-ttu-id="21d7b-111">Du kan visa registerposterna i ett mer lättläst format `Get-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="21d7b-111">To view the registry entries in a more readable form, use `Get-ItemProperty`:</span></span>
+<span data-ttu-id="dc854-111">Om du vill visa register posterna i en mer läsbar form använder du `Get-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="dc854-111">To view the registry entries in a more readable form, use `Get-ItemProperty`:</span></span>
 
 ```powershell
 Get-ItemProperty -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
@@ -57,21 +57,21 @@ PF_AccessoriesName  : Accessories
 (default)           :
 ```
 
-<span data-ttu-id="21d7b-112">Windows PowerShell-relaterade egenskaperna för nyckeln har alla prefixet ”PS”, till exempel **PSPath**, **PSParentPath**, **PSChildName**, och **PSProvider** .</span><span class="sxs-lookup"><span data-stu-id="21d7b-112">The Windows PowerShell-related properties for the key are all prefixed with "PS", such as **PSPath**, **PSParentPath**, **PSChildName**, and **PSProvider**.</span></span>
+<span data-ttu-id="dc854-112">Windows PowerShell-relaterade egenskaper för nyckeln föregås av "PS", till exempel **PSPath**, **PSParentPath**, **PSChildName**och **PSProvider**.</span><span class="sxs-lookup"><span data-stu-id="dc854-112">The Windows PowerShell-related properties for the key are all prefixed with "PS", such as **PSPath**, **PSParentPath**, **PSChildName**, and **PSProvider**.</span></span>
 
-<span data-ttu-id="21d7b-113">Du kan använda den `*.*` notation för att referera till den aktuella platsen.</span><span class="sxs-lookup"><span data-stu-id="21d7b-113">You can use the `*.*` notation for referring to the current location.</span></span> <span data-ttu-id="21d7b-114">Du kan använda `Set-Location` att ändra till den **CurrentVersion** container registry första:</span><span class="sxs-lookup"><span data-stu-id="21d7b-114">You can use `Set-Location` to change to the **CurrentVersion** registry container first:</span></span>
+<span data-ttu-id="dc854-113">Du kan använda `*.*` notation för att referera till den aktuella platsen.</span><span class="sxs-lookup"><span data-stu-id="dc854-113">You can use the `*.*` notation for referring to the current location.</span></span> <span data-ttu-id="dc854-114">Du kan använda `Set-Location` för att ändra till **CurrentVersion** -registerposten först:</span><span class="sxs-lookup"><span data-stu-id="dc854-114">You can use `Set-Location` to change to the **CurrentVersion** registry container first:</span></span>
 
 ```powershell
 Set-Location -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-<span data-ttu-id="21d7b-115">Du kan också använda den inbyggda HKLM PSDrive med `Set-Location`:</span><span class="sxs-lookup"><span data-stu-id="21d7b-115">Alternatively, you can use the built-in HKLM PSDrive with `Set-Location`:</span></span>
+<span data-ttu-id="dc854-115">Du kan också använda den inbyggda HKLM-PSDrive med `Set-Location`:</span><span class="sxs-lookup"><span data-stu-id="dc854-115">Alternatively, you can use the built-in HKLM PSDrive with `Set-Location`:</span></span>
 
 ```powershell
 Set-Location -Path hklm:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-<span data-ttu-id="21d7b-116">Du kan sedan använda den `*.*` notation för den aktuella platsen om du vill visa egenskaperna utan att ange en fullständig sökväg:</span><span class="sxs-lookup"><span data-stu-id="21d7b-116">You can then use the `*.*` notation for the current location to list the properties without specifying a full path:</span></span>
+<span data-ttu-id="dc854-116">Du kan sedan använda `*.*` notation för den aktuella platsen för att lista egenskaperna utan att ange en fullständig sökväg:</span><span class="sxs-lookup"><span data-stu-id="dc854-116">You can then use the `*.*` notation for the current location to list the properties without specifying a full path:</span></span>
 
 ```powershell
 Get-ItemProperty -Path .
@@ -85,13 +85,13 @@ ProgramFilesDir     : C:\Program Files
 ...
 ```
 
-<span data-ttu-id="21d7b-117">Sökvägen expansion fungerar på samma sätt som i filsystem, så från den här platsen kan du hämta den **itemproperty-egenskap** för `HKLM:\SOFTWARE\Microsoft\Windows\Help` med hjälp av `Get-ItemProperty -Path ..\Help`.</span><span class="sxs-lookup"><span data-stu-id="21d7b-117">Path expansion works the same as it does within the file system, so from this location you can get the **ItemProperty** listing for `HKLM:\SOFTWARE\Microsoft\Windows\Help` by using `Get-ItemProperty -Path ..\Help`.</span></span>
+<span data-ttu-id="dc854-117">Ökning av sökvägar fungerar på samma sätt som i fil systemet, så från den här platsen kan du hämta **ItemProperty** -listan för `HKLM:\SOFTWARE\Microsoft\Windows\Help` med hjälp av `Get-ItemProperty -Path ..\Help`.</span><span class="sxs-lookup"><span data-stu-id="dc854-117">Path expansion works the same as it does within the file system, so from this location you can get the **ItemProperty** listing for `HKLM:\SOFTWARE\Microsoft\Windows\Help` by using `Get-ItemProperty -Path ..\Help`.</span></span>
 
-## <a name="getting-a-single-registry-entry"></a><span data-ttu-id="21d7b-118">Hämta en enda registerpost</span><span class="sxs-lookup"><span data-stu-id="21d7b-118">Getting a Single Registry Entry</span></span>
+## <a name="getting-a-single-registry-entry"></a><span data-ttu-id="dc854-118">Hämta en enskild register post</span><span class="sxs-lookup"><span data-stu-id="dc854-118">Getting a Single Registry Entry</span></span>
 
-<span data-ttu-id="21d7b-119">Om du vill hämta en viss post i en registernyckel, kan du använda någon av flera möjliga metoder.</span><span class="sxs-lookup"><span data-stu-id="21d7b-119">If you want to retrieve a specific entry in a registry key, you can use one of several possible approaches.</span></span> <span data-ttu-id="21d7b-120">Det här exemplet efter värdet för **DevicePath** i `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.</span><span class="sxs-lookup"><span data-stu-id="21d7b-120">This example finds the value of **DevicePath** in `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.</span></span>
+<span data-ttu-id="dc854-119">Om du vill hämta en speciell post i en register nyckel kan du använda en av flera olika metoder.</span><span class="sxs-lookup"><span data-stu-id="dc854-119">If you want to retrieve a specific entry in a registry key, you can use one of several possible approaches.</span></span> <span data-ttu-id="dc854-120">I det här exemplet hittas värdet för **DevicePath** i `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.</span><span class="sxs-lookup"><span data-stu-id="dc854-120">This example finds the value of **DevicePath** in `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.</span></span>
 
-<span data-ttu-id="21d7b-121">Med hjälp av `Get-ItemProperty`, använda den **sökväg** parametern för att ange namnet på nyckeln, och **namn** parametern för att ange namnet på den **DevicePath** posten.</span><span class="sxs-lookup"><span data-stu-id="21d7b-121">Using `Get-ItemProperty`, use the **Path** parameter to specify the name of the key, and the **Name** parameter to specify the name of the **DevicePath** entry.</span></span>
+<span data-ttu-id="dc854-121">Använd `Get-ItemProperty`med parametern **Path** för att ange namnet på nyckeln och parametern **Name** för att ange namnet på **DevicePath** -posten.</span><span class="sxs-lookup"><span data-stu-id="dc854-121">Using `Get-ItemProperty`, use the **Path** parameter to specify the name of the key, and the **Name** parameter to specify the name of the **DevicePath** entry.</span></span>
 
 ```powershell
 Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion -Name DevicePath
@@ -108,12 +108,12 @@ PSProvider   : Microsoft.PowerShell.Core\Registry
 DevicePath   : C:\WINDOWS\inf
 ```
 
-<span data-ttu-id="21d7b-122">Det här kommandot returnerar standardegenskaper för Windows PowerShell och **DevicePath** egenskapen.</span><span class="sxs-lookup"><span data-stu-id="21d7b-122">This command returns the standard Windows PowerShell properties as well as the **DevicePath** property.</span></span>
+<span data-ttu-id="dc854-122">Det här kommandot returnerar standard egenskaperna för Windows PowerShell och egenskapen **DevicePath** .</span><span class="sxs-lookup"><span data-stu-id="dc854-122">This command returns the standard Windows PowerShell properties as well as the **DevicePath** property.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="21d7b-123">Även om `Get-ItemProperty` har **Filter**, **inkludera**, och **undanta** parametrar, de kan inte användas för att filtrera efter egenskapsnamn.</span><span class="sxs-lookup"><span data-stu-id="21d7b-123">Although `Get-ItemProperty` has **Filter**, **Include**, and **Exclude** parameters, they cannot be used to filter by property name.</span></span> <span data-ttu-id="21d7b-124">De här parametrarna avser registernycklar som är objektet sökvägar och inte registerposter.</span><span class="sxs-lookup"><span data-stu-id="21d7b-124">These parameters refer to registry keys, which are item paths and not registry entries.</span></span> <span data-ttu-id="21d7b-125">Registerposter som är egenskaper för konfigurationsobjekt.</span><span class="sxs-lookup"><span data-stu-id="21d7b-125">Registry entries which are item properties.</span></span>
+> <span data-ttu-id="dc854-123">Även om `Get-ItemProperty` har **filter**-, **include**-och **exkluderings** parametrar, kan de inte användas för att filtrera efter egenskaps namn.</span><span class="sxs-lookup"><span data-stu-id="dc854-123">Although `Get-ItemProperty` has **Filter**, **Include**, and **Exclude** parameters, they cannot be used to filter by property name.</span></span> <span data-ttu-id="dc854-124">De här parametrarna avser register nycklar, som är objekt Sök vägar och inte register poster.</span><span class="sxs-lookup"><span data-stu-id="dc854-124">These parameters refer to registry keys, which are item paths and not registry entries.</span></span> <span data-ttu-id="dc854-125">Register poster som är objekt egenskaper.</span><span class="sxs-lookup"><span data-stu-id="dc854-125">Registry entries which are item properties.</span></span>
 
-<span data-ttu-id="21d7b-126">Ett annat alternativ är att använda kommandoradsverktyget Reg.exe.</span><span class="sxs-lookup"><span data-stu-id="21d7b-126">Another option is to use the Reg.exe command line tool.</span></span> <span data-ttu-id="21d7b-127">Om du vill ha hjälp med reg.exe skriver `reg.exe /?` i Kommandotolken.</span><span class="sxs-lookup"><span data-stu-id="21d7b-127">For help with reg.exe, type `reg.exe /?` at a command prompt.</span></span> <span data-ttu-id="21d7b-128">Använd reg.exe för att hitta posten DevicePath, som visas i följande kommando:</span><span class="sxs-lookup"><span data-stu-id="21d7b-128">To find the DevicePath entry, use reg.exe as shown in the following command:</span></span>
+<span data-ttu-id="dc854-126">Ett annat alternativ är att använda kommando rads verktyget REG. exe.</span><span class="sxs-lookup"><span data-stu-id="dc854-126">Another option is to use the Reg.exe command line tool.</span></span> <span data-ttu-id="dc854-127">Om du vill ha hjälp med REG. exe skriver du `reg.exe /?` i kommando tolken.</span><span class="sxs-lookup"><span data-stu-id="dc854-127">For help with reg.exe, type `reg.exe /?` at a command prompt.</span></span> <span data-ttu-id="dc854-128">Du hittar posten DevicePath genom att använda REG. exe, som du ser i följande kommando:</span><span class="sxs-lookup"><span data-stu-id="dc854-128">To find the DevicePath entry, use reg.exe as shown in the following command:</span></span>
 
 ```powershell
 reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion /v DevicePath
@@ -126,7 +126,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
     DevicePath  REG_EXPAND_SZ   %SystemRoot%\inf
 ```
 
-<span data-ttu-id="21d7b-129">Du kan också använda den **WshShell** COM-objekt samt att hitta vissa registerposter, även om den här metoden inte fungerar med stora binära data eller med namn på registret poster som innehåller tecken, till exempel ”\\”).</span><span class="sxs-lookup"><span data-stu-id="21d7b-129">You can also use the **WshShell** COM object as well to find some registry entries, although this method does not work with large binary data or with registry entry names that include characters such as "\\").</span></span> <span data-ttu-id="21d7b-130">Lägg till egenskapsnamnet till objekt-sökväg med en \\ avgränsare:</span><span class="sxs-lookup"><span data-stu-id="21d7b-130">Append the property name to the item path with a \\ separator:</span></span>
+<span data-ttu-id="dc854-129">Du kan också använda **WshShell** com-objektet för att hitta vissa register poster, men den här metoden fungerar inte med stora binära data eller med register post namn som innehåller tecken som "\\").</span><span class="sxs-lookup"><span data-stu-id="dc854-129">You can also use the **WshShell** COM object as well to find some registry entries, although this method does not work with large binary data or with registry entry names that include characters such as "\\").</span></span> <span data-ttu-id="dc854-130">Lägg till egenskaps namnet till objekt Sök vägen med en \\ avgränsare:</span><span class="sxs-lookup"><span data-stu-id="dc854-130">Append the property name to the item path with a \\ separator:</span></span>
 
 ```powershell
 (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DevicePath")
@@ -136,13 +136,13 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
 %SystemRoot%\inf
 ```
 
-## <a name="setting-a-single-registry-entry"></a><span data-ttu-id="21d7b-131">Ange en enda registerpost</span><span class="sxs-lookup"><span data-stu-id="21d7b-131">Setting a Single Registry Entry</span></span>
+## <a name="setting-a-single-registry-entry"></a><span data-ttu-id="dc854-131">Ange en enskild register post</span><span class="sxs-lookup"><span data-stu-id="dc854-131">Setting a Single Registry Entry</span></span>
 
-<span data-ttu-id="21d7b-132">Om du vill ändra en viss post i en registernyckel, kan du använda någon av flera möjliga metoder.</span><span class="sxs-lookup"><span data-stu-id="21d7b-132">If you want to change a specific entry in a registry key, you can use one of several possible approaches.</span></span> <span data-ttu-id="21d7b-133">Det här exemplet ändrar den **sökväg** posten under `HKEY_CURRENT_USER\Environment`.</span><span class="sxs-lookup"><span data-stu-id="21d7b-133">This example modifies the **Path** entry under `HKEY_CURRENT_USER\Environment`.</span></span> <span data-ttu-id="21d7b-134">Den **sökväg** posten anger var du hittar körbara filer.</span><span class="sxs-lookup"><span data-stu-id="21d7b-134">The **Path** entry specifies where to find executable files.</span></span>
+<span data-ttu-id="dc854-132">Om du vill ändra en speciell post i en register nyckel kan du använda en av flera olika metoder.</span><span class="sxs-lookup"><span data-stu-id="dc854-132">If you want to change a specific entry in a registry key, you can use one of several possible approaches.</span></span> <span data-ttu-id="dc854-133">I det här exemplet ändras **Sök vägs** posten under `HKEY_CURRENT_USER\Environment`.</span><span class="sxs-lookup"><span data-stu-id="dc854-133">This example modifies the **Path** entry under `HKEY_CURRENT_USER\Environment`.</span></span> <span data-ttu-id="dc854-134">I **Sök vägs** posten anges var du hittar körbara filer.</span><span class="sxs-lookup"><span data-stu-id="dc854-134">The **Path** entry specifies where to find executable files.</span></span>
 
-1. <span data-ttu-id="21d7b-135">Hämta det aktuella värdet för den **sökväg** post med hjälp av `Get-ItemProperty`.</span><span class="sxs-lookup"><span data-stu-id="21d7b-135">Retrieve the current value of the **Path** entry using `Get-ItemProperty`.</span></span>
-2. <span data-ttu-id="21d7b-136">Lägg till det nya värdet, att avgränsa dem med en `;`.</span><span class="sxs-lookup"><span data-stu-id="21d7b-136">Add the new value, separating it with a `;`.</span></span>
-3. <span data-ttu-id="21d7b-137">Använd `Set-ItemProperty` med angiven nyckel, postens namn och värde för att ändra registerposten.</span><span class="sxs-lookup"><span data-stu-id="21d7b-137">Use `Set-ItemProperty` with the specified key, entry name, and value to modify the registry entry.</span></span>
+1. <span data-ttu-id="dc854-135">Hämta det aktuella värdet för **Sök vägs** posten med `Get-ItemProperty`.</span><span class="sxs-lookup"><span data-stu-id="dc854-135">Retrieve the current value of the **Path** entry using `Get-ItemProperty`.</span></span>
+2. <span data-ttu-id="dc854-136">Lägg till det nya värdet och skilj det till ett `;`.</span><span class="sxs-lookup"><span data-stu-id="dc854-136">Add the new value, separating it with a `;`.</span></span>
+3. <span data-ttu-id="dc854-137">Använd `Set-ItemProperty` med den angivna nyckeln, post namnet och värdet för att ändra register posten.</span><span class="sxs-lookup"><span data-stu-id="dc854-137">Use `Set-ItemProperty` with the specified key, entry name, and value to modify the registry entry.</span></span>
 
 ```powershell
 $value = Get-ItemProperty -Path HKCU:\Environment -Name Path
@@ -151,13 +151,13 @@ Set-ItemProperty -Path HKCU:\Environment -Name Path -Value $newpath
 ```
 
 > [!NOTE]
-> <span data-ttu-id="21d7b-138">Även om `Set-ItemProperty` har **Filter**, **inkludera**, och **undanta** parametrar, de kan inte användas för att filtrera efter egenskapsnamn.</span><span class="sxs-lookup"><span data-stu-id="21d7b-138">Although `Set-ItemProperty` has **Filter**, **Include**, and **Exclude** parameters, they cannot be used to filter by property name.</span></span> <span data-ttu-id="21d7b-139">De här parametrarna avser registernycklar, som är objektet sökvägar – och inte registerposter – som är egenskaper för konfigurationsobjekt.</span><span class="sxs-lookup"><span data-stu-id="21d7b-139">These parameters refer to registry keys—which are item paths—and not registry entries—which are item properties.</span></span>
+> <span data-ttu-id="dc854-138">Även om `Set-ItemProperty` har **filter**-, **include**-och **exkluderings** parametrar, kan de inte användas för att filtrera efter egenskaps namn.</span><span class="sxs-lookup"><span data-stu-id="dc854-138">Although `Set-ItemProperty` has **Filter**, **Include**, and **Exclude** parameters, they cannot be used to filter by property name.</span></span> <span data-ttu-id="dc854-139">Dessa parametrar avser register nycklar, som är objekt Sök vägar, och inte register poster, som är objekt egenskaper.</span><span class="sxs-lookup"><span data-stu-id="dc854-139">These parameters refer to registry keys—which are item paths—and not registry entries—which are item properties.</span></span>
 
-<span data-ttu-id="21d7b-140">Ett annat alternativ är att använda kommandoradsverktyget Reg.exe.</span><span class="sxs-lookup"><span data-stu-id="21d7b-140">Another option is to use the Reg.exe command line tool.</span></span> <span data-ttu-id="21d7b-141">Om du vill ha hjälp med reg.exe skriver **reg.exe /?**</span><span class="sxs-lookup"><span data-stu-id="21d7b-141">For help with reg.exe, type **reg.exe /?**</span></span>
-<span data-ttu-id="21d7b-142">i Kommandotolken.</span><span class="sxs-lookup"><span data-stu-id="21d7b-142">at a command prompt.</span></span>
+<span data-ttu-id="dc854-140">Ett annat alternativ är att använda kommando rads verktyget REG. exe.</span><span class="sxs-lookup"><span data-stu-id="dc854-140">Another option is to use the Reg.exe command line tool.</span></span> <span data-ttu-id="dc854-141">Om du vill ha hjälp med REG. exe skriver du **reg. exe/?**</span><span class="sxs-lookup"><span data-stu-id="dc854-141">For help with reg.exe, type **reg.exe /?**</span></span>
+<span data-ttu-id="dc854-142">i en kommando tolk.</span><span class="sxs-lookup"><span data-stu-id="dc854-142">at a command prompt.</span></span>
 
-<span data-ttu-id="21d7b-143">Följande exempel ändringar i **sökväg** post genom att ta bort sökvägen som har lagts till i exemplet ovan.</span><span class="sxs-lookup"><span data-stu-id="21d7b-143">The following example changes the **Path** entry by removing the path added in the example above.</span></span>
-<span data-ttu-id="21d7b-144">`Get-ItemProperty` fortfarande används för att hämta det aktuella värdet för att undvika att behöva Parsar då strängen som returnerades från `reg query`.</span><span class="sxs-lookup"><span data-stu-id="21d7b-144">`Get-ItemProperty` is still used to retrieve the current value to avoid having to parse the string returned from `reg query`.</span></span> <span data-ttu-id="21d7b-145">Den **delsträngen** och **LastIndexOf** metoder används för att hämta den senaste sökvägen som lagts till i den **sökväg** posten.</span><span class="sxs-lookup"><span data-stu-id="21d7b-145">The **SubString** and **LastIndexOf** methods are used to retrieve the last path added to the **Path** entry.</span></span>
+<span data-ttu-id="dc854-143">I följande exempel ändras **Sök vägs** posten genom att du tar bort sökvägen som lagts till i exemplet ovan.</span><span class="sxs-lookup"><span data-stu-id="dc854-143">The following example changes the **Path** entry by removing the path added in the example above.</span></span>
+<span data-ttu-id="dc854-144">`Get-ItemProperty` används fortfarande för att hämta det aktuella värdet för att undvika att behöva parsa strängen som returneras från `reg query`.</span><span class="sxs-lookup"><span data-stu-id="dc854-144">`Get-ItemProperty` is still used to retrieve the current value to avoid having to parse the string returned from `reg query`.</span></span> <span data-ttu-id="dc854-145">**Substring** -och **LastIndexOf** -metoderna används för att hämta den senaste sökvägen som lagts till i **Sök vägs** posten.</span><span class="sxs-lookup"><span data-stu-id="dc854-145">The **SubString** and **LastIndexOf** methods are used to retrieve the last path added to the **Path** entry.</span></span>
 
 ```powershell
 $value = Get-ItemProperty -Path HKCU:\Environment -Name Path
@@ -169,11 +169,11 @@ reg add HKCU\Environment /v Path /d $newpath /f
 The operation completed successfully.
 ```
 
-## <a name="creating-new-registry-entries"></a><span data-ttu-id="21d7b-146">Skapar nya registerposter</span><span class="sxs-lookup"><span data-stu-id="21d7b-146">Creating New Registry Entries</span></span>
+## <a name="creating-new-registry-entries"></a><span data-ttu-id="dc854-146">Skapa nya register poster</span><span class="sxs-lookup"><span data-stu-id="dc854-146">Creating New Registry Entries</span></span>
 
-<span data-ttu-id="21d7b-147">Att lägga till en ny post med namnet ”PowerShellPath” i den **CurrentVersion** , nyckelanvändningen `New-ItemProperty` med sökvägen till nyckeln, namnet och värdet för posten.</span><span class="sxs-lookup"><span data-stu-id="21d7b-147">To add a new entry named "PowerShellPath" to the **CurrentVersion** key, use `New-ItemProperty` with the path to the key, the entry name, and the value of the entry.</span></span> <span data-ttu-id="21d7b-148">I det här exemplet tar vi värdet för Windows PowerShell-variabel `$PSHome`, som lagrar sökvägen till installationskatalogen för Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="21d7b-148">For this example, we will take the value of the Windows PowerShell variable `$PSHome`, which stores the path to the installation directory for Windows PowerShell.</span></span>
+<span data-ttu-id="dc854-147">Om du vill lägga till en ny post med namnet "PowerShellPath" i **CurrentVersion** -nyckeln använder du `New-ItemProperty` med sökvägen till nyckeln, post namnet och värdet för posten.</span><span class="sxs-lookup"><span data-stu-id="dc854-147">To add a new entry named "PowerShellPath" to the **CurrentVersion** key, use `New-ItemProperty` with the path to the key, the entry name, and the value of the entry.</span></span> <span data-ttu-id="dc854-148">I det här exemplet tar vi värdet för variabeln Windows PowerShell `$PSHome`, som lagrar sökvägen till installations katalogen för Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="dc854-148">For this example, we will take the value of the Windows PowerShell variable `$PSHome`, which stores the path to the installation directory for Windows PowerShell.</span></span>
 
-<span data-ttu-id="21d7b-149">Du kan lägga till den nya posten till nyckeln med hjälp av följande kommando och kommandot returnerar också information om den nya posten:</span><span class="sxs-lookup"><span data-stu-id="21d7b-149">You can add the new entry to the key by using the following command, and the command also returns information about the new entry:</span></span>
+<span data-ttu-id="dc854-149">Du kan lägga till den nya posten i nyckeln med hjälp av följande kommando, och kommandot returnerar också information om den nya posten:</span><span class="sxs-lookup"><span data-stu-id="dc854-149">You can add the new entry to the key by using the following command, and the command also returns information about the new entry:</span></span>
 
 ```powershell
 New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -PropertyType String -Value $PSHome
@@ -188,44 +188,44 @@ PSProvider     : Microsoft.PowerShell.Core\Registry
 PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 ```
 
-<span data-ttu-id="21d7b-150">Den **%d{PropertyType/** måste vara namnet på en **Microsoft.Win32.RegistryValueKind** uppräkningsmedlem i följande tabell:</span><span class="sxs-lookup"><span data-stu-id="21d7b-150">The **PropertyType** must be the name of a **Microsoft.Win32.RegistryValueKind** enumeration member from the following table:</span></span>
+<span data-ttu-id="dc854-150">**PropertyType** måste vara namnet på en **Microsoft. Win32. RegistryValueKind** -uppräknings medlem från följande tabell:</span><span class="sxs-lookup"><span data-stu-id="dc854-150">The **PropertyType** must be the name of a **Microsoft.Win32.RegistryValueKind** enumeration member from the following table:</span></span>
 
-|<span data-ttu-id="21d7b-151">%D{PropertyType/ värde</span><span class="sxs-lookup"><span data-stu-id="21d7b-151">PropertyType Value</span></span>|<span data-ttu-id="21d7b-152">Innebörd</span><span class="sxs-lookup"><span data-stu-id="21d7b-152">Meaning</span></span>|
+|<span data-ttu-id="dc854-151">PropertyType-värde</span><span class="sxs-lookup"><span data-stu-id="dc854-151">PropertyType Value</span></span>|<span data-ttu-id="dc854-152">Innebörd</span><span class="sxs-lookup"><span data-stu-id="dc854-152">Meaning</span></span>|
 |----------------------|-----------|
-|<span data-ttu-id="21d7b-153">Binär</span><span class="sxs-lookup"><span data-stu-id="21d7b-153">Binary</span></span>|<span data-ttu-id="21d7b-154">Binära data</span><span class="sxs-lookup"><span data-stu-id="21d7b-154">Binary data</span></span>|
-|<span data-ttu-id="21d7b-155">DWord</span><span class="sxs-lookup"><span data-stu-id="21d7b-155">DWord</span></span>|<span data-ttu-id="21d7b-156">Ett tal som är en giltig UInt32</span><span class="sxs-lookup"><span data-stu-id="21d7b-156">A number that is a valid UInt32</span></span>|
-|<span data-ttu-id="21d7b-157">ExpandString</span><span class="sxs-lookup"><span data-stu-id="21d7b-157">ExpandString</span></span>|<span data-ttu-id="21d7b-158">En sträng som kan innehålla miljövariabler som dynamiskt expanderas</span><span class="sxs-lookup"><span data-stu-id="21d7b-158">A string that can contain environment variables that are dynamically expanded</span></span>|
-|<span data-ttu-id="21d7b-159">MultiString</span><span class="sxs-lookup"><span data-stu-id="21d7b-159">MultiString</span></span>|<span data-ttu-id="21d7b-160">En flerradig sträng</span><span class="sxs-lookup"><span data-stu-id="21d7b-160">A multiline string</span></span>|
-|<span data-ttu-id="21d7b-161">Sträng</span><span class="sxs-lookup"><span data-stu-id="21d7b-161">String</span></span>|<span data-ttu-id="21d7b-162">ett värde</span><span class="sxs-lookup"><span data-stu-id="21d7b-162">Any string value</span></span>|
-|<span data-ttu-id="21d7b-163">QWord</span><span class="sxs-lookup"><span data-stu-id="21d7b-163">QWord</span></span>|<span data-ttu-id="21d7b-164">8 byte av binära data</span><span class="sxs-lookup"><span data-stu-id="21d7b-164">8 bytes of binary data</span></span>|
+|<span data-ttu-id="dc854-153">Binär</span><span class="sxs-lookup"><span data-stu-id="dc854-153">Binary</span></span>|<span data-ttu-id="dc854-154">Binära data</span><span class="sxs-lookup"><span data-stu-id="dc854-154">Binary data</span></span>|
+|<span data-ttu-id="dc854-155">DWord</span><span class="sxs-lookup"><span data-stu-id="dc854-155">DWord</span></span>|<span data-ttu-id="dc854-156">Ett tal som är en giltig UInt32</span><span class="sxs-lookup"><span data-stu-id="dc854-156">A number that is a valid UInt32</span></span>|
+|<span data-ttu-id="dc854-157">ExpandString</span><span class="sxs-lookup"><span data-stu-id="dc854-157">ExpandString</span></span>|<span data-ttu-id="dc854-158">En sträng som kan innehålla miljövariabler som expanderas dynamiskt</span><span class="sxs-lookup"><span data-stu-id="dc854-158">A string that can contain environment variables that are dynamically expanded</span></span>|
+|<span data-ttu-id="dc854-159">Multisträng</span><span class="sxs-lookup"><span data-stu-id="dc854-159">MultiString</span></span>|<span data-ttu-id="dc854-160">En flerradig sträng</span><span class="sxs-lookup"><span data-stu-id="dc854-160">A multiline string</span></span>|
+|<span data-ttu-id="dc854-161">Sträng</span><span class="sxs-lookup"><span data-stu-id="dc854-161">String</span></span>|<span data-ttu-id="dc854-162">Valfritt sträng värde</span><span class="sxs-lookup"><span data-stu-id="dc854-162">Any string value</span></span>|
+|<span data-ttu-id="dc854-163">QWord</span><span class="sxs-lookup"><span data-stu-id="dc854-163">QWord</span></span>|<span data-ttu-id="dc854-164">8 byte binära data</span><span class="sxs-lookup"><span data-stu-id="dc854-164">8 bytes of binary data</span></span>|
 
 > [!NOTE]
-> <span data-ttu-id="21d7b-165">Du kan lägga till en registerpost till flera platser genom att ange en matris med värden för den **sökväg** parameter:</span><span class="sxs-lookup"><span data-stu-id="21d7b-165">You can add a registry entry to multiple locations by specifying an array of values for the **Path** parameter:</span></span>
+> <span data-ttu-id="dc854-165">Du kan lägga till en register post till flera platser genom att ange en matris med värden för parametern **Path** :</span><span class="sxs-lookup"><span data-stu-id="dc854-165">You can add a registry entry to multiple locations by specifying an array of values for the **Path** parameter:</span></span>
 
 ```powershell
 New-ItemProperty -Name PowerShellPath -PropertyType String -Value $PSHome `
   -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-<span data-ttu-id="21d7b-166">Du kan också skriva över en befintlig post registervärdet genom att lägga till den **kraft** parametern till någon `New-ItemProperty` kommando.</span><span class="sxs-lookup"><span data-stu-id="21d7b-166">You can also overwrite a pre-existing registry entry value by adding the **Force** parameter to any `New-ItemProperty` command.</span></span>
+<span data-ttu-id="dc854-166">Du kan också skriva över ett befintligt register post värde genom att lägga till parametern **Force** till alla `New-ItemProperty`-kommandon.</span><span class="sxs-lookup"><span data-stu-id="dc854-166">You can also overwrite a pre-existing registry entry value by adding the **Force** parameter to any `New-ItemProperty` command.</span></span>
 
-## <a name="renaming-registry-entries"></a><span data-ttu-id="21d7b-167">Renaming Registry Entries</span><span class="sxs-lookup"><span data-stu-id="21d7b-167">Renaming Registry Entries</span></span>
+## <a name="renaming-registry-entries"></a><span data-ttu-id="dc854-167">Byta namn på register poster</span><span class="sxs-lookup"><span data-stu-id="dc854-167">Renaming Registry Entries</span></span>
 
-<span data-ttu-id="21d7b-168">Att byta namn på den **PowerShellPath** posten ”PSHome”, Använd `Rename-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="21d7b-168">To rename the **PowerShellPath** entry to "PSHome," use `Rename-ItemProperty`:</span></span>
+<span data-ttu-id="dc854-168">Om du vill byta namn på posten **PowerShellPath** till "PSHome" använder `Rename-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="dc854-168">To rename the **PowerShellPath** entry to "PSHome," use `Rename-ItemProperty`:</span></span>
 
 ```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome
 ```
 
-<span data-ttu-id="21d7b-169">Om du vill visa omdöpt värdet, lägger du till den **PassThru** parameter i kommandot.</span><span class="sxs-lookup"><span data-stu-id="21d7b-169">To display the renamed value, add the **PassThru** parameter to the command.</span></span>
+<span data-ttu-id="dc854-169">Om du vill visa det omdöpta värdet lägger du till parametern **Passthru** i kommandot.</span><span class="sxs-lookup"><span data-stu-id="dc854-169">To display the renamed value, add the **PassThru** parameter to the command.</span></span>
 
 ```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
 ```
 
-## <a name="deleting-registry-entries"></a><span data-ttu-id="21d7b-170">Tar bort registerposter</span><span class="sxs-lookup"><span data-stu-id="21d7b-170">Deleting Registry Entries</span></span>
+## <a name="deleting-registry-entries"></a><span data-ttu-id="dc854-170">Tar bort register poster</span><span class="sxs-lookup"><span data-stu-id="dc854-170">Deleting Registry Entries</span></span>
 
-<span data-ttu-id="21d7b-171">Ta bort registerposter för både PSHome och PowerShellPath genom att använda `Remove-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="21d7b-171">To delete both the PSHome and PowerShellPath registry entries, use `Remove-ItemProperty`:</span></span>
+<span data-ttu-id="dc854-171">Om du vill ta bort register posterna PSHome och PowerShellPath använder du `Remove-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="dc854-171">To delete both the PSHome and PowerShellPath registry entries, use `Remove-ItemProperty`:</span></span>
 
 ```powershell
 Remove-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PSHome
