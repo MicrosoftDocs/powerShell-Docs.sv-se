@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: 715ea055-037b-46ad-b70f-87b3f5134403
 caps.latest.revision: 14
 ms.openlocfilehash: 2742be0389a1bf04af100a490a59c0d938165811
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72358707"
 ---
-# <a name="widecontrol-element-format"></a><span data-ttu-id="5d001-102">WideControl-element (format)</span><span class="sxs-lookup"><span data-stu-id="5d001-102">WideControl Element (Format)</span></span>
+# <a name="widecontrol-element-format"></a><span data-ttu-id="1f806-102">WideControl-element (format)</span><span class="sxs-lookup"><span data-stu-id="1f806-102">WideControl Element (Format)</span></span>
 
-<span data-ttu-id="5d001-103">Definierar ett brett List format (enskilt värde) för vyn.</span><span class="sxs-lookup"><span data-stu-id="5d001-103">Defines a wide (single value) list format for the view.</span></span> <span data-ttu-id="5d001-104">I den här vyn visas ett enskilt egenskaps värde eller skript värde för varje objekt.</span><span class="sxs-lookup"><span data-stu-id="5d001-104">This view displays a single property value or script value for each object.</span></span>
+<span data-ttu-id="1f806-103">Definierar ett brett List format (enskilt värde) för vyn.</span><span class="sxs-lookup"><span data-stu-id="1f806-103">Defines a wide (single value) list format for the view.</span></span> <span data-ttu-id="1f806-104">I den här vyn visas ett enskilt egenskaps värde eller skript värde för varje objekt.</span><span class="sxs-lookup"><span data-stu-id="1f806-104">This view displays a single property value or script value for each object.</span></span>
 
-<span data-ttu-id="5d001-105">Konfigurations element (format) ViewDefinitions element (format) Visa element (format) WideControl-element (format)</span><span class="sxs-lookup"><span data-stu-id="5d001-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) WideControl Element (Format)</span></span>
+<span data-ttu-id="1f806-105">Konfigurations element (format) ViewDefinitions element (format) Visa element (format) WideControl-element (format)</span><span class="sxs-lookup"><span data-stu-id="1f806-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) WideControl Element (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="5d001-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="5d001-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="1f806-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="1f806-106">Syntax</span></span>
 
 ```xml
 <WideControl>
@@ -31,39 +31,39 @@ ms.locfileid: "72358707"
 </WideControl>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="5d001-107">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="5d001-107">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="1f806-107">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="1f806-107">Attributes and Elements</span></span>
 
-<span data-ttu-id="5d001-108">I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `WideControl`-elementet.</span><span class="sxs-lookup"><span data-stu-id="5d001-108">The following sections describe the attributes, child elements, and parent element of the `WideControl` element.</span></span> <span data-ttu-id="5d001-109">Det går inte att ange `AutoSize`-och `ColumnNumber`-element samtidigt.</span><span class="sxs-lookup"><span data-stu-id="5d001-109">You cannot specify the `AutoSize` and `ColumnNumber` elements at the same time.</span></span>
+<span data-ttu-id="1f806-108">I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `WideControl`-elementet.</span><span class="sxs-lookup"><span data-stu-id="1f806-108">The following sections describe the attributes, child elements, and parent element of the `WideControl` element.</span></span> <span data-ttu-id="1f806-109">Du kan inte ange `AutoSize` och `ColumnNumber` element på samma tid.</span><span class="sxs-lookup"><span data-stu-id="1f806-109">You cannot specify the `AutoSize` and `ColumnNumber` elements at the same time.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="5d001-110">Attribut</span><span class="sxs-lookup"><span data-stu-id="5d001-110">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="1f806-110">Attribut</span><span class="sxs-lookup"><span data-stu-id="1f806-110">Attributes</span></span>
 
-<span data-ttu-id="5d001-111">Ingen.</span><span class="sxs-lookup"><span data-stu-id="5d001-111">None.</span></span>
+<span data-ttu-id="1f806-111">Ingen.</span><span class="sxs-lookup"><span data-stu-id="1f806-111">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="5d001-112">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="5d001-112">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="1f806-112">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="1f806-112">Child Elements</span></span>
 
-|<span data-ttu-id="5d001-113">Element</span><span class="sxs-lookup"><span data-stu-id="5d001-113">Element</span></span>|<span data-ttu-id="5d001-114">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="5d001-114">Description</span></span>|
+|<span data-ttu-id="1f806-113">Element</span><span class="sxs-lookup"><span data-stu-id="1f806-113">Element</span></span>|<span data-ttu-id="1f806-114">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="1f806-114">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="5d001-115">AutoSize-element för WideControl (format)</span><span class="sxs-lookup"><span data-stu-id="5d001-115">AutoSize Element for WideControl (Format)</span></span>](./autosize-element-for-widecontrol-format.md)|<span data-ttu-id="5d001-116">Valfritt element.</span><span class="sxs-lookup"><span data-stu-id="5d001-116">Optional element.</span></span><br /><br /> <span data-ttu-id="5d001-117">Anger om kolumn storleken och antalet kolumner justeras baserat på data storleken.</span><span class="sxs-lookup"><span data-stu-id="5d001-117">Specifies whether the column size and the number of columns are adjusted based on the size of the data.</span></span>|
-|[<span data-ttu-id="5d001-118">ColumnNumber-element för WideControl (format)</span><span class="sxs-lookup"><span data-stu-id="5d001-118">ColumnNumber Element for WideControl (Format)</span></span>](./columnnumber-element-for-widecontrol-format.md)|<span data-ttu-id="5d001-119">Valfritt element.</span><span class="sxs-lookup"><span data-stu-id="5d001-119">Optional element.</span></span><br /><br /> <span data-ttu-id="5d001-120">Anger antalet kolumner som visas i den bred vyn.</span><span class="sxs-lookup"><span data-stu-id="5d001-120">Specifies the number of columns displayed in the wide view.</span></span>|
-|[<span data-ttu-id="5d001-121">WideEntries-element (format)</span><span class="sxs-lookup"><span data-stu-id="5d001-121">WideEntries Element (Format)</span></span>](./wideentries-element-for-widecontrol-format.md)|<span data-ttu-id="5d001-122">Nödvändigt element.</span><span class="sxs-lookup"><span data-stu-id="5d001-122">Required element.</span></span><br /><br /> <span data-ttu-id="5d001-123">Innehåller definitionerna för den breda vyn.</span><span class="sxs-lookup"><span data-stu-id="5d001-123">Provides the definitions of the wide view.</span></span>|
+|[<span data-ttu-id="1f806-115">AutoSize-element för WideControl (format)</span><span class="sxs-lookup"><span data-stu-id="1f806-115">AutoSize Element for WideControl (Format)</span></span>](./autosize-element-for-widecontrol-format.md)|<span data-ttu-id="1f806-116">Valfritt element.</span><span class="sxs-lookup"><span data-stu-id="1f806-116">Optional element.</span></span><br /><br /> <span data-ttu-id="1f806-117">Anger om kolumn storleken och antalet kolumner justeras baserat på data storleken.</span><span class="sxs-lookup"><span data-stu-id="1f806-117">Specifies whether the column size and the number of columns are adjusted based on the size of the data.</span></span>|
+|[<span data-ttu-id="1f806-118">ColumnNumber-element för WideControl (format)</span><span class="sxs-lookup"><span data-stu-id="1f806-118">ColumnNumber Element for WideControl (Format)</span></span>](./columnnumber-element-for-widecontrol-format.md)|<span data-ttu-id="1f806-119">Valfritt element.</span><span class="sxs-lookup"><span data-stu-id="1f806-119">Optional element.</span></span><br /><br /> <span data-ttu-id="1f806-120">Anger antalet kolumner som visas i den bred vyn.</span><span class="sxs-lookup"><span data-stu-id="1f806-120">Specifies the number of columns displayed in the wide view.</span></span>|
+|[<span data-ttu-id="1f806-121">WideEntries-element (format)</span><span class="sxs-lookup"><span data-stu-id="1f806-121">WideEntries Element (Format)</span></span>](./wideentries-element-for-widecontrol-format.md)|<span data-ttu-id="1f806-122">Nödvändigt element.</span><span class="sxs-lookup"><span data-stu-id="1f806-122">Required element.</span></span><br /><br /> <span data-ttu-id="1f806-123">Innehåller definitionerna för den breda vyn.</span><span class="sxs-lookup"><span data-stu-id="1f806-123">Provides the definitions of the wide view.</span></span>|
 
-### <a name="parent-elements"></a><span data-ttu-id="5d001-124">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="5d001-124">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="1f806-124">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="1f806-124">Parent Elements</span></span>
 
-|<span data-ttu-id="5d001-125">Element</span><span class="sxs-lookup"><span data-stu-id="5d001-125">Element</span></span>|<span data-ttu-id="5d001-126">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="5d001-126">Description</span></span>|
+|<span data-ttu-id="1f806-125">Element</span><span class="sxs-lookup"><span data-stu-id="1f806-125">Element</span></span>|<span data-ttu-id="1f806-126">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="1f806-126">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="5d001-127">Visa element (format)</span><span class="sxs-lookup"><span data-stu-id="5d001-127">View Element (Format)</span></span>](./view-element-format.md)|<span data-ttu-id="5d001-128">Definierar en vy som används för att visa ett eller flera .NET-objekt.</span><span class="sxs-lookup"><span data-stu-id="5d001-128">Defines a view that is used to display one or more .NET objects.</span></span>|
+|[<span data-ttu-id="1f806-127">Visa element (format)</span><span class="sxs-lookup"><span data-stu-id="1f806-127">View Element (Format)</span></span>](./view-element-format.md)|<span data-ttu-id="1f806-128">Definierar en vy som används för att visa ett eller flera .NET-objekt.</span><span class="sxs-lookup"><span data-stu-id="1f806-128">Defines a view that is used to display one or more .NET objects.</span></span>|
 
-## <a name="remarks"></a><span data-ttu-id="5d001-129">Anmärkningar</span><span class="sxs-lookup"><span data-stu-id="5d001-129">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="1f806-129">Anmärkningar</span><span class="sxs-lookup"><span data-stu-id="1f806-129">Remarks</span></span>
 
-<span data-ttu-id="5d001-130">När du definierar en bred vy kan du lägga till elementet `AutoSize` eller `ColumnNumber`, men du kan inte lägga till båda.</span><span class="sxs-lookup"><span data-stu-id="5d001-130">When defining a wide view, you can add the `AutoSize` element or the `ColumnNumber` but you cannot add both.</span></span>
+<span data-ttu-id="1f806-130">När du definierar en bred vy kan du lägga till `AutoSize`-elementet eller `ColumnNumber`, men du kan inte lägga till båda.</span><span class="sxs-lookup"><span data-stu-id="1f806-130">When defining a wide view, you can add the `AutoSize` element or the `ColumnNumber` but you cannot add both.</span></span>
 
-<span data-ttu-id="5d001-131">I de flesta fall krävs bara en definition för varje bred vy, men det är möjligt att ha flera definitioner om du vill använda samma vy för att visa olika .NET-objekt.</span><span class="sxs-lookup"><span data-stu-id="5d001-131">In most cases, only one definition is required for each wide view, but it is possible to have multiple definitions if you want to use the same view to display different .NET objects.</span></span> <span data-ttu-id="5d001-132">I dessa fall kan du ange en separat definition för varje objekt eller uppsättning objekt.</span><span class="sxs-lookup"><span data-stu-id="5d001-132">In those cases, you can provide a separate definition for each object or set of objects.</span></span>
+<span data-ttu-id="1f806-131">I de flesta fall krävs bara en definition för varje bred vy, men det är möjligt att ha flera definitioner om du vill använda samma vy för att visa olika .NET-objekt.</span><span class="sxs-lookup"><span data-stu-id="1f806-131">In most cases, only one definition is required for each wide view, but it is possible to have multiple definitions if you want to use the same view to display different .NET objects.</span></span> <span data-ttu-id="1f806-132">I dessa fall kan du ange en separat definition för varje objekt eller uppsättning objekt.</span><span class="sxs-lookup"><span data-stu-id="1f806-132">In those cases, you can provide a separate definition for each object or set of objects.</span></span>
 
-<span data-ttu-id="5d001-133">Mer information om komponenterna i en bred vy finns i [wide View-komponenter](./creating-a-wide-view.md).</span><span class="sxs-lookup"><span data-stu-id="5d001-133">For more information about the components of a wide view, see [Wide View Components](./creating-a-wide-view.md).</span></span>
+<span data-ttu-id="1f806-133">Mer information om komponenterna i en bred vy finns i [wide View-komponenter](./creating-a-wide-view.md).</span><span class="sxs-lookup"><span data-stu-id="1f806-133">For more information about the components of a wide view, see [Wide View Components](./creating-a-wide-view.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="5d001-134">Exempel</span><span class="sxs-lookup"><span data-stu-id="5d001-134">Example</span></span>
+## <a name="example"></a><span data-ttu-id="1f806-134">Exempel</span><span class="sxs-lookup"><span data-stu-id="1f806-134">Example</span></span>
 
-<span data-ttu-id="5d001-135">I följande exempel visas ett `WideControl`-element som används för att visa en egenskap för objektet [system. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) .</span><span class="sxs-lookup"><span data-stu-id="5d001-135">The following example shows a `WideControl` element that is used to display a property of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object.</span></span>
+<span data-ttu-id="1f806-135">I följande exempel visas ett `WideControl`-element som används för att visa en egenskap för objektet [system. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) .</span><span class="sxs-lookup"><span data-stu-id="1f806-135">The following example shows a `WideControl` element that is used to display a property of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object.</span></span>
 
 ```xml
 <View>
@@ -77,20 +77,20 @@ ms.locfileid: "72358707"
 </View>
 ```
 
-<span data-ttu-id="5d001-136">Ett fullständigt exempel på en bred vy finns i [wide View (grundläggande)](./wide-view-basic.md).</span><span class="sxs-lookup"><span data-stu-id="5d001-136">For a complete example of a wide view, see [Wide View (Basic)](./wide-view-basic.md).</span></span>
+<span data-ttu-id="1f806-136">Ett fullständigt exempel på en bred vy finns i [wide View (grundläggande)](./wide-view-basic.md).</span><span class="sxs-lookup"><span data-stu-id="1f806-136">For a complete example of a wide view, see [Wide View (Basic)](./wide-view-basic.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="5d001-137">Se även</span><span class="sxs-lookup"><span data-stu-id="5d001-137">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1f806-137">Se även</span><span class="sxs-lookup"><span data-stu-id="1f806-137">See Also</span></span>
 
-[<span data-ttu-id="5d001-138">AutoSize-element för WideControl (format)</span><span class="sxs-lookup"><span data-stu-id="5d001-138">Autosize Element for WideControl (Format)</span></span>](./autosize-element-for-widecontrol-format.md)
+[<span data-ttu-id="1f806-138">AutoSize-element för WideControl (format)</span><span class="sxs-lookup"><span data-stu-id="1f806-138">Autosize Element for WideControl (Format)</span></span>](./autosize-element-for-widecontrol-format.md)
 
-[<span data-ttu-id="5d001-139">ColumnNumber-element för WideControl (format)</span><span class="sxs-lookup"><span data-stu-id="5d001-139">ColumnNumber Element for WideControl (Format)</span></span>](./columnnumber-element-for-widecontrol-format.md)
+[<span data-ttu-id="1f806-139">ColumnNumber-element för WideControl (format)</span><span class="sxs-lookup"><span data-stu-id="1f806-139">ColumnNumber Element for WideControl (Format)</span></span>](./columnnumber-element-for-widecontrol-format.md)
 
-[<span data-ttu-id="5d001-140">Visa element (format)</span><span class="sxs-lookup"><span data-stu-id="5d001-140">View Element (Format)</span></span>](./view-element-format.md)
+[<span data-ttu-id="1f806-140">Visa element (format)</span><span class="sxs-lookup"><span data-stu-id="1f806-140">View Element (Format)</span></span>](./view-element-format.md)
 
-[<span data-ttu-id="5d001-141">WideEntries-element (format)</span><span class="sxs-lookup"><span data-stu-id="5d001-141">WideEntries Element (Format)</span></span>](./wideentries-element-for-widecontrol-format.md)
+[<span data-ttu-id="1f806-141">WideEntries-element (format)</span><span class="sxs-lookup"><span data-stu-id="1f806-141">WideEntries Element (Format)</span></span>](./wideentries-element-for-widecontrol-format.md)
 
-[<span data-ttu-id="5d001-142">Bred vy (grundläggande)</span><span class="sxs-lookup"><span data-stu-id="5d001-142">Wide View (Basic)</span></span>](./wide-view-basic.md)
+[<span data-ttu-id="1f806-142">Bred vy (grundläggande)</span><span class="sxs-lookup"><span data-stu-id="1f806-142">Wide View (Basic)</span></span>](./wide-view-basic.md)
 
-[<span data-ttu-id="5d001-143">Skapa en bred vy</span><span class="sxs-lookup"><span data-stu-id="5d001-143">Creating a Wide View</span></span>](./creating-a-wide-view.md)
+[<span data-ttu-id="1f806-143">Skapa en bred vy</span><span class="sxs-lookup"><span data-stu-id="1f806-143">Creating a Wide View</span></span>](./creating-a-wide-view.md)
 
-[<span data-ttu-id="5d001-144">Skriva en fil med PowerShell-formatering</span><span class="sxs-lookup"><span data-stu-id="5d001-144">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="1f806-144">Skriva en fil med PowerShell-formatering</span><span class="sxs-lookup"><span data-stu-id="1f806-144">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
