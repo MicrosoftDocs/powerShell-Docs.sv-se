@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 6544070f-5549-407f-8603-5df60fe9e013
 caps.latest.revision: 7
 ms.openlocfilehash: 11804db56ec47554e82f04fe6954920ad9577370
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352985"
 ---
-# <a name="helpinfo-xml-sample-file"></a><span data-ttu-id="0bc8e-102">HelpInfo-XML-exempelfil</span><span class="sxs-lookup"><span data-stu-id="0bc8e-102">HelpInfo XML Sample File</span></span>
+# <a name="helpinfo-xml-sample-file"></a><span data-ttu-id="35374-102">HelpInfo-XML-exempelfil</span><span class="sxs-lookup"><span data-stu-id="35374-102">HelpInfo XML Sample File</span></span>
 
-<span data-ttu-id="0bc8e-103">I det här avsnittet visas ett exempel på en välformulerad uppdaterings bar hjälp informations fil, vanligt vis kallad "HelpInfo XML File".</span><span class="sxs-lookup"><span data-stu-id="0bc8e-103">This topic displays a sample of a well-formed Updatable Help Information file, commonly known as "HelpInfo XML file."</span></span> <span data-ttu-id="0bc8e-104">I den här exempel filen ordnas GRÄNSSNITTets kultur element i alfabetisk ordning efter användar gränssnittets kultur namn.</span><span class="sxs-lookup"><span data-stu-id="0bc8e-104">In this sample file, the UI culture elements are arranged in alphabetical order by UI culture name.</span></span> <span data-ttu-id="0bc8e-105">Alfabetisk ordning är en bra metod, men det är inget krav.</span><span class="sxs-lookup"><span data-stu-id="0bc8e-105">Alphabetical ordering is a best practice, but it is not required.</span></span>
+<span data-ttu-id="35374-103">I det här avsnittet visas ett exempel på en välformulerad uppdaterings bar hjälp informations fil, vanligt vis kallad "HelpInfo XML File".</span><span class="sxs-lookup"><span data-stu-id="35374-103">This topic displays a sample of a well-formed Updatable Help Information file, commonly known as "HelpInfo XML file."</span></span> <span data-ttu-id="35374-104">I den här exempel filen ordnas GRÄNSSNITTets kultur element i alfabetisk ordning efter användar gränssnittets kultur namn.</span><span class="sxs-lookup"><span data-stu-id="35374-104">In this sample file, the UI culture elements are arranged in alphabetical order by UI culture name.</span></span> <span data-ttu-id="35374-105">Alfabetisk ordning är en bra metod, men det är inget krav.</span><span class="sxs-lookup"><span data-stu-id="35374-105">Alphabetical ordering is a best practice, but it is not required.</span></span>
 
-## <a name="helpinfo-xml-sample-file"></a><span data-ttu-id="0bc8e-106">HelpInfo-XML-exempelfil</span><span class="sxs-lookup"><span data-stu-id="0bc8e-106">HelpInfo XML Sample File</span></span>
+## <a name="helpinfo-xml-sample-file"></a><span data-ttu-id="35374-106">HelpInfo-XML-exempelfil</span><span class="sxs-lookup"><span data-stu-id="35374-106">HelpInfo XML Sample File</span></span>
 
 ```xml
 

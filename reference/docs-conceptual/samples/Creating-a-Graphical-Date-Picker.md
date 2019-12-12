@@ -1,21 +1,21 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Skapa en grafisk datumväljare
 ms.openlocfilehash: d05445963b41af61a61aa29a425e638d43fb5d9d
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030248"
 ---
-# <a name="creating-a-graphical-date-picker"></a><span data-ttu-id="70b34-103">Skapa en grafisk datumväljare</span><span class="sxs-lookup"><span data-stu-id="70b34-103">Creating a Graphical Date Picker</span></span>
+# <a name="creating-a-graphical-date-picker"></a><span data-ttu-id="1bb7a-103">Skapa en grafisk datumväljare</span><span class="sxs-lookup"><span data-stu-id="1bb7a-103">Creating a Graphical Date Picker</span></span>
 
-<span data-ttu-id="70b34-104">Använda Windows PowerShell 3.0 och senare versioner för att skapa ett formulär med en grafisk, kalender-style-kontroll som användaren kan välja en dag i månaden.</span><span class="sxs-lookup"><span data-stu-id="70b34-104">Use Windows PowerShell 3.0 and later releases to create a form with a graphical, calendar-style control that lets users select a day of the month.</span></span>
+<span data-ttu-id="1bb7a-104">Använd Windows PowerShell 3,0 och senare versioner för att skapa ett formulär med en grafisk, kalender typ kontroll som låter användarna välja en dag i månaden.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-104">Use Windows PowerShell 3.0 and later releases to create a form with a graphical, calendar-style control that lets users select a day of the month.</span></span>
 
-## <a name="create-a-graphical-date-picker-control"></a><span data-ttu-id="70b34-105">Skapa en grafisk datumväljare-kontroll</span><span class="sxs-lookup"><span data-stu-id="70b34-105">Create a graphical date-picker control</span></span>
+## <a name="create-a-graphical-date-picker-control"></a><span data-ttu-id="1bb7a-105">Skapa en grafisk kontroll för datum väljare</span><span class="sxs-lookup"><span data-stu-id="1bb7a-105">Create a graphical date-picker control</span></span>
 
-<span data-ttu-id="70b34-106">Kopiera och klistra in följande i Windows PowerShell ISE och spara det som ett Windows PowerShell-skript (.ps1).</span><span class="sxs-lookup"><span data-stu-id="70b34-106">Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows PowerShell script (.ps1).</span></span>
+<span data-ttu-id="1bb7a-106">Kopiera och klistra in följande i Windows PowerShell ISE och spara det sedan som ett Windows PowerShell-skript (. ps1).</span><span class="sxs-lookup"><span data-stu-id="1bb7a-106">Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows PowerShell script (.ps1).</span></span>
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -60,8 +60,8 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 }
 ```
 
-<span data-ttu-id="70b34-107">Skriptet börjar genom att läsa in två .NET Framework-klasser: **System.Drawing** och **System.Windows.Forms**.</span><span class="sxs-lookup"><span data-stu-id="70b34-107">The script begins by loading two .NET Framework classes: **System.Drawing** and **System.Windows.Forms**.</span></span>
-<span data-ttu-id="70b34-108">Du startar sedan en ny instans av klassen .NET Framework **Windows.Forms.Form**; som innehåller ett tomt formulär eller fönster som du kan börja lägga till kontroller.</span><span class="sxs-lookup"><span data-stu-id="70b34-108">You then start a new instance of the .NET Framework class **Windows.Forms.Form**; that provides a blank form or window to which you can start adding controls.</span></span>
+<span data-ttu-id="1bb7a-107">Skriptet börjar genom att läsa in två .NET Framework klasser: **system. Drawing** och **system. Windows. Forms**.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-107">The script begins by loading two .NET Framework classes: **System.Drawing** and **System.Windows.Forms**.</span></span>
+<span data-ttu-id="1bb7a-108">Sedan startar du en ny instans av klassen **Windows. Forms. Forms**i .NET Framework. Det innehåller ett tomt formulär eller fönster som du kan börja lägga till kontroller i.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-108">You then start a new instance of the .NET Framework class **Windows.Forms.Form**; that provides a blank form or window to which you can start adding controls.</span></span>
 
 ```powershell
 $form = New-Object Windows.Forms.Form -Property @{
@@ -72,21 +72,21 @@ $form = New-Object Windows.Forms.Form -Property @{
 }
 ```
 
-<span data-ttu-id="70b34-109">Det här exemplet tilldelar värden till fyra egenskaperna för den här klassen med hjälp av den **egenskapen** egenskap och hash-tabell.</span><span class="sxs-lookup"><span data-stu-id="70b34-109">This example assigns values to four properties of this class by using the **Property** property and hashtable.</span></span>
+<span data-ttu-id="1bb7a-109">I det här exemplet tilldelas värden till fyra egenskaper för den här klassen med **egenskapen Property** och hash.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-109">This example assigns values to four properties of this class by using the **Property** property and hashtable.</span></span>
 
-1. <span data-ttu-id="70b34-110">**StartPosition**: Om du inte lägger till den här egenskapen, väljer en plats i Windows när formuläret öppnas.</span><span class="sxs-lookup"><span data-stu-id="70b34-110">**StartPosition**: If you don’t add this property, Windows selects a location when the form is opened.</span></span>
-   <span data-ttu-id="70b34-111">Genom att ställa in den här egenskapen **CenterScreen**, du automatiskt visar formuläret mitt på skärmen varje gång den läses in.</span><span class="sxs-lookup"><span data-stu-id="70b34-111">By setting this property to **CenterScreen**, you’re automatically displaying the form in the middle of the screen each time it loads.</span></span>
+1. <span data-ttu-id="1bb7a-110">**Start position**: om du inte lägger till den här egenskapen väljer Windows en plats när formuläret öppnas.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-110">**StartPosition**: If you don’t add this property, Windows selects a location when the form is opened.</span></span>
+   <span data-ttu-id="1bb7a-111">Genom att ange den här egenskapen som **CenterScreen**visas formuläret automatiskt i mitten av skärmen varje gången det läses in.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-111">By setting this property to **CenterScreen**, you’re automatically displaying the form in the middle of the screen each time it loads.</span></span>
 
-2. <span data-ttu-id="70b34-112">**Storlek**: Det här är storleken på formuläret i bildpunkter.</span><span class="sxs-lookup"><span data-stu-id="70b34-112">**Size**: This is the size of the form, in pixels.</span></span>
-   <span data-ttu-id="70b34-113">Det här skriptet skapar ett formulär som är 243 bildpunkter på bredden 230 pixlar hög.</span><span class="sxs-lookup"><span data-stu-id="70b34-113">The preceding script creates a form that’s 243 pixels wide by 230 pixels tall.</span></span>
+2. <span data-ttu-id="1bb7a-112">**Storlek**: det här är storleken på formuläret, i bild punkter.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-112">**Size**: This is the size of the form, in pixels.</span></span>
+   <span data-ttu-id="1bb7a-113">Föregående skript skapar ett formulär som är 243 bild punkter brett med 230 pixlar högt.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-113">The preceding script creates a form that’s 243 pixels wide by 230 pixels tall.</span></span>
 
-3. <span data-ttu-id="70b34-114">**Text**: Detta blir titeln på fönstret.</span><span class="sxs-lookup"><span data-stu-id="70b34-114">**Text**: This becomes the title of the window.</span></span>
+3. <span data-ttu-id="1bb7a-114">**Text**: detta blir rubriken för fönstret.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-114">**Text**: This becomes the title of the window.</span></span>
 
-4. <span data-ttu-id="70b34-115">**Översta**: Genom att ställa in den här egenskapen `$true`, du kan tvinga fönstret för att öppna ovanpå andra fönster och dialogrutor.</span><span class="sxs-lookup"><span data-stu-id="70b34-115">**Topmost**: By setting this property to `$true`, you can force the window to open atop other open windows and dialog boxes.</span></span>
+4. <span data-ttu-id="1bb7a-115">**Översta**: genom att ange den här egenskapen till `$true`, kan du tvinga fönstret att öppna ovanpå andra öppna fönster och dialog rutor.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-115">**Topmost**: By setting this property to `$true`, you can force the window to open atop other open windows and dialog boxes.</span></span>
 
-<span data-ttu-id="70b34-116">Sedan skapar och sedan lägga till en kalenderkontroll i formuläret.</span><span class="sxs-lookup"><span data-stu-id="70b34-116">Next, create and then add a calendar control in your form.</span></span>
-<span data-ttu-id="70b34-117">I det här exemplet är den aktuella dagen inte markerat eller inringade.</span><span class="sxs-lookup"><span data-stu-id="70b34-117">In this example, the current day is not highlighted or circled.</span></span>
-<span data-ttu-id="70b34-118">Användarna kan välja endast en dag i kalendern i taget.</span><span class="sxs-lookup"><span data-stu-id="70b34-118">Users can select only one day on the calendar at one time.</span></span>
+<span data-ttu-id="1bb7a-116">Skapa sedan och Lägg till en kalender kontroll i formuläret.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-116">Next, create and then add a calendar control in your form.</span></span>
+<span data-ttu-id="1bb7a-117">I det här exemplet är den aktuella dagen inte markerad eller inringad.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-117">In this example, the current day is not highlighted or circled.</span></span>
+<span data-ttu-id="1bb7a-118">Användarna kan bara välja en dag i kalendern i taget.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-118">Users can select only one day on the calendar at one time.</span></span>
 
 ```powershell
 $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
@@ -96,11 +96,11 @@ $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
 $form.Controls.Add($calendar)
 ```
 
-<span data-ttu-id="70b34-119">Skapa sedan en **OK** knappen för formuläret.</span><span class="sxs-lookup"><span data-stu-id="70b34-119">Next, create an **OK** button for your form.</span></span>
-<span data-ttu-id="70b34-120">Ange storlek och beteendet för den **OK** knappen.</span><span class="sxs-lookup"><span data-stu-id="70b34-120">Specify the size and behavior of the **OK** button.</span></span>
-<span data-ttu-id="70b34-121">I det här exemplet är knappen positionen 165 pixlar från formulärets övre kant och 38 pixlar från den vänstra kanten.</span><span class="sxs-lookup"><span data-stu-id="70b34-121">In this example, the button position is 165 pixels from the form’s top edge, and 38 pixels from the left edge.</span></span>
-<span data-ttu-id="70b34-122">Knappen höjden är 23 bildpunkter, medan den knapp längden är 75 bildpunkter.</span><span class="sxs-lookup"><span data-stu-id="70b34-122">The button height is 23 pixels, while the button length is 75 pixels.</span></span>
-<span data-ttu-id="70b34-123">Skriptet använder fördefinierade Windows Forms-typer för att fastställa knappen beteenden.</span><span class="sxs-lookup"><span data-stu-id="70b34-123">The script uses predefined Windows Forms types to determine the button behaviors.</span></span>
+<span data-ttu-id="1bb7a-119">Skapa sedan en **OK** -knapp för formuläret.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-119">Next, create an **OK** button for your form.</span></span>
+<span data-ttu-id="1bb7a-120">Ange storlek och beteende för **OK** -knappen.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-120">Specify the size and behavior of the **OK** button.</span></span>
+<span data-ttu-id="1bb7a-121">I det här exemplet är knapp positionen 165 bild punkter från formulärets övre kant och 38 pixlar från den vänstra kanten.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-121">In this example, the button position is 165 pixels from the form’s top edge, and 38 pixels from the left edge.</span></span>
+<span data-ttu-id="1bb7a-122">Knapp höjden är 23 bild punkter, medan knapp längden är 75 bild punkter.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-122">The button height is 23 pixels, while the button length is 75 pixels.</span></span>
+<span data-ttu-id="1bb7a-123">Skriptet använder fördefinierade Windows Forms typer för att fastställa knapp beteenden.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-123">The script uses predefined Windows Forms types to determine the button behaviors.</span></span>
 
 ```powershell
 $OKButton = New-Object Windows.Forms.Button -Property @{
@@ -113,8 +113,8 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-<span data-ttu-id="70b34-124">På samma sätt kan du skapa en **Avbryt** knappen.</span><span class="sxs-lookup"><span data-stu-id="70b34-124">Similarly, you create a **Cancel** button.</span></span>
-<span data-ttu-id="70b34-125">Den **Avbryt** knappen är 165 bildpunkter uppifrån, men 113 bildpunkter från den vänstra kanten av fönstret.</span><span class="sxs-lookup"><span data-stu-id="70b34-125">The **Cancel** button is 165 pixels from the top, but 113 pixels from the left edge of the window.</span></span>
+<span data-ttu-id="1bb7a-124">På samma sätt skapar du en **Avbryt** -knapp.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-124">Similarly, you create a **Cancel** button.</span></span>
+<span data-ttu-id="1bb7a-125">Knappen **Avbryt** är 165 bild punkter ovanifrån, men 113 pixlar från den vänstra kanten av fönstret.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-125">The **Cancel** button is 165 pixels from the top, but 113 pixels from the left edge of the window.</span></span>
 
 ```powershell
 $CancelButton = New-Object Windows.Forms.Button -Property @{
@@ -127,14 +127,14 @@ $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 ```
 
-<span data-ttu-id="70b34-126">Lägg till följande rad med kod för att visa formuläret i Windows.</span><span class="sxs-lookup"><span data-stu-id="70b34-126">Add the following line of code to display the form in Windows.</span></span>
+<span data-ttu-id="1bb7a-126">Lägg till följande kodrad för att visa formuläret i Windows.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-126">Add the following line of code to display the form in Windows.</span></span>
 
 ```powershell
 $result = $form.ShowDialog()
 ```
 
-<span data-ttu-id="70b34-127">Koden i den `if` block instruerar Windows vad som ska göras med formuläret när användare väljer en dag i kalendern och klicka sedan på den **OK** knapp eller genom att trycka på den **RETUR** nyckel.</span><span class="sxs-lookup"><span data-stu-id="70b34-127">Finally, the code inside the `if` block instructs Windows what to do with the form after users select a day on the calendar, and then click the **OK** button or press the **Enter** key.</span></span>
-<span data-ttu-id="70b34-128">Windows PowerShell visas det valda datumet för användarna.</span><span class="sxs-lookup"><span data-stu-id="70b34-128">Windows PowerShell displays the selected date to users.</span></span>
+<span data-ttu-id="1bb7a-127">Slutligen instruerar koden inuti `if`-blocket Windows vad som ska göras med formuläret när användarna har valt en dag i kalendern. Klicka sedan på **OK** eller tryck på **RETUR** -tangenten.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-127">Finally, the code inside the `if` block instructs Windows what to do with the form after users select a day on the calendar, and then click the **OK** button or press the **Enter** key.</span></span>
+<span data-ttu-id="1bb7a-128">Windows PowerShell visar det valda datumet för användarna.</span><span class="sxs-lookup"><span data-stu-id="1bb7a-128">Windows PowerShell displays the selected date to users.</span></span>
 
 ```powershell
 if ($result -eq [Windows.Forms.DialogResult]::OK) {
@@ -143,8 +143,8 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="70b34-129">Se även</span><span class="sxs-lookup"><span data-stu-id="70b34-129">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1bb7a-129">Se även</span><span class="sxs-lookup"><span data-stu-id="1bb7a-129">See Also</span></span>
 
-- [<span data-ttu-id="70b34-130">Hej skriptdoktorn:  Varför fungerar inte dessa PowerShell-GUI-exempel?</span><span class="sxs-lookup"><span data-stu-id="70b34-130">Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?</span></span>](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [<span data-ttu-id="70b34-131">GitHub: Dave Wyatt WinFormsExampleUpdates</span><span class="sxs-lookup"><span data-stu-id="70b34-131">GitHub: Dave Wyatt's WinFormsExampleUpdates</span></span>](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [<span data-ttu-id="70b34-132">Windows PowerShell-tips i veckan:  Skapa en grafisk datumväljare</span><span class="sxs-lookup"><span data-stu-id="70b34-132">Windows PowerShell Tip of the Week:  Creating a Graphical Date Picker</span></span>](https://technet.microsoft.com/library/ff730942.aspx)
+- [<span data-ttu-id="1bb7a-130">Hej Scripting Guy: Varför fungerar inte de här PowerShell-exemplen för användar gränssnitt?</span><span class="sxs-lookup"><span data-stu-id="1bb7a-130">Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?</span></span>](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [<span data-ttu-id="1bb7a-131">GitHub: Dave Wyatt s WinFormsExampleUpdates</span><span class="sxs-lookup"><span data-stu-id="1bb7a-131">GitHub: Dave Wyatt's WinFormsExampleUpdates</span></span>](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [<span data-ttu-id="1bb7a-132">Veckans Windows PowerShell-tips: skapa en grafisk datum väljare</span><span class="sxs-lookup"><span data-stu-id="1bb7a-132">Windows PowerShell Tip of the Week:  Creating a Graphical Date Picker</span></span>](https://technet.microsoft.com/library/ff730942.aspx)

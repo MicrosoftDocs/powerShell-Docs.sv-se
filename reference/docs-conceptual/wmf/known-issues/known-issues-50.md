@@ -3,114 +3,114 @@ ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Kända problem i WMF 5.0
 ms.openlocfilehash: 91f556cb43ef971107f05c4041b725b1c7e4f1bd
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71145133"
 ---
-# <a name="known-issues-in-wmf-50"></a><span data-ttu-id="bd1e9-103">Kända problem i WMF 5.0</span><span class="sxs-lookup"><span data-stu-id="bd1e9-103">Known Issues in WMF 5.0</span></span>
+# <a name="known-issues-in-wmf-50"></a><span data-ttu-id="9fd67-103">Kända problem i WMF 5.0</span><span class="sxs-lookup"><span data-stu-id="9fd67-103">Known Issues in WMF 5.0</span></span>
 
-## <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a><span data-ttu-id="bd1e9-104">PowerShell-genvägar är brutna när de används för första gången</span><span class="sxs-lookup"><span data-stu-id="bd1e9-104">PowerShell Shortcuts are broken when used for the first time</span></span>
+## <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a><span data-ttu-id="9fd67-104">PowerShell-genvägar är brutna när de används för första gången</span><span class="sxs-lookup"><span data-stu-id="9fd67-104">PowerShell Shortcuts are broken when used for the first time</span></span>
 
-<span data-ttu-id="bd1e9-105">**Lösning** Utför någon av följande åtgärder:</span><span class="sxs-lookup"><span data-stu-id="bd1e9-105">**Resolution:** Perform one of the following actions:</span></span>
+<span data-ttu-id="9fd67-105">**Lösning:** Utför någon av följande åtgärder:</span><span class="sxs-lookup"><span data-stu-id="9fd67-105">**Resolution:** Perform one of the following actions:</span></span>
 
-1. <span data-ttu-id="bd1e9-106">Högerklicka på PowerShell-genvägen.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-106">Right click on the PowerShell shortcut.</span></span> <span data-ttu-id="bd1e9-107">Välj Windows PowerShell för att starta i ett icke-förhöjd läge.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-107">Select "Windows PowerShell" to launch in a non-elevated mode.</span></span>
-2. <span data-ttu-id="bd1e9-108">Högerklicka på PowerShell-genvägen.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-108">Right click on the PowerShell shortcut.</span></span> <span data-ttu-id="bd1e9-109">Högerklicka på "Windows PowerShell" och välj "kör som administratör" för att starta i ett förhöjd läge.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-109">Right click on "Windows PowerShell" and select "Run As Administrator" to launch in an elevated mode.</span></span>
+1. <span data-ttu-id="9fd67-106">Högerklicka på PowerShell-genvägen.</span><span class="sxs-lookup"><span data-stu-id="9fd67-106">Right click on the PowerShell shortcut.</span></span> <span data-ttu-id="9fd67-107">Välj Windows PowerShell för att starta i ett icke-förhöjd läge.</span><span class="sxs-lookup"><span data-stu-id="9fd67-107">Select "Windows PowerShell" to launch in a non-elevated mode.</span></span>
+2. <span data-ttu-id="9fd67-108">Högerklicka på PowerShell-genvägen.</span><span class="sxs-lookup"><span data-stu-id="9fd67-108">Right click on the PowerShell shortcut.</span></span> <span data-ttu-id="9fd67-109">Högerklicka på "Windows PowerShell" och välj "kör som administratör" för att starta i ett förhöjd läge.</span><span class="sxs-lookup"><span data-stu-id="9fd67-109">Right click on "Windows PowerShell" and select "Run As Administrator" to launch in an elevated mode.</span></span>
 
-<span data-ttu-id="bd1e9-110">När du har utfört någon av ovanstående åtgärder kommer PowerShell-genvägar att fungera.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-110">Once you have performed either of the above actions, the PowerShell shortcuts will work.</span></span> <span data-ttu-id="bd1e9-111">De här åtgärderna behöver bara utföras en gång.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-111">These actions need to be performed only once.</span></span>
+<span data-ttu-id="9fd67-110">När du har utfört någon av ovanstående åtgärder kommer PowerShell-genvägar att fungera.</span><span class="sxs-lookup"><span data-stu-id="9fd67-110">Once you have performed either of the above actions, the PowerShell shortcuts will work.</span></span> <span data-ttu-id="9fd67-111">De här åtgärderna behöver bara utföras en gång.</span><span class="sxs-lookup"><span data-stu-id="9fd67-111">These actions need to be performed only once.</span></span>
 
-## <a name="powershell-modules-and-dsc-resources-report-errors-about-executionpolicy-on-windows-7"></a><span data-ttu-id="bd1e9-112">PowerShell-moduler och DSC-resurser rapporterar fel om ExecutionPolicy i Windows 7</span><span class="sxs-lookup"><span data-stu-id="bd1e9-112">PowerShell Modules and DSC Resources report errors about ExecutionPolicy on Windows 7</span></span>
+## <a name="powershell-modules-and-dsc-resources-report-errors-about-executionpolicy-on-windows-7"></a><span data-ttu-id="9fd67-112">PowerShell-moduler och DSC-resurser rapporterar fel om ExecutionPolicy i Windows 7</span><span class="sxs-lookup"><span data-stu-id="9fd67-112">PowerShell Modules and DSC Resources report errors about ExecutionPolicy on Windows 7</span></span>
 
-<span data-ttu-id="bd1e9-113">I Windows 7 kan använda PowerShell-moduler och DSC-resurser resultera i fel som rapporteras om ExecutionPolicy.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-113">On Windows 7, using PowerShell modules and DSC resources may result in errors reported about ExecutionPolicy.</span></span>
+<span data-ttu-id="9fd67-113">I Windows 7 kan använda PowerShell-moduler och DSC-resurser resultera i fel som rapporteras om ExecutionPolicy.</span><span class="sxs-lookup"><span data-stu-id="9fd67-113">On Windows 7, using PowerShell modules and DSC resources may result in errors reported about ExecutionPolicy.</span></span>
 
-<span data-ttu-id="bd1e9-114">**Lösning** Ange ExecutionPolicy till **RemoteSigned** genom att köra följande kommando i en upphöjd PowerShell-session (kör som administratör):</span><span class="sxs-lookup"><span data-stu-id="bd1e9-114">**Resolution:** Set the ExecutionPolicy to **RemoteSigned** by running the following command in an elevated PowerShell session (Run as Administrator):</span></span>
+<span data-ttu-id="9fd67-114">**Lösning:** Ange ExecutionPolicy till **RemoteSigned** genom att köra följande kommando i en upphöjd PowerShell-session (kör som administratör):</span><span class="sxs-lookup"><span data-stu-id="9fd67-114">**Resolution:** Set the ExecutionPolicy to **RemoteSigned** by running the following command in an elevated PowerShell session (Run as Administrator):</span></span>
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
 ```
 
-## <a name="connecting-to-an-old-remote-exchange-endpoint-causes-a-crash"></a><span data-ttu-id="bd1e9-115">Att ansluta till en gammal fjärrslutpunkt i Exchange orsakar en krasch</span><span class="sxs-lookup"><span data-stu-id="bd1e9-115">Connecting to an old remote Exchange endpoint causes a crash</span></span>
+## <a name="connecting-to-an-old-remote-exchange-endpoint-causes-a-crash"></a><span data-ttu-id="9fd67-115">Att ansluta till en gammal fjärrslutpunkt i Exchange orsakar en krasch</span><span class="sxs-lookup"><span data-stu-id="9fd67-115">Connecting to an old remote Exchange endpoint causes a crash</span></span>
 
-<span data-ttu-id="bd1e9-116">Den gamla Exchange-slutpunkten omdirigeras till en ny slut punkt.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-116">The old Exchange endpoint redirects to a new endpoint.</span></span> <span data-ttu-id="bd1e9-117">Det finns ett fel i den omdirigerings logik som resulterar i en krasch.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-117">There is a bug in the redirection logic that results in a crash.</span></span>
+<span data-ttu-id="9fd67-116">Den gamla Exchange-slutpunkten omdirigeras till en ny slut punkt.</span><span class="sxs-lookup"><span data-stu-id="9fd67-116">The old Exchange endpoint redirects to a new endpoint.</span></span> <span data-ttu-id="9fd67-117">Det finns ett fel i den omdirigerings logik som resulterar i en krasch.</span><span class="sxs-lookup"><span data-stu-id="9fd67-117">There is a bug in the redirection logic that results in a crash.</span></span>
 
-<span data-ttu-id="bd1e9-118">**Lösning** Anslut direkt till den nya slut punkten.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-118">**Resolution:** Connect directly to the new endpoint.</span></span>
+<span data-ttu-id="9fd67-118">**Lösning:** Anslut direkt till den nya slut punkten.</span><span class="sxs-lookup"><span data-stu-id="9fd67-118">**Resolution:** Connect directly to the new endpoint.</span></span>
 
-## <a name="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2"></a><span data-ttu-id="bd1e9-119">Funktionen för loggning av program varu inventering stoppades felaktigt efter installationen av WMF 5,0 på Windows Server 2012 R2</span><span class="sxs-lookup"><span data-stu-id="bd1e9-119">Software Inventory Logging feature is erroneously stopped after WMF 5.0 installation on Windows Server 2012 R2</span></span>
+## <a name="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2"></a><span data-ttu-id="9fd67-119">Funktionen för loggning av program varu inventering stoppades felaktigt efter installationen av WMF 5,0 på Windows Server 2012 R2</span><span class="sxs-lookup"><span data-stu-id="9fd67-119">Software Inventory Logging feature is erroneously stopped after WMF 5.0 installation on Windows Server 2012 R2</span></span>
 
-<span data-ttu-id="bd1e9-120">När du installerar WMF 5,0 på en Windows Server 2012 R2 som redan kör SIL stoppas loggnings funktionen för program varu inventering felaktigt efter installationen.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-120">When installing WMF 5.0 on a Windows Server 2012 R2 that is already running SIL, the Software Inventory Logging feature is erroneously stopped after installation.</span></span>
+<span data-ttu-id="9fd67-120">När du installerar WMF 5,0 på en Windows Server 2012 R2 som redan kör SIL stoppas loggnings funktionen för program varu inventering felaktigt efter installationen.</span><span class="sxs-lookup"><span data-stu-id="9fd67-120">When installing WMF 5.0 on a Windows Server 2012 R2 that is already running SIL, the Software Inventory Logging feature is erroneously stopped after installation.</span></span>
 
-<span data-ttu-id="bd1e9-121">**Lösning** `Start-SilLogging` Kör cmdleten en gång efter WMF-installationen, som installations processen kommer att felaktigt stoppa funktionen för Software Inventory Logging.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-121">**Resolution:** Run the `Start-SilLogging` cmdlet once after the WMF installation, as the installation process will errantly stop the Software Inventory Logging feature.</span></span>
+<span data-ttu-id="9fd67-121">**Lösning:** Kör cmdleten `Start-SilLogging` en gång efter installationen av WMF, som i installations processen för att stoppa funktionen för program varu inventerings loggning.</span><span class="sxs-lookup"><span data-stu-id="9fd67-121">**Resolution:** Run the `Start-SilLogging` cmdlet once after the WMF installation, as the installation process will errantly stop the Software Inventory Logging feature.</span></span>
 
-## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a><span data-ttu-id="bd1e9-122">`Get-ChildItem`fungerar inte om-LiteralPath och-rekursivt används tillsammans</span><span class="sxs-lookup"><span data-stu-id="bd1e9-122">`Get-ChildItem` does not work if -LiteralPath and -Recurse are used together</span></span>
+## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a><span data-ttu-id="9fd67-122">`Get-ChildItem` fungerar inte om-LiteralPath och-rekursivt används tillsammans</span><span class="sxs-lookup"><span data-stu-id="9fd67-122">`Get-ChildItem` does not work if -LiteralPath and -Recurse are used together</span></span>
 
-<span data-ttu-id="bd1e9-123">Om ett katalog namn innehåller ett ogiltigt jokertecken `Get-ChildItem` kommer inte att generera förväntade resultat när både-LiteralPath och-rekursivt används tillsammans.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-123">If a directory name contains an invalid wildcard character, then `Get-ChildItem` will not produce expected results when both -LiteralPath and -Recurse are used together.</span></span>
+<span data-ttu-id="9fd67-123">Om ett katalog namn innehåller ett ogiltigt jokertecken kommer `Get-ChildItem` inte att generera förväntade resultat när både-LiteralPath och-rekursivt används tillsammans.</span><span class="sxs-lookup"><span data-stu-id="9fd67-123">If a directory name contains an invalid wildcard character, then `Get-ChildItem` will not produce expected results when both -LiteralPath and -Recurse are used together.</span></span>
 
-<span data-ttu-id="bd1e9-124">**Lösning** Inte idealisk, men den aktuella lösningen är att implementera rekursion i skriptet i stället för att använda cmdleten.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-124">**Resolution:** Not ideal, but current workaround is to implement recursion in the script rather than rely on the cmdlet.</span></span>
+<span data-ttu-id="9fd67-124">**Lösning:** Inte idealisk, men den aktuella lösningen är att implementera rekursion i skriptet i stället för att använda cmdleten.</span><span class="sxs-lookup"><span data-stu-id="9fd67-124">**Resolution:** Not ideal, but current workaround is to implement recursion in the script rather than rely on the cmdlet.</span></span>
 
-## <a name="sysprep-fails-after-wmf-50-installation"></a><span data-ttu-id="bd1e9-125">Sysprep Miss lyckas efter installation av WMF 5,0</span><span class="sxs-lookup"><span data-stu-id="bd1e9-125">Sysprep fails after WMF 5.0 installation</span></span>
+## <a name="sysprep-fails-after-wmf-50-installation"></a><span data-ttu-id="9fd67-125">Sysprep Miss lyckas efter installation av WMF 5,0</span><span class="sxs-lookup"><span data-stu-id="9fd67-125">Sysprep fails after WMF 5.0 installation</span></span>
 
-<span data-ttu-id="bd1e9-126">Det finns två sätt att lösa problemet, beroende på vilken version av Windows Server du kör.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-126">There are two workarounds for this issue depending on the version of Windows Server you are running.</span></span>
+<span data-ttu-id="9fd67-126">Det finns två sätt att lösa problemet, beroende på vilken version av Windows Server du kör.</span><span class="sxs-lookup"><span data-stu-id="9fd67-126">There are two workarounds for this issue depending on the version of Windows Server you are running.</span></span>
 
-<span data-ttu-id="bd1e9-127">**Lösning**</span><span class="sxs-lookup"><span data-stu-id="bd1e9-127">**Resolution:**</span></span>
+<span data-ttu-id="9fd67-127">**Lösning:**</span><span class="sxs-lookup"><span data-stu-id="9fd67-127">**Resolution:**</span></span>
 
-- <span data-ttu-id="bd1e9-128">För system som kör **Windows Server 2008 R2**</span><span class="sxs-lookup"><span data-stu-id="bd1e9-128">For systems running **Windows Server 2008 R2**</span></span>
-  1. <span data-ttu-id="bd1e9-129">Öppna PowerShell som administratör</span><span class="sxs-lookup"><span data-stu-id="bd1e9-129">Open PowerShell as an administrator</span></span>
-  2. <span data-ttu-id="bd1e9-130">Kör följande kommando</span><span class="sxs-lookup"><span data-stu-id="bd1e9-130">Run the following command</span></span>
+- <span data-ttu-id="9fd67-128">För system som kör **Windows Server 2008 R2**</span><span class="sxs-lookup"><span data-stu-id="9fd67-128">For systems running **Windows Server 2008 R2**</span></span>
+  1. <span data-ttu-id="9fd67-129">Öppna PowerShell som administratör</span><span class="sxs-lookup"><span data-stu-id="9fd67-129">Open PowerShell as an administrator</span></span>
+  2. <span data-ttu-id="9fd67-130">Kör följande kommando</span><span class="sxs-lookup"><span data-stu-id="9fd67-130">Run the following command</span></span>
 
      ```powershell
      Set-SilLogging -TargetUri https://BlankTarget -CertificateThumbprint 0123456789
      ```
 
-  3. <span data-ttu-id="bd1e9-131">Kör kommandot och Ignorera felet, eftersom det förväntas.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-131">Run the command and ignore the error, as they are expected.</span></span>
+  3. <span data-ttu-id="9fd67-131">Kör kommandot och Ignorera felet, eftersom det förväntas.</span><span class="sxs-lookup"><span data-stu-id="9fd67-131">Run the command and ignore the error, as they are expected.</span></span>
 
      ```powershell
      Publish-SilData
      ```
 
-  4. <span data-ttu-id="bd1e9-132">Ta bort filerna i \Windows\System32\Logfiles\SIL\-katalogen</span><span class="sxs-lookup"><span data-stu-id="bd1e9-132">Delete the files in  \Windows\System32\Logfiles\SIL\ directory</span></span>
+  4. <span data-ttu-id="9fd67-132">Ta bort filerna i \Windows\System32\Logfiles\SIL\-katalogen</span><span class="sxs-lookup"><span data-stu-id="9fd67-132">Delete the files in  \Windows\System32\Logfiles\SIL\ directory</span></span>
 
      ```powershell
      Remove-Item -Recurse $env:SystemRoot\System32\Logfiles\SIL\
      ```
 
-  5. <span data-ttu-id="bd1e9-133">Installera alla tillgängliga viktiga Windows-uppdateringar och starta Sysyprep-åtgärden normalt.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-133">Install all available important Windows Updates, and begin Sysyprep operation normally.</span></span>
+  5. <span data-ttu-id="9fd67-133">Installera alla tillgängliga viktiga Windows-uppdateringar och starta Sysyprep-åtgärden normalt.</span><span class="sxs-lookup"><span data-stu-id="9fd67-133">Install all available important Windows Updates, and begin Sysyprep operation normally.</span></span>
 
-- <span data-ttu-id="bd1e9-134">För system som kör **Windows Server 2012**</span><span class="sxs-lookup"><span data-stu-id="bd1e9-134">For systems running **Windows Server 2012**</span></span>
-  1. <span data-ttu-id="bd1e9-135">Logga in som administratör när du har installerat WMF 5,0 på servern som ska Sysprep.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-135">After installing WMF 5.0 on the server to be Sysprep'd, login as administrator.</span></span>
-  2. <span data-ttu-id="bd1e9-136">Kopiera Generize. XML från katalogen `\Windows\System32\Sysprep\ActionFiles\` till en plats utanför Windows-katalogen, `C:\` till exempel.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-136">Copy Generize.xml from directory `\Windows\System32\Sysprep\ActionFiles\` to a location outside of the Windows directory, `C:\` for example.</span></span>
-  3. <span data-ttu-id="bd1e9-137">Öppna din generalize. XML-kopia med anteckningar.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-137">Open your Generalize.xml copy with notepad.</span></span>
-  4. <span data-ttu-id="bd1e9-138">Hitta och ta bort följande text, en instans av varje måste tas bort (de kommer snart i slutet av dokumentet).</span><span class="sxs-lookup"><span data-stu-id="bd1e9-138">Find and remove the following text, one instance of each needs to be deleted (they will be near the end of the document).</span></span>
+- <span data-ttu-id="9fd67-134">För system som kör **Windows Server 2012**</span><span class="sxs-lookup"><span data-stu-id="9fd67-134">For systems running **Windows Server 2012**</span></span>
+  1. <span data-ttu-id="9fd67-135">Logga in som administratör när du har installerat WMF 5,0 på servern som ska Sysprep.</span><span class="sxs-lookup"><span data-stu-id="9fd67-135">After installing WMF 5.0 on the server to be Sysprep'd, login as administrator.</span></span>
+  2. <span data-ttu-id="9fd67-136">Kopiera Generize. XML från katalogen `\Windows\System32\Sysprep\ActionFiles\` till en plats utanför Windows-katalogen, `C:\` till exempel.</span><span class="sxs-lookup"><span data-stu-id="9fd67-136">Copy Generize.xml from directory `\Windows\System32\Sysprep\ActionFiles\` to a location outside of the Windows directory, `C:\` for example.</span></span>
+  3. <span data-ttu-id="9fd67-137">Öppna din generalize. XML-kopia med anteckningar.</span><span class="sxs-lookup"><span data-stu-id="9fd67-137">Open your Generalize.xml copy with notepad.</span></span>
+  4. <span data-ttu-id="9fd67-138">Hitta och ta bort följande text, en instans av varje måste tas bort (de kommer snart i slutet av dokumentet).</span><span class="sxs-lookup"><span data-stu-id="9fd67-138">Find and remove the following text, one instance of each needs to be deleted (they will be near the end of the document).</span></span>
 
      ```xml
      <sysprepOrder order="0x3200"></sysprepOrder>
      <sysprepOrder order="0x3300"></sysprepOrder>
      ```
 
-  5. <span data-ttu-id="bd1e9-139">Spara den redigerade kopian av generalize. xml och Stäng filen.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-139">Save the edited copy of Generalize.xml and close the file.</span></span>
-  6. <span data-ttu-id="bd1e9-140">Öppna en kommando tolk som administratör</span><span class="sxs-lookup"><span data-stu-id="bd1e9-140">Open a command prompt as administrator</span></span>
-  7. <span data-ttu-id="bd1e9-141">Kör följande kommando för att bli ägare till filen generalize. xml i mappen System32:</span><span class="sxs-lookup"><span data-stu-id="bd1e9-141">Run the following command to take ownership of the Generalize.xml file in system32 folder:</span></span>
+  5. <span data-ttu-id="9fd67-139">Spara den redigerade kopian av generalize. xml och Stäng filen.</span><span class="sxs-lookup"><span data-stu-id="9fd67-139">Save the edited copy of Generalize.xml and close the file.</span></span>
+  6. <span data-ttu-id="9fd67-140">Öppna en kommando tolk som administratör</span><span class="sxs-lookup"><span data-stu-id="9fd67-140">Open a command prompt as administrator</span></span>
+  7. <span data-ttu-id="9fd67-141">Kör följande kommando för att bli ägare till filen generalize. xml i mappen System32:</span><span class="sxs-lookup"><span data-stu-id="9fd67-141">Run the following command to take ownership of the Generalize.xml file in system32 folder:</span></span>
 
      ```powershell
      Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml
      ```
 
-  8. <span data-ttu-id="bd1e9-142">Kör följande kommando för att ange rätt behörighet för filen:</span><span class="sxs-lookup"><span data-stu-id="bd1e9-142">Run the following command to set appropriate permission on the file:</span></span>
+  8. <span data-ttu-id="9fd67-142">Kör följande kommando för att ange rätt behörighet för filen:</span><span class="sxs-lookup"><span data-stu-id="9fd67-142">Run the following command to set appropriate permission on the file:</span></span>
 
      ```powershell
      Cacls C:\Windows\System32\ Sysprep\ActionFiles\Generalize.xml /G `<AdministratorUserName>`:F
      ```
 
-     - <span data-ttu-id="bd1e9-143">Svara Ja när du uppmanas att bekräfta.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-143">Answer Yes at the prompt for confirmation.</span></span>
-     - <span data-ttu-id="bd1e9-144">Observera att `<AdministratorUserName>` ska ersättas med det användar namn som är administratör på datorn.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-144">Note that `<AdministratorUserName>` should be replaced by the username who is administrator on the machine.</span></span> <span data-ttu-id="bd1e9-145">Till exempel "administratör".</span><span class="sxs-lookup"><span data-stu-id="bd1e9-145">For example, "Administrator".</span></span>
+     - <span data-ttu-id="9fd67-143">Svara Ja när du uppmanas att bekräfta.</span><span class="sxs-lookup"><span data-stu-id="9fd67-143">Answer Yes at the prompt for confirmation.</span></span>
+     - <span data-ttu-id="9fd67-144">Observera att `<AdministratorUserName>` ska ersättas av det användar namn som är administratör på datorn.</span><span class="sxs-lookup"><span data-stu-id="9fd67-144">Note that `<AdministratorUserName>` should be replaced by the username who is administrator on the machine.</span></span> <span data-ttu-id="9fd67-145">Till exempel "administratör".</span><span class="sxs-lookup"><span data-stu-id="9fd67-145">For example, "Administrator".</span></span>
 
-  9. <span data-ttu-id="bd1e9-146">Kopiera filen som du redigerade och sparade över till Sysprep-katalogen med följande kommando:</span><span class="sxs-lookup"><span data-stu-id="bd1e9-146">Copy the file you edited and saved over to the Sysprep directory using the following command:</span></span>
+  9. <span data-ttu-id="9fd67-146">Kopiera filen som du redigerade och sparade över till Sysprep-katalogen med följande kommando:</span><span class="sxs-lookup"><span data-stu-id="9fd67-146">Copy the file you edited and saved over to the Sysprep directory using the following command:</span></span>
 
      ```powershell
      xcopy C:\Generalize.xml C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml
      ```
 
-     - <span data-ttu-id="bd1e9-147">Svara ja till Skriv över (Observera att om det inte finns någon uppfråga för att skriva över, måste du kontrol lera sökvägen som anges).</span><span class="sxs-lookup"><span data-stu-id="bd1e9-147">Answer Yes to overwrite (note that if there is no prompt to overwrite, double check the path entered).</span></span>
-     - <span data-ttu-id="bd1e9-148">Förutsätter att din redigerade kopia av generalize. XML har kopierats till C:\.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-148">Assumes your edited copy of Generalize.xml was copied to C:\ .</span></span>
+     - <span data-ttu-id="9fd67-147">Svara ja till Skriv över (Observera att om det inte finns någon uppfråga för att skriva över, måste du kontrol lera sökvägen som anges).</span><span class="sxs-lookup"><span data-stu-id="9fd67-147">Answer Yes to overwrite (note that if there is no prompt to overwrite, double check the path entered).</span></span>
+     - <span data-ttu-id="9fd67-148">Förutsätter att din redigerade kopia av generalize. XML har kopierats till C:\.</span><span class="sxs-lookup"><span data-stu-id="9fd67-148">Assumes your edited copy of Generalize.xml was copied to C:\ .</span></span>
 
-  10. <span data-ttu-id="bd1e9-149">Generalize. XML har nu uppdaterats med lösningen.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-149">Generalize.xml is now updated with the workaround.</span></span> <span data-ttu-id="bd1e9-150">Kör Sysprep med generalize-alternativet aktiverat.</span><span class="sxs-lookup"><span data-stu-id="bd1e9-150">Please run Sysprep with the generalize option enabled.</span></span>
+  10. <span data-ttu-id="9fd67-149">Generalize. XML har nu uppdaterats med lösningen.</span><span class="sxs-lookup"><span data-stu-id="9fd67-149">Generalize.xml is now updated with the workaround.</span></span> <span data-ttu-id="9fd67-150">Kör Sysprep med generalize-alternativet aktiverat.</span><span class="sxs-lookup"><span data-stu-id="9fd67-150">Please run Sysprep with the generalize option enabled.</span></span>

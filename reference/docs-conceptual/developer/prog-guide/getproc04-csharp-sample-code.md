@@ -9,27 +9,27 @@ ms.topic: article
 ms.assetid: 439ba3f3-91b1-46a4-8d07-9af6edb71bc4
 caps.latest.revision: 5
 ms.openlocfilehash: 0ca2ccc5188f0c1784ec14ac204c1fdd624c2e66
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416111"
 ---
-# <a name="getproc04-c-sample-code"></a><span data-ttu-id="70b5e-102">GetProc04 (C#) – kodexempel</span><span class="sxs-lookup"><span data-stu-id="70b5e-102">GetProc04 (C#) Sample Code</span></span>
+# <a name="getproc04-c-sample-code"></a><span data-ttu-id="96880-102">GetProc04 (C#) – kodexempel</span><span class="sxs-lookup"><span data-stu-id="96880-102">GetProc04 (C#) Sample Code</span></span>
 
-<span data-ttu-id="70b5e-103">Följande kod visar implementeringen av en `Get-Process`-cmdlet som rapporterar att det inte går att avsluta fel.</span><span class="sxs-lookup"><span data-stu-id="70b5e-103">The following code shows the implementation of a `Get-Process` cmdlet that reports nonterminating errors.</span></span> <span data-ttu-id="70b5e-104">Den här implementeringen anropar metoden [system. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) för att rapportera att det inte går att avsluta fel.</span><span class="sxs-lookup"><span data-stu-id="70b5e-104">This implementation calls the [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method to report nonterminating errors.</span></span>
+<span data-ttu-id="96880-103">Följande kod visar implementeringen av en `Get-Process`-cmdlet som rapporterar att det inte går att avsluta fel.</span><span class="sxs-lookup"><span data-stu-id="96880-103">The following code shows the implementation of a `Get-Process` cmdlet that reports nonterminating errors.</span></span> <span data-ttu-id="96880-104">Den här implementeringen anropar metoden [system. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) för att rapportera att det inte går att avsluta fel.</span><span class="sxs-lookup"><span data-stu-id="96880-104">This implementation calls the [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method to report nonterminating errors.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="70b5e-105">Du kan ladda ned C# käll filen (getprov04.CS) för den här get-proc-cmdleten med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter.</span><span class="sxs-lookup"><span data-stu-id="70b5e-105">You can download the C# source file (getprov04.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="70b5e-106">Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="70b5e-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="96880-105">Du kan ladda ned C# käll filen (getprov04.CS) för den här get-proc-cmdleten med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter.</span><span class="sxs-lookup"><span data-stu-id="96880-105">You can download the C# source file (getprov04.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="96880-106">Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="96880-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
 >
-> <span data-ttu-id="70b5e-107">De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** .</span><span class="sxs-lookup"><span data-stu-id="70b5e-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="96880-107">De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** .</span><span class="sxs-lookup"><span data-stu-id="96880-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="70b5e-108">Kod exempel</span><span class="sxs-lookup"><span data-stu-id="70b5e-108">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="96880-108">Kod exempel</span><span class="sxs-lookup"><span data-stu-id="96880-108">Code Sample</span></span>
 
 [!code-csharp[GetProcessSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample04/GetProcessSample04.cs#L11-L98 "GetProcessSample04.cs")]
 
-## <a name="see-also"></a><span data-ttu-id="70b5e-109">Se även</span><span class="sxs-lookup"><span data-stu-id="70b5e-109">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="96880-109">Se även</span><span class="sxs-lookup"><span data-stu-id="96880-109">See Also</span></span>
 
-[<span data-ttu-id="70b5e-110">Windows PowerShell Programmer ' s guide</span><span class="sxs-lookup"><span data-stu-id="70b5e-110">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="96880-110">Windows PowerShell Programmer ' s guide</span><span class="sxs-lookup"><span data-stu-id="96880-110">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="70b5e-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="70b5e-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="96880-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="96880-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

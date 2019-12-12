@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
 ms.openlocfilehash: 19de0fd33cd764c161366c8161adf46c2247482b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352572"
 ---
-# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="5b9a6-102">Runspace01 (VB.NET) – kodexempel</span><span class="sxs-lookup"><span data-stu-id="5b9a6-102">Runspace01 (VB.NET) Code Sample</span></span>
+# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="8a93e-102">Runspace01 (VB.NET) – kodexempel</span><span class="sxs-lookup"><span data-stu-id="8a93e-102">Runspace01 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="5b9a6-103">Här är kod exemplen för körnings utrymme som beskrivs i [skapa ett konsol program som kör ett angivet kommando](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).</span><span class="sxs-lookup"><span data-stu-id="5b9a6-103">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).</span></span> <span data-ttu-id="5b9a6-104">För att göra detta anropar programmet en körnings utrymme och anropar sedan ett kommando.</span><span class="sxs-lookup"><span data-stu-id="5b9a6-104">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="5b9a6-105">(Observera att det här programmet inte anger körnings utrymme konfigurations information eller inte uttryckligen skapar en pipeline.) Kommandot som anropas är cmdleten `Get-Process`.</span><span class="sxs-lookup"><span data-stu-id="5b9a6-105">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
+<span data-ttu-id="8a93e-103">Här är kod exemplen för körnings utrymme som beskrivs i [skapa ett konsol program som kör ett angivet kommando](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).</span><span class="sxs-lookup"><span data-stu-id="8a93e-103">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).</span></span> <span data-ttu-id="8a93e-104">För att göra detta anropar programmet en körnings utrymme och anropar sedan ett kommando.</span><span class="sxs-lookup"><span data-stu-id="8a93e-104">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="8a93e-105">(Observera att det här programmet inte anger körnings utrymme konfigurations information eller inte uttryckligen skapar en pipeline.) Kommandot som anropas är `Get-Process`-cmdleten.</span><span class="sxs-lookup"><span data-stu-id="8a93e-105">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="5b9a6-106">Kod exempel</span><span class="sxs-lookup"><span data-stu-id="5b9a6-106">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="8a93e-106">Kod exempel</span><span class="sxs-lookup"><span data-stu-id="8a93e-106">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -71,6 +71,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace01.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace01.vb#L09-L53 "Runspace01.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="5b9a6-107">Se även</span><span class="sxs-lookup"><span data-stu-id="5b9a6-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8a93e-107">Se även</span><span class="sxs-lookup"><span data-stu-id="8a93e-107">See Also</span></span>
 
-[<span data-ttu-id="5b9a6-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="5b9a6-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="8a93e-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="8a93e-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

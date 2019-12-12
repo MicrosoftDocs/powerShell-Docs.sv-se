@@ -3,179 +3,179 @@ ms.date: 08/27/2018
 keywords: PowerShell, cmdlet
 title: Få detaljerad hjälpinformation
 ms.openlocfilehash: e722eb8a0ca13e3d2de864314775a0a9fa578390
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417656"
 ---
-# <a name="getting-detailed-help-information"></a><span data-ttu-id="43477-103">Få detaljerad hjälpinformation</span><span class="sxs-lookup"><span data-stu-id="43477-103">Getting detailed help information</span></span>
+# <a name="getting-detailed-help-information"></a><span data-ttu-id="5e930-103">Få detaljerad hjälpinformation</span><span class="sxs-lookup"><span data-stu-id="5e930-103">Getting detailed help information</span></span>
 
-<span data-ttu-id="43477-104">PowerShell innehåller detaljerade hjälp artiklar som förklarar PowerShell-koncept och PowerShell-språket.</span><span class="sxs-lookup"><span data-stu-id="43477-104">PowerShell includes detailed Help articles that explain PowerShell concepts and the PowerShell language.</span></span> <span data-ttu-id="43477-105">Det finns också hjälp artiklar för varje cmdlet och Provider och för många funktioner och skript.</span><span class="sxs-lookup"><span data-stu-id="43477-105">There are also Help articles for each cmdlet and provider and for many functions and scripts.</span></span>
+<span data-ttu-id="5e930-104">PowerShell innehåller detaljerade hjälp artiklar som förklarar PowerShell-koncept och PowerShell-språket.</span><span class="sxs-lookup"><span data-stu-id="5e930-104">PowerShell includes detailed Help articles that explain PowerShell concepts and the PowerShell language.</span></span> <span data-ttu-id="5e930-105">Det finns också hjälp artiklar för varje cmdlet och Provider och för många funktioner och skript.</span><span class="sxs-lookup"><span data-stu-id="5e930-105">There are also Help articles for each cmdlet and provider and for many functions and scripts.</span></span>
 
-<span data-ttu-id="43477-106">Du kan visa dessa hjälp artiklar i kommando tolken eller Visa de senaste uppdaterade versionerna av de här artiklarna i [PowerShell](/powershell/scripting/overview) -dokumentationen online.</span><span class="sxs-lookup"><span data-stu-id="43477-106">You can display these Help articles at the command prompt or view the most recently updated versions of these articles in the [PowerShell](/powershell/scripting/overview) documentation online.</span></span>
+<span data-ttu-id="5e930-106">Du kan visa dessa hjälp artiklar i kommando tolken eller Visa de senaste uppdaterade versionerna av de här artiklarna i [PowerShell](/powershell/scripting/overview) -dokumentationen online.</span><span class="sxs-lookup"><span data-stu-id="5e930-106">You can display these Help articles at the command prompt or view the most recently updated versions of these articles in the [PowerShell](/powershell/scripting/overview) documentation online.</span></span>
 
-## <a name="getting-help-for-cmdlets"></a><span data-ttu-id="43477-107">Få hjälp med cmdletar</span><span class="sxs-lookup"><span data-stu-id="43477-107">Getting help for cmdlets</span></span>
+## <a name="getting-help-for-cmdlets"></a><span data-ttu-id="5e930-107">Få hjälp med cmdletar</span><span class="sxs-lookup"><span data-stu-id="5e930-107">Getting help for cmdlets</span></span>
 
-<span data-ttu-id="43477-108">Använd cmdleten [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) för att få hjälp om PowerShell-cmdlets.</span><span class="sxs-lookup"><span data-stu-id="43477-108">To get Help about PowerShell cmdlets, use the [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) cmdlet.</span></span> <span data-ttu-id="43477-109">Om du till exempel vill få hjälp med `Get-ChildItem`-cmdlet skriver du:</span><span class="sxs-lookup"><span data-stu-id="43477-109">For example, to get Help for the `Get-ChildItem` cmdlet, type:</span></span>
+<span data-ttu-id="5e930-108">Använd cmdleten [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) för att få hjälp om PowerShell-cmdlets.</span><span class="sxs-lookup"><span data-stu-id="5e930-108">To get Help about PowerShell cmdlets, use the [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) cmdlet.</span></span> <span data-ttu-id="5e930-109">Om du till exempel vill få hjälp med `Get-ChildItem`-cmdlet skriver du:</span><span class="sxs-lookup"><span data-stu-id="5e930-109">For example, to get Help for the `Get-ChildItem` cmdlet, type:</span></span>
 
 ```powershell
 Get-Help Get-ChildItem
 ```
 
-<span data-ttu-id="43477-110">eller</span><span class="sxs-lookup"><span data-stu-id="43477-110">or</span></span>
+<span data-ttu-id="5e930-110">eller</span><span class="sxs-lookup"><span data-stu-id="5e930-110">or</span></span>
 
 ```powershell
 Get-ChildItem -?
 ```
 
-<span data-ttu-id="43477-111">Du kan även få hjälp med cmdleten Get-Help.</span><span class="sxs-lookup"><span data-stu-id="43477-111">You can even get Help about the Get-Help cmdlet.</span></span> <span data-ttu-id="43477-112">Exempel:</span><span class="sxs-lookup"><span data-stu-id="43477-112">For example:</span></span>
+<span data-ttu-id="5e930-111">Du kan även få hjälp med cmdleten Get-Help.</span><span class="sxs-lookup"><span data-stu-id="5e930-111">You can even get Help about the Get-Help cmdlet.</span></span> <span data-ttu-id="5e930-112">Till exempel:</span><span class="sxs-lookup"><span data-stu-id="5e930-112">For example:</span></span>
 
 ```powershell
 Get-Help Get-Help
 ```
 
-<span data-ttu-id="43477-113">Om du vill hämta en lista över alla hjälp artiklar för cmdlet i sessionen skriver du:</span><span class="sxs-lookup"><span data-stu-id="43477-113">To get a list of all the cmdlet Help articles in your session, type:</span></span>
+<span data-ttu-id="5e930-113">Om du vill hämta en lista över alla hjälp artiklar för cmdlet i sessionen skriver du:</span><span class="sxs-lookup"><span data-stu-id="5e930-113">To get a list of all the cmdlet Help articles in your session, type:</span></span>
 
 ```powershell
 Get-Help -Category Cmdlet
 ```
 
-<span data-ttu-id="43477-114">Om du vill visa en sida i varje hjälp artikel i taget använder du funktionen `help` eller dess alias `man`.</span><span class="sxs-lookup"><span data-stu-id="43477-114">To display one page of each Help article at a time, use the `help` function or its alias `man`.</span></span>
-<span data-ttu-id="43477-115">Om du till exempel vill visa hjälp för `Get-ChildItem`-cmdlet skriver du</span><span class="sxs-lookup"><span data-stu-id="43477-115">For example, to display Help for the `Get-ChildItem` cmdlet, type</span></span>
+<span data-ttu-id="5e930-114">Om du vill visa en sida i varje hjälp artikel i taget använder du funktionen `help` eller dess alias `man`.</span><span class="sxs-lookup"><span data-stu-id="5e930-114">To display one page of each Help article at a time, use the `help` function or its alias `man`.</span></span>
+<span data-ttu-id="5e930-115">Om du till exempel vill visa hjälp för `Get-ChildItem`-cmdlet skriver du</span><span class="sxs-lookup"><span data-stu-id="5e930-115">For example, to display Help for the `Get-ChildItem` cmdlet, type</span></span>
 
 ```powershell
 man Get-ChildItem
 ```
 
-<span data-ttu-id="43477-116">eller</span><span class="sxs-lookup"><span data-stu-id="43477-116">or</span></span>
+<span data-ttu-id="5e930-116">eller</span><span class="sxs-lookup"><span data-stu-id="5e930-116">or</span></span>
 
 ```powershell
 help Get-ChildItem
 ```
 
-<span data-ttu-id="43477-117">Om du vill visa detaljerad information använder du den **detaljerade** parametern i `Get-Help`-cmdleten.</span><span class="sxs-lookup"><span data-stu-id="43477-117">To display detailed information, use the **Detailed** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="43477-118">Om du till exempel vill få detaljerad information om `Get-ChildItem`-cmdlet skriver du:</span><span class="sxs-lookup"><span data-stu-id="43477-118">For example, to get detailed information about the `Get-ChildItem` cmdlet, type:</span></span>
+<span data-ttu-id="5e930-117">Om du vill visa detaljerad information använder du den **detaljerade** parametern i `Get-Help`-cmdleten.</span><span class="sxs-lookup"><span data-stu-id="5e930-117">To display detailed information, use the **Detailed** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="5e930-118">Om du till exempel vill få detaljerad information om `Get-ChildItem`-cmdlet skriver du:</span><span class="sxs-lookup"><span data-stu-id="5e930-118">For example, to get detailed information about the `Get-ChildItem` cmdlet, type:</span></span>
 
 ```powershell
 Get-Help Get-ChildItem -Detailed
 ```
 
-<span data-ttu-id="43477-119">Om du vill visa allt innehåll i hjälp artikeln använder du parametern **fullständig** i `Get-Help`-cmdleten.</span><span class="sxs-lookup"><span data-stu-id="43477-119">To display all content in the Help article, use the **Full** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="43477-120">Om du till exempel vill visa allt innehåll i hjälp artikeln för cmdleten `Get-ChildItem` skriver du:</span><span class="sxs-lookup"><span data-stu-id="43477-120">For example, to display all content in the Help article for the `Get-ChildItem` cmdlet, type:</span></span>
+<span data-ttu-id="5e930-119">Om du vill visa allt innehåll i hjälp artikeln använder du parametern **fullständig** i `Get-Help`-cmdleten.</span><span class="sxs-lookup"><span data-stu-id="5e930-119">To display all content in the Help article, use the **Full** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="5e930-120">Om du till exempel vill visa allt innehåll i hjälp artikeln för cmdleten `Get-ChildItem` skriver du:</span><span class="sxs-lookup"><span data-stu-id="5e930-120">For example, to display all content in the Help article for the `Get-ChildItem` cmdlet, type:</span></span>
 
 ```powershell
 Get-Help Get-ChildItem -Full
 ```
 
-<span data-ttu-id="43477-121">Om du vill ha mer information om parametrarna för en cmdlet använder du **parametern** parameter i `Get-Help`-cmdleten.</span><span class="sxs-lookup"><span data-stu-id="43477-121">To get detailed Help about the parameters of a cmdlet, use the **Parameter** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="43477-122">Om du till exempel vill få detaljerad hjälp för alla parametrar i `Get-ChildItem`-cmdleten skriver du:</span><span class="sxs-lookup"><span data-stu-id="43477-122">For example, to get detailed Help for all of the parameters of the `Get-ChildItem` cmdlet, type:</span></span>
+<span data-ttu-id="5e930-121">Om du vill ha mer information om parametrarna för en cmdlet använder du **parametern** parameter i `Get-Help`-cmdleten.</span><span class="sxs-lookup"><span data-stu-id="5e930-121">To get detailed Help about the parameters of a cmdlet, use the **Parameter** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="5e930-122">Om du till exempel vill få detaljerad hjälp för alla parametrar i `Get-ChildItem`-cmdleten skriver du:</span><span class="sxs-lookup"><span data-stu-id="5e930-122">For example, to get detailed Help for all of the parameters of the `Get-ChildItem` cmdlet, type:</span></span>
 
 ```powershell
 Get-Help Get-ChildItem -Parameter *
 ```
 
-<span data-ttu-id="43477-123">Om du bara vill visa exemplen i en hjälp artikel använder du parametern **exempel** för `Get-Help`.</span><span class="sxs-lookup"><span data-stu-id="43477-123">To display only the examples in a Help article, use the **Examples** parameter of the `Get-Help`.</span></span>
-<span data-ttu-id="43477-124">Om du till exempel vill visa bara exemplen i hjälp artikeln för cmdleten `Get-ChildItem` skriver du:</span><span class="sxs-lookup"><span data-stu-id="43477-124">For example, to display only the examples in the Help article for the `Get-ChildItem` cmdlet, type:</span></span>
+<span data-ttu-id="5e930-123">Om du bara vill visa exemplen i en hjälp artikel använder du parametern **exempel** för `Get-Help`.</span><span class="sxs-lookup"><span data-stu-id="5e930-123">To display only the examples in a Help article, use the **Examples** parameter of the `Get-Help`.</span></span>
+<span data-ttu-id="5e930-124">Om du till exempel vill visa bara exemplen i hjälp artikeln för cmdleten `Get-ChildItem` skriver du:</span><span class="sxs-lookup"><span data-stu-id="5e930-124">For example, to display only the examples in the Help article for the `Get-ChildItem` cmdlet, type:</span></span>
 
 ```powershell
 Get-Help Get-ChildItem -Examples
 ```
 
-<span data-ttu-id="43477-125">Information om hur du skriver hjälp artiklar för de cmdlet: ar som du skriver in finns i [så här skriver du cmdlet-hjälpen](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).</span><span class="sxs-lookup"><span data-stu-id="43477-125">For information about how to write Help articles for the cmdlets that you write, see [How to Write Cmdlet Help](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).</span></span>
+<span data-ttu-id="5e930-125">Information om hur du skriver hjälp artiklar för de cmdlet: ar som du skriver in finns i [så här skriver du cmdlet-hjälpen](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).</span><span class="sxs-lookup"><span data-stu-id="5e930-125">For information about how to write Help articles for the cmdlets that you write, see [How to Write Cmdlet Help](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).</span></span>
 
-## <a name="getting-conceptual-help"></a><span data-ttu-id="43477-126">Få konceptuell hjälp</span><span class="sxs-lookup"><span data-stu-id="43477-126">Getting conceptual help</span></span>
+## <a name="getting-conceptual-help"></a><span data-ttu-id="5e930-126">Få konceptuell hjälp</span><span class="sxs-lookup"><span data-stu-id="5e930-126">Getting conceptual help</span></span>
 
-<span data-ttu-id="43477-127">`Get-Help`-cmdleten visar också information om konceptuella artiklar i PowerShell, inklusive artiklar om PowerShell-språket.</span><span class="sxs-lookup"><span data-stu-id="43477-127">The `Get-Help` cmdlet also displays information about conceptual articles in PowerShell, including articles about the PowerShell language.</span></span> <span data-ttu-id="43477-128">Konceptuell hjälp artiklar börjar med prefixet "about_", till exempel about_line_editing.</span><span class="sxs-lookup"><span data-stu-id="43477-128">Conceptual Help articles begin with the "about_" prefix, such as about_line_editing.</span></span> <span data-ttu-id="43477-129">(Namnet på den konceptuella artikeln måste anges på engelska även på icke-engelska versioner av PowerShell.)</span><span class="sxs-lookup"><span data-stu-id="43477-129">(The name of the conceptual article must be entered in English even on non-English versions of PowerShell.)</span></span>
+<span data-ttu-id="5e930-127">`Get-Help`-cmdleten visar också information om konceptuella artiklar i PowerShell, inklusive artiklar om PowerShell-språket.</span><span class="sxs-lookup"><span data-stu-id="5e930-127">The `Get-Help` cmdlet also displays information about conceptual articles in PowerShell, including articles about the PowerShell language.</span></span> <span data-ttu-id="5e930-128">Konceptuell hjälp artiklar börjar med prefixet "about_", till exempel about_line_editing.</span><span class="sxs-lookup"><span data-stu-id="5e930-128">Conceptual Help articles begin with the "about_" prefix, such as about_line_editing.</span></span> <span data-ttu-id="5e930-129">(Namnet på den konceptuella artikeln måste anges på engelska även på icke-engelska versioner av PowerShell.)</span><span class="sxs-lookup"><span data-stu-id="5e930-129">(The name of the conceptual article must be entered in English even on non-English versions of PowerShell.)</span></span>
 
-<span data-ttu-id="43477-130">Om du vill visa en lista med konceptuella artiklar skriver du:</span><span class="sxs-lookup"><span data-stu-id="43477-130">To display a list of conceptual articles, type:</span></span>
+<span data-ttu-id="5e930-130">Om du vill visa en lista med konceptuella artiklar skriver du:</span><span class="sxs-lookup"><span data-stu-id="5e930-130">To display a list of conceptual articles, type:</span></span>
 
 ```powershell
 Get-Help about_*
 ```
 
-<span data-ttu-id="43477-131">Om du vill visa en viss hjälp artikel skriver du artikel namnet, till exempel:</span><span class="sxs-lookup"><span data-stu-id="43477-131">To display a particular Help article, type the article name, for example:</span></span>
+<span data-ttu-id="5e930-131">Om du vill visa en viss hjälp artikel skriver du artikel namnet, till exempel:</span><span class="sxs-lookup"><span data-stu-id="5e930-131">To display a particular Help article, type the article name, for example:</span></span>
 
 ```powershell
 Get-Help about_command_syntax
 ```
 
-<span data-ttu-id="43477-132">Parametrarna för `Get-Help`, till exempel **detaljerade** **parametrar och** **exempel**, har ingen påverkan på visningen av konceptuella hjälp artiklar.</span><span class="sxs-lookup"><span data-stu-id="43477-132">The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect on the display of conceptual Help articles.</span></span>
+<span data-ttu-id="5e930-132">Parametrarna för `Get-Help`, till exempel **detaljerade** **parametrar och** **exempel**, har ingen påverkan på visningen av konceptuella hjälp artiklar.</span><span class="sxs-lookup"><span data-stu-id="5e930-132">The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect on the display of conceptual Help articles.</span></span>
 
-## <a name="getting-help-about-providers"></a><span data-ttu-id="43477-133">Få hjälp om leverantörer</span><span class="sxs-lookup"><span data-stu-id="43477-133">Getting help about providers</span></span>
+## <a name="getting-help-about-providers"></a><span data-ttu-id="5e930-133">Få hjälp om leverantörer</span><span class="sxs-lookup"><span data-stu-id="5e930-133">Getting help about providers</span></span>
 
-<span data-ttu-id="43477-134">`Get-Help`-cmdlet visar information om PowerShell-leverantörer.</span><span class="sxs-lookup"><span data-stu-id="43477-134">The `Get-Help` cmdlet displays information about PowerShell providers.</span></span> <span data-ttu-id="43477-135">Om du vill ha hjälp med en provider skriver du `Get-Help` följt av namnet på providern.</span><span class="sxs-lookup"><span data-stu-id="43477-135">To get Help for a provider, type `Get-Help` followed by the provider name.</span></span> <span data-ttu-id="43477-136">Om du till exempel vill få hjälp med register leverantören skriver du:</span><span class="sxs-lookup"><span data-stu-id="43477-136">For example, to get Help for the Registry provider, type:</span></span>
+<span data-ttu-id="5e930-134">`Get-Help`-cmdlet visar information om PowerShell-leverantörer.</span><span class="sxs-lookup"><span data-stu-id="5e930-134">The `Get-Help` cmdlet displays information about PowerShell providers.</span></span> <span data-ttu-id="5e930-135">Om du vill ha hjälp med en provider skriver du `Get-Help` följt av namnet på providern.</span><span class="sxs-lookup"><span data-stu-id="5e930-135">To get Help for a provider, type `Get-Help` followed by the provider name.</span></span> <span data-ttu-id="5e930-136">Om du till exempel vill få hjälp med register leverantören skriver du:</span><span class="sxs-lookup"><span data-stu-id="5e930-136">For example, to get Help for the Registry provider, type:</span></span>
 
 ```powershell
 Get-Help registry
 ```
 
-<span data-ttu-id="43477-137">Om du vill hämta en lista över alla hjälp artiklar om providern i din session skriver du</span><span class="sxs-lookup"><span data-stu-id="43477-137">To get a list of all the provider Help articles in your session, type</span></span>
+<span data-ttu-id="5e930-137">Om du vill hämta en lista över alla hjälp artiklar om providern i din session skriver du</span><span class="sxs-lookup"><span data-stu-id="5e930-137">To get a list of all the provider Help articles in your session, type</span></span>
 
 ```powershell
 Get-Help -Category provider
 ```
 
-<span data-ttu-id="43477-138">Parametrarna för `Get-Help`, till exempel **detaljerade** **parametrar och** **exempel**, har ingen påverkan på visningen av leverantörs hjälp artiklar.</span><span class="sxs-lookup"><span data-stu-id="43477-138">The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect on the display of provider Help articles.</span></span>
+<span data-ttu-id="5e930-138">Parametrarna för `Get-Help`, till exempel **detaljerade** **parametrar och** **exempel**, har ingen påverkan på visningen av leverantörs hjälp artiklar.</span><span class="sxs-lookup"><span data-stu-id="5e930-138">The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect on the display of provider Help articles.</span></span>
 
-## <a name="getting-help-about-scripts-and-functions"></a><span data-ttu-id="43477-139">Få hjälp om skript och funktioner</span><span class="sxs-lookup"><span data-stu-id="43477-139">Getting help about scripts and functions</span></span>
+## <a name="getting-help-about-scripts-and-functions"></a><span data-ttu-id="5e930-139">Få hjälp om skript och funktioner</span><span class="sxs-lookup"><span data-stu-id="5e930-139">Getting help about scripts and functions</span></span>
 
-<span data-ttu-id="43477-140">Många skript och funktioner i PowerShell har hjälp artiklar.</span><span class="sxs-lookup"><span data-stu-id="43477-140">Many scripts and functions in PowerShell have Help articles.</span></span> <span data-ttu-id="43477-141">Använd `Get-Help`-cmdleten för att visa hjälp artiklarna för skript och funktioner.</span><span class="sxs-lookup"><span data-stu-id="43477-141">Use the `Get-Help` cmdlet to display the Help articles for scripts and functions.</span></span>
+<span data-ttu-id="5e930-140">Många skript och funktioner i PowerShell har hjälp artiklar.</span><span class="sxs-lookup"><span data-stu-id="5e930-140">Many scripts and functions in PowerShell have Help articles.</span></span> <span data-ttu-id="5e930-141">Använd `Get-Help`-cmdleten för att visa hjälp artiklarna för skript och funktioner.</span><span class="sxs-lookup"><span data-stu-id="5e930-141">Use the `Get-Help` cmdlet to display the Help articles for scripts and functions.</span></span>
 
-<span data-ttu-id="43477-142">Om du vill visa hjälpen för en funktion skriver du `Get-Help` följt av funktions namnet.</span><span class="sxs-lookup"><span data-stu-id="43477-142">To display the Help for a function, type `Get-Help` followed by the function name.</span></span> <span data-ttu-id="43477-143">Om du till exempel vill få hjälp med funktionen `Disable-PSRemoting` skriver du:</span><span class="sxs-lookup"><span data-stu-id="43477-143">For example, to get Help for the `Disable-PSRemoting` function, type:</span></span>
+<span data-ttu-id="5e930-142">Om du vill visa hjälpen för en funktion skriver du `Get-Help` följt av funktions namnet.</span><span class="sxs-lookup"><span data-stu-id="5e930-142">To display the Help for a function, type `Get-Help` followed by the function name.</span></span> <span data-ttu-id="5e930-143">Om du till exempel vill få hjälp med funktionen `Disable-PSRemoting` skriver du:</span><span class="sxs-lookup"><span data-stu-id="5e930-143">For example, to get Help for the `Disable-PSRemoting` function, type:</span></span>
 
 ```powershell
 Get-Help Disable-PSRemoting
 ```
 
-<span data-ttu-id="43477-144">Om du vill visa hjälpen för ett skript anger du sökvägen till skript filen.</span><span class="sxs-lookup"><span data-stu-id="43477-144">To display the Help for a script, type the path to the script file.</span></span> <span data-ttu-id="43477-145">Om skriptet inte finns i en sökväg som anges i miljövariabeln PATH måste du använda den fullständigt kvalificerade sökvägen.</span><span class="sxs-lookup"><span data-stu-id="43477-145">If the script is not in a path listed in the Path environment variable, you must use the fully qualified path.</span></span>
+<span data-ttu-id="5e930-144">Om du vill visa hjälpen för ett skript anger du sökvägen till skript filen.</span><span class="sxs-lookup"><span data-stu-id="5e930-144">To display the Help for a script, type the path to the script file.</span></span> <span data-ttu-id="5e930-145">Om skriptet inte finns i en sökväg som anges i miljövariabeln PATH måste du använda den fullständigt kvalificerade sökvägen.</span><span class="sxs-lookup"><span data-stu-id="5e930-145">If the script is not in a path listed in the Path environment variable, you must use the fully qualified path.</span></span>
 
-<span data-ttu-id="43477-146">Om du till exempel har ett skript som heter "TestScript. ps1" i mappen C:\\PS-test för att visa hjälp artikeln för skriptet, skriver du:</span><span class="sxs-lookup"><span data-stu-id="43477-146">For example, if you have a script called "TestScript.ps1" in your C:\\PS-Test directory, to display the Help article for the script, type:</span></span>
+<span data-ttu-id="5e930-146">Om du till exempel har ett skript som heter "TestScript. ps1" i mappen C:\\PS-test för att visa hjälp artikeln för skriptet, skriver du:</span><span class="sxs-lookup"><span data-stu-id="5e930-146">For example, if you have a script called "TestScript.ps1" in your C:\\PS-Test directory, to display the Help article for the script, type:</span></span>
 
 ```powershell
 Get-Help c:\ps-test\TestScript.ps1
 ```
 
-<span data-ttu-id="43477-147">De parametrar som är utformade för att Visa cmdlet-hjälp fungerar även för skript-och funktions hjälp.</span><span class="sxs-lookup"><span data-stu-id="43477-147">The parameters that are designed for displaying cmdlet Help work for script and function Help, too.</span></span> <span data-ttu-id="43477-148">Hjälp för funktioner och skript visas dock inte när du kör `Get-Help *`.</span><span class="sxs-lookup"><span data-stu-id="43477-148">However, help for functions and scripts is not shown when you run `Get-Help *`.</span></span>
+<span data-ttu-id="5e930-147">De parametrar som är utformade för att Visa cmdlet-hjälp fungerar även för skript-och funktions hjälp.</span><span class="sxs-lookup"><span data-stu-id="5e930-147">The parameters that are designed for displaying cmdlet Help work for script and function Help, too.</span></span> <span data-ttu-id="5e930-148">Hjälp för funktioner och skript visas dock inte när du kör `Get-Help *`.</span><span class="sxs-lookup"><span data-stu-id="5e930-148">However, help for functions and scripts is not shown when you run `Get-Help *`.</span></span>
 
-<span data-ttu-id="43477-149">Information om hur du skriver hjälp artiklar för dina funktioner och skript finns i följande artiklar:</span><span class="sxs-lookup"><span data-stu-id="43477-149">For information about writing Help articles for your functions and scripts, see the following articles:</span></span>
+<span data-ttu-id="5e930-149">Information om hur du skriver hjälp artiklar för dina funktioner och skript finns i följande artiklar:</span><span class="sxs-lookup"><span data-stu-id="5e930-149">For information about writing Help articles for your functions and scripts, see the following articles:</span></span>
 
-- [<span data-ttu-id="43477-150">about_Functions</span><span class="sxs-lookup"><span data-stu-id="43477-150">about_Functions</span></span>](/powershell/module/microsoft.powershell.core/about/about_functions)
-- [<span data-ttu-id="43477-151">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="43477-151">about_Scripts</span></span>](/powershell/module/microsoft.powershell.core/about/about_scripts)
-- [<span data-ttu-id="43477-152">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="43477-152">about_Comment_Based_Help</span></span>](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+- [<span data-ttu-id="5e930-150">about_Functions</span><span class="sxs-lookup"><span data-stu-id="5e930-150">about_Functions</span></span>](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [<span data-ttu-id="5e930-151">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="5e930-151">about_Scripts</span></span>](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [<span data-ttu-id="5e930-152">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="5e930-152">about_Comment_Based_Help</span></span>](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
 
-## <a name="getting-help-online"></a><span data-ttu-id="43477-153">Få hjälp online</span><span class="sxs-lookup"><span data-stu-id="43477-153">Getting help online</span></span>
+## <a name="getting-help-online"></a><span data-ttu-id="5e930-153">Få hjälp online</span><span class="sxs-lookup"><span data-stu-id="5e930-153">Getting help online</span></span>
 
-<span data-ttu-id="43477-154">Visa hjälp artiklar online är ett av de bästa sätten att få hjälp.</span><span class="sxs-lookup"><span data-stu-id="43477-154">Viewing the Help articles online is one of the best ways to get help.</span></span> <span data-ttu-id="43477-155">Online-artiklar är enklare att uppdatera och tillhandahålla det mest aktuella innehållet.</span><span class="sxs-lookup"><span data-stu-id="43477-155">Online articles are easier to update and provide the most current content.</span></span>
+<span data-ttu-id="5e930-154">Visa hjälp artiklar online är ett av de bästa sätten att få hjälp.</span><span class="sxs-lookup"><span data-stu-id="5e930-154">Viewing the Help articles online is one of the best ways to get help.</span></span> <span data-ttu-id="5e930-155">Online-artiklar är enklare att uppdatera och tillhandahålla det mest aktuella innehållet.</span><span class="sxs-lookup"><span data-stu-id="5e930-155">Online articles are easier to update and provide the most current content.</span></span>
 
-<span data-ttu-id="43477-156">Om du vill få hjälp online använder du parametern **online** i `Get-Help`-cmdleten.</span><span class="sxs-lookup"><span data-stu-id="43477-156">To get Help online, use the **Online** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="43477-157">Alla hjälp artiklar som ingår i PowerShell, inklusive leverantörs hjälp och begreppsmässig (om) hjälp artiklar finns tillgängliga online i [PowerShell](/powershell/scripting/powershell-scripting) -dokumentationen.</span><span class="sxs-lookup"><span data-stu-id="43477-157">All the Help articles that come with PowerShell, including provider Help and conceptual (About) Help articles, are available online in the [PowerShell](/powershell/scripting/powershell-scripting) documentation.</span></span>
+<span data-ttu-id="5e930-156">Om du vill få hjälp online använder du parametern **online** i `Get-Help`-cmdleten.</span><span class="sxs-lookup"><span data-stu-id="5e930-156">To get Help online, use the **Online** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="5e930-157">Alla hjälp artiklar som ingår i PowerShell, inklusive leverantörs hjälp och begreppsmässig (om) hjälp artiklar finns tillgängliga online i [PowerShell](/powershell/scripting/powershell-scripting) -dokumentationen.</span><span class="sxs-lookup"><span data-stu-id="5e930-157">All the Help articles that come with PowerShell, including provider Help and conceptual (About) Help articles, are available online in the [PowerShell](/powershell/scripting/powershell-scripting) documentation.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="43477-158">Du kan inte använda parametern **online** med konceptuell (about_\*) eller leverantören hjälp artiklar.</span><span class="sxs-lookup"><span data-stu-id="43477-158">You can't use the **Online** parameter with conceptual (about_\*) or provider Help articles.</span></span>
-> <span data-ttu-id="43477-159">Direkt hjälpen är valfri, så den fungerar inte för varje cmdlet, funktion eller skript.</span><span class="sxs-lookup"><span data-stu-id="43477-159">Online help is optional, so it does not work for every cmdlet, function, or script.</span></span>
+> <span data-ttu-id="5e930-158">Du kan inte använda parametern **online** med konceptuell (about_\*) eller leverantören hjälp artiklar.</span><span class="sxs-lookup"><span data-stu-id="5e930-158">You can't use the **Online** parameter with conceptual (about_\*) or provider Help articles.</span></span>
+> <span data-ttu-id="5e930-159">Direkt hjälpen är valfri, så den fungerar inte för varje cmdlet, funktion eller skript.</span><span class="sxs-lookup"><span data-stu-id="5e930-159">Online help is optional, so it does not work for every cmdlet, function, or script.</span></span>
 
-<span data-ttu-id="43477-160">Om du till exempel vill hämta online-versionen av hjälp-artikeln om `Get-ChildItem`-cmdlet skriver du:</span><span class="sxs-lookup"><span data-stu-id="43477-160">For example, to get the online version of the Help article about the `Get-ChildItem` cmdlet, type:</span></span>
+<span data-ttu-id="5e930-160">Om du till exempel vill hämta online-versionen av hjälp-artikeln om `Get-ChildItem`-cmdlet skriver du:</span><span class="sxs-lookup"><span data-stu-id="5e930-160">For example, to get the online version of the Help article about the `Get-ChildItem` cmdlet, type:</span></span>
 
 ```powershell
 Get-Help Get-ChildItem -Online
 ```
 
-<span data-ttu-id="43477-161">PowerShell öppnar artikeln i standard webbläsaren.</span><span class="sxs-lookup"><span data-stu-id="43477-161">PowerShell opens the article in your default browser.</span></span> <span data-ttu-id="43477-162">Om onlinehjälpen stöds för en hjälp artikel kan du också Visa webb adressen till hjälp artikeln.</span><span class="sxs-lookup"><span data-stu-id="43477-162">If online Help is supported for a Help article, you can also view the URL of the Help article.</span></span> <span data-ttu-id="43477-163">URL: en visas i avsnittet relaterade länkar i en hjälp artikel.</span><span class="sxs-lookup"><span data-stu-id="43477-163">The URL appears in the Related Links section of a Help article.</span></span>
+<span data-ttu-id="5e930-161">PowerShell öppnar artikeln i standard webbläsaren.</span><span class="sxs-lookup"><span data-stu-id="5e930-161">PowerShell opens the article in your default browser.</span></span> <span data-ttu-id="5e930-162">Om onlinehjälpen stöds för en hjälp artikel kan du också Visa webb adressen till hjälp artikeln.</span><span class="sxs-lookup"><span data-stu-id="5e930-162">If online Help is supported for a Help article, you can also view the URL of the Help article.</span></span> <span data-ttu-id="5e930-163">URL: en visas i avsnittet relaterade länkar i en hjälp artikel.</span><span class="sxs-lookup"><span data-stu-id="5e930-163">The URL appears in the Related Links section of a Help article.</span></span>
 
-<span data-ttu-id="43477-164">Om du till exempel vill visa URL: en för online-versionen av cmdleten Add-Computer skriver du:</span><span class="sxs-lookup"><span data-stu-id="43477-164">For example, to see the URL for the online version of the Add-Computer cmdlet, type:</span></span>
+<span data-ttu-id="5e930-164">Om du till exempel vill visa URL: en för online-versionen av cmdleten Add-Computer skriver du:</span><span class="sxs-lookup"><span data-stu-id="5e930-164">For example, to see the URL for the online version of the Add-Computer cmdlet, type:</span></span>
 
 ```powershell
 Get-Help Add-Computer
 ```
 
-<span data-ttu-id="43477-165">Den första raden i avsnittet relaterade länkar i artikeln visas nedan.</span><span class="sxs-lookup"><span data-stu-id="43477-165">The first line in the Related Links section of the article is shown below.</span></span>
+<span data-ttu-id="5e930-165">Den första raden i avsnittet relaterade länkar i artikeln visas nedan.</span><span class="sxs-lookup"><span data-stu-id="5e930-165">The first line in the Related Links section of the article is shown below.</span></span>
 
 ```Output
 Online version: https://go.microsoft.com/fwlink/?LinkId=821564
 ```
 
-<span data-ttu-id="43477-166">Information om hur du tillhandahåller onlinesupport för dina hjälp artiklar finns [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span><span class="sxs-lookup"><span data-stu-id="43477-166">For information about how to provide online support for your Help articles, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
+<span data-ttu-id="5e930-166">Information om hur du tillhandahåller onlinesupport för dina hjälp artiklar finns [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span><span class="sxs-lookup"><span data-stu-id="5e930-166">For information about how to provide online support for your Help articles, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="43477-167">Se också</span><span class="sxs-lookup"><span data-stu-id="43477-167">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5e930-167">Se även</span><span class="sxs-lookup"><span data-stu-id="5e930-167">See also</span></span>
 
-- [<span data-ttu-id="43477-168">about_Functions</span><span class="sxs-lookup"><span data-stu-id="43477-168">about_Functions</span></span>](/powershell/module/microsoft.powershell.core/about/about_functions)
-- [<span data-ttu-id="43477-169">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="43477-169">about_Scripts</span></span>](/powershell/module/microsoft.powershell.core/about/about_scripts)
-- [<span data-ttu-id="43477-170">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="43477-170">about_Comment_Based_Help</span></span>](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
-- [<span data-ttu-id="43477-171">Get – hjälp</span><span class="sxs-lookup"><span data-stu-id="43477-171">Get-Help</span></span>](/powershell/module/microsoft.powershell.core/get-help)
+- [<span data-ttu-id="5e930-168">about_Functions</span><span class="sxs-lookup"><span data-stu-id="5e930-168">about_Functions</span></span>](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [<span data-ttu-id="5e930-169">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="5e930-169">about_Scripts</span></span>](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [<span data-ttu-id="5e930-170">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="5e930-170">about_Comment_Based_Help</span></span>](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+- [<span data-ttu-id="5e930-171">Get – hjälp</span><span class="sxs-lookup"><span data-stu-id="5e930-171">Get-Help</span></span>](/powershell/module/microsoft.powershell.core/get-help)

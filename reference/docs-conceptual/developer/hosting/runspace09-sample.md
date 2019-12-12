@@ -9,37 +9,37 @@ ms.topic: article
 ms.assetid: f19f12c0-82e9-42f6-a7df-76c45b733855
 caps.latest.revision: 8
 ms.openlocfilehash: d78c865b869f802c7ebe2743942b6f21681de4b3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353020"
 ---
-# <a name="runspace09-sample"></a><span data-ttu-id="dba0d-102">Runspace09 – exempel</span><span class="sxs-lookup"><span data-stu-id="dba0d-102">Runspace09 Sample</span></span>
+# <a name="runspace09-sample"></a><span data-ttu-id="25926-102">Runspace09 – exempel</span><span class="sxs-lookup"><span data-stu-id="25926-102">Runspace09 Sample</span></span>
 
-<span data-ttu-id="dba0d-103">Det här exemplet visar hur du lägger till ett skript i pipelinen för ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt och hur du kör skriptet asynkront.</span><span class="sxs-lookup"><span data-stu-id="dba0d-103">This sample shows how to add a script to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object and how to run the script asynchronously.</span></span> <span data-ttu-id="dba0d-104">Händelser används för att hantera utdata från skriptet.</span><span class="sxs-lookup"><span data-stu-id="dba0d-104">Events are used to handle the output of the script.</span></span>
+<span data-ttu-id="25926-103">Det här exemplet visar hur du lägger till ett skript i pipelinen för ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt och hur du kör skriptet asynkront.</span><span class="sxs-lookup"><span data-stu-id="25926-103">This sample shows how to add a script to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object and how to run the script asynchronously.</span></span> <span data-ttu-id="25926-104">Händelser används för att hantera utdata från skriptet.</span><span class="sxs-lookup"><span data-stu-id="25926-104">Events are used to handle the output of the script.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="dba0d-105">Krav</span><span class="sxs-lookup"><span data-stu-id="dba0d-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="25926-105">Krav</span><span class="sxs-lookup"><span data-stu-id="25926-105">Requirements</span></span>
 
-<span data-ttu-id="dba0d-106">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="dba0d-106">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="25926-106">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="25926-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="dba0d-107">Visat</span><span class="sxs-lookup"><span data-stu-id="dba0d-107">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="25926-107">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="25926-107">Demonstrates</span></span>
 
-<span data-ttu-id="dba0d-108">Det här exemplet demonstrerar följande.</span><span class="sxs-lookup"><span data-stu-id="dba0d-108">This sample demonstrates the following.</span></span>
+<span data-ttu-id="25926-108">Det här exemplet demonstrerar följande.</span><span class="sxs-lookup"><span data-stu-id="25926-108">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="dba0d-109">Skapar ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt som använder körnings utrymme.</span><span class="sxs-lookup"><span data-stu-id="dba0d-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
+- <span data-ttu-id="25926-109">Skapar ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt som använder körnings utrymme.</span><span class="sxs-lookup"><span data-stu-id="25926-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
 
-- <span data-ttu-id="dba0d-110">Lägga till ett skript i pipeline för objektet [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .</span><span class="sxs-lookup"><span data-stu-id="dba0d-110">Adding a script the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="25926-110">Lägga till ett skript i pipeline för objektet [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .</span><span class="sxs-lookup"><span data-stu-id="25926-110">Adding a script the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="dba0d-111">Använda metoden [system. Management. Automation. PowerShell. BeginInvoke \*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) för att köra pipelinen asynkront.</span><span class="sxs-lookup"><span data-stu-id="dba0d-111">Using the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) method to run the pipeline asynchronously.</span></span>
+- <span data-ttu-id="25926-111">Använda metoden [system. Management. Automation. PowerShell. BeginInvoke \*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) för att köra pipelinen asynkront.</span><span class="sxs-lookup"><span data-stu-id="25926-111">Using the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) method to run the pipeline asynchronously.</span></span>
 
-- <span data-ttu-id="dba0d-112">Med hjälp av händelserna i objektet [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) kan du bearbeta utdata från skriptet.</span><span class="sxs-lookup"><span data-stu-id="dba0d-112">Using the events of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to process the output of the script.</span></span>
+- <span data-ttu-id="25926-112">Med hjälp av händelserna i objektet [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) kan du bearbeta utdata från skriptet.</span><span class="sxs-lookup"><span data-stu-id="25926-112">Using the events of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to process the output of the script.</span></span>
 
-- <span data-ttu-id="dba0d-113">Använd metoden [system. Management. Automation. PowerShell. stop \*](/dotnet/api/System.Management.Automation.PowerShell.Stop) för att avbryta anropet av pipelinen.</span><span class="sxs-lookup"><span data-stu-id="dba0d-113">Using the [System.Management.Automation.Powershell.Stop\*](/dotnet/api/System.Management.Automation.PowerShell.Stop) method to interrupt the invocation of the pipeline.</span></span>
+- <span data-ttu-id="25926-113">Använd metoden [system. Management. Automation. PowerShell. stop \*](/dotnet/api/System.Management.Automation.PowerShell.Stop) för att avbryta anropet av pipelinen.</span><span class="sxs-lookup"><span data-stu-id="25926-113">Using the [System.Management.Automation.Powershell.Stop\*](/dotnet/api/System.Management.Automation.PowerShell.Stop) method to interrupt the invocation of the pipeline.</span></span>
 
-## <a name="example"></a><span data-ttu-id="dba0d-114">Exempel</span><span class="sxs-lookup"><span data-stu-id="dba0d-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="25926-114">Exempel</span><span class="sxs-lookup"><span data-stu-id="25926-114">Example</span></span>
 
-<span data-ttu-id="dba0d-115">Det här exemplet körs för att köra ett skript som genererar talen från 1 till 10 med fördröjningar mellan varje tal.</span><span class="sxs-lookup"><span data-stu-id="dba0d-115">This sample runs to run a script that generates the numbers from 1 to 10 with delays between each number.</span></span> <span data-ttu-id="dba0d-116">Skriptet körs asynkront och händelser används för att hantera utdata.</span><span class="sxs-lookup"><span data-stu-id="dba0d-116">The script is run asynchronously and events are used to handle the output.</span></span>
+<span data-ttu-id="25926-115">Det här exemplet körs för att köra ett skript som genererar talen från 1 till 10 med fördröjningar mellan varje tal.</span><span class="sxs-lookup"><span data-stu-id="25926-115">This sample runs to run a script that generates the numbers from 1 to 10 with delays between each number.</span></span> <span data-ttu-id="25926-116">Skriptet körs asynkront och händelser används för att hantera utdata.</span><span class="sxs-lookup"><span data-stu-id="25926-116">The script is run asynchronously and events are used to handle the output.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -148,6 +148,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="dba0d-117">Se även</span><span class="sxs-lookup"><span data-stu-id="dba0d-117">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="25926-117">Se även</span><span class="sxs-lookup"><span data-stu-id="25926-117">See Also</span></span>
 
-[<span data-ttu-id="dba0d-118">Skriva ett Windows PowerShell-värdprogram</span><span class="sxs-lookup"><span data-stu-id="dba0d-118">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="25926-118">Skriva ett Windows PowerShell-värdprogram</span><span class="sxs-lookup"><span data-stu-id="25926-118">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

@@ -9,35 +9,35 @@ ms.topic: article
 ms.assetid: 4497b64c-7875-4047-bf77-07e04c098ffe
 caps.latest.revision: 4
 ms.openlocfilehash: 376d90394b632e82322b848cb124f002ff91d8b3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356751"
 ---
-# <a name="deploying-a-management-odata-web-service"></a><span data-ttu-id="2d8cb-102">Distribuera en Management OData-webbtjänst</span><span class="sxs-lookup"><span data-stu-id="2d8cb-102">Deploying a Management OData web service</span></span>
+# <a name="deploying-a-management-odata-web-service"></a><span data-ttu-id="76ca6-102">Distribuera en Management OData-webbtjänst</span><span class="sxs-lookup"><span data-stu-id="76ca6-102">Deploying a Management OData web service</span></span>
 
-<span data-ttu-id="2d8cb-103">När du har slutfört alla steg som krävs för att skapa en webb tjänst för hantering av OData måste du distribuera den som ett webb program i IIS.</span><span class="sxs-lookup"><span data-stu-id="2d8cb-103">After you have completed all of the steps necessary to create a Management OData web service, you must deploy it as a web application in IIS.</span></span>
+<span data-ttu-id="76ca6-103">När du har slutfört alla steg som krävs för att skapa en webb tjänst för hantering av OData måste du distribuera den som ett webb program i IIS.</span><span class="sxs-lookup"><span data-stu-id="76ca6-103">After you have completed all of the steps necessary to create a Management OData web service, you must deploy it as a web application in IIS.</span></span>
 
-## <a name="deploying-the-web-service"></a><span data-ttu-id="2d8cb-104">Distribuera webb tjänsten</span><span class="sxs-lookup"><span data-stu-id="2d8cb-104">Deploying the web service</span></span>
+## <a name="deploying-the-web-service"></a><span data-ttu-id="76ca6-104">Distribuera webb tjänsten</span><span class="sxs-lookup"><span data-stu-id="76ca6-104">Deploying the web service</span></span>
 
-<span data-ttu-id="2d8cb-105">Utför följande steg för att distribuera webb tjänsten för hantering av OData.</span><span class="sxs-lookup"><span data-stu-id="2d8cb-105">Complete the following steps to deploy the Management OData web service.</span></span>
+<span data-ttu-id="76ca6-105">Utför följande steg för att distribuera webb tjänsten för hantering av OData.</span><span class="sxs-lookup"><span data-stu-id="76ca6-105">Complete the following steps to deploy the Management OData web service.</span></span>
 
-1. <span data-ttu-id="2d8cb-106">Skapa en katalog för webb programmet under IIS-`WWWRoot`-katalogen.</span><span class="sxs-lookup"><span data-stu-id="2d8cb-106">Create a directory for you web application under your IIS `WWWRoot` directory.</span></span>
+1. <span data-ttu-id="76ca6-106">Skapa en katalog för webb programmet under din IIS-`WWWRoot` katalog.</span><span class="sxs-lookup"><span data-stu-id="76ca6-106">Create a directory for you web application under your IIS `WWWRoot` directory.</span></span>
 
-2. <span data-ttu-id="2d8cb-107">Kopiera MOF-schemafilen, XML-schemafilen, DLL-filer som exporterar [Microsoft. Management. OData. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) och [system. Management. Automation. Remoting. Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) -gränssnitten och Web. config-filen till program katalog.</span><span class="sxs-lookup"><span data-stu-id="2d8cb-107">Copy the MOF schema file, the XML schema file, the DLLs that export the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) and [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interfaces, and the web.config file into the application directory.</span></span>
+2. <span data-ttu-id="76ca6-107">Kopiera MOF-schemafilen, XML-schemafilen, DLL-filer som exporterar [Microsoft. Management. OData. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) och [system. Management. Automation. Remoting. Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) -gränssnitten och Web. config-filen till program katalogen.</span><span class="sxs-lookup"><span data-stu-id="76ca6-107">Copy the MOF schema file, the XML schema file, the DLLs that export the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) and [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interfaces, and the web.config file into the application directory.</span></span>
 
-3. <span data-ttu-id="2d8cb-108">Skapa ett webbplats-ID.</span><span class="sxs-lookup"><span data-stu-id="2d8cb-108">Create a site ID.</span></span>
+3. <span data-ttu-id="76ca6-108">Skapa ett webbplats-ID.</span><span class="sxs-lookup"><span data-stu-id="76ca6-108">Create a site ID.</span></span>
 
-4. <span data-ttu-id="2d8cb-109">Skapa och konfigurera en app-pool.</span><span class="sxs-lookup"><span data-stu-id="2d8cb-109">Create and configure an app pool.</span></span>
+4. <span data-ttu-id="76ca6-109">Skapa och konfigurera en app-pool.</span><span class="sxs-lookup"><span data-stu-id="76ca6-109">Create and configure an app pool.</span></span>
 
-5. <span data-ttu-id="2d8cb-110">Konfigurera autentisering för platsen.</span><span class="sxs-lookup"><span data-stu-id="2d8cb-110">Configure authentication for the site.</span></span>
+5. <span data-ttu-id="76ca6-110">Konfigurera autentisering för platsen.</span><span class="sxs-lookup"><span data-stu-id="76ca6-110">Configure authentication for the site.</span></span>
 
-6. <span data-ttu-id="2d8cb-111">Konfigurera brand väggen.</span><span class="sxs-lookup"><span data-stu-id="2d8cb-111">Configure the firewall.</span></span>
+6. <span data-ttu-id="76ca6-111">Konfigurera brand väggen.</span><span class="sxs-lookup"><span data-stu-id="76ca6-111">Configure the firewall.</span></span>
 
-7. <span data-ttu-id="2d8cb-112">Starta-platsen.</span><span class="sxs-lookup"><span data-stu-id="2d8cb-112">Start the site.</span></span>
+7. <span data-ttu-id="76ca6-112">Starta-platsen.</span><span class="sxs-lookup"><span data-stu-id="76ca6-112">Start the site.</span></span>
 
-<span data-ttu-id="2d8cb-113">Följande Windows PowerShell-skript visar hur du distribuerar en hantering av OData-webbtjänsten.</span><span class="sxs-lookup"><span data-stu-id="2d8cb-113">The following Windows PowerShell scripts demonstrate how to deploy a Management OData web service.</span></span>
+<span data-ttu-id="76ca6-113">Följande Windows PowerShell-skript visar hur du distribuerar en hantering av OData-webbtjänsten.</span><span class="sxs-lookup"><span data-stu-id="76ca6-113">The following Windows PowerShell scripts demonstrate how to deploy a Management OData web service.</span></span>
 
 ```powershell
 # Test for presence of Microsoft.Samples.Management.OData.RoleBasedPlugins.dll
@@ -425,16 +425,16 @@ ActionAllSites start
 Start-Sleep 10
 ```
 
-## <a name="see-also"></a><span data-ttu-id="2d8cb-114">Se även</span><span class="sxs-lookup"><span data-stu-id="2d8cb-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="76ca6-114">Se även</span><span class="sxs-lookup"><span data-stu-id="76ca6-114">See Also</span></span>
 
-[<span data-ttu-id="2d8cb-115">Implementera anpassad auktorisering för en hantering av OData-webbtjänsten</span><span class="sxs-lookup"><span data-stu-id="2d8cb-115">Implementing Custom Authorization for a Management OData web service</span></span>](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+[<span data-ttu-id="76ca6-115">Implementera anpassad auktorisering för en hantering av OData-webbtjänsten</span><span class="sxs-lookup"><span data-stu-id="76ca6-115">Implementing Custom Authorization for a Management OData web service</span></span>](./implementing-custom-authorization-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="2d8cb-116">Implementera SessionConfiguration för en hantering av OData-webbtjänst</span><span class="sxs-lookup"><span data-stu-id="2d8cb-116">Implementing SessionConfiguration for a Management OData web service</span></span>](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+[<span data-ttu-id="76ca6-116">Implementera SessionConfiguration för en hantering av OData-webbtjänst</span><span class="sxs-lookup"><span data-stu-id="76ca6-116">Implementing SessionConfiguration for a Management OData web service</span></span>](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="2d8cb-117">Redigera MOF-schemafilen för en hantering av OData-webbtjänsten</span><span class="sxs-lookup"><span data-stu-id="2d8cb-117">Authoring the MOF schema file for a Management OData web service</span></span>](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="76ca6-117">Redigera MOF-schemafilen för en hantering av OData-webbtjänsten</span><span class="sxs-lookup"><span data-stu-id="76ca6-117">Authoring the MOF schema file for a Management OData web service</span></span>](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="2d8cb-118">Redigera XML-schemafilen för en hantering av OData-webbtjänsten</span><span class="sxs-lookup"><span data-stu-id="2d8cb-118">Authoring the XML schema file for a Management OData web service</span></span>](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="76ca6-118">Redigera XML-schemafilen för en hantering av OData-webbtjänsten</span><span class="sxs-lookup"><span data-stu-id="76ca6-118">Authoring the XML schema file for a Management OData web service</span></span>](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="2d8cb-119">Redigera Web. config-filen för en hantering av OData-webbtjänsten</span><span class="sxs-lookup"><span data-stu-id="2d8cb-119">Authoring the Web.config file for a Management OData web service</span></span>](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="76ca6-119">Redigera Web. config-filen för en hantering av OData-webbtjänsten</span><span class="sxs-lookup"><span data-stu-id="76ca6-119">Authoring the Web.config file for a Management OData web service</span></span>](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="2d8cb-120">Skapa en hantering av OData-webbtjänst</span><span class="sxs-lookup"><span data-stu-id="2d8cb-120">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
+[<span data-ttu-id="76ca6-120">Skapa en hantering av OData-webbtjänst</span><span class="sxs-lookup"><span data-stu-id="76ca6-120">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)

@@ -9,10 +9,10 @@ metadata:
   ms.author: sewhee
   ms.date: 09/05/2019
   ms.openlocfilehash: 95ed43cf713f79d8b648a0f3af77fe2e0119f9c4
-  ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
+  ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 09/05/2019
+  ms.lasthandoff: 12/05/2019
   ms.locfileid: "70392639"
 landingContent:
 - title: Arbeta med objekt
@@ -45,7 +45,7 @@ landingContent:
       url: ./collecting-information-about-computers.md
     - text: Skapar Get-WinEvent-frågor med FilterHashtable
       url: ./creating-get-winEvent-queries-with-filterhashtable.md
-- title: Hantera processer & tjänster
+- title: Hantera processer och tjänster
   linkLists:
   - linkListType: how-to-guide
     links:
@@ -63,7 +63,7 @@ landingContent:
       url: ./working-with-software-installations.md
     - text: Avkoda ett PowerShell-kommando från en process som körs
       url: ./decode-powershell-command-from-a-running-process.md
-- title: Arbeta med utdata
+- title: Arbeta med indata
   linkLists:
   - linkListType: concept
     links:
