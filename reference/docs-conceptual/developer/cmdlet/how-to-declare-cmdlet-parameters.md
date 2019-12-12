@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0c0509cc-5a50-49ad-a74f-5527023d0270
 caps.latest.revision: 10
 ms.openlocfilehash: 80e3e27bcf72b078c192525a843a3b3afb306529
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356401"
 ---
 # <a name="how-to-declare-cmdlet-parameters"></a>Deklarera cmdlet-parametrar
@@ -37,7 +37,7 @@ Mer information om attributet parameter finns i deklaration av [parameter attrib
 
 ## <a name="how-to-declare-a-positional-parameter"></a>Så här deklarerar du en positions parameter
 
-- Definiera en offentlig egenskap som visas i följande kod. När du lägger till attributet parameter anger du nyckelordet `Position` till argument positionen. Värdet 0 anger den första positionen.
+- Definiera en offentlig egenskap som visas i följande kod. När du lägger till attributet parameter anger du `Position` nyckelordet till argument positionen. Värdet 0 anger den första positionen.
 
     ```csharp
     [Parameter(Position = 0)]
@@ -53,7 +53,7 @@ Mer information om attributet parameter finns i deklaration av [parameter attrib
 
 ## <a name="how-to-declare-a-mandatory-parameter"></a>Så här deklarerar du en obligatorisk parameter
 
-- Definiera en offentlig egenskap som visas i följande kod. När du lägger till attributet parameter ställer du in nyckelordet `Mandatory` till `true`.
+- Definiera en offentlig egenskap som visas i följande kod. När du lägger till attributet parameter anger du `Mandatory` nyckelordet till `true`.
 
     ```csharp
     [Parameter(Position = 0, Mandatory = true)]

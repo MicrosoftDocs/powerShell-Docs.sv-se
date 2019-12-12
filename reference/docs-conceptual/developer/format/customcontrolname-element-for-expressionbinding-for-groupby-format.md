@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 9e11da8f-1e75-4d3d-b4c8-b500dec3028e
 caps.latest.revision: 6
 ms.openlocfilehash: 32f8a71e9818c8c1a052f3b96f442f169c1bda4a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359039"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-groupby-format"></a>CustomControlName-element för ExpressionBinding för GroupBy (format)
@@ -29,7 +29,7 @@ Konfigurations element (format) ViewDefinitions element (format) visnings elemen
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `CustomControlName`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `CustomControlName`-elementet.
 
 ### <a name="attributes"></a>Attribut
 
@@ -45,7 +45,7 @@ Ingen.
 |-------------|-----------------|
 |[ExpressionBinding-element för CustomItem för GroupBy (format)](./expressionbinding-element-for-customitem-for-groupby-format.md)|Definierar de data som visas av kontrollen.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange namnet på kontrollen.
 

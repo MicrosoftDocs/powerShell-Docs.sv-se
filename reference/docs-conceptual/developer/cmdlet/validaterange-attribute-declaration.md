@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 1f8066e6-e5d3-4f4e-8948-a90af5dace82
 caps.latest.revision: 11
 ms.openlocfilehash: 155a406b9855c435041fe175ac7d983a4b4eb8b7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359134"
 ---
 # <a name="validaterange-attribute-declaration"></a>Deklaration av attributet ValidateRange
@@ -41,9 +41,9 @@ Attributet ValidateRange anger det lägsta och högsta värdet (intervallet) fö
 
 - Windows PowerShell-körningsmiljön genererar ett verifierings fel under följande förhållanden:
 
-    - När värdet för argumentet är mindre än `MinRange`-gränsen eller större än `MaxRange`-gränsen.
+    - När värdet för argumentet är mindre än `MinRange` gränsen eller större än `MaxRange` gränsen.
 
-    - Om argumentet inte är av samma typ som parametrarna `MinRange` och `MaxRange`.
+    - Om argumentet inte är av samma typ som `MinRange` och `MaxRange` parametrar.
 
 - Attributet ValidateRange definieras av klassen [system. Management. Automation. Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute) .
 

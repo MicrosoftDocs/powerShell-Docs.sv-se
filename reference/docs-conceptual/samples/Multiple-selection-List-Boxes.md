@@ -1,21 +1,21 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Listrutor med flera val
 ms.openlocfilehash: dcfa43ac8e7cc4ba6147f71791edbf7989af3583
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030090"
 ---
-# <a name="multiple-selection-list-boxes"></a>Listrutor med flera val
+# <a name="multiple-selection-list-boxes"></a>List rutor med flera val
 
-Använda Windows PowerShell 3.0 och senare versioner för att skapa en listruta med flera val i Form av en anpassad Windows.
+Använd Windows PowerShell 3,0 och senare versioner för att skapa en List Rute kontroll med flera val i ett anpassat Windows-formulär.
 
-## <a name="create-list-box-controls-that-allow-multiple-selections"></a>Skapa lista kontroller som Tillåt flera val
+## <a name="create-list-box-controls-that-allow-multiple-selections"></a>Skapa List Rute kontroller som tillåter flera val
 
-Kopiera och klistra in följande i Windows PowerShell ISE och spara det som ett Windows PowerShell-skript (.ps1).
+Kopiera och klistra in följande i Windows PowerShell ISE och spara det sedan som ett Windows PowerShell-skript (. ps1).
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -73,19 +73,19 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-Skriptet börjar genom att läsa in två .NET Framework-klasser: **System.Drawing** och **System.Windows.Forms**. Du startar sedan en ny instans av klassen .NET Framework **System.Windows.Forms.Form**; som innehåller ett tomt formulär eller fönster som du kan börja lägga till kontroller.
+Skriptet börjar genom att läsa in två .NET Framework klasser: **system. Drawing** och **system. Windows. Forms**. Sedan startar du en ny instans av klassen .NET Framework klass **system. Windows. Forms. form**; Det innehåller ett tomt formulär eller fönster som du kan börja lägga till kontroller i.
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
 ```
 
-När du har skapat en instans av klassen Form tilldela värden till tre egenskaper i den här klassen.
+När du har skapat en instans av formulär klassen tilldelar du värden till tre egenskaper för den här klassen.
 
-- **Text.** Detta blir titeln på fönstret.
+- **Information.** Detta blir rubriken för fönstret.
 
-- **Storlek.** Det här är storleken på formuläret i bildpunkter. Det här skriptet skapar ett formulär som är 300 bildpunkter på bredden 200 bildpunkter.
+- **Ändra.** Detta är storleken på formuläret, i bild punkter. Föregående skript skapar ett formulär som är 300 bild punkter brett med 200 pixlar högt.
 
-- **StartingPosition.** Den här valfria egenskapen anges till **CenterScreen** i föregående skript. Om du inte lägger till den här egenskapen, väljer en plats i Windows när formuläret öppnas. Genom att ange den **StartingPosition** till **CenterScreen**, du automatiskt visar formuläret mitt på skärmen varje gång den läses in.
+- **Star ting position.** Den här valfria egenskapen anges till **CenterScreen** i föregående skript. Om du inte lägger till den här egenskapen väljer Windows en plats när formuläret öppnas. Genom att ange **Star ting position** till **CenterScreen**visas formuläret automatiskt i mitten av skärmen varje gången det läses in.
 
 ```powershell
 $form.Text = 'Data Entry Form'
@@ -93,7 +93,7 @@ $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = 'CenterScreen'
 ```
 
-Skapa sedan en **OK** knappen för formuläret. Ange storlek och beteendet för den **OK** knappen. I det här exemplet är knappen positionen 120 bildpunkter från formulärets övre kant och 75 bildpunkter från den vänstra kanten. Knappen höjden är 23 bildpunkter, medan den knapp längden är 75 bildpunkter. Skriptet använder fördefinierade Windows Forms-typer för att fastställa knappen beteenden.
+Skapa sedan en **OK** -knapp för formuläret. Ange storlek och beteende för **OK** -knappen. I det här exemplet är knapp positionen 120 bild punkter från formulärets övre kant och 75 pixlar från den vänstra kanten. Knapp höjden är 23 bild punkter, medan knapp längden är 75 bild punkter. Skriptet använder fördefinierade Windows Forms typer för att fastställa knapp beteenden.
 
 ```powershell
 $OKButton = New-Object System.Windows.Forms.Button
@@ -105,7 +105,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-På samma sätt kan du skapa en **Avbryt** knappen. Den **Avbryt** knappen är 120 bildpunkter uppifrån, men 150 pixlar från den vänstra kanten av fönstret.
+På samma sätt skapar du en **Avbryt** -knapp. Knappen **Avbryt** är 120 bild punkter ovanifrån, men 150 pixlar från den vänstra kanten av fönstret.
 
 ```powershell
 $CancelButton = New-Object System.Windows.Forms.Button
@@ -117,7 +117,7 @@ $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 ```
 
-Ange därefter etikettext på din fönster som beskriver den information du vill att användarna måste ange.
+Ange sedan etikettext i fönstret som beskriver den information som du vill att användarna ska kunna tillhandahålla.
 
 ```powershell
 $label = New-Object System.Windows.Forms.Label
@@ -127,7 +127,7 @@ $label.Text = 'Please make a selection from the list below:'
 $form.Controls.Add($label)
 ```
 
-Lägg till kontrollen (i det här fallet en listruta) som användarna kan ange den information som du har som beskrivs i din etikettext. Det finns många andra kontroller som du kan använda förutom textrutor; Läs fler kontroller [System.Windows.Forms Namespace](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) på MSDN.
+Lägg till kontrollen (i det här fallet en listruta) som gör det möjligt för användarna att ange den information som du har beskrivet i din etikett text. Det finns många andra kontroller som du kan använda förutom text rutor. Mer kontroller finns i [namn området system. Windows. Forms](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) på MSDN.
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.Listbox
@@ -135,13 +135,13 @@ $listBox.Location = New-Object System.Drawing.Point(10,40)
 $listBox.Size = New-Object System.Drawing.Size(260,20)
 ```
 
-Här är hur du anger att du vill tillåta användare att välja flera värden i listan.
+Så här kan du ange att användarna ska kunna välja flera värden i listan.
 
 ```powershell
 $listBox.SelectionMode = 'MultiExtended'
 ```
 
-I nästa avsnitt anger du de värden som du vill ska visas för användarna.
+I nästa avsnitt anger du de värden som du vill att List rutan ska visa för användarna.
 
 ```powershell
 [void] $listBox.Items.Add('Item 1')
@@ -151,26 +151,26 @@ I nästa avsnitt anger du de värden som du vill ska visas för användarna.
 [void] $listBox.Items.Add('Item 5')
 ```
 
-Ange Listrutekontrollen maximala höjd.
+Ange den maximala höjden för List Rute kontrollen.
 
 ```powershell
 $listBox.Height = 70
 ```
 
-Lägga till listruta i formuläret och ber Windows att öppna formuläret ovanpå andra fönster och dialogrutor när den öppnas.
+Lägg till List Rute kontrollen i formuläret och instruera Windows att öppna formuläret ovanpå andra fönster och dialog rutor när den öppnas.
 
 ```powershell
 $form.Controls.Add($listBox)
 $form.Topmost = $true
 ```
 
-Lägg till följande rad med kod för att visa formuläret i Windows.
+Lägg till följande kodrad för att visa formuläret i Windows.
 
 ```powershell
 $result = $form.ShowDialog()
 ```
 
-Koden i den **om** block instruerar Windows vad som ska göras med formuläret när användare väljer ett eller flera alternativ i listrutan och klicka sedan på den **OK** knapp eller genom att trycka på den **RETUR**  nyckel.
+Slutligen instruerar koden inuti **IF** -block Windows vad som ska göras med formuläret när användarna har valt ett eller flera alternativ i list rutan. Klicka sedan på **OK** eller tryck på **RETUR** .
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
@@ -182,6 +182,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>Se även
 
-- [Hej skriptdoktorn:  Varför fungerar inte dessa PowerShell-GUI-exempel?](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub: Dave Wyatt WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell-tips i veckan:  Välj flera listrutor- och mycket mer!](https://technet.microsoft.com/library/ff730950.aspx)
+- [Hej Scripting Guy: Varför fungerar inte de här PowerShell-exemplen för användar gränssnitt?](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [GitHub: Dave Wyatt s WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [Veckans Windows PowerShell-tips: fler List rutor med flera val och mer!](https://technet.microsoft.com/library/ff730950.aspx)

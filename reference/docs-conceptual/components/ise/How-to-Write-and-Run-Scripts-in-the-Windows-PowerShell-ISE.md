@@ -3,10 +3,10 @@ ms.date: 08/14/2018
 keywords: PowerShell, cmdlet
 title: Skriv och kör skript i Windows PowerShell ISE
 ms.openlocfilehash: be54e26965a6d2f1472059820080a6a06c47dd26
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74117567"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Skriv och kör skript i Windows PowerShell ISE
@@ -116,7 +116,7 @@ Tryck på **CTRL + S** eller, klicka på ikonen **Spara** i verktygsfältet, ell
 
 ### <a name="to-save-and-name-a-script"></a>Spara och namnge ett skript
 
-1. Klicka på **Spara som**på **Arkiv** -menyn. Dialog rutan **Spara som** visas.
+1. Klicka på **Spara som** på **Arkiv**-menyn. Dialog rutan **Spara som** visas.
 2. Ange ett namn på filen i rutan **fil namn** .
 3. I rutan fil **format** väljer du en filtyp. I rutan **fil format** väljer du exempelvis PowerShell-skript (\*. ps1).
 4. Klicka på **Spara**.

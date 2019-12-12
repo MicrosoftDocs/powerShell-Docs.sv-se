@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1550b068-dfbc-4ae0-9aa1-72c9a680ec59
 caps.latest.revision: 15
 ms.openlocfilehash: 3942c008e026b0b99db3c77af4a0152b50fffc4e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72358795"
 ---
 # <a name="tablecontrol-element-format"></a>TableControl-element (format)
@@ -35,7 +35,7 @@ ViewDefinitions-element (format) Visa element (format) TableControl-element (for
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och ett överordnat element för elementet `TableControl`. Du måste ange raderna i tabellen. Alla andra underordnade element är valfria.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `TableControl`-elementet. Du måste ange raderna i tabellen. Alla andra underordnade element är valfria.
 
 ### <a name="attributes"></a>Attribut
 
@@ -62,7 +62,7 @@ Mer information om komponenterna i en tabellvy finns i [skapa en tabellvy](./cre
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar ett `TableControl`-element som används för att visa egenskaperna för [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) -objektet.
+I det här exemplet visas ett `TableControl`-element som används för att visa egenskaperna för objektet [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) .
 
 ```xml
 <View>

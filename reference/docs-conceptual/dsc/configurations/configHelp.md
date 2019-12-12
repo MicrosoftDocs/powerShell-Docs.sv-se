@@ -3,20 +3,20 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skrivhjälp för DSC-konfigurationer
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942078"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>Skrivhjälp för DSC-konfigurationer
 
 >Gäller för: Windows PowerShell 5,0
 
-Du kan använda kommenterings-baserad hjälp i DSC-konfigurationer. Användare kan komma åt hjälpen genom att anropa **konfigurationen** med `-?` eller med hjälp av cmdleten [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) . Placera din kommenterings-baserade hjälp direkt ovanför nyckelordet `Configuration`.
+Du kan använda kommenterings-baserad hjälp i DSC-konfigurationer. Användare kan komma åt hjälpen genom att anropa **konfigurationen** med `-?`eller genom att använda cmdleten [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) . Placera den kommenterade hjälpen direkt ovanför `Configuration` nyckelord.
 Du kan placera parameter hjälpen i rad med ditt kommentar block, direkt ovanför parameter deklarationen eller båda som i exemplet nedan.
 
-Mer information om PowerShell comment-baserad hjälp finns i [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
+Mer information om PowerShell-Kommentering-baserad hjälp finns [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
 > [!NOTE]
 > PowerShell-utvecklings miljöer, t. ex. VSCode och ISE, har också kodfragment som gör att du automatiskt kan infoga mallar för kommenterings block.

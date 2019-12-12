@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 50e6f9b1-2678-4f53-9250-7c48843a9549
 caps.latest.revision: 5
 ms.openlocfilehash: 1113c0d1cd68bb97d2f96b529f755b62137d1f40
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356653"
 ---
 # <a name="importing-and-invoking-a-windows-powershell-workflow"></a>Importera och anropa ett Windows PowerShell-arbetsflöde
@@ -25,7 +25,7 @@ Klassen [system. Management. Automation. Psjobproxy](/dotnet/api/System.Manageme
 
 1. Skapa en anslutning till en fjärran körnings utrymme genom att skapa ett [system. Management. Automation. körnings utrymmen. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)-objekt.
 
-2. Ange en Windows PowerShell-slutpunkt genom att ange egenskapen [system. Management. Automation. körnings utrymmen. Wsmanconnectioninfo. Shelluri *](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ShellUri) för objektet [system. Management. Automation. körnings utrymmen. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)till `Microsoft.PowerShell.Workflow` för att ange en Windows PowerShell-slutpunkt.
+2. Ange en Windows PowerShell-slutpunkt genom att ange egenskapen [system. Management. Automation. körnings utrymmen. Wsmanconnectioninfo. Shelluri *](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ShellUri) för objektet [system. Management. Automation. körnings utrymmen. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)för att `Microsoft.PowerShell.Workflow` ange en Windows PowerShell-slutpunkt.
 
 3. Skapa en körnings utrymme som använder den anslutning som skapats genom att slutföra föregående steg.
 

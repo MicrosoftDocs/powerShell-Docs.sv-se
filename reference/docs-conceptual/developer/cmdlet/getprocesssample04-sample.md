@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: aa2aa4c4-3457-4601-806a-801afe3dcc80
 caps.latest.revision: 6
 ms.openlocfilehash: 095bebf868efd00f8eeaec979a5606f140714cb1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356422"
 ---
 # <a name="getprocesssample04-sample"></a>GetProcessSample04 – exempel
 
-Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna på den lokala datorn. Den genererar ett fel som inte avslutas om ett fel inträffar när en process hämtas. Denna cmdlet är en förenklad version av cmdleten `Get-Process` som tillhandahålls av Windows PowerShell 2,0.
+Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna på den lokala datorn. Den genererar ett fel som inte avslutas om ett fel inträffar när en process hämtas. Denna cmdlet är en förenklad version av `Get-Process`-cmdleten som tillhandahålls av Windows PowerShell 2,0.
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>Så här skapar du exemplet med Visual Studio.
 
@@ -29,7 +29,7 @@ Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna p
 
     Biblioteket för exemplet skapas i standardmappen \Bin eller \Bin\Debug.
 
-### <a name="how-to-run-the-sample"></a>Så här kör du exemplet
+### <a name="how-to-run-the-sample"></a>Köra exemplet
 
 1. Skapa följande modul-mapp:
 
@@ -51,7 +51,7 @@ Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna p
 
 Det här exemplet kräver Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Visat
+## <a name="demonstrates"></a>Demonstrationer
 
 Det här exemplet demonstrerar följande.
 

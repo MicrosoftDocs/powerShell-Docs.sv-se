@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Förstå DSC-rollen i en CI/CD-pipeline
 ms.openlocfilehash: a8e2e6ef4634216ae7468384b8e1f4d849bb997a
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941826"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Förstå DSC-rollen i en CI/CD-pipeline
@@ -24,8 +24,8 @@ Det finns två lösningar som är inbyggda i lokala Configuration Manager för a
 
 | Begrepp | Detaljerad information
 |-|-
-| Partiella konfigurationer | [Handlingar](../pull-server/partialConfigs.md)
-| Sammansatta resurser | [Handlingar](../resources/authoringResourceComposite.md)
+| Partiella konfigurationer | [Dokumentation](../pull-server/partialConfigs.md)
+| Sammansatta resurser | [Dokumentation](../resources/authoringResourceComposite.md)
 
 ## <a name="understanding-the-impact-of-each-approach"></a>Förstå påverkan av varje metod
 
@@ -118,4 +118,4 @@ Det här är avsiktligt.
 Varje ny konfigurations utgåva bör innehålla en statisk referens till en speciell version av varje resurs och bör verifieras av tester innan de når till produktions serverns noder.
 Processen för att testa och släppa ändringar från käll kontrollen skapar en säker miljö för att släppa ändringar i små och ofta förekommande batchar.
 
-Mer information om hur du använder versions pipelines för att hantera kärn infrastrukturen finns i fakta bladet: [Modellen för versions pipeline](../further-reading/whitepapers.md).
+Mer information om hur du använder versions pipelines för att hantera kärn infrastrukturen finns i fakta bladet [version: versions pipeline](../further-reading/whitepapers.md).

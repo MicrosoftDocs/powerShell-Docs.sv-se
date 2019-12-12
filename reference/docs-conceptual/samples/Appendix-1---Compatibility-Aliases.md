@@ -3,10 +3,10 @@ ms.date: 09/09/2019
 keywords: PowerShell, cmdlet
 title: Bilaga 1 Kompatibilitetsalias
 ms.openlocfilehash: 2351fdf23711fe1417f7e3fc3cca5b642d5a59fc
-ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70848173"
 ---
 # <a name="appendix-1---compatibility-aliases"></a>Bilaga 1 – kompatibilitets-alias
@@ -16,7 +16,7 @@ Kommandona och deras relaterade PowerShell-cmdlet och PowerShell-alias visas i f
 
 |cmd. exe-kommando|UNIX-kommando|PowerShell-cmdlet|PowerShell-alias|
 |---------------|----------------|--------------|------------|
-|**CLS**|**Rensa**|`Clear-Host`funktioner|`cls`|
+|**CLS**|**Rensa**|`Clear-Host` (funktion)|`cls`|
 |**exemplar**|**CP**|`Copy-Item`|`cpi`|
 |**tillämpning**|**LS**|`Get-ChildItem`|`gci`|
 |**type**|**lat**|`Get-Content`|`gc`|

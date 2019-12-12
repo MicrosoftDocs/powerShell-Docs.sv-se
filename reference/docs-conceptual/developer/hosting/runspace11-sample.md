@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 9c90d268-730b-4e73-9dfd-5f288c27aed0
 caps.latest.revision: 8
 ms.openlocfilehash: 74d7c9e9cb0d7ce829635e6aff994473e09e7479
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353013"
 ---
 # <a name="runspace11-sample"></a>Runspace11 – exempel
@@ -23,7 +23,7 @@ Det här exemplet visar hur du använder klassen [system. Management. Automation
 
 Det här exemplet kräver Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Visat
+## <a name="demonstrates"></a>Demonstrationer
 
 Det här exemplet demonstrerar följande.
 

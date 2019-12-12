@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3cbf64e5-f9e8-4002-b40c-4d3f39025c83
 caps.latest.revision: 11
 ms.openlocfilehash: 0ca522cebb22c624902ab986b13e425db3754adf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353139"
 ---
 # <a name="host04-sample"></a>Host04 – exempel
@@ -23,13 +23,13 @@ Det här exemplet visar hur du skapar ett interaktivt konsolbaserade värd progr
 
  Det här exemplet kräver Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Visat
+## <a name="demonstrates"></a>Demonstrationer
 
-- Skapa en anpassad värd vars klasser härleds från [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) -klassen, klassen [system. Management. Automation. Host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) och [ Klassen system. Management. Automation. Host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) .
+- Skapa en anpassad värd vars klasser härleds från klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) , klassen [system. Management. Automation. Host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) och klassen [system. Management. Automation. Host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) .
 
 - Skapa ett konsol program som använder dessa värd klasser för att skapa ett interaktivt Windows PowerShell-gränssnitt.
 
-- Skapa en variabel för `$profile` och läsa in följande profiler.
+- Skapa en `$profile` variabel och läsa in följande profiler.
 
   - aktuell användare, aktuell värd
 

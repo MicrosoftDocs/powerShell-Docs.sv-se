@@ -3,10 +3,10 @@ title: PowerShell fjärrkommunikation via SSH
 description: Fjärr kommunikation i PowerShell Core med SSH
 ms.date: 09/30/2019
 ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73444379"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell fjärrkommunikation via SSH
@@ -91,7 +91,7 @@ PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Ins
 
    Mer information finns i [Hantera openssh-nycklar](/windows-server/administration/openssh/openssh_keymanagement).
 
-1. Starta om **sshd** -tjänsten.
+1. Starta om **sshd**-tjänsten.
 
    ```powershell
    Restart-Service sshd
@@ -129,7 +129,7 @@ PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Ins
    PubkeyAuthentication yes
    ```
 
-1. Starta om **sshd** -tjänsten.
+1. Starta om **sshd**-tjänsten.
 
    ```bash
    sudo service sshd restart
@@ -172,7 +172,7 @@ PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Ins
    PubkeyAuthentication yes
    ```
 
-1. Starta om **sshd** -tjänsten.
+1. Starta om **sshd**-tjänsten.
 
    ```bash
    sudo launchctl stop com.openssh.sshd

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f7c517aa-24f5-41ae-b82d-cb0fac81a245
 caps.latest.revision: 7
 ms.openlocfilehash: 2d821f5e3bc8d0f81ef8a8a040c6f9bcb1658bee
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355141"
 ---
 # <a name="customitem-element-for-customentry-for-groupby-format"></a>CustomItem-element för CustomEntry för GroupBy (format)
@@ -34,7 +34,7 @@ Konfigurations element (format) ViewDefinitions element (format) visnings elemen
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `CustomItem`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `CustomItem`-elementet.
 
 ### <a name="attributes"></a>Attribut
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c92a6d3d-8d34-4a76-bdc3-dea923d9858e
 caps.latest.revision: 17
 ms.openlocfilehash: e24d40746da91f60aaf2af655ddcadc88ab6a4db
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353118"
 ---
 # <a name="runspace-samples"></a>Exempel på körningsutrymmen
@@ -42,7 +42,7 @@ Det här avsnittet innehåller exempel kod som visar hur du använder olika type
 
  [Runspace09-exempel](./runspace09-sample.md) Det här exemplet visar hur du lägger till ett skript i pipelinen för ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt och hur du kör skriptet asynkront. Händelser används för att hantera utdata från skriptet.
 
- [Runspace10-exempel](./runspace10-sample.md) Det här exemplet visar hur du skapar ett standard tillstånd för inledande session, hur du lägger till en cmdlet till [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), hur du skapar en körnings utrymme som använder det inledande sessionstillståndet och hur du kör kommandot med hjälp av en Objektet [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
+ [Runspace10-exempel](./runspace10-sample.md) Det här exemplet visar hur du skapar ett standard tillstånd för inledande session, hur du lägger till en cmdlet till [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), hur du skapar en körnings utrymme som använder det inledande sessionstillståndet och hur du kör kommandot med hjälp av ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
 
  [Runspace11-exempel](./runspace11-sample.md) Detta visar hur du använder klassen [system. Management. Automation. ProxyCommand](/dotnet/api/System.Management.Automation.ProxyCommand) för att skapa ett proxy-kommando som anropar en befintlig cmdlet, men begränsar uppsättningen av tillgängliga parametrar. Kommandot proxy läggs sedan till i ett tillstånd för inledande session som används för att skapa en begränsad körnings utrymme. Det innebär att användaren endast kan komma åt funktionaliteten för cmdlet via kommandot proxy.
 

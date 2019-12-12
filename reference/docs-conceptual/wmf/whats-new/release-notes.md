@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: Versionsinformation för WMF 5.x
 ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416498"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Viktig information om Windows Management Framework (WMF) 5. x

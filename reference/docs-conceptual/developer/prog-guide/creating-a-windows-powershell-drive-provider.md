@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
 ms.openlocfilehash: 2e3d97e224b06bdf36ac0bc1237911e029ea762d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357206"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Skapa en Windows PowerShell-enhetsprovider
@@ -31,7 +31,7 @@ Leverantören av enheten måste definiera en .NET-klass som är härledd från B
 
 [!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L29-L30 "AccessDBProviderSample02.cs")]
 
-Observera att i det här exemplet anger attributet [system. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) ett användarvänligt namn för providern och de Windows PowerShell-funktioner som providern visar för Windows PowerShell-körning under kommando bearbetning. Möjliga värden för providerns funktioner definieras av [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -uppräkningen. Den här enhets leverantören stöder inte någon av dessa funktioner.
+Observera att i det här exemplet anger attributet [system. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) ett användarvänligt namn för providern och de Windows PowerShell-funktioner som providern exponerar för Windows PowerShell-körningsmiljön under kommando bearbetning. Möjliga värden för providerns funktioner definieras av [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -uppräkningen. Den här enhets leverantören stöder inte någon av dessa funktioner.
 
 ## <a name="defining-base-functionality"></a>Definiera grundläggande funktioner
 
@@ -55,7 +55,7 @@ Din åsidosättning av den här metoden bör göra följande:
 
 - Kontrol lera att [system. Management. Automation. PSDriveinfo. root *](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) member finns och att en anslutning till data lagret kan göras.
 
-- Skapa en enhet och fyll i anslutnings medlemmen i stöd för cmdleten `New-PSDrive`.
+- Skapa en enhet och fyll i anslutnings medlemmen, som stöd för cmdleten `New-PSDrive`.
 
 - Verifiera objektet [system. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) för den föreslagna enheten.
 
@@ -81,7 +81,7 @@ Följande kod visar implementeringen av metoden [system. Management. Automation.
 
 [!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L91-L116 "AccessDBProviderSample02.cs")]
 
-Om enheten kan tas bort ska metoden returnera den information som skickas till metoden via parametern `drive`. Om enheten inte kan tas bort ska metoden skriva ett undantag och sedan returnera `null`. Om din Provider inte åsidosätter den här metoden returnerar standard implementeringen av den här metoden bara enhets informationen som skickas som indata.
+Om enheten kan tas bort ska metoden returnera den information som skickas till metoden via `drive`-parametern. Om enheten inte kan tas bort ska metoden skriva ett undantag och sedan returnera `null`. Om din Provider inte åsidosätter den här metoden returnerar standard implementeringen av den här metoden bara enhets informationen som skickas som indata.
 
 ## <a name="initializing-default-drives"></a>Initierar standard enheter
 
@@ -95,7 +95,7 @@ Den här enhets leverantören åsidosätter inte metoden [system. Management. Au
 
 #### <a name="things-to-remember-about-implementing-initializedefaultdrives"></a>Saker att komma ihåg om att implementera InitializeDefaultDrives
 
-Alla enhets leverantörer ska montera en rot enhet som hjälper användaren att identifiera sig. Rot enheten kan ange platser som fungerar som rötter för andra monterade enheter. Active Directory leverantören kan till exempel skapa en enhet som visar namngivnings kontexterna som finns i attributet `namingContext` på DSE (root Distributed system Environment). Detta hjälper användarna att identifiera monterings punkter för andra enheter.
+Alla enhets leverantörer ska montera en rot enhet som hjälper användaren att identifiera sig. Rot enheten kan ange platser som fungerar som rötter för andra monterade enheter. Active Directory-providern kan till exempel skapa en enhet som visar namngivnings kontexterna som finns i `namingContext` attribut på root Distributed system Environment (DSE). Detta hjälper användarna att identifiera monterings punkter för andra enheter.
 
 ## <a name="code-sample"></a>Kod exempel
 
@@ -105,7 +105,7 @@ Fullständig exempel kod finns i [kod exemplet för AccessDbProviderSample02](./
 
 När din Windows PowerShell-provider har registrerats med Windows PowerShell kan du testa den genom att köra cmdlets som stöds på kommando raden, inklusive alla cmdletar som gjorts tillgängliga av härledning. Nu ska vi testa leverantören av exempel enheten.
 
-1. Kör cmdleten `Get-PSProvider` för att hämta listan över providrar för att se till att AccessDB enhets leverantör finns:
+1. Kör cmdleten `Get-PSProvider` för att hämta listan över providrar för att se till att providern för AccessDB-enhet finns:
 
    **PS > `Get-PSProvider`**
 

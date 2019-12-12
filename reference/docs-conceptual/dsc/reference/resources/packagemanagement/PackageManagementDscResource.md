@@ -3,17 +3,17 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC PackageManagement-resurs
 ms.openlocfilehash: dfc23bfabbc45041e15c56a29a77c5bdda430a30
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941448"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement-resurs
 
 Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0, Windows PowerShell 5,1
 
-**PackageManagement** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att installera eller avinstallera paket hanterings paket på en målnod. Den här resursen kräver **PackageManagement** -modulen som är [http://PowerShellGallery.com](https://PowerShellGallery.com)tillgänglig från.
+**PackageManagement** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att installera eller avinstallera paket hanterings paket på en målnod. Den här resursen kräver **PackageManagement** -modulen, som är tillgänglig från [http://PowerShellGallery.com](https://PowerShellGallery.com).
 
 > [!IMPORTANT]
 > **PackageManagement** -modulen måste vara minst version 1.1.7.0 för att följande egenskaps information ska vara korrekt.
@@ -37,17 +37,17 @@ PackageManagement [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Egenskaper
 
-|Egenskap |Description |
+|Egenskap |Beskrivning |
 |---|---|
-|Name |Anger namnet på det paket som ska installeras eller avinstalleras. |
+|Namn |Anger namnet på det paket som ska installeras eller avinstalleras. |
 |AdditionalParameters |Leverantörsspecifik hash-information för parametrar som skulle skickas till `Get-Package -AdditionalArguments`. För NuGet-Provider kan du till exempel skicka ytterligare parametrar som DestinationPath. |
 |MaximumVersion |Anger den högsta tillåtna versionen för det paket som du vill hitta. Om du inte lägger till den här parametern hittar resursen den högsta tillgängliga versionen av paketet. |
 |MinimumVersion |Anger den lägsta tillåtna versionen för det paket som du vill hitta. Om du inte lägger till den här parametern hittar resursen den högsta tillgängliga versionen av paketet som också uppfyller den högsta version som anges av parametern **MaximumVersion** . |
-|ProviderName |Anger ett paket leverantörs namn som du vill använda för att begränsa pakets ökningen. Du kan hämta paket leverantörs namn genom att `Get-PackageProvider` köra cmdleten. |
+|ProviderName |Anger ett paket leverantörs namn som du vill använda för att begränsa pakets ökningen. Du kan hämta paket leverantörs namn genom att köra cmdleten `Get-PackageProvider`. |
 |RequiredVersion |Anger den exakta versionen av paketet som du vill installera. Om du inte anger den här parametern installerar DSC-resursen den senaste tillgängliga versionen av paketet som också uppfyller den högsta version som anges av parametern **MaximumVersion** . |
-|Source |Anger namnet på paket källan där paketet kan hittas. Detta kan antingen vara en URI eller en källa som registrerats med `Register-PackageSource` eller PackageManagementSource DSC-resurs. |
+|Källa |Anger namnet på paket källan där paketet kan hittas. Detta kan antingen vara en URI eller en källa som registrerats med `Register-PackageSource` eller PackageManagementSource DSC-resurs. |
 |SourceCredential |Anger ett användar konto som har behörighet att installera ett paket för en angiven paket leverantör eller källa. |
 
 ## <a name="additional-parameters"></a>Ytterligare parametrar
@@ -57,13 +57,13 @@ I följande tabell visas alternativ för egenskapen AdditionalParameters.
 |Parameter |Beskrivning |
 |---|---|
 |DestinationPath |Används av leverantörer, till exempel den inbyggda NuGet-providern. Anger en fil Sök väg dit du vill att paketet ska installeras. |
-|InstallationPolicy |Används av leverantörer, till exempel den inbyggda NuGet-providern. Bestämmer om du litar på paketets källa. En av: **Ej betrodd** eller **betrodd**. |
+|InstallationPolicy |Används av leverantörer, till exempel den inbyggda NuGet-providern. Bestämmer om du litar på paketets källa. Ett av: **ej betrott** eller **betrott**. |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"`. |
 |Kontrol |Anger om paketet ska installeras eller avinstalleras. Standardvärdet finns **.** |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 

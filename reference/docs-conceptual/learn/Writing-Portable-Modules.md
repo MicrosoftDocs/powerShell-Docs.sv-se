@@ -3,10 +3,10 @@ ms.date: 12/14/2018
 keywords: PowerShell, cmdlet
 title: Skriva portabla moduler
 ms.openlocfilehash: 7871f524495c1ce5283b30696a24185d427edebf
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417640"
 ---
 # <a name="portable-modules"></a>Bärbara moduler
@@ -165,7 +165,7 @@ I följande avsnitt beskrivs några av de tekniker som används av den här mall
 
 ## <a name="net-standard-library"></a>.NET standard-bibliotek
 
-[.Net standard][] är en formell specifikation av .NET-API: er som är tillgängliga i alla .net-implementeringar. Hanterad kod för .NET standard fungerar med de .NET Framework-och .NET Core-versioner som är kompatibla med den versionen av .NET standard.
+[.NET-standard][] är en formell specifikation av .NET-API: er som är tillgängliga i alla .net-implementeringar. Hanterad kod för .NET standard fungerar med de .NET Framework-och .NET Core-versioner som är kompatibla med den versionen av .NET standard.
 
 > [!NOTE]
 > Även om ett API kan finnas i .NET standard kan API-implementeringen i .NET Core medföra ett `PlatformNotSupportedException` vid körning, så för att verifiera kompatibilitet med Windows PowerShell och PowerShell Core är det bästa sättet att köra tester för modulen i båda miljöerna.
@@ -261,7 +261,7 @@ Exempel:
 [New-ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
 [körnings kontroller]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
-[.NET standard]: /dotnet/standard/net-standard
+[.NET-standard]: /dotnet/standard/net-standard
 [PowerShell-standard]: https://github.com/PowerShell/PowerShellStandard
 [PowerShell standard 5,1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [PowerShell-galleriet]: https://www.powershellgallery.com

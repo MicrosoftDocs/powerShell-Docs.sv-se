@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Andra användbara skriptobjekt
 ms.openlocfilehash: 4f236246714b0608658bbd535851489912430336
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71325149"
 ---
 # <a name="other-useful-scripting-objects"></a>Andra användbara skriptobjekt
@@ -32,7 +32,7 @@ $psUnsupportedConsoleApplications
 
 ### <a name="pslocalhelp"></a>$psLocalHelp
 
-Detta är ett Dictionary-objekt som upprätthåller en Sammanhangs beroende mappning mellan hjälp ämnen och tillhör ande länkar i den lokala kompilerade HTML-hjälp filen. Den används för att hitta den lokala hjälpen för ett visst ämne. Du kan lägga till eller ta bort ämnen från den här listan. I följande kod exempel visas några exempel på nyckel/värde-par som finns `$psLocalHelp`i.
+Detta är ett Dictionary-objekt som upprätthåller en Sammanhangs beroende mappning mellan hjälp ämnen och tillhör ande länkar i den lokala kompilerade HTML-hjälp filen. Den används för att hitta den lokala hjälpen för ett visst ämne. Du kan lägga till eller ta bort ämnen från den här listan. I följande kod exempel visas några exempel på nyckel/värde-par som finns i `$psLocalHelp`.
 
 ```powershell
 # See the local help map

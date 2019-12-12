@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1ca84152-c2b7-492c-8a2e-d0587ab9d7b9
 caps.latest.revision: 9
 ms.openlocfilehash: 48ef14b2a70eecb6ae885739dd3c58ef6e9adb1f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355974"
 ---
 # <a name="newline-element-for-customitem-for-customcontrol-for-view-format"></a>NewLine-element för CustomItem för CustomControl för View (format)
@@ -29,7 +29,7 @@ Konfigurations element (format) ViewDefinitions element (format) View element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `NewLine`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `NewLine`-elementet.
 
 ### <a name="attributes"></a>Attribut
 

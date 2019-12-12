@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Uppdatera noder från en hämtningsserver
 ms.openlocfilehash: 516e50b0c39e4747a123307cb3f5e25259ac7ce5
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417709"
 ---
 # <a name="update-nodes-from-a-pull-server"></a>Uppdatera noder från en hämtningsserver

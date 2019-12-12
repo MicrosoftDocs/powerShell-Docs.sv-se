@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
 caps.latest.revision: 12
 ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356443"
 ---
 # <a name="common-parameter-names"></a>Vanliga parameternamn
@@ -20,7 +20,7 @@ ms.locfileid: "72356443"
 De parametrar som beskrivs i det här avsnittet kallas *vanliga parametrar*. De läggs till i cmdlets av Windows PowerShell-körningsmiljön och kan inte deklareras av cmdleten.
 
 > [!NOTE]
-> Dessa parametrar läggs också till i Provider-cmdletar och till funktioner som har attributet `CmdletBinding`.
+> Dessa parametrar läggs också till i Provider-cmdletar och till funktioner som är dekorerade med `CmdletBinding`-attributet.
 
 ## <a name="general-common-parameters"></a>Allmänna vanliga parametrar
 

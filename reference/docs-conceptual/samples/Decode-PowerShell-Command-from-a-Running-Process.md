@@ -1,23 +1,23 @@
 ---
 ms.date: 11/13/2018
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Avkoda ett PowerShell-kommando från en process som körs
 author: randomnote1
 ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/03/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "66470962"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>Avkoda ett PowerShell-kommando från en process som körs
 
-Du kan ibland ha ett PowerShell process som körs som tar upp mycket resurser.
-Den här processen kan köras i samband med en [Schemaläggaren][] jobb eller en [SQL Server Agent][] jobbet. Där det finns flera PowerShell-processer som körs, kan det vara svårt att veta vilken process representerar problemet. Den här artikeln visar hur du avkoda ett skriptblock som en PowerShell-process körs för tillfället.
+Ibland kan du ha en PowerShell-process som körs med en stor mängd resurser.
+Den här processen kan köras i kontexten för ett jobb i [Schemaläggaren][] eller ett [SQL Server Agent][] jobb. Om det finns flera PowerShell-processer som körs kan det vara svårt att veta vilken process som representerar problemet. Den här artikeln visar hur du avkodar ett skript block som en PowerShell-process körs för tillfället.
 
-## <a name="create-a-long-running-process"></a>Skapa en tidskrävande process
+## <a name="create-a-long-running-process"></a>Skapa en tids krävande process
 
-Öppna ett nytt PowerShell-fönster och kör följande kod för att visa det här scenariot. Den körs en PowerShell-kommando som matar ut ett tal i minuten i 10 minuter.
+Öppna ett nytt PowerShell-fönster och kör följande kod för att demonstrera det här scenariot. Den kör ett PowerShell-kommando som matar ut ett tal varje minut i 10 minuter.
 
 ```powershell
 powershell.exe -Command {
@@ -33,17 +33,17 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>Visa processen
 
-Brödtexten i det kommando som kör PowerShell lagras i den **CommandLine** egenskapen för den [Win32_Process][] klass. Om kommandot är en kodad kommando den **CommandLine** egenskap innehåller strängen ”EncodedCommand”. Med den här informationen kan kan kommandot kodade inte ta bort dold via följande process.
+Bröd texten i kommandot som PowerShell körs i lagras i egenskapen **CommandLine** i klassen [Win32_Process][] . Om kommandot är ett kodat kommando innehåller **CommandLine** -egenskapen strängen "EncodedCommand". Med hjälp av den här informationen kan det kodade kommandot vara avfördunkladede genom följande process.
 
-Starta PowerShell som administratör. Det är viktigt att PowerShell kör som administratör, annars returneras inga resultat vid frågor till processer som körs.
+Starta PowerShell som administratör. Det är viktigt att PowerShell körs som administratör, annars returneras inga resultat när du kör frågor mot de processer som körs.
 
-Kör följande kommando för att hämta alla PowerShell-processer som har en kodad kommando:
+Kör följande kommando för att hämta alla PowerShell-processer som har ett kodat kommando:
 
 ```powershell
 $powerShellProcesses = Get-CimInstance -ClassName Win32_Process -Filter 'CommandLine LIKE "%EncodedCommand%"'
 ```
 
-Följande kommando skapar en anpassad PowerShell-objekt som innehåller process-ID och kommandot kodad.
+Följande kommando skapar ett anpassat PowerShell-objekt som innehåller process-ID och det kodade kommandot.
 
 ```powershell
 $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
@@ -58,7 +58,7 @@ $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
 }
 ```
 
-Nu kan kommandot kodade avkodas. Följande kodavsnitt itererar över information kommandoobjektet avkodar kommandot kodade och lägger till det avkodade kommandot tillbaka till objektet för vidare studier.
+Nu kan det kodade kommandot avkodas. Följande fragment upprepas över kommando informations objekt, avkodar det kodade kommandot och lägger till det avkodade kommandot tillbaka till objektet för ytterligare undersökning.
 
 ```powershell
 $commandDetails | ForEach-Object -Process {
@@ -79,7 +79,7 @@ $commandDetails | ForEach-Object -Process {
 $commandDetails[0]
 ```
 
-Kommandot avkodade kan nu granskas genom att välja avkodade Kommandoegenskapen.
+Det avkodade kommandot kan nu granskas genom att välja den avkodade kommando egenskapen.
 
 ```output
 ProcessId      : 8752

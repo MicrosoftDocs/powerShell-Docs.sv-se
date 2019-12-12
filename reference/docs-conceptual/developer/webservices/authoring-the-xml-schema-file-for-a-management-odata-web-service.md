@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 3e83c9d9-6d06-4247-94d9-e3bfd4013b11
 caps.latest.revision: 4
 ms.openlocfilehash: a806d012097d107b6cc35710b9a93f2b27dd1ace
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352278"
 ---
 # <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a>Redigera XML-schemafilen för en Management OData-webbtjänst
 
-När du har definierat vilka resurser som ska exponeras för din webb tjänst (se [Redigera MOF-schemafilen för en hantering av OData-webbtjänsten](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)) mappar du resurserna till de underliggande Windows PowerShell-cmdletar som implementerar de åtgärder som stöds för varje resurs genom att skapa en XML-fil som följer [resurs mappnings schemat](./resource-mapping-schema.md). XML-filen anger också de URL: er som används av klienten för att få åtkomst till resurserna.
+När du har definierat vilka resurser som ska exponeras för din webb tjänst (se [Redigera MOF-schemafilen för en hantering av OData-webbtjänsten](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)) mappar du dessa resurser till de underliggande Windows PowerShell-cmdletar som implementerar de åtgärder som stöds för varje resurs genom att skapa en XML-fil som följer [resurs mappnings schemat](./resource-mapping-schema.md). XML-filen anger också de URL: er som används av klienten för att få åtkomst till resurserna.
 
 ## <a name="mappng-resources-to-urls"></a>Mappng resurser till URL: er
 
@@ -47,11 +47,11 @@ Sedan anger du de cmdlet: ar som motsvarar de åtgärder för CRUD (skapa, läsa
 |CRUD-kommando|XML-element|
 |------------------|-----------------|
 |Create|Create|
-|Läs|frågeterm|
+|Läs|Söka i data|
 |Uppdatera|Uppdatera|
 |Ta bort|Ta bort|
 
-I följande exempel visas mappningarna för åtgärderna Create, Read och Update på `Service`-resursen.
+I följande exempel visas mappningarna för åtgärderna Create, Read och Update på den `Service` resursen.
 
 ```xml
 <ClassImplementations>

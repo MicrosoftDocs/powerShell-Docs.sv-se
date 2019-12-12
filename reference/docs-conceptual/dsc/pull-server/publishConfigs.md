@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: 'Publicera till en pull-server med konfigurations-ID: n (v4/V5)'
 ms.openlocfilehash: 3b094308338e62c783b19f4d3bb41634feee63f6
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417252"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Publicera till en pull-server med konfigurations-ID: n (v4/V5)
@@ -122,7 +122,7 @@ Härnäst ska du konfigurera pull-klienter för att hämta den angivna konfigura
 - [Konfigurera en pull-klient med konfigurations-ID: n (V5)](pullClientConfigId.md)
 - [Konfigurera en pull-klient med konfigurations namn (V5)](pullClientConfigNames.md)
 
-## <a name="see-also"></a>Se också
+## <a name="see-also"></a>Se även
 
 - [Konfigurera en DSC SMB-pull-server](pullServerSmb.md)
 - [Konfigurera en DSC HTTP-pull-server](pullServer.md)

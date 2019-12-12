@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
 ms.openlocfilehash: 19de0fd33cd764c161366c8161adf46c2247482b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352572"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Runspace01 (VB.NET) – kodexempel
 
-Här är kod exemplen för körnings utrymme som beskrivs i [skapa ett konsol program som kör ett angivet kommando](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). För att göra detta anropar programmet en körnings utrymme och anropar sedan ett kommando. (Observera att det här programmet inte anger körnings utrymme konfigurations information eller inte uttryckligen skapar en pipeline.) Kommandot som anropas är cmdleten `Get-Process`.
+Här är kod exemplen för körnings utrymme som beskrivs i [skapa ett konsol program som kör ett angivet kommando](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). För att göra detta anropar programmet en körnings utrymme och anropar sedan ett kommando. (Observera att det här programmet inte anger körnings utrymme konfigurations information eller inte uttryckligen skapar en pipeline.) Kommandot som anropas är `Get-Process`-cmdleten.
 
 ## <a name="code-sample"></a>Kod exempel
 

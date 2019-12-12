@@ -16,10 +16,10 @@ helpviewer_keywords:
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
 ms.openlocfilehash: 7db93af33717dc4802ed915793f6cd570cfb48f6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355666"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>Lägga till parametrar som bearbetar kommandoradsindata
@@ -51,7 +51,7 @@ En cmdlet-parameter gör att användaren kan ange indata till cmdleten. I följa
 
 Om du vill deklarera parametrar för en cmdlet måste du först definiera de egenskaper som representerar parametrarna. I cmdleten **Get-proc** är den enda parametern `Name`, som i det här fallet representerar namnet på det .NET Framework processobjektet som ska hämtas. Därför definierar cmdlet-klassen en egenskap av typen sträng för att acceptera en namn mat ris.
 
-Här är parameter deklarationen för parametern `Name` för cmdleten **Get-proc** .
+Här är parameter deklarationen för parametern `Name` i **Get-proc-** cmdleten.
 
 ```csharp
 /// <summary>
@@ -83,7 +83,7 @@ Public Property Name() As String()
 End Property
 ```
 
-För att informera Windows PowerShell-körningsmiljön att den här egenskapen är parametern `Name`, läggs attributet [system. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) till i egenskaps definitionen. Den grundläggande syntaxen för att deklarera det här attributet är `[Parameter()]`.
+För att informera Windows PowerShell-körningsmiljön om att den här egenskapen är `Name`-parametern, läggs attributet [system. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) till i egenskaps definitionen. Den grundläggande syntaxen för att deklarera det här attributet är `[Parameter()]`.
 
 > [!NOTE]
 > En parameter måste markeras som offentlig. Parametrar som inte har marker ATS som offentliga som offentliga som standard som interna och inte hittas av Windows PowerShell-körningsmiljön.
@@ -92,9 +92,9 @@ Denna cmdlet använder en sträng mat ris för parametern `Name`. Om möjligt b�
 
 #### <a name="things-to-remember-about-parameter-definitions"></a>Saker att komma ihåg om parameter definitioner
 
-- Fördefinierade parameter namn och data typer för Windows PowerShell bör återanvändas så mycket som möjligt för att säkerställa att din cmdlet är kompatibel med Windows PowerShell-cmdletar. Om till exempel alla cmdlet: ar använder fördefinierade `Id`-parameter namn för att identifiera en resurs, kommer användaren enkelt att förstå betydelsen av parametern, oavsett vilken cmdlet de använder. Parameter namn följer i princip samma regler som används för variabel namn i Common Language Runtime (CLR). Mer information om parameter namn finns i [cmdlet parameter Names](https://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb).
+- Fördefinierade parameter namn och data typer för Windows PowerShell bör återanvändas så mycket som möjligt för att säkerställa att din cmdlet är kompatibel med Windows PowerShell-cmdletar. Om till exempel alla cmdlet: ar använder det fördefinierade `Id` parameter namnet för att identifiera en resurs, kommer användaren enkelt att förstå parameterns innebörd, oavsett vilken cmdlet de använder. Parameter namn följer i princip samma regler som används för variabel namn i Common Language Runtime (CLR). Mer information om parameter namn finns i [cmdlet parameter Names](https://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb).
 
-- Windows PowerShell reserverar några parameter namn för att ge en konsekvent användar upplevelse. Använd inte följande parameter namn: `WhatIf`, `Confirm`, `Verbose`, `Debug`, `Warn`, `ErrorAction`, `ErrorVariable`, `OutVariable` och `OutBuffer`. Dessutom är följande alias för dessa parameter namn reserverade: `vb`, `db`, `ea`, `ev`, `ov` och `ob`.
+- Windows PowerShell reserverar några parameter namn för att ge en konsekvent användar upplevelse. Använd inte följande parameter namn: `WhatIf`, `Confirm`, `Verbose`, `Debug`, `Warn`, `ErrorAction`, `ErrorVariable`, `OutVariable`och `OutBuffer`. Dessutom är följande alias för dessa parameter namn reserverade: `vb`, `db`, `ea`, `ev`, `ov`och `ob`.
 
 - `Name` är ett enkelt och vanligt parameter namn som rekommenderas för användning i dina cmdletar. Det är bättre att välja ett parameter namn som detta än ett komplext namn som är unikt för en speciell cmdlet och svårt att komma ihåg.
 
@@ -104,20 +104,20 @@ Denna cmdlet använder en sträng mat ris för parametern `Name`. Om möjligt b�
 
 ## <a name="declaring-parameters-as-positional-or-named"></a>Deklarera parametrar som positions-eller namngivna
 
-En cmdlet måste ange varje parameter som antingen en positions-eller namngiven parameter. Båda typerna av parametrar accepterar enstaka argument, flera argument avgränsade med kommatecken och booleska inställningar. En boolesk parameter, som även kallas för en *växel*, hanterar endast booleska inställningar. Växeln används för att bestämma förekomst av parametern. Rekommenderat standardvärde är `false`.
+En cmdlet måste ange varje parameter som antingen en positions-eller namngiven parameter. Båda typerna av parametrar accepterar enstaka argument, flera argument avgränsade med kommatecken och booleska inställningar. En boolesk parameter, som även kallas för en *växel*, hanterar endast booleska inställningar. Växeln används för att bestämma förekomst av parametern. Det rekommenderade standardvärdet är `false`.
 
-Cmdleten **Get-proc** definierar parametern `Name` som en positions parameter med position 0. Det innebär att det första argumentet som användaren anger på kommando raden automatiskt infogas för den här parametern. Om du vill definiera en namngiven parameter för vilken användaren måste ange parameter namnet från kommando raden lämnar du `Position`-nyckelordet från deklarationen för attributet.
+Cmdleten **Get-proc** definierar `Name`-parametern som en positions parameter med position 0. Det innebär att det första argumentet som användaren anger på kommando raden automatiskt infogas för den här parametern. Om du vill definiera en namngiven parameter för vilken användaren måste ange parameter namnet från kommando raden lämnar du `Position` nyckelordet från deklarationen för attributet.
 
 > [!NOTE]
 > Om parametrar måste namnges, rekommenderar vi att du använder de mest använda parametrarna så att användarna inte behöver ange parameter namnet.
 
 ## <a name="declaring-parameters-as-mandatory-or-optional"></a>Deklarera parametrar som obligatoriska eller valfria
 
-En cmdlet måste ange varje parameter som antingen en valfri eller en obligatorisk parameter. I samplet **Get-proc-** cmdleten definieras `Name`-parametern som valfri eftersom nyckelordet `Mandatory` inte har angetts i deklarationen för attributet.
+En cmdlet måste ange varje parameter som antingen en valfri eller en obligatorisk parameter. I exempel cmdleten **Get-proc** definieras `Name`-parametern som valfri eftersom nyckelordet `Mandatory` inte har angetts i deklarationen för attributet.
 
 ## <a name="supporting-parameter-validation"></a>Stöd för parameter validering
 
-Cmdleten **Get-proc** lägger till ett verifierings-attribut, [system. Management. Automation. Validatenotnulloremptyattribute](/dotnet/api/System.Management.Automation.ValidateNotNullOrEmptyAttribute), till parametern `Name` för att aktivera verifieringen att indatatypen inte är `null` eller tomt. Det här attributet är ett av flera verifierings attribut från Windows PowerShell. Exempel på andra verifierings attribut finns i [Verifiera parameter Indatatyp](./validating-parameter-input.md).
+Exemplet **Get-proc-** cmdlet: en lägger till ett verifierings-attribut, [system. Management. Automation. Validatenotnulloremptyattribute](/dotnet/api/System.Management.Automation.ValidateNotNullOrEmptyAttribute), till parametern `Name` för att aktivera verifieringen att inaktuella inaktuella inkommer inte `null` eller tomt. Det här attributet är ett av flera verifierings attribut från Windows PowerShell. Exempel på andra verifierings attribut finns i [Verifiera parameter Indatatyp](./validating-parameter-input.md).
 
 ```
 [Parameter(Position = 0)]
@@ -129,7 +129,7 @@ public string[] Name
 
 Om cmdleten ska hantera kommando rads indata måste den åsidosätta lämpliga metoder för bearbetning av indata. De grundläggande metoderna för indata-bearbetning införs när [du skapar din första cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-Cmdleten **Get-proc** åsidosätter metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) för att hantera `Name`-parameter indata från användaren eller ett skript. Den här metoden hämtar processerna för varje begärt process namn, eller alla för-processer om inget namn har angetts. Observera att i [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), anropet till [system. Management. Automation. cmdlet. WriteObject% 28System. Object% 2CSystem. Boolean %29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) är utmatnings mekanismen för att skicka utgående objekt till pipeline. Den andra parametern för det här anropet, `enumerateCollection`, anges till `true` för att informera Windows PowerShell-körningsmiljön om att räkna upp utdata-matrisen för process objekt och skriva en process i taget till kommando raden.
+Cmdleten **Get-proc** åsidosätter metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) för att hantera `Name` parameter-indata från användaren eller ett skript. Den här metoden hämtar processerna för varje begärt process namn, eller alla för-processer om inget namn har angetts. Observera att i [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), anropet till [system. Management. Automation. cmdlet. WriteObject% 28System. Object% 2CSystem. Boolean %29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) är utmatnings mekanismen för att skicka utgående objekt till pipelinen. Den andra parametern för det här anropet, `enumerateCollection`, har ställts in på `true` för att informera Windows PowerShell-körningsmiljön om att räkna upp utdata-matrisen för process objekt och skriva en process i taget till kommando raden.
 
 ```csharp
 protected override void ProcessRecord()

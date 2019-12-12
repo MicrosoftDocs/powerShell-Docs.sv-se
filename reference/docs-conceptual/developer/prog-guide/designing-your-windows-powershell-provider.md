@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
 caps.latest.revision: 10
 ms.openlocfilehash: 962d2ba9fd892c297a633276b9ac07a5fa75ea87
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357192"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Designa en Windows PowerShell-provider
@@ -33,15 +33,15 @@ Om du vill ge användaren åtkomst till data som finns på en fysisk enhet måst
 
 ### <a name="defining-a-provider-qualified-path"></a>Definiera en provider-kvalificerad sökväg
 
-Windows PowerShell-providern måste ha stöd för en provider-kvalificerad sökväg för att Windows PowerShell-körningsmiljön ska kunna initiera och avinitiera providern. Till exempel fil system:: \\ \ uncshare\abc\bar är den provider-kvalificerade sökvägen för fil Systems leverantören som tillhandahålls av Windows PowerShell.
+Windows PowerShell-providern måste ha stöd för en provider-kvalificerad sökväg för att Windows PowerShell-körningsmiljön ska kunna initiera och avinitiera providern. Till exempel fil system::\\\uncshare\abc\bar är den provider-kvalificerade sökvägen för fil Systems leverantören som tillhandahålls av Windows PowerShell.
 
 ### <a name="defining-a-provider-direct-path"></a>Definiera en provider – direkt sökväg
 
-Om du vill tillåta fjärråtkomst till Windows PowerShell-providern ska den stödja en provider-direkt sökväg för att skicka direkt till Windows PowerShell-providern för den aktuella platsen. Till exempel kan registrets Windows PowerShell-Provider använda \\ \ server\regkeypath som en provider-direkt sökväg.
+Om du vill tillåta fjärråtkomst till Windows PowerShell-providern ska den stödja en provider-direkt sökväg för att skicka direkt till Windows PowerShell-providern för den aktuella platsen. Till exempel kan registrets Windows PowerShell-Provider använda \\\server\regkeypath som en provider-direkt sökväg.
 
 ### <a name="defining-a-provider-internal-path"></a>Definiera en provider – intern sökväg
 
-Om du vill tillåta Provider-cmdleten att komma åt data med icke-Windows PowerShell-API: er (Application Programming Interfaces) ska din Windows PowerShell-Provider stödja en provider-intern sökväg. Den här sökvägen anges efter "::" i providerns kvalificerade sökväg. Till exempel är providerns interna sökväg för Windows PowerShell-providern för fil systemet \\ \ uncshare\abc\bar.
+Om du vill tillåta Provider-cmdleten att komma åt data med icke-Windows PowerShell-API: er (Application Programming Interfaces) ska din Windows PowerShell-Provider stödja en provider-intern sökväg. Den här sökvägen anges efter "::" i providerns kvalificerade sökväg. Exempelvis är providerns interna sökväg för Windows PowerShell-providern för fil systemet \\\uncshare\abc\bar.
 
 ## <a name="changing-stored-data"></a>Ändra lagrade data
 
@@ -53,7 +53,7 @@ Windows PowerShell innehåller ett antal bas klasser som du kan använda för at
 
 Varje basklass i Windows PowerShell-providern gör en uppsättning cmdletar tillgängliga. I det här avsnittet beskrivs cmdletarna, men det beskriver inte deras parametrar.
 
-Med hjälp av sessionstillstånd gör Windows PowerShell-körningsmiljön flera plats-cmdletar tillgängliga för vissa Windows PowerShell-leverantörer, till exempel `Get-Location`, `Set-Location`, `Pop-Location`-och `Push-Location`-cmdletar. Du kan använda cmdleten `Get-Help` för att hämta information om dessa plats-cmdletar.
+Med hjälp av sessionstillstånd gör Windows PowerShell-körningsmiljön flera plats-cmdletar tillgängliga för vissa Windows PowerShell-leverantörer, till exempel `Get-Location`-, `Set-Location`-, `Pop-Location`-och `Push-Location`-cmdletar. Du kan använda `Get-Help`-cmdlet för att få information om dessa plats-cmdletar.
 
 ### <a name="cmdletprovider-base-class"></a>CmdletProvider Bask lass
 
@@ -66,7 +66,7 @@ Klassen [system. Management. Automation. Provider. Cmdletprovider](/dotnet/api/S
 
 Klassen [system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) definierar en Windows PowerShell-tjänstleverantör som stöder åtgärder för att lägga till nya enheter, ta bort befintliga enheter och initiera standard enheter. Till exempel initierar fil tjänst leverantören som tillhandahålls av Windows PowerShell enheter för alla volymer som är monterade, till exempel hård diskar och CD-/DVD-enheter.
 
-Den här klassen härleds från Bask Lassen [system. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) . I följande tabell visas de cmdletar som exponeras av den här klassen. Förutom de som anges är cmdleten `Get-PSDrive` (exponerad efter sessionstillstånd) en relaterad cmdlet som används för att hämta tillgängliga enheter.
+Den här klassen härleds från Bask Lassen [system. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) . I följande tabell visas de cmdletar som exponeras av den här klassen. Förutom de som anges, är `Get-PSDrive`-cmdleten (exponerad efter sessionstillstånd) en relaterad cmdlet som används för att hämta tillgängliga enheter.
 
 |Cmdlet|Definition|
 |------------|----------------|
@@ -84,7 +84,7 @@ Klassen [system. Management. Automation. Provider. Itemcmdletprovider](/dotnet/a
 |`Invoke-Item`|Anropar standard åtgärden för objektet på den angivna sökvägen.|
 |`Set-Item`|Anger ett objekt på den angivna platsen med det angivna värdet. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru`-parameter har angetts.|
 |`Resolve-Path`|Matchar jokertecken för sökväg till Windows PowerShell och information om strömmar.|
-|`Test-Path`|Testar för den angivna sökvägen och returnerar `true` om den finns och `false` i annat fall. Denna cmdlet implementeras för att stödja parametern `IsContainer` för metoden [system. Management. Automation. Provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) .|
+|`Test-Path`|Testar för den angivna sökvägen och returnerar `true` om den finns och `false` annars. Denna cmdlet implementeras för att stödja parametern `IsContainer` för metoden [system. Management. Automation. Provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) .|
 
 ### <a name="containercmdletprovider-base-class"></a>ContainerCmdletProvider Bask lass
 
@@ -109,7 +109,7 @@ Klassen [system. Management. Automation. Provider. Navigationcmdletprovider](/do
 |Kombinera-sökväg|Kombinerar två sökvägar till en enda sökväg med hjälp av en leverantörsspecifik avgränsare mellan sökvägar. Denna cmdlet strömmar strängar.|
 |`Move-Item`|Flyttar objekt till den angivna platsen. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru`-parameter har angetts.|
 
-En relaterad cmdlet är den grundläggande parsar-Sök vägs cmdleten som tillhandahålls av Windows PowerShell. Denna cmdlet kan användas för att tolka en Windows PowerShell-sökväg som stöd för parametern `Parent`. Den överordnade Sök vägs strängen strömmas.
+En relaterad cmdlet är den grundläggande parsar-Sök vägs cmdleten som tillhandahålls av Windows PowerShell. Denna cmdlet kan användas för att parsa en Windows PowerShell-sökväg för att stödja `Parent`-parametern. Den överordnade Sök vägs strängen strömmas.
 
 ## <a name="select-provider-interfaces-to-support"></a>Välj Provider-gränssnitt som ska stödjas
 
@@ -141,7 +141,7 @@ Gränssnittet [system. Management. Automation. Provider. Ipropertycmdletprovider
 
 ### <a name="idynamicpropertycmdletprovider"></a>IDynamicPropertyCmdletProvider
 
-Gränssnittet [system. Management. Automation. Provider. Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) , härlett från [system. Management. Automation. Provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider), definierar en provider som anger dynamiska parametrar för sin cmdlets som stöds. Den här typen av provider hanterar åtgärder för vilka egenskaper kan definieras vid körning, till exempel en ny egenskaps åtgärd. Sådana åtgärder är inte möjliga för objekt med statiskt definierade egenskaper. I följande tabell visas de cmdlets som exponeras av det här gränssnittet.
+Gränssnittet [system. Management. Automation. Provider. Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) , härlett från [system. Management. Automation. Provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider), definierar en provider som anger dynamiska parametrar för de cmdlet: ar som stöds. Den här typen av provider hanterar åtgärder för vilka egenskaper kan definieras vid körning, till exempel en ny egenskaps åtgärd. Sådana åtgärder är inte möjliga för objekt med statiskt definierade egenskaper. I följande tabell visas de cmdlets som exponeras av det här gränssnittet.
 
 |Cmdlet|Definition|
 |------------|----------------|

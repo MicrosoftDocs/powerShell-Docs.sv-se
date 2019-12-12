@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 221cbdc2-f794-4f3a-9d40-bfdd8cba1013
 caps.latest.revision: 6
 ms.openlocfilehash: aae65789cf5572cbcc9251eca802a2d43065e49f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354112"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-groupby-format"></a>PropertyName-element för ItemSelectionCondition för GroupBy (format)
@@ -29,7 +29,7 @@ Konfigurations element (format) ViewDefinitions element (format) visnings elemen
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `PropertyName`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `PropertyName`-elementet.
 
 ### <a name="attributes"></a>Attribut
 
@@ -45,7 +45,7 @@ Ingen.
 |-------------|-----------------|
 |[ItemSelectionCondition-element för ExpressionBinding för GroupBy (format)](./itemselectioncondition-element-for-expressionbinding-for-groupby-format.md)|Definierar det villkor som måste finnas för att den här kontrollen ska kunna användas.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange namnet på den .NET-egenskap som utlöser villkoret.
 

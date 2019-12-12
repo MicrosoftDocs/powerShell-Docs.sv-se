@@ -3,10 +3,10 @@ title: Nyheter i PowerShell Core 6,0
 description: Nya funktioner och ändringar som lanseras i PowerShell Core 6,0
 ms.date: 08/06/2018
 ms.openlocfilehash: a623c5b37d5eef2148792203a3c2ff91a0fab266
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416752"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Nyheter i PowerShell Core 6,0
@@ -22,7 +22,7 @@ PowerShell-kärnan exponerar även den API-uppsättning som erbjuds av .NET Core
 Windows PowerShell använde .NET Framework runtime som värd för PowerShell-motorn.
 Det innebär att Windows PowerShell exponerar den API-uppsättning som erbjuds av .NET Framework.
 
-De API: er som delas mellan .NET Core och .NET Framework definieras som en del av [.net standard][].
+De API: er som delas mellan .NET Core och .NET Framework definieras som en del av [.NET-standard][].
 
 Mer information om hur detta påverkar kompatibilitet mellan moduler och skript mellan PowerShell Core och Windows PowerShell finns i [bakåtkompatibla kompatibilitet med Windows PowerShell](#backwards-compatibility-with-windows-powershell).
 
@@ -104,7 +104,7 @@ Sida-vid-sida aktiverar också bakåtkompatibilitet som skript kan fästas på v
 > Som standard installerar MSI-baserade installations program på Windows en uppdatering på plats.
 >
 
-## <a name="renamed-powershellexe-to-pwshexe"></a>Har bytt namn till `powershell(.exe)` `pwsh(.exe)`
+## <a name="renamed-powershellexe-to-pwshexe"></a>`powershell(.exe)` har bytt namn till `pwsh(.exe)`
 
 Det binära namnet för PowerShell Core har ändrats från `powershell(.exe)` till `pwsh(.exe)`.
 Den här ändringen är ett deterministiskt sätt för användarna att köra PowerShell Core på datorer för att stödja Windows PowerShell-och PowerShell-installationer sida vid sida.
@@ -125,11 +125,11 @@ Ytterligare ändringar i `pwsh(.exe)` från `powershell.exe`:
 ## <a name="backwards-compatibility-with-windows-powershell"></a>Bakåtkompatibilitet med Windows PowerShell
 
 Målet med PowerShell Core är att vara så kompatibelt som möjligt med Windows PowerShell.
-PowerShell Core använder [.net Standard][] 2,0 för att ge binär kompatibilitet med befintliga .net-sammansättningar.
+PowerShell Core använder [.NET-standard][] 2,0 för att ge binär kompatibilitet med befintliga .net-sammansättningar.
 Många PowerShell-moduler är beroende av dessa sammansättningar (ofta gånger DLL-filer), så .NET standard gör det möjligt för dem att fortsätta arbeta med .NET Core.
 PowerShell Core innehåller också en tumregel för att titta på välkända mappar, t. ex. när den globala sammansättningscachen vanligt vis finns på disk-för att hitta .NET Framework DLL-beroenden.
 
-Du kan lära dig mer om .NET-standarden i [.NET-blogg][], i den här [YouTube][] -videon och via dessa [ASSURANCE][] om GitHub.
+Du kan lära dig mer om .NET-standarden i [.NET-blogg][], i den här [YouTube][] -videon och via dessa [vanliga frågor och svar][] om GitHub.
 
 Bästa ansträngningar har gjorts för att säkerställa att PowerShell-språket och "inbyggda" moduler (t. ex. `Microsoft.PowerShell.Management`, `Microsoft.PowerShell.Utility`osv.) fungerar på samma sätt som i Windows PowerShell.
 I många fall har vi lagt till nya funktioner och fel korrigeringar för dessa cmdlets med hjälp av communityn.
@@ -181,7 +181,7 @@ Fler Windows-program och-verktyg flyttas bort från UTF-16 och mot BOM-mindre UT
 PowerShell Core ändrar standard kodningen så att den överensstämmer med de bredare eko systemen.
 
 Det innebär att alla inbyggda cmdlets som använder `-Encoding`-parametern använder värdet `UTF8NoBOM` som standard.
-Följande cmdletar påverkas av den här ändringen:
+Följande cmdletar påverkas av den här uppdateringen:
 
 - Lägg till innehåll
 - Exportera – CliXml
@@ -381,7 +381,7 @@ Du hittar mer information om hur vi använder dessa data i det här [blogg inlä
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET Core 2,0]: https://docs.microsoft.com/dotnet/core/
-[.NET standard]: https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET-standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
@@ -389,10 +389,10 @@ Du hittar mer information om hur vi använder dessa data i det här [blogg inlä
 [ändringsloggen]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://devblogs.microsoft.com/powershell/powershell-open-source-community-dashboard/
-[.NET standard]: https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET-standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET-blogg]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
-[ASSURANCE]: https://github.com/dotnet/standard/blob/master/docs/faq.md
+[VANLIGA FRÅGOR OCH SVAR]: https://github.com/dotnet/standard/blob/master/docs/faq.md
 [CDXLM]: /previous-versions/windows/desktop/wmi_v2/getting-started-with-cdxml
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
 [docker]: https://github.com/PowerShell/PowerShell/tree/master/docker

@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Ange beroenden mellan noder
 ms.openlocfilehash: 62e553d894897ae1908745c2788b7b7b9cbe50ff
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942057"
 ---
 # <a name="specifying-cross-node-dependencies"></a>Ange beroenden mellan noder
@@ -55,7 +55,7 @@ WaitForSome [String] #ResourceName
 
 Alla **WaitForXXXX** delar följande syntax nycklar.
 
-|Egenskap|  Description   |
+|Egenskap|  Beskrivning   |
 |---------|---------------------|
 | RetryIntervalSec| Antalet sekunder innan nytt försök. Minimivärdet är 1.|
 | RetryCount| Det maximala antalet försök att försöka igen.|

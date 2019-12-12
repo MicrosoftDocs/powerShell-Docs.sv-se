@@ -3,17 +3,17 @@ title: Supportlängd för PowerShell Core
 description: Principer som styr support för PowerShell Core
 ms.date: 08/06/2018
 ms.openlocfilehash: 27738514fc84105a0339eafcdbb540b7d3790052
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416299"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Supportlängd för PowerShell Core
 
 PowerShell Core är en distinkt uppsättning verktyg och komponenter som levereras, installeras och konfigureras separat från Windows PowerShell. Därför ingår inte PowerShell-kärnan i licens avtalen för Windows 7/8.1/10 eller Windows Server.
 
-PowerShell Core stöds dock i traditionella Microsofts support avtal, inklusive [Högsta][], [Microsoft Enterprise Agreement][enterprise-agreement]och [Microsoft Software Assurance][assurance].
+PowerShell Core stöds dock i traditionella Microsofts support avtal, inklusive [Premier][], [Microsoft Enterprise Agreement][enterprise-agreement]och [Microsoft Software Assurance][assurance].
 Du kan också betala för [assisterad support][] för PowerShell Core genom att skicka en support förfrågan om ditt problem.
 
 ## <a name="community-support"></a>Community-support
@@ -105,7 +105,7 @@ Distributions ägarna avslutade därför stödet för följande versioner och st
 | Ubuntu   | 16,10   | [Juli 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
 | Ubuntu   | 17,04   | [Januari 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
 | Ubuntu   | 17,10   | [Juli 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
-| Debian   | 8       | [2018 juni](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
+| Debian   | 8       | [Juni 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
 | Fedora   | 27      | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
 | Ubuntu   | 14.04   | [April 2019](https://wiki.ubuntu.com/Releases)                                              |
 
@@ -137,7 +137,7 @@ Add-WindowsPSModulePath
 
 [Experimentella funktioner][] är begränsade till [Community-support](#community-support).
 
-[Högsta]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
+[Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
 [Community-support]: https://github.com/powershell/powershell/issues

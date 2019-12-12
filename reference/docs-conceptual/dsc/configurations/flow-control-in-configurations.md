@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Villkorssatser och slingor i konfigurationer
 ms.openlocfilehash: 0073d94d28afbb45bb635442129a6cddde4c805a
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942036"
 ---
 # <a name="conditional-statements-and-loops-in-configurations"></a>Villkorssatser och slingor i konfigurationer
@@ -37,7 +37,7 @@ Configuration ServiceState
 }
 ```
 
-Dessutom kan du skapa en **tjänst** block resurs för varje tjänst på den aktuella datorn med hjälp av en `foreach`-loop.
+Dessutom kan du skapa en **tjänst** block resurs för varje tjänst på den aktuella datorn med hjälp av en `foreach` slinga.
 
 ```powershell
 Configuration ServiceState
@@ -103,7 +103,7 @@ Detta inkluderar sådant som:
 - Tjänst
 - WMI och CIM
 - ActiveDirectory-objekt
-- med mera...
+- med flera...
 
 Alla PowerShell-koder som definierats i en konfiguration utvärderas som en kompileringstid, men du kan också placera kod i skriptet som innehåller konfigurationen. All kod utanför konfigurations blocket körs när du importerar konfigurationen.
 

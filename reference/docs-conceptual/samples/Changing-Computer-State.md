@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Ändra datorstatus
 ms.openlocfilehash: de3e31e358548943a015b7bba275c4461202b20f
-ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70386290"
 ---
 # <a name="changing-computer-state"></a>Ändra datorstatus
@@ -43,9 +43,9 @@ Ett annat alternativ är att använda WMI. Win32_OperatingSystem-klassen har en 
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(0)
 ```
 
-Mer information och hitta andra funktioner i Win32Shutdown-metoden finns i "Win32Shutdown-metoden för klassen Win32_OperatingSystem" i MSDN.
+Mer information och hitta andra funktioner i Win32Shutdown-metoden finns i "Win32Shutdown-metoden i klassen Win32_OperatingSystem" i MSDN.
 
-Slutligen kan du använda CIM med samma Win32_OperatingSystem-klass enligt beskrivningen ovan i WMI-metoden.
+Slutligen kan du använda CIM med samma Win32_OperatingSystem-klass som beskrivs ovan i WMI-metoden.
 
 ```powershell
 Get-CIMInstance -Classname Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown

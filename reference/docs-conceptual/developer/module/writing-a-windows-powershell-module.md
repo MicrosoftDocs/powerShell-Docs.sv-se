@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: bfbccc5b-2b2b-432a-a971-9f8ab503cdc3
 caps.latest.revision: 17
 ms.openlocfilehash: 0b7263ea19745e902fff04b993933e443d4d6333
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352852"
 ---
 # <a name="writing-a-windows-powershell-module"></a>Skriva en Windows PowerShell-modul
@@ -23,7 +23,7 @@ Med Windows PowerShell-moduler kan du partitionera, organisera och abstrakta din
 
 Windows PowerShell kommer att behandla alla giltiga Windows PowerShell-skript koder som sparats i en. psm1-fil som en modul. PowerShell kommer också automatiskt att behandla en binär cmdlet-sammansättning som en modul. Men du kan också använda en modul (eller mer specifikt ett modul manifest) för att bunta samman en hel lösning. I följande scenarier beskrivs vanliga användnings områden för Windows PowerShell-moduler.
 
-### <a name="libraries"></a>Biblioteksfliken
+### <a name="libraries"></a>Bibliotek
 
 Moduler kan användas för att paketera och distribuera sammanhängande bibliotek med funktioner som utför vanliga uppgifter. Normalt delar namnen på dessa funktioner ett eller flera substantiv som återspeglar den vanliga uppgiften som de används för. Dessa funktioner kan också likna .NET Framework klasser i att de kan ha offentliga och privata medlemmar. Ett bibliotek kan till exempel innehålla en uppsättning funktioner för fil överföringar. I det här fallet kan substantiv som reflekterar den vanliga uppgiften vara "File".
 

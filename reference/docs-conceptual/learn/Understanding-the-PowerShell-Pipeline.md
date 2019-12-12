@@ -1,25 +1,25 @@
 ---
 ms.date: 08/23/2018
-keywords: PowerShell cmdlet
-title: Förstå PowerShell-förlopp
+keywords: PowerShell, cmdlet
+title: Förstå PowerShell-pipeliner
 ms.openlocfilehash: 3033a4fe1a704fbbfa76e6d38662c8b22c3dbd9b
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030388"
 ---
 # <a name="understanding-pipelines"></a>Förstå pipelines
 
-Pipelines fungerar som en serie med anslutna pipe-segment. Artiklar som flyttas längsmed pipelinen släpper igenom varje segment. Om du vill skapa en pipeline i PowerShell som du ansluter kommandon tillsammans med operatorn ”|”. Utdata för varje kommando används som indata till nästa kommando.
+Pipelines fungerar som en serie anslutna segment av en pipe. Objekt som flyttas utmed pipelinen passerar varje segment. Om du vill skapa en pipeline i PowerShell ansluter du kommandon tillsammans med pipe-operatorn "|". Utdata från varje kommando används som indata till nästa kommando.
 
-Notation används för pipelines liknar beteckningen används i andra gränssnitt. Vid en första titt kanske det inte tydligt hur skiljer sig pipelines i PowerShell. Även om du ser text på skärmen, kommer objekt inte text mellan kommandon i PowerShell.
+Den notation som används för pipelines liknar den notation som används i andra gränssnitt. I första hand kan det vara inte uppenbart hur pipelines skiljer sig i PowerShell. Även om du ser text på skärmen, PowerShell pipe-objekt, inte text, mellan kommandon.
 
-## <a name="the-powershell-pipeline"></a>PowerShell-pipelinen
+## <a name="the-powershell-pipeline"></a>PowerShell-pipeline
 
-Pipeliner är utan tvekan den mest värdefulla begrepp som används i kommandoradsverktyget gränssnitt. När detta används korrekt kan minska arbetet med att använda komplexa kommandon pipelines och gör det lättare att se arbetsflödet för kommandon. Varje kommando i en pipeline (kallas en pipeline-elementet) skickar sina utdata till nästa kommando i pipeline-post. Kommandon har inte kan hantera mer än ett objekt i taget. Resultatet är lägre resursförbrukning och möjligheten att börja hämta utdata direkt.
+Pipelines är utan tvekan det mest värdefulla konceptet som används i kommando rads gränssnitt. När pipelinen används korrekt minskar pipelinen arbetet med att använda komplexa kommandon och gör det lättare att se arbets flödet för kommandona. Varje kommando i en pipeline (kallas ett pipeline-element) skickar utdata till nästa-kommando i pipelinen, item-by-Item. Kommandon behöver inte hantera mer än ett objekt i taget. Resultatet är minskad resursförbrukning och möjligheten att börja få utdata direkt.
 
-Exempel: Om du använder den `Out-Host` cmdlet för att framtvinga en sida för sida visning av utdata från ett annat kommando, de utdata ser ut precis som den normala texten som visas på skärmen som delats upp i sidor:
+Om du till exempel använder `Out-Host`-cmdleten för att tvinga fram visning av utdata från ett annat kommando, ser utdata ut precis som den normala texten som visas på skärmen, och delas upp i sidor:
 
 ```powershell
 Get-ChildItem -Path C:\WINDOWS\System32 | Out-Host -Paging
@@ -58,15 +58,15 @@ d-----        8/23/2018   5:07 PM                catroot2
 ...
 ```
 
-Växling också minskar CPU-belastningen eftersom bearbetning överförs till den `Out-Host` cmdlet när den har en hel sida som är redo att visa. De cmdletar som redan har infogats i pipelinen Pausa körning tills nästa sida i utdata är tillgänglig.
+Växlingen minskar också CPU-belastningen eftersom bearbetning av överföringar till `Out-Host`-cmdleten är klart att visa. Cmdletarna som föregår den i pipelinen pausar körningen tills nästa sida med utdata är tillgänglig.
 
-Du kan se hur rörnät påverkar processor- och minnesanvändning i Aktivitetshanteraren i Windows genom att jämföra följande kommandon:
+Du kan se hur rörledning påverkar processor-och minnes användning i aktivitets hanteraren genom att jämföra följande kommandon:
 
 - `Get-ChildItem C:\Windows -Recurse`
 - `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`
 
 > [!NOTE]
-> Den **växling** parametern stöds inte av alla PowerShell-värdar. Till exempel när du försöker använda den **växling** parameter i PowerShell ISE kan du se följande fel:
+> **Växlings** parametern stöds inte av alla PowerShell-värdar. När du till exempel försöker använda **växlings** parametern i PowerShell ISE visas följande fel:
 >
 > ```Output
 > out-lineoutput : The method or operation is not implemented.
@@ -79,9 +79,9 @@ Du kan se hur rörnät påverkar processor- och minnesanvändning i Aktivitetsha
 
 ## <a name="objects-in-the-pipeline"></a>Objekt i pipelinen
 
-När du kör en cmdlet i PowerShell, se textutdata eftersom det är nödvändigt att representera objekt som text i ett konsolfönster. Text-utdata visas inte alla egenskaper i objektet som utdata.
+När du kör en cmdlet i PowerShell visas text utdata eftersom det är nödvändigt att representera objekt som text i ett konsol fönster. Text utmatningen kanske inte visar alla egenskaper för objektet som ska skrivas ut.
 
-Anta exempelvis att den `Get-Location` cmdlet. Om du kör `Get-Location` din aktuella plats är roten på C-enheten, finns i följande utdata:
+Överväg till exempel `Get-Location` cmdlet. Om du kör `Get-Location` medan din aktuella plats är roten på C-enheten visas följande utdata:
 
 ```
 PS> Get-Location
@@ -91,9 +91,9 @@ Path
 C:\
 ```
 
-Textutdata är en sammanfattning av informationen, inte en fullständig återgivning av objektet som returnerades av `Get-Location`. Rubriken i utdata har lagts till via processen som formaterar data för visning på skärmen.
+Text utmatningen är en sammanfattning av informationen, inte en fullständig representation av det objekt som returnerades av `Get-Location`. Rubriken i utdata läggs till av processen som formaterar data för skärm visning.
 
-När du skicka utdata till den `Get-Member` cmdlet du få information om objektet som returnerades av `Get-Location`.
+När du rör utdata till `Get-Member` cmdlet får du information om det objekt som returneras av `Get-Location`.
 
 ```powershell
 Get-Location | Get-Member
@@ -114,4 +114,4 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {get;
 ProviderPath Property   string ProviderPath {get;}
 ```
 
-`Get-Location` Returnerar en **PathInfo** objekt som innehåller den aktuella sökvägen och annan information.
+`Get-Location` returnerar ett **PathInfo** -objekt som innehåller den aktuella sökvägen och annan information.

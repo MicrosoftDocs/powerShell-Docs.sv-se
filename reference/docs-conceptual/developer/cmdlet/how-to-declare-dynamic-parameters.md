@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: db04f1df-def5-4456-8869-336024cda723
 caps.latest.revision: 8
 ms.openlocfilehash: a9c530cdc66302eb6b3d9d2b284eeb486c3b2ba9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355519"
 ---
 # <a name="how-to-declare-dynamic-parameters"></a>Deklarera dynamiska parametrar
 
-Det här exemplet visar hur du definierar dynamiska parametrar som läggs till i cmdleten vid körning. I det här exemplet läggs parametern `Department` till i cmdleten när användaren anger parametern `Employee`-växel. Mer information om dynamiska parametrar finns i [cmdlet Dynamic Parameters](./cmdlet-dynamic-parameters.md).
+Det här exemplet visar hur du definierar dynamiska parametrar som läggs till i cmdleten vid körning. I det här exemplet läggs parametern `Department` till i cmdleten när användaren anger parametern `Employee` växel. Mer information om dynamiska parametrar finns i [cmdlet Dynamic Parameters](./cmdlet-dynamic-parameters.md).
 
 ## <a name="to-define-dynamic-parameters"></a>Definiera dynamiska parametrar
 
@@ -60,7 +60,7 @@ Det här exemplet visar hur du definierar dynamiska parametrar som läggs till i
 
 ## <a name="example"></a>Exempel
 
-I det här exemplet läggs parametern `Department` till när användaren anger parametern `Employee`. Parametern `Department` är en valfri parameter, och ValidateSet-attributet används för att ange tillåtna argument.
+I det här exemplet läggs `Department`-parametern till när användaren anger parametern `Employee`. Parametern `Department` är en valfri parameter och attributet ValidateSet används för att ange tillåtna argument.
 
 ```csharp
 using System;

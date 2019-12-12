@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Utforska Windows PowerShell ISE
 ms.openlocfilehash: 7949b690cda73148f07922985b1fc30fe1e8b2d0
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74117450"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Utforska Windows PowerShell ISE
@@ -27,17 +27,17 @@ Meny raden innehåller **filen**, **Redigera**, **Visa**, **verktyg**, **Felsök
 
 En Windows PowerShell-flik är den miljö där ett Windows PowerShell-skript körs. Du kan öppna nya Windows PowerShell-flikar i Windows PowerShell ISE för att skapa separata miljöer på din lokala dator eller på fjärrdatorer. Du kan ha högst åtta PowerShell-flikar öppna samtidigt.
 
-## <a name="toolbar"></a>Knappar
+## <a name="toolbar"></a>Verktygsfält
 
 Följande knappar finns i verktygsfältet.
 
-|Slutför|Funktion|
+|Knapp|Funktion|
 |----------|------------|
-|**Nyårs**|Öppnar ett nytt skript.|
-|**Inställningar**|Öppnar ett befintligt skript eller en befintlig fil.|
+|**Ny**|Öppnar ett nytt skript.|
+|**Öppna**|Öppnar ett befintligt skript eller en befintlig fil.|
 |**Spara**|Sparar ett skript eller en fil.|
 |**Styckning**|Klipper ut den markerade texten och kopierar den till Urklipp.|
-|**Exemplar**|Kopierar den markerade texten till Urklipp.|
+|**Copy**|Kopierar den markerade texten till Urklipp.|
 |**Inklistringsfel**|Klistrar in innehållet i Urklipp vid markörens plats.|
 |**Fönstret rensa utdata**|Tar bort allt innehåll i fönstret utdata.|
 |**Göra**|Ångrar den åtgärd som precis utfördes.|

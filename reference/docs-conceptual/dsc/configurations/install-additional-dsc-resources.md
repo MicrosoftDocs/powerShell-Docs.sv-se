@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, resurs, Galleri, installation
 title: Installera ytterligare DSC-resurser
 ms.openlocfilehash: 7a6a935349358e11a77d2f00c0bf88e0ad18c097
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417791"
 ---
 # <a name="install-additional-dsc-resources"></a>Installera ytterligare DSC-resurser
@@ -18,18 +18,18 @@ Det här är en lista över OOB-resurser som ingår i PowerShell 4,0 och en besk
 > [!NOTE]
 > Det här är en ofullständig lista eftersom antalet OOB-resurser har växt med varje version av PowerShell.
 
-|Resource  |Beskrivning  |
+|Resurs  |Beskrivning  |
 |---------|---------|
-|**Arkiv**|Styr tillstånd för filer och kataloger. Kopierar filer från en **källa** till ett **mål** och uppdaterar dem när **källan** ändras genom att jämföra datum, kontroll summor och hash-värden.|
-|**Arkivattributet**|Packar upp arkiv och en angiven plats. Validerar arkiven med en angiven **kontroll Summa**.|
+|**Fil**|Styr tillstånd för filer och kataloger. Kopierar filer från en **källa** till ett **mål** och uppdaterar dem när **källan** ändras genom att jämföra datum, kontroll summor och hash-värden.|
+|**Arkiv**|Packar upp arkiv och en angiven plats. Validerar arkiven med en angiven **kontroll Summa**.|
 |**Miljö**|Hanterar miljövariabler.|
 |**Grupp**|Hanterar medlemskap i lokala grupper och kontroll grupper.|
-|**Kvorumloggen**|Skriver meddelanden till händelse loggen `Microsoft-Windows-Desired State Configuration/Analytic`.|
+|**log**|Skriver meddelanden till händelse loggen `Microsoft-Windows-Desired State Configuration/Analytic`.|
 |**Paketfilerna**|Installerar eller avinstallerar paket med **argument**, **LogPath**, **ReturnCode**, andra inställningar.|
 |**Registernyckeln**|Hanterar register nycklar och värden.|
-|**Över**|Gör att du kan skapa egna skript block för [Get-test-uppsättning](../resources/get-test-set.md) .|
-|**Telefonitjänstprovider**|Konfigurerar Windows-tjänster.|
-|**Användarvänlig** |Hanterar lokala användare och attribut.|
+|**Skript**|Gör att du kan skapa egna skript block för [Get-test-uppsättning](../resources/get-test-set.md) .|
+|**Tjänst**|Konfigurerar Windows-tjänster.|
+|**Användare** |Hanterar lokala användare och attribut.|
 |**WindowsFeature**|Hanterar roller och funktioner.|
 |**WindowsProcess**|Konfigurerar Windows-processer.|
 
@@ -151,6 +151,6 @@ PowerShell      TimeZone                  ComputerManagementDsc          6.0.0.0
 PowerShell      VirtualMemory             ComputerManagementDsc          6.0.0.0    {Drive, Type, DependsOn, Initi...
 ```
 
-## <a name="see-also"></a>Se också
+## <a name="see-also"></a>Se även
 
 - [Vad är resurser?](../resources/resources.md)

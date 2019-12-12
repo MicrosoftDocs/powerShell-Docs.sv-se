@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
 ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357374"
 ---
 # <a name="installing-a-powershell-module"></a>Installera en PowerShell-modul
@@ -62,7 +62,7 @@ Som standard innehåller variabeln **PSModulePath** följande kataloger för sys
   ```
 
   > [!IMPORTANT]
-  > När du har lagt till sökvägen till **PSModulePath**bör du sända ett miljö meddelande om ändringen. Genom att sända ändringen kan andra program, till exempel gränssnittet, Hämta ändringen. Om du vill sända ändringen ska du be din produkt installations kod att skicka ett **WM_SETTINGCHANGE** -meddelande med `lParam` inställd på strängen "Environment". Se till att skicka meddelandet efter att modulens installations kod har uppdaterats **PSModulePath**.
+  > När du har lagt till sökvägen till **PSModulePath**bör du sända ett miljö meddelande om ändringen. Genom att sända ändringen kan andra program, till exempel gränssnittet, Hämta ändringen. Om du vill sända ändringen ska du be din produkt installations kod att skicka ett **WM_SETTINGCHANGE** meddelande med `lParam` inställd på strängen "miljö". Se till att skicka meddelandet efter att modulens installations kod har uppdaterats **PSModulePath**.
 
 ### <a name="use-the-correct-module-directory-name"></a>Använd rätt katalog namn för modul
 
@@ -89,7 +89,7 @@ Om modulen inte är korrekt utformad och dess plats inte ingår i värdet för *
 
 - Funktionen för automatisk inläsning av modulen kan inte automatiskt importera modulen.
 
-- Parametern `ListAvailable` för cmdleten [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) kan inte hitta modulen.
+- Den `ListAvailable` parametern för cmdleten [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) kan inte hitta modulen.
 
 - Cmdleten [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) kan inte hitta modulen. Om du vill importera modulen måste du ange den fullständiga sökvägen till rot modul filen eller manifest filen för modulen.
 
@@ -101,7 +101,7 @@ Om modulen inte är korrekt utformad och dess plats inte ingår i värdet för *
 
 - Cmdleten [show-Command](/powershell/module/Microsoft.PowerShell.Utility/Show-Command) kan inte hitta och Visa kommandon i modulen.
 
-  Kommandona i modulen saknas i `Show-Command`-fönstret i Windows PowerShell ISE (Integrated Scripting Environment).
+  Kommandona i modulen saknas i `Show-Command`s fönstret i Windows PowerShell ISE (Integrated Scripting Environment).
 
 ## <a name="where-to-install-modules"></a>Installera moduler
 
@@ -153,7 +153,7 @@ $p += ";C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 
 Om en modul används av flera komponenter i en produkt eller flera versioner av en produkt, installerar du modulen i en modul-Specific-underkatalogen i under katalogen%ProgramFiles%\Common Files\Modules.
 
-I följande exempel är Fabrikam-modulen installerad i en Fabrikam-under katalog för under katalogen `%ProgramFiles%\Common Files\Modules`. Observera att varje modul finns i en egen under katalog i under katalogen moduler.
+I följande exempel installeras modulen Fabrikam i en Fabrikam-under katalog i under katalogen `%ProgramFiles%\Common Files\Modules`. Observera att varje modul finns i en egen under katalog i under katalogen moduler.
 
 ```
 C:\Program Files
@@ -185,7 +185,7 @@ Om du vill installera flera versioner av samma modul använder du följande proc
 2. Skapa ett modul manifest för varje version av modulen. I värdet för nyckeln **ModuleVersion** i manifestet anger du versions numret för modulen. Spara manifest filen (. psd1) i den versions bara katalogen för modulen.
 3. Lägg till rotmappen för modulen rot i värdet för **PSModulePath** -miljövariabeln, som visas i följande exempel.
 
-För att importera en viss version av modulen kan slutanvändaren använda parametrarna `MinimumVersion` eller `RequiredVersion` för cmdleten [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
+Om du vill importera en viss version av modulen kan slutanvändaren använda `MinimumVersion`-eller `RequiredVersion` parametrarna i cmdleten [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
 
 Om till exempel Fabrikam-modulen är tillgänglig i versionerna 8,0 och 9,0 kan katalog strukturen Fabrikam likna följande.
 
@@ -210,7 +210,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-När de här stegen är klara, hämtar parametern **ListAvailable** för cmdleten [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) båda fabriks modulerna. Om du vill importera en viss modul använder du parametrarna `MinimumVersion` eller `RequiredVersion` för cmdleten [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
+När de här stegen är klara, hämtar parametern **ListAvailable** för cmdleten [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) båda fabriks modulerna. Om du vill importera en viss modul använder du `MinimumVersion`-eller `RequiredVersion` parametrarna i cmdleten [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
 
 Om båda modulerna importeras till samma session och modulerna innehåller cmdlets med samma namn, gäller cmdletarna som importeras sist i sessionen.
 
@@ -220,7 +220,7 @@ Kommando namns konflikter kan uppstå när kommandon som en modul exporterar har
 
 När en session innehåller två kommandon som har samma namn, kör Windows PowerShell den kommando typ som har företräde. När en session innehåller två kommandon som har samma namn och samma typ, kör Windows PowerShell kommandot som har lagts till i sessionen senast. Om du vill köra ett kommando som inte körs som standard kan användare kvalificera sig med kommandots namn med namnet på modulen.
 
-Om sessionen till exempel innehåller en `Get-Date`-funktion och cmdleten `Get-Date` kör Windows PowerShell funktionen som standard. Om du vill köra cmdleten, Inled kommandot med namnet på modulen, till exempel:
+Om sessionen till exempel innehåller en `Get-Date` funktion och `Get-Date` cmdlet, kör Windows PowerShell funktionen som standard. Om du vill köra cmdleten, Inled kommandot med namnet på modulen, till exempel:
 
 ```powershell
 Microsoft.PowerShell.Utility\Get-Date

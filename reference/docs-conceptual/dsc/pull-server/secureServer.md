@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Metodtips för hämtningsservern
 ms.openlocfilehash: 5cb47598b11f7884dddf1440cec21afeab49bebb
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417724"
 ---
 # <a name="pull-server-best-practices"></a>Metodtips för hämtningsservern
@@ -33,7 +33,7 @@ Eftersom DSC förväntas utvecklas på Cloud takt förväntas den underliggande 
 De två huvud avsnitten i det här dokumentet:
 
 - Konfigurations planering
-- Installations guide
+- Installationsguide
 
 ### <a name="versions-of-the-windows-management-framework"></a>Versioner av Windows Management Framework
 
@@ -132,7 +132,7 @@ En CNAME kan hjälpa till att isolera klient konfigurationen så att ändringar 
 Behåll lösnings arkitekturen i åtanke när du väljer ett namn för DNS-posten.
 Om du använder belastnings utjämning måste certifikatet som används för att skydda trafik över HTTPS dela samma namn som DNS-posten.
 
-Scenario |Bästa praxis
+Scenario |Metodtips
 :---|:---
 Testmiljö |Återskapa den planerade produktions miljön, om möjligt. Ett server namn är lämpligt för enkla konfigurationer. Om DNS inte är tillgängligt kan en IP-adress användas i stället för ett värdnamn.|
 Distribution av en nod |Skapa en DNS CNAME-post som pekar på serverns värdnamn.|
@@ -235,7 +235,7 @@ Automatiseras processen med att kopiera konfigurationer till servern och skapa e
 Hur mappar du GUID till servrar eller roller och var kommer det att lagras?|
 Vad ska du använda som en process för att konfigurera klient datorer och hur kommer det att integreras med processen för att skapa och lagra konfigurations-GUID?|
 
-## <a name="installation-guide"></a>Installations guide
+## <a name="installation-guide"></a>Installationsguide
 
 *Skript som anges i det här dokumentet är stabila exempel. Granska alltid skript noggrant innan du kör dem i en produktions miljö.*
 

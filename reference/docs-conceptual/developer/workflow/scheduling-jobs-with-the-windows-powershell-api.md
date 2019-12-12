@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
 ms.openlocfilehash: bdced961d91088dd75be347b7b74b22467c8c9be
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356639"
 ---
 # <a name="scheduling-jobs-with-the-powershell-api"></a>Schemalägga jobb med PowerShell-API: et
@@ -42,7 +42,7 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 Du definierar ett PowerShell-jobb genom att skapa en parameter ord lista. Följande parametrar stöds:
 
-|Parameter namn|Beskrivning|
+|Parameternamn|Beskrivning|
 |--------------------|-----------------|
 |**Namn**|Namnet på jobbet.|
 |**ScriptBock**|Ett PowerShell-skript block som anger vad jobbet gör.|
@@ -66,7 +66,7 @@ string schedJobDefName = "MySampleSchedJob";
 
 ## <a name="creating-the-invocation-and-job-definition-objects"></a>Skapa anrops-och jobb definitions objekt
 
-Sedan skapar du `ScheduledJobInvocationInfo`-och `ScheduledJobDefinition`-objekt för att köra jobbet som visas i följande exempel:
+Sedan skapar du `ScheduledJobInvocationInfo` och `ScheduledJobDefinition` objekt för att köra jobbet som det visas i följande exempel:
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(

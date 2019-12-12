@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
 ms.openlocfilehash: 81f6c8cd75ccea9e711cd8f6d6daa6cca5a499a0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356828"
 ---
 # <a name="windows-powershell-provider-overview"></a>Översikt över Windows PowerShell-providers
 
-Med en Windows PowerShell-Provider kan alla data lager visas som ett fil system som om det vore en monterad enhet. Den inbyggda Registry-providern gör det till exempel möjligt att navigera i registret på samma sätt som du navigerar i datorns `c`-enhet. En provider kan även åsidosätta `Item`-cmdletar (till exempel `Get-Item`, `Set-Item` osv.), så att data i data lagret kan behandlas som filer och kataloger behandlas när du navigerar i ett fil system. Mer information om leverantörer och enheter och de inbyggda providers i Windows PowerShell finns i [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
+Med en Windows PowerShell-Provider kan alla data lager visas som ett fil system som om det vore en monterad enhet. Den inbyggda Registry-providern gör det till exempel möjligt att navigera i registret, precis som du navigerar `c` hård disken på din dator. En provider kan även åsidosätta `Item`-cmdletar (till exempel `Get-Item`, `Set-Item`osv.), så att data i data lagret kan behandlas som filer och kataloger när du navigerar i ett fil system. Mer information om leverantörer och enheter och de inbyggda providers i Windows PowerShell finns [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
 
 ## <a name="providers-and-drives"></a>Leverantörer och enheter
 
@@ -51,7 +51,7 @@ Om du vill tillåta fjärråtkomst till Windows PowerShell-providern ska den st�
 
 ### <a name="provider-internal-paths"></a>Provider – interna sökvägar
 
-Om du vill tillåta Provider-cmdleten att komma åt data med icke-Windows PowerShell-API: er (Application Programming Interfaces) ska din Windows PowerShell-Provider stödja en provider-intern sökväg. Den här sökvägen anges efter "::" i providerns kvalificerade sökväg. Till exempel är providerns interna sökväg för Windows PowerShell-providern för fil systemet `\\uncshare\abc\bar`.
+Om du vill tillåta Provider-cmdleten att komma åt data med icke-Windows PowerShell-API: er (Application Programming Interfaces) ska din Windows PowerShell-Provider stödja en provider-intern sökväg. Den här sökvägen anges efter "::" i providerns kvalificerade sökväg. Den provider-interna sökvägen för Windows PowerShell-providern för fil systemet `\\uncshare\abc\bar`till exempel.
 
 ## <a name="overriding-cmdlet-parameters"></a>Åsidosätter cmdlet-parametrar
 
@@ -63,7 +63,7 @@ Leverantörer kan definiera dynamiska parametrar som läggs till i en providers-
 
 ## <a name="provider-capabilities"></a>Leverantörs funktioner
 
-I uppräkningen [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) definieras ett antal funktioner som providers kan stödja. Detta inkluderar möjligheten att använda jokertecken, filtrera objekt och stöd transaktioner. Om du vill ange funktioner för en provider lägger du till en lista med värden för [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -uppräkning, kombinerat med en logisk `OR`-åtgärd som [ Egenskapen system. Management. Automation. Provider. Cmdletproviderattribute. ProviderCapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) (den andra parametern för attributet) för attributet [system. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) för din leverantörs klass. Följande attribut anger till exempel att providern stöder [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** och [system. Management. Automation. Provider. ProviderCapabilities ](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **Transaktions** funktioner.
+I uppräkningen [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) definieras ett antal funktioner som providers kan stödja. Detta inkluderar möjligheten att använda jokertecken, filtrera objekt och stöd transaktioner. Om du vill ange funktioner för en provider lägger du till en lista med värden för attributet [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) , kombinerat med en logisk `OR`-åtgärd, som egenskapen [system. Management. Automation. Provider. Cmdletproviderattribute. ProviderCapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) (den andra parametern för attributet) för attributet [system. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) för din leverantörs klass. Följande attribut anger till exempel att providern stöder funktionerna [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** och [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **transaktioner** .
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]
@@ -74,9 +74,9 @@ I uppräkningen [system. Management. Automation. Provider. ProviderCapabilities]
 
 När du skriver en provider kan du implementera din egen hjälp för de Provider-cmdletar som du stöder. Detta omfattar ett enda hjälp avsnitt för varje provider-cmdlet eller flera versioner av ett hjälp avsnitt för fall där providerns cmdlet fungerar på olika sätt baserat på användningen av dynamiska parametrar. Om du vill ha stöd för providerns cmdlet-/regionsspecifika hjälp måste leverantören implementera gränssnittet [system. Management. Automation. Provider. Icmdletprovidersupportshelp](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp) .
 
-Windows PowerShell-motorn anropar metoden [system. Management. Automation. Provider. Icmdletprovidersupportshelp. Gethelpmaml *](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp.GetHelpMaml) för att visa hjälp avsnittet för dina Provider-cmdletar. Motorn tillhandahåller namnet på den cmdlet som användaren angav när du körde `Get-Help`-cmdlet: en och den aktuella sökvägen till användaren. Den aktuella sökvägen krävs om providern implementerar olika versioner av samma provider-cmdlet för olika enheter. Metoden måste returnera en sträng som innehåller XML-koden för cmdlet-hjälpen.
+Windows PowerShell-motorn anropar metoden [system. Management. Automation. Provider. Icmdletprovidersupportshelp. Gethelpmaml *](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp.GetHelpMaml) för att visa hjälp avsnittet för dina Provider-cmdletar. Motorn tillhandahåller namnet på den cmdlet som användaren angav när du körde `Get-Help`-cmdlet och den aktuella sökvägen till användaren. Den aktuella sökvägen krävs om providern implementerar olika versioner av samma provider-cmdlet för olika enheter. Metoden måste returnera en sträng som innehåller XML-koden för cmdlet-hjälpen.
 
-Innehållet för hjälp filen skrivs med PSMAML XML. Detta är samma XML-schema som används för att skriva Hjälp innehåll för fristående cmdlets. Lägg till innehållet för din anpassade cmdlet-hjälp till hjälp filen för din Provider under elementet `CmdletHelpPaths`. I följande exempel visas `command`-elementet för en enda Provider-cmdlet och det visar hur du anger namnet på den provider-cmdlet som din Provider. uppfyller
+Innehållet för hjälp filen skrivs med PSMAML XML. Detta är samma XML-schema som används för att skriva Hjälp innehåll för fristående cmdlets. Lägg till innehållet för din anpassade cmdlet-hjälp till hjälp filen för din Provider under `CmdletHelpPaths`-elementet. I följande exempel visas `command`-elementet för en enda Provider-cmdlet, och det visar hur du anger namnet på den provider-cmdlet som din Provider. har stöd för
 
 ```xml
 <CmdletHelpPaths>

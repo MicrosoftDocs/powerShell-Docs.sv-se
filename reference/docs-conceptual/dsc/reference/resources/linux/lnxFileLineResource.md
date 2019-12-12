@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxFileLine-resurs
 ms.openlocfilehash: 2e94bab318b5db65df88d268a88585079bab89bf
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941434"
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a>DSC för Linux nxFileLine-resurs
@@ -25,11 +25,11 @@ nxFileLine <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
-|FilePath |Den fullständiga sökvägen till filen som hanterar rader i på målnoden. |
+|filePath |Den fullständiga sökvägen till filen som hanterar rader i på målnoden. |
 |ContainsLine |En rad för att se till att den finns i filen. Den här raden läggs till i filen om den inte finns i filen. **ContainsLine** är obligatoriskt, men kan anges till en tom sträng (`ContainsLine = ""`) om det inte behövs. |
 |DoesNotContainPattern |Ett mönster för reguljära uttryck för rader som inte ska finnas i filen. För rader som finns i den fil som matchar det här reguljära uttrycket tas raden bort från filen. |
 
@@ -37,11 +37,11 @@ nxFileLine <string> #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"`. |
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar hur du konfigurerar `/etc/sudoers` filen genom att använda nxFileLine-resursen och se till att användaren: monuser är konfigurerad till inte requiretty.
+Det här exemplet visar hur du konfigurerar `/etc/sudoers`-filen genom att använda **nxFileLine** -resursen och se till att användaren: monuser är konfigurerad till inte requiretty.
 
 ```powershell
 Import-DscResource -Module nx

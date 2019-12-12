@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Konsolförbättringar i WMF 5.1
 ms.openlocfilehash: d0dd8e3c31dc0ddebab1bb899468b77a9292954d
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71145056"
 ---
 # <a name="console-improvements-in-wmf-51"></a>Konsolförbättringar i WMF 5.1
@@ -34,7 +34,7 @@ else
 }
 ```
 
-Här är ett komplett [exempel](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) som kan användas för att markera matchningar `Select-String`från. Spara exemplet i en fil med namnet `MatchInfo.format.ps1xml`, och Använd den sedan i din profil eller någon annan stans, `Update-FormatData -Prepend MatchInfo.format.ps1xml`kör.
+Här är ett komplett [exempel](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) som kan användas för att markera matchningar från `Select-String`. Spara exemplet i en fil med namnet `MatchInfo.format.ps1xml`, och Använd den sedan i din profil eller någon annan stans, och kör `Update-FormatData -Prepend MatchInfo.format.ps1xml`.
 
 Observera att VT100 escape-sekvenser endast stöds från och med Windows 10 minnes dag uppdatering.
 De stöds inte i tidigare system.
@@ -45,7 +45,7 @@ De stöds inte i tidigare system.
 
 ### <a name="redirected-stdin-with-interactive-input"></a>Omdirigerat STDIN med interaktiva ingångar
 
-I tidigare versioner krävdes PowerShell with `powershell -File -` när STDIN omdirigerades och du ville ange kommandon interaktivt.
+I tidigare versioner krävdes att starta PowerShell med `powershell -File -` när STDIN omdirigerades och du ville ange kommandon interaktivt.
 
 Med WMF 5,1 behövs inte längre det här alternativet för att upptäcka. Du kan starta PowerShell utan några alternativ.
 

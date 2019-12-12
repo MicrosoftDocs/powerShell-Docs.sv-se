@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
 caps.latest.revision: 9
 ms.openlocfilehash: d732bce1af446090c3e5741eebeba737f86c7ca8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359289"
 ---
 # <a name="how-to-support-jobs"></a>Ge stöd för jobb
@@ -21,7 +21,7 @@ Det här exemplet visar hur du stöder jobb när du skriver-cmdletar. Om du vill
 
 ## <a name="to-support-jobs"></a>För att stödja jobb
 
-1. Definiera en växel parameter för `AsJob` så att användaren kan bestämma om du vill köra cmdleten som ett jobb.
+1. Definiera en `AsJob` växel parameter så att användaren kan bestämma om du vill köra cmdleten som ett jobb.
 
     I följande exempel visas en AsJob parameter deklaration.
 
@@ -47,7 +47,7 @@ Det här exemplet visar hur du stöder jobb när du skriver-cmdletar. Om du vill
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. I en post bearbetnings metod lägger du till ett `if`-uttryck för att identifiera om cmdleten ska köras som ett jobb. I följande kod används metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) .
+3. I en post bearbetnings metod lägger du till en `if`-instruktion för att identifiera om cmdleten ska köras som ett jobb. I följande kod används metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) .
 
     ```csharp
     protected override void ProcessRecord()

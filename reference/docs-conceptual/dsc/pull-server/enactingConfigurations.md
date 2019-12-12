@@ -3,10 +3,10 @@ ms.date: 10/16/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Tillämpa konfigurationer
 ms.openlocfilehash: 2a40f2055dda78cc0cb6cb05a5e14dce48be9d00
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941735"
 ---
 # <a name="enacting-configurations"></a>Tillämpa konfigurationer
@@ -17,18 +17,18 @@ Det finns två sätt att dra i PowerShell-konfigurationer för Desired State Con
 
 ## <a name="push-mode"></a>Push-läge
 
-![Push-läge],(../images/pushModel.png "hur push-läge fungerar")
+![Push-läge](../images/pushModel.png "Så här fungerar push-läget")
 
 Push-läge refererar till en användare som aktivt använder en konfiguration på en målnod genom att anropa cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) .
 
 När du har skapat och kompilerat en konfiguration kan du använda den i push-läge genom att anropa cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) , ange parametern-Path för cmdleten till den sökväg där MOF-konfigurationsfilen finns.
 Om t. ex. konfigurations-MOF finns på `C:\DSC\Configurations\localhost.mof`, kan du tillämpa den på den lokala datorn med följande kommando: `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
-> __Obs__: Som standard kör DSC en konfiguration som ett bakgrunds jobb. Anropa [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) med parametern __-wait__ för att köra konfigurationen interaktivt.
+> __Obs__: DSC kör som standard en konfiguration som ett bakgrunds jobb. Anropa [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) med parametern __-wait__ för att köra konfigurationen interaktivt.
 
 ## <a name="pull-mode"></a>Pull-läge
 
-![Pull-läge](../images/pullModel.png "hur pull-läge fungerar")
+![Pull-läge](../images/pullModel.png "Så här fungerar pull-läget")
 
 I pull-läge konfigureras pull-klienter för att hämta sina önskade tillstånds konfigurationer från en fjärran sluten pull-tjänst.
 På samma sätt har pull-tjänsten kon figurer ATS som värd för DSC-tjänsten och har etablerats med de konfigurationer och resurser som krävs av pull-klienterna.

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 9c8ef289-0659-42d1-9976-044b144201eb
 caps.latest.revision: 6
 ms.openlocfilehash: 2a8372d937fc3c959f7d829bb52495048423d506
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352173"
 ---
 # <a name="adding-windows-powershell-activities-to-the-visual-studio-toolbox"></a>Lägga till Windows PowerShell-aktiviteter till Visual Studio Toolbox
@@ -35,7 +35,7 @@ Innan du skapar ett PowerShell-arbetsflöde med hjälp av arbetsflödesdesigner 
 
 6. Klicka på **Bläddra**.
 
-7. Navigera till mappen%WINDIR%\Microsoft.NET\assembly\GAC_MSIL\Microsoft.PowerShell.Core.Activities\v4.0_3.0.0.0__31bf3856ad364e och dubbelklicka på Microsoft. PowerShell. Core. Activities. dll.
+7. Gå till mappen%WINDIR%\Microsoft.NET\assembly\ GAC_MSIL \Microsoft.PowerShell.Core.Activities\v4.0_3.0.0.0__31bf3856ad364e och dubbelklicka på Microsoft. PowerShell. Core. Activities. dll.
 
 8. Klicka på **OK**. Aktiviteterna som definieras av sammansättningen Microsoft. PowerShell. Core. Activities är nu tillgängliga i verktygs lådan.
 

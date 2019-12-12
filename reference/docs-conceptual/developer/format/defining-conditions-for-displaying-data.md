@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c1e05821-6aec-437b-84a5-218a5727f88b
 caps.latest.revision: 10
 ms.openlocfilehash: 8a5b84b6a461e9fc340a5981578d95ca2ac6b9f7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355155"
 ---
 # <a name="defining-conditions-for-displaying-data"></a>Definiera villkor för datavisning
@@ -21,7 +21,7 @@ När du definierar vilka data som visas i en vy eller en kontroll kan du ange et
 
 ## <a name="specifying-a-selection-condition-for-a-definition"></a>Ange ett urvals villkor för en definition
 
-När du skapar en definition för en vy eller kontroll, används `EntrySelectedBy`-elementet för att ange vilka objekt som ska använda definitionen eller vilket villkor som måste finnas för att definitionen ska kunna användas. Villkoret anges av elementet `SelectionCondition`.
+När du skapar en definition för en vy eller kontroll, används `EntrySelectedBy`-elementet för att ange vilka objekt som ska använda definitionen eller vilket villkor som måste finnas för att definitionen ska kunna användas. Villkoret anges av `SelectionCondition`-elementet.
 
 I följande exempel anges ett urvals villkor för en definition av en tabellvy. I det här exemplet används definitionen endast när det angivna skriptet utvärderas till `true`.
 
@@ -46,7 +46,7 @@ Det finns ingen gräns för antalet urvals villkor som du kan ange för en defin
 
 ## <a name="specifying-a-selection-condition-for-an-item"></a>Ange ett urvals villkor för ett objekt
 
-Du kan också ange när ett objekt i en listvy eller kontroll ska användas genom att inkludera elementet `ItemSelectionCondition` i objekt definitionen. I följande exempel anges ett urvals villkor för ett objekt i en listvy. I det här exemplet används objektet bara när skriptet utvärderas till `true`.
+Du kan också ange när ett objekt i en listvy eller kontroll ska användas genom att inkludera `ItemSelectionCondition`-elementet i objekt definitionen. I följande exempel anges ett urvals villkor för ett objekt i en listvy. I det här exemplet används objektet bara när skriptet utvärderas till `true`.
 
 ```xml
 <ListItem>

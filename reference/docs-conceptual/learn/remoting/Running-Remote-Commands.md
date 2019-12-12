@@ -1,43 +1,43 @@
 ---
 ms.date: 08/14/2018
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Kör fjärrkommandon
 ms.openlocfilehash: d6609deafd8dec4f34a8412439d87dacd20d46f1
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030312"
 ---
 # <a name="running-remote-commands"></a>Kör fjärrkommandon
 
-Du kan köra kommandon på en eller flera hundra datorer med ett enda PowerShell-kommando. Windows PowerShell har stöd för fjärrhantering med hjälp av olika tekniker, inklusive WMI, RPC- och WS-Management.
+Du kan köra kommandon på en eller flera hundra datorer med ett enda PowerShell-kommando. Windows PowerShell stöder fjärrhantering med hjälp av olika tekniker, inklusive WMI, RPC och WS-Management.
 
-PowerShell Core har stöd för WMI, WS-Management och SSH-fjärrkommunikation. RPC stöds inte längre.
+PowerShell-kärnan stöder WMI, WS-Management och SSH-fjärrkommunikation. RPC stöds inte längre.
 
-Mer information om fjärrkommunikation i PowerShell Core finns i följande artiklar:
+Mer information om fjärr kommunikation i PowerShell Core finns i följande artiklar:
 
-- [SSH fjärrkommunikation i PowerShell Core][ssh-remoting]
+- [SSH-fjärrkommunikation i PowerShell Core][ssh-remoting]
 - [WSMan-fjärrkommunikation i PowerShell Core][wsman-remoting]
 
 ## <a name="windows-powershell-remoting-without-configuration"></a>Windows PowerShell-fjärrkommunikation utan konfiguration
 
-Många Windows PowerShell-cmdlets har parametern ComputerName som hjälper dig att samla in data och ändra inställningarna för en eller flera fjärrdatorer. Dessa cmdletar använder olika kommunikationsprotokoll och fungerar på alla Windows-operativsystem utan någon specialkonfiguration.
+Många Windows PowerShell-cmdlets har parametern ComputerName som gör att du kan samla in data och ändra inställningar på en eller flera fjärrdatorer. Dessa cmdletar använder varierande kommunikations protokoll och fungerar på alla Windows-operativsystem utan någon särskild konfiguration.
 
-Dessa cmdletar omfattar:
+Dessa cmdlet: ar är:
 
 - [Starta om datorn](/powershell/module/microsoft.powershell.management/restart-computer)
 - [Testa anslutning](/powershell/module/microsoft.powershell.management/test-connection)
-- [Clear-EventLog](/powershell/module/microsoft.powershell.management/clear-eventlog)
-- [Get-händelseloggen](/powershell/module/microsoft.powershell.management/get-eventlog)
+- [Rensa-EventLog](/powershell/module/microsoft.powershell.management/clear-eventlog)
+- [Get-EventLog](/powershell/module/microsoft.powershell.management/get-eventlog)
 - [Get-HotFix](/powershell/module/microsoft.powershell.management/get-hotfix)
-- [Get-Process](/powershell/module/microsoft.powershell.management/get-process)
-- [Get-tjänst](/powershell/module/microsoft.powershell.management/get-service)
-- [Set-tjänst](/powershell/module/microsoft.powershell.management/set-service)
+- [Hämta process](/powershell/module/microsoft.powershell.management/get-process)
+- [Get-service](/powershell/module/microsoft.powershell.management/get-service)
+- [Set-service](/powershell/module/microsoft.powershell.management/set-service)
 - [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/get-winevent)
 - [Get-WmiObject](/powershell/module/microsoft.powershell.management/get-wmiobject)
 
-Normalt har parametern ComputerName cmdletar som stöder fjärrkommunikation utan särskild konfiguration och behöver inte parametern Session. För att hitta dessa cmdletar i sessionen, skriver du:
+Normalt är cmdletar som stöder fjärr kommunikation utan särskild konfiguration att ha parametern ComputerName och inte parametern session. Om du vill hitta dessa cmdletar i din session skriver du:
 
 ```powershell
 Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
@@ -45,45 +45,45 @@ Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parame
 
 ## <a name="windows-powershell-remoting"></a>Windows PowerShell-fjärrkommunikation
 
-Windows PowerShell-fjärrkommunikation kan med hjälp av protokollet WS-Management, du köra alla Windows PowerShell-kommandon på en eller flera fjärrdatorer. Du kan fastställa beständiga anslutningar, starta interaktiva sessioner och köra skript på fjärrdatorer.
+Med hjälp av WS-Management-protokollet kan Windows PowerShell-fjärrkommunikation köra alla Windows PowerShell-kommandon på en eller flera fjärrdatorer. Du kan upprätta beständiga anslutningar, starta interaktiva sessioner och köra skript på fjärrdatorer.
 
 Om du vill använda Windows PowerShell-fjärrkommunikation måste fjärrdatorn konfigureras för fjärrhantering.
-Mer information, inklusive anvisningar finns i [om Remote krav](/powershell/module/microsoft.powershell.core/about/about_remote_requirements).
+Mer information, inklusive instruktioner, finns i [om krav för fjärrhantering](/powershell/module/microsoft.powershell.core/about/about_remote_requirements).
 
-När du har konfigurerat Windows PowerShell-fjärrkommunikation, är många strategier för fjärrkommunikation tillgängliga för dig.
-Den här artikeln innehåller några av dem. Mer information finns i [om Remote](/powershell/module/microsoft.powershell.core/about/about_remote).
+När du har konfigurerat Windows PowerShell-fjärrkommunikation är många olika kommunikations strategier tillgängliga för dig.
+I den här artikeln listas bara några av dem. Mer information finns i [om fjärran sluten](/powershell/module/microsoft.powershell.core/about/about_remote).
 
-### <a name="start-an-interactive-session"></a>Starta en interaktiv Session
+### <a name="start-an-interactive-session"></a>Starta en interaktiv session
 
-Starta en interaktiv session med en fjärransluten dator med den [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) cmdlet.
-Till exempel om du vill starta en interaktiv session med Server01 fjärrdatorn, skriver du:
+Om du vill starta en interaktiv session med en enda fjärrdator använder du cmdleten [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) .
+Om du till exempel vill starta en interaktiv session med Server01 fjärrdator skriver du:
 
 ```powershell
 Enter-PSSession Server01
 ```
 
-Kommandotolk-ändras och visar namnet på fjärrdatorn. Kommandon som du anger i Kommandotolken kör på fjärrdatorn och resultatet visas på den lokala datorn.
+Kommando tolken ändras för att visa namnet på fjärrdatorn. Alla kommandon som du skriver vid prompten körs på fjärrdatorn och resultaten visas på den lokala datorn.
 
-Om du vill avsluta den interaktiva sessionen, skriver du:
+Om du vill avsluta den interaktiva sessionen skriver du:
 
 ```powershell
 Exit-PSSession
 ```
 
-Mer information om cmdlet: Enter-PSSession och avsluta-PSSession finns:
+Mer information om cmdletarna Enter-PSSession och exit-PSSession finns i:
 
-- [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession)
+- [Retur-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession)
 - [Avsluta-PSSession](/powershell/module/microsoft.powershell.core/exit-pssession)
 
-### <a name="run-a-remote-command"></a>Kör fjärrkommandon
+### <a name="run-a-remote-command"></a>Köra ett fjärrkommando
 
-Om du vill köra ett kommando på en eller flera datorer, Använd den [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command) cmdlet. Till exempel för att köra en [Get-UICulture](/powershell/module/microsoft.powershell.utility/get-uiculture) på Server01 och Server02 fjärrdatorerna, typ:
+Om du vill köra ett kommando på en eller flera datorer använder du cmdleten [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command) . Om du till exempel vill köra kommandot [Get-värdet](/powershell/module/microsoft.powershell.utility/get-uiculture) på fjärrdatorerna Server01 och Server02, skriver du:
 
 ```powershell
 Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-UICulture}
 ```
 
-Resultatet returneras till datorn.
+Utdata returneras till datorn.
 
 ```output
 LCID    Name     DisplayName               PSComputerName
@@ -92,53 +92,53 @@ LCID    Name     DisplayName               PSComputerName
 1033    en-US    English (United States)   server02.corp.fabrikam.com
 ```
 
-### <a name="run-a-script"></a>Köra ett skript
+### <a name="run-a-script"></a>Kör ett skript
 
-Om du vill köra ett skript på en eller flera fjärrdatorer, använder du parametern FilePath för den `Invoke-Command` cmdlet. Skriptet måste infalla på eller är tillgängliga för den lokala datorn. Resultaten returneras till den lokala datorn.
+Om du vill köra ett skript på en eller flera fjärrdatorer använder du parametern sökväg i `Invoke-Command`-cmdleten. Skriptet måste vara på eller tillgängligt för den lokala datorn. Resultatet returneras till den lokala datorn.
 
-Exempelvis kör följande kommando DiskCollect.ps1 skriptet på fjärrdatorer, Server01 och Server02.
+Följande kommando kör till exempel skriptet DiskCollect. ps1 på fjärrdatorerna, Server01 och Server02.
 
 ```powershell
 Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
 ```
 
-### <a name="establish-a-persistent-connection"></a>Upprätta en beständig anslutning
+### <a name="establish-a-persistent-connection"></a>Upprätta en permanent anslutning
 
-Använd den `New-PSSession` cmdlet för att skapa en beständig session på en fjärrdator. I följande exempel skapar fjärrsessioner på Server01 och Server02. Sessionsobjekt lagras i den `$s` variabeln.
+Använd `New-PSSession`-cmdlet för att skapa en beständig session på en fjärrdator. I följande exempel skapas fjärrsessioner på Server01 och Server02. Sessions-objekten lagras i `$s`-variabeln.
 
 ```powershell
 $s = New-PSSession -ComputerName Server01, Server02
 ```
 
-Nu när sessioner upprättas, kan du köra alla kommandon i dem. Och eftersom sessioner är beständiga kan du samla in data från ett kommando och använda det i ett annat kommando.
+Nu när sessionerna har upprättats kan du köra alla kommandon i dem. Och eftersom sessionerna är permanenta kan du samla in data från ett kommando och använda det i ett annat kommando.
 
-Till exempel följande kommando kör ett kommando för Get-HotFix i sessioner i variabeln $s och sparas resultaten i variabeln $h. Variabeln $h skapas i varje sessioner i $s, men det finns inte i den lokala sessionen.
+Följande kommando kör till exempel ett Get-HotFix-kommando i sessionerna i $s-variabeln och sparar resultatet i $h-variabeln. Variabeln $h skapas i varje session i $s, men den finns inte i den lokala sessionen.
 
 ```powershell
 Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
-Nu kan du använda data i den `$h` variabeln med andra kommandon i samma session. Resultatet visas på den lokala datorn. Till exempel:
+Nu kan du använda data i variabeln `$h` med andra kommandon i samma session. Resultaten visas på den lokala datorn. Till exempel:
 
 ```powershell
 Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
 ```
 
-### <a name="advanced-remoting"></a>Avancerade fjärrkommunikation
+### <a name="advanced-remoting"></a>Avancerad fjärr kommunikation
 
-Windows PowerShell fjärrhantering bara börjar här. Genom att använda de cmdletar som installeras med Windows PowerShell kan du etablera och konfigurera fjärrsessioner både från lokala och fjärranslutna upphör kan skapa anpassade och begränsade sessioner Tillåt användare att importera kommandon från en fjärrsession som faktiskt kör implicit på fjärrsessionen, konfigurerar du säkerheten för en fjärrsession och mycket mer.
+Windows PowerShell-fjärrhantering börjar bara här. Genom att använda de cmdletar som installeras med Windows PowerShell kan du upprätta och konfigurera fjärrsessioner både från lokala och fjärranslutna platser, skapa anpassade och begränsade sessioner, tillåta användare att importera kommandon från en fjärrsession som faktiskt körs Konfigurera en fjärrsessions säkerhet på ett implicit sätt, och mycket mer.
 
-Windows PowerShell innehåller en WSMan-provider. Providern skapar en `WSMAN:` enhet som du kan gå igenom en hierarki med konfigurationsinställningarna på den lokala datorn och fjärrdatorer.
+Windows PowerShell innehåller en WSMan-Provider. Providern skapar en `WSMAN:` enhet som gör det möjligt att navigera genom en hierarki med konfigurations inställningar på den lokala datorn och fjärrdatorer.
 
-Mer information om WSMan-providern finns i [WSMan-providern](https://technet.microsoft.com/library/dd819476.aspx) och [om WS-Management-cmdletar](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets), eller i Windows PowerShell-konsolen skriver `Get-Help wsman`.
+Mer information om WSMan-providern finns i [WSMan-Provider](https://technet.microsoft.com/library/dd819476.aspx) och [om WS-Management-cmdletar](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets), eller i Windows PowerShell-konsolen skriver du `Get-Help wsman`.
 
 Mer information finns i följande avsnitt:
 
-- [Om fjärråtkomst vanliga frågor och svar](https://technet.microsoft.com/library/dd315359.aspx)
-- [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
+- [Om vanliga frågor och svar om fjärr anslutning](https://technet.microsoft.com/library/dd315359.aspx)
+- [Registrera – PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
+- [Importera – PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 
-Hjälp med fjärrkommunikation fel finns i [about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx).
+Hjälp med fjärr kommunikations fel finns i [about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx).
 
 ## <a name="see-also"></a>Se även
 
@@ -148,11 +148,11 @@ Hjälp med fjärrkommunikation fel finns i [about_Remote_Troubleshooting](https:
 - [about_Remote_Troubleshooting](https://technet.microsoft.com/library/2f890148-8578-49ed-85ea-79a489dd6317)
 - [about_PSSessions](https://technet.microsoft.com/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
 - [about_WS-Management_Cmdlets](https://technet.microsoft.com/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
-- [Anropskommandot](/powershell/module/microsoft.powershell.core/invoke-command)
-- [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
+- [Invoke-kommando](/powershell/module/microsoft.powershell.core/invoke-command)
+- [Importera – PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 - [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
-- [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [WSMan Provider](https://technet.microsoft.com/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+- [Registrera – PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
+- [WSMan-Provider](https://technet.microsoft.com/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
 
 [wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
 [ssh-remoting]: SSH-Remoting-in-PowerShell-Core.md

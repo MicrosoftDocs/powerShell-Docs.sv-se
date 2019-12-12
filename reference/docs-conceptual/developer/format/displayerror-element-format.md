@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 45c45800-a87d-456e-b07c-12d4d8c27c67
 caps.latest.revision: 8
 ms.openlocfilehash: 2c6a3d678ca68dc0d189f6ab981fdea5fef894cb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355218"
 ---
 # <a name="displayerror-element-format"></a>DisplayError-element (format)
@@ -29,7 +29,7 @@ Konfigurations element (format) DefaultSettings-element (format) DisplayError-el
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `DisplayError`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `DisplayError`-elementet.
 
 ### <a name="attributes"></a>Attribut
 

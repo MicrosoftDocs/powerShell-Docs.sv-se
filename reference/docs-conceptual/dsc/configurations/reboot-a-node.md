@@ -3,10 +3,10 @@ ms.date: 01/17/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: Starta om en nod
 ms.openlocfilehash: 22c63fab9b6646f522f8531b46a43a94ff883552
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942001"
 ---
 # <a name="reboot-a-node"></a>Starta om en nod
@@ -15,7 +15,7 @@ ms.locfileid: "71942001"
 > Det här avsnittet innehåller information om hur du startar om en nod. För att datorn ska kunna starta om måste inställningarna för **ActionAfterReboot** och **RebootNodeIfNeeded** -LCM vara korrekt konfigurerade.
 > Läs om lokala Configuration Manager inställningar i [Konfigurera den lokala Configuration Manager](../managing-nodes/metaConfig.md)eller [konfigurera den lokala Configuration Manager (v4)](../managing-nodes/metaConfig4.md).
 
-Noder kan startas om från en resurs med hjälp `$global:DSCMachineStatus` av flaggan. Om du anger den `1` här flaggan `Set-TargetResource` till i funktionen tvingas LCM att starta om noden direkt efter **set** -metoden för den aktuella resursen. Med den här flaggan identifierar **PendingReboot** -resursen i modulen [ComputerManagementDsc](https://github.com/PowerShell/ComputerManagementDsc) DSC-resurs om en omstart väntar utanför DSC.
+Noder kan startas om inifrån en resurs med hjälp av flaggan `$global:DSCMachineStatus`. Om du anger den här flaggan till `1` i funktionen `Set-TargetResource` tvingar LCM att starta om noden direkt efter **set** -metoden för den aktuella resursen. Med den här flaggan identifierar **PendingReboot** -resursen i modulen [ComputerManagementDsc](https://github.com/PowerShell/ComputerManagementDsc) DSC-resurs om en omstart väntar utanför DSC.
 
 Dina [konfigurationer](configurations.md) kan utföra steg som kräver att noden startas om. Detta kan innefatta saker som:
 
@@ -24,10 +24,10 @@ Dina [konfigurationer](configurations.md) kan utföra steg som kräver att noden
 - Filen har bytt namn
 - Dator namn
 
-**PendingReboot** -resursen kontrollerar vissa dator platser för att avgöra om en omstart väntar. Om noden kräver en omstart utanför DSC, anger `$global:DSCMachineStatus` **PendingReboot** -resursen flaggan för att `1` tvinga fram en omstart och lösa det väntande tillståndet.
+**PendingReboot** -resursen kontrollerar vissa dator platser för att avgöra om en omstart väntar. Om noden kräver en omstart utanför DSC, ställer **PendingReboot** -resursen `$global:DSCMachineStatus`-flaggan för att `1` framtvinga en omstart och lösa det väntande villkoret.
 
 > [!NOTE]
-> Alla DSC-resurser kan instruera LCM att starta om noden genom att ställa in den här `Set-TargetResource` flaggan i funktionen. Mer information finns i [skriva en anpassad DSC-resurs med MOF](../resources/authoringResourceMOF.md).
+> Alla DSC-resurser kan instruera LCM att starta om noden genom att ange den här flaggan i funktionen `Set-TargetResource`. Mer information finns i [skriva en anpassad DSC-resurs med MOF](../resources/authoringResourceMOF.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -45,18 +45,18 @@ PendingReboot [String] #ResourceName
 }
 ```
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Egenskaper
 
-| Egenskap | Description |
+| Egenskap | Beskrivning |
 | --- | --- |
-| Name| Obligatorisk parameter som måste vara unik per instans av resursen inom en konfiguration.|
+| Namn| Obligatorisk parameter som måste vara unik per instans av resursen inom en konfiguration.|
 | SkipComponentBasedServicing | Hoppa över omstarter som utlösts av komponent-Based Servicing-komponenten. |
 | SkipWindowsUpdate | Hoppa över omstarter som utlösts av Windows Update.|
 | SkipPendingFileRename | Hoppa över väntande fil namn omstarter. |
 | SkipCcmClientSDK | Hoppa över omstarter som utlösts av ConfigMgr-klienten. |
 | SkipComputerRename | Hoppa över omstarter som utlöses av dator namn. |
 | PSDSCRunAsCredential | Stöds i v5. Kör resursen som den angivna användaren. |
-| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är **resourceName** och dess typ är **resourcetype**, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. Mer information finns i [using DependsOn](resource-depends-on.md)|
+| DependsOn | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är **resourceName** och dess typ är **resourcetype**, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"`. Mer information finns i [using DependsOn](resource-depends-on.md)|
 
 ## <a name="example"></a>Exempel
 

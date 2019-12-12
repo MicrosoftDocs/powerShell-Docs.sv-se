@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, resurs, Galleri, installation
 title: Lägga till parametrar i en konfiguration
 ms.openlocfilehash: 72e6c15593d11ed39d7fe8ea79f794089f410cf8
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942120"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Lägga till parametrar i en konfiguration
@@ -36,7 +36,7 @@ Configuration TestConfig
 
 Till skillnad från en Function-CmdletBinding, lägger attributet [](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) till inga funktioner. Förutom [vanliga parametrar](/powershell/module/microsoft.powershell.core/about/about_commonparameters)kan konfigurationer också använda följande inbyggda parametrar, utan att du behöver definiera dem.
 
-|Parameter  |Description  |
+|Parameter  |Beskrivning  |
 |---------|---------|
 |`-InstanceName`|Används i definiera [sammansatta konfigurationer](compositeconfigs.md)|
 |`-DependsOn`|Används i definiera [sammansatta konfigurationer](compositeconfigs.md)|
@@ -224,7 +224,7 @@ Configuration TestConfig
 }
 ```
 
-## <a name="see-also"></a>Se också
+## <a name="see-also"></a>Se även
 
 - [Skriv hjälp för DSC-konfigurationer](configHelp.md)
 - [Dynamiska konfigurationer](flow-control-in-configurations.md)

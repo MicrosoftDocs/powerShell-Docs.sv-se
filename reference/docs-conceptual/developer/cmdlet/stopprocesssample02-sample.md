@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
 caps.latest.revision: 10
 ms.openlocfilehash: 594c06367baedd1f9bfdbfff9f0e072d579b4099
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359222"
 ---
 # <a name="stopprocesssample02-sample"></a>StopProcessSample02 – exempel
@@ -31,7 +31,7 @@ Det här exemplet visar hur du skriver en cmdlet som skriver fel sökning (Write
 
     Biblioteket för exemplet skapas i standardmappen \Bin eller \Bin\Debug.
 
-### <a name="how-to-run-the-sample"></a>Så här kör du exemplet
+### <a name="how-to-run-the-sample"></a>Köra exemplet
 
 1. Skapa följande modul-mapp:
 
@@ -53,7 +53,7 @@ Det här exemplet visar hur du skriver en cmdlet som skriver fel sökning (Write
 
 Det här exemplet kräver Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Visat
+## <a name="demonstrates"></a>Demonstrationer
 
 Det här exemplet demonstrerar följande.
 

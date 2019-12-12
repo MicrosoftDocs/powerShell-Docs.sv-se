@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
 ms.openlocfilehash: 4aa6c020cf0e82a4ffcad6f6c7540688d3369aa6
-ms.sourcegitcommit: e1027805385081c2e6f9250f9cd1167a45f035b0
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/18/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72561284"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Så här skriver du ett manifest för PowerShell-modul
@@ -63,8 +63,8 @@ I följande tabell beskrivs de element som du kan inkludera i ett modul manifest
 |-------------|-------------|-----------------|
 |**RootModule**<br /> Typ: `String`|`<empty string>`|Skriptbaserad modul eller binär modul som är associerad med det här manifestet. Tidigare versioner av PowerShell anropade det här elementet som **ModuleToProcess**.<br /> Möjliga typer för rotnoden kan vara tomma, vilket skapar en **manifest** -modul, namnet på en skript-modul (`.psm1`) eller namnet på en binär modul (`.exe` eller `.dll`). Att placera namnet på ett modul manifest (`.psd1`) eller en skript fil (`.ps1`) i det här elementet orsakar ett fel. <br /> Exempel: `RootModule = 'ScriptModule.psm1'`|
 |**ModuleVersion**<br /> Typ: `Version`|`'0.0.1'`|Versions nummer för den här modulen. Om ett värde inte anges använder `New-ModuleManifest` standardvärdet. Strängen måste kunna konverteras till typen `Version` till exempel `#.#.#.#.#`. `Import-Module` läser in den första modul som den hittar på den **$PSModulePath** som matchar namnet och har minst lika hög som en **ModuleVersion**, som **MinimumVersion** -parameter. Om du vill importera en speciell version använder du `Import-Module` cmdlet: en **RequiredVersion** -parameter.<br /> Exempel: `ModuleVersion = '1.0'`|
-|**LED**<br /> Typ: `GUID`|`'<GUID>'`|ID som används för att identifiera den här modulen unikt. Om ett värde inte anges genererar `New-ModuleManifest` automatiskt värdet. Du kan för närvarande inte importera en modul efter **GUID**. <br /> Exempel: `GUID = 'cfc45206-1e49-459d-a8ad-5b571ef94857'`|
-|**Skriver**<br /> Typ: `String`|`'<Current user>'`|Författare för den här modulen. Om ett värde inte anges använder `New-ModuleManifest` den aktuella användaren. <br /> Exempel: `Author = 'AuthorNameHere'`|
+|**GUID**<br /> Typ: `GUID`|`'<GUID>'`|ID som används för att identifiera den här modulen unikt. Om ett värde inte anges genererar `New-ModuleManifest` automatiskt värdet. Du kan för närvarande inte importera en modul efter **GUID**. <br /> Exempel: `GUID = 'cfc45206-1e49-459d-a8ad-5b571ef94857'`|
+|**Författare**<br /> Typ: `String`|`'<Current user>'`|Författare för den här modulen. Om ett värde inte anges använder `New-ModuleManifest` den aktuella användaren. <br /> Exempel: `Author = 'AuthorNameHere'`|
 |**CompanyName**<br /> Typ: `String`|`'Unknown'`|Företaget eller leverantören för den här modulen. Om ett värde inte anges använder `New-ModuleManifest` standardvärdet.<br /> Exempel: `CompanyName = 'Fabrikam'`|
 |**Material**<br /> Typ: `String`|`'(c) <Author>. All rights reserved.'`| Copyright-instruktion för den här modulen. Om ett värde inte anges använder `New-ModuleManifest` standardvärdet med den aktuella användaren som `<Author>`. Om du vill ange en författare använder du parametern **Author** . <br /> Exempel: `Copyright = '2019 AuthorName. All rights reserved.'`|
 |**Beskrivning**<br /> Typ: `String`|`<empty string>`|Beskrivning av de funktioner som tillhandahålls av den här modulen.<br /> Exempel: `Description = 'This is the module's description.'`|
@@ -87,8 +87,8 @@ I följande tabell beskrivs de element som du kan inkludera i ett modul manifest
 |**DscResourcesToExport**<br /> Typ: `String[]`|`@()`|Anger DSC-resurser som ska exporteras från den här modulen. Jokertecken är tillåtna. <br /> Exempel: `DscResourcesToExport = @("DscResource1", "DscResource2", "DscResource3")`|
 |**ModuleList**<br /> Typ: `Object[]`|`@()`|Anger alla moduler som paketeras med den här modulen. Dessa moduler kan anges med namn, med hjälp av en kommaavgränsad sträng eller som en hash-tabell med **Modulnamn** och **GUID** -nycklar. Hash-tabellen kan också ha en valfri **ModuleVersion** -nyckel. **ModuleList** -nyckeln är utformad för att fungera som en modul för inventering. De här modulerna bearbetas inte automatiskt. <br /> Exempel: `ModuleList = @("SampleModule", "MyModule", @{ModuleName="MyModule"; ModuleVersion="1.0.0.0"; GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"})`|
 |**FileList**<br /> Typ: `String[]`|`@()`|Lista över alla filer som paketeras med den här modulen. Precis som med **ModuleList**är **filelist** en inventerings lista och bearbetas inte på annat sätt. <br /> Exempel: `FileList = @("File1", "File2", "File3")`|
-|**PrivateData**<br /> Typ: `Object`|`@{...}`|Anger eventuella privata data som måste skickas till den rotdomän som anges av nyckeln **RootModule** (alias: **ModuleToProcess**). **PrivateData** är en hash-tabell som består av flera element: **taggar**, **LicenseUri**, **ProjectURI**, **IconUri**, **releasenotes**, för **hands version**, **RequireLicenseAcceptance**och  **ExternalModuleDependencies**. |
-|**Taggen** <br /> Typ: `String[]` |`@()`| Taggar hjälp med modul identifiering i online-gallerier. <br /> Exempel: `Tags = "PackageManagement", "PowerShell", "Manifest"`|
+|**PrivateData**<br /> Typ: `Object`|`@{...}`|Anger eventuella privata data som måste skickas till den rotdomän som anges av nyckeln **RootModule** (alias: **ModuleToProcess**). **PrivateData** är en hash-tabell som består av flera element: **taggar**, **LicenseUri**, **ProjectURI**, **IconUri**, **releasenotes**, för **hands version**, **RequireLicenseAcceptance**och **ExternalModuleDependencies**. |
+|**Taggar** <br /> Typ: `String[]` |`@()`| Taggar hjälp med modul identifiering i online-gallerier. <br /> Exempel: `Tags = "PackageManagement", "PowerShell", "Manifest"`|
 |**LicenseUri**<br /> Typ: `Uri` |`<empty string>`| En URL till licensen för den här modulen. <br /> Exempel: `LicenseUri = 'https://www.contoso.com/license'`|
 |**ProjectUri**<br /> Typ: `Uri` |`<empty string>`| En URL till den huvudsakliga webbplatsen för projektet. <br /> Exempel: `ProjectUri = 'https://www.contoso.com/project'`|
 |**IconUri**<br /> Typ: `Uri` |`<empty string>`| En URL till en ikon som representerar den här modulen. <br /> Exempel: `IconUri = 'https://www.contoso.com/icons/icon.png'`|

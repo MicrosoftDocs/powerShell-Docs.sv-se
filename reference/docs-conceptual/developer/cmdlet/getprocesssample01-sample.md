@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 7b48bf80-cbf0-4cb1-8d5b-3b8d06196598
 caps.latest.revision: 10
 ms.openlocfilehash: 00190c7350cb0f1cfc5c389b56e48e9397480446
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359315"
 ---
 # <a name="getprocesssample01-sample"></a>GetProcessSample01 – exempel
 
-Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna på den lokala datorn. Denna cmdlet är en förenklad version av cmdleten `Get-Process` som tillhandahålls av Windows PowerShell 2,0.
+Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna på den lokala datorn. Denna cmdlet är en förenklad version av `Get-Process`-cmdleten som tillhandahålls av Windows PowerShell 2,0.
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Så här skapar du exemplet med hjälp av Visual Studio.
 
@@ -29,7 +29,7 @@ Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna p
 
   Biblioteket för exemplet skapas i standardmappen \Bin eller \Bin\Debug.
 
-### <a name="how-to-run-the-sample"></a>Så här kör du exemplet
+### <a name="how-to-run-the-sample"></a>Köra exemplet
 
 1. Öppna Kommandotolken.
 
@@ -68,7 +68,7 @@ Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna p
 
 Det här exemplet kräver Windows PowerShell 1,0 eller senare.
 
-## <a name="demonstrates"></a>Visat
+## <a name="demonstrates"></a>Demonstrationer
 
 Det här exemplet demonstrerar följande.
 

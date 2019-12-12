@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Göra det andra hoppet i PowerShell-fjärrkommunikation
 ms.openlocfilehash: 567d75009f7d53e9e95e5480b275ec3991cfb9f5
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417627"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Göra det andra hoppet i PowerShell-fjärrkommunikation
@@ -30,7 +30,7 @@ Mer information om stöld av autentiseringsuppgifter finns i [minimera pass-The-
 
 Ett exempel på hur du aktiverar och använder CredSSP för PowerShell-fjärrkommunikation finns i [använda CredSSP för att lösa det andra hopp problemet](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/).
 
-### <a name="pros"></a>Experter
+### <a name="pros"></a>Fördelar
 
 - Det fungerar för alla servrar med Windows Server 2008 eller senare.
 
@@ -45,7 +45,7 @@ Du kan också använda Kerberos-obegränsad delegering för att göra det andra 
 
 >**Obs:** Active Directory konton som har **kontot känsligt och det inte går** att delegera egenskaps uppsättningen kan inte delegeras. Mer information finns i [säkerhets fokus: analys av kontot är känsligt och kan inte delegeras för privilegierade konton](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) och [verktyg och inställningar för Kerberos-autentisering](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
-### <a name="pros"></a>Experter
+### <a name="pros"></a>Fördelar
 
 - Kräver ingen särskild kodning.
 
@@ -61,7 +61,7 @@ Du kan använda en äldre begränsad delegering (inte resurs baserad) för att g
 > [!NOTE]
 > Active Directory konton som har **kontot känsligt och det inte går** att delegera egenskaps uppsättningen kan inte delegeras. Mer information finns i [säkerhets fokus: analys av kontot är känsligt och kan inte delegeras för privilegierade konton](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) och [verktyg och inställningar för Kerberos-autentisering](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
-### <a name="pros"></a>Experter
+### <a name="pros"></a>Fördelar
 
 - Kräver ingen särskild kodning
 
@@ -79,7 +79,7 @@ I det andra hopp scenariot som beskrivs ovan konfigurerar du _ServerC_ för att 
 
 >**Obs:** Active Directory konton som har **kontot känsligt och det inte går** att delegera egenskaps uppsättningen kan inte delegeras. Mer information finns i [säkerhets fokus: analys av kontot är känsligt och kan inte delegeras för privilegierade konton](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) och [verktyg och inställningar för Kerberos-autentisering](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
-### <a name="pros"></a>Experter
+### <a name="pros"></a>Fördelar
 
 - Autentiseringsuppgifterna lagras inte.
 - Relativt enkelt att konfigurera med hjälp av PowerShell-cmdletar – ingen särskild kod krävs.
@@ -225,7 +225,7 @@ Du kan skapa en sessionshantering på _ServerB_ och ange dess **RunAsCredential*
 
 Information om hur du använder PSSessionConfiguration och RunAs för att lösa det andra hopp problemet finns i [en annan lösning på multi-hop PowerShell-fjärrkommunikation](https://blogs.msdn.microsoft.com/sergey_babkins_blog/2015/03/18/another-solution-to-multi-hop-powershell-remoting/).
 
-### <a name="pros"></a>Experter
+### <a name="pros"></a>Fördelar
 
 - Fungerar med valfri server med WMF 3,0 eller senare.
 
@@ -240,7 +240,7 @@ Med JEA kan du begränsa vilka kommandon en administratör kan köra under en Po
 
 Mer information om JEA finns i [tillräckligt med administration](/powershell/scripting/learn/remoting/jea/overview).
 
-### <a name="pros"></a>Experter
+### <a name="pros"></a>Fördelar
 
 - Inget lösen ords underhåll när du använder ett virtuellt konto.
 
@@ -253,7 +253,7 @@ Mer information om JEA finns i [tillräckligt med administration](/powershell/sc
 
 Du kan skicka autentiseringsuppgifter i **script block** -parametern för ett anrop till cmdleten [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command) .
 
-### <a name="pros"></a>Experter
+### <a name="pros"></a>Fördelar
 
 - Kräver ingen särskild Server konfiguration.
 - Fungerar på alla servrar som kör WMF 2,0 eller senare.
@@ -277,6 +277,6 @@ Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
 }
 ```
 
-## <a name="see-also"></a>Se också
+## <a name="see-also"></a>Se även
 
 [Säkerhetsöverväganden för PowerShell-fjärrkommunikation](WinRMSecurity.md)

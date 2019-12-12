@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: fc9d80ee-6ebd-48cd-a7ea-53cb2b442a22
 caps.latest.revision: 6
 ms.openlocfilehash: ec5a8c284dd3fa772261099281aba1fb68c49118
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359308"
 ---
 # <a name="getprocesssample03-sample"></a>GetProcessSample03 – exempel
 
-Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna på den lokala datorn. Det ger en `Name`-parameter som kan acceptera ett objekt från pipelinen eller ett värde från en egenskap hos ett objekt vars egenskaps namn är samma som parameter namnet. Denna cmdlet är en förenklad version av cmdleten `Get-Process` som tillhandahålls av Windows PowerShell 2,0.
+Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna på den lokala datorn. Det ger en `Name` parameter som kan acceptera ett objekt från pipelinen eller ett värde från en egenskap hos ett objekt vars egenskaps namn är detsamma som parameter namnet. Denna cmdlet är en förenklad version av `Get-Process`-cmdleten som tillhandahålls av Windows PowerShell 2,0.
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>Så här skapar du exemplet med Visual Studio.
 
@@ -29,7 +29,7 @@ Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna p
 
     Biblioteket för exemplet skapas i standardmappen \Bin eller \Bin\Debug.
 
-### <a name="how-to-run-the-sample"></a>Så här kör du exemplet
+### <a name="how-to-run-the-sample"></a>Köra exemplet
 
 1. Skapa följande modul-mapp:
 
@@ -51,7 +51,7 @@ Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna p
 
 Det här exemplet kräver Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Visat
+## <a name="demonstrates"></a>Demonstrationer
 
 Det här exemplet demonstrerar följande.
 
@@ -67,7 +67,7 @@ Det här exemplet demonstrerar följande.
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar en implementering av cmdleten Get-proc som innehåller en `Name`-parameter som accepterar indatamängden från pipelinen.
+Det här exemplet visar en implementering av cmdleten Get-proc som innehåller en `Name` parameter som accepterar ininformation från pipelinen.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Importera en specifik version av en installerad resurs
 ms.openlocfilehash: 5ed81e11aa67eb6590d958647f48a33b1b5f1c0e
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941973"
 ---
 # <a name="import-a-specific-version-of-an-installed-resource"></a>Importera en specifik version av en installerad resurs
@@ -74,7 +74,7 @@ configuration VersionTest
 }
 ```
 
->Anm ModuleVersion-parametern för import-Dscresource Keyword Supports är inte tillgänglig i PowerShell 4,0. I PowerShell 4,0 kan du ange en modul version genom att skicka ett modul Specifikations objekt till Modulnamn-parametern för import-Dscresource Keyword Supports. Ett modul Specifikations objekt är en hash-tabell som innehåller Modulnamn-och RequiredVersion-nycklar. Exempel:
+>Obs: ModuleVersion-parametern för import-Dscresource Keyword Supports är inte tillgänglig i PowerShell 4,0. I PowerShell 4,0 kan du ange en modul version genom att skicka ett modul Specifikations objekt till Modulnamn-parametern för import-Dscresource Keyword Supports. Ett modul Specifikations objekt är en hash-tabell som innehåller Modulnamn-och RequiredVersion-nycklar. Till exempel:
 
 ```powershell
 configuration VersionTest

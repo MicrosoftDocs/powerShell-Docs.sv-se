@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Skapa .NET-och COM-objekt nytt objekt
 ms.openlocfilehash: 6e98a159451bc7da4ba3b37eaeb813eb71590d2b
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71325174"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>Skapa .NET-och COM-objekt (nytt-objekt)
@@ -122,7 +122,7 @@ Du kan använda **nya-objekt** för att arbeta med Component Object Model (com)-
 
 **New-Object** använder .NET Framework runtime-anropade omslutningar för att skapa com-objekt, så den har samma begränsningar som .NET Framework gör vid anrop till com-objekt. Om du vill skapa ett COM-objekt måste du ange parametern **ComObject** med program-ID eller *ProgID* för den com-klass som du vill använda. En fullständig beskrivning av begränsningarna med COM-användning och hur du avgör vilka ProgId som är tillgängliga på ett system ligger utanför den här användarens Användar handbok, men de mest välkända objekten från miljöer som WSH kan användas i Windows PowerShell.
 
-Du kan skapa WSH-objekt genom att ange följande ProgID: **Wscript. Shell**, **wscript. Network**, **Scripting. Dictionary**och **Scripting. FileSystemObject**. Följande kommandon skapar följande objekt:
+Du kan skapa WSH-objekt genom att ange dessa ProgID: **wscript. Shell**, **wscript. Network**, **Scripting. Dictionary**och **Scripting. FileSystemObject**. Följande kommandon skapar följande objekt:
 
 ```powershell
 New-Object -ComObject WScript.Shell
@@ -155,7 +155,7 @@ CreateShortcut           Method                IDispatch CreateShortcut (str...
 ...
 ```
 
-**Get-Member** har en valfri **InputObject** -parameter som du kan använda i stället för rörledningar för att tillhandahålla inmatade **medlemmar**. Du får samma utdata som visas ovan om du i stället använde kommandot **Get-Member-InputObject $WshShell**. Om du använder **InputObject**behandlar den sitt argument som ett enda objekt. Det innebär att om du har flera objekt i en variabel behandlar **Get-Member** dem som en objekt mat ris. Exempel:
+**Get-Member** har en valfri **InputObject** -parameter som du kan använda i stället för rörledningar för att tillhandahålla inmatade **medlemmar**. Du får samma utdata som visas ovan om du i stället använde kommandot **Get-Member-InputObject $WshShell**. Om du använder **InputObject**behandlar den sitt argument som ett enda objekt. Det innebär att om du har flera objekt i en variabel behandlar **Get-Member** dem som en objekt mat ris. Till exempel:
 
 ```
 PS> $a = 1,2,"three"

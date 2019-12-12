@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: af128d87-24f3-4e33-9457-6f8678993236
 caps.latest.revision: 6
 ms.openlocfilehash: b9b66adb9c36977859c9516dc132f99be424d12b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353972"
 ---
 # <a name="rightindent-element-for-frame-for-controls-for-view-format"></a>RightIndent-element för Frame för Controls för View (format)
@@ -29,7 +29,7 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och ett överordnat element för elementet `RightIndent`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `RightIndent`-elementet.
 
 ### <a name="attributes"></a>Attribut
 
@@ -45,7 +45,7 @@ Ingen.
 |-------------|-----------------|
 |[Ram element för CustomItem för kontroller för vy (format)](./frame-element-for-customitem-for-controls-for-view-format.md)|Definierar hur data visas, till exempel att flytta data till vänster eller höger.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange antalet tecken som du vill flytta data till höger.
 

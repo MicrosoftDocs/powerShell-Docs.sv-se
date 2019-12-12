@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a4544c0b-2347-4f3f-9bdb-ed2714bee048
 caps.latest.revision: 6
 ms.openlocfilehash: 8541aeae9f2dd19d65ab3950929474572b4629e0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72358981"
 ---
 # <a name="enumeratecollection-element-for-expressionbinding-for-groupby-format"></a>EnumerateCollection-element för ExpressionBinding för GroupBy (format)
@@ -29,7 +29,7 @@ Konfigurations element (format) ViewDefinitions element (format) visnings elemen
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `EnumerateCollection`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `EnumerateCollection`-elementet.
 
 ### <a name="attributes"></a>Attribut
 

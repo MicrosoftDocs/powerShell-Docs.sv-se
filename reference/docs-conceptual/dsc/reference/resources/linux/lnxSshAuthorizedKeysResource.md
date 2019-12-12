@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxSshAuthorizedKeys-resurs
 ms.openlocfilehash: 6e008efcbff2e679650d0bc3d5b8b573f6ef83e0
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941462"
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>DSC för Linux nxSshAuthorizedKeys-resurs
@@ -26,19 +26,19 @@ nxAuthorizedKeys <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
 |Kommentar |En unik kommentar för nyckeln. Detta används för att identifiera nycklar unikt. |
 |Användarnamn |Användar namnet för hantering av SSH-auktoriserade nycklar för. Om den inte är definierad är standard användaren **roten**. |
-|Nyckel |Nyckelns innehåll. Detta **är obligatoriskt om alternativet** är angivet som **tillgängligt**.|
+|Tangent |Nyckelns innehåll. Detta **är obligatoriskt om alternativet** är angivet som **tillgängligt**.|
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"`. |
 |Kontrol |Anger om nyckeln har definierats. Ange den här egenskapen som **saknas** för att se till att nyckeln inte finns i användarens auktoriserade nyckel fil. Ange att den **finns** för att säkerställa att nyckeln definieras i användarens auktoriserade nyckel fil. |
 
 ## <a name="example"></a>Exempel

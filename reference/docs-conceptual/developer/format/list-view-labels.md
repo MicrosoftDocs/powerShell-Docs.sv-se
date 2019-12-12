@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 53442bb1-74a3-49f9-9150-3bc3081a7565
 caps.latest.revision: 6
 ms.openlocfilehash: 27de41c88e224f7610c10a764e51524016ecc8cb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354378"
 ---
 # <a name="list-view-labels"></a>Listvy (etiketter)
@@ -23,14 +23,14 @@ I det här exemplet visas hur du implementerar en listvy som visar en anpassad e
 
 1. Kopiera XML-filen från exempel avsnittet i det här avsnittet till en textfil.
 
-2. Spara text filen. Se till att lägga till tillägget `format.ps1xml` i filen för att identifiera det som en format fil.
+2. Spara textfilen. Se till att lägga till `format.ps1xml`-tillägget till filen för att identifiera det som en format fil.
 
 3. Öppna Windows PowerShell och kör följande kommando för att läsa in formaterings filen i den aktuella sessionen: `Update-formatdata -prependpath PathToFormattingFile`.
 
    > [!WARNING]
-   > Den här format filen definierar visningen av ett objekt som redan har definierats av en Windows PowerShell-textfil. Du måste använda parametern `prependPath` när du kör cmdleten och du kan inte läsa in den här format filen som en modul.
+   > Den här format filen definierar visningen av ett objekt som redan har definierats av en Windows PowerShell-textfil. Du måste använda parametern `prependPath` när du kör cmdleten, och du kan inte läsa in den här format filen som en modul.
 
-## <a name="demonstrates"></a>Visat
+## <a name="demonstrates"></a>Demonstrationer
 
 Den här format filen visar följande XML-element:
 

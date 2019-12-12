@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: Jea, PowerShell, säkerhet
 title: JEA-krav
 ms.openlocfilehash: 1833bacf49eebcccefc10f7c85a39732559c1a97
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416723"
 ---
 # <a name="prerequisites"></a>Förutsättningar
@@ -30,7 +30,7 @@ Major  Minor  Build  Revision
 
 JEA är tillgängligt med PowerShell 5,0 och högre. För alla funktioner rekommenderar vi att du installerar den senaste versionen av PowerShell som är tillgänglig för ditt system. I följande tabell beskrivs JEA tillgänglighet för Windows Server:
 
-| Serveroperativ system |                JEA tillgänglighet                |
+| Serveroperativsystem |                JEA tillgänglighet                |
 | ----------------------- | ---------------------------------------------- |
 | Windows Server 2016 +    | Förinstallerad                                   |
 | Windows Server 2012 R2  | Fullständiga funktioner med WMF 5,1                |
@@ -39,7 +39,7 @@ JEA är tillgängligt med PowerShell 5,0 och högre. För alla funktioner rekomm
 
 Du kan också använda JEA på din hem-eller arbets dator:
 
-| Klient operativ system |                   JEA tillgänglighet                   |
+| Klientoperativsystem: |                   JEA tillgänglighet                   |
 | ----------------------- | ---------------------------------------------------- |
 | Windows 10 1607 +        | Förinstallerad                                         |
 | Windows 10 1603, 1511   | Förinstallerad med begränsad funktionalitet<sup>2</sup> |
@@ -102,7 +102,7 @@ Du kan också aktivera PowerShell-avskrifter i hela systemet genom grupprincip.
 
 [Skapa en konfigurations fil för sessionen](session-configurations.md)
 
-## <a name="see-also"></a>Se också
+## <a name="see-also"></a>Se även
 
 [WinRM-säkerhet](/powershell/scripting/learn/remoting/winrmsecurity)
 

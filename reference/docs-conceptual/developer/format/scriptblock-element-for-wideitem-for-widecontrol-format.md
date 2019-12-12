@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e00e8f36-76f2-49a0-9b02-3a2a7fceb2dd
 caps.latest.revision: 8
 ms.openlocfilehash: 6534e9dbfbe0dedf60dadd6467cff9ad9b447ba4
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353846"
 ---
 # <a name="scriptblock-element-for-wideitem-for-widecontrol-format"></a>ScriptBlock-element för WideItem för WideControl (format)
@@ -45,7 +45,7 @@ Ingen.
 |-------------|-----------------|
 |[WideItem-element (format)](./wideitem-element-for-widecontrol-format.md)|Definierar egenskapen eller skript blocket vars värde visas i den breda vyn.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange det skript vars värde visas.
 
@@ -55,7 +55,7 @@ Mer information om komponenterna i en bred vy finns i [skapa en bred vy](./creat
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar ett `WideItem`-element som definierar ett skript vars värde visas i vyn.
+I det här exemplet visas ett `WideItem`-element som definierar ett skript vars värde visas i vyn.
 
 ```xml
 <WideItem>

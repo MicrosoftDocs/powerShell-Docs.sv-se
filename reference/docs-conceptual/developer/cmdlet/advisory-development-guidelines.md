@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
 ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359494"
 ---
 # <a name="advisory-development-guidelines"></a>Rekommenderade riktlinjer för utveckling
 
 I det här avsnittet beskrivs rikt linjer som du bör tänka på för att säkerställa bra utvecklings-och användar upplevelser. Ibland kan de tillkomma, och ibland kanske de inte är det.
 
-## <a name="design-guidelines"></a>Design rikt linjer
+## <a name="design-guidelines"></a>Riktlinjer för design
 
 Följande rikt linjer bör beaktas när du utformar cmdletar. När du hittar en design rikt linje som gäller din situation bör du titta närmare på kod rikt linjerna för liknande rikt linjer.
 
 ### <a name="support-an-inputobject-parameter-ad01"></a>Stöd för en InputObject-parameter (AD01)
 
-Eftersom Windows PowerShell fungerar direkt med Microsoft .NET Framework-objekt är ett .NET Framework-objekt ofta tillgängligt som exakt matchar den typ användaren behöver för att utföra en viss åtgärd. `InputObject` är standard namnet för en parameter som tar ett sådant objekt som indatamängd. Exempel: **Stop-proc-** cmdleten i StopProc- [självstudien](./stopproc-tutorial.md) definierar till exempel en `InputObject`-parameter av typen process som stöder indatamängden från pipelinen. Användaren kan få en uppsättning process objekt, ändra dem för att välja de exakta objekt som ska stoppas och sedan skicka dem till **Stop-proc-** cmdleten direkt.
+Eftersom Windows PowerShell fungerar direkt med Microsoft .NET Framework-objekt är ett .NET Framework-objekt ofta tillgängligt som exakt matchar den typ användaren behöver för att utföra en viss åtgärd. `InputObject` är standard namnet för en parameter som tar ett sådant objekt som inmatade. Exempel: **Stop-proc-** cmdleten i StopProc- [självstudien](./stopproc-tutorial.md) definierar till exempel en `InputObject` parameter av typen process som stöder indatamängden från pipelinen. Användaren kan få en uppsättning process objekt, ändra dem för att välja de exakta objekt som ska stoppas och sedan skicka dem till **Stop-proc-** cmdleten direkt.
 
 ### <a name="support-the-force-parameter-ad02"></a>Stöd för Force-parametern (AD02)
 
-Ibland måste en cmdlet skydda användaren från att utföra en begärd åtgärd. En sådan cmdlet bör ha stöd för en `Force`-parameter så att användaren kan åsidosätta det skyddet om användaren har behörighet att utföra åtgärden.
+Ibland måste en cmdlet skydda användaren från att utföra en begärd åtgärd. En sådan cmdlet bör ha stöd för en `Force` parameter så att användaren kan åsidosätta det skyddet om användaren har behörighet att utföra åtgärden.
 
-Till exempel tar [Remove-item-](/powershell/module/microsoft.powershell.management/remove-item) cmdleten normalt inte bort en skrivskyddad fil. Denna cmdlet stöder dock en `Force`-parameter så att en användare kan tvinga borttagning av en skrivskyddad fil. Om användaren redan har behörighet att ändra skrivskyddade attribut, och användaren tar bort filen, underlättar åtgärden med att använda parametern `Force`. Men om användaren inte har behörighet att ta bort filen har parametern `Force` ingen inverkan.
+Till exempel tar [Remove-item-](/powershell/module/microsoft.powershell.management/remove-item) cmdleten normalt inte bort en skrivskyddad fil. Denna cmdlet stöder dock en `Force` parameter så att en användare kan tvinga borttagning av en skrivskyddad fil. Om användaren redan har behörighet att ändra skrivskyddade attribut, och användaren tar bort filen, underlättar åtgärden med hjälp av parametern `Force`. Men om användaren inte har behörighet att ta bort filen har parametern `Force` ingen inverkan.
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>Hantera autentiseringsuppgifter via Windows PowerShell (AD03)
 
-En cmdlet bör definiera en `Credential`-parameter som representerar autentiseringsuppgifter. Den här parametern måste vara av typen [system. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential) och måste definieras med en deklaration för Credential-attribut. Det här stödet efterfrågar automatiskt användaren för användar namnet, lösen ordet eller både och när en fullständig autentiseringsuppgift inte anges direkt. Mer information om attributet Credential finns i deklaration för [Credential-attribut](./credential-attribute-declaration.md).
+En cmdlet bör definiera en `Credential` parameter som representerar autentiseringsuppgifter. Den här parametern måste vara av typen [system. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential) och måste definieras med en deklaration för Credential-attribut. Det här stödet efterfrågar automatiskt användaren för användar namnet, lösen ordet eller både och när en fullständig autentiseringsuppgift inte anges direkt. Mer information om attributet Credential finns i deklaration för [Credential-attribut](./credential-attribute-declaration.md).
 
 ### <a name="support-encoding-parameters-ad04"></a>Stöd för kodnings parametrar (AD04)
 
@@ -59,7 +59,7 @@ Du definierar vanligt vis klassen för en cmdlet i ett .NET Framework namn områ
 
 #### <a name="name-the-cmdlet-class-to-match-the-cmdlet-name"></a>Namnge cmdlet-klassen så att den matchar cmdlet-namnet
 
-När du namnger .NET Framework-klassen som implementerar en cmdlet, namnger du klassen " *\<Verb > **\<Noun >** \<Command >* ", där du ersätter plats hållarna *\<Verb >* och *\<Noun >* med verbet och substantiv som används för cmdlet-namnet. Till exempel implementeras cmdleten [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) av en klass med namnet `GetProcessCommand`.
+När du namnger .NET Framework-klassen som implementerar en cmdlet, namnger du klassen " *\<Verb > **\<substantiv >** \<kommando >* ", där du ersätter *\<verb >* och *\<Substantiv >* plats hållare med verbet och substantiv som används som cmdlet-namn. Till exempel implementeras cmdleten [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) av en klass med namnet `GetProcessCommand`.
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>Om ingen pipeline-inmatare åsidosätter metoden BeginProcessing (AC02)
 
@@ -67,13 +67,13 @@ Om cmdleten inte accepterar indata från pipelinen bör bearbetningen implemente
 
 ### <a name="to-handle-stop-requests-override-the-stopprocessing-method-ac03"></a>För att hantera stopp förfrågningar åsidosätter du StopProcessing-metoden (AC03)
 
-Åsidosätt metoden [system. Management. Automation. cmdlet. StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) så att din cmdlet kan hantera stopp signal. Vissa cmdletar tar lång tid att slutföra sin åtgärd och de kan ge lång tid mellan anrop till Windows PowerShell-körningsmiljön, till exempel när cmdleten blockerar tråden i långvariga RPC-anrop. Detta inkluderar cmdletar som gör anrop till metoden [system. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) , till metoden [system. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) och andra feedback-mekanismer som kan ta lång tid att slutföra . I dessa fall kan användaren behöva skicka en stopp signal till dessa cmdletar.
+Åsidosätt metoden [system. Management. Automation. cmdlet. StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) så att din cmdlet kan hantera stopp signal. Vissa cmdletar tar lång tid att slutföra sin åtgärd och de kan ge lång tid mellan anrop till Windows PowerShell-körningsmiljön, till exempel när cmdleten blockerar tråden i långvariga RPC-anrop. Detta inkluderar cmdletar som gör anrop till metoden [system. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) , till metoden [system. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) och andra feedback-mekanismer som kan ta lång tid att slutföra. I dessa fall kan användaren behöva skicka en stopp signal till dessa cmdletar.
 
 ### <a name="implement-the-idisposable-interface-ac04"></a>Implementera IDisposable-gränssnittet (AC04)
 
-Om cmdleten har objekt som inte har avslut ATS (skrivs till pipelinen) av metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) kan cmdleten kräva ytterligare objekt kasse ring. Om din cmdlet till exempel öppnar en fil referens i dess [system. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -Metod och låter referensen vara öppen för användning av metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , måste den här referensen vara stängd i slutet av bearbetningen.
+Om cmdleten har objekt som inte har avslut ATS (skrivs till pipelinen) av metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) kan cmdleten kräva ytterligare objekt kasse ring. Om din cmdlet till exempel öppnar en fil referens i dess [system. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -Metod och låter referensen vara öppen för användning av metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , måste den här referensen stängas i slutet av bearbetningen.
 
-Windows PowerShell-körningsmiljön anropar inte alltid metoden [system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Till exempel kanske metoden [system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) inte anropas om cmdleten avbryts halvvägs genom åtgärden eller om ett avslutande fel inträffar i någon del av cmdleten. Därför bör .NET Framework-klassen för en cmdlet som kräver rensning av objekt implementera det fullständiga [systemet. IDisposable](/dotnet/api/System.IDisposable) -gränssnittets mönster, inklusive slut för ande, så att Windows PowerShell-körningsmiljön kan anropa både [ System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) och [system. IDisposable. Dispose *](/dotnet/api/System.IDisposable.Dispose) metoder i slutet av bearbetningen.
+Windows PowerShell-körningsmiljön anropar inte alltid metoden [system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Till exempel kanske metoden [system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) inte anropas om cmdleten avbryts halvvägs genom åtgärden eller om ett avslutande fel inträffar i någon del av cmdleten. Därför bör .NET Framework-klassen för en cmdlet som kräver rensning av objekt, implementera det fullständiga [system. IDisposable](/dotnet/api/System.IDisposable) -användargränssnittet, inklusive slut för ande processen, så att Windows PowerShell-körningsmiljön kan anropa både [system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) och [system. IDisposable. disattityd *](/dotnet/api/System.IDisposable.Dispose) metoder i slutet av bearbetningen.
 
 ### <a name="use-serialization-friendly-parameter-types-ac05"></a>Använd serialisering-läsvänlig parameter typer (AC05)
 

@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 547e6695-e936-4cac-a90b-417d0dab393d
 caps.latest.revision: 12
 ms.openlocfilehash: 3efa98c7aa22fdaee8042bae99282aea0618ef5f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359184"
 ---
 # <a name="types-of-cmdlet-output"></a>Typer av cmdlet-utdata
@@ -34,7 +34,7 @@ När växel parametern **Passthru** anges på kommando raden uppmanas cmdleten a
 
 Cmdlets kan rapportera fel. När ett avbrotts fel inträffar genererar cmdleten ett undantag. När ett icke-avslutande fel inträffar anropar cmdleten metoden [system. Management. Automation. Provider. CmdletProvider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) för att skicka en fel post till fel data strömmen. Mer information om fel rapportering finns i [fel rapporterings koncept](./error-reporting-concepts.md).
 
-### <a name="verbose-output"></a>Utförlig utdata
+### <a name="verbose-output"></a>Utförliga utdata
 
 Cmdletar kan ge värdefull information till dig medan cmdleten bearbetar poster korrekt genom att anropa metoden [system. Management. Automation. cmdlet. WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) . Metoden genererar utförliga meddelanden som visar hur åtgärden fortsätter.
 
@@ -54,7 +54,7 @@ Som standard visas inte fel söknings meddelanden. Du kan ange parametern **Fels
 
 Cmdletar kan visa varnings meddelanden genom att anropa metoden [system. Management. Automation. cmdlet. WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) .
 
-Varnings meddelanden visas som standard. Du kan dock konfigurera varnings meddelanden med hjälp av variabeln `$WarningPreference` eller med hjälp av parametrarna **verbose** och **Debug** när cmdleten anropas.
+Varnings meddelanden visas som standard. Du kan dock konfigurera varnings meddelanden med hjälp av `$WarningPreference` variabeln eller genom att använda parametrarna **verbose** och **Debug** när cmdleten anropas.
 
 ## <a name="displaying-output"></a>Visar utdata
 
@@ -62,7 +62,7 @@ För alla Skriv metods anrop bestäms innehålls visningen av vissa körnings va
 
 ## <a name="accessing-the-output-functionality-of-a-host-application"></a>Åtkomst till utmatnings funktionen för ett värd program
 
-Du kan också utforma en cmdlet för att direkt komma åt utmatnings funktionen för ett värd program via PowerShell-körningen. Med hjälp av de värd-API: er som tillhandahålls av PowerShell i stället för [system. Console](/dotnet/api/System.Console) eller [system. Windows. Forms](/dotnet/api/System.Windows.Forms) säkerställer du att cmdleten fungerar med en mängd olika värdar. Till exempel: **PowerShell. exe** -konsolens värd, den grafiska **powershell_ise. exe** -värden, PowerShell-fjärrkörnings värden och värdar från tredje part.
+Du kan också utforma en cmdlet för att direkt komma åt utmatnings funktionen för ett värd program via PowerShell-körningen. Med hjälp av de värd-API: er som tillhandahålls av PowerShell i stället för [system. Console](/dotnet/api/System.Console) eller [system. Windows. Forms](/dotnet/api/System.Windows.Forms) säkerställer du att cmdleten fungerar med en mängd olika värdar. Exempel: **PowerShell. exe** -konsolens värd, den grafiska **powershell_ise. exe** -värden, PowerShell-fjärrkörnings värden och värdar från tredje part.
 
 ## <a name="see-also"></a>Se även
 

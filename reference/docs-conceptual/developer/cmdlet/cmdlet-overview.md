@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
 ms.openlocfilehash: 14200aed2fb94c37c8b8af29650f602945e7ac1c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356548"
 ---
 # <a name="cmdlet-overview"></a>Översikt över cmdlets
@@ -67,7 +67,7 @@ Mer information om dynamiska parametrar finns i [cmdlet Dynamic Parameters](cmdl
 ### <a name="input-processing-method"></a>Metod för bearbetning av indata
 
 En metod som en cmdlet kan använda för att bearbeta de poster som tas emot som inmatade.
-I metoderna för indata bearbetning ingår metoden [system. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) , metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , [ Metoden system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) och metoden [system. Management. Automation. cmdlet. StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) . När du implementerar en cmdlet måste du åsidosätta minst en av [system. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)och [ Metoderna system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) .
+I metoderna för indata bearbetning ingår metoden [system. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) , metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , metoden [system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) och metoden [system. Management. Automation. cmdlet. StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) . När du implementerar en cmdlet måste du åsidosätta minst en av metoderna [system. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)och [system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) .
 Normalt är metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoden som du åsidosätter eftersom den anropas för varje post som cmdleten bearbetar.
 Däremot kallas metoden [system. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) och [system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -metoden en tid för att utföra för bearbetning eller efter bearbetning av posterna.
 Mer information om dessa metoder finns i [metoder för indata bearbetning](cmdlet-input-processing-methods.md).
@@ -75,10 +75,10 @@ Mer information om dessa metoder finns i [metoder för indata bearbetning](cmdle
 ### <a name="shouldprocess-feature"></a>ShouldProcess-funktion
 
 Med PowerShell kan du skapa cmdlets som frågar användaren om feedback innan cmdleten gör en ändring i systemet.
-För att använda den här funktionen måste cmdleten deklarera att den stöder funktionen ShouldProcess när du deklarerar cmdlet-attributet och cmdleten måste anropa [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [ Metoderna system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) inifrån en metod för bearbetning av indata.
+För att använda den här funktionen måste cmdleten deklarera att den stöder funktionen ShouldProcess när du deklarerar cmdlet-attributet, och cmdleten måste anropa [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metoder inifrån en bearbetnings metod för indata.
 Mer information om hur du stöder ShouldProcess-funktionen finns i [begära bekräftelse](requesting-confirmation-from-cmdlets.md).
 
-### <a name="transaction"></a>transaktionen
+### <a name="transaction"></a>Transaktionen
 
 En logisk grupp kommandon som behandlas som en enskild uppgift.
 Aktiviteten Miss lyckas automatiskt om något kommando i gruppen Miss lyckas och användaren har möjlighet att acceptera eller avvisa de åtgärder som utförs i transaktionen.
@@ -130,7 +130,7 @@ Windows PowerShell definierar flera .NET Framework attribut som används för at
 
 ## <a name="cmdlet-names"></a>Cmdlet-namn
 
-Windows PowerShell använder ett verb-och-Substantiv-filnamn för namn-cmdletar. Till exempel används cmdleten `Get-Command` som ingår i Windows PowerShell för att hämta alla cmdletar som är registrerade i kommando gränssnittet. Verbet identifierar åtgärden som cmdleten utför, och Substantiv identifierar resursen som cmdleten utför åtgärden på.
+Windows PowerShell använder ett verb-och-Substantiv-filnamn för namn-cmdletar. Till exempel används den `Get-Command`-cmdleten som ingår i Windows PowerShell för att hämta alla cmdletar som är registrerade i kommando gränssnittet. Verbet identifierar åtgärden som cmdleten utför, och Substantiv identifierar resursen som cmdleten utför åtgärden på.
 
 Dessa namn anges när klassen .NET Framework deklareras som en cmdlet. Mer information om hur du deklarerar en .NET Framework klass som en cmdlet finns i [deklaration av cmdlet-attribut](./cmdlet-class-declaration.md).
 

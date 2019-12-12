@@ -1,25 +1,25 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: ISEMenuItem-objektet
 ms.openlocfilehash: a513a3e9f2eb97f3955fa817faedbcbf4e0ed018
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67028934"
 ---
 # <a name="the-isemenuitem-object"></a>ISEMenuItem-objektet
 
-En **ISEMenuItem** objekt är en instans av klassen Microsoft.PowerShell.Host.ISE.ISEMenuItem. Alla menyobjekt på den **tillägg** menyn är instanser av den **Microsoft.PowerShell.Host.ISE.ISEMenuItem** klass.
+Ett **ISEMenuItem** -objekt är en instans av klassen Microsoft. PowerShell. Host. ISE. ISEMenuItem. Alla meny objekt på menyn **tilläggsprogram** är instanser av klassen **Microsoft. PowerShell. Host. ISE. ISEMenuItem** .
 
 ## <a name="properties"></a>Egenskaper
 
 ### <a name="displayname"></a>Visningsnamn
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Den skrivskyddade egenskapen som hämtar visningsnamnet för menyalternativets.
+Den skrivskyddade egenskapen som hämtar meny alternativets visnings namn.
 
 ```powershell
 # Get the display name of the Add-ons menu item
@@ -30,9 +30,9 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 
 ### <a name="action"></a>Åtgärd
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Den skrivskyddade egenskapen som hämtar blockeringen av skriptet. Den anropar åtgärden när du klickar på menyalternativet.
+Den skrivskyddade egenskapen som hämtar skript blocket. Den anropar åtgärden när du klickar på meny alternativet.
 
 ```powershell
 # Get the action associated with the first submenu item.
@@ -44,11 +44,11 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
 ```
 
-### <a name="shortcut"></a>Genväg
+### <a name="shortcut"></a>Genvägar
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Skrivskyddad egenskap som hämtar Windows ange kortkommandot för menyalternativets.
+Den skrivskyddade egenskapen som hämtar kortkommandot för Windows-indatapanelen för meny alternativet.
 
 ```powershell
 # Get the shortcut for the first submenu item.
@@ -57,11 +57,11 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-### <a name="submenus"></a>Submenus
+### <a name="submenus"></a>Inga undermenyer
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Skrivskyddad egenskap som hämtar den [undermenyer](The-ISEMenuItemCollection-Object.md) menyalternativets.
+Den skrivskyddade egenskapen som hämtar listan över meny alternativets [undermenyer](The-ISEMenuItemCollection-Object.md) .
 
 ```powershell
 # List the submenus of the Add-ons menu
@@ -70,9 +70,9 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus
 ```
 
-## <a name="scripting-example"></a>Skript-exempel
+## <a name="scripting-example"></a>Skript exempel
 
-Läs igenom följande skript för att bättre förstå hur menyn tillägg och dess skriptbara egenskaper.
+Läs igenom följande skript exempel om du vill veta mer om hur du använder menyn tillägg och dess skript bara egenskaper.
 
 ```powershell
 # This is a scripting example that shows the use of the Add-ons menu.
@@ -90,5 +90,5 @@ $parentAdded.SubMenus.Add('_Dir', {dir}, 'Alt+D')
 ## <a name="see-also"></a>Se även
 
 - [ISEMenuItemCollection-objektet](The-ISEMenuItemCollection-Object.md)
-- [Syftet med den Windows PowerShell ISE-Skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)

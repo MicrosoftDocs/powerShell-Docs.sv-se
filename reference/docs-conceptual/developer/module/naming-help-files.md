@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: bf54eac7-88c6-4108-a5f6-2f0906d1662b
 caps.latest.revision: 5
 ms.openlocfilehash: f65a90023df88fceafae1d1875ddf46b9088e2b8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357332"
 ---
 # <a name="naming-help-files"></a>Namnge hjälpfiler
@@ -29,7 +29,7 @@ Hjälp filen för en C# cmdlet måste namnges för sammansättningen där cmdlet
 
 Sammansättnings namnets format måste anges även om sammansättningen är en kapslad modul.
 
-Till exempel [Get-WinEvent; PSITPro5_Diagnostic;](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) cmdleten definieras i sammansättningen Microsoft. PowerShell. Diagnostics. dll. Cmdleten `Get-Help` söker efter ett hjälp avsnitt för `Get-WinEvent`-cmdleten endast i filen Microsoft. PowerShell. Diagnostics. dll-Help. xml i modul-katalogen.
+Till exempel [Get-WinEvent; PSITPro5_Diagnostic;](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) cmdleten definieras i sammansättningen Microsoft. PowerShell. Diagnostics. dll. `Get-Help` cmdlet söker efter ett hjälp avsnitt för `Get-WinEvent`-cmdleten endast i filen Microsoft. PowerShell. Diagnostics. dll-Help. xml i modul-katalogen.
 
 ## <a name="provider-help-files"></a>Hjälp filer för Provider
 
@@ -41,11 +41,11 @@ Hjälp filen för en Windows PowerShell-Provider måste namnges för sammansätt
 
 Sammansättnings namnets format måste anges även om sammansättningen är en kapslad modul.
 
-Till exempel definieras certifikat leverantören i sammansättningen Microsoft. PowerShell. Security. dll. @No__t-0-cmdleten söker efter ett hjälp avsnitt för certifikat leverantören endast i filen Microsoft. PowerShell. Security. dll-Help. xml i modul-katalogen.
+Till exempel definieras certifikat leverantören i sammansättningen Microsoft. PowerShell. Security. dll. `Get-Help` cmdlet söker efter ett hjälp avsnitt för certifikat leverantören endast i filen Microsoft. PowerShell. Security. dll-Help. xml i modul-katalogen.
 
 ## <a name="function-help-files"></a>Funktions hjälp filer
 
-Funktioner kan dokumenteras med hjälp av en [kommenterad hjälp](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) eller dokumenteras i en XML-hjälpfil. När funktionen dokumenteras i en XML-fil måste funktionen ha ett `.ExternalHelp`-kommentar-nyckelord som associerar funktionen med XML-filen. Annars kan inte cmdleten `Get-Help` hitta hjälp filen.
+Funktioner kan dokumenteras med hjälp av en [kommenterad hjälp](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) eller dokumenteras i en XML-hjälpfil. När funktionen dokumenteras i en XML-fil måste funktionen ha ett `.ExternalHelp` kommentar-nyckelord som associerar funktionen med XML-filen. Annars går det inte att hitta hjälp filen med `Get-Help`-cmdleten.
 
 Det finns inga tekniska krav för namnet på en funktions hjälp fil. Vi rekommenderar dock att du namnger hjälp filen för den skript-modul där funktionen definieras. Till exempel definieras följande funktion i filen psm1.
 
@@ -62,7 +62,7 @@ Hjälp filen för ett CIM-kommando måste namnges för den CDXLM-fil där CIM-ko
 <FileName>.cdxml-help.xml
 ```
 
-CIM-kommandon definieras i CDXLM-filer som kan inkluderas i moduler som kapslade moduler. När CIM-kommandot importeras till sessionen som en funktion lägger Windows PowerShell till ett `.ExternalHelp`-kommentar-nyckelord till funktions definitionen som associerar funktionen med en XML-hjälpfil som heter för den CDXLM-fil där CIM-kommandot definieras.
+CIM-kommandon definieras i CDXLM-filer som kan inkluderas i moduler som kapslade moduler. När CIM-kommandot importeras till sessionen som en funktion lägger Windows PowerShell till ett `.ExternalHelp` kommentar-nyckelord till funktions definitionen som associerar funktionen med en XML-hjälpfil som heter för den CDXLM-fil där CIM-kommandot definieras.
 
 ## <a name="script-workflow-help-files"></a>Hjälpfiler för skript arbets flöde
 
@@ -72,6 +72,6 @@ Skript arbets flöden som ingår i moduler kan dokumenteras i XML-baserade hjäl
 <ScriptModule>.psm1-help.xml
 ```
 
-Till skillnad från andra skriptbaserade kommandon kräver inte skript arbets flöden ett `.ExternalHelp`-kommentar-nyckelord för att koppla dem till en hjälp fil. I stället söker Windows PowerShell efter den UI-kulturbaserade under kataloger i modul katalogen för XML-baserade hjälpfiler och söker efter hjälp för skript arbets flödet i alla filer. `.ExternalHelp`-kommentarens nyckelord ignoreras.
+Till skillnad från andra skriptbaserade kommandon behöver inte skript arbets flöden ett `.ExternalHelp` kommentars nyckelord för att koppla dem till en hjälp fil. I stället söker Windows PowerShell efter den UI-kulturbaserade under kataloger i modul katalogen för XML-baserade hjälpfiler och söker efter hjälp för skript arbets flödet i alla filer. nyckelordet `.ExternalHelp` kommentar ignoreras.
 
-Eftersom nyckelordet `.ExternalHelp` ignoreras kan `Get-Help`-cmdlet: en hitta hjälp för skript arbets flöden endast när de ingår i moduler.
+Eftersom nyckelordet `.ExternalHelp`-kommentar ignoreras kan `Get-Help`-cmdleten hitta hjälp för skript arbets flöden endast när de ingår i moduler.

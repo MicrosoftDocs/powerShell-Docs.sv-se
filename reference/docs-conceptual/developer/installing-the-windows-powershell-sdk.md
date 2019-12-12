@@ -3,10 +3,10 @@ title: Installera Windows PowerShell SDK:n
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73444501"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Installera Windows PowerShell SDK:n
@@ -72,9 +72,9 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. Följande avsnitt innehå
 
 #### <a name="hosting-application-samples"></a>Värdbaserade program exempel
 
-- Runspace01 – visar hur du använder PowerShell-klassen för att köra cmdleten `Get-Process` synkront.
+- Runspace01 – visar hur du använder PowerShell-klassen för att köra `Get-Process` cmdlet synkront.
 Cmdleten `Get-Process` returnerar process objekt för varje process som körs på den lokala datorn.
-- Runspace02 – visar hur du använder PowerShell-klassen för att köra `Get-Process`-och `Sort-Object`-cmdlets synkront. Cmdleten `Get-Process` returnerar process objekt för varje process som körs på den lokala datorn och `Sort-Object` sorterar objekten baserat på deras ID-egenskap. Resultatet av dessa kommandon visas med hjälp av en DataGridView-kontroll.
+- Runspace02 – visar hur du använder PowerShell-klassen för att köra `Get-Process` och `Sort-Object`-cmdlets synkront. `Get-Process` cmdleten returnerar process objekt för varje process som körs på den lokala datorn och `Sort-Object` sorterar objekten baserat på deras ID-egenskap. Resultatet av dessa kommandon visas med hjälp av en DataGridView-kontroll.
 - Runspace03 – visar hur du använder PowerShell-klassen för att köra ett skript synkront och hur du hanterar icke-avslutande fel. Skriptet tar emot en lista över process namn och hämtar sedan dessa processer. Resultatet av skriptet, inklusive eventuella icke-avslutande fel som genererades när skriptet kördes, visas i konsol fönstret.
 - Runspace04 – visar hur du använder PowerShell-klassen för att köra kommandon och hur du fångar upp avslutande fel som genereras när du kör kommandona. Två kommandon körs och det sista kommandot skickas till ett parameter argument som inte är giltigt. Därför returneras inga objekt och ett avslutande fel genereras.
 - Runspace05 – visar hur du lägger till en snapin-modul i ett InitialSessionState-objekt så att cmdleten för snapin-modulen är tillgänglig när körnings utrymme öppnas. Snapin-modulen innehåller en get-proc-cmdlet (definieras av GetProcessSample01-exemplet) som körs synkront med hjälp av ett PowerShell-objekt.
@@ -90,7 +90,7 @@ Cmdleten `Get-Process` returnerar process objekt för varje process som körs p�
 #### <a name="host-samples"></a>Värd exempel
 
 - Host01 – visar hur du implementerar ett värd program som använder en anpassad värd. I det här exemplet skapas en körnings utrymme som använder den anpassade värden och sedan används PowerShell-API: et för att köra ett skript som anropar "Exit". Värd programmet tittar sedan på utdata från skriptet och skriver ut resultaten.
-- Host02 – visar hur du skriver ett värd program som använder Windows PowerShell-körningsmiljön tillsammans med en anpassad värd implementering. Värd programmet ställer in värd kulturen på tyska, kör `Get-Process`-cmdleten och visar resultatet som du ser dem genom att använda pwrsh. exe och sedan skriva ut aktuella data och tid på tyska.
+- Host02 – visar hur du skriver ett värd program som använder Windows PowerShell-körningsmiljön tillsammans med en anpassad värd implementering. Värd programmet ställer in värd kulturen på tyska, kör `Get-Process`-cmdleten och visar resultatet som du ser dem med hjälp av pwrsh. exe och sedan skriver ut aktuella data och tid på tyska.
 - Host03 – visar hur du skapar ett interaktivt konsolbaserade värd program som läser kommandon från kommando raden, kör kommandona och visar resultatet i-konsolen.
 - Host04 – visar hur du skapar ett interaktivt konsolbaserade värd program som läser kommandon från kommando raden, kör kommandona och visar resultatet i-konsolen. Detta värd program har även stöd för att Visa prompter som gör att användaren kan ange flera alternativ.
 - Host05 – visar hur du skapar ett interaktivt konsolbaserade värd program som läser kommandon från kommando raden, kör kommandona och visar resultatet i-konsolen. Detta värd program stöder även anrop till fjärrdatorer med hjälp av `Enter-PsSession`-och `Exit-PsSession`-cmdletar.
@@ -100,12 +100,12 @@ Cmdleten `Get-Process` returnerar process objekt för varje process som körs p�
 
 - AccessDBProviderSample01 – visar hur du deklarerar en leverantörs klass som härleds direkt från CmdletProvider-klassen. Den ingår bara här för fullständighet.
 
-- AccessDBProviderSample02 – visar hur du skriver över NewDrive-och RemoveDrive-metoderna för att stödja anrop till `New-PSDrive`-och `Remove-PSDrive`-cmdletar. Provider-klassen i det här exemplet härleds från klassen DriveCmdletProvider.
+- AccessDBProviderSample02 – visar hur du skriver över NewDrive-och RemoveDrive-metoderna för att stödja anrop till `New-PSDrive` och `Remove-PSDrive`-cmdlet: ar. Provider-klassen i det här exemplet härleds från klassen DriveCmdletProvider.
 
-- AccessDBProviderSample03 – visar hur du skriver över getItem,-och SetItem-metoderna för att stödja anrop till `Get-Item`-och `Set-Item`-cmdletar. Provider-klassen i det här exemplet härleds från klassen ItemCmdletProvider.
+- AccessDBProviderSample03 – visar hur du skriver över getItem,-och SetItem-metoderna för att stödja anrop till `Get-Item` och `Set-Item`-cmdlet: ar. Provider-klassen i det här exemplet härleds från klassen ItemCmdletProvider.
 
 - AccessDBProviderSample04 – visar hur du skriver över container metoder för att stödja anrop till `Copy-Item`-, `Get-ChildItem`-, `New-Item`-och `Remove-Item`-cmdletar. Dessa metoder bör implementeras när data lagret innehåller objekt som är behållare. En behållare är en grupp underordnade objekt under ett gemensamt överordnat objekt. Provider-klassen i det här exemplet härleds från klassen ItemCmdletProvider.
 
-- AccessDBProviderSample05 – visar hur du skriver över container metoder för att stödja anrop till `Move-Item`-och `Join-Path`-cmdletar. Dessa metoder bör implementeras när användaren behöver flytta objekt i en behållare och om data lagret innehåller kapslade behållare. Provider-klassen i det här exemplet härleds från klassen NavigationCmdletProvider.
+- AccessDBProviderSample05 – visar hur du skriver över container metoder för att stödja anrop till `Move-Item` och `Join-Path`-cmdletar. Dessa metoder bör implementeras när användaren behöver flytta objekt i en behållare och om data lagret innehåller kapslade behållare. Provider-klassen i det här exemplet härleds från klassen NavigationCmdletProvider.
 
 - AccessDBProviderSample06 – visar hur du skriver över innehålls metoder för att stödja anrop till `Clear-Content`-, `Get-Content`-och `Set-Content`-cmdletar. Dessa metoder bör implementeras när användaren behöver hantera innehållet i objekten i data lagret. Provider-klassen i det här exemplet härleds från NavigationCmdletProvider-klassen och implementerar IContentCmdletProvider-gränssnittet.

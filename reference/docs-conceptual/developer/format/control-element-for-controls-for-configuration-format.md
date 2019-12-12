@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: bddf7ffa-04d3-4354-90b9-5e714e096260
 caps.latest.revision: 13
 ms.openlocfilehash: 26fe417c9ca60dda22bdc23d9d339d40135a0c9b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359085"
 ---
 # <a name="control-element-for-controls-for-configuration-format"></a>Control-element för Controls för Configuration (format)
@@ -32,7 +32,7 @@ Konfigurations element (format) styr element i konfigurations-(format) kontroll 
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet för elementet `Control`. Du måste ange ett av varje underordnat element.
+I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet för `Control`-elementet. Du måste ange ett av varje underordnat element.
 
 ### <a name="attributes"></a>Attribut
 

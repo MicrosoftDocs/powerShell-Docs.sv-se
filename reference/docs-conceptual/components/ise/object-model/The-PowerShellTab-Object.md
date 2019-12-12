@@ -1,30 +1,30 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: PowerShellTab-objektet
 ms.openlocfilehash: bfa11b553f97b7b27b974855ff4e8f1a48c33fea
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67028904"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab-objektet
 
-Den **PowerShellTab** -objektet representerar en Windows PowerShell-körningsmiljö.
+Objektet **PowerShellTab** representerar en miljö för Windows PowerShell-körningsmiljön.
 
 ## <a name="methods"></a>Metoder
 
 ### <a name="invoke-script-"></a>Anropa\( skript \)
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Kör det angivna skriptet i PowerShell-flik.
+Kör det aktuella skriptet på PowerShell-fliken.
 
 > [!NOTE]
-> Den här metoden fungerar bara på en annan PowerShell-flik inte fliken PowerShell där den körs. Den returnerar inte några objekt eller -värde. Om den ändrar alla variabler, spara dessa ändringar på fliken mot vilken kommandot anropades.
+> Den här metoden fungerar bara på andra PowerShell-flikar, inte på PowerShell-fliken som den körs från. Det returnerar inga objekt eller värde. Om koden ändrar vilken variabel som helst, sparas ändringarna på fliken som kommandot anropades mot.
 
-**Skriptet** -System.Management.Automation.ScriptBlock eller sträng skriptblocket ska köras.
+**Skript** -system. Management. Automation. script block eller en sträng som skript blocket ska köras.
 
 ```powershell
 # Manually create a second PowerShell tab before running this script.
@@ -32,21 +32,21 @@ Kör det angivna skriptet i PowerShell-flik.
 $psISE.PowerShellTabs[1].Invoke({dir})
 ```
 
-### <a name="invokesynchronous-script-usenewscope-millisecondstimeout-"></a>InvokeSynchronous\( skriptet \[useNewScope\], millisecondsTimeout \)
+### <a name="invokesynchronous-script-usenewscope-millisecondstimeout-"></a>InvokeSynchronous\(-skript, \[useNewScope\], millisecondsTimeout \)
 
-Stöds i Windows PowerShell ISE 3.0 och senare och finns inte i tidigare versioner.
+Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Kör det angivna skriptet i PowerShell-flik.
+Kör det aktuella skriptet på PowerShell-fliken.
 
 > [!NOTE]
-> Den här metoden fungerar bara på en annan PowerShell-flik inte fliken PowerShell där den körs. Skriptblocket körs och ett värde som returneras från skriptet returneras till körningsmiljön varifrån du startade kommandot. Om kommandot tar längre tid än den **millesecondsTimeout** värdet anger sedan kommandot misslyckas med ett undantag: ”Åtgärden har nått tidsgränsen”.
+> Den här metoden fungerar bara på andra PowerShell-flikar, inte på PowerShell-fliken som den körs från. Skript blocket körs och alla värden som returneras från skriptet returneras till den körnings miljö från vilken du anropade kommandot. Om kommandot tar längre tid att köra än **millesecondsTimeout** -värdet anger, Miss lyckas kommandot med ett undantag: "åtgärden har nått sin tids gräns."
 
-**Skriptet** -System.Management.Automation.ScriptBlock eller sträng skriptblocket ska köras.
+**Skript** -system. Management. Automation. script block eller en sträng som skript blocket ska köras.
 
-**\[useNewScope\]**  -valfritt booleskt som standard **$true** om inställd **$true**, skapas ett nytt scope som att köra kommandot. Den ändras inte körningsmiljö för tabellen PowerShell som anges av kommandot.
+**\[useNewScope\]** -valfria booleska som standardvärdet för **$True** om värdet är **$True**skapas en ny omfattning för att köra kommandot. Den ändrar inte körnings miljön för PowerShell-fliken som anges av kommandot.
 
-**\[millisecondsTimeout\]**  -valfritt heltal som standard **500**.
-Om kommandot inte slutförs inom den angivna tiden så genererar kommandot ett **TimeoutException** med meddelandet ”åtgärden har nått tidsgränsen”.
+**\[millisecondsTimeout\]** -valfritt heltal som är som standard **500**.
+Om kommandot inte slutförs inom den angivna tiden genererar kommandot en **TimeoutException** med meddelandet "åtgärden har nått sin tids gräns."
 
 ```powershell
 # Create a new PowerShell tab and then switch back to the first
@@ -71,9 +71,9 @@ Measure-Command {$psISE.PowerShellTabs[1].InvokeSynchronous('sleep 10', $false, 
 
 ### <a name="addonsmenu"></a>AddOnsMenu
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Den skrivskyddade egenskapen som hämtar menyn tillägg för PowerShell-flik.
+Den skrivskyddade egenskapen som hämtar tilläggs menyn för PowerShell-fliken.
 
 ```powershell
 # Clear the Add-ons menu if one exists.
@@ -90,9 +90,9 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 
 ### <a name="caninvoke"></a>CanInvoke
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Den skrivskyddade boolesk egenskap som returnerar en **$true** värde om ett skript som kan anropas med den [Invoke (skript)](#invoke-script-) metod.
+Den skrivskyddade booleska egenskapen som returnerar ett **$True** värde om ett skript kan anropas med metoden [Invoke (script)](#invoke-script-) .
 
 ```powershell
 # CanInvoke will be false if the PowerShell
@@ -109,9 +109,9 @@ $secondTab.CanInvoke
 
 ### <a name="consolepane"></a>Consolepane
 
-Stöds i Windows PowerShell ISE 3.0 och senare och finns inte i tidigare versioner.  I Windows PowerShell ISE 2.0 det hette **CommandPane**.
+Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.  I Windows PowerShell ISE 2,0 heter **CommandPane**.
 
-Skrivskyddad egenskap som hämtar konsolfönstret [redigeraren](The-ISEEditor-Object.md) objekt.
+Den skrivskyddade egenskapen som hämtar konsol fönstrets [redigerings](The-ISEEditor-Object.md) objekt.
 
 ```powershell
 # Gets the Console Pane editor.
@@ -120,9 +120,9 @@ $psISE.CurrentPowerShellTab.ConsolePane
 
 ### <a name="displayname"></a>Visningsnamn
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Den skrivskyddade egenskapen som hämtar eller anger texten som visas på fliken PowerShell. Som standard flikarna namnges ”PowerShell #”, där # motsvarar ett tal.
+Egenskapen Read-Write som hämtar eller anger den text som visas på PowerShell-fliken. Som standard heter flikarna "PowerShell #" där # representerar ett tal.
 
 ```powershell
 $newTab = $psISE.PowerShellTabs.Add()
@@ -132,9 +132,9 @@ $newTab.DisplayName = 'Brand New Tab'
 
 ### <a name="expandedscript"></a>ExpandedScript
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Läs-och boolesk egenskap som bestämmer om skriptfönstret är utökat eller döljs.
+Den Read-Write-booleska egenskap som avgör om skript fönstret är expanderat eller dolt.
 
 ```powershell
 # Toggle the expanded script property to see its effect.
@@ -143,9 +143,9 @@ $psISE.CurrentPowerShellTab.ExpandedScript = !$psISE.CurrentPowerShellTab.Expand
 
 ### <a name="files"></a>Filer
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Skrivskyddad egenskap som hämtar den [samling skriptfiler](The-ISEFileCollection-Object.md) som är öppna i PowerShell-flik.
+Den skrivskyddade egenskapen som hämtar de [skriptfiler](The-ISEFileCollection-Object.md) som är öppna på PowerShell-fliken.
 
 ```powershell
 $newFile = $psISE.CurrentPowerShellTab.Files.Add()
@@ -156,20 +156,20 @@ $newFile.Editor.LineCount
 
 ### <a name="output"></a>Utdata
 
-Den här funktionen har finns i Windows PowerShell ISE 2.0, men tagits bort eller byta namn i senare versioner av ISE.  I senare versioner av Windows PowerShell ISE kan du använda den **ConsolePane** objekt för samma ändamål.
+Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE.  I senare versioner av Windows PowerShell ISE kan du använda **ConsolePane** -objektet för samma syfte.
 
-Skrivskyddad egenskap som hämtar utdatafönstret för aktuellt [redigeraren](The-ISEEditor-Object.md).
+Den skrivskyddade egenskapen som hämtar fönstret utdata i den aktuella [redigeraren](The-ISEEditor-Object.md).
 
 ```powershell
 # Clears the text in the Output pane.
 $psISE.CurrentPowerShellTab.output.clear()
 ```
 
-### <a name="prompt"></a>fråga
+### <a name="prompt"></a>Prompt
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Den skrivskyddade egenskapen som hämtar den aktuella texten. Obs: den **fråga** funktion kan åsidosättas av användaren ”™ s profil. Om resultatet är än en enkel sträng, har den här egenskapen returnerar något.
+Den skrivskyddade egenskapen som hämtar den aktuella meddelande texten. Obs: **prompt** -funktionen kan åsidosättas av användarens™ s-profil. Om resultatet skiljer sig från en enkel sträng returnerar den här egenskapen ingenting.
 
 ```powershell
 # Gets the current prompt text.
@@ -178,9 +178,9 @@ $psISE.CurrentPowerShellTab.Prompt
 
 ### <a name="showcommands"></a>ShowCommands
 
-Stöds i Windows PowerShell ISE 3.0 och senare och finns inte i tidigare versioner.
+Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Egenskapen Läs-och som indikerar om rutan kommandon som visas.
+Egenskapen Read-Write som anger om kommando fönstret visas för tillfället.
 
 ```powershell
 # Gets the current status of the Commands pane and stores it in the $a variable
@@ -189,11 +189,11 @@ $a = $psISE.CurrentPowerShellTab.ShowCommands
 if (!$a) {$psISE.CurrentPowerShellTab.ShowCommands = $true}
 ```
 
-### <a name="statustext"></a>StatusText
+### <a name="statustext"></a>Status text
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Skrivskyddad egenskap som hämtar den **PowerShellTab** statusText.
+Den skrivskyddade egenskapen som hämtar **PowerShellTab** status text.
 
 ```powershell
 # Gets the current status text,
@@ -202,9 +202,9 @@ $psISE.CurrentPowerShellTab.StatusText
 
 ### <a name="horizontaladdontoolspaneopened"></a>HorizontalAddOnToolsPaneOpened
 
-Stöds i Windows PowerShell ISE 3.0 och senare och finns inte i tidigare versioner.
+Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Den skrivskyddade egenskapen som anger om verktygsfönstret vågrät tillägg är öppen.
+Den skrivskyddade egenskapen som anger om fönstret för horisontella tillägg är öppet.
 
 ```powershell
 # Gets the current state of the horizontal Add-ons tool pane.
@@ -213,9 +213,9 @@ $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
 
 ### <a name="verticaladdontoolspaneopened"></a>VerticalAddOnToolsPaneOpened
 
-Stöds i Windows PowerShell ISE 3.0 och senare och finns inte i tidigare versioner.
+Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Den skrivskyddade egenskapen som anger om verktygsfönstret lodrät tillägg är öppen.
+Den skrivskyddade egenskapen som anger om det lodräta tilläggets verktygs fönster är öppet.
 
 ```powershell
 # Turns on the Commands pane
@@ -226,6 +226,6 @@ $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
 
 ## <a name="see-also"></a>Se även
 
-- [The PowerShellTabCollection Object](The-PowerShellTabCollection-Object.md)
-- [Syftet med den Windows PowerShell ISE-Skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [PowerShellTabCollection-objektet](The-PowerShellTabCollection-Object.md)
+- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)

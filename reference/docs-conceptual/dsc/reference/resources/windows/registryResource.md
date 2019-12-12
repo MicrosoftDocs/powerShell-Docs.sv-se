@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC register resurs
 ms.openlocfilehash: be2f9134368784ad2d208362104ce046c49492e0
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941336"
 ---
 # <a name="dsc-registry-resource"></a>DSC register resurs
@@ -32,22 +32,22 @@ Registry [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
-|Nyckel |Anger sökvägen till den register nyckel för vilken du vill säkerställa ett angivet tillstånd. Den här sökvägen måste innehålla Hive. |
+|Tangent |Anger sökvägen till den register nyckel för vilken du vill säkerställa ett angivet tillstånd. Den här sökvägen måste innehålla Hive. |
 |Värdets namn |Anger namnet på registervärdet. Om du vill lägga till eller ta bort en register nyckel anger du den här egenskapen som en tom sträng utan att ange **ValueType** eller **ValueData**. Om du vill ändra eller ta bort standardvärdet för en register nyckel anger du den här egenskapen som en tom sträng och även anger **ValueType** eller **ValueData**. |
-|Force |Om den angivna register nyckeln **finns skrivs den** över med det nya värdet. Om du tar bort en register nyckel med under nycklar måste detta vara `$true`. |
+|Force |Om den angivna register nyckeln **finns skrivs den** över med det nya värdet. Om du tar bort en register nyckel med under nycklar måste du `$true`. |
 |Hexadecimal |Anger om data ska uttryckas i hexadecimalt format. Om det här alternativet anges visas DWORD/QWORD-värdet i hexadecimalt format. Inte giltigt för andra typer. Standardvärdet är `$false`. |
 |ValueData |Data för registervärdet. |
-|Värdetyp |Anger typen för värdet. De typer som stöds är: **Sträng** (REG_SZ), **binär** (REG-Binary), **DWORD** (32-bit REG_DWORD), **QWORD** (64-bitars REG_QWORD), **multisträng** (REG_MULTI_SZ), **ExpandString** (REG_EXPAND_SZ). |
+|Värdetyp |Anger typen för värdet. De typer som stöds är **: sträng** (REG_SZ), **binärt** (REG-Binary), **Dword** (32-bitars REG_DWORD), **QWORD** (64-bitars REG_QWORD), **Multistring** (REG_MULTI_SZ), **ExpandString** (REG_EXPAND_SZ). |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"`. |
 |Kontrol |Anger om nyckeln och värdet finns. För att se till att de gör det anger du att den här egenskapen är **tillgänglig**. För att säkerställa att de inte finns, ställer du in egenskapen på **saknas**. Standardvärdet finns **.** |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 
@@ -56,7 +56,7 @@ Registry [string] #ResourceName
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet ser till att en nyckel med namnet "ExampleKey" finns **i\_den\_lokala** datahive-datorns Hive.
+Det här exemplet säkerställer att en nyckel med namnet "ExampleKey" finns i **HKEY-\_den lokala\_datorns** Hive.
 
 ```powershell
 Configuration RegistryTest

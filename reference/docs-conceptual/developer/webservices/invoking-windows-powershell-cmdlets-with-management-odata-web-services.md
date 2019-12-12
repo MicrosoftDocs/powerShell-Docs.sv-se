@@ -9,20 +9,20 @@ ms.topic: article
 ms.assetid: f2a35f87-3580-4ceb-b0c5-e7575e1bd151
 caps.latest.revision: 4
 ms.openlocfilehash: a5677296558c648e62b71153330d90e6f02ed098
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356730"
 ---
 # <a name="invoking-windows-powershell-cmdlets-with-management-odata-web-services"></a>Anropa Windows PowerShell-cmdlets med Management OData-webbtjänster
 
 Infoga introduktion här.
 
-## <a name="section-heading"></a>Avsnitts rubrik
+## <a name="section-heading"></a>Avsnittsrubriken
 
-Infoga avsnitts text här.
+Infoga avsnittet här.
 
-### <a name="subsection-heading"></a>Underavsnitts rubrik
+### <a name="subsection-heading"></a>Underavsnittets rubrik
 
-Infoga underavsnitts text här.
+Infoga underavsnittet här.

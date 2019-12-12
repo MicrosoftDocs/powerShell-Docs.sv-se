@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Vad är nytt i Windows PowerShell 5,0
 ms.openlocfilehash: 08775c1767f1d9d18dafab39d188db152073e69d
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417581"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Vad är nytt i Windows PowerShell 5,0
@@ -313,7 +313,7 @@ Windows PowerShell 3,0 innehåller följande nya funktioner.
 - [Förbättringar av formatering och utdata](#formatting-and-output-improvements)
 - [Förbättrad konsol värd upplevelse](#enhanced-console-host-experience)
 - [Ny cmdlet och värdbaserade API: er](#new-cmdlet-and-hosting-apis)
-- [Prestanda förbättringar](#performance-improvements)
+- [Prestandaförbättringar](#performance-improvements)
 - [Stöd för RunAs och delad värd](#runas-and-shared-host-support)
 - [Förbättringar av Special Character-hantering](#special-character-handling-improvements)
 
@@ -459,7 +459,7 @@ Nya cmdletar har lagts till i Windows PowerShell Core-installationen, inklusive 
 |Add-JobTrigger|New-JobTrigger|
 |Anslut – PSSession|New-PSSessionConfigurationFile|
 |ConvertFrom – JSON|New-PSTransportOption|
-|ConvertTo – JSON|New-PSWorkflowExecutionOption|
+|ConvertTo-Json|New-PSWorkflowExecutionOption|
 |Disable-JobTrigger|New-PSWorkflowSession|
 |Disable-ScheduledJob|New-ScheduledJobOption|
 |Koppla från-PSSession|New-WinEvent|
@@ -471,7 +471,7 @@ Nya cmdletar har lagts till i Windows PowerShell Core-installationen, inklusive 
 |Get-CimSession|Remove-TypeData|
 |Get-ControlPanelItem|Byt namn – dator|
 |Get-IseSnippet|Återuppta – jobb|
-|Get-JobTrigger|Spara – hjälp|
+|Get-JobTrigger|Save-Help|
 |Get-ScheduledJob|Set-CimInstance|
 |Get-ScheduledJobOption|Set-JobTrigger|
 |Get-TypeData|Set-ScheduledJob|
@@ -482,7 +482,7 @@ Nya cmdletar har lagts till i Windows PowerShell Core-installationen, inklusive 
 |Anropa-webbegäran|Test-PSSessionConfigurationFile|
 |New-CimInstance|Avblockera – fil|
 |New-CimSession|Avregistrera-ScheduledJob|
-|New-CimSessionOption|Uppdatera – hjälp|
+|New-CimSessionOption|Update-Help|
 |New-IseSnippet||
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Förbättringar av befintliga kärn-cmdlets och providers
@@ -551,7 +551,7 @@ Mer information finns i [about_Run_With_PowerShell](https://technet.microsoft.co
 
 Det nya API: et och värd-API: t inkluderar offentliga API: er för avancerad syntax (AST) och API: er för sid växling för pipeline, kapslade pipelines, körnings utrymme pooler, Windows RT, det föråldrade cmdlet-attributet och verb-och Substantiv egenskaperna för FunctionInfo-objektet.
 
-### <a name="performance-improvements"></a>Prestanda förbättringar
+### <a name="performance-improvements"></a>Prestandaförbättringar
 
 Betydande prestanda förbättringar i Windows PowerShell kommer från den nya språk tolkare, som bygger på det dynamiska körnings språket (DLR) i .NET Framework 4. tillsammans med körnings skript kompilering, förbättringar av motorns tillförlitlighet och förändringar i algoritmen för [Get-ChildItem](https://technet.microsoft.com/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) som förbättrar dess prestanda, särskilt vid sökning av nätverks resurser.
 

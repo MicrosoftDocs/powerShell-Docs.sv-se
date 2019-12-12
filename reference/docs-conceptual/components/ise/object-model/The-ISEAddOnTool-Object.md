@@ -1,33 +1,33 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: ISEAddOnTool-objektet
 ms.openlocfilehash: c71602d200b941ed4fb142b9c35f0fe68982e3e9
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67028995"
 ---
 # <a name="the-iseaddontool-object"></a>ISEAddOnTool-objektet
 
-En **ISEAddonTool** -objektet representerar en installerade tilläggsverktyg som ger ytterligare funktioner toWindows PowerShell ISE. Ett exempel är den **kommandon** verktyg som du kan visa genom att klicka på **visa**, sedan **Visa kommandot tillägg**. Det här verktyget är sedan tillgängliga för dig genom att ändra de olika tillgängliga **ISEAddOnTool** objekt.
+Ett **ISEAddonTool** -objekt representerar ett installerat tilläggs verktyg som tillhandahåller ytterligare funktioner TOWINDOWS PowerShell ISE. Ett exempel är **kommando** verktyget som du kan visa genom att klicka på **Visa**och sedan på **Visa kommando tillägg**. Det här verktyget är sedan tillgängligt för dig genom att ändra de olika tillgängliga **ISEAddOnTool** -objekten.
 
-Varje tilläggsverktyg kan associeras med fönstret lodrät eller vågrät ruta. Den lodräta rutan är dockad till den högra kanten av Windows PowerShell ISE. Fönstret vågrät är dockad till nedre kant.
+Varje tilläggs verktyg kan associeras med antingen den lodräta rutan eller det vågräta fönstret. Den lodräta rutan är dockad till den högra kanten av Windows PowerShell ISE. Det vågräta fönstret är dockat till den nedre kanten.
 
-Varje PowerShell-flik i Windows PowerShell ISE kan ha en egen uppsättning tillägg tools har installerats. Se [$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-PowerShellTab-Object.md) och [$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-PowerShellTab-Object.md) till uppsättning av verktyg som är tillgängliga för den markerade fliken eller samma egenskaper på någon av de **PowerShellTab** objekt i den [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md) samlingsobjektet.
+Varje PowerShell-flik i Windows PowerShell ISE kan ha en egen uppsättning tilläggs verktyg installerade. Se [$psISE. CurrentPowerShellTab. HorizontalAddOnTools](The-PowerShellTab-Object.md) och [$psISE. CurrentPowerShellTab. VerticalAddOnTools](The-PowerShellTab-Object.md) för att få åtkomst till samlingen med verktyg som är tillgängliga för den valda fliken eller samma egenskaper för alla **PowerShellTab** -objekt i objektet [$psISE. PowerShellTabs](The-PowerShellTabCollection-Object.md) -samling.
 
 ## <a name="methods"></a>Metoder
 
-Det finns inga Windows PowerShell ISE-specifika metoder tillgängliga för objekt i den här klassen.
+Det finns inga Windows PowerShell ISE-/regionsspecifika metoder som är tillgängliga för objekt i den här klassen.
 
 ## <a name="properties"></a>Egenskaper
 
 ### <a name="control"></a>Kontroll
 
-Stöds i Windows PowerShell ISE 3.0 och senare och finns inte i tidigare versioner.
+Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Den **kontroll** egenskapen ger läsåtkomst till många av information om kommandon tilläggsverktyg.
+Egenskapen **Control** ger Läs behörighet till många av detaljerna för kommando rads verktyget för tillägg.
 
 ```powershell
 # View the properties of the Commands add-on tool.
@@ -141,9 +141,9 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 ### <a name="isvisible"></a>IsVisible
 
-Stöds i Windows PowerShell ISE 3.0 och senare och finns inte i tidigare versioner.
+Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Den booleska egenskap som anger om verktyget tillägg är synliga i dess tilldelade rutan. Om den visas, kan du ange den **IsVisible** egenskap **$false** att dölja verktyget eller ange den **IsVisible** egenskap **$true** att göra ett tilläggsverktyg som är synliga på dess PowerShell-flik. Observera att när ett tilläggsverktyg är dold, är det inte längre är tillgängliga via den **CurrentVisibleHorizontalTool** eller **CurrentVisibleVerticalTool** objekt, och därför kan inte göras synliga med hjälp av den här egenskapen för objektet.
+Den booleska egenskapen som anger om tilläggs verktyget är synligt i det tilldelade fönstret. Om den är synlig kan du ange egenskapen **IsVisible** till **$false** för att dölja verktyget, eller ange egenskapen **IsVisible** till **$True** för att göra ett tilläggs verktyg synligt på dess PowerShell-flik. Observera att när ett tilläggs verktyg är dolt är det inte längre tillgängligt via **CurrentVisibleHorizontalTool** -eller **CurrentVisibleVerticalTool** -objekten och kan därför inte visas med hjälp av den här egenskapen för objektet.
 
 ```powershell
 # Hide the current tool in the vertical tool pane
@@ -154,9 +154,9 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible = $true
 
 ### <a name="name"></a>Namn
 
-Stöds i Windows PowerShell ISE 3.0 och senare och finns inte i tidigare versioner.
+Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Den skrivskyddade egenskapen som hämtar namnet på tilläggsverktyg.
+Den skrivskyddade egenskapen som hämtar namnet på tilläggs verktyget.
 
 ```powershell
 # Gets the name of the visible vertical pane add-on tool.
@@ -166,6 +166,6 @@ Commands
 
 ## <a name="see-also"></a>Se även
 
-- [The ISEAddOnToolCollection Object](The-ISEAddOnToolCollection-Object.md)
-- [Syftet med den Windows PowerShell ISE-Skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [ISEAddOnToolCollection-objektet](The-ISEAddOnToolCollection-Object.md)
+- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)

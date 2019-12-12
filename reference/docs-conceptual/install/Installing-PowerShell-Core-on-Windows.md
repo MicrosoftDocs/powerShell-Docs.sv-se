@@ -3,10 +3,10 @@ title: Installera PowerShell Core i Windows
 description: Information om hur du installerar PowerShell core i Windows
 ms.date: 08/06/2018
 ms.openlocfilehash: 00a1d8064a3c1ec6608a46415bbabb8d98d880f0
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416778"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Installera PowerShell Core i Windows
@@ -167,7 +167,7 @@ Följande steg vägleder dig genom distributionen av PowerShell Core till en akt
 
 ## <a name="how-to-create-a-remoting-endpoint"></a>Så här skapar du en fjärran sluten slut punkt
 
-PowerShell Core stöder PowerShell Remoting-protokollet (PSRP) via både WSMan och SSH. Mer information finns i:
+PowerShell Core stöder PowerShell Remoting-protokollet (PSRP) via både WSMan och SSH. Mer information finns i följande avsnitt:
 
 - [SSH-fjärrkommunikation i PowerShell Core][ssh-remoting]
 - [WSMan-fjärrkommunikation i PowerShell Core][wsman-remoting]

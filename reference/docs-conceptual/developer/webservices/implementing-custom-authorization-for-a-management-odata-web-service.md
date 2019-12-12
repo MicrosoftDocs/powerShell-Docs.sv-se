@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
 ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352194"
 ---
 # <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a>Implementera anpassad auktorisering för en Management OData-webbtjänst
@@ -21,7 +21,7 @@ Att använda Windows PowerShell-webbtjänsten kräver att en tredje part impleme
 
 ## <a name="pass-through-authorization"></a>Direkt auktorisering
 
-Det enklaste sättet att implementera gränssnittet [Microsoft. Management. OData. CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) är en direkt implementering som godkänner alla användare. Det här exemplet ger ingen säkerhet och anges bara som en illustration av hur du implementerar gränssnittet. En implementering av gränssnittet [Microsoft. Management. OData. CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) måste åsidosätta två metoder: [Microsoft. Management. OData. CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) och [ Microsoft. Management. OData. CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). I det här exemplet returnerar [Microsoft. Management. OData. CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) alltid objektet **system. Security. objekt. WindowsIdentity** som är associerat med den aktuella användaren.
+Det enklaste sättet att implementera gränssnittet [Microsoft. Management. OData. CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) är en direkt implementering som godkänner alla användare. Det här exemplet ger ingen säkerhet och anges bara som en illustration av hur du implementerar gränssnittet. En implementering av gränssnittet [Microsoft. Management. OData. CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) måste åsidosätta två metoder: [Microsoft. Management. OData. CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) och [Microsoft. Management. OData. CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). I det här exemplet returnerar [Microsoft. Management. OData. CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) alltid objektet **system. Security. objekt. WindowsIdentity** som är associerat med den aktuella användaren.
 
 ```csharp
 namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPERLINK "VBScript:u(%227%22,30)" OData. HYPERLINK "VBScript:u(%227%22,36)" BasicPlugins
@@ -134,7 +134,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ### <a name="role-based-authorization"></a>Rollbaserad auktorisering
 
-I följande exempel implementeras en rollbaserad auktoriseringsprincip. Principen definieras i en XML-fil som finns i huvud program katalogen med schemafiler Web. config och MOF-och XML-mappning. Information om hur du konfigurerar auktoriserings schema filen finns i [Konfigurera rollbaserad auktorisering](./configuring-role-based-authorization.md). Den första delen av exemplet implementerar metoderna [Microsoft. Management. OData. CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) och [Microsoft. Management. OData. CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) . I det här fallet anropar gränssnitts metoderna i klassen `RbacSystem` (definieras nedan) som utför det faktiska arbetet med att kontrol lera behörigheterna för användaren.
+I följande exempel implementeras en rollbaserad auktoriseringsprincip. Principen definieras i en XML-fil som finns i huvud program katalogen med schemafiler Web. config och MOF-och XML-mappning. Information om hur du konfigurerar auktoriserings schema filen finns i [Konfigurera rollbaserad auktorisering](./configuring-role-based-authorization.md). Den första delen av exemplet implementerar metoderna [Microsoft. Management. OData. CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) och [Microsoft. Management. OData. CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) . I det här fallet anropar gränssnitts metoderna i `RbacSystem`-klassen (definieras nedan) som utför det faktiska arbetet med att kontrol lera behörigheterna för användaren.
 
 ```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
@@ -738,4 +738,4 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-Slutligen implementerar klassen RbacSystem metoder som utför arbetet med att kontrol lera behörigheterna för användaren och returnera auktoriserings statusen till de metoder som definierats i implementeringen av [Microsoft. Management. OData. CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) gränssnitt.
+Slutligen implementerar klassen RbacSystem metoder som utför arbetet med att kontrol lera behörigheterna för användaren och returnera auktoriserings statusen till de metoder som definierats i implementeringen av gränssnittet [Microsoft. Management. OData. CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) .

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
 caps.latest.revision: 9
 ms.openlocfilehash: 390eb2d0153c65967d8c0711c852aa6e13fe4660
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352992"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Snabbstart för Windows PowerShell-värd
@@ -58,7 +58,7 @@ Om du inte vill skicka vidare resultatet av ett tidigare kommando till ett komma
 
 I föregående exempel körs ett enda kommando utan några parametrar.
 Du kan lägga till parametrar till kommandot med hjälp av metoden [system. Management. Automation. PSCommand. AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) .
-Följande kod hämtar till exempel en lista över alla processer som heter `PowerShell` som körs på datorn.
+Följande kod hämtar till exempel en lista över alla processer som heter `PowerShell` körs på datorn.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -91,7 +91,7 @@ PowerShell.Create().AddCommand("Get-Process")
 ### <a name="addstatement"></a>AddStatement
 
 Du kan simulera batching med hjälp av metoden [system. Management. Automation. PowerShell. AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , som lägger till ytterligare en instruktion i slutet av pipelinen.
-Följande kod hämtar en lista över processer som körs med namnet `PowerShell` och hämtar sedan listan över tjänster som körs.
+Följande kod hämtar en lista över processer som körs med namnet `PowerShell`och hämtar sedan listan över tjänster som körs.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -112,7 +112,7 @@ ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
 Det finns också en version av AddScript-metoden som tar en boolesk parameter med namnet `useLocalScope`.
-Om den här parametern är inställd på `true` körs skriptet i det lokala omfånget.
+Om den här parametern är inställd på `true`körs skriptet i det lokala omfånget.
 Följande kod kommer att köra skriptet i det lokala omfånget.
 
 ```csharp
@@ -151,7 +151,7 @@ Om du vill skapa en mer begränsad körnings utrymme måste du skapa ett tomt In
 Om du använder en körnings utrymme som bara läser in de kommandon som du anger får du avsevärt bättre prestanda.
 
 Du kan använda metoderna i klassen [system. Management. Automation. körnings utrymmen. SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) för att definiera cmdletar för det första sessionstillståndet.
-I följande exempel skapas ett tomt första sessionstillstånd, och sedan definieras och läggs kommandona `Get-Command` och `Import-Module` till i det första sessionstillståndet.
+I följande exempel skapas ett tomt tillstånd för inledande session och sedan definieras och läggs till `Get-Command` och `Import-Module` kommandon i det första sessionstillståndet.
 Vi skapar sedan en körnings utrymme som är begränsad av det första sessionstillståndet och kör kommandona i den körnings utrymme.
 
 Skapa det första sessionstillståndet.

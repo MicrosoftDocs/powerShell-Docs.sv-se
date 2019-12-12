@@ -3,10 +3,10 @@ ms.date: 08/27/2018
 keywords: PowerShell, cmdlet
 title: Få detaljerad hjälpinformation
 ms.openlocfilehash: e722eb8a0ca13e3d2de864314775a0a9fa578390
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417656"
 ---
 # <a name="getting-detailed-help-information"></a>Få detaljerad hjälpinformation
@@ -29,7 +29,7 @@ eller
 Get-ChildItem -?
 ```
 
-Du kan även få hjälp med cmdleten Get-Help. Exempel:
+Du kan även få hjälp med cmdleten Get-Help. Till exempel:
 
 ```powershell
 Get-Help Get-Help
@@ -173,7 +173,7 @@ Online version: https://go.microsoft.com/fwlink/?LinkId=821564
 
 Information om hur du tillhandahåller onlinesupport för dina hjälp artiklar finns [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
-## <a name="see-also"></a>Se också
+## <a name="see-also"></a>Se även
 
 - [about_Functions](/powershell/module/microsoft.powershell.core/about/about_functions)
 - [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)

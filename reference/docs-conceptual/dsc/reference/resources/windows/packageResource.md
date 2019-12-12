@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: Resurs för DSC-paket
 ms.openlocfilehash: efac07b4b051564cadd5aa1542a6afda6cd453ad
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941385"
 ---
 # <a name="dsc-package-resource"></a>Resurs för DSC-paket
@@ -33,15 +33,15 @@ Package [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Egenskaper
 
-|Egenskap |Description |
+|Egenskap |Beskrivning |
 |---|---|
-|Name |Anger namnet på det paket som du vill säkerställa ett speciellt tillstånd för. |
-|`Path` |Anger sökvägen dit paketet finns. |
+|Namn |Anger namnet på det paket som du vill säkerställa ett speciellt tillstånd för. |
+|Sökväg |Anger sökvägen dit paketet finns. |
 |ProductId |Anger det produkt-ID som unikt identifierar paketet. |
 |Argument |Visar en sträng med argument som skickas till paketet exakt som de anges. |
-|Certifiering |Ger åtkomst till paketet på en fjärran sluten källa. Den här egenskapen används inte för att installera paketet. Paketet är alltid installerat på det lokala systemet. |
+|Autentiseringsuppgift |Ger åtkomst till paketet på en fjärran sluten källa. Den här egenskapen används inte för att installera paketet. Paketet är alltid installerat på det lokala systemet. |
 |LogPath |Anger den fullständiga sökvägen dit du vill att providern ska spara en loggfil för att installera eller avinstallera paketet. |
 |ReturnCode |Anger den förväntade retur koden. Om den faktiska retur koden inte matchar det förväntade värdet här, returnerar konfigurationen ett fel. |
 
@@ -49,7 +49,7 @@ Package [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"`. |
 |Kontrol |Anger om paketet är installerat. Ange den här egenskapen som **saknas** för att se till att paketet inte är installerat (eller avinstallera paketet om det är installerat). Ange att det är **tillgängligt** för att se till att paketet är installerat. Standardvärdet finns **.** |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Redigera en DSC-resurs iC#
 ms.openlocfilehash: a19559c225dd91eceed397df91dd584a577cd7d4
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417691"
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>Redigera en DSC-resurs i C\#
@@ -40,7 +40,7 @@ class MSFT_XDemoFile : OMI_BaseResource
 1. Öppna Visual Studio.
 1. Skapa ett C# projekt och ange namnet.
 1. Välj **klass bibliotek** från tillgängliga projektmallar.
-1. Klicka på **OK**.
+1. Klicka på **Ok**.
 1. Lägg till en sammansättnings referens i system. Automation. Management. dll i projektet.
 1. Ändra sammansättnings namnet så att det matchar resurs namnet. I det här fallet ska sammansättningen namnges **MSFT_XDemoFile**.
 

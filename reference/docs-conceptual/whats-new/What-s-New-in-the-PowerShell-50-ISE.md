@@ -3,10 +3,10 @@ ms.date: 09/06/2019
 keywords: PowerShell, cmdlet
 title: Nyheter i PowerShell 5,0 ISE
 ms.openlocfilehash: 8f15e99c5a6ae33aeae9bd33eb0cf58fb27e3b90
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416642"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Vad är nytt i Windows PowerShell 5,0 ISE
@@ -27,7 +27,7 @@ Mer information finns i [Introduktion till Windows PowerShell ISE](../components
 
 I följande tabell visas de nya och ändrade funktionerna i den här versionen av Windows PowerShell ISE i Windows PowerShell.
 
-## <a name="intellisense"></a>Tillhandahåller
+## <a name="intellisense"></a>IntelliSense
 
 > Tillagt i ISE 3,0
 
@@ -42,7 +42,7 @@ Med tillägget av IntelliSense är det lättare att identifiera cmdlets och synt
 
 När du skriver cmdlets i Windows PowerShell ISE visas en rullnings bar och klickande meny, så att du kan bläddra och välja lämpliga kommandon.
 
-## <a name="snippets"></a>kodfragment
+## <a name="snippets"></a>Kodfragment
 
 > Tillagt i ISE 3,0
 
@@ -111,7 +111,7 @@ Windows PowerShell ISE 2,0 har inte någon lista som du nyligen har använt.
 De separata kommando-och utdatafönstret som var tillgängliga i den första versionen av Windows PowerShell ISE har kombinerats till ett enda konsol fönster. Konsol fönstret liknar en typisk Windows PowerShell-konsol, men den innehåller följande förbättringar:
 
 - Syntax för inmatnings text (inte text), inklusive XML-syntax
-- Tillhandahåller
+- IntelliSense
 - Matchning av klammerparentes
 - Fel indikation
 - Fullständigt Unicode-stöd
@@ -119,7 +119,7 @@ De separata kommando-och utdatafönstret som var tillgängliga i den första ver
 - <kbd>Ctrl</kbd>+<kbd>F1</kbd> kontext känsligt show-Command
 - Komplext skript och stöd från höger till vänster
 - Stöd för teckensnitt
-- Förhindra
+- Zooma
 - Linje – Välj och blockera – Välj lägen
 - Bevarande av typ av innehåll på kommando raden när du trycker på <kbd>nedåtpilen</kbd> för att visa historiken i-konsolen
 
@@ -205,6 +205,6 @@ Genom att använda `Show-Command` i dina Windows PowerShell-skript kan du ge anv
 
 `Show-Command` är nytt Windows PowerShell ISE 3,0.
 
-## <a name="see-also"></a>Se också
+## <a name="see-also"></a>Se även
 
 Mer information om hur du använder Windows PowerShell ISE finns i [utforska Windows PowerShell Integrated Scripting Environment](../components/ise/exploring-the-windows-powershell-ise.md).

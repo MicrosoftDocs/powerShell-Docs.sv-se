@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
 ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352362"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Snabbstart för Windows PowerShell-providers
@@ -21,7 +21,7 @@ I det här avsnittet beskrivs hur du skapar en Windows PowerShell-provider som h
 
 ## <a name="writing-a-basic-provider"></a>Skriva en grundläggande Provider
 
-De mest grundläggande funktionerna i en Windows PowerShell-Provider är att skapa och ta bort enheter. I det här exemplet implementerar vi [system. Management. Automation. Provider. Drivecmdletprovider. NewDrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) och [system. Management. Automation. Provider. Drivecmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) metoderna i [ Klassen system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . Du kommer också att se hur du deklarerar en provider-klass.
+De mest grundläggande funktionerna i en Windows PowerShell-Provider är att skapa och ta bort enheter. I det här exemplet implementerar vi [system. Management. Automation. Provider. Drivecmdletprovider. NewDrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) och [system. Management. Automation. Provider. Drivecmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) metoderna i klassen [system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . Du kommer också att se hur du deklarerar en provider-klass.
 
 När du skriver en provider kan du ange standard enheter – enheter som skapas automatiskt när leverantören är tillgänglig. Du definierar också en metod för att skapa nya enheter som använder providern.
 
@@ -35,7 +35,7 @@ Skapa ett klass biblioteks projekt med namnet AccessDBProviderSample i Visual St
 
 1. Lägg till sammansättningen system. Management. Automation som en referens till ditt projekt.
 
-2. Klicka på **Project > AccessDBProviderSample-egenskaper > Felsök**. I **Start Project**klickar du på **Starta externt program**och navigerar till Windows PowerShell-filen (vanligt vis c:\windows\system32\windowspowershell\ v1.0\\.powershell.exe).
+2. Klicka på **Project > AccessDBProviderSample-egenskaper > Felsök**. I **Start Project**klickar du på **Starta externt program**och navigerar till Windows PowerShell-filen (vanligt vis c:\Windows\System32\WindowsPowerShell\v1.0\\. PowerShell. exe).
 
 3. Under **Start alternativ**anger du följande i rutan **kommando rads argument** : `-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
 
@@ -43,7 +43,7 @@ Skapa ett klass biblioteks projekt med namnet AccessDBProviderSample i Visual St
 
 Leverantören härleds från klassen [system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . De flesta leverantörer som tillhandahåller verkliga funktioner (åtkomst till och manipulering av objekt, navigering i data lagringen och hämtning och inställning av innehåll för objekt) härleds från klassen [system. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) .
 
-Förutom att ange att klassen är härledd från [system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider), måste du dekorera den med [system. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) som visas i exemplet .
+Förutom att ange att klassen är härledd från [system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider), måste du dekorera den med [system. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) som visas i exemplet.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers
@@ -67,9 +67,9 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### <a name="implementing-newdrive"></a>Implementera NewDrive
 
-Metoden [system. Management. Automation. Provider. Drivecmdletprovider. NewDrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) anropas av Windows PowerShell-motorn när en användare anropar cmdleten [Microsoft. PowerShell. commands. NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) som anger namnet på din CSP. PSDriveInfo-parametern skickas av Windows PowerShell-motorn och metoden returnerar den nya enheten till Windows PowerShell-motorn. Den här metoden måste deklareras inom klassen som skapats ovan.
+Metoden [system. Management. Automation. Provider. Drivecmdletprovider. NewDrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) anropas av Windows PowerShell-motorn när en användare anropar cmdleten [Microsoft. PowerShell. commands. NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) som anger namnet på din Provider. PSDriveInfo-parametern skickas av Windows PowerShell-motorn och metoden returnerar den nya enheten till Windows PowerShell-motorn. Den här metoden måste deklareras inom klassen som skapats ovan.
 
-Metoden kontrollerar först att både enhetsobjektet och enhets roten som skickades finns, returnerar `null` om någon av dem inte gör det. Den använder sedan en konstruktor för den interna klassen AccessDBPSDriveInfo för att skapa en ny enhet och en anslutning till den åtkomst databas enheten representerar.
+Metoden kontrollerar först att både enhetsobjektet och enhets roten som skickades finns, och returnerar `null` om någon av dem inte gör det. Den använder sedan en konstruktor för den interna klassen AccessDBPSDriveInfo för att skapa en ny enhet och en anslutning till den åtkomst databas enheten representerar.
 
 ```csharp
 protected override PSDriveInfo NewDrive(PSDriveInfo drive)

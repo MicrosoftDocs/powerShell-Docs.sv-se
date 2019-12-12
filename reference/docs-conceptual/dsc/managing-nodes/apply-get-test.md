@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Tillämpa, hämta och testa konfigurationer på en nod
 ms.openlocfilehash: 41f8d2d75d3dd9621de615e7999c2690cb8ce44a
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941868"
 ---
 # <a name="apply-get-and-test-configurations-on-a-node"></a>Tillämpa, hämta och testa konfigurationer på en nod
@@ -219,6 +219,6 @@ Från och med PowerShell 5,0 lades cmdleten [Publish-DSCConfiguration](/powershe
 Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer" -Credential (get-credential Contoso\webadministrator)
 ```
 
-## <a name="see-also"></a>Se också
+## <a name="see-also"></a>Se även
 
 - [Hämta, testa och ange](../resources/get-test-set.md)

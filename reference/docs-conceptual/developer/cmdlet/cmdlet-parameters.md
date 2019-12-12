@@ -17,15 +17,15 @@ helpviewer_keywords:
 ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
 caps.latest.revision: 23
 ms.openlocfilehash: 914a10907bcf980eed8d7e2f819c382fe6b341ad
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356576"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet-parametrar
 
-Cmdlet-parametrar tillhandahåller mekanismen som tillåter att en cmdlet accepterar ininformation. Parametrar kan acceptera inmatade objekt direkt från kommando raden eller från objekt som skickas till cmdleten via pipelinen, men argumenten (även kallade *värden*) för dessa parametrar kan ange vilka indatatyper som cmdleten accepterar, hur cmdleten ska utföra åtgärder och de data som cmdleten returnerar till pipelinen.
+Cmdlet-parametrar tillhandahåller mekanismen som tillåter att en cmdlet accepterar ininformation. Parametrar kan acceptera indata direkt från kommando raden eller från objekt som skickas till cmdleten via pipelinen. argumenten (även kallade *värden*) för dessa parametrar kan ange de indata som cmdleten accepterar, hur cmdleten ska utföra sina åtgärder och vilka data som cmdleten returnerar till pipelinen.
 
 ## <a name="in-this-section"></a>I detta avsnitt
 
@@ -47,7 +47,7 @@ Cmdlet-parametrar tillhandahåller mekanismen som tillåter att en cmdlet accept
 
 [Verifierar parameter Indatatyp](./validating-parameter-input.md) Beskriver hur Windows PowerShell validerar argumenten som skickas till cmdlet-parametrar.
 
-[Parametrar för inparametrar](./input-filter-parameters.md) Beskriver `Filter`-, `Include`-och `Exclude`-parametrar som filtrerar uppsättningen inobjekt som cmdleten påverkar.
+[Parametrar för inparametrar](./input-filter-parameters.md) Beskriver parametrarna `Filter`, `Include`och `Exclude` som filtrerar uppsättningen inobjekt som cmdleten påverkar.
 
 ## <a name="related-sections"></a>Relaterade avsnitt
 

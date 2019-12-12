@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Kom igång med önskad tillstånds konfiguration (DSC) för Linux
 ms.openlocfilehash: b1bc9b9fafd89a1af0f967de38a817bff1f3ffe3
-ms.sourcegitcommit: 14b50e5446f69729f72231f5dc6f536cdd1084c3
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73933838"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Kom igång med önskad tillstånds konfiguration (DSC) för Linux
@@ -28,10 +28,10 @@ I följande tabell beskrivs de nödvändiga paket beroendena för DSC för Linux
 
 |  Nödvändigt paket |  Beskrivning |  Lägsta version |
 |---|---|---|
-| glibc| GNU-bibliotek| 2\... 4 – 31,30|
-| python| Python| 2,4 – 3,4|
-| omiserver| Öppna hanterings infrastruktur| 1.0.8.1|
-| openssl| OpenSSL-bibliotek| 0.9.8 eller 1,0|
+| glibc| GNU-bibliotek| 2…4 – 31.30|
+| python| Python| 2.4 – 3.4|
+| omiserver| Open Management Infrastructure| 1.0.8.1|
+| openssl| OpenSSL-bibliotek| 0.9.8 eller 1.0|
 | ctypes| Python CTypes-bibliotek| Måste matcha python-version|
 | lib-sväng| klient bibliotek för spiral-http| 7.15.1|
 

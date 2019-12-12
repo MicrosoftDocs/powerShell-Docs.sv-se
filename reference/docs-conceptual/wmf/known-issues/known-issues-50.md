@@ -3,17 +3,17 @@ ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Kända problem i WMF 5.0
 ms.openlocfilehash: 91f556cb43ef971107f05c4041b725b1c7e4f1bd
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71145133"
 ---
 # <a name="known-issues-in-wmf-50"></a>Kända problem i WMF 5.0
 
 ## <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a>PowerShell-genvägar är brutna när de används för första gången
 
-**Lösning** Utför någon av följande åtgärder:
+**Lösning:** Utför någon av följande åtgärder:
 
 1. Högerklicka på PowerShell-genvägen. Välj Windows PowerShell för att starta i ett icke-förhöjd läge.
 2. Högerklicka på PowerShell-genvägen. Högerklicka på "Windows PowerShell" och välj "kör som administratör" för att starta i ett förhöjd läge.
@@ -24,7 +24,7 @@ När du har utfört någon av ovanstående åtgärder kommer PowerShell-genväga
 
 I Windows 7 kan använda PowerShell-moduler och DSC-resurser resultera i fel som rapporteras om ExecutionPolicy.
 
-**Lösning** Ange ExecutionPolicy till **RemoteSigned** genom att köra följande kommando i en upphöjd PowerShell-session (kör som administratör):
+**Lösning:** Ange ExecutionPolicy till **RemoteSigned** genom att köra följande kommando i en upphöjd PowerShell-session (kör som administratör):
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
@@ -34,25 +34,25 @@ Set-ExecutionPolicy RemoteSigned
 
 Den gamla Exchange-slutpunkten omdirigeras till en ny slut punkt. Det finns ett fel i den omdirigerings logik som resulterar i en krasch.
 
-**Lösning** Anslut direkt till den nya slut punkten.
+**Lösning:** Anslut direkt till den nya slut punkten.
 
 ## <a name="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2"></a>Funktionen för loggning av program varu inventering stoppades felaktigt efter installationen av WMF 5,0 på Windows Server 2012 R2
 
 När du installerar WMF 5,0 på en Windows Server 2012 R2 som redan kör SIL stoppas loggnings funktionen för program varu inventering felaktigt efter installationen.
 
-**Lösning** `Start-SilLogging` Kör cmdleten en gång efter WMF-installationen, som installations processen kommer att felaktigt stoppa funktionen för Software Inventory Logging.
+**Lösning:** Kör cmdleten `Start-SilLogging` en gång efter installationen av WMF, som i installations processen för att stoppa funktionen för program varu inventerings loggning.
 
-## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>`Get-ChildItem`fungerar inte om-LiteralPath och-rekursivt används tillsammans
+## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>`Get-ChildItem` fungerar inte om-LiteralPath och-rekursivt används tillsammans
 
-Om ett katalog namn innehåller ett ogiltigt jokertecken `Get-ChildItem` kommer inte att generera förväntade resultat när både-LiteralPath och-rekursivt används tillsammans.
+Om ett katalog namn innehåller ett ogiltigt jokertecken kommer `Get-ChildItem` inte att generera förväntade resultat när både-LiteralPath och-rekursivt används tillsammans.
 
-**Lösning** Inte idealisk, men den aktuella lösningen är att implementera rekursion i skriptet i stället för att använda cmdleten.
+**Lösning:** Inte idealisk, men den aktuella lösningen är att implementera rekursion i skriptet i stället för att använda cmdleten.
 
 ## <a name="sysprep-fails-after-wmf-50-installation"></a>Sysprep Miss lyckas efter installation av WMF 5,0
 
 Det finns två sätt att lösa problemet, beroende på vilken version av Windows Server du kör.
 
-**Lösning**
+**Lösning:**
 
 - För system som kör **Windows Server 2008 R2**
   1. Öppna PowerShell som administratör
@@ -102,7 +102,7 @@ Det finns två sätt att lösa problemet, beroende på vilken version av Windows
      ```
 
      - Svara Ja när du uppmanas att bekräfta.
-     - Observera att `<AdministratorUserName>` ska ersättas med det användar namn som är administratör på datorn. Till exempel "administratör".
+     - Observera att `<AdministratorUserName>` ska ersättas av det användar namn som är administratör på datorn. Till exempel "administratör".
 
   9. Kopiera filen som du redigerade och sparade över till Sysprep-katalogen med följande kommando:
 

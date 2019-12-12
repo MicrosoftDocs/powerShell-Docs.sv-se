@@ -14,10 +14,10 @@ helpviewer_keywords:
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
 ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359117"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell-felposter
@@ -38,7 +38,7 @@ Om cmdleten inte fångade ett undantag måste den skapa ett nytt undantag och v�
 
 - Valfri anrops information om den cmdlet som utlöste felet. Den här informationen anges av Windows PowerShell (se anrops meddelandet).
 
-- Det mål objekt som bearbetades när felet inträffade. Detta kan vara ett annat objekt, eller så kan det vara ett annat objekt som din cmdlet bearbetar. Exempel: för kommandot `remove-item -recurse c:\somedirectory` kan felet vara en instans av ett FileInfo-objekt för "c:\somedirectory\lockedfile". Informationen om mål objekt är valfri.
+- Det mål objekt som bearbetades när felet inträffade. Detta kan vara ett annat objekt, eller så kan det vara ett annat objekt som din cmdlet bearbetar. Exempel: för kommandot `remove-item -recurse c:\somedirectory`kan felet vara en instans av ett FileInfo-objekt för "c:\somedirectory\lockedfile". Informationen om mål objekt är valfri.
 
 ## <a name="error-identifier"></a>Fel-ID
 
@@ -58,9 +58,9 @@ Använd följande rikt linjer för att generera fel identifierare när du skapar
 
 - Generera inte fel identifierare dynamiskt på ett icke-reproducerbart sätt. Inkludera till exempel inte fel information, till exempel ett process-ID. Fel identifierare är bara användbara om de motsvarar de fel identifierare som visas av andra användare som har samma fel tillstånd.
 
-## <a name="error-category"></a>Fel kategori
+## <a name="error-category"></a>Felkategori
 
-När du skapar en felpost anger du kategori för felet med hjälp av en av konstanterna som definieras av uppräkningen [system. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) . I Windows PowerShell används fel kategorin för att visa fel information när användare anger variabeln `$ErrorView` till `"CategoryView"`.
+När du skapar en felpost anger du kategori för felet med hjälp av en av konstanterna som definieras av uppräkningen [system. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) . I Windows PowerShell används fel kategorin för att visa fel information när användare ställer in variabeln `$ErrorView` att `"CategoryView"`.
 
 Undvik att använda konstanten [system. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **NotSpecified** . Om du har information om felet eller om åtgärden som orsakade felet, väljer du den kategori som bäst beskriver felet eller åtgärden, även om kategorin inte är en perfekt matchning.
 
@@ -88,7 +88,7 @@ När du utvecklar en felpost för en cmdlet kommer standard fel meddelandet för
 
 Ersättnings meddelandet tillhandahålls av ett [system. Management. Automation. ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) -objekt. Använd någon av följande konstruktorer för det här objektet eftersom de ger ytterligare lokaliserings information som kan användas av Windows PowerShell.
 
-- [ErrorDetails (cmdlet, sträng, sträng, objekt [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): Använd den här konstruktorn om din mall sträng är en resurs sträng i samma sammansättning som cmdleten implementeras i, eller om du vill läsa in mallstrukturlistan genom en åsidosättning av [ Metoden system. Management. Automation. cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) .
+- [ErrorDetails (cmdlet, sträng, sträng, objekt [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): Använd den här konstruktorn om din mall sträng är en resurs sträng i samma sammansättning som cmdleten implementeras i, eller om du vill läsa in mallstrukturlistan genom en åsidosättning av metoden [system. Management. Automation. cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) .
 
 - [ErrorDetails (sammansättning, sträng, sträng, objekt [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): Använd den här konstruktorn om frågesträngen finns i en annan sammansättning och du inte läser in den via en åsidosättning av [system. Management. Automation. cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
 

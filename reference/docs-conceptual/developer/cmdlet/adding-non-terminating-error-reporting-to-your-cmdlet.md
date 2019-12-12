@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
 ms.openlocfilehash: a4426abec96cd922360aeef8c157b4e9f41a15b9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355652"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Lägga till rapportering av fel som avbryter körningen i en cmdlet
@@ -23,7 +23,7 @@ I det här avsnittet beskrivs hur du skapar en-cmdlet som rapporterar att det in
 För att inte avsluta fel (och avsluta fel) måste cmdleten skicka ett [system. Management. Automation. ErrorRecord][] -objekt som identifierar felet.
 Varje felpost identifieras av en unik sträng som kallas "fel identifierare".
 Förutom identifieraren anges kategorin för varje fel av konstanter som definieras av en [system. Management. Automation. ErrorCategory][] -uppräkning.
-Användaren kan visa fel baserat på deras kategori genom att ange variabeln `$ErrorView` till "CategoryView".
+Användaren kan visa fel baserat på deras kategori genom att ange `$ErrorView` variabeln till "CategoryView".
 
 Mer information om fel poster finns i [fel poster för Windows PowerShell](./windows-powershell-error-records.md).
 
@@ -185,10 +185,10 @@ protected override void ProcessRecord()
 För ett fel som inte är avslutande måste cmdleten generera en angiven fel identifierare för varje angivet inobjekt.
 
 En cmdlet behöver ofta ändra PowerShell-åtgärden som genereras av ett fel som inte går att avsluta.
-Det kan du göra genom att definiera parametrarna `ErrorAction` och `ErrorVariable`.
-Om du definierar parametern `ErrorAction`, visar cmdleten användar alternativen [system. Management. Automation. Åtgärdsinställning][]. du kan också påverka åtgärden direkt genom att ställa in `$ErrorActionPreference`-variabeln.
+Det kan du göra genom att definiera `ErrorAction` och `ErrorVariable` parametrar.
+Om du definierar parametern `ErrorAction`, visar cmdleten användar alternativen [system. Management. Automation. Åtgärdsinställning][]. du kan också direkt påverka åtgärden genom att ställa in `$ErrorActionPreference` variabeln.
 
-Cmdleten kan spara icke-avslutande fel i en variabel med parametern `ErrorVariable`, som inte påverkas av inställningen för `ErrorAction`.
+Cmdleten kan spara icke-avslutande fel i en variabel med hjälp av parametern `ErrorVariable` som inte påverkas av inställningen för `ErrorAction`.
 Fel kan läggas till i en befintlig felvariabel genom att lägga till ett plus tecken (+) framför variabelns namn.
 
 ## <a name="code-sample"></a>Kod exempel

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e620bf6d-76be-47b0-a7a8-f43418f30c60
 caps.latest.revision: 6
 ms.openlocfilehash: b81a32b867795ae51c3f5308c2f82c31ed2747fa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352292"
 ---
 # <a name="adding-resources-to-a-management-odata-web-service"></a>Lägga till resurser till en Management OData-webbtjänst
@@ -51,17 +51,17 @@ Det första steget är att importera schemat från den befintliga hanterings-ODa
 
 3. Kontrol lera att installerade Windows PowerShell-moduler är markerat och välj Hyper-V i list rutan. Klicka på **Nästa**. Klicka på **Nästa**.
 
-4. I **cmdlet Substantiv** -listan väljer du **virtuell dator**. Klicka på **Nästa**
+4. I **cmdlet Substantiv** -listan väljer du **virtuell dator**. Klicka på **Nästa**.
 
-5. I det här exemplet binder vi bara get-och Delete-kommandona med cmdletar. Avmarkera kryss rutorna **skapa** och **Uppdatera** och kontrol lera att kryss rutorna **Hämta** och **ta bort** är markerade. Kontrol lera att cmdleten `Get-VM` är vald för **Get**och att `Remove-VM`-cmdleten har valts för **borttagning**.
+5. I det här exemplet binder vi bara get-och Delete-kommandona med cmdletar. Avmarkera kryss rutorna **skapa** och **Uppdatera** och kontrol lera att kryss rutorna **Hämta** och **ta bort** är markerade. Kontrol lera att `Get-VM`-cmdleten har valts för **Get**och att `Remove-VM`-cmdleten har valts för **borttagning**.
 
-6. Eftersom metadata för VM-cmdletarna inte anger någon Utdatatyp måste du köra cmdleten för att ange utdatatypen. Välj **Ange Utdatatyp** och klicka på **kör cmdlet**. Dialog rutan **kör cmdlet** visas. Klicka på **Kör**. Rutan **CLR-typ** fylls med `VirtualMachine`-typ. Klicka på **OK**och sedan på **Nästa**.
+6. Eftersom metadata för VM-cmdletarna inte anger någon Utdatatyp måste du köra cmdleten för att ange utdatatypen. Välj **Ange Utdatatyp** och klicka på **kör cmdlet**. Dialog rutan **kör cmdlet** visas. Klicka på **Run** (Kör). Rutan **CLR-typ** fylls med `VirtualMachine` typen. Klicka på **OK**och sedan på **Nästa**.
 
 7. Som standard är alla egenskaper för VirtualMachine-objektet markerade. Du kan ta bort alla egenskaper som du inte vill ha som en del av de data som returneras när du begär den här resursen från webb tjänsten. Klicka på **Nästa**.
 
 8. Du måste markera minst en egenskap som ska användas som nyckel. Välj **namn** i listan och klicka på **Nästa**.
 
-9. I nästa fönster kan du mappa egenskaper för hanterings-OData-resursen till egenskaper för de underliggande cmdletarna. Guiden mappar egenskaper med identiska namn som standard. Till exempel mappas egenskapen `ComputerName` för resursen till egenskapen `ComputerName` för cmdletarna.  På så sätt kan du ange egenskapen `ComputerName` i en begäran till webb tjänsten och ha det värde som du anger till `Get-VM`-cmdlet. `Id` och `Name` mappas också som standard.
+9. I nästa fönster kan du mappa egenskaper för hanterings-OData-resursen till egenskaper för de underliggande cmdletarna. Guiden mappar egenskaper med identiska namn som standard. Till exempel mappas resursens `ComputerName` egenskap till `ComputerName`-egenskapen för cmdletarna.  På så sätt kan du ange `ComputerName` egenskapen i en begäran till webb tjänsten och ha det värde som du anger till `Get-VM`-cmdlet. `Id` och `Name` mappas också som standard.
 
    10. Klicka på **Nästa**och sedan på **Slutför**.
 
@@ -77,4 +77,4 @@ Det första steget är att importera schemat från den befintliga hanterings-ODa
 
 ## <a name="next-steps"></a>Nästa steg
 
-Innan du öppnar den nya virtuella dator resursen från webb tjänsten hantering av OData måste du uppdatera filen RbacConfiguration. xml för att tillåta åtkomst till Windows PowerShell-modulen för Hyper-V enligt beskrivningen i [Konfigurera rollbaserad auktorisering](./configuring-role-based-authorization.md), och du kommer också att Du måste starta om webb tjänsten.
+Innan du får åtkomst till den nya virtuella dator resursen från webb tjänsten för hantering av OData måste du uppdatera filen RbacConfiguration. xml för att tillåta åtkomst till Windows PowerShell-modulen för Hyper-V enligt beskrivningen i [Konfigurera rollbaserad auktorisering](./configuring-role-based-authorization.md). du måste också starta om webb tjänsten.

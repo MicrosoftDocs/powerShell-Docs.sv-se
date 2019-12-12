@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
 caps.latest.revision: 19
 ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353720"
 ---
 # <a name="tablecolumnheader-element-format"></a>TableColumnHeader-element (format)
@@ -33,7 +33,7 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `TableColumnHeader`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `TableColumnHeader`-elementet.
 
 ### <a name="attributes"></a>Attribut
 
@@ -55,15 +55,15 @@ Ingen.
 
 ## <a name="remarks"></a>Anmärkningar
 
-Ange ett sidhuvud för varje kolumn i tabellen. Kolumnerna visas i den ordning som `TableColumnHeader`-element har definierats.
+Ange ett sidhuvud för varje kolumn i tabellen. Kolumnerna visas i den ordning som `TableColumnHeader` element definieras.
 
-En tabell måste ha samma antal `TableColumnHeader`-element som `TableRowEntry`-element. Kolumn rubriken definierar hur texten överst i tabellen visas. Rad posterna definierar vilka data som visas i raderna i tabellen.
+En tabell måste ha samma antal `TableColumnHeader` element som `TableRowEntry` element. Kolumn rubriken definierar hur texten överst i tabellen visas. Rad posterna definierar vilka data som visas i raderna i tabellen.
 
 Mer information om komponenterna i en tabellvy finns i [tabellvy](./creating-a-table-view.md).
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visas två `TableColumnHeader`-element. Det första elementet definierar en kolumn vars etikett är "kolumn 1", har en bredd på 16 tecken och vars etikett är justerad till vänster. Det andra elementet definierar en kolumn vars etikett är "kolumn 2", har en bredd på 10 tecken och vars etikett centreras i kolumnen.
+I följande exempel visas två `TableColumnHeader` element. Det första elementet definierar en kolumn vars etikett är "kolumn 1", har en bredd på 16 tecken och vars etikett är justerad till vänster. Det andra elementet definierar en kolumn vars etikett är "kolumn 2", har en bredd på 10 tecken och vars etikett centreras i kolumnen.
 
 ```xml
 <TableHeaders>

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 70532e7e-9cac-43c3-9687-e77011ecc878
 caps.latest.revision: 4
 ms.openlocfilehash: 5eb2186cbceee21f8b4a8c88b812e9c71f15e0af
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356646"
 ---
 # <a name="creating-a-workflow-by-using-a-windows-powershell-script"></a>Skapa ett arbetsflöde med hjälp av ett Windows PowerShell-skript
@@ -28,7 +28,7 @@ Du hittar arbets flödet på samma sätt som med andra Windows PowerShell-komman
 
 ## <a name="implementing-parallel-and-sequence"></a>Implementera parallell och sekvens
 
-[Windows Workflow Foundation](https://msdn.microsoft.com/en-us/library/ms735967.aspx) stöder körning av aktiviteter parallellt. Om du vill implementera den här funktionen i ett Windows PowerShell-skript använder du nyckelordet `parallel` framför ett skript block. Du kan också använda konstruktionen `foreach -parallel` för att iterera genom en samling objekt parallellt. Om du vill köra en grupp med aktiviteter i nummerordning i ett parallellt block, omger du den gruppen med aktiviteter i ett-skript block och föregår blocket med nyckelordet Sequence.
+[Windows Workflow Foundation](https://msdn.microsoft.com/en-us/library/ms735967.aspx) stöder körning av aktiviteter parallellt. Om du vill implementera den här funktionen i ett Windows PowerShell-skript använder du nyckelordet `parallel` framför ett skript block. Du kan också använda `foreach -parallel` konstruktion för att iterera genom en samling objekt parallellt. Om du vill köra en grupp med aktiviteter i nummerordning i ett parallellt block, omger du den gruppen med aktiviteter i ett-skript block och föregår blocket med nyckelordet Sequence.
 
 ## <a name="joining-computers-to-a-domain"></a>Ansluta datorer till en domän
 

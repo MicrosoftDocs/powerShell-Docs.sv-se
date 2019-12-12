@@ -9,23 +9,23 @@ ms.topic: article
 ms.assetid: 2933a6ca-fe92-4ba2-97ee-ef0f0d5fdfcf
 caps.latest.revision: 8
 ms.openlocfilehash: b73284adb4bf228510bf8134aa4c6a10561b7ea2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352257"
 ---
 # <a name="configuring-role-based-authorization"></a>Konfigurera rollbaserad auktorisering
 
-Det här avsnittet visar hur du konfigurerar den rollbaserade auktoriseringsprincipen för exempel implementering av gränssnittet [Microsoft. Management. OData. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) som beskrivs i [implementera anpassad auktorisering för hantering OData IIS-tillägg](./implementing-custom-authorization-for-a-management-odata-web-service.md).
+I det här avsnittet visas hur du konfigurerar den rollbaserade auktoriseringsprincipen för exempel implementeringen av gränssnittet [Microsoft. Management. OData. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) som beskrivs i [implementera anpassad auktorisering för OData IIS-tillägg för hantering](./implementing-custom-authorization-for-a-management-odata-web-service.md).
 
 I det här exemplet ska du konfigurera en XML-fil som används av OData-appen exempel hantering för att definiera auktoriseringsprincipen. Du kommer att skapa två roller och associera olika Windows PowerShell-moduler som innehåller arbets flöden med dessa roller. Det schema som definierar XML-filen visas i [konfigurations schema för rollbaserad auktorisering](./role-based-authorization-configuration-schema.md).
 
 ## <a name="modifying-the-rbacconfigurationxml-file"></a>Ändra filen RBacConfiguration. XML
 
-Den här filen definierar auktoriseringsprincipen för programmet. Roller definieras genom att använda `Group`-noder. En `Group`-nod definierar de Windows PowerShell-kommandon som användare som tilldelats gruppen kan köra. Användare tilldelas till grupper genom att använda `User`-noder.
+Den här filen definierar auktoriseringsprincipen för programmet. Roller definieras med hjälp av `Group` noder. En `Group` nod definierar de Windows PowerShell-kommandon som användare som tilldelats gruppen kan köra. Användare tilldelas grupper genom att använda `User` noder.
 
-I de här exemplen ska du lägga till en modul i noden administratör `Group` och lägga till en användare i varje grupp.
+I de här exemplen ska du lägga till en modul till administratören `Group` noden och lägga till en användare i varje grupp.
 
 #### <a name="adding-a-module-to-a-group-node"></a>Lägga till en modul i en gruppnod
 
@@ -85,9 +85,9 @@ I de här exemplen ska du lägga till en modul i noden administratör `Group` oc
    </RbacConfiguration>
    ```
 
-2. Filen innehåller två `Group`-noder. Dessa representerar de två roller som används i det här exemplet, `NonAdminGroup`-och `AdminGroup`-roller.
+2. Filen innehåller två `Group` noder. Dessa representerar de två roller som används i det här exemplet, `NonAdminGroup` och `AdminGroup` roller.
 
-   Lägg till följande XML direkt efter den avslutande `Cmdlets`-taggen i den första `Group`-noden:
+   Lägg till följande XML direkt efter stängnings `Cmdlets`s tag gen i den första `Group` noden:
 
    ```xml
    <Modules>
@@ -97,7 +97,7 @@ I de här exemplen ska du lägga till en modul i noden administratör `Group` oc
 
 #### <a name="adding-a-user-to-a-group-node"></a>Lägga till en användare till en gruppnod
 
-1. Öppna filen **RBacConfiguration. XML** i en text redigerare. Den här filen finns i mappen C: \\ \ inetpub\wwwroot\Modata om du inte ändrade slut punkts namnet före installationen.
+1. Öppna filen **RBacConfiguration. XML** i en text redigerare. Den här filen finns i mappen C:\\\inetpub\wwwroot\Modata om du inte ändrade slut punkts namnet före installationen.
 
 2. Lägg till följande XML direkt efter den avslutande taggen i `Users`-noden:
 

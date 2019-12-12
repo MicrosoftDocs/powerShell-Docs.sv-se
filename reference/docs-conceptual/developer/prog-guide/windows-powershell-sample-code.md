@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1106829a-8ddc-454e-bbdd-ade15d4bffb4
 caps.latest.revision: 7
 ms.openlocfilehash: e9df44b17453e9f73f6eb388d9cbc8a69fce4ba2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356919"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell-exempelkod
@@ -25,7 +25,7 @@ Windows PowerShell®-exempel är tillgängliga via Windows SDK. Det här avsnitt
 
 ## <a name="sample-code-listing"></a>Exempel kod lista
 
-|Exempel kod|Beskrivning|
+|Exempelkod|Beskrivning|
 |-----------------|-----------------|
 |[AccessDbProviderSample01 kod exempel](./accessdbprovidersample01-code-sample.md)|Detta är den provider som beskrivs i [skapa en grundläggande Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md).|
 |[AccessDbProviderSample02 kod exempel](./accessdbprovidersample02-code-sample.md)|Det här är den provider som beskrivs i [skapa en Windows PowerShell-enhets leverantör](./creating-a-windows-powershell-drive-provider.md).|
@@ -34,12 +34,12 @@ Windows PowerShell®-exempel är tillgängliga via Windows SDK. Det här avsnitt
 |[AccessDbProviderSample05 kod exempel](./accessdbprovidersample05-code-sample.md)|Detta är den provider som beskrivs i [skapa en Windows PowerShell-navigerings leverantör](./creating-a-windows-powershell-navigation-provider.md).|
 |[AccessDbProviderSample06 kod exempel](./accessdbprovidersample06-code-sample.md)|Detta är den provider som beskrivs i [skapa en Windows PowerShell-innehålls leverantör](./creating-a-windows-powershell-content-provider.md).|
 |[GetProc01 kod exempel](./getproc01-code-samples.md)|Detta är det grundläggande `Get-Process`-cmdlet-exemplet som beskrivs i [skapa din första cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md).|
-|[GetProc02 kod exempel](./getproc02-code-samples.md)|Detta är det `Get-Process`-cmdlet-exemplet [som beskrivs i lägga till parametrar som bearbetar kommando rads indatatyper](../cmdlet/adding-parameters-that-process-command-line-input.md).|
-|[GetProc03 kod exempel](./getproc03-code-samples.md)|Detta är det `Get-Process`-cmdlet-exemplet [som beskrivs i lägga till parametrar som bearbetar pipeline-inflöden](../cmdlet/adding-parameters-that-process-pipeline-input.md).|
-|[GetProc04 kod exempel](./getproc04-code-samples.md)|Detta är `Get-Process`-cmdlet-exemplet som beskrivs i [lägga till ej avslutande fel rapportering till din cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
-|[GetProc05 kod exempel](./getproc05-code-samples.md)|Denna `Get-Process`-cmdlet liknar den cmdlet som beskrivs i [lägga till ej avslutande fel rapportering till din cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
-|[StopProc01 kod exempel](./stopproc01-code-samples.md)|Detta är `Stop-Process`-cmdlet-exemplet som beskrivs i [skapa en cmdlet som ändrar systemet](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md).|
-|[StopProcessSample04 kod exempel](./stopprocesssample04-code-samples.md)|Detta är det `Stop-Process`-cmdlet-exemplet som beskrivs i [lägga till parameter uppsättningar i en cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).|
+|[GetProc02 kod exempel](./getproc02-code-samples.md)|Detta är `Get-Process` cmdlet-exemplet som beskrivs i [lägga till parametrar som bearbetar kommando rads indatatyper](../cmdlet/adding-parameters-that-process-command-line-input.md).|
+|[GetProc03 kod exempel](./getproc03-code-samples.md)|Detta är `Get-Process` cmdlet-exemplet som beskrivs i [lägga till parametrar som bearbetar pipeline-inflöden](../cmdlet/adding-parameters-that-process-pipeline-input.md).|
+|[GetProc04 kod exempel](./getproc04-code-samples.md)|Detta är `Get-Process` cmdlet-exemplet som beskrivs i [lägga till fel rapportering som inte avslutas till din cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
+|[GetProc05 kod exempel](./getproc05-code-samples.md)|Den här `Get-Process` cmdlet liknar den cmdlet som beskrivs i [lägga till fel rapportering som inte avslutas till din cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
+|[StopProc01 kod exempel](./stopproc01-code-samples.md)|Detta är det `Stop-Process` cmdlet-exemplet som beskrivs i [skapa en cmdlet som ändrar systemet](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md).|
+|[StopProcessSample04 kod exempel](./stopprocesssample04-code-samples.md)|Detta är det `Stop-Process` cmdlet-exemplet som beskrivs i [lägga till parameter uppsättningar i en cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).|
 |[Runspace01 kod exempel](./runspace01-code-samples.md)|Detta är kod exemplen för körnings utrymme som beskrivs i [skapa ett konsol program som kör ett angivet kommando](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).|
 |[Runspace02 kod exempel](./runspace02-code-samples.md)|I det här exemplet används klassen [system. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) för att köra cmdleten `Get-Process` synkront.|
 |[RunSpace03 kod exempel](./runspace03-code-samples.md)|Detta är kod exemplen för körnings utrymme som beskrivs i "skapa ett konsol program som kör ett angivet skript".|

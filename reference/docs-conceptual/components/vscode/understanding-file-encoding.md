@@ -3,10 +3,10 @@ title: Förstå filkodning i VSCode och PowerShell
 description: Konfigurera fil kodning i VSCode och PowerShell
 ms.date: 02/28/2019
 ms.openlocfilehash: 3283e1262c8eb26906429ecf195cfa0b122b330f
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74117405"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Förstå filkodning i VSCode och PowerShell
@@ -57,11 +57,11 @@ När dessa byte avkodas som Windows-1252 tolkas de som de tecken som `â€“`.
 Några konstig teckensekvens som du kan se är:
 
 <!-- markdownlint-disable MD038 -->
-- `â€“` i stället för `–`
-- `â€”` i stället för `—`
-- `Ã„2` i stället för `Ä`
+- `â€“` Istället för `–`
+- `â€”` Istället för `—`
+- `Ã„2` Istället för `Ä`
 - `Â` i stället för ` ` (ett hårt blank steg)
-- `Ã©` i stället för `é`
+- `Ã©` Istället för `é`
 <!-- markdownlint-enable MD038 -->
 
 Den här praktiska [referensen](https://www.i18nqa.com/debug/utf8-debug.html) listar vanliga mönster som indikerar ett kodnings problem med UTF-8/Windows-1252.
@@ -232,14 +232,14 @@ Se till att dina medarbetare på alla filer som du delar inte har några instäl
 
 Alla andra program som läser eller skriver ett PowerShell-skript kan koda det igen.
 
-Några exempel är:
+Några exempel:
 
 - Använd Urklipp för att kopiera och klistra in ett skript. Detta är vanligt i scenarier som:
   - Kopiera ett skript till en virtuell dator
   - Kopiera ett skript från ett e-postmeddelande eller en webb sida
   - Kopiera ett skript till eller från ett Microsoft Word-eller PowerPoint-dokument
 - Andra text redigerare, till exempel:
-  - Block
+  - Anteckningar
   - vim
   - Andra PowerShell-skript redigerare
 - Text redigerings verktyg, t. ex.:

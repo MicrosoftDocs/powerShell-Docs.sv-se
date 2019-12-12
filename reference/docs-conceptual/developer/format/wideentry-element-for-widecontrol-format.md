@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 014763cb-7716-4931-899c-8375b5d7a3dd
 caps.latest.revision: 15
 ms.openlocfilehash: d1d13b5c3436871053353814293d9163ea13c7fb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353157"
 ---
 # <a name="wideentry-element-for-widecontrol-format"></a>WideEntry-element för WideControl (format)
@@ -32,7 +32,7 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet för elementet `WideEntry`. Du måste ange ett enskilt `WideItem`-underordnat element.
+I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `WideEntry`-elementet. Du måste ange ett enskilt `WideItem` underordnat element.
 
 ### <a name="attributes"></a>Attribut
 
@@ -57,7 +57,7 @@ En bred vy är ett List format som visar ett enda egenskaps värde eller skript 
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visas ett `WideEntry`-element som definierar ett enda `WideItem`-element. Elementet `WideItem` definierar den egenskap vars värde visas i vyn.
+I följande exempel visas ett `WideEntry`-element som definierar ett enskilt `WideItem`-element. `WideItem`-elementet definierar den egenskap vars värde visas i vyn.
 
 ```xml
 <WideEntries>

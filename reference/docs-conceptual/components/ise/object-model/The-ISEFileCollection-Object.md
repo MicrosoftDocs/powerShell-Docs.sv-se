@@ -1,27 +1,27 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: ISEFileCollection-objektet
 ms.openlocfilehash: 96db51ee921cc0fa34803091d563bc6e118643b6
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030528"
 ---
 # <a name="the-isefilecollection-object"></a>ISEFileCollection-objektet
 
-Den **ISEFileCollection** objekt är en samling **ISEFile** objekt. Ett exempel är $psISE.CurrentPowerShellTab.Files-samling.
+**ISEFileCollection** -objektet är en samling av **ISEFile** -objekt. Ett exempel är samlingen $psISE. CurrentPowerShellTab. files.
 
 ## <a name="methods"></a>Metoder
 
 ### <a name="add-fullpath-"></a>Lägg till\( \[fullPath\] \)
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Skapar och returnerar en ny namnlös fil och lägger till den i samlingen. Den **IsUntitled** egenskapen för den nyligen skapade filen är **$true**.
+Skapar och returnerar en ny namnlös fil och lägger till den i samlingen. **IsUntitled** -egenskapen för den nyligen skapade filen är **$True**.
 
-**\[fullPath\]**  – valfritt sträng fullständigt angivna sökvägen till filen. Ett undantag genereras om du inkluderar den **fullPath** parameter och en relativ sökväg, eller om du använder ett filnamn i stället för den fullständiga sökvägen.
+**\[fullPath\]** – valfri sträng som anger filens fullständiga sökväg. Ett undantag skapas om du inkluderar parametern **fullPath** och en relativ sökväg, eller om du använder ett fil namn i stället för den fullständiga sökvägen.
 
 ```powershell
 # Adds a new untitled file to the collection of files in the current PowerShell tab.
@@ -31,15 +31,15 @@ $newFile = $psISE.CurrentPowerShellTab.Files.Add()
 $psISE.CurrentPowerShellTab.Files.Add("$pshome\Examples\profile.ps1")
 ```
 
-### <a name="remove-file-force-"></a>Ta bort\( filen \[kraft\] \)
+### <a name="remove-file-force-"></a>Ta bort\(-filen \[tvinga\] \)
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
 Tar bort en angiven fil från den aktuella PowerShell-fliken.
 
-**Filen** -sträng The ISEFile-fil som du vill ta bort från samlingen. Om filen inte har sparats, utlöser ett undantag i den här metoden. Använd den **tvinga** växla parametern om du vill framtvinga borttagning av en ej sparade filer.
+**Filsträng filen ISEFile** som du vill ta bort från samlingen. Om filen inte har sparats, genererar den här metoden ett undantag. Använd parametern **Framtvinga** växel för att tvinga borttagning av en fil som inte sparats.
 
-**\[Framtvinga\]**  -valfritt booleskt om **$true**, ger behörighet att ta bort filen även om det inte har sparats efter senaste användning. Standardvärdet är **$false**.
+**\[tvinga\]** -valfria booleska om värdet är **$True**ger behörighet att ta bort filen även om den inte har sparats efter den senaste användningen. Standardvärdet är **$false**.
 
 ```powershell
 # Removes the first opened file from the file collection associated with the current PowerShell tab.
@@ -54,11 +54,11 @@ $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 
 ### <a name="setselectedfile-selectedfile-"></a>SetSelectedFile\( selectedFile \)
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Väljer den fil som anges av den **selectedFile** parametern.
+Väljer den fil som anges av parametern **selectedFile** .
 
-**selectedFile** -Microsoft.PowerShell.Host.ISE.ISEFile The ISEFile-fil som du vill välja.
+**selectedFile** -Microsoft. PowerShell. Host. ISE. ISEFile den ISEFile-fil som du vill välja.
 
 ```powershell
 # Selects the specified file.
@@ -68,6 +68,6 @@ $psISE.CurrentPowerShellTab.Files.SetSelectedFile($firstfile)
 
 ## <a name="see-also"></a>Se även
 
-- [The ISEFile Object](The-ISEFile-Object.md)
-- [Syftet med den Windows PowerShell ISE-Skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [ISEFile-objektet](The-ISEFile-Object.md)
+- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)

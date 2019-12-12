@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 00dbb5ee-93d4-4914-a082-ef4d8b236b5c
 caps.latest.revision: 16
 ms.openlocfilehash: 596212f2e64401a751cf3dca0ee7d60b80912c00
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359011"
 ---
 # <a name="defining-selection-sets"></a>Definiera valuppsättningar
 
-När du skapar flera vyer och kontroller kan du definiera uppsättningar av objekt som kallas urvals uppsättningar. Med en urvals uppsättning kan du definiera objekten en gång, utan att behöva definiera dem flera gånger för varje vy eller kontroll. Normalt används urvals uppsättningar när du har en uppsättning relaterade .NET-objekt. Till exempel definierar `FileSystem`-format filen (FileSystem. format. ps1xml) en urvals uppsättning av de fil system typer som flera vyer använder.
+När du skapar flera vyer och kontroller kan du definiera uppsättningar av objekt som kallas urvals uppsättningar. Med en urvals uppsättning kan du definiera objekten en gång, utan att behöva definiera dem flera gånger för varje vy eller kontroll. Normalt används urvals uppsättningar när du har en uppsättning relaterade .NET-objekt. Till exempel definierar `FileSystem` format filen (FileSystem. format. ps1xml) en urvals uppsättning av de fil system typer som flera vyer använder.
 
 ## <a name="where-selection-sets-are-defined-and-referenced"></a>Där urvals uppsättningar definieras och refereras till
 
@@ -35,15 +35,15 @@ Du definierar urvals uppsättningar som en del av vanliga data som kan användas
 
 Du kan referera till en urvals uppsättning på följande sätt:
 
-- Varje vy har ett `ViewSelectedBy`-element som definierar vilka objekt som visas med hjälp av vyn. Elementet `ViewSelectedBy` har ett underordnat `SelectionSetName`-element som anger den markerings uppsättning som alla definitioner för vyn använder. Det finns ingen begränsning för antalet markerings uppsättningar som du kan referera till från en vy.
+- Varje vy har ett `ViewSelectedBy`-element som definierar vilka objekt som visas med hjälp av vyn. `ViewSelectedBy`-elementet har ett `SelectionSetName` underordnat element som anger den markerings uppsättning som alla definitioner för vyn använder. Det finns ingen begränsning för antalet markerings uppsättningar som du kan referera till från en vy.
 
-- I varje definition av en vy eller kontroll definierar elementet `EntrySelectedBy` vilka objekt som visas genom att använda den definitionen. Normalt har en vy eller kontroll bara en definition så objekten definieras av `ViewSelectedBy`-elementet. Elementet `EntrySelectedBy` i definitionen har ett underordnat `SelectionSetName`-element som anger urvals uppsättningen. Om du anger urvals uppsättningen för en definition kan du inte ange något av de andra underordnade elementen för elementet `EntrySelectedBy`.
+- I varje definition av en vy eller kontroll definierar `EntrySelectedBy`-elementet vilka objekt som visas genom att använda den definitionen. Normalt har en vy eller kontroll bara en definition så objekten definieras av `ViewSelectedBy`-elementet. Det `EntrySelectedBy` elementet i definitionen har ett `SelectionSetName` underordnat element som anger urvals uppsättningen. Om du anger urvals uppsättningen för en definition kan du inte ange något av de andra underordnade elementen för `EntrySelectedBy`-elementet.
 
-- I varje definition av en vy eller kontroll kan `SelectionCondition`-elementet användas för att ange ett villkor för när definitionen används. Elementet `SelectionCondition` har ett underordnat `SelectionSetName`-element som anger den urvals uppsättning som utlöser villkoret. Villkoret utlöses när något av de objekt som definieras i urvals uppsättningen visas. Mer information om hur du anger dessa villkor finns i [definiera villkor för när data visas](./defining-conditions-for-displaying-data.md).
+- I varje definition av en vy eller kontroll kan `SelectionCondition`-elementet användas för att ange ett villkor för när definitionen används. `SelectionCondition`-elementet har ett `SelectionSetName` underordnat element som anger den urvals uppsättning som utlöser villkoret. Villkoret utlöses när något av de objekt som definieras i urvals uppsättningen visas. Mer information om hur du anger dessa villkor finns i [definiera villkor för när data visas](./defining-conditions-for-displaying-data.md).
 
 ## <a name="selection-set-example"></a>Exempel på urvals uppsättning
 
-I följande exempel visas en urvals uppsättning som tas direkt från filen med `FileSystem`-formatering som tillhandahålls av Windows PowerShell. Mer information om andra Windows PowerShell-filer finns i [filer för Windows PowerShell-formatering](./powershell-formatting-files.md).
+I följande exempel visas en urvals uppsättning som tas direkt från `FileSystem`-format filen som tillhandahålls av Windows PowerShell. Mer information om andra Windows PowerShell-filer finns i [filer för Windows PowerShell-formatering](./powershell-formatting-files.md).
 
 ```xml
 <SelectionSets>
@@ -59,7 +59,7 @@ I följande exempel visas en urvals uppsättning som tas direkt från filen med 
 </SelectionSets>
 ```
 
-Den tidigare urvals uppsättningen refereras till i `ViewSelectedBy`-elementet i en tabellvy.
+Den tidigare urvals uppsättningen refereras till i `ViewSelectedBy` element i en tabellvy.
 
 ```xml
 <ViewDefinitions>

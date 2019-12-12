@@ -3,10 +3,10 @@ title: Installera PowerShell Core i macOS
 description: Information om hur du installerar PowerShell Core på macOS
 ms.date: 12/12/2018
 ms.openlocfilehash: ad1306e99261e8e6e2fd49d3199d863929c31e92
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73444434"
 ---
 # <a name="installing-powershell-core-on-macos"></a>Installera PowerShell Core i macOS
@@ -183,7 +183,7 @@ Om du vill ta bort ytterligare PowerShell-sökvägar läser du avsnittet [sökv�
 ## <a name="paths"></a>Sökvägar
 
 * `$PSHOME` är `/usr/local/microsoft/powershell/6.2.0/`
-* Användar profilerna kommer att läsas från `~/.config/powershell/profile.ps1`
+* Användar profiler kommer att läsas från `~/.config/powershell/profile.ps1`
 * Standard profiler kommer att läsas från `$PSHOME/profile.ps1`
 * Användarens moduler kommer att läsas från `~/.local/share/powershell/Modules`
 * Delade moduler kommer att läsas från `/usr/local/share/powershell/Modules`

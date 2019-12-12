@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 73fb11ee-0ebd-477a-ac36-acdfbb32e70d
 caps.latest.revision: 7
 ms.openlocfilehash: bd0cb69770817ec215ddb1862a43a838baddefcf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355246"
 ---
 # <a name="customitem-element-for-customentry-for-controls-for-configuration-format"></a>CustomItem-element för CustomEntry för Controls för Configuration (format)
@@ -34,7 +34,7 @@ Konfigurations element (format) styr element i konfigurations-(format) kontroll 
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `CustomItem`. Mer information finns i kommentarer.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `CustomItem`-elementet. Mer information finns i kommentarer.
 
 ### <a name="attributes"></a>Attribut
 
@@ -57,9 +57,9 @@ Ingen.
 
 ## <a name="remarks"></a>Anmärkningar
 
-Tänk på följande när du anger underordnade element i `CustomItem`-elementet:
+Tänk på följande när du anger underordnade element för `CustomItem`-elementet:
 
-- De underordnade elementen måste läggas till i följande ordning: `ExpressionBinding`, `NewLine`, `Text` och `Frame`.
+- De underordnade elementen måste läggas till i följande ordning: `ExpressionBinding`, `NewLine`, `Text`och `Frame`.
 
 - Det finns ingen övre gräns för antalet sekvenser som du kan ange.
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 80fc4de2-208f-4506-9a6a-c2675bb83be4
 caps.latest.revision: 11
 ms.openlocfilehash: abef6c91500f665c2366f221496d4cfd6444f5c9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359043"
 ---
 # <a name="customentries-element-for-customcontrol-for-controls-for-configuration-format"></a>CustomEntries-element för CustomControl för Controls för Configuration (format)
@@ -32,7 +32,7 @@ Konfigurations element (format) styr element i konfigurations-(format) kontroll 
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `CustomEntries`. Du måste ange ett eller flera underordnade element.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `CustomEntries`-elementet. Du måste ange ett eller flera underordnade element.
 
 ### <a name="attributes"></a>Attribut
 

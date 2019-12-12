@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
 ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359193"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Starkt rekommenderade riktlinjer för utveckling
 
 I det här avsnittet beskrivs rikt linjer som du bör följa när du skriver dina cmdlets. De är indelade i rikt linjer för att utforma cmdlets och rikt linjer för att skriva din cmdlet-kod. Du kanske upptäcker att dessa rikt linjer inte gäller för varje scenario. Men om de tillämpas och du inte följer dessa rikt linjer, kan användarna ha en dålig upplevelse när de använder dina cmdletar.
 
-## <a name="design-guidelines"></a>Design rikt linjer
+## <a name="design-guidelines"></a>Riktlinjer för design
 
 - [Använd ett angivet Substantiv för ett cmdlet-namn (SD01)](./strongly-encouraged-development-guidelines.md#use-a-specific-noun-for-a-cmdlet-name-sd01)
 
@@ -41,7 +41,7 @@ I det här avsnittet beskrivs rikt linjer som du bör följa när du skriver din
 
 - [Gör cmdletar Skift läges okänsliga och Skift läges bevarande (SC04)](./strongly-encouraged-development-guidelines.md#make-cmdlets-case-insensitive-and-case-preserving-sc04)
 
-## <a name="design-guidelines"></a>Design rikt linjer
+## <a name="design-guidelines"></a>Riktlinjer för design
 
 Följande rikt linjer bör följas när du utformar cmdlets för att säkerställa en konsekvent användar upplevelse mellan att använda dina cmdletar och andra cmdletar. När du hittar en design rikt linje som gäller din situation bör du titta närmare på kod rikt linjerna för liknande rikt linjer.
 
@@ -53,7 +53,7 @@ För att förbättra användar upplevelsen ska det substantiv som du väljer fö
 
 ### <a name="use-pascal-case-for-cmdlet-names-sd02"></a>Använd Pascal-fall för cmdlet-namn (SD02)
 
-Använd Pascal-fall för parameter namn. Med andra ord skriver du in den första bokstaven i verbet och alla termer som används i substantivet. Till exempel "`Clear-ItemProperty`".
+Använd Pascal-fall för parameter namn. Med andra ord skriver du in den första bokstaven i verbet och alla termer som används i substantivet. Exempel: "`Clear-ItemProperty`".
 
 ### <a name="parameter-design-guidelines-sd03"></a>Rikt linjer för parameter design (SD03)
 

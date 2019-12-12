@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
 ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357409"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>Skriva en binär PowerShell-modul
@@ -73,7 +73,7 @@ Följande procedur beskriver hur du skapar och installerar en PowerShell-modul f
 
 3. Paketera din lösning och spara paketet till någonstans i sökvägen till PowerShell-modulen.
 
-   Den globala miljövariabeln `PSModulePath` beskriver standard Sök vägarna som PowerShell använder för att hitta modulen. En gemensam sökväg för att spara en modul på ett system skulle till exempel vara `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`. Om du inte använder standard Sök vägarna måste du uttryckligen ange platsen för modulen under installationen. Se till att skapa en mapp för att spara modulen i, eftersom du kanske behöver mappen för att lagra flera sammansättningar och filer för din lösning.
+   Den globala miljövariabeln `PSModulePath` beskriver standard Sök vägarna som PowerShell använder för att hitta modulen. Till exempel är en gemensam sökväg för att spara en modul på ett system `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`. Om du inte använder standard Sök vägarna måste du uttryckligen ange platsen för modulen under installationen. Se till att skapa en mapp för att spara modulen i, eftersom du kanske behöver mappen för att lagra flera sammansättningar och filer för din lösning.
 
    Observera att tekniskt sett du inte behöver installera modulen var som helst på `PSModulePath` – de är bara de standard platser som PowerShell söker efter din modul. Men det anses vara bästa praxis, om du inte har en bra anledning att lagra modulen någon annan stans. Mer information finns i [installera en PowerShell-modul](./installing-a-powershell-module.md) och [ändra installations Sök vägen för PowerShell-modulen](./modifying-the-psmodulepath-installation-path.md).
 

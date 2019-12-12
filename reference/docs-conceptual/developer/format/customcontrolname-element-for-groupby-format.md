@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 473d9b56-521b-479a-8010-67fe9f040063
 caps.latest.revision: 8
 ms.openlocfilehash: 3a386eff95044eae573c255a451c5c8b8f16714d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359033"
 ---
 # <a name="customcontrolname-element-for-groupby-format"></a>CustomControlName-element för GroupBy (format)
@@ -29,7 +29,7 @@ Konfigurations element (format) ViewDefinitions element (format) visnings elemen
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och överordnade element i `CustomControlName`-elementet.
+I följande avsnitt beskrivs attributen, underordnade element och de överordnade elementen i `CustomControlName`-elementet.
 
 ### <a name="attributes"></a>Attribut
 
@@ -45,7 +45,7 @@ Ingen.
 |-------------|-----------------|
 |[GroupBy-element för vy (format)](./groupby-element-for-view-format.md)|Definierar hur Windows PowerShell visar en ny grupp med objekt.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange namnet på den anpassade kontroll som används för att visa en ny grupp.
 

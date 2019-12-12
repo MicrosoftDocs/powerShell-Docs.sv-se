@@ -2,10 +2,10 @@
 ms.date: 09/13/2019
 title: Skapar Get-WinEvent-frågor med FilterHashtable
 ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73444381"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Skapar Get-WinEvent-frågor med FilterHashtable
@@ -55,11 +55,11 @@ I följande tabell visas nyckel namnen, data typerna och om jokertecken accepter
 | LogName        | `<String[]>`    | Ja                          |
 | ProviderName   | `<String[]>`    | Ja                          |
 | Sökväg           | `<String[]>`    | Nej                           |
-| nyckelord       | `<Long[]>`      | Nej                           |
+| Nyckelord       | `<Long[]>`      | Nej                           |
 | ID             | `<Int32[]>`     | Nej                           |
 | Nivå          | `<Int32[]>`     | Nej                           |
-| /St      | `<DateTime>`    | Nej                           |
-| Slut        | `<DateTime>`    | Nej                           |
+| StartTime      | `<DateTime>`    | Nej                           |
+| SlutTid        | `<DateTime>`    | Nej                           |
 | Användar-ID         | `<SID>`         | Nej                           |
 | Data           | `<String[]>`    | Nej                           |
 | `<named-data>` | `<String[]>`    | Nej                           |
@@ -155,7 +155,7 @@ De uppräknade värdena dokumenteras i **.NET Framework**. Mer information finns
 
 **Nyckelords** namnen och de uppräknade värdena är följande:
 
-| Name             |  Värde            |
+| Namn             |  Värde            |
 | ---------------- | ------------------|
 | AuditFailure     | 4503599627370496  |
 | AuditSuccess     | 9007199254740992  |
@@ -236,13 +236,13 @@ De uppräknade värdena dokumenteras i **.NET Framework**. Mer information finns
 
 **Nivå** nyckelns namn och uppräknade värden är följande:
 
-| Name           | Värde |
+| Namn           | Värde |
 | -------------- | ----- |
-| Utförlig        |   5   |
+| Verbose        |   5   |
 | Informativt  |   4   |
 | Varning        |   3   |
 | Fel          |   2   |
-| Kritisk       |   1   |
+| Kritiskt       |   1   |
 | LogAlways      |   0   |
 
 Hash-tabellen för den slutförda frågan innehåller nyckeln, **nivån**och värdet, **2**.

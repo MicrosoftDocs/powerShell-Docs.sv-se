@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 914917f7-0efc-4d1f-88bd-de714bedd98f
 caps.latest.revision: 15
 ms.openlocfilehash: 29dbdbd335511e4ca2706a625541554825838f23
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354294"
 ---
 # <a name="name-element-for-selectionset-format"></a>Name-element för SelectionSet (format)
@@ -45,17 +45,17 @@ Ingen.
 |-------------|-----------------|
 |[SelectionSet-element (format)](./selectionset-element-format.md)|Definierar en enda uppsättning .NET-objekt som kan refereras till i uppsättningens namn.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange det namn som ska referera till urvals uppsättningen. Det finns inga begränsningar för vilka tecken som kan användas.
 
 ## <a name="remarks"></a>Anmärkningar
 
-Namnet som anges här används i elementet `SelectionSetName`. Den urvals uppsättning som kan användas av en vy, genom en definition av en vy (vyer kan ha flera definitioner) eller när du anger ett urvals villkor. Mer information om urvals uppsättningar finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
+Namnet som anges här används i `SelectionSetName`-elementet. Den urvals uppsättning som kan användas av en vy, genom en definition av en vy (vyer kan ha flera definitioner) eller när du anger ett urvals villkor. Mer information om urvals uppsättningar finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar ett `SelectionSet`-element som definierar fyra .NET-typer. Namnet på urvals uppsättningen är "FileSystemTypes".
+I det här exemplet visas ett `SelectionSet`-element som definierar fyra .NET-typer. Namnet på urvals uppsättningen är "FileSystemTypes".
 
 ```xml
 <SelectionSets>

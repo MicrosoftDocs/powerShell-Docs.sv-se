@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8c0bd8a9-1749-4885-ab24-38c0a4d9f2cb
 caps.latest.revision: 6
 ms.openlocfilehash: 7a3efc60fcc8729d833f6de070016cfd08cc9b88
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359252"
 ---
 # <a name="quantity-parameters"></a>Kvantitetsparametrar
@@ -21,11 +21,11 @@ I följande tabell visas rekommenderade namn och funktioner för mängd parametr
 
 |Parameter|Funktioner|
 |---|---|
-|**Vissa**<br>Datatyp: boolesk|Implementera den här parametern så att `true` anger att alla resurser ska åtgärdas på i stället för en standard del av resurserna. Implementera den här parametern så att `false` anger en delmängd av resurserna.|
+|**Alla**<br>Datatyp: boolesk|Implementera den här parametern så att `true` anger att alla resurser ska åtgärdas på i stället för en standard del av resurserna. Implementera den här parametern så att `false` anger en delmängd av resurserna.|
 |**Storlek**<br>Datatyp: Int32|Implementera den här parametern så att användaren kan ange antalet objekt som ska allokeras.|
 |**BlockCount**<br>Datatyp: Int64|Implementera den här parametern så att användaren kan ange block antalet.|
 |**Reparationer**<br>Datatyp: Int64|Implementera den här parametern så att användaren kan ange antalet.|
-|**Utrymme**<br>Datatyp: nyckelord|Implementera den här parametern så att användaren kan ange det omfång som ska användas.|
+|**Omfång**<br>Datatyp: nyckelord|Implementera den här parametern så att användaren kan ange det omfång som ska användas.|
 
 ## <a name="see-also"></a>Se även
 

@@ -3,10 +3,10 @@ title: Så här replikerar du ISE-upplevelsen i Visual Studio Code
 description: Så här replikerar du ISE-upplevelsen i Visual Studio Code
 ms.date: 08/06/2018
 ms.openlocfilehash: d5542e9a3a48b1ae64356309be669418edf6c79e
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74117468"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Så här replikerar du ISE-upplevelsen i Visual Studio Code
@@ -84,7 +84,7 @@ Om du vill skapa nya/namnlösa filer registrerar du som PowerShell som standard:
 "files.defaultLanguage": "powershell",
 ```
 
-## <a name="color-scheme"></a>Färg schema
+## <a name="color-scheme"></a>Färgschema
 
 Det finns ett antal ISE-teman som är tillgängliga för VSCode för att göra redigeraren att se mycket mer som ISE.
 

@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Arbeta med filer och mappar
 ms.openlocfilehash: 743e261d2f5e8bfa39f2731fca7fea6e5678c711
-ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70215530"
 ---
 # <a name="working-with-files-and-folders"></a>Arbeta med filer och mappar
@@ -37,7 +37,7 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 
 ## <a name="copying-files-and-folders"></a>Kopiera filer och mappar
 
-Kopieringen görs med **Kopiera objekt**. Följande kommando säkerhetskopierar c:\\Boot. ini till C:\\Boot. bak:
+Kopieringen görs med **Kopiera objekt**. Följande kommando säkerhetskopierar C:\\Boot. ini till C:\\Boot. bak:
 
 ```powershell
 Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
@@ -51,19 +51,19 @@ Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 
 Kommandot fungerar även om målet är skrivskyddat.
 
-Kopiering av mappar fungerar på samma sätt. Det här kommandot kopierar mappen c:\\Temp\\TEST1 till den nya mappen c:\\Temp\\DeleteMe rekursivt:
+Kopiering av mappar fungerar på samma sätt. Det här kommandot kopierar mappen C:\\Temp\\-TEST1 till den nya mappen C:\\Temp\\DeleteMe rekursivt:
 
 ```powershell
 Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
-Du kan också kopiera ett urval av objekt. Följande kommando kopierar alla. txt-filer som finns var som helst\\i c: data\\till\\c: Temp-text:
+Du kan också kopiera ett urval av objekt. Följande kommando kopierar alla. txt-filer som finns var som helst i c:\\data till c:\\Temp\\text:
 
 ```powershell
 Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
-Du kan fortfarande använda andra verktyg för att utföra fil system kopior. XCOPY-, ROBOCOPY-och COM-objekt, till exempel **Scripting. FileSystemObject,** allt arbete i Windows PowerShell. Du kan till exempel använda Windows Script Host **Scripting. filesystem com-** klassen för att säkerhetskopiera C:\\Boot. ini till C:\\Boot. bak:
+Du kan fortfarande använda andra verktyg för att utföra fil system kopior. XCOPY-, ROBOCOPY-och COM-objekt, till exempel **Scripting. FileSystemObject,** allt arbete i Windows PowerShell. Du kan till exempel använda Windows Script Host **Scripting. filesystem COM-** klassen för att säkerhetskopiera C:\\Boot. ini till C:\\Boot. bak:
 
 ```powershell
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
@@ -73,13 +73,13 @@ Du kan fortfarande använda andra verktyg för att utföra fil system kopior. XC
 
 Att skapa nya objekt fungerar likadant på alla Windows PowerShell-leverantörer. Om en Windows PowerShell-provider har fler än en typ av objekt, till exempel Windows PowerShell-providern för fil systemet skiljer sig mellan kataloger och filer, måste du ange objekt typen.
 
-Det här kommandot skapar en ny mapp C\\:\\Temp ny mapp:
+Det här kommandot skapar en ny mapp C:\\Temp\\ny mapp:
 
 ```powershell
 New-Item -Path 'C:\temp\New Folder' -ItemType Directory
 ```
 
-Det här kommandot skapar en ny tom fil C\\:\\Temp New\\Folder File. txt
+Det här kommandot skapar en ny tom fil C:\\Temp\\ny mapp\\File. txt
 
 ```powershell
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File

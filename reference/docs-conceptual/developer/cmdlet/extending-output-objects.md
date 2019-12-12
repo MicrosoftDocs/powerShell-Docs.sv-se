@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a252e0ec-d456-42d7-bd49-d6b8bc57f388
 caps.latest.revision: 11
 ms.openlocfilehash: 9c9d50c880f843e21621e5735c800e3afb48b2ad
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359328"
 ---
 # <a name="extending-output-objects"></a>Utöka utdataobjekt
@@ -21,7 +21,7 @@ Du kan utöka .NET Framework objekt som returneras av cmdlets, Functions och scr
 
 ## <a name="extending-the-systemarray-object"></a>Utöka system. Array-objektet
 
-I följande exempel visas hur Windows PowerShell utökar [system. Array](/dotnet/api/System.Array) -objektet i filen types. ps1xml. Som standard har [system. Array](/dotnet/api/System.Array) -objekt en `Length`-egenskap som visar antalet objekt i matrisen. Men eftersom namnet "Length" inte tydligt beskriver egenskapen, lägger Windows PowerShell till egenskapen `Count` alias, som visar samma värde som egenskapen `Length`. Följande XML lägger till egenskapen `Count` i [system. mat ris](/dotnet/api/System.Array) typen.
+I följande exempel visas hur Windows PowerShell utökar [system. Array](/dotnet/api/System.Array) -objektet i filen types. ps1xml. Som standard har [system. Array](/dotnet/api/System.Array) -objekt en `Length`-egenskap som visar antalet objekt i matrisen. Men eftersom namnet "Length" inte tydligt beskriver egenskapen, lägger Windows PowerShell till egenskapen `Count` alias som visar samma värde som egenskapen `Length`. Följande XML lägger till egenskapen `Count` till typen [system. mat ris](/dotnet/api/System.Array) .
 
 ```xml
 <Type>
@@ -92,7 +92,7 @@ När du har definierat dina egna utökade typer kan du använda någon av följa
 
 ## <a name="signing-types-files"></a>Filer för signerings typer
 
-Filtyper ska signeras digitalt för att förhindra manipulering eftersom XML-filen kan innehålla skript block. Mer information om hur du lägger till digitala signaturer finns i [about_Signing](/powershell/module/microsoft.powershell.core/about/about_signing)
+Filtyper ska signeras digitalt för att förhindra manipulering eftersom XML-filen kan innehålla skript block. Mer information om hur du lägger till digitala signaturer finns [about_Signing](/powershell/module/microsoft.powershell.core/about/about_signing)
 
 ## <a name="see-also"></a>Se även
 

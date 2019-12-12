@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 31298f1b-8b76-4637-8406-863f5ad27e53
 caps.latest.revision: 8
 ms.openlocfilehash: 91b56a78f878e0d9c0fc11e4b882399bdfb108ac
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359211"
 ---
 # <a name="stopprocesssample03-sample"></a>StopProcessSample03 – exempel
 
-Det här exemplet visar hur du skriver en cmdlet vars parametrar har alias och vars parametrar stöder jokertecken. Denna cmdlet liknar den `Stop-Process`-cmdlet som tillhandahålls av Windows PowerShell 2,0.
+Det här exemplet visar hur du skriver en cmdlet vars parametrar har alias och vars parametrar stöder jokertecken. Denna cmdlet liknar `Stop-Process`-cmdleten som tillhandahålls av Windows PowerShell 2,0.
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Så här skapar du exemplet med hjälp av Visual Studio.
 
@@ -29,7 +29,7 @@ Det här exemplet visar hur du skriver en cmdlet vars parametrar har alias och v
 
     Biblioteket för exemplet skapas i standardmappen \Bin eller \Bin\Debug.
 
-### <a name="how-to-run-the-sample"></a>Så här kör du exemplet
+### <a name="how-to-run-the-sample"></a>Köra exemplet
 
 1. Skapa följande modul-mapp:
 
@@ -51,7 +51,7 @@ Det här exemplet visar hur du skriver en cmdlet vars parametrar har alias och v
 
 Det här exemplet kräver Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Visat
+## <a name="demonstrates"></a>Demonstrationer
 
 Det här exemplet demonstrerar följande.
 

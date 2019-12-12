@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fe9eb5f9-a193-41a4-ad47-a96ba3f8d7e3
 caps.latest.revision: 8
 ms.openlocfilehash: 49f501538b8f72777984a5e575b999866abcdebf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355379"
 ---
 # <a name="columnnumber-element-for-widecontrol-format"></a>ColumnNumber-element för WideControl (format)
@@ -41,15 +41,15 @@ Ingen.
 
 ### <a name="parent-elements"></a>Överordnade element
 
-|Element|Description|
+|Element|Beskrivning|
 |-------------|-----------------|
 |[WideControl-element (format)](./widecontrol-element-format.md)|Definierar ett brett List format (enskilt värde) för vyn.|
 
-## <a name="text-value"></a>Text värde
+## <a name="text-value"></a>Textvärde
 
 Ange ett positivt heltals värde.
 
-## <a name="remarks"></a>Kommentarer
+## <a name="remarks"></a>Anmärkningar
 
 När du definierar en bred vy kan du lägga till `AutoSize`-elementet eller `ColumnNumber`-elementet, men du kan inte lägga till båda.
 

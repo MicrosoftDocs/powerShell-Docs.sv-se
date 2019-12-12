@@ -3,10 +3,10 @@ ms.date: 08/15/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: Kom igång med önskad tillstånds konfiguration (DSC) för Windows
 ms.openlocfilehash: a9346b96693acdbad9bacbd4b6ca85971e17a3d1
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417761"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Kom igång med önskad tillstånds konfiguration (DSC) för Windows
@@ -24,7 +24,7 @@ Följande versioner stöds:
 - Windows Server 2012
 - Windows Server 2008 R2 SP1
 - Windows 10
-- Windows 8.1
+- Windows 8.1
 - Windows 7
 
 Den fristående produkt-SKU: n för [Microsoft Hyper-V server](/windows-server/virtualization/hyper-v/hyper-v-server-2016) innehåller ingen implementering av önskade tillstånds agentkonfigurationerna så att den inte kan hanteras av PowerShell DSC eller Azure Automation tillstånds konfiguration.

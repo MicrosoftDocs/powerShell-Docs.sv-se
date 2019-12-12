@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3204599c-7159-47aa-82ec-4a476f461027
 caps.latest.revision: 7
 ms.openlocfilehash: 5c5707d1c533e0498c6794b60f4499e530e25813
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352880"
 ---
 # <a name="supporting-online-help"></a>Stöd för onlinehjälp
@@ -21,13 +21,13 @@ Från och med Windows PowerShell 3,0 finns det två sätt att stöda funktionen 
 
 ## <a name="about-online-help"></a>Om onlinehjälp
 
-Direkt hjälpen har alltid varit en viktig del av Windows PowerShell. Även om cmdleten `Get-Help` visar hjälp avsnitt i kommando tolken, föredrar många användare upplevelsen av att läsa online, inklusive färg kodning, hyperlänkar och dela idéer i Community-innehåll och wiki-baserade dokument. För det viktigaste, före ankomsten av den uppdaterings bara hjälpen, tillhandahöll online-hjälpen den senaste versionen av hjälpfilerna.
+Direkt hjälpen har alltid varit en viktig del av Windows PowerShell. Även om `Get-Help`-cmdleten visar hjälp avsnitt i kommando tolken, föredrar många användare upplevelsen av att läsa online, inklusive färg kodning, hyperlänkar och dela idéer i Community-innehåll och wiki-baserade dokument. För det viktigaste, före ankomsten av den uppdaterings bara hjälpen, tillhandahöll online-hjälpen den senaste versionen av hjälpfilerna.
 
 Med ankomsten för uppdaterings bar hjälp i Windows PowerShell 3,0 spelar online-hjälpen fortfarande en viktig roll. Förutom den flexibla användar upplevelsen ger online-hjälpen hjälp till användare som inte kan använda uppdaterings bara hjälp för att hämta hjälp ämnen.
 
 ## <a name="how-get-help--online-works"></a>Hur Get-Help – Online fungerar
 
-För att hjälpa användarna att hitta direkt hjälp avsnitt för kommandon, har kommandot `Get-Help` en online-version som öppnar onlineversionen av hjälp avsnittet för ett kommando i användarens standard webbläsare.
+För att hjälpa användarna att hitta Onlines hjälp avsnitt för kommandon, har kommandot `Get-Help` en online-version som öppnar onlineversionen av hjälp avsnittet för ett kommando i användarens standard webbläsare.
 
 Följande kommando öppnar exempelvis onlinehjälpen för `Invoke-Command`-cmdleten.
 
@@ -35,21 +35,21 @@ Följande kommando öppnar exempelvis onlinehjälpen för `Invoke-Command`-cmdle
 Get-Help Invoke-Command -Online
 ```
 
-Om du vill implementera `Get-Help` – online söker `Get-Help`-cmdleten efter en Uniform Resource Identifier (URI) i hjälp avsnittet online-version på följande platser.
+För att implementera `Get-Help` – online söker `Get-Help`-cmdleten efter en Uniform Resource Identifier (URI) i hjälp avsnittet online-version på följande platser.
 
 - Den första länken i avsnittet relaterade länkar i hjälp avsnittet för kommandot. Hjälp avsnittet måste vara installerat på användarens dator. Den här funktionen introducerades i Windows PowerShell 2,0.
 
 - Egenskapen HelpUri för ett kommando. Egenskapen HelpUri är tillgänglig även om hjälp avsnittet för kommandot inte är installerat på användarens dator. Den här funktionen introducerades i Windows PowerShell 3,0.
 
-  `Get-Help` söker efter en URI i den första posten i avsnittet relaterade länkar innan värdet för egenskapen HelpUri hämtas. Om egenskap svärdet är felaktigt eller har ändrats kan du åsidosätta det genom att ange ett annat värde i den första relaterade länken. Den första relaterade länken fungerar dock bara när hjälp avsnitten är installerade på användarens dator.
+  `Get-Help` söker efter en URI i den första posten i avsnittet relaterade länkar innan du hämtar värdet för egenskapen HelpUri. Om egenskap svärdet är felaktigt eller har ändrats kan du åsidosätta det genom att ange ett annat värde i den första relaterade länken. Den första relaterade länken fungerar dock bara när hjälp avsnitten är installerade på användarens dator.
 
 ## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>Lägga till en URI till den första relaterade länken i ett kommando hjälp avsnitt
 
 Du kan använda `Get-Help` – online för alla kommandon genom att lägga till en giltig URI till den första posten i avsnittet relaterade länkar i det XML-baserade hjälp avsnittet för kommandot. Det här alternativet är endast giltigt i XML-baserade hjälp avsnitt och fungerar bara när hjälp avsnittet är installerat på användarens dator. När hjälp avsnittet är installerat och URI fylls i, prioriteras det här värdet framför kommandots **HelpUri** -egenskap.
 
-För att stödja den här funktionen måste URI: n visas i elementet `maml:uri` under det första `maml:relatedLinks/maml:navigationLink`-elementet i elementet `maml:relatedLinks`.
+För att stödja den här funktionen måste URI: n visas i `maml:uri`-elementet under det första `maml:relatedLinks/maml:navigationLink`-elementet i `maml:relatedLinks`-elementet.
 
-Följande XML visar rätt placering av URI: n. Texten "online version:" i elementet `maml:linkText` är ett bra tips, men det är inte obligatoriskt.
+Följande XML visar rätt placering av URI: n. Texten "online version:" i `maml:linkText`-elementet är en bra metod, men det är inte obligatoriskt.
 
 ```xml
 
@@ -73,7 +73,7 @@ I det här avsnittet visas hur du lägger till egenskapen HelpUri i kommandon av
 
 För cmdletar som skrivits C#i lägger du till ett **HelpUri** -attribut i cmdlet-klassen. Värdet för attributet måste vara en URI som börjar med "http" eller "https".
 
-Följande kod visar attributet HelpUri för cmdlet-klassen `Get-History`.
+Följande kod visar attributet HelpUri för klassen `Get-History`-cmdlet.
 
 ```
 [Cmdlet(VerbsCommon.Get, "History", HelpUri = "http://go.microsoft.com/fwlink/?LinkID=001122")]

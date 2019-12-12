@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
 ms.openlocfilehash: b42ba6b2bf42a74213eb78f2db22e16de7e90583
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352866"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Förstå en Windows PowerShell-modul
@@ -51,11 +51,11 @@ Precis som med skript moduler kan du inkludera en manifest fil för att beskriva
 
 ### <a name="manifest-modules"></a>Manifest-moduler
 
-En *manifest modul* är en modul som använder en manifest fil för att beskriva alla dess komponenter, men som inte har någon typ av kärn sammansättning eller skript. (Formellt, en manifest-modul låter `ModuleToProcess`-eller `RootModule`-elementet i manifestet vara tomt.) Du kan dock fortfarande använda andra funktioner i en modul, till exempel möjligheten att läsa in beroende sammansättningar eller automatiskt köra vissa för bearbetnings skript. Du kan också använda en manifest modul som ett bekvämt sätt att paketera upp resurser som andra moduler använder, till exempel kapslade moduler, sammansättningar, typer eller format. Mer information finns i [så här skriver du ett manifest för PowerShell-modul](./how-to-write-a-powershell-module-manifest.md).
+En *manifest modul* är en modul som använder en manifest fil för att beskriva alla dess komponenter, men som inte har någon typ av kärn sammansättning eller skript. (Formellt, en manifest-modul låter `ModuleToProcess` eller `RootModule` element i manifestet vara tomt.) Du kan dock fortfarande använda andra funktioner i en modul, till exempel möjligheten att läsa in beroende sammansättningar eller automatiskt köra vissa för bearbetnings skript. Du kan också använda en manifest modul som ett bekvämt sätt att paketera upp resurser som andra moduler använder, till exempel kapslade moduler, sammansättningar, typer eller format. Mer information finns i [så här skriver du ett manifest för PowerShell-modul](./how-to-write-a-powershell-module-manifest.md).
 
 ### <a name="dynamic-modules"></a>Dynamiska moduler
 
-En *dynamisk modul* är en modul som inte har lästs in från eller sparas i en fil. De skapas i stället dynamiskt av ett skript med hjälp av cmdleten [New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module) . Den här typen av modul gör det möjligt för ett skript att skapa en modul på begäran som inte behöver läsas in eller sparas i beständig lagring. Av sin natur är en dynamisk modul avsedd att vara kort livs längd och kan därför inte användas av cmdleten `Get-Module`. På samma sätt behöver de vanligt vis inte modul manifest, eller behöver de förmodligen permanenta mappar för att lagra sina relaterade sammansättningar.
+En *dynamisk modul* är en modul som inte har lästs in från eller sparas i en fil. De skapas i stället dynamiskt av ett skript med hjälp av cmdleten [New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module) . Den här typen av modul gör det möjligt för ett skript att skapa en modul på begäran som inte behöver läsas in eller sparas i beständig lagring. Av sin natur är en dynamisk modul avsedd att vara kort livs längd och kan därför inte användas av `Get-Module`-cmdlet: en. På samma sätt behöver de vanligt vis inte modul manifest, eller behöver de förmodligen permanenta mappar för att lagra sina relaterade sammansättningar.
 
 ## <a name="module-manifests"></a>Modul manifest
 
@@ -85,13 +85,13 @@ Ett *modul manifest* är en. psd1-fil som innehåller en hash-tabell. Nycklarna 
 
 När du har skapat en skript-, binär-eller manifest-modul kan du spara arbetet på en plats som andra kan komma åt. Modulen kan till exempel lagras i systemmappen där Windows PowerShell är installerat, eller så kan den lagras i en användardefinierad mapp.
 
-I allmänhet kan du bestämma var du ska installera modulen genom att använda en av Sök vägarna som lagras i variabeln `$ENV:PSModulePath`. Genom att använda någon av dessa sökvägar kan PowerShell automatiskt hitta och läsa in modulen när en användare gör ett anrop till den i sin kod. Om du lagrar modulen någon annan stans kan du uttryckligen låta PowerShell veta genom att skicka in platsen för din modul som en parameter när du anropar `Install-Module`.
+I allmänhet kan du bestämma var du ska installera modulen genom att använda en av Sök vägarna som lagras i variabeln `$ENV:PSModulePath`. Genom att använda någon av dessa sökvägar kan PowerShell automatiskt hitta och läsa in modulen när en användare gör ett anrop till den i sin kod. Om du lagrar modulen någon annan stans kan du uttryckligen meddela PowerShell genom att skicka in platsen för modulen som en parameter när du anropar `Install-Module`.
 
 Oavsett sökvägen kallas sökvägen för mappen (typen modulebase), och namnet på skriptet, den binära eller manifest-modulens fil ska vara samma som mappens mappnamn, med följande undantag:
 
-- Dynamiska moduler som skapas av `New-Module`-cmdleten kan namnges med hjälp av parametern `Name` för cmdleten.
+- Dynamiska moduler som skapas av `New-Module` cmdlet kan namnges med hjälp av parametern `Name` för cmdleten.
 
-- Moduler som importeras från Assembly-objekt med kommandot **`Import-Module`-Assembly** namnges enligt följande syntax: `"dynamic_code_module_" + assembly.GetName()`.
+- Moduler som importeras från Assembly-objekt med kommandot **`Import-Module` Assembly** namnges enligt följande syntax: `"dynamic_code_module_" + assembly.GetName()`.
 
   Mer information finns i [installera en PowerShell-modul](./installing-a-powershell-module.md) och [ändra installations Sök vägen för PSModulePath](./modifying-the-psmodulepath-installation-path.md).
 
@@ -107,7 +107,7 @@ Cmdleten [New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module) d
 
 Cmdleten [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) denna cmdlet hämtar information om de moduler som har varit eller som kan importeras till den aktuella sessionen.
 
-[Export-ModuleMember-](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cmdlet denna cmdlet anger de Modulnamn (till exempel cmdlets, functions, Variables och alias) som exporteras från en skriptfil (. psm1) eller från en dynamisk modul som skapats med hjälp av cmdleten `New-Module`.
+[Export-ModuleMember-](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cmdlet denna cmdlet anger de Modulnamn (t. ex. cmdlets, functions, variabler och alias) som exporteras från en skriptfil (. psm1) eller från en dynamisk modul som skapats med hjälp av `New-Module` cmdlet.
 
 Cmdleten [Remove-module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) denna cmdlet tar bort moduler från den aktuella sessionen.
 

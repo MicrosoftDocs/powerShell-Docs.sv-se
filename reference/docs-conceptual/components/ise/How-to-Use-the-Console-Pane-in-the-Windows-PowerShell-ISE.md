@@ -1,30 +1,30 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: Använd konsolfönstret i Windows PowerShell ISE
 ms.openlocfilehash: 114be19b86d98d829620a3718649bc3a3256cb07
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030576"
 ---
 # <a name="how-to-use-the-console-pane-in-the-windows-powershell-ise"></a>Använd konsolfönstret i Windows PowerShell ISE
 
-Konsolfönstret i den Windows PowerShell Integrated Scripting Environment (ISE) fungerar precis som fristående Windows PowerShell ISE-konsolfönstret.
+Konsol fönstret i Windows PowerShell ISE (Integrated Scripting Environment) fungerar precis som i det fristående Windows PowerShell ISE konsol fönstret.
 
-Om du vill köra ett kommando i konsolfönstret, anger du kommandot och tryck sedan på RETUR. Skriv SKIFT + RETUR mellan kommandon för att ange flera kommandon som du vill köra i följd. Se [så Använd Tabbifyllning i skriptfönstret och konsolfönstret](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) för hjälp med att skriva kommandon.
+Om du vill köra ett kommando i konsol fönstret skriver du ett kommando och trycker på RETUR. Om du vill ange flera kommandon som ska köras i följd, skriver du SHIFT + retur mellan kommandon. Se [hur du använder slut för ande av flikar i skript fönstret och konsol fönstret](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) för att få hjälp med att skriva kommandon.
 
-Om du vill stoppa ett kommando i verktygsfältet klickar du på **stoppa åtgärden**, eller tryck på CTRL + BREAK. Du kan också använda CTRL + C för att stoppa ett kommando om kontexten är entydiga. Till exempel om du har markerat text i det aktuella fönstret, mappar CTRL + C sedan att kopieringen.
+Stoppa ett kommando genom att klicka på **stoppa åtgärd**i verktygsfältet eller trycka på Ctrl + Break. Du kan också använda CTRL + C för att stoppa ett kommando om kontexten är tvetydig. Om till exempel en text har marker ATS i den aktuella rutan, kommer CTRL + C att mappa till kopierings åtgärden.
 
-Från och med Windows PowerShell v3, har utdatarutan kombineras med konsolfönstret. Detta har fördelen att fungerar som fristående Windows PowerShell-konsolen och eliminerar skillnader i procedurer som behövs när de separat. Du kan:
+Från och med Windows PowerShell v3 kombinerades fönstret utdata med konsol fönstret. Detta har fördelen att du fungerar som en fristående Windows PowerShell-konsol och eliminerar skillnaderna i de procedurer som behövdes när de var separata. Du kan:
 
-- Markera och kopiera text från konsolfönstret till Urklipp för att klistra in i ett annat fönster. Om du vill markera text, klickar du på och håller musen i utdatarutan medan dra musen över texten som du vill samla in. Du kan också använda markören piltangenterna och håll samtidigt **SKIFT** att välja text. Tryck på CTRL + C eller klicka på den **kopia** ikonen i verktygsfältet.
+- Markera och kopiera text från konsol fönstret till Urklipp för att klistra in i andra fönster. Om du vill markera text klickar du på och håller ned musen i fönstret utdata och drar musen över den text som du vill avbilda. Du kan också använda piltangenterna när du håller **SKIFT** för att markera text. Tryck på CTRL + C eller klicka på ikonen **Kopiera** i verktygsfältet.
 
-- Klistra in den markerade texten i en aktuella pekarpositionen. Klicka på den **klistra in** ikonen i verktygsfältet.
+- Klistra in den markerade texten vid en aktuell markör position. Klicka på ikonen **Klistra in** i verktygsfältet.
 
-- Radera all text i konsolfönstret. Om du vill ta bort konsolfönstret, kan du klicka på den **Rensa konsolfönstret** ikonen i verktygsfältet, eller kör kommandot **Clear-Host** eller dess alias **cls**.
+- Rensa all text i konsol fönstret. Om du vill rensa konsol fönstret kan du klicka på ikonen **Rensa konsol fönster** i verktygsfältet eller köra kommandot **Clear-Host** eller dess alias, **CLS**.
 
 ## <a name="see-also"></a>Se även
 
-- [Introduktion till Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
+- [Vi presenterar Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)

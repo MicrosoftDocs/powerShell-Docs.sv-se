@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: MSFT_DSCLocalConfigurationManager-klass
 ms.openlocfilehash: 09b30edd48384c0e8412e0e6ee926a719249c5b8
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941469"
 ---
 # <a name="msft_dsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager-klass
@@ -24,7 +24,7 @@ class MSFT_DSCLocalConfigurationManager
 };
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Medlemmar
 
 **MSFT_DSCLocalConfigurationManager** -klassen har följande medlemmar:
 
@@ -32,7 +32,7 @@ class MSFT_DSCLocalConfigurationManager
 
 ### <a name="methods"></a>Metoder
 
-**MSFT_DSCLocalConfigurationManager** -klassen har dessa metoder.
+Klassen **MSFT_DSCLocalConfigurationManager** har dessa metoder.
 
 |Metod |Beskrivning |
 |:--- |:---|
@@ -58,6 +58,6 @@ class MSFT_DSCLocalConfigurationManager
 
 ## <a name="requirements"></a>Krav
 
-**-** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration

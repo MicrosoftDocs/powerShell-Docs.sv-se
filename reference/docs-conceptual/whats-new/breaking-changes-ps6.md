@@ -3,10 +3,10 @@ ms.date: 11/15/2019
 keywords: PowerShell, Core
 title: Bryta ändringar för PowerShell 6,0
 ms.openlocfilehash: a1dac42bcda8e1258a99ef281691a9d4c5986b53
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417556"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>Bryta ändringar för PowerShell 6. x
@@ -68,9 +68,9 @@ På grund av användning av API: er som inte stöds har `Microsoft.PowerShell.Lo
 
 På grund av användning av API: er som inte stöds har följande cmdlets tagits bort från PowerShell Core tills en bättre lösning har hittats.
 
-- Lägg till dator
+- Add-Computer
 - Checkpoint-Computer
-- Ta bort dator
+- Remove-Computer
 - Återställa-dator
 
 ### <a name="-counter-cmdlets"></a>`*-Counter`-cmdletar
@@ -120,7 +120,7 @@ När ett API returnerar bara `null`, serialiserade Invoke-RestMethod detta som s
 På grund av problem med RPC-fjärrkommunikation i CoreFX (särskilt på plattformar som inte är Windows) och säkerställer en konsekvent fjärrhantering i PowerShell, har parametern `-Protocol` tagits bort från `\*-Computer`-cmdlet: arna. DCOM stöds inte längre för fjärr kommunikation. Följande cmdletar stöder bara WSMAN-fjärr kommunikation:
 
 - Byt namn – dator
-- Starta om datorn
+- Restart-computer
 - Stoppa – dator
 
 ### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Ta bort `-ComputerName` från `*-Service`-cmdletar [#5090](https://github.com/PowerShell/PowerShell/issues/5094)

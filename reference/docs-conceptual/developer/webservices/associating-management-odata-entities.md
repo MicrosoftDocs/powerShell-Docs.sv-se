@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 947a3add-3593-400d-8144-8b44c8adbe5e
 caps.latest.revision: 5
 ms.openlocfilehash: 44b718e024eb98ac562edb50076287a31f5edc6b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352285"
 ---
 # <a name="associating-management-odata-entities"></a>Associera Management OData-entiteter
@@ -45,7 +45,7 @@ string Products[];
 
 Klassen `Category` definierar en egenskap som är en matris med namnen på de produkter som tillhör den kategorin.
 
-För att associera två entiteter måste du definiera en klass med attributet `Association` i MOF-filen för resurs scheman för tjänsten. Klassen måste definiera de två entiteter som ska associeras, så kallade `ends` i associationen. I följande exempel visas en definition av en klass som definierar en association mellan kategori-och produkt enheterna.
+Om du vill associera två entiteter måste du definiera en klass med attributet `Association` i MOF-filen för resurs scheman för tjänsten. Klassen måste definiera de två entiteter som ska associeras, som kallas `ends` av associationen. I följande exempel visas en definition av en klass som definierar en association mellan kategori-och produkt enheterna.
 
 ```csharp
 [Association]
@@ -67,7 +67,7 @@ Sample_Product ref AssociatedProducts[];
 };
 ```
 
-Slutligen måste du deklarera den andra änden av associationen genom att lägga till en egenskaps definition i klassen `Product`. Detta är en referens till antingen en matris eller en enskild entitet. Om du antar att varje produkt endast tillhör en kategori skulle definitionen vara följande.
+Slutligen måste du deklarera den andra änden av associationen genom att lägga till en egenskaps definition i `Product`-klassen. Detta är en referens till antingen en matris eller en enskild entitet. Om du antar att varje produkt endast tillhör en kategori skulle definitionen vara följande.
 
 ```csharp
 class Sample_Product {
@@ -94,7 +94,7 @@ Det finns tre olika fall att tänka på när du mappar en Association i XML-file
 
 - Om navigerings egenskapen finns i den underliggande. .NET Framework typ och egenskapen innehåller sekundär nycklar, krävs ingen explicit mappning.
 
-- Om navigerings egenskapen inte finns i den underliggande .NET Framework typen, måste du ange en cmdlet som hämtar listan över nycklar för de associerade instanserna. Du gör detta genom att lägga till ett `Association`-element kapslat under elementet `CmdletImplementation`, och följa de element som definierar `cmdlets` för de andra CRUD-kommandona.
+- Om navigerings egenskapen inte finns i den underliggande .NET Framework typen, måste du ange en cmdlet som hämtar listan över nycklar för de associerade instanserna. Du gör detta genom att lägga till ett `Association`-element som kapslas under `CmdletImplementation`-elementet, efter de element som definierar `cmdlets` för de andra CRUD-kommandona.
 
   ```xml
   Class Name=" Category">
@@ -189,7 +189,7 @@ Klienten kan hämta en lista över instanser som är associerade med en entitet 
   http://localhost:7000/MODataSvc/sample.svc/Category('food')/AssociatedProducts
   ```
 
-- Om du bara vill hämta URL: er för produkterna använder du kvalificeraren `$links` i begäran.
+- Om du bara vill hämta URL: er för produkterna använder du `$links`-kvalificeraren i begäran.
 
   ```
   http://localhost:7000/MODataSvc/sample.svc/Category('food')/$links/AssociatedProducts

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f4bea9d8-27ad-410e-ad48-287f807d3e4e
 caps.latest.revision: 7
 ms.openlocfilehash: 18b0113c9b7b0895a1093cb0b56cd2d02c74a6c1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354462"
 ---
 # <a name="itemselectioncondition-element-for-expressionbinding-for-customcontrol-format"></a>ItemSelectionCondition-element för ExpressionBinding för CustomControl (format)
@@ -32,7 +32,7 @@ Konfigurations element (format) ViewDefinitions element (format) View element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet för elementet `ItemSelectionCondition`.
+I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `ItemSelectionCondition`-elementet.
 
 ### <a name="attributes"></a>Attribut
 

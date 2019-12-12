@@ -1,33 +1,33 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell cmdlet
+keywords: PowerShell, cmdlet
 title: ISEMenuItemCollection-objektet
 ms.openlocfilehash: b3795af1a6ed61ed6e371e5fc20cc4e95f643fd4
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030541"
 ---
 # <a name="the-isemenuitemcollection-object"></a>ISEMenuItemCollection-objektet
 
-En **ISEMenuItemCollection** objekt är en samling **ISEMenuItem** objekt. Det är en instans av klassen Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection. Ett exempel är den **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** objekt som används för att anpassa den **tillägg** menyn i Windows PowerShell® Integrated Scripting Environment (ISE).
+Ett **ISEMenuItemCollection** -objekt är en samling av **ISEMenuItem** -objekt. Det är en instans av klassen Microsoft. PowerShell. Host. ISE. ISEMenuItemCollection. Ett exempel är objektet **$psISE. CurrentPowerShellTab. AddOnsMenu. undermenyer** som används för att anpassa **tilläggs** menyn i Windows PowerShell® Integrated Scripting Environment (ISE).
 
 ## <a name="method"></a>Metod
 
-### <a name="addstring-displayname-systemmanagementautomationscriptblock-action-systemwindowsinputkeygesture-shortcut-"></a>Add\(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut \)
+### <a name="addstring-displayname-systemmanagementautomationscriptblock-action-systemwindowsinputkeygesture-shortcut-"></a>Lägg till\(sträng DisplayName, system. Management. Automation. script block Action, system. Windows. inmatad. gest kortkommando \)
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Lägger till ett menyalternativ till i samlingen.
+Lägger till ett meny alternativ i samlingen.
 
-**DisplayName** visningsnamnet på menyn som ska läggas till.
+**DisplayName** Visnings namnet för den meny som ska läggas till.
 
-**Åtgärden** den **System.Management.Automation.ScriptBlock** objekt som anger vad som är associerad med det här menyobjektet.
+**Åtgärd** Objektet **system. Management. Automation. script block** som anger den åtgärd som är kopplad till det här meny alternativet.
 
-**Genväg** kortkommandot för åtgärden.
+**Genväg** Kortkommandot för åtgärden.
 
-**Returnerar** The ISEMenuItem-objektet just har lagt till.
+**Returnerar** Det ISEMenuItem-objekt som nyss lades till.
 
 ```powershell
 # Create an Add-ons menu with an fast access key and a shortcut.
@@ -37,9 +37,9 @@ $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Ge
 
 ### <a name="clear"></a>Rensa\(\)
 
-Stöds i Windows PowerShell ISE 2.0 och senare.
+Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Tar bort alla undermenyer från menyalternativet.
+Tar bort alla undermenyer från meny alternativet.
 
 ```powershell
 # Remove all custom submenu items from the AddOns menu
@@ -49,5 +49,5 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 ## <a name="see-also"></a>Se även
 
 - [ISEMenuItem-objektet](The-ISEMenuItem-Object.md)
-- [Syftet med den Windows PowerShell ISE-Skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)

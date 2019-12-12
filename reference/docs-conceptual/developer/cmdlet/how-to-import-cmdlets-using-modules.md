@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a41d9e5f-de6f-47b7-9601-c108609320d0
 caps.latest.revision: 8
 ms.openlocfilehash: 2f145795a57c988da0cb4ed294142aa141c53cae
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355547"
 ---
 # <a name="how-to-import-cmdlets-using-modules"></a>Importera cmdlets med hjälp av moduler
@@ -28,7 +28,7 @@ I den här artikeln beskrivs hur du importerar cmdletar till en PowerShell-sessi
 
    `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
 
-1. Kontrol lera att miljövariabeln `PSModulePath` innehåller sökvägen till din nya modul-mapp. Som standard läggs System-mappen redan till i miljövariabeln `PSModulePath`. Om du vill visa `PSModulePath` skriver du: `$env:PSModulePath`.
+1. Kontrol lera att variabeln `PSModulePath`-miljövariabeln innehåller sökvägen till din nya modul-mapp. Som standard har System-mappen redan lagts till i `PSModulePath`-miljövariabeln. Om du vill visa `PSModulePath`skriver du: `$env:PSModulePath`.
 
 1. Kopiera cmdlet-sammansättningen till module-mappen.
 

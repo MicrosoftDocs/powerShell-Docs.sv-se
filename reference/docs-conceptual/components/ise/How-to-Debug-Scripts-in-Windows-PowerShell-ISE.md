@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Felsök skript i Windows PowerShell ISE
 ms.openlocfilehash: 99d6fbcb805e3fe31f95eafd4daf272cf41fd845
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74117426"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Felsök skript i Windows PowerShell ISE
@@ -27,7 +27,7 @@ Du kan ange tre typer av Bryt punkter i fel söknings miljön i Windows PowerShe
 
 Av dessa, i Windows PowerShell ISE fel söknings miljö, kan endast rad Bryt punkter anges med hjälp av menyn eller kortkommandona. De andra två typerna av Bryt punkter kan anges, men de ställs in från konsol fönstret med hjälp av cmdleten [set-PSBreakpoint](https://technet.microsoft.com/library/88d2d9ad-17dc-44ae-99aa-f841125b9dc8) . I det här avsnittet beskrivs hur du kan utföra fel sökning av uppgifter i Windows PowerShell ISE genom att använda menyerna där de är tillgängliga och utföra ett bredare antal kommandon från konsol fönstret med hjälp av skript.
 
-### <a name="to-set-a-breakpoint"></a>Ange en Bryt punkt
+### <a name="to-set-a-breakpoint"></a>Ange en brytpunkt
 
 En Bryt punkt kan bara anges i ett skript när den har sparats. Högerklicka på linjen där du vill ange en rad Bryt punkt och klicka sedan på **Växla Bryt punkt**. Alternativt klickar du på linjen där du vill ange en rad Bryt punkt och trycker på **F9** eller klickar på **Växla Bryt punkt**på **fel söknings** menyn.
 
@@ -151,7 +151,7 @@ Du kan visa de aktuella värdena för variabler i skriptet när du går igenom k
 
 ### <a name="to-display-the-values-of-standard-variables"></a>Visa värden för standardvariabler
 
-Använd någon av följande metoder:
+Använd en av följande metoder:
 
 - Hovra över variabeln i rutan skript och visa dess värde som en verktygs beskrivning.
 
