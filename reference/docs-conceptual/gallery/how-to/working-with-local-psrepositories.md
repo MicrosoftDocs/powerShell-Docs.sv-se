@@ -3,14 +3,14 @@ ms.date: 11/06/2018
 contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery, psget
 title: Arbeta med lokala PSRepositories
-ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c1bd905674ae76a3badd3eff50780f0e1bb5fc64
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328835"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75415826"
 ---
-# <a name="working-with-local-powershellget-repositories"></a>Arbeta med lokala PowerShellGet-databaser
+# <a name="working-with-private-powershellget-repositories"></a>Arbeta med privata PowerShellGet-databaser
 
 PowerShellGet-modulen stöder andra databaser än PowerShell-galleriet.
 Dessa cmdletar möjliggör följande scenarier:
@@ -18,6 +18,7 @@ Dessa cmdletar möjliggör följande scenarier:
 - Stöd för en betrodd, fördefinierad uppsättning PowerShell-moduler för användning i din miljö
 - Testa en CI/CD-pipeline som bygger PowerShell-moduler eller-skript
 - Leverera PowerShell-skript och moduler till system som inte har åtkomst till Internet
+- Leverera PowerShell-skript och moduler som endast är tillgängliga för din organisation
 
 Den här artikeln beskriver hur du konfigurerar en lokal PowerShell-lagringsplats. Artikeln beskriver också [OfflinePowerShellGetDeploy][] -modulen som är tillgänglig från PowerShell-galleriet. Den här modulen innehåller cmdlets för att installera den senaste versionen av PowerShellGet i din lokala lagrings plats.
 
@@ -25,7 +26,7 @@ Den här artikeln beskriver hur du konfigurerar en lokal PowerShell-lagringsplat
 
 Det finns två sätt att skapa en lokal PSRepository: NuGet-Server eller fil resurs. Varje typ har fördelar och nack delar:
 
-NuGet-Server
+### <a name="nuget-server"></a>NuGet-Server
 
 | Fördelar| Nackdelar |
 | --- | --- |
@@ -34,7 +35,7 @@ NuGet-Server
 | NuGet stöder metadata i `.Nupkg`-paket | Publicering kräver hantering av API-nyckel & underhåll |
 | Tillhandahåller sökning, paket administration osv. | |
 
-Filresurs
+### <a name="file-share"></a>Filresurs
 
 | Fördelar| Nackdelar |
 | --- | --- |
@@ -73,7 +74,7 @@ Register-PSRepository -Name LocalPSRepo -SourceLocation '\\localhost\PSRepoLocal
 
 Anteckna skillnaden mellan de två kommandona som hanterar **ScriptSourceLocation**. För en fil resursbaserade databaser måste **SourceLocation** och **ScriptSourceLocation** matcha. För en webbaserad lagrings plats måste de vara olika, så i det här exemplet läggs ett efterföljande "/" till i **SourceLocation**.
 
-Om du vill att det nyligen skapade PSRepository ska vara standard lagrings platsen måste du avregistrera alla andra PSRepositories. Till exempel:
+Om du vill att det nyligen skapade PSRepository ska vara standard lagrings platsen måste du avregistrera alla andra PSRepositories. Ett exempel:
 
 ```powershell
 Unregister-PSRepository -Name PSGallery
@@ -109,7 +110,9 @@ Exempel:
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+```
 
+```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
@@ -130,7 +133,7 @@ Exempel:
 
 ```powershell
 # Publish from the PSGallery to your local Repository
-Save-Package -Name 'PackageName' -Provider Nuget -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
+Save-Package -Name 'PackageName' -Provider NuGet -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
 ```
 
 Om din lokala PSRepository är webbaserad kräver det ytterligare ett steg som använder NuGet. exe för att publicera.
@@ -181,6 +184,10 @@ Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApi
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
+
+## <a name="use-packaging-solutions-to-host-powershellget-repositories"></a>Använda förpacknings lösningar för att vara värdar för PowerShellGet-databaser
+
+Du kan också använda paket lösningar som Azure-artefakter som värdar för en privat eller offentlig PowerShellGet-lagringsplats. Mer information och instruktioner finns i dokumentationen för [Azure-artefakter](https://docs.microsoft.com/azure/devops/artifacts/tutorials/private-powershell-library).
 
 > [!IMPORTANT]
 > För att säkerställa säkerheten bör API-nycklar inte hårdkodas i skript. Använd ett säkert nyckel hanterings system.

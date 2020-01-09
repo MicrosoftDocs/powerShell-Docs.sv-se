@@ -1,13 +1,13 @@
 ---
-ms.date: 11/15/2019
+ms.date: 12/18/2019
 keywords: PowerShell, Core
 title: Bryta ändringar för PowerShell 6,0
-ms.openlocfilehash: a1dac42bcda8e1258a99ef281691a9d4c5986b53
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: dfbbeb5e5bb3d43959ce144afffc5b10193f8b30
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417556"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75415699"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>Bryta ändringar för PowerShell 6. x
 
@@ -17,7 +17,7 @@ ms.locfileid: "74417556"
 
 [PowerShell-arbetsflöde][workflow] är en funktion i Windows PowerShell som bygger ovanpå [Windows Workflow Foundation (WF)][workflow-foundation] som gör det möjligt att skapa robusta Runbooks för långvariga eller parallella uppgifter.
 
-På grund av brist på stöd för Windows Workflow Foundation i .NET Core kommer vi inte att fortsätta att stödja PowerShell-arbetsflöde i PowerShell Core.
+På grund av brist på stöd för Windows Workflow Foundation i .NET Core stöder vi inte PowerShell-arbetsflöde i PowerShell Core.
 
 I framtiden skulle vi vilja aktivera inbyggd parallellitet/samtidighet i PowerShell-språket utan att behöva använda PowerShell-arbetsflöde.
 
@@ -63,6 +63,10 @@ I stället rekommenderar vi att du använder CIM-cmdletarna (aka WMI v2) som til
 ### <a name="microsoftpowershelllocalaccounts"></a>Microsoft. PowerShell. LocalAccounts
 
 På grund av användning av API: er som inte stöds har `Microsoft.PowerShell.LocalAccounts` tagits bort från PowerShell Core tills en bättre lösning har hittats.
+
+### <a name="new-webserviceproxy-cmdlet-removed"></a>`New-WebServiceProxy` cmdlet har tagits bort
+
+.NET Core har inte stöd för Windows Communication Framework, som tillhandahåller tjänster för att använda SOAP-protokollet. Den här cmdleten togs bort eftersom den kräver SOAP.
 
 ### <a name="-computer-cmdlets"></a>`*-Computer`-cmdletar
 

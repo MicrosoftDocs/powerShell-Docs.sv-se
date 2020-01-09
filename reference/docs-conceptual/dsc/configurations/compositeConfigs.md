@@ -2,17 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Kapslingskonfigurationer
-ms.openlocfilehash: 54162cd72d2d1e7773e3be636bfa681329854498
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 07e4fb5b9d406153d2fbb4285e28b8d1f0dfdcf5
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71942372"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75417863"
 ---
 # <a name="nesting-dsc-configurations"></a>Kapslar av DSC-konfigurationer
 
-En kapslad konfiguration (även kallad sammansatt konfiguration) är en konfiguration som anropas i en annan konfiguration som om den vore en resurs.
-Båda konfigurationerna måste definieras i samma fil.
+En kapslad konfiguration (även kallad sammansatt konfiguration) är en konfiguration som anropas i en annan konfiguration som om den vore en resurs. Båda konfigurationerna måste definieras i samma fil.
 
 Nu ska vi titta på ett enkelt exempel:
 
@@ -30,12 +29,11 @@ Configuration FileConfig
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
     File FileTest
-       {
-           SourcePath = $CopyFrom
-           DestinationPath = $CopyTo
-           Ensure = 'Present'
-       }
-
+    {
+        SourcePath = $CopyFrom
+        DestinationPath = $CopyTo
+        Ensure = 'Present'
+    }
 }
 
 Configuration NestedFileConfig
@@ -51,9 +49,9 @@ Configuration NestedFileConfig
 }
 ```
 
-I det här exemplet tar `FileConfig` två obligatoriska parametrar, **CopyFrom** och **CopyTo**, som används som värden för egenskaperna **SourcePath** och **DestinationPath** i resurs blocket `File`.
-`NestedConfig` konfigurations anrop `FileConfig` som om det var en resurs.
-Egenskaperna i `NestedConfig` Resource block (**CopyFrom** och **CopyTo**) är parametrarna i `FileConfig`-konfigurationen.
+I det här exemplet tar `FileConfig` två obligatoriska parametrar, **CopyFrom** och **CopyTo**, som används som värden för egenskaperna **SourcePath** och **DestinationPath** i resurs blocket `File`. `NestedConfig` konfigurations anrop `FileConfig` som om det var en resurs. Egenskaperna i `NestedConfig` Resource block (**CopyFrom** och **CopyTo**) är parametrarna i `FileConfig`-konfigurationen.
+
+DSC stöder för närvarande inte kapsling av konfigurationer i kapslade konfigurationer. Du kan bara kapsla en djup konfiguration av en nivå.
 
 ## <a name="see-also"></a>Se även
 
