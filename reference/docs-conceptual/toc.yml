@@ -58,7 +58,7 @@
           items:
             - name: Översikt
               href: learn/remoting/jea/overview.md
-            - name: Förutsättningar
+            - name: Krav
               href: learn/remoting/jea/prerequisites.md
             - name: Rollfunktioner
               href: learn/remoting/jea/role-capabilities.md
@@ -68,7 +68,7 @@
               href: learn/remoting/jea/register-jea.md
             - name: Använda JEA
               href: learn/remoting/jea/using-jea.md
-            - name: Säkerhetsaspekter
+            - name: Säkerhetsöverväganden
               href: learn/remoting/jea/security-considerations.md
             - name: Granska och rapportera i JEA
               href: learn/remoting/jea/audit-and-report.md
@@ -86,7 +86,7 @@
       href: learn/windows-powershell-glossary.md
 - name: Komponenter
   items:
-    - name: Konsol
+    - name: Konsolen
       items:
         - name: Kommandoradsalternativ för PowerShell
           href: components/console/powershell.exe-command-line-help.md
@@ -148,7 +148,7 @@
               href: components/ise/object-model/the-powershelltabcollection-object.md
             - name: PowerShellTab-objektet
               href: components/ise/object-model/the-powershelltab-object.md
-    - name: Visual Studio Code
+    - name: Visual Studio-koden
       items:
         - name: Använda Visual Studio Code
           href: components/vscode/using-vscode.md
@@ -164,7 +164,7 @@
           href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
         - name: Installation
           href: components/web-access/install-and-use-windows-powershell-web-access.md
-        - name: Felsökning av åtkomstproblem
+        - name: Felsöka åtkomstproblem
           href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
         - name: Avinstallera Windows PowerShell-webbåtkomst
           href: components/web-access/uninstall-windows-powershell-web-access.md
@@ -178,7 +178,7 @@
       href: gallery/overview.md
     - name: Installera PowerShellGet
       href: gallery/installing-psget.md
-    - name: Komma i gång
+    - name: Komma igång
       href: gallery/getting-started.md
     - name: Instruktioner
       items:
@@ -222,7 +222,7 @@
               href: gallery/how-to/managing-profile/managing-account.md
             - name: Hantera API-nycklar
               href: gallery/how-to/managing-profile/creating-apikeys.md
-        - name: Arbeta med lokala PowerShellGet-lagringsplatser
+        - name: Arbeta med privata PowerShellGet-lagringsplatser
           href: gallery/how-to/working-with-local-psrepositories.md
     - name: Begrepp
       items:
@@ -351,7 +351,7 @@
           href: dsc/overview/DscForEngineers.md
         - name: 'Förstå DSC:s roll i en CI/CD-pipeline'
           href: dsc/overview/authoringAdvanced.md
-    - name: Komma i gång
+    - name: Komma igång
       items:
         - name: Komma igång med DSC för Linux
           href: dsc/getting-started/lnxGettingStarted.md
@@ -630,7 +630,7 @@
               href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md
     - name: Mer information
       items:
-        - name: Faktablad (white paper)
+        - name: Faktablad
           href: dsc/further-reading/whitepapers.md
 - name: Exempelskript
   items:
