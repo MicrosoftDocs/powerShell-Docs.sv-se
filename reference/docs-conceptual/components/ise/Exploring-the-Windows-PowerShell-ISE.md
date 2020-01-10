@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 01/02/2020
 keywords: PowerShell, cmdlet
 title: Utforska Windows PowerShell ISE
-ms.openlocfilehash: 7949b690cda73148f07922985b1fc30fe1e8b2d0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 03728a8c83962894b27738609a5b1bec841fdb13
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117450"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737108"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Utforska Windows PowerShell ISE
 
@@ -31,25 +31,25 @@ En Windows PowerShell-flik är den miljö där ett Windows PowerShell-skript kö
 
 Följande knappar finns i verktygsfältet.
 
-|Knapp|Funktion|
-|----------|------------|
-|**Ny**|Öppnar ett nytt skript.|
-|**Öppna**|Öppnar ett befintligt skript eller en befintlig fil.|
-|**Spara**|Sparar ett skript eller en fil.|
-|**Styckning**|Klipper ut den markerade texten och kopierar den till Urklipp.|
-|**Copy**|Kopierar den markerade texten till Urklipp.|
-|**Inklistringsfel**|Klistrar in innehållet i Urklipp vid markörens plats.|
-|**Fönstret rensa utdata**|Tar bort allt innehåll i fönstret utdata.|
-|**Göra**|Ångrar den åtgärd som precis utfördes.|
-|**Tidigare**|Utför den åtgärd som precis har återställts.|
-|**Kör skript**|Kör ett skript.|
-|**Kör val**|Kör en markerad del av ett skript.|
-|**Stoppa körning**|Stoppar ett skript som körs.|
-|**Fliken Ny fjärr-PowerShell**|Skapar en ny PowerShell-flik som upprättar en session på en fjärran sluten dator. En dialog ruta visas där du uppmanas att ange information som krävs för att upprätta en fjärr anslutning.|
-|**Starta PowerShell. exe**|Öppnar en PowerShell-konsol.|
-|**Visa skript fönstret överst**|Flyttar skript fönstret överst i visningen.|
-|**Visa skript fönstrets höger**|Flyttar skript fönstret till höger i visningen.|
-|**Visa skript fönstret maximerat**|Maximerar skript fönstret.|
+|             Button (Knapp)             |                                                                                     Funktion                                                                                     |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Ny**                        | Öppnar ett nytt skript.                                                                                                                                                              |
+| **Öppna**                       | Öppnar ett befintligt skript eller en befintlig fil.                                                                                                                                                |
+| **Spara**                       | Sparar ett skript eller en fil.                                                                                                                                                          |
+| **Styckning**                        | Klipper ut den markerade texten och kopierar den till Urklipp.                                                                                                                           |
+| **Copy**                       | Kopierar den markerade texten till Urklipp.                                                                                                                                       |
+| **Inklistringsfel**                      | Klistrar in innehållet i Urklipp vid markörens plats.                                                                                                                     |
+| **Fönstret rensa utdata**          | Tar bort allt innehåll i fönstret utdata.                                                                                                                                           |
+| **Göra**                       | Ångrar den åtgärd som precis utfördes.                                                                                                                                     |
+| **Tidigare**                       | Utför den åtgärd som precis har återställts.                                                                                                                                        |
+| **Kör skript**                 | Kör ett skript.                                                                                                                                                                   |
+| **Kör val**              | Kör en markerad del av ett skript.                                                                                                                                             |
+| **Stoppa körning**             | Stoppar ett skript som körs.                                                                                                                                                  |
+| **Fliken Ny fjärr-PowerShell**  | Skapar en ny PowerShell-flik som upprättar en session på en fjärran sluten dator. En dialog ruta visas där du uppmanas att ange information som krävs för att upprätta en fjärr anslutning. |
+| **Starta PowerShell. exe**       | Öppnar en PowerShell-konsol.                                                                                                                                                      |
+| **Visa skript fönstret överst**       | Flyttar skript fönstret överst i visningen.                                                                                                                                 |
+| **Visa skript fönstrets höger**     | Flyttar skript fönstret till höger i visningen.                                                                                                                               |
+| **Visa skript fönstret maximerat** | Maximerar skript fönstret.                                                                                                                                                       |
 
 ## <a name="script-tab"></a>Fliken skript
 
@@ -67,7 +67,7 @@ Visar resultatet av de kommandon och skript som du har kört. Du kan också kopi
 
 ## <a name="command-pane"></a>Kommando fönster
 
-Gör att du kan skriva kommandon. Du kan köra ett kommando rads kommando eller ett flera rader kommando i kommando fönstret. Tryck på SKIFT + RETUR för att ange varje rad i ett flerradig kommando och tryck på RETUR efter den sista raden för att köra kommandot Multiline. Den prompt som visas överst i kommando fönstret visar sökvägen till den aktuella arbets katalogen.
+Gör att du kan skriva kommandon. Du kan köra ett kommando rads kommando eller ett flera rader kommando i kommando fönstret. Tryck på <kbd>SHIFT</kbd>+<kbd>RETUR</kbd> för att ange varje rad i ett flerradig kommando och tryck på <kbd>RETUR</kbd> efter den sista raden för att köra kommandot Multiline. Den prompt som visas överst i kommando fönstret visar sökvägen till den aktuella arbets katalogen.
 
 ## <a name="status-bar"></a>Statusfält
 
@@ -79,7 +79,8 @@ Gör att du kan se om de kommandon och skript som du kör är slutförda. Status
 
 ## <a name="help"></a>Hjälp
 
-Hjälp för Windows PowerShell ISE finns på webben i TechNet-biblioteket. Du kan öppna hjälpen genom att klicka på **Windows PowerShell ISE hjälp** på **Hjälp** -menyn eller genom att trycka på F1-tangenten var som helst, förutom när markören är på ett cmdlet-namn i antingen skript fönstret eller konsol fönstret. På **Hjälp** -menyn kan du också köra cmdleten Update-Help och Visa kommando fönstret som hjälper dig att skapa kommandon genom att visa alla parametrar för en-cmdlet och göra det möjligt att fylla i parametrarna i ett lättanvänt formulär.
+Hjälp för Windows PowerShell ISE finns på webben i TechNet-biblioteket. Du kan öppna hjälpen genom att klicka på **Windows PowerShell ISE hjälp** på **Hjälp** -menyn eller genom att trycka på <kbd>F1</kbd> -tangenten var som helst, förutom när markören är på ett cmdlet-namn i antingen skript fönstret eller konsol fönstret.
+På **Hjälp** -menyn kan du också köra `Update-Help`-cmdlet och Visa kommando fönstret som hjälper dig att skapa kommandon genom att visa alla parametrar för en cmdlet och göra det möjligt att fylla i parametrarna i ett lättanvänt formulär.
 
 ## <a name="see-also"></a>Se även
 

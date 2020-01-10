@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 01/02/2020
 keywords: PowerShell, cmdlet
 title: Felsök skript i Windows PowerShell ISE
-ms.openlocfilehash: 99d6fbcb805e3fe31f95eafd4daf272cf41fd845
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c5da80f3e0e013448533c80bbe1957a301be38f5
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117426"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737125"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Felsök skript i Windows PowerShell ISE
 
@@ -15,23 +15,24 @@ Den här artikeln beskriver hur du felsöker skript på en lokal dator med hjäl
 
 ## <a name="how-to-manage-breakpoints"></a>Hantera Bryt punkter
 
-En Bryt punkt är en utsedd punkt i ett skript där du vill att åtgärden ska pausas så att du kan undersöka det aktuella läget för variablerna och miljön där skriptet körs. När skriptet har pausats med en Bryt punkt kan du köra kommandon i konsol fönstret för att kontrol lera status för skriptet.  Du kan mata ut variabler eller köra andra kommandon. Du kan till och med ändra värdet för alla variabler som är synliga för kontexten för det skript som körs för tillfället. När du har undersökt vad du vill se kan du återuppta körningen av skriptet.
+En Bryt punkt är en utsedd punkt i ett skript där du vill att åtgärden ska pausas så att du kan undersöka det aktuella läget för variablerna och miljön där skriptet körs.
+När skriptet har pausats med en Bryt punkt kan du köra kommandon i konsol fönstret för att kontrol lera status för skriptet. Du kan mata ut variabler eller köra andra kommandon. Du kan till och med ändra värdet för alla variabler som är synliga för kontexten för det skript som körs för tillfället. När du har undersökt vad du vill se kan du återuppta körningen av skriptet.
 
 Du kan ange tre typer av Bryt punkter i fel söknings miljön i Windows PowerShell:
 
 1. **Rad Bryt punkt**. Skriptet pausar när den angivna raden har nåtts vid körning av skriptet
 
-2. **Variabel Bryt punkt.** Skriptet pausas när den angivna variabelns värde ändras.
+1. **Variabel Bryt punkt.** Skriptet pausas när den angivna variabelns värde ändras.
 
-3. **Kommando Bryt punkt.** Skriptet pausas när det angivna kommandot ska köras när skriptet körs. Den kan innehålla parametrar för att ytterligare filtrera Bryt punkten till den åtgärd som du vill använda. Kommandot kan också vara en funktion som du har skapat.
+1. **Kommando Bryt punkt.** Skriptet pausas när det angivna kommandot ska köras när skriptet körs. Den kan innehålla parametrar för att ytterligare filtrera Bryt punkten till den åtgärd som du vill använda. Kommandot kan också vara en funktion som du har skapat.
 
-Av dessa, i Windows PowerShell ISE fel söknings miljö, kan endast rad Bryt punkter anges med hjälp av menyn eller kortkommandona. De andra två typerna av Bryt punkter kan anges, men de ställs in från konsol fönstret med hjälp av cmdleten [set-PSBreakpoint](https://technet.microsoft.com/library/88d2d9ad-17dc-44ae-99aa-f841125b9dc8) . I det här avsnittet beskrivs hur du kan utföra fel sökning av uppgifter i Windows PowerShell ISE genom att använda menyerna där de är tillgängliga och utföra ett bredare antal kommandon från konsol fönstret med hjälp av skript.
+Av dessa, i Windows PowerShell ISE fel söknings miljö, kan endast rad Bryt punkter anges med hjälp av menyn eller kortkommandona. De andra två typerna av Bryt punkter kan anges, men de ställs in från konsol fönstret med hjälp av cmdleten [set-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md) . I det här avsnittet beskrivs hur du kan utföra fel sökning av uppgifter i Windows PowerShell ISE genom att använda menyerna där de är tillgängliga och utföra ett bredare antal kommandon från konsol fönstret med hjälp av skript.
 
 ### <a name="to-set-a-breakpoint"></a>Ange en brytpunkt
 
-En Bryt punkt kan bara anges i ett skript när den har sparats. Högerklicka på linjen där du vill ange en rad Bryt punkt och klicka sedan på **Växla Bryt punkt**. Alternativt klickar du på linjen där du vill ange en rad Bryt punkt och trycker på **F9** eller klickar på **Växla Bryt punkt**på **fel söknings** menyn.
+En Bryt punkt kan bara anges i ett skript när den har sparats. Högerklicka på linjen där du vill ange en rad Bryt punkt och klicka sedan på **Växla Bryt punkt**. Alternativt klickar du på linjen där du vill ange en rad Bryt punkt och trycker på <kbd>F9</kbd> eller klickar på **Växla Bryt punkt**på **fel söknings** menyn.
 
-Följande skript är ett exempel på hur du kan ange en variabel Bryt punkt från konsol fönstret med hjälp av cmdleten [set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420) .
+Följande skript är ett exempel på hur du kan ange en variabel Bryt punkt från konsol fönstret med hjälp av cmdleten [set-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md) .
 
 ```powershell
 # This command sets a breakpoint on the Server variable in the Sample.ps1 script.
@@ -42,7 +43,7 @@ Set-PSBreakpoint -Script sample.ps1 -Variable Server
 
 Visar alla Bryt punkter i den aktuella Windows PowerShell-sessionen.
 
-På **fel söknings** menyn klickar du på **list Bryt punkter**. Följande skript är ett exempel på hur du kan visa alla Bryt punkter från konsol fönstret med hjälp av cmdleten [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) .
+På **fel söknings** menyn klickar du på **list Bryt punkter**. Följande skript är ett exempel på hur du kan visa alla Bryt punkter från konsol fönstret med hjälp av cmdleten [Get-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Get-PSBreakpoint.md) .
 
 ```powershell
 # This command lists all breakpoints in the current session.
@@ -53,10 +54,8 @@ Get-PSBreakpoint
 
 Borttagning av en Bryt punkt tar bort den.
 
-Om du tror att du kanske vill använda den igen senare bör du [inaktivera en Bryt punkt](#disable-a-breakpoint) i stället.
-Högerklicka på linjen där du vill ta bort en Bryt punkt och klicka sedan på **Växla Bryt punkt**.
-Du kan också klicka på den rad där du vill ta bort en Bryt punkt och på **fel söknings** menyn klickar du på **Växla Bryt punkt**.
-Följande skript är ett exempel på hur du tar bort en Bryt punkt med ett angivet ID från konsol fönstret med hjälp av cmdleten [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) .
+Om du tror att du kanske vill använda den igen senare bör du [inaktivera en Bryt punkt](#disable-a-breakpoint) i stället. Högerklicka på linjen där du vill ta bort en Bryt punkt och klicka sedan på **ToggleBreakpoint**.
+Du kan också klicka på den rad där du vill ta bort en Bryt punkt och på **fel söknings** menyn klickar du på **Växla Bryt punkt**. Följande skript är ett exempel på hur du tar bort en Bryt punkt med ett angivet ID från konsol fönstret med hjälp av cmdleten [Remove-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Remove-PSBreakpoint.md) .
 
 ```powershell
 # This command deletes the breakpoint with breakpoint ID 2.
@@ -67,7 +66,7 @@ Remove-PSBreakpoint -Id 2
 
 Om du vill ta bort alla Bryt punkter som definierats i den aktuella sessionen klickar du på **ta bort alla Bryt punkter**på **Felsök** -menyn.
 
-Följande skript är ett exempel på hur du tar bort alla Bryt punkter från konsol fönstret med hjälp av cmdleten [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) .
+Följande skript är ett exempel på hur du tar bort alla Bryt punkter från konsol fönstret med hjälp av cmdleten [Remove-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Remove-PSBreakpoint.md) .
 
 ```powershell
 # This command deletes all of the breakpoints in the current session.
@@ -76,7 +75,7 @@ Get-PSBreakpoint | Remove-PSBreakpoint
 
 ### <a name="disable-a-breakpoint"></a>Inaktivera en Bryt punkt
 
-Om du inaktiverar en Bryt punkt tas den inte bort. den stänger av den tills den är aktive rad.  Om du vill inaktivera en speciell rad Bryt punkt högerklickar du på linjen där du vill inaktivera en Bryt punkt och klickar sedan på **inaktivera Bryt punkt**. Eller klicka på den rad där du vill inaktivera en Bryt punkt och tryck på **F9** eller på **fel söknings** menyn, klicka på **inaktivera Bryt punkt**. Följande skript är ett exempel på hur du kan ta bort en Bryt punkt med ett angivet ID från konsol fönstret med hjälp av cmdleten [disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) .
+Om du inaktiverar en Bryt punkt tas den inte bort. den stänger av den tills den är aktive rad. Om du vill inaktivera en speciell rad Bryt punkt högerklickar du på linjen där du vill inaktivera en Bryt punkt och klickar sedan på **inaktivera Bryt punkt**. Eller klicka på den rad där du vill inaktivera en Bryt punkt och tryck på <kbd>F9</kbd> eller på **fel söknings** menyn, klicka på **inaktivera Bryt punkt**. Följande skript är ett exempel på hur du kan ta bort en Bryt punkt med ett angivet ID från konsol fönstret med hjälp av cmdleten [disable-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Disable-PSBreakpoint.md) .
 
 ```powershell
 # This command disables the breakpoint with breakpoint ID 0.
@@ -85,7 +84,7 @@ Disable-PSBreakpoint -Id 0
 
 ### <a name="disable-all-breakpoints"></a>Inaktivera alla Bryt punkter
 
-Om du inaktiverar en Bryt punkt tas den inte bort. den stänger av den tills den är aktive rad.  Om du vill inaktivera alla Bryt punkter i den aktuella sessionen går du till **Felsök** -menyn och klickar på **inaktivera alla Bryt punkter**. Följande skript är ett exempel på hur du kan inaktivera alla Bryt punkter från konsol fönstret med hjälp av cmdleten [disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) .
+Om du inaktiverar en Bryt punkt tas den inte bort. den stänger av den tills den är aktive rad. Om du vill inaktivera alla Bryt punkter i den aktuella sessionen går du till **Felsök** -menyn och klickar på **inaktivera alla Bryt punkter**. Följande skript är ett exempel på hur du kan inaktivera alla Bryt punkter från konsol fönstret med hjälp av cmdleten [disable-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Disable-PSBreakpoint.md) .
 
 ```powershell
 # This command disables all breakpoints in the current session.
@@ -95,7 +94,7 @@ Get-PSBreakpoint | Disable-PSBreakpoint
 
 ### <a name="enable-a-breakpoint"></a>Aktivera en Bryt punkt
 
-Om du vill aktivera en speciell Bryt punkt högerklickar du på linjen där du vill aktivera en Bryt punkt och klickar sedan på **Aktivera Bryt punkt**. Du kan också klicka på den rad där du vill aktivera en Bryt punkt och sedan trycka på **F9** eller klicka på **Aktivera Bryt punkt**på **fel söknings** menyn. Följande skript är ett exempel på hur du kan aktivera vissa Bryt punkter från konsol fönstret med hjälp av cmdleten [Enable-PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) .
+Om du vill aktivera en speciell Bryt punkt högerklickar du på linjen där du vill aktivera en Bryt punkt och klickar sedan på **Aktivera Bryt punkt**. Du kan också klicka på den rad där du vill aktivera en Bryt punkt och sedan trycka på <kbd>F9</kbd> eller klicka på **Aktivera Bryt punkt**på **fel söknings** menyn. Följande skript är ett exempel på hur du kan aktivera vissa Bryt punkter från konsol fönstret med hjälp av cmdleten [Enable-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Enable-PSBreakpoint.md) .
 
 ```powershell
 # This command enables breakpoints with breakpoint IDs 0, 1, and 5.
@@ -104,7 +103,7 @@ Enable-PSBreakpoint -Id 0, 1, 5
 
 ### <a name="enable-all-breakpoints"></a>Aktivera alla Bryt punkter
 
-Om du vill aktivera alla Bryt punkter som definierats i den aktuella sessionen går du till **Felsök** -menyn och klickar på **Aktivera alla Bryt punkter**. Följande skript är ett exempel på hur du kan aktivera alla Bryt punkter från konsol fönstret med hjälp av cmdleten [Enable-PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) .
+Om du vill aktivera alla Bryt punkter som definierats i den aktuella sessionen går du till **Felsök** -menyn och klickar på **Aktivera alla Bryt punkter**. Följande skript är ett exempel på hur du kan aktivera alla Bryt punkter från konsol fönstret med hjälp av cmdleten [Enable-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Enable-PSBreakpoint.md) .
 
 ```powershell
 # This command enables all breakpoints in the current session.
@@ -114,36 +113,37 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 
 ## <a name="how-to-manage-a-debugging-session"></a>Så här hanterar du en felsökningssession
 
-Innan du börjar felsöka måste du ange en eller flera Bryt punkter. Du kan inte ange en Bryt punkt om inte skriptet som du vill felsöka har sparats. Instruktioner för hur du ställer in en Bryt punkt finns i [Hantera Bryt punkter](#how-to-manage-breakpoints) eller [set-PSBreakpoint](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-psbreakpoint). När du har startat fel sökningen kan du inte redigera ett skript förrän du har stoppat fel sökningen. Ett skript som har en eller flera Bryt punkter sparas automatiskt innan det körs.
+Innan du börjar felsöka måste du ange en eller flera Bryt punkter. Du kan inte ange en Bryt punkt om inte skriptet som du vill felsöka har sparats. Instruktioner för hur du ställer in en Bryt punkt finns i [Hantera Bryt punkter](#how-to-manage-breakpoints) eller [set-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md).
+När du har startat fel sökningen kan du inte redigera ett skript förrän du har stoppat fel sökningen. Ett skript som har en eller flera Bryt punkter sparas automatiskt innan det körs.
 
 ### <a name="to-start-debugging"></a>Starta fel sökning
 
-Tryck på **F5** eller klicka på **Kör skript** ikonen i verktygsfältet eller på **fel söknings** menyn klickar du på **Kör/Fortsätt**. Skriptet körs tills det påträffar den första Bryt punkten. Åtgärden pausar där och markerar den rad där den pausades.
+Tryck på <kbd>F5</kbd> eller klicka på **Kör skript** ikonen i verktygsfältet eller på **fel söknings** menyn klickar du på **Kör/Fortsätt**. Skriptet körs tills det påträffar den första Bryt punkten. Åtgärden pausar där och markerar den rad där den pausades.
 
 ### <a name="to-continue-debugging"></a>För att fortsätta fel sökningen
 
-Tryck på **F5** eller klicka på ikonen **Kör skript** i verktygsfältet eller på **fel söknings** menyn, klicka på **Kör/Fortsätt** eller i konsol fönstret, Skriv **C** och tryck sedan på **RETUR**. Detta gör att skriptet fortsätter att köras till nästa Bryt punkt eller till slutet av skriptet om inga ytterligare Bryt punkter påträffas.
+Tryck på <kbd>F5</kbd> eller klicka på ikonen **Kör skript** i verktygsfältet eller på **fel söknings** menyn, klicka på **Kör/fortsätt** eller i konsol fönstret, skriv `C` och tryck sedan på <kbd>RETUR</kbd>. Detta gör att skriptet fortsätter att köras till nästa Bryt punkt eller till slutet av skriptet om inga ytterligare Bryt punkter påträffas.
 
 ### <a name="to-view-the-call-stack"></a>Visa anrops stacken
 
-Anrops stacken visar den aktuella körnings platsen i skriptet. Om skriptet körs i en funktion som anropades av en annan funktion visas detta i visningen av ytterligare rader i utdata. Den nedersta raden visar det ursprungliga skriptet och den rad i vilken en funktion anropades. Nästa rad i visar funktionen och den rad i vilken en annan funktion kan ha anropats.  Den översta raden visar den aktuella kontexten för den aktuella raden som Bryt punkten har angetts på.
+Anrops stacken visar den aktuella körnings platsen i skriptet. Om skriptet körs i en funktion som anropades av en annan funktion visas detta i visningen av ytterligare rader i utdata. Den nedersta raden visar det ursprungliga skriptet och den rad i vilken en funktion anropades. Nästa rad i visar funktionen och den rad i vilken en annan funktion kan ha anropats. Den översta raden visar den aktuella kontexten för den aktuella raden som Bryt punkten har angetts på.
 
-När du är pausad kan du se den aktuella anrops stacken genom att trycka på **CTRL + SKIFT + D** eller, på **fel söknings** menyn, klicka på **Visa anrops stack** eller, i rutan konsol, skriva **K** och sedan trycka på **RETUR**.
+När du är pausad kan du se den aktuella anrops stacken genom att trycka på <kbd>CTRL</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> eller, på **fel söknings** menyn, klicka på **Visa anrops stack** eller, i rutan konsol, skriva `K` och sedan trycka på <kbd>RETUR</kbd>.
 
 ### <a name="to-stop-debugging"></a>Stoppa fel sökningen
 
-Tryck på **Shift-F5** eller på **fel** söknings menyn, klicka på **stoppa fel sökning**eller skriv sedan **Q** i konsol fönstret och tryck sedan på **RETUR**.
+Tryck på <kbd>SHIFT</kbd>+<kbd>F5</kbd> eller på **fel** söknings menyn, klicka på **stoppa fel sökning**eller Skriv `Q` i konsol fönstret och tryck sedan på <kbd>RETUR</kbd>.
 
 ## <a name="how-to-step-over-step-into-and-step-out-while-debugging"></a>Stega över, stega och stega under fel sökning
 
 Steging är en process för att köra en instruktion i taget. Du kan stoppa en kodrad och undersöka värdena för variabler och systemets tillstånd. I följande tabell beskrivs vanliga fel söknings uppgifter, t. ex. att gå över, integrera och Stega ut.
 
-| Fel söknings uppgift | Beskrivning | Så här åstadkommer du det i PowerShell ISE |
-| --- | --- | --- |
-| **Stega in** | Kör den aktuella instruktionen och stoppar sedan nästa instruktion. Om den aktuella instruktionen är en funktion eller ett skript anrop, kommer fel söknings stegen till den funktionen eller skriptet, annars stoppas vid nästa instruktion. | Tryck på **F11** eller på **fel söknings** menyn, klicka på **stega i**eller Skriv **S** i konsol fönstret och tryck på **RETUR**. |
-| **Steg över** | Kör den aktuella instruktionen och stoppar sedan nästa instruktion. Om den aktuella instruktionen är en funktion eller ett skript anrop, kör fel söknings programmet hela funktionen eller skriptet och stannar vid nästa instruktion efter funktions anropet. | Tryck på **F10** eller på **fel söknings** menyn, klicka på **steg över**eller i konsol fönstret, Skriv **V** och tryck på **RETUR**. |
-| **Gå ut** | Steg ut ur den aktuella funktionen och upp en nivå om funktionen är kapslad. Om i huvud texten körs skriptet till slutet eller till nästa Bryt punkt. De överhoppade instruktionerna körs, men är inte stegvisa. | Tryck på **Shift + F11**eller på **fel söknings** menyn, klicka på **Stega ut**eller Skriv **O** i rutan konsol, och tryck på **RETUR**. |
-| **Bestå** | Fortsätter körningen till slutet eller till nästa Bryt punkt. De överhoppade funktionerna och anropen utförs, men inte stegvisa. | Tryck på **F5** eller på **Felsök** -menyn, klicka på **Kör/Fortsätt**eller i konsol fönstret, Skriv **C** och tryck på **RETUR**. |
+| Fel söknings uppgift |                                                                                                                   Beskrivning                                                                                                                    |                                                      Så här åstadkommer du det i PowerShell ISE                                                       |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Stega in**  | Kör den aktuella instruktionen och stoppar sedan nästa instruktion. Om den aktuella instruktionen är en funktion eller ett skript anrop, kommer fel söknings stegen till den funktionen eller skriptet, annars stoppas vid nästa instruktion.                      | Tryck på <kbd>F11</kbd> eller på **fel söknings** menyn, klicka på **stega i**eller i konsol fönstret, skriv `S` och tryck på <kbd>RETUR</kbd>.                 |
+| **Steg över**  | Kör den aktuella instruktionen och stoppar sedan nästa instruktion. Om den aktuella instruktionen är en funktion eller ett skript anrop, kör fel söknings programmet hela funktionen eller skriptet och stannar vid nästa instruktion efter funktions anropet. | Tryck på <kbd>F10</kbd> eller på **fel söknings** menyn, klicka på **steg över**eller i konsol fönstret, skriv `V` och tryck på <kbd>RETUR</kbd>.                 |
+| **Gå ut**   | Steg ut ur den aktuella funktionen och upp en nivå om funktionen är kapslad. Om i huvud texten körs skriptet till slutet eller till nästa Bryt punkt. De överhoppade instruktionerna körs, men är inte stegvisa.                   | Tryck på <kbd>SHIFT</kbd>+<kbd>F11</kbd>eller på **fel söknings** menyn, klicka på **Stega ut**eller Skriv `O` i konsol fönstret och tryck på <kbd>RETUR</kbd>. |
+| **Bestå**   | Fortsätter körningen till slutet eller till nästa Bryt punkt. De överhoppade funktionerna och anropen utförs, men inte stegvisa.                                                                                                          | Tryck på <kbd>F5</kbd> eller på **Felsök** -menyn, klicka på **Kör/Fortsätt**eller i konsol fönstret, skriv `C` och tryck på <kbd>RETUR</kbd>.               |
 
 ## <a name="how-to-display-the-values-of-variables-while-debugging"></a>Så här visar du värden för variabler under fel sökning
 
@@ -155,7 +155,7 @@ Använd en av följande metoder:
 
 - Hovra över variabeln i rutan skript och visa dess värde som en verktygs beskrivning.
 
-- I konsol fönstret skriver du variabelns namn och trycker på **RETUR**.
+- I konsol fönstret skriver du variabelns namn och trycker på <kbd>RETUR</kbd>.
 
 Alla fönster i ISE är alltid i samma omfång. När du felsöker ett skript kan du därför köra de kommandon som du skriver i konsol fönstret i skript omfång. På så sätt kan du använda konsol fönstret för att hitta värden för variabler och anropa funktioner som bara definieras i skriptet.
 
@@ -163,33 +163,36 @@ Alla fönster i ISE är alltid i samma omfång. När du felsöker ett skript kan
 
 Du kan använda föregående metod för att visa värdet för nästan alla variabler medan du felsöker ett skript. Dessa metoder fungerar dock inte för följande automatiska variabler.
 
-- $_
+- `$_`
 
-- $Input
+- `$Input`
 
-- $MyInvocation
+- `$MyInvocation`
 
-- $PSBoundParameters
+- `$PSBoundParameters`
 
-- $Args
+- `$Args`
 
-Om du försöker visa värdet för någon av dessa variabler får du värdet för den variabeln för i en intern pipeline som fel sökaren använder, inte värdet för variabeln i skriptet. Du kan undvika detta för några variabler ($ _, $Input, $MyInvocation, $PSBoundParameters och $Args) med hjälp av följande metod:
+Om du försöker visa värdet för någon av dessa variabler får du värdet för den variabeln för i en intern pipeline som fel sökaren använder, inte värdet för variabeln i skriptet. Du kan kringgå detta för några få variabler (`$_`, `$Input`, `$MyInvocation`, `$PSBoundParameters`och `$Args`) med hjälp av följande metod:
 
 1. I skriptet tilldelar du värdet för den automatiska variabeln till en ny variabel.
 
-2. Visa värdet för den nya variabeln, antingen genom att hovra över den nya variabeln i skript fönstret eller genom att skriva den nya variabeln i konsol fönstret.
+1. Visa värdet för den nya variabeln, antingen genom att hovra över den nya variabeln i skript fönstret eller genom att skriva den nya variabeln i konsol fönstret.
 
-Om du till exempel vill visa värdet för variabeln $MyInvocation, i skriptet, tilldelar du värdet till en ny variabel, till exempel $scriptname, och hovrar sedan över eller skriver $scriptname variabeln för att visa dess värde.
+Om du till exempel vill visa värdet för variabeln `$MyInvocation`, i skriptet, tilldelar du värdet till en ny variabel, till exempel `$scriptName`, och hovrar sedan över eller skriver `$scriptName` variabeln för att visa dess värde.
 
 ```powershell
 # In C:\ps-test\MyScript.ps1
-$scriptname = $MyInvocation.MyCommand.Path
+$scriptName = $MyInvocation.MyCommand.Path
 ```
 
-```output
+```PowerShell
 # In the Console Pane:
-PS> .\MyScript.ps1
-PS> $scriptname
+.\MyScript.ps1
+$scriptName
+```
+
+```Output
 C:\ps-test\MyScript.ps1
 ```
 

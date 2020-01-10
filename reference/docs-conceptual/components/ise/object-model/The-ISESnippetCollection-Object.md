@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: PowerShell, cmdlet
 title: ISESnippetCollection-objektet
-ms.openlocfilehash: 6c392c08767fba004f63155d5a469777856a0b59
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6cdc43dd1d82e94f66122d7f7b313c02e755fed7
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030509"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736053"
 ---
 # <a name="the-isesnippetcollection-object"></a>ISESnippetCollection-objektet
 
-**ISESnippetCollection** -objektet är en samling av **ISESnippet** -objekt. Den fil samling som är associerad med ett **PowerShellTab** -objekt är medlem i den här klassen. Ett exempel är samlingen **$psISE. CurrentPowerShellTab. files** .
+**ISESnippetCollection** -objektet är en samling av **ISESnippet** -objekt. Den fil samling som är associerad med ett **PowerShellTab** -objekt är medlem i den här klassen. Ett exempel är den `$psISE.CurrentPowerShellTab.Files` samlingen.
 
 ## <a name="methods"></a>Metoder
 
@@ -19,7 +19,7 @@ ms.locfileid: "67030509"
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Läser in en. Fragments. ps1xml-fil som innehåller användardefinierade kod avsnitt. Det enklaste sättet att skapa kodfragment är att använda cmdleten New-IseSnippet, som automatiskt lagrar dem i din profilmappar så att de läses in varje gång som du startar Windows PowerShell ISE.
+Läser in en `.snippets.ps1xml`-fil som innehåller användardefinierade kod avsnitt. Det enklaste sättet att skapa kodfragment är att använda `New-IseSnippet`-cmdleten, som automatiskt lagrar dem i din profilmappar så att de läses in varje gång som du startar Windows PowerShell ISE.
 
 **FilePathName** -sträng med sökvägen och fil namnet till en. ps1xml-fil som innehåller kod avsnitts definitioner.
 

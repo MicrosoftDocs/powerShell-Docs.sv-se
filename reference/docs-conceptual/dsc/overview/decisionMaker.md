@@ -2,12 +2,12 @@
 ms.date: 10/11/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: Desired State Configuration-översikt för beslutsfattare
-ms.openlocfilehash: 271ec04035feb17e932acd0ac80f32213a4e018b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b6d483d105c2d3b9be7215be36397d452338c7f1
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352122"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737261"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Översikt över önskad tillstånds konfiguration för besluts fattare
 
@@ -31,7 +31,7 @@ Konfigurationer kan delas via [PowerShell-galleriet](https://powershellgallery.c
 
 ## <a name="dsc-and-devops"></a>DSC och DevOps
 
-DSC utformades med [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) i åtanke. En kombination av personer, processer och verktyg som möjliggör snabb distribution och upprepning fokuserat på att leverera värde för slutanvändare, oavsett om de är interna eller externa. En enda konfiguration som definierar en miljö innebär att utvecklare kan koda sina krav i en konfiguration och kontrol lera konfigurationen i käll kontrollen. Drifts grupper kan sedan distribuera kod utan att gå igenom fel känsliga manuella processer.
+DSC utformades med [DevOps](/archive/blogs/ashleymcglone/devops-for-n00bs-ie-windows-people-like-me) i åtanke. En kombination av personer, processer och verktyg som möjliggör snabb distribution och upprepning fokuserat på att leverera värde för slutanvändare, oavsett om de är interna eller externa. En enda konfiguration som definierar en miljö innebär att utvecklare kan koda sina krav i en konfiguration och kontrol lera konfigurationen i käll kontrollen. Drifts grupper kan sedan distribuera kod utan att gå igenom fel känsliga manuella processer.
 
 Konfigurationer är [data drivna](../configurations/configData.md). De definierade data gör det enklare för åtgärder att identifiera och ändra miljöer utan utvecklarens medverkan.
 

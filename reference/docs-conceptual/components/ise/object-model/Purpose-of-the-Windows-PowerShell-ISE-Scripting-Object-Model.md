@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: PowerShell, cmdlet
 title: Användningsområden för Windows PowerShell ISE-skriptobjektmodellen
-ms.openlocfilehash: e59593ef06911c709e92fa7a1eabd96d2636ca30
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1f48df112bd19297baa311116e79d3d7603d7c81
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030906"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736240"
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Användningsområden för Windows PowerShell ISE-skriptobjektmodellen
 
@@ -17,12 +17,13 @@ Objekt är kopplade till form och funktion i Windows PowerShell ISE (Integrated 
 
 Du kan använda objekt modellen för att ändra program inställningar och-alternativ. Du kan till exempel ändra dem på följande sätt:
 
-- Du kan ändra färg på fel, varningar, utförliga utdata och fel söknings utdata.
-- Du kan hämta eller ange bakgrunds färger för kommando fönstret, fönstret utdata och skript fönstret.
-- Du kan ställa in förgrunds färgen för fönstret utdata.
-- Du kan ange teckensnitts namn och tecken storlek för Windows PowerShell ISE.
-- Du kan konfigurera varningar. Den här inställningen innehåller varningar som utfärdas när en fil öppnas i flera PowerShell-flikar eller när ett skript i filen körs innan filen har sparats.
-- Du kan växla mellan en vy där skript fönstret och utdatafönstret visas sida vid sida och en vy där skript fönstret visas överst i fönstret utdata. Du kan docka kommando fönstret längst ned eller överst i fönstret utdata.
+- Ändra färg på fel, varningar, utförliga utdata och fel söknings utdata.
+- Hämta eller ange bakgrunds färger för kommando fönstret, fönstret utdata och skript fönstret.
+- Ange förgrunds färgen för fönstret utdata.
+- Ange teckensnitts namn och tecken storlek för Windows PowerShell ISE.
+- Konfigurera varningar. Den här inställningen innehåller varningar som utfärdas när en fil öppnas i flera PowerShell-flikar eller när ett skript i filen körs innan filen har sparats.
+- Växla mellan en vy där skript fönstret och utdatafönstret visas sida vid sida och en vy där skript fönstret visas överst i fönstret utdata.
+- Docka kommando fönstret längst ned eller överst i fönstret utdata.
 
 ## <a name="enhancing-the-functionality-of-windows-powershell-ise"></a>Förbättra funktionerna i Windows PowerShell ISE
 

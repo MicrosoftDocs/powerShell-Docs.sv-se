@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: PowerShellTab-objektet
-ms.openlocfilehash: bfa11b553f97b7b27b974855ff4e8f1a48c33fea
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028904"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736938"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab-objektet
 
@@ -43,7 +43,7 @@ Kör det aktuella skriptet på PowerShell-fliken.
 
 **Skript** -system. Management. Automation. script block eller en sträng som skript blocket ska köras.
 
-**\[useNewScope\]** -valfria booleska som standardvärdet för **$True** om värdet är **$True**skapas en ny omfattning för att köra kommandot. Den ändrar inte körnings miljön för PowerShell-fliken som anges av kommandot.
+**\[useNewScope\]** -valfria booleska som standardvärdet för `$true` om värdet är `$true`skapas en ny omfattning för att köra kommandot. Den ändrar inte körnings miljön för PowerShell-fliken som anges av kommandot.
 
 **\[millisecondsTimeout\]** -valfritt heltal som är som standard **500**.
 Om kommandot inte slutförs inom den angivna tiden genererar kommandot en **TimeoutException** med meddelandet "åtgärden har nått sin tids gräns."
@@ -92,7 +92,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Den skrivskyddade booleska egenskapen som returnerar ett **$True** värde om ett skript kan anropas med metoden [Invoke (script)](#invoke-script-) .
+Den skrivskyddade booleska egenskapen som returnerar ett `$true` värde om ett skript kan anropas med metoden [Invoke (script)](#invoke-script-) .
 
 ```powershell
 # CanInvoke will be false if the PowerShell
@@ -107,9 +107,9 @@ $secondTab.Invoke({sleep 20})
 $secondTab.CanInvoke
 ```
 
-### <a name="consolepane"></a>Consolepane
+### <a name="consolepane"></a>ConsolePane
 
-Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.  I Windows PowerShell ISE 2,0 heter **CommandPane**.
+Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner. I Windows PowerShell ISE 2,0 heter **CommandPane**.
 
 Den skrivskyddade egenskapen som hämtar konsol fönstrets [redigerings](The-ISEEditor-Object.md) objekt.
 
@@ -156,7 +156,7 @@ $newFile.Editor.LineCount
 
 ### <a name="output"></a>Utdata
 
-Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE.  I senare versioner av Windows PowerShell ISE kan du använda **ConsolePane** -objektet för samma syfte.
+Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE. I senare versioner av Windows PowerShell ISE kan du använda **ConsolePane** -objektet för samma syfte.
 
 Den skrivskyddade egenskapen som hämtar fönstret utdata i den aktuella [redigeraren](The-ISEEditor-Object.md).
 
@@ -165,7 +165,7 @@ Den skrivskyddade egenskapen som hämtar fönstret utdata i den aktuella [redige
 $psISE.CurrentPowerShellTab.output.clear()
 ```
 
-### <a name="prompt"></a>Prompt
+### <a name="prompt"></a>Uppmaning
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 

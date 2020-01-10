@@ -1,51 +1,57 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/23/2019
 keywords: PowerShell, cmdlet
 title: Upprepa en uppgift för ett förgrunds objekt för flera objekt
-ms.openlocfilehash: 1442507c4213476f65df3401c1021f8d0fc31956
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bf89070fd9b006fa9b0b262ab63ffadd81072ecc
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030813"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736887"
 ---
 # <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Upprepa en uppgift för flera objekt (förgrunds objekt)
 
-I **förgrunds-Object-** cmdlet används skript block och `$_` beskrivningen för det aktuella pipelinen så att du kan köra ett kommando på varje objekt i pipelinen. Detta kan användas för att utföra komplicerade uppgifter.
+`ForEach-Object` cmdlet använder skript block och `$_` beskrivningen för det aktuella pipelinen för att köra ett kommando på varje objekt i pipelinen. Detta kan användas för att utföra komplicerade uppgifter.
 
-En situation där detta kan vara användbart är att ändra data så att de blir mer användbara. Win32_LogicalDisk-klassen från WMI kan till exempel användas för att returnera information om ledigt utrymme för varje lokal disk. Data returneras i antal byte, vilket gör det svårt att läsa:
+En situation där detta kan vara användbart är att ändra data så att de blir mer användbara. **Win32_LogicalDisk** -klassen från WMI kan till exempel användas för att returnera information om ledigt utrymme för varje lokal disk. Data returneras i antal byte, vilket gör det svårt att läsa:
 
-```
-PS> Get-WmiObject -Class Win32_LogicalDisk
-
-DeviceID     : C:
-DriveType    : 3
-ProviderName :
-FreeSpace    : 50665070592
-Size         : 203912880128
-VolumeName   : Local Disk
+```powershell
+Get-CimInstance -Class Win32_LogicalDisk
 ```
 
-Vi kan konvertera värdet för ledigt utrymme till megabyte genom att dividera varje värde med 1024 två gånger. efter den första divisionen är data i kilobyte och efter den andra divisionen är det megabyte. Du kan göra det i en förgrunds-objekt skript block genom att skriva:
-
+```Output
+DeviceID DriveType ProviderName VolumeName Size          FreeSpace
+-------- --------- ------------ ---------- ----          ---------
+C:       3                      Local Disk 203912880128  50665070592
 ```
-PS> Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {($_.FreeSpace)/1024.0/1024.0}
+
+Vi kan konvertera värdet för det **lediga utrymmet** till megabyte genom att dividera varje värde med 1 MB. Du kan göra det i ett `ForEach-Object`-skript block genom att skriva:
+
+```powershell
+Get-CimInstance -Class Win32_LogicalDisk |
+  ForEach-Object -Process {($_.FreeSpace)/1MB}
+```
+
+```Output
 48318.01171875
 ```
 
-Tyvärr är utdata nu data utan tillhör ande etikett. Eftersom WMI-egenskaper som detta är skrivskyddade kan du inte konvertera ett ledigt utrymme direkt. Om du skriver följande:
+Tyvärr är utdata nu data utan tillhör ande etikett. Eftersom WMI-egenskaper som detta är skrivskyddade kan du inte konvertera ett **ledigt utrymme**direkt. Om du skriver följande:
 
 ```powershell
-Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {$_.FreeSpace = ($_.FreeSpace)/1024.0/1024.0}
+Get-CimInstance -Class Win32_LogicalDisk |
+  ForEach-Object -Process {$_.FreeSpace = ($_.FreeSpace)/1MB}
 ```
 
 Du får ett fel meddelande:
 
-```output
+```Output
 "FreeSpace" is a ReadOnly property.
-At line:1 char:70
-+ Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {$_.F <<<< r
-eeSpace = ($_.FreeSpace)/1024.0/1024.0}
+At line:2 char:28
++   ForEach-Object -Process {$_.FreeSpace = ($_.FreeSpace)/1MB}
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo          : NotSpecified: (:) [], SetValueException
++ FullyQualifiedErrorId : ReadOnlyCIMProperty
 ```
 
-Du kan organisera om data med hjälp av vissa avancerade tekniker, men en enklare metod är att skapa ett nytt objekt genom att använda **Select-Object**.
+Du kan organisera om data med hjälp av vissa avancerade tekniker, men en enklare metod är att skapa ett nytt objekt genom att använda `Select-Object`.

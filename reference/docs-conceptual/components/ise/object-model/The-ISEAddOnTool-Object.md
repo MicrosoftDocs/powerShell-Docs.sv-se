@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: ISEAddOnTool-objektet
-ms.openlocfilehash: c71602d200b941ed4fb142b9c35f0fe68982e3e9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a5357005ec1a883f5a14882a42e3150e09ff33a2
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028995"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736138"
 ---
 # <a name="the-iseaddontool-object"></a>ISEAddOnTool-objektet
 
@@ -33,6 +33,9 @@ Egenskapen **Control** ger Läs behörighet till många av detaljerna för komma
 # View the properties of the Commands add-on tool.
 # (assumes that it is visible in the vertical pane)
 $psISE.CurrentVisibleVerticalTool.Control
+```
+
+```Output
 HostObject                  : Microsoft.PowerShell.Host.ISE.ObjectModelRoot
 Content                     :
 HasContent                  :
@@ -143,7 +146,7 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Den booleska egenskapen som anger om tilläggs verktyget är synligt i det tilldelade fönstret. Om den är synlig kan du ange egenskapen **IsVisible** till **$false** för att dölja verktyget, eller ange egenskapen **IsVisible** till **$True** för att göra ett tilläggs verktyg synligt på dess PowerShell-flik. Observera att när ett tilläggs verktyg är dolt är det inte längre tillgängligt via **CurrentVisibleHorizontalTool** -eller **CurrentVisibleVerticalTool** -objekten och kan därför inte visas med hjälp av den här egenskapen för objektet.
+Den booleska egenskapen som anger om tilläggs verktyget är synligt i det tilldelade fönstret. Om den är synlig kan du ange egenskapen **IsVisible** till `$false` för att dölja verktyget, eller ange egenskapen **IsVisible** till `$true` för att göra ett tilläggs verktyg synligt på dess PowerShell-flik. Observera att när ett tilläggs verktyg är dolt är det inte längre tillgängligt via **CurrentVisibleHorizontalTool** -eller **CurrentVisibleVerticalTool** -objekten och kan därför inte visas med hjälp av den här egenskapen för objektet.
 
 ```powershell
 # Hide the current tool in the vertical tool pane
@@ -161,6 +164,9 @@ Den skrivskyddade egenskapen som hämtar namnet på tilläggs verktyget.
 ```powershell
 # Gets the name of the visible vertical pane add-on tool.
 $psISE.CurrentVisibleVerticalTool.Name
+```
+
+```Output
 Commands
 ```
 

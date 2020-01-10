@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: PowerShell, cmdlet
 title: ISEFile-objektet
-ms.openlocfilehash: ebb5a35f6ea9d93eab633b9f4e6c84e4fddd6ae8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1069e46aa586b8df2050129194a909b90f77b745
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028956"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737006"
 ---
 # <a name="the-isefile-object"></a>ISEFile-objektet
 
-Ett **ISEFile** -objekt representerar en fil i Windows POWERSHELL® Ise (Integrated Scripting Environment). Det är en instans av klassen Microsoft. PowerShell. Host. ISE. ISEFile. I det här avsnittet visas dess medlems metoder och medlems egenskaper. Filen **$psISE. CurrentFile** och filerna i samlingen filer på en PowerShell-flik är alla instanser av klassen Microsoft. PowerShell. Host. ISE. ISEFile.
+Ett **ISEFile** -objekt representerar en fil i Windows POWERSHELL® Ise (Integrated Scripting Environment). Det är en instans av klassen **Microsoft. PowerShell. Host. ISE. ISEFile** . I det här avsnittet visas dess medlems metoder och medlems egenskaper. `$psISE.CurrentFile` och filerna i samlingen filer på en PowerShell-flik är alla instanser av klassen * * * * Microsoft. PowerShell. Host. ISE. ISEFile * *.
 
 ## <a name="methods"></a>Metoder
 
@@ -69,7 +69,7 @@ $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Den skrivskyddade egenskapen som hämtar den sträng som innehåller visnings namnet för den här filen. Namnet visas på fliken **fil** överst i redigeraren. Förekomsten av en asterisk \(\*\) i slutet av namnet anger att filen har ändringar som inte har sparats.
+Den skrivskyddade egenskapen som hämtar den sträng som innehåller visnings namnet för den här filen. Namnet visas på fliken **fil** överst i redigeraren. Förekomsten av en asterisk `(*)` i slutet av namnet anger att filen har ändringar som inte har sparats.
 
 ```powershell
 # Shows the display name of the file.
@@ -113,7 +113,7 @@ $psISE.CurrentFile.FullPath
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Den skrivskyddade booleska egenskapen som returnerar **$True** om filen har sparats efter att den senast ändrades.
+Den skrivskyddade booleska egenskapen som returnerar `$true` om filen har sparats efter att den senast ändrades.
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.
@@ -125,7 +125,7 @@ $myfile.IsSaved
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Den skrivskyddade egenskapen som returnerar **$True** om filen aldrig har fått en rubrik.
+Den skrivskyddade egenskapen som returnerar `$true` om filen aldrig har fått en rubrik.
 
 ```powershell
 # Determines whether the file has never been given a title.

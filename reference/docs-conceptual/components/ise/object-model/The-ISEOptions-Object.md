@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: PowerShell, cmdlet
 title: ISEOptions-objektet
-ms.openlocfilehash: e9dcb13c14212ec4aec40a7f163e2ed56ceea6f9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9caa78a70cb837c755b2eff9af6ce0aa5dbb7452
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028918"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736955"
 ---
 # <a name="the-iseoptions-object"></a>ISEOptions-objektet
 
@@ -80,7 +80,7 @@ $psISE.Options.AutoSaveMinuteInterval = 3
 
 ### <a name="commandpanebackgroundcolor"></a>CommandPaneBackgroundColor
 
-Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE.  För senare versioner, se [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).
+Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE. För senare versioner, se [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).
 
 Anger bakgrunds färgen för kommando fönstret. Det är en instans av klassen **system. Windows. Media. Color** .
 
@@ -137,7 +137,9 @@ $psISE.Options.ConsolePaneTextBackgroundColor = 'pink'
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Anger färgerna i IntelliSense-tokens i Windows PowerShell ISE konsol fönstret. Den här egenskapen är ett Dictionary-objekt som innehåller namn/värde-par av tokens och färger för konsol fönstret. Om du vill ändra färgerna i IntelliSense-tokens i skript fönstret, se [TokenColors](#tokencolors). Information om hur du återställer färgerna till standardvärdena finns i [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors). Token-färger kan anges för följande: attribut, kommando, CommandArgument, CommandParameter, comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, member, ny rad, Number, Operator, position, StatementSeparator, sträng, typ, Okänd, variabel.
+Anger färgerna i IntelliSense-tokens i Windows PowerShell ISE konsol fönstret. Den här egenskapen är ett Dictionary-objekt som innehåller namn/värde-par av tokens och färger för konsol fönstret. Om du vill ändra färgerna i IntelliSense-tokens i skript fönstret, se [TokenColors](#tokencolors).
+Information om hur du återställer färgerna till standardvärdena finns i [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors).
+Token-färger kan anges för följande: attribut, kommando, CommandArgument, CommandParameter, comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, member, ny rad, Number, Operator, position, StatementSeparator, sträng, typ, Okänd, variabel.
 
 ```powershell
 # Sets the color of commands to green.
@@ -177,7 +179,9 @@ En samling egenskaper som anger de standardvärden som ska användas när åters
 ```powershell
 # Displays the name of the default options. This example is from ISE 4.0.
 $psISE.Options.DefaultOptions
+```
 
+```Output
 SelectedScriptPaneState                   : Top
 ShowDefaultSnippets                       : True
 ShowToolBar                               : True
@@ -263,7 +267,8 @@ $psISE.Options.FontSize = 20
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Anger hur många sekunder som IntelliSense använder för att försöka lösa den text som är skriven för tillfället. Efter det här antalet sekunder kan IntelliSense-tiden ta slut och du kan fortsätta att skriva. Standardvärdet är 3 sekunder. Värdet är ett heltal.
+Anger hur många sekunder som IntelliSense använder för att försöka lösa den text som är skriven för tillfället.
+Efter det här antalet sekunder kan IntelliSense-tiden ta slut och du kan fortsätta att skriva. Standardvärdet är 3 sekunder. Värdet är ett heltal.
 
 ```powershell
 # Changes the number of seconds for IntelliSense syntax recognition to 5.
@@ -283,7 +288,7 @@ $psISE.Options.MruCount = 5
 
 ### <a name="outputpanebackgroundcolor"></a>OutputPaneBackgroundColor
 
-Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE.  För senare versioner, se [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).
+Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE. För senare versioner, se [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).
 
 Egenskapen Läs/skriv som hämtar eller anger bakgrunds färgen för själva utdatafönstret. Det är en instans av klassen **system. Windows. Media. Color** .
 
@@ -294,7 +299,7 @@ $psISE.Options.OutputPaneForegroundColor = 'gold'
 
 ### <a name="outputpanetextforegroundcolor"></a>OutputPaneTextForegroundColor
 
-Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE.  För senare versioner, se [ConsolePaneForegroundColor](#consolepaneforegroundcolor).
+Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE. För senare versioner, se [ConsolePaneForegroundColor](#consolepaneforegroundcolor).
 
 Egenskapen Läs/skriv som ändrar förgrunds färgen för texten i fönstret utdata i Windows PowerShell ISE 2,0.
 
@@ -305,7 +310,7 @@ $psISE.Options.OutputPaneTextForegroundColor  = 'blue'
 
 ### <a name="outputpanetextbackgroundcolor"></a>OutputPaneTextBackgroundColor
 
-Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE.  För senare versioner, se [ConsolePaneTextBackgroundColor](#consolepanetextbackgroundcolor).
+Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE. För senare versioner, se [ConsolePaneTextBackgroundColor](#consolepanetextbackgroundcolor).
 
 Egenskapen Läs/skriv som ändrar bakgrunds färgen för texten i fönstret utdata.
 
@@ -356,7 +361,8 @@ $psISE.Options.SelectedScriptPaneState = 'Maximized'
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Anger om **Ctrl + J** -listan med kodfragment innehåller den Start uppsättning som ingår i Windows PowerShell. När det är inställt på **$false**visas bara användardefinierade kodfragment i listan **Ctrl + J** . Standardvärdet är **$True**.
+Anger om <kbd>CTRL</kbd>+<kbd>J</kbd> -listan över kodfragment innehåller den Start uppsättning som ingår i Windows PowerShell. När det är inställt på `$false`, visas bara användardefinierade kod avsnitt i den <kbd>CTRL</kbd>+<kbd>J</kbd> -listan.
+Standardvärdet är `$true`.
 
 ```powershell
 # Hide the default snippets from the CTRL+J list.
@@ -367,7 +373,8 @@ $psISE.Options.ShowDefaultSnippets = $false
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Anger om IntelliSense erbjuder syntax, parameter och värde förslag i konsol fönstret. Standardvärdet är **$True**.
+Anger om IntelliSense erbjuder syntax, parameter och värde förslag i konsol fönstret.
+Standardvärdet är `$true`.
 
 ```powershell
 # Turn off IntelliSense in the console pane.
@@ -378,7 +385,8 @@ $psISE.Options.ShowIntellisenseInConsolePane = $false
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Anger om IntelliSense erbjuder syntax, parameter och värde förslag i fönstret skript. Standardvärdet är **$True**.
+Anger om IntelliSense erbjuder syntax, parameter och värde förslag i fönstret skript.
+Standardvärdet är `$true`.
 
 ```powershell
 # Turn off IntelliSense in the Script pane.
@@ -389,7 +397,7 @@ $psISE.Options.ShowIntellisenseInScriptPane = $false
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Anger om fönstret skript visar rad nummer i vänstermarginalen. Standardvärdet är **$True**.
+Anger om fönstret skript visar rad nummer i vänstermarginalen. Standardvärdet är `$true`.
 
 ```powershell
 # Turn off line numbers in the Script pane.
@@ -400,7 +408,7 @@ $psISE.Options.ShowLineNumbers = $false
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Anger om skript fönstret visar expanderbara och komprimerbara hakparenteser bredvid avsnitt i kod i vänstermarginalen. När de visas kan du klicka på minus \(-\) ikoner bredvid ett textblock för att komprimera den eller klicka på plus \(+\) ikon för att expandera ett textblock. Standardvärdet är **$True**.
+Anger om skript fönstret visar expanderbara och komprimerbara hakparenteser bredvid avsnitt i kod i vänstermarginalen. När de visas kan du klicka på minus `-` ikonerna bredvid ett textblock för att komprimera den eller klicka på plus `+`-ikonen för att expandera ett textblock. Standardvärdet är `$true`.
 
 ```powershell
 # Turn off outlining in the Script pane.
@@ -411,7 +419,7 @@ $psISE.Options.ShowOutlining = $false
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Anger om ISE-verktygsfältet visas överst i Windows PowerShell ISEs fönstret. Standardvärdet är **$True**.
+Anger om ISE-verktygsfältet visas överst i Windows PowerShell ISEs fönstret. Standardvärdet är `$true`.
 
 ```powershell
 # Show the toolbar.
@@ -422,7 +430,8 @@ $psISE.Options.ShowToolBar = $true
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Anger om ett varnings meddelande visas när ett skript sparas automatiskt innan det körs. Standardvärdet är **$True**.
+Anger om ett varnings meddelande visas när ett skript sparas automatiskt innan det körs.
+Standardvärdet är `$true`.
 
 ```powershell
 # Enable the warning message when an attempt
@@ -434,7 +443,7 @@ $psISE.Options.ShowWarningBeforeSavingOnRun = $true
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Anger om ett varnings meddelande visas när samma fil öppnas i olika PowerShell-flikar. Om värdet är **$True**för att öppna samma fil på flera flikar visas följande meddelande: "en kopia av filen är öppen på en annan Windows PowerShell-flik. ändringar i den här filen kommer att påverka alla öppna kopior." Standardvärdet är **$True**.
+Anger om ett varnings meddelande visas när samma fil öppnas i olika PowerShell-flikar. Om värdet är `$true`för att öppna samma fil på flera flikar visas följande meddelande: "en kopia av filen är öppen på en annan Windows PowerShell-flik. ändringar i den här filen kommer att påverka alla öppna kopior." Standardvärdet är `$true`.
 
 ```powershell
 # Enable the warning message when a file is
@@ -446,7 +455,9 @@ $psISE.Options.ShowWarningForDuplicateFiles = $true
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Anger färgerna i IntelliSense-tokens i rutan Windows PowerShell ISE skript. Den här egenskapen är ett Dictionary-objekt som innehåller namn-/värdepar med token-typer och färger för skript fönstret. Om du vill ändra färgerna i IntelliSense-tokens i konsol fönstret, se [ConsoleTokenColors](#consoletokencolors). Information om hur du återställer färgerna till standardvärdena finns i [RestoreDefaultTokenColors](#restoredefaulttokencolors). Token-färger kan anges för följande: attribut, kommando, CommandArgument, CommandParameter, comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, member, ny rad, Number, Operator, position, StatementSeparator, sträng, typ, Okänd, variabel.
+Anger färgerna i IntelliSense-tokens i rutan Windows PowerShell ISE skript. Den här egenskapen är ett Dictionary-objekt som innehåller namn-/värdepar med token-typer och färger för skript fönstret. Om du vill ändra färgerna i IntelliSense-tokens i konsol fönstret, se [ConsoleTokenColors](#consoletokencolors).
+Information om hur du återställer färgerna till standardvärdena finns i [RestoreDefaultTokenColors](#restoredefaulttokencolors).
+Token-färger kan anges för följande: attribut, kommando, CommandArgument, CommandParameter, comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, member, ny rad, Number, Operator, position, StatementSeparator, sträng, typ, Okänd, variabel.
 
 ```powershell
 # Sets the color of commands to green.
@@ -459,7 +470,7 @@ $psISE.Options.TokenColors["Keyword"] = "magenta"
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Anger om du kan använda RETUR-tangenten för att välja ett IntelliSense-alternativ i konsol fönstret. Standardvärdet är **$True**.
+Anger om du kan använda RETUR-tangenten för att välja ett IntelliSense-alternativ i konsol fönstret. Standardvärdet är `$true`.
 
 ```powershell
 # Turn off using the ENTER key to select an IntelliSense provided option in the Console pane.
@@ -470,7 +481,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense = $false
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Anger om du kan använda RETUR-tangenten för att välja ett IntelliSense-alternativ i skript fönstret. Standardvärdet är **$True**.
+Anger om du kan använda RETUR-tangenten för att välja ett IntelliSense-alternativ i skript fönstret. Standardvärdet är `$true`.
 
 ```powershell
 # Turn on using the Enter key to select an IntelliSense provided option in the Console pane.
@@ -481,7 +492,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense = $true
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Anger om den lokalt installerade hjälpen eller online TechNet Library-hjälpen visas när du trycker på F1 med markören placerad i ett nyckelord. Om värdet är **$True**visar ett popup-fönster innehåll från den lokalt installerade hjälpen. Du kan installera hjälpfilerna genom att köra kommandot `Update-Help`. Om värdet är **$false**öppnas webbläsaren på en sida i TechNet-biblioteket.
+Anger om den lokalt installerade hjälpen eller online TechNet Library-hjälpen visas när du trycker på <kbd>F1</kbd> med markören placerad i ett nyckelord. Om värdet är `$true`visar ett popup-fönster innehåll från den lokalt installerade hjälpen. Du kan installera hjälpfilerna genom att köra kommandot `Update-Help`. Om värdet är `$false`öppnas webbläsaren på en sida i TechNet-biblioteket.
 
 ```powershell
 # Sets the option for the online help to be displayed.
@@ -547,11 +558,12 @@ $psISE.Options.XmlTokenColors["ElementName"] = 'green'
 $psISE.Options.XmlTokenColors["Comment"] = 'magenta'
 ```
 
-### <a name="zoom"></a>Zooma
+### <a name="zoom"></a>Zoom
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Anger den relativa storleken på text i både konsol-och skript fönstret. Standardvärdet är 100. Mindre värden gör att texten i Windows PowerShell ISE visas mindre medan större tal gör att texten blir större. Värdet är ett heltal som sträcker sig från 20 till 400.
+Anger den relativa storleken på text i både konsol-och skript fönstret. Standardvärdet är 100.
+Mindre värden gör att texten i Windows PowerShell ISE visas mindre medan större tal gör att texten blir större. Värdet är ett heltal som sträcker sig från 20 till 400.
 
 ```powershell
 # Changes the text in the Windows PowerShell ISE to be double its normal size.

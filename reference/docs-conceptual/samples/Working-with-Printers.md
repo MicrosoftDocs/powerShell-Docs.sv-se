@@ -1,24 +1,24 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/23/2019
 keywords: PowerShell, cmdlet
 title: Arbeta med skrivare
-ms.openlocfilehash: 816388325cc3155f1dbd1bc15fc1736155216092
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 47c4f230d023ad93e2b65080feaa1dbfae803d08
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030672"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736870"
 ---
-# <a name="working-with-printers"></a>Arbeta med skrivare
+# <a name="working-with-printers-in-windows"></a>Arbeta med skrivare i Windows
 
-Du kan använda Windows PowerShell för att hantera skrivare med hjälp av WMI och COM-objektet WScript. Network från WSH. Vi kommer att använda en kombination av båda verktygen för att demonstrera vissa uppgifter.
+Du kan använda PowerShell för att hantera skrivare med hjälp av WMI och com-objektet **wscript. Network** från WSH. Vi kommer att använda en kombination av båda verktygen för att demonstrera vissa uppgifter.
 
 ## <a name="listing-printer-connections"></a>Lista skrivar anslutningar
 
 Det enklaste sättet att lista de skrivare som är installerade på en dator är att använda WMI- **Win32_Printer** -klassen:
 
 ```powershell
-Get-WmiObject -Class Win32_Printer
+Get-CimInstance -Class Win32_Printer
 ```
 
 Du kan också lista skrivare med hjälp av **wscript. Network** com-objektet som vanligt vis används i WSH-skript:
@@ -42,7 +42,7 @@ Om du vill lägga till en ny nätverks skrivare använder du **wscript. Network*
 Om du vill använda WMI för att ange standard skrivare letar du upp skrivaren i den **Win32_Printer** samlingen och anropar sedan metoden **SetDefaultPrinter** :
 
 ```powershell
-(Get-WmiObject -ComputerName . -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'").SetDefaultPrinter()
+(Get-CimInstance -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'").SetDefaultPrinter()
 ```
 
 **Wscript. Network** är lite enklare att använda, eftersom det har en **SetDefaultPrinter** -metod som bara tar skrivar namnet som ett argument:

@@ -2,12 +2,12 @@
 ms.date: 08/14/2018
 keywords: PowerShell, cmdlet
 title: Introducerar Windows PowerShell ISE
-ms.openlocfilehash: 1723c11f38966cfffec9a6b3e4cb7b2304f19e7a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3e4471d0982ba4d7ef1a9d59906a9ff297f6f7cb
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416282"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736206"
 ---
 # <a name="the-windows-powershell-ise"></a>Windows PowerShell ISE
 

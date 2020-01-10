@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: PowerShell, cmdlet
 title: ISEMenuItemCollection-objektet
-ms.openlocfilehash: b3795af1a6ed61ed6e371e5fc20cc4e95f643fd4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 39e8547c9b19ba323d4b224a46eda416542b2807
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030541"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736180"
 ---
 # <a name="the-isemenuitemcollection-object"></a>ISEMenuItemCollection-objektet
 
-Ett **ISEMenuItemCollection** -objekt är en samling av **ISEMenuItem** -objekt. Det är en instans av klassen Microsoft. PowerShell. Host. ISE. ISEMenuItemCollection. Ett exempel är objektet **$psISE. CurrentPowerShellTab. AddOnsMenu. undermenyer** som används för att anpassa **tilläggs** menyn i Windows PowerShell® Integrated Scripting Environment (ISE).
+Ett **ISEMenuItemCollection** -objekt är en samling av **ISEMenuItem** -objekt. Det är en instans av klassen **Microsoft. PowerShell. Host. ISE. ISEMenuItemCollection** . Ett exempel är `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus`-objektet som används för att anpassa **tilläggs** menyn i Windows PowerShell® Integrated Scripting Environment (ISE).
 
 ## <a name="method"></a>Metod
 
@@ -27,7 +27,7 @@ Lägger till ett meny alternativ i samlingen.
 
 **Genväg** Kortkommandot för åtgärden.
 
-**Returnerar** Det ISEMenuItem-objekt som nyss lades till.
+**Returnerar** Det **ISEMenuItem** -objekt som nyss lades till.
 
 ```powershell
 # Create an Add-ons menu with an fast access key and a shortcut.

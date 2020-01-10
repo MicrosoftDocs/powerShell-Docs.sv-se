@@ -2,23 +2,24 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Villkorssatser och slingor i konfigurationer
-ms.openlocfilehash: 0073d94d28afbb45bb635442129a6cddde4c805a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 86f75be4a3d1c1760dd6269335431e8ab9fd8d09
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71942036"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736904"
 ---
-# <a name="conditional-statements-and-loops-in-configurations"></a>Villkorssatser och slingor i konfigurationer
+# <a name="conditional-statements-and-loops-in-a-configuration"></a>Villkors uttryck och slingor i en konfiguration
 
-Du kan göra dina [konfigurationer](configurations.md) mer dynamiska med PowerShell-flödes kontroll nyckelord. I den här artikeln visas hur du kan använda villkors satser och slingor för att göra dina konfigurationer mer dynamiska. Genom att kombinera villkorliga och slingor med [parametrar](add-parameters-to-a-configuration.md) och [konfigurations data](configData.md) kan du öka flexibiliteten och kontrollen när du kompilerar dina konfigurationer.
+Du kan göra [konfigurationen](configurations.md) mer dynamisk med hjälp av PowerShell Flow-Control-nyckelord. Den här artikeln visar hur du kan använda villkorliga uttryck och slingor för att göra `Configuration` mer dynamisk. Genom att kombinera villkorliga uttryck och slingor med [parametrar](add-parameters-to-a-configuration.md) och [konfigurations data](configData.md) kan du öka flexibiliteten och kontrollen när du kompilerar `Configuration`.
 
-Precis som en funktion eller ett skript block kan du använda valfritt PowerShell-språk i en konfiguration. De instruktioner du använder utvärderas bara när du anropar konfigurationen för att kompilera en ". MOF"-fil. I exemplen nedan visas enkla scenarier för att demonstrera koncept. Villkorliger är slingor som ofta används med parametrar och konfigurations data.
+Precis som en funktion eller ett skript block kan du använda valfri PowerShell-språkfunktion i en `Configuration`.
+De instruktioner du använder utvärderas bara när du anropar `Configuration` för att kompilera en `.mof`-fil. I exemplen nedan visas scenarier för att demonstrera koncept. Villkors uttryck och slingor används oftare med parametrar och konfigurations data.
 
-I det här enkla exemplet hämtar **tjänst** resurs blocket det aktuella läget för en tjänst vid kompileringen för att generera en ". MOF"-fil som upprätthåller dess aktuella tillstånd.
+I det här exemplet hämtar **tjänst** resurs blocket det aktuella läget för en tjänst vid kompileringen för att skapa en `.mof`-fil som upprätthåller dess aktuella tillstånd.
 
 > [!NOTE]
-> Om du använder dynamiska resurs block blockeras effektiviteten i IntelliSense. PowerShell-parsern kan inte avgöra om de angivna värdena är acceptabla tills konfigurationen kompileras.
+> Om du använder dynamiska resurs block blockeras effektiviteten i IntelliSense. PowerShell-parsern kan inte avgöra om de angivna värdena är acceptabla tills `Configuration` kompileras.
 
 ```powershell
 Configuration ServiceState
@@ -37,7 +38,7 @@ Configuration ServiceState
 }
 ```
 
-Dessutom kan du skapa en **tjänst** block resurs för varje tjänst på den aktuella datorn med hjälp av en `foreach` slinga.
+Dessutom kan du skapa ett **tjänst** resurs block för varje tjänst på den aktuella datorn med hjälp av en `foreach`-slinga.
 
 ```powershell
 Configuration ServiceState
@@ -46,7 +47,7 @@ Configuration ServiceState
     Import-DSCResource -Name Service -Module PSDesiredStateConfiguration
     Node localhost
     {
-        Foreach ($service in $(Get-Service))
+        foreach ($service in $(Get-Service))
         {
             Service $service.Name
             {
@@ -59,7 +60,7 @@ Configuration ServiceState
 }
 ```
 
-Du kan också bara skapa konfigurationer för datorer som är online genom att använda ett enkelt `if`-uttryck.
+Du kan också skapa en `Configuration` endast för datorer som är online genom att använda en `if`-instruktion.
 
 ```powershell
 Configuration ServiceState
@@ -67,7 +68,7 @@ Configuration ServiceState
     # It is best practice to explicitly import any resources used in your Configurations.
     Import-DSCResource -Name Service -Module PSDesiredStateConfiguration
 
-    Foreach ($computer in @('Server01', 'Server02', 'Server03'))
+    foreach ($computer in @('Server01', 'Server02', 'Server03'))
     {
         if (Test-Connection -ComputerName $computer)
         {
@@ -85,7 +86,7 @@ Configuration ServiceState
 ```
 
 > [!NOTE]
-> De dynamiska resurs blocken i ovanstående exempel hänvisar till den aktuella datorn. I den här instansen skulle det vara den dator du redigerar konfigurationen på, inte målnoden.
+> De dynamiska resurs blocken i ovanstående exempel hänvisar till den aktuella datorn. I den här instansen skulle det vara den dator du redigerar `Configuration` på, inte målnoden.
 
 <!---
 Mention Get-DSCConfigurationFromSystem
@@ -93,7 +94,7 @@ Mention Get-DSCConfigurationFromSystem
 
 ## <a name="summary"></a>Sammanfattning
 
-I sammanfattning kan du använda valfritt PowerShell-språk i en konfiguration.
+Sammanfattnings vis kan du använda valfri PowerShell-språkfunktion i en `Configuration`.
 
 Detta inkluderar sådant som:
 
@@ -105,7 +106,7 @@ Detta inkluderar sådant som:
 - ActiveDirectory-objekt
 - med flera...
 
-Alla PowerShell-koder som definierats i en konfiguration utvärderas som en kompileringstid, men du kan också placera kod i skriptet som innehåller konfigurationen. All kod utanför konfigurations blocket körs när du importerar konfigurationen.
+Alla PowerShell-koder som definieras i en `Configuration` utvärderas vid kompilering, men du kan också placera kod i skriptet som innehåller din `Configuration`. All kod utanför `Configuration` blocket körs när du importerar `Configuration`.
 
 ## <a name="see-also"></a>Se även
 
