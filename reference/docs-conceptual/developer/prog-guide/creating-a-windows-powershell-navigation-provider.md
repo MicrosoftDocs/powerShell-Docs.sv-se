@@ -1,22 +1,14 @@
 ---
-title: Skapa en Windows PowerShell-navigerings leverantör | Microsoft Docs
-ms.custom: ''
+title: Skapa en Windows PowerShell-navigeringsprovider
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- navigation providers [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
-caps.latest.revision: 5
-ms.openlocfilehash: f73e732ca9416b906b3647c5090dfa04ad940484
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 96a9167019c047bb9c6e56362b2c1110ece553dd
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416193"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870701"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Skapa en Windows PowerShell-navigeringsprovider
 
@@ -24,10 +16,7 @@ I det här avsnittet beskrivs hur du skapar en Windows PowerShell-navigerings le
 
 > [!NOTE]
 > Du kan ladda ned C# käll filen (AccessDBSampleProvider05.CS) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
-> De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** .
->
-> Mer information om implementeringar av andra Windows PowerShell-leverantörer finns i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md).
+> De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** . Mer information om implementeringar av andra Windows PowerShell-leverantörer finns i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md).
 
 Leverantören som beskrivs här aktiverar användaren som hanterar en Access-databas som en enhet så att användaren kan navigera till data tabellerna i databasen. När du skapar en egen navigerings leverantör kan du implementera metoder som kan göra enhets kvalificerade sökvägar nödvändiga för navigering, normalisera relativa sökvägar, flytta objekt i data lagret, samt metoder som får underordnade namn, hämta den överordnade sökvägen till ett objekt och testa för att identifiera om ett objekt är en behållare.
 
@@ -38,7 +27,8 @@ Leverantören som beskrivs här aktiverar användaren som hanterar en Access-dat
 
 En Windows PowerShell-navigerings leverantör måste skapa en .NET-klass som härleds från Bask Lassen [system. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) . Här är klass definitionen för den navigerings leverantör som beskrivs i det här avsnittet.
 
-[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32 "AccessDBProviderSample05.cs")]
+[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32
+"AccessDBProviderSample05.cs")]
 
 Observera att i den här providern innehåller attributet [system. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) två parametrar. Den första parametern anger ett användarvänligt namn för den provider som används av Windows PowerShell. Den andra parametern anger de Windows PowerShell-funktioner som providern exponerar för Windows PowerShell-körningsmiljön under kommando bearbetning. Det finns inga Windows PowerShell-funktioner som har lagts till för den här providern.
 
@@ -77,7 +67,8 @@ Följande villkor kan gälla för din implementering av [system. Management. Aut
 
 Windows PowerShell-navigerings leverantörer implementerar metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Getparentpath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath) för att hämta den överordnade delen av den angivna fullständiga eller delvis providerspecifika sökvägen. Metoden tar bort den underordnade delen av sökvägen och returnerar den överordnade Sök vägs delen. Parametern `root` anger den fullständigt kvalificerade sökvägen till roten på en enhet. Den här parametern kan vara null eller tom om en monterad enhet inte används för hämtnings åtgärden. Om en rot anges måste metoden returnera en sökväg till en behållare i samma träd som roten.
 
-Exempel navigerings leverantören åsidosätter inte den här metoden, men använder standard implementeringen. Den accepterar sökvägar som använder både "/" och "\\" som Sök vägs avgränsare. Det normaliserar först sökvägen till att bara ha "\\"-avgränsare och delar sedan upp den överordnade sökvägen på den sista "\\" och returnerar den överordnade sökvägen.
+Exempel navigerings leverantören åsidosätter inte den här metoden, men använder standard implementeringen.
+Den accepterar sökvägar som använder både "/" och "\\" som Sök vägs avgränsare. Det normaliserar först sökvägen till att bara ha "\\"-avgränsare och delar sedan upp den överordnade sökvägen på den sista "\\" och returnerar den överordnade sökvägen.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetparentpath](Msh_samplestestcmdlets#testprovidergetparentpath)]  -->
 
@@ -126,7 +117,8 @@ Din navigerings leverantörs .NET-klass kan deklarera leverantörs funktioner i 
 
 Åsidosättningar av den här metoden bör som standard inte flytta objekt över befintliga objekt om inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) anges till `true`. Till exempel kommer inte fil Systems leverantören att kopiera c:\temp\abc.txt över en befintlig c:\bar.txt-fil om inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) anges till `true`. Om sökvägen som anges i parametern `destination` finns och är en behållare, krävs inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) . I det här fallet ska [system. Management. Automation. Provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) flytta objektet som anges av parametern `path` till den behållare som anges av parametern `destination` som underordnad.
 
-Din implementering av metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) ska anropa [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och kontrol lera dess retur värde innan du gör några ändringar i data lagret. Den här metoden används för att bekräfta körning av en åtgärd när en ändring görs i system tillstånd, t. ex. borttagning av filer. [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) skickar namnet på den resurs som ska ändras till användaren, med Windows PowerShell-körningsmiljön med hänsyn till eventuella kommando rads inställningar eller variabler för att fastställa vad som ska visas för användaren.
+Din implementering av metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) ska anropa [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och kontrol lera dess retur värde innan du gör några ändringar i data lagret. Den här metoden används för att bekräfta körning av en åtgärd när en ändring görs i system tillstånd, t. ex. borttagning av filer.
+[System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) skickar namnet på den resurs som ska ändras till användaren, med Windows PowerShell-körningsmiljön med hänsyn till eventuella kommando rads inställningar eller variabler för att fastställa vad som ska visas för användaren.
 
 Efter att anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar `true`, ska metoden system [. Management. Automation. Provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) anropa metoden [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Den här metoden skickar ett meddelande till användaren för att ge feedback till att säga om åtgärden bör fortsätta. Leverantören bör anropa [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) som en ytterligare kontroll för potentiellt skadliga system ändringar.
 
@@ -156,11 +148,11 @@ Fullständig exempel kod finns i [kod exemplet för AccessDbProviderSample05](./
 
 ## <a name="defining-object-types-and-formatting"></a>Definiera objekt typer och formatering
 
-Det är möjligt för en provider att lägga till medlemmar i befintliga objekt eller definiera nya objekt. Mer information finns i[utöka objekt typer och formatering](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Det är möjligt för en provider att lägga till medlemmar i befintliga objekt eller definiera nya objekt. Mer information finns i[utöka objekt typer och formatering](/previous-versions/ms714665(v=vs.85)).
 
 ## <a name="building-the-windows-powershell-provider"></a>Skapa Windows PowerShell-providern
 
-Mer information finns i [så här registrerar du cmdlets, providers och värd program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Mer information finns i [så här registrerar du cmdlets, providers och värd program](/previous-versions/ms714644(v=vs.85)).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Testa Windows PowerShell-providern
 
@@ -178,7 +170,7 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
    Get-ChildItem | Format-Table rowcount,name -AutoSize
    ```
 
-   ```output
+   ```Output
    RowCount   Name
    --------   ----
         180   MSysAccessObjects
@@ -211,7 +203,7 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
    Get-Location
    ```
 
-   ```output
+   ```Output
    Path
    ----
    mydb:\Employees
@@ -223,7 +215,7 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
    Get-ChildItem | Format-Table rownumber,psiscontainer,data -AutoSize
    ```
 
-   ```output
+   ```Output
    RowNumber   PSIsContainer   Data
    ---------   --------------   ----
    0           False            System.Data.DataRow
@@ -243,7 +235,7 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
    Get-Item 0
    ```
 
-   ```output
+   ```Output
    PSPath        : AccessDB::C:\PS\Northwind.mdb\Employees\0
    PSParentPath  : AccessDB::C:\PS\Northwind.mdb\Employees
    PSChildName   : 0
@@ -260,7 +252,7 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
    (Get-Item 0).data
    ```
 
-   ```output
+   ```Output
    EmployeeID      : 1
    LastName        : Davis
    FirstName       : Sara
@@ -290,11 +282,11 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
 
 [Utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md)
 
-[Utöka objekt typer och formatering](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Utöka objekt typer och formatering](/previous-versions/ms714665(v=vs.85))
 
 [Implementera en container Windows PowerShell-Provider](./creating-a-windows-powershell-container-provider.md)
 
-[Registrera cmdlets, providers och värd program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Registrera cmdlets, providers och värd program](/previous-versions/ms714644(v=vs.85))
 
 [Windows PowerShell Programmer ' s guide](./windows-powershell-programmer-s-guide.md)
 

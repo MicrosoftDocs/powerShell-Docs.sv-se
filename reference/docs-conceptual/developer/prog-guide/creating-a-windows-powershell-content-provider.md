@@ -1,22 +1,14 @@
 ---
-title: Skapa en Windows PowerShell-innehålls leverantör | Microsoft Docs
-ms.custom: ''
+title: Skapa en Windows PowerShell-innehållsprovider
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- content providers [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
-caps.latest.revision: 6
-ms.openlocfilehash: 4afe0370f7a2c5b17826544e94e76650611c9d68
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2d48c18cb41dcca372b1e12e1f3abc4c3f5e4bee
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417500"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870735"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Skapa en Windows PowerShell-innehållsprovider
 
@@ -24,16 +16,14 @@ I det här avsnittet beskrivs hur du skapar en Windows PowerShell-provider som g
 
 > [!NOTE]
 > Du kan ladda ned C# käll filen (AccessDBSampleProvider06.CS) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
-> De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** .
->
-> Mer information om implementeringar av andra Windows PowerShell-leverantörer finns i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md).
+> De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** . Mer information om implementeringar av andra Windows PowerShell-leverantörer finns i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md).
 
 ## <a name="define-the-windows-powershell-content-provider-class"></a>Definiera klassen för innehålls leverantörer för Windows PowerShell
 
 En Windows PowerShell innehålls leverantör måste skapa en .NET-klass som stöder [system. Management. Automation. Provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) -gränssnittet. Här är klass definitionen för den artikel leverantör som beskrivs i det här avsnittet.
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L32-L33 "AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L32-L33
+"AccessDBProviderSample06.cs")]
 
 Observera att i den här klass definitionen innehåller attributet [system. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) två parametrar. Den första parametern anger ett användarvänligt namn för den provider som används av Windows PowerShell. Den andra parametern anger de Windows PowerShell-funktioner som providern exponerar för Windows PowerShell-körningsmiljön under kommando bearbetning. För den här providern finns det inga Windows PowerShell-funktioner som har lagts till.
 
@@ -41,7 +31,8 @@ Observera att i den här klass definitionen innehåller attributet [system. Mana
 
 Enligt beskrivningen i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md)härleds klassen [system. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) från flera andra klasser som tillhandahöll olika funktioner i providern. En Windows PowerShell-innehålls leverantör definierar därför vanligt vis alla funktioner som tillhandahålls av dessa klasser.
 
-Mer information om hur du implementerar funktioner för att lägga till datorspecifik initierings information och för att frigöra resurser som används av providern finns i [skapa en grundläggande Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md). De flesta leverantörer, inklusive providern som beskrivs här, kan dock använda standard implementeringen av den här funktionen som tillhandahålls av Windows PowerShell.
+Mer information om hur du implementerar funktioner för att lägga till datorspecifik initierings information och för att frigöra resurser som används av providern finns i [skapa en grundläggande Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md).
+De flesta leverantörer, inklusive providern som beskrivs här, kan dock använda standard implementeringen av den här funktionen som tillhandahålls av Windows PowerShell.
 
 För att få åtkomst till data lagret måste providern implementera metoderna i Bask Lassen [system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . Mer information om hur du implementerar dessa metoder finns i [skapa en provider för Windows PowerShell-enheter](./creating-a-windows-powershell-drive-provider.md).
 
@@ -53,13 +44,16 @@ För att stödja rekursiva kommandon, kapslade behållare och relativa sökväga
 
 ## <a name="implementing-a-content-reader"></a>Implementera en innehålls läsare
 
-Om du vill läsa innehåll från ett objekt måste en provider implementera en innehålls läsar klass som är härledd från [system. Management. Automation. Provider. Icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader). Innehålls läsaren för den här providern ger åtkomst till innehållet i en rad i en data tabell. Klassen Content Reader definierar en **Read** -metod som hämtar data från den angivna raden och returnerar en lista som representerar data, en **Sök** metod som flyttar innehålls läsaren, en **stängnings** metod som stänger innehålls läsaren och en **dispose** -metod.
+Om du vill läsa innehåll från ett objekt måste en provider implementera en innehålls läsar klass som är härledd från [system. Management. Automation. Provider. Icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader).
+Innehålls läsaren för den här providern ger åtkomst till innehållet i en rad i en data tabell. Klassen Content Reader definierar en **Read** -metod som hämtar data från den angivna raden och returnerar en lista som representerar data, en **Sök** metod som flyttar innehålls läsaren, en **stängnings** metod som stänger innehålls läsaren och en **dispose** -metod.
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2115-L2241 "AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2115-L2241
+"AccessDBProviderSample06.cs")]
 
 ## <a name="implementing-a-content-writer"></a>Implementera en innehålls skrivare
 
-Om du vill skriva innehåll till ett objekt måste en provider implementera klassen innehålls skrivare härleds från [system. Management. Automation. Provider. Icontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter). Klassen Content Writer definierar en **Skriv** metod som skriver det angivna rad innehållet, en **Sök** metod som flyttar innehålls skrivaren, en **stängnings** metod som stänger innehålls skrivaren och en **dispose** -metod.
+Om du vill skriva innehåll till ett objekt måste en provider implementera klassen innehålls skrivare härleds från [system. Management. Automation. Provider. Icontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter).
+Klassen Content Writer definierar en **Skriv** metod som skriver det angivna rad innehållet, en **Sök** metod som flyttar innehålls skrivaren, en **stängnings** metod som stänger innehålls skrivaren och en **dispose** -metod.
 
 [!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2250-L2394 "AccessDBProviderSample06.cs")]
 
@@ -201,11 +195,11 @@ Fullständig exempel kod finns i [kod exemplet för AccessDbProviderSample06](./
 
 ## <a name="defining-object-types-and-formatting"></a>Definiera objekt typer och formatering
 
-När du skriver en provider kan det vara nödvändigt att lägga till medlemmar i befintliga objekt eller definiera nya objekt. När detta är färdigt måste du skapa en typ fil som Windows PowerShell kan använda för att identifiera medlemmar i objektet och en format fil som definierar hur objektet visas. Mer information finns i [utöka objekt typer och formatering](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+När du skriver en provider kan det vara nödvändigt att lägga till medlemmar i befintliga objekt eller definiera nya objekt. När detta är färdigt måste du skapa en typ fil som Windows PowerShell kan använda för att identifiera medlemmar i objektet och en format fil som definierar hur objektet visas. Mer information finns i [utöka objekt typer och formatering](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-windows-powershell-provider"></a>Skapa Windows PowerShell-providern
 
-Se [hur du registrerar cmdlets, providers och värd program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Se [hur du registrerar cmdlets, providers och värd program](/previous-versions/ms714644(v=vs.85)).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Testa Windows PowerShell-providern
 
@@ -217,7 +211,7 @@ Använd `Get-Content`-cmdlet för att hämta innehållet i det angivna objektet 
 Get-Content -Path mydb:\Customers -ReadCount 2
 ```
 
-```output
+```Output
 ID        : 1
 FirstName : Eric
 LastName  : Gruber
@@ -250,11 +244,11 @@ Country   : USA
 
 [Utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md)
 
-[Utöka objekt typer och formatering](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Utöka objekt typer och formatering](/previous-versions//ms714665(v=vs.85))
 
 [Implementera en Windows PowerShell-Provider för navigering](./creating-a-windows-powershell-navigation-provider.md)
 
-[Registrera cmdlets, providers och värd program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Registrera cmdlets, providers och värd program](/previous-versions/ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 

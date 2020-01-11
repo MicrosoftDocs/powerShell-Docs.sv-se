@@ -2,12 +2,12 @@
 ms.date: 10/11/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: Desired State Configuration-översikt för beslutsfattare
-ms.openlocfilehash: b6d483d105c2d3b9be7215be36397d452338c7f1
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: bb73ee8fe636272f99989aa45712fe34fedad617
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75737261"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870803"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Översikt över önskad tillstånds konfiguration för besluts fattare
 
@@ -38,7 +38,7 @@ Konfigurationer är [data drivna](../configurations/configData.md). De definiera
 ## <a name="dsc-on-premises-and-off-premises"></a>DSC lokalt och lokalt
 
 DSC kan hantera lokala och lokala distributioner. För lokala lösningar har DSC en [pull-server](../pull-server/pullServer.md) som används för att centralisera hanteringen av datorer och rapportera om deras status. För lokala moln lösningar kan DSC användas, vilket innebär att det går att använda Windows.
-Det finns vissa erbjudanden från Azure byggd på DSC, till exempel [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/), som centraliserar DSC-rapporter.
+Det finns vissa erbjudanden från Azure byggd på DSC, till exempel [Azure Automation](/azure/automation), som centraliserar DSC-rapporter.
 
 ## <a name="dsc-and-compatibility"></a>DSC och kompatibilitet
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: fcb03d4021f00837095ce703beb0d841233391d6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 69e45de4220a234783d35a877116ad5a5e47d182
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416209"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870786"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Skapa en Windows PowerShell-containerprovider
 
@@ -26,10 +26,7 @@ Leverantörer som kan arbeta med data lager på flera nivåer kallas Windows Pow
 
 > [!NOTE]
 > Du kan ladda ned C# käll filen (AccessDBSampleProvider04.CS) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
-> De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** .
->
-> Mer information om implementeringar av andra Windows PowerShell-leverantörer finns i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md).
+> De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** . Mer information om implementeringar av andra Windows PowerShell-leverantörer finns i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md).
 
 Windows PowerShell container-providern som beskrivs här definierar databasen som dess enda behållare, med tabeller och rader i databasen som definierats som objekt i behållaren.
 
@@ -41,8 +38,8 @@ Windows PowerShell container-providern som beskrivs här definierar databasen so
 En Windows PowerShell container-Provider måste definiera en .NET-klass som är härledd från Bask Lassen [system. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) . Här är klass definitionen för Windows PowerShell container-providern som beskrivs i det här avsnittet.
 
 ```csharp
-   [CmdletProvider("AccessDB", ProviderCapabilities.None)]
-   public class AccessDBProvider : ContainerCmdletProvider
+[CmdletProvider("AccessDB", ProviderCapabilities.None)]
+public class AccessDBProvider : ContainerCmdletProvider
 ```
 
 [!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L34-L35 "AccessDBProviderSample04.cs")]
@@ -53,7 +50,8 @@ Observera att i den här klass definitionen innehåller attributet [system. Mana
 
 Enligt beskrivningen i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md)härleds klassen [system. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) från flera andra klasser som tillhandahöll olika funktioner i providern. En Windows PowerShell container-Provider måste därför definiera alla funktioner som tillhandahålls av dessa klasser.
 
-Om du vill implementera funktioner för att lägga till datorspecifik initierings information och släppa resurser som används av providern, se [skapa en grundläggande Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md). De flesta leverantörer (inklusive providern som beskrivs här) kan dock använda standard implementeringen av den här funktionen som tillhandahålls av Windows PowerShell.
+Om du vill implementera funktioner för att lägga till datorspecifik initierings information och släppa resurser som används av providern, se [skapa en grundläggande Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md).
+De flesta leverantörer (inklusive providern som beskrivs här) kan dock använda standard implementeringen av den här funktionen som tillhandahålls av Windows PowerShell.
 
 För att få åtkomst till data lagret måste providern implementera metoderna i Bask Lassen [system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . Mer information om hur du implementerar dessa metoder finns i [skapa en provider för Windows PowerShell-enheter](./creating-a-windows-powershell-drive-provider.md).
 
@@ -231,11 +229,13 @@ Följande villkor kan gälla för din implementering av [system. Management. Aut
 
 - När du definierar Provider-klassen kan en Windows PowerShell container-Provider deklarera ExpandWildcards, filtrera, ta med eller undanta från, från [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -uppräkningen. I dessa fall måste implementeringen av metoden [system. Management. Automation. Provider. Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) se till att den sökväg som skickas till metoden uppfyller kraven för de angivna funktionerna. För att göra detta ska metoden komma åt lämplig egenskap, till exempel [system. Management. Automation. Provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) och [system. Management. Automation. Provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) egenskaper.
 
-- Metoden [system. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) är avsedd för att ändra namnet på ett objekt och inte för flytt åtgärder. Din implementering av metoden ska skriva ett fel om parametern `newName` innehåller Sök vägs avgränsare eller om det annars skulle medföra att objektet ändrar dess överordnade plats.
+- Metoden [system. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) är avsedd för att ändra namnet på ett objekt och inte för flytt åtgärder.
+  Din implementering av metoden ska skriva ett fel om parametern `newName` innehåller Sök vägs avgränsare eller om det annars skulle medföra att objektet ändrar dess överordnade plats.
 
 - Åsidosättningar av den här metoden bör som standard inte byta namn på objekt om inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) anges. Om den angivna sökvägen indikerar en behållare krävs inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) .
 
-- Din implementering av metoden [system. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) ska anropa [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och kontrol lera dess retur värde innan du gör några ändringar i data lagret. Den här metoden används för att bekräfta körning av en åtgärd när en ändring görs i system tillstånd, till exempel att byta namn på filer. [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) skickar namnet på resursen som ska ändras till användaren, med Windows PowerShell-körningsmiljön med hänsyn till eventuella kommando rads inställningar eller variabler för att fastställa vad som ska visas.
+- Din implementering av metoden [system. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) ska anropa [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och kontrol lera dess retur värde innan du gör några ändringar i data lagret. Den här metoden används för att bekräfta körning av en åtgärd när en ändring görs i system tillstånd, till exempel att byta namn på filer.
+  [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) skickar namnet på resursen som ska ändras till användaren, med Windows PowerShell-körningsmiljön med hänsyn till eventuella kommando rads inställningar eller variabler för att fastställa vad som ska visas.
 
   Efter att anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar `true`, ska metoden system [. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) anropa metoden [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Den här metoden skickar ett meddelande till användaren för att tillåta ytterligare feedback för att säga om åtgärden bör fortsätta. En provider bör anropa [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) som ytterligare kontroll för potentiellt skadliga system ändringar.
 
@@ -254,8 +254,7 @@ För att kunna skapa nya objekt måste en container leverantör implementera met
 Här är implementeringen av metoden [system. Management. Automation. Provider. Containercmdletprovider. NewItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) för den här providern.
 
 ```csharp
-protected override void NewItem( string path, string type,
-                                 object newItemValue )
+protected override void NewItem( string path, string type, object newItemValue )
 {
     // Create the new item here after
     // performing necessary validations
@@ -279,7 +278,8 @@ protected override void NewItem( string path, string type,
 
 Följande villkor kan gälla för din implementering av [system. Management. Automation. Provider. Containercmdletprovider. NewItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem):
 
-- Metoden [system. Management. Automation. Provider. Containercmdletprovider. NewItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) måste utföra en Skift läges okänslig jämförelse av strängen som skickas i `type`-parametern. Den bör också tillåta minst tvetydiga matchningar. För typerna "File" och "Directory" krävs till exempel bara den första bokstaven i disambiguate. Om parametern `type` anger en typ som providern inte kan skapa, ska metoden [system. Management. Automation. Provider. Containercmdletprovider. NewItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) skriva en ArgumentException med ett meddelande som anger vilka typer som providern kan skapa.
+- Metoden [system. Management. Automation. Provider. Containercmdletprovider. NewItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) måste utföra en Skift läges okänslig jämförelse av strängen som skickas i `type`-parametern.
+  Den bör också tillåta minst tvetydiga matchningar. För typerna "File" och "Directory" krävs till exempel bara den första bokstaven i disambiguate. Om parametern `type` anger en typ som providern inte kan skapa, ska metoden [system. Management. Automation. Provider. Containercmdletprovider. NewItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) skriva en ArgumentException med ett meddelande som anger vilka typer som providern kan skapa.
 
 - För parametern `newItemValue` rekommenderas implementering av metoden [system. Management. Automation. Provider. Containercmdletprovider. NewItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) för att acceptera strängarna. Det bör också acceptera den typ av objekt som hämtas av metoden [system. Management. Automation. Provider. Itemcmdletprovider. getItem, *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) för samma sökväg. Metoden [system. Management. Automation. Provider. Containercmdletprovider. NewItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) kan använda metoden [system. Management. Automation. Languageprimitives. ConvertTo *](/dotnet/api/System.Management.Automation.LanguagePrimitives.ConvertTo) för att konvertera typer till önskad typ.
 
@@ -376,7 +376,7 @@ Fullständig exempel kod finns i [kod exemplet för AccessDbProviderSample04](./
 
 ## <a name="building-the-windows-powershell-provider"></a>Skapa Windows PowerShell-providern
 
-Se [hur du registrerar cmdlets, providers och värd program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Se [hur du registrerar cmdlets, providers och värd program](/previous-versions/ms714644(v=vs.85)).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Testa Windows PowerShell-providern
 
@@ -456,7 +456,8 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
    Fax          : (425) 555-0101
    ```
 
-5. Använd nu `New-Item` cmdlet för att lägga till en rad i en befintlig tabell. Parametern `Path` anger den fullständiga sökvägen till raden och måste ange ett rad nummer som är större än det befintliga antalet rader i tabellen. Parametern `Type` anger "rad" för att ange den typ av objekt som ska läggas till. Slutligen anger parametern `Value` en kommaavgränsad lista med kolumn värden för raden.
+5. Använd nu `New-Item` cmdlet för att lägga till en rad i en befintlig tabell. Parametern `Path` anger den fullständiga sökvägen till raden och måste ange ett rad nummer som är större än det befintliga antalet rader i tabellen. Parametern `Type` anger "rad" för att ange den typ av objekt som ska läggas till.
+   Slutligen anger parametern `Value` en kommaavgränsad lista med kolumn värden för raden.
 
    ```powershell
    New-Item -Path mydb:\Customers\3 -ItemType "row" -Value "3,CustomerFirstName,CustomerLastName,CustomerEmailAddress,CustomerTitle,CustomerCompany,CustomerPhone, CustomerAddress,CustomerCity,CustomerState,CustomerZip,CustomerCountry"
@@ -496,7 +497,7 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
 
 [Implementera en Windows PowerShell-Provider för navigering](./creating-a-windows-powershell-navigation-provider.md)
 
-[Registrera cmdlets, providers och värd program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Registrera cmdlets, providers och värd program](/previous-versions/ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 

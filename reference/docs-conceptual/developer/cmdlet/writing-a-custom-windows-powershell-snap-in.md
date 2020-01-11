@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], specified in snap-ins
 ms.assetid: 55c8b5cb-8ee2-4080-afc4-3f09c9f20128
 caps.latest.revision: 6
-ms.openlocfilehash: 4d50ef4dcd75d5c0ba802fbcfe2d7d1d7c954707
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: aa6e4a4615f2681efa691008c86611f0df4e07d7
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355400"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870497"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>Skriva en anpassad Windows PowerShell-snapin-modul
 
@@ -27,12 +27,11 @@ Med den här typen av snapin-modul kan du ange vilka cmdlets, providers, typer e
 ## <a name="to-write-a-windows-powershell-snap-in-that-registers-specific-cmdlets"></a>Att skriva en Windows PowerShell-snapin-modul som registrerar vissa cmdletar.
 
 1. Lägg till attributet RunInstallerAttribute.
-
 2. Skapa en offentlig klass som härleds från klassen [system. Management. Automation. Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) .
 
    I det här exemplet är klass namnet "CustomPSSnapinTest".
 
-3. Lägg till en offentlig egenskap för namnet på snapin-modulen (obligatoriskt). När du namnger snapin-moduler ska du inte använda något av följande tecken: #. , () {} [] &-/\ $; : "' \< > &#124; ? @ ` *
+3. Lägg till en offentlig egenskap för namnet på snapin-modulen (obligatoriskt). När du namnger snapin-moduler ska du inte använda något av följande tecken: `#`, `.`, `,`, `(`, `)`, `{`, `}`, `[`, `]`, `&`, `-`, `/`, `\`, `$`, `;`, `:`, `"`, `'`, `<`, `>`, `|`, `?`, `@`, `` ` ``, `*`
 
    I det här exemplet är namnet på snapin-modulen "CustomPSSnapInTest".
 
@@ -46,13 +45,15 @@ Med den här typen av snapin-modul kan du ange vilka cmdlets, providers, typer e
 
 6. Lägg till en offentlig egenskap för en beskrivning av snapin-modulen (krävs).
 
-   I det här exemplet är beskrivningen: "det här är en anpassad Windows PowerShell-snapin-modul som innehåller cmdletarna test-HelloWorld och test-CustomSnapinTest".
+   I det här exemplet är beskrivningen: "det här är en anpassad Windows PowerShell-snapin-modul som innehåller `Test-HelloWorld`-och `Test-CustomSnapinTest`-cmdletar".
 
 7. Lägg till en offentlig egenskap för en beskrivnings resurs för snapin-modulen (valfritt).
 
-   I det här exemplet är leverantörs resursen "CustomPSSnapInTest, det här är en anpassad Windows PowerShell-snapin-modul som innehåller cmdletarna test-HelloWorld och test-CustomSnapinTest".
+   I det här exemplet är leverantörs resursen:
 
-8. Ange de cmdlet: ar som tillhör den anpassade snapin-modulen (valfritt) med hjälp av klassen [system. Management. Automation. körnings utrymmen. Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) . Den information som läggs till här inkluderar namnet på cmdleten, dess .NET-typ och cmdlet-hjälpens fil namn (formatet på cmdlet hjälp filens namn ska vara Name. dll-Help. xml).
+   > CustomPSSnapInTest är det här en anpassad Windows PowerShell-snapin-modul som innehåller cmdletarna test-HelloWorld och test-CustomSnapinTest.
+
+8. Ange de cmdlet: ar som tillhör den anpassade snapin-modulen (valfritt) med hjälp av klassen [system. Management. Automation. körnings utrymmen. Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) . Den information som läggs till här inkluderar namnet på cmdleten, dess .NET-typ och namnet på cmdlet-hjälp filen (formatet för cmdlet hjälp filens namn ska vara` name.dll-help.xml`).
 
    I det här exemplet läggs cmdletarna test-HelloWorld och TestCustomSnapinTest till.
 
@@ -70,7 +71,7 @@ Med den här typen av snapin-modul kan du ange vilka cmdlets, providers, typer e
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar hur du skriver en anpassad Windows PowerShell-snapin-modul som kan användas för att registrera cmdletarna test-HelloWorld och test-CustomSnapinTest. Tänk på att i det här exemplet kan den kompletta sammansättningen innehålla andra cmdlets och providers som inte skulle registreras av den här snapin-modulen.
+Det här exemplet visar hur du skriver en anpassad Windows PowerShell-snapin-modul som kan användas för att registrera `Test-HelloWorld` och `Test-CustomSnapinTest`-cmdletar. Tänk på att i det här exemplet kan den kompletta sammansättningen innehålla andra cmdlets och providers som inte skulle registreras av den här snapin-modulen.
 
 ```csharp
 [RunInstaller(true)]
@@ -213,10 +214,10 @@ public class CustomPSSnapinTest : CustomPSSnapIn
 }
 ```
 
-Mer information om hur du registrerar snapin-moduler finns i [så här registrerar du cmdlets, providers och värd program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c) i [Windows PowerShell Programmer ' s guide](../prog-guide/windows-powershell-programmer-s-guide.md).
+Mer information om hur du registrerar snapin-moduler finns i [så här registrerar du cmdlets, providers och värd program](/previous-versions/ms714644(v=vs.85)) i [Windows PowerShell Programmer ' s guide](../prog-guide/windows-powershell-programmer-s-guide.md).
 
 ## <a name="see-also"></a>Se även
 
-[Registrera cmdlets, providers och värd program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Registrera cmdlets, providers och värd program](/previous-versions/ms714644(v=vs.85))
 
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c00590df4d07e0f5ed9e93fd84a2780329753e39
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356821"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870871"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell-referens
 
@@ -37,7 +37,8 @@ Förutom Windows PowerShell SDK innehåller följande resurser mer information.
 
 [Skriva en Windows PowerShell-cmdlet](./cmdlet/writing-a-windows-powershell-cmdlet.md) Innehåller information och kod exempel för program hanterare som utformar cmdlets och för utvecklare som implementerar cmdlet-kod.
 
-[Windows PowerShell-teamets blogg](https://blogs.msdn.microsoft.com/PowerShell/) Den bästa resursen för att lära sig och samar beta med andra Windows PowerShell-användare. Läs Windows PowerShell-teamets blogg och gå sedan till forumet för Windows PowerShell-användare (Microsoft. offentlig. Windows. PowerShell). Använd Windows Live Search för att hitta andra Windows PowerShell-Bloggar och-resurser. När du utvecklar dina kunskaper kan du sedan utveckla dina idéer fritt.
+[Windows PowerShell-teamets blogg](https://blogs.msdn.microsoft.com/PowerShell/) Den bästa resursen för att lära sig och samar beta med andra Windows PowerShell-användare. Läs Windows PowerShell-teamets blogg och gå sedan till forumet för Windows PowerShell-användare (Microsoft. offentlig. Windows. PowerShell).
+Använd Windows Live Search för att hitta andra Windows PowerShell-Bloggar och-resurser. När du utvecklar dina kunskaper kan du sedan utveckla dina idéer fritt.
 
 [PowerShell-modulens webbläsare](/powershell/module/) Innehåller de senaste versionerna av kommando rads hjälp avsnitten.
 
@@ -53,4 +54,4 @@ Förutom Windows PowerShell SDK innehåller följande resurser mer information.
 
 [System. Management. Automation. Internal](/dotnet/api/System.Management.Automation.Internal) det här namn området innehåller bas klasserna som används av andra namn områdes klasser. Klassen [system. Management. Automation. Internal. Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) är till exempel Bask Lassen för klassen [system. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) .
 
-[System. Management. Automation. körnings utrymmen](/dotnet/api/System.Management.Automation.Runspaces) denna namnrymd innehåller de klasser, uppräkningar och gränssnitt som används för att skapa en Windows PowerShell-körnings utrymme. I det här sammanhanget är Windows PowerShell-körnings utrymme kontexten där en eller flera Windows PowerShell-pipeliner anropar cmdletar. Det vill säga cmdlets fungerar inom ramen för en Windows PowerShell-körnings utrymme. Mer information aboutWindows PowerShell-körnings utrymmen finns i [Windows PowerShell körnings utrymmen](https://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).
+[System. Management. Automation. körnings utrymmen](/dotnet/api/System.Management.Automation.Runspaces) denna namnrymd innehåller de klasser, uppräkningar och gränssnitt som används för att skapa en Windows PowerShell-körnings utrymme. I det här sammanhanget är Windows PowerShell-körnings utrymme kontexten där en eller flera Windows PowerShell-pipeliner anropar cmdletar. Det vill säga cmdlets fungerar inom ramen för en Windows PowerShell-körnings utrymme. Mer information aboutWindows PowerShell-körnings utrymmen finns i [Windows PowerShell körnings utrymmen](hosting/creating-runspaces.md).

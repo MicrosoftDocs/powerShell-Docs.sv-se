@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Hantera tjänster
-ms.openlocfilehash: d9e17b2d91ae01d7d4d6d573348289fa68dc9c56
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7a238a3fea857c5dac1c12ca0d0371a49e6bf58c
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030160"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870531"
 ---
 # <a name="managing-services"></a>Hantera tjänster
 
@@ -89,7 +89,8 @@ Running  BITS               Background Intelligent Transfer Ser...
 Du kan till och med hämta alla tjänster som har beroenden. Följande kommando fungerar precis som och använder sedan Format-Table-cmdlet: en för att visa egenskaperna status, Name, RequiredServices och DependentServices för tjänsterna på datorn.
 
 ```powershell
-Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
+Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices} |
+  Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
 ```
 
 ## <a name="stopping-starting-suspending-and-restarting-services"></a>Stoppa, starta, pausa och starta om tjänster
@@ -152,11 +153,11 @@ Cmdleten Set-service har också en Startuptype tjänst-parameter som låter dig 
 
 Om du vill använda `Set-Service` på Windows Vista och senare versioner av Windows öppnar du Windows PowerShell med alternativet "kör som administratör".
 
-Mer information finns i [set-service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+Mer information finns i [set-service](/powershell/module/Microsoft.PowerShell.Management/set-service)
 
 ## <a name="see-also"></a>Se även
 
-- [Get-service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
-- [Set-service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
-- [Starta om tjänsten [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
-- [Pausa-tjänsten [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
+- [Get-service](/powershell/module/Microsoft.PowerShell.Management/get-service)
+- [Set-service](/powershell/module/Microsoft.PowerShell.Management/set-service)
+- [Starta om tjänsten](/powershell/module/Microsoft.PowerShell.Management/restart-service)
+- [Pausa-tjänst](/powershell/module/Microsoft.PowerShell.Management/suspend-service)

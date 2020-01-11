@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: ad42b8de867f468e832380ab6a22a39b6d27d3c6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a64e49894ce5195cc177e97a7049740389b09456
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417496"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870718"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Skapa en Windows PowerShell-objektprovider
 
@@ -24,10 +24,7 @@ I det här avsnittet beskrivs hur du skapar en Windows PowerShell-provider som k
 
 > [!NOTE]
 > Du kan ladda ned C# käll filen (AccessDBSampleProvider03.CS) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
-> De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** .
->
-> Mer information om implementeringar av andra Windows PowerShell-leverantörer finns i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md).
+> De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** . Mer information om implementeringar av andra Windows PowerShell-leverantörer finns i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md).
 
 Windows PowerShell-dataleverantören som beskrivs i det här avsnittet hämtar data objekt från en Access-databas. I det här fallet är ett "objekt" antingen en tabell i Access-databasen eller en rad i en tabell.
 
@@ -43,13 +40,15 @@ Observera att i den här klass definitionen innehåller attributet [system. Mana
 
 Enligt beskrivningen i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md)härleds klassen [system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) från flera andra klasser som tillhandahöll olika funktioner i providern. En Windows PowerShell-dataprovider måste därför definiera alla funktioner som tillhandahålls av dessa klasser.
 
-Mer information om hur du implementerar funktioner för att lägga till datorspecifik initierings information och för att frigöra resurser som används av providern finns i [skapa en grundläggande Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md). De flesta leverantörer, inklusive providern som beskrivs här, kan dock använda standard implementeringen av den här funktionen som tillhandahålls av Windows PowerShell.
+Mer information om hur du implementerar funktioner för att lägga till datorspecifik initierings information och för att frigöra resurser som används av providern finns i [skapa en grundläggande Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md).
+De flesta leverantörer, inklusive providern som beskrivs här, kan dock använda standard implementeringen av den här funktionen som tillhandahålls av Windows PowerShell.
 
 Innan Windows PowerShell-dataleverantören kan manipulera objekten i arkivet måste den implementera metoderna i Bask Lassen [system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) för att få åtkomst till data lagret. Mer information om hur du implementerar den här klassen finns i [skapa en provider för Windows PowerShell-enheter](./creating-a-windows-powershell-drive-provider.md).
 
 ## <a name="checking-for-path-validity"></a>Söker efter Sök vägs giltighet
 
-När du letar efter ett data objekt, tillhandahåller Windows PowerShell-körningsmiljön en Windows PowerShell-sökväg till providern, enligt definitionen i avsnittet "PSPath-koncept" i [hur Windows PowerShell fungerar](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). En Windows PowerShell-dataprovider måste verifiera syntaktisk och semantisk giltigheten för alla vägar som skickas till den genom att implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) . Den här metoden returnerar `true` om sökvägen är giltig och `false` annars. Tänk på att implementeringen av den här metoden inte ska verifiera att objektet finns på sökvägen, men bara att sökvägen är syntaktiskt och semantiskt korrekt.
+När du letar efter ett data objekt, tillhandahåller Windows PowerShell-körningsmiljön en Windows PowerShell-sökväg till providern, enligt definitionen i avsnittet "PSPath-koncept" i [hur Windows PowerShell fungerar](/previous-versions/ms714658(v=vs.85)).
+En Windows PowerShell-dataprovider måste verifiera syntaktisk och semantisk giltigheten för alla vägar som skickas till den genom att implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) . Den här metoden returnerar `true` om sökvägen är giltig och `false` annars. Tänk på att implementeringen av den här metoden inte ska verifiera att objektet finns på sökvägen, men bara att sökvägen är syntaktiskt och semantiskt korrekt.
 
 Här är implementeringen av metoden [system. Management. Automation. Provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) för den här providern. Observera att den här implementeringen anropar en NormalizePath Helper-metod för att konvertera alla avgränsare i sökvägen till en enhetlig.
 
@@ -225,11 +224,11 @@ Fullständig exempel kod finns i [kod exemplet för AccessDbProviderSample03](./
 
 ## <a name="defining-object-types-and-formatting"></a>Definiera objekt typer och formatering
 
-När du skriver en provider kan det vara nödvändigt att lägga till medlemmar i befintliga objekt eller definiera nya objekt. När du är färdig skapar du en typ fil som Windows PowerShell kan använda för att identifiera medlemmar i objektet och en format fil som definierar hur objektet visas. Mer information om finns i [utöka objekt typer och formatering](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+När du skriver en provider kan det vara nödvändigt att lägga till medlemmar i befintliga objekt eller definiera nya objekt. När du är färdig skapar du en typ fil som Windows PowerShell kan använda för att identifiera medlemmar i objektet och en format fil som definierar hur objektet visas. Mer information om finns i [utöka objekt typer och formatering](/previous-versions/ms714665(v=vs.85)).
 
 ## <a name="building-the-windows-powershell-provider"></a>Skapa Windows PowerShell-providern
 
-Se [hur du registrerar cmdlets, providers och värd program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Se [hur du registrerar cmdlets, providers och värd program](/previous-versions/ms714644(v=vs.85)).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Testa Windows PowerShell-providern
 
@@ -245,12 +244,12 @@ När den här Windows PowerShell-dataleverantören har registrerats med Windows 
 
 [Designa din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md)
 
-[Utöka objekt typer och formatering](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Utöka objekt typer och formatering](/previous-versions/ms714665(v=vs.85))
 
-[Så här fungerar Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Så här fungerar Windows PowerShell](/previous-versions/ms714658(v=vs.85))
 
 [Skapa en container Windows PowerShell-Provider](./creating-a-windows-powershell-container-provider.md)
 
 [Skapa en Windows PowerShell-Provider för enhet](./creating-a-windows-powershell-drive-provider.md)
 
-[Registrera cmdlets, providers och värd program](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Registrera cmdlets, providers och värd program](/previous-versions/ms714644(v=vs.85))

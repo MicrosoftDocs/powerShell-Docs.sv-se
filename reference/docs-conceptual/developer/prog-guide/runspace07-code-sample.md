@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8ad306d9-45c2-4d55-8e64-fdcba43402c5
 caps.latest.revision: 6
-ms.openlocfilehash: b3c2e70d534e8a267b35ae1715bd24277267e0d8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f40b24951c44c228d85524845045aea58f680f2e
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417899"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870616"
 ---
 # <a name="runspace07-code-sample"></a>RunSpace07 – kodexempel
 
-Här är käll koden för Runspace07-exemplet som beskrivs i [skapa ett konsol program som lägger till kommandon i en pipeline](https://msdn.microsoft.com/en-us/01eb7808-e97b-4905-80be-9e2fa38c262e). Det här exempel programmet skapar en körnings utrymme, skapar en pipeline, lägger till två kommandon i pipelinen och kör sedan pipelinen. Kommandona som läggs till i pipelinen är `Get-Process`-och `Measure-Object`-cmdletar.
+Här är käll koden för Runspace07-exemplet som beskrivs i [skapa ett konsol program som lägger till kommandon i en pipeline](https://msdn.microsoft.com/01eb7808-e97b-4905-80be-9e2fa38c262e).
+Det här exempel programmet skapar en körnings utrymme, skapar en pipeline, lägger till två kommandon i pipelinen och kör sedan pipelinen. Kommandona som läggs till i pipelinen är `Get-Process`-och `Measure-Object`-cmdletar.
 
 > [!NOTE]
 > Du kan ladda ned C# käll filen (runspace07.CS) med hjälp av Microsoft Windows Software Development Kit för Windows Vista och Microsoft .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
 > De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** .
 
 ## <a name="code-sample"></a>Kod exempel
