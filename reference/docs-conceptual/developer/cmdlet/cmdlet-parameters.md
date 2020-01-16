@@ -16,12 +16,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], parameters
 ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
 caps.latest.revision: 23
-ms.openlocfilehash: 914a10907bcf980eed8d7e2f819c382fe6b341ad
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c1d8984f4aad7bae6f9be66a2222e2c74c8afa3d
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356576"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022206"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet-parametrar
 
@@ -33,7 +33,7 @@ Cmdlet-parametrar tillhandahåller mekanismen som tillåter att en cmdlet accept
 
 [Typer av cmdlet-parametrar](./types-of-cmdlet-parameters.md) Beskriver de olika typerna av parametrar som du kan deklarera i-cmdletar.
 
-[Rikt linjer för cmdlet-parameter namn och funktioner](./standard-cmdlet-parameter-names-and-types.md) Discuses namn, rekommenderad datatyp och funktioner i standard parametrar.
+[Rikt linjer för cmdlet-parameter namn och funktioner](./standard-cmdlet-parameter-names-and-types.md) Diskuterar namn, rekommenderad datatyp och funktioner i standard parametrar.
 
 [Parameter-alias](./parameter-aliases.md) Beskriver de alias som du kan definiera för parametrar.
 

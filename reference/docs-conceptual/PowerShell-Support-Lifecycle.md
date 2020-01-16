@@ -2,12 +2,12 @@
 title: Supportlängd för PowerShell Core
 description: Principer som styr support för PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 27738514fc84105a0339eafcdbb540b7d3790052
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 57804df830da01bee0f48acc374658b025a46b85
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416299"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022228"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Supportlängd för PowerShell Core
 
@@ -60,7 +60,9 @@ Plattformar som anges som `Experimental` stöds inte officiellt, men är tillgä
 | Debian 9                                          |   Stöds   | Stöds |
 | Debian 10                                         | Stöds inte | Stöds |
 | CentOS 7                                          |   Stöds   | Stöds |
+| CentOS 8                                          | Stöds inte | Stöds |
 | Red Hat Enterprise Linux 7                        |   Stöds   | Stöds |
+| Red Hat Enterprise Linux 8                        | Stöds inte | Stöds |
 | openSUSE 42,3                                     |   Stöds   | Stöds |
 | Fedora 28                                         |   Stöds   | Stöds |
 | Fedora 29, 30                                     | Stöds inte | Stöds |

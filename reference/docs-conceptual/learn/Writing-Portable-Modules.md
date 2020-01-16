@@ -1,13 +1,13 @@
 ---
-ms.date: 12/14/2018
+ms.date: 01/10/2020
 keywords: PowerShell, cmdlet
 title: Skriva portabla moduler
-ms.openlocfilehash: 7871f524495c1ce5283b30696a24185d427edebf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 124e6efadfd07b8c5214a5c0446b1589f7142388
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417640"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022238"
 ---
 # <a name="portable-modules"></a>Bärbara moduler
 
@@ -254,6 +254,45 @@ Exempel:
 }
 ```
 
+## <a name="dependency-on-native-libraries"></a>Beroende av interna bibliotek
+
+Moduler som ska användas i olika operativ system eller processor arkitekturer kan vara beroende av ett hanterat bibliotek som är beroende av vissa interna bibliotek.
+
+Före PowerShell 7 måste det finnas en anpassad kod för att läsa in rätt inbyggda DLL-fil så att det hanterade biblioteket kan hitta det korrekt.
+
+Med PowerShell 7 genomsöks interna binärfiler i undermappar i det hanterade bibliotekets plats enligt en delmängd av [.NET RID-katalog][] notation.
+
+```
+managed.dll folder
+                |
+                |--- 'win-x64' folder
+                |       |--- native.dll
+                |
+                |--- 'win-x86' folder
+                |       |--- native.dll
+                |
+                |--- 'win-arm' folder
+                |       |--- native.dll
+                |
+                |--- 'win-arm64' folder
+                |       |--- native.dll
+                |
+                |--- 'linux-x64' folder
+                |       |--- native.so
+                |
+                |--- 'linux-x86' folder
+                |       |--- native.so
+                |
+                |--- 'linux-arm' folder
+                |       |--- native.so
+                |
+                |--- 'linux-arm64' folder
+                |       |--- native.so
+                |
+                |--- 'osx-x64' folder
+                |       |--- native.dylib
+```
+
 <!-- reference links -->
 [.NET Framework]: /dotnet/framework/
 [.NET Core]: /dotnet/core/
@@ -267,3 +306,4 @@ Exempel:
 [PowerShell-galleriet]: https://www.powershellgallery.com
 [.NET-portbaserad analys]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/scripting/gallery/concepts/module-psedition-support
+[.NET RID-katalog]: https://docs.microsoft.com/dotnet/core/rid-catalog
