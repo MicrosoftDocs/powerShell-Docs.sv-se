@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-hämtningstjänsten
-ms.openlocfilehash: d71c87e0420a0ee54eca36f1792b43103431233f
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: f171c3dc579dfb24a8c9fb87fbb50dccae619091
+ms.sourcegitcommit: aaf1284dfec2e4c698009d6dc27ff103aaafd581
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870820"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885395"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Mottagar tjänst för önskad tillstånds konfiguration
 
@@ -22,6 +22,14 @@ De aktuella alternativen för pull service är:
 - En pull-tjänst som körs på Windows Server
 - Community-underhållna lösningar med öppen källkod
 - En SMB-resurs
+
+Den rekommenderade skalningen för varje lösning är följande:
+
+|                   Lösning                   |              Klient-noder              |
+| -------------------------------------------- | -------------------------------------- |
+| Windows pull-server med hjälp av MDB/ESENT-databas | Upp till 500 noder                        |
+| Windows pull-server med SQL Database       | Upp till 1000 noder                       |
+| Azure Automation DSC                         | Scenarier med fler än 1000 noder |
 
 **Den rekommenderade lösningen**och alternativet med de mest tillgängliga funktionerna är [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
@@ -42,7 +50,7 @@ Funktioner i online tjänsten som inte är tillgängliga i pull-tjänsten på Wi
 
 ## <a name="dsc-pull-service-in-windows-server"></a>DSC-pull-tjänst i Windows Server
 
-Det är möjligt att konfigurera en pull-tjänst för att köras på Windows Server. Vi rekommenderar att lösningen för pull-tjänster som ingår i Windows Server bara innehåller funktioner för att lagra konfigurationer/moduler för att hämta och samla in rapport data i till-databasen. Det innehåller inte många av de funktioner som erbjuds av tjänsten i Azure och är därför inte ett lämpligt verktyg för att utvärdera hur tjänsten används.
+Det är möjligt att konfigurera en pull-tjänst för att köras på Windows Server. Vi rekommenderar att lösningen för pull-tjänster som ingår i Windows Server bara innehåller funktioner för att lagra konfigurationer/moduler för att hämta och samla in rapport data i en databas. Det innehåller inte många av de funktioner som erbjuds av tjänsten i Azure och är därför inte ett lämpligt verktyg för att utvärdera hur tjänsten används.
 
 Pull-tjänsten som erbjuds i Windows Server är en webb tjänst i IIS som använder ett OData-gränssnitt för att göra DSC-konfigurationsfiler tillgängliga för mål noder när noderna begär det.
 
@@ -219,7 +227,7 @@ När installationen av hämtnings servern är klar är mapparna som definieras a
 
 Varje resurs-modul måste vara zippad och namngiven enligt följande mönster `{Module Name}_{Module Version}.zip`.
 
-Till exempel skulle en modul med namnet xWebAdminstration med en modul version av 3.1.2.0 heta `xWebAdministration_3.1.2.0.zip`. Varje version av en modul måste finnas i en enda zip-fil.
+Till exempel skulle en modul med namnet **xWebAdminstration** med en modul version av 3.1.2.0 heta `xWebAdministration_3.1.2.0.zip`. Varje version av en modul måste finnas i en enda zip-fil.
 Eftersom det bara finns en enda version av en resurs i varje zip-fil stöds inte modulfönstret som lagts till i WMF 5,0 med stöd för flera versioner i en enda katalog. Det innebär att innan du packar upp DSC-resurspooler för användning med pull-server måste du göra en liten ändring i katalog strukturen. Standardformat för moduler som innehåller DSC-resurs i WMF 5,0 är `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Innan du packar upp för hämtnings servern tar du bort mappen **{module version}** så att sökvägen blir `{Module Folder}\DscResources\{DSC Resource Folder}\`. Med den här ändringen zip-mappen enligt beskrivningen ovan och placera dessa zip-filer i mappen **ModulePath** .
 
 Använd `New-DscChecksum {module zip file}` för att skapa en kontroll Summa fil för den nyligen tillagda modulen.

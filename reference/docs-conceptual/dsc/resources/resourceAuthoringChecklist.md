@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Checklista för resursskapande
-ms.openlocfilehash: c0a18169b5e9f6ba0c3848b00725731453763611
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e7401071db9cb149fff572d79568d69a0b8ea004
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71941196"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818149"
 ---
 # <a name="resource-authoring-checklist"></a>Checklista för resursskapande
 
@@ -36,7 +36,7 @@ xPSDesiredStateConfiguration
 ## <a name="resource-and-schema-are-correct"></a>Resurs och schema är korrekta
 
 Kontrol lera resurs schema filen (*. schema. MOF). Du kan använda [DSC Resource designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) för att utveckla och testa ditt schema.
-Kontrollera att:
+Kontrol lera att:
 
 - Egenskaps typerna är korrekta (t. ex. Använd inte sträng för egenskaper som accepterar numeriska värden bör du använda UInt32 eller andra numeriska typer i stället)
 - Egenskaps attribut anges korrekt som: ([key], [required], [Write], [Read])
@@ -63,7 +63,7 @@ Test-xDscResource <Resource_folder>
 Test-xDscSchema <Path_to_resource_schema_file>
 ```
 
-Till exempel:
+Ett exempel:
 
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
@@ -130,7 +130,7 @@ Möjliga typer av problem:
 - Autentiseringsuppgiften/sessionen kan fungera annorlunda eftersom DSC-agenten körs som en tjänst.  Se till att testa alla funktioner som slutar att avslutas.
 - Fel utdata från `Start-DscConfiguration` kan skilja sig från de som visas när du anropar `Set-TargetResource`-funktionen direkt.
 
-## <a name="test-compatability-on-all-dsc-supported-platforms"></a>Testa kompatibilitet på alla plattformar som stöds av DSC
+## <a name="test-compatibility-on-all-dsc-supported-platforms"></a>Testa kompatibilitet på alla plattformar som stöds av DSC
 
 Resursen ska fungera på alla plattformar som stöds av DSC (Windows Server 2008 R2 och senare). Installera den senaste versionen av WMF (Windows Management Framework) på ditt operativ system för att få den senaste versionen av DSC. Om resursen inte fungerar på vissa av dessa plattformar efter design ska ett visst fel meddelande returneras. Kontrol lera också att din resurs kontrollerar om cmdlets som du anropar finns på en viss dator. Windows Server 2012 har lagt till ett stort antal nya cmdletar som inte är tillgängliga på Windows Server-2008R2, även med WMF installerat.
 

@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: Jea, PowerShell, säkerhet
 title: JEA roll funktioner
-ms.openlocfilehash: 613557d03bb481f9280a06ca1506166a18b4dab2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5b5b5977d4fec1ed850f1146fe7c09463908651b
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416798"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818183"
 ---
 # <a name="jea-role-capabilities"></a>JEA roll funktioner
 
@@ -157,9 +157,11 @@ Om du skriver flera anpassade funktioner är det mer praktiskt att använda dem 
 
 För att avslutning av flikar ska fungera korrekt i JEA-sessioner måste du inkludera den inbyggda funktionen `tabexpansion2` i **VisibleFunctions** -listan.
 
-## <a name="place-role-capabilities-in-a-module"></a>Placera roll funktioner i en modul
+## <a name="make-the-role-capabilities-available-to-a-configuration"></a>Gör roll funktionerna tillgängliga för en konfiguration
 
-För att PowerShell ska kunna hitta en roll funktions fil måste den lagras i en **RoleCapabilities** -mapp i en PowerShell-modul. Modulen kan lagras i en mapp som ingår i `$env:PSModulePath`-miljövariabeln, men du bör inte placera den i system32 eller en mapp där det inte är betrott, och ansluta användare kan ändra filerna. Nedan visas ett exempel på hur du skapar en grundläggande PowerShell-modul med namnet **ContosoJEA** i `$env:ProgramFiles` sökväg.
+Innan PowerShell 6, för PowerShell för att hitta en roll kapacitets fil, måste den lagras i en **RoleCapabilities** -mapp i en PowerShell-modul. Modulen kan lagras i en mapp som ingår i `$env:PSModulePath`-miljövariabeln, men du bör inte placera den i `$env:SystemRoot\System32` eller en mapp där obetrodda användare kan ändra filerna.
+
+I följande exempel skapas en PowerShell-modul med namnet **ContosoJEA** i `$env:ProgramFiles` sökvägen som värd för roll funktions filen.
 
 ```powershell
 # Create a folder for the module
@@ -178,6 +180,8 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
 Mer information om PowerShell-moduler finns i [förstå en PowerShell-modul](/powershell/scripting/developer/windows-powershell).
+
+Från och med PowerShell 6 lades egenskapen **RoleDefinitions** till i konfigurations filen för sessionen. Med den här egenskapen kan du ange platsen för en roll konfigurations fil för roll definitionen. Se exemplen i [New-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile).
 
 ## <a name="updating-role-capabilities"></a>Uppdaterar roll funktioner
 

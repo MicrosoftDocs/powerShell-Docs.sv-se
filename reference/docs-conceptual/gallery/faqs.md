@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: PowerShell-galleriet vanliga frågor
-ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 70e2220bd68b351e0b09dd3c59901104f7874335
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328877"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818132"
 ---
 # <a name="frequently-asked-questions"></a>Vanliga frågor och svar
 
@@ -94,7 +94,7 @@ Alla skript som innehåller följande information i sitt PSScriptInfo-avsnitt ka
 Skriv det du söker i text rutan. Om du till exempel vill hitta moduler som är relaterade till Azure SQL skriver du bara "Azure SQL". Vår sökmotor söker efter dessa nyckelord i alla publicerade paket, inklusive titlar, beskrivningar och över metadata. Sedan, baserat på en viktad kvalitets poäng, visas närmaste matchningar. Du kan också söka efter ett särskilt fält med fält: "value"-syntax i Sök frågan för följande fält:
 
 - Taggar
-- Funktioner
+- Functions
 - Cmdletar
 - DscResources
 - PowerShellVersion
