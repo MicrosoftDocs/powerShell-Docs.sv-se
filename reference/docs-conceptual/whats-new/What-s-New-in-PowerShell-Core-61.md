@@ -2,19 +2,18 @@
 title: Nyheter i PowerShell Core 6,1
 description: Nya funktioner och ändringar som lanseras i PowerShell Core 6,1
 ms.date: 09/13/2018
-ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 531259217f2b71213776e7d394616c7790e9aca9
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62086144"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995505"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Nyheter i PowerShell Core 6,1
 
 Nedan visas några av de viktigaste nya funktionerna och ändringarna som har introducerats i PowerShell Core 6,1.
 
-Det finns också **massor** av "tråkigae-saker" som gör PowerShell snabbare och mer stabilt (plus massor och massor av fel korrigeringar)!
-En fullständig lista över ändringar finns [i vår ändringsloggen på GitHub](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md).
+Det finns också **massor** av "tråkigae-saker" som gör PowerShell snabbare och mer stabilt (plus massor och massor av fel korrigeringar)! En fullständig lista över ändringar finns [i vår ändringsloggen på GitHub](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md).
 
 Och vi kallar några namn nedan och tackar dig till [alla deltagare i communityn](https://github.com/PowerShell/PowerShell/graphs/contributors) som gjorde den här versionen möjlig.
 
@@ -37,13 +36,11 @@ Windows-kompatibilitetspaketet gör det möjligt för PowerShell Core att använ
 
 ## <a name="support-for-application-whitelisting"></a>Stöd för program vit listning
 
-PowerShell Core 6,1 har paritet med Windows PowerShell 5,1 som stöder [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) -och [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) -vit listning.
-Med Application vit listning kan du få detaljerad kontroll över vilka binärfiler som får köras med PowerShell- [begränsat språk läge](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
+PowerShell Core 6,1 har paritet med Windows PowerShell 5,1 som stöder [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) -och [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) -vit listning. Med Application vit listning kan du få detaljerad kontroll över vilka binärfiler som får köras med PowerShell- [begränsat språk läge](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
 
 ## <a name="performance-improvements"></a>Prestandaförbättringar
 
-PowerShell Core 6,0 gjorde några betydande prestanda förbättringar.
-PowerShell Core 6,1 fortsätter att förbättra hastigheten på vissa åtgärder.
+PowerShell Core 6,0 gjorde några betydande prestanda förbättringar. PowerShell Core 6,1 fortsätter att förbättra hastigheten på vissa åtgärder.
 
 `Group-Object` har till exempel sped upp med 66%:
 
@@ -51,10 +48,10 @@ PowerShell Core 6,1 fortsätter att förbättra hastigheten på vissa åtgärder
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-Object }
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6,0 | PowerShell Core 6,1 |
+|              | Windows PowerShell 5,1 | PowerShell Core 6,0 | PowerShell Core 6,1 |
 |--------------|------------------------|---------------------|---------------------|
-| Tid (sek)   | 25,178                 | 19,653              | 6,641               |
-| Hastighets anslutning (%) | Saknas                    | 21,9%               | 66,2%               |
+| Tid (SEK)   | 25,178                 | 19,653              | 6,641               |
+| Hastighets anslutning (%) | Ej tillämpligt                    | 21,9%               | 66,2%               |
 
 På samma sätt har sorterings scenarier som det här förbättrats med mer än 15%:
 
@@ -62,10 +59,10 @@ På samma sätt har sorterings scenarier som det här förbättrats med mer än 
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Object }
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6,0 | PowerShell Core 6,1 |
+|              | Windows PowerShell 5,1 | PowerShell Core 6,0 | PowerShell Core 6,1 |
 |--------------|------------------------|---------------------|---------------------|
-| Tid (sek)   | 12,170                 | 8,493               | 7,08                |
-| Hastighets anslutning (%) | Saknas                    | 30,2%               | 16,6%               |
+| Tid (SEK)   | 12,170                 | 8,493               | 7,08                |
+| Hastighets anslutning (%) | Ej tillämpligt                    | 30,2%               | 16,6%               |
 
 `Import-Csv` har också varit spedt märkbart efter en regression från Windows PowerShell.
 I följande exempel används en test-CSV med 26 616 rader och sex kolumner:
@@ -74,10 +71,10 @@ I följande exempel används en test-CSV med 26 616 rader och sex kolumner:
 Measure-Command {$a = Import-Csv foo.csv}
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6,0 | PowerShell Core 6,1    |
+|              | Windows PowerShell 5,1 | PowerShell Core 6,0 | PowerShell Core 6,1    |
 |--------------|------------------------|---------------------|------------------------|
-| Tid (sek)   | 0,441                  | 1,069               | 0,268                  |
-| Hastighets anslutning (%) | Saknas                    | – 142,4%             | 74,9% (39,2% från WPS) |
+| Tid (SEK)   | 0,441                  | 1,069               | 0,268                  |
+| Hastighets anslutning (%) | Ej tillämpligt                    | – 142,4%             | 74,9% (39,2% från WPS) |
 
 Slutligen har konverteringen från JSON till `PSObject` sped upp med mer än 50% sedan Windows PowerShell.
 I följande exempel används ~ 2 MB test-JSON-fil:
@@ -86,17 +83,16 @@ I följande exempel används ~ 2 MB test-JSON-fil:
 Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6,0 | PowerShell Core 6,1    |
+|              | Windows PowerShell 5,1 | PowerShell Core 6,0 | PowerShell Core 6,1    |
 |--------------|------------------------|---------------------|------------------------|
-| Tid (sek)   | 0,259                  | 0,577               | 0,125                  |
-| Hastighets anslutning (%) | Saknas                    | – 122,8%             | 78,3% (51,7% från WPS) |
+| Tid (SEK)   | 0,259                  | 0,577               | 0,125                  |
+| Hastighets anslutning (%) | Ej tillämpligt                    | – 122,8%             | 78,3% (51,7% från WPS) |
 
 ## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Kontrol lera `system32` för kompatibla moduler i Windows
 
 I Windows 10 1809-uppdateringen och Windows Server 2019 har vi uppdaterat ett antal inbyggda PowerShell-moduler för att markera dem som kompatibla med PowerShell Core.
 
-När PowerShell Core 6,1 startar, kommer den automatiskt att inkludera `$windir\System32` som en del av `PSModulePath`-miljövariabeln.
-Det exponerar dock bara moduler för att `Get-Module` och `Import-Module` om dess `CompatiblePSEdition` är markerad som kompatibel med `Core`.
+När PowerShell Core 6,1 startar, kommer den automatiskt att inkludera `$windir\System32` som en del av `PSModulePath`-miljövariabeln. Det exponerar dock bara moduler för att `Get-Module` och `Import-Module` om dess `CompatiblePSEdition` är markerad som kompatibel med `Core`.
 
 
 ```powershell
@@ -202,9 +198,7 @@ och [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke
 
 [PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) är en funktion i PowerShell och Hyper-v som gör att du kan ansluta till en virtuell Hyper-V-dator eller-behållare utan nätverks anslutning eller andra tjänster för fjärrhantering.
 
-Tidigare anslöt PowerShell Direct till med Windows PowerShell-instansen inkorg på behållaren.
-Nu försöker PowerShell Direct först ansluta med valfri tillgänglig `pwsh.exe` på den `PATH` miljövariabeln.
-Om `pwsh.exe` inte är tillgänglig går PowerShell Direct tillbaka för att använda `powershell.exe`.
+Tidigare anslöt PowerShell Direct till med Windows PowerShell-instansen inkorg på behållaren. Nu försöker PowerShell Direct först ansluta med valfri tillgänglig `pwsh.exe` på den `PATH` miljövariabeln. Om `pwsh.exe` inte är tillgänglig går PowerShell Direct tillbaka för att använda `powershell.exe`.
 
 ### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a>`Enable-PSRemoting` skapar nu separata Fjärrslutpunkter för för hands versioner
 
@@ -262,8 +256,7 @@ Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators A
 
 ### <a name="userhostport-syntax-supported-for-ssh"></a>`user@host:port`-syntax som stöds för SSH
 
-SSH-klienter stöder vanligt vis en anslutnings sträng i formatet `user@host:port`.
-Med tillägget av SSH som ett protokoll för PowerShell-fjärrkommunikation har vi lagt till stöd för det här formatet för anslutnings strängen:
+SSH-klienter stöder vanligt vis en anslutnings sträng i formatet `user@host:port`. Med tillägget av SSH som ett protokoll för PowerShell-fjärrkommunikation har vi lagt till stöd för det här formatet för anslutnings strängen:
 
 `Enter-PSSession -HostName fooUser@ssh.contoso.com:2222`
 
@@ -305,13 +298,11 @@ Tack vare att du [@iSazonov](https://github.com/iSazonov)har [`Test-Connection`]
 
 ### <a name="update-help-as-non-admin"></a>`Update-Help` som icke-administratör
 
-På den populära efter frågan behöver `Update-Help` inte längre köras som administratör.
-`Update-Help` är nu standard att spara hjälp till en mapp med användar omfång.
+På den populära efter frågan behöver `Update-Help` inte längre köras som administratör. `Update-Help` är nu standard att spara hjälp till en mapp med användar omfång.
 
 ### <a name="new-methodsproperties-on-pscustomobject"></a>Nya metoder/egenskaper för `PSCustomObject`
 
-Tack vare [@iSazonov](https://github.com/iSazonov)har vi lagt till nya metoder och egenskaper att `PSCustomObject`.
-`PSCustomObject` innehåller nu en `Count`/`Length` egenskap som andra objekt.
+Tack vare [@iSazonov](https://github.com/iSazonov)har vi lagt till nya metoder och egenskaper att `PSCustomObject`. `PSCustomObject` innehåller nu en `Count`/`Length` egenskap som andra objekt.
 
 ```powershell
 $PSCustomObject = [pscustomobject]@{foo = 1}
@@ -353,8 +344,7 @@ foo
 
 ### `Where-Object -Not`
 
-Tack vare @SimonWahlinhar vi lagt till `-Not`-parametern för att `Where-Object`.
-Nu kan du filtrera ett objekt i pipelinen för att det inte finns någon egenskap, eller ett egenskaps värde som är null/tomt.
+Tack vare @SimonWahlinhar vi lagt till `-Not`-parametern för att `Where-Object`. Nu kan du filtrera ett objekt i pipelinen för att det inte finns någon egenskap, eller ett egenskaps värde som är null/tomt.
 
 Det här kommandot returnerar till exempel alla tjänster som inte har några beroende tjänster definierade:
 
@@ -368,8 +358,7 @@ Med tanke på vår flytt till BOM-mindre UTF-8 i PowerShell 6,0 har vi uppdatera
 
 ### <a name="conversions-from-psmethod-to-delegate"></a>Konverteringar från PSMethod till delegate
 
-Tack vare att vi [@powercode](https://github.com/powercode)stöder vi nu konverteringen av ett `PSMethod` till ett ombud.
-Detta gör att du kan göra saker som att skicka `PSMethod` `[M]::DoubleStrLen` som ett ombuds värde i `[M]::AggregateString`:
+Tack vare att vi [@powercode](https://github.com/powercode)stöder vi nu konverteringen av ett `PSMethod` till ett ombud. Detta gör att du kan göra saker som att skicka `PSMethod` `[M]::DoubleStrLen` som ett ombuds värde i `[M]::AggregateString`:
 
 ```powershell
 class M {
@@ -420,8 +409,7 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 
 ### <a name="removal-of-the-more-function"></a>Borttagning av funktionen `more`
 
-Tidigare levererade PowerShell en funktion i Windows med namnet `more` som omslutte `more.com`.
-Funktionen har nu tagits bort.
+Tidigare levererade PowerShell en funktion i Windows med namnet `more` som omslutte `more.com`. Funktionen har nu tagits bort.
 
 Dessutom ändrades `help`-funktionen till att använda `more.com` i Windows eller systemets standard-pager som anges av `$env:PAGER` på andra plattformar än Windows-plattformar.
 
@@ -511,8 +499,7 @@ Mer information om dessa ändringar finns i [problem #6779](https://github.com/P
 
 ### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>Borttagen `VisualBasic` som ett språk som stöds i tilläggs typen
 
-Tidigare kunde du kompilera Visual Basic kod med hjälp av `Add-Type`-cmdleten.
-Visual Basic användes sällan med `Add-Type`. Vi har tagit bort den här funktionen för att minska storleken på PowerShell.
+Tidigare kunde du kompilera Visual Basic kod med hjälp av `Add-Type`-cmdleten. Visual Basic användes sällan med `Add-Type`. Vi har tagit bort den här funktionen för att minska storleken på PowerShell.
 
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Rensad användning av `CommandTypes.Workflow` och `WorkflowInfoCleaned`
 

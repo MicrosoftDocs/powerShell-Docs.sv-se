@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Kom igång med PowerShell-galleriet
-ms.openlocfilehash: ee3fe7d9c65ad1a8f9ffd2ddec0f4ce6659bc3d5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fd4185234136dd9f3e628df50954b6ebff637639
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71329164"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995879"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Komma igång med PowerShell-galleriet
 
@@ -48,7 +48,7 @@ Om du kör [Sök-modul][] eller [Sök – skript][]kan du visa dessa data i det 
 
 Vi uppmuntrar följande process när du laddar ned paket från PowerShell-galleriet:
 
-### <a name="inspect"></a>Granska
+### <a name="inspect"></a>Allmänt
 
 Om du vill ladda ned ett paket från galleriet för granskning kör du antingen cmdleten [Spara-modul][] eller [Spara – skript][] , beroende på paket typen. På så sätt kan du spara paketet lokalt utan att installera det och granska paket innehållet. Kom ihåg att ta bort det sparade paketet manuellt.
 
@@ -76,9 +76,9 @@ Mer information om Azure Automation finns i [Azure Automation](/azure/automation
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>Uppdaterar paket från PowerShell-galleriet
 
-Om du vill uppdatera paket som är installerade från PowerShell-galleriet kör du antingen cmdleten [Update-module] [] eller [Update-Script] []. När körs utan ytterligare parametrar försöker [Update-module] [] uppdatera alla moduler som installerats genom att köra [Installera-modul][]. Om du vill uppdatera moduler selektivt lägger du till parametern `-Name`.
+Om du vill uppdatera paket som är installerade från PowerShell-galleriet kör du antingen cmdleten [Update-modul][] eller [Uppdatera skript][] . Om du kör utan ytterligare parametrar försöker [Update-modul][] uppdatera alla moduler som installerats genom att köra [Installera-modul][]. Om du vill uppdatera moduler selektivt lägger du till parametern `-Name`.
 
-På samma sätt försöker [Update-Script] [] också uppdatera alla skript som installeras genom att köra [Installera – skript][]när de körs utan ytterligare parametrar. Om du vill uppdatera skript selektivt lägger du till parametern `-Name`.
+Vid körning utan ytterligare parametrar försöker [Uppdatera skript][] också uppdatera alla skript som installeras genom att köra [Installera – skript][]. Om du vill uppdatera skript selektivt lägger du till parametern `-Name`.
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>List paket som du har installerat från PowerShell-galleriet
 
@@ -98,3 +98,5 @@ Om du vill ta reda på vilka skript som du har installerat från PowerShell-gall
 [Register-PSRepository]: /powershell/module/powershellget/Register-Repository
 [Spara-modul]: /powershell/module/powershellget/Save-Module
 [Spara – skript]: /powershell/module/powershellget/Save-Script
+[Update-modul]: /powershell/module/powershellget/Update-Module
+[Uppdatera skript]: /powershell/module/powershellget/Update-Script

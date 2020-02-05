@@ -2,18 +2,18 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC PackageManagement-resurs
-ms.openlocfilehash: dfc23bfabbc45041e15c56a29a77c5bdda430a30
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 28ae8772170bd4559c8a19c3a1df8c9118734857
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71941448"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995969"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement-resurs
 
 Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0, Windows PowerShell 5,1
 
-**PackageManagement** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att installera eller avinstallera paket hanterings paket på en målnod. Den här resursen kräver **PackageManagement** -modulen, som är tillgänglig från [http://PowerShellGallery.com](https://PowerShellGallery.com).
+**PackageManagement** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att installera eller avinstallera paket hanterings paket på en målnod. Den här resursen kräver **PackageManagement** -modulen, som är tillgänglig från [https://PowerShellGallery.com](https://PowerShellGallery.com).
 
 > [!IMPORTANT]
 > **PackageManagement** -modulen måste vara minst version 1.1.7.0 för att följande egenskaps information ska vara korrekt.

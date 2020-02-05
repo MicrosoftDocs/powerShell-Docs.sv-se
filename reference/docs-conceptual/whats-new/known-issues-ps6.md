@@ -1,13 +1,13 @@
 ---
-ms.date: 05/17/2018
+ms.date: 02/03/2020
 keywords: PowerShell, Core
 title: Kända problem för PowerShell 6,0
-ms.openlocfilehash: e84dd2f7deefcc64aea09585e7ce24dc1e8515fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e9550e3db53865cfc2713d1d80665cced6f0d47a
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71692211"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76996105"
 ---
 # <a name="known-issues-for-powershell-60"></a>Kända problem för PowerShell 6,0
 
@@ -15,7 +15,7 @@ ms.locfileid: "71692211"
 
 Alpha-versioner av PowerShell på Linux och macOS är huvudsakligen funktionella men har några viktiga begränsningar och användbarhets problem. Beta versioner av PowerShell på Linux och macOS är mer funktionella och stabila än alpha-versioner, men det kan fortfarande finnas en uppsättning funktioner och kan innehålla buggar. I vissa fall är de här problemen bara buggar som ännu inte har åtgärd ATS. I andra fall (som Standardalias för LS, CP osv.) söker vi efter feedback från communityn angående de val vi gör.
 
-Obs! på grund av likheter av många underliggande under system är PowerShell på Linux och macOS att dela samma nivå av mognad i både funktioner och buggar. Förutom vad som anges nedan kommer problemen i det här avsnittet att gälla för båda operativ systemen.
+Obs! på grund av likheter av många underliggande under system är PowerShell på Linux och macOS att dela samma nivå av mognad i både funktioner och buggar. Förutom vad som anges nedan gäller problemen i det här avsnittet för båda operativ systemen.
 
 ### <a name="case-sensitivity-in-powershell"></a>Skift läges känslighet i PowerShell
 
@@ -27,7 +27,7 @@ Tidigare har PowerShell varit enhetligt Skift läges okänsligt, med några unda
 
 #### <a name="indirectly"></a>Indirekt
 
-- Om ett skript försöker läsa in en modul och modulnamnet inte bokstäver korrekt, kommer inläsningen av modulen att Miss sen. Detta kan orsaka problem med befintliga skript om namnet som modulen refererar till inte stämmer överens med det faktiska fil namnet.
+- Om ett skript försöker läsa in en modul och modulnamnet inte bokstäver korrekt, Miss lyckas inläsningen av modulen. Detta kan orsaka ett problem med befintliga skript om namnet som modulen refererar till inte stämmer överens med det faktiska fil namnet.
 - Fliken slut för ande slutförs inte automatiskt om fil namns fallet är fel. Fragmentet som ska slutföras måste vara bokstäver korrekt. (Slut för ande är inte Skift läges känsligt för typnamn och typ av medlems komplettering.)
 
 ### <a name="ps1-file-extensions"></a>. PS1 fil namns tillägg
@@ -41,13 +41,13 @@ På Linux/macOS är "bekvämlighets Ali Aset" för de grundläggande kommandona 
 Det finns för-och nack delar med att göra detta. Om du tar bort alias exponeras den inbyggda kommando upplevelsen för PowerShell-användaren, men funktionaliteten i gränssnittet minskas eftersom de interna kommandona returnerar strängar i stället för objekt.
 
 > [!NOTE]
-> Det här är ett utrymme där PowerShell-teamet söker efter feedback.
-> Vilken är den bästa lösningen? Ska vi lämna den som den är eller lägga till bekvämlighets Ali Aset igen? Se [problem #929](https://github.com/PowerShell/PowerShell/issues/929).
+> Det här är ett utrymme där PowerShell-teamet söker efter feedback. Vilken är den bästa lösningen?
+> Ska vi lämna den som den är eller lägga till bekvämlighets Ali Aset igen? Se [problem #929](https://github.com/PowerShell/PowerShell/issues/929).
 
 ### <a name="missing-wildcard-globbing-support"></a>Stöd för jokertecken saknas (globbing)
 
 För närvarande stöder PowerShell endast globbing (jokertecken) för inbyggda cmdlets i Windows och för externa kommandon eller binärfiler, samt cmdlets i Linux. Det innebär att ett kommando som `ls
-*.txt` inte kan utföras eftersom asterisken inte kommer att expanderas för att matcha fil namn. Du kan undvika detta genom att göra `ls (gci *.txt | % name)` eller, mer enkelt `gci *.txt` med hjälp av den inbyggda PowerShell-motsvarigheten till `ls`.
+*.txt` Miss lyckas eftersom asterisken inte har utökats för att matcha fil namn. Du kan undvika detta genom att göra `ls (gci *.txt | % name)` eller, mer enkelt `gci *.txt` med hjälp av den inbyggda PowerShell-motsvarigheten till `ls`.
 
 Se [#954](https://github.com/PowerShell/PowerShell/issues/954) för att ge oss feedback om hur du kan förbättra globbing-upplevelsen på Linux/MacOS.
 
@@ -55,7 +55,7 @@ Se [#954](https://github.com/PowerShell/PowerShell/issues/954) för att ge oss f
 
 PowerShell på Linux/macOS använder .NET Core som är en del av den fullständiga .NET Framework på Microsoft Windows. Detta är viktigt eftersom PowerShell ger direkt åtkomst till de underliggande Ramverks typerna, metoderna osv. Det innebär att skript som körs på Windows inte kan köras på plattformar som inte är Windows-plattformar på grund av skillnaderna i ramverken. Mer information om .NET Core Framework finns i [dotnetfoundation.org](https://dotnetfoundation.org/).
 
-Med ankomsten av [.net standard 2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/)kommer .net Core 2,0 att ta tillbaka många av de traditionella typerna och metoderna som finns i den fullständiga .NET Framework. Det innebär att PowerShell Core kan läsa in många traditionella Windows PowerShell-moduler utan modifiering. Du kan följa våra .NET standard 2,0-relaterade arbeten [här](https://github.com/PowerShell/PowerShell/projects/4).
+Med ankomsten av [.net Standard 2,0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/)ger .net Core 2,0 tillbaka många av de traditionella typerna och metoderna i den fullständiga .NET Framework. Det innebär att PowerShell Core kan läsa in många traditionella Windows PowerShell-moduler utan ändringar. Du kan följa våra .NET standard 2,0-relaterade arbeten [här](https://github.com/PowerShell/PowerShell/projects/4).
 
 ### <a name="redirection-issues"></a>Problem med omdirigering
 
@@ -64,7 +64,7 @@ Omdirigering av utdata stöds inte i PowerShell på någon plattform.
 
 Använd `Get-Content` för att skriva innehållet i en fil till pipelinen.
 
-Omdirigerade utdata kommer att innehålla Unicode-tecknet för byte (BOM) när standard-UTF-8-kodning används. STRUKTUR listan kan orsaka problem när du arbetar med verktyg som inte förväntar sig eller när du lägger till en fil. Använd `-Encoding Ascii` för att skriva ASCII-text (som inte är Unicode, som inte har någon struktur).
+Omdirigerade utdata innehåller Unicode-bytets ordnings tecken (BOM) när standard kodningen för UTF-8 används. STRUKTUR listan orsakar problem när du arbetar med verktyg som inte förväntar sig eller när du lägger till i en fil. Använd `-Encoding Ascii` för att skriva ASCII-text, som inte har en struktur.
 
 > [!Note]
 > Se [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) för att ge oss feedback om hur du kan förbättra kodnings upplevelsen för PowerShell Core på alla plattformar. Vi arbetar med att stödja UTF-8 utan en struktur och kan eventuellt ändra standardvärdena för kodning för olika cmdlets på olika plattformar.
@@ -92,11 +92,11 @@ Möjligheten att skapa Fjärrslutpunkter för fjärran sluten administration (JE
 
 Eftersom PowerShell kör de flesta kommandon i minnet (t. ex. python eller ruby) kan du inte använda sudo direkt med PowerShell-inbyggda program. (du kan naturligtvis köra `pwsh` från sudo.) Om det är nödvändigt att köra en PowerShell-cmdlet inifrån PowerShell med sudo, till exempel `sudo Set-Date 8/18/2016`, gör du `sudo pwsh Set-Date 8/18/2016`. På samma sätt kan du inte exekvera en inbyggd PowerShell-modul direkt. I stället skulle du behöva göra `exec pwsh item_to_exec`.
 
-Det här problemet spåras för närvarande som en del av [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
+Det här problemet spåras som en del av [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
 
 ### <a name="missing-cmdlets"></a>Cmdletar som saknas
 
-Ett stort antal kommandon (cmdlets) som normalt är tillgängliga i PowerShell är inte tillgängliga på Linux/macOS. I många fall är dessa kommandon inte begripliga på dessa plattformar (t. ex. Windows-/regionsspecifika funktioner som registret). Andra kommandon som Service Control-kommandona (Get/Start/Stop-service) finns, men fungerar inte. Framtida versioner korrigerar problemen, korrigerar de brutna cmdletarna och lägger till nya över tid.
+Ett stort antal kommandon (cmdlets) som normalt är tillgängliga i PowerShell är inte tillgängliga på Linux/macOS. I många fall är dessa kommandon inte begripliga på dessa plattformar (t. ex. Windows-/regionsspecifika funktioner som registret). Andra kommandon som Service Control-kommandona (Get/Start/Stop-service) finns, men fungerar inte. Framtida versioner kan åtgärda problemen genom att åtgärda de brutna cmdletarna och lägga till nya över tid.
 
 ### <a name="command-availability"></a>Kommando tillgänglighet
 
@@ -104,11 +104,10 @@ I följande tabell visas kommandon som är kända för att inte fungera i PowerS
 
 |Kommandon|Användnings tillstånd|Obs!|
 |--------|-----------------|-----|
-|`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Inte tillgängligt.|De här kommandona kommer inte att identifieras. Detta bör åtgärdas i en framtida version.|
-|`Get-Acl`, `Set-Acl`|Inte tillgänglig.|De här kommandona kommer inte att identifieras. Detta bör åtgärdas i en framtida version.|
-|`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|Inte tillgänglig.|De här kommandona kommer inte att identifieras. Detta bör åtgärdas i en framtida version.|
+|`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Inte tillgängligt.|Dessa kommandon känns inte igen. Detta bör åtgärdas i en framtida version.|
+|`Get-Acl`, `Get-AuthenticodeSignature`, `Get-CmsMessage`, `New-FileCatalog`, `Protect-CmsMessage`, `Set-Acl`, `Set-AuthenticodeSignature`, `Test-FileCatalog`, `Unprotect-CmsMessage`|Inte tillgänglig.|Dessa kommandon känns inte igen. Detta bör åtgärdas i en framtida version.|
 |`Wait-Process`|Tillgängligt, fungerar inte korrekt. |Till exempel `Start-Process gvim -PassThru | Wait-Process` fungerar inte. Det går inte att vänta på processen.|
-|`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Tillgängligt men fungerar inte.|Skriver ett fel meddelande som anger att kommandona inte fungerar. Dessa bör korrigeras i en framtida version.|
-|`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Tillgängligt, men inga händelse källor är tillgängliga.|PowerShell Eventing-kommandona finns men de flesta händelse källor som används med kommandona (t. ex. system. timers. timer) är inte tillgängliga i Linux och gör kommandona oanvändbara i alpha-versionen.|
+|`Connect-PSSession`, `Disable-PSRemoting`, `Disable-PSSessionConfiguration`, `Disconnect-PSSession`, `Enable-PSRemoting`, `Enable-PSSessionConfiguration`, `Get-PSSessionCapability`, `Get-PSSessionConfiguration`, `New-PSSessionConfigurationFile`, `Receive-PSSession`, `Register-PSSessionConfiguration`, `Set-PSSessionConfiguration`, `Test-PSSessionConfigurationFile`, `Unregister-PSSessionConfiguration`|Inte tillgängligt.|Dessa kommandon känns inte igen. Detta bör åtgärdas i en framtida version.|
+|`Get-Event`, `New-Event`, `Register-EngineEvent`, `Remove-Event`, `Unregister-Event`|Tillgängligt, men inga händelse källor är tillgängliga.|PowerShell Eventing-kommandona finns men de flesta händelse källor som används med kommandona (t. ex. system. timers. timer) är inte tillgängliga i Linux och gör kommandona oanvändbara i alpha-versionen.|
 |`Set-ExecutionPolicy`|Tillgängligt men fungerar inte.|Returnerar ett meddelande som säger att det inte stöds på den här plattformen. Körnings principen är en fokuserad "säkerhetsbälte" som hindrar användaren från att göra kostsamma misstag. Det är ingen säkerhets gränser.|
 |`New-PSSessionOption`, `New-PSTransportOption`|Tillgängligt men `New-PSSession` fungerar inte.|`New-PSSessionOption` och `New-PSTransportOption` är för närvarande inte verifierade för att fungera nu som `New-PSSession` fungerar.|

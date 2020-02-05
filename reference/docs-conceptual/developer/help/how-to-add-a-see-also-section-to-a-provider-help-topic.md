@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9c754ac3-cee3-4c13-9bad-e499c8a68a09
 caps.latest.revision: 4
-ms.openlocfilehash: f5c48fd04c620828a6e99c5c5424d11b31fd10e5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1c1b7f4cf56ea2f9e30438a60e7bee29d87b80ba
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357871"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995957"
 ---
 # <a name="how-to-add-a-see-also-section-to-a-provider-help-topic"></a>Lägga till ett ”Se även”-avsnitt i ett hjälpavsnitt för providers
 
@@ -29,7 +29,7 @@ Avsnittet Se även skapas från `RelatedLinks`-elementet och de taggar som det i
 
 1. Lägg till ett `RelatedLinks`-element i `providerHelp`-elementet i filen *AssemblyName*. dll-Help. xml. `RelatedLinks`-elementet ska vara det sista elementet i `providerHelp`-elementet. Endast ett `RelatedLinks`-element tillåts i varje leverantörs hjälp avsnitt.
 
-   Till exempel:
+   Ett exempel:
 
     ```xml
     <providerHelp>
@@ -40,7 +40,7 @@ Avsnittet Se även skapas från `RelatedLinks`-elementet och de taggar som det i
 
 2. För varje ämne i avsnittet **Se även** , Lägg till ett `navigationLink`-element i `RelatedLinks`-elementet. Lägg sedan till ett `linkText`-element och ett `uri`-element inom varje `navigationLink`-element. Om du inte använder `uri`-elementet kan du lägga till det som ett tomt element (\<URI/>).
 
-   Till exempel:
+   Ett exempel:
 
     ```xml
     <providerHelp>
@@ -70,7 +70,7 @@ Avsnittet Se även skapas från `RelatedLinks`-elementet och de taggar som det i
             </navigationLink>
             <navigationLink>
                 <linkText> Windows PowerShell Getting Started Guide </linkText>
-                <uri>http://go.microsoft.com/fwlink/?LinkID=89597<uri/>
+                <uri>https://go.microsoft.com/fwlink/?LinkID=89597<uri/>
             </navigationLink>
         </RelatedLinks>
     </providerHelp>

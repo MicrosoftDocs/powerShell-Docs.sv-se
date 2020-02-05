@@ -1,17 +1,29 @@
 ---
-ms.date: 12/18/2019
+ms.date: 02/03/2020
 keywords: PowerShell, Core
 title: Bryta ändringar för PowerShell 6,0
-ms.openlocfilehash: dfbbeb5e5bb3d43959ce144afffc5b10193f8b30
-ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
+ms.openlocfilehash: 47ed14cceed86e4dd04a8e0079af00f6a98988ea
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75415699"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995452"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>Bryta ändringar för PowerShell 6. x
 
 ## <a name="features-no-longer-available-in-powershell-core"></a>Funktioner som inte längre är tillgängliga i PowerShell Core
+
+### <a name="modules-not-shipped-for-powershell-6x"></a>Moduler som inte levererats för PowerShell 6. x
+
+För olika kompatibilitetsproblem ingår inte följande moduler i PowerShell 6.
+
+- ISE
+- Microsoft. PowerShell. LocalAccounts
+- Microsoft. PowerShell. ODataUtils
+- Microsoft. PowerShell. operation. Validation
+- PSScheduledJob
+- PSWorkflow
+- PSWorkflowUtility
 
 ### <a name="powershell-workflow"></a>PowerShell-arbetsflöde
 
@@ -40,10 +52,11 @@ Idag tar detta upp `ActiveDirectory` och `DnsClient` modulerna i Windows och Win
 
 På grund av komplexiteten med stöd för två uppsättningar WMI-baserade moduler tog vi bort WMI v1-cmdletar från PowerShell Core:
 
-- `Get-WmiObject`
-- `Invoke-WmiMethod`
 - `Register-WmiEvent`
 - `Set-WmiInstance`
+- `Invoke-WmiMethod`
+- `Get-WmiObject`
+- `Remove-WmiObject`
 
 I stället rekommenderar vi att du använder CIM-cmdletarna (aka WMI v2) som tillhandahåller samma funktioner med nya funktioner och en omdesignad syntax:
 
@@ -68,14 +81,51 @@ På grund av användning av API: er som inte stöds har `Microsoft.PowerShell.Lo
 
 .NET Core har inte stöd för Windows Communication Framework, som tillhandahåller tjänster för att använda SOAP-protokollet. Den här cmdleten togs bort eftersom den kräver SOAP.
 
-### <a name="-computer-cmdlets"></a>`*-Computer`-cmdletar
+### <a name="-transaction-cmdlets-removed"></a>`*-Transaction` cmdlets tas bort
+
+Dessa cmdletar hade mycket begränsad användning. Beslutet har fattats för att avbryta stödet för dem.
+
+- `Complete-Transaction`
+- `Get-Transaction`
+- `Start-Transaction`
+- `Undo-Transaction`
+- `Use-Transaction`
+
+### <a name="security-cmdlets-not-available-on-non-windows-platforms"></a>Säkerhets-cmdletar är inte tillgängliga på plattformar som inte är Windows-plattformar
+
+- `Get-Acl`
+- `Set-Acl`
+- `Get-AuthenticodeSignature`
+- `Set-AuthenticodeSignature`
+- `Get-CmsMessage`
+- `Protect-CmsMessage`
+- `Unprotect-CmsMessage`
+- `New-FileCatalog`
+- `Test-FileCatalog`
+
+### <a name="-computerand-other-windows-specific-cmdlets"></a>`*-Computer`och andra Windows-/regionsspecifika cmdlets
 
 På grund av användning av API: er som inte stöds har följande cmdlets tagits bort från PowerShell Core tills en bättre lösning har hittats.
 
-- Add-Computer
-- Checkpoint-Computer
-- Remove-Computer
-- Återställa-dator
+- `Get-Clipboard`
+- `Set-Clipboard`
+- `Add-Computer`
+- `Checkpoint-Computer`
+- `Remove-Computer`
+- `Restore-Computer`
+- `Reset-ComputerMachinePassword`
+- `Disable-ComputerRestore`
+- `Enable-ComputerRestore`
+- `Get-ComputerRestorePoint`
+- `Test-ComputerSecureChannel`
+- `Get-ControlPanelItem`
+- `Show-ControlPanelItem`
+- `Get-HotFix`
+- `Clear-RecycleBin`
+- `Update-List`
+- `Out-Printer`
+- `ConvertFrom-String`
+- `Convert-String`
 
 ### <a name="-counter-cmdlets"></a>`*-Counter`-cmdletar
 
@@ -84,6 +134,31 @@ På grund av användning av API: er som inte stöds har `*-Counter` tagits bort 
 ### <a name="-eventlog-cmdlets"></a>`*-EventLog`-cmdletar
 
 På grund av användning av API: er som inte stöds har `*-EventLog` tagits bort från PowerShell-kärnan. tills en bättre lösning har hittats. `Get-WinEvent` och `Create-WinEvent` är tillgängliga för att hämta och skapa händelser i Windows.
+
+### <a name="cmdlets-that-use-wpf-removed"></a>Cmdletar som använder WPF borttagna
+
+Windows Presentation Framework stöds inte på CoreCLR. Följande cmdletar påverkas:
+
+- `Show-Command`
+- `Out-GridView`
+- **ShowWindow** -parametern för `Get-Help`
+
+### <a name="some-dsc-cmdlets-removed"></a>Vissa DSC-cmdletar har tagits bort
+
+- `Get-DscConfiguration`
+- `Publish-DscConfiguration`
+- `Restore-DscConfiguration`
+- `Start-DscConfiguration`
+- `Stop-DscConfiguration`
+- `Test-DscConfiguration`
+- `Update-DscConfiguration`
+- `Remove-DscConfigurationDocument`
+- `Get-DscConfigurationStatus`
+- `Disable-DscDebug`
+- `Enable-DscDebug`
+- `Get-DscLocalConfigurationManager`
+- `Set-DscLocalConfigurationManager`
+- `Invoke-DscResource`
 
 ## <a name="enginelanguage-changes"></a>Motor/språk ändringar
 
@@ -124,7 +199,7 @@ När ett API returnerar bara `null`, serialiserade Invoke-RestMethod detta som s
 På grund av problem med RPC-fjärrkommunikation i CoreFX (särskilt på plattformar som inte är Windows) och säkerställer en konsekvent fjärrhantering i PowerShell, har parametern `-Protocol` tagits bort från `\*-Computer`-cmdlet: arna. DCOM stöds inte längre för fjärr kommunikation. Följande cmdletar stöder bara WSMAN-fjärr kommunikation:
 
 - Byt namn – dator
-- Restart-computer
+- Starta om datorn
 - Stoppa – dator
 
 ### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Ta bort `-ComputerName` från `*-Service`-cmdletar [#5090](https://github.com/PowerShell/PowerShell/issues/5094)

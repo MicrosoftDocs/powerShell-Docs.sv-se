@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 10098160-c6b4-4339-b8ff-2c4f8cc0699b
 caps.latest.revision: 13
-ms.openlocfilehash: fbc77cc0fafce93d239da1c459d4b761b21ef3cb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a5290265f3d729504983b95195c793b88c4a2613
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357318"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995993"
 ---
 # <a name="updatable-help-authoring-step-by-step"></a>Redigering av uppdateringsbar hjälp: steg för steg
 
@@ -33,14 +33,14 @@ Det första steget i att skapa en uppdaterings bar hjälp är att hitta en Inter
 
 Lägg till en **HelpInfoURI** -nyckel till modulen manifest. Nyckelns värde är Uniform Resource Identifier (URI) för platsen för XML-HelpInfo för modulen. För säkerhet måste adressen börja med "http" eller "https". URI: n måste ange en Internet plats, men får inte innehålla HelpInfo XML-filnamn.
 
-Till exempel:
+Ett exempel:
 
 ```powershell
 
 @{
 RootModule = TestModule.psm1
 ModuleVersion = '2.0'
-HelpInfoURI = 'http://go.microsoft.com/fwlink/?LinkID=0123'
+HelpInfoURI = 'https://go.microsoft.com/fwlink/?LinkID=0123'
 }
 ```
 
