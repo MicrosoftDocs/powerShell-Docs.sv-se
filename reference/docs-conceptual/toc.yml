@@ -654,8 +654,8 @@
           href: samples/creating-.net-and-com-objects--new-object-.md
         - name: Använd statiska klasser och metoder
           href: samples/using-static-classes-and-methods.md
-        - name: Hämta WMI-objekt – Get-WmiObject
-          href: samples/getting-wmi-objects--get-wmiobject-.md
+        - name: Hämta WMI-objekt – Get-CimInstance
+          href: samples/getting-wmi-objects--get-ciminstance-.md
     - name: Hantera datorer
       items:
         - name: Ändra datorstatus
