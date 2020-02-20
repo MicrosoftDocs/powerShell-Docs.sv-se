@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Felsöka DSC
-ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5cbe6496a6e0b9940f4b69e13d1e19e43b3915f0
+ms.sourcegitcommit: 5f199cd2a1b31dbcebaab44f2fe496f289831a30
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71942414"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77478793"
 ---
 # <a name="troubleshooting-dsc"></a>Felsöka DSC
 
@@ -643,9 +643,19 @@ https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned une
 Detta kan inträffa när certifikatet som används på servern för att kryptera trafik har ett eget namn (CN) som skiljer sig från det DNS-namn som används av noden för att matcha URL: en.
 Uppdatera Windows pull Server-instansen för att använda ett certifikat med ett korrigerat namn.
 
+## <a name="error-when-running-sysprep-after-applying-a-dsc-configuration"></a>Fel vid körning av Sysprep efter användning av en DSC-konfiguration
+
+När du försöker köra Sysprep för att generalisera en Windows Server efter att ha tillämpat en DSC-konfiguration kan du stöta på följande fel.
+
+```
+SYSPRP LaunchDll:Failure occurred while executing 'DscCore.dll,SysPrep_Cleanup', returned error code 0x2
+```
+
+Att generalisera en server när den har kon figurer ATS med hjälp av Windows PowerShell Desired State Configuration är inte ett scenario som stöds.  Använd i stället konfigurationer för Windows när specialize-fasen i Installationsprogrammet för Windows har slutförts.
+
 ## <a name="see-also"></a>Se även
 
-### <a name="concepts"></a>Begrepp
+### <a name="concepts"></a>Koncept
 
 - [Bygg anpassade resurser för Desired Configuration för Windows PowerShell](../resources/authoringResource.md)
 

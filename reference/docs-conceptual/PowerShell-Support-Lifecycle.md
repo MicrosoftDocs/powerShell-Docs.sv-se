@@ -2,12 +2,12 @@
 title: Supportlängd för PowerShell Core
 description: Principer som styr support för PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 57804df830da01bee0f48acc374658b025a46b85
-ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
+ms.openlocfilehash: d535199e19c1aabbbfdd140b38aad329bc5d957e
+ms.sourcegitcommit: 5f199cd2a1b31dbcebaab44f2fe496f289831a30
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022228"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77478810"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Supportlängd för PowerShell Core
 
@@ -50,22 +50,20 @@ Vår community har också bidragit med paket för vissa plattformar, men de stö
 Plattformar som anges som `Experimental` stöds inte officiellt, men är tillgängliga för experimentering och feedback.
 
 | Plattform                                          |      6.2      |    7.0    |
-|---------------------------------------------------|:-------------:|:---------:|
-| Windows 7, 8,1 och 10                            |   Stöds   | Stöds |
-| Windows Server 2008 R2, 2012 R2, 2016             |   Stöds   | Stöds |
+| ------------------------------------------------- | :-----------: | :-------: |
+| Windows 8,1 och 10                               |   Stöds   | Stöds |
+| Windows Server 2012 R2, 2016                      |   Stöds   | Stöds |
 | [Windows Server, halvårs kanal][semi-annual] |   Stöds   | Stöds |
 | Ubuntu 16,04 och 18,04                            |   Stöds   | Stöds |
-| Ubuntu 18,10 (via Snap-paket)                   |   Community   | Community |
-| Ubuntu 19,04 (via Snap-paket)                   |   Community   | Community |
+| Ubuntu 19,10 (via Snap-paket)                   |   Community   | Community |
+| Ubuntu 20,04 (via Snap-paket)                   |   Community   | Community |
 | Debian 9                                          |   Stöds   | Stöds |
 | Debian 10                                         | Stöds inte | Stöds |
 | CentOS 7                                          |   Stöds   | Stöds |
 | CentOS 8                                          | Stöds inte | Stöds |
 | Red Hat Enterprise Linux 7                        |   Stöds   | Stöds |
 | Red Hat Enterprise Linux 8                        | Stöds inte | Stöds |
-| openSUSE 42,3                                     |   Stöds   | Stöds |
-| Fedora 28                                         |   Stöds   | Stöds |
-| Fedora 29, 30                                     | Stöds inte | Stöds |
+| Fedora 30                                         | Stöds inte | Stöds |
 | Alpina 3,8                                        |   Se Obs!    | Se Obs!  |
 | Alpina 3,9 och 3,10                               | Stöds inte | Se Obs!  |
 | macOS 10.12 +                                      |   Stöds   | Stöds |
@@ -97,19 +95,23 @@ När en plattforms version når livs längd som definieras av plattforms ägaren
 
 Distributions ägarna avslutade därför stödet för följande versioner och stöds inte.
 
-| Plattform | Version | Uttjänta                                                                                 |
-|----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 24      | [2017 augusti](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| Fedora   | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
-| Fedora   | 26      | [Maj 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| openSUSE | 42.1    | [Maj 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| openSUSE | 42,2    | [Januari 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
-| Ubuntu   | 16,10   | [Juli 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
-| Ubuntu   | 17,04   | [Januari 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
-| Ubuntu   | 17,10   | [Juli 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
-| Debian   | 8       | [Juni 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
-| Fedora   | 27      | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
-| Ubuntu   | 14.04   | [April 2019](https://wiki.ubuntu.com/Releases)                                              |
+| Plattform       | Version | Uttjänta                                                                                                                        |
+| -------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Debian         | 8       | [2018 juni](https://lists.debian.org/debian-security-announce/2018/msg00132.html)                                                  |
+| Fedora         | 24      | [2017 augusti](https://fedoramagazine.org/fedora-24-eol/)                                                                           |
+| Fedora         | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                                                                    |
+| Fedora         | 26      | [Maj 2018](https://fedoramagazine.org/fedora-26-end-life/)                                                                         |
+| Fedora         | 27      | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                                                                 |
+| Fedora         | 28      | [Maj 2019](https://fedoramagazine.org/fedora-28-end-of-life/)                                                                      |
+| openSUSE       | 42.1    | [Maj 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)                                            |
+| openSUSE       | 42,2    | [Januari 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html)                                        |
+| openSUSE       | 42,3    | [Juli 2019](https://lists.opensuse.org/opensuse-security-announce/2019-07/msg00000.html)                                           |
+| Ubuntu         | 14.04   | [April 2019](https://wiki.ubuntu.com/Releases)                                                                                     |
+| Ubuntu         | 16,10   | [Juli 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)                                               |
+| Ubuntu         | 17,04   | [Januari 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)                                                 |
+| Ubuntu         | 17,10   | [Juli 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)                                               |
+| Windows        | 7       | [Januari 2020](https://support.microsoft.com/en-us/help/4057281/windows-7-support-ended-on-january-14-2020)                        |
+| Windows Server | 2008 R2 | [Januari 2020](https://support.microsoft.com/en-us/help/4456235/end-of-support-for-windows-server-2008-and-windows-server-2008-r2) |
 
 ## <a name="notes-on-licensing"></a>Anteckningar om licensiering
 
