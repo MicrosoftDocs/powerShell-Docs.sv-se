@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: PowerShell, Core
 title: Versions historik för moduler och cmdletar
-ms.openlocfilehash: e421201d74da2cc74b1bd57529fb3c3e5245ecae
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: e0fe9b263bdd0a5e1bedd0762b7613a4bbe02a58
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995443"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706144"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>Versions historik för moduler och cmdletar
 
@@ -30,7 +30,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | Microsoft. PowerShell. Archive              | &check; | &check; | &check; | &check; |              |
 | Microsoft.PowerShell.Core                 | &check; | &check; | &check; | &check; |              |
 | Microsoft.PowerShell.Diagnostics          | &check; | &check; | &check; | &check; | Endast Windows |
-| Microsoft. PowerShell. Host                 | &check; | &check; | &check; | &check; |              |
+| Microsoft.PowerShell.Host                 | &check; | &check; | &check; | &check; |              |
 | Microsoft. PowerShell. LocalAccounts        | &check; |         |         |         | Endast Windows |
 | Microsoft.PowerShell.Management           | &check; | &check; | &check; | &check; |              |
 | Microsoft. PowerShell. ODataUtils           | &check; |         |         |         | Endast Windows |
@@ -47,7 +47,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | PSScheduledJob                            | &check; |         |         |         | Endast Windows |
 | PSWorkflow                                | &check; |         |         |         | Endast Windows |
 | PSWorkflowUtility                         | &check; |         |         |         | Endast Windows |
-| ThreadJob                                 |         | &check; | &check; | &check; |              |
+| ThreadJob                                 |         | &check; | &check; | &check; | Kan installeras i PowerShell 5,1 |
 
 ## <a name="cmdlet-release-history"></a>Versions historik för cmdlet
 
@@ -55,12 +55,12 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 |         Cmdlet-namn         |   5,1   |   6.x   |   7.0   |   7.1   |     Obs!     |
 | --------------------------- | :-----: | :-----: | :-----: | :-----: | ------------ |
-| Exportera – BinaryMiLog          | &check; | &check; | &check; | &check; | Endast Windows |
+| Export-BinaryMiLog          | &check; | &check; | &check; | &check; | Endast Windows |
 | Get-CimAssociatedInstance   | &check; | &check; | &check; | &check; | Endast Windows |
 | Get-CimClass                | &check; | &check; | &check; | &check; | Endast Windows |
 | Get-CimInstance             | &check; | &check; | &check; | &check; | Endast Windows |
 | Get-CimSession              | &check; | &check; | &check; | &check; | Endast Windows |
-| Importera – BinaryMiLog          | &check; | &check; | &check; | &check; | Endast Windows |
+| Import-BinaryMiLog          | &check; | &check; | &check; | &check; | Endast Windows |
 | Invoke-CimMethod            | &check; | &check; | &check; | &check; | Endast Windows |
 | New-CimInstance             | &check; | &check; | &check; | &check; | Endast Windows |
 | New-CimSession              | &check; | &check; | &check; | &check; | Endast Windows |
@@ -90,9 +90,9 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 |            Cmdlet-namn            |   5,1   |   6.x   |   7.0   |   7.1   |            Obs!            |
 | --------------------------------- | :-----: | :-----: | :-----: | :-----: | -------------------------- |
-| Lägg till-historik                       | &check; | &check; | &check; | &check; |                            |
+| Add-History                       | &check; | &check; | &check; | &check; |                            |
 | Add-PSSnapin                      | &check; |         |         |         | Endast Windows               |
-| Rensa – historik                     | &check; | &check; | &check; | &check; |                            |
+| Clear-History                     | &check; | &check; | &check; | &check; |                            |
 | Rensa värd                        | &check; | &check; | &check; | &check; |                            |
 | Anslut – PSSession                 | &check; | &check; | &check; | &check; | Endast Windows               |
 | Fel sökning – jobb                         | &check; | &check; | &check; | &check; |                            |
@@ -101,19 +101,19 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | Disable-PSSessionConfiguration    | &check; | &check; | &check; | &check; | Endast Windows               |
 | Koppla från-PSSession              | &check; | &check; | &check; | &check; | Endast Windows               |
 | Aktivera – ExperimentalFeature        |         |   6.2   | &check; | &check; |                            |
-| Enable-PSRemoting                 | &check; | &check; | &check; | &check; | Endast Windows               |
+| Aktivera – PSRemoting                 | &check; | &check; | &check; | &check; | Endast Windows               |
 | Aktivera – PSSessionConfiguration     | &check; | &check; | &check; | &check; | Endast Windows               |
 | Retur-PSHostProcess               | &check; | &check; | &check; | &check; | Linux-stöd har lagts till i 6,2 |
-| Retur-PSSession                   | &check; | &check; | &check; | &check; |                            |
+| Enter-PSSession                   | &check; | &check; | &check; | &check; |                            |
 | Avsluta-PSHostProcess                | &check; | &check; | &check; | &check; | Linux-stöd har lagts till i 6,2 |
-| Avsluta-PSSession                    | &check; | &check; | &check; | &check; |                            |
-| Exportera-konsol                    | &check; |         |         |         | Endast Windows               |
+| Exit-PSSession                    | &check; | &check; | &check; | &check; |                            |
+| Export-Console                    | &check; |         |         |         | Endast Windows               |
 | Exportera – ModuleMember               | &check; | &check; | &check; | &check; |                            |
 | -Objekt                    | &check; | &check; | &check; | &check; |                            |
 | Get-Command                       | &check; | &check; | &check; | &check; |                            |
 | Get-ExperimentalFeature           |         |   6.2   | &check; | &check; |                            |
-| Get – hjälp                          | &check; | &check; | &check; | &check; |                            |
-| Hämta historik                       | &check; | &check; | &check; | &check; |                            |
+| Get-Help                          | &check; | &check; | &check; | &check; |                            |
+| Get-History                       | &check; | &check; | &check; | &check; |                            |
 | Hämta jobb                           | &check; | &check; | &check; | &check; |                            |
 | Hämta modul                        | &check; | &check; | &check; | &check; |                            |
 | Get-PSHostProcessInfo             | &check; | &check; | &check; | &check; | Linux-stöd har lagts till i 6,2 |
@@ -121,10 +121,10 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | Get-PSSessionCapability           | &check; | &check; | &check; | &check; |                            |
 | Get-PSSessionConfiguration        | &check; | &check; | &check; | &check; |                            |
 | Get-PSSnapin                      | &check; |         |         |         | Endast Windows               |
-| Get-verb                          | &check; |         |         |         | Endast Windows               |
+| Get-verb                          | &check; |         |         |         | Flyttad till Microsoft. PowerShell. Utility 6.0 + |
 | Importera-modul                     | &check; | &check; | &check; | &check; |                            |
 | Invoke-kommando                    | &check; | &check; | &check; | &check; |                            |
-| Anropa-historik                    | &check; | &check; | &check; | &check; |                            |
+| Invoke-History                    | &check; | &check; | &check; | &check; |                            |
 | Ny modul                        | &check; | &check; | &check; | &check; |                            |
 | New-ModuleManifest                | &check; | &check; | &check; | &check; |                            |
 | New-PSRoleCapabilityFile          | &check; | &check; | &check; | &check; |                            |
@@ -144,7 +144,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | Remove-PSSession                  | &check; | &check; | &check; | &check; |                            |
 | Remove-PSSnapin                   | &check; |         |         |         | Endast Windows               |
 | Återuppta – jobb                        | &check; |         |         |         |                            |
-| Spara – hjälp                         | &check; | &check; | &check; | &check; |                            |
+| Save-Help                         | &check; | &check; | &check; | &check; |                            |
 | Set-PSDebug                       | &check; | &check; | &check; | &check; |                            |
 | Set-PSSessionConfiguration        | &check; | &check; | &check; | &check; | Endast Windows               |
 | Set-StrictMode                    | &check; | &check; | &check; | &check; |                            |
@@ -154,7 +154,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | Test-ModuleManifest               | &check; | &check; | &check; | &check; |                            |
 | Test-PSSessionConfigurationFile   | &check; | &check; | &check; | &check; | Endast Windows               |
 | Avregistrera-PSSessionConfiguration | &check; | &check; | &check; | &check; | Endast Windows               |
-| Uppdatera – hjälp                       | &check; | &check; | &check; | &check; |                            |
+| Update-Help                       | &check; | &check; | &check; | &check; |                            |
 | Wait-Job                          | &check; | &check; | &check; | &check; |                            |
 | Where-objekt                      | &check; | &check; | &check; | &check; |                            |
 
@@ -168,12 +168,12 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | Importera – räknare | &check; |         |         |         | Endast Windows |
 | New-WinEvent   | &check; | &check; | &check; | &check; | Endast Windows |
 
-### <a name="microsoftpowershellhost"></a>Microsoft. PowerShell. Host
+### <a name="microsoftpowershellhost"></a>Microsoft.PowerShell.Host
 
 |   Cmdlet-namn    |   5,1   |   6.x   |   7.0   |   7.1   | Obs! |
 | ---------------- | :-----: | :-----: | :-----: | :-----: | ---- |
-| Start-avskrift | &check; | &check; | &check; | &check; |      |
-| Stopp-avskrift  | &check; | &check; | &check; | &check; |      |
+| Start-Transcript | &check; | &check; | &check; | &check; |      |
+| Stop-Transcript  | &check; | &check; | &check; | &check; |      |
 
 ### <a name="microsoftpowershelllocalaccounts"></a>Microsoft. PowerShell. LocalAccounts
 
@@ -199,19 +199,19 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 |          Cmdlet-namn          |   5,1   |   6.x   |   7.0   |   7.1   |               Obs!               |
 | ----------------------------- | :-----: | :-----: | :-----: | :-----: | -------------------------------- |
-| Lägg till dator                  | &check; |         |         |         | Endast Windows                     |
+| Add-Computer                  | &check; |         |         |         | Endast Windows                     |
 | Lägg till innehåll                   | &check; | &check; | &check; | &check; |                                  |
-| Checkpoint-Computer           | &check; |         |         |         | Endast Windows                     |
+| Kontroll punkt – dator           | &check; |         |         |         | Endast Windows                     |
 | Rensa innehåll                 | &check; | &check; | &check; | &check; |                                  |
-| Rensa-EventLog                | &check; |         |         |         | Endast Windows                     |
+| Clear-EventLog                | &check; |         |         |         | Endast Windows                     |
 | Rensa objekt                    | &check; | &check; | &check; | &check; |                                  |
 | Clear-ItemProperty            | &check; | &check; | &check; | &check; |                                  |
 | Clear-RecycleBin              | &check; |         | &check; | &check; | Endast Windows                     |
-| Slutförd transaktion          | &check; |         |         |         | Endast Windows                     |
+| Complete-Transaction          | &check; |         |         |         | Endast Windows                     |
 | Konvertera-sökväg                  | &check; | &check; | &check; | &check; |                                  |
 | Kopiera objekt                     | &check; | &check; | &check; | &check; |                                  |
 | Kopiera – ItemProperty             | &check; | &check; | &check; | &check; |                                  |
-| Fel sökning – process                 | &check; | &check; | &check; | &check; |                                  |
+| Debug-Process                 | &check; | &check; | &check; | &check; |                                  |
 | Disable-ComputerRestore       | &check; |         |         |         | Endast Windows                     |
 | Aktivera – ComputerRestore        | &check; |         |         |         | Endast Windows                     |
 | Get-ChildItem                 | &check; | &check; | &check; | &check; |                                  |
@@ -229,27 +229,27 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | Hämta process                   | &check; | &check; | &check; | &check; |                                  |
 | Get-PSDrive                   | &check; | &check; | &check; | &check; |                                  |
 | Get-PSProvider                | &check; | &check; | &check; | &check; |                                  |
-| Get-Service                   | &check; | &check; | &check; | &check; | Endast Windows                     |
+| Get-service                   | &check; | &check; | &check; | &check; | Endast Windows                     |
 | Get-TimeZone                  | &check; | &check; | &check; | &check; |                                  |
-| Hämta transaktion               | &check; |         |         |         | Endast Windows                     |
+| Get-Transaction               | &check; |         |         |         | Endast Windows                     |
 | Get-WmiObject                 | &check; |         |         |         | Endast Windows                     |
 | Anropa-objekt                   | &check; | &check; | &check; | &check; |                                  |
 | Invoke-WmiMethod              | &check; |         |         |         | Endast Windows                     |
 | Anslut till sökväg                     | &check; | &check; | &check; | &check; |                                  |
-| Begränsning-EventLog                | &check; |         |         |         | Endast Windows                     |
+| Limit-EventLog                | &check; |         |         |         | Endast Windows                     |
 | Flytta objekt                     | &check; | &check; | &check; | &check; |                                  |
 | Move-ItemProperty             | &check; | &check; | &check; | &check; |                                  |
-| Ny-EventLog                  | &check; |         |         |         | Endast Windows                     |
+| New-EventLog                  | &check; |         |         |         | Endast Windows                     |
 | Nytt objekt                      | &check; | &check; | &check; | &check; |                                  |
 | New-ItemProperty              | &check; | &check; | &check; | &check; |                                  |
 | New-PSDrive                   | &check; | &check; | &check; | &check; |                                  |
-| New-Service                   | &check; | &check; | &check; | &check; | Endast Windows                     |
+| Ny tjänst                   | &check; | &check; | &check; | &check; | Endast Windows                     |
 | New-WebServiceProxy           | &check; |         |         |         | Endast Windows                     |
 | Pop-location                  | &check; | &check; | &check; | &check; |                                  |
 | Push-plats                 | &check; | &check; | &check; | &check; |                                  |
 | Registrera – WmiEvent             | &check; |         |         |         | Endast Windows                     |
-| Ta bort dator               | &check; |         |         |         | Endast Windows                     |
-| Ta bort-EventLog               | &check; |         |         |         | Endast Windows                     |
+| Remove-Computer               | &check; |         |         |         | Endast Windows                     |
+| Remove-EventLog               | &check; |         |         |         | Endast Windows                     |
 | Ta bort objekt                   | &check; | &check; | &check; | &check; |                                  |
 | Remove-ItemProperty           | &check; | &check; | &check; | &check; |                                  |
 | Remove-PSDrive                | &check; | &check; | &check; | &check; |                                  |
@@ -258,37 +258,37 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | Byt namn – dator               | &check; | &check; | &check; | &check; |                                  |
 | Byt namn – objekt                   | &check; | &check; | &check; | &check; |                                  |
 | Byt namn – ItemProperty           | &check; | &check; | &check; | &check; |                                  |
-| Återställ-ComputerMachinePassword | &check; |         |         |         | Endast Windows                     |
+| Reset-ComputerMachinePassword | &check; |         |         |         | Endast Windows                     |
 | Lös-sökväg                  | &check; | &check; | &check; | &check; |                                  |
-| Starta om datorn              | &check; | &check; | &check; | &check; |                                  |
-| Restart-Service               | &check; | &check; | &check; | &check; | Endast Windows                     |
+| Restart-computer              | &check; | &check; | &check; | &check; |                                  |
+| Starta om tjänsten               | &check; | &check; | &check; | &check; | Endast Windows                     |
 | Återställa-dator              | &check; |         |         |         | Endast Windows                     |
-| Resume-Service                | &check; | &check; | &check; | &check; | Endast Windows                     |
+| Resume-service                | &check; | &check; | &check; | &check; | Endast Windows                     |
 | Ange Urklipp                 | &check; |         | &check; | &check; |                                  |
 | Ange innehåll                   | &check; | &check; | &check; | &check; |                                  |
 | Ange objekt                      | &check; | &check; | &check; | &check; |                                  |
 | Set-ItemProperty              | &check; | &check; | &check; | &check; |                                  |
 | Ange plats                  | &check; | &check; | &check; | &check; |                                  |
-| Set-Service                   | &check; | &check; | &check; | &check; | Endast Windows                     |
+| Set-service                   | &check; | &check; | &check; | &check; | Endast Windows                     |
 | Ange-TimeZone                  | &check; | &check; | &check; | &check; |                                  |
 | Set-WmiInstance               | &check; |         |         |         | Endast Windows                     |
 | Visa ControlPanelItem         | &check; |         |         |         | Endast Windows                     |
-| Visa-EventLog                 | &check; |         |         |         | Endast Windows                     |
+| Show-EventLog                 | &check; |         |         |         | Endast Windows                     |
 | Dela-sökväg                    | &check; | &check; | &check; | &check; |                                  |
 | Start process                 | &check; | &check; | &check; | &check; |                                  |
 | Start-Service                 | &check; | &check; | &check; | &check; | Endast Windows                     |
-| Starta transaktion             | &check; |         |         |         | Endast Windows                     |
+| Start-Transaction             | &check; |         |         |         | Endast Windows                     |
 | Stoppa – dator                 | &check; | &check; | &check; | &check; | Stöd för Linux/macOS har lagts till i 7,0 |
 | Stoppa – process                  | &check; | &check; | &check; | &check; |                                  |
-| Stop-Service                  | &check; | &check; | &check; | &check; | Endast Windows                     |
-| Suspend-Service               | &check; | &check; | &check; | &check; | Endast Windows                     |
+| Stoppa-tjänst                  | &check; | &check; | &check; | &check; | Endast Windows                     |
+| Pausa-tjänst               | &check; | &check; | &check; | &check; | Endast Windows                     |
 | Test-ComputerSecureChannel    | &check; |         |         |         | Endast Windows                     |
-| Test-Connection               | &check; | &check; | &check; | &check; |                                  |
+| Testa anslutning               | &check; | &check; | &check; | &check; |                                  |
 | Test-sökväg                     | &check; | &check; | &check; | &check; |                                  |
-| Ångra-transaktion              | &check; |         |         |         | Endast Windows                     |
-| Använd transaktion               | &check; |         |         |         | Endast Windows                     |
+| Undo-Transaction              | &check; |         |         |         | Endast Windows                     |
+| Use-Transaction               | &check; |         |         |         | Endast Windows                     |
 | Vänta-process                  | &check; | &check; | &check; | &check; | Fungerar inte på Linux/macOS     |
-| Skriv-EventLog                | &check; |         |         |         | Endast Windows                     |
+| Write-EventLog                | &check; |         |         |         | Endast Windows                     |
 
 ### <a name="microsoftpowershellodatautils"></a>Microsoft. PowerShell. ODataUtils
 
@@ -309,7 +309,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | ------------------------- | :-----: | :-----: | :-----: | :-----: | --------------------------------------- |
 | ConvertFrom – SecureString  | &check; | &check; | &check; | &check; |                                         |
 | ConvertTo – SecureString    | &check; | &check; | &check; | &check; |                                         |
-| Get-ACL                   | &check; | &check; | &check; | &check; | Endast Windows                            |
+| Get-Acl                   | &check; | &check; | &check; | &check; | Endast Windows                            |
 | Get-AuthenticodeSignature | &check; | &check; | &check; | &check; | Endast Windows                            |
 | Get-CmsMessage            | &check; | &check; | &check; | &check; | Endast Windows                            |
 | Get-Credential            | &check; | &check; | &check; | &check; |                                         |
@@ -345,11 +345,11 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | Felsök – körnings utrymme            | &check; | &check; | &check; | &check; |                                           |
 | Disable-PSBreakpoint      | &check; | &check; | &check; | &check; |                                           |
 | Disable-RunspaceDebug     | &check; | &check; | &check; | &check; |                                           |
-| Aktivera – PSBreakpoint       | &check; | &check; | &check; | &check; |                                           |
+| Enable-PSBreakpoint       | &check; | &check; | &check; | &check; |                                           |
 | Aktivera – RunspaceDebug      | &check; | &check; | &check; | &check; |                                           |
-| Exportera-alias              | &check; | &check; | &check; | &check; |                                           |
+| Export-Alias              | &check; | &check; | &check; | &check; |                                           |
 | Exportera – CliXml             | &check; | &check; | &check; | &check; |                                           |
-| Export-Csv                | &check; | &check; | &check; | &check; |                                           |
+| Exportera-CSV                | &check; | &check; | &check; | &check; |                                           |
 | Exportera – FormatData         | &check; | &check; | &check; | &check; |                                           |
 | Exportera – PSSession          | &check; | &check; | &check; | &check; |                                           |
 | Format-Custom             | &check; | &check; | &check; | &check; |                                           |
@@ -357,11 +357,11 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | Format-List               | &check; | &check; | &check; | &check; |                                           |
 | Format-Table              | &check; | &check; | &check; | &check; |                                           |
 | Format-Wide               | &check; | &check; | &check; | &check; |                                           |
-| Get-alias                 | &check; | &check; | &check; | &check; |                                           |
+| Get-Alias                 | &check; | &check; | &check; | &check; |                                           |
 | Get-Culture               | &check; | &check; | &check; | &check; |                                           |
 | Hämta datum                  | &check; | &check; | &check; | &check; |                                           |
 | Get-Error                 |         |         | &check; | &check; |                                           |
-| Hämta händelse                 | &check; | &check; | &check; | &check; | Inga händelse källor är tillgängliga på Linux/macOS |
+| Get-Event                 | &check; | &check; | &check; | &check; | Inga händelse källor är tillgängliga på Linux/macOS |
 | Get-EventSubscriber       | &check; | &check; | &check; | &check; |                                           |
 | Get-FileHash              | &check; | &check; | &check; | &check; |                                           |
 | Get-FormatData            | &check; | &check; | &check; | &check; |                                           |
@@ -381,9 +381,9 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | Get-Variable              | &check; | &check; | &check; | &check; |                                           |
 | Get-verb                  |         | &check; | &check; | &check; |                                           |
 | Gruppera objekt              | &check; | &check; | &check; | &check; |                                           |
-| Importera-alias              | &check; | &check; | &check; | &check; |                                           |
+| Import-Alias              | &check; | &check; | &check; | &check; |                                           |
 | Importera – CliXml             | &check; | &check; | &check; | &check; |                                           |
-| Import-Csv                | &check; | &check; | &check; | &check; |                                           |
+| Importera – CSV                | &check; | &check; | &check; | &check; |                                           |
 | Importera – LocalizedData      | &check; | &check; | &check; | &check; |                                           |
 | Importera – PowerShellDataFile | &check; | &check; | &check; | &check; |                                           |
 | Importera – PSSession          | &check; | &check; | &check; | &check; |                                           |
@@ -391,18 +391,18 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | Invoke-RestMethod         | &check; | &check; | &check; | &check; |                                           |
 | Anropa-webbegäran         | &check; | &check; | &check; | &check; |                                           |
 | Anslut till sträng               |         | &check; | &check; | &check; |                                           |
-| Measure-Command           | &check; | &check; | &check; | &check; |                                           |
+| Mått-kommando           | &check; | &check; | &check; | &check; |                                           |
 | Mått – objekt            | &check; | &check; | &check; | &check; |                                           |
-| Nytt-alias                 | &check; | &check; | &check; | &check; |                                           |
-| Ny händelse                 | &check; | &check; | &check; | &check; | Inga händelse källor är tillgängliga på Linux/macOS |
+| New-Alias                 | &check; | &check; | &check; | &check; |                                           |
+| New-Event                 | &check; | &check; | &check; | &check; | Inga händelse källor är tillgängliga på Linux/macOS |
 | New-Guid                  | &check; | &check; | &check; | &check; |                                           |
 | Nytt – objekt                | &check; | &check; | &check; | &check; |                                           |
 | New-TemporaryFile         | &check; | &check; | &check; | &check; |                                           |
 | New-TimeSpan              | &check; | &check; | &check; | &check; |                                           |
-| Ny variabel              | &check; | &check; | &check; | &check; |                                           |
+| New-Variable              | &check; | &check; | &check; | &check; |                                           |
 | Ut-fil                  | &check; | &check; | &check; | &check; |                                           |
 | Out-GridView              | &check; |         | &check; | &check; |                                           |
-| Out-Printer               | &check; |         | &check; | &check; |                                           |
+| Ut-skrivare               | &check; |         | &check; | &check; |                                           |
 | Out-sträng                | &check; | &check; | &check; | &check; |                                           |
 | Read-Host                 | &check; | &check; | &check; | &check; |                                           |
 | Registrera – EngineEvent      | &check; | &check; | &check; | &check; | Inga händelse källor är tillgängliga på Linux/macOS |
@@ -411,12 +411,12 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | Ta bort händelse              | &check; | &check; | &check; | &check; | Inga händelse källor är tillgängliga på Linux/macOS |
 | Remove-PSBreakpoint       | &check; | &check; | &check; | &check; |                                           |
 | Remove-TypeData           | &check; | &check; | &check; | &check; |                                           |
-| Ta bort variabel           | &check; | &check; | &check; | &check; |                                           |
+| Remove-Variable           | &check; | &check; | &check; | &check; |                                           |
 | Select-Object             | &check; | &check; | &check; | &check; |                                           |
 | Select-String             | &check; | &check; | &check; | &check; |                                           |
 | Select-XML                | &check; | &check; | &check; | &check; |                                           |
 | Skicka meddelande          | &check; | &check; | &check; | &check; |                                           |
-| Set-alias                 | &check; | &check; | &check; | &check; |                                           |
+| Set-Alias                 | &check; | &check; | &check; | &check; |                                           |
 | Ange datum                  | &check; | &check; | &check; | &check; |                                           |
 | Set-MarkdownOption        |         |   6.1   | &check; | &check; |                                           |
 | Set-PSBreakpoint          | &check; | &check; | &check; | &check; |                                           |
@@ -428,11 +428,11 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | Start-vilo läge               | &check; | &check; | &check; | &check; |                                           |
 | Tee – objekt                | &check; | &check; | &check; | &check; |                                           |
 | Test-JSON                 |         | &check; | &check; | &check; |                                           |
-| Spåra-kommando             | &check; | &check; | &check; | &check; |                                           |
+| Trace-Command             | &check; | &check; | &check; | &check; |                                           |
 | Avblockera – fil              | &check; | &check; | &check; | &check; | Stöd har lagts till för macOS i 7,0            |
 | Avregistrera-händelse          | &check; | &check; | &check; | &check; | Inga händelse källor är tillgängliga på Linux/macOS |
 | Uppdatera – FormatData         | &check; | &check; | &check; | &check; |                                           |
-| Update-List               | &check; |         | &check; | &check; |                                           |
+| Uppdaterings lista               | &check; |         | &check; | &check; |                                           |
 | Uppdatera – TypeData           | &check; | &check; | &check; | &check; |                                           |
 | Vänta – fel sökning             | &check; | &check; | &check; | &check; |                                           |
 | Vänta-händelse                | &check; | &check; | &check; | &check; |                                           |
@@ -636,4 +636,4 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 |   Cmdlet-namn   |  5,1  |   6.x   |   7.0   |   7.1   | Obs! |
 | --------------- | :---: | :-----: | :-----: | :-----: | ---- |
-| Start-ThreadJob |       | &check; | &check; | &check; |      |
+| Start-ThreadJob |       | &check; | &check; | &check; | Kan installeras i PowerShell 5,1 |

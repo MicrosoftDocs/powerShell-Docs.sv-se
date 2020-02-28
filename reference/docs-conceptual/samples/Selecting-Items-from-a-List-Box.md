@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Välj objekt från en listruta
-ms.openlocfilehash: 55bc9409b0e330a2080781bfd4c586109896258f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 048bccd403e01e2290a8930a0faba30d4c7caa73
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030825"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706180"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Välj objekt från en listruta
 
@@ -26,21 +26,21 @@ $form.Text = 'Select a Computer'
 $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = 'CenterScreen'
 
-$OKButton = New-Object System.Windows.Forms.Button
-$OKButton.Location = New-Object System.Drawing.Point(75,120)
-$OKButton.Size = New-Object System.Drawing.Size(75,23)
-$OKButton.Text = 'OK'
-$OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
-$form.AcceptButton = $OKButton
-$form.Controls.Add($OKButton)
+$okButton = New-Object System.Windows.Forms.Button
+$okButton.Location = New-Object System.Drawing.Point(75,120)
+$okButton.Size = New-Object System.Drawing.Size(75,23)
+$okButton.Text = 'OK'
+$okButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
+$form.AcceptButton = $okButton
+$form.Controls.Add($okButton)
 
-$CancelButton = New-Object System.Windows.Forms.Button
-$CancelButton.Location = New-Object System.Drawing.Point(150,120)
-$CancelButton.Size = New-Object System.Drawing.Size(75,23)
-$CancelButton.Text = 'Cancel'
-$CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
-$form.CancelButton = $CancelButton
-$form.Controls.Add($CancelButton)
+$cancelButton = New-Object System.Windows.Forms.Button
+$cancelButton.Location = New-Object System.Drawing.Point(150,120)
+$cancelButton.Size = New-Object System.Drawing.Size(75,23)
+$cancelButton.Text = 'Cancel'
+$cancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
+$form.CancelButton = $cancelButton
+$form.Controls.Add($cancelButton)
 
 $label = New-Object System.Windows.Forms.Label
 $label.Location = New-Object System.Drawing.Point(10,20)
@@ -87,7 +87,8 @@ När du har skapat en instans av formulär klassen tilldelar du värden till tre
 
 - **Ändra.** Detta är storleken på formuläret, i bild punkter. Föregående skript skapar ett formulär som är 300 bild punkter brett med 200 pixlar högt.
 
-- **Star ting position.** Den här valfria egenskapen anges till **CenterScreen** i föregående skript. Om du inte lägger till den här egenskapen väljer Windows en plats när formuläret öppnas. Genom att ange **Star ting position** till **CenterScreen**visas formuläret automatiskt i mitten av skärmen varje gången det läses in.
+- **Star ting position.** Den här valfria egenskapen anges till **CenterScreen** i föregående skript.
+  Om du inte lägger till den här egenskapen väljer Windows en plats när formuläret öppnas. Genom att ange **Star ting position** till **CenterScreen**visas formuläret automatiskt i mitten av skärmen varje gången det läses in.
 
 ```powershell
 $form.Text = 'Select a Computer'
@@ -98,25 +99,25 @@ $form.StartPosition = 'CenterScreen'
 Skapa sedan en **OK** -knapp för formuläret. Ange storlek och beteende för **OK** -knappen. I det här exemplet är knapp positionen 120 bild punkter från formulärets övre kant och 75 pixlar från den vänstra kanten. Knapp höjden är 23 bild punkter, medan knapp längden är 75 bild punkter. Skriptet använder fördefinierade Windows Forms typer för att fastställa knapp beteenden.
 
 ```powershell
-$OKButton = New-Object System.Windows.Forms.Button
-$OKButton.Location = New-Object System.Drawing.Point(75,120)
-$OKButton.Size = New-Object System.Drawing.Size(75,23)
-$OKButton.Text = 'OK'
-$OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
-$form.AcceptButton = $OKButton
-$form.Controls.Add($OKButton)
+$okButton = New-Object System.Windows.Forms.Button
+$okButton.Location = New-Object System.Drawing.Point(75,120)
+$okButton.Size = New-Object System.Drawing.Size(75,23)
+$okButton.Text = 'OK'
+$okButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
+$form.AcceptButton = $okButton
+$form.Controls.Add($okButton)
 ```
 
 På samma sätt skapar du en **Avbryt** -knapp. Knappen **Avbryt** är 120 bild punkter ovanifrån, men 150 pixlar från den vänstra kanten av fönstret.
 
 ```powershell
-$CancelButton = New-Object System.Windows.Forms.Button
-$CancelButton.Location = New-Object System.Drawing.Point(150,120)
-$CancelButton.Size = New-Object System.Drawing.Size(75,23)
-$CancelButton.Text = 'Cancel'
-$CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
-$form.CancelButton = $CancelButton
-$form.Controls.Add($CancelButton)
+$cancelButton = New-Object System.Windows.Forms.Button
+$cancelButton.Location = New-Object System.Drawing.Point(150,120)
+$cancelButton.Size = New-Object System.Drawing.Size(75,23)
+$cancelButton.Text = 'Cancel'
+$cancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
+$form.CancelButton = $cancelButton
+$form.Controls.Add($cancelButton)
 ```
 
 Ange sedan etikettext i fönstret som beskriver den information som du vill att användarna ska kunna tillhandahålla. I det här fallet vill du att användarna ska välja en dator.
@@ -129,7 +130,7 @@ $label.Text = 'Please select a computer:'
 $form.Controls.Add($label)
 ```
 
-Lägg till kontrollen (i det här fallet en listruta) som gör det möjligt för användarna att ange den information som du har beskrivet i din etikett text. Det finns många andra kontroller som du kan använda förutom List rutor. Mer kontroller finns i [namn området system. Windows. Forms](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) på MSDN.
+Lägg till kontrollen (i det här fallet en listruta) som gör det möjligt för användarna att ange den information som du har beskrivet i din etikett text. Det finns många andra kontroller som du kan använda förutom List rutor. Mer kontroller finns i [namn området system. Windows. Forms](/dotnet/api/system.windows.forms) på MSDN.
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.ListBox
@@ -178,6 +179,5 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>Se även
 
-- [Hej Scripting Guy: Varför fungerar inte de här PowerShell-exemplen för användar gränssnitt?](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt s WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Veckans Windows PowerShell-tips: välja objekt i en listruta](https://technet.microsoft.com/library/ff730949.aspx)
+- [Veckans Windows PowerShell-tips: välja objekt i en listruta](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730949(v=technet.10))

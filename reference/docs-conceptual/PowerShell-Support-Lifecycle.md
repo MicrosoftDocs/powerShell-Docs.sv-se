@@ -2,12 +2,12 @@
 title: Supportlängd för PowerShell Core
 description: Principer som styr support för PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: d535199e19c1aabbbfdd140b38aad329bc5d957e
-ms.sourcegitcommit: 5f199cd2a1b31dbcebaab44f2fe496f289831a30
+ms.openlocfilehash: 8cf8a0ac6140d28e55b065bf711763ba1c681d63
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77478810"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706265"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Supportlängd för PowerShell Core
 
@@ -141,6 +141,22 @@ Add-WindowsPSModulePath
 
 [Experimentella funktioner][] är begränsade till [Community-support](#community-support).
 
+## <a name="release-history"></a>Versions historik
+
+Följande tabell innehåller en tids linje för de större versionerna av PowerShell. Den här tabellen tillhandahålls för historisk referens. Den är inte avsedd att användas för att fastställa support livs cykeln.
+
+|       Version        | Utgivningsdatum |                                                                     Obs!                                                                      |
+| -------------------- | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| PowerShell 7,0 (LTS) |   Mar – 2020   | Bygger på .NET Core 3,1 (LTS)                                                                                                                  |
+| PowerShell 6,0       |   Jan-2018   | Första versionen bygger på .NET Core 2,1. Kan installeras på Windows, Linux och macOS.                                                              |
+| PowerShell 5.1       |   Aug – 2016   | Lanseras i uppdatering för Windows 10-årsdag och Windows Server 2016                                                                             |
+| PowerShell 5,0       |   Feb-2016   | Lanserad i Windows Management Framework (WMF) 5,0                                                                                            |
+| PowerShell 4,0       |   Okt-2013   | Integrerad i Windows 8,1 och Windows Server 2012 R2. Kan installeras på Windows 7 SP1, Windows Server 2008 R2 SP1 och Windows Server 2012. |
+| PowerShell 3,0       |   Okt-2012   | Integrerad i Windows 8 och Windows Server 2012. Kan installeras på Windows 7 SP1, Windows Server 2008 SP1 och Windows Server 2008 R2 SP1.  |
+| PowerShell 2,0       |   Jul – 2009   | Integrerad i Windows 7 och Windows Server 2008 R2. Kan installeras på Windows XP SP3, Windows Server 2003 SP2 och Windows Vista SP1.            |
+| PowerShell 1,0       |   Nov-2006   | Kan installeras på Windows XP SP2, Windows Server 2003 SP1 och Windows Vista. Valfri komponent i Windows Server 2008.                          |
+
+<!-- hyperlink references -->
 [Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx

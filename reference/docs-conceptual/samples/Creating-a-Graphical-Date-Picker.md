@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Skapa en grafisk datumväljare
-ms.openlocfilehash: d05445963b41af61a61aa29a425e638d43fb5d9d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b748e301b24ed643488079b547e2da1a5a7a6551
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030248"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706145"
 ---
 # <a name="creating-a-graphical-date-picker"></a>Skapa en grafisk datumväljare
 
@@ -34,23 +34,23 @@ $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
 }
 $form.Controls.Add($calendar)
 
-$OKButton = New-Object Windows.Forms.Button -Property @{
+$okButton = New-Object Windows.Forms.Button -Property @{
     Location     = New-Object Drawing.Point 38, 165
     Size         = New-Object Drawing.Size 75, 23
     Text         = 'OK'
     DialogResult = [Windows.Forms.DialogResult]::OK
 }
-$form.AcceptButton = $OKButton
-$form.Controls.Add($OKButton)
+$form.AcceptButton = $okButton
+$form.Controls.Add($okButton)
 
-$CancelButton = New-Object Windows.Forms.Button -Property @{
+$cancelButton = New-Object Windows.Forms.Button -Property @{
     Location     = New-Object Drawing.Point 113, 165
     Size         = New-Object Drawing.Size 75, 23
     Text         = 'Cancel'
     DialogResult = [Windows.Forms.DialogResult]::Cancel
 }
-$form.CancelButton = $CancelButton
-$form.Controls.Add($CancelButton)
+$form.CancelButton = $cancelButton
+$form.Controls.Add($cancelButton)
 
 $result = $form.ShowDialog()
 
@@ -60,8 +60,7 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 }
 ```
 
-Skriptet börjar genom att läsa in två .NET Framework klasser: **system. Drawing** och **system. Windows. Forms**.
-Sedan startar du en ny instans av klassen **Windows. Forms. Forms**i .NET Framework. Det innehåller ett tomt formulär eller fönster som du kan börja lägga till kontroller i.
+Skriptet börjar genom att läsa in två .NET Framework klasser: **system. Drawing** och **system. Windows. Forms**. Sedan startar du en ny instans av klassen **Windows. Forms. Forms**i .NET Framework. Det innehåller ett tomt formulär eller fönster som du kan börja lägga till kontroller i.
 
 ```powershell
 $form = New-Object Windows.Forms.Form -Property @{
@@ -74,8 +73,7 @@ $form = New-Object Windows.Forms.Form -Property @{
 
 I det här exemplet tilldelas värden till fyra egenskaper för den här klassen med **egenskapen Property** och hash.
 
-1. **Start position**: om du inte lägger till den här egenskapen väljer Windows en plats när formuläret öppnas.
-   Genom att ange den här egenskapen som **CenterScreen**visas formuläret automatiskt i mitten av skärmen varje gången det läses in.
+1. **Start position**: om du inte lägger till den här egenskapen väljer Windows en plats när formuläret öppnas. Genom att ange den här egenskapen som **CenterScreen**visas formuläret automatiskt i mitten av skärmen varje gången det läses in.
 
 2. **Storlek**: det här är storleken på formuläret, i bild punkter.
    Föregående skript skapar ett formulär som är 243 bild punkter brett med 230 pixlar högt.
@@ -96,35 +94,31 @@ $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
 $form.Controls.Add($calendar)
 ```
 
-Skapa sedan en **OK** -knapp för formuläret.
-Ange storlek och beteende för **OK** -knappen.
-I det här exemplet är knapp positionen 165 bild punkter från formulärets övre kant och 38 pixlar från den vänstra kanten.
-Knapp höjden är 23 bild punkter, medan knapp längden är 75 bild punkter.
-Skriptet använder fördefinierade Windows Forms typer för att fastställa knapp beteenden.
+Skapa sedan en **OK** -knapp för formuläret. Ange storlek och beteende för **OK** -knappen. I det här exemplet är knapp positionen 165 bild punkter från formulärets övre kant och 38 pixlar från den vänstra kanten. Knapp höjden är 23 bild punkter, medan knapp längden är 75 bild punkter. Skriptet använder fördefinierade Windows Forms typer för att fastställa knapp beteenden.
 
 ```powershell
-$OKButton = New-Object Windows.Forms.Button -Property @{
+$okButton = New-Object Windows.Forms.Button -Property @{
     Location     = New-Object Drawing.Point 38, 165
     Size         = New-Object Drawing.Size 75, 23
     Text         = 'OK'
     DialogResult = [Windows.Forms.DialogResult]::OK
 }
-$form.AcceptButton = $OKButton
-$form.Controls.Add($OKButton)
+$form.AcceptButton = $okButton
+$form.Controls.Add($okButton)
 ```
 
 På samma sätt skapar du en **Avbryt** -knapp.
 Knappen **Avbryt** är 165 bild punkter ovanifrån, men 113 pixlar från den vänstra kanten av fönstret.
 
 ```powershell
-$CancelButton = New-Object Windows.Forms.Button -Property @{
+$cancelButton = New-Object Windows.Forms.Button -Property @{
     Location     = New-Object Drawing.Point 113, 165
     Size         = New-Object Drawing.Size 75, 23
     Text         = 'Cancel'
     DialogResult = [Windows.Forms.DialogResult]::Cancel
 }
-$form.CancelButton = $CancelButton
-$form.Controls.Add($CancelButton)
+$form.CancelButton = $cancelButton
+$form.Controls.Add($cancelButton)
 ```
 
 Lägg till följande kodrad för att visa formuläret i Windows.
@@ -133,8 +127,7 @@ Lägg till följande kodrad för att visa formuläret i Windows.
 $result = $form.ShowDialog()
 ```
 
-Slutligen instruerar koden inuti `if`-blocket Windows vad som ska göras med formuläret när användarna har valt en dag i kalendern. Klicka sedan på **OK** eller tryck på **RETUR** -tangenten.
-Windows PowerShell visar det valda datumet för användarna.
+Slutligen instruerar koden inuti `if`-blocket Windows vad som ska göras med formuläret när användarna har valt en dag i kalendern. Klicka sedan på **OK** eller tryck på **RETUR** -tangenten. Windows PowerShell visar det valda datumet för användarna.
 
 ```powershell
 if ($result -eq [Windows.Forms.DialogResult]::OK) {
@@ -145,6 +138,5 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 
 ## <a name="see-also"></a>Se även
 
-- [Hej Scripting Guy: Varför fungerar inte de här PowerShell-exemplen för användar gränssnitt?](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt s WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Veckans Windows PowerShell-tips: skapa en grafisk datum väljare](https://technet.microsoft.com/library/ff730942.aspx)
+- [Veckans Windows PowerShell-tips: skapa en grafisk datum väljare](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730942(v=technet.10))
