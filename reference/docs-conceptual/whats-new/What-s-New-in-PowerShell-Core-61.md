@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell Core 6,1
 description: Nya funktioner och ändringar som lanseras i PowerShell Core 6,1
 ms.date: 09/13/2018
-ms.openlocfilehash: 531259217f2b71213776e7d394616c7790e9aca9
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 079d5a472c743ce94f2e93143c1dcb4ff406951f
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995505"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277765"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Nyheter i PowerShell Core 6,1
 
@@ -169,7 +169,7 @@ Vi har lagt till några cmdletar i 6,1 som gör det möjligt att konvertera och 
 
 `Show-Markdown` återger till exempel en MARKDOWN-fil i-konsolen:
 
-![Visa markdown-exempel](./images/markdown_example.png)
+![Visa markdown-exempel](media/What-s-New-in-PowerShell-Core-61/markdown_example.png)
 
 Mer information om hur dessa cmdlets fungerar finns i [denna RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md).
 
@@ -264,7 +264,7 @@ SSH-klienter stöder vanligt vis en anslutnings sträng i formatet `user@host:po
 
 Tack för att du [@bergmeister](https://github.com/bergmeister)kan du nu aktivera en snabb meny i Windows. Nu kan du öppna din systemomfattande installation av PowerShell 6,1 från valfri mapp i Utforskaren i Windows:
 
-![Snabb menyn i Shell för PowerShell 6](./images/shell_context_menu.png)
+![Snabb menyn i Shell för PowerShell 6](media/What-s-New-in-PowerShell-Core-61/shell_context_menu.png)
 
 ## <a name="goodies"></a>Godbitar
 
@@ -272,7 +272,7 @@ Tack för att du [@bergmeister](https://github.com/bergmeister)kan du nu aktiver
 
 Tack vare att du [@bergmeister](https://github.com/bergmeister)innehåller PowerShell Core-genvägens snabb lista nu "kör som administratör":
 
-![Kör som administratör i snabb listan för PowerShell 6](./images/jumplist.png)
+![Kör som administratör i snabb listan för PowerShell 6](media/What-s-New-in-PowerShell-Core-61/jumplist.png)
 
 ### <a name="cd---returns-to-previous-directory"></a>`cd -` återgår till föregående katalog
 

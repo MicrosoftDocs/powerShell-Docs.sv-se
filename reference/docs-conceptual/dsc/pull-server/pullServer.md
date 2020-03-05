@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-hämtningstjänsten
-ms.openlocfilehash: f171c3dc579dfb24a8c9fb87fbb50dccae619091
-ms.sourcegitcommit: aaf1284dfec2e4c698009d6dc27ff103aaafd581
+ms.openlocfilehash: cf2420e6889f63ac3b2859e5ee36fa888b728afc
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885395"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278451"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Mottagar tjänst för önskad tillstånds konfiguration
 
@@ -28,10 +28,10 @@ Den rekommenderade skalningen för varje lösning är följande:
 |                   Lösning                   |              Klient-noder              |
 | -------------------------------------------- | -------------------------------------- |
 | Windows pull-server med hjälp av MDB/ESENT-databas | Upp till 500 noder                        |
-| Windows pull-server med SQL Database       | Upp till 1000 noder                       |
-| Azure Automation DSC                         | Scenarier med fler än 1000 noder |
+| Windows pull-server med SQL Database       | Upp till 3500 noder                       |
+| Azure Automation DSC                         | Både små och stora miljöer      |
 
-**Den rekommenderade lösningen**och alternativet med de mest tillgängliga funktionerna är [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+**Den rekommenderade lösningen**och alternativet med de mest tillgängliga funktionerna är [Azure Automation DSC](/azure/automation/automation-dsc-getting-started). En övre gräns för antalet noder per Automation-konto har inte identifierats.
 
 Azure-tjänsten kan hantera noder lokalt i privata data Center eller i offentliga moln, till exempel Azure och AWS. För privata miljöer där servrar inte kan ansluta direkt till Internet bör du överväga att begränsa utgående trafik till endast det publicerade Azure IP-intervallet (se [Azure datacenter IP-intervall](https://www.microsoft.com/download/details.aspx?id=41653)).
 

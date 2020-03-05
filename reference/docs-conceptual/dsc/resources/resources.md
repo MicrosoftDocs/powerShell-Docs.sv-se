@@ -1,27 +1,30 @@
 ---
-ms.date: 12/12/2018
+ms.date: 02/28/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-resurser
-ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 863898d910cc3c75c3e5977a5b6b0657ba7ed512
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71942155"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278262"
 ---
 # <a name="dsc-resources"></a>DSC-resurser
 
->Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
+> Gäller för Windows PowerShell 4,0 och uppåt.
+
+## <a name="overview"></a>Översikt
 
 DSC-resurser (Desired State Configuration) tillhandahåller Bygg stenar för en DSC-konfiguration. En resurs exponerar egenskaper som kan konfigureras (schema) och innehåller PowerShell-skript som de lokala Configuration Manager (LCM) anropar för att göra det.
 
-En resurs kan modellera något som generiskt som en fil eller som en inställning för IIS-servern.  Grupper av resurser som är kombinerade i till en DSC-modul som organiserar alla nödvändiga filer i en struktur som är portabel och innehåller metadata för att identifiera hur resurserna är avsedda att användas.
+En resurs kan modellera något som generiskt som en fil eller som en inställning för IIS-servern. Grupper av resurser som är kombinerade i till en DSC-modul som organiserar alla nödvändiga filer i en struktur som är portabel och innehåller metadata för att identifiera hur resurserna är avsedda att användas.
 
-Varje resurs har ett *-schema som avgör den syntax som behövs för att använda resursen i en [konfiguration](../configurations/configurations.md). En resurs schema kan definieras på följande sätt:
+Varje resurs har ett *-schema som avgör den syntax som behövs för att använda resursen i en [konfiguration](../configurations/configurations.md).
+En resurs schema kan definieras på följande sätt:
 
-- **Schema. MOF** -fil: de flesta resurser definierar deras *schema* i en schema. MOF-fil med hjälp av [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
+- **Schema. MOF** -fil: de flesta resurser definierar deras _schema_ i en schema. MOF-fil med hjälp av [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
 - **"\<resurs namn\>. schema. psm1"** -fil: [sammansatta resurser](../configurations/compositeConfigs.md) definierar deras *schema* i en<ResourceName>. schema. psm1-fil med hjälp av ett [parameter block](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
-- **"\<resurs namn\>. psm1"** File: Class-based DSC-resurser definierar deras *schema* i klass definitionen. Objekt betecknas som klass egenskaper. Mer information finns i [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
+- **"\<resurs namn\>. psm1"** File: Class-based DSC-resurser definierar deras _schema_ i klass definitionen. Objekt betecknas som klass egenskaper. Mer information finns i [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
 
 Om du vill hämta syntaxen för en DSC-resurs använder du cmdleten [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) med parametern `-Syntax`. Den här användningen liknar att använda [Get-Command](/powershell/module/microsoft.powershell.core/get-command) med parametern `-Syntax` för att hämta cmdlet-syntaxen. De utdata som visas visar den mall som används för ett resurs block för den resurs som du anger.
 
@@ -29,7 +32,7 @@ Om du vill hämta syntaxen för en DSC-resurs använder du cmdleten [Get-dscreso
 Get-DscResource -Syntax Service
 ```
 
-De utdata du ser liknar utdata nedan, men den här resursens syntax kan ändras i framtiden. Precis som cmdlet-syntaxen är de *nycklar* som visas i hakparenteser valfria. Typerna anger vilken typ av data varje nyckel förväntar sig.
+De utdata du ser liknar utdata nedan, men den här resursens syntax kan ändras i framtiden. Precis som cmdlet-syntaxen är de _nycklar_ som visas i hakparenteser valfria. Typerna anger vilken typ av data varje nyckel förväntar sig.
 
 > [!NOTE]
 > Nyckeln **säkerställer att** nyckeln är valfri eftersom den används som standard.
@@ -101,56 +104,56 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> Från och med PowerShell 5,0 lades IntelliSense till för DSC. Med den här nya funktionen kan du använda \<TABB\> och \<CTRL + blank steg\> för att komplettera nyckel namnen automatiskt.
+> Från och med PowerShell 5,0 lades IntelliSense till för DSC. Med den här nya funktionen kan du använda <kbd>TABB</kbd> -och <kbd>grupp</kbd>+<kbd>utrymme</kbd> för att komplettera nyckel namnen automatiskt.
 
-![Slut för ande av resurs flik](../media/resource-tabcompletion.png)
+![Slut för ande av resurs flik](media/resources/resource-tabcompletion.png)
 
-## <a name="built-in-resources"></a>Inbyggda resurser
+## <a name="types-of-resources"></a>Typer av resurser
 
-Förutom community-resurser finns det inbyggda resurser för Windows, resurser för Linux och resurser för över-nod-beroende. Du kan använda stegen ovan för att fastställa syntaxen för dessa resurser och hur du använder dem. De sidor som hanterar dessa resurser har arkiverats under **referens**.
+Windows levereras med inbyggda resurser och Linux har leverantörsspecifika resurser. Det finns resurser för [över-nod-beroenden](../configurations/crossNodeDependencies.md), paket hanterings resurser samt[ägda och bevarade resurser](https://github.com/dsccommunity). Du kan använda ovanstående steg för att fastställa syntaxen för dessa resurser och hur du använder dem. De sidor som hanterar dessa resurser har arkiverats under **referens**.
 
-Inbyggda resurser i Windows
+### <a name="windows-built-in-resources"></a>Inbyggda resurser i Windows
 
-* [Arkivera resursen](../reference/resources/windows/archiveResource.md)
-* [Miljöresurs](../reference/resources/windows/environmentResource.md)
-* [Filresurs](../reference/resources/windows/fileResource.md)
-* [Gruppresurs](../reference/resources/windows/groupResource.md)
-* [GroupSet-resurs](../reference/resources/windows/groupSetResource.md)
-* [Loggresurs](../reference/resources/windows/logResource.md)
-* [Paketresurs](../reference/resources/windows/packageResource.md)
-* [ProcessSet-resurs](../reference/resources/windows/ProcessSetResource.md)
-* [Registerresurser](../reference/resources/windows/registryResource.md)
-* [Skriptresurs](../reference/resources/windows/scriptResource.md)
-* [Tjänstresurs](../reference/resources/windows/serviceResource.md)
-* [ServiceSet-resurs](../reference/resources/windows/serviceSetResource.md)
-* [Användarresurs](../reference/resources/windows/userResource.md)
-* [WindowsFeature-resurs](../reference/resources/windows/windowsFeatureResource.md)
-* [WindowsFeatureSet-resurs](../reference/resources/windows/windowsFeatureSetResource.md)
-* [WindowsOptionalFeature-resurs](../reference/resources/windows/windowsOptionalFeatureResource.md)
-* [WindowsOptionalFeatureSet-resurs](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
-* [WindowsPackageCabResource-resurs](../reference/resources/windows/windowsPackageCabResource.md)
-* [WindowsProcess-resurs](../reference/resources/windows/windowsProcessResource.md)
+- [Arkivera resursen](../reference/resources/windows/archiveResource.md)
+- [Miljöresurs](../reference/resources/windows/environmentResource.md)
+- [Filresurs](../reference/resources/windows/fileResource.md)
+- [Gruppresurs](../reference/resources/windows/groupResource.md)
+- [GroupSet-resurs](../reference/resources/windows/groupSetResource.md)
+- [Loggresurs](../reference/resources/windows/logResource.md)
+- [Paketresurs](../reference/resources/windows/packageResource.md)
+- [ProcessSet-resurs](../reference/resources/windows/ProcessSetResource.md)
+- [Registerresurser](../reference/resources/windows/registryResource.md)
+- [Skriptresurs](../reference/resources/windows/scriptResource.md)
+- [Tjänstresurs](../reference/resources/windows/serviceResource.md)
+- [ServiceSet-resurs](../reference/resources/windows/serviceSetResource.md)
+- [Användarresurs](../reference/resources/windows/userResource.md)
+- [WindowsFeature-resurs](../reference/resources/windows/windowsFeatureResource.md)
+- [WindowsFeatureSet-resurs](../reference/resources/windows/windowsFeatureSetResource.md)
+- [WindowsOptionalFeature-resurs](../reference/resources/windows/windowsOptionalFeatureResource.md)
+- [WindowsOptionalFeatureSet-resurs](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
+- [WindowsPackageCabResource-resurs](../reference/resources/windows/windowsPackageCabResource.md)
+- [WindowsProcess-resurs](../reference/resources/windows/windowsProcessResource.md)
 
-[Beroende resurser mellan noder](../configurations/crossNodeDependencies.md)
+### <a name="cross-node-dependency-resources"></a>Beroende resurser mellan noder
 
-* [WaitForAll-resurs](../reference/resources/windows/waitForAllResource.md)
-* [WaitForSome-resurs](../reference/resources/windows/waitForSomeResource.md)
-* [WaitForAny-resurs](../reference/resources/windows/waitForAnyResource.md)
+- [WaitForAll-resurs](../reference/resources/windows/waitForAllResource.md)
+- [WaitForSome-resurs](../reference/resources/windows/waitForSomeResource.md)
+- [WaitForAny-resurs](../reference/resources/windows/waitForAnyResource.md)
 
-Paket hanterings resurser
+### <a name="package-management-resources"></a>Paket hanterings resurser
 
-* [PackageManagement-resurs](../reference/resources/packagemanagement/PackageManagementDscResource.md)
-* [PackageManagementSource-resurs](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
+- [PackageManagement-resurs](../reference/resources/packagemanagement/PackageManagementDscResource.md)
+- [PackageManagementSource-resurs](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
 
-Linux-resurser
+#### <a name="linux-resources"></a>Linux-resurser
 
-* [Linux-Arkiv resurs](../reference/resources/linux/lnxArchiveResource.md)
-* [Linux-miljö resurs](../reference/resources/linux/lnxEnvironmentResource.md)
-* [Linux FileLine-resurs](../reference/resources/linux/lnxFileLineResource.md)
-* [Linux-filresurs](../reference/resources/linux/lnxFileResource.md)
-* [Linux-grupp resurs](../reference/resources/linux/lnxGroupResource.md)
-* [Linux-paket resurs](../reference/resources/linux/lnxPackageResource.md)
-* [Linux-skript resurs](../reference/resources/linux/lnxScriptResource.md)
-* [Linux-Tjänsteresurs](../reference/resources/linux/lnxServiceResource.md)
-* [Linux SshAuthorizedKeys-resurs](../reference/resources/linux/lnxSshAuthorizedKeysResource.md)
-* [Linux-användar resurs](../reference/resources/linux/lnxUserResource.md)
+- [Linux-Arkiv resurs](../reference/resources/linux/lnxArchiveResource.md)
+- [Linux-miljö resurs](../reference/resources/linux/lnxEnvironmentResource.md)
+- [Linux FileLine-resurs](../reference/resources/linux/lnxFileLineResource.md)
+- [Linux-filresurs](../reference/resources/linux/lnxFileResource.md)
+- [Linux-grupp resurs](../reference/resources/linux/lnxGroupResource.md)
+- [Linux-paket resurs](../reference/resources/linux/lnxPackageResource.md)
+- [Linux-skript resurs](../reference/resources/linux/lnxScriptResource.md)
+- [Linux-Tjänsteresurs](../reference/resources/linux/lnxServiceResource.md)
+- [Linux SshAuthorizedKeys-resurs](../reference/resources/linux/lnxSshAuthorizedKeysResource.md)
+- [Linux-användar resurs](../reference/resources/linux/lnxUserResource.md)

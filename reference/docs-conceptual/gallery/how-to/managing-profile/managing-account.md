@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Kontoinställningar för PowerShell-galleriet
-ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: db61c3fd8c73048b51f3411a8c1dab52fb03d08a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328863"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278134"
 ---
 # <a name="powershell-gallery-account-settings"></a>Kontoinställningar för PowerShell-galleriet
 
@@ -25,7 +25,7 @@ PowerShell-galleriet innehåller följande konto inställningar:
 
 E-postadressen är målet för PowerShell-galleriet-meddelanden. Det behöver inte matcha inloggnings kontot. Du kan använda ett e-postkonto som du har åtkomst till. Din e-postadress tillhandahålls aldrig direkt av PowerShell-galleriet till andra användare.
 
-![Ändra e-postadress](../../Images/PSGallery_AcccountEmailAddress.png)
+![Ändra e-postadress](media/managing-account/PSGallery_AcccountEmailAddress.png)
 
 När du anger en ny e-postadress skickar PowerShell-galleriet e-postbekräftelsen till den adressen. Verifierings-e-postmeddelandet innehåller en länk tillbaka till PowerShell-galleriet för att slutföra ändrings processen. Tills du har slutfört verifierings processen skickas alla meddelanden till den tidigare adressen.
 
@@ -36,10 +36,10 @@ PowerShell-galleriet innehåller följande meddelande alternativ:
 - Användarna kan kontakta mig via PowerShell-galleriet
 - Meddela mig när ett paket skickas till PowerShell-galleriet med mitt konto
 
-![Ändra e-postadress](../../Images/PSGallery_AccountEmailOptions.png)
+![Ändra e-postadress](media/managing-account/PSGallery_AccountEmailOptions.png)
 
 Som anges på sidan kan inte kritiska meddelanden från PowerShell-galleriet inaktive ras.
-Dessa omfattar:
+Exempel på dessa är:
 
 - Säkerhets meddelanden
 - Meddelanden om konto hantering från PowerShell-galleriet administratörer
@@ -49,20 +49,20 @@ Dessa omfattar:
 
 Om du vill ändra inloggnings kontot måste du vara inloggad med det aktuella kontot. Använd följande steg för att slutföra ändringen.
 
-![Inställningar för inloggnings konto](../../Images/PSGallery_LoginAccountSettings.png)
+![Inställningar för inloggnings konto](media/managing-account/PSGallery_LoginAccountSettings.png)
 
 1. Klicka på **Ändra konto**. Ett popup-fönster förklarar att ändringar av inloggnings kontot gäller för all användning av kontot i PowerShell-galleriet. Granska informationen och klicka sedan på **OK** för att fortsätta.
 
-   ![Inställningar för inloggnings konto](../../Images/PSGallery_LoginAccountChange-1.png)
+   ![Inställningar för inloggnings konto](media/managing-account/PSGallery_LoginAccountChange-1.png)
 
 2. Du uppmanas sedan att logga in med det _nya kontot_.
 
-   ![Inställningar för inloggnings konto](../../Images/PSGallery_LoginAccountChange-2.png)
+   ![Inställningar för inloggnings konto](media/managing-account/PSGallery_LoginAccountChange-2.png)
 
 3. När du klickar på **Nästa**visas ett meddelande om att du har loggat in med det aktuella kontot.
    Klicka på **Logga ut och logga in med ett annat konto**.
 
-   ![Inställningar för inloggnings konto](../../Images/PSGallery_LoginAccountChange-3.png)
+   ![Inställningar för inloggnings konto](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. Ange lösen ordet för det nya kontot. När du har angett lösen ordet kommer du tillbaka till sidan konto inställningar som visar att inloggnings kontot har uppdaterats.
 
@@ -81,6 +81,6 @@ När 2FA har Aktiver ATS måste du autentisera med hjälp av de konfigurerade fo
 > [!IMPORTANT]
 > Om du aktiverar tvåfaktorautentisering för PowerShell-galleriets platsen behöver du inte aktivera 2FA för all användning av ditt inloggnings konto. Mer information finns i [om](https://support.microsoft.com/help/12408/microsoft-account-about-two-step-verification)tvåstegsverifiering.
 
-## <a name="change-your-profile-picture"></a>Ändra din profilbild
+## <a name="change-your-profile-picture"></a>Ändra profil bilden
 
 PowerShell-galleriet förlitar sig på Gravatar för att lagra och visa den bild som är associerad med din profil. Om du vill uppdatera din profil avbildning går du till [Gravatar.com](http://www.gravatar.com/).

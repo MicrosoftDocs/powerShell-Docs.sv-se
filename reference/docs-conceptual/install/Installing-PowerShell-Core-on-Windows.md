@@ -2,23 +2,16 @@
 title: Installera PowerShell Core i Windows
 description: Information om hur du installerar PowerShell core i Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 00a1d8064a3c1ec6608a46415bbabb8d98d880f0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e9e78e3ab182099caf3dbf74b033168f1f2927d5
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416778"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78280280"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Installera PowerShell Core i Windows
 
 Det finns flera sätt att installera PowerShell core i Windows.
-
-> [!TIP]
-> Om du redan har installerat [.net Core SDK](/dotnet/core/sdk) är det enkelt att installera PowerShell som ett [globalt .net-verktyg](/dotnet/core/tools/global-tools).
->
-> ```
-> dotnet tool install --global PowerShell
-> ```
 
 ## <a name="prerequisites"></a>Förutsättningar
 
@@ -32,7 +25,6 @@ Om du vill aktivera PowerShell-fjärrkommunikation över WSMan måste följande 
 Om du vill installera PowerShell på en Windows-klient eller Windows Server (fungerar på Windows 7 SP1, Server 2008 R2 och senare) laddar du ned MSI-paketet från vår GitHub [releases][releases] -sida. Rulla ned till **till gångar** -avsnittet i den version som du vill installera. Avsnittet till gångar kan vara minimerat, så du kan behöva klicka för att expandera det.
 
 MSI-filen ser ut så här – `PowerShell-<version>-win-<os-arch>.msi`
-<!-- TODO: should be updated to point to the Download Center as well -->
 
 När du har laddat ned dubbelklickar du på installations programmet och följer anvisningarna.
 
@@ -40,6 +32,15 @@ Installations programmet skapar en genväg på Start-menyn i Windows.
 
 - Som standard installeras paketet på `$env:ProgramFiles\PowerShell\<version>`
 - Du kan starta PowerShell via Start-menyn eller `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
+
+> [!NOTE]
+> PowerShell 7 installeras i en ny katalog och körs sida vid sida med Windows PowerShell 5,1. För PowerShell Core 6. x är PowerShell 7 en uppgradering på plats som tar bort PowerShell Core 6. x.
+>
+> - PowerShell 7 installeras för att `%programfiles%\PowerShell\7`
+> - Mappen `%programfiles%\PowerShell\7` läggs till i `$env:PATH`
+> - Mappen `%programfiles%\PowerShell\6` tas bort
+>
+> Om du behöver köra PowerShell 6 sida vid sida med PowerShell 7 installerar du om PowerShell 6 med hjälp av [zip-installations](#zip) metoden.
 
 ### <a name="administrative-install-from-the-command-line"></a>Administrativ installation från kommando raden
 
@@ -165,9 +166,17 @@ Följande steg vägleder dig genom distributionen av PowerShell Core till en akt
 
 - Om du vill använda WSMan-baserad fjärr kommunikation följer du anvisningarna för att skapa en slut punkt för fjärr kommunikation med hjälp av ["en annan instans teknik"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
+## <a name="install-as-a-net-global-tool"></a>Installera som ett globalt .NET-verktyg
+
+Om du redan har installerat [.net Core SDK](/dotnet/core/sdk) är det enkelt att installera PowerShell som ett [globalt .net-verktyg](/dotnet/core/tools/global-tools).
+
+```
+dotnet tool install --global PowerShell
+```
+
 ## <a name="how-to-create-a-remoting-endpoint"></a>Så här skapar du en fjärran sluten slut punkt
 
-PowerShell Core stöder PowerShell Remoting-protokollet (PSRP) via både WSMan och SSH. Mer information finns i följande avsnitt:
+PowerShell Core stöder PowerShell Remoting-protokollet (PSRP) via både WSMan och SSH. Mer information finns i:
 
 - [SSH-fjärrkommunikation i PowerShell Core][ssh-remoting]
 - [WSMan-fjärrkommunikation i PowerShell Core][wsman-remoting]

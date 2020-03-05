@@ -2,18 +2,34 @@
 title: Så här replikerar du ISE-upplevelsen i Visual Studio Code
 description: Så här replikerar du ISE-upplevelsen i Visual Studio Code
 ms.date: 08/06/2018
-ms.openlocfilehash: d5542e9a3a48b1ae64356309be669418edf6c79e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 193243dc2e3e921b22a6ee068370200ae84ce4ac
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117468"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279284"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Så här replikerar du ISE-upplevelsen i Visual Studio Code
 
 Även om PowerShell-tillägget för VSCode inte söker efter slut på funktions paritet med PowerShell ISE finns det funktioner för att göra VSCode-upplevelsen mer naturlig för användare av ISE.
 
 Det här dokumentet försöker visa en lista över inställningar som du kan konfigurera i VSCode för att göra det enklare att komma åt användarna jämfört med ISE.
+
+## <a name="ise-mode"></a>ISE-läge
+
+> [!NOTE]
+> Den här funktionen är tillgänglig i PowerShell-tillägget för förhands granskning sedan version 2019.12.0 och i PowerShell-tillägget sedan version 2020.3.0.
+
+Det enklaste sättet att replikera ISE-upplevelsen i Visual Studio Code är genom att aktivera "ISE-läge".
+Det gör du genom att öppna kommandot pall (<kbd>F1</kbd> eller <kbd>Ctrl</kbd>+<kbd>shift</kbd>+<kbd>P</kbd> eller <kbd>cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> på MacOS) och ange "ISE-läge".
+Välj "PowerShell: Aktivera ISE-läge" i listan.
+
+Det här kommandot kommer att använda en mängd av inställningarna som påträffas i det här dokumentet automatiskt.
+Resultatet ser ut så här:
+
+![ISE-läge](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
+
+Resten av den här artikeln innehåller mer detaljerad information om inställningar i ISE-läge och vissa ytterligare inställningar.
 
 ## <a name="key-bindings"></a>Nyckel bindningar
 
@@ -36,13 +52,16 @@ Om du vill förenkla Visual Studio Code-ANVÄNDARGRÄNSSNITTET för att se närm
 "debug.openDebug": "neverOpen",
 ```
 
+> [!NOTE]
+> De här inställningarna ingår i ["ISE-läge"](#ise-mode).
+
 Avsnittet "aktivitets fält" och "Felsök sid List" visas i den röda rutan:
 
-![avsnittet är markerat och innehåller aktivitets fält och sid list för fel sökning](images/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+![avsnittet är markerat och innehåller aktivitets fält och sid list för fel sökning](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
 
 Slut resultatet ser ut så här:
 
-![Förenklad vy av VS Code](images/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
+![Förenklad vy av VS Code](media/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
 
 ## <a name="tab-completion"></a>Slut för ande flik
 
@@ -55,6 +74,9 @@ Lägg till den här inställningen om du vill aktivera fler ISE-liknande flikar:
 > [!NOTE]
 > Den här inställningen lades till direkt i VSCode (i stället för i tillägget). Dess beteende bestäms av VSCode direkt och kan inte ändras av tillägget.
 
+> [!NOTE]
+> Den här inställningen ingår i ["ISE-läge"](#ise-mode).
+
 ## <a name="no-focus-on-console-when-executing"></a>Ingen fokus på konsolen vid körning
 
 För att behålla fokus i redigeraren när du kör med <kbd>F8</kbd>:
@@ -62,6 +84,9 @@ För att behålla fokus i redigeraren när du kör med <kbd>F8</kbd>:
 ```json
 "powershell.integratedConsole.focusConsoleOnExecute": false
 ```
+
+> [!NOTE]
+> Den här inställningen ingår i ["ISE-läge"](#ise-mode).
 
 Standardvärdet är `true` i tillgänglighets syfte.
 
@@ -84,7 +109,10 @@ Om du vill skapa nya/namnlösa filer registrerar du som PowerShell som standard:
 "files.defaultLanguage": "powershell",
 ```
 
-## <a name="color-scheme"></a>Färgschema
+> [!NOTE]
+> Den här inställningen ingår i ["ISE-läge"](#ise-mode).
+
+## <a name="color-scheme"></a>Färg schema
 
 Det finns ett antal ISE-teman som är tillgängliga för VSCode för att göra redigeraren att se mycket mer som ISE.
 
@@ -97,11 +125,17 @@ Du kan ange det här temat i inställningarna med:
 "workbench.colorTheme": "PowerShell ISE",
 ```
 
+> [!NOTE]
+> Den här inställningen ingår i ["ISE-läge"](#ise-mode).
+
 ## <a name="powershell-command-explorer"></a>PowerShell kommando Utforskaren
 
 Till [@corbob](https://github.com/corbob)kommer PowerShell-tillägget att ha början av en egen kommando Utforskare.
 
 I [Kommando palett]anger du `PowerShell Command Explorer` och trycker på <kbd>RETUR</kbd>.
+
+> [!NOTE]
+> Detta visas automatiskt i ["ISE-läge"](#ise-mode).
 
 ## <a name="open-in-the-ise"></a>Öppna i ISE
 

@@ -2,12 +2,12 @@
 title: Installera PowerShell Core i Linux
 description: Information om hur du installerar PowerShell Core på olika Linux-distributioner
 ms.date: 07/19/2019
-ms.openlocfilehash: 3b0b9b1520247fa49760e631c837196fb7107b5f
-ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
+ms.openlocfilehash: 3a1f0299d1fa1fac7601afc75a59618e901ffa63
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022260"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78280331"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Installera PowerShell Core i Linux
 
@@ -16,6 +16,13 @@ Stöder [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Ubun
 För Linux-distributioner som inte stöds officiellt kan du försöka installera PowerShell med hjälp av [PowerShell-Snap-paketet][snap]. Du kan också prova att distribuera PowerShell-binärfiler direkt med hjälp av Linux [`tar.gz` arkivet][tar], men du måste konfigurera de nödvändiga beroendena baserat på operativ systemet i separata steg.
 
 Alla paket är tillgängliga på vår GitHub- [releases][] -sida. När paketet har installerats kör du `pwsh` från en Terminal. Kör `pwsh-preview` om du har installerat en för [hands version](#installing-preview-releases).
+
+> [!NOTE]
+> PowerShell 7 är en uppgradering på plats som tar bort PowerShell Core 6. x.
+>
+> Mappen `/usr/local/microsoft/powershell/6` ersätts av `/usr/local/microsoft/powershell/7`.
+>
+> Om du behöver köra PowerShell 6 sida vid sida med PowerShell 7 installerar du om PowerShell 6 med hjälp av metoden för [binärt Arkiv](#binary-archives) .
 
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
@@ -32,12 +39,6 @@ Alla paket är tillgängliga på vår GitHub- [releases][] -sida. När paketet h
 [snap]: #snap-package
 [tar]: #binary-archives
 
-> [!TIP]
-> Om du redan har installerat [.net Core SDK](/dotnet/core/sdk) är det enkelt att installera PowerShell som ett [globalt .net-verktyg](/dotnet/core/tools/global-tools).
->
-> ```
-> dotnet tool install --global PowerShell
-> ```
 
 ## <a name="installing-preview-releases"></a>Installera för hands versioner
 
@@ -47,7 +48,7 @@ Installation via direkt hämtning ändras inte, förutom fil namnet.
 
 Följande tabell innehåller kommandon för att installera stabila och förhands gransknings paket med hjälp av de olika paket ansvariga:
 
-|Distribution|Stabilt kommando | Förhandsgranska kommando |
+|Distribution (er)|Stabilt kommando | Förhandsgranska kommando |
 |---------------|---------------|-----------------|
 | Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
 | CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
@@ -685,6 +686,14 @@ sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" 
 rm -rf ~/powershell
 ```
 
+## <a name="install-as-a-net-global-tool"></a>Installera som ett globalt .NET-verktyg
+
+Om du redan har installerat [.net Core SDK](/dotnet/core/sdk) är det enkelt att installera PowerShell som ett [globalt .net-verktyg](/dotnet/core/tools/global-tools).
+
+```
+dotnet tool install --global PowerShell
+```
+
 ## <a name="binary-archives"></a>Binära Arkiv
 
 PowerShell-binärfiler för `tar.gz` tillhandahålls för Linux-plattformar för att aktivera avancerade distributions scenarier.
@@ -738,7 +747,7 @@ sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
 sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ```
 
-## <a name="paths"></a>Sökvägar
+## <a name="paths"></a>Mappar
 
 * `$PSHOME` är `/opt/microsoft/powershell/7/`
 * Användar profiler kommer att läsas från `~/.config/powershell/profile.ps1`

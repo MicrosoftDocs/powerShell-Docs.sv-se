@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7d399786b9b43ee302493359d9702981045212e9
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352159"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277480"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Skapa ett arbetsflöde med Windows PowerShell-aktiviteter
 
@@ -67,15 +67,15 @@ Följande procedurer beskriver hur du skapar ett arbets flöde som kontrollerar 
     |Egenskap|Värde|
     |--------------|-----------|
     |**Namnet**|fysiskt|
-    |**Autentiseringsuppgifter**|MachineCred|
+    |**Certifiering**|MachineCred|
     |**Söker**|Microsoft. PowerShell. commands. WaitForServiceTypes. PowerShell|
-    |**Inför**|Sant|
-    |Vänta|Sant|
+    |**Inför**|True|
+    |Vänta|True|
     |PSComputerName|{""}|
 
 13. Lägg till en **GetWmiObject** -aktivitet i **JoinDomain** -sekvensen efter **RestartComputer** -aktiviteten. Redigera egenskaperna så att de är samma som föregående **GetWmiObject** -aktivitet.
 
     När du är färdig med procedurerna bör fönstret arbets flödes design se ut så här.
 
-    ![JoinDomain XAML i Workflow Designer](../media/joindomainworkflow.png)
-    ![JoinDomain XAML i arbetsflödesdesignern](../media/joindomainworkflow.png "JoinDomainWorkflow")
+    ![JoinDomain XAML i Workflow Designer](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
+    ![JoinDomain XAML i arbetsflödesdesignern](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "JoinDomainWorkflow")

@@ -2,12 +2,12 @@
 title: Använda Visual Studio Code för att fjärredigera och fjärrfelsöka
 description: Använda Visual Studio Code för att fjärredigera och fjärrfelsöka
 ms.date: 06/13/2019
-ms.openlocfilehash: ae3b7a3709498fcd547a48d0849b0dc880217225
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5ce7f575d90ff47fd6b8a0a2b567e972ec3a9fef
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67263979"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279179"
 ---
 # <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Använda Visual Studio Code för att fjärredigera och fjärrfelsöka
 
@@ -38,7 +38,7 @@ De här exemplen visar fjärrredigering och fel sökning från en MacBook Pro ti
 
 Med PowerShell-tillägget för VSCode igång och den integrerade PowerShell-konsolen öppnas, kan vi skriva `Open-EditorFile foo.ps1` eller `psedit foo.ps1` för att öppna den lokala foo. ps1-filen direkt i redigeraren.
 
-![Open-EditorFile foo. ps1 fungerar lokalt](images/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
+![Open-EditorFile foo. ps1 fungerar lokalt](media/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
 
 >[!NOTE]
 > Filen `foo.ps1` måste redan finnas.
@@ -47,11 +47,11 @@ Därifrån kan vi:
 
 - Lägga till Bryt punkter i fästmarginal
 
-  ![lägga till Bryt punkt i fästmarginal](images/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
+  ![lägga till Bryt punkt i fästmarginal](media/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
 
 - Tryck på F5 för att felsöka PowerShell-skriptet.
 
-  ![Felsöka det lokala PowerShell-skriptet](images/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
+  ![Felsöka det lokala PowerShell-skriptet](media/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
 
 Vid fel sökning kan du interagera med fel söknings konsolen, kolla in variablerna i omfånget till vänster och alla andra standard verktyg för fel sökning.
 
@@ -73,20 +73,20 @@ Eftersom vi kommer från macOS till en virtuell Ubuntu-dator i Azure använder v
 
 Börja med att köra `Enter-PSSession`i den integrerade konsolen. Du är ansluten till fjärrsessionen när `[<hostname>]` visas till vänster om din prompt.
 
-![Anropet till retur-PSSession](images/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
+![Anropet till retur-PSSession](media/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
 
 Nu kan vi utföra samma steg som om vi redigerar ett lokalt skript.
 
 1. Kör `Open-EditorFile test.ps1` eller `psedit test.ps1` för att öppna den fjärranslutna `test.ps1` filen
 
-  ![Öppna – EditorFile filen test. ps1](images/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
+  ![Öppna – EditorFile filen test. ps1](media/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
 
 1. Redigera fil-/uppsättnings Bryt punkter
 
-   ![Redigera och ange Bryt punkter](images/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
+   ![Redigera och ange Bryt punkter](media/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
 
 1. Starta fel sökning (F5) fjärrfilen
 
-   ![Felsöka fjärrfilen](images/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
+   ![Felsöka fjärrfilen](media/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
 
 Om du har problem kan du öppna problem i [GitHub-lagrings platsen](https://github.com/powershell/vscode-powershell).

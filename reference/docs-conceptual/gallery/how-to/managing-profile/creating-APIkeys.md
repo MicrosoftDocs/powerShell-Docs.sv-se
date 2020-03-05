@@ -3,12 +3,12 @@ ms.date: 09/10/2018
 contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Hantera API-nycklar
-ms.openlocfilehash: 954eb27c25babdb8efe50c13caf5f2d287c6b3e3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0f44a080415f1acf13680771b6e9db5b805f8f45
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71329045"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278328"
 ---
 # <a name="managing-api-keys"></a>Hantera API-nycklar
 
@@ -19,7 +19,7 @@ PowerShell-galleriet har stöd för att skapa flera API-nycklar som stöder ett 
 
 Följande bild visar de alternativ som är tillgängliga när du skapar en omfångs-API-nyckel.
 
-![Skapar API-nycklar](../../Images/PSGallery_KeyScoped.png)
+![Skapar API-nycklar](media/creating-APIkeys/PSGallery_KeyScoped.png)
 
 I det här exemplet har vi skapat en API-nyckel med namnet **AzureRMDataFactory**. Detta nyckel värde kan användas för att skicka paket med namn som börjar med "AzureRM. DataFactory" och som är giltiga i 365 dagar. Detta är ett typiskt scenario när olika team inom samma organisation arbetar med olika paket. Medlemmarna i teamet har en nyckel som ger dem behörighet för det aktuella paketet som de arbetar med.
 Värdet för förfallo datum förhindrar att inaktuella eller bortglömt nycklar används.
@@ -32,7 +32,7 @@ Om du arbetar med flera paket kan du använda globbing mönster för att matcha 
 
 För säkerhet visas ett nytt nyckel värde aldrig på skärmen och är bara tillgängligt med kopierings knappen, som du ser nedan.
 
-![Hämtar nytt API-nyckel värde](../../Images/PSGallery_CopyCreatedKey.png)
+![Hämtar nytt API-nyckel värde](media/creating-APIkeys/PSGallery_CopyCreatedKey.png)
 
 > [!IMPORTANT]
 > Du kan bara kopiera API-nyckelvärdet direkt efter att du har skapat eller uppdaterat det. Den kommer inte att visas och kommer inte att vara tillgänglig igen när sidan har uppdaterats. Om du förlorar nyckelvärdet måste du använda återskapa och kopiera nyckeln när den har återskapats.
@@ -48,7 +48,7 @@ Begränsade API-nycklar kan tilldela någon av följande behörigheter:
 Varje ny nyckel har ett förfallo datum. Värdet för förfallo datum mäts i dagar. De möjliga värdena för förfallo datum är:
 
 - 1 dag
-- 90 dagar
+- 90 dagar
 - 180 dagar
 - 270 dagar
 - 365 dagar (standard)
@@ -59,7 +59,7 @@ De här inställningarna kan inte ändras när nyckeln har skapats. Du kan inte 
 
 Du kan ändra vissa inställningar för en befintlig nyckel. Som tidigare nämnts kan du inte ändra säkerhets omfattningen för en befintlig API-nyckel eller ändra förfallo datumet. De ändrings bara alternativen visas på följande skärm bild:
 
-![Hämtar nytt API-nyckel värde](../../Images/PSGallery_EditAPIKey.png)
+![Hämtar nytt API-nyckel värde](media/creating-APIkeys/PSGallery_EditAPIKey.png)
 
 Om du vill ändra de paket som styrs av en nyckel kan du välja enskilda paket i listan eller ändra BLOB-mönstret.
 

@@ -2,12 +2,12 @@
 title: Installera PowerShell Core i macOS
 description: Information om hur du installerar PowerShell Core på macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: ad1306e99261e8e6e2fd49d3199d863929c31e92
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b7ea1d494b12d31ffec330a0a68e282a05b011fc
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73444434"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78280297"
 ---
 # <a name="installing-powershell-core-on-macos"></a>Installera PowerShell Core i macOS
 
@@ -15,18 +15,16 @@ PowerShell Core stöder macOS 10,12 och högre.
 Alla paket är tillgängliga på vår GitHub- [releases][] -sida.
 När paketet har installerats kör du `pwsh` från en Terminal.
 
-> [!TIP]
-> Om du redan har installerat [.net Core SDK](/dotnet/core/sdk) är det enkelt att installera PowerShell som ett [globalt .net-verktyg](/dotnet/core/tools/global-tools).
+> [!NOTE]
+> PowerShell 7 är en uppgradering på plats som tar bort PowerShell Core 6. x.
 >
-> ```
-> dotnet tool install --global PowerShell
-> ```
+> Mappen `/usr/local/microsoft/powershell/6` ersätts av `/usr/local/microsoft/powershell/7`.
+>
+> Om du behöver köra PowerShell 6 sida vid sida med PowerShell 7 installerar du om PowerShell 6 med hjälp av metoden för [binärt Arkiv](#binary-archives) .
 
 ## <a name="about-brew"></a>Om Brew
 
-[Homebrew][brew] är den föredragna paket hanteraren för MacOS.
-Om `brew` kommandot inte hittas måste du installera homebrew enligt [deras instruktioner][brew].
-Annars kan du installera PowerShell via [direkt hämtning](#installation-via-direct-download) eller från [binära Arkiv](#binary-archives).
+[Homebrew][brew] är den föredragna paket hanteraren för MacOS. Om `brew` kommandot inte hittas måste du installera homebrew enligt [deras instruktioner][brew]. Annars kan du installera PowerShell via [direkt hämtning](#installation-via-direct-download) eller från [binära Arkiv](#binary-archives).
 
 ## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Installation av den senaste stabila versionen via homebrew på macOS 10,12 eller senare
 
@@ -102,6 +100,14 @@ sudo installer -pkg powershell-6.2.0-osx-x64.pkg -target /
 ```
 
 Installera [openssl](#install-openssl). OpenSSL krävs för PowerShell-fjärrkommunikation och CIM-åtgärder.
+
+## <a name="install-as-a-net-global-tool"></a>Installera som ett globalt .NET-verktyg
+
+Om du redan har installerat [.net Core SDK](/dotnet/core/sdk) är det enkelt att installera PowerShell som ett [globalt .net-verktyg](/dotnet/core/tools/global-tools).
+
+```
+dotnet tool install --global PowerShell
+```
 
 ## <a name="binary-archives"></a>Binära Arkiv
 
@@ -180,7 +186,7 @@ Om du vill ta bort ytterligare PowerShell-sökvägar läser du avsnittet [sökv�
 > [!NOTE]
 > Detta är inte nödvändigt om du har installerat med homebrew.
 
-## <a name="paths"></a>Sökvägar
+## <a name="paths"></a>Mappar
 
 * `$PSHOME` är `/usr/local/microsoft/powershell/6.2.0/`
 * Användar profiler kommer att läsas från `~/.config/powershell/profile.ps1`

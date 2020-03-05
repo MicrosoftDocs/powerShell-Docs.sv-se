@@ -3,12 +3,12 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: Galleri, PowerShell, psgallery
 title: Manuell paketnedladdning
-ms.openlocfilehash: c0a96e866dfd27f9b2170ea540ec6dd0c67701fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e562f5b94b4d2caa7d31269a324e417d1a9e844a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328765"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278736"
 ---
 # <a name="manual-package-download"></a>Manuell paketnedladdning
 
@@ -22,7 +22,7 @@ PowerShell-galleriet har stöd för att ladda ned ett paket från webbplatsen di
 
 Varje sida har en länk för manuell hämtning, som du ser här:
 
-![Manuell nedladdning](../../Images/packagedisplaypagewithpseditions.png)
+![Manuell nedladdning](media/manual-download/packagedisplaypagewithpseditions.png)
 
 Om du vill ladda ned manuellt klickar **du på Hämta RAW nupkg-filen**. En kopia av paketet kopieras till download-mappen för din webbläsare med namnet `<name>.<version>.nupkg`.
 
@@ -46,7 +46,8 @@ En lista över NuGet element finns i [använda manuell hämtning för att hämta
 
 Stegen är följande:
 
-1. Extrahera innehållet i NuGet-paketet till en lokal mapp.
+1. Avblockera NuGet-filen`.nupkg`(Internet-Hämtad-paket), till exempel med hjälp av `Unblock-File -Path C:\Downloads\module.nupkg`-cmdlet.
+2. Extrahera innehållet i NuGet-paketet till en lokal mapp.
 2. Ta bort de NuGet elementen från mappen.
 3. Byt namn på mappen. Standard namnet på mappen `<name>.<version>`vanligt vis. Versionen kan innehålla `-prerelease` om modulen är Taggad som en för hands version. Byt namn på mappen till bara modulnamnet. `azurerm.storage.5.0.4-preview` blir till exempel `azurerm.storage`.
 4. Kopiera mappen till en av mapparna i `$env:PSModulePath value`. `$env:PSModulePath` är en semikolonavgränsad uppsättning sökvägar där PowerShell ska söka efter moduler.
@@ -63,7 +64,8 @@ Den enklaste metoden är att extrahera NuGet-paketet och sedan använda skriptet
 
 Stegen är följande:
 
-1. Extrahera innehållet i NuGet-paketet.
+1. Avblockera NuGet-filen`.nupkg`(Internet-Hämtad-paket), till exempel med hjälp av `Unblock-File -Path C:\Downloads\package.nupkg`-cmdlet.
+2. Extrahera innehållet i NuGet-paketet.
 2. `.PS1` filen i mappen kan användas direkt från den här platsen.
 3. Du kan ta bort de NuGet elementen i mappen.
 

@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Paketera och ladda upp resurser till en hämtnings Server
-ms.openlocfilehash: 29a62f96393a53c9e7da57a5e51732dcb0937194
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8aac343d7495ecda94ed76d1d97079397eecd65f
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71942246"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278517"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Paketera och ladda upp resurser till en hämtnings Server
 
@@ -27,7 +27,7 @@ Varje resurs som är tillgänglig för en klient som ska laddas ned måste lagra
 
 Du kan komprimera resurs katalogen med valfritt verktyg, skript eller metod som du föredrar. I Windows kan du *högerklicka* på katalogen "xPSDesiredStateConfiguration" och välja "Skicka till" och sedan "komprimerad mapp".
 
-![Högerklicka](../media/right-click.gif)
+![Högerklicka](media/package-upload-resources/right-click.gif)
 
 ### <a name="naming-the-resource-archive"></a>Namnge resurs arkivet
 

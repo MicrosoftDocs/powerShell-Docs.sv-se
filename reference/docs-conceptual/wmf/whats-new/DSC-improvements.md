@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: DSC-förbättringar i WMF 5.1
-ms.openlocfilehash: d9339ec9f316c4a32c5fa6cb2360c077973ee334
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.openlocfilehash: 99434d14100de54d2d4c89c5888741ab2f1c512a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818115"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277644"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Förbättringar i önskad tillstånds konfiguration (DSC) i WMF 5,1
 
@@ -59,7 +59,7 @@ Se ögonblicks bilderna nedan:
 
 - Lokala konfigurations inställningar som definierar en delvis konfiguration som en nod får ta emot.
 
-  ![Exempel på metaconfiguration](../images/DSC-improvements/MetaConfigPartialOne.png)
+  ![Exempel på metaconfiguration](media/DSC-improvements/MetaConfigPartialOne.png)
 
 - Exempel på partiell konfigurations definition
 
@@ -80,11 +80,11 @@ Se ögonblicks bilderna nedan:
 
 - ' ConfigurationName ' Embedded i den genererade MOF-filen.
 
-  ![Exempel på genererad MOF-fil](../images/DSC-improvements/PartialGeneratedMof.png)
+  ![Exempel på genererad MOF-fil](media/DSC-improvements/PartialGeneratedMof.png)
 
 - Fil namn i hämtnings konfigurationens lagrings plats
 
-  ![Fil namn i konfigurations lager](../images/DSC-improvements/PartialInConfigRepository.png)
+  ![Fil namn i konfigurations lager](media/DSC-improvements/PartialInConfigRepository.png)
 
   Azure Automation tjänst namn genererade MOF-filer som `<ConfigurationName>.<NodeName>.mof`. Konfigurationen nedan kompileras till PartialOne. localhost. mof.
 
@@ -293,11 +293,11 @@ Genom att ställa in ovanstående metaconfiguration på en nod kan du verifiera 
 > Verifiering av signaturen för modul-katalog och konfiguration utförs bara när konfigurationen tillämpas på systemet för första gången eller när modulen laddas ned och installeras.
 > Konsekvens körningar verifierar inte signaturen för current. MOF eller dess beroenden. Om verifieringen Miss lyckas i något skede, till exempel om konfigurationen som hämtades från hämtnings servern är osignerad, avslutas bearbetningen av konfigurationen med det fel som visas nedan och alla temporära filer tas bort.
 
-![Exempel på utdata-konfiguration](../images/DSC-improvements/PullUnsignedConfigFail.png)
+![Exempel på utdata-konfiguration](media/DSC-improvements/PullUnsignedConfigFail.png)
 
 På samma sätt kan du hämta en modul vars katalog inte är signerade resultat i följande fel:
 
-![Exempel på utdata-modul](../images/DSC-improvements/PullUnisgnedCatalog.png)
+![Exempel på utdata-modul](media/DSC-improvements/PullUnisgnedCatalog.png)
 
 #### <a name="push"></a>Push
 
@@ -345,12 +345,12 @@ En konfiguration som levereras med push-teknik kan manipuleras på källan innan
   Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
   ```
 
-  ![ErrorUnsignedMofPushed](../images/DSC-improvements/PushUnsignedMof.png)
+  ![ErrorUnsignedMofPushed](media/DSC-improvements/PushUnsignedMof.png)
 
 - Signera konfigurations filen med kod signerings certifikat.
 
-  ![SignMofFile](../images/DSC-improvements/SignMofFile.png)
+  ![SignMofFile](media/DSC-improvements/SignMofFile.png)
 
 - Försök att skicka den signerade MOF-filen.
 
-  ![PushSignedMofFile](../images/DSC-improvements/PushSignedMof.png)
+  ![PushSignedMofFile](media/DSC-improvements/PushSignedMof.png)

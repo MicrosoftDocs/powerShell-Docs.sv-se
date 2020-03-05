@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Använda Import-DSCResource
-ms.openlocfilehash: 4bc269ab1dd4696298b4f33f7661473aae869eba
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a041169ad557becf7ca87641d9ce5222ee8f6beb
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417419"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277544"
 ---
 # <a name="using-import-dscresource"></a>Använda Import-DSCResource
 
@@ -80,7 +80,7 @@ Den här användningen har följande fördelar:
 
 När du redigerar DSC-konfigurationen i ISE tillhandahåller PowerShell IntelliSence för resurser och resurs egenskaper. Resurs definitioner under `$pshome` module-sökvägen läses in automatiskt. När du importerar resurser med hjälp av nyckelordet `Import-DSCResource` läggs de angivna resurs definitionerna till och IntelliSense expanderas för att inkludera den importerade resursens schema.
 
-![Resurs-IntelliSense](../media/resource-intellisense.png)
+![Resurs-IntelliSense](media/import-dscresource/resource-intellisense.png)
 
 > [!NOTE]
 > Från och med PowerShell 5,0 har TABB-slutförande lagts till i ISE för DSC-resurser och deras egenskaper. Mer information finns i [resurser](../resources/resources.md).
@@ -139,11 +139,11 @@ Det finns inte stöd för att installera och använda flera versioner av resurse
 
 I bilden nedan installeras två versioner av **xPSDesiredStateConfiguration** -modulen.
 
-![Flera resurs versioner har åtgärd ATS](../media/multiple-resource-versions-broken.png)
+![Flera resurs versioner har åtgärd ATS](media/import-dscresource/multiple-resource-versions-broken.png)
 
 Kopiera innehållet i den önskade modulens version till den översta nivån i modulens katalog.
 
-![Flera resurs versioner har åtgärd ATS](../media/multiple-resource-versions-fixed.png)
+![Flera resurs versioner har åtgärd ATS](media/import-dscresource/multiple-resource-versions-fixed.png)
 
 ### <a name="resource-location"></a>Resurs plats
 

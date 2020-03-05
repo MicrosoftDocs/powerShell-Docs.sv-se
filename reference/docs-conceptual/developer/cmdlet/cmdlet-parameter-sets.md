@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f902fd4d-8f6e-4ef1-b07f-59983039a0d1
 caps.latest.revision: 10
-ms.openlocfilehash: dfe747893b4aef6376ea3b12dd79b7c144455ed0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 41cb32735091f065a0835378428de190d08f3160
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74415680"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278999"
 ---
 # <a name="cmdlet-parameter-sets"></a>Cmdlet-parameter uppsättningar
 
@@ -31,7 +31,7 @@ Varje parameter uppsättning måste ha en unik parameter som PowerShell-körning
 
 I följande bild visas tre giltiga parameter uppsättningar i den vänstra kolumnen. **Parametern A** är unik för den första parameter uppsättningen, **parametern B** är unik för den andra parameter uppsättningen och **parametern C** är unik för den tredje parameter uppsättningen. Parameter uppsättningarna i den högra kolumnen har ingen unik parameter.
 
-![ps_parametersets](../media/ps-parametersets.gif)
+![ps_parametersets](media/cmdlet-parameter-sets/ps-parametersets.gif)
 
 ## <a name="parameter-set-requirements"></a>Krav för parameter uppsättning
 

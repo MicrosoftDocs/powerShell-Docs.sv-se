@@ -2,12 +2,12 @@
 title: Använda Visual Studio Code för PowerShell-utveckling
 description: Använda Visual Studio Code för PowerShell-utveckling
 ms.date: 11/07/2019
-ms.openlocfilehash: 4f197e71d3b79828f466584f5d862415726818b1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 16ae228c0d169261b783366a730fd2d5d77d32d6
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117393"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279084"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Använda Visual Studio Code för PowerShell-utveckling
 
@@ -48,7 +48,7 @@ För traditionella Windows PowerShell-arbetsbelastningar, se [Installera Windows
    1. Vyn **tillägg** öppnas i sido fältet. Välj PowerShell-tillägget från Microsoft.
       Du bör se en VSCode-skärm som liknar följande bild:
 
-      ![VSCode](../../images/using-vscode/vscode.png)
+      ![VSCode](media/using-vscode/vscode.png)
 
    1. Klicka på knappen **Installera** i PowerShell-tillägget från Microsoft.
    1. Efter installationen ser knappen **Installera** att **läsas in igen**. Klicka på **Läs in igen**.
@@ -157,7 +157,7 @@ Vi rekommenderar följande konfigurations inställningar för VSCode:
 }
 ```
 
-Om du inte vill att de här inställningarna ska påverka alla filtyper kan VSCode också använda konfigurationer för flera språk. Skapa en språkspecifik inställning genom att lägga till inställningar i ett `[<language-name>]`s fält. Till exempel:
+Om du inte vill att de här inställningarna ska påverka alla filtyper kan VSCode också använda konfigurationer för flera språk. Skapa en språkspecifik inställning genom att lägga till inställningar i ett `[<language-name>]`s fält. Exempel:
 
 ```json
 "[powershell]": {

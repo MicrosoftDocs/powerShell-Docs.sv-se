@@ -3,18 +3,18 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Distribuera till Azure Automation
-ms.openlocfilehash: 707691e24a77647064e60da0d9a31ad5eece1c59
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5d09a0777c59b642400d683c8cb6f881319fb881
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328779"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278761"
 ---
 # <a name="deploy-to-azure-automation"></a>Distribuera till Azure Automation
 
 Knappen distribuera till Azure Automation på sidan med paket information kommer att distribuera paketet från PowerShell-galleriet till Azure Automation.
 
-![Knappen distribuera till Azure Automation](../../Images/DeployToAzureAutomationButton.png)
+![Knappen distribuera till Azure Automation](media/deploy-to-azure-automation/DeployToAzureAutomationButton.png)
 
 När du klickar på det omdirigeras du till Azure-Hanteringsportal där du loggar in med dina autentiseringsuppgifter för Azure-kontot.
 Om paketet innehåller beroenden kommer alla beroenden att distribueras till Azure Automation även.
@@ -30,7 +30,7 @@ Knappen distribuera till Azure Automation kan inaktive ras genom att AzureAutoma
 
 Om modulen som distribueras till Azure Automation kräver licens godkännande, visar Portal gränssnittet en fri skrivning som säger att den här modulen kräver licens godkännande. Genom att klicka på OK godkänner du licens villkoren.
 
-![Distribuera till Azure Automation kräver licens godkännande](../../Images/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
+![Distribuera till Azure Automation kräver licens godkännande](media/deploy-to-azure-automation/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
 
 ## <a name="more-details"></a>Mer information
 

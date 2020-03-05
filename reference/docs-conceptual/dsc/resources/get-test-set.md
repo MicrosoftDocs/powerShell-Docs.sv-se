@@ -2,18 +2,18 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Get-test-set
-ms.openlocfilehash: 42c1df6df2fbf65cbbb8407db613cac2e5b81cfb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bf409f71c07c434fbc7389789e16575868d21b42
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71942183"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278433"
 ---
 # <a name="get-test-set"></a>Get-test-set
 
 >Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
-![Hämta, testa och tillämpa](../media/get-test-set.png)
+![Hämta, testa och tillämpa](media/get-test-set/get-test-set.png)
 
 PowerShell Desired State Configuration är konstruerad runt en **Get**-, **test**-och **set** -process. DSC- [resurser](resources.md) innehåller båda metoder för att slutföra var och en av dessa åtgärder. I en [konfiguration](../configurations/configurations.md)definierar du resurs block för att fylla i nycklar som blir parametrar för en resurs **Get**-, **test**-och **set** -metoder.
 
@@ -123,7 +123,7 @@ ModuleVersion = "1.0";
 
 När den används kommer den [lokala Configuration Manager](../managing-nodes/metaConfig.md) (LCM) att läsa värdet "Spooler" från filen ". MOF" och skicka den till `-Name`-parametern för **Get**-, **test**-och **set** -instansen för **tjänst** resursen.
 
-## <a name="get"></a>Get
+## <a name="get"></a>Hämta
 
 **Get** -metoden för en resurs, hämtar resursens tillstånd som den är konfigurerad på målnoden. Det här status returneras som en [hash-hash](/powershell/module/microsoft.powershell.core/about/about_hash_tables). Nycklarna i **hash** -tabellen är de konfigurerbara värden eller parametrarna som resursen accepterar.
 

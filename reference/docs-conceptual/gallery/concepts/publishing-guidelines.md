@@ -4,12 +4,12 @@ contributor: JKeithB, SydneyhSmith
 keywords: Galleri, PowerShell, cmdlet, psgallery
 description: Rikt linjer för utgivare
 title: PowerShell-galleriet publicerings rikt linjer och metod tips
-ms.openlocfilehash: 9047e938ab961c68e225c9029e52403c40afbe26
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 07271e037100350d3efc7ae63860f42afd22aae7
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417680"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278229"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery publicerings rikt linjer och metod tips
 
@@ -128,7 +128,7 @@ Använd följande taggar för att demonstrera användare vars paket fungerar bra
 - MacOS: paket som är kompatibla med Mac-operativsystemet
 
 Genom att tagga ditt paket med de kompatibla plattformarna kommer det att tas med i Galleri Sök filter i det vänstra fönstret i Sök resultatet. Om du är värd för ditt paket på GitHub kan du, när du taggar ditt paket, också dra nytta av vår [PowerShell-galleriet Compatibility sköld](https://img.shields.io/powershellgallery/p/:packageName.svg)
-![compatibility sköld](../Images/CosmosDB.svg).
+![compatibility sköld](media/publishing-guidelines/CosmosDB.svg).
 
 ## <a name="include-tests"></a>Ta med tester
 
