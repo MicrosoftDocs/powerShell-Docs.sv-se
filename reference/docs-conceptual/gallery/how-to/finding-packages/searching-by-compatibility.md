@@ -3,12 +3,12 @@ ms.date: 12/11/2018
 contributor: JKeithB, SydneyhSmith
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Paket med kompatibla PowerShell-utgåvor eller operativ system
-ms.openlocfilehash: 14038aa9b0453e1d06e6587e97da391b56297c75
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b414ce2c2b189e9da150cbe612e0bb2572d39e76
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71329150"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278395"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Paket med kompatibla PowerShell-utgåvor eller operativ system
 
@@ -17,15 +17,15 @@ Från och med version 5,1 är PowerShell tillgängligt i olika utgåvor som kän
 ## <a name="searching-by-powershell-edition"></a>Söker efter PowerShell-utgåva
 
 De två versionerna av PowerShell är:
-- **Desktop Edition:** bygger på .NET Framework och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på fullständiga utgåvor av Windows, till exempel Server Core och Windows Desktop.
-- **Core Edition:** bygger på .NET Core och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på begränsade utgåvor av Windows som Nano Server och Windows IoT.
+- **Desktop Edition:** Bygger på .NET Framework och ger kompatibilitet med skript och moduler som mål versioner av PowerShell som körs på fullständiga versioner av Windows, till exempel Server Core och Windows Desktop.
+- **Core-utgåva:** Bygger på .NET Core och ger kompatibilitet med skript och moduler som mål versioner av PowerShell som körs på begränsade versioner av Windows, till exempel Nano Server och Windows IoT.
 
 ### <a name="powershell-gallery-allows-you-to-filter-packages-compatible-for-specific-powershell-editions"></a>Med PowerShell-galleriet kan du filtrera paket som är kompatibla med vissa PowerShell-versioner
 
 Om ett paket har kompatibla PSEditions anges de som en del av "PowerShell-versioner" på paketets visnings sida och även i paket resultat.
 Du kan också söka efter kompatibla paket med PowerShell.
 
-![Objekt visnings sidan med PSEditions](../../Images/packagedisplaypagewithpseditions.PNG)
+![Objekt visnings sidan med PSEditions](media/searching-by-compatibility/packagedisplaypagewithpseditions.PNG)
 
 ### <a name="search-for-packages-in-the-gallery-ui-that-work-on-powershell-core"></a>Sök efter paket i galleriet för galleriet som fungerar på PowerShell-kärnan
 
@@ -33,11 +33,11 @@ Använd Taggar: "PSEdition_Desktop" och Taggar: "PSEdition_Core" för att filtre
 
 ### <a name="use-tagspsedition_core-to-search-items-compatible-with-powershell-core-edition"></a>Använd Taggar: "PSEdition_Core" om du vill söka efter objekt som är kompatibla med PowerShell Core Edition.
 
-![Sök Resultat för objekt som är kompatibla med Core-PSEdition](../../Images/searchresultswithpseditions.PNG)
+![Sök Resultat för objekt som är kompatibla med Core-PSEdition](media/searching-by-compatibility/searchresultswithpseditions.PNG)
 
 ### <a name="use-tagspsedition_desktop-to-search-items-compatible-with-powershell-desktop-edition"></a>Använd Taggar: "PSEdition_Desktop" om du vill söka efter objekt som är kompatibla med PowerShell Desktop Edition.
 
-![Sök Resultat för objekt som är kompatibla med Desktop-PSEdition](../../Images/searchresultswithpseditionsdesktop.PNG)
+![Sök Resultat för objekt som är kompatibla med Desktop-PSEdition](media/searching-by-compatibility/searchresultswithpseditionsdesktop.PNG)
 
 ### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>Sök efter paket för att hitta kompatibla utgåvor med PowerShell
 Du kan ange taggar för att filtrera PowerShell-versionen och operativ systemet.
