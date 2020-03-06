@@ -1,17 +1,17 @@
 ---
-title: Installera PowerShell Core i Windows
-description: Information om hur du installerar PowerShell core i Windows
+title: Installera PowerShell i Windows
+description: Information om hur du installerar PowerShell på Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: e9e78e3ab182099caf3dbf74b033168f1f2927d5
+ms.openlocfilehash: df05a16bcf7a81d43d24535e50517fa217f82e7a
 ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78280280"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78405101"
 ---
-# <a name="installing-powershell-core-on-windows"></a>Installera PowerShell Core i Windows
+# <a name="installing-powershell-on-windows"></a>Installera PowerShell i Windows
 
-Det finns flera sätt att installera PowerShell core i Windows.
+Det finns flera sätt att installera PowerShell i Windows.
 
 ## <a name="prerequisites"></a>Förutsättningar
 
@@ -50,7 +50,7 @@ MSI-paket kan installeras från kommando raden. Detta gör att administratörer 
 - **ENABLE_PSREMOTING** – den här egenskapen styr alternativet för att aktivera PowerShell-fjärrkommunikation under installationen.
 - **REGISTER_MANIFEST** – den här egenskapen styr alternativet för registrering av Windows händelse loggnings manifestet.
 
-I följande exempel visas hur du tyst installerar PowerShell Core med alla installations alternativ aktiverade.
+I följande exempel visas hur du tyst installerar PowerShell med alla installations alternativ aktiverade.
 
 ```powershell
 msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
@@ -62,7 +62,7 @@ En fullständig lista över kommando rads alternativ för msiexec. exe finns i [
 
 Om du vill installera MSIX-paketet manuellt på en Windows 10-klient laddar du ned MSIX-paketet från vår GitHub [releases][releases] -sida. Rulla ned till **till gångar** -avsnittet i den version som du vill installera. Avsnittet till gångar kan vara minimerat, så du kan behöva klicka för att expandera det.
 
-MSI-filen ser ut så här – `PowerShell-<version>-win-<os-arch>.msix`
+MSIX-filen ser ut så här – `PowerShell-<version>-win-<os-arch>.msix`
 
 När du har hämtat kan du inte bara dubbelklicka på installations programmet eftersom det här paketet kräver att du använder icke-virtualiserade resurser.  För att installera måste du använda `Add-AppxPackage`-cmdlet:
 
@@ -76,7 +76,7 @@ Det finns PowerShell-Arkiv för att aktivera avancerade distributions scenarier.
 
 ## <a name="deploying-on-windows-iot"></a>Distribuera på Windows IoT
 
-Windows IoT levereras redan med Windows PowerShell som vi ska använda för att distribuera PowerShell Core 6.
+Windows IoT levereras redan med Windows PowerShell som vi kan använda för att distribuera PowerShell 7.
 
 1. Skapa `PSSession` till mål enhet
 
@@ -101,7 +101,7 @@ Windows IoT levereras redan med Windows PowerShell som vi ska använda för att 
    Expand-Archive .\PowerShell-<version>-win-<os-arch>.zip
    ```
 
-4. Konfigurera fjärr kommunikation till PowerShell Core 6
+4. Konfigurera fjärr kommunikation till PowerShell 7
 
    ```powershell
    Set-Location .\PowerShell-<version>-win-<os-arch>
@@ -111,7 +111,7 @@ Windows IoT levereras redan med Windows PowerShell som vi ska använda för att 
    # You'll get an error message and will be disconnected from the device because it has to restart WinRM
    ```
 
-5. Anslut till PowerShell Core 6-slutpunkt på enhet
+5. Anslut till PowerShell 7-slutpunkt på enhet
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
@@ -121,23 +121,23 @@ Windows IoT levereras redan med Windows PowerShell som vi ska använda för att 
 ## <a name="deploying-on-nano-server"></a>Distribuera på Nano Server
 
 Dessa instruktioner förutsätter att en version av PowerShell redan körs på Nano Server-avbildningen och att den har genererats av [Nano Server Image Builder](/windows-server/get-started/deploy-nano-server).
-Nano Server är ett "" "konsol löst" operativ system. Kärn binärfiler kan distribueras med två olika metoder.
+Nano Server är ett "" "konsol löst" operativ system. PowerShell-binärfiler kan distribueras med två olika metoder.
 
 1. Offline – montera den virtuella hård disken för Nano Server och zippa upp innehållet i zip-filen till den valda platsen i den monterade avbildningen.
 2. Överför zip-filen via en PowerShell-session online och packa upp den på den valda platsen.
 
 I båda fallen behöver du paketet Windows 10 x64 ZIP release och måste köra kommandona i en "administratör" PowerShell-instans.
 
-### <a name="offline-deployment-of-powershell-core"></a>Offline-distribution av PowerShell Core
+### <a name="offline-deployment-of-powershell"></a>Offline-distribution av PowerShell
 
 1. Använd ditt favorit-zip-verktyg för att packa upp paketet till en katalog i den monterade Nano Server-avbildningen.
 2. Demontera avbildningen och starta den.
 3. Anslut till inkorg-instansen av Windows PowerShell.
 4. Följ instruktionerna för att skapa en fjärran sluten slut punkt med hjälp av ["en annan instans teknik"](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
-### <a name="online-deployment-of-powershell-core"></a>Online-distribution av PowerShell Core
+### <a name="online-deployment-of-powershell"></a>Online-distribution av PowerShell
 
-Följande steg vägleder dig genom distributionen av PowerShell Core till en aktiv instans av Nano Server och konfigurationen av dess fjärrslutpunkt.
+Följande steg vägleder dig genom distributionen av PowerShell till en ingångs instans av Nano Server och konfigurationen av dess fjärrslutpunkt.
 
 - Anslut till inkorg-instansen av Windows PowerShell
 
@@ -161,7 +161,7 @@ Följande steg vägleder dig genom distributionen av PowerShell Core till en akt
 
   ```powershell
   # Insert the appropriate version.
-  Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShellCore_<version>"
+  Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShell_<version>"
   ```
 
 - Om du vill använda WSMan-baserad fjärr kommunikation följer du anvisningarna för att skapa en slut punkt för fjärr kommunikation med hjälp av ["en annan instans teknik"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
@@ -176,7 +176,7 @@ dotnet tool install --global PowerShell
 
 ## <a name="how-to-create-a-remoting-endpoint"></a>Så här skapar du en fjärran sluten slut punkt
 
-PowerShell Core stöder PowerShell Remoting-protokollet (PSRP) via både WSMan och SSH. Mer information finns i:
+PowerShell stöder PowerShell Remoting-protokollet (PSRP) via både WSMan och SSH. Mer information finns i:
 
 - [SSH-fjärrkommunikation i PowerShell Core][ssh-remoting]
 - [WSMan-fjärrkommunikation i PowerShell Core][wsman-remoting]
