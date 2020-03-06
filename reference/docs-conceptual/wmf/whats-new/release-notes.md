@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: Versionsinformation för WMF 5.x
 ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416498"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78404797"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Viktig information om Windows Management Framework (WMF) 5. x
 
@@ -45,12 +45,12 @@ WMF 5,1 innehåller komponenterna PowerShell, WMI, WinRM och Software Inventory 
 > [!IMPORTANT]
 > Innan du installerar WMF 5,1 på Windows Server 2008 eller Windows 7 kontrollerar du att WMF 3,0 inte är installerat. Mer information finns i [WMF 5,1-krav för Windows Server 2008 R2 SP1 och Windows 7 SP1](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1).
 
-## <a name="powershell-editions"></a>PowerShell-utgåvor
+## <a name="powershell-editions"></a>PowerShell-versioner
 
 Från och med version 5,1 är PowerShell tillgängligt i olika versioner som kännetecknar varierande funktions uppsättningar och plattformens kompatibilitet.
 
-- **Desktop Edition:** bygger på .NET Framework och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på fullständiga utgåvor av Windows, till exempel Server Core och Windows Desktop.
-- **Core Edition:** bygger på .NET Core och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på begränsade utgåvor av Windows som Nano Server och Windows IoT.
+- **Desktop Edition:** Bygger på .NET Framework och ger kompatibilitet med skript och moduler som mål versioner av PowerShell som körs på fullständiga versioner av Windows, till exempel Server Core och Windows Desktop.
+- **Core-utgåva:** Bygger på .NET Core och ger kompatibilitet med skript och moduler som mål versioner av PowerShell som körs på begränsade versioner av Windows, till exempel Nano Server och Windows IoT.
 
 ### <a name="learn-more-about-using-powershell-editions"></a>Lär dig mer om att använda PowerShell-versioner
 
