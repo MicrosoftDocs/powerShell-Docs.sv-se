@@ -1,17 +1,17 @@
 ---
-title: Installera PowerShell Core i macOS
-description: Information om hur du installerar PowerShell Core på macOS
+title: Installera PowerShell på macOS
+description: Information om hur du installerar PowerShell på macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: b7ea1d494b12d31ffec330a0a68e282a05b011fc
+ms.openlocfilehash: 7f0d6a1aa275deb39a7d670546ee7e833b8ef315
 ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78280297"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78404816"
 ---
-# <a name="installing-powershell-core-on-macos"></a>Installera PowerShell Core i macOS
+# <a name="installing-powershell-on-macos"></a>Installera PowerShell på macOS
 
-PowerShell Core stöder macOS 10,12 och högre.
+PowerShell stöder macOS 10,12 och högre.
 Alla paket är tillgängliga på vår GitHub- [releases][] -sida.
 När paketet har installerats kör du `pwsh` från en Terminal.
 
@@ -91,7 +91,7 @@ brew cask upgrade powershell-preview
 ## <a name="installation-via-direct-download"></a>Installation via direkt hämtning
 
 Ladda ned PKG-paketet `powershell-6.2.0-osx-x64.pkg`
-från sidan [releases][] till din MacOS-dator.
+från sidan [utgåvor][] till din MacOS-dator.
 
 Du kan dubbelklicka på filen och följa anvisningarna eller installera den från terminalen:
 
@@ -167,7 +167,7 @@ sudo mkdir -p /usr/local/opt/openssl
 sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
 ```
 
-## <a name="uninstalling-powershell-core"></a>PowerShell-kärnan avinstalleras
+## <a name="uninstalling-powershell"></a>Avinstallera PowerShell
 
 Om du har installerat PowerShell med homebrew, använder du följande kommando för att avinstallera:
 
@@ -214,5 +214,5 @@ Därför är `$PSHOME` `/usr/local/microsoft/powershell/6.2.0/`och den symbolisk
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[releases]: https://github.com/PowerShell/PowerShell/releases/latest
+[exekutiv]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

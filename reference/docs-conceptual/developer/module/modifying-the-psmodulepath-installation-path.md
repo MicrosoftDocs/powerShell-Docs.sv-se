@@ -8,18 +8,21 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: dc5ce5a2-50e9-4c88-abf1-ac148a8a6b7b
 caps.latest.revision: 15
-ms.openlocfilehash: 5957ea4c15cd3778bd09b67c4b97de0ef0cfdd2a
-ms.sourcegitcommit: 0e4c69d8b5cf71431592fe41da816dec9b70f1f9
+ms.openlocfilehash: b176d8439025ac132962859f79e72ae6f9703e82
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74953848"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78405046"
 ---
 # <a name="modifying-the-psmodulepath-installation-path"></a>Ändra installationssökvägen för PSModulePath
 
 I miljövariabeln `PSModulePath` lagras Sök vägarna till platserna för de moduler som är installerade på disk. PowerShell använder den här variabeln för att hitta moduler när användaren inte anger den fullständiga sökvägen till en modul. Sök vägarna i den här variabeln genomsöks i den ordning som de visas.
 
-När PowerShell startar skapas `PSModulePath` som en system miljö variabel med följande standardvärde: `$HOME\Documents\PowerShell\Modules; $PSHOME\Modules` eller `$HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules` för Windows PowerShell.
+När PowerShell startar skapas `PSModulePath` som en system miljö variabel med följande standardvärde: `$HOME\Documents\PowerShell\Modules; $PSHOME\Modules` på Windows och `$HOME/.local/share/powershell/Modules: usr/local/share/powershell/Modules` på Linux eller Mac och `$HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules` för Windows PowerShell.
+
+> [!NOTE]
+> Den användarspecifika **CurrentUser** -platsen är mappen `WindowsPowerShell\Modules` som finns på **dokument** platsen i din användar profil. Den angivna sökvägen till platsen varierar efter Windows-version och om du använder mappomdirigering. Som standard är den platsen `$HOME\Documents\WindowsPowerShell\Modules`i Windows 10.
 
 ## <a name="to-view-the-psmodulepath-variable"></a>Så här visar du variabeln PSModulePath
 
@@ -56,3 +59,5 @@ Du kan ta bort sökvägar från variabeln med liknande metoder: `$env:PSModulePa
 ## <a name="see-also"></a>Se även
 
 [Skriva en Windows PowerShell-modul](./writing-a-windows-powershell-module.md)
+
+[about_Modules](/powershell/module/microsoft.powershell.core/about/about_modules)

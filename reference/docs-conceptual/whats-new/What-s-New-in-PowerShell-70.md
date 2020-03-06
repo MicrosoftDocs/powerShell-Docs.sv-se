@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell 7,0
 description: Nya funktioner och ändringar som lanseras i PowerShell 7,0
 ms.date: 03/04/2020
-ms.openlocfilehash: 3e83fbe9d863a5e29acbcc1e88b58c88501922ae
+ms.openlocfilehash: 6915bb70d6e54da86d2b935e3feed8d7f3770ba9
 ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78280314"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78404984"
 ---
 # <a name="whats-new-in-powershell-70"></a>Nyheter i PowerShell 7,0
 
@@ -112,7 +112,7 @@ PowerShell: s ternära operator modelleras noggrant från C# ternär operatörs 
 <condition> ? <if-true> : <if-false>
 ```
 
-Villkors uttrycket utvärderas alltid och dess resultats mat som konverteras till ett **booleskt värde** för att avgöra vilken gren som utvärderas härnäst:
+Villkors uttrycket utvärderas alltid och resultatet konverteras till ett **booleskt värde** för att avgöra vilken gren som utvärderas härnäst:
 
 - `<if-true>` uttryck körs om `<condition>`s uttrycket är sant
 - `<if-false>`-uttrycket körs om `<condition>`-uttrycket är falskt
@@ -225,7 +225,7 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 ### <a name="null-conditional-member-access-operators--and--experimental"></a>Null villkorliga medlemmars åtkomst operatörer?. särskilt? [] (Experimentell)
 
 > [!NOTE]
-> Det här är en experimentell funktion som heter **PSNullConditionalOperators**. Om du vill veta mer [om experimentella funktioner](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
+> Det här är en experimentell funktion som heter **PSNullConditionalOperators**. Läs mer [om experimentella funktioner](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
 
 En villkorlig operator för null tillåter åtkomst till medlemmar, `?.`eller element, `?[]`, till operanden endast om denna operand utvärderar till icke-null. annars returnerar den null.
 
@@ -282,7 +282,7 @@ Om felet inträffar under skript körningen eller är ett parsningsfel returnera
 
 ![Fel vid visning från ett skript](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
-Standardvyn i PowerShell 7 är **ConciseView**. Den tidigare **NormalView** är användare valbara genom att ställa in variabeln Preference `$ErrorView`.
+Standardvyn i PowerShell 7 är **ConciseView**. Den tidigare standardvyn var **NormalView** och användaren kan välja variabeln genom att ställa in variabeln Preference `$ErrorView`.
 
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
@@ -350,7 +350,7 @@ Mer information [om uppdaterings meddelanden](/powershell/module/microsoft.power
 ## <a name="new-dsc-resource-support-with-invoke-dscresource-experimental"></a>Nytt stöd för DSC-resurser med Invoke-Dscresource Keyword Supports (experimentell)
 
 > [!NOTE]
-> Det här är en experimentell funktion med namnet **PSDesiredStateConfiguration. InvokeDscResource**. Om du vill veta mer [om experimentella funktioner](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
+> Det här är en experimentell funktion med namnet **PSDesiredStateConfiguration. InvokeDscResource**. Läs mer [om experimentella funktioner](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
 
 `Invoke-DscResource`-cmdleten kör en metod för en angiven DSC-resurs (Desired State Configuration) för PowerShell.
 
