@@ -6,7 +6,7 @@
   items:
     - name: Installera olika versioner av PowerShell
       href: install/installing-powershell.md
-    - name: PowerShell Core
+    - name: Installera PowerShell
       items:
         - name: Installera PowerShell Core i Windows
           href: install/installing-powershell-core-on-windows.md
@@ -16,7 +16,7 @@
           href: install/installing-powershell-core-on-macos.md
         - name: Installera PowerShell Core i ARM
           href: install/powershell-core-on-arm.md
-    - name: Windows PowerShell
+    - name: Installera Windows PowerShell 5.1
       items:
         - name: Installera Windows PowerShell
           href: install/installing-windows-powershell.md
@@ -24,11 +24,13 @@
           href: install/installing-the-windows-powershell-2.0-engine.md
         - name: Windows PowerShell-systemkrav
           href: install/windows-powershell-system-requirements.md
+    - name: Använda PowerShell i Docker
+      href: install/PowerShell-in-Docker.md
 - name: Kom igång
   items:
     - name: Komma igång med PowerShell
       href: getting-started/getting-started-with-windows-powershell.md
-    - name: Starta Windows Powershell
+    - name: Starta Windows PowerShell
       href: getting-started/starting-windows-powershell.md
     - name: Starta Windows PowerShell 2.0-motorn
       href: getting-started/starting-the-windows-powershell-2.0-engine.md
@@ -268,6 +270,10 @@
       href: gallery/faqs.md
 - name: Nyheter
   items:
+    - name: Nyheter i PowerShell 7.x
+      items:
+        - name: Nyheter i PowerShell 7.0
+          href: whats-new/what-s-new-in-powershell-70.md
     - name: Nyheter i PowerShell Core 6.x
       items:
         - name: Nyheter i PowerShell Core 6.2
