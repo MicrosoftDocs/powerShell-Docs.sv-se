@@ -8,13 +8,13 @@
       href: install/installing-powershell.md
     - name: Installera PowerShell
       items:
-        - name: Installera PowerShell Core i Windows
+        - name: Installera PowerShell i Windows
           href: install/installing-powershell-core-on-windows.md
-        - name: Installera PowerShell Core i Linux
+        - name: Installera PowerShell i Linux
           href: install/installing-powershell-core-on-linux.md
-        - name: Installera PowerShell Core i macOS
+        - name: Installera PowerShell i macOS
           href: install/installing-powershell-core-on-macos.md
-        - name: Installera PowerShell Core i ARM
+        - name: Installera PowerShell i ARM
           href: install/powershell-core-on-arm.md
     - name: Installera Windows PowerShell 5.1
       items:
@@ -30,7 +30,7 @@
   items:
     - name: Komma igång med PowerShell
       href: getting-started/getting-started-with-windows-powershell.md
-    - name: Starta Windows PowerShell
+    - name: Starta Windows Powershell
       href: getting-started/starting-windows-powershell.md
     - name: Starta Windows PowerShell 2.0-motorn
       href: getting-started/starting-the-windows-powershell-2.0-engine.md
@@ -296,6 +296,8 @@
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
     - name: Versionshistorik för moduler och cmdletar
       href: whats-new/cmdlet-versions.md
+    - name: Lista över modulers kompatibilitet
+      href: whats-new/module-compatibility.md
 - name: Supportlängd för PowerShell Core
   href: powershell-support-lifecycle.md
 - name: Windows Management Framework (WMF)
