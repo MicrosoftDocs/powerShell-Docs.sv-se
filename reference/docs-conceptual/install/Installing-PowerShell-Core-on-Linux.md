@@ -1,15 +1,15 @@
 ---
-title: Installera PowerShell Core i Linux
-description: Information om hur du installerar PowerShell Core på olika Linux-distributioner
+title: Installera PowerShell på Linux
+description: Information om hur du installerar PowerShell på olika Linux-distributioner
 ms.date: 07/19/2019
-ms.openlocfilehash: 3a1f0299d1fa1fac7601afc75a59618e901ffa63
+ms.openlocfilehash: a31f1f2011f484d823b068ccf4aa224334cfdaa4
 ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78280331"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78405087"
 ---
-# <a name="installing-powershell-core-on-linux"></a>Installera PowerShell Core i Linux
+# <a name="installing-powershell-on-linux"></a>Installera PowerShell på Linux
 
 Stöder [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Ubuntu 19,04][u1904], [Debian 8][deb8], [Debian 9][deb9], [Debian 10][deb10], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE skottår 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora]och [båge Linux][arch].
 
@@ -42,7 +42,7 @@ Alla paket är tillgängliga på vår GitHub- [releases][] -sida. När paketet h
 
 ## <a name="installing-preview-releases"></a>Installera för hands versioner
 
-När du installerar en PowerShell Core Preview-version för Linux via en paket lagrings plats ändras paket namnet från `powershell` till `powershell-preview`.
+När du installerar en PowerShell Preview-version för Linux via en paket lagrings plats ändras paket namnet från `powershell` till `powershell-preview`.
 
 Installation via direkt hämtning ändras inte, förutom fil namnet.
 
@@ -58,7 +58,7 @@ Följande tabell innehåller kommandon för att installera stabila och förhands
 
 ### <a name="installation-via-package-repository---ubuntu-1604"></a>Installation via paket lagring – Ubuntu 16,04
 
-PowerShell Core för Linux publiceras till paket Arkiv för enkel installation och uppdateringar.
+PowerShell för Linux publiceras till paket Arkiv för enkel installation och uppdateringar.
 
 Den bästa metoden är följande:
 
@@ -105,7 +105,7 @@ sudo apt-get remove powershell
 
 ### <a name="installation-via-package-repository---ubuntu-1804"></a>Installation via paket lagring – Ubuntu 18,04
 
-PowerShell Core för Linux publiceras till paket Arkiv för enkel installation och uppdateringar.
+PowerShell för Linux publiceras till paket Arkiv för enkel installation och uppdateringar.
 
 Den bästa metoden är följande:
 
@@ -169,7 +169,7 @@ Installationen stöds via `snapd`. Instruktioner finns i [snapin-paket][snap].
 
 ### <a name="installation-via-package-repository---debian-8"></a>Installation via paket lagring – Debian 8
 
-PowerShell Core för Linux publiceras till paket Arkiv för enkel installation och uppdateringar.
+PowerShell för Linux publiceras till paket Arkiv för enkel installation och uppdateringar.
 
 Den bästa metoden är följande:
 
@@ -200,7 +200,7 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-package-repository---debian-9"></a>Installation via paket lagring – Debian 9
 
-PowerShell Core för Linux publiceras till paket Arkiv för enkel installation och uppdateringar.
+PowerShell för Linux publiceras till paket Arkiv för enkel installation och uppdateringar.
 
 Den bästa metoden är följande:
 
@@ -348,7 +348,7 @@ pwsh-preview
 
 ### <a name="installation-via-package-repository-preferred---centos-7"></a>Installation via paketets lagrings plats (prioriterad) – CentOS 7
 
-PowerShell Core för Linux publiceras till officiella Microsoft-databaser för enkel installation och uppdateringar.
+PowerShell för Linux publiceras till officiella Microsoft-databaser för enkel installation och uppdateringar.
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -391,7 +391,7 @@ sudo yum remove powershell
 
 ### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a>Installation via paketets lagrings plats (rekommenderas) – Red Hat Enterprise Linux (RHEL) 7
 
-PowerShell Core för Linux publiceras till officiella Microsoft-databaser för enkel installation och uppdateringar.
+PowerShell för Linux publiceras till officiella Microsoft-databaser för enkel installation och uppdateringar.
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -489,14 +489,14 @@ rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ## <a name="fedora"></a>Fedora
 
 > [!NOTE]
-> Fedora 28 stöds endast i PowerShell Core 6,1 och senare.
+> Fedora 28 stöds endast i PowerShell 6,1 och senare.
 
 > [!NOTE]
 > Fedora 29 och 30 stöds bara i PowerShell 7,0 och senare.
 
 ### <a name="installation-via-package-repository-preferred---fedora-28-29-and-30"></a>Installation via paketets lagrings plats (prioriterad)-Fedora 28, 29 och 30
 
-PowerShell Core för Linux publiceras till officiella Microsoft-databaser för enkel installation och uppdateringar.
+PowerShell för Linux publiceras till officiella Microsoft-databaser för enkel installation och uppdateringar.
 
 ```sh
 # Register the Microsoft signature key
@@ -570,7 +570,7 @@ Mer information om hur du installerar paket från AUR finns i " [båge Linux wik
 
 ### <a name="installation-via-snap"></a>Installation via Snap
 
-PowerShell Core för Linux publiceras i [Snap Store](https://snapcraft.io/store) för enkel installation och uppdateringar.
+PowerShell för Linux publiceras i [Snap Store](https://snapcraft.io/store) för enkel installation och uppdateringar.
 
 Den bästa metoden är följande:
 
@@ -635,7 +635,7 @@ apt -y remove powershell
 
 För närvarande stöds PowerShell bara för Raspbian-sträckning.
 
-CoreCLR och PowerShell-kärnan fungerar bara på Pi 2-och PI 3-enheter som andra enheter, t. ex. [PI noll](https://github.com/dotnet/coreclr/issues/10605), har en processor som inte stöds.
+CoreCLR och PowerShell fungerar bara på Pi 2-och PI 3-enheter som andra enheter, t. ex. [PI noll](https://github.com/dotnet/coreclr/issues/10605), har en processor som inte stöds.
 
 Ladda ned [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) och följ [installations anvisningarna](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) för att hämta den till din PI.
 

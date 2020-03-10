@@ -3,11 +3,11 @@ ms.date: 10/30/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Felsöka DSC
 ms.openlocfilehash: 5cbe6496a6e0b9940f4b69e13d1e19e43b3915f0
-ms.sourcegitcommit: 5f199cd2a1b31dbcebaab44f2fe496f289831a30
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77478793"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78405148"
 ---
 # <a name="troubleshooting-dsc"></a>Felsöka DSC
 

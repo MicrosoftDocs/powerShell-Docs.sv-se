@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: PowerShellTab-objektet
 ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75736938"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78404936"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab-objektet
 
@@ -118,7 +118,7 @@ Den skrivskyddade egenskapen som hämtar konsol fönstrets [redigerings](The-ISE
 $psISE.CurrentPowerShellTab.ConsolePane
 ```
 
-### <a name="displayname"></a>Visningsnamn
+### <a name="displayname"></a>displayName
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -154,7 +154,7 @@ $newFile.Editor.Text = "a`r`nb"
 $newFile.Editor.LineCount
 ```
 
-### <a name="output"></a>Utdata
+### <a name="output"></a>Resultat
 
 Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE. I senare versioner av Windows PowerShell ISE kan du använda **ConsolePane** -objektet för samma syfte.
 

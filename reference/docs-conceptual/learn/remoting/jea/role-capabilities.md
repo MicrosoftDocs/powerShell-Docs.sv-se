@@ -3,11 +3,11 @@ ms.date: 07/10/2019
 keywords: Jea, PowerShell, säkerhet
 title: JEA roll funktioner
 ms.openlocfilehash: 5b5b5977d4fec1ed850f1146fe7c09463908651b
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818183"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78405009"
 ---
 # <a name="jea-role-capabilities"></a>JEA roll funktioner
 
