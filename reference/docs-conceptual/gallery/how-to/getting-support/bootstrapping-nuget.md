@@ -1,18 +1,17 @@
 ---
 ms.date: 06/12/2017
-contributor: manikb
 keywords: Galleri, PowerShell, cmdlet, psget
 title: Starta NuGet
-ms.openlocfilehash: 6d8f106bc3b8741203e87e4c097948a843f06d6e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 70403006c7a48ac70a6766de3aa52d80cebbd86a
+ms.sourcegitcommit: 1fa89ab20d14a61f139f1394c45aaedd5a7c5438
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71329143"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935167"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Starta NuGet-providern och NuGet. exe
 
-NuGet. exe ingår inte i den senaste NuGet-providern. För publicerings åtgärder för antingen en modul eller ett skript, kräver PowerShellGet den binära körbara filen NuGet. exe. Endast NuGet-providern krävs för alla andra åtgärder, inklusive *Sök*, *Installera*, *Spara*och *Avinstallera*.
+NuGet. exe ingår inte i den senaste NuGet-providern. För publicerings åtgärder för antingen en modul eller ett skript, kräver PowerShellGet den binära körbara filen **NuGet. exe**. Endast NuGet-providern krävs för alla andra åtgärder, inklusive **Sök**, **Installera**, **Spara**och **Avinstallera**.
 PowerShellGet innehåller logik för att hantera antingen en kombinerad start av NuGet-providern och NuGet. exe eller endast start av NuGet-providern. I båda fallen bör bara ett enda varnings meddelande visas. Om datorn inte är ansluten till Internet måste användaren eller administratören kopiera en betrodd instans av NuGet-providern och/eller NuGet. exe-filen till den frånkopplade datorn.
 
 > [!NOTE]
@@ -24,10 +23,10 @@ PowerShellGet innehåller logik för att hantera antingen en kombinerad start av
 Find-Module -Repository PSGallery -Verbose -Name Contoso
 ```
 
-```output
+```Output
 NuGet provider is required to continue
 PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
-'C:\Users\manikb\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider
+'C:\Users\user1\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider
 now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): n
 Find-Module : NuGet provider is required to interact with NuGet-based repositories. Please ensure that '2.8.5.201' or newer version of NuGet provider is installed.
@@ -42,10 +41,10 @@ At line:1 char:1
 Find-Module -Repository PSGallery -Verbose -Name Contoso
 ```
 
-```output
+```Output
 NuGet provider is required to continue
 PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
-'C:\Users\manikb\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider
+'C:\Users\user1\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider
 now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 VERBOSE: Installing NuGet provider.
@@ -61,7 +60,7 @@ Version    Name                                Type       Repository           D
 Publish-Module -Name Contoso -Repository PSGallery -Verbose
 ```
 
-```output
+```Output
 NuGet.exe is required to continue
 PowerShellGet requires NuGet.exe to publish an item to the NuGet-based repositories. NuGet.exe must be available under one of the paths specified in PATH environment variable value. Do you want PowerShellGet to install NuGet.exe now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): N
@@ -77,7 +76,7 @@ At line:1 char:1
 Publish-Module -Name Contoso -Repository PSGallery -Verbose
 ```
 
-```output
+```Output
 NuGet.exe is required to continue
 PowerShellGet requires NuGet.exe to publish an item to the NuGet-based repositories. NuGet.exe must be available under one of the paths specified in PATH environment variable value. Do you want PowerShellGet to install NuGet.exe now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -91,7 +90,7 @@ VERBOSE: Successfully published module 'Contoso' to the module publish location 
 Publish-Module -Name Contoso -Repository PSGallery -Verbose
 ```
 
-```output
+```Output
 NuGet.exe and NuGet provider are required to continue
 PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Do you want PowerShellGet to install both NuGet.exe and NuGet provider now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): N
@@ -108,7 +107,7 @@ At line:1 char:1
 Publish-Module -Name Contoso -Repository PSGallery -Verbose
 ```
 
-```output
+```Output
 NuGet.exe and NuGet provider are required to continue
 PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Do you want PowerShellGet to install both NuGet.exe and NuGet provider now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -133,7 +132,11 @@ NuGet
 ----Microsoft.PackageManagement.NuGetProvider.dll
 ```
 
-Kopiera de här mapparna och filen med en betrodd process till offline-datorerna.
+Kopiera de här mapparna och filen med en betrodd process till offline-datorerna. Om du vill använda providern på den frånkopplade datorn måste den importeras. Kör följande kommando på den frånkopplade datorn:
+
+```powershell
+Import-PackageProvider -Name NuGet
+```
 
 ## <a name="manually-bootstrapping-nugetexe-to-support-publish-operations-on-a-machine-that-is-not-connected-to-the-internet"></a>Starta NuGet. exe manuellt för att stödja publicerings åtgärder på en dator som inte är ansluten till Internet
 
@@ -143,30 +146,30 @@ Det vanligaste användnings fallet för det här scenariot är när ett privat g
 
 Ett alternativ är att starta en dator som är ansluten till Internet och kopiera filerna till de frånkopplade datorerna med en betrodd process. När den anslutna Internet-datorn har startats finns NuGet. exe-binärfilen i en av två mappar:
 
-Om `Publish-Module`-eller `Publish-Script`-cmdletar kördes med förhöjd behörighet (som administratör):
+ - Om `Publish-Module`-eller `Publish-Script`-cmdletar kördes med förhöjd behörighet (som administratör):
 
-```powershell
-$env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
-```
+   ```powershell
+   $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
+   ```
 
-Om cmdletarna kördes som en användare utan förhöjd behörighet:
+- Om cmdletarna kördes som en användare utan förhöjd behörighet:
 
-```powershell
-$env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
-```
+  ```powershell
+  $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
+  ```
 
 Ett andra alternativ är att ladda ned NuGet. exe från NuGet.Org-webbplatsen: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) när du väljer en liten mängd-version för produktions datorer kontrollerar du att den är senare än 2.8.5.208 och identifierar versionen som har etiketten "rekommenderas". Kom ihåg att avblockera filen om den hämtades med hjälp av en webbläsare. Detta kan utföras med hjälp av `Unblock-File`-cmdleten.
 
 I båda fallen kan filen NuGet. exe kopieras till valfri plats i `$env:path`, men standard platserna är:
 
-Så här gör du den körbara filen tillgänglig så att alla användare kan använda `Publish-Module`-och `Publish-Script`-cmdlet: ar:
+- Så här gör du den körbara filen tillgänglig så att alla användare kan använda `Publish-Module`-och `Publish-Script`-cmdlet: ar:
 
-```powershell
-$env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
-```
+  ```powershell
+  $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
+  ```
 
-Om du vill att den körbara filen bara ska vara tillgänglig för en speciell användare kopierar du till platsen inom endast den användar profilen:
+- Om du vill att den körbara filen bara ska vara tillgänglig för en speciell användare kopierar du till platsen inom endast den användar profilen:
 
-```powershell
-$env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
-```
+  ```powershell
+  $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
+  ```

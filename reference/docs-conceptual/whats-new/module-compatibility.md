@@ -1,897 +1,192 @@
 ---
 title: PowerShell 7-modulens kompatibilitet
 ms.date: 02/03/2020
-ms.openlocfilehash: 1f7a2f4fa04e07b8f56635d0a39e580924ae0134
-ms.sourcegitcommit: d34841a44742af1123da007fefbdc24a2f1762dd
+ms.openlocfilehash: 02095b8233b6fc7b6d2a30bcb841bfd831a50031
+ms.sourcegitcommit: 1fa89ab20d14a61f139f1394c45aaedd5a7c5438
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78926201"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935194"
 ---
 # <a name="powershell-7-module-compatibility"></a>PowerShell 7-modulens kompatibilitet
 
-Den här artikeln innehåller en lista med PowerShell-moduler som publicerats av Microsoft och som ger hantering och stöd för olika Microsoft-produkter och-tjänster. Dessa moduler har uppdaterats för att fungera internt med PowerShell 7 eller testas för kompatibilitet med PowerShell 7.
+Den här artikeln innehåller en lista med PowerShell-moduler som publicerats av Microsoft. De här modulerna ger hantering och stöd för olika Microsoft-produkter och-tjänster. Dessa moduler har uppdaterats för att fungera internt med PowerShell 7 eller testas för kompatibilitet med PowerShell 7. Den här listan kommer att uppdateras med ny information när fler moduler identifieras och testas.
 
-Den här listan kommer att uppdateras med ny information när fler moduler identifieras och testas. Om du har information om att dela eller problem med specifika moduler, så kan du skicka ett problem i [WindowsCompatibility](https://github.com/PowerShell/WindowsCompatibility) -lagringsplatsen.
+Om du har information om att dela eller problem med specifika moduler, så kan du skicka ett problem i [WindowsCompatibility-lagrings platsen](https://github.com/PowerShell/WindowsCompatibility).
 
 ## <a name="windows-management-modules"></a>Windows Management-moduler
 
-Windows Management-modulerna installeras på olika sätt beroende på vilken typ av Windows och hur modulen paketerades. Dessa moduler måste installeras från en utökad PowerShell-session med alternativet **Kör som administratör** .
+Windows Management-modulen installeras på olika sätt beroende på Windows-versionen och hur modulen paketerades för den versionen.
 
-På Windows Server använder du funktions namnet med [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature) för att installera modulen. Exempel:
+Använd funktions namnet med cmdleten [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature) som administratör på Windows Server. Exempel:
 
 ```powershell
 Install-WindowsFeature -Name ActiveDirectory
 ```
 
-I Windows 10 måste du använda en av dessa cmdlets, beroende på paket typen:
-- [Aktivera – WindowsOptionalFeature](/powershell/module/dism/enable-windowsoptionalfeature)
-- [Add-WindowsCapability](/powershell/module/dism/add-windowscapability)
-
-För moduler som installeras som Windows-funktioner:
-
-```powershell
-Enable-WindowsOptionalFeature -Online -FeatureName FooFeatureName
-```
-
-För moduler som installeras som Windows-funktioner måste du lägga till `~~~~0.0.1.0` i slutet av paket namnet. Exempel:
-
-```powershell
-Add-WindowsCapability -Online -Name Rsat.ServerManager.Tools~~~~0.0.1.0
-```
-
-### <a name="activedirectory"></a>ActiveDirectory
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 + med RSAT-AD-PowerShell
-- Windows 10-version: 1809 + med RSAT. ActiveDirectory. DS-LDS. tools
-
-### <a name="adfs"></a>ADFS
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="appbackgroundtask"></a>AppBackgroundTask
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Windows 10-version: 1903 +
-
-### <a name="applocker"></a>AppLocker
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="appvclient"></a>AppvClient
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="appx"></a>Appx
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="assignedaccess"></a>AssignedAccess
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Windows 10-version: 1809 +
-
-### <a name="bestpractices"></a>BestPractices
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="bitlocker"></a>BitLocker
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 + med BitLocker
-- Windows 10-version: 1809 +
-
-### <a name="bitstransfer"></a>BitsTransfer
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 20H1
-- Windows 10-version: 20H1
-
-### <a name="booteventcollector"></a>BootEventCollector
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="branchcache"></a>BranchCache
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="cimcmdlets"></a>CimCmdlets
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Inbyggd i PowerShell 7
-
-### <a name="clusterawareupdating"></a>ClusterAwareUpdating
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="configci"></a>ConfigCI
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="defender"></a>Defender
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="deliveryoptimization"></a>DeliveryOptimization
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1903 +
-- Windows 10-version: 1903 +
-
-### <a name="dfsn"></a>DFSN
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 + med FS-DFS-namnrymd
-- Windows 10-version: 1809 + med RSAT. FailoverCluster. Management. tools
-
-### <a name="dfsr"></a>DFSR
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="dhcpserver"></a>Server
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="directaccessclientcomponents"></a>DirectAccessClientComponents
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="dism"></a>Kommandoradssyntax
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1903 +
-- Windows 10-version: 1903 +
-
-### <a name="dnsclient"></a>DnsClient
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="dnsserver"></a>DnsServer
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 + med DNS eller RSAT-DNS-Server
-- Windows 10-version: 1809 + med RSAT. DNS. tools
-
-### <a name="eventtracingmanagement"></a>EventTracingManagement
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="failoverclusters"></a>FailoverClusters
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="failoverclusterset"></a>FailoverClusterSet
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="fileserverresourcemanager"></a>FileServerResourceManager
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 + med FS – Resource Manager
-
-### <a name="grouppolicy"></a>GroupPolicy
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="hgsclient"></a>HgsClient
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1903 + med Hyper-V eller RSAT-skärmad-VM-tools
-- Windows 10-version: 1903 + med RSAT. skärmad. VM. tools
-
-### <a name="hgsdiagnostics"></a>HgsDiagnostics
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 + med Hyper-V eller RSAT-skärmad-VM-tools
-- Windows 10-version: 1809 + med RSAT. skärmad. VM. tools
-
-### <a name="hyper-v"></a>Hyper-V
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 + med Hyper-V – PowerShell
-- Windows 10-version: 1809 + med Microsoft-Hyper-V-Management – PowerShell
-
-### <a name="iisadministration"></a>Administrationsmodul
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="international"></a>Standarder
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1903 +
-- Windows 10-version: 1903 +
-
-### <a name="ipamserver"></a>IpamServer
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="iscsi"></a>iSCSI
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="iscsitarget"></a>IscsiTarget
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="ise"></a>ISE
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="kds"></a>KDs
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 20H1
-- Windows 10-version: 20H1
-
-### <a name="microsoftpowershellarchive"></a>Microsoft. PowerShell. Archive
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Inbyggd i PowerShell 7
-
-### <a name="microsoftpowershelldiagnostics"></a>Microsoft.PowerShell.Diagnostics
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Inbyggd i PowerShell 7
-
-### <a name="microsoftpowershellhost"></a>Microsoft.PowerShell.Host
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Inbyggd i PowerShell 7
-
-### <a name="microsoftpowershelllocalaccounts"></a>Microsoft. PowerShell. LocalAccounts
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="microsoftpowershellmanagement"></a>Microsoft.PowerShell.Management
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Inbyggd i PowerShell 7
-
-### <a name="microsoftpowershellodatautils"></a>Microsoft. PowerShell. ODataUtils
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="microsoftpowershellsecurity"></a>Microsoft.PowerShell.Security
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Inbyggd i PowerShell 7
-
-### <a name="microsoftpowershellutility"></a>Microsoft.PowerShell.Utility
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Inbyggd i PowerShell 7
-
-### <a name="microsoftwsmanmanagement"></a>Microsoft.WSMan.Management
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Inbyggd i PowerShell 7
-
-### <a name="mmagent"></a>MMAgent
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="mpio"></a>MPIO
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 + med multipath-IO
-
-### <a name="msdtc"></a>MsDtc
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="netadapter"></a>NetAdapter
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="netconnection"></a>NetConnection
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="neteventpacketcapture"></a>NetEventPacketCapture
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="netlbfo"></a>NetLbfo
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="netlldpagent"></a>NetLldpAgent
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="netnat"></a>NetNat
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="netqos"></a>NetQos
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="netsecurity"></a>Netsäkerhet
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="netswitchteam"></a>NetSwitchTeam
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="nettcpip"></a>Nettcpip
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="netwnv"></a>NetWNV
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="networkconnectivitystatus"></a>NetworkConnectivityStatus
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="networkcontroller"></a>NetworkController
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="networkcontrollerdiagnostics"></a>NetworkControllerDiagnostics
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="networkloadbalancingclusters"></a>NetworkLoadBalancingClusters
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="networkswitchmanager"></a>NetworkSwitchManager
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="networktransition"></a>NetworkTransition
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="nfs"></a>NFS
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 + med RSAT. ServerManager. tools
-
-### <a name="packagemanagement"></a>PackageManagement
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Inbyggd i PowerShell 7
-
-### <a name="pcsvdevice"></a>PcsvDevice
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="persistentmemory"></a>PersistentMemory
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="pki"></a>PKI
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="pnpdevice"></a>PnpDevice
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="powershellget"></a>PowerShellGet
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Inbyggd i PowerShell 7
-
-### <a name="printmanagement"></a>PrintManagement
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1903 + med utskrifts tjänster
-- Windows 10-version: 1903 +
-
-### <a name="processmitigations"></a>ProcessMitigations
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1903 +
-- Windows 10-version: 1903 +
-
-### <a name="provisioning"></a>Etablering
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="psdesiredstateconfiguration"></a>PSDesiredStateConfiguration
-
-Status: delvis
-
-Kompatibel med:
-
-- Inbyggd i PowerShell 7
-
-### <a name="psdiagnostics"></a>PSDiagnostics
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Inbyggd i PowerShell 7
-
-### <a name="psscheduledjob"></a>PSScheduledJob
-
-Status: fungerar inte med kompatibilitetsläge
-
-Kompatibel med:
-
-- Inbyggt i PowerShell 5,1
-
-### <a name="psworkflow"></a>PSWorkflow
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="psworkflowutility"></a>PSWorkflowUtility
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="remoteaccess"></a>RemoteAccess
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="remotedesktop"></a>RemoteDesktop
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="scheduledtasks"></a>ScheduledTasks
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="secureboot"></a>SecureBoot
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="servercore"></a>ServerCore
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="servermanager"></a>ServerManager
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="servermanagertasks"></a>ServerManagerTasks
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="shieldedvmdatafile"></a>ShieldedVMDataFile
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1903 + med RSAT-skärmad-VM-tools
-- Windows 10-version: 1903 + med RSAT. skärmad. VM. tools
-
-### <a name="shieldedvmprovisioning"></a>ShieldedVMProvisioning
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 + med HostGuardian
-- Windows 10-version: 1809 + med HostGuardian
-
-### <a name="shieldedvmtemplate"></a>ShieldedVMTemplate
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 + med RSAT-skärmad-VM-tools
-- Windows 10-version: 1809 + med RSAT. skärmad. VM. tools
-
-### <a name="smbshare"></a>SmbShare
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="smbwitness"></a>SmbWitness
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="smisconfig"></a>SMISConfig
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1903 + med WindowsStorageManagementService
-
-### <a name="sms"></a>SMS
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="softwareinventorylogging"></a>SoftwareInventoryLogging
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-
-### <a name="startlayout"></a>StartLayout
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 + med Skriv bords miljö
-- Windows 10-version: 1809 +
-
-### <a name="storage"></a>Storage
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="storagebuscache"></a>StorageBusCache
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="storagemigrationservice"></a>StorageMigrationService
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="storageqos"></a>StorageQOS
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 + med RSAT-Clustering – PowerShell
-- Windows 10-version: 1809 + med RSAT. FailoverCluster. Management. tools
-
-### <a name="storagereplica"></a>StorageReplica
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="syncshare"></a>SyncShare
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 + med FS-SyncShareService
-
-### <a name="systeminsights"></a>SystemInsights
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="tls"></a>TLS
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="troubleshootingpack"></a>TroubleshootingPack
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Windows 10-version: 1903 +
-
-### <a name="trustedplatformmodule"></a>TrustedPlatformModule
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="uev"></a>UEV
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version:?? En framtida version av server med Skriv bords miljö?
-- Windows 10-version: 1903 +
-
-### <a name="updateservices"></a>UpdateServices
-
-Status: fungerar inte med kompatibilitetsläge
-
-### <a name="vpnclient"></a>VpnClient
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="wdac"></a>Wdac
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="webadministration"></a>Webadministration
-
-Status: avtestat med kompatibilitetsläge
-
-### <a name="whea"></a>WHEA
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1903 +
-- Windows 10-version: 1903 +
-
-### <a name="windowsdeveloperlicense"></a>WindowsDeveloperLicense
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 + med Skriv bords miljö
-- Windows 10-version: 1809 +
-
-### <a name="windowserrorreporting"></a>WindowsErrorReporting
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="windowssearch"></a>WindowsSearch
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Windows 10-version: 1903 +
-
-### <a name="windowsserverbackup"></a>WindowsServerBackup
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 19H2 med Windows-Server – säkerhets kopiering
-
-### <a name="windowsupdate"></a>WindowsUpdate
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
-
-### <a name="windowsupdateprovider"></a>WindowsUpdateProvider
-
-Status: internt kompatibel
-
-Kompatibel med:
-
-- Server version: 1809 +
-- Windows 10-version: 1809 +
+I Windows 10 görs Windows Management-moduler tillgängliga som Windows- **valfria funktioner** eller **Windows-funktioner**. Följande kommandon måste köras från en upphöjd session med hjälp av **Kör som-administratör**.
+
+
+- För valfria Windows-funktioner
+
+  Kör följande kommando för att få en lista över valfria funktioner:
+
+  ```powershell
+  Get-WindowsOptionalFeature -Online
+  ```
+
+  Så här installerar du funktionen:
+
+  ```powershell
+  Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Management-PowerShell
+  ```
+
+  Mer information finns i:
+
+  - [Get-WindowsOptionalFeature](/powershell/module/dism/get-windowsoptionalfeature)
+  - [Aktivera – WindowsOptionalFeature](/powershell/module/dism/enable-windowsoptionalfeature)
+
+- För Windows-funktioner
+
+  Kör följande kommando för att få en lista över Windows-funktioner:
+
+  ```powershell
+  Get-WindowsCapability -online
+  ```
+
+  Observera att namnet på funktions paketet slutar med `~~~~0.0.1.0`. Du måste använda det fullständiga namnet för att installera funktionen:
+
+  ```powershell
+  Add-WindowsCapability -Online -Name Rsat.ServerManager.Tools~~~~0.0.1.0
+  ```
+
+  Mer information finns i:
+
+  - [Get-WindowsCapability](/powershell/module/dism/get-windowscapability)
+  - [Add-WindowsCapability](/powershell/module/dism/add-windowscapability)
+
+### <a name="module-list"></a>Lista över moduler
+
+| Modulnamn                        | Status                               | Stödda operativsystem                       |
+| ---------------------------------- | ------------------------------------ | ---------------------------------- |
+| ActiveDirectory                    | Internt kompatibel                  | Windows Server 1809 + med RSAT-AD-PowerShell<br>Windows 10 1809 + med RSAT. ActiveDirectory. DS-LDS. tools |
+| ADFS                               | Testat med kompatibilitetsläge    |                                    |
+| AppBackgroundTask                  | Internt kompatibel                  | Windows 10-1903 +                   |
+| AppLocker                          | Testat med kompatibilitetsläge    |                                    |
+| AppvClient                         | Testat med kompatibilitetsläge    |                                    |
+| Appx                               | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 + |
+| AssignedAccess                     | Internt kompatibel                  | Windows 10-1809 +                   |
+| BestPractices                      | Testat med kompatibilitetsläge    |                                    |
+| BitLocker                          | Internt kompatibel                  | Windows Server 1809 + med BitLocker<br>Windows 10-1809 + |
+| BitsTransfer                       | Internt kompatibel                  | Windows Server-20H1<br>Windows 10-20H1 |
+| BootEventCollector                 | Testat med kompatibilitetsläge    |                                        |
+| BranchCache                        | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 + |
+| CimCmdlets                         | Internt kompatibel                  | Inbyggd i PowerShell 7 |
+| ClusterAwareUpdating               | Testat med kompatibilitetsläge    |                         |
+| ConfigCI                           | Testat med kompatibilitetsläge    |                         |
+| Defender                           | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +  |
+| DeliveryOptimization               | Internt kompatibel                  | Windows Server 1903 +<br>Windows 10-1903 +  |
+| DFSN                               | Internt kompatibel                  | Windows Server 1809 + med FS-DFS-namnrymd<br>Windows 10 1809 + med RSAT. FailoverCluster. Management. tools |
+| DFSR                               | Testat med kompatibilitetsläge    |                                   |
+| Server                         | Testat med kompatibilitetsläge    |                                   |
+| DirectAccessClientComponents       | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +  |
+| Kommandoradssyntax                               | Internt kompatibel                  | Windows Server 1903 +<br>Windows 10-1903 +  |
+| DnsClient                          | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +  |
+| DnsServer                          | Internt kompatibel                  | Windows Server 1809 + med DNS eller RSAT-DNS-Server<br>Windows 10 1809 + med RSAT. DNS. tools |
+| EventTracingManagement             | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +  |
+| FailoverClusters                   | Testat med kompatibilitetsläge    |                                  |
+| FailoverClusterSet                 | Testat med kompatibilitetsläge    |                                  |
+| FileServerResourceManager          | Internt kompatibel                  | Windows Server 1809 + med FS – Resource Manager |
+| GroupPolicy                        | Testat med kompatibilitetsläge    |                                               |
+| HgsClient                          | Internt kompatibel                  | Windows Server 1903 + med Hyper-V eller RSAT-skärmad-VM-tools<br>Windows 10 1903 + med RSAT. skärmade. VM. tools |
+| HgsDiagnostics                     | Internt kompatibel                  | Windows Server 1809 + med Hyper-V eller RSAT-skärmad-VM-tools<br>Windows 10 1809 + med RSAT. skärmade. VM. tools |
+| Hyper-V                            | Internt kompatibel                  | Windows Server 1809 + med Hyper-V – PowerShell<br>Windows 10 1809 + med Microsoft-Hyper-V-Management – PowerShell |
+| Administrationsmodul                  | Testat med kompatibilitetsläge    |                                               |
+| Standarder                      | Internt kompatibel                  | Windows Server 1903 +<br>Windows 10-1903 +      |
+| IpamServer                         | Testat med kompatibilitetsläge    |                                               |
+| iSCSI                              | Testat med kompatibilitetsläge    |                                               |
+| IscsiTarget                        | Testat med kompatibilitetsläge    |                                               |
+| ISE                                | Testat med kompatibilitetsläge    |                                               |
+| KDs                                | Internt kompatibel                  | Windows Server-20H1<br>Windows 10-20H1        |
+| Microsoft. PowerShell. Archive       | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
+| Microsoft.PowerShell.Diagnostics   | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
+| Microsoft.PowerShell.Host          | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
+| Microsoft. PowerShell. LocalAccounts | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| Microsoft.PowerShell.Management    | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
+| Microsoft. PowerShell. ODataUtils    | Testat med kompatibilitetsläge    |                                               |
+| Microsoft.PowerShell.Security      | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
+| Microsoft.PowerShell.Utility       | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
+| Microsoft.WSMan.Management         | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
+| MMAgent                            | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| MPIO                               | Internt kompatibel                  | Windows Server 1809 + med multipath-IO        |
+| MsDtc                              | Testat med kompatibilitetsläge    |                                               |
+| NetAdapter                         | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| NetConnection                      | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| NetEventPacketCapture              | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| NetLbfo                            | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| NetLldpAgent                       | Testat med kompatibilitetsläge    |                                               |
+| NetNat                             | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| NetQos                             | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| Netsäkerhet                        | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| NetSwitchTeam                      | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| Nettcpip                           | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| NetWNV                             | Testat med kompatibilitetsläge    |                                               |
+| NetworkConnectivityStatus          | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| NetworkController                  | Testat med kompatibilitetsläge    |                                               |
+| NetworkControllerDiagnostics       | Testat med kompatibilitetsläge    |                                               |
+| NetworkLoadBalancingClusters       | Testat med kompatibilitetsläge    |                                               |
+| NetworkSwitchManager               | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| NetworkTransition                  | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| NFS                                | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10 1809 + med RSAT. ServerManager. tools |
+| PackageManagement                  | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
+| PcsvDevice                         | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| PersistentMemory                   | Testat med kompatibilitetsläge    |                                               |
+| PKI                                | Testat med kompatibilitetsläge    |                                               |
+| PnpDevice                          | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| PowerShellGet                      | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
+| PrintManagement                    | Internt kompatibel                  | Windows Server 1903 + med utskrifts tjänster<br>Windows 10-1903 +  |
+| ProcessMitigations                 | Internt kompatibel                  | Windows Server 1903 +<br>Windows 10-1903 +      |
+| Etablering                       | Testat med kompatibilitetsläge    |                                               |
+| PSDesiredStateConfiguration        | Delvis                            | Inbyggd i PowerShell 7                       |
+| PSDiagnostics                      | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
+| PSScheduledJob                     | Fungerar inte med kompatibilitetsläge | Inbyggt i PowerShell 5,1                     |
+| PSWorkflow                         | Testat med kompatibilitetsläge    |                                               |
+| PSWorkflowUtility                  | Testat med kompatibilitetsläge    |                                               |
+| RemoteAccess                       | Testat med kompatibilitetsläge    |                                               |
+| RemoteDesktop                      | Testat med kompatibilitetsläge    |                                               |
+| ScheduledTasks                     | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| SecureBoot                         | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| ServerCore                         | Testat med kompatibilitetsläge    |                                               |
+| ServerManager                      | Testat med kompatibilitetsläge    |                                               |
+| ServerManagerTasks                 | Testat med kompatibilitetsläge    |                                               |
+| ShieldedVMDataFile                 | Internt kompatibel                  | Windows Server 1903 + med RSAT-avskärmade-VM-tools<br>Windows 10 1903 + med RSAT. skärmade. VM. tools |
+| ShieldedVMProvisioning             | Internt kompatibel                  | Windows Server 1809 + med HostGuardian<br>Windows 10 1809 + med HostGuardian  |
+| ShieldedVMTemplate                 | Internt kompatibel                  | Windows Server 1809 + med RSAT-avskärmade-VM-tools<br>Windows 10 1809 + med RSAT. skärmade. VM. tools |
+| SmbShare                           | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| SmbWitness                         | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| SMISConfig                         | Internt kompatibel                  | Windows Server 1903 + med WindowsStorageManagementService |
+| SMS                                | Testat med kompatibilitetsläge    |                                               |
+| SoftwareInventoryLogging           | Internt kompatibel                  | Windows Server 1809 +                          |
+| StartLayout                        | Internt kompatibel                  | Windows Server 1809 + med Skriv bords miljö<br>Windows 10-1809 + |
+| Storage                            | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| StorageBusCache                    | Testat med kompatibilitetsläge    |                                               |
+| StorageMigrationService            | Testat med kompatibilitetsläge    |                                               |
+| StorageQOS                         | Internt kompatibel                  | Windows Server 1809 + med RSAT-klustring – PowerShell<br>Windows 10 1809 + med RSAT. FailoverCluster. Management. tools |
+| StorageReplica                     | Testat med kompatibilitetsläge    |                                               |
+| SyncShare                          | Internt kompatibel                  | Windows Server 1809 + med FS-SyncShareService |
+| SystemInsights                     | Testat med kompatibilitetsläge    |                                               |
+| TLS                                | Testat med kompatibilitetsläge    |                                               |
+| TroubleshootingPack                | Internt kompatibel                  | Windows 10-1903 +                              |
+| TrustedPlatformModule              | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| UEV                                | Internt kompatibel                  | Windows Server? En framtida version av server med Skriv bords miljö?<br>Windows 10-1903 + |
+| UpdateServices                     | Fungerar inte med kompatibilitetsläge |                                               |
+| VpnClient                          | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| Wdac                               | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| Webadministration                  | Testat med kompatibilitetsläge    |                                               |
+| WHEA                               | Internt kompatibel                  | Windows Server 1903 +<br>Windows 10-1903 +      |
+| WindowsDeveloperLicense            | Internt kompatibel                  | Windows Server 1809 + med Skriv bords miljö<br>Windows 10-1809 + |
+| WindowsErrorReporting              | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| WindowsSearch                      | Internt kompatibel                  | Windows 10-1903 +                              |
+| WindowsServerBackup                | Internt kompatibel                  | Windows Server-19H2 med Windows-Server – säkerhets kopiering |
+| WindowsUpdate                      | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +       |
+| WindowsUpdateProvider              | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +       |
