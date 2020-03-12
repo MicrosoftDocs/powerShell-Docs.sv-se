@@ -1,13 +1,13 @@
 ---
 title: Installera PowerShell på Linux
 description: Information om hur du installerar PowerShell på olika Linux-distributioner
-ms.date: 07/19/2019
-ms.openlocfilehash: a31f1f2011f484d823b068ccf4aa224334cfdaa4
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.date: 03/09/2020
+ms.openlocfilehash: 0c7b2bd804d07b2fcb61a61240b139f84fabd6db
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78405087"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79128640"
 ---
 # <a name="installing-powershell-on-linux"></a>Installera PowerShell på Linux
 
@@ -48,11 +48,11 @@ Installation via direkt hämtning ändras inte, förutom fil namnet.
 
 Följande tabell innehåller kommandon för att installera stabila och förhands gransknings paket med hjälp av de olika paket ansvariga:
 
-|Distribution (er)|Stabilt kommando | Förhandsgranska kommando |
-|---------------|---------------|-----------------|
-| Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
-| CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
-| Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
+| Distribution (er) |            Stabilt kommando            |               Förhandsgranska kommando                |
+| --------------- | ------------------------------------ | -------------------------------------------- |
+| Ubuntu, Debian  | `sudo apt-get install -y powershell` | `sudo apt-get install -y powershell-preview` |
+| CentOS, RedHat  | `sudo yum install -y powershell`     | `sudo yum install -y powershell-preview`     |
+| Fedora          | `sudo dnf install -y powershell`     | `sudo dnf install -y powershell-preview`     |
 
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
@@ -251,7 +251,7 @@ sudo apt-get remove powershell
 
 ### <a name="installation-via-direct-download---debian-10"></a>Installation via direkt hämtning – Debian 10
 
-Hämta paketet med tar. gz-paketet `powershell_7.0.0-preview-7-linux-x64.tar.gz` från sidan [releases][] till Debian-datorn.
+Hämta paketet med tar. gz-paketet `powershell_7.0.0-linux-x64.tar.gz` från sidan [releases][] till Debian-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -273,22 +273,22 @@ sudo apt-get install -y \
         curl
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.0-preview.4/powershell-7.0.0-preview.4-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L  https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /opt/microsoft/powershell/7-preview
+sudo mkdir -p /opt/microsoft/powershell/7
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7-preview
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7
 
 # Set execute permissions
-sudo chmod +x /opt/microsoft/powershell/7-preview/pwsh
+sudo chmod +x /opt/microsoft/powershell/7/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /opt/microsoft/powershell/7-preview/pwsh /usr/bin/pwsh-preview
+sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
 
 # Start PowerShell
-pwsh-preview
+pwsh
 ```
 
 ## <a name="alpine-39-and-310"></a>Alpina 3,9 och 3,10
@@ -298,7 +298,7 @@ pwsh-preview
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>Installation via direkt hämtning – Alpine 3,9 och 3,10
 
-Hämta paketet tar. gz-paketet `powershell_7.0.0-preview-7-linux-x64.tar.gz` från sidan [releases][] till Alpine Machine.
+Hämta paketet tar. gz-paketet `powershell_7.0.0-linux-x64.tar.gz` från sidan [releases][] till Alpine Machine.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -323,22 +323,22 @@ sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
     lttng-ust
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.0-preview.4/powershell-7.0.0-preview.4-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /opt/microsoft/powershell/7-preview
+sudo mkdir -p /opt/microsoft/powershell/7
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7-preview
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7
 
 # Set execute permissions
-sudo chmod +x /opt/microsoft/powershell/7-preview/pwsh
+sudo chmod +x /opt/microsoft/powershell/7/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /opt/microsoft/powershell/7-preview/pwsh /usr/bin/pwsh-preview
+sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
 
 # Start PowerShell
-pwsh-preview
+pwsh
 ```
 
 ## <a name="centos-7"></a>CentOS 7
@@ -749,13 +749,13 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 ## <a name="paths"></a>Mappar
 
-* `$PSHOME` är `/opt/microsoft/powershell/7/`
-* Användar profiler kommer att läsas från `~/.config/powershell/profile.ps1`
-* Standard profiler kommer att läsas från `$PSHOME/profile.ps1`
-* Användarens moduler kommer att läsas från `~/.local/share/powershell/Modules`
-* Delade moduler kommer att läsas från `/usr/local/share/powershell/Modules`
-* Standardmoduler kommer att läsas från `$PSHOME/Modules`
-* PSReadline-historik registreras för `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+- `$PSHOME` är `/opt/microsoft/powershell/7/`
+- Användar profiler kommer att läsas från `~/.config/powershell/profile.ps1`
+- Standard profiler kommer att läsas från `$PSHOME/profile.ps1`
+- Användarens moduler kommer att läsas från `~/.local/share/powershell/Modules`
+- Delade moduler kommer att läsas från `/usr/local/share/powershell/Modules`
+- Standardmoduler kommer att läsas från `$PSHOME/Modules`
+- PSReadline-historik registreras för `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 Profilerna respekterar PowerShell: s konfiguration per värd, så att de standardinställda värdbaserade profilerna finns på `Microsoft.PowerShell_profile.ps1` på samma platser.
 
