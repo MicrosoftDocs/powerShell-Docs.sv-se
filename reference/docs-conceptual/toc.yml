@@ -726,6 +726,36 @@
           href: samples/appendix-1---compatibility-aliases.md
         - name: Bilaga 2 Skapa en anpassad PowerShell-genväg
           href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+- name: Community
+  items:
+    - name: Community-resurser
+      href: community/community-support.md
+    - name: Digital konst
+      href: community/digital-art.md
+    - name: Nyheter i PowerShell Docs
+      href: community/whats-new-in-docs.md
+    - name: Deltagarguide
+      items:
+        - name: Översikt
+          href: community/contributing/overview.md
+        - name: Så här rapporterar du ett problem med en dokumentfil
+          href: community/contributing/file-an-issue.md
+        - name: Komma igång med att skriva dokument
+          href: community/contributing/get-started-writing.md
+        - name: Skicka en pull-begäran
+          href: community/contributing/pull-requests.md
+        - name: Stilguide för PowerShell-Docs
+          href: community/contributing/powershell-style-guide.md
+        - name: Redigera cmdlet-referens
+          href: community/contributing/editing-cmdlet-ref.md
+        - name: Ytterligare resurser
+          items:
+            - name: Checklista för redigering
+              href: community/contributing/editorial-checklist.md
+            - name: Så här hanterar vi problem
+              href: community/contributing/managing-issues.md
+            - name: Så här hanterar vi pull-begäranden
+              href: community/contributing/managing-pull-requests.md
 - name: PowerShell SDK
   items:
     - name: Översikt
