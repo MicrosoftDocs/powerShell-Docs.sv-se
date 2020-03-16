@@ -3,11 +3,11 @@ ms.date: 01/08/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-hämtningstjänsten
 ms.openlocfilehash: cf2420e6889f63ac3b2859e5ee36fa888b728afc
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78404915"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79406904"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Mottagar tjänst för önskad tillstånds konfiguration
 

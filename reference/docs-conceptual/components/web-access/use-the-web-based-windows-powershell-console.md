@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: PowerShell, cmdlet
 title: Använd den webbaserade Windows PowerShell-konsolen
 ms.openlocfilehash: 4c1bac2c712e430263d748b36897f4cfd8885919
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78405237"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79407023"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Användning av den webbaserade Windows PowerShell-konsolen
 

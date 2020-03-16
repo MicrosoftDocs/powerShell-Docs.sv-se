@@ -6,8 +6,8 @@ ms.openlocfilehash: 0c7b2bd804d07b2fcb61a61240b139f84fabd6db
 ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79128640"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79406988"
 ---
 # <a name="installing-powershell-on-linux"></a>Installera PowerShell på Linux
 

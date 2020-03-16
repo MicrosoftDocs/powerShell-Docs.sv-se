@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: PowerShellTab-objektet
 ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78404936"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79406974"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab-objektet
 

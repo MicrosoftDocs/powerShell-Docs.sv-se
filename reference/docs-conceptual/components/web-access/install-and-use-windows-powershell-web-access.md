@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: PowerShell, cmdlet
 title: Installera och använda Windows PowerShell-Webbåtkomst
 ms.openlocfilehash: a3207c859c4b93b07d4c1b41d7df5269daa39a7d
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78405195"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79407044"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installera och använda Windows PowerShell-webbåtkomst
 
