@@ -4,11 +4,11 @@ description: Den här artikeln innehåller regler för format för att skriva Po
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: 964536c5195c3bb8abd98b5996a96fc7b9362489
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79078649"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79407016"
 ---
 # <a name="powershell-docs-style-guide"></a>PowerShell – format guide för dokument
 
@@ -61,7 +61,7 @@ Genom att begränsa rad längden förbättras git-differenser och historik för 
 
 Använd tillägget [Flow markdown][reflow] i Visual Studio Code för att enkelt ommontera stycken för att passa den angivna rad längden.
 
-### <a name="lists"></a>Listor
+### <a name="lists"></a>Visar en lista över
 
 Om din lista innehåller flera meningar eller stycken bör du överväga att använda en rubrik på underordnade nivåer i stället för en lista.
 
