@@ -2,12 +2,12 @@
 title: Supportlängd för PowerShell Core
 description: Principer som styr support för PowerShell Core
 ms.date: 03/09/2020
-ms.openlocfilehash: a1cd316b1d5351acd04c547bc35b3cc62a561429
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: c1e91aa193dd4a6353098e16ae18301c0753ea85
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79090262"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082399"
 ---
 # <a name="powershell-support-lifecycle"></a>Support livs cykel för PowerShell
 

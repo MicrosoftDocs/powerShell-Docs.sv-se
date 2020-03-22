@@ -2,12 +2,12 @@
 title: Installera PowerShell i Windows
 description: Information om hur du installerar PowerShell på Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: df05a16bcf7a81d43d24535e50517fa217f82e7a
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: bb0971b6c4ac99bde70b226da2becf2f4ed82083
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79406890"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082783"
 ---
 # <a name="installing-powershell-on-windows"></a>Installera PowerShell i Windows
 
@@ -20,7 +20,7 @@ Om du vill aktivera PowerShell-fjärrkommunikation över WSMan måste följande 
 - Installera [Universal C-körningen](https://www.microsoft.com/download/details.aspx?id=50410) på Windows-versioner före Windows 10. Den är tillgänglig via direkt hämtning eller Windows Update. Fullständigt uppdaterad (inklusive valfria paket) har system som stöds redan installerat.
 - Installera Windows Management Framework (WMF) 4,0 eller senare på Windows 7 och Windows Server 2008 R2. Mer information om WMF finns i [Översikt över WMF](/powershell/scripting/wmf/overview).
 
-## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />installera MSI-paketet
+## <a name="installing-the-msi-package"></a><a id="msi" />installera MSI-paketet
 
 Om du vill installera PowerShell på en Windows-klient eller Windows Server (fungerar på Windows 7 SP1, Server 2008 R2 och senare) laddar du ned MSI-paketet från vår GitHub [releases][releases] -sida. Rulla ned till **till gångar** -avsnittet i den version som du vill installera. Avsnittet till gångar kan vara minimerat, så du kan behöva klicka för att expandera det.
 
@@ -58,7 +58,7 @@ msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_
 
 En fullständig lista över kommando rads alternativ för msiexec. exe finns i [kommando rads alternativ](/windows/desktop/Msi/command-line-options).
 
-## <a name="a-idmsix-installing-the-msix-package"></a><a id="msix" />installera MSIX-paketet
+## <a name="installing-the-msix-package"></a><a id="msix" />installera MSIX-paketet
 
 Om du vill installera MSIX-paketet manuellt på en Windows 10-klient laddar du ned MSIX-paketet från vår GitHub [releases][releases] -sida. Rulla ned till **till gångar** -avsnittet i den version som du vill installera. Avsnittet till gångar kan vara minimerat, så du kan behöva klicka för att expandera det.
 
@@ -70,7 +70,7 @@ När du har hämtat kan du inte bara dubbelklicka på installations programmet e
 Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 ```
 
-## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />installation av ZIP-paketet
+## <a name="installing-the-zip-package"></a><a id="zip" />installation av ZIP-paketet
 
 Det finns PowerShell-Arkiv för att aktivera avancerade distributions scenarier. Observera att när du använder ZIP-arkivet visas inte krav kontrollen som i MSI-paketet. Se till att du uppfyller [kraven](#prerequisites)för fjärr kommunikation över WSMan för att fungera korrekt.
 
@@ -81,7 +81,8 @@ Windows IoT levereras redan med Windows PowerShell som vi kan använda för att 
 1. Skapa `PSSession` till mål enhet
 
    ```powershell
-   $s = New-PSSession -ComputerName <deviceIp> -Credential Administrator
+   Set-Item -Path WSMan:\localhost\Client\TrustedHosts <deviceip>
+   $S = New-PSSession -ComputerName <deviceIp> -Credential Administrator
    ```
 
 2. Kopiera ZIP-paketet till enheten
@@ -173,6 +174,8 @@ Om du redan har installerat [.net Core SDK](/dotnet/core/sdk) är det enkelt att
 ```
 dotnet tool install --global PowerShell
 ```
+
+Installations programmet för dotNET-verktyget lägger till `$env:USERPROFILE\dotnet\tools` i din `$env:PATH` miljö variabel. Men det gränssnitt som körs har inte den uppdaterade `$env:PATH`. Du bör kunna starta PowerShell från ett nytt gränssnitt genom att skriva `pwsh`.
 
 ## <a name="how-to-create-a-remoting-endpoint"></a>Så här skapar du en fjärran sluten slut punkt
 

@@ -2,12 +2,12 @@
 title: Installera PowerShell på macOS
 description: Information om hur du installerar PowerShell på macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: 7f0d6a1aa275deb39a7d670546ee7e833b8ef315
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.openlocfilehash: 2233bc01ee8c53087f79d83ca936c5a3800cfdba
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78404816"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082761"
 ---
 # <a name="installing-powershell-on-macos"></a>Installera PowerShell på macOS
 
@@ -91,7 +91,7 @@ brew cask upgrade powershell-preview
 ## <a name="installation-via-direct-download"></a>Installation via direkt hämtning
 
 Ladda ned PKG-paketet `powershell-6.2.0-osx-x64.pkg`
-från sidan [utgåvor][] till din MacOS-dator.
+från sidan [releases][] till din MacOS-dator.
 
 Du kan dubbelklicka på filen och följa anvisningarna eller installera den från terminalen:
 
@@ -108,6 +108,8 @@ Om du redan har installerat [.net Core SDK](/dotnet/core/sdk) är det enkelt att
 ```
 dotnet tool install --global PowerShell
 ```
+
+Installations programmet för dotNET-verktyget lägger till `~/.dotnet/tools` i din `PATH` miljö variabel. Men det gränssnitt som körs har inte den uppdaterade `PATH`. Du bör kunna starta PowerShell från ett nytt gränssnitt genom att skriva `pwsh`.
 
 ## <a name="binary-archives"></a>Binära Arkiv
 
@@ -214,5 +216,5 @@ Därför är `$PSHOME` `/usr/local/microsoft/powershell/6.2.0/`och den symbolisk
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[exekutiv]: https://github.com/PowerShell/PowerShell/releases/latest
+[releases]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
