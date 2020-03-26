@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell 7,0
 description: Nya funktioner och ändringar som lanseras i PowerShell 7,0
 ms.date: 03/04/2020
-ms.openlocfilehash: 6915bb70d6e54da86d2b935e3feed8d7f3770ba9
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.openlocfilehash: 84631d9fa169c8d1b4cd4dd23eb3d7c1bca120bb
+ms.sourcegitcommit: b0966d61293e28ecdb929c5065be9760884e4e7d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78404984"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80263143"
 ---
 # <a name="whats-new-in-powershell-70"></a>Nyheter i PowerShell 7,0
 
@@ -117,7 +117,7 @@ Villkors uttrycket utvärderas alltid och resultatet konverteras till ett **bool
 - `<if-true>` uttryck körs om `<condition>`s uttrycket är sant
 - `<if-false>`-uttrycket körs om `<condition>`-uttrycket är falskt
 
-Exempel:
+Några exempel:
 
 ```powershell
 $message = (Test-Path $path) ? "Path exists" : "Path not found"
@@ -396,6 +396,7 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 - Åtgärda en resurs läcka genom att avregistrera händelse hanteraren från AppDomain. CurrentDomain. ProcessExit (#10626)
 - Lägg till stöd i Åtgärdsinställning. Break för att bryta till fel sökning när fel sökning, fel, information, förlopp, utförliga eller varnings meddelanden genereras (#8205) (tack @KirkMunro!)
 - Aktivera start av kontroll panels tillägg i PowerShell Core utan att ange. CPL-tillägg. (#9828)
+- Stöd för negativa tal i delnings operator (#8960) (tack @ece-jacob-scott!)
 
 ### <a name="general-cmdlet-updates-and-fixes"></a>Allmänna cmdlet-uppdateringar och korrigeringar
 

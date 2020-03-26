@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, resurs, Galleri, installation
 title: Lägga till parametrar i en konfiguration
-ms.openlocfilehash: 72e6c15593d11ed39d7fe8ea79f794089f410cf8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9dd9f2be58c13840be2b24e7e21a0d4af79b67cc
+ms.sourcegitcommit: b0966d61293e28ecdb929c5065be9760884e4e7d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71942120"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80263160"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Lägga till parametrar i en konfiguration
 
@@ -34,19 +34,20 @@ Configuration TestConfig
 
 ## <a name="built-in-configuration-parameters"></a>Inbyggda konfigurations parametrar
 
-Till skillnad från en Function-CmdletBinding, lägger attributet [](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) till inga funktioner. Förutom [vanliga parametrar](/powershell/module/microsoft.powershell.core/about/about_commonparameters)kan konfigurationer också använda följande inbyggda parametrar, utan att du behöver definiera dem.
+Till skillnad från en Function-CmdletBinding, lägger attributet [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) till inga funktioner. Förutom [vanliga parametrar](/powershell/module/microsoft.powershell.core/about/about_commonparameters)kan konfigurationer också använda följande inbyggda parametrar, utan att du behöver definiera dem.
 
-|Parameter  |Beskrivning  |
-|---------|---------|
-|`-InstanceName`|Används i definiera [sammansatta konfigurationer](compositeconfigs.md)|
-|`-DependsOn`|Används i definiera [sammansatta konfigurationer](compositeconfigs.md)|
-|`-PSDSCRunAsCredential`|Används i definiera [sammansatta konfigurationer](compositeconfigs.md)|
-|`-ConfigurationData`|Används för att skicka strukturerade [konfigurations data](configData.md) för användning i konfigurationen.|
-|`-OutputPath`|Används för att ange var filen "\<dator namn\>. MOF" ska kompileras|
+|        Parameter        |                                         Beskrivning                                          |
+| ----------------------- | -------------------------------------------------------------------------------------------- |
+| `-InstanceName`         | Används i definiera [sammansatta konfigurationer](compositeconfigs.md)                             |
+| `-DependsOn`            | Används i definiera [sammansatta konfigurationer](compositeconfigs.md)                             |
+| `-PSDSCRunAsCredential` | Används i definiera [sammansatta konfigurationer](compositeconfigs.md)                             |
+| `-ConfigurationData`    | Används för att skicka strukturerade [konfigurations data](configData.md) för användning i konfigurationen. |
+| `-OutputPath`           | Används för att ange var filen "\<dator namn\>. MOF" ska kompileras                      |
 
 ## <a name="adding-your-own-parameters-to-configurations"></a>Lägga till egna parametrar i konfigurationer
 
-Förutom de inbyggda parametrarna kan du också lägga till egna parametrar i dina konfigurationer. Parameter blocket hamnar direkt inuti konfigurations deklarationen, precis som en funktion. Ett konfigurations parameter block ska vara utanför alla **Node** -deklarationer och över alla *import* -instruktioner. Genom att lägga till parametrar kan du göra dina konfigurationer mer robusta och dynamiska.
+Förutom de inbyggda parametrarna kan du också lägga till egna parametrar i dina konfigurationer.
+Parameter blocket hamnar direkt inuti konfigurations deklarationen, precis som en funktion. Ett konfigurations parameter block ska vara utanför alla **Node** -deklarationer och över alla *import* -instruktioner. Genom att lägga till parametrar kan du göra dina konfigurationer mer robusta och dynamiska.
 
 ```powershell
 Configuration TestConfig
@@ -117,7 +118,8 @@ TestConfig -ComputerName "server01", "server02", "server03"
 
 ## <a name="advanced-parameters-in-configurations"></a>Avancerade parametrar i konfigurationer
 
-Förutom en `-ComputerName`-parameter kan vi lägga till parametrar för tjänstens namn och tillstånd. Följande exempel lägger till ett parameter block med en `-ServiceName`-parameter och använder den för att dynamiskt definiera **tjänst** resurs blocket. Den lägger också till en `-State`-parameter för att dynamiskt definiera **statusen** i **tjänst** resurs blocket.
+Förutom en `-ComputerName`-parameter kan vi lägga till parametrar för tjänstens namn och tillstånd.
+Följande exempel lägger till ett parameter block med en `-ServiceName`-parameter och använder den för att dynamiskt definiera **tjänst** resurs blocket. Den lägger också till en `-State`-parameter för att dynamiskt definiera **statusen** i **tjänst** resurs blocket.
 
 ```powershell
 Configuration TestConfig
@@ -149,7 +151,7 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> I fler advacned-scenarier kan det vara mer meningsfullt att flytta dina dynamiska data till en strukturerad [konfigurations data](configData.md).
+> I mer avancerade scenarier kan det vara mer meningsfullt att flytta dina dynamiska data till en strukturerad [konfigurations data](configData.md).
 
 Exempel konfigurationen tar nu en dynamisk `$ServiceName`, men om ingen anges kompileras resultatet i ett fel. Du kan lägga till ett standardvärde som det här exemplet.
 
@@ -213,7 +215,7 @@ Configuration TestConfig
     # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
-    Node localhost
+    Node $ComputerName
     {
         Service $ServiceName
         {
