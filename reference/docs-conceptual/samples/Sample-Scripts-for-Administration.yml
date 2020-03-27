@@ -8,12 +8,12 @@ metadata:
   author: sdwheeler
   ms.author: sewhee
   ms.date: 09/05/2019
-  ms.openlocfilehash: 2f687dc39649ab1d8c20a7bd9398ab4da4444d98
-  ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+  ms.openlocfilehash: ec3cf42aa3b028cf46727066066bd6f2362587e8
+  ms.sourcegitcommit: 7ab6da5169765f06771493b28c44cb24a09d6776
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 02/04/2020
-  ms.locfileid: "76995590"
+  ms.lasthandoff: 03/26/2020
+  ms.locfileid: "80296033"
 landingContent:
 - title: Arbeta med objekt
   linkLists:
@@ -33,8 +33,8 @@ landingContent:
       url: ./creating-.net-and-com-objects--new-object-.md
     - text: Använd statiska klasser och metoder
       url: ./using-static-classes-and-methods.md
-    - text: Hämta WMI-objekt – get-CimInstance
-      url: samples/getting-wmi-objects--get-ciminstance-.md
+    - text: Hämta WMI-objekt – Get-CimInstance
+      url: ./getting-wmi-objects--get-ciminstance-.md
 - title: Hantera datorer
   linkLists:
   - linkListType: how-to-guide
