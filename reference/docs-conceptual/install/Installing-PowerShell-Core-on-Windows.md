@@ -2,12 +2,12 @@
 title: Installera PowerShell i Windows
 description: Information om hur du installerar PowerShell på Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: bb0971b6c4ac99bde70b226da2becf2f4ed82083
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.openlocfilehash: ea5432725f4baea8c688fb8e67482910e2c3981e
+ms.sourcegitcommit: b6cf10224eb9f32919a505cdffbe5968241c18a1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082783"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80374883"
 ---
 # <a name="installing-powershell-on-windows"></a>Installera PowerShell i Windows
 
@@ -15,16 +15,23 @@ Det finns flera sätt att installera PowerShell i Windows.
 
 ## <a name="prerequisites"></a>Förutsättningar
 
+Den senaste versionen av PowerShell stöds på Windows 7 SP1, Server 2008 R2 och senare versioner.
+
 Om du vill aktivera PowerShell-fjärrkommunikation över WSMan måste följande krav vara uppfyllda:
 
-- Installera [Universal C-körningen](https://www.microsoft.com/download/details.aspx?id=50410) på Windows-versioner före Windows 10. Den är tillgänglig via direkt hämtning eller Windows Update. Fullständigt uppdaterad (inklusive valfria paket) har system som stöds redan installerat.
+- Installera [Universal C runtime](https://www.microsoft.com/download/details.aspx?id=50410) på Windows-versioner predating Windows 10. Den är tillgänglig via direkt hämtning eller Windows Update. Fullständigt installerade system har redan det här paketet installerat.
 - Installera Windows Management Framework (WMF) 4,0 eller senare på Windows 7 och Windows Server 2008 R2. Mer information om WMF finns i [Översikt över WMF](/powershell/scripting/wmf/overview).
+
+## <a name="download-the-installer-package"></a>Ladda ned installations paketet
+
+Installera PowerShell på Windows genom att ladda ned installations paketet från vår GitHub- [releases][releases] -sida. Rulla ned till **till gångar** -avsnittet på sidan version. Avsnittet **till gångar** kan vara minimerat, så du kan behöva klicka för att expandera det.
 
 ## <a name="installing-the-msi-package"></a><a id="msi" />installera MSI-paketet
 
-Om du vill installera PowerShell på en Windows-klient eller Windows Server (fungerar på Windows 7 SP1, Server 2008 R2 och senare) laddar du ned MSI-paketet från vår GitHub [releases][releases] -sida. Rulla ned till **till gångar** -avsnittet i den version som du vill installera. Avsnittet till gångar kan vara minimerat, så du kan behöva klicka för att expandera det.
+MSI-filen ser ut som `PowerShell-<version>-win-<os-arch>.msi`. Några exempel:
 
-MSI-filen ser ut så här – `PowerShell-<version>-win-<os-arch>.msi`
+- `PowerShell-7.0.0-win-x64.msi`
+- `PowerShell-7.0.0-win-x86.msi`
 
 När du har laddat ned dubbelklickar du på installations programmet och följer anvisningarna.
 
@@ -36,15 +43,15 @@ Installations programmet skapar en genväg på Start-menyn i Windows.
 > [!NOTE]
 > PowerShell 7 installeras i en ny katalog och körs sida vid sida med Windows PowerShell 5,1. För PowerShell Core 6. x är PowerShell 7 en uppgradering på plats som tar bort PowerShell Core 6. x.
 >
-> - PowerShell 7 installeras för att `%programfiles%\PowerShell\7`
-> - Mappen `%programfiles%\PowerShell\7` läggs till i `$env:PATH`
-> - Mappen `%programfiles%\PowerShell\6` tas bort
+> - PowerShell 7 installeras för att `$env:ProgramFiles\PowerShell\7`
+> - Mappen `$env:ProgramFiles\PowerShell\7` läggs till i `$env:PATH`
+> - Mappen `$env:ProgramFiles\PowerShell\6` tas bort
 >
 > Om du behöver köra PowerShell 6 sida vid sida med PowerShell 7 installerar du om PowerShell 6 med hjälp av [zip-installations](#zip) metoden.
 
 ### <a name="administrative-install-from-the-command-line"></a>Administrativ installation från kommando raden
 
-MSI-paket kan installeras från kommando raden. Detta gör att administratörer kan distribuera paket utan användar interaktion. MSI-paketet för PowerShell innehåller följande egenskaper för att kontrol lera installations alternativen:
+MSI-paket kan installeras från kommando raden och gör det möjligt för administratörer att distribuera paket utan användar interaktion. MSI-paketet innehåller följande egenskaper för att kontrol lera installations alternativen:
 
 - **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** – den här egenskapen styr alternativet för att lägga till det **Öppna PowerShell** -objektet i snabb menyn i Utforskaren.
 - **ENABLE_PSREMOTING** – den här egenskapen styr alternativet för att aktivera PowerShell-fjärrkommunikation under installationen.
@@ -53,10 +60,10 @@ MSI-paket kan installeras från kommando raden. Detta gör att administratörer 
 I följande exempel visas hur du tyst installerar PowerShell med alla installations alternativ aktiverade.
 
 ```powershell
-msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.0.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
-En fullständig lista över kommando rads alternativ för msiexec. exe finns i [kommando rads alternativ](/windows/desktop/Msi/command-line-options).
+En fullständig lista över kommando rads alternativ för `Msiexec.exe`finns i [kommando rads alternativ](/windows/desktop/Msi/command-line-options).
 
 ## <a name="installing-the-msix-package"></a><a id="msix" />installera MSIX-paketet
 
@@ -64,19 +71,22 @@ Om du vill installera MSIX-paketet manuellt på en Windows 10-klient laddar du n
 
 MSIX-filen ser ut så här – `PowerShell-<version>-win-<os-arch>.msix`
 
-När du har hämtat kan du inte bara dubbelklicka på installations programmet eftersom det här paketet kräver att du använder icke-virtualiserade resurser.  För att installera måste du använda `Add-AppxPackage`-cmdlet:
+Du måste använda `Add-AppxPackage`-cmdleten för att installera paketet.
 
 ```powershell
 Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 ```
 
+> [!NOTE]
+> MSIX-paketet har ännu inte släppts. När paketet har släppts är paketet tillgängligt i Microsoft Store och från sidan GitHub- [versioner][releases] .
+
 ## <a name="installing-the-zip-package"></a><a id="zip" />installation av ZIP-paketet
 
-Det finns PowerShell-Arkiv för att aktivera avancerade distributions scenarier. Observera att när du använder ZIP-arkivet visas inte krav kontrollen som i MSI-paketet. Se till att du uppfyller [kraven](#prerequisites)för fjärr kommunikation över WSMan för att fungera korrekt.
+Det finns PowerShell-Arkiv för att aktivera avancerade distributions scenarier. Installation av ZIP-arkivet kontrollerar inte kraven som MSI-paketen gör. Se till att du uppfyller [kraven](#prerequisites)för fjärr kommunikation över WSMan för att fungera korrekt.
 
 ## <a name="deploying-on-windows-iot"></a>Distribuera på Windows IoT
 
-Windows IoT levereras redan med Windows PowerShell som vi kan använda för att distribuera PowerShell 7.
+Windows IoT levereras med Windows PowerShell, som vi kan använda för att distribuera PowerShell 7.
 
 1. Skapa `PSSession` till mål enhet
 
@@ -121,13 +131,14 @@ Windows IoT levereras redan med Windows PowerShell som vi kan använda för att 
 
 ## <a name="deploying-on-nano-server"></a>Distribuera på Nano Server
 
-Dessa instruktioner förutsätter att en version av PowerShell redan körs på Nano Server-avbildningen och att den har genererats av [Nano Server Image Builder](/windows-server/get-started/deploy-nano-server).
-Nano Server är ett "" "konsol löst" operativ system. PowerShell-binärfiler kan distribueras med två olika metoder.
+Dessa instruktioner förutsätter att Nano-servern är ett "" "" "-"-OS som har en version av PowerShell som redan körs på den. Mer information finns i dokumentationen för [Nano Server Image Builder](/windows-server/get-started/deploy-nano-server) .
+
+PowerShell-binärfiler kan distribueras med två olika metoder.
 
 1. Offline – montera den virtuella hård disken för Nano Server och zippa upp innehållet i zip-filen till den valda platsen i den monterade avbildningen.
 2. Överför zip-filen via en PowerShell-session online och packa upp den på den valda platsen.
 
-I båda fallen behöver du paketet Windows 10 x64 ZIP release och måste köra kommandona i en "administratör" PowerShell-instans.
+I båda fallen behöver du paketet Windows 10 x64 ZIP release. Kör kommandona i en "administratör"-instans av PowerShell.
 
 ### <a name="offline-deployment-of-powershell"></a>Offline-distribution av PowerShell
 
@@ -138,7 +149,7 @@ I båda fallen behöver du paketet Windows 10 x64 ZIP release och måste köra k
 
 ### <a name="online-deployment-of-powershell"></a>Online-distribution av PowerShell
 
-Följande steg vägleder dig genom distributionen av PowerShell till en ingångs instans av Nano Server och konfigurationen av dess fjärrslutpunkt.
+Distribuera PowerShell till Nano Server med hjälp av följande steg.
 
 - Anslut till inkorg-instansen av Windows PowerShell
 
@@ -175,7 +186,7 @@ Om du redan har installerat [.net Core SDK](/dotnet/core/sdk) är det enkelt att
 dotnet tool install --global PowerShell
 ```
 
-Installations programmet för dotNET-verktyget lägger till `$env:USERPROFILE\dotnet\tools` i din `$env:PATH` miljö variabel. Men det gränssnitt som körs har inte den uppdaterade `$env:PATH`. Du bör kunna starta PowerShell från ett nytt gränssnitt genom att skriva `pwsh`.
+Installations programmet för dotNET-verktyget lägger till `$env:USERPROFILE\dotnet\tools` i din `$env:PATH` miljö variabel. Men det gränssnitt som körs har inte den uppdaterade `$env:PATH`. Du kan starta PowerShell från ett nytt gränssnitt genom att skriva `pwsh`.
 
 ## <a name="how-to-create-a-remoting-endpoint"></a>Så här skapar du en fjärran sluten slut punkt
 
