@@ -2,16 +2,16 @@
 title: Installera PowerShell i Linux
 description: Information om hur du installerar PowerShell på olika Linux-distributioner
 ms.date: 03/09/2020
-ms.openlocfilehash: 0b15f3de5eba8f4f399f9be27b74469c8c5d1b67
-ms.sourcegitcommit: b6cf10224eb9f32919a505cdffbe5968241c18a1
+ms.openlocfilehash: 28a76506df2183b5c94a18a884b205d0321d920b
+ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80374916"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80395059"
 ---
 # <a name="installing-powershell-on-linux"></a>Installera PowerShell i Linux
 
-Stöder [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Ubuntu 19,04][u1904], [Debian 8][deb8], [Debian 9][deb9], [Debian 10][deb10], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE skottår 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora]och [båge Linux][arch].
+Stöder [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Ubuntu 19,04][u1904], [Debian 8][deb8], [Debian 9][deb9], [Debian 10][deb10], [alpina 3,9 och 3,10][alpine], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE skottår 15][opensuse], [Fedora 28][fedora], [Fedora 29][fedora], [Fedora 30][fedora]och [båge Linux][arch].
 
 För Linux-distributioner som inte stöds officiellt kan du försöka installera PowerShell med hjälp av [PowerShell-Snap-paketet][snap]. Du kan också prova att distribuera PowerShell-binärfiler direkt med hjälp av Linux [`tar.gz` arkivet][tar], men du måste konfigurera de nödvändiga beroendena baserat på operativ systemet i separata steg.
 
@@ -31,6 +31,7 @@ Alla paket är tillgängliga på vår GitHub- [releases][] -sida. När paketet h
 [deb8]: #debian-8
 [deb9]: #debian-9
 [deb10]: #debian-10
+[alpine]: #alpine-39-and-310
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
 [opensuse]: #opensuse
@@ -83,12 +84,12 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Installation via direkt hämtning – Ubuntu 16,04
 
-Ladda ned Debian-paketet `powershell_7.0.0-1.ubuntu.16.04_amd64.deb` från sidan [releases][] till Ubuntu-datorn.
+Ladda ned Debian-paketet `powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb` från sidan [releases][] till Ubuntu-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo dpkg -i powershell_7.0.0-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -133,12 +134,12 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Installation via direkt hämtning – Ubuntu 18,04
 
-Ladda ned Debian-paketet `powershell_7.0.0-1.ubuntu.18.04_amd64.deb` från sidan [releases][] till Ubuntu-datorn.
+Ladda ned Debian-paketet `powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb` från sidan [releases][] till Ubuntu-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo dpkg -i powershell_7.0.0-1.ubuntu.18.04_amd64.deb
+sudo dpkg -i powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -229,12 +230,12 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---debian-9"></a>Installation via direkt hämtning – Debian 9
 
-Ladda ned Debian-paketet `powershell_7.0.0-1.debian.9_amd64.deb` från sidan [releases][] till Debian-datorn.
+Ladda ned Debian-paketet `powershell-lts_7.0.0-1.debian.9_amd64.deb` från sidan [releases][] till Debian-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo dpkg -i powershell_7.0.0-1.debian.9_amd64.deb
+sudo dpkg -i powershell-lts_7.0.0-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -388,18 +389,18 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---centos-7"></a>Installation via direkt hämtning – CentOS 7
 
-Med [CentOS 7][]laddar du ned rpm-paketet `powershell-7.0.0-1.rhel.7.x86_64.rpm` från sidan [releases][] till CentOS-datorn.
+Med [CentOS 7][]laddar du ned rpm-paketet `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` från sidan [releases][] till CentOS-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo yum install powershell-7.0.0-1.rhel.7.x86_64.rpm
+sudo yum install powershell-lts-7.0.0-1.rhel.7.x86_64.rpm
 ```
 
 Du kan installera RPM utan det mellanliggande steget i att ladda ned det:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-lts-7.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---centos-7"></a>Avinstallation-CentOS 7
@@ -431,18 +432,18 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installation via direkt hämtning – Red Hat Enterprise Linux (RHEL) 7
 
-Hämta RPM-paketet `powershell-7.0.0-1.rhel.7.x86_64.rpm` från sidan [releases][] till datorn Red Hat Enterprise Linux.
+Hämta RPM-paketet `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` från sidan [releases][] till datorn Red Hat Enterprise Linux.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo yum install powershell-7.0.0-1.rhel.7.x86_64.rpm
+sudo yum install powershell-lts-7.0.0-1.rhel.7.x86_64.rpm
 ```
 
 Du kan installera RPM utan det mellanliggande steget i att ladda ned det:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-lts-7.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>Avinstallation-Red Hat Enterprise Linux (RHEL) 7
@@ -695,7 +696,7 @@ Du kan också skapa en symboliska länk för att starta PowerShell utan att ange
 
 ```sh
 # Start PowerShell from bash with sudo to create a symbolic link
-sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" -Target "\$PSHOME/pwsh" -Force
+sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" -Target "$PSHOME/pwsh" -Force
 
 # alternatively you can run following to create a symbolic link
 # sudo ln -s ~/powershell/pwsh /usr/bin/pwsh

@@ -1,13 +1,13 @@
 ---
 title: Installera Windows PowerShell SDK:n
-ms.date: 09/13/2016
+ms.date: 03/30/2020
 ms.topic: article
-ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b47dddaf167024d30a7a31596f96569f976109d7
+ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73444501"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80394979"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Installera Windows PowerShell SDK:n
 
@@ -18,7 +18,7 @@ I följande avsnitt beskrivs hur du installerar PowerShell SDK i olika versioner
 ## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Installera Windows PowerShell 3,0 SDK för Windows 8 och Windows Server 2012
 
 Windows PowerShell 3,0 installeras automatiskt med Windows 8 och Windows Server 2012. Dessutom kan du hämta och installera referens sammansättningarna för Windows PowerShell 3,0 som en del av Windows 8 SDK. Med dessa sammansättningar kan du skriva cmdlets, providers och värd program för Windows PowerShell 3,0. När du installerar Windows SDK för Windows 8 installeras Windows PowerShell-sammansättningarna automatiskt i mappen referens sammansättning i `\Program Files
-(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`. Mer information finns på webbplatsen för hämtning av Windows 8 SDK. Kod exempel för Windows PowerShell är också tillgängliga i utvecklings Center i [Windows PowerShell 3,0 SDK Sample Pack](https://code.msdn.microsoft.com/Windows-PowerShell-30-SDK-9a34641d).
+(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`. Mer information finns på webbplatsen för hämtning av Windows 8 SDK. Kod exempel för Windows PowerShell är också tillgängliga i databasen [PowerShell-SDK-samples](https://github.com/MicrosoftDocs/powershell-sdk-samples/tree/master/SDK-3.0) .
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Installera Windows PowerShell 3,0 SDK för Windows 7 och Windows Server 2008 R2
 
@@ -34,9 +34,7 @@ Referens sammansättningar installeras på följande plats som standard: `c:\Pro
 Assemblies\Microsoft\WindowsPowerShell\V1.0`.
 
 > [!NOTE]
->
 > Kod som kompileras mot Windows PowerShell 2,0-sammansättningar kan inte läsas in i Windows PowerShell 1,0-installationer. Men kod som kompileras mot Windows PowerShell 1,0-sammansättningar kan läsas in i Windows PowerShell 2,0-installationer.
-
 
 ### <a name="samples"></a>Exempel
 
@@ -73,13 +71,13 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. Följande avsnitt innehå
 #### <a name="hosting-application-samples"></a>Värdbaserade program exempel
 
 - Runspace01 – visar hur du använder PowerShell-klassen för att köra `Get-Process` cmdlet synkront.
-Cmdleten `Get-Process` returnerar process objekt för varje process som körs på den lokala datorn.
+  Cmdleten `Get-Process` returnerar process objekt för varje process som körs på den lokala datorn.
 - Runspace02 – visar hur du använder PowerShell-klassen för att köra `Get-Process` och `Sort-Object`-cmdlets synkront. `Get-Process` cmdleten returnerar process objekt för varje process som körs på den lokala datorn och `Sort-Object` sorterar objekten baserat på deras ID-egenskap. Resultatet av dessa kommandon visas med hjälp av en DataGridView-kontroll.
 - Runspace03 – visar hur du använder PowerShell-klassen för att köra ett skript synkront och hur du hanterar icke-avslutande fel. Skriptet tar emot en lista över process namn och hämtar sedan dessa processer. Resultatet av skriptet, inklusive eventuella icke-avslutande fel som genererades när skriptet kördes, visas i konsol fönstret.
 - Runspace04 – visar hur du använder PowerShell-klassen för att köra kommandon och hur du fångar upp avslutande fel som genereras när du kör kommandona. Två kommandon körs och det sista kommandot skickas till ett parameter argument som inte är giltigt. Därför returneras inga objekt och ett avslutande fel genereras.
-- Runspace05 – visar hur du lägger till en snapin-modul i ett InitialSessionState-objekt så att cmdleten för snapin-modulen är tillgänglig när körnings utrymme öppnas. Snapin-modulen innehåller en get-proc-cmdlet (definieras av GetProcessSample01-exemplet) som körs synkront med hjälp av ett PowerShell-objekt.
-- Runspace06 – visar hur du lägger till en modul i ett InitialSessionState-objekt så att modulen läses in när körnings utrymme öppnas. Modulen innehåller en get-proc-cmdlet (definieras av GetProcessSample02-exemplet) som körs synkront med hjälp av ett PowerShell-objekt.
-- Runspace07 – visar hur du skapar en körnings utrymme och använder sedan den körnings utrymme för att köra två cmdlets synkront med hjälp av ett PowerShell-objekt.
+- Runspace05 – visar hur du lägger till en snapin-modul i ett InitialSessionState-objekt så att cmdleten för snapin-modulen är tillgänglig när körnings utrymme öppnas. Snapin-modulen innehåller en get-proc-cmdlet (definieras av GetProcessSample01-exemplet) som körs synkront med ett PowerShell-objekt.
+- Runspace06 – visar hur du lägger till en modul i ett InitialSessionState-objekt så att modulen läses in när körnings utrymme öppnas. Modulen innehåller en get-proc-cmdlet (definieras av GetProcessSample02-exemplet) som körs synkront med ett PowerShell-objekt.
+- Runspace07 – visar hur du skapar en körnings utrymme och använder sedan den körnings utrymme för att köra två cmdlets synkront med ett PowerShell-objekt.
 - Runspace08 – visar hur du lägger till kommandon och argument i pipelinen för ett PowerShell-objekt och hur du kör kommandona synkront.
 - Runspace09 – visar hur du lägger till ett skript i pipelinen för ett PowerShell-objekt och hur du kör skriptet asynkront. Händelser används för att hantera utdata från skriptet.
 - Runspace10 – visar hur du skapar ett standard tillstånd för inledande session, hur du lägger till en cmdlet till InitialSessionState, hur du skapar en körnings utrymme som använder det inledande sessionstillståndet och hur du kör kommandot med hjälp av ett PowerShell-objekt.
@@ -89,7 +87,7 @@ Cmdleten `Get-Process` returnerar process objekt för varje process som körs p�
 
 #### <a name="host-samples"></a>Värd exempel
 
-- Host01 – visar hur du implementerar ett värd program som använder en anpassad värd. I det här exemplet skapas en körnings utrymme som använder den anpassade värden och sedan används PowerShell-API: et för att köra ett skript som anropar "Exit". Värd programmet tittar sedan på utdata från skriptet och skriver ut resultaten.
+- Host01 – visar hur du implementerar ett värd program som använder en anpassad värd. I det här exemplet skapas en körnings utrymme som använder den anpassade värden och sedan används PowerShell-API: et för att köra ett skript som anropar `exit`. Värd programmet tittar sedan på utdata från skriptet och skriver ut resultaten.
 - Host02 – visar hur du skriver ett värd program som använder Windows PowerShell-körningsmiljön tillsammans med en anpassad värd implementering. Värd programmet ställer in värd kulturen på tyska, kör `Get-Process`-cmdleten och visar resultatet som du ser dem med hjälp av pwrsh. exe och sedan skriver ut aktuella data och tid på tyska.
 - Host03 – visar hur du skapar ett interaktivt konsolbaserade värd program som läser kommandon från kommando raden, kör kommandona och visar resultatet i-konsolen.
 - Host04 – visar hur du skapar ett interaktivt konsolbaserade värd program som läser kommandon från kommando raden, kör kommandona och visar resultatet i-konsolen. Detta värd program har även stöd för att Visa prompter som gör att användaren kan ange flera alternativ.
