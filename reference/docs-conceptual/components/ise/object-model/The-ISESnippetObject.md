@@ -2,16 +2,16 @@
 ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: ISESnippetObject
-ms.openlocfilehash: 60456ec90f56753fa96f141b8b8299ef3f7e41c9
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: f810e6b26f0ded04be15bdc37f336d7890e29dad
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75736972"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500927"
 ---
 # <a name="the-isesnippetobject"></a>ISESnippetObject
 
-Ett **ISESnippet** -objekt är en instans av klassen Microsoft. PowerShell. Host. ISE. ISESnippet. Medlemmarna i den `$psISE.CurrentPowerShellTab.Snippets` samlingen är alla exempel på **ISESnippet** -objekt. Det enklaste sättet att skapa ett kodfragment är att använda cmdleten [New-IseSnippet](/reference/5.1/ISE/New-IseSnippet.md) .
+Ett **ISESnippet** -objekt är en instans av klassen Microsoft. PowerShell. Host. ISE. ISESnippet. Medlemmarna i den `$psISE.CurrentPowerShellTab.Snippets` samlingen är alla exempel på **ISESnippet** -objekt. Det enklaste sättet att skapa ett kodfragment är att använda cmdleten [New-IseSnippet](/powershell/module/ISE/New-IseSnippet) .
 
 ## <a name="properties"></a>Egenskaper
 

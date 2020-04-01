@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: PowerShell, cmdlet
 title: Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst
-ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 9bc1be125ebab4e9ba29ba832b442777e9bfc859
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79407037"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500892"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Auktoriseringsregler och säkerhetsfunktioner i Windows PowerShell-webbåtkomst
 
@@ -85,7 +85,7 @@ Det här lagret erbjuder samma säkerhetsmekanismer som utvärderar anslutnings 
 
 Som standard använder Windows PowerShell-webbåtkomsten primärt användar namn och lösen ord för autentisering på både gatewayen och mål datorn. På den webbaserade inloggningssidan, i avsnittet **Valfria anslutningsinställningar**, får användarna möjlighet att ange olika autentiseringsuppgifter till måldatorn, om det behövs. Om användaren inte tillhandahåller alternativa autentiseringsuppgifter används de primära användarnamn och lösenord som ansluter till gatewayen också för att ansluta till måldatorn.
 
-Auktoriseringsregler kan användas för att ge användarna åtkomst till en viss sessionskonfiguration. Du kan skapa _begränsade körnings utrymmen_ -eller sessionshantering för Windows PowerShell-webbåtkomst och tillåta att vissa användare endast ansluter till vissa konfigurationer när de loggar in på Windows PowerShell-webbåtkomst. Du kan använda åtkomstkontrollistor (ACL) för att avgöra vilka användare som har åtkomst till specifika slutpunkter och ytterligare begränsa åtkomsten till slutpunkten för en specifik uppsättning användare genom att använda de auktoriseringsregler som beskrivs i det här avsnittet. Mer information om begränsade körnings utrymmen finns i [skapa en begränsad körnings utrymme](https://msdn.microsoft.com/library/dn614668).
+Auktoriseringsregler kan användas för att ge användarna åtkomst till en viss sessionskonfiguration. Du kan skapa _begränsade körnings utrymmen_ -eller sessionshantering för Windows PowerShell-webbåtkomst och tillåta att vissa användare endast ansluter till vissa konfigurationer när de loggar in på Windows PowerShell-webbåtkomst. Du kan använda åtkomstkontrollistor (ACL) för att avgöra vilka användare som har åtkomst till specifika slutpunkter och ytterligare begränsa åtkomsten till slutpunkten för en specifik uppsättning användare genom att använda de auktoriseringsregler som beskrivs i det här avsnittet. Mer information om begränsade körnings utrymmen finns i [skapa en begränsad körnings utrymme](/powershell/scripting/developer/hosting/creating-a-constrained-runspace).
 
 ### <a name="configuring-authorization-rules"></a>Konfigurera auktoriseringsregler
 
@@ -112,7 +112,7 @@ Windows PowerShell-cmdletar för webb åtkomst stöder ett jokertecken, en aster
 
    Om de inte har skapats än använder du instruktioner för att skapa sessionsinställningar i [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files).
 
-3. Med den här auktoriseringsregeln kan en speciell användare få åtkomst till en dator i nätverket som de normalt har åtkomst till, med åtkomst till en speciell sessionsinformation som är begränsad till användaren™ s typiska skript-och cmdlet-behov. Skriv följande och tryck sedan på **RETUR**.
+3. Med den här auktoriseringsregeln kan en speciell användare få åtkomst till en dator i nätverket som de normalt har åtkomst till, med åtkomst till en speciell sessionsinformation som är begränsad till användaren&trade;s typiska skript-och cmdlet-behov. Skriv följande och tryck sedan på **RETUR**.
 
    ```
    Add-PswaAuthorizationRule -UserName <domain\user | computer\user> `
@@ -151,7 +151,8 @@ Windows PowerShell-cmdletar för webb åtkomst stöder ett jokertecken, en aster
 
 #### <a name="other-authorization-rule-scenario-examples"></a>Andra scenarioexempel på auktoriseringsregler
 
-Varje Windows PowerShell-session använder en konfiguration av sessionen. Om ingen har angetts för en session använder Windows PowerShell standard konfigurationen för den inbyggda Windows PowerShell-sessionen, som kallas Microsoft. PowerShell. Sessionens standardkonfiguration innehåller alla cmdletar som är tillgängliga på en dator. Administratörer kan begränsa åtkomsten till alla datorer genom att definiera en sessionskonfiguration med ett begränsat körningsutrymme (ett begränsat antal cmdletar och uppgifter som slutanvändarna kan utföra). En användare som beviljas åtkomst till en dator med antingen fullständig språk åtkomst eller bara Windows PowerShell-fjärrhanterings-cmdlet: ar kan ansluta till andra datorer som är anslutna till den första datorn. Att definiera en begränsad körnings utrymme kan hindra användare från att komma åt andra datorer från sina tillåtna Windows PowerShell-körnings utrymme och förbättra säkerheten för din Windows PowerShell-webbåtkomst miljö. Konfigurationen av sessionen kan distribueras (med hjälp av grupprincip) till alla datorer som administratörer vill göra tillgängliga via Windows PowerShell-webbåtkomst. Mer information om sessionsinställningar finns [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx). Nedan följer några exempel på det här scenariot.
+Varje Windows PowerShell-session använder en konfiguration av sessionen. Om ingen har angetts för en session använder Windows PowerShell standard konfigurationen för den inbyggda Windows PowerShell-sessionen, som kallas Microsoft. PowerShell. Sessionens standardkonfiguration innehåller alla cmdletar som är tillgängliga på en dator. Administratörer kan begränsa åtkomsten till alla datorer genom att definiera en sessionskonfiguration med ett begränsat körningsutrymme (ett begränsat antal cmdletar och uppgifter som slutanvändarna kan utföra). En användare som beviljas åtkomst till en dator med antingen fullständig språk åtkomst eller bara Windows PowerShell-fjärrhanterings-cmdlet: ar kan ansluta till andra datorer som är anslutna till den första datorn. Att definiera en begränsad körnings utrymme kan hindra användare från att komma åt andra datorer från sina tillåtna Windows PowerShell-körnings utrymme och förbättra säkerheten för din Windows PowerShell-webbåtkomst miljö. Konfigurationen av sessionen kan distribueras (med hjälp av grupprincip) till alla datorer som administratörer vill göra tillgängliga via Windows PowerShell-webbåtkomst. Mer information om sessionsinställningar finns [about_Session_Configurations](/powershell/module/Microsoft.PowerShell.Core/About/about_session_configurations).
+Nedan följer några exempel på det här scenariot.
 
 - En administratör skapar en slutpunkt som kallas **PswaEndpoint**, med ett begränsat körningsutrymme. Sedan skapar administratören en regel, `*,*,PswaEndpoint`och distribuerar slut punkten till andra datorer. Med regeln kan alla användare få åtkomst till alla datorer med slutpunkten **PswaEndpoint**.
   Om detta är den enda auktoriseringsregeln som definieras i regeluppsättningen, kommer datorer utan den slutpunkten inte vara åtkomliga.
@@ -181,8 +182,8 @@ I föregående scenario upprättar Windows PowerShell-webbåtkomsten en lyckad a
 2. Autentisering på måldatorn med hjälp av alternativa autentiseringsuppgifter som anges på inloggningssidan i **Valfria anslutningsinställningar**
 
    > [!NOTE]
-   > Om gatewayen och måldatorerna finns i olika arbetsgrupper eller domäner, måste en förtroenderelation upprättas mellan de två arbetsgruppsdatorerna, de två domänerna eller mellan arbetsgruppen och domänen. Den här relationen kan inte konfigureras med hjälp av Windows PowerShell-cmdletar för Windows PowerShell-autentisering. Auktoriseringsregler definierar inte en förtroenderelation mellan datorer. De kan bara auktorisera användare till att ansluta till specifika måldatorer och sessionskonfigurationer. Mer information om hur du konfigurerar en förtroende relation mellan olika domäner finns i [skapa domän-och skogs förtroenden](https://technet.microsoft.com/library/cc794775.aspx).
-   > Mer information om hur du lägger till arbets grupps datorer i en lista över betrodda värdar finns i [fjärrhantering med Serverhanteraren](https://technet.microsoft.com/library/dd759202.aspx).
+   > Om gatewayen och måldatorerna finns i olika arbetsgrupper eller domäner, måste en förtroenderelation upprättas mellan de två arbetsgruppsdatorerna, de två domänerna eller mellan arbetsgruppen och domänen. Den här relationen kan inte konfigureras med hjälp av Windows PowerShell-cmdletar för Windows PowerShell-autentisering. Auktoriseringsregler definierar inte en förtroenderelation mellan datorer. De kan bara auktorisera användare till att ansluta till specifika måldatorer och sessionskonfigurationer. Mer information om hur du konfigurerar en förtroende relation mellan olika domäner finns i [skapa domän-och skogs förtroenden](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794775(v=ws.10)).
+   > Mer information om hur du lägger till arbets grupps datorer i en lista över betrodda värdar finns i [fjärrhantering med Serverhanteraren](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759202(v=ws.11)).
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Använda en enda uppsättning auktoriseringsregler för flera platser
 
@@ -198,7 +199,7 @@ Som standard konfigureras IIS-webbservern för att starta om programpoolen om n�
 
 ### <a name="setting-default-parameters-on-the-sign-in-page"></a>Ange standardparametrar på inloggningssidan
 
-Om din Windows PowerShell-Gateway för webb åtkomst körs på Windows Server 2012 R2 kan du konfigurera standardvärden för de inställningar som visas på inloggnings sidan för Windows PowerShell-webbåtkomst. Du kan konfigurera värden i filen **Web. config** som beskrivs i föregående stycke. Standardvärdena för inloggningssidans inställningar finns i avsnittet **appSettings** i filen web.config. Följande är ett exempel från **appSettings**-avsnittet. Giltiga värden för många av de här inställningarna är desamma som för motsvarande parametrar för cmdleten [New-PSSession](https://technet.microsoft.com/library/hh849717.aspx) i Windows PowerShell.
+Om din Windows PowerShell-Gateway för webb åtkomst körs på Windows Server 2012 R2 kan du konfigurera standardvärden för de inställningar som visas på inloggnings sidan för Windows PowerShell-webbåtkomst. Du kan konfigurera värden i filen **Web. config** som beskrivs i föregående stycke. Standardvärdena för inloggningssidans inställningar finns i avsnittet **appSettings** i filen web.config. Följande är ett exempel från **appSettings**-avsnittet. Giltiga värden för många av de här inställningarna är desamma som för motsvarande parametrar för cmdleten [New-PSSession](/powershell/module/Microsoft.PowerShell.Core/New-PSSession) i Windows PowerShell.
 
 Till exempel är `defaultApplicationName`-nyckeln, som visas i följande kodblock, värdet för variabeln **$PSSessionApplicationName** preferens på mål datorn.
 
@@ -225,8 +226,8 @@ Om Gateway-servern kör Windows Server 2012 R2 gör Windows PowerShell-webbåtko
 
 ## <a name="see-also"></a>Se även
 
-[Installera och använda Windows PowerShell-Webbåtkomst](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
+[Installera och använda Windows PowerShell-Webbåtkomst](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831611(v=ws.11))
 
-[about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
+[about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_Session_Configurations)
 
 [Cmdletar för Windows PowerShell-Webbåtkomst](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)

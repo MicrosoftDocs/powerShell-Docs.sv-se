@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Förstå DSC-rollen i en CI/CD-pipeline
-ms.openlocfilehash: 79740225c030974546035b67e0f873fa00aa690a
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 8d7244a6e5e2c215d9d3ada959b716df2cce0b83
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279401"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500814"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Förstå DSC-rollen i en CI/CD-pipeline
 
@@ -41,7 +41,7 @@ Kunderna har fått feedback om att detta kan leda till resurs konflikter, oavsik
 
 Kunder har dessutom fått feedback om att när du använder den här modellen, är varje ändring av team konfigurations ändringar troligen inte helt testade genom en versions pipeline, vilket leder till oväntade resultat i produktionen.
 
-**Det är viktigt att en enda pipeline används för att utvärdera alla ändringar som släpps på servrar.**
+**Det är viktigt att en enda pipeline används för att utvärdera alla ändringar som släpps till servrar.**
 
 I bilden nedan släpper team B sin del konfiguration till Team A. Team A kör sedan sina tester mot en server med båda konfigurationerna applicerade. I den här modellen har endast en myndighet behörighet att göra ändringar i produktionen.
 

@@ -2,12 +2,12 @@
 ms.date: 07/09/2019
 keywords: DSC, GPO, PowerShell, konfiguration, installation
 title: Snabb start – konvertera grupprincip till DSC
-ms.openlocfilehash: 8c89dbbce5b2b146194b799d7e36ecce3105bfeb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5e6b86be5127332fe4fd400980c8e147b735247b
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71941609"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500645"
 ---
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
@@ -56,6 +56,6 @@ Varje hanterad nod behöver också följande två moduler:
 
 ## <a name="next-steps"></a>Nästa steg
 
-- Information om hur du överför konfigurations skriptet till Azure Automation tillstånds konfiguration finns [komma igång](/automation/automation-dsc-getting-started#importing-a-configuration-into-azure-automation).
+- Information om hur du överför konfigurations skriptet till Azure Automation tillstånds konfiguration finns [komma igång](/azure/automation/automation-dsc-getting-started#importing-a-configuration-into-azure-automation).
 - Lägg till **SecurityPolicyDSC** -och **AuditPolicyDSC** -modulerna i ditt [Automation-konto](/azure/automation/shared-resources/modules).
 - Hitta DSC-konfigurationer och-resurser i [PowerShell-galleriet](https://www.powershellgallery.com/).

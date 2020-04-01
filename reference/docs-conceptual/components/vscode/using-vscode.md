@@ -2,12 +2,12 @@
 title: Använda Visual Studio Code för PowerShell-utveckling
 description: Använda Visual Studio Code för PowerShell-utveckling
 ms.date: 11/07/2019
-ms.openlocfilehash: 86739970b58460bef9686a75bf0604d0605d4888
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.openlocfilehash: 8644aa7c648d649651ca679238e0b79ff35ac579
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082442"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500898"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Använda Visual Studio Code för PowerShell-utveckling
 
@@ -22,9 +22,9 @@ Det stöder följande PowerShell-versioner:
 
 Innan du börjar ska du kontrol lera att PowerShell finns i systemet. För moderna arbets belastningar på Windows, macOS och Linux, se följande länkar:
 
-- [Installera PowerShell Core på Linux][install-pscore-linux]
-- [Installera PowerShell Core på macOS][install-pscore-macos]
-- [Installera PowerShell Core på Windows][install-pscore-windows]
+- [Installera PowerShell på Linux][install-pscore-linux]
+- [Installera PowerShell på macOS][install-pscore-macos]
+- [Installera PowerShell i Windows][install-pscore-windows]
 
 För traditionella Windows PowerShell-arbetsbelastningar, se [Installera Windows PowerShell][install-winps].
 
@@ -268,7 +268,16 @@ Den här filen representerar vanliga fel söknings scenarier. När du öppnar de
 
 När du har upprättat fel söknings konfigurationen kan du välja vilken konfiguration du vill använda under en felsökningssession. Välj en konfiguration i list rutan Felsök konfiguration i **fel söknings** verktygsfältets verktygsfält.
 
-Det finns några Bloggar som kan vara till hjälp för att komma igång med PowerShell-tillägget för Visual Studio Code:
+## <a name="useful-resources"></a>Användbara resurser
+
+Det finns några videor och blogg inlägg som kan vara till hjälp för att komma igång med PowerShell-tillägget för Visual Studio Code:
+
+### <a name="videos"></a>Videoklipp
+
+- [Använda Visual Studio Code som standard-PowerShell-redigerare](https://youtu.be/bGn45vIeAMM)
+- [Visual Studio Code: djup gå in i fel sökning av PowerShell-skript](https://youtu.be/cSbIXmlkr8o)
+
+### <a name="blog-posts"></a>Blogginlägg
 
 - [PowerShell-tillägg][ps-extension]
 - [Skriva och felsöka PowerShell-skript i Visual Studio Code][debug]
@@ -279,6 +288,16 @@ Det finns några Bloggar som kan vara till hjälp för att komma igång med Powe
 - [Visual Studio Code Editing-funktioner för PowerShell-utveckling – del 2][editing-part2]
 - [Felsöka PowerShell-skript i Visual Studio Code – del 1][debugging-part1]
 - [Felsöka PowerShell-skript i Visual Studio Code – del 2][debugging-part2]
+
+## <a name="powershell-extension-for-visual-studio-code"></a>PowerShell-tillägg för Visual Studio Code
+
+Du hittar PowerShell-tilläggets källkod på [GitHub](https://github.com/PowerShell/vscode-powershell).
+
+Om du är intresse rad av att bidra, är pull-begäran ett stort uppskattat. Följ tillsammans med [Developer-dokumentationen på GitHub](https://github.com/PowerShell/vscode-powershell/blob/master/docs/development.md) för att komma igång.
+
+## <a name="troubleshooting-the-powershell-extension-for-visual-studio-code"></a>Felsöka PowerShell-tillägget för Visual Studio Code
+
+Om du får problem med att använda Visual Studio Code för att utveckla PowerShell-skript, kan du ta en titt på [fel söknings guiden på GitHub](https://github.com/PowerShell/vscode-powershell/blob/master/docs/troubleshooting.md)
 
 [ise]: ../ise/Introducing-the-Windows-PowerShell-ISE.md
 [install-pscore-linux]:  ../../install/Installing-PowerShell-Core-on-Linux.md
@@ -294,13 +313,3 @@ Det finns några Bloggar som kan vara till hjälp för att komma igång med Powe
 [editing-part2]: https://devblogs.microsoft.com/scripting/visual-studio-code-editing-features-for-powershell-development-part-2/
 [debugging-part1]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-1/
 [debugging-part2]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-2/
-
-## <a name="powershell-extension-for-visual-studio-code"></a>PowerShell-tillägg för Visual Studio Code
-
-Du hittar PowerShell-tilläggets källkod på [GitHub](https://github.com/PowerShell/vscode-powershell).
-
-Om du är intresse rad av att bidra, är pull-begäran ett stort uppskattat. Följ tillsammans med [Developer-dokumentationen på GitHub](https://github.com/PowerShell/vscode-powershell/blob/master/docs/development.md) för att komma igång.
-
-## <a name="troubleshooting-the-powershell-extension-for-visual-studio-code"></a>Felsöka PowerShell-tillägget för Visual Studio Code
-
-Om du får problem med att använda Visual Studio Code för att utveckla PowerShell-skript, kan du ta en titt på [fel söknings guiden på GitHub](https://github.com/PowerShell/vscode-powershell/blob/master/docs/troubleshooting.md)

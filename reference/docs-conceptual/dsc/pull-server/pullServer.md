@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-hämtningstjänsten
-ms.openlocfilehash: cf2420e6889f63ac3b2859e5ee36fa888b728afc
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 821f183c91e805154323f9f6a42f7f5006499182
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79406904"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500712"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Mottagar tjänst för önskad tillstånds konfiguration
 
@@ -70,7 +70,7 @@ Det bästa sättet att konfigurera Windows Server som värd för pull-tjänst ä
 | ------- | -------------------- | -------------------- | ---------------------------------------------- |
 | MDB     | ESENT (standard), MDB | ESENT (standard), MDB | ESENT (standard), SQL Server, MDB               |
 
-Från och med version 17090 av [Windows Server Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewserver)är SQL Server ett alternativ som stöds för pull-tjänsten (Windows Feature *DSC-service*). Detta ger ett nytt alternativ för skalning av stora DSC-miljöer som inte har migrerats till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+Från och med version 17090 av Windows Server är SQL Server ett alternativ som stöds för pull-tjänsten (Windows Feature *DSC-service*). Detta ger ett nytt alternativ för skalning av stora DSC-miljöer som inte har migrerats till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
 > [!NOTE]
 > SQL Server-stöd kommer inte att läggas till i tidigare versioner av WMF 5,1 (eller tidigare) och är bara tillgängliga på Windows Server-versioner som är större än eller lika med 17090.
@@ -82,7 +82,7 @@ Ett exempel på SQL Server konfiguration med **xDscWebService**får du först l�
 
 Det enklaste sättet att konfigurera en webb hämtnings Server är att använda **xDscWebService** -resursen, som ingår i **xPSDesiredStateConfiguration** -modulen. Följande steg beskriver hur du använder resursen i en `Configuration` som konfigurerar webb tjänsten.
 
-1. Anropa cmdleten [install-module](/reference/6/PowerShellGet/Install-Module.md) för att installera **xPSDesiredStateConfiguration** -modulen.
+1. Anropa cmdleten [install-module](/powershell/module/PowerShellGet/Install-Module) för att installera **xPSDesiredStateConfiguration** -modulen.
 
    > [!NOTE]
    > `Install-Module` ingår i **PowerShellGet** -modulen, som ingår i PowerShell 5,0 och högre.
@@ -234,7 +234,7 @@ Använd `New-DscChecksum {module zip file}` för att skapa en kontroll Summa fil
 
 ### <a name="configuration-mof-format"></a>MOF-format för konfiguration
 
-En konfigurations-MOF-fil måste kombineras med en kontroll Summa fil så att en LCM på en målnod kan verifiera konfigurationen. Om du vill skapa en kontroll Summa anropar du cmdleten [New-DscChecksum](/reference/6/PSDesiredStateConfiguration/New-DSCCheckSum.md) . Cmdlet: en använder en **Sök vägs** parameter som anger den mapp där MOF-konfigurationsfilen finns. Cmdleten skapar en kontroll Summa fil med namnet `ConfigurationMOFName.mof.checksum`, där `ConfigurationMOFName` är namnet på MOF-konfigurationsfilen. Om det finns fler än en konfigurations-MOF-fil i den angivna mappen skapas en kontroll summa för varje konfiguration i mappen. Placera MOF-filerna och deras associerade kontroll Summa filer i mappen **ConfigurationPath** .
+En konfigurations-MOF-fil måste kombineras med en kontroll Summa fil så att en LCM på en målnod kan verifiera konfigurationen. Om du vill skapa en kontroll Summa anropar du cmdleten [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) . Cmdlet: en använder en **Sök vägs** parameter som anger den mapp där MOF-konfigurationsfilen finns. Cmdleten skapar en kontroll Summa fil med namnet `ConfigurationMOFName.mof.checksum`, där `ConfigurationMOFName` är namnet på MOF-konfigurationsfilen. Om det finns fler än en konfigurations-MOF-fil i den angivna mappen skapas en kontroll summa för varje konfiguration i mappen. Placera MOF-filerna och deras associerade kontroll Summa filer i mappen **ConfigurationPath** .
 
 > [!NOTE]
 > Om du ändrar konfigurations-MOF-filen på valfritt sätt måste du också återskapa kontroll Summa filen.

@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell, cmdlet
 title: Använd den webbaserade Windows PowerShell-konsolen
-ms.openlocfilehash: 4c1bac2c712e430263d748b36897f4cfd8885919
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 29aa123049884004dd4e1a8f042783538d80abc6
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79407023"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500872"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Användning av den webbaserade Windows PowerShell-konsolen
 
@@ -102,7 +102,7 @@ Något av följande loggar in dig från en webbaserad Windows PowerShell-session
 
 - Stäng av klientenheten där webbläsaren körs eller koppla bort den från nätverket.
 
-- Kör kommandot **Avsluta** i webbkonsolen. Det här kommandot fungerar inte om den sessionsinformation som du är ansluten till har kon figurer ATS för att stöda i läget [nolanguage](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pslanguagemode.aspx) eller i en begränsad körnings utrymme.
+- Kör kommandot **Avsluta** i webbkonsolen. Det här kommandot fungerar inte om den sessionsinformation som du är ansluten till har kon figurer ATS för att stöda i läget [nolanguage](/dotnet/api/system.management.automation.pslanguagemode) eller i en begränsad körnings utrymme.
 
 Om du vill logga in igen öppnar du webb sidan för Windows PowerShell-webbåtkomsten igen och loggar in genom att följa anvisningarna i [Logga in på Windows PowerShell-webbåtkomst](#signing-in-to-windows-powershell-web-access) i den här artikeln.
 
@@ -215,8 +215,5 @@ Alt+F7          | Rensar listan med kommandohistorik
 
 ## <a name="see-also"></a>Se även
 
-- [Referens för Windows PowerShell-cmdlet](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
-- [Windows PowerShell på Microsoft TechNet](https://technet.microsoft.com/library/bb978526.aspx)
-- [TechNet Script Center-lagringsplats](https://gallery.technet.microsoft.com/scriptcenter)
-- [Skript Center – Hey, Scripting Guy!](https://technet.microsoft.com/scriptcenter)
-- [Windows PowerShell-teamets blogg](https://blogs.msdn.com/b/powershell/)
+- [Hej, Scripting Guy!](https://devblogs.microsoft.com/scripting/)
+- [PowerShell-teamets blogg](https://devblogs.microsoft.com/powershell/)

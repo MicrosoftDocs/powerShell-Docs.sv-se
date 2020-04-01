@@ -4,12 +4,12 @@ contributor: JKeithB, SydneyhSmith
 keywords: Galleri, PowerShell, cmdlet, psgallery
 description: Rikt linjer för utgivare
 title: PowerShell-galleriet publicerings rikt linjer och metod tips
-ms.openlocfilehash: 07271e037100350d3efc7ae63860f42afd22aae7
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 5ee33ba12475f9d3e5ceb3b31f37d9f2acc19d9e
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278229"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500608"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery publicerings rikt linjer och metod tips
 
@@ -165,7 +165,8 @@ PowerShell stöder validering av kod signering genom två primära metoder:
 
 Signering av PowerShell-filer är en väl etablerad metod för att säkerställa att den kod som körs har producerats av en tillförlitlig källa och att den inte har ändrats. Information om hur du signerar PowerShell-skriptfiler beskrivs i artikeln [om signering](/powershell/module/microsoft.powershell.core/about/about_signing) . I Översikt kan en signatur läggas till i alla `.PS1`-filer som PowerShell validerar när skriptet läses in. PowerShell kan begränsas med hjälp av cmdletar för [körnings principer](/powershell/module/microsoft.powershell.core/about/about_execution_policies) för att säkerställa att signerade skript används.
 
-Moduler för katalog signering är en funktion som har lagts till i PowerShell i version 5,1. Hur du signerar en modul beskrivs i artikeln [katalog-cmdletar](/powershell/scripting/wmf/5.1/catalog-cmdlets) . I översikten görs en katalog signering genom att skapa en katalog fil som innehåller ett hash-värde för varje fil i modulen och sedan signera filen.
+Moduler för katalog signering är en funktion som har lagts till i PowerShell i version 5,1. Hur du signerar en modul beskrivs i artikeln [katalog-cmdletar](/powershell/scripting/wmf/whats-new/new-updated-cmdlets#catalog-cmdlets) .
+I översikten görs en katalog signering genom att skapa en katalog fil som innehåller ett hash-värde för varje fil i modulen och sedan signera filen.
 
 **PowerShellGet** `Publish-Module`, `Install-Module`och `Update-Module`-cmdlets kontrollerar signaturen för att kontrol lera att den är giltig och bekräftar sedan att hash-värdet för varje paket matchar vad som finns i katalogen. `Save-Module` validerar inte en signatur. Om en tidigare version av modulen är installerad på systemet bekräftar `Install-Module` att signerings utfärdaren för den nya versionen överensstämmer med vad som tidigare har installerats. `Install-Module` och `Update-Module` använder signaturen på en `.PSD1`-fil om paketet inte är en katalog som är signerad. Katalog signering fungerar med, men ersätter inte signerings skript filer. PowerShell validerar inte katalog-signaturer vid inläsning av modul.
 

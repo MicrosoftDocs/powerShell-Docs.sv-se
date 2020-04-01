@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: PowerShell Desired State Configuration, delvis konfigurationer
-ms.openlocfilehash: 379ecf804329f318e9604c1af43a60a0e24551f1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 842acad221d468ca5e4c9e660f0205c567bcc220
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417737"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500776"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration, delvis konfigurationer
 
@@ -23,7 +23,7 @@ Om du vill använda partiella konfigurationer i push-läge konfigurerar du LCM p
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Konfigurera LCM för ofullständiga konfigurationer i push-läge
 
-Om du vill konfigurera LCM för partiella konfigurationer i push-läge, skapar du en **DSCLocalConfigurationManager** -konfiguration med ett **PartialConfiguration** -block för varje del konfiguration. Mer information om hur du konfigurerar LCM finns i [Windows konfigurera den lokala Configuration Manager](/powershell/scripting/dsc/metaConfig). I följande exempel visas en LCM-konfiguration som förväntar sig två delar av konfigurationer – en som distribuerar operativ systemet och en som distribuerar och konfigurerar SharePoint.
+Om du vill konfigurera LCM för partiella konfigurationer i push-läge, skapar du en **DSCLocalConfigurationManager** -konfiguration med ett **PartialConfiguration** -block för varje del konfiguration. Mer information om hur du konfigurerar LCM finns i [Windows konfigurera den lokala Configuration Manager](../managing-nodes/metaConfig.md). I följande exempel visas en LCM-konfiguration som förväntar sig två delar av konfigurationer – en som distribuerar operativ systemet och en som distribuerar och konfigurerar SharePoint.
 
 ```powershell
 [DSCLocalConfigurationManager()]

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery, psget
 title: PowerShell-galleriet
-ms.openlocfilehash: d3e3b9d8bb3d6cefd3a3bfe79b012bb1dc1d8a2d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e489d2dd4db087b53eb07d2a8793c8f586c9b210
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328744"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500568"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell-galleriet
 
@@ -21,32 +21,21 @@ Modulen PowerShellGet innehåller cmdlets för att upptäcka, installera, uppdat
 
 ## <a name="getting-started-with-the-gallery"></a>Komma igång med galleriet
 
-Den senaste versionen av PowerShellGet-modulen kräver att du installerar paket från galleriet.
-Fullständiga instruktioner finns i [Installera PowerShellGet](installing-psget.md) .
+Den senaste versionen av PowerShellGet-modulen kräver att du installerar paket från galleriet. Fullständiga instruktioner finns i [Installera PowerShellGet](installing-psget.md) .
 
 Se [Komma igång](getting-started.md) för mer information om hur du använder PowerShellGet-kommandon med galleriet. Du kan också köra *Update-Help -Module PowerShellGet* om du vill installera lokal hjälp för dessa kommandon.
 
 ## <a name="supported-operating-systems"></a>Operativsystem som stöds
 
-**PowerShellGet** -modulen kräver **Windows PowerShell 3,0 eller senare**, eller **PowerShell Core 6,0 eller senare**.
-
-En lämplig version av **Windows PowerShell** är tillgänglig för följande operativ system:
-
-- Windows 10
-- Windows 8.1 Pro
-- Windows 8.1 Enterprise
-- Windows 7 SP1
-- Windows Server 2019
-- Windows Server 2016
-- Windows Server 2012 R2
-- Windows Server 2008 R2 SP1
+För **PowerShellGet**-modulen krävs **PowerShell version 3.0 eller senare**.
 
 **PowerShellGet** kräver .NET Framework 4,5 eller senare. Du kan installera .NET Framework 4.5 eller senare [här](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
-Eftersom **PowerShell Core** är plattforms oberoende och innebär det att den fungerar på Windows, Linux och MacOS, vilket även gör **PowerShellGet** tillgängliga på dessa system. En fullständig lista över system som stöds av **PowerShell Core** finns i [Installera PowerShell](/powershell/scripting/setup/installing-powershell).
+Eftersom **PowerShell Core** är plattforms oberoende och innebär det att den fungerar på Windows, Linux och MacOS, vilket även gör **PowerShellGet** tillgängliga på dessa system. En fullständig lista över system som stöds av **PowerShell Core** finns i [Installera PowerShell](/powershell/scripting/install/installing-powershell).
 
-Många moduler som finns i galleriet har stöd för olika operativ system och har ytterligare krav. Mer information finns i dokumentationen för modulerna.
+Många moduler som finns i galleriet har stöd för olika operativ system och har ytterligare krav.
+Mer information finns i dokumentationen för modulerna.
 
-## <a name="got-a-question-have-feedback"></a>Fick du en fråga? Har du feedback till oss?
+## <a name="got-a-question-have-feedback"></a>Fick du en fråga? Har du feedback?
 
 Mer information om PowerShell-galleriet-och PowerShellGet finns på sidan [komma igång](getting-started.md) . Ge feedback och rapportera problem med [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).

@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell Core 6,0
 description: Nya funktioner och ändringar som lanseras i PowerShell Core 6,0
 ms.date: 08/06/2018
-ms.openlocfilehash: d1bc1ef2676da60062b8bdd57042331f0f245bec
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 39bcb343c44c32d183c8bb90306a8f4a57397eb6
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995499"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500475"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Nyheter i PowerShell Core 6,0
 
@@ -159,11 +159,11 @@ Det innebär att alla inbyggda cmdlets som använder `-Encoding`-parametern anv�
 
 - Lägg till innehåll
 - Exportera – CliXml
-- Export-Csv
+- Exportera-CSV
 - Exportera – PSSession
 - Format-Hex
 - Hämta innehåll
-- Import-Csv
+- Importera – CSV
 - Ut-fil
 - Select-String
 - Skicka meddelande
@@ -231,7 +231,7 @@ Om du lägger `&` i slutet av en pipeline körs pipelinen som ett PowerShell-job
 - Stöd för länk huvuds sid brytning i webb-cmdlets (#3828)
   - För `Invoke-WebRequest`, när svaret innehåller ett länk huvud, skapar vi en RelationLink-egenskap som en ord lista som representerar URL: erna och `rel` attribut och ser till att URL: erna är absoluta för att göra det enklare för utvecklaren att använda.
   - För `Invoke-RestMethod`, när svaret innehåller ett länk huvud, visar vi en `-FollowRelLink`-växel som automatiskt följer `next` `rel` länkar tills de inte längre finns eller när vi har nått det valfria värdet för `-MaximumFollowRelLink`-parametern.
-- Lägg till `-CustomMethod` parameter till webb-cmdletar för att tillåta verb som inte är standard. (#3142) (Tack till [@Lee303](https://github.com/Lee303)!)
+- Lägg till `-CustomMethod` parameter till webb-cmdletar för att tillåta verb som inte är standard. (#3142) (Tack till @Lee303!)
 - Lägg till `SslProtocol` stöd för webb-cmdletar. (#5329) (Tack [@markekraus](https://github.com/markekraus)!)
 - Lägg till multipart-stöd för Web-cmdletar. (#4782) (Tack [@markekraus](https://github.com/markekraus))
 - Lägg till `-NoProxy` i Web-cmdletar så att de ignorerar den systemomfattande proxyinställningarna. (#3447) (Tack till [@TheFlyingCorpse](https://github.com/TheFlyingCorpse)!)
@@ -248,7 +248,7 @@ Om du lägger `&` i slutet av en pipeline körs pipelinen som ett PowerShell-job
 - Ändra webb-cmdlets `UserAgent` från `WindowsPowerShell` till `PowerShell`. (#4914) (Tack [@markekraus](https://github.com/markekraus))
 - Lägg till explicit `ContentType` identifiering till `Invoke-RestMethod` (#4692)
 - Korrigera webb-cmdlets `-SkipHeaderValidation` för att fungera med icke-standard-huvud för användar agenten. (#4479 &
-  #<a name="4512-thanks-markekraushttpsgithubcommarkekraus"></a>4512) (tack [@markekraus](https://github.com/markekraus))
+  #<a name="4512-thanks-markekraus"></a>4512) (tack [@markekraus](https://github.com/markekraus))
 
 ### <a name="json-cmdlets"></a>JSON-cmdletar
 
@@ -355,7 +355,7 @@ Om du vill välja bort den här Telemetrin skapar du bara `POWERSHELL_TELEMETRY_
 [.NET-standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET-blogg]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
-[Vanliga frågor och svar]: https://github.com/dotnet/standard/blob/master/docs/faq.md
+[VANLIGA FRÅGOR OCH SVAR]: https://github.com/dotnet/standard/blob/master/docs/faq.md
 [CDXLM]: /previous-versions/windows/desktop/wmi_v2/getting-started-with-cdxml
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
 [docker]: https://github.com/PowerShell/PowerShell/tree/master/docker

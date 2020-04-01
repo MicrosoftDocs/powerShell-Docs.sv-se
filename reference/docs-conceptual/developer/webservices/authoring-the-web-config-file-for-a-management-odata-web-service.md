@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d569f5d5-9746-40c0-be5e-f218bc4560f7
 caps.latest.revision: 4
-ms.openlocfilehash: f52953ee091f05df5f355719ecba788d3d5ee055
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: eee515252cf03c05d15368ee6e2a1cb62dc82647
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352271"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500791"
 ---
 # <a name="authoring-the-webconfig-file-for-a-management-odata-web-service"></a>Redigera Web.config-filen för en Management OData-webbtjänst
 

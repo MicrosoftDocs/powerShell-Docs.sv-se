@@ -2,12 +2,12 @@
 title: Migrera från Windows PowerShell 5.1 till PowerShell 7
 description: Uppdatera från PowerShell 5,1 till PowerShell 7 för dina Windows-plattformar.
 ms.date: 03/25/2020
-ms.openlocfilehash: feb8895e53bd3c46506c25691fac3395ca944478
-ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
+ms.openlocfilehash: e3881b1758f50119444969ad39541aec694cebe5
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80394969"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500491"
 ---
 # <a name="migrating-from-windows-powershell-51-to-powershell-7"></a>Migrera från Windows PowerShell 5.1 till PowerShell 7
 
@@ -142,7 +142,7 @@ Mer information [about_Profiles](/powershell/module/microsoft.powershell.core/ab
 De flesta moduler som du använder i Windows PowerShell 5,1 fungerar redan med PowerShell 7, inklusive Azure PowerShell och Active Directory. Vi fortsätter att arbeta med andra team för att lägga till inbyggt PowerShell 7-stöd för fler moduler, inklusive Microsoft Graph, Office 365 och andra. Den aktuella listan över moduler som stöds finns i [PowerShell 7-modulens kompatibilitet](/powershell/scripting/whats-new/module-compatibility).
 
 > [!NOTE]
-> I Windows har vi också lagt till en **UseWindowsPowerShell** -växel till `Import-Module` för att under lätta över gången till PowerShell 7 för de som använder inkompatibla moduler. Mer information om den här funktionen finns i [about_Windows_PowerShell_Compatibility](/powershell/modules/Microsoft.PowerShell.Core/About/about_windows_powershell_compatibility).
+> I Windows har vi också lagt till en **UseWindowsPowerShell** -växel till `Import-Module` för att under lätta över gången till PowerShell 7 för de som använder inkompatibla moduler. Mer information om den här funktionen finns i [about_Windows_PowerShell_Compatibility](/powershell/module/Microsoft.PowerShell.Core/About/about_windows_powershell_compatibility).
 
 ### <a name="powershell-remoting"></a>PowerShell-fjärrkommunikation
 

@@ -2,18 +2,18 @@
 title: Supportlängd för PowerShell Core
 description: Principer som styr support för PowerShell Core
 ms.date: 03/09/2020
-ms.openlocfilehash: 2f4ba267bce3ce773fc912605618a43bdf70397b
-ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
+ms.openlocfilehash: c319371778eb4615559ae12e0cd153a535ed22bf
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80395043"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500999"
 ---
 # <a name="powershell-support-lifecycle"></a>Support livs cykel för PowerShell
 
 PowerShell är en distinkt uppsättning verktyg och komponenter som levereras, installeras och konfigureras separat från Windows PowerShell. PowerShell ingår inte i licens avtalen för Windows.
 
-PowerShell stöds i traditionella Microsofts support avtal, inklusive [Premier][], [Microsoft Enterprise Agreement][enterprise-agreement]och [Microsoft Software Assurance][assurance].
+PowerShell stöds i traditionella Microsofts support avtal, inklusive [avgiftsbelagd support][], [Microsoft Enterprise Agreement][enterprise-agreement]och [Microsoft Software Assurance][assurance].
 Du kan också betala för [assisterad support][] för PowerShell genom att skicka en support förfrågan om ditt problem.
 
 ## <a name="community-support"></a>Community-support
@@ -155,7 +155,7 @@ Följande tabell innehåller en tids linje för de större versionerna av PowerS
 | PowerShell 1,0       |   Nov-2006   | Kan installeras på Windows XP SP2, Windows Server 2003 SP1 och Windows Vista. Valfri komponent i Windows Server 2008.                          |
 
 <!-- hyperlink references -->
-[Premier]: https://www.microsoft.com/microsoftservices/support.aspx
+[avgiftsbelagd support]: https://support.microsoft.com/hub/4343728/support-for-business
 [enterprise-agreement]: https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx
 [Community-support]: /powershell/scripting/community/community-support

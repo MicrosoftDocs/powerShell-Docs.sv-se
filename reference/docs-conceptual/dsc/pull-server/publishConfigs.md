@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: 'Publicera till en pull-server med konfigurations-ID: n (v4/V5)'
-ms.openlocfilehash: 3b094308338e62c783b19f4d3bb41634feee63f6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 99c5b89e7d556fa72eaa6a3ba1654936f96a0b9d
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417252"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500751"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Publicera till en pull-server med konfigurations-ID: n (v4/V5)
 
@@ -61,7 +61,7 @@ Du kan sedan byta namn på `.mof`-filen med en acceptabel metod. Exemplet nedan 
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
 ```
 
-Mer information om hur du använder **GUID** i din miljö finns i [Planera för GUID](/powershell/scripting/dsc/secureserver#guids).
+Mer information om hur du använder **GUID** i din miljö finns i [Planera för GUID](secureServer.md#guids).
 
 ### <a name="configuration-names"></a>Konfigurations namn
 
