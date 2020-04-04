@@ -4,20 +4,20 @@ description: Så här använder du PowerShell som är förinstallerat i en Docke
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/03/2020
-ms.openlocfilehash: 771214c719ef01fe2c8bc56a4b26c629fcad3856
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: b16a31a04ca863ab55c7c9718b1a1a973e61ee46
+ms.sourcegitcommit: f55da6dea4b58a2cd13c7be7c24c07341f177b71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279952"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80646379"
 ---
 # <a name="using-powershell-in-docker"></a>Använda PowerShell i Docker
 
 Vi publicerar Docker-avbildningar med PowerShell förinstallerat. Den här artikeln visar hur du kommer igång med PowerShell i Docker-behållaren.
 
-## <a name="finding-available-images"></a>Hitta tillgängliga bilder
+## <a name="finding-available-images"></a>Hitta tillgängliga avbildningar
 
-De publicerade avbildningarna kräver Docker 17,05 eller senare. Det förväntas också att du kan köra Docker utan `sudo` eller lokal administratörs behörighet. Följ Docker-officiella [instruktioner][install] för att installera `docker` korrekt.
+De publicerade avbildningarna kräver Docker 17.05 eller senare. Det förväntas också att du kan köra Docker utan `sudo` eller lokal administratörsbehörighet. Följ Dockers officiella [instruktioner][install] för att installera `docker` korrekt.
 
 Versions behållare härleds från den officiella distributions avbildningen, till exempel `centos:7`, och installera sedan beroenden och installera sedan PowerShell-paketet.
 
@@ -35,7 +35,7 @@ docker run -it mcr.microsoft.com/powershell
 
 ### <a name="remove-the-image-when-no-longer-needed"></a>Ta bort avbildningen när den inte längre behövs
 
-Följande kommando används för att ta bort Docker-behållaren när du inte längre behöver den.
+Följande kommando används för att ta bort Docker-avbildningen när du inte längre behöver den.
 
 ```console
 docker rmi mcr.microsoft.com/powershell
