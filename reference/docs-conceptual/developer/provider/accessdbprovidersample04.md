@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ee3a7e56-7331-4f71-9ecb-7a59b8021c68
 caps.latest.revision: 10
-ms.openlocfilehash: 7096f8066568c214a5902f6943a2c093932d3b56
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0d3133c75d8e608967f15ffb7345fc0f63e1cd5c
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356863"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80977513"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
@@ -27,24 +27,18 @@ Det här exemplet visar hur du skriver över container metoder för att stödja 
 Det här exemplet demonstrerar följande:
 
 - Deklarera `CmdletProvider`-attributet.
-
 - Definiera en leverantörs klass som härleds från klassen [system. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) .
-
 - Skriv över metoden [system. Management. Automation. Provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) för att ändra beteendet för `Copy-Item` cmdleten så att användaren kan kopiera objekt från en plats till en annan. (Det här exemplet visar inte hur du lägger till dynamiska parametrar i `Copy-Item`-cmdleten.)
-
 - Skriv över metoden [system. Management. Automation. Provider. Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) för att ändra beteendet för Get-ChildItems-cmdleten, vilket gör att användaren kan hämta de underordnade objekten till det överordnade objektet. (Det här exemplet visar inte hur du lägger till dynamiska parametrar till get-ChildItems-cmdlet: en.)
-
 - Skriv över metoden [system. Management. Automation. Provider. Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) för att ändra beteendet för Get-ChildItems-cmdleten när parametern `Name` för cmdlet: en anges.
-
 - Skriv över metoden [system. Management. Automation. Provider. Containercmdletprovider. NewItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) för att ändra beteendet för `New-Item`-cmdleten, vilket gör att användaren kan lägga till objekt i data lagret. (Det här exemplet visar inte hur du lägger till dynamiska parametrar i `New-Item`-cmdleten.)
-
 - Skriv över metoden [system. Management. Automation. Provider. Containercmdletprovider. RemoveItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) för att ändra beteendet för `Remove-Item`-cmdleten. (Det här exemplet visar inte hur du lägger till dynamiska parametrar i `Remove-Item`-cmdleten.)
 
 ## <a name="example"></a>Exempel
 
 Det här exemplet visar hur du skriver över de metoder som behövs för att kopiera, skapa och ta bort objekt, samt metoder för att hämta underordnade objekt till ett överordnat objekt.
 
-[!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L1635 "AccessDBProviderSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs" range="11-1635":::
 
 ## <a name="see-also"></a>Se även
 

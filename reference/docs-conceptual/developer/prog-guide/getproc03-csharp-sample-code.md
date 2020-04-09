@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ebc0d538-69ac-43d5-837d-b6f47344fc6a
 caps.latest.revision: 5
-ms.openlocfilehash: 126df3092c0722b0fc9d02cb61d3faf0578b8e97
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 24f47ab8d99683e6d0024bd8073b6d7bb5dcbd90
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416122"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978380"
 ---
 # <a name="getproc03-c-sample-code"></a>GetProc03 (C#) – kodexempel
 
@@ -21,12 +21,11 @@ Följande kod visar implementeringen av en `Get-Process`-cmdlet som kan accepter
 
 > [!NOTE]
 > Du kan ladda ned C# käll filen (getprov03.CS) för den här get-proc-cmdleten med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
 > De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** .
 
 ## <a name="code-sample"></a>Kod exempel
 
-[!code-csharp[GetProcessSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs#L11-L78 "GetProcessSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs" range="11-78":::
 
 ## <a name="see-also"></a>Se även
 

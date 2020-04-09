@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9ac8ab99-1856-4d6f-b30d-c0a18b8dd1fc
 caps.latest.revision: 6
-ms.openlocfilehash: 06b5a06ae20a4bbb2c58eaa1776700aa8f80555c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 28cef037f56f2a101f631d3a234974a8868b4ef9
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416059"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978329"
 ---
 # <a name="runspace03-c-code-sample"></a>RunSpace03 (C#) – kodexempel
 
@@ -25,7 +25,7 @@ Här är C# käll koden för konsol programmet som beskrivs i avsnittet "skapa e
 
 ## <a name="code-sample"></a>Kod exempel
 
-[!code-csharp[Runspace03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace03/Runspace03.cs#L11-L88 "Runspace03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/Runspace03/Runspace03.cs" range="11-88":::
 
 ## <a name="see-also"></a>Se även
 

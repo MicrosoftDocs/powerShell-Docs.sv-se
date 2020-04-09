@@ -2,12 +2,12 @@
 title: Installera PowerShell i Windows
 description: Information om hur du installerar PowerShell på Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: ea5432725f4baea8c688fb8e67482910e2c3981e
-ms.sourcegitcommit: b6cf10224eb9f32919a505cdffbe5968241c18a1
+ms.openlocfilehash: 17b2c7c51e54cea42ee68dc1812ffe89654806fc
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80374883"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80977496"
 ---
 # <a name="installing-powershell-on-windows"></a>Installera PowerShell i Windows
 
@@ -28,7 +28,7 @@ Installera PowerShell på Windows genom att ladda ned installations paketet frå
 
 ## <a name="installing-the-msi-package"></a><a id="msi" />installera MSI-paketet
 
-MSI-filen ser ut som `PowerShell-<version>-win-<os-arch>.msi`. Några exempel:
+MSI-filen ser ut som `PowerShell-<version>-win-<os-arch>.msi`. Exempel:
 
 - `PowerShell-7.0.0-win-x64.msi`
 - `PowerShell-7.0.0-win-x86.msi`
@@ -84,9 +84,9 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 
 Det finns PowerShell-Arkiv för att aktivera avancerade distributions scenarier. Installation av ZIP-arkivet kontrollerar inte kraven som MSI-paketen gör. Se till att du uppfyller [kraven](#prerequisites)för fjärr kommunikation över WSMan för att fungera korrekt.
 
-## <a name="deploying-on-windows-iot"></a>Distribuera på Windows IoT
+## <a name="deploying-on-windows-10-iot-enterprise"></a>Distribuera i Windows 10 IoT Enterprise
 
-Windows IoT levereras med Windows PowerShell, som vi kan använda för att distribuera PowerShell 7.
+Windows 10 IoT Enterprise levereras med Windows PowerShell, som vi kan använda för att distribuera PowerShell 7.
 
 1. Skapa `PSSession` till mål enhet
 
@@ -128,6 +128,16 @@ Windows IoT levereras med Windows PowerShell, som vi kan använda för att distr
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
+## <a name="deploying-on-windows-10-iot-core"></a>Distribuera på Windows 10 IoT Core
+
+Windows 10 IoT Core lägger till Windows PowerShell när du inkluderar *IOT_POWERSHELL* funktion som vi kan använda för att distribuera PowerShell 7.
+Stegen som definieras ovan för Windows 10 IoT Enterprise kan också följas av IoT Core.
+
+För att lägga till den senaste PowerShell-versionen i leverans avbildningen använder du kommandot [import-PSCoreRelease](https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease) för att inkludera paketet i workarea och lägga till *OPENSRC_POWERSHELL* funktion i avbildningen.
+
+> [!NOTE]
+> Windows PowerShell läggs inte till i ARM64-arkitekturen när du tar med *IOT_POWERSHELL*. Det innebär att zip-baserad installation inte fungerar.
+> Du måste använda kommandot Import-PSCoreRelease för att lägga till det i avbildningen.
 
 ## <a name="deploying-on-nano-server"></a>Distribuera på Nano Server
 

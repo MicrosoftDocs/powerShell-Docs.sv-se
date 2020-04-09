@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: DSC-förbättringar i WMF 5.1
-ms.openlocfilehash: 99434d14100de54d2d4c89c5888741ab2f1c512a
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 78c15f453977384ba437b0bd69cd620eb1a29fbd
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78277644"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978295"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Förbättringar i önskad tillstånds konfiguration (DSC) i WMF 5,1
 
@@ -147,7 +147,7 @@ Se ögonblicks bilderna nedan:
 
 ## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>Använda PsDscRunAsCredential med sammansatta DSC-resurser
 
-Vi har lagt till stöd för att använda [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) med [SAMMANsatta](/powershell/scripting/dsc/authoringresourcecomposite) DSC-resurser.
+Vi har lagt till stöd för att använda [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) med [SAMMANsatta](/powershell/scripting/dsc/resources/authoringresourcecomposite) DSC-resurser.
 
 Nu kan du ange ett värde för **PsDscRunAsCredential** när du använder sammansatta resurser i konfigurationer. När det här anges körs alla resurser i en sammansatt resurs som en RunAs-användare. Om en sammansatt resurs anropar en annan sammansatt resurs körs alla dessa resurser också som RunAs-användare. RunAs-autentiseringsuppgifter sprids till valfri nivå i den sammansatta resursens hierarki. Om en resurs i en sammansatt resurs anger sitt eget värde för **PsDscRunAsCredential**uppstår ett sammanfognings fel vid konfigurations kompilering.
 

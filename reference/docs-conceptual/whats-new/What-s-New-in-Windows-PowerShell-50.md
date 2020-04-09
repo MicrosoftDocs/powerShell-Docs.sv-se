@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Vad är nytt i Windows PowerShell 5,0
-ms.openlocfilehash: 8c1858a63adad467e389a683708bccba2a6768c7
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: dba016546fe034684f6b7afe43ec2e7a1b793d96
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500469"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978210"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Vad är nytt i Windows PowerShell 5,0
 
@@ -460,7 +460,7 @@ Precis som aktiviteter i Schemaläggaren kan du köra schemalagda jobb vid ett e
 
 Dessutom levereras schemalagda jobb med en anpassad uppsättning cmdlets för att hantera dem. Med cmdletarna kan du skapa, redigera, hantera, inaktivera och återaktivera schemalagda jobb, skapa schemalagda jobb utlösare och ange alternativ för schemalagda jobb.
 
-Mer information om schemalagda jobb finns [about_Scheduled_Jobs](/powershell/module/microsoft.powershell.core/about/about_Scheduled_Jobs).
+Mer information om schemalagda jobb finns [about_Scheduled_Jobs](/powershell/module/psscheduledjob/about/about_scheduled_jobs?view=powershell-5.1).
 
 ### <a name="windows-powershell-language-enhancements"></a>Språk förbättringar för Windows PowerShell
 

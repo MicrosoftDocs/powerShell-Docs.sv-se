@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell, cmdlet
 title: Använd den webbaserade Windows PowerShell-konsolen
-ms.openlocfilehash: 29aa123049884004dd4e1a8f042783538d80abc6
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: 9a5d6d825dc82710466768bc612b012dd80937da
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500872"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978669"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Användning av den webbaserade Windows PowerShell-konsolen
 
@@ -94,9 +94,9 @@ Något av följande loggar in dig från en webbaserad Windows PowerShell-session
 
 - 20 minuters inaktivitet i sessionen. Gateway-administratören kan anpassa tids gränsen för inaktivitet; Mer information finns i [hantering av sessioner](authorization-rules-and-security-features-of-windows-powershell-web-access.md#session-management).
 
-  - Om du är frånkopplad från en-session i den webbaserade konsolen på grund av ett nätverks fel eller en annan oplanerad avstängning eller fel, och inte eftersom du har stängt sessionen själv, fortsätter Windows PowerShell-webbåtkomsten att köras, ansluten till målet datorn tills timeout-tiden på klient sidan går ut. Denna tidsgräns är som standard är 20 minuter och har konfigurerats av gateway-administratören. Sessionen kopplas från när antingen standardvärdet 20 minuter eller den tidsperiod som angetts av gateway-administratören uppnås, beroende på vilken som är kortast.
+  - Om du är frånkopplad från en-session i den webbaserade konsolen på grund av ett nätverks fel eller en annan oplanerad avstängning eller fel, och inte eftersom du har stängt sessionen själv, fortsätter Windows PowerShell-webbåtkomsten att köras, anslutas till mål datorn tills tids gränsen på klient sidan går ut. Denna tidsgräns är som standard är 20 minuter och har konfigurerats av gateway-administratören. Sessionen kopplas från när antingen standardvärdet 20 minuter eller den tidsperiod som angetts av gateway-administratören uppnås, beroende på vilken som är kortast.
 
-    Om Gateway-servern kör Windows Server 2012 R2 gör Windows PowerShell-webbåtkomsten att användarna återansluter till sparade sessioner vid ett senare tillfälle, men du kan inte se eller återansluta till sparade sessioner förrän tids gränsen som angetts av Gateway-administratören har uppnåtts.
+    Om Gateway-servern kör Windows Server 2012 R2 gör Windows PowerShell-webbåtkomsten att användarna återansluter till sparade sessioner vid ett senare tillfälle, men du kan inte se eller återansluta till sparade sessioner förrän tids gränsen som angetts av Gateway-administratören har upphörde.
 
 - Stänga webbläsarfönster eller flikar.
 
@@ -211,9 +211,8 @@ Alt+F7          | Rensar listan med kommandohistorik
 
     Du kan ändra höjden på konsolen på ett liknande sätt.
 
-    Ytterligare exempel för att anpassa konsol visningen finns i [Windows PowerShell-teamets blogg](h https://devblogs.microsoft.com/powershell).
+    Ytterligare exempel för att anpassa konsol visningen finns i [Windows PowerShell-teamets blogg](https://devblogs.microsoft.com/powershell).
 
 ## <a name="see-also"></a>Se även
 
 - [Hej, Scripting Guy!](https://devblogs.microsoft.com/scripting/)
-- [PowerShell-teamets blogg](https://devblogs.microsoft.com/powershell/)

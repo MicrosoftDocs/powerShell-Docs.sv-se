@@ -11,16 +11,16 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], base provider
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
-ms.openlocfilehash: e825581b96f0f33893b38f9f6499dd46a7bf38eb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0f8621cd22ca402f3a564ccdfb36c97da68dac6a
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352782"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978516"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Skapa en grundläggande Windows PowerShell-provider
 
-Det här avsnittet är start punkten för att lära dig hur du skapar en Windows PowerShell-Provider. Den grundläggande providern som beskrivs här innehåller metoder för att starta och stoppa providern, men även om denna provider inte ger ett sätt att komma åt ett data lager eller för att hämta eller ange data i data lagret, innehåller den de grundläggande funktioner som krävs av alla leverantörer.
+Det här avsnittet är start punkten för att lära dig hur du skapar en Windows PowerShell-Provider. Den grundläggande providern som beskrivs här innehåller metoder för att starta och stoppa providern, men även om denna provider inte ger ett sätt att komma åt ett data lager eller för att hämta eller ange data i data lagret, innehåller den grundläggande funktioner som krävs av alla leverantörer.
 
 Som tidigare nämnts är den grundläggande providern som beskrivs här implementerar metoder för att starta och stoppa providern. Windows PowerShell-körningen anropar dessa metoder för att initiera och avinitiera providern.
 
@@ -38,7 +38,7 @@ Vi rekommenderar att du placerar leverantörs klasserna i en `Providers` namnrym
 
 Här är klass definitionen för den här grundläggande providern:
 
-[!code-csharp[AccessDBProviderSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs#L23-L24 "AccessDBProviderSample01.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs" range="23-24":::
 
 Precis som i klass definitionen måste du deklarera attributet [system. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) med syntaxen [CmdletProvider ()].
 
@@ -93,7 +93,7 @@ Get-PSProvider
 
 Följande utdata visas:
 
-```output
+```Output
 Name                 Capabilities                  Drives
 ----                 ------------                  ------
 AccessDb             None                          {}

@@ -11,16 +11,17 @@ helpviewer_keywords:
 - declaring cmdlets [PowerShell SDK]
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
-ms.openlocfilehash: 979025ad5c34ab73dcc23d0e38ffb9acc431f15a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0de49d979c31b0e8d111323a2e1899d97868ec3f
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354889"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978720"
 ---
 # <a name="cmdlet-class-declaration"></a>Cmdlet-klassdeklaration
 
-En Microsoft .NET Framework-klass deklareras som en cmdlet genom att ange **cmdlet** -attributet som metadata för klassen. ( **Cmdlet** -attributet är det enda obligatoriska attributet för alla cmdletar). När du anger **cmdlet** -attributet måste du ange verb-och-Substantiv-paret som identifierar cmdleten för användaren. Och du måste beskriva de Windows PowerShell-funktioner som stöds av cmdlet: en. Mer information om den deklarationssyntax som används för att ange **cmdlet** -attributet finns i deklaration av [cmdlet-attribut](./cmdlet-attribute-declaration.md).
+En Microsoft .NET Framework-klass deklareras som en cmdlet genom att ange **cmdlet** -attributet som metadata för klassen. ( **Cmdlet** -attributet är det enda obligatoriska attributet för alla cmdletar).
+När du anger **cmdlet** -attributet måste du ange verb-och-Substantiv-paret som identifierar cmdleten för användaren. Och du måste beskriva de Windows PowerShell-funktioner som stöds av cmdlet: en. Mer information om den deklarationssyntax som används för att ange **cmdlet** -attributet finns i deklaration av [cmdlet-attribut](./cmdlet-attribute-declaration.md).
 
 > [!NOTE]
 > **Cmdlet** -attributet definieras av klassen [system. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) . Egenskaperna för den här klassen motsvarar de deklarations parametrar som används när du deklarerar attributet.
@@ -49,7 +50,7 @@ Mer information om den deklarationssyntax som används för att ange **cmdlet** 
 
 Följande kod är definitionen för en GetProc-cmdlet-klass. Observera att Pascal-höljet används och att namnet på klassen innehåller verbets verb och substantiv.
 
-[!code-csharp[GetProcessSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs#L33-L34 "GetProcessSample01.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs" range="33-34":::
 
 ## <a name="pascal-casing"></a>Pascal-hölje
 

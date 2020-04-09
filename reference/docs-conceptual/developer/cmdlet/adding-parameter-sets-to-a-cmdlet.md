@@ -10,12 +10,12 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: c9c0b9a7a587e856efc82b4d277cee373e3f8b38
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6e17ff3d8ad3f7b2c511b879c913633f320bf511
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416321"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978635"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Lägga till parameteruppsättningar i en cmdlet
 
@@ -31,7 +31,7 @@ För att illustrera den sista punkten använder denna Stop-proc-cmdlet tre param
 
 ## <a name="declaring-the-cmdlet-class"></a>Deklarera cmdlet-klassen
 
-Det första steget i att skapa en cmdlet namnger alltid cmdleten och deklarerar den .NET-klass som implementerar cmdleten. För denna cmdlet används livs cykel verbet "Stop" eftersom cmdleten stoppar system processer. Substantiv namnet "proc" används eftersom cmdleten fungerar på processer. I deklarationen nedan noterar du att cmdlet-verbet och Substantiv namnet visas i namnet på cmdlet-klassen.
+Det första steget i att skapa en cmdlet namnger alltid cmdleten och deklarerar den .NET-klass som implementerar cmdleten. I den här cmdleten används livs cykel verbet "Stop" eftersom cmdleten stoppar system processer. Substantiv namnet "proc" används eftersom cmdleten fungerar på processer. I deklarationen nedan noterar du att cmdlet-verbet och Substantiv namnet visas i namnet på cmdlet-klassen.
 
 > [!NOTE]
 > Mer information om godkända cmdlet-verb finns i [cmdlet-verb](./approved-verbs-for-windows-powershell-commands.md).
@@ -60,7 +60,7 @@ Den här cmdleten definierar tre parametrar som krävs som indata till cmdleten 
 
 Med den här Indataparametern kan användaren ange namnen på de processer som ska stoppas. Observera att attributet `ParameterSetName` attribut för attributet [system. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) anger den `ProcessName` parameter uppsättningen för den här parametern.
 
-[!code-csharp[StopProcessSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs#L44-L58 "StopProcessSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs" range="44-58":::
 
 ```vb
 <Parameter(Position:=0, ParameterSetName:="ProcessName", _
@@ -229,23 +229,23 @@ När din cmdlet har registrerats med Windows PowerShell kan du testa den genom a
 
 - Med Windows PowerShell igång kör du Stop-proc-cmdlet: en med parametern `ProcessId` som har angetts för att stoppa en process baserat på dess identifierare. I det här fallet använder cmdleten `ProcessId` parameter inställd för att stoppa processen.
 
-    ```
-    PS> stop-proc -Id 444
-    Confirm
-    Are you sure you want to perform this action?
-    Performing operation "stop-proc" on Target "notepad (444)".
-    [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
-    ```
+  ```
+  PS> stop-proc -Id 444
+  Confirm
+  Are you sure you want to perform this action?
+  Performing operation "stop-proc" on Target "notepad (444)".
+  [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
+  ```
 
 - Med Windows PowerShell igång kör du Stop-proc-cmdlet: en med parametern `InputObject` som har angetts för att stoppa processer på objektet Notepad som hämtats av `Get-Process` kommandot.
 
-    ```
-    PS> get-process notepad | stop-proc
-    Confirm
-    Are you sure you want to perform this action?
-    Performing operation "stop-proc" on Target "notepad (444)".
-    [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
-    ```
+  ```
+  PS> get-process notepad | stop-proc
+  Confirm
+  Are you sure you want to perform this action?
+  Performing operation "stop-proc" on Target "notepad (444)".
+  [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
+  ```
 
 ## <a name="see-also"></a>Se även
 

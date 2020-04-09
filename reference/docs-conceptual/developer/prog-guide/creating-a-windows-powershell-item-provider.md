@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: a64e49894ce5195cc177e97a7049740389b09456
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 32f58d70dc01130f37639960109bf9ef4a8aa7cc
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870718"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978448"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Skapa en Windows PowerShell-objektprovider
 
@@ -32,7 +32,7 @@ Windows PowerShell-dataleverantören som beskrivs i det här avsnittet hämtar d
 
 En Windows PowerShell-dataprovider måste definiera en .NET-klass som är härledd från Bask Lassen [system. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) . Följande är klass definitionen för den artikel leverantör som beskrivs i det här avsnittet.
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L34-L36 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="34-36":::
 
 Observera att i den här klass definitionen innehåller attributet [system. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) två parametrar. Den första parametern anger ett användarvänligt namn för den provider som används av Windows PowerShell. Den andra parametern anger de Windows PowerShell-funktioner som providern exponerar för Windows PowerShell-körningsmiljön under kommando bearbetning. För den här providern finns det inga Windows PowerShell-funktioner som har lagts till.
 
@@ -52,7 +52,7 @@ En Windows PowerShell-dataprovider måste verifiera syntaktisk och semantisk gil
 
 Här är implementeringen av metoden [system. Management. Automation. Provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) för den här providern. Observera att den här implementeringen anropar en NormalizePath Helper-metod för att konvertera alla avgränsare i sökvägen till en enhetlig.
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L274-L298 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="274-298":::
 
 ## <a name="determining-if-an-item-exists"></a>Avgöra om ett objekt finns
 
@@ -60,7 +60,7 @@ När du har verifierat sökvägen måste Windows PowerShell-körningsmiljön avg
 
 Här är implementeringen av metoden [system. Management. Automation. Provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) för den här providern. Observera att den här metoden anropar metoderna PathIsDrive, ChunkPath och GetTable Helper och använder ett Provider definierat DatabaseTableInfo-objekt.
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L229-L267 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="229-267":::
 
 #### <a name="things-to-remember-about-implementing-itemexists"></a>Saker att komma ihåg om att implementera ItemExists
 
@@ -84,7 +84,7 @@ För att hämta ett objekt måste Windows PowerShell-dataleverantören åsidosä
 
 Här är implementeringen av metoden [system. Management. Automation. Provider. Itemcmdletprovider. getItem, *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) för den här providern. Observera att den här metoden använder GetTable-och GetRow-hjälp metoder för att hämta objekt som är antingen tabeller i Access-databasen eller-raderna i en data tabell.
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L132-L163 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="132-163":::
 
 #### <a name="things-to-remember-about-implementing-getitem"></a>Saker att komma ihåg om att implementera getItem,
 

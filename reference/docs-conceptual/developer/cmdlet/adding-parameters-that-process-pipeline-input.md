@@ -11,12 +11,12 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: 9ecb73a4138a5853fa5fb378874da2d81c5dbdba
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4966ac274713899e7ea9e0c375dca220a972a1b5
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355645"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978737"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Lägga till parametrar som bearbetar pipelineindata
 
@@ -43,13 +43,14 @@ Public Class GetProcCommand
 
 ## <a name="defining-input-from-the-pipeline"></a>Definiera ininformation från pipelinen
 
-I det här avsnittet beskrivs hur du definierar ininformation från pipelinen för en cmdlet. Den här cmdleten Get-proc definierar en egenskap som representerar den `Name` parametern enligt beskrivningen i [lägga till parametrar som bearbetar kommando rads indatatyper](./adding-parameters-that-process-command-line-input.md). (Se avsnittet för allmän information om att deklarera parametrar.)
+I det här avsnittet beskrivs hur du definierar ininformation från pipelinen för en cmdlet. Den här cmdleten Get-proc definierar en egenskap som representerar den `Name` parametern enligt beskrivningen i [lägga till parametrar som bearbetar kommando rads indatatyper](./adding-parameters-that-process-command-line-input.md).
+(Se avsnittet för allmän information om att deklarera parametrar.)
 
 Men när en cmdlet måste bearbeta pipeline-inmatade, måste den ha sina parametrar som är kopplade till indatavärden av Windows PowerShell-körningsmiljön. Om du vill göra detta måste du lägga till nyckelordet `ValueFromPipeline` eller lägga till nyckelordet `ValueFromPipelineByProperty` till attributet [system. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Ange nyckelordet `ValueFromPipeline` om cmdleten har åtkomst till det kompletta indatamängdet. Ange `ValueFromPipelineByProperty` om cmdleten har åtkomst till en egenskap för objektet.
 
 Här är parameter deklarationen för `Name`-parametern för den här cmdleten Get-proc som godkänner pipeline-inmatade.
 
-[!code-csharp[GetProcessSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs#L35-L44 "GetProcessSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs" range="35-44":::
 
 ```vb
 <Parameter(Position:=0, ValueFromPipeline:=True, _
@@ -77,7 +78,7 @@ I den föregående deklarationen anges `ValueFromPipeline` nyckelordet till `tru
 
 Om cmdleten ska hantera pipeline-indata måste den åsidosätta lämpliga metoder för bearbetning av indata. De grundläggande metoderna för indata-bearbetning införs när [du skapar din första cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-Den här cmdleten Get-proc åsidosätter metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) för att hantera `Name` parameter-indata från användaren eller ett skript. Med den här metoden hämtas processerna för varje begärt process namn eller alla processer om inget namn anges. Observera att i [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), anropet till [WriteObject (system. Object, system. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) är utmatnings mekanismen för att skicka utgående objekt till pipelinen. Den andra parametern för det här anropet, `enumerateCollection`, har ställts in på `true` för att tala om för Windows PowerShell-körningen att räkna upp matrisen med process objekt och skriva en process i taget till kommando raden.
+Den här cmdleten Get-proc åsidosätter metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) för att hantera `Name` parameter-indata från användaren eller ett skript. Med den här metoden hämtas processerna för varje begärt process namn eller alla processer om inget namn anges. Observera att i [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), anropet till [WriteObject (system. Object, system. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) är utmatnings mekanismen för att skicka utgående objekt till pipelinen. Den andra parametern för det här anropet, `enumerateCollection`, har ställts in på `true` för att tala om för Windows PowerShell-körningen att räkna upp matrisen med process objekt och skriva en process i taget till kommando raden.
 
 ```csharp
 protected override void ProcessRecord()
@@ -142,37 +143,37 @@ När din cmdlet har registrerats med Windows PowerShell kan du testa den genom a
 
 - I Windows PowerShell-prompten anger du följande kommandon för att hämta process namnen via pipelinen.
 
-    ```powershell
-    PS> type ProcessNames | get-proc
-    ```
+  ```powershell
+  PS> type ProcessNames | get-proc
+  ```
 
-Följande utdata visas.
+  Följande utdata visas.
 
-    ```
-    Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)    Id  ProcessName
-    -------  ------  -----   ----- -----   ------    --  -----------
-        809      21  40856    4448    147    9.50  2288  iexplore
-        737      21  26036   16348    144   22.03  3860  iexplore
-         39       2   1024     388     30    0.08  3396  notepad
-       3927      62  71836   26984    467  195.19  1848  OUTLOOK
-    ```
+  ```
+  Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)    Id  ProcessName
+  -------  ------  -----   ----- -----   ------    --  -----------
+      809      21  40856    4448    147    9.50  2288  iexplore
+      737      21  26036   16348    144   22.03  3860  iexplore
+       39       2   1024     388     30    0.08  3396  notepad
+     3927      62  71836   26984    467  195.19  1848  OUTLOOK
+  ```
 
 - Ange följande rader för att hämta de process objekt som har en `Name`-egenskap från processerna som kallas "iexplore". I det här exemplet används `Get-Process` cmdlet (tillhandahålls av Windows PowerShell) som ett uppströms kommando för att hämta processerna "iexplore".
 
-    ```powershell
-    PS> get-process iexplore | get-proc
-    ```
+  ```powershell
+  PS> get-process iexplore | get-proc
+  ```
 
-Följande utdata visas.
+  Följande utdata visas.
 
-    ```
-    Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)    Id  ProcessName
-    -------  ------  -----      ----- -----   ------     -- -----------
-        801      21  40720    6544    142    9.52  2288  iexplore
-        726      21  25872   16652    138   22.09  3860  iexplore
-        801      21  40720    6544    142    9.52  2288  iexplore
-        726      21  25872   16652    138   22.09  3860  iexplore
-    ```
+  ```
+  Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)    Id  ProcessName
+  -------  ------  -----   ----- -----   ------    --  -----------
+      801      21  40720    6544    142    9.52  2288  iexplore
+      726      21  25872   16652    138   22.09  3860  iexplore
+      801      21  40720    6544    142    9.52  2288  iexplore
+      726      21  25872   16652    138   22.09  3860  iexplore
+  ```
 
 ## <a name="see-also"></a>Se även
 
