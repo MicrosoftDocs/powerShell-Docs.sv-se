@@ -1,16 +1,16 @@
 ---
-title: PowerShell – format guide för dokument
+title: Stilguide för PowerShell-Docs
 description: Den här artikeln innehåller regler för format för att skriva PowerShell-dokumentation.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 964536c5195c3bb8abd98b5996a96fc7b9362489
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: b4bc547c3560538ba246a6ed582fd4f9ce796dd2
+ms.sourcegitcommit: bda70d2163eef5a158441cb1c38ac422d704535d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79407016"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81005592"
 ---
-# <a name="powershell-docs-style-guide"></a>PowerShell – format guide för dokument
+# <a name="powershell-docs-style-guide"></a>Stilguide för PowerShell-Docs
 
 Den här artikeln innehåller rikt linjer som är speciella för innehållet i PowerShell-dok. Detta bygger på den information som beskrivs i [översikten](overview.md#get-started-writing-docs).
 
@@ -57,7 +57,7 @@ Använd endast [ATX-rubriker][atx] (# Style, i stället för `=` eller `-` forma
 ### <a name="limit-line-length-to-100-characters"></a>Begränsa rad längden till 100 tecken
 
 Detta gäller för konceptuella artiklar och cmdlet-referens. About_topics är begränsade till 80 tecken.
-Genom att begränsa rad längden förbättras git-differenser och historik för läsbarhet. Det gör det också enklare för andra skrivare att göra bidrag.
+Att begränsa rad längden ger bättre läsbarhet i git-differenser och historik. Det gör det också enklare för andra skrivare att göra bidrag.
 
 Använd tillägget [Flow markdown][reflow] i Visual Studio Code för att enkelt ommontera stycken för att passa den angivna rad längden.
 
@@ -257,7 +257,7 @@ Det finns två typer av hyperlänkar som stöds av publicerings systemet: URL: e
 En URL-länk kan vara en URL-sökväg som är relativ till roten i docs.microsoft.com. Eller en absolut URL som innehåller fullständig URL-syntax. (Till exempel: `https:/github.com/MicrosoftDocs/PowerShell-Docs`)
 
 - Använd URL-länkar när du länkar till innehåll utanför PowerShell-dokument eller mellan cmdlet-referenser och konceptuella artiklar i PowerShell-dokument.
-- Det enklaste sättet att länka skapar en relativ länk är att kopiera URL: en från webbläsaren och sedan ta bort `https://docs.microsoft.com/en-us` från det värde som du klistrar in i markdown.
+- Det enklaste sättet att skapa en relativ länk är att kopiera URL: en från webbläsaren och sedan ta bort `https://docs.microsoft.com/en-us` från det värde som du klistrar in i markdown.
    - Ta inte med språk i URL: er för Microsoft-egenskaper (t. ex. ta bort "/en-US" från URL: en.
 - Alla URL: er till externa webbplatser bör använda HTTPS om det inte är giltigt för mål platsen.
 
@@ -416,7 +416,7 @@ Du bör alltid använda det fullständiga namnet på alla cmdletar och parametra
 
 ### <a name="using-parameters-in-examples"></a>Använda parametrar i exempel
 
-Undvik att använda positions parametrar. I allmänhet bör du använda inkludera alltid parameter namnet i ett exempel, även om parametern position. Detta minskar risken för förvirring i exemplen.
+Undvik att använda positions parametrar. I allmänhet bör du alltid inkludera parameter namnet i ett exempel, även om parametern är i position. Detta minskar risken för förvirring i exemplen.
 
 ## <a name="next-steps"></a>Nästa steg
 
