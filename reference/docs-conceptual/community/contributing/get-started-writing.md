@@ -3,12 +3,12 @@ title: Kom igång och bidra till PowerShell-dokumentationen
 description: Den här artikeln är en översikt över hur du kommer igång som en deltagare i PowerShell-dokumentationen.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 95eb2c3157a99fcb6560914da8464022e1b64fad
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.openlocfilehash: fdf29feb75abb6592205aaf1726c07a60ce3a924
+ms.sourcegitcommit: bda70d2163eef5a158441cb1c38ac422d704535d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79078558"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81005524"
 ---
 # <a name="get-started-contributing-to-powershell-documentation"></a>Kom igång och bidra till PowerShell-dokumentationen
 
@@ -55,7 +55,7 @@ Gör de ändringar som du vill skicka efter processen i avsnittet [göra din än
 
 Ett GitHub-problem måste skapas för alla nya dokument som du vill bidra. Sök efter befintliga problem för att se till att du inte duplicerar aktiviteter. Ärenden som tilldelas till någon anses vara "pågående". Om du vill samar beta om ett problem kontaktar du personen som har tilldelats problemet.
 
-Precis som i PowerShell [RFC-processen][rfc], vilket innebär att du skapar ett problem innan du skriver innehållet garanterar att du inte tillbringar mycket tid och ansträngning på något som avvisas av PowerShell-dokument-teamet. Detta gör det också möjligt för oss att kontakta dig med innehållets omfattning och var det ska få plats i PowerShell-dokumentationen.
+Precis som i PowerShell [RFC-processen][rfc], vilket innebär att du skapar ett problem innan du skriver innehållet garanterar att du inte tillbringar mycket tid och ansträngning på något som avvisas av PowerShell-dokument-teamet. Detta gör det också möjligt för oss att kontakta dig med innehålls området och var det ska få plats i PowerShell-dokumentationen.
 
 ### <a name="updating-existing-articles"></a>Befintliga artiklar uppdateras
 
