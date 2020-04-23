@@ -60,7 +60,7 @@
           items:
             - name: Översikt
               href: learn/remoting/jea/overview.md
-            - name: Krav
+            - name: Förutsättningar
               href: learn/remoting/jea/prerequisites.md
             - name: Rollfunktioner
               href: learn/remoting/jea/role-capabilities.md
@@ -150,7 +150,7 @@
               href: components/ise/object-model/the-powershelltabcollection-object.md
             - name: PowerShellTab-objektet
               href: components/ise/object-model/the-powershelltab-object.md
-    - name: Visual Studio-koden
+    - name: Visual Studio Code
       items:
         - name: Använda Visual Studio Code
           href: components/vscode/using-vscode.md
@@ -226,7 +226,7 @@
               href: gallery/how-to/managing-profile/creating-apikeys.md
         - name: Arbeta med privata PowerShellGet-lagringsplatser
           href: gallery/how-to/working-with-local-psrepositories.md
-    - name: Begrepp
+    - name: Koncept
       items:
         - name: Publicera riktlinjer och metodtips
           href: gallery/concepts/publishing-guidelines.md
@@ -384,7 +384,7 @@
           href: dsc/quickstarts/website-quickStart.md
     - name: Konfigurationer
       items:
-        - name: Begrepp
+        - name: Koncept
           items:
             - name: Vad är en konfiguration?
               href: dsc/configurations/configurations.md
@@ -430,7 +430,7 @@
                   href: dsc/configurations/reboot-a-node.md
     - name: Resurser
       items:
-        - name: Begrepp
+        - name: Koncept
           items:
             - name: Vad är resurser?
               href: dsc/resources/resources.md
@@ -442,7 +442,7 @@
               href: dsc/resources/singleInstance.md
             - name: Checklista för resursskapande
               href: dsc/resources/resourceAuthoringChecklist.md
-        - name: Anvisningar
+        - name: Instruktionsguider
           items:
             - name: Skriva MOF-baserade resurser i PowerShell
               href: dsc/resources/authoringResourceMOF.md
@@ -456,7 +456,7 @@
               href: dsc/resources/authoringResourceMofDesigner.md
     - name: Hantera noder
       items:
-        - name: Anvisningar
+        - name: Instruktionsguider
           items:
             - name: 'Tillämpa, hämta och testa konfigurationer på en nod'
               href: dsc/managing-nodes/apply-get-test.md
@@ -468,11 +468,11 @@
               href: dsc/managing-nodes/directCallResource.md
     - name: Hämtningsserver
       items:
-        - name: Begrepp
+        - name: Koncept
           items:
             - name: Push-/hämtningsmodell
               href: dsc/pull-server/enactingConfigurations.md
-        - name: Anvisningar
+        - name: Instruktionsguider
           items:
             - name: Konfigurera en hämtningsserver
               items:
@@ -642,7 +642,7 @@
               href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md
     - name: Mer information
       items:
-        - name: Faktablad
+        - name: Faktablad (white paper)
           href: dsc/further-reading/whitepapers.md
 - name: Exempelskript
   items:
@@ -791,7 +791,7 @@
               items:
                 - name: Översikt över uppdateringsbar hjälp
                   href: developer/module/updatable-help-overview.md
-                - name: 'Redigering av uppdateringsbar hjälp: Steg för steg'
+                - name: 'Redigering av uppdateringsbar hjälp: steg för steg'
                   href: developer/module/updatable-help-authoring-step-by-step.md
                 - name: Så här fungerar uppdateringsbar hjälp
                   href: developer/module/how-updatable-help-works.md
