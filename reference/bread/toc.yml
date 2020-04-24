@@ -6,9 +6,9 @@
       tocHref: /powershell/
       topicHref: /powershell
       items:
-        - name: Skriptning
+        - name: Skript
           tocHref: /powershell/scripting/
           topicHref: /powershell/scripting/index
-        - name: Skriptning
+        - name: Skript
           tocHref: /powershell/module/
           topicHref: /powershell/scripting/index
