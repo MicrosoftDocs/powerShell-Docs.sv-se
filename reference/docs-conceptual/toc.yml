@@ -60,7 +60,7 @@
           items:
             - name: Översikt
               href: learn/remoting/jea/overview.md
-            - name: Förutsättningar
+            - name: Krav
               href: learn/remoting/jea/prerequisites.md
             - name: Rollfunktioner
               href: learn/remoting/jea/role-capabilities.md
@@ -150,7 +150,7 @@
               href: components/ise/object-model/the-powershelltabcollection-object.md
             - name: PowerShellTab-objektet
               href: components/ise/object-model/the-powershelltab-object.md
-    - name: Visual Studio Code
+    - name: Visual Studio-koden
       items:
         - name: Använda Visual Studio Code
           href: components/vscode/using-vscode.md
@@ -226,7 +226,7 @@
               href: gallery/how-to/managing-profile/creating-apikeys.md
         - name: Arbeta med privata PowerShellGet-lagringsplatser
           href: gallery/how-to/working-with-local-psrepositories.md
-    - name: Koncept
+    - name: Begrepp
       items:
         - name: Publicera riktlinjer och metodtips
           href: gallery/concepts/publishing-guidelines.md
@@ -372,9 +372,9 @@
         - name: Komma igång med DSC på Nano
           href: dsc/getting-started/nanoDSC.md
         - name: Komma igång med DSC i Azure Automation
-          href: dsc/getting-started/azureDSC.md
-        - name: Komma igång med DSC på Azure Virtual Machines
-          href: dsc/getting-started/azureDSCexthistory.md
+          href: /azure/automation/automation-dsc-getting-started
+        - name: Komma igång med Azure Policy’s gästkonfiguration
+          href: /azure/governance/policy/concepts/guest-configuration
     - name: Snabbstarter
       expanded: true
       items:
@@ -384,7 +384,7 @@
           href: dsc/quickstarts/website-quickStart.md
     - name: Konfigurationer
       items:
-        - name: Koncept
+        - name: Begrepp
           items:
             - name: Vad är en konfiguration?
               href: dsc/configurations/configurations.md
@@ -430,7 +430,7 @@
                   href: dsc/configurations/reboot-a-node.md
     - name: Resurser
       items:
-        - name: Koncept
+        - name: Begrepp
           items:
             - name: Vad är resurser?
               href: dsc/resources/resources.md
@@ -442,7 +442,7 @@
               href: dsc/resources/singleInstance.md
             - name: Checklista för resursskapande
               href: dsc/resources/resourceAuthoringChecklist.md
-        - name: Instruktionsguider
+        - name: Anvisningar
           items:
             - name: Skriva MOF-baserade resurser i PowerShell
               href: dsc/resources/authoringResourceMOF.md
@@ -456,7 +456,7 @@
               href: dsc/resources/authoringResourceMofDesigner.md
     - name: Hantera noder
       items:
-        - name: Instruktionsguider
+        - name: Anvisningar
           items:
             - name: 'Tillämpa, hämta och testa konfigurationer på en nod'
               href: dsc/managing-nodes/apply-get-test.md
@@ -468,11 +468,11 @@
               href: dsc/managing-nodes/directCallResource.md
     - name: Hämtningsserver
       items:
-        - name: Koncept
+        - name: Begrepp
           items:
             - name: Push-/hämtningsmodell
               href: dsc/pull-server/enactingConfigurations.md
-        - name: Instruktionsguider
+        - name: Anvisningar
           items:
             - name: Konfigurera en hämtningsserver
               items:
@@ -642,7 +642,7 @@
               href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md
     - name: Mer information
       items:
-        - name: Faktablad (white paper)
+        - name: Faktablad
           href: dsc/further-reading/whitepapers.md
 - name: Exempelskript
   items:
@@ -791,7 +791,7 @@
               items:
                 - name: Översikt över uppdateringsbar hjälp
                   href: developer/module/updatable-help-overview.md
-                - name: 'Redigering av uppdateringsbar hjälp: steg för steg'
+                - name: 'Redigering av uppdateringsbar hjälp: Steg för steg'
                   href: developer/module/updatable-help-authoring-step-by-step.md
                 - name: Så här fungerar uppdateringsbar hjälp
                   href: developer/module/how-updatable-help-works.md
