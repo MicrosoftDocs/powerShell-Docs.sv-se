@@ -3,25 +3,25 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skrivhjälp för DSC-konfigurationer
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942078"
 ---
-# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="1631f-103">Skrivhjälp för DSC-konfigurationer</span><span class="sxs-lookup"><span data-stu-id="1631f-103">Writing help for DSC configurations</span></span>
+# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="dfdf6-103">Skrivhjälp för DSC-konfigurationer</span><span class="sxs-lookup"><span data-stu-id="dfdf6-103">Writing help for DSC configurations</span></span>
 
-><span data-ttu-id="1631f-104">Gäller för: Windows PowerShell 5,0</span><span class="sxs-lookup"><span data-stu-id="1631f-104">Applies To: Windows PowerShell 5.0</span></span>
+><span data-ttu-id="dfdf6-104">Gäller för: Windows PowerShell 5,0</span><span class="sxs-lookup"><span data-stu-id="dfdf6-104">Applies To: Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="1631f-105">Du kan använda kommenterings-baserad hjälp i DSC-konfigurationer.</span><span class="sxs-lookup"><span data-stu-id="1631f-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="1631f-106">Användare kan komma åt hjälpen genom att anropa **konfigurationen** med `-?`eller genom att använda cmdleten [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) .</span><span class="sxs-lookup"><span data-stu-id="1631f-106">Users can access the help by calling the **Configuration** with `-?`, or by using the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet.</span></span> <span data-ttu-id="1631f-107">Placera den kommenterade hjälpen direkt ovanför `Configuration` nyckelord.</span><span class="sxs-lookup"><span data-stu-id="1631f-107">Place your Comment-based help directly above the `Configuration` keyword.</span></span>
-<span data-ttu-id="1631f-108">Du kan placera parameter hjälpen i rad med ditt kommentar block, direkt ovanför parameter deklarationen eller båda som i exemplet nedan.</span><span class="sxs-lookup"><span data-stu-id="1631f-108">You can place parameter help in-line with your comment block, directly above the parameter declaration, or both as in the example below.</span></span>
+<span data-ttu-id="dfdf6-105">Du kan använda kommenterings-baserad hjälp i DSC-konfigurationer.</span><span class="sxs-lookup"><span data-stu-id="dfdf6-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="dfdf6-106">Användarna kan komma åt hjälpen genom att anropa **konfigurationen** med `-?`eller genom att använda cmdleten [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) .</span><span class="sxs-lookup"><span data-stu-id="dfdf6-106">Users can access the help by calling the **Configuration** with `-?`, or by using the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet.</span></span> <span data-ttu-id="dfdf6-107">Placera din kommenterings-baserade hjälp direkt ovanför `Configuration` nyckelordet.</span><span class="sxs-lookup"><span data-stu-id="dfdf6-107">Place your Comment-based help directly above the `Configuration` keyword.</span></span>
+<span data-ttu-id="dfdf6-108">Du kan placera parameter hjälpen i rad med ditt kommentar block, direkt ovanför parameter deklarationen eller båda som i exemplet nedan.</span><span class="sxs-lookup"><span data-stu-id="dfdf6-108">You can place parameter help in-line with your comment block, directly above the parameter declaration, or both as in the example below.</span></span>
 
-<span data-ttu-id="1631f-109">Mer information om PowerShell-Kommentering-baserad hjälp finns [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span><span class="sxs-lookup"><span data-stu-id="1631f-109">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
+<span data-ttu-id="dfdf6-109">Mer information om PowerShell-Kommentering-baserad hjälp finns [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span><span class="sxs-lookup"><span data-stu-id="dfdf6-109">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="1631f-110">PowerShell-utvecklings miljöer, t. ex. VSCode och ISE, har också kodfragment som gör att du automatiskt kan infoga mallar för kommenterings block.</span><span class="sxs-lookup"><span data-stu-id="1631f-110">PowerShell development environments, like VSCode and the ISE, also have snippets to allow you to automatically insert comment block templates.</span></span>
+> <span data-ttu-id="dfdf6-110">PowerShell-utvecklings miljöer, t. ex. VSCode och ISE, har också kodfragment som gör att du automatiskt kan infoga mallar för kommenterings block.</span><span class="sxs-lookup"><span data-stu-id="dfdf6-110">PowerShell development environments, like VSCode and the ISE, also have snippets to allow you to automatically insert comment block templates.</span></span>
 
-<span data-ttu-id="1631f-111">I följande exempel visas ett skript som innehåller en konfiguration och en kommenterings-baserad hjälp för det.</span><span class="sxs-lookup"><span data-stu-id="1631f-111">The following example shows a script that contains a configuration and comment-based help for it.</span></span> <span data-ttu-id="1631f-112">I det här exemplet visas en konfiguration med parametrar.</span><span class="sxs-lookup"><span data-stu-id="1631f-112">This example shows a Configuration with parameters.</span></span> <span data-ttu-id="1631f-113">Mer information om hur du använder parametrar i dina konfigurationer finns i [lägga till parametrar i dina konfigurationer](add-parameters-to-a-configuration.md).</span><span class="sxs-lookup"><span data-stu-id="1631f-113">To learn more about using parameters in your Configurations, see [Add Parameters to your Configurations](add-parameters-to-a-configuration.md).</span></span>
+<span data-ttu-id="dfdf6-111">I följande exempel visas ett skript som innehåller en konfiguration och en kommenterings-baserad hjälp för det.</span><span class="sxs-lookup"><span data-stu-id="dfdf6-111">The following example shows a script that contains a configuration and comment-based help for it.</span></span> <span data-ttu-id="dfdf6-112">I det här exemplet visas en konfiguration med parametrar.</span><span class="sxs-lookup"><span data-stu-id="dfdf6-112">This example shows a Configuration with parameters.</span></span> <span data-ttu-id="dfdf6-113">Mer information om hur du använder parametrar i dina konfigurationer finns i [lägga till parametrar i dina konfigurationer](add-parameters-to-a-configuration.md).</span><span class="sxs-lookup"><span data-stu-id="dfdf6-113">To learn more about using parameters in your Configurations, see [Add Parameters to your Configurations](add-parameters-to-a-configuration.md).</span></span>
 
 ```powershell
 <#
@@ -75,9 +75,9 @@ configuration HelpSample1
 }
 ```
 
-## <a name="viewing-configuration-help"></a><span data-ttu-id="1631f-114">Visa konfigurations hjälp</span><span class="sxs-lookup"><span data-stu-id="1631f-114">Viewing configuration help</span></span>
+## <a name="viewing-configuration-help"></a><span data-ttu-id="dfdf6-114">Visa konfigurations hjälp</span><span class="sxs-lookup"><span data-stu-id="dfdf6-114">Viewing configuration help</span></span>
 
-<span data-ttu-id="1631f-115">Om du vill visa hjälpen för en konfiguration använder du cmdleten `Get-Help` med namnet på funktionen eller skriver namnet på funktionen följt av `-?`.</span><span class="sxs-lookup"><span data-stu-id="1631f-115">To view the help for a configuration, use the `Get-Help` cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="1631f-116">Följande är resultatet av den föregående konfigurationen som skickades till `Get-Help`.</span><span class="sxs-lookup"><span data-stu-id="1631f-116">The following is the output of the previous Configuration passed to `Get-Help`.</span></span>
+<span data-ttu-id="dfdf6-115">Om du vill visa hjälpen för en konfiguration använder du `Get-Help` cmdleten med namnet på funktionen eller skriver namnet på funktionen följt av `-?`.</span><span class="sxs-lookup"><span data-stu-id="dfdf6-115">To view the help for a configuration, use the `Get-Help` cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="dfdf6-116">Följande är resultatet av den föregående konfigurationen som skickades till `Get-Help`.</span><span class="sxs-lookup"><span data-stu-id="dfdf6-116">The following is the output of the previous Configuration passed to `Get-Help`.</span></span>
 
 ```powershell
 Get-Help HelpSample1 -Detailed
@@ -157,10 +157,10 @@ REMARKS
 ```
 
 > [!NOTE]
-> <span data-ttu-id="1631f-117">Syntax-fält och parameter-attribut genereras automatiskt av PowerShell.</span><span class="sxs-lookup"><span data-stu-id="1631f-117">Syntax fields and parameter attributes are automatically generated for you by PowerShell.</span></span>
+> <span data-ttu-id="dfdf6-117">Syntax-fält och parameter-attribut genereras automatiskt av PowerShell.</span><span class="sxs-lookup"><span data-stu-id="dfdf6-117">Syntax fields and parameter attributes are automatically generated for you by PowerShell.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="1631f-118">Se även</span><span class="sxs-lookup"><span data-stu-id="1631f-118">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="dfdf6-118">Se även</span><span class="sxs-lookup"><span data-stu-id="dfdf6-118">See Also</span></span>
 
-- [<span data-ttu-id="1631f-119">DSC-konfigurationer</span><span class="sxs-lookup"><span data-stu-id="1631f-119">DSC Configurations</span></span>](configurations.md)
-- [<span data-ttu-id="1631f-120">Skriva, kompilera och tillämpa en konfiguration</span><span class="sxs-lookup"><span data-stu-id="1631f-120">Write, Compile, and Apply a Configuration</span></span>](write-compile-apply-configuration.md)
-- [<span data-ttu-id="1631f-121">Lägga till parametrar till en konfiguration</span><span class="sxs-lookup"><span data-stu-id="1631f-121">Add Parameters to a Configuration</span></span>](add-parameters-to-a-configuration.md)
+- [<span data-ttu-id="dfdf6-119">DSC-konfigurationer</span><span class="sxs-lookup"><span data-stu-id="dfdf6-119">DSC Configurations</span></span>](configurations.md)
+- [<span data-ttu-id="dfdf6-120">Skriva, kompilera och tillämpa en konfiguration</span><span class="sxs-lookup"><span data-stu-id="dfdf6-120">Write, Compile, and Apply a Configuration</span></span>](write-compile-apply-configuration.md)
+- [<span data-ttu-id="dfdf6-121">Lägga till parametrar i en konfiguration</span><span class="sxs-lookup"><span data-stu-id="dfdf6-121">Add Parameters to a Configuration</span></span>](add-parameters-to-a-configuration.md)

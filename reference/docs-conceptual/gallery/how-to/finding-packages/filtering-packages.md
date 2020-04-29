@@ -4,56 +4,56 @@ contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Filtrera Sök Resultat
 ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328870"
 ---
-# <a name="filtering-search-results"></a><span data-ttu-id="4166b-103">Filtrera Sök Resultat</span><span class="sxs-lookup"><span data-stu-id="4166b-103">Filtering search results</span></span>
+# <a name="filtering-search-results"></a><span data-ttu-id="7600a-103">Filtrera Sök Resultat</span><span class="sxs-lookup"><span data-stu-id="7600a-103">Filtering search results</span></span>
 
-<span data-ttu-id="4166b-104">[Fliken paket](https://www.powershellgallery.com/packages) visar alla tillgängliga paket i PowerShell-galleriet.</span><span class="sxs-lookup"><span data-stu-id="4166b-104">The [Packages tab](https://www.powershellgallery.com/packages) displays all available packages in the PowerShell Gallery.</span></span>
+<span data-ttu-id="7600a-104">[Fliken paket](https://www.powershellgallery.com/packages) visar alla tillgängliga paket i PowerShell-galleriet.</span><span class="sxs-lookup"><span data-stu-id="7600a-104">The [Packages tab](https://www.powershellgallery.com/packages) displays all available packages in the PowerShell Gallery.</span></span>
 
-<span data-ttu-id="4166b-105">Det finns flera sätt att filtrera, sortera och söka i paketen.</span><span class="sxs-lookup"><span data-stu-id="4166b-105">There are several ways to filter, sort, and search the packages.</span></span>
-<span data-ttu-id="4166b-106">Klicka på paketet om du vill se mer information om ett visst paket.</span><span class="sxs-lookup"><span data-stu-id="4166b-106">To see more details about a particular package, click the package.</span></span>
+<span data-ttu-id="7600a-105">Det finns flera sätt att filtrera, sortera och söka i paketen.</span><span class="sxs-lookup"><span data-stu-id="7600a-105">There are several ways to filter, sort, and search the packages.</span></span>
+<span data-ttu-id="7600a-106">Klicka på paketet om du vill se mer information om ett visst paket.</span><span class="sxs-lookup"><span data-stu-id="7600a-106">To see more details about a particular package, click the package.</span></span>
 
-## <a name="filter-by"></a><span data-ttu-id="4166b-107">Filtrera efter</span><span class="sxs-lookup"><span data-stu-id="4166b-107">Filter By</span></span>
+## <a name="filter-by"></a><span data-ttu-id="7600a-107">Filtrera efter</span><span class="sxs-lookup"><span data-stu-id="7600a-107">Filter By</span></span>
 
-<span data-ttu-id="4166b-108">Med list rutan filtrera efter kan användare filtrera resultaten genom att:</span><span class="sxs-lookup"><span data-stu-id="4166b-108">The drop-down under "Filter By" allows users to filter the results by:</span></span>
-- <span data-ttu-id="4166b-109">Inkludera för hands version</span><span class="sxs-lookup"><span data-stu-id="4166b-109">Include Prerelease</span></span>
-- <span data-ttu-id="4166b-110">Endast stabilt</span><span class="sxs-lookup"><span data-stu-id="4166b-110">Stable Only</span></span>
+<span data-ttu-id="7600a-108">Med list rutan filtrera efter kan användare filtrera resultaten genom att:</span><span class="sxs-lookup"><span data-stu-id="7600a-108">The drop-down under "Filter By" allows users to filter the results by:</span></span>
+- <span data-ttu-id="7600a-109">Inkludera för hands version</span><span class="sxs-lookup"><span data-stu-id="7600a-109">Include Prerelease</span></span>
+- <span data-ttu-id="7600a-110">Endast stabilt</span><span class="sxs-lookup"><span data-stu-id="7600a-110">Stable Only</span></span>
 
-<span data-ttu-id="4166b-111">Information om "för hands version" och "stabil" finns i [för hands versions tillägg som läggs till i PowerShellGet och PowerShell-galleriet](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) i PowerShell-teamets blogg.</span><span class="sxs-lookup"><span data-stu-id="4166b-111">For information about "Prerelease" and "Stable", see [Prerelease Versioning Added to PowerShellGet and PowerShell Gallery](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) in the PowerShell Team Blog.</span></span>
+<span data-ttu-id="7600a-111">Information om "för hands version" och "stabil" finns i [för hands versions tillägg som läggs till i PowerShellGet och PowerShell-galleriet](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) i PowerShell-teamets blogg.</span><span class="sxs-lookup"><span data-stu-id="7600a-111">For information about "Prerelease" and "Stable", see [Prerelease Versioning Added to PowerShellGet and PowerShell Gallery](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) in the PowerShell Team Blog.</span></span>
 
-<span data-ttu-id="4166b-112">Med kryss rutorna under List rutan kan användarna filtrera resultaten genom att:</span><span class="sxs-lookup"><span data-stu-id="4166b-112">The checkboxes under the drop-down allow users to filter the results by:</span></span>
-- <span data-ttu-id="4166b-113">Paket typer</span><span class="sxs-lookup"><span data-stu-id="4166b-113">Package Types</span></span>
-  - <span data-ttu-id="4166b-114">Modul</span><span class="sxs-lookup"><span data-stu-id="4166b-114">Module</span></span>
-  - <span data-ttu-id="4166b-115">Skript</span><span class="sxs-lookup"><span data-stu-id="4166b-115">Script</span></span>
-- <span data-ttu-id="4166b-116">Categories</span><span class="sxs-lookup"><span data-stu-id="4166b-116">Categories</span></span>
-  - <span data-ttu-id="4166b-117">Cmdlet</span><span class="sxs-lookup"><span data-stu-id="4166b-117">Cmdlet</span></span>
-  - <span data-ttu-id="4166b-118">DSC-resurs</span><span class="sxs-lookup"><span data-stu-id="4166b-118">DSC Resource</span></span>
-  - <span data-ttu-id="4166b-119">Funktion</span><span class="sxs-lookup"><span data-stu-id="4166b-119">Function</span></span>
-  - <span data-ttu-id="4166b-120">Roll kapacitet</span><span class="sxs-lookup"><span data-stu-id="4166b-120">Role Capability</span></span>
-  - <span data-ttu-id="4166b-121">Arbetsflöde</span><span class="sxs-lookup"><span data-stu-id="4166b-121">Workflow</span></span>
+<span data-ttu-id="7600a-112">Med kryss rutorna under List rutan kan användarna filtrera resultaten genom att:</span><span class="sxs-lookup"><span data-stu-id="7600a-112">The checkboxes under the drop-down allow users to filter the results by:</span></span>
+- <span data-ttu-id="7600a-113">Paket typer</span><span class="sxs-lookup"><span data-stu-id="7600a-113">Package Types</span></span>
+  - <span data-ttu-id="7600a-114">Modul</span><span class="sxs-lookup"><span data-stu-id="7600a-114">Module</span></span>
+  - <span data-ttu-id="7600a-115">Skript</span><span class="sxs-lookup"><span data-stu-id="7600a-115">Script</span></span>
+- <span data-ttu-id="7600a-116">Kategorier</span><span class="sxs-lookup"><span data-stu-id="7600a-116">Categories</span></span>
+  - <span data-ttu-id="7600a-117">Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7600a-117">Cmdlet</span></span>
+  - <span data-ttu-id="7600a-118">DSC-resurs</span><span class="sxs-lookup"><span data-stu-id="7600a-118">DSC Resource</span></span>
+  - <span data-ttu-id="7600a-119">Funktion</span><span class="sxs-lookup"><span data-stu-id="7600a-119">Function</span></span>
+  - <span data-ttu-id="7600a-120">Roll kapacitet</span><span class="sxs-lookup"><span data-stu-id="7600a-120">Role Capability</span></span>
+  - <span data-ttu-id="7600a-121">Arbetsflöde</span><span class="sxs-lookup"><span data-stu-id="7600a-121">Workflow</span></span>
 
-<span data-ttu-id="4166b-122">Om du bara vill se moduler i PowerShell-galleriet kontrollerar du modulen i paket typerna.</span><span class="sxs-lookup"><span data-stu-id="4166b-122">To see only modules in the PowerShell Gallery, check Module in the Package Types.</span></span>
-<span data-ttu-id="4166b-123">På samma sätt kan du kontrol lera skriptet i paket typerna om du bara vill se skript i PowerShell-galleriet.</span><span class="sxs-lookup"><span data-stu-id="4166b-123">Similarly, to see only scripts in the PowerShell Gallery, check Script in the Package Types.</span></span>
+<span data-ttu-id="7600a-122">Om du bara vill se moduler i PowerShell-galleriet kontrollerar du modulen i paket typerna.</span><span class="sxs-lookup"><span data-stu-id="7600a-122">To see only modules in the PowerShell Gallery, check Module in the Package Types.</span></span>
+<span data-ttu-id="7600a-123">På samma sätt kan du kontrol lera skriptet i paket typerna om du bara vill se skript i PowerShell-galleriet.</span><span class="sxs-lookup"><span data-stu-id="7600a-123">Similarly, to see only scripts in the PowerShell Gallery, check Script in the Package Types.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="4166b-124">Filtren är inkluderade.</span><span class="sxs-lookup"><span data-stu-id="4166b-124">Filters are inclusive.</span></span>
-> <span data-ttu-id="4166b-125">Exempel: ett paket som innehåller båda cmdletar och funktioner visas om antingen cmdlet eller function (eller båda) är markerade.</span><span class="sxs-lookup"><span data-stu-id="4166b-125">Example: A package containing both cmdlets and functions will appear if either Cmdlet or Function (or both) are checked.</span></span>
-> <span data-ttu-id="4166b-126">Om ingen väljs visas inte paketet.</span><span class="sxs-lookup"><span data-stu-id="4166b-126">If neither are selected, the package will not appear.</span></span>
-> <span data-ttu-id="4166b-127">På samma sätt visas bara paket som innehåller en av dessa kategorier om du väljer alla kategorier.</span><span class="sxs-lookup"><span data-stu-id="4166b-127">Similarly, if all categories are selected, only packages containing one of those categories will appear.</span></span>
-> <span data-ttu-id="4166b-128">**Paket som inte tillhör någon av dessa kategorier visas inte.**</span><span class="sxs-lookup"><span data-stu-id="4166b-128">**Packages that do not belong to any of those categories will not appear.**</span></span>
+> <span data-ttu-id="7600a-124">Filtren är inkluderade.</span><span class="sxs-lookup"><span data-stu-id="7600a-124">Filters are inclusive.</span></span>
+> <span data-ttu-id="7600a-125">Exempel: ett paket som innehåller båda cmdletar och funktioner visas om antingen cmdlet eller function (eller båda) är markerade.</span><span class="sxs-lookup"><span data-stu-id="7600a-125">Example: A package containing both cmdlets and functions will appear if either Cmdlet or Function (or both) are checked.</span></span>
+> <span data-ttu-id="7600a-126">Om ingen väljs visas inte paketet.</span><span class="sxs-lookup"><span data-stu-id="7600a-126">If neither are selected, the package will not appear.</span></span>
+> <span data-ttu-id="7600a-127">På samma sätt visas bara paket som innehåller en av dessa kategorier om du väljer alla kategorier.</span><span class="sxs-lookup"><span data-stu-id="7600a-127">Similarly, if all categories are selected, only packages containing one of those categories will appear.</span></span>
+> <span data-ttu-id="7600a-128">**Paket som inte tillhör någon av dessa kategorier visas inte.**</span><span class="sxs-lookup"><span data-stu-id="7600a-128">**Packages that do not belong to any of those categories will not appear.**</span></span>
 
-## <a name="sort-by"></a><span data-ttu-id="4166b-129">Sortera efter</span><span class="sxs-lookup"><span data-stu-id="4166b-129">Sort By</span></span>
+## <a name="sort-by"></a><span data-ttu-id="7600a-129">Sortera efter</span><span class="sxs-lookup"><span data-stu-id="7600a-129">Sort By</span></span>
 
-<span data-ttu-id="4166b-130">I list rutan Sortera enligt kan användarna sortera resultaten genom att:</span><span class="sxs-lookup"><span data-stu-id="4166b-130">The Sort By drop-down allows users to sort the results by:</span></span>
-- <span data-ttu-id="4166b-131">Popularitet – populariteten bestäms av antalet hämtningar</span><span class="sxs-lookup"><span data-stu-id="4166b-131">Popularity - Popularity is determined by Download Count</span></span>
-- <span data-ttu-id="4166b-132">A-Z-alfabetiskt efter paket namn</span><span class="sxs-lookup"><span data-stu-id="4166b-132">A-Z - Alphabetically by package name</span></span>
-- <span data-ttu-id="4166b-133">Senaste-paket visas i ordning av Publicerings datum</span><span class="sxs-lookup"><span data-stu-id="4166b-133">Recent - Packages appear in order of publish date</span></span>
+<span data-ttu-id="7600a-130">I list rutan Sortera enligt kan användarna sortera resultaten genom att:</span><span class="sxs-lookup"><span data-stu-id="7600a-130">The Sort By drop-down allows users to sort the results by:</span></span>
+- <span data-ttu-id="7600a-131">Popularitet – populariteten bestäms av antalet hämtningar</span><span class="sxs-lookup"><span data-stu-id="7600a-131">Popularity - Popularity is determined by Download Count</span></span>
+- <span data-ttu-id="7600a-132">A-Z-alfabetiskt efter paket namn</span><span class="sxs-lookup"><span data-stu-id="7600a-132">A-Z - Alphabetically by package name</span></span>
+- <span data-ttu-id="7600a-133">Senaste-paket visas i ordning av Publicerings datum</span><span class="sxs-lookup"><span data-stu-id="7600a-133">Recent - Packages appear in order of publish date</span></span>
 
-## <a name="search-box"></a><span data-ttu-id="4166b-134">Sökruta</span><span class="sxs-lookup"><span data-stu-id="4166b-134">Search Box</span></span>
+## <a name="search-box"></a><span data-ttu-id="7600a-134">Sökruta</span><span class="sxs-lookup"><span data-stu-id="7600a-134">Search Box</span></span>
 
-<span data-ttu-id="4166b-135">Med sökrutan kan användarna söka igenom paketen efter nyckelord.</span><span class="sxs-lookup"><span data-stu-id="4166b-135">The Search Box allows users to search the packages on keywords.</span></span>
-<span data-ttu-id="4166b-136">Mer information finns i [syntax för Galleri sökning](search-syntax.md).</span><span class="sxs-lookup"><span data-stu-id="4166b-136">For more information, see [Gallery Search Syntax](search-syntax.md).</span></span>
+<span data-ttu-id="7600a-135">Med sökrutan kan användarna söka igenom paketen efter nyckelord.</span><span class="sxs-lookup"><span data-stu-id="7600a-135">The Search Box allows users to search the packages on keywords.</span></span>
+<span data-ttu-id="7600a-136">Mer information finns i [syntax för Galleri sökning](search-syntax.md).</span><span class="sxs-lookup"><span data-stu-id="7600a-136">For more information, see [Gallery Search Syntax](search-syntax.md).</span></span>
