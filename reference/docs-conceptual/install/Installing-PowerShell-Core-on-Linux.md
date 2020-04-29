@@ -2,58 +2,58 @@
 title: Installera PowerShell i Linux
 description: Information om hur du installerar PowerShell på olika Linux-distributioner
 ms.date: 03/09/2020
-ms.openlocfilehash: 31da32b81dbbcf4b46fd5f0cd9d921f28f434763
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: 201bb693c3473f6b1f05d860562b1fc132912bb2
+ms.sourcegitcommit: 7c7f8bb9afdc592d07bf7ff4179d000a48716f13
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500553"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82174150"
 ---
 # <a name="installing-powershell-on-linux"></a>Installera PowerShell i Linux
 
-Stöder [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Ubuntu 19,04][u1904], [Debian 8][deb8], [Debian 9][deb9], [Debian 10][deb10], [alpina 3,9 och 3,10][alpine], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE skottår 15][opensuse], [Fedora 28][fedora], [Fedora 29][fedora], [Fedora 30][fedora]och [båge Linux][arch].
-
-För Linux-distributioner som inte stöds officiellt kan du försöka installera PowerShell med hjälp av [PowerShell-Snap-paketet][snap]. Du kan också prova att distribuera PowerShell-binärfiler direkt med hjälp av Linux [`tar.gz` arkivet][tar], men du måste konfigurera de nödvändiga beroendena baserat på operativ systemet i separata steg.
-
-Alla paket är tillgängliga på vår GitHub- [releases][] -sida. När paketet har installerats kör du `pwsh` från en Terminal. Kör `pwsh-preview` om du har installerat en för [hands version](#installing-preview-releases).
+Alla paket är tillgängliga på vår GitHub- [releases][] -sida. När paketet har installerats kör `pwsh` du från en Terminal. Kör `pwsh-preview` om du har installerat en för [hands version](#installing-preview-releases).
 
 > [!NOTE]
 > PowerShell 7 är en uppgradering på plats som tar bort PowerShell Core 6. x.
 >
-> Mappen `/usr/local/microsoft/powershell/6` ersätts av `/usr/local/microsoft/powershell/7`.
+> `/usr/local/microsoft/powershell/6` Mappen ersätts av `/usr/local/microsoft/powershell/7`.
 >
 > Om du behöver köra PowerShell 6 sida vid sida med PowerShell 7 installerar du om PowerShell 6 med hjälp av metoden för [binärt Arkiv](#binary-archives) .
 
-[u16]: #ubuntu-1604
-[u1804]: #ubuntu-1804
-[u1810]: #ubuntu-1810
-[u1904]: #ubuntu-1904
-[deb8]: #debian-8
-[deb9]: #debian-9
-[deb10]: #debian-10
-[alpine]: #alpine-39-and-310
-[cos]: #centos-7
-[rhel7]: #red-hat-enterprise-linux-rhel-7
-[opensuse]: #opensuse
-[fedora]: #fedora
-[arch]: #arch-linux
+För Linux-distributioner som inte stöds officiellt kan du försöka installera PowerShell med hjälp av [PowerShell-Snap-paketet][snap]. Du kan också prova att distribuera PowerShell-binärfiler direkt med [ `tar.gz` ][tar]Linux-arkivet, men du måste konfigurera de nödvändiga beroendena baserat på operativ systemet i separata steg.
+
 [snap]: #snap-package
 [tar]: #binary-archives
 
+Officiellt versioner som stöds
 
-## <a name="installing-preview-releases"></a>Installera för hands versioner
+- Ubuntu 16.04
+- Ubuntu 18.04
+- Debian 8
+- Debian 9
+- Debian 10
+- Alpina 3,9 och 3,10
+- CentOS 7
+- Red Hat Enterprise Linux (RHEL) 7
+- Fedora 28
+- Fedora 29
+- Fedora 30
+- openSUSE 42,3
+- openSUSE-skottår 15
 
-När du installerar en PowerShell Preview-version för Linux via en paket lagrings plats ändras paket namnet från `powershell` till `powershell-preview`.
+Versioner som stöds av community
 
-Installation via direkt hämtning ändras inte, förutom fil namnet.
+- Ubuntu 18,10
+- Ubuntu 19,04
+- Båge Linux
+- Kali
+- Raspbian (experimentell)
 
-Följande tabell innehåller kommandon för att installera stabila och förhands gransknings paket med hjälp av de olika paket ansvariga:
+Alternativa installations metoder
 
-| Distribution (er) |            Stabilt kommando            |               Förhandsgranska kommando                |
-| --------------- | ------------------------------------ | -------------------------------------------- |
-| Ubuntu, Debian  | `sudo apt-get install -y powershell` | `sudo apt-get install -y powershell-preview` |
-| CentOS, RedHat  | `sudo yum install -y powershell`     | `sudo yum install -y powershell-preview`     |
-| Fedora          | `sudo dnf install -y powershell`     | `sudo dnf install -y powershell-preview`     |
+- Snapin-paket
+- Binära Arkiv
+- Globalt .NET-verktyg
 
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
@@ -84,7 +84,7 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Installation via direkt hämtning – Ubuntu 16,04
 
-Ladda ned Debian-paketet `powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb` från sidan [releases][] till Ubuntu-datorn.
+Ladda ned Debian- `powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb` paketet från sidan [releases][] på Ubuntu-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -94,7 +94,7 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> `dpkg -i` kommandot Miss lyckas med ouppfyllda-beroenden. Nästa kommando, `apt-get install -f` löser problemen och Slutför konfigurationen av PowerShell-paketet.
+> Kommandot `dpkg -i` kan inte utföras med ouppfyllda-beroenden. Nästa kommando `apt-get install -f` löser dessa problem och Slutför konfigurationen av PowerShell-paketet.
 
 ### <a name="uninstallation---ubuntu-1604"></a>Avinstallation – Ubuntu 16,04
 
@@ -134,7 +134,7 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Installation via direkt hämtning – Ubuntu 18,04
 
-Ladda ned Debian-paketet `powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb` från sidan [releases][] till Ubuntu-datorn.
+Ladda ned Debian- `powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb` paketet från sidan [releases][] på Ubuntu-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -144,7 +144,7 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> `dpkg -i` kommandot Miss lyckas med ouppfyllda-beroenden. Nästa kommando, `apt-get install -f` löser problemen och Slutför konfigurationen av PowerShell-paketet.
+> Kommandot `dpkg -i` kan inte utföras med ouppfyllda-beroenden. Nästa kommando `apt-get install -f` löser dessa problem och Slutför konfigurationen av PowerShell-paketet.
 
 ### <a name="uninstallation---ubuntu-1804"></a>Avinstallation – Ubuntu 18,04
 
@@ -230,7 +230,7 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---debian-9"></a>Installation via direkt hämtning – Debian 9
 
-Ladda ned Debian-paketet `powershell-lts_7.0.0-1.debian.9_amd64.deb` från sidan [releases][] till Debian-datorn.
+Ladda ned Debian- `powershell-lts_7.0.0-1.debian.9_amd64.deb` paketet från sidan [releases][] på Debian-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -275,7 +275,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-10"></a>Installation via direkt hämtning – Debian 10
 
-Hämta paketet med tar. gz-paketet `powershell_7.0.0-linux-x64.tar.gz` från sidan [releases][] till Debian-datorn.
+Hämta paketet `powershell_7.0.0-linux-x64.tar.gz` tar. gz från sidan [utgåvor][] till Debian-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -322,7 +322,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>Installation via direkt hämtning – Alpine 3,9 och 3,10
 
-Hämta paketet tar. gz-paketet `powershell-7.0.0-linux-alpine-x64.tar.gz` från sidan [releases][] till Alpine Machine.
+Hämta paketet `powershell-7.0.0-linux-alpine-x64.tar.gz` tar. gz från sidan [utgåvor][] till Alpine Machine.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -389,7 +389,7 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---centos-7"></a>Installation via direkt hämtning – CentOS 7
 
-Med [CentOS 7][]laddar du ned rpm-paketet `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` från sidan [releases][] till CentOS-datorn.
+Med [CentOS 7][]laddar du ned rpm- `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` paketet från sidan [utgåvor][] till CentOS-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -432,7 +432,7 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installation via direkt hämtning – Red Hat Enterprise Linux (RHEL) 7
 
-Hämta RPM-paketet `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` från sidan [releases][] till datorn Red Hat Enterprise Linux.
+Hämta RPM-paketet `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` från sidan [versioner][] till Red Hat Enterprise Linux datorn.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -544,7 +544,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-28-29-and-30"></a>Installation via direkt hämtning-Fedora 28, 29 och 30
 
-Hämta RPM-paketet `powershell-7.0.0-1.rhel.7.x86_64.rpm` från sidan [releases][] till Fedora-datorn.
+Hämta RPM-paketet `powershell-7.0.0-1.rhel.7.x86_64.rpm` från sidan [releases][] på Fedora-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -571,11 +571,11 @@ sudo dnf remove powershell
 > [!NOTE]
 > Stöd för båge stöds inte officiellt av Microsoft och underhålls av communityn.
 
-PowerShell är tillgängligt från användar lagrings platsen för [Båge Linux][] (AUR).
+PowerShell är tillgängligt från användar lagrings platsen för [Linux][] (AUR).
 
-* Den kan kompileras med den [senaste taggade versionen][arch-release]
-* Den kan kompileras från det [senaste genomförandeet till Master][arch-git]
-* Den kan installeras med den [senaste versionen av binärfilen][arch-bin]
+- Den kan kompileras med den [senaste taggade versionen][arch-release]
+- Den kan kompileras från det [senaste genomförandeet till Master][arch-git]
+- Den kan installeras med den [senaste versionen av binärfilen][arch-bin]
 
 Paketen i AUR är grupperade. Det finns inget statligt stöd.
 
@@ -590,7 +590,7 @@ Mer information om hur du installerar paket från AUR finns i " [båge Linux wik
 
 ### <a name="getting-snapd"></a>Fäst
 
-`snapd` krävs för att köra fästar. Följ [dessa anvisningar](https://docs.snapcraft.io/core/install) för att kontrol lera att du har `snapd` installerat.
+`snapd`krävs för att köra fäst. Följ [dessa anvisningar](https://docs.snapcraft.io/core/install) för att kontrol lera att `snapd` du har installerat.
 
 ### <a name="installation-via-snap"></a>Installation via Snap
 
@@ -692,7 +692,7 @@ tar -xvf ./powershell-7.0.0-linux-arm32.tar.gz -C ~/powershell
 ~/powershell/pwsh
 ```
 
-Du kan också skapa en symboliska länk för att starta PowerShell utan att ange sökvägen till `pwsh` Binary.
+Du kan också skapa en symboliska länk för att starta PowerShell utan att ange sökvägen till den `pwsh` binära filen.
 
 ```sh
 # Start PowerShell from bash with sudo to create a symbolic link
@@ -710,6 +710,20 @@ sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" 
 rm -rf ~/powershell
 ```
 
+## <a name="installing-preview-releases"></a>Installera för hands versioner
+
+När du installerar en PowerShell Preview-version för Linux via en paket lagrings plats ändras paket `powershell` namnet `powershell-preview`från till.
+
+Installation via direkt hämtning ändras inte, förutom fil namnet.
+
+Följande tabell innehåller kommandon för att installera stabila och förhands gransknings paket med hjälp av de olika paket ansvariga:
+
+| Distribution |            Stabilt kommando            |               Förhandsgranska kommando                |
+| --------------- | ------------------------------------ | -------------------------------------------- |
+| Ubuntu, Debian  | `sudo apt-get install -y powershell` | `sudo apt-get install -y powershell-preview` |
+| CentOS, RedHat  | `sudo yum install -y powershell`     | `sudo yum install -y powershell-preview`     |
+| Fedora          | `sudo dnf install -y powershell`     | `sudo dnf install -y powershell-preview`     |
+
 ## <a name="install-as-a-net-global-tool"></a>Installera som ett globalt .NET-verktyg
 
 Om du redan har installerat [.net Core SDK](/dotnet/core/sdk) är det enkelt att installera PowerShell som ett [globalt .net-verktyg](/dotnet/core/tools/global-tools).
@@ -718,11 +732,11 @@ Om du redan har installerat [.net Core SDK](/dotnet/core/sdk) är det enkelt att
 dotnet tool install --global PowerShell
 ```
 
-Installations programmet för dotNET-verktyget lägger till `~/.dotnet/tools` i din `PATH` miljö variabel. Men det gränssnitt som körs har inte den uppdaterade `PATH`. Du bör kunna starta PowerShell från ett nytt gränssnitt genom att skriva `pwsh`.
+Installations programmet för dotNET- `~/.dotnet/tools` verktyget lägger `PATH` till i din miljö variabel. Men det gränssnitt som körs har inte uppdaterats `PATH`. Du bör kunna starta PowerShell från ett nytt gränssnitt genom att skriva `pwsh`.
 
 ## <a name="binary-archives"></a>Binära Arkiv
 
-PowerShell-binärfiler för `tar.gz` tillhandahålls för Linux-plattformar för att aktivera avancerade distributions scenarier.
+PowerShell- `tar.gz` binärfiler finns för Linux-plattformar för att aktivera avancerade distributions scenarier.
 
 ### <a name="dependencies"></a>Beroenden
 
@@ -742,7 +756,7 @@ Följande diagram visar de .NET Core 2,0-beroenden som stöds officiellt på oli
 | openSUSE-skottår 15 | libcurl4, libopenssl1_0_0 libicu60_2 |
 | Fedora 27 <br> Fedora 28 | libunwind, libsväng, OpenSSL-libs, libicu, kompatibilitet-openssl10 |
 
-Om du vill distribuera PowerShell-binärfiler på Linux-distributioner som inte stöds officiellt måste du installera de nödvändiga beroendena för mål operativ systemet i separata steg. Vårt [Amazon Linux-Dockerfile][amazon-dockerfile] installerar till exempel beroenden först och extraherar sedan Linux `tar.gz`-arkivet.
+Om du vill distribuera PowerShell-binärfiler på Linux-distributioner som inte stöds officiellt måste du installera de nödvändiga beroendena för mål operativ systemet i separata steg. Vårt [Amazon Linux-Dockerfile][amazon-dockerfile] installerar till exempel beroenden först och extraherar sedan Linux `tar.gz` -arkivet.
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
@@ -773,19 +787,19 @@ sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
 sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ```
 
-## <a name="paths"></a>Mappar
+## <a name="paths"></a>Sökvägar
 
 - `$PSHOME` är `/opt/microsoft/powershell/7/`
-- Användar profiler kommer att läsas från `~/.config/powershell/profile.ps1`
-- Standard profiler kommer att läsas från `$PSHOME/profile.ps1`
-- Användarens moduler kommer att läsas från `~/.local/share/powershell/Modules`
-- Delade moduler kommer att läsas från `/usr/local/share/powershell/Modules`
-- Standardmoduler kommer att läsas från `$PSHOME/Modules`
-- PSReadline-historik registreras för `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+- Användar profilerna kommer att läsas från`~/.config/powershell/profile.ps1`
+- Standard profiler kommer att läsas från`$PSHOME/profile.ps1`
+- Användarens moduler kommer att läsas från`~/.local/share/powershell/Modules`
+- Delade moduler kommer att läsas från`/usr/local/share/powershell/Modules`
+- Standardmoduler kommer att läsas från`$PSHOME/Modules`
+- PSReadLine historik registreras i`~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
-Profilerna respekterar PowerShell: s konfiguration per värd, så att de standardinställda värdbaserade profilerna finns på `Microsoft.PowerShell_profile.ps1` på samma platser.
+Profilerna respekterar PowerShell: s konfiguration per värd, så att de standardinställda värdbaserade `Microsoft.PowerShell_profile.ps1` profilerna finns på samma platser.
 
 PowerShell respekterar [xdg-bas katalog specifikationen][xdg-bds] i Linux.
 
-[releases]: https://github.com/PowerShell/PowerShell/releases/latest
+[exekutiv]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

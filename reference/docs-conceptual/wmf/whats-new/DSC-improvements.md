@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: DSC-förbättringar i WMF 5.1
 ms.openlocfilehash: 78c15f453977384ba437b0bd69cd620eb1a29fbd
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80978295"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Förbättringar i önskad tillstånds konfiguration (DSC) i WMF 5,1
@@ -49,7 +49,7 @@ I eariler-versionen av DSC-PullServer, fyller ESENT-databasens loggfiler upp dis
 
 ## <a name="wow64-support-for-configuration-keyword"></a>WOW64-stöd för konfigurations nyckelord
 
-`Configuration`-nyckelordet stöds nu i WOW64 på en 64-bitars dator. Det innebär att en DSC-konfiguration kan definieras och kompileras i en 32-bitars process som Windows PowerShell ISE (x86) som körs på en 64-bitars dator.
+`Configuration` Nyckelordet stöds nu i WOW64 på en 64-bitars dator. Det innebär att en DSC-konfiguration kan definieras och kompileras i en 32-bitars process som Windows PowerShell ISE (x86) som körs på en 64-bitars dator.
 
 ## <a name="pull-partial-configuration-naming-convention"></a>Hämta partiell konfiguration namngivnings konvention
 
@@ -86,7 +86,7 @@ Se ögonblicks bilderna nedan:
 
   ![Fil namn i konfigurations lager](media/DSC-improvements/PartialInConfigRepository.png)
 
-  Azure Automation tjänst namn genererade MOF-filer som `<ConfigurationName>.<NodeName>.mof`. Konfigurationen nedan kompileras till PartialOne. localhost. mof.
+  Azure Automation tjänst namn genererade MOF- `<ConfigurationName>.<NodeName>.mof`filer som. Konfigurationen nedan kompileras till PartialOne. localhost. mof.
 
   Detta gjorde det omöjligt att hämta en delvis konfiguration från Azure Automation-tjänsten.
 
@@ -247,7 +247,7 @@ I WMF 5,1 stöder DSC validering av de digitala signaturerna i katalogen och kon
 
 ### <a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>LocalConfigurationManager-inställningar för att aktivera signerings valideringar
 
-#### <a name="pull"></a>Hämta
+#### <a name="pull"></a>Pull
 
 LocalConfigurationManager för en nod utför signerings valideringen av moduler och konfigurationer baserat på dess aktuella inställningar. Som standard är verifiering av signaturer inaktiverat. Verifiering av signaturen kan aktive ras genom att SignatureValidation-blocket läggs till i definitionen av meta-konfigurationen för noden enligt nedan:
 
@@ -279,14 +279,14 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 
 Genom att ställa in ovanstående metaconfiguration på en nod kan du verifiera signaturen på nedladdade konfigurationer och moduler. Den lokala Configuration Manager utför följande steg för att verifiera de digitala signaturerna.
 
-1. Verifiera signaturen för en konfigurations fil (. MOF) är giltig med `Get-AuthenticodeSignature`-cmdleten.
+1. Verifiera signaturen för en konfigurations fil (. MOF) är giltig med `Get-AuthenticodeSignature` cmdleten.
 2. Verifiera den certifikat utfärdare som har behörighet att signeraren är betrodd.
 3. Hämta modul/resurs beroenden för konfigurationen till en tillfällig plats.
 4. Kontrol lera signaturen för katalogen som ingår i modulen.
-   - Hitta en `<moduleName>.cat`-fil och verifiera signaturen med hjälp av `Get-AuthenticodeSignature`.
+   - Hitta en `<moduleName>.cat` fil och verifiera signaturen med `Get-AuthenticodeSignature`hjälp av.
    - Verifiera att den certifikat utfärdare som autentiserat signeraren är betrodd.
    - Kontrol lera att innehållet i modulerna inte har ändrats med den nya cmdleten `Test-FileCatalog`.
-5. `Install-Module` till `$env:ProgramFiles\WindowsPowerShell\Modules\`
+5. `Install-Module`att`$env:ProgramFiles\WindowsPowerShell\Modules\`
 6. Process konfiguration
 
 > [!NOTE]

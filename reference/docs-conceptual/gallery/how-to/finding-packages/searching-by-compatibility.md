@@ -4,10 +4,10 @@ contributor: JKeithB, SydneyhSmith
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Paket med kompatibla PowerShell-utgåvor eller operativ system
 ms.openlocfilehash: b414ce2c2b189e9da150cbe612e0bb2572d39e76
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278395"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Paket med kompatibla PowerShell-utgåvor eller operativ system
@@ -17,8 +17,8 @@ Från och med version 5,1 är PowerShell tillgängligt i olika utgåvor som kän
 ## <a name="searching-by-powershell-edition"></a>Söker efter PowerShell-utgåva
 
 De två versionerna av PowerShell är:
-- **Desktop Edition:** Bygger på .NET Framework och ger kompatibilitet med skript och moduler som mål versioner av PowerShell som körs på fullständiga versioner av Windows, till exempel Server Core och Windows Desktop.
-- **Core-utgåva:** Bygger på .NET Core och ger kompatibilitet med skript och moduler som mål versioner av PowerShell som körs på begränsade versioner av Windows, till exempel Nano Server och Windows IoT.
+- **Desktop Edition:** bygger på .NET Framework och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på fullständiga utgåvor av Windows, till exempel Server Core och Windows Desktop.
+- **Core Edition:** bygger på .NET Core och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på begränsade utgåvor av Windows som Nano Server och Windows IoT.
 
 ### <a name="powershell-gallery-allows-you-to-filter-packages-compatible-for-specific-powershell-editions"></a>Med PowerShell-galleriet kan du filtrera paket som är kompatibla med vissa PowerShell-versioner
 
@@ -41,7 +41,7 @@ Använd Taggar: "PSEdition_Desktop" och Taggar: "PSEdition_Core" för att filtre
 
 ### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>Sök efter paket för att hitta kompatibla utgåvor med PowerShell
 Du kan ange taggar för att filtrera PowerShell-versionen och operativ systemet.
-Du använder cmdleten `Find-Package` som anger parametern `-Tag` för att ange den utgåva (och OS) som du är mål för.
+Du använder `Find-Package` cmdleten som anger `-Tag` parametern för att ange den utgåva (och OS) som du är mål för.
 Gillar det här:
 
 ```powershell
@@ -60,7 +60,7 @@ Eftersom PowerShell Core är tillgängligt för Windows, Linux och MacOS, kan pa
 - Taggar: "Linux"
 - Taggar: "MacOS"
 
-Du kan ange taggarna på `Find-Module` (och andra cmdletar i modulen PowerShellGet), så här:
+Du kan ange taggarna på `Find-Module` (och andra cmdletar i PowerShellGet-modulen), så här:
 
 ```powershell
 # Find Modules compatible with Windows

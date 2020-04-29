@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: ISEAddOnTool-objektet
 ms.openlocfilehash: a5357005ec1a883f5a14882a42e3150e09ff33a2
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736138"
 ---
 # <a name="the-iseaddontool-object"></a>ISEAddOnTool-objektet
@@ -146,7 +146,7 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Den booleska egenskapen som anger om tilläggs verktyget är synligt i det tilldelade fönstret. Om den är synlig kan du ange egenskapen **IsVisible** till `$false` för att dölja verktyget, eller ange egenskapen **IsVisible** till `$true` för att göra ett tilläggs verktyg synligt på dess PowerShell-flik. Observera att när ett tilläggs verktyg är dolt är det inte längre tillgängligt via **CurrentVisibleHorizontalTool** -eller **CurrentVisibleVerticalTool** -objekten och kan därför inte visas med hjälp av den här egenskapen för objektet.
+Den booleska egenskapen som anger om tilläggs verktyget är synligt i det tilldelade fönstret. Om den är synlig kan du ange egenskapen **IsVisible** till `$false` för att dölja verktyget eller ange egenskapen **IsVisible** till `$true` för att göra ett tilläggs verktyg synligt på dess PowerShell-flik. Observera att när ett tilläggs verktyg är dolt är det inte längre tillgängligt via **CurrentVisibleHorizontalTool** -eller **CurrentVisibleVerticalTool** -objekten och kan därför inte visas med hjälp av den här egenskapen för objektet.
 
 ```powershell
 # Hide the current tool in the vertical tool pane
@@ -155,7 +155,7 @@ $psISE.CurrentVisibleVerticalTool.IsVisible = $false
 $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible = $true
 ```
 
-### <a name="name"></a>Namn
+### <a name="name"></a>Name
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
@@ -173,5 +173,5 @@ Commands
 ## <a name="see-also"></a>Se även
 
 - [ISEAddOnToolCollection-objektet](The-ISEAddOnToolCollection-Object.md)
-- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)
+- [Användningsområden för Windows PowerShell ISE-skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Objekt modells-hierarkin för ISE](The-ISE-Object-Model-Hierarchy.md)

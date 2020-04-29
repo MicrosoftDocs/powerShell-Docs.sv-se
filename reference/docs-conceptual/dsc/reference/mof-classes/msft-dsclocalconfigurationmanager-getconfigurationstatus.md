@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: GetConfigurationStatus-metoden
 ms.openlocfilehash: 83b30ba2612d962fcf2fa658d07d18fb2d91ccc7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942694"
 ---
 # <a name="getconfigurationstatus-method"></a>GetConfigurationStatus-metoden
@@ -26,7 +26,7 @@ uint32 GetConfigurationStatus(
 
 *Alla* \[i\] **True** om den här metoden ska returnera information om all konfiguration som körs på datorn, inklusive konfigurations programmet och konsekvens kontrollen.
 
-*configurationStatus* \[ut\] vid retur innehåller en inbäddad instans av **MSFT_DSCConfigurationStatus** -klassen som definierar inställningarna.
+*configurationStatus* \[ut\] vid retur, innehåller en inbäddad instans av klassen **MSFT_DSCConfigurationStatus** som definierar inställningarna.
 
 ## <a name="return-value"></a>Returvärde
 

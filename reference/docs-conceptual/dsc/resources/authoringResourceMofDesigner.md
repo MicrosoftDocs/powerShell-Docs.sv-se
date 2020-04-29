@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Använda Resource designer-verktyget
 ms.openlocfilehash: 36eed0fc888380a03a3279e834748708f578d973
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500635"
 ---
 # <a name="using-the-resource-designer-tool"></a>Använda Resource designer-verktyget
@@ -174,7 +174,7 @@ Verktyget Resource Designer visar en eller flera cmdlets som kan användas för 
 
 ### <a name="see-also"></a>Se även
 
-#### <a name="concepts"></a>Koncept
+#### <a name="concepts"></a>Begrepp
 [Bygg anpassade resurser för Desired Configuration för Windows PowerShell](authoringResource.md)
 
 #### <a name="other-resources"></a>Andra resurser

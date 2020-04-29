@@ -1,14 +1,14 @@
 ---
-title: Redaktionell check lista
+title: Checklista för redigering
 description: Det här är en sammanfattande lista med regler för redigering av PowerShell-dokumentation.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 511e0c323e1a3256039e819d06f32f6e1ac42767
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.openlocfilehash: b5baf7366239084779d34e23f218e5e6222ed1a3
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79078579"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81624745"
 ---
 # <a name="editors-checklist"></a>Redaktörens check lista
 
@@ -31,15 +31,16 @@ Det här är en sammanfattning av regler som ska gälla när du skriver nya elle
 ## <a name="formatting"></a>Formatering
 
 - Element för bakticks-syntax som visas, infogade, i ett stycke
-  - Cmdlet-namn `Verb-Noun`
-  - Variabel `$counter`
-  - Exempel på syntaktiska `Verb-Noun -Parameter`
-  - Fil Sök vägar `C:\Program Files\PowerShell``/usr/bin/pwsh`
+  - Cmdlet-namn`Verb-Noun`
+  - Variabel`$counter`
+  - Syntaktiska exempel`Verb-Noun -Parameter`
+  - Fil Sök `C:\Program Files\PowerShell`vägar,`/usr/bin/pwsh`
   - URL: er som inte är avsedda att vara klickade i dokumentet
-- Använd fetstil för egenskaps namn, parameter värden, parameter namn, klass namn, Modulnamn, entitetsnamn, namn på objekt eller typnamn
+  - Egenskaps-eller parameter värden
+- Använd fetstil för egenskaps namn, parameter namn, klass namn, Modulnamn, entitetsnamn, namn på objekt eller typnamn
   - Fetstil används för semantisk markering, inte betoning
-  - Fet – Använd asterisker `**`
-- Kursiv – Använd under streck `_`
+  - Fet – Använd asterisker`**`
+- Kursiv – Använd under streck`_`
   - Används endast för betoning, inte för semantisk markering
 - Rad brytningar vid 100 kolumner (eller vid 80 för **about_Topics**)
 - Inga hårda flikar – Använd bara blank steg
@@ -60,7 +61,7 @@ Det här är en sammanfattning av regler som ska gälla när du skriver nya elle
 - Tom rad före och efter
 - Använd taggade kod avgränsningar – **PowerShell**, **utdata**eller annat lämpligt språk-ID
 - Otaggade block för staket eller andra gränssnitt
-- Lägg till **utdata** i ett separat kodblock förutom enkla exempel där du inte har för avsikt att läsa in läsaren för att använda **kopierings** knappen
+- Lägg till utdata i ett separat kodblock förutom enkla exempel där du inte har för avsikt att läsa in läsaren för att använda **kopierings** knappen
 - Se listan över [språk som stöds](/contribute/code-in-docs#supported-languages)
 
 ### <a name="lists"></a>Listor
@@ -83,7 +84,7 @@ Det här är en sammanfattning av regler som ska gälla när du skriver nya elle
   - Använd fullständiga namn på cmdletar och parametrar-inga alias
   - Använda ihopbuntning för parametrar när kommando raden blir för lång
   - Undvik att använda rad fortsättnings omskalning – Använd bara vid behov
-- Ta bort eller förenkla PowerShell-prompten (`PS>`), förutom om det krävs för exemplet
+- Ta bort eller förenkla PowerShell-prompten (`PS>`) utom där det krävs för exemplet
 - Exempel på cmdlet-referens måste följa följande PlatyPS-schema
 
   ~~~Markdown
@@ -108,10 +109,10 @@ Det här är en sammanfattning av regler som ska gälla när du skriver nya elle
 ## <a name="linking-to-other-documents"></a>Länka till andra dokument
 
 - Länka utanför dokument uppsättning eller mellan cmdlet-referens och konceptuell
-  - Använd relativa URL: er vid länkning till docs.microsoft.com (ta bort `https://docs.microsoft.com/en-us`)
-  - Ta inte med språk i URL: er för Microsoft-egenskaper (t. ex. ta bort `/en-us` från URL)
+  - Använd relativa URL: er vid länkning till docs.microsoft.com `https://docs.microsoft.com/en-us`(ta bort)
+  - Ta inte med språk i URL: er för Microsoft-egenskaper (t. ex. ta `/en-us` bort från URL)
   - Alla URL: er till externa webbplatser bör använda HTTPS om det inte är giltigt för mål platsen
 - Inom dokument uppsättning
-  - Länk till fil Sök väg (t. ex. `../folder/file.md`)
-  - Alla fil Sök vägar använder snedstreck (`/`) tecken
+  - Länk till fil Sök väg (t `../folder/file.md`. ex.)
+  - Alla fil Sök vägar använder snedstreck (`/`)-tecken
 - Bild länkar måste ha en unik alternativ text

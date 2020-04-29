@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Omdirigera data med Out-cmdletar
 ms.openlocfilehash: d4cc14e26bdef0f973f948177d0c1e68929605fa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030073"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Omdirigera data med out-*-cmdletar
@@ -120,7 +120,7 @@ Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Wri
 
 ## <a name="saving-data-out-file"></a>Spara data (Out-File)
 
-Du kan skicka utdata till en fil i stället för konsol fönstret genom att använda cmdleten **Out-File** . Följande kommando rad skickar en lista över processer till filen **C:\\temp\\processlist. txt**:
+Du kan skicka utdata till en fil i stället för konsol fönstret genom att använda cmdleten **Out-File** . Följande kommando rad skickar en lista över processer till filen **C:\\Temp\\processlist. txt**:
 
 ```powershell
 Get-Process | Out-File -FilePath C:\temp\processlist.txt

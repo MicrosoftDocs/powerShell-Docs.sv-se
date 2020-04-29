@@ -3,13 +3,13 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Visa objekt strukturen Hämta medlem
 ms.openlocfilehash: 80b36abd303a708195f12d96511e616178d11b5a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030715"
 ---
-# <a name="viewing-object-structure-get-member"></a>Visa objekt struktur (Get-Member)
+# <a name="viewing-object-structure-get-member"></a>Visa objektstrukturen (Get-Member)
 
 Eftersom objekt spelar en sådan central roll i Windows PowerShell finns det flera inbyggda kommandon som är utformade för att fungera med valfria objekt typer. Den viktigaste en är kommandot **Get-Member** .
 

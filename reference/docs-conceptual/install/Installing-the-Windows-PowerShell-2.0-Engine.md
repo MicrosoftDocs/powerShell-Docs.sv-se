@@ -3,17 +3,17 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Installera Windows PowerShell 2.0-motorn
 ms.openlocfilehash: 24bca7bd18fd33392f4f79b958189d3251ec35c1
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75870548"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>Installera Windows PowerShell 2.0-motorn
 
 Det här avsnittet beskriver hur du installerar Windows PowerShell 2,0-motorn.
 
-Windows PowerShell 3,0 är avsett att vara bakåtkompatibla med Windows PowerShell 2,0. Cmdlets, providers, snapin-moduler, moduler och skript som skrivits för Windows PowerShell 2,0 körs oförändrade i Windows PowerShell 3,0 och Windows PowerShell 4,0. Men på grund av en ändring i aktiverings principen för körning i Microsoft .NET Framework 4, kan Windows PowerShell-värdprogram som har skrivits för Windows PowerShell 2,0 och kompilerats med CLR (Common Language Runtime) 2,0 inte köras utan ändringar i senare versioner av Windows PowerShell, som kompileras med CLR 4,0.
+Windows PowerShell 3,0 är avsett att vara bakåtkompatibla med Windows PowerShell 2,0. Cmdlets, providers, snapin-moduler, moduler och skript som skrivits för Windows PowerShell 2,0 körs oförändrade i Windows PowerShell 3,0 och Windows PowerShell 4,0. Men på grund av en ändring i aktiverings principen för körning i Microsoft .NET Framework 4 kan Windows PowerShell-värdprogram som skrivits för Windows PowerShell 2,0 och kompileras med CLR (Common Language Runtime) 2,0 inte köras utan ändringar i senare versioner av Windows PowerShell, som kompileras med CLR 4,0.
 
 För att upprätthålla bakåtkompatibilitet med kommandon och värd program som påverkas av dessa ändringar, är Windows PowerShell 2,0, Windows PowerShell 3,0 och Windows PowerShell 4,0-motorer utformade för att köras sida vid sida. Windows PowerShell 2,0-motorn ingår också i Windows Server 2012 R2, Windows 8,1, Windows 8, Windows Server 2012 och Windows Management Framework 3,0. Windows PowerShell 2,0-motorn är avsedd att användas endast när ett befintligt skript eller värd program inte kan köras eftersom det är inkompatibelt med Windows PowerShell 3,0, Windows PowerShell 4,0 eller Microsoft .NET Framework 4. Sådana fall förväntas vara ovanliga.
 
@@ -54,7 +54,7 @@ Använd följande procedurer för att lägga till Windows PowerShell 2,0-motorn 
 
 2. På sidan **Installations typ** väljer du **rollbaserad eller funktions baserad installation**.
 
-3. På sidan **funktioner** expanderar du noden **.net 3,5 Framework-funktioner** och väljer **.NET Framework 3,5 (inklusive .NET 2,0 och 3,0)** .
+3. På sidan **funktioner** expanderar du noden **.net 3,5 Framework-funktioner** och väljer **.NET Framework 3,5 (inklusive .NET 2,0 och 3,0)**.
 
    De andra alternativen under noden krävs inte för Windows PowerShell 2,0-motorn.
 
@@ -78,7 +78,7 @@ Windows Management Framework 3,0-paketet som installerar Windows PowerShell 3,0 
 
 ## <a name="see-also"></a>Se även
 
-- [System krav för Windows PowerShell](Windows-PowerShell-System-Requirements.md)
+- [Windows PowerShell-systemkrav](Windows-PowerShell-System-Requirements.md)
 - [Installera Windows PowerShell](Installing-Windows-PowerShell.md)
-- [Starta Windows PowerShell](/previous-versions/ms714415(v=vs.85))
+- [Starta Windows Powershell](/previous-versions/ms714415(v=vs.85))
 - [Starta Windows PowerShell 2.0-motorn](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md)

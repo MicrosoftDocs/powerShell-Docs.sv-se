@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Använda Import-DSCResource
 ms.openlocfilehash: a041169ad557becf7ca87641d9ce5222ee8f6beb
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79406911"
 ---
 # <a name="using-import-dscresource"></a>Använda Import-DSCResource
 
-`Import-DScResource` är ett dynamiskt nyckelord som bara kan användas i ett konfigurations skript block. Nyckelordet `Import-DSCResource` för att importera de resurser som behövs i konfigurationen. Resurser under `$pshome` importeras automatiskt, men det anses fortfarande vara bästa praxis att importera alla resurser som används i [konfigurationen](Configurations.md).
+`Import-DScResource`är ett dynamiskt nyckelord som bara kan användas i ett konfigurations skript block. `Import-DSCResource` Nyckelordet för att importera de resurser som behövs i konfigurationen. Resurser under `$pshome` importeras automatiskt, men det anses fortfarande vara bästa praxis att importera alla resurser som används i [konfigurationen](Configurations.md).
 
 Syntaxen för `Import-DSCResource` visas nedan.  När du anger moduler efter namn är det ett krav för att lista var och en på en ny rad.
 
@@ -65,7 +65,7 @@ Saker att tänka på när du bara använder parametern name:
 - Det är en resurs intensiv åtgärd beroende på hur många moduler som är installerade på datorn.
 - Den första resursen som påträffas med det aktuella namnet läses in. Om det finns fler än en resurs med samma namn installerat kan fel resurs läsas in.
 
-Den rekommenderade användningen är att ange `–ModuleName` med parametern `-Name`, enligt beskrivningen nedan.
+Den rekommenderade användningen är att ange `–ModuleName` med `-Name` parametern, enligt beskrivningen nedan.
 
 Den här användningen har följande fördelar:
 
@@ -78,7 +78,7 @@ Den här användningen har följande fördelar:
 
 ## <a name="intellisense-with-import-dscresource"></a>IntelliSense med import-Dscresource Keyword Supports
 
-När du redigerar DSC-konfigurationen i ISE tillhandahåller PowerShell IntelliSence för resurser och resurs egenskaper. Resurs definitioner under `$pshome` module-sökvägen läses in automatiskt. När du importerar resurser med hjälp av nyckelordet `Import-DSCResource` läggs de angivna resurs definitionerna till och IntelliSense expanderas för att inkludera den importerade resursens schema.
+När du redigerar DSC-konfigurationen i ISE tillhandahåller PowerShell IntelliSence för resurser och resurs egenskaper. Resurs definitioner under `$pshome` modulens sökväg läses in automatiskt. När du importerar resurser med hjälp `Import-DSCResource` av nyckelordet läggs de angivna resurs definitionerna till och IntelliSense expanderas för att inkludera den importerade resursens schema.
 
 ![Resurs-IntelliSense](media/import-dscresource/resource-intellisense.png)
 
@@ -145,13 +145,13 @@ Kopiera innehållet i den önskade modulens version till den översta nivån i m
 
 ![Flera resurs versioner har åtgärd ATS](media/import-dscresource/multiple-resource-versions-fixed.png)
 
-### <a name="resource-location"></a>Resurs plats
+### <a name="resource-location"></a>Resursplats
 
 När du redigerar och kompilerar konfigurationer kan dina resurser lagras i valfri katalog som anges av din [PSModulePath](/powershell/scripting/developer/module/modifying-the-psmodulepath-installation-path). I PowerShell 4,0 kräver LCM att alla DSC-resurspooler lagras under "program Files\WindowsPowerShell\Modules" eller `$pshome\Modules`. Från och med PowerShell 5,0 togs detta krav bort och resurspooler kan lagras i valfri katalog som anges av `PSModulePath`.
 
 ### <a name="moduleversion-added"></a>ModuleVersion tillagt
 
-Från och med PowerShell 5,0 kan du med parametern `-ModuleVersion` ange vilken version av en modul som ska användas i konfigurationen.
+Med `-ModuleVersion` början i PowerShell 5,0 kan du ange vilken version av en modul som ska användas i konfigurationen.
 
 ## <a name="see-also"></a>Se även
 

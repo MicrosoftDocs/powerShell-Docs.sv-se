@@ -3,10 +3,10 @@ ms.date: 12/31/2019
 keywords: PowerShell, cmdlet
 title: ISEOptions-objektet
 ms.openlocfilehash: 9caa78a70cb837c755b2eff9af6ce0aa5dbb7452
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736955"
 ---
 # <a name="the-iseoptions-object"></a>ISEOptions-objektet
@@ -139,7 +139,7 @@ Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versio
 
 Anger färgerna i IntelliSense-tokens i Windows PowerShell ISE konsol fönstret. Den här egenskapen är ett Dictionary-objekt som innehåller namn/värde-par av tokens och färger för konsol fönstret. Om du vill ändra färgerna i IntelliSense-tokens i skript fönstret, se [TokenColors](#tokencolors).
 Information om hur du återställer färgerna till standardvärdena finns i [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors).
-Token-färger kan anges för följande: attribut, kommando, CommandArgument, CommandParameter, comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, member, ny rad, Number, Operator, position, StatementSeparator, sträng, typ, Okänd, variabel.
+Token-färger kan anges för följande: attribut, kommando, CommandArgument, CommandParameter, comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, member, ny rad, Number, Operator, position, StatementSeparator, sträng, typ, okänd, variabel.
 
 ```powershell
 # Sets the color of commands to green.
@@ -361,7 +361,7 @@ $psISE.Options.SelectedScriptPaneState = 'Maximized'
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Anger om <kbd>CTRL</kbd>+<kbd>J</kbd> -listan över kodfragment innehåller den Start uppsättning som ingår i Windows PowerShell. När det är inställt på `$false`, visas bara användardefinierade kod avsnitt i den <kbd>CTRL</kbd>+<kbd>J</kbd> -listan.
+Anger om <kbd>CTRL</kbd>+<kbd>J</kbd> -listan över kodfragment innehåller den Start uppsättning som ingår i Windows PowerShell. När det är `$false`inställt på visas bara användardefinierade kodfragment i <kbd>CTRL</kbd>+<kbd>J</kbd> -listan.
 Standardvärdet är `$true`.
 
 ```powershell
@@ -408,7 +408,7 @@ $psISE.Options.ShowLineNumbers = $false
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Anger om skript fönstret visar expanderbara och komprimerbara hakparenteser bredvid avsnitt i kod i vänstermarginalen. När de visas kan du klicka på minus `-` ikonerna bredvid ett textblock för att komprimera den eller klicka på plus `+`-ikonen för att expandera ett textblock. Standardvärdet är `$true`.
+Anger om skript fönstret visar expanderbara och komprimerbara hakparenteser bredvid avsnitt i kod i vänstermarginalen. När de visas kan du klicka på minus `-` ikonerna bredvid ett textblock för att komprimera det eller klicka på plus `+` ikonen för att expandera ett textblock. Standardvärdet är `$true`.
 
 ```powershell
 # Turn off outlining in the Script pane.
@@ -443,7 +443,7 @@ $psISE.Options.ShowWarningBeforeSavingOnRun = $true
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Anger om ett varnings meddelande visas när samma fil öppnas i olika PowerShell-flikar. Om värdet är `$true`för att öppna samma fil på flera flikar visas följande meddelande: "en kopia av filen är öppen på en annan Windows PowerShell-flik. ändringar i den här filen kommer att påverka alla öppna kopior." Standardvärdet är `$true`.
+Anger om ett varnings meddelande visas när samma fil öppnas i olika PowerShell-flikar. Om det är `$true`inställt på, för att öppna samma fil på flera flikar visas följande meddelande: "en kopia av filen är öppen på en annan Windows PowerShell-flik. ändringar i den här filen kommer att påverka alla öppna kopior." Standardvärdet är `$true`.
 
 ```powershell
 # Enable the warning message when a file is
@@ -457,7 +457,7 @@ Stöds i Windows PowerShell ISE 2,0 och senare.
 
 Anger färgerna i IntelliSense-tokens i rutan Windows PowerShell ISE skript. Den här egenskapen är ett Dictionary-objekt som innehåller namn-/värdepar med token-typer och färger för skript fönstret. Om du vill ändra färgerna i IntelliSense-tokens i konsol fönstret, se [ConsoleTokenColors](#consoletokencolors).
 Information om hur du återställer färgerna till standardvärdena finns i [RestoreDefaultTokenColors](#restoredefaulttokencolors).
-Token-färger kan anges för följande: attribut, kommando, CommandArgument, CommandParameter, comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, member, ny rad, Number, Operator, position, StatementSeparator, sträng, typ, Okänd, variabel.
+Token-färger kan anges för följande: attribut, kommando, CommandArgument, CommandParameter, comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, member, ny rad, Number, Operator, position, StatementSeparator, sträng, typ, okänd, variabel.
 
 ```powershell
 # Sets the color of commands to green.
@@ -492,7 +492,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense = $true
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Anger om den lokalt installerade hjälpen eller online TechNet Library-hjälpen visas när du trycker på <kbd>F1</kbd> med markören placerad i ett nyckelord. Om värdet är `$true`visar ett popup-fönster innehåll från den lokalt installerade hjälpen. Du kan installera hjälpfilerna genom att köra kommandot `Update-Help`. Om värdet är `$false`öppnas webbläsaren på en sida i TechNet-biblioteket.
+Anger om den lokalt installerade hjälpen eller online TechNet Library-hjälpen visas när du trycker på <kbd>F1</kbd> med markören placerad i ett nyckelord. Om detta är `$true`inställt på visas innehållet från den lokalt installerade hjälpen i ett popup-fönster. Du kan installera hjälpfilerna genom att köra `Update-Help` kommandot. Om det är `$false`inställt på, öppnas webbläsaren på en sida i TechNet-biblioteket.
 
 ```powershell
 # Sets the option for the online help to be displayed.
@@ -549,7 +549,7 @@ $psISE.Options.WarningForegroundColor = 'yellow'
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Anger ett Dictionary-objekt som innehåller namn/värde-par av tokens och färger för XML-innehåll som visas i Windows PowerShell ISE. Token-färger kan anges för följande: attribut, kommando, CommandArgument, CommandParameter, comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, member, ny rad, Number, Operator, position, StatementSeparator, sträng, typ, Okänd, variabel. Se även [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors).
+Anger ett Dictionary-objekt som innehåller namn/värde-par av tokens och färger för XML-innehåll som visas i Windows PowerShell ISE. Token-färger kan anges för följande: attribut, kommando, CommandArgument, CommandParameter, comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, member, ny rad, Number, Operator, position, StatementSeparator, sträng, typ, okänd, variabel. Se även [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors).
 
 ```powershell
 # Sets the color of XML element names to green.
@@ -572,5 +572,5 @@ $psISE.Options.Zoom = 200
 
 ## <a name="see-also"></a>Se även
 
-- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)
+- [Användningsområden för Windows PowerShell ISE-skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Objekt modells-hierarkin för ISE](The-ISE-Object-Model-Hierarchy.md)

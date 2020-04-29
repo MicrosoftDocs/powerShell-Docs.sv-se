@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skriva en anpassad DSC-resurs med PowerShell-klasser
 ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941161"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Skriva en anpassad DSC-resurs med PowerShell-klasser
@@ -15,7 +15,7 @@ ms.locfileid: "71941161"
 
 Med introduktionen av PowerShell-klasser i Windows PowerShell 5,0 kan du nu definiera en DSC-resurs genom att skapa en klass. Klassen definierar både schemat och implementeringen av resursen, så det finns inget behov av att skapa en separat MOF-fil. Mappstrukturen för en klass baserad resurs är också enklare eftersom det inte behövs någon **DSCResources** -mapp.
 
-I en klass-baserad DSC-resurs definieras schemat som egenskaper för klassen som kan ändras med attribut för att ange egenskaps typen. Resursen implementeras av **Get ()** , **set ()** och **test ()** -metoder (motsvarar funktionerna **Get-TargetResource**, **set-TargetResource**och **test-TargetResource** i en skript resurs.
+I en klass-baserad DSC-resurs definieras schemat som egenskaper för klassen som kan ändras med attribut för att ange egenskaps typen. Resursen implementeras av **Get ()**, **set ()** och **test ()** -metoder (motsvarar funktionerna **Get-TargetResource**, **set-TargetResource**och **test-TargetResource** i en skript resurs.
 
 I det här avsnittet ska vi skapa en enkel resurs med namnet **FileResource** som hanterar en fil i en angiven sökväg.
 
@@ -64,10 +64,10 @@ DSC-resursschemat definieras som egenskaper för klassen. Vi deklarerar tre egen
 
 Observera att egenskaperna ändras efter attribut. Innebörden av attributen är följande:
 
-- **DscProperty (nyckel)** : egenskapen är obligatorisk. Egenskapen är en nyckel. Värdena för alla egenskaper som har marker ATS som nycklar måste kombineras för att unikt identifiera en resurs instans i en konfiguration.
-- **DscProperty (obligatorisk)** : egenskapen är obligatorisk.
-- **DscProperty (NotConfigurable)** : egenskapen är skrivskyddad. Egenskaper som marker ATS med det här attributet kan inte anges med en konfiguration, men de fylls med **Get ()** -metoden när den är tillgänglig.
-- **DscProperty ()** : egenskapen kan konfigureras, men det är inte obligatoriskt.
+- **DscProperty (nyckel)**: egenskapen är obligatorisk. Egenskapen är en nyckel. Värdena för alla egenskaper som har marker ATS som nycklar måste kombineras för att unikt identifiera en resurs instans i en konfiguration.
+- **DscProperty (obligatorisk)**: egenskapen är obligatorisk.
+- **DscProperty (NotConfigurable)**: egenskapen är skrivskyddad. Egenskaper som marker ATS med det här attributet kan inte anges med en konfiguration, men de fylls med **Get ()** -metoden när den är tillgänglig.
+- **DscProperty ()**: egenskapen kan konfigureras, men det är inte obligatoriskt.
 
 Egenskaperna **$Path** och **$SourcePath** är båda strängarna. **$CreationTime** är en [datetime](/dotnet/api/system.datetime) -egenskap. Egenskapen **$ensure** är en uppräknings typ som definieras enligt följande.
 
@@ -81,7 +81,7 @@ enum Ensure
 
 ### <a name="implementing-the-methods"></a>Implementera metoderna
 
-Metoderna **Get**-TargetResource, set **()** och **test ()** är likvärdiga med funktionerna **Get-** , **set-TargetResource**och **test-TargetResource** i en skript resurs.
+Metoderna **Get**-TargetResource, set **()** och **test ()** är likvärdiga med funktionerna **Get-**, **set-TargetResource**och **test-TargetResource** i en skript resurs.
 
 Den här koden inkluderar även funktionen CopyFile (), en hjälp funktion som kopierar filen från **$SourcePath** till **$Path**.
 
@@ -454,7 +454,7 @@ PowerShellVersion = '5.0'
 
 ## <a name="test-the-resource"></a>Testa resursen
 
-När du har sparat klass-och manifest filerna i mappstrukturen enligt beskrivningen ovan, kan du skapa en konfiguration som använder den nya resursen. Information om hur du kör en DSC-konfiguration finns i [Konfigurera konfigurationer](../pull-server/enactingConfigurations.md). Följande konfiguration kommer att kontrol lera om filen finns `c:\test\test.txt` finns, och kopierar, om inte, filen från `c:\test.txt` (du bör skapa `c:\test.txt` innan du kör konfigurationen).
+När du har sparat klass-och manifest filerna i mappstrukturen enligt beskrivningen ovan, kan du skapa en konfiguration som använder den nya resursen. Information om hur du kör en DSC-konfiguration finns i [Konfigurera konfigurationer](../pull-server/enactingConfigurations.md). Följande konfiguration kommer att kontrol lera om filen `c:\test\test.txt` finns och kopierar filen från `c:\test.txt` (du bör skapa `c:\test.txt` innan du kör konfigurationen).
 
 ```powershell
 Configuration Test
@@ -483,10 +483,10 @@ Mer information finns i [köra DSC med](../configurations/runAsUser.md)användar
 Attributet **dscresource Keyword Supports ()** använder en valfri parameter **RunAsCredential**.
 Den här parametern använder ett av tre värden:
 
-- `Optional` **PsDscRunAsCredential** är valfritt för konfigurationer som anropar den här resursen. Det här är standardkonfigurationen.
-- `Mandatory` **PsDscRunAsCredential** måste användas för alla konfigurationer som anropar den här resursen.
-- `NotSupported` konfigurationer som anropar den här resursen kan inte använda **PsDscRunAsCredential**.
-- `Default` samma som `Optional`.
+- `Optional`**PsDscRunAsCredential** är valfritt för konfigurationer som anropar den här resursen. Detta är standardvärdet.
+- `Mandatory`**PsDscRunAsCredential** måste användas för alla konfigurationer som anropar den här resursen.
+- `NotSupported`Konfigurationer som anropar den här resursen kan inte använda **PsDscRunAsCredential**.
+- `Default`Samma som `Optional`.
 
 Använd till exempel följande attribut för att ange att den anpassade resursen inte stöder användning av **PsDscRunAsCredential**:
 
@@ -528,7 +528,7 @@ En modul kan definiera flera klassbaserade DSC-resurser. Du kan skapa mappstrukt
 
 ### <a name="access-the-user-context"></a>Komma åt användar kontexten
 
-Om du vill komma åt användar kontexten inifrån en anpassad resurs kan du använda den automatiska variabeln `$global:PsDscContext`.
+Om du vill komma åt användar kontexten inifrån en anpassad resurs kan du använda den `$global:PsDscContext`automatiska variabeln.
 
 Till exempel kan följande kod skriva användar kontexten som resursen körs till i utförlig utdataström:
 

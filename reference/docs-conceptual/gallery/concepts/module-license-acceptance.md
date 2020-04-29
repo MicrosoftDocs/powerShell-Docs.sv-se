@@ -1,13 +1,13 @@
 ---
 ms.date: 06/09/2017
 schema: 2.0.0
-keywords: PowerShell
+keywords: powershell
 title: Moduler som kräver godkännande av licensen
 ms.openlocfilehash: a2f7ed72aae8579a6723f65b86dd0993f1a22afd
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80082820"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Moduler som kräver godkännande av licensen
@@ -28,8 +28,8 @@ Moduler som vill kräva att användare accepterar licens bör uppfylla följande
 ## <a name="impact-on-installsaveupdate-module"></a>Inverkan på installation/Spara/uppdatera-modul
 
 - Installations-/Spara-/uppdaterings-cmdlets har stöd för en ny parameter **AcceptLicense** som beter sig som om användaren såg licensen.
-- Om **RequiredLicenseAcceptance** är sant och **AcceptLicense** inte anges visas `license.txt`och du uppmanas att: `Do you accept these license terms
-  (Yes/No/YesToAll/NoToAll)`.
+- Om **RequiredLicenseAcceptance** är sant och **AcceptLicense** inte anges visas användaren `license.txt`, och du uppmanas att:. `Do you accept these license terms
+  (Yes/No/YesToAll/NoToAll)`
   - Om licensen accepteras
     - **Spara-modul:** modulen kopieras till användarens system
     - **Installera-modul:** modulen kopieras till användarens system till rätt mapp (baserat på omfång)
@@ -48,7 +48,7 @@ Moduler som vill kräva att användare accepterar licens bör uppfylla följande
 
 ## <a name="impact-on--force"></a>Påverkan på Force
 
-Det räcker inte att ange `–Force` för att godkänna en licens. `–AcceptLicense` krävs för att du ska kunna installera. Om `–Force` anges är RequiredLicenseAcceptance sant, och `–AcceptLicense` inte anges, Miss lyckas åtgärden.
+Att `–Force` ange är inte tillräckligt för att godkänna en licens. `–AcceptLicense`krävs för att du ska kunna installera. Om `–Force` har angetts är RequiredLicenseAcceptance sant, och `–AcceptLicense` har inte angetts, så Miss lyckas åtgärden.
 
 ## <a name="examples"></a>EXEMPEL
 
@@ -87,7 +87,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Det här kommandot visar licensen från `license.txt`-filen och begär att användaren accepterar licensen.
+Det här kommandot visar licensen från `license.txt` filen och efterfrågar användaren att godkänna licensen.
 
 ### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a>Exempel 3: installera modul som kräver licens godkännande med-AcceptLicense
 
@@ -177,7 +177,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Det här kommandot visar licensen från `license.txt`-filen och begär att användaren accepterar licensen.
+Det här kommandot visar licensen från `license.txt` filen och efterfrågar användaren att godkänna licensen.
 
 ### <a name="example-9-save-module-requiring-license-acceptance-with--acceptlicense"></a>Exempel 9: Spara modul som kräver licens godkännande med-AcceptLicense
 
@@ -208,7 +208,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Det här kommandot visar licensen från `license.txt`-filen och begär att användaren accepterar licensen.
+Det här kommandot visar licensen från `license.txt` filen och efterfrågar användaren att godkänna licensen.
 
 ### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>Exempel 11: Update-modulen som kräver licens godkännande med-AcceptLicense
 

@@ -3,10 +3,10 @@ title: Supportlängd för PowerShell Core
 description: Principer som styr support för PowerShell Core
 ms.date: 03/09/2020
 ms.openlocfilehash: c319371778eb4615559ae12e0cd153a535ed22bf
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500999"
 ---
 # <a name="powershell-support-lifecycle"></a>Support livs cykel för PowerShell
@@ -19,7 +19,7 @@ Du kan också betala för [assisterad support][] för PowerShell genom att skick
 ## <a name="community-support"></a>Community-support
 
 Vi erbjuder också [Community-support][] på GitHub där du kan skicka ett problem, en bugg eller en funktions förfrågan.
-Du kan också få hjälp från andra medlemmar i communityn i Microsoft PowerShell- [PowerShell-Tech-community][] eller något av de forum som anges i avsnittet Community på sidan [PowerShell][pshub] -hubb. Vi erbjuder ingen garanti där communityn kommer att åtgärda problemet inom rimlig tid. Om du har ett problem som kräver omedelbar uppmärksamhet bör du använda de traditionella, avgiftsbelagda support alternativen.
+Du kan också få hjälp från andra medlemmar i communityn i Microsoft PowerShell- [Tech-communityn][] eller något av de forum som anges i avsnittet Community på sidan [PowerShell][pshub] -hubb. Vi erbjuder ingen garanti där communityn kommer att åtgärda problemet inom rimlig tid. Om du har ett problem som kräver omedelbar uppmärksamhet bör du använda de traditionella, avgiftsbelagda support alternativen.
 
 ## <a name="lifecycle-of-powershell-7"></a>Livs cykel för PowerShell 7
 
@@ -52,9 +52,9 @@ Den moderna livs cykel policyn kräver också att Microsoft ger kunderna tolv m�
 
 För att bekräfta om din plattform och version av PowerShell Core stöds officiellt, se följande tabell.
 
-Vår community har också bidragit med paket för vissa plattformar, men de stöds inte officiellt. Dessa paket markeras som `Community` i tabellen.
+Vår community har också bidragit med paket för vissa plattformar, men de stöds inte officiellt. Dessa paket är markerade som `Community` i tabellen.
 
-Plattformar som anges som `Experimental` stöds inte officiellt, men är tillgängliga för experimentering och feedback.
+Plattformar som anges `Experimental` som inte stöds officiellt, men som är tillgängliga för experimentering och feedback.
 
 | Plattform                                          |      6.2      |    7.0    |
 | ------------------------------------------------- | :-----------: | :-------: |
@@ -105,16 +105,16 @@ Distributions ägarna avslutade därför stödet för följande versioner och st
 
 |    Plattform    | Version |                                                         Uttjänta                                                          |
 | -------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------- |
-| Debian         |    8    | [2018 juni](https://lists.debian.org/debian-security-announce/2018/msg00132.html)                                            |
-| Fedora         |   24    | [2017 augusti](https://fedoramagazine.org/fedora-24-eol/)                                                                     |
+| Debian         |    8    | [Juni 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)                                            |
+| Fedora         |   24    | [Augusti 2017](https://fedoramagazine.org/fedora-24-eol/)                                                                     |
 | Fedora         |   25    | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                                                              |
 | Fedora         |   26    | [Maj 2018](https://fedoramagazine.org/fedora-26-end-life/)                                                                   |
 | Fedora         |   27    | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                                                           |
 | Fedora         |   28    | [Maj 2019](https://fedoramagazine.org/fedora-28-end-of-life/)                                                                |
-| openSUSE       |  42.1   | [Maj 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)                                      |
+| openSUSE       |  42,1   | [Maj 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)                                      |
 | openSUSE       |  42,2   | [Januari 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html)                                  |
 | openSUSE       |  42,3   | [Juli 2019](https://lists.opensuse.org/opensuse-security-announce/2019-07/msg00000.html)                                     |
-| Ubuntu         |  14.04  | [April 2019](https://wiki.ubuntu.com/Releases)                                                                               |
+| Ubuntu         |  14,04  | [April 2019](https://wiki.ubuntu.com/Releases)                                                                               |
 | Ubuntu         |  16,10  | [Juli 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)                                         |
 | Ubuntu         |  17,04  | [Januari 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)                                           |
 | Ubuntu         |  17,10  | [Juli 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)                                         |
@@ -123,11 +123,11 @@ Distributions ägarna avslutade därför stödet för följande versioner och st
 
 ## <a name="notes-on-licensing"></a>Anteckningar om licensiering
 
-PowerShell-kärnan släpps under [MIT-licens][]. Under den här licensen och utan ett betalt support avtal är användare begränsade till [Community-support][]. Med community-support ger Microsoft inga garantier för svars tider eller korrigeringar.
+PowerShell-kärnan släpps under [MIT-licensen][]. Under den här licensen och utan ett betalt support avtal är användare begränsade till [Community-support][]. Med community-support ger Microsoft inga garantier för svars tider eller korrigeringar.
 
 ## <a name="windows-powershell-compatibility"></a>Windows PowerShell-kompatibilitet
 
-Support livs cykeln för PowerShell behandlar inte moduler som levereras utanför paketet med PowerShell 7-versionen. Exempel: med `ActiveDirectory`-modulen som levereras som en del av Windows Server stöds under [Support livs cykel för Windows][].
+Support livs cykeln för PowerShell behandlar inte moduler som levereras utanför paketet med PowerShell 7-versionen. Exempelvis stöds den `ActiveDirectory` modul som levereras som en del av Windows Server under [Windows Support Lifecycle][].
 
 PowerShell 7 förbättrar kompatibiliteten med befintliga PowerShell-moduler skrivna för Windows PowerShell.
 Mer information finns i den [about_Windows_Compatibility][] artikeln och i [listan över kompatibla moduler][].
@@ -143,14 +143,14 @@ Mer information finns i den [about_Windows_Compatibility][] artikeln och i [list
 
 Följande tabell innehåller en tids linje för de större versionerna av PowerShell. Den här tabellen tillhandahålls för historisk referens. Den är inte avsedd att användas för att fastställa support livs cykeln.
 
-|       Version        | Utgivningsdatum |                                                                     Obs!                                                                      |
+|       Version        | Lanserings datum |                                                                     Obs!                                                                      |
 | -------------------- | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | PowerShell 7,0 (LTS) |   Mar – 2020   | Bygger på .NET Core 3,1 (LTS)                                                                                                                  |
 | PowerShell 6,0       |   Jan-2018   | Första versionen bygger på .NET Core 2,1. Kan installeras på Windows, Linux och macOS.                                                              |
-| PowerShell 5.1       |   Aug – 2016   | Lanseras i uppdatering för Windows 10-årsdag och Windows Server 2016                                                                             |
-| PowerShell 5,0       |   Feb-2016   | Lanserad i Windows Management Framework (WMF) 5,0                                                                                            |
-| PowerShell 4,0       |   Okt-2013   | Integrerad i Windows 8,1 och Windows Server 2012 R2. Kan installeras på Windows 7 SP1, Windows Server 2008 R2 SP1 och Windows Server 2012. |
-| PowerShell 3,0       |   Okt-2012   | Integrerad i Windows 8 och Windows Server 2012. Kan installeras på Windows 7 SP1, Windows Server 2008 SP1 och Windows Server 2008 R2 SP1.  |
+| PowerShell 5.1       |   Aug-2016   | Lanseras i uppdatering för Windows 10-årsdag och Windows Server 2016                                                                             |
+| PowerShell 5.0       |   Feb-2016   | Lanserad i Windows Management Framework (WMF) 5,0                                                                                            |
+| PowerShell 4.0       |   Okt-2013   | Integrerad i Windows 8,1 och Windows Server 2012 R2. Kan installeras på Windows 7 SP1, Windows Server 2008 R2 SP1 och Windows Server 2012. |
+| PowerShell 3.0       |   Okt-2012   | Integrerad i Windows 8 och Windows Server 2012. Kan installeras på Windows 7 SP1, Windows Server 2008 SP1 och Windows Server 2008 R2 SP1.  |
 | PowerShell 2,0       |   Jul – 2009   | Integrerad i Windows 7 och Windows Server 2008 R2. Kan installeras på Windows XP SP3, Windows Server 2003 SP2 och Windows Vista SP1.            |
 | PowerShell 1,0       |   Nov-2006   | Kan installeras på Windows XP SP2, Windows Server 2003 SP1 och Windows Vista. Valfri komponent i Windows Server 2008.                          |
 
@@ -169,6 +169,6 @@ Följande tabell innehåller en tids linje för de större versionerna av PowerS
 [MIT-licens]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
 [about_Windows_Compatibility]: /powershell/module/microsoft.powershell.core/about/about_windows_powershell_compatibility
 [Support livs cykel för Windows]: https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet
-[listan över kompatibla moduler]: /powershell/scripting/whats-new/module-compatibility
+[kompatibilitetslista för modul]: /powershell/scripting/whats-new/module-compatibility
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [Experimentella funktioner]: /powershell/module/microsoft.powershell.core/about/about_powershell_config#experimentalfeatures

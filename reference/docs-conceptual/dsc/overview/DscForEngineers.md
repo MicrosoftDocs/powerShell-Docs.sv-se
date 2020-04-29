@@ -3,10 +3,10 @@ ms.date: 10/13/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Desired State Configuration-översikt för tekniker
 ms.openlocfilehash: 0e599c2218cd2df29dbd0529006be5e1ef17ce5f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941840"
 ---
 # <a name="desired-state-configuration-overview-for-engineers"></a>Desired State Configuration-översikt för tekniker
@@ -134,6 +134,6 @@ Om du vill distribuera till olika miljöer kan du anropa **Start-DscConfiguratio
 
 [Konfigurationer](../configurations/configurations.md)
 
-[Konfigurations data](../configurations/configData.md)
+[Konfigurationsdata](../configurations/configData.md)
 
 [Resurser](../resources/resources.md)

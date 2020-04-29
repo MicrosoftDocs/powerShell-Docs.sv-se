@@ -3,10 +3,10 @@ title: Nyheter i PowerShell-dokument
 description: Lista över ändringar i PowerShell-dokumentationen
 ms.date: 03/31/2020
 ms.openlocfilehash: b7fee886b1c5584dc9d75b86ca79980579040db7
-ms.sourcegitcommit: ef1a3079809ec2e3c58e785c84de2df968145658
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80537070"
 ---
 # <a name="whats-new-in-powershell-docs"></a>Nyheter i PowerShell Docs
@@ -26,7 +26,7 @@ Hjälp oss att göra dokumentationen bättre. Läs [bidrags hand boken][contrib]
     - [PowerShell-informations grafiken](https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/assets/PowerShell_7_Infographic.pdf) har lagts till på den digitala bild Sidan
     - [PowerShell – doc Contributor-guide](/powershell/scripting/community/contributing/overview?view=powershell-7)
   - Nytt PowerShell-innehåll
-    - [Migrera från Windows PowerShell 5,1 till PowerShell 7](/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7)
+    - [Migrera från Windows PowerShell 5.1 till PowerShell 7](/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7)
     - [PowerShell 7-modulens kompatibilitetslista](/PowerShell/scripting/whats-new/module-compatibility)
     - [Använda PowerShell i Docker](/powershell/scripting/install/powershell-in-docker)
   - Nytt wiki-innehåll

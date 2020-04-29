@@ -4,10 +4,10 @@ ms.author: sewhee
 ms.date: 02/14/2020
 title: Digital PowerShell-bild
 ms.openlocfilehash: e67cafa274ca1720661aa24953278c13444d7698
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79078565"
 ---
 # <a name="powershell-digital-art"></a>Digital PowerShell-bild
@@ -26,7 +26,7 @@ Ta del av den digitala grafiken som är länkad nedan. Demonstrera dina kollegor
 - [PowerShell hjälte Comic (utskrifts upplösning)](https://aka.ms/powershellherocomic_print)
 - [PowerShell hjälte Comic (webb upplösning)](https://aka.ms/powershellherocomic_web)
 
-## <a name="wallpaper"></a>Bilder
+## <a name="wallpaper"></a>Skrivbordsunderlägg
 
 - [PowerShell hjälte Comic Skriv bords underlägg (4K-upplösning)](https://aka.ms/powershellherowallpaper)
 - [PowerShell-hjälte rosa Skriv bords underlägg (4K-upplösning)](https://aka.ms/powershellherowallpaper1)
@@ -48,4 +48,4 @@ Som allmän regel får tredje parter inte använda Microsoft-logotyper och bilde
 
 All användning utanför dessa rikt linjer som fastställs av Microsoft är strikt förbjuden. Använd inte Microsoft PowerShell-logotypen eller bilder i produkter, produkt förpackningar eller andra företags tjänster för vilka en formell licens krävs.
 
-Microsoft förbehåller sig rätten att avsluta eller ändra behörighet för att Visa logo typen eller bilderna, och kan begära att tredje part ändrar eller tar bort all användning av logo typen eller grafiken som i Microsofts enda dom inte uppfyller dessa rikt linjer eller kan på annat sätt försämra Microsofts rättigheter i logo typen.
+Microsoft förbehåller sig rätten att avsluta eller ändra behörighet för att Visa logo typen eller bilderna, och kan begära att tredje part ändrar eller tar bort all användning av logo typen eller grafiken som, i Microsofts enda dom, inte följer dessa rikt linjer eller som annars kan försämra Microsofts rättigheter i logo typen.

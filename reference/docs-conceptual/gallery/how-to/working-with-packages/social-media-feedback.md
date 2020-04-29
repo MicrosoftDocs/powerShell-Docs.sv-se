@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Ge feedback via sociala medier eller kommentarer
 ms.openlocfilehash: 95e5db22b94151c3974189c30f1d4e580b47eeb5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328758"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Ge feedback via sociala medier eller kommentarer
@@ -28,7 +28,7 @@ Användarna uppmanas att göra detta om de upptäcker att ett paket är något s
 Den PowerShell-galleriet kommer att kontrol lera om det finns "resurser" i paketet och visa hur många gånger paketet har delats på var och en av de sociala media platserna.
 Eftersom detta bara visar hur många gånger något har delats, kommer det att tolkas som andra användare som "gilla"-paketet.
 
-## <a name="comments"></a>Kommentar
+## <a name="comments"></a>Kommentarer
 
 > [!IMPORTANT]
 > Livefyre-kommentarer tillhandahålls av en tredjepartsleverantör och stöds inte längre.

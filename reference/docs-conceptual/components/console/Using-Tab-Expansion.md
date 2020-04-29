@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Använd flikexpansion
 ms.openlocfilehash: d96cbf848f464aff29a7bed9b70d0b6a000aa808
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67031020"
 ---
 # <a name="using-tab-expansion"></a>Använd flikexpansion
@@ -18,9 +18,9 @@ Kommando rads gränssnitt ger ofta ett sätt att slutföra namnen på långa fil
 
 Om du vill fylla i ett fil namn eller en sökväg från tillgängliga alternativ automatiskt, anger du en del av namnet och trycker på <kbd>TABB</kbd> -tangenten. PowerShell expanderar automatiskt namnet till den första matchning som hittas. Om du trycker på <kbd>tabbtangenten</kbd> flera gånger kommer de tillgängliga alternativen att gå igenom.
 
-Flikens expansion av cmdlet-namn skiljer sig något åt. Om du vill använda TABB-expansion på ett cmdlet-namn skriver du hela den första delen av namnet (verbet) och bindestrecket som följer. Du kan fylla i mer av namnet för en partiell matchning. Om du till exempel skriver `get-co` och sedan trycker på <kbd>tabbtangenten</kbd> , expanderar PowerShell automatiskt detta till `Get-Command`-cmdleten (Observera att det även ändrar Skift läge för bokstäver till deras standard formulär). Om du trycker på <kbd>tabbtangenten</kbd> igen ersätter PowerShell detta med det enda andra matchande cmdlet-namnet, `Get-Content`.
+Flikens expansion av cmdlet-namn skiljer sig något åt. Om du vill använda TABB-expansion på ett cmdlet-namn skriver du hela den första delen av namnet (verbet) och bindestrecket som följer. Du kan fylla i mer av namnet för en partiell matchning. Om du till exempel skriver `get-co` och trycker på <kbd>tabbtangenten</kbd> , expanderar PowerShell automatiskt detta till `Get-Command` cmdleten (Observera att det även ändrar Skift läge för bokstäver till deras standard formulär). Om du trycker på <kbd>tabbtangenten</kbd> igen ersätter PowerShell detta med det enda andra matchande cmdlet- `Get-Content`namnet.
 
-Du kan använda utöka flera gånger på samma rad. Du kan till exempel använda TABB-tillägg på namnet på `Get-Content`-cmdleten genom att ange:
+Du kan använda utöka flera gånger på samma rad. Du kan till exempel använda TABB-expansion på namnet på `Get-Content` cmdleten genom att ange:
 
 ```
 PS> Get-Con<Tab>

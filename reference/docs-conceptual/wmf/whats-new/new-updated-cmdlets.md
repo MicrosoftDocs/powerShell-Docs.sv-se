@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Nya och uppdaterade cmdletar
 ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71145028"
 ---
 # <a name="new-and-updated-cmdlets"></a>Nya och uppdaterade cmdletar
@@ -15,7 +15,7 @@ Vi har lagt till nya och uppdaterade befintliga cmdlets baserade på feedback fr
 
 ## <a name="archive-cmdlets"></a>Arkiv-cmdletar
 
-Med två nya cmdletar, `Compress-Archive` och `Expand-Archive`, kan du komprimera och expandera ZIP-filer.
+Två nya cmdletar, `Compress-Archive` och `Expand-Archive`låter dig komprimera och expandera zip-filer.
 
 Mer information finns i dokumentationen för modulen [Microsoft. PowerShell. Archive](/powershell/module/microsoft.powershell.archive/) .
 
@@ -30,9 +30,9 @@ Dessa genererar och validerar Windows Catalog-filer.
 
 ## <a name="clipboard-cmdlets"></a>Urklipps-cmdletar
 
-`Get-Clipboard` och `Set-Clipboard` göra det enklare för dig att överföra innehåll till och från en Windows PowerShell-session. Urklipps-cmdletarna stöder bilder, ljudfiler, fil listor och text.
+`Get-Clipboard`och `Set-Clipboard` gör det enklare för dig att överföra innehåll till och från en Windows PowerShell-session. Urklipps-cmdletarna stöder bilder, ljudfiler, fil listor och text.
 
-Mer information finns i följande avsnitt:
+Mer information finns i:
 
 - [Hämta Urklipp](/powershell/module/Microsoft.PowerShell.Management/Get-Clipboard)
 - [Ange Urklipp](/powershell/module/Microsoft.PowerShell.Management/Set-Clipboard)
@@ -45,13 +45,13 @@ Standardvärdet för CMS-kryptering implementerar kryptering med offentliga nyck
 
 Din offentliga nyckel kan delas mycket och är inte känslig för data. Alla innehåll som krypteras med den offentliga nyckeln kan bara dekrypteras med den privata nyckeln. Mer information finns i [kryptering med offentliga nycklar](https://en.wikipedia.org/wiki/Public-key_cryptography).
 
-Mer information finns i följande avsnitt:
+Mer information finns i:
 
 - [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage)
 - [Skydda – CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)
 - [Ta bort skydd-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/unprotect-CmsMessage)
 
-Certifikat kräver en unik nyckel användnings identifierare (EKU), t. ex. kod signering eller krypterad e-post, för att identifiera dem som data krypterings certifikat i PowerShell. Om du vill visa dokument krypterings certifikat i certifikat leverantören kan du använda den dynamiska **DocumentEncryptionCert** -parametern för `Get-ChildItem`:
+Certifikat kräver en unik nyckel användnings identifierare (EKU), t. ex. kod signering eller krypterad e-post, för att identifiera dem som data krypterings certifikat i PowerShell. Om du vill visa dokument krypterings certifikat i certifikat leverantören kan du använda den dynamiska **DocumentEncryptionCert** - `Get-ChildItem`parametern för:
 
 ```powershell
 Get-ChildItem Cert:\CurrentUser -DocumentEncryptionCert -Recurse
@@ -61,20 +61,20 @@ Get-ChildItem Cert:\CurrentUser -DocumentEncryptionCert -Recurse
 
 ### <a name="convertfrom-string"></a>ConvertFrom-sträng
 
-New `ConvertFrom-String`-cmdlet har stöd för två lägen:
+Den nya `ConvertFrom-String` cmdleten stöder två lägen:
 
 - Grundläggande avgränsad parsning
 - Automatiskt genererad exempel-driven parsning
 
 Delimited parsing, som standard, delar in indatamängden med blank steg och tilldelar de resulterande grupperna egenskaps namn.
 
-Parametern **UpdateTemplate** sparar resultatet av inlärningen i en kommentar i mallfilen. Detta gör inlärnings processen (den långsammaste fasen) till en engångs kostnad. Att köra `ConvertFrom-String` med en mall som innehåller den kodade inlärnings algoritmen är nu nästan momentan.
+Parametern **UpdateTemplate** sparar resultatet av inlärningen i en kommentar i mallfilen. Detta gör inlärnings processen (den långsammaste fasen) till en engångs kostnad. Att `ConvertFrom-String` köra med en mall som innehåller den kodade inlärnings algoritmen är nu nästan momentant.
 
 Mer information finns i [ConvertFrom-String](/powershell/module/Microsoft.PowerShell.Utility/ConvertFrom-String).
 
 ### <a name="convert-string"></a>Convert-String
 
-med `Convert-String` kan du ange före och efter exempel på hur du vill att texten ska se ut. -Cmdleten formaterar texten automatiskt.
+`Convert-String`gör att du kan ange före och efter exempel på hur du vill att texten ska se ut. -Cmdleten formaterar texten automatiskt.
 
 Mer information finns i [Convert-String](/powershell/module/Microsoft.PowerShell.Utility/Convert-String).
 
@@ -96,13 +96,13 @@ ProductVersion    : 10.0.17763.1
 
 ## <a name="format-hex"></a>Format-Hex
 
-med `Format-Hex` kan du Visa text data eller binära data i hexadecimalt format.
+`Format-Hex`gör att du kan visa text eller binära data i hexadecimalt format.
 
 Mer information finns i [format-hex](/powershell/module/microsoft.powershell.utility/format-hex).
 
 ## <a name="get-childitem-has--depth-parameter"></a>Get-ChildItem har-djupgående-parameter
 
-`Get-ChildItem` har nu en **djup** parameter som används med **rekursivt** för att begränsa den rekursion:
+`Get-ChildItem`har nu en **djup** parameter som används med **rekursivt** för att begränsa den rekursion:
 
 ## <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Moduler har stöd för att deklarera versions intervall (1. * osv.)
 
@@ -124,7 +124,7 @@ VERBOSE: Importing function 'PSConsoleHostReadline'.
 
 ## <a name="new-guid"></a>New-Guid
 
-Det finns många scenarier där Youneed för unik identifierare. `New-GUID` cmdlet är ett enkelt sätt att skapa ett nytt GUID.
+Det finns många scenarier där Youneed för unik identifierare. `New-GUID` Cmdleten är ett enkelt sätt att skapa ett nytt GUID.
 
 ```powershell
 New-Guid
@@ -138,7 +138,7 @@ e19d6ea5-3cc2-4db9-8095-0cdaed5a703d
 
 ## <a name="nonewline-parameter"></a>NoNewLine-parameter
 
-`Out-File`, `Add-Content`och `Set-Content` har nu en ny **NoNewline** -växel som utelämnar en ny rad efter utdata. Till exempel:
+`Out-File`, `Add-Content`och `Set-Content` har nu en ny **NoNewline** -växel som utelämnar en ny rad efter utdata. Ett exempel:
 
 ```powershell
 "This is " | Out-File -FilePath Example.txt -NoNewline
@@ -208,7 +208,7 @@ New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 
 ### <a name="get-childitem"></a>Get-ChildItem
 
-`Get-ChildItem` visar nu en "l" i egenskapen **mode** för att ange en symbolisk länk fil eller katalog.
+`Get-ChildItem`visar nu en "l" i egenskapen **mode** för att ange en symbolisk länk fil eller katalog.
 
 ```powershell
 Get-ChildItem C:\Temp | sort LastWriteTime -Descending
@@ -242,7 +242,7 @@ Remove-Item C:\Temp\MySymLinkDir -Force
 
 ## <a name="new-temporaryfile"></a>New-TemporaryFile
 
-Ibland måste du skapa en temporär fil i dina skript. Nu kan du göra detta med `New-TemporaryFile`-cmdlet:
+Ibland måste du skapa en temporär fil i dina skript. Nu kan du göra detta med `New-TemporaryFile` cmdleten:
 
 ```powershell
 $tempFile = New-TemporaryFile
@@ -286,7 +286,7 @@ Med modulen ODataUtils kan du skapa PowerShell-cmdlets från REST-slutpunkter so
 - Filtrering på Server sidan med hjälp av parametern-Select
 - Stöd för webb begär ande rubriker
 
-Proxy-cmdletarna som genereras av `Export-ODataEndPointProxy`-cmdleten ger ytterligare information från OData-slutpunkten på Server sidan i **informations** data strömmen.
+Proxy-cmdletarna som genereras av `Export-ODataEndPointProxy` cmdleten ger ytterligare information från OData-slutpunkten på Server sidan i **informations** data strömmen.
 
 ```powershell
 Import-Module Microsoft.PowerShell.ODataUtils -Force
@@ -324,7 +324,7 @@ De genererade proxy-cmdletarna stöder **Select** -parametern som används som e
 Get-Product -Top 2 -AllowUnsecureConnection -AllowAdditionalData -Select Name
 ```
 
-`Export-ODataEndpointProxy`-cmdleten och proxy-cmdletarna som genereras av den, stöder nu **headers** -parametern. Sidhuvudet kan användas för att kanal ytterligare information som förväntas av OData-slutpunkten.
+`Export-ODataEndpointProxy` Cmdleten och proxy-cmdletarna som genereras av den, stöder nu parametern **headers** . Sidhuvudet kan användas för att kanal ytterligare information som förväntas av OData-slutpunkten.
 
 I följande exempel anges en hash-tabell som innehåller en prenumerations nyckel för parametern **headers** . Detta är ett typiskt exempel för tjänster som förväntar sig en prenumerations nyckel för autentisering.
 

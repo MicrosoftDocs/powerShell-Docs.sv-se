@@ -4,10 +4,10 @@ description: Den här artikeln är en översikt över hur du kommer igång som e
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: 5db78ae2805cb26aa79aa698cfb8b5d8ba8911dc
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79407051"
 ---
 # <a name="contributing-to-powershell-documentation"></a>Bidra till PowerShell-dokumentation
@@ -31,13 +31,13 @@ Det finns två sätt att bidra. Båda bidragen är värdefulla för oss.
 Du behöver ett GitHub-konto för att bidra till dokumentationen. Använd följande check lista för att hämta verktyg och förstå de processer som vi använder för att göra bidrag.
 
 1. [Registrera dig för GitHub](/contribute/get-started-setup-github)
-1. [Installera git-och markdown-verktyg](/contribute/get-started-setup-tools)
+1. [Installera Git- och Markdown-verktyg](/contribute/get-started-setup-tools)
 1. [Installera redigerings paketet för dokument](/contribute/how-to-write-docs-auth-pack)
 1. [Installera posh-git][posh-git] – inte obligatoriskt, men rekommenderas
-1. [Konfigurera en lokal git-lagringsplats](/contribute/get-started-setup-local)
+1. [Konfigurera en lokal Git-lagringsplats](/contribute/get-started-setup-local)
 1. [Granska git och GitHub fundament ALS](/contribute/git-github-fundamentals)
 
-## <a name="get-started-writing-docs"></a>Kom igång med att skriva dokument
+## <a name="get-started-writing-docs"></a>Komma igång med att skriva dokument
 
 Det finns två sätt att bidra till ändringar i dokumentationen:
 
@@ -50,11 +50,11 @@ Läs även avsnittet [Skriv Essentials](/contribute/style-quick-start) i den cen
 
 Mindre korrigeringar eller klargöranden av dokumentation och kod exempel i offentliga databaser omfattas av docs.microsoft.com användnings [villkor][terms-of-use].
 
-Använd det fullständiga GitHub-arbetsflödet när du gör betydande ändringar. Om du inte är anställd hos Microsoft genererar betydande ändringar en kommentar i pull-begäran som ber dig att skicka ett [licens avtal för CLA (online bidrag)][cla]. Du måste fylla i online-formuläret innan vi kan granska eller godkänna din pull-begäran.
+Använd det fullständiga GitHub-arbetsflödet när du gör betydande ändringar. Om du inte är anställd hos Microsoft genererar betydande ändringar en kommentar i pull-begäran som ber dig att skicka ett [licens avtal för CLA (online bidrag)][cla]. Du måste fylla i hela online-formuläret innan vi kan granska eller acceptera din pull-begäran.
 
 ## <a name="code-of-conduct"></a>Uppförandekod
 
-Alla databaser som publicerar till docs.microsoft.com har antagit [Microsoft Open Source](https://opensource.microsoft.com/codeofconduct/) -uppförandekoden eller [.net Foundation](https://dotnetfoundation.org/code-of-conduct)-uppförandekoden. Mer information finns i [vanliga frågor och svar om uppförandekod](https://opensource.microsoft.com/codeofconduct/faq/).
+Alla informationslager som publicerar till docs.microsoft.com har antagit [Microsoft Open Source-uppförandekoden](https://opensource.microsoft.com/codeofconduct/) eller [.NET Foundation-uppförandekoden](https://dotnetfoundation.org/code-of-conduct). Mer information finns i [Vanliga frågor och svar om uppförandekod](https://opensource.microsoft.com/codeofconduct/faq/).
 
 ## <a name="next-steps"></a>Nästa steg
 
@@ -63,16 +63,16 @@ Följande artiklar beskriver information som är unik för PowerShell-dokumentat
 Läs följande dokument:
 
 - [Så här arkiverar du ett problem](file-an-issue.md)
-- [Kom igång med att skriva dokument](get-started-writing.md)
+- [Komma igång med att skriva dokument](get-started-writing.md)
 - [Skicka en pull-begäran](pull-requests.md)
-- [PowerShell – format guide för dokument](powershell-style-guide.md)
+- [Stilguide för PowerShell-Docs](powershell-style-guide.md)
 - [Redigera cmdlet-referens](editing-cmdlet-ref.md)
 
 Ytterligare resurser
 
-- [Redaktionell check lista](editorial-checklist.md)
+- [Checklista för redigering](editorial-checklist.md)
 - [Så här hanterar vi problem](managing-issues.md)
-- [Hur vi hanterar pull-begäranden](managing-pull-requests.md)
+- [Så här hanterar vi pull-begäranden](managing-pull-requests.md)
 
 <!--link refs-->
 [cla]: https://cla.microsoft.com/

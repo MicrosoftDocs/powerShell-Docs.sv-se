@@ -3,10 +3,10 @@ ms.date: 08/24/2018
 keywords: PowerShell, cmdlet
 title: Kommando namn för Learning PowerShell
 ms.openlocfilehash: a65ffcdca6510093b0a77234e20546b6cc1f02bf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030427"
 ---
 # <a name="learning-powershell-command-names"></a>Kommando namn för Learning PowerShell
@@ -20,11 +20,11 @@ Detta verkar logiskt för kommando namn eftersom varje kommando är ett separat 
 
 De flesta kommandon är utformade för att hantera element i operativ systemet eller program, t. ex. tjänster eller processer. Kommandona har namn som kanske inte passar in i en familj. I Windows-system kan du till exempel använda kommandona `net start` och `net stop` för att starta och stoppa en tjänst. **SC. exe** är ett annat tjänst kontroll verktyg för Windows. Namnet passar inte in i namngivnings mönstret för **net. exe** -tjänstens kommandon. För process hantering har Windows kommandot **Tasklist. exe** för att visa en lista över processer och kommandot **taskkill. exe** för att avsluta processer.
 
-Dessa kommandon har också oregelbundna parameter specifikationer. Du kan inte använda kommandot `net start` för att starta en tjänst på en fjärrdator. Kommandot **SC. exe** kan starta en tjänst på en fjärrdator. Men för att ange fjärrdatorn måste du ange ett prefix för namnet med ett dubbelt omvänt snedstreck. Om du vill starta Spooler-tjänsten på en fjärrdator med namnet DC01 skriver du `sc.exe \\DC01 start spooler`.
+Dessa kommandon har också oregelbundna parameter specifikationer. Du kan inte använda `net start` kommandot för att starta en tjänst på en fjärrdator. Kommandot **SC. exe** kan starta en tjänst på en fjärrdator. Men för att ange fjärrdatorn måste du ange ett prefix för namnet med ett dubbelt omvänt snedstreck. Om du vill starta Spooler-tjänsten på en fjärrdator med namnet DC01 skriver `sc.exe \\DC01 start spooler`du.
 Om du vill visa en lista över aktiviteter som körs på DC01 använder du parametern **/s** och dator namnet utan omvänt snedstreck. Till exempel `tasklist /S DC01`.
 
 > [!NOTE]
-> Före PowerShell V6 var `sc` ett alias för `Set-Content`-cmdleten. För att köra kommandot **SC. exe** i en version av PowerShell före V6 måste du därför inkludera det fullständiga fil namnet **SC. exe** , inklusive fil namns tillägget **exe**.
+> Innan PowerShell V6 `sc` var ett alias för `Set-Content` cmdleten. För att köra kommandot **SC. exe** i en version av PowerShell före V6 måste du därför inkludera det fullständiga fil namnet **SC. exe** , inklusive fil namns tillägget **exe**.
 
 Tjänster och processer är exempel på hanterbara element på en dator som har väldefinierade livs cykel cyklar. Du kan starta eller stoppa tjänster och processer eller hämta en lista över alla tjänster eller processer som körs. Även om det finns viktiga tekniska skillnader mellan dem, är de åtgärder som du utför på tjänster och processer konceptuellt desamma. Dessutom kan de val vi gör för att anpassa en åtgärd genom att ange parametrar vara konceptuellt lika bra.
 
@@ -34,12 +34,12 @@ PowerShell utnyttjar dessa likheter för att minska antalet distinkta namn som d
 
 PowerShell använder namngivnings systemet "verb-Substantiv". Varje cmdlet-namn består av ett standard-verb avstavat med ett bestämt substantiv. PowerShell-verb är inte alltid engelska verb, utan de uttrycker vissa åtgärder i PowerShell. Substantiv är mycket likt Substantiv på valfritt språk. De beskriver vissa typer av objekt som är viktiga för system administration. Det är enkelt att visa hur dessa namn på två delar minskar inlärnings ansträngningen genom att titta på några exempel.
 
-PowerShell har en rekommenderad uppsättning standard-verb. Substantiv är mindre begränsade, men beskriver alltid vad verbet agerar på. PowerShell har kommandon som `Get-Process`, `Stop-Process`, `Get-Service`och `Stop-Service`.
+PowerShell har en rekommenderad uppsättning standard-verb. Substantiv är mindre begränsade, men beskriver alltid vad verbet agerar på. PowerShell har kommandon `Get-Process`som, `Stop-Process` `Get-Service`, och. `Stop-Service`
 
 I det här exemplet på två Substantiv och verb fören klar konsekvensen inte inlärningen mycket. Utöka listan till en standardiserad uppsättning med 10 verb och 10 substantiv. Nu har du bara 20 ord att förstå.
 Men dessa ord kan kombineras med formatet 100 distinkta kommando namn.
 
-Det är enkelt att förstå vad ett PowerShell-kommando gör genom att läsa dess namn. Kommandot för att stänga av en dator är `Stop-Computer`. Kommandot för att visa en lista över alla datorer i ett nätverk är `Get-Computer`. Kommandot för att hämta system datumet är `Get-Date`.
+Det är enkelt att förstå vad ett PowerShell-kommando gör genom att läsa dess namn. Kommandot för att stänga av en dator är `Stop-Computer`. Kommandot för att visa en lista över alla datorer i `Get-Computer`ett nätverk är. Kommandot för att hämta system datumet är `Get-Date`.
 
 Du kan visa alla kommandon som innehåller ett visst verb med parametern **verb** för `Get-Command`. Om du till exempel vill visa alla cmdletar som använder verbet `Get`skriver du:
 
@@ -79,19 +79,19 @@ Som tidigare nämnts har kommandon som används i traditionella kommando rads gr
 
 Till skillnad från de flesta andra traditionella kommando rads gränssnitt, bearbetar PowerShell parametrar direkt och den använder direkt åtkomst till parametrarna tillsammans med vägledning för utvecklare för att standardisera parameter namn. Den här vägledningen uppmuntrar men garanterar inte att varje cmdlet följer standarden.
 
-PowerShell standardiserar också parameter avgränsaren. Parameter namn har alltid en-anpassningsprefix till dem med ett PowerShell-kommando. Se följande exempel:
+PowerShell standardiserar också parameter avgränsaren. Parameter namn har alltid en-anpassningsprefix till dem med ett PowerShell-kommando. Ta följande som exempel:
 
 ```powershell
 Get-Command -Name Clear-Host
 ```
 
-Parameterns namn är **ett namn**, men det anges som `-Name` när det används på kommando raden som en parameter.
+Parameterns namn är **ett namn**, men den skrivs som `-Name` när den används på kommando raden som en parameter.
 
 Här följer några allmänna egenskaper för standard parameter namn och-användning.
 
 ### <a name="the-help-parameter-"></a>Parametern Help (?)
 
-När du anger parametern `-?` för alla cmdletar visar PowerShell hjälp för cmdleten.
+När du anger `-?` parametern för alla cmdletar visar PowerShell hjälp för cmdleten.
 Cmdleten körs inte.
 
 ### <a name="common-parameters"></a>Vanliga parametrar

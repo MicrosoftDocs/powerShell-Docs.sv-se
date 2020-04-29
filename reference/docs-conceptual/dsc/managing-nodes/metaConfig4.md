@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Konfigurera LCM i PowerShell 4.0
 ms.openlocfilehash: 747b15c483c79a7ecbb62214ef5a59f8dc137bd4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941861"
 ---
 # <a name="configuring-the-lcm-in-powershell-40"></a>Konfigurera LCM i PowerShell 4.0
@@ -34,14 +34,14 @@ I följande lista visas de lokala Configuration Manager egenskaper som du kan an
 - **Autentiseringsuppgift**: anger autentiseringsuppgifter (som med Get-Credential) som krävs för att komma åt fjär resurser, t. ex. för att kontakta konfigurations tjänsten.
 - **DownloadManagerCustomData**: representerar en matris som innehåller anpassade data som är speciella för hämtnings hanteraren.
 - **DownloadManagerName**: anger namnet på konfigurations-och modulens hämtnings hanterare.
-- **RebootNodeIfNeeded**: Ange `$true` för att tillåta att resurser startar om noden med hjälp av `$global:DSCMachineStatus`-flaggan. Annars måste du starta om noden manuellt för alla konfigurationer som kräver det. Standardvärdet är `$false`. Om du vill använda den här inställningen när ett villkor för omstart utförs av något annat än DSC (till exempel Windows Installer) kombinerar du den här inställningen med [xPendingReboot](https://github.com/powershell/xpendingreboot) -modulen.
+- **RebootNodeIfNeeded**: Ställ in på `$true` för att tillåta att resurser startar om noden med `$global:DSCMachineStatus` hjälp av flaggan. Annars måste du starta om noden manuellt för alla konfigurationer som kräver det. Standardvärdet är `$false`. Om du vill använda den här inställningen när ett villkor för omstart utförs av något annat än DSC (till exempel Windows Installer) kombinerar du den här inställningen med [xPendingReboot](https://github.com/powershell/xpendingreboot) -modulen.
 - **RefreshFrequencyMins**: används när du har konfigurerat en pull-tjänst. Representerar den frekvens (i minuter) som den lokala Configuration Manager kontaktar en pull-tjänst för att hämta den aktuella konfigurationen. Det här värdet kan anges tillsammans med ConfigurationModeFrequencyMins. När RefreshMode är inställt på Hämta kontaktar målnoden den pull-tjänst med ett intervall som anges av RefreshFrequencyMins och hämtar den aktuella konfigurationen. Vid det intervall som anges av ConfigurationModeFrequencyMins tillämpar konsekvens motorn den senaste konfigurationen som hämtades till målnoden. Om RefreshFrequencyMins inte är inställt på ett heltals multipel av ConfigurationModeFrequencyMins, kommer systemet att avrundas. Standardvärdet är 30.
 - **RefreshMode**: möjliga värden är **push** (standard) och **pull**. I "push"-konfigurationen måste du placera en konfigurations fil på varje målnod med valfri klient dator. I läget "pull" måste du konfigurera en pull-tjänst för lokala Configuration Manager att kontakta och komma åt konfigurationsfilerna.
 
 > [!NOTE]
 > LCM startar **ConfigurationModeFrequencyMins** -cykeln baserat på:
 >
-> - En ny Metaconfig tillämpas med hjälp av `Set-DscLocalConfigurationManager`
+> - En ny Metaconfig tillämpas med hjälp av`Set-DscLocalConfigurationManager`
 > - Omstart av datorn
 >
 > För alla villkor där timer-processen upplever en krasch, kommer den att identifieras inom 30 sekunder och cykeln startas om.

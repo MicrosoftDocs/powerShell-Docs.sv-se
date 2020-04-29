@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Tillämpa, hämta och testa konfigurationer på en nod
 ms.openlocfilehash: 41f8d2d75d3dd9621de615e7999c2690cb8ce44a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941868"
 ---
 # <a name="apply-get-and-test-configurations-on-a-node"></a>Tillämpa, hämta och testa konfigurationer på en nod
@@ -45,13 +45,13 @@ Mode                LastWriteTime     Length Name
 -a----       11/27/2018   7:29 AM     2.13KB server02.mof
 ```
 
-Använd cmdleten [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) för att tillämpa en konfiguration. Parametern `-Path` anger en katalog där ". MOF"-filer finns. Om ingen `-Computername` anges försöker `Start-DSCConfiguration` tillämpa varje konfiguration på dator namnet som anges av namnet på. MOF-filen (\<ComputerName\>. MOF). Ange `-Verbose` för att `Start-DSCConfiguration` för att se mer utförlig utdata.
+Använd cmdleten [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) för att tillämpa en konfiguration. `-Path` Parametern anger en katalog där ". MOF"-filer finns. Om inget `-Computername` anges `Start-DSCConfiguration` försöker att tillämpa varje konfiguration till dator namnet som anges av namnet på. MOF-filen (\<ComputerName\>. MOF). Ange `-Verbose` om `Start-DSCConfiguration` du vill visa mer utförlig utdata.
 
 ```powershell
 Start-DSCConfiguration -Path C:\Temp\ -Verbose
 ```
 
-Om `-Wait` inte anges visas ett jobb som skapats. Jobbet som skapas kommer att ha en **ChildJob** för varje ". MOF"-fil som bearbetas av `Start-DSCConfiguration`.
+Om `-Wait` inte anges visas ett jobb som skapats. Jobbet som skapas kommer att ha en **ChildJob** för varje ". MOF"-fil `Start-DSCConfiguration`som bearbetas av.
 
 ```output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
@@ -101,7 +101,7 @@ An LCM method call arrived from computer SERVER01 with user sid S-1-5-21-1245250
 Operation 'Invoke CimMethod' complete.
 ```
 
-Från och med PowerShell 5,0 lades parametern `-UseExisting` till `Start-DSCConfiguration`. Genom att ange `-UseExisting`instruerar du cmdleten att använda den befintliga tillämpade konfigurationen i stället för en som anges av parametern `-Path`.
+Från och med PowerShell 5,0 lades `-UseExisting` parametern till i `Start-DSCConfiguration`. Genom att `-UseExisting`ange instruerar du cmdleten att använda den befintliga tillämpade konfigurationen i stället för en `-Path` som anges av parametern.
 
 ```powershell
 Start-DSCConfiguration -UseExisting -Verbose -Wait
@@ -109,19 +109,19 @@ Start-DSCConfiguration -UseExisting -Verbose -Wait
 
 ## <a name="test-a-configuration"></a>Testa en konfiguration
 
-Du kan testa en aktuell konfiguration med hjälp av [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration). `Test-DSCConfiguration` kommer att returnera `True` om noden är kompatibel och `False` om den inte är det.
+Du kan testa en aktuell konfiguration med hjälp av [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration). `Test-DSCConfiguration`kommer att `True` returneras om noden är kompatibel och `False` inte.
 
 ```powershell
 Test-DSCConfiguration
 ```
 
-Från och med PowerShell 5,0 lades `-Detailed`-parametern till som returnerar ett objekt med samlingar för **ResourcesInDesiredState** och **ResourcesNotInDesiredState**
+Från och med PowerShell 5,0 lades `-Detailed` parametern till som returnerar ett objekt med samlingar för **ResourcesInDesiredState** och **ResourcesNotInDesiredState**
 
 ```powershell
 Test-DSCConfiguration -Detailed
 ```
 
-Från och med PowerShell 5,0 kan du testa en konfiguration utan att använda den. Parametern `-ReferenceConfiguration` accepterar sökvägen till en ". MOF"-fil för att testa noden mot. Inga **uppsättnings** åtgärder vidtas mot noden. I PowerShell 4,0 finns det lösningar för att testa en konfiguration utan att använda den, men de beskrivs inte här.
+Från och med PowerShell 5,0 kan du testa en konfiguration utan att använda den. `-ReferenceConfiguration` Parametern accepterar sökvägen till en ". MOF"-fil för att testa noden mot. Inga **uppsättnings** åtgärder vidtas mot noden. I PowerShell 4,0 finns det lösningar för att testa en konfiguration utan att använda den, men de beskrivs inte här.
 
 ## <a name="get-configuration-values"></a>Hämta konfigurations värden
 
@@ -162,7 +162,7 @@ CimClassName         : MSFT_FileDirectoryConfiguration
 
 ## <a name="get-configuration-status"></a>Hämta konfigurations status
 
-Med början i PowerShell 5,0 cmdleten [Get-DSCConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) kan du se historiken över tillämpade konfigurationer på noden. PowerShell DSC håller koll på de senaste {{N}} konfigurationerna som tillämpas i **push** -eller **pull** -läge. Detta omfattar alla *konsekvens* kontroller som utförs av LCM. Som standard visas endast den sista historik posten i `Get-DSCConfigurationStatus`.
+Med början i PowerShell 5,0 cmdleten [Get-DSCConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) kan du se historiken över tillämpade konfigurationer på noden. PowerShell DSC håller koll på de senaste {{N}} konfigurationerna som tillämpas i **push** -eller **pull** -läge. Detta omfattar alla *konsekvens* kontroller som utförs av LCM. Som standard `Get-DSCConfigurationStatus` visas endast den sista historik posten.
 
 ```powershell
 Get-DSCConfigurationStatus
@@ -174,7 +174,7 @@ Status     StartDate                 Type            Mode  RebootRequested      
 Success    11/27/2018 7:18:40 AM     Consistency     PUSH  False                1
 ```
 
-Använd parametern `-All` om du vill visa all konfigurations status historik.
+Använd `-All` parametern för att se all konfigurations status historik.
 
 > [!NOTE]
 > Utdata trunkeras för det kortfattat.
@@ -202,7 +202,7 @@ Success    11/27/2018 6:03:44 AM     Consistency     PUSH  False                
 
 LCM hanterar nodens konfiguration genom att arbeta med **konfigurations dokument**. Dessa ". MOF"-filer finns i katalogen "C:\Windows\System32\Configuration".
 
-Från och med PowerShell 5,0 gör [Remove-DSCConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument) att du kan ta bort filerna ". MOF" för att stoppa framtida konsekvens kontroller eller ta bort en konfiguration som har fel när den tillämpas. Med parametern `-Stage` kan du ange vilken ". MOF"-fil som du vill ta bort.
+Från och med PowerShell 5,0 gör [Remove-DSCConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument) att du kan ta bort filerna ". MOF" för att stoppa framtida konsekvens kontroller eller ta bort en konfiguration som har fel när den tillämpas. `-Stage` Parametern låter dig ange vilken ". MOF"-fil som du vill ta bort.
 
 ```powershell
 Remove-DSCConfigurationDocument -Stage Current
@@ -221,4 +221,4 @@ Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer
 
 ## <a name="see-also"></a>Se även
 
-- [Hämta, testa och ange](../resources/get-test-set.md)
+- [Hämta, testa och tillämpa](../resources/get-test-set.md)

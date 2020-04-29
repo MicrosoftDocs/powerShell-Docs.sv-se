@@ -4,10 +4,10 @@ description: Den här artikeln beskriver hur du skickar pull-begäranden till da
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: 2600049b06da5ad4869b6ff335f00bc40c2d1c22
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79078509"
 ---
 # <a name="how-to-submit-pull-requests"></a>Skicka pull-begäranden
@@ -16,9 +16,9 @@ Skicka en pull-begäran (PR) från din förgrening om du vill göra ändringar i
 
 ## <a name="target-the-correct-branch"></a>Rikta in dig på rätt gren
 
-Alla pull-begäranden bör vara riktade till `staging` grenen. Ändringar ska aldrig skickas till `live` grenen. Ändringar som görs i `staging` grenen sammanfogas i `live`och skriver över eventuella ändringar som gjorts i `live`.
+Alla pull-begäranden bör riktas mot `staging` grenen. Ändringar ska aldrig skickas till `live` grenen. Ändringar som görs i `staging` grenen sammanfogas `live`i och skriver över eventuella ändringar som `live`gjorts i.
 
-Om du skickar en ändring som bara gäller för en version av PowerShell som är en utgåva, söker du efter en versions gren för den versionen. Din PR ska vara riktad mot lanserings grenen. Versions grenar har följande namn mönster: `release-<version>`.
+Om du skickar en ändring som bara gäller för en version av PowerShell som är en utgåva, söker du efter en versions gren för den versionen. Din PR ska vara riktad mot lanserings grenen. Versionsgrenar har följande namnmönster: `release-<version>`.
 
 ## <a name="make-the-pull-request-process-work-better-for-everyone"></a>Gör så att pull-begäran fungerar bättre för alla
 
@@ -26,9 +26,9 @@ Den enklare och mer fokuserade du kan göra din PR, desto snabbare kan du gransk
 
 ### <a name="avoid-branches-that-update-large-numbers-of-files-or-contain-unrelated-changes"></a>Undvik grenar som uppdaterar ett stort antal filer eller innehåller orelaterade ändringar
 
-Undvik att skapa pull som innehåller orelaterade ändringar. Separata mindre uppdateringar av befintliga artiklar från nya artiklar eller större omskrivning. Arbeta med dessa ändringar i separata arbets grenar.
+Undvik att skapa pull som innehåller orelaterade ändringar. Olika små uppdateringar i befintliga artiklar från nya artiklar eller större omskrivningar. Arbeta på dessa ändringar i olika arbetsflöden.
 
-Mass ändringar skapa pull med ett stort antal ändrade filer. Begränsa din pull till högst 50 ändrade filer. Stora pull är svåra att granska och är mer känsliga för att innehålla fel.
+Mass ändringar skapa pull med ett stort antal ändrade filer. Begränsa din pull-begäran till högst 50 ändrade filer. Stora pull-begäranden är svåra att granska och är mer benägna att innehålla fel.
 
 ### <a name="renaming-or-deleting-files"></a>Byta namn på eller ta bort filer
 
@@ -36,9 +36,9 @@ Om du byter namn på eller tar bort filer måste det finnas ett problem som är 
 
 Undvik att blanda innehålls tillägg eller ändra med fil namn och borttagningar. Alla filer som har bytt namn eller tas bort måste läggas till i Master-omdirigerings filen. När det är möjligt bör du också uppdatera alla filer som länkar till innehållet som har bytt namn eller tagits bort. Detta inkluderar alla TOC-filer.
 
-## <a name="docs-pr-validation-service"></a>Tjänst för dokument PR-validering
+## <a name="docs-pr-validation-service"></a>Docs PR-valideringstjänst
 
-Verifierings tjänsten för dokument PR är en GitHub-app som kör verifierings regler på filerna i en PR. Du måste åtgärda eventuella fel eller varningar (se undantag) som rapporteras av validerings tjänsten.
+Docs PR-valideringstjänsten är en GitHub-app som kör valideringsregler på filer i en PR. Du måste åtgärda eventuella fel eller varningar (se undantag) som rapporteras av validerings tjänsten.
 
 Följande varningar kan ignoreras:
 
@@ -53,20 +53,20 @@ Docs platform, so the values set in these 3 places will be ignored. Please remov
 3 places to resolve the warning.
 ```
 
-Du ser följande beteende:
+Följande beteende kommer att visas:
 
 1. Du skickar en PR.
-1. I GitHub-kommentaren som visar statusen för din PR ser du statusen "checkar" aktiverade på lagrings platsen. Observera att i det här exemplet finns det två kontroller aktiverade, "commit Validation" och "openpublishing. Build":
+1. I GitHub-kommentaren som anger status för din PR kan du se att status "checks" (kontroller) har aktiverats på lagringsplatsen. Observera att två kontroller är aktiverade i det här exemplet: "Commit Validation" och "OpenPublishing.Build":
 
    ![vissa kontroller misslyckades](media/pull-requests/validation-failed.png)
 
    Bygget kan klara även om bekräftelse valideringen Miss lyckas.
 
-1. Klicka på **information** om du vill ha mer information.
-1. På informations sidan visas alla verifierings kontroller som misslyckades, med information om hur du åtgärdar problemen.
-1. När verifieringen lyckas läggs följande kommentar till i PR:
+1. Klicka på **Details** (Detaljerad information) om du vill ha mer information.
+1. På sidan Details (Detaljerad information) visas alla valideringskontroller som har misslyckats och information om hur du åtgärdar problemen.
+1. När verifieringen lyckas läggs följande kommentar till i pull-begäran:
 
-   ![Bygg validering](media/pull-requests/build-validation.png)
+   ![skapa validering](media/pull-requests/build-validation.png)
 
 > [!NOTE]
 > Om du är en extern deltagare (inte en Microsoft-anställd) har du inte åtkomst till de detaljerade build-rapporterna eller för hands versions länkar.
@@ -75,8 +75,8 @@ När PR granskas av en medlem i gruppen PowerShell-dok, kan du bli ombedd att g�
 
 ## <a name="next-steps"></a>Nästa steg
 
-[PowerShell – format guide för dokument](powershell-style-guide.md)
+[Stilguide för PowerShell-Docs](powershell-style-guide.md)
 
 ## <a name="additional-resources"></a>Ytterligare resurser
 
-[Hur vi hanterar pull-begäranden](managing-pull-requests.md)
+[Så här hanterar vi pull-begäranden](managing-pull-requests.md)

@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Välj objekt från en listruta
 ms.openlocfilehash: 048bccd403e01e2290a8930a0faba30d4c7caa73
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "77706180"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Välj objekt från en listruta
@@ -142,7 +142,7 @@ $listBox.Height = 80
 I nästa avsnitt anger du de värden som du vill att List rutan ska visa för användarna.
 
 > [!NOTE]
-> List rutan som skapats av det här skriptet tillåter endast ett val. Om du vill skapa en List Rute kontroll som tillåter flera val anger du ett värde för egenskapen **SelectionMode** , på samma sätt som följande: `$listBox.SelectionMode = 'MultiExtended'`. Mer information finns i [list rutor med flera val](Multiple-selection-List-Boxes.md).
+> List rutan som skapats av det här skriptet tillåter endast ett val. Om du vill skapa en List Rute kontroll som tillåter flera val anger du ett värde för egenskapen **SelectionMode** , på samma sätt som följande `$listBox.SelectionMode = 'MultiExtended'`:. Mer information finns i [list rutor med flera val](Multiple-selection-List-Boxes.md).
 
 ```powershell
 [void] $listBox.Items.Add('atl-dc-001')

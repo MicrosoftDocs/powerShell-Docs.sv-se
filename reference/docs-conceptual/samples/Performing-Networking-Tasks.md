@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: PowerShell, cmdlet
 title: Utför nätverksuppgifter
 ms.openlocfilehash: e0aa3b8ef3d911ab0fe851f6621d70e1265c5bd4
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737210"
 ---
 # <a name="performing-networking-tasks"></a>Utför nätverksuppgifter
@@ -38,7 +38,7 @@ fe80::60ea:29a7:a233:7cb7
 2601:600:a27f:a470::2ec1
 ```
 
-Om du vill veta varför klamrarna visas använder du `Get-Member`-cmdleten för att undersöka egenskapen **IPAddress** :
+Om du vill veta varför klamrarna visas använder du `Get-Member` cmdleten för att undersöka egenskapen **IPAddress** :
 
 ```powershell
  Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
@@ -62,7 +62,7 @@ Om du vill visa detaljerad information om IP-konfigurationen för varje nätverk
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
 ```
 
-Standard visningen för nätverkskortets konfigurations objekt är en mycket begränsad uppsättning av tillgänglig information. För djupgående inspektion och fel sökning använder du `Select-Object` eller en format-cmdlet, till exempel `Format-List`, för att ange vilka egenskaper som ska visas.
+Standard visningen för nätverkskortets konfigurations objekt är en mycket begränsad uppsättning av tillgänglig information. För djupgående inspektion och fel sökning använder `Select-Object` eller en format-cmdlet, till exempel `Format-List`, för att ange vilka egenskaper som ska visas.
 
 I moderna TCP/IP-nätverk är du förmodligen inte intresse rad av IPX-eller WINS-egenskaperna. Du kan använda **ExcludeProperty** -parametern för `Select-Object` för att dölja egenskaper med namn som börjar med "WINS" eller "IPX".
 
@@ -81,7 +81,7 @@ Du kan utföra en enkel ping mot en dator med hjälp av **Win32_PingStatus**. F�
 Get-CimInstance -Class Win32_PingStatus -Filter "Address='127.0.0.1'"
 ```
 
-Ett mer användbart formulär för sammanfattnings information som visar egenskaperna Address, SLA svarstid och StatusCode, som genereras av följande kommando. Parametern **AutoSize** för `Format-Table` ändrar storlek på tabell kolumnerna så att de visas korrekt i PowerShell.
+Ett mer användbart formulär för sammanfattnings information som visar egenskaperna Address, SLA svarstid och StatusCode, som genereras av följande kommando. **AutoSize** -parametern `Format-Table` för ändrar storlek på tabell kolumnerna så att de visas korrekt i PowerShell.
 
 ```powershell
 Get-CimInstance -Class Win32_PingStatus -Filter "Address='127.0.0.1'" |
@@ -96,7 +96,7 @@ Address   ResponseTime StatusCode
 
 En StatusCode av 0 visar en lyckad ping.
 
-Du kan använda en matris för att pinga flera datorer med ett enda kommando. Eftersom det finns mer än en adress använder du `ForEach-Object` för att pinga varje adress separat:
+Du kan använda en matris för att pinga flera datorer med ett enda kommando. Eftersom det finns mer än en adress använder `ForEach-Object` du för att pinga varje adress separat:
 
 ```powershell
 '127.0.0.1','localhost','research.microsoft.com' |
@@ -106,7 +106,7 @@ Du kan använda en matris för att pinga flera datorer med ett enda kommando. Ef
   }
 ```
 
-Du kan använda samma kommando format för att pinga alla datorer i ett undernät, till exempel ett privat nätverk som använder nätverks nummer 192.168.1.0 och en standard klass C-nätmask (255.255.255.0)., endast adresser i intervallet 192.168.1.1 via 192.168.1.254 är legitima lokala adresser (0 är alltid reserverad för nätverks numret och 255 är en broadcast-adress för undernät).
+Du kan använda samma kommando format för att pinga alla datorer i ett undernät, t. ex. ett privat nätverk som använder nätverks nummer 192.168.1.0 och en standard nätmask för klass C., endast adresser i intervallet 192.168.1.1 via 192.168.1.254 är legitima lokala adresser (0 är alltid reserverat för nätverks numret och 255 är en broadcast-adress för undernät).
 
 Om du vill visa en matris med talen från 1 till 254 i PowerShell använder du instruktionen **1.. 254.**
 Ett fullständigt undernät ping kan utföras genom att generera matrisen och sedan lägga till värdena på en del av adressen i ping-instruktionen:
@@ -133,7 +133,7 @@ Get-CimInstance -Class Win32_NetworkAdapter -ComputerName .
 
 ## <a name="assigning-the-dns-domain-for-a-network-adapter"></a>Tilldela DNS-domänen för ett nätverkskort
 
-Om du vill tilldela DNS-domänen för automatisk namn matchning använder du **SetDNSDomain** -metoden för **Win32_NetworkAdapterConfiguration**. Eftersom du tilldelar DNS-domänen för varje nätverkskorts konfiguration oberoende måste du använda en `ForEach-Object`-instruktion för att tilldela domänen till varje kort:
+Om du vill tilldela DNS-domänen för automatisk namn matchning använder du **SetDNSDomain** -metoden för **Win32_NetworkAdapterConfiguration**. Eftersom du tilldelar DNS-domänen för varje nätverkskorts konfiguration oberoende måste du använda en `ForEach-Object` instruktion för att tilldela domänen till varje kort:
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
@@ -142,7 +142,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
 
 Filtrerings instruktionen `IPEnabled=$true` är nödvändig, eftersom även om det finns flera nätverkskort på en dator som bara använder TCP/IP. de är allmänna program varu element som stöder RAS, PPTP, QoS och andra tjänster för alla kort och därför inte har en egen adress.
 
-Du kan filtrera kommandot med hjälp av `Where-Object`-cmdlet, i stället för att använda `Get-CimInstance`-filtret.
+Du kan filtrera kommandot med hjälp av- `Where-Object` cmdleten i stället för att `Get-CimInstance` använda filtret.
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration |
@@ -170,7 +170,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$tru
 
 ### <a name="retrieving-dhcp-properties"></a>Hämtar DHCP-egenskaper
 
-Eftersom DHCP-relaterade egenskaper för ett kort i allmänhet börjar med `DHCP`, kan du använda egenskaps parametern för `Format-Table` för att visa endast de egenskaperna:
+Eftersom DHCP-relaterade egenskaper för ett kort i allmänhet börjar `DHCP`med, kan du använda egenskaps parametern `Format-Table` för för att endast visa de egenskaperna:
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" |
@@ -186,7 +186,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
   ForEach-Object -Process {$_.EnableDHCP()}
 ```
 
-Du kan använda **filter** instruktionen `IPEnabled=$true and DHCPEnabled=$false` för att undvika att aktivera DHCP där det redan har Aktiver ATS, men bortse från det här steget kommer inte att orsaka fel.
+Du kan använda **filter** instruktionen `IPEnabled=$true and DHCPEnabled=$false` för att undvika att aktivera DHCP där det redan har Aktiver ATS, men bortse från det här steget resulterar inte i fel.
 
 ### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>Släppa och förnya DHCP-lån på vissa kort
 
@@ -220,7 +220,7 @@ Du kan få en referens till en WMI-klass i stället för klass instanser genom a
 Get-CimInstance -List | Where-Object {$_.Name -eq 'Win32_NetworkAdapterConfiguration'}
 ```
 
-Du kan behandla hela kommandot som klass och sedan anropa metoden **ReleaseDHCPAdapterLease** på den. I följande kommando kommer parenteserna runt `Get-CimInstance` och `Where-Object` pipelines element Direct PowerShell att utvärdera dem först:
+Du kan behandla hela kommandot som klass och sedan anropa metoden **ReleaseDHCPAdapterLease** på den. I följande kommando är parenteserna omgivande `Get-CimInstance` och `Where-Object` pipelines elementen Direct PowerShell för att utvärdera dem först:
 
 ```powershell
 (Get-CimInstance -List |
@@ -245,7 +245,7 @@ Om du vill skapa en nätverks resurs använder du metoden **skapa** för **Win32
   )
 ```
 
-Du kan också skapa resursen med hjälp av `net share` i PowerShell i Windows:
+Du kan också skapa resursen med hjälp `net share` av i PowerShell i Windows:
 
 ```powershell
 net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
@@ -259,7 +259,7 @@ Du kan ta bort en nätverks resurs med **Win32_Share**, men processen skiljer si
 (Get-CimInstance -Class Win32_Share -Filter "Name='TempShare'").Delete()
 ```
 
-`net share` fungerar också i Windows:
+I Windows `net share` fungerar det också:
 
 ```powershell
 net share tempshare /delete
@@ -271,13 +271,13 @@ tempshare was deleted successfully.
 
 ## <a name="connecting-a-windows-accessible-network-drive"></a>Ansluta en Windows-tillgänglig nätverks enhet
 
-`New-PSDrive`-cmdletar skapar en PowerShell-enhet, men enheter som skapas på det här sättet är bara tillgängliga för PowerShell. Om du vill skapa en ny nätverksansluten enhet kan du använda **wscript. Network** com-objektet. Följande kommando mappar delnings `\\FPS01\users`en till den lokala enheten `B:`
+`New-PSDrive` Cmdletarna skapar en PowerShell-enhet, men enheter som skapas på det här sättet är bara tillgängliga för PowerShell. Om du vill skapa en ny nätverksansluten enhet kan du använda **wscript. Network** com-objektet. Följande kommando mappar resursen `\\FPS01\users` till en lokal enhet. `B:`
 
 ```powershell
 (New-Object -ComObject WScript.Network).MapNetworkDrive('B:', '\\FPS01\users')
 ```
 
-I Windows fungerar kommandot `net use` också:
+I Windows fungerar `net use` kommandot även:
 
 ```powershell
 net use B: \\FPS01\users

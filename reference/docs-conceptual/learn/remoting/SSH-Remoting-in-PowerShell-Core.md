@@ -2,12 +2,12 @@
 title: PowerShell fjärrkommunikation via SSH
 description: Fjärr kommunikation i PowerShell Core med SSH
 ms.date: 09/30/2019
-ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9fe3e22c54a4695a1027f416acf113f2f7fd2cd7
+ms.sourcegitcommit: 7c7f8bb9afdc592d07bf7ff4179d000a48716f13
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73444379"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82174149"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell fjärrkommunikation via SSH
 
@@ -19,23 +19,23 @@ WinRM tillhandahåller en robust värd modell för PowerShell-fjärrsessioner. S
 
 Med SSH-fjärrkommunikation kan du utföra grundläggande PowerShell-sessioner mellan Windows-och Linux-datorer. SSH-fjärrkommunikation skapar en PowerShell-värd process på mål datorn som ett SSH-undersystem. Slutligen ska vi implementera en allmän värd modell som liknar WinRM för att stödja slut punkts konfiguration och JEA.
 
-Cmdletarna `New-PSSession`, `Enter-PSSession`och `Invoke-Command` har nu en ny parameter som stöder denna nya fjärr anslutnings anslutning.
+`New-PSSession`Cmdletarna `Enter-PSSession`, och `Invoke-Command` har nu en ny parameter inställd för att stödja den här nya fjärr anslutnings anslutningen.
 
 ```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-Om du vill skapa en fjärrsession anger du mål datorn med parametern `HostName` och anger användar namnet med `UserName`. När du kör cmdletarna interaktivt, uppmanas du att ange ett lösen ord. Du kan också använda SSH-nyckel-autentisering med hjälp av en privat nyckel fil med parametern `KeyFilePath`.
+Om du vill skapa en fjärrsession anger du mål datorn med `HostName` parametern och anger användar namnet med. `UserName` När du kör cmdletarna interaktivt, uppmanas du att ange ett lösen ord. Du kan också använda SSH-nyckel-autentisering med hjälp av en privat nyckel `KeyFilePath` fil med parametern.
 
 ## <a name="general-setup-information"></a>Allmän installations information
 
-PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Installera både SSH-klienten (`ssh.exe`) och Server (`sshd.exe`) så att du kan fjärrans luta till och från datorerna. OpenSSH för Windows är nu tillgängligt i Windows 10 version 1809 och Windows Server 2019. Mer information finns i [hantera Windows med openssh](/windows-server/administration/openssh/openssh_overview). För Linux installerar du SSH, inklusive sshd-servern, som är lämplig för din plattform. Du måste också installera PowerShell från GitHub för att hämta SSH-funktionen för fjärr kommunikation. SSH-servern måste konfigureras för att skapa ett SSH-undersystem som värd för en PowerShell-process på fjärrdatorn. Och du måste aktivera **lösen ord** eller **nyckelbaserad** autentisering.
+PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Installera både SSH-klienten (`ssh.exe`) och servern (`sshd.exe`) så att du kan fjärrans luta till och från datorerna. OpenSSH för Windows är nu tillgängligt i Windows 10 version 1809 och Windows Server 2019. Mer information finns i [hantera Windows med openssh](/windows-server/administration/openssh/openssh_overview). För Linux installerar du SSH, inklusive sshd-servern, som är lämplig för din plattform. Du måste också installera PowerShell från GitHub för att hämta SSH-funktionen för fjärr kommunikation. SSH-servern måste konfigureras för att skapa ett SSH-undersystem som värd för en PowerShell-process på fjärrdatorn. Och du måste aktivera **lösen ord** eller **nyckelbaserad** autentisering.
 
 ## <a name="set-up-on-a-windows-computer"></a>Konfigurera på en Windows-dator
 
 1. Installera den senaste versionen av PowerShell, se [Installera PowerShell Core på Windows](../../install/installing-powershell-core-on-windows.md#msi).
 
-   Du kan kontrol lera att PowerShell har stöd för SSH-fjärrhantering genom att Visa `New-PSSession` parameter uppsättningar. Observera att det finns parameter uppsättnings namn som börjar med **SSH**. Parameter uppsättningarna inkluderar **SSH** -parametrar.
+   Du kan kontrol lera att PowerShell har stöd för SSH-fjärrkommunikation genom att `New-PSSession` lista parameter uppsättningarna. Observera att det finns parameter uppsättnings namn som börjar med **SSH**. Parameter uppsättningarna inkluderar **SSH** -parametrar.
 
    ```powershell
    (Get-Command New-PSSession).ParameterSets.Name
@@ -53,7 +53,7 @@ PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Ins
    > [!NOTE]
    > Om du vill ställa in PowerShell som standard gränssnitt för OpenSSH, se [Konfigurera Windows för openssh](/windows-server/administration/openssh/openssh_server_configuration).
 
-1. Redigera `sshd_config`-filen som finns på `$env:ProgramData\ssh`.
+1. Redigera filen `sshd_config` som finns på `$env:ProgramData\ssh`.
 
    Se till att lösenordsautentisering är aktiverat:
 
@@ -64,13 +64,15 @@ PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Ins
    Skapa SSH-undersystemet som är värd för en PowerShell-process på fjärrdatorn:
 
    ```
-   Subsystem powershell c:/progra~1/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
+   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo -NoProfile
    ```
 
    > [!NOTE]
+   > Standard platsen för den körbara PowerShell- `c:/progra~1/powershell/7/pwsh.exe`filen är. Platsen kan variera beroende på hur du har installerat PowerShell.
+   >
    > Du måste använda det korta 8,3-namnet för alla fil Sök vägar som innehåller blank steg. Det finns ett fel i OpenSSH för Windows som förhindrar att utrymmen fungerar i under systemets körbara sökvägar. Mer information finns i det här [GitHub-problemet](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
    >
-   > Det korta 8,3-namnet för mappen `Program Files` i Windows är vanligt vis `Progra~1`. Du kan dock använda följande kommando för att se till att:
+   > 8,3-kort namnet för `Program Files` mappen i Windows är vanligt vis `Progra~1`. Du kan dock använda följande kommando för att se till att:
    >
    > ```powershell
    > Get-CimInstance Win32_Directory -Filter 'Name="C:\\Program Files"' |
@@ -97,7 +99,7 @@ PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Ins
    Restart-Service sshd
    ```
 
-1. Lägg till sökvägen där OpenSSH är installerat i din PATH-miljö variabel. Till exempel `C:\Program Files\OpenSSH\`. Den här posten gör att `ssh.exe` kan hittas.
+1. Lägg till sökvägen där OpenSSH är installerat i din PATH-miljö variabel. Till exempel `C:\Program Files\OpenSSH\`. Med den här posten kan `ssh.exe` du hitta.
 
 ## <a name="set-up-on-an-ubuntu-1604-linux-computer"></a>Konfigurera på en Ubuntu 16,04 Linux-dator
 
@@ -109,7 +111,7 @@ PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Ins
    sudo apt install openssh-server
    ```
 
-1. Redigera `sshd_config`-filen på plats `/etc/ssh`.
+1. Redigera `sshd_config` filen på plats `/etc/ssh`.
 
    Se till att lösenordsautentisering är aktiverat:
 
@@ -122,6 +124,9 @@ PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Ins
    ```
    Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
    ```
+
+   > [!NOTE]
+   > Standard platsen för den körbara PowerShell- `/usr/bin/pwsh`filen är. Platsen kan variera beroende på hur du har installerat PowerShell.
 
    Du kan också aktivera nyckel autentisering:
 
@@ -143,10 +148,10 @@ PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Ins
 
    1. Öppna `System Preferences`.
    1. Klicka på `Sharing`.
-   1. Markera `Remote Login` för att ange `Remote Login: On`.
+   1. Markera `Remote Login` om du `Remote Login: On`vill ange.
    1. Tillåt åtkomst till lämpliga användare.
 
-1. Redigera `sshd_config`-filen på plats `/private/etc/ssh/sshd_config`.
+1. Redigera `sshd_config` filen på plats `/private/etc/ssh/sshd_config`.
 
    Använd en text redigerare som **nano**:
 
@@ -165,6 +170,9 @@ PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Ins
    ```
    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
    ```
+
+   > [!NOTE]
+   > Standard platsen för den körbara PowerShell- `/usr/local/bin/pwsh`filen är. Platsen kan variera beroende på hur du har installerat PowerShell.
 
    Du kan också aktivera nyckel autentisering:
 
@@ -320,7 +328,7 @@ Kommandot **sudo** fungerar inte i en fjärran sluten session till en Linux-dato
 
 [Installera PowerShell Core på macOS](../../install/installing-powershell-core-on-macos.md)
 
-[Installera PowerShell Core på Windows](../../install/installing-powershell-core-on-windows.md#msi)
+[Installera PowerShell Core i Windows](../../install/installing-powershell-core-on-windows.md#msi)
 
 [Hantera Windows med OpenSSH](/windows-server/administration/openssh/openssh_overview)
 

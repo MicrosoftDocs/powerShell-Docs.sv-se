@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Andra användbara skriptobjekt
 ms.openlocfilehash: 4f236246714b0608658bbd535851489912430336
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71325149"
 ---
 # <a name="other-useful-scripting-objects"></a>Andra användbara skriptobjekt
@@ -32,7 +32,7 @@ $psUnsupportedConsoleApplications
 
 ### <a name="pslocalhelp"></a>$psLocalHelp
 
-Detta är ett Dictionary-objekt som upprätthåller en Sammanhangs beroende mappning mellan hjälp ämnen och tillhör ande länkar i den lokala kompilerade HTML-hjälp filen. Den används för att hitta den lokala hjälpen för ett visst ämne. Du kan lägga till eller ta bort ämnen från den här listan. I följande kod exempel visas några exempel på nyckel/värde-par som finns i `$psLocalHelp`.
+Detta är ett Dictionary-objekt som upprätthåller en Sammanhangs beroende mappning mellan hjälp ämnen och tillhör ande länkar i den lokala kompilerade HTML-hjälp filen. Den används för att hitta den lokala hjälpen för ett visst ämne. Du kan lägga till eller ta bort ämnen från den här listan. I följande kod exempel visas några exempel på nyckel/värde-par som finns `$psLocalHelp`i.
 
 ```powershell
 # See the local help map
@@ -77,4 +77,4 @@ $psOnlineHelp.Add("get-myNoun", "https://www.mydomain.com/MyNoun.html")
 
 ## <a name="see-also"></a>Se även
 
-[Syftet med Windows PowerShell ISE-skriptets objekt modell](../components/ise/object-model/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+[Användningsområden för Windows PowerShell ISE-skriptobjektmodellen](../components/ise/object-model/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

@@ -4,10 +4,10 @@ contributor: manikb
 keywords: Galleri, PowerShell, cmdlet, psget
 title: Skript med kompatibla PowerShell-versioner
 ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328884"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Skript med kompatibla PowerShell-versioner
@@ -35,7 +35,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-Skript författare kan förhindra att ett skript körs om det inte körs på en kompatibel version av PowerShell med hjälp av parametern PSEdition i en `#requires`-instruktion.
+Skript författare kan förhindra att ett skript körs om det inte körs på en kompatibel version av PowerShell med parametern PSEdition i en `#requires` instruktion.
 
 ```powershell
 Set-Content C:\script.ps1 -Value "#requires -PSEdition Core

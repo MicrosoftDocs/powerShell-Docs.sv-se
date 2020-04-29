@@ -3,30 +3,34 @@ title: Stilguide för PowerShell-Docs
 description: Den här artikeln innehåller regler för format för att skriva PowerShell-dokumentation.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: b4bc547c3560538ba246a6ed582fd4f9ce796dd2
-ms.sourcegitcommit: bda70d2163eef5a158441cb1c38ac422d704535d
+ms.openlocfilehash: 90dc93d608440ce7388614b552c0cd873a385cd9
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81005592"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81624796"
 ---
 # <a name="powershell-docs-style-guide"></a>Stilguide för PowerShell-Docs
 
 Den här artikeln innehåller rikt linjer som är speciella för innehållet i PowerShell-dok. Detta bygger på den information som beskrivs i [översikten](overview.md#get-started-writing-docs).
 
-## <a name="product-terminology"></a>Produkt terminologi
+## <a name="product-terminology"></a>Produktterminologi
 
 Det finns flera varianter av PowerShell.
-I den här tabellen definieras några av de olika termer som används för att diskutera PowerShell.
 
-- **PowerShell** – det här är standardinställningen. Vi rekommenderar att du använder PowerShell 7 och senare för att bli den som är den sanna PowerShell som går framåt.
-
+- **PowerShell** – Det här är standardinställningen. Vi rekommenderar att du använder PowerShell 7 och senare för att bli den som är den sanna PowerShell som går framåt.
 - **PowerShell Core** – PowerShell som bygger på .net Core. Användning av termen **Core** bör begränsas till fall där det är nödvändigt att skilja den från Windows PowerShell.
-
 - **Windows PowerShell** – PowerShell som bygger på .NET Framework. Windows PowerShell-fartyg endast på Windows och kräver hela ramverket.
 
-I allmänhet kan referenser till "Windows PowerShell" i dokumentationen ändras till "PowerShell".
-"Windows PowerShell" bör **inte** ändras när en Windows-speciell teknik diskuteras.
+  Generellt sett kan referenser till "Windows PowerShell" i dokumentationen ändras till "PowerShell".
+  "Windows PowerShell" ska användas när Windows PowerShell-det aktuella beteendet diskuteras.
+
+Relaterade produkter
+
+- **Visual Studio Code (vs Code)** – det här är Microsofts kostnads fria redigerare med öppen källkod. I första omnämnandet ska det fullständiga namnet användas. Efter det kan du använda **vs Code**. Använd inte "VSCode".
+- **PowerShell-tillägg för Visual Studio Code** – tillägget FÖRVANDLAr vs-kod till önskad IDE för PowerShell. I första omnämnandet ska det fullständiga namnet användas. Efter det kan du använda **PowerShell-tillägget**.
+- **Azure PowerShell** – det här är en samling PowerShell-moduler som används för att hantera Azure-tjänster.
+- **Azure Stack PowerShell** – det här är samlingen av PowerShell-moduler som används för att hantera Microsofts hybrid moln lösning.
 
 ## <a name="markdown-specifics"></a>Markdown-information
 
@@ -34,44 +38,47 @@ Microsoft Open Publishing system (OPS) som bygger vår dokumentation använder [
 
 Den nya CommonMark-specifikationen är mycket strängare om konstruktion av vissa markdown-element. Var uppmärksam på de uppgifter som anges i det här dokumentet.
 
-### <a name="blank-lines-spaces-and-tabs"></a>Tomma rader, blank steg och tabbar
+### <a name="blank-lines-spaces-and-tabs"></a>Tomma rader, blanksteg och tabbar
 
-Ta bort dubbletter av tomma rader. Flera tomma rader återges som en enda tom rad i HTML så att det inte är något ändamål för flera tomma rader.
+Tomma rader indikerar också slutet av ett block i Markdown. Det måste finnas ett tomt värde mellan Markdown-block av olika typer (till exempel mellan ett stycke och en lista eller rubrik).
 
-Tomma rader signalerar också slutet av ett block i markdown. Det måste finnas ett enda tomt värde mellan markdown-block av olika typer (till exempel mellan ett stycke och en lista eller rubrik).
+Ta bort dubbletter av tomma rader. Flera tomma rader återges som en enda tom rad i HTML så det finns inget ändamål för flera tomma rader. Flera tomma rader i ett kodblock bryter kod blocket.
+
+Ta bort extra blanksteg i slutet av rader.
 
 > [!NOTE]
-> Avståndet är signifikant i markdown. Använder alltid blank steg i stället för hårda tabbar. Ta bort extra blank steg i slutet av rader.
+> Avståndet har betydelse i Markdown. Använd alltid blanksteg i stället för hårda tabbar. Avslutande blank steg kan ändra hur markdown återges.
 
-### <a name="titles-and-headings"></a>Titlar och rubriker
+### <a name="titles-and-headings"></a>Rubriker
 
-Använd endast [ATX-rubriker][atx] (# Style, i stället för `=` eller `-` format rubriker).
+Använd bara [ATX-rubriker][atx] (# style, i stället för `=` eller `-` stilrubriker).
 
-- Använd endast inledande versal i meningar och den första bokstaven i en rubrik eller rubrik ska kapitaliseras
-- Det måste finnas ett enda blank steg mellan `#` och den första bokstaven i rubriken
-- Rubriker ska omges av en enda tom linje
-- Endast ett H1 per dokument
+- Använd bara inledande versal i meningar, och den första bokstaven i en rubrik skrivas med versal
+- Det måste finnas ett blanksteg mellan `#` och den första bokstaven i rubriken
+- Rubriker ska omges av en enda tom rad
+- Endast en H1 per dokument
 - Rubrik nivåerna bör ökas med ett. Hoppa över nivåer
 - Använd inte fetstil eller andra markeringar i sidhuvuden
 
-### <a name="limit-line-length-to-100-characters"></a>Begränsa rad längden till 100 tecken
+### <a name="limit-line-length-to-100-characters"></a>Begränsa radlängden till 100 tecken
 
-Detta gäller för konceptuella artiklar och cmdlet-referens. About_topics är begränsade till 80 tecken.
-Att begränsa rad längden ger bättre läsbarhet i git-differenser och historik. Det gör det också enklare för andra skrivare att göra bidrag.
+Detta gäller för konceptuella artiklar och cmdlet-referens. Att begränsa rad längden ger bättre läsbarhet i git-differenser och historik. Det gör det också enklare för andra skrivare att göra bidrag.
 
 Använd tillägget [Flow markdown][reflow] i Visual Studio Code för att enkelt ommontera stycken för att passa den angivna rad längden.
 
-### <a name="lists"></a>Visar en lista över
+About_topics är begränsade till 80 tecken. Mer detaljerad information finns i [Redigera referens artiklar](./editing-cmdlet-ref.md#formatting-about_-files).
 
-Om din lista innehåller flera meningar eller stycken bör du överväga att använda en rubrik på underordnade nivåer i stället för en lista.
+### <a name="lists"></a>Listor
+
+Om din lista innehåller flera meningar eller stycken kan du överväga att använda en underordnad rubrik i stället för en lista.
 
 Listan ska omges av en enda tom rad.
 
 #### <a name="unordered-lists"></a>Osorterade listor
 
-Avsluta inte List objekt med en punkt om de inte innehåller flera meningar. Använd bindestrecks tecken (`-`) för List objekts punkter. Detta förhindrar förvirring med fet eller kursiv markering som använder asterisken [`*`]. Om du vill inkludera ett stycke eller andra element under ett punkt objekt infogar du en rad brytning och justerar indraget med det första tecknet efter punkten.
+Avsluta aldrig listobjekt med punkt om de inte innehåller flera meningar. Använd bindestreck (`-`) som punkter för listobjekt. På så sätt undviker du sammanblandning med markeringen för fetstil eller kursiv stil, som använder asterisk [`*`]. Om du vill lägga till ett stycke eller andra element under ett objekt i en punktlista infogar du en radbrytning och justerar indraget efter det första tecknet efter punkten.
 
-Exempel:
+Ett exempel:
 
 ```markdown
 This is a list that contain sub-elements under a bullet item.
@@ -88,24 +95,24 @@ This is a list that contain sub-elements under a bullet item.
 - Third bullet item
 ```
 
-Det här är en lista som innehåller underordnade element under ett punkt objekt.
+Det här är en lista som innehåller underordnade element under ett objekt i en punktlista.
 
-- Första punkt objekt
+- Första objektet i punktlistan
 
-  Mening som förklarar den första punkten.
+  Mening som beskriver den första punkten.
 
-  - Objekt under punkt
+  - Underordnat objekt i punktlista
 
-    Mening som förklarar under punkten.
+    Mening som beskriver den första underordnade punkten.
 
-- Andra punkt objekt
-- Tredje punkt objekt
+- Andra objektet i punktlistan
+- Tredje objektet i punktlistan
 
-#### <a name="ordered-lists"></a>Ordnade listor
+#### <a name="ordered-lists"></a>Sorterade listor
 
-Om du vill inkludera ett stycke eller andra element under ett numrerat objekt, justera indrag med det första bokstaven efter objekt numret. Alla objekt i en numrerad lista ska använda antalet `1.` snarare än att öka varje objekt. Markdown renderar ökar värdet automatiskt. Detta gör det enklare att ordna om objekten och standardisera indraget för underordnat innehåll.
+Om du vill lägga till ett stycke eller andra element under ett numrerat objekt, justerar du indraget efter det första tecknet som följer efter objektets nummer. Alla objekt i en numrerad lista ska använda talet `1.` i stället för att öka varje objekt. Med Markdown-rendering ökar värdet automatiskt. Det här gör det enklare att ändra ordning på objekt och standardiserar indrag för underordnat innehåll.
 
-Exempel:
+Ett exempel:
 
 ```markdown
 1. For the first element, insert a single space after the 1. Long sentences should be
@@ -123,65 +130,15 @@ Exempel:
 
 Den resulterande markdown återges på följande sätt:
 
-1. För det första elementet infogar du ett enskilt blank steg efter 1. Långa meningar ska omslutas till nästa rad och måste radas med det första tecknet efter den numrerade List markören.
+1. För det första elementet infogar du ett blanksteg efter siffran 1. Långa meningar ska omslutas till nästa rad, och måste anpassas efter det första tecknet efter markören för den numrerade listan.
 
-   Om du vill inkludera ett andra element (t. ex. det här) infogar du en rad brytning efter det första och har justerat indrag. Indraget för det andra elementet måste justeras med det första tecknet efter den numrerade List markören. För ensiffriga objekt, t. ex. det här, kan du dra in dem till kolumn 4. För objekt med dubbla siffror, till exempel objekt nummer 10, indrag till kolumn 5.
+   Vill du lägga till ett andra element (som det här) infogar du en radbrytning efter det första och justerar indragen. Indraget för det andra elementet måste anpassas efter det första tecknet efter markören för den numrerade listan. För ensiffriga objekt, som det här, gör du indrag till kolumn 4. För tvåsiffriga objekt, till exempel objekt nummer 10, gör du indrag till kolumn 5.
 
 1. Nästa numrerade objekt börjar här.
 
-### <a name="formatting-command-syntax-elements"></a>Formaterar kommando element för syntax
-
-- Använd alltid det fullständiga namnet för cmdletar och parametrar. Undvik att använda alias om du inte specifikt demonstrerar aliaset.
-
-- I ett stycke ska språknyckelord, cmdlet-namn, variabler och fil Sök vägar omslutas i`` ` ``-tecken (text). Egenskaps-, parameter-och klass namn ska vara **fetstil**.
-
-  Exempel:
-
-  ~~~markdown
-  The following code uses `Get-ChildItem` to list the contents of `C:\Windows` and assigns
-  the output to the `$files` variable.
-
-  ```powershell
-  $files = Get-ChildItem C:\Windows
-  ```
-  ~~~
-
-- När du refererar till en parameter efter namn ska namnet vara **fetstilt**. När du illustrerar användningen av en parameter med avstavnings prefixet ska parametern omslutas med baktick. Exempel:
-
-  ```markdown
-  The parameter's name is **Name**, but it is typed as `-Name` when used on the command
-  line as a parameter.
-  ```
-
-- När du refererar till externa kommandon (EXEs, skript osv.) ska kommando namnet vara fetstilt, alla gemener (eller versaler i början av en mening) och inkludera lämpligt fil namns tillägg. Exempel:
-
-  ```markdown
-  For example, on Windows systems, you can use the `net start` and `net stop` commands
-  to start and stop a service. **Sc.exe** is another service control tool for Windows.
-  That name does not fit into the naming pattern for the **net.exe** service commands.
-  ```
-
-- När du visar exempel användningen av ett externt kommando ska exemplet omslutas med baktick.
-  Om det finns en namn konflikt med ett alias måste du inkludera fil tillägget i kommando exemplet. Exempel:
-
-  ```markdown
-  To start the spooler service on a remote computer named DC01, you type `sc.exe \\DC01 start spooler`.
-  ```
-
-- När du skriver en konceptuell artikel (till skillnad från referens innehållet) ska den första instansen av ett cmdlet-namn hyperlänkas till cmdlet-dokumentationen. Använd inte autoskalning, fetstil eller andra markeringar inuti hakparenteserna för en hyperlänk.
-
-  Exempel:
-
-  ```markdown
-  This [Write-Host](/powershell/module/Microsoft.PowerShell.Utility/Write-Host) cmdlet
-  uses the **Object** parameter to ...
-  ```
-
-  Mer information finns i avsnittet [hyperlinks](#hyperlinks) i den här artikeln.
-
 ### <a name="images"></a>Avbildningar
 
-Syntaxen för att inkludera en avbildning är:
+Syntax för att infoga en bild:
 
 ```markdown
 ![[alt text]](<folderPath>)
@@ -190,16 +147,16 @@ Example:
 ![Introduction](./media/overview/Introduction.png)
 ```
 
-Där `alt text` är en kort beskrivning av avbildningen och `<folder path>` är en relativ sökväg till avbildningen. Alternativ text krävs för skärm läsare för synskadade. Det är också användbart om ett plats fel uppstår där avbildningen inte kan återges.
+`alt text` är en kort beskrivning av bilden och `<folder path>` är en relativ sökväg till bilden. Alternativ text krävs för skärmläsare för personer med nedsatt syn. Det är också användbart om det har uppstått ett fel på webbplatsen och bilden inte kan återges.
 
-Avbildningar ska lagras i en `media/<article-name>`-mapp i den mapp som innehåller artikeln.
-Bilder ska inte delas mellan artiklar. Skapa en mapp som matchar fil namnet för din artikel under mappen `media`. Kopiera avbildningarna för artikeln till den nya mappen. Om en bild används av flera artiklar måste varje mapp i bilden ha en kopia av avbildnings filen. Den här metoden förhindrar en ändring av en bild i en artikel som påverkar en annan artikel.
+Avbildningar ska lagras i en `media/<article-name>` mapp i den mapp som innehåller artikeln.
+Bilder ska inte delas mellan artiklar. Skapa en mapp som matchar filnamnet för din artikel under mappen `media`. Kopiera bilderna till artikeln till den nya mappen. Om en bild används av flera artiklar måste varje bildmapp innehålla en kopia av bildfilen. Den här metoden förhindrar att en ändring av en bild i en artikel påverkar en annan artikel.
 
-Följande bild fil typer stöds: `*.png`, `*.gif`, `*.jpeg`, `*.jpg`, `*.svg`
+Följande bild fil typer stöds `*.png`:, `*.gif` `*.jpeg`,,, `*.jpg``*.svg`
 
 ### <a name="markdown-extensions-supported-by-open-publishing"></a>Markdown-tillägg stöds av Open Publishing
 
-[Microsoft docs redigerings paketet](/contribute/how-to-write-docs-auth-pack) innehåller verktyg som stöder funktioner som är unika för vårt publicerings system. Aviseringar är ett markdown-tillägg för att skapa block offerter som återger docs.microsoft.com med färger och ikoner som visar innebörden av innehållet. Följande aviserings typer stöds:
+[Microsoft docs redigerings paketet](/contribute/how-to-write-docs-auth-pack) innehåller verktyg som stöder funktioner som är unika för vårt publicerings system. Aviseringar är ett markdown-tillägg för att skapa blockquotes som återger på docs.microsoft.com med färger och ikoner som markerar innehållets omfattning. Följande aviseringstyper stöds:
 
 ```markdown
 > [!NOTE]
@@ -220,84 +177,155 @@ Följande bild fil typer stöds: `*.png`, `*.gif`, `*.jpeg`, `*.jpg`, `*.svg`
 
 Dessa aviseringar ser ut så här på docs.microsoft.com:
 
+Antecknings block
+
 > [!NOTE]
-> Information som användaren bör märka även om skumering.
+> Information som användaren ska kunna se även vid snabbläsning.
+
+Tip-block
 
 > [!TIP]
-> Valfri information som hjälper en användare att bli mer framgångs rik.
+> Valfri information som hjälper användaren.
+
+Viktigt block
 
 > [!IMPORTANT]
-> Nödvändig information krävs för att användaren ska lyckas.
+> Viktig information som användaren behöver.
+
+Varnings block
 
 > [!CAUTION]
-> Negativa potentiella följder av en åtgärd.
+> Potentiella negativa konsekvenser av en åtgärd.
+
+Varnings block
 
 > [!WARNING]
-> Farliga vissa följder av en åtgärd.
+> Farliga konsekvenser av en åtgärd.
 
-## <a name="hyperlinks"></a>Hyperlänkar
+### <a name="hyperlinks"></a>Hyperlänkar
 
-- Undvik att använda Bare-URL: er. Länkar bör använda markdown syntax `[friendlyname](url-or-path)`
-- Bare-URL: er kan användas vid behov, men ska stå inom bakstreck. Exempel:
+- Hyperlänkar måste använda markdown-syntax`[friendlyname](url-or-path)`
+- Länkar bör vara HTTPS när det är möjligt.
+- Länkar måste ha ett användarvänligt namn, vanligtvis rubriken för det länkade ämnet
+- Alla objekt i avsnittet "relaterade länkar" längst ned ska vara hyperlänkade
+- Använd inte grava accenter, fetstil eller andra markeringar inuti hakparenteserna för en hyperlänk.
+- Bare-URL: er kan användas när du pratar om en angiven URI. URI måste omges av baktick. Ett exempel:
 
   ```markdown
   By default, if you do not specify this parameter, the DMTF standard resource URI
   `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
   ```
 
-- URL-länkar bör vara HTTPS när det är möjligt.
-- Länkar måste ha ett eget namn, vanligt vis rubriken för det länkade ämnet
-- Alla objekt i avsnittet "relaterade länkar" längst ned ska vara hyperlänkade.
-- Använd inte autoskalning, fetstil eller andra markeringar inuti hakparenteserna för en hyperlänk.
+#### <a name="linking-to-other-content"></a>Länka till annat innehåll
 
-### <a name="linking-to-other-content"></a>Länka till annat innehåll
+Det finns två typer av hyperlänkar som stöds av publicerings systemet:
 
-Det finns två typer av hyperlänkar som stöds av publicerings systemet: URL: er och fil länkar.
+En **URL-länk** kan vara en URL-sökväg som är relativ till roten i docs.Microsoft.com. Eller en absolut URL som innehåller fullständig URL-syntax. Exempelvis: `https:/github.com/MicrosoftDocs/PowerShell-Docs`
 
-En URL-länk kan vara en URL-sökväg som är relativ till roten i docs.microsoft.com. Eller en absolut URL som innehåller fullständig URL-syntax. (Till exempel: `https:/github.com/MicrosoftDocs/PowerShell-Docs`)
-
-- Använd URL-länkar när du länkar till innehåll utanför PowerShell-dokument eller mellan cmdlet-referenser och konceptuella artiklar i PowerShell-dokument.
-- Det enklaste sättet att skapa en relativ länk är att kopiera URL: en från webbläsaren och sedan ta bort `https://docs.microsoft.com/en-us` från det värde som du klistrar in i markdown.
-   - Ta inte med språk i URL: er för Microsoft-egenskaper (t. ex. ta bort "/en-US" från URL: en.
+- Använd URL-länkar när du länkar till innehåll utanför PowerShell-dokument eller mellan cmdlet-referenser och konceptuella artiklar i PowerShell-dokument. Det enklaste sättet att skapa en relativ länk är att kopiera URL: en från webbläsaren och sedan `https://docs.microsoft.com/en-us` ta bort den från det värde som du klistrar in i markdown.
+- Ta inte med språk i URL: er för Microsoft-egenskaper (t. ex. ta `/en-us` bort från URL).
+- Ta bort alla onödiga frågeparametrar från URL-adressen om du inte behöver länka till en viss version av en artikel. Exempel:
+  - `?view=powershell-5.1`– Detta används för att länka till en angiven version av PowerShell
+  - `?redirectedfrom=MSDN`– Detta läggs till i URL: en när du omdirigeras från en gammal artikel till en ny plats
 - Alla URL: er till externa webbplatser bör använda HTTPS om det inte är giltigt för mål platsen.
 
-En fil länk används för att länka från en referens artikel till en annan, eller från en konceptuell artikel till en annan. Om du behöver länka till en referens artikel för en viss version av PowerShell måste du använda en URL-länk.
+En **fil länk** används för att länka från en referens artikel till en annan, eller från en konceptuell artikel till en annan. Om du behöver länka till en referens artikel för en viss version av PowerShell måste du använda en URL-länk.
 
-- Fil länkar innehåller en relativ fil Sök väg (till exempel: `../folder/file.md`)
-- Alla fil Sök vägar använder snedstreck (`/`) tecken
+- Fil länkar innehåller en relativ fil Sök väg (till exempel `../folder/file.md`:)
+- Alla fil Sök vägar använder snedstreck (`/`)-tecken
 
-## <a name="formatting-code-samples"></a>Formatera kod exempel
+Djup länkning tillåts för både URL-adresser och fil länkar. Lägg till fäst punkten i slutet av mål Sök vägen.
+Ett exempel:
 
-Markdown stöder två olika kod format:
+- `[about_Splatting](about_Splatting.md#splatting-with-arrays)`
+- `[custom key bindings](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings)`
 
-- Kod sträcker sig över (infogade) – markerade med ett enda`` ` ``-tecken. Används inom ett stycke i stället för som ett fristående block.
-- Kodblock – ett block med flera rader som omges av tredubbla`` ``` ``-strängar (Triple-Ticket). Kod block kan också ha en språk etikett efter bakstrecken. Språk etiketten aktiverar syntax för innehållet i kod blocket.
+Mer information finns i [använda länkar i dokumentation](https://docs.microsoft.com/contribute/how-to-write-links).
 
-### <a name="using-code-blocks"></a>Använda kodblock
+## <a name="formatting-command-syntax-elements"></a>Formatera element i kommandosyntax
 
-Markdown gör att indrag kan använda ett kodblock, men det här mönstret kan vara problematiskt och bör undvikas. Alla kodblock ska finnas i en kod avgränsning. En kod avgränsning är ett kodblock som omges av tredubbel-`` ``` ``-strängar (Triple-Ticket). Kod avgränsnings markörerna måste finnas på en egen rad före och efter kod exemplet. Markören i början av kod blocket kan ha en valfri språk etikett. Microsoft Open Publishing system (OPS) använder språk etiketten för att stödja funktionen för att markera funktioner.
+- Använd alltid det fullständiga namnet för cmdletar och parametrar. Undvik att använda alias om du inte specifikt demonstrerar aliaset.
 
-OPS lägger också till en **kopierings** knapp som kopierar innehållet i kod blocket till Urklipp. På så sätt kan du snabbt klistra in koden i ett skript för att testa kod exemplet. Alla exempel i vår dokumentation är dock inte avsedda att köras. Vissa kod block är enkla illustrationer av ett PowerShell-begrepp.
+- Egenskap, parameter, objekt, typ namn, klass namn, klass metoder ska vara **fetstil**.
+  - Egenskaps-och parameter värden ska omslutas i baktick (`` ` ``).
+  - När du refererar till typer med hjälp av den hakparentesa stilen använder du baktick. Exempelvis: `[System.Io.FileInfo]`
 
-Det finns två typer av kod block som används i vår dokumentation:
+- Språk nyckelord, cmdlet-namn, funktioner, variabler, interna EXEs, fil Sök vägar och infogade syntaxer ska omslutas av tecken`` ` ``i text Ticket ().
 
-1. Exempel på exempel
-2. Körbara exempel
+  Ett exempel:
+
+  ~~~markdown
+  The following code uses `Get-ChildItem` to list the contents of `C:\Windows` and assigns
+  the output to the `$files` variable.
+
+  ```powershell
+  $files = Get-ChildItem C:\Windows
+  ```
+  ~~~
+
+  - När du refererar till en parameter med namnet ska det skrivas med **fetstil**. När du illustrerar användningen av en parameter med avstavningsprefixet ska parametern omslutas av grava accenter. Ett exempel:
+
+    ```markdown
+    The parameter's name is **Name**, but it is typed as `-Name` when used on the command
+    line as a parameter.
+    ```
+
+  - När du visar exempel på användning av ett externt kommando ska exemplet omslutas av grava accenter.
+    Ta alltid med fil tillägget i det inbyggda kommandot. Ett exempel:
+
+    ```markdown
+    To start the spooler service on a remote computer named DC01, you type `sc.exe \\DC01 start spooler`.
+    ```
+
+    Inklusive fil tillägget säkerställer att rätt kommando körs enligt PowerShell: s kommando prioritet.
+
+- När du skriver en konceptuell artikel (till skillnad från referensinnehåll) ska den första förekomsten av ett cmdlet-namn hyperlänkas till cmdlet-dokumentationen. Använd inte grava accenter, fetstil eller andra markeringar inuti hakparenteserna för en hyperlänk.
+
+  Ett exempel:
+
+  ```markdown
+  This [Write-Host](/powershell/module/Microsoft.PowerShell.Utility/Write-Host) cmdlet
+  uses the **Object** parameter to ...
+  ```
+
+  Mer information finns i avsnittet [hyperlinks](#hyperlinks) i den här artikeln.
+
+## <a name="markdown-for-code-samples"></a>Markdown för kod exempel
+
+Markdown stöder två olika kodformat:
+
+- **Kod sträcker sig över (infogade)** – markerade med ett enda`` ` ``baktick ()-tecken. Används inom ett stycke i stället för som ett fristående block.
+- **Kodblock** – ett block med flera rader som omges av tredubbel-bakticket (`` ``` ``)-strängar. Kod block kan också ha en språk etikett efter bakstrecken. Språk etiketten aktiverar syntax för innehållet i kod blocket.
+
+Alla kodblock ska finnas i en kodavgränsning. Använd aldrig indrag för kodblock. Markdown tillåter det här mönstret, men det kan vara problematiskt och bör undvikas.
+
+Ett kodblock är en eller flera kodrader som omges av en kod gräns för tredubbelt skal`` ``` ``streck ().
+Kodavgränsningsmarkörerna måste finnas på en egen rad före och efter kodexemplet. Markören i början av kodblocket kan ha en valfri språketikett. Microsofts Open Publishing System (OPS) använder språketiketten för att stödja markeringsfunktionen för syntax.
+
+En fullständig lista över språk koder som stöds finns i [avgränsade kodblock](/contribute/code-in-docs#fenced-code-blocks) i den centraliserade deltagar guiden.
+
+OPS lägger också till knappen **Kopiera**, som kopierar innehållet i kodblocket till Urklipp. På så sätt kan du snabbt klistra in koden i ett skript för att testa kod exemplet. Men inte alla exempel i vår dokumentation är avsedda att köras i befintligt skick. Vissa kod block är enkla illustrationer av ett PowerShell-begrepp.
+
+Det finns tre typer av kod block som används i vår dokumentation:
+
+1. Kommandosyntax
+1. Illustrerande exempel
+1. Körbara exempel
 
 ### <a name="syntax-code-blocks"></a>Kod block för syntax
 
-Det här exemplet illustrerar alla möjliga parametrar i `Get-Command`-cmdleten.
+Syntax Code block används för att beskriva en kommandos syntaktiska struktur. Använd inte en språktagg på kod avgränsningen. Det här exemplet illustrerar alla möjliga parametrar för cmdleten `Get-Command`.
 
 ~~~markdown
 ```
 Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>]
-  [-FullyQualifiedModule <ModuleSpecification[]>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo]
-  [[-ArgumentList] <Object[]>] [-All] [-ListImported] [-ParameterName <String[]>]
-  [-ParameterType <PSTypeName[]>] [<CommonParameters>]
+  [-FullyQualifiedModule <ModuleSpecification[]>] [-TotalCount <Int32>] [-Syntax]
+  [-ShowCommandInfo] [[-ArgumentList] <Object[]>] [-All] [-ListImported]
+  [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
 ```
 ~~~
 
-I det här exemplet beskrivs `for`-instruktionen i generaliserade villkor:
+I det här exemplet beskrivs satsen `for` i generaliserade villkor:
 
 ~~~markdown
 ```
@@ -306,12 +334,11 @@ for (<init>; <condition>; <repeat>)
 ```
 ~~~
 
-### <a name="illustrative-examples"></a>Exempel på exempel
+### <a name="illustrative-examples"></a>Illustrerande exempel
 
-Exempel på exempel används för att förklara ett PowerShell-begrepp. De är inte avsedda att kopieras till Urklipp för körning. Dessa används vanligt vis för enkla exempel som är enkla att skriva.
-De används också för syntax-exempel där du illustrerar syntaxen för ett kommando. Kod blocket kan innehålla exempel på utdata från kommandot som illustreras.
+Illustrerande exempel används för att förklara ett PowerShell-begrepp. De är inte avsedda att kopieras till Urklipp för körning. Dessa används vanligt vis för enkla exempel som är lätta att skriva och som är lätta att förstå. Kod blocket kan innehålla PowerShell-prompten och exempel på utdata.
 
-Här är ett enkelt exempel som illustrerar en PowerShell-jämförelse operatorer:
+Här är ett enkelt exempel som illustrerar PowerShell-jämförelse operatorer. I det här fallet förväntar vi oss inte att läsaren ska kopiera och köra exemplet.
 
 ~~~markdown
 ```powershell
@@ -335,19 +362,17 @@ abc
 ```
 ~~~
 
-Observera att det här exemplet har den förenklade PowerShell-prompten och visar resultatet. I det här fallet har vi inte förvarat läsaren för att kopiera och köra det här exemplet.
-
 ### <a name="executable-examples"></a>Körbara exempel
 
-Mer komplexa exempel eller exempel som är avsedda att vara användbara för att kopiera och köra ska använda följande block/stil-markering:
+Avancerade exempel eller exempel som är avsedda att kopieras och köras ska använda följande block-Style-markering:
 
 ~~~markdown
 ```powershell
-<PowerShell code goes here>
+<Your PowerShell code goes here>
 ```
 ~~~
 
-De utdata som visas av PowerShell-kommandon måste omges av ett **utmatnings** kods block för att förhindra markering av syntax. Exempel:
+De utdata som visas av PowerShell-kommandon måste anges i ett kodblock för **utdata** för att förhindra markering av syntax. Ett exempel:
 
 ~~~markdown
 ```powershell
@@ -375,23 +400,23 @@ Cmdlet       Unprotect-CmsMessage        3.0.0.0    Microsoft.PowerShell.Securit
 ```
 ~~~
 
-Etiketten för den **resulterande** koden är inte ett officiellt språk som stöds av syntaxens markerings system.
+Kodetiketten **Utdata** är inte ett officiellt ”språk” som stöds av syntaxens markeringssystem.
 Den här etiketten är dock användbar eftersom OPS lägger till etiketten "utdata" i rutan med kod rutan på webb sidan. Kod rutan "utdata" har ingen markering av syntax.
 
-## <a name="coding-style-rules"></a>Regler för kodnings format
+## <a name="coding-style-rules"></a>Regler för kodningsformat
 
-### <a name="avoid-line-continuation-in-code-samples"></a>Undvik rad fortsättning i kod exempel
+### <a name="avoid-line-continuation-in-code-samples"></a>Undvik radfortsättning i kodexempel
 
-Undvik att använda linje fortsättnings tecken (`` ` ``) i PowerShell-kod exempel. Detta är svårt att se och kan orsaka problem om det finns extra blank steg i slutet av raden.
+Undvik att använda radfortsättningstecken (`` ` ``) i PowerShell-kodexempel. De är svåra att se och kan orsaka problem om det finns extra blanksteg i slutet av raden.
 
-- Använd PowerShell-ihopbuntning för att minska rad längden för cmdletar som har många parametrar.
-- Dra nytta av PowerShell: s naturliga rad brytnings möjligheter, t. ex. efter pipe-tecken (`|`), inledande klammerparentes, parenteser och hakparenteser.
+- Använd PowerShell-ihopbuntning för att minska radlängden för cmdletar som har många parametrar.
+- Dra nytta av PowerShells naturliga radbrytningsmöjligheter, t.ex. efter pipe-tecken (`|`), inledande klammerparentes, parenteser och hakparenteser.
 
 ### <a name="avoid-using-powershell-prompts-in-examples"></a>Undvik att använda PowerShell-prompter i exempel
 
-Användning av LED text strängen rekommenderas inte och bör begränsas till scenarier som är avsedda att illustrera kommando linje användningen. I de flesta av de här exemplen ska LED texten vara `PS>`. Den här frågan är oberoende av OS-/regionsspecifika indikatorer.
+Användning av frågesträngen rekommenderas inte och bör begränsas till scenarier som är avsedda att illustrera användning av kommandoraden. I de flesta av dessa exempel bör LED text strängen vara `PS>`. Den här frågan är oberoende av OS-/regionsspecifika indikatorer.
 
-Prompter krävs för exempel som illustrerar kommandon som ändrar prompten eller när den angivna sökvägen är viktig för scenariot som illustreras. I följande exempel visas hur prompten ändras när du använder Registry-providern.
+Frågor krävs för exempel som illustrerar kommandon som förändrar frågan, eller när sökvägen som visas är viktig för scenariot som illustreras. I följande exempel visas hur frågan ändras när du använder registerprovidern.
 
 ```powershell
 PS C:\> cd HKCU:\System\
@@ -412,11 +437,11 @@ GameConfigStore        GameDVR_Enabled                       : 1
 
 ### <a name="do-not-use-aliases-in-examples"></a>Använd inte alias i exempel
 
-Du bör alltid använda det fullständiga namnet på alla cmdletar och parametrar om du inte specifikt pratar om aliaset. Cmdlet-och parameter namn måste använda rätt stavning som definierats i koden.
+Du bör alltid använda det fullständiga namnet på alla cmdletar och parametrar om du inte diskuterar aliaset specifikt. Cmdlet-och parameter namn måste ha rätt Pascal-bokstäver namn.
 
 ### <a name="using-parameters-in-examples"></a>Använda parametrar i exempel
 
-Undvik att använda positions parametrar. I allmänhet bör du alltid inkludera parameter namnet i ett exempel, även om parametern är i position. Detta minskar risken för förvirring i exemplen.
+Undvik att använda positionsparametrar. I allmänhet bör du alltid inkludera parameter namnet i ett exempel, även om parametern är i position. På så sätt minskar du risken för förvirring i exemplen.
 
 ## <a name="next-steps"></a>Nästa steg
 

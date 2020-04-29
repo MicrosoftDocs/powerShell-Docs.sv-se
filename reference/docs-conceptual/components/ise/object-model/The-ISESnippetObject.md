@@ -3,15 +3,15 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: ISESnippetObject
 ms.openlocfilehash: f810e6b26f0ded04be15bdc37f336d7890e29dad
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500927"
 ---
 # <a name="the-isesnippetobject"></a>ISESnippetObject
 
-Ett **ISESnippet** -objekt är en instans av klassen Microsoft. PowerShell. Host. ISE. ISESnippet. Medlemmarna i den `$psISE.CurrentPowerShellTab.Snippets` samlingen är alla exempel på **ISESnippet** -objekt. Det enklaste sättet att skapa ett kodfragment är att använda cmdleten [New-IseSnippet](/powershell/module/ISE/New-IseSnippet) .
+Ett **ISESnippet** -objekt är en instans av klassen Microsoft. PowerShell. Host. ISE. ISESnippet. Medlemmarna i `$psISE.CurrentPowerShellTab.Snippets` samlingen är alla exempel på **ISESnippet** -objekt. Det enklaste sättet att skapa ett kodfragment är att använda cmdleten [New-IseSnippet](/powershell/module/ISE/New-IseSnippet) .
 
 ## <a name="properties"></a>Egenskaper
 
@@ -53,5 +53,5 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ## <a name="see-also"></a>Se även
 
 - [ISESnippetCollection-objektet](The-ISESnippetCollection-Object.md)
-- [Syftet med Windows PowerShell ISE-skriptets objekt modell](purpose-of-the-windows-powershell-ise-scripting-object-model.md)
-- [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)
+- [Användningsområden för Windows PowerShell ISE-skriptobjektmodellen](purpose-of-the-windows-powershell-ise-scripting-object-model.md)
+- [Objekt modells-hierarkin för ISE](The-ISE-Object-Model-Hierarchy.md)

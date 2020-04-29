@@ -3,10 +3,10 @@ ms.date: 10/16/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Tillämpa konfigurationer
 ms.openlocfilehash: 3bbe90c7cf09a7e236f6dd14f731ae306f497a0d
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78277920"
 ---
 # <a name="enacting-configurations"></a>Tillämpa konfigurationer
@@ -21,7 +21,7 @@ Det finns två sätt att dra i PowerShell-konfigurationer för Desired State Con
 
 Push-läge refererar till en användare som aktivt använder en konfiguration på en målnod genom att anropa cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) .
 
-När du har skapat och kompilerat en konfiguration kan du använda den i push-läge genom att anropa cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) , ange parametern-Path för cmdleten till den sökväg där MOF-konfigurationsfilen finns. Om t. ex. konfigurations-MOF finns på `C:\DSC\Configurations\localhost.mof`, kan du tillämpa den på den lokala datorn med följande kommando: `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
+När du har skapat och kompilerat en konfiguration kan du använda den i push-läge genom att anropa cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) , ange parametern-Path för cmdleten till den sökväg där MOF-konfigurationsfilen finns. Om t. ex. konfigurations-MOF finns `C:\DSC\Configurations\localhost.mof`på kan du tillämpa den på den lokala datorn med följande kommando:`Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
 > [!NOTE]
 > Som standard kör DSC en konfiguration som ett bakgrunds jobb. Anropa [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) med parametern **wait** för att köra konfigurationen interaktivt.

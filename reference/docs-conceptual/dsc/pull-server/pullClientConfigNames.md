@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Konfigurera en pull-klient med hjälp av konfigurations namn i PowerShell 5,0 och senare
 ms.openlocfilehash: d591e2a757130ccecaf4eaf9f363f607fca82b93
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941721"
 ---
 # <a name="set-up-a-pull-client-using-configuration-names-in-powershell-50-and-later"></a>Konfigurera en pull-klient med hjälp av konfigurations namn i PowerShell 5,0 och senare
@@ -18,8 +18,8 @@ ms.locfileid: "71941721"
 
 Innan du konfigurerar en pull-klient bör du konfigurera en hämtnings Server. Även om den här ordningen inte krävs, hjälper den med fel sökning och hjälper dig att se till att registreringen lyckades. Om du vill konfigurera en hämtnings Server kan du använda följande guider:
 
-- [Konfigurera en DSC SMB-pull-server](pullServerSmb.md)
-- [Konfigurera en DSC HTTP-pull-server](pullServer.md)
+- [Konfigurera en DSC SMB-hämtningsserver](pullServerSmb.md)
+- [Konfigurera en DSC HTTP-hämtningsserver](pullServer.md)
 
 Varje målnod kan konfigureras för att ladda ned konfigurationer, resurser och till och med rapportera dess status. I avsnitten nedan visas hur du konfigurerar en pull-klient med en SMB-resurs eller HTTP DSC-pull-server. När nodens LCM uppdateras, kommer den att kontakta den konfigurerade platsen för att ladda ned alla tilldelade konfigurationer. Om det inte finns några nödvändiga resurser på noden hämtas de automatiskt från den konfigurerade platsen. Om noden har kon figurer ATS med en [rapport Server](reportServer.md), kommer den att rapportera statusen för åtgärden.
 
@@ -31,7 +31,7 @@ Varje målnod kan konfigureras för att ladda ned konfigurationer, resurser och 
 
 Om du kör något av exemplen nedan skapas en ny mapp med namnet **PullClientConfigName** och en metaconfiguration MOF-fil placeras där. I det här fallet får MOF-filen metaconfiguration namnet `localhost.meta.mof`.
 
-Om du vill använda konfigurationen anropar du cmdleten **set-DscLocalConfigurationManager** med **sökvägen** inställd på platsen för MOF-filen för metaconfiguration. Till exempel:
+Om du vill använda konfigurationen anropar du cmdleten **set-DscLocalConfigurationManager** med **sökvägen** inställd på platsen för MOF-filen för metaconfiguration. Ett exempel:
 
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientConfigName –Verbose.
@@ -39,7 +39,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## <a name="configuration-name"></a>Konfigurations namn
 
-I exemplen nedan anges egenskapen **ConfigurationName** för LCM till namnet på en tidigare kompilerad konfiguration som skapats för det här ändamålet. **ConfigurationName** är vad LCM använder för att hitta rätt konfiguration på hämtnings servern. MOF-konfigurationsfilen på hämtnings servern måste ha namnet `<ConfigurationName>.mof`, i det här fallet "ClientConfig. MOF". Mer information finns i [publicera konfigurationer till en pull-server (v4/V5)](publishConfigs.md).
+I exemplen nedan anges egenskapen **ConfigurationName** för LCM till namnet på en tidigare kompilerad konfiguration som skapats för det här ändamålet. **ConfigurationName** är vad LCM använder för att hitta rätt konfiguration på hämtnings servern. MOF-konfigurationsfilen på hämtnings servern måste namnges `<ConfigurationName>.mof`, i det här fallet "ClientConfig. MOF". Mer information finns i [publicera konfigurationer till en pull-server (v4/V5)](publishConfigs.md).
 
 ## <a name="set-up-a-pull-client-to-download-configurations"></a>Konfigurera en pull-klient för att hämta konfigurationer
 

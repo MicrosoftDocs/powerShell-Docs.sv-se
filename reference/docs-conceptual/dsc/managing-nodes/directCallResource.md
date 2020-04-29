@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Anropa DSC-resursmetoder direkt
 ms.openlocfilehash: cf237f638593706e5959e2bcc0d851b0e55baf0e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942253"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>Anropa DSC-resursmetoder direkt
@@ -16,7 +16,7 @@ ms.locfileid: "71942253"
 Du kan använda cmdleten [Invoke-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) för att direkt anropa funktioner eller metoder för en DSC-resurs (funktionen **Get-TargetResource**, **set-TargetResource**och **test-TargetResource** i en MOF-baserad resurs, eller **Get**-, **set**-och **test** metoder för en klass-baserad resurs).
 Detta kan användas av tredje part som vill använda DSC-resurser eller som ett användbart verktyg när du utvecklar resurser.
 
-Denna cmdlet används vanligt vis i kombination med en metaconfiguration-egenskap `refreshMode = 'Disabled'`, men den kan användas oavsett vad **refreshMode** har angetts till.
+Denna cmdlet används vanligt vis i kombination med en metaconfiguration- `refreshMode = 'Disabled'`egenskap, men den kan användas oavsett vad **refreshMode** är inställt på.
 
 När du anropar cmdleten **Invoke-dscresource Keyword Supports** anger du vilken metod eller funktion som ska anropas med hjälp av **metod** parametern. Du anger egenskaperna för resursen genom att skicka en hash-egenskap som värde för **egenskaps** parametern.
 

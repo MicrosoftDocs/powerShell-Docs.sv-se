@@ -4,15 +4,15 @@ contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Kontoinställningar för PowerShell-galleriet
 ms.openlocfilehash: db61c3fd8c73048b51f3411a8c1dab52fb03d08a
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278134"
 ---
 # <a name="powershell-gallery-account-settings"></a>Kontoinställningar för PowerShell-galleriet
 
-Ditt PowerShell-galleriet-konto är ett offentligt synligt namn som är länkat till en identitet. Identiteten är antingen ett Microsoft-ID, t. ex. `user@hotmail.com` eller `user@outlook.com`eller ett konto för Azure Active Directory (AAD).
+Ditt PowerShell-galleriet-konto är ett offentligt synligt namn som är länkat till en identitet. Identiteten är antingen ett Microsoft-ID, `user@hotmail.com` t `user@outlook.com`. ex., eller ett Azure Active Directory-konto (AAD).
 
 PowerShell-galleriet innehåller följande konto inställningar:
 
@@ -81,6 +81,6 @@ När 2FA har Aktiver ATS måste du autentisera med hjälp av de konfigurerade fo
 > [!IMPORTANT]
 > Om du aktiverar tvåfaktorautentisering för PowerShell-galleriets platsen behöver du inte aktivera 2FA för all användning av ditt inloggnings konto. Mer information finns i [om](https://support.microsoft.com/help/12408/microsoft-account-about-two-step-verification)tvåstegsverifiering.
 
-## <a name="change-your-profile-picture"></a>Ändra profil bilden
+## <a name="change-your-profile-picture"></a>Ändra din profilbild
 
 PowerShell-galleriet förlitar sig på Gravatar för att lagra och visa den bild som är associerad med din profil. Om du vill uppdatera din profil avbildning går du till [Gravatar.com](http://www.gravatar.com/).

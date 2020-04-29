@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Förstå DSC-rollen i en CI/CD-pipeline
 ms.openlocfilehash: 8d7244a6e5e2c215d9d3ada959b716df2cce0b83
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500814"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Förstå DSC-rollen i en CI/CD-pipeline
@@ -22,8 +22,8 @@ Det finns två lösningar som är inbyggda i lokala Configuration Manager för a
 
 |        Begrepp         |                    Detaljerad information                     |
 | ---------------------- | ----------------------------------------------------------- |
-| Partiella konfigurationer | [Handlingar](../pull-server/partialConfigs.md)           |
-| Sammansatta resurser    | [Handlingar](../resources/authoringResourceComposite.md) |
+| Partiella konfigurationer | [Dokumentation](../pull-server/partialConfigs.md)           |
+| Sammansatta resurser    | [Dokumentation](../resources/authoringResourceComposite.md) |
 
 ## <a name="understanding-the-impact-of-each-approach"></a>Förstå påverkan av varje metod
 

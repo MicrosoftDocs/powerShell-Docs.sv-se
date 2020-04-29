@@ -3,17 +3,17 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC PackageManagement-resurs
 ms.openlocfilehash: 28ae8772170bd4559c8a19c3a1df8c9118734857
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "76995969"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement-resurs
 
 Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0, Windows PowerShell 5,1
 
-**PackageManagement** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att installera eller avinstallera paket hanterings paket på en målnod. Den här resursen kräver **PackageManagement** -modulen, som är tillgänglig från [https://PowerShellGallery.com](https://PowerShellGallery.com).
+**PackageManagement** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att installera eller avinstallera paket hanterings paket på en målnod. Den här resursen kräver **PackageManagement** -modulen som är [https://PowerShellGallery.com](https://PowerShellGallery.com)tillgänglig från.
 
 > [!IMPORTANT]
 > **PackageManagement** -modulen måste vara minst version 1.1.7.0 för att följande egenskaps information ska vara korrekt.
@@ -41,11 +41,11 @@ PackageManagement [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|Namn |Anger namnet på det paket som ska installeras eller avinstalleras. |
+|Name |Anger namnet på det paket som ska installeras eller avinstalleras. |
 |AdditionalParameters |Leverantörsspecifik hash-information för parametrar som skulle skickas till `Get-Package -AdditionalArguments`. För NuGet-Provider kan du till exempel skicka ytterligare parametrar som DestinationPath. |
 |MaximumVersion |Anger den högsta tillåtna versionen för det paket som du vill hitta. Om du inte lägger till den här parametern hittar resursen den högsta tillgängliga versionen av paketet. |
 |MinimumVersion |Anger den lägsta tillåtna versionen för det paket som du vill hitta. Om du inte lägger till den här parametern hittar resursen den högsta tillgängliga versionen av paketet som också uppfyller den högsta version som anges av parametern **MaximumVersion** . |
-|ProviderName |Anger ett paket leverantörs namn som du vill använda för att begränsa pakets ökningen. Du kan hämta paket leverantörs namn genom att köra cmdleten `Get-PackageProvider`. |
+|ProviderName |Anger ett paket leverantörs namn som du vill använda för att begränsa pakets ökningen. Du kan hämta paket leverantörs namn genom att `Get-PackageProvider` köra cmdleten. |
 |RequiredVersion |Anger den exakta versionen av paketet som du vill installera. Om du inte anger den här parametern installerar DSC-resursen den senaste tillgängliga versionen av paketet som också uppfyller den högsta version som anges av parametern **MaximumVersion** . |
 |Källa |Anger namnet på paket källan där paketet kan hittas. Detta kan antingen vara en URI eller en källa som registrerats med `Register-PackageSource` eller PackageManagementSource DSC-resurs. |
 |SourceCredential |Anger ett användar konto som har behörighet att installera ett paket för en angiven paket leverantör eller källa. |
@@ -63,7 +63,7 @@ I följande tabell visas alternativ för egenskapen AdditionalParameters.
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"`. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
 |Kontrol |Anger om paketet ska installeras eller avinstalleras. Standardvärdet finns **.** |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 

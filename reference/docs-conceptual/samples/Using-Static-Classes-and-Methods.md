@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Använd statiska klasser och metoder
 ms.openlocfilehash: 437e7b430f37224de7c617e120e37c3efcd7787a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030745"
 ---
 # <a name="using-static-classes-and-methods"></a>Använd statiska klasser och metoder
@@ -46,11 +46,11 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> Som vi nämnt tidigare prepends "system" automatiskt i Windows PowerShell **.** för att skriva namn när du använder **nytt-objekt**. Samma sak händer när du använder ett namn för en klammer, så du kan ange **\[system. Environment]** som **\[miljö]** .
+> Som vi nämnt tidigare prepends "system" automatiskt i Windows PowerShell **.** för att skriva namn när du använder **nytt-objekt**. Samma sak händer när du använder ett namn för hakparenteser, så du kan ange ** \[system. Environment]** som ** \[miljö]**.
 
 Klassen **system. Environment** innehåller allmän information om arbets miljön för den aktuella processen, som är PowerShell. exe när du arbetar i Windows PowerShell.
 
-Om du försöker visa information om den här klassen genom att skriva **\[system. Environment] | Hämta medlem**, objekt typen rapporteras som **system. RuntimeType** , inte **system. Environment**:
+Om du försöker visa information om den här klassen genom att skriva ** \[system. Environment] | Hämta medlem**, objekt typen rapporteras som **system. RuntimeType** , inte **system. Environment**:
 
 ```
 PS> [System.Environment] | Get-Member

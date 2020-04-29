@@ -3,23 +3,23 @@ ms.date: 12/23/2019
 keywords: PowerShell, cmdlet
 title: Hämta WMI-objekt Hämta CimInstance
 ms.openlocfilehash: 4ff47844fd367a49f554c7c05c491bdddf28eabc
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "77004696"
 ---
 # <a name="getting-wmi-objects-get-ciminstance"></a>Hämta WMI-objekt (Get-CimInstance)
 
 ## <a name="getting-wmi-objects-get-ciminstance"></a>Hämta WMI-objekt (Get-CimInstance)
 
-Windows Management Instrumentation (WMI) är en kärn teknik för administration av Windows-system eftersom det visar en mängd olika information på ett enhetligt sätt. På grund av hur mycket WMI gör kan PowerShell-cmdleten för att komma åt WMI-objekt `Get-CimInstance`, vara en av de mest användbara för att utföra verkligt arbete. Vi ska diskutera hur du använder CimCmdlets för att komma åt WMI-objekt och sedan använda WMI-objekt för att utföra vissa saker.
+Windows Management Instrumentation (WMI) är en kärn teknik för administration av Windows-system eftersom det visar en mängd olika information på ett enhetligt sätt. På grund av hur mycket WMI gör, är PowerShell-cmdleten för att komma åt `Get-CimInstance`WMI-objekt, en av de mest användbara för att utföra verkligt arbete. Vi ska diskutera hur du använder CimCmdlets för att komma åt WMI-objekt och sedan använda WMI-objekt för att utföra vissa saker.
 
 ### <a name="listing-wmi-classes"></a>Lista WMI-klasser
 
 Det första problemet som de flesta WMI-användare drabbas av försöker ta reda på vad som kan göras med WMI. WMI-klasser beskriver de resurser som kan hanteras. Det finns hundratals WMI-klasser, varav vissa innehåller dussin tals egenskaper.
 
-`Get-CimClass` åtgärdar det här problemet genom att göra WMI synligt. Du kan hämta en lista över de WMI-klasser som är tillgängliga på den lokala datorn genom att skriva:
+`Get-CimClass`löser problemet genom att göra WMI synligt. Du kan hämta en lista över de WMI-klasser som är tillgängliga på den lokala datorn genom att skriva:
 
 ```powershell
 Get-CimClass -Namespace root/CIMV2 |
@@ -70,7 +70,7 @@ C:\WINDOWS\system32 Microsoft    18362       USER1          00330-80000-00000-AA
 ```
 
 Även om vi visar alla parametrar kan kommandot uttryckas på ett mer kortfattad sätt.
-Parametern **computername** behövs inte vid anslutning till det lokala systemet. Vi visar det för att demonstrera det mest generella fallet och påminna dig om parametern. **Namn området** är som standard `root/CIMV2`och kan även utelämnas. Slutligen kan du med de flesta cmdlet: ar utesluta namnet på gemensamma parametrar. Med `Get-CimInstance`, om inget namn har angetts för den första parametern, behandlas PowerShell som **klass** parameter. Det innebär att det sista kommandot kan ha utfärdats genom att skriva:
+Parametern **computername** behövs inte vid anslutning till det lokala systemet. Vi visar det för att demonstrera det mest generella fallet och påminna dig om parametern. **Namn området** `root/CIMV2`är som standard och kan även utelämnas. Slutligen kan du med de flesta cmdlet: ar utesluta namnet på gemensamma parametrar. Med `Get-CimInstance`, om inget namn har angetts för den första parametern, behandlar PowerShell den som **klass** parameter. Det innebär att det sista kommandot kan ha utfärdats genom att skriva:
 
 ```powershell
 Get-CimInstance Win32_OperatingSystem
@@ -119,7 +119,7 @@ TotalVirtualMemorySize TotalVisibleMemorySize FreePhysicalMemory FreeVirtualMemo
 ```
 
 > [!NOTE]
-> Jokertecken fungerar med egenskaps namn i `Format-Table`, så det sista pipeline-elementet kan minskas till `Format-Table -Property Total*Memory*, Free*`
+> Jokertecken fungerar med egenskaps namn `Format-Table`i, så det sista pipeline-elementet kan minskas till`Format-Table -Property Total*Memory*, Free*`
 
 Minnes data kan vara mer läsbara om du formaterar den som en lista genom att skriva:
 

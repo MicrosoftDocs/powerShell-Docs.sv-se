@@ -4,10 +4,10 @@ contributor: manikb
 keywords: Galleri, PowerShell, cmdlet, psget
 title: Felsöka cmdletar
 ms.openlocfilehash: d87c680472c2588efbfe8b3c4d6f2dbee6883a0c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "72352116"
 ---
 # <a name="troubleshooting-cmdlets"></a>Felsöka cmdletar

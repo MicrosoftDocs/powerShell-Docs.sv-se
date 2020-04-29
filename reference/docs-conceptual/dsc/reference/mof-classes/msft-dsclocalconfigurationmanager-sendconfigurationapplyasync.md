@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: SendConfigurationApplyAsync-metoden
 ms.openlocfilehash: c0e6dc9418757ee719e848fa8e7006dd73d91ad8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941546"
 ---
 # <a name="sendconfigurationapplyasync-method"></a>SendConfigurationApplyAsync-metoden
@@ -27,7 +27,7 @@ uint32 SendConfigurationApplyAsync(
 
 *ConfigurationData* \[i\] miljö data för konfigurationen.
 
-*tvinga* \[i\] **Sant** för att tvinga konfigurationen att stoppas.
+*tvinga* \[i\] **uppfyllelse** att tvinga konfigurationen att stoppas.
 
 *jobId* \[i\] ID: t för det jobb som konfigurationen ska skickas till.
 

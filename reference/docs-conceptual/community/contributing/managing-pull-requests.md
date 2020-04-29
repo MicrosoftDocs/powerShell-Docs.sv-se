@@ -1,13 +1,13 @@
 ---
-title: Hur vi hanterar pull-begäranden
+title: Så här hanterar vi pull-begäranden
 description: Den här artikeln förklarar hur PowerShell-dokument-teamet hanterar pull-begäranden.
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: b9b37816dfdf38e4d8b7c2d66799164d0e97d257
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79078614"
 ---
 # <a name="managing-pull-requests"></a>Hantera pull-begäranden
@@ -56,7 +56,7 @@ Se [redaktionell check lista](editorial-checklist.md) för en mer omfattande lis
     - Fil länkar för lokala filer
     - URL-länkar för filer utanför dokument uppsättning
   - Ta bort språk från URL: er
-  - Förenkla URL: er som pekar på `docs.microsoft.com`
+  - Förenkla webb adresser som pekar på`docs.microsoft.com`
 
 ## <a name="branch-merge-process"></a>Gren sammanfognings process
 
@@ -65,8 +65,8 @@ Mellanlagringsplatsen är den enda gren som någonsin ska slås samman i real ti
 | *Sammanfoga från/till*  | *version – gren* | *mellanlagringsområdet*        | *realtidsinformation*      |
 | ---------------- |:----------------:|:----------------:|:-----------:|
 | *arbets gren* | squash och slå samman | squash och slå samman | Inte tillåten |
-| *version – gren* | &mdash;          | Katalog            | Inte tillåten |
-| *mellanlagringsområdet*        | basera           | &mdash;          | Katalog       |
+| *version – gren* | &mdash;          | merge            | Inte tillåten |
+| *mellanlagringsområdet*        | basera           | &mdash;          | merge       |
 
 ### <a name="pr-merger-checklist"></a>Check lista för PR fusion
 
@@ -78,7 +78,7 @@ Mellanlagringsplatsen är den enda gren som någonsin ska slås samman i real ti
   - Inga brutna länkar
 - Sammanfoga enligt tabell
 
-### <a name="notes"></a>Anteckningar
+### <a name="notes"></a>Obs!
 
 Följande varningar kan ignoreras:
 
@@ -97,10 +97,10 @@ När en PR slås samman ändras huvud grenen i mål grenen. Alla öppna pull som
 
 ## <a name="publishing-to-live"></a>Publicera till Live
 
-Med jämna mellanrum måste ändringarna som har samlats in i `staging` grenen publiceras på den aktiva webbplatsen. Detta kräver att `staging` grenen slås samman i `live` grenen.
+Med jämna mellanrum måste ändringarna som har `staging` ackumulerats i grenen publiceras på den aktiva webbplatsen. Detta kräver att `staging` grenen slås samman i `live` grenen.
 
-- `staging` grenen ska slås samman till `live` minst en gång per vecka.
-- `staging` grenen ska slås samman till `live` efter en betydande ändring.
+- `staging` Grenen ska slås samman till `live` minst en gång per vecka.
+- `staging` Grenen ska slås samman till `live` efter en betydande ändring.
   - Ändringar i 50 eller fler filer
   - Efter sammanslagning av en versions gren
   - Ändringar av lagrings platsen-eller dokument uppsättning-konfigurationer (docfx. JSON, OPS configs, build-skript osv.)

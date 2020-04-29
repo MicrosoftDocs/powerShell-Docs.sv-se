@@ -3,10 +3,10 @@ ms.date: 08/23/2018
 keywords: PowerShell, cmdlet
 title: Förstå PowerShell-pipeliner
 ms.openlocfilehash: 3033a4fe1a704fbbfa76e6d38662c8b22c3dbd9b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030388"
 ---
 # <a name="understanding-pipelines"></a>Förstå pipelines
@@ -19,7 +19,7 @@ Den notation som används för pipelines liknar den notation som används i andr
 
 Pipelines är utan tvekan det mest värdefulla konceptet som används i kommando rads gränssnitt. När pipelinen används korrekt minskar pipelinen arbetet med att använda komplexa kommandon och gör det lättare att se arbets flödet för kommandona. Varje kommando i en pipeline (kallas ett pipeline-element) skickar utdata till nästa-kommando i pipelinen, item-by-Item. Kommandon behöver inte hantera mer än ett objekt i taget. Resultatet är minskad resursförbrukning och möjligheten att börja få utdata direkt.
 
-Om du till exempel använder `Out-Host`-cmdleten för att tvinga fram visning av utdata från ett annat kommando, ser utdata ut precis som den normala texten som visas på skärmen, och delas upp i sidor:
+Om du till exempel använder `Out-Host` cmdleten för att tvinga fram visning av utdata från ett annat kommando, ser utdata ut precis som den normala texten som visas på skärmen, och delas upp i sidor:
 
 ```powershell
 Get-ChildItem -Path C:\WINDOWS\System32 | Out-Host -Paging
@@ -58,7 +58,7 @@ d-----        8/23/2018   5:07 PM                catroot2
 ...
 ```
 
-Växlingen minskar också CPU-belastningen eftersom bearbetning av överföringar till `Out-Host`-cmdleten är klart att visa. Cmdletarna som föregår den i pipelinen pausar körningen tills nästa sida med utdata är tillgänglig.
+Växlingen minskar också processor användningen eftersom bearbetningen överförs till `Out-Host` cmdleten när en hel sida är klar att visas. Cmdletarna som föregår den i pipelinen pausar körningen tills nästa sida med utdata är tillgänglig.
 
 Du kan se hur rörledning påverkar processor-och minnes användning i aktivitets hanteraren genom att jämföra följande kommandon:
 
@@ -81,7 +81,7 @@ Du kan se hur rörledning påverkar processor-och minnes användning i aktivitet
 
 När du kör en cmdlet i PowerShell visas text utdata eftersom det är nödvändigt att representera objekt som text i ett konsol fönster. Text utmatningen kanske inte visar alla egenskaper för objektet som ska skrivas ut.
 
-Överväg till exempel `Get-Location` cmdlet. Om du kör `Get-Location` medan din aktuella plats är roten på C-enheten visas följande utdata:
+Överväg till exempel `Get-Location` cmdleten. Om du kör `Get-Location` medan din aktuella plats är roten på C-enheten visas följande utdata:
 
 ```
 PS> Get-Location
@@ -91,9 +91,9 @@ Path
 C:\
 ```
 
-Text utmatningen är en sammanfattning av informationen, inte en fullständig representation av det objekt som returnerades av `Get-Location`. Rubriken i utdata läggs till av processen som formaterar data för skärm visning.
+Text utmatningen är en sammanfattning av informationen, inte en fullständig representation av det objekt som `Get-Location`returnerades av. Rubriken i utdata läggs till av processen som formaterar data för skärm visning.
 
-När du rör utdata till `Get-Member` cmdlet får du information om det objekt som returneras av `Get-Location`.
+När du skickar utdata till `Get-Member` cmdleten får du information om det objekt som returnerades `Get-Location`av.
 
 ```powershell
 Get-Location | Get-Member
@@ -114,4 +114,4 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {get;
 ProviderPath Property   string ProviderPath {get;}
 ```
 
-`Get-Location` returnerar ett **PathInfo** -objekt som innehåller den aktuella sökvägen och annan information.
+`Get-Location`Returnerar ett **PathInfo** -objekt som innehåller den aktuella sökvägen och annan information.

@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Vad är nytt i Windows PowerShell 5,0
 ms.openlocfilehash: dba016546fe034684f6b7afe43ec2e7a1b793d96
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80978210"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Vad är nytt i Windows PowerShell 5,0
@@ -22,7 +22,7 @@ Windows PowerShell 5,0 installeras som standard på Windows Server 2016 Technica
 
 Installera Windows PowerShell 5,0 på Windows Server 2012 R2, Windows 8,1 Enterprise eller Windows 8,1 Pro genom att hämta och installera [Windows Management Framework 5,0](https://aka.ms/wmf5download). Se till att läsa informationen om hämtningen och uppfyller alla system krav innan du installerar Windows Management Framework 5,0.
 
-## <a name="in-this-topic"></a>I den här artikeln
+## <a name="in-this-topic"></a>I det här avsnittet
 
 - [Windows PowerShell 4,0 DSC-uppdateringar i KB 3000850](#windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850)
 - [Nya funktioner i Windows PowerShell 5,0](#new-features-in-windows-powershell-50)
@@ -31,7 +31,7 @@ Installera Windows PowerShell 5,0 på Windows Server 2012 R2, Windows 8,1 Enterp
 
 ## <a name="windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850"></a>Uppdateringar för Windows PowerShell 4,0 i november 2014 Samlad uppdatering (KB 3000850)
 
-Många uppdateringar och förbättringar av Windows PowerShell Desired State Configuration (DSC) i Windows PowerShell 4,0 finns i den [samlade uppdateringen 2014 november för Windows RT 8,1, Windows 8,1 och Windows Server 2012 R2](https://support.microsoft.com/kb/3000850/) (KB 3000850). Du kan kontrol lera om KB 3000850 är installerat i systemet genom att köra `Get-Hotfix -Id KB3000850` i Windows PowerShell.
+Många uppdateringar och förbättringar av Windows PowerShell Desired State Configuration (DSC) i Windows PowerShell 4,0 finns i den [samlade uppdateringen 2014 november för Windows RT 8,1, Windows 8,1 och Windows Server 2012 R2](https://support.microsoft.com/kb/3000850/) (KB 3000850). Du kan kontrol lera om KB 3000850 är installerat i systemet genom att `Get-Hotfix -Id KB3000850` köra i Windows PowerShell.
 
 - Uppdateringar av befintliga cmdletar i [PSDesiredStateConfiguration](/powershell/module/PSDesiredStateConfiguration) -modulen
   - [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration) är snabbare (särskilt i ISE).
@@ -120,19 +120,19 @@ Många uppdateringar och förbättringar av Windows PowerShell Desired State Con
   Egenskaper eller metoder som har marker ATS som dolda visas inte heller i IntelliSense-resultat, om du inte är i ett sammanhang där medlemmen ska vara synlig. till exempel bör den automatiska variabeln $This Visa dolda medlemmar i klass metoden.
 - New-item, remove-item och get-ChildItem har förbättrats för att stödja skapande och hantering av [symboliska länkar](https://en.wikipedia.org/wiki/Symbolic_link). Parametern **-itemType** för New-item accepterar ett nytt värde, **SymbolicLink**. Nu kan du skapa symboliska länkar på en enda rad genom att köra cmdleten New-Item.
 - Get-ChildItem har också en ny djup-parameter som du använder med parametern-rekursivt för att begränsa rekursion. Get-ChildItem-rekursivt-djup 2 returnerar till exempel resultat från den aktuella mappen, alla underordnade mappar i den aktuella mappen och alla mappar i de underordnade mapparna.
-- Med kopiera objekt kan du nu kopiera filer eller mappar från en Windows PowerShell-session till en annan, vilket innebär att du kan kopiera filer till sessioner som är anslutna till fjärrdatorer, (inklusive datorer som kör Nano Server och därmed inte har något annat gränssnitt). Kopiera filer genom att ange PSSession-ID: n som värdet för parametrarna New-FromSession och-ToSession, och Lägg till sökväg och-mål för att ange start Sök väg och mål. Till exempel Copy-item-Path c:\\nofile. txt-ToSession $s-destination d:\\destinationFolder.
+- Med kopiera objekt kan du nu kopiera filer eller mappar från en Windows PowerShell-session till en annan, vilket innebär att du kan kopiera filer till sessioner som är anslutna till fjärrdatorer, (inklusive datorer som kör Nano Server och därmed inte har något annat gränssnitt). Kopiera filer genom att ange PSSession-ID: n som värdet för parametrarna New-FromSession och-ToSession, och Lägg till sökväg och-mål för att ange start Sök väg och mål. Till exempel Copy-item-Path c:\\nofile. txt-ToSession $S-destination d:\\destinationFolder.
 - Windows PowerShell-avskriften har förbättrats för att gälla alla värdbaserade program (till exempel Windows PowerShell ISE) utöver konsol värden (**PowerShell. exe**). Avskrifts alternativ (inklusive aktivering av systemomfattande avskrifter) kan konfigureras genom att aktivera inställningen **Aktivera PowerShell-Avskrifts** Grupprincip, som finns i administrativa mallar/Windows-komponenter/Windows PowerShell.
 - Med en ny detaljerad skript spårnings funktion kan du aktivera detaljerad spårning och analys av skript användningen i Windows PowerShell på ett system. När du har aktiverat detaljerad skript spårning loggar Windows PowerShell alla skript block till händelse loggen ETW (Event Tracing for Windows) (ETW), **Microsoft-Windows-PowerShell/Operational**.
 - Från och med Windows PowerShell 5,0 stöder nya cmdletar för kryptografisk meddelandesyntax kryptering och dekryptering av innehåll med hjälp av IETF-standardformat för kryptering av meddelanden som dokumenteras av [RFC5652](https://tools.ietf.org/html/rfc5652). Cmdletarna get-CmsMessage, Protect-CmsMessage och Unprotect-CmsMessage har lagts till i [Microsoft. PowerShell. Security](/powershell/module/Microsoft.PowerShell.Security) -modulen.
-- Nya cmdlets i [Microsoft. PowerShell. Utility](/powershell/module/Microsoft.PowerShell.Utility) -modulen, get-körnings utrymme, debug-körnings utrymme, get-RunspaceDebug, Enable-RunspaceDebug och Disable-RunspaceDebug, gör att du kan ange fel söknings alternativ på en körnings utrymme och starta och stoppa fel sökning på en körnings utrymme. För fel sökning av godtyckliga körnings utrymmen (dvs. körnings utrymmen som inte är standard-körnings utrymme för en Windows PowerShell-konsol eller Windows PowerShell ISE session) kan du med Windows PowerShell ange Bryt punkter i ett skript och har lagt till Bryt punkter för att stoppa skriptet från körs tills du kan koppla en fel sökare för att felsöka körnings utrymme-skriptet. Stöd för kapslad fel sökning för godtycklig körnings utrymmen har lagts till i Windows PowerShell-skript fel sökning för körnings utrymmen.
+- Nya cmdlets i [Microsoft. PowerShell. Utility](/powershell/module/Microsoft.PowerShell.Utility) -modulen, get-körnings utrymme, debug-körnings utrymme, get-RunspaceDebug, Enable-RunspaceDebug och Disable-RunspaceDebug, gör att du kan ange fel söknings alternativ på en körnings utrymme och starta och stoppa fel sökning på en körnings utrymme. För fel sökning av godtyckliga körnings utrymmen (dvs. körnings utrymmen som inte är standard-körnings utrymme för en Windows PowerShell-konsol eller Windows PowerShell ISE session) kan du ange Bryt punkter i ett skript i Windows PowerShell och har lagt till Bryt punkter stoppa skriptet från att köras tills du kan koppla en fel sökare för att felsöka körnings utrymme-skriptet. Stöd för kapslad fel sökning för godtycklig körnings utrymmen har lagts till i Windows PowerShell-skript fel sökning för körnings utrymmen.
 - En ny format-hex-cmdlet har lagts till i modulen [Microsoft. PowerShell. Utility](/powershell/module/Microsoft.PowerShell.Utility) .
   Med formatet-hex kan du Visa text data eller binära data i hexadecimalt format.
 - Get-Urklipp och set-Clipboard-cmdletar har lagts till i [Microsoft. PowerShell. Utility](/powershell/module/Microsoft.PowerShell.Utility) -modulen. de fören klar överföringen av innehåll till och från en Windows PowerShell-session. Urklipps-cmdletarna stöder bilder, ljudfiler, fil listor och text.
 - En ny cmdlet, Clear-RecycleBin, har lagts till i [Microsoft. PowerShell. Management](/powershell/module/Microsoft.PowerShell.Management) -modulen; den här cmdleten tömmer pappers korgen för en fast enhet, vilket inkluderar externa enheter. Som standard uppmanas du att bekräfta ett Clear-RecycleBin-kommando eftersom ConfirmImpact-egenskapen för cmdleten är inställd på ConfirmImpact. High.
-- Med en ny cmdlet, New-TemporaryFile, kan du skapa en temporär fil som en del av skript. Som standard skapas den nya tillfälliga filen i ```C:\Users\<user name>\AppData\Local\Temp```.
+- Med en ny cmdlet, New-TemporaryFile, kan du skapa en temporär fil som en del av skript. Som standard skapas den nya temporära filen i ```C:\Users\<user name>\AppData\Local\Temp```.
 - Cmdletarna Out-File, Add-Content och set-Contents har nu en New-NoNewline-parameter, som utelämnar en ny rad efter utdata.
 - Cmdleten New-GUID utnyttjar .NET Framework GUID-klassen för att generera ett GUID, användbart när du skriver skript eller DSC-resurser.
-- Eftersom fil versions information kan vara missvisande, särskilt när en fil har korrigerats, är nya FileVersionRaw-och ProductVersionRaw-skript egenskaper tillgängliga för FileInfo-objekt. Du kan till exempel köra följande kommando för att visa värdena för dessa egenskaper för PowerShell. exe, där $pid innehåller process-ID: t för en Windows PowerShell-session som körs: `Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force`
+- Eftersom fil versions information kan vara missvisande, särskilt när en fil har korrigerats, är nya FileVersionRaw-och ProductVersionRaw-skript egenskaper tillgängliga för FileInfo-objekt. Du kan till exempel köra följande kommando för att visa värdena för dessa egenskaper för PowerShell. exe, där $pid innehåller process-ID: t för en Windows PowerShell-session som körs:`Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force`
 - Nya cmdlet: ar Enter-PSHostProcess och exit-PSHostProcess låter dig felsöka Windows PowerShell-skript i processer som är åtskilda från den aktuella processen som körs i Windows PowerShell-konsolen. Kör retur-PSHostProcess för att ange eller koppla till ett särskilt process-ID och kör sedan Get-körnings utrymme för att returnera den aktiva körnings utrymmen i processen. Kör Exit-PSHostProcess för att koppla från processen när du är färdig med att felsöka skriptet i processen.
 - En ny cmdlet för wait-debugger har lagts till i modulen [Microsoft. PowerShell. Utility](/powershell/module/Microsoft.PowerShell.Utility) . Du kan köra wait-debugger för att stoppa ett skript i fel söknings programmet innan du kör nästa instruktion i skriptet.
 - Fel söknings programmet för Windows PowerShell-arbetsflöde stöder nu kommando-eller TABB-slutförande och du kan felsöka kapslade arbets flödes funktioner. Nu kan du trycka på **CTRL + BREAK** för att ange fel sökaren i ett skript som körs, i både lokala och fjärranslutna sessioner, och i ett arbets flödes skript.
@@ -142,7 +142,7 @@ Många uppdateringar och förbättringar av Windows PowerShell Desired State Con
 - Nu kan du utföra en modul versions validering genom att köra cmdleten test-ModuleManifest.
 - Resultatet från cmdleten Get-Command visar nu en versions kolumn. en ny versions egenskap har lagts till i CommandInfo-klassen. Get-Command visar kommandon från flera versioner av samma modul. Egenskapen version är också en del av härledda klasser av CmdletInfo: CmdletInfo och ApplicationInfo.
 - Get-Command har en ny parameter,-ShowCommandInfo, som returnerar ShowCommand-information som PSObjects. Detta är särskilt användbart för att visa-kommandot körs i Windows PowerShell ISE med hjälp av Windows PowerShell-fjärrkommunikation. Parametern-ShowCommandInfo ersätter den befintliga get-SerializedCommand-funktionen i modulen Microsoft. PowerShell. Utility, men get-SerializedCommand-skriptet är fortfarande tillgängligt för att stödja äldre skript.
-- Med en ny cmdlet för Get-ItemPropertyValue kan du hämta värdet för en egenskap utan att använda punkt notation. I äldre versioner av Windows PowerShell kan du till exempel köra följande kommando för att hämta värdet för egenskapen Application base i register nyckeln PowerShellEngine: **(Get-ItemProperty-Path HKLM:\\program vara\\Microsoft\\PowerShell\\3\\PowerShellEngine-Name ApplicationBase). ApplicationBase**. Från och med Windows PowerShell 5,0 kan du köra **Get-ItemPropertyValue-Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine ApplicationBase**.
+- Med en ny cmdlet för Get-ItemPropertyValue kan du hämta värdet för en egenskap utan att använda punkt notation. I äldre versioner av Windows PowerShell kan du till exempel köra följande kommando för att hämta värdet för egenskapen Application base i register nyckeln PowerShellEngine: **(Get-ItemProperty-\\Path HKLM: Software\\Microsoft\\PowerShell\\3\\PowerShellEngine-Name ApplicationBase). ApplicationBase**. Från och med Windows PowerShell 5,0 kan du köra **Get-ItemPropertyValue-Path HKLM:\\Software\\Microsoft\\PowerShell\\3\\PowerShellEngine ApplicationBase**.
 - I Windows PowerShell-konsolen används nu syntax för syntax, precis som i Windows PowerShell ISE.
 - En ny NetworkSwitch-modul innehåller cmdletar som gör att du kan använda Switch, virtuellt LAN (VLAN) och grundläggande Layer 2 nätverks växel port konfiguration för Windows Server 2012 R2 logo typ-certifierade nätverks växlar.
 - Parametern FullyQualifiedName har lagts till i cmdletarna import-module och Remove-module, för att stödja lagring av flera versioner av en enda modul.
@@ -172,22 +172,22 @@ Många uppdateringar och förbättringar av Windows PowerShell Desired State Con
   - Förbättrad ifyllning av resurs egenskaps värden.
 - En användare kan nu köra en resurs under en angiven uppsättning autentiseringsuppgifter genom att lägga till attributet **PSDscRunAsCredential** i ett Node-block. Till exempel PSDscRunAsCredential = Get-Credential contoso\\DscUser. Den här funktionen är användbar för att skapa konfigurationer som kör Windows Installer och installations program för körbara filer, åtkomst till registrerings data filen per användare eller utföra andra uppgifter utanför den aktuella användar kontexten.
 - stöd för 32-bitars (x86-baserade) har lagts till för nyckelordet **Configuration** .
-- Windows PowerShell har nu stöd för anpassad hjälp för DSC-konfigurationer, som definieras genom att lägga till \[CmdletBinding ()] i den genererade konfigurations funktionen.
-- Ett nytt **DscLocalConfigurationManager** -attribut är ett konfigurations block som en meta-konfiguration, som används för att konfigurera den lokala DSC-Configuration Manager. Det här attributet begränsar en konfiguration som bara innehåller objekt som konfigurerar den lokala DSC-Configuration Manager. Under bearbetningen genererar den här konfigurationen en \*. meta. MOF-fil som sedan skickas till lämpliga målnod genom att köra cmdleten Set-DscLocalConfigurationManager.
+- Windows PowerShell har nu stöd för anpassad hjälp för DSC-konfigurationer, som definieras \[genom att lägga till CmdletBinding ()] i den genererade konfigurations funktionen.
+- Ett nytt **DscLocalConfigurationManager** -attribut är ett konfigurations block som en meta-konfiguration, som används för att konfigurera den lokala DSC-Configuration Manager. Det här attributet begränsar en konfiguration som bara innehåller objekt som konfigurerar den lokala DSC-Configuration Manager. Under bearbetningen genererar den här konfigurationen \*en. meta. MOF-fil som sedan skickas till lämpliga målnod genom att köra cmdleten Set-DscLocalConfigurationManager.
 - Partiella konfigurationer tillåts nu i Windows PowerShell 5,0. Du kan leverera konfigurations dokument till en nod i fragment. För att en nod ska kunna ta emot flera fragment av ett konfigurations dokument måste nodens lokala Configuration Manager först vara inställd för att ange förväntade fragment
-- Synkronisering mellan datorer är ny i DSC i Windows PowerShell 5,0. Genom att använda de inbyggda WaitFor\*-resurserna (**WaitForAll**, **WaitForAny**och **WaitForSome**) kan du nu ange beroenden mellan datorer under konfigurations körningar, utan externa dirigeringar. Dessa resurser tillhandahåller synkronisering av nod till nod med hjälp av CIM-anslutningar över WS-man-protokollet.
+- Synkronisering mellan datorer är ny i DSC i Windows PowerShell 5,0. Genom att använda\* de inbyggda waitfor-resurserna (**WaitForAll**, **WaitForAny**och **WaitForSome**) kan du nu ange beroenden mellan datorer under konfigurations körningar, utan externa dirigeringar. Dessa resurser tillhandahåller synkronisering av nod till nod med hjälp av CIM-anslutningar över WS-man-protokollet.
   En konfiguration kan vänta på att en annan dators speciella resurs tillstånd ändras.
 - Bara tillräckligt med administration (JEA), en ny säkerhetsfunktion för delegering, utnyttjar DSC och Windows PowerShell-begränsade körnings utrymmen för att skydda företag mot data förlust eller kompromissa med anställda, oavsett om de är avsiktliga eller oavsiktliga. Mer information om JEA, inklusive var du kan hämta xJEA DSC-resursen finns i [tillräckligt med administration](/powershell/scripting/learn/remoting/jea/overview).
 - Följande nya cmdletar har lagts till i PSDesiredStateConfiguration-modulen.
   - En ny get-DscConfigurationStatus-cmdlet hämtar information på hög nivå om konfigurations status från en målnod. Du kan hämta status för senaste eller alla konfigurationer.
   - En ny compare-DscConfiguration-cmdlet jämför en angiven konfiguration med det aktuella läget för en eller flera målnod.
   - En ny cmdlet för publicerings-DscConfiguration kopierar en MOF-fil för konfiguration till en målnod, men tillämpar inte konfigurationen. Konfigurationen används vid nästa konsekvens steg, eller när du kör cmdleten Update-DscConfiguration.
-  - Med en ny test-DscConfiguration-cmdlet kan du kontrol lera att en resulterande konfiguration matchar önskad konfiguration, returnerar antingen sant om konfigurationen matchar önskad konfiguration eller falskt om den faktiska konfigurationen inte matchar önskad inställningarna.
+  - Med en ny test-DscConfiguration-cmdlet kan du kontrol lera att en resulterande konfiguration matchar önskad konfiguration, returnerar antingen sant om konfigurationen matchar önskad konfiguration eller falskt om den faktiska konfigurationen inte matchar önskad konfiguration.
   - En ny Update-DscConfiguration-cmdlet tvingar fram en konfiguration som ska bearbetas. Om den lokala Configuration Manager är i pull-läge hämtar cmdleten konfigurationen från hämtnings servern innan den tillämpas.
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Nya funktioner i Windows PowerShell ISE
 
-- Nu kan du redigera Windows PowerShell-skript och-filer i en lokal kopia av Windows PowerShell ISE, genom att köra retur-PSSession för att starta en fjärrsession på datorn som lagrar de filer som du vill redigera och sedan köra **PSEdit \<sökväg och fil namn på fjärrdatorn\>** . Den här funktionen underlättar redigering av Windows PowerShell-filer som är lagrade på installations alternativet Server Core för Windows Server, där Windows PowerShell ISE inte kan köras.
+- Nu kan du redigera Windows PowerShell-skript och-filer i en lokal kopia av Windows PowerShell ISE, genom att köra Enter-PSSession för att starta en fjärrsession på datorn som lagrar de filer som du vill redigera och sedan köra **PSEdit \<-sökväg och fil namn på fjärrdatorn\>**. Den här funktionen underlättar redigering av Windows PowerShell-filer som är lagrade på installations alternativet Server Core för Windows Server, där Windows PowerShell ISE inte kan köras.
 - Cmdleten Start-avskrift stöds nu i Windows PowerShell ISE.
 - Du kan nu felsöka fjärrskript i Windows PowerShell ISE.
 - Ett nytt meny kommando, **Bryt alla** (Ctrl + B), slutar i fel söknings programmet för både lokala och fjärranslutna skript.
@@ -216,14 +216,14 @@ Windows PowerShell 4,0 installeras som standard på Windows 8,1 och Windows Serv
 
 Windows PowerShell 4,0 innehåller följande nya funktioner.
 
-### <a name="new-features-in-windows-powershell"></a><a name="new-features-in-windows-powershell-1" />nya funktioner i Windows PowerShell
+### <a name="new-features-in-windows-powershell"></a><a name="new-features-in-windows-powershell-1" />Nya funktioner i Windows PowerShell
 
 - **Windows PowerShell Desired State Configuration** (DSC) är ett nytt hanterings system i Windows PowerShell 4,0 som möjliggör distribution och hantering av konfigurations data för program varu tjänster och miljön där tjänsterna körs. Mer information om DSC finns i [Kom igång med önskad tillstånds konfiguration i Windows PowerShell](/powershell/scripting/dsc/getting-started/wingettingstarted).
-- **Spara – hjälp** nu låter dig spara hjälp för moduler som är installerade på fjärrdatorer. Du kan använda Save-Help för att hämta hjälp om modulen från en Internet-ansluten klient (där inte alla moduler som du vill ha hjälp om är installerade) och sedan kopiera den sparade hjälpen till en delad fjärrmapp eller en fjärrdator som inte har Internet fjärråtkomstservrar.
+- **Spara – hjälp** nu låter dig spara hjälp för moduler som är installerade på fjärrdatorer. Du kan använda Spara-hjälp för att ladda ned hjälp om modulen från en Internet-ansluten klient (där inte alla moduler som du vill ha hjälp om är installerade) och sedan kopiera den sparade hjälpen till en delad fjärrmapp eller en fjärrdator som inte har Internet åtkomst.
 - Windows PowerShell-felsökaren har förbättrats för att tillåta fel sökning av Windows PowerShell-arbetsflöden, samt skript som körs på fjärrdatorer. Windows PowerShell-arbetsflöden kan nu felsökas på skript nivå från antingen Windows PowerShell-kommandoraden eller Windows PowerShell ISE. Windows PowerShell-skript, inklusive skript arbets flöden, kan nu felsökas via fjärrsessioner. Fjärrfelsökning bevaras över Windows PowerShell-fjärrsessioner som kopplas från och sedan återansluts senare.
 - En **RunNow** -parameter för **register-ScheduledJob** och **set-ScheduledJob** eliminerar behovet av att ange ett omedelbart start datum och en tid för jobb med hjälp av parametern **trigger** .
 - **Invoke-RestMethod** och **Invoke-WebRequest** låter dig nu ange alla huvuden med hjälp av parametern headers. Även om den här parametern alltid fanns, var den en av flera parametrar för webb-cmdlet: arna som resulterade i undantag eller fel.
-- **Get-module** har en ny parameter, **FullyQualifiedName**, av typen **ModuleSpecification\[]** . Med parametern **FullyQualifiedName** för Get-module kan du nu ange en modul med hjälp av modulens namn, version och eventuellt GUID.
+- **Get-module** har en ny parameter, **FullyQualifiedName**, av typen **\[ModuleSpecification]**. Med parametern **FullyQualifiedName** för Get-module kan du nu ange en modul med hjälp av modulens namn, version och eventuellt GUID.
 - Standard körnings princip inställningen på Windows Server 2012 R2 är **RemoteSigned**. I Windows 8,1 sker ingen ändring i standardinställningen.
 - Från och med Windows PowerShell 4,0 stöds metod anrop med hjälp av dynamiska metod namn.
   Du kan använda en variabel för att lagra ett metod namn och sedan anropa metoden dynamiskt genom att anropa variabeln.
@@ -235,9 +235,9 @@ Windows PowerShell 4,0 innehåller följande nya funktioner.
 - Samlings filtrering med hjälp av Method-syntax stöds nu. Det innebär att du nu kan filtrera en samling objekt med hjälp av förenklad syntax, ungefär som för WHERE () eller Where-Object, formaterat som ett metod anrop. Följande är ett exempel: (Get-process). där ({$ _. Namn matchning ' PowerShell '})
 - Cmdleten **Get-process** har en ny växel parameter, **IncludeUserName**.
 - En ny cmdlet, **Get-FileHash**, som returnerar en filhash i ett av flera format för en angiven fil har lagts till.
-- Om en modul i Windows PowerShell 4,0 använder **DefaultCommandPrefix** -nyckeln i manifestet, eller om användaren importerar en modul med parametern **prefix** , Visar egenskapen **ExportedCommands** för modulen kommandona i modulen med prefixet. När du kör kommandona med hjälp av modulen-kvalificerad syntax, Modulnamn\\CommandName, måste kommando namnen innehålla prefixet.
+- Om en modul i Windows PowerShell 4,0 använder **DefaultCommandPrefix** -nyckeln i manifestet, eller om användaren importerar en modul med parametern **prefix** , Visar egenskapen **ExportedCommands** för modulen kommandona i modulen med prefixet. När du kör kommandona med hjälp av module-kvalificerad syntax,\\Modulnamn commandname, måste kommando namnen innehålla prefixet.
 - Värdet för **$PSVersionTable. PSVersion** har uppdaterats till 4,0.
-- **WHERE ()-** operatorns beteende har ändrats. `Collection.Where('property -match name')` som accepterar ett sträng uttryck i formatet `"Property -CompareOperator Value"` stöds inte längre.
+- **WHERE ()-** operatorns beteende har ändrats. `Collection.Where('property -match name')`att acceptera ett sträng uttryck i formatet `"Property -CompareOperator Value"` stöds inte längre.
   Operatorn **WHERE ()** accepterar dock sträng uttryck i formatet för en script block; Detta stöds fortfarande.
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Nya funktioner i Windows PowerShell ISE (Integrated Scripting Environment)
@@ -249,7 +249,7 @@ Windows PowerShell 4,0 innehåller följande nya funktioner.
 
 - Stöd har lagts till för en ny **PipelineVariable** common-parameter i kontexten för iterativa pipelines, till exempel de som används av System Center Orchestrator; det vill säga pipelines som kör kommandon som bara är från vänster till höger, i stället för att infogas direkt med hjälp av strömning.
 - Parameter bindningen har förbättrats avsevärt för att fungera utanför scenarier med tabbar, till exempel med kommandon som inte finns i den aktuella körnings utrymme.
-- Stöd för anpassade behållar aktiviteter har lagts till i Windows PowerShell-arbetsflöde. Om en aktivitets parameter är av typen **aktivitet**, **aktivitet\[]** (eller är en generisk samling aktiviteter) och användaren har angett ett skript block som argument, konverterar Windows PowerShell-arbetsflöde skript blocket till XAML, precis som med normalt Windows PowerShell skript-till-arbets flödes kompilering.
+- Stöd för anpassade behållar aktiviteter har lagts till i Windows PowerShell-arbetsflöde. Om en aktivitets parameter är av typen **aktivitet**, **aktivitet\[]** (eller är en allmän samling aktiviteter) och användaren har angett ett skript block som argument, konverterar Windows PowerShell-arbetsflöde skript blocket till XAML, precis som med normalt Windows PowerShell skript-till-arbets flödes kompilering.
 - Efter en krasch återansluter Windows PowerShell-arbetsflöde automatiskt till hanterade noder.
 - Du kan nu begränsa **förgrunds-och parallella** aktivitets uttryck med hjälp av egenskapen **ThrottleLimit** .
 - Den gemensamma parametern **ErrorAction** har ett nytt giltigt värde, **suspend**, som endast är för arbets flöden.
@@ -329,7 +329,7 @@ Windows PowerShell 3,0 innehåller följande nya funktioner.
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell-arbetsflöde
 
 Windows PowerShell-arbetsflöde ger kraften i Windows Workflow Foundation till Windows PowerShell.
-Du kan skriva arbets flöden i XAML eller på Windows PowerShell-språket och köra dem på samma sätt som du skulle köra en cmdlet. `Get-Command` cmdleten hämtar arbets flödes kommandon och `Get-Help`-cmdleten hämtar hjälp för arbets flöden.
+Du kan skriva arbets flöden i XAML eller på Windows PowerShell-språket och köra dem på samma sätt som du skulle köra en cmdlet. `Get-Command` Cmdleten hämtar arbets flödes kommandon `Get-Help` och cmdlet: en får hjälp för arbets flöden.
 
 Arbets flöden är sekvenser av hanterings aktiviteter för datorer som är långvariga, upprepnings bara, frekventa, kan göras parallella, avbrotts bar, pausad och kan startas om. Arbets flöden kan återupptas från ett avsiktligt eller oavsiktligt avbrott, till exempel ett nätverks avbrott, en omstart av Windows eller ett strömavbrott.
 
@@ -342,14 +342,14 @@ Följande är fördelarna med Windows PowerShell-arbetsflöde
 - **Hantering av multidatorer.** Kör aktiviteter samtidigt som arbets flöden på hundratals hanterade noder.
   Windows PowerShell-arbetsflöde innehåller ett inbyggt bibliotek med vanliga hanterings parametrar, t. ex. **PSComputerName**, som möjliggör hantering av flera datorer.
 - **Körning av komplexa processer för en aktivitet.** Du kan kombinera relaterade skript som implementerar ett helt scenario från slut punkt till slut punkt i ett enda arbets flöde.
-- **Persistence.** : ett arbets flöde sparas (eller checkar pekas) vid vissa punkter som definieras av författaren så att du kan återuppta arbets flödet från den senaste sparade aktiviteten (eller kontroll punkten) i stället för att starta om arbets flödet från början.
+- **Persistence.**: ett arbets flöde sparas (eller checkar pekas) vid vissa punkter som definieras av författaren så att du kan återuppta arbets flödet från den senaste sparade aktiviteten (eller kontroll punkten) i stället för att starta om arbets flödet från början.
 - **Stabilitet.** Automatisk återställning av felen. Arbets flöden överleva planerade och oplanerade omstarter. Du kan pausa arbets flödes körningen och sedan återuppta arbets flödet från den senaste beständighets punkten.
   Arbets flödes författare kan ange att vissa aktiviteter ska köras på nytt om det skulle uppstå ett eller flera hanterade noder.
 - **Möjlighet att koppla från, återansluta och köra i frånkopplade sessioner.** Användare kan ansluta och koppla från arbets flödes servern, men arbets flödet körs kontinuerligt. Du kan logga ut från klient datorn eller starta om klient datorn och övervaka arbets flödets körning från en annan dator utan att avbryta arbets flödet.
 - **Tids.** Arbets flödes uppgifter kan schemaläggas som vilken Windows PowerShell-cmdlet eller skript som helst.
 - **Begränsning av arbets flöde och anslutning.** Arbets flödes körning och anslutningar till noder kan begränsas, vilket möjliggör skalbarhet och scenarier med hög tillgänglighet.
 
-### <a name="windows-powershell-web-access"></a>Windows PowerShell-Webbåtkomst
+### <a name="windows-powershell-web-access"></a>Windows PowerShell Web Access
 
 Windows PowerShell-webbåtkomsten är en funktion i Windows Server 2012 som låter användarna köra Windows PowerShell-kommandon och-skript i en webbaserad konsol. Enheter som använder den webbaserade konsolen kräver inte Windows PowerShell, program vara för fjärrhantering eller plugin-program för webbläsare. Allt som krävs är en korrekt konfigurerad Gateway för Windows PowerShell-webbåtkomst och en klient enhets webbläsare som stöder Java Script och accepterar cookies.
 
@@ -357,11 +357,11 @@ Mer information finns i [distribuera Windows PowerShell-webbåtkomst](/powershel
 
 ### <a name="new-windows-powershell-ise-features"></a>Nya Windows PowerShell ISE funktioner
 
-För Windows PowerShell 3,0 har Windows PowerShell ISE (Integrated Scripting Environment) många nya funktioner, inklusive IntelliSense, show-Fönstret Kommando, ett enhetligt konsol fönster, kodfragment, klammerparentes matchning, expandera-minimera avsnitt, Spara automatiskt, senaste objekt lista, omfattande kopiering, block kopiering och fullständig support för att skriva arbets flöden för Windows PowerShell-skript. Mer information finns i [about_Windows_PowerShell_ISE](/powershell/module/microsoft.powershell.core/about/about_windows_powershell_ise).
+För Windows PowerShell 3,0 innehåller Windows PowerShell ISE (Integrated Scripting Environment) många nya funktioner, inklusive IntelliSense, show-Fönstret Kommando, ett enhetligt konsol fönster, kodfragment, klammerparenteser-matchning, expandera, minimera avsnitt, Spara automatiskt, senaste objekt lista, omfattande kopiering, block kopia och fullständig support för att skriva Windows PowerShell-skript arbets flöden. Mer information finns i [about_Windows_PowerShell_ISE](/powershell/module/microsoft.powershell.core/about/about_windows_powershell_ise).
 
 ### <a name="support-for-microsoft-net-framework-4"></a>Stöd för Microsoft .NET Framework 4
 
-Windows PowerShell är konstruerat mot CLR (Common Language Runtime) 4,0. Användare av cmdlet, skript och arbets flöden kan använda de nya Microsoft .NET Framework 4-klasserna i Windows PowerShell, med funktioner som inkluderar programkompatibilitet och distribution, Managed Extensibility Framework, parallell data behandling, nätverk, Windows Kommunikation Foundation och Windows Workflow Foundation.
+Windows PowerShell är konstruerat mot CLR (Common Language Runtime) 4,0. Användare av cmdlet, skript och arbets flöden kan använda de nya Microsoft .NET Framework 4-klasserna i Windows PowerShell, med funktioner som omfattar programkompatibilitet och distribution av program, Managed Extensibility Framework, parallell data behandling, nätverk, Windows Communication Foundation och Windows Workflow Foundation.
 
 ### <a name="support-for-windows-preinstallation-environment"></a>Stöd för Windows Preinstallation Environment
 
@@ -374,9 +374,9 @@ Från och med Windows PowerShell 3,0 sparas permanenta användar hanterade sessi
 
 Du kan nu koppla från en session utan att avbryta de kommandon som körs i sessionen. Du kan stänga sessionen och stänga av datorn. Senare kan du återansluta till sessionen från en annan session på samma eller på en annan dator.
 
-Parametern **computername** i `Get-PSSession`-cmdleten hämtar nu alla användares sessioner som ansluter till datorn, även om de startades i en annan session på en annan dator. Du kan ansluta till sessionerna, Hämta resultatet från kommandon, starta nya kommandon och sedan koppla från sessionen.
+Parametern **computername** för `Get-PSSession` cmdleten hämtar nu alla användares sessioner som ansluter till datorn, även om de startades i en annan session på en annan dator. Du kan ansluta till sessionerna, Hämta resultatet från kommandon, starta nya kommandon och sedan koppla från sessionen.
 
-Nya cmdletar har lagts till för att stödja funktionen frånkopplade sessioner, inklusive `Disconnect-PSSession`, `Connect-PSSession`och `Receive-PSSession`och nya parametrar har lagts till i cmdletar som hanterar PSSessions, till exempel **InDisconnectedSession** -parametern för `Invoke-Command` cmdlet.
+Nya cmdletar har lagts till för att stödja funktionen frånkopplade sessioner, `Disconnect-PSSession`inklusive, `Connect-PSSession`och `Receive-PSSession`, och nya parametrar har lagts till i cmdletar som hanterar PSSessions, till exempel parametern **InDisconnectedSession** för `Invoke-Command` cmdleten.
 
 Funktionen frånkopplade sessioner stöds bara när datorerna på både den ursprungliga ("klienten") och avslutande ("Server") slutar på anslutningen kör Windows PowerShell 3,0.
 
@@ -390,18 +390,18 @@ Dessa funktioner ger en mer tillförlitlig och rekonstruerbar fjärr kommunikati
 
 ### <a name="updatable-help-system"></a>Uppdaterings Bart hjälp system
 
-Nu kan du hämta uppdaterade hjälpfiler för cmdletarna i dina moduler. `Update-Help` cmdleten identifierar de senaste hjälpfilerna, laddar ned dem från Internet, packar upp dem, validerar dem och installerar dem i rätt språkspecifik katalog för modulen.
+Nu kan du hämta uppdaterade hjälpfiler för cmdletarna i dina moduler. `Update-Help` Cmdleten identifierar de senaste hjälpfilerna, laddar ned dem från Internet, packar upp dem, validerar dem och installerar dem i rätt språkspecifik katalog för modulen.
 
-Om du vill använda de uppdaterade hjälpfilerna skriver du bara `Get-Help`. Du behöver inte starta om Windows eller Windows PowerShell. Om du vill uppdatera hjälpen för moduler i $pshome-katalogen startar du Windows PowerShell med alternativet "kör som administratör".
+Om du vill använda de uppdaterade hjälpfilerna skriver `Get-Help`du bara. Du behöver inte starta om Windows eller Windows PowerShell. Om du vill uppdatera hjälpen för moduler i $pshome-katalogen startar du Windows PowerShell med alternativet "kör som administratör".
 
-För att ge stöd till användare som inte har Internet åtkomst och användare bakom brand väggar laddar den nya `Save-Help` cmdlet: en filer till fil system katalogen, till exempel en fil resurs. Användare kan sedan använda `Update-Help` cmdlet för att hämta uppdaterade hjälpfiler från fil resursen.
+För att stödja användare som inte har Internet åtkomst och användare bakom brand väggar laddar den `Save-Help` nya cmdleten ned hjälpfiler till en fil system katalog, till exempel en fil resurs. Användare kan sedan använda `Update-Help` cmdleten för att hämta uppdaterade hjälpfiler från fil resursen.
 
-Du kan använda `Update-Help`-cmdlet för att uppdatera hjälpfiler för alla eller vissa moduler i alla användar gränssnitts kulturer som stöds. Du kan till och med ange ett `Update-Help`-kommando i Windows PowerShell-profilen.
+Du kan använda `Update-Help` cmdleten för att uppdatera hjälpfiler för alla eller vissa moduler i alla användar gränssnitts kulturer som stöds. Du kan även skicka ett `Update-Help` kommando i din Windows PowerShell-profil.
 Som standard laddar Windows PowerShell ned hjälpfilerna för en modul högst en gång varje dag.
 
-Windows 8-och Windows Server 2012-moduler innehåller inte hjälpfiler. Om du vill hämta de senaste hjälpfilerna skriver du `Update-Help`. Mer information får du genom att skriva `Get-Help` (utan parametrar) eller se [about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_Updatable_Help).
+Windows 8-och Windows Server 2012-moduler innehåller inte hjälpfiler. Om du vill hämta de senaste hjälpfilerna skriver `Update-Help`du. Mer information får du genom `Get-Help` att skriva (utan parametrar) eller se [about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_Updatable_Help).
 
-Om hjälpfilerna för en cmdlet inte är installerade på datorn visas nu den automatiskt genererade hjälpen i `Get-Help` cmdlet. Den automatiskt genererade hjälpen innehåller kommandosyntaxen och instruktioner för att använda `Update-Help`-cmdlet för att hämta hjälpfiler.
+Om hjälpfilerna för en cmdlet inte är installerade på datorn visar cmdleten nu den `Get-Help` automatiskt genererade hjälpen. Den automatiskt genererade hjälpen innehåller kommandosyntaxen och instruktioner för att använda `Update-Help` cmdleten för att hämta hjälpfiler.
 
 Alla modulblad kan stödja uppdaterings bar hjälp för sin modul. Du kan inkludera hjälpfiler i modulen och använda uppdaterings bara hjälp för att uppdatera dem eller utelämna hjälpfilerna och använda uppdaterbar hjälp för att installera dem. Mer information om stöd för uppdaterings bara hjälp finns i [support uppdaterings bara hjälp](/powershell/scripting/developer/module/supporting-updatable-help).
 
@@ -424,7 +424,7 @@ PS C:\>(Get-Command Get-ScheduledJob).HelpUri
 https://go.microsoft.com/fwlink/?LinkID=223923
 ```
 
-Från och med Windows PowerShell 3,0 kan författare C# av cmdletar fylla i egenskapen **HelpUri** genom att skapa ett **HelpUri** -attribut i cmdlet-klassen. Författare av avancerade funktioner kan definiera en **HelpUri** -egenskap för attributet **CmdletBinding** . Värdet för egenskapen **HelpUri** måste börja med http eller https.
+Från och med Windows PowerShell 3,0 kan författare av C#-cmdletar fylla i egenskapen **HelpUri** genom att skapa ett **HelpUri** -attribut i cmdlet-klassen. Författare av avancerade funktioner kan definiera en **HelpUri** -egenskap för attributet **CmdletBinding** . Värdet för egenskapen **HelpUri** måste börja med http eller https.
 
 Du kan också inkludera ett **HelpUri** -värde i den första relaterade länken i en XML-baserad cmdlet-hjälpfil eller. Länk direktiv för kommenterings-baserad hjälp i en funktion.
 
@@ -437,13 +437,13 @@ Windows PowerShell 3,0 innehåller stöd för Common Information Model (CIM), so
 ### <a name="session-configuration-files"></a>Konfigurationsfiler för session
 
 Från och med Windows PowerShell 3,0 kan du utforma en anpassad sessionsinformation genom att använda en fil.
-Med den nya konfigurations filen för sessionen kan du fastställa miljön för sessioner som använder-konfigurationen, inklusive vilka moduler, skript och format filer som läses in i sessioner, vilka cmdletar och språk element som användare kan använda, vilka moduler och skript som de kan köra och vilka variabler de kan se.
+Med den nya konfigurations filen för sessionen kan du fastställa miljön för sessioner som använder-konfigurationen, inklusive vilka moduler, skript och format filer som läses in i sessioner, vilka cmdletar och språk element som användare kan använda, vilka moduler och skript de kan köra och vilka variabler de kan se.
 
 Du kan utforma en session där användare bara kan köra cmdletar från en viss modul, eller en session där användare har fullständigt språk, åtkomst till alla moduler och åtkomst till skript som utför avancerade uppgifter.
 
-I tidigare versioner av Windows PowerShell var kontroll på den här nivån bara tillgänglig för de som kan skriva ett C# program eller ett komplext start skript. Nu kan alla medlemmar i gruppen Administratörer på datorn anpassa en sessions konfiguration med hjälp av en konfigurations fil.
+I tidigare versioner av Windows PowerShell var kontroll på den här nivån bara tillgänglig för de som kan skriva ett C#-program eller ett komplext start skript. Nu kan alla medlemmar i gruppen Administratörer på datorn anpassa en sessions konfiguration med hjälp av en konfigurations fil.
 
-Använd `New-PSSessionConfigurationFile`-cmdleten om du vill skapa en konfigurations fil för sessionen. Använd `Register-PSSessionConfiguration`-eller Set-PSSessionConfiguration-cmdlet: ar för att tillämpa sessionens konfigurations fil på en konfiguration av sessionen.
+Använd `New-PSSessionConfigurationFile` cmdleten om du vill skapa en konfigurations fil för sessionen. Använd cmdletarna `Register-PSSessionConfiguration` or set-PSSessionConfiguration för att tillämpa sessionens konfigurations fil på en konfiguration av sessionen.
 
 Mer information finns i [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files) och `New-PSSessionConfigurationFile`.
 
@@ -454,7 +454,7 @@ Nu kan du schemalägga bakgrunds jobb i Windows PowerShell och hantera dem i Win
 Schemalagda Windows PowerShell-jobb är en användbar hybrid av Windows PowerShell-arbetsjobb och Schemaläggaren-aktiviteter.
 
 Som Windows PowerShell bakgrunds jobb körs schemalagda jobb asynkront i bakgrunden.
-Instanser av schemalagda jobb som har slutförts kan hanteras med hjälp av jobb-cmdletar, till exempel `Start-Job` och `Get-Job`.
+Instanser av schemalagda jobb som har slutförts kan hanteras med hjälp av jobb-cmdletar, `Start-Job` till `Get-Job`exempel och.
 
 Precis som aktiviteter i Schemaläggaren kan du köra schemalagda jobb vid ett engångs-eller reaktuellt schema, eller som svar på en åtgärd eller händelse. Du kan visa och hantera schemalagda jobb i Schemaläggaren, aktivera och inaktivera dem efter behov, köra dem eller använda dem som mallar och ange under vilka omständigheter jobben ska starta.
 
@@ -464,7 +464,7 @@ Mer information om schemalagda jobb finns [about_Scheduled_Jobs](/powershell/mod
 
 ### <a name="windows-powershell-language-enhancements"></a>Språk förbättringar för Windows PowerShell
 
-Windows PowerShell 3,0 innehåller många funktioner som är utformade för att göra språket enklare, enklare att använda och för att undvika vanliga fel. Förbättringarna inkluderar egenskaper för egenskaps uppräkning, antal och längd på skalära objekt, nya omdirigerings operatörer, $Using omfångs modifierare, PSItem automatisk variabel, flexibel skript formatering, attribut för variabler, förenklat attribut argument, numeriska kommando namn, Stop-parser-Operator, förbättrad matris-ihopbuntning, nya bit operatörer, beställda ord listor, PSCustomObject-databyte och förbättrad kommenterings-baserad hjälp.
+Windows PowerShell 3,0 innehåller många funktioner som är utformade för att göra språket enklare, enklare att använda och för att undvika vanliga fel. Förbättringarna inkluderar egenskaper för egenskaps uppräkning, antal och längd på skalära objekt, nya omdirigerings-operatörer, $Using omfångs modifierare, PSItem automatisk variabel, flexibel teckenformatering, attribut för variabler, förenklade attributargument, numeriska kommando namn, stoppa-parsing-operatorn, förbättrad array-ihopbuntning, nya bit operatörer, beställda ord listor, PSCustomObject-dataflöde och förbättrad
 
 ### <a name="new-core-cmdlets"></a>Nya Core-cmdletar
 
@@ -487,7 +487,7 @@ Nya cmdletar har lagts till i Windows PowerShell Core-installationen, inklusive 
 | Get-CimSession            | Remove-TypeData                 |
 | Get-ControlPanelItem      | Byt namn – dator                 |
 | Get-IseSnippet            | Återuppta – jobb                      |
-| Get-JobTrigger            | Save-Help                       |
+| Get-JobTrigger            | Spara – hjälp                       |
 | Get-ScheduledJob          | Set-CimInstance                 |
 | Get-ScheduledJobOption    | Set-JobTrigger                  |
 | Get-TypeData              | Set-ScheduledJob                |
@@ -498,20 +498,20 @@ Nya cmdletar har lagts till i Windows PowerShell Core-installationen, inklusive 
 | Anropa-webbegäran         | Test-PSSessionConfigurationFile |
 | New-CimInstance           | Avblockera – fil                    |
 | New-CimSession            | Avregistrera-ScheduledJob         |
-| New-CimSessionOption      | Update-Help                     |
+| New-CimSessionOption      | Uppdatera – hjälp                     |
 | New-IseSnippet            |                                 |
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Förbättringar av befintliga kärn-cmdlets och providers
 
-Windows PowerShell 3,0 innehåller nya funktioner för befintliga cmdlets, inklusive den förenklade syntaxen och nya parametrar för följande cmdlet: Computer-cmdletar, CSV-cmdletar, get-ChildItem, Get-Command, get-Content, get-History, Measure-Object, Security cmdletar, Select-Object, Select-String, Split-Path, start-process, tee-objekt, Test-Connection, Add-member och WMI-cmdletar.
+Windows PowerShell 3,0 innehåller nya funktioner för befintliga cmdlets, inklusive den förenklade syntaxen, och nya parametrar för följande cmdlet: Computer-cmdletar, CSV-cmdletar, get-ChildItem, Get-Command, get-Content, get-historik, Measure-Object, Security-cmdletar, Select-Object, Select-String, Split-Path, start process, tee-Object, Test-Connection, Add-member och WMI-cmdletar.
 
-Windows PowerShell-providers har också förbättrats avsevärt, inklusive stöd för certifikat leverantörer för hantering av SSL-certifikat (Secure Socket Layer) för webb värd, stöd för autentiseringsuppgift, beständiga nätverks enheter och alternativa data strömmar i fil Systems enheter.
+Windows PowerShell-providers har också förbättrats avsevärt, inklusive stöd för certifikat leverantörer för hantering av SSL-certifikat (Secure Socket Layer) för webb värd, stöd för autentiseringsuppgift, beständiga nätverks enheter och alternativa data strömmar i fil system enheter.
 
 ### <a name="remote-module-import-and-discovery"></a>Import och identifiering av fjärrmodul
 
 Windows PowerShell 3,0 utökar modulen identifiering, import och implicita fjärr kommunikations funktioner på fjärrdatorer. Cmdleten för modulen hämtar moduler på fjärrdatorer och importerar modulerna till en fjärrdator eller en lokal dator med hjälp av Windows PowerShell-fjärrkommunikation. Med det nya stödet för CIM-session kan du använda CIM och WMI för att hantera datorer som inte är Windows-datorer genom att importera kommandon till den lokala datorn som körs implicit på fjärrdatorn.
 
-Mer information finns i hjälp avsnitten för `Get-Module`-och `Import-Module`-cmdletar.
+Mer information finns i hjälp avsnitten för cmdletarna `Get-Module` och. `Import-Module`
 
 ### <a name="enhanced-tab-completion"></a>Förbättrad ifyllning av flikar
 
@@ -520,16 +520,16 @@ Funktionen för slut för ande av flikar skrivs helt om baserat på en ny parser
 
 ### <a name="module-auto-loading"></a>Automatisk inläsning av modul
 
-`Get-Command` cmdleten hämtar nu alla cmdletar och funktioner från alla moduler som är installerade på datorn, även om modulen inte har importer ATS till den aktuella sessionen.
+`Get-Command` Cmdleten hämtar nu alla cmdletar och funktioner från alla moduler som är installerade på datorn, även om modulen inte har importer ATS till den aktuella sessionen.
 
 När du hämtar den cmdlet som du behöver kan du använda den direkt utan att importera några moduler.
 Windows PowerShell-moduler importeras nu automatiskt när du använder valfri cmdlet i modulen. Du behöver inte längre söka efter modulen och importera den för att använda dess cmdlets.
 
-Automatisk import av moduler utlöses genom att använda cmdleten i ett kommando, köra `Get-Command` för en cmdlet utan jokertecken eller köra `Get-Help` för en cmdlet utan jokertecken.
+Automatisk import av moduler utlöses med hjälp av cmdleten i ett kommando, som `Get-Command` körs för en cmdlet utan jokertecken eller som `Get-Help` körs för en cmdlet utan jokertecken.
 
 Du kan aktivera, inaktivera och konfigurera automatisk import av moduler med hjälp av **$PSModuleAutoLoadingPreference** Preference-variabeln.
 
-Mer information finns i [about_Modules](/powershell/module/microsoft.powershell.core/about/about_modules), [about_Preference_Variables](/powershell/module/microsoft.powershell.core/about/about_Preference_Variables)och hjälp avsnitten för `Get-Command`-och `Import-Module`-cmdletar.
+Mer information finns i [about_Modules](/powershell/module/microsoft.powershell.core/about/about_modules), [about_Preference_Variables](/powershell/module/microsoft.powershell.core/about/about_Preference_Variables)och hjälp avsnitten för cmdletarna `Get-Command` och. `Import-Module`
 
 ### <a name="module-experience-improvements"></a>Förbättringar i modul upplevelse
 
@@ -541,15 +541,15 @@ Windows PowerShell 3,0 ger avancerad funktions support för moduler, inklusive f
 4. Förbättrad identifiering av tillgängliga (ej importerade) moduler, inklusive att tillåta **Path** -och **ListAvailable** -parametrar i samma kommando
 5. Ny **DefaultCommandPrefix** -nyckel i modul manifest som undviker namn konflikter utan att ändra kod i modulen.
 6. Förbättrade modul krav, inklusive fullt kvalificerade nödvändiga moduler med version och GUID och automatisk import av nödvändiga moduler
-7. Tystare, effektiv drift av `New-ModuleManifest`-cmdlet.
+7. Tystare, effektiv drift av `New-ModuleManifest` cmdleten.
 8. Ny **modul** -parameter för #Requires
-9. Förbättrad `Import-Module`-cmdlet med både **MinimumVersion** -och **RequiredVersion** -parametrar.
+9. Förbättrad `Import-Module` cmdlet med både **MinimumVersion** -och **RequiredVersion** -parametrar.
 
 ### <a name="simplified-command-discovery"></a>Förenklad kommando identifiering
 
-Du behöver inte längre importera alla moduler för att identifiera de kommandon som är tillgängliga för din session. I Windows PowerShell 3,0 hämtar cmdleten `Get-Command` alla kommandon från alla installerade moduler. Om du använder ett kommando importeras modulen som exporterar kommandot automatiskt till sessionen.
+Du behöver inte längre importera alla moduler för att identifiera de kommandon som är tillgängliga för din session. I Windows PowerShell 3,0 hämtar `Get-Command` cmdleten alla kommandon från alla installerade moduler. Om du använder ett kommando importeras modulen som exporterar kommandot automatiskt till sessionen.
 
-Den nya `Show-Command`-cmdlet: en är särskilt utformad för nybörjare. Du kan söka efter kommandon i ett fönster. Du kan visa alla kommandon eller filtrera efter modul, importera en modul genom att klicka på en knapp, använda text rutor och list rutor för att skapa ett giltigt kommando och sedan kopiera eller köra kommandot utan att behöva lämna fönstret.
+Den nya `Show-Command` cmdleten är särskilt utformad för nybörjare. Du kan söka efter kommandon i ett fönster. Du kan visa alla kommandon eller filtrera efter modul, importera en modul genom att klicka på en knapp, använda text rutor och list rutor för att skapa ett giltigt kommando och sedan kopiera eller köra kommandot utan att behöva lämna fönstret.
 
 ### <a name="improved-logging-diagnostics-and-group-policy-support"></a>Förbättrad loggning, diagnostik och grupprincip support
 
@@ -567,9 +567,9 @@ Windows PowerShell-konsolens värd program har nya funktioner i Windows PowerShe
 
 Det nya API: et och värd-API: t inkluderar offentliga API: er för avancerad syntax (AST) och API: er för sid växling för pipeline, kapslade pipelines, körnings utrymme pooler, Windows RT, det föråldrade cmdlet-attributet och verb-och Substantiv egenskaperna för FunctionInfo-objektet.
 
-### <a name="performance-improvements"></a>Prestanda förbättringar
+### <a name="performance-improvements"></a>Prestandaförbättringar
 
-Betydande prestanda förbättringar i Windows PowerShell kommer från den nya språk tolkare, som bygger på det dynamiska körnings språket (DLR) i .NET Framework 4. tillsammans med skript kompilering för körning, förbättringar av motorns tillförlitlighet och förändringar i algoritmen av `Get-ChildItem` som förbättrar prestandan, särskilt när du söker efter nätverks resurser.
+Betydande prestanda förbättringar i Windows PowerShell kommer från den nya språk tolkare, som bygger på det dynamiska körnings språket (DLR) i .NET Framework 4. tillsammans med skript kompilering för körning, förbättringar av motorns tillförlitlighet och förändringar i algoritmen `Get-ChildItem` för att förbättra dess prestanda, särskilt vid sökning av nätverks resurser.
 
 ### <a name="runas-and-shared-host-support"></a>Stöd för RunAs och delad värd
 
@@ -581,7 +581,7 @@ Funktionen **SharedHost** gör att flera användare på flera datorer kan anslut
 
 ### <a name="special-character-handling-improvements"></a>Förbättringar av Special Character-hantering
 
-För att förbättra möjligheten för Windows PowerShell 3,0 att tolka och korrekt hantera specialtecken, är parametern **LiteralPath** , som hanterar specialtecken i sökvägar, giltig i nästan alla cmdletar som har en **Sök vägs** parameter, inklusive de nya `Update-Help` och `Save-Help`-cmdletar. Parsern innehåller också särskild logik för att förbättra hanteringen av Baknings tecken (\`) och hakparenteser i fil namn och sökvägar.
+För att förbättra möjligheten för Windows PowerShell 3,0 att tolka och korrekt hantera specialtecken, är parametern **LiteralPath** , som hanterar specialtecken i sökvägar, giltig i nästan alla cmdletar som har en **Sök vägs** parameter, inklusive nya `Update-Help` och `Save-Help` cmdletar. Parsern innehåller också särskild logik för att förbättra hanteringen av bakstrecks tecken\`() och hakparenteser i fil namn och sökvägar.
 
 ## <a name="see-also"></a>Se även
 

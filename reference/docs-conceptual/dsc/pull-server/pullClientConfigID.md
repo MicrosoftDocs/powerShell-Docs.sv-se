@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: 'Konfigurera en pull-klient med hjälp av konfigurations-ID: n i PowerShell 5,0 och senare'
 ms.openlocfilehash: a014e04fc5fbf2e813d9b0d79f39fe5aa3836f86
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500741"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Konfigurera en pull-klient med hjälp av konfigurations-ID: n i PowerShell 5,0 och senare
@@ -18,8 +18,8 @@ ms.locfileid: "80500741"
 
 Innan du konfigurerar en pull-klient bör du konfigurera en hämtnings Server. Även om den här ordningen inte krävs, hjälper den med fel sökning och hjälper dig att se till att registreringen lyckades. Om du vill konfigurera en hämtnings Server kan du använda följande guider:
 
-- [Konfigurera en DSC SMB-pull-server](pullServerSmb.md)
-- [Konfigurera en DSC HTTP-pull-server](pullServer.md)
+- [Konfigurera en DSC SMB-hämtningsserver](pullServerSmb.md)
+- [Konfigurera en DSC HTTP-hämtningsserver](pullServer.md)
 
 Varje målnod kan konfigureras för att ladda ned konfigurationer, resurser och till och med rapportera dess status. I avsnitten nedan visas hur du konfigurerar en pull-klient med en SMB-resurs eller HTTP DSC-pull-server. När nodens LCM uppdateras, kommer den att kontakta den konfigurerade platsen för att ladda ned alla tilldelade konfigurationer. Om det inte finns några nödvändiga resurser på noden hämtas de automatiskt från den konfigurerade platsen. Om noden har kon figurer ATS med en [rapport Server](reportServer.md), kommer den att rapportera statusen för åtgärden.
 
@@ -30,7 +30,7 @@ Varje målnod kan konfigureras för att ladda ned konfigurationer, resurser och 
 
 Om du kör något av exemplen nedan skapas en ny mapp med namnet **PullClientConfigID** och en metaconfiguration MOF-fil placeras där. I det här fallet får MOF-filen metaconfiguration namnet `localhost.meta.mof`.
 
-Om du vill använda konfigurationen anropar du cmdleten **set-DscLocalConfigurationManager** med **sökvägen** inställd på platsen för MOF-filen för metaconfiguration. Exempel:
+Om du vill använda konfigurationen anropar du cmdleten **set-DscLocalConfigurationManager** med **sökvägen** inställd på platsen för MOF-filen för metaconfiguration. Ett exempel:
 
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientConfigId –Verbose.
@@ -38,7 +38,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## <a name="configuration-id"></a>Konfigurations-ID
 
-I exemplen nedan anges egenskapen **ConfigurationID** för LCM till ett **GUID** som tidigare har skapats för detta ändamål. **ConfigurationID** är vad LCM använder för att hitta rätt konfiguration på hämtnings servern. MOF-konfigurationsfilen på hämtnings servern måste namnges `ConfigurationID.mof`, där *ConfigurationID* är värdet för egenskapen **CONFIGURATIONID** för målnoden LCM. Mer information finns i [publicera konfigurationer till en pull-server (v4/V5)](publishConfigs.md).
+I exemplen nedan anges egenskapen **ConfigurationID** för LCM till ett **GUID** som tidigare har skapats för detta ändamål. **ConfigurationID** är vad LCM använder för att hitta rätt konfiguration på hämtnings servern. MOF-konfigurationsfilen på hämtnings servern måste namnges `ConfigurationID.mof`, där *ConfigurationID* är värdet för egenskapen **ConfigurationID** för målnoden LCM. Mer information finns i [publicera konfigurationer till en pull-server (v4/V5)](publishConfigs.md).
 
 Du kan skapa ett slumpmässigt **GUID** med hjälp av exemplet nedan eller med hjälp av cmdleten [New-GUID](/powershell/module/microsoft.powershell.utility/new-guid) .
 
@@ -153,7 +153,7 @@ PullClientConfigID
 
 ### <a name="smb-share"></a>SMB-resurs
 
-I följande exempel visas en metaconfiguration som konfigurerar en-klient för att hämta konfigurationer från SMB-resursen `\\SMBPullServer\Configurations`och resurser från SMB-resursen `\\SMBPullServer\Resources`.
+I följande exempel visas en metaconfiguration som konfigurerar en-klient för att hämta konfigurationer från SMB- `\\SMBPullServer\Configurations`resursen och resurser från SMB-resursen `\\SMBPullServer\Resources`.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -185,7 +185,7 @@ PullClientConfigID
 
 #### <a name="automatically-download-resources-in-push-mode"></a>Hämta resurser automatiskt i push-läge
 
-Från och med PowerShell 5,0 kan pull-klienter Ladda ned moduler från en SMB-resurs, även när de har kon figurer ATS för **push** -läge. Detta är särskilt användbart i scenarier där du inte vill konfigurera en hämtnings Server. **ResourceRepositoryShare** -blocket kan användas utan att ange en **ConfigurationRepositoryShare**. I följande exempel visas en metaconfiguration som konfigurerar en klient för att hämta resurser från en SMB-resurs `\\SMBPullServer\Resources`. När noden överförs till **en konfiguration** hämtas alla nödvändiga resurser automatiskt från den angivna resursen.
+Från och med PowerShell 5,0 kan pull-klienter Ladda ned moduler från en SMB-resurs, även när de har kon figurer ATS för **push** -läge. Detta är särskilt användbart i scenarier där du inte vill konfigurera en hämtnings Server. **ResourceRepositoryShare** -blocket kan användas utan att ange en **ConfigurationRepositoryShare**. I följande exempel visas en metaconfiguration som konfigurerar en-klient för att hämta resurser från en SMB `\\SMBPullServer\Resources`-resurs. När noden överförs till **en konfiguration** hämtas alla nödvändiga resurser automatiskt från den angivna resursen.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -288,8 +288,8 @@ En rapport Server kan inte vara en SMB-resurs.
 
 När pull-klienten har kon figurer ATS kan du använda följande guider för att utföra nästa steg:
 
-- [Publicera konfigurationer till en pull-server (v4/V5)](publishConfigs.md)
-- [Paketera och ladda upp resurser till en pull-server (v4)](package-upload-resources.md)
+- [Publicera konfigurationer till en hämtningsserver (v4/v5)](publishConfigs.md)
+- [Paketera och ladda upp resurser till en hämtningsserver (v4)](package-upload-resources.md)
 
 ## <a name="see-also"></a>Se även
 

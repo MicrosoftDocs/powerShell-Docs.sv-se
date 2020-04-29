@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: GetConfigurationResultOutput-metoden
 ms.openlocfilehash: 480e710ce1a208253f0e664474c3e9bab296066a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941574"
 ---
 # <a name="getconfigurationresultoutput-method"></a>GetConfigurationResultOutput-metoden
@@ -25,11 +25,11 @@ uint32 GetConfigurationResultOutput(
 
 ## <a name="parameters"></a>Parametrar
 
-*jobId* \[i\] ID: t för det jobb som utdata ska hämtas till.
+*jobId* \[i\] ID: t för det jobb som utdata ska hämtas för.
 
 *resumeOutputBookmark* \[i\] anger att utdata ska vara en fortsättning från ett tidigare bok märke.
 
-*utdata* \[ut\] utdata för det angivna jobbet.
+utvärderar utdata för det angivna jobbet. *output* \[\]
 
 ## <a name="return-value"></a>Returvärde
 

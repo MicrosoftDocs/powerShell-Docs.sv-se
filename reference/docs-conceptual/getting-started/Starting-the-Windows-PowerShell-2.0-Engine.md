@@ -3,17 +3,17 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Starta Windows PowerShell 2.0-motorn
 ms.openlocfilehash: 824077008d2dcfd707e977d2112f0882d07a8aca
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030442"
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>Starta Windows PowerShell 2.0-motorn
 
-I det här avsnittet beskrivs hur du startar Windows PowerShell 2,0-motorn på Windows 8,1, Windows Server 2012 R2, Windows 8 och Windows Server 2012, inklusive Windows PowerShell 2,0-motorn och på andra datorer där Windows PowerShell 2,0, Windows PowerShell 3,0 och Windows PowerShell 4,0 installeras.
+Det här avsnittet beskriver hur du startar Windows PowerShell 2,0-motorn på Windows 8,1, Windows Server 2012 R2, Windows 8 och Windows Server 2012, som innehåller Windows PowerShell-2,0-motorn och på andra system där Windows PowerShell 2,0, Windows PowerShell 3,0 och Windows PowerShell 4,0 installeras.
 
-Windows PowerShell 4,0 och Windows PowerShell 3,0 är utformade för att vara bakåtkompatibla med Windows PowerShell 2,0. Cmdlets, providers, snapin-moduler, moduler och skript som skrivits för Windows PowerShell 2,0 körs oförändrade i Windows PowerShell 4,0 och Windows PowerShell 3,0. Men på grund av en ändring i aktiverings principen för körning i Microsoft .NET Framework 4, kan Windows PowerShell-värdar som har skrivits för Windows PowerShell 2,0 och kompilerats med CLR (Common Language Runtime) 2,0 inte köras utan ändringar i Windows PowerShell 3,0 eller Windows PowerShell 4,0, som kompileras med CLR 4,0. Windows PowerShell 2,0-motorn är avsedd att användas endast när ett befintligt skript eller värd program inte kan köras eftersom det är inkompatibelt med Windows PowerShell 4,0, Windows PowerShell 3,0 eller Microsoft .NET Framework 4. Sådana fall förväntas vara ovanliga.
+Windows PowerShell 4,0 och Windows PowerShell 3,0 är utformade för att vara bakåtkompatibla med Windows PowerShell 2,0. Cmdlets, providers, snapin-moduler, moduler och skript som skrivits för Windows PowerShell 2,0 körs oförändrade i Windows PowerShell 4,0 och Windows PowerShell 3,0. Men på grund av en ändring i aktiverings principen för körning i Microsoft .NET Framework 4, kan Windows PowerShell-värdprogram som har skrivits för Windows PowerShell 2,0 och kompilerats med CLR (Common Language Runtime) 2,0 inte köras utan modifiering i Windows PowerShell 3,0 eller Windows PowerShell 4,0, som kompileras med CLR 4,0. Windows PowerShell 2,0-motorn är avsedd att användas endast när ett befintligt skript eller värd program inte kan köras eftersom det är inkompatibelt med Windows PowerShell 4,0, Windows PowerShell 3,0 eller Microsoft .NET Framework 4. Sådana fall förväntas vara ovanliga.
 
 Många program som kräver Windows PowerShell 2,0-motorn startar automatiskt. Dessa instruktioner ingår i de sällsynta situationer där du måste starta motorn manuellt.
 

@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Arbeta med registerposter
 ms.openlocfilehash: c1fd6f57f13240eb2039f2d5756796678800aee0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030730"
 ---
 # <a name="working-with-registry-entries"></a>Arbeta med registerposter
@@ -15,7 +15,7 @@ Eftersom register poster är egenskaper för nycklar och inte kan bläddras dire
 
 ## <a name="listing-registry-entries"></a>Visar register poster
 
-Det finns många olika sätt att undersöka register poster. Det enklaste sättet är att hämta egenskaps namnen som är associerade med en nyckel. Om du till exempel vill visa namnen på posterna i register nyckeln `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`använder du `Get-Item`. Register nycklar har en egenskap med det generiska namnet "Property" som är en lista över register poster i nyckeln.
+Det finns många olika sätt att undersöka register poster. Det enklaste sättet är att hämta egenskaps namnen som är associerade med en nyckel. Om du till exempel vill se namnen på posterna i register nyckeln `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`använder `Get-Item`du. Register nycklar har en egenskap med det generiska namnet "Property" som är en lista över register poster i nyckeln.
 Följande kommando väljer egenskapen egenskap och utökar objekten så att de visas i en lista:
 
 ```powershell
@@ -31,7 +31,7 @@ CommonFilesDir
 ProductId
 ```
 
-Om du vill visa register posterna i en mer läsbar form använder du `Get-ItemProperty`:
+Om du vill visa register posterna i en mer läsbar form använder `Get-ItemProperty`du:
 
 ```powershell
 Get-ItemProperty -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
@@ -59,7 +59,7 @@ PF_AccessoriesName  : Accessories
 
 Windows PowerShell-relaterade egenskaper för nyckeln föregås av "PS", till exempel **PSPath**, **PSParentPath**, **PSChildName**och **PSProvider**.
 
-Du kan använda `*.*` notation för att referera till den aktuella platsen. Du kan använda `Set-Location` för att ändra till **CurrentVersion** -registerposten först:
+Du kan använda `*.*` notationen för att referera till den aktuella platsen. Du kan använda `Set-Location` för att ändra till **CurrentVersion** -registerposten först:
 
 ```powershell
 Set-Location -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
@@ -71,7 +71,7 @@ Du kan också använda den inbyggda HKLM-PSDrive med `Set-Location`:
 Set-Location -Path hklm:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-Du kan sedan använda `*.*` notation för den aktuella platsen för att lista egenskaperna utan att ange en fullständig sökväg:
+Du kan sedan använda `*.*` notationen för den aktuella platsen för att lista egenskaperna utan att ange en fullständig sökväg:
 
 ```powershell
 Get-ItemProperty -Path .
@@ -85,13 +85,13 @@ ProgramFilesDir     : C:\Program Files
 ...
 ```
 
-Ökning av sökvägar fungerar på samma sätt som i fil systemet, så från den här platsen kan du hämta **ItemProperty** -listan för `HKLM:\SOFTWARE\Microsoft\Windows\Help` med hjälp av `Get-ItemProperty -Path ..\Help`.
+Ökning av sökvägar fungerar på samma sätt som i fil systemet, så från den här platsen kan du hämta **ItemProperty** -listan `HKLM:\SOFTWARE\Microsoft\Windows\Help` för med `Get-ItemProperty -Path ..\Help`hjälp av.
 
 ## <a name="getting-a-single-registry-entry"></a>Hämta en enskild register post
 
-Om du vill hämta en speciell post i en register nyckel kan du använda en av flera olika metoder. I det här exemplet hittas värdet för **DevicePath** i `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.
+Om du vill hämta en speciell post i en register nyckel kan du använda en av flera olika metoder. Det här exemplet hittar värdet för **DevicePath** i `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.
 
-Använd `Get-ItemProperty`med parametern **Path** för att ange namnet på nyckeln och parametern **Name** för att ange namnet på **DevicePath** -posten.
+Med `Get-ItemProperty`hjälp av använder du parametern **Path** för att ange namnet på nyckeln och parametern **Name** för att ange namnet på **DevicePath** -posten.
 
 ```powershell
 Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion -Name DevicePath
@@ -111,9 +111,9 @@ DevicePath   : C:\WINDOWS\inf
 Det här kommandot returnerar standard egenskaperna för Windows PowerShell och egenskapen **DevicePath** .
 
 > [!NOTE]
-> Även om `Get-ItemProperty` har **filter**-, **include**-och **exkluderings** parametrar, kan de inte användas för att filtrera efter egenskaps namn. De här parametrarna avser register nycklar, som är objekt Sök vägar och inte register poster. Register poster som är objekt egenskaper.
+> Även `Get-ItemProperty` om har parametrarna **filter**, **include**och **exclude** kan de inte användas för att filtrera efter egenskaps namn. De här parametrarna avser register nycklar, som är objekt Sök vägar och inte register poster. Register poster som är objekt egenskaper.
 
-Ett annat alternativ är att använda kommando rads verktyget REG. exe. Om du vill ha hjälp med REG. exe skriver du `reg.exe /?` i kommando tolken. Du hittar posten DevicePath genom att använda REG. exe, som du ser i följande kommando:
+Ett annat alternativ är att använda kommando rads verktyget REG. exe. Om du vill ha hjälp med REG. `reg.exe /?` exe skriver du i kommando tolken. Du hittar posten DevicePath genom att använda REG. exe, som du ser i följande kommando:
 
 ```powershell
 reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion /v DevicePath
@@ -126,7 +126,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
     DevicePath  REG_EXPAND_SZ   %SystemRoot%\inf
 ```
 
-Du kan också använda **WshShell** com-objektet för att hitta vissa register poster, men den här metoden fungerar inte med stora binära data eller med register post namn som innehåller tecken som "\\"). Lägg till egenskaps namnet till objekt Sök vägen med en \\ avgränsare:
+Du kan också använda **WshShell** com-objektet även för att hitta vissa register poster, även om den här metoden inte fungerar med stora binära data eller med register post namn som innehåller tecken som\\""). Lägg till egenskaps namnet i objekt Sök vägen med \\ en avgränsare:
 
 ```powershell
 (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DevicePath")
@@ -138,10 +138,10 @@ Du kan också använda **WshShell** com-objektet för att hitta vissa register p
 
 ## <a name="setting-a-single-registry-entry"></a>Ange en enskild register post
 
-Om du vill ändra en speciell post i en register nyckel kan du använda en av flera olika metoder. I det här exemplet ändras **Sök vägs** posten under `HKEY_CURRENT_USER\Environment`. I **Sök vägs** posten anges var du hittar körbara filer.
+Om du vill ändra en speciell post i en register nyckel kan du använda en av flera olika metoder. I det här exemplet ändras **Sök vägs** posten `HKEY_CURRENT_USER\Environment`under. I **Sök vägs** posten anges var du hittar körbara filer.
 
-1. Hämta det aktuella värdet för **Sök vägs** posten med `Get-ItemProperty`.
-2. Lägg till det nya värdet och skilj det till ett `;`.
+1. Hämta det aktuella värdet för **Sök vägs** posten med `Get-ItemProperty`hjälp av.
+2. Lägg till det nya värdet och skilj det till `;`ett.
 3. Använd `Set-ItemProperty` med den angivna nyckeln, post namnet och värdet för att ändra register posten.
 
 ```powershell
@@ -151,13 +151,13 @@ Set-ItemProperty -Path HKCU:\Environment -Name Path -Value $newpath
 ```
 
 > [!NOTE]
-> Även om `Set-ItemProperty` har **filter**-, **include**-och **exkluderings** parametrar, kan de inte användas för att filtrera efter egenskaps namn. Dessa parametrar avser register nycklar, som är objekt Sök vägar, och inte register poster, som är objekt egenskaper.
+> Även `Set-ItemProperty` om har parametrarna **filter**, **include**och **exclude** kan de inte användas för att filtrera efter egenskaps namn. Dessa parametrar avser register nycklar, som är objekt Sök vägar, och inte register poster, som är objekt egenskaper.
 
 Ett annat alternativ är att använda kommando rads verktyget REG. exe. Om du vill ha hjälp med REG. exe skriver du **reg. exe/?**
 i en kommando tolk.
 
 I följande exempel ändras **Sök vägs** posten genom att du tar bort sökvägen som lagts till i exemplet ovan.
-`Get-ItemProperty` används fortfarande för att hämta det aktuella värdet för att undvika att behöva parsa strängen som returneras från `reg query`. **Substring** -och **LastIndexOf** -metoderna används för att hämta den senaste sökvägen som lagts till i **Sök vägs** posten.
+`Get-ItemProperty`används fortfarande för att hämta det aktuella värdet för att undvika att behöva parsa strängen som `reg query`returnerades från. **Substring** -och **LastIndexOf** -metoderna används för att hämta den senaste sökvägen som lagts till i **Sök vägs** posten.
 
 ```powershell
 $value = Get-ItemProperty -Path HKCU:\Environment -Name Path
@@ -171,7 +171,7 @@ The operation completed successfully.
 
 ## <a name="creating-new-registry-entries"></a>Skapa nya register poster
 
-Om du vill lägga till en ny post med namnet "PowerShellPath" i **CurrentVersion** -nyckeln använder du `New-ItemProperty` med sökvägen till nyckeln, post namnet och värdet för posten. I det här exemplet tar vi värdet för variabeln Windows PowerShell `$PSHome`, som lagrar sökvägen till installations katalogen för Windows PowerShell.
+Om du vill lägga till en ny post med namnet " **CurrentVersion** PowerShellPath" i CurrentVersion `New-ItemProperty` -nyckeln använder du sökvägen till nyckeln, post namnet och värdet för posten. I det här exemplet tar vi värdet för Windows PowerShell-variabeln `$PSHome`som lagrar sökvägen till installations katalogen för Windows PowerShell.
 
 Du kan lägga till den nya posten i nyckeln med hjälp av följande kommando, och kommandot returnerar också information om den nya posten:
 
@@ -190,7 +190,7 @@ PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 
 **PropertyType** måste vara namnet på en **Microsoft. Win32. RegistryValueKind** -uppräknings medlem från följande tabell:
 
-|PropertyType-värde|Innebörd|
+|PropertyType-värde|Betydelse|
 |----------------------|-----------|
 |Binär|Binära data|
 |DWord|Ett tal som är en giltig UInt32|
@@ -207,11 +207,11 @@ New-ItemProperty -Name PowerShellPath -PropertyType String -Value $PSHome `
   -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-Du kan också skriva över ett befintligt register post värde genom att lägga till parametern **Force** till alla `New-ItemProperty`-kommandon.
+Du kan också skriva över ett befintligt register post värde genom att lägga till **Force** -parametern i alla `New-ItemProperty` kommandon.
 
 ## <a name="renaming-registry-entries"></a>Byta namn på register poster
 
-Om du vill byta namn på posten **PowerShellPath** till "PSHome" använder `Rename-ItemProperty`:
+Om du vill byta namn på posten **PowerShellPath** till "PSHome `Rename-ItemProperty`" använder du:
 
 ```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome
@@ -225,7 +225,7 @@ Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name 
 
 ## <a name="deleting-registry-entries"></a>Tar bort register poster
 
-Om du vill ta bort register posterna PSHome och PowerShellPath använder du `Remove-ItemProperty`:
+Om du vill ta bort register posterna PSHome och PowerShellPath använder `Remove-ItemProperty`du:
 
 ```powershell
 Remove-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PSHome

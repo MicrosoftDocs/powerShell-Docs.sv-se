@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Hantera Windows PowerShell-enheter
 ms.openlocfilehash: 5d1aba459caeaab2542e17e74534da6713b0faa9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "70215520"
 ---
 # <a name="managing-windows-powershell-drives"></a>Hantera Windows PowerShell-enheter
@@ -102,7 +102,7 @@ Om du vill skapa en ny Windows PowerShell-enhet måste du ange tre parametrar:
 
 - Roten, det vill säga sökvägen till roten för den nya enheten
 
-Du kan till exempel skapa en enhet med namnet "Office" som är mappad till den mapp som innehåller Microsoft Office-program på datorn, till exempel **C:\\programfiler\\Microsoft Office\\Office11**. Skriv följande kommando för att skapa enheten:
+Du kan till exempel skapa en enhet med namnet "Office" som är mappad till den mapp som innehåller Microsoft Office-program på datorn, till exempel **C:\\program files\\Microsoft Office\\Office11**. Skriv följande kommando för att skapa enheten:
 
 ```
 PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Microsoft Office\OFFICE11"
@@ -115,9 +115,9 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 > [!NOTE]
 > I allmänhet är sökvägar inte Skift läges känsliga.
 
-Du kan referera till den nya Windows PowerShell-enheten på samma sätt som du gör med Windows PowerShell-enheter – efter dess namn följt av ett kolon ( **:** ).
+Du kan referera till den nya Windows PowerShell-enheten på samma sätt som du gör med Windows PowerShell-enheter – efter dess namn följt av ett kolon (**:**).
 
-En Windows PowerShell-enhet kan göra många aktiviteter mycket enklare. Några av de viktigaste nycklarna i Windows-registret har till exempel extremt långa sökvägar, vilket gör det svårt att komma åt och svårt att komma ihåg. Viktig konfigurations information finns i **HKEY_LOCAL_MACHINE\\program vara\\Microsoft\\Windows\\CurrentVersion**. Om du vill visa och ändra objekt i register nyckeln CurrentVersion, kan du skapa en Windows PowerShell-enhet som är rotad i nyckeln genom att skriva:
+En Windows PowerShell-enhet kan göra många aktiviteter mycket enklare. Några av de viktigaste nycklarna i Windows-registret har till exempel extremt långa sökvägar, vilket gör det svårt att komma åt och svårt att komma ihåg. Viktig konfigurations information finns under **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion**. Om du vill visa och ändra objekt i register nyckeln CurrentVersion, kan du skapa en Windows PowerShell-enhet som är rotad i nyckeln genom att skriva:
 
 ```
 PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\Windows\CurrentVersion
@@ -161,7 +161,7 @@ För att ta bort **cvkey:** Windows PowerShell-enheten, som också visas i avsni
 Remove-PSDrive -Name cvkey
 ```
 
-Det är enkelt att ta bort en Windows PowerShell-enhet, men du kan inte ta bort den när du befinner dig i enheten. Till exempel:
+Det är enkelt att ta bort en Windows PowerShell-enhet, men du kan inte ta bort den när du befinner dig i enheten. Ett exempel:
 
 ```
 PS> cd office:

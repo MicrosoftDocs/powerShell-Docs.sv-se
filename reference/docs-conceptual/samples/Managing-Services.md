@@ -3,19 +3,19 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Hantera tjänster
 ms.openlocfilehash: 7a238a3fea857c5dac1c12ca0d0371a49e6bf58c
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75870531"
 ---
 # <a name="managing-services"></a>Hantera tjänster
 
-Det finns åtta Core Service-cmdletar som är utformade för ett brett utbud av tjänst uppgifter. Vi kommer bara att titta på att visa och ändra körnings tillstånd för tjänster, men du kan hämta en lista över tjänst-cmdletar med hjälp av `Get-Help \*-Service`och du hittar information om varje tjänst-cmdlet med `Get-Help <Cmdlet-Name>`, till exempel `Get-Help New-Service`.
+Det finns åtta Core Service-cmdletar som är utformade för ett brett utbud av tjänst uppgifter. Vi kommer bara att titta på att visa och ändra körnings tillstånd för tjänster, men du kan hämta en lista över tjänst- `Get-Help \*-Service`cmdletar med hjälp av, och du kan hitta information om `Get-Help <Cmdlet-Name>`varje tjänst- `Get-Help New-Service`cmdlet med hjälp av, till exempel.
 
 ## <a name="getting-services"></a>Hämtar tjänster
 
-Du kan hämta tjänsterna på en lokal dator eller fjärrdator med hjälp av `Get-Service`-cmdleten. Precis som med `Get-Process`kan du med hjälp av kommandot `Get-Service` utan parametrar returnera alla tjänster. Du kan filtrera efter namn, även använda en asterisk som jokertecken:
+Du kan hämta tjänsterna på en lokal dator eller fjärrdator med hjälp av `Get-Service` cmdleten. Som med `Get-Process`kan du `Get-Service` använda kommandot utan parametrar för att returnera alla tjänster. Du kan filtrera efter namn, även använda en asterisk som jokertecken:
 
 ```powershell
 PS> Get-Service -Name se*
@@ -58,7 +58,7 @@ Get-Service -ComputerName Server01
 
 Cmdleten Get-service har två parametrar som är mycket användbara vid tjänst administration. Parametern DependentServices hämtar tjänster som är beroende av tjänsten. Parametern RequiredServices hämtar tjänster som den här tjänsten är beroende av.
 
-Dessa parametrar visar bara värdena för egenskaperna DependentServices och ServicesDependedOn (alias = RequiredServices) för objektet system. ServiceProcess. ServiceController som Get-service returnerar, men de fören klar kommandon och får den här informationen är mycket enklare.
+Dessa parametrar visar bara värdena för egenskaperna DependentServices och ServicesDependedOn (alias = RequiredServices) för objektet system. ServiceProcess. ServiceController som Get-service returnerar, men de fören klar kommandon och gör så att den här informationen blir mycket enklare.
 
 Följande kommando hämtar de tjänster som LanmanWorkstation-tjänsten kräver.
 
@@ -113,7 +113,7 @@ Om du vill pausa utskrifts hanteraren använder du:
 Suspend-Service -Name spooler
 ```
 
-`Restart-Service`-cmdleten fungerar på samma sätt som de andra tjänst-cmdletarna, men vi kommer att visa några mer komplexa exempel för den. I den enklaste användningen anger du namnet på tjänsten:
+`Restart-Service` Cmdleten fungerar på samma sätt som de andra tjänst-cmdletarna, men vi kommer att visa några mer komplexa exempel för den. I den enklaste användningen anger du namnet på tjänsten:
 
 ```powershell
 PS> Restart-Service -Name spooler
@@ -148,16 +148,16 @@ Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 
 ## <a name="setting-service-properties"></a>Ställer in tjänst egenskaper
 
-`Set-Service` cmdleten ändrar egenskaperna för en tjänst på en lokal eller fjärran sluten dator. Eftersom tjänstens status är en egenskap kan du använda denna cmdlet för att starta, stoppa och pausa en tjänst.
+`Set-Service` Cmdleten ändrar egenskaperna för en tjänst på en lokal eller fjärran sluten dator. Eftersom tjänstens status är en egenskap kan du använda denna cmdlet för att starta, stoppa och pausa en tjänst.
 Cmdleten Set-service har också en Startuptype tjänst-parameter som låter dig ändra tjänstens starttyp.
 
-Om du vill använda `Set-Service` på Windows Vista och senare versioner av Windows öppnar du Windows PowerShell med alternativet "kör som administratör".
+Om du `Set-Service` vill använda i Windows Vista och senare versioner av Windows öppnar du Windows PowerShell med alternativet "kör som administratör".
 
 Mer information finns i [set-service](/powershell/module/Microsoft.PowerShell.Management/set-service)
 
 ## <a name="see-also"></a>Se även
 
-- [Get-service](/powershell/module/Microsoft.PowerShell.Management/get-service)
-- [Set-service](/powershell/module/Microsoft.PowerShell.Management/set-service)
-- [Starta om tjänsten](/powershell/module/Microsoft.PowerShell.Management/restart-service)
-- [Pausa-tjänst](/powershell/module/Microsoft.PowerShell.Management/suspend-service)
+- [Get-Service](/powershell/module/Microsoft.PowerShell.Management/get-service)
+- [Set-Service](/powershell/module/Microsoft.PowerShell.Management/set-service)
+- [Restart-Service](/powershell/module/Microsoft.PowerShell.Management/restart-service)
+- [Suspend-Service](/powershell/module/Microsoft.PowerShell.Management/suspend-service)

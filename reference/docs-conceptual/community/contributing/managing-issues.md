@@ -4,10 +4,10 @@ description: Den här artikeln förklarar hur PowerShell-dokument-teamet hantera
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: cd7aba83d42a6a2eba1ce73910fdd34096342c21
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79078537"
 ---
 # <a name="how-we-manage-issues"></a>Så här hanterar vi problem
@@ -30,16 +30,16 @@ Den här artikeln dokumenterar vi hur vi hanterar problem i PowerShell-dok lagri
 
 #### <a name="label-types"></a>Etikett typer
 
-|Protokollprefixet  | Beskrivning                                                         |
+|Prefix  | Beskrivning                                                         |
 |------- | --------------------------------------------------------------------|
 |Område    | Används för att ange vilken del av PowerShell eller dokument som problemet diskuterar.<br>Användbart för funktions ägare för att hitta problem med deras funktion.|
-|PRI     | Används för att ange prioriteten för problemet. Värde intervall 0-4.        |
+|Pri     | Används för att ange prioriteten för problemet. Värde intervall 0-4.        |
 |Problem   | Används för att klassificera typen av feedback för problem                     |
 |Granska  | Används för problem som kräver ytterligare granskning av teamet              |
 |Status  | Används för att ange arbets objektets status                        |
 |Väntar | Används för att indikera att vi väntar på något                   |
 
-#### <a name="milestones"></a>Mil stolpar
+#### <a name="milestones"></a>Milstolpar
 
 Problem och pull ska taggas med lämplig mil stolpe. Om problemet inte är avsett för en viss version, används ingen mil stolpe. Problem med dokument pull för ändringar som ännu inte har slagits samman i PowerShell-kodbasen bör tilldelas till den **framtida** mil stolpen. När kod ändringen har slagits samman ändrar du mil stolpen till rätt version.
 
@@ -48,7 +48,7 @@ Problem och pull ska taggas med lämplig mil stolpe. Om problemet inte är avset
 | 6.x              | Arbets objekt som rör PowerShell 6,0 till och med 6.2. x |
 | 7.0.0            | Arbets objekt som rör PowerShell 7,0               |
 | 7.1.0            | Arbets objekt som rör PowerShell 7,1               |
-| längre           | Arbets uppgifter en framtida version av PowerShell          |
+| I framtiden           | Arbets uppgifter en framtida version av PowerShell          |
 | PSReadline – vNext | Arbets objekt en framtida version av PSReadline          |
 
 ## <a name="triage-process"></a>Prioritering process
@@ -62,19 +62,19 @@ Gruppen PowerShell-dokument uppfyller en gång per vecka för att diskutera even
 
   | Dokument uppsättning    | URL för feedback för produkt                                         |
   | --------- | ------------------------------------------------------------ |
-  | utvecklarläget | https://github.com/PowerShell/PowerShell/issues/new/choose   |
+  | utvecklare | https://github.com/PowerShell/PowerShell/issues/new/choose   |
   | DSC       | https://windowsserver.uservoice.com/forums/301869-powershell |
-  | formatmall   | https://github.com/powershell/powershellgallery/issues/new   |
+  | galleri   | https://github.com/powershell/powershellgallery/issues/new   |
   | Jea       | https://github.com/powershell/jea/issues/new                 |
-  | Referens | https://github.com/PowerShell/PowerShell/issues/new/choose   |
+  | förhållande | https://github.com/PowerShell/PowerShell/issues/new/choose   |
   | WMF       | https://windowsserver.uservoice.com/forums/301869-powershell |
 
-### <a name="support-requests"></a>Support förfrågningar
+### <a name="support-requests"></a>Supportförfrågningar
 
 - Om support frågan är enkel, kan du besvara den politely och stänga problemet.
 - Om frågan är mer komplicerad eller om du svarar på fler frågor kan du omdirigera dem till forum och support kanaler. Föreslagen text för omdirigering till Forum:
 
-    > Detta är inte rätt forum för dessa typer av frågor. Försök att publicera din fråga i ett forum för Community-support. En lista över community-forum finns i: https://docs.microsoft.com/powershell/scripting/community/community-support
+    > Detta är inte rätt forum för dessa typer av frågor. Försök att publicera din fråga i ett forum för Community-support. En lista över community-forum finns i:https://docs.microsoft.com/powershell/scripting/community/community-support
 
 ### <a name="code-of-conduct-violations"></a>Regler för uppförande av fel
 

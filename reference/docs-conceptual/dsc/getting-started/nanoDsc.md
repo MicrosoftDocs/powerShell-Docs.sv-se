@@ -3,17 +3,17 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Använda DSC på Nano Server
 ms.openlocfilehash: fb826455c21833ae4c8dc2ecd731ffce6bf7eaba
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941882"
 ---
 # <a name="using-dsc-on-nano-server"></a>Använda DSC på Nano Server
 
 > Gäller för: Windows PowerShell 5,0
 
-**DSC på Nano Server** är ett valfritt paket i `NanoServer\Packages`-mappen på Windows Server 2016-mediet. Paketet kan installeras när du skapar en virtuell hård disk för en Nano Server genom att ange **Microsoft-NanoServer-DSC-Package** som värdet för parametern **packages** för funktionen **New-NanoServerImage** . Om du till exempel skapar en virtuell hård disk för en virtuell dator ser kommandot ut så här:
+**DSC på Nano Server** är ett valfritt paket i `NanoServer\Packages` mappen på Windows Server 2016-mediet. Paketet kan installeras när du skapar en virtuell hård disk för en Nano Server genom att ange **Microsoft-NanoServer-DSC-Package** som värdet för parametern **packages** för funktionen **New-NanoServerImage** . Om du till exempel skapar en virtuell hård disk för en virtuell dator ser kommandot ut så här:
 
 ```powershell
 New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -BasePath .\Base -TargetPath .\Nano1\Nano.vhd -ComputerName Nano1 -Packages Microsoft-NanoServer-DSC-Package
@@ -83,10 +83,10 @@ Både push-och pull-lägen
 - **Arkiv**
 - **Miljö**
 - **Fil**
-- **log**
+- **Kvorumloggen**
 - **ProcessSet**
 - **Registernyckeln**
-- **Skript**
+- **Över**
 - **WindowsPackageCab**
 - **WindowsProcess**
 - **WaitForAll** (se [ange beroenden mellan noder](../configurations/crossNodeDependencies.md))

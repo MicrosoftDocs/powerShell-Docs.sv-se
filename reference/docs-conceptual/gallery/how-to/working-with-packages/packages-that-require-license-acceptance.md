@@ -4,10 +4,10 @@ contributor: Farehar
 keywords: Galleri, PowerShell, psgallery
 title: Kräv godkännande av licens
 ms.openlocfilehash: 4b293ea693062cf9717fa4ca913c3eb9abaf7014
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278674"
 ---
 # <a name="require-license-acceptance"></a>Kräv godkännande av licens
@@ -26,5 +26,5 @@ Om modulen som distribueras till Azure Automation kräver licens godkännande, v
 
 ## <a name="more-details"></a>Mer information
 
-[Kräv licens godkännande i PowerShellGet](../../concepts/module-license-acceptance.md)
+[Kräv licens godkännande på PowerShellGet](../../concepts/module-license-acceptance.md)
 [Azure Automation webbplats](/azure/automation)

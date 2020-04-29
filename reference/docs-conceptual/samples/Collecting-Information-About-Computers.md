@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: PowerShell, cmdlet
 title: Samla in information om datorer
 ms.openlocfilehash: 9407ff15b3c3ca6b3adab60d4d01d957c599e79e
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737244"
 ---
 # <a name="collecting-information-about-computers"></a>Samla in information om datorer
@@ -26,13 +26,13 @@ Detta returnerar information för alla skriv bord, oavsett om de används eller 
 > [!NOTE]
 > Information som returneras av vissa WMI-klasser kan vara mycket detaljerad och innehåller ofta metadata om WMI-klassen.
 
-Eftersom de flesta av dessa metadata-egenskaper har namn som börjar med **CIM**kan du filtrera egenskaperna med hjälp av `Select-Object`. Ange parametern **-ExcludeProperty** med "CIM *" som värde. Ett exempel:
+Eftersom de flesta av dessa metadata-egenskaper har namn som börjar med **CIM**kan du filtrera egenskaperna med `Select-Object`hjälp av. Ange parametern **-ExcludeProperty** med "CIM *" som värde. Ett exempel:
 
 ```powershell
 Get-CimInstance -ClassName Win32_Desktop | Select-Object -ExcludeProperty "CIM*"
 ```
 
-Om du vill filtrera bort metadata använder du en pipeline-operator (|) för att skicka resultatet från kommandot `Get-CimInstance` till `Select-Object -ExcludeProperty "CIM*"`.
+Om du vill filtrera bort metadata använder du en pipeline-operator (|) för att skicka `Get-CimInstance` kommandots resultat till `Select-Object -ExcludeProperty "CIM*"`.
 
 ## <a name="listing-bios-information"></a>Visa BIOS-information
 
@@ -92,7 +92,7 @@ Source Description     HotFixID  InstalledBy   InstalledOn PSComputerName
        Security Update KB4048951 Administrator 12/16/2017  .
 ```
 
-För fler kortfattad-utdata kanske du vill utesluta vissa egenskaper. Även om du kan använda `Get-CimInstance`ens **egenskaps** parameter för att välja endast **HotFixID**, returnerar faktiskt mer information, eftersom alla metadata visas som standard:
+För fler kortfattad-utdata kanske du vill utesluta vissa egenskaper. Även om du kan använda `Get-CimInstance` **egenskapens egenskaps** parameter för att välja endast **HotFixID**så kommer detta faktiskt att returnera mer information, eftersom alla metadata visas som standard:
 
 ```powershell
 Get-CimInstance -ClassName Win32_QuickFixEngineering -Property HotFixID
@@ -117,7 +117,7 @@ CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ...
 ```
 
-Ytterligare data returneras, eftersom **egenskaps** parametern i `Get-CimInstance` begränsar egenskaperna som returneras från WMI-klass instanser, inte objektet som returneras till PowerShell. Använd `Select-Object`för att minska utdata:
+Ytterligare data returneras, eftersom **egenskaps** parametern i `Get-CimInstance` begränsar egenskaperna som returneras från WMI-klass instanser, inte objektet som returnerades till PowerShell. För att minska utdata använder `Select-Object`du:
 
 ```powershell
 Get-CimInstance -ClassName Win32_QuickFixEngineering -Property HotFixId | Select-Object -Property HotFixId
@@ -138,7 +138,7 @@ Get-CimInstance -ClassName Win32_OperatingSystem |
   Select-Object -Property BuildNumber,BuildType,OSType,ServicePackMajorVersion,ServicePackMinorVersion
 ```
 
-Du kan också använda jokertecken med `Select-Object`**egenskaps** parameter. Eftersom alla egenskaper som börjar med antingen **build** eller **servicepack** är viktiga för användning här kan vi förkorta detta till följande format:
+Du kan också använda jokertecken med `Select-Object` **egenskaps** parametern. Eftersom alla egenskaper som börjar med antingen **build** eller **servicepack** är viktiga för användning här kan vi förkorta detta till följande format:
 
 ```powershell
 Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object -Property Build*,OSType,ServicePack*
@@ -236,13 +236,13 @@ PSComputerName :
 
 ## <a name="displaying-service-status"></a>Visar tjänst status
 
-Om du vill visa status för alla tjänster på en speciell dator kan du använda `Get-Service`-cmdlet: en lokalt. För fjärrsystem kan du använda klassen **Win32_Service** WMI. Om du också använder `Select-Object` för att filtrera resultaten till **status**, **namn**och **DisplayName**, är utdataformatet nästan identiskt med `Get-Service`:
+Om du vill visa status för alla tjänster på en speciell dator kan du använda `Get-Service` cmdleten lokalt. För fjärrsystem kan du använda klassen **Win32_Service** WMI. Om du också använder `Select-Object` för att filtrera resultaten till **status**, **namn**och **DisplayName**är utdataformatet nästan identiskt med `Get-Service`:
 
 ```powershell
 Get-CimInstance -ClassName Win32_Service | Select-Object -Property Status,Name,DisplayName
 ```
 
-Om du vill tillåta hela visningen av namn för tillfälliga tjänster med extremt långa namn, kanske du vill använda `Format-Table` med parametrarna **AutoSize** och **wrap** för att optimera kolumn bredden och tillåta långa namn att figursättas i stället för att trunkeras:
+Om du vill tillåta hela visningen av namn för tillfälliga tjänster med extremt långa namn, kan du använda `Format-Table` med parametrarna **AutoSize** och **wrap** för att optimera kolumn bredden och tillåta långa namn att figursättas i stället för att trunkeras:
 
 ```powershell
 Get-CimInstance -ClassName Win32_Service | Format-Table -Property Status,Name,DisplayName -AutoSize -Wrap

@@ -3,10 +3,10 @@ ms.date: 12/06/2019
 keywords: PowerShell, cmdlet
 title: Windows PowerShell-systemkrav
 ms.openlocfilehash: 713b062916fec0c5c70ea9a7f95fea3570afb64a
-ms.sourcegitcommit: 0e4c69d8b5cf71431592fe41da816dec9b70f1f9
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/09/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74953797"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell-systemkrav
@@ -15,9 +15,9 @@ Den här artikeln innehåller en lista över system kraven för Windows PowerShe
 
 Windows® 8,1 och Windows Server® 2012 R2 innehåller alla program som krävs. Den här artikeln är avsedd för användare av tidigare versioner av Windows.
 
-## <a name="operating-system-requirements"></a>Krav på operativsystem
+## <a name="operating-system-requirements"></a>Operativsystemskrav
 
-### <a name="windows-powershell-51"></a>Windows PowerShell 5.1
+### <a name="windows-powershell-51"></a>Windows PowerShell 5,1
 
 Windows PowerShell 5,1 körs i följande versioner av Windows. Installera Windows Management Framework 5,1 för att köra Windows PowerShell 5,1. Mer information finns i [Installera och konfigurera WMF 5,1](../wmf/setup/install-configure.md).
 
@@ -30,7 +30,7 @@ Windows PowerShell 5,1 körs i följande versioner av Windows. Installera Window
 | Windows Server 2008 R2 med Service Pack 1 | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
 | Windows 10 version 1607 och senare | Installeras som standard |
 | Windows 10, version 1507, 1511 | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
-| Windows 8.1 | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
+| Windows 8,1 | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
 | Windows 7 med Service Pack 1 | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
 
 ### <a name="windows-powershell-50"></a>Windows PowerShell 5.0
@@ -46,7 +46,7 @@ Windows PowerShell 5,0 körs i följande versioner av Windows. Installera Window
 | Windows Server 2008 R2 med Service Pack 1 | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
 | Windows 10 version 1607 och senare | Högre version installeras som standard |
 | Windows 10, version 1507, 1511 | Installeras som standard |
-| Windows 8.1 | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
+| Windows 8,1 | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
 | Windows 7 med Service Pack 1 | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
 
 ### <a name="windows-powershell-40"></a>Windows PowerShell 4.0
@@ -55,7 +55,7 @@ Windows PowerShell 4,0 körs i följande versioner av Windows. Om du vill köra 
 
 | Windows-version | Systemkrav |
 | ----- | ----- |
-| Windows 8.1 | Installeras som standard |
+| Windows 8,1 | Installeras som standard |
 | Windows Server 2012 R2 | Installeras som standard |
 | Windows® 7 med Service Pack 1 | Installera [Windows Management Framework 4,0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) |
 | Windows Server® 2008 R2 med Service Pack 1 | Installera [Windows Management Framework 4,0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) |
@@ -78,7 +78,7 @@ I följande tabell visas .NET Framework krav för Windows PowerShell.
 
 | Version | .NET-krav |
 | ----- | ----- |
-| Windows PowerShell 5.1 | Kräver en fullständig installation av Microsoft .NET Framework 4,5. Windows 8,1 och Windows Server 2012 R2 inkluderar Microsoft .NET Framework 4,5 som standard. |
+| Windows PowerShell 5,1 | Kräver en fullständig installation av Microsoft .NET Framework 4,5. Windows 8,1 och Windows Server 2012 R2 inkluderar Microsoft .NET Framework 4,5 som standard. |
 | Windows PowerShell 5.0 | Kräver en fullständig installation av Microsoft .NET Framework 4,5. Windows 8,1 och Windows Server 2012 R2 inkluderar Microsoft .NET Framework 4,5 som standard. |
 | Windows PowerShell 4.0 | Kräver en fullständig installation av Microsoft .NET Framework 4,5. Windows 8,1 och Windows Server 2012 R2 inkluderar Microsoft .NET Framework 4,5 som standard. |
 | Windows PowerShell 3.0 | Kräver en fullständig installation av Microsoft .NET Framework 4. Windows 8 och Windows Server 2012 innehåller Microsoft .NET Framework 4,5 som standard, vilket uppfyller det här kravet. |
@@ -127,7 +127,7 @@ Vissa objekt kräver ett grafiskt användar gränssnitt. Mer information finns i
 
 Windows PowerShell 4,0 är avsett att vara bakåtkompatibla med Windows PowerShell 3,0 och Windows PowerShell 2,0. Cmdlets, providers, snapin-moduler, moduler och skript som skrivits för Windows PowerShell 2,0 och Windows PowerShell 3,0 körs oförändrade i Windows PowerShell 4,0.
 
-Men på grund av en ändring i aktiverings principen för körning i Microsoft .NET Framework 4, kan Windows PowerShell-värdar som har skrivits för Windows PowerShell 2,0 och kompilerats med CLR (Common Language Runtime) 2,0 inte köras utan ändringar i Windows PowerShell 3,0, som kompileras med CLR 4,0.
+Men på grund av en ändring i aktiverings principen för körning i Microsoft .NET Framework 4, kan Windows PowerShell-värdprogram som skrivits för Windows PowerShell 2,0 och kompileras med CLR (Common Language Runtime) 2,0 inte köras utan modifiering i Windows PowerShell 3,0, som kompileras med CLR 4,0.
 
 Minimi kravet för Windows PowerShell 2,0-motorn är Microsoft .NET Framework-2.0.50727. Detta krav uppfylls av Microsoft .NET Framework 3,5 Service Pack 1. Detta krav uppfylls inte av Microsoft .NET Framework 4 och senare versioner av Microsoft .NET Framework.
 
@@ -147,10 +147,10 @@ Windows PowerShell 2,0, Windows PowerShell 3,0 och Windows PowerShell 4,0 körs 
 
 ## <a name="see-also"></a>Se även
 
-[Komma igång med Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
+[Kom igång med Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
 
 [Installera Windows PowerShell](Installing-Windows-PowerShell.md)
 
-[Starta Windows PowerShell](../getting-started/Starting-Windows-PowerShell.md)
+[Starta Windows Powershell](../getting-started/Starting-Windows-PowerShell.md)
 
 [Windows Management Framework](../wmf/overview.md)

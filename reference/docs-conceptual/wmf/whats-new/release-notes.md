@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: Versionsinformation för WMF 5.x
 ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79406848"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Viktig information om Windows Management Framework (WMF) 5. x
@@ -45,12 +45,12 @@ WMF 5,1 innehåller komponenterna PowerShell, WMI, WinRM och Software Inventory 
 > [!IMPORTANT]
 > Innan du installerar WMF 5,1 på Windows Server 2008 eller Windows 7 kontrollerar du att WMF 3,0 inte är installerat. Mer information finns i [WMF 5,1-krav för Windows Server 2008 R2 SP1 och Windows 7 SP1](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1).
 
-## <a name="powershell-editions"></a>PowerShell-versioner
+## <a name="powershell-editions"></a>PowerShell-utgåvor
 
 Från och med version 5,1 är PowerShell tillgängligt i olika versioner som kännetecknar varierande funktions uppsättningar och plattformens kompatibilitet.
 
-- **Desktop Edition:** Bygger på .NET Framework och ger kompatibilitet med skript och moduler som mål versioner av PowerShell som körs på fullständiga versioner av Windows, till exempel Server Core och Windows Desktop.
-- **Core-utgåva:** Bygger på .NET Core och ger kompatibilitet med skript och moduler som mål versioner av PowerShell som körs på begränsade versioner av Windows, till exempel Nano Server och Windows IoT.
+- **Desktop Edition:** bygger på .NET Framework och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på fullständiga utgåvor av Windows, till exempel Server Core och Windows Desktop.
+- **Core Edition:** bygger på .NET Core och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på begränsade utgåvor av Windows som Nano Server och Windows IoT.
 
 ### <a name="learn-more-about-using-powershell-editions"></a>Lär dig mer om att använda PowerShell-versioner
 
@@ -65,7 +65,7 @@ Från och med WMF 5,1 ger PowerShell kontroll över filen som används för att 
 
 Som standard lagras cacheminnet i filen `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`. Cachen läses normalt vid start vid sökning efter ett kommando och skrivs i en bakgrunds tråd någon gång efter att en modul har importer ATS.
 
-Om du vill ändra standard platsen för cacheminnet anger du `$env:PSModuleAnalysisCachePath`-miljövariabeln innan du startar PowerShell. Ändringar i denna miljö variabel påverkar bara underordnade processer. Värdet bör ge en fullständig sökväg (inklusive fil namnet) som PowerShell har behörighet att skapa och skriva filer. Om du vill inaktivera filcachen ställer du in det här värdet på en ogiltig plats, till exempel:
+Om du vill ändra standard platsen för cacheminnet anger du `$env:PSModuleAnalysisCachePath` miljövariabeln innan du startar PowerShell. Ändringar i denna miljö variabel påverkar bara underordnade processer. Värdet bör ge en fullständig sökväg (inklusive fil namnet) som PowerShell har behörighet att skapa och skriva filer. Om du vill inaktivera filcachen ställer du in det här värdet på en ogiltig plats, till exempel:
 
 ```powershell
 $env:PSModuleAnalysisCachePath = 'nul'
@@ -87,18 +87,18 @@ Att ställa in den här miljövariabeln börjar gälla direkt i den aktuella pro
 
 ## <a name="specifying-module-version"></a>Anger modul version
 
-I WMF 5,1 fungerar `using module` på samma sätt som andra modulbaserade konstruktioner i PowerShell.
+I WMF 5,1 `using module` fungerar samma sätt som för andra modulbaserade konstruktioner i PowerShell.
 Tidigare hade du inget sätt att ange en viss version av modulen. om det finns flera versioner, resulterade det i ett fel.
 
 I WMF 5,1:
 
 - Du kan använda [ModuleSpecification-konstruktorn (hash)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 
-  Den här hash-tabellen har samma format som `Get-Module -FullyQualifiedName`.
+  Den här hash-tabellen har samma format `Get-Module -FullyQualifiedName`som.
 
-  **Exempel:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
+  **Exempel:**`using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
-- Om det finns flera versioner av modulen använder PowerShell **samma lösnings logik** som `Import-Module` och returnerar inte ett fel – samma beteende som `Import-Module` och `Import-DscResource`.
+- Om det finns flera versioner av modulen använder PowerShell **samma lösnings logik** som `Import-Module` och returnerar inte ett fel – samma beteende som `Import-Module` och. `Import-DscResource`
 
 ## <a name="improvements-to-pester"></a>Förbättringar av pester
 

@@ -3,10 +3,10 @@ ms.date: 02/03/2020
 keywords: PowerShell, Core
 title: Kända problem för PowerShell 6,0
 ms.openlocfilehash: e9550e3db53865cfc2713d1d80665cced6f0d47a
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "76996105"
 ---
 # <a name="known-issues-for-powershell-60"></a>Kända problem för PowerShell 6,0
@@ -32,11 +32,11 @@ Tidigare har PowerShell varit enhetligt Skift läges okänsligt, med några unda
 
 ### <a name="ps1-file-extensions"></a>. PS1 fil namns tillägg
 
-PowerShell-skript måste sluta med `.ps1` för att tolkaren ska förstå hur de ska läsas in och köras i den aktuella processen. Att köra skript i den aktuella processen är det förväntade vanliga beteendet för PowerShell. `#!` magic number kan läggas till i ett skript som inte har ett `.ps1`-tillägg, men det gör att skriptet körs i en ny PowerShell-instans som hindrar skriptet från att fungera korrekt när objekt ändras. (OBS! detta kan vara det önskvärda beteendet när ett PowerShell-skript körs från `bash` eller något annat gränssnitt.)
+PowerShell-skript måste sluta `.ps1` i för att tolkaren ska förstå hur de ska läsas in och köras i den aktuella processen. Att köra skript i den aktuella processen är det förväntade vanliga beteendet för PowerShell. `#!` Magic number kan läggas till i ett skript som inte har något `.ps1` tillägg, men det gör att skriptet kan köras i en ny PowerShell-instans som förhindrar att skriptet fungerar som det ska när de byter objekt. (OBS! detta kan vara det önskvärda beteendet när du kör ett PowerShell `bash` -skript från eller ett annat gränssnitt.)
 
 ### <a name="missing-command-aliases"></a>Kommando Ali Aset saknas
 
-På Linux/macOS är "bekvämlighets Ali Aset" för de grundläggande kommandona `ls`, `cp`, `mv`, `rm`, `cat`, `man`, `mount`, `ps` har tagits bort. I Windows tillhandahåller PowerShell en uppsättning alias som mappar till Linux-kommando namn för användar bekvämlighet. Dessa alias har tagits bort från standard PowerShell på Linux/macOS-distributioner, vilket gör att den ursprungliga körbara filen kan köras utan att ange en sökväg.
+På Linux/MacOS är "bekvämlighets Ali Asets" för de grundläggande `ls`kommandona `mv`, `rm` `cat` `man` `cp`,,, `mount`, `ps` ,, som har tagits bort. I Windows tillhandahåller PowerShell en uppsättning alias som mappar till Linux-kommando namn för användar bekvämlighet. Dessa alias har tagits bort från standard PowerShell på Linux/macOS-distributioner, vilket gör att den ursprungliga körbara filen kan köras utan att ange en sökväg.
 
 Det finns för-och nack delar med att göra detta. Om du tar bort alias exponeras den inbyggda kommando upplevelsen för PowerShell-användaren, men funktionaliteten i gränssnittet minskas eftersom de interna kommandona returnerar strängar i stället för objekt.
 
@@ -47,7 +47,7 @@ Det finns för-och nack delar med att göra detta. Om du tar bort alias exponera
 ### <a name="missing-wildcard-globbing-support"></a>Stöd för jokertecken saknas (globbing)
 
 För närvarande stöder PowerShell endast globbing (jokertecken) för inbyggda cmdlets i Windows och för externa kommandon eller binärfiler, samt cmdlets i Linux. Det innebär att ett kommando som `ls
-*.txt` Miss lyckas eftersom asterisken inte har utökats för att matcha fil namn. Du kan undvika detta genom att göra `ls (gci *.txt | % name)` eller, mer enkelt `gci *.txt` med hjälp av den inbyggda PowerShell-motsvarigheten till `ls`.
+*.txt` till exempel Miss lyckas eftersom asterisken inte är expanderad för att matcha fil namn. Du kan undvika detta genom att göra `ls (gci *.txt | % name)` eller, mer enkelt, `gci *.txt` använda den inbyggda PowerShell-motsvarigheten till `ls`.
 
 Se [#954](https://github.com/PowerShell/PowerShell/issues/954) för att ge oss feedback om hur du kan förbättra globbing-upplevelsen på Linux/MacOS.
 
@@ -62,9 +62,9 @@ Med ankomsten av [.net Standard 2,0](https://devblogs.microsoft.com/dotnet/intro
 Omdirigering av utdata stöds inte i PowerShell på någon plattform.
 [Problem #1629](https://github.com/PowerShell/PowerShell/issues/1629)
 
-Använd `Get-Content` för att skriva innehållet i en fil till pipelinen.
+Används `Get-Content` för att skriva innehållet i en fil till pipelinen.
 
-Omdirigerade utdata innehåller Unicode-bytets ordnings tecken (BOM) när standard kodningen för UTF-8 används. STRUKTUR listan orsakar problem när du arbetar med verktyg som inte förväntar sig eller när du lägger till i en fil. Använd `-Encoding Ascii` för att skriva ASCII-text, som inte har en struktur.
+Omdirigerade utdata innehåller Unicode-bytets ordnings tecken (BOM) när standard kodningen för UTF-8 används. STRUKTUR listan orsakar problem när du arbetar med verktyg som inte förväntar sig eller när du lägger till i en fil. Används `-Encoding Ascii` för att skriva ASCII-text, som inte har en struktur.
 
 > [!Note]
 > Se [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) för att ge oss feedback om hur du kan förbättra kodnings upplevelsen för PowerShell Core på alla plattformar. Vi arbetar med att stödja UTF-8 utan en struktur och kan eventuellt ändra standardvärdena för kodning för olika cmdlets på olika plattformar.
@@ -72,7 +72,7 @@ Omdirigerade utdata innehåller Unicode-bytets ordnings tecken (BOM) när standa
 ### <a name="job-control"></a>Jobb kontroll
 
 Det finns ingen support för jobb kontroll i PowerShell på Linux/macOS.
-Kommandona `fg` och `bg` är inte tillgängliga.
+`fg` Kommandona `bg` och är inte tillgängliga.
 
 Under tiden kan du använda [PowerShell-jobb](/powershell/module/microsoft.powershell.core/about/about_jobs) som fungerar på alla plattformar.
 
@@ -88,9 +88,9 @@ PowerShell Core stöder även PowerShell-fjärrkommunikation (PSRP) via SSH på 
 
 Möjligheten att skapa Fjärrslutpunkter för fjärran sluten administration (JEA) är för närvarande inte tillgänglig i PowerShell på Linux/macOS. Den här funktionen är för närvarande inte inom omfånget för 6,0 och något vi tar upp efter 6,0 eftersom det kräver betydande design arbete.
 
-### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec`och PowerShell
+### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec`, och PowerShell
 
-Eftersom PowerShell kör de flesta kommandon i minnet (t. ex. python eller ruby) kan du inte använda sudo direkt med PowerShell-inbyggda program. (du kan naturligtvis köra `pwsh` från sudo.) Om det är nödvändigt att köra en PowerShell-cmdlet inifrån PowerShell med sudo, till exempel `sudo Set-Date 8/18/2016`, gör du `sudo pwsh Set-Date 8/18/2016`. På samma sätt kan du inte exekvera en inbyggd PowerShell-modul direkt. I stället skulle du behöva göra `exec pwsh item_to_exec`.
+Eftersom PowerShell kör de flesta kommandon i minnet (t. ex. python eller ruby) kan du inte använda sudo direkt med PowerShell-inbyggda program. (du kan naturligtvis `pwsh` köra från sudo.) Om det är nödvändigt att köra en PowerShell-cmdlet från PowerShell med sudo, till exempel, `sudo Set-Date 8/18/2016`kan du göra `sudo pwsh Set-Date 8/18/2016`det. På samma sätt kan du inte exekvera en inbyggd PowerShell-modul direkt. I stället måste du göra `exec pwsh item_to_exec`det.
 
 Det här problemet spåras som en del av [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
 
@@ -105,9 +105,9 @@ I följande tabell visas kommandon som är kända för att inte fungera i PowerS
 |Kommandon|Användnings tillstånd|Obs!|
 |--------|-----------------|-----|
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Inte tillgängligt.|Dessa kommandon känns inte igen. Detta bör åtgärdas i en framtida version.|
-|`Get-Acl`, `Get-AuthenticodeSignature`, `Get-CmsMessage`, `New-FileCatalog`, `Protect-CmsMessage`, `Set-Acl`, `Set-AuthenticodeSignature`, `Test-FileCatalog`, `Unprotect-CmsMessage`|Inte tillgänglig.|Dessa kommandon känns inte igen. Detta bör åtgärdas i en framtida version.|
-|`Wait-Process`|Tillgängligt, fungerar inte korrekt. |Till exempel `Start-Process gvim -PassThru | Wait-Process` fungerar inte. Det går inte att vänta på processen.|
+|`Get-Acl`, `Get-AuthenticodeSignature`, `Get-CmsMessage`, `New-FileCatalog`, `Protect-CmsMessage`, `Set-Acl`, `Set-AuthenticodeSignature`, `Test-FileCatalog`, `Unprotect-CmsMessage`|Inte tillgängligt.|Dessa kommandon känns inte igen. Detta bör åtgärdas i en framtida version.|
+|`Wait-Process`|Tillgängligt, fungerar inte korrekt. |Till exempel `Start-Process gvim -PassThru | Wait-Process` fungerar det inte. Det går inte att vänta på processen.|
 |`Connect-PSSession`, `Disable-PSRemoting`, `Disable-PSSessionConfiguration`, `Disconnect-PSSession`, `Enable-PSRemoting`, `Enable-PSSessionConfiguration`, `Get-PSSessionCapability`, `Get-PSSessionConfiguration`, `New-PSSessionConfigurationFile`, `Receive-PSSession`, `Register-PSSessionConfiguration`, `Set-PSSessionConfiguration`, `Test-PSSessionConfigurationFile`, `Unregister-PSSessionConfiguration`|Inte tillgängligt.|Dessa kommandon känns inte igen. Detta bör åtgärdas i en framtida version.|
 |`Get-Event`, `New-Event`, `Register-EngineEvent`, `Remove-Event`, `Unregister-Event`|Tillgängligt, men inga händelse källor är tillgängliga.|PowerShell Eventing-kommandona finns men de flesta händelse källor som används med kommandona (t. ex. system. timers. timer) är inte tillgängliga i Linux och gör kommandona oanvändbara i alpha-versionen.|
 |`Set-ExecutionPolicy`|Tillgängligt men fungerar inte.|Returnerar ett meddelande som säger att det inte stöds på den här plattformen. Körnings principen är en fokuserad "säkerhetsbälte" som hindrar användaren från att göra kostsamma misstag. Det är ingen säkerhets gränser.|
-|`New-PSSessionOption`, `New-PSTransportOption`|Tillgängligt men `New-PSSession` fungerar inte.|`New-PSSessionOption` och `New-PSTransportOption` är för närvarande inte verifierade för att fungera nu som `New-PSSession` fungerar.|
+|`New-PSSessionOption`, `New-PSTransportOption`|Tillgängligt men `New-PSSession` fungerar inte.|`New-PSSessionOption`och `New-PSTransportOption` är för närvarande inte verifierade för att `New-PSSession` fungera nu.|

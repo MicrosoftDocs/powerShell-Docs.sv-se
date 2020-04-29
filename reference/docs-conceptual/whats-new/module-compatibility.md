@@ -2,10 +2,10 @@
 title: PowerShell 7-modulens kompatibilitet
 ms.date: 02/03/2020
 ms.openlocfilehash: 02095b8233b6fc7b6d2a30bcb841bfd831a50031
-ms.sourcegitcommit: 1fa89ab20d14a61f139f1394c45aaedd5a7c5438
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78935194"
 ---
 # <a name="powershell-7-module-compatibility"></a>PowerShell 7-modulens kompatibilitet
@@ -18,7 +18,7 @@ Om du har information om att dela eller problem med specifika moduler, så kan d
 
 Windows Management-modulen installeras på olika sätt beroende på Windows-versionen och hur modulen paketerades för den versionen.
 
-Använd funktions namnet med cmdleten [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature) som administratör på Windows Server. Exempel:
+Använd funktions namnet med cmdleten [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature) som administratör på Windows Server. Ett exempel:
 
 ```powershell
 Install-WindowsFeature -Name ActiveDirectory
@@ -67,7 +67,7 @@ I Windows 10 görs Windows Management-moduler tillgängliga som Windows- **valfr
 
 ### <a name="module-list"></a>Lista över moduler
 
-| Modulnamn                        | Status                               | Stödda operativsystem                       |
+| Modulnamn                        | Status                               | Operativ system som stöds                       |
 | ---------------------------------- | ------------------------------------ | ---------------------------------- |
 | ActiveDirectory                    | Internt kompatibel                  | Windows Server 1809 + med RSAT-AD-PowerShell<br>Windows 10 1809 + med RSAT. ActiveDirectory. DS-LDS. tools |
 | ADFS                               | Testat med kompatibilitetsläge    |                                    |
@@ -92,7 +92,7 @@ I Windows 10 görs Windows Management-moduler tillgängliga som Windows- **valfr
 | DirectAccessClientComponents       | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +  |
 | Kommandoradssyntax                               | Internt kompatibel                  | Windows Server 1903 +<br>Windows 10-1903 +  |
 | DnsClient                          | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +  |
-| DnsServer                          | Internt kompatibel                  | Windows Server 1809 + med DNS eller RSAT-DNS-Server<br>Windows 10 1809 + med RSAT. DNS. tools |
+| DNS Server                          | Internt kompatibel                  | Windows Server 1809 + med DNS eller RSAT-DNS-Server<br>Windows 10 1809 + med RSAT. DNS. tools |
 | EventTracingManagement             | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +  |
 | FailoverClusters                   | Testat med kompatibilitetsläge    |                                  |
 | FailoverClusterSet                 | Testat med kompatibilitetsläge    |                                  |
@@ -109,14 +109,14 @@ I Windows 10 görs Windows Management-moduler tillgängliga som Windows- **valfr
 | ISE                                | Testat med kompatibilitetsläge    |                                               |
 | KDs                                | Internt kompatibel                  | Windows Server-20H1<br>Windows 10-20H1        |
 | Microsoft. PowerShell. Archive       | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
-| Microsoft.PowerShell.Diagnostics   | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
-| Microsoft.PowerShell.Host          | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
+| Microsoft. PowerShell. Diagnostics   | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
+| Microsoft. PowerShell. Host          | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
 | Microsoft. PowerShell. LocalAccounts | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
-| Microsoft.PowerShell.Management    | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
+| Microsoft. PowerShell. Management    | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
 | Microsoft. PowerShell. ODataUtils    | Testat med kompatibilitetsläge    |                                               |
-| Microsoft.PowerShell.Security      | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
+| Microsoft. PowerShell. Security      | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
 | Microsoft.PowerShell.Utility       | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
-| Microsoft.WSMan.Management         | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
+| Microsoft. WSMan. Management         | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
 | MMAgent                            | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
 | MPIO                               | Internt kompatibel                  | Windows Server 1809 + med multipath-IO        |
 | MsDtc                              | Testat med kompatibilitetsläge    |                                               |

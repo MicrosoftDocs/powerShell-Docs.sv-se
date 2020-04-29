@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Snabb start – skapa en webbplats med DSC
 ms.openlocfilehash: 08ca25604998ce8c913ef8112b5342f2e0216b6e
-ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75416136"
 ---
 # <a name="quickstart---create-a-website-with-desired-state-configuration-dsc"></a>Snabb start – skapa en webbplats med önskad tillstånds konfiguration (DSC)
@@ -14,7 +14,7 @@ ms.locfileid: "75416136"
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
 Den här övningen beskriver hur du skapar och tillämpar en Desired State Configuration (DSC)-konfiguration från början till slut.
-Exemplet som vi ska använda ser till att en server har aktiverat funktionen `Web-Server` (IIS) och att innehållet för en enkel "Hello World"-webbplats finns i `inetpub\wwwroot` katalogen på den servern.
+Exemplet som vi ska använda säkerställer att en server har `Web-Server` (IIS) funktionen aktive rad och att innehållet för en enkel "Hello World"-webbplats finns i `inetpub\wwwroot` katalogen på den servern.
 
 En översikt över vad DSC är och hur det fungerar finns i [Översikt över önskad tillstånds konfiguration för besluts fattare](../overview/decisionMaker.md).
 
@@ -37,7 +37,7 @@ Skriv följande text i en text redigerare:
 </body>
 ```
 
-Spara detta som `index.htm` i mappen `test` som du skapade tidigare.
+Spara det som `index.htm` i `test` mappen som du skapade tidigare.
 
 ## <a name="write-the-configuration"></a>Skriv konfigurationen
 
@@ -103,19 +103,19 @@ Mode                LastWriteTime         Length Name
 
 Den första raden gör konfigurations funktionen tillgänglig i-konsolen.
 Den andra raden kör-konfigurationen.
-Resultatet är att en ny mapp med namnet `WebsiteTest` skapas som en undermapp till den aktuella mappen.
-Mappen `WebsiteTest` innehåller en fil med namnet `localhost.mof`.
+Resultatet är att en ny mapp som heter `WebsiteTest` skapas som en undermapp till den aktuella mappen.
+`WebsiteTest` Mappen innehåller en fil med namnet `localhost.mof`.
 Detta är den fil som sedan kan användas på målnoden.
 
 ## <a name="apply-the-configuration"></a>Tillämpa konfigurationen
 
 Nu när du har kompilerat MOF kan du tillämpa konfigurationen på målnoden (i det här fallet den lokala datorn) genom att anropa cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) .
 
-`Start-DscConfiguration`-cmdleten anger den [lokala Configuration Manager (LCM)](../managing-nodes/metaConfig.md), som är motorn för DSC, för att tillämpa konfigurationen.
+`Start-DscConfiguration` Cmdleten talar om för [lokala Configuration Manager (LCM)](../managing-nodes/metaConfig.md), som är motorn för DSC, för att tillämpa konfigurationen.
 LCM fungerar som att anropa DSC-resurserna för att tillämpa konfigurationen.
 
 > [!NOTE]
-> För att tillåta DSC att köra måste Windows konfigureras för att ta emot PowerShell-fjärrkommandon, även om du kör en `localhost`-konfiguration. För att enkelt konfigurera din miljö korrekt kör du bara `Set-WsManQuickConfig -Force` i en upphöjd PowerShell-Terminal.
+> För att DSC ska kunna köras måste Windows konfigureras för att ta emot PowerShell-fjärrkommandon, även när du `localhost` kör en konfiguration. För att enkelt konfigurera din miljö på rätt sätt `Set-WsManQuickConfig -Force` kan du bara köra i en upphöjd PowerShell-Terminal.
 
 I en PowerShell-konsol navigerar du till samma mapp där du sparade konfigurationen och kör följande kommando:
 
@@ -127,7 +127,7 @@ Start-DscConfiguration .\WebsiteTest
 
 Du kan anropa cmdleten [Get-DscConfigurationStatus](/powershell/module/psdesiredstateconfiguration/get-dscconfigurationstatus) för att se om konfigurationen har slutförts.
 
-Du kan också testa resultaten direkt, i det här fallet genom att bläddra till `http://localhost/` i en webbläsare.
+Du kan också testa resultaten direkt, i det här fallet genom att bläddra `http://localhost/` till i en webbläsare.
 Du bör se HTML-sidan Hello World som du skapade som första steg i det här exemplet.
 
 ## <a name="next-steps"></a>Nästa steg

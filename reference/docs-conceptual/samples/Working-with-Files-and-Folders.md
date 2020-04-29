@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Arbeta med filer och mappar
 ms.openlocfilehash: 743e261d2f5e8bfa39f2731fca7fea6e5678c711
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "70215530"
 ---
 # <a name="working-with-files-and-folders"></a>Arbeta med filer och mappar
@@ -51,13 +51,13 @@ Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 
 Kommandot fungerar även om målet är skrivskyddat.
 
-Kopiering av mappar fungerar på samma sätt. Det här kommandot kopierar mappen C:\\Temp\\-TEST1 till den nya mappen C:\\Temp\\DeleteMe rekursivt:
+Kopiering av mappar fungerar på samma sätt. Det här kommandot kopierar mappen C:\\Temp\\TEST1 till den nya mappen c:\\Temp\\DeleteMe rekursivt:
 
 ```powershell
 Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
-Du kan också kopiera ett urval av objekt. Följande kommando kopierar alla. txt-filer som finns var som helst i c:\\data till c:\\Temp\\text:
+Du kan också kopiera ett urval av objekt. Följande kommando kopierar alla. txt-filer som finns var som helst\\i c: data\\till\\c: Temp-text:
 
 ```powershell
 Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
@@ -73,13 +73,13 @@ Du kan fortfarande använda andra verktyg för att utföra fil system kopior. XC
 
 Att skapa nya objekt fungerar likadant på alla Windows PowerShell-leverantörer. Om en Windows PowerShell-provider har fler än en typ av objekt, till exempel Windows PowerShell-providern för fil systemet skiljer sig mellan kataloger och filer, måste du ange objekt typen.
 
-Det här kommandot skapar en ny mapp C:\\Temp\\ny mapp:
+Det här kommandot skapar en ny mapp C\\:\\Temp ny mapp:
 
 ```powershell
 New-Item -Path 'C:\temp\New Folder' -ItemType Directory
 ```
 
-Det här kommandot skapar en ny tom fil C:\\Temp\\ny mapp\\File. txt
+Det här kommandot skapar en ny tom fil C\\:\\Temp New\\Folder File. txt
 
 ```powershell
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File

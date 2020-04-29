@@ -3,17 +3,17 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skrivhjälp för DSC-konfigurationer
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942078"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>Skrivhjälp för DSC-konfigurationer
 
 >Gäller för: Windows PowerShell 5,0
 
-Du kan använda kommenterings-baserad hjälp i DSC-konfigurationer. Användare kan komma åt hjälpen genom att anropa **konfigurationen** med `-?`eller genom att använda cmdleten [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) . Placera den kommenterade hjälpen direkt ovanför `Configuration` nyckelord.
+Du kan använda kommenterings-baserad hjälp i DSC-konfigurationer. Användarna kan komma åt hjälpen genom att anropa **konfigurationen** med `-?`eller genom att använda cmdleten [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) . Placera din kommenterings-baserade hjälp direkt ovanför `Configuration` nyckelordet.
 Du kan placera parameter hjälpen i rad med ditt kommentar block, direkt ovanför parameter deklarationen eller båda som i exemplet nedan.
 
 Mer information om PowerShell-Kommentering-baserad hjälp finns [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
@@ -77,7 +77,7 @@ configuration HelpSample1
 
 ## <a name="viewing-configuration-help"></a>Visa konfigurations hjälp
 
-Om du vill visa hjälpen för en konfiguration använder du cmdleten `Get-Help` med namnet på funktionen eller skriver namnet på funktionen följt av `-?`. Följande är resultatet av den föregående konfigurationen som skickades till `Get-Help`.
+Om du vill visa hjälpen för en konfiguration använder du `Get-Help` cmdleten med namnet på funktionen eller skriver namnet på funktionen följt av `-?`. Följande är resultatet av den föregående konfigurationen som skickades till `Get-Help`.
 
 ```powershell
 Get-Help HelpSample1 -Detailed
@@ -163,4 +163,4 @@ REMARKS
 
 - [DSC-konfigurationer](configurations.md)
 - [Skriva, kompilera och tillämpa en konfiguration](write-compile-apply-configuration.md)
-- [Lägga till parametrar till en konfiguration](add-parameters-to-a-configuration.md)
+- [Lägga till parametrar i en konfiguration](add-parameters-to-a-configuration.md)

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Kända problem i WMF 5.0
 ms.openlocfilehash: 91f556cb43ef971107f05c4041b725b1c7e4f1bd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71145133"
 ---
 # <a name="known-issues-in-wmf-50"></a>Kända problem i WMF 5.0
@@ -40,11 +40,11 @@ Den gamla Exchange-slutpunkten omdirigeras till en ny slut punkt. Det finns ett 
 
 När du installerar WMF 5,0 på en Windows Server 2012 R2 som redan kör SIL stoppas loggnings funktionen för program varu inventering felaktigt efter installationen.
 
-**Lösning:** Kör cmdleten `Start-SilLogging` en gång efter installationen av WMF, som i installations processen för att stoppa funktionen för program varu inventerings loggning.
+**Lösning:** Kör `Start-SilLogging` cmdleten en gång efter WMF-installationen, som installations processen kommer att felaktigt stoppa funktionen för Software Inventory Logging.
 
-## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>`Get-ChildItem` fungerar inte om-LiteralPath och-rekursivt används tillsammans
+## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>`Get-ChildItem`fungerar inte om-LiteralPath och-rekursivt används tillsammans
 
-Om ett katalog namn innehåller ett ogiltigt jokertecken kommer `Get-ChildItem` inte att generera förväntade resultat när både-LiteralPath och-rekursivt används tillsammans.
+Om ett katalog namn innehåller ett ogiltigt jokertecken `Get-ChildItem` kommer inte att generera förväntade resultat när både-LiteralPath och-rekursivt används tillsammans.
 
 **Lösning:** Inte idealisk, men den aktuella lösningen är att implementera rekursion i skriptet i stället för att använda cmdleten.
 
@@ -52,7 +52,7 @@ Om ett katalog namn innehåller ett ogiltigt jokertecken kommer `Get-ChildItem` 
 
 Det finns två sätt att lösa problemet, beroende på vilken version av Windows Server du kör.
 
-**Lösning:**
+**Lösning**
 
 - För system som kör **Windows Server 2008 R2**
   1. Öppna PowerShell som administratör
@@ -102,7 +102,7 @@ Det finns två sätt att lösa problemet, beroende på vilken version av Windows
      ```
 
      - Svara Ja när du uppmanas att bekräfta.
-     - Observera att `<AdministratorUserName>` ska ersättas av det användar namn som är administratör på datorn. Till exempel "administratör".
+     - Observera att `<AdministratorUserName>` ska ersättas med det användar namn som är administratör på datorn. Till exempel "administratör".
 
   9. Kopiera filen som du redigerade och sparade över till Sysprep-katalogen med följande kommando:
 

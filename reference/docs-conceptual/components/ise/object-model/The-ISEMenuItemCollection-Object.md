@@ -3,19 +3,19 @@ ms.date: 12/31/2019
 keywords: PowerShell, cmdlet
 title: ISEMenuItemCollection-objektet
 ms.openlocfilehash: 39e8547c9b19ba323d4b224a46eda416542b2807
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736180"
 ---
 # <a name="the-isemenuitemcollection-object"></a>ISEMenuItemCollection-objektet
 
-Ett **ISEMenuItemCollection** -objekt är en samling av **ISEMenuItem** -objekt. Det är en instans av klassen **Microsoft. PowerShell. Host. ISE. ISEMenuItemCollection** . Ett exempel är `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus`-objektet som används för att anpassa **tilläggs** menyn i Windows PowerShell® Integrated Scripting Environment (ISE).
+Ett **ISEMenuItemCollection** -objekt är en samling av **ISEMenuItem** -objekt. Det är en instans av klassen **Microsoft. PowerShell. Host. ISE. ISEMenuItemCollection** . Ett exempel är det `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus` objekt som används för att anpassa **tilläggs** menyn i Windows PowerShell® ISE (Integrated Scripting Environment).
 
 ## <a name="method"></a>Metod
 
-### <a name="addstring-displayname-systemmanagementautomationscriptblock-action-systemwindowsinputkeygesture-shortcut-"></a>Lägg till\(sträng DisplayName, system. Management. Automation. script block Action, system. Windows. inmatad. gest kortkommando \)
+### <a name="addstring-displayname-systemmanagementautomationscriptblock-action-systemwindowsinputkeygesture-shortcut-"></a>Lägg\(till sträng DisplayName, system. Management. Automation. script block Action, system. Windows. inmatad. gest gen väg\)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -49,5 +49,5 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 ## <a name="see-also"></a>Se även
 
 - [ISEMenuItem-objektet](The-ISEMenuItem-Object.md)
-- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)
+- [Användningsområden för Windows PowerShell ISE-skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Objekt modells-hierarkin för ISE](The-ISE-Object-Model-Hierarchy.md)

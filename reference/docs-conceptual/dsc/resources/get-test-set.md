@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Get-test-set
 ms.openlocfilehash: bf409f71c07c434fbc7389789e16575868d21b42
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278433"
 ---
 # <a name="get-test-set"></a>Get-test-set
@@ -88,7 +88,7 @@ Metoderna **Get**, **test**och **set** för **tjänst** resursen kommer att ha p
 > [!NOTE]
 > Språket och metoden som används för att definiera resursen bestämmer hur metoderna **Get**, **test**och **set** ska definieras.
 
-Eftersom **tjänst** resursen bara har en nödvändig nyckel (`Name`), kan en **tjänst** block resurs vara så enkel som detta:
+Eftersom **tjänst** resursen bara har en nödvändig nyckel (`Name`) kan en **tjänst** block resurs vara så enkel som detta:
 
 ```powershell
 Configuration TestConfig
@@ -121,7 +121,7 @@ ModuleVersion = "1.0";
 };
 ```
 
-När den används kommer den [lokala Configuration Manager](../managing-nodes/metaConfig.md) (LCM) att läsa värdet "Spooler" från filen ". MOF" och skicka den till `-Name`-parametern för **Get**-, **test**-och **set** -instansen för **tjänst** resursen.
+När den används kommer den [lokala Configuration Manager](../managing-nodes/metaConfig.md) (LCM) att läsa värdet "Spooler" från filen ". MOF" och skicka den till `-Name` -parametern för **Get**-, **test**-och **set** -metoderna för **tjänst** resursens instans "tjänst".
 
 ## <a name="get"></a>Hämta
 
@@ -177,10 +177,10 @@ Service [String] #ResourceName
 
 ## <a name="test"></a>Testa
 
-**Test** metoden för en resurs bestämmer om målnoden för närvarande är kompatibel med resursens *önskade tillstånd*. **Test** metoden returnerar `$True` eller `$False` bara för att ange om noden är kompatibel.
+**Test** metoden för en resurs bestämmer om målnoden för närvarande är kompatibel med resursens *önskade tillstånd*. **Test** metoden returnerar `$True` eller `$False` visar om noden är kompatibel.
 När du anropar [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)anropar LCM **test** metoden för varje resurs i den aktuella konfigurationen. LCM använder nyckel värden som lagras i filen ". MOF" som parametrar för varje motsvarande resurs instans.
 
-Om resultatet av en enskild resurs **test** är `$False`returnerar `Test-DSCConfiguration` `$False` som anger att noden inte är kompatibel. Om alla **test** metoder för resursen returnerar `$True`, returnerar `Test-DSCConfiguration` `$True` för att indikera att noden är kompatibel.
+Om resultatet av en enskild resurs **test** är `$False` `Test-DSCConfiguration` returneras `$False` anger att noden inte är kompatibel. Om alla **test** metoder för resursen returnerar `$True`, `Test-DSCConfiguration` returneras `$True` för att indikera att noden är kompatibel.
 
 ```powershell
 Test-DSCConfiguration
@@ -190,7 +190,7 @@ Test-DSCConfiguration
 True
 ```
 
-Från och med PowerShell 5,0 lades `-Detailed`-parametern till. Genom att ange `-Detailed` kan `Test-DSCConfiguration` returnera ett objekt som innehåller samlings resultat för kompatibla och icke-kompatibla resurser.
+`-Detailed` Parametern har lagts till från och med PowerShell 5,0. Ange `-Detailed` orsaker `Test-DSCConfiguration` till att returnera ett objekt som innehåller samlings resultat för kompatibla och icke-kompatibla resurser.
 
 ```powershell
 Test-DSCConfiguration -Detailed
@@ -208,7 +208,7 @@ Mer information finns i [test-DSCConfiguration](/powershell/module/psdesiredstat
 
 **Set** -metoden för en resurs försöker tvinga noden att bli kompatibel med resursens *önskade tillstånd*. **Set** -metoden är avsedd att vara **idempotenta**, vilket innebär att **uppsättningen** kan köras flera gånger och alltid får samma resultat utan fel.  När du kör [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration)växlar LCM genom varje resurs i den aktuella konfigurationen. LCM hämtar nyckel värden för den aktuella resurs instansen från filen ". MOF" och använder dem som parametrar för **test** metoden. Om **test** metoden returnerar `$True`, är noden kompatibel med den aktuella resursen och **set** -metoden hoppas över. Om **testet** returnerar `$False`är noden icke-kompatibel.  LCM skickar resurs instansens nyckel värden som parametrar till resursens **set** -Metod och återställer noden till efterlevnad.
 
-Genom att ange parametrarna `-Verbose` och `-Wait` kan du se förloppet för `Start-DSCConfiguration`-cmdleten. I det här exemplet är noden redan kompatibel. `Verbose` utdata anger att **set** -metoden hoppades över.
+Genom att ange `-Verbose` parametrarna `-Wait` och kan du se förloppet för `Start-DSCConfiguration` cmdleten. I det här exemplet är noden redan kompatibel. `Verbose` Utdata anger att **set** -metoden hoppades över.
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -UseExisting

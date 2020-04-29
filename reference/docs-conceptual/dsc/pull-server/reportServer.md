@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Använda en DSC-rapportserver
 ms.openlocfilehash: 1ccd4f96b782b41b7d7c953735cb41b3ba3d2bce
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941686"
 ---
 # <a name="using-a-dsc-report-server"></a>Använda en DSC-rapportserver
@@ -98,7 +98,7 @@ PullClientConfig
 
 ## <a name="getting-report-data"></a>Hämtar rapport data
 
-Rapporter som skickas till pull-servern registreras i en databas på servern. Rapporterna är tillgängliga via anrop till webb tjänsten. Om du vill hämta rapporter för en speciell nod skickar du en HTTP-begäran till rapport webb tjänsten i följande format: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
+Rapporter som skickas till pull-servern registreras i en databas på servern. Rapporterna är tillgängliga via anrop till webb tjänsten. Om du vill hämta rapporter för en speciell nod skickar du en HTTP-begäran till rapport webb tjänsten i följande format:`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
 där `MyNodeAgentId` är AgentId för den nod som du vill hämta rapporter för. Du kan hämta AgentID för en nod genom att anropa [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) på den noden.
 
 Rapporterna returneras som en matris med JSON-objekt.

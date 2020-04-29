@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery, psget
 title: PowerShell-galleriet
 ms.openlocfilehash: e489d2dd4db087b53eb07d2a8793c8f586c9b210
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500568"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell-galleriet
@@ -36,6 +36,6 @@ Eftersom **PowerShell Core** är plattforms oberoende och innebär det att den f
 Många moduler som finns i galleriet har stöd för olika operativ system och har ytterligare krav.
 Mer information finns i dokumentationen för modulerna.
 
-## <a name="got-a-question-have-feedback"></a>Fick du en fråga? Har du feedback?
+## <a name="got-a-question-have-feedback"></a>Fick du en fråga? Har du feedback till oss?
 
 Mer information om PowerShell-galleriet-och PowerShellGet finns på sidan [komma igång](getting-started.md) . Ge feedback och rapportera problem med [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).

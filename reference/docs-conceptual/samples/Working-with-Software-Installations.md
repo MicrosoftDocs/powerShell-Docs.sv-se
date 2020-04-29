@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: PowerShell, cmdlet
 title: Arbeta med programinstallationer
 ms.openlocfilehash: f3023d8819d6cdcc9f55befcfedb21e6ff9d282c
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "76996131"
 ---
 # <a name="working-with-software-installations"></a>Arbeta med programinstallationer
@@ -33,7 +33,7 @@ Name             Caption                   Vendor                    Version    
 Microsoft .NET … Microsoft .NET Core Runt… Microsoft Corporation     16.84.26919   {BEB59D04-C6DD-4926-AFE…
 ```
 
-Om du vill visa alla egenskaper för **Win32_Product** -objektet som ska visas använder du **egenskaps** parametern för cmdletarna för formatering, till exempel `Format-List`-cmdlet, med värdet `*` (alla).
+Om du vill visa alla egenskaper för **Win32_Product** -objektet som ska visas använder du **egenskaps** parametern för cmdletarna för formatering, till exempel `Format-List` cmdleten, med värdet `*` (all).
 
 ```powershell
 Get-CimInstance -Class Win32_Product |
@@ -75,7 +75,7 @@ CimInstanceProperties : {Caption, Description, IdentifyingNumber, Name...}
 CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ```
 
-Du kan också använda `Get-CimInstance` **filter** parameter för att välja endast Microsoft .NET 2,0-körning. Värdet för **filter** parametern använder WMI Query Language (WQL) syntax, inte Windows PowerShell-syntax. Ett exempel:
+Du kan också använda `Get-CimInstance` **filter** parametern för att välja endast Microsoft .NET 2,0-körningsmiljön. Värdet för **filter** parametern använder WMI Query Language (WQL) syntax, inte Windows PowerShell-syntax. Ett exempel:
 
 ```powershell
 Get-CimInstance -Class Win32_Product -Filter "Name='Microsoft .NET Core Runtime - 2.1.5 (x64)'" |
@@ -127,7 +127,7 @@ Nu har vi en enhet med namnet "Uninstall:" som kan användas för att snabbt och
 459
 ```
 
-Vi kan söka i den här listan med program ytterligare genom att använda en mängd olika tekniker, från och med `Get-ChildItem`. Om du vill hämta en lista över program och spara dem i variabeln `$UninstallableApplications` använder du följande kommando:
+Vi kan söka i den här listan över program ytterligare med hjälp av en mängd olika tekniker `Get-ChildItem`, från och med. Använd följande kommando för att hämta en lista över program och `$UninstallableApplications` spara dem i variabeln:
 
 ```powershell
 $UninstallableApplications = Get-ChildItem -Path Uninstall:
@@ -189,7 +189,7 @@ Du kan använda **Win32_Product** -klassen för att installera Windows Installer
 > [!NOTE]
 > För att installera ett program måste du starta PowerShell med alternativet "kör som administratör".
 
-När du installerar via fjärr anslutning använder du en nätverks Sök väg för Universal Naming Convention (UNC) för att ange sökvägen till. MSI-paketet, eftersom WMI-undersystemet inte förstår PowerShell-sökvägar. Om du till exempel vill installera NewPackage. MSI-paketet som finns på nätverks resursen `\\AppServ\dsp` på fjärrdatorn PC01 skriver du följande kommando i PowerShell-prompten:
+När du installerar via fjärr anslutning använder du en nätverks Sök väg för Universal Naming Convention (UNC) för att ange sökvägen till. MSI-paketet, eftersom WMI-undersystemet inte förstår PowerShell-sökvägar. Om du till exempel vill installera NewPackage. MSI-paketet som finns på nätverks `\\AppServ\dsp` resursen på fjärrdatorn PC01 skriver du följande kommando i PowerShell-prompten:
 
 ```powershell
 Invoke-CimMethod -ClassName Win32_Product -MethodName Install -Arguments @{PackageLocation='\\AppSrv\dsp\NewPackage.msi'}

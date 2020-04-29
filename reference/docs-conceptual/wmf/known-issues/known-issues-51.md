@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: Kända problem i WMF 5.1
 ms.openlocfilehash: 8348f9d45dca32dcda2ef8baa75d586c8728d0a4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71145280"
 ---
 # <a name="known-issues-in-wmf-51"></a>Kända problem i WMF 5.1
@@ -25,7 +25,7 @@ I den här versionen finns det två problem som du bör känna till när du anv�
 
 ## <a name="operation-validation"></a>Åtgärds validering
 
-- `Update-Help` Miss lyckas för Microsoft. PowerShell. operation. Validation-modulen på grund av en icke fungerande hjälp-URI
+- `Update-Help`Det går inte att utföra Microsoft. PowerShell. operation. Validation-modulen på grund av en icke fungerande hjälp-URI
 
 ## <a name="dsc-after-uninstall-wmf"></a>DSC efter avinstallation av WMF
 

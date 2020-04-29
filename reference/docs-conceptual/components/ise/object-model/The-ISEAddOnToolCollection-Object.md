@@ -3,19 +3,19 @@ ms.date: 12/31/2019
 keywords: PowerShell, cmdlet
 title: ISEAddOnToolCollection-objektet
 ms.openlocfilehash: e07a47169381307b50ac190165307c926b4ad94e
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737023"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>ISEAddOnToolCollection-objektet
 
-**ISEAddOnToolCollection** -objektet är en samling av **ISEAddOnTool** -objekt. Ett exempel är `$psISE.CurrentPowerShellTab.VerticalAddOnTools`-objektet.
+**ISEAddOnToolCollection** -objektet är en samling av **ISEAddOnTool** -objekt. Ett exempel är `$psISE.CurrentPowerShellTab.VerticalAddOnTools` objektet.
 
 ## <a name="methods"></a>Metoder
 
-### <a name="add-name-controltype-isvisible-"></a>Lägg till\( namn, ControlType, \[IsVisible\] \)
+### <a name="add-name-controltype-isvisible-"></a>Lägg\( till namn, ControlType \[,\] IsVisible\)
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
@@ -25,7 +25,7 @@ Lägger till ett nytt tilläggs verktyg i samlingen. Det returnerar det nyligen 
 
 **ControlType** – typ anger den kontroll som läggs till.
 
-**\[IsVisible\]** – valfritt booleskt värde om det är inställt på `$true`visas tilläggs verktyget direkt i det associerade verktygs fönstret.
+IsVisible – valfria booleska om det är `$true`inställt på, visas tilläggs verktyget direkt i det associerade verktygs fönstret. ** \[\] **
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE
@@ -33,7 +33,7 @@ Lägger till ett nytt tilläggs verktyg i samlingen. Det returnerar det nyligen 
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
 ```
 
-### <a name="remove-item-"></a>Ta bort\( objekt \)
+### <a name="remove-item-"></a>Ta\( bort objekt\)
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
@@ -47,7 +47,7 @@ Tar bort det angivna tilläggs verktyget från samlingen.
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
 ```
 
-### <a name="setselectedpowershelltab-pstab-"></a>SetSelectedPowerShellTab\( psTab \)
+### <a name="setselectedpowershelltab-pstab-"></a>SetSelectedPowerShellTab\( psTab\)
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
@@ -61,7 +61,7 @@ $newTab = $psISE.PowerShellTabs.Add()
 $newTab.DisplayName = 'Brand New Tab'
 ```
 
-### <a name="remove-pstab-"></a>Ta bort\( psTab \)
+### <a name="remove-pstab-"></a>Ta\( bort psTab\)
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
@@ -80,5 +80,5 @@ $psISE.PowerShellTabs.Remove($newTab)
 ## <a name="see-also"></a>Se även
 
 - [PowerShellTab-objektet](The-PowerShellTab-Object.md)
-- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)
+- [Användningsområden för Windows PowerShell ISE-skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Objekt modells-hierarkin för ISE](The-ISE-Object-Model-Hierarchy.md)

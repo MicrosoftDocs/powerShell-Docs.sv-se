@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: PowerShell-galleriet vanliga frågor
 ms.openlocfilehash: 035681e108e1a3e05fe5d659d527ae1ad1c64cf4
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500577"
 ---
 # <a name="frequently-asked-questions"></a>Vanliga frågor och svar
@@ -32,16 +32,16 @@ Moduler är i allmänhet bättre för delning, men vi aktiverar skript delning f
 Du måste registrera ett konto i PowerShell-galleriet innan du kan publicera paket i galleriet. Detta beror på att publicerings paket kräver en NuGetApiKey, som anges vid registreringen. Registrera dig genom att använda ditt personliga konto, ditt arbets-eller skol konto för att logga in på PowerShell-galleriet. En enstaka registrerings process krävs när du loggar in för första gången.
 Därefter är din NuGetApiKey tillgänglig på din profil sida.
 
-När du har registrerat i galleriet använder du cmdletarna [Publicera-modul][] eller [Publicera – skript][] för att publicera ditt paket i galleriet. Mer information om hur du kör dessa cmdlets finns på fliken publicera eller läsa dokumentationen för [Publicera-modul][] och [Publicera – skript][] .
+När du har registrerat i galleriet använder du cmdletarna [Publish-module][] eller [Publish-script][] för att publicera ditt paket i galleriet. Mer information om hur du kör dessa cmdlets finns på fliken publicera eller läsa dokumentationen för [publicerings-][] och [publicerings skript][] .
 
 **Du behöver inte registrera eller logga in på galleriet för att installera eller Spara paket.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Jag fick "Det gick inte att bearbeta begäran. Den angivna API-nyckeln är ogiltig eller har inte behörighet att komma åt det angivna paketet. Fjärrservern returnerade ett fel: (403) tillåts inte. " fel när jag försökte publicera ett paket till PowerShell-galleriet. Vad betyder det?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Jag fick "Det gick inte att bearbeta begäran. Den angivna API-nyckeln är ogiltig eller har inte behörighet att komma åt det angivna paketet. Fjärrservern returnerade ett fel: (403) tillåts inte. " fel när jag försökte publicera ett paket till PowerShell-galleriet. Vad innebär det?
 
 Det här felet kan inträffa av följande orsaker:
 
 - **Den angivna API-nyckeln är ogiltig.** Se till att du har angett en giltig API-nyckel från ditt konto. Visa din profil sida för att hämta din API-nyckel.
-- **Det angivna paket namnet ägs inte av dig.** Om du har bekräftat att din API-nyckel är korrekt, kan det finnas redan ett paket med samma namn som det som du försöker använda. Paketet kan ha avvisats av ägaren, och i så fall visas det inte i några Sök resultat. Du kan kontrol lera om det redan finns ett paket med samma namn genom att öppna en webbläsare och navigera till paketets informations sida: `https://www.powershellgallery.com/packages/<packageName>`. Om du till exempel navigerar direkt till `https://www.powershellgallery.com/packages/pester` går du till sidan med pester-modulens information, oavsett om den är listad eller inte. Om det redan finns ett paket med ett namn som är i konflikt och inte finns med i listan kan du:
+- **Det angivna paket namnet ägs inte av dig.** Om du har bekräftat att din API-nyckel är korrekt, kan det finnas redan ett paket med samma namn som det som du försöker använda. Paketet kan ha avvisats av ägaren, och i så fall visas det inte i några Sök resultat. Du kan kontrol lera om det redan finns ett paket med samma namn genom att öppna en webbläsare och navigera till paketets informations `https://www.powershellgallery.com/packages/<packageName>`sida:. Om du till exempel navigerar direkt `https://www.powershellgallery.com/packages/pester` till går du till pester-modulens informations sida, oavsett om den är listad eller inte. Om det redan finns ett paket med ett namn som är i konflikt och inte finns med i listan kan du:
   - Välj ett annat namn för ditt paket.
   - Kontakta ägare till det befintliga paketet.
 
@@ -56,12 +56,12 @@ Genom att markera kryss rutan Kategori anger du "Jag vill se alla paket i den h�
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>Vilka är kraven för att publicera en modul till PowerShell-galleriet?
 
-Alla typer av PowerShell-moduler (skript moduler, binära moduler eller manifest) kan publiceras i galleriet. För att publicera en modul behöver PowerShellGet känna till några saker om den, version, beskrivning, författare och hur den licensieras. Den här informationen läses som en del av publicerings processen från *modul manifest* filen (. psd1), eller från värdet för cmdlet: en **LicenseUri** -parameter för [Publicera-modul][] . Alla moduler som publicerats till galleriet måste ha modul manifest. Alla moduler som innehåller följande information i manifestet kan publiceras i galleriet:
+Alla typer av PowerShell-moduler (skript moduler, binära moduler eller manifest) kan publiceras i galleriet. För att publicera en modul behöver PowerShellGet känna till några saker om den, version, beskrivning, författare och hur den licensieras. Den här informationen läses som en del av publicerings processen från *modul manifest* filen (. psd1), eller från värdet för cmdlet: en **LicenseUri** -parameter för [Publish-modul][] . Alla moduler som publicerats till galleriet måste ha modul manifest. Alla moduler som innehåller följande information i manifestet kan publiceras i galleriet:
 
 - Version
 - Beskrivning
 - Författare
-- En URI till modulens licens villkor, antingen som en del av **PrivateData** -avsnittet i manifestet eller i **LicenseUri** -parametern för cmdleten [Publicera-modul][] .
+- En URI till modulens licens villkor, antingen som en del av **PrivateData** -avsnittet i manifestet eller i **LicenseUri** -parametern för cmdleten [Publish-module][] .
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>Hur gör jag för att skapa ett korrekt formaterat modul manifest?
 
@@ -69,23 +69,23 @@ Det enklaste sättet att skapa ett modul manifest är att köra cmdleten [New-Mo
 
 Använd cmdleten [test-ModuleManifest][] för att kontrol lera att alla obligatoriska metadatafält har fyllts i korrekt.
 
-Om du vill uppdatera modulens manifest fil fält använder du cmdleten [Uppdatera – ModuleManifest][] .
+Om du vill uppdatera modulens manifest fil fält använder du cmdleten [Update-ModuleManifest][] .
 
 ## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>Vilka är kraven för att publicera ett skript i galleriet?
 
-Alla typer av PowerShell-skript (skript eller arbets flöden) kan publiceras i galleriet. För att kunna publicera ett skript behöver PowerShellGet känna till några saker om det – version, beskrivning, författare och hur det är licensierat. Den här informationen läses som en del av publicerings processen från skript filens *PSScriptInfo* -avsnitt eller från värdet för cmdlet: en **LicenseUri** i [Publicera – skript][] . Alla skript som publiceras till galleriet måste ha metadatainformation. Alla skript som innehåller följande information i sitt PSScriptInfo-avsnitt kan publiceras i galleriet:
+Alla typer av PowerShell-skript (skript eller arbets flöden) kan publiceras i galleriet. För att kunna publicera ett skript behöver PowerShellGet känna till några saker om det – version, beskrivning, författare och hur det är licensierat. Den här informationen läses som en del av publicerings processen från skript filens *PSScriptInfo* -avsnitt eller från värdet för cmdlet: en **LicenseUri** i [Publish-script][] . Alla skript som publiceras till galleriet måste ha metadatainformation. Alla skript som innehåller följande information i sitt PSScriptInfo-avsnitt kan publiceras i galleriet:
 
 - Version
 - Beskrivning
 - Författare
-- En URI till skriptets licens villkor, antingen som en del av **PSScriptInfo** -avsnittet i skriptet eller i **LicenseUri** -parametern för cmdleten [Publicera – skript][] .
+- En URI till skriptets licens villkor, antingen som en del av **PSScriptInfo** -avsnittet i skriptet eller i **LicenseUri** -parametern för cmdleten [Publish-script][] .
 
 ## <a name="how-do-i-search"></a>Hur gör jag för att Sök?
 
 Skriv det du söker i text rutan. Om du till exempel vill hitta moduler som är relaterade till Azure SQL skriver du bara "Azure SQL". Vår sökmotor söker efter dessa nyckelord i alla publicerade paket, inklusive titlar, beskrivningar och över metadata. Sedan, baserat på en viktad kvalitets poäng, visas närmaste matchningar. Du kan också söka efter ett särskilt fält med fält: "value"-syntax i Sök frågan för följande fält:
 
 - Taggar
-- Funktioner
+- Functions
 - Cmdletar
 - DscResources
 - PowerShellVersion
@@ -112,7 +112,7 @@ Alla moduler i galleriet innehåller modul manifest och de flesta av de här mod
 
 PackageManagement är ett gemensamt gränssnitt för att arbeta med alla paket hanterare. Om du arbetar med PowerShell-moduler, MSIs, ruby-Gems, NuGet-paket eller perl-moduler, bör du använda PackageManagement-kommandon (Find-Package och install-Package) för att hitta och installera dem. PackageManagement gör detta genom att ha en paket leverantör för varje paket hanterare som ansluter till PackageManagement. Leverantörer utför allt verkligt arbete; de hämtar innehåll från databaser och installerar innehållet lokalt. Ofta omsluts paket leverantörer runt de befintliga Package Manager-verktygen för en specifik paket typ.
 
-PowerShellGet är paket hanteraren för PowerShell-paket. Det finns en PSModule-paketfil som exponerar PowerShellGet-funktionen via PackageManagement. Därför kan du antingen köra [Installera-modul][] eller install-Package-Provider-PSModule för att installera en modul från PowerShell-galleriet. Vissa PowerShellGet-funktioner, inklusive [Update-modul][] och [Publicera-modul][], kan inte nås via PackageManagement-kommandon.
+PowerShellGet är paket hanteraren för PowerShell-paket. Det finns en PSModule-paketfil som exponerar PowerShellGet-funktionen via PackageManagement. Därför kan du antingen köra [install-module][] eller install-Package-Provider-PSModule för att installera en modul från PowerShell-galleriet. Vissa PowerShellGet-funktioner, inklusive [Update-module][] och [Publish-module][], kan inte nås via PackageManagement-kommandon.
 
 I sammanfattning fokuserar PowerShellGet bara på att ha en förstklassig paket hanterings upplevelse för PowerShell-innehåll. PackageManagement fokuserar på att exponera alla paket hanterings upplevelser via en allmän uppsättning verktyg. Om du tycker att det här svaret inte uppfyller, finns det ett långt svar längst ned i det här dokumentet, i avsnittet **hur refererar PackageManagement faktiskt till PowerShellGet?** .
 
@@ -123,7 +123,7 @@ Mer information finns på [projekt sidan för PackageManagement](https://oneget.
 PowerShell-galleriet är en modifierad version av [NuGet-galleriet](https://www.nuget.org/).
 PowerShellGet använder NuGet-providern för att arbeta med NuGet-baserade databaser som PowerShell-galleriet.
 
-Du kan använda PowerShellGet mot en giltig NuGet-lagringsplats eller fil resurs. Du behöver bara lägga till lagrings platsen genom att köra cmdleten [Registrera – PSRepository][] .
+Du kan använda PowerShellGet mot en giltig NuGet-lagringsplats eller fil resurs. Du behöver bara lägga till lagrings platsen genom att köra cmdleten [register-PSRepository][] .
 
 ## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>Innebär det att jag kan använda NuGet. exe för att arbeta med galleriet?
 
@@ -133,7 +133,7 @@ Ja.
 
 Under huven utnyttjar PowerShellGet kraftigt PackageManagement-infrastrukturen.
 
-På PowerShell-cmdlet-lagret är [Installera-modul][] faktiskt en tunn omslutning runt `Install-Package -Provider PSModule`.
+På PowerShell-cmdlet-lagret är [install-module][] faktiskt en tunn omslutning runt `Install-Package -Provider PSModule`.
 
 I PackageManagement Package Provider-skiktet anropar PSModule-paket leverantören andra PackageManagement-paket leverantörer. Om du till exempel arbetar med NuGet-baserade gallerier (t. ex. PowerShell-galleriet) använder PSModule-paket leverantören NuGet-paketfilen för att arbeta med lagrings platsen.
 

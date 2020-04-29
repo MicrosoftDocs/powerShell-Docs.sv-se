@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Tvistlösning
 ms.openlocfilehash: 2376226c14ec1a8c2bf7c9328e29f79528d2aee9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328905"
 ---
 # <a name="dispute-resolution"></a>Tvistlösning
@@ -18,8 +18,8 @@ Det här dokumentet är en rekommenderad lösning för tvistlösning för commun
 
 1. Kontakta ägare till paketet som du har tvisten med med hjälp av länken **kontakt ägare** på sidan med paket information.
    Förklara ditt problem på ett sätt och direkt sätt.
-2. Skicka en kopia av ditt meddelande till [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) så att PowerShell-galleriet-administratörer är medvetna om din tvist.
-3. Vänta högst 30 dagar och om du inte har lösnings meddelande [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) igen.
+2. Skicka en kopia av meddelandet till [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) så att PowerShell-galleriet-administratörer är medvetna om din tvist.
+3. Vänta högst 30 dagar och om du inte har löst aviseringen [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) igen.
 
 Support teamet för PowerShellGallery.com kommer att bli engagerad och försöka arbeta det här.
 

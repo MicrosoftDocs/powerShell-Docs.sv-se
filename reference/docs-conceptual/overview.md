@@ -1,12 +1,12 @@
 ---
 ms.date: 08/27/2018
 keywords: PowerShell, cmdlet
-title: PowerShell-skript
+title: PowerShell-skriptning
 ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "62058496"
 ---
 # <a name="powershell"></a>PowerShell
@@ -36,13 +36,13 @@ Med PowerShell är det enkelt att upptäcka dess funktioner. Om du till exempel 
 Get-Command *-Service
 ```
 
-När du har identifierat vilken cmdlet som utför en aktivitet kan du läsa mer om cmdleten med hjälp av `Get-Help` cmdlet. Om du till exempel vill visa hjälp om cmdleten `Get-Service` skriver du:
+När du har identifierat vilken cmdlet som utför en aktivitet kan du läsa mer om cmdleten med hjälp `Get-Help` av cmdleten. Om du till exempel vill visa hjälp om `Get-Service` cmdleten skriver du:
 
 ```powershell
 Get-Help Get-Service
 ```
 
-De flesta cmdletar returnerar objekt som kan manipuleras och sedan återges som text för visning. För att fullständigt förstå utdata från en cmdlet skickar du utdata till `Get-Member`-cmdlet. Följande kommando visar till exempel information om medlemmar i objektets utdata från `Get-Service`-cmdlet.
+De flesta cmdletar returnerar objekt som kan manipuleras och sedan återges som text för visning. För att fullständigt förstå utdata från en cmdlet skickar du utdata till `Get-Member` cmdleten. Följande kommando visar till exempel information om medlemmarna i objektets utdata av `Get-Service` cmdleten.
 
 ```powershell
 Get-Service | Get-Member
@@ -52,7 +52,7 @@ Get-Service | Get-Member
 
 Hantering av system kan vara en komplicerad uppgift. Verktyg som har ett konsekvent gränssnitt hjälper dig att styra den komplicerade komplexiteten. Kommando rads verktyg och COM-objekt (Scriptable Component Object Model) är inte kända för deras konsekvens.
 
-Konsekvensen av PowerShell är en av dess primära till gångar. Om du till exempel lär dig hur du använder `Sort-Object`-cmdleten kan du använda den informationen för att sortera utdata från alla cmdletar. Du behöver inte lära dig de olika sorterings rutinerna för varje cmdlet.
+Konsekvensen av PowerShell är en av dess primära till gångar. Om du t. ex. Lär dig hur du `Sort-Object` använder cmdleten kan du använda den informationen för att sortera utdata från alla cmdletar. Du behöver inte lära dig de olika sorterings rutinerna för varje cmdlet.
 
 Dessutom behöver inte cmdlet-utvecklare utforma sorterings funktioner för sina cmdlets. PowerShell ger ett ramverk med de grundläggande funktioner som tvingar konsekvens. Ramverket eliminerar några val som finns kvar i utvecklaren. Men i retur gör det mycket enklare att utveckla cmdletar.
 

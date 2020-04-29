@@ -3,10 +3,10 @@ ms.date: 01/02/2020
 keywords: PowerShell, cmdlet
 title: Använd tabbifyllning i skriptfönstret och konsolfönstret
 ms.openlocfilehash: 07cf9ff75db8d33ed018542153bfcd7503035e40
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737091"
 ---
 # <a name="how-to-use-tab-completion-in-the-script-pane-and-console-pane"></a>Använd tabbifyllning i skriptfönstret och konsolfönstret
@@ -24,7 +24,7 @@ Skriv några tecken i ett kommando i kommando fönstret eller skript rutan och t
 
 I kommando fönstret eller skript rutan skriver du en cmdlet följt av ett streck och trycker sedan på <kbd>TABB</kbd>.
 
-Skriv till exempel `Get-Process -` och tryck sedan på <kbd>TABB</kbd> flera gånger för att visa var och en av parametrarna för cmdleten i tur och retur.
+Skriv `Get-Process -` till exempel och tryck på <kbd>TABB</kbd> flera gånger för att visa var och en av parametrarna för cmdleten i tur och retur.
 
 ## <a name="see-also"></a>Se även
 

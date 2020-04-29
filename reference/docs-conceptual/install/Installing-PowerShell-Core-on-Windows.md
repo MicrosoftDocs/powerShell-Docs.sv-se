@@ -2,18 +2,18 @@
 title: Installera PowerShell i Windows
 description: Information om hur du installerar PowerShell på Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 17b2c7c51e54cea42ee68dc1812ffe89654806fc
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: a8543a91ad503364c5346a11c9c9d9f910547278
+ms.sourcegitcommit: b80ce0396550d0896189d0205d6c4b4372ac2015
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80977496"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82141388"
 ---
 # <a name="installing-powershell-on-windows"></a>Installera PowerShell i Windows
 
 Det finns flera sätt att installera PowerShell i Windows.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 Den senaste versionen av PowerShell stöds på Windows 7 SP1, Server 2008 R2 och senare versioner.
 
@@ -26,9 +26,9 @@ Om du vill aktivera PowerShell-fjärrkommunikation över WSMan måste följande 
 
 Installera PowerShell på Windows genom att ladda ned installations paketet från vår GitHub- [releases][releases] -sida. Rulla ned till **till gångar** -avsnittet på sidan version. Avsnittet **till gångar** kan vara minimerat, så du kan behöva klicka för att expandera det.
 
-## <a name="installing-the-msi-package"></a><a id="msi" />installera MSI-paketet
+## <a name="installing-the-msi-package"></a><a id="msi" />Installera MSI-paketet
 
-MSI-filen ser ut som `PowerShell-<version>-win-<os-arch>.msi`. Exempel:
+MSI-filen ser ut `PowerShell-<version>-win-<os-arch>.msi`så här. Ett exempel:
 
 - `PowerShell-7.0.0-win-x64.msi`
 - `PowerShell-7.0.0-win-x86.msi`
@@ -37,15 +37,15 @@ När du har laddat ned dubbelklickar du på installations programmet och följer
 
 Installations programmet skapar en genväg på Start-menyn i Windows.
 
-- Som standard installeras paketet på `$env:ProgramFiles\PowerShell\<version>`
-- Du kan starta PowerShell via Start-menyn eller `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
+- Som standard installeras paketet på`$env:ProgramFiles\PowerShell\<version>`
+- Du kan starta PowerShell via Start-menyn eller`$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 > [!NOTE]
 > PowerShell 7 installeras i en ny katalog och körs sida vid sida med Windows PowerShell 5,1. För PowerShell Core 6. x är PowerShell 7 en uppgradering på plats som tar bort PowerShell Core 6. x.
 >
-> - PowerShell 7 installeras för att `$env:ProgramFiles\PowerShell\7`
-> - Mappen `$env:ProgramFiles\PowerShell\7` läggs till i `$env:PATH`
-> - Mappen `$env:ProgramFiles\PowerShell\6` tas bort
+> - PowerShell 7 installeras för att`$env:ProgramFiles\PowerShell\7`
+> - `$env:ProgramFiles\PowerShell\7` Mappen läggs till`$env:PATH`
+> - `$env:ProgramFiles\PowerShell\6` Mappen tas bort
 >
 > Om du behöver köra PowerShell 6 sida vid sida med PowerShell 7 installerar du om PowerShell 6 med hjälp av [zip-installations](#zip) metoden.
 
@@ -65,13 +65,13 @@ msiexec.exe /package PowerShell-7.0.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_ME
 
 En fullständig lista över kommando rads alternativ för `Msiexec.exe`finns i [kommando rads alternativ](/windows/desktop/Msi/command-line-options).
 
-## <a name="installing-the-msix-package"></a><a id="msix" />installera MSIX-paketet
+## <a name="installing-the-msix-package"></a><a id="msix" />Installera MSIX-paketet
 
 Om du vill installera MSIX-paketet manuellt på en Windows 10-klient laddar du ned MSIX-paketet från vår GitHub [releases][releases] -sida. Rulla ned till **till gångar** -avsnittet i den version som du vill installera. Avsnittet till gångar kan vara minimerat, så du kan behöva klicka för att expandera det.
 
-MSIX-filen ser ut så här – `PowerShell-<version>-win-<os-arch>.msix`
+MSIX-filen ser ut så här –`PowerShell-<version>-win-<os-arch>.msix`
 
-Du måste använda `Add-AppxPackage`-cmdleten för att installera paketet.
+Du måste använda `Add-AppxPackage` cmdleten för att installera paketet.
 
 ```powershell
 Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
@@ -80,9 +80,9 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 > [!NOTE]
 > MSIX-paketet har ännu inte släppts. När paketet har släppts är paketet tillgängligt i Microsoft Store och från sidan GitHub- [versioner][releases] .
 
-## <a name="installing-the-zip-package"></a><a id="zip" />installation av ZIP-paketet
+## <a name="installing-the-zip-package"></a><a id="zip" />Installera ZIP-paketet
 
-Det finns PowerShell-Arkiv för att aktivera avancerade distributions scenarier. Installation av ZIP-arkivet kontrollerar inte kraven som MSI-paketen gör. Se till att du uppfyller [kraven](#prerequisites)för fjärr kommunikation över WSMan för att fungera korrekt.
+Det finns PowerShell-Arkiv för att aktivera avancerade distributions scenarier. Installation av ZIP-arkivet kontrollerar inte kraven som MSI-paketen gör. Hämta ZIP-arkivet från sidan [versioner][releases] . Beroende på hur du laddar ned filen kan du behöva avblockera filen med hjälp av `Unblock-File` cmdleten. Zippa upp innehållet till valfri plats och kör `pwsh.exe` därifrån. Se till att du uppfyller [kraven](#prerequisites)för fjärr kommunikation över WSMan för att fungera korrekt.
 
 ## <a name="deploying-on-windows-10-iot-enterprise"></a>Distribuera i Windows 10 IoT Enterprise
 
@@ -196,7 +196,7 @@ Om du redan har installerat [.net Core SDK](/dotnet/core/sdk) är det enkelt att
 dotnet tool install --global PowerShell
 ```
 
-Installations programmet för dotNET-verktyget lägger till `$env:USERPROFILE\dotnet\tools` i din `$env:PATH` miljö variabel. Men det gränssnitt som körs har inte den uppdaterade `$env:PATH`. Du kan starta PowerShell från ett nytt gränssnitt genom att skriva `pwsh`.
+Installations programmet för dotNET- `$env:USERPROFILE\dotnet\tools` verktyget lägger `$env:PATH` till i din miljö variabel. Men det gränssnitt som körs har inte uppdaterats `$env:PATH`. Du kan starta PowerShell från ett nytt gränssnitt genom att `pwsh`skriva.
 
 ## <a name="how-to-create-a-remoting-endpoint"></a>Så här skapar du en fjärran sluten slut punkt
 

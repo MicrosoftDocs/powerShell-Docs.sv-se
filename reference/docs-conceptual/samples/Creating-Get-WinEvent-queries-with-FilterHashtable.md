@@ -2,19 +2,19 @@
 ms.date: 09/13/2019
 title: Skapar Get-WinEvent-frågor med FilterHashtable
 ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "73444381"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Skapar Get-WinEvent-frågor med FilterHashtable
 
 Om du vill läsa det ursprungliga blogg inlägget 3 juni 2014 **Scripting Guy** , se [använda FilterHashTable för att filtrera händelse loggen med PowerShell](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/).
 
-Den här artikeln är ett utdrag ur det ursprungliga blogg inlägget och förklarar hur du använder den `Get-WinEvent`-cmdletens **FilterHashtable** -parameter för att filtrera händelse loggar. PowerShell: s `Get-WinEvent` cmdlet är en kraftfull metod för att filtrera Windows-händelse och diagnostikloggar. Prestandan förbättras när en `Get-WinEvent` fråga använder parametern **FilterHashtable** .
+Den här artikeln är ett utdrag från det ursprungliga blogg inlägget och förklarar hur du använder `Get-WinEvent` cmdletens **FilterHashtable** -parameter för att filtrera händelse loggar. PowerShell- `Get-WinEvent` cmdleten är en kraftfull metod för att filtrera Windows-händelser och diagnostikloggar. Prestanda förbättras när en `Get-WinEvent` fråga använder parametern **FilterHashtable** .
 
-När du arbetar med stora händelse loggar är det inte effektivt att skicka objekt nedåt i pipelinen till ett `Where-Object`-kommando. Före PowerShell 6 var `Get-EventLog` cmdleten ett annat alternativ för att hämta loggdata. Följande kommandon är till exempel ineffektiva för att filtrera **Microsoft-Windows-defrag-** loggar:
+När du arbetar med stora händelse loggar är det inte effektivt att skicka objekt nedåt i pipelinen till ett `Where-Object` kommando. Innan PowerShell 6 var `Get-EventLog` cmdleten ett annat alternativ för att hämta loggdata. Följande kommandon är till exempel ineffektiva för att filtrera **Microsoft-Windows-defrag-** loggar:
 
 ```powershell
 Get-EventLog -LogName Application | Where-Object Source -Match defrag
@@ -38,7 +38,7 @@ Mer information finns i [Scripting Guy-serien av blogg inlägg om uppräkning](h
 
 ## <a name="hash-table-key-value-pairs"></a>Nyckel/värde-par för hash-tabell
 
-Om du vill bygga effektiva frågor använder du `Get-WinEvent`-cmdlet med parametern **FilterHashtable** .
+Om du vill bygga effektiva frågor använder `Get-WinEvent` du cmdleten med parametern **FilterHashtable** .
 **FilterHashtable** accepterar en hash-tabell som ett filter för att hämta detaljerad information från händelse loggar i Windows. En hash-tabell använder **nyckel/värde-** par. Mer information om hash-tabeller finns i [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
 
 Om **nyckel-** värdeparen finns på samma rad måste de avgränsas med ett semikolon. Om varje **nyckel/värde-** par finns på en separat rad behövs inte semikolonet. I den här artikeln placeras till exempel **nyckel värdes** par på separata rader och använder inte semikolon.
@@ -59,12 +59,12 @@ I följande tabell visas nyckel namnen, data typerna och om jokertecken accepter
 | ID             | `<Int32[]>`     | Nej                           |
 | Nivå          | `<Int32[]>`     | Nej                           |
 | StartTime      | `<DateTime>`    | Nej                           |
-| SlutTid        | `<DateTime>`    | Nej                           |
-| Användar-ID         | `<SID>`         | Nej                           |
+| EndTime        | `<DateTime>`    | Nej                           |
+| UserID         | `<SID>`         | Nej                           |
 | Data           | `<String[]>`    | Nej                           |
 | `<named-data>` | `<String[]>`    | Nej                           |
 
-Den `<named-data>` nyckeln representerar ett fält med namngivna händelse data. Till exempel kan Perflib Event 1008 innehålla följande händelse data:
+`<named-data>` Nyckeln representerar ett namngivet händelse data fält. Till exempel kan Perflib Event 1008 innehålla följande händelse data:
 
 ```xml
 <EventData>
@@ -81,13 +81,13 @@ Get-WinEvent -FilterHashtable @{LogName='Application'; 'Service'='Bits'}
 ```
 
 > [!NOTE]
-> Möjligheten att fråga efter `<named-data>` lades till i PowerShell 6.
+> Möjligheten att fråga efter `<named-data>` har lagts till i PowerShell 6.
 
 ## <a name="building-a-query-with-a-hash-table"></a>Skapa en fråga med en hash-tabell
 
 Om du vill kontrol lera resultaten och felsöka problem kan du skapa hash-tabellen ett **nyckel/värde-** par i taget. Frågan hämtar data från **program** loggen. Hash-tabellen motsvarar `Get-WinEvent –LogName Application`.
 
-Börja genom att skapa en `Get-WinEvent`-fråga. Använd **FilterHashtable** -parameterns **nyckel/värde-** par med nyckeln, **LogName**och värdet, **programmet**.
+Börja genom att skapa `Get-WinEvent` frågan. Använd **FilterHashtable** -parameterns **nyckel/värde-** par med nyckeln, **LogName**och värdet, **programmet**.
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -112,7 +112,7 @@ Använd **Sök vägs** nyckeln om din fråga behöver hämta data från arkivera
 
 ## <a name="using-enumerated-values-in-a-hash-table"></a>Använda uppräknade värden i en hash-tabell
 
-**Nyckelord** är nästa nyckel i hash-tabellen. Data typen **keywords** är en matris med `[long]` Värdetyp som innehåller ett stort tal. Använd följande kommando för att hitta det maximala värdet för `[long]`:
+**Nyckelord** är nästa nyckel i hash-tabellen. Data typen **keywords** är en matris av `[long]` värde typen som innehåller ett stort tal. Använd följande kommando för att hitta det högsta värdet `[long]`:
 
 ```powershell
 [long]::MaxValue
@@ -129,7 +129,7 @@ På den nedrullningsbara menyn **nyckelord** visas tillgängliga nyckelord, som 
 
 ![Bild av Windows Loggboken nyckelord.](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
 
-Använd följande kommando för att Visa `StandardEventKeywords` egenskaps namn.
+Använd följande kommando för att visa `StandardEventKeywords` egenskaps namnen.
 
 ```powershell
 [System.Diagnostics.Eventing.Reader.StandardEventKeywords] | Get-Member -Static -MemberType Property
@@ -155,7 +155,7 @@ De uppräknade värdena dokumenteras i **.NET Framework**. Mer information finns
 
 **Nyckelords** namnen och de uppräknade värdena är följande:
 
-| Namn             |  Värde            |
+| Name             |  Värde            |
 | ---------------- | ------------------|
 | AuditFailure     | 4503599627370496  |
 | AuditSuccess     | 9007199254740992  |
@@ -213,7 +213,7 @@ Get-WinEvent -FilterHashtable @{
 Om du vill förfina resultaten ytterligare och bara inkludera händelser som är fel använder du **nivå** nyckeln.
 **Windows Loggboken** visar **nivån** som sträng värden, men de är uppräknade värden. Om du använder **nivå** nyckeln med ett sträng värde i hash-tabellen visas ett fel meddelande.
 
-**Nivån** har värden som **fel**, **Varning**eller **information**. Använd följande kommando för att Visa `StandardEventLevel` egenskaps namn.
+**Nivån** har värden som **fel**, **Varning**eller **information**. Använd följande kommando för att visa `StandardEventLevel` egenskaps namnen.
 
 ```powershell
 [System.Diagnostics.Eventing.Reader.StandardEventLevel] | Get-Member -Static -MemberType Property
@@ -236,13 +236,13 @@ De uppräknade värdena dokumenteras i **.NET Framework**. Mer information finns
 
 **Nivå** nyckelns namn och uppräknade värden är följande:
 
-| Namn           | Värde |
+| Name           | Värde |
 | -------------- | ----- |
 | Verbose        |   5   |
-| Informativt  |   4   |
+| Information  |   4   |
 | Varning        |   3   |
 | Fel          |   2   |
-| Kritiskt       |   1   |
+| Kritisk       |   1   |
 | LogAlways      |   0   |
 
 Hash-tabellen för den slutförda frågan innehåller nyckeln, **nivån**och värdet, **2**.

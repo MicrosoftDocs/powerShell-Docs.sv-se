@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: Felkorrigeringar i WMF 5.1
 ms.openlocfilehash: 8edf295eb6304dc04de2fa5d3792b1c2fc4b01f3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71145210"
 ---
 # <a name="bug-fixes-in-wmf-51"></a>Felkorrigeringar i WMF 5.1
@@ -18,15 +18,15 @@ Följande viktiga buggar korrigeras i WMF 5,1:
 
 ### <a name="module-auto-discovery-fully-honors-psmodulepath"></a>Automatisk identifiering av modulen PSModulePath
 
-Automatisk identifiering av modul (moduler som läses in automatiskt utan en explicit import-modul vid anrop av ett kommando) introducerades i WMF 3. När den introducerades kontrollerar PowerShell för kommandon i `$PSHome\Modules` innan du använder `$env:PSModulePath`.
+Automatisk identifiering av modul (moduler som läses in automatiskt utan en explicit import-modul vid anrop av ett kommando) introducerades i WMF 3. När den introducerades kontrollerar PowerShell för kommandon `$PSHome\Modules` i innan `$env:PSModulePath`du använder.
 
-WMF 5,1 ändrar detta beteende för att respektera `$env:PSModulePath` helt. På så sätt kan en användardefinierad modul som definierar kommandon som tillhandahålls av PowerShell (t. ex. `Get-ChildItem`) automatiskt läsas in och åsidosätta det inbyggda kommandot.
+WMF 5,1 ändrar det här beteendet `$env:PSModulePath` för att respektera fullständigt. Detta gör att en användardefinierad modul som definierar kommandon som tillhandahålls av PowerShell (t. ex. `Get-ChildItem`) automatiskt läses in och som åsidosätter det inbyggda kommandot.
 
 ### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>Omdirigering av fil är inte längre hårdkodade Unicode-kodning
 
 I alla tidigare versioner av PowerShell var det omöjligt att kontrol lera fil kodningen som används av operatorn för fil omdirigering.
 
-Från och med WMF 5,1 kan du nu ändra fil kodningen för omdirigering genom att ange `$PSDefaultParameterValues`:
+Från och med WMF 5,1 kan du nu ändra fil kodningen för omdirigering genom att ställa `$PSDefaultParameterValues`in:
 
 ```powershell
 $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
@@ -34,7 +34,7 @@ $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 
 ### <a name="fixed-a-regression-in-accessing-members-of-systemreflectiontypeinfo"></a>Fast en regression vid åtkomst till medlemmar i system. Reflection. TypeInfo
 
-En regression som introducerades i WMF 5,0 som har åtkomst till medlemmar i `System.Reflection.RuntimeType`, till exempel `[int].ImplementedInterfaces`. Den här buggen har åtgärd ATS i WMF 5,1.
+En regression som introducerades i WMF 5,0 som har till `System.Reflection.RuntimeType`gång till medlemmar i `[int].ImplementedInterfaces`, till exempel. Den här buggen har åtgärd ATS i WMF 5,1.
 
 ### <a name="fixed-some-issues-with-com-objects"></a>Åtgärda problem med COM-objekt
 
@@ -53,7 +53,7 @@ $obj.SendKeys([char]173)
 
 #### <a name="enumerable-com-objects-not-always-handled-correctly"></a>Enumerable COM-objekt hanteras inte alltid korrekt
 
-PowerShell räknar normalt upp de flesta enumerable-objekt, men en regression som introducerades i WMF 5,0 förhindrade uppräkningen av COM-objekt som implementerar IEnumerable. Till exempel:
+PowerShell räknar normalt upp de flesta enumerable-objekt, men en regression som introducerades i WMF 5,0 förhindrade uppräkningen av COM-objekt som implementerar IEnumerable. Ett exempel:
 
 ```powershell
 function Get-COMDictionary
@@ -71,7 +71,7 @@ I exemplet ovan skrev WMF 5,0 felaktigt **skript. ord listan** till pipelinen i 
 
 ### <a name="ordered-was-not-allowed-inside-classes"></a>[ordnat] tilläts inte i klasser
 
-WMF 5,0 introducerade klasser med verifiering av typ strängar som används i klasser. `[ordered]` ser ut som en typ sträng men är inte en sann .NET-typ. WMF 5,0 rapporterade felaktigt ett fel i `[ordered]` i en klass:
+WMF 5,0 introducerade klasser med verifiering av typ strängar som används i klasser. `[ordered]`det ser ut som en typ sträng men är inte en äkta .NET-typ. WMF 5,0 rapporterade felaktigt ett fel i `[ordered]` en klass:
 
 ```powershell
 class CThing
@@ -85,15 +85,15 @@ class CThing
 
 ### <a name="help-on-about-topics-with-multiple-versions-does-not-work"></a>Hjälp om ämnen med flera versioner fungerar inte
 
-Innan WMF 5,1, om du hade flera versioner av en modul installerad och alla delade ett hjälp avsnitt, till exempel about_PSReadline, kan `help about_PSReadline` returnera flera ämnen utan ett uppenbart sätt att visa den riktiga hjälpen.
+Innan WMF 5,1, om du hade flera versioner av en modul installerad och alla delade ett hjälp avsnitt, till exempel about_PSReadline, `help about_PSReadline` skulle returnera flera ämnen utan ett uppenbart sätt att visa den riktiga hjälpen.
 
 WMF 5,1 åtgärdar detta genom att returnera hjälpen för den senaste versionen av ämnet.
 
-`Get-Help` ger dig inte möjlighet att ange vilken version du vill ha hjälp med. Undvik detta genom att navigera till katalogen moduler och visa hjälpen direkt med ett verktyg som din favorit redigerare.
+`Get-Help`innehåller inget sätt att ange vilken version du vill ha hjälp med. Undvik detta genom att navigera till katalogen moduler och visa hjälpen direkt med ett verktyg som din favorit redigerare.
 
 ### <a name="powershellexe-reading-from-stdin-stopped-working"></a>läsning av PowerShell. exe från STDIN slutade fungera
 
-Kunder använder `powershell -command -` från interna appar för att köra PowerShell genom att skicka skriptet via STDIN. det här har tyvärr avbrutits av andra ändringar i konsol värden.
+Kunder använder `powershell -command -` sig av inbyggda appar för att köra PowerShell genom att skicka skriptet via STDIN. det här har tyvärr avbrutits av andra ändringar i konsol värden.
 
 Detta är åtgärdat för version 5,1 i uppdaterings uppdateringen för Windows 10.
 

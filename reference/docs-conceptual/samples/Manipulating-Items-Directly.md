@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Manipulera objekt direkt
 ms.openlocfilehash: 50aed569cf6b876297abe3cf1544eba70f6279ce
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030123"
 ---
 # <a name="manipulating-items-directly"></a>Manipulera objekt direkt
@@ -35,7 +35,7 @@ Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 
 Om du vill skapa ett nytt objekt i fil systemet använder du cmdleten **New-item** . Inkludera parametern **Path** med sökvägen till objektet och parametern **itemType** med värdet "File" eller "Directory".
 
-Om du till exempel vill skapa en ny katalog med namnet "New. Directory" i katalogen C:\\Temp skriver du:
+Om du till exempel vill skapa en ny katalog med namnet "New. Directory" i katalogen\\C: Temp, skriver du:
 
 ```
 PS> New-Item -Path c:\temp\New.Directory -ItemType Directory
@@ -72,13 +72,13 @@ SKC  VC Name                           Property
   0   0 _Test                          {}
 ```
 
-När du skriver en register Sök väg ska du se till att inkludera kolon ( **:** ) i Windows PowerShell-enhetens namn, HKLM: och HKCU:. Utan kolonet känner Windows PowerShell inte igen enhets namnet i sökvägen.
+När du skriver en register Sök väg ska du se till att inkludera kolon (**:**) i Windows PowerShell-enhetens namn, HKLM: och HKCU:. Utan kolonet känner Windows PowerShell inte igen enhets namnet i sökvägen.
 
 ## <a name="why-registry-values-are-not-items"></a>Varför register värden inte är objekt
 
 När du använder cmdleten **Get-ChildItem** för att hitta objekten i en register nyckel, ser du aldrig faktiska register poster eller deras värden.
 
-Till exempel innehåller register nyckeln **HKEY_LOCAL_MACHINE\\program vara\\Microsoft\\Windows\\CurrentVersion\\-körningen** innehåller vanligt vis flera register poster som representerar program som körs när systemet startar.
+Till exempel innehåller register nyckeln **\\HKEY_LOCAL_MACHINE Software\\Microsoft\\Windows\\CurrentVersion\\-körningen** vanligt vis flera register poster som representerar program som körs när systemet startar.
 
 Men när du använder **Get-ChildItem** för att leta efter underordnade objekt i nyckeln ser du att det finns en **OptionalComponents** -under nyckel i nyckeln:
 
@@ -92,7 +92,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Även om det skulle vara praktiskt att behandla register poster som objekt kan du inte ange en sökväg till en register post på ett sätt som garanterar att det är unikt. Sök vägs notationen skiljer sig inte mellan register under nyckeln med namnet **Run** och register posten **(default)** i **körnings** under nyckeln. Dessutom, eftersom register post namn kan innehålla omvänt snedstreck ( **\\** ), om register poster var objekt, kunde du inte använda Sök vägs notation för att skilja en register post med namnet **Windows\\CurrentVersion\\köra** från under nyckeln som finns i den sökvägen.
+Även om det skulle vara praktiskt att behandla register poster som objekt kan du inte ange en sökväg till en register post på ett sätt som garanterar att det är unikt. Sök vägs notationen skiljer sig inte mellan register under nyckeln med namnet **Run** och register posten **(default)** i **körnings** under nyckeln. Dessutom, eftersom register post namn kan innehålla omvänt snedstreck (**\\**), om register poster var objekt, kunde du inte använda Sök vägs notation för att skilja en register post med namnet **\\Windows\\CurrentVersion att köras** från under nyckeln som finns i den sökvägen.
 
 ## <a name="renaming-existing-items-rename-item"></a>Byta namn på befintliga objekt (Byt namn på objekt)
 
@@ -115,7 +115,7 @@ At line:1 char:12
 
 Om du vill flytta en fil eller mapp använder du cmdleten **Move-item** .
 
-Följande kommando flyttar till exempel den nya katalog katalogen från katalogen C:\\Temp till roten på enhet C:. För att verifiera att objektet har flyttats inkluderar du parametern **Passthru** i cmdleten **Move-item** . Utan **Passthru**visar cmdleten **Move-item** inga resultat.
+Följande kommando flyttar till exempel den nya katalog katalogen från katalogen C:\\Temp till roten på enheten c:. För att verifiera att objektet har flyttats inkluderar du parametern **Passthru** i cmdleten **Move-item** . Utan **Passthru**visar cmdleten **Move-item** inga resultat.
 
 ```
 PS> Move-Item -Path C:\temp\New.Directory -Destination C:\ -PassThru
@@ -131,13 +131,13 @@ d----        2006-05-18  12:14 PM            New.Directory
 
 Om du är bekant med kopierings åtgärderna i andra gränssnitt kan du vara ovanlig om du märker att cmdleten **copy-item** i Windows PowerShell fungerar som den ska. När du kopierar ett objekt från en plats till en annan kopieras inte innehållet som standard.
 
-Om du till exempel kopierar den **nya katalog** katalogen från c:-enheten till katalogen c:\\temp, lyckas kommandot, men filerna i den nya katalog katalogen kopieras inte.
+Om du till exempel kopierar den **nya katalog** katalogen från c:-enheten till katalogen c:\\temp, lyckas kommandot, men filerna i katalogen New. Directory kopieras inte.
 
 ```powershell
 Copy-Item -Path C:\New.Directory -Destination C:\temp
 ```
 
-Om du visar innehållet i **C:\\temp\\New. Directory**, kommer du att se att den inte innehåller några filer:
+Om du visar innehållet i **C:\\Temp\\New. Directory**, kommer du att se att den inte innehåller några filer:
 
 ```
 PS> Get-ChildItem -Path C:\temp\New.Directory
@@ -197,7 +197,7 @@ Anta till exempel att du kör följande kommando:
 Invoke-Item C:\WINDOWS
 ```
 
-Ett Explorer-fönster som finns i C:\\Windows visas, precis som om du hade dubbelklickade på mappen C:\\Windows.
+Ett Explorer-fönster som finns i C:\\Windows visas, precis som om du hade dubbelklickat på mappen C:\\Windows.
 
 Om du anropar **Boot. ini** -filen på ett system före Windows Vista:
 

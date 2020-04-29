@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, resurs, Galleri, installation
 title: Installera ytterligare DSC-resurser
 ms.openlocfilehash: 7a6a935349358e11a77d2f00c0bf88e0ad18c097
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74417791"
 ---
 # <a name="install-additional-dsc-resources"></a>Installera ytterligare DSC-resurser
@@ -24,10 +24,10 @@ Det här är en lista över OOB-resurser som ingår i PowerShell 4,0 och en besk
 |**Arkiv**|Packar upp arkiv och en angiven plats. Validerar arkiven med en angiven **kontroll Summa**.|
 |**Miljö**|Hanterar miljövariabler.|
 |**Grupp**|Hanterar medlemskap i lokala grupper och kontroll grupper.|
-|**log**|Skriver meddelanden till händelse loggen `Microsoft-Windows-Desired State Configuration/Analytic`.|
-|**Paketfilerna**|Installerar eller avinstallerar paket med **argument**, **LogPath**, **ReturnCode**, andra inställningar.|
+|**Kvorumloggen**|Skriver meddelanden till `Microsoft-Windows-Desired State Configuration/Analytic` händelse loggen.|
+|**Paket**|Installerar eller avinstallerar paket med **argument**, **LogPath**, **ReturnCode**, andra inställningar.|
 |**Registernyckeln**|Hanterar register nycklar och värden.|
-|**Skript**|Gör att du kan skapa egna skript block för [Get-test-uppsättning](../resources/get-test-set.md) .|
+|**Över**|Gör att du kan skapa egna skript block för [Get-test-uppsättning](../resources/get-test-set.md) .|
 |**Tjänst**|Konfigurerar Windows-tjänster.|
 |**Användare** |Hanterar lokala användare och attribut.|
 |**WindowsFeature**|Hanterar roller och funktioner.|
@@ -45,7 +45,7 @@ Om du vill kontrol lera om du redan har **PowerShell** , eller om du vill ha hj�
 
 När **PowerShellGet** har installerats på systemet kan du söka efter och installera DSC-resurser som finns i [PowerShell-galleriet](https://www.powershellgallery.com/).
 
-Använd först cmdleten [find-dscresource Keyword Supports](/powershell/module/powershellget/find-dscresource) för att hitta DSC-resurser. När du kör `Find-DSCResource` för första gången visas följande uppmanad att installera "NuGet Provider".
+Använd först cmdleten [find-dscresource Keyword Supports](/powershell/module/powershellget/find-dscresource) för att hitta DSC-resurser. När du kör `Find-DSCResource` för första gången visas följande prompt för att installera "NuGet Provider".
 
 ```
 PS> Find-DSCResource
@@ -64,10 +64,10 @@ När du har tryckt på "y" installeras "NuGet"-providern. du ser en lista över 
 > [!NOTE]
 > Listan visas inte eftersom den är mycket stor.
 
-Du kan också ange `-Name` parameter med jokertecken eller `-Filter` parameter utan jokertecken för att begränsa sökningen. Det här exemplet försöker hitta en "TimeZone" DSC-resurs med hjälp av jokertecken.
+Du kan också ange `-Name` parametern med jokertecken eller `-Filter` parameter utan jokertecken för att begränsa sökningen. Det här exemplet försöker hitta en "TimeZone" DSC-resurs med hjälp av jokertecken.
 
 > [!IMPORTANT]
-> För närvarande finns det ett fel i `Find-DSCResource` cmdlet som förhindrar användning av jokertecken i både parametrarna `-Name` och `-Filter`. I det andra exemplet nedan visas en lösning med `Where-Object`.
+> För närvarande finns det ett fel i `Find-DSCResource` cmdleten som förhindrar att jokertecken används i `-Name` både `-Filter` parametrarna och. I det andra exemplet nedan visas en lösning `Where-Object`med.
 
 ```
 PS> Find-DSCResource -Name *Time*
@@ -135,7 +135,7 @@ TimeZone [String] #ResourceName
 }
 ```
 
-Du kan också visa andra resurser i den nyligen installerade modulen genom att ange parametern `-ModuleName`.
+Du kan också visa andra resurser i den nyligen installerade modulen genom att ange `-ModuleName` parametern.
 
 ```
 PS> Get-DSCResource -Module ComputerManagementDSC

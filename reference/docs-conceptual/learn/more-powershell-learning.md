@@ -3,10 +3,10 @@ ms.date: 06/18/2019
 keywords: PowerShell, cmdlet
 title: Mer PowerShell-utbildning
 ms.openlocfilehash: 9d756d24e46215bea5cb9530c2628b996327cb87
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74416739"
 ---
 # <a name="more-powershell-learning"></a>Mer PowerShell-utbildning
@@ -21,7 +21,7 @@ Förutom hjälpen som finns på kommando raden ger följande resurser mer inform
 - [Hey, Scripting Guy! Blogg](https://devblogs.microsoft.com/scripting/) artiklar är scenario-drivna och skrivna på ett engagerande och Lively sätt.
 - Har du frågor om att använda PowerShell? Anslut till hundratals andra personer som har liknande intressen i något av de många community-forum som visas på sidan [PowerShell community](/powershell/#pivot=main&panel=community) .
 
-## <a name="channel-9-videos"></a>Channel 9-videor
+## <a name="channel-9-videos"></a>Channel 9-video
 
 Channel 9 är vår plattform för video publicering. Det finns hundratals videor om PowerShell. [Sök efter "PowerShell"](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated) för att se vilka videor som är tillgängliga.
 

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skapa en kontinuerlig integrering och en pipeline för kontinuerlig distribution med DSC
 ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942148"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Skapa en kontinuerlig integrering och en pipeline för kontinuerlig distribution med DSC
@@ -18,7 +18,7 @@ Den här processen simulerar den första delen av en pipeline som används i en 
 
 En automatiserad CI/CD-pipeline hjälper dig att uppdatera program vara snabbare och mer tillförlitligt, se till att all kod testas och att en aktuell version av din kod är tillgänglig hela tiden.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 För att kunna använda det här exemplet bör du vara bekant med följande:
 
@@ -31,14 +31,14 @@ För att kunna använda det här exemplet bör du vara bekant med följande:
 
 För att skapa och köra det här exemplet behöver du en miljö med flera datorer och/eller virtuella datorer.
 
-### <a name="client"></a>Klient
+### <a name="client"></a>Client
 
 Det här är den dator där du utför all arbets inställning och kör exemplet.
 
 Klient datorn måste vara en Windows-dator med följande installerat:
 
 - [Git](https://git-scm.com/)
-- en lokal git-lagrings platsen som klonas från https://github.com/PowerShell/Demo_CI
+- en lokal git-lagrings platsen klonad frånhttps://github.com/PowerShell/Demo_CI
 - en text redigerare, till exempel [Visual Studio Code](https://code.visualstudio.com/)
 
 ### <a name="tfssrv1"></a>TFSSrv1
@@ -52,7 +52,7 @@ Datorn som kör Windows build-agenten som bygger projektet.
 Datorn måste ha en Windows build-agent installerad och igång.
 Se [distribuera en agent i Windows](/azure/devops/pipelines/agents/v2-windows) för instruktioner om hur du installerar och kör en Windows build-agent.
 
-Du måste också installera både `xDnsServer` och `xNetworking` DSC-moduler på den här datorn.
+Du måste också installera både- `xDnsServer` och `xNetworking` DSC-modulerna på den här datorn.
 
 ### <a name="testagent1"></a>TestAgent1
 
@@ -98,7 +98,7 @@ Innan vi skapar pipelinen build och Deployment kan vi titta på en del av koden 
 
 ### <a name="the-dsc-configuration"></a>DSC-konfigurationen
 
-Öppna filen `DNSServer.ps1` (från roten i den lokala Demo_CIs lagrings platsen, `./InfraDNS/Configs/DNSServer.ps1`).
+Öppna filen `DNSServer.ps1` (från roten i den lokala Demo_CI `./InfraDNS/Configs/DNSServer.ps1`-lagringsplatsen).
 
 Den här filen innehåller DSC-konfigurationen som konfigurerar DNS-servern. Här är dess helhet:
 
@@ -149,29 +149,29 @@ configuration DNSServer
 }
 ```
 
-Lägg märke till `Node`-instruktionen:
+Lägg märke `Node` till instruktionen:
 
 ```powershell
 Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 ```
 
-Detta hittar alla noder som har definierats som en roll för `DNSServer` i [konfigurations data](../configurations/configData.md), som skapas av `DevEnv.ps1`-skriptet.
+Detta hittar alla noder som har definierats som en roll `DNSServer` i [konfigurations data](../configurations/configData.md), som skapas av `DevEnv.ps1` skriptet.
 
-Du kan läsa mer om metoden `Where` i [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
+Du kan läsa mer om `Where` metoden i [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 Att använda konfigurations data för att definiera noder är viktigt när du använder CI eftersom Node-information troligen kommer att ändras mellan miljöer, och med hjälp av konfigurations data kan du enkelt göra ändringar i Node-informationen utan att ändra konfigurations koden.
 
 I det första resurs blocket anropar konfigurationen **WindowsFeature** för att se till att DNS-funktionen är aktive rad.
 Resurs blocken som följer anrops resurser från [xDnsServer](https://github.com/PowerShell/xDnsServer) -modulen för att konfigurera den primära zonen och DNS-poster.
 
-Observera att de två `xDnsRecord` blocken är omslutna `foreach` slingor som itererar genom matriser i konfigurations data.
+Observera att de två `xDnsRecord` blocken omsluts av `foreach` slingor som itererar genom matriser i konfigurations data.
 Sedan skapas konfigurations data av `DevEnv.ps1` skriptet, som vi ska titta på härnäst.
 
 ### <a name="configuration-data"></a>Konfigurationsdata
 
-`DevEnv.ps1`-filen (från roten i den lokala Demo_CIs lagrings platsen, `./InfraDNS/DevEnv.ps1`) anger miljödefinierade konfigurations data i en hash-enhet och skickar den hash-tabellen till ett anrop till funktionen `New-DscConfigurationDataDocument`, som definieras i `DscPipelineTools.psm` (`./Assets/DscPipelineTools/DscPipelineTools.psm1`).
+`DevEnv.ps1` Filen (från roten i `./InfraDNS/DevEnv.ps1`den lokala Demo_CI-lagringsplatsen) anger miljödefinierade konfigurations data i en hash-enhet och skickar sedan den hash-tabellen till ett anrop `New-DscConfigurationDataDocument` till funktionen, som definieras i `DscPipelineTools.psm` (`./Assets/DscPipelineTools/DscPipelineTools.psm1`).
 
-`DevEnv.ps1`-filen:
+`DevEnv.ps1` Filen:
 
 ```powershell
 param(
@@ -198,15 +198,15 @@ $DevEnvironment = @{
 Return New-DscConfigurationDataDocument -RawEnvData $DevEnvironment -OutputPath $OutputPath
 ```
 
-Funktionen `New-DscConfigurationDataDocument` (definieras i `\Assets\DscPipelineTools\DscPipelineTools.psm1`) skapar program mässigt ett konfigurations data dokument från hash-tabellen (zondata) och matrisen (icke-Node-data) som överförs som `RawEnvData`-och `OtherEnvData` parametrar.
+Funktionen (definierad i `\Assets\DscPipelineTools\DscPipelineTools.psm1`) skapar program mässigt ett konfigurations data dokument från hash-tabellen (Node data) och matrisen (data som inte finns på en `RawEnvData` nod) som skickas `OtherEnvData` som-och-parametrarna. `New-DscConfigurationDataDocument`
 
-I vårt fall används endast parametern `RawEnvData`.
+I vårt fall används endast `RawEnvData` parametern.
 
 ### <a name="the-psake-build-script"></a>Psake build-skriptet
 
-[Psake](https://github.com/psake/psake) build-skriptet som definieras i `Build.ps1` (från roten i Demo_CI-lagringsplatsen `./InfraDNS/Build.ps1`) definierar uppgifter som ingår i versionen.
+[Psake](https://github.com/psake/psake) build-skriptet som definieras `Build.ps1` i (från roten i Demo_CI `./InfraDNS/Build.ps1`-lagringsplatsen) definierar uppgifter som ingår i bygget.
 Den definierar också vilka andra aktiviteter varje aktivitet är beroende av.
-När det anropas, ser psake-skriptet till att den angivna aktiviteten (eller aktiviteten med namnet `Default` om inget anges) körs och att alla beroenden också körs (detta är rekursivt, så att beroenden av beroenden körs, och så vidare).
+När det anropas ser psake-skriptet till att den angivna aktiviteten (eller aktiviteten som `Default` kallas om ingen anges) körs och att alla beroenden också körs (detta är rekursivt, så att beroenden av beroenden körs, och så vidare).
 
 I det här exemplet definieras `Default` uppgiften som:
 
@@ -214,10 +214,10 @@ I det här exemplet definieras `Default` uppgiften som:
 Task Default -depends UnitTests
 ```
 
-`Default` aktiviteten har ingen implementering, men har ett beroende av `CompileConfigs` aktiviteten.
+`Default` Aktiviteten har ingen implementering, men har ett beroende av `CompileConfigs` uppgiften.
 Den resulterande kedjan med aktivitets beroenden säkerställer att alla aktiviteter i build-skriptet körs.
 
-I det här exemplet anropas psake-skriptet av ett anrop till `Invoke-PSake` i `Initiate.ps1`-filen (finns i roten av Demo_CI-lagringsplatsen):
+I det här exemplet anropas psake-skriptet av ett anrop till `Invoke-PSake` i `Initiate.ps1` filen (som finns i roten i Demo_CI-lagringsplatsen):
 
 ```powershell
 param(
@@ -244,11 +244,11 @@ Bygg skriptet definierar följande uppgifter:
 
 #### <a name="generateenvironmentfiles"></a>GenerateEnvironmentFiles
 
-Kör `DevEnv.ps1`, vilket genererar konfigurations data filen.
+Körs `DevEnv.ps1`, vilket genererar konfigurations data filen.
 
 #### <a name="installmodules"></a>InstallModules
 
-Installerar modulerna som krävs av konfigurationen `DNSServer.ps1`.
+Installerar de moduler som krävs för konfigurationen `DNSServer.ps1`.
 
 #### <a name="scriptanalysis"></a>ScriptAnalysis
 
@@ -268,17 +268,17 @@ Skapar mapparna som används för exemplet och tar bort alla test resultat, konf
 
 ### <a name="the-psake-deploy-script"></a>Skript för psake-distribution
 
-Det [psake](https://github.com/psake/psake) distributions skript som definierats i `Deploy.ps1` (från roten i Demo_CI-lagringsplatsen `./InfraDNS/Deploy.ps1`) definierar aktiviteter som distribuerar och kör konfigurationen.
+Det [psake](https://github.com/psake/psake) distributions skript som `Deploy.ps1` definierats i (från roten i Demo_CI `./InfraDNS/Deploy.ps1`-lagringsplatsen) definierar aktiviteter som distribuerar och kör konfigurationen.
 
-`Deploy.ps1` definierar följande uppgifter:
+`Deploy.ps1`definierar följande uppgifter:
 
 #### <a name="deploymodules"></a>DeployModules
 
-Startar en PowerShell-session på `TestAgent1` och installerar de moduler som innehåller de DSC-resurser som krävs för konfigurationen.
+Startar en PowerShell-session `TestAgent1` på och installerar de moduler som innehåller de DSC-resurser som krävs för konfigurationen.
 
 #### <a name="deployconfigs"></a>DeployConfigs
 
-Anropar cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) för att köra konfigurationen på `TestAgent1`.
+Anropar cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) för att köra konfigurationen `TestAgent1`på.
 
 #### <a name="integrationtests"></a>IntegrationTests
 
@@ -294,7 +294,7 @@ Tar bort alla moduler som är installerade i tidigare körningar och ser till at
 
 ### <a name="test-scripts"></a>Test skript
 
-Godkännande-, integrations-och enhets test definieras i skript i `Tests`-mappen (från roten i Demo_CI-lagringsplatsen `./InfraDNS/Tests`), var och en i filer med namnet `DNSServer.tests.ps1` i respektive mapp.
+Godkännande-, integrations-och enhets test definieras i skript `Tests` i mappen (från roten i Demo_CI-lagringsplatsen `./InfraDNS/Tests`), var och en i `DNSServer.tests.ps1` filer som heter i respektive mapp.
 
 Test skripten använder syntaxen [pester](https://github.com/pester/Pester/wiki) och [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) .
 
@@ -335,18 +335,18 @@ När du har lagt till dessa build-steg redigerar du egenskaperna för varje steg
 
 1. Ange egenskapen **Type** till `File Path`.
 1. Ange egenskapen för **skript Sök vägen** till `initiate.ps1`.
-1. Lägg till `-fileName build` i egenskapen **arguments** .
+1. Lägg `-fileName build` till i egenskapen **arguments** .
 
-Det här build-steget Kör `initiate.ps1`-filen, som anropar psake build-skriptet.
+Det här build-steget `initiate.ps1` kör filen som anropar psake build-skriptet.
 
 ### <a name="publish-test-results"></a>Publicera Testresultat
 
-1. Ange **test resultat format** till `NUnit`
-1. Ange **testresultat filer** som ska `InfraDNS/Tests/Results/*.xml`
-1. Ange `Unit`för **test körnings titel** .
+1. Ange **test resultat format** till`NUnit`
+1. Ange **testresultat filer** till`InfraDNS/Tests/Results/*.xml`
+1. Ange **körnings titel** för `Unit`test till.
 1. Kontrol lera att **kontroll alternativen** **är aktiverade** och att **alltid körs** båda är markerade.
 
-Det här build-steget Kör enhets testerna i pester-skriptet som vi såg tidigare och lagrar resultaten i `InfraDNS/Tests/Results/*.xml`-mappen.
+Det här build-steget Kör enhets testerna i pester-skriptet som vi såg tidigare och lagrar resultatet i `InfraDNS/Tests/Results/*.xml` mappen.
 
 ### <a name="copy-files"></a>Kopiera filer
 
@@ -359,23 +359,23 @@ Det här build-steget Kör enhets testerna i pester-skriptet som vi såg tidigar
    **\Integration\**
    ```
 
-1. Ange **TargetFolder** till `$(Build.ArtifactStagingDirectory)\`
+1. Ange **TargetFolder** till`$(Build.ArtifactStagingDirectory)\`
 
 I det här steget kopieras bygg-och test skript till uppsamlings katalogen så att kan publiceras som build-artefakter i nästa steg.
 
 ### <a name="publish-artifact"></a>Publicera artefakt
 
-1. Ange **sökväg för att publicera** till `$(Build.ArtifactStagingDirectory)\`
-1. Ange **artefakt namn** till `Deploy`
-1. Ange **artefakt typ** till `Server`
+1. Ange **sökväg för publicering** till`$(Build.ArtifactStagingDirectory)\`
+1. Ange **artefakt namn** till`Deploy`
+1. Ange **artefakt typ** till`Server`
 1. Välj `Enabled` i **kontroll alternativ**
 
 ## <a name="enable-continuous-integration"></a>Aktivera kontinuerlig integrering
 
-Nu ska vi konfigurera en utlösare som gör att projektet skapas varje gång en ändring checkas in i `ci-cd-example` grenen av Git-lagringsplatsen.
+Nu ska vi konfigurera en utlösare som gör att projektet skapas när en ändring checkas in i `ci-cd-example` grenen av Git-lagringsplatsen.
 
 1. I TFS klickar du på fliken **Build & version**
-1. Välj build-definitionen för `DNS Infra` och klicka på **Redigera**
+1. Välj `DNS Infra` build-definitionen och klicka på **Redigera**
 1. Klicka på fliken **utlösare**
 1. Välj **kontinuerlig integrering (CI)** och välj `refs/heads/ci-cd-example` i list rutan gren
 1. Klicka på **Spara** och sedan på **OK**
@@ -386,7 +386,7 @@ Nu utlöser alla ändringar i TFS git-lagringsplatsen en automatiserad version.
 
 Nu ska vi skapa en versions definition så att projektet distribueras till utvecklings miljön med varje kod incheckning.
 
-Det gör du genom att lägga till en ny versions definition som är kopplad till den `InfraDNS` Bygg definition som du skapade tidigare.
+Det gör du genom att lägga till en ny versions definition `InfraDNS` som är associerad med build-definitionen som du skapade tidigare.
 Se till att välja **kontinuerlig distribution** så att en ny version utlöses när en ny version har slutförts.
 ([Vad är Frisläpp pipelines?](/azure/devops/pipelines/release/)) och konfigurera det enligt följande:
 
@@ -400,32 +400,32 @@ Redigera stegen enligt följande:
 
 ### <a name="powershell-script"></a>PowerShell-skript
 
-1. Ställ in fältet **skript Sök väg** på `$(Build.DefinitionName)\Deploy\initiate.ps1"`
-1. Ange fältet **argument** som `-fileName Deploy`
+1. Ange fältet **skript Sök väg** till`$(Build.DefinitionName)\Deploy\initiate.ps1"`
+1. Ange **argument** fältet till`-fileName Deploy`
 
 ### <a name="first-publish-test-results"></a>Första publicerings Testresultat
 
 1. Välj `NUnit` för fältet **test resultat format**
-1. Ställ in fältet **Testa resultat** på `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
-1. Ställ in **testets körnings titel** på `Integration`
+1. Ange fältet **Testa resultat filer** till`$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
+1. Ställ in **testets körnings titel** på`Integration`
 1. Under **kontroll alternativ**markerar du **Kör alltid**
 
 ### <a name="second-publish-test-results"></a>Andra publicerings Testresultat
 
 1. Välj `NUnit` för fältet **test resultat format**
-1. Ställ in fältet **Testa resultat** på `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
-1. Ställ in **testets körnings titel** på `Acceptance`
+1. Ange fältet **Testa resultat filer** till`$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
+1. Ställ in **testets körnings titel** på`Acceptance`
 1. Under **kontroll alternativ**markerar du **Kör alltid**
 
 ## <a name="verify-your-results"></a>Verifiera dina resultat
 
-Nu kommer en ny version att starta när du skickar ändringar i `ci-cd-example` grenen till TFS.
+Nu kommer en ny version att starta när du `ci-cd-example` skickar ändringar i grenen till TFS.
 Om skapandet har slutförts utlöses en ny distribution.
 
-Du kan kontrol lera resultatet av distributionen genom att öppna en webbläsare på klient datorn och navigera till `www.contoso.com`.
+Du kan kontrol lera resultatet av distributionen genom att öppna en webbläsare på klient datorn och gå till `www.contoso.com`.
 
 ## <a name="next-steps"></a>Nästa steg
 
-I det här exemplet konfigureras DNS-servern `TestAgent1` så att URL: en `www.contoso.com` matchas till `TestAgent2`, men den distribuerar inte en webbplats.
-Skeleton för att göra detta finns i lagrings platsen under mappen `WebApp`.
+I det här exemplet konfigureras DNS `TestAgent1` -servern så att `www.contoso.com` URL: en matchar `TestAgent2`, men den distribuerar inte en webbplats.
+Skeleton för att göra detta finns i `WebApp` mappen lagrings platsen under mappen.
 Du kan använda de tillhandahållna stub-skripten för att skapa psake-skript, pester-tester och DSC-konfigurationer för att distribuera din egen webbplats.

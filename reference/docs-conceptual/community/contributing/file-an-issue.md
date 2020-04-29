@@ -4,10 +4,10 @@ description: Den här artikeln förklarar hur du ger feedback om PowerShell-doku
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: fa2c74d55cdcd779646c50d58f7705f7a4c33542
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79078551"
 ---
 # <a name="how-to-file-a-powershell-docs-issue"></a>Så här skickar du ett problem med PowerShell-dok
@@ -21,7 +21,7 @@ Det finns två sätt att skapa ett problem:
 
 En fullständig beskrivning av feedback-kontrollerna finns i Team bloggen för dokument som presenterar den här [funktionen][feedback].
 
-Längst ned på de flesta sidor på `docs.microsoft.com`visas två knappar för feedback. En är en länk till produkt feedback och en är för feedback från dokumentation. Dokumentations feedback kräver ett GitHub-konto. Om du klickar på knappen autentiseras du i GitHub och sedan presenteras ett enkelt formulär där du kan ange dina synpunkter. När du skickar formuläret skapar feedback-kontrollen ett nytt GitHub-ärende och länkar det till den aktuella artikeln.
+Längst ned på de flesta sidorna på `docs.microsoft.com`visas två knappar för feedback. En är en länk till produkt feedback och en är för feedback från dokumentation. Dokumentations feedback kräver ett GitHub-konto. Om du klickar på knappen autentiseras du i GitHub och sedan presenteras ett enkelt formulär där du kan ange dina synpunkter. När du skickar formuläret skapar feedback-kontrollen ett nytt GitHub-ärende och länkar det till den aktuella artikeln.
 
 > [!NOTE]
 > Detta är inte en support kanal. Detta är ett sätt att ställa tydliga frågor om dokumentation eller rapportera fel och utelämnanden. Om du behöver teknisk support kan du läsa mer i [community-resurser](../community-support.md).

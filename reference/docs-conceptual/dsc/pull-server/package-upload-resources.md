@@ -3,18 +3,18 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Paketera och ladda upp resurser till en hämtnings Server
 ms.openlocfilehash: 8aac343d7495ecda94ed76d1d97079397eecd65f
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278517"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Paketera och ladda upp resurser till en hämtnings Server
 
 I avsnitten nedan förutsätts att du redan har konfigurerat en hämtnings Server. Om du inte har konfigurerat din pull-server kan du använda följande guider:
 
-- [Konfigurera en DSC SMB-pull-server](pullServerSmb.md)
-- [Konfigurera en DSC HTTP-pull-server](pullServer.md)
+- [Konfigurera en DSC SMB-hämtningsserver](pullServerSmb.md)
+- [Konfigurera en DSC HTTP-hämtningsserver](pullServer.md)
 
 Varje målnod kan konfigureras för att ladda ned konfigurationer, resurser och till och med rapportera dess status. Den här artikeln visar hur du laddar upp resurser så att de kan laddas ned och konfigurera klienterna att ladda ned resurser automatiskt. När noden tar emot en tilldelad konfiguration via **pull** eller **push** (V5) laddar den automatiskt ned eventuella resurser som krävs av konfigurationen från den plats som anges i LCM.
 
@@ -47,7 +47,7 @@ När modulen har komprimerats och bytt namn måste du skapa en **kontroll Summa*
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 ```
 
-Inga utdata visas, men nu bör du se en "xPSDesiredStateConfiguration_8.4.4.0. zip. kontroll Summa". Du kan också köra `New-DSCCheckSum` mot en katalog med filer med hjälp av `-Path`-parametern. Om det redan finns en kontroll summa kan du tvinga den att skapas igen med `-Force`-parametern.
+Inga utdata visas, men nu bör du se en "xPSDesiredStateConfiguration_8.4.4.0. zip. kontroll Summa". Du kan också köra `New-DSCCheckSum` mot en katalog med filer med hjälp `-Path` av parametern. Om det redan finns en kontroll summa kan du tvinga den att skapas igen med `-Force` parametern.
 
 ### <a name="where-to-store-resource-archives"></a>Var resurs Arkiv ska lagras
 
@@ -97,5 +97,5 @@ Du kan tvinga en nod att uppdatera sina resurser genom att ändra versions numre
 
 ## <a name="see-also"></a>Se även
 
-- [Konfigurera en DSC SMB-pull-server](pullServerSmb.md)
-- [Konfigurera en DSC HTTP-pull-server](pullServer.md)
+- [Konfigurera en DSC SMB-hämtningsserver](pullServerSmb.md)
+- [Konfigurera en DSC HTTP-hämtningsserver](pullServer.md)

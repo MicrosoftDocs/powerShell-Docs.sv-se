@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Förbättringar i felsökning av PowerShell-skript
 ms.openlocfilehash: f1771a451ba671da2371fcfc95374e6131573ddc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71145182"
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>Förbättringar i felsökning av PowerShell-skript
@@ -17,9 +17,9 @@ PowerShell 5,0 innehåller flera förbättringar som förbättrar fel söknings 
 
 Med PowerShell-konsolen och PowerShell ISE kan du nu dela upp det i fel söknings programmet för skript körning. Detta fungerar både i lokala och fjärranslutna sessioner.
 
-Tryck på <kbd>Ctrl</kbd>+<kbd>Break</kbd>i-konsolen.
+Tryck på <kbd>CTRL</kbd>+<kbd>Break</kbd>i-konsolen.
 
-Tryck på <kbd>Ctrl</kbd>+<kbd>B</kbd>i ISE eller använd kommandot **Debug-> Bryt alla** Meny kommandon.
+Tryck på <kbd>CTRL</kbd>+<kbd>B</kbd>i ISE eller Använd kommandot **Debug-> Bryt alla** Meny kommandon.
 
 ## <a name="remote-debugging-and-remote-file-editing-in-powershell-ise"></a>Fjärrfelsökning och fjärrstyrd fil redigering i PowerShell ISE
 
@@ -48,7 +48,7 @@ Nya cmdletar har lagts till som gör att du kan lista aktuella körnings utrymme
 
 ### <a name="attach-to-process-hosting-powershell"></a>Ansluta till process hosting PowerShell
 
-Nu kan du ansluta till en dator process som har PowerShell inläst. Du gör detta genom att ange en interaktiv session med värd processen. Mer information finns i följande avsnitt:
+Nu kan du ansluta till en dator process som har PowerShell inläst. Du gör detta genom att ange en interaktiv session med värd processen. Mer information finns i:
 
 - [Retur-PSHostProcess](/powershell/module/Microsoft.PowerShell.Core/Enter-PSHostProcess)
 - [Avsluta-PSHostProcess](/powershell/module/Microsoft.PowerShell.Core/Exit-PSHostProcess)

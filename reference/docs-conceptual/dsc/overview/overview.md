@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Översikt över önskad tillstånds konfiguration i Windows PowerShell
 ms.openlocfilehash: 5c4853cb059ca0cf063a9450f97230732bc56b10
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941728"
 ---
 # <a name="windows-powershell-desired-state-configuration-overview"></a>Översikt över önskad tillstånds konfiguration i Windows PowerShell

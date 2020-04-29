@@ -4,10 +4,10 @@ contributor: manikb
 keywords: Galleri, PowerShell, cmdlet, psget
 title: Moduler med kompatibla PowerShell-versioner
 ms.openlocfilehash: 425588c168a4f864fdc0c52aa53cfd748b80dc98
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71329192"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Moduler med kompatibla PowerShell-versioner
@@ -162,7 +162,7 @@ $PSModule.OnRemove = {
 I PS 5,1 eller senare tillåts $PSEdition global variabel i manifest filen för modulen. Med den här variabeln kan modulen författare ange de villkorliga värdena i manifest filen för modulen. $PSEdition variabeln kan refereras i begränsat språk läge eller i ett data avsnitt.
 
 > [!NOTE]
-> När ett modul-manifest har angetts med CompatiblePSEditions-nyckeln eller använder `$PSEdition` variabel, kan det inte importeras i lägre versioner av PowerShell.
+> När ett modul-manifest har angetts med CompatiblePSEditions-nyckeln eller `$PSEdition` använder variabeln, kan den inte importeras i lägre versioner av PowerShell.
 
 Manifest fil för exempel modul med CompatiblePSEditions-nyckel
 

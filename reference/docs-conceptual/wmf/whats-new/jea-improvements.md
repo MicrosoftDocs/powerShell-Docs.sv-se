@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Förbättringar i JEA (Just Enough Administration)
 ms.openlocfilehash: 847ae92a6225023bcd0ee3dfe7c7058bdc356836
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71145035"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Förbättringar i JEA (Just Enough Administration)
@@ -15,7 +15,7 @@ Bara tillräckligt med administration är en ny funktion i WMF 5,0 som möjligg�
 
 ## <a name="constrained-file-copy-tofrom-jea-endpoints"></a>Begränsad fil kopiering till/från JEA-slutpunkter
 
-Du kan nu fjärrkopiera filer till/från en JEA-slutpunkt och vara säker på att den anslutande användaren inte kan kopiera bara *några* filer i systemet. Detta är möjligt genom att konfigurera din PSSC-fil för att montera en användar enhet för att ansluta användare. Användar enheten är en ny PSDrive som är unik för varje användare som ansluter och behålls mellan sessioner. När `Copy-Item` används för att kopiera filer till eller från en JEA-session, är det begränsat till att endast tillåta åtkomst till användar enheten. Försök att kopiera filer till andra PSDrive kommer att Miss lyckas.
+Du kan nu fjärrkopiera filer till/från en JEA-slutpunkt och vara säker på att den anslutande användaren inte kan kopiera bara *några* filer i systemet. Detta är möjligt genom att konfigurera din PSSC-fil för att montera en användar enhet för att ansluta användare. Användar enheten är en ny PSDrive som är unik för varje användare som ansluter och behålls mellan sessioner. När `Copy-Item` används för att kopiera filer till eller från en Jea-session är det begränsat att endast tillåta åtkomst till användar enheten. Försök att kopiera filer till andra PSDrive kommer att Miss lyckas.
 
 Använd följande nya fält för att konfigurera användar enheten i JEA-sessionens konfigurations fil:
 
@@ -24,9 +24,9 @@ MountUserDrive = $true
 UserDriveMaximumSize = 10485760    # 10 MB
 ```
 
-Mappen som används för att återställa användar enheten skapas på `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
+Mappen som används för att återställa användar enheten skapas på`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
 
-Om du vill använda användar enheten och kopiera filer till/från en JEA-slutpunkt som kon figurer ATS för att exponera användar enheten använder du parametrarna `-ToSession` och `-FromSession` på `Copy-Item`.
+Om du vill använda användar enheten och kopiera filer till/från en JEA-slutpunkt som kon figurer ATS för att exponera `-ToSession` användar `-FromSession` enheten använder `Copy-Item`du parametrarna och på.
 
 ```powershell
 # Connect to the JEA endpoint
@@ -63,7 +63,7 @@ RunAsVirtualAccount = $false
 > Grupphanterade tjänst konton ger inte isolering eller begränsat omfång för virtuella konton.
 > Alla anslutna användare delar samma gMSA-identitet, som kan ha behörigheter i hela företaget. Var försiktig när du väljer att använda en gMSA och föredra alltid virtuella konton som är begränsade till den lokala datorn när det är möjligt.
 
-## <a name="conditional-access-policies"></a>Villkorliga åtkomstprinciper
+## <a name="conditional-access-policies"></a>Principer för villkorsstyrd åtkomst
 
 JEA är bra om du begränsar vad någon kan göra när de har anslutit till ett system för att hantera det, men vad du vill begränsa *när* någon kan använda Jea? Vi har lagt till konfigurations alternativen i sessionens konfigurationsfiler (. PSSC) så att du kan ange säkerhets grupper som en användare måste tillhöra för att kunna upprätta en JEA-session. Detta är särskilt användbart om du har ett JIT-system (just in Time) i din miljö och vill göra det möjligt för dina användare att öka sina privilegier innan de får åtkomst till en JEA-slutpunkt med hög privilegier.
 

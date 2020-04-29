@@ -3,10 +3,10 @@ title: Community-resurser för PowerShell
 description: Lista över resurser som har skapats för och av PowerShell-användare
 ms.date: 03/04/2020
 ms.openlocfilehash: 50f5eaaef9ef30351fa605f74648a8efbce90af3
-ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/30/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80395027"
 ---
 # <a name="powershell-community-resources"></a>Community-resurser för PowerShell
@@ -19,12 +19,12 @@ PowerShell-communityn kan fil ärenden, buggar eller funktions förfrågningar i
 
 - [Användar grupper](https://aka.ms/psusergroup)
 - [PowerShell-Tech-community](https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell)
-- [DSC-community](https://dsccommunity.org/)
+- [DSC Community](https://dsccommunity.org/)
 - [PowerShell.org](https://powershell.org/)
 - [StackOverFlow](https://stackoverflow.com/questions/tagged/powershell)
 - [r/PowerShell-subreddit](https://www.reddit.com/r/PowerShell/)
-- [PowerShell-slack](https://join.slack.com/t/powershell/shared_invite/enQtNjk2ODE4MTkxNTY4LWJlOTU3NzBiYWFiMjM3Mzg3M2E5OGJiNGE4YjVhODVlNWNlY2I2ZWRkNGY2NjE4MThiYTg4OWI5NjA4MDM3ZjQ)
-- [PowerShell-Discord](https://discord.gg/Ju25cw6)
+- [PowerShell på Slack](https://join.slack.com/t/powershell/shared_invite/enQtNjk2ODE4MTkxNTY4LWJlOTU3NzBiYWFiMjM3Mzg3M2E5OGJiNGE4YjVhODVlNWNlY2I2ZWRkNGY2NjE4MThiYTg4OWI5NjA4MDM3ZjQ)
+- [PowerShell på Discord](https://discord.gg/Ju25cw6)
 
 För information om vår support policy, se [PowerShell-Supportens livs cykel](/powershell/scripting/powershell-support-lifecycle).
 

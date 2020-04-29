@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-användar resurs
 ms.openlocfilehash: dec432c2ff1b4e4408165fef391e77cbf1d85ac4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941287"
 ---
 # <a name="dsc-user-resource"></a>DSC-användar resurs
@@ -40,18 +40,18 @@ User [string] #ResourceName
 |---|---|
 |UserName |Anger det konto namn som du vill säkerställa ett speciellt tillstånd för. |
 |Beskrivning |Anger beskrivningen som du vill använda för användar kontot. |
-|Inaktiverat |Anger om kontot är aktiverat. Ange den här egenskapen till `$true` för att säkerställa att det här kontot är inaktiverat och ange det som `$false` för att säkerställa att det är aktiverat. |
+|Disabled |Anger om kontot är aktiverat. Ange den här egenskapen `$true` till för att säkerställa att det här kontot är inaktiverat `$false` och ange det för att säkerställa att det är aktiverat. |
 |FullName |Representerar en sträng med det fullständiga namn som du vill använda för användar kontot. |
-|Lösenord |Anger det lösen ord som du vill använda för det här kontot. |
-|PasswordChangeNotAllowed |Anger om användaren kan ändra lösen ordet. Ange den här egenskapen till `$true` för att se till att användaren inte kan ändra lösen ordet och ange det som `$false` för att tillåta att användaren ändrar lösen ordet. Standardvärdet är `$false`. |
-|PasswordChangeRequired |Anger om användaren måste ändra lösen ordet vid nästa inloggning. Ange den här egenskapen som `$true` om användaren måste ändra lösen ordet. Standardvärdet är `$true`. |
-|PasswordNeverExpires |Anger om lösen ordet upphör att gälla. För att se till att lösen ordet för det här kontot aldrig upphör att gälla, anger du egenskapen till `$true`. Ange det som `$false` om lösen ordet upphör att gälla. Standardvärdet är `$false`. |
+|lösenordsinställning |Anger det lösen ord som du vill använda för det här kontot. |
+|PasswordChangeNotAllowed |Anger om användaren kan ändra lösen ordet. Ange den här egenskapen `$true` till om du vill se till att användaren inte kan ändra lösen ordet och `$false` ange det som tillåter användaren att ändra lösen ordet. Standardvärdet är `$false`. |
+|PasswordChangeRequired |Anger om användaren måste ändra lösen ordet vid nästa inloggning. Ange den här egenskapen `$true` till om användaren måste ändra lösen ordet. Standardvärdet är `$true`. |
+|PasswordNeverExpires |Anger om lösen ordet upphör att gälla. För att se till att lösen ordet för det här kontot aldrig upphör att gälla, anger `$true`du egenskapen till. Ange det som `$false` om lösen ordet upphör att gälla. Standardvärdet är `$false`. |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"`. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
 |Kontrol |Anger om kontot finns. Ange att den här egenskapen **finns för att** se till att kontot finns och att det inte finns **något att se** till att kontot inte finns. Standardvärdet finns **.** |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 

@@ -3,10 +3,10 @@ ms.date: 08/15/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: Kom igång med önskad tillstånds konfiguration (DSC) för Windows
 ms.openlocfilehash: 2add2c936e60c0c9446bf4b398fbf7b4bd6407f7
-ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75416169"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Kom igång med önskad tillstånds konfiguration (DSC) för Windows
@@ -20,11 +20,11 @@ Följande versioner stöds:
 
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012R2
+- Windows Server-2012R2
 - Windows Server 2012
 - Windows Server 2008 R2 SP1
 - Windows 10
-- Windows 8.1
+- Windows 8,1
 - Windows 7
 
 Den fristående produkt-SKU: n för [Microsoft Hyper-V server](/windows-server/virtualization/hyper-v/hyper-v-server-2016) innehåller ingen implementering av önskad tillstånds konfiguration så att den inte kan hanteras av PowerShell DSC eller Azure Automation tillstånds konfiguration.
@@ -43,7 +43,7 @@ I följande avsnitt beskrivs hur du skapar och kör DSC-konfigurationer på Wind
 
 ### <a name="creating-a-configuration-mof-document"></a>Skapa ett MOF-dokument för konfiguration
 
-Windows PowerShell-`Configuration` nyckelordet används för att skapa en konfiguration.
+Windows PowerShell `Configuration` -nyckelordet används för att skapa en konfiguration.
 Följande steg beskriver hur du skapar ett konfigurations dokument med hjälp av Windows PowerShell.
 
 #### <a name="define-a-configuration-and-generate-the-configuration-document"></a>Definiera en konfiguration och generera konfigurations dokumentet:
@@ -83,7 +83,7 @@ Install-Module 'PSDscResources' -Verbose
 #### <a name="apply-the-configuration-to-the-machine"></a>Tillämpa konfigurationen på datorn
 
 > [!NOTE]
-> För att DSC ska kunna köras måste Windows konfigureras för att ta emot PowerShell-fjärrkommandon även när du kör en `localhost`-konfiguration. För att enkelt konfigurera din miljö korrekt kör du bara `Set-WsManQuickConfig -Force` i en upphöjd PowerShell-Terminal.
+> För att DSC ska kunna köras måste Windows konfigureras för att ta emot PowerShell-fjärrkommandon även när du `localhost` kör en konfiguration. För att enkelt konfigurera din miljö på rätt sätt `Set-WsManQuickConfig -Force` kan du bara köra i en upphöjd PowerShell-Terminal.
 
 Konfigurations dokument (MOF-filer) kan tillämpas på machineusing [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) -cmdlet.
 

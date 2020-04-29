@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-skript resurs
 ms.openlocfilehash: e09e86011fa7dbb2a4d7f28b5032b4328b6f6ec2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941329"
 ---
 # <a name="dsc-script-resource"></a>DSC-skript resurs
@@ -45,7 +45,7 @@ Script [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"`. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 
 > [!NOTE]
@@ -59,23 +59,23 @@ DSC använder inte utdata från **GetScript**. Cmdlet: en [Get-DscConfiguration]
 
 #### <a name="testscript"></a>TestScript
 
-**TestScript** körs av DSC för att avgöra om **SetScript** ska köras. Om **TestScript** returnerar `$false`kör DSC **SetScript** för att återställa noden till önskad status. Det måste returnera ett booleskt värde. Resultatet av `$true` anger att noden är kompatibel och att **SetScript** inte ska köras.
+**TestScript** körs av DSC för att avgöra om **SetScript** ska köras. Om **TestScript** returnerar `$false`kör DSC **SetScript** för att återställa noden till önskat tillstånd. Det måste returnera ett booleskt värde. Resultatet av `$true` indikerar att noden är kompatibel och att **SetScript** inte ska köras.
 
 Cmdleten [test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) kör **TestScript** för att hämta nodernas kompatibilitet med **skript** resurserna.
 I det här fallet körs dock inte **SetScript** , oavsett vilket **TestScript** -block som returneras.
 
 > [!NOTE]
-> Alla utdata från din **TestScript** är en del av dess retur värde. PowerShell tolkar ignorerade utdata som icke-noll, vilket innebär att din **TestScript** returnerar `$true` oavsett nodens tillstånd. Detta resulterar i oförutsägbara resultat, falska positiva identifieringar och orsakar problem under fel sökningen.
+> Alla utdata från din **TestScript** är en del av dess retur värde. PowerShell tolkar ignorerade utdata som icke-noll, vilket innebär att din **TestScript** returneras `$true` oavsett nodens tillstånd. Detta resulterar i oförutsägbara resultat, falska positiva identifieringar och orsakar problem under fel sökningen.
 
 #### <a name="setscript"></a>SetScript
 
-**SetScript** ändrar noden för att framtvinga det önskade läget. Den anropas av DSC om **TestScript** -skript blocket returnerar `$false`. **SetScript** får inte ha något retur värde.
+**SetScript** ändrar noden för att framtvinga det önskade läget. Den anropas av DSC om **TestScript** -skript blocket `$false`returnerar. **SetScript** får inte ha något retur värde.
 
 ## <a name="examples"></a>Exempel
 
 ### <a name="example-1-write-sample-text-using-a-script-resource"></a>Exempel 1: Skriv exempel text med hjälp av en skript resurs
 
-I det här exemplet testas förekomsten av `C:\TempFolder\TestFile.txt` på varje nod. Om den inte finns skapas den med hjälp av `SetScript`. `GetScript` returnerar filens innehåll och dess retur värde används inte.
+`C:\TempFolder\TestFile.txt` I det här exemplet testas om det finns på varje nod. Om den inte finns skapas den med hjälp av `SetScript`. `GetScript` Returnerar filens innehåll och dess retur värde används inte.
 
 ```powershell
 Configuration ScriptTest
@@ -100,7 +100,7 @@ Configuration ScriptTest
 
 ### <a name="example-2-compare-version-information-using-a-script-resource"></a>Exempel 2: jämför versions information med hjälp av en skript resurs
 
-I det här exemplet hämtas den *kompatibla* versions informationen från en textfil på redigerings datorn och lagras i `$version` variabeln. När du genererar nodens MOF-fil ersätter DSC `$using:version` variablerna i varje skript block med värdet för `$version`-variabeln.
+I det här exemplet hämtas den *kompatibla* versions informationen från en textfil på den redigerings datorn och lagras i `$version` variabeln. När du genererar nodens MOF-fil ersätter DSC `$using:version` variablerna i varje skript block med värdet för `$version` variabeln.
 Under körningen lagras den *kompatibla* versionen i en textfil på varje nod och jämförs och uppdateras vid efterföljande körningar.
 
 ```powershell

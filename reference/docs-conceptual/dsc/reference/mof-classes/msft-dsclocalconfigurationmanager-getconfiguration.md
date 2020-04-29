@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: GetConfiguration-metoden
 ms.openlocfilehash: eabc536cfe69abe1144ff031a6f64c09a772e638
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942715"
 ---
 # <a name="getconfiguration-method"></a>GetConfiguration-metoden
@@ -26,7 +26,7 @@ uint32 GetConfiguration(
 
 *configurationData* \[i\] anger de konfigurations data som ska skickas.
 
-*konfigurationer* \[ut\] vid retur innehåller en inbäddad instans av konfigurationerna.
+*konfigurationer* \[ut\] vid retur, innehåller en inbäddad instans av konfigurationerna.
 
 ## <a name="return-value"></a>Returvärde
 

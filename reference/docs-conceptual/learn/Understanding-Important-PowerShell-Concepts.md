@@ -3,10 +3,10 @@ ms.date: 08/23/2018
 keywords: PowerShell, cmdlet
 title: Förstå viktiga PowerShell-koncept
 ms.openlocfilehash: 8f9af370db46ea47dbccbabb7cc90fc27b8f2765
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030979"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Förstå viktiga PowerShell-koncept
@@ -30,13 +30,13 @@ Inbyggda kommandon i PowerShell kallas *cmdlets* (uttalat kommando-tillåter). D
 
 När du skriver ett kommando bearbetar PowerShell alltid kommando rads indatamängden direkt. PowerShell formaterar också utdata som visas på skärmen. Den här skillnaden är viktig eftersom den minskar det arbete som krävs för varje cmdlet. Det garanterar att du alltid kan göra saker på samma sätt med alla cmdletar. Cmdlet-utvecklare behöver inte skriva kod för att parsa kommando rads argumenten eller formatera utdata.
 
-Traditionella kommando rads verktyg har egna scheman för att begära och Visa hjälp. Vissa kommando rads verktyg använder **/?** för att utlösa hjälp visningen. andra använder **-?** , **/h**eller till och med **//** . Vissa visar hjälpen i ett GUI-fönster, i stället för i konsolens visning. Om du använder fel parameter kan verktyget ignorera det du skrev och börja köra en uppgift automatiskt.
+Traditionella kommando rads verktyg har egna scheman för att begära och Visa hjälp. Vissa kommando rads verktyg använder **/?** för att utlösa hjälp visningen. andra använder **-?**, **/h**eller till och **//** med. Vissa visar hjälpen i ett GUI-fönster, i stället för i konsolens visning. Om du använder fel parameter kan verktyget ignorera det du skrev och börja köra en uppgift automatiskt.
 Eftersom PowerShell automatiskt tolkar och bearbetar kommando raden **–?** parameter innebär alltid "Visa mig hjälp för det här kommandot".
 
 > [!NOTE]
 > Om du kör ett grafiskt program i PowerShell öppnas fönstret för programmet.
 > PowerShell inverkar bara vid bearbetning av kommando rads indata som du anger eller programutdata som returneras till konsol fönstret. Det påverkar inte hur programmet fungerar internt.
 
-## <a name="powershell-uses-some-c-syntax"></a>PowerShell använder en C# viss syntax
+## <a name="powershell-uses-some-c-syntax"></a>PowerShell använder en viss C#-syntax
 
-PowerShell bygger på .NET Framework. Den delar vissa syntax funktioner och nyckelord med C# programmeringsspråket. Med Learning PowerShell kan du göra det mycket enklare C#att lära dig. Om du redan är bekant med C#kan dessa likheter göra det enklare att lära sig PowerShell.
+PowerShell bygger på .NET Framework. Den delar syntax och nyckelord med C#-programmeringsspråket. Med Learning PowerShell kan du göra det mycket enklare att lära sig C#. Om du redan är bekant med C# kan dessa likheter göra det enklare att lära sig PowerShell.

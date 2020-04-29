@@ -3,10 +3,10 @@ ms.date: 08/14/2018
 keywords: PowerShell, cmdlet
 title: Kör fjärrkommandon
 ms.openlocfilehash: d6609deafd8dec4f34a8412439d87dacd20d46f1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030312"
 ---
 # <a name="running-remote-commands"></a>Kör fjärrkommandon
@@ -27,13 +27,13 @@ Många Windows PowerShell-cmdlets har parametern ComputerName som gör att du ka
 Dessa cmdlet: ar är:
 
 - [Starta om datorn](/powershell/module/microsoft.powershell.management/restart-computer)
-- [Testa anslutning](/powershell/module/microsoft.powershell.management/test-connection)
+- [Test-Connection](/powershell/module/microsoft.powershell.management/test-connection)
 - [Rensa-EventLog](/powershell/module/microsoft.powershell.management/clear-eventlog)
 - [Get-EventLog](/powershell/module/microsoft.powershell.management/get-eventlog)
 - [Get-HotFix](/powershell/module/microsoft.powershell.management/get-hotfix)
 - [Hämta process](/powershell/module/microsoft.powershell.management/get-process)
-- [Get-service](/powershell/module/microsoft.powershell.management/get-service)
-- [Set-service](/powershell/module/microsoft.powershell.management/set-service)
+- [Get-Service](/powershell/module/microsoft.powershell.management/get-service)
+- [Set-Service](/powershell/module/microsoft.powershell.management/set-service)
 - [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/get-winevent)
 - [Get-WmiObject](/powershell/module/microsoft.powershell.management/get-wmiobject)
 
@@ -94,7 +94,7 @@ LCID    Name     DisplayName               PSComputerName
 
 ### <a name="run-a-script"></a>Kör ett skript
 
-Om du vill köra ett skript på en eller flera fjärrdatorer använder du parametern sökväg i `Invoke-Command`-cmdleten. Skriptet måste vara på eller tillgängligt för den lokala datorn. Resultatet returneras till den lokala datorn.
+Om du vill köra ett skript på en eller flera fjärrdatorer använder du parametern sökväg `Invoke-Command` för cmdleten. Skriptet måste vara på eller tillgängligt för den lokala datorn. Resultatet returneras till den lokala datorn.
 
 Följande kommando kör till exempel skriptet DiskCollect. ps1 på fjärrdatorerna, Server01 och Server02.
 
@@ -104,7 +104,7 @@ Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect
 
 ### <a name="establish-a-persistent-connection"></a>Upprätta en permanent anslutning
 
-Använd `New-PSSession`-cmdlet för att skapa en beständig session på en fjärrdator. I följande exempel skapas fjärrsessioner på Server01 och Server02. Sessions-objekten lagras i `$s`-variabeln.
+Använd `New-PSSession` cmdleten för att skapa en beständig session på en fjärrdator. I följande exempel skapas fjärrsessioner på Server01 och Server02. Sessions-objekten lagras i `$s` variabeln.
 
 ```powershell
 $s = New-PSSession -ComputerName Server01, Server02
@@ -118,7 +118,7 @@ Följande kommando kör till exempel ett Get-HotFix-kommando i sessionerna i $s-
 Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
-Nu kan du använda data i variabeln `$h` med andra kommandon i samma session. Resultaten visas på den lokala datorn. Till exempel:
+Nu kan du använda data i `$h` variabeln med andra kommandon i samma session. Resultaten visas på den lokala datorn. Ett exempel:
 
 ```powershell
 Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
@@ -126,13 +126,13 @@ Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}
 
 ### <a name="advanced-remoting"></a>Avancerad fjärr kommunikation
 
-Windows PowerShell-fjärrhantering börjar bara här. Genom att använda de cmdletar som installeras med Windows PowerShell kan du upprätta och konfigurera fjärrsessioner både från lokala och fjärranslutna platser, skapa anpassade och begränsade sessioner, tillåta användare att importera kommandon från en fjärrsession som faktiskt körs Konfigurera en fjärrsessions säkerhet på ett implicit sätt, och mycket mer.
+Windows PowerShell-fjärrhantering börjar bara här. Genom att använda de cmdletar som installeras med Windows PowerShell kan du upprätta och konfigurera fjärrsessioner både från lokala och fjärranslutna platser, skapa anpassade och begränsade sessioner, tillåta användare att importera kommandon från en fjärrsession som faktiskt körs implicit i fjärrsessionen, konfigurera säkerheten för en fjärrsession och mycket mer.
 
-Windows PowerShell innehåller en WSMan-Provider. Providern skapar en `WSMAN:` enhet som gör det möjligt att navigera genom en hierarki med konfigurations inställningar på den lokala datorn och fjärrdatorer.
+Windows PowerShell innehåller en WSMan-Provider. Providern skapar en `WSMAN:` enhet som gör det möjligt att navigera i en hierarki med konfigurations inställningar på den lokala datorn och fjärrdatorer.
 
-Mer information om WSMan-providern finns i [WSMan-Provider](https://technet.microsoft.com/library/dd819476.aspx) och [om WS-Management-cmdletar](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets), eller i Windows PowerShell-konsolen skriver du `Get-Help wsman`.
+Mer information om WSMan-providern finns i [WSMan-providern](https://technet.microsoft.com/library/dd819476.aspx) och [om WS-Management-cmdletar](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets), eller i Windows PowerShell- `Get-Help wsman`konsolen skriver du.
 
-Mer information finns i följande avsnitt:
+Mer information finns i:
 
 - [Om vanliga frågor och svar om fjärr anslutning](https://technet.microsoft.com/library/dd315359.aspx)
 - [Registrera – PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)

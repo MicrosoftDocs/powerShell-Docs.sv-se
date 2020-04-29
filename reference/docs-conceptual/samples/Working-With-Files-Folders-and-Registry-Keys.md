@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Arbeta med filer, mappar och registernycklar
 ms.openlocfilehash: 0c8716c384827d0816e2847ff81232c14638681b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030754"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Arbeta med filer, mappar och register nycklar
@@ -17,7 +17,7 @@ Windows PowerShell använder **objektet** Substantiv för att referera till obje
 
 Eftersom hämtning av en samling av objekt från en viss plats är en sådan vanlig uppgift, är cmdleten **Get-ChildItem** utformad för att returnera alla objekt som finns i en behållare, till exempel en mapp.
 
-Om du vill returnera alla filer och mappar som finns direkt i mappen C:\\Windows, skriver du:
+Om du vill returnera alla filer och mappar som finns direkt i mappen C:\\Windows skriver du:
 
 ```
 PS> Get-ChildItem -Path C:\Windows
@@ -43,7 +43,7 @@ Dessa parametrar kan kombineras och matchas för att få mycket anpassade utdata
 
 ### <a name="listing-all-contained-items--recurse"></a>Visar alla objekt som finns (-rekursivt)
 
-Om du vill se både objekten i en Windows-mapp och alla objekt som ingår i undermapparna använder du parametern **rekursivt** för **Get-ChildItem**. I listan visas allting i Windows-mappen och objekten i dess undermappar. Till exempel:
+Om du vill se både objekten i en Windows-mapp och alla objekt som ingår i undermapparna använder du parametern **rekursivt** för **Get-ChildItem**. I listan visas allting i Windows-mappen och objekten i dess undermappar. Ett exempel:
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS -Recurse
@@ -70,7 +70,7 @@ assembly
 
 ### <a name="forcibly-listing-hidden-items--force"></a>Tvångs lista över dolda objekt (-Force)
 
-Objekt som normalt är osynliga i Utforskaren eller cmd. exe visas inte i utdata från ett **Get-ChildItem** -kommando. Använd parametern **Force** för **Get-ChildItem**om du vill visa dolda objekt. Till exempel:
+Objekt som normalt är osynliga i Utforskaren eller cmd. exe visas inte i utdata från ett **Get-ChildItem** -kommando. Använd parametern **Force** för **Get-ChildItem**om du vill visa dolda objekt. Ett exempel:
 
 ```powershell
 Get-ChildItem -Path C:\Windows -Force
@@ -88,7 +88,7 @@ Eftersom matchning av jokertecken hanteras av Windows PowerShell-motorn, använd
 
 - Frågetecken (?) matchar exakt ett tecken.
 
-- Vänster hak paren tes tecken (\[) och höger hak paren tes (]) omger en uppsättning tecken som ska matchas.
+- Tecken för vänster\[hak paren tes tecken och höger hak paren tes (]) omger en uppsättning tecken som ska matchas.
 
 Här följer några exempel på hur wildcard-specifikation fungerar.
 
@@ -127,7 +127,7 @@ Du kan exkludera vissa objekt med hjälp av parametern **exclude** för Get-Chil
 
 Anta till exempel att du försöker hitta Windows Time Service-DLL i mappen System32, och allt du kan komma ihåg om DLL-namnet är att det börjar med "W" och innehåller "32".
 
-Ett uttryck som **w\&#42; 32\&#42;. DLL** hittar alla DLL: er som uppfyller villkoren, men kan också returnera windows 95-och 16-bitars Windows-kompatibla dll: er som innehåller "95" eller "16" i namnen. Du kan utelämna filer som har något av dessa nummer i namnen med hjälp av parametern **exclude** med mönstret **\&#42;\[9516]\&#42;** :
+Ett uttryck som **w\&#42; 32\&#42;. DLL** hittar alla DLL: er som uppfyller villkoren, men kan också returnera windows 95-och 16-bitars Windows-kompatibla dll: er som innehåller "95" eller "16" i namnen. Du kan utelämna filer som har något av dessa nummer i namnen med hjälp av parametern **exclude** med mönstret ** \&#42;\[ 9516]\&#42;**:
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*

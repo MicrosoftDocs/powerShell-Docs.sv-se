@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Använda autentiseringsuppgifter med DSC-resurser
 ms.openlocfilehash: fea2e3cad8d081c17853e127203f1d40d98c5de2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941966"
 ---
 # <a name="use-credentials-with-dsc-resources"></a>Använda autentiseringsuppgifter med DSC-resurser
@@ -20,7 +20,7 @@ Varje DSC-resurs har en **PsDscRunAsCredential** -egenskap som kan anges till al
 > [!NOTE]
 > I PowerShell 5,0 stöds inte användning av egenskapen **PsDscRunAsCredential** i konfigurationer som anropar sammansatta resurser. I PowerShell 5,1 stöds egenskapen **PsDscRunAsCredential** i konfigurationer som anropar sammansatta resurser. Egenskapen **PsDscRunAsCredential** är inte tillgänglig i PowerShell 4,0.
 
-I följande exempel används `Get-Credential` för att uppmana användaren att ange autentiseringsuppgifter. **Register** resursen används för att ändra register nyckeln som anger bakgrunds färgen för kommando tolks fönstret i Windows.
+I följande exempel `Get-Credential` används för att uppmana användaren att ange autentiseringsuppgifter. **Register** resursen används för att ändra register nyckeln som anger bakgrunds färgen för kommando tolks fönstret i Windows.
 
 ```powershell
 Configuration ChangeCmdBackGroundColor
@@ -58,4 +58,4 @@ ChangeCmdBackGroundColor -ConfigurationData $configData
 ```
 
 > [!NOTE]
-> I det här exemplet förutsätts att du har ett giltigt certifikat på `C:\publicKeys\targetNode.cer`och att tumavtrycket för certifikatet är det värde som visas. Information om hur du krypterar autentiseringsuppgifter i MOF-filer för DSC-konfiguration finns i [skydda MOF-filen](../pull-server/secureMOF.md).
+> I det här exemplet förutsätts att du har ett `C:\publicKeys\targetNode.cer`giltigt certifikat vid och att tumavtrycket för certifikatet är det värde som visas. Information om hur du krypterar autentiseringsuppgifter i MOF-filer för DSC-konfiguration finns i [skydda MOF-filen](../pull-server/secureMOF.md).

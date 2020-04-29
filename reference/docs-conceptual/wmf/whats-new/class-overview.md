@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Skapa anpassade typer med hjälp av PowerShell-klasser
 ms.openlocfilehash: c2c50fb65ce4931fcf6ae529b4146df391c831c4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71145203"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>Skapa anpassade typer med hjälp av PowerShell-klasser
@@ -104,7 +104,7 @@ class childClass1 : baseClass
 [childClass1]::new().foo() # return 200600
 ```
 
-Om du vill anropa Bask lass metoder från åsidosatta implementeringar, omvandla till Bask Lassen (`[baseClass]$this`) vid anrop:
+För att anropa Bask lass metoder från åsidosatta implementeringar, omvandlas till Bask Lassen (`[baseClass]$this`) vid anrop:
 
 ```powershell
 class childClass2 : baseClass
@@ -137,7 +137,7 @@ $list[0] # return 200
 
 ### <a name="declare-implemented-interface"></a>Deklarera implementerat gränssnitt
 
-Du kan deklarera implementerade gränssnitt efter grund typer, eller omedelbart efter ett kolon (:), om det inte finns någon bastyp angiven. Avgränsa alla typnamn med kommatecken. Den liknar C# syntax.
+Du kan deklarera implementerade gränssnitt efter grund typer, eller omedelbart efter ett kolon (:), om det inte finns någon bastyp angiven. Avgränsa alla typnamn med kommatecken. Det liknar C#-syntax.
 
 ```powershell
 class MyComparable : system.IComparable
@@ -163,7 +163,7 @@ PowerShell 5,0 introducerar följande nya språk element i PowerShell:
 
 ### <a name="class-keyword"></a>Klass nyckelord
 
-Nyckelordet `class` definierar en ny klass. Detta är en True .NET Framework-typ. Klass medlemmar är offentliga, men endast offentliga inom modulens omfattning. Det går inte att referera till typ namnet som en sträng (till exempel `New-Object` inte fungerar) och i den här versionen kan du inte använda en typ sträng (till exempel `[MyClass]`) utanför skriptet eller modulens fil som klassen är definierad i.
+`class` Nyckelordet definierar en ny klass. Detta är en True .NET Framework-typ. Klass medlemmar är offentliga, men endast offentliga inom modulens omfattning. Det går inte att referera till typnamn som en sträng (till exempel fungerar `New-Object` inte) och i den här versionen kan du inte använda en typ literal (till exempel `[MyClass]`) utanför skriptet eller modulens fil som klassen är definierad i.
 
 ```powershell
 class MyClass
@@ -174,7 +174,7 @@ class MyClass
 
 ### <a name="enum-keyword-and-enumerations"></a>Räkna upp nyckelord och uppräkningar
 
-Stöd för nyckelordet `enum` har lagts till, vilket använder ny rad som avgränsare. För närvarande kan du inte definiera en uppräknare i termer av sig själv. Du kan dock initiera en uppräkning i termer av en annan uppräkning, som du ser i följande exempel. Bastypen kan inte heller anges. den är alltid `[int]`.
+Stöd för `enum` nyckelordet har lagts till, vilket använder ny rad som avgränsare. För närvarande kan du inte definiera en uppräknare i termer av sig själv. Du kan dock initiera en uppräkning i termer av en annan uppräkning, som du ser i följande exempel. Bastypen kan inte heller anges. Det är alltid `[int]`.
 
 ```powershell
 enum Color2
@@ -204,7 +204,7 @@ enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 
 ### <a name="import-dscresource"></a>Importera – Dscresource Keyword Supports
 
-`Import-DscResource` är nu ett faktiskt dynamiskt nyckelord. PowerShell parsar den angivna modulens rotdomän, söker efter klasser som innehåller attributet **dscresource Keyword Supports** .
+`Import-DscResource`är nu ett faktiskt dynamiskt nyckelord. PowerShell parsar den angivna modulens rotdomän, söker efter klasser som innehåller attributet **dscresource Keyword Supports** .
 
 ### <a name="implementingassembly"></a>ImplementingAssembly
 
@@ -218,7 +218,7 @@ Fält med initierare:
 [int] $i = 5
 ```
 
-`Static` stöds. Det fungerar som ett attribut, precis som med typ begränsningar. Det kan anges i valfri ordning.
+`Static`stöds. Det fungerar som ett attribut, precis som med typ begränsningar. Det kan anges i valfri ordning.
 
 ```powershell
 static [int] $count = 0
@@ -234,12 +234,12 @@ Alla medlemmar är offentliga.
 
 ### <a name="constructors-and-instantiation"></a>Konstruktörer och instansiering
 
-PowerShell-klasser kan ha konstruktorer. De har samma namn som klassen. Konstruktörer kan vara överbelastade. Statiska konstruktorer stöds. Egenskaper med initierings uttryck initieras innan all kod körs i en konstruktor. Statiska egenskaper initieras före bröd texten i en statisk konstruktor och instans egenskaper initieras före bröd texten i den icke-statiska konstruktorn. För närvarande finns det ingen syntax för att anropa en konstruktor från en annan konstruktor (t. ex. C\# syntax ": den här ()"). Lösningen är att definiera en gemensam `Init()` metod.
+PowerShell-klasser kan ha konstruktorer. De har samma namn som klassen. Konstruktörer kan vara överbelastade. Statiska konstruktorer stöds. Egenskaper med initierings uttryck initieras innan all kod körs i en konstruktor. Statiska egenskaper initieras före bröd texten i en statisk konstruktor och instans egenskaper initieras före bröd texten i den icke-statiska konstruktorn. För närvarande finns det ingen syntax för att anropa en konstruktor från en annan konstruktor (t\# . ex. C-syntaxen ": den här ()"). Lösningen är att definiera en gemensam `Init()` metod.
 
 #### <a name="creating-instances"></a>Skapa instanser
 
 > [!NOTE]
-> `New-Object` fungerar inte med klasser som definierats i PowerShell i PowerShell 5,0. Dessutom är typ namnet bara synligt i lexikalt, vilket innebär att det inte är synligt utanför modulen eller skriptet som definierar klassen. Funktioner kan returnera instanser av en klass som definierats i PowerShell. Dessa instanser fungerar utanför modulen eller skriptet.
+> I PowerShell 5,0 `New-Object` fungerar inte med klasser som definierats i PowerShell. Dessutom är typ namnet bara synligt i lexikalt, vilket innebär att det inte är synligt utanför modulen eller skriptet som definierar klassen. Funktioner kan returnera instanser av en klass som definierats i PowerShell. Dessa instanser fungerar utanför modulen eller skriptet.
 
 1. Instansieras med hjälp av Standardkonstruktorn.
 
@@ -259,7 +259,7 @@ PowerShell-klasser kan ha konstruktorer. De har samma namn som klassen. Konstruk
    $c = [MyClass]::new(@(42,43,44), "Hello")
    ```
 
-Metoden pseudo-static `new()` fungerar med .NET-typer, som du ser i följande exempel.
+Metoden `new()` pseudo-static fungerar med .net-typer, som du ser i följande exempel.
 
 ```powershell
 [hashtable]::new()
@@ -267,7 +267,7 @@ Metoden pseudo-static `new()` fungerar med .NET-typer, som du ser i följande ex
 
 #### <a name="discovering-constructors"></a>Identifiera konstruktörer
 
-Du kan nu se överlagringar i konstruktorn med `Get-Member`eller som visas i det här exemplet:
+Du kan nu se överbelastningar i konstruktorn med `Get-Member`eller som visas i det här exemplet:
 
 ```powershell
 PS> [hashtable]::new
@@ -278,7 +278,7 @@ hashtable new(int capacity)
 hashtable new(int capacity, float loadFactor)
 ```
 
-`Get-Member -Static` visar konstruktörer, så att du kan visa överlagringar på samma sätt som andra metoder. Prestanda för den här syntaxen är också avsevärt snabbare än `New-Object`.
+`Get-Member -Static`visar konstruktorer, så att du kan visa överlagringar på samma sätt som andra metoder. Prestanda för den här syntaxen är också avsevärt snabbare `New-Object`än.
 
 ### <a name="methods"></a>Metoder
 
@@ -308,15 +308,15 @@ $b.DoSomething(42)
 
 Alla egenskaper är offentliga. Egenskaperna kräver antingen en ny rad eller ett semikolon. Om ingen objekt typ anges är egenskaps typen objekt.
 
-Egenskaper som använder omvandlings-eller parameter omvandlings attribut (som `[ValidateSet("aaa")]`) fungerar som förväntat.
+Egenskaper som använder omvandlings-eller arguments omvandlings attribut (som `[ValidateSet("aaa")]`) fungerar som förväntat.
 
 ### <a name="hidden"></a>Dold
 
-Ett nytt nyckelord, `Hidden`, har lagts till. `Hidden` kan tillämpas på egenskaper och metoder (inklusive konstruktorer).
+Ett nytt nyckelord, `Hidden`, har lagts till. `Hidden`kan tillämpas på egenskaper och metoder (inklusive konstruktorer).
 
-Dolda medlemmar är offentliga, men visas inte i resultatet av `Get-Member` om inte parametern `-Force` läggs till. Dolda medlemmar tas inte med när tabbtangenten Slutför eller använder IntelliSense om inte slut för ande sker i klassen som definierar den dolda medlemmen.
+Dolda medlemmar är offentliga, men visas inte i resultatet `Get-Member` om inte `-Force` parametern läggs till. Dolda medlemmar tas inte med när tabbtangenten Slutför eller använder IntelliSense om inte slut för ande sker i klassen som definierar den dolda medlemmen.
 
-Ett nytt attribut, **system. Management. Automation. HiddenAttribute** har lagts till så att C\# koden kan ha samma semantik i PowerShell.
+Ett nytt attribut, **system. Management. Automation. HiddenAttribute** har lagts till så att C\# -koden kan ha samma semantik i PowerShell.
 
 ### <a name="return-types"></a>Retur typer
 

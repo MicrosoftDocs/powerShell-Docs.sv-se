@@ -3,10 +3,10 @@ ms.date: 01/02/2020
 keywords: PowerShell, cmdlet
 title: Felsök skript i Windows PowerShell ISE
 ms.openlocfilehash: 6fbe340cbff832b5d0e2a5515ef432cec574a3c1
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500946"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Felsök skript i Windows PowerShell ISE
@@ -28,7 +28,7 @@ Du kan ange tre typer av Bryt punkter i fel söknings miljön i Windows PowerShe
 
 Av dessa, i Windows PowerShell ISE fel söknings miljö, kan endast rad Bryt punkter anges med hjälp av menyn eller kortkommandona. De andra två typerna av Bryt punkter kan anges, men de ställs in från konsol fönstret med hjälp av cmdleten [set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint) . I det här avsnittet beskrivs hur du kan utföra fel sökning av uppgifter i Windows PowerShell ISE genom att använda menyerna där de är tillgängliga och utföra ett bredare antal kommandon från konsol fönstret med hjälp av skript.
 
-### <a name="to-set-a-breakpoint"></a>Ange en brytpunkt
+### <a name="to-set-a-breakpoint"></a>Ange en Bryt punkt
 
 En Bryt punkt kan bara anges i ett skript när den har sparats. Högerklicka på linjen där du vill ange en rad Bryt punkt och klicka sedan på **Växla Bryt punkt**. Alternativt klickar du på linjen där du vill ange en rad Bryt punkt och trycker på <kbd>F9</kbd> eller klickar på **Växla Bryt punkt**på **fel söknings** menyn.
 
@@ -122,7 +122,7 @@ Tryck på <kbd>F5</kbd> eller klicka på **Kör skript** ikonen i verktygsfälte
 
 ### <a name="to-continue-debugging"></a>För att fortsätta fel sökningen
 
-Tryck på <kbd>F5</kbd> eller klicka på ikonen **Kör skript** i verktygsfältet eller på **fel söknings** menyn, klicka på **Kör/fortsätt** eller i konsol fönstret, skriv `C` och tryck sedan på <kbd>RETUR</kbd>. Detta gör att skriptet fortsätter att köras till nästa Bryt punkt eller till slutet av skriptet om inga ytterligare Bryt punkter påträffas.
+Tryck på <kbd>F5</kbd> eller klicka på ikonen **Kör skript** i verktygsfältet, eller på **fel söknings** menyn, klicka på **Kör/Fortsätt** eller i konsol fönstret skriver `C` du och trycker sedan på <kbd>RETUR</kbd>. Detta gör att skriptet fortsätter att köras till nästa Bryt punkt eller till slutet av skriptet om inga ytterligare Bryt punkter påträffas.
 
 ### <a name="to-view-the-call-stack"></a>Visa anrops stacken
 
@@ -132,7 +132,7 @@ När du är pausad kan du se den aktuella anrops stacken genom att trycka på <k
 
 ### <a name="to-stop-debugging"></a>Stoppa fel sökningen
 
-Tryck på <kbd>SHIFT</kbd>+<kbd>F5</kbd> eller på **fel** söknings menyn, klicka på **stoppa fel sökning**eller Skriv `Q` i konsol fönstret och tryck sedan på <kbd>RETUR</kbd>.
+Tryck på <kbd>SKIFT</kbd>+<kbd>F5</kbd> eller på **fel** söknings menyn, klicka på **stoppa fel sökning**eller Skriv `Q` och tryck sedan på <kbd>RETUR</kbd>i konsol fönstret.
 
 ## <a name="how-to-step-over-step-into-and-step-out-while-debugging"></a>Stega över, stega och stega under fel sökning
 
@@ -140,10 +140,10 @@ Steging är en process för att köra en instruktion i taget. Du kan stoppa en k
 
 | Fel söknings uppgift |                                                                                                                   Beskrivning                                                                                                                    |                                                      Så här åstadkommer du det i PowerShell ISE                                                       |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Stega in**  | Kör den aktuella instruktionen och stoppar sedan nästa instruktion. Om den aktuella instruktionen är en funktion eller ett skript anrop, kommer fel söknings stegen till den funktionen eller skriptet, annars stoppas vid nästa instruktion.                      | Tryck på <kbd>F11</kbd> eller på **fel söknings** menyn, klicka på **stega i**eller i konsol fönstret, skriv `S` och tryck på <kbd>RETUR</kbd>.                 |
-| **Steg över**  | Kör den aktuella instruktionen och stoppar sedan nästa instruktion. Om den aktuella instruktionen är en funktion eller ett skript anrop, kör fel söknings programmet hela funktionen eller skriptet och stannar vid nästa instruktion efter funktions anropet. | Tryck på <kbd>F10</kbd> eller på **fel söknings** menyn, klicka på **steg över**eller i konsol fönstret, skriv `V` och tryck på <kbd>RETUR</kbd>.                 |
-| **Gå ut**   | Steg ut ur den aktuella funktionen och upp en nivå om funktionen är kapslad. Om i huvud texten körs skriptet till slutet eller till nästa Bryt punkt. De överhoppade instruktionerna körs, men är inte stegvisa.                   | Tryck på <kbd>SHIFT</kbd>+<kbd>F11</kbd>eller på **fel söknings** menyn, klicka på **Stega ut**eller Skriv `O` i konsol fönstret och tryck på <kbd>RETUR</kbd>. |
-| **Bestå**   | Fortsätter körningen till slutet eller till nästa Bryt punkt. De överhoppade funktionerna och anropen utförs, men inte stegvisa.                                                                                                          | Tryck på <kbd>F5</kbd> eller på **Felsök** -menyn, klicka på **Kör/Fortsätt**eller i konsol fönstret, skriv `C` och tryck på <kbd>RETUR</kbd>.               |
+| **Stega in**  | Kör den aktuella instruktionen och stoppar sedan nästa instruktion. Om den aktuella instruktionen är en funktion eller ett skript anrop, kommer fel söknings stegen till den funktionen eller skriptet, annars stoppas vid nästa instruktion.                      | Tryck på <kbd>F11</kbd> eller på **fel söknings** menyn, klicka på **stega i**eller Skriv `S` och tryck på <kbd>RETUR</kbd>i konsol fönstret.                 |
+| **Steg över**  | Kör den aktuella instruktionen och stoppar sedan nästa instruktion. Om den aktuella instruktionen är en funktion eller ett skript anrop, kör fel söknings programmet hela funktionen eller skriptet och stannar vid nästa instruktion efter funktions anropet. | Tryck på <kbd>F10</kbd> eller på **fel söknings** menyn, klicka på **steg över**eller i konsol fönstret, Skriv `V` och tryck på <kbd>RETUR</kbd>.                 |
+| **Gå ut**   | Steg ut ur den aktuella funktionen och upp en nivå om funktionen är kapslad. Om i huvud texten körs skriptet till slutet eller till nästa Bryt punkt. De överhoppade instruktionerna körs, men är inte stegvisa.                   | Tryck <kbd>på Shift</kbd>+eller på **fel söknings** <kbd>menyn, klicka</kbd>på **Stega ut**eller Skriv `O` och tryck på <kbd>RETUR</kbd>i konsol fönstret. |
+| **Fortsätt**   | Fortsätter körningen till slutet eller till nästa Bryt punkt. De överhoppade funktionerna och anropen utförs, men inte stegvisa.                                                                                                          | Tryck på <kbd>F5</kbd> eller på **fel söknings** menyn, klicka på **Kör/Fortsätt**eller i konsol fönstret, Skriv `C` och tryck på <kbd>RETUR</kbd>.               |
 
 ## <a name="how-to-display-the-values-of-variables-while-debugging"></a>Så här visar du värden för variabler under fel sökning
 
@@ -151,7 +151,7 @@ Du kan visa de aktuella värdena för variabler i skriptet när du går igenom k
 
 ### <a name="to-display-the-values-of-standard-variables"></a>Visa värden för standardvariabler
 
-Använd en av följande metoder:
+Använd någon av följande metoder:
 
 - Hovra över variabeln i rutan skript och visa dess värde som en verktygs beskrivning.
 
@@ -173,13 +173,13 @@ Du kan använda föregående metod för att visa värdet för nästan alla varia
 
 - `$Args`
 
-Om du försöker visa värdet för någon av dessa variabler får du värdet för den variabeln för i en intern pipeline som fel sökaren använder, inte värdet för variabeln i skriptet. Du kan kringgå detta för några få variabler (`$_`, `$Input`, `$MyInvocation`, `$PSBoundParameters`och `$Args`) med hjälp av följande metod:
+Om du försöker visa värdet för någon av dessa variabler får du värdet för den variabeln för i en intern pipeline som fel sökaren använder, inte värdet för variabeln i skriptet. Du`$_`kan undvika detta för några variabler (, `$Input` `$MyInvocation` `$PSBoundParameters`,, och `$Args`) med hjälp av följande metod:
 
 1. I skriptet tilldelar du värdet för den automatiska variabeln till en ny variabel.
 
 1. Visa värdet för den nya variabeln, antingen genom att hovra över den nya variabeln i skript fönstret eller genom att skriva den nya variabeln i konsol fönstret.
 
-Om du till exempel vill visa värdet för variabeln `$MyInvocation`, i skriptet, tilldelar du värdet till en ny variabel, till exempel `$scriptName`, och hovrar sedan över eller skriver `$scriptName` variabeln för att visa dess värde.
+Om du till exempel vill visa värdet för `$MyInvocation` variabeln, i skriptet, tilldelar du värdet till en ny variabel, till exempel `$scriptName`, och hovrar sedan över eller anger `$scriptName` variabeln för att visa dess värde.
 
 ```powershell
 # In C:\ps-test\MyScript.ps1

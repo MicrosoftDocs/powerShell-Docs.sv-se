@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: PowerShellTab-objektet
 ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79406974"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab-objektet
@@ -15,7 +15,7 @@ Objektet **PowerShellTab** representerar en miljö för Windows PowerShell-körn
 
 ## <a name="methods"></a>Metoder
 
-### <a name="invoke-script-"></a>Anropa\( skript \)
+### <a name="invoke-script-"></a>Anropa\( skript\)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -32,7 +32,7 @@ Kör det aktuella skriptet på PowerShell-fliken.
 $psISE.PowerShellTabs[1].Invoke({dir})
 ```
 
-### <a name="invokesynchronous-script-usenewscope-millisecondstimeout-"></a>InvokeSynchronous\(-skript, \[useNewScope\], millisecondsTimeout \)
+### <a name="invokesynchronous-script-usenewscope-millisecondstimeout-"></a>InvokeSynchronous\( -skript \[,\]useNewScope, millisecondsTimeout\)
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
@@ -43,9 +43,9 @@ Kör det aktuella skriptet på PowerShell-fliken.
 
 **Skript** -system. Management. Automation. script block eller en sträng som skript blocket ska köras.
 
-**\[useNewScope\]** -valfria booleska som standardvärdet för `$true` om värdet är `$true`skapas en ny omfattning för att köra kommandot. Den ändrar inte körnings miljön för PowerShell-fliken som anges av kommandot.
+`$true` `$true` **useNewScope\] – valfritt booleskt värde som är standardvärdet om det är inställt på, skapas en ny omfattning i vilken \[** kommandot ska köras. Den ändrar inte körnings miljön för PowerShell-fliken som anges av kommandot.
 
-**\[millisecondsTimeout\]** -valfritt heltal som är som standard **500**.
+millisecondsTimeout-valfritt heltal som är som standard **500**. ** \[\] **
 Om kommandot inte slutförs inom den angivna tiden genererar kommandot en **TimeoutException** med meddelandet "åtgärden har nått sin tids gräns."
 
 ```powershell
@@ -92,7 +92,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Den skrivskyddade booleska egenskapen som returnerar ett `$true` värde om ett skript kan anropas med metoden [Invoke (script)](#invoke-script-) .
+Den skrivskyddade booleska egenskapen som returnerar ett `$true` värde om ett skript kan anropas med metoden [Invoke (skript)](#invoke-script-) .
 
 ```powershell
 # CanInvoke will be false if the PowerShell
@@ -118,7 +118,7 @@ Den skrivskyddade egenskapen som hämtar konsol fönstrets [redigerings](The-ISE
 $psISE.CurrentPowerShellTab.ConsolePane
 ```
 
-### <a name="displayname"></a>displayName
+### <a name="displayname"></a>DisplayName
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -227,5 +227,5 @@ $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
 ## <a name="see-also"></a>Se även
 
 - [PowerShellTabCollection-objektet](The-PowerShellTabCollection-Object.md)
-- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)
+- [Användningsområden för Windows PowerShell ISE-skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Objekt modells-hierarkin för ISE](The-ISE-Object-Model-Hierarchy.md)

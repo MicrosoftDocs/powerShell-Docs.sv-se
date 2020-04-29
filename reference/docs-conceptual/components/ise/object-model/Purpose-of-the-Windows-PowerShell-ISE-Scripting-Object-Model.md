@@ -3,10 +3,10 @@ ms.date: 12/31/2019
 keywords: PowerShell, cmdlet
 title: Användningsområden för Windows PowerShell ISE-skriptobjektmodellen
 ms.openlocfilehash: 1f48df112bd19297baa311116e79d3d7603d7c81
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736240"
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Användningsområden för Windows PowerShell ISE-skriptobjektmodellen
@@ -52,4 +52,4 @@ Du kan använda skript objekt modellen för att skapa kortkommandon för frekven
 
 ## <a name="see-also"></a>Se även
 
-- [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)
+- [Objekt modells-hierarkin för ISE](The-ISE-Object-Model-Hierarchy.md)

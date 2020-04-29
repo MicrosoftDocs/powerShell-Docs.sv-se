@@ -3,10 +3,10 @@ ms.date: 12/19/2019
 keywords: PowerShell, cmdlet
 title: Hjälpmedelsfunktioner i Windows PowerShell ISE
 ms.openlocfilehash: 89eff839d69fdbd5a1fa48b61dab627ef83f751b
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500950"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Hjälpmedelsfunktioner i Windows PowerShell ISE
@@ -22,7 +22,7 @@ I det här avsnittet beskrivs hjälpmedels funktionerna i Windows PowerShell ISE
 - [Kortkommandon för att starta och avsluta](#keyboard-shortcuts-for-starting-and-exiting)
 - [Bryt punkts hantering med cmdletar](#breakpoint-management)
 
-Microsoft strävar efter att göra sina produkter och tjänster enklare för alla att använda. Följande avsnitt innehåller information om de funktioner, produkter och tjänster som gör Windows PowerShell ISE mer tillgängligt för personer med funktions nedsättning.
+Microsoft arbetar ständigt med att göra sina produkter och tjänster lättare att använda för alla. Följande avsnitt innehåller information om de funktioner, produkter och tjänster som gör Windows PowerShell ISE mer tillgängligt för personer med funktions nedsättning.
 
 Utöver hjälpmedels funktionerna i Microsoft Windows gör följande funktioner Windows PowerShell ISE mer tillgängliga för personer med funktions hinder:
 
@@ -46,11 +46,11 @@ Du kan använda följande steg för att ändra storlek och plats för konsol fö
 
 Gör något av följande:
 
-- Om du vill flytta skript fönstret ovanför konsol fönstret trycker du på <kbd>CTRL</kbd>+<kbd>1</kbd> eller, i verktygsfältet, klicka på ikonen **Visa skript fönstret överst** eller klicka på Visa **skript fönstret överst**i menyn **Visa** .
+- Om du vill flytta skript fönstret ovanför konsol fönstret trycker du på <kbd>CTRL</kbd>+<kbd>1</kbd> eller, i verktygsfältet, klickar på ikonen **Visa skript fönstret överst** eller på menyn **Visa** klickar du på **Visa skript fönster överst**.
 
-- Om du vill flytta skript fönstret till höger om konsol fönstret trycker du på <kbd>CTRL</kbd>+<kbd>2</kbd> eller, i verktygsfältet, klicka på höger ikon i fönstret **Visa skript** , eller klicka på **Visa skript fönster**till höger i menyn **Visa** .
+- Om du vill flytta skript fönstret till höger om konsol fönstret trycker du på <kbd>CTRL</kbd>+<kbd>2</kbd> eller, i verktygsfältet, på höger ikon i fönstret **Visa skript** eller på **Visa** -menyn, klicka på **Visa skript fönstret till höger**.
 
-- Maximera skript fönstret genom att trycka på <kbd>CTRL</kbd>+<kbd>3</kbd> eller, i verktygsfältet, klicka på ikonen **Visa skript fönstret maximerat** eller på **Visa** -menyn och klicka på **Visa skript fönstret maximerat**.
+- För att maximera skript fönstret, tryck på <kbd>CTRL</kbd>+<kbd>3</kbd> eller, i verktygsfältet, klicka på ikonen för att **Visa skript fönstret** , eller **på Visa-menyn,** Klicka på **Visa skript fönstret maximerat**.
 
 - Om du vill maximera konsol fönstret och dölja skript fönstret klickar du på ikonen **Dölj skript** fönster på menyn **Visa** på den högra kanten av raden med flikar. Klicka sedan på meny alternativet **Visa skript fönster** .
 
@@ -60,39 +60,39 @@ Gör något av följande:
 
 Du kan använda följande kortkommandon när du redigerar text.
 
-|           Åtgärd            |       Kortkommandon       |          Använd i           |
+|           Action            |       Kortkommandon       |          Använd i           |
 | --------------------------- | ------------------------------ | ------------------------- |
-| **Exemplar**                    | <kbd>CTRL</kbd>+<kbd>C</kbd>   | Skript fönster, konsol fönster |
-| **Styckning**                     | <kbd>CTRL</kbd>+<kbd>X</kbd>   | Skript fönster, konsol fönster |
+| **Exemplar**                    | <kbd>CTRL</kbd>+<kbd>+ C</kbd>   | Skript fönster, konsol fönster |
+| **Klipp ut**                     | <kbd>CTRL</kbd>+<kbd>X</kbd>   | Skript fönster, konsol fönster |
 | **Sök i skript**          | <kbd>CTRL</kbd>+<kbd>F</kbd>   | Skript fönster               |
 | **Sök nästa i skriptet**     | <kbd>F3</kbd>                  | Skript fönster               |
-| **Hitta föregående i skript** | <kbd>SHIFT</kbd>+<kbd>F3</kbd> | Skript fönster               |
-| **Inklistringsfel**                   | <kbd>CTRL</kbd>+<kbd>V</kbd>   | Skript fönster, konsol fönster |
-| **Tidigare**                    | <kbd>CTRL</kbd>+<kbd>Y</kbd>   | Skript fönster, konsol fönster |
+| **Hitta föregående i skript** | <kbd>Shift</kbd>+,<kbd>F3</kbd> | Skript fönster               |
+| **Klistra in**                   | <kbd>CTRL</kbd>+<kbd>V</kbd>   | Skript fönster, konsol fönster |
+| **Gör om**                    | <kbd>CTRL</kbd>+<kbd>Y</kbd>   | Skript fönster, konsol fönster |
 | **Ersätt i skript**       | <kbd>CTRL</kbd>+<kbd>H</kbd>   | Skript fönster               |
-| **Spara**                    | <kbd>CTRL</kbd>+<kbd>S</kbd>   | Skript fönster               |
+| **Spara**                    | <kbd>CTRL</kbd>+-<kbd>S</kbd>   | Skript fönster               |
 | **Markera alla**              | <kbd>CTRL</kbd>+<kbd>en</kbd>   | Skript fönster, konsol fönster |
-| **Göra**                    | <kbd>CTRL</kbd>+<kbd>Z</kbd>   | Skript fönster, konsol fönster |
+| **Ångra**                    | <kbd>CTRL</kbd>+<kbd>Z</kbd>   | Skript fönster, konsol fönster |
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Kortkommandon för skript som körs
 
 Du kan använda följande kortkommandon när du kör skript i skript fönstret.
 
-|            Åtgärd            |                                                                                                     Kortkommando                                                                                                      |
+|            Action            |                                                                                                     Kortkommando                                                                                                      |
 | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Nyårs**                      | <kbd>CTRL</kbd>+<kbd>N</kbd>                                                                                                                                                                                               |
-| **Inställningar**                     | <kbd>CTRL</kbd>+<kbd>O</kbd>                                                                                                                                                                                               |
+| **Ny**                      | <kbd>CTRL</kbd>+<kbd>N</kbd>                                                                                                                                                                                               |
+| **Öppna**                     | <kbd>CTRL</kbd>+<kbd>O</kbd>                                                                                                                                                                                               |
 | **Fungerar**                      | <kbd>F5</kbd>                                                                                                                                                                                                              |
 | **Kör val**            | <kbd>F8</kbd>                                                                                                                                                                                                              |
-| **Stoppa körning**           | <kbd>CTRL</kbd>+<kbd>Bryt</kbd>. Du kan använda <kbd>CTRL</kbd>+<kbd>C</kbd> när kontexten är oklar (när det inte finns någon text markerad).                                                                               |
-| **TABB** (till nästa skript)     | <kbd>CTRL</kbd>+<kbd>Tab</kbd> **Obs!** Tab till nästa skript fungerar bara om du har en enda PowerShell-flik öppen eller om du har fler än en PowerShell-flik öppen, men fokus är i skript fönstret.                |
-| **TABB** (till föregående skript) | <kbd>CTRL</kbd>+<kbd>Shift</kbd>+<kbd>TABB</kbd> - **anteckning:** TABB till föregående skript fungerar när du bara har en PowerShell-flik öppen, eller om du har fler än en PowerShell-flik öppen och fokus är i skript fönstret. |
+| **Stoppa körning**           | <kbd>CTRL</kbd>+-<kbd>Bryt</kbd>. <kbd>CTRL</kbd>+<kbd>C</kbd> kan användas när kontexten är tvetydig (när ingen text har marker ATS).                                                                               |
+| **TABB** (till nästa skript)     | <kbd>CTRL</kbd>+-<kbd>fliken</kbd> **Obs!** Tab till nästa skript fungerar bara om du har en enda PowerShell-flik öppen eller om du har fler än en PowerShell-flik öppen, men fokus är i skript fönstret.                |
+| **TABB** (till föregående skript) | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>Shift+-<kbd>fliken</kbd> **Obs!** TABB till föregående skript fungerar när du bara har en PowerShell-flik öppen, eller om du har fler än en PowerShell-flik öppen och fokus är i skript fönstret. |
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Kortkommandon för att anpassa vyn
 
 Du kan använda följande kortkommandon för att anpassa vyn i Windows PowerShell ISE. De är tillgängliga från alla rutor i programmet.
 
-|           Åtgärd           |         Kortkommando        |
+|           Action           |         Kortkommando        |
 | -------------------------- | -------------------------------- |
 | **Gå till konsol fönstret**     | <kbd>CTRL</kbd>+<kbd>D</kbd>     |
 | **Gå till skript fönstret**      | <kbd>CTRL</kbd>+<kbd>I</kbd>     |
@@ -108,25 +108,25 @@ Du kan använda följande kortkommandon för att anpassa vyn i Windows PowerShel
 
 Du kan använda följande kortkommandon vid fel sökning av skript.
 
-|           Åtgärd           |               Kortkommando                |                Använd i                |
+|           Action           |               Kortkommando                |                Använd i                |
 | -------------------------- | ---------------------------------------------- | ------------------------------------ |
 | **Kör/Fortsätt**           | <kbd>F5</kbd>                                  | Skript fönstret, vid fel sökning av ett skript |
 | **Stega in**              | <kbd>F11</kbd>                                 | Skript fönstret, vid fel sökning av ett skript |
 | **Steg över**              | <kbd>F10</kbd>                                 | Skript fönstret, vid fel sökning av ett skript |
-| **Gå ut**               | <kbd>SHIFT</kbd>+<kbd>F11</kbd>                | Skript fönstret, vid fel sökning av ett skript |
-| **Visa anrops stack**     | <kbd>CTRL</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>  | Skript fönstret, vid fel sökning av ett skript |
-| **List Bryt punkter**       | <kbd>CTRL</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd>  | Skript fönstret, vid fel sökning av ett skript |
-| **Växla Bryt punkt**      | <kbd>Höj</kbd>                                  | Skript fönstret, vid fel sökning av ett skript |
-| **Ta bort alla Bryt punkter** | <kbd>CTRL</kbd>+<kbd>Shift</kbd>+<kbd>F9</kbd> | Skript fönstret, vid fel sökning av ett skript |
-| **Stoppa fel sökning**          | <kbd>SHIFT</kbd>+<kbd>F5</kbd>                 | Skript fönstret, vid fel sökning av ett skript |
+| **Gå ut**               | <kbd>Shift</kbd>+,<kbd>F11</kbd>                | Skript fönstret, vid fel sökning av ett skript |
+| **Visa anrops stack**     | <kbd>CTRL</kbd>+<kbd>+ SKIFT</kbd>+<kbd>D</kbd>  | Skript fönstret, vid fel sökning av ett skript |
+| **List Bryt punkter**       | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>Shift+<kbd>L</kbd>  | Skript fönstret, vid fel sökning av ett skript |
+| **Växla Bryt punkt**      | <kbd>F9</kbd>                                  | Skript fönstret, vid fel sökning av ett skript |
+| **Ta bort alla Bryt punkter** | <kbd>CTRL</kbd>+<kbd>+ SKIFT</kbd>+<kbd>F9</kbd> | Skript fönstret, vid fel sökning av ett skript |
+| **Stoppa fel sökning**          | <kbd>Skift</kbd>+<kbd>F5</kbd>                 | Skript fönstret, vid fel sökning av ett skript |
 
 > [!NOTE]
 > Du kan också använda kortkommandon som är utformade för Windows PowerShell-konsolen när du felsöker skript i Windows PowerShell ISE. Om du vill använda dessa genvägar måste du skriva genvägen i konsol fönstret och trycka på <kbd>RETUR</kbd>.
 
-|                 Åtgärd                  |      Kortkommando       |                Använd i                 |
+|                 Action                  |      Kortkommando       |                Använd i                 |
 | --------------------------------------- | ---------------------------- | ------------------------------------- |
-| **Bestå**                            | <kbd>C</kbd>                 | Konsol fönster, vid fel sökning av ett skript |
-| **Stega in**                           | <kbd>Na</kbd>                 | Konsol fönster, vid fel sökning av ett skript |
+| **Fortsätt**                            | <kbd>C</kbd>                 | Konsol fönster, vid fel sökning av ett skript |
+| **Stega in**                           | <kbd>S</kbd>                 | Konsol fönster, vid fel sökning av ett skript |
 | **Steg över**                           | <kbd>Lodrät</kbd>                 | Konsol fönster, vid fel sökning av ett skript |
 | **Gå ut**                            | <kbd>A</kbd>                 | Konsol fönster, vid fel sökning av ett skript |
 | **Upprepa det senaste kommandot**(Stega in/över) | <kbd>GÅR</kbd>             | Konsol fönster, vid fel sökning av ett skript |
@@ -139,21 +139,21 @@ Du kan använda följande kortkommandon vid fel sökning av skript.
 
 Du kan använda följande kortkommandon när du använder Windows PowerShell-flikar.
 
-|             Åtgärd              |                                 Kortkommando                                  |
+|             Action              |                                 Kortkommando                                  |
 | ------------------------------- | ---------------------------------------------------------------------------------- |
-| **Stäng PowerShell-fliken**        | <kbd>CTRL</kbd>+<kbd>W</kbd>                                                       |
-| **Ny PowerShell-flik**          | <kbd>CTRL</kbd>+<kbd>t</kbd>                                                       |
-| **Föregående PowerShell-flik**     | <kbd>CTRL</kbd>+<kbd>Shift</kbd>+<kbd>fliken</kbd> (endast när inga filer är öppna på någon PowerShell-flik) |
-| **Nästa Windows PowerShell-flik** | <kbd>Fliken</kbd> <kbd>CTRL</kbd>+(endast när inga filer är öppna på någon PowerShell-flik) |
+| **Stäng PowerShell-fliken**        | <kbd>CTRL</kbd>+-<kbd>o</kbd>                                                       |
+| **Ny PowerShell-flik**          | <kbd>CTRL</kbd>+<kbd>T</kbd>                                                       |
+| **Föregående PowerShell-flik**     | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>Shift+-<kbd>fliken</kbd> (endast när inga filer är öppna på någon PowerShell-flik) |
+| **Nästa Windows PowerShell-flik** | <kbd>CTRL</kbd>+<kbd>Fliken</kbd> Ctrl (endast när inga filer är öppna på någon PowerShell-flik) |
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Kortkommandon för att starta och avsluta
 
 Du kan använda följande kortkommandon för att starta Windows PowerShell-konsolen (**PowerShell. exe**) eller avsluta Windows PowerShell ISE.
 
-|                        Åtgärd                         |               Kortkommando               |
+|                        Action                         |               Kortkommando               |
 | ----------------------------------------------------- | --------------------------------------------- |
-| **Programmet**                                              | <kbd>ALT</kbd>+<kbd>F4</kbd>                  |
-| **Starta PowerShell. exe** (Windows PowerShell-konsol) | <kbd>CTRL</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> |
+| **Programmet**                                              | <kbd>Alt</kbd>+<kbd>F4</kbd>                  |
+| **Starta PowerShell. exe** (Windows PowerShell-konsol) | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>Shift+<kbd>P</kbd> |
 
 ## <a name="breakpoint-management"></a>Bryt punkts hantering
 

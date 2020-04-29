@@ -3,10 +3,10 @@ ms.date: 12/31/2019
 keywords: PowerShell, cmdlet
 title: ISEEditor-objektet
 ms.openlocfilehash: cb63acebc1a8bb9fa6cc07199088ae0d5441bc91
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736197"
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor-objektet
@@ -39,7 +39,7 @@ Rullar i redigeraren så att den rad som motsvarar det angivna värdet för para
 $psISE.CurrentFile.Editor.EnsureVisible(5)
 ```
 
-### <a name="focus"></a>Fokusera\(\)
+### <a name="focus"></a>Aktiv\(\)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -50,7 +50,7 @@ Ställer in fokus på redigeraren.
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
 
-### <a name="getlinelengthint-linenumber-"></a>GetLineLength\(int lineNumber \)
+### <a name="getlinelengthint-linenumber-"></a>GetLineLength\(int lineNumber\)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -69,14 +69,14 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Flyttar cirkumflexet till det matchande tecknet om egenskapen **CanGoToMatch** för Editor-objektet är `$true`, vilket inträffar när cirkumflexet är omedelbart före en inledande parentes, hak paren tes eller `(`klammerparentes,`[`,`{`-eller omedelbart efter en avslutande parentes, hak paren tes eller klammerparentes, `)`,`]`. Cirkumflexet placeras före ett inledande tecken eller efter ett avslutande tecken. Om egenskapen **CanGoToMatch** är `$false`gör den här metoden ingenting.
+Flyttar cirkumflexet till det matchande tecknet om egenskapen **CanGoToMatch** för Editor-objektet `$true`är, vilket inträffar när cirkumflexet är omedelbart före en inledande parentes, hak paren tes eller klammerparentes `(`,,`[`,`{` eller omedelbart efter en avslutande parentes, hak paren tes eller klammerparentes `)``]`,,,.`}` Cirkumflexet placeras före ett inledande tecken eller efter ett avslutande tecken. Om egenskapen **CanGoToMatch** är är `$false`den här metoden ingenting.
 
 ```powershell
 # Goes to the matching character if CanGoToMatch() is $true
 $psISE.CurrentPowerShellTab.ConsolePane.GoToMatch()
 ```
 
-### <a name="inserttext-text-"></a>InsertText\( text \)
+### <a name="inserttext-text-"></a>InsertText\( -text\)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -86,7 +86,7 @@ Ersätter markeringen med text eller infogar text vid den aktuella cirkumflexens
 
 Se [skript exemplet](#scripting-example) senare i det här avsnittet.
 
-### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Välj\( startLine, startColumn, SourceLocation, endColumn \)
+### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Välj\( StartLine, StartColumn, SourceLocation, endColumn\)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -115,7 +115,7 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 $psISE.CurrentFile.Editor.SelectCaretLine()
 ```
 
-### <a name="setcaretposition-linenumber-columnnumber-"></a>SetCaretPosition\( lineNumber, columnNumber \)
+### <a name="setcaretposition-linenumber-columnnumber-"></a>SetCaretPosition\( LineNumber, columnNumber\)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -147,7 +147,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Den skrivskyddade booleska egenskapen som anger om cirkumflexet infaller bredvid en parentes, en klammer eller en `()`klammerparentes, `[]``{}`. Om cirkumflexet är omedelbart före det inledande tecknet eller omedelbart efter det avslutande tecknet i ett par, är det här egenskap svärdet `$true`. Annars är det `$false`.
+Den skrivskyddade booleska egenskapen som anger om cirkumflexet infaller vid en parentes, hak paren tes eller klammerparentes `()`, `[]`,, `{}`. Om cirkumflexet är omedelbart före det inledande tecknet eller omedelbart efter det avslutande tecknet i ett par, är `$true`det här egenskap svärdet. Annars är `$false`det.
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace
@@ -247,5 +247,5 @@ $myEditor.InsertText($selection.ToLower())
 
 - [ISEFile-objektet](The-ISEFile-Object.md)
 - [PowerShellTab-objektet](The-PowerShellTab-Object.md)
-- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)
+- [Användningsområden för Windows PowerShell ISE-skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Objekt modells-hierarkin för ISE](The-ISE-Object-Model-Hierarchy.md)

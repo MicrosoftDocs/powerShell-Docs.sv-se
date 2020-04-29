@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Ange beroenden mellan noder
 ms.openlocfilehash: 62e553d894897ae1908745c2788b7b7b9cbe50ff
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942057"
 ---
 # <a name="specifying-cross-node-dependencies"></a>Ange beroenden mellan noder
@@ -21,7 +21,7 @@ DSC tillhandahåller särskilda resurser, **WaitForAll**, **WaitForAny**och **Wa
 
 ## <a name="syntax"></a>Syntax
 
-**WaitForAll** -och **WaitForAny** -resurserna delar samma syntax. Ersätt \<ResourceType\> i exemplet nedan med antingen **WaitForAny** eller **WaitForAll**.
+**WaitForAll** -och **WaitForAny** -resurserna delar samma syntax. Ersätt \<resourcetype\> i exemplet nedan med antingen **WaitForAny** eller **WaitForAll**.
 Precis som nyckelordet **DependsOn** måste du formatera namnet som "[resourcetype] resourcename". Om resursen tillhör en separat [konfiguration](configurations.md)inkluderar du **ConfigurationName** i den formaterade strängen "[resourcetype] resourceName:: [ConfigurationName]:: [ConfigurationName]". **Nodnamn** är den dator eller nod som den aktuella resursen ska vänta på.
 
 ```

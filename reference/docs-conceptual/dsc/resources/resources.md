@@ -3,10 +3,10 @@ ms.date: 02/28/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-resurser
 ms.openlocfilehash: 863898d910cc3c75c3e5977a5b6b0657ba7ed512
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278262"
 ---
 # <a name="dsc-resources"></a>DSC-resurser
@@ -23,10 +23,10 @@ Varje resurs har ett *-schema som avgör den syntax som behövs för att använd
 En resurs schema kan definieras på följande sätt:
 
 - **Schema. MOF** -fil: de flesta resurser definierar deras _schema_ i en schema. MOF-fil med hjälp av [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
-- **"\<resurs namn\>. schema. psm1"** -fil: [sammansatta resurser](../configurations/compositeConfigs.md) definierar deras *schema* i en<ResourceName>. schema. psm1-fil med hjälp av ett [parameter block](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
-- **"\<resurs namn\>. psm1"** File: Class-based DSC-resurser definierar deras _schema_ i klass definitionen. Objekt betecknas som klass egenskaper. Mer information finns i [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
+- **'\<Resurs namn\>. schema. psm1 '** -fil: [sammansatta resurser](../configurations/compositeConfigs.md) definierar *schemat* i<ResourceName>en. schema. psm1-fil med hjälp av ett [parameter block](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+- **'\<Resurs namn\>. psm1 '** -fil: klassbaserade DSC-resurser definierar deras _schema_ i klass definitionen. Objekt betecknas som klass egenskaper. Mer information finns i [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
 
-Om du vill hämta syntaxen för en DSC-resurs använder du cmdleten [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) med parametern `-Syntax`. Den här användningen liknar att använda [Get-Command](/powershell/module/microsoft.powershell.core/get-command) med parametern `-Syntax` för att hämta cmdlet-syntaxen. De utdata som visas visar den mall som används för ett resurs block för den resurs som du anger.
+Om du vill hämta syntaxen för en DSC-resurs använder du cmdleten [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) med `-Syntax` parametern. Den här användningen liknar att använda [Get-Command](/powershell/module/microsoft.powershell.core/get-command) med `-Syntax` parametern för att hämta cmdlet-syntaxen. De utdata som visas visar den mall som används för ett resurs block för den resurs som du anger.
 
 ```powershell
 Get-DscResource -Syntax Service
@@ -104,7 +104,7 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> Från och med PowerShell 5,0 lades IntelliSense till för DSC. Med den här nya funktionen kan du använda <kbd>TABB</kbd> -och <kbd>grupp</kbd>+<kbd>utrymme</kbd> för att komplettera nyckel namnen automatiskt.
+> Från och med PowerShell 5,0 lades IntelliSense till för DSC. Med den här nya funktionen kan du <kbd>TAB</kbd> använda TABB <kbd>-och</kbd>+<kbd>rymd utrymme</kbd> för att komplettera nyckel namn automatiskt.
 
 ![Slut för ande av resurs flik](media/resources/resource-tabcompletion.png)
 

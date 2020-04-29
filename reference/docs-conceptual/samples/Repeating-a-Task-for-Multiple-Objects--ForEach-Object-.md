@@ -3,15 +3,15 @@ ms.date: 12/23/2019
 keywords: PowerShell, cmdlet
 title: Upprepa en uppgift för ett förgrunds objekt för flera objekt
 ms.openlocfilehash: bf89070fd9b006fa9b0b262ab63ffadd81072ecc
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736887"
 ---
-# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Upprepa en uppgift för flera objekt (förgrunds objekt)
+# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Upprepa en uppgift för flera objekt (ForEach-Object)
 
-`ForEach-Object` cmdlet använder skript block och `$_` beskrivningen för det aktuella pipelinen för att köra ett kommando på varje objekt i pipelinen. Detta kan användas för att utföra komplicerade uppgifter.
+`ForEach-Object` Cmdleten använder skript block och `$_` beskrivningen för det aktuella pipeline-objektet så att du kan köra ett kommando på varje objekt i pipelinen. Detta kan användas för att utföra komplicerade uppgifter.
 
 En situation där detta kan vara användbart är att ändra data så att de blir mer användbara. **Win32_LogicalDisk** -klassen från WMI kan till exempel användas för att returnera information om ledigt utrymme för varje lokal disk. Data returneras i antal byte, vilket gör det svårt att läsa:
 
@@ -25,7 +25,7 @@ DeviceID DriveType ProviderName VolumeName Size          FreeSpace
 C:       3                      Local Disk 203912880128  50665070592
 ```
 
-Vi kan konvertera värdet för det **lediga utrymmet** till megabyte genom att dividera varje värde med 1 MB. Du kan göra det i ett `ForEach-Object`-skript block genom att skriva:
+Vi kan konvertera värdet för det **lediga utrymmet** till megabyte genom att dividera varje värde med 1 MB. Du kan göra det i ett `ForEach-Object` -skript block genom att skriva:
 
 ```powershell
 Get-CimInstance -Class Win32_LogicalDisk |

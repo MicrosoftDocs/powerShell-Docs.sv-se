@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: PowerShell, cmdlet
 title: Arbeta med registernycklar
 ms.openlocfilehash: 3feaf6d26db51a507434a6cec1f1095c9013efc8
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736853"
 ---
 # <a name="working-with-registry-keys"></a>Arbeta med registernycklar
@@ -15,7 +15,7 @@ Eftersom register nycklar är objekt på PowerShell-enheter, är det mycket likt
 
 ## <a name="listing-all-subkeys-of-a-registry-key"></a>Lista alla under nycklar för en register nyckel
 
-Du kan visa alla objekt direkt i en register nyckel med hjälp av `Get-ChildItem`. Lägg till den valfria **Force** -parametern om du vill visa dolda eller system objekt. Till exempel visar det här kommandot objekten direkt på PowerShell-enheten `HKCU:`, som motsvarar `HKEY_CURRENT_USER` Hive:
+Du kan visa alla objekt direkt i en register nyckel med hjälp `Get-ChildItem`av. Lägg till den valfria **Force** -parametern om du vill visa dolda eller system objekt. Detta kommando visar till exempel objekten direkt i PowerShell-enheten `HKCU:`, som motsvarar `HKEY_CURRENT_USER` registrerings data filen:
 
 ```powershell
 Get-ChildItem -Path HKCU:\ | Select-Object Name
@@ -45,9 +45,9 @@ HKEY_CURRENT_USER\WXP
 HKEY_CURRENT_USER\Volatile Environment
 ```
 
-Det här är nycklarna på den översta nivån som visas under `HKEY_CURRENT_USER` i Registereditorn (regedit. exe).
+Det här är nycklarna på den översta nivån som `HKEY_CURRENT_USER` visas under i Registereditorn (regedit. exe).
 
-Du kan också ange den här register Sök vägen genom att ange namnet på registrerings leverantören, följt av `::`. Register leverantörens fullständiga namn är `Microsoft.PowerShell.Core\Registry`, men detta kan kortas ned till bara `Registry`. Något av följande kommandon visar innehållet direkt under `HKCU:`.
+Du kan också ange den här register Sök vägen genom att ange namnet på registrerings leverantören följt `::`av. Register leverantörens fullständiga namn är `Microsoft.PowerShell.Core\Registry`, men detta kan kortas ned till bara. `Registry` Något av följande kommandon visar innehållet direkt under `HKCU:`.
 
 ```powershell
 Get-ChildItem -Path Registry::HKEY_CURRENT_USER
@@ -57,13 +57,13 @@ Get-ChildItem -Path Microsoft.PowerShell.Core\Registry::HKCU
 Get-ChildItem HKCU:
 ```
 
-Kommandona visar bara de objekt som finns direkt, ungefär som att använda `DIR` i **cmd. exe** eller `ls` i ett UNIX-gränssnitt. Om du vill visa tillgängliga objekt måste du ange parametern **rekursivt** . Om du vill visa alla register nycklar i `HKCU:`använder du följande kommando.
+Kommandona visar bara de objekt som finns direkt, ungefär som `DIR` att använda i **cmd. exe** eller `ls` i ett UNIX-gränssnitt. Om du vill visa tillgängliga objekt måste du ange parametern **rekursivt** . Om du vill visa alla register `HKCU:`nycklar i använder du följande kommando.
 
 ```powershell
 Get-ChildItem -Path HKCU:\ -Recurse
 ```
 
-`Get-ChildItem` kan utföra komplexa filtrerings funktioner via dess **sökväg**, **filtrera**, **Inkludera**och **exkludera** parametrar, men dessa parametrar baseras vanligt vis endast på namn. Du kan utföra komplex filtrering baserat på andra egenskaper för objekt med hjälp av `Where-Object` cmdlet. Följande kommando hittar alla nycklar i `HKCU:\Software` som inte har fler än en under nyckel och också har exakt fyra värden:
+`Get-ChildItem`kan utföra komplexa filtrerings funktioner med hjälp av **sökvägen**, **filtrera**, **Inkludera**och **exkludera** parametrar, men dessa parametrar baseras vanligt vis endast på namn. Du kan utföra komplex filtrering baserat på andra egenskaper för objekt med hjälp av `Where-Object` cmdleten. Följande kommando hittar alla nycklar i `HKCU:\Software` som inte har fler än en under nyckel och har även exakt fyra värden:
 
 ```powershell
 Get-ChildItem -Path HKCU:\Software -Recurse |
@@ -72,13 +72,13 @@ Get-ChildItem -Path HKCU:\Software -Recurse |
 
 ## <a name="copying-keys"></a>Kopierar nycklar
 
-Kopieringen görs med `Copy-Item`. I följande exempel kopieras `CurrentVersion` under nyckeln för `HKLM:\SOFTWARE\Microsoft\Windows\` och alla dess egenskaper till `HKCU:\`.
+Kopieringen görs med `Copy-Item`. I följande exempel kopieras `CurrentVersion` under nyckeln för `HKLM:\SOFTWARE\Microsoft\Windows\` och alla dess egenskaper till. `HKCU:\`
 
 ```powershell
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination HKCU:
 ```
 
-Om du undersöker den nya nyckeln i Registereditorn eller använder `Get-ChildItem`du se att du inte har kopior av de inneslutna under nycklarna på den nya platsen. För att kunna kopiera allt innehåll i en behållare måste du ange parametern **rekursivt** . Om du vill göra föregående kopierings kommando rekursivt använder du följande kommando:
+Om du undersöker den nya nyckeln i Registereditorn eller använder `Get-ChildItem`kan du se att du inte har kopior av de inneslutna under nycklarna på den nya platsen. För att kunna kopiera allt innehåll i en behållare måste du ange parametern **rekursivt** . Om du vill göra föregående kopierings kommando rekursivt använder du följande kommando:
 
 ```powershell
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination HKCU: -Recurse
@@ -111,7 +111,7 @@ Remove-Item -Path 'HKCU:\key with spaces in the name'
 
 ## <a name="removing-all-keys-under-a-specific-key"></a>Ta bort alla nycklar under en angiven nyckel
 
-Du kan ta bort objekt som finns med `Remove-Item`, men du uppmanas att bekräfta borttagningen om objektet innehåller något annat. Om vi till exempel försöker ta bort den `HKCU:\CurrentVersion` under nyckeln som vi skapade, ser vi följande:
+Du kan ta bort de objekt som `Remove-Item`finns med, men du uppmanas att bekräfta borttagningen om objektet innehåller något annat. Om vi till exempel försöker ta bort `HKCU:\CurrentVersion` under nyckeln som vi skapade, ser vi följande:
 
 ```powershell
 Remove-Item -Path HKCU:\CurrentVersion
@@ -131,7 +131,7 @@ Om du vill ta bort de objekt som finns utan att du behöver göra det anger du p
 Remove-Item -Path HKCU:\CurrentVersion -Recurse
 ```
 
-Om du vill ta bort alla objekt inom `HKCU:\CurrentVersion` men inte `HKCU:\CurrentVersion`, kan du i stället använda:
+Om du vill ta bort alla objekt inom `HKCU:\CurrentVersion` men inte `HKCU:\CurrentVersion` själv, kan du istället använda:
 
 ```powershell
 Remove-Item -Path HKCU:\CurrentVersion\* -Recurse

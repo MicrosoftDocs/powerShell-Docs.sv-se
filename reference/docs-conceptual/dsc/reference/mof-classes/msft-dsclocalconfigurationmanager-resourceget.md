@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: ResourceGet-metoden
 ms.openlocfilehash: dbe610dfcef5ef6c79783801ecb6fdb7408bdfa5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942680"
 ---
 # <a name="resourceget-method"></a>ResourceGet-metoden
@@ -26,13 +26,13 @@ uint32 ResourceGet(
 
 ## <a name="parameters"></a>Parametrar
 
-*Resurs-\[i*\] namnet på resursen som ska anropas.
+*Resourcetype* \[i\] namnet på resursen som ska anropas.
 
-*Modulnamn* \[i\] namnet på den modul som innehåller resursen som ska anropas.
+*Modulnamn* \[i\] namnet på modulen som innehåller resursen som ska anropas.
 
 *resourceProperty* \[i\] anger resursens egenskaps namn och dess värde i en hash-tabell som nyckel respektive värde. Använd cmdleten [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) för att identifiera resurs egenskaper och deras typer.
 
-*konfigurationer* \[ut\] vid retur innehåller en inbäddad instans av konfigurationerna.
+*konfigurationer* \[ut\] vid retur, innehåller en inbäddad instans av konfigurationerna.
 
 ## <a name="return-value"></a>Returvärde
 

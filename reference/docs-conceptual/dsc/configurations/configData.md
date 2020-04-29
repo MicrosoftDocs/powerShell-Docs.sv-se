@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Använda konfigurations data
 ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942113"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Använda konfigurations data i DSC
@@ -29,7 +29,7 @@ Parametern **ConfigurationData** är en hash som måste ha minst en nyckel med n
 Den kan också ha en eller flera andra nycklar.
 
 > [!NOTE]
-> I exemplen i det här avsnittet används en enda ytterligare nyckel (förutom den namngivna **AllNodes** -nyckeln) med namnet `NonNodeData`, men du kan ta med valfritt antal ytterligare nycklar och ge dem namnet vad du vill.
+> I exemplen i det här avsnittet används en enda ytterligare nyckel (förutom den namngivna **AllNodes** -nyckeln `NonNodeData`) med namnet, men du kan ta med valfritt antal ytterligare nycklar och ge dem de namn du vill.
 
 ```powershell
 $MyData =
@@ -94,8 +94,8 @@ $MyData =
 }
 ```
 
-Om du vill tillämpa en egenskap på alla noder kan du skapa en medlem i **AllNodes** -matrisen som har en **nodnamn** med `*`.
-Om du till exempel vill ge varje nod en `LogPath` egenskap kan du göra detta:
+Om du vill tillämpa en egenskap på alla noder kan du skapa en medlem i **AllNodes** -matrisen som **NodeName** har en `*`nodnamn av.
+Om du till exempel vill ge varje nod `LogPath` en egenskap kan du göra följande:
 
 ```powershell
 $MyData =
@@ -132,12 +132,12 @@ $MyData =
 }
 ```
 
-Detta är motsvarigheten till att lägga till en egenskap med namnet `LogPath` med värdet `"C:\Logs"` för var och en av de andra blocken (`VM-1`, `VM-2`och `VM-3`).
+Detta är detsamma som att lägga till en egenskap med `LogPath` namnet med ett värde för `"C:\Logs"` varje av de andra blocken (`VM-1`, `VM-2`och `VM-3`).
 
 ## <a name="defining-the-configurationdata-hashtable"></a>Definiera ConfigurationData-hash
 
-Du kan definiera **ConfigurationData** antingen som en variabel i samma skript fil som en konfiguration (som i våra tidigare exempel) eller i en separat `.psd1`-fil.
-Om du vill definiera **ConfigurationData** i en `.psd1`-fil skapar du en fil som bara innehåller den hash som representerar konfigurations data.
+Du kan definiera **ConfigurationData** antingen som en variabel i samma skript fil som en konfiguration (som i våra tidigare exempel) eller i en separat `.psd1` fil.
+Om du **ConfigurationData** vill definiera ConfigurationData `.psd1` i en fil skapar du en fil som bara innehåller den hash som representerar konfigurations data.
 
 Du kan till exempel skapa en fil med namnet `MyData.psd1` med följande innehåll:
 
@@ -163,13 +163,13 @@ Du kan till exempel skapa en fil med namnet `MyData.psd1` med följande innehål
 Om du vill kompilera en konfiguration för vilken du har definierat konfigurations data skickar du konfigurations data som värdet för parametern **ConfigurationData** .
 
 Då skapas en MOF-fil för varje post i **AllNodes** -matrisen.
-Varje MOF-fil får namnet med `NodeName`-egenskapen för motsvarande mat ris post.
+Varje MOF-fil får namnet med `NodeName` egenskapen för motsvarande mat ris post.
 
-Om du till exempel definierar konfigurations data som i `MyData.psd1`-filen ovan skapas både `VM-1.mof`-och `VM-2.mof`-filer när du kompilerar en konfiguration.
+Om du till exempel definierar konfigurations data som i `MyData.psd1` filen ovan skapas både `VM-1.mof` och `VM-2.mof` filer när du kompilerar en konfiguration.
 
 ### <a name="compiling-a-configuration-with-configuration-data-using-a-variable"></a>Kompilera en konfiguration med konfigurations data med en variabel
 
-Om du vill använda konfigurations data som har definierats som en variabel i samma `.ps1`-fil som konfigurationen skickar du variabel namnet som värde för parametern **ConfigurationData** när du kompilerar konfigurationen:
+Om du vill använda konfigurations data som har definierats som en `.ps1` variabel i samma fil som konfigurationen skickar du variabel namnet som värde för parametern **ConfigurationData** när du kompilerar konfigurationen:
 
 ```powershell
 MyDscConfiguration -ConfigurationData $MyData
@@ -187,10 +187,10 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 DSC tillhandahåller följande särskilda variabler som kan användas i ett konfigurations skript:
 
-- **$AllNodes** refererar till hela samlingen av noder som definierats i **ConfigurationData**. Du kan filtrera **AllNodes** -samlingen med hjälp av **. Där ()** och **. ()** .
+- **$AllNodes** refererar till hela samlingen av noder som definierats i **ConfigurationData**. Du kan filtrera **AllNodes** -samlingen med hjälp av **. Där ()** och **. ()**.
 - **ConfigurationData** refererar till hela hash-tabellen som skickas som parameter när en konfiguration kompileras.
-- **TypeName** innehåller [konfigurations](configurations.md) namnet som variabeln används i. I konfigurations `MyDscConfiguration`har `$MyTypeName` till exempel värdet `MyDscConfiguration`.
-- **Node** refererar till en viss post i **AllNodes** -samlingen när den filtreras med hjälp av **. Där ()** eller **. ()** .
+- **TypeName** innehåller [konfigurations](configurations.md) namnet som variabeln används i. I-konfigurationen `MyDscConfiguration` `$MyTypeName` har till exempel värdet `MyDscConfiguration`.
+- **Node** refererar till en viss post i **AllNodes** -samlingen när den filtreras med hjälp av **. Där ()** eller **. ()**.
   - Du kan läsa mer om de här metoderna i [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 ## <a name="using-non-node-data"></a>Använda data som inte är noder

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: GetMetaConfiguration-metoden
 ms.openlocfilehash: bd280cb8ebd7b0522e4e01cbd24bd9bdcfddf4c2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941567"
 ---
 # <a name="getmetaconfiguration-method"></a>GetMetaConfiguration-metoden
@@ -23,7 +23,7 @@ uint32 GetMetaConfiguration(
 
 ## <a name="parameters"></a>Parametrar
 
-*MetaConfiguration* \[ut\] vid retur innehåller en inbäddad instans av **MSFT_DSCMetaConfiguration** -klassen som definierar inställningarna.
+*MetaConfiguration* \[ut\] vid retur, innehåller en inbäddad instans av klassen **MSFT_DSCMetaConfiguration** som definierar inställningarna.
 
 ## <a name="return-value"></a>Returvärde
 

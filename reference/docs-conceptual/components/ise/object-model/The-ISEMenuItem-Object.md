@@ -3,10 +3,10 @@ ms.date: 12/31/2019
 keywords: PowerShell, cmdlet
 title: ISEMenuItem-objektet
 ms.openlocfilehash: c3ffe6e8f0b28987543fe0a873c552292dc5158a
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736989"
 ---
 # <a name="the-isemenuitem-object"></a>ISEMenuItem-objektet
@@ -16,7 +16,7 @@ Alla meny objekt på menyn **tilläggsprogram** är instanser av klassen **Micro
 
 ## <a name="properties"></a>Egenskaper
 
-### <a name="displayname"></a>Visningsnamn
+### <a name="displayname"></a>DisplayName
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -29,7 +29,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 ```
 
-### <a name="action"></a>Åtgärd
+### <a name="action"></a>Action
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -91,5 +91,5 @@ $parentAdded.SubMenus.Add('_Dir', {dir}, 'Alt+D')
 ## <a name="see-also"></a>Se även
 
 - [ISEMenuItemCollection-objektet](The-ISEMenuItemCollection-Object.md)
-- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)
+- [Användningsområden för Windows PowerShell ISE-skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Objekt modells-hierarkin för ISE](The-ISE-Object-Model-Hierarchy.md)

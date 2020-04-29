@@ -3,19 +3,19 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: PowerShellTabCollection-objektet
 ms.openlocfilehash: 0aad885afd3ba3ae3b00f5c11d2c62a9ff303798
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736121"
 ---
 # <a name="the-powershelltabcollection-object"></a>PowerShellTabCollection-objektet
 
-**PowerShellTab** Collection-objektet är en samling **PowerShellTab** -objekt. Varje **PowerShellTab** -objekt fungerar som en separat körnings miljö. Det är en instans av klassen Microsoft. PowerShell. Host. ISE. PowerShellTabs. Ett exempel är `$psISE.PowerShellTabs`-objektet.
+**PowerShellTab** Collection-objektet är en samling **PowerShellTab** -objekt. Varje **PowerShellTab** -objekt fungerar som en separat körnings miljö. Det är en instans av klassen Microsoft. PowerShell. Host. ISE. PowerShellTabs. Ett exempel är `$psISE.PowerShellTabs` objektet.
 
 ## <a name="methods"></a>Metoder
 
-### <a name="add"></a>Lägg till\(\)
+### <a name="add"></a>Skapa\(\)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -26,7 +26,7 @@ $newTab = $psISE.PowerShellTabs.Add()
 $newTab.DisplayName = 'Brand New Tab'
 ```
 
-### <a name="removemicrosoftpowershellhostisepowershelltab-pstab"></a>Ta bort\(Microsoft. PowerShell. Host. ISE. PowerShellTab psTab\)
+### <a name="removemicrosoftpowershellhostisepowershelltab-pstab"></a>Ta\(bort Microsoft. PowerShell. Host. ISE. PowerShellTab psTab\)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -64,5 +64,5 @@ $psISE.PowerShellTabs.SelectedPowerShellTab = $oldTab
 ## <a name="see-also"></a>Se även
 
 - [PowerShellTab-objektet](The-PowerShellTab-Object.md)
-- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)
+- [Användningsområden för Windows PowerShell ISE-skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Objekt modells-hierarkin för ISE](The-ISE-Object-Model-Hierarchy.md)

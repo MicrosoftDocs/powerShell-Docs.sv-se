@@ -3,10 +3,10 @@ ms.date: 08/23/2017
 keywords: PowerShell, cmdlet
 title: fel sökning av åtkomst problem i Windows PowerShell-Webbåtkomst
 ms.openlocfilehash: 818beffaf7df55ae36a154b7b751f9201c5b4299
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75870191"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Felsökning av åtkomstproblem i Windows PowerShell-webbåtkomst
@@ -52,21 +52,21 @@ Detta kan inträffa om en användare har loggat in med ett domännamn som inneh�
 1. Installera och kör Internet Explorer 10
 1. Ändra inställningen för **dokument läge** i Internet Explorer till *IE10* -standarder.
    1. Öppna Utvecklarverktyg-konsolen genom att trycka på **F12**
-   1. I Internet Explorer 10 klickar du på **webb läsar läge**och väljer sedan *Internet Explorer 10*.
+   1. I Internet Explorer 10 klickar du på **Webbläsarläge** och väljer sedan *Internet Explorer 10*.
    1. Klicka på **dokument läge**och klicka sedan på *IE10* -standarder.
-   1. Tryck på **F12** igen för att stänga utvecklarverktyg-konsolen.
+   1. Tryck på **F12** igen för att stänga konsolen Utvecklingsverktyg.
 1. Inaktivera automatisk proxykonfiguration i Internet Explorer 10.
    1. Klicka på **verktyg**och sedan på **Internet alternativ**.
-   1. I dialog rutan **Internet alternativ** på fliken **anslutningar** klickar du på LAN- **Inställningar**.
-   1. Avmarkera kryss rutan **Automatisk identifiering av inställningar** . Klicka på **OK**och sedan på **OK** igen för att stänga dialog rutan *Internet alternativ* .
+   1. I dialogrutan **Internetalternativ** på fliken **Anslutningar** klickar du på **LAN-inställningar**.
+   1. Avmarkera kryssrutan **Automatisk identifiering av inställningar**. Klicka på **OK** och klicka sedan på **OK** igen för att stänga dialogrutan *Internetalternativ*.
 
 ## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>Det går inte att ansluta till en fjärrdator
 
-Om mål datorn är medlem i en arbets grupp använder du följande syntax för att ange ditt användar namn och logga in på datorn: `<workgroup_name>\<user_name>`
+Om mål datorn är medlem i en arbets grupp använder du följande syntax för att ange ditt användar namn och logga in på datorn:`<workgroup_name>\<user_name>`
 
 ## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>Det går inte att hitta hanteringsverktyg för Webbserver (IIS), trots att rollen har installerats
 
-Om du har installerat Windows PowerShell-webbåtkomst med hjälp av `Install-WindowsFeature`-cmdleten installeras inte hanterings verktygen om inte parametern **IncludeManagementTools** läggs till i cmdleten.
+Om du har installerat Windows PowerShell-webbåtkomst med `Install-WindowsFeature` hjälp av cmdleten installeras inte hanterings verktygen om inte **IncludeManagementTools** -parametern läggs till i cmdleten.
 
 Ett exempel finns i [Installera Windows PowerShell-webbåtkomst med hjälp av Windows PowerShell-cmdlets](install-and-use-windows-powershell-web-access.md#to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets).
 
@@ -104,7 +104,7 @@ ComputerName | Fullständigt kvalificerat namn på gateway-server eller Localhos
 
  Parameter   |    Värde
 ------------ | -----------
-ComputerName | Servernamn
+ComputerName | servernamn
 
 ### <a name="gateway-credentials"></a>Gateway-autentiseringsuppgifter
 
@@ -128,7 +128,7 @@ Auktoriseringsregler stöder inte en IPv6-adress i form av ett domännamn.
 
 Använd en IPv6-adress (som innehåller kolon) om du vill ange en måldator med hjälp av en IPv6-adress i auktoriseringsregeln. Både domän-och numeriska (med kolon) IPv6-adresser stöds som mål dator namn på inloggnings sidan för Windows PowerShell-webbåtkomst, men inte i auktoriseringsregler.
 
-Mer information om IPv6-adresser finns i [så här fungerar IPv6](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10)).
+Mer information om IPv6-adresser finns i [Så här fungerar IPv6](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10)).
 
 ## <a name="see-also"></a>Se även
 

@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Skapa ett PowerShell-galleriet konto
 ms.openlocfilehash: f43d7e65bb8bf9a9bbdda9790cc622786377fa38
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278796"
 ---
 # <a name="creating-a-powershell-gallery-account"></a>Skapa ett PowerShell-galleriet konto
@@ -15,7 +15,7 @@ ms.locfileid: "78278796"
 Du måste skapa ett PowerShell-galleriet konto innan du publicerar något till PowerShell-galleriet.
 PowerShell-galleriet konton måste vara länkade till ett e-postaktiverat inloggnings konto. Det här kontot kan vara ett Azure Active Directory konto eller ett Microsoft-ID, t. ex. ett e-postkonto från outlook.com eller hotmail.com.
 
-Om du vill skapa ett PowerShell-galleriet konto går du till [https://PowerShellGallery.com](https://PowerShellGallery.com) och klickar på **Logga** in som visas i följande bild.
+Om du vill skapa ett PowerShell-galleriet konto går [https://PowerShellGallery.com](https://PowerShellGallery.com) du till och klickar på **Logga** in som visas i följande bild.
 
 ![Registrera nytt konto](media/creating-an-account/CreateAccount-Register.png)
 

@@ -3,10 +3,10 @@ title: Nyheter i PowerShell Core 6,2
 description: Nya funktioner och ändringar som lanseras i PowerShell Core 6,2
 ms.date: 03/28/2019
 ms.openlocfilehash: 98dd97b064e11509bf97e68e0a312e6b34b5d2bc
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "76995480"
 ---
 # <a name="whats-new-in-powershell-core-62"></a>Nyheter i PowerShell Core 6,2
@@ -50,9 +50,9 @@ Suggestion [4,General]: The most similar commands are: Get-Command, Get-Content,
 
 ### <a name="implicit-remoting-batching"></a>Implicit fjärran batchbearbetning
 
-När du använder [implicit fjärr kommunikation](https://devblogs.microsoft.com/scripting/remoting-the-implicit-way/) i en pipeline behandlar PowerShell varje kommando i pipelinen separat. Objekt serialiseras upprepade gånger och `de-serialized` mellan klienten och fjärrsystemet under körningen av pipelinen.
+När du använder [implicit fjärr kommunikation](https://devblogs.microsoft.com/scripting/remoting-the-implicit-way/) i en pipeline behandlar PowerShell varje kommando i pipelinen separat. Objekten serialiseras upprepade gånger och `de-serialized` mellan klienten och fjärrsystemet under körningen av pipelinen.
 
-Med den här funktionen analyserar PowerShell pipelinen för att avgöra om kommandot är säkert att köra och finns på mål systemet. Om värdet är true, kör PowerShell hela pipelinen via en fjärr anslutning och endast serialiserar och `de-serializes` tillbaka resultatet till klienten.
+Med den här funktionen analyserar PowerShell pipelinen för att avgöra om kommandot är säkert att köra och finns på mål systemet. När värdet är true, kör PowerShell hela pipelinen via en fjärr anslutning och bara `de-serializes` serialiserar och tillbaka resultatet till klienten.
 
 ```powershell
 Enable-ExperimentalFeature -Name PSImplicitRemotingBatching
@@ -66,7 +66,7 @@ Ett verkligt globalt test av `Get-Process | Sort-Object` över localhost minskar
 Enable-ExperimentalFeature -Name PSTempDrive
 ```
 
-Om du använder PowerShell Core på olika operativ system kommer du att upptäcka att miljövariabeln för att hitta den temporära katalogen är annorlunda på Windows, macOS och Linux! Med den här funktionen får du en [PSDrive][] som kallas `Temp:` som automatiskt mappas till den temporära mappen för det operativ system som du använder.
+Om du använder PowerShell Core på olika operativ system kommer du att upptäcka att miljövariabeln för att hitta den temporära katalogen är annorlunda på Windows, macOS och Linux! Med den här funktionen får du en [PSDrive][] som `Temp:` kallas att automatiskt mappas till den temporära mappen för det operativ system som du använder.
 
 #### <a name="example"></a>Exempel
 
@@ -76,7 +76,7 @@ PS> Get-Content Temp:/hello.txt
 Hello World!
 ```
 
-Tänk på att interna fil kommandon (t. ex. `ls` på Linux) inte är medvetna om PSDrives och inte ser den här `Temp:` enheten.
+Tänk på att interna fil kommandon (som `ls` i Linux) inte är medvetna om PSDrives och inte ser den `Temp:` här enheten.
 
 ### <a name="abbreviation-expansion"></a>Utökning av förkortning
 
@@ -104,20 +104,20 @@ PS> Import-AzRecoveryServicesAsrVaultSettingsFile
 
 ## <a name="breaking-changes"></a>Icke-bakåtkompatibla ändringar
 
-- Korrigera `-NoEnumerate` beteende i `Write-Output` att vara konsekvent med Windows PowerShell. (#9069)
-- Kontrol `Join-String -InputObject 1,2,3` resultat som motsvarar `1,2,3 | Join-String` resultat (#8611) (tack @sethvs!)
-- Lägg till `-Stable` i `Sort-Object` och relaterade tester (#7862) (tack @KirkMunro!)
-- Förbättra `Start-Sleep`-cmdlet för att acceptera bråktal (#8537) (tack @Prototyyppi!)
-- Ändra hash för att använda OrdinalIgnoreCase för att vara `case-insensitive` i alla kulturer (#8566)
-- Åtgärda **LiteralPath** i `Import-Csv` att binda till `Get-ChildItem` utdata (#8277) (tack @iSazonov!)
+- Åtgärda `-NoEnumerate` beteendet `Write-Output` i för att vara konsekvent med Windows PowerShell. (#9069)
+- Gör `Join-String -InputObject 1,2,3` resultatet lika med `1,2,3 | Join-String` resultatet (#8611) (tack @sethvs!)
+- Lägg `-Stable` till `Sort-Object` i och relaterade tester (#7862) ( @KirkMunrotack!)
+- Förbättra `Start-Sleep` cmdleten för att ta emot bråktal i sekunder (#8537 @Prototyyppi) (tack!)
+- Ändra hash-OrdinalIgnoreCase `case-insensitive` så att den använder alla kulturer (#8566)
+- Åtgärda **LiteralPath** i `Import-Csv` för att binda `Get-ChildItem` till utdata (#8277) ( @iSazonovtack!)
 - Hoppar inte längre över en kolumn utan namn om dubbel quote-avgränsare används i `Import-Csv` (#7899) (tack @Topping!)
-- `Get-ExperimentalFeature` har inte längre `-ListAvailable` växel (#8318)
-- Felsök-parametern anger nu `$DebugPreference` att **fortsätta** i stället för **fråga** (#8195) (tack @KirkMunro!)
-- Använd `-OutputFormat` om det anges i icke-interaktiva, omdirigerade, kodade kommando som används med pwsh (#8115)
+- `Get-ExperimentalFeature`har `-ListAvailable` inte längre någon växel (#8318)
+- Felsök-parametern har `$DebugPreference` nu ställts in för att **fortsätta** i stället för **fråga** (#8195) (tack @KirkMunro!)
+- Använd `-OutputFormat` om det är angivet i icke-interaktivt, omdirigerade, kodade kommando som används med pwsh (#8115)
 - Läs in sammansättning från modulens bas Sök väg innan du försöker läsa in från GAC (#8073)
 - Ta bort Tilde från Linux Preview-paket (#8244)
-- Flytta bearbetning av `-WorkingDirectory` innan profiler bearbetas (#8079)
-- Lägg inte till `PATHEXT` Environment-variabel på UNIX (#7697) (tack @iSazonov!)
+- Flytta bearbetning av `-WorkingDirectory` före bearbetning av profiler (#8079)
+- Lägg inte till `PATHEXT` miljövariabeln på Unix (#7697) ( @iSazonovtack!)
 
 ## <a name="known-issues"></a>Kända problem
 
@@ -127,70 +127,70 @@ PS> Import-AzRecoveryServicesAsrVaultSettingsFile
 
 - Aktivera ifyllnad av Skift läges okänsligt för filer och mappar på SKIFT läges känsligt fil system (#8128)
 - Gör PSVersionInfo. PSVersion och PSVersionInfo. PSEdition Public (#8054) (tack @KirkMunro!)
-- Lägg till typ-härledning för `$_` / `$PSItem` i `catch{ }` block (#8020) (tack @vexx32!)
-- Korrigera statisk metod typ för anrops typ (#8018) (tack @SeeminglyScience!)
-- Skapa härledda typer för `Select-Object`, `Group-Object`, **PSObject** och **hash** (#7231) (tack @powercode!)
-- Stöd för anrops metod med `ByRef-like` typ parametrar (#7721)
+- Lägg till typ härledning `$_`  /  `$PSItem` för `catch{ }` i block (#8020) ( @vexx32tack!)
+- Korrigera statisk metod typ härledning (#8018) (tack @SeeminglyScience!)
+- Skapa härledda typer `Select-Object`för, `Group-Object`, **PSObject** och **hash** (#7231) (tack @powercode!)
+- Stöd för anrop av `ByRef-like` Metod med typ parametrar (#7721)
 - Hantera det fall där sökvägen till Windows PowerShell-modulen redan finns i miljöns PSModulePath (#7727)
-- Aktivera `SecureString`-cmdletar för icke-Windows genom att lagra den oformaterade texten (#9199)
+- Aktivera `SecureString` cmdletar för icke-Windows genom att lagra den oformaterade texten (#9199)
 - Förbättra fel meddelandet på icke-Windows när du importerar CliXml med SecureString (#7997)
-- Lägger till parameter ReplyTo till `Send-MailMessage` (#8727) (tack @replicaJunction!)
+- Lägger till parametern ReplyTo `Send-MailMessage` till (#8727) ( @replicaJunctiontack!)
 - Lägg till föråldrat meddelande i `Send-MailMessage` (#9178)
-- Åtgärda `Restart-Computer` att arbeta på `localhost` när WinRM inte finns (#9160)
-- Gör `Start-Job` Utlös fel när PowerShell håller på att nås (#9128)
-- Lägg C# till stil typs acceleratorer och suffix för ushort, uint, ulong och korta litteraler (#7813) (tack @vexx32!)
-- Nya suffix har lagts till för numeriska literaler – se [about_Numeric_Literals][] (#7901) (tack @vexx32!)
+- Korrigera `Restart-Computer` för att fungera `localhost` på när WinRM inte finns (#9160)
+- Gör `Start-Job` Throw-avslutande fel när PowerShell håller på att nås (#9128)
+- Lägg till acceleratorer med C#-typ och suffix för ushort, uint, ulong och korta litteraler (#7813) (tack @vexx32!)
+- Nya suffix har lagts till för numeriska literaler – se [about_Numeric_Literals][] (#7901) ( @vexx32tack!)
 - Korrekt rapport effekt nivå när SupportsShouldProcess inte är inställt på True (#8209) (tack @vexx32!)
-- Korrigera charset-problem i webb-cmdlets (#8742) (tack @markekraus!)
-- Fix förväntar dig `100-continue` problem med Web-cmdlets (#8679) (tack @markekraus!)
-- Åtgärda problem med fil blockering med Web-cmdlets (#7676) (tack @Claustn!)
-- Åtgärda problem med tolkning av tecken tabell i `Invoke-RestMethod` (#8694) (tack @markekraus!)
-- Åter`ConvertTo-Json` för att exponera JsonObject. ConvertToJson som ett offentligt API (#8682)
-- Lägg till konfigurerbart högsta djup i `ConvertFrom-Json` med-djup (#8199) (tack @louistio!)
-- Lägg till parametern EscapeHandling i `ConvertTo-Json`-cmdlet (#7775) (tack @iSazonov!)
-- Lägg till `-CustomPipeName` i pwsh och `Enter-PSHostProcess` (#8889)
-- Aktivera skapande av relativa symboliska länkar i Windows med `New-Item` (#8783)
+- Korrigera charset-problem i webb-cmdlets (#8742) ( @markekraustack!)
+- Åtgärda förväntat `100-continue` problem med Web-cmdletar (#8679 @markekraus) (tack!)
+- Åtgärda problem med fil blockering med Web-cmdletar (#7676) @Claustn(tack!)
+- Åtgärda problem med tolkning av tecken tabell `Invoke-RestMethod` i (#8694) ( @markekraustack!)
+- Refaktum `ConvertTo-Json` för att exponera JsonObject. ConvertToJson som ett offentligt API (#8682)
+- Lägg till konfigurerbart maximalt djup `ConvertFrom-Json` i med-djup (#8199) ( @louistiotack!)
+- Lägg till EscapeHandling- `ConvertTo-Json` parametern i cmdleten (#7775 @iSazonov) (tack!)
+- Lägg `-CustomPipeName` till i pwsh `Enter-PSHostProcess` och (#8889)
+- Aktivera skapande av relativa symboliska länkar i `New-Item` Windows med (#8783)
 - Tillåt Windows-användare i utvecklarläge att skapa symlinks utan utökade privilegier (#8534)
-- Aktivera `Write-Information` att acceptera `$null` (#8774)
-- Korrigera `Get-Help` för avancerade funktioner med hjälp innehåll för MAML (#8353)
-- Åtgärda `Get-Help` PSTypeName-problem med-parameter när endast en parameter deklareras (#8754) (tack @pougetat!)
-- Token calculation-korrigering för `Get-Help` som körts på script block för kommentars hjälpen. (#8238) (Tack @hubuk!)
-- Ändra `Get-Help` cmdlet-parameter-parameter så att den accepterar String-matriser (#8454) (tack @sethvs!)
+- Tillåt `Write-Information` att accepterar `$null` (#8774)
+- Korrigera `Get-Help` för avancerade funktioner med MAML-hjälp innehåll (#8353)
+- Åtgärda `Get-Help` PSTypeName-problem med-parameter när endast en parameter deklareras (#8754) ( @pougetattack!)
+- Korrigering av token `Get-Help` -beräkning för körning på script block för kommentars hjälpen. (#8238) (Tack @hubuk!)
+- Ändra `Get-Help` cmdlet – parameter parameter så att den accepterar sträng mat ris (#8454) ( @sethvstack!)
 - Lös PAGER om sökvägen innehåller blank steg (#8571) (tack @pougetat!)
-- Lägg till en prompt till användningen av `less` i funktionen "hjälp" för att instruera användaren att avsluta (#7998)
-- Lägg till stöd för uppräknings-och tecken typer i `Format-Hex` cmdlet (#8191) (tack @iSazonov!)
-- Ta bort ShouldProcess från `Format-Hex` (#8178)
-- Lägg till nya förskjutnings-och Count-parametrar till `Format-Hex` och omstrukturering av cmdleten (#7877) (tack @iSazonov!)
+- Lägg till en prompt till användningen `less` av i funktionen Help för att instruera användaren att avsluta (#7998)
+- Lägg till stöd för uppräknings `Format-Hex` -och tecken typer i cmdlet @iSazonov(#8191) (tack!)
+- Ta bort ShouldProcess `Format-Hex` från (#8178)
+- Lägg till nya förskjutnings-och `Format-Hex` Count-parametrar till och omstrukturering av cmdleten @iSazonov(#7877) (tack!)
 - Tillåt ' name ' som en aliasnamn för ' Label ' i `ConvertTo-Html`, Tillåt att ' width '-posten är ett heltal (#8426) (tack @mklement0!)
-- Gör script block-baserade beräknade egenskaper fungerar igen i `ConvertTo-Html` (#8427) (tack @mklement0!)
-- Lägg till cmdlet `Join-String` för att skapa text från pipeline-inmatare (#7660) (tack @powercode!)
-- Korrigera `Join-String`-cmdlet FormatString parameter Logic (#8449) (tack @sethvs!)
-- Ändra `Clear-Host` tillbaka till att använda `$RAWUI` och rensa för att arbeta via fjärr kommunikation (#8609)
-- Ändra `Clear-Host` till att bara anropa `[console]::clear` och ta bort radera alias från UNIX (#8603)
-- Åtgärda LiteralPath i `Import-Csv` att binda till `Get-ChildItem` utdata (#8277) (tack @iSazonov!)
+- Gör script block-baserade beräknade egenskaper fungerar igen `ConvertTo-Html` om (#8427) ( @mklement0tack!)
+- Lägg till `Join-String` cmdlet för att skapa text från pipeline-ininformation (#7660 @powercode) (tack!)
+- Åtgärda `Join-String` cmdlet FormatString parameter logic (#8449) (tack @sethvs!)
+- Ändra `Clear-Host` tillbaka till Använd `$RAWUI` och rensa för att arbeta via fjärr kommunikation (#8609)
+- Ändra `Clear-Host` till att bara `[console]::clear` anropa och ta bort radera alias från UNIX (#8603)
+- Åtgärda LiteralPath i `Import-Csv` för att binda `Get-ChildItem` till utdata (#8277) ( @iSazonovtack!)
 - Hjälp funktionen ska inte använda pager för AliasHelpInfo (#8552)
-- Lägg till `-UseMinimalHeader` i `Start-Transcript` för att minimera avskrifts huvudet (#8402) (tack @lukexjeremy!)
-- Lägg till `Enable-ExperimentalFeature`-och `Disable-ExperimentalFeature`-cmdletar (#8318)
+- Lägg `-UseMinimalHeader` till `Start-Transcript` i för att minimera avskrifts huvudet ( @lukexjeremy#8402) (tack!)
+- Lägg `Enable-ExperimentalFeature` till `Disable-ExperimentalFeature` och cmdlets (#8318)
 - Visa alla cmdletar från **PSDiagnostics** om logman. exe är tillgängligt (#8366)
-- Ta bort **bevara** parameter från `New-PSDrive` på `non-Windows` plattform (#8291) (tack @lukexjeremy!)
-- Lägg till stöd för `cd +` (#7206) (tack @bergmeister!)
-- Aktivera `Set-Location -LiteralPath` att arbeta med mappar med namnet-och + (#8089)
-- `Test-Path` returnerar `$false` när ett tomt eller `$null` sökvägar anges (#8080) (tack @vexx32!)
+- Ta bort **bevara** parameter `New-PSDrive` från `non-Windows` på plattformen (#8291) ( @lukexjeremytack!)
+- Lägg till stöd `cd +` för (#7206) ( @bergmeistertack!)
+- Aktivera `Set-Location -LiteralPath` för att arbeta med mappar med namnet-och + (#8089)
+- `Test-Path`Returnerar `$false` när angivet värde för Tom `$null` eller sökväg (#8080) (tack @vexx32!)
 - Tillåt att dynamisk parameter returneras även om sökvägen inte matchar någon Provider (#7957)
-- Stöd `Get-PSHostProcessInfo` och `Enter-PSHostProcess` på UNIX-plattformar (#8232)
-- Minska allokeringarna i `Get-Content`-cmdlet (#8103) (tack @iSazonov!)
+- Support `Get-PSHostProcessInfo` - `Enter-PSHostProcess` och Unix-plattformar (#8232)
+- Minska allokeringarna i `Get-Content` en cmdlet (#8103) (tack @iSazonov!)
 - Aktivera `Add-Content` för att dela Läs behörighet med andra verktyg när du skriver innehåll (#8091)
-- `Get/Add-Content` genererar förbättrat fel vid mål för en behållare (#7823) (tack @kvprasoon!)
-- Lägg till `-Name`, `-NoUserOverrides` och `-ListAvailable` parametrar till `Get-Culture` cmdlet (#7702) (tack @iSazonov!)
+- `Get/Add-Content`genererar förbättrat fel vid mål för en behållare (#7823) (tack @kvprasoon!)
+- Lägg `-Name`till `-NoUserOverrides` och `-ListAvailable` parametrar till `Get-Culture` cmdlet (#7702) (tack @iSazonov!)
 - Lägg till enhetligt attribut för att slutföra **kodnings** parametern. (#7732) (Tack @ThreeFive-O!)
-- Tillåt numeriska ID: n och namnet på registrerade tecken sidor i **encoding** -parametrar (#7636) (tack @iSazonov!)
+- Tillåt numeriska ID: n och namnet på registrerade tecken sidor i **encoding** -parametrar (#7636 @iSazonov) (tack!)
 - Korrigera `Rename-Item -Path` med jokertecken (#7398) (tack @kwkam!)
-- När du använder `Start-Transcript` och filen finns tom fil i stället för att ta bort (#8131) (tack @paalbra!)
-- Gör `Add-Type` filer med öppen källkod med **fileaccess. Read** och **fileshare. read** explicit (#7915) (tack @IISResetMe!)
-- Korrigera `Enter-PSSession -ContainerId` för de senaste Windows-versionerna (#7883)
-- Se till att egenskapen **NestedModules** har fyllts i `Test-ModuleManifest` (#7859)
-- Lägg till `%F` fall i `Get-Date`-UFormat (#7630) (tack @britishben!)
-- Korrigera `Set-Service -Status Stopped` att stoppa tjänster med beroenden (#5525) (tack @zhenggu!)
+- När du `Start-Transcript` använder och filen finns, tom fil i stället för att ta bort ( @paalbra#8131) (tack!)
+- Gör `Add-Type` filer med öppen källkod med **fileaccess. Read** och **FileShare. Read** explicit (#7915) ( @IISResetMetack!)
+- Korrigera `Enter-PSSession -ContainerId` den senaste versionen av Windows (#7883)
+- Se till att egenskapen **NestedModules** är ifylld `Test-ModuleManifest` med (#7859)
+- Lägg `%F` till Case `Get-Date` to-UFormat (#7630) ( @britishbentack!)
+- Korrigera `Set-Service -Status Stopped` för att stoppa tjänster med beroenden (#5525) @zhenggu(tack!)
 
 <!-- Link references -->
 [about_Numeric_Literals]: /powershell/module/Microsoft.PowerShell.Core/About/about_numeric_literals

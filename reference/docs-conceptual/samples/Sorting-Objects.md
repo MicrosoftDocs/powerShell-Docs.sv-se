@@ -3,15 +3,15 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Sortera objekt
 ms.openlocfilehash: ed78e7e333f3468781c9cd96df2194fbdfebe753
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030783"
 ---
 # <a name="sorting-objects"></a>Sortera objekt
 
-Vi kan organisera visade data så att de blir enklare att söka igenom med hjälp av `Sort-Object` cmdlet. `Sort-Object` tar namnet på en eller flera egenskaper att sortera på och returnerar data sorterade efter värdena för dessa egenskaper.
+Vi kan organisera visade data för att göra det enklare att söka igenom dem `Sort-Object` med hjälp av cmdleten. `Sort-Object`tar namnet på en eller flera egenskaper att sortera på och returnerar data sorterade efter värdena för dessa egenskaper.
 
 ## <a name="basic-sorting"></a>Grundläggande sortering
 
@@ -67,7 +67,7 @@ LastWriteTime          Name
 ## <a name="using-hash-tables"></a>Använda hash-tabeller
 
 Du kan sortera olika egenskaper i olika beställningar genom att använda hash-tabeller i en matris.
-Varje hash-tabell använder en **uttrycks** nyckel för att ange egenskaps namnet som sträng och en **stigande** eller **fallande** nyckel för att ange sorterings ordningen genom att `$true` eller `$false`.
+Varje hash-tabell använder en **uttrycks** nyckel för att ange egenskaps namnet som sträng och en **stigande** eller **fallande** nyckel för att ange sorterings ordningen efter `$true` eller `$false`.
 **Uttrycks** nyckeln är obligatorisk.
 Den **stigande** eller **fallande** nyckeln är valfri.
 
@@ -92,7 +92,7 @@ LastWriteTime          Name
 ```
 
 Du kan också ange en script block till **uttrycks** nyckeln.
-När du kör `Sort-Object`-cmdleten körs script block och resultatet används för sortering.
+När du `Sort-Object` kör cmdleten körs script block och resultatet används för sortering.
 
 I följande exempel sorteras objekt i fallande ordning efter tidsintervallet mellan **CreationTime** och **LastWriteTime**.
 
@@ -124,7 +124,7 @@ Du kan utelämna **egenskaps** parameterns namn enligt följande:
 Sort-Object LastWriteTime, Name
 ```
 
-Förutom kan du referera till `Sort-Object` med dess inbyggda alias `sort`:
+Förutom kan du referera till `Sort-Object` med dess inbyggda alias: `sort`
 
 ```powershell
 sort LastWriteTime, Name

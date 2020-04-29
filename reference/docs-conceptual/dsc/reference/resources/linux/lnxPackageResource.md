@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxPackage-resurs
 ms.openlocfilehash: 4091cbbd5e34a84b9011870da4bda93281378347
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942554"
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>DSC för Linux nxPackage-resurs
@@ -33,18 +33,18 @@ nxPackage <string> #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|Namn |Namnet på det paket som du vill säkerställa ett speciellt tillstånd för. |
+|Name |Namnet på det paket som du vill säkerställa ett speciellt tillstånd för. |
 |PackageManager |De värden som stöds är **yum**, **apt**och **zypper**. Anger vilken paket hanterare som ska användas för att installera paket. Om **sökväg anges används** den angivna sökvägen för att installera paketet. Annars kommer en paket hanterare att användas för att installera paketet från en förkonfigurerad lagrings plats. Om varken **PackageManager** eller **sökväg** anges används standard paket hanteraren för systemet. |
-|PackageGroup |Om `$true`är **namnet** förväntas vara namnet på en paket grupp som ska användas med en **PackageManager**. **PackageGroup** är inte giltig vid en **fil Sök väg**. |
+|PackageGroup |Om `$true` **namnet** förväntas vara namnet på en paket grupp som ska användas med en **PackageManager**. **PackageGroup** är inte giltig vid en **fil Sök väg**. |
 |Argument |En sträng med argument som skickas till paketet exakt som det anges. |
 |ReturnCode |Den förväntade retur koden. Om den faktiska retur koden inte matchar det förväntade värdet här, returnerar konfigurationen ett fel. |
-|filePath |Sökvägen till filen där paketet finns. |
+|FilePath |Sökvägen till filen där paketet finns. |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"`. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
 |Kontrol |Avgör om det finns ett paket som ska kontrol leras. Ange att den här egenskapen **finns** för att se till att paketet finns. Ange det som **frånvarande** för att säkerställa att paketet inte finns. Standardvärdet finns **.** |
 
 ## <a name="example"></a>Exempel

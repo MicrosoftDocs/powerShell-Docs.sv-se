@@ -3,17 +3,17 @@ title: WS-Management-fjärrkommunikation (WSMan) i PowerShell Core
 description: Fjärr kommunikation i PowerShell Core med WSMan
 ms.date: 08/06/2018
 ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "62058887"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>WS-Management-fjärrkommunikation (WSMan) i PowerShell Core
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>Instruktioner för att skapa en fjärran sluten slut punkt
 
-PowerShell Core-paketet för Windows innehåller ett WinRM-plugin-program (`pwrshplugin.dll`) och ett installations skript (`Install-PowerShellRemoting.ps1`) i `$PSHome`.
+PowerShell Core-paketet för Windows innehåller ett WinRM-plugin-program`pwrshplugin.dll`() och ett installations skript`Install-PowerShellRemoting.ps1`() `$PSHome`i.
 De här filerna gör att PowerShell kan acceptera inkommande PowerShell fjärr anslutningar när dess slut punkt anges.
 
 ### <a name="motivation"></a>Motivation
@@ -21,14 +21,14 @@ De här filerna gör att PowerShell kan acceptera inkommande PowerShell fjärr a
 En installation av PowerShell kan upprätta PowerShell-sessioner till fjärrdatorer med hjälp av `New-PSSession` och `Enter-PSSession`.
 För att det ska kunna ta emot inkommande PowerShell-fjärranslutningar måste användaren skapa en WinRM Remoting-slutpunkt.
 Det här är ett explicit scenario där användaren kör Install-PowerShellRemoting. ps1 för att skapa WinRM-slutpunkten.
-Installations skriptet är en kortsiktig lösning tills vi lägger till ytterligare funktioner i `Enable-PSRemoting` för att utföra samma åtgärd.
+Installations skriptet är en kortsiktig lösning tills vi lägger till ytterligare funktioner till `Enable-PSRemoting` för att utföra samma åtgärd.
 Mer information hittar du i problem [#1193](https://github.com/PowerShell/PowerShell/issues/1193).
 
 ### <a name="script-actions"></a>Skript åtgärder
 
 Skriptet
 
-1. Skapar en katalog för plugin-programmet i `$env:windir\System32\PowerShell`
+1. Skapar en katalog för plugin-programmet i`$env:windir\System32\PowerShell`
 1. Kopierar pwrshplugin. dll till den platsen
 1. Genererar en konfigurations fil
 1. Registrerar plugin-programmet med WinRM
@@ -49,7 +49,7 @@ Install-PowerShellRemoting.ps1
 <path to powershell>\Install-PowerShellRemoting.ps1 -PowerShellHome "<absolute path to the instance's $PSHOME>"
 ```
 
-Till exempel:
+Exempel:
 
 ```powershell
 Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
@@ -67,4 +67,4 @@ New-PSSession ... -ConfigurationName "powershell.6.0.0"
 Enter-PSSession ... -ConfigurationName "powershell.6.0.0"
 ```
 
-Observera att `New-PSSession` och `Enter-PSSession`-anrop som inte anger `-ConfigurationName` är riktade till standard PowerShell-slutpunkten `microsoft.powershell`.
+Observera att `New-PSSession` och `Enter-PSSession` anrop som inte anges `-ConfigurationName` kommer att riktas mot standard-PowerShell- `microsoft.powershell`slutpunkten.

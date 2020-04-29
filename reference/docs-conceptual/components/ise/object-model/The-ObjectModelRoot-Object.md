@@ -3,15 +3,15 @@ ms.date: 08/25/2017
 keywords: PowerShell, cmdlet
 title: ObjectModelRoot-objektet
 ms.openlocfilehash: 0b04bdb3127edaac7b504556843efb64ee65ed13
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736036"
 ---
 # <a name="the-objectmodelroot-object"></a>ObjectModelRoot-objektet
 
-`$psISE`-objektet, som är huvud rot objekt i Windows PowerShell® Integrated Scripting Environment (ISE) är en instans av klassen Microsoft. PowerShell. Host. ISE. ObjectModelRoot. I det här avsnittet beskrivs egenskaperna för **ObjectModelRoot** -objektet.
+`$psISE` Objektet, som är huvud rotens objekt i Windows POWERSHELL® Ise (Integrated Scripting Environment) är en instans av klassen Microsoft. PowerShell. Host. ISE. ObjectModelRoot. I det här avsnittet beskrivs egenskaperna för **ObjectModelRoot** -objektet.
 
 ## <a name="properties"></a>Egenskaper
 
@@ -39,7 +39,7 @@ Den skrivskyddade egenskapen som hämtar det för närvarande synliga Windows Po
 
 Den skrivskyddade egenskapen som hämtar det för närvarande synliga Windows PowerShell ISE tilläggs verktyget som finns i det lodräta verktygs fönstret till höger i redigeraren.
 
-### <a name="options"></a>Options
+### <a name="options"></a>Alternativ
 
 > Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -53,5 +53,5 @@ Den skrivskyddade egenskapen som hämtar insamlingen av PowerShell-flikar, som �
 
 ## <a name="see-also"></a>Se även
 
-- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)
+- [Användningsområden för Windows PowerShell ISE-skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Objekt modells-hierarkin för ISE](The-ISE-Object-Model-Hierarchy.md)

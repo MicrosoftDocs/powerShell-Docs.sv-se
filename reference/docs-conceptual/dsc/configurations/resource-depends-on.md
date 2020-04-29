@@ -3,17 +3,17 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Resursberoenden med DependsOn
 ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942316"
 ---
 # <a name="resource-dependencies-using-dependson"></a>Resursberoenden med DependsOn
 
-När du skriver [konfigurationer](configurations.md)lägger du till [resurs block](../resources/resources.md) för att konfigurera aspekter av en målnod. När du fortsätter att lägga till resurs block kan dina konfigurationer växa ganska stora och besvärliga att hantera. En sådan utmaning är den tillämpade ordningen på dina resurs block. Resurser tillämpas vanligt vis i den ordning som de definieras i konfigurationen. När konfigurationen blir större och mer komplex kan du använda `DependsOn` nyckel för att ändra den tillämpade ordningen för dina resurser genom att ange att en resurs är beroende av en annan resurs.
+När du skriver [konfigurationer](configurations.md)lägger du till [resurs block](../resources/resources.md) för att konfigurera aspekter av en målnod. När du fortsätter att lägga till resurs block kan dina konfigurationer växa ganska stora och besvärliga att hantera. En sådan utmaning är den tillämpade ordningen på dina resurs block. Resurser tillämpas vanligt vis i den ordning som de definieras i konfigurationen. När konfigurationen blir större och mer komplex kan du använda `DependsOn` nyckeln för att ändra den tillämpade ordningen för dina resurser genom att ange att en resurs är beroende av en annan resurs.
 
-`DependsOn` nyckeln kan användas i alla resurs block. Den definieras med samma nyckel/värde-mekanism som andra resurs nycklar. `DependsOn`-nyckeln förväntar sig en sträng mat ris med följande syntax.
+`DependsOn` Nyckeln kan användas i alla resurs block. Den definieras med samma nyckel/värde-mekanism som andra resurs nycklar. `DependsOn` Nyckeln förväntar sig en sträng mat ris med följande syntax.
 
 ```
 DependsOn = '[<Resource Type>]<Resource Name>', '[<Resource Type>]<Resource Name'
@@ -118,7 +118,7 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Time taken for configuration job to complete is 15.385 seconds
 ```
 
-Detta säkerställer också att om **FirewallProfile** -resursen Miss lyckas av någon anledning, körs inte **brand Väggs** blocket trots att det definierades först. `DependsOn`-nyckeln ger större flexibilitet vid gruppering av resurs block och säkerställer att beroenden löses innan en resurs körs.
+Detta säkerställer också att om **FirewallProfile** -resursen Miss lyckas av någon anledning, körs inte **brand Väggs** blocket trots att det definierades först. `DependsOn` Nyckeln ger större flexibilitet vid gruppering av resurs block och säkerställer att beroenden löses innan en resurs körs.
 
 I mer avancerade konfigurationer kan du också använda [internode-beroende](crossNodeDependencies.md) för att tillåta ännu mer detaljerad kontroll (till exempel se till att en domänkontrollant har kon figurer ATS innan du ansluter till en klient i domänen).
 

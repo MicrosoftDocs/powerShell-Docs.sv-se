@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Avgränsa konfigurations- och miljödata
 ms.openlocfilehash: b16243fc9096f786a25ed20868e94a3aa85e403e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942288"
 ---
 # <a name="separating-configuration-and-environment-data"></a>Avgränsa konfigurations- och miljödata
@@ -68,7 +68,7 @@ $MyData =
 MyDscConfiguration -ConfigurationData $MyData
 ```
 
-Den sista raden i det här skriptet kompilerar konfigurationen, skickar `$MyData` som parametern Value **ConfigurationData** .
+Den sista raden i det här skriptet kompilerar konfigurationen och skickar `$MyData` den som **ConfigurationData** -parameter.
 
 Resultatet är att två MOF-filer skapas:
 
@@ -82,7 +82,7 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
 
-`$MyData` anger två olika noder, var och en med sin egen `NodeName` och `Role`. Konfigurationen skapar automatiskt **Node** -block genom att ta med noderna från `$MyData` (särskilt `$AllNodes`) och filter som insamlingen mot `Role`-egenskapen.
+`$MyData`anger två olika noder, var och en med `NodeName` sin `Role`egen och. Konfigurationen skapar automatiskt **Node** -block genom att ta med noderna från `$MyData` (särskilt, `$AllNodes`) och filter som insamlingen mot `Role` egenskapen.
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>Använda konfigurations data för att definiera utvecklings-och produktions miljöer
 
@@ -129,13 +129,13 @@ Vi definierar utvecklings-och produktions miljö data i en fil med namnet `DevPr
 
 ### <a name="configuration-script-file"></a>Konfigurations skript fil
 
-I-konfigurationen, som definieras i en `.ps1`-fil, filtrerar vi sedan de noder som vi definierade i `DevProdEnvData.psd1` av deras roll (`MSSQL`, `Dev`eller båda) och konfigurerar dem därefter.
+I- `.ps1` konfigurationen, som definieras i en fil, filtrerar vi sedan de noder som vi definierade i `DevProdEnvData.psd1` av deras roll (`MSSQL`, `Dev`eller båda) och konfigurerar dem därefter.
 Utvecklings miljön har både SQL Server och IIS på en nod, medan produktions miljön har dem på två olika noder.
-Webbplatsens innehåll är också olika, som anges i `SiteContents` egenskaper.
+Webbplatsens innehåll är också olika, som anges av `SiteContents` egenskaperna.
 
-I slutet av konfigurations skriptet anropar vi konfigurationen (kompilera den till ett MOF-dokument) och skickar `DevProdEnvData.psd1` som `$ConfigurationData` parameter.
+I slutet av konfigurations skriptet anropar vi konfigurationen (kompilera den till ett MOF-dokument) och skickar `DevProdEnvData.psd1` den som `$ConfigurationData` parameter.
 
->**Obs:** Den här konfigurationen kräver att modulerna `xSqlPs` och `xWebAdministration` installeras på målnoden.
+>**Obs:** Den här konfigurationen kräver att `xSqlPs` modulerna och `xWebAdministration` installeras på målnoden.
 
 Vi definierar konfigurationen i en fil med namnet `MyWebApp.ps1`:
 
@@ -249,14 +249,14 @@ Följande konfiguration säkerställer förekomsten av två webbplatser.
 Data för varje webbplats definieras i **AllNodes** -matrisen.
 Filen `Config.xml` används för båda webbplatserna, så vi definierar den i ytterligare en nyckel med namnet `NonNodeData`.
 Observera att du kan ha så många ytterligare nycklar som du vill, och du kan ge dem ett namn som du vill.
-`NonNodeData` är inte ett reserverat ord är det bara det vi valde att ge den nya nyckeln.
+`NonNodeData`är inte ett reserverat ord, det är bara det vi valde att ge den nya nyckeln.
 
 Du får åtkomst till ytterligare nycklar med hjälp av den särskilda variabeln **$ConfigurationData**.
-I det här exemplet öppnas `ConfigFileContents` med raden:
+I det här exemplet `ConfigFileContents` kan du komma åt raden:
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
  ```
- i `File` resurs block.
+ i `File` resurs blocket.
 
 
 ```powershell

@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Kontakt Galleri administratörer
 ms.openlocfilehash: f9197dfbf0cedb642259f554b42ec6f63eae30a4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71329122"
 ---
 # <a name="contact-gallery-administrators"></a>Kontakt Galleri administratörer
@@ -24,6 +24,6 @@ Kontakta Galleri administratörer när:
 
 ## <a name="how-to-contact-gallery-administrators"></a>Så här kontaktar du Galleri administratörer
 
-1. Skicka oss ett e-postmeddelande: cgadmin@microsoft.com.
+1. Skicka oss ett e- cgadmin@microsoft.compostmeddelande:.
 2. Om du rapporterar missbruk av ett paket kan du hitta en länk till rapporten missbruk under paket informationen på den vänstra panelen.
 3. Om du har andra allmänna frågor om galleriet skickar du din fråga till [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)

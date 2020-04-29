@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: PowerShell Desired State Configuration, delvis konfigurationer
 ms.openlocfilehash: 842acad221d468ca5e4c9e660f0205c567bcc220
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500776"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration, delvis konfigurationer
@@ -19,7 +19,7 @@ Du kan använda partiella konfigurationer i push-läge, pull-läge eller en komb
 
 ## <a name="partial-configurations-in-push-mode"></a>Partiella konfigurationer i push-läge
 
-Om du vill använda partiella konfigurationer i push-läge konfigurerar du LCM på målnoden för att ta emot del konfigurationerna. Varje del konfiguration måste flyttas till målet med hjälp av `Publish-DSCConfiguration`-cmdleten. Målnoden kombinerar sedan den partiella konfigurationen till en enda konfiguration och du kan tillämpa konfigurationen genom att anropa cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) .
+Om du vill använda partiella konfigurationer i push-läge konfigurerar du LCM på målnoden för att ta emot del konfigurationerna. Varje partiell konfiguration måste flyttas till målet med hjälp av `Publish-DSCConfiguration` cmdleten. Målnoden kombinerar sedan den partiella konfigurationen till en enda konfiguration och du kan tillämpa konfigurationen genom att anropa cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) .
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Konfigurera LCM för ofullständiga konfigurationer i push-läge
 
@@ -55,7 +55,7 @@ PartialConfigDemo
 
 ### <a name="publishing-and-starting-push-mode-partial-configurations"></a>Publicera och starta partiella konfigurationer i push-läge
 
-Sedan anropar du [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) för varje konfiguration och skickar mapparna som innehåller konfigurations dokumenten som **Sök vägs** parametrar. `Publish-DSCConfiguration`placerar MOF-filerna för konfiguration på målnoden. När du har publicerat båda konfigurationerna kan du anropa `Start-DSCConfiguration –UseExisting` på målnoden.
+Sedan anropar du [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) för varje konfiguration och skickar mapparna som innehåller konfigurations dokumenten som **Sök vägs** parametrar. `Publish-DSCConfiguration`placerar konfigurations-MOF-filerna till målnoden. När du har publicerat båda konfigurationerna kan `Start-DSCConfiguration –UseExisting` du anropa noden mål.
 
 Om du till exempel har kompilerat följande konfiguration MOF-dokument på noden redigering:
 
@@ -193,12 +193,12 @@ När du har skapat meta-konfigurationen måste du köra den för att skapa ett k
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>Namnge och placera konfigurations dokumenten på pull-servern (ConfigurationNames)
 
-De partiella konfigurations dokumenten måste placeras i den mapp som anges som **ConfigurationPath** i `web.config`-filen för pull-servern (vanligt vis `C:\Program
-Files\WindowsPowerShell\DscService\Configuration`).
+De partiella konfigurations dokumenten måste placeras i den mapp som **ConfigurationPath** anges som ConfigurationPath `web.config` i filen för pull-servern ( `C:\Program
+Files\WindowsPowerShell\DscService\Configuration`vanligt vis).
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>Namnge konfigurations dokument på hämtnings servern i PowerShell 5,1
 
-Om du bara hämtar en delvis konfiguration från en enskild hämtnings Server kan konfigurations dokumentet ha ett namn. Om du hämtar fler än en partiell konfiguration från en pull-server, kan konfigurations dokumentet antingen namnges `<ConfigurationName>.mof`, där *ConfigurationName* är namnet på den partiella konfigurationen eller `<ConfigurationName>.<NodeName>.mof`, där *ConfigurationName* är namnet på den partiella konfigurationen och *nodnamn* är namnet på mål-noden. På så sätt kan du hämta konfigurationer från Azure Automation DSC-pull-server.
+Om du bara hämtar en delvis konfiguration från en enskild hämtnings Server kan konfigurations dokumentet ha ett namn. Om du hämtar fler än en partiell konfiguration från en pull-server, kan konfigurations dokumentet namnges antingen `<ConfigurationName>.mof`, där *ConfigurationName* är namnet på den partiella konfigurationen eller `<ConfigurationName>.<NodeName>.mof`, där *ConfigurationName* är namnet på den partiella konfigurationen och *nodnamn* är namnet på målnoden. På så sätt kan du hämta konfigurationer från Azure Automation DSC-pull-server.
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>Namnge konfigurations dokument på hämtnings servern i PowerShell 5,0
 
@@ -213,7 +213,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Namnge och placera konfigurations dokumenten på pull-servern (ConfigurationID)
 
-De partiella konfigurations dokumenten måste placeras i den mapp som anges som **ConfigurationPath** i `web.config`-filen för pull-servern (vanligt vis `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Konfigurations dokumenten måste namnges enligt följande: `<ConfigurationName>.<ConfigurationID>.mof`, där _ConfigurationName_ är namnet på den partiella konfigurationen och _ConfigurationID_ är det konfigurations-ID som definierats i LCM på målnoden. I vårt exempel ska konfigurations dokumenten namnges enligt följande:
+De partiella konfigurations dokumenten måste placeras i den mapp som **ConfigurationPath** anges som ConfigurationPath `web.config` i filen för pull-servern ( `C:\Program Files\WindowsPowerShell\DscService\Configuration`vanligt vis). Konfigurations dokumenten måste ha följande namn: `<ConfigurationName>.<ConfigurationID>.mof`, där _ConfigurationName_ är namnet på den partiella konfigurationen och _ConfigurationID_ är det konfigurations-ID som definierats i LCM på målnoden. I vårt exempel ska konfigurations dokumenten namnges enligt följande:
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -228,7 +228,7 @@ När LCM på mål noden har kon figurer ATS och konfigurations dokumenten har sk
 
 ## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>Partiella konfigurationer i blandade push-och pull-lägen
 
-Du kan också blanda push-och pull-lägen för partiella konfigurationer. Det innebär att du kan ha en delvis konfiguration som hämtas från en pull-server, medan en annan del av konfigurationen skickas. Ange uppdaterings läget för varje partiell konfiguration enligt beskrivningen i föregående avsnitt. Följande meta-konfiguration beskriver till exempel samma exempel, med `ServiceAccountConfig` partiell konfiguration i pull-läge och `SharePointConfig` partiell konfiguration i push-läge.
+Du kan också blanda push-och pull-lägen för partiella konfigurationer. Det innebär att du kan ha en delvis konfiguration som hämtas från en pull-server, medan en annan del av konfigurationen skickas. Ange uppdaterings läget för varje partiell konfiguration enligt beskrivningen i föregående avsnitt. Följande meta-konfiguration beskriver till exempel samma exempel, med `ServiceAccountConfig` del konfigurationen i pull-läge och `SharePointConfig` del konfigurationen i push-läge.
 
 ### <a name="mixed-push-and-pull-modes-using-configurationnames"></a>Blandade push-och pull-lägen med ConfigurationNames
 
@@ -307,10 +307,10 @@ configuration PartialConfigDemo
 PartialConfigDemo
 ```
 
-Observera att **RefreshMode** som anges i inställnings blocket är "pull", men **RefreshMode** för `SharePointConfig` partiella konfigurationen är "push".
+Observera att **RefreshMode** som anges i inställnings blocket är "pull", men **RefreshMode** för den `SharePointConfig` partiella konfigurationen är "push".
 
 Namnge och leta upp MOF-filerna för konfigurationen enligt beskrivningen ovan för respektive uppdaterings läge.
-Anropa `Publish-DSCConfiguration` för att publicera `SharePointConfig` partiella konfigurationen och antingen väntar på att `ServiceAccountConfig` konfigurationen ska hämtas från hämtnings servern eller framtvinga en uppdatering genom att anropa [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration).
+Anropa `Publish-DSCConfiguration` för att publicera `SharePointConfig` den partiella konfigurationen och vänta tills `ServiceAccountConfig` konfigurationen har hämtats från hämtnings servern eller framtvinga en uppdatering genom att anropa [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration).
 
 ## <a name="example-serviceaccountconfig-partial-configuration"></a>Exempel ServiceAccountConfig delvis konfiguration
 

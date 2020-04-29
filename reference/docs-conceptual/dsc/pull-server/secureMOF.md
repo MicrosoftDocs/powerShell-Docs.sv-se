@@ -3,10 +3,10 @@ ms.date: 10/31/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skydda MOF-filen
 ms.openlocfilehash: ab03db8bf4ed7d412691ae87fd12da5131607886
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278483"
 ---
 # <a name="securing-the-mof-file"></a>Skydda MOF-filen
@@ -15,12 +15,12 @@ ms.locfileid: "78278483"
 
 DSC hanterar konfigurationen av serverklusternoder genom att använda information som lagras i en MOF-fil, där den lokala Configuration Manager (LCM) implementerar det önskade slut läget. Eftersom den här filen innehåller information om konfigurationen är det viktigt att skydda den. I det här avsnittet beskrivs hur du ser till att målnoden har krypterat filen.
 
-Från och med PowerShell version 5,0 krypteras hela MOF-filen som standard när den tillämpas på noden med hjälp av `Start-DSCConfiguration`-cmdleten. Processen som beskrivs i den här artikeln krävs bara när du implementerar en lösning med hjälp av protokollet för pull-protokollet om certifikat inte hanteras, för att se till att konfigurationer som hämtas av målnoden kan dekrypteras och läsas av systemet innan de tillämpas (till exempel den pull-tjänst som är tillgänglig i Windows Server). Noder som är registrerade för [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) har automatiskt certifikat som installeras och hanteras av tjänsten utan att det krävs någon administrativ omkostnader.
+Från och med PowerShell version 5,0 krypteras hela MOF-filen som standard när den tillämpas på noden med hjälp av `Start-DSCConfiguration` cmdleten. Processen som beskrivs i den här artikeln krävs bara när du implementerar en lösning med protokollet för pull-protokollet om certifikat inte hanteras, för att se till att konfigurationer som hämtas av målnoden kan dekrypteras och läsas av systemet innan de tillämpas (till exempel den pull-tjänst som är tillgänglig i Windows Server). Noder som är registrerade för [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) har automatiskt certifikat som installeras och hanteras av tjänsten utan att det krävs någon administrativ omkostnader.
 
 > [!NOTE]
 > I det här avsnittet beskrivs certifikat som används för kryptering. För kryptering räcker ett självsignerat certifikat, eftersom den privata nyckeln alltid hålls hemlig och kryptering innebär inte att dokumentet är tillförlitligt. Självsignerade certifikat bör *inte* användas för autentisering. Du bör använda ett certifikat från en betrodd certifikat utfärdare (CA) i alla autentiserings syfte.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 Kontrol lera att du har följande för att kunna kryptera de autentiseringsuppgifter som används för att skydda en DSC-konfiguration:
 
@@ -84,11 +84,11 @@ $cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-När den har exporter ATS måste `DscPublicKey.cer` kopieras till **redigerings-noden**.
+När du har exporterat måste du kopiera den `DscPublicKey.cer` till redigerings- **noden**.
 
 > Målnod: Windows Server 2012 R2/Windows 8,1 och tidigare
 > [!WARNING]
-> Eftersom `New-SelfSignedCertificate`-cmdlet: en i Windows-operativsystem före Windows 10 och Windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet i dessa operativ system. I det här fallet kan du använda `makecert.exe` eller `certutil.exe` för att skapa certifikatet. En alternativ metod är att [Hämta skriptet New-SelfSignedCertificateEx. ps1 från Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) och använda det för att skapa certifikatet i stället:
+> Eftersom `New-SelfSignedCertificate` cmdleten på Windows-operativsystem före Windows 10 och windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet på dessa operativ system. I det här fallet kan du `makecert.exe` använda `certutil.exe` eller för att skapa certifikatet. En alternativ metod är att [Hämta skriptet New-SelfSignedCertificateEx. ps1 från Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) och använda det för att skapa certifikatet i stället:
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -114,7 +114,7 @@ $Cert = Get-ChildItem -Path cert:\LocalMachine\My | Where-Object {
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-När den har exporter ATS måste ```DscPublicKey.cer``` kopieras till **redigerings-noden**.
+När du har exporterat måste du kopiera den ```DscPublicKey.cer``` till redigerings- **noden**.
 
 #### <a name="on-the-authoring-node-import-the-certs-public-key"></a>På noden redigering: importera certifikatets offentliga nyckel
 
@@ -149,11 +149,11 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-När den har exporter ATS måste `DscPrivateKey.pfx` kopieras till **målnoden**.
+När du har exporterat måste du kopiera den `DscPrivateKey.pfx` till **målnoden**.
 
 > Målnod: Windows Server 2012 R2/Windows 8,1 och tidigare
 > [!WARNING]
-> Eftersom `New-SelfSignedCertificate`-cmdlet: en i Windows-operativsystem före Windows 10 och Windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet i dessa operativ system. I det här fallet kan du använda `makecert.exe` eller `certutil.exe` för att skapa certifikatet. En alternativ metod är att [Hämta skriptet New-SelfSignedCertificateEx. ps1 från Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) och använda det för att skapa certifikatet i stället:
+> Eftersom `New-SelfSignedCertificate` cmdleten på Windows-operativsystem före Windows 10 och windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet på dessa operativ system. I det här fallet kan du `makecert.exe` använda `certutil.exe` eller för att skapa certifikatet. En alternativ metod är att [Hämta skriptet New-SelfSignedCertificateEx. ps1 från Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) och använda det för att skapa certifikatet i stället:
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -228,7 +228,7 @@ $ConfigData= @{
 
 ## <a name="configuration-script"></a>Konfigurations skript
 
-I själva konfigurations skriptet använder du parametern `PsCredential` för att se till att autentiseringsuppgifterna lagras på kortast möjliga tid. När du kör det angivna exemplet uppmanas du att ange autentiseringsuppgifter för DSC och sedan kryptera MOF-filen med hjälp av den CertificateFile som är kopplad till målnoden i konfigurations data blocket. I det här kod exemplet kopieras en fil från en resurs som är skyddad till en användare.
+I själva konfigurations skriptet använder du `PsCredential` parametern för att se till att autentiseringsuppgifterna lagras på kortast möjliga tid. När du kör det angivna exemplet uppmanas du att ange autentiseringsuppgifter för DSC och sedan kryptera MOF-filen med hjälp av den CertificateFile som är kopplad till målnoden i konfigurations data blocket. I det här kod exemplet kopieras en fil från en resurs som är skyddad till en användare.
 
 ```powershell
 configuration CredentialEncryptionExample
@@ -304,7 +304,7 @@ configuration CredentialEncryptionExample
 I det här läget kan du köra konfigurationen, som kommer att skriva ut två filer:
 
 - En *. meta. MOF-fil som konfigurerar den lokala Configuration Manager för att dekryptera autentiseringsuppgifterna med hjälp av det certifikat som lagras i den lokala datorns Arkiv och identifieras av dess tumavtryck.
-  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) använder *. meta. MOF-filen.
+  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx)använder *. meta. MOF-filen.
 - En MOF-fil som faktiskt tillämpar konfigurationen. Start-DscConfiguration tillämpar konfigurationen.
 
 Dessa kommandon utför dessa steg:

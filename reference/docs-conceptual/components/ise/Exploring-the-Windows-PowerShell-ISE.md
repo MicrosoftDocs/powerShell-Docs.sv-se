@@ -3,10 +3,10 @@ ms.date: 01/02/2020
 keywords: PowerShell, cmdlet
 title: Utforska Windows PowerShell ISE
 ms.openlocfilehash: 03728a8c83962894b27738609a5b1bec841fdb13
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737108"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Utforska Windows PowerShell ISE
@@ -36,12 +36,12 @@ Följande knappar finns i verktygsfältet.
 | **Ny**                        | Öppnar ett nytt skript.                                                                                                                                                              |
 | **Öppna**                       | Öppnar ett befintligt skript eller en befintlig fil.                                                                                                                                                |
 | **Spara**                       | Sparar ett skript eller en fil.                                                                                                                                                          |
-| **Styckning**                        | Klipper ut den markerade texten och kopierar den till Urklipp.                                                                                                                           |
-| **Copy**                       | Kopierar den markerade texten till Urklipp.                                                                                                                                       |
-| **Inklistringsfel**                      | Klistrar in innehållet i Urklipp vid markörens plats.                                                                                                                     |
+| **Klipp ut**                        | Klipper ut den markerade texten och kopierar den till Urklipp.                                                                                                                           |
+| **Exemplar**                       | Kopierar den markerade texten till Urklipp.                                                                                                                                       |
+| **Klistra in**                      | Klistrar in innehållet i Urklipp vid markörens plats.                                                                                                                     |
 | **Fönstret rensa utdata**          | Tar bort allt innehåll i fönstret utdata.                                                                                                                                           |
-| **Göra**                       | Ångrar den åtgärd som precis utfördes.                                                                                                                                     |
-| **Tidigare**                       | Utför den åtgärd som precis har återställts.                                                                                                                                        |
+| **Ångra**                       | Ångrar den åtgärd som precis utfördes.                                                                                                                                     |
+| **Gör om**                       | Utför den åtgärd som precis har återställts.                                                                                                                                        |
 | **Kör skript**                 | Kör ett skript.                                                                                                                                                                   |
 | **Kör val**              | Kör en markerad del av ett skript.                                                                                                                                             |
 | **Stoppa körning**             | Stoppar ett skript som körs.                                                                                                                                                  |
@@ -67,9 +67,9 @@ Visar resultatet av de kommandon och skript som du har kört. Du kan också kopi
 
 ## <a name="command-pane"></a>Kommando fönster
 
-Gör att du kan skriva kommandon. Du kan köra ett kommando rads kommando eller ett flera rader kommando i kommando fönstret. Tryck på <kbd>SHIFT</kbd>+<kbd>RETUR</kbd> för att ange varje rad i ett flerradig kommando och tryck på <kbd>RETUR</kbd> efter den sista raden för att köra kommandot Multiline. Den prompt som visas överst i kommando fönstret visar sökvägen till den aktuella arbets katalogen.
+Gör att du kan skriva kommandon. Du kan köra ett kommando rads kommando eller ett flera rader kommando i kommando fönstret. Tryck på <kbd>SKIFT</kbd>+<kbd>RETUR</kbd> för att ange varje rad i ett flerradig kommando och tryck på <kbd>RETUR</kbd> efter den sista raden för att köra kommandot Multiline. Den prompt som visas överst i kommando fönstret visar sökvägen till den aktuella arbets katalogen.
 
-## <a name="status-bar"></a>Statusfält
+## <a name="status-bar"></a>Statusrad
 
 Gör att du kan se om de kommandon och skript som du kör är slutförda. Statusfältet visas längst ned i visningen. De valda delarna av fel meddelanden visas i statusfältet.
 
@@ -80,7 +80,7 @@ Gör att du kan se om de kommandon och skript som du kör är slutförda. Status
 ## <a name="help"></a>Hjälp
 
 Hjälp för Windows PowerShell ISE finns på webben i TechNet-biblioteket. Du kan öppna hjälpen genom att klicka på **Windows PowerShell ISE hjälp** på **Hjälp** -menyn eller genom att trycka på <kbd>F1</kbd> -tangenten var som helst, förutom när markören är på ett cmdlet-namn i antingen skript fönstret eller konsol fönstret.
-På **Hjälp** -menyn kan du också köra `Update-Help`-cmdlet och Visa kommando fönstret som hjälper dig att skapa kommandon genom att visa alla parametrar för en cmdlet och göra det möjligt att fylla i parametrarna i ett lättanvänt formulär.
+På **Hjälp** -menyn kan du också köra- `Update-Help` cmdleten och Visa kommando fönstret som hjälper dig att skapa kommandon genom att visa alla parametrar för en cmdlet och göra det möjligt att fylla i parametrarna i ett lättanvänt formulär.
 
 ## <a name="see-also"></a>Se även
 

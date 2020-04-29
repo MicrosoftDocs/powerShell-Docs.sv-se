@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Metodtips för hämtningsservern
 ms.openlocfilehash: b2469984086a827b6b2a0fe84d1f326fc214ec28
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500687"
 ---
 # <a name="pull-server-best-practices"></a>Metodtips för hämtningsservern
@@ -37,7 +37,7 @@ De två huvud avsnitten i det här dokumentet:
 
 Informationen i det här dokumentet är avsedd att användas för Windows Management Framework 5,0. Även om WMF 5,0 inte krävs för att distribuera och använda en hämtnings Server är version 5,0 fokus i det här dokumentet.
 
-### <a name="windows-powershell-desired-state-configuration"></a>Windows PowerShell önskad tillståndskonfiguration
+### <a name="windows-powershell-desired-state-configuration"></a>Windows PowerShell Desired State Configuration
 
 Önskad tillstånds konfiguration (DSC) är en hanterings plattform som gör det möjligt att distribuera och hantera konfigurations data med hjälp av en bransch-syntax med namnet Managed Object Format (MOF) som beskriver Common Information Model (CIM). Ett projekt med öppen källkod, öppen hanterings infrastruktur (OMI), finns för att utveckla dessa standarder på olika plattformar, inklusive Linux-och nätverks maskin varu operativ system. Mer information finns i DMTF- [sidan länka till MOF-specifikationer](https://www.dmtf.org/standards/cim)och [OMI-dokument och-källa](https://collaboration.opengroup.org/omi/documents.php).
 
@@ -75,7 +75,7 @@ Windows Server 2012 R2 innehåller en funktion som kallas DSC-tjänsten. Funktio
 
 En pull-Server-distribution kan för enklas genom att tillhandahålla tjänsten med hjälp av ett DSC-konfigurations skript. Det här dokumentet innehåller konfigurations skript som kan användas för att distribuera en produktions klar Server-nod. Om du vill använda konfigurations skripten krävs en DSC-modul som inte ingår i Windows Server. Namnet på den obligatoriska modulen är **xPSDesiredStateConfiguration**, som innehåller DSC- **xDscWebService**. XPSDesiredStateConfiguration-modulen kan hämtas [här](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d).
 
-Använd `Install-Module`-cmdleten från **PowerShellGet** -modulen.
+Använd `Install-Module` cmdleten från **PowerShellGet** -modulen.
 
 ```powershell
 Install-Module xPSDesiredStateConfiguration
@@ -121,9 +121,9 @@ Med en DNS CNAME kan du skapa ett alias för att referera till värd posten (A).
 Behåll lösnings arkitekturen i åtanke när du väljer ett namn för DNS-posten.
 Om du använder belastnings utjämning måste certifikatet som används för att skydda trafik över HTTPS dela samma namn som DNS-posten.
 
-       Scenario        |                                                                                         Bästa praxis
+       Scenario        |                                                                                         Metodtips
 :--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Test miljö       | Återskapa den planerade produktions miljön, om möjligt. Ett server namn är lämpligt för enkla konfigurationer. Om DNS inte är tillgängligt kan en IP-adress användas i stället för ett värdnamn.
+Testmiljö       | Återskapa den planerade produktions miljön, om möjligt. Ett server namn är lämpligt för enkla konfigurationer. Om DNS inte är tillgängligt kan en IP-adress användas i stället för ett värdnamn.
 Distribution av en nod | Skapa en DNS CNAME-post som pekar på serverns värdnamn.
 
 Mer information finns i [Konfigurera DNS Round Robin i Windows Server](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10)).
@@ -175,9 +175,9 @@ I framtiden kommer det här avsnittet att expanderas och ingå i en funktions gu
 
 #### <a name="dsc-modules"></a>DSC-moduler
 
-Klienter som begär en konfiguration kommer att behöva de DSC-moduler som krävs. En funktion i pull-servern är att automatisera distributionen på begäran av DSC-moduler till klienter. Om du distribuerar en hämtnings Server för första gången, kanske som labb eller koncept bevis, kommer du troligen att vara beroende av DSC-moduler som är tillgängliga från offentliga databaser, till exempel PowerShell-galleriet eller PowerShell.org GitHub-lagringsplatsen för DSC-moduler .
+Klienter som begär en konfiguration kommer att behöva de DSC-moduler som krävs. En funktion i pull-servern är att automatisera distributionen på begäran av DSC-moduler till klienter. Om du distribuerar en pull-server för första gången, kanske som labb eller koncept bevis, kommer du troligen att vara beroende av DSC-moduler som är tillgängliga från offentliga databaser, till exempel PowerShell-galleriet eller PowerShell.org GitHub-lagringsplatsen för DSC-moduler.
 
-Det är viktigt att komma ihåg att även för betrodda onlinekällor som PowerShell-galleriet, alla moduler som hämtas från ett offentligt lager bör granskas av någon med PowerShell-upplevelse och kunskap om miljön där modulerna kommer att används innan de används i produktionen. När du slutför den här uppgiften är det en lämplig tid att söka efter ytterligare en nytto Last i modulen som kan tas bort, till exempel dokumentation och exempel skript. Detta minskar nätverks bandbredden per klient i den första begäran, när moduler ska laddas ned över nätverket från server till klient.
+Det är viktigt att komma ihåg att även för betrodda onlinekällor som PowerShell-galleriet, alla moduler som hämtas från ett offentligt lager bör granskas av någon med PowerShell-erfarenhet och kunskap om miljön där modulerna används innan de används i produktionen. När du slutför den här uppgiften är det en lämplig tid att söka efter ytterligare en nytto Last i modulen som kan tas bort, till exempel dokumentation och exempel skript. Detta minskar nätverks bandbredden per klient i den första begäran, när moduler ska laddas ned över nätverket från server till klient.
 
 Varje modul måste paketeras i ett särskilt format, en ZIP-fil med namnet ModuleName_Version. zip som innehåller modulens nytto Last. När filen har kopierats till servern måste en kontroll Summa fil skapas.
 När klienter ansluter till servern används kontroll summan för att kontrol lera att innehållet i DSC-modulen inte har ändrats sedan den publicerades.
@@ -221,7 +221,7 @@ Planerings uppgift
 
 *Skript som anges i det här dokumentet är stabila exempel. Granska alltid skript noggrant innan du kör dem i en produktions miljö.*
 
-### <a name="prerequisites"></a>Förutsättningar
+### <a name="prerequisites"></a>Krav
 
 Använd följande kommando för att kontrol lera versionen av PowerShell på servern.
 
@@ -229,7 +229,7 @@ Använd följande kommando för att kontrol lera versionen av PowerShell på ser
 $PSVersionTable.PSVersion
 ```
 
-Uppgradera om möjligt till den senaste versionen av Windows Management Framework. Hämta sedan `xPsDesiredStateConfiguration`-modulen med hjälp av följande kommando.
+Uppgradera om möjligt till den senaste versionen av Windows Management Framework. Hämta sedan `xPsDesiredStateConfiguration` modulen med hjälp av följande kommando.
 
 ```powershell
 Install-Module xPSDesiredStateConfiguration
@@ -241,7 +241,7 @@ Kommandot ber om ditt godkännande innan du laddar ned modulen.
 
 Den bästa metoden för att distribuera en DSC-pull-server är att använda ett DSC-konfigurations skript. Det här dokumentet visar skript, inklusive både grundläggande inställningar som endast konfigurerar DSC-webbtjänsten och avancerade inställningar som konfigurerar en Windows Server från slut punkt till slut punkt inklusive DSC-webbtjänst.
 
-OBS! den `xPSDesiredStateConfiguration` DSC-modulen kräver att servern är EN-US-språkvariant.
+Obs: för närvarande `xPSDesiredStateConfiguration` kräver DSC-modulen att servern är en-US-språkvariant.
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Grundläggande konfiguration för Windows Server 2012
 

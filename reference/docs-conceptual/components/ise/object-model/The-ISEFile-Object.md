@@ -3,25 +3,25 @@ ms.date: 12/31/2019
 keywords: PowerShell, cmdlet
 title: ISEFile-objektet
 ms.openlocfilehash: 1069e46aa586b8df2050129194a909b90f77b745
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737006"
 ---
 # <a name="the-isefile-object"></a>ISEFile-objektet
 
-Ett **ISEFile** -objekt representerar en fil i Windows POWERSHELL® Ise (Integrated Scripting Environment). Det är en instans av klassen **Microsoft. PowerShell. Host. ISE. ISEFile** . I det här avsnittet visas dess medlems metoder och medlems egenskaper. `$psISE.CurrentFile` och filerna i samlingen filer på en PowerShell-flik är alla instanser av klassen * * * * Microsoft. PowerShell. Host. ISE. ISEFile * *.
+Ett **ISEFile** -objekt representerar en fil i Windows POWERSHELL® Ise (Integrated Scripting Environment). Det är en instans av klassen **Microsoft. PowerShell. Host. ISE. ISEFile** . I det här avsnittet visas dess medlems metoder och medlems egenskaper. Filerna `$psISE.CurrentFile` och filerna i samlingen filer på en PowerShell-flik är alla instanser av klassen * * * * Microsoft. PowerShell. Host. ISE. ISEFile * *.
 
 ## <a name="methods"></a>Metoder
 
-### <a name="save-saveencoding-"></a>Spara\( \[saveEncoding\] \)
+### <a name="save-saveencoding-"></a>Spara\( \[saveEncoding\]\)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
 Sparar filen på disk.
 
-**\[saveEncoding\]** -valfri [system. text. Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) en valfri tecken kodnings parameter som ska användas för den sparade filen. Standardvärdet är **utf8**.
+saveEncoding – valfri [system. text. Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) en valfri tecken kodnings parameter som ska användas för den sparade filen. **\] \[** Standardvärdet är **utf8**.
 
 ### <a name="exceptions"></a>Undantag
 
@@ -39,7 +39,7 @@ $myfile = $psISE.CurrentFile
 $myfile.Encoding
 ```
 
-### <a name="saveasfilename-saveencoding"></a>Spara som\(fil namn, \[saveEncoding\]\)
+### <a name="saveasfilename-saveencoding"></a>Spara som\(fil namn \[, saveEncoding\]\)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -47,7 +47,7 @@ Sparar filen med det angivna fil namnet och kodningen.
 
 **filename** – sträng namnet som ska användas för att spara filen.
 
-**\[saveEncoding\]** -valfri [system. text. Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) en valfri tecken kodnings parameter som ska användas för den sparade filen. Standardvärdet är **utf8**.
+saveEncoding – valfri [system. text. Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) en valfri tecken kodnings parameter som ska användas för den sparade filen. **\] \[** Standardvärdet är **utf8**.
 
 ### <a name="exceptions"></a>Undantag
 
@@ -65,7 +65,7 @@ $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 
 ## <a name="properties"></a>Egenskaper
 
-### <a name="displayname"></a>Visningsnamn
+### <a name="displayname"></a>DisplayName
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -76,7 +76,7 @@ Den skrivskyddade egenskapen som hämtar den sträng som innehåller visnings na
 $psISE.CurrentFile.DisplayName
 ```
 
-### <a name="editor"></a>Redigeringsprogram
+### <a name="editor"></a>Redigerare
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -87,7 +87,7 @@ Den skrivskyddade egenskapen som hämtar det [Editor-objekt](The-ISEEditor-Objec
 $psISE.CurrentFile.Editor.Text
 ```
 
-### <a name="encoding"></a>Encoding
+### <a name="encoding"></a>Kodning
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -137,5 +137,5 @@ $psISE.CurrentFile.IsUntitled
 ## <a name="see-also"></a>Se även
 
 - [ISEFileCollectionObject](The-ISEFileCollection-Object.md)
-- [Syftet med Windows PowerShell ISE-skriptets objekt modell](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Hierarki för ISE-objektmodellen](The-ISE-Object-Model-Hierarchy.md)
+- [Användningsområden för Windows PowerShell ISE-skriptobjektmodellen](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Objekt modells-hierarkin för ISE](The-ISE-Object-Model-Hierarchy.md)

@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Kom igång med Windows PowerShell
 ms.openlocfilehash: fde0788a877cf93ee6423566c3275380474f4ee4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74117541"
 ---
 # <a name="getting-started-with-windows-powershell"></a>Kom igång med Windows PowerShell
@@ -22,8 +22,8 @@ Den här Komma igång guiden innehåller en introduktion till Windows PowerShell
 
 I det här avsnittet:
 
-- [System krav för Windows PowerShell](../install/Windows-PowerShell-System-Requirements.md)
+- [Windows PowerShell-systemkrav](../install/Windows-PowerShell-System-Requirements.md)
 
 - [Installera Windows PowerShell](../install/Installing-Windows-PowerShell.md)
 
-- [Starta Windows PowerShell](Starting-Windows-PowerShell.md)
+- [Starta Windows Powershell](Starting-Windows-PowerShell.md)

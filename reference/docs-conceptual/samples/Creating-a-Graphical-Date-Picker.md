@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: Skapa en grafisk datumväljare
 ms.openlocfilehash: b748e301b24ed643488079b547e2da1a5a7a6551
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "77706145"
 ---
 # <a name="creating-a-graphical-date-picker"></a>Skapa en grafisk datumväljare
@@ -80,7 +80,7 @@ I det här exemplet tilldelas värden till fyra egenskaper för den här klassen
 
 3. **Text**: detta blir rubriken för fönstret.
 
-4. **Översta**: genom att ange den här egenskapen till `$true`, kan du tvinga fönstret att öppna ovanpå andra öppna fönster och dialog rutor.
+4. **Överst**: genom att ange den här `$true`egenskapen till kan du tvinga fönstret att öppna ovanpå andra öppna fönster och dialog rutor.
 
 Skapa sedan och Lägg till en kalender kontroll i formuläret.
 I det här exemplet är den aktuella dagen inte markerad eller inringad.
@@ -127,7 +127,7 @@ Lägg till följande kodrad för att visa formuläret i Windows.
 $result = $form.ShowDialog()
 ```
 
-Slutligen instruerar koden inuti `if`-blocket Windows vad som ska göras med formuläret när användarna har valt en dag i kalendern. Klicka sedan på **OK** eller tryck på **RETUR** -tangenten. Windows PowerShell visar det valda datumet för användarna.
+Slutligen instruerar koden inuti `if` blocket Windows vad som ska göras med formuläret när användarna har valt en dag i kalendern. Klicka sedan på **OK** eller tryck på **RETUR** . Windows PowerShell visar det valda datumet för användarna.
 
 ```powershell
 if ($result -eq [Windows.Forms.DialogResult]::OK) {

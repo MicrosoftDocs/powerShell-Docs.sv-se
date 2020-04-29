@@ -3,13 +3,13 @@ ms.date: 06/05/2017
 keywords: PowerShell, cmdlet
 title: WinRMSecurity
 ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "62086379"
 ---
-# <a name="powershell-remoting-security-considerations"></a>Säkerhets överväganden för PowerShell-fjärrkommunikation
+# <a name="powershell-remoting-security-considerations"></a>Säkerhetsöverväganden för PowerShell-fjärrkommunikation
 
 PowerShell-fjärrkommunikation är det rekommenderade sättet att hantera Windows-system. PowerShell-fjärrkommunikation är aktiverat som standard i Windows Server 2012 R2. Det här dokumentet beskriver säkerhets problem, rekommendationer och bästa praxis när du använder PowerShell-fjärrkommunikation.
 
@@ -66,7 +66,7 @@ Eftersom NTLM-autentiseringsprotokollet inte kan garantera identiteten för mål
 
 #### <a name="ignoring-ntlm-based-server-identity-errors"></a>Ignorerar NTLM-baserade server identitets fel
 
-Om det är omöjligt att distribuera ett SSL-certifikat till en server för NTLM-anslutningar kan du utelämna de resulterande identitets felen genom att lägga till servern i listan WinRM **TrustedHosts** . Observera att om du lägger till ett server namn i listan TrustedHosts bör du inte betraktas som någon form av en instruktion av själva Värdarnas trovärdighet, eftersom NTLM-autentiseringsprotokollet inte kan garantera att du ansluter till värden som du avser att ansluta till.
+Om det är omöjligt att distribuera ett SSL-certifikat till en server för NTLM-anslutningar kan du utelämna de resulterande identitets felen genom att lägga till servern i listan WinRM **TrustedHosts** . Observera att om du lägger till ett server namn i listan TrustedHosts bör du inte anses som någon form av en instruktion av själva Värdarnas trovärdighet, eftersom NTLM-autentiseringsprotokollet inte kan garantera att du ansluter till den värd som du vill ansluta till.
 I stället bör du se till att inställningen TrustedHosts är listan över värdar för vilka du vill förhindra att det fel som genereras av inte kan verifiera serverns identitet.
 
 

@@ -3,10 +3,10 @@ ms.date: 01/10/2020
 keywords: PowerShell, cmdlet
 title: Skriva portabla moduler
 ms.openlocfilehash: 124e6efadfd07b8c5214a5c0446b1589f7142388
-ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "76022238"
 ---
 # <a name="portable-modules"></a>Bärbara moduler
@@ -26,7 +26,7 @@ Egenskapen **RootModule** i modulen manifest ska anges till namnet på sammansä
 
 ### <a name="the-net-portability-analyzer-aka-apiport"></a>.NET-portbaserad analys för aka (APIPort)
 
-Om du vill att moduler som är skrivna för Windows PowerShell ska fungera med PowerShell-kärnan börjar du med [.NET-portbaserad analys][]. Kör det här verktyget mot den kompilerade sammansättningen för att avgöra om de .NET-API: er som används i modulen är kompatibla med .NET Framework, .NET Core och andra .NET-körningar. Verktyget föreslår alternativa API: er om de finns. Annars kan du behöva lägga till [körnings kontroller][] och begränsa funktioner som inte är tillgängliga i vissa körningar.
+Om du vill att moduler som är skrivna för Windows PowerShell ska fungera med PowerShell-kärnan börjar du med [.net-ports Analyzer][]. Kör det här verktyget mot den kompilerade sammansättningen för att avgöra om de .NET-API: er som används i modulen är kompatibla med .NET Framework, .NET Core och andra .NET-körningar. Verktyget föreslår alternativa API: er om de finns. Annars kan du behöva lägga till [körnings kontroller][] och begränsa funktioner som inte är tillgängliga i vissa körningar.
 
 ## <a name="creating-a-new-module"></a>Skapa en ny modul
 
@@ -165,10 +165,10 @@ I följande avsnitt beskrivs några av de tekniker som används av den här mall
 
 ## <a name="net-standard-library"></a>.NET standard-bibliotek
 
-[.NET-standard][] är en formell specifikation av .NET-API: er som är tillgängliga i alla .net-implementeringar. Hanterad kod för .NET standard fungerar med de .NET Framework-och .NET Core-versioner som är kompatibla med den versionen av .NET standard.
+[.Net standard][] är en formell specifikation av .NET-API: er som är tillgängliga i alla .net-implementeringar. Hanterad kod för .NET standard fungerar med de .NET Framework-och .NET Core-versioner som är kompatibla med den versionen av .NET standard.
 
 > [!NOTE]
-> Även om ett API kan finnas i .NET standard kan API-implementeringen i .NET Core medföra ett `PlatformNotSupportedException` vid körning, så för att verifiera kompatibilitet med Windows PowerShell och PowerShell Core är det bästa sättet att köra tester för modulen i båda miljöerna.
+> Även om ett API kan finnas i .NET standard kan API-implementeringen i .NET Core medföra `PlatformNotSupportedException` en vid körning, så för att kontrol lera kompatibilitet med Windows PowerShell och PowerShell Core är det bästa sättet att köra tester för modulen i båda miljöerna.
 > Kör även tester på Linux och macOS om modulen är avsedd att vara plattforms oberoende.
 
 Genom att använda .NET standard kan du se till att inkompatibla API: er inte har introducerats av misstag i modulen, eftersom modulen utvecklas. Inkompatibiliteter upptäcks vid kompilering i stället för körning.
@@ -177,7 +177,7 @@ Men det är inte nödvändigt att använda .NET standard för att en modul ska f
 
 ## <a name="powershell-standard-library"></a>PowerShell-standardbibliotek
 
-[PowerShell-standard][] -standardbiblioteket är en formell specifikation av PowerShell-API: er som är tillgängliga i alla PowerShell-versioner som är större än eller lika med den standard versionen.
+[PowerShell][] -standardbiblioteket är en formell specifikation av PowerShell-API: er som är tillgängliga i alla PowerShell-versioner som är större än eller lika med den standard versionen.
 
 Till exempel är [PowerShell Standard 5,1][] kompatibelt med både Windows PowerShell 5,1 och PowerShell Core 6,0 eller senare.
 
@@ -191,16 +191,16 @@ PowerShell-standarden är avsedd att alltid vidarebefordras-kompatibel. En modul
 När du har verifierat att modulen fungerar med både Windows PowerShell och PowerShell Core bör modulens manifest uttryckligen indikera kompatibilitet med hjälp av egenskapen [CompatiblePSEditions][] . Värdet `Desktop` innebär att modulen är kompatibel med Windows PowerShell, medan värdet `Core` innebär att modulen är kompatibel med PowerShell Core. Inklusive både `Desktop` och `Core` innebär att modulen är kompatibel med både Windows PowerShell och PowerShell Core.
 
 > [!NOTE]
-> `Core` innebär inte automatiskt att modulen är kompatibel med Windows, Linux och macOS.
+> `Core`innebär inte automatiskt att modulen är kompatibel med Windows, Linux och macOS.
 > Egenskapen **CompatiblePSEditions** introducerades i PowerShell v5. Modul manifest som använder egenskapen **CompatiblePSEditions** kan inte läsas in i tidigare versioner än PowerShell v5.
 
 ### <a name="indicating-os-compatibility"></a>Indikerar OS-kompatibilitet
 
 Kontrol lera först att modulen fungerar på Linux och macOS. Sedan anger du kompatibiliteten med dessa operativ system i manifestet för modulen. Detta gör det enklare för användarna att hitta modulen för sitt operativ system när de publiceras till [PowerShell-galleriet][].
 
-I modulen manifest har egenskapen `PrivateData` en `PSData` underordnad egenskap. Den valfria `Tags` egenskapen för `PSData` tar en matris med värden som visas i PowerShell-galleriet. PowerShell-galleriet har stöd för följande kompatibilitetsinställningar:
+I modulen manifest har `PrivateData` egenskapen en `PSData` underordnad egenskap. Den valfria `Tags` egenskapen för `PSData` tar en matris med värden som visas i PowerShell-galleriet. PowerShell-galleriet har stöd för följande kompatibilitetsinställningar:
 
-| Tagg               | Beskrivning                                |
+| Tagga               | Beskrivning                                |
 |-------------------|--------------------------------------------|
 | PSEdition_Core    | Kompatibel med PowerShell Core 6          |
 | PSEdition_Desktop | Kompatibel med Windows PowerShell         |
@@ -260,7 +260,7 @@ Moduler som ska användas i olika operativ system eller processor arkitekturer k
 
 Före PowerShell 7 måste det finnas en anpassad kod för att läsa in rätt inbyggda DLL-fil så att det hanterade biblioteket kan hitta det korrekt.
 
-Med PowerShell 7 genomsöks interna binärfiler i undermappar i det hanterade bibliotekets plats enligt en delmängd av [.NET RID-katalog][] notation.
+Med PowerShell 7 genomsöks interna binärfiler i undermappar i det hanterade bibliotekets plats enligt en delmängd av [.net RID-katalogens][] notation.
 
 ```
 managed.dll folder
@@ -300,7 +300,7 @@ managed.dll folder
 [New-ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
 [körnings kontroller]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
-[.NET-standard]: /dotnet/standard/net-standard
+[.NET Standard]: /dotnet/standard/net-standard
 [PowerShell-standard]: https://github.com/PowerShell/PowerShellStandard
 [PowerShell standard 5,1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [PowerShell-galleriet]: https://www.powershellgallery.com

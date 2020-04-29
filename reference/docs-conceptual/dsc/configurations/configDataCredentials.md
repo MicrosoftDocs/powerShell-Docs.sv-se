@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Alternativ för autentiseringsuppgifter i konfigurations data
 ms.openlocfilehash: aac27f1ff4b4287b53745fa3b946fb3de84771c2
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75870565"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Alternativ för autentiseringsuppgifter i konfigurations data
@@ -25,14 +25,14 @@ DSC-konfigurationer som innehåller en autentiseringsuppgift utan kryptering gen
 
 ## <a name="handling-credentials-in-dsc"></a>Hantera autentiseringsuppgifter i DSC
 
-DSC-konfigurations resurser körs som `Local System` som standard. Vissa resurser behöver dock en autentiseringsuppgift, till exempel när den `Package` resursen måste installera program vara under ett visst användar konto.
+DSC-konfigurations resurser `Local System` körs som standard. Vissa resurser behöver dock en autentiseringsuppgift, till exempel när `Package` resursen måste installera program vara under ett visst användar konto.
 
-Tidigare resurser använde ett hårdkodat `Credential` egenskaps namn för att hantera detta. WMF 5,0 har lagt till en automatisk `PsDscRunAsCredential`-egenskap för alla resurser. Information om hur du använder `PsDscRunAsCredential`finns i [köra DSC med användarautentiseringsuppgifter](runAsUser.md). Nya resurser och anpassade resurser kan använda denna automatiska egenskap i stället för att skapa egna egenskaper för autentiseringsuppgifter.
+Tidigare resurser använde ett hårdkodat `Credential` egenskaps namn för att hantera detta. WMF 5,0 har lagt till `PsDscRunAsCredential` en automatisk egenskap för alla resurser. Information om hur du `PsDscRunAsCredential`använder finns i [köra DSC med användarautentiseringsuppgifter](runAsUser.md). Nya resurser och anpassade resurser kan använda denna automatiska egenskap i stället för att skapa egna egenskaper för autentiseringsuppgifter.
 
 > [!NOTE]
 > Designen av vissa resurser är att använda flera autentiseringsuppgifter av en viss anledning och de har sina egna egenskaper för autentiseringsuppgifter.
 
-Om du vill hitta tillgängliga egenskaper för autentiseringsuppgifter på en resurs använder du antingen `Get-DscResource -Name ResourceName -Syntax` eller IntelliSense i ISE (`CTRL+SPACE`).
+Om du vill hitta tillgängliga egenskaper för autentiseringsuppgifter på en resurs `Get-DscResource -Name ResourceName -Syntax` använder du antingen eller IntelliSense: en`CTRL+SPACE`i Ise ().
 
 ```powershell
 Get-DscResource -Name Group -Syntax
@@ -53,15 +53,15 @@ Group [String] #ResourceName
 }
 ```
 
-I det här exemplet används en [grupp](../resources/resources.md) resurs från den `PSDesiredStateConfiguration` inbyggda DSC-modulen. Den kan skapa lokala grupper och lägga till eller ta bort medlemmar. Den accepterar både egenskapen `Credential` och den automatiska `PsDscRunAsCredential`-egenskapen. Resursen använder dock endast egenskapen `Credential`.
+I det här exemplet används en [grupp](../resources/resources.md) resurs `PSDesiredStateConfiguration` från den inbyggda DSC-modulen. Den kan skapa lokala grupper och lägga till eller ta bort medlemmar. Både `Credential` egenskapen och den automatiska `PsDscRunAsCredential` egenskapen accepteras. Resursen använder dock endast- `Credential` egenskapen.
 
-Mer information om `PsDscRunAsCredential`-egenskapen finns i [köra DSC med användarautentiseringsuppgifter](runAsUser.md).
+Mer information om `PsDscRunAsCredential` egenskapen finns i [köra DSC med](runAsUser.md)användarautentiseringsuppgifter.
 
 ## <a name="example-the-group-resource-credential-property"></a>Exempel: egenskapen autentiseringsuppgifter för grupp resurs
 
-DSC körs under `Local System`, så den har redan behörighet att ändra lokala användare och grupper. Om medlemmen som har lagts till är ett lokalt konto krävs ingen autentiseringsuppgift. Om `Group`-resursen lägger till ett domän konto i den lokala gruppen, krävs en autentiseringsuppgift.
+DSC körs under `Local System`, så den har redan behörighet att ändra lokala användare och grupper. Om medlemmen som har lagts till är ett lokalt konto krävs ingen autentiseringsuppgift. Om `Group` resursen lägger till ett domän konto i den lokala gruppen är en autentiseringsuppgift nödvändig.
 
-Anonyma frågor till Active Directory är inte tillåtna. Egenskapen `Credential` för `Group` resursen är det domän konto som används för att fråga Active Directory. Detta kan vara ett allmänt användar konto, eftersom användare som standard kan *läsa* de flesta objekt i Active Directory.
+Anonyma frågor till Active Directory är inte tillåtna. `Group` Resursens `Credential` egenskap är det domän konto som används för att fråga Active Directory. Detta kan vara ett allmänt användar konto, eftersom användare som standard kan *läsa* de flesta objekt i Active Directory.
 
 ## <a name="example-configuration"></a>Exempel på konfiguration
 
@@ -131,7 +131,7 @@ Flaggorna **PSDSCAllowPlainTextPassword** och **PSDSCAllowDomainUser** undertryc
 
 Det första fel meddelandet har en URL med dokumentation. Den här länken förklarar hur du krypterar lösen ord med hjälp av en [ConfigurationData](./configData.md) -struktur och ett certifikat. Mer information om certifikat och DSC [finns i det här inlägget](https://aka.ms/certs4dsc).
 
-För att framtvinga ett lösen ord för oformaterad text kräver resursen `PsDscAllowPlainTextPassword` nyckelordet i konfigurations data avsnittet enligt följande:
+För att framtvinga ett lösen ord för oformaterad text kräver resursen `PsDscAllowPlainTextPassword` nyckelordet i avsnittet konfigurations data på följande sätt:
 
 ```powershell
 $password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
@@ -220,11 +220,11 @@ Om du kör exempel konfigurations skriptet igen (med eller utan kryptering), gen
 
 **När du använder autentiseringsuppgifter med DSC-resurser föredrar du ett lokalt konto över ett domän konto när det är möjligt.**
 
-Om det finns en "\\" eller "\@" i behörighetens `Username`-egenskap, kommer DSC att behandla det som ett domän konto. Det finns ett undantag för "localhost", "127.0.0.1" och ":: 1" i domän delen av användar namnet.
+Om det finns en\\eller\@i `Username` egenskapen för autentiseringsuppgiften, kommer DSC att behandla det som ett domän konto. Det finns ett undantag för "localhost", "127.0.0.1" och ":: 1" i domän delen av användar namnet.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
-I exempel exemplet för DSC-`Group` ovan, *kräver* en fråga till en Active Directory domän ett domän konto. I det här fallet lägger du till egenskapen `PSDscAllowDomainUser` i `ConfigurationData`-blocket på följande sätt:
+I DSC `Group` -resursens exempel ovan *kräver* en förfrågan till en Active Directory domän ett domän konto. I det här fallet lägger `PSDscAllowDomainUser` du till egenskapen `ConfigurationData` i blocket enligt följande:
 
 ```powershell
 $password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force

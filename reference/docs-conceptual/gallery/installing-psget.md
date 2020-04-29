@@ -4,10 +4,10 @@ contributor: manikb
 keywords: Galleri, PowerShell, cmdlet, psget
 title: Installera PowerShellGet
 ms.openlocfilehash: 69dc851c54089b47fb19e5b32990d579d26effb9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328982"
 ---
 # <a name="installing-powershellget"></a>Installera PowerShellGet
@@ -48,7 +48,7 @@ Exit
 
 Dessa anvisningar gäller för datorer där **PackageManagement Preview** är installerat eller inte har någon version av **PowerShellGet** installerad.
 
-`Save-Module`-cmdleten används i båda uppsättningarna med instruktioner. `Save-Module` hämtar och sparar en modul och eventuella beroenden från en registrerad lagrings plats. Modulens senaste version sparas till en angiven sökväg på den lokala datorn, men är inte installerad. Mer information finns i [Save-module](/powershell/module/PowershellGet/Save-Module).
+`Save-Module` Cmdleten används i båda uppsättningarna med instruktioner. `Save-Module`hämtar och sparar en modul och eventuella beroenden från en registrerad lagrings plats. Modulens senaste version sparas till en angiven sökväg på den lokala datorn, men är inte installerad. Mer information finns i [Save-module](/powershell/module/PowershellGet/Save-Module).
 
 #### <a name="computers-with-the-packagemanagement-preview-installed"></a>Datorer med PackageManagement-förhands granskning installerad
 
@@ -71,7 +71,7 @@ Dessa anvisningar gäller för datorer där **PackageManagement Preview** är in
 
 För datorer utan någon version av **PowerShellGet** installerat krävs en dator med **PowerShellGet** installerat för att ladda ned modulerna.
 
-1. Använd `Save-Module` för att hämta den aktuella versionen av **PowerShellGet**från den dator där **PowerShellGet** är installerad. Två mappar hämtas: **PowerShellGet** och **PackageManagement**. Varje mapp innehåller en undermapp med ett versions nummer.
+1. Använd `Save-Module` för att hämta den aktuella versionen av **PowerShellGet**från den dator som har installerat **PowerShellGet** . Två mappar hämtas: **PowerShellGet** och **PackageManagement**. Varje mapp innehåller en undermapp med ett versions nummer.
 
    ```powershell
    Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
@@ -79,4 +79,4 @@ För datorer utan någon version av **PowerShellGet** installerat krävs en dato
 
 1. Kopiera mapparna **PowerShellGet** och **PackageManagement** till datorn som inte har **PowerShellGet** installerat.
 
-   Mål katalogen är: `$env:ProgramFiles\WindowsPowerShell\Modules`
+   Mål katalogen är:`$env:ProgramFiles\WindowsPowerShell\Modules`

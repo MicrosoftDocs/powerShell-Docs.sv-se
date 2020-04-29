@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Felsöka DSC-resurser
 ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942162"
 ---
 # <a name="debugging-dsc-resources"></a>Felsöka DSC-resurser
@@ -63,7 +63,7 @@ PSWebAccess
 ```
 När du har kompilerat konfigurationen startar du den genom att anropa [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration).
 Konfigurationen stoppas när den lokala Configuration Manager (LCM) anropar den första resursen i konfigurationen.
-Om du använder parametrarna `-Verbose` och `-Wait`, visar utdata de rader som du måste ange för att starta fel sökningen.
+Om du använder- `-Verbose` och `-Wait` -parametrarna visar utdata de rader du behöver ange för att starta fel sökningen.
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -91,7 +91,7 @@ De sista tre raderna i utdata visar hur du ansluter till processen och startar f
 ## <a name="debugging-the-resource-script"></a>Fel sökning av resurs skriptet
 
 Starta en ny instans av PowerShell ISE.
-I konsol fönstret anger du de tre sista raderna i utdata från `Start-DscConfiguration` utdata som kommandon, och ersätter `<credentials>` med giltiga användarautentiseringsuppgifter.
+I konsol fönstret anger du de tre sista raderna i utdata från `Start-DscConfiguration` utdata som-kommandon, och ersätter `<credentials>` med giltiga användarautentiseringsuppgifter.
 Nu bör du se en prompt som ser ut ungefär så här:
 
 ```powershell
