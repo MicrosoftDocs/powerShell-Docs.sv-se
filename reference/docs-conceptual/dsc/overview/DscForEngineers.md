@@ -2,17 +2,16 @@
 ms.date: 10/13/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Desired State Configuration-översikt för tekniker
-ms.openlocfilehash: 0e599c2218cd2df29dbd0529006be5e1ef17ce5f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: dbed274d5333c216970247b88d2a0956025e969d
+ms.sourcegitcommit: a5e945e0889d0635b7af767d80d6a13bc5526269
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941840"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82584522"
 ---
 # <a name="desired-state-configuration-overview-for-engineers"></a>Desired State Configuration-översikt för tekniker
 
-Det här dokumentet är avsett för utvecklare och drifts team för att förstå fördelarna med PowerShell-tjänsten för önskad tillstånds konfiguration (DSC).
-Om du vill visa en högre nivå av värdet DSC kan du läsa [Översikt över önskad tillstånds konfiguration för besluts fattare](decisionMaker.md)
+Det här dokumentet är avsett för utvecklare och drifts team för att förstå fördelarna med PowerShell-tjänsten för önskad tillstånds konfiguration (DSC). Om du vill visa en högre nivå av värdet DSC kan du läsa [Översikt över önskad tillstånds konfiguration för besluts fattare](decisionMaker.md)
 
 ## <a name="benefits-of-desired-state-configuration"></a>Fördelar med önskad tillstånds konfiguration
 
@@ -21,38 +20,27 @@ DSC finns för att:
 - Minska komplexiteten i skript i Windows
 - Öka upprepnings hastigheten
 
-Begreppet "kontinuerlig distribution" blir viktigare.
-Kontinuerlig distribution innebär att du kan distribuera oftare, potentiellt många gånger per dag.
-Syftet med dessa distributioner är inte att åtgärda något men för att få något publicerat snabbt.
-Genom att få nya funktioner genom utveckling i drift så smidigt och tillförlitligt som möjligt minskar du tiden till värde för nya affärs logik.
+Begreppet "kontinuerlig distribution" blir viktigare. Kontinuerlig distribution innebär att du kan distribuera oftare, potentiellt många gånger per dag. Syftet med dessa distributioner är inte att åtgärda något men för att få något publicerat snabbt. Genom att få nya funktioner genom utveckling i drift så smidigt och tillförlitligt som möjligt minskar du tiden till värde för nya affärs logik.
 
-Flytten till molnbaserad data behandling innebär en distributions lösning som använder en "deklarativ" mall modell, där en slut tillstånds miljö deklareras som text och publiceras till en distributions motor.
-Med den här distributions tekniken kan du snabbt ändra i skala, med återhämtning mot hot om felet, eftersom distributionen kan upprepas kontinuerligt för att garantera ett slut tillstånd.
-Att skapa verktyg och tjänster som har stöd för den här typen av åtgärder via automatisering är ett svar på dessa ändringar.
+Flytten till molnbaserad data behandling innebär en distributions lösning som använder en "deklarativ" mall modell, där en slut tillstånds miljö deklareras som text och publiceras till en distributions motor. Med den här distributions tekniken kan du snabbt ändra i skala, med återhämtning mot hot om felet, eftersom distributionen kan upprepas kontinuerligt för att garantera ett slut tillstånd. Att skapa verktyg och tjänster som har stöd för den här typen av åtgärder via automatisering är ett svar på dessa ändringar.
 
-DSC är en plattform som tillhandahåller deklarativ och idempotenta (repeterbart) distribution, konfiguration och överensstämmelse.
-DSC-plattformen gör det möjligt för dig att se till att komponenterna i data centret har rätt konfiguration, vilket undviker fel och förhindrar kostsamma distributions fel.
-Genom att behandla DSC-konfigurationer som en del av program koden, aktiverar DSC kontinuerlig distribution.
-DSC-konfigurationen bör uppdateras som en del av programmet, vilket säkerställer att den kunskap som krävs för att distribuera programmet alltid är uppdaterad och redo att användas.
+DSC är en plattform som tillhandahåller deklarativ och idempotenta (repeterbart) distribution, konfiguration och överensstämmelse. DSC-plattformen gör det möjligt för dig att se till att komponenterna i data centret har rätt konfiguration, vilket undviker fel och förhindrar kostsamma distributions fel. Genom att behandla DSC-konfigurationer som en del av program koden, aktiverar DSC kontinuerlig distribution. DSC-konfigurationen bör uppdateras som en del av programmet, vilket säkerställer att den kunskap som krävs för att distribuera programmet alltid är uppdaterad och redo att användas.
 
 ## <a name="i-have-powershell-why-do-i-need-desired-state-configuration"></a>"Jag har PowerShell, varför behöver jag önskad tillstånds konfiguration?"
 
-DSC-konfigurationer, separata avsikter, eller "vad jag vill göra", från körning eller "hur jag vill göra det".
-Det innebär att logiken för körningen ingår i resurserna.
-Användarna behöver inte veta hur de ska implementera eller distribuera en funktion när en DSC-resurs för den funktionen är tillgänglig.
-Detta gör att användaren kan fokusera på strukturen i distributionen.
+DSC-konfigurationer, separata avsikter, eller "vad jag vill göra", från körning eller "hur jag vill göra det". Det innebär att logiken för körningen ingår i resurserna. Användarna behöver inte veta hur de ska implementera eller distribuera en funktion när en DSC-resurs för den funktionen är tillgänglig. Detta gör att användaren kan fokusera på strukturen i distributionen.
 
 Som exempel bör PowerShell-skript se ut så här:
+
 ```powershell
 # Create a share in Windows Server 8
 New-SmbShare -Name MyShare -Path C:\Demo\Temp -FullAccess Alice -ReadAccess Bob
 ```
-Det här skriptet är enkelt, begripligt och enkelt.
-Men om du försöker sätta skriptet i produktion, kan du köra på flera problem.
-Vad händer om skriptet körs två gånger i rad?
-Vad händer om Bob tidigare hade fullständig åtkomst till resursen?
+
+Det här skriptet är enkelt, begripligt och enkelt. Men om du försöker sätta skriptet i produktion, kan du köra på flera problem. Vad händer om skriptet körs två gånger i rad? Vad händer om Bob tidigare hade fullständig åtkomst till resursen?
 
 För att kompensera för de här problemen ser en "verklig" version av skriptet att se ut ungefär så här:
+
 ```powershell
 # But actually creating a share in an idempotent way would be
 
@@ -67,20 +55,19 @@ if($smbShare -ne $null)
 if ($shareExists -eq $false)
 {
     Write-Verbose "Creating share $Name to ensure it is Present"
-    New-SmbShare @psboundparameters
+    New-SmbShare @PSBoundParameters
 }
 else
 {
     # Need to call either Set-SmbShare or *ShareAccess cmdlets
-    if ($psboundparameters.ContainsKey("ChangeAccess"))
+    if ($PSBoundParameters.ContainsKey("ChangeAccess"))
     {
        #...etc, etc, etc
     }
 }
 ```
 
-Det här skriptet är mer komplicerat, med massor av logik-och fel hantering.
-Skriptet är mer komplicerat eftersom du inte längre anger vad du vill göra, men *hur du gör det*.
+Det här skriptet är mer komplicerat, med massor av logik-och fel hantering. Skriptet är mer komplicerat eftersom du inte längre anger vad du vill göra, men _hur du gör det_.
 
 DSC låter dig säga vad du vill göra och den underliggande logiken är indelad.
 
@@ -118,17 +105,10 @@ Logik Sök vägar och fel hantering finns kvar i [resurs](../resources/resources
 
 ## <a name="separating-environment-from-structure"></a>Separera miljö från struktur
 
-Ett vanligt mönster i DevOps är att ha flera miljöer för distribution.
-Det kan till exempel finnas en "dev"-miljö som används för att snabbt kunna prototypa ny kod.
-Koden från "dev"-miljön hamnar i en test miljö där andra personer verifierar de nya funktionerna.
-Slutligen hamnar koden i "Prod" eller The Live site Production Environment.
+Ett vanligt mönster i DevOps är att ha flera miljöer för distribution. Det kan till exempel finnas en "dev"-miljö som används för att snabbt kunna prototypa ny kod. Koden från "dev"-miljön hamnar i en test miljö där andra personer verifierar de nya funktionerna. Slutligen hamnar koden i "Prod" eller The Live site Production Environment.
 
 DSC-konfigurationer hanterar den här dev-test-Prod-pipeline genom att använda [konfigurations data](../configurations/configData.md).
-Detta sammanfattar skillnaden mellan konfigurationens struktur och de noder som hanteras.
-Du kan till exempel definiera en konfiguration som kräver en SQL-Server, en IIS-server och en server på mellan nivå.
-Oavsett vilka noder som tar emot olika delar av den här konfigurationen, kommer dessa tre element alltid att finnas.
-Du kan använda konfigurations data för att peka alla tre element mot samma dator för en utvecklings miljö, separera de tre elementen till tre olika datorer för en test miljö och slutligen till alla produktions servrar för produktions miljön.
-Om du vill distribuera till olika miljöer kan du anropa **Start-DscConfiguration** med rätt konfigurations data för den miljö som du vill använda som mål.
+Detta sammanfattar skillnaden mellan konfigurationens struktur och de noder som hanteras. Du kan till exempel definiera en konfiguration som kräver en SQL-Server, en IIS-server och en server på mellan nivå. Oavsett vilka noder som tar emot olika delar av den här konfigurationen, kommer dessa tre element alltid att finnas. Du kan använda konfigurations data för att peka alla tre element mot samma dator för en utvecklings miljö, separera de tre elementen till tre olika datorer för en test miljö och slutligen till alla produktions servrar för produktions miljön. Om du vill distribuera till olika miljöer kan du anropa `Start-DscConfiguration` med rätt konfigurations data för den miljö som du vill använda som mål.
 
 ## <a name="see-also"></a>Se även
 
