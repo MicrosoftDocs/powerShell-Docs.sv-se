@@ -1,0 +1,61 @@
+### YamlMime:Landing
+title: Community-uppdatering
+summary: En lista över resurser och en sammanfattning av nya artiklar och community-bidrag.
+metadata:
+  title: Community-uppdatering
+  description: En lista över resurser och en sammanfattning av nya artiklar och community-bidrag.
+  ms.topic: landing-page
+  author: sdwheeler
+  ms.author: sewhee
+  ms.date: 04/29/2020
+  ms.openlocfilehash: 42d8de8ffedf9ac1b0bd7ee5df1483f8d1316da7
+  ms.sourcegitcommit: e6a9b13a4799667b74e0ba0f742dded4511d32b4
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82630961"
+landingContent:
+- title: Community-resurser
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Community-support
+      url: community-support.md
+    - text: Digital konst
+      url: digital-art.md
+    - text: Bidrags hallen Fame
+      url: hall-of-fame.md
+- title: Nyheter i PowerShell Docs
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: 2020 – Q2
+      url: ./2020-Q2.md
+    - text: 2020 – Q1
+      url: ./2020-Q1.md
+- title: Delta – bidra till PowerShell-dokument
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: PowerShell Contributor-guide
+      url: contributing/overview.md
+    - text: Kom igång med att skriva
+      url: contributing/get-started-writing.md
+  - linkListType: how-to-guide
+    links:
+    - text: Så här arkiverar du ett problem
+      url: contributing/file-an-issue.md
+    - text: Skicka en pull-begäran
+      url: contributing/pull-requests.md
+    - text: Stilguide för PowerShell-Docs
+      url: contributing/powershell-style-guide.md
+    - text: Redigera cmdlet-referens
+      url: contributing/editing-cmdlet-ref.md
+  - linkListType: reference
+    links:
+    - text: Checklista för redigering
+      url: contributing/editorial-checklist.md
+    - text: Så här hanterar vi problem
+      url: contributing/managing-issues.md
+    - text: Så här hanterar vi pull-begäranden
+      url: contributing/managing-pull-requests.md

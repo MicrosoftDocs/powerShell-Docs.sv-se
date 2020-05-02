@@ -2,22 +2,27 @@
 ms.date: 04/28/2020
 title: Använda experimentella funktioner i PowerShell
 description: Visar en lista över tillgängliga experimentella funktioner och hur du använder dem.
-ms.openlocfilehash: e2c9f30cb1d4ec7b89596cebd1e5df27968626cc
-ms.sourcegitcommit: a5e945e0889d0635b7af767d80d6a13bc5526269
+ms.openlocfilehash: 72a4309d6eeede4cd2ff7c38ce8e99ce3ace30eb
+ms.sourcegitcommit: e6a9b13a4799667b74e0ba0f742dded4511d32b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82587395"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82630775"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Använda experimentella funktioner i PowerShell
 
 Stöd för experimentella funktioner i PowerShell är en mekanism för experimentella funktioner som kan användas tillsammans med befintliga stabila funktioner i PowerShell-eller PowerShell-moduler.
 
-Den här artikeln beskriver de experimentella funktioner som är tillgängliga och hur du använder funktionen. Mer information om hur du aktiverar eller inaktiverar dessa funktioner finns [about_Experimental_Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features).
+En experimentell funktion är en där designen inte har slutförts. Funktionen är tillgänglig för användare att testa och ge feedback. När en experimentell funktion har slutförts blir design ändringarna ändringar.
+
+> [!CAUTION]
+> Experimentella funktioner är inte avsedda att användas i produktion eftersom ändringarna kan avbrytas. Experimentella funktioner stöds inte officiellt. Vi uppskattar dock alla synpunkter och fel rapporter. Du kan fil problem i [GitHub-käll databasen](https://github.com/PowerShell/PowerShell/issues/new/choose).
+
+Mer information om hur du aktiverar eller inaktiverar dessa funktioner finns [about_Experimental_Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features).
 
 ## <a name="available-features"></a>Tillgängliga funktioner
 
-I följande tabell visas en lista över de funktioner som är tillgängliga i olika versioner av PowerShell.
+Den här artikeln beskriver de experimentella funktioner som är tillgängliga och hur du använder funktionen.
 
 |                            Name                            |   6.2   |   7.0   | 7,1 (för hands version) |
 | ---------------------------------------------------------- | :-----: | :-----: | :-----------: |
