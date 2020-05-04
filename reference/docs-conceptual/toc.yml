@@ -731,13 +731,20 @@
         - name: Bilaga 2 Skapa en anpassad PowerShell-genväg
           href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
 - name: Community
+  expanded: true
   items:
-    - name: Community-resurser
+    - name: Community-uppdatering
+      href: community/community-update.yml
+    - name: Community-support
       href: community/community-support.md
-    - name: Digital konst
-      href: community/digital-art.md
-    - name: Nyheter i PowerShell Docs
-      href: community/whats-new-in-docs.md
+    - name: Deltagares Hall of Fame
+      href: community/hall-of-fame.md
+    - name: Nyheter i dokument
+      items:
+        - name: 2020-Kv2
+          href: community/2020-Q2.md
+        - name: 2020-Kv1
+          href: community/2020-Q1.md
     - name: Deltagarguide
       items:
         - name: Översikt
@@ -760,6 +767,8 @@
               href: community/contributing/managing-issues.md
             - name: Så här hanterar vi pull-begäranden
               href: community/contributing/managing-pull-requests.md
+    - name: Digital konst
+      href: community/digital-art.md
 - name: PowerShell SDK
   items:
     - name: Översikt
