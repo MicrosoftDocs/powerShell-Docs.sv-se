@@ -2,25 +2,25 @@
 title: Installera PowerShell i Linux
 description: Information om hur du installerar PowerShell på olika Linux-distributioner
 ms.date: 03/09/2020
-ms.openlocfilehash: 6ad637bd30e5e40ccc9532bae6f1171ecf79734a
-ms.sourcegitcommit: e0a737961280026832cff9c658ed1468dc904e80
+ms.openlocfilehash: e04d8a91999cd6e9b2d669230c7a1b412f11eeb8
+ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605857"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83271907"
 ---
 # <a name="installing-powershell-on-linux"></a>Installera PowerShell i Linux
 
-Alla paket är tillgängliga på vår GitHub- [releases][] -sida. När paketet har installerats kör `pwsh` du från en Terminal. Kör `pwsh-preview` om du har installerat en för [hands version](#installing-preview-releases).
+Alla paket är tillgängliga på vår GitHub- [releases][] -sida. När paketet har installerats kör du `pwsh` från en Terminal. Kör `pwsh-preview` om du har installerat en för [hands version](#installing-preview-releases).
 
 > [!NOTE]
 > PowerShell 7 är en uppgradering på plats som tar bort PowerShell Core 6. x.
 >
-> `/usr/local/microsoft/powershell/6` Mappen ersätts av `/usr/local/microsoft/powershell/7`.
+> `/usr/local/microsoft/powershell/6`Mappen ersätts av `/usr/local/microsoft/powershell/7` .
 >
 > Om du behöver köra PowerShell 6 sida vid sida med PowerShell 7 installerar du om PowerShell 6 med hjälp av metoden för [binärt Arkiv](#binary-archives) .
 
-För Linux-distributioner som inte stöds officiellt kan du försöka installera PowerShell med hjälp av [PowerShell-Snap-paketet][snap]. Du kan också prova att distribuera PowerShell-binärfiler direkt med [ `tar.gz` ][tar]Linux-arkivet, men du måste konfigurera de nödvändiga beroendena baserat på operativ systemet i separata steg.
+För Linux-distributioner som inte stöds officiellt kan du försöka installera PowerShell med hjälp av [PowerShell-Snap-paketet][snap]. Du kan också prova att distribuera PowerShell-binärfiler direkt med Linux- [ `tar.gz` arkivet][tar], men du måste konfigurera de nödvändiga beroendena baserat på operativ systemet i separata steg.
 
 [snap]: #snap-package
 [tar]: #binary-archives
@@ -55,6 +55,10 @@ Alternativa installations metoder
 - Binära Arkiv
 - Globalt .NET-verktyg
 
+Stöds för närvarande inte 
+
+- Ubuntu 20,04
+
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
 ### <a name="installation-via-package-repository---ubuntu-1604"></a>Installation via paket lagring – Ubuntu 16,04
@@ -80,11 +84,11 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter registreringen kan du uppdatera PowerShell med `sudo apt-get upgrade powershell`.
+Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter registreringen kan du uppdatera PowerShell med `sudo apt-get upgrade powershell` .
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Installation via direkt hämtning – Ubuntu 16,04
 
-Ladda ned Debian- `powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb` paketet från sidan [releases][] på Ubuntu-datorn.
+Ladda ned Debian-paketet `powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb` från sidan [releases][] på Ubuntu-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -94,7 +98,7 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> Kommandot `dpkg -i` kan inte utföras med ouppfyllda-beroenden. Nästa kommando `apt-get install -f` löser dessa problem och Slutför konfigurationen av PowerShell-paketet.
+> Kommandot kan inte utföras `dpkg -i` med ouppfyllda-beroenden. Nästa kommando `apt-get install -f` löser dessa problem och Slutför konfigurationen av PowerShell-paketet.
 
 ### <a name="uninstallation---ubuntu-1604"></a>Avinstallation – Ubuntu 16,04
 
@@ -130,11 +134,11 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter registreringen kan du uppdatera PowerShell med `sudo apt-get upgrade powershell`.
+Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter registreringen kan du uppdatera PowerShell med `sudo apt-get upgrade powershell` .
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Installation via direkt hämtning – Ubuntu 18,04
 
-Ladda ned Debian- `powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb` paketet från sidan [releases][] på Ubuntu-datorn.
+Ladda ned Debian-paketet `powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb` från sidan [releases][] på Ubuntu-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -144,7 +148,7 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> Kommandot `dpkg -i` kan inte utföras med ouppfyllda-beroenden. Nästa kommando `apt-get install -f` löser dessa problem och Slutför konfigurationen av PowerShell-paketet.
+> Kommandot kan inte utföras `dpkg -i` med ouppfyllda-beroenden. Nästa kommando `apt-get install -f` löser dessa problem och Slutför konfigurationen av PowerShell-paketet.
 
 ### <a name="uninstallation---ubuntu-1804"></a>Avinstallation – Ubuntu 18,04
 
@@ -154,17 +158,21 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1810"></a>Ubuntu 18,10
 
-Installationen stöds via `snapd`. Instruktioner finns i [snapin-paket][snap].
+Installationen stöds via `snapd` . Instruktioner finns i [snapin-paket][snap].
 
 > [!NOTE]
 > Ubuntu 18,10 är en [tillfällig version](https://www.ubuntu.com/about/release-cycle) som [stöds av communityn](../powershell-support-lifecycle.md).
 
 ## <a name="ubuntu-1904"></a>Ubuntu 19,04
 
-Installationen stöds via `snapd`. Instruktioner finns i [snapin-paket][snap].
+Installationen stöds via `snapd` . Instruktioner finns i [snapin-paket][snap].
 
 > [!NOTE]
 > Ubuntu 19,04 är en [tillfällig version](https://www.ubuntu.com/about/release-cycle) som [stöds av communityn](../powershell-support-lifecycle.md).
+
+## <a name="ubuntu-2004"></a>Ubuntu 20,04
+
+Ubuntu 20,04 är en LTS-version. PowerShell stöder för närvarande inte den här versionen. Stöd för den här versionen beaktas för PowerShell 7,1-versionen. Rösta på den här [begäran](https://github.com/PowerShell/PowerShell/issues/12626) om du vill ha stöd för Ubuntu 20,04.
 
 ## <a name="debian-8"></a>Debian 8
 
@@ -195,7 +203,7 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter registreringen kan du uppdatera PowerShell med `sudo apt-get upgrade powershell`.
+Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter registreringen kan du uppdatera PowerShell med `sudo apt-get upgrade powershell` .
 
 ## <a name="debian-9"></a>Debian 9
 
@@ -226,11 +234,11 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter registreringen kan du uppdatera PowerShell med `sudo apt-get upgrade powershell`.
+Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter registreringen kan du uppdatera PowerShell med `sudo apt-get upgrade powershell` .
 
 ### <a name="installation-via-direct-download---debian-9"></a>Installation via direkt hämtning – Debian 9
 
-Ladda ned Debian- `powershell-lts_7.0.0-1.debian.9_amd64.deb` paketet från sidan [releases][] på Debian-datorn.
+Ladda ned Debian-paketet `powershell-lts_7.0.0-1.debian.9_amd64.deb` från sidan [releases][] på Debian-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -275,7 +283,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-10"></a>Installation via direkt hämtning – Debian 10
 
-Hämta paketet `powershell_7.0.0-linux-x64.tar.gz` tar. gz från sidan [utgåvor][] till Debian-datorn.
+Hämta paketet tar. gz `powershell_7.0.0-linux-x64.tar.gz` från sidan [utgåvor][] till Debian-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -322,7 +330,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>Installation via direkt hämtning – Alpine 3,9 och 3,10
 
-Hämta paketet `powershell-7.0.0-linux-alpine-x64.tar.gz` tar. gz från sidan [utgåvor][] till Alpine Machine.
+Hämta paketet tar. gz `powershell-7.0.0-linux-alpine-x64.tar.gz` från sidan [utgåvor][] till Alpine Machine.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -385,11 +393,11 @@ sudo yum install -y powershell
 pwsh
 ```
 
-Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter registreringen kan du uppdatera PowerShell med `sudo yum update powershell`.
+Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter registreringen kan du uppdatera PowerShell med `sudo yum update powershell` .
 
 ### <a name="installation-via-direct-download---centos-7"></a>Installation via direkt hämtning – CentOS 7
 
-Med [CentOS 7][]laddar du ned rpm- `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` paketet från sidan [utgåvor][] till CentOS-datorn.
+Med [CentOS 7][]laddar du ned rpm-paketet `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` från sidan [utgåvor][] till CentOS-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -428,7 +436,7 @@ sudo yum install -y powershell
 pwsh
 ```
 
-Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter registreringen kan du uppdatera PowerShell med `sudo yum update powershell`.
+Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter registreringen kan du uppdatera PowerShell med `sudo yum update powershell` .
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installation via direkt hämtning – Red Hat Enterprise Linux (RHEL) 7
 
@@ -590,7 +598,7 @@ Mer information om hur du installerar paket från AUR finns i " [båge Linux wik
 
 ### <a name="getting-snapd"></a>Fäst
 
-`snapd`krävs för att köra fäst. Följ [dessa anvisningar](https://docs.snapcraft.io/core/install) för att kontrol lera att `snapd` du har installerat.
+`snapd`krävs för att köra fäst. Följ [dessa anvisningar](https://docs.snapcraft.io/core/install) för att kontrol lera att du har `snapd` installerat.
 
 ### <a name="installation-via-snap"></a>Installation via Snap
 
@@ -616,7 +624,7 @@ sudo snap install powershell-preview --classic
 pwsh-preview
 ```
 
-Efter installationen kommer Snap att uppgraderas automatiskt. Du kan utlösa en uppgradering med `sudo snap refresh powershell` eller `sudo snap refresh powershell-preview`.
+Efter installationen kommer Snap att uppgraderas automatiskt. Du kan utlösa en uppgradering med `sudo snap refresh powershell` eller `sudo snap refresh powershell-preview` .
 
 ### <a name="uninstallation"></a>Avinstallation
 
@@ -712,7 +720,7 @@ rm -rf ~/powershell
 
 ## <a name="installing-preview-releases"></a>Installera för hands versioner
 
-När du installerar en PowerShell Preview-version för Linux via en paket lagrings plats ändras paket `powershell` namnet `powershell-preview`från till.
+När du installerar en PowerShell Preview-version för Linux via en paket lagrings plats ändras paket namnet från `powershell` till `powershell-preview` .
 
 Installation via direkt hämtning ändras inte, förutom fil namnet.
 
@@ -732,11 +740,11 @@ Om du redan har installerat [.net Core SDK](/dotnet/core/sdk) är det enkelt att
 dotnet tool install --global PowerShell
 ```
 
-Installations programmet för dotNET- `~/.dotnet/tools` verktyget lägger `PATH` till i din miljö variabel. Men det gränssnitt som körs har inte uppdaterats `PATH`. Du bör kunna starta PowerShell från ett nytt gränssnitt genom att skriva `pwsh`.
+Installations programmet för dotNET-verktyget lägger till `~/.dotnet/tools` i din `PATH` miljö variabel. Men det gränssnitt som körs har inte uppdaterats `PATH` . Du bör kunna starta PowerShell från ett nytt gränssnitt genom att skriva `pwsh` .
 
 ## <a name="binary-archives"></a>Binära Arkiv
 
-PowerShell- `tar.gz` binärfiler finns för Linux-plattformar för att aktivera avancerade distributions scenarier.
+PowerShell-binärfiler `tar.gz` finns för Linux-plattformar för att aktivera avancerade distributions scenarier.
 
 ### <a name="dependencies"></a>Beroenden
 
@@ -756,7 +764,7 @@ Följande diagram visar de .NET Core 2,0-beroenden som stöds officiellt på oli
 | openSUSE-skottår 15 | libcurl4, libopenssl1_0_0 libicu60_2 |
 | Fedora 27 <br> Fedora 28 | libunwind, libsväng, OpenSSL-libs, libicu, kompatibilitet-openssl10 |
 
-Om du vill distribuera PowerShell-binärfiler på Linux-distributioner som inte stöds officiellt måste du installera de nödvändiga beroendena för mål operativ systemet i separata steg. Vårt [Amazon Linux-Dockerfile][amazon-dockerfile] installerar till exempel beroenden först och extraherar sedan Linux `tar.gz` -arkivet.
+Om du vill distribuera PowerShell-binärfiler på Linux-distributioner som inte stöds officiellt måste du installera de nödvändiga beroendena för mål operativ systemet i separata steg. Vårt [Amazon Linux-Dockerfile][amazon-dockerfile] installerar till exempel beroenden först och extraherar sedan Linux- `tar.gz` arkivet.
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
@@ -797,7 +805,7 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 - Standardmoduler kommer att läsas från`$PSHOME/Modules`
 - PSReadLine historik registreras i`~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
-Profilerna respekterar PowerShell: s konfiguration per värd, så att de standardinställda värdbaserade `Microsoft.PowerShell_profile.ps1` profilerna finns på samma platser.
+Profilerna respekterar PowerShell: s konfiguration per värd, så att de standardinställda värdbaserade profilerna finns på `Microsoft.PowerShell_profile.ps1` samma platser.
 
 PowerShell respekterar [xdg-bas katalog specifikationen][xdg-bds] i Linux.
 
