@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 057a666f-731b-423d-9d80-7be6b1836244
 caps.latest.revision: 5
-ms.openlocfilehash: c97b0dfc12d96f99c53383d3578579f1988efd52
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 964320108d7aff24d59905028fb976e0f75642e7
+ms.sourcegitcommit: 08e9ed4bc9bffc7af82b3130e74ec7763db74e4f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357780"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83382634"
 ---
 # <a name="creating-remote-runspaces"></a>Skapa fjärranslutna körningsutrymmen
 
@@ -21,9 +21,9 @@ PowerShell-kommandon som tar en **computername** -parameter kan köras på alla 
 
 ## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a>Använda en WSManConnection för att skapa en fjärran sluten körnings utrymme
 
- Om du vill skapa en körnings utrymme som ansluter till en fjärrdator skapar du ett [system. Management. Automation. körnings utrymmen. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -objekt. Du anger mål slut punkten för anslutningen genom att ange egenskapen [system. Management. Automation. körnings utrymmen. WSManConnectionInfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) för objektet. Sedan skapar du en körnings utrymme genom att anropa metoden [system. Management. Automation. körnings utrymmen. RunspaceFactory. CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) , och anger objektet [system. Management. Automation. körnings utrymmen. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) som `connectionInfo` parameter.
+ Om du vill skapa en körnings utrymme som ansluter till en fjärrdator skapar du ett [system. Management. Automation. körnings utrymmen. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -objekt. Du anger mål slut punkten för anslutningen genom att ange egenskapen [system. Management. Automation. körnings utrymmen. WSManConnectionInfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) för objektet. Sedan skapar du en körnings utrymme genom att anropa metoden [system. Management. Automation. körnings utrymmen. RunspaceFactory. CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) , ange [system. Management. Automation. körnings utrymmen. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -objektet som `connectionInfo` parameter.
 
- I följande exempel visas hur du skapar en körnings utrymme som ansluter till en fjärrdator. I exemplet används `RemoteComputerUri` som plats hållare för den faktiska URI: n för en fjärran sluten dator.
+ I följande exempel visas hur du skapar en körnings utrymme som ansluter till en fjärrdator. I exemplet `RemoteComputerUri` används som plats hållare för den faktiska URI: n för en fjärrdator.
 
 ```csharp
 namespace Samples
@@ -48,7 +48,7 @@ namespace Samples
       // Create a WSManConnectionInfo object using the default constructor
       // to connect to the "localHost". The WSManConnectionInfo object can
       // also be used to specify connections to remote computers.
-      Uri RemoteComputerUri = new uri("http://Server01:5985/WSMAN");
+      Uri RemoteComputerUri = new Uri("http://Server01:5985/WSMAN");
       WSManConnectionInfo connectionInfo = new WSManConnectionInfo(RemoteComputerUri);
 
       // Set the OperationTimeout property and OpenTimeout properties.
