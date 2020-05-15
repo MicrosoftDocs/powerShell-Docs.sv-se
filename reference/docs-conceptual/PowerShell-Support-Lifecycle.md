@@ -2,12 +2,12 @@
 title: Supportlängd för PowerShell Core
 description: Principer som styr support för PowerShell Core
 ms.date: 03/09/2020
-ms.openlocfilehash: c319371778eb4615559ae12e0cd153a535ed22bf
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 45b639ea5f1a4d4e1decaaeacd998cdd3e3d7d02
+ms.sourcegitcommit: 28a40a0fe590a7efe893793f7db88320dbba64ff
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500999"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83407769"
 ---
 # <a name="powershell-support-lifecycle"></a>Support livs cykel för PowerShell
 
@@ -54,7 +54,7 @@ För att bekräfta om din plattform och version av PowerShell Core stöds offici
 
 Vår community har också bidragit med paket för vissa plattformar, men de stöds inte officiellt. Dessa paket är markerade som `Community` i tabellen.
 
-Plattformar som anges `Experimental` som inte stöds officiellt, men som är tillgängliga för experimentering och feedback.
+Plattformar som anges som `Experimental` inte stöds officiellt, men som är tillgängliga för experimentering och feedback.
 
 | Plattform                                          |      6.2      |    7.0    |
 | ------------------------------------------------- | :-----------: | :-------: |
@@ -127,7 +127,7 @@ PowerShell-kärnan släpps under [MIT-licensen][]. Under den här licensen och u
 
 ## <a name="windows-powershell-compatibility"></a>Windows PowerShell-kompatibilitet
 
-Support livs cykeln för PowerShell behandlar inte moduler som levereras utanför paketet med PowerShell 7-versionen. Exempelvis stöds den `ActiveDirectory` modul som levereras som en del av Windows Server under [Windows Support Lifecycle][].
+Support livs cykeln för PowerShell behandlar inte moduler som levereras utanför paketet med PowerShell 7-versionen. Exempelvis `ActiveDirectory` stöds den modul som levereras som en del av Windows Server under [Windows Support Lifecycle][].
 
 PowerShell 7 förbättrar kompatibiliteten med befintliga PowerShell-moduler skrivna för Windows PowerShell.
 Mer information finns i den [about_Windows_Compatibility][] artikeln och i [listan över kompatibla moduler][].
@@ -139,6 +139,17 @@ Mer information finns i den [about_Windows_Compatibility][] artikeln och i [list
 
 [Experimentella funktioner][] är begränsade till [Community-support](#community-support).
 
+## <a name="security-servicing-criteria"></a>Villkor för säkerhets underhåll
+
+PowerShell följer [villkoren för Microsoft Security Servicing för Windows][].
+I tabellen nedan beskrivs de funktioner som uppfyller underhålls villkoren och de som inte gör det.
+
+| Funktion                          | Typ             | Avsikt att betjäna tjänsten? |
+|----------------------------------|------------------|--------------------|
+| Körnings princip                 | Skydd i djupet | Inga                 |
+| System låsning – med AppLocker | Skydd i djupet | Inga                 |
+| System låsning – med WDAC      | Säkerhetsfunktion | Ja                |
+
 ## <a name="release-history"></a>Versions historik
 
 Följande tabell innehåller en tids linje för de större versionerna av PowerShell. Den här tabellen tillhandahålls för historisk referens. Den är inte avsedd att användas för att fastställa support livs cykeln.
@@ -149,8 +160,8 @@ Följande tabell innehåller en tids linje för de större versionerna av PowerS
 | PowerShell 6,0       |   Jan-2018   | Första versionen bygger på .NET Core 2,1. Kan installeras på Windows, Linux och macOS.                                                              |
 | PowerShell 5.1       |   Aug-2016   | Lanseras i uppdatering för Windows 10-årsdag och Windows Server 2016                                                                             |
 | PowerShell 5.0       |   Feb-2016   | Lanserad i Windows Management Framework (WMF) 5,0                                                                                            |
-| PowerShell 4.0       |   Okt-2013   | Integrerad i Windows 8,1 och Windows Server 2012 R2. Kan installeras på Windows 7 SP1, Windows Server 2008 R2 SP1 och Windows Server 2012. |
-| PowerShell 3.0       |   Okt-2012   | Integrerad i Windows 8 och Windows Server 2012. Kan installeras på Windows 7 SP1, Windows Server 2008 SP1 och Windows Server 2008 R2 SP1.  |
+| PowerShell 4.0       |   Okt-2013   | Integrerad i Windows 8,1 och Windows Server 2012 R2. Kan installeras på Windows 7 SP1, Windows Server 2008 R2 SP1 och Windows Server 2012. |
+| PowerShell 3.0       |   Okt-2012   | Integrerad i Windows 8 och Windows Server 2012. Kan installeras på Windows 7 SP1, Windows Server 2008 SP1 och Windows Server 2008 R2 SP1.  |
 | PowerShell 2,0       |   Jul – 2009   | Integrerad i Windows 7 och Windows Server 2008 R2. Kan installeras på Windows XP SP3, Windows Server 2003 SP2 och Windows Vista SP1.            |
 | PowerShell 1,0       |   Nov-2006   | Kan installeras på Windows XP SP2, Windows Server 2003 SP1 och Windows Vista. Valfri komponent i Windows Server 2008.                          |
 
@@ -172,3 +183,4 @@ Följande tabell innehåller en tids linje för de större versionerna av PowerS
 [kompatibilitetslista för modul]: /powershell/scripting/whats-new/module-compatibility
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [Experimentella funktioner]: /powershell/module/microsoft.powershell.core/about/about_powershell_config#experimentalfeatures
+[Microsoft Security Servicing-kriterier för Windows]: https://www.microsoft.com/en-us/msrc/windows-security-servicing-criteria
