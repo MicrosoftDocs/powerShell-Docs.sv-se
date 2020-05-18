@@ -755,22 +755,20 @@
               href: community/contributing/managing-pull-requests.md
     - name: Digital konst
       href: community/digital-art.md
-- name: PowerShell-utvecklare
+- name: Skript och utveckling
   items:
-    - name: Plattformsoberoende utveckling
+    - name: Visual Studio-koden
       items:
-        - name: Visual Studio-koden
-          items:
-            - name: Använda Visual Studio Code
-              href: components/vscode/using-vscode.md
-            - name: Så här replikerar du ISE-upplevelsen i Visual Studio Code
-              href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
-            - name: Använda Visual Studio Code för att fjärredigera och fjärrfelsöka
-              href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
-            - name: Förstå filkodning i VS Code och PowerShell
-              href: components/vscode/understanding-file-encoding.md
-        - name: Skriva flyttbara moduler
-          href: learn/writing-portable-modules.md
+        - name: Använda Visual Studio Code
+          href: components/vscode/using-vscode.md
+        - name: Så här replikerar du ISE-upplevelsen i Visual Studio Code
+          href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
+        - name: Använda Visual Studio Code för att fjärredigera och fjärrfelsöka
+          href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
+        - name: Förstå filkodning i VS Code och PowerShell
+          href: components/vscode/understanding-file-encoding.md
+    - name: Skriva flyttbara moduler
+      href: learn/writing-portable-modules.md
     - name: Äldre PowerShell SDK
       items:
         - name: Översikt
