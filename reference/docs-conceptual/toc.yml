@@ -148,20 +148,6 @@
               href: components/ise/object-model/the-powershelltabcollection-object.md
             - name: PowerShellTab-objektet
               href: components/ise/object-model/the-powershelltab-object.md
-    - name: Webbåtkomst
-      items:
-        - name: Auktoriseringsregler och säkerhetsfunktioner
-          href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
-        - name: Installation
-          href: components/web-access/install-and-use-windows-powershell-web-access.md
-        - name: Felsöka åtkomstproblem
-          href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
-        - name: Avinstallera Windows PowerShell-webbåtkomst
-          href: components/web-access/uninstall-windows-powershell-web-access.md
-        - name: Användning av den webbaserade PowerShell-konsolen
-          href: components/web-access/use-the-web-based-windows-powershell-console.md
-    - name: Arbetsflödesguiden
-      href: components/workflows-guide.md
 - name: PowerShell-galleriet
   items:
     - name: Översikt
