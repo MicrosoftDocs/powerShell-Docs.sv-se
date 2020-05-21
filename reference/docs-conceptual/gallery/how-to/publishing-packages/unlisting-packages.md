@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Avlista paket
-ms.openlocfilehash: b7404420db531ac5d97debd46e1b84c6fdd49d9a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4291b910dcea65b2ca241e55838ea00d4ec53ee4
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80978278"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692357"
 ---
 # <a name="unlisting-packages"></a>Avlista paket
 
@@ -32,6 +32,7 @@ Om du vill ta bort en lista över ditt paket går du till sidan med paket inform
 
 Kontakta PowerShell-galleriet-administratörer om du får ett scenario där borttagning av paketet är nödvändigt.
 Giltiga borttagnings scenarier är:
+
 - Problem med upphovs rätts intrång.
 - Paketet innehåller potentiellt skadligt innehåll.
 - Paketet innehåller känsliga data.

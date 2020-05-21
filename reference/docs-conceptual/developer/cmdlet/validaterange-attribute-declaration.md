@@ -12,12 +12,12 @@ helpviewer_keywords:
 - attributes, ValidateRange
 ms.assetid: 1f8066e6-e5d3-4f4e-8948-a90af5dace82
 caps.latest.revision: 11
-ms.openlocfilehash: 155a406b9855c435041fe175ac7d983a4b4eb8b7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 560fa105ac3f93ae6334df0112f5290dfa20576c
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359134"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692005"
 ---
 # <a name="validaterange-attribute-declaration"></a>Deklaration av attributet ValidateRange
 
@@ -31,19 +31,19 @@ Attributet ValidateRange anger det lägsta och högsta värdet (intervallet) fö
 
 #### <a name="parameters"></a>Parametrar
 
-`MinRange` ([system. Object](/dotnet/api/system.object)) krävs. Anger det lägsta tillåtna värdet.
+`MinRange`([System. Object](/dotnet/api/system.object)) krävs. Anger det lägsta tillåtna värdet.
 
-`MaxRange` ([system. Object](/dotnet/api/system.object)) krävs. Anger det högsta tillåtna värdet.
+`MaxRange`([System. Object](/dotnet/api/system.object)) krävs. Anger det högsta tillåtna värdet.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
-- Windows PowerShell-körningsmiljön genererar ett konstruktions fel när värdet för parametern `MinRange` är större än värdet för parametern `MaxRange`.
+- Windows PowerShell-körningsmiljön genererar ett konstruktions fel när värdet för `MinRange` parametern är större än värdet för `MaxRange` parametern.
 
 - Windows PowerShell-körningsmiljön genererar ett verifierings fel under följande förhållanden:
 
-    - När värdet för argumentet är mindre än `MinRange` gränsen eller större än `MaxRange` gränsen.
+  - När värdet för argumentet är mindre än `MinRange` gränsen eller större än `MaxRange` gränsen.
 
-    - Om argumentet inte är av samma typ som `MinRange` och `MaxRange` parametrar.
+  - Om argumentet inte är av samma typ som `MinRange` `MaxRange` parametrarna och.
 
 - Attributet ValidateRange definieras av klassen [system. Management. Automation. Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute) .
 

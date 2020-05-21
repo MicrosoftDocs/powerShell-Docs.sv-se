@@ -3,12 +3,12 @@ title: Stilguide för PowerShell-Docs
 description: Den här artikeln innehåller regler för format för att skriva PowerShell-dokumentation.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 90dc93d608440ce7388614b552c0cd873a385cd9
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: b60ad9a4965e75cc5f68309604f1893e5757f351
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81624796"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83690856"
 ---
 # <a name="powershell-docs-style-guide"></a>Stilguide för PowerShell-Docs
 
@@ -78,7 +78,7 @@ Listan ska omges av en enda tom rad.
 
 Avsluta aldrig listobjekt med punkt om de inte innehåller flera meningar. Använd bindestreck (`-`) som punkter för listobjekt. På så sätt undviker du sammanblandning med markeringen för fetstil eller kursiv stil, som använder asterisk [`*`]. Om du vill lägga till ett stycke eller andra element under ett objekt i en punktlista infogar du en radbrytning och justerar indraget efter det första tecknet efter punkten.
 
-Ett exempel:
+Till exempel:
 
 ```markdown
 This is a list that contain sub-elements under a bullet item.
@@ -110,9 +110,9 @@ Det här är en lista som innehåller underordnade element under ett objekt i en
 
 #### <a name="ordered-lists"></a>Sorterade listor
 
-Om du vill lägga till ett stycke eller andra element under ett numrerat objekt, justerar du indraget efter det första tecknet som följer efter objektets nummer. Alla objekt i en numrerad lista ska använda talet `1.` i stället för att öka varje objekt. Med Markdown-rendering ökar värdet automatiskt. Det här gör det enklare att ändra ordning på objekt och standardiserar indrag för underordnat innehåll.
+Om du vill lägga till ett stycke eller andra element under ett numrerat objekt, justerar du indraget efter det första tecknet som följer efter objektets nummer. Alla objekt i en numrerad lista ska använda talet i `1.` stället för att öka varje objekt. Med Markdown-rendering ökar värdet automatiskt. Det här gör det enklare att ändra ordning på objekt och standardiserar indrag för underordnat innehåll.
 
-Ett exempel:
+Till exempel:
 
 ```markdown
 1. For the first element, insert a single space after the 1. Long sentences should be
@@ -152,7 +152,7 @@ Example:
 Avbildningar ska lagras i en `media/<article-name>` mapp i den mapp som innehåller artikeln.
 Bilder ska inte delas mellan artiklar. Skapa en mapp som matchar filnamnet för din artikel under mappen `media`. Kopiera bilderna till artikeln till den nya mappen. Om en bild används av flera artiklar måste varje bildmapp innehålla en kopia av bildfilen. Den här metoden förhindrar att en ändring av en bild i en artikel påverkar en annan artikel.
 
-Följande bild fil typer stöds `*.png`:, `*.gif` `*.jpeg`,,, `*.jpg``*.svg`
+Följande bild fil typer stöds:,, `*.png` , `*.gif` `*.jpeg` `*.jpg` ,`*.svg`
 
 ### <a name="markdown-extensions-supported-by-open-publishing"></a>Markdown-tillägg stöds av Open Publishing
 
@@ -209,7 +209,7 @@ Varnings block
 - Länkar måste ha ett användarvänligt namn, vanligtvis rubriken för det länkade ämnet
 - Alla objekt i avsnittet "relaterade länkar" längst ned ska vara hyperlänkade
 - Använd inte grava accenter, fetstil eller andra markeringar inuti hakparenteserna för en hyperlänk.
-- Bare-URL: er kan användas när du pratar om en angiven URI. URI måste omges av baktick. Ett exempel:
+- Bare-URL: er kan användas när du pratar om en angiven URI. URI måste omges av baktick. Till exempel:
 
   ```markdown
   By default, if you do not specify this parameter, the DMTF standard resource URI
@@ -222,8 +222,8 @@ Det finns två typer av hyperlänkar som stöds av publicerings systemet:
 
 En **URL-länk** kan vara en URL-sökväg som är relativ till roten i docs.Microsoft.com. Eller en absolut URL som innehåller fullständig URL-syntax. Exempelvis: `https:/github.com/MicrosoftDocs/PowerShell-Docs`
 
-- Använd URL-länkar när du länkar till innehåll utanför PowerShell-dokument eller mellan cmdlet-referenser och konceptuella artiklar i PowerShell-dokument. Det enklaste sättet att skapa en relativ länk är att kopiera URL: en från webbläsaren och sedan `https://docs.microsoft.com/en-us` ta bort den från det värde som du klistrar in i markdown.
-- Ta inte med språk i URL: er för Microsoft-egenskaper (t. ex. ta `/en-us` bort från URL).
+- Använd URL-länkar när du länkar till innehåll utanför PowerShell-dokument eller mellan cmdlet-referenser och konceptuella artiklar i PowerShell-dokument. Det enklaste sättet att skapa en relativ länk är att kopiera URL: en från webbläsaren och sedan ta bort `https://docs.microsoft.com/en-us` den från det värde som du klistrar in i markdown.
+- Ta inte med språk i URL: er för Microsoft-egenskaper (t. ex. ta bort `/en-us` från URL).
 - Ta bort alla onödiga frågeparametrar från URL-adressen om du inte behöver länka till en viss version av en artikel. Exempel:
   - `?view=powershell-5.1`– Detta används för att länka till en angiven version av PowerShell
   - `?redirectedfrom=MSDN`– Detta läggs till i URL: en när du omdirigeras från en gammal artikel till en ny plats
@@ -231,11 +231,11 @@ En **URL-länk** kan vara en URL-sökväg som är relativ till roten i docs.Micr
 
 En **fil länk** används för att länka från en referens artikel till en annan, eller från en konceptuell artikel till en annan. Om du behöver länka till en referens artikel för en viss version av PowerShell måste du använda en URL-länk.
 
-- Fil länkar innehåller en relativ fil Sök väg (till exempel `../folder/file.md`:)
-- Alla fil Sök vägar använder snedstreck (`/`)-tecken
+- Fil länkar innehåller en relativ fil Sök väg (till exempel: `../folder/file.md` )
+- Alla fil Sök vägar använder snedstreck ( `/` )-tecken
 
 Djup länkning tillåts för både URL-adresser och fil länkar. Lägg till fäst punkten i slutet av mål Sök vägen.
-Ett exempel:
+Till exempel:
 
 - `[about_Splatting](about_Splatting.md#splatting-with-arrays)`
 - `[custom key bindings](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings)`
@@ -247,12 +247,12 @@ Mer information finns i [använda länkar i dokumentation](https://docs.microsof
 - Använd alltid det fullständiga namnet för cmdletar och parametrar. Undvik att använda alias om du inte specifikt demonstrerar aliaset.
 
 - Egenskap, parameter, objekt, typ namn, klass namn, klass metoder ska vara **fetstil**.
-  - Egenskaps-och parameter värden ska omslutas i baktick (`` ` ``).
+  - Egenskaps-och parameter värden ska omslutas i baktick ( `` ` `` ).
   - När du refererar till typer med hjälp av den hakparentesa stilen använder du baktick. Exempelvis: `[System.Io.FileInfo]`
 
-- Språk nyckelord, cmdlet-namn, funktioner, variabler, interna EXEs, fil Sök vägar och infogade syntaxer ska omslutas av tecken`` ` ``i text Ticket ().
+- Språk nyckelord, cmdlet-namn, funktioner, variabler, interna EXEs, fil Sök vägar och infogade syntaxer ska omslutas av tecken i text Ticket ( `` ` `` ).
 
-  Ett exempel:
+  Till exempel:
 
   ~~~markdown
   The following code uses `Get-ChildItem` to list the contents of `C:\Windows` and assigns
@@ -263,7 +263,7 @@ Mer information finns i [använda länkar i dokumentation](https://docs.microsof
   ```
   ~~~
 
-  - När du refererar till en parameter med namnet ska det skrivas med **fetstil**. När du illustrerar användningen av en parameter med avstavningsprefixet ska parametern omslutas av grava accenter. Ett exempel:
+  - När du refererar till en parameter med namnet ska det skrivas med **fetstil**. När du illustrerar användningen av en parameter med avstavningsprefixet ska parametern omslutas av grava accenter. Till exempel:
 
     ```markdown
     The parameter's name is **Name**, but it is typed as `-Name` when used on the command
@@ -271,7 +271,7 @@ Mer information finns i [använda länkar i dokumentation](https://docs.microsof
     ```
 
   - När du visar exempel på användning av ett externt kommando ska exemplet omslutas av grava accenter.
-    Ta alltid med fil tillägget i det inbyggda kommandot. Ett exempel:
+    Ta alltid med fil tillägget i det inbyggda kommandot. Till exempel:
 
     ```markdown
     To start the spooler service on a remote computer named DC01, you type `sc.exe \\DC01 start spooler`.
@@ -281,7 +281,7 @@ Mer information finns i [använda länkar i dokumentation](https://docs.microsof
 
 - När du skriver en konceptuell artikel (till skillnad från referensinnehåll) ska den första förekomsten av ett cmdlet-namn hyperlänkas till cmdlet-dokumentationen. Använd inte grava accenter, fetstil eller andra markeringar inuti hakparenteserna för en hyperlänk.
 
-  Ett exempel:
+  Till exempel:
 
   ```markdown
   This [Write-Host](/powershell/module/Microsoft.PowerShell.Utility/Write-Host) cmdlet
@@ -294,12 +294,12 @@ Mer information finns i [använda länkar i dokumentation](https://docs.microsof
 
 Markdown stöder två olika kodformat:
 
-- **Kod sträcker sig över (infogade)** – markerade med ett enda`` ` ``baktick ()-tecken. Används inom ett stycke i stället för som ett fristående block.
-- **Kodblock** – ett block med flera rader som omges av tredubbel-bakticket (`` ``` ``)-strängar. Kod block kan också ha en språk etikett efter bakstrecken. Språk etiketten aktiverar syntax för innehållet i kod blocket.
+- **Kod sträcker sig över (infogade)** – markerade med ett enda baktick ( `` ` `` )-tecken. Används inom ett stycke i stället för som ett fristående block.
+- **Kodblock** – ett block med flera rader som omges av tredubbel-bakticket ( `` ``` `` )-strängar. Kod block kan också ha en språk etikett efter bakstrecken. Språk etiketten aktiverar syntax för innehållet i kod blocket.
 
 Alla kodblock ska finnas i en kodavgränsning. Använd aldrig indrag för kodblock. Markdown tillåter det här mönstret, men det kan vara problematiskt och bör undvikas.
 
-Ett kodblock är en eller flera kodrader som omges av en kod gräns för tredubbelt skal`` ``` ``streck ().
+Ett kodblock är en eller flera kodrader som omges av en kod gräns för tredubbelt skal streck ( `` ``` `` ).
 Kodavgränsningsmarkörerna måste finnas på en egen rad före och efter kodexemplet. Markören i början av kodblocket kan ha en valfri språketikett. Microsofts Open Publishing System (OPS) använder språketiketten för att stödja markeringsfunktionen för syntax.
 
 En fullständig lista över språk koder som stöds finns i [avgränsade kodblock](/contribute/code-in-docs#fenced-code-blocks) i den centraliserade deltagar guiden.
@@ -372,7 +372,7 @@ Avancerade exempel eller exempel som är avsedda att kopieras och köras ska anv
 ```
 ~~~
 
-De utdata som visas av PowerShell-kommandon måste anges i ett kodblock för **utdata** för att förhindra markering av syntax. Ett exempel:
+De utdata som visas av PowerShell-kommandon måste anges i ett kodblock för **utdata** för att förhindra markering av syntax. Till exempel:
 
 ~~~markdown
 ```powershell
@@ -414,7 +414,7 @@ Undvik att använda radfortsättningstecken (`` ` ``) i PowerShell-kodexempel. D
 
 ### <a name="avoid-using-powershell-prompts-in-examples"></a>Undvik att använda PowerShell-prompter i exempel
 
-Användning av frågesträngen rekommenderas inte och bör begränsas till scenarier som är avsedda att illustrera användning av kommandoraden. I de flesta av dessa exempel bör LED text strängen vara `PS>`. Den här frågan är oberoende av OS-/regionsspecifika indikatorer.
+Användning av frågesträngen rekommenderas inte och bör begränsas till scenarier som är avsedda att illustrera användning av kommandoraden. I de flesta av dessa exempel bör LED text strängen vara `PS>` . Den här frågan är oberoende av OS-/regionsspecifika indikatorer.
 
 Frågor krävs för exempel som illustrerar kommandon som förändrar frågan, eller när sökvägen som visas är viktig för scenariot som illustreras. I följande exempel visas hur frågan ändras när du använder registerprovidern.
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: eb568878-f63e-4561-98e2-16ee2ac7559d
 caps.latest.revision: 8
-ms.openlocfilehash: e97e9ddb1bf81ba66e5f3cedddd22e3a861ce228
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7a578dd63a53562f992b2970573258b8676e2a52
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354959"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692267"
 ---
 # <a name="how-to-create-a-formatting-file-formatps1xml"></a>Skapa en formateringsfil (.format.ps1xml)
 
@@ -36,11 +36,11 @@ I det här avsnittet beskrivs hur du skapar en format fil (. format. ps1xml).
    </Configuration>
    ```
 
-   - \<konfigurations >\</konfiguration > Taggar definierar rot `Configuration` noden. Alla ytterligare XML-taggar kommer att stå inom den här noden.
+   - `<Configuration></Configuration>`Taggarna definierar rotnoden `Configuration` . Alla ytterligare XML-taggar kommer att stå inom den här noden.
 
-   - <ViewDefinitions></ViewDefinitions> Taggarna definierar `ViewDefinitions`-noden. Alla vyer definieras i den här noden.
+   - `<ViewDefinitions></ViewDefinitions>`Taggarna definierar `ViewDefinitions` noden. Alla vyer definieras i den här noden.
 
-3. Spara filen i installationsmappen för Windows PowerShell, till mappen modul eller till en undermapp i mappen modul. Använd följande namn format när du sparar filen: `MyFile.format.ps1xml`. Filer måste användas med `.format.ps1xml`-tillägget.
+3. Spara filen i installationsmappen för Windows PowerShell, till mappen modul eller till en undermapp i mappen modul. Använd följande namn format när du sparar filen: `MyFile.format.ps1xml` . Filer måste använda `.format.ps1xml` tillägget.
 
    Nu kan du lägga till vyer i format filen. Det finns ingen gräns för hur många vyer som kan definieras i en textfil. Du kan lägga till en enskild vy för varje objekt, flera vyer för samma objekt eller en enskild vy som används av flera objekt.
 

@@ -3,12 +3,12 @@ title: Skicka pull-begäranden
 description: Den här artikeln beskriver hur du skickar pull-begäranden till databasen PowerShell-dok.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 2600049b06da5ad4869b6ff335f00bc40c2d1c22
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: b56911dd4703530f31dd077a8d85ac131c82ee65
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79078509"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83690956"
 ---
 # <a name="how-to-submit-pull-requests"></a>Skicka pull-begäranden
 
@@ -16,7 +16,7 @@ Skicka en pull-begäran (PR) från din förgrening om du vill göra ändringar i
 
 ## <a name="target-the-correct-branch"></a>Rikta in dig på rätt gren
 
-Alla pull-begäranden bör riktas mot `staging` grenen. Ändringar ska aldrig skickas till `live` grenen. Ändringar som görs i `staging` grenen sammanfogas `live`i och skriver över eventuella ändringar som `live`gjorts i.
+Alla pull-begäranden bör riktas mot `staging` grenen. Ändringar ska aldrig skickas till `live` grenen. Ändringar som görs i `staging` grenen sammanfogas i `live` och skriver över eventuella ändringar som gjorts i `live` .
 
 Om du skickar en ändring som bara gäller för en version av PowerShell som är en utgåva, söker du efter en versions gren för den versionen. Din PR ska vara riktad mot lanserings grenen. Versionsgrenar har följande namnmönster: `release-<version>`.
 

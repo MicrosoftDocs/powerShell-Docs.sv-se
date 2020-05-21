@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Felsöka DSC-resurser
-ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 53ee9ea5652ffb577f0c7fba2f240f63816281db
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942162"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691967"
 ---
 # <a name="debugging-dsc-resources"></a>Felsöka DSC-resurser
 
@@ -22,7 +22,6 @@ Denna cmdlet använder en obligatorisk parameter, **BreakAll**.
 Du kan kontrol lera att fel sökning har Aktiver ATS genom att titta på resultatet av ett anrop till [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager).
 
 Följande PowerShell-utdata visar resultatet av att aktivera fel sökning:
-
 
 ```powershell
 PS C:\DebugTest> $LCM = Get-DscLocalConfigurationManager
@@ -40,7 +39,6 @@ ResourceScriptBreakAll
 
 PS C:\DebugTest>
 ```
-
 
 ## <a name="starting-a-configuration-with-debug-enabled"></a>Starta en konfiguration med fel sökning aktiverat
 Om du vill felsöka en DSC-resurs startar du en konfiguration som anropar resursen.
@@ -61,9 +59,10 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
+
 När du har kompilerat konfigurationen startar du den genom att anropa [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration).
 Konfigurationen stoppas när den lokala Configuration Manager (LCM) anropar den första resursen i konfigurationen.
-Om du använder- `-Verbose` och `-Wait` -parametrarna visar utdata de rader du behöver ange för att starta fel sökningen.
+Om du använder `-Verbose` -och `-Wait` -parametrarna visar utdata de rader du behöver ange för att starta fel sökningen.
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -85,6 +84,7 @@ Enter-PSSession -ComputerName TEST-SRV -Credential <credentials>
 Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
+
 I det här läget har LCM anropat resursen och kommer till den första Bryt punkten.
 De sista tre raderna i utdata visar hur du ansluter till processen och startar fel sökning av resurs skriptet.
 

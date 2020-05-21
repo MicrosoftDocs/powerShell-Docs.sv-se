@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Filtrera Sök Resultat
-ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 51f8d243cb9b1f4ff7413eec8839697299e8dd52
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328870"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691459"
 ---
 # <a name="filtering-search-results"></a>Filtrera Sök Resultat
 
@@ -20,12 +20,14 @@ Klicka på paketet om du vill se mer information om ett visst paket.
 ## <a name="filter-by"></a>Filtrera efter
 
 Med list rutan filtrera efter kan användare filtrera resultaten genom att:
+
 - Inkludera för hands version
 - Endast stabilt
 
 Information om "för hands version" och "stabil" finns i [för hands versions tillägg som läggs till i PowerShellGet och PowerShell-galleriet](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) i PowerShell-teamets blogg.
 
 Med kryss rutorna under List rutan kan användarna filtrera resultaten genom att:
+
 - Paket typer
   - Modul
   - Skript
@@ -49,6 +51,7 @@ På samma sätt kan du kontrol lera skriptet i paket typerna om du bara vill se 
 ## <a name="sort-by"></a>Sortera efter
 
 I list rutan Sortera enligt kan användarna sortera resultaten genom att:
+
 - Popularitet – populariteten bestäms av antalet hämtningar
 - A-Z-alfabetiskt efter paket namn
 - Senaste-paket visas i ordning av Publicerings datum

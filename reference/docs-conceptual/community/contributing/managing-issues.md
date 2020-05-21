@@ -3,12 +3,12 @@ title: Så här hanterar vi problem
 description: Den här artikeln förklarar hur PowerShell-dokument-teamet hanterar pull-begäranden.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: cd7aba83d42a6a2eba1ce73910fdd34096342c21
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 018200f1a9384f1ea956c9b27a7605db21f2da9e
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79078537"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692524"
 ---
 # <a name="how-we-manage-issues"></a>Så här hanterar vi problem
 
@@ -60,21 +60,25 @@ Gruppen PowerShell-dokument uppfyller en gång per vecka för att diskutera even
 - Ange en kommentar för kunden som visar att den är produkt kommentarer och ange en länk till lämplig feedback-kanal.
 - Valfritt: kopiera problemet till lämplig plats för produkt feedback, Lägg till en länk till det kopierade objektet och Stäng problemet. Kopiera inte problem till UserVoice.
 
-  | Dokument uppsättning    | URL för feedback för produkt                                         |
-  | --------- | ------------------------------------------------------------ |
-  | utvecklare | https://github.com/PowerShell/PowerShell/issues/new/choose   |
-  | DSC       | https://windowsserver.uservoice.com/forums/301869-powershell |
-  | galleri   | https://github.com/powershell/powershellgallery/issues/new   |
-  | Jea       | https://github.com/powershell/jea/issues/new                 |
-  | förhållande | https://github.com/PowerShell/PowerShell/issues/new/choose   |
-  | WMF       | https://windowsserver.uservoice.com/forums/301869-powershell |
+  | Dokument uppsättning    | URL för feedback för produkt                                           |
+  | --------- | -------------------------------------------------------------- |
+  | utvecklare | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
+  | DSC       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
+  | galleri   | `https://github.com/powershell/powershellgallery/issues/new`   |
+  | Jea       | `https://github.com/powershell/jea/issues/new`                 |
+  | förhållande | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
+  | WMF       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
 
 ### <a name="support-requests"></a>Supportförfrågningar
 
 - Om support frågan är enkel, kan du besvara den politely och stänga problemet.
 - Om frågan är mer komplicerad eller om du svarar på fler frågor kan du omdirigera dem till forum och support kanaler. Föreslagen text för omdirigering till Forum:
 
-    > Detta är inte rätt forum för dessa typer av frågor. Försök att publicera din fråga i ett forum för Community-support. En lista över community-forum finns i:https://docs.microsoft.com/powershell/scripting/community/community-support
+  ```Markdown
+  > This is not the right forum for these kinds of questions. Try posting your question in a
+  > community support forum. For a list of community forums see:
+  > https://docs.microsoft.com/powershell/scripting/community/community-support
+  ```
 
 ### <a name="code-of-conduct-violations"></a>Regler för uppförande av fel
 

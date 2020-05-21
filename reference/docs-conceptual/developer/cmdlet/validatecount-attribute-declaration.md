@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateCount attribute
 ms.assetid: 516af1ef-2c2e-408d-84bc-865f5bccf761
 caps.latest.revision: 11
-ms.openlocfilehash: ffc45f6b80a2b7ed22f27d083d042b1de7f353f6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3cae95fab30a4abe4e544ed5cb7dadc9f4debf02
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359167"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692371"
 ---
 # <a name="validatecount-attribute-declaration"></a>Deklaration av attributet ValidateCount
 
@@ -31,11 +31,11 @@ Attributet ValidateCount anger det lägsta och högsta antalet argument som till
 
 #### <a name="parameters"></a>Parametrar
 
-`MinLength` ([system. Int32][]) krävs. Anger det minsta antalet argument.
+`MinLength`([System. Int32][]) krävs. Anger det minsta antalet argument.
 
-`MaxLength`([system. Int32][]) krävs. Anger det maximala antalet argument.
+`MaxLength`([System. Int32][]) krävs. Anger det maximala antalet argument.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 - Mer information om hur du deklarerar det här attributet finns i [så här verifierar du ett argument antal][].
 
@@ -43,9 +43,9 @@ Attributet ValidateCount anger det lägsta och högsta antalet argument som till
 
 - Windows PowerShell-körningsmiljön genererar ett fel under följande förhållanden:
 
-    - Parametrarna för `MinLength` och `MaxLength` attribut är inte av typen [system. Int32][].
+  - `MinLength`Parametrarna och `MaxLength` är inte av typen [system. Int32][].
 
-    - Värdet för parametern `MaxLength` attribut är mindre än värdet för parametern `MinLength` attribut.
+  - Värdet för `MaxLength` attributet Attribute är mindre än värdet för `MinLength` parametern Attribute.
 
 - Attributet ValidateCount definieras av klassen [system. Management. Automation. ValidateCountAttribute][] .
 
@@ -53,11 +53,11 @@ Attributet ValidateCount anger det lägsta och högsta antalet argument som till
 
 [System. Management. Automation. ValidateCountAttribute][]
 
-[Så här verifierar du ett argument antal][]
+[Verifiera argumentantal][]
 
 [Skriva en Windows PowerShell-cmdlet][]
 
-[Så här verifierar du ett argument antal]: how-to-validate-an-argument-count.md
+[Verifiera argumentantal]: how-to-validate-an-argument-count.md
 [Skriva en Windows PowerShell-cmdlet]: writing-a-windows-powershell-cmdlet.md
 
 [System. Int32]: /dotnet/api/System.Int32

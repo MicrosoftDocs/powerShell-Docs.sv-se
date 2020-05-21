@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Felsöka DSC
-ms.openlocfilehash: 5cbe6496a6e0b9940f4b69e13d1e19e43b3915f0
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 83e59b9f7148b52071d4782522ca7642027d795a
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79406883"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692308"
 ---
 # <a name="troubleshooting-dsc"></a>Felsöka DSC
 
@@ -17,7 +17,7 @@ I det här avsnittet beskrivs olika sätt att felsöka DSC när det uppstår pro
 
 ## <a name="winrm-dependency"></a>WinRM-beroende
 
-Windows PowerShell Desired State Configuration (DSC) är beroende av WinRM. WinRM är inte aktiverat som standard på Windows Server 2008 R2 och Windows 7. Kör `Set-WSManQuickConfig`, i en upphöjd Windows PowerShell-session, för att aktivera WinRM.
+Windows PowerShell Desired State Configuration (DSC) är beroende av WinRM. WinRM är inte aktiverat som standard på Windows Server 2008 R2 och Windows 7. Kör `Set-WSManQuickConfig` , i en upphöjd Windows PowerShell-session, för att aktivera WinRM.
 
 ## <a name="using-get-dscconfigurationstatus"></a>Använda Get-DscConfigurationStatus
 
@@ -36,6 +36,7 @@ Get-DscConfigurationStatus [-CimSession <CimSession[]>]
                            [-AsJob]
                            [<CommonParameters>]
 ```
+
 Följande parameter uppsättning returnerar statusinformation för all föregående konfigurations körningar:
 
 ```
@@ -221,7 +222,7 @@ Count Name                      Group
 
 ### <a name="3-messages-from-the-latest-operation"></a>3: meddelanden från den senaste åtgärden
 
-Den senaste åtgärden lagras i det första indexet för mat ris gruppen `$SeparateDscOperations`.
+Den senaste åtgärden lagras i det första indexet för mat ris gruppen `$SeparateDscOperations` .
 Fråga om gruppens meddelanden för index 0 returnerar alla meddelanden för den senaste åtgärden:
 
 ```powershell
@@ -260,7 +261,7 @@ Error Code : 1
 
 ### <a name="5-all-events-generated-for-a-particular-job-id"></a>5: alla händelser som genereras för ett visst jobb-ID.
 
-`$SeparateDscOperations`är en uppsättning grupper, som var och en har samma namn som det unika jobb-ID: t. Genom att `Where-Object` köra cmdleten kan du extrahera dessa grupper med händelser som har ett visst jobb-ID:
+`$SeparateDscOperations`är en uppsättning grupper, som var och en har samma namn som det unika jobb-ID: t. Genom att köra `Where-Object` cmdleten kan du extrahera dessa grupper med händelser som har ett visst jobb-ID:
 
 ```powershell
 PS C:\> ($SeparateDscOperations | Where-Object {$_.Name -eq $jobX} ).Group
@@ -277,11 +278,11 @@ TimeCreated                     Id LevelDisplayName Message
 
 ## <a name="using-xdscdiagnostics-to-analyze-dsc-logs"></a>Använda xDscDiagnostics för att analysera DSC-loggar
 
-**xDscDiagnostics** är en PowerShell-modul som består av flera funktioner som kan hjälpa till att analysera DSC-fel på din dator. Dessa funktioner kan hjälpa dig att identifiera alla lokala händelser från tidigare DSC-åtgärder, eller DSC-händelser på fjärrdatorer (med giltiga autentiseringsuppgifter). Här används termen DSC-åtgärd för att definiera en enskild unik DSC-körning från början till slutet. Till exempel är `Test-DscConfiguration` en separat DSC-åtgärd. På samma sätt kan alla andra cmdlets i DSC ( `Get-DscConfiguration`till `Start-DscConfiguration`exempel, osv.) identifieras som separata DSC-åtgärder. Funktionerna förklaras på [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics). Hjälp finns tillgänglig genom att `Get-Help <cmdlet name>`köra.
+**xDscDiagnostics** är en PowerShell-modul som består av flera funktioner som kan hjälpa till att analysera DSC-fel på din dator. Dessa funktioner kan hjälpa dig att identifiera alla lokala händelser från tidigare DSC-åtgärder, eller DSC-händelser på fjärrdatorer (med giltiga autentiseringsuppgifter). Här används termen DSC-åtgärd för att definiera en enskild unik DSC-körning från början till slutet. Till exempel `Test-DscConfiguration` är en separat DSC-åtgärd. På samma sätt kan alla andra cmdlets i DSC (till exempel `Get-DscConfiguration` , `Start-DscConfiguration` osv.) identifieras som separata DSC-åtgärder. Funktionerna förklaras på [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics). Hjälp finns tillgänglig genom att köra `Get-Help <cmdlet name>` .
 
 ### <a name="getting-details-of-dsc-operations"></a>Hämta information om DSC-åtgärder
 
-`Get-xDscOperation` Funktionen gör att du kan hitta resultaten av de DSC-åtgärder som körs på en eller flera datorer och returnerar ett objekt som innehåller den samling av händelser som har skapats av varje DSC-åtgärd. I följande utdata kördes till exempel tre kommandon. Den första som skickades och de andra två misslyckades. Resultaten sammanfattas i resultatet av `Get-xDscOperation`.
+`Get-xDscOperation`Funktionen gör att du kan hitta resultaten av de DSC-åtgärder som körs på en eller flera datorer och returnerar ett objekt som innehåller den samling av händelser som har skapats av varje DSC-åtgärd. I följande utdata kördes till exempel tre kommandon. Den första som skickades och de andra två misslyckades. Resultaten sammanfattas i resultatet av `Get-xDscOperation` .
 
 ```powershell
 PS C:\DiagnosticsTest> Get-xDscOperation
@@ -308,7 +309,7 @@ SRV1   5          6/23/2016 4:36:51 PM  Success                                 
 
 ### <a name="getting-details-of-dsc-events"></a>Hämta information om DSC-händelser
 
-`Trace-xDscOperation` Cmdleten returnerar ett objekt som innehåller en samling händelser, händelse typer och meddelandets utdata som genererats från en viss DSC-åtgärd. Vanligt vis när du hittar ett problem i någon av de åtgärder som `Get-xDscOperation`använder, skulle du spåra den åtgärden för att ta reda på vilka av händelserna som orsakade ett haveri.
+`Trace-xDscOperation`Cmdleten returnerar ett objekt som innehåller en samling händelser, händelse typer och meddelandets utdata som genererats från en viss DSC-åtgärd. Vanligt vis när du hittar ett problem i någon av de åtgärder `Get-xDscOperation` som använder, skulle du spåra den åtgärden för att ta reda på vilka av händelserna som orsakade ett haveri.
 
 Använd `SequenceID` parametern för att hämta händelser för en speciell åtgärd för en speciell dator.
 Om du till exempel anger en `SequenceID` av 9 får du `Trace-xDscOperaion` spåra den DSC-åtgärd som har varit nionde från den senaste åtgärden:
@@ -327,7 +328,7 @@ SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Job runs under the following LCM setti
 SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Operation Consistency Check or Pull completed successfully.
 ```
 
-Skicka det **GUID** som tilldelats till en speciell DSC-åtgärd (som returneras `Get-xDscOperation` av cmdleten) för att hämta händelse information för denna DSC-åtgärd:
+Skicka det **GUID** som tilldelats till en speciell DSC-åtgärd (som returneras av `Get-xDscOperation` cmdleten) för att hämta händelse information för denna DSC-åtgärd:
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -JobID 9e0bfb6b-3a3a-11e6-9165-00155d390509
@@ -412,7 +413,7 @@ TimeCreated                     Id LevelDisplayName Message
 6/23/2016 8:06:54 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
 ```
 
-Vi rekommenderar att du först använder `Get-xDscOperation` för att få en lista över de senaste DSC-konfigurationerna som körs på datorerna. På så sätt kan du undersöka en enskild åtgärd (med hjälp av dess SequenceID eller JobID `Trace-xDscOperation` ) med för att identifiera vad den gjorde i bakgrunden.
+Vi rekommenderar att du först använder `Get-xDscOperation` för att få en lista över de senaste DSC-konfigurationerna som körs på datorerna. På så sätt kan du undersöka en enskild åtgärd (med hjälp av dess SequenceID eller JobID) med `Trace-xDscOperation` för att identifiera vad den gjorde i bakgrunden.
 
 ### <a name="getting-events-for-a-remote-computer"></a>Hämta händelser för en fjärrdator
 
@@ -422,7 +423,7 @@ Använd `ComputerName` parametern för `Trace-xDscOperation` cmdleten för att h
 New-NetFirewallRule -Name "Service RemoteAdmin" -DisplayName "Remote" -Action Allow
 ```
 
-Nu kan du ange att datorn i ditt anrop till `Trace-xDscOperation`:
+Nu kan du ange att datorn i ditt anrop till `Trace-xDscOperation` :
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -ComputerName SRV2 -Credential Get-Credential -SequenceID 5
@@ -466,9 +467,9 @@ SRV2   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32
 DSC-motorn cachelagrar resurser som implementerats som en PowerShell-modul i effektivitets syfte.
 Detta kan dock orsaka problem när du skapar en resurs och testar den samtidigt eftersom DSC kommer att läsa in den cachelagrade versionen tills processen startas om. Det enda sättet att göra DSC-inläsning av den nyare versionen är att uttryckligen avsluta processen som är värd för DSC-motorn.
 
-När du kör `Start-DscConfiguration`, när du har lagt till och ändrat en anpassad resurs, kanske ändringen inte körs om inte, eller förrän, datorn startas om. Detta beror på att DSC körs i WMI-providerns värd process (WmiPrvSE) och att det vanligt vis finns många instanser av WmiPrvSE som körs samtidigt. När du startar om startas värd processen om och cachen rensas.
+När du kör, när du har `Start-DscConfiguration` lagt till och ändrat en anpassad resurs, kanske ändringen inte körs om inte, eller förrän, datorn startas om. Detta beror på att DSC körs i WMI-providerns värd process (WmiPrvSE) och att det vanligt vis finns många instanser av WmiPrvSE som körs samtidigt. När du startar om startas värd processen om och cachen rensas.
 
-För att kunna återvinna konfigurationen och rensa cacheminnet utan att starta om, måste du stoppa och sedan starta om värd processen. Detta kan göras per instans, där du kan identifiera processen, stoppa den och starta om den. Du kan också använda `DebugMode`, enligt nedan, för att läsa in PowerShell DSC-resursen igen.
+För att kunna återvinna konfigurationen och rensa cacheminnet utan att starta om, måste du stoppa och sedan starta om värd processen. Detta kan göras per instans, där du kan identifiera processen, stoppa den och starta om den. Du kan också använda `DebugMode` , enligt nedan, för att läsa in POWERSHELL DSC-resursen igen.
 
 För att identifiera vilken process som är värd för DSC-motorn och stoppa den per instans, kan du Visa process-ID: t för den WmiPrvSE som är värd för DSC-motorn. Om du sedan vill uppdatera providern stoppar du WmiPrvSE-processen med hjälp av kommandona nedan och kör sedan **Start-DscConfiguration** igen.
 
@@ -488,7 +489,7 @@ Get-Process -Id $dscProcessID | Stop-Process
 
 ## <a name="using-debugmode"></a>Använda DebugMode
 
-Du kan konfigurera den lokala DSC-Configuration Manager (LCM) att `DebugMode` använda för att alltid rensa cacheminnet när värd processen startas om. När värdet är **True**, gör det att motorn alltid laddar om PowerShell DSC-resursen. När du har skrivit din resurs kan du ange den till **false** så att motorn återgår till att cachelagra modulerna.
+Du kan konfigurera den lokala DSC-Configuration Manager (LCM) att använda `DebugMode` för att alltid rensa cacheminnet när värd processen startas om. När värdet är **True**, gör det att motorn alltid laddar om PowerShell DSC-resursen. När du har skrivit din resurs kan du ange den till **false** så att motorn återgår till att cachelagra modulerna.
 
 Följande är en demonstration som visar hur `DebugMode` kan uppdatera cacheminnet automatiskt. Först ska vi titta på standard konfigurationen:
 
@@ -547,7 +548,7 @@ function Test-TargetResource
 }
 ```
 
-Nu kan du skapa en konfiguration med hjälp av resursen `TestProviderDebugMode`ovan som heter:
+Nu kan du skapa en konfiguration med hjälp av resursen ovan som heter `TestProviderDebugMode` :
 
 ```powershell
 Configuration ConfigTestDebugMode
@@ -603,7 +604,7 @@ function Test-TargetResource
 
 Det här skriptet genererar ett slumpmässigt nummer och uppdaterar leverantörs koden på motsvarande sätt. Om `DebugMode` värdet är false ändras inte innehållet i filen "**$env: SystemDrive\OutputFromTestProviderDebugMode.txt**".
 
-Ange `DebugMode` nu till **"ForceModuleImport"** i konfigurations skriptet:
+Ange nu `DebugMode` till **"ForceModuleImport"** i konfigurations skriptet:
 
 ```powershell
 LocalConfigurationManager

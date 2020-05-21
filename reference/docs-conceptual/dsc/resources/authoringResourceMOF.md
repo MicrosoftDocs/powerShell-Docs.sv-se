@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skriva en anpassad DSC-resurs med MOF
-ms.openlocfilehash: 24e9d15bcbe1eddd297daeb04e0713c443e52c38
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7dd107431e756e5cbfc2d6babec41331b89743cc
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941210"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692236"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Skriva en anpassad DSC-resurs med MOF
 
@@ -57,17 +57,17 @@ class Demo_IISWebsite : OMI_BaseResource
 Observera följande om föregående kod:
 
 * `FriendlyName`definierar det namn som du kan använda för att referera till den här anpassade resursen i DSC-konfigurations skript. I det här exemplet `Website` motsvarar det egna namnet `Archive` för den inbyggda Arkiv resursen.
-* Den klass som du definierar för din anpassade resurs måste vara härledd från `OMI_BaseResource`.
-* Typen Qualifier, `[Key]`i en egenskap anger att den här egenskapen unikt identifierar resurs instansen. Minst en `[Key]` egenskap krävs.
-* `[Required]` Kvalificeraren anger att egenskapen är obligatorisk (ett värde måste anges i alla konfigurations skript som använder den här resursen).
-* `[write]` Kvalificeraren anger att den här egenskapen är valfri när du använder den anpassade resursen i ett konfigurations skript. `[read]` Kvalificeraren anger att en egenskap inte kan ställas in av en konfiguration och endast är avsedd för rapportering.
-* `Values`begränsar de värden som kan tilldelas till egenskapen till listan över värden som definierats i `ValueMap`. Mer information finns i [ValueMap och värde kvalificerare](/windows/desktop/WmiSdk/value-map).
-* Att inkludera en egenskap `Ensure` som kallas `Present` med `Absent` värden och i din resurs rekommenderas som ett sätt att underhålla ett konsekvent format med inbyggda DSC-resurser.
-* Namnge schema filen för din anpassade resurs enligt följande: `classname.schema.mof`, där `classname` är identifieraren som följer `class` nyckelordet i schema definitionen.
+* Den klass som du definierar för din anpassade resurs måste vara härledd från `OMI_BaseResource` .
+* Typen Qualifier, `[Key]` i en egenskap anger att den här egenskapen unikt identifierar resurs instansen. Minst en `[Key]` egenskap krävs.
+* `[Required]`Kvalificeraren anger att egenskapen är obligatorisk (ett värde måste anges i alla konfigurations skript som använder den här resursen).
+* `[write]`Kvalificeraren anger att den här egenskapen är valfri när du använder den anpassade resursen i ett konfigurations skript. `[read]`Kvalificeraren anger att en egenskap inte kan ställas in av en konfiguration och endast är avsedd för rapportering.
+* `Values`begränsar de värden som kan tilldelas till egenskapen till listan över värden som definierats i `ValueMap` . Mer information finns i [ValueMap och värde kvalificerare](/windows/desktop/WmiSdk/value-map).
+* Att inkludera en egenskap som kallas `Ensure` med värden `Present` och `Absent` i din resurs rekommenderas som ett sätt att underhålla ett konsekvent format med inbyggda DSC-resurser.
+* Namnge schema filen för din anpassade resurs enligt följande: `classname.schema.mof` , där `classname` är identifieraren som följer `class` nyckelordet i schema definitionen.
 
 ### <a name="writing-the-resource-script"></a>Skriver resurs skriptet
 
-Resurs skriptet implementerar logiken för resursen. I den här modulen måste du inkludera tre funktioner som kallas **Get-TargetResource**, **set-TargetResource**och **test-TargetResource**. Alla tre funktioner måste ha en parameter uppsättning som är identisk med uppsättningen med egenskaper som definierats i MOF-schemat som du skapade för din resurs. I det här dokumentet kallas den här uppsättningen egenskaper för "resurs egenskaper". Lagra dessa tre funktioner i en fil med <ResourceName>namnet. psm1. I följande exempel lagras funktionerna i en fil med namnet Demo_IISWebsite. psm1.
+Resurs skriptet implementerar logiken för resursen. I den här modulen måste du inkludera tre funktioner som kallas **Get-TargetResource**, **set-TargetResource**och **test-TargetResource**. Alla tre funktioner måste ha en parameter uppsättning som är identisk med uppsättningen med egenskaper som definierats i MOF-schemat som du skapade för din resurs. I det här dokumentet kallas den här uppsättningen egenskaper för "resurs egenskaper". Lagra dessa tre funktioner i en fil med namnet `<ResourceName>.psm1` . I följande exempel lagras funktionerna i en fil med namnet Demo_IISWebsite. psm1.
 
 > [!NOTE]
 > När du kör samma konfigurations skript på din resurs mer än en gång, bör du få inga fel och resursen ska finnas kvar i samma tillstånd som att köra skriptet en gång. För att åstadkomma detta måste du se till att funktionerna **Get-TargetResource** och **test-TargetResource** lämnar resursen oförändrade och att anropet till funktionen **set-TargetResource** mer än en gång i en sekvens med samma parameter värden alltid motsvarar att anropa den en gång.
@@ -221,7 +221,7 @@ $result
 
 ### <a name="creating-the-module-manifest"></a>Skapar modulens manifest
 
-Använd slutligen cmdleten **New-ModuleManifest** för att definiera en <ResourceName>. psd1-fil för din anpassade resurspool. När du anropar denna cmdlet refererar du till script module-filen (. psm1) som beskrivs i föregående avsnitt. Inkludera **Get-TargetResource**, **set-TargetResource**och **test-TargetResource** i listan över funktioner som ska exporteras. Följande är ett exempel på en manifest fil.
+Använd slutligen cmdleten **New-ModuleManifest** för att definiera en `<ResourceName>.psd1` fil för modulen för anpassad resurs. När du anropar denna cmdlet refererar du till script module-filen (. psm1) som beskrivs i föregående avsnitt. Inkludera **Get-TargetResource**, **set-TargetResource**och **test-TargetResource** i listan över funktioner som ska exporteras. Följande är ett exempel på en manifest fil.
 
 ```powershell
 # Module manifest for module 'Demo.IIS.Website'
@@ -282,7 +282,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 Du kan använda egenskapen **PsDscRunAsCredential** i resurs blocket [DSC-konfigurationer](../configurations/configurations.md) för att ange att resursen ska köras under en angiven uppsättning autentiseringsuppgifter.
 Mer information finns i [köra DSC med](../configurations/runAsUser.md)användarautentiseringsuppgifter.
 
-Om du vill komma åt användar kontexten inifrån en anpassad resurs kan du använda den `$PsDscContext`automatiska variabeln.
+Om du vill komma åt användar kontexten inifrån en anpassad resurs kan du använda den automatiska variabeln `$PsDscContext` .
 
 Till exempel kan följande kod skriva användar kontexten som resursen körs till i utförlig utdataström:
 
@@ -294,7 +294,7 @@ if (PsDscContext.RunAsUser) {
 
 ## <a name="rebooting-the-node"></a>Starta om noden
 
-Om de åtgärder som vidtas `Set-TargetResource` i funktionen kräver omstart kan du använda en global flagga för att instruera LCM att starta om noden. Den här omstarten sker `Set-TargetResource` direkt efter att funktionen har slutförts.
+Om de åtgärder som vidtas i `Set-TargetResource` funktionen kräver omstart kan du använda en global flagga för att INSTRUERA LCM att starta om noden. Den här omstarten sker direkt efter att `Set-TargetResource` funktionen har slutförts.
 
 I din `Set-TargetResource` funktion lägger du till följande kodrad.
 
@@ -303,4 +303,4 @@ I din `Set-TargetResource` funktion lägger du till följande kodrad.
 $global:DSCMachineStatus = 1
 ```
 
-För att LCM ska kunna starta om noden måste flaggan **RebootNodeIfNeeded** anges till `$true`. Inställningen **ActionAfterReboot** bör också ställas in på **ContinueConfiguration**, vilket är standardvärdet. Mer information om hur du konfigurerar LCM finns i [Konfigurera den lokala Configuration Manager](../managing-nodes/metaConfig.md)eller [konfigurera den lokala Configuration Manager (v4)](../managing-nodes/metaConfig4.md).
+För att LCM ska kunna starta om noden måste flaggan **RebootNodeIfNeeded** anges till `$true` . Inställningen **ActionAfterReboot** bör också ställas in på **ContinueConfiguration**, vilket är standardvärdet. Mer information om hur du konfigurerar LCM finns i [Konfigurera den lokala Configuration Manager](../managing-nodes/metaConfig.md)eller [konfigurera den lokala Configuration Manager (v4)](../managing-nodes/metaConfig4.md).

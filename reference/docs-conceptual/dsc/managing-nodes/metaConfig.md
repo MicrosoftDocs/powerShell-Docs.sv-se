@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Konfigurera den lokala Configuration Manager
-ms.openlocfilehash: 5847a29efd165724ffe9f1f0e89cfaf358ade31c
-ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
+ms.openlocfilehash: c736f1c6a7cd6740f9d777dd68559f29909bc5b6
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83271856"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691986"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Konfigurera den lokala Configuration Manager
 
@@ -125,6 +125,7 @@ En **ConfigurationRepositoryWeb** definierar följande egenskaper.
 |ProxyCredential*|PSCredential|Autentiseringsuppgifter som ska användas för HTTP-proxyn.|
 
 > [!NOTE]
+>
 > * Stöds i Windows-versioner 1809 och senare.
 
 Ett exempel skript för att förenkla konfigureringen av ConfigurationRepositoryWeb-värdet för lokala noder finns i [skapa DSC-metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
@@ -152,6 +153,7 @@ En **ResourceRepositoryWeb** definierar följande egenskaper.
 |ProxyCredential*|PSCredential|Autentiseringsuppgifter som ska användas för HTTP-proxyn.|
 
 > [!NOTE]
+>
 > * Stöds i Windows-versioner 1809 och senare.
 
 Ett exempel skript för att förenkla konfigureringen av ResourceRepositoryWeb-värdet för lokala noder finns i [skapa DSC-metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
@@ -180,6 +182,7 @@ Rapport Server rollen är inte kompatibel med SMB-baserad pull-tjänst.
 |ProxyCredential*|PSCredential|Autentiseringsuppgifter som ska användas för HTTP-proxyn.|
 
 > [!NOTE]
+>
 > * Stöds i Windows-versioner 1809 och senare.
 
 Ett exempel skript för att förenkla konfigureringen av ReportServerWeb-värdet för lokala noder finns i [skapa DSC-metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)

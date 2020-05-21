@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: Galleri, PowerShell, cmdlet, psget
 title: Starta NuGet
-ms.openlocfilehash: 70403006c7a48ac70a6766de3aa52d80cebbd86a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 139b2c5a9e742eca8f5ac36c9acd721216584335
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78935167"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83690860"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Starta NuGet-providern och NuGet. exe
 
@@ -146,7 +146,7 @@ Det vanligaste användnings fallet för det här scenariot är när ett privat g
 
 Ett alternativ är att starta en dator som är ansluten till Internet och kopiera filerna till de frånkopplade datorerna med en betrodd process. När den anslutna Internet-datorn har startats finns NuGet. exe-binärfilen i en av två mappar:
 
- - Om `Publish-Module` cmdletarna `Publish-Script` eller kördes med förhöjd behörighet (som administratör):
+- Om `Publish-Module` `Publish-Script` cmdletarna eller kördes med förhöjd behörighet (som administratör):
 
    ```powershell
    $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
@@ -158,11 +158,11 @@ Ett alternativ är att starta en dator som är ansluten till Internet och kopier
   $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
   ```
 
-Ett andra alternativ är att ladda ned NuGet. exe från NuGet.Org-webbplatsen [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) : när du väljer en liten mängd-version för produktions datorer kontrollerar du att den är senare än 2.8.5.208 och identifierar den version som har etiketten "rekommenderas". Kom ihåg att avblockera filen om den hämtades med hjälp av en webbläsare. Detta kan utföras med hjälp av `Unblock-File` cmdleten.
+Ett andra alternativ är att ladda ned NuGet. exe från NuGet.Org-webbplatsen: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) när du väljer en liten mängd-version för produktions datorer kontrollerar du att den är senare än 2.8.5.208 och identifierar den version som har etiketten "rekommenderas". Kom ihåg att avblockera filen om den hämtades med hjälp av en webbläsare. Detta kan utföras med hjälp av `Unblock-File` cmdleten.
 
-I båda fallen kan filen NuGet. exe kopieras till vilken plats som helst i `$env:path`, men standard platserna är:
+I båda fallen kan filen NuGet. exe kopieras till vilken plats som helst i `$env:path` , men standard platserna är:
 
-- Så här gör du den körbara filen tillgänglig så att `Publish-Module` alla `Publish-Script` användare kan använda och cmdlet: ar:
+- Så här gör du den körbara filen tillgänglig så att alla användare kan använda `Publish-Module` och `Publish-Script` cmdlet: ar:
 
   ```powershell
   $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet

@@ -2,16 +2,16 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Använda Import-DSCResource
-ms.openlocfilehash: a041169ad557becf7ca87641d9ce5222ee8f6beb
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1b066e231d158fb5b6333e42c91d24690e9b0223
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79406911"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692456"
 ---
 # <a name="using-import-dscresource"></a>Använda Import-DSCResource
 
-`Import-DScResource`är ett dynamiskt nyckelord som bara kan användas i ett konfigurations skript block. `Import-DSCResource` Nyckelordet för att importera de resurser som behövs i konfigurationen. Resurser under `$pshome` importeras automatiskt, men det anses fortfarande vara bästa praxis att importera alla resurser som används i [konfigurationen](Configurations.md).
+`Import-DScResource`är ett dynamiskt nyckelord som bara kan användas i ett konfigurations skript block. `Import-DSCResource`Nyckelordet för att importera de resurser som behövs i konfigurationen. Resurser under `$pshome` importeras automatiskt, men det anses fortfarande vara bästa praxis att importera alla resurser som används i [konfigurationen](Configurations.md).
 
 Syntaxen för `Import-DSCResource` visas nedan.  När du anger moduler efter namn är det ett krav för att lista var och en på en ny rad.
 
@@ -78,7 +78,7 @@ Den här användningen har följande fördelar:
 
 ## <a name="intellisense-with-import-dscresource"></a>IntelliSense med import-Dscresource Keyword Supports
 
-När du redigerar DSC-konfigurationen i ISE tillhandahåller PowerShell IntelliSence för resurser och resurs egenskaper. Resurs definitioner under `$pshome` modulens sökväg läses in automatiskt. När du importerar resurser med hjälp `Import-DSCResource` av nyckelordet läggs de angivna resurs definitionerna till och IntelliSense expanderas för att inkludera den importerade resursens schema.
+När du redigerar DSC-konfigurationen i ISE tillhandahåller PowerShell IntelliSence för resurser och resurs egenskaper. Resurs definitioner under `$pshome` modulens sökväg läses in automatiskt. När du importerar resurser med hjälp av `Import-DSCResource` nyckelordet läggs de angivna resurs definitionerna till och IntelliSense expanderas för att inkludera den importerade resursens schema.
 
 ![Resurs-IntelliSense](media/import-dscresource/resource-intellisense.png)
 
@@ -123,10 +123,12 @@ Med IntelliSense och schema validering kan du fånga fler fel under parsning och
 
 > [!NOTE]
 > Varje DSC-resurs kan ha ett namn och ett **FriendlyName** som definieras av resursens schema. Nedan visas de två första raderna i "MSFT_ServiceResource. Shema. MOF".
+>
 > ```syntax
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
+>
 > När du använder den här resursen i en konfiguration kan du ange **MSFT_ServiceResource** eller **tjänst**.
 
 ## <a name="powershell-v4-and-v5-differences"></a>Skillnader mellan PowerShell v4 och v5
@@ -145,13 +147,13 @@ Kopiera innehållet i den önskade modulens version till den översta nivån i m
 
 ![Flera resurs versioner har åtgärd ATS](media/import-dscresource/multiple-resource-versions-fixed.png)
 
-### <a name="resource-location"></a>Resursplats
+### <a name="resource-location"></a>Resurs plats
 
-När du redigerar och kompilerar konfigurationer kan dina resurser lagras i valfri katalog som anges av din [PSModulePath](/powershell/scripting/developer/module/modifying-the-psmodulepath-installation-path). I PowerShell 4,0 kräver LCM att alla DSC-resurspooler lagras under "program Files\WindowsPowerShell\Modules" eller `$pshome\Modules`. Från och med PowerShell 5,0 togs detta krav bort och resurspooler kan lagras i valfri katalog som anges av `PSModulePath`.
+När du redigerar och kompilerar konfigurationer kan dina resurser lagras i valfri katalog som anges av din [PSModulePath](/powershell/scripting/developer/module/modifying-the-psmodulepath-installation-path). I PowerShell 4,0 kräver LCM att alla DSC-resurspooler lagras under "program Files\WindowsPowerShell\Modules" eller `$pshome\Modules` . Från och med PowerShell 5,0 togs detta krav bort och resurspooler kan lagras i valfri katalog som anges av `PSModulePath` .
 
 ### <a name="moduleversion-added"></a>ModuleVersion tillagt
 
-Med `-ModuleVersion` början i PowerShell 5,0 kan du ange vilken version av en modul som ska användas i konfigurationen.
+Med början i PowerShell 5,0 `-ModuleVersion` kan du ange vilken version av en modul som ska användas i konfigurationen.
 
 ## <a name="see-also"></a>Se även
 

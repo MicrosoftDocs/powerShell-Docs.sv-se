@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell 7,0
 description: Nya funktioner och ändringar som lanseras i PowerShell 7,0
 ms.date: 03/04/2020
-ms.openlocfilehash: 84631d9fa169c8d1b4cd4dd23eb3d7c1bca120bb
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 97bdac7dc7636f27c184a6c46eddf15609a8c25f
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80263143"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692540"
 ---
 # <a name="whats-new-in-powershell-70"></a>Nyheter i PowerShell 7,0
 
@@ -18,8 +18,8 @@ I den här versionen har vi introducerat ett antal nya funktioner, bland annat:
 - Pipeline-parallellisering med`ForEach-Object -Parallel`
 - Nya operatorer:
   - Ternär operator:`a ? b : c`
-  - Operatorer för pipeline- `||` kedjan: och`&&`
-  - Null-villkorliga `??` operatorer: och`??=`
+  - Operatorer för pipeline-kedjan: `||` och`&&`
+  - Null-villkorliga operatorer: `??` och`??=`
 - En förenklad och dynamisk felvy och `Get-Error` cmdlet för enklare undersökning av fel
 - Ett kompatibilitetsläge som gör det möjligt för användare att importera moduler i en implicit Windows PowerShell-session
 - Automatiska nya versions meddelanden
@@ -56,7 +56,7 @@ Mer uppdaterad information om operativ system och support livs cykel som stöds 
 PowerShell 7 installeras i en ny katalog och körs sida vid sida med Windows PowerShell 5,1. För PowerShell Core 6. x är PowerShell 7 en uppgradering på plats som tar bort PowerShell Core 6. x.
 
 - PowerShell 7 installeras för att`%programfiles%\PowerShell\7`
-- `%programfiles%\PowerShell\7` Mappen läggs till`$env:PATH`
+- `%programfiles%\PowerShell\7`Mappen läggs till`$env:PATH`
 
 PowerShell 7 installations paket uppgraderar tidigare versioner av PowerShell Core 6. x:
 
@@ -65,19 +65,19 @@ PowerShell 7 installations paket uppgraderar tidigare versioner av PowerShell Co
 - macOS: `/usr/local/microsoft/powershell/6` ersätts av`/usr/local/microsoft/powershell/7`
 
 > [!NOTE]
-> I Windows PowerShell heter `powershell.exe`den körbara filen för att starta PowerShell. I version 6 och senare ändras den körbara filen så att den stöder sida-vid-sida-körning. Den nya körbara filen för att starta `pwsh.exe`PowerShell 7 är. För hands versioner kommer att finnas kvar på `pwsh-preview` plats som `pwsh` i stället för i den 7-för hands versions katalogen.
+> I Windows PowerShell heter den körbara filen för att starta PowerShell `powershell.exe` . I version 6 och senare ändras den körbara filen så att den stöder sida-vid-sida-körning. Den nya körbara filen för att starta PowerShell 7 är `pwsh.exe` . För hands versioner kommer att finnas kvar på plats som i `pwsh-preview` stället för i `pwsh` den 7-för hands versions katalogen.
 
 ## <a name="improved-backwards-compatibility-with-windows-powershell"></a>Förbättrad bakåtkompatibilitet med Windows PowerShell
 
-PowerShell 7,0 markerar en flytta en till .NET Core 3,1, vilket möjliggör betydligt mer bakåtkompatibilitet med befintliga Windows PowerShell-moduler. Detta inkluderar många moduler i Windows som kräver GUI-funktioner `Out-GridView` som `Show-Command`och, samt många roll hanterings moduler som levereras som en del av Windows.
+PowerShell 7,0 markerar en flytta en till .NET Core 3,1, vilket möjliggör betydligt mer bakåtkompatibilitet med befintliga Windows PowerShell-moduler. Detta inkluderar många moduler i Windows som kräver GUI-funktioner som `Out-GridView` och `Show-Command` , samt många roll hanterings moduler som levereras som en del av Windows.
 
-För Windows läggs en ny växel parameter **UseWindowsPowerShell** till i `Import-Module`. Den här växeln skapar en proxy-modul i PowerShell 7 som använder en lokal Windows PowerShell-process för att implicit köra alla cmdletar som finns i modulen. Mer information om [import-module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-7).
+För Windows läggs en ny växel parameter **UseWindowsPowerShell** till i `Import-Module` . Den här växeln skapar en proxy-modul i PowerShell 7 som använder en lokal Windows PowerShell-process för att implicit köra alla cmdletar som finns i modulen. Mer information om [import-module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-7).
 
 Mer information om vilka Microsoft-moduler som fungerar med PowerShell 7,0 finns i [tabellen](https://aka.ms/PSModuleCompat)för kompatibilitetsmodulen.
 
 ## <a name="parallel-execution-added-to-foreach-object"></a>Parallell körning har lagts till i Körningsbegäran – objekt
 
-`ForEach-Object` Cmdleten, som itererar objekt i en samling, har nu inbyggd parallellitet med den nya **parallella** parametern.
+`ForEach-Object`Cmdleten, som itererar objekt i en samling, har nu inbyggd parallellitet med den nya **parallella** parametern.
 
 Som standard använder parallella skript block den aktuella arbets katalogen för den anropare som startade parallell aktiviteterna.
 
@@ -114,10 +114,10 @@ PowerShell: s ternära operator modelleras noggrant från syntaxen C# ternär op
 
 Villkors uttrycket utvärderas alltid och resultatet konverteras till ett **booleskt värde** för att avgöra vilken gren som utvärderas härnäst:
 
-- `<if-true>` Uttrycket körs om `<condition>` uttrycket är sant
-- `<if-false>` Uttrycket körs om `<condition>` uttrycket är falskt
+- `<if-true>`Uttrycket körs om `<condition>` uttrycket är sant
+- `<if-false>`Uttrycket körs om `<condition>` uttrycket är falskt
 
-Ett exempel:
+Till exempel:
 
 ```powershell
 $message = (Test-Path $path) ? "Path exists" : "Path not found"
@@ -129,12 +129,12 @@ För mer information [om](/powershell/module/microsoft.powershell.core/about/abo
 
 ## <a name="pipeline-chain-operators"></a>Operatorer för pipeline-kedjan
 
-PowerShell 7 implementerar `&&` operatorerna `||` och för att villkorligt kedja pipelines. Dessa operatörer är kända i PowerShell som "pipelines kedje operatorer", och liknar och, eller listor i gränssnitt som **bash** och **zsh**, samt villkorsstyrda bearbetnings symboler i Windows Command Shell (**cmd. exe**).
+PowerShell 7 implementerar `&&` `||` operatorerna och för att villkorligt kedja pipelines. Dessa operatörer är kända i PowerShell som "pipelines kedje operatorer", och liknar och, eller listor i gränssnitt som **bash** och **zsh**, samt villkorsstyrda bearbetnings symboler i Windows Command Shell (**cmd. exe**).
 
-`&&` Operatören kör den högra pipelinen om den vänstra pipelinen lyckades. I `||` motsatt kör operatören den högra pipelinen om den vänstra pipelinen misslyckades.
+`&&`Operatören kör den högra pipelinen om den vänstra pipelinen lyckades. I motsatt `||` Kör operatören den högra pipelinen om den vänstra pipelinen misslyckades.
 
 > [!NOTE]
-> Dessa operatörer använder `$?` variablerna `$LASTEXITCODE` och för att avgöra om en pipeline misslyckades. På så sätt kan du använda dem med inbyggda kommandon och inte bara med cmdlets eller functions.
+> Dessa operatörer använder `$?` `$LASTEXITCODE` variablerna och för att avgöra om en pipeline misslyckades. På så sätt kan du använda dem med inbyggda kommandon och inte bara med cmdlets eller functions.
 
 Här är det första kommandot som slutförs och det andra kommandot körs:
 
@@ -182,12 +182,12 @@ Mer information [om operatorer för pipeline-kedjan](/powershell/module/microsof
 
 ## <a name="null-coalescing-assignment-and-conditional-operators"></a>Null-sammanslagning, tilldelning och villkorliga operatorer
 
-PowerShell 7 inkluderar null sammanslagnings `??`Operator, null villkorlig `??=`tilldelning och null-ansvariga `?.` för villkorlig medlem `?[]`och.
+PowerShell 7 inkluderar null sammanslagnings operator `??` , null villkorlig tilldelning `??=` och null-ansvariga för villkorlig medlem `?.` och `?[]` .
 
 ### <a name="null-coalescing-operator-"></a>Null-sammanslagnings operator??
 
-Operatorn `??` null-sammanslagning returnerar värdet för den vänstra operanden om den inte är null.
-Annars utvärderar den högra operanden och returnerar resultatet. `??` Operatorn utvärderar inte sin högra operand om den vänstra operanden utvärderar till icke-null.
+Operatorn null-sammanslagning `??` returnerar värdet för den vänstra operanden om den inte är null.
+Annars utvärderar den högra operanden och returnerar resultatet. `??`Operatorn utvärderar inte sin högra operand om den vänstra operanden utvärderar till icke-null.
 
 ```powershell
 $x = $null
@@ -205,7 +205,7 @@ $todaysDate ?? (Get-Date).ToShortDateString()
 
 ### <a name="null-conditional-assignment-operator-"></a>Null villkorlig tilldelnings operator? =
 
-Operatorn `??=` null för villkorlig tilldelning tilldelar värdet för dess högra operand till dess vänstra operand endast om den vänstra operanden utvärderar till null. `??=` Operatorn utvärderar inte sin högra operand om den vänstra operanden utvärderar till icke-null.
+Operatorn null för villkorlig tilldelning `??=` tilldelar värdet för dess högra operand till dess vänstra operand endast om den vänstra operanden utvärderar till null. `??=`Operatorn utvärderar inte sin högra operand om den vänstra operanden utvärderar till icke-null.
 
 ```powershell
 $x = $null
@@ -227,10 +227,10 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 > [!NOTE]
 > Det här är en experimentell funktion som heter **PSNullConditionalOperators**. Läs mer [om experimentella funktioner](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
 
-En villkorlig operator för null tillåter medlems åtkomst `?.`, eller element åtkomst, `?[]`till operanden endast om denna operand utvärderar till icke-null. annars returnerar den null.
+En villkorlig operator för null tillåter medlems åtkomst, `?.` eller element åtkomst, `?[]` till operanden endast om denna operand utvärderas till icke-null. annars returnerar den null.
 
 > [!NOTE]
-> Eftersom PowerShell kan `?` ingå i variabel namnet, krävs formell specifikation av variabel namnet för att använda dessa operatorer. Det krävs för att `{}` använda runt variabel namn som `${a}` eller när `?` är en del av variabel namnet. `${a?}`
+> Eftersom PowerShell kan `?` ingå i variabel namnet, krävs formell specifikation av variabel namnet för att använda dessa operatorer. Det krävs för att använda `{}` runt variabel namn som `${a}` eller när `?` är en del av variabel namnet `${a?}` .
 
 I följande exempel returneras värdet för medlems egenskaps **status** :
 
@@ -247,7 +247,7 @@ $service = $Null
 ${Service}?.status
 ```
 
-`?[]`På samma sätt returneras värdet för elementet:
+På samma sätt `?[]` returneras värdet för elementet:
 
 ```powershell
 $a = 1..10
@@ -266,7 +266,7 @@ Mer information [About_Operators](/powershell/module/microsoft.powershell.core/a
 
 ## <a name="new-view-conciseview-and-cmdlet-get-error"></a>New View ConciseView och cmdlet Get-Error
 
-Visningen av fel meddelanden har förbättrats för att förbättra läsbarheten för interaktiva och skript fel med en ny standardvy **ConciseView**. Vyerna är användare-valbara via variabeln `$ErrorView`Preference.
+Visningen av fel meddelanden har förbättrats för att förbättra läsbarheten för interaktiva och skript fel med en ny standardvy **ConciseView**. Vyerna är användare-valbara via variabeln Preference `$ErrorView` .
 
 Om ett fel inte är från ett skript eller ett parsningsfel i **ConciseView**, är det ett enda rad fel meddelande:
 
@@ -282,7 +282,7 @@ Om felet inträffar under skript körningen eller är ett parsningsfel returnera
 
 ![Fel vid visning från ett skript](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
-Standardvyn i PowerShell 7 är **ConciseView**. Den tidigare standardvyn var **NormalView** och är användaren valbar genom att ställa in variabeln `$ErrorView`Preference.
+Standardvyn i PowerShell 7 är **ConciseView**. Den tidigare standardvyn var **NormalView** och är användaren valbar genom att ställa in variabeln Preference `$ErrorView` .
 
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
@@ -290,21 +290,21 @@ $ErrorView = 'ConciseView' # Sets the error view to ConciseView
 ```
 
 > [!NOTE]
-> En ny egenskap **ErrorAccentColor** har lagts till `$Host.PrivateData` för att stödja ändring av tilläggs färgen i fel meddelandet.
+> En ny egenskap **ErrorAccentColor** har lagts till för `$Host.PrivateData` att stödja ändring av tilläggs färgen i fel meddelandet.
 
 En ny cmdlet `Get-Error` ger fullständig detaljerad visning av det fullständigt kvalificerade felet när du vill.
 Som standard visar cmdleten fullständig information, inklusive inre undantag, av det senaste felet som inträffat.
 
 ![Visa från get-Error](./media/What-s-New-in-PowerShell-70/myscript-geterror.png)
 
-`Get-Error` Cmdleten stöder inmatade från pipelinen med hjälp av den inbyggda `$Error`variabeln.
+`Get-Error`Cmdleten stöder inmatade från pipelinen med hjälp av den inbyggda variabeln `$Error` .
 `Get-Error`visar alla skickas-fel.
 
 ```powershell
 $Error | Get-Error
 ```
 
-`Get-Error` Cmdleten stöder den **senaste** parametern, så att du kan ange hur många fel från den aktuella sessionen som du vill visa.
+`Get-Error`Cmdleten stöder den **senaste** parametern, så att du kan ange hur många fel från den aktuella sessionen som du vill visa.
 
 ```powershell
 Get-Error -Newest 3 # Displays the lst three errors that occurred in the session
@@ -333,13 +333,13 @@ Du kan ändra beteendet för uppdaterings aviseringar med hjälp av `$Env:POWERS
 > [!NOTE]
 > Miljövariabeln `$Env:POWERSHELL_UPDATECHECK` finns inte förrän den har ställts in för första gången.
 
-Så här anger du versions `LTS` meddelandet endast för versioner:
+Så här anger du versions meddelandet `LTS` endast för versioner:
 
 ```powershell
 $Env:POWERSHELL_UPDATECHECK = 'LTS'
 ```
 
-Så här ställer du in versions `Default` meddelandet till beteendet:
+Så här ställer du in versions meddelandet till `Default` beteendet:
 
 ```powershell
 $Env:POWERSHELL_UPDATECHECK = 'Default'
@@ -352,7 +352,7 @@ Mer information [om uppdaterings meddelanden](/powershell/module/microsoft.power
 > [!NOTE]
 > Det här är en experimentell funktion med namnet **PSDesiredStateConfiguration. InvokeDscResource**. Läs mer [om experimentella funktioner](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
 
-`Invoke-DscResource` Cmdleten kör en metod för en angiven DSC-resurs (Desired State Configuration) för PowerShell.
+`Invoke-DscResource`Cmdleten kör en metod för en angiven DSC-resurs (Desired State Configuration) för PowerShell.
 
 Den här cmdleten anropar en DSC-resurs direkt utan att skapa ett konfigurations dokument. Med den här cmdleten kan konfigurations hanterings produkter hantera Windows eller Linux med hjälp av DSC-resurser. Den här cmdleten aktiverar även fel sökning av resurser när DSC-motorn körs med fel sökning aktiverat.
 
@@ -371,10 +371,10 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 ### <a name="breaking-changes"></a>Icke-bakåtkompatibla ändringar
 
 - Gör uppdaterings aviseringar stöd för LTS och standard kanaler (#11132)
-- Uppdatera test-anslutningen så att den fungerar som den som är i Windows PowerShell (#10697) @vexx32(tack!)
+- Uppdatera test-anslutningen så att den fungerar som den som är i Windows PowerShell (#10697) (tack @vexx32 !)
 - Behåll $? för ParenExpression, under uttryck och ArrayExpression (#11040)
-- Ange arbets katalog till den aktuella katalogen i Start-Job (#10920) ( @iSazonovtack!)
-- Se till att $PSCulture konsekvent reflekterar ändringar i kulturen (#10138) ( @iSazonovtack!)
+- Ange arbets katalog till den aktuella katalogen i Start-Job (#10920) (tack @iSazonov !)
+- Se till att $PSCulture konsekvent reflekterar ändringar i kulturen (#10138) (tack @iSazonov !)
 
 ### <a name="engine-updates-and-fixes"></a>Uppdateringar och korrigeringar för motorn
 
@@ -391,12 +391,12 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 - Korrigera identifiering av $PSHOME framför $env:P ÖKVÄG (#11141)
 - Tillåt att pwsh ärver $env:P SModulePath och gör så att PowerShell. exe startar korrekt (#11057)
 - Flytta till .NET Core 3,1 Preview 1 (#10798)
-- Kontroll av referens tag gen omstrukturering i fil system leverantören (#10431) ( @iSazonovtack!)
+- Kontroll av referens tag gen omstrukturering i fil system leverantören (#10431) (tack @iSazonov !)
 - Ersätt CR och New-raden med ett 0x23CE-tecken i skript loggning (#10616)
 - Åtgärda en resurs läcka genom att avregistrera händelse hanteraren från AppDomain. CurrentDomain. ProcessExit (#10626)
-- Lägg till stöd i Åtgärdsinställning. Break för att bryta till fel sökning när fel sökning, fel, information, förlopp, utförliga eller varnings meddelanden genereras (#8205) @KirkMunro(tack!)
+- Lägg till stöd i Åtgärdsinställning. Break för att bryta till fel sökning när fel sökning, fel, information, förlopp, utförliga eller varnings meddelanden genereras (#8205) (tack @KirkMunro !)
 - Aktivera start av kontroll panels tillägg i PowerShell Core utan att ange. CPL-tillägg. (#9828)
-- Stöd för negativa tal i delnings operator (#8960) ( @ece-jacob-scotttack!)
+- Stöd för negativa tal i delnings operator (#8960) (tack @ece-jacob-scott !)
 
 ### <a name="general-cmdlet-updates-and-fixes"></a>Allmänna cmdlet-uppdateringar och korrigeringar
 
@@ -404,24 +404,24 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 - Lägg till oformaterad text i ConvertFrom – SecureString (#11142)
 - WindowsPS-versions kontroll har lagts till för WinCompat (#11148)
 - Åtgärda fel – rapportering i vissa WinCompat-scenarier (#11259)
-- Lägg till inbyggd binär matchare (#11032) (tack @iSazonov!)
+- Lägg till inbyggd binär matchare (#11032) (tack @iSazonov !)
 - Uppdatera beräkningen av tecken bredden för att respektera CJK-tecken korrekt (#11262)
 - Lägg till avblockering – fil för macOS (#11137)
-- Fix regression i get-PSCallStack (#11210) (tack @iSazonov!)
+- Fix regression i get-PSCallStack (#11210) (tack @iSazonov !)
 - Ta bort automatisk inläsning av ScheduledJob-modulen när du använder jobb-cmdletar (#11194)
 - Lägg till OutputType i get-Error-cmdleten och bevara de ursprungliga TypeName (#10856)
 - Korrigera null-referens i egenskapen SupportsVirtualTerminal (#11105)
-- Lägg till gräns kontroll i get-WinEvent (#10648) ( @iSazonovtack!)
+- Lägg till gräns kontroll i get-WinEvent (#10648) (tack @iSazonov !)
 - Åtgärda kommando körningen så att StopUpstreamCommandsException inte fylls i ErrorVariable (#10840)
 - Ställ in output-kodningen på [Console]:: OutputEncoding för interna kommandon (#10824)
-- Stöd för kod block med flera rader i exempel (#10776) ( @Greg-Smulkotack!)
-- Lägg till en kultur parameter i SELECT-String-cmdleten ( @iSazonov#10943) (tack!)
+- Stöd för kod block med flera rader i exempel (#10776) (tack @Greg-Smulko !)
+- Lägg till en kultur parameter i SELECT-String-cmdleten (#10943) (tack @iSazonov !)
 - Åtgärda start jobbets arbets katalog Sök väg med avslutande omvänt snedstreck (#11041)
-- ConvertFrom-JSON: unwrap Collections som standard (#10861) ( @dansturtack!)
-- Använd Skift läges känslig hash för Group-Object-cmdlet med-CaseSensitive och-AsHashtable växlar (#11030) @vexx32(tack!)
+- ConvertFrom-JSON: unwrap Collections som standard (#10861) (tack @danstur !)
+- Använd Skift läges känslig hash för Group-Object-cmdlet med-CaseSensitive och-AsHashtable växlar (#11030) (tack @vexx32 !)
 - Hantera undantag om det inte går att räkna upp filer när sökvägen återskapas för att ha rätt Skift läge (#11014)
 - Åtgärda ConciseView för att visa aktivitet i stället för kommandot mina (#11007)
-- Tillåt att webb-cmdlet: ar ignorerar HTTP-felstatuser ( @vdamewood#10466) (tack!)
+- Tillåt att webb-cmdlet: ar ignorerar HTTP-felstatuser (#10466) (tack @vdamewood !)
 - Korrigera överdragningen av fler än en CommandInfo till Get-Command (#10929)
 - Lägg till cmdleten Get-Counter för Windows (#10933)
 - Gör ConvertTo-JSON-behandling [AutomationNull]:: värde och [NullString]:: värde som $null (#10957)
@@ -432,13 +432,13 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 - Stöd $null för ConvertTo-JSON (#10947)
 - Lägg till kommandot back ut – skrivare i Windows (#10906)
 - Åtgärda start-Job-WorkingDirectory med blank steg (#10951)
-- Returnera standardvärdet när null hämtas för en inställning i PSConfiguration.cs (#10963) ( @iSazonovtack!)
+- Returnera standardvärdet när null hämtas för en inställning i PSConfiguration.cs (#10963) (tack @iSazonov !)
 - Hantera IO-undantag som icke-avslutande (#10950)
 - Lägg till GraphicalHost-sammansättning för att aktivera out-GridView, show-Command och Get-Help-ShowWindow (#10899)
-- Ta dator namn via pipeline i get-HotFix (#10852) (tack @kvprasoon!)
+- Ta dator namn via pipeline i get-HotFix (#10852) (tack @kvprasoon !)
 - Korrigera att fliken har slutförts för parametrar så att den visar vanliga parametrar som tillgängliga (#10850)
 - Korrigera GetCorrectCasedPath () för att först kontrol lera om några system fil poster returneras innan du anropar First () (#10930)
-- Ange arbets katalog till den aktuella katalogen i Start-Job (#10920) ( @iSazonovtack!)
+- Ange arbets katalog till den aktuella katalogen i Start-Job (#10920) (tack @iSazonov !)
 - Ändra TabExpansion2 till att inte kräva-CursorColumn och behandla som $InputScript. length (#10849)
 - Hantera fall där värden inte kan returnera rader eller kolumner på skärmen (#10938)
 - Korrigera användningen av dekor färger för värdar som inte stöder dem (#10937)
@@ -446,90 +446,90 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 - Uppdatera FWLink-ID för Clear-RecycleBin (#10925)
 - Hoppa över fil vid slut för ande av filer om det inte går att läsa filattribut (#10910)
 - Lägg till Clear-RecycleBin för Windows (#10909)
-- Lägg `$env:__SuppressAnsiEscapeSequences` till för att kontrol lera om VT-escape-sekvens i utdata (#10814)
-- Lägg till-nobetonar parameter för att färga Select-String-utdata (#8963) ( @derek-xiatack!)
+- Lägg till `$env:__SuppressAnsiEscapeSequences` för att kontrol lera om VT-escape-sekvens i utdata (#10814)
+- Lägg till-nobetonar parameter för att färga Select-String-utdata (#8963) (tack @derek-xia !)
 - Lägg till snabb korrigerings-cmdlet för hämtning (#10740)
 - Gör användbara tillägg i program som är värdar för PowerShell (#10587)
-- Använd en mer effektiv utvärderings ordning i LanguagePrimitives. IsNullLike () (#10781) @vexx32(tack!)
-- Förbättra hanteringen av skickas-indata och skickas strömmar med blandat indata i format-hex (#8674) ( @vexx32tack!)
-- Använd typ konvertering i SSHConnection hash när värdet inte matchar den förväntade typen (#10720) ( @SeeminglySciencetack!)
-- Korrigera get-Content-ReadCount 0-beteende när-TotalCount har angetts (#10749) ( @eugenesmlvtack!)
-- Ett fel meddelande om att Word-åtkomst nekades i get-WinEvent ( @iSazonov#10639) (tack!)
+- Använd en mer effektiv utvärderings ordning i LanguagePrimitives. IsNullLike () (#10781) (tack @vexx32 !)
+- Förbättra hanteringen av skickas-indata och skickas strömmar med blandat indata i format-hex (#8674) (tack @vexx32 !)
+- Använd typ konvertering i SSHConnection hash när värdet inte matchar den förväntade typen (#10720) (tack @SeeminglyScience !)
+- Korrigera get-Content-ReadCount 0-beteende när-TotalCount har angetts (#10749) (tack @eugenesmlv !)
+- Ett fel meddelande om att Word-åtkomst nekades i get-WinEvent (#10639) (tack @iSazonov !)
 - Aktivera slut för ande av TABB för variabel tilldelning som är Enum eller typ begränsad (#10646)
 - Ta bort den oanvända SourceLength-egenskapen som orsakar problem med formateringen (#10765)
-- Parametern Add-delimiter till ConvertFrom-StringData (#10665) (tack @steviecoaster!)
-- Lägg till positions parameter för script block när du använder Invoke-Command med SSH (#10721) @machgo(tack!)
+- Parametern Add-delimiter till ConvertFrom-StringData (#10665) (tack @steviecoaster !)
+- Lägg till positions parameter för script block när du använder Invoke-Command med SSH (#10721) (tack @machgo !)
 - Visa information om linje kontext om flera rader men inte skript namn för ConciseView (#10746)
-- Lägg till stöd \\för Wsl $ \ sökvägar till fil system leverantören (#10674)
+- Lägg till stöd för \\ Wsl $ \ sökvägar till fil system leverantören (#10674)
 - Lägg till den token-text som saknas för TokenKind. QuestionMark i parser (#10706)
 - Ange aktuell arbets katalog för varje förgrunds-objekt – parallellt kör skript till samma plats som det anropande skriptet. (#10672)
-- Ersätt API-ms-win-core-File-L1-2 -2. dll med Kernell32. dll för FindFirstStreamW och FindNextStreamW-API: er (#10680 @iSazonov) (tack!)
+- Ersätt API-ms-win-core-File-L1-2 -2. dll med Kernell32. dll för FindFirstStreamW och FindNextStreamW-API: er (#10680) (tack @iSazonov !)
 - Ändra skript för hjälp formatering så att det blir mer StrictMode-tolerant (#10563)
-- Add-SecurityDescriptorSDDL-parameter till New-service (#10483) ( @kvprasoontack!)
-- Ta bort informations utdata, konsolidera ping-användning i Test-Connection (#10478) (tack @vexx32!)
-- Läs särskilda referens punkter utan att komma åt dem (#10662) (tack @iSazonov!)
-- Direkt rensning av värden till terminalen (#10681) (tack @iSazonov!)
+- Add-SecurityDescriptorSDDL-parameter till New-service (#10483) (tack @kvprasoon !)
+- Ta bort informations utdata, konsolidera ping-användning i Test-Connection (#10478) (tack @vexx32 !)
+- Läs särskilda referens punkter utan att komma åt dem (#10662) (tack @iSazonov !)
+- Direkt rensning av värden till terminalen (#10681) (tack @iSazonov !)
 - Lägg till bakgrunds rad för gruppering med format – tabell och-egenskap (#10653)
 - Ta bort [ValidateNotNullOrEmpty] från-InputObject på Get-slump för att tillåta en tom sträng (#10644)
-- Kontrol säga Skift läges okänsligheten för system sträng avstånd (#10549) ( @iSazonovtack!)
+- Kontrol säga Skift läges okänsligheten för system sträng avstånd (#10549) (tack @iSazonov !)
 - Åtgärda null-referens undantag i framliggande objekt-parallell bearbetning av indata (#10577)
 - Lägg till PowerShell-definitioner för grup principer (#10468)
 - Uppdatera konsol värden så att den stöder XTPUSHSGR/XTPOPSGR VT-kontroller som används i sammanställnings scenarier. (#10208)
-- Lägg till parametern WorkingDirectory till Start-Job (#10324) ( @davinci26tack!)
-- Ta bort händelse hanteraren som orsakade Bryt punkts ändringar som inte skulle replikeras felaktigt till värd körnings utrymme fel sökning (#10503) (tack @KirkMunro!)
-- Ersätt API-ms-win-core-Job-12-1 -0. dll med Kernell32. dll i Microsoft. PowerShell. commands. NativeMethods P/Invoke API (#10417) ( @iSazonovtack!)
-- Åtgärda fel utdata för New-service i variabel tilldelning och-avvariabel (#10444) (tack @kvprasoon!)
+- Lägg till parametern WorkingDirectory till Start-Job (#10324) (tack @davinci26 !)
+- Ta bort händelse hanteraren som orsakade Bryt punkts ändringar som inte skulle replikeras felaktigt till värd körnings utrymme fel sökning (#10503) (tack @KirkMunro !)
+- Ersätt API-ms-win-core-Job-12-1 -0. dll med Kernell32. dll i Microsoft. PowerShell. commands. NativeMethods P/Invoke API (#10417) (tack @iSazonov !)
+- Åtgärda fel utdata för New-service i variabel tilldelning och-avvariabel (#10444) (tack @kvprasoon !)
 - Åtgärda problem med globala verktyg runt avslutnings kod, kommando rads parametrar och sökväg med blank steg (#10461)
 - Åtgärda rekursion i OneDrive-Change FindFirstFileEx () för att använda SafeFindHandle-typ (#10405)
 - Hoppa över automatisk inläsning av PSReadLine i Windows om NVDA skärm läsaren är aktiv (#10385)
 - Öka de inbyggda-med-PowerShell-modulens versioner till 7.0.0.0 (#10356)
-- Lägg till utlöses ett fel i tilläggs typen om det redan finns en typ med samma namn (#9609) ( @iSazonovtack!)
+- Lägg till utlöses ett fel i tilläggs typen om det redan finns en typ med samma namn (#9609) (tack @iSazonov !)
 
 ### <a name="performance"></a>Prestanda
 
 - Undvik att använda avslutning i parser. SaveError (#11006)
-- Förbättra cachelagringen när du skapar nya regex-instanser (#10657) @iSazonov(tack!)
+- Förbättra cachelagringen när du skapar nya regex-instanser (#10657) (tack @iSazonov !)
 - Förbättra bearbetningen av inbyggda PowerShell-Datadata från types. ps1xml, typesV3. ps1xml och GetEvent. types. ps1xml (#10898)
 - Uppdatera PSConfiguration. ReadValueFromFile för att göra det snabbare och mer minne effektivt (#10839)
-- Lägg till mindre prestanda förbättringar för körnings utrymme-initiering (#10569) @iSazonov(tack!)
+- Lägg till mindre prestanda förbättringar för körnings utrymme-initiering (#10569) (tack @iSazonov !)
 - Gör en förvarsin-objekt snabbare för de scenarier som används ofta (#10454) och åtgärda de stegvisa prestanda problemen för objekt parallellt med många körnings utrymmen (#10455)
 
 ### <a name="code-cleanup"></a>Rensa kod
 
 - Ändra kommentar och element text för att uppfylla Microsofts standarder (#11304)
-- Problem med att rensa format i Compiler.cs (#10368) @iSazonov(tack!)
-- Ta bort den oanvända typ konverteraren för CommaDelimitedStringCollection (#11000) @iSazonov(tack!)
-- Rensnings format i InitialSessionState.cs (#10865) ( @iSazonovtack!)
+- Problem med att rensa format i Compiler.cs (#10368) (tack @iSazonov !)
+- Ta bort den oanvända typ konverteraren för CommaDelimitedStringCollection (#11000) (tack @iSazonov !)
+- Rensnings format i InitialSessionState.cs (#10865) (tack @iSazonov !)
 - Rensa kod för PSSession-klass (#11001)
 - Ta bort körnings funktionen kör uppdatering – hjälp från Get-Help när funktionen Get-Help körs för första gången (#10974)
-- Åtgärda problem med formatmall (#10998) ( @iSazonovtack!)
-- Rensning: Använd det inbyggda aliaset (#10882) (tack @iSazonov!)
+- Åtgärda problem med formatmall (#10998) (tack @iSazonov !)
+- Rensning: Använd det inbyggda aliaset (#10882) (tack @iSazonov !)
 - Ta bort den oanvända inställnings nyckeln ConsolePrompting och Undvik att skapa onödig sträng när du ställer frågor till ExecutionPolicy-inställningen (#10985)
-- Inaktivera kontroll av uppdaterings meddelande för dagliga builds (#10903 @bergmeister) (tack!)
+- Inaktivera kontroll av uppdaterings meddelande för dagliga builds (#10903) (tack @bergmeister !)
 - Återställa fel söknings-API förlorat i #10338 (#10808)
-- Ta bort WorkflowJobSourceAdapter-referens som inte längre används (#10326) ( @KirkMunrotack!)
-- Rensa COM-gränssnitt i snabb List kod genom att åtgärda PreserveSig-attribut (#9899 @weltkante) (tack!)
-- Lägg till en kommentar som beskriver varför-IA inte är alias för InformationAction common parameter (#10703) (tack @KirkMunro!)
-- Byt namn på InvokeCommandCmdlet.cs till InvokeExpressionCommand.cs (#10659) @kilasuit(tack!)
+- Ta bort WorkflowJobSourceAdapter-referens som inte längre används (#10326) (tack @KirkMunro !)
+- Rensa COM-gränssnitt i snabb List kod genom att åtgärda PreserveSig-attribut (#9899) (tack @weltkante !)
+- Lägg till en kommentar som beskriver varför-IA inte är alias för InformationAction common parameter (#10703) (tack @KirkMunro !)
+- Byt namn på InvokeCommandCmdlet.cs till InvokeExpressionCommand.cs (#10659) (tack @kilasuit !)
 - Lägg till smärre kod rensningar relaterade till uppdaterings meddelanden (#10698)
-- Ta bort föråldrad arbets flödes logik från konfigurations skript för fjärr @KirkMunrokommunikation (#10320) (tack!)
-- Uppdatera Hjälp formatet så att det använder rätt Skift läge (#10678 @tnieto88) (tack!)
-- Rensa CodeFactor-formatmallar som kommer att utföras under den senaste månaden (#10591) ( @iSazonovtack!)
-- Korrigera skrivfel i beskrivningen av PSTernaryOperator experimentell funktion (#10586) (tack @bergmeister!)
-- Konvertera Åtgärdsinställning. Suspend-uppräkning svärdet till en icke-kompatibel, reserverad status och ta bort begränsningen för att använda Åtgärdsinställning. IGNORE i Preferences @KirkMunro-variabler (#10317) (tack!)
-- Ersätt ArrayList med en<T> lista för att få mer läsbar och tillförlitlig kod utan att ändra funktioner (#10333 @iSazonov) (tack!)
-- Gör kod formats korrigeringar till TestConnectionCommand (#10439) ( @vexx32tack!)
-- Rensa AutomationEngine och ta bort extra SetSessionStateDrive-metod anrop (#10416) @iSazonov(tack!)
+- Ta bort föråldrad arbets flödes logik från konfigurations skript för fjärr kommunikation (#10320) (tack @KirkMunro !)
+- Uppdatera Hjälp formatet så att det använder rätt Skift läge (#10678) (tack @tnieto88 !)
+- Rensa CodeFactor-formatmallar som kommer att utföras under den senaste månaden (#10591) (tack @iSazonov !)
+- Korrigera skrivfel i beskrivningen av PSTernaryOperator experimentell funktion (#10586) (tack @bergmeister !)
+- Konvertera Åtgärdsinställning. Suspend-uppräkning svärdet till en icke-kompatibel, reserverad status och ta bort begränsningen för att använda Åtgärdsinställning. IGNORE i Preferences-variabler (#10317) (tack @KirkMunro !)
+- Ersätt ArrayList med lista \< T> för att få mer läsbar och tillförlitlig kod utan att ändra funktionerna (#10333) (tack @iSazonov !)
+- Gör kod formats korrigeringar till TestConnectionCommand (#10439) (tack @vexx32 !)
+- Rensa AutomationEngine och ta bort extra SetSessionStateDrive-metod anrop (#10416) (tack @iSazonov !)
 - Byt namn på standard ParameterSetName tillbaka till avgränsare för ConvertTo-CSV och ConvertFrom-CSV (#10425)
 
 ### <a name="tools"></a>Verktyg
 
 - Lägg till standardinställningen för egenskapen SDKToUse så att den skapas i VS (#11085)
-- Install-Powershell. ps1: Lägg till parameter för att använda MSI-installation (#10921 @MJECloud) (tack!)
-- Lägg till grundläggande exempel för install-PowerShell. ps1 (#10914) ( @kilasuittack!)
-- Gör Install-PowerShellRemoting. ps1 för att hantera en tom sträng i PowerShellHome-parametern ( @Orca88#10526) (tack!)
-- Växla från/etc/lsb-release till/etc/OS-release i install-powershell.sh (#10773) (tack @Himura2la!)
-- Kontrol lera pwsh. exe och pwsh i den dagliga versionen av Windows (#10738) @centreboard(tack!)
+- Install-Powershell. ps1: Lägg till parameter för att använda MSI-installation (#10921) (tack @MJECloud !)
+- Lägg till grundläggande exempel för install-PowerShell. ps1 (#10914) (tack @kilasuit !)
+- Gör Install-PowerShellRemoting. ps1 för att hantera en tom sträng i PowerShellHome-parametern (#10526) (tack @Orca88 !)
+- Växla från/etc/lsb-release till/etc/OS-release i install-powershell.sh (#10773) (tack @Himura2la !)
+- Kontrol lera pwsh. exe och pwsh i den dagliga versionen av Windows (#10738) (tack @centreboard !)
 - Ta bort onödiga tryck i installpsh-osx.sh (#10752)
 - Uppdatera install-PowerShell. ps1 för att söka efter redan installerad daglig build (#10489)
 
@@ -537,16 +537,16 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 
 - Gör ett tillförlitligt DSC-test väntar (#11131)
 - Åtgärda stringdata-testet för att verifiera nycklar för hash (#10810)
-- Ta bort testmoduler (#11061) ( @iSazonovtack!)
+- Ta bort testmoduler (#11061) (tack @iSazonov !)
 - Öka tiden mellan nya test-URL: er (#11015)
-- Uppdatera testerna för att korrekt beskriva test åtgärder. (#10928) (Tack @romero126!)
+- Uppdatera testerna för att korrekt beskriva test åtgärder. (#10928) (Tack @romero126 !)
 - Tillfälligt hoppa över flaky test TestAppDomainProcessExitEvenHandlerNotLeaking (#10827)
 - Gör så att händelse hanteraren läcker testet stabilt (#10790)
-- Synkronisera Skift läge i CI YAML (#10767) ( @RDILtack!)
+- Synkronisera Skift läge i CI YAML (#10767) (tack @RDIL !)
 - Lägg till test för korrigering av händelse hanterare som läcker (#10768)
-- Lägg till get-ChildItem-test (#10507) @iSazonov(tack!)
-- Ersätt tvetydigt språk för test från växla till parameter för noggrannhet (#10666) ( @romero126tack!)
-- Lägg till experimentell kontroll i förgrunden – objekt parallella tester (#10354) @KirkMunro(tack!)
+- Lägg till get-ChildItem-test (#10507) (tack @iSazonov !)
+- Ersätt tvetydigt språk för test från växla till parameter för noggrannhet (#10666) (tack @romero126 !)
+- Lägg till experimentell kontroll i förgrunden – objekt parallella tester (#10354) (tack @KirkMunro !)
 - Uppdatera tester för Alpine-validering (#10428)
 
 ### <a name="build-and-package-improvements"></a>Förbättringar av build och paket
@@ -579,26 +579,26 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 - Ojämnhet Microsoft. PowerShell. Native to 7.0.0 – för hands version. 3 (#10826)
 - Ojämnhet Microsoft. ApplicationInsights från 2.10.0 till 2.11.0 (#10608)
 - Ojämnhets NJsonSchema från 10.0.24 till 10.0.27 (#10756)
-- Lägg till MacPorts-stöd för build-systemet (#10736) @Lucius-Q-User(tack!)
+- Lägg till MacPorts-stöd för build-systemet (#10736) (tack @Lucius-Q-User !)
 - Ojämnhets PackageManagement från 1.4.4 till 1.4.5 (#10728)
 - Ojämnhets NJsonSchema från 10.0.23 till 10.0.24 (#10635)
 - Lägg till en miljö variabel för att skilja klient/server-telemetri i MSI (#10612)
 - Ojämnhets PSDesiredStateConfiguration från 2.0.3 till 2.0.4 (#10603)
 - Ojämnhet Microsoft. CodeAnalysis. CSharp från 3.2.1 till 3.3.1 (#10607)
-- Uppdatera till .net Core 3,0 RTM (#10604) (tack @bergmeister!)
+- Uppdatera till .net Core 3,0 RTM (#10604) (tack @bergmeister !)
 - Uppdatera MSIX-paket så att versions kraven för Windows Store (#10588)
 - Ojämnhet PowerShellGet-version från 2,2 till 2.2.1 (#10382)
 - Ojämnhet PackageManagement-version från 1.4.3 till 1.4.4 (#10383)
 - Uppdatera README.md och metadata. JSON för 7.0.0-Preview. 4 (internt 10011)
-- Uppgradera .net Core 3,0-versionen från Preview 9 till RC1 (#10552) ( @bergmeistertack!)
+- Uppgradera .net Core 3,0-versionen från Preview 9 till RC1 (#10552) (tack @bergmeister !)
 - Åtgärda genereringen av ExperimentalFeature-listor (internt 9996)
 - Ojämnhet PSReadLine-version från 2.0.0-beta4 till 2.0.0-beta5 (#10536)
 - Korrigera release build-skript för att ange versions tag gen
 - Uppdatera versionen av Microsoft. PowerShell. Native till 7.0.0 – för hands version. 2 (#10519)
-- Uppgradera till Netcoreapp 3.0 preview9 (#10484) (tack @bergmeister!)
+- Uppgradera till Netcoreapp 3.0 preview9 (#10484) (tack @bergmeister !)
 - Se till att den dagliga samordnade versionen vet att det är en daglig version (#10464)
 - Uppdatera den kombinerade paket versionen för att frigöra de dagliga build-versionerna (#10449)
-- Ta bort AppVeyor-referens (#10445) @RDIL(tack!)
+- Ta bort AppVeyor-referens (#10445) (tack @RDIL !)
 - Ojämnhet NJsonSchema-version från 10.0.22 till 10.0.23 (#10421)
 - Ta bort borttagningen av linux-x64-installationsmappen eftersom vissa beroenden för Alpine behöver den (#10407)
 
@@ -606,19 +606,19 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 
 - Ändrings loggar i en logg per utgåva (#11165)
 - Åtgärda FWLinks för PowerShell 7 direkt hjälp dokument (#11071)
-- Uppdatera CONTRIBUTING.md (#11096) (tack @mklement0!)
+- Uppdatera CONTRIBUTING.md (#11096) (tack @mklement0 !)
 - Åtgärda installations dokument länkar i README.md (#11083)
-- Lägger till exempel i skriptet install-PowerShell. ps1 (#11024) ( @kilasuittack!)
+- Lägger till exempel i skriptet install-PowerShell. ps1 (#11024) (tack @kilasuit !)
 - Korrigera för Select-String betoning och import-Dscresource Keyword Supports i CHANGELOG.md (#10890)
 - Ta bort den inaktuella länken från powershell-beginners-guide.md (#10926)
 - Sammanfoga stabila och underhålls ändrings loggar (#10527)
-- Uppdatera använda .NET-version i build-dokument (#10775) @Greg-Smulko(tack!)
-- Ersätt länkar från MSDN till docs.microsoft.com i powershell-beginners-guide.md (#10778) (tack @iSazonov!)
+- Uppdatera använda .NET-version i build-dokument (#10775) (tack @Greg-Smulko !)
+- Ersätt länkar från MSDN till docs.microsoft.com i powershell-beginners-guide.md (#10778) (tack @iSazonov !)
 - Korrigera bruten DSC översikts länk (#10702)
-- Uppdatera Support_Question. MD för att länka till Stack Overflow som en annan grupp resurs (#10638) @mklement0(tack!)
+- Uppdatera Support_Question. MD för att länka till Stack Overflow som en annan grupp resurs (#10638) (tack @mklement0 !)
 - Lägg till processor arkitektur i mallen för distributions förfrågningen (#10661)
 - Lägg till en ny PowerShell-MoL-bok i Learning PowerShell-dokument (#10602)
 - Uppdatera README.md och metadata för v 6.1.6 och v 6.2.3-versioner (#10523)
-- Åtgärda ett stavfel i README.md (#10465) (tack @vedhasp!)
-- Lägg till en referens till PSKoans-modulen i Learning Resources-dokumentationen @vexx32(#10369) (tack!)
+- Åtgärda ett stavfel i README.md (#10465) (tack @vedhasp !)
+- Lägg till en referens till PSKoans-modulen i Learning Resources-dokumentationen (#10369) (tack @vexx32 !)
 - Uppdatera README.md och metadata. JSON för 7.0.0-Preview. 3 (#10393)

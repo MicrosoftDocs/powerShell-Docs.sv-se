@@ -8,26 +8,26 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a52ab737-753c-4d04-8af7-758d5c805e18
 caps.latest.revision: 7
-ms.openlocfilehash: ad0fe5c63b145c681f14328d5ef5a8784a035e26
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: a5618b72827d8ef70201437c4a99ea8bf68cdfd3
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995938"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565551"
 ---
 # <a name="how-to-add-return-values-to-a-cmdlet-help-topic"></a>Lägga till returvärden i ett cmdlet-hjälpavsnitt
 
 I det här avsnittet beskrivs hur du lägger till ett utmatnings avsnitt i hjälp avsnittet om Windows PowerShell® cmdlet. I avsnittet Utdata visas .NET-klasserna för objekt som cmdleten returnerar eller passerar pipelinen.
 
-Det finns ingen gräns för antalet klasser som du kan lägga till i avsnittet utdata. Retur typerna för en cmdlet anges i ett \<kommando: returnValues >-noden, där varje klass omges av ett \<kommando: returnValue > element.
+Det finns ingen gräns för antalet klasser som du kan lägga till i avsnittet utdata. Retur typerna för en cmdlet omges av ett \< kommando: returnValues>-noden, där varje klass omges av ett \< kommando: returnValue>-element.
 
 Om en cmdlet inte genererar några utdata kan du använda det här avsnittet för att visa att det inte finns några utdata. Till exempel, i stället för klass namnet, skriv "ingen" och ge en kort förklaring. Om cmdleten genererar utdata villkorligt använder du den här noden för att förklara villkoren och beskriva de villkorliga utdata.
 
-Schemat innehåller två \<MAML: Description > element i varje \<kommando: returnValue > element. Men `Get-Help`-cmdlet: en visar bara innehållet i \<kommandot: returnValue >/\<MAML: Description > element.
+Schemat innehåller två \< MAML: description> element i varje \< kommando: returnValue>-element. Men `Get-Help` cmdleten visar bara innehållet i \< kommandot: returnValue>/ \< maml: Description> element.
 
-Från och med Windows PowerShell 3,0 visar `Get-Help`-cmdlet innehållet i \<MAML: URI >-elementet. Med det här elementet kan du dirigera användare till ämnen som beskriver .NET-klassen.
+Från och med Windows PowerShell 3,0 `Get-Help` visar cmdleten innehållet i \< MAML: URI>-elementet. Med det här elementet kan du dirigera användare till ämnen som beskriver .NET-klassen.
 
-Följande XML visar noden \<MAML: returnValues >.
+Följande XML visar>- \< noden MAML: returnValues.
 
 ```xml
 <command:returnValues>
@@ -45,7 +45,7 @@ Följande XML visar noden \<MAML: returnValues >.
 </command: returnValues>
 ```
 
-Följande XML visar ett exempel på hur du använder noden \<MAML: returnValues > för att dokumentera en utdatatyp.
+Följande XML visar ett exempel på hur du använder \< noden MAML: returnValues> för att dokumentera en utdatatyp.
 
 ```xml
 <command:returnValues>
@@ -61,6 +61,3 @@ Följande XML visar ett exempel på hur du använder noden \<MAML: returnValues 
   </command: returnValue>
 </command: returnValues>
 ```
-
-
-

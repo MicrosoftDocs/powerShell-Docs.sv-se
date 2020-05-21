@@ -3,12 +3,12 @@ ms.date: 12/11/2018
 contributor: JKeithB, SydneyhSmith
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Paket med kompatibla PowerShell-utgåvor eller operativ system
-ms.openlocfilehash: b414ce2c2b189e9da150cbe612e0bb2572d39e76
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: fce1383fa604a555a40b050ce92c5cc45ca7054c
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278395"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691448"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Paket med kompatibla PowerShell-utgåvor eller operativ system
 
@@ -17,6 +17,7 @@ Från och med version 5,1 är PowerShell tillgängligt i olika utgåvor som kän
 ## <a name="searching-by-powershell-edition"></a>Söker efter PowerShell-utgåva
 
 De två versionerna av PowerShell är:
+
 - **Desktop Edition:** bygger på .NET Framework och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på fullständiga utgåvor av Windows, till exempel Server Core och Windows Desktop.
 - **Core Edition:** bygger på .NET Core och ger kompatibilitet med skript och moduler för versioner av PowerShell som körs på begränsade utgåvor av Windows som Nano Server och Windows IoT.
 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateLength attribute
 ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
 caps.latest.revision: 13
-ms.openlocfilehash: a25fa2410fcc6803563573596af1bc99052c3ffa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a1a494534169b2da470286020dfacfa8e9084839
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359148"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692319"
 ---
 # <a name="validatelength-attribute-declaration"></a>Deklaration av attributet ValidateLength
 
@@ -31,11 +31,11 @@ Attributet ValidateLength anger det lägsta och högsta antalet tecken för ett 
 
 #### <a name="parameters"></a>Parametrar
 
-`MinLength` ([system. Int32](/dotnet/api/System.Int32)) krävs. Anger det minsta antalet tecken som tillåts.
+`MinLength`([System. Int32](/dotnet/api/System.Int32)) krävs. Anger det minsta antalet tecken som tillåts.
 
-`MaxLength` ([system. Int32](/dotnet/api/System.Int32)) krävs. Anger det maximala antalet tecken som tillåts.
+`MaxLength`([System. Int32](/dotnet/api/System.Int32)) krävs. Anger det maximala antalet tecken som tillåts.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 - Mer information om hur du deklarerar det här attributet finns i [så här deklarerar du validerings regler för indata](./how-to-validate-parameter-input.md).
 
@@ -43,11 +43,11 @@ Attributet ValidateLength anger det lägsta och högsta antalet tecken för ett 
 
 - Windows PowerShell-körningsmiljön genererar ett fel under följande förhållanden:
 
-    - När värdet för parametern `MaxLength` attribut är mindre än värdet för parametern `MinLength` attribut.
+  - När värdet för `MaxLength` attributet Attribute är mindre än värdet för `MinLength` parametern Attribute.
 
-    - När parametern `MaxLength` attribut anges till 0.
+  - När `MaxLength` parametern Attribute anges till 0.
 
-    - Om argumentet inte är en sträng.
+  - Om argumentet inte är en sträng.
 
 - Attributet ValidateLength definieras av klassen [system. Management. Automation. Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute) .
 

@@ -2,12 +2,12 @@
 title: Installera PowerShell i Windows
 description: Information om hur du installerar PowerShell på Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: a8543a91ad503364c5346a11c9c9d9f910547278
-ms.sourcegitcommit: b80ce0396550d0896189d0205d6c4b4372ac2015
+ms.openlocfilehash: 77da64b9692b326d83c04ce329675cdfd942e64c
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141388"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691937"
 ---
 # <a name="installing-powershell-on-windows"></a>Installera PowerShell i Windows
 
@@ -28,7 +28,7 @@ Installera PowerShell på Windows genom att ladda ned installations paketet frå
 
 ## <a name="installing-the-msi-package"></a><a id="msi" />Installera MSI-paketet
 
-MSI-filen ser ut `PowerShell-<version>-win-<os-arch>.msi`så här. Ett exempel:
+MSI-filen ser ut så här `PowerShell-<version>-win-<os-arch>.msi` . Till exempel:
 
 - `PowerShell-7.0.0-win-x64.msi`
 - `PowerShell-7.0.0-win-x86.msi`
@@ -44,8 +44,8 @@ Installations programmet skapar en genväg på Start-menyn i Windows.
 > PowerShell 7 installeras i en ny katalog och körs sida vid sida med Windows PowerShell 5,1. För PowerShell Core 6. x är PowerShell 7 en uppgradering på plats som tar bort PowerShell Core 6. x.
 >
 > - PowerShell 7 installeras för att`$env:ProgramFiles\PowerShell\7`
-> - `$env:ProgramFiles\PowerShell\7` Mappen läggs till`$env:PATH`
-> - `$env:ProgramFiles\PowerShell\6` Mappen tas bort
+> - `$env:ProgramFiles\PowerShell\7`Mappen läggs till`$env:PATH`
+> - `$env:ProgramFiles\PowerShell\6`Mappen tas bort
 >
 > Om du behöver köra PowerShell 6 sida vid sida med PowerShell 7 installerar du om PowerShell 6 med hjälp av [zip-installations](#zip) metoden.
 
@@ -63,7 +63,7 @@ I följande exempel visas hur du tyst installerar PowerShell med alla installati
 msiexec.exe /package PowerShell-7.0.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
-En fullständig lista över kommando rads alternativ för `Msiexec.exe`finns i [kommando rads alternativ](/windows/desktop/Msi/command-line-options).
+En fullständig lista över kommando rads alternativ för `Msiexec.exe` finns i [kommando rads alternativ](/windows/desktop/Msi/command-line-options).
 
 ## <a name="installing-the-msix-package"></a><a id="msix" />Installera MSIX-paketet
 
@@ -71,7 +71,7 @@ Om du vill installera MSIX-paketet manuellt på en Windows 10-klient laddar du n
 
 MSIX-filen ser ut så här –`PowerShell-<version>-win-<os-arch>.msix`
 
-Du måste använda `Add-AppxPackage` cmdleten för att installera paketet.
+Du måste använda cmdleten för att installera paketet `Add-AppxPackage` .
 
 ```powershell
 Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
@@ -128,6 +128,7 @@ Windows 10 IoT Enterprise levereras med Windows PowerShell, som vi kan använda 
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
+
 ## <a name="deploying-on-windows-10-iot-core"></a>Distribuera på Windows 10 IoT Core
 
 Windows 10 IoT Core lägger till Windows PowerShell när du inkluderar *IOT_POWERSHELL* funktion som vi kan använda för att distribuera PowerShell 7.
@@ -196,7 +197,7 @@ Om du redan har installerat [.net Core SDK](/dotnet/core/sdk) är det enkelt att
 dotnet tool install --global PowerShell
 ```
 
-Installations programmet för dotNET- `$env:USERPROFILE\dotnet\tools` verktyget lägger `$env:PATH` till i din miljö variabel. Men det gränssnitt som körs har inte uppdaterats `$env:PATH`. Du kan starta PowerShell från ett nytt gränssnitt genom att `pwsh`skriva.
+Installations programmet för dotNET-verktyget lägger till `$env:USERPROFILE\dotnet\tools` i din `$env:PATH` miljö variabel. Men det gränssnitt som körs har inte uppdaterats `$env:PATH` . Du kan starta PowerShell från ett nytt gränssnitt genom att skriva `pwsh` .
 
 ## <a name="how-to-create-a-remoting-endpoint"></a>Så här skapar du en fjärran sluten slut punkt
 

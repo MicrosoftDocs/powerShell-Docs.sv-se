@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Använda Resource designer-verktyget
-ms.openlocfilehash: 36eed0fc888380a03a3279e834748708f578d973
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9e7488e922bdca70bb152e7e976077e43cfad7af
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500635"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692193"
 ---
 # <a name="using-the-resource-designer-tool"></a>Använda Resource designer-verktyget
 
@@ -19,6 +19,7 @@ Resource designer-verktyget är en uppsättning cmdlets som exponeras av **xDscR
 Det första vi behöver göra är att bestämma vilka egenskaper som resursen ska exponera. I det här exemplet ska vi definiera en Active Directory användare med följande egenskaper.
 
 Beskrivning av parameter namn
+
 * **Användar namn**: nyckel egenskap som unikt identifierar en användare.
 * **Se till att**: anger om användar kontot ska finnas eller saknas. Den här parametern har bara två möjliga värden.
 * **DomainCredential**: användarens domän lösen ord.

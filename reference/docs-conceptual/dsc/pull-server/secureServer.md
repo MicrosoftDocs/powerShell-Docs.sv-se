@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Metodtips för hämtningsservern
-ms.openlocfilehash: b2469984086a827b6b2a0fe84d1f326fc214ec28
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 2d707dc64c327cf30d09104aee140e5b78ee7c29
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500687"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692250"
 ---
 # <a name="pull-server-best-practices"></a>Metodtips för hämtningsservern
 
@@ -86,6 +86,7 @@ Modulen **PowerShellGet** hämtar modulen till:
 `C:\Program Files\Windows PowerShell\Modules`
 
 Planerings uppgift
+
 - Har du åtkomst till installationsfilerna för Windows Server 2012 R2?
 - Kommer distributions miljön att ha Internet åtkomst för att hämta WMF och modulen från Onlinegalleri?
 - Hur installerar du de senaste säkerhets uppdateringarna efter att du har installerat operativ systemet?
@@ -102,6 +103,7 @@ Hämtnings Server distributioner stöds på både fysiska och virtuella servrar.
 - Nätverk: Gigabit Ethernet-kort
 
 Planerings uppgift
+
 - Kommer du att distribuera på en fysisk maskin vara eller en Virtualization-plattform?
 - Vad är processen för att begära en ny server för mål miljön?
 - Vilken är den genomsnittliga leverans tiden för en server att bli tillgänglig?
@@ -121,14 +123,15 @@ Med en DNS CNAME kan du skapa ett alias för att referera till värd posten (A).
 Behåll lösnings arkitekturen i åtanke när du väljer ett namn för DNS-posten.
 Om du använder belastnings utjämning måste certifikatet som används för att skydda trafik över HTTPS dela samma namn som DNS-posten.
 
-       Scenario        |                                                                                         Metodtips
-:--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Testmiljö       | Återskapa den planerade produktions miljön, om möjligt. Ett server namn är lämpligt för enkla konfigurationer. Om DNS inte är tillgängligt kan en IP-adress användas i stället för ett värdnamn.
-Distribution av en nod | Skapa en DNS CNAME-post som pekar på serverns värdnamn.
+|       Scenario        |                                                                                         Metodtips
+|:--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|Testmiljö       | Återskapa den planerade produktions miljön, om möjligt. Ett server namn är lämpligt för enkla konfigurationer. Om DNS inte är tillgängligt kan en IP-adress användas i stället för ett värdnamn.
+|Distribution av en nod | Skapa en DNS CNAME-post som pekar på serverns värdnamn.
 
 Mer information finns i [Konfigurera DNS Round Robin i Windows Server](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10)).
 
 Planerings uppgift
+
 - Vet du vem du ska kontakta så att DNS-poster skapas och ändras?
 - Vad är genomsnittet för en begäran om en DNS-post?
 - Behöver du begära statiska värdnamn (A) för servrar?
@@ -143,6 +146,7 @@ De flesta organisationer i dag kräver att nätverks trafik, särskilt trafik so
 Certifikat kraven för säker HTTPS-trafik för hämtnings servern skiljer sig inte från att skydda andra HTTPS-webbplatser. **Webb server** mal len i en Windows Server Certificate Services uppfyller de funktioner som krävs.
 
 Planerings uppgift
+
 - Om du inte automatiserar certifikat begär Anden måste du kontakta för att begära ett certifikat?
 - Vilken är den genomsnittliga leveransen för begäran?
 - Hur överförs certifikat filen till dig?
@@ -159,6 +163,7 @@ En hämtnings Server kan distribueras med antingen en webb tjänst som finns på
 Klienter som interagerar med webb tjänsten gör en begäran om information som returneras i ett enda svar. Inga sekventiella begär Anden krävs, så det är inte nödvändigt för belastnings Utjämnings plattformen att säkerställa att sessioner upprätthålls på en enskild server vid varje tidpunkt.
 
 Planerings uppgift
+
 - Vilken lösning ska användas för belastnings Utjämnings trafik mellan servrar?
 - Om du använder en maskinvarubaserad belastningsutjämnare, som tar en förfrågan om att lägga till en ny konfiguration till enheten?
 - Vad är genomsnittet för en begäran om att konfigurera en ny belastningsutjämnad webb tjänst?
@@ -187,6 +192,7 @@ New-DscChecksum -ConfigurationPath .\ -OutPath .\
 ```
 
 Planerings uppgift
+
 - Om du planerar en test-eller labb miljö vars scenarier är nyckel att verifiera?
 - Finns det offentligt tillgängliga moduler som innehåller resurser för att omfatta allt du behöver eller behöver du redigera dina egna resurser?
 - Kommer din miljö att ha Internet åtkomst för att hämta offentliga moduler?
@@ -210,6 +216,7 @@ Planering av konfigurations- **GUID** är värda ytterligare uppmärksamhet vid 
   GUID är något som ska betraktas som känsliga data eftersom det kan utnyttjas av någon med skadlig avsikt för att få information om hur servrar distribueras och konfigureras i din miljö. Mer information finns i avsnittet om att [allokera GUID i PowerShell Desired State Configuration pull-läge](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/).
 
 Planerings uppgift
+
 - Vem kommer att ansvara för att kopiera konfigurationer till pull-servermappen när de är klara?
 - Vad kommer processen att bli av om konfigurationer har skapats av ett program team?
 - Kommer du att använda en lagrings plats för att lagra konfigurationer när de skapas, i flera team?

@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82df2cde-ba12-46d2-b6ec-da5455fd9b57
 caps.latest.revision: 8
-ms.openlocfilehash: a472f07cb24b0de8e5dcdfcaddd2802575318d7a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: eff917e71e91114fad3c78de58291b623aae6797
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353006"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565408"
 ---
 # <a name="windows-powershell-api-samples"></a>Windows PowerShell API-exempel
 
 Det här avsnittet innehåller exempel kod som visar hur du skapar körnings utrymmen som begränsar funktionerna och hur du kan köra kommandon asynkront med hjälp av en körnings utrymme-pool för att ange körnings utrymmen. Du kan använda Microsoft Visual Studio för att skapa ett konsol program och sedan kopiera koden från ämnena i det här avsnittet till värd programmet.
 
-## <a name="in-this-section"></a>I detta avsnitt
+## <a name="in-this-section"></a>I det här avsnittet
 
 [PowerShell01-exempel](./windows-powershell01-sample.md) Det här exemplet visar hur du använder ett [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt för att begränsa funktionerna i en körnings utrymme. Utdata från det här exemplet visar hur du begränsar språk läget för körnings utrymme, hur du markerar en cmdlet som privat, hur du lägger till och tar bort cmdlets och providers, hur du lägger till ett proxy-kommando med mera.
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skriva en anpassad DSC-resurs med PowerShell-klasser
-ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: f96a567253ab4808381c004df243c96886948407
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941161"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692223"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Skriva en anpassad DSC-resurs med PowerShell-klasser
 
@@ -486,7 +486,7 @@ Den här parametern använder ett av tre värden:
 - `Optional`**PsDscRunAsCredential** är valfritt för konfigurationer som anropar den här resursen. Detta är standardvärdet.
 - `Mandatory`**PsDscRunAsCredential** måste användas för alla konfigurationer som anropar den här resursen.
 - `NotSupported`Konfigurationer som anropar den här resursen kan inte använda **PsDscRunAsCredential**.
-- `Default`Samma som `Optional`.
+- `Default`Samma som `Optional` .
 
 Använd till exempel följande attribut för att ange att den anpassade resursen inte stöder användning av **PsDscRunAsCredential**:
 
@@ -500,7 +500,7 @@ class FileResource {
 
 En modul kan definiera flera klassbaserade DSC-resurser. Du kan skapa mappstrukturen på följande sätt:
 
-1. Definiera den första resursen i filen "<ModuleName>. psm1" och efterföljande resurser i mappen **DSCResources** .
+1. Definiera den första resursen i `<ModuleName>.psm1` filen och efterföljande resurser under **DSCResources** -mappen.
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -528,7 +528,7 @@ En modul kan definiera flera klassbaserade DSC-resurser. Du kan skapa mappstrukt
 
 ### <a name="access-the-user-context"></a>Komma åt användar kontexten
 
-Om du vill komma åt användar kontexten inifrån en anpassad resurs kan du använda den `$global:PsDscContext`automatiska variabeln.
+Om du vill komma åt användar kontexten inifrån en anpassad resurs kan du använda den automatiska variabeln `$global:PsDscContext` .
 
 Till exempel kan följande kod skriva användar kontexten som resursen körs till i utförlig utdataström:
 

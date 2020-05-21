@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 00dbb5ee-93d4-4914-a082-ef4d8b236b5c
 caps.latest.revision: 16
-ms.openlocfilehash: 596212f2e64401a751cf3dca0ee7d60b80912c00
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 95eeb037b3b9190fec1212a68029624993f3fd9f
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359011"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692296"
 ---
 # <a name="defining-selection-sets"></a>Definiera valuppsättningar
 
-När du skapar flera vyer och kontroller kan du definiera uppsättningar av objekt som kallas urvals uppsättningar. Med en urvals uppsättning kan du definiera objekten en gång, utan att behöva definiera dem flera gånger för varje vy eller kontroll. Normalt används urvals uppsättningar när du har en uppsättning relaterade .NET-objekt. Till exempel definierar `FileSystem` format filen (FileSystem. format. ps1xml) en urvals uppsättning av de fil system typer som flera vyer använder.
+När du skapar flera vyer och kontroller kan du definiera uppsättningar av objekt som kallas urvals uppsättningar. Med en urvals uppsättning kan du definiera objekten en gång, utan att behöva definiera dem flera gånger för varje vy eller kontroll. Normalt används urvals uppsättningar när du har en uppsättning relaterade .NET-objekt. Till exempel `FileSystem` definierar format filen (filesystem. format. ps1xml) en urvals uppsättning av de fil system typer som flera vyer använder.
 
 ## <a name="where-selection-sets-are-defined-and-referenced"></a>Där urvals uppsättningar definieras och refereras till
 
@@ -35,15 +35,15 @@ Du definierar urvals uppsättningar som en del av vanliga data som kan användas
 
 Du kan referera till en urvals uppsättning på följande sätt:
 
-- Varje vy har ett `ViewSelectedBy`-element som definierar vilka objekt som visas med hjälp av vyn. `ViewSelectedBy`-elementet har ett `SelectionSetName` underordnat element som anger den markerings uppsättning som alla definitioner för vyn använder. Det finns ingen begränsning för antalet markerings uppsättningar som du kan referera till från en vy.
+- Varje vy har ett- `ViewSelectedBy` element som definierar vilka objekt som visas med hjälp av vyn. `ViewSelectedBy`Elementet har ett `SelectionSetName` underordnat element som anger den markerings uppsättning som alla definitioner för vyn använder. Det finns ingen begränsning för antalet markerings uppsättningar som du kan referera till från en vy.
 
-- I varje definition av en vy eller kontroll definierar `EntrySelectedBy`-elementet vilka objekt som visas genom att använda den definitionen. Normalt har en vy eller kontroll bara en definition så objekten definieras av `ViewSelectedBy`-elementet. Det `EntrySelectedBy` elementet i definitionen har ett `SelectionSetName` underordnat element som anger urvals uppsättningen. Om du anger urvals uppsättningen för en definition kan du inte ange något av de andra underordnade elementen för `EntrySelectedBy`-elementet.
+- I varje definition av en vy eller kontroll `EntrySelectedBy` definierar elementet vilka objekt som visas genom att använda den definitionen. Normalt har en vy eller kontroll bara en definition så objekten definieras av `ViewSelectedBy` elementet. `EntrySelectedBy`Elementet i definitionen har ett `SelectionSetName` underordnat element som anger urvals uppsättningen. Om du anger urvals uppsättningen för en definition kan du inte ange något av de andra underordnade elementen för- `EntrySelectedBy` elementet.
 
-- I varje definition av en vy eller kontroll kan `SelectionCondition`-elementet användas för att ange ett villkor för när definitionen används. `SelectionCondition`-elementet har ett `SelectionSetName` underordnat element som anger den urvals uppsättning som utlöser villkoret. Villkoret utlöses när något av de objekt som definieras i urvals uppsättningen visas. Mer information om hur du anger dessa villkor finns i [definiera villkor för när data visas](./defining-conditions-for-displaying-data.md).
+- I varje definition av en vy eller kontroll `SelectionCondition` kan elementet användas för att ange ett villkor för när definitionen används. `SelectionCondition`Elementet har ett `SelectionSetName` underordnat element som anger den urvals uppsättning som utlöser villkoret. Villkoret utlöses när något av de objekt som definieras i urvals uppsättningen visas. Mer information om hur du anger dessa villkor finns i [definiera villkor för när data visas](./defining-conditions-for-displaying-data.md).
 
 ## <a name="selection-set-example"></a>Exempel på urvals uppsättning
 
-I följande exempel visas en urvals uppsättning som tas direkt från `FileSystem`-format filen som tillhandahålls av Windows PowerShell. Mer information om andra Windows PowerShell-filer finns i [filer för Windows PowerShell-formatering](./powershell-formatting-files.md).
+I följande exempel visas en urvals uppsättning som tas direkt från den `FileSystem` fil format som tillhandahålls av Windows PowerShell. Mer information om andra Windows PowerShell-filer finns i [filer för Windows PowerShell-formatering](./powershell-formatting-files.md).
 
 ```xml
 <SelectionSets>
@@ -59,7 +59,7 @@ I följande exempel visas en urvals uppsättning som tas direkt från `FileSyste
 </SelectionSets>
 ```
 
-Den tidigare urvals uppsättningen refereras till i `ViewSelectedBy` element i en tabellvy.
+Den tidigare urvals uppsättningen refereras till i `ViewSelectedBy` elementet i en tabellvy.
 
 ```xml
 <ViewDefinitions>
@@ -90,47 +90,47 @@ Den tidigare urvals uppsättningen refereras till i `ViewSelectedBy` element i e
 
 - Följande element anger den urvals uppsättning som ska användas i alla definitioner för vyn:
 
-    - [SelectionSetName-element för ViewSelectedBy (format)](./selectionsetname-element-for-viewselectedby-format.md)
+  - [SelectionSetName-element för ViewSelectedBy (format)](./selectionsetname-element-for-viewselectedby-format.md)
 
-    - [SelectionSetName-element för EntrySelectedBy för GroupBy (format)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)
+  - [SelectionSetName-element för EntrySelectedBy för GroupBy (format)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)
 
 - Följande element anger den urvals uppsättning som används av en enda View-definition:
 
-    - [SelectionSetName-element för EntrySelectedBy för ListControl (format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+  - [SelectionSetName-element för EntrySelectedBy för ListControl (format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
-    - [SelectionSetName-element för EntrySelectedBy för TableControl (format)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
+  - [SelectionSetName-element för EntrySelectedBy för TableControl (format)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
 
-    - [SelectionSetName-element för EntrySelectedBy för WideControl (format)](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)
+  - [SelectionSetName-element för EntrySelectedBy för WideControl (format)](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)
 
-    - [SelectionSetName-element för EntrySelectedBy för CustomControl för View (format)](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)
+  - [SelectionSetName-element för EntrySelectedBy för CustomControl för View (format)](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)
 
 - Följande element anger den urvals uppsättning som används av vanliga och Visa kontroll definitioner:
 
-    - [SelectionSetName-element för EntrySelectedBy för kontroller för vy (format)](./selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md)
+  - [SelectionSetName-element för EntrySelectedBy för Controls för View (format)](./selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md)
 
-    - [SelectionSetName-element för EntrySelectedBy för kontroller för konfiguration (format)](./selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format.md)
+  - [SelectionSetName-element för EntrySelectedBy för Controls för Configuration (format)](./selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format.md)
 
 - Följande element anger den urvals uppsättning som används när du definierar vilket objekt som ska expanderas:
 
-    - [SelectionSetName-element för EntrySelectedBy för EnumerableExpansion (format)](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)
+  - [SelectionSetName-element för EntrySelectedBy för EnumerableExpansion (format)](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)
 
 - Följande element anger den urvals uppsättning som används av urvals villkor.
 
-    - [SelectionSetName-element för SelectionCondition för kontroller för konfiguration (format)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
+  - [SelectionSetName-element för SelectionCondition för Controls för Configuration (format)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
 
-    - [SelectionSetName-element för SelectionCondition för kontroller för vy (format)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
+  - [SelectionSetName-element för SelectionCondition för Controls för View (format)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
 
-    - [SelectionSetName-element för SelectionCondition för CustomControl för View (format)](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+  - [SelectionSetName-element för SelectionCondition för CustomControl för View (format)](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
-    - [SelectionSetName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)
+  - [SelectionSetName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)
 
-    - [SelectionSetName-element för SelectionCondition för EntrySelectedBy för ListEntry (format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)
+  - [SelectionSetName-element för SelectionCondition för EntrySelectedBy för ListEntry (format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)
 
-    - [SelectionSetName-element för SelectionCondition för EntrySelectedBy för TableControl (format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
+  - [SelectionSetName-element för SelectionCondition för EntrySelectedBy för TableControl (format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
 
-    - [SelectionSetName-element för SelectionCondition för EntrySelectedBy för WideEntry (format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
+  - [SelectionSetName-element för SelectionCondition för EntrySelectedBy för WideEntry (format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
 
-    - [SelectionSetName-element för SelectionCondition för GroupBy (format)](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)
+  - [SelectionSetName-element för SelectionCondition för GroupBy (format)](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)
 
 ## <a name="see-also"></a>Se även
 
@@ -140,9 +140,9 @@ Den tidigare urvals uppsättningen refereras till i `ViewSelectedBy` element i e
 
 [Namn](./name-element-for-selectionset-format.md)
 
-[Nodtyper](./types-element-for-selectionset-format.md)
+[Typer](./types-element-for-selectionset-format.md)
 
-[Filer för PowerShell-formatering](./powershell-formatting-files.md)
+[PowerShell-formateringsfiler](./powershell-formatting-files.md)
 
 [Definiera villkor för när data visas](./defining-conditions-for-displaying-data.md)
 
