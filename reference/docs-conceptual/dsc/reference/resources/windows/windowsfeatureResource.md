@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC WindowsFeature-resurs
-ms.openlocfilehash: d3384b1f45324df6b6b209f25b64d9d77615ad7f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7f9b200b4d10aef6c8a3f76c497f4d60e8062cb5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942421"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557405"
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature-resurs
 
@@ -37,7 +37,7 @@ WindowsFeature [string] #ResourceName
 |---|---|
 |Name |Anger namnet på den roll eller funktion som du vill se till att den läggs till eller tas bort. Detta är samma som egenskapen **Name** från cmdleten [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) och inte visnings namnet för rollen eller funktionen. |
 |Autentiseringsuppgift |Anger de autentiseringsuppgifter som ska användas för att lägga till eller ta bort rollen eller funktionen. |
-|IncludeAllSubFeature |Ange den här egenskapen `$true` till för att se till att alla nödvändiga underfunktioner har statusen för den funktion som du anger med egenskapen **Name** . |
+|IncludeAllSubFeature |Ange den här egenskapen till för att se till att `$true` alla nödvändiga underfunktioner har statusen för den funktion som du anger med egenskapen **Name** . |
 |LogPath |Anger sökvägen till en loggfil där du vill att resurs leverantören ska logga åtgärden. |
 |Källa |Anger platsen för den käll fil som ska användas för installation, om det behövs. |
 
@@ -45,7 +45,7 @@ WindowsFeature [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
 |Kontrol |Anger om rollen eller funktionen har lagts till. Om du vill se till att rollen eller funktionen har lagts till ställer du in den här egenskapen som **tillgänglig**. För att säkerställa att rollen eller funktionen tas bort ställer du in egenskapen på **saknas**. Standardvärdet finns **.** |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 

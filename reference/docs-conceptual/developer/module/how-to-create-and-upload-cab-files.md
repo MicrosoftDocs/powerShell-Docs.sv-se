@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8d35f233-5447-48a2-a961-9fbca763262b
 caps.latest.revision: 7
-ms.openlocfilehash: 9928a0b31a57d42eb39cea1af0509613c483caf7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 37b31aa77dde23c1bd57a9af67e2232ef0827005
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357556"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557592"
 ---
 # <a name="how-to-create-and-upload-cab-files"></a>Skapa och ladda upp CAB-filer
 
@@ -25,7 +25,7 @@ Du kan använda funktionen uppdaterbar hjälp för att leverera nya eller uppdat
 
 1. Organisera hjälpfilerna för modulen efter UI-kultur. Varje uppdaterings bar hjälp-CAB-fil innehåller hjälpfilerna för en modul i en kultur för användar gränssnitt. Du kan leverera flera CAB-filer för modulen, var och en för en annan användar gränssnitts kultur.
 
-2. Kontrol lera att hjälpfilerna bara innehåller de filtyper som tillåts för uppdaterbar hjälp och validera dem mot ett hjälp fils schema. Om den `Update-Help` cmdleten påträffar en fil som är ogiltig eller inte är en tillåten typ, installerar den inte den ogiltiga filen och slutar att installera filer från CAB-filen. En lista över tillåtna filtyper finns i [filtyper som tillåts i en uppdaterings bar CAB-fil](./file-types-permitted-in-an-updatable-help-cab-file.md).
+2. Kontrol lera att hjälpfilerna bara innehåller de filtyper som tillåts för uppdaterbar hjälp och validera dem mot ett hjälp fils schema. Om `Update-Help` cmdleten påträffar en fil som är ogiltig eller inte är en tillåten typ, installerar den inte den ogiltiga filen och slutar att installera filer från CAB-filen. En lista över tillåtna filtyper finns i [filtyper som tillåts i en uppdaterings bar CAB-fil](./file-types-permitted-in-an-updatable-help-cab-file.md).
 
 3. Signera hjälpfilerna digitalt. Digitala signaturer krävs inte, men de är ett bra tips.
 

@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 432798e4-5d69-46b1-9517-ff09bffaa4be
 caps.latest.revision: 7
-ms.openlocfilehash: 37af16d0279b6487c78f90eb19bcfe5c152ed9e7
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 58b908be3149376547b075320b021421351b881e
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76996060"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557079"
 ---
 # <a name="how-to-add-input-types-to-a-cmdlet-help-topic"></a>Lägga till indatatyper i ett cmdlet-hjälpavsnitt
 
 I det här avsnittet beskrivs hur du lägger till ett indata-avsnitt i ett hjälp avsnitt om Windows PowerShell® cmdlet. I avsnittet indata visas de .NET-klasser av objekt som cmdleten accepterar som indata från pipelinen, antingen med värde eller efter egenskaps namn.
 
-Det finns ingen gräns för antalet klasser som du kan lägga till i ett indata-avsnitt. Indatatyperna anges i ett \<kommando: inputTypes >-noden, där varje klass omges av ett \<kommando: inputType > element.
+Det finns ingen gräns för antalet klasser som du kan lägga till i ett indata-avsnitt. Indatatyperna omges av ett \< kommando: inputTypes>-noden, med varje klass omsluten i ett \< kommando: inputType> element.
 
-Schemat innehåller två \<MAML: Description > element i varje \<kommando: inputType > element. Men `Get-Help`-cmdlet: en visar bara innehållet i \<kommandot: inputType >/\<MAML: Description >).
+Schemat innehåller två \< MAML: description> element i varje \< kommando: inputType> element. Men `Get-Help` cmdleten visar bara innehållet i \< kommandot: inputType>/ \< maml: Description>).
 
-Från och med Windows PowerShell 3,0 visar `Get-Help`-cmdlet innehållet i \<MAML: URI >-elementet. Med det här elementet kan du dirigera användare till ämnen som beskriver .NET-klassen.
+Från och med Windows PowerShell 3,0 `Get-Help` visar cmdleten innehållet i \< MAML: URI>-elementet. Med det här elementet kan du dirigera användare till ämnen som beskriver .NET-klassen.
 
-Följande XML visar noden \<MAML: inputTypes >.
+Följande XML visar>- \< noden MAML: inputTypes.
 
 ```xml
 <command:inputTypes>
@@ -42,7 +42,7 @@ Följande XML visar noden \<MAML: inputTypes >.
 </command:inputTypes>
 ```
 
-Följande XML visar ett exempel på hur du använder noden \<MAML: inputTypes > för att dokumentera en indatatyp.
+Följande XML visar ett exempel på hur du använder \< noden MAML: inputTypes> för att dokumentera en indatatyp.
 
 ```xml
 <command:inputTypes>

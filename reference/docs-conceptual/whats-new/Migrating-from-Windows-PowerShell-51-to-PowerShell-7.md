@@ -2,12 +2,12 @@
 title: Migrera från Windows PowerShell 5.1 till PowerShell 7
 description: Uppdatera från PowerShell 5,1 till PowerShell 7 för dina Windows-plattformar.
 ms.date: 03/25/2020
-ms.openlocfilehash: 8f19297bdb4825f3bbd50544dc5737997e3c83e3
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 0216aadb60149d7d81254ae511f3e4a92f011f44
+ms.sourcegitcommit: 843756c8277e7afb874867703963248abc8a6c91
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81440500"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83439350"
 ---
 # <a name="migrating-from-windows-powershell-51-to-powershell-7"></a>Migrera från Windows PowerShell 5.1 till PowerShell 7
 
@@ -21,7 +21,7 @@ PowerShell 7 är utformat för molnbaserade, lokala miljöer och hybrid miljöer
 - Samverkan mellan plattformar
 - Stöd för Docker-behållare
 
-PowerShell 7 fungerar sida vid sida med Windows PowerShell och du kan enkelt testa och jämföra versioner innan du distribuerar. Migrering är enkel, snabb och säker. haverera.
+PowerShell 7 fungerar sida vid sida med Windows PowerShell och du kan enkelt testa och jämföra versioner innan du distribuerar. Migrering är enkel, snabb och säker.
 
 PowerShell 7 stöds i följande Windows-operativ system:
 
@@ -66,11 +66,11 @@ Installera platser efter version:
 
 Den nya platsen läggs till i din sökväg så att du kan köra både Windows PowerShell 5,1 och PowerShell 7. Om du migrerar från PowerShell Core 6. x till PowerShell 7 tas PowerShell 6 bort och sökvägen ersätts.
 
-I Windows PowerShell heter `powershell.exe`PowerShell-körbara filen. I version 6 och senare heter `pwsh.exe`den körbara filen. Det nya namnet gör det enkelt att stödja körning sida vid sida av båda versionerna.
+I Windows PowerShell heter PowerShell-körbara filen `powershell.exe` . I version 6 och senare heter den körbara filen `pwsh.exe` . Det nya namnet gör det enkelt att stödja körning sida vid sida av båda versionerna.
 
 ### <a name="separate-psmodulepath"></a>Separata PSModulePath
 
-Som standard är Windows PowerShell-och PowerShell 7 Store-moduler på olika platser. PowerShell 7 kombinerar dessa platser i `$Env:PSModulePath` miljö variabeln. När du importerar en modul efter namn, kontrollerar PowerShell platsen som anges `$Env:PSModulePath`av. Detta gör att PowerShell 7 kan läsa in både Core-och Desktop-moduler.
+Som standard är Windows PowerShell-och PowerShell 7 Store-moduler på olika platser. PowerShell 7 kombinerar dessa platser i `$Env:PSModulePath` miljö variabeln. När du importerar en modul efter namn, kontrollerar PowerShell platsen som anges av `$Env:PSModulePath` . Detta gör att PowerShell 7 kan läsa in både Core-och Desktop-moduler.
 
 |            Installations omfång            |                Windows PowerShell 5,1                 |             PowerShell 7,0             |
 | ----------------------------------- | ----------------------------------------------------- | -------------------------------------- |
@@ -121,8 +121,8 @@ En PowerShell-profil är ett skript som körs när PowerShell startar. Det här 
 
 Sökvägen till profilens plats har ändrats i PowerShell 7.
 
-- I Windows PowerShell 5,1 är `$HOME\Documents\WindowsPowerShell`sökvägen till profilen.
-- I PowerShell 7 är `$HOME\Documents\PowerShell`platsen för profilen.
+- I Windows PowerShell 5,1 är sökvägen till profilen `$HOME\Documents\WindowsPowerShell` .
+- I PowerShell 7 är platsen för profilen `$HOME\Documents\PowerShell` .
 
 Profil fil namnen har också ändrats:
 
@@ -142,7 +142,7 @@ Mer information [about_Profiles](/powershell/module/microsoft.powershell.core/ab
 De flesta moduler som du använder i Windows PowerShell 5,1 fungerar redan med PowerShell 7, inklusive Azure PowerShell och Active Directory. Vi fortsätter att arbeta med andra team för att lägga till inbyggt PowerShell 7-stöd för fler moduler, inklusive Microsoft Graph, Office 365 och andra. Den aktuella listan över moduler som stöds finns i [PowerShell 7-modulens kompatibilitet](/powershell/scripting/whats-new/module-compatibility).
 
 > [!NOTE]
-> I Windows har vi också lagt till en **UseWindowsPowerShell** -växel `Import-Module` för att under lätta över gången till PowerShell 7 för de som använder inkompatibla moduler. Mer information om den här funktionen finns i [about_Windows_PowerShell_Compatibility](/powershell/module/Microsoft.PowerShell.Core/About/about_windows_powershell_compatibility).
+> I Windows har vi också lagt till en **UseWindowsPowerShell** -växel för `Import-Module` att under lätta över gången till PowerShell 7 för de som använder inkompatibla moduler. Mer information om den här funktionen finns i [about_Windows_PowerShell_Compatibility](/powershell/module/Microsoft.PowerShell.Core/About/about_windows_powershell_compatibility).
 
 ### <a name="powershell-remoting"></a>PowerShell fjärrkommunikation
 
@@ -150,7 +150,7 @@ Med PowerShell-fjärrkommunikation kan du köra alla PowerShell-kommandon på en
 
 #### <a name="ws-management-remoting"></a>WS-Management Remoting
 
-Windows PowerShell 5,1 och tidigare använder WS-Management-protokollet (WSMAN) för anslutnings förhandling och data transport. Windows Remote Management (WinRM) använder WSMAN-protokollet. Om WinRM har Aktiver ATS använder PowerShell 7 den befintliga Windows PowerShell 5,1-slutpunkten med namnet `Microsoft.PowerShell` för fjärr anslutningar. Kör `Enable-PSRemoting` cmdleten om du vill uppdatera PowerShell 7 för att ta med sin egen slut punkt. Information om hur du ansluter till vissa slut punkter finns i [WS-Management Remoting i PowerShell Core](/powershell/scripting/learn/remoting/wsman-remoting-in-powershell-core)
+Windows PowerShell 5,1 och tidigare använder WS-Management-protokollet (WSMAN) för anslutnings förhandling och data transport. Windows Remote Management (WinRM) använder WSMAN-protokollet. Om WinRM har Aktiver ATS använder PowerShell 7 den befintliga Windows PowerShell 5,1-slutpunkten med namnet `Microsoft.PowerShell` för fjärr anslutningar. Kör cmdleten om du vill uppdatera PowerShell 7 för att ta med sin egen slut punkt `Enable-PSRemoting` . Information om hur du ansluter till vissa slut punkter finns i [WS-Management Remoting i PowerShell Core](/powershell/scripting/learn/remoting/wsman-remoting-in-powershell-core)
 
 Om du vill använda Windows PowerShell-fjärrkommunikation måste fjärrdatorn konfigureras för fjärrhantering.
 Mer information, inklusive instruktioner, finns i [om krav för fjärrhantering](/powershell/module/microsoft.powershell.core/about/about_remote_requirements).
@@ -164,7 +164,7 @@ SSH-baserad fjärr kommunikation lades till i PowerShell Core 6. x för att stö
 > [!NOTE]
 > PowerShell-galleriet (PSGallery) innehåller en modul och en cmdlet som automatiskt konfigurerar SSH-baserad fjärr kommunikation. Installera `Microsoft.PowerShell.RemotingTools` modulen från [PSGallery](https://www.powershellgallery.com/packages/Microsoft.PowerShell.RemotingTools/0.1.0) och kör `Enable-SSH` cmdleten.
 
-`New-PSSession`Cmdletarna `Enter-PSSession`, och `Invoke-Command` har nya parameter uppsättningar som stöder SSH-anslutningar.
+`New-PSSession` `Enter-PSSession` Cmdletarna, och `Invoke-Command` har nya parameter uppsättningar som stöder SSH-anslutningar.
 
 ```powershell
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
@@ -176,7 +176,7 @@ Om du vill skapa en fjärrsession anger du mål datorn med parametern **hostname
 Enter-PSSession -HostName <Computer> -UserName <Username>
 ```
 
-Om du använder **hostname** -parametern anger du användar namns informationen följt av at-tecknet (`@`) följt av dator namnet.
+Om du använder **hostname** -parametern anger du användar namns informationen följt av at-tecknet ( `@` ) följt av dator namnet.
 
 ```powershell
 Enter-PSSession -HostName <Username>@<Computer>
@@ -187,7 +187,7 @@ Mer information finns i [openssh Key Management](/windows-server/administration/
 
 ### <a name="group-policy-supported"></a>grupprincip som stöds
 
-PowerShell innehåller grupprincip inställningar som hjälper dig att definiera konsekventa alternativ värden för servrar i en företags miljö. Några exempel på inställningar är:
+PowerShell innehåller grupprincip inställningar som hjälper dig att definiera konsekventa alternativ värden för servrar i en företags miljö. Inställningarna omfattar:
 
 - Konfiguration av konsolsession: anger en konfigurations slut punkt där PowerShell körs.
 - Aktivera modul loggning: anger LogPipelineExecutionDetails-egenskapen för moduler.
@@ -198,9 +198,9 @@ PowerShell innehåller grupprincip inställningar som hjälper dig att definiera
 
 Mer information finns i [about_Group_Policy_Settings](/powershell/module/microsoft.powershell.core/about/about_group_policy_settings).
 
-PowerShell 7 innehåller grupprincip mallar och ett installations skript i `$PSHOME`.
+PowerShell 7 innehåller grupprincip mallar och ett installations skript i `$PSHOME` .
 
-Grupprincip verktyg använder administrativa mallfiler (`.admx`, `.adml`) för att fylla i princip inställningar i användar gränssnittet. Detta gör det möjligt för administratörer att hantera registerbaserade princip inställningar. `InstallPSCorePolicyDefinitions.ps1` Skriptet installerar PowerShell Core administrativa mallar på den lokala datorn.
+Grupprincip verktyg använder administrativa mallfiler ( `.admx` , `.adml` ) för att fylla i princip inställningar i användar gränssnittet. Detta gör det möjligt för administratörer att hantera registerbaserade princip inställningar. `InstallPSCorePolicyDefinitions.ps1`Skriptet installerar PowerShell Core administrativa mallar på den lokala datorn.
 
 ```powershell
 Get-ChildItem -Path $PSHOME -Filter *Core*Policy*
@@ -240,7 +240,7 @@ Det uppdaterade PowerShell-tillägget innehåller:
 
 Om du vill göra över gången till Visual Studio Code enklare använder du funktionen **Aktivera ISE-läge** som är tillgänglig i **kommando paletten**. Den här funktionen växlar VSCode till en typ av ISE-layout. Formatet ISE ger dig alla nya funktioner och funktioner i PowerShell i en välbekant användar upplevelse.
 
-Du växlar till den nya ISE-layouten genom att trycka på <kbd>CTRL</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> för att öppna `PowerShell` **kommando-paletten**, skriva och välja **PowerShell: Aktivera ISE-läge**.
+Du växlar till den nya ISE-layouten genom att trycka på <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> för att öppna **kommando-paletten**, skriva `PowerShell` och välja **PowerShell: Aktivera ISE-läge**.
 
 Om du vill ställa in layouten på den ursprungliga layouten öppnar du **kommandot palett**, väljer **POWERSHELL: inaktivera ISE-läge (Återställ till standardvärden)**.
 

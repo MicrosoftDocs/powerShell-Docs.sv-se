@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
-ms.openlocfilehash: 59839e9b8b6f2a56f2f1a9c755f2f1a85deb34aa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 57978616f4a868b1ad260f4b557f9b699a1ef3ab
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353307"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557132"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>Lägga till dynamiska parametrar i ett hjälpavsnitt för providers
 
@@ -25,11 +25,11 @@ De dynamiska parametrar som dokumenteras i ett hjälp avsnitt om providern är d
 
 Dynamiska parametrar kan också dokumenteras i anpassad cmdlet-hjälp för en provider. När du skriver både hjälpen för Provider och anpassad cmdlet-hjälp för en provider, inkluderar du den dynamiska parameter dokumentationen i båda dokumenten.
 
-Om en provider inte implementerar några dynamiska parametrar innehåller hjälp avsnittet Provider ett tomt `DynamicParameters`-element.
+Om en provider inte implementerar några dynamiska parametrar innehåller leverantörens hjälp avsnitt ett tomt `DynamicParameters` element.
 
 ### <a name="to-add-dynamic-parameters"></a>Lägga till dynamiska parametrar
 
-1. Lägg till ett `DynamicParameters`-element i `providerHelp`-elementet i filen *AssemblyName*. dll-Help. xml. `DynamicParameters`-elementet ska visas efter `Tasks`-elementet och före `RelatedLinks`-elementet.
+1. I filen *AssemblyName*. dll-Help. xml i- `providerHelp` elementet lägger du till ett- `DynamicParameters` element. `DynamicParameters`Elementet ska visas efter `Tasks` elementet och före `RelatedLinks` elementet.
 
    Till exempel:
 
@@ -44,9 +44,9 @@ Om en provider inte implementerar några dynamiska parametrar innehåller hjälp
     </providerHelp>
     ```
 
-   Om providern inte implementerar några dynamiska parametrar kan `DynamicParameters`-elementet vara tomt.
+   Om providern inte implementerar några dynamiska parametrar `DynamicParameters` kan elementet vara tomt.
 
-2. Lägg till ett `DynamicParameter`-element för varje dynamisk parameter i `DynamicParameters`-elementet.
+2. I `DynamicParameters` elementet lägger du till ett-element för varje dynamisk parameter `DynamicParameter` .
 
    Till exempel:
 
@@ -57,14 +57,14 @@ Om en provider inte implementerar några dynamiska parametrar innehåller hjälp
     </DynamicParameters>
     ```
 
-3. I varje `DynamicParameter`-element lägger du till ett `Name`-och `CmdletSupported`-element.
+3. I varje `DynamicParameter` element lägger du till ett `Name` och- `CmdletSupported` element.
 
    |Elementnamn|Beskrivning|
    |------------------|-----------------|
-   |Namn|Anger parameter namnet.|
+   |Name|Anger parameter namnet.|
    |CmdletSupported|Anger cmdletarna där parametern är giltig. Ange en kommaavgränsad lista med cmdlet-namn.|
 
-   Till exempel är följande XML-dokument `Encoding` dynamiska parametern som Windows PowerShell-providern lägger till i `Add-Content``Get-Content``Set-Content` cmdlets.
+   Till exempel innehåller följande XML-filer den `Encoding` dynamiska parametern som Windows PowerShell-filleverantören lägger till `Add-Content` i `Get-Content` `Set-Content` cmdletarna.
 
     ```xml
     <DynamicParameters/>
@@ -75,9 +75,9 @@ Om en provider inte implementerar några dynamiska parametrar innehåller hjälp
 
     ```
 
-4. I varje `DynamicParameter`-element lägger du till ett `Type`-element. `Type`-elementet är en behållare för det `Name`-element som innehåller .NET-typen för den dynamiska parameterns värde.
+4. I varje `DynamicParameter` element lägger du till ett- `Type` element. `Type`Elementet är en behållare för det `Name` element som innehåller .net-typen för den dynamiska parameterns värde.
 
-   Följande XML visar till exempel att .NET-typen för parametern `Encoding` Dynamic är [Microsoft. PowerShell. commands. FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding) -uppräkning.
+   Till exempel visar följande XML att .NET-typen för den `Encoding` dynamiska parametern är [Microsoft. PowerShell. commands. FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding) -uppräkningen.
 
     ```xml
     <DynamicParameters/>
@@ -91,9 +91,9 @@ Om en provider inte implementerar några dynamiska parametrar innehåller hjälp
     </DynamicParameters>
     ```
 
-5. Lägg till `Description`-elementet som innehåller en kort beskrivning av den dynamiska parametern. När du skriver beskrivningen använder du rikt linjerna för alla cmdlet-parametrar i [så här lägger du till parameter information](./how-to-add-parameter-information.md).
+5. Lägg till `Description` elementet, som innehåller en kort beskrivning av den dynamiska parametern. När du skriver beskrivningen använder du rikt linjerna för alla cmdlet-parametrar i [så här lägger du till parameter information](./how-to-add-parameter-information.md).
 
-   Följande XML innehåller till exempel en beskrivning av parametern `Encoding` Dynamic.
+   Till exempel innehåller följande XML en beskrivning av den `Encoding` dynamiska parametern.
 
     ```xml
     <DynamicParameters/>
@@ -108,18 +108,18 @@ Om en provider inte implementerar några dynamiska parametrar innehåller hjälp
     </DynamicParameters>
     ```
 
-6. Lägg till `PossibleValues`-elementet och dess underordnade element. Tillsammans beskriver de här elementen värdena för den dynamiska parametern. Det här elementet är utformat för uppräknade värden. Om den dynamiska parametern inte tar ett värde, t. ex. är fallet med en växlings parameter, eller om värdena inte kan räknas upp, lägger du till ett tomt `PossibleValues`-element.
+6. Lägg till `PossibleValues` elementet och dess underordnade element. Tillsammans beskriver de här elementen värdena för den dynamiska parametern. Det här elementet är utformat för uppräknade värden. Om den dynamiska parametern inte tar ett värde, t. ex. är fallet med en växlings parameter, eller om värdena inte kan räknas upp, lägger du till ett tomt `PossibleValues` element.
 
-   I följande tabell visas och beskrivs `PossibleValues`-elementet och dess underordnade element.
+   I följande tabell visas och beskrivs `PossibleValues` elementet och dess underordnade element.
 
    |Elementnamn|Beskrivning|
    |------------------|-----------------|
-   |PossibleValues|Det här elementet är en behållare. De underordnade elementen beskrivs nedan. Lägg till ett `PossibleValues`-element i varje leverantörs hjälp avsnitt. Elementet kan vara tomt.|
-   |PossibleValue|Det här elementet är en behållare. De underordnade elementen beskrivs nedan. Lägg till ett `PossibleValue`-element för varje värde för den dynamiska parametern.|
+   |PossibleValues|Det här elementet är en behållare. De underordnade elementen beskrivs nedan. Lägg till ett `PossibleValues` element i varje leverantörs hjälp avsnitt. Elementet kan vara tomt.|
+   |PossibleValue|Det här elementet är en behållare. De underordnade elementen beskrivs nedan. Lägg till ett- `PossibleValue` element för varje värde för den dynamiska parametern.|
    |Värde|Anger värde namnet.|
-   |Beskrivning|Det här elementet innehåller ett `Para`-element. Texten i `Para`-elementet beskriver det värde som namnges i `Value`-elementet.|
+   |Beskrivning|Det här elementet innehåller ett- `Para` element. Texten i `Para` elementet beskriver det värde som namnges i `Value` elementet.|
 
-   Följande XML visar till exempel ett `PossibleValue`-element i parametern `Encoding` dynamisk.
+   I följande XML visas till exempel ett `PossibleValue` element i den `Encoding` dynamiska parametern.
 
     ```xml
     <DynamicParameters/>
@@ -140,7 +140,7 @@ Om en provider inte implementerar några dynamiska parametrar innehåller hjälp
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visas `DynamicParameters`-elementet i parametern `Encoding` dynamisk.
+I följande exempel visas `DynamicParameters` elementet i den `Encoding` dynamiska parametern.
 
 ```xml
 <DynamicParameters/>

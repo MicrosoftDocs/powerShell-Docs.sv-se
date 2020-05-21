@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5ec7159e-e4e9-4b21-95df-94244432f679
 caps.latest.revision: 5
-ms.openlocfilehash: a663bd69be7825b1685f64ff8d3068bdd8ca3265
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 898225a582c7ed25f746dec7f84012db1ae60b98
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357850"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557080"
 ---
 # <a name="placing-comment-based-help-in-functions"></a>Lägga till kommentarsbaserad hjälp i funktioner
 
-I det här avsnittet beskrivs var du kan placera den kommenterade hjälpen för en funktion så att den `Get-Help` cmdlet associerar det kommenterande hjälp avsnittet med rätt funktion.
+I det här avsnittet beskrivs var du kan placera den kommenterade hjälpen för en funktion så att `Get-Help` cmdleten associerar det kommenterade hjälp avsnittet med rätt funktion.
 
 ## <a name="where-to-place-comment-based-help-for-a-function"></a>Var du vill placera kommenterings hjälpen för en funktion
 
@@ -25,7 +25,7 @@ I det här avsnittet beskrivs var du kan placera den kommenterade hjälpen för 
 
 - I slutet av funktions texten.
 
-- Före nyckelordet `Function`. När funktionen finns i en skript-eller skript-modul får det inte finnas mer än en tom rad mellan den sista raden i den kommenterade hjälpen och nyckelordet `Function`. Annars associerar `Get-Help` hjälpen med skriptet, inte med funktionen.
+- Före `Function` nyckelordet. När funktionen finns i en skript-eller skriptbaserad modul får det inte finnas mer än en tom rad mellan den sista raden i den kommenterade hjälpen och `Function` nyckelordet. Annars `Get-Help` associeras hjälpen med skriptet, inte med funktionen.
 
 ## <a name="examples-of-help-placement-in-a-function"></a>Exempel på hur hjälp placeras i en funktion
 

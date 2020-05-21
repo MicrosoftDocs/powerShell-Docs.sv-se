@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-skript resurs
-ms.openlocfilehash: e09e86011fa7dbb2a4d7f28b5032b4328b6f6ec2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 50d4667396c8c619079288ec51599152ed2d6cd5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941329"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557030"
 ---
 # <a name="dsc-script-resource"></a>DSC-skript resurs
 
@@ -45,7 +45,7 @@ Script [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 
 > [!NOTE]
@@ -59,7 +59,7 @@ DSC använder inte utdata från **GetScript**. Cmdlet: en [Get-DscConfiguration]
 
 #### <a name="testscript"></a>TestScript
 
-**TestScript** körs av DSC för att avgöra om **SetScript** ska köras. Om **TestScript** returnerar `$false`kör DSC **SetScript** för att återställa noden till önskat tillstånd. Det måste returnera ett booleskt värde. Resultatet av `$true` indikerar att noden är kompatibel och att **SetScript** inte ska köras.
+**TestScript** körs av DSC för att avgöra om **SetScript** ska köras. Om **TestScript** returnerar `$false` Kör DSC **SetScript** för att återställa noden till önskat tillstånd. Det måste returnera ett booleskt värde. Resultatet av `$true` indikerar att noden är kompatibel och att **SetScript** inte ska köras.
 
 Cmdleten [test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) kör **TestScript** för att hämta nodernas kompatibilitet med **skript** resurserna.
 I det här fallet körs dock inte **SetScript** , oavsett vilket **TestScript** -block som returneras.
@@ -69,13 +69,13 @@ I det här fallet körs dock inte **SetScript** , oavsett vilket **TestScript** 
 
 #### <a name="setscript"></a>SetScript
 
-**SetScript** ändrar noden för att framtvinga det önskade läget. Den anropas av DSC om **TestScript** -skript blocket `$false`returnerar. **SetScript** får inte ha något retur värde.
+**SetScript** ändrar noden för att framtvinga det önskade läget. Den anropas av DSC om **TestScript** -skript blocket returnerar `$false` . **SetScript** får inte ha något retur värde.
 
 ## <a name="examples"></a>Exempel
 
 ### <a name="example-1-write-sample-text-using-a-script-resource"></a>Exempel 1: Skriv exempel text med hjälp av en skript resurs
 
-`C:\TempFolder\TestFile.txt` I det här exemplet testas om det finns på varje nod. Om den inte finns skapas den med hjälp av `SetScript`. `GetScript` Returnerar filens innehåll och dess retur värde används inte.
+I det här exemplet testas om det finns `C:\TempFolder\TestFile.txt` på varje nod. Om den inte finns skapas den med hjälp av `SetScript` . `GetScript`Returnerar filens innehåll och dess retur värde används inte.
 
 ```powershell
 Configuration ScriptTest
@@ -136,4 +136,63 @@ Configuration ScriptTest
         }
     }
 }
+```
+
+### <a name="example-3-utilizing-parameters-in-a-script-resource"></a>Exempel 3: använda parametrar i en skript resurs
+
+I det här exemplet används parametrar från skript resursen genom att använda `using` omfånget. Observera att **ConfigurationData** kan nås på ett liknande sätt. Till exempel 2 förväntas en version lagras i en lokal fil på målnoden. Både den lokala fil Sök vägen och versionen kan konfigureras för att dock koppla ifrån kod från konfigurations data.
+
+```powershell
+Configuration ScriptTest
+{
+    param
+    (
+        [Version]
+        $Version,
+
+        [string]
+        $FilePath
+    )
+
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
+
+    Node localhost
+    {
+        Script UpdateConfigurationVersion
+        {
+            GetScript = {
+                $currentVersion = Get-Content -Path $using:FilePath
+                return @{ 'Result' = "$currentVersion" }
+            }
+            TestScript = {
+                # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
+                $state = [scriptblock]::Create($GetScript).Invoke()
+
+                if( $state['Result'] -eq $using:Version )
+                {
+                    Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
+                    return $true
+                }
+
+                Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+                return $false
+            }
+            SetScript = {
+                Set-Content -Path $using:FilePath -Value $using:Version
+            }
+        }
+    }
+}
+```
+
+Den resulterande MOF-filen innehåller variablerna och deras värden som nås via `using` omfånget.
+De matas in i varje script block som använder variablerna. Test-och set-skript har tagits bort för det kortfattat:
+
+```Output
+instance of MSFT_ScriptResource as $MSFT_ScriptResource1ref
+{
+ GetScript = "$FilePath ='C:\\Config.ini'\n\n $currentVersion = Get-Content -Path $FilePath\n return @{ 'Result' = \"$currentVersion\" }\n";
+ TestScript = ...;
+ SetScript = ...;
+};
 ```

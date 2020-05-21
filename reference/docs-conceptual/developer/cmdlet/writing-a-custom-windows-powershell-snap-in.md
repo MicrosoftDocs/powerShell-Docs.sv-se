@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], specified in snap-ins
 ms.assetid: 55c8b5cb-8ee2-4080-afc4-3f09c9f20128
 caps.latest.revision: 6
-ms.openlocfilehash: aa6e4a4615f2681efa691008c86611f0df4e07d7
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 9cf4499ec2992c6cfea83fc5d0bf51d0bbfaa96a
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870497"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556860"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>Skriva en anpassad Windows PowerShell-snapin-modul
 
@@ -31,7 +31,7 @@ Med den här typen av snapin-modul kan du ange vilka cmdlets, providers, typer e
 
    I det här exemplet är klass namnet "CustomPSSnapinTest".
 
-3. Lägg till en offentlig egenskap för namnet på snapin-modulen (obligatoriskt). När du namnger snapin-moduler ska du inte använda något av följande tecken: `#`, `.`, `,`, `(`, `)`, `{`, `}`, `[`, `]`, `&`, `-`, `/`, `\`, `$`, `;`, `:`, `"`, `'`, `<`, `>`, `|`, `?`, `@`, `` ` ``, `*`
+3. Lägg till en offentlig egenskap för namnet på snapin-modulen (obligatoriskt). När du namnger snapin-moduler ska du inte använda något av följande tecken:,,,,,,,,, `#` `.` `,` `(` `)` `{` `}` `[` `]` `&` , `-` , `/` , `\` , `$` , `;` `:` `"` `'` `<` `>` `|` `?` `@` `` ` `` ,,,,,,,,,,,,,,,,,,`*`
 
    I det här exemplet är namnet på snapin-modulen "CustomPSSnapInTest".
 
@@ -45,7 +45,7 @@ Med den här typen av snapin-modul kan du ange vilka cmdlets, providers, typer e
 
 6. Lägg till en offentlig egenskap för en beskrivning av snapin-modulen (krävs).
 
-   I det här exemplet är beskrivningen: "det här är en anpassad Windows PowerShell-snapin-modul som innehåller `Test-HelloWorld`-och `Test-CustomSnapinTest`-cmdletar".
+   I det här exemplet är beskrivningen: "det här är en anpassad Windows PowerShell-snapin-modul som innehåller `Test-HelloWorld` `Test-CustomSnapinTest` cmdletarna och".
 
 7. Lägg till en offentlig egenskap för en beskrivnings resurs för snapin-modulen (valfritt).
 
@@ -53,7 +53,7 @@ Med den här typen av snapin-modul kan du ange vilka cmdlets, providers, typer e
 
    > CustomPSSnapInTest är det här en anpassad Windows PowerShell-snapin-modul som innehåller cmdletarna test-HelloWorld och test-CustomSnapinTest.
 
-8. Ange de cmdlet: ar som tillhör den anpassade snapin-modulen (valfritt) med hjälp av klassen [system. Management. Automation. körnings utrymmen. Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) . Den information som läggs till här inkluderar namnet på cmdleten, dess .NET-typ och namnet på cmdlet-hjälp filen (formatet för cmdlet hjälp filens namn ska vara` name.dll-help.xml`).
+8. Ange de cmdlet: ar som tillhör den anpassade snapin-modulen (valfritt) med hjälp av klassen [system. Management. Automation. körnings utrymmen. Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) . Den information som läggs till här inkluderar namnet på cmdleten, dess .NET-typ och cmdlet-hjälpens fil namn (formatet för cmdletens hjälp fil namn ska vara `name.dll-help.xml` ).
 
    I det här exemplet läggs cmdletarna test-HelloWorld och TestCustomSnapinTest till.
 
@@ -71,7 +71,7 @@ Med den här typen av snapin-modul kan du ange vilka cmdlets, providers, typer e
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar hur du skriver en anpassad Windows PowerShell-snapin-modul som kan användas för att registrera `Test-HelloWorld` och `Test-CustomSnapinTest`-cmdletar. Tänk på att i det här exemplet kan den kompletta sammansättningen innehålla andra cmdlets och providers som inte skulle registreras av den här snapin-modulen.
+Det här exemplet visar hur du skriver en anpassad Windows PowerShell-snapin-modul som kan användas för att `Test-HelloWorld` Registrera `Test-CustomSnapinTest` cmdletarna och. Tänk på att i det här exemplet kan den kompletta sammansättningen innehålla andra cmdlets och providers som inte skulle registreras av den här snapin-modulen.
 
 ```csharp
 [RunInstaller(true)]

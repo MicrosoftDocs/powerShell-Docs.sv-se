@@ -2,12 +2,12 @@
 ms.date: 10/31/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skydda MOF-filen
-ms.openlocfilehash: ab03db8bf4ed7d412691ae87fd12da5131607886
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 30b7ff276781b398aeae94e710c810f5fccafdfb
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278483"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556395"
 ---
 # <a name="securing-the-mof-file"></a>Skydda MOF-filen
 
@@ -84,11 +84,11 @@ $cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-När du har exporterat måste du kopiera den `DscPublicKey.cer` till redigerings- **noden**.
+När du har exporterat `DscPublicKey.cer` måste du kopiera den till **redigerings-noden**.
 
 > Målnod: Windows Server 2012 R2/Windows 8,1 och tidigare
 > [!WARNING]
-> Eftersom `New-SelfSignedCertificate` cmdleten på Windows-operativsystem före Windows 10 och windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet på dessa operativ system. I det här fallet kan du `makecert.exe` använda `certutil.exe` eller för att skapa certifikatet. En alternativ metod är att [Hämta skriptet New-SelfSignedCertificateEx. ps1 från Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) och använda det för att skapa certifikatet i stället:
+> Eftersom `New-SelfSignedCertificate` cmdleten på Windows-operativsystem före Windows 10 och Windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet på dessa operativ system. I det här fallet kan du använda `makecert.exe` eller `certutil.exe` för att skapa certifikatet. En alternativ metod är att [Hämta skriptet New-SelfSignedCertificateEx. ps1 från Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) och använda det för att skapa certifikatet i stället:
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -114,7 +114,7 @@ $Cert = Get-ChildItem -Path cert:\LocalMachine\My | Where-Object {
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-När du har exporterat måste du kopiera den ```DscPublicKey.cer``` till redigerings- **noden**.
+När du har exporterat ```DscPublicKey.cer``` måste du kopiera den till **redigerings-noden**.
 
 #### <a name="on-the-authoring-node-import-the-certs-public-key"></a>På noden redigering: importera certifikatets offentliga nyckel
 
@@ -149,11 +149,11 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-När du har exporterat måste du kopiera den `DscPrivateKey.pfx` till **målnoden**.
+När du har exporterat `DscPrivateKey.pfx` måste du kopiera den till **målnoden**.
 
 > Målnod: Windows Server 2012 R2/Windows 8,1 och tidigare
 > [!WARNING]
-> Eftersom `New-SelfSignedCertificate` cmdleten på Windows-operativsystem före Windows 10 och windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet på dessa operativ system. I det här fallet kan du `makecert.exe` använda `certutil.exe` eller för att skapa certifikatet. En alternativ metod är att [Hämta skriptet New-SelfSignedCertificateEx. ps1 från Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) och använda det för att skapa certifikatet i stället:
+> Eftersom `New-SelfSignedCertificate` cmdleten på Windows-operativsystem före Windows 10 och Windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet på dessa operativ system. I det här fallet kan du använda `makecert.exe` eller `certutil.exe` för att skapa certifikatet. En alternativ metod är att [Hämta skriptet New-SelfSignedCertificateEx. ps1 från Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) och använda det för att skapa certifikatet i stället:
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -303,8 +303,8 @@ configuration CredentialEncryptionExample
 
 I det här läget kan du köra konfigurationen, som kommer att skriva ut två filer:
 
-- En *. meta. MOF-fil som konfigurerar den lokala Configuration Manager för att dekryptera autentiseringsuppgifterna med hjälp av det certifikat som lagras i den lokala datorns Arkiv och identifieras av dess tumavtryck.
-  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx)använder *. meta. MOF-filen.
+- En \* . meta. MOF-fil som konfigurerar den lokala Configuration Manager att dekryptera autentiseringsuppgifterna med hjälp av det certifikat som lagras i den lokala datorns Arkiv och identifieras med dess tumavtryck.
+  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx)använder \* . meta. MOF-filen.
 - En MOF-fil som faktiskt tillämpar konfigurationen. Start-DscConfiguration tillämpar konfigurationen.
 
 Dessa kommandon utför dessa steg:

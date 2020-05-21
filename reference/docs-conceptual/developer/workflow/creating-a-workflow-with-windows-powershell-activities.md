@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 7d399786b9b43ee302493359d9702981045212e9
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 12b0b246b78142f3811f9f566cd94e4dabd40cc9
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78277480"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557473"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Skapa ett arbetsflöde med Windows PowerShell-aktiviteter
 
@@ -31,7 +31,7 @@ Följande procedurer beskriver hur du skapar ett arbets flöde som kontrollerar 
 
 1. Lägg till en **sekvens** -aktivitet i arbets flödet.
 
-2. Skapa ett argument med namnet `ComputerName` med en argument typ `String[]`. Det här argumentet representerar namnen på de datorer som ska kontrol leras och anslutas.
+2. Skapa ett argument `ComputerName` med namnet med en argument typ `String[]` . Det här argumentet representerar namnen på de datorer som ska kontrol leras och anslutas.
 
 3. Skapa ett argument med namnet `DomainCred` av typen [system. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Det här argumentet representerar domänautentiseringsuppgifter för ett domän konto som har behörighet att ansluta en dator till domänen.
 
@@ -39,7 +39,7 @@ Följande procedurer beskriver hur du skapar ett arbets flöde som kontrollerar 
 
 5. Lägg till en **ParallelForEach** -aktivitet i **sekvens** -aktiviteten. Ange `comp` och `ComputerName` i text rutorna så att loopen upprepas genom elementen i `ComputerName` matrisen.
 
-6. Lägg till en **sekvens** -aktivitet i bröd texten i **ParallelForEach** -aktiviteten. Ange egenskapen **DisplayName** för sekvensen till `JoinDomain`.
+6. Lägg till en **sekvens** -aktivitet i bröd texten i **ParallelForEach** -aktiviteten. Ange egenskapen **DisplayName** för sekvensen till `JoinDomain` .
 
 7. Lägg till en **GetWmiObject** -aktivitet i **JoinDomain** -sekvensen.
 
@@ -47,7 +47,7 @@ Följande procedurer beskriver hur du skapar ett arbets flöde som kontrollerar 
 
    |Egenskap|Värde|
    |--------------|-----------|
-   |**Lektion**|"Win32_ComputerSystem"|
+   |**Klass**|"Win32_ComputerSystem"|
    |**PSComputerName**|fysiskt|
    |**PSCredential**|MachineCred|
 
@@ -67,15 +67,15 @@ Följande procedurer beskriver hur du skapar ett arbets flöde som kontrollerar 
     |Egenskap|Värde|
     |--------------|-----------|
     |**Namnet**|fysiskt|
-    |**Certifiering**|MachineCred|
+    |**Autentiseringsuppgift**|MachineCred|
     |**Söker**|Microsoft. PowerShell. commands. WaitForServiceTypes. PowerShell|
-    |**Inför**|True|
-    |Vänta|True|
+    |**Inför**|Sant|
+    |Vänta|Sant|
     |PSComputerName|{""}|
 
 13. Lägg till en **GetWmiObject** -aktivitet i **JoinDomain** -sekvensen efter **RestartComputer** -aktiviteten. Redigera egenskaperna så att de är samma som föregående **GetWmiObject** -aktivitet.
 
     När du är färdig med procedurerna bör fönstret arbets flödes design se ut så här.
 
-    ![JoinDomain XAML i Workflow Designer](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
-    ![JoinDomain XAML i arbetsflödesdesignern](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "JoinDomainWorkflow")
+    ![JoinDomain XAML i Workflow Designer ](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
+     ![JoinDomain XAML i arbetsflödesdesignern](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "JoinDomainWorkflow")

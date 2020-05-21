@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC PackageManagementSource-resurs
-ms.openlocfilehash: 20b7851e44751d4bd0add718d2f7294d5215ab70
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4a4219f3c4ad7e547025a2b9cde442c7b69eeac4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942533"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557149"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource-resurs
 
@@ -49,7 +49,7 @@ PackageManagementSource [String] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
 |Kontrol |Anger om paket källan ska registreras eller avregistreras. Standardvärdet finns **.** |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 
@@ -58,7 +58,7 @@ PackageManagementSource [String] #ResourceName
 
 ## <a name="example"></a>Exempel
 
-I `https://nuget.org` det här exemplet registreras paket källan med hjälp av **PackageManagementSource** DSC-resursen.
+I det här exemplet registreras `https://nuget.org` paket källan med hjälp av **PackageManagementSource** DSC-resursen.
 
 ```powershell
 Configuration PackageManagementSourceTest

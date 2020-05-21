@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4174e84f-d516-4aca-b418-273047dcfb07
 caps.latest.revision: 7
-ms.openlocfilehash: 5761ed2168a46d6ed9a2e50554d459f5b93223ee
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f45b5e985fa38ca4ff41707f1842ddb8b930e2b1
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352180"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557507"
 ---
 # <a name="creating-a-workflow-activity-from-a-windows-powershell-cmdlet"></a>Skapa en arbetsflödesaktivitet från en Windows PowerShell-cmdlet
 
-En Windows PowerShell-modul eller-cmdlet kan paketeras som en arbets flödes aktivitet med hjälp av metoderna i klassen [Microsoft. PowerShell. Activities. Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) . Använd [Microsoft. PowerShell. Activities. Activitygenerator. Generatefrommoduleinfo *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromModuleInfo), [Microsoft. PowerShell. Activities. Activitygenerator. Generatefromcommandinfo *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromCommandInfo)och [Microsoft. PowerShell. Activities. Activitygenerator. Generatefromname *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromName) metoder i klassen [Microsoft. PowerShell. Activities. Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) för att generera C# kod som representerar en aktivitet. Du kan sedan kompilera den resulterande C# koden i en sammansättning som kan läggas till i ett projekt som en aktivitet.
+En Windows PowerShell-modul eller-cmdlet kan paketeras som en arbets flödes aktivitet med hjälp av metoderna i klassen [Microsoft. PowerShell. Activities. Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) . Använd [Microsoft. PowerShell. Activities. Activitygenerator. Generatefrommoduleinfo *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromModuleInfo), [Microsoft. PowerShell. Activities. Activitygenerator. Generatefromcommandinfo *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromCommandInfo)och [Microsoft. PowerShell. Activities. Activitygenerator. Generatefromname *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromName) metoder i klassen [Microsoft. PowerShell. Activities. Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) för att generera C#-kod som representerar en aktivitet. Du kan sedan kompilera den resulterande C#-koden i en sammansättning som kan läggas till i ett projekt som en aktivitet.
 
-Du kan sedan kompilera den resulterande C# koden i en sammansättning som kan läggas till i ett projekt som en aktivitet genom att använda en kommando rad med följande formulär.
+Du kan sedan kompilera den resulterande C#-koden i en sammansättning som kan läggas till i ett projekt som en aktivitet genom att använda en kommando rad med följande formulär.
 
 **CSC/nologo/out: AssemblyName/Target: Library/reference: system. Activities. Activity/reference: Microsoft. PowerShell. Activities codefile.cs**
 
 ## <a name="example"></a>Exempel
 
-Följande exempel visar hur du genererar C# kod för en aktivitet från en Windows PowerShell-modul.
+Följande exempel visar hur du genererar C#-kod för en aktivitet från en Windows PowerShell-modul.
 
 ```csharp
 using System;
@@ -73,7 +73,7 @@ namespace MakeActivity
 
 ## <a name="example"></a>Exempel
 
-Följande exempel visar hur du genererar C# kod för en aktivitet från en Windows PowerShell-cmdlet.
+Följande exempel visar hur du genererar C#-kod för en aktivitet från en Windows PowerShell-cmdlet.
 
 ```csharp
 using System;

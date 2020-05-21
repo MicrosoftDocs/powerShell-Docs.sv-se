@@ -8,21 +8,21 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9a770ee0-5bf8-409a-8c2b-4ece35f84596
 caps.latest.revision: 6
-ms.openlocfilehash: 50da0fccfc6cce3cb69e4226356a4db269f94543
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d011345767b1fb2bde9d5bdfcf5760fb8f0a9ca2
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357108"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557336"
 ---
 # <a name="getproc05-code-samples"></a>GetProc05 – kodexempel
 
-Här är kod exemplen för GetProc05-exempel-cmdleten. Den här `Get-Process` cmdlet liknar den cmdlet som beskrivs i [lägga till fel rapportering som inte avslutas till din cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).
+Här är kod exemplen för GetProc05-exempel-cmdleten. Denna `Get-Process` cmdlet liknar den cmdlet som beskrivs i [lägga till fel rapportering som inte avslutas till din cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).
 
 |Språk|Ämne|
 |--------------|-----------|
-|C#|[GetProc05 (C#) exempel kod](./getproc05-csharp-sample-code.md)|
-|VB.NET|[GetProc05 (VB.NET) exempel kod](./getproc05-vb-net-sample-code.md)|
+|C#|[GetProc05 (C#) – kodexempel](./getproc05-csharp-sample-code.md)|
+|VB.NET|[GetProc05 (VB.NET) – kodexempel](./getproc05-vb-net-sample-code.md)|
 
 ## <a name="see-also"></a>Se även
 

@@ -2,21 +2,20 @@
 ms.date: 07/10/2019
 keywords: Jea, PowerShell, säkerhet
 title: JEA-krav
-ms.openlocfilehash: 1833bacf49eebcccefc10f7c85a39732559c1a97
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 5083a9ad4aa87c753799d36f55540342225ecddd
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74416723"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556877"
 ---
 # <a name="prerequisites"></a>Krav
 
 Bara tillräckligt med administration är en funktion som ingår i PowerShell 5,0 och högre. I den här artikeln beskrivs förutsättningar som måste vara uppfyllda för att börja använda JEA.
 
-
 ## <a name="check-which-version-of-powershell-is-installed"></a>Kontrol lera vilken version av PowerShell som är installerad
 
-Om du vill kontrol lera vilken version av PowerShell som är installerad i systemet `$PSVersionTable` kontrollerar du variabeln i en Windows PowerShell-prompt.
+Om du vill kontrol lera vilken version av PowerShell som är installerad i systemet kontrollerar du `$PSVersionTable` variabeln i en Windows PowerShell-prompt.
 
 ```powershell
 $PSVersionTable.PSVersion
@@ -43,7 +42,7 @@ Du kan också använda JEA på din hem-eller arbets dator:
 | ----------------------- | ---------------------------------------------------- |
 | Windows 10 1607 +        | Förinstallerad                                         |
 | Windows 10 1603, 1511   | Förinstallerad med begränsad funktionalitet<sup>2</sup> |
-| Windows 10 1507         | Inte tillgängligt                                        |
+| Windows 10 1507         | Inte tillgänglig                                        |
 | Windows 8, 8,1          | Fullständiga funktioner med WMF 5,1                      |
 | Windows 7               | Begränsad funktionalitet<sup>1</sup> med WMF 5,1       |
 
@@ -83,7 +82,7 @@ Följande steg aktiverar loggning för alla PowerShell-åtgärder i systemet. Lo
 Du kan konfigurera PowerShell-modulens loggnings princip med grupprincip.
 
 1. Öppna redigerare för lokalt grupprincipobjekt på en arbets Station eller ett grupprincip objekt i konsolen grupprinciphantering på en Active Directory-domän kontrollant
-2. Navigera till **dator konfiguration\\administrativa mallar\\Windows-\\komponenter Windows PowerShell**
+2. Navigera till **dator konfiguration \\ administrativa mallar \\ Windows- \\ komponenter Windows PowerShell**
 3. Dubbelklicka på **Aktivera modul loggning**
 4. Klicka på **aktive rad**
 5. I avsnittet alternativ klickar du på **Visa** bredvid Modulnamn
