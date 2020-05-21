@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3971ce1f-271c-4938-a9d3-47ff3aaf7219
 caps.latest.revision: 9
-ms.openlocfilehash: 7df9764fd573b75f285fec592448a550e481bea3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1f09146a9e6456584f67edb52407193d8a9330ce
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357549"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564797"
 ---
 # <a name="how-to-create-a-helpinfo-xml-file"></a>Skapa en HelpInfo-XML-fil
 
@@ -27,18 +27,18 @@ Varje modul har bara en HelpInfo XML-fil, även om modulen innehåller flera hj�
 
 Det är viktigt att XML-filen HelpInfo underhålls noggrant. Om du laddar upp nya filer, men glömmer att öka versions numren, kommer uppdaterings bara hjälp att ladda ned de nya filerna till användarnas datorer. Om du lägger till hjälpfiler för en ny kultur för användar gränssnittet, men inte uppdaterar XML-HelpInfo eller placerar den på rätt plats, kommer uppdaterings bara hjälp att inte hämta de nya filerna.
 
-## <a name="in-this-section"></a>I detta avsnitt
+## <a name="in-this-section"></a>I det här avsnittet
 
 Det här avsnittet innehåller följande ämnen.
 
-- [HelpInfo XML-schema](./helpinfo-xml-schema.md)
+- [HelpInfo-XML-schema](./helpinfo-xml-schema.md)
 
-- [HelpInfo XML-exempel fil](./helpinfo-xml-sample-file.md)
+- [HelpInfo-XML-exempelfil](./helpinfo-xml-sample-file.md)
 
-- [Så här namnger du en HelpInfo XML-fil](./how-to-name-a-helpinfo-xml-file.md)
+- [Namnge en HelpInfo-XML-fil](./how-to-name-a-helpinfo-xml-file.md)
 
-- [Så här ställer du in versions nummer för HelpInfo XML](./how-to-set-helpinfo-xml-version-numbers.md)
+- [Konfigurera versionsnummer för HelpInfo-XML-filer](./how-to-set-helpinfo-xml-version-numbers.md)
 
 ## <a name="see-also"></a>Se även
 
-[Stöd för uppdaterbar hjälp](./supporting-updatable-help.md)
+[Stöd för uppdateringsbar hjälp](./supporting-updatable-help.md)

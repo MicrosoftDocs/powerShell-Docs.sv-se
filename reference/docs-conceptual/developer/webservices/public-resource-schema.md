@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
-ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 52244ee7496b99e11f0306e93728736fc9c51be5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356814"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564711"
 ---
 # <a name="public-resource-schema"></a>Schema för offentliga resurser
 
@@ -38,13 +38,13 @@ class PswsTest_Process
 
 Varje egenskaps namn föregås av en datatyp. Data typerna i det här exemplet motsvarar primitiva CLR-datatyper i .NET Framework, men egenskaper kan också vara referenser till andra resurser eller komplexa typer, vilka beskrivs senare.
 
-`Key`-kvalificeraren anger att en egenskap används för att unikt identifiera en resurs instans. En resurs kan ha mer än en nyckel.
+`Key`Kvalificeraren anger att en egenskap används för att unikt identifiera en resurs instans. En resurs kan ha mer än en nyckel.
 
-`Required`-kvalificeraren anger att egenskapen är obligatorisk. Om en egenskap är märkt med `Key`-kvalificeraren anses den vara obligatorisk och `Required` kvalificeraren är inte nödvändig.
+`Required`Kvalificeraren anger att egenskapen är obligatorisk. Om en egenskap är märkt med `Key` kvalificeraren anses den vara obligatorisk och `Required` kvalificeraren är inte nödvändig.
 
 ### <a name="complex-data-types"></a>Komplexa data typer
 
-Egenskaper för entiteter kan ha komplexa data typer. Komplexa data typer är typer som består av andra typer, ungefär som structs i programmeringsspråket C. En komplex typ deklareras i MOF-filen som en klass med `ComplexType`-kvalificeraren, som i följande exempel.
+Egenskaper för entiteter kan ha komplexa data typer. Komplexa data typer är typer som består av andra typer, ungefär som structs i programmeringsspråket C. En komplex typ deklareras i MOF-filen som en klass med `ComplexType` kvalificeraren, som i följande exempel.
 
 ```csharp
 [ComplexType]
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-Om du vill deklarera en entitets egenskap som en komplex typ deklarerar du den som en `string` typ med `EmbeddedInstance` kvalificeraren, inklusive namnet på den komplexa typen. I följande exempel visas en deklaration av en egenskap för den `PswsTest_ProcessModule` typ som har deklarerats i föregående exempel.
+Om du vill deklarera en entitets egenskap som en komplex typ deklarerar du den som en `string` typ med `EmbeddedInstance` kvalificeraren, inklusive namnet på den komplexa typen. I följande exempel visas en deklaration av en egenskap av den `PswsTest_ProcessModule` typ som har deklarerats i föregående exempel.
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];

@@ -2,23 +2,23 @@
 title: WS-Management-fjärrkommunikation (WSMan) i PowerShell Core
 description: Fjärr kommunikation i PowerShell Core med WSMan
 ms.date: 08/06/2018
-ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7b090e1463808ab10758bbd417d52fcc16c31366
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "62058887"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564521"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>WS-Management-fjärrkommunikation (WSMan) i PowerShell Core
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>Instruktioner för att skapa en fjärran sluten slut punkt
 
-PowerShell Core-paketet för Windows innehåller ett WinRM-plugin-program`pwrshplugin.dll`() och ett installations skript`Install-PowerShellRemoting.ps1`() `$PSHome`i.
+PowerShell Core-paketet för Windows innehåller ett WinRM-plugin-program ( `pwrshplugin.dll` ) och ett installations skript ( `Install-PowerShellRemoting.ps1` ) i `$PSHome` .
 De här filerna gör att PowerShell kan acceptera inkommande PowerShell fjärr anslutningar när dess slut punkt anges.
 
 ### <a name="motivation"></a>Motivation
 
-En installation av PowerShell kan upprätta PowerShell-sessioner till fjärrdatorer med hjälp av `New-PSSession` och `Enter-PSSession`.
+En installation av PowerShell kan upprätta PowerShell-sessioner till fjärrdatorer med hjälp av `New-PSSession` och `Enter-PSSession` .
 För att det ska kunna ta emot inkommande PowerShell-fjärranslutningar måste användaren skapa en WinRM Remoting-slutpunkt.
 Det här är ett explicit scenario där användaren kör Install-PowerShellRemoting. ps1 för att skapa WinRM-slutpunkten.
 Installations skriptet är en kortsiktig lösning tills vi lägger till ytterligare funktioner till `Enable-PSRemoting` för att utföra samma åtgärd.
@@ -60,11 +60,11 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 
 ## <a name="how-to-connect-to-the-new-endpoint"></a>Så här ansluter du till den nya slut punkten
 
-Skapa en PowerShell-session för den nya PowerShell-slutpunkten genom att ange `-ConfigurationName "some endpoint name"`. Om du vill ansluta till PowerShell-instansen från exemplet ovan använder du antingen:
+Skapa en PowerShell-session för den nya PowerShell-slutpunkten genom att ange `-ConfigurationName "some endpoint name"` . Om du vill ansluta till PowerShell-instansen från exemplet ovan använder du antingen:
 
 ```powershell
 New-PSSession ... -ConfigurationName "powershell.6.0.0"
 Enter-PSSession ... -ConfigurationName "powershell.6.0.0"
 ```
 
-Observera att `New-PSSession` och `Enter-PSSession` anrop som inte anges `-ConfigurationName` kommer att riktas mot standard-PowerShell- `microsoft.powershell`slutpunkten.
+Observera att `New-PSSession` och `Enter-PSSession` anrop som inte anges `-ConfigurationName` kommer att riktas mot standard-PowerShell-slutpunkten `microsoft.powershell` .

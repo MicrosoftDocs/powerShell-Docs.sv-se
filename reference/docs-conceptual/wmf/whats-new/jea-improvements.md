@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Förbättringar i JEA (Just Enough Administration)
-ms.openlocfilehash: 847ae92a6225023bcd0ee3dfe7c7058bdc356836
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4e469e4554e9220733bdaecc1779772fb0312b93
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71145035"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560108"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Förbättringar i JEA (Just Enough Administration)
 
@@ -26,7 +26,7 @@ UserDriveMaximumSize = 10485760    # 10 MB
 
 Mappen som används för att återställa användar enheten skapas på`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
 
-Om du vill använda användar enheten och kopiera filer till/från en JEA-slutpunkt som kon figurer ATS för att exponera `-ToSession` användar `-FromSession` enheten använder `Copy-Item`du parametrarna och på.
+Om du vill använda användar enheten och kopiera filer till/från en JEA-slutpunkt som kon figurer ATS för att exponera användar enheten använder du `-ToSession` `-FromSession` parametrarna och på `Copy-Item` .
 
 ```powershell
 # Connect to the JEA endpoint

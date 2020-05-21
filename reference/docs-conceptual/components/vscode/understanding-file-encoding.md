@@ -2,12 +2,12 @@
 title: Förstå filkodning i VS Code och PowerShell
 description: Konfigurera fil kodning i VS Code och PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: 991e3ccc95dd0dd2106cefe6c68371e59c031f35
-ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
+ms.openlocfilehash: 1333c5aedd5abd16078ac32979f19f38818a26c8
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83271873"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563828"
 ---
 # <a name="understanding-file-encoding-in-vs-code-and-powershell"></a>Förstå filkodning i VS Code och PowerShell
 
@@ -25,8 +25,9 @@ Både VS Code och PowerShell installeras med en lämpliga standard kodnings konf
 
 Kodnings problem inträffar när kodningen för VS Code eller skript filen inte matchar den förväntade kodningen av PowerShell. Det finns inget sätt för PowerShell att automatiskt avgöra fil kodningen.
 
-Det är mer troligt att du har problem med kodningen när du använder tecken som inte är i [ASCII-teckenuppsättningen med sju bitar](https://ascii.cl/). Ett exempel:
+Det är mer troligt att du har problem med kodningen när du använder tecken som inte är i [ASCII-teckenuppsättningen med sju bitar](https://ascii.cl/). Till exempel:
 
+<!-- markdownlint-disable MD038 -->
 - Utökade tecken som inte är bokstäver, t. ex. tank streck ( `—` ), hårt blank steg ( ` ` ) eller vänster dubbel citat tecken ( `"` )
 - Accenttecken med latinska tecken ( `É` , `ü` )
 - Icke-latinska tecken som kyrilliska ( `Д` , `Ц` )
@@ -122,7 +123,7 @@ Du kan också lägga till följande för att automatiskt identifiera kodning nä
 "files.autoGuessEncoding": true
 ```
 
-Om du inte vill att de här inställningarna ska påverka alla filtyper, kan du även använda olika språk konfigurationer i VS Code. Skapa en språkspecifik inställning genom att placera inställningarna i ett `[<language-name>]` fält. Ett exempel:
+Om du inte vill att de här inställningarna ska påverka alla filtyper, kan du även använda olika språk konfigurationer i VS Code. Skapa en språkspecifik inställning genom att placera inställningarna i ett `[<language-name>]` fält. Till exempel:
 
 ```json
 "[powershell]": {
@@ -262,7 +263,6 @@ Det finns några andra bra inlägg på kodning och konfigurering av kodning i Po
   - [#1751](https://github.com/PowerShell/VSCode-powershell/issues/1751)
 - [Den klassiska *Joel om program vara* skriver upp om Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 - [Kodning i .NET standard](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
-
 
 [@mklement0]: https://github.com/mklement0
 [@rkeithhill]: https://github.com/rkeithhill

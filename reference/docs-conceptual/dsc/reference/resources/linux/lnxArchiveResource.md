@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxArchive-resurs
-ms.openlocfilehash: 77b52ad68344ba791501baeb585a5001cc97a126
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 56f8df65945f16a93c69407ea30f51878a201b63
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941511"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560924"
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>DSC för Linux nxArchive-resurs
 
@@ -40,12 +40,12 @@ nxArchive <string> #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
 |Kontrol |Avgör om du ska kontrol lera om arkivets innehåll finns vid **målet**. Ange att den här egenskapen **finns för att** se till att innehållet finns. Ange det som **frånvarande** för att se till att de inte finns. Standardvärdet finns **.** |
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visas hur du använder **nxArchive** -resursen för att kontrol lera att innehållet i en arkivfil som `website.tar` heter finns och extraheras vid ett angivet mål.
+I följande exempel visas hur du använder **nxArchive** -resursen för att kontrol lera att innehållet i en arkivfil som heter `website.tar` finns och extraheras vid ett angivet mål.
 
 ```powershell
 Import-DSCResource -Module nx

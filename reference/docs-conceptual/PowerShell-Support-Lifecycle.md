@@ -2,12 +2,12 @@
 title: Supportlängd för PowerShell Core
 description: Principer som styr support för PowerShell Core
 ms.date: 03/09/2020
-ms.openlocfilehash: 45b639ea5f1a4d4e1decaaeacd998cdd3e3d7d02
-ms.sourcegitcommit: 28a40a0fe590a7efe893793f7db88320dbba64ff
+ms.openlocfilehash: e7ec0fd9a702b7d23a784eff6e730fc3a6c30467
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83407769"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560737"
 ---
 # <a name="powershell-support-lifecycle"></a>Support livs cykel för PowerShell
 
@@ -23,7 +23,7 @@ Du kan också få hjälp från andra medlemmar i communityn i Microsoft PowerShe
 
 ## <a name="lifecycle-of-powershell-7"></a>Livs cykel för PowerShell 7
 
-I och med lanseringen av PowerShell 7 fortsätter PowerShell att stödjas enligt [Microsofts moderna livs cykel policy][modern], men support datum är länkade till [support livs cykeln för .net Core][Long-Term]. I den här underhålls metoden kan kunder välja långsiktiga support-versioner (LTS) eller aktuella versioner. PowerShell 7,0 är en LTS-version. Support upphör med supporten för .NET Core 3,1. Nästa LTS-utgåva följer nästa .NET Core LTS-version. Se [PowerShell-versionerna av uttjänta-tabellen](#powershell-releases-end-of-life) för uell-slutna support datum. LTS versions uppdateringar innehåller bara kritiska säkerhets-och underhålls uppdateringar och korrigeringar som är utformade för att undvika eller minimera påverkan på befintliga arbets belastningar.
+I och med lanseringen av PowerShell 7 fortsätter PowerShell att stödjas enligt [Microsofts moderna livs cykel policy][modern], men support datum är länkade till [support livs cykeln för .net Core][Long-Term]. I den här underhålls metoden kan kunder välja långsiktiga support-versioner (LTS) eller aktuella versioner. PowerShell 7,0 är en LTS-version. Support upphör med supporten för .NET Core 3,1. Nästa LTS-utgåva följer nästa .NET Core LTS-version. Mer information finns i [PowerShell-versionerna av uttjänta-tabellen](#powershell-releases-end-of-life) för aktuella slut support datum. LTS versions uppdateringar innehåller bara kritiska säkerhets-och underhålls uppdateringar och korrigeringar som är utformade för att undvika eller minimera påverkan på befintliga arbets belastningar.
 
 En aktuell version är en version som sker mellan LTS-versioner. Aktuella versioner kan innehålla viktiga korrigeringar, innovationer och nya funktioner. En aktuell version stöds i tre månader efter nästa aktuella eller LTS version.
 
@@ -144,17 +144,17 @@ Mer information finns i den [about_Windows_Compatibility][] artikeln och i [list
 PowerShell följer [villkoren för Microsoft Security Servicing för Windows][].
 I tabellen nedan beskrivs de funktioner som uppfyller underhålls villkoren och de som inte gör det.
 
-| Funktion                          | Typ             | Avsikt att betjäna tjänsten? |
-|----------------------------------|------------------|--------------------|
-| Körnings princip                 | Skydd i djupet | Inga                 |
-| System låsning – med AppLocker | Skydd i djupet | Inga                 |
-| System låsning – med WDAC      | Säkerhetsfunktion | Ja                |
+| Funktion                          | Typ             |
+|----------------------------------|------------------|
+| Körnings princip                 | Skydd i djupet |
+| System låsning – med AppLocker | Skydd i djupet |
+| System låsning – med WDAC      | Säkerhetsfunktion |
 
 ## <a name="release-history"></a>Versions historik
 
 Följande tabell innehåller en tids linje för de större versionerna av PowerShell. Den här tabellen tillhandahålls för historisk referens. Den är inte avsedd att användas för att fastställa support livs cykeln.
 
-|       Version        | Lanserings datum |                                                                     Obs!                                                                      |
+|       Version        | Lanserings datum |                                                                     Anteckning                                                                      |
 | -------------------- | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | PowerShell 7,0 (LTS) |   Mar – 2020   | Bygger på .NET Core 3,1 (LTS)                                                                                                                  |
 | PowerShell 6,0       |   Jan-2018   | Första versionen bygger på .NET Core 2,1. Kan installeras på Windows, Linux och macOS.                                                              |

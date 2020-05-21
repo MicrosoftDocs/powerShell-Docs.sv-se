@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2933a6ca-fe92-4ba2-97ee-ef0f0d5fdfcf
 caps.latest.revision: 8
-ms.openlocfilehash: b73284adb4bf228510bf8134aa4c6a10561b7ea2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2c9d6040b7a9c17dc5204c8eb835fd69780f62c5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352257"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564265"
 ---
 # <a name="configuring-role-based-authorization"></a>Konfigurera rollbaserad auktorisering
 
@@ -23,9 +23,9 @@ I det här exemplet ska du konfigurera en XML-fil som används av OData-appen ex
 
 ## <a name="modifying-the-rbacconfigurationxml-file"></a>Ändra filen RBacConfiguration. XML
 
-Den här filen definierar auktoriseringsprincipen för programmet. Roller definieras med hjälp av `Group` noder. En `Group` nod definierar de Windows PowerShell-kommandon som användare som tilldelats gruppen kan köra. Användare tilldelas grupper genom att använda `User` noder.
+Den här filen definierar auktoriseringsprincipen för programmet. Roller definieras med hjälp av `Group` noder. En `Group` nod definierar de Windows PowerShell-kommandon som användare som tilldelats gruppen kan köra. Användare tilldelas till grupper med hjälp av `User` noder.
 
-I de här exemplen ska du lägga till en modul till administratören `Group` noden och lägga till en användare i varje grupp.
+I de här exemplen ska du lägga till en modul i `Group` noden administratör och lägga till en användare i varje grupp.
 
 #### <a name="adding-a-module-to-a-group-node"></a>Lägga till en modul i en gruppnod
 
@@ -85,9 +85,9 @@ I de här exemplen ska du lägga till en modul till administratören `Group` nod
    </RbacConfiguration>
    ```
 
-2. Filen innehåller två `Group` noder. Dessa representerar de två roller som används i det här exemplet, `NonAdminGroup` och `AdminGroup` roller.
+2. Filen innehåller två `Group` noder. Dessa representerar de två roller som används i det här exemplet, `NonAdminGroup` och `AdminGroup` rollerna och.
 
-   Lägg till följande XML direkt efter stängnings `Cmdlets`s tag gen i den första `Group` noden:
+   Direkt efter den avslutande `Cmdlets` taggen i den första `Group` noden lägger du till följande XML:
 
    ```xml
    <Modules>
@@ -97,9 +97,9 @@ I de här exemplen ska du lägga till en modul till administratören `Group` nod
 
 #### <a name="adding-a-user-to-a-group-node"></a>Lägga till en användare till en gruppnod
 
-1. Öppna filen **RBacConfiguration. XML** i en text redigerare. Den här filen finns i mappen C:\\\inetpub\wwwroot\Modata om du inte ändrade slut punkts namnet före installationen.
+1. Öppna filen **RBacConfiguration. XML** i en text redigerare. Den här filen finns i mappen C: \\ \inetpub\wwwroot\Modata om du inte ändrade slut punkts namnet före installationen.
 
-2. Lägg till följande XML direkt efter den avslutande taggen i `Users`-noden:
+2. Lägg till följande XML direkt efter den avslutande taggen i `Users` noden:
 
    ```xml
    <User Name="UserName" GroupName="AdminGroup" AuthenticationType="Basic" DomainName="DomainName"/>

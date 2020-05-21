@@ -10,12 +10,12 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: 832ea622-25a9-4760-904d-e15d6105bb27
 caps.latest.revision: 7
-ms.openlocfilehash: 363c40c3eacf406bb29662c89a6b30eeb715d513
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 331634f44e8c06f7d2a479dccf30dbef1067f515
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357353"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559972"
 ---
 # <a name="supporting-updatable-help"></a>Stöd för uppdateringsbar hjälp
 
@@ -23,22 +23,22 @@ ms.locfileid: "72357353"
 
 Det här avsnittet innehåller följande ämnen.
 
-- [Uppdaterings bar hjälp översikt](./updatable-help-overview.md)
+- [Översikt över uppdateringsbar hjälp](./updatable-help-overview.md)
 
-- [Uppdaterings bar hjälp redigering: steg för steg](./updatable-help-authoring-step-by-step.md)
+- [Redigering av uppdateringsbar hjälp: Steg för steg](./updatable-help-authoring-step-by-step.md)
 
-- [Hur uppdaterings bar hjälp fungerar](./how-updatable-help-works.md)
+- [Så här fungerar uppdateringsbar hjälp](./how-updatable-help-works.md)
 
-- [Så här skapar du en HelpInfo XML-fil](./how-to-create-a-helpinfo-xml-file.md)
+- [Skapa en HelpInfo-XML-fil](./how-to-create-a-helpinfo-xml-file.md)
 
-- [Så här förbereder du uppdaterings bara CAB-filer](./how-to-prepare-updatable-help-cab-files.md)
+- [Förbereda CAB-filer för uppdateringsbar hjälp](./how-to-prepare-updatable-help-cab-files.md)
 
 - [Uppdatera hjälpfiler](./how-to-update-help-files.md)
 
-- [Testa uppdaterings bara hjälp](./how-to-test-updatable-help.md)
+- [Testa uppdateringsbar hjälp](./how-to-test-updatable-help.md)
 
 ## <a name="see-also"></a>Se även
 
-[Support online-hjälp](./supporting-online-help.md)
+[Stöd för onlinehjälp](./supporting-online-help.md)
 
 [Uppdaterings bar hjälp status tabell](https://www.microsoft.com/en-us/itpro/windows)

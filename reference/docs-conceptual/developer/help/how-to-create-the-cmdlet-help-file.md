@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
 caps.latest.revision: 17
-ms.openlocfilehash: 186a8ceecea47564503dc181a76cc314033b6d3f
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: cc77c0546de98e492c9724e051b9d72f1ebfdcb6
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76996038"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560176"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>Skapa cmdlet-hjälpfilen
 
@@ -93,18 +93,18 @@ I det här avsnittet beskrivs hur du skapar en giltig XML-fil som innehåller in
 
  [Så här lägger du till den detaljerade beskrivningen i ett hjälp avsnitt för cmdlet](./how-to-add-a-cmdlet-description.md)
 
- [Så här lägger du till syntax i ett cmdlet-hjälp ämne](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
+ [Lägga till syntax till ett cmdlet-hjälpavsnitt](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
 
  [Så här lägger du till parametrar i ett hjälp avsnitt för cmdlet](./how-to-add-parameter-information.md)
 
- [Så här lägger du till indatatyper i ett hjälp avsnitt för cmdlet](./how-to-add-input-types-to-a-cmdlet-help-topic.md)
+ [Lägga till indatatyper i ett cmdlet-hjälpavsnitt](./how-to-add-input-types-to-a-cmdlet-help-topic.md)
 
- [Så här lägger du till retur värden i ett cmdlet-hjälp avsnitt](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
+ [Lägga till returvärden i ett cmdlet-hjälpavsnitt](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
 
  [Så här lägger du till anteckningar i hjälp avsnittet om cmdlet](./how-to-add-notes-to-a-cmdlet-help-topic.md)
 
- [Så här lägger du till exempel i ett hjälp avsnitt för cmdlet](./how-to-add-examples-to-a-cmdlet-help-topic.md)
+ [Lägga till exempel i ett cmdlet-hjälpavsnitt](./how-to-add-examples-to-a-cmdlet-help-topic.md)
 
- [Så här lägger du till relaterade länkar i ett hjälp avsnitt för cmdlet](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
+ [Lägga till relaterade länkar i ett cmdlet-hjälpavsnitt](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
 
  [Windows PowerShell SDK](../windows-powershell-reference.md)

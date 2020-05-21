@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Skriptspårning och -loggning
-ms.openlocfilehash: 6b7e5022cb4c974da5ddb3d670b5808dc9fb7bdc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: dd18453c041428d5a6537c413c3ebe324a62dfee
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71145175"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565014"
 ---
 # <a name="script-tracing-and-logging"></a>Skriptspårning och -loggning
 
-Även om PowerShell redan har inställningen **LogPipelineExecutionDetails** grupprincip för att logga anropet av cmdlets, har PowerShell: s skript språk flera funktioner som du kanske vill logga och granska. Den nya detaljerade skript spårnings funktionen ger detaljerad spårning och analys av PowerShell-skript aktivitet på ett system. När du har aktiverat detaljerad skript spårning loggar PowerShell alla skript block till ETW-händelseloggen, **Microsoft-Windows-PowerShell/Operational**. Om ett skript block skapar ett annat skript block, till exempel genom att `Invoke-Expression`anropa, loggas även det anropade skript blocket.
+Även om PowerShell redan har inställningen **LogPipelineExecutionDetails** grupprincip för att logga anropet av cmdlets, har PowerShell: s skript språk flera funktioner som du kanske vill logga och granska. Den nya detaljerade skript spårnings funktionen ger detaljerad spårning och analys av PowerShell-skript aktivitet på ett system. När du har aktiverat detaljerad skript spårning loggar PowerShell alla skript block till ETW-händelseloggen, **Microsoft-Windows-PowerShell/Operational**. Om ett skript block skapar ett annat skript block, till exempel genom `Invoke-Expression` att anropa, loggas även det anropade skript blocket.
 
-Loggning har Aktiver ATS med inställningen **Aktivera PowerShell-skript block loggning** Grupprincip i **administrativa mallar** -> **Windows-komponenter** -> **Windows PowerShell**.
+Loggning har Aktiver ATS med inställningen **Aktivera PowerShell-skript block loggning** Grupprincip i **administrativa mallar**  ->  **Windows-komponenter**  ->  **Windows PowerShell**.
 
 Händelserna är:
 
@@ -26,7 +26,6 @@ Händelserna är:
 | EventId | Engine_ScriptBlockCompiled (0x1008 = 4104)                              |
 | Meddelande | Skapar script block-text (%1 av %2): </br> %3 </br> Script block-ID: %4 |
 
-
 Texten som är inbäddad i meddelandet är den kompilerade skript blockets omfattning. ID är ett GUID som behålls för skript blockets livs längd.
 
 När du aktiverar utförlig loggning skriver funktionen start-och slut markörer:
@@ -37,7 +36,7 @@ När du aktiverar utförlig loggning skriver funktionen start-och slut markörer
 | Opcode  | Öppna/Stäng                                                               |
 | Uppgift    | CommandStart / CommandStop                                                 |
 | Följt | Körnings utrymme                                                                   |
-| EventId | Start\_\_information\_för script block Invoke (0x1009 = 4105)/ </br> Script block\_anropa\_fullständig\_detalj (0x100A = 4106) |
+| EventId | \_Start information för script block Invoke \_ \_ (0x1009 = 4105)/ </br> Script block \_ anropa \_ fullständig \_ detalj (0x100A = 4106) |
 | Meddelande | Startade/slutfört anrop av script block-ID: %1 </br> Körnings utrymme-ID: %2 |
 
 ID: t är det GUID som representerar skript blocket (som kan korreleras med händelse-ID 0x1008) och körnings utrymme-ID: t representerar den körnings utrymme som det här skript blocket kördes i.

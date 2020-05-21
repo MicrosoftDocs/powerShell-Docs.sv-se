@@ -1,17 +1,17 @@
 ---
 ms.date: 08/25/2017
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: ObjectModelRoot-objektet
-ms.openlocfilehash: 0b04bdb3127edaac7b504556843efb64ee65ed13
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: cd94e69de2e62f7ce9fac413e15458ae9986540e
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75736036"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560652"
 ---
 # <a name="the-objectmodelroot-object"></a>ObjectModelRoot-objektet
 
-`$psISE` Objektet, som är huvud rotens objekt i Windows POWERSHELL® Ise (Integrated Scripting Environment) är en instans av klassen Microsoft. PowerShell. Host. ISE. ObjectModelRoot. I det här avsnittet beskrivs egenskaperna för **ObjectModelRoot** -objektet.
+`$psISE`Objektet, som är huvud rotens objekt i Windows PowerShell® ISE (Integrated Scripting Environment) är en instans av klassen Microsoft. PowerShell. Host. ISE. ObjectModelRoot. I det här avsnittet beskrivs egenskaperna för **ObjectModelRoot** -objektet.
 
 ## <a name="properties"></a>Egenskaper
 

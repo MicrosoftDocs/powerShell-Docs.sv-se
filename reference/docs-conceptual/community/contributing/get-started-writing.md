@@ -3,12 +3,12 @@ title: Kom igång och bidra till PowerShell-dokumentationen
 description: Den här artikeln är en översikt över hur du kommer igång som en deltagare i PowerShell-dokumentationen.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: fdf29feb75abb6592205aaf1726c07a60ce3a924
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 989605f21685decda5f916298a05ec7f5600e575
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81005524"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560686"
 ---
 # <a name="get-started-contributing-to-powershell-documentation"></a>Kom igång och bidra till PowerShell-dokumentationen
 
@@ -43,11 +43,11 @@ Den [konceptuella dokumentationen][conceptual] ordnas inte efter version. Alla a
 
 ## <a name="using-git-branches"></a>Använda Git-grenar
 
-Standard grenen för PowerShell-dokument är `staging` grenen. Ändringar som görs i arbets grenar sammanfogas i `staging` grenen innan de publiceras. Ungefär en gång i veckan slås `staging` grenen samman i `live` grenen. `live` Grenen innehåller det innehåll som har publicerats till docs.Microsoft.com. Ändringar ska aldrig göras direkt i `live` grenen.
+Standard grenen för PowerShell-dokument är `staging` grenen. Ändringar som görs i arbets grenar sammanfogas i `staging` grenen innan de publiceras. Ungefär en gång i veckan `staging` slås grenen samman i `live` grenen. `live`Grenen innehåller det innehåll som har publicerats till docs.Microsoft.com. Ändringar ska aldrig göras direkt i `live` grenen.
 
 Om du skickar en ändring i dokumentationen som bara gäller för en version av PowerShell som inte har släppts, kontrollerar du om det finns en versionsgren för den versionen. Alla ändringar som avser en specifik, framtida version bör riktas mot versionsgrenen. Versionsgrenar har följande namnmönster: `release-<version>`.
 
-Innan du påbörjar ändringarna skapar du en arbets gren i din lokala kopia av databasen PowerShell-dok. Detta bör vara en [klon av din förgrening][fork]. Se till att synkronisera din lokala lagrings plats innan du skapar din arbets gren. Arbets grenen ska skapas från en uppdatering till en uppdaterad kopia av- `staging` eller `release` -grenen.
+Innan du påbörjar ändringarna skapar du en arbets gren i din lokala kopia av databasen PowerShell-dok. Detta bör vara en [klon av din förgrening][fork]. Se till att synkronisera din lokala lagrings plats innan du skapar din arbets gren. Arbets grenen ska skapas från en uppdatering till en uppdaterad kopia av-eller- `staging` `release` grenen.
 
 Gör de ändringar som du vill skicka efter processen i avsnittet [göra din ändring][making-changes] i den centrala bidrags guiden.
 
@@ -59,7 +59,7 @@ Precis som i PowerShell [RFC-processen][rfc], vilket innebär att du skapar ett 
 
 ### <a name="updating-existing-articles"></a>Befintliga artiklar uppdateras
 
-I tillämpliga fall dupliceras cmdlet Reference-artikeln i alla versioner av PowerShell. När du rapporterar ett problem med en cmdlet-referens `About_` eller en artikel, måste du ange vilka versioner som påverkas av problemet. Issue-mallen i GitHub innehåller en check lista för versioner. Använd kryss rutorna för att ange vilka versioner av innehållet som påverkas. När du skickar en ändring av en artikel för ett problem som påverkar flera versioner av innehållet, måste du tillämpa lämplig ändring för varje version av filen.
+I tillämpliga fall dupliceras cmdlet Reference-artikeln i alla versioner av PowerShell. När du rapporterar ett problem med en cmdlet-referens eller en `About_` artikel, måste du ange vilka versioner som påverkas av problemet. Issue-mallen i GitHub innehåller en check lista för versioner. Använd kryss rutorna för att ange vilka versioner av innehållet som påverkas. När du skickar en ändring av en artikel för ett problem som påverkar flera versioner av innehållet, måste du tillämpa lämplig ändring för varje version av filen.
 
 ## <a name="next-steps"></a>Nästa steg
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
-ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4693a2ec02a8f010f900bebf5a50853edef88cb1
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352362"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560941"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Snabbstart för Windows PowerShell-providers
 
@@ -35,9 +35,9 @@ Skapa ett klass biblioteks projekt med namnet AccessDBProviderSample i Visual St
 
 1. Lägg till sammansättningen system. Management. Automation som en referens till ditt projekt.
 
-2. Klicka på **Project > AccessDBProviderSample-egenskaper > Felsök**. I **Start Project**klickar du på **Starta externt program**och navigerar till Windows PowerShell-filen (vanligt vis c:\Windows\System32\WindowsPowerShell\v1.0\\. PowerShell. exe).
+2. Klicka på **Project > AccessDBProviderSample-egenskaper > Felsök**. I **Start Project**klickar du på **Starta externt program**och navigerar till Windows PowerShell-filen (vanligt vis c:\Windows\System32\WindowsPowerShell\v1.0 \\ . PowerShell. exe).
 
-3. Under **Start alternativ**anger du följande i rutan **kommando rads argument** : `-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
+3. Under **Start alternativ**anger du följande i rutan **kommando rads argument** :`-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
 
 ### <a name="declaring-the-provider-class"></a>Deklarera Provider-klassen
 
@@ -69,7 +69,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 Metoden [system. Management. Automation. Provider. Drivecmdletprovider. NewDrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) anropas av Windows PowerShell-motorn när en användare anropar cmdleten [Microsoft. PowerShell. commands. NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) som anger namnet på din Provider. PSDriveInfo-parametern skickas av Windows PowerShell-motorn och metoden returnerar den nya enheten till Windows PowerShell-motorn. Den här metoden måste deklareras inom klassen som skapats ovan.
 
-Metoden kontrollerar först att både enhetsobjektet och enhets roten som skickades finns, och returnerar `null` om någon av dem inte gör det. Den använder sedan en konstruktor för den interna klassen AccessDBPSDriveInfo för att skapa en ny enhet och en anslutning till den åtkomst databas enheten representerar.
+Metoden kontrollerar först att både det enhets objekt och den enhets rot som skickades finns, returnerar `null` om någon av dem inte gör det. Den använder sedan en konstruktor för den interna klassen AccessDBPSDriveInfo för att skapa en ny enhet och en anslutning till den åtkomst databas enheten representerar.
 
 ```csharp
 protected override PSDriveInfo NewDrive(PSDriveInfo drive)

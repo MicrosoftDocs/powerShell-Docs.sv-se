@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC WaitForAny-resurs
-ms.openlocfilehash: 61fee456d2652e08ed9bdbe64457627ff5b2e145
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 181760ba0a4f493c451dafb68e7881adda2d58c0
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941280"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560788"
 ---
 # <a name="dsc-waitforany-resource"></a>DSC WaitForAny-resurs
 
@@ -39,7 +39,7 @@ WaitForAny [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|ResourceName |Resurs namnet som är beroende av. Om den här resursen tillhör en annan konfiguration formaterar du namnet som `[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]`. |
+|ResourceName |Resurs namnet som är beroende av. Om den här resursen tillhör en annan konfiguration formaterar du namnet som `[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]` . |
 |NodeName |Målvärdena för resursen som är beroende av. |
 |RetryIntervalSec |Antalet sekunder innan nytt försök. Minimivärdet är 1. |
 |RetryCount |Det maximala antalet försök att försöka igen. |
@@ -49,7 +49,7 @@ WaitForAny [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 
 > [!NOTE]

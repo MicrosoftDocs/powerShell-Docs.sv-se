@@ -1,12 +1,12 @@
 ---
 ms.date: 09/13/2019
 title: Skapar Get-WinEvent-frågor med FilterHashtable
-ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 485b0cf05489d9add201c71c01fe2ed0c48db387
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "73444381"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563928"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Skapar Get-WinEvent-frågor med FilterHashtable
 
@@ -14,7 +14,7 @@ Om du vill läsa det ursprungliga blogg inlägget 3 juni 2014 **Scripting Guy** 
 
 Den här artikeln är ett utdrag från det ursprungliga blogg inlägget och förklarar hur du använder `Get-WinEvent` cmdletens **FilterHashtable** -parameter för att filtrera händelse loggar. PowerShell- `Get-WinEvent` cmdleten är en kraftfull metod för att filtrera Windows-händelser och diagnostikloggar. Prestanda förbättras när en `Get-WinEvent` fråga använder parametern **FilterHashtable** .
 
-När du arbetar med stora händelse loggar är det inte effektivt att skicka objekt nedåt i pipelinen till ett `Where-Object` kommando. Innan PowerShell 6 var `Get-EventLog` cmdleten ett annat alternativ för att hämta loggdata. Följande kommandon är till exempel ineffektiva för att filtrera **Microsoft-Windows-defrag-** loggar:
+När du arbetar med stora händelse loggar är det inte effektivt att skicka objekt nedåt i pipelinen till ett `Where-Object` kommando. Innan PowerShell 6 `Get-EventLog` var cmdleten ett annat alternativ för att hämta loggdata. Följande kommandon är till exempel ineffektiva för att filtrera **Microsoft-Windows-defrag-** loggar:
 
 ```powershell
 Get-EventLog -LogName Application | Where-Object Source -Match defrag
@@ -38,15 +38,15 @@ Mer information finns i [Scripting Guy-serien av blogg inlägg om uppräkning](h
 
 ## <a name="hash-table-key-value-pairs"></a>Nyckel/värde-par för hash-tabell
 
-Om du vill bygga effektiva frågor använder `Get-WinEvent` du cmdleten med parametern **FilterHashtable** .
+Om du vill bygga effektiva frågor använder du `Get-WinEvent` cmdleten med parametern **FilterHashtable** .
 **FilterHashtable** accepterar en hash-tabell som ett filter för att hämta detaljerad information från händelse loggar i Windows. En hash-tabell använder **nyckel/värde-** par. Mer information om hash-tabeller finns i [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
 
 Om **nyckel-** värdeparen finns på samma rad måste de avgränsas med ett semikolon. Om varje **nyckel/värde-** par finns på en separat rad behövs inte semikolonet. I den här artikeln placeras till exempel **nyckel värdes** par på separata rader och använder inte semikolon.
 
 I det här exemplet används flera av **FilterHashtable** -parameterns **nyckel/värde-** par. Den slutförda frågan innehåller **LogName**, **ProviderName**, **keywords**, **ID**och **Level**.
 
-De accepterade **nyckel-** värdeparen visas i följande tabell och ingår i dokumentationen för parametern [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/Get-WinEvent)
-**FilterHashtable** .
+De accepterade **nyckel-** värdeparen visas i följande tabell och ingår i dokumentationen för parametern [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/Get-WinEvent) 
+ **FilterHashtable** .
 
 I följande tabell visas nyckel namnen, data typerna och om jokertecken accepteras för ett data värde.
 
@@ -64,7 +64,7 @@ I följande tabell visas nyckel namnen, data typerna och om jokertecken accepter
 | Data           | `<String[]>`    | Nej                           |
 | `<named-data>` | `<String[]>`    | Nej                           |
 
-`<named-data>` Nyckeln representerar ett namngivet händelse data fält. Till exempel kan Perflib Event 1008 innehålla följande händelse data:
+`<named-data>`Nyckeln representerar ett namngivet händelse data fält. Till exempel kan Perflib Event 1008 innehålla följande händelse data:
 
 ```xml
 <EventData>
@@ -85,7 +85,7 @@ Get-WinEvent -FilterHashtable @{LogName='Application'; 'Service'='Bits'}
 
 ## <a name="building-a-query-with-a-hash-table"></a>Skapa en fråga med en hash-tabell
 
-Om du vill kontrol lera resultaten och felsöka problem kan du skapa hash-tabellen ett **nyckel/värde-** par i taget. Frågan hämtar data från **program** loggen. Hash-tabellen motsvarar `Get-WinEvent –LogName Application`.
+Om du vill kontrol lera resultaten och felsöka problem kan du skapa hash-tabellen ett **nyckel/värde-** par i taget. Frågan hämtar data från **program** loggen. Hash-tabellen motsvarar `Get-WinEvent –LogName Application` .
 
 Börja genom att skapa `Get-WinEvent` frågan. Använd **FilterHashtable** -parameterns **nyckel/värde-** par med nyckeln, **LogName**och värdet, **programmet**.
 
@@ -99,7 +99,7 @@ Fortsätt att skapa hash-tabellen med **ProviderName** -nyckeln. **ProviderName*
 
 ![Bild av Windows Loggboken-källor.](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
-Uppdatera hash-tabellen och inkludera **nyckel/värde-** paret med nyckeln, * * ProviderName och värdet **.NET Runtime**.
+Uppdatera hash-tabellen och inkludera **nyckel värdes** paret med nyckeln, **ProviderName**och värdet **.NET Runtime**.
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -112,7 +112,7 @@ Använd **Sök vägs** nyckeln om din fråga behöver hämta data från arkivera
 
 ## <a name="using-enumerated-values-in-a-hash-table"></a>Använda uppräknade värden i en hash-tabell
 
-**Nyckelord** är nästa nyckel i hash-tabellen. Data typen **keywords** är en matris av `[long]` värde typen som innehåller ett stort tal. Använd följande kommando för att hitta det högsta värdet `[long]`:
+**Nyckelord** är nästa nyckel i hash-tabellen. Data typen **keywords** är en matris av `[long]` värde typen som innehåller ett stort tal. Använd följande kommando för att hitta det högsta värdet `[long]` :
 
 ```powershell
 [long]::MaxValue
@@ -242,7 +242,7 @@ De uppräknade värdena dokumenteras i **.NET Framework**. Mer information finns
 | Information  |   4   |
 | Varning        |   3   |
 | Fel          |   2   |
-| Kritisk       |   1   |
+| Kritiskt       |   1   |
 | LogAlways      |   0   |
 
 Hash-tabellen för den slutförda frågan innehåller nyckeln, **nivån**och värdet, **2**.

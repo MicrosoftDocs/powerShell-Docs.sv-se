@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 9079f40e75dae86c22fd8b4f8a45d501c6125498
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9b9a598b592d0ac60099020e564ec7fffa54e683
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416024"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561077"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Lägga till användarmeddelanden i en cmdlet
 
@@ -56,7 +56,7 @@ Det finns ingen gräns för hur många meddelanden som din cmdlet kan skriva ell
 
 Det första steget i att skapa en cmdlet namnger alltid cmdleten och deklarerar den .NET-klass som implementerar cmdleten. Alla sorters cmdlets kan skriva användar meddelanden från dess metoder för bearbetning av indata. i allmänhet kan du namnge denna cmdlet med hjälp av verb som anger vilka system ändringar som cmdleten utför. Mer information om godkända cmdlet-verb finns i [cmdlet-verb](./approved-verbs-for-windows-powershell-commands.md).
 
-Cmdleten Stop-proc är utformad för att ändra systemet; Därför måste deklarationen [system. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) för .net-klassen innehålla nyckelordet `SupportsShouldProcess` attribut och vara inställt på `true`.
+Cmdleten Stop-proc är utformad för att ändra systemet; Därför måste deklarationen [system. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) för .net-klassen innehålla `SupportsShouldProcess` nyckelordet attribut och anges till `true` .
 
 Följande kod är definitionen för den här cmdlet-klassen Stop-proc. Mer information om den här definitionen finns i [skapa en cmdlet som ändrar systemet](./creating-a-cmdlet-that-modifies-the-system.md).
 
@@ -68,7 +68,7 @@ public class StopProcCommand : Cmdlet
 
 ## <a name="defining-parameters-for-system-modification"></a>Definiera parametrar för system ändring
 
-Cmdleten Stop-proc definierar tre parametrar: `Name`, `Force`och `PassThru`. Mer information om hur du definierar dessa parametrar finns i [skapa en cmdlet som ändrar systemet](./creating-a-cmdlet-that-modifies-the-system.md).
+Cmdleten Stop-proc definierar tre parametrar: `Name` , `Force` och `PassThru` . Mer information om hur du definierar dessa parametrar finns i [skapa en cmdlet som ändrar systemet](./creating-a-cmdlet-that-modifies-the-system.md).
 
 Här är parameter deklarationen för cmdleten Stop-proc.
 
@@ -168,7 +168,7 @@ WriteObject(process);
 
 Windows PowerShell dirigerar automatiskt alla [system. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) -anrop till spårnings infrastrukturen och-cmdletar. Detta gör att metod anrop kan spåras till värd programmet, en fil eller en fel sökare utan att du behöver göra några extra utvecklings arbeten i-cmdleten. Följande kommando rads post implementerar en spårnings åtgärd.
 
-**PS > trace-Expression Stop-proc-File proc. log-Command Stop-proc anteckningar**
+**PS> trace-Expression Stop-proc-File proc. log-Command Stop-proc anteckningar**
 
 ## <a name="writing-a-warning-message"></a>Skriver ett varnings meddelande
 
@@ -208,7 +208,7 @@ WriteProgress(pr);
 
 ## <a name="code-sample"></a>Kod exempel
 
-Den fullständiga C# exempel koden finns i [StopProcessSample02-exempel](./stopprocesssample02-sample.md).
+Den fullständiga exempel koden för C# finns i [StopProcessSample02-exempel](./stopprocesssample02-sample.md).
 
 ## <a name="define-object-types-and-formatting"></a>Definiera objekt typer och formatering
 
@@ -228,7 +228,7 @@ När din cmdlet har registrerats med Windows PowerShell kan du testa den genom a
     PS> stop-proc -Name notepad -Verbose -Debug
     ```
 
-Följande utdata visas.
+    Följande utdata visas.
 
     ```
     VERBOSE: Attempting to stop process " notepad ".

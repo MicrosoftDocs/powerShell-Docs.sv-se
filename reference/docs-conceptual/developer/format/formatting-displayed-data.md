@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 38971643-2a3d-4f5b-a1fa-6334c162b8ed
 caps.latest.revision: 4
-ms.openlocfilehash: e915ac71feb50cb58cfa9195f0de94763affdb77
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9f3a3176ae16ac7c014cadce6b4e856f9bd3b5da
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355015"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560397"
 ---
 # <a name="formatting-displayed-data"></a>Formatera data som visas
 
-Du kan ange hur enskilda data punkter i listan, tabellen eller den breda vyn ska visas. Du kan använda `FormatString`-elementet när du definierar objekt i vyn, eller så kan du använda `ScriptBlock`-elementet för att anropa `FormatString`-metoden för data.
+Du kan ange hur enskilda data punkter i listan, tabellen eller den breda vyn ska visas. Du kan använda `FormatString` elementet när du definierar objekt i vyn, eller så kan du använda `ScriptBlock` elementet för att anropa `FormatString` metoden för data.
 
 ## <a name="using-the-formatstring-element"></a>Använda FormatString-elementet
 
-I följande exempel formateras värdet för egenskapen `TotalProcessorTime` för objektet [system. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) med hjälp av FormatString-elementet. Egenskapen `TotalProcessorTime`
+I följande exempel `TotalProcessorTime` formateras värdet för egenskapen för [system. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) -objektet med hjälp av FormatString-elementet. `TotalProcessorTime`egenskapen
 
 ```
 <TableColumnItem>
@@ -29,6 +29,3 @@ I följande exempel formateras värdet för egenskapen `TotalProcessorTime` för
   <FormatString>{0:MMM}{0:dd}{0:HH}:{0:mm}</FormatString>
 </TableColumnItem>
 ```
-
-
-

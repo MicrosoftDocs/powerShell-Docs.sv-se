@@ -1,13 +1,13 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: WinRMSecurity
-ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: ec194a4cc5abba5061e43152e0cb851c22611445
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "62086379"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564437"
 ---
 # <a name="powershell-remoting-security-considerations"></a>Säkerhetsöverväganden för PowerShell-fjärrkommunikation
 
@@ -69,11 +69,9 @@ Eftersom NTLM-autentiseringsprotokollet inte kan garantera identiteten för mål
 Om det är omöjligt att distribuera ett SSL-certifikat till en server för NTLM-anslutningar kan du utelämna de resulterande identitets felen genom att lägga till servern i listan WinRM **TrustedHosts** . Observera att om du lägger till ett server namn i listan TrustedHosts bör du inte anses som någon form av en instruktion av själva Värdarnas trovärdighet, eftersom NTLM-autentiseringsprotokollet inte kan garantera att du ansluter till den värd som du vill ansluta till.
 I stället bör du se till att inställningen TrustedHosts är listan över värdar för vilka du vill förhindra att det fel som genereras av inte kan verifiera serverns identitet.
 
-
 ### <a name="ongoing-communication"></a>Pågående kommunikation
 
 När den inledande autentiseringen är klar krypterar [PowerShell-Fjärrprotokollet](https://msdn.microsoft.com/library/dd357801.aspx) all pågående kommunikation med en symmetrisk AES-256-nyckel per session.
-
 
 ## <a name="making-the-second-hop"></a>Gör det andra hoppet
 

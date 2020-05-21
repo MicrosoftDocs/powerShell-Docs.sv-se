@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Konsolförbättringar i WMF 5.1
-ms.openlocfilehash: d0dd8e3c31dc0ddebab1bb899468b77a9292954d
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: ae3d08a34a09bc32d40a8a45788999ee9c54a562
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71145056"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564282"
 ---
 # <a name="console-improvements-in-wmf-51"></a>Konsolförbättringar i WMF 5.1
 
@@ -20,7 +20,7 @@ Följande ändringar har gjorts i PowerShell. exe i WMF 5,1 för att förbättra
 Windows 10 har lagt till stöd för [VT100 escape-sekvenser](/windows/console/console-virtual-terminal-sequences).
 PowerShell kommer att ignorera vissa VT100-formateringar när du beräknar tabell bredder.
 
-PowerShell har även lagt till ett nytt API som kan användas i formateringsregler för att avgöra om VT100 stöds. Ett exempel:
+PowerShell har även lagt till ett nytt API som kan användas i formateringsregler för att avgöra om VT100 stöds. Till exempel:
 
 ```powershell
 if ($host.UI.SupportsVirtualTerminal)
@@ -34,14 +34,14 @@ else
 }
 ```
 
-Här är ett komplett [exempel](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) som kan användas för att markera matchningar `Select-String`från. Spara exemplet i en fil med namnet `MatchInfo.format.ps1xml`, och Använd den sedan i din profil eller någon annan stans, `Update-FormatData -Prepend MatchInfo.format.ps1xml`kör.
+Här är ett komplett [exempel](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) som kan användas för att markera matchningar från `Select-String` . Spara exemplet i en fil med namnet `MatchInfo.format.ps1xml` , och Använd den sedan i din profil eller någon annan stans, kör `Update-FormatData -Prepend MatchInfo.format.ps1xml` .
 
 Observera att VT100 escape-sekvenser endast stöds från och med Windows 10 minnes dag uppdatering.
 De stöds inte i tidigare system.
 
 ### <a name="vi-mode-support-in-psreadline"></a>Läges stöd i PSReadline
 
-[PSReadline](https://github.com/PowerShell/PSReadLine) lägger till stöd för läget vi. Kör `Set-PSReadlineOption -EditMode Vi`om du vill använda läget för vi.
+[PSReadline](https://github.com/PowerShell/PSReadLine) lägger till stöd för läget vi. Kör om du vill använda läget för vi `Set-PSReadlineOption -EditMode Vi` .
 
 ### <a name="redirected-stdin-with-interactive-input"></a>Omdirigerat STDIN med interaktiva ingångar
 

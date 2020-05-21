@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxPackage-resurs
-ms.openlocfilehash: 4091cbbd5e34a84b9011870da4bda93281378347
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 49eef4adc9700a13bfb1e96457d90898a353d60d
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942554"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560839"
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>DSC för Linux nxPackage-resurs
 
@@ -44,7 +44,7 @@ nxPackage <string> #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
 |Kontrol |Avgör om det finns ett paket som ska kontrol leras. Ange att den här egenskapen **finns** för att se till att paketet finns. Ange det som **frånvarande** för att säkerställa att paketet inte finns. Standardvärdet finns **.** |
 
 ## <a name="example"></a>Exempel

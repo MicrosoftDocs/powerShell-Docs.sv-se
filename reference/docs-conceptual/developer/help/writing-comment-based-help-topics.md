@@ -8,22 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e619ab16-90ad-46e9-9bde-d6dce492ba56
 caps.latest.revision: 4
-ms.openlocfilehash: e3d32f36b597088abc41e229bb0955c1b25504e6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d740c0028fd2d4ddd83fe97d66ea45aa6300e16b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353181"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561043"
 ---
 # <a name="writing-comment-based-help-topics"></a>Skriva kommentarsbaserade hjälpavsnitt
 
 Du kan skriva kommentarer baserade hjälp avsnitt för funktioner och skript genom att använda särskilda nyckelord för hjälp kommentarer.
 
- I den `Get-Help` cmdleten visas en kommenterad hjälp i samma format som den visar cmdlet-hjälp avsnitten som genereras från XML-filer. Användarna kan använda alla parametrar i `Get-Help`, till exempel detaljerad, fullständig, exempel och online, för att visa hjälp om funktioner och skript.
+ `Get-Help`Cmdleten visar den kommenterade hjälpen i samma format som den visar cmdlet-hjälp avsnitten som genereras från XML-filer. Användare kan använda alla parametrar i `Get-Help` , till exempel detaljerad, fullständig, exempel och online, för att visa hjälp om funktioner och skript.
 
  Du kan också skriva XML-baserade hjälp avsnitt för skript och funktioner och använda nyckelorden hjälp kommentarer för att omdirigera användare till XML-baserade ämnen eller andra ämnen.
 
-## <a name="in-this-section"></a>I detta avsnitt
+## <a name="in-this-section"></a>I det här avsnittet
 
  [Syntax för kommenterings-baserad hjälp](./syntax-of-comment-based-help.md) Beskriver syntaxen för kommenterings-baserad hjälp.
 

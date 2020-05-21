@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 772f73793449856651ab6b03e1ccc14faed941fc
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359359"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561455"
 ---
 # <a name="events01-sample"></a>Events01 – exempel
 
@@ -24,13 +24,13 @@ Det här exemplet härleds från Bask Lassen [Microsoft. PowerShell. commands. O
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Så här skapar du exemplet med hjälp av Visual Studio.
 
 1. Med Windows PowerShell 2,0 SDK installerat navigerar du till mappen Events01
-   Standard platsen är `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.
+   Standard platsen är `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01` .
 
 2. Dubbelklicka på ikonen för lösnings filen (. SLN).
    Detta öppnar exempelprojektet i Microsoft Visual Studio.
 
 3. I menyn **build** väljer du **build-lösning**.
-   Biblioteket för exemplet skapas i standard `\bin`-eller `\bin\debug`-mapparna.
+   Biblioteket för exemplet skapas i standard- `\bin` eller- `\bin\debug` mapparna.
 
 ### <a name="how-to-run-the-sample"></a>Köra exemplet
 
@@ -83,8 +83,8 @@ Det här exemplet demonstrerar följande.
 
 ### <a name="how-to-write-a-cmdlet-for-event-registration"></a>Så här skriver du en cmdlet för händelse registrering
 
-Cmdleten härleds från klassen [Microsoft. PowerShell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) , som ger stöd för parametrar som är gemensamma för de `Register-*Event`-cmdletarna.
-Cmdletar som är härledda från [Microsoft. PowerShell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) behöver bara definiera sina specifika parametrar och åsidosätta `GetSourceObject` och `GetSourceObjectEventName` abstrakta metoder.
+Cmdleten härleds från klassen [Microsoft. PowerShell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) , som ger stöd för parametrar som är gemensamma för `Register-*Event` cmdletarna.
+Cmdletar som är härledda från [Microsoft. PowerShell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) behöver bara definiera sina specifika parametrar och åsidosätta `GetSourceObject` `GetSourceObjectEventName` metoderna och.
 
 ## <a name="example"></a>Exempel
 

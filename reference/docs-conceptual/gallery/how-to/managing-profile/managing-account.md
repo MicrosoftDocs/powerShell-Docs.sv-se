@@ -3,16 +3,16 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Kontoinställningar för PowerShell-galleriet
-ms.openlocfilehash: db61c3fd8c73048b51f3411a8c1dab52fb03d08a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7f67311b42123f247a00a9c7a5bf775685b64d48
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278134"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560465"
 ---
 # <a name="powershell-gallery-account-settings"></a>Kontoinställningar för PowerShell-galleriet
 
-Ditt PowerShell-galleriet-konto är ett offentligt synligt namn som är länkat till en identitet. Identiteten är antingen ett Microsoft-ID, `user@hotmail.com` t `user@outlook.com`. ex., eller ett Azure Active Directory-konto (AAD).
+Ditt PowerShell-galleriet-konto är ett offentligt synligt namn som är länkat till en identitet. Identiteten är antingen ett Microsoft-ID, `user@hotmail.com` t `user@outlook.com` . ex., eller ett Azure Active Directory-konto (AAD).
 
 PowerShell-galleriet innehåller följande konto inställningar:
 
@@ -39,7 +39,7 @@ PowerShell-galleriet innehåller följande meddelande alternativ:
 ![Ändra e-postadress](media/managing-account/PSGallery_AccountEmailOptions.png)
 
 Som anges på sidan kan inte kritiska meddelanden från PowerShell-galleriet inaktive ras.
-Exempel på dessa är:
+Dessa omfattar:
 
 - Säkerhets meddelanden
 - Meddelanden om konto hantering från PowerShell-galleriet administratörer
@@ -65,7 +65,6 @@ Om du vill ändra inloggnings kontot måste du vara inloggad med det aktuella ko
    ![Inställningar för inloggnings konto](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. Ange lösen ordet för det nya kontot. När du har angett lösen ordet kommer du tillbaka till sidan konto inställningar som visar att inloggnings kontot har uppdaterats.
-
 
 ## <a name="enable-two-factor-authentication-2fa"></a>Aktivera tvåfaktorautentisering (2FA)
 

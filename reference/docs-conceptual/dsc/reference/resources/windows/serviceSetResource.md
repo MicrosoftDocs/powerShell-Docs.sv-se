@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC ServiceSet-resurs
-ms.openlocfilehash: 97c25f46940d69ed6c696e2692e29131e9a997b0
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: a071a8cdd4a7dc6fd050fc1b88901aa0ce428615
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941301"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563973"
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet-resurs
 
@@ -40,14 +40,14 @@ ServiceSet [string] #ResourceName
 |Name |Anger tjänst namn. Observera att ibland skiljer det sig från visnings namnen. Du kan hämta en lista över tjänsterna och deras aktuella status med `Get-Service` cmdleten. |
 |Startuptype tjänst |Anger start typen för tjänsterna. De värden som tillåts för den här egenskapen är: **Automatisk**, **inaktive rad**och **manuell**. |
 |BuiltInAccount |Anger det inloggnings konto som ska användas för tjänsterna. De värden som tillåts för den här egenskapen är: **LocalService**, **LocalSystem**och **NetworkService**. |
-|Status |Anger det tillstånd som du vill säkerställa för tjänsterna: **stoppas** eller **körs**. |
+|Stat |Anger det tillstånd som du vill säkerställa för tjänsterna: **stoppas** eller **körs**. |
 |Autentiseringsuppgift |Anger autentiseringsuppgifter för det konto som tjänst resursen kommer att köras under. Den här egenskapen och egenskapen **BuiltinAccount** kan inte användas tillsammans. |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
 |Kontrol |Anger om tjänsterna finns i systemet. Ange den här egenskapen som **saknas** för att säkerställa att tjänsterna inte finns. Att ställa in det för att **Visa** garanterar att mål tjänsterna finns. Standardvärdet finns **.** |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 

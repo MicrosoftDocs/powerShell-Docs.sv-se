@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: Kända problem i WMF 5.1
-ms.openlocfilehash: 8348f9d45dca32dcda2ef8baa75d586c8728d0a4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4f4c85e1f4984d9e91ea74ba65fdbf7188c5c7ab
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71145280"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565054"
 ---
 # <a name="known-issues-in-wmf-51"></a>Kända problem i WMF 5.1
 

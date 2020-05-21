@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 65fbac8b-07d0-4513-bc8d-79f1f389be0f
 caps.latest.revision: 5
-ms.openlocfilehash: 7aadee07b38d2e9d87c5f0c548d13a5cdad1939f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5c55ec1346e1f2a9a3fd59445ce267c80bdb5ae4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356744"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561713"
 ---
 # <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a>Redigera MOF-schemafilen för en Management OData-webbtjänst
 
@@ -23,7 +23,7 @@ Du definierar de resurser som din hantering av OData-webbtjänsten exponerar gen
 
 Följande fil definierar tjänst-och process resurser. Var och en av dessa resurser motsvarar ett objekt som kan hanteras av en uppsättning Windows PowerShell-cmdlet. Egenskaperna motsvarar parametrar som används av dessa cmdletar.
 
-Var och en av de två resurserna innehåller egenskaper av typen komplex. De komplexa typerna definieras som klasser som har ändrats med `ComplexType`-kvalificeraren.
+Var och en av de två resurserna innehåller egenskaper av typen komplex. De komplexa typerna definieras som klasser som har ändrats med `ComplexType` kvalificeraren.
 
 ```csharp
 
@@ -211,6 +211,6 @@ class PswsTest_Stream
 
 ## <a name="see-also"></a>Se även
 
-[Skapa en hantering av OData-webbtjänst](./creating-a-management-odata-web-service.md)
+[Skapa en Management OData-webbtjänst](./creating-a-management-odata-web-service.md)
 
-[Offentligt resurs schema](./public-resource-schema.md)
+[Schema för offentliga resurser](./public-resource-schema.md)

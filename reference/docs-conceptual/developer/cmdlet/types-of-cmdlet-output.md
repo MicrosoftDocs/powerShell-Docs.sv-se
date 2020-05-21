@@ -10,12 +10,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], output
 ms.assetid: 547e6695-e936-4cac-a90b-417d0dab393d
 caps.latest.revision: 12
-ms.openlocfilehash: 3efa98c7aa22fdaee8042bae99282aea0618ef5f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: de21d9ebfec4f23d3819695df225f7a230864a7b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359184"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561428"
 ---
 # <a name="types-of-cmdlet-output"></a>Typer av cmdlet-utdata
 
@@ -34,7 +34,7 @@ När växel parametern **Passthru** anges på kommando raden uppmanas cmdleten a
 
 Cmdlets kan rapportera fel. När ett avbrotts fel inträffar genererar cmdleten ett undantag. När ett icke-avslutande fel inträffar anropar cmdleten metoden [system. Management. Automation. Provider. CmdletProvider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) för att skicka en fel post till fel data strömmen. Mer information om fel rapportering finns i [fel rapporterings koncept](./error-reporting-concepts.md).
 
-### <a name="verbose-output"></a>Utförliga utdata
+### <a name="verbose-output"></a>Utförlig utdata
 
 Cmdletar kan ge värdefull information till dig medan cmdleten bearbetar poster korrekt genom att anropa metoden [system. Management. Automation. cmdlet. WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) . Metoden genererar utförliga meddelanden som visar hur åtgärden fortsätter.
 
@@ -66,8 +66,8 @@ Du kan också utforma en cmdlet för att direkt komma åt utmatnings funktionen 
 
 ## <a name="see-also"></a>Se även
 
-[Fel rapporterings begrepp](./error-reporting-concepts.md)
+[Begrepp relaterade till felrapportering](./error-reporting-concepts.md)
 
-[Cmdlet-översikt](./cmdlet-overview.md)
+[Översikt över cmdlets](./cmdlet-overview.md)
 
 [Skriva en Windows PowerShell-cmdlet](./writing-a-windows-powershell-cmdlet.md)

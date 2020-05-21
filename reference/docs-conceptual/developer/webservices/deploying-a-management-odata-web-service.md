@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4497b64c-7875-4047-bf77-07e04c098ffe
 caps.latest.revision: 4
-ms.openlocfilehash: 376d90394b632e82322b848cb124f002ff91d8b3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d29a652b32d07b7825bc5bed5099daa67dd32ff4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356751"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564603"
 ---
 # <a name="deploying-a-management-odata-web-service"></a>Distribuera en Management OData-webbtjänst
 
@@ -23,7 +23,7 @@ När du har slutfört alla steg som krävs för att skapa en webb tjänst för h
 
 Utför följande steg för att distribuera webb tjänsten för hantering av OData.
 
-1. Skapa en katalog för webb programmet under din IIS-`WWWRoot` katalog.
+1. Skapa en katalog för webb programmet i IIS- `WWWRoot` katalogen.
 
 2. Kopiera MOF-schemafilen, XML-schemafilen, DLL-filer som exporterar [Microsoft. Management. OData. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) och [system. Management. Automation. Remoting. Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) -gränssnitten och Web. config-filen till program katalogen.
 
@@ -427,14 +427,14 @@ Start-Sleep 10
 
 ## <a name="see-also"></a>Se även
 
-[Implementera anpassad auktorisering för en hantering av OData-webbtjänsten](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+[Implementera anpassad auktorisering för en Management OData-webbtjänst](./implementing-custom-authorization-for-a-management-odata-web-service.md)
 
-[Implementera SessionConfiguration för en hantering av OData-webbtjänst](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+[Implementera SessionConfiguration för en Management OData-webbtjänst](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
 
-[Redigera MOF-schemafilen för en hantering av OData-webbtjänsten](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[Redigera MOF-schemafilen för en Management OData-webbtjänst](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[Redigera XML-schemafilen för en hantering av OData-webbtjänsten](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+[Redigera XML-schemafilen för en Management OData-webbtjänst](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
 
-[Redigera Web. config-filen för en hantering av OData-webbtjänsten](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
+[Redigera Web.config-filen för en Management OData-webbtjänst](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
 
-[Skapa en hantering av OData-webbtjänst](./creating-a-management-odata-web-service.md)
+[Skapa en Management OData-webbtjänst](./creating-a-management-odata-web-service.md)

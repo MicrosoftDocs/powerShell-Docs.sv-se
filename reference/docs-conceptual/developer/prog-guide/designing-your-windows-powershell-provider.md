@@ -10,12 +10,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], designing
 ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
 caps.latest.revision: 10
-ms.openlocfilehash: bfb29fd5df87ffa9ae270c18ce8bfb0c59ee6f90
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 6112e64a4a15d9dc8ac28ba51259b6647db4c064
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870667"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560057"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Designa en Windows PowerShell-provider
 
@@ -33,15 +33,15 @@ Om du vill ge användaren åtkomst till data som finns på en fysisk enhet måst
 
 ### <a name="defining-a-provider-qualified-path"></a>Definiera en provider-kvalificerad sökväg
 
-Windows PowerShell-providern måste ha stöd för en provider-kvalificerad sökväg för att Windows PowerShell-körningsmiljön ska kunna initiera och avinitiera providern. Till exempel fil system::\\\uncshare\abc\bar är den provider-kvalificerade sökvägen för fil Systems leverantören som tillhandahålls av Windows PowerShell.
+Windows PowerShell-providern måste ha stöd för en provider-kvalificerad sökväg för att Windows PowerShell-körningsmiljön ska kunna initiera och avinitiera providern. Till exempel är fil systemet:: \\ \uncshare\abc\bar den provider-kvalificerade sökvägen för fil Systems leverantören som tillhandahålls av Windows PowerShell.
 
 ### <a name="defining-a-provider-direct-path"></a>Definiera en provider – direkt sökväg
 
-Om du vill tillåta fjärråtkomst till Windows PowerShell-providern ska den stödja en provider-direkt sökväg för att skicka direkt till Windows PowerShell-providern för den aktuella platsen. Till exempel kan registrets Windows PowerShell-Provider använda \\\server\regkeypath som en provider-direkt sökväg.
+Om du vill tillåta fjärråtkomst till Windows PowerShell-providern ska den stödja en provider-direkt sökväg för att skicka direkt till Windows PowerShell-providern för den aktuella platsen. Till exempel kan registrets Windows PowerShell-Provider använda \\ \server\regkeypath som en provider-direkt sökväg.
 
 ### <a name="defining-a-provider-internal-path"></a>Definiera en provider – intern sökväg
 
-Om du vill tillåta Provider-cmdleten att komma åt data med icke-Windows PowerShell-API: er (Application Programming Interfaces) ska din Windows PowerShell-Provider stödja en provider-intern sökväg. Den här sökvägen anges efter "::" i providerns kvalificerade sökväg. Exempelvis är providerns interna sökväg för Windows PowerShell-providern för fil systemet \\\uncshare\abc\bar.
+Om du vill tillåta Provider-cmdleten att komma åt data med icke-Windows PowerShell-API: er (Application Programming Interfaces) ska din Windows PowerShell-Provider stödja en provider-intern sökväg. Den här sökvägen anges efter "::" i providerns kvalificerade sökväg. Till exempel är providerns interna sökväg för Windows PowerShell-providern för fil systemet \\ \uncshare\abc\bar.
 
 ## <a name="changing-stored-data"></a>Ändra lagrade data
 
@@ -53,12 +53,12 @@ Windows PowerShell innehåller ett antal bas klasser som du kan använda för at
 
 Varje basklass i Windows PowerShell-providern gör en uppsättning cmdletar tillgängliga. I det här avsnittet beskrivs cmdletarna, men det beskriver inte deras parametrar.
 
-Med hjälp av sessionstillstånd gör Windows PowerShell-körningsmiljön flera plats-cmdletar tillgängliga för vissa Windows PowerShell-leverantörer, till exempel `Get-Location`-, `Set-Location`-, `Pop-Location`-och `Push-Location`-cmdletar. Du kan använda `Get-Help`-cmdlet för att få information om dessa plats-cmdletar.
+Med hjälp av sessionstillstånd gör Windows PowerShell-körningsmiljön flera plats-cmdletar tillgängliga för vissa Windows PowerShell-leverantörer, till exempel `Get-Location` `Set-Location` `Pop-Location` cmdletarna,, och `Push-Location` . Du kan använda `Get-Help` cmdleten för att hämta information om dessa plats-cmdletar.
 
 ### <a name="cmdletprovider-base-class"></a>CmdletProvider Bask lass
 
 Klassen [system. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) definierar en grundläggande Windows PowerShell-Provider. Den här klassen stöder providerns deklaration och tillhandahåller ett antal egenskaper och metoder som är tillgängliga för alla Windows PowerShell-leverantörer.
-Klassen anropas av `Get-PSProvider`-cmdleten för att visa en lista över alla tillgängliga providers för en session.
+Klassen anropas av `Get-PSProvider` cmdleten för att visa en lista över alla tillgängliga providers för en session.
 Implementeringen av denna cmdlet tillhandahålls av sessionstillstånd.
 
 > [!NOTE]
@@ -68,7 +68,7 @@ Implementeringen av denna cmdlet tillhandahålls av sessionstillstånd.
 
 Klassen [system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) definierar en Windows PowerShell-tjänstleverantör som stöder åtgärder för att lägga till nya enheter, ta bort befintliga enheter och initiera standard enheter. Till exempel initierar fil tjänst leverantören som tillhandahålls av Windows PowerShell enheter för alla volymer som är monterade, till exempel hård diskar och CD-/DVD-enheter.
 
-Den här klassen härleds från Bask Lassen [system. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) . I följande tabell visas de cmdletar som exponeras av den här klassen. Förutom de som anges, är `Get-PSDrive`-cmdleten (exponerad efter sessionstillstånd) en relaterad cmdlet som används för att hämta tillgängliga enheter.
+Den här klassen härleds från Bask Lassen [system. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) . I följande tabell visas de cmdletar som exponeras av den här klassen. Förutom de som listas, `Get-PSDrive` är cmdleten (exponerad efter sessionstillstånd) en relaterad cmdlet som används för att hämta tillgängliga enheter.
 
 |      Cmdlet      |                             Definition                              |
 | ---------------- | ------------------------------------------------------------------- |
@@ -81,12 +81,12 @@ Klassen [system. Management. Automation. Provider. Itemcmdletprovider](/dotnet/a
 
 |     Cmdlet     |                                                                                                                                                            Definition                                                                                                                                                            |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Clear-Item`   | Rensar det aktuella innehållet i objekt på den angivna platsen och ersätter det med värdet "Rensa" som anges av providern. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru`-parameter har angetts.                                                                                   |
+| `Clear-Item`   | Rensar det aktuella innehållet i objekt på den angivna platsen och ersätter det med värdet "Rensa" som anges av providern. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru` parameter anges.                                                                                   |
 | `Get-Item`     | Hämtar objekt från den angivna platsen och strömmar de resulterande objekten.                                                                                                                                                                                                                                                  |
 | `Invoke-Item`  | Anropar standard åtgärden för objektet på den angivna sökvägen.                                                                                                                                                                                                                                                                   |
-| `Set-Item`     | Anger ett objekt på den angivna platsen med det angivna värdet. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru`-parameter har angetts.                                                                                                                                                   |
+| `Set-Item`     | Anger ett objekt på den angivna platsen med det angivna värdet. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru` parameter anges.                                                                                                                                                   |
 | `Resolve-Path` | Matchar jokertecken för sökväg till Windows PowerShell och information om strömmar.                                                                                                                                                                                                                                              |
-| `Test-Path`    | Testar för den angivna sökvägen och returnerar `true` om den finns och `false` annars. Denna cmdlet implementeras för att stödja parametern `IsContainer` för metoden [system. Management. Automation. Provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) . |
+| `Test-Path`    | Testar för den angivna sökvägen och returnerar `true` om den finns och `false` annars. Denna cmdlet implementeras för att stödja `IsContainer` parametern för metoden [system. Management. Automation. Provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) . |
 
 ### <a name="containercmdletprovider-base-class"></a>ContainerCmdletProvider Bask lass
 
@@ -96,11 +96,11 @@ Den här klassen härleds från Bask Lassen [system. Management. Automation. Pro
 
 |     Cmdlet      |                                                                        Definition                                                                        |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Copy-Item`     | Kopierar objekt från en plats till en annan. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru`-parameter har angetts. |
+| `Copy-Item`     | Kopierar objekt från en plats till en annan. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru` parameter anges. |
 | `Get-Childitem` | Hämtar de underordnade objekten på den angivna platsen och strömmar dem som objekt.                                                                        |
 | `New-Item`      | Skapar nya objekt på den angivna platsen och strömmar det resulterande objektet.                                                                           |
 | `Remove-Item`   | Tar bort objekt från den angivna platsen.                                                                                                               |
-| `Rename-Item`   | Byter namn på ett objekt på den angivna platsen. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru`-parameter har angetts. |
+| `Rename-Item`   | Byter namn på ett objekt på den angivna platsen. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru` parameter anges. |
 
 ### <a name="navigationcmdletprovider-base-class"></a>NavigationCmdletProvider Bask lass
 
@@ -109,13 +109,13 @@ Klassen [system. Management. Automation. Provider. Navigationcmdletprovider](/do
 |    Cmdlet    |                                                                      Definition                                                                      |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Kombinera-sökväg | Kombinerar två sökvägar till en enda sökväg med hjälp av en leverantörsspecifik avgränsare mellan sökvägar. Denna cmdlet strömmar strängar.                               |
-| `Move-Item`  | Flyttar objekt till den angivna platsen. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru`-parameter har angetts. |
+| `Move-Item`  | Flyttar objekt till den angivna platsen. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru` parameter anges. |
 
-En relaterad cmdlet är den grundläggande parsar-Sök vägs cmdleten som tillhandahålls av Windows PowerShell. Denna cmdlet kan användas för att parsa en Windows PowerShell-sökväg för att stödja `Parent`-parametern. Den överordnade Sök vägs strängen strömmas.
+En relaterad cmdlet är den grundläggande parsar-Sök vägs cmdleten som tillhandahålls av Windows PowerShell. Denna cmdlet kan användas för att tolka en Windows PowerShell-sökväg som stöd för `Parent` parametern. Den överordnade Sök vägs strängen strömmas.
 
 ## <a name="select-provider-interfaces-to-support"></a>Välj Provider-gränssnitt som ska stödjas
 
-Förutom att härleda från en av bas klasserna i Windows PowerShell kan din Windows PowerShell-Provider stödja andra funktioner genom att härledas från ett eller flera av följande Provider-gränssnitt. I det här avsnittet definieras de gränssnitt och cmdlets som stöds av var och en. Den beskriver inte parametrarna för cmdlets som stöds av gränssnittet. Information om cmdlet-parametrar är tillgänglig online med hjälp av `Get-Command`-och `Get-Help`-cmdletar.
+Förutom att härleda från en av bas klasserna i Windows PowerShell kan din Windows PowerShell-Provider stödja andra funktioner genom att härledas från ett eller flera av följande Provider-gränssnitt. I det här avsnittet definieras de gränssnitt och cmdlets som stöds av var och en. Den beskriver inte parametrarna för cmdlets som stöds av gränssnittet. Information om cmdlet-parametrar är tillgänglig online `Get-Command` med `Get-Help` cmdletarna och.
 
 ### <a name="icontentcmdletprovider"></a>IContentCmdletProvider
 
@@ -123,23 +123,23 @@ Gränssnittet [system. Management. Automation. Provider. Icontentcmdletprovider]
 
 |     Cmdlet      |                                                                                        Definition                                                                                        |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Add-Content`   | Lägger till angivna värde längder till innehållet i det angivna objektet. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru`-parameter har angetts. |
-| `Clear-Content` | Ställer in innehållet i det angivna objektet till värdet "Rensa". Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru`-parameter har angetts.               |
+| `Add-Content`   | Lägger till angivna värde längder till innehållet i det angivna objektet. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru` parameter anges. |
+| `Clear-Content` | Ställer in innehållet i det angivna objektet till värdet "Rensa". Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru` parameter anges.               |
 | `Get-Content`   | Hämtar innehållet i de angivna objekten och strömmar de resulterande objekten.                                                                                                         |
-| `Set-Content`   | Ersätter det befintliga innehållet för de angivna objekten. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru`-parameter har angetts.                     |
+| `Set-Content`   | Ersätter det befintliga innehållet för de angivna objekten. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru` parameter anges.                     |
 
 ### <a name="ipropertycmdletprovider"></a>IPropertyCmdletProvider
 
 Gränssnittet [system. Management. Automation. Provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) definierar en egenskap Windows PowerShell-provider som utför åtgärder på egenskaperna för objekt i data lagret. I följande tabell visas de cmdlets som exponeras av det här gränssnittet.
 
 > [!NOTE]
-> Parametern `Path` i dessa cmdletar anger en sökväg till ett objekt i stället för att identifiera en egenskap.
+> `Path`Parametern i dessa cmdletar anger en sökväg till ett objekt i stället för att identifiera en egenskap.
 
 |        Cmdlet        |                                                                                   Definition                                                                                    |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Clear-ItemProperty` | Anger egenskaperna för de angivna objekten till värdet "Rensa". Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru`-parameter har angetts.      |
+| `Clear-ItemProperty` | Anger egenskaperna för de angivna objekten till värdet "Rensa". Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru` parameter anges.      |
 | `Get-ItemProperty`   | Hämtar egenskaper från de angivna objekten och strömmar de resulterande objekten.                                                                                                |
-| `Set-ItemProperty`   | Anger egenskaperna för de angivna objekten med de angivna värdena. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru`-parameter har angetts. |
+| `Set-ItemProperty`   | Anger egenskaperna för de angivna objekten med de angivna värdena. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru` parameter anges. |
 
 ### <a name="idynamicpropertycmdletprovider"></a>IDynamicPropertyCmdletProvider
 
@@ -148,11 +148,11 @@ I följande tabell visas de cmdlets som exponeras av det här gränssnittet.
 
 |        Cmdlet         |                                                                                Definition                                                                                |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `Copy-ItemProperty`   | Kopierar en egenskap från det angivna objektet till ett annat objekt. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru`-parameter har angetts. |
-| `Move-ItemProperty`   | Flyttar en egenskap från det angivna objektet till ett annat objekt. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru`-parameter har angetts.  |
+| `Copy-ItemProperty`   | Kopierar en egenskap från det angivna objektet till ett annat objekt. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru` parameter anges. |
+| `Move-ItemProperty`   | Flyttar en egenskap från det angivna objektet till ett annat objekt. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru` parameter anges.  |
 | `New-ItemProperty`    | Skapar en egenskap för de angivna objekten och strömmar de resulterande objekten.                                                                                             |
 | `Remove-ItemProperty` | Tar bort en egenskap för de angivna objekten.                                                                                                                              |
-| `Rename-ItemProperty` | Byter namn på en egenskap för de angivna objekten. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru`-parameter har angetts.                 |
+| `Rename-ItemProperty` | Byter namn på en egenskap för de angivna objekten. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru` parameter anges.                 |
 
 ### <a name="isecuritydescriptorcmdletprovider"></a>ISecurityDescriptorCmdletProvider
 

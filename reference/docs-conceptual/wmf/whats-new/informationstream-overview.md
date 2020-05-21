@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Informationsström
-ms.openlocfilehash: c54603cf0dd4f0b69f8147620130f9f29bc3e5ec
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 39cb3c36a70530b3ff9777edc74b88d276cbbb7c
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71145042"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560125"
 ---
 # <a name="information-stream"></a>Informationsström
 
@@ -53,14 +53,14 @@ I <3 Output
 SCRIPT COMPLETE!!
 ```
 
-`$r` Variabeln har samlat in process informationen i skript variabeln `$p`.
+`$r`Variabeln har samlat in process informationen i skript variabeln `$p` .
 
 ```powershell
 $r.Id
 4008
 ```
 
-Till skillnad från `Write-Host` -cmdlet: en med parametern **InformationVariable** `Write-Information` kan du avbilda utdata i en variabel. Med hjälp av **taggen**kan du skapa separata kanaler för meddelanden som skickas till **informations** strömmen.
+Till skillnad från `Write-Host` -cmdlet: en **InformationVariable** med parametern InformationVariable `Write-Information` kan du avbilda utdata i en variabel. Med hjälp av **taggen**kan du skapa separata kanaler för meddelanden som skickas till **informations** strömmen.
 
 ```powershell
 $r = OutputGusher -InformationVariable iv
@@ -83,7 +83,7 @@ Process              {System.Diagnostics.Process (powershell)}
 PSHOST               {Preparing to give you output!, =============================, I , <3 ...}
 ```
 
-När du skickar ett meddelande till **informations** strömmen med en-tagg visas inte meddelandet i värd programmet, men du kan hämta det med hjälp av taggnamnet. Ett exempel:
+När du skickar ett meddelande till **informations** strömmen med en-tagg visas inte meddelandet i värd programmet, men du kan hämta det med hjälp av taggnamnet. Till exempel:
 
 ```powershell
 $iv | where Tags -eq 'LogHigh'

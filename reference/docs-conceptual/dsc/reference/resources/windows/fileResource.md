@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-filresurs
-ms.openlocfilehash: 4c6945d4cdcbc64ac6d52db563823efe8fd0247e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 54f4de9b3d337a6b9ad36c143eac70d5ef6b1c15
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942456"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560482"
 ---
 # <a name="dsc-file-resource"></a>DSC-filresurs
 
@@ -45,11 +45,11 @@ File [string] #ResourceName
 |Kontrollsumma |Den typ av kontroll summa som ska användas för att avgöra om två filer är identiska. Giltiga värden är: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. |
 |Innehåll |Endast giltigt när det används med en **typ** **fil**. Anger innehållet som ska **vara** **tillgängligt** eller **saknas** i mål filen. |
 |Autentiseringsuppgift |De autentiseringsuppgifter som krävs för att få åtkomst till resurser, till exempel källfiler. |
-|Force |Åsidosätter åtkomst åtgärder som resulterar i ett fel (till exempel att skriva över en fil eller ta bort en katalog som inte är tom). Standardvärdet `$false`är. |
-|Rekursivt |Endast giltigt när det används med **typ** **katalog**. Utför tillstånds åtgärden rekursivt till alla under kataloger. Standardvärdet `$false`är. |
+|Force |Åsidosätter åtkomst åtgärder som resulterar i ett fel (till exempel att skriva över en fil eller ta bort en katalog som inte är tom). Standardvärdet är `$false` . |
+|Rekursivt |Endast giltigt när det används med **typ** **katalog**. Utför tillstånds åtgärden rekursivt till alla under kataloger. Standardvärdet är `$false` . |
 |Sök |Sökvägen som filen eller mappen ska kopieras från. |
 |Typ |Typ av resurs som konfigureras. Giltiga värden är **katalog** och **fil**. Standardvärdet är **File**. |
-|MatchSource |Anger om resursen ska övervakas för nya filer som har lagts till i käll katalogen efter den första kopian. Värdet `$true` anger att efter den ursprungliga kopian ska alla nya källfiler kopieras till målet. Om värdet `$false`är, cachelagrar resursen innehållet i käll katalogen och ignorerar eventuella filer som lagts till efter den ursprungliga kopian. Standardvärdet `$false`är. |
+|MatchSource |Anger om resursen ska övervakas för nya filer som har lagts till i käll katalogen efter den första kopian. Värdet `$true` anger att efter den ursprungliga kopian ska alla nya källfiler kopieras till målet. Om värdet `$false` är, cachelagrar resursen innehållet i käll katalogen och ignorerar eventuella filer som lagts till efter den ursprungliga kopian. Standardvärdet är `$false` . |
 
 > [!WARNING]
 > Om du inte anger något värde för **Credential** eller **PSRunAsCredential**använder resursen dator kontot för målnoden för att få åtkomst till **SourcePath**. När **SourcePath** är en UNC-resurs kan detta resultera i ett "åtkomst nekad"-fel. Kontrol lera att dina behörigheter har angetts, eller Använd egenskaperna **Credential** eller **PSRunAsCredential** för att ange det konto som ska användas.
@@ -58,7 +58,7 @@ File [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
 |Kontrol |Anger om filen och **innehållet** på **målet** ska finnas eller inte. Ange att den här egenskapen **finns för att se till att** filen finns. Ange det som **frånvarande** för att se till att de inte finns. Standardvärdet finns **.** |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 
@@ -75,7 +75,7 @@ File [string] #ResourceName
 
 I följande exempel kopieras en katalog och dess under kataloger från en pull-server till en målnod med hjälp av fil resursen. Om åtgärden lyckas skriver logg resursen ett bekräftelse meddelande till händelse loggen.
 
-Käll katalogen är en UNC-sökväg (`\\PullServer\DemoSource`) som delas från hämtnings servern. Egenskapen **rekursivt** säkerställer att alla under kataloger också kopieras.
+Käll katalogen är en UNC-sökväg ( `\\PullServer\DemoSource` ) som delas från hämtnings servern. Egenskapen **rekursivt** säkerställer att alla under kataloger också kopieras.
 
 > [!IMPORTANT]
 > LCM på målnoden körs i kontexten för det lokala system kontot som standard. Om du vill bevilja åtkomst till **SourcePath**, ger du målnoden dator konto rätt behörigheter. Både **autentiseringsuppgiften** och **PSDSCRunAsCredential** ändrar den kontext som LCM använder för att få åtkomst till **SourcePath**. Du måste fortfarande bevilja åtkomst till det konto som ska användas för åtkomst till **SourcePath**.

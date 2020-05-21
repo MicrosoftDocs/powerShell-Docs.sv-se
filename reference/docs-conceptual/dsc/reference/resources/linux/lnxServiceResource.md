@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxService-resurs
-ms.openlocfilehash: 6bb58796c4deff1153f932f61c328d84f8c4d2ca
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 30f3b15fccd1491fac2989832486ad15d062c1ad
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942568"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563991"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>DSC för Linux nxService-resurs
 
@@ -33,13 +33,13 @@ nxService <string> #ResourceName
 |Name |Namnet på tjänsten/daemon som ska konfigureras. |
 |Domänkontrollant |Typ av tjänst kontrollant som ska användas när tjänsten konfigureras. |
 |Enabled |Anger om tjänsten startar vid start. |
-|Status |Anger om tjänsten körs. Ange att den här egenskapen ska **stoppas** för att säkerställa att tjänsten inte körs. Ange att den ska **köras** för att säkerställa att tjänsten körs. |
+|Stat |Anger om tjänsten körs. Ange att den här egenskapen ska **stoppas** för att säkerställa att tjänsten inte körs. Ange att den ska **köras** för att säkerställa att tjänsten körs. |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
 
 ## <a name="additional-information"></a>Ytterligare information
 

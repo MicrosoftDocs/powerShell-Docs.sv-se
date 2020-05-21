@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e83c9d9-6d06-4247-94d9-e3bfd4013b11
 caps.latest.revision: 4
-ms.openlocfilehash: b830571418fe75bbfc68df02f20a6012efefd99a
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 7ccdeeb2833b79cabc7c77d1a400e0c9132b2dcd
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76996076"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561472"
 ---
 # <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a>Redigera XML-schemafilen för en Management OData-webbtjänst
 
@@ -46,12 +46,12 @@ Sedan anger du de cmdlet: ar som motsvarar de åtgärder för CRUD (skapa, läsa
 
 |CRUD-kommando|XML-element|
 |------------------|-----------------|
-|Create|Create|
-|Läs|Söka i data|
-|Uppdatering|Uppdatering|
+|Skapa|Skapa|
+|Läsa|Söka i data|
+|Uppdatera|Uppdatera|
 |Ta bort|Ta bort|
 
-I följande exempel visas mappningarna för åtgärderna Create, Read och Update på den `Service` resursen.
+I följande exempel visas mappningarna för åtgärderna skapa, läsa och uppdatera på `Service` resursen.
 
 ```xml
 <ClassImplementations>
@@ -159,8 +159,8 @@ I följande exempel visas mappningarna för åtgärderna Create, Read och Update
 
 ## <a name="see-also"></a>Se även
 
-[Redigera MOF-schemafilen för en hantering av OData-webbtjänsten](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[Redigera MOF-schemafilen för en Management OData-webbtjänst](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[Resurs mappnings schema](./resource-mapping-schema.md)
+[Schema för resursmappning](./resource-mapping-schema.md)
 
-[Skapa en hantering av OData-webbtjänst](./creating-a-management-odata-web-service.md)
+[Skapa en Management OData-webbtjänst](./creating-a-management-odata-web-service.md)

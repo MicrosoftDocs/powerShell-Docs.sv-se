@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxGroup-resurs
-ms.openlocfilehash: 098ae2e8ab183934ec3c185c0fd237731b1353dc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 3682cb728d314d00b4a64a93b93018e8a6d12a21
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941427"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560856"
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>DSC för Linux nxGroup-resurs
 
@@ -42,7 +42,7 @@ nxGroup <string> #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
 |Kontrol |Anger om gruppen finns eller inte. Ange att den här egenskapen **finns för att** säkerställa att gruppen finns. Ange det som **frånvarande** för att se till att gruppen inte finns. Standardvärdet finns **.** |
 
 ## <a name="example"></a>Exempel

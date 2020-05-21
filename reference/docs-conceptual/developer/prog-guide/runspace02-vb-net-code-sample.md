@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9bd9d599-faa7-4154-ac36-1f35ccf8e320
 caps.latest.revision: 7
-ms.openlocfilehash: 5ad28cfbc73628ba818e42b87128d8f4ad273bda
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 38e022012bc5302fb28cd2e3d9f3a8d2859d72f6
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357052"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559887"
 ---
 # <a name="runspace02-vbnet-code-sample"></a>Runspace02 (VB.NET) – kodexempel
 
-Här är käll koden för VB.NET för Runspace02-exemplet. I det här exemplet används klassen [system. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) för att köra cmdleten `Get-Process` synkront. Windows Forms och data bindning används sedan för att visa resultaten i en DataGridView-kontroll.
+Här är käll koden för VB.NET för Runspace02-exemplet. I det här exemplet används klassen [system. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) för att köra `Get-Process` cmdleten synkront. Windows Forms och data bindning används sedan för att visa resultaten i en DataGridView-kontroll.
 
 ## <a name="code-sample"></a>Kod exempel
 

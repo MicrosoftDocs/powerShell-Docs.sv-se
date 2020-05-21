@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: PowerShell, Core
 title: Versions historik för moduler och cmdletar
-ms.openlocfilehash: 824380c7aa732e6a2027d86be33cbde901ab11e1
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 0a1a8b0e4b1460bbaeb30495262aff2b414a649b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80082740"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564643"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>Versions historik för moduler och cmdletar
 
@@ -23,7 +23,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ## <a name="module-release-history"></a>Versions historik för modul
 
-|         Modulnamn/PS-version          |   5.1   |   6.x   |   7.0   |   7.1   |     Obs!     |
+|         Modulnamn/PS-version          |   5.1   |   6.x   |   7.0   |   7.1   |     Anteckning     |
 | ----------------------------------------- | :-----: | :-----: | :-----: | :-----: | ------------ |
 | CimCmdlets                                | &check; | &check; | &check; | &check; | Endast Windows |
 | ISE (lanserades i 2,0)                   | &check; |         |         |         | Endast Windows |
@@ -53,7 +53,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ### <a name="cimcmdlets"></a>CimCmdlets
 
-|         Cmdlet-namn         |   5.1   |   6.x   |   7.0   |   7.1   |     Obs!     |
+|         Cmdlet-namn         |   5.1   |   6.x   |   7.0   |   7.1   |     Anteckning     |
 | --------------------------- | :-----: | :-----: | :-----: | :-----: | ------------ |
 | Exportera – BinaryMiLog          | &check; | &check; | &check; | &check; | Endast Windows |
 | Get-CimAssociatedInstance   | &check; | &check; | &check; | &check; | Endast Windows |
@@ -72,23 +72,22 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ### <a name="ise-introduced-in-20"></a>ISE (lanserades i 2,0)
 
-|    Cmdlet-namn    |   5.1   | 6.x  |  7.0  |  7.1  |     Obs!     |
+|    Cmdlet-namn    |   5.1   | 6.x  |  7.0  |  7.1  |     Anteckning     |
 | ----------------- | :-----: | :--- | :---: | :---: | ------------ |
 | Get-IseSnippet    | &check; |      |       |       | Endast Windows |
 | Importera – IseSnippet | &check; |      |       |       | Endast Windows |
 | New-IseSnippet    | &check; |      |       |       | Endast Windows |
 
-
 ### <a name="microsoftpowershellarchive"></a>Microsoft. PowerShell. Archive
 
-|   Cmdlet-namn    |   5.1   |   6.x   |   7.0   |   7.1   | Obs! |
+|   Cmdlet-namn    |   5.1   |   6.x   |   7.0   |   7.1   | Anteckning |
 | ---------------- | :-----: | :-----: | :-----: | :-----: | ---- |
 | Komprimera – arkivera | &check; | &check; | &check; | &check; |      |
 | Expandera – arkivera   | &check; | &check; | &check; | &check; |      |
 
 ### <a name="microsoftpowershellcore"></a>Microsoft. PowerShell. Core
 
-|            Cmdlet-namn            |   5.1   |   6.x   |   7.0   |   7.1   |            Obs!            |
+|            Cmdlet-namn            |   5.1   |   6.x   |   7.0   |   7.1   |            Anteckning            |
 | --------------------------------- | :-----: | :-----: | :-----: | :-----: | -------------------------- |
 | Lägg till-historik                       | &check; | &check; | &check; | &check; |                            |
 | Add-PSSnapin                      | &check; |         |         |         | Endast Windows               |
@@ -160,7 +159,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ### <a name="microsoftpowershelldiagnostics"></a>Microsoft. PowerShell. Diagnostics
 
-|  Cmdlet-namn   |   5.1   |   6.x   |   7.0   |   7.1   |     Obs!     |
+|  Cmdlet-namn   |   5.1   |   6.x   |   7.0   |   7.1   |     Anteckning     |
 | -------------- | :-----: | :-----: | :-----: | :-----: | ------------ |
 | Exportera – räknare | &check; |         |         |         | Endast Windows |
 | Hämta räknare    | &check; |         | &check; | &check; | Endast Windows |
@@ -170,14 +169,14 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ### <a name="microsoftpowershellhost"></a>Microsoft. PowerShell. Host
 
-|   Cmdlet-namn    |   5.1   |   6.x   |   7.0   |   7.1   | Obs! |
+|   Cmdlet-namn    |   5.1   |   6.x   |   7.0   |   7.1   | Anteckning |
 | ---------------- | :-----: | :-----: | :-----: | :-----: | ---- |
 | Start-avskrift | &check; | &check; | &check; | &check; |      |
 | Stopp-avskrift  | &check; | &check; | &check; | &check; |      |
 
 ### <a name="microsoftpowershelllocalaccounts"></a>Microsoft. PowerShell. LocalAccounts
 
-|       Cmdlet-namn       |   5.1   | 6.x  |  7.0  |  7.1  |     Obs!     |
+|       Cmdlet-namn       |   5.1   | 6.x  |  7.0  |  7.1  |     Anteckning     |
 | ----------------------- | :-----: | :--- | :---: | :---: | ------------ |
 | Add-LocalGroupMember    | &check; |      |       |       | Endast Windows |
 | Disable-lokal användare       | &check; |      |       |       | Endast Windows |
@@ -197,7 +196,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ### <a name="microsoftpowershellmanagement"></a>Microsoft. PowerShell. Management
 
-|          Cmdlet-namn          |   5.1   |   6.x   |   7.0   |   7.1   |               Obs!               |
+|          Cmdlet-namn          |   5.1   |   6.x   |   7.0   |   7.1   |               Anteckning               |
 | ----------------------------- | :-----: | :-----: | :-----: | :-----: | -------------------------------- |
 | Lägg till dator                  | &check; |         |         |         | Endast Windows                     |
 | Lägg till innehåll                   | &check; | &check; | &check; | &check; |                                  |
@@ -292,20 +291,20 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ### <a name="microsoftpowershellodatautils"></a>Microsoft. PowerShell. ODataUtils
 
-|        Cmdlet-namn        |   5.1   | 6.x  |  7.0  |  7.1  |     Obs!     |
+|        Cmdlet-namn        |   5.1   | 6.x  |  7.0  |  7.1  |     Anteckning     |
 | ------------------------- | :-----: | :--- | :---: | :---: | ------------ |
 | Exportera – ODataEndpointProxy | &check; |      |       |       | Endast Windows |
 
 ### <a name="microsoftpowershelloperationvalidation"></a>Microsoft. PowerShell. operation. Validation
 
-|        Cmdlet-namn         |   5.1   | 6.x  |  7.0  |  7.1  |     Obs!     |
+|        Cmdlet-namn         |   5.1   | 6.x  |  7.0  |  7.1  |     Anteckning     |
 | -------------------------- | :-----: | :--- | :---: | :---: | ------------ |
 | Get-OperationValidation    | &check; |      |       |       | Endast Windows |
 | Invoke-OperationValidation | &check; |      |       |       | Endast Windows |
 
 ### <a name="microsoftpowershellsecurity"></a>Microsoft. PowerShell. Security
 
-|        Cmdlet-namn        |   5.1   |   6.x   |   7.0   |   7.1   |                  Obs!                   |
+|        Cmdlet-namn        |   5.1   |   6.x   |   7.0   |   7.1   |                  Anteckning                   |
 | ------------------------- | :-----: | :-----: | :-----: | :-----: | --------------------------------------- |
 | ConvertFrom – SecureString  | &check; | &check; | &check; | &check; |                                         |
 | ConvertTo – SecureString    | &check; | &check; | &check; | &check; |                                         |
@@ -325,7 +324,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ### <a name="microsoftpowershellutility"></a>Microsoft.PowerShell.Utility
 
-|        Cmdlet-namn        |   5.1   |   6.x   |   7.0   |   7.1   |                   Obs!                    |
+|        Cmdlet-namn        |   5.1   |   6.x   |   7.0   |   7.1   |                   Anteckning                    |
 | ------------------------- | :-----: | :-----: | :-----: | :-----: | ----------------------------------------- |
 | Lägg till medlem                | &check; | &check; | &check; | &check; |                                           |
 | Lägg till typ                  | &check; | &check; | &check; | &check; |                                           |
@@ -447,7 +446,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ### <a name="microsoftwsmanmanagement"></a>Microsoft. WsMan. Management
 
-|      Cmdlet-namn       |   5.1   |   6.x   |   7.0   |   7.1   |     Obs!     |
+|      Cmdlet-namn       |   5.1   |   6.x   |   7.0   |   7.1   |     Anteckning     |
 | ---------------------- | :-----: | :-----: | :-----: | :-----: | ------------ |
 | Anslut-WSMan          | &check; | &check; | &check; | &check; | Endast Windows |
 | Disable-WSManCredSSP   | &check; | &check; | &check; | &check; | Endast Windows |
@@ -465,7 +464,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ### <a name="packagemanagement"></a>PackageManagement
 
-|       Cmdlet-namn        |   5.1   |   6.x   |   7.0   |   7.1   | Obs! |
+|       Cmdlet-namn        |   5.1   |   6.x   |   7.0   |   7.1   | Anteckning |
 | ------------------------ | :-----: | :-----: | :-----: | :-----: | ---- |
 | Sök-paket             | &check; | &check; | &check; | &check; |      |
 | Find-PackageProvider     | &check; | &check; | &check; | &check; |      |
@@ -483,7 +482,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ### <a name="powershellget"></a>PowershellGet
 
-|           Cmdlet-namn           |   5.1   |   6.x   |   7.0   |   7.1   | Obs! |
+|           Cmdlet-namn           |   5.1   |   6.x   |   7.0   |   7.1   | Anteckning |
 | ------------------------------- | :-----: | :-----: | :-----: | :-----: | ---- |
 | Sök-kommando                    | &check; | &check; | &check; | &check; |      |
 | Find-Dscresource Keyword Supports                | &check; | &check; | &check; | &check; |      |
@@ -514,7 +513,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ### <a name="psdesiredstateconfiguration"></a>PSDesiredStateConfiguration
 
-|                Cmdlet-namn                 |   5.1   |   6.x   |   7.0   |   7.1   |     Obs!     |
+|                Cmdlet-namn                 |   5.1   |   6.x   |   7.0   |   7.1   |     Anteckning     |
 | ------------------------------------------ | :-----: | :-----: | :-----: | :-----: | ------------ |
 | Disable-DscDebug                           | &check; |         |         |         | Endast Windows |
 | Aktivera – DscDebug                            | &check; |         |         |         | Endast Windows |
@@ -535,7 +534,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ### <a name="psdiagnostics"></a>PSDiagnostics
 
-|         Cmdlet-namn          |   5.1   |   6.x   |   7.0   |   7.1   |     Obs!     |
+|         Cmdlet-namn          |   5.1   |   6.x   |   7.0   |   7.1   |     Anteckning     |
 | ---------------------------- | :-----: | :-----: | :-----: | :-----: | ------------ |
 | Disable-PSTrace              | &check; |   6.2   | &check; | &check; | Endast Windows |
 | Disable-PSWSManCombinedTrace | &check; |   6.2   | &check; | &check; | Endast Windows |
@@ -550,7 +549,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ### <a name="psreadline"></a>PSReadline
 
-|         Cmdlet-namn         |   5.1   |   6.x   |   7.0   |   7.1   | Obs! |
+|         Cmdlet-namn         |   5.1   |   6.x   |   7.0   |   7.1   | Anteckning |
 | --------------------------- | :-----: | :-----: | :-----: | :-----: | ---- |
 | Get-PSReadlineKeyHandler    | &check; | &check; | &check; | &check; |      |
 | Get-PSReadlineOption        | &check; | &check; | &check; | &check; |      |
@@ -561,7 +560,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ### <a name="psscheduledjob"></a>PSScheduledJob
 
-|       Cmdlet-namn       |   5.1   | 6.x  |  7.0  |  7.1  |     Obs!     |
+|       Cmdlet-namn       |   5.1   | 6.x  |  7.0  |  7.1  |     Anteckning     |
 | ----------------------- | :-----: | :--- | :---: | :---: | ------------ |
 | Add-JobTrigger          | &check; |      |       |       | Endast Windows |
 | Disable-JobTrigger      | &check; |      |       |       | Endast Windows |
@@ -582,7 +581,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ### <a name="psworkflow--psworkflowutility"></a>PSWorkflow & PSWorkflowUtility
 
-|          Cmdlet-namn          |   5.1   | 6.x  |  7.0  |  7.1  |     Obs!     |
+|          Cmdlet-namn          |   5.1   | 6.x  |  7.0  |  7.1  |     Anteckning     |
 | ----------------------------- | :-----: | :--- | :---: | :---: | ------------ |
 | New-PSWorkflowExecutionOption | &check; |      |       |       | Endast Windows |
 | New-PSWorkflowSession         | &check; |      |       |       | Endast Windows |
@@ -590,6 +589,6 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 
 ### <a name="threadjob"></a>ThreadJob
 
-|   Cmdlet-namn   |  5.1  |   6.x   |   7.0   |   7.1   | Obs! |
+|   Cmdlet-namn   |  5.1  |   6.x   |   7.0   |   7.1   | Anteckning |
 | --------------- | :---: | :-----: | :-----: | :-----: | ---- |
 | Start-ThreadJob |       | &check; | &check; | &check; | Kan installeras i PowerShell 5,1 |

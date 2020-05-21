@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 947a3add-3593-400d-8144-8b44c8adbe5e
 caps.latest.revision: 5
-ms.openlocfilehash: 44b718e024eb98ac562edb50076287a31f5edc6b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4849735bf412497f5590b109c67760b6a197cb2b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352285"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561741"
 ---
 # <a name="associating-management-odata-entities"></a>Associera Management OData-entiteter
 
-Det är ofta användbart att skapa en association mellan två olika hanterings-OData-entiteter. En hantering av OData-tjänster kan till exempel ha entiteter som hanterar en katalog med produkter som är ordnade i kategorier och definierar entiteterna `Product` och `Category`. Genom att associera dessa två entiteter kan en klient hämta information om alla produkter i en kategori med en enskild begäran till webb tjänsten.
+Det är ofta användbart att skapa en association mellan två olika hanterings-OData-entiteter. En hantering av OData-tjänster kan till exempel ha entiteter som hanterar en katalog med produkter som är ordnade i kategorier och definierar entiteterna `Product` och `Category` . Genom att associera dessa två entiteter kan en klient hämta information om alla produkter i en kategori med en enskild begäran till webb tjänsten.
 
 Ett exempel som visar hur du skapar kopplingar mellan entiteter kan hämtas i [associerings exemplet](https://code.msdn.microsoft.com:443/windowsdesktop/Association-sample-0f0fa87e).
 
@@ -43,9 +43,9 @@ string Products[];
 }
 ```
 
-Klassen `Category` definierar en egenskap som är en matris med namnen på de produkter som tillhör den kategorin.
+`Category`Klassen definierar en egenskap som är en matris med namnen på de produkter som tillhör den kategorin.
 
-Om du vill associera två entiteter måste du definiera en klass med attributet `Association` i MOF-filen för resurs scheman för tjänsten. Klassen måste definiera de två entiteter som ska associeras, som kallas `ends` av associationen. I följande exempel visas en definition av en klass som definierar en association mellan kategori-och produkt enheterna.
+För att associera två entiteter måste du definiera en klass med `Association` attributet i MOF-filen för resurs scheman för tjänsten. Klassen måste definiera de två entiteter som ska associeras, anropas `ends` för associationen. I följande exempel visas en definition av en klass som definierar en association mellan kategori-och produkt enheterna.
 
 ```csharp
 [Association]
@@ -55,7 +55,7 @@ Product ref theProducts;
 }
 ```
 
-Du måste också ändra deklarationen för egenskapen Products i klassen Category. Du använder nyckelordet `AssociationClass` för att ange att egenskapen är en ände av associationen. Egenskapen måste också definieras som en referens till en separat entitet, snarare än en sträng mat ris. Du gör detta med hjälp av nyckelordet `ref`. I följande exempel visas egenskaps definitionen för associationen.
+Du måste också ändra deklarationen för egenskapen Products i klassen Category. Du kan använda `AssociationClass` nyckelordet för att ange att egenskapen är en ände av associationen. Egenskapen måste också definieras som en referens till en separat entitet, snarare än en sträng mat ris. Du gör detta med hjälp av `ref` nyckelordet. I följande exempel visas egenskaps definitionen för associationen.
 
 ```csharp
 class Sample_Category {
@@ -67,7 +67,7 @@ Sample_Product ref AssociatedProducts[];
 };
 ```
 
-Slutligen måste du deklarera den andra änden av associationen genom att lägga till en egenskaps definition i `Product`-klassen. Detta är en referens till antingen en matris eller en enskild entitet. Om du antar att varje produkt endast tillhör en kategori skulle definitionen vara följande.
+Slutligen måste du deklarera den andra änden av associationen genom att lägga till en egenskaps definition i `Product` klassen. Detta är en referens till antingen en matris eller en enskild entitet. Om du antar att varje produkt endast tillhör en kategori skulle definitionen vara följande.
 
 ```csharp
 class Sample_Product {
@@ -82,7 +82,7 @@ Egenskaperna som representerar kopplingens två ändar kallas för navigerings e
 
 #### <a name="steps-for-associating-entities-in-the-resource-schema-file"></a>Steg för att associera entiteter i resurs schema filen
 
-- Definiera associationen som en klass med hjälp av nyckelordet `Association`.
+- Definiera associationen som en klass med hjälp av `Association` nyckelordet.
 
 - Definiera slutet av associationen genom att använda nyckelordet AssociationClass för att kvalificera egenskaperna för de associerade entiteterna.
 
@@ -94,7 +94,7 @@ Det finns tre olika fall att tänka på när du mappar en Association i XML-file
 
 - Om navigerings egenskapen finns i den underliggande. .NET Framework typ och egenskapen innehåller sekundär nycklar, krävs ingen explicit mappning.
 
-- Om navigerings egenskapen inte finns i den underliggande .NET Framework typen, måste du ange en cmdlet som hämtar listan över nycklar för de associerade instanserna. Du gör detta genom att lägga till ett `Association`-element som kapslas under `CmdletImplementation`-elementet, efter de element som definierar `cmdlets` för de andra CRUD-kommandona.
+- Om navigerings egenskapen inte finns i den underliggande .NET Framework typen, måste du ange en cmdlet som hämtar listan över nycklar för de associerade instanserna. Du gör detta genom att lägga till ett `Association` element som är kapslat under `CmdletImplementation` elementet, efter de element som definierar `cmdlets` för de andra CRUD-kommandona.
 
   ```xml
   Class Name=" Category">
@@ -177,7 +177,7 @@ Klienten kan hämta en lista över instanser som är associerade med en entitet 
 
 #### <a name="constructing-queries-for-associated-entities"></a>Skapa frågor för associerade entiteter
 
-- En klient kan begära information om en kategori utan att hämta tillhör ande produkter. Följande förfrågan hämtar till exempel information om kategorin `food`.
+- En klient kan begära information om en kategori utan att hämta tillhör ande produkter. Följande förfrågan hämtar till exempel information om `food` kategorin.
 
   ```
   http://localhost:7000/MODataSvc/sample.svc/Category('food')
@@ -189,13 +189,13 @@ Klienten kan hämta en lista över instanser som är associerade med en entitet 
   http://localhost:7000/MODataSvc/sample.svc/Category('food')/AssociatedProducts
   ```
 
-- Om du bara vill hämta URL: er för produkterna använder du `$links`-kvalificeraren i begäran.
+- Om du bara vill hämta URL: er för produkterna använder du `$links` kvalificeraren i begäran.
 
   ```
   http://localhost:7000/MODataSvc/sample.svc/Category('food')/$links/AssociatedProducts
   ```
 
-- Klienten kan hämta både kategori information och tillhör ande produkter med hjälp av `$expand`-kvalificeraren.
+- Klienten kan hämta både kategori information och tillhör ande produkter genom att använda `$expand` kvalificeraren.
 
   ```
   http://localhost:7000/MODataSvc/sample.svc/Category('food')?$expand=AssociatedProducts

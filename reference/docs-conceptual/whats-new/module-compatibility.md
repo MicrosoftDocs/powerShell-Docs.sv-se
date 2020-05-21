@@ -1,12 +1,12 @@
 ---
 title: PowerShell 7-modulens kompatibilitet
 ms.date: 02/03/2020
-ms.openlocfilehash: 02095b8233b6fc7b6d2a30bcb841bfd831a50031
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 273e25e3b7cd48e09b63e50c34ed0b98a4e766f0
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78935194"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565071"
 ---
 # <a name="powershell-7-module-compatibility"></a>PowerShell 7-modulens kompatibilitet
 
@@ -18,14 +18,13 @@ Om du har information om att dela eller problem med specifika moduler, så kan d
 
 Windows Management-modulen installeras på olika sätt beroende på Windows-versionen och hur modulen paketerades för den versionen.
 
-Använd funktions namnet med cmdleten [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature) som administratör på Windows Server. Ett exempel:
+Använd funktions namnet med cmdleten [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature) som administratör på Windows Server. Till exempel:
 
 ```powershell
 Install-WindowsFeature -Name ActiveDirectory
 ```
 
 I Windows 10 görs Windows Management-moduler tillgängliga som Windows- **valfria funktioner** eller **Windows-funktioner**. Följande kommandon måste köras från en upphöjd session med hjälp av **Kör som-administratör**.
-
 
 - För valfria Windows-funktioner
 
@@ -54,7 +53,7 @@ I Windows 10 görs Windows Management-moduler tillgängliga som Windows- **valfr
   Get-WindowsCapability -online
   ```
 
-  Observera att namnet på funktions paketet slutar med `~~~~0.0.1.0`. Du måste använda det fullständiga namnet för att installera funktionen:
+  Observera att namnet på funktions paketet slutar med `~~~~0.0.1.0` . Du måste använda det fullständiga namnet för att installera funktionen:
 
   ```powershell
   Add-WindowsCapability -Online -Name Rsat.ServerManager.Tools~~~~0.0.1.0

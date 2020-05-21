@@ -2,12 +2,12 @@
 ms.date: 05/02/2019
 keywords: powershell,cmdlet
 title: Kommandoradsalternativ för PowerShell
-ms.openlocfilehash: 0b387b887c503bb4fb7ef4472dd7f21f4dc0ed12
-ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
+ms.openlocfilehash: dbe619a328cef6e39172aa220297e5b6bc2683a1
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83271924"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560199"
 ---
 # <a name="powershell-command-line-options"></a>Kommandoradsalternativ för PowerShell
 

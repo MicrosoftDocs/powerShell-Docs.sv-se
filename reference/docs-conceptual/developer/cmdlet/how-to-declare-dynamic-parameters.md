@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: db04f1df-def5-4456-8869-336024cda723
 caps.latest.revision: 8
-ms.openlocfilehash: a9c530cdc66302eb6b3d9d2b284eeb486c3b2ba9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d3c2c339ba9ac6ec4a1958fadbfe1c6d74e3d736
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355519"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561060"
 ---
 # <a name="how-to-declare-dynamic-parameters"></a>Deklarera dynamiska parametrar
 
-Det här exemplet visar hur du definierar dynamiska parametrar som läggs till i cmdleten vid körning. I det här exemplet läggs parametern `Department` till i cmdleten när användaren anger parametern `Employee` växel. Mer information om dynamiska parametrar finns i [cmdlet Dynamic Parameters](./cmdlet-dynamic-parameters.md).
+Det här exemplet visar hur du definierar dynamiska parametrar som läggs till i cmdleten vid körning. I det här exemplet `Department` läggs parametern till i cmdleten när användaren anger `Employee` växlings parametern. Mer information om dynamiska parametrar finns i [cmdlet Dynamic Parameters](./cmdlet-dynamic-parameters.md).
 
 ## <a name="to-define-dynamic-parameters"></a>Definiera dynamiska parametrar
 
@@ -27,7 +27,7 @@ Det här exemplet visar hur du definierar dynamiska parametrar som läggs till i
    public class SendGreetingCommand : Cmdlet, IDynamicParameters
    ```
 
-2. Anropa metoden [system. Management. Automation. Idynamicparameters. Getdynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) som returnerar det objekt där dynamiska parametrar har definierats. I det här exemplet anropas metoden när parametern `Employee` anges.
+2. Anropa metoden [system. Management. Automation. Idynamicparameters. Getdynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) som returnerar det objekt där dynamiska parametrar har definierats. I det här exemplet anropas metoden när `Employee` parametern anges.
 
    ```csharp
    public object GetDynamicParameters()
@@ -60,7 +60,7 @@ Det här exemplet visar hur du definierar dynamiska parametrar som läggs till i
 
 ## <a name="example"></a>Exempel
 
-I det här exemplet läggs `Department`-parametern till när användaren anger parametern `Employee`. Parametern `Department` är en valfri parameter och attributet ValidateSet används för att ange tillåtna argument.
+I det här exemplet `Department` läggs parametern till när användaren anger `Employee` parametern. `Department`Parametern är en valfri parameter och ValidateSet-attributet används för att ange tillåtna argument.
 
 ```csharp
 using System;

@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
-title: Faktablad
-ms.openlocfilehash: d89f5410786e2b2889946cd8171d34667701b8b7
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+title: Vitböcker
+ms.openlocfilehash: edbe48d17aadff18d63e2024170f893ddeeb017c
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942281"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559955"
 ---
-# <a name="whitepapers"></a>Faktablad
+# <a name="whitepapers"></a>Vitböcker
 
 Följande Whitepapers har publicerats för att ge ytterligare information om ämnen som rör PowerShell Desired State Configuration.
 

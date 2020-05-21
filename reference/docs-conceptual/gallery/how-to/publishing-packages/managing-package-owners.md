@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Hantera paket ägare
-ms.openlocfilehash: 5cf26a7195ac446177cbb7f3a055e8e0a78569cc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 72a3ff72818c5461c74d46de5689e2d6c59b19bf
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71329024"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564677"
 ---
 # <a name="managing-package-owners"></a>Hantera paket ägare
 
@@ -41,7 +41,6 @@ Den här processen av inbjudningar förhindrar att användare lägger till andra
 
 Observera att metadata för "författare" är en helt fri hands text. endast "ägare" kontrol leras.
 
-
 ## <a name="removing-owners"></a>Ta bort ägare
 
 När ett paket har flera ägare och en måste tas bort är processen enkel:
@@ -50,8 +49,6 @@ När ett paket har flera ägare och en måste tas bort är processen enkel:
 2. Gå till sidan paket på fliken paket, Sök eller klicka på ditt användar namn och [**hantera mina paket**](https://www.powershellgallery.com/account/Packages).
 3. När du är inloggad som ett pakets ägare finns länken "Hantera ägare" på vänster sida för att klicka.
 4. Klicka på länken Ta bort bredvid den ägare som ska tas bort.
-
-
 
 ## <a name="transferring-package-ownership"></a>Överför paket ägarskap
 
@@ -65,7 +62,6 @@ Den här begäran har kommit under ett par formulär, men processen fungerar på
 
 - Paketets ägarskap ändras från en utvecklare till en annan
 - Paketet publicerades av misstag med fel konto
-
 
 ## <a name="orphaned-packages"></a>Överblivna paket
 

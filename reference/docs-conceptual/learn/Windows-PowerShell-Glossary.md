@@ -1,18 +1,17 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: Windows PowerShell-ordlista
-ms.openlocfilehash: 0827ec771b1744b87a8c0f0ddf48438f9ba484b2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1e2285bb49ed6a30fb5624ab3cf136cbf06401b5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030350"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560414"
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell-ordlista
 
-
-|Period|Definition|
+|Term|Definition|
 |--------|--------------|
 |binär modul|En Windows PowerShell-modul vars modul är en binärfil (. dll). En binär modul kan eventuellt innehålla ett modul manifest.|
 |gemensam parameter|En parameter som läggs till i alla cmdletar, avancerade funktioner och arbets flöden med Windows PowerShell-motorn.|

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Kända problem i WMF 5.0
-ms.openlocfilehash: 91f556cb43ef971107f05c4041b725b1c7e4f1bd
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1db656884736c742ef78354b7452879e319d4a0a
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71145133"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564120"
 ---
 # <a name="known-issues-in-wmf-50"></a>Kända problem i WMF 5.0
 
@@ -52,7 +52,7 @@ Om ett katalog namn innehåller ett ogiltigt jokertecken `Get-ChildItem` kommer 
 
 Det finns två sätt att lösa problemet, beroende på vilken version av Windows Server du kör.
 
-**Lösning**
+**Lösning:**
 
 - För system som kör **Windows Server 2008 R2**
   1. Öppna PowerShell som administratör
@@ -78,7 +78,7 @@ Det finns två sätt att lösa problemet, beroende på vilken version av Windows
 
 - För system som kör **Windows Server 2012**
   1. Logga in som administratör när du har installerat WMF 5,0 på servern som ska Sysprep.
-  2. Kopiera Generize. XML från katalogen `\Windows\System32\Sysprep\ActionFiles\` till en plats utanför Windows-katalogen, `C:\` till exempel.
+  2. Kopiera Generize. XML från katalogen `\Windows\System32\Sysprep\ActionFiles\` till en plats utanför Windows-katalogen, till `C:\` exempel.
   3. Öppna din generalize. XML-kopia med anteckningar.
   4. Hitta och ta bort följande text, en instans av varje måste tas bort (de kommer snart i slutet av dokumentet).
 

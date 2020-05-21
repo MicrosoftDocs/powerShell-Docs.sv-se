@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Paket manifest värden som påverkar PowerShell-galleriet gränssnittet
-ms.openlocfilehash: 9e37fec879f2f5cbe3926c7dbc946389425d856a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 460b1c67af0af81dd993a45c4f988b825dc2f3eb
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74417041"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560431"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Paket manifest värden som påverkar PowerShell-galleriet gränssnittet
 
@@ -23,7 +23,7 @@ Tabellen nedan visar elementen i gränssnittet för PowerShell-galleriet paket s
 
 | UI-element | Beskrivning | Modul | Skript |
 | --- | --- | --- | --- |
-| **Avdelning** | Detta är namnet på det paket som har publicerats i galleriet  | Nej | Nej |
+| **Rubrik** | Detta är namnet på det paket som har publicerats i galleriet  | Nej | Nej |
 | **Version** | Den version som visas är versions strängen i metadata och en för hands version om har angetts. Den primära delen av versionen i ett modul manifest är ModuleVersion. För ett skript identifieras det som. 2.0.1. Om en för hands versions sträng anges läggs den till i ModuleVersion för moduler eller anges som en del av. VERSION för skript. Det finns dokumentation för att ange för hands versions strängar i [moduler](module-prerelease-support.md)och i [skript](script-prerelease-support.md) | Ja | Ja |
 | **Beskrivning** | Detta är beskrivningen i modulens manifest och i en skript fil manifestet. BETECKNING | Ja | Ja |
 | **Kräv godkännande av licens** | En modul kan kräva att användaren accepterar en licens genom att ändra modul manifestet med RequireLicenseAcceptance = $true, tillhandahålla en LicenseURI och tillhandahålla en License. txt-fil i roten i mappen module. Ytterligare information finns i avsnittet [Kräv godkännande av licens](../how-to/working-with-packages/packages-that-require-license-acceptance.md) . | Ja | Nej |
@@ -45,7 +45,6 @@ Tabellen nedan visar elementen i gränssnittet för PowerShell-galleriet paket s
 | **Projekt webbplats** | Projekt webbplatsen tillhandahålls för moduler i avsnittet Privatedata\PSData i modulen manifest genom att ange en ProjectURI. I skript manifestet styrs det genom att ange. PROJECTURI. | Ja | Ja |
 | **Licens** | En licens länk tillhandahålls för moduler i avsnittet Privatedata\PSData i modulen manifest genom att ange en LicenseURI. I skript manifestet styrs det genom att ange. LICENSEURI. Det är viktigt att Observera att om en licens inte tillhandahålls via LicenseURI, eller i en modul, anger användnings villkoren för det PowerShell-galleriet anger användnings villkoren för paketet. Se användnings villkoren för mer information. | Ja | Ja |
 | **Ikon** | En ikon kan anges för alla paket i PowerShell-galleriet genom att tillhandahålla flaggan IconURI i skript manifestet eller i avsnittet Privatedata-PSData i modulen manifest. IconURI ska peka på en 32 x 32-bild med genomskinlig bakgrund. URI: n **måste** vara en URL för direkt avbildning och **får inte** gå till en webb sida som innehåller bilden, eller en fil i PowerShell-galleriet paketet. | Ja | Ja |
-
 
 ## <a name="editing-package-details"></a>Redigera paket information
 

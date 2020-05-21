@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a54ce657-e0e0-4b3e-b9dc-aed39876f933
 caps.latest.revision: 11
-ms.openlocfilehash: 58252956184703fdcdb3aa9b1db617c6e91294c1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 74e11e03e8a01568dad7c038de0b3ecebb2117e5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356758"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83562247"
 ---
 # <a name="writing-a-windows-powershell-provider"></a>Skriva en Windows PowerShell-provider
 
 "Att skriva en Windows PowerShell-Provider" är för program hanterare som utformar Windows PowerShell-leverantörer och för utvecklare som implementerar leverantörs kod. Det hjälper dig att förstå hur Windows PowerShell-leverantörer fungerar och innehåller exempel kod som du kan använda för att börja utforma eller skriva egna leverantörer.
 
-## <a name="in-this-section"></a>I detta avsnitt
+## <a name="in-this-section"></a>I det här avsnittet
 
 [Snabb start för Windows PowerShell-Provider](./windows-powershell-provider-quickstart.md) Exempel kod och genom gång av en mycket grundläggande Provider.
 

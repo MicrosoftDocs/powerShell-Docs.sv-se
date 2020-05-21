@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e620bf6d-76be-47b0-a7a8-f43418f30c60
 caps.latest.revision: 6
-ms.openlocfilehash: b81a32b867795ae51c3f5308c2f82c31ed2747fa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2f6ad8ee9f303d3dea92a633996e9248d2e87a21
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352292"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561908"
 ---
 # <a name="adding-resources-to-a-management-odata-web-service"></a>Lägga till resurser till en Management OData-webbtjänst
 
 Det här exemplet visar hur du lägger till en resurs i en befintlig hantering av OData-webbtjänsten med hjälp av hanterings verktyget OData schema designer. [PswsRoleBasedPlugins](https://code.msdn.microsoft.com:443/windowsdesktop/PswsRoleBasedPlugins-9c79b75a) -exemplet skapar en webb tjänst som visar process-och Server resurserna. I det här exemplet ska du lägga till en virtuell dator resurs (VM) till webb tjänsten.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 Det här avsnittet förutsätter att du har laddat ned och installerat [PswsRoleBasedPlugins](https://code.msdn.microsoft.com:443/windowsdesktop/PswsRoleBasedPlugins-9c79b75a) -exemplet enligt beskrivningen i [skapa en Windows PowerShell-webbtjänst](./creating-a-management-odata-web-service.md)och att du har laddat ned och installerat [hanterings verktyget OData schema designer](https://marketplace.visualstudio.com/items?itemName=jlisc0.ManagementODataSchemaDesigner). Det här avsnittet förutsätter också att du har Windows PowerShell-modulen för Hyper-V installerad på den dator där du konfigurerar OData-slutpunkten för hantering.
 
@@ -51,17 +51,17 @@ Det första steget är att importera schemat från den befintliga hanterings-ODa
 
 3. Kontrol lera att installerade Windows PowerShell-moduler är markerat och välj Hyper-V i list rutan. Klicka på **Nästa**. Klicka på **Nästa**.
 
-4. I **cmdlet Substantiv** -listan väljer du **virtuell dator**. Klicka på **Nästa**.
+4. I **cmdlet Substantiv** -listan väljer du **virtuell dator**. Klicka på **Nästa**
 
-5. I det här exemplet binder vi bara get-och Delete-kommandona med cmdletar. Avmarkera kryss rutorna **skapa** och **Uppdatera** och kontrol lera att kryss rutorna **Hämta** och **ta bort** är markerade. Kontrol lera att `Get-VM`-cmdleten har valts för **Get**och att `Remove-VM`-cmdleten har valts för **borttagning**.
+5. I det här exemplet binder vi bara get-och Delete-kommandona med cmdletar. Avmarkera kryss rutorna **skapa** och **Uppdatera** och kontrol lera att kryss rutorna **Hämta** och **ta bort** är markerade. Kontrol lera att `Get-VM` cmdleten har valts för **Get**och att `Remove-VM` cmdleten har valts för **borttagning**.
 
-6. Eftersom metadata för VM-cmdletarna inte anger någon Utdatatyp måste du köra cmdleten för att ange utdatatypen. Välj **Ange Utdatatyp** och klicka på **kör cmdlet**. Dialog rutan **kör cmdlet** visas. Klicka på **Run** (Kör). Rutan **CLR-typ** fylls med `VirtualMachine` typen. Klicka på **OK**och sedan på **Nästa**.
+6. Eftersom metadata för VM-cmdletarna inte anger någon Utdatatyp måste du köra cmdleten för att ange utdatatypen. Välj **Ange Utdatatyp** och klicka på **kör cmdlet**. Dialog rutan **kör cmdlet** visas. Klicka på **Kör**. Rutan **CLR-typ** fylls i med `VirtualMachine` typen. Klicka på **OK**och sedan på **Nästa**.
 
 7. Som standard är alla egenskaper för VirtualMachine-objektet markerade. Du kan ta bort alla egenskaper som du inte vill ha som en del av de data som returneras när du begär den här resursen från webb tjänsten. Klicka på **Nästa**.
 
 8. Du måste markera minst en egenskap som ska användas som nyckel. Välj **namn** i listan och klicka på **Nästa**.
 
-9. I nästa fönster kan du mappa egenskaper för hanterings-OData-resursen till egenskaper för de underliggande cmdletarna. Guiden mappar egenskaper med identiska namn som standard. Till exempel mappas resursens `ComputerName` egenskap till `ComputerName`-egenskapen för cmdletarna.  På så sätt kan du ange `ComputerName` egenskapen i en begäran till webb tjänsten och ha det värde som du anger till `Get-VM`-cmdlet. `Id` och `Name` mappas också som standard.
+9. I nästa fönster kan du mappa egenskaper för hanterings-OData-resursen till egenskaper för de underliggande cmdletarna. Guiden mappar egenskaper med identiska namn som standard. Till exempel `ComputerName` mappas resursens egenskap till- `ComputerName` egenskapen för-cmdletarna.  På så sätt kan du ange `ComputerName` egenskapen i en begäran till webb tjänsten och ha det värde som du anger för `Get-VM` cmdleten. `Id`och `Name` mappas också som standard.
 
    10. Klicka på **Nästa**och sedan på **Slutför**.
 

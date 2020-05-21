@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC WaitForSome-resurs
-ms.openlocfilehash: 91589c84518a2bd0f4816d11aa011dec1d5305e1
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 37c73ed4a42975194938f78de04096a988cf9846
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941266"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561094"
 ---
 # <a name="dsc-waitforsome-resource"></a>DSC WaitForSome-resurs
 
@@ -42,7 +42,7 @@ WaitForSome [String] #ResourceName
 |---|---|
 |NodeCount |Det minsta antalet noder som måste ha önskat tillstånd för att resursen ska lyckas. |
 |NodeName |Målvärdena för resursen som är beroende av. |
-|ResourceName |Resurs namnet som är beroende av. Om den här resursen tillhör en annan konfiguration formaterar du namnet som `[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]`. |
+|ResourceName |Resurs namnet som är beroende av. Om den här resursen tillhör en annan konfiguration formaterar du namnet som `[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]` . |
 |RetryIntervalSec |Antalet sekunder innan nytt försök. Minimivärdet är 1. |
 |RetryCount |Det maximala antalet försök att försöka igen. |
 |ThrottleLimit |Antal datorer som ska anslutas samtidigt. Standardvärdet är `New-CimSession` standard. |
@@ -51,7 +51,7 @@ WaitForSome [String] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 
 > [!NOTE]

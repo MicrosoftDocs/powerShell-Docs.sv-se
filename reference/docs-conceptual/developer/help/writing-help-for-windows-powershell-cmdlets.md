@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 55908d67-7cbe-482a-a105-5a6da93c5311
 caps.latest.revision: 4
-ms.openlocfilehash: 8d692cf88d1d356886ef973f0989294d6b51ee6d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fd565e8bf8429d91d785664c8cc69d1843439219
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353174"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560601"
 ---
 # <a name="writing-help-for-powershell-cmdlets"></a>Skriva hjälp för PowerShell-cmdletar
 
@@ -85,24 +85,24 @@ Du kan också begära feedback från diskussions grupper.
 
 ## <a name="see-also"></a>Se även
 
- [Så här skapar du cmdlet-hjälp filen](./how-to-create-the-cmdlet-help-file.md)
+ [Skapa cmdlet-hjälpfilen](./how-to-create-the-cmdlet-help-file.md)
 
- [Så här lägger du till cmdlet-namnet och sammanfattningen i ett hjälp avsnitt för cmdlet](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)
+ [Lägga till cmdlet-namnet och sammanfattningen i ett cmdlet-hjälpavsnitt](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)
 
  [Så här lägger du till den detaljerade beskrivningen i ett hjälp avsnitt för cmdlet](./how-to-add-a-cmdlet-description.md)
 
- [Så här lägger du till syntax i ett cmdlet-hjälp ämne](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
+ [Lägga till syntax till ett cmdlet-hjälpavsnitt](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
 
  [Så här lägger du till parametrar i ett hjälp avsnitt för cmdlet](./how-to-add-parameter-information.md)
 
  [Så här lägger du till indatatyper i ett hjälp avsnitt för cmdlet](./how-to-add-input-types-to-a-cmdlet-help-topic.md)
 
- [Så här lägger du till retur värden i ett cmdlet-hjälp avsnitt](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
+ [Lägga till returvärden i ett cmdlet-hjälpavsnitt](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
 
- [Så här lägger du till anteckningar i hjälp avsnittet om cmdlet](./how-to-add-notes-to-a-cmdlet-help-topic.md)
+ [Lägga till anteckningar i ett cmdlet-hjälpavsnitt](./how-to-add-notes-to-a-cmdlet-help-topic.md)
 
- [Så här lägger du till exempel i ett hjälp avsnitt för cmdlet](./how-to-add-examples-to-a-cmdlet-help-topic.md)
+ [Lägga till exempel i ett cmdlet-hjälpavsnitt](./how-to-add-examples-to-a-cmdlet-help-topic.md)
 
- [Så här lägger du till relaterade länkar i ett hjälp avsnitt för cmdlet](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
+ [Lägga till relaterade länkar i ett cmdlet-hjälpavsnitt](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
 
  [Windows PowerShell SDK](../windows-powershell-reference.md)
