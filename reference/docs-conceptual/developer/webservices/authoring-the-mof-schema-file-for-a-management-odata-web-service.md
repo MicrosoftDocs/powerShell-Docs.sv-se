@@ -8,22 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 65fbac8b-07d0-4513-bc8d-79f1f389be0f
 caps.latest.revision: 5
-ms.openlocfilehash: 7aadee07b38d2e9d87c5f0c548d13a5cdad1939f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5c55ec1346e1f2a9a3fd59445ce267c80bdb5ae4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356744"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561713"
 ---
-# <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="19298-102">Redigera MOF-schemafilen för en Management OData-webbtjänst</span><span class="sxs-lookup"><span data-stu-id="19298-102">Authoring the MOF schema file for a Management OData web service</span></span>
+# <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="f49cf-102">Redigera MOF-schemafilen för en Management OData-webbtjänst</span><span class="sxs-lookup"><span data-stu-id="f49cf-102">Authoring the MOF schema file for a Management OData web service</span></span>
 
-<span data-ttu-id="19298-103">Du definierar de resurser som din hantering av OData-webbtjänsten exponerar genom att skapa en MOF-fil som använde det offentliga resurs schemat.</span><span class="sxs-lookup"><span data-stu-id="19298-103">You define the resources that your Management OData web service exposes by creating a MOF file that used the public resource schema.</span></span> <span data-ttu-id="19298-104">Varje resurs definieras som en klass i filen och egenskaper definieras som klass medlemmar.</span><span class="sxs-lookup"><span data-stu-id="19298-104">Each resource is defined as a class in the file, and properties are defined as class members.</span></span> <span data-ttu-id="19298-105">Mer information om det schema som används i MOF-filen finns i [delat resurs schema](./public-resource-schema.md).</span><span class="sxs-lookup"><span data-stu-id="19298-105">For more information about the schema used in the MOF file, see [Public Resource Schema](./public-resource-schema.md).</span></span>
+<span data-ttu-id="f49cf-103">Du definierar de resurser som din hantering av OData-webbtjänsten exponerar genom att skapa en MOF-fil som använde det offentliga resurs schemat.</span><span class="sxs-lookup"><span data-stu-id="f49cf-103">You define the resources that your Management OData web service exposes by creating a MOF file that used the public resource schema.</span></span> <span data-ttu-id="f49cf-104">Varje resurs definieras som en klass i filen och egenskaper definieras som klass medlemmar.</span><span class="sxs-lookup"><span data-stu-id="f49cf-104">Each resource is defined as a class in the file, and properties are defined as class members.</span></span> <span data-ttu-id="f49cf-105">Mer information om det schema som används i MOF-filen finns i [delat resurs schema](./public-resource-schema.md).</span><span class="sxs-lookup"><span data-stu-id="f49cf-105">For more information about the schema used in the MOF file, see [Public Resource Schema](./public-resource-schema.md).</span></span>
 
-## <a name="example-mof-file"></a><span data-ttu-id="19298-106">Exempel på MOF-fil</span><span class="sxs-lookup"><span data-stu-id="19298-106">Example MOF file</span></span>
+## <a name="example-mof-file"></a><span data-ttu-id="f49cf-106">Exempel på MOF-fil</span><span class="sxs-lookup"><span data-stu-id="f49cf-106">Example MOF file</span></span>
 
-<span data-ttu-id="19298-107">Följande fil definierar tjänst-och process resurser.</span><span class="sxs-lookup"><span data-stu-id="19298-107">The following file defines Service and Process resources.</span></span> <span data-ttu-id="19298-108">Var och en av dessa resurser motsvarar ett objekt som kan hanteras av en uppsättning Windows PowerShell-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="19298-108">Each of these resources corresponds to an object that can be managed by a set of Windows PowerShell cmdlet.</span></span> <span data-ttu-id="19298-109">Egenskaperna motsvarar parametrar som används av dessa cmdletar.</span><span class="sxs-lookup"><span data-stu-id="19298-109">The properties correspond to parameters used by those cmdlets.</span></span>
+<span data-ttu-id="f49cf-107">Följande fil definierar tjänst-och process resurser.</span><span class="sxs-lookup"><span data-stu-id="f49cf-107">The following file defines Service and Process resources.</span></span> <span data-ttu-id="f49cf-108">Var och en av dessa resurser motsvarar ett objekt som kan hanteras av en uppsättning Windows PowerShell-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="f49cf-108">Each of these resources corresponds to an object that can be managed by a set of Windows PowerShell cmdlet.</span></span> <span data-ttu-id="f49cf-109">Egenskaperna motsvarar parametrar som används av dessa cmdletar.</span><span class="sxs-lookup"><span data-stu-id="f49cf-109">The properties correspond to parameters used by those cmdlets.</span></span>
 
-<span data-ttu-id="19298-110">Var och en av de två resurserna innehåller egenskaper av typen komplex.</span><span class="sxs-lookup"><span data-stu-id="19298-110">Each of the two resources contains properties that are of complex type.</span></span> <span data-ttu-id="19298-111">De komplexa typerna definieras som klasser som har ändrats med `ComplexType`-kvalificeraren.</span><span class="sxs-lookup"><span data-stu-id="19298-111">The complex types are defined as classes modified with the `ComplexType` qualifier.</span></span>
+<span data-ttu-id="f49cf-110">Var och en av de två resurserna innehåller egenskaper av typen komplex.</span><span class="sxs-lookup"><span data-stu-id="f49cf-110">Each of the two resources contains properties that are of complex type.</span></span> <span data-ttu-id="f49cf-111">De komplexa typerna definieras som klasser som har ändrats med `ComplexType` kvalificeraren.</span><span class="sxs-lookup"><span data-stu-id="f49cf-111">The complex types are defined as classes modified with the `ComplexType` qualifier.</span></span>
 
 ```csharp
 
@@ -209,8 +209,8 @@ class PswsTest_Stream
 
 ```
 
-## <a name="see-also"></a><span data-ttu-id="19298-112">Se även</span><span class="sxs-lookup"><span data-stu-id="19298-112">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f49cf-112">Se även</span><span class="sxs-lookup"><span data-stu-id="f49cf-112">See Also</span></span>
 
-[<span data-ttu-id="19298-113">Skapa en hantering av OData-webbtjänst</span><span class="sxs-lookup"><span data-stu-id="19298-113">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
+[<span data-ttu-id="f49cf-113">Skapa en Management OData-webbtjänst</span><span class="sxs-lookup"><span data-stu-id="f49cf-113">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
 
-[<span data-ttu-id="19298-114">Offentligt resurs schema</span><span class="sxs-lookup"><span data-stu-id="19298-114">Public Resource Schema</span></span>](./public-resource-schema.md)
+[<span data-ttu-id="f49cf-114">Schema för offentliga resurser</span><span class="sxs-lookup"><span data-stu-id="f49cf-114">Public Resource Schema</span></span>](./public-resource-schema.md)

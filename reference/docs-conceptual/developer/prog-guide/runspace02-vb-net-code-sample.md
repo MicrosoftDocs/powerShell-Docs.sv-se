@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9bd9d599-faa7-4154-ac36-1f35ccf8e320
 caps.latest.revision: 7
-ms.openlocfilehash: 5ad28cfbc73628ba818e42b87128d8f4ad273bda
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 38e022012bc5302fb28cd2e3d9f3a8d2859d72f6
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357052"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559887"
 ---
-# <a name="runspace02-vbnet-code-sample"></a><span data-ttu-id="2a93b-102">Runspace02 (VB.NET) – kodexempel</span><span class="sxs-lookup"><span data-stu-id="2a93b-102">Runspace02 (VB.NET) Code Sample</span></span>
+# <a name="runspace02-vbnet-code-sample"></a><span data-ttu-id="a0192-102">Runspace02 (VB.NET) – kodexempel</span><span class="sxs-lookup"><span data-stu-id="a0192-102">Runspace02 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="2a93b-103">Här är käll koden för VB.NET för Runspace02-exemplet.</span><span class="sxs-lookup"><span data-stu-id="2a93b-103">Here is the VB.NET source code for the Runspace02 sample.</span></span> <span data-ttu-id="2a93b-104">I det här exemplet används klassen [system. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) för att köra cmdleten `Get-Process` synkront.</span><span class="sxs-lookup"><span data-stu-id="2a93b-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously.</span></span> <span data-ttu-id="2a93b-105">Windows Forms och data bindning används sedan för att visa resultaten i en DataGridView-kontroll.</span><span class="sxs-lookup"><span data-stu-id="2a93b-105">Windows Forms and data binding are then used to display the results in a DataGridView control.</span></span>
+<span data-ttu-id="a0192-103">Här är käll koden för VB.NET för Runspace02-exemplet.</span><span class="sxs-lookup"><span data-stu-id="a0192-103">Here is the VB.NET source code for the Runspace02 sample.</span></span> <span data-ttu-id="a0192-104">I det här exemplet används klassen [system. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) för att köra `Get-Process` cmdleten synkront.</span><span class="sxs-lookup"><span data-stu-id="a0192-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously.</span></span> <span data-ttu-id="a0192-105">Windows Forms och data bindning används sedan för att visa resultaten i en DataGridView-kontroll.</span><span class="sxs-lookup"><span data-stu-id="a0192-105">Windows Forms and data binding are then used to display the results in a DataGridView control.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="2a93b-106">Kod exempel</span><span class="sxs-lookup"><span data-stu-id="2a93b-106">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="a0192-106">Kod exempel</span><span class="sxs-lookup"><span data-stu-id="a0192-106">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -86,6 +86,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace02.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace02/Runspace02.vb#L09-L68 "Runspace02.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="2a93b-107">Se även</span><span class="sxs-lookup"><span data-stu-id="2a93b-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a0192-107">Se även</span><span class="sxs-lookup"><span data-stu-id="a0192-107">See Also</span></span>
 
-[<span data-ttu-id="2a93b-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="2a93b-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="a0192-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="a0192-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
