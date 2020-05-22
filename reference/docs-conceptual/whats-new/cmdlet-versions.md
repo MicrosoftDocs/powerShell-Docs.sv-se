@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: PowerShell, Core
 title: Versions historik för moduler och cmdletar
-ms.openlocfilehash: 0a1a8b0e4b1460bbaeb30495262aff2b414a649b
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 4cb69e9d53151a0a221654f76ad7eb5eeb8fa218
+ms.sourcegitcommit: cae9885e01c13690268151d33efac168536e9287
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564643"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83751330"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>Versions historik för moduler och cmdletar
 
@@ -259,7 +259,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | Byt namn – ItemProperty           | &check; | &check; | &check; | &check; |                                  |
 | Återställ-ComputerMachinePassword | &check; |         |         |         | Endast Windows                     |
 | Lös-sökväg                  | &check; | &check; | &check; | &check; |                                  |
-| Starta om datorn              | &check; | &check; | &check; | &check; |                                  |
+| Starta om datorn              | &check; | &check; | &check; | &check; | Stöd för Linux/macOS har lagts till i 7,1 |
 | Restart-Service               | &check; | &check; | &check; | &check; | Endast Windows                     |
 | Återställa-dator              | &check; |         |         |         | Endast Windows                     |
 | Resume-Service                | &check; | &check; | &check; | &check; | Endast Windows                     |
@@ -277,7 +277,7 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | Start process                 | &check; | &check; | &check; | &check; |                                  |
 | Start-Service                 | &check; | &check; | &check; | &check; | Endast Windows                     |
 | Starta transaktion             | &check; |         |         |         | Endast Windows                     |
-| Stoppa – dator                 | &check; | &check; | &check; | &check; | Stöd för Linux/macOS har lagts till i 7,0 |
+| Stoppa – dator                 | &check; | &check; | &check; | &check; | Stöd för Linux/macOS har lagts till i 7,1 |
 | Stoppa – process                  | &check; | &check; | &check; | &check; |                                  |
 | Stop-Service                  | &check; | &check; | &check; | &check; | Endast Windows                     |
 | Suspend-Service               | &check; | &check; | &check; | &check; | Endast Windows                     |
