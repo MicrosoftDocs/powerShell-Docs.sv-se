@@ -2,16 +2,16 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, tjänst, installation
 title: Skriva, kompilera och tillämpa en konfiguration
-ms.openlocfilehash: eb61e518762b9f13e617ecd4711bfef7a86814ec
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 11de1d4552bc9c438adf9e3dea2059834e11e10c
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "76818166"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808307"
 ---
-> Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
-
 # <a name="write-compile-and-apply-a-configuration"></a>Skriva, kompilera och tillämpa en konfiguration
+
+> Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
 Den här övningen beskriver hur du skapar och tillämpar en Desired State Configuration (DSC)-konfiguration från början till slut.
 I följande exempel får du lära dig hur du skriver och använder en mycket enkel konfiguration. Konfigurationen ser till att filen "HelloWorld. txt" finns på den lokala datorn. Om du tar bort filen kommer DSC att återskapa den nästa gången den uppdateras.
@@ -47,7 +47,7 @@ Configuration HelloWorld {
 }
 ```
 
-> ! Viktiga i mer avancerade scenarier där flera moduler måste importeras så att du kan arbeta med många DSC-resurser i samma konfiguration, se till att varje modul placeras i en separat rad med hjälp `Import-DscResource`av.
+> ! Viktiga i mer avancerade scenarier där flera moduler måste importeras så att du kan arbeta med många DSC-resurser i samma konfiguration, se till att varje modul placeras i en separat rad med hjälp av `Import-DscResource` .
 > Detta är enklare att underhålla i käll kontroll och krävs när du arbetar med DSC i Azure-tillstånds konfiguration.
 >
 > ```powershell
@@ -61,9 +61,9 @@ Configuration HelloWorld {
 
 Spara filen som "HelloWorld. ps1".
 
-Att definiera en konfiguration är som att definiera en funktion. **Node** -blocket anger den målnod som ska konfigureras i det här `localhost`fallet.
+Att definiera en konfiguration är som att definiera en funktion. **Node** -blocket anger den målnod som ska konfigureras i det här fallet `localhost` .
 
-Konfigurationen `File` anropar en [resurs](../resources/resources.md), resursen. Resurser gör jobbet för att säkerställa att målnoden är i det tillstånd som definieras av konfigurationen.
+Konfigurationen anropar en [resources](../resources/resources.md) `File` resurs, resursen. Resurser gör jobbet för att säkerställa att målnoden är i det tillstånd som definieras av konfigurationen.
 
 ## <a name="compile-the-configuration"></a>Kompilera konfigurationen
 
@@ -73,7 +73,7 @@ För att kunna köra konfigurationen måste du *dot* -skriptet "HelloWorld. ps1"
 Mer information finns i [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).
 
 <!-- markdownlint-disable MD038 -->
-*Dot-källa* ditt "HelloWorld. ps1"-skript genom att skriva in sökvägen där du sparade den, `. ` efter (punkt, blank steg). Sedan kan du köra konfigurationen genom att anropa den som en funktion.
+*Dot-källa* ditt "HelloWorld. ps1"-skript genom att skriva in sökvägen där du sparade den, efter `. ` (punkt, blank steg). Sedan kan du köra konfigurationen genom att anropa den som en funktion.
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
@@ -96,13 +96,13 @@ Mode                LastWriteTime         Length Name
 
 Nu när du har kompilerat MOF kan du tillämpa konfigurationen på målnoden (i det här fallet den lokala datorn) genom att anropa cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) .
 
-`Start-DscConfiguration` Cmdleten talar om för [lokala Configuration Manager (LCM)](../managing-nodes/metaConfig.md), motorn för DSC, för att tillämpa konfigurationen.
+`Start-DscConfiguration`Cmdleten talar om för [lokala Configuration Manager (LCM)](../managing-nodes/metaConfig.md), motorn för DSC, för att tillämpa konfigurationen.
 LCM fungerar som att anropa DSC-resurserna för att tillämpa konfigurationen.
 
-Använd koden nedan för att köra `Start-DSCConfiguration` cmdleten. Ange sökvägen till katalogen där din "localhost. MOF" lagras till- `-Path` parametern. `Start-DSCConfiguration` Cmdleten söker igenom katalogen som anges för alla "\<ComputerName\>. MOF"-filer. `Start-DSCConfiguration` Cmdleten försöker tillämpa varje ". MOF"-fil som hittas av det ComputerName som anges av fil namnet ("localhost", "Server01", "DC-02" osv.).
+Använd koden nedan för att köra `Start-DSCConfiguration` cmdleten. Ange sökvägen till katalogen där din "localhost. MOF" lagras till- `-Path` parametern. `Start-DSCConfiguration`Cmdleten söker igenom katalogen som anges för alla " \< computername \> . MOF"-filer. `Start-DSCConfiguration`Cmdleten försöker tillämpa varje ". MOF"-fil som hittas av det ComputerName som anges av fil namnet ("localhost", "Server01", "DC-02" osv.).
 
 > [!NOTE]
-> Om `-Wait` parametern inte anges `Start-DSCConfiguration` skapas ett bakgrunds jobb för att utföra åtgärden. Genom att `-Verbose` ange parametern kan du se **utförlig** utdata för åtgärden. `-Wait`och `-Verbose` är båda valfria parametrar.
+> Om `-Wait` parametern inte anges `Start-DSCConfiguration` skapas ett bakgrunds jobb för att utföra åtgärden. Genom `-Verbose` att ange parametern kan du se **utförlig** utdata för åtgärden. `-Wait`och `-Verbose` är båda valfria parametrar.
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
@@ -134,7 +134,7 @@ Hello World from DSC!
 
 ## <a name="re-applying-the-configuration"></a>Tillämpar konfigurationen igen
 
-Om du vill se hur konfigurationen tillämpas igen kan du ta bort text filen som skapats av din konfiguration. Använd `Start-DSCConfiguration` cmdleten med `-UseExisting` parametern. `-UseExisting` Parametern instruerar `Start-DSCConfiguration` att tillämpa den aktuella. MOF-filen igen som representerar den senast tillämpade konfigurationen.
+Om du vill se hur konfigurationen tillämpas igen kan du ta bort text filen som skapats av din konfiguration. Använd `Start-DSCConfiguration` cmdleten med `-UseExisting` parametern. `-UseExisting`Parametern instruerar `Start-DSCConfiguration` att tillämpa den aktuella. MOF-filen igen som representerar den senast tillämpade konfigurationen.
 
 ```powershell
 Remove-Item -Path C:\Temp\HelloWorld.txt

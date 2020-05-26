@@ -1,73 +1,136 @@
 ---
-ms.date: 08/27/2018
-keywords: PowerShell, cmdlet
-title: PowerShell-skriptning
-ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.date: 05/22/2020
+keywords: powershell,cmdlet
+title: Vad är PowerShell?
+ms.openlocfilehash: f9fcd536747d2063fe34c7104d0088bc70d39c1d
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "62058496"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808460"
 ---
-# <a name="powershell"></a>PowerShell
+# <a name="what-is-powershell"></a>Vad är PowerShell?
 
-PowerShell är ett uppgifts baserat kommando rads gränssnitt och skript språk som bygger på .NET.
-Med PowerShell kan system administratörer och avancerade användare snabbt automatisera uppgifter som hanterar operativ system (Linux, macOS och Windows) och processer.
+PowerShell är ett ramverk för uppgifts automatisering och konfigurations hantering, som består av ett kommando rads gränssnitt och skript språk. Till skillnad från de flesta Shell, som godkänner och returnerar text, bygger PowerShell på CLR (Common Language Runtime) för .NET och godkänner och returnerar .NET-objekt. Den här grundläggande ändringen ger helt nya verktyg och metoder för automatisering.
 
-Med PowerShell-kommandon kan du hantera datorer från kommando raden. Med PowerShell-providers kan du komma åt data lager, till exempel registret och certifikat arkivet, så enkelt som du har åtkomst till fil systemet. PowerShell innehåller en omfattande uttrycks parser och ett fullständigt utvecklat skript språk.
+## <a name="output-is-object-based"></a>Utdata är Object-baserad
 
-## <a name="powershell-is-open-source"></a>PowerShell är öppen källkod
+Till skillnad från traditionella kommando rads gränssnitt är PowerShell-cmdletar utformade för att hantera objekt.
+Ett objekt är strukturerad information som är mer än bara den sträng med tecken som visas på skärmen. Kommandoutdata innehåller alltid ytterligare information som du kan använda om du behöver den.
 
-PowerShell-källkoden är nu tillgänglig i GitHub och är öppen för community-bidrag.
-Se [PowerShell-källan på GitHub](https://github.com/powershell/powershell).
+Om du har använt text bearbetnings verktyg för att bearbeta data tidigare kommer du att se att de fungerar annorlunda när de används i PowerShell. I de flesta fall behöver du inte text bearbetnings verktyg för att extrahera speciell information. Du får direkt åtkomst till delar av data med hjälp av standardsyntaxen för PowerShell-objekt.
 
-Du kan börja med de bitar du behöver med [hjälp av PowerShell](https://github.com/PowerShell/PowerShell#get-powershell).
-Eller så kanske du får en snabb genom gång på [komma igång](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell).
+## <a name="the-command-family-is-extensible"></a>Kommando serien är utöknings bar
 
-## <a name="powershell-design-goals"></a>Design mål för PowerShell
+Gränssnitt som `cmd.exe` inte ger dig möjlighet att direkt utöka den inbyggda kommando uppsättningen. Du kan skapa externa kommando rads verktyg som körs i `cmd.exe` . Men dessa externa verktyg saknar tjänster, till exempel hjälp integrering. `cmd.exe`känner inte automatiskt till att dessa externa verktyg är giltiga kommandon.
 
-PowerShell är utformat för att förbättra kommando rads-och skript miljön genom att eliminera problem med lång sikt och lägga till nya funktioner.
+Kommandona i PowerShell kallas _cmdlets_. Du kan använda varje cmdlet separat, men deras effekt realiseras när du kombinerar dem för att utföra komplexa uppgifter. Precis som många gränssnitt ger PowerShell åtkomst till fil systemet på datorn. Med PowerShell- _providers_ kan du komma åt andra data lager, till exempel registret och certifikat Arkiv, så enkelt som du har åtkomst till fil systemet.
 
-### <a name="discoverability"></a>Identifierings möjligheten
+Du kan skapa egna cmdlet-och Function-moduler med hjälp av kompilerade kod eller skript. Moduler kan lägga till cmdlets och providers i gränssnittet. PowerShell stöder även skript som är likvärdiga med UNIX-Shell-skript och `cmd.exe` kommandofiler.
 
-Med PowerShell är det enkelt att upptäcka dess funktioner. Om du till exempel vill hitta en lista över cmdletar som visar och ändrar Windows-tjänster skriver du:
+## <a name="support-for-command-aliases"></a>Stöd för kommando-alias
+
+PowerShell stöder alias för att referera till kommandon med alternativa namn. Med aliasering kan användare i andra gränssnitt använda vanliga kommando namn som de redan känner till för liknande åtgärder i PowerShell.
+
+Alias associerar ett nytt namn med ett annat kommando. PowerShell har till exempel en intern funktion med namnet `Clear-Host` som rensar utdatafönstret. Du kan ange antingen `cls` eller `clear` aliaset i en kommando tolk. PowerShell tolkar dessa alias och kör `Clear-Host` funktionen.
+
+Den här funktionen hjälper användare att lära sig PowerShell. De flesta- `cmd.exe` och UNIX-användare har ett stort repertoaren kommandon som användare redan känner till med namn. PowerShell-motsvarigheterna kanske inte genererar identiska resultat. Resultaten är dock tillräckligt nära att användarna kan arbeta utan att känna till PowerShell-kommando namnet. "Muskel minne" är en annan stor källa för att lära sig ett nytt kommando gränssnitt. Om du har använt `cmd.exe` i år kan du ange `cls` kommandot för att rensa skärmen. Utan alias för `Clear-Host` får du ett fel meddelande och vet inte vad du ska göra för att rensa utdata.
+
+## <a name="powershell-handles-console-input-and-display"></a>PowerShell hanterar inmatade konsoler och visar
+
+När du skriver ett kommando bearbetar PowerShell alltid kommando rads indatamängden direkt. PowerShell formaterar också utdata som visas på skärmen. Den här skillnaden är viktig eftersom den minskar det arbete som krävs för varje cmdlet. Det garanterar att du alltid kan göra saker på samma sätt med alla cmdletar. Cmdlet-utvecklare behöver inte skriva kod för att parsa kommando rads argumenten eller formatera utdata.
+
+Traditionella kommando rads verktyg har egna scheman för att begära och Visa hjälp. Vissa kommando rads verktyg används `/?` för att utlösa hjälp visningen, andra använder `-?` , `/H` eller till och med `//` . Vissa visar hjälpen i ett GUI-fönster, i stället för i konsolens visning. Om du använder fel parameter kan verktyget ignorera det du skrev och börja köra en uppgift automatiskt.
+Eftersom PowerShell automatiskt tolkar och bearbetar kommando raden `-?` betyder parametern alltid att visa mig hjälp för det här kommandot.
+
+> [!NOTE]
+> Om du kör ett grafiskt program i PowerShell öppnas fönstret för programmet.
+> PowerShell inverkar bara vid bearbetning av kommando rads indata som du anger eller programutdata som returneras till konsol fönstret. Det påverkar inte hur programmet fungerar internt.
+
+## <a name="powershell-has-a-pipeline"></a>PowerShell har en pipeline
+
+Pipelines är utan tvekan det mest värdefulla konceptet som används i kommando rads gränssnitt. När den används korrekt minskar pipelinen arbetet med att använda komplexa kommandon och gör det lättare att se arbets flödet. Varje kommando i en pipeline skickar utdata, objekt efter objekt, till nästa kommando. Kommandon behöver inte hantera mer än ett objekt i taget. Resultatet är minskad resursförbrukning och möjligheten att få utdata direkt.
+
+Den notation som används för pipelines liknar den notation som används i andra gränssnitt. I första hand kan det vara inte uppenbart hur pipelines skiljer sig i PowerShell. Även om du ser text på skärmen, PowerShell pipe-objekt, inte text, mellan kommandon.
+
+Om du till exempel använder `Out-Host` cmdleten för att tvinga fram visning av utdata från ett annat kommando, ser utdata ut precis som den normala texten som visas på skärmen, och delas upp i sidor:
 
 ```powershell
-Get-Command *-Service
+Get-ChildItem | Out-Host -Paging
 ```
 
-När du har identifierat vilken cmdlet som utför en aktivitet kan du läsa mer om cmdleten med hjälp `Get-Help` av cmdleten. Om du till exempel vill visa hjälp om `Get-Service` cmdleten skriver du:
+```Output
+    Directory: /mnt/c/Git/PS-Docs/PowerShell-Docs/reference/7.0/Microsoft.PowerShell.Core
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          05/22/2020    08:30                About
+-----          05/20/2020    14:36           9044 Add-History.md
+-----          05/20/2020    14:36          12227 Clear-History.md
+-----          05/20/2020    14:36           3566 Clear-Host.md
+-----          05/20/2020    14:36          29087 Connect-PSSession.md
+-----          05/20/2020    14:36           5705 Debug-Job.md
+-----          05/20/2020    14:36           3515 Disable-ExperimentalFeature.md
+-----          05/20/2020    14:36          25531 Disable-PSRemoting.md
+-----          05/20/2020    14:36           7852 Disable-PSSessionConfiguration.md
+-----          05/20/2020    14:36          25355 Disconnect-PSSession.md
+-----          05/20/2020    14:36           3491 Enable-ExperimentalFeature.md
+-----          05/20/2020    14:36          13310 Enable-PSRemoting.md
+-----          05/20/2020    14:36           8401 Enable-PSSessionConfiguration.md
+-----          05/20/2020    14:36           9531 Enter-PSHostProcess.md
+...
+<SPACE> next page; <CR> next line; Q quit
+```
+
+Växlingen minskar också processor användningen eftersom bearbetningen överförs till `Out-Host` cmdleten när en hel sida är klar att visas. Cmdletarna som föregår den i pipelinen pausar körningen tills nästa sida med utdata är tillgänglig.
+
+### <a name="objects-in-the-pipeline"></a>Objekt i pipelinen
+
+När du kör en cmdlet i PowerShell visas text utdata eftersom det är nödvändigt att representera objekt som text i ett konsol fönster. Text utmatningen kanske inte visar alla egenskaper för objektet som ska skrivas ut.
+
+Överväg till exempel `Get-Location` cmdleten. Text utmatningen är en sammanfattning av informationen, inte en fullständig representation av det objekt som returnerades av `Get-Location` . Rubriken i utdata läggs till av processen som formaterar data för skärm visning.
 
 ```powershell
-Get-Help Get-Service
+Get-Location
 ```
 
-De flesta cmdletar returnerar objekt som kan manipuleras och sedan återges som text för visning. För att fullständigt förstå utdata från en cmdlet skickar du utdata till `Get-Member` cmdleten. Följande kommando visar till exempel information om medlemmarna i objektets utdata av `Get-Service` cmdleten.
+```Output
+Path
+----
+C:\
+```
+
+Genom att skicka utdata till `Get-Member` cmdleten visas information om objektet som returnerades av `Get-Location` .
 
 ```powershell
-Get-Service | Get-Member
+Get-Location | Get-Member
 ```
 
-### <a name="consistency"></a>Konsekvens
+```Output
+   TypeName: System.Management.Automation.PathInfo
 
-Hantering av system kan vara en komplicerad uppgift. Verktyg som har ett konsekvent gränssnitt hjälper dig att styra den komplicerade komplexiteten. Kommando rads verktyg och COM-objekt (Scriptable Component Object Model) är inte kända för deras konsekvens.
+Name         MemberType Definition
+----         ---------- ----------
+Equals       Method     bool Equals(System.Object obj)
+GetHashCode  Method     int GetHashCode()
+GetType      Method     type GetType()
+ToString     Method     string ToString()
+Drive        Property   System.Management.Automation.PSDriveInfo Drive {get;}
+Path         Property   string Path {get;}
+Provider     Property   System.Management.Automation.ProviderInfo Provider {get;}
+ProviderPath Property   string ProviderPath {get;}
+```
 
-Konsekvensen av PowerShell är en av dess primära till gångar. Om du t. ex. Lär dig hur du `Sort-Object` använder cmdleten kan du använda den informationen för att sortera utdata från alla cmdletar. Du behöver inte lära dig de olika sorterings rutinerna för varje cmdlet.
+`Get-Location`Returnerar ett **PathInfo** -objekt som innehåller den aktuella sökvägen och annan information.
 
-Dessutom behöver inte cmdlet-utvecklare utforma sorterings funktioner för sina cmdlets. PowerShell ger ett ramverk med de grundläggande funktioner som tvingar konsekvens. Ramverket eliminerar några val som finns kvar i utvecklaren. Men i retur gör det mycket enklare att utveckla cmdletar.
+## <a name="built-in-help-system"></a>Inbyggt hjälpsystem
 
-### <a name="interactive-and-scripting-environments"></a>Interaktiva miljöer och skript miljöer
+På samma sätt som UNIX `man` -sidor innehåller PowerShell detaljerade hjälp artiklar som förklarar PowerShell-begrepp och kommandosyntax. Använd cmdleten [Get-Help][] för att visa dessa artiklar i kommando tolken eller Visa de senaste uppdaterade versionerna av de här artiklarna i PowerShell-dokumentationen online.
 
-Kommando tolken i Windows innehåller ett interaktivt gränssnitt med åtkomst till kommando rads verktyg och grundläggande skript. Windows Script Host (WSH) har skript bara kommando rads verktyg och COM Automation-objekt, men ger inte ett interaktivt gränssnitt.
+## <a name="next-steps"></a>Nästa steg
 
-PowerShell kombinerar ett interaktivt gränssnitt och en skript miljö. PowerShell kan komma åt kommando rads verktyg, COM-objekt och .NET-klass bibliotek. Den här kombinationen av funktioner utökar funktionerna i den interaktiva användaren, skript skrivaren och system administratören.
+Mer information om PowerShell finns i avsnittet **Learning PowerShell** på den här webbplatsen.
 
-### <a name="object-orientation"></a>Objekt orientering
+<!-- link references -->
 
-PowerShell baseras på objekt som inte är text. Utdata från ett kommando är ett objekt. Du kan skicka objektet utdata via pipelinen till ett annat kommando som indata.
-
-Den här pipelinen ger ett välbekant gränssnitt för personer som har erfarenhet av andra gränssnitt. PowerShell utökar det här konceptet genom att skicka objekt i stället för text.
-
-### <a name="easy-transition-to-scripting"></a>Enkel över gång till skript
-
-PowerShell-kommandots identifiering gör det enkelt att gå över från att skriva kommandon interaktivt för att skapa och köra skript. Med PowerShell-avskrifter och historik kan du enkelt kopiera kommandon till en fil för användning som ett skript.
+[Get – hjälp]: /powershell/module/microsoft.powershell.core/Get-Help

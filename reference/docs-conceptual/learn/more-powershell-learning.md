@@ -1,25 +1,25 @@
 ---
 ms.date: 06/18/2019
-keywords: PowerShell, cmdlet
-title: Mer PowerShell-utbildning
-ms.openlocfilehash: 9d756d24e46215bea5cb9530c2628b996327cb87
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+keywords: powershell,cmdlet
+title: PowerShell-utbildnings resurser
+ms.openlocfilehash: 5681fd903b323ab3cf87dc212ba64dbfdf2d78e7
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74416739"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808443"
 ---
-# <a name="more-powershell-learning"></a>Mer PowerShell-utbildning
+# <a name="powershell-learning-resources"></a>PowerShell-utbildnings resurser
 
-Andra källor för att lära sig PowerShell
+Ytterligare resurser för att lära dig om PowerShell.
 
-## <a name="resources-for-powershell-users"></a>Resurser för PowerShell-användare
+## <a name="blogs-and-community"></a>Bloggar och community
 
 Förutom hjälpen som finns på kommando raden ger följande resurser mer information för användare som vill köra PowerShell.
 
 - [PowerShell-teamets blogg](https://devblogs.microsoft.com/powershell/). Den bästa resursen för att lära sig direkt från PowerShell-produktsortimentet.
 - [Hey, Scripting Guy! Blogg](https://devblogs.microsoft.com/scripting/) artiklar är scenario-drivna och skrivna på ett engagerande och Lively sätt.
-- Har du frågor om att använda PowerShell? Anslut till hundratals andra personer som har liknande intressen i något av de många community-forum som visas på sidan [PowerShell community](/powershell/#pivot=main&panel=community) .
+- Har du frågor om att använda PowerShell? Anslut till hundratals andra personer som har liknande intressen i något av de många community-forum som visas på sidan [PowerShell community](/powershell/scripting/community/community-support) .
 
 ## <a name="channel-9-videos"></a>Channel 9-video
 

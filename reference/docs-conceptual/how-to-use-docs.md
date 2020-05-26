@@ -1,13 +1,13 @@
 ---
-ms.date: 10/20/2019
-keywords: PowerShell, cmdlet
+ms.date: 05/22/2020
+keywords: powershell,cmdlet
 title: Använda PowerShell-dokumentationen
-ms.openlocfilehash: 50b054ddc21d55946969414688306fc0d15a5adf
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 259eb1eea1dc7e8b5ae5730f97c938b838a320bf
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80082840"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808273"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>Använda PowerShell-dokumentationen
 
@@ -25,7 +25,7 @@ Som standard visar den här webbplatsen dokumentationen för den senaste utgivna
 
 Använd versions väljaren överst på sidan för att välja den version av PowerShell som du vill använda.
 
-![versions väljare](media/how-to-use-docs/version-search.gif)
+![versionsväljare](media/how-to-use-docs/version-search.gif)
 
 Du kan kontrol lera vilken version av PowerShell du använder genom att kontrol lera `$PSversionTable.PSVersion` värdet. I följande exempel visas utdata för Windows PowerShell v 5.1.
 
@@ -38,3 +38,15 @@ Major  Minor  Build  Revision
 -----  -----  -----  --------
 5      1      18362  145
 ```
+
+## <a name="finding-articles-for-previous-versions"></a>Hitta artiklar för tidigare versioner
+
+Dokumentationen för äldre versioner av PowerShell har arkiverats på vår [tidigare versions](https://aka.ms/PSLegacyDocs) webbplats.
+
+Den här platsen innehåller dokumentation för följande ämnen:
+
+- PowerShell 3.0
+- PowerShell 4.0
+- PowerShell 5.0
+- PowerShell-arbetsflöden
+- PowerShell-Webbåtkomst

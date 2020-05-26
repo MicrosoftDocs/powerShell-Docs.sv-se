@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell 7,0
 description: Nya funktioner och ändringar som lanseras i PowerShell 7,0
 ms.date: 03/04/2020
-ms.openlocfilehash: 97bdac7dc7636f27c184a6c46eddf15609a8c25f
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 313ed2b663262b57abd52bfc7378e1f4661dc03a
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692540"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808409"
 ---
 # <a name="whats-new-in-powershell-70"></a>Nyheter i PowerShell 7,0
 
@@ -53,19 +53,20 @@ Mer uppdaterad information om operativ system och support livs cykel som stöds 
 
 ## <a name="running-powershell-7"></a>Kör PowerShell 7
 
-PowerShell 7 installeras i en ny katalog och körs sida vid sida med Windows PowerShell 5,1. För PowerShell Core 6. x är PowerShell 7 en uppgradering på plats som tar bort PowerShell Core 6. x.
+PowerShell 7 installerar till en katalog separat från Windows PowerShell.
+På så sätt kan du köra PowerShell 7 sida vid sida med Windows PowerShell 5,1. För PowerShell Core 6. x är PowerShell 7 en uppgradering på plats som tar bort PowerShell Core 6. x.
 
 - PowerShell 7 installeras för att`%programfiles%\PowerShell\7`
 - `%programfiles%\PowerShell\7`Mappen läggs till`$env:PATH`
 
-PowerShell 7 installations paket uppgraderar tidigare versioner av PowerShell Core 6. x:
+Installations paketet för PowerShell 7 uppgraderar tidigare versioner av PowerShell Core 6. x:
 
 - PowerShell Core 6. x i Windows: `%programfiles%\PowerShell\6` ersätts av`%programfiles%\PowerShell\7`
 - Linux: `/opt/microsoft/powershell/6` ersätts av`/opt/microsoft/powershell/7`
 - macOS: `/usr/local/microsoft/powershell/6` ersätts av`/usr/local/microsoft/powershell/7`
 
 > [!NOTE]
-> I Windows PowerShell heter den körbara filen för att starta PowerShell `powershell.exe` . I version 6 och senare ändras den körbara filen så att den stöder sida-vid-sida-körning. Den nya körbara filen för att starta PowerShell 7 är `pwsh.exe` . För hands versioner kommer att finnas kvar på plats som i `pwsh-preview` stället för i `pwsh` den 7-för hands versions katalogen.
+> I Windows PowerShell heter den körbara filen för att starta PowerShell `powershell.exe` . I version 6 och senare ändras namnet på den körbara filen till stöd för sida-vid-sida-körning. Det nya namnet på den körbara filen för att starta PowerShell 7 är `pwsh.exe` . För hands versioner är kvar på plats, i `pwsh-preview` stället för i `pwsh` den 7-för hands versions katalogen.
 
 ## <a name="improved-backwards-compatibility-with-windows-powershell"></a>Förbättrad bakåtkompatibilitet med Windows PowerShell
 
@@ -117,7 +118,7 @@ Villkors uttrycket utvärderas alltid och resultatet konverteras till ett **bool
 - `<if-true>`Uttrycket körs om `<condition>` uttrycket är sant
 - `<if-false>`Uttrycket körs om `<condition>` uttrycket är falskt
 
-Till exempel:
+Ett exempel:
 
 ```powershell
 $message = (Test-Path $path) ? "Path exists" : "Path not found"
@@ -214,7 +215,7 @@ $x
 100
 ```
 
-I följande exempel kommer den högra operanden inte att utvärderas:
+I följande exempel utvärderas inte den högra operanden:
 
 ```powershell
 [string] $todaysDate = '1/10/2020'
@@ -240,7 +241,7 @@ ${Service}?.status
 Stopped
 ```
 
-Följande exempel kommer att returnera Null, utan att försöka komma åt medlems namnets **status**:
+I följande exempel returneras null, utan att försöka komma åt medlems namnets **status**:
 
 ```powershell
 $service = $Null
@@ -266,7 +267,7 @@ Mer information [About_Operators](/powershell/module/microsoft.powershell.core/a
 
 ## <a name="new-view-conciseview-and-cmdlet-get-error"></a>New View ConciseView och cmdlet Get-Error
 
-Visningen av fel meddelanden har förbättrats för att förbättra läsbarheten för interaktiva och skript fel med en ny standardvy **ConciseView**. Vyerna är användare-valbara via variabeln Preference `$ErrorView` .
+PowerShell 7,0 förbättrar visningen av fel meddelanden för att förbättra läsbarheten hos interaktiva och skript fel med en ny standardvy **ConciseView**. Vyerna är användare-valbara via variabeln Preference `$ErrorView` .
 
 Om ett fel inte är från ett skript eller ett parsningsfel i **ConciseView**, är det ett enda rad fel meddelande:
 
@@ -282,8 +283,8 @@ Om felet inträffar under skript körningen eller är ett parsningsfel returnera
 
 ![Fel vid visning från ett skript](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
-Standardvyn i PowerShell 7 är **ConciseView**. Den tidigare standardvyn var **NormalView** och är användaren valbar genom att ställa in variabeln Preference `$ErrorView` .
-
+Standardvyn i PowerShell 7 är **ConciseView**. Den tidigare standardvyn var **NormalView** och du kan välja thisby och ställa in variabeln Preference `$ErrorView` .
+ 
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
 $ErrorView = 'ConciseView' # Sets the error view to ConciseView
@@ -292,7 +293,7 @@ $ErrorView = 'ConciseView' # Sets the error view to ConciseView
 > [!NOTE]
 > En ny egenskap **ErrorAccentColor** har lagts till för `$Host.PrivateData` att stödja ändring av tilläggs färgen i fel meddelandet.
 
-En ny cmdlet `Get-Error` ger fullständig detaljerad visning av det fullständigt kvalificerade felet när du vill.
+En ny cmdlet `Get-Error` ger en fullständig detaljerad vy över det fullständiga kvalificerade felet när du vill.
 Som standard visar cmdleten fullständig information, inklusive inre undantag, av det senaste felet som inträffat.
 
 ![Visa från get-Error](./media/What-s-New-in-PowerShell-70/myscript-geterror.png)
