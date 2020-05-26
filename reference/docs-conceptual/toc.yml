@@ -1,57 +1,48 @@
 - name: Så här använder du den här dokumentationen
   href: how-to-use-docs.md
 - name: Översikt
-  href: overview.md
+  expanded: true
+  items:
+    - name: Vad är PowerShell?
+      href: overview.md
+    - name: Livscykel för PowerShell-stöd
+      href: powershell-support-lifecycle.md
 - name: Installera
   items:
-    - name: Installera olika versioner av PowerShell
+    - name: Översikt
       href: install/installing-powershell.md
-    - name: Installera PowerShell
-      items:
-        - name: Installera PowerShell i Windows
-          href: install/installing-powershell-core-on-windows.md
-        - name: Installera PowerShell i Linux
-          href: install/installing-powershell-core-on-linux.md
-        - name: Installera PowerShell i macOS
-          href: install/installing-powershell-core-on-macos.md
-        - name: Installera PowerShell i ARM
-          href: install/powershell-core-on-arm.md
-    - name: Installera Windows PowerShell 5.1
-      items:
-        - name: Installera Windows PowerShell
-          href: install/installing-windows-powershell.md
-        - name: Installera Windows PowerShell 2.0-motorn
-          href: install/installing-the-windows-powershell-2.0-engine.md
-        - name: Windows PowerShell-systemkrav
-          href: install/windows-powershell-system-requirements.md
+    - name: Migrera från Windows PowerShell 5.1 till PowerShell 7
+      href: install/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
+    - name: Installera PowerShell i Windows
+      href: install/installing-powershell-core-on-windows.md
+    - name: Installera PowerShell i Linux
+      href: install/installing-powershell-core-on-linux.md
+    - name: Installera PowerShell i macOS
+      href: install/installing-powershell-core-on-macos.md
+    - name: Installera PowerShell i ARM
+      href: install/powershell-core-on-arm.md
     - name: Använda PowerShell i Docker
       href: install/PowerShell-in-Docker.md
-- name: Kom igång
-  items:
-    - name: Komma igång med PowerShell
-      href: getting-started/getting-started-with-windows-powershell.md
-    - name: Starta Windows Powershell
-      href: getting-started/starting-windows-powershell.md
-    - name: Starta Windows PowerShell 2.0-motorn
-      href: getting-started/starting-the-windows-powershell-2.0-engine.md
 - name: Lär dig PowerShell
   items:
-    - name: Förstå viktiga PowerShell-koncept
-      href: learn/understanding-important-powershell-concepts.md
-    - name: Lär dig PowerShell-namn
-      href: learn/learning-powershell-names.md
-    - name: Använd bekanta kommandonamn
-      href: learn/using-familiar-command-names.md
-    - name: Få detaljerad hjälpinformation
-      href: learn/getting-detailed-help-information.md
-    - name: Få information om kommandon
-      href: learn/getting-information-about-commands.md
-    - name: Använd variabler för att lagra objekt
-      href: learn/using-variables-to-store-objects.md
-    - name: Förstå PowerShell-pipelinen
-      href: learn/understanding-the-powershell-pipeline.md
-    - name: Mer PowerShell-utbildning
-      href: learn/more-powershell-learning.md
+    - name: PowerShell 101
+      items:
+        - name: Lär dig PowerShell-namn
+          href: learn/ps101/learning-powershell-names.md
+        - name: Använd bekanta kommandonamn
+          href: learn/ps101/using-familiar-command-names.md
+        - name: Få detaljerad hjälpinformation
+          href: learn/ps101/getting-detailed-help-information.md
+        - name: Få information om kommandon
+          href: learn/ps101/getting-information-about-commands.md
+        - name: Använd variabler för att lagra objekt
+          href: learn/ps101/using-variables-to-store-objects.md
+        - name: Kommandoradsalternativ för PowerShell
+          href: learn/ps101/powershell.exe-command-line-help.md
+        - name: Använd flikexpansion
+          href: learn/ps101/using-tab-expansion.md
+    - name: Använda experimentella funktioner
+      href: learn/experimental-features.md
     - name: PowerShell-fjärranvändning
       items:
         - name: JEA (Just Enough Administration)
@@ -82,167 +73,12 @@
           href: learn/remoting/winrmsecurity.md
         - name: Göra det andra hoppet i PowerShell-fjärrkommunikation
           href: learn/remoting/ps-remoting-second-hop.md
+    - name: Ytterligare resurser
+      href: learn/more-powershell-learning.md
     - name: Ordlista
-      href: learn/windows-powershell-glossary.md
-- name: Komponenter
-  items:
-    - name: Konsolen
-      items:
-        - name: Kommandoradsalternativ för PowerShell
-          href: components/console/powershell.exe-command-line-help.md
-        - name: Använd flikexpansion
-          href: components/console/using-tab-expansion.md
-    - name: ISE
-      items:
-        - name: Introducerar Windows PowerShell ISE
-          href: components/ise/introducing-the-windows-powershell-ise.md
-        - name: Använd Windows PowerShell ISE
-          items:
-            - name: Utforska Windows PowerShell ISE
-              href: components/ise/exploring-the-windows-powershell-ise.md
-            - name: Skapa en PowerShell-flik i Windows PowerShell ISE
-              href: components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
-            - name: Felsök skript i Windows PowerShell ISE
-              href: components/ise/how-to-debug-scripts-in-windows-powershell-ise.md
-            - name: Använd profiler Windows PowerShell ISE
-              href: components/ise/how-to-use-profiles-in-windows-powershell-ise.md
-            - name: Använd tabbifyllning i skript- och konsolfönstret
-              href: components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
-            - name: Använd konsolfönstret i Windows PowerShell ISE
-              href: components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
-            - name: Skriv och kör skript i Windows PowerShell ISE
-              href: components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
-            - name: Kortkommandon för Windows PowerShell ISE
-              href: components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
-            - name: Hjälpmedelsfunktioner i Windows PowerShell ISE
-              href: components/ise/accessibility-in-windows-powershell-ise.md
-        - name: ISE-skriptobjektmodellen
-          items:
-            - name: Användningsområden för Windows PowerShell ISE-skriptobjektmodellen
-              href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
-            - name: ISE-objektmodellhierarkin
-              href: components/ise/object-model/the-ise-object-model-hierarchy.md
-            - name: ObjectModelRoot-objektet
-              href: components/ise/object-model/the-objectmodelroot-object.md
-            - name: ISEAddOnToolCollection-objektet
-              href: components/ise/object-model/the-iseaddontoolcollection-object.md
-            - name: ISEAddOnTool-objektet
-              href: components/ise/object-model/the-iseaddontool-object.md
-            - name: ISEEditor-objektet
-              href: components/ise/object-model/the-iseeditor-object.md
-            - name: ISEFileCollection-objektet
-              href: components/ise/object-model/the-isefilecollection-object.md
-            - name: ISEFile-objektet
-              href: components/ise/object-model/the-isefile-object.md
-            - name: ISEMenuItemCollection-objektet
-              href: components/ise/object-model/the-isemenuitemcollection-object.md
-            - name: ISEMenuItem-objektet
-              href: components/ise/object-model/the-isemenuitem-object.md
-            - name: ISEOptions-objektet
-              href: components/ise/object-model/the-iseoptions-object.md
-            - name: ISESnippetCollection-objektet
-              href: components/ise/object-model/the-isesnippetcollection-object.md
-            - name: ISESnippetObject
-              href: components/ise/object-model/the-isesnippetobject.md
-            - name: PowerShellTabCollection-objektet
-              href: components/ise/object-model/the-powershelltabcollection-object.md
-            - name: PowerShellTab-objektet
-              href: components/ise/object-model/the-powershelltab-object.md
-- name: PowerShell-galleriet
-  items:
-    - name: Översikt
-      href: gallery/overview.md
-    - name: Installera PowerShellGet
-      href: gallery/installing-psget.md
-    - name: Komma igång
-      href: gallery/getting-started.md
-    - name: Instruktioner
-      items:
-        - name: Hitta paket i galleriet
-          items:
-            - name: Söka efter paket
-              href: gallery/how-to/finding-packages/search-syntax.md
-            - name: Söka efter kompatibilitet
-              href: gallery/how-to/finding-packages/searching-by-compatibility.md
-            - name: Filtrera sökresultaten
-              href: gallery/how-to/finding-packages/filtering-packages.md
-        - name: Publicera till galleriet
-          items:
-            - name: Skapa och publicera paket
-              href: gallery/how-to/publishing-packages/publishing-a-package.md
-            - name: Skapa ett PowerShellGallery-konto
-              href: gallery/how-to/publishing-packages/creating-an-account.md
-            - name: Avlista paket
-              href: gallery/how-to/publishing-packages/unlisting-packages.md
-            - name: Ta bort paket
-              href: gallery/how-to/publishing-packages/deleting-packages.md
-            - name: Hantera paketägare
-              href: gallery/how-to/publishing-packages/managing-package-owners.md
-        - name: Arbeta med paket
-          items:
-            - name: FileList-vy
-              href: gallery/how-to/working-with-packages/filelist-view.md
-            - name: Distribuera till Azure Automation
-              href: gallery/how-to/working-with-packages/deploy-to-azure-automation.md
-            - name: Manuell paketnedladdning
-              href: gallery/how-to/working-with-packages/manual-download.md
-            - name: Paket som kräver godkännande av licensen
-              href: gallery/how-to/working-with-packages/packages-that-require-license-acceptance.md
-            - name: Kontakta paketägare
-              href: gallery/how-to/working-with-packages/contacting-package-owners.md
-            - name: Ge feedback via sociala medier eller kommentarer
-              href: gallery/how-to/working-with-packages/social-media-feedback.md
-        - name: Hantera kontoprofil
-          items:
-            - name: Kontoinställningar för PowerShell-galleriet
-              href: gallery/how-to/managing-profile/managing-account.md
-            - name: Hantera API-nycklar
-              href: gallery/how-to/managing-profile/creating-apikeys.md
-        - name: Arbeta med privata PowerShellGet-lagringsplatser
-          href: gallery/how-to/working-with-local-psrepositories.md
-    - name: Begrepp
-      items:
-        - name: Publicera riktlinjer och metodtips
-          href: gallery/concepts/publishing-guidelines.md
-        - name: Paketmanifest och gallerigränssnitt
-          href: gallery/concepts/package-manifest-affecting-ui.md
-        - name: Kräv specifika PSEditions
-          items:
-            - name: Skapa skript med PSEditions-stöd
-              href: gallery/concepts/script-psedition-support.md
-            - name: Skapa moduler med PSEditions-stöd
-              href: gallery/concepts/module-psedition-support.md
-        - name: Kräv godkännande av licensen
-          items:
-            - name: Kräv godkännande av licensen för skript
-              href: gallery/concepts/script-license-acceptance.md
-            - name: Kräv godkännande av licensen för moduler
-              href: gallery/concepts/module-license-acceptance.md
-        - name: Definiera paket som förhandsversion
-          items:
-            - name: Definiera en modul som förhandsversion
-              href: gallery/concepts/module-prerelease-support.md
-            - name: Definiera ett skript som förhandsversion
-              href: gallery/concepts/script-prerelease-support.md
-        - name: PSScriptAnalyzer-regelprofil
-          href: gallery/concepts/scriptanalyzer-rule-profile.md
-    - name: Få support
-      items:
-        - name: Rapportera missbruk
-          href: gallery/how-to/getting-support/report-abuse.md
-        - name: Tvistlösning
-          href: gallery/how-to/getting-support/dispute-resolution.md
-        - name: Kontakta administratörer
-          href: gallery/how-to/getting-support/contacting-administrators.md
-        - name: Felsökning
-          href: gallery/how-to/getting-support/troubleshooting-cmdlets.md
-        - name: Start av NuGet-providern och NuGet.exe
-          href: gallery/how-to/getting-support/bootstrapping-nuget.md
-        - name: GDPR-efterlevnad
-          href: gallery/how-to/getting-support/gdpr-dsr-policy.md
-    - name: Vanliga frågor och svar om galleriet
-      href: gallery/faqs.md
+      href: learn/glossary.md
 - name: Nyheter
+  expanded: true
   items:
     - name: Nyheter i PowerShell 7.x
       items:
@@ -260,71 +96,135 @@
           href: whats-new/breaking-changes-ps6.md
         - name: Kända problem i PowerShell Core 6.0
           href: whats-new/known-issues-ps6.md
-    - name: Nyheter i PowerShell 5.x
-      items:
-        - name: Nyheter i Windows PowerShell 5.x
-          href: whats-new/what-s-new-in-windows-powershell-50.md
-        - name: Nyheter i PowerShell 5.0 ISE
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
-    - name: Migrera från Windows PowerShell 5.1 till PowerShell 7
-      href: whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
-    - name: Använda experimentella funktioner
-      href: whats-new/experimental-features.md
     - name: Versionshistorik för moduler och cmdletar
       href: whats-new/cmdlet-versions.md
     - name: Lista över modulers kompatibilitet
       href: whats-new/module-compatibility.md
-- name: Livscykel för PowerShell-stöd
-  href: powershell-support-lifecycle.md
-- name: Windows Management Framework (WMF)
+- name: Windows PowerShell
   items:
-    - name: Översikt
-      href: wmf/overview.md
-    - name: Installation
+    - name: Installera Windows PowerShell 5.1
       items:
-        - name: Installera och konfigurera WMF 5.1
-          href: wmf/setup/install-configure.md
-        - name: Avinstallera WMF 5.0
-          href: wmf/setup/uninstall.md
-    - name: Nyheter
-      expanded: true
+        - name: Installera Windows PowerShell
+          href: windows-powershell/install/installing-windows-powershell.md
+        - name: Installera Windows PowerShell 2.0-motorn
+          href: windows-powershell/install/installing-the-windows-powershell-2.0-engine.md
+        - name: Windows PowerShell-systemkrav
+          href: windows-powershell/install/windows-powershell-system-requirements.md
+    - name: Nyheter i PowerShell 5.x
       items:
-        - name: Versionsinformation för WMF 5.x
-          href: wmf/whats-new/release-notes.md
-        - name: Felkorrigeringar i WMF 5.1
-          href: wmf/whats-new/bugfixes.md
-        - name: Nya och uppdaterade cmdletar
-          href: wmf/whats-new/new-updated-cmdlets.md
-        - name: Skapa anpassade typer med hjälp av PowerShell-klasser
-          href: wmf/whats-new/class-overview.md
-        - name: Konsolförbättringar i WMF 5.1
-          href: wmf/whats-new/console-improvements.md
-        - name: Förbättringar i felsökning av PowerShell-skript
-          href: wmf/whats-new/debug-overview.md
-        - name: Skriptspårning och -loggning
-          href: wmf/whats-new/script-logging.md
-        - name: DSC-förbättringar i WMF 5.1
-          href: wmf/whats-new/DSC-improvements.md
-        - name: Förbättringar i PowerShell-motorn i WMF 5.1
-          href: wmf/whats-new/engine-improvements.md
-        - name: Informationsström
-          href: wmf/whats-new/informationstream-overview.md
-        - name: Förbättringar i JEA (Just Enough Administration)
-          href: wmf/whats-new/jea-improvements.md
-        - name: Förbättringar i pakethanteringen i WMF 5.1
-          href: wmf/whats-new/package-management-improvements.md
-        - name: Loggning av programvaruinventering (SIL)
-          href: wmf/whats-new/sil-overview.md
-        - name: Status för produktkompatibilitet
-          href: wmf/whats-new/compatibility.md
-    - name: Kända problem
+        - name: Nyheter i Windows PowerShell 5.x
+          href: windows-powershell/whats-new/what-s-new-in-windows-powershell-50.md
+        - name: Nyheter i PowerShell 5.0 ISE
+          href: windows-powershell/whats-new/what-s-new-in-the-powershell-50-ise.md
+    - name: ISE
       items:
-        - name: Kända problem i WMF 5.0
-          href: wmf/known-issues/known-issues-50.md
-        - name: Kända problem i WMF 5.1
-          href: wmf/known-issues/known-issues-51.md
-        - name: Kända problem och begränsningar i DSC
-          href: wmf/known-issues/known-issues-dsc.md
+        - name: Introducerar Windows PowerShell ISE
+          href: windows-powershell/ise/introducing-the-windows-powershell-ise.md
+        - name: Använd Windows PowerShell ISE
+          items:
+            - name: Utforska Windows PowerShell ISE
+              href: windows-powershell/ise/exploring-the-windows-powershell-ise.md
+            - name: Skapa en PowerShell-flik i Windows PowerShell ISE
+              href: windows-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
+            - name: Felsök skript i Windows PowerShell ISE
+              href: windows-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise.md
+            - name: Använd profiler Windows PowerShell ISE
+              href: windows-powershell/ise/how-to-use-profiles-in-windows-powershell-ise.md
+            - name: Använd tabbifyllning i skript- och konsolfönstret
+              href: windows-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
+            - name: Använd konsolfönstret i Windows PowerShell ISE
+              href: windows-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
+            - name: Skriv och kör skript i Windows PowerShell ISE
+              href: windows-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
+            - name: Kortkommandon för Windows PowerShell ISE
+              href: windows-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
+            - name: Hjälpmedelsfunktioner i Windows PowerShell ISE
+              href: windows-powershell/ise/accessibility-in-windows-powershell-ise.md
+        - name: ISE-skriptobjektmodellen
+          items:
+            - name: Användningsområden för Windows PowerShell ISE-skriptobjektmodellen
+              href: windows-powershell/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
+            - name: ISE-objektmodellhierarkin
+              href: windows-powershell/ise/object-model/the-ise-object-model-hierarchy.md
+            - name: ObjectModelRoot-objektet
+              href: windows-powershell/ise/object-model/the-objectmodelroot-object.md
+            - name: ISEAddOnToolCollection-objektet
+              href: windows-powershell/ise/object-model/the-iseaddontoolcollection-object.md
+            - name: ISEAddOnTool-objektet
+              href: windows-powershell/ise/object-model/the-iseaddontool-object.md
+            - name: ISEEditor-objektet
+              href: windows-powershell/ise/object-model/the-iseeditor-object.md
+            - name: ISEFileCollection-objektet
+              href: windows-powershell/ise/object-model/the-isefilecollection-object.md
+            - name: ISEFile-objektet
+              href: windows-powershell/ise/object-model/the-isefile-object.md
+            - name: ISEMenuItemCollection-objektet
+              href: windows-powershell/ise/object-model/the-isemenuitemcollection-object.md
+            - name: ISEMenuItem-objektet
+              href: windows-powershell/ise/object-model/the-isemenuitem-object.md
+            - name: ISEOptions-objektet
+              href: windows-powershell/ise/object-model/the-iseoptions-object.md
+            - name: ISESnippetCollection-objektet
+              href: windows-powershell/ise/object-model/the-isesnippetcollection-object.md
+            - name: ISESnippetObject
+              href: windows-powershell/ise/object-model/the-isesnippetobject.md
+            - name: PowerShellTabCollection-objektet
+              href: windows-powershell/ise/object-model/the-powershelltabcollection-object.md
+            - name: PowerShellTab-objektet
+              href: windows-powershell/ise/object-model/the-powershelltab-object.md
+    - name: Windows Management Framework (WMF)
+      items:
+        - name: Översikt
+          href: windows-powershell/wmf/overview.md
+        - name: Installation
+          items:
+            - name: Installera och konfigurera WMF 5.1
+              href: windows-powershell/wmf/setup/install-configure.md
+            - name: Avinstallera WMF 5.0
+              href: windows-powershell/wmf/setup/uninstall.md
+        - name: Nyheter
+          expanded: true
+          items:
+            - name: Versionsinformation för WMF 5.x
+              href: windows-powershell/wmf/whats-new/release-notes.md
+            - name: Felkorrigeringar i WMF 5.1
+              href: windows-powershell/wmf/whats-new/bugfixes.md
+            - name: Nya och uppdaterade cmdletar
+              href: windows-powershell/wmf/whats-new/new-updated-cmdlets.md
+            - name: Skapa anpassade typer med hjälp av PowerShell-klasser
+              href: windows-powershell/wmf/whats-new/class-overview.md
+            - name: Konsolförbättringar i WMF 5.1
+              href: windows-powershell/wmf/whats-new/console-improvements.md
+            - name: Förbättringar i felsökning av PowerShell-skript
+              href: windows-powershell/wmf/whats-new/debug-overview.md
+            - name: Skriptspårning och -loggning
+              href: windows-powershell/wmf/whats-new/script-logging.md
+            - name: DSC-förbättringar i WMF 5.1
+              href: windows-powershell/wmf/whats-new/DSC-improvements.md
+            - name: Förbättringar i PowerShell-motorn i WMF 5.1
+              href: windows-powershell/wmf/whats-new/engine-improvements.md
+            - name: Informationsström
+              href: windows-powershell/wmf/whats-new/informationstream-overview.md
+            - name: Förbättringar i JEA (Just Enough Administration)
+              href: windows-powershell/wmf/whats-new/jea-improvements.md
+            - name: Förbättringar i pakethanteringen i WMF 5.1
+              href: windows-powershell/wmf/whats-new/package-management-improvements.md
+            - name: Loggning av programvaruinventering (SIL)
+              href: windows-powershell/wmf/whats-new/sil-overview.md
+            - name: Status för produktkompatibilitet
+              href: windows-powershell/wmf/whats-new/compatibility.md
+            - name: Kända problem
+              items:
+                - name: Kända problem i WMF 5.0
+                  href: windows-powershell/wmf/known-issues/known-issues-50.md
+                - name: Kända problem i WMF 5.1
+                  href: windows-powershell/wmf/known-issues/known-issues-51.md
+                - name: Kända problem och begränsningar i DSC
+                  href: windows-powershell/wmf/known-issues/known-issues-dsc.md
+    - name: Starta Windows Powershell
+      href: windows-powershell/starting-windows-powershell.md
+    - name: Starta Windows PowerShell 2.0-motorn
+      href: windows-powershell/starting-the-windows-powershell-2.0-engine.md
 - name: Önskad tillståndskonfiguration (DSC)
   items:
     - name: Översikt
@@ -618,6 +518,44 @@
       items:
         - name: Faktablad
           href: dsc/further-reading/whitepapers.md
+- name: Community
+  items:
+    - name: Community-uppdatering
+      href: community/community-update.yml
+    - name: Community-support
+      href: community/community-support.md
+    - name: Deltagares Hall of Fame
+      href: community/hall-of-fame.md
+    - name: Nyheter i dokument
+      items:
+        - name: 2020-Kv2
+          href: community/2020-Q2.md
+        - name: 2020-Kv1
+          href: community/2020-Q1.md
+    - name: Deltagarguide
+      items:
+        - name: Översikt
+          href: community/contributing/overview.md
+        - name: Så här rapporterar du ett problem med en dokumentfil
+          href: community/contributing/file-an-issue.md
+        - name: Komma igång med att skriva dokument
+          href: community/contributing/get-started-writing.md
+        - name: Skicka en pull-begäran
+          href: community/contributing/pull-requests.md
+        - name: Stilguide för PowerShell-Docs
+          href: community/contributing/powershell-style-guide.md
+        - name: Redigera cmdlet-referens
+          href: community/contributing/editing-cmdlet-ref.md
+        - name: Ytterligare resurser
+          items:
+            - name: Checklista för redigering
+              href: community/contributing/editorial-checklist.md
+            - name: Så här hanterar vi problem
+              href: community/contributing/managing-issues.md
+            - name: Så här hanterar vi pull-begäranden
+              href: community/contributing/managing-pull-requests.md
+    - name: Digital konst
+      href: community/digital-art.md
 - name: Exempelskript
   items:
     - name: Exempelskript för administration
@@ -702,124 +640,125 @@
           href: samples/appendix-1---compatibility-aliases.md
         - name: Bilaga 2 Skapa en anpassad PowerShell-genväg
           href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
-- name: Community
-  expanded: true
+- name: PowerShell-galleriet
   items:
-    - name: Community-uppdatering
-      href: community/community-update.yml
-    - name: Community-support
-      href: community/community-support.md
-    - name: Deltagares Hall of Fame
-      href: community/hall-of-fame.md
-    - name: Nyheter i dokument
+    - name: Översikt
+      href: gallery/overview.md
+    - name: Installera PowerShellGet
+      href: gallery/installing-psget.md
+    - name: Komma igång
+      href: gallery/getting-started.md
+    - name: Instruktioner
       items:
-        - name: 2020-Kv2
-          href: community/2020-Q2.md
-        - name: 2020-Kv1
-          href: community/2020-Q1.md
-    - name: Deltagarguide
-      items:
-        - name: Översikt
-          href: community/contributing/overview.md
-        - name: Så här rapporterar du ett problem med en dokumentfil
-          href: community/contributing/file-an-issue.md
-        - name: Komma igång med att skriva dokument
-          href: community/contributing/get-started-writing.md
-        - name: Skicka en pull-begäran
-          href: community/contributing/pull-requests.md
-        - name: Stilguide för PowerShell-Docs
-          href: community/contributing/powershell-style-guide.md
-        - name: Redigera cmdlet-referens
-          href: community/contributing/editing-cmdlet-ref.md
-        - name: Ytterligare resurser
+        - name: Hitta paket i galleriet
           items:
-            - name: Checklista för redigering
-              href: community/contributing/editorial-checklist.md
-            - name: Så här hanterar vi problem
-              href: community/contributing/managing-issues.md
-            - name: Så här hanterar vi pull-begäranden
-              href: community/contributing/managing-pull-requests.md
-    - name: Digital konst
-      href: community/digital-art.md
+            - name: Söka efter paket
+              href: gallery/how-to/finding-packages/search-syntax.md
+            - name: Söka efter kompatibilitet
+              href: gallery/how-to/finding-packages/searching-by-compatibility.md
+            - name: Filtrera sökresultaten
+              href: gallery/how-to/finding-packages/filtering-packages.md
+        - name: Publicera till galleriet
+          items:
+            - name: Skapa och publicera paket
+              href: gallery/how-to/publishing-packages/publishing-a-package.md
+            - name: Skapa ett PowerShellGallery-konto
+              href: gallery/how-to/publishing-packages/creating-an-account.md
+            - name: Avlista paket
+              href: gallery/how-to/publishing-packages/unlisting-packages.md
+            - name: Ta bort paket
+              href: gallery/how-to/publishing-packages/deleting-packages.md
+            - name: Hantera paketägare
+              href: gallery/how-to/publishing-packages/managing-package-owners.md
+        - name: Arbeta med paket
+          items:
+            - name: FileList-vy
+              href: gallery/how-to/working-with-packages/filelist-view.md
+            - name: Distribuera till Azure Automation
+              href: gallery/how-to/working-with-packages/deploy-to-azure-automation.md
+            - name: Manuell paketnedladdning
+              href: gallery/how-to/working-with-packages/manual-download.md
+            - name: Paket som kräver godkännande av licensen
+              href: gallery/how-to/working-with-packages/packages-that-require-license-acceptance.md
+            - name: Kontakta paketägare
+              href: gallery/how-to/working-with-packages/contacting-package-owners.md
+            - name: Ge feedback via sociala medier eller kommentarer
+              href: gallery/how-to/working-with-packages/social-media-feedback.md
+        - name: Hantera kontoprofil
+          items:
+            - name: Kontoinställningar för PowerShell-galleriet
+              href: gallery/how-to/managing-profile/managing-account.md
+            - name: Hantera API-nycklar
+              href: gallery/how-to/managing-profile/creating-apikeys.md
+        - name: Arbeta med privata PowerShellGet-lagringsplatser
+          href: gallery/how-to/working-with-local-psrepositories.md
+    - name: Begrepp
+      items:
+        - name: Publicera riktlinjer och metodtips
+          href: gallery/concepts/publishing-guidelines.md
+        - name: Paketmanifest och gallerigränssnitt
+          href: gallery/concepts/package-manifest-affecting-ui.md
+        - name: Kräv specifika PSEditions
+          items:
+            - name: Skapa skript med PSEditions-stöd
+              href: gallery/concepts/script-psedition-support.md
+            - name: Skapa moduler med PSEditions-stöd
+              href: gallery/concepts/module-psedition-support.md
+        - name: Kräv godkännande av licensen
+          items:
+            - name: Kräv godkännande av licensen för skript
+              href: gallery/concepts/script-license-acceptance.md
+            - name: Kräv godkännande av licensen för moduler
+              href: gallery/concepts/module-license-acceptance.md
+        - name: Definiera paket som förhandsversion
+          items:
+            - name: Definiera en modul som förhandsversion
+              href: gallery/concepts/module-prerelease-support.md
+            - name: Definiera ett skript som förhandsversion
+              href: gallery/concepts/script-prerelease-support.md
+        - name: PSScriptAnalyzer-regelprofil
+          href: gallery/concepts/scriptanalyzer-rule-profile.md
+    - name: Få support
+      items:
+        - name: Rapportera missbruk
+          href: gallery/how-to/getting-support/report-abuse.md
+        - name: Tvistlösning
+          href: gallery/how-to/getting-support/dispute-resolution.md
+        - name: Kontakta administratörer
+          href: gallery/how-to/getting-support/contacting-administrators.md
+        - name: Felsökning
+          href: gallery/how-to/getting-support/troubleshooting-cmdlets.md
+        - name: Start av NuGet-providern och NuGet.exe
+          href: gallery/how-to/getting-support/bootstrapping-nuget.md
+        - name: GDPR-efterlevnad
+          href: gallery/how-to/getting-support/gdpr-dsr-policy.md
+    - name: Vanliga frågor och svar om galleriet
+      href: gallery/faqs.md
 - name: Skript och utveckling
   items:
     - name: Visual Studio-koden
       items:
         - name: Använda Visual Studio Code
-          href: components/vscode/using-vscode.md
+          href: dev-cross-plat/vscode/using-vscode.md
         - name: Så här replikerar du ISE-upplevelsen i Visual Studio Code
-          href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
+          href: dev-cross-plat/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
         - name: Använda Visual Studio Code för att fjärredigera och fjärrfelsöka
-          href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
+          href: dev-cross-plat/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
         - name: Förstå filkodning i VS Code och PowerShell
-          href: components/vscode/understanding-file-encoding.md
+          href: dev-cross-plat/vscode/understanding-file-encoding.md
     - name: Skriva flyttbara moduler
-      href: learn/writing-portable-modules.md
+      href: dev-cross-plat/writing-portable-modules.md
     - name: Äldre PowerShell SDK
       items:
         - name: Översikt
           href: developer/windows-powershell.md
         - name: 'Installera Windows PowerShell SDK:n'
           href: developer/installing-the-windows-powershell-sdk.md
-        - name: Skriva en Windows PowerShell-modul
-          href: developer/module/writing-a-windows-powershell-module.md
-          items:
-            - name: Förstå en Windows PowerShell-modul
-              href: developer/module/understanding-a-windows-powershell-module.md
-            - name: Skriva en PowerShell-skriptmodul
-              href: developer/module/how-to-write-a-powershell-script-module.md
-            - name: Skriva en binär PowerShell-modul
-              href: developer/module/how-to-write-a-powershell-binary-module.md
-            - name: Skriva ett PowerShell-modulmanifest
-              href: developer/module/how-to-write-a-powershell-module-manifest.md
-            - name: Installera en PowerShell-modul
-              href: developer/module/installing-a-powershell-module.md
-            - name: Ändra installationssökvägen för PSModulePath
-              href: developer/module/modifying-the-psmodulepath-installation-path.md
-            - name: Importera en PowerShell-modul
-              href: developer/module/importing-a-powershell-module.md
-            - name: Skrivhjälp för Windows PowerShell-moduler
-              href: developer/module/writing-help-for-windows-powershell-modules.md
-              items:
-                - name: Namnge hjälpfiler
-                  href: developer/module/naming-help-files.md
-                - name: Stöd för uppdateringsbar hjälp
-                  href: developer/module/supporting-updatable-help.md
-                  items:
-                    - name: Översikt över uppdateringsbar hjälp
-                      href: developer/module/updatable-help-overview.md
-                    - name: 'Redigering av uppdateringsbar hjälp: Steg för steg'
-                      href: developer/module/updatable-help-authoring-step-by-step.md
-                    - name: Så här fungerar uppdateringsbar hjälp
-                      href: developer/module/how-updatable-help-works.md
-                    - name: Skapa en HelpInfo-XML-fil
-                      href: developer/module/how-to-create-a-helpinfo-xml-file.md
-                      items:
-                        - name: HelpInfo-XML-schema
-                          href: developer/module/helpinfo-xml-schema.md
-                        - name: HelpInfo-XML-exempelfil
-                          href: developer/module/helpinfo-xml-sample-file.md
-                        - name: Namnge en HelpInfo-XML-fil
-                          href: developer/module/how-to-name-a-helpinfo-xml-file.md
-                        - name: Konfigurera versionsnummer för HelpInfo-XML-filer
-                          href: developer/module/how-to-set-helpinfo-xml-version-numbers.md
-                    - name: Förbereda CAB-filer för uppdateringsbar hjälp
-                      href: developer/module/how-to-prepare-updatable-help-cab-files.md
-                      items:
-                        - name: Skapa och ladda upp CAB-filer
-                          href: developer/module/how-to-create-and-upload-cab-files.md
-                        - name: Namnge en CAB-fil för uppdateringsbar hjälp
-                          href: developer/module/how-to-name-an-updatable-help-cab-file.md
-                        - name: Filtyper som tillåts i en CAB-fil för uppdateringsbar hjälp
-                          href: developer/module/file-types-permitted-in-an-updatable-help-cab-file.md
-                    - name: Uppdatera hjälpfiler
-                      href: developer/module/how-to-update-help-files.md
-                    - name: Testa uppdateringsbar hjälp
-                      href: developer/module/how-to-test-updatable-help.md
-                - name: Stöd för onlinehjälp
-                  href: developer/module/supporting-online-help.md
+        - name: Windows PowerShell-referens
+          href: developer/windows-powershell-reference.md
+        - name: Nyheter
+          href: developer/windows-powershell-reference-whats-new.md
         - name: Skriva en Windows PowerShell-cmdlet
-          href: developer/cmdlet/writing-a-windows-powershell-cmdlet.md
           items:
             - name: Översikt över cmdlets
               href: developer/cmdlet/cmdlet-overview.md
@@ -926,20 +865,6 @@
                           href: developer/cmdlet/defining-default-member-sets-for-objects.md
                     - name: Anpassade formateringsfiler
                       href: developer/cmdlet/custom-formatting-files.md
-                - name: Registrera cmdlets
-                  href: developer/cmdlet/registering-cmdlets.md
-                  items:
-                    - name: Moduler och snapin-moduler
-                      href: developer/cmdlet/modules-and-snap-ins.md
-                    - name: Importera cmdlets med hjälp av moduler
-                      href: developer/cmdlet/how-to-import-cmdlets-using-modules.md
-                    - name: Skapa en Windows PowerShell-snapin-modul
-                      href: developer/cmdlet/how-to-create-a-windows-powershell-snap-in.md
-                      items:
-                        - name: Skriva en Windows PowerShell-snapin-modul
-                          href: developer/cmdlet/writing-a-windows-powershell-snap-in.md
-                        - name: Skriva en anpassad Windows PowerShell-snapin-modul
-                          href: developer/cmdlet/writing-a-custom-windows-powershell-snap-in.md
                 - name: Begära bekräftelse
                   href: developer/cmdlet/requesting-confirmation.md
                   items:
@@ -1061,8 +986,41 @@
                   href: developer/cmdlet/stopprocesssample04-sample.md
                 - name: Events01 – exempel
                   href: developer/cmdlet/events01-sample.md
+        - name: Skriva en Windows PowerShell-modul
+          items:
+            - name: Översikt
+              href: developer/module/writing-a-windows-powershell-module.md
+            - name: Förstå en Windows PowerShell-modul
+              href: developer/module/understanding-a-windows-powershell-module.md
+            - name: Skriva en PowerShell-skriptmodul
+              href: developer/module/how-to-write-a-powershell-script-module.md
+            - name: Skriva en binär PowerShell-modul
+              href: developer/module/how-to-write-a-powershell-binary-module.md
+            - name: Skriva ett PowerShell-modulmanifest
+              href: developer/module/how-to-write-a-powershell-module-manifest.md
+            - name: Installera en PowerShell-modul
+              href: developer/module/installing-a-powershell-module.md
+            - name: Ändra installationssökvägen för PSModulePath
+              href: developer/module/modifying-the-psmodulepath-installation-path.md
+            - name: Registrera cmdlets
+              items:
+                - name: Översikt
+                  href: developer/module/registering-cmdlets.md
+                - name: Moduler och snapin-moduler
+                  href: developer/module/modules-and-snap-ins.md
+                - name: Importera cmdlets med hjälp av moduler
+                  href: developer/module/how-to-import-cmdlets-using-modules.md
+                - name: Skapa en Windows PowerShell-snapin-modul
+                  items:
+                    - name: Översikt
+                      href: developer/module/how-to-create-a-windows-powershell-snap-in.md
+                    - name: Skriva en Windows PowerShell-snapin-modul
+                      href: developer/module/writing-a-windows-powershell-snap-in.md
+                    - name: Skriva en anpassad Windows PowerShell-snapin-modul
+                      href: developer/module/writing-a-custom-windows-powershell-snap-in.md
+            - name: Importera en PowerShell-modul
+              href: developer/module/importing-a-powershell-module.md
         - name: Skriva en Windows PowerShell-provider
-          href: developer/provider/writing-a-windows-powershell-provider.md
           items:
             - name: Snabbstart för Windows PowerShell-providers
               href: developer/provider/windows-powershell-provider-quickstart.md
@@ -1099,7 +1057,6 @@
                 - name: AccessDBProviderSample06
                   href: developer/provider/accessdbprovidersample06.md
         - name: Skriva ett Windows PowerShell-värdprogram
-          href: developer/hosting/writing-a-windows-powershell-host-application.md
           items:
             - name: Snabbstart för Windows PowerShell-värd
               href: developer/hosting/windows-powershell-host-quickstart.md
@@ -1176,13 +1133,13 @@
                     - name: RemoteRunspacePool01 – exempel
                       href: developer/hosting/remoterunspacepool01-sample.md
         - name: Skriva en PowerShell-formateringsfil
-          href: developer/format/writing-a-powershell-formatting-file.md
           items:
             - name: Översikt över formateringsfiler
               href: developer/format/formatting-file-overview.md
             - name: Begrepp relaterade till formateringsfiler
-              href: developer/format/formatting-file-concepts.md
               items:
+                - name: Översikt
+                  href: developer/format/formatting-file-concepts.md
                 - name: Skapa en tabellvy
                   href: developer/format/creating-a-table-view.md
                 - name: Skapa en listvy
@@ -1201,13 +1158,14 @@
                   href: developer/format/defining-conditions-for-displaying-data.md
                 - name: Formatera data som visas
                   href: developer/format/formatting-displayed-data.md
-                - name: PowerShell-formateringsfiler
-                  href: developer/format/powershell-formatting-files.md
-            - name: Exempel på formateringsfiler
-              href: developer/format/examples-of-formatting-files.md
+            - name: PowerShell-formateringsfiler
               items:
+                - name: Översikt
+                  href: developer/format/powershell-formatting-files.md
                 - name: Skapa en formateringsfil (.format.ps1xml)
                   href: developer/format/how-to-create-a-formatting-file-format-ps1xml.md
+            - name: Exempel på formateringsfiler
+              items:
                 - name: Bred vy (grundläggande)
                   href: developer/format/wide-view-basic.md
                 - name: Bred vy (gruppbaserad)
@@ -1639,22 +1597,14 @@
                   href: developer/format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
                 - name: WrapTables-element (format)
                   href: developer/format/wraptables-element-format.md
-        - name: Skriva kommentarsbaserade hjälpavsnitt
-          href: developer/help/writing-comment-based-help-topics.md
+        - name: Skrivhjälp för Windows PowerShell
           items:
-            - name: Skriva hjälp för Windows PowerShell-cmdlets
-              href: developer/help/writing-help-for-windows-powershell-cmdlets.md
-            - name: Skriva hjälp för Windows PowerShell-providers
-              items:
-                - name: Lägga till dynamiska parametrar i ett hjälpavsnitt för providers
-                  href: developer/help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
-                - name: Lägga till ett ”Se även”-avsnitt i ett hjälpavsnitt för providers
-                  href: developer/help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
-            - name: Skriva hjälp för Windows PowerShell-skript och -funktioner
+            - name: Översikt
               href: developer/help/writing-help-for-windows-powershell-scripts-and-functions.md
             - name: Skriva kommentarsbaserade hjälpavsnitt
-              href: developer/help/writing-comment-based-help-topics.md
               items:
+                - name: Översikt
+                  href: developer/help/writing-comment-based-help-topics.md
                 - name: Syntax för kommentarsbaserad hjälp
                   href: developer/help/syntax-of-comment-based-help.md
                 - name: Nyckelord för kommentarsbaserad hjälp
@@ -1669,39 +1619,92 @@
                   href: developer/help/examples-of-comment-based-help.md
             - name: Skriva XML-baserade hjälpavsnitt för kommandon
               items:
-                - name: Skapa cmdlet-hjälpfilen
-                  href: developer/help/how-to-create-the-cmdlet-help-file.md
-                - name: Lägga till cmdlet-namnet och sammanfattningen i ett cmdlet-hjälpavsnitt
-                  href: developer/help/how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md
-                - name: Lägga till en cmdlet-beskrivning
-                  href: developer/help/how-to-add-a-cmdlet-description.md
-                - name: Lägga till syntax till ett cmdlet-hjälpavsnitt
-                  href: developer/help/how-to-add-syntax-to-a-cmdlet-help-topic.md
-                - name: Lägga till parameterinformation
-                  href: developer/help/how-to-add-parameter-information.md
-                - name: Lägga till indatatyper i ett cmdlet-hjälpavsnitt
-                  href: developer/help/how-to-add-input-types-to-a-cmdlet-help-topic.md
-                - name: Lägga till returvärden i ett cmdlet-hjälpavsnitt
-                  href: developer/help/how-to-add-return-values-to-a-cmdlet-help-topic.md
-                - name: Lägga till anteckningar i ett cmdlet-hjälpavsnitt
-                  href: developer/help/how-to-add-notes-to-a-cmdlet-help-topic.md
-                - name: Lägga till exempel i ett cmdlet-hjälpavsnitt
-                  href: developer/help/how-to-add-examples-to-a-cmdlet-help-topic.md
-                - name: Lägga till relaterade länkar i ett cmdlet-hjälpavsnitt
-                  href: developer/help/how-to-add-related-links-to-a-cmdlet-help-topic.md
+                - name: Skriva hjälp för Windows PowerShell-cmdlets
+                  items:
+                    - name: Översikt
+                      href: developer/help/writing-help-for-windows-powershell-cmdlets.md
+                    - name: Skapa cmdlet-hjälpfilen
+                      href: developer/help/how-to-create-the-cmdlet-help-file.md
+                    - name: Lägga till cmdlet-namnet och sammanfattningen i ett cmdlet-hjälpavsnitt
+                      href: developer/help/how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md
+                    - name: Lägga till en cmdlet-beskrivning
+                      href: developer/help/how-to-add-a-cmdlet-description.md
+                    - name: Lägga till syntax till ett cmdlet-hjälpavsnitt
+                      href: developer/help/how-to-add-syntax-to-a-cmdlet-help-topic.md
+                    - name: Lägga till parameterinformation
+                      href: developer/help/how-to-add-parameter-information.md
+                    - name: Lägga till indatatyper i ett cmdlet-hjälpavsnitt
+                      href: developer/help/how-to-add-input-types-to-a-cmdlet-help-topic.md
+                    - name: Lägga till returvärden i ett cmdlet-hjälpavsnitt
+                      href: developer/help/how-to-add-return-values-to-a-cmdlet-help-topic.md
+                    - name: Lägga till anteckningar i ett cmdlet-hjälpavsnitt
+                      href: developer/help/how-to-add-notes-to-a-cmdlet-help-topic.md
+                    - name: Lägga till exempel i ett cmdlet-hjälpavsnitt
+                      href: developer/help/how-to-add-examples-to-a-cmdlet-help-topic.md
+                    - name: Lägga till relaterade länkar i ett cmdlet-hjälpavsnitt
+                      href: developer/help/how-to-add-related-links-to-a-cmdlet-help-topic.md
+                - name: Skrivhjälp för Windows PowerShell-moduler
+                  href: developer/module/writing-help-for-windows-powershell-modules.md
+                  items:
+                    - name: Namnge hjälpfiler
+                      href: developer/help/naming-help-files.md
+                    - name: Stöd för uppdateringsbar hjälp
+                      href: developer/help/supporting-updatable-help.md
+                      items:
+                        - name: Översikt över uppdateringsbar hjälp
+                          href: developer/help/updatable-help-overview.md
+                        - name: 'Redigering av uppdateringsbar hjälp: Steg för steg'
+                          href: developer/help/updatable-help-authoring-step-by-step.md
+                        - name: Så här fungerar uppdateringsbar hjälp
+                          href: developer/help/how-updatable-help-works.md
+                        - name: Skapa en HelpInfo-XML-fil
+                          href: developer/help/how-to-create-a-helpinfo-xml-file.md
+                          items:
+                            - name: HelpInfo-XML-schema
+                              href: developer/help/helpinfo-xml-schema.md
+                            - name: HelpInfo-XML-exempelfil
+                              href: developer/help/helpinfo-xml-sample-file.md
+                            - name: Namnge en HelpInfo-XML-fil
+                              href: developer/help/how-to-name-a-helpinfo-xml-file.md
+                            - name: Konfigurera versionsnummer för HelpInfo-XML-filer
+                              href: developer/help/how-to-set-helpinfo-xml-version-numbers.md
+                        - name: Förbereda CAB-filer för uppdateringsbar hjälp
+                          href: developer/help/how-to-prepare-updatable-help-cab-files.md
+                          items:
+                            - name: Skapa och ladda upp CAB-filer
+                              href: developer/help/how-to-create-and-upload-cab-files.md
+                            - name: Namnge en CAB-fil för uppdateringsbar hjälp
+                              href: developer/help/how-to-name-an-updatable-help-cab-file.md
+                            - name: Filtyper som tillåts i en CAB-fil för uppdateringsbar hjälp
+                              href: developer/help/file-types-permitted-in-an-updatable-help-cab-file.md
+                            - name: Uppdatera hjälpfiler
+                              href: developer/help/how-to-update-help-files.md
+                            - name: Testa uppdateringsbar hjälp
+                              href: developer/help/how-to-test-updatable-help.md
+                        - name: Stöd för onlinehjälp
+                          href: developer/help/supporting-online-help.md
+                - name: Skriva hjälp för Windows PowerShell-providers
+                  items:
+                    - name: Lägga till dynamiska parametrar i ett hjälpavsnitt för providers
+                      href: developer/help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
+                    - name: Lägga till ett ”Se även”-avsnitt i ett hjälpavsnitt för providers
+                      href: developer/help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
         - name: Skapa en Management OData-webbtjänst
-          href: developer/webservices/creating-a-management-odata-web-service.md
           items:
+            - name: Översikt
+              href: developer/webservices/creating-a-management-odata-web-service.md
             - name: Lägga till resurser till en Management OData-webbtjänst
               href: developer/webservices/adding-resources-to-a-management-odata-web-service.md
             - name: Implementera anpassad auktorisering för en Management OData-webbtjänst
-              href: developer/webservices/implementing-custom-authorization-for-a-management-odata-web-service.md
               items:
+                - name: Översikt
+                  href: developer/webservices/implementing-custom-authorization-for-a-management-odata-web-service.md
                 - name: Konfigurera rollbaserad auktorisering
                   href: developer/webservices/configuring-role-based-authorization.md
-                  items:
-                    - name: Konfigurationsschema för rollbaserad auktorisering
-                      href: developer/webservices/role-based-authorization-configuration-schema.md
+                - name: Konfigurationsschema för rollbaserad auktorisering
+                  href: developer/webservices/role-based-authorization-configuration-schema.md
+                - name: Anropa Windows PowerShell-cmdlets med Management OData-webbtjänster
+                  href: developer/webservices/invoking-windows-powershell-cmdlets-with-management-odata-web-services.md
             - name: Implementera SessionConfiguration för en Management OData-webbtjänst
               href: developer/webservices/implementing-sessionconfiguration-for-a-management-odata-web-service.md
             - name: Redigera MOF-schemafilen för en Management OData-webbtjänst
@@ -1714,32 +1717,32 @@
               href: developer/webservices/deploying-a-management-odata-web-service.md
             - name: Associera Management OData-entiteter
               href: developer/webservices/associating-management-odata-entities.md
-            - name: Anropa Windows PowerShell-cmdlets med Management OData-webbtjänster
-              href: developer/webservices/invoking-windows-powershell-cmdlets-with-management-odata-web-services.md
             - name: Management OData IIS Extension-schemafiler
-              href: developer/webservices/management-odata-iis-extension-schema-files.md
               items:
+                - name: Översikt
+                  href: developer/webservices/management-odata-iis-extension-schema-files.md
                 - name: Schema för resursmappning
                   href: developer/webservices/resource-mapping-schema.md
                 - name: Schema för offentliga resurser
                   href: developer/webservices/public-resource-schema.md
         - name: Skriva ett Windows PowerShell-arbetsflöde
-          href: developer/workflow/writing-a-windows-powershell-workflow.md
           items:
+            - name: Översikt
+              href: developer/workflow/writing-a-windows-powershell-workflow.md
             - name: Lägga till Windows PowerShell-aktiviteter till Visual Studio Toolbox
               href: developer/workflow/adding-windows-powershell-activities-to-the-visual-studio-toolbox.md
-            - name: Vanliga arbetsflödesparametrar
-              href: developer/workflow/common-workflow-parameters.md
-            - name: Skapa en arbetsflödesaktivitet från en Windows PowerShell-cmdlet
-              href: developer/workflow/creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md
-            - name: Skapa ett arbetsflöde med hjälp av ett Windows PowerShell-skript
-              href: developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
             - name: Skapa ett arbetsflöde med Windows PowerShell-aktiviteter
               href: developer/workflow/creating-a-workflow-with-windows-powershell-activities.md
+            - name: Skapa ett arbetsflöde med hjälp av ett Windows PowerShell-skript
+              href: developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
             - name: Importera och anropa ett Windows PowerShell-arbetsflöde
               href: developer/workflow/importing-and-invoking-a-windows-powershell-workflow.md
+            - name: Skapa en arbetsflödesaktivitet från en Windows PowerShell-cmdlet
+              href: developer/workflow/creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md
             - name: Schemalägga jobb med Windows PowerShell API
               href: developer/workflow/scheduling-jobs-with-the-windows-powershell-api.md
+            - name: Vanliga arbetsflödesparametrar
+              href: developer/workflow/common-workflow-parameters.md
         - name: Programmeringsguide för Windows PowerShell
           href: developer/prog-guide/windows-powershell-programmer-s-guide.md
           items:
@@ -1866,8 +1869,3 @@
                   href: developer/prog-guide/runspace09-code-sample.md
                 - name: RunSpace10 – kodexempel
                   href: developer/prog-guide/runspace10-code-sample.md
-        - name: Windows PowerShell-referens
-          href: developer/windows-powershell-reference.md
-          items:
-            - name: Nyheter
-              href: developer/windows-powershell-reference-whats-new.md
