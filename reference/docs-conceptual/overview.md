@@ -2,16 +2,36 @@
 ms.date: 05/22/2020
 keywords: powershell,cmdlet
 title: Vad är PowerShell?
-ms.openlocfilehash: f9fcd536747d2063fe34c7104d0088bc70d39c1d
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 267b2938a0892c99c3a961bc7107f573df40a683
+ms.sourcegitcommit: 38215ad49e237b219e62bb5a5f0eb3b6b048df1e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808460"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83868487"
 ---
 # <a name="what-is-powershell"></a>Vad är PowerShell?
 
-PowerShell är ett ramverk för uppgifts automatisering och konfigurations hantering, som består av ett kommando rads gränssnitt och skript språk. Till skillnad från de flesta Shell, som godkänner och returnerar text, bygger PowerShell på CLR (Common Language Runtime) för .NET och godkänner och returnerar .NET-objekt. Den här grundläggande ändringen ger helt nya verktyg och metoder för automatisering.
+PowerShell är en plattforms oberoende uppgift för automatisering och konfigurations hanterings ramverk, som består av ett kommando rads gränssnitt och skript språk. Till skillnad från de flesta Shell, som godkänner och returnerar text, bygger PowerShell på CLR (Common Language Runtime) för .NET och godkänner och returnerar .NET-objekt. Den här grundläggande ändringen ger helt nya verktyg och metoder för automatisering.
+
+<!-- removing images until we can get replacements
+:::row:::
+   :::column span="":::
+      Windows
+      [![PowerShell on Windows](media/overview/windows-desktop-660.gif)](media/overview/windows-desktop.gif#lightbox)
+      [Install on Windows](install/installing-powershell-core-on-windows.md)
+   :::column-end:::
+   :::column span="":::
+      Linux
+      [![PowerShell on Linux](media/overview/linux-desktop-660.gif)](media/overview/linux-desktop.gif#lightbox)
+      [Install on Linux](install/installing-powershell-core-on-linux.md)
+   :::column-end:::
+   :::column span="":::
+      macOS
+      [![PowerShell on macOS](media/overview/macos-desktop-660.gif)](media/overview/macos-desktop.gif#lightbox)
+      [Install on macOS](install/installing-powershell-core-on-macos.md)
+   :::column-end:::
+:::row-end:::
+-->
 
 ## <a name="output-is-object-based"></a>Utdata är Object-baserad
 
