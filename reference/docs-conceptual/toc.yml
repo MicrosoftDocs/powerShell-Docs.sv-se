@@ -41,8 +41,28 @@
           href: learn/ps101/powershell.exe-command-line-help.md
         - name: Använd flikexpansion
           href: learn/ps101/using-tab-expansion.md
-    - name: Använda experimentella funktioner
-      href: learn/experimental-features.md
+    - name: Detaljerad information
+      items:
+        - name: Översikt
+          href: learn/deep-dives/overview.md
+        - name: Allt du vill veta om matriser
+          href: learn/deep-dives/everything-about-arrays.md
+        - name: Allt du vill veta mer om hashtabeller
+          href: learn/deep-dives/everything-about-hashtable.md
+        - name: Allt du vill veta mer om PSCustomObject
+          href: learn/deep-dives/everything-about-pscustomobject.md
+        - name: Allt du vill veta om strängersättning
+          href: learn/deep-dives/everything-about-string-substitutions.md
+        - name: Allt du vill veta om if/then/else
+          href: learn/deep-dives/everything-about-if.md
+        - name: Allt du vill veta om byte
+          href: learn/deep-dives/everything-about-switch.md
+        - name: Allt du vill veta om undantag
+          href: learn/deep-dives/everything-about-exceptions.md
+        - name: Allt du vill veta om $null
+          href: learn/deep-dives/everything-about-null.md
+        - name: Allt du vill veta om ShouldProcess
+          href: learn/deep-dives/everything-about-shouldprocess.md
     - name: PowerShell-fjärranvändning
       items:
         - name: JEA (Just Enough Administration)
@@ -73,6 +93,8 @@
           href: learn/remoting/winrmsecurity.md
         - name: Göra det andra hoppet i PowerShell-fjärrkommunikation
           href: learn/remoting/ps-remoting-second-hop.md
+    - name: Använda experimentella funktioner
+      href: learn/experimental-features.md
     - name: Ytterligare resurser
       href: learn/more-powershell-learning.md
     - name: Ordlista
@@ -748,6 +770,8 @@
           href: dev-cross-plat/vscode/understanding-file-encoding.md
     - name: Skriva flyttbara moduler
       href: dev-cross-plat/writing-portable-modules.md
+    - name: Såhär skapar du en binär modul för standardbibliotek
+      href: dev-cross-plat/create-standard-library-binary-module.md
     - name: Äldre PowerShell SDK
       items:
         - name: Översikt
