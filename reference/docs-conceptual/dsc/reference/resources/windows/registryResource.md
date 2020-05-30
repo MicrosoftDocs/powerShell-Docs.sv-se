@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC register resurs
-ms.openlocfilehash: 9f65815cbe6a94831b88cb3425bf688e1a99a9c0
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 3acd79fa81bc731f344d810371b961dc3af3a11d
+ms.sourcegitcommit: 1ab59991c18e1b9692333d5e58ce649eaa75594f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83559910"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84203655"
 ---
 # <a name="dsc-registry-resource"></a>DSC register resurs
 
@@ -54,9 +54,11 @@ Registry [string] #ResourceName
 > [!NOTE]
 > Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter. Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).
 
-## <a name="example"></a>Exempel
+## <a name="examples"></a>Exempel
 
-Det här exemplet ser till att en nyckel med namnet "ExampleKey" finns i den lokala datahive- ** \_ \_ datorns** Hive.
+### <a name="example-1-ensure-specified-value-and-data-under-specified-registry-key"></a>Exempel 1: kontrol lera att det angivna värdet och data under angiven register nyckel
+
+I det här exemplet ser du till att registervärdet "TestValue" under en nyckel med namnet "ExampleKey1" finns i `HKEY\_LOCAL\_MACHINE` Hive och innehåller data "testdata".
 
 ```powershell
 Configuration RegistryTest
@@ -64,9 +66,25 @@ Configuration RegistryTest
     Registry RegistryExample
     {
         Ensure      = "Present"  # You can also set Ensure to "Absent"
-        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey"
+        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey1"
         ValueName   = "TestValue"
         ValueData   = "TestData"
+    }
+}
+```
+
+### <a name="example-2-ensure-specified-registry-key-exists"></a>Exempel 2: kontrol lera att den angivna register nyckeln finns
+
+Det här exemplet ser till att en nyckel med namnet "ExampleKey2" finns i den lokala datahive- ** \_ \_ datorns** Hive.
+
+```powershell
+Configuration RegistryTest
+{
+    Registry RegistryExample
+    {
+        Ensure      = "Present"  # You can also set Ensure to "Absent"
+        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey2"
+        ValueName   = ""
     }
 }
 ```
