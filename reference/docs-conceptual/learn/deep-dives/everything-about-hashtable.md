@@ -3,12 +3,12 @@ title: Allt du ville veta om hash
 description: Hash är verkligen viktiga i PowerShell så det är bra att ha en solid förståelse för dem.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 60a5172485b9caf6343f54194563cd048648206e
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 336c32cca351cc7d87f3300364c075ba7bd8aaeb
+ms.sourcegitcommit: 0b9268e7b92fb76b47169b72e28de43e4bfe7fbf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149861"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84307137"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Allt du ville veta om hash
 
@@ -541,10 +541,9 @@ Detta skapar samma hash-typ som vi såg ovan och kan komma åt egenskaperna på 
 ```powershell
 $person.location.city
 Austin
-```powershell
+```
 
-There are many ways to approach the structure of your objects. Here is a second way to look at a
-nested hashtable.
+Det finns många sätt att närma dig strukturen för dina objekt. Här är ett andra sätt att titta på en kapslad hash.
 
 ```powershell
 $people = @{
@@ -671,6 +670,36 @@ $people = Get-Content -Path $path -Raw | ConvertFrom-JSON
 
 Det finns två viktiga punkter om den här metoden. Det första är att JSON skrivs ut flera rader så jag måste använda `-Raw` alternativet för att läsa tillbaka det till en enda sträng. Det andra är att det importerade objektet inte längre är ett `[hashtable]` . Det är nu en `[pscustomobject]` och som kan orsaka problem om du inte förväntar dig.
 
+Titta efter djupt kapslade hash. När du konverterar den till JSON kanske du inte får de resultat du förväntar dig.
+
+```powershell
+@{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json
+
+{
+  "a": {
+    "b": {
+      "c": "System.Collections.Hashtable"
+    }
+  }
+}
+```
+
+Använd **djup** parameter för att se till att du har expanderat alla kapslade hash.
+
+```powershell
+@{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json -Depth 3
+
+{
+  "a": {
+    "b": {
+      "c": {
+        "d": "e"
+      }
+    }
+  }
+}
+```
+
 Om du behöver det för att `[hashtable]` Importera måste du använda- `Export-CliXml` och- `Import-CliXml` kommandona.
 
 ### <a name="converting-json-to-hashtable"></a>Konvertera JSON till hash-sträng
@@ -682,6 +711,18 @@ Om du behöver konvertera JSON till en finns `[hashtable]` det ett sätt som jag
 $JSSerializer = [System.Web.Script.Serialization.JavaScriptSerializer]::new()
 $JSSerializer.Deserialize($json,'Hashtable')
 ```
+
+Från och med PowerShell V6 använder JSON-stödet NewtonSoft-JSON.NET och lägger till hash-stöd.
+
+```powershell
+'{ "a": "b" }' | ConvertFrom-Json -AsHashtable
+
+Name      Value
+----      -----
+a         b
+```
+
+PowerShell 6,2 lade till **djup** parametern till `ConvertFrom-Json` . Standard **djupet** är 1024.
 
 ### <a name="reading-directly-from-a-file"></a>Läsa direkt från en fil
 
@@ -698,9 +739,9 @@ Innehållet i filen importeras till en `scriptblock` och kontrollerar sedan att 
 
 Visste du att ett modul manifest (psd1-filen) bara är en hash-modul?
 
-## <a name="keys-are-just-strings"></a>Nycklar är bara strängar
+## <a name="keys-can-be-any-object"></a>Nycklar kan vara valfritt objekt
 
-Jag ville inte sätta på den här tangenten tidigare, men nycklarna är bara strängar. Vi kan lägga till citat tecken runt vad som helst och göra den till en nyckel.
+De flesta av tiden är nycklarna bara strängar. Vi kan lägga till citat tecken runt vad som helst och göra den till en nyckel.
 
 ```powershell
 $person = @{
@@ -721,13 +762,34 @@ $person.$key
 
 Bara för att du ska kunna göra något, betyder det inte att du borde. Det sista ser bara ut som ett fel som väntar på att hända och skulle vara lätt att förstå för alla som läser koden.
 
-Tekniskt sett behöver din nyckel inte vara en sträng, men de är lättare att tänka på om du bara använder strängar.
+Tekniskt sett behöver din nyckel inte vara en sträng, men de är lättare att tänka på om du bara använder strängar. Indexeringen fungerar dock inte bra med de komplexa nycklarna.
+
+```powershell
+$ht = @{ @(1,2,3) = "a" }
+$ht
+
+Name                           Value
+----                           -----
+{1, 2, 3}                      a
+```
+
+Att komma åt ett värde i hash-tabellen efter dess nyckel fungerar inte alltid. Ett exempel:
+
+```powershell
+$key = $ht.keys[0]
+$ht.$key
+$ht[$key]
+a
+```
+
+Om du använder formatet för medlems åtkomst ( `.` ) returneras inget. Men det fungerar med hjälp av array index ( `[]` )-notationen.
 
 ## <a name="use-in-automatic-variables"></a>Använd i automatiska variabler
 
 ### <a name="psboundparameters"></a>$PSBoundParameters
 
-[$PSBoundParameters] [] är en automatisk variabel som bara finns inuti kontexten för en funktion. Den innehåller alla parametrar som funktionen anropades med. Detta är inte exakt en hash utan är tillräckligt nära så att du kan behandla den som en.
+[$PSBoundParameters] [] är en automatisk variabel som bara finns inuti kontexten för en funktion.
+Den innehåller alla parametrar som funktionen anropades med. Detta är inte exakt en hash utan är tillräckligt nära så att du kan behandla den som en.
 
 Detta inkluderar att ta bort nycklar och ihopbuntning den till andra funktioner. Ta en närmare titt på den här om du upptäcker att du skriver proxy-funktioner.
 
@@ -893,8 +955,6 @@ Den hanterar inte andra referens typer eller matriser, men det är en lämplig s
 ## <a name="anything-else"></a>Något mer?
 
 Jag täckte mycket jord snabbt. Min idé är att du kan sätta en ny eller förståelse för det bättre varje gång du läser det. Eftersom jag täckte det fullständiga spektrumet av den här funktionen finns det aspekter som bara kan gälla just nu. Det är perfekt OK och är en typ av förväntat beroende på hur mycket du arbetar med PowerShell.
-
-Här är en lista över allt vi täckte om du vill gå tillbaka till något. Normalt går detta till början men det skrevs uppifrån och ned med exempel som bygger på allt som kom innan det.
 
 <!-- link references -->
 [ursprunglig version]: https://powershellexplained.com/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/
