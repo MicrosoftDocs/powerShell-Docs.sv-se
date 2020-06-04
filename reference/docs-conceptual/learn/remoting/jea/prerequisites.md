@@ -9,7 +9,7 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 05/19/2020
 ms.locfileid: "83556877"
 ---
-# <a name="prerequisites"></a>Krav
+# <a name="prerequisites"></a>Förutsättningar
 
 Bara tillräckligt med administration är en funktion som ingår i PowerShell 5,0 och högre. I den här artikeln beskrivs förutsättningar som måste vara uppfyllda för att börja använda JEA.
 

@@ -3,12 +3,12 @@ title: Allt du ville veta om undantag
 description: Fel hanteringen är bara en del av livs cykeln när den kommer att skriva kod.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: fd3ddacbf14d1faeee98682697161f86c6ff0c72
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 3ecb1669fa8d58bc742d4e8e77051b3ace4452a0
+ms.sourcegitcommit: 4a40e3ea3601c02366be3495a5dcc7f4cac9f1ea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149882"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84337190"
 ---
 # <a name="everything-you-wanted-to-know-about-exceptions"></a>Allt du ville veta om undantag
 
@@ -55,7 +55,7 @@ Här är en snabb översikt över den grundläggande syntaxen för undantags han
 För att skapa en egen undantags händelse genererar vi ett undantag med `throw` nyckelordet.
 
 ```powershell
-function Do-Something
+function Start-Something
 {
     throw "Bad thing happened"
 }
@@ -64,7 +64,7 @@ function Do-Something
 Detta skapar ett körnings undantag som är ett avbrotts fel. Den hanteras av en `catch` i en anropande funktion eller avslutar skriptet med ett meddelande som detta.
 
 ```powershell
-PS> Do-Something
+PS> Start-Something
 
 Bad thing happened
 At line:1 char:1
@@ -89,7 +89,7 @@ Tack för att du Pettersson dagligen för att påminna om hur du använder `-Err
 Om du anger `-ErrorAction Stop` en avancerad funktion eller cmdlet, aktiverar den alla `Write-Error` instruktioner för att avsluta fel som slutar att köras eller som kan hanteras av en `catch` .
 
 ```powershell
-Do-Something -ErrorAction Stop
+Start-Something -ErrorAction Stop
 ```
 
 ### <a name="trycatch"></a>Prova/fånga
@@ -99,7 +99,7 @@ Hur undantags hanteringen fungerar i PowerShell (och många andra språk) är at
 ```powershell
 try
 {
-    Do-Something
+    Start-Something
 }
 catch
 {
@@ -108,7 +108,7 @@ catch
 
 try
 {
-    Do-Something -ErrorAction Stop
+    Start-Something -ErrorAction Stop
 }
 catch
 {
@@ -213,7 +213,7 @@ Den här egenskapen visar ordningen på funktions anrop som har fått till gång
 ```powershell
 PS> $PSItem.ScriptStackTrace
 at Get-Resource, C:\blog\throwerror.ps1: line 13
-at Do-Something, C:\blog\throwerror.ps1: line 5
+at Start-Something, C:\blog\throwerror.ps1: line 5
 at <ScriptBlock>, C:\blog\throwerror.ps1: line 18
 ```
 
@@ -276,7 +276,7 @@ Du kan vara selektiv med de undantag som du har fångat. Undantag har en typ och
 ```powershell
 try
 {
-    Do-Something -Path $path
+    Start-Something -Path $path
 }
 catch [System.IO.FileNotFoundException]
 {
@@ -300,7 +300,7 @@ Det är möjligt att fånga flera undantags typer med samma `catch` instruktion.
 ```powershell
 try
 {
-    Do-Something -Path $path -ErrorAction Stop
+    Start-Something -Path $path -ErrorAction Stop
 }
 catch [System.IO.DirectoryNotFoundException],[System.IO.FileNotFoundException]
 {
@@ -449,7 +449,6 @@ At line:31 char:9
     + FullyQualifiedErrorId : Unable to find the specified file.
 ```
 
-
 Om du får ett fel meddelande om att mitt skript är brutet, eftersom jag har anropat `throw` på rad 31 är ett dåligt meddelande för användare av ditt skript att se. Det ser inte ut som om det är något användbart.
 
 Dhami påpekade att jag kan använda `ThrowTerminatingError()` för att åtgärda detta.
@@ -495,13 +494,13 @@ Detta ändrar källan till felet till cmdleten och döljer de interna funktioner
 Kirks Munro pekar ut om att vissa undantag endast avslutar fel när de körs inuti ett `try/catch` block. Här är exemplet han fick mig som genererade ett divisions fel med körnings undantag.
 
 ```powershell
-function Do-Something { 1/(1-1) }
+function Start-Something { 1/(1-1) }
 ```
 
 Sedan anropar du det som det här för att se hur det genererar felet och fortsätter att skriva ut meddelandet.
 
 ```powershell
-&{ Do-Something; Write-Output "We did it. Send Email" }
+&{ Start-Something; Write-Output "We did it. Send Email" }
 ```
 
 Men genom att placera samma kod inuti en `try/catch` , ser vi något annat.
@@ -509,14 +508,13 @@ Men genom att placera samma kod inuti en `try/catch` , ser vi något annat.
 ```powershell
 try
 {
-    &{ Do-Something; Write-Output "We did it. Send Email" }
+    &{ Start-Something; Write-Output "We did it. Send Email" }
 }
 catch
 {
     Write-Output "Notify Admin to fix error and send email"
 }
 ```
-
 
 Vi ser felet blir ett avbrotts fel och ger inte ut det första meddelandet. Vad jag inte tycker om det här är att du kan ha den här koden i en funktion och den fungerar annorlunda om någon använder en `try/catch` .
 
@@ -528,12 +526,12 @@ En Nuance av `$PSCmdlet.ThrowTerminatingError()` är att den skapar ett avbrotts
 
 ### <a name="public-function-templates"></a>Mallar för offentliga funktioner
 
-Ett sista sätt att använda min konversation med Kirks Munro var att han var `try{...}catch{...}` runt varje `begin` , `process` och `end` blockerar i alla sina avancerade funktioner. I dessa generiska catch-block kan han som en enda linje `$PSCmdlet.ThrowTerminatingError($PSitem)` hantera alla undantag som lämnar sina uppgifter.
+Ett sista sätt att använda min konversation med Kirks Munro var att han var `try{...}catch{...}` runt varje `begin` , `process` och `end` blockerar i alla sina avancerade funktioner. I dessa generiska catch-block har han en enda linje `$PSCmdlet.ThrowTerminatingError($PSItem)` som använder för att hantera alla undantag som lämnar sina uppgifter.
 
 ```powershell
-function Do-Something
+function Start-Something
 {
-    [cmdletbinding()]
+    [CmdletBinding()]
     param()
 
     process
@@ -544,7 +542,7 @@ function Do-Something
         }
         catch
         {
-            $PSCmdlet.ThrowTerminatingError($PSitem)
+            $PSCmdlet.ThrowTerminatingError($PSItem)
         }
     }
 }
