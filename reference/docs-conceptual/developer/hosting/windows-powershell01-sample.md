@@ -1,47 +1,40 @@
 ---
 title: Windows PowerShell01-exempel | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f607a5ad-5372-4392-b2dc-ef3532fabd0f
-caps.latest.revision: 9
-ms.openlocfilehash: c82f0a123c190c778166e3648b46e97e6257a2b6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 6e799f35c0c5e3820c6471b49c8b0d8c47b1c6b2
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83561009"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771948"
 ---
-# <a name="windows-powershell01-sample"></a><span data-ttu-id="86361-102">Windows PowerShell01 – exempel</span><span class="sxs-lookup"><span data-stu-id="86361-102">Windows PowerShell01 Sample</span></span>
+# <a name="windows-powershell01-sample"></a><span data-ttu-id="cbaed-102">Windows PowerShell01 – exempel</span><span class="sxs-lookup"><span data-stu-id="cbaed-102">Windows PowerShell01 Sample</span></span>
 
-<span data-ttu-id="86361-103">Det här exemplet visar hur du använder ett [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt för att begränsa funktionerna i en körnings utrymme.</span><span class="sxs-lookup"><span data-stu-id="86361-103">This sample shows how to use an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to limit the functionality of a runspace.</span></span> <span data-ttu-id="86361-104">Utdata från det här exemplet visar hur du begränsar språk läget för körnings utrymme, hur du markerar en cmdlet som privat, hur du lägger till och tar bort cmdlets och providers, hur du lägger till ett proxy-kommando med mera.</span><span class="sxs-lookup"><span data-stu-id="86361-104">The output of this sample demonstrates how to restrict the language mode of the runspace, how to mark a cmdlet as private, how to add and remove cmdlets and providers, how to add a proxy command, and more.</span></span> <span data-ttu-id="86361-105">Det här exemplet fokuserar på hur du begränsar körnings utrymme program mässigt.</span><span class="sxs-lookup"><span data-stu-id="86361-105">This sample concentrates on how to restrict the runspace programmatically.</span></span> <span data-ttu-id="86361-106">Skript alternativ för att begränsa körnings utrymme inkluderar kommandona $ExecutionContext. SessionState. LanguageMode och PSSessionConfiguration.</span><span class="sxs-lookup"><span data-stu-id="86361-106">Scripting alternatives to restricting the runspace include the $ExecutionContext.SessionState.LanguageMode and PSSessionConfiguration commands.</span></span>
+<span data-ttu-id="cbaed-103">Det här exemplet visar hur du använder ett [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt för att begränsa funktionerna i en körnings utrymme.</span><span class="sxs-lookup"><span data-stu-id="cbaed-103">This sample shows how to use an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to limit the functionality of a runspace.</span></span> <span data-ttu-id="cbaed-104">Utdata från det här exemplet visar hur du begränsar språk läget för körnings utrymme, hur du markerar en cmdlet som privat, hur du lägger till och tar bort cmdlets och providers, hur du lägger till ett proxy-kommando med mera.</span><span class="sxs-lookup"><span data-stu-id="cbaed-104">The output of this sample demonstrates how to restrict the language mode of the runspace, how to mark a cmdlet as private, how to add and remove cmdlets and providers, how to add a proxy command, and more.</span></span> <span data-ttu-id="cbaed-105">Det här exemplet fokuserar på hur du begränsar körnings utrymme program mässigt.</span><span class="sxs-lookup"><span data-stu-id="cbaed-105">This sample concentrates on how to restrict the runspace programmatically.</span></span> <span data-ttu-id="cbaed-106">Skript alternativ för att begränsa körnings utrymme inkluderar kommandona $ExecutionContext. SessionState. LanguageMode och PSSessionConfiguration.</span><span class="sxs-lookup"><span data-stu-id="cbaed-106">Scripting alternatives to restricting the runspace include the $ExecutionContext.SessionState.LanguageMode and PSSessionConfiguration commands.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="86361-107">Krav</span><span class="sxs-lookup"><span data-stu-id="86361-107">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="cbaed-107">Krav</span><span class="sxs-lookup"><span data-stu-id="cbaed-107">Requirements</span></span>
 
-<span data-ttu-id="86361-108">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="86361-108">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="cbaed-108">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="cbaed-108">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="86361-109">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="86361-109">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="cbaed-109">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="cbaed-109">Demonstrates</span></span>
 
-<span data-ttu-id="86361-110">Det här exemplet demonstrerar följande:</span><span class="sxs-lookup"><span data-stu-id="86361-110">This sample demonstrates the following:</span></span>
+<span data-ttu-id="cbaed-110">Det här exemplet demonstrerar följande:</span><span class="sxs-lookup"><span data-stu-id="cbaed-110">This sample demonstrates the following:</span></span>
 
-- <span data-ttu-id="86361-111">Begränsa språket genom att ställa in egenskapen [system. Management. Automation. körnings utrymmen. Initialsessionstate. Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) .</span><span class="sxs-lookup"><span data-stu-id="86361-111">Restricting the language by setting the [System.Management.Automation.Runspaces.Initialsessionstate.Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) property.</span></span>
+- <span data-ttu-id="cbaed-111">Begränsa språket genom att ange [System.Management.Automation.Runspaces.Initialsessionstate. Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) -egenskap.</span><span class="sxs-lookup"><span data-stu-id="cbaed-111">Restricting the language by setting the [System.Management.Automation.Runspaces.Initialsessionstate.Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) property.</span></span>
 
-- <span data-ttu-id="86361-112">Lägga till alias i det första sessionstillståndet med hjälp av en [system. Management. Automation. körnings utrymmen. Sessionstatealiasentry? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) -objekt.</span><span class="sxs-lookup"><span data-stu-id="86361-112">Adding aliases to the initial session state by using a [System.Management.Automation.Runspaces.Sessionstatealiasentry?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) object.</span></span>
+- <span data-ttu-id="cbaed-112">Lägga till alias i det första sessionstillståndet med hjälp av en [system. Management. Automation. körnings utrymmen. Sessionstatealiasentry? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) -objekt.</span><span class="sxs-lookup"><span data-stu-id="cbaed-112">Adding aliases to the initial session state by using a [System.Management.Automation.Runspaces.Sessionstatealiasentry?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) object.</span></span>
 
-- <span data-ttu-id="86361-113">Markera kommandon som privata.</span><span class="sxs-lookup"><span data-stu-id="86361-113">Marking commands as private.</span></span>
+- <span data-ttu-id="cbaed-113">Markera kommandon som privata.</span><span class="sxs-lookup"><span data-stu-id="cbaed-113">Marking commands as private.</span></span>
 
-- <span data-ttu-id="86361-114">Ta bort providers från det första sessionstillståndet med hjälp av egenskapen [system. Management. Automation. körnings utrymmen. Initialsessionstate. providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) .</span><span class="sxs-lookup"><span data-stu-id="86361-114">Removing providers from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) property.</span></span>
+- <span data-ttu-id="cbaed-114">Ta bort providers från det första sessionstillståndet med hjälp av [System.Management.Automation.Runspaces.Initialsessionstate. Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) -egenskap.</span><span class="sxs-lookup"><span data-stu-id="cbaed-114">Removing providers from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) property.</span></span>
 
-- <span data-ttu-id="86361-115">Ta bort kommandon från det första sessionstillståndet med hjälp av egenskapen [system. Management. Automation. körnings utrymmen. Initialsessionstate. commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) .</span><span class="sxs-lookup"><span data-stu-id="86361-115">Removing commands from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) property.</span></span>
+- <span data-ttu-id="cbaed-115">Ta bort kommandon från det första sessionstillståndet med hjälp av egenskapen [System.Management.Automation.Runspaces.Initialsessionstate. commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) .</span><span class="sxs-lookup"><span data-stu-id="cbaed-115">Removing commands from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) property.</span></span>
 
-- <span data-ttu-id="86361-116">Lägga till kommandon och providrar i objektet [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .</span><span class="sxs-lookup"><span data-stu-id="86361-116">Adding commands and providers to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="cbaed-116">Lägga till kommandon och providrar i [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objektet.</span><span class="sxs-lookup"><span data-stu-id="cbaed-116">Adding commands and providers to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-## <a name="example"></a><span data-ttu-id="86361-117">Exempel</span><span class="sxs-lookup"><span data-stu-id="86361-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="cbaed-117">Exempel</span><span class="sxs-lookup"><span data-stu-id="cbaed-117">Example</span></span>
 
-<span data-ttu-id="86361-118">Det här exemplet visar flera sätt att begränsa funktionerna i en körnings utrymme.</span><span class="sxs-lookup"><span data-stu-id="86361-118">This sample shows several ways to limit the functionality of a runspace.</span></span>
+<span data-ttu-id="cbaed-118">Det här exemplet visar flera sätt att begränsa funktionerna i en körnings utrymme.</span><span class="sxs-lookup"><span data-stu-id="cbaed-118">This sample shows several ways to limit the functionality of a runspace.</span></span>
 
 ```csharp
 namespace Sample
@@ -257,6 +250,6 @@ namespace Sample
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="86361-119">Se även</span><span class="sxs-lookup"><span data-stu-id="86361-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cbaed-119">Se även</span><span class="sxs-lookup"><span data-stu-id="cbaed-119">See Also</span></span>
 
-[<span data-ttu-id="86361-120">Skriva ett Windows PowerShell-värdprogram</span><span class="sxs-lookup"><span data-stu-id="86361-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="cbaed-120">Skriva ett Windows PowerShell-värdprogram</span><span class="sxs-lookup"><span data-stu-id="cbaed-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
