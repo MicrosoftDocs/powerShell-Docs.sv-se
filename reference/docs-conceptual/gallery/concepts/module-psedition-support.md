@@ -1,18 +1,18 @@
 ---
-ms.date: 03/28/2019
+ms.date: 06/10/2020
 contributor: manikb
 keywords: Galleri, PowerShell, cmdlet, psget
 title: Moduler med kompatibla PowerShell-versioner
-ms.openlocfilehash: 425588c168a4f864fdc0c52aa53cfd748b80dc98
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 522493714916e9fd21f67a6e7bc2cfb165041807
+ms.sourcegitcommit: 4a283fe5419f47102e6c1de7060880a934842ee9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71329192"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84671418"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Moduler med kompatibla PowerShell-versioner
 
-Från och med version 5.1 finns PowerShell i olika utgåvor som anger olika funktionsuppsättningar och plattformskompatibilitet.
+Från och med version 5,1 är PowerShell tillgängligt i olika versioner, vilket kännetecknar varierande funktions uppsättningar och plattformens kompatibilitet.
 
 - **Desktop Edition:** Byggd på .NET Framework gäller för Windows PowerShell v 4.0 och tidigare samt Windows PowerShell 5,1 på Windows Desktop, Windows Server, Windows Server Core och de flesta andra Windows-versioner.
 - **Core-utgåva:** Bygger på .NET Core som gäller för PowerShell Core 6,0 och senare samt Windows PowerShell 5,1 på mindre Windows-versioner som Windows IoT och Windows Nanoserver.
@@ -21,10 +21,10 @@ Mer information om PowerShell-versioner finns [about_PowerShell_Editions][].
 
 ## <a name="declaring-compatible-editions"></a>Deklarera kompatibla utgåvor
 
-Modulskapare kan fastställa om deras moduler är kompatibla med en eller flera PowerShell-utgåvor med hjälp av CompatiblePSEditions-modulens manifestnyckel. Den här nyckeln stöds bara på PowerShell 5.1 eller senare.
+Modulens författare kan deklarera att deras moduler är kompatibla med en eller flera PowerShell-versioner med hjälp av `CompatiblePSEditions` modulens manifest nyckel. Den här nyckeln stöds bara på PowerShell 5.1 eller senare.
 
 > [!NOTE]
-> När ett modul-manifest har angetts med CompatiblePSEditions-nyckeln kan det inte importeras i PowerShell-versionerna 4 och senare.
+> När ett modul-manifest har angetts med `CompatiblePSEditions` nyckeln eller använder `$PSEdition` variabeln, kan den inte importeras på PowerShell v4 eller lägre.
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
@@ -58,7 +58,6 @@ Get-Module -ListAvailable -PSEdition Desktop
 ```Output
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
-
 ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------
 Manifest   1.0        ModuleWithPSEditions
@@ -73,17 +72,34 @@ Desktop
 Core
 ```
 
+Från och med PowerShell 6 `CompatiblePSEditions` används värdet för att bestämma om en modul är kompatibel när moduler importeras från `$env:windir\System32\WindowsPowerShell\v1.0\Modules` .
+Detta beteende gäller endast för Windows. Utanför det här scenariot används värdet bara som metadata.
+
+## <a name="finding-compatible-modules"></a>Söker efter kompatibla moduler
+
+PowerShell-galleriet användare kan hitta listan över moduler som stöds på en angiven PowerShell-version med hjälp av Taggar **PSEdition_Desktop** och **PSEdition_Core**.
+
+Moduler utan **PSEdition_Desktop** -och **PSEdition_Core** -Taggar anses fungera bra på PowerShell Desktop-versioner.
+
+```powershell
+# Find modules supported on PowerShell Desktop edition
+Find-Module -Tag PSEdition_Desktop
+
+# Find modules supported on PowerShell Core editions
+Find-Module -Tag PSEdition_Core
+```
+
 ## <a name="targeting-multiple-editions"></a>Rikta in sig på flera utgåvor
 
 -Modulen författare kan publicera en enskild modul som riktar sig till antingen eller båda PowerShell-versionerna (Desktop och Core).
 
-En enda modul kan fungera både i Desktop-och Core-versioner, i den här modulen måste författaren lägga till nödvändig logik i antingen RootModule eller i modulens manifest med $PSEdition variabeln. Moduler kan ha två uppsättningar med kompilerade dll: er riktade till både CoreCLR och FullCLR. Här följer några alternativ för att paketera modulen med logik för att läsa in rätt DLL-filer.
+En enda modul kan fungera både i Desktop-och Core-versioner, i den här modulen måste författaren lägga till nödvändig logik i antingen RootModule eller i modulens manifest med `$PSEdition` variabeln. Moduler kan ha två uppsättningar med kompilerade dll: er riktade till både **CoreCLR** och **FullCLR**. Här är förpacknings alternativen med logik för att läsa in rätt DLL-filer.
 
 ### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Alternativ 1: paketera en modul för att rikta in dig på flera versioner och flera utgåvor av PowerShell
 
 Mappinnehåll i moduler
 
-- Microsoft. Windows. PowerShell. ScriptAnalyzer. BuiltinRules. dll
+- Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
 - Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
 - PSScriptAnalyzer.psd1
 - PSScriptAnalyzer.psm1
@@ -101,7 +117,7 @@ Mappinnehåll i moduler
 - Settings\ScriptingStyle.psd1
 - Settings\ScriptSecurity.psd1
 
-Innehåll i filen PSScriptAnalyzer. psd1
+Fil innehåll `PSScriptAnalyzer.psd1`
 
 ```powershell
 @{
@@ -121,7 +137,7 @@ ModuleVersion = '1.6.1'
 
 Nedan följer logiken inläsning av de nödvändiga sammansättningarna beroende på aktuell version eller version.
 
-Innehåll i filen PSScriptAnalyzer. psm1:
+Fil innehåll `PSScriptAnalyzer.psm1` :
 
 ```powershell
 #
@@ -157,14 +173,11 @@ $PSModule.OnRemove = {
 }
 ```
 
-### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>Alternativ 2: Använd $PSEdition variabel i PSD1-filen för att läsa in rätt DLL-filer och kapslade/obligatoriska moduler
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls"></a>Alternativ 2: Använd $PSEdition variabel i PSD1-filen för att läsa in rätt DLL-filer
 
-I PS 5,1 eller senare tillåts $PSEdition global variabel i manifest filen för modulen. Med den här variabeln kan modulen författare ange de villkorliga värdena i manifest filen för modulen. $PSEdition variabeln kan refereras i begränsat språk läge eller i ett data avsnitt.
+I PS 5,1 eller senare `$PSEdition` tillåts global variabel i manifest filen för modulen. Med den här variabeln kan modulen författare ange de villkorliga värdena i manifest filen för modulen. `$PSEdition` Det går att referera till variabeln i begränsat språk läge eller i ett data avsnitt.
 
-> [!NOTE]
-> När ett modul-manifest har angetts med CompatiblePSEditions-nyckeln eller `$PSEdition` använder variabeln, kan den inte importeras i lägre versioner av PowerShell.
-
-Manifest fil för exempel modul med CompatiblePSEditions-nyckel
+Manifest fil för exempel modul med `CompatiblePSEditions` nyckel.
 
 ```powershell
 @{
@@ -195,49 +208,15 @@ Manifest fil för exempel modul med CompatiblePSEditions-nyckel
 }
 ```
 
-### <a name="module-contents"></a>Modulens innehåll
+Modulens innehåll
 
-```powershell
-dir -Recurse
-```
-
-```Output
-    Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
-
-Mode           LastWriteTime   Length Name
-----           -------------   ------ ----
-d-----    7/5/2016   1:37 PM          clr
-d-----    7/5/2016   1:36 PM          coreclr
--a----    7/5/2016   1:34 PM     4906 ModuleWithEditions.psd1
-
-    Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\clr
-
-Mode           LastWriteTime    Length Name
-----           -------------    ------ ----
--a----    7/5/2016   1:35 PM         0 MyFullClrNM1.dll
--a----    7/5/2016   1:35 PM         0 MyFullClrNM2.dll
--a----    7/5/2016   1:35 PM         0 MyFullClrRM.dl
-
-    Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\coreclr
-
-Mode           LastWriteTime   Length Name
-----           -------------   ------ ----
--a----    7/5/2016   1:35 PM        0 MyCoreClrNM1.dll
--a----    7/5/2016   1:35 PM        0 MyCoreClrNM2.dll
--a----    7/5/2016   1:35 PM        0 MyCoreClrRM.dl
-```
-
-PowerShell-galleriet användare kan hitta listan över moduler som stöds på en angiven PowerShell-version med hjälp av Taggar PSEdition_Desktop och PSEdition_Core.
-
-Moduler utan PSEdition_Desktop-och PSEdition_Core-Taggar anses fungera bra på PowerShell Desktop-versioner.
-
-```powershell
-# Find modules supported on PowerShell Desktop edition
-Find-Module -Tag PSEdition_Desktop
-
-# Find modules supported on PowerShell Core editions
-Find-Module -Tag PSEdition_Core
-```
+- ModuleWithEditions\ModuleWithEditions.psd1
+- ModuleWithEditions\clr\MyFullClrNM1.dll
+- ModuleWithEditions\clr\MyFullClrNM2.dll
+- ModuleWithEditions\clr\MyFullClrRM.dll
+- ModuleWithEditions\coreclr\MyCoreClrNM1.dll
+- ModuleWithEditions\coreclr\MyCoreClrNM2.dll
+- ModuleWithEditions\coreclr\MyCoreClrRM.dll
 
 ## <a name="more-details"></a>Mer information
 

@@ -1,12 +1,12 @@
 ---
 title: PowerShell 7-modulens kompatibilitet
 ms.date: 02/03/2020
-ms.openlocfilehash: 273e25e3b7cd48e09b63e50c34ed0b98a4e766f0
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d618f9e55f5997bfd724a4e58bb94c348bd681ce
+ms.sourcegitcommit: 56463fb628a7d83dec4364e89417d83316c3e53b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565071"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84722821"
 ---
 # <a name="powershell-7-module-compatibility"></a>PowerShell 7-modulens kompatibilitet
 
@@ -18,7 +18,7 @@ Om du har information om att dela eller problem med specifika moduler, så kan d
 
 Windows Management-modulen installeras på olika sätt beroende på Windows-versionen och hur modulen paketerades för den versionen.
 
-Använd funktions namnet med cmdleten [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature) som administratör på Windows Server. Till exempel:
+Använd funktions namnet med cmdleten [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature) som administratör på Windows Server. Exempel:
 
 ```powershell
 Install-WindowsFeature -Name ActiveDirectory
@@ -69,13 +69,14 @@ I Windows 10 görs Windows Management-moduler tillgängliga som Windows- **valfr
 | Modulnamn                        | Status                               | Operativ system som stöds                       |
 | ---------------------------------- | ------------------------------------ | ---------------------------------- |
 | ActiveDirectory                    | Internt kompatibel                  | Windows Server 1809 + med RSAT-AD-PowerShell<br>Windows 10 1809 + med RSAT. ActiveDirectory. DS-LDS. tools |
+| ADDSDeployment                     | Fungerar med kompatibilitetsläge       |  Windows Server 2019 1809 +         |
 | ADFS                               | Testat med kompatibilitetsläge    |                                    |
 | AppBackgroundTask                  | Internt kompatibel                  | Windows 10-1903 +                   |
 | AppLocker                          | Testat med kompatibilitetsläge    |                                    |
 | AppvClient                         | Testat med kompatibilitetsläge    |                                    |
 | Appx                               | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 + |
 | AssignedAccess                     | Internt kompatibel                  | Windows 10-1809 +                   |
-| BestPractices                      | Testat med kompatibilitetsläge    |                                    |
+| BestPractices                      | Stöds inte av kompatibilitetsläge |                                    |
 | BitLocker                          | Internt kompatibel                  | Windows Server 1809 + med BitLocker<br>Windows 10-1809 + |
 | BitsTransfer                       | Internt kompatibel                  | Windows Server-20H1<br>Windows 10-20H1 |
 | BootEventCollector                 | Testat med kompatibilitetsläge    |                                        |
@@ -148,7 +149,7 @@ I Windows 10 görs Windows Management-moduler tillgängliga som Windows- **valfr
 | Etablering                       | Testat med kompatibilitetsläge    |                                               |
 | PSDesiredStateConfiguration        | Delvis                            | Inbyggd i PowerShell 7                       |
 | PSDiagnostics                      | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
-| PSScheduledJob                     | Fungerar inte med kompatibilitetsläge | Inbyggt i PowerShell 5,1                     |
+| PSScheduledJob                     | Stöds inte av kompatibilitetsläge | Inbyggt i PowerShell 5,1                     |
 | PSWorkflow                         | Testat med kompatibilitetsläge    |                                               |
 | PSWorkflowUtility                  | Testat med kompatibilitetsläge    |                                               |
 | RemoteAccess                       | Testat med kompatibilitetsläge    |                                               |
@@ -156,7 +157,7 @@ I Windows 10 görs Windows Management-moduler tillgängliga som Windows- **valfr
 | ScheduledTasks                     | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
 | SecureBoot                         | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
 | ServerCore                         | Testat med kompatibilitetsläge    |                                               |
-| ServerManager                      | Testat med kompatibilitetsläge    |                                               |
+| ServerManager                      | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10 1809 + med RSAT. ServerManager. tools<br>_Se anteckningar nedan_ |
 | ServerManagerTasks                 | Testat med kompatibilitetsläge    |                                               |
 | ShieldedVMDataFile                 | Internt kompatibel                  | Windows Server 1903 + med RSAT-avskärmade-VM-tools<br>Windows 10 1903 + med RSAT. skärmade. VM. tools |
 | ShieldedVMProvisioning             | Internt kompatibel                  | Windows Server 1809 + med HostGuardian<br>Windows 10 1809 + med HostGuardian  |
@@ -178,7 +179,7 @@ I Windows 10 görs Windows Management-moduler tillgängliga som Windows- **valfr
 | TroubleshootingPack                | Internt kompatibel                  | Windows 10-1903 +                              |
 | TrustedPlatformModule              | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
 | UEV                                | Internt kompatibel                  | Windows Server? En framtida version av server med Skriv bords miljö?<br>Windows 10-1903 + |
-| UpdateServices                     | Fungerar inte med kompatibilitetsläge |                                               |
+| UpdateServices                     | Stöds inte av kompatibilitetsläge |                                               |
 | VpnClient                          | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
 | Wdac                               | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
 | Webadministration                  | Testat med kompatibilitetsläge    |                                               |
@@ -189,3 +190,10 @@ I Windows 10 görs Windows Management-moduler tillgängliga som Windows- **valfr
 | WindowsServerBackup                | Internt kompatibel                  | Windows Server-19H2 med Windows-Server – säkerhets kopiering |
 | WindowsUpdate                      | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +       |
 | WindowsUpdateProvider              | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +       |
+
+## <a name="notes"></a>Kommentarer
+
+### <a name="servermanager-module"></a>ServerManager-modul
+
+Modulen har vissa mindre kompatibilitetsproblem med formaterade utdata i PowerShell 7. Till exempel `Get-WindowsFeature` returnerar cmdleten rätt objekt med alla egenskaper, men standardformateringen för visningen gör att vissa egenskaper visas som tomma. De faktiska värdena är tillgängliga i objekt egenskaperna med `Select-Object` eller direkt medlems åtkomst.
+

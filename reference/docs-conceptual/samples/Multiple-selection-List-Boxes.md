@@ -1,13 +1,13 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: Listrutor med flera val
-ms.openlocfilehash: dcfa43ac8e7cc4ba6147f71791edbf7989af3583
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7bf71fb76a11f88c4ad4790bf3a2b383d0babb81
+ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030090"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216081"
 ---
 # <a name="multiple-selection-list-boxes"></a>List rutor med flera val
 
@@ -182,6 +182,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>Se även
 
-- [Hej Scripting Guy: Varför fungerar inte de här PowerShell-exemplen för användar gränssnitt?](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [Helg skript: åtgärda exempel på PowerShell-gränssnittet](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt s WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Veckans Windows PowerShell-tips: fler List rutor med flera val och mer!](https://technet.microsoft.com/library/ff730950.aspx)

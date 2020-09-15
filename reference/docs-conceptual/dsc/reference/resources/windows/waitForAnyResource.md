@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC WaitForAny-resurs
-ms.openlocfilehash: 181760ba0a4f493c451dafb68e7881adda2d58c0
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: fa895c78f233a2e446552bb27d4491a90076e05a
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560788"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463881"
 ---
 # <a name="dsc-waitforany-resource"></a>DSC WaitForAny-resurs
 

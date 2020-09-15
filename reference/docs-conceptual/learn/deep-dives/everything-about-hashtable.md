@@ -3,12 +3,12 @@ title: Allt du ville veta om hash
 description: Hash är verkligen viktiga i PowerShell så det är bra att ha en solid förståelse för dem.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 336c32cca351cc7d87f3300364c075ba7bd8aaeb
-ms.sourcegitcommit: 0b9268e7b92fb76b47169b72e28de43e4bfe7fbf
+ms.openlocfilehash: c67f00911b6c9d05fa9b5b5a700bbae795cf9244
+ms.sourcegitcommit: d0461273abb6db099c5e784ef00f57fd551be4a6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307137"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85353829"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Allt du ville veta om hash
 
@@ -773,16 +773,17 @@ Name                           Value
 {1, 2, 3}                      a
 ```
 
-Att komma åt ett värde i hash-tabellen efter dess nyckel fungerar inte alltid. Ett exempel:
+Att komma åt ett värde i hash-tabellen efter dess nyckel fungerar inte alltid. Exempel:
 
 ```powershell
 $key = $ht.keys[0]
-$ht.$key
+$ht.$($key)
+a
 $ht[$key]
 a
 ```
 
-Om du använder formatet för medlems åtkomst ( `.` ) returneras inget. Men det fungerar med hjälp av array index ( `[]` )-notationen.
+När nyckeln är en matris måste du omsluta `$key` variabeln i ett under uttryck så att den kan användas med member Access ()- `.` notation. Du kan också använda format för mat ris index ( `[]` ).
 
 ## <a name="use-in-automatic-variables"></a>Använd i automatiska variabler
 
@@ -962,7 +963,7 @@ Jag täckte mycket jord snabbt. Min idé är att du kan sätta en ny eller förs
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [hash]: /powershell/module/microsoft.powershell.core/about/about_hash_tables
 [lagringsmatriser]: /powershell/module/microsoft.powershell.core/about/about_arrays
-[Testa det om prestanda är viktigt]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best%20Practices/Performance.md
+[Testa det om prestanda är viktigt]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best-Practices/Performance.md
 [ihopbuntning]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [PSCustomObject]: everything-about-pscustomobject.md
 [JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8

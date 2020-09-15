@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: GetMetaConfiguration-metoden
-ms.openlocfilehash: bd280cb8ebd7b0522e4e01cbd24bd9bdcfddf4c2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 5111cb3b15e0fba0bf71b412580efdd3cd95b2dc
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941567"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463983"
 ---
 # <a name="getmetaconfiguration-method"></a>GetMetaConfiguration-metoden
 
@@ -23,13 +23,13 @@ uint32 GetMetaConfiguration(
 
 ## <a name="parameters"></a>Parametrar
 
-*MetaConfiguration* \[ut\] vid retur, innehåller en inbäddad instans av klassen **MSFT_DSCMetaConfiguration** som definierar inställningarna.
+**MetaConfiguration** \[ ut \] vid retur innehåller en inbäddad instans av klassen **MSFT_DSCMetaConfiguration** som definierar inställningarna.
 
 ## <a name="return-value"></a>Returvärde
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Detta är en statisk metod.
 

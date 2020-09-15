@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxFile-resurs
-ms.openlocfilehash: 71096b2d269340b3568c95071089e114ef5c5db9
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 37de70fedce77161c97084d5ca7eaf8e1bce45d8
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560873"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463932"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC för Linux nxFile-resurs
 
@@ -46,7 +46,7 @@ nxFile <string> #ResourceName
 |Rekursivt |Anger om under kataloger ingår. Ange den här egenskapen som `$true` anger att du vill att under kataloger ska tas med. Standardvärdet är `$false`. Den här egenskapen är endast giltig när egenskapen **Type** har angetts till **Directory**. |
 |Force |Vissa fil åtgärder (till exempel att skriva över en fil eller ta bort en katalog som inte är tom) resulterar i ett fel. Om du använder **Force** -egenskapen åsidosätts sådana fel. Standardvärdet är `$false`. |
 |Länkar |Anger det önskade beteendet för symboliska länkar. Ange den här egenskapen som **ska följas för att följa** symboliska länkar och agera på länk målet. Kopiera till exempel filen i stället för länken. Ange den här egenskapen som ska **hanteras** för att agera på länken. Kopiera till exempel själva länken. Ange den här egenskapen som **Ignorera** om du vill ignorera symboliska länkar. |
-|Grupp |Namnet på **gruppen** som har behörighet till filen eller katalogen. |
+|Group |Namnet på **gruppen** som har behörighet till filen eller katalogen. |
 |Läge |Anger önskade behörigheter för resursen, i oktalt eller symbolisk notation. Till exempel **777** eller **rwxrwxrwx**. Om du använder symbolisk notation ska du inte ange det första tecknen som anger katalog eller fil. |
 |Ägare |Namnet på gruppen som ska äga filen eller katalogen. |
 

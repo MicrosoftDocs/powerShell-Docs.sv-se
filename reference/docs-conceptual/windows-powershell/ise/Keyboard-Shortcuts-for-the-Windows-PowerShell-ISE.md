@@ -2,12 +2,12 @@
 ms.date: 01/02/2020
 keywords: powershell,cmdlet
 title: Kortkommandon för Windows PowerShell ISE
-ms.openlocfilehash: ee1b5961f8528d44330345bc49368e61970861ca
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 36fa3f983dc2d8440dd3b87aefd92eb49c028dc9
+ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811067"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86092124"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Kortkommandon för Windows PowerShell ISE
 
@@ -17,7 +17,7 @@ Använd följande kortkommandon för att utföra åtgärder i Windows PowerShell
 
 Du kan använda följande kortkommandon när du redigerar text.
 
-|              Åtgärd              |       Kortkommandon       |                                                                                                                                                 Använd i                                                                                                                                                 |
+|              Action              |       Kortkommandon       |                                                                                                                                                 Använd i                                                                                                                                                 |
 | -------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Hjälp**                         | <kbd>F1</kbd>                  | Skript fönster **viktigt:** du kan ange att <kbd>F1</kbd> -hjälpen kommer från TechNet-biblioteket på webben eller den nedladdade hjälpen (se `Update-Help` ). Välj genom att klicka på **verktyg**, **alternativ**, på fliken **allmänna inställningar** , ange eller avmarkera **Använd lokalt hjälp innehåll i stället för online-innehåll.** |
 | **Kopiera**                         | <kbd>CTRL</kbd> + <kbd>C</kbd>   | Skript fönstret, kommando fönstret, fönstret utdata                                                                                                                                                                                                                                                                 |
@@ -39,7 +39,7 @@ Du kan använda följande kortkommandon när du redigerar text.
 
 Du kan använda följande kortkommandon när du kör skript i skript fönstret.
 
-|            Åtgärd            |                                                                                                             Kortkommando                                                                                                             |
+|            Action            |                                                                                                             Kortkommando                                                                                                             |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Nytt**                      | <kbd>CTRL</kbd> + <kbd>N</kbd>                                                                                                                                                                                                              |
 | **Öppna**                     | <kbd>CTRL</kbd> + <kbd>O</kbd>                                                                                                                                                                                                              |
@@ -53,7 +53,7 @@ Du kan använda följande kortkommandon när du kör skript i skript fönstret.
 
 Du kan använda följande kortkommandon för att anpassa vyn i Windows PowerShell ISE. De är tillgängliga från alla rutor i programmet.
 
-|                        Åtgärd                         |               Kortkommando               |
+|                        Action                         |               Kortkommando               |
 | ----------------------------------------------------- | --------------------------------------------- |
 | **Gå till kommando (v2) eller konsol (v3 och senare) fönster** | <kbd>CTRL</kbd> + <kbd>D</kbd>                  |
 | **Gå till fönstret utdata (endast v2)**                       | <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd> |
@@ -70,12 +70,12 @@ Du kan använda följande kortkommandon för att anpassa vyn i Windows PowerShel
 
 Du kan använda följande kortkommandon vid fel sökning av skript.
 
-|           Åtgärd           |               Kortkommando                |                Använd i                |
+|           Action           |               Kortkommando                |                Använd i                |
 | -------------------------- | ---------------------------------------------- | ------------------------------------ |
 | **Kör/Fortsätt**           | <kbd>F5</kbd>                                  | Skript fönstret, vid fel sökning av ett skript |
 | **Stega in**              | <kbd>F11</kbd>                                 | Skript fönstret, vid fel sökning av ett skript |
 | **Steg över**              | <kbd>F10</kbd>                                 | Skript fönstret, vid fel sökning av ett skript |
-| **Gå ut**               | <kbd>Shift</kbd> + <kbd> <kbd>F11</kbd></kbd>     | Skript fönstret, vid fel sökning av ett skript |
+| **Gå ut**               | <kbd>Shift</kbd> + <kbd>F11</kbd>                | Skript fönstret, vid fel sökning av ett skript |
 | **Visa anrops stack**     | <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd>  | Skript fönstret, vid fel sökning av ett skript |
 | **List Bryt punkter**       | <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd>  | Skript fönstret, vid fel sökning av ett skript |
 | **Växla Bryt punkt**      | <kbd>F9</kbd>                                  | Skript fönstret, vid fel sökning av ett skript |
@@ -85,7 +85,7 @@ Du kan använda följande kortkommandon vid fel sökning av skript.
 > [!NOTE]
 > Du kan också använda kortkommandon som är utformade för Windows PowerShell-konsolen när du felsöker skript i Windows PowerShell ISE. Om du vill använda dessa genvägar måste du skriva genvägen i kommando fönstret och trycka på <kbd>RETUR</kbd>.
 
-|                        Åtgärd                        | Kortkommando |                Använd i                 |
+|                        Action                        | Kortkommando |                Använd i                 |
 | ---------------------------------------------------- | ----------------- | ------------------------------------- |
 | **Fortsätt**                                         | `C`               | Konsol fönster, vid fel sökning av ett skript |
 | **Stega in**                                        | `S`               | Konsol fönster, vid fel sökning av ett skript |
@@ -101,7 +101,7 @@ Du kan använda följande kortkommandon vid fel sökning av skript.
 
 Du kan använda följande kortkommandon när du använder Windows PowerShell-flikar.
 
-|             Åtgärd              |                                                        Kortkommando                                                        |
+|             Action              |                                                        Kortkommando                                                        |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | **Stäng PowerShell-fliken**        | <kbd>CTRL</kbd> + <kbd>W</kbd>                                                                                                    |
 | **Ny PowerShell-flik**          | <kbd>CTRL</kbd> + <kbd>T</kbd>                                                                                                    |
@@ -110,12 +110,12 @@ Du kan använda följande kortkommandon när du använder Windows PowerShell-fli
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Kortkommandon för att starta och avsluta
 
-Du kan använda följande kortkommandon för att starta Windows PowerShell-konsolen (PowerShell. exe) eller avsluta Windows PowerShell ISE.
+Du kan använda följande kortkommandon för att starta Windows PowerShell-konsolen (PowerShell.exe) eller avsluta Windows PowerShell ISE.
 
-|                        Åtgärd                        |               Kortkommando               |
+|                        Action                        |               Kortkommando               |
 | ---------------------------------------------------- | --------------------------------------------- |
 | **Avsluta**                                             | <kbd>Alt</kbd> + <kbd>F4</kbd>                  |
-| **Starta PowerShell. exe**(Windows PowerShell-konsol) | <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> |
+| **Starta PowerShell.exe**(Windows PowerShell-konsolen) | <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> |
 
 ## <a name="see-also"></a>Se även
 

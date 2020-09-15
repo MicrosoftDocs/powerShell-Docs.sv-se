@@ -2,37 +2,32 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Konfigurera den lokala Configuration Manager
-ms.openlocfilehash: c736f1c6a7cd6740f9d777dd68559f29909bc5b6
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: b4766157bca72a7c2bb385ab2255c9780846830a
+ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83691986"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85837570"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Konfigurera den lokala Configuration Manager
 
 > Gäller för: Windows PowerShell 5,0
 
-Den lokala Configuration Manager (LCM) är motorn för önskad tillstånds konfiguration (DSC).
-LCM körs på varje målnod och ansvarar för parsning och konfiguration som skickas till noden.
-Det är också ansvarigt för ett antal andra aspekter av DSC, inklusive följande.
+Den lokala Configuration Manager (LCM) är motorn för önskad tillstånds konfiguration (DSC). LCM körs på varje målnod och ansvarar för parsning och konfiguration som skickas till noden. Det är också ansvarigt för ett antal andra aspekter av DSC, inklusive följande.
 
 - Bestämmer uppdaterings läget (push eller pull).
 - Ange hur ofta en nod hämtar och agerar för konfigurationer.
 - Kopplar noden till pull-tjänsten.
 - Ange partiella konfigurationer.
 
-Du kan använda en särskild typ av konfiguration för att konfigurera LCM för att ange var och en av dessa beteenden.
-I följande avsnitt beskrivs hur du konfigurerar LCM.
+Du kan använda en särskild typ av konfiguration för att konfigurera LCM för att ange var och en av dessa beteenden. I följande avsnitt beskrivs hur du konfigurerar LCM.
 
-Windows PowerShell 5,0 introducerade nya inställningar för att hantera lokala Configuration Manager.
-Information om hur du konfigurerar LCM i Windows PowerShell 4,0 finns i [Konfigurera den lokala Configuration Manager i tidigare versioner av Windows PowerShell](metaconfig4.md).
+Windows PowerShell 5,0 introducerade nya inställningar för att hantera lokala Configuration Manager. Information om hur du konfigurerar LCM i Windows PowerShell 4,0 finns i [Konfigurera den lokala Configuration Manager i tidigare versioner av Windows PowerShell](metaconfig4.md).
 
 ## <a name="writing-and-enacting-an-lcm-configuration"></a>Skriva och agera på en LCM-konfiguration
 
 Om du vill konfigurera LCM skapar du och kör en särskild typ av konfiguration som tillämpar LCM-inställningar.
-Om du vill ange en LCM-konfiguration använder du attributet DscLocalConfigurationManager.
-Nedan visas en enkel konfiguration som anger LCM till push-läge.
+Om du vill ange en LCM-konfiguration använder du attributet DscLocalConfigurationManager. Nedan visas en enkel konfiguration som anger LCM till push-läge.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -48,29 +43,22 @@ configuration LCMConfig
 }
 ```
 
-Processen för att tillämpa inställningar på LCM liknar att använda en DSC-konfiguration.
-Du kommer att skapa en LCM-konfiguration, kompilera den till en MOF-fil och tillämpa den på noden.
-Till skillnad från DSC-konfigurationer tillämpar du inte en LCM-konfiguration genom att anropa cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) .
-I stället anropar du [set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager)och anger sökvägen till LCM-konfigurationens MOF som en parameter.
-När du har fördefinierat LCM-konfigurationen kan du se egenskaperna för LCM genom att anropa cmdleten [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) .
+Processen för att tillämpa inställningar på LCM liknar att använda en DSC-konfiguration. Du kommer att skapa en LCM-konfiguration, kompilera den till en MOF-fil och tillämpa den på noden. Till skillnad från DSC-konfigurationer tillämpar du inte en LCM-konfiguration genom att anropa cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) . I stället anropar du [set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager)och anger sökvägen till LCM-konfigurationens MOF som en parameter. När du har fördefinierat LCM-konfigurationen kan du se egenskaperna för LCM genom att anropa cmdleten [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) .
 
-En LCM-konfiguration kan bara innehålla block för en begränsad uppsättning resurser.
-I det föregående exemplet är den enda resurs som heter är **Inställningar**.
-De andra tillgängliga resurserna är:
+En LCM-konfiguration kan bara innehålla block för en begränsad uppsättning resurser. I det föregående exemplet är den enda resurs som heter är **Inställningar**. De andra tillgängliga resurserna är:
 
-* **ConfigurationRepositoryWeb**: anger en http-pull-tjänst för konfigurationer.
-* **ConfigurationRepositoryShare**: anger en SMB-resurs för konfigurationer.
-* **ResourceRepositoryWeb**: anger en http pull-tjänst för moduler.
-* **ResourceRepositoryShare**: anger en SMB-resurs för moduler.
-* **ReportServerWeb**: anger en http-pull-tjänst som rapporter skickas till.
-* **PartialConfiguration**: tillhandahåller data för att aktivera partiella konfigurationer.
+- **ConfigurationRepositoryWeb**: anger en http-pull-tjänst för konfigurationer.
+- **ConfigurationRepositoryShare**: anger en SMB-resurs för konfigurationer.
+- **ResourceRepositoryWeb**: anger en http pull-tjänst för moduler.
+- **ResourceRepositoryShare**: anger en SMB-resurs för moduler.
+- **ReportServerWeb**: anger en http-pull-tjänst som rapporter skickas till.
+- **PartialConfiguration**: tillhandahåller data för att aktivera partiella konfigurationer.
 
 ## <a name="basic-settings"></a>Grundläggande inställningar
 
-Förutom att ange slut punkter för pull-tjänster/sökvägar och partiella konfigurationer konfigureras alla egenskaper för LCM i ett **inställnings** block.
-Följande egenskaper är tillgängliga i ett **inställnings** block.
+Förutom att ange slut punkter för pull-tjänster/sökvägar och partiella konfigurationer konfigureras alla egenskaper för LCM i ett **inställnings** block. Följande egenskaper är tillgängliga i ett **inställnings** block.
 
-|  Egenskap  |  Typ  |  Beskrivning   |
+|  Egenskap  |  Typ  |  Description   |
 |----------- |------- |--------------- |
 | ActionAfterReboot| sträng| Anger vad som händer efter en omstart under tillämpning av en konfiguration. De möjliga värdena är __"ContinueConfiguration"__ och __"StopConfiguration"__. <ul><li> __ContinueConfiguration__: Fortsätt att använda den aktuella konfigurationen efter omstart av datorn. Detta är standardvärdet</li><li>__StopConfiguration__: stoppa den aktuella konfigurationen efter omstart av datorn.</li></ul>|
 | AllowModuleOverwrite| boolesk| __$True__ om nya konfigurationer som hämtats från pull-tjänsten tillåts skriva över de gamla på målnoden. Annars $FALSE.|
@@ -91,13 +79,10 @@ Följande egenskaper är tillgängliga i ett **inställnings** block.
 > [!NOTE]
 > LCM startar **ConfigurationModeFrequencyMins** -cykeln baserat på:
 >
-> - En ny Metaconfig tillämpas med hjälp av`Set-DscLocalConfigurationManager`
+> - En ny Metaconfig med en ändring i **ConfigurationModeFrequencyMins** tillämpas med hjälp av `Set-DscLocalConfigurationManager`
 > - Omstart av datorn
 >
-> För alla villkor där timer-processen upplever en krasch, kommer den att identifieras inom 30 sekunder och cykeln startas om.
-> En samtidig åtgärd kan fördröja cykeln från att startas, om den här åtgärdens varaktighet överskrider den konfigurerade cykel frekvensen, kommer nästa timer inte att starta.
->
-> Metaconfig konfigureras till exempel med en frekvens på 15 minuter och hämtning sker vid T1.  Noden slutförs inte i 16 minuter.  Den första 15 minuters cykeln ignoreras och nästa hämtning sker vid T1 + 15 + 15.
+> För alla villkor där timer-processen upplever en krasch, kommer den att identifieras inom 30 sekunder och cykeln startas om. En samtidig åtgärd kan fördröja cykeln från att startas, om den här åtgärdens varaktighet överskrider den konfigurerade cykel frekvensen, kommer nästa timer inte att starta. Metaconfig konfigureras till exempel med en frekvens på 15 minuter och hämtning sker vid T1. Noden slutförs inte i 16 minuter. Den första 15 minuters cykeln ignoreras och nästa hämtning sker vid T1 + 15 + 15.
 
 ## <a name="pull-service"></a>Pull-tjänst
 
@@ -111,10 +96,9 @@ Mer information om pull-tjänsten finns i [pull-tjänsten för önskad tillstån
 
 ## <a name="configuration-server-blocks"></a>Konfigurations Server block
 
-Om du vill definiera en webbaserad konfigurations Server skapar du ett **ConfigurationRepositoryWeb** -block.
-En **ConfigurationRepositoryWeb** definierar följande egenskaper.
+Om du vill definiera en webbaserad konfigurations Server skapar du ett **ConfigurationRepositoryWeb** -block. En **ConfigurationRepositoryWeb** definierar följande egenskaper.
 
-|Egenskap|Typ|Beskrivning|
+|Egenskap|Typ|Description|
 |---|---|---|
 |AllowUnsecureConnection|boolesk|Ange till **$True** om du vill tillåta anslutningar från noden till servern utan autentisering. Ange till **$false** för att kräva autentisering.|
 |CertificateID|sträng|Tumavtryck för ett certifikat som används för att autentisera till servern.|
@@ -125,91 +109,86 @@ En **ConfigurationRepositoryWeb** definierar följande egenskaper.
 |ProxyCredential*|PSCredential|Autentiseringsuppgifter som ska användas för HTTP-proxyn.|
 
 > [!NOTE]
->
-> * Stöds i Windows-versioner 1809 och senare.
+> Stöds i Windows-versioner 1809 och senare.
 
-Ett exempel skript för att förenkla konfigureringen av ConfigurationRepositoryWeb-värdet för lokala noder finns i [skapa DSC-metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+Ett exempel skript för att förenkla konfigureringen av ConfigurationRepositoryWeb-värdet för lokala noder finns i [skapa DSC-metaconfigurations](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
-Om du vill definiera en SMB-baserad konfigurations Server skapar du ett **ConfigurationRepositoryShare** -block.
-En **ConfigurationRepositoryShare** definierar följande egenskaper.
+Om du vill definiera en SMB-baserad konfigurations Server skapar du ett **ConfigurationRepositoryShare** -block. En **ConfigurationRepositoryShare** definierar följande egenskaper.
 
-|Egenskap|Typ|Beskrivning|
-|---|---|---|
-|Autentiseringsuppgift|MSFT_Credential|De autentiseringsuppgifter som används för att autentisera till SMB-resursen.|
-|Sök|sträng|Sökvägen till SMB-resursen.|
+|  Egenskap  |      Typ       |                      Description                      |
+| ---------- | --------------- | ----------------------------------------------------- |
+| Autentiseringsuppgift | MSFT_Credential | De autentiseringsuppgifter som används för att autentisera till SMB-resursen. |
+| Sök | sträng          | Sökvägen till SMB-resursen.                            |
 
 ## <a name="resource-server-blocks"></a>Resurs Server block
 
 Om du vill definiera en webbaserad resurs Server skapar du ett **ResourceRepositoryWeb** -block.
 En **ResourceRepositoryWeb** definierar följande egenskaper.
 
-|Egenskap|Typ|Beskrivning|
-|---|---|---|
-|AllowUnsecureConnection|boolesk|Ange till **$True** om du vill tillåta anslutningar från noden till servern utan autentisering. Ange till **$false** för att kräva autentisering.|
-|CertificateID|sträng|Tumavtryck för ett certifikat som används för att autentisera till servern.|
-|RegistrationKey|sträng|Ett GUID som identifierar noden för pull-tjänsten.|
-|ServerURL|sträng|Webb adressen till konfigurations servern.|
-|ProxyURL*|sträng|URL-adressen till den http-proxy som ska användas vid kommunikation med konfigurations tjänsten.|
-|ProxyCredential*|PSCredential|Autentiseringsuppgifter som ska användas för HTTP-proxyn.|
+|        Egenskap         |     Typ     |                                                              Description                                                               |
+| ----------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| AllowUnsecureConnection | boolesk         | Ange till **$True** om du vill tillåta anslutningar från noden till servern utan autentisering. Ange till **$false** för att kräva autentisering. |
+| CertificateID           | sträng       | Tumavtryck för ett certifikat som används för att autentisera till servern.                                                                    |
+| RegistrationKey         | sträng       | Ett GUID som identifierar noden för pull-tjänsten.                                                                                   |
+| ServerURL               | sträng       | Webb adressen till konfigurations servern.                                                                                                   |
+| ProxyURL*               | sträng       | URL-adressen till den http-proxy som ska användas vid kommunikation med konfigurations tjänsten.                                                    |
+| ProxyCredential*        | PSCredential | Autentiseringsuppgifter som ska användas för HTTP-proxyn.                                                                                                  |
 
 > [!NOTE]
->
-> * Stöds i Windows-versioner 1809 och senare.
+> Stöds i Windows-versioner 1809 och senare.
 
-Ett exempel skript för att förenkla konfigureringen av ResourceRepositoryWeb-värdet för lokala noder finns i [skapa DSC-metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+Ett exempel skript för att förenkla konfigureringen av ResourceRepositoryWeb-värdet för lokala noder finns i [skapa DSC-metaconfigurations](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 Om du vill definiera en SMB-baserad resurs Server skapar du ett **ResourceRepositoryShare** -block.
 **ResourceRepositoryShare** definierar följande egenskaper.
 
-|Egenskap|Typ|Beskrivning|
+|Egenskap|Typ|Description|
 |---|---|---|
 |Autentiseringsuppgift|MSFT_Credential|De autentiseringsuppgifter som används för att autentisera till SMB-resursen. Ett exempel på att skicka autentiseringsuppgifter finns i [Konfigurera en DSC SMB-pull-server](../pull-server/pullServerSMB.md)|
 |Sök|sträng|Sökvägen till SMB-resursen.|
 
 ## <a name="report-server-blocks"></a>Report Server-block
 
-Om du vill definiera en rapport Server skapar du ett **ReportServerWeb** -block.
-Rapport Server rollen är inte kompatibel med SMB-baserad pull-tjänst.
-**ReportServerWeb** definierar följande egenskaper.
+Om du vill definiera en rapport Server skapar du ett **ReportServerWeb** -block. Rapport Server rollen är inte kompatibel med SMB-baserad pull-tjänst. **ReportServerWeb** definierar följande egenskaper.
 
-|Egenskap|Typ|Beskrivning|
-|---|---|---|
-|AllowUnsecureConnection|boolesk|Ange till **$True** om du vill tillåta anslutningar från noden till servern utan autentisering. Ange till **$false** för att kräva autentisering.|
-|CertificateID|sträng|Tumavtryck för ett certifikat som används för att autentisera till servern.|
-|RegistrationKey|sträng|Ett GUID som identifierar noden för pull-tjänsten.|
-|ServerURL|sträng|Webb adressen till konfigurations servern.|
-|ProxyURL*|sträng|URL-adressen till den http-proxy som ska användas vid kommunikation med konfigurations tjänsten.|
-|ProxyCredential*|PSCredential|Autentiseringsuppgifter som ska användas för HTTP-proxyn.|
+|        Egenskap         |     Typ     |                                                              Description                                                               |
+| ----------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| AllowUnsecureConnection | boolesk         | Ange till **$True** om du vill tillåta anslutningar från noden till servern utan autentisering. Ange till **$false** för att kräva autentisering. |
+| CertificateID           | sträng       | Tumavtryck för ett certifikat som används för att autentisera till servern.                                                                    |
+| RegistrationKey         | sträng       | Ett GUID som identifierar noden för pull-tjänsten.                                                                                   |
+| ServerURL               | sträng       | Webb adressen till konfigurations servern.                                                                                                   |
+| ProxyURL*               | sträng       | URL-adressen till den http-proxy som ska användas vid kommunikation med konfigurations tjänsten.                                                    |
+| ProxyCredential*        | PSCredential | Autentiseringsuppgifter som ska användas för HTTP-proxyn.                                                                                                  |
 
 > [!NOTE]
->
-> * Stöds i Windows-versioner 1809 och senare.
+> Stöds i Windows-versioner 1809 och senare.
 
-Ett exempel skript för att förenkla konfigureringen av ReportServerWeb-värdet för lokala noder finns i [skapa DSC-metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+Ett exempel skript för att förenkla konfigureringen av ReportServerWeb-värdet för lokala noder finns i [skapa DSC-metaconfigurations](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 ## <a name="partial-configurations"></a>Partiella konfigurationer
 
-Om du vill definiera en partiell konfiguration skapar du ett **PartialConfiguration** -block.
-Mer information om ofullständiga konfigurationer finns i [DSC-delvis konfigurationer](../pull-server/partialConfigs.md).
+Om du vill definiera en partiell konfiguration skapar du ett **PartialConfiguration** -block. Mer information om ofullständiga konfigurationer finns i [DSC-delvis konfigurationer](../pull-server/partialConfigs.md).
 **PartialConfiguration** definierar följande egenskaper.
 
-|Egenskap|Typ|Beskrivning|
+|Egenskap|Typ|Description|
 |---|---|---|
 |ConfigurationSource|sträng []|En matris med namn på konfigurations servrar, som tidigare definierats i **ConfigurationRepositoryWeb** -och **ConfigurationRepositoryShare** -block, där del konfigurationen hämtas från.|
 |DependsOn|sträng{}|En lista med namn på andra konfigurationer som måste slutföras innan den här del konfigurationen tillämpas.|
 |Description|sträng|Text som används för att beskriva den partiella konfigurationen.|
 |ExclusiveResources|sträng []|En matris med resurser som är exklusiva till denna del konfiguration.|
-|RefreshMode|sträng|Anger hur LCM får den här del konfigurationen. De möjliga värdena är __"Disabled"__, __"push"__ och __"pull"__. <ul><li>__Inaktiverat__: den här del konfigurationen är inaktive rad.</li><li> __Push__: den partiella konfigurationen skickas till noden genom att anropa cmdleten [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) . När alla ofullständiga konfigurationer för noden antingen har push-överförts eller hämtats från en tjänst kan du starta konfigurationen genom att anropa `Start-DscConfiguration –UseExisting` . Detta är standardvärdet.</li><li>__Hämta:__ Noden är konfigurerad för att regelbundet söka efter delvis konfiguration från en pull-tjänst. Om den här egenskapen är inställd på __Hämta__måste du ange en pull-tjänst i en __ConfigurationSource__ -egenskap. Mer information om Azure Automation pull service finns i [Översikt över Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview).</li></ul>|
+|RefreshMode|sträng|Anger hur LCM får den här del konfigurationen. De möjliga värdena är __"Disabled"__, __"push"__ och __"pull"__. <ul><li>__Inaktiverat__: den här del konfigurationen är inaktive rad.</li><li> __Push__: den partiella konfigurationen skickas till noden genom att anropa cmdleten [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) . När alla ofullständiga konfigurationer för noden antingen har push-överförts eller hämtats från en tjänst kan du starta konfigurationen genom att anropa `Start-DscConfiguration –UseExisting` . Detta är standardvärdet.</li><li>__Hämta:__ Noden är konfigurerad för att regelbundet söka efter delvis konfiguration från en pull-tjänst. Om den här egenskapen är inställd på __Hämta__måste du ange en pull-tjänst i en __ConfigurationSource__ -egenskap. Mer information om Azure Automation pull service finns i [Översikt över Azure Automation DSC](/azure/automation/automation-dsc-overview).</li></ul>|
 |ResourceModuleSource|sträng []|En matris med namnen på resurs servrar som nödvändiga resurser ska hämtas från för den här del konfigurationen. Dessa namn måste referera till tjänst slut punkter som tidigare definierats i **ResourceRepositoryWeb** -och **ResourceRepositoryShare** -block.|
 
-__Obs!__ partiella konfigurationer stöds med Azure Automation DSC, men bara en konfiguration kan hämtas från varje Automation-konto per nod.
+> [!NOTE]
+> partiella konfigurationer stöds med Azure Automation DSC, men bara en konfiguration kan hämtas från varje Automation-konto per nod.
 
 ## <a name="see-also"></a>Se även
 
 ### <a name="concepts"></a>Begrepp
+
 [Översikt över önskad tillstånds konfiguration](../overview/overview.md)
 
-[Komma igång med Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-getting-started)
+[Komma igång med Azure Automation DSC](/azure/automation/automation-dsc-getting-started)
 
 ### <a name="other-resources"></a>Andra resurser
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/14/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: ApplyConfiguration-metoden
-ms.openlocfilehash: 0425b9a7db37e421830ba37da8f5c0a4877a1b72
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: bec74ccd6f75448484adfd26bf8a4af4e224eb3f
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941602"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463847"
 ---
 # <a name="applyconfiguration-method"></a>ApplyConfiguration-metoden
 
@@ -25,13 +25,15 @@ uint32 ApplyConfiguration(
 
 ## <a name="parameters"></a>Parametrar
 
-*tvinga* \[i\] om detta är **Sant**tillämpas den aktuella konfigurationen igen, även om det finns en väntande konfiguration.
+### <a name="force"></a>inför
+
+Om detta är **Sant**tillämpas den aktuella konfigurationen igen, även om det finns en väntande konfiguration.
 
 ## <a name="return-value"></a>Returvärde
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Detta är en statisk metod.
 

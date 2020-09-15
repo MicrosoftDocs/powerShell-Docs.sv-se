@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/15/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC PackageManagementSource-resurs
-ms.openlocfilehash: 4a4219f3c4ad7e547025a2b9cde442c7b69eeac4
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: b24558574f192347aace5a809d57385e01d9acb3
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557149"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463898"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource-resurs
 

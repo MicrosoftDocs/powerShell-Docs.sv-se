@@ -2,12 +2,12 @@
 ms.date: 01/10/2020
 keywords: powershell,cmdlet
 title: Skriva portabla moduler
-ms.openlocfilehash: 124e6efadfd07b8c5214a5c0446b1589f7142388
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: a6b2f8b263e71b6c9dbd50900536cb5072597e71
+ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810962"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86158130"
 ---
 # <a name="portable-modules"></a>Bärbara moduler
 
@@ -130,15 +130,12 @@ Time Elapsed 00:00:05.40
 När du har skapat modulen kan du importera den och köra exempel-cmdleten.
 
 ```powershell
-ipmo .\bin\Debug\netstandard2.0\myModule.dll
+Import-Module .\bin\Debug\netstandard2.0\myModule.dll
 Test-SampleCmdlet -?
 Test-SampleCmdlet -FavoriteNumber 7 -FavoritePet Cat
 ```
 
 ```output
-PS C:\Users\Steve\myModule> ipmo .\bin\Debug\netstandard2.0\myModule.dll
-PS C:\Users\Steve\myModule> Test-SampleCmdlet -?
-
 NAME
     Test-SampleCmdlet
 
@@ -153,8 +150,6 @@ ALIASES
 REMARKS
     None
 
-
-PS C:\Users\Steve\myModule> Test-SampleCmdlet -FavoriteNumber 7 -FavoritePet Cat
 
 FavoriteNumber FavoritePet
 -------------- -----------
@@ -191,7 +186,7 @@ PowerShell-standarden är avsedd att alltid vidarebefordras-kompatibel. En modul
 När du har verifierat att modulen fungerar med både Windows PowerShell och PowerShell Core bör modulens manifest uttryckligen indikera kompatibilitet med hjälp av egenskapen [CompatiblePSEditions][] . Värdet `Desktop` innebär att modulen är kompatibel med Windows PowerShell, medan värdet `Core` innebär att modulen är kompatibel med PowerShell Core. Inklusive både `Desktop` och `Core` innebär att modulen är kompatibel med både Windows PowerShell och PowerShell Core.
 
 > [!NOTE]
-> `Core`innebär inte automatiskt att modulen är kompatibel med Windows, Linux och macOS.
+> `Core` innebär inte automatiskt att modulen är kompatibel med Windows, Linux och macOS.
 > Egenskapen **CompatiblePSEditions** introducerades i PowerShell v5. Modul manifest som använder egenskapen **CompatiblePSEditions** kan inte läsas in i tidigare versioner än PowerShell v5.
 
 ### <a name="indicating-os-compatibility"></a>Indikerar OS-kompatibilitet
@@ -200,7 +195,7 @@ Kontrol lera först att modulen fungerar på Linux och macOS. Sedan anger du kom
 
 I modulen manifest `PrivateData` har egenskapen en `PSData` underordnad egenskap. Den valfria `Tags` egenskapen för `PSData` tar en matris med värden som visas i PowerShell-galleriet. PowerShell-galleriet har stöd för följande kompatibilitetsinställningar:
 
-| Tagga               | Beskrivning                                |
+| Tagga               | Description                                |
 |-------------------|--------------------------------------------|
 | PSEdition_Core    | Kompatibel med PowerShell Core 6          |
 | PSEdition_Desktop | Kompatibel med Windows PowerShell         |
@@ -306,4 +301,4 @@ managed.dll folder
 [PowerShell-galleriet]: https://www.powershellgallery.com
 [.NET-portbaserad analys]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/scripting/gallery/concepts/module-psedition-support
-[.NET RID-katalog]: https://docs.microsoft.com/dotnet/core/rid-catalog
+[.NET RID-katalog]: /dotnet/core/rid-catalog

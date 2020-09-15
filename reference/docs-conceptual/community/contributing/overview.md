@@ -1,20 +1,20 @@
 ---
 title: Bidra till PowerShell-dokumentation
-description: Den här artikeln är en översikt över hur du kommer igång som en deltagare i PowerShell-dokumentationen.
+description: Den här artikeln är en översikt över hur du kommer igång med att bidra till PowerShell-dokumentationen.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5f9efbff500b1fd0c11e9b43ca0a7feb77684c6a
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 3ea08c3acf4a31cbb7262aac57bf28b75388275d
+ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560669"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86158164"
 ---
 # <a name="contributing-to-powershell-documentation"></a>Bidra till PowerShell-dokumentation
 
 Tack för ditt stöd för PowerShell!
 
-Bidrags guidens guide är en samling artiklar som förklarar de verktyg och processer som vi använder för att skapa dokumentation på Microsoft. Några av de här vägledningarna beskriver information som är gemensam för alla dokumentations uppsättningar som publicerats på [docs.Microsoft.com][docs]. Några av guiderna är speciella för hur vi skriver dokumentation för PowerShell.
+Deltagarguiden är en samling artiklar som beskriver de verktyg och processer som vi använder för att skapa dokumentation på Microsoft. Några av de här vägledningarna beskriver information som är gemensam för alla dokumentations uppsättningar som publicerats på [docs.Microsoft.com][docs]. Vissa av vägledningarna är specifika för hur vi skriver dokumentation för PowerShell.
 
 De vanliga artiklarna är tillgängliga i vårt centraliserade [bidrags guide][contribute]. PowerShell-/regionsspecifika guider finns här.
 
@@ -54,7 +54,7 @@ Använd det fullständiga GitHub-arbetsflödet när du gör betydande ändringar
 
 ## <a name="code-of-conduct"></a>Uppförandekod
 
-Alla informationslager som publicerar till docs.microsoft.com har antagit [Microsoft Open Source-uppförandekoden](https://opensource.microsoft.com/codeofconduct/) eller [.NET Foundation-uppförandekoden](https://dotnetfoundation.org/code-of-conduct). Mer information finns i [Vanliga frågor och svar om uppförandekod](https://opensource.microsoft.com/codeofconduct/faq/).
+Alla informationslager som publicerar till docs.microsoft.com har antagit [Microsoft Open Source-uppförandekoden](https://opensource.microsoft.com/codeofconduct/) eller [.NET Foundation-uppförandekoden](https://dotnetfoundation.org/code-of-conduct). Mer information finns i [vanliga frågor och svar om uppförandekoden](https://opensource.microsoft.com/codeofconduct/faq/).
 
 ## <a name="next-steps"></a>Nästa steg
 
@@ -80,6 +80,6 @@ Ytterligare resurser
 [docs]: https://docs.microsoft.com/
 [file-an-issue]: file-an-issue.md
 [posh-git]: https://www.powershellgallery.com/packages/posh-git
-[psdocs]: https://docs.microsoft.com/powershell
-[style-guide]: https://docs.microsoft.com/style-guide/welcome/
-[terms-of-use]: https://docs.microsoft.com/legal/termsofuse
+[psdocs]: /powershell
+[style-guide]: /style-guide/welcome/
+[terms-of-use]: /legal/termsofuse

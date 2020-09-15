@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: GetConfiguration-metoden
-ms.openlocfilehash: eabc536cfe69abe1144ff031a6f64c09a772e638
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 989aeef4cd9aa5d55741b48c8565c657c4b6512c
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942715"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463830"
 ---
 # <a name="getconfiguration-method"></a>GetConfiguration-metoden
 
@@ -24,15 +24,15 @@ uint32 GetConfiguration(
 
 ## <a name="parameters"></a>Parametrar
 
-*configurationData* \[i\] anger de konfigurations data som ska skickas.
+**configurationData** \[ i \] anger de konfigurations data som ska skickas.
 
-*konfigurationer* \[ut\] vid retur, innehåller en inbäddad instans av konfigurationerna.
+**konfigurationer** \[ ut \] vid retur innehåller en inbäddad instans av konfigurationerna.
 
 ## <a name="return-value"></a>Returvärde
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Detta är en statisk metod.
 

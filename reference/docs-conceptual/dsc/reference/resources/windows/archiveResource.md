@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-Arkiv resurs
-ms.openlocfilehash: 679de8b965304c149b10321e73e42b224f49ecc5
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: cbe32012c2035fb3e145bd06fadd73cdba93fd3e
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560380"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463796"
 ---
 # <a name="dsc-archive-resource"></a>DSC-Arkiv resurs
 
@@ -23,6 +23,7 @@ Archive [string] #ResourceName
     Destination = [string]
     Path = [string]
     [ Checksum = [string] { CreatedDate | ModifiedDate | SHA-1 | SHA-256 | SHA-512 } ]
+    [ Credential = [PSCredential] ]
     [ Force = [bool] ]
     [ Validate = [bool] ]
     [ Ensure = [string] { Absent | Present } ]
@@ -35,11 +36,12 @@ Archive [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|Mål |Anger den plats där du vill se till att Arkiv innehållet extraheras. |
-|Sökväg |Anger Arkiv filens käll Sök väg. |
-|Kontrollsumma |Definierar den typ som ska användas för att avgöra om två filer är identiska. Om ingen **kontroll Summa** anges används bara fil-eller katalog namnet för jämförelse. Giltiga värden är: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. Om du anger **kontroll Summa** utan att validera, kommer konfigurationen att Miss **förklaras**. |
-|Force |Vissa fil åtgärder (till exempel att skriva över en fil eller ta bort en katalog som inte är tom) resulterar i ett fel. Om du använder **Force** -egenskapen åsidosätts sådana fel. Standardvärdet är **false**. |
-|Verifiera| Använder egenskapen **kontroll Summa** för att avgöra om arkivet matchar signaturen. Om du anger **kontroll Summa** utan att validera, kommer konfigurationen att Miss **förklaras**. Om du anger **Verifiera** utan **kontroll Summa**används en _SHA-256-_ **kontrollsumma** som standard. |
+| Mål | Anger den plats där du vill se till att Arkiv innehållet extraheras. |
+| Sökväg | Anger Arkiv filens käll Sök väg. |
+| Kontrollsumma | Definierar den typ som ska användas för att avgöra om två filer är identiska. Om ingen **kontroll Summa** anges används bara fil-eller katalog namnet för jämförelse. Giltiga värden är: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. Om du anger **kontroll Summa** utan att validera, kommer konfigurationen att Miss **förklaras**. |
+| Autentiseringsuppgift | Autentiseringsuppgifterna för ett användar konto med behörighet att komma åt den angivna Arkiv Sök vägen och målet vid behov. |
+| Force | Vissa fil åtgärder (till exempel att skriva över en fil eller ta bort en katalog som inte är tom) resulterar i ett fel. Om du använder **Force** -egenskapen åsidosätts sådana fel. Standardvärdet är **false**. |
+| Verifiera| Använder egenskapen **kontroll Summa** för att avgöra om arkivet matchar signaturen. Om du anger **kontroll Summa** utan att validera, kommer konfigurationen att Miss **förklaras**. Om du anger **Verifiera** utan **kontroll Summa**används en _SHA-256-_ **kontrollsumma** som standard. |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 
@@ -54,7 +56,7 @@ Archive [string] #ResourceName
 
 ## <a name="example"></a>Exempel
 
-Följande exempel visar hur du använder Arkiv resursen för att kontrol lera att innehållet i en arkivfil som heter `Test.zip` finns och extraheras vid ett angivet mål.
+I följande exempel visas hur du använder Arkiv resursen för att se till att innehållet i en arkivfil som heter `Test.zip` finns och extraheras vid ett angivet mål med och auktoriseras.
 
 ```powershell
 Archive ArchiveExample {

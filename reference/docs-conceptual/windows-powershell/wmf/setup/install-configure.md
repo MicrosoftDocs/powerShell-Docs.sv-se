@@ -1,15 +1,15 @@
 ---
-ms.date: 06/12/2017
+ms.date: 06/10/2020
 ms.topic: conceptual
 keywords: WMF, powershell, inställning
 contributor: keithb
 title: Installera och konfigurera WMF 5.1
-ms.openlocfilehash: 241f52be011e1afc87d25c9a934db0c1e0361b76
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 9e0b4b6ed387b0a0d7fcf62a913677986d70de92
+ms.sourcegitcommit: 4a283fe5419f47102e6c1de7060880a934842ee9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809968"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84671401"
 ---
 # <a name="install-and-configure-wmf-51"></a>Installera och konfigurera WMF 5,1
 
@@ -21,18 +21,18 @@ ms.locfileid: "83809968"
 
 Hämta WMF 5,1-paketet för det operativ system och den arkitektur som du vill installera den på:
 
-| Operativsystem       | Krav           | Paket länkar                          |
+| Operativsystem       | Förutsättningar           | Paket länkar                          |
 |------------------------|-------------------------|----------------------------------------|
 | Windows Server 2012 R2 |                         | [Win 8.1 AndW2K12R2-KB3191564-x64. msu][] |
 | Windows Server 2012    |                         | [W2K12-KB3191565-x64. msu][]            |
-| Windows Server 2008 R2 | [.NET Framework 4.5.2][]| [Win7AndW2K8R2-KB3191566-x64. ZIP][]    |
+| Windows Server 2008 R2 | [.NET Framework 4.5.2][]| [Win7AndW2K8R2-KB3191566-x64.ZIP][]    |
 | Windows 8,1            |                         | **x64:** [Win 8.1 andw2k12r2-kb3191564-x64. msu][]</br>**x86:** [Win 8.1-kb3191564-x86. msu][] |
-| Windows 7 SP1          | [.NET Framework 4.5.2][]| **x64:** [Win7AndW2K8R2-KB3191566-x64. zip][]</br>**x86:** [Win7-KB3191566-x86. zip][] |
+| Windows 7 SP1          | [.NET Framework 4.5.2][]| **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP][]</br>**x86:** [Win7-KB3191566-x86.ZIP][] |
 
 [.NET Framework 4.5.2]: https://www.microsoft.com/download/details.aspx?id=42642
 [W2K12-KB3191565-x64. msu]: https://go.microsoft.com/fwlink/?linkid=839513
-[Win7-KB3191566-x86. ZIP]: https://go.microsoft.com/fwlink/?linkid=839522
-[Win7AndW2K8R2-KB3191566-x64. ZIP]: https://go.microsoft.com/fwlink/?linkid=839523
+[Win7-KB3191566-x86.ZIP]: https://go.microsoft.com/fwlink/?linkid=839522
+[Win7AndW2K8R2-KB3191566-x64.ZIP]: https://go.microsoft.com/fwlink/?linkid=839523
 [Win 8.1-KB3191564-x86. msu]: https://go.microsoft.com/fwlink/?linkid=839521
 [Win 8.1 AndW2K12R2-KB3191564-x64. msu]: https://go.microsoft.com/fwlink/?linkid=839516
 
@@ -51,20 +51,19 @@ Installationen av WMF 5,1 på antingen Windows Server 2008 R2 SP1 eller Windows 
 
 - Senaste service pack måste vara installerat.
 - WMF 3,0 **får inte** vara installerat. Installation av WMF 5,1 över WMF 3,0 leder till förlust av **PSModulePath** ( `$env:PSModulePath` ), vilket kan orsaka att andra program Miss lyckas. Innan du installerar WMF 5,1 måste du antingen avinstallera WMF 3,0 eller spara **PSModulePath** och sedan återställa den manuellt när WMF 5,1-installationen är klar.
-- WMF 5,1 kräver minst [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642).
-  Du kan installera Microsoft .NET Framework 4.5.2 genom att följa anvisningarna på hämtnings platsen.
+- WMF 5,1 kräver minst [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642). Du kan installera Microsoft .NET Framework 4.5.2 genom att följa anvisningarna på hämtnings platsen.
 
 ### <a name="installing-wmf-51-on-windows-server-2008-r2-and-windows-7"></a>Installera WMF 5,1 på Windows Server 2008 R2 och Windows 7
 
 1. Navigera till den mapp där du laddade ned ZIP-filen.
 
-2. Högerklicka på ZIP-filen och välj **extrahera alla..**.. ZIP-filen innehåller två filer: en MSU-och `Install-WMF5.1.ps1` skript fil. När du har packat upp ZIP-filen kan du kopiera innehållet till alla datorer som kör Windows 7 eller Windows Server 2008 R2.
+1. Högerklicka på ZIP-filen och välj **extrahera alla..**.. ZIP-filen innehåller två filer: en MSU-och `Install-WMF5.1.ps1` skript fil. När du har packat upp ZIP-filen kan du kopiera innehållet till alla datorer som kör Windows 7 eller Windows Server 2008 R2.
 
-3. När du har extraherat ZIP-filens innehåll öppnar du PowerShell som administratör och navigerar sedan till den mapp som innehåller innehållet i ZIP-filen.
+1. När du har extraherat ZIP-filens innehåll öppnar du PowerShell som administratör och navigerar sedan till den mapp som innehåller innehållet i ZIP-filen.
 
-4. Kör `Install-WMF5.1.ps1` skriptet i mappen och följ instruktionerna. Det här skriptet kontrollerar kraven på den lokala datorn och installerar WMF 5,1 om kraven är uppfyllda. Kraven visas nedan.
+1. Kör `Install-WMF5.1.ps1` skriptet i mappen och följ instruktionerna. Det här skriptet kontrollerar kraven på den lokala datorn och installerar WMF 5,1 om kraven är uppfyllda. Kraven visas nedan.
 
-   `Install-WMF5.1.ps1`använder följande parametrar för att under lätta automatiserad installation av Windows Server 2008 R2 och Windows 7:
+   `Install-WMF5.1.ps1` använder följande parametrar för att under lätta automatiserad installation av Windows Server 2008 R2 och Windows 7:
 
    - **AcceptEula**: när den här parametern ingår godkänns licens avtalet automatiskt och visas inte.
    - **AllowRestart**: den här parametern kan endast användas om AcceptEula har angetts. Om den här parametern tas med och en omstart krävs efter installation av WMF 5,1 sker omstarten utan att du tillförar omedelbart efter att installationen har slutförts.
@@ -78,16 +77,16 @@ Windows PowerShell Desired State Configuration (DSC) är beroende av WinRM. WinR
 ### <a name="install-from-windows-file-explorer"></a>Installera från Utforskaren i Windows
 
 1. Navigera till den mapp som du laddade ned MSU-filen till.
-2. Dubbelklicka på MSU för att köra det.
+1. Dubbelklicka på MSU för att köra det.
 
 ### <a name="installing-from-the-command-prompt"></a>Installera från kommando tolken
 
 1. När du har hämtat rätt paket för datorns arkitektur öppnar du ett kommando tolks fönster med utökade användar rättigheter (kör som administratör). På Server Core-installations alternativen för Windows Server 2012 R2, Windows Server 2012 eller Windows Server 2008 R2 SP1 öppnas kommando tolken med utökade användar rättigheter som standard.
-2. Ändra kataloger till mappen där du har laddat ned eller kopierat WMF 5,1-installations paketet.
-3. Kör något av följande kommandon:
-   - På datorer som kör Windows Server 2012 R2 eller Windows 8,1 x64 kör du `Win8.1AndW2K12R2-KB3191564-x64.msu /quiet` .
-   - På datorer som kör Windows Server 2012 kör du `W2K12-KB3191565-x64.msu /quiet` .
-   - På datorer som kör Windows 8,1 x86 kör du `Win8.1-KB3191564-x86.msu /quiet` .
+1. Ändra kataloger till mappen där du har laddat ned eller kopierat WMF 5,1-installations paketet.
+1. Kör något av följande kommandon:
+   - På datorer som kör Windows Server 2012 R2 eller Windows 8,1 x64 kör du `Win8.1AndW2K12R2-KB3191564-x64.msu /quiet /norestart` .
+   - På datorer som kör Windows Server 2012 kör du `W2K12-KB3191565-x64.msu /quiet /norestart` .
+   - På datorer som kör Windows 8,1 x86 kör du `Win8.1-KB3191564-x86.msu /quiet /norestart` .
 
-> [!NOTE]
-> Installation av WMF 5,1 kräver en omstart. Om du använder `/quiet` alternativet startas systemet om utan varning. Använd `/norestart` alternativet för att undvika att starta om. WMF 5,1 kommer dock inte att installeras förrän du har startat om.
+   > [!NOTE]
+   > Installation av WMF 5,1 kräver en omstart. Om du använder `/quiet` alternativet fristående startas systemet om utan varning. Använd `/norestart` alternativet för att undvika att starta om. WMF 5,1 kommer dock inte att installeras förrän du har startat om.

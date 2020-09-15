@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/08/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skriva en anpassad DSC-resurs med PowerShell-klasser
-ms.openlocfilehash: f96a567253ab4808381c004df243c96886948407
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: b7f6d3135cb1da7ade106f8a4cc41e3afb7306af
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692223"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217567"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Skriva en anpassad DSC-resurs med PowerShell-klasser
 
@@ -15,17 +15,19 @@ ms.locfileid: "83692223"
 
 Med introduktionen av PowerShell-klasser i Windows PowerShell 5,0 kan du nu definiera en DSC-resurs genom att skapa en klass. Klassen definierar både schemat och implementeringen av resursen, så det finns inget behov av att skapa en separat MOF-fil. Mappstrukturen för en klass baserad resurs är också enklare eftersom det inte behövs någon **DSCResources** -mapp.
 
-I en klass-baserad DSC-resurs definieras schemat som egenskaper för klassen som kan ändras med attribut för att ange egenskaps typen. Resursen implementeras av **Get ()**, **set ()** och **test ()** -metoder (motsvarar funktionerna **Get-TargetResource**, **set-TargetResource**och **test-TargetResource** i en skript resurs.
+I en klass-baserad DSC-resurs definieras schemat som egenskaper för klassen som kan ändras med attribut för att ange egenskaps typen. Resursen implementeras av `Get()` , `Set()` -och `Test()` -metoder (motsvarar `Get-TargetResource` funktionerna, `Set-TargetResource` och `Test-TargetResource` i en skript resurs.
 
 I det här avsnittet ska vi skapa en enkel resurs med namnet **FileResource** som hanterar en fil i en angiven sökväg.
 
 Mer information om DSC-resurser finns i avsnittet om att [bygga anpassade konfigurations resurser för önskad tillstånds konfiguration i Windows PowerShell](authoringResource.md)
 
->**Obs:** Generiska samlingar stöds inte i klassbaserade resurser.
+> [!Note]
+> Generiska samlingar stöds inte i klassbaserade resurser.
 
 ## <a name="folder-structure-for-a-class-resource"></a>Mappstruktur för en klass resurs
 
-Skapa följande mappstruktur om du vill implementera en anpassad DSC-resurs med en PowerShell-klass. Klassen definieras i **MyDscResource. psm1** och modul manifestet definieras i **MyDscResource. psd1**.
+Skapa följande mappstruktur om du vill implementera en anpassad DSC-resurs med en PowerShell-klass.
+Klassen definieras i `MyDscResource.psm1` och modul manifestet definieras i `MyDscResource.psd1` .
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -36,7 +38,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
 
 ## <a name="create-the-class"></a>Skapa klassen
 
-Du kan använda nyckelordet class för att skapa en PowerShell-klass. Om du vill ange att en klass är en DSC-resurs använder du attributet **dscresource Keyword Supports ()** . Namnet på klassen är namnet på DSC-resursen.
+Du kan använda nyckelordet class för att skapa en PowerShell-klass. Om du vill ange att en klass är en DSC-resurs använder du- `DscResource()` attributet. Namnet på klassen är namnet på DSC-resursen.
 
 ```powershell
 [DscResource()]
@@ -66,10 +68,10 @@ Observera att egenskaperna ändras efter attribut. Innebörden av attributen är
 
 - **DscProperty (nyckel)**: egenskapen är obligatorisk. Egenskapen är en nyckel. Värdena för alla egenskaper som har marker ATS som nycklar måste kombineras för att unikt identifiera en resurs instans i en konfiguration.
 - **DscProperty (obligatorisk)**: egenskapen är obligatorisk.
-- **DscProperty (NotConfigurable)**: egenskapen är skrivskyddad. Egenskaper som marker ATS med det här attributet kan inte anges med en konfiguration, men de fylls med **Get ()** -metoden när den är tillgänglig.
+- **DscProperty (NotConfigurable)**: egenskapen är skrivskyddad. Egenskaper som marker ATS med det här attributet kan inte ställas in med en konfiguration, men fylls i med `Get()` metoden när de är tillgängliga.
 - **DscProperty ()**: egenskapen kan konfigureras, men det är inte obligatoriskt.
 
-Egenskaperna **$Path** och **$SourcePath** är båda strängarna. **$CreationTime** är en [datetime](/dotnet/api/system.datetime) -egenskap. Egenskapen **$ensure** är en uppräknings typ som definieras enligt följande.
+`$Path`Egenskaperna och `$SourcePath` är båda strängarna. `$CreationTime`Är en [datetime](/dotnet/api/system.datetime) -egenskap. `$Ensure`Egenskapen är en uppräknings typ som definieras enligt följande.
 
 ```powershell
 enum Ensure
@@ -81,9 +83,9 @@ enum Ensure
 
 ### <a name="implementing-the-methods"></a>Implementera metoderna
 
-Metoderna **Get**-TargetResource, set **()** och **test ()** är likvärdiga med funktionerna **Get-**, **set-TargetResource**och **test-TargetResource** i en skript resurs.
+Metoderna, och `Get()` `Set()` `Test()` är likvärdiga med `Get-TargetResource` `Set-TargetResource` funktionerna, och `Test-TargetResource` i en skript resurs.
 
-Den här koden inkluderar även funktionen CopyFile (), en hjälp funktion som kopierar filen från **$SourcePath** till **$Path**.
+Den här koden inkluderar även `CopyFile()` funktionen, en hjälp funktion som kopierar filen från `$SourcePath` till `$Path` .
 
 ```powershell
     <#
@@ -416,7 +418,7 @@ class FileResource
 
 ## <a name="create-a-manifest"></a>Skapa ett manifest
 
-Om du vill göra en klass baserad resurs tillgänglig för DSC-motorn måste du inkludera en **DscResourcesToExport** -instruktion i manifest filen som instruerar modulen att exportera resursen. Vårt manifest ser ut så här:
+Om du vill göra en klass baserad resurs tillgänglig för DSC-motorn måste du inkludera en `DscResourcesToExport` instruktion i manifest filen som instruerar modulen att exportera resursen. Vårt manifest ser ut så här:
 
 ```powershell
 @{
@@ -473,20 +475,18 @@ Start-DscConfiguration -Wait -Force Test
 
 ## <a name="supporting-psdscrunascredential"></a>Stöd för PsDscRunAsCredential
 
->**Obs:** **PsDscRunAsCredential** stöds i PowerShell 5,0 och senare.
+> Lägg **PsDscRunAsCredential** stöds i PowerShell 5,0 och senare.
 
-Du kan använda egenskapen **PsDscRunAsCredential** i resurs blocket [DSC-konfigurationer](../configurations/configurations.md) för att ange att resursen ska köras under en angiven uppsättning autentiseringsuppgifter.
-Mer information finns i [köra DSC med](../configurations/runAsUser.md)användarautentiseringsuppgifter.
+Du kan använda egenskapen **PsDscRunAsCredential** i resurs blocket [DSC-konfigurationer](../configurations/configurations.md) för att ange att resursen ska köras under en angiven uppsättning autentiseringsuppgifter. Mer information finns i [köra DSC med](../configurations/runAsUser.md)användarautentiseringsuppgifter.
 
 ### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a>Kräv eller Tillåt inte PsDscRunAsCredential för din resurs
 
-Attributet **dscresource Keyword Supports ()** använder en valfri parameter **RunAsCredential**.
-Den här parametern använder ett av tre värden:
+`DscResource()`Attributet använder en valfri parameter **RunAsCredential**. Den här parametern använder ett av tre värden:
 
 - `Optional`**PsDscRunAsCredential** är valfritt för konfigurationer som anropar den här resursen. Detta är standardvärdet.
 - `Mandatory`**PsDscRunAsCredential** måste användas för alla konfigurationer som anropar den här resursen.
-- `NotSupported`Konfigurationer som anropar den här resursen kan inte använda **PsDscRunAsCredential**.
-- `Default`Samma som `Optional` .
+- `NotSupported` Konfigurationer som anropar den här resursen kan inte använda **PsDscRunAsCredential**.
+- `Default` Samma som `Optional` .
 
 Använd till exempel följande attribut för att ange att den anpassade resursen inte stöder användning av **PsDscRunAsCredential**:
 
@@ -511,7 +511,7 @@ En modul kan definiera flera klassbaserade DSC-resurser. Du kan skapa mappstrukt
            |- SecondResource.psm1
    ```
 
-2. Definiera alla resurser under mappen **DSCResources**
+1. Definiera alla resurser under mappen **DSCResources**
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)

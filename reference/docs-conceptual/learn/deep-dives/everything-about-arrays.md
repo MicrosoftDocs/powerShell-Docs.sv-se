@@ -1,14 +1,14 @@
 ---
 title: Allt du ville veta om matriser
 description: Matriser är en grundläggande språk funktion för de flesta programmeringsspråk.
-ms.date: 05/23/2020
+ms.date: 07/07/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 5cab354a99b122401f8f8119de24e075cf9d21f8
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: e744878844a3cfd32d6124538a44a29ba90798ab
+ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149924"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86092107"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>Allt du ville veta om matriser
 
@@ -31,7 +31,7 @@ Eftersom matriser är en sådan grundläggande funktion i PowerShell finns det e
 
 ### <a name="create-an-array"></a>Skapa en matris
 
-En tom matris kan skapas med hjälp av`@()`
+En tom matris kan skapas med hjälp av `@()`
 
 ```powershell
 PS> $data = @()
@@ -164,7 +164,7 @@ PS> $data[-1]
 Three
 ```
 
-Ett ord med varnings meddelande här med `..` operatorn. Sekvensen `0..-1` och `-1..0` utvärdera till värdena `0,-1` och `-1,0` . Det är enkelt att se `$data[0..-1]` och fundera på att räkna upp alla objekt om du glömmer den här informationen. `$data[0..-1]`ger dig samma värde som när `$data[0,-1]` du ger det första och sista objektet i matrisen (och inget av de andra värdena).
+Ett ord med varnings meddelande här med `..` operatorn. Sekvensen `0..-1` och `-1..0` utvärdera till värdena `0,-1` och `-1,0` . Det är enkelt att se `$data[0..-1]` och fundera på att räkna upp alla objekt om du glömmer den här informationen. `$data[0..-1]` ger dig samma värde som när `$data[0,-1]` du ger det första och sista objektet i matrisen (och inget av de andra värdena).
 
 #### <a name="out-of-bounds"></a>Utanför intervallet
 
@@ -241,6 +241,8 @@ Pettersson Dailey pekar också ut till mig som vi kan använda `$data.GetUpperBo
 
 ```powershell
 PS> $data.GetUpperBound(0)
+3
+PS> $data[ $data.GetUpperBound(0) ]
 Three
 ```
 
@@ -290,7 +292,7 @@ Om du inte har sett `$PSItem` tidigare vet du att det är samma sak som `$_` . D
 
 #### <a name="foreach-loop"></a>Förgrunds slinga
 
-`ForEach`Slingan fungerar bra med samlingar. Använda syntaxen:`foreach ( <variable> in <collection> )`
+`ForEach`Slingan fungerar bra med samlingar. Använda syntaxen: `foreach ( <variable> in <collection> )`
 
 ```powershell
 foreach ( $node in $data )
@@ -319,7 +321,7 @@ $data.foreach{"Item [$PSItem]"}
 
 Detta är en mindre känd syntax, men den fungerar precis på samma sätt. Den här `foreach` metoden har lagts till i PowerShell 4,0.
 
-#### <a name="for-loop"></a>For-slinga
+#### <a name="for-loop"></a>For-loop
 
 `for`Slingan används kraftigt på de flesta andra språk, men du ser det inte mycket i PowerShell. När du gör det är det ofta i sammanhanget att gå en matris.
 
@@ -586,7 +588,7 @@ True
 
 ### <a name="-in"></a>– in
 
-Om du har ett enda värde som du vill verifiera matchar ett av flera värden kan du använda `-in` operatorn. Värdet är till vänster och matrisen på höger sida av åtgärden.
+Om du har ett enda värde som du vill verifiera matchar ett av flera värden kan du använda `-in` operatorn. Värdet är till vänster och matrisen på höger sida av operatorn.
 
 ```powershell
 PS> $data = @('red','green','blue')
@@ -680,7 +682,7 @@ if ( $array -eq $null)
 }
 ```
 
-Men jag gick bara igenom hur `-eq` kontrollerar varje objekt i matrisen. Vi kan därför ha en matris med flera objekt med ett enda $null värde och det skulle utvärderas till`$true`
+Men jag gick bara igenom hur `-eq` kontrollerar varje objekt i matrisen. Vi kan därför ha en matris med flera objekt med ett enda $null värde och det skulle utvärderas till `$true`
 
 ```powershell
 $array = @('one',$null,'three')
@@ -850,7 +852,7 @@ Anledningen till att jag använder `[void]` i början av raden är att utelämna
 
 Om de enda data som du har i matrisen är strängar, tar du också en titt på att använda [StringBuilder][]. Det är nästan samma sak men har några metoder som bara är för att hantera strängar. `StringBuilder`Är särskilt utformad för prestanda.
 
-Det är vanligt att du ser att personer flyttas till `ArrayList` från matriser. Men det kommer från en tid där C# inte hade generisk support. `ArrayList`Är avskriven i stöd för den generiska`List[]`
+Det är vanligt att du ser att personer flyttas till `ArrayList` från matriser. Men det kommer från en tid där C# inte hade generisk support. `ArrayList`Är föråldrad i stöd för den generiska`List[]`
 
 ### <a name="generic-list"></a>Allmän lista
 

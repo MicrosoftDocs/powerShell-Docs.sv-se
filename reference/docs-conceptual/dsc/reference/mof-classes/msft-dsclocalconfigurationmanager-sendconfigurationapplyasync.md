@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: SendConfigurationApplyAsync-metoden
-ms.openlocfilehash: c0e6dc9418757ee719e848fa8e7006dd73d91ad8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4cfac5edb5fed94ee69deb98d7aa6be56b51c5b3
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941546"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463745"
 ---
 # <a name="sendconfigurationapplyasync-method"></a>SendConfigurationApplyAsync-metoden
 
@@ -25,17 +25,17 @@ uint32 SendConfigurationApplyAsync(
 
 ## <a name="parameters"></a>Parametrar
 
-*ConfigurationData* \[i\] miljö data för konfigurationen.
+**ConfigurationData** \[ i \] miljö data för konfigurationen.
 
-*tvinga* \[i\] **uppfyllelse** att tvinga konfigurationen att stoppas.
+**tvinga** \[ i \] **True** för att tvinga konfigurationen att stoppas.
 
-*jobId* \[i\] ID: t för det jobb som konfigurationen ska skickas till.
+**jobId** \[ i \] ID: t för det jobb som du vill skicka konfigurationen för.
 
 ## <a name="return-value"></a>Returvärde
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Detta är en statisk metod.
 

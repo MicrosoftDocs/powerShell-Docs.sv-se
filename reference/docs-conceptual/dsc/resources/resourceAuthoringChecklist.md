@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/08/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: Checklista för resursskapande
-ms.openlocfilehash: 85e0963d46358cd37cb87ea94fe6d1178a4f6a4a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: f21e2e8563880e0c10cf50b044e9c56ca09fe0fa
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500615"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217652"
 ---
 # <a name="resource-authoring-checklist"></a>Checklista för resursskapande
 
@@ -35,7 +35,7 @@ xPSDesiredStateConfiguration
 
 ## <a name="resource-and-schema-are-correct"></a>Resurs och schema är korrekta
 
-Kontrol lera resurs schema filen (*. schema. MOF). Du kan använda [DSC Resource designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) för att utveckla och testa ditt schema. Kontrollera att:
+Verifiera resurs schema filen ( `*.schema.mof` ). Du kan använda [DSC Resource designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) för att utveckla och testa ditt schema. Se till att:
 
 - Egenskaps typerna är korrekta (t. ex. Använd inte sträng för egenskaper som accepterar numeriska värden bör du använda UInt32 eller andra numeriska typer i stället)
 - Egenskaps attribut anges korrekt som: ([key], [required], [Write], [Read])
@@ -55,14 +55,14 @@ Kontrol lera resurs schema filen (*. schema. MOF). Du kan använda [DSC Resource
 
 - Varje fält har meningsfull beskrivning. PowerShell-GitHub-lagringsplatsen har användbara exempel, till exempel [. schema. MOF för xRemoteFile](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/DSCResources/DSC_xRemoteFile/DSC_xRemoteFile.schema.mof)
 
-Dessutom bör du använda **test-xDscResource** och **test-xDscSchema-cmdlet:** ar från [DSC Resource designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) för att automatiskt verifiera resursen och schemat:
+Dessutom bör du använda `Test-xDscResource` och `Test-xDscSchema` cmdlets från [DSC Resource designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) för att automatiskt verifiera resursen och schemat:
 
 ```
 Test-xDscResource <Resource_folder>
 Test-xDscSchema <Path_to_resource_schema_file>
 ```
 
-Ett exempel:
+Exempel:
 
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
@@ -71,7 +71,7 @@ Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 
 ## <a name="resource-loads-without-errors"></a>Resurs inläsningar utan fel
 
-Kontrol lera om modulen kan läsas in korrekt. Detta kan uppnås manuellt, genom att `Import-Module <resource_module> -force` köra och bekräfta att inga fel har inträffat, eller genom att skriva test automatisering. I det senare fallet kan du följa den här strukturen i test fallet:
+Kontrol lera om modulen kan läsas in korrekt. Detta kan uppnås manuellt, genom `Import-Module <resource_module> -force` att köra och bekräfta att inga fel har inträffat, eller genom att skriva test automatisering. I det senare fallet kan du följa den här strukturen i test fallet:
 
 ```powershell
 $error = $null
@@ -92,39 +92,39 @@ File file {
 }
 ```
 
-När du har tillämpat det för första gången ska filen test. txt visas `C:\test` i mappen. Efterföljande körningar av samma konfiguration bör dock inte ändra datorns tillstånd (t. ex. inga kopior av `test.txt` filen skapas). För att se till att en resurs är idempotenta kan `Set-TargetResource` du upprepade gånger anropa när du testar resursen `Start-DscConfiguration` direkt eller anropa flera gånger när du utför testningen. Resultatet bör vara detsamma efter varje körning.
+När du har tillämpat den för första gången ska fil test.txt visas i `C:\test` mappen. Efterföljande körningar av samma konfiguration bör dock inte ändra datorns tillstånd (t. ex. inga kopior av `test.txt` filen skapas). För att se till att en resurs är idempotenta kan du upprepade gånger anropa `Set-TargetResource` när du testar resursen direkt eller anropa `Start-DscConfiguration` flera gånger när du utför testningen. Resultatet bör vara detsamma efter varje körning.
 
 ## <a name="test-user-modification-scenario"></a>Testa användar ändrings scenario
 
 Genom att ändra datorns tillstånd och sedan köra DSC igen, kan du kontrol lera att `Set-TargetResource` och `Test-TargetResource` fungerar korrekt. Här följer några steg som du bör vidta:
 
 1. Starta med resursen inte i önskat tillstånd.
-2. Kör konfiguration med din resurs
-3. Verifiera `Test-DscConfiguration` returnerar true
-4. Ändra det konfigurerade objektet så att det inte är i önskat tillstånd
-5. Verifiera `Test-DscConfiguration` returnerar falskt
+1. Kör konfiguration med din resurs
+1. Verifiera `Test-DscConfiguration` returnerar true
+1. Ändra det konfigurerade objektet så att det inte är i önskat tillstånd
+1. Verifiera `Test-DscConfiguration` returnerar falskt
 
 Här är ett mer konkret exempel med hjälp av register resurser:
 
 1. Starta med register nyckeln har inte önskat tillstånd
-2. Kör `Start-DscConfiguration` med en konfiguration för att ställa in den med önskat tillstånd och kontrol lera att den är klar.
-3. Kör `Test-DscConfiguration` och kontrol lera att den returnerar true
-4. Ändra värdet för nyckeln så att det inte är i önskat tillstånd
-5. Kör `Test-DscConfiguration` och kontrol lera att den returnerar false
-6. `Get-TargetResource`funktionerna har verifierats med hjälp av`Get-DscConfiguration`
+1. Kör `Start-DscConfiguration` med en konfiguration för att ställa in den med önskat tillstånd och kontrol lera att den är klar.
+1. Kör `Test-DscConfiguration` och kontrol lera att den returnerar true
+1. Ändra värdet för nyckeln så att det inte är i önskat tillstånd
+1. Kör `Test-DscConfiguration` och kontrol lera att den returnerar false
+1. `Get-TargetResource` funktionerna har verifierats med hjälp av `Get-DscConfiguration`
 
-`Get-TargetResource`ska returnera information om resursens aktuella tillstånd. Se till att testa den genom att `Get-DscConfiguration` anropa efter att du har tillämpat konfigurationen och verifiera att utdata stämmer överens med datorns aktuella tillstånd. Det är viktigt att testa det separat, eftersom eventuella problem i det här avsnittet inte visas vid `Start-DscConfiguration`anrop.
+`Get-TargetResource` ska returnera information om resursens aktuella tillstånd. Se till att testa den genom att anropa `Get-DscConfiguration` efter att du har tillämpat konfigurationen och verifiera att utdata stämmer överens med datorns aktuella tillstånd. Det är viktigt att testa det separat, eftersom eventuella problem i det här avsnittet inte visas vid anrop `Start-DscConfiguration` .
 
 ## <a name="call-getsettest-targetresource-functions-directly"></a>Anropa **Get/Set/test-TargetResource-** funktioner direkt
 
-Se till att testa funktionerna **Get/Set/test-TargetResource** som implementerats i din resurs genom att anropa dem direkt och kontrol lera att de fungerar som förväntat.
+Se till att testa `Get/Set/Test-TargetResource` funktionerna som implementeras i din resurs genom att anropa dem direkt och kontrol lera att de fungerar som förväntat.
 
-## <a name="verify-end-to-end-using-start-dscconfiguration"></a>Verifiera slut punkt till slut punkt med **Start-DscConfiguration**
+## <a name="verify-end-to-end-using-start-dscconfiguration"></a>Verifiera slut punkt till slut punkt med start-DscConfiguration
 
-Testa **Get/Set/test-TargetResource-** funktioner genom att anropa dem direkt, men alla problem kommer inte att upptäckas på det sättet. Du bör fokusera en betydande del av testningen på `Start-DscConfiguration` att använda eller hämtnings servern. Detta är i själva verket hur användarna kommer att använda resursen, så funktionen underskattar inte betydelsen av den här typen av tester. Möjliga typer av problem:
+`Get/Set/Test-TargetResource`Att testa funktioner genom att anropa dem direkt är viktigt, men alla problem kommer inte att upptäckas på det här sättet. Du bör fokusera en betydande del av testningen på att använda `Start-DscConfiguration` eller hämtnings servern. Detta är i själva verket hur användarna kommer att använda resursen, så funktionen underskattar inte betydelsen av den här typen av tester. Möjliga typer av problem:
 
 - Autentiseringsuppgiften/sessionen kan fungera annorlunda eftersom DSC-agenten körs som en tjänst. Se till att testa alla funktioner som slutar att avslutas.
-- Fel utdata i `Start-DscConfiguration` kan skilja sig från de som visas när `Set-TargetResource` funktionen anropas direkt.
+- Fel utdata i `Start-DscConfiguration` kan skilja sig från de som visas när funktionen anropas `Set-TargetResource` direkt.
 
 ## <a name="test-compatibility-on-all-dsc-supported-platforms"></a>Testa kompatibilitet på alla plattformar som stöds av DSC
 
@@ -148,9 +148,9 @@ Skapa kvalitets exempel som hjälper andra att förstå hur de används. Detta �
 - Efterföljande exempel bör bygga på dessa exempel (t. ex. skapa en virtuell dator från en virtuell hård disk, ta bort virtuell dator, ändra VM) och Visa avancerade funktioner (t. ex. skapa en virtuell dator med dynamiskt minne)
 - Exempel på konfigurationer ska vara parameterstyrda (alla värden ska skickas till konfigurationen som parametrar och det får inte finnas några hårdkodad-värden):
 
-  ```powershell
-  configuration Sample_xRemoteFile_DownloadFile
-  {
+```powershell
+configuration Sample_xRemoteFile_DownloadFile
+{
     param
     (
         [string[]] $nodeName = 'localhost',
@@ -180,23 +180,23 @@ Skapa kvalitets exempel som hjälper andra att förstå hur de används. Detta �
             Headers = $headers
         }
     }
-  }
-  ```
+}
+```
 
 - Det är en bra idé att inkludera (kommentera ut) exempel på hur du anropar konfigurationen med de faktiska värdena i slutet av exempel skriptet. I konfigurationen ovan är det till exempel inte nödvändigt vis uppenbart att det bästa sättet att ange UserAgent är:
 
-  `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer`I så fall kan en kommentar klargöra den avsedda körningen av konfigurationen:
+  `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer` I så fall kan en kommentar klargöra den avsedda körningen av konfigurationen:
 
-  ```powershell
-  <#
-  Sample use (parameter values need to be changed according to your scenario):
+```powershell
+<#
+Sample use (parameter values need to be changed according to your scenario):
 
-  Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg"
+Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg"
 
-  Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg" `
-  -userAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -headers @{"Accept-Language" = "en-US"}
-  #>
-  ```
+Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg" `
+-userAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -headers @{"Accept-Language" = "en-US"}
+#>
+```
 
 - För varje exempel skriver du en kort beskrivning som förklarar vad det gör och syftet med parametrarna.
 - Se till att exemplen tar upp de flesta viktiga scenarier för din resurs, och om inget saknas, kontrollerar du att alla kör och sätter datorn i önskat tillstånd.
@@ -211,14 +211,14 @@ Fel meddelanden bör vara:
 - Informell: råd om hur du kan åtgärda problemet
 - Avslutningen: klandra inte användaren eller gör så att de känner sig dåligt
 
-Se till att kontrol lera om det finns fel i end to `Start-DscConfiguration`end-scenarier (med), eftersom de kan skilja sig från de som returneras när du kör resurs funktionerna direkt.
+Se till att kontrol lera om det finns fel i end to end-scenarier (med `Start-DscConfiguration` ), eftersom de kan skilja sig från de som returneras när du kör resurs funktionerna direkt.
 
 ## <a name="log-messages-are-easy-to-understand-and-informative-including-verbose-debug-and-etw-logs"></a>Logg meddelanden är lätta att förstå och informativt (inklusive – utförliga,-felsöka och ETW-loggar)
 
 Se till att de loggar som returneras av resursen är lätta att förstå och ange värde för användaren.
 Resurserna bör returnera all information som kan vara till hjälp för användaren, men fler loggar är inte alltid bättre. Du bör undvika redundans och att mata ut data som inte ger ytterligare värde – gör inte någon att gå igenom hundratals logg poster för att hitta det du söker. Det är naturligtvis ingen acceptabel lösning för det här problemet.
 
-När du testar bör du även analysera utförliga och felsöka loggar (genom att `Start-DscConfiguration` köra `–Verbose` med `–Debug` och växlar på lämpligt sätt), samt ETW-loggar. Om du vill se DSC ETW loggar går du till Loggboken och öppnar följande mapp: program och tjänster-Microsoft-Windows-önskad tillstånds konfiguration. Som standard kommer det att finnas en drifts kanal, men se till att du aktiverar analys-och fel söknings kanaler innan du kör konfigurationen. Om du vill aktivera analytiska/felsöka kanaler kan du köra skriptet nedan:
+När du testar bör du även analysera utförliga och felsöka loggar (genom att köra `Start-DscConfiguration` med `–Verbose` och växlar på `–Debug` lämpligt sätt), samt ETW-loggar. Om du vill se DSC ETW loggar går du till Loggboken och öppnar följande mapp: program och tjänster-Microsoft-Windows-önskad tillstånds konfiguration. Som standard kommer det att finnas en drifts kanal, men se till att du aktiverar analys-och fel söknings kanaler innan du kör konfigurationen. Om du vill aktivera analytiska/felsöka kanaler kan du köra skriptet nedan:
 
 ```powershell
 $statusEnabled = $true
@@ -271,40 +271,24 @@ Om din resurs tar emot autentiseringsuppgifter som parameter:
 
 ## <a name="resource-does-not-require-interactive-input"></a>Resursen kräver inte interaktiva ingångar
 
-**Get/Set/test-TargetResource-** funktioner ska köras automatiskt och får inte vänta på användarens indata i körnings fasen (t. ex. bör du `Get-Credential` inte använda i dessa funktioner). Om du behöver ange användarens indata, bör du skicka den till konfigurationen som en parameter under kompilerings fasen.
+`Get/Set/Test-TargetResource` funktioner ska köras automatiskt och får inte vänta på användarens indata i alla körnings steg (t. ex. bör du inte använda `Get-Credential` i dessa funktioner). Om du behöver ange användarens indata, bör du skicka den till konfigurationen som en parameter under kompilerings fasen.
 
 ## <a name="resource-functionality-was-thoroughly-tested"></a>Resurs funktionen har testats grundligt
 
 Den här check listan innehåller objekt som är viktiga för att testas och/eller som ofta saknas. Det kommer att finnas flera tester, främst funktioner som är speciella för den resurs som du testar och som inte nämns här. Glöm inte om negativa test fall.
 
-## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Bästa praxis: modulen resurs innehåller mappen tester med skriptet ResourceDesignerTests. ps1
+## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Bästa praxis: modulen resurs innehåller mappen tester med ResourceDesignerTests.ps1 skript
 
-Det är en bra idé att skapa mappen "tester" i modulen resurs, skapa `ResourceDesignerTests.ps1` fil och lägga till tester med **test-xDscResource** och **test-xDscSchema** för alla resurser i en specifik modul. På så sätt kan du snabbt verifiera scheman för alla resurser från de aktuella modulerna och göra en Sanity kontroll innan du publicerar. För xRemoteFile `ResourceTests.ps1` kan se så enkelt som:
+Det är en bra idé att skapa mappen "tester" i modulen resurs, skapa `ResourceDesignerTests.ps1` fil och lägga till tester med `Test-xDscResource` och `Test-xDscSchema` för alla resurser i den aktuella modulen. På så sätt kan du snabbt verifiera scheman för alla resurser från de aktuella modulerna och göra en Sanity kontroll innan du publicerar. För xRemoteFile kan `ResourceTests.ps1` se så enkelt som:
 
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>Bästa praxis: resursvyn innehåller Resource designer-skript för att skapa schema
-
-Varje resurs ska innehålla ett Resource designer-skript som genererar ett MOF-schema för resursen. Den här filen ska placeras i `<ResourceName>\ResourceDesignerScripts` och vara namngiven som `<ResourceName>Schema.ps1` generate för xRemoteFile-resurs den här `GenerateXRemoteFileSchema.ps1` filen skulle anropas och innehålla:
-
-```powershell
-$DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
-$Uri = New-xDscResourceProperty -Name Uri -Type String -Attribute Required -Description 'Uri of a file which should be copied or downloaded. This parameter supports HTTP and HTTPS values.'
-$Headers = New-xDscResourceProperty -Name Headers -Type Hashtable[] -Attribute Write -Description 'Headers of the web request.'
-$UserAgent = New-xDscResourceProperty -Name UserAgent -Type String -Attribute Write -Description 'User agent for the web request.'
-$Ensure = New-xDscResourceProperty -Name Ensure -Type String -Attribute Read -ValidateSet "Present", "Absent" -Description 'Says whether DestinationPath exists on the machine'
-$Credential = New-xDscResourceProperty -Name Credential -Type PSCredential -Attribute Write -Description 'Specifies a user account that has permission to send the request.'
-$CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -Type String -Attribute Write -Description 'Digital public key certificate that is used to send the request.'
-
-New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile
-```
-
 ## <a name="best-practice-resource-supports--whatif"></a>Bästa praxis: resurs stöder-WhatIf
 
-Om din resurs utför "farliga" åtgärder är det en bra idé att implementera `-WhatIf` funktioner. När du är klar kontrollerar du att `-WhatIf` utdata korrekt beskriver åtgärder som skulle inträffa om kommandot kördes utan `-WhatIf` växel. Kontrol lera också att åtgärderna inte körs (inga ändringar i nodens status görs) när `–WhatIf` växeln är tillgänglig. Vi antar till exempel att vi testar fil resursen. Nedan visas en enkel konfiguration som skapar `test.txt` en fil med innehållet "test":
+Om din resurs utför "farliga" åtgärder är det en bra idé att implementera `-WhatIf` funktioner. När du är klar kontrollerar du att `-WhatIf` utdata korrekt beskriver åtgärder som skulle inträffa om kommandot kördes utan `-WhatIf` växel. Kontrol lera också att åtgärderna inte körs (inga ändringar i nodens status görs) när `–WhatIf` växeln är tillgänglig. Vi antar till exempel att vi testar fil resursen. Nedan visas en enkel konfiguration som skapar en fil `test.txt` med innehållet "test":
 
 ```powershell
 configuration config
@@ -321,7 +305,7 @@ configuration config
 config
 ```
 
-Om vi kompilerar och sedan kör konfigurationen med `-WhatIf` växeln, säger utdata till oss exakt vad som skulle hända när vi kör konfigurationen. Själva konfigurationen utfördes dock inte (`test.txt` filen skapades inte).
+Om vi kompilerar och sedan kör konfigurationen med `-WhatIf` växeln, säger utdata till oss exakt vad som skulle hända när vi kör konfigurationen. Själva konfigurationen utfördes dock inte ( `test.txt` filen skapades inte).
 
 ```powershell
 Start-DscConfiguration -Path .\config -ComputerName localhost -Wait -Verbose -WhatIf

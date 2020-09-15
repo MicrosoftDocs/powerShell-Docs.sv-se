@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxUser-resurs
-ms.openlocfilehash: 4cf8080fbfa58e082ed007d42d6aa2648d1cf58a
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 30c9d4efb5bcbce9f18652b6f34e9a1b060cece4
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557183"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463915"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>DSC för Linux nxUser-resurs
 
@@ -35,11 +35,11 @@ nxUser <string> #ResourceName
 
 |Egenskap |Anger det konto namn som du vill säkerställa ett speciellt tillstånd för. |
 |---|---|
-|UserName |Anger den plats där du vill kontrol lera statusen för en fil eller katalog. |
+|Användarnamn |Anger den plats där du vill kontrol lera statusen för en fil eller katalog. |
 |FullName |En sträng som innehåller det fullständiga namnet som ska användas för användar kontot. |
-|Beskrivning |Beskrivning av användar kontot. |
-|lösenordsinställning |Hash för användarens lösen ord i rätt format för Linux-datorn. Detta är vanligt vis en saltad SHA-256-eller SHA-512-Hash. I Debian och Ubuntu Linux kan det här värdet genereras med `mkpasswd` kommandot. För andra Linux-distributioner kan du använda metoden cryption för python: s krypterings bibliotek för att generera hashen. |
-|Disabled |Anger om kontot är aktiverat. Ange den här egenskapen till `$true` för att säkerställa att det här kontot är inaktiverat och ange det för att `$false` säkerställa att det är aktiverat. |
+|Description |Beskrivning av användar kontot. |
+|Lösenord |Hash för användarens lösen ord i rätt format för Linux-datorn. Detta är vanligt vis en saltad SHA-256-eller SHA-512-Hash. I Debian och Ubuntu Linux kan det här värdet genereras med `mkpasswd` kommandot. För andra Linux-distributioner kan du använda metoden cryption för python: s krypterings bibliotek för att generera hashen. |
+|Inaktiverad |Anger om kontot är aktiverat. Ange den här egenskapen till `$true` för att säkerställa att det här kontot är inaktiverat och ange det för att `$false` säkerställa att det är aktiverat. |
 |PasswordChangeRequired |Anger om användaren kan ändra lösen ordet. Ange den här egenskapen till `$true` om du vill se till att användaren inte kan ändra lösen ordet och ange det som `$false` tillåter användaren att ändra lösen ordet. Standardvärdet är `$false`. Den här egenskapen utvärderas bara om användar kontot inte fanns tidigare och skapas. |
 |HomeDirectory |Användarens Hem Katalog. |
 |GroupID |Användarens primära grupp-ID. |

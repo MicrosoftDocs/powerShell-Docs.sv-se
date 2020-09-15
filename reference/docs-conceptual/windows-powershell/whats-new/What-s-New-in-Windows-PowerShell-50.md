@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Vad är nytt i Windows PowerShell 5,0
-ms.openlocfilehash: dba016546fe034684f6b7afe43ec2e7a1b793d96
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 314be1d4da2d3df967ac8898745b7b1aaf69de2a
+ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810584"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216013"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Vad är nytt i Windows PowerShell 5,0
 
@@ -120,8 +120,8 @@ Många uppdateringar och förbättringar av Windows PowerShell Desired State Con
   Egenskaper eller metoder som har marker ATS som dolda visas inte heller i IntelliSense-resultat, om du inte är i ett sammanhang där medlemmen ska vara synlig. till exempel bör den automatiska variabeln $This Visa dolda medlemmar i klass metoden.
 - New-item, remove-item och get-ChildItem har förbättrats för att stödja skapande och hantering av [symboliska länkar](https://en.wikipedia.org/wiki/Symbolic_link). Parametern **-itemType** för New-item accepterar ett nytt värde, **SymbolicLink**. Nu kan du skapa symboliska länkar på en enda rad genom att köra cmdleten New-Item.
 - Get-ChildItem har också en ny djup-parameter som du använder med parametern-rekursivt för att begränsa rekursion. Get-ChildItem-rekursivt-djup 2 returnerar till exempel resultat från den aktuella mappen, alla underordnade mappar i den aktuella mappen och alla mappar i de underordnade mapparna.
-- Med kopiera objekt kan du nu kopiera filer eller mappar från en Windows PowerShell-session till en annan, vilket innebär att du kan kopiera filer till sessioner som är anslutna till fjärrdatorer, (inklusive datorer som kör Nano Server och därmed inte har något annat gränssnitt). Kopiera filer genom att ange PSSession-ID: n som värdet för parametrarna New-FromSession och-ToSession, och Lägg till sökväg och-mål för att ange start Sök väg och mål. Till exempel Copy-item-Path c: \\ nofile. txt-ToSession $s-destination d: \\ destinationFolder.
-- Windows PowerShell-avskriften har förbättrats för att gälla alla värdbaserade program (till exempel Windows PowerShell ISE) utöver konsol värden (**PowerShell. exe**). Avskrifts alternativ (inklusive aktivering av systemomfattande avskrifter) kan konfigureras genom att aktivera inställningen **Aktivera PowerShell-Avskrifts** Grupprincip, som finns i administrativa mallar/Windows-komponenter/Windows PowerShell.
+- Med kopiera objekt kan du nu kopiera filer eller mappar från en Windows PowerShell-session till en annan, vilket innebär att du kan kopiera filer till sessioner som är anslutna till fjärrdatorer, (inklusive datorer som kör Nano Server och därmed inte har något annat gränssnitt). Kopiera filer genom att ange PSSession-ID: n som värdet för parametrarna New-FromSession och-ToSession, och Lägg till sökväg och-mål för att ange start Sök väg och mål. Till exempel Copy-item-Path c: \\myFile.txt-ToSession $s-destination d: \\ destinationFolder.
+- Windows PowerShell-avskriften har förbättrats för att gälla alla värdbaserade program (till exempel Windows PowerShell ISE) förutom konsol värden (**powershell.exe**). Avskrifts alternativ (inklusive aktivering av systemomfattande avskrifter) kan konfigureras genom att aktivera inställningen **Aktivera PowerShell-Avskrifts** Grupprincip, som finns i administrativa mallar/Windows-komponenter/Windows PowerShell.
 - Med en ny detaljerad skript spårnings funktion kan du aktivera detaljerad spårning och analys av skript användningen i Windows PowerShell på ett system. När du har aktiverat detaljerad skript spårning loggar Windows PowerShell alla skript block till händelse loggen ETW (Event Tracing for Windows) (ETW), **Microsoft-Windows-PowerShell/Operational**.
 - Från och med Windows PowerShell 5,0 stöder nya cmdletar för kryptografisk meddelandesyntax kryptering och dekryptering av innehåll med hjälp av IETF-standardformat för kryptering av meddelanden som dokumenteras av [RFC5652](https://tools.ietf.org/html/rfc5652). Cmdletarna get-CmsMessage, Protect-CmsMessage och Unprotect-CmsMessage har lagts till i [Microsoft. PowerShell. Security](/powershell/module/Microsoft.PowerShell.Security) -modulen.
 - Nya cmdlets i [Microsoft. PowerShell. Utility](/powershell/module/Microsoft.PowerShell.Utility) -modulen, get-körnings utrymme, debug-körnings utrymme, get-RunspaceDebug, Enable-RunspaceDebug och Disable-RunspaceDebug, gör att du kan ange fel söknings alternativ på en körnings utrymme och starta och stoppa fel sökning på en körnings utrymme. För fel sökning av godtyckliga körnings utrymmen (dvs. körnings utrymmen som inte är standard-körnings utrymme för en Windows PowerShell-konsol eller Windows PowerShell ISE session) kan du ange Bryt punkter i ett skript i Windows PowerShell och har lagt till Bryt punkter stoppa skriptet från att köras tills du kan koppla en fel sökare för att felsöka körnings utrymme-skriptet. Stöd för kapslad fel sökning för godtycklig körnings utrymmen har lagts till i Windows PowerShell-skript fel sökning för körnings utrymmen.
@@ -132,7 +132,7 @@ Många uppdateringar och förbättringar av Windows PowerShell Desired State Con
 - Med en ny cmdlet, New-TemporaryFile, kan du skapa en temporär fil som en del av skript. Som standard skapas den nya temporära filen i ```C:\Users\<user name>\AppData\Local\Temp``` .
 - Cmdletarna Out-File, Add-Content och set-Contents har nu en New-NoNewline-parameter, som utelämnar en ny rad efter utdata.
 - Cmdleten New-GUID utnyttjar .NET Framework GUID-klassen för att generera ett GUID, användbart när du skriver skript eller DSC-resurser.
-- Eftersom fil versions information kan vara missvisande, särskilt när en fil har korrigerats, är nya FileVersionRaw-och ProductVersionRaw-skript egenskaper tillgängliga för FileInfo-objekt. Du kan till exempel köra följande kommando för att visa värdena för dessa egenskaper för PowerShell. exe, där $pid innehåller process-ID: t för en Windows PowerShell-session som körs:`Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force`
+- Eftersom fil versions information kan vara missvisande, särskilt när en fil har korrigerats, är nya FileVersionRaw-och ProductVersionRaw-skript egenskaper tillgängliga för FileInfo-objekt. Du kan till exempel köra följande kommando för att visa värdena för dessa egenskaper för powershell.exe, där $pid innehåller process-ID: t för en Windows PowerShell-session som körs: `Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force`
 - Nya cmdlet: ar Enter-PSHostProcess och exit-PSHostProcess låter dig felsöka Windows PowerShell-skript i processer som är åtskilda från den aktuella processen som körs i Windows PowerShell-konsolen. Kör retur-PSHostProcess för att ange eller koppla till ett särskilt process-ID och kör sedan Get-körnings utrymme för att returnera den aktiva körnings utrymmen i processen. Kör Exit-PSHostProcess för att koppla från processen när du är färdig med att felsöka skriptet i processen.
 - En ny cmdlet för wait-debugger har lagts till i modulen [Microsoft. PowerShell. Utility](/powershell/module/Microsoft.PowerShell.Utility) . Du kan köra wait-debugger för att stoppa ett skript i fel söknings programmet innan du kör nästa instruktion i skriptet.
 - Fel söknings programmet för Windows PowerShell-arbetsflöde stöder nu kommando-eller TABB-slutförande och du kan felsöka kapslade arbets flödes funktioner. Nu kan du trycka på **CTRL + BREAK** för att ange fel sökaren i ett skript som körs, i både lokala och fjärranslutna sessioner, och i ett arbets flödes skript.
@@ -187,7 +187,7 @@ Många uppdateringar och förbättringar av Windows PowerShell Desired State Con
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Nya funktioner i Windows PowerShell ISE
 
-- Nu kan du redigera Windows PowerShell-skript och-filer i en lokal kopia av Windows PowerShell ISE, genom att köra Enter-PSSession för att starta en fjärrsession på datorn som lagrar de filer som du vill redigera och sedan köra **PSEdit- \< sökväg och fil namn på fjärrdatorn \> **. Den här funktionen underlättar redigering av Windows PowerShell-filer som är lagrade på installations alternativet Server Core för Windows Server, där Windows PowerShell ISE inte kan köras.
+- Nu kan du redigera Windows PowerShell-skript och-filer i en lokal kopia av Windows PowerShell ISE genom att köra Enter-PSSession för att starta en fjärrsession på datorn som lagrar de filer som du vill redigera och sedan köra **PSEdit \<path and file name on the remote computer\> **. Den här funktionen underlättar redigering av Windows PowerShell-filer som är lagrade på installations alternativet Server Core för Windows Server, där Windows PowerShell ISE inte kan köras.
 - Cmdleten Start-avskrift stöds nu i Windows PowerShell ISE.
 - Du kan nu felsöka fjärrskript i Windows PowerShell ISE.
 - Ett nytt meny kommando, **Bryt alla** (Ctrl + B), slutar i fel söknings programmet för både lokala och fjärranslutna skript.
@@ -237,7 +237,7 @@ Windows PowerShell 4,0 innehåller följande nya funktioner.
 - En ny cmdlet, **Get-FileHash**, som returnerar en filhash i ett av flera format för en angiven fil har lagts till.
 - Om en modul i Windows PowerShell 4,0 använder **DefaultCommandPrefix** -nyckeln i manifestet, eller om användaren importerar en modul med parametern **prefix** , Visar egenskapen **ExportedCommands** för modulen kommandona i modulen med prefixet. När du kör kommandona med hjälp av module-kvalificerad syntax, Modulnamn \\ commandname, måste kommando namnen innehålla prefixet.
 - Värdet för **$PSVersionTable. PSVersion** har uppdaterats till 4,0.
-- **WHERE ()-** operatorns beteende har ändrats. `Collection.Where('property -match name')`att acceptera ett sträng uttryck i formatet `"Property -CompareOperator Value"` stöds inte längre.
+- **WHERE ()-** operatorns beteende har ändrats. `Collection.Where('property -match name')` att acceptera ett sträng uttryck i formatet `"Property -CompareOperator Value"` stöds inte längre.
   Operatorn **WHERE ()** accepterar dock sträng uttryck i formatet för en script block; Detta stöds fortfarande.
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Nya funktioner i Windows PowerShell ISE (Integrated Scripting Environment)
@@ -270,7 +270,7 @@ Windows PowerShell 4,0 innehåller följande nya funktioner.
 ### <a name="new-features-in-windows-powershell-web-access"></a>Nya funktioner i Windows PowerShell-Webbåtkomst
 
 - Du kan koppla från och återansluta till befintliga sessioner i den webbaserade konsolen för webb åtkomst för Windows PowerShell. Med knappen **Spara** i den webbaserade konsolen kan du koppla från en session utan att ta bort den och återansluta till sessionen en annan gång.
-- Standard parametrar kan visas på inloggnings sidan. Om du vill visa standard parametrar konfigurerar du värden för alla inställningar som visas i avsnittet **valfria anslutnings inställningar** på inloggnings sidan i en fil med namnet **Web. config**. Du kan använda **Web. config-** filen för att konfigurera alla valfria anslutnings inställningar förutom en andra eller en alternativ uppsättning autentiseringsuppgifter.
+- Standard parametrar kan visas på inloggnings sidan. Om du vill visa standard parametrar konfigurerar du värden för alla inställningar som visas i avsnittet **valfria anslutnings inställningar** på inloggnings sidan i en fil med namnet **web.config**. Du kan använda **web.config** -filen för att konfigurera alla valfria anslutnings inställningar förutom för en andra eller en annan uppsättning autentiseringsuppgifter.
 - I Windows Server 2012 R2 kan du fjärrhantera auktoriseringsregler för Windows PowerShell-webbåtkomst. Cmdletarna **Add-PswaAuthorizationRule** och **test-PswaAuthorizationRule** innehåller nu en parameter för autentiseringsuppgifter som gör det möjligt för administratörer att hantera auktoriseringsregler från en fjärrdator eller i en Windows PowerShell-webbåtkomst-session.
 - Nu kan du ha flera Windows PowerShell-webbåtkomster i en webbsession med en ny webb läsar flik för varje session. Du behöver inte längre öppna en ny webbläsarsession för att ansluta till en ny session i den webbaserade Windows PowerShell-konsolen.
 
@@ -322,7 +322,7 @@ Windows PowerShell 3,0 innehåller följande nya funktioner.
 - [Förbättringar av formatering och utdata](#formatting-and-output-improvements)
 - [Förbättrad konsol värd upplevelse](#enhanced-console-host-experience)
 - [Ny cmdlet och värdbaserade API: er](#new-cmdlet-and-hosting-apis)
-- [Prestanda förbättringar](#performance-improvements)
+- [Prestandaförbättringar](#performance-improvements)
 - [Stöd för RunAs och delad värd](#runas-and-shared-host-support)
 - [Förbättringar av Special Character-hantering](#special-character-handling-improvements)
 
@@ -353,7 +353,7 @@ Följande är fördelarna med Windows PowerShell-arbetsflöde
 
 Windows PowerShell-webbåtkomsten är en funktion i Windows Server 2012 som låter användarna köra Windows PowerShell-kommandon och-skript i en webbaserad konsol. Enheter som använder den webbaserade konsolen kräver inte Windows PowerShell, program vara för fjärrhantering eller plugin-program för webbläsare. Allt som krävs är en korrekt konfigurerad Gateway för Windows PowerShell-webbåtkomst och en klient enhets webbläsare som stöder Java Script och accepterar cookies.
 
-Mer information finns i [distribuera Windows PowerShell-webbåtkomst](/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access).
+Mer information finns i [distribuera Windows PowerShell-webbåtkomst](/previous-versions/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access).
 
 ### <a name="new-windows-powershell-ise-features"></a>Nya Windows PowerShell ISE funktioner
 
@@ -557,7 +557,7 @@ Windows PowerShell 3,0 förbättrar loggnings-och spårnings stödet för komman
 
 ### <a name="formatting-and-output-improvements"></a>Förbättringar av formatering och utdata
 
-Nya förbättringar av formatering och utdata förbättrar effektiviteten hos alla Windows PowerShell-användare. Förbättringarna är bland annat omdirigering av utdata för alla strömmar, en utökad cmdlet för uppdaterings typ som lägger till typer som är dynamiskt utan format. ps1xml-filer, automatiskt radbyte i utdata, standardformat för formatering av anpassade objekt, **PSCustomObject** -typ, förbättrad formatering för WMI-objekt och heterogena objekt, samt stöd för identifiering av metod överlagringar.
+Nya förbättringar av formatering och utdata förbättrar effektiviteten hos alla Windows PowerShell-användare. Förbättringarna är bland annat omdirigering av utdata för alla strömmar, en utökad cmdlet för uppdaterings typ som lägger till typer dynamiskt utan Format.ps1XML-filer, automatiskt radbyte i utdata, standardformat för formatering av anpassade objekt, **PSCustomObject** -typ, förbättrad formatering för WMI-objekt och heterogena objekt, samt stöd för identifiering av metod överlagringar.
 
 ### <a name="enhanced-console-host-experience"></a>Förbättrad konsol värd upplevelse
 

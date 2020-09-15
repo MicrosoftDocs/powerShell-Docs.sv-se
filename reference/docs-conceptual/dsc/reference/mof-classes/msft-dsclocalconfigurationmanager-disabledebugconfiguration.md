@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/14/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DisableDebugConfiguration-metoden
-ms.openlocfilehash: e3eab98c734b3fd1593ceb2b5d4b40fa69a3bf97
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 52d55ff6b1fd126482bbaa9480efc131ab2f100c
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942722"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463762"
 ---
 # <a name="disabledebugconfiguration-method"></a>DisableDebugConfiguration-metoden
 
@@ -27,7 +27,7 @@ Den här metoden har inga parametrar.
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Detta är en statisk metod.
 

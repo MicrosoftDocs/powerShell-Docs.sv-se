@@ -1,19 +1,20 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/08/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: Sammansatta resurser – använda en DSC-konfiguration som en resurs
-ms.openlocfilehash: 79fe94bd5bab8fa460714e5994d2e2487f302410
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1baa5e4ca5dfa808edc4452db4874a83aa78107e
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75415893"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217550"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Sammansatta resurser: använda en DSC-konfiguration som en resurs
 
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
-I verkliga situationer kan konfigurationer bli långa och komplexa, anropa många olika resurser och ange ett stort antal egenskaper. För att hjälpa dig att hantera den här komplexiteten kan du använda en Windows PowerShell-konfiguration för Desired State Configuration (DSC) som resurs för andra konfigurationer. Detta kallas för en sammansatt resurs. En sammansatt resurs är en DSC-konfiguration som tar parametrar. Konfigurationens parametrar fungerar som egenskaper för resursen. Konfigurationen sparas som en fil med ett `.schema.psm1` fil namns tillägg. Det tar både MOF-schemat och resurs skriptet i en typisk DSC-resurs. Mer information om DSC-resurser finns i [Windows PowerShell Desired State Configuration-resurser](resources.md).
+I verkliga situationer kan konfigurationer bli långa och komplexa, anropa många olika resurser och ange ett stort antal egenskaper. För att hjälpa dig att hantera den här komplexiteten kan du använda en Windows PowerShell-konfiguration för Desired State Configuration (DSC) som resurs för andra konfigurationer. Detta kallas för en sammansatt resurs. En sammansatt resurs är en DSC-konfiguration som tar parametrar. Konfigurationens parametrar fungerar som egenskaper för resursen.
+Konfigurationen sparas som en fil med ett `.schema.psm1` fil namns tillägg. Det tar både MOF-schemat och resurs skriptet i en typisk DSC-resurs. Mer information om DSC-resurser finns i [Windows PowerShell Desired State Configuration-resurser](resources.md).
 
 ## <a name="creating-the-composite-resource"></a>Skapar den sammansatta resursen
 
@@ -136,14 +137,14 @@ Configuration xVirtualMachine
 
 ### <a name="saving-the-configuration-as-a-composite-resource"></a>Spara konfigurationen som en sammansatt resurs
 
-Om du vill använda den parameterstyrda konfigurationen som en DSC-resurs, sparar du den i en katalog struktur som andra MOF-baserade resurser och namnger den med ett `.schema.psm1` tillägg. I det här exemplet ska vi ge filen `xVirtualMachine.schema.psm1`ett namn. Du måste också skapa ett manifest med namnet `xVirtualMachine.psd1` som innehåller följande rad.
+Om du vill använda den parameterstyrda konfigurationen som en DSC-resurs, sparar du den i en katalog struktur som andra MOF-baserade resurser och namnger den med ett `.schema.psm1` tillägg. I det här exemplet ska vi ge filen ett namn `xVirtualMachine.schema.psm1` . Du måste också skapa ett manifest med namnet `xVirtualMachine.psd1` som innehåller följande rad.
 
 ```powershell
 RootModule = 'xVirtualMachine.schema.psm1'
 ```
 
 > [!NOTE]
-> Detta är förutom `MyDscResources.psd1`modulen manifest för alla resurser i `MyDscResources` mappen.
+> Detta är förutom `MyDscResources.psd1` modulen manifest för alla resurser i `MyDscResources` mappen.
 
 När du är färdig bör mappstrukturen vara följande:
 
@@ -157,7 +158,7 @@ $env: psmodulepath
                 |- xVirtualMachine.schema.psm1
 ```
 
-Resursen kan nu upptäckas med `Get-DscResource` hjälp av cmdleten och dess egenskaper kan upptäckas av antingen cmdleten eller genom att använda funktionen för automatisk komplettering av <kbd>CTRL</kbd>+-<kbd>utrymme</kbd> i Windows PowerShell ISE.
+Resursen kan nu upptäckas med hjälp av `Get-DscResource` cmdleten och dess egenskaper kan upptäckas av antingen cmdleten eller genom att använda funktionen för automatisk komplettering av <kbd>CTRL</kbd>- + <kbd>utrymme</kbd> i Windows PowerShell ISE.
 
 ## <a name="using-the-composite-resource"></a>Använda den sammansatta resursen
 
@@ -221,7 +222,7 @@ Configuration MultipleVms
 
 Du kan använda egenskapen **PsDscRunAsCredential** i resurs blocket [DSC-konfigurationer](../configurations/configurations.md) för att ange att resursen ska köras under en angiven uppsättning autentiseringsuppgifter. Mer information finns i [köra DSC med](../configurations/runAsUser.md)användarautentiseringsuppgifter.
 
-Om du vill komma åt användar kontexten inifrån en anpassad resurs kan du använda den `$PsDscContext`automatiska variabeln.
+Om du vill komma åt användar kontexten inifrån en anpassad resurs kan du använda den automatiska variabeln `$PsDscContext` .
 
 Följande kod skulle till exempel skriva användar kontexten som resursen körs till i utförlig utdataström:
 

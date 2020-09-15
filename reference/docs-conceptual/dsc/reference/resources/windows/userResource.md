@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-användar resurs
-ms.openlocfilehash: bbfa74bda984110471dd193339c9d965c659a909
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 340fce45a2074930ae14ca1aaeef7eff78531916
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560822"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463779"
 ---
 # <a name="dsc-user-resource"></a>DSC-användar resurs
 
@@ -38,11 +38,11 @@ User [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|UserName |Anger det konto namn som du vill säkerställa ett speciellt tillstånd för. |
-|Beskrivning |Anger beskrivningen som du vill använda för användar kontot. |
-|Disabled |Anger om kontot är aktiverat. Ange den här egenskapen till `$true` för att säkerställa att det här kontot är inaktiverat och ange det för att `$false` säkerställa att det är aktiverat. |
+|Användarnamn |Anger det konto namn som du vill säkerställa ett speciellt tillstånd för. |
+|Description |Anger beskrivningen som du vill använda för användar kontot. |
+|Inaktiverad |Anger om kontot är aktiverat. Ange den här egenskapen till `$true` för att säkerställa att det här kontot är inaktiverat och ange det för att `$false` säkerställa att det är aktiverat. |
 |FullName |Representerar en sträng med det fullständiga namn som du vill använda för användar kontot. |
-|lösenordsinställning |Anger det lösen ord som du vill använda för det här kontot. |
+|Lösenord |Anger det lösen ord som du vill använda för det här kontot. |
 |PasswordChangeNotAllowed |Anger om användaren kan ändra lösen ordet. Ange den här egenskapen till `$true` om du vill se till att användaren inte kan ändra lösen ordet och ange det som `$false` tillåter användaren att ändra lösen ordet. Standardvärdet är `$false`. |
 |PasswordChangeRequired |Anger om användaren måste ändra lösen ordet vid nästa inloggning. Ange den här egenskapen till `$true` om användaren måste ändra lösen ordet. Standardvärdet är `$true`. |
 |PasswordNeverExpires |Anger om lösen ordet upphör att gälla. För att se till att lösen ordet för det här kontot aldrig upphör att gälla, anger du egenskapen till `$true` . Ange det som `$false` om lösen ordet upphör att gälla. Standardvärdet är `$false`. |

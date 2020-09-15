@@ -1,15 +1,15 @@
 ---
-ms.date: 06/18/2019
+ms.date: 06/11/2020
 keywords: powershell,cmdlet
-title: PowerShell-utbildnings resurser
-ms.openlocfilehash: 5681fd903b323ab3cf87dc212ba64dbfdf2d78e7
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+title: Utbildningsresurser för PowerShell
+ms.openlocfilehash: d9d2f77090a7da7a5bef0c6d0c2af80c3a07be46
+ms.sourcegitcommit: 56463fb628a7d83dec4364e89417d83316c3e53b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808443"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84722855"
 ---
-# <a name="powershell-learning-resources"></a>PowerShell-utbildnings resurser
+# <a name="powershell-learning-resources"></a>Utbildningsresurser för PowerShell
 
 Ytterligare resurser för att lära dig om PowerShell.
 
@@ -23,7 +23,7 @@ Förutom hjälpen som finns på kommando raden ger följande resurser mer inform
 
 ## <a name="channel-9-videos"></a>Channel 9-video
 
-Channel 9 är vår plattform för video publicering. Det finns hundratals videor om PowerShell. [Sök efter "PowerShell"](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated) för att se vilka videor som är tillgängliga.
+Channel 9 är vår plattform för video publicering. Det finns hundratals videor om PowerShell. [Sök efter "PowerShell"](https://channel9.msdn.com/Tags/powershell) för att se vilka videor som är tillgängliga.
 
 ### <a name="microsoft-virtual-academy"></a>Microsoft Virtual Academy
 

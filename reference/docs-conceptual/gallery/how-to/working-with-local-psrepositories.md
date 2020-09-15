@@ -3,12 +3,12 @@ ms.date: 11/06/2018
 contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery, psget
 title: Arbeta med lokala PSRepositories
-ms.openlocfilehash: c1bd905674ae76a3badd3eff50780f0e1bb5fc64
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 421b73c141c7551224e2298f51464a19bc736d0e
+ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75415826"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85837587"
 ---
 # <a name="working-with-private-powershellget-repositories"></a>Arbeta med privata PowerShellGet-lagringsplatser
 
@@ -61,7 +61,7 @@ Se till att användarna har behörighet att komma åt fil resursen för en fil r
 
 ## <a name="registering-a-local-repository"></a>Registrera en lokal lagrings plats
 
-Innan du kan använda en lagrings plats måste du registrera den med `Register-PSRepository` hjälp av kommandot.
+Innan du kan använda en lagrings plats måste du registrera den med hjälp av `Register-PSRepository` kommandot.
 I exemplen nedan är **InstallationPolicy** inställt på *betrott*, enligt det antagande att du litar på din egen lagrings plats.
 
 ```powershell
@@ -74,7 +74,7 @@ Register-PSRepository -Name LocalPSRepo -SourceLocation '\\localhost\PSRepoLocal
 
 Anteckna skillnaden mellan de två kommandona som hanterar **ScriptSourceLocation**. För en fil resursbaserade databaser måste **SourceLocation** och **ScriptSourceLocation** matcha. För en webbaserad lagrings plats måste de vara olika, så i det här exemplet läggs ett efterföljande "/" till i **SourceLocation**.
 
-Om du vill att det nyligen skapade PSRepository ska vara standard lagrings platsen måste du avregistrera alla andra PSRepositories. Ett exempel:
+Om du vill att det nyligen skapade PSRepository ska vara standard lagrings platsen måste du avregistrera alla andra PSRepositories. Exempel:
 
 ```powershell
 Unregister-PSRepository -Name PSGallery
@@ -99,7 +99,7 @@ Använd `Publish-Module` och `Publish-Script` för att publicera modulen i din l
 
 - Ange plats för koden
 - Ange en API-nyckel
-- Ange namnet på databasen. Till exempel, `-PSRepository LocalPSRepo`
+- Ange namnet på databasen. Till exempel `-PSRepository LocalPSRepo`
 
 > [!NOTE]
 > Du måste skapa ett konto på NuGet-servern och sedan logga in för att generera och spara API-nyckeln.
@@ -109,16 +109,16 @@ Exempel:
 
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
-Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey $nuGetApiKey
 ```
+
+> [!IMPORTANT]
+> För att säkerställa säkerheten bör API-nycklar inte hårdkodas i skript. Använd ett säkert nyckel hanterings system. När du kör ett kommando manuellt ska API-nycklar inte skickas som vanlig text för att undvika att den loggas. `Read-Host` cmdleten kan användas för att på ett säkert sätt skicka värdet för API-nyckeln.
 
 ```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
-
-> [!IMPORTANT]
-> För att säkerställa säkerheten bör API-nycklar inte hårdkodas i skript. Använd ett säkert nyckel hanterings system.
 
 ### <a name="publishing-a-module-from-the-psgallery"></a>Publicera en modul från PSGallery
 
@@ -136,9 +136,9 @@ Exempel:
 Save-Package -Name 'PackageName' -Provider NuGet -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
 ```
 
-Om din lokala PSRepository är webbaserad kräver det ytterligare ett steg som använder NuGet. exe för att publicera.
+Om din lokala PSRepository är webbaserad kräver det ytterligare ett steg som använder nuget.exe för att publicera.
 
-Se dokumentationen för att använda [NuGet. exe][].
+Se dokumentationen för att använda [nuget.exe][].
 
 ## <a name="installing-powershellget-on-a-disconnected-system"></a>Installera PowerShellGet på ett frånkopplat system
 
@@ -147,11 +147,11 @@ Det är svårt att distribuera PowerShellGet i miljöer som kräver att system k
 Om du vill starta en offline-distribution måste du:
 
 - Hämta och installera OfflinePowerShellGetDeploy-datorn och dina frånkopplade system
-- Ladda ned PowerShellGet och dess beroenden på det Internet-anslutna systemet `Save-PowerShellGetForOffline` med cmdleten
+- Ladda ned PowerShellGet och dess beroenden på det Internet-anslutna systemet med `Save-PowerShellGetForOffline` cmdleten
 - Kopiera PowerShellGet och dess beroenden från det Internet-anslutna systemet till det frånkopplade systemet
 - Använd `Install-PowerShellGetOffline` på det frånkopplade systemet för att placera PowerShellGet och dess beroenden i rätt mappar
 
-Följande kommandon används `Save-PowerShellGetForOffline` för att skicka alla komponenter till en mapp`f:\OfflinePowerShellGet`
+Följande kommandon används `Save-PowerShellGetForOffline` för att skicka alla komponenter till en mapp `f:\OfflinePowerShellGet`
 
 ```powershell
 # Requires -RunAsAdministrator
@@ -179,20 +179,22 @@ När du har kört dessa kommandon är du redo att publicera PowerShellGet till d
 
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
-Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApiKey $nuGetApiKey
+```
 
+> [!IMPORTANT]
+> För att säkerställa säkerheten bör API-nycklar inte hårdkodas i skript. Använd ett säkert nyckel hanterings system. När du kör ett kommando manuellt ska API-nycklar inte skickas som vanlig text för att undvika att den loggas. `Read-Host` cmdleten kan användas för att på ett säkert sätt skicka värdet för API-nyckeln.
+
+```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
 
 ## <a name="use-packaging-solutions-to-host-powershellget-repositories"></a>Använda förpacknings lösningar för att vara värdar för PowerShellGet-databaser
 
-Du kan också använda paket lösningar som Azure-artefakter som värdar för en privat eller offentlig PowerShellGet-lagringsplats. Mer information och instruktioner finns i dokumentationen för [Azure-artefakter](https://docs.microsoft.com/azure/devops/artifacts/tutorials/private-powershell-library).
-
-> [!IMPORTANT]
-> För att säkerställa säkerheten bör API-nycklar inte hårdkodas i skript. Använd ett säkert nyckel hanterings system.
+Du kan också använda paket lösningar som Azure-artefakter som värdar för en privat eller offentlig PowerShellGet-lagringsplats. Mer information och instruktioner finns i dokumentationen för [Azure-artefakter](/azure/devops/artifacts/tutorials/private-powershell-library).
 
 <!-- external links -->
 [OfflinePowerShellGetDeploy]: https://www.powershellgallery.com/packages/OfflinePowerShellGetDeploy/0.1.1
 [NuGet. Server]: /nuget/hosting-packages/nuget-server
-[NuGet. exe]: /nuget/tools/nuget-exe-cli-reference
+[nuget.exe]: /nuget/tools/nuget-exe-cli-reference

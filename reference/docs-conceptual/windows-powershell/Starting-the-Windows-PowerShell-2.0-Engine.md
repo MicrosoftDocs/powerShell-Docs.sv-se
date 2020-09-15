@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Använda Windows PowerShell 2,0-motorn
-ms.openlocfilehash: e00fb71c7fc32f5b48bc17ef5b25f910a846c893
-ms.sourcegitcommit: 1748b2bdfae81d98097962c6c25c25df4bced1d8
+ms.openlocfilehash: c5ac92159d63e5669643908016186ed32dfb46db
+ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84262621"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216030"
 ---
 # <a name="using-the-windows-powershell-20-engine"></a>Använda Windows PowerShell 2,0-motorn
 
@@ -32,7 +32,7 @@ System där Windows Management Framework 3,0 eller senare har installerats har a
 
 ## <a name="how-to-start-the-windows-powershell-20-engine"></a>Starta Windows PowerShell 2,0-motorn
 
-När du startar Windows PowerShell startas den senaste versionen som standard. Starta Windows PowerShell med Windows PowerShell 2,0-motorn med hjälp av parametern version i `PowerShell.exe` . Du kan köra kommandot i valfri kommando tolk, inklusive Windows PowerShell och cmd. exe.
+När du startar Windows PowerShell startas den senaste versionen som standard. Starta Windows PowerShell med Windows PowerShell 2,0-motorn med hjälp av parametern version i `PowerShell.exe` . Du kan köra kommandot i valfri kommando tolk, inklusive Windows PowerShell och Cmd.exe.
 
 ```
 PowerShell.exe -Version 2
@@ -89,7 +89,7 @@ Mer information om bakgrunds jobb finns [about_Jobs][].
 [Installera Windows PowerShell]: install/Installing-Windows-PowerShell.md
 [Installera och konfigurera WMF]: wmf/setup/install-configure.md
 [Registrera – PSSessionConfiguration]: /powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration
-[New-PSSessionConfigurationFile]: /powershell/module/Microsoft.PowerShell.Core/New-PSSessionConfiguration
+[New-PSSessionConfigurationFile]: /powershell/module/Microsoft.PowerShell.Core/New-PSSessionConfigurationFile
 [Set-PSSessionConfiguration]: /powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration
 [about_Session_Configuration_Files]: /powershell/module/Microsoft.PowerShell.Core/about/about_Session_Configuration_Files
 [about_Session_Configurations]: /powershell/module/Microsoft.PowerShell.Core/about/about_Session_Configurations

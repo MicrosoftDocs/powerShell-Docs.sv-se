@@ -3,12 +3,12 @@ title: Allt du ville veta om variabel ersättning i strängar
 description: Det finns många sätt att använda variabler i strängar för att skapa formaterad text.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 1e65e90ffa09b34f62bc49ad64b062d429483c33
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 786526fb98dbf1b3ec7c5c6c985ac95b85a96259
+ms.sourcegitcommit: 4bb44f183dcbfa8dced57f075812e02d3b45fd70
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149826"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86301326"
 ---
 # <a name="everything-you-wanted-to-know-about-variable-substitution-in-strings"></a>Allt du ville veta om variabel ersättning i strängar
 
@@ -71,7 +71,7 @@ $message = "Time: $($directory.CreationTime)"
 
 Detta fungerar bra för vissa situationer, men det kan komma precis som galna som sammanfogning om du bara har några få variabler.
 
-### <a name="command-execution"></a>Kommando körning
+### <a name="command-execution"></a>Kommandokörning
 
 Du kan köra kommandon inuti en sträng. Trots att jag har det här alternativet, jag vill inte. Den får en snabb och svår fel sökning. Antingen kör du kommandot och sparar till en variabel eller använder en format sträng.
 

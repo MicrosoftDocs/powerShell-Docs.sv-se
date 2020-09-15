@@ -4,10 +4,10 @@ description: PowerShell-$null verkar ofta vara enkelt men det har många olika d
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
 ms.openlocfilehash: e0553a5e17450d8044f548792649369e99903850
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.sourcegitcommit: d0461273abb6db099c5e784ef00f57fd551be4a6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 07/01/2020
 ms.locfileid: "84149833"
 ---
 # <a name="everything-you-wanted-to-know-about-null"></a>Allt du ville veta mer om $null
@@ -23,7 +23,7 @@ Du kan tänka på NULL som ett okänt eller tomt värde. En variabel är NULL ti
 
 ### <a name="powershell-null"></a>PowerShell-$null
 
-`$null`är en automatisk variabel i PowerShell som används för att representera NULL. Du kan tilldela den till variabler, använda den i jämförelser och använda den som plats hållare för NULL i en samling.
+`$null` är en automatisk variabel i PowerShell som används för att representera NULL. Du kan tilldela den till variabler, använda den i jämförelser och använda den som plats hållare för NULL i en samling.
 
 PowerShell behandlar `$null` som ett objekt med värdet null. Detta skiljer sig från vad du kan förväntar dig om du kommer från ett annat språk.
 
@@ -49,7 +49,7 @@ True
 
 ## <a name="impact-of-null"></a>Effekt av $null
 
-`$null`värdena påverkar koden på olika sätt beroende på var de visas.
+`$null` värdena påverkar koden på olika sätt beroende på var de visas.
 
 ### <a name="in-strings"></a>I strängar
 
@@ -157,7 +157,7 @@ if ( $value -ne $null )
 }
 ```
 
-Om jag inte definierar `$value` , kommer den första uppgiften att utvärderas till `$true` och vårt meddelande är `The array is $null` . Trap här är att det är möjligt att skapa en `$value` som låter båda`$false`
+Om jag inte definierar `$value` , kommer den första uppgiften att utvärderas till `$true` och vårt meddelande är `The array is $null` . Trap här är att det är möjligt att skapa en `$value` som låter båda `$false`
 
 ```powershell
 $value = @( $null )
@@ -372,13 +372,13 @@ När du anger typen för parametern som en `string` , kan värdet aldrig vara `$
 if ( $null -ne $Value ){...}
 ```
 
-`$Value`är en tom sträng `''` när inget värde har angetts. Använd den automatiska variabeln `$PSBoundParameters.Value` i stället.
+`$Value` är en tom sträng `''` när inget värde har angetts. Använd den automatiska variabeln `$PSBoundParameters.Value` i stället.
 
 ```powershell
 if ( $null -ne $PSBoundParameters.Value ){...}
 ```
 
-`$PSBoundParameters`innehåller bara de parametrar som angavs när funktionen anropades.
+`$PSBoundParameters` innehåller bara de parametrar som angavs när funktionen anropades.
 Du kan också använda- `ContainsKey` metoden för att kontrol lera egenskapen.
 
 ```powershell
@@ -442,8 +442,8 @@ function Do-Something
 
 Förväntat här är att `Get-Something` returnerar antingen ett resultat eller en tom `$null` . Om det uppstår ett fel loggar vi det. Sedan kontrollerar vi att vi fick ett giltigt resultat innan du bearbetar det.
 
-Fel som döljer i den här koden är när `Get-Something` ett undantag utlöses och inget värde tilldelas `$result` . Det Miss lyckas före tilldelningen så att vi inte ens tilldelar `$null` `$result` variabeln. `$result`innehåller fortfarande föregående giltig `$result` från andra iterationer.
-`Update-Something`för att köra flera gånger på samma objekt i det här exemplet.
+Fel som döljer i den här koden är när `Get-Something` ett undantag utlöses och inget värde tilldelas `$result` . Det Miss lyckas före tilldelningen så att vi inte ens tilldelar `$null` `$result` variabeln. `$result` innehåller fortfarande föregående giltig `$result` från andra iterationer.
+`Update-Something` för att köra flera gånger på samma objekt i det här exemplet.
 
 Jag har ställt in `$result` till `$null` höger i förgrunds-slingan innan jag använder den för att undvika det här problemet.
 
