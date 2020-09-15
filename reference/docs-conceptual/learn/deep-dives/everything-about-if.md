@@ -3,14 +3,14 @@ title: Allt du ville veta om instruktionen IF
 description: Precis som många andra språk har PowerShell instruktioner för att villkorligt köra kod i dina skript.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 6ffb70af694e80430d31991045b9fadc1a2cc3f0
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: b6bafb99bfb8ecd0152bae841e5c58d4c27ccd3e
+ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149868"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86469760"
 ---
-# <a name="everything-you-wanted-to-know-about-the-if-statement"></a>Allt du ville veta om instruktionen IF
+# <a name="everything-you-wanted-to-know-about-the-if-statement"></a>Allt du ville veta om `if` instruktionen
 
 Precis som många andra språk har PowerShell instruktioner för att villkorligt köra kod i dina skript. En av dessa uttryck är [IF][] -instruktionen. Idag tar vi en djupare inblick i ett av de mest grundläggande kommandona i PowerShell.
 
@@ -22,7 +22,7 @@ Precis som många andra språk har PowerShell instruktioner för att villkorligt
 Dina skript behöver ofta fatta beslut och utföra en annan logik utifrån dessa beslut.
 Detta är vad jag menar vid villkorlig körning. Du har ett uttryck eller ett värde att utvärdera och kör sedan ett annat avsnitt av kod baserat på den utvärderingen. Detta är exakt vad `if` instruktionen gör.
 
-## <a name="the-if-statement"></a>Instruktionen IF
+## <a name="the-if-statement"></a>`if`Instruktionen
 
 Här är ett grundläggande exempel på `if` instruktionen:
 
@@ -60,17 +60,17 @@ I det här exemplet tar jag ett känt värde `5` och jämför det med mitt `$val
 
 Ett möjligt användnings fall är att kontrol lera status för ett värde innan du vidtar en åtgärd på den. Du kan få en tjänst och kontrol lera att statusen kördes innan du anropade `Restart-Service` den.
 
-Det är vanligt på andra språk `==` , t. ex. C#, som används för likheter (t. ex.: `5 == $value` ) men som inte fungerar med PowerShell. Ett annat vanligt misstag är att använda likhets tecknet (t. ex. `5 = $value` ) som är reserverat för att tilldela värden till variabler. Genom att placera ditt kända värde till vänster gör det att förskrivet mer olämpligt att göra.
+Det är vanligt på andra språk `==` , t. ex. C#, som används för likheter (t. ex.: `5 == $value` ) men som inte fungerar med PowerShell. Ett annat vanligt misstag är att använda likhets tecknet (t. ex. `5 = $value` ) som är reserverat för att tilldela värden till variabler. Genom att placera ditt kända värde till vänster gör det misstag mer olämpligt att göra.
 
 Den här operatorn (och andra) har några varianter.
 
-- `-eq`Skift läges okänsligt likhet
-- `-ieq`Skift läges okänsligt likhet
-- `-ceq`Skift läges känslig likhet
+- `-eq` Skift läges okänsligt likhet
+- `-ieq` Skift läges okänsligt likhet
+- `-ceq` Skift läges känslig likhet
 
 ### <a name="-ne-not-equal"></a>-Ne inte lika med
 
-Många operatorer har en relaterad operator som söker efter motsatt resultat. `-ne`kontrollerar att värdena inte motsvarar varandra.
+Många operatorer har en relaterad operator som söker efter motsatt resultat. `-ne` kontrollerar att värdena inte motsvarar varandra.
 
 ```powershell
 if ( 5 -ne $value )
@@ -83,9 +83,9 @@ Använd den här för att se till att åtgärden endast körs om värdet inte ä
 
 **Olika**
 
-- `-ne`Skift läges okänsligt är inte lika med
-- `-ine`Skift läges okänsligt är inte lika med
-- `-cne`Skift läges känsligt är inte lika med
+- `-ne` Skift läges okänsligt är inte lika med
+- `-ine` Skift läges okänsligt är inte lika med
+- `-cne` Skift läges känsligt är inte lika med
 
 Detta är inverterade variationer av `-eq` . Jag grupperar de här typerna tillsammans när jag listar varianter för andra operatorer.
 
@@ -103,18 +103,18 @@ if ( $value -gt 5 )
 
 **Olika**
 
-- `-gt`större än
-- `-igt`större än, SKIFT läges okänsligt
-- `-cgt`större än, SKIFT läges känsligt
-- `-ge`större än eller lika med
-- `-ige`större än eller lika med Skift läges okänslig
-- `-cge`större än eller lika med Skift läges känslig
-- `-lt`mindre än
-- `-ilt`mindre än, SKIFT läges okänsligt
-- `-clt`mindre än, SKIFT läges känsligt
-- `-le`mindre än eller lika med
-- `-ile`mindre än eller lika med Skift läges okänslig
-- `-cle`mindre än eller lika med Skift läges känslig
+- `-gt` större än
+- `-igt` större än, SKIFT läges okänsligt
+- `-cgt` större än, SKIFT läges känsligt
+- `-ge` större än eller lika med
+- `-ige` större än eller lika med Skift läges okänslig
+- `-cge` större än eller lika med Skift läges känslig
+- `-lt` mindre än
+- `-ilt` mindre än, SKIFT läges okänsligt
+- `-clt` mindre än, SKIFT läges känsligt
+- `-le` mindre än eller lika med
+- `-ile` mindre än eller lika med Skift läges okänslig
+- `-cle` mindre än eller lika med Skift läges känslig
 
 Jag vet inte varför du skulle använda Skift läges känsliga och inkänsliga alternativ för dessa operatörer.
 
@@ -122,8 +122,8 @@ Jag vet inte varför du skulle använda Skift läges känsliga och inkänsliga a
 
 PowerShell har en egen syntax för jokertecken, och du kan använda den med `-like` operatorn. Dessa mönster för jokertecken är ganska enkla.
 
-- `?`matchar alla enskilda bokstäver
-- `*`matchar valfritt antal tecken
+- `?` matchar alla enskilda bokstäver
+- `*` matchar valfritt antal tecken
 
 ```powershell
 $value = 'S-ATX-SQL01'
@@ -145,12 +145,12 @@ if ( $value -like '*SQL*')
 
 **Olika**
 
-- `-like`Skift läges okänsligt jokertecken
-- `-ilike`Skift läges okänsligt jokertecken
-- `-clike`Skift läges känsligt jokertecken
-- `-notlike`Skift läges okänsligt jokertecken matchar inte
-- `-inotlike`Skift läges okänsligt jokertecken matchar inte
-- `-cnotlike`Skift läges känsligt jokertecken matchar inte
+- `-like` Skift läges okänsligt jokertecken
+- `-ilike` Skift läges okänsligt jokertecken
+- `-clike` Skift läges känsligt jokertecken
+- `-notlike` Skift läges okänsligt jokertecken matchar inte
+- `-inotlike` Skift läges okänsligt jokertecken matchar inte
+- `-cnotlike` Skift läges känsligt jokertecken matchar inte
 
 ### <a name="-match-regular-expression"></a>– matcha reguljärt uttryck
 
@@ -178,12 +178,12 @@ Regex är ett komplext språk som är eget och som är värt att titta på. Jag 
 
 **Olika**
 
-- `-match`Skift läges okänsligt regex
-- `-imatch`Skift läges okänsligt regex
-- `-cmatch`Skift läges känsligt regex
-- `-notmatch`Skift läges okänsligt regex matchade inte
-- `-inotmatch`Skift läges okänsligt regex matchade inte
-- `-cnotmatch`Skift läges känsligt regex matchas inte
+- `-match` Skift läges okänsligt regex
+- `-imatch` Skift läges okänsligt regex
+- `-cmatch` Skift läges känsligt regex
+- `-notmatch` Skift läges okänsligt regex matchade inte
+- `-inotmatch` Skift läges okänsligt regex matchade inte
+- `-cnotmatch` Skift läges känsligt regex matchas inte
 
 ### <a name="-is-of-type"></a>-är av typen
 
@@ -207,8 +207,8 @@ if ( $Service -isnot [System.ServiceProcess.ServiceController] )
 
 **Olika**
 
-- `-is`av typen
-- `-isnot`inte av typen
+- `-is` av typen
+- `-isnot` inte av typen
 
 ## <a name="collection-operators"></a>Samlings operatörer
 
@@ -256,12 +256,12 @@ Detta är det bästa sättet att se om en samling innehåller ditt värde. `Wher
 
 **Olika**
 
-- `-contains`Skift läges okänslig matchning
-- `-icontains`Skift läges okänslig matchning
-- `-ccontains`Skift läges känslig matchning
-- `-notcontains`Skift läges känsligt matchar inte
-- `-inotcontains`Skift läges känsligt matchar inte
-- `-cnotcontains`Skift läges känsligt matchade inte
+- `-contains` Skift läges okänslig matchning
+- `-icontains` Skift läges okänslig matchning
+- `-ccontains` Skift läges känslig matchning
+- `-notcontains` Skift läges känsligt matchar inte
+- `-inotcontains` Skift läges känsligt matchar inte
+- `-cnotcontains` Skift läges känsligt matchade inte
 
 ### <a name="-in"></a>– in
 
@@ -277,12 +277,12 @@ if ( 3 -in $array )
 
 **Olika**
 
-- `-in`Skift läges okänslig matchning
-- `-iin`Skift läges okänslig matchning
-- `-cin`Skift läges känslig matchning
-- `-notin`Skift läges känsligt matchar inte
-- `-inotin`Skift läges känsligt matchar inte
-- `-cnotin`Skift läges känsligt matchade inte
+- `-in` Skift läges okänslig matchning
+- `-iin` Skift läges okänslig matchning
+- `-cin` Skift läges känslig matchning
+- `-notin` Skift läges känsligt matchar inte
+- `-inotin` Skift läges känsligt matchar inte
+- `-cnotin` Skift läges känsligt matchade inte
 
 ## <a name="logical-operators"></a>Logiska operatorer
 
@@ -343,7 +343,7 @@ Notera också hur syntaxen fungerar för de här operatorerna. Du behöver två 
 
 ### <a name="-xor-exclusive-or"></a>– XOR exklusivt eller
 
-Det här är lite ovanligt. `-xor`tillåter endast ett uttryck att utvärdera till `$true` . Så om båda elementen är `$false` eller båda elementen `$true` är hela uttrycket `$false` . Ett annat sätt att titta på det här är att uttrycket bara är `$true` om resultatet av uttrycket är olika.
+Det här är lite ovanligt. `-xor` tillåter endast ett uttryck att utvärdera till `$true` . Så om båda elementen är `$false` eller båda elementen `$true` är hela uttrycket `$false` . Ett annat sätt att titta på det här är att uttrycket bara är `$true` om resultatet av uttrycket är olika.
 
 Det är ovanligt att vem som helst skulle använda den logiska operatorn och jag kan inte se ett användbart exempel på varför jag skulle använda den.
 
@@ -351,12 +351,12 @@ Det är ovanligt att vem som helst skulle använda den logiska operatorn och jag
 
 Bitvisa operatorer utför beräkningar på bitarna i värdena och genererar ett nytt värde som resultat. Andra undervisnings [operatorer][] ligger utanför den här artikelns omfång, men här är listan över dem.
 
-- `-band`binär och
-- `-bor`binär eller
-- `-bxor`binärt exklusivt eller
-- `-bnot`binär NOT
-- `-shl`Skift vänster
-- `-shr`Shift, höger
+- `-band` binär och
+- `-bor` binär eller
+- `-bxor` binärt exklusivt eller
+- `-bnot` binär NOT
+- `-shl` Skift vänster
+- `-shr` Shift, höger
 
 ## <a name="powershell-expressions"></a>PowerShell-uttryck
 
@@ -366,7 +366,7 @@ Vi kan använda normal PowerShell i villkors instruktionen.
 if ( Test-Path -Path $Path )
 ```
 
-`Test-Path`Returnerar `$true` eller `$false` när den körs. Detta gäller även för kommandon som returnerar andra värden.
+`Test-Path` Returnerar `$true` eller `$false` när den körs. Detta gäller även för kommandon som returnerar andra värden.
 
 ```powershell
 if ( Get-Process Notepad* )
@@ -533,7 +533,7 @@ else
 }
 ```
 
-Varje skript block placerar resultatet av kommandona eller värdet i pipelinen. Sedan tilldelar vi resultatet av IF-instruktionen till `$discount` variabeln. Det här exemplet kan ha lika enkelt tilldelat dessa värden till `$discount` variabeln direkt i varje script block. Jag kan inte säga att jag använder detta med `if` instruktionen ofta, men jag har ett exempel där jag använde detta nyligen.
+Varje skript block placerar resultatet av kommandona eller värdet i pipelinen. Sedan tilldelar vi resultatet av `if` instruktionen till `$discount` variabeln. Det här exemplet kan ha lika enkelt tilldelat dessa värden till `$discount` variabeln direkt i varje script block. Jag kan inte säga att jag använder detta med `if` instruktionen ofta, men jag har ett exempel där jag använde detta nyligen.
 
 ### <a name="array-inline"></a>Infoga matris
 
@@ -567,7 +567,7 @@ Jag utvärderar dem inuti initieringen av min matris. Om `$Debug` är sant hamna
 
 ## <a name="simplify-complex-operations"></a>Förenkla komplexa åtgärder
 
-Det är ofrånkomligt att du stöter på en situation som har för många jämförelser för att kontrol lera och instruktionen IF rullar ut på skärmens högra sida.
+Det är ofrånkomligt att du stöter på en situation som har för många jämförelser för att kontrol lera och `If` instruktionen rullas ut på skärmens högra sida.
 
 ```powershell
 $user = Get-ADUser -Identity $UserName
@@ -599,7 +599,7 @@ Jag använder vanligt vis det här när jag får fler än två jämförelser ell
 
 ### <a name="pre-calculating-results"></a>För beräknings resultat
 
-Vi kan ta den instruktionen från IF-instruktionen och bara kontrol lera resultatet.
+Vi kan ta den instruktionen från `if` instruktionen och bara kontrol lera resultatet.
 
 ```powershell
 $needsSecureHomeDrive = $null -ne $user -and
@@ -691,11 +691,11 @@ Om du vill få lite mer om faktisk undantags hantering har jag en artikel om [al
 `if`Instruktionen är en enkel instruktion men är en grundläggande del av PowerShell. Du kommer att se hur du använder det här flera gånger i nästan alla skript som du skriver. Jag hoppas att du har en bättre förståelse än du hade tidigare.
 
 <!-- link references -->
-[ursprunglig version]: https://powershellexplained.com/2019-08-11-PowerShell-if-then-else-equals-operator/
+[ursprunglig version]: https://powershellexplained.com/2019-08-11-Powershell-if-then-else-equals-operator/
 [powershellexplained.com]: https://powershellexplained.com/
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [eventuella]: /powershell/module/microsoft.powershell.core/about/about_if
-[bitvisa operatorer]: https://powershellexplained.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators#bitwise-operators
+[bitvisa operatorer]: /powershell/module/microsoft.powershell.core/about/about_arithmetic_operators#bitwise-operators
 [många sätt att använda regex]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression/
 [allt du ville veta mer om undantag]: everything-about-exceptions.md
 [allt du ville veta mer om $null]: everything-about-null.md

@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: ResourceSet-metoden
-ms.openlocfilehash: 18364027b249e502e1f0b8802d9f3e031c7b07ce
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: c015960b2a5ffca0d28b714d571aa616400555bd
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942652"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464067"
 ---
 # <a name="resourceset-method"></a>ResourceSet-metoden
 
@@ -26,19 +26,19 @@ uint32 ResourceSet(
 
 ## <a name="parameters"></a>Parametrar
 
-*Resourcetype* \[i\] namnet på resursen som ska anropas.
+**Resourcetype** \[ i \] namnet på resursen som ska anropas.
 
-*Modulnamn* \[i\] namnet på modulen som innehåller resursen som ska anropas.
+**Modulnamn** \[ i \] namnet på den modul som innehåller resursen som ska anropas.
 
-*resourceProperty* \[i\] anger resursens egenskaps namn och dess värde i en hash-tabell som nyckel respektive värde. Använd cmdleten [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) för att identifiera resurs egenskaper och deras typer.
+**resourceProperty** \[ i \] anger resurs egenskapens namn och dess värde i en hash-tabell som nyckel och värde respektive. Använd cmdleten [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) för att identifiera resurs egenskaper och deras typer.
 
-*RebootRequired* \[ut\] vid retur anges den här egenskapen till **Sant** om målnoden måste startas om.
+**RebootRequired** \[ ut \] vid retur anges den här egenskapen till **Sant** om målnoden måste startas om.
 
 ## <a name="return-value"></a>Returvärde
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Detta är en statisk metod.
 

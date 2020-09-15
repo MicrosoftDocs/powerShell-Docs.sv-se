@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-logg resurs
-ms.openlocfilehash: 0a2f12793357fdf10bd4a2f6003f9dc2276b173c
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: bc59bb2670561306a039d024fcff5e0746a659f2
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75870769"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464034"
 ---
 # <a name="dsc-log-resource"></a>DSC-logg resurs
 
@@ -39,7 +39,7 @@ Log [string] #ResourceName
 
 |       Egenskap       |                                                                                                                                                          Beskrivning                                                                                                                                                           |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| DependsOn            | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är `DependsOn = "[ResourceType]ResourceName"`syntaxen för att använda den här egenskapen. |
+| DependsOn            | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
 | PsDscRunAsCredential | Anger autentiseringsuppgifter för att köra hela resursen som.                                                                                                                                                                                                                                                                        |
 
 > [!NOTE]

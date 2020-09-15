@@ -1,28 +1,21 @@
 ---
-title: Så här lägger du till parameter information | Microsoft Docs
-ms.custom: ''
+title: Lägga till parameterinformation
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: cf6c1442-60aa-477a-8f30-ab02b1b11039
-caps.latest.revision: 7
-ms.openlocfilehash: b9ccca75c2d9126e84a7f486ffe803042a742b62
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 15d0194a1d5449c65977703faf245e449d75d176
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565568"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893398"
 ---
 # <a name="how-to-add-parameter-information"></a>Lägga till parameterinformation
 
-I det här avsnittet beskrivs hur du lägger till innehåll som visas i avsnittet parametrar i hjälp avsnittet för cmdlet. I avsnittet parametrar i hjälp avsnittet visas var och en av parametrarna för cmdleten och en detaljerad beskrivning av varje parameter.
+I det här avsnittet beskrivs hur du lägger till innehåll som visas i avsnittet **parametrar** i hjälp avsnittet för cmdlet. I avsnittet **parametrar** i hjälp avsnittet visas var och en av parametrarna för cmdleten och en detaljerad beskrivning av varje parameter.
 
-Innehållet i parameter avsnittet ska överensstämma med innehållet i SYNTAX-avsnittet i hjälp avsnittet. Det åligger hjälp författaren att se till att både noden syntax och parametrar innehåller liknande XML-element.
+Innehållet i **parameter** avsnittet ska överensstämma med innehållet i **syntax** -avsnittet i hjälp avsnittet. Det åligger hjälp författaren att se till att både noden **syntax** och **parametrar** innehåller liknande XML-element.
 
 > [!NOTE]
-> Om du vill se en fullständig vy över en hjälpfil öppnar du en av dll-Help. XML-filerna som finns i installations katalogen för Windows PowerShell. Till exempel innehåller filen Microsoft. PowerShell. commands. Management. dll-Help. XML innehåll för flera av Windows PowerShell-cmdlets.
+> Om du vill se en fullständig vy över en hjälpfil öppnar du en av `dll-Help.xml` filerna som finns i installations katalogen för PowerShell. Filen innehåller till exempel `Microsoft.PowerShell.Commands.Management.dll-Help.xml` innehåll för flera av PowerShell-cmdletarna.
 
 ### <a name="to-add-parameters"></a>Lägga till parametrar
 
@@ -33,7 +26,8 @@ Innehållet i parameter avsnittet ska överensstämma med innehållet i SYNTAX-a
     </command:command>
     ```
 
-2. Leta upp noden beskrivning i noden kommando och Lägg till noden parametrar enligt nedan. Endast en parameter-nod tillåts och den ska omedelbart följa noden syntax.
+1. Leta upp noden beskrivning i noden kommando och Lägg till noden parametrar enligt nedan.
+   Endast en parameter-nod tillåts och den ska omedelbart följa noden syntax.
 
     ```xml
     <command:command>
@@ -45,9 +39,9 @@ Innehållet i parameter avsnittet ska överensstämma med innehållet i SYNTAX-a
     </command:command>
     ```
 
-3. I noden parametrar lägger du till en parameter-nod för varje parameter i cmdleten enligt vad som visas nedan.
+1. I noden parametrar lägger du till en **parameter** -nod för varje parameter i cmdleten enligt vad som visas nedan.
 
-   I det här exemplet läggs en parametriserad nod till för tre parametrar.
+   I det här exemplet läggs en **parametriserad** nod till för tre parametrar.
 
     ```xml
     <command:parameters>
@@ -59,7 +53,7 @@ Innehållet i parameter avsnittet ska överensstämma med innehållet i SYNTAX-a
 
    Eftersom dessa är samma XML-taggar som används i noden syntax, och eftersom parametrarna som anges här måste matcha de parametrar som anges av noden syntax, kan du kopiera parametervärdena från noden syntax och klistra in dem i noden parametrar. Men var noga med att bara kopiera en instans av en parameter-nod, även om parametern anges i flera parameter uppsättningar i syntaxen.
 
-4. Ange attributvärden som definierar egenskaperna för varje parameter för varje parameter-nod. Dessa attribut innehåller följande: required, globbing, pipelineinput och position.
+1. Ange attributvärden som definierar egenskaperna för varje parameter för varje parameter-nod. Dessa attribut innehåller följande: required, globbing, pipelineinput och position.
 
     ```xml
     <command:parameters>
@@ -74,7 +68,7 @@ Innehållet i parameter avsnittet ska överensstämma med innehållet i SYNTAX-a
     </command:Parameters>
     ```
 
-5. Lägg till namnet på parametern för varje parameter-nod. Här är ett exempel på parameter namnet som har lagts till i noden parameter.
+1. Lägg till namnet på parametern för varje parameter-nod. Här är ett exempel på parameter namnet som har lagts till i noden parameter.
 
     ```xml
     <command:parameters>
@@ -85,7 +79,7 @@ Innehållet i parameter avsnittet ska överensstämma med innehållet i SYNTAX-a
     </command:Parameters>
     ```
 
-6. Lägg till en beskrivning av parametern för varje parameter-nod. Här är ett exempel på parameter beskrivningen som läggs till i noden parameter.
+1. Lägg till en beskrivning av parametern för varje **parameter** -nod. Här är ett exempel på parameter beskrivningen som läggs till i noden **parameter** .
 
     ```xml
     <command:parameters>
@@ -99,9 +93,9 @@ Innehållet i parameter avsnittet ska överensstämma med innehållet i SYNTAX-a
     </command:parameters>
     ```
 
-7. Lägg till parameterns .NET Framework typ för varje parameter-nod. Parameter typen visas tillsammans med parameter namnet.
+1. Lägg till parameterns .NET-typ för varje **parameter** -nod. Parameter typen visas tillsammans med parameter namnet.
 
-   Här är ett exempel på parametern .NET Framework typ som har lagts till i noden parameter.
+   Här är ett exempel på den parameter-.NET-typ som har lagts till i noden **parameter** .
 
     ```xml
     <command:parameters>
@@ -116,9 +110,9 @@ Innehållet i parameter avsnittet ska överensstämma med innehållet i SYNTAX-a
     </command:parameters>
     ```
 
-8. Lägg till standardvärdet för parametern för varje parameter-nod. Följande mening läggs till i parameter beskrivningen när innehållet visas: "DefaultValue" är standardvärdet.
+1. Lägg till standardvärdet för parametern för varje **parameter** -nod. Följande mening läggs till i parameter beskrivningen när innehållet visas: **Standardvärde** är standardvärdet.
 
-   Här är ett exempel på standardvärdet för parametern läggs till i noden parameter.
+   Här är ett exempel på standardvärdet för parametern läggs till i noden **parameter** .
 
     ```xml
     <command:parameters>
@@ -134,7 +128,7 @@ Innehållet i parameter avsnittet ska överensstämma med innehållet i SYNTAX-a
     </command:parameters>
     ```
 
-9. Lägg till en nod för möjliga värden för varje parameter som har flera värden.
+1. Lägg till en nod för möjliga värden för varje parameter som har flera värden.
 
    Här är ett exempel på en nod med möjliga värden som definierar två möjliga värden för parametern
 
@@ -145,7 +139,7 @@ Innehållet i parameter avsnittet ska överensstämma med innehållet i SYNTAX-a
         <maml:description>
           <maml:para></maml:para>
         </maml:description>
-      /dev:possiblevalue>
+      </dev:possiblevalue>
       <dev:possiblevalue>
         <dev:value>String</dev:value>
         <maml:description>
@@ -157,7 +151,7 @@ Innehållet i parameter avsnittet ska överensstämma med innehållet i SYNTAX-a
 
 Här är några saker att komma ihåg när du lägger till parametrar.
 
-- Attributen för parametern visas inte i alla vyer i hjälp avsnittet för cmdleten. De visas dock i en tabell som följer parameter beskrivningen när användaren ombeds att använda den fullständiga (Get-Help \< cmdletname>-full) eller parameter (Get-Help \< CmdletName>-parameter) i avsnittet.
+- Attributen för parametern visas inte i alla vyer i hjälp avsnittet för cmdleten. De visas dock i en tabell som följer parameter beskrivningen när användaren ombeds använda vyn **fullständig** ( `Get-Help <cmdletname> -full` ) eller **parameter** ( `Get-Help <cmdletname> -parameter` ) för ämnet.
 
 - Parameter beskrivningen är en av de viktigaste delarna i ett cmdlet-hjälp ämne. Beskrivningen måste vara kortfattad, samt grundlig. Kom också ihåg att om parameter beskrivningen blir för lång, t. ex. När två parametrar interagerar med varandra, kan du lägga till mer innehåll i avsnittet anteckningar i hjälp avsnittet för cmdleten.
 
@@ -167,15 +161,17 @@ Här är några saker att komma ihåg när du lägger till parametrar.
 
 - Det juridiska värdet för parametern.
 
-- Eftersom parametervärdena uttrycks som .NET Framework objekt, behöver användarna mer information om dessa värden än de skulle ha i en traditionell kommando rads hjälp. Berätta för användaren vilken typ av data som parametern är avsedd att godkänna och inkludera exempel.
+- Eftersom parametervärdena uttrycks som .NET-objekt, behöver användarna mer information om dessa värden än de skulle ha i en traditionell kommando rads hjälp. Berätta för användaren vilken typ av data som parametern är avsedd att godkänna och inkludera exempel.
 
 Standardvärdet för parametern är det värde som används om parametern inte anges på kommando raden. Observera att standardvärdet är valfritt och att det inte behövs för vissa parametrar, till exempel obligatoriska parametrar. Du bör dock ange ett standardvärde för de flesta valfria parametrar.
 
-Standardvärdet hjälper användaren att förstå effekterna av att inte använda-parametern. Beskriv standardvärdet särskilt, till exempel "aktuell katalog" eller "installations katalog för Windows PowerShell ($pshome)" för en valfri sökväg. Du kan också skriva en mening som beskriver standardvärdet, till exempel följande mening som används för `PassThru` parametern: "om Passthru inte har angetts, skickar inte cmdleten objekt nedåt i pipelinen."  Eftersom värdet visas mittemot fält namnet "**Standardvärde**", behöver du inte ta med termen "standardvärde" i posten.
+Standardvärdet hjälper användaren att förstå effekterna av att inte använda-parametern. Beskriv standardvärdet särskilt, till exempel "aktuell katalog" eller "PowerShell installations katalog ( `$PSHOME` )" för en valfri sökväg. Du kan också skriva en mening som beskriver standard, till exempel följande mening som används för parametern **Passthru** : "om Passthru inte har angetts, skickar inte cmdleten objekt nedåt i pipelinen." Eftersom värdet visas mittemot **standardvärdet**för fält namn, behöver du inte heller ta med termen "standardvärde" i posten.
 
-Standardvärdet för parametern visas inte i alla vyer i hjälp avsnittet för cmdleten. Den visas dock i en tabell (tillsammans med parametervärdena) efter parameter beskrivningen när användaren begär fullständig (Get-Help \< cmdletname>-full) eller parameter (Get-Help \< CmdletName>-parameter) i avsnittet.
+Standardvärdet för parametern visas inte i alla vyer i hjälp avsnittet för cmdleten. Den visas dock i en tabell (tillsammans med parametervärdena) efter parameter beskrivningen när användaren ställer en **fullständig** ( `Get-Help <cmdletname> -full` ) eller **parameter** ( `Get-Help
+<cmdletname> -parameter` ) vy av ämnet.
 
-Följande XML visar ett par med `<dev:defaultValue>` taggar som har lagts till i `<command:parameter>` noden. Observera att standardvärdet följer omedelbart efter den avslutande `</command:parameterValue>` taggen (när parametervärdet har angetts) eller den avslutande `</maml:description>` taggen för parameter beskrivningen. Namn.
+Följande XML visar ett par med `<dev:defaultValue>` taggar som har lagts till i `<command:parameter>` noden.
+Observera att standardvärdet följer omedelbart efter den avslutande `</command:parameterValue>` taggen (när parametervärdet har angetts) eller den avslutande `</maml:description>` taggen för parameter beskrivningen. Namn.
 
 ```xml
 <command:parameters>
@@ -195,7 +191,7 @@ Följande XML visar ett par med `<dev:defaultValue>` taggar som har lagts till i
 
 Lägg till värden för uppräknade typer
 
-Om parametern har flera värden eller värden för en uppräknings typ kan du använda en valfri \< dev-possibleValues>-nod. Med den här noden kan du ange ett namn och en beskrivning för flera värden.
+Om parametern har flera värden eller värden för en uppräknings typ kan du använda en valfri \<dev:possibleValues> nod. Med den här noden kan du ange ett namn och en beskrivning för flera värden.
 
 Observera att beskrivningarna av de uppräknade värdena inte visas i någon av de standard visnings lägen som visas av `Get-Help` cmdleten, men andra hjälp visnings program kan visa det här innehållet i sina vyer.
 

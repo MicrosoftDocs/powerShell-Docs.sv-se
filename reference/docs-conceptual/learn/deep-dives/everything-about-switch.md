@@ -3,12 +3,12 @@ title: Allt du ville veta om switch-instruktionen
 description: Switch-instruktionen i PowerShell erbjuder funktioner som inte finns på andra språk.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: ebf6191d56374273465ae6bee49ef82a02cc1580
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 685a5691599408a0d54ca99bf383bcd7702322a6
+ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149798"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86469726"
 ---
 # <a name="everything-you-ever-wanted-to-know-about-the-switch-statement"></a>Allt du ville veta om switch-instruktionen
 
@@ -17,7 +17,7 @@ Precis som många andra språk har PowerShell kommandon för att kontrol lera k�
 > [!NOTE]
 > Den [ursprungliga versionen][] av den här artikeln visas på bloggen som skrivits av [@KevinMarquette][] . PowerShell-teamet tackar för att dela det här innehållet med oss. Ta en titt på hans blogg på [PowerShellExplained.com][].
 
-## <a name="if-statement"></a>If-instruktion
+## <a name="the-if-statement"></a>`if`Instruktionen
 
 En av de första satserna som du lär dig är- `if` instruktionen. Du kan köra ett skript block om en instruktion är `$true` .
 
@@ -96,7 +96,7 @@ $result = switch ( $day )
 
 Vi placerar värdet på PowerShell-pipeline och tilldelar det till `$result` . Du kan göra samma sak med- `if` och- `foreach` satserna.
 
-### <a name="default"></a>Standard
+### <a name="default"></a>Standardvärde
 
 Vi kan använda `default` nyckelordet för att identifiera vad som ska hända om det inte finns någon matchning.
 
@@ -341,9 +341,9 @@ switch -Wildcard -File $path
 
 Eftersom en rad i indatafilen kan innehålla både ordet `Error` och `Warning` , vill vi bara att den första är att köra och sedan fortsätta att bearbeta filen.
 
-### <a name="break"></a>Bryt
+### <a name="break"></a>Bryt ned
 
-En `break` instruktion avslutar växeln. Detta är samma beteende som `continue` visar för enskilda värden. Skillnaden visas när du bearbetar en matris. `break`stoppar all bearbetning i växeln och `continue` flyttas till nästa objekt.
+En `break` instruktion avslutar växeln. Detta är samma beteende som `continue` visar för enskilda värden. Skillnaden visas när du bearbetar en matris. `break` stoppar all bearbetning i växeln och `continue` flyttas till nästa objekt.
 
 ``` powershell
 $Messages = @(

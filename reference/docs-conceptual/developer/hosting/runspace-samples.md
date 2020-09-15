@@ -1,25 +1,18 @@
 ---
 title: Körnings utrymme-exempel | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: c92a6d3d-8d34-4a76-bdc3-dea923d9858e
-caps.latest.revision: 17
-ms.openlocfilehash: e24d40746da91f60aaf2af655ddcadc88ab6a4db
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f7c11101a570f89657f9ffc4d52fa6ebce3a91e1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353118"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772220"
 ---
 # <a name="runspace-samples"></a>Exempel på körningsutrymmen
 
 Det här avsnittet innehåller exempel kod som visar hur du använder olika typer av körnings utrymmen för att köra kommandon synkront och asynkront. Du kan använda Microsoft Visual Studio för att skapa ett konsol program och sedan kopiera koden från ämnena i det här avsnittet till värd programmet.
 
-## <a name="in-this-section"></a>I detta avsnitt
+## <a name="in-this-section"></a>I det här avsnittet
 
 > [!NOTE]
 > Exempel på värd program som skapar anpassade värd gränssnitt finns i [anpassade värd exempel](./custom-host-samples.md).
@@ -32,9 +25,9 @@ Det här avsnittet innehåller exempel kod som visar hur du använder olika type
 
  [Runspace04-exempel](./runspace04-sample.md) Det här exemplet visar hur du använder klassen [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) för att köra kommandon och hur du fångar upp avslutande fel som uppstår när du kör kommandona. Två kommandon körs och det sista kommandot skickas till ett parameter argument som inte är giltigt. Som ett resultat returneras inga objekt och ett avslutande fel uppstår.
 
- [Runspace05-exempel](./runspace05-sample.md) Det här exemplet visar hur du lägger till en snapin-modul i ett [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt så att cmdleten för snapin-modulen är tillgänglig när körnings utrymme öppnas. Snapin-modulen innehåller en get-proc-cmdlet (definieras av [GetProcessSample01-exemplet](../cmdlet/getprocesssample01-sample.md)) som körs synkront med ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
+ [Runspace05-exempel](./runspace05-sample.md) Det här exemplet visar hur du lägger till en snapin-modul till ett [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt så att cmdleten för snapin-modulen är tillgänglig när körnings utrymme öppnas. Snapin-modulen innehåller en get-proc-cmdlet (definieras av [GetProcessSample01-exemplet](../cmdlet/getprocesssample01-sample.md)) som körs synkront med ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
 
- [Runspace06-exempel](./runspace06-sample.md) Det här exemplet visar hur du lägger till en modul i ett [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt så att modulen läses in när körnings utrymme öppnas. Modulen innehåller en get-proc-cmdlet (definieras av [GetProcessSample02-exemplet](../cmdlet/getprocesssample02-sample.md)) som körs synkront med ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
+ [Runspace06-exempel](./runspace06-sample.md) Det här exemplet visar hur du lägger till en modul i ett [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt så att modulen läses in när körnings utrymme öppnas. Modulen innehåller en get-proc-cmdlet (definieras av [GetProcessSample02-exemplet](../cmdlet/getprocesssample02-sample.md)) som körs synkront med ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
 
  [Runspace07-exempel](./runspace07-sample.md) Det här exemplet visar hur du skapar en körnings utrymme och sedan använder den körnings utrymme för att köra två cmdlets synkront med hjälp av ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
 
@@ -42,7 +35,7 @@ Det här avsnittet innehåller exempel kod som visar hur du använder olika type
 
  [Runspace09-exempel](./runspace09-sample.md) Det här exemplet visar hur du lägger till ett skript i pipelinen för ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt och hur du kör skriptet asynkront. Händelser används för att hantera utdata från skriptet.
 
- [Runspace10-exempel](./runspace10-sample.md) Det här exemplet visar hur du skapar ett standard tillstånd för inledande session, hur du lägger till en cmdlet till [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), hur du skapar en körnings utrymme som använder det inledande sessionstillståndet och hur du kör kommandot med hjälp av ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
+ [Runspace10-exempel](./runspace10-sample.md) Det här exemplet visar hur du skapar ett standard tillstånd för inledande session, hur du lägger till en cmdlet i [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), hur du skapar en körnings utrymme som använder det inledande sessionstillståndet och hur du kör kommandot med hjälp av ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
 
  [Runspace11-exempel](./runspace11-sample.md) Detta visar hur du använder klassen [system. Management. Automation. ProxyCommand](/dotnet/api/System.Management.Automation.ProxyCommand) för att skapa ett proxy-kommando som anropar en befintlig cmdlet, men begränsar uppsättningen av tillgängliga parametrar. Kommandot proxy läggs sedan till i ett tillstånd för inledande session som används för att skapa en begränsad körnings utrymme. Det innebär att användaren endast kan komma åt funktionaliteten för cmdlet via kommandot proxy.
 

@@ -1,19 +1,12 @@
 ---
 title: Värd program exempel | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2b4a41cc-2e22-49a0-b375-2e2447967751
-caps.latest.revision: 11
-ms.openlocfilehash: 8c7c62989ebd0cea1a551e14d460f234230a1f84
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 260f813c8c8c8f699c6af209d64ad71f18c91c7a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75869953"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772288"
 ---
 # <a name="host-application-samples"></a>Exempel på värdprogram
 
@@ -21,7 +14,7 @@ Det här avsnittet innehåller exempel kod som finns i Windows PowerShell 2,0 SD
 
  Du kan kopiera hela exempel koden från ämnena i det här avsnittet eller använda de källfiler som installeras med SDK: n. [Windows PowerShell 2,0 Software Development Kit (SDK)](https://www.microsoft.com/download/details.aspx?id=2560) innehåller README-filer, källfiler och Visual Studio-projektfiler för varje exempel.
 
-## <a name="in-this-section"></a>I detta avsnitt
+## <a name="in-this-section"></a>I det här avsnittet
 
  [POWERSHELL API-exempel](./windows-powershell-api-samples.md) Det här avsnittet innehåller exempel kod som visar hur du skapar körnings utrymmen som begränsar funktionerna och hur du asynkront kör kommandon med en körnings utrymme-pool för att ange körnings utrymmen.
 

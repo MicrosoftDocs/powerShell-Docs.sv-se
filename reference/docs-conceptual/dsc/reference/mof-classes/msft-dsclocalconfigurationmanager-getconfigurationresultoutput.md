@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: GetConfigurationResultOutput-metoden
-ms.openlocfilehash: 480e710ce1a208253f0e664474c3e9bab296066a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9c81082c28b2ffcc329264d29784782deaa9779d
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941574"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464085"
 ---
 # <a name="getconfigurationresultoutput-method"></a>GetConfigurationResultOutput-metoden
 
@@ -25,17 +25,17 @@ uint32 GetConfigurationResultOutput(
 
 ## <a name="parameters"></a>Parametrar
 
-*jobId* \[i\] ID: t för det jobb som utdata ska hämtas för.
+**jobId** \[ i \] ID: t för det jobb för vilket utdata ska hämtas.
 
-*resumeOutputBookmark* \[i\] anger att utdata ska vara en fortsättning från ett tidigare bok märke.
+**resumeOutputBookmark** \[ i \] anger att utdata ska vara en fortsättning från ett tidigare bok märke.
 
-utvärderar utdata för det angivna jobbet. *output* \[\]
+**utdata** \[ ut \] utdata för det angivna jobbet.
 
 ## <a name="return-value"></a>Returvärde
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Detta är en statisk metod.
 

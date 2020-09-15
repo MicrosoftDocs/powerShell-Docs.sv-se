@@ -1,31 +1,26 @@
 ---
-title: Så här lägger du till indatatyper i ett hjälp avsnitt för cmdleten | Microsoft Docs
-ms.custom: ''
+title: Lägga till indatatyper i ett cmdlet-hjälpavsnitt
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 432798e4-5d69-46b1-9517-ff09bffaa4be
-caps.latest.revision: 7
-ms.openlocfilehash: 58b908be3149376547b075320b021421351b881e
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d41c49ff48cf361c2ba694d11576e84a9367eef5
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557079"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893432"
 ---
 # <a name="how-to-add-input-types-to-a-cmdlet-help-topic"></a>Lägga till indatatyper i ett cmdlet-hjälpavsnitt
 
-I det här avsnittet beskrivs hur du lägger till ett indata-avsnitt i ett hjälp avsnitt om Windows PowerShell® cmdlet. I avsnittet indata visas de .NET-klasser av objekt som cmdleten accepterar som indata från pipelinen, antingen med värde eller efter egenskaps namn.
+I det här avsnittet beskrivs hur du lägger till ett **indata** -avsnitt i hjälp avsnittet om PowerShell-cmdleten. I avsnittet **indata** visas de .NET-klasser av objekt som cmdleten accepterar som indata från pipelinen, antingen med värde eller efter egenskaps namn.
 
-Det finns ingen gräns för antalet klasser som du kan lägga till i ett indata-avsnitt. Indatatyperna omges av ett \< kommando: inputTypes>-noden, med varje klass omsluten i ett \< kommando: inputType> element.
+Det finns ingen gräns för antalet klasser som du kan lägga till i ett **indata** -avsnitt. Indatatyperna omges av en `<command:inputTypes>` nod, med varje klass som omges av ett- `<command:inputType>` element.
 
-Schemat innehåller två \< MAML: description> element i varje \< kommando: inputType> element. Men `Get-Help` cmdleten visar bara innehållet i \< kommandot: inputType>/ \< maml: Description>).
+Schemat innehåller två `<maml:description>` element i varje `<command:inputType>` element.
+Men `Get-Help` cmdleten visar bara innehållet i `<command:inputType>/<maml:description>` elementet.
 
-Från och med Windows PowerShell 3,0 `Get-Help` visar cmdleten innehållet i \< MAML: URI>-elementet. Med det här elementet kan du dirigera användare till ämnen som beskriver .NET-klassen.
+Från och med PowerShell 3,0 `Get-Help` visar cmdleten innehållet i- `<maml:uri>` elementet.
+Med det här elementet kan du dirigera användare till ämnen som beskriver .NET-klassen.
 
-Följande XML visar>- \< noden MAML: inputTypes.
+Följande XML visar `<maml:inputTypes>` noden.
 
 ```xml
 <command:inputTypes>
@@ -42,7 +37,7 @@ Följande XML visar>- \< noden MAML: inputTypes.
 </command:inputTypes>
 ```
 
-Följande XML visar ett exempel på hur du använder \< noden MAML: inputTypes> för att dokumentera en indatatyp.
+Följande XML visar ett exempel på hur du använder `<maml:inputTypes>` noden för att dokumentera en indatatyp.
 
 ```xml
 <command:inputTypes>

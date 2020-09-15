@@ -1,23 +1,16 @@
 ---
 title: Windows PowerShell01-exempel | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f607a5ad-5372-4392-b2dc-ef3532fabd0f
-caps.latest.revision: 9
-ms.openlocfilehash: c82f0a123c190c778166e3648b46e97e6257a2b6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 6e799f35c0c5e3820c6471b49c8b0d8c47b1c6b2
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83561009"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771948"
 ---
 # <a name="windows-powershell01-sample"></a>Windows PowerShell01 – exempel
 
-Det här exemplet visar hur du använder ett [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt för att begränsa funktionerna i en körnings utrymme. Utdata från det här exemplet visar hur du begränsar språk läget för körnings utrymme, hur du markerar en cmdlet som privat, hur du lägger till och tar bort cmdlets och providers, hur du lägger till ett proxy-kommando med mera. Det här exemplet fokuserar på hur du begränsar körnings utrymme program mässigt. Skript alternativ för att begränsa körnings utrymme inkluderar kommandona $ExecutionContext. SessionState. LanguageMode och PSSessionConfiguration.
+Det här exemplet visar hur du använder ett [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt för att begränsa funktionerna i en körnings utrymme. Utdata från det här exemplet visar hur du begränsar språk läget för körnings utrymme, hur du markerar en cmdlet som privat, hur du lägger till och tar bort cmdlets och providers, hur du lägger till ett proxy-kommando med mera. Det här exemplet fokuserar på hur du begränsar körnings utrymme program mässigt. Skript alternativ för att begränsa körnings utrymme inkluderar kommandona $ExecutionContext. SessionState. LanguageMode och PSSessionConfiguration.
 
 ## <a name="requirements"></a>Krav
 
@@ -27,17 +20,17 @@ Det här exemplet kräver Windows PowerShell 2,0.
 
 Det här exemplet demonstrerar följande:
 
-- Begränsa språket genom att ställa in egenskapen [system. Management. Automation. körnings utrymmen. Initialsessionstate. Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) .
+- Begränsa språket genom att ange [System.Management.Automation.Runspaces.Initialsessionstate. Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) -egenskap.
 
 - Lägga till alias i det första sessionstillståndet med hjälp av en [system. Management. Automation. körnings utrymmen. Sessionstatealiasentry? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) -objekt.
 
 - Markera kommandon som privata.
 
-- Ta bort providers från det första sessionstillståndet med hjälp av egenskapen [system. Management. Automation. körnings utrymmen. Initialsessionstate. providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) .
+- Ta bort providers från det första sessionstillståndet med hjälp av [System.Management.Automation.Runspaces.Initialsessionstate. Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) -egenskap.
 
-- Ta bort kommandon från det första sessionstillståndet med hjälp av egenskapen [system. Management. Automation. körnings utrymmen. Initialsessionstate. commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) .
+- Ta bort kommandon från det första sessionstillståndet med hjälp av egenskapen [System.Management.Automation.Runspaces.Initialsessionstate. commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) .
 
-- Lägga till kommandon och providrar i objektet [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
+- Lägga till kommandon och providrar i [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objektet.
 
 ## <a name="example"></a>Exempel
 

@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Informationsström
-ms.openlocfilehash: 39cb3c36a70530b3ff9777edc74b88d276cbbb7c
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 1a8df66f7489910b964ec398e90b76e9f30cd2e2
+ms.sourcegitcommit: 87b9b989f261b52969e99159e99ee28ad8d8839a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810374"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567849"
 ---
 # <a name="information-stream"></a>Informationsström
 
-PowerShell 5,0 lägger till en ny strukturerad **informations** ström för att skicka strukturerade data mellan ett skript och dess värd. `Write-Host`har också uppdaterats för att skicka utdata till **informations** strömmen där du nu kan fånga eller dämpa den. Den nya `Write-Information` cmdleten som används med **InformationVariable** och **InformationAction** vanliga parametrar möjliggör större flexibilitet och kapacitet.
+PowerShell 5,0 lägger till en ny strukturerad **informations** ström för att skicka strukturerade data mellan ett skript och dess värd. `Write-Host` har också uppdaterats för att skicka utdata till **informations** strömmen där du nu kan fånga eller dämpa den. Den nya `Write-Information` cmdleten som används med **InformationVariable** och **InformationAction** vanliga parametrar möjliggör större flexibilitet och kapacitet.
 
 Följande funktion använder cmdletar som utnyttjar den nya **informations** strömmen.
 
@@ -41,7 +41,7 @@ function OutputGusher {
 I följande exempel visas resultatet av att köra den här funktionen.
 
 ```powershell
-$r = c:\temp\OutputGusher
+$r = OutputGusher
 ```
 
 ```Output
@@ -83,7 +83,7 @@ Process              {System.Diagnostics.Process (powershell)}
 PSHOST               {Preparing to give you output!, =============================, I , <3 ...}
 ```
 
-När du skickar ett meddelande till **informations** strömmen med en-tagg visas inte meddelandet i värd programmet, men du kan hämta det med hjälp av taggnamnet. Ett exempel:
+När du skickar ett meddelande till **informations** strömmen med en-tagg visas inte meddelandet i värd programmet, men du kan hämta det med hjälp av taggnamnet. Exempel:
 
 ```powershell
 $iv | where Tags -eq 'LogHigh'

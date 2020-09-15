@@ -1,19 +1,12 @@
 ---
-title: Så här lägger du till exempel i ett hjälp avsnitt för cmdleten | Microsoft Docs
-ms.custom: ''
+title: Lägga till exempel i ett cmdlet-hjälpavsnitt
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8f723b21-8f95-4981-8b6e-4f07c22d601a
-caps.latest.revision: 5
-ms.openlocfilehash: 82bee7b7bb0ef49203636f2a293075f3db924ce4
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 33a1726f9d52b5a368d5df7962cc17ba9c45246a
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557098"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893449"
 ---
 # <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a>Lägga till exempel i ett cmdlet-hjälpavsnitt
 
@@ -21,7 +14,7 @@ ms.locfileid: "83557098"
 
 - Lista alla parameter namn i kommandot, även om parameter namnen är valfria. Detta hjälper användaren att tolka kommandot enkelt.
 
-- Undvik alias och del parameter namn, även om de fungerar i Windows PowerShell®.
+- Undvik alias och del parameter namn, även om de fungerar i PowerShell.
 
 - I exempel beskrivningen förklarar du rationellt för kommandots konstruktion. Förklara varför du har valt särskilda parametrar och värden och hur du använder variabler.
 
@@ -35,7 +28,7 @@ Exempel visas bara i de detaljerade och fullständiga vyerna för cmdlet-hjälpe
 
 ## <a name="adding-an-examples-node"></a>Lägga till en exempel nod
 
-Följande XML visar hur du lägger till en exempel-nod som innehåller en enda exempel-nod. Lägg till ytterligare exempel-noder för varje exempel som du vill inkludera i avsnittet.
+Följande XML visar hur du lägger till en **exempel** -nod som innehåller en enda **exempel** -nod. Lägg till ytterligare exempel-noder för varje exempel som du vill inkludera i avsnittet.
 
 ```xml
 <command:examples>
@@ -46,7 +39,7 @@ Följande XML visar hur du lägger till en exempel-nod som innehåller en enda e
 
 ## <a name="adding-an-example-title"></a>Lägga till en rubrik för exempel
 
-Följande XML visar hur du lägger till en rubrik för exemplet. Rubriken används för att ställa in exemplet från andra exempel. Windows PowerShell® använder ett standard huvud som innehåller ett sekventiellt exempel nummer.
+Följande XML visar hur du lägger till en **rubrik** för exemplet. **Rubriken** används för att ställa in exemplet från andra exempel. PowerShell använder ett standard huvud som innehåller ett sekventiellt exempel nummer.
 
 ```xml
 <command:examples>
@@ -58,7 +51,7 @@ Följande XML visar hur du lägger till en rubrik för exemplet. Rubriken använ
 
 ## <a name="adding-preceding-characters"></a>Lägga till föregående tecken
 
-Följande XML visar hur du lägger till tecken, t. ex. Windows PowerShell-prompten, som visas omedelbart före kommandot example (utan några mellanliggande blank steg). Windows PowerShell® använder Windows PowerShell-prompten: C:\PS>.
+Följande XML visar hur du lägger till tecken, t. ex. Windows PowerShell-prompten, som visas omedelbart före kommandot example (utan några mellanliggande blank steg). PowerShell använder Windows PowerShell-prompten: `C:\PS>` .
 
 ```xml
 <command:examples>
@@ -89,7 +82,7 @@ Följande XML visar hur du lägger till det faktiska kommandot i exemplet. När 
 
 ## <a name="adding-a-description"></a>Lägga till en beskrivning
 
-Följande XML visar hur du lägger till en beskrivning av exemplet. I Windows PowerShell® används en enda uppsättning \< MAML: stycke> taggar för beskrivningen, även om flera \< maml-> taggar kan användas.
+Följande XML visar hur du lägger till en beskrivning av exemplet. PowerShell använder en enda uppsättning `<maml:para>` taggar för beskrivningen, även om flera `<maml:para>` taggar kan användas.
 
 ```xml
 <command:examples>
@@ -108,7 +101,8 @@ Följande XML visar hur du lägger till en beskrivning av exemplet. I Windows Po
 
 ## <a name="adding-example-output"></a>Lägger till exempel utdata
 
-Följande XML visar hur du lägger till kommandots utdata. Kommando resultat informationen är valfri, men i vissa fall är det bra att demonstrera effekterna av att använda vissa parametrar. Windows PowerShell® använder två uppsättningar av tomma \< MAML: stycke> taggar för att separera kommandoutdata från kommandot.
+Följande XML visar hur du lägger till kommandots utdata. Kommando resultat informationen är valfri, men i vissa fall är det bra att demonstrera effekterna av att använda vissa parametrar.
+PowerShell använder två uppsättningar med tomma `<maml:para>` taggar för att separera kommandoutdata från kommandot.
 
 ```xml
 <command:examples>

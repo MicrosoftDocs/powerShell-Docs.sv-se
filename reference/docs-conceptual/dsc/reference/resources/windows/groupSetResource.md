@@ -3,12 +3,12 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, konfiguration, installation
 description: Tillhandahåller en mekanism för att hantera lokala grupper på målnoden.
 title: DSC GroupSet-resurs
-ms.openlocfilehash: 99b9cafdd4d799e18e1b9b1f08d7dd41ec435711
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 90e0c3f0e09c6a300988869265dfdb432ed5d217
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560346"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464204"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet-resurs
 
@@ -24,8 +24,6 @@ Använd den här resursen när du vill lägga till och/eller ta bort samma lista
 Group [string] #ResourceName
 {
     GroupName = [string[]]
-    [ Members = [string[]] ]
-    [ Description = [string[]] ]
     [ MembersToInclude = [string[]] ]
     [ MembersToExclude = [string[]] ]
     [ Credential = [PSCredential] ]
@@ -41,7 +39,6 @@ Group [string] #ResourceName
 |---|---|
 |Namn |Namnen på de grupper som du vill säkerställa ett enskilt tillstånd för. |
 |Medlemmar |Använd den här egenskapen för att ersätta det aktuella grupp medlemskapet med de angivna medlemmarna. Värdet för den här egenskapen är en matris med strängar i formuläret `Domain\UserName` . Om du ställer in den här egenskapen i en konfiguration ska du inte använda någon av egenskaperna **MembersToExclude** eller **MembersToInclude** . Om du gör det skapas ett fel. |
-|Beskrivning |Beskrivning av gruppen. |
 |MembersToInclude |Använd den här egenskapen för att lägga till medlemmar i det befintliga medlemskapet i gruppen. Värdet för den här egenskapen är en matris med strängar i formuläret `Domain\UserName` . Om du ställer in den här egenskapen i en konfiguration ska du inte använda egenskapen **medlemmar** . Om du gör det skapas ett fel. |
 |MembersToExclude |Använd den här egenskapen för att ta bort medlemmar från de befintliga medlemskapet i grupperna. Värdet för den här egenskapen är en matris med strängar i formuläret `Domain\UserName` . Om du ställer in den här egenskapen i en konfiguration ska du inte använda egenskapen **medlemmar** . Om du gör det skapas ett fel. |
 |Autentiseringsuppgift |De autentiseringsuppgifter som krävs för att komma åt fjär resurser. Det här kontot måste ha rätt Active Directory behörighet för att lägga till alla icke-lokala konton i gruppen. annars sker ett fel. |

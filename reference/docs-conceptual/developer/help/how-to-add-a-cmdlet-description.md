@@ -1,26 +1,19 @@
 ---
-title: Så här lägger du till en cmdlet-Beskrivning | Microsoft Docs
-ms.custom: ''
+title: Lägga till en cmdlet-beskrivning
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 47af9d57-bd63-4596-816a-0b717418476b
-caps.latest.revision: 10
-ms.openlocfilehash: a2e4c4d42566d5a52006924eab02295c37cf3159
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2b98c4cefc3a55eccfeb7eba5a290e7d93a6088b
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353321"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893245"
 ---
 # <a name="how-to-add-a-cmdlet-description"></a>Lägga till en cmdlet-beskrivning
 
-I det här avsnittet beskrivs hur du lägger till innehåll som visas i avsnittet Beskrivning i cmdlet-hjälpen. I Hjälp filen läggs det här innehållet till i kommando-noden för varje cmdlet.
+I det här avsnittet beskrivs hur du lägger till innehåll som visas i avsnittet **Beskrivning** i cmdlet-hjälpen. I Hjälp filen läggs det här innehållet till i **kommando** -noden för varje cmdlet.
 
 > [!NOTE]
-> Om du vill se en fullständig vy över en hjälpfil öppnar du en av dll-Help. XML-filerna som finns i installations katalogen för Windows PowerShell. Till exempel innehåller filen Microsoft. PowerShell. commands. Management. dll-Help. XML innehåll för flera av Windows PowerShell-cmdlets.
+> Om du vill se en fullständig vy över en hjälpfil öppnar du en av `dll-Help.xml` filerna som finns i installations katalogen för PowerShell. Filen innehåller till exempel `Microsoft.PowerShell.Commands.Management.dll-Help.xml` innehåll för flera av PowerShell-cmdletarna.
 
 ### <a name="to-add-a-description"></a>Lägga till en beskrivning
 
@@ -30,7 +23,7 @@ I det här avsnittet beskrivs hur du lägger till innehåll som visas i avsnitte
 
 - Ta med information om hur användarna kan använda cmdleten, förutom den uppenbara användningen. Du kan till exempel använda objektet som `Get-Host` cmdleten hämtar för att ändra färg på text i Windows PowerShell-kommando fönstret.
 
-  Exempel: "`Get-Acl`-cmdleten hämtar objekt som representerar säkerhets beskrivningen för en fil eller resurs. Säkerhets beskrivningen innehåller åtkomst kontrol listorna (ACL) för resursen. ACL: en anger de behörigheter som användare och användar grupper har åtkomst till resursen. "
+  Exempel: " `Get-Acl` cmdleten hämtar objekt som representerar säkerhets beskrivningen för en fil eller resurs. Säkerhets beskrivningen innehåller åtkomst kontrol listorna (ACL) för resursen. ACL: en anger de behörigheter som användare och användar grupper har åtkomst till resursen. "
 
 - Den detaljerade beskrivningen ska beskriva cmdleten, men den bör inte beskriva de begrepp som cmdleten använder. Placera koncept definitioner i ytterligare anteckningar.
 

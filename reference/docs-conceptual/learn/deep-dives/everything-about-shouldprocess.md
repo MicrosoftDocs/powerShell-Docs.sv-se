@@ -3,12 +3,12 @@ title: Allt du ville veta om ShouldProcess
 description: ShouldProcess är en viktig funktion som ofta är påslagen. Parametrarna WhatIf och Confirm gör det enkelt att lägga till dina funktioner.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 1d9110302a191b90bd11bdf742f77704a8c9d6f0
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 6bd4dbd5255203f2daf804163aa2a84d992d6697
+ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149840"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86469743"
 ---
 # <a name="everything-you-wanted-to-know-about-shouldprocess"></a>Allt du ville veta om ShouldProcess
 
@@ -238,7 +238,7 @@ if($PSCmdlet.ShouldProcess('MESSAGE','TARGET','OPERATION',[ref]$reason)){
 $reason
 ```
 
-Vi måste skicka `$reason` variabeln till den fjärde parametern som en referens variabel med `[ref]` . `ShouldProcess`fylls `$reason` med värdet `None` eller `WhatIf` . Jag säger inte att detta var användbart och jag har inte haft någon anledning att någonsin använda det.
+Vi måste skicka `$reason` variabeln till den fjärde parametern som en referens variabel med `[ref]` . `ShouldProcess` fylls `$reason` med värdet `None` eller `WhatIf` . Jag säger inte att detta var användbart och jag har inte haft någon anledning att någonsin använda det.
 
 ### <a name="where-to-place-it"></a>Var du ska placera den
 
@@ -313,7 +313,7 @@ Jag lär dig hur du lägger till `-Force` stöd i ett senare avsnitt.
 
 ### <a name="confirmpreference"></a>$ConfirmPreference
 
-`$ConfirmPreference`är en automatisk variabel som styr när `ConfirmImpact` du uppmanas att bekräfta körning. Här följer de möjliga värdena för både `$ConfirmPreference` och `ConfirmImpact` .
+`$ConfirmPreference` är en automatisk variabel som styr när `ConfirmImpact` du uppmanas att bekräfta körning. Här följer de möjliga värdena för både `$ConfirmPreference` och `ConfirmImpact` .
 
 - `High`
 - `Medium`
@@ -348,7 +348,7 @@ Detta gör att vi återgår till en tidigare varning: det finns olika delarna n�
 
 ## <a name="pscmdletshouldcontinue"></a>$PSCmdlet. ShouldContinue
 
-Om du behöver mer kontroll än `ShouldProcess` tillhandahåller kan du utlösa prompten direkt med `ShouldContinue` . `ShouldContinue`ignorerar,,, och, om det `$ConfirmPreference` `ConfirmImpact` `-Confirm` `$WhatIfPreference` `-WhatIf` sker varje gång det körs.
+Om du behöver mer kontroll än `ShouldProcess` tillhandahåller kan du utlösa prompten direkt med `ShouldContinue` . `ShouldContinue` ignorerar,,, och, om det `$ConfirmPreference` `ConfirmImpact` `-Confirm` `$WhatIfPreference` `-WhatIf` sker varje gång det körs.
 
 Det är enkelt att förväxla `ShouldProcess` och `ShouldContinue` . Jag brukar komma ihåg att använda `ShouldProcess` eftersom parametern anropas `SupportsShouldProcess` i `CmdletBinding` .
 Du bör använda `ShouldProcess` i nästan alla scenarier. Det är därför jag täckte den metoden först.
@@ -411,7 +411,7 @@ Jag har lagt till en `foreach` loop och en samling för att visa att den fungera
 
 ## <a name="implementing--force"></a>Implementera-Force
 
-`ShouldProcess`och `ShouldContinue` måste implementera `-Force` på olika sätt. Sticket till dessa implementeringar är att `ShouldProcess` alltid ska köras, men `ShouldContinue` ska inte köras om `-Force` har angetts.
+`ShouldProcess` och `ShouldContinue` måste implementera `-Force` på olika sätt. Sticket till dessa implementeringar är att `ShouldProcess` alltid ska köras, men `ShouldContinue` ska inte köras om `-Force` har angetts.
 
 ### <a name="shouldprocess--force"></a>ShouldProcess – Force
 
@@ -481,7 +481,7 @@ if ($PSCmdlet.ShouldProcess('TARGET')){
 
 Om någon anger både `-Force` och `-WhatIf` , `-WhatIf` måste du prioritera. Den här metoden bevarar `-WhatIf` bearbetningen eftersom `ShouldProcess` alltid körs.
 
-Lägg inte till en kontroll för `$Force` värdet i IF-instruktionen med `ShouldProcess` . Det är ett anti-mönster för det här scenariot, även om det är det som visas i nästa avsnitt för `ShouldContinue` .
+Lägg inte till en kontroll för `$Force` värdet i `if` instruktionen med `ShouldProcess` . Det är ett anti-mönster för det här scenariot, även om det är det som visas i nästa avsnitt för `ShouldContinue` .
 
 ### <a name="shouldcontinue--force"></a>ShouldContinue – Force
 

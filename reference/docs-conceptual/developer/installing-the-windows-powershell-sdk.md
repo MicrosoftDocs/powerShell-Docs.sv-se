@@ -1,13 +1,12 @@
 ---
 title: Installera Windows PowerShell SDK:n
 ms.date: 03/30/2020
-ms.topic: article
-ms.openlocfilehash: b47dddaf167024d30a7a31596f96569f976109d7
-ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
+ms.openlocfilehash: 91cf57510bb7f44799cfdaf7cadcc7bcd505c977
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80394979"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771982"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Installera Windows PowerShell SDK:n
 
@@ -18,7 +17,7 @@ I följande avsnitt beskrivs hur du installerar PowerShell SDK i olika versioner
 ## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Installera Windows PowerShell 3,0 SDK för Windows 8 och Windows Server 2012
 
 Windows PowerShell 3,0 installeras automatiskt med Windows 8 och Windows Server 2012. Dessutom kan du hämta och installera referens sammansättningarna för Windows PowerShell 3,0 som en del av Windows 8 SDK. Med dessa sammansättningar kan du skriva cmdlets, providers och värd program för Windows PowerShell 3,0. När du installerar Windows SDK för Windows 8 installeras Windows PowerShell-sammansättningarna automatiskt i mappen referens sammansättning i `\Program Files
-(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`. Mer information finns på webbplatsen för hämtning av Windows 8 SDK. Kod exempel för Windows PowerShell är också tillgängliga i databasen [PowerShell-SDK-samples](https://github.com/MicrosoftDocs/powershell-sdk-samples/tree/master/SDK-3.0) .
+(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0` . Mer information finns på webbplatsen för hämtning av Windows 8 SDK. Kod exempel för Windows PowerShell är också tillgängliga i databasen [PowerShell-SDK-samples](https://github.com/MicrosoftDocs/powershell-sdk-samples/tree/master/SDK-3.0) .
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Installera Windows PowerShell 3,0 SDK för Windows 7 och Windows Server 2008 R2
 
@@ -26,12 +25,12 @@ PowerShell 2,0 installeras automatiskt av Windows 7 och Windows Server 2008 R2. 
 
 ## <a name="installing-windows-powershell-20-sdk-for-windows-7-vista-xp-server-2003-and-server-2008"></a>Installera Windows PowerShell 2,0 SDK för Windows 7, Vista, XP, Server 2003 och Server 2008
 
-Windows PowerShell 2,0 SDK innehåller referens sammansättningar som behövs för att skriva cmdlets, providrar och värdbaserade program och innehåller C# exempel kod som kan användas som start punkt när du börjar skriva kod. Du kan hämta kod exemplen från [https://www.microsoft.com/download/details.aspx?id=2560](https://www.microsoft.com/download/details.aspx?id=2560).
+Windows PowerShell 2,0 SDK innehåller referens sammansättningar som behövs för att skriva cmdlets, providers och värdbaserade program och den innehåller C# exempel kod som kan användas som start punkt när du börjar skriva kod. Du kan hämta kod exemplen från [https://www.microsoft.com/download/details.aspx?id=2560](https://www.microsoft.com/download/details.aspx?id=2560) .
 
 ### <a name="reference-assemblies"></a>Referens sammansättningar
 
 Referens sammansättningar installeras på följande plats som standard: `c:\Program Files\Reference
-Assemblies\Microsoft\WindowsPowerShell\V1.0`.
+Assemblies\Microsoft\WindowsPowerShell\V1.0` .
 
 > [!NOTE]
 > Kod som kompileras mot Windows PowerShell 2,0-sammansättningar kan inte läsas in i Windows PowerShell 1,0-installationer. Men kod som kompileras mot Windows PowerShell 1,0-sammansättningar kan läsas in i Windows PowerShell 2,0-installationer.
@@ -39,7 +38,7 @@ Assemblies\Microsoft\WindowsPowerShell\V1.0`.
 ### <a name="samples"></a>Exempel
 
 Kod exempel installeras som standard på följande plats: `C:\Program Files\Microsoft
-SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. Följande avsnitt innehåller en kort beskrivning av vad varje exempel gör.
+SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` . Följande avsnitt innehåller en kort beskrivning av vad varje exempel gör.
 
 #### <a name="cmdlet-samples"></a>Cmdlet-exempel
 
@@ -70,9 +69,9 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. Följande avsnitt innehå
 
 #### <a name="hosting-application-samples"></a>Värdbaserade program exempel
 
-- Runspace01 – visar hur du använder PowerShell-klassen för att köra `Get-Process` cmdlet synkront.
-  Cmdleten `Get-Process` returnerar process objekt för varje process som körs på den lokala datorn.
-- Runspace02 – visar hur du använder PowerShell-klassen för att köra `Get-Process` och `Sort-Object`-cmdlets synkront. `Get-Process` cmdleten returnerar process objekt för varje process som körs på den lokala datorn och `Sort-Object` sorterar objekten baserat på deras ID-egenskap. Resultatet av dessa kommandon visas med hjälp av en DataGridView-kontroll.
+- Runspace01 – visar hur du använder PowerShell-klassen för att köra `Get-Process` cmdleten synkront.
+  `Get-Process`Cmdleten returnerar process objekt för varje process som körs på den lokala datorn.
+- Runspace02 – visar hur du använder PowerShell-klassen för att köra `Get-Process` och- `Sort-Object` cmdlets synkront. `Get-Process`Cmdleten returnerar process objekt för varje process som körs på den lokala datorn och `Sort-Object` sorterar objekten baserat på deras ID-egenskap. Resultatet av dessa kommandon visas med hjälp av en DataGridView-kontroll.
 - Runspace03 – visar hur du använder PowerShell-klassen för att köra ett skript synkront och hur du hanterar icke-avslutande fel. Skriptet tar emot en lista över process namn och hämtar sedan dessa processer. Resultatet av skriptet, inklusive eventuella icke-avslutande fel som genererades när skriptet kördes, visas i konsol fönstret.
 - Runspace04 – visar hur du använder PowerShell-klassen för att köra kommandon och hur du fångar upp avslutande fel som genereras när du kör kommandona. Två kommandon körs och det sista kommandot skickas till ett parameter argument som inte är giltigt. Därför returneras inga objekt och ett avslutande fel genereras.
 - Runspace05 – visar hur du lägger till en snapin-modul i ett InitialSessionState-objekt så att cmdleten för snapin-modulen är tillgänglig när körnings utrymme öppnas. Snapin-modulen innehåller en get-proc-cmdlet (definieras av GetProcessSample01-exemplet) som körs synkront med ett PowerShell-objekt.
@@ -87,23 +86,23 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. Följande avsnitt innehå
 
 #### <a name="host-samples"></a>Värd exempel
 
-- Host01 – visar hur du implementerar ett värd program som använder en anpassad värd. I det här exemplet skapas en körnings utrymme som använder den anpassade värden och sedan används PowerShell-API: et för att köra ett skript som anropar `exit`. Värd programmet tittar sedan på utdata från skriptet och skriver ut resultaten.
-- Host02 – visar hur du skriver ett värd program som använder Windows PowerShell-körningsmiljön tillsammans med en anpassad värd implementering. Värd programmet ställer in värd kulturen på tyska, kör `Get-Process`-cmdleten och visar resultatet som du ser dem med hjälp av pwrsh. exe och sedan skriver ut aktuella data och tid på tyska.
+- Host01 – visar hur du implementerar ett värd program som använder en anpassad värd. I det här exemplet skapas en körnings utrymme som använder den anpassade värden och sedan används PowerShell-API: et för att köra ett skript som anropar `exit` . Värd programmet tittar sedan på utdata från skriptet och skriver ut resultaten.
+- Host02 – visar hur du skriver ett värd program som använder Windows PowerShell-körningsmiljön tillsammans med en anpassad värd implementering. Värd programmet ställer in värd kulturen på tyska, kör `Get-Process` cmdleten och visar resultaten som du ser dem genom att använda pwrsh.exe och sedan skriva ut aktuella data och tid på tyska.
 - Host03 – visar hur du skapar ett interaktivt konsolbaserade värd program som läser kommandon från kommando raden, kör kommandona och visar resultatet i-konsolen.
 - Host04 – visar hur du skapar ett interaktivt konsolbaserade värd program som läser kommandon från kommando raden, kör kommandona och visar resultatet i-konsolen. Detta värd program har även stöd för att Visa prompter som gör att användaren kan ange flera alternativ.
-- Host05 – visar hur du skapar ett interaktivt konsolbaserade värd program som läser kommandon från kommando raden, kör kommandona och visar resultatet i-konsolen. Detta värd program stöder även anrop till fjärrdatorer med hjälp av `Enter-PsSession`-och `Exit-PsSession`-cmdletar.
+- Host05 – visar hur du skapar ett interaktivt konsolbaserade värd program som läser kommandon från kommando raden, kör kommandona och visar resultatet i-konsolen. Detta värd program stöder även anrop till fjärrdatorer med hjälp `Enter-PsSession` av `Exit-PsSession` cmdletarna och.
 - Host06 – visar hur du skapar ett interaktivt konsolbaserade värd program som läser kommandon från kommando raden, kör kommandona och visar resultatet i-konsolen. I det här exemplet används dessutom Tokenizer-API: er för att ange färgen på texten som anges av användaren.
 
 #### <a name="provider-samples"></a>Exempel på providers
 
 - AccessDBProviderSample01 – visar hur du deklarerar en leverantörs klass som härleds direkt från CmdletProvider-klassen. Den ingår bara här för fullständighet.
 
-- AccessDBProviderSample02 – visar hur du skriver över NewDrive-och RemoveDrive-metoderna för att stödja anrop till `New-PSDrive` och `Remove-PSDrive`-cmdlet: ar. Provider-klassen i det här exemplet härleds från klassen DriveCmdletProvider.
+- AccessDBProviderSample02 – visar hur du skriver över NewDrive-och RemoveDrive-metoderna för att stödja anrop `New-PSDrive` till `Remove-PSDrive` cmdletarna och. Provider-klassen i det här exemplet härleds från klassen DriveCmdletProvider.
 
-- AccessDBProviderSample03 – visar hur du skriver över getItem,-och SetItem-metoderna för att stödja anrop till `Get-Item` och `Set-Item`-cmdlet: ar. Provider-klassen i det här exemplet härleds från klassen ItemCmdletProvider.
+- AccessDBProviderSample03 – visar hur du skriver över getItem,-och SetItem-metoderna för att stödja anrop `Get-Item` till `Set-Item` cmdletarna och. Provider-klassen i det här exemplet härleds från klassen ItemCmdletProvider.
 
-- AccessDBProviderSample04 – visar hur du skriver över container metoder för att stödja anrop till `Copy-Item`-, `Get-ChildItem`-, `New-Item`-och `Remove-Item`-cmdletar. Dessa metoder bör implementeras när data lagret innehåller objekt som är behållare. En behållare är en grupp underordnade objekt under ett gemensamt överordnat objekt. Provider-klassen i det här exemplet härleds från klassen ItemCmdletProvider.
+- AccessDBProviderSample04 – visar hur du skriver över container metoder för att stödja anrop till `Copy-Item` `Get-ChildItem` `New-Item` cmdletarna,, och `Remove-Item` . Dessa metoder bör implementeras när data lagret innehåller objekt som är behållare. En behållare är en grupp underordnade objekt under ett gemensamt överordnat objekt. Provider-klassen i det här exemplet härleds från klassen ItemCmdletProvider.
 
-- AccessDBProviderSample05 – visar hur du skriver över container metoder för att stödja anrop till `Move-Item` och `Join-Path`-cmdletar. Dessa metoder bör implementeras när användaren behöver flytta objekt i en behållare och om data lagret innehåller kapslade behållare. Provider-klassen i det här exemplet härleds från klassen NavigationCmdletProvider.
+- AccessDBProviderSample05 – visar hur du skriver över container metoder för att stödja anrop till `Move-Item` `Join-Path` cmdletarna och. Dessa metoder bör implementeras när användaren behöver flytta objekt i en behållare och om data lagret innehåller kapslade behållare. Provider-klassen i det här exemplet härleds från klassen NavigationCmdletProvider.
 
-- AccessDBProviderSample06 – visar hur du skriver över innehålls metoder för att stödja anrop till `Clear-Content`-, `Get-Content`-och `Set-Content`-cmdletar. Dessa metoder bör implementeras när användaren behöver hantera innehållet i objekten i data lagret. Provider-klassen i det här exemplet härleds från NavigationCmdletProvider-klassen och implementerar IContentCmdletProvider-gränssnittet.
+- AccessDBProviderSample06 – visar hur du skriver över innehålls metoder för att stödja anrop till `Clear-Content` `Get-Content` `Set-Content` cmdletarna, och. Dessa metoder bör implementeras när användaren behöver hantera innehållet i objekten i data lagret. Provider-klassen i det här exemplet härleds från NavigationCmdletProvider-klassen och implementerar IContentCmdletProvider-gränssnittet.

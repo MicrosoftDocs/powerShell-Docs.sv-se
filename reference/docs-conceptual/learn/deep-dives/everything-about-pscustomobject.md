@@ -1,14 +1,14 @@
 ---
 title: Allt du ville veta om PSCustomObject
 description: PSCustomObject är ett enkelt sätt att skapa strukturerade data.
-ms.date: 05/23/2020
+ms.date: 07/29/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: fbc8b5b6d2cfafaa75fa820f420762a1804074ac
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 9a5cab7e662ef89b6565a29079ce1d5a657f94d0
+ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149847"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87410146"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>Allt du ville veta om PSCustomObject
 
@@ -71,7 +71,7 @@ På så sätt är det ganska lite långsammare, men det kan vara det bästa alte
 
 ### <a name="saving-to-a-file"></a>Spara till en fil
 
-Jag hittar det bästa sättet att spara en hash-fil i en fil är att spara den som JSON. Du kan importera tillbaka den till en`[PSCusomObject]`
+Jag hittar det bästa sättet att spara en hash-fil i en fil är att spara den som JSON. Du kan importera tillbaka den till en `[PSCustomObject]`
 
 ```powershell
 $myObject | ConvertTo-Json -depth 1- | Set-Content -Path $Path
@@ -139,7 +139,7 @@ $myObject.$property
 
 Jag vet att det ser konstigt ut, men det fungerar.
 
-### <a name="convert-pscustomboject-into-a-hashtable"></a>Konvertera pscustomboject till en hash-form
+### <a name="convert-pscustombobject-into-a-hashtable"></a>Konvertera PSCustombObject till en hash-form
 
 Om du vill fortsätta från det sista avsnittet kan du dynamiskt gå igenom egenskaperna och skapa en hash-grupp från dem.
 
@@ -254,6 +254,9 @@ $myObject = [PSCustomObject]@{
 ```
 
 Jag älskar hur bra det här passar in i språket. Nu när vi har ett objekt med rätt typ namn kan vi göra några fler saker.
+
+> [!NOTE]
+> Du kan också skapa anpassade PowerShell-typer med PowerShell-klasser. Mer information finns i [Översikt över PowerShell-klass](/powershell/module/Microsoft.PowerShell.Core/About/about_Classes).
 
 ## <a name="using-defaultpropertyset-the-long-way"></a>Använda DefaultPropertySet (det långa sättet)
 

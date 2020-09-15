@@ -1,21 +1,20 @@
 ---
-ms.date: 12/12/2018
+ms.date: 07/08/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: Get-test-set
-ms.openlocfilehash: bf409f71c07c434fbc7389789e16575868d21b42
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: f7b7e947a85832365a783e40c25a25bfaa9fff8d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278433"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771523"
 ---
 # <a name="get-test-set"></a>Get-test-set
 
 >Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
-![Hämta, testa och tillämpa](media/get-test-set/get-test-set.png)
-
-PowerShell Desired State Configuration är konstruerad runt en **Get**-, **test**-och **set** -process. DSC- [resurser](resources.md) innehåller båda metoder för att slutföra var och en av dessa åtgärder. I en [konfiguration](../configurations/configurations.md)definierar du resurs block för att fylla i nycklar som blir parametrar för en resurs **Get**-, **test**-och **set** -metoder.
+PowerShell Desired State Configuration är konstruerad runt en **Get**-, **test**-och **set** -process. DSC- [resurser](resources.md) innehåller båda metoder för att slutföra var och en av dessa åtgärder.
+I en [konfiguration](../configurations/configurations.md)definierar du resurs block för att fylla i nycklar som blir parametrar för en resurs **Get**-, **test**-och **set** -metoder.
 
 Detta är syntaxen för ett **tjänst** resurs block. **Tjänst** resursen konfigurerar Windows-tjänster.
 
@@ -40,55 +39,55 @@ Service [String] #ResourceName
 Metoderna **Get**, **test**och **set** för **tjänst** resursen kommer att ha parameter block som accepterar dessa värden.
 
 ```powershell
-    param
-    (
-        [parameter(Mandatory = $true)]
-        [ValidateNotNullOrEmpty()]
-        [System.String]
-        $Name,
+param
+(
+    [parameter(Mandatory = $true)]
+    [ValidateNotNullOrEmpty()]
+    [System.String]
+    $Name,
 
-        [System.String]
-        [ValidateSet("Automatic", "Manual", "Disabled")]
-        $StartupType,
+    [System.String]
+    [ValidateSet("Automatic", "Manual", "Disabled")]
+    $StartupType,
 
-        [System.String]
-        [ValidateSet("LocalSystem", "LocalService", "NetworkService")]
-        $BuiltInAccount,
+    [System.String]
+    [ValidateSet("LocalSystem", "LocalService", "NetworkService")]
+    $BuiltInAccount,
 
-        [System.Management.Automation.PSCredential]
-        [ValidateNotNull()]
-        $Credential,
+    [System.Management.Automation.PSCredential]
+    [ValidateNotNull()]
+    $Credential,
 
-        [System.String]
-        [ValidateSet("Running", "Stopped")]
-        $State="Running",
+    [System.String]
+    [ValidateSet("Running", "Stopped")]
+    $State="Running",
 
-        [System.String]
-        [ValidateNotNullOrEmpty()]
-        $DisplayName,
+    [System.String]
+    [ValidateNotNullOrEmpty()]
+    $DisplayName,
 
-        [System.String]
-        [ValidateNotNullOrEmpty()]
-        $Description,
+    [System.String]
+    [ValidateNotNullOrEmpty()]
+    $Description,
 
-        [System.String]
-        [ValidateNotNullOrEmpty()]
-        $Path,
+    [System.String]
+    [ValidateNotNullOrEmpty()]
+    $Path,
 
-        [System.String[]]
-        [ValidateNotNullOrEmpty()]
-        $Dependencies,
+    [System.String[]]
+    [ValidateNotNullOrEmpty()]
+    $Dependencies,
 
-        [System.String]
-        [ValidateSet("Present", "Absent")]
-        $Ensure="Present"
-    )
+    [System.String]
+    [ValidateSet("Present", "Absent")]
+    $Ensure="Present"
+)
 ```
 
 > [!NOTE]
 > Språket och metoden som används för att definiera resursen bestämmer hur metoderna **Get**, **test**och **set** ska definieras.
 
-Eftersom **tjänst** resursen bara har en nödvändig nyckel (`Name`) kan en **tjänst** block resurs vara så enkel som detta:
+Eftersom **tjänst** resursen bara har en nödvändig nyckel ( `Name` ) kan en **tjänst** block resurs vara så enkel som detta:
 
 ```powershell
 Configuration TestConfig
@@ -104,7 +103,7 @@ Configuration TestConfig
 }
 ```
 
-När du kompilerar konfigurationen ovan lagras de värden som du anger för en nyckel i filen ". MOF" som genereras. Mer information finns i [MOF](/windows/desktop/wmisdk/managed-object-format--mof-).
+När du kompilerar konfigurationen ovan lagras de värden som du anger för en nyckel i den `.mof` fil som genereras. Mer information finns i [MOF](/windows/desktop/wmisdk/managed-object-format--mof-).
 
 ```
 instance of MSFT_ServiceResource as $MSFT_ServiceResource1ref
@@ -121,13 +120,14 @@ ModuleVersion = "1.0";
 };
 ```
 
-När den används kommer den [lokala Configuration Manager](../managing-nodes/metaConfig.md) (LCM) att läsa värdet "Spooler" från filen ". MOF" och skicka den till `-Name` -parametern för **Get**-, **test**-och **set** -metoderna för **tjänst** resursens instans "tjänst".
+När den används, kommer den [lokala Configuration Manager](../managing-nodes/metaConfig.md) (LCM) att läsa värdet "Spooler" från `.mof` filen och skicka den till **Name** -parametern för **Get**-, **test**-och **set** -instansen för **tjänst** resursen.
 
 ## <a name="get"></a>Hämta
 
-**Get** -metoden för en resurs, hämtar resursens tillstånd som den är konfigurerad på målnoden. Det här status returneras som en [hash-hash](/powershell/module/microsoft.powershell.core/about/about_hash_tables). Nycklarna i **hash** -tabellen är de konfigurerbara värden eller parametrarna som resursen accepterar.
+**Get** -metoden för en resurs, hämtar resursens tillstånd som den är konfigurerad på målnoden. Det här status returneras som en [hash-hash](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
+Nycklarna i **hash** -tabellen är de konfigurerbara värden eller parametrarna som resursen accepterar.
 
-**Get** -metoden mappar direkt till [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) -cmdlet: en. När du anropar `Get-DSCConfiguration`kör LCM **Get** -metoden för varje resurs i den aktuella konfigurationen. LCM använder nyckel värden som lagras i filen ". MOF" som parametrar för varje motsvarande resurs instans.
+**Get** -metoden mappar direkt till [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) -cmdlet: en. När du anropar `Get-DSCConfiguration` Kör LCM **Get** -metoden för varje resurs i den aktuella konfigurationen. LCM använder de nyckel värden som lagras i `.mof` filen som parametrar för varje motsvarande resurs instans.
 
 Detta är exempel på utdata från en **tjänst** resurs som konfigurerar "Spooler"-tjänsten.
 
@@ -177,10 +177,9 @@ Service [String] #ResourceName
 
 ## <a name="test"></a>Testa
 
-**Test** metoden för en resurs bestämmer om målnoden för närvarande är kompatibel med resursens *önskade tillstånd*. **Test** metoden returnerar `$True` eller `$False` visar om noden är kompatibel.
-När du anropar [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)anropar LCM **test** metoden för varje resurs i den aktuella konfigurationen. LCM använder nyckel värden som lagras i filen ". MOF" som parametrar för varje motsvarande resurs instans.
+**Test** metoden för en resurs bestämmer om målnoden för närvarande är kompatibel med resursens _önskade tillstånd_. **Test** metoden returnerar `$true` eller `$false` visar om noden är kompatibel. När du anropar [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)anropar LCM **test** metoden för varje resurs i den aktuella konfigurationen. LCM använder nyckel värden som lagras i filen ". MOF" som parametrar för varje motsvarande resurs instans.
 
-Om resultatet av en enskild resurs **test** är `$False` `Test-DSCConfiguration` returneras `$False` anger att noden inte är kompatibel. Om alla **test** metoder för resursen returnerar `$True`, `Test-DSCConfiguration` returneras `$True` för att indikera att noden är kompatibel.
+Om resultatet av en enskild resurs **test** är `$false` `Test-DSCConfiguration` returneras `$false` anger att noden inte är kompatibel. Om alla **test** metoder `$true` för resursen returnerar, `Test-DSCConfiguration` returneras `$true` för att indikera att noden är kompatibel.
 
 ```powershell
 Test-DSCConfiguration
@@ -190,7 +189,7 @@ Test-DSCConfiguration
 True
 ```
 
-`-Detailed` Parametern har lagts till från och med PowerShell 5,0. Ange `-Detailed` orsaker `Test-DSCConfiguration` till att returnera ett objekt som innehåller samlings resultat för kompatibla och icke-kompatibla resurser.
+Från och med PowerShell 5,0 lades den **detaljerade** parametern till. Ange **detaljerade** orsaker `Test-DSCConfiguration` till att returnera ett objekt som innehåller samlings resultat för kompatibla och icke-kompatibla resurser.
 
 ```powershell
 Test-DSCConfiguration -Detailed
@@ -206,9 +205,9 @@ Mer information finns i [test-DSCConfiguration](/powershell/module/psdesiredstat
 
 ## <a name="set"></a>Ange
 
-**Set** -metoden för en resurs försöker tvinga noden att bli kompatibel med resursens *önskade tillstånd*. **Set** -metoden är avsedd att vara **idempotenta**, vilket innebär att **uppsättningen** kan köras flera gånger och alltid får samma resultat utan fel.  När du kör [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration)växlar LCM genom varje resurs i den aktuella konfigurationen. LCM hämtar nyckel värden för den aktuella resurs instansen från filen ". MOF" och använder dem som parametrar för **test** metoden. Om **test** metoden returnerar `$True`, är noden kompatibel med den aktuella resursen och **set** -metoden hoppas över. Om **testet** returnerar `$False`är noden icke-kompatibel.  LCM skickar resurs instansens nyckel värden som parametrar till resursens **set** -Metod och återställer noden till efterlevnad.
+**Set** -metoden för en resurs försöker tvinga noden att bli kompatibel med resursens *önskade tillstånd*. **Set** -metoden är avsedd att vara **idempotenta**, vilket innebär att **uppsättningen** kan köras flera gånger och alltid får samma resultat utan fel. När du kör [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration)växlar LCM genom varje resurs i den aktuella konfigurationen. LCM hämtar nyckel värden för den aktuella resurs instansen från filen ". MOF" och använder dem som parametrar för **test** metoden. Om **test** metoden returnerar `$true` , är noden kompatibel med den aktuella resursen och **set** -metoden hoppas över. Om **testet** returnerar `$false` är noden icke-kompatibel. LCM skickar resurs instansens nyckel värden som parametrar till resursens **set** -Metod och återställer noden till efterlevnad.
 
-Genom att ange `-Verbose` parametrarna `-Wait` och kan du se förloppet för `Start-DSCConfiguration` cmdleten. I det här exemplet är noden redan kompatibel. `Verbose` Utdata anger att **set** -metoden hoppades över.
+Genom att ange **utförlig** och **wait** -parametrarna kan du se förloppet för `Start-DSCConfiguration` cmdleten. I det här exemplet är noden redan kompatibel. `Verbose`Utdata anger att **set** -metoden hoppades över.
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -UseExisting
@@ -237,6 +236,6 @@ VERBOSE: Time taken for configuration job to complete is 1.379 seconds
 
 ## <a name="see-also"></a>Se även
 
-- [Översikt över Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
+- [Översikt över Azure Automation DSC](/azure/automation/automation-dsc-overview)
 - [Konfigurera en SMB-pull-server](../pull-server/pullServerSMB.md)
 - [Konfigurera en pull-klient](../pull-server/pullClientConfigID.md)

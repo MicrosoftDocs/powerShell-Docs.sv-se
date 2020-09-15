@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC WindowsFeature-resurs
-ms.openlocfilehash: 7f9b200b4d10aef6c8a3f76c497f4d60e8062cb5
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: b15b267c6898697816b386a381e5a6d59acd492a
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557405"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464119"
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature-resurs
 
@@ -24,7 +24,6 @@ WindowsFeature [string] #ResourceName
     [ Credential = [PSCredential] ]
     [ IncludeAllSubFeature = [bool] ]
     [ LogPath = [string] ]
-    [ Source = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present }  ]
     [ PsDscRunAsCredential = [PSCredential] ]
@@ -39,7 +38,6 @@ WindowsFeature [string] #ResourceName
 |Autentiseringsuppgift |Anger de autentiseringsuppgifter som ska användas för att lägga till eller ta bort rollen eller funktionen. |
 |IncludeAllSubFeature |Ange den här egenskapen till för att se till att `$true` alla nödvändiga underfunktioner har statusen för den funktion som du anger med egenskapen **Name** . |
 |LogPath |Anger sökvägen till en loggfil där du vill att resurs leverantören ska logga åtgärden. |
-|Källa |Anger platsen för den käll fil som ska användas för installation, om det behövs. |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 

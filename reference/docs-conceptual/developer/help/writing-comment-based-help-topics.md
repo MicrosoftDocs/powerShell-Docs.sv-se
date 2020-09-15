@@ -1,19 +1,12 @@
 ---
-title: Skriva kommentarer baserade hjälp avsnitt | Microsoft Docs
-ms.custom: ''
+title: Skriva kommentarsbaserade hjälpavsnitt
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e619ab16-90ad-46e9-9bde-d6dce492ba56
-caps.latest.revision: 4
-ms.openlocfilehash: d740c0028fd2d4ddd83fe97d66ea45aa6300e16b
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: f29a30d27eba2b84883c4c2bd3cee68349c94e19
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83561043"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893109"
 ---
 # <a name="writing-comment-based-help-topics"></a>Skriva kommentarsbaserade hjälpavsnitt
 

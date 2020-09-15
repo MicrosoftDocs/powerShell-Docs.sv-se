@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-miljö-resurs
-ms.openlocfilehash: 5670646b6e94019f436d85296deff4de8da920f6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d8519a66d457767dcbc0e08b01a69a9264997479
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560363"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464425"
 ---
 # <a name="dsc-environment-resource"></a>DSC-miljö-resurs
 
@@ -22,6 +22,7 @@ Environment [string] #ResourceName
 {
     Name = [string]
     [ Path = [bool] ]
+    [ Target = [string] { Process | Machine } ]
     [ Value = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present }  ]
@@ -35,6 +36,7 @@ Environment [string] #ResourceName
 |---|---|
 |Name |Anger namnet på den miljö variabel som du vill säkerställa ett speciellt tillstånd för. |
 |Sökväg |Definierar den miljö variabel som konfigureras. Ange den här egenskapen till `$true` om variabeln är **sökvägsvariabeln** . annars anger du den som `$false` . Standardvärdet är `$false`. Om variabeln som konfigureras är **sökvägsvariabeln,** läggs värdet som anges via egenskapen **Value** till i det befintliga värdet. |
+|Mål| Anger var variabeln ska hämtas: datorn eller processen. Om båda anges returneras bara värdet från datorn. Standardvärdet är båda eftersom det är standardvärdet för resten av resursen. |
 |Värde |Värdet som ska tilldelas miljövariabeln. |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper

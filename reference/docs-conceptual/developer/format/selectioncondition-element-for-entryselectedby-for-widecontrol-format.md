@@ -1,25 +1,18 @@
 ---
 title: SelectionCondition-element för EntrySelectedBy för WideControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b7a9f086-b1ca-4400-9be7-9ec1ec8880f3
-caps.latest.revision: 11
-ms.openlocfilehash: f20679e3392b99a049c075f24c7712262bab08e1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4115ad1ee8729ea4fc16bc19698018d2f4ed9be1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355771"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772713"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-widecontrol-format"></a>SelectionCondition-element för EntrySelectedBy för WideControl (format)
 
 Definierar det villkor som måste finnas för att den här definitionen ska kunna användas. Det finns ingen gräns för hur många urvals villkor som kan anges för en bred post definition.
 
-Konfigurations element (format) ViewDefinitions element (format) View-element (format) WideControl-element (format) WideEntries-element (format) WideEntry element (format) EntrySelectedBy-element för WideEntry (format) SelectionCondition-element för EntrySelectedBy för WideEntry (format)
+Konfigurations element (format) ViewDefinitions element (format) Visa element (format) WideControl-element (format) WideEntries-element (format) WideEntry element (format) EntrySelectedBy-element för WideEntry (format) SelectionCondition-element för EntrySelectedBy (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,11 +27,11 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `SelectionCondition`-elementet. Du måste ange ett enskilt `PropertyName`-eller `ScriptBlock`-element. `SelectionSetName`-och `TypeName`-element är valfria. Du kan ange ett av båda elementen.
+I följande avsnitt beskrivs attribut, underordnade element och `SelectionCondition` elementets överordnade element. Du måste ange ett enskilt `PropertyName` eller- `ScriptBlock` element. `SelectionSetName` `TypeName` Elementen och är valfria. Du kan ange ett av båda elementen.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -55,7 +48,7 @@ Ingen.
 |-------------|-----------------|
 |[EntrySelectedBy-element för WideEntry (format)](./entryselectedby-element-for-wideentry-format.md)|Definierar de .NET-typer som använder den här breda posten eller det villkor som måste finnas för att den här posten ska kunna användas.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Varje bred post måste ha minst ett typ namn, en urvals uppsättning eller ett urvals villkor definierat.
 
@@ -85,4 +78,4 @@ Mer information om andra komponenter i en bred vy finns i [skapa en bred vy](./c
 
 [Elementet TypeName för SelectionCondition för EntrySelectedBy för WideEntry (format)](./typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

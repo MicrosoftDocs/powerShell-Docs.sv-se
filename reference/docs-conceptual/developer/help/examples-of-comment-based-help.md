@@ -1,19 +1,12 @@
 ---
-title: Exempel på kommenterings-baserad hjälp | Microsoft Docs
-ms.custom: ''
+title: Exempel på kommentarsbaserad hjälp
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
-caps.latest.revision: 4
-ms.openlocfilehash: fbaea91c12eede70d30e29dce3fd2d36d7f55994
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: fe5d054c84952367a4e7c2d5d9e32551a4e5c3a8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564848"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772305"
 ---
 # <a name="examples-of-comment-based-help"></a>Exempel på kommentarsbaserad hjälp
 
@@ -71,13 +64,13 @@ function Add-Extension
 }
 ```
 
-Följande utdata visar resultatet av ett Get-Help-kommando som visar hjälpen för funktionen Lägg till tillägg.
+Följande utdata visar resultatet av ett `Get-Help` kommando som visar hjälpen för `Add-Extension` funktionen.
 
 ```powershell
 C:\PS> get-help add-extension -full
 ```
 
-```output
+```Output
         NAME
             Add-Extension
 
@@ -145,7 +138,7 @@ C:\PS> get-help add-extension -full
 
 Följande exempel funktion innehåller kommenterings-baserad hjälp.
 
-Lägg märke till de tomma raderna mellan stängningen **#>** och `Param` instruktionen. I ett skript som saknar `Param` instruktion måste det finnas minst två tomma rader mellan den sista kommentaren i hjälp avsnittet och den första funktions deklarationen. Utan dessa tomma rader kan du få hjälp med att associera hjälp avsnittet med funktionen i stället för skriptet.
+Lägg märke till de tomma raderna mellan stängningen **#>** och `Param` instruktionen. I ett skript som saknar `Param` instruktion måste det finnas minst två tomma rader mellan den sista kommentaren i hjälp avsnittet och den första funktions deklarationen. Utan dessa tomma rader `Get-Help` associeras hjälp avsnittet med funktionen i stället för skriptet.
 
 ```powershell
 <#
@@ -185,13 +178,13 @@ param ([string]$InputPath, [string]$OutPutPath)
 function Get-Data { }
 ```
 
-Följande kommando hämtar skript hjälpen. Eftersom skriptet inte är n en katalog som anges i miljövariabeln PATH, måste kommandot Get-Help som hämtar skript-hjälpen ange skript Sök vägen.
+Följande kommando hämtar skript hjälpen. Eftersom skriptet inte finns i en katalog som anges i miljövariabeln PATH, `Get-Help` måste kommandot som hämtar skript-hjälpen ange skript Sök vägen.
 
 ```powershell
 C:\PS> get-help c:\ps-test\update-month.ps1 -full
 ```
 
-```output
+```Output
             NAME
                 C:\ps-test\Update-Month.ps1
 
@@ -257,7 +250,7 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
 
 ## <a name="example-3-parameter-descriptions-in-a-param-statement"></a>Exempel 3: parameter beskrivningar i en param-instruktion
 
-Det här exemplet visar hur du infogar parameterdescriptions i `Param` instruktionen för en funktion eller ett skript. Det här formatet är mest användbart när parameter beskrivningar är korta.
+I det här exemplet visas hur du infogar parameter beskrivningar i `Param` instruktionen för en funktion eller ett skript. Det här formatet är mest användbart när parameter beskrivningar är korta.
 
 ```powershell
 function Add-Extension
@@ -282,11 +275,11 @@ function Add-Extension
     #>
 ```
 
-Resultatet är detsamma som resultatet till exempel 1. Get-Help tolkar parameter beskrivningar som om de åtföljs av `.Parameter` nyckelordet.
+Resultatet är detsamma som resultatet till exempel 1. `Get-Help` tolkar parameter beskrivningar som om de åtföljs av `.Parameter` nyckelordet.
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>Exempel 4: omdirigera till en XML-fil
 
-Du kan skriva XML-baserade hjälp avsnitt för funktioner och skript. Även om det är enklare att implementera en kommenterad hjälp, krävs det en XML-baserad hjälp om du vill ha mer exakt kontroll över hjälp innehållet eller om du översätter hjälp ämnen till flera språk. I följande exempel visas de första raderna i skriptet Update-Month. ps1. Skriptet använder `.ExternalHelp` nyckelordet för att ange sökvägen till ett XML-baserat hjälp avsnitt för skriptet.
+Du kan skriva XML-baserade hjälp avsnitt för funktioner och skript. Även om det är enklare att implementera en kommenterad hjälp, krävs det en XML-baserad hjälp om du vill ha mer exakt kontroll över hjälp innehållet eller om du översätter hjälp ämnen till flera språk. I följande exempel visas de första raderna i `Update-Month.ps1` skriptet. Skriptet använder `.ExternalHelp` nyckelordet för att ange sökvägen till ett XML-baserat hjälp avsnitt för skriptet.
 
 ```powershell
 #  .ExternalHelp C:\MyScripts\Update-Month-Help.xml
@@ -311,7 +304,7 @@ function Add-Extension
 
 ## <a name="example-5--redirecting-to-a-different-help-topic"></a>Exempel 5: omdirigera till ett annat hjälp avsnitt
 
-Följande kod är ett utdrag från början av den inbyggda `Help` funktionen i Windows PowerShell, som visar en skärm med hjälp text i taget. Eftersom hjälp avsnittet för cmdleten Get-Help beskriver Help-funktionen, använder Help-funktionen `.ForwardHelpTargetName` `.ForwardHelpCategory` nyckelorden och för att omdirigera användaren till hjälp avsnittet om cmdleten Get-Help.
+Följande kod är ett utdrag från början av den inbyggda `Help` funktionen i PowerShell, som visar en skärm med hjälp text i taget. Eftersom hjälp avsnittet för cmdleten Get-Help beskriver Help-funktionen, använder Help-funktionen `.ForwardHelpTargetName` `.ForwardHelpCategory` nyckelorden och för att omdirigera användaren till hjälp avsnittet om cmdleten Get-Help.
 
 ```powershell
 function help
@@ -329,13 +322,13 @@ function help
     ...
 ```
 
-Följande kommando använder den här funktionen. När en användare skriver ett Get-Help-kommando för funktionen help, visar Get-Help hjälp avsnittet för cmdleten Get-Help.
+Följande kommando använder den här funktionen. När en användare skriver ett `Get-Help` kommando för `Help` funktionen, `Get-Help` visar hjälp avsnittet för `Get-Help` cmdleten.
 
 ```powershell
 C:\PS> get-help help
 ```
 
-```output
+```Output
             NAME
                 Get-Help
 

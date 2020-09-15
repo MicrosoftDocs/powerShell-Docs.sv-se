@@ -1,19 +1,12 @@
 ---
 title: ViewDefinitions-element (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 29840c10-2b30-4bb1-a8a0-ddf84d19c2d0
-caps.latest.revision: 18
-ms.openlocfilehash: c5ec80350c7707ccd41112ab5e1952e5dc198cca
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a108c4f8b03e3dec3905181b390aee2c82ab0028
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353419"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772492"
 ---
 # <a name="viewdefinitions-element-format"></a>ViewDefinitions-element (format)
 
@@ -32,25 +25,25 @@ Konfigurations element (format) ViewDefinitions-element (format-XML)
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `ViewDefinitions`-elementet. Det finns ingen gräns för antalet vyer som kan definieras i en formateringsinformation och de kan läggas till i vilken ordning som helst.
+I följande avsnitt beskrivs attributen, underordnade element och `ViewDefinitions` elementets överordnade element. Det finns ingen gräns för antalet vyer som kan definieras i en formateringsinformation och de kan läggas till i vilken ordning som helst.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[Visa element (format)](./view-element-format.md)|Definierar en vy som används för att visa ett eller flera .NET-objekt.|
+|[View-element (format)](./view-element-format.md)|Definierar en vy som används för att visa ett eller flera .NET-objekt.|
 
 ### <a name="parent-elements"></a>Överordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[Konfigurations element (format)](./configuration-element-format.md)|Representerar det översta elementet i en textfil.|
+|[Configuration-element (format)](./configuration-element-format.md)|Representerar det översta elementet i en textfil.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Mer information om komponenterna i de olika typerna av vyer finns i följande avsnitt:
 
@@ -64,7 +57,7 @@ Mer information om komponenterna i de olika typerna av vyer finns i följande av
 
 ## <a name="example"></a>Exempel
 
-I det här exemplet visas ett `ViewDefinitions`-element som innehåller de överordnade elementen för en tabellvy och en listvy.
+Det här exemplet visar ett `ViewDefinitions` element som innehåller de överordnade elementen för en tabellvy och en listvy.
 
 ```xml
 <Configuration>
@@ -81,9 +74,9 @@ I det här exemplet visas ett `ViewDefinitions`-element som innehåller de över
 
 ## <a name="see-also"></a>Se även
 
-[Konfigurations element (format)](./configuration-element-format.md)
+[Configuration-element (format)](./configuration-element-format.md)
 
-[Visa element (format)](./view-element-format.md)
+[View-element (format)](./view-element-format.md)
 
 [Skapa en tabellvy](./creating-a-table-view.md)
 
@@ -93,4 +86,4 @@ I det här exemplet visas ett `ViewDefinitions`-element som innehåller de över
 
 [Anpassade kontroller](./creating-custom-controls.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

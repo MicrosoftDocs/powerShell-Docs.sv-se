@@ -1,19 +1,12 @@
 ---
 title: Typ element för SelectionSet (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 4606fec0-ff31-4d36-af68-227405335ec3
-caps.latest.revision: 15
-ms.openlocfilehash: 0427367efa2c8a7e352d718706d1341a0c8e3621
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9978daefb3e97ab131774ca4dff633dde6b4dfbf
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358744"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772526"
 ---
 # <a name="types-element-for-selectionset-format"></a>Types-element för SelectionSet (format)
 
@@ -32,11 +25,11 @@ Konfigurations element (format) SelectionSets-element (format) SelectionSet elem
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `Types`-elementet. Det måste finnas minst ett underordnat element, men det finns ingen övre gräns för antalet underordnade element som kan läggas till.
+I följande avsnitt beskrivs attributen, underordnade element och `Types` elementets överordnade element. Det måste finnas minst ett underordnat element, men det finns ingen övre gräns för antalet underordnade element som kan läggas till.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -50,13 +43,13 @@ Ingen.
 |-------------|-----------------|
 |[SelectionSet-element (format)](./selectionset-element-format.md)|Definierar en uppsättning .NET-objekt som kan refereras till i uppsättningens namn.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 De objekt som definieras av det här elementet utgör en urvals uppsättning som kan användas av en vy, i en definition av en vy (vyer kan ha flera definitioner) eller när du anger ett urvals villkor.  Mer information om urvals uppsättningar finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
 
 ## <a name="example"></a>Exempel
 
-I det här exemplet visas ett `SelectionSet`-element som definierar fyra .NET-typer.
+Det här exemplet visar ett- `SelectionSet` element som definierar fyra .net-typer.
 
 ```xml
 <SelectionSets>
@@ -80,4 +73,4 @@ I det här exemplet visas ett `SelectionSet`-element som definierar fyra .NET-ty
 
 [Element av typen TypeName (format)](./typename-element-for-types-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

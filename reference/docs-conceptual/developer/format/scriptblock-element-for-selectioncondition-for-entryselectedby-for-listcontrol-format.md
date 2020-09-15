@@ -1,25 +1,18 @@
 ---
 title: Script block-element för SelectionCondition för EntrySelectedBy för ListControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 4a1adad7-e864-4892-9d26-a6476a9698d2
-caps.latest.revision: 7
-ms.openlocfilehash: b65d953169f6daf15fb617ce4d0303cf4cb584ee
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 56bd04c9af74bdaa7a186a208fc15a67cb08b004
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358927"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772866"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>ScriptBlock-element för SelectionCondition för EntrySelectedBy för ListControl (format)
 
-Anger det skript som utlöser villkoret. När det här skriptet utvärderas till `true`, uppfylls villkoret och list posten används.
+Anger det skript som utlöser villkoret. När det här skriptet utvärderas `true` , uppfylls villkoret och list posten används.
 
-Konfigurations element (format) ViewDefinitions element (format) View-element (format) ListControl-element (format) ListEntries-element (format) ListEntry element (format) EntrySelectedBy-element för ListEntry (format) SelectionCondition-element för EntrySelectedBy för ListEntry (format) script block-element för SelectionCondition för EntrySelectedBy för ListEntry (format)
+Konfigurations element (format) ViewDefinitions element (format) Visa element (format) ListControl-element (format) ListEntries-element (format) ListEntry-element (format) EntrySelectedBy-element för ListEntry (format) SelectionCondition element for EntrySelectedBy for ListEntry (format) script block-element för SelectionCondition för EntrySelectedBy (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,15 +22,15 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `ScriptBlock`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `ScriptBlock` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -49,7 +42,7 @@ Ingen.
 
 Ange det skript som utvärderas.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Urvals villkoret måste ange minst ett skript eller egenskaps namn som ska utvärderas, men det går inte att ange båda. (Mer information om hur urvals villkor kan användas finns i [definiera villkor för när en visnings post eller ett objekt används](./defining-conditions-for-displaying-data.md).)
 

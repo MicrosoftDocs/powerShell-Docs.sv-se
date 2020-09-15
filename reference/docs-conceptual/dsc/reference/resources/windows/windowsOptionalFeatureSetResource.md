@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC WindowsOptionalFeatureSet-resurs
-ms.openlocfilehash: 0930bd0c6d1955005ea607b610e004818c0ad06f
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: e4f88f1cae6d7ddb3596ab4f27eb3766259f1a31
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560159"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464170"
 ---
 # <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet-resurs
 
@@ -23,7 +23,6 @@ Använd den här resursen när du vill konfigurera ett antal Windows-valfria fun
 WindowsOptionalFeatureSet [string] #ResourceName
 {
     Name = [string[]]
-    [ Source = [string] ]
     [ RemoveFilesOnDisable = [bool] ]
     [ LogPath = [string] ]
     [ NoWindowsUpdateCheck = [bool] ]
@@ -39,7 +38,6 @@ WindowsOptionalFeatureSet [string] #ResourceName
 |Egenskap |Beskrivning |
 |---|---|
 |Name |Anger namnet på de funktioner som du vill se är aktiverade eller inaktiverade. |
-|Källa |Inte implementerat. |
 |NoWindowsUpdateCheck |Anger om DISM-kontakter Windows Update (WU) vid sökning efter källfiler för att aktivera funktioner. Om inte `$true` DISM kontaktar Wu. |
 |RemoveFilesOnDisable |Ange till `$true` om du vill ta bort alla filer som är associerade med funktionerna när **Se** till att de är inställda på **frånvarande**. |
 |Loggnivå |Den högsta utmatnings nivån som visas i loggarna. Godkända värden är: **ErrorsOnly**, **ErrorsAndWarning**och **ErrorsAndWarningAndInformation**. |

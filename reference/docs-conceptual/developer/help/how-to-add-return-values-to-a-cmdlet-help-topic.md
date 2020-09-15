@@ -1,33 +1,28 @@
 ---
-title: Så här lägger du till retur värden i en cmdlet hjälp avsnitt | Microsoft Docs
-ms.custom: ''
+title: Lägga till returvärden i ett cmdlet-hjälpavsnitt
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a52ab737-753c-4d04-8af7-758d5c805e18
-caps.latest.revision: 7
-ms.openlocfilehash: a5618b72827d8ef70201437c4a99ea8bf68cdfd3
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: c164556cd06b332d04857987360c98f740a150b5
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565551"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893364"
 ---
 # <a name="how-to-add-return-values-to-a-cmdlet-help-topic"></a>Lägga till returvärden i ett cmdlet-hjälpavsnitt
 
-I det här avsnittet beskrivs hur du lägger till ett utmatnings avsnitt i hjälp avsnittet om Windows PowerShell® cmdlet. I avsnittet Utdata visas .NET-klasserna för objekt som cmdleten returnerar eller passerar pipelinen.
+I det här avsnittet beskrivs hur du lägger till ett utmatnings avsnitt i hjälp avsnittet om PowerShell-cmdleten. I avsnittet **utdata** visas .net-klasserna för objekt som cmdleten returnerar eller passerar pipelinen.
 
-Det finns ingen gräns för antalet klasser som du kan lägga till i avsnittet utdata. Retur typerna för en cmdlet omges av ett \< kommando: returnValues>-noden, där varje klass omges av ett \< kommando: returnValue>-element.
+Det finns ingen gräns för antalet klasser som du kan lägga till i avsnittet **utdata** . Retur typerna för en cmdlet omges av en `<command:returnValues>` nod, med varje klass omgiven av ett- `<command:returnValue>` element.
 
-Om en cmdlet inte genererar några utdata kan du använda det här avsnittet för att visa att det inte finns några utdata. Till exempel, i stället för klass namnet, skriv "ingen" och ge en kort förklaring. Om cmdleten genererar utdata villkorligt använder du den här noden för att förklara villkoren och beskriva de villkorliga utdata.
+Om en cmdlet inte genererar några utdata kan du använda det här avsnittet för att visa att det inte finns några utdata. I stället för klass namnet skriver du till exempel **ingen** och ger en kort förklaring. Om cmdleten genererar utdata villkorligt använder du den här noden för att förklara villkoren och beskriva de villkorliga utdata.
 
-Schemat innehåller två \< MAML: description> element i varje \< kommando: returnValue>-element. Men `Get-Help` cmdleten visar bara innehållet i \< kommandot: returnValue>/ \< maml: Description> element.
+Schemat innehåller två `<maml:description>` element i varje `<command:returnValue>` element.
+Men `Get-Help` cmdleten visar bara innehållet i `<command:returnValue>/<maml:description>` elementet.
 
-Från och med Windows PowerShell 3,0 `Get-Help` visar cmdleten innehållet i \< MAML: URI>-elementet. Med det här elementet kan du dirigera användare till ämnen som beskriver .NET-klassen.
+Från och med PowerShell 3,0 `Get-Help` visar cmdleten innehållet i- `<maml:uri>` elementet.
+Med det här elementet kan du dirigera användare till ämnen som beskriver .NET-klassen.
 
-Följande XML visar>- \< noden MAML: returnValues.
+Följande XML visar `<maml:returnValues>` noden.
 
 ```xml
 <command:returnValues>
@@ -45,7 +40,7 @@ Följande XML visar>- \< noden MAML: returnValues.
 </command: returnValues>
 ```
 
-Följande XML visar ett exempel på hur du använder \< noden MAML: returnValues> för att dokumentera en utdatatyp.
+Följande XML visar ett exempel på hur du använder `<maml:returnValues>` noden för att dokumentera en utdatatyp.
 
 ```xml
 <command:returnValues>

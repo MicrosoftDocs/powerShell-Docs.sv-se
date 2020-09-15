@@ -1,19 +1,12 @@
 ---
-title: 'Uppdaterings bar hjälp redigering: steg för steg | Microsoft Docs'
-ms.custom: ''
+title: Uppdaterings bar hjälp redigering-steg-för-steg
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 10098160-c6b4-4339-b8ff-2c4f8cc0699b
-caps.latest.revision: 13
-ms.openlocfilehash: a5290265f3d729504983b95195c793b88c4a2613
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: c9214be3c3363a4e6354595b50cf76a17d49aa67
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810115"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893126"
 ---
 # <a name="updatable-help-authoring-step-by-step"></a>Redigering av uppdateringsbar hjälp: Steg för steg
 
@@ -33,7 +26,7 @@ Det första steget i att skapa en uppdaterings bar hjälp är att hitta en Inter
 
 Lägg till en **HelpInfoURI** -nyckel till modulen manifest. Nyckelns värde är Uniform Resource Identifier (URI) för platsen för XML-HelpInfo för modulen. För säkerhet måste adressen börja med "http" eller "https". URI: n måste ange en Internet plats, men får inte innehålla HelpInfo XML-filnamn.
 
-Ett exempel:
+Exempel:
 
 ```powershell
 
@@ -48,14 +41,10 @@ HelpInfoURI = 'https://go.microsoft.com/fwlink/?LinkID=0123'
 
 XML-HelpInfo innehåller URI: n för Internet platsen för dina hjälpfiler och versions numren för de senaste hjälpfilerna för modulen i varje GRÄNSSNITTs kultur som stöds. Alla Windows PowerShell-moduler har en HelpInfo XML-fil. När du uppdaterar dina hjälpfiler redigerar eller ersätter du HelpInfo XML-filen. du lägger inte till ett annat. Mer information finns i [så här skapar du en HelpInfo XML-fil](./how-to-create-a-helpinfo-xml-file.md).
 
-### <a name="step-4-sign-your-help-files"></a>Steg 4: signera dina hjälpfiler
+### <a name="step-4-create-cab-files"></a>Steg 4: skapa CAB-filer
 
-Digitala signaturer krävs inte, men de är en rekommendationer när du delar filer.
+Använd ett verktyg som skapar CAB- `.cab` filer, till exempel `MakeCab.exe` , för att skapa en CAB-fil som innehåller hjälpfilerna för modulen. Skapa en separat CAB-fil för hjälpfilerna i varje GRÄNSSNITTs kultur som stöds. Mer information finns i [så här förbereder du uppdaterings bara CAB-filer](./how-to-prepare-updatable-help-cab-files.md).
 
-### <a name="step-5-create-cab-files"></a>Steg 5: skapa CAB-filer
-
-Använd ett verktyg som skapar CAB-filer, till exempel MakeCab. exe, för att skapa en. CAB-fil som innehåller hjälpfilerna för modulen. Skapa en separat CAB-fil för hjälpfilerna i varje GRÄNSSNITTs kultur som stöds. Mer information finns i [så här förbereder du uppdaterings bara CAB-filer](./how-to-prepare-updatable-help-cab-files.md).
-
-### <a name="step-6-upload-your-files"></a>Steg 6: Ladda upp filer
+### <a name="step-5-upload-your-files"></a>Steg 5: Ladda upp filer
 
 Om du vill publicera nya eller uppdaterade hjälpfiler laddar du upp CAB-filerna till Internet platsen som anges av **HelpContentUri** -elementet i HelpInfo XML-filen. Ladda sedan upp XML-filen HelpInfo till den Internet plats som anges av värdet för **HelpInfoUri** -nyckeln i modulen manifest.

@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/14/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: MSFT_DSCLocalConfigurationManager-klass
-ms.openlocfilehash: 09b30edd48384c0e8412e0e6ee926a719249c5b8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 20c9ac5128fcfbbcb2113b89d9e5b53693744b45
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941469"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464289"
 ---
 # <a name="msft_dsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager-klass
 
@@ -34,12 +34,12 @@ class MSFT_DSCLocalConfigurationManager
 
 Klassen **MSFT_DSCLocalConfigurationManager** har dessa metoder.
 
-|Metod |Beskrivning |
+|Metoder |Description |
 |:--- |:---|
-| [ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| Använder konfigurations agenten för att tillämpa den konfiguration som väntar.|
-| [DisableDebugConfiguration](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| Inaktiverar fel sökning av DSC-resurs.|
-| [EnableDebugConfiguration](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| Aktiverar fel sökning av DSC-resurs.|
-| [GetConfiguration](msft-dsclocalconfigurationmanager-getconfiguration.md)| Skickar konfigurations dokumentet till den hanterade noden och använder **Get** -metoden för konfigurations agenten för att tillämpa konfigurationen.|
+| [ApplyConfiguration (boolesk)](msft-dsclocalconfigurationmanager-applyconfiguration.md)| Använder konfigurations agenten för att tillämpa den konfiguration som väntar.|
+| [DisableDebugConfiguration ()](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| Inaktiverar fel sökning av DSC-resurs.|
+| [EnableDebugConfiguration (boolesk)](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| Aktiverar fel sökning av DSC-resurs.|
+| [GetConfiguration ()](msft-dsclocalconfigurationmanager-getconfiguration.md)| Skickar konfigurations dokumentet till den hanterade noden och använder **Get** -metoden för konfigurations agenten för att tillämpa konfigurationen.|
 | [GetConfigurationResultOutput](msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)| Hämtar konfigurations agentens utdata som är relaterade till ett speciellt jobb.|
 | [GetConfigurationStatus](msft-dsclocalconfigurationmanager-getconfigurationstatus.md)| Hämta konfigurations status historik.|
 | [GetMetaConfiguration](msft-dsclocalconfigurationmanager-getmetaconfiguration.md)| Hämtar de LCM-inställningar som används för att kontrol lera konfigurations agenten.|

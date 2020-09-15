@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC ServiceSet-resurs
-ms.openlocfilehash: a071a8cdd4a7dc6fd050fc1b88901aa0ce428615
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: b51cfa86aa6d2114553a0eee681cb88ea93e213f
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563973"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464408"
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet-resurs
 

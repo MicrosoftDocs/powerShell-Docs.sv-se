@@ -1,25 +1,18 @@
 ---
 title: SelectionCondition-element för EntrySelectedBy for GroupBy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 6dc2093a-dc54-42c4-ada3-c8d089ba1e8e
-caps.latest.revision: 6
-ms.openlocfilehash: a6738a7c4c934b2d6a16695a711f7c6c80afdd2d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0930d8076c314c12cac6cdfa2b33716b7efeb6a9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358887"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772849"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-groupby-format"></a>SelectionCondition-element för EntrySelectedBy för GroupBy (format)
 
 Definierar ett villkor som måste finnas för att en kontroll definition ska kunna användas. Det här elementet används när du definierar hur en ny grupp av objekt visas.
 
-Konfigurations element (format) ViewDefinitions element (format) visnings element (format) GroupBy-element för View (format) CustomControl-element för GroupBy (format) CustomEntries-element för CustomControl for GroupBy (format) CustomEntry-element för CustomControl for GroupBy (format) EntrySelectedBy-element för CustomEntry för GroupBy (format) SelectionCondition-element för EntrySelectedBy för GroupBy (format)
+Konfigurations element (format) ViewDefinitions element (format) visnings element (format) GroupBy-element för View (format) CustomControl-element för GroupBy (format) CustomEntries-element för CustomControl for GroupBy (format) CustomEntry-element for CustomControl for groupby (format) EntrySelectedBy-element för CustomEntry (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,11 +27,11 @@ Konfigurations element (format) ViewDefinitions element (format) visnings elemen
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `SelectionCondition`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `SelectionCondition` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -55,7 +48,7 @@ Ingen.
 |-------------|-----------------|
 |[EntrySelectedBy-element för CustomEntry för GroupBy (format)](./entryselectedby-element-for-customentry-for-groupby-format.md)|Definierar de .NET-typer som använder den här kontroll definitionen eller det villkor som måste finnas för att den här definitionen ska kunna användas.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 När du definierar ett urvals villkor gäller följande krav:
 
@@ -67,9 +60,9 @@ Mer information om hur du använder urvals villkor finns i [definiera villkor f�
 
 ## <a name="see-also"></a>Se även
 
-[PropertyName-element för SelectionCondition för CustomControl för vy (format)](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+[PropertyName-element för SelectionCondition för CustomControl för View (format)](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
-[Script block-element för SelectionCondition för CustomControl för View (format)](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+[ScriptBlock-element för SelectionCondition för CustomControl för View (format)](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
 [SelectionSetName-element för SelectionCondition för anpassad kontroll för vy (format)](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
@@ -77,4 +70,4 @@ Mer information om hur du använder urvals villkor finns i [definiera villkor f�
 
 [EntrySelectedBy-element för CustomEntry för GroupBy (format)](./entryselectedby-element-for-customentry-for-groupby-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

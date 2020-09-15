@@ -1,19 +1,12 @@
 ---
 title: Elementet TypeName för typer (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0595b99e-b438-4240-b47b-555cf0316f33
-caps.latest.revision: 15
-ms.openlocfilehash: bd5baa03c2050b2c3bbe1d7697c253d923175d39
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 40fad73c66124d6c3b0d969b4268713a492c963a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358738"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772543"
 ---
 # <a name="typename-element-for-types-format"></a>TypeName-element för Types (format)
 
@@ -29,15 +22,15 @@ Konfigurations element (format) SelectionSets-element (format) SelectionSet-elem
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `TypeName`-elementet. Minst ett `TypeName`-element måste ingå i urvals uppsättningen.
+I följande avsnitt beskrivs attributen, underordnade element och `TypeName` elementets överordnade element. Minst ett `TypeName` element måste ingå i urvals uppsättningen.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -49,15 +42,15 @@ Ingen.
 
 Ange det fullständigt kvalificerade namnet för .NET-typen.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Du kan använda urvals uppsättningar när du har en uppsättning relaterade objekt som du vill referera till genom att använda ett enda namn, till exempel en uppsättning objekt som är relaterade till arv. När du definierar dina vyer kan du ange en uppsättning objekt genom att använda namnet på urvals uppsättningen i stället för att visa alla objekt i varje vy.
 
-Vanliga urvals uppsättningar anges med deras namn när du definierar vyerna för format filen. I dessa fall anger `SelectionSetName` underordnat element i `ViewSelectedBy`-elementet för vyn mängden. Olika poster i en vy kan dock också ange en markerings uppsättning som endast gäller för posten i vyn. Mer information om urvals uppsättningar finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
+Vanliga urvals uppsättningar anges med deras namn när du definierar vyerna för format filen. I dessa fall anger det `SelectionSetName` underordnade elementet för `ViewSelectedBy` vyns element uppsättning. Olika poster i en vy kan dock också ange en markerings uppsättning som endast gäller för posten i vyn. Mer information om urvals uppsättningar finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visas ett `SelectionSet`-element som definierar fyra .NET-typer.
+I följande exempel visas ett- `SelectionSet` element som definierar fyra .net-typer.
 
 ```
 <SelectionSets>
@@ -75,7 +68,7 @@ I följande exempel visas ett `SelectionSet`-element som definierar fyra .NET-ty
 
 ## <a name="see-also"></a>Se även
 
-[Definiera urvals uppsättningar](./defining-selection-sets.md)
+[Definiera valuppsättningar](./defining-selection-sets.md)
 
 [SelectionSet-element (format)](./selectionset-element-format.md)
 
@@ -83,4 +76,4 @@ I följande exempel visas ett `SelectionSet`-element som definierar fyra .NET-ty
 
 [Typ element (format)](./types-element-for-selectionset-format.md)
 
-[Skriva en Windows PowerShell-textfil](./writing-a-powershell-formatting-file.md)
+[Skriva en Windows PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: RollBack-metoden
-ms.openlocfilehash: 6452bdffd5160d9956576fb59c98e2f9ff7ddbbb
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 301b8926d2ebf1ebe524f52a67928d34e26d860e
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942638"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464340"
 ---
 # <a name="rollback-method"></a>RollBack-metoden
 
@@ -23,13 +23,13 @@ uint32 RollBack(
 
 ## <a name="parameters"></a>Parametrar
 
-*configurationNumber* \[i\] anger den begärda konfigurationen.
+**configurationNumber** \[ i \] anger den begärda konfigurationen.
 
 ## <a name="return-value"></a>Returvärde
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Detta är en statisk metod.
 

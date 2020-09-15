@@ -1,23 +1,16 @@
 ---
-title: Skriv Windows PowerShell-hjälp | Microsoft Docs
-ms.custom: ''
+title: Windows PowerShell-hjälp skrivs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 20cbf009-9633-476e-b0b3-5604117ef2dd
-caps.latest.revision: 4
-ms.openlocfilehash: adde7c205f26c9bb87307f7eaa56988cefccdeaf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8807fe48c6354022900738de0b912c55dec9febb
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "84514835"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86892905"
 ---
 # <a name="writing-windows-powershell-help"></a>Windows PowerShell-hjälp skrivs
 
-Det här dokumentet är avsett för alla som skriver hjälp innehåll för Windows PowerShell-cmdlets, providers och konceptuella ämnen som kan visas på kommando raden med hjälp av `Get-Help` cmdleten.
+Det här dokumentet är avsett för alla som skriver hjälp innehåll för PowerShell-cmdletar, providers och konceptuella ämnen som kan visas på kommando raden med hjälp av `Get-Help` cmdleten.
 
 ## <a name="cmdlet-help"></a>Cmdlet-hjälp
 

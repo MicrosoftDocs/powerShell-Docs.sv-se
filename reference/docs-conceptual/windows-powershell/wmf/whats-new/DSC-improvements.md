@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, inställning
 title: DSC-förbättringar i WMF 5.1
-ms.openlocfilehash: 78c15f453977384ba437b0bd69cd620eb1a29fbd
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 445d0f7bb54c6b21b6af26c4174f3d6422caf6dd
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810500"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771557"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Förbättringar i önskad tillstånds konfiguration (DSC) i WMF 5,1
 
@@ -36,7 +36,7 @@ I tidigare versioner av WMF skulle samtidiga registreringar/rapporterings begär
 
 ## <a name="enable-circular-log-on-esent-database-instance"></a>Aktivera cirkulär inloggning på en ESENT-databas instans
 
-I eariler-versionen av DSC-PullServer, fyller ESENT-databasens loggfiler upp disk utrymmet för PullServer eftersom databas instansen skapades utan cirkulär loggning. I den här versionen har du möjlighet att styra det cirkulära loggnings beteendet för instansen med hjälp av Web. config för pullserver. Som standard har CircularLogging angetts till TRUE.
+I eariler-versionen av DSC-PullServer, fyller ESENT-databasens loggfiler upp disk utrymmet för PullServer eftersom databas instansen skapades utan cirkulär loggning. I den här versionen har du möjlighet att styra det cirkulära loggnings beteendet för instansen med hjälp av web.config i pullserver. Som standard har CircularLogging angetts till TRUE.
 
 ```xml
 <appSettings>
@@ -286,7 +286,7 @@ Genom att ställa in ovanstående metaconfiguration på en nod kan du verifiera 
    - Hitta en `<moduleName>.cat` fil och verifiera signaturen med hjälp av `Get-AuthenticodeSignature` .
    - Verifiera att den certifikat utfärdare som autentiserat signeraren är betrodd.
    - Kontrol lera att innehållet i modulerna inte har ändrats med den nya cmdleten `Test-FileCatalog` .
-5. `Install-Module`att`$env:ProgramFiles\WindowsPowerShell\Modules\`
+5. `Install-Module` att `$env:ProgramFiles\WindowsPowerShell\Modules\`
 6. Process konfiguration
 
 > [!NOTE]
@@ -345,12 +345,12 @@ En konfiguration som levereras med push-teknik kan manipuleras på källan innan
   Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
   ```
 
-  ![ErrorUnsignedMofPushed](media/DSC-improvements/PushUnsignedMof.png)
+  ![Fel-osignerad MOF-fil har överförts](media/DSC-improvements/PushUnsignedMof.png)
 
 - Signera konfigurations filen med kod signerings certifikat.
 
-  ![SignMofFile](media/DSC-improvements/SignMofFile.png)
+  ![Signera MOF-filen](media/DSC-improvements/SignMofFile.png)
 
 - Försök att skicka den signerade MOF-filen.
 
-  ![PushSignedMofFile](media/DSC-improvements/PushSignedMof.png)
+  ![Skicka den signerade MOF-filen](media/DSC-improvements/PushSignedMof.png)

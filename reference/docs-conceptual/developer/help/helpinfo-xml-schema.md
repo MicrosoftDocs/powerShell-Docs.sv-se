@@ -1,19 +1,12 @@
 ---
-title: HelpInfo XML-schema | Microsoft Docs
-ms.custom: ''
+title: HelpInfo-XML-schema
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 74dcb396-c295-4457-b84c-4432bdaa8df3
-caps.latest.revision: 7
-ms.openlocfilehash: 3e2a113e120c61fab1ba76c4fd897ded67d13319
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: f94d053b8fc558d9efc13e6b9fbd597287970e38
+ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810836"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953258"
 ---
 # <a name="helpinfo-xml-schema"></a>HelpInfo-XML-schema
 
@@ -25,7 +18,7 @@ HelpInfo XML-filer baseras på följande XML-schema.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<schema targetNamespace="https://schemas.microsoft.com/powershell/help/2010/05" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="http://schemas.microsoft.com/powershell/help/2010/05" xmlns="http://www.w3.org/2001/XMLSchema">
   <element name="HelpInfo">
     <complexType>
       <sequence>
@@ -54,12 +47,12 @@ HelpInfo XML-filer baseras på följande XML-schema.
 
 XML-filen HelpInfo innehåller följande element.
 
-HelpContentURI innehåller URI för platsen för hjälpens CAB-filer för modulen. URI: n måste börja med http eller https. URI: n måste ange en Internet plats, men får inte innehålla CAB-filnamn. **HelpContentURI** -värdet kan vara samma eller något annat än värdet för **HelpInfoURI** .
+- **HelpContentURI** – innehåller URI för platsen för hjälpens CAB-filer för modulen. URI: n måste börja med http eller https. URI: n måste ange en Internet plats, men får inte innehålla CAB-filnamn. **HelpContentURI** -värdet kan vara samma eller något annat än värdet för **HelpInfoURI** .
 
-SupportedUICultures representerar modulens hjälpfiler i alla UI-kulturer. Innehåller **värdet** -element som representerar en uppsättning hjälpfiler för modulen i en angiven kultur för användar gränssnittet.
+- **SupportedUICultures** – visar modulens hjälpfiler i alla UI-kulturer. Innehåller **värdet** -element som representerar en uppsättning hjälpfiler för modulen i en angiven kultur för användar gränssnittet.
 
-Värdet representerar en uppsättning hjälpfiler för modulen i en angiven användar gränssnitts kultur. Lägg till ett **värdet** -element för varje gränssnitts kultur där hjälpfilerna skrivs.
+- **Värdet** – representerar en uppsättning hjälpfiler för modulen i en angiven användar gränssnitts kultur. Lägg till ett **värdet** -element för varje gränssnitts kultur där hjälpfilerna skrivs.
 
-UICultureName innehåller språk koden för den GRÄNSSNITTs kultur som hjälpfilerna skrivs till.
+- **UICultureName** – innehåller språk koden för den gränssnitts kultur som hjälpfilerna skrivs till.
 
-UICultureVersion innehåller 4 delar av versions nummer i "N1. N2. N3. N4 "-format som representerar versionen av CAB-filen för hjälp i användar gränssnitts kulturen. Öka det här versions numret när du överför nya CAB-filer för hjälpfiler i användar gränssnitts kulturen som anges av **UICultureName**. Mer information om det här värdet finns i "versions klass (system)" i MSDN.
+- **UICultureVersion** – innehåller ett 4-delar av versions numret i "N1. N2. N3. N4 "-format som representerar versionen av CAB-filen för hjälp i användar gränssnitts kulturen. Öka det här versions numret när du överför nya CAB-filer för hjälpfiler i användar gränssnitts kulturen som anges av **UICultureName**. Mer information om det här värdet finns i [versions klass](/dotnet/api/system.version).

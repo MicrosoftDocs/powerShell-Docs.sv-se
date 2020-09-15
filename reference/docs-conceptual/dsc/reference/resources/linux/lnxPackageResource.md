@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC för Linux nxPackage-resurs
-ms.openlocfilehash: 49eef4adc9700a13bfb1e96457d90898a353d60d
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: f61b337f6fbb8e2ea48128642874f050787fc576
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560839"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464493"
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>DSC för Linux nxPackage-resurs
 

@@ -1,25 +1,18 @@
 ---
 title: SelectionSetName-element för EntrySelectedBy för TableControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5dd0bd5d-f206-4cc6-a0f8-70700ee2c4b7
-caps.latest.revision: 8
-ms.openlocfilehash: 819906127e81355c45103ede85ef3608e1c1cfeb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e68aa74b201abf345e87411db6cb2787ddd4f72b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358846"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772696"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-tablecontrol-format"></a>SelectionSetName-element för EntrySelectedBy för TableControl (format)
 
 Anger en uppsättning .NET-typer. Använd den här posten i vyn tabell. Det finns ingen gräns för antalet markerings uppsättningar som kan anges för en post.
 
-Konfigurations element (format) ViewDefinitions element (format) View-element (format) TableControl-element (format) TableRowEntries-element (format) TableRowEntry element (format) EntrySelectedBy element (format) SelectionSetName-element för EntrySelectedBy för TableRowEntry (format)
+Konfigurations element (format) ViewDefinitions element (format) Visa element (format) TableControl-element (format) TableRowEntries-element (format) TableRowEntry-element (format) EntrySelectedBy element (format) SelectionSetName-element för EntrySelectedBy (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,11 +26,11 @@ I följande avsnitt beskrivs attribut, underordnade element och överordnade ele
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -49,7 +42,7 @@ Ingen.
 
 Ange namnet på urvals uppsättningen.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Urvals uppsättningar används vanligt vis när du vill definiera en grupp objekt som används i flera vyer. Du kanske till exempel vill skapa en tabellvy och en listvy för samma uppsättning objekt. Mer information om hur du definierar urvals uppsättningar finns i [definiera uppsättningar av objekt för en vy](./defining-selection-sets.md).
 
@@ -65,4 +58,4 @@ Mer information om komponenterna i en tabellvy finns i [skapa en tabellvy](./cre
 
 [Skapa en tabellvy](./creating-a-table-view.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

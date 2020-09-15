@@ -1,23 +1,16 @@
 ---
 title: Host02-exempel | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 9ab83bcb-2d31-4744-a8bc-2ee22e48fc1b
-caps.latest.revision: 17
-ms.openlocfilehash: cb21a4dd9bbc9ccd0f93ae6f7ecbc09cd89c29d3
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.openlocfilehash: ed95cdcdcf20de6687f463b9d560a69510638c79
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818098"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772270"
 ---
 # <a name="host02-sample"></a>Host02 – exempel
 
-Det här exemplet visar hur du skriver ett värd program som använder Windows PowerShell-körningsmiljön tillsammans med en anpassad värd implementering. Värd programmet ställer in värd kulturen på tyska, kör cmdleten [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) och visar resultatet som du ser dem genom att använda pwrsh. exe och sedan skriva ut aktuella data och tid på tyska.
+Det här exemplet visar hur du skriver ett värd program som använder Windows PowerShell-körningsmiljön tillsammans med en anpassad värd implementering. Värd programmet ställer in värd kulturen på tyska, kör cmdleten [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) och visar resultatet som du ser dem genom att använda pwrsh.exe och sedan skriva ut aktuella data och tid på tyska.
 
 ## <a name="requirements"></a>Krav
 

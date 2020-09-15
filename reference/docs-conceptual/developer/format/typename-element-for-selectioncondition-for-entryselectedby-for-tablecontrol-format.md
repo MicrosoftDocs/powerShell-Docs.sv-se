@@ -1,25 +1,18 @@
 ---
 title: Elementet TypeName för SelectionCondition för EntrySelectedBy för TableControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e97d56fb-4e35-447a-9282-26f10d0a4609
-caps.latest.revision: 11
-ms.openlocfilehash: fe65ac95cead7df0069ffdae666fb34b7309fbb6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b9367f0ea659b9dce8fe200a5a08873d53bc03a8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353454"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772594"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format"></a>TypeName-element för SelectionCondition för EntrySelectedBy för TableControl (format)
 
 Anger en .NET-typ som utlöser villkoret. När den här typen är närvarande uppfylls villkoret och tabell raden används.
 
-Konfigurations element (format) ViewDefinitions element (format) Visa element (format) TableControl-element (format) TableRowEntries-element (format) TableRowEntry element (format) EntrySelectedBy-element för TableRowEntry (format) SelectionCondition-element för EntrySelectedBy för TableRowEntry (format) elementet TypeName för SelectionCondition för EntrySelectedBy för TableRowEntry (format)
+Konfigurations element (format) ViewDefinitions element (format) View-element (format) TableControl-element (format) TableRowEntries-element (format) TableRowEntry-element (format) EntrySelectedBy-element för TableRowEntry (format) SelectionCondition-element för EntrySelectedBy för TableRowEntry (format) element för SelectionCondition (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,15 +22,15 @@ Konfigurations element (format) ViewDefinitions element (format) Visa element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `TypeName`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `TypeName` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -47,9 +40,9 @@ Ingen.
 
 ## <a name="text-value"></a>Textvärde
 
-Ange det fullständigt kvalificerade namnet för .NET-typen, t. ex. `System.IO.DirectoryInfo`.
+Ange det fullständigt kvalificerade namnet för .NET-typen, t `System.IO.DirectoryInfo` . ex..
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Urvals villkoret kan ange valfritt antal .NET-typer eller markerings uppsättningar, men kan inte ange båda. Mer information om hur du använder urvals villkor finns i [definiera villkor för när en visnings post eller ett objekt används](./defining-conditions-for-displaying-data.md).
 
@@ -65,4 +58,4 @@ Mer information om komponenterna i en tabellvy finns i [skapa en tabellvy](./cre
 
 [SelectionSetName-element för SelectionCondition för EntrySelectedBy för TableRowEntry (format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

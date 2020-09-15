@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: TestConfiguration-metoden
-ms.openlocfilehash: 384134212e3b29b63dc045aee4b708c87c970302
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 0611c4d5543c49b879bef9b60cafdd0b055c9b86
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942589"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464306"
 ---
 # <a name="testconfiguration-method"></a>TestConfiguration-metoden
 
@@ -26,19 +26,19 @@ uint32 TestConfiguration(
 
 ## <a name="parameters"></a>Parametrar
 
-*configurationData* \[i\] miljö data för confuguration.
+**configurationData** \[ i \] miljö data för konfigurationen.
 
-*InDesiredState* \[ut\] vid retur anger om den hanterade noden är i det tillstånd som anges av konfigurations dokumentet.
+**InDesiredState** \[ ut \] vid retur anger om den hanterade noden är i det tillstånd som anges av konfigurations dokumentet.
 
-*ResourcesInDesiredState* \[ut\] vid retur, innehåller en inbäddad instans av klassen **MSFT_ResourceInDesiredState** som anger vilka resurser som är i önskat tillstånd.
+**ResourcesInDesiredState** \[ ut \] vid retur innehåller en inbäddad instans av klassen **MSFT_ResourceInDesiredState** som anger vilka resurser som är i önskat tillstånd.
 
-*ResourcesNotInDesiredState* \[ut\] vid retur, innehåller en inbäddad instans av klassen **MSFT_ResourceNotInDesiredState** som anger resurser som inte är i önskat tillstånd.
+**ResourcesNotInDesiredState** \[ ut \] vid retur innehåller en inbäddad instans av klassen **MSFT_ResourceNotInDesiredState** som anger resurser som inte är i önskat tillstånd.
 
 ## <a name="return-value"></a>Returvärde
 
 Returnerar noll vid lyckad; annars returneras en felkod.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Detta är en statisk metod.
 
