@@ -1,49 +1,42 @@
 ---
 title: Host04-exempel | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3cbf64e5-f9e8-4002-b40c-4d3f39025c83
-caps.latest.revision: 11
-ms.openlocfilehash: 0ca522cebb22c624902ab986b13e425db3754adf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a34c8424fd661b9c41e6233c4d8d48177a9cfb4e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353139"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783287"
 ---
-# <a name="host04-sample"></a><span data-ttu-id="c84fc-102">Host04 – exempel</span><span class="sxs-lookup"><span data-stu-id="c84fc-102">Host04 Sample</span></span>
+# <a name="host04-sample"></a><span data-ttu-id="f6432-102">Host04 – exempel</span><span class="sxs-lookup"><span data-stu-id="f6432-102">Host04 Sample</span></span>
 
-<span data-ttu-id="c84fc-103">Det här exemplet visar hur du skapar ett interaktivt konsolbaserade värd program som läser kommandon från kommando raden, kör kommandona och visar resultatet i-konsolen.</span><span class="sxs-lookup"><span data-stu-id="c84fc-103">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span> <span data-ttu-id="c84fc-104">Detta värd program har även stöd för att Visa prompter som gör att användaren kan ange flera alternativ.</span><span class="sxs-lookup"><span data-stu-id="c84fc-104">This host application also supports displaying prompts that allow the user to specify multiple choices.</span></span>
+<span data-ttu-id="f6432-103">Det här exemplet visar hur du skapar ett interaktivt konsolbaserade värd program som läser kommandon från kommando raden, kör kommandona och visar resultatet i-konsolen.</span><span class="sxs-lookup"><span data-stu-id="f6432-103">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span> <span data-ttu-id="f6432-104">Detta värd program har även stöd för att Visa prompter som gör att användaren kan ange flera alternativ.</span><span class="sxs-lookup"><span data-stu-id="f6432-104">This host application also supports displaying prompts that allow the user to specify multiple choices.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="c84fc-105">Krav</span><span class="sxs-lookup"><span data-stu-id="c84fc-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="f6432-105">Krav</span><span class="sxs-lookup"><span data-stu-id="f6432-105">Requirements</span></span>
 
- <span data-ttu-id="c84fc-106">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="c84fc-106">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="f6432-106">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="f6432-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="c84fc-107">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="c84fc-107">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="f6432-107">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="f6432-107">Demonstrates</span></span>
 
-- <span data-ttu-id="c84fc-108">Skapa en anpassad värd vars klasser härleds från klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) , klassen [system. Management. Automation. Host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) och klassen [system. Management. Automation. Host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) .</span><span class="sxs-lookup"><span data-stu-id="c84fc-108">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
+- <span data-ttu-id="f6432-108">Skapa en anpassad värd vars klasser härleds från klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) , klassen [system. Management. Automation. Host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) och klassen [system. Management. Automation. Host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) .</span><span class="sxs-lookup"><span data-stu-id="f6432-108">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
 
-- <span data-ttu-id="c84fc-109">Skapa ett konsol program som använder dessa värd klasser för att skapa ett interaktivt Windows PowerShell-gränssnitt.</span><span class="sxs-lookup"><span data-stu-id="c84fc-109">Building a console application that uses these host classes to build an interactive Windows PowerShell shell.</span></span>
+- <span data-ttu-id="f6432-109">Skapa ett konsol program som använder dessa värd klasser för att skapa ett interaktivt Windows PowerShell-gränssnitt.</span><span class="sxs-lookup"><span data-stu-id="f6432-109">Building a console application that uses these host classes to build an interactive Windows PowerShell shell.</span></span>
 
-- <span data-ttu-id="c84fc-110">Skapa en `$profile` variabel och läsa in följande profiler.</span><span class="sxs-lookup"><span data-stu-id="c84fc-110">Creating a `$profile` variable and loading the following profiles.</span></span>
+- <span data-ttu-id="f6432-110">Skapa en `$profile` variabel och läsa in följande profiler.</span><span class="sxs-lookup"><span data-stu-id="f6432-110">Creating a `$profile` variable and loading the following profiles.</span></span>
 
-  - <span data-ttu-id="c84fc-111">aktuell användare, aktuell värd</span><span class="sxs-lookup"><span data-stu-id="c84fc-111">current user, current host</span></span>
+  - <span data-ttu-id="f6432-111">aktuell användare, aktuell värd</span><span class="sxs-lookup"><span data-stu-id="f6432-111">current user, current host</span></span>
 
-  - <span data-ttu-id="c84fc-112">aktuell användare, alla värdar</span><span class="sxs-lookup"><span data-stu-id="c84fc-112">current user, all hosts</span></span>
+  - <span data-ttu-id="f6432-112">aktuell användare, alla värdar</span><span class="sxs-lookup"><span data-stu-id="f6432-112">current user, all hosts</span></span>
 
-  - <span data-ttu-id="c84fc-113">alla användare, aktuell värd</span><span class="sxs-lookup"><span data-stu-id="c84fc-113">all users, current host</span></span>
+  - <span data-ttu-id="f6432-113">alla användare, aktuell värd</span><span class="sxs-lookup"><span data-stu-id="f6432-113">all users, current host</span></span>
 
-  - <span data-ttu-id="c84fc-114">alla användare, alla värdar</span><span class="sxs-lookup"><span data-stu-id="c84fc-114">all users, all hosts</span></span>
+  - <span data-ttu-id="f6432-114">alla användare, alla värdar</span><span class="sxs-lookup"><span data-stu-id="f6432-114">all users, all hosts</span></span>
 
-- <span data-ttu-id="c84fc-115">Implementera gränssnittet [system. Management. Automation. Host. Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) .</span><span class="sxs-lookup"><span data-stu-id="c84fc-115">Implement the [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.</span></span>
+- <span data-ttu-id="f6432-115">Implementera gränssnittet [system. Management. Automation. Host. Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) .</span><span class="sxs-lookup"><span data-stu-id="f6432-115">Implement the [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.</span></span>
 
-## <a name="example"></a><span data-ttu-id="c84fc-116">Exempel</span><span class="sxs-lookup"><span data-stu-id="c84fc-116">Example</span></span>
+## <a name="example"></a><span data-ttu-id="f6432-116">Exempel</span><span class="sxs-lookup"><span data-stu-id="f6432-116">Example</span></span>
 
- <span data-ttu-id="c84fc-117">Det här exemplet gör att användaren kan ange kommandon på en kommando rad, bearbetar dessa kommandon och sedan skriva ut resultaten.</span><span class="sxs-lookup"><span data-stu-id="c84fc-117">This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.</span></span>
+ <span data-ttu-id="f6432-117">Det här exemplet gör att användaren kan ange kommandon på en kommando rad, bearbetar dessa kommandon och sedan skriva ut resultaten.</span><span class="sxs-lookup"><span data-stu-id="f6432-117">This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -380,9 +373,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="c84fc-118">Exempel</span><span class="sxs-lookup"><span data-stu-id="c84fc-118">Example</span></span>
+## <a name="example"></a><span data-ttu-id="f6432-118">Exempel</span><span class="sxs-lookup"><span data-stu-id="f6432-118">Example</span></span>
 
- <span data-ttu-id="c84fc-119">Följande kod är implementeringen av klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) som används av det här värd programmet.</span><span class="sxs-lookup"><span data-stu-id="c84fc-119">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="c84fc-120">De element som inte implementeras genererar ett undantag eller returnerar ingenting.</span><span class="sxs-lookup"><span data-stu-id="c84fc-120">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="f6432-119">Följande kod är implementeringen av klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) som används av det här värd programmet.</span><span class="sxs-lookup"><span data-stu-id="f6432-119">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="f6432-120">De element som inte implementeras genererar ett undantag eller returnerar ingenting.</span><span class="sxs-lookup"><span data-stu-id="f6432-120">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -562,9 +555,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="c84fc-121">Exempel</span><span class="sxs-lookup"><span data-stu-id="c84fc-121">Example</span></span>
+## <a name="example"></a><span data-ttu-id="f6432-121">Exempel</span><span class="sxs-lookup"><span data-stu-id="f6432-121">Example</span></span>
 
- <span data-ttu-id="c84fc-122">Följande kod är implementeringen av klassen [system. Management. Automation. Host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) som används av det här värd programmet.</span><span class="sxs-lookup"><span data-stu-id="c84fc-122">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
+ <span data-ttu-id="f6432-122">Följande kod är implementeringen av klassen [system. Management. Automation. Host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) som används av det här värd programmet.</span><span class="sxs-lookup"><span data-stu-id="f6432-122">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1080,9 +1073,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="c84fc-123">Exempel</span><span class="sxs-lookup"><span data-stu-id="c84fc-123">Example</span></span>
+## <a name="example"></a><span data-ttu-id="f6432-123">Exempel</span><span class="sxs-lookup"><span data-stu-id="f6432-123">Example</span></span>
 
- <span data-ttu-id="c84fc-124">Följande kod är implementeringen av klassen [system. Management. Automation. Host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) som används av det här värd programmet.</span><span class="sxs-lookup"><span data-stu-id="c84fc-124">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="c84fc-125">De element som inte implementeras genererar ett undantag eller returnerar ingenting.</span><span class="sxs-lookup"><span data-stu-id="c84fc-125">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="f6432-124">Följande kod är implementeringen av klassen [system. Management. Automation. Host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) som används av det här värd programmet.</span><span class="sxs-lookup"><span data-stu-id="f6432-124">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="f6432-125">De element som inte implementeras genererar ett undantag eller returnerar ingenting.</span><span class="sxs-lookup"><span data-stu-id="f6432-125">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1292,10 +1285,10 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="c84fc-126">Se även</span><span class="sxs-lookup"><span data-stu-id="c84fc-126">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f6432-126">Se även</span><span class="sxs-lookup"><span data-stu-id="f6432-126">See Also</span></span>
 
- [<span data-ttu-id="c84fc-127">System. Management. Automation. Host. PSHost</span><span class="sxs-lookup"><span data-stu-id="c84fc-127">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
+ [<span data-ttu-id="f6432-127">System. Management. Automation. Host. PSHost</span><span class="sxs-lookup"><span data-stu-id="f6432-127">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [<span data-ttu-id="c84fc-128">System. Management. Automation. Host. Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="c84fc-128">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [<span data-ttu-id="f6432-128">System. Management. Automation. Host. Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="f6432-128">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [<span data-ttu-id="c84fc-129">System. Management. Automation. Host. Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="c84fc-129">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [<span data-ttu-id="f6432-129">System. Management. Automation. Host. Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="f6432-129">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)

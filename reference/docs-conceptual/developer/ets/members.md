@@ -1,0 +1,34 @@
+---
+title: Medlemmar i utökad typ system klass
+ms.date: 07/09/2020
+ms.openlocfilehash: 24a57b7fd0b3db47d0d7138859aa0502ca9016f0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786279"
+---
+# <a name="extended-type-system-class-members"></a><span data-ttu-id="6fcee-102">Medlemmar i utökad typ system klass</span><span class="sxs-lookup"><span data-stu-id="6fcee-102">Extended Type System class members</span></span>
+
+<span data-ttu-id="6fcee-103">ETS refererar till ett antal olika typer av medlemmar vars typer definieras av **PSMemberTypes** -uppräkningen.</span><span class="sxs-lookup"><span data-stu-id="6fcee-103">ETS refers to a number of different kinds of members whose types are defined by the **PSMemberTypes** enumeration.</span></span> <span data-ttu-id="6fcee-104">Dessa medlems typer innehåller egenskaper, metoder, medlemmar och medlems uppsättningar som definieras av deras egna CLR-typ.</span><span class="sxs-lookup"><span data-stu-id="6fcee-104">These member types include properties, methods, members, and member sets that are each defined by their own CLR type.</span></span> <span data-ttu-id="6fcee-105">En **NoteProperty** definieras till exempel av en egen **PSNoteProperty** -typ.</span><span class="sxs-lookup"><span data-stu-id="6fcee-105">For example, a **NoteProperty** is defined by its own **PSNoteProperty** type.</span></span> <span data-ttu-id="6fcee-106">Dessa enskilda CLR-typer har både egna unika egenskaper och gemensamma egenskaper som ärvs från PSMemberInfo- [klassen](/dotnet/api/system.management.automation.psmemberinfo).</span><span class="sxs-lookup"><span data-stu-id="6fcee-106">These individual CLR types have both their own unique properties and common properties that are inherited from the [PSMemberInfo class](/dotnet/api/system.management.automation.psmemberinfo).</span></span>
+
+## <a name="the-psmemberinfo-class"></a><span data-ttu-id="6fcee-107">PSMemberInfo-klassen</span><span class="sxs-lookup"><span data-stu-id="6fcee-107">The PSMemberInfo class</span></span>
+
+<span data-ttu-id="6fcee-108">**PSMemberInfo** -klassen fungerar som en basklass för alla typer av ETS-medlemmar.</span><span class="sxs-lookup"><span data-stu-id="6fcee-108">The **PSMemberInfo** class serves as a base class for all ETS member types.</span></span> <span data-ttu-id="6fcee-109">Den här klassen ger följande grundläggande egenskaper till alla medlems CLR-typer.</span><span class="sxs-lookup"><span data-stu-id="6fcee-109">This class provides the following base properties to all member CLR types.</span></span>
+
+- <span data-ttu-id="6fcee-110">**Namn** egenskap: medlemmens namn.</span><span class="sxs-lookup"><span data-stu-id="6fcee-110">**Name** property: The name of the member.</span></span> <span data-ttu-id="6fcee-111">Det här namnet kan definieras av Bask-objektet eller definieras av PowerShell när anpassade medlemmar eller utökade medlemmar exponeras.</span><span class="sxs-lookup"><span data-stu-id="6fcee-111">This name can be defined by the base-object or defined by PowerShell when adapted members or extended members are exposed.</span></span>
+- <span data-ttu-id="6fcee-112">**Value** -egenskap: det värde som returneras från en viss medlem.</span><span class="sxs-lookup"><span data-stu-id="6fcee-112">**Value** property: The value returned from the particular member.</span></span> <span data-ttu-id="6fcee-113">Varje medlems typ definierar hur den hanterar sitt medlems värde.</span><span class="sxs-lookup"><span data-stu-id="6fcee-113">Each member type defines how it handles its member value.</span></span>
+- <span data-ttu-id="6fcee-114">**TypeNameOfValue** -egenskap: Detta är namnet på CLR-typen för det värde som returneras av value-egenskapen.</span><span class="sxs-lookup"><span data-stu-id="6fcee-114">**TypeNameOfValue** property: This is the name of the CLR type of the value that is returned by the Value property.</span></span>
+
+## <a name="accessing-members"></a><span data-ttu-id="6fcee-115">Åtkomst till medlemmar</span><span class="sxs-lookup"><span data-stu-id="6fcee-115">Accessing members</span></span>
+
+<span data-ttu-id="6fcee-116">Samlingar med medlemmar kan nås via egenskaperna **members**, **Method**och **Properties** för **PSObject** -objektet.</span><span class="sxs-lookup"><span data-stu-id="6fcee-116">Collections of members can be accessed through the **Members**, **Methods**, and **Properties** properties of the **PSObject** object.</span></span>
+
+## <a name="ets-properties"></a><span data-ttu-id="6fcee-117">Egenskaper för ETS</span><span class="sxs-lookup"><span data-stu-id="6fcee-117">ETS properties</span></span>
+
+<span data-ttu-id="6fcee-118">ETS-egenskaper är medlemmar som kan hanteras som en egenskap.</span><span class="sxs-lookup"><span data-stu-id="6fcee-118">ETS properties are members that can be treated as a property.</span></span> <span data-ttu-id="6fcee-119">De kan egentligen visas till vänster i ett uttryck.</span><span class="sxs-lookup"><span data-stu-id="6fcee-119">Essentially, they can appear on the left-hand side of an expression.</span></span> <span data-ttu-id="6fcee-120">De innehåller egenskaper för alias, kod egenskaper, PowerShell-egenskaper, antecknings egenskaper och skript egenskaper.</span><span class="sxs-lookup"><span data-stu-id="6fcee-120">They include alias properties, code properties, PowerShell properties, note properties, and script properties.</span></span> <span data-ttu-id="6fcee-121">Mer information om dessa typer av egenskaper finns i [ETS-egenskaper](properties.md).</span><span class="sxs-lookup"><span data-stu-id="6fcee-121">For more information about these types of properties, see [ETS properties](properties.md).</span></span>
+
+## <a name="ets-methods"></a><span data-ttu-id="6fcee-122">ETS-metoder</span><span class="sxs-lookup"><span data-stu-id="6fcee-122">ETS methods</span></span>
+
+<span data-ttu-id="6fcee-123">ETS-metoder är medlemmar som kan ta argument, kan returnera resultat och får inte visas till vänster i ett uttryck.</span><span class="sxs-lookup"><span data-stu-id="6fcee-123">ETS methods are members that can take arguments, may return results, and cannot appear on the left-hand side of an expression.</span></span> <span data-ttu-id="6fcee-124">De innehåller kod metoder, PowerShell-metoder och skript metoder.</span><span class="sxs-lookup"><span data-stu-id="6fcee-124">They include code methods, PowerShell methods, and script methods.</span></span>
+<span data-ttu-id="6fcee-125">Mer information om dessa typer av metoder finns i [ETS-metoder](methods.md).</span><span class="sxs-lookup"><span data-stu-id="6fcee-125">For more information about these types of methods, see [ETS methods](methods.md).</span></span>

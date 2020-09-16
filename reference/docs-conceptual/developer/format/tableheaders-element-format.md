@@ -1,27 +1,20 @@
 ---
 title: TableHeaders-element (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f9fa2b6f-b99a-42de-9779-44e9cb583f71
-caps.latest.revision: 15
-ms.openlocfilehash: bd44fcf4878c858afe81fb071ce72f627ac465dc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b3176cbe1316d5b30cb61831d9915a80389709a5
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353699"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787435"
 ---
-# <a name="tableheaders-element-format"></a><span data-ttu-id="58584-102">TableHeaders-element (format)</span><span class="sxs-lookup"><span data-stu-id="58584-102">TableHeaders Element (Format)</span></span>
+# <a name="tableheaders-element-format"></a><span data-ttu-id="1fbf2-102">TableHeaders-element (format)</span><span class="sxs-lookup"><span data-stu-id="1fbf2-102">TableHeaders Element (Format)</span></span>
 
-<span data-ttu-id="58584-103">Definierar rubrikerna för kolumnerna i en tabell.</span><span class="sxs-lookup"><span data-stu-id="58584-103">Defines the headers for the columns of a table.</span></span>
+<span data-ttu-id="1fbf2-103">Definierar rubrikerna för kolumnerna i en tabell.</span><span class="sxs-lookup"><span data-stu-id="1fbf2-103">Defines the headers for the columns of a table.</span></span>
 
-<span data-ttu-id="58584-104">ViewDefinitions-element (format) View-element (format) TableControl-element (format) TableHeaders-element för TableControl (format)</span><span class="sxs-lookup"><span data-stu-id="58584-104">ViewDefinitions Element (Format) View Element (Format) TableControl Element (Format) TableHeaders Element for TableControl (Format)</span></span>
+<span data-ttu-id="1fbf2-104">ViewDefinitions-element (format) View-element (format) TableControl-element (format) TableHeaders-element för TableControl (format)</span><span class="sxs-lookup"><span data-stu-id="1fbf2-104">ViewDefinitions Element (Format) View Element (Format) TableControl Element (Format) TableHeaders Element for TableControl (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="58584-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="58584-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="1fbf2-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="1fbf2-105">Syntax</span></span>
 
 ```xml
 <TableHeaders>
@@ -30,33 +23,33 @@ ms.locfileid: "72353699"
 
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="58584-106">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="58584-106">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="1fbf2-106">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="1fbf2-106">Attributes and Elements</span></span>
 
-<span data-ttu-id="58584-107">I följande avsnitt beskrivs attributen, underordnade element och de överordnade elementen i `TableHeaders`-elementet.</span><span class="sxs-lookup"><span data-stu-id="58584-107">The following sections describe the attributes, child elements, and parent elements of the `TableHeaders` element.</span></span> <span data-ttu-id="58584-108">Det måste finnas ett underordnat element för varje egenskap i objektet som ska visas.</span><span class="sxs-lookup"><span data-stu-id="58584-108">There must be a child element for each property of the object that is to be displayed.</span></span> <span data-ttu-id="58584-109">Kolumn rubrik informationen visas i den ordning som de underordnade elementen har angetts.</span><span class="sxs-lookup"><span data-stu-id="58584-109">The column header information is displayed in the order that the child elements are specified.</span></span>
+<span data-ttu-id="1fbf2-107">I följande avsnitt beskrivs attributen, underordnade element och `TableHeaders` elementens överordnade element.</span><span class="sxs-lookup"><span data-stu-id="1fbf2-107">The following sections describe the attributes, child elements, and parent elements of the `TableHeaders` element.</span></span> <span data-ttu-id="1fbf2-108">Det måste finnas ett underordnat element för varje egenskap i objektet som ska visas.</span><span class="sxs-lookup"><span data-stu-id="1fbf2-108">There must be a child element for each property of the object that is to be displayed.</span></span> <span data-ttu-id="1fbf2-109">Kolumn rubrik informationen visas i den ordning som de underordnade elementen har angetts.</span><span class="sxs-lookup"><span data-stu-id="1fbf2-109">The column header information is displayed in the order that the child elements are specified.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="58584-110">Attribut</span><span class="sxs-lookup"><span data-stu-id="58584-110">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="1fbf2-110">Attribut</span><span class="sxs-lookup"><span data-stu-id="1fbf2-110">Attributes</span></span>
 
-<span data-ttu-id="58584-111">Ingen.</span><span class="sxs-lookup"><span data-stu-id="58584-111">None.</span></span>
+<span data-ttu-id="1fbf2-111">Inga.</span><span class="sxs-lookup"><span data-stu-id="1fbf2-111">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="58584-112">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="58584-112">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="1fbf2-112">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="1fbf2-112">Child Elements</span></span>
 
-|<span data-ttu-id="58584-113">Element</span><span class="sxs-lookup"><span data-stu-id="58584-113">Element</span></span>|<span data-ttu-id="58584-114">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="58584-114">Description</span></span>|
+|<span data-ttu-id="1fbf2-113">Element</span><span class="sxs-lookup"><span data-stu-id="1fbf2-113">Element</span></span>|<span data-ttu-id="1fbf2-114">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="1fbf2-114">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="58584-115">TableColumnHeader-element (format)</span><span class="sxs-lookup"><span data-stu-id="58584-115">TableColumnHeader Element (Format)</span></span>](./tablecolumnheader-element-format.md)|<span data-ttu-id="58584-116">Valfritt element.</span><span class="sxs-lookup"><span data-stu-id="58584-116">Optional element.</span></span><br /><br /> <span data-ttu-id="58584-117">Definierar etiketten, bredden och data justeringen för en kolumn i en tabellvy.</span><span class="sxs-lookup"><span data-stu-id="58584-117">Defines the label, the width, and the alignment of the data for a column of a table view.</span></span>|
+|[<span data-ttu-id="1fbf2-115">TableColumnHeader-element (format)</span><span class="sxs-lookup"><span data-stu-id="1fbf2-115">TableColumnHeader Element (Format)</span></span>](./tablecolumnheader-element-format.md)|<span data-ttu-id="1fbf2-116">Valfritt element.</span><span class="sxs-lookup"><span data-stu-id="1fbf2-116">Optional element.</span></span><br /><br /> <span data-ttu-id="1fbf2-117">Definierar etiketten, bredden och data justeringen för en kolumn i en tabellvy.</span><span class="sxs-lookup"><span data-stu-id="1fbf2-117">Defines the label, the width, and the alignment of the data for a column of a table view.</span></span>|
 
-### <a name="parent-elements"></a><span data-ttu-id="58584-118">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="58584-118">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="1fbf2-118">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="1fbf2-118">Parent Elements</span></span>
 
-|<span data-ttu-id="58584-119">Element</span><span class="sxs-lookup"><span data-stu-id="58584-119">Element</span></span>|<span data-ttu-id="58584-120">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="58584-120">Description</span></span>|
+|<span data-ttu-id="1fbf2-119">Element</span><span class="sxs-lookup"><span data-stu-id="1fbf2-119">Element</span></span>|<span data-ttu-id="1fbf2-120">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="1fbf2-120">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="58584-121">TableControl-element (format)</span><span class="sxs-lookup"><span data-stu-id="58584-121">TableControl Element (Format)</span></span>](./tablecontrol-element-format.md)|<span data-ttu-id="58584-122">Definierar ett tabell format för en vy.</span><span class="sxs-lookup"><span data-stu-id="58584-122">Defines a table format for a view.</span></span>|
+|[<span data-ttu-id="1fbf2-121">TableControl-element (format)</span><span class="sxs-lookup"><span data-stu-id="1fbf2-121">TableControl Element (Format)</span></span>](./tablecontrol-element-format.md)|<span data-ttu-id="1fbf2-122">Definierar ett tabell format för en vy.</span><span class="sxs-lookup"><span data-stu-id="1fbf2-122">Defines a table format for a view.</span></span>|
 
-## <a name="remarks"></a><span data-ttu-id="58584-123">Anmärkningar</span><span class="sxs-lookup"><span data-stu-id="58584-123">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="1fbf2-123">Kommentarer</span><span class="sxs-lookup"><span data-stu-id="1fbf2-123">Remarks</span></span>
 
-<span data-ttu-id="58584-124">Mer information om komponenterna i en tabellvy finns i [skapa en tabellvy](./creating-a-table-view.md).</span><span class="sxs-lookup"><span data-stu-id="58584-124">For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).</span></span>
+<span data-ttu-id="1fbf2-124">Mer information om komponenterna i en tabellvy finns i [skapa en tabellvy](./creating-a-table-view.md).</span><span class="sxs-lookup"><span data-stu-id="1fbf2-124">For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="58584-125">Exempel</span><span class="sxs-lookup"><span data-stu-id="58584-125">Example</span></span>
+## <a name="example"></a><span data-ttu-id="1fbf2-125">Exempel</span><span class="sxs-lookup"><span data-stu-id="1fbf2-125">Example</span></span>
 
-<span data-ttu-id="58584-126">I det här exemplet visas ett `TableHeaders`-element som definierar två kolumn rubriker.</span><span class="sxs-lookup"><span data-stu-id="58584-126">This example shows a `TableHeaders` element that defines two column headers.</span></span>
+<span data-ttu-id="1fbf2-126">Det här exemplet visar ett `TableHeaders` element som definierar två kolumn rubriker.</span><span class="sxs-lookup"><span data-stu-id="1fbf2-126">This example shows a `TableHeaders` element that defines two column headers.</span></span>
 
 ```xml
 <TableHeaders>
@@ -73,12 +66,12 @@ ms.locfileid: "72353699"
 </TableHeaders>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="58584-127">Se även</span><span class="sxs-lookup"><span data-stu-id="58584-127">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1fbf2-127">Se även</span><span class="sxs-lookup"><span data-stu-id="1fbf2-127">See Also</span></span>
 
-[<span data-ttu-id="58584-128">Skapa en tabellvy</span><span class="sxs-lookup"><span data-stu-id="58584-128">Creating a Table View</span></span>](./creating-a-table-view.md)
+[<span data-ttu-id="1fbf2-128">Skapa en tabellvy</span><span class="sxs-lookup"><span data-stu-id="1fbf2-128">Creating a Table View</span></span>](./creating-a-table-view.md)
 
-[<span data-ttu-id="58584-129">TableColumnHeader-element (format)</span><span class="sxs-lookup"><span data-stu-id="58584-129">TableColumnHeader Element (Format)</span></span>](./tablecolumnheader-element-format.md)
+[<span data-ttu-id="1fbf2-129">TableColumnHeader-element (format)</span><span class="sxs-lookup"><span data-stu-id="1fbf2-129">TableColumnHeader Element (Format)</span></span>](./tablecolumnheader-element-format.md)
 
-[<span data-ttu-id="58584-130">TableControl-element (format)</span><span class="sxs-lookup"><span data-stu-id="58584-130">TableControl Element (Format)</span></span>](./tablecontrol-element-format.md)
+[<span data-ttu-id="1fbf2-130">TableControl-element (format)</span><span class="sxs-lookup"><span data-stu-id="1fbf2-130">TableControl Element (Format)</span></span>](./tablecontrol-element-format.md)
 
-[<span data-ttu-id="58584-131">Skriva en fil med PowerShell-formatering</span><span class="sxs-lookup"><span data-stu-id="58584-131">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="1fbf2-131">Skriva en PowerShell-formateringsfil</span><span class="sxs-lookup"><span data-stu-id="1fbf2-131">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
