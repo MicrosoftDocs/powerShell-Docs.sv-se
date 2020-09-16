@@ -1,19 +1,12 @@
 ---
 title: WideItem-element för WideControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 17352fc4-ba83-4f04-86bc-f591765d85a8
-caps.latest.revision: 18
-ms.openlocfilehash: fa9eda3ea1028c27dbfb3eb04747af3b817c1a81
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6b2f7c97978c20350caeec894589c5995ae7ccc4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353405"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779904"
 ---
 # <a name="wideitem-element-for-widecontrol-format"></a>WideItem-element för WideControl (format)
 
@@ -33,11 +26,11 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `WideItem`-elementet. `FormatString`-elementet är valfritt. Du måste dock ange ett `PropertyName`-eller `ScriptBlock`-element, men du kan inte ange båda.
+I följande avsnitt beskrivs attributen, underordnade element och `WideItem` elementets överordnade element. `FormatString`Elementet är valfritt. Du måste dock ange ett `PropertyName` eller `ScriptBlock` -element, men du kan inte ange båda.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -53,13 +46,13 @@ Ingen.
 |-------------|-----------------|
 |[WideEntry-element (format)](./wideentry-element-for-widecontrol-format.md)|Ger en definition av den breda vyn.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Mer information om komponenterna i en bred vy finns i [wide View](./creating-a-wide-view.md).
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visas ett `WideEntry`-element som definierar ett enskilt `WideItem`-element. `WideItem`-elementet definierar egenskapen eller skriptet vars värde visas i vyn.
+I följande exempel visas ett `WideEntry` element som definierar ett enda `WideItem` element. `WideItem`Elementet definierar egenskapen eller skriptet vars värde visas i vyn.
 
 ```xml
 <WideEntry>
@@ -81,4 +74,4 @@ Ett fullständigt exempel på en bred vy finns i [wide View (grundläggande)](./
 
 [WideEntry-element (format)](./wideentry-element-for-widecontrol-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

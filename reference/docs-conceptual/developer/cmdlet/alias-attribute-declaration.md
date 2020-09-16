@@ -1,23 +1,16 @@
 ---
 title: Deklaration av alias-attribut | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Alias attribute
 - attributes, Alias
 - Alias attribute, described
-ms.assetid: d0df3a46-b1cc-42b9-beb1-e16bce254007
-caps.latest.revision: 10
-ms.openlocfilehash: 4d20672c5181c994c1b53624f6c42a301db11f26
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4c1ff34a244611173ca919a44d6598189b19dc98
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359486"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782420"
 ---
 # <a name="alias-attribute-declaration"></a>Deklaration av attributet Alias
 
@@ -31,9 +24,9 @@ Attributet alias gör att användaren kan ange olika namn för en cmdlet-paramet
 
 #### <a name="parameters"></a>Parametrar
 
-`aliasName` (sträng []) krävs. Anger en uppsättning kommaavgränsade aliasnamn för cmdlet-parametern.
+`aliasName` (Sträng []) Kunna. Anger en uppsättning kommaavgränsade aliasnamn för cmdlet-parametern.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 - Attributet alias används med attributet parameter när du anger en cmdlet-parameter. Mer information om hur du deklarerar dessa attribut finns i [så här deklarerar du cmdlet-parametrar](./how-to-declare-cmdlet-parameters.md).
 
@@ -45,6 +38,6 @@ Attributet alias gör att användaren kan ange olika namn för en cmdlet-paramet
 
 ## <a name="see-also"></a>Se även
 
-[Parameter-alias](./parameter-aliases.md)
+[Parameteralias](./parameter-aliases.md)
 
 [Skriva en Windows PowerShell-cmdlet](./writing-a-windows-powershell-cmdlet.md)

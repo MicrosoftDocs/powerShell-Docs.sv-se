@@ -1,25 +1,18 @@
 ---
 title: Skapa en InitialSessionState | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5ae707db-52e0-408c-87fa-b35c42eaaab1
-caps.latest.revision: 5
-ms.openlocfilehash: 9140d03e046def2fbbcc2a842b9ea1b9e1fa2985
-ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
+ms.openlocfilehash: 946adf1006d1afcad2810c85e39f14514e837327
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83271890"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779734"
 ---
 # <a name="creating-an-initialsessionstate"></a>Skapa en InitialSessionState
 
 PowerShell-kommandon körs i en körnings utrymme.
 För att vara värd för PowerShell i ditt program måste du skapa ett [system. Management. Automation. körnings utrymmen. körnings utrymme](/dotnet/api/System.Management.Automation.Runspaces.Runspace) -objekt.
-Varje körnings utrymme har ett [system. Management. Automation. körnings utrymmen. InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt som är kopplat till det.
+Varje körnings utrymme har ett kopplat [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt.
 InitialSessionState anger egenskaperna för körnings utrymme, till exempel vilka kommandon, variabler och moduler som är tillgängliga för den körnings utrymme.
 
 ## <a name="create-a-default-initialsessionstate"></a>Skapa en standard-InitialSessionState

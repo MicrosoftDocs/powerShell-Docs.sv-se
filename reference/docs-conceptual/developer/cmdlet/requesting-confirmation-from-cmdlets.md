@@ -1,25 +1,18 @@
 ---
 title: Begär bekräftelse från cmdletar | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - ConfirmImpact [PowerShell Programmer's Guide], described
 - ShouldContinue [PowerShell Programmer's Guide], described
 - user feedback [PowerShell Programmer's Guide], requesting
 - ShouldProcess [PowerShell Programmer's Guide], described
 - ConfirmPreference [PowerShell Programmer's Guide], described
-ms.assetid: 37d6e87f-57b7-40bd-b645-392cf0b6e88e
-caps.latest.revision: 13
-ms.openlocfilehash: 0c0517ef7fbd5ae6434773a2dfe276f3a8c35f39
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bcc4c766d0012e7173550e3b6cb3ef058baa06bb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359241"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781808"
 ---
 # <a name="requesting-confirmation-from-cmdlets"></a>Begära bekräftelse från cmdlets
 
@@ -29,7 +22,7 @@ För att kunna göra en bekräftelse förfrågan måste cmdleten ange att den st
 
 ## <a name="supporting-confirmation-requests"></a>Support bekräftelse begär Anden
 
-För att stödja bekräftelse begär Anden måste cmdleten ange `SupportsShouldProcess`-parametern för det cmdlet-attribut som ska `true`. Detta aktiverar de `Confirm`-och `WhatIf` cmdlet-parametrar som tillhandahålls av Windows PowerShell. Med parametern `Confirm` kan användaren kontrol lera om bekräftelse förfrågan visas. Parametern `WhatIf` ger användaren möjlighet att avgöra om cmdleten ska visa ett meddelande eller utföra åtgärden. Lägg inte till `Confirm` och `WhatIf` parametrar i en cmdlet manuellt.
+För att stödja bekräftelse begär Anden måste cmdleten ange `SupportsShouldProcess` parametern för cmdlet-attributet till `true` . Detta aktiverar `Confirm` parametrarna och för `WhatIf` cmdleten som tillhandahålls av Windows PowerShell. `Confirm`Parametern gör det möjligt för användaren att kontrol lera om bekräftelse förfrågningen visas. `WhatIf`Parametern låter användaren avgöra om cmdleten ska visa ett meddelande eller utföra åtgärden. Lägg inte till `Confirm` parametrarna och manuellt `WhatIf` i en cmdlet.
 
 I följande exempel visas en deklaration för cmdlet-attribut som stöder bekräftelse begär Anden.
 
@@ -40,13 +33,13 @@ I följande exempel visas en deklaration för cmdlet-attribut som stöder bekrä
 
 ## <a name="calling-the-confirmation-request-methods"></a>Anropar metoder för bekräftelse av begäran
 
-I cmdlet-koden anropar du metoden [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) innan åtgärden som ändrar systemet utförs. Utforma cmdleten så att om anropet returnerar värdet `false`, utförs inte åtgärden och cmdleten bearbetar nästa åtgärd.
+I cmdlet-koden anropar du metoden [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) innan åtgärden som ändrar systemet utförs. Utforma cmdleten så att om anropet returnerar värdet `false` , utförs inte åtgärden och cmdleten bearbetar nästa åtgärd.
 
 ## <a name="calling-the-shouldcontinue-method"></a>Anropar metoden ShouldContinue
 
 De flesta cmdletar begär bekräftelse med hjälp av metoden [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) . Vissa fall kan dock kräva ytterligare bekräftelse. I dessa fall ska du komplettera [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -anropet med ett anrop till metoden [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) . Detta gör att cmdleten eller providern kan styra omfånget för **Ja till alla** svar på bekräftelse meddelandet.
 
-Om en cmdlet anropar metoden [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) , måste cmdleten också tillhandahålla en `Force` växel parameter. Om användaren anger `Force` när användaren anropar cmdleten bör cmdleten fortfarande anropa [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess), men det bör kringgå anropet till [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue).
+Om en cmdlet anropar metoden [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) , måste cmdleten också tillhandahålla en `Force` switch-parameter. Om användaren anger `Force` när användaren anropar cmdleten bör cmdleten fortfarande anropa [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess), men det bör kringgå anropet till [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue).
 
 [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) kommer att utlösa ett undantag när det anropas från en icke-interaktiv miljö där användaren inte kan uppmanas att göra det. Genom att lägga till en `Force` parameter ser du till att kommandot fortfarande kan utföras när det anropas i en icke-interaktiv miljö.
 
@@ -68,9 +61,9 @@ Ett exempel på hur du anropar metoden [system. Management. Automation. cmdlet. 
 
 ## <a name="specify-the-impact-level"></a>Ange effekt nivå
 
-När du skapar cmdleten anger du effekt nivån (allvarlighets grad) för ändringen. Det gör du genom att ange värdet för parametern `ConfirmImpact` för cmdlet-attributet till hög, medel eller låg. Du kan bara ange ett värde för `ConfirmImpact` när du också anger parametern `SupportsShouldProcess` för cmdleten.
+När du skapar cmdleten anger du effekt nivån (allvarlighets grad) för ändringen. Det gör du genom att ange värdet för `ConfirmImpact` parametern för cmdlet-attributet till hög, medel eller låg. Du kan endast ange ett värde för `ConfirmImpact` när du också anger `SupportsShouldProcess` parametern för cmdleten.
 
-För de flesta cmdletar behöver du inte uttryckligen ange `ConfirmImpact`.  Använd istället standard inställningen för parametern, som är medel. Om du anger `ConfirmImpact` till hög, bekräftas åtgärden som standard. Reservera den här inställningen för mycket störande åtgärder, till exempel att omformatera en hård disk volym.
+För de flesta cmdletar behöver du inte uttryckligen ange `ConfirmImpact` .  Använd istället standard inställningen för parametern, som är medel. Om du ställer in `ConfirmImpact` till hög bekräftas åtgärden som standard. Reservera den här inställningen för mycket störande åtgärder, till exempel att omformatera en hård disk volym.
 
 ## <a name="calling-non-confirmation-methods"></a>Anropar icke-bekräftelse metoder
 
@@ -78,9 +71,9 @@ Om cmdleten eller providern måste skicka ett meddelande, men inte begära bekr�
 
 - För att varna användaren och fortsätta med åtgärden kan cmdleten eller providern anropa metoden [system. Management. Automation. cmdlet. WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) .
 
-- Om du vill ange ytterligare information som användaren kan hämta med hjälp av parametern `Verbose` kan cmdleten eller providern anropa metoden [system. Management. Automation. cmdlet. WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) .
+- Om du vill ange ytterligare information som användaren kan hämta med hjälp av `Verbose` -parametern kan cmdleten eller providern anropa metoden [system. Management. Automation. cmdlet. WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) .
 
-- För att ge information om fel söknings nivå för andra utvecklare eller för produkt support kan cmdleten eller providern anropa metoden [system. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) . Användaren kan hämta den här informationen med hjälp av parametern `Debug`.
+- För att ge information om fel söknings nivå för andra utvecklare eller för produkt support kan cmdleten eller providern anropa metoden [system. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) . Användaren kan hämta den här informationen med hjälp av `Debug` parametern.
 
 Cmdlets och providers anropar först följande metoder för att begära bekräftelse innan de försöker utföra en åtgärd som ändrar ett system utanför Windows PowerShell:
 

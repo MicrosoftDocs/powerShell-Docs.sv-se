@@ -1,19 +1,12 @@
 ---
 title: PropertyName-element för WideItem för WideControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3d91d0e6-bf18-4587-b651-db66849e5df5
-caps.latest.revision: 6
-ms.openlocfilehash: 326880834cd82ab826aadc409cd7a8f21cd36824
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7728f960a67faa99eaafb4a4934674e119b8af27
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355883"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780482"
 ---
 # <a name="propertyname-element-for-wideitem-for-widecontrol-format"></a>PropertyName-element för WideItem för WideControl (format)
 
@@ -29,15 +22,15 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `PropertyName`-elementet.
+I följande avsnitt beskrivs attributen, underordnade element och `PropertyName` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -49,7 +42,7 @@ Ingen.
 
 Ange namnet på den egenskap vars värde visas.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Mer information om komponenterna i en bred vy finns i [skapa en bred vy](./creating-a-wide-view.md).
 
@@ -82,4 +75,4 @@ View>
 
 [Skapa en bred vy](./creating-a-wide-view.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

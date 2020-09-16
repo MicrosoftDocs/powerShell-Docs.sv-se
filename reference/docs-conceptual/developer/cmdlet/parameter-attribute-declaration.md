@@ -1,23 +1,16 @@
 ---
 title: Deklaration av parameter-attribut | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - attributes, Parameter
 - Parameter attribute, described
 - Parameter attribute
-ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
-caps.latest.revision: 13
-ms.openlocfilehash: 7482690c44cdaabf23b886107ac5d112c0fa5c9d
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 55b157b93c3a42324d63e16ddfa8db1f0d38f82b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692398"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781859"
 ---
 # <a name="parameter-attribute-declaration"></a>Deklaration av attributet Parameter
 
@@ -32,23 +25,23 @@ Attributet parameter identifierar en offentlig egenskap för cmdlet-klassen som 
 
 #### <a name="parameters"></a>Parametrar
 
-`Mandatory`([System. Boolean](/dotnet/api/System.Boolean)) valfri namngiven parameter. `True`anger att cmdlet-parametern är obligatorisk. Om en obligatorisk parameter inte anges när cmdleten anropas, uppmanas användaren att ange ett parameter värde i Windows PowerShell. Standardvärdet är `false`.
+`Mandatory` ([System. Boolean](/dotnet/api/System.Boolean)) valfri namngiven parameter. `True` anger att cmdlet-parametern är obligatorisk. Om en obligatorisk parameter inte anges när cmdleten anropas, uppmanas användaren att ange ett parameter värde i Windows PowerShell. Standardvärdet är `false`.
 
-`ParameterSetName`([System. String](/dotnet/api/System.String)) valfri namngiven parameter. Anger den parameter uppsättning som denna cmdlet-parameter tillhör. Om ingen parameter uppsättning anges tillhör parametern alla parameter uppsättningar.
+`ParameterSetName` ([System. String](/dotnet/api/System.String)) valfri namngiven parameter. Anger den parameter uppsättning som denna cmdlet-parameter tillhör. Om ingen parameter uppsättning anges tillhör parametern alla parameter uppsättningar.
 
-`Position`([System. Int32](/dotnet/api/System.Int32)) valfri namngiven parameter. Anger positionen för parametern i ett Windows PowerShell-kommando.
+`Position` ([System. Int32](/dotnet/api/System.Int32)) valfri namngiven parameter. Anger positionen för parametern i ett Windows PowerShell-kommando.
 
-`ValueFromPipeline`([System. Boolean](/dotnet/api/System.Boolean)) valfri namngiven parameter. `True`anger att cmdlet-parametern tar sitt värde från ett pipeline-objekt. Ange det här nyckelordet om cmdleten har åtkomst till det fullständiga objektet, inte bara en egenskap för objektet. Standardvärdet är `false`.
+`ValueFromPipeline` ([System. Boolean](/dotnet/api/System.Boolean)) valfri namngiven parameter. `True` anger att cmdlet-parametern tar sitt värde från ett pipeline-objekt. Ange det här nyckelordet om cmdleten har åtkomst till det fullständiga objektet, inte bara en egenskap för objektet. Standardvärdet är `false`.
 
-`ValueFromPipelineByPropertyName`([System. Boolean](/dotnet/api/System.Boolean)) valfri namngiven parameter. `True`anger att cmdlet-parametern tar värdet från en egenskap för ett pipeline-objekt som har antingen samma namn eller samma alias som denna parameter. Om till exempel cmdleten har en `Name` parameter och pipelinen också har en `Name` egenskap, tilldelas värdet för `Name` egenskapen till `Name` parametern för cmdleten. Standardvärdet är `false`.
+`ValueFromPipelineByPropertyName` ([System. Boolean](/dotnet/api/System.Boolean)) valfri namngiven parameter. `True` anger att cmdlet-parametern tar värdet från en egenskap för ett pipeline-objekt som har antingen samma namn eller samma alias som denna parameter. Om till exempel cmdleten har en `Name` parameter och pipelinen också har en `Name` egenskap, tilldelas värdet för `Name` egenskapen till `Name` parametern för cmdleten. Standardvärdet är `false`.
 
-`ValueFromRemainingArguments`([System. Boolean](/dotnet/api/System.Boolean)) valfri namngiven parameter. `True`anger att cmdlet-parametern accepterar alla återstående argument som skickas till cmdleten. Standardvärdet är `false`.
+`ValueFromRemainingArguments` ([System. Boolean](/dotnet/api/System.Boolean)) valfri namngiven parameter. `True` anger att cmdlet-parametern accepterar alla återstående argument som skickas till cmdleten. Standardvärdet är `false`.
 
-`HelpMessage`Valfri namngiven parameter. Anger en kort beskrivning av parametern. Windows PowerShell visar det här meddelandet när en cmdlet körs och en obligatorisk parameter inte har angetts.
+`HelpMessage` Valfri namngiven parameter. Anger en kort beskrivning av parametern. Windows PowerShell visar det här meddelandet när en cmdlet körs och en obligatorisk parameter inte har angetts.
 
-`HelpMessageBaseName`Valfri namngiven parameter. Anger den plats där resurs identifierare finns. Den här parametern kan till exempel ange en resurs sammansättning som innehåller hjälp meddelanden som du vill lokalisera.
+`HelpMessageBaseName` Valfri namngiven parameter. Anger den plats där resurs identifierare finns. Den här parametern kan till exempel ange en resurs sammansättning som innehåller hjälp meddelanden som du vill lokalisera.
 
-`HelpMessageResourceId`Valfri namngiven parameter. Anger resurs-ID för ett hjälp meddelande.
+`HelpMessageResourceId` Valfri namngiven parameter. Anger resurs-ID för ett hjälp meddelande.
 
 ## <a name="remarks"></a>Kommentarer
 

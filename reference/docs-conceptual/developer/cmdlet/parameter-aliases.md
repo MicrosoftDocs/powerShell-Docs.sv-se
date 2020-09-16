@@ -1,19 +1,12 @@
 ---
 title: Parameter Ali Aset | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7c9096a1-46fa-48ea-9b8a-a583484b9d68
-caps.latest.revision: 13
-ms.openlocfilehash: 6545e71ea18d10621ee9c203e70f64dece460ef5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e320eeb4d2ab91acf2116fdc817a50e93c82aead
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359264"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781995"
 ---
 # <a name="parameter-aliases"></a>Parameteralias
 
@@ -50,8 +43,8 @@ private string userName;
 
 ## <a name="see-also"></a>Se även
 
-[Vanliga parameter namn](./common-parameter-names.md)
+[Vanliga parameternamn](./common-parameter-names.md)
 
-[Så här deklarerar du cmdlet-parametrar](./how-to-declare-cmdlet-parameters.md)
+[Deklarera cmdlet-parametrar](./how-to-declare-cmdlet-parameters.md)
 
 [Skriva en Windows PowerShell-cmdlet](./writing-a-windows-powershell-cmdlet.md)

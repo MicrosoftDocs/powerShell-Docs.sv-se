@@ -3,12 +3,12 @@ title: Skicka pull-begäranden
 description: Den här artikeln beskriver hur du skickar pull-begäranden till databasen PowerShell-dok.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: b56911dd4703530f31dd077a8d85ac131c82ee65
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 8b392a36c9469b83cf4f088c1799720a091434b4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83690956"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782658"
 ---
 # <a name="how-to-submit-pull-requests"></a>Skicka pull-begäranden
 
@@ -56,9 +56,9 @@ Docs platform, so the values set in these 3 places will be ignored. Please remov
 Följande beteende kommer att visas:
 
 1. Du skickar en PR.
-1. I GitHub-kommentaren som anger status för din PR kan du se att status "checks" (kontroller) har aktiverats på lagringsplatsen. Observera att två kontroller är aktiverade i det här exemplet: "Commit Validation" och "OpenPublishing.Build":
+1. I GitHub-kommentaren som visar statusen för din PR ser du statusen "checkar" aktiverade på lagrings platsen. Observera att två kontroller är aktiverade i det här exemplet: "Commit Validation" och "OpenPublishing.Build":
 
-   ![vissa kontroller misslyckades](media/pull-requests/validation-failed.png)
+   ![validerings status-vissa kontroller misslyckades](media/pull-requests/validation-failed.png)
 
    Bygget kan klara även om bekräftelse valideringen Miss lyckas.
 
@@ -66,7 +66,7 @@ Följande beteende kommer att visas:
 1. På sidan Details (Detaljerad information) visas alla valideringskontroller som har misslyckats och information om hur du åtgärdar problemen.
 1. När verifieringen lyckas läggs följande kommentar till i pull-begäran:
 
-   ![skapa validering](media/pull-requests/build-validation.png)
+   ![Validerings status: lyckad](media/pull-requests/build-validation.png)
 
 > [!NOTE]
 > Om du är en extern deltagare (inte en Microsoft-anställd) har du inte åtkomst till de detaljerade build-rapporterna eller för hands versions länkar.

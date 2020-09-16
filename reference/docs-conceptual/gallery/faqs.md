@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: PowerShell-galleriet vanliga frågor
-ms.openlocfilehash: 035681e108e1a3e05fe5d659d527ae1ad1c64cf4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 29f930cf552abec8acbbf02f5570c6ac0a14066d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500577"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87777830"
 ---
 # <a name="frequently-asked-questions"></a>Vanliga frågor och svar
 
@@ -41,7 +41,7 @@ När du har registrerat i galleriet använder du cmdletarna [Publish-module][] e
 Det här felet kan inträffa av följande orsaker:
 
 - **Den angivna API-nyckeln är ogiltig.** Se till att du har angett en giltig API-nyckel från ditt konto. Visa din profil sida för att hämta din API-nyckel.
-- **Det angivna paket namnet ägs inte av dig.** Om du har bekräftat att din API-nyckel är korrekt, kan det finnas redan ett paket med samma namn som det som du försöker använda. Paketet kan ha avvisats av ägaren, och i så fall visas det inte i några Sök resultat. Du kan kontrol lera om det redan finns ett paket med samma namn genom att öppna en webbläsare och navigera till paketets informations `https://www.powershellgallery.com/packages/<packageName>`sida:. Om du till exempel navigerar direkt `https://www.powershellgallery.com/packages/pester` till går du till pester-modulens informations sida, oavsett om den är listad eller inte. Om det redan finns ett paket med ett namn som är i konflikt och inte finns med i listan kan du:
+- **Det angivna paket namnet ägs inte av dig.** Om du har bekräftat att din API-nyckel är korrekt, kan det finnas redan ett paket med samma namn som det som du försöker använda. Paketet kan ha avvisats av ägaren, och i så fall visas det inte i några Sök resultat. Du kan kontrol lera om det redan finns ett paket med samma namn genom att öppna en webbläsare och navigera till paketets informations sida: `https://www.powershellgallery.com/packages/<packageName>` . Om du till exempel navigerar direkt till `https://www.powershellgallery.com/packages/pester` går du till pester-modulens informations sida, oavsett om den är listad eller inte. Om det redan finns ett paket med ett namn som är i konflikt och inte finns med i listan kan du:
   - Välj ett annat namn för ditt paket.
   - Kontakta ägare till det befintliga paketet.
 
@@ -125,7 +125,7 @@ PowerShellGet använder NuGet-providern för att arbeta med NuGet-baserade datab
 
 Du kan använda PowerShellGet mot en giltig NuGet-lagringsplats eller fil resurs. Du behöver bara lägga till lagrings platsen genom att köra cmdleten [register-PSRepository][] .
 
-## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>Innebär det att jag kan använda NuGet. exe för att arbeta med galleriet?
+## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>Betyder det att jag kan använda NuGet.exe för att arbeta med galleriet?
 
 Ja.
 
@@ -133,11 +133,11 @@ Ja.
 
 Under huven utnyttjar PowerShellGet kraftigt PackageManagement-infrastrukturen.
 
-På PowerShell-cmdlet-lagret är [install-module][] faktiskt en tunn omslutning runt `Install-Package -Provider PSModule`.
+På PowerShell-cmdlet-lagret är [install-module][] faktiskt en tunn omslutning runt `Install-Package -Provider PSModule` .
 
 I PackageManagement Package Provider-skiktet anropar PSModule-paket leverantören andra PackageManagement-paket leverantörer. Om du till exempel arbetar med NuGet-baserade gallerier (t. ex. PowerShell-galleriet) använder PSModule-paket leverantören NuGet-paketfilen för att arbeta med lagrings platsen.
 
-![PowerShellGet-arkitektur](media/faqs/powershellgetArchitecture.png)
+![Diagram över PowerShellGet-arkitekturen](media/faqs/powershellgetArchitecture.png)
 
 Bild 1: PowerShellGet-arkitektur
 

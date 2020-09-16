@@ -1,21 +1,14 @@
 ---
 title: Så här verifierar du ett argument mönster | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - ValidatePattern attribute, example
-ms.assetid: 7ff76d4c-443a-4887-9ff8-241225f0aeec
-caps.latest.revision: 9
-ms.openlocfilehash: 5efc1210328c76e57a31d93b9eb52de114816c3c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 35104e786d4b809a711d97fea52ae0e348dd5ca3
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356317"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782097"
 ---
 # <a name="how-to-validate-an-argument-pattern"></a>Verifiera ett argumentmönster
 
@@ -44,6 +37,6 @@ Mer information om hur du deklarerar det här attributet finns i [ValidatePatter
 
 ## <a name="see-also"></a>Se även
 
-[ValidatePattern-Attribute-deklaration](./validatepattern-attribute-declaration.md)
+[Deklaration av attributet ValidatePattern](./validatepattern-attribute-declaration.md)
 
 [Skriva en Windows PowerShell-cmdlet](./writing-a-windows-powershell-cmdlet.md)

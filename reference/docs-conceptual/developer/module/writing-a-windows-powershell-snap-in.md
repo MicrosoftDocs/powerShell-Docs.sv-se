@@ -1,21 +1,14 @@
 ---
 title: Skriva en Windows PowerShell-snapin-modul | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - snap-ins [PowerShell SDK], PSSnapin example
-ms.assetid: 875024f4-e02b-4416-80b9-af5e5b50aad6
-caps.latest.revision: 7
-ms.openlocfilehash: d12a66e354a23041fffb0f8fa286c849849ec2b0
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 02603c54fb9852a8b78ecf68e3ee387d1fd418fc
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811116"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779102"
 ---
 # <a name="writing-a-windows-powershell-snap-in"></a>Skriva en Windows PowerShell-snapin-modul
 
@@ -31,7 +24,7 @@ Med den här typen av snapin-modul väljer du inte vilka cmdletar och leverantö
 
     I det här exemplet är klass namnet "GetProcPSSnapIn01".
 
-3. Lägg till en offentlig egenskap för namnet på snapin-modulen (obligatoriskt). När du namnger snapin-moduler ska du inte använda något av följande tecken:,,,,,,,,, `#` `.` `,` `(` `)` `{` `}` `[` `]` `&` , `-` , `/` , `\` , `$` , `;` `:` `"` `'` `<` `>` `|` `?` `@` `` ` `` ,,,,,,,,,,,,,,,,,,`*`
+3. Lägg till en offentlig egenskap för namnet på snapin-modulen (obligatoriskt). När du namnger snapin-moduler ska du inte använda något av följande tecken:,,,,,,,,, `#` `.` `,` `(` `)` `{` `}` `[` `]` `&` , `-` , `/` , `\` , `$` , `;` `:` `"` `'` `<` `>` `|` `?` `@` `` ` `` ,,,,,,,,,,,,,,,,,, `*`
 
     I det här exemplet är namnet på snapin-modulen "GetProcPSSnapIn01".
 

@@ -1,26 +1,19 @@
 ---
 title: Vanliga parameter namn | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
-caps.latest.revision: 12
-ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d0939cfa5bf90ec55f0c0afcdeff56223d9dc78d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356443"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782233"
 ---
 # <a name="common-parameter-names"></a>Vanliga parameternamn
 
 De parametrar som beskrivs i det här avsnittet kallas *vanliga parametrar*. De läggs till i cmdlets av Windows PowerShell-körningsmiljön och kan inte deklareras av cmdleten.
 
 > [!NOTE]
-> Dessa parametrar läggs också till i Provider-cmdletar och till funktioner som är dekorerade med `CmdletBinding`-attributet.
+> Dessa parametrar läggs också till i Provider-cmdletar och till funktioner som är dekorerade till `CmdletBinding` attributet.
 
 ## <a name="general-common-parameters"></a>Allmänna vanliga parametrar
 

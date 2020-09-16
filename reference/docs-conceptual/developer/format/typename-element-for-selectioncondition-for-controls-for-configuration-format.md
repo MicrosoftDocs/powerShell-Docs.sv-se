@@ -1,25 +1,18 @@
 ---
 title: Elementet TypeName för SelectionCondition för kontroller för konfiguration (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 477c8711-fffc-4f92-af45-6d4f80990474
-caps.latest.revision: 7
-ms.openlocfilehash: 60f02f3240c5574e1b1f9027b060bd9af89a11d2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2db856d1b84dded315204d8c8574ae86acb63515
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353552"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780074"
 ---
 # <a name="typename-element-for-selectioncondition-for-controls-for-configuration-format"></a>TypeName-element för SelectionCondition för Controls för Configuration (format)
 
 Anger en .NET-typ som utlöser villkoret. Det här elementet används när du definierar en gemensam kontroll som kan användas av alla vyer i format filen.
 
-Konfigurations element (format) styr element i konfigurations-(format)-kontroll element för Controls (format) CustomControl-element för Control för Configuration (format) CustomEntries-element för CustomControl för kontroller för Konfiguration (format) CustomEntry-element för CustomControl for Controls for Configuration (format) EntrySelectedBy-element för CustomEntry for Controls for Configuration (format) SelectionCondition-element för EntrySelectedBy för CustomEntry för Konfigurations element (format) för SelectionCondition för kontroll av konfiguration (format)
+Konfigurations element (format) styr element i konfigurations-(format)-kontroll element för kontroll för CustomControl-element (format) för Control för Configuration (format) CustomEntries-element för CustomControl för Controls (format) CustomEntry-element för CustomControl for Controls for Configuration (format) EntrySelectedBy-elementet för CustomEntry for Controls for Configuration (format) SelectionCondition element for EntrySelectedBy for CustomEntry for Configuration (format) elementet TypeName for SelectionCondition for Controls for Configuration (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,15 +23,15 @@ Konfigurations element (format) styr element i konfigurations-(format)-kontroll 
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `TypeName`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `TypeName` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -48,12 +41,12 @@ Ingen.
 
 ## <a name="text-value"></a>Textvärde
 
-Ange det fullständigt kvalificerade namnet för .NET-typen, t. ex. `System.IO.DirectoryInfo`.
+Ange det fullständigt kvalificerade namnet för .NET-typen, t `System.IO.DirectoryInfo` . ex..
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 ## <a name="see-also"></a>Se även
 
 [SelectionCondition-element för EntrySelectedBy för CustomEntry för konfiguration (format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

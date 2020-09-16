@@ -1,25 +1,18 @@
 ---
 title: SelectionCondition-element för EntrySelectedBy för TableControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 912f3e63-e4d5-41ce-8710-6dfd8c885dc2
-caps.latest.revision: 12
-ms.openlocfilehash: 2faca6021dc26878869bdd2d35bc4ffc64d0fe7b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4a829f9daef22c4b3fd6b21dfb3af2f8539bdeb3
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358878"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780295"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-tablecontrol-format"></a>SelectionCondition-element för EntrySelectedBy för TableControl (format)
 
 Definierar det villkor som måste finnas för att användas för den här definitionen av tabellvy. Det finns ingen gräns för antalet urvals villkor som kan anges för en tabell definition.
 
-Konfigurations element (format) ViewDefinitions element (format) Visa element (format) TableControl-element (format) TableRowEntries-element (format) TableRowEntry element (format) EntrySelectedBy-element för TableRowEntry (format) SelectionCondition-element för EntrySelectedBy för TableRowEntry (format)
+Konfigurations element (format) ViewDefinitions element (format) Visa element (format) TableControl-element (format) TableRowEntries-element (format) TableRowEntry element (format) EntrySelectedBy-element för TableRowEntry (format) SelectionCondition-element för EntrySelectedBy (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -38,7 +31,7 @@ I följande avsnitt beskrivs attribut, underordnade element och det överordnade
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -55,7 +48,7 @@ Ingen.
 |-------------|-----------------|
 |[EntrySelectedBy-element för TableRowEntry (format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|Definierar de .NET-typer som använder den här tabell posten eller det villkor som måste finnas för att den här posten ska kunna användas.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Varje List post måste ha minst ett typ namn, en urvals uppsättning eller ett urvals villkor definierat.
 

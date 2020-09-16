@@ -1,19 +1,12 @@
 ---
 title: Attributtyper | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 9b1026ad-f072-4fca-8052-a2d8eb491c2a
-caps.latest.revision: 6
-ms.openlocfilehash: 52c75b3ca73706da39029d5b3ead52ff7197a5f1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 96fdd38ba10eb748ab0762f0c910463dd472494d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355631"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782386"
 ---
 # <a name="attribute-types"></a>Attributtyper
 

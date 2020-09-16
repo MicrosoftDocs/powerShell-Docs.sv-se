@@ -1,19 +1,12 @@
 ---
 title: Bekräftelse meddelanden | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a886a26d-7730-4586-aeac-fd3f0bc60b88
-caps.latest.revision: 8
-ms.openlocfilehash: 229725b5b9f1f0082592dcebe11564fd2f630ce1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8f8192f6ed96b1eeb22e3b28ce1366eee8e7c16a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356436"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782199"
 ---
 # <a name="confirmation-messages"></a>Bekräftelsemeddelanden
 
@@ -24,7 +17,7 @@ Här är olika bekräftelse meddelanden som kan visas beroende på varianterna f
 
 ## <a name="specifying-the-resource"></a>Ange resursen
 
-Du kan ange den resurs som ska ändras genom att anropa [system. Management. Automation. cmdlet. ShouldProcess% 2a? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0) -metoden. I det här fallet kan du ange resursen med hjälp av parametern `target` för metoden, och åtgärden läggs till av Windows PowerShell. I följande meddelande är texten "min resurs" den resurs som är aktive ras och åtgärden är namnet på kommandot som gör anropet.
+Du kan ange den resurs som ska ändras genom att anropa [system. Management. Automation. cmdlet. ShouldProcess% 2a? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0) -metoden. I det här fallet kan du ange resursen med hjälp av `target` -parametern för-metoden och åtgärden läggs till av Windows PowerShell. I följande meddelande är texten "min resurs" den resurs som är aktive ras och åtgärden är namnet på kommandot som gör anropet.
 
 ```output
 Confirm
@@ -48,7 +41,7 @@ Continue with this operation?
 
 ## <a name="specifying-the-operation-and-resource"></a>Ange åtgärden och resursen
 
-Du kan ange den resurs som ska ändras och åtgärden som kommandot ska utföra genom att anropa [system. Management. Automation. cmdlet. ShouldProcess% 2a? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0) -metoden. I det här fallet kan du ange resursen med hjälp av parametern `target` och åtgärden genom att använda `target` parameter. I följande meddelande är texten "min resurs" den resurs som har åtgärd ATS och "mina åtgärder" är den åtgärd som ska utföras.
+Du kan ange den resurs som ska ändras och åtgärden som kommandot ska utföra genom att anropa [system. Management. Automation. cmdlet. ShouldProcess% 2a? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0) -metoden. I det här fallet kan du ange resursen med hjälp av- `target` parametern och åtgärden med hjälp av- `target` parametern. I följande meddelande är texten "min resurs" den resurs som har åtgärd ATS och "mina åtgärder" är den åtgärd som ska utföras.
 
 ```output
 Confirm

@@ -1,19 +1,12 @@
 ---
 title: GroupBy-element för vy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 67a2b061-2a4a-4ad1-84f9-cdbefb64aaab
-caps.latest.revision: 8
-ms.openlocfilehash: abb8b91626128b3deaa2db24a9fd8b34a6563410
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2f9071a3ebbc7cc2ccb7721dd518e82723e9cc4e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354966"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781434"
 ---
 # <a name="groupby-element-for-view-format"></a>GroupBy-element för View (format)
 
@@ -39,7 +32,7 @@ I följande avsnitt beskrivs attribut, underordnade element och överordnade ele
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -47,17 +40,17 @@ Ingen.
 |-------------|-----------------|
 |[CustomControl-element för GroupBy (format)](./customcontrol-element-for-groupby-format.md)|Valfritt element.<br /><br /> Definierar den anpassade kontrollen som visar nya grupper.|
 |[CustomControlName-element för GroupBy (format)](./customcontrolname-element-for-groupby-format.md)|Valfritt element.<br /><br /> Anger namnet på en kontroll som används för att visa den nya gruppen.|
-|[Etikett element för GroupBy (format)](./label-element-for-groupby-format.md)|Valfritt element.<br /><br /> Anger en etikett som visas när en ny grupp påträffas.|
+|[Label-element för GroupBy (format)](./label-element-for-groupby-format.md)|Valfritt element.<br /><br /> Anger en etikett som visas när en ny grupp påträffas.|
 |[PropertyName-element för GroupBy (format)](./propertyname-element-for-groupby-format.md)|Valfritt element.<br /><br /> Anger .NET-egenskapen som startar en ny grupp när dess värde ändras.|
-|[Script block-element för GroupBy (format)](./scriptblock-element-for-groupby-format.md)|Valfritt element.<br /><br /> Anger det skript som startar en ny grupp när dess värde ändras.|
+|[ScriptBlock-element för GroupBy (format)](./scriptblock-element-for-groupby-format.md)|Valfritt element.<br /><br /> Anger det skript som startar en ny grupp när dess värde ändras.|
 
 ### <a name="parent-elements"></a>Överordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[Visa element (format)](./view-element-format.md)|Definierar en vy som visar ett eller flera .NET-objekt.|
+|[View-element (format)](./view-element-format.md)|Definierar en vy som visar ett eller flera .NET-objekt.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 När du definierar hur en ny grupp av objekt visas måste du ange den egenskap eller det skript som ska starta den nya gruppen. Du kan dock inte ange båda.
 
@@ -65,12 +58,12 @@ När du definierar hur en ny grupp av objekt visas måste du ange den egenskap e
 
 [CustomControlName-element för GroupBy (format)](./customcontrolname-element-for-groupby-format.md)
 
-[Etikett element för GroupBy (format)](./label-element-for-groupby-format.md)
+[Label-element för GroupBy (format)](./label-element-for-groupby-format.md)
 
 [PropertyName-element för GroupBy (format)](./propertyname-element-for-groupby-format.md)
 
-[Script block-element för GroupBy (format)](./scriptblock-element-for-groupby-format.md)
+[ScriptBlock-element för GroupBy (format)](./scriptblock-element-for-groupby-format.md)
 
-[Visa element (format)](./view-element-format.md)
+[View-element (format)](./view-element-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

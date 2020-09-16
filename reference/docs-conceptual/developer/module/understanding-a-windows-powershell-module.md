@@ -1,19 +1,12 @@
 ---
 title: Förstå en Windows PowerShell-modul | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
-caps.latest.revision: 19
-ms.openlocfilehash: b42ba6b2bf42a74213eb78f2db22e16de7e90583
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 9308ad0fd41aa67ffa8510ae7a3c9cd6a13f4220
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79406932"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779241"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Förstå en Windows PowerShell-modul
 
@@ -45,17 +38,17 @@ Slutligen måste en skript-modul, precis som andra moduler som inte har skapats 
 
 ### <a name="binary-modules"></a>Binära moduler
 
-En *binär modul* är en .NET Framework sammansättning (. dll) som innehåller kompilerad kod, till C#exempel. Cmdlet-utvecklare kan använda den här typen av modul för att dela cmdlets, providrar med mera. (Befintliga snapin-moduler kan också användas som binära moduler.) Jämfört med en skript-modul kan du använda en binär modul för att skapa cmdlets som är snabbare eller använder funktioner (till exempel multitrådning) som inte är lika enkla att koda i Windows PowerShell-skript.
+En *binär modul* är en .NET Framework sammansättning (. dll) som innehåller kompilerad kod, till exempel C#. Cmdlet-utvecklare kan använda den här typen av modul för att dela cmdlets, providrar med mera. (Befintliga snapin-moduler kan också användas som binära moduler.) Jämfört med en skript-modul kan du använda en binär modul för att skapa cmdlets som är snabbare eller använder funktioner (till exempel multitrådning) som inte är lika enkla att koda i Windows PowerShell-skript.
 
 Precis som med skript moduler kan du inkludera en manifest fil för att beskriva ytterligare resurser som din modul använder och för att spåra metadata om modulen. På samma sätt bör du förmodligen installera din binära modul i en mapp någonstans i PowerShell-modulens sökväg. Mer information finns i så här [skriver du en PowerShell-modul för binär](./how-to-write-a-powershell-binary-module.md).
 
 ### <a name="manifest-modules"></a>Manifest-moduler
 
-En *manifest modul* är en modul som använder en manifest fil för att beskriva alla dess komponenter, men som inte har någon typ av kärn sammansättning eller skript. (Formellt, en manifest-modul låter `ModuleToProcess` eller `RootModule` element i manifestet vara tomt.) Du kan dock fortfarande använda andra funktioner i en modul, till exempel möjligheten att läsa in beroende sammansättningar eller automatiskt köra vissa för bearbetnings skript. Du kan också använda en manifest modul som ett bekvämt sätt att paketera upp resurser som andra moduler använder, till exempel kapslade moduler, sammansättningar, typer eller format. Mer information finns i [så här skriver du ett manifest för PowerShell-modul](./how-to-write-a-powershell-module-manifest.md).
+En *manifest modul* är en modul som använder en manifest fil för att beskriva alla dess komponenter, men som inte har någon typ av kärn sammansättning eller skript. (Formellt, en manifest-modul lämnar `ModuleToProcess` eller- `RootModule` elementet i manifestet är tomt.) Du kan dock fortfarande använda andra funktioner i en modul, till exempel möjligheten att läsa in beroende sammansättningar eller automatiskt köra vissa för bearbetnings skript. Du kan också använda en manifest modul som ett bekvämt sätt att paketera upp resurser som andra moduler använder, till exempel kapslade moduler, sammansättningar, typer eller format. Mer information finns i [så här skriver du ett manifest för PowerShell-modul](./how-to-write-a-powershell-module-manifest.md).
 
 ### <a name="dynamic-modules"></a>Dynamiska moduler
 
-En *dynamisk modul* är en modul som inte har lästs in från eller sparas i en fil. De skapas i stället dynamiskt av ett skript med hjälp av cmdleten [New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module) . Den här typen av modul gör det möjligt för ett skript att skapa en modul på begäran som inte behöver läsas in eller sparas i beständig lagring. Av sin natur är en dynamisk modul avsedd att vara kort livs längd och kan därför inte användas av `Get-Module`-cmdlet: en. På samma sätt behöver de vanligt vis inte modul manifest, eller behöver de förmodligen permanenta mappar för att lagra sina relaterade sammansättningar.
+En *dynamisk modul* är en modul som inte har lästs in från eller sparas i en fil. De skapas i stället dynamiskt av ett skript med hjälp av cmdleten [New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module) . Den här typen av modul gör det möjligt för ett skript att skapa en modul på begäran som inte behöver läsas in eller sparas i beständig lagring. Av sin natur är en dynamisk modul avsedd att vara kort livs längd och kan därför inte användas av `Get-Module` cmdlet: en. På samma sätt behöver de vanligt vis inte modul manifest, eller behöver de förmodligen permanenta mappar för att lagra sina relaterade sammansättningar.
 
 ## <a name="module-manifests"></a>Modul manifest
 
@@ -67,7 +60,7 @@ Ett *modul manifest* är en. psd1-fil som innehåller en hash-tabell. Nycklarna 
 
 - Ta reda på hur komponenterna bearbetas.
 
-  Manifest krävs inte för en modul. Moduler kan referera till skriptfiler (. ps1), skriptfiler (. psm1), MANIFEST filer (. psd1), format och typ filer (. ps1xml), cmdlet-och Provider-sammansättningar (. dll), resursfiler, hjälpfiler, lokaliserings filer eller någon annan typ av fil eller resurs som paketeras som en del av modulen. För ett internationellt skript innehåller mappen module även en uppsättning meddelande katalog filer. Om du lägger till en manifest fil i mappen module kan du referera till flera filer som en enda enhet genom att referera till manifestet.
+  Manifest krävs inte för en modul. Moduler kan referera till skriptfiler (. ps1), skriptfiler (. psm1), MANIFEST filer (. psd1), format och typ filer (. ps1xml), cmdlet-och Provider-sammansättningar (. dll), resursfiler, hjälpfiler, lokaliserings filer eller någon annan typ av fil eller resurs som ingår i modulen. För ett internationellt skript innehåller mappen module även en uppsättning meddelande katalog filer. Om du lägger till en manifest fil i mappen module kan du referera till flera filer som en enda enhet genom att referera till manifestet.
 
   Själva manifestet beskriver följande informations kategorier:
 
@@ -85,13 +78,13 @@ Ett *modul manifest* är en. psd1-fil som innehåller en hash-tabell. Nycklarna 
 
 När du har skapat en skript-, binär-eller manifest-modul kan du spara arbetet på en plats som andra kan komma åt. Modulen kan till exempel lagras i systemmappen där Windows PowerShell är installerat, eller så kan den lagras i en användardefinierad mapp.
 
-I allmänhet kan du bestämma var du ska installera modulen genom att använda en av Sök vägarna som lagras i variabeln `$ENV:PSModulePath`. Genom att använda någon av dessa sökvägar kan PowerShell automatiskt hitta och läsa in modulen när en användare gör ett anrop till den i sin kod. Om du lagrar modulen någon annan stans kan du uttryckligen meddela PowerShell genom att skicka in platsen för modulen som en parameter när du anropar `Install-Module`.
+I allmänhet kan du bestämma var du ska installera modulen genom att använda en av Sök vägarna som lagras i `$ENV:PSModulePath` variabeln. Genom att använda någon av dessa sökvägar kan PowerShell automatiskt hitta och läsa in modulen när en användare gör ett anrop till den i sin kod. Om du lagrar modulen någon annan stans kan du uttryckligen meddela PowerShell genom att skicka in platsen för modulen som en parameter när du anropar `Install-Module` .
 
-Oavsett sökvägen kallas sökvägen för mappen (typen modulebase), och namnet på skriptet, den binära eller manifest-modulens fil ska vara samma som mappens mappnamn, med följande undantag:
+Oavsett sökvägen kallas sökvägen för mappen (typen modulebase), och namnet på *base* skriptet, den binära eller manifest-modulens fil ska vara samma som mappens mappnamn, med följande undantag:
 
-- Dynamiska moduler som skapas av `New-Module` cmdlet kan namnges med hjälp av parametern `Name` för cmdleten.
+- Dynamiska moduler som skapas av `New-Module` cmdleten kan namnges med hjälp av `Name` parametern för cmdleten.
 
-- Moduler som importeras från Assembly-objekt med kommandot **`Import-Module` Assembly** namnges enligt följande syntax: `"dynamic_code_module_" + assembly.GetName()`.
+- Moduler som importeras från Assembly-objekt med kommandot ** `Import-Module` -Assembly** namnges enligt följande syntax: `"dynamic_code_module_" + assembly.GetName()` .
 
   Mer information finns i [installera en PowerShell-modul](./installing-a-powershell-module.md) och [ändra installations Sök vägen för PSModulePath](./modifying-the-psmodulepath-installation-path.md).
 
@@ -107,7 +100,7 @@ Cmdleten [New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module) d
 
 Cmdleten [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) denna cmdlet hämtar information om de moduler som har varit eller som kan importeras till den aktuella sessionen.
 
-[Export-ModuleMember-](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cmdlet denna cmdlet anger de Modulnamn (t. ex. cmdlets, functions, variabler och alias) som exporteras från en skriptfil (. psm1) eller från en dynamisk modul som skapats med hjälp av `New-Module` cmdlet.
+[Export-ModuleMember-](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cmdlet denna cmdlet anger de Modulnamn (till exempel cmdlets, functions, variabler och alias) som exporteras från en skriptfil (. psm1) eller från en dynamisk modul som skapats med hjälp av `New-Module` cmdleten.
 
 Cmdleten [Remove-module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) denna cmdlet tar bort moduler från den aktuella sessionen.
 

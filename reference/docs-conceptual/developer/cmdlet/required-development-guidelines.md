@@ -1,27 +1,20 @@
 ---
 title: Nödvändiga utvecklings rikt linjer | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
-caps.latest.revision: 19
-ms.openlocfilehash: e68e43a91f9139e8d3dc636b5740121515aab2e6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ca0168050e3c1c2e7537036f96da62f52d50982e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359293"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781706"
 ---
 # <a name="required-development-guidelines"></a>Obligatoriska riktlinjer för utveckling
 
 Följande rikt linjer måste följas när du skriver dina cmdletar. De är indelade i rikt linjer för att utforma cmdlets och rikt linjer för att skriva din cmdlet-kod. Om du inte följer de här rikt linjerna kan dina cmdlets missin fungera och användarna kan ha en låg upplevelse när de använder dina cmdletar.
 
-## <a name="in-this-topic"></a>I den här artikeln
+## <a name="in-this-topic"></a>I det här avsnittet
 
-### <a name="design-guidelines"></a>Riktlinjer för design
+### <a name="design-guidelines"></a>Design rikt linjer
 
 - [Använd endast godkända verb (RD01)](./required-development-guidelines.md#use-only-approved-verbs-rd01)
 
@@ -51,7 +44,7 @@ Följande rikt linjer måste följas när du skriver dina cmdletar. De är indel
 
 - [Använd en Windows PowerShell-modul för att distribuera dina cmdlets (RC07)](./required-development-guidelines.md#use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07)
 
-## <a name="design-guidelines"></a>Riktlinjer för design
+## <a name="design-guidelines"></a>Design rikt linjer
 
 Följande rikt linjer måste följas när du utformar cmdlets för att säkerställa en konsekvent användar upplevelse mellan att använda dina cmdletar och andra cmdletar. När du hittar en design rikt linje som gäller din situation bör du titta närmare på kod rikt linjerna för liknande rikt linjer.
 
@@ -75,25 +68,25 @@ Verbet som anges i cmdlet-attributet måste komma från den identifierade uppsä
 
 Mer information om godkända verb finns i [cmdlet-verb](./approved-verbs-for-windows-powershell-commands.md).
 
-Användare behöver en uppsättning som identifierar och förväntade cmdlet-namn. Använd lämpligt verb så att användaren kan göra en snabb bedömning av vad en cmdlet gör och för att enkelt identifiera funktionerna i systemet. Följande kommando rads kommando hämtar till exempel en lista över alla kommandon i systemet vars namn börjar med "Start": `get-command start-*`. Använd Substantiv i dina cmdlets för att skilja dina cmdletar från andra cmdletar. Substantivet anger den resurs som åtgärden ska utföras på. Själva åtgärden representeras av verbet.
+Användare behöver en uppsättning som identifierar och förväntade cmdlet-namn. Använd lämpligt verb så att användaren kan göra en snabb bedömning av vad en cmdlet gör och för att enkelt identifiera funktionerna i systemet. Följande kommando rads kommando hämtar till exempel en lista över alla kommandon i systemet vars namn börjar med "Start": `get-command start-*` . Använd Substantiv i dina cmdlets för att skilja dina cmdletar från andra cmdletar. Substantivet anger den resurs som åtgärden ska utföras på. Själva åtgärden representeras av verbet.
 
 ### <a name="cmdlet-names-characters-that-cannot-be-used-rd02"></a>Cmdlet-namn: tecken som inte kan användas (RD02)
 
 Använd inte något av följande specialtecken när du namnger cmdletar.
 
-|Tecken|Namn|
+|Tecken|Name|
 |---------------|----------|
 |#|nummer tecken|
-|,|Kommaseparerade|
+|,|kommaseparerade|
 |()|parenteser|
 |{}|klammerparenteser|
 |[]|hakparenteser|
 |&|et|
-|-|bindestrecks **anteckning:** bindestrecket kan användas för att avgränsa verbet från substantiv, men det kan inte användas i Substantiv eller i verbet.|
+|-|bindestrecks **anteckning:**  bindestrecket kan användas för att avgränsa verbet från substantiv, men det kan inte användas i Substantiv eller i verbet.|
 |/|snedstreck|
 |\\| omvänt snedstreck|
 |$|dollartecken|
-|^|caret|
+|^|cirkumflex|
 |;|Skilj|
 |:|kolon|
 |"|dubbla citat tecken|
@@ -117,12 +110,12 @@ Windows PowerShell tillhandahåller en gemensam uppsättning parametrar för all
 
 För cmdletar som utför en åtgärd som ändrar systemet ska de anropa metoden [system. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) för att begära bekräftelse, och i särskilda fall anropar du metoden [system. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) . (Metoden [system. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) får bara anropas efter att metoden [system. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) anropas.)
 
-För att göra dessa anrop måste cmdleten ange att den stöder bekräftelse begär Anden genom att ange nyckelordet `SupportsShouldProcess` för cmdlet-attributet. Mer information om hur du anger det här attributet finns i [deklaration av cmdlet-attribut](./cmdlet-attribute-declaration.md).
+För att göra dessa anrop måste cmdleten ange att den stöder bekräftelse begär Anden genom att ange `SupportsShouldProcess` nyckelordet för cmdlet-attributet. Mer information om hur du anger det här attributet finns i [deklaration av cmdlet-attribut](./cmdlet-attribute-declaration.md).
 
 > [!NOTE]
 > Om cmdlet-attributet för cmdlet-klassen anger att cmdleten stöder anrop till metoden [system. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och cmdleten inte kan anropa metoden [system. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) , kan användaren ändra systemet oväntat.
 
-Använd metoden [system. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) för alla system ändringar. En användar inställning och `WhatIf`-parametern styr metoden [system. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) . Däremot utför anropet [system. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ytterligare en kontroll för potentiellt skadliga ändringar. Den här metoden styrs inte av någon användar inställning eller parametern `WhatIf`. Om cmdleten anropar metoden [system. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ska den ha en `Force` parameter som kringgår anropen till dessa två metoder och som fortsätter med åtgärden. Detta är viktigt eftersom det gör att din cmdlet kan användas i icke-interaktiva skript och värdar.
+Använd metoden [system. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) för alla system ändringar. En användar inställning och `WhatIf` parametern styr metoden [system. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) . Däremot utför anropet [system. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ytterligare en kontroll för potentiellt skadliga ändringar. Den här metoden styrs inte av någon användar inställning eller `WhatIf` parameter. Om cmdleten anropar metoden [system. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ska den ha en `Force` parameter som kringgår anropen till dessa två metoder och som fortsätter med åtgärden. Detta är viktigt eftersom det gör att din cmdlet kan användas i icke-interaktiva skript och värdar.
 
 Om dina cmdlets stöder dessa anrop kan användaren avgöra om åtgärden ska utföras. Till exempel anropar cmdleten [Stop-process](/powershell/module/microsoft.powershell.management/stop-process) metoden [system. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) innan en uppsättning kritiska processer stoppas, inklusive system-, Winlogon-och Spoolsv-processer.
 
@@ -200,7 +193,7 @@ En administrations miljö identifierar och gör viktiga ändringar i systemet so
 
 - Objektet [system. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) som refereras till av [systemet. Management. Automation. cmdlet. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) och [system. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metoder kräver ett undantag i dess kärna. Följ rikt linjerna för .NET Framework design när du bestämmer vilket undantag som ska användas. Om felet är semantiskt på samma sätt som ett befintligt undantag, använder du detta undantag eller härleds från det undantaget. Annars härleds en ny undantags-eller undantags hierarki direkt från [system. Exception](/dotnet/api/System.Exception) -typen.
 
-Ett [system. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -objekt kräver också en fel kategori som grupperar fel för användaren. Användaren kan visa fel baserat på kategorin genom att ange värdet för `$ErrorView` Shell-variabeln till CategoryView. Möjliga kategorier definieras av uppräkningen [system. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) .
+Ett [system. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -objekt kräver också en fel kategori som grupperar fel för användaren. Användaren kan visa fel baserat på kategorin genom att ange värdet för `$ErrorView` Shell-variabeln som CategoryView. Möjliga kategorier definieras av uppräkningen [system. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) .
 
 - Om en cmdlet skapar en ny tråd, och om den kod som körs i den tråden ger upphov till ett ohanterat undantag, kommer Windows PowerShell inte att fånga fel meddelandet och kommer att avsluta processen.
 
@@ -212,8 +205,8 @@ Skapa en Windows PowerShell-modul för att paketera och distribuera dina cmdleta
 
 ## <a name="see-also"></a>Se även
 
-[Rekommendationer för starkt uppmuntrande utveckling](./strongly-encouraged-development-guidelines.md)
+[Starkt rekommenderade riktlinjer för utveckling](./strongly-encouraged-development-guidelines.md)
 
-[Rikt linjer för utveckling av råd](./advisory-development-guidelines.md)
+[Rekommenderade riktlinjer för utveckling](./advisory-development-guidelines.md)
 
 [Skriva en Windows PowerShell-cmdlet](./writing-a-windows-powershell-cmdlet.md)

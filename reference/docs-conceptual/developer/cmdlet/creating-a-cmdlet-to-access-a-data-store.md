@@ -1,23 +1,18 @@
 ---
 title: Skapa en cmdlet för att komma åt ett datalager
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.openlocfilehash: 3096965ba9f99f70994f2fb5b180cc58691b04f8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a595805a820c355937e581f0e00fa2a9a9fc3df0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74415709"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782148"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Skapa en cmdlet för att komma åt ett datalager
 
 I det här avsnittet beskrivs hur du skapar en-cmdlet som använder lagrade data via en Windows PowerShell-Provider. Den här typen av cmdlet använder Windows PowerShell-providerns infrastruktur i Windows PowerShell-körningsmiljön och därför måste cmdlet-klassen härledas från Bask Lassen [system. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) .
 
-Cmdleten Select-Str som beskrivs här kan hitta och välja strängar i en fil eller ett objekt. Mönstren som används för att identifiera strängen kan anges explicit genom `Path`-parametern för cmdleten eller implicit via `Script`-parametern.
+Cmdleten Select-Str som beskrivs här kan hitta och välja strängar i en fil eller ett objekt. Mönstren som används för att identifiera strängen kan anges explicit genom `Path` parametern för cmdleten eller implicit via `Script` parametern.
 
 Cmdlet: en är utformad för att använda en Windows PowerShell-provider som är härledd från [system. Management. Automation. Provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). Till exempel kan cmdleten ange fil Systems leverantören eller variabel leverantören som tillhandahålls av Windows PowerShell. Mer information aboutWindows PowerShell-leverantörer finns i [utforma din Windows PowerShell-Provider](../prog-guide/designing-your-windows-powershell-provider.md).
 
@@ -34,7 +29,7 @@ Följande kod är klass definitionen för den här Select-Str-cmdleten.
 public class SelectStringCommand : PSCmdlet
 ```
 
-Denna cmdlet definierar en standard parameter uppsättning genom att lägga till nyckelordet `DefaultParameterSetName` attribut till klass deklarationen. Standard parameter uppsättningen `PatternParameterSet` används när `Script`-parametern inte anges. Mer information om den här parameter uppsättningen finns i `Pattern` och `Script` parameter diskussion i följande avsnitt.
+Denna cmdlet definierar en standard parameter uppsättning genom att lägga till `DefaultParameterSetName` attributet nyckelord i klass deklarationen. Standard parameter uppsättningen `PatternParameterSet` används när `Script` parametern inte anges. Mer information om den här parameter uppsättningen finns i `Pattern` `Script` diskussions parametern och i följande avsnitt.
 
 ## <a name="defining-parameters-for-data-access"></a>Definiera parametrar för data åtkomst
 
@@ -45,7 +40,7 @@ Den här cmdleten definierar flera parametrar som ger användaren åtkomst till 
 
 ### <a name="declaring-the-path-parameter"></a>Att deklarera Sök vägs parametern
 
-För att hitta data lagret måste denna cmdlet använda en Windows PowerShell-sökväg för att identifiera Windows PowerShell-providern som har utformats för att komma åt data lagret. Därför definieras en `Path` parameter av typen sträng mat ris som anger var providern finns.
+För att hitta data lagret måste denna cmdlet använda en Windows PowerShell-sökväg för att identifiera Windows PowerShell-providern som har utformats för att komma åt data lagret. Därför definierar den en `Path` parameter av typen sträng mat ris för att ange var providern finns.
 
 ```csharp
 [Parameter(
@@ -68,13 +63,13 @@ private string[] paths;
 
 Observera att den här parametern tillhör två olika parameter uppsättningar och att den har ett alias.
 
-Med två [system. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) -attribut deklareras att parametern `Path` tillhör `ScriptParameterSet` och `PatternParameterSet`. Mer information om parameter uppsättningar finns i [lägga till parameter uppsättningar till en cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
+Med två [system. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) -attribut deklareras att `Path` parametern tillhör `ScriptParameterSet` och `PatternParameterSet` . Mer information om parameter uppsättningar finns i [lägga till parameter uppsättningar till en cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
 
-Attributet [system. Management. Automation. Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) deklarerar ett `PSPath` alias för `Path`-parametern. Att deklarera det här aliaset rekommenderas starkt för konsekvens med andra cmdletar som har åtkomst till Windows PowerShell-leverantörer. Mer information aboutWindows PowerShell-sökvägar finns i "PowerShell Path Concepts" i [hur Windows PowerShell fungerar](/previous-versions//ms714658(v=vs.85)).
+Attributet [system. Management. Automation. Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) deklarerar ett `PSPath` alias för `Path` parametern. Att deklarera det här aliaset rekommenderas starkt för konsekvens med andra cmdletar som har åtkomst till Windows PowerShell-leverantörer. Mer information aboutWindows PowerShell-sökvägar finns i "PowerShell Path Concepts" i [hur Windows PowerShell fungerar](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="declaring-the-pattern-parameter"></a>Att deklarera mönster parametern
 
-Om du vill ange mönster att söka efter, deklarerar denna cmdlet en `Pattern` parameter som är en sträng mat ris. Ett positivt resultat returneras när något av mönstren hittas i data lagret. Observera att dessa mönster kan kompileras i en matris med kompilerade reguljära uttryck eller en matris med jokertecken som används för litterala sökningar.
+För att ange mönster att söka efter, deklarerar denna cmdlet en `Pattern` parameter som är en sträng mat ris. Ett positivt resultat returneras när något av mönstren hittas i data lagret. Observera att dessa mönster kan kompileras i en matris med kompilerade reguljära uttryck eller en matris med jokertecken som används för litterala sökningar.
 
 ```csharp
 [Parameter(
@@ -91,13 +86,13 @@ private Regex[] regexPattern;
 private WildcardPattern[] wildcardPattern;
 ```
 
-När den här parametern anges använder cmdleten standard parameter uppsättningen `PatternParameterSet`. I det här fallet använder cmdleten de mönster som anges här för att välja strängar. Parametern `Script` kan dock också användas för att tillhandahålla ett skript som innehåller mönstren. Parametrarna `Script` och `Pattern` definierar två separata parameter uppsättningar, så de är ömsesidigt uteslutande.
+När den här parametern anges använder cmdleten standard parameter uppsättningen `PatternParameterSet` . I det här fallet använder cmdleten de mönster som anges här för att välja strängar. Dessutom `Script` kan parametern även användas för att ange ett skript som innehåller mönstren. `Script`Parametrarna och `Pattern` definierar två separata parameter uppsättningar, så de är ömsesidigt uteslutande.
 
 ### <a name="declaring-search-support-parameters"></a>Deklarera Sök support parametrar
 
 Denna cmdlet definierar följande support parametrar som kan användas för att ändra Sök funktioner för cmdleten.
 
-Parametern `Script` anger ett skript block som kan användas för att tillhandahålla en alternativ Sök funktion för cmdleten. Skriptet måste innehålla de mönster som används för att matcha och returnera ett [system. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) -objekt. Observera att den här parametern också är den unika parameter som identifierar `ScriptParameterSet` parameter uppsättningen. När Windows PowerShell-körningsmiljön ser den här parametern används bara parametrar som tillhör den `ScriptParameterSet` parameter uppsättningen.
+`Script`Parametern anger ett skript block som kan användas för att tillhandahålla en alternativ Sök funktion för cmdleten. Skriptet måste innehålla de mönster som används för att matcha och returnera ett [system. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) -objekt. Observera att den här parametern också är den unika parameter som identifierar `ScriptParameterSet` parameter uppsättningen. När Windows PowerShell-körningsmiljön ser den här parametern används endast parametrar som tillhör `ScriptParameterSet` parameter uppsättningen.
 
 ```csharp
 [Parameter(
@@ -112,7 +107,7 @@ public ScriptBlock Script
 ScriptBlock script;
 ```
 
-Parametern `SimpleMatch` är en växel parameter som anger om cmdleten ska matcha mönstren som de anges. När användaren anger parametern på kommando raden (`true`) använder cmdleten mönstren som de anges. Om parametern inte anges (`false`) använder cmdleten reguljära uttryck. Standardvärdet för den här parametern är `false`.
+`SimpleMatch`Parametern är en switch-parameter som anger om cmdleten är att explicit matcha mönster när de anges. När användaren anger parametern på kommando raden ( `true` ) använder cmdleten mönstren som de anges. Om parametern inte anges ( `false` ) använder cmdleten reguljära uttryck. Standardvärdet för den här parametern är `false` .
 
 ```csharp
 [Parameter]
@@ -124,7 +119,7 @@ public SwitchParameter SimpleMatch
 private bool simpleMatch;
 ```
 
-Parametern `CaseSensitive` är en växel parameter som anger om en Skift läges känslig sökning utförs. När användaren anger parametern på kommando raden (`true`) söker cmdleten efter versaler och gemener i tecknen när mönster jämförs. Om parametern inte anges (`false`) särskiljer inte cmdleten mellan versaler och gemener. Till exempel "min fil" och "min fil" skulle båda returneras som positiva träffar. Standardvärdet för den här parametern är `false`.
+`CaseSensitive`Parametern är en växel parameter som anger om en Skift läges känslig sökning utförs. När användaren anger parametern på kommando raden ( `true` ) söker cmdleten efter versaler och gemener i tecknen när mönster jämförs. Om parametern inte anges ( `false` ) särskiljer inte cmdleten mellan versaler och gemener. Till exempel "min fil" och "min fil" skulle båda returneras som positiva träffar. Standardvärdet för den här parametern är `false` .
 
 ```csharp
 [Parameter]
@@ -136,7 +131,7 @@ public SwitchParameter CaseSensitive
 private bool caseSensitive;
 ```
 
-Parametrarna `Exclude` och `Include` identifierar objekt som uttryckligen utesluts från eller ingår i sökningen. Som standard söker cmdleten igenom alla objekt i data lagret. Men om du vill begränsa sökningen som utförs av cmdleten, kan dessa parametrar användas för att explicit ange objekt som ska inkluderas i sökningen eller utelämnas.
+`Exclude`Parametrarna och `Include` identifierar objekt som uttryckligen utesluts från eller ingår i sökningen. Som standard söker cmdleten igenom alla objekt i data lagret. Men om du vill begränsa sökningen som utförs av cmdleten, kan dessa parametrar användas för att explicit ange objekt som ska inkluderas i sökningen eller utelämnas.
 
 ```csharp
 [Parameter]
@@ -175,7 +170,7 @@ internal WildcardPattern[] include = null;
 
 ### <a name="declaring-parameter-sets"></a>Deklarera parameter uppsättningar
 
-Denna cmdlet använder två parameter uppsättningar (`ScriptParameterSet` och `PatternParameterSet`, vilket är standard) som namnen på två parameter uppsättningar som används i data åtkomst. `PatternParameterSet` är standard parameter uppsättningen och används när `Pattern`-parametern har angetts. `ScriptParameterSet` används när användaren anger en alternativ sökmekanism via parametern `Script`. Mer information om parameter uppsättningar finns i [lägga till parameter uppsättningar till en cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
+Denna cmdlet använder två parameter uppsättningar ( `ScriptParameterSet` och `PatternParameterSet` standard) som namnen på två parameter uppsättningar som används i data åtkomst. `PatternParameterSet` är standard parameter uppsättningen och används när `Pattern` parametern anges. `ScriptParameterSet` används när användaren anger en alternativ Sök funktion via `Script` parametern. Mer information om parameter uppsättningar finns i [lägga till parameter uppsättningar till en cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
 
 ## <a name="overriding-input-processing-methods"></a>Åsidosätta metoder för bearbetning av indata
 
@@ -1115,7 +1110,7 @@ När din cmdlet har registrerats med Windows PowerShell kan du testa den genom a
     Pattern      : .NET
     ```
 
-2. Sök i antecknings filen efter förekomster av rader med ordet "över", följt av annan text. Parametern `SimpleMatch` använder standardvärdet `false`. Sökningen är Skift läges okänslig eftersom parametern `CaseSensitive` har angetts till `false`.
+2. Sök i antecknings filen efter förekomster av rader med ordet "över", följt av annan text. `SimpleMatch`Parametern använder standardvärdet `false` . Sökningen är Skift läges okänslig eftersom `CaseSensitive` parametern har angetts till `false` .
 
     ```powershell
     select-str -Path notes -Pattern "over*" -SimpleMatch -CaseSensitive:$false

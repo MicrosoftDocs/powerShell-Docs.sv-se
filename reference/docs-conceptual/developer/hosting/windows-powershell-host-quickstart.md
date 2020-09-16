@@ -1,19 +1,12 @@
 ---
 title: Snabb start för Windows PowerShell-värd | Microsoft Docs
-ms.custom: ''
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
-caps.latest.revision: 9
-ms.openlocfilehash: 390eb2d0153c65967d8c0711c852aa6e13fe4660
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fea6bd5ae49ecf552c583271ee9d869b1ccebae8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352992"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779411"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Snabbstart för Windows PowerShell-värd
 
@@ -91,7 +84,7 @@ PowerShell.Create().AddCommand("Get-Process")
 ### <a name="addstatement"></a>AddStatement
 
 Du kan simulera batching med hjälp av metoden [system. Management. Automation. PowerShell. AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , som lägger till ytterligare en instruktion i slutet av pipelinen.
-Följande kod hämtar en lista över processer som körs med namnet `PowerShell`och hämtar sedan listan över tjänster som körs.
+Följande kod hämtar en lista över processer som körs med namnet `PowerShell` och hämtar sedan listan över tjänster som körs.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -104,15 +97,15 @@ ps.Invoke();
 
 Du kan köra ett befintligt skript genom att anropa metoden [system. Management. Automation. PowerShell. AddScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript) .
 I följande exempel läggs ett skript till i pipelinen och körs.
-Det här exemplet förutsätter att det redan finns ett skript med namnet `MyScript.ps1` i en mapp med namnet `D:\PSScripts`.
+Det här exemplet förutsätter att det redan finns ett skript `MyScript.ps1` som heter i en mapp med namnet `D:\PSScripts` .
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
-Det finns också en version av AddScript-metoden som tar en boolesk parameter med namnet `useLocalScope`.
-Om den här parametern är inställd på `true`körs skriptet i det lokala omfånget.
+Det finns också en version av AddScript-metoden som tar en boolesk parameter med namnet `useLocalScope` .
+Om den här parametern är inställd på `true` körs skriptet i det lokala omfånget.
 Följande kod kommer att köra skriptet i det lokala omfånget.
 
 ```csharp
@@ -125,11 +118,11 @@ ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 Även om standard-körnings utrymme som används i föregående exempel läser in alla viktiga Windows PowerShell-kommandon, kan du skapa en anpassad körnings utrymme som endast läser in en viss delmängd av alla kommandon.
 Du kanske vill göra detta för att förbättra prestandan (att läsa in ett stort antal kommandon är en prestanda träff) eller att begränsa möjligheten för användaren att utföra åtgärder.
 En körnings utrymme som visar bara ett begränsat antal kommandon kallas för en begränsad körnings utrymme.
-Om du vill skapa en begränsad körnings utrymme använder du klasserna [system. Management. Automation. körnings utrymmen. körnings utrymme](/dotnet/api/System.Management.Automation.Runspaces.Runspace) och [system. Management. Automation. körnings utrymmen. InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
+Om du vill skapa en begränsad körnings utrymme använder du klassen [system. Management. Automation. körnings utrymmen. körnings utrymme](/dotnet/api/System.Management.Automation.Runspaces.Runspace) och [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
 
 ### <a name="creating-an-initialsessionstate-object"></a>Skapa ett InitialSessionState-objekt
 
-Om du vill skapa en anpassad körnings utrymme måste du först skapa ett [system. Management. Automation. körnings utrymmen. InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt.
+Om du vill skapa en anpassad körnings utrymme måste du först skapa ett [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt.
 I följande exempel använder vi [system. Management. Automation. körnings utrymmen. RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) för att skapa en körnings utrymme när du har skapat ett standard InitialSessionState-objekt.
 
 ```csharp
@@ -144,14 +137,14 @@ ps.Invoke();
 
 ### <a name="constraining-the-runspace"></a>Begränsa körnings utrymme
 
-I föregående exempel skapade vi ett standard [system. Management. Automation. körnings utrymmen. InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt som läser in alla inbyggda kärnor i Windows PowerShell.
-Vi kan också ha anropat metoden [system. Management. Automation. körnings utrymmen. InitialSessionState. CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) för att skapa ett InitialSessionState-objekt som endast läser in kommandona i snapin-modulen Microsoft. PowerShell. Core.
-Om du vill skapa en mer begränsad körnings utrymme måste du skapa ett tomt InitialSessionState-objekt genom att anropa metoden [system. Management. Automation. körnings utrymmen. InitialSessionState. Create](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) och sedan lägga till kommandon i InitialSessionState.
+I det tidigare exemplet skapade vi ett standard- [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt som läser in alla inbyggda kärnor i Windows PowerShell.
+Vi kan också ha anropat metoden [System.Management.Automation.Runspaces.InitialSessionState. CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) för att skapa ett InitialSessionState-objekt som endast läser in kommandona i snapin-modulen Microsoft. PowerShell. Core.
+Om du vill skapa en mer begränsad körnings utrymme måste du skapa ett tomt InitialSessionState-objekt genom att anropa metoden [System.Management.Automation.Runspaces.InitialSessionState. Create](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) och sedan lägga till kommandon i InitialSessionState.
 
 Om du använder en körnings utrymme som bara läser in de kommandon som du anger får du avsevärt bättre prestanda.
 
 Du kan använda metoderna i klassen [system. Management. Automation. körnings utrymmen. SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) för att definiera cmdletar för det första sessionstillståndet.
-I följande exempel skapas ett tomt tillstånd för inledande session och sedan definieras och läggs till `Get-Command` och `Import-Module` kommandon i det första sessionstillståndet.
+I följande exempel skapas ett tomt tillstånd för inledande session och sedan definieras och läggs `Get-Command` `Import-Module` kommandona till i det första sessionstillståndet.
 Vi skapar sedan en körnings utrymme som är begränsad av det första sessionstillståndet och kör kommandona i den körnings utrymme.
 
 Skapa det första sessionstillståndet.

@@ -1,25 +1,18 @@
 ---
 title: Skriva en Windows PowerShell-modul | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: bfbccc5b-2b2b-432a-a971-9f8ab503cdc3
-caps.latest.revision: 17
-ms.openlocfilehash: 0b7263ea19745e902fff04b993933e443d4d6333
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d2398a8111a9832af2465d045be0bdefc3cf927a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352852"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779156"
 ---
 # <a name="writing-a-windows-powershell-module"></a>Skriva en Windows PowerShell-modul
 
 Det här dokumentet är skrivet för administratörer, skript utvecklare och cmdlet-utvecklare som behöver paketera och distribuera sina Windows PowerShell-cmdlets. Med hjälp av Windows PowerShell-moduler kan du paketera och distribuera dina Windows PowerShell-lösningar utan att använda ett kompilerat språk.
 
-Med Windows PowerShell-moduler kan du partitionera, organisera och abstrakta din Windows PowerShell-kod i självständiga, återanvändbara enheter. Med dessa åter användnings bara enheter kan du enkelt dela dina moduler direkt med andra. Om du är en skript utvecklare kan du också paketera om moduler från tredje part för att skapa anpassade skriptbaserade program. Moduler som liknar moduler i andra skript språk, till exempel perl och python, möjliggör produktions klara skript lösningar som använder återanvändbara, omdistribuerbara komponenter, med den extra fördelen att du kan ompaketera och sammanställa flera komponenter till skapa anpassade lösningar.
+Med Windows PowerShell-moduler kan du partitionera, organisera och abstrakta din Windows PowerShell-kod i självständiga, återanvändbara enheter. Med dessa åter användnings bara enheter kan du enkelt dela dina moduler direkt med andra. Om du är en skript utvecklare kan du också paketera om moduler från tredje part för att skapa anpassade skriptbaserade program. Moduler som liknar moduler i andra skript språk, till exempel perl och python, möjliggör produktions klara skript lösningar som använder återanvändbara, distribuerbara komponenter, med den extra fördelen att du kan paketera och sammanställa flera komponenter för att skapa anpassade lösningar.
 
 Windows PowerShell kommer att behandla alla giltiga Windows PowerShell-skript koder som sparats i en. psm1-fil som en modul. PowerShell kommer också automatiskt att behandla en binär cmdlet-sammansättning som en modul. Men du kan också använda en modul (eller mer specifikt ett modul manifest) för att bunta samman en hel lösning. I följande scenarier beskrivs vanliga användnings områden för Windows PowerShell-moduler.
 
@@ -39,13 +32,13 @@ Cmdlet-och Provider-utvecklare kan använda moduler för att testa och distribue
 
 [Förstå en Windows PowerShell-modul](./understanding-a-windows-powershell-module.md)
 
-[Så här skriver du en PowerShell-modul för skript](./how-to-write-a-powershell-script-module.md)
+[Skriva en PowerShell-skriptmodul](./how-to-write-a-powershell-script-module.md)
 
-[Så här skriver du en PowerShell-modul för binär](./how-to-write-a-powershell-binary-module.md)
+[Skriva en binär PowerShell-modul](./how-to-write-a-powershell-binary-module.md)
 
-[Så här skriver du ett manifest för PowerShell-modul](how-to-write-a-powershell-module-manifest.md)
+[Skriva ett PowerShell-modulmanifest](how-to-write-a-powershell-module-manifest.md)
 
-[Ändra installations Sök vägen för PSModulePath](./modifying-the-psmodulepath-installation-path.md)
+[Ändra installationssökvägen för PSModulePath](./modifying-the-psmodulepath-installation-path.md)
 
 [Importera en PowerShell-modul](./importing-a-powershell-module.md)
 

@@ -1,26 +1,19 @@
 ---
 title: Så här skapar du cmdlet-hjälp filen | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
-caps.latest.revision: 17
-ms.openlocfilehash: cc77c0546de98e492c9724e051b9d72f1ebfdcb6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 7ab0404e5d0122a64483883e6e2d4760dfa5038d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560176"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779836"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>Skapa cmdlet-hjälpfilen
 
 I det här avsnittet beskrivs hur du skapar en giltig XML-fil som innehåller innehåll för Windows PowerShell-cmdlet hjälp avsnitt. I det här avsnittet beskrivs hur du namnger hjälp filen, hur du lägger till lämpliga XML-huvuden och hur du lägger till noder som innehåller de olika avsnitten i hjälp innehållet för cmdleten.
 
 > [!NOTE]
-> Om du vill se en fullständig vy över en hjälpfil öppnar du en av dll-Help. XML-filerna som finns i installations katalogen för Windows PowerShell. Till exempel innehåller filen Microsoft. PowerShell. commands. Management. dll-Help. XML innehåll för flera av Windows PowerShell-cmdlets.
+> Om du vill se en fullständig vy över en hjälpfil öppnar du en av `dll-Help.xml` filerna som finns i installations katalogen för Windows PowerShell. Filen innehåller till exempel `Microsoft.PowerShell.Commands.Management.dll-Help.xml` innehåll för flera av PowerShell-cmdletarna.
 
 ### <a name="how-to-create-a-cmdlet-help-file"></a>Så här skapar du en cmdlet-hjälpfil
 
@@ -28,35 +21,35 @@ I det här avsnittet beskrivs hur du skapar en giltig XML-fil som innehåller in
 
    `<PSSnapInAssemblyName>.dll-Help.xml`
 
-2. Lägg till följande XML-rubriker i text filen. Tänk på att filen kommer att verifieras mot MAML-schemat (Multi-agent Modeling Language). För närvarande tillhandahåller Windows PowerShell inga verktyg för att validera filen.
+1. Lägg till följande XML-rubriker i text filen. Tänk på att filen kommer att verifieras mot MAML-schemat (Microsoft Assistance Markup Language). För närvarande tillhandahåller PowerShell inga verktyg för att validera filen.
 
    `<?xml version="1.0" encoding="utf-8" ?> <helpItems xmlns="http://msh" schema="maml">`
 
-3. Lägg till en kommando nod i cmdlet-hjälpen för varje cmdlet i sammansättningen. Varje nod i kommando-noden relaterar till de olika avsnitten i hjälp avsnittet för cmdleten.
+1. Lägg till en **kommando** nod i cmdlet-hjälpen för varje cmdlet i sammansättningen. Varje nod i **kommando** -noden relaterar till de olika avsnitten i hjälp avsnittet för cmdleten.
 
    I följande tabell visas XML-elementet för varje nod, följt av en beskrivning av varje nod.
 
-   |Node|Beskrivning|
-   |----------|-----------------|
-   |`<details>`|Lägger till innehåll för avsnittet namn och sammanfattning i hjälpen för cmdlet. Mer information finns i [så här lägger du till cmdlet-namn och-sammanfattning](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md).|
-   |`<maml:description>`|Lägger till innehåll i BESKRIVNINGs avsnittet i hjälp avsnittet för cmdleten. Mer information finns i [avsnittet så här lägger du till den detaljerade beskrivningen i en cmdlet-hjälpfil](./how-to-add-a-cmdlet-description.md).|
-   |`<command:syntax>`|Lägger till innehåll i avsnittet SYNTAX i hjälp avsnittet för cmdlet. Mer information finns i [avsnittet så här lägger du till syntax i en cmdlet-hjälpfil](./how-to-add-syntax-to-a-cmdlet-help-topic.md).|
-   |`<command:parameters>`|Lägger till innehåll för avsnittet parametrar i hjälp avsnittet för cmdlet. Mer information finns i [avsnittet How to Add Parameters to a cmdlet Help](./how-to-add-parameter-information.md).|
-   |`<command:inputTypes>`|Lägger till innehåll för indata-avsnittet i hjälp avsnittet för cmdlet. Mer information finns i [så här lägger du till indatatyper i ett hjälp avsnitt om cmdlet](./how-to-add-input-types-to-a-cmdlet-help-topic.md).|
-   |`<command:returnValues>`|Lägger till innehåll för avsnittet utdata i hjälp avsnittet för cmdlet. Mer information finns i [Hjälp avsnittet så här lägger du till retur värden i en cmdlet](./how-to-add-return-values-to-a-cmdlet-help-topic.md).|
-   |`<maml:alertset>`|Lägger till innehåll i avsnittet anteckningar i hjälp avsnittet för cmdlet. Mer information finns i [så här lägger du till anteckningar i ett hjälp avsnitt för cmdlet](./how-to-add-notes-to-a-cmdlet-help-topic.md).|
-   |`<command:examples>`|Lägger till innehåll i avsnittet exempel i hjälp avsnittet för cmdlet. Mer information finns i [så här lägger du till exempel i ett hjälp avsnitt om cmdlet](./how-to-add-examples-to-a-cmdlet-help-topic.md).|
-   |`<maml:relatedLinks>`|Lägger till innehåll i avsnittet relaterade länkar i hjälp avsnittet för cmdleten. Mer information finns i [så här lägger du till relaterade länkar i ett hjälp avsnitt för cmdlet](./how-to-add-related-links-to-a-cmdlet-help-topic.md).|
+   |           Node           |                                                                                                     Description                                                                                                     |
+   | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `<details>`              | Lägger till innehåll för avsnittet namn och sammanfattning i hjälpen för cmdlet. Mer information finns i [så här lägger du till cmdlet-namn och-sammanfattning](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md). |
+   | `<maml:description>`     | Lägger till innehåll i BESKRIVNINGs avsnittet i hjälp avsnittet för cmdleten. Mer information finns i [avsnittet så här lägger du till den detaljerade beskrivningen i en cmdlet-hjälpfil](./how-to-add-a-cmdlet-description.md).                    |
+   | `<command:syntax>`       | Lägger till innehåll i avsnittet SYNTAX i hjälp avsnittet för cmdlet. Mer information finns i [avsnittet så här lägger du till syntax i en cmdlet-hjälpfil](./how-to-add-syntax-to-a-cmdlet-help-topic.md).                                  |
+   | `<command:parameters>`   | Lägger till innehåll för avsnittet parametrar i hjälp avsnittet för cmdlet. Mer information finns i [avsnittet How to Add Parameters to a cmdlet Help](./how-to-add-parameter-information.md).                                  |
+   | `<command:inputTypes>`   | Lägger till innehåll för indata-avsnittet i hjälp avsnittet för cmdlet. Mer information finns i [så här lägger du till indatatyper i ett hjälp avsnitt om cmdlet](./how-to-add-input-types-to-a-cmdlet-help-topic.md).                        |
+   | `<command:returnValues>` | Lägger till innehåll för avsnittet utdata i hjälp avsnittet för cmdlet. Mer information finns i [Hjälp avsnittet så här lägger du till retur värden i en cmdlet](./how-to-add-return-values-to-a-cmdlet-help-topic.md).                   |
+   | `<maml:alertset>`        | Lägger till innehåll i avsnittet anteckningar i hjälp avsnittet för cmdlet. Mer information finns i [så här lägger du till anteckningar i ett hjälp avsnitt för cmdlet](./how-to-add-notes-to-a-cmdlet-help-topic.md).                                      |
+   | `<command:examples>`     | Lägger till innehåll i avsnittet exempel i hjälp avsnittet för cmdlet. Mer information finns i [så här lägger du till exempel i ett hjälp avsnitt om cmdlet](./how-to-add-examples-to-a-cmdlet-help-topic.md).                            |
+   | `<maml:relatedLinks>`    | Lägger till innehåll i avsnittet relaterade länkar i hjälp avsnittet för cmdleten. Mer information finns i [så här lägger du till relaterade länkar i ett hjälp avsnitt för cmdlet](./how-to-add-related-links-to-a-cmdlet-help-topic.md).             |
 
 ## <a name="example"></a>Exempel
 
- Här är ett exempel på en kommando nod som innehåller noderna för de olika avsnitten i hjälp avsnittet för cmdleten.
+ Här är ett exempel på en **kommando** nod som innehåller noderna för de olika avsnitten i hjälp avsnittet för cmdleten.
 
 ```xml
 <command:command
-  xmlns:maml="https://schemas.microsoft.com/maml/2004/10"
-  xmlns:command="https://schemas.microsoft.com/maml/dev/command/2004/10"
-  xmlns:dev="https://schemas.microsoft.com/maml/dev/2004/10">
+  xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
+  xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
+  xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
   <command:details>
     <!--Add name an synopsis here-->
   </command:details>

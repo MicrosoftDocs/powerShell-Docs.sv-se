@@ -1,22 +1,20 @@
 ---
 title: Skapa en Windows PowerShell-innehållsprovider
 ms.date: 09/13/2016
-ms.topic: article
-ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
-ms.openlocfilehash: e7a59d902633a6d4c73236b7f5a10fc4b405c9bf
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: b4bc0c8d1f8ef9f85bd711fdc2770b54418bbf4a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978482"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779065"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Skapa en Windows PowerShell-innehållsprovider
 
 I det här avsnittet beskrivs hur du skapar en Windows PowerShell-provider som gör det möjligt för användaren att ändra innehållet i objekten i ett data lager. En provider som kan manipulera innehållet i objekt kallas till exempel en Windows PowerShell-innehålls leverantör.
 
 > [!NOTE]
-> Du kan ladda ned C# käll filen (AccessDBSampleProvider06.CS) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
-> De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** . Mer information om implementeringar av andra Windows PowerShell-leverantörer finns i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md).
+> Du kan hämta C#-källfilen (AccessDBSampleProvider06.cs) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> De hämtade källfilerna är tillgängliga i **\<PowerShell Samples>** katalogen. Mer information om implementeringar av andra Windows PowerShell-leverantörer finns i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md).
 
 ## <a name="define-the-windows-powershell-content-provider-class"></a>Definiera klassen för innehålls leverantörer för Windows PowerShell
 
@@ -57,7 +55,7 @@ Klassen Content Writer definierar en **Skriv** metod som skriver det angivna rad
 
 ## <a name="retrieving-the-content-reader"></a>Hämtar innehålls läsaren
 
-För att hämta innehåll från ett objekt måste providern implementera [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) för att stödja `Get-Content`-cmdleten. Den här metoden returnerar innehålls läsaren för objektet som finns på den angivna sökvägen. Objektet Reader kan sedan öppnas för att läsa innehållet.
+Providern måste implementera [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) för att stödja-cmdleten för att hämta innehåll från ett objekt. `Get-Content` Den här metoden returnerar innehålls läsaren för objektet som finns på den angivna sökvägen. Objektet Reader kan sedan öppnas för att läsa innehållet.
 
 Här är implementeringen av [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) för den här providern.
 
@@ -90,11 +88,11 @@ Följande villkor kan gälla för en implementering av [system. Management. Auto
 
 - När du definierar Provider-klassen kan en Windows PowerShell-innehålls leverantör deklarera ExpandWildcards, filtrera, ta med eller undanta från, från [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -uppräkningen. I dessa fall måste implementeringen av metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) se till att den sökväg som skickas till metoden uppfyller kraven för de angivna funktionerna. För att göra detta ska metoden komma åt lämplig egenskap, till exempel [system. Management. Automation. Provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) och [system. Management. Automation. Provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) egenskaper.
 
-- Åsidosättningar av den här metoden bör som standard inte hämta en läsare för objekt som är dolda från användaren, om inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) har angetts till `true`. Ett fel ska skrivas om sökvägen representerar ett objekt som är dolt från användaren och [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) har angetts till `false`.
+- Åsidosättningar av den här metoden bör som standard inte hämta en läsare för objekt som är dolda från användaren, om inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) anges till `true` . Ett fel ska skrivas om sökvägen representerar ett objekt som är dolt från användaren och [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) har angetts till `false` .
 
 ## <a name="attaching-dynamic-parameters-to-the-get-content-cmdlet"></a>Koppla dynamiska parametrar till cmdleten Get-Content
 
-`Get-Content`-cmdlet kan kräva ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell-innehålls leverantören implementera metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentreaderdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) . Den här metoden hämtar dynamiska parametrar för objektet på den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna i cmdleten.
+`Get-Content`Cmdleten kan kräva ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell-innehålls leverantören implementera metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentreaderdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) . Den här metoden hämtar dynamiska parametrar för objektet på den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna i cmdleten.
 
 Den här Windows PowerShell container-providern implementerar inte den här metoden. Följande kod är dock standard implementeringen av den här metoden.
 
@@ -109,7 +107,7 @@ public object GetContentReaderDynamicParameters(string path)
 
 ## <a name="retrieving-the-content-writer"></a>Hämtar innehålls skrivaren
 
-Om du vill skriva innehåll till ett objekt måste providern implementera [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentwriter *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter) för att stödja `Set-Content`-och `Add-Content`-cmdletar. Den här metoden returnerar innehålls skrivaren för objektet som finns på den angivna sökvägen.
+Om du vill skriva innehåll till ett objekt måste providern implementera [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentwriter *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter) för att stödja `Set-Content` `Add-Content` cmdletarna och. Den här metoden returnerar innehålls skrivaren för objektet som finns på den angivna sökvägen.
 
 Här är implementeringen av [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentwriter *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter) för den här metoden.
 
@@ -142,11 +140,11 @@ Följande villkor kan gälla för din implementering av [system. Management. Aut
 
 - När du definierar Provider-klassen kan en Windows PowerShell-innehålls leverantör deklarera ExpandWildcards, filtrera, ta med eller undanta från, från [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -uppräkningen. I dessa fall måste implementeringen av metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentwriter *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter) se till att den sökväg som skickas till metoden uppfyller kraven för de angivna funktionerna. För att göra detta ska metoden komma åt lämplig egenskap, till exempel [system. Management. Automation. Provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) och [system. Management. Automation. Provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) egenskaper.
 
-- Åsidosättningar av den här metoden bör som standard inte hämta en skrivare för objekt som är dolda från användaren, om inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) har angetts till `true`. Ett fel ska skrivas om sökvägen representerar ett objekt som är dolt från användaren och [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) har angetts till `false`.
+- Åsidosättningar av den här metoden bör som standard inte hämta en skrivare för objekt som är dolda från användaren, om inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) anges till `true` . Ett fel ska skrivas om sökvägen representerar ett objekt som är dolt från användaren och [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) har angetts till `false` .
 
 ## <a name="attaching-dynamic-parameters-to-the-add-content-and-set-content-cmdlets"></a>Koppla dynamiska parametrar till cmdletarna Add-Content och set-Contents
 
-`Add-Content`-och `Set-Content`-cmdletar kan kräva ytterligare dynamiska parametrar som lägger till en körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell-innehålls leverantören implementera metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentwriterdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters) för att hantera dessa parametrar. Den här metoden hämtar dynamiska parametrar för objektet på den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna i cmdletarna.
+`Add-Content` `Set-Content` Cmdletarna och kan behöva ytterligare dynamiska parametrar som lägger till en körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell-innehålls leverantören implementera metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentwriterdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters) för att hantera dessa parametrar. Den här metoden hämtar dynamiska parametrar för objektet på den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna i cmdletarna.
 
 Den här Windows PowerShell container-providern implementerar inte den här metoden. Följande kod är dock standard implementeringen av den här metoden.
 
@@ -154,7 +152,7 @@ Den här Windows PowerShell container-providern implementerar inte den här meto
 
 ## <a name="clearing-content"></a>Rensar innehåll
 
-Innehålls leverantören implementerar metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) i stöd för cmdleten `Clear-Content`. Den här metoden tar bort innehållet i objektet på den angivna sökvägen, men lämnar objektet intakt.
+Innehålls leverantören implementerar metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) i stöd för `Clear-Content` cmdleten. Den här metoden tar bort innehållet i objektet på den angivna sökvägen, men lämnar objektet intakt.
 
 Här är implementeringen av metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) för den här providern.
 
@@ -166,15 +164,15 @@ Följande villkor kan gälla för en implementering av [system. Management. Auto
 
 - När du definierar Provider-klassen kan en Windows PowerShell-innehålls leverantör deklarera ExpandWildcards, filtrera, ta med eller undanta från, från [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -uppräkningen. I dessa fall måste implementeringen av metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) se till att den sökväg som skickas till metoden uppfyller kraven för de angivna funktionerna. För att göra detta ska metoden komma åt lämplig egenskap, till exempel [system. Management. Automation. Provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) och [system. Management. Automation. Provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) egenskaper.
 
-- Åsidosättningar av den här metoden bör som standard inte ta bort innehållet i objekt som är dolda från användaren, om inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) har angetts till `true`. Ett fel ska skrivas om sökvägen representerar ett objekt som är dolt från användaren och [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) har angetts till `false`.
+- Åsidosättningar av den här metoden bör som standard inte ta bort innehållet i objekt som är dolda från användaren, om inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) anges till `true` . Ett fel ska skrivas om sökvägen representerar ett objekt som är dolt från användaren och [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) har angetts till `false` .
 
 - Din implementering av metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) ska anropa [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och verifiera dess retur värde innan du gör några ändringar i data lagret. Den här metoden används för att bekräfta körning av en åtgärd när en ändring görs i data lagret, till exempel att rensa innehåll. Metoden [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) skickar namnet på resursen som ska ändras till användaren, med Windows PowerShell-körningsmiljön som hanterar alla kommando rads inställningar eller variabler för att fastställa vad som ska visas.
 
-  Efter att anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar `true`, ska metoden system [. Management. Automation. Provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) anropa metoden [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Den här metoden skickar ett meddelande till användaren för att tillåta feedback för att kontrol lera om åtgärden ska fortsätta. Anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) tillåter ytterligare kontroll av potentiellt skadliga system ändringar.
+  Efter att anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar `true` , ska metoden system [. Management. Automation. Provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) anropa metoden [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Den här metoden skickar ett meddelande till användaren för att tillåta feedback för att kontrol lera om åtgärden ska fortsätta. Anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) tillåter ytterligare kontroll av potentiellt skadliga system ändringar.
 
 ## <a name="attaching-dynamic-parameters-to-the-clear-content-cmdlet"></a>Bifoga dynamiska parametrar till cmdleten Clear-Content
 
-`Clear-Content`-cmdlet kan kräva ytterligare dynamiska parametrar som läggs till vid körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell-innehålls leverantören implementera metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Clearcontentdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters) för att hantera dessa parametrar. Den här metoden hämtar parametrarna för objektet på den angivna sökvägen. Den här metoden hämtar dynamiska parametrar för objektet på den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna i cmdleten.
+`Clear-Content`Cmdleten kan kräva ytterligare dynamiska parametrar som läggs till vid körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell-innehålls leverantören implementera metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Clearcontentdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters) för att hantera dessa parametrar. Den här metoden hämtar parametrarna för objektet på den angivna sökvägen. Den här metoden hämtar dynamiska parametrar för objektet på den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna i cmdleten.
 
 Den här Windows PowerShell container-providern implementerar inte den här metoden. Följande kod är dock standard implementeringen av den här metoden.
 
@@ -203,7 +201,7 @@ Se [hur du registrerar cmdlets, providers och värd program](/previous-versions/
 
 När din Windows PowerShell-provider har registrerats med Windows PowerShell kan du testa den genom att köra cmdlets som stöds på kommando raden. Testa t. ex. exempel innehålls leverantören.
 
-Använd `Get-Content`-cmdlet för att hämta innehållet i det angivna objektet i databas tabellen på den sökväg som anges av parametern `Path`. Parametern `ReadCount` anger antalet objekt som den definierade innehålls läsaren ska läsa (standard 1). Med följande kommando post hämtar cmdleten två rader (objekt) från tabellen och visar deras innehåll. Observera att följande exempel på utdata använder en fiktiv Access-databas.
+Använd `Get-Content` cmdleten för att hämta innehållet i det angivna objektet i databas tabellen på den sökväg som anges av `Path` parametern. `ReadCount`Parametern anger antalet objekt för den definierade innehålls läsaren som ska läsas (standard 1). Med följande kommando post hämtar cmdleten två rader (objekt) från tabellen och visar deras innehåll. Observera att följande exempel på utdata använder en fiktiv Access-databas.
 
 ```powershell
 Get-Content -Path mydb:\Customers -ReadCount 2
@@ -250,4 +248,4 @@ Country   : USA
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 
-[Windows PowerShell Programmer ' s guide](./windows-powershell-programmer-s-guide.md)
+[Programmeringsguide för Windows PowerShell](./windows-powershell-programmer-s-guide.md)

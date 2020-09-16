@@ -1,24 +1,17 @@
 ---
 title: Skapa en cmdlet som ändrar systemet | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - should process [PowerShell Programmer's Guide]
 - should continue [PowerShell Programmer's Guide]
 - user feedback [PowerShell Programmer's Guide]
 - confirm impact [PowerShell Programmer's Guide]
-ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
-caps.latest.revision: 8
-ms.openlocfilehash: f0ce30c3fa76141908680934bcac41a989622c42
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 03ffe0c9c02dcdeb2dd24f81014b2013ae169aa4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560074"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782182"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Skapa en cmdlet som ändrar systemet
 

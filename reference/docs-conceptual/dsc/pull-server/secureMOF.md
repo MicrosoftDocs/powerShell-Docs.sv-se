@@ -1,13 +1,13 @@
 ---
-ms.date: 10/31/2017
+ms.date: 07/06/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skydda MOF-filen
-ms.openlocfilehash: 30b7ff276781b398aeae94e710c810f5fccafdfb
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: b1319167010a85e639fdb51a1a0b8b472dfda3a6
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83556395"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87778144"
 ---
 # <a name="securing-the-mof-file"></a>Skydda MOF-filen
 
@@ -15,12 +15,12 @@ ms.locfileid: "83556395"
 
 DSC hanterar konfigurationen av serverklusternoder genom att använda information som lagras i en MOF-fil, där den lokala Configuration Manager (LCM) implementerar det önskade slut läget. Eftersom den här filen innehåller information om konfigurationen är det viktigt att skydda den. I det här avsnittet beskrivs hur du ser till att målnoden har krypterat filen.
 
-Från och med PowerShell version 5,0 krypteras hela MOF-filen som standard när den tillämpas på noden med hjälp av `Start-DSCConfiguration` cmdleten. Processen som beskrivs i den här artikeln krävs bara när du implementerar en lösning med protokollet för pull-protokollet om certifikat inte hanteras, för att se till att konfigurationer som hämtas av målnoden kan dekrypteras och läsas av systemet innan de tillämpas (till exempel den pull-tjänst som är tillgänglig i Windows Server). Noder som är registrerade för [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) har automatiskt certifikat som installeras och hanteras av tjänsten utan att det krävs någon administrativ omkostnader.
+Från och med PowerShell version 5,0 krypteras hela MOF-filen som standard när den tillämpas på noden med hjälp av `Start-DSCConfiguration` cmdleten. Processen som beskrivs i den här artikeln krävs bara när du implementerar en lösning med protokollet för pull-protokollet om certifikat inte hanteras, för att se till att konfigurationer som hämtas av målnoden kan dekrypteras och läsas av systemet innan de tillämpas (till exempel den pull-tjänst som är tillgänglig i Windows Server). Noder som är registrerade för [Azure Automation DSC](/azure/automation/automation-dsc-overview) har automatiskt certifikat som installeras och hanteras av tjänsten utan att det krävs någon administrativ omkostnader.
 
 > [!NOTE]
-> I det här avsnittet beskrivs certifikat som används för kryptering. För kryptering räcker ett självsignerat certifikat, eftersom den privata nyckeln alltid hålls hemlig och kryptering innebär inte att dokumentet är tillförlitligt. Självsignerade certifikat bör *inte* användas för autentisering. Du bör använda ett certifikat från en betrodd certifikat utfärdare (CA) i alla autentiserings syfte.
+> I det här avsnittet beskrivs certifikat som används för kryptering. För kryptering räcker ett självsignerat certifikat, eftersom den privata nyckeln alltid hålls hemlig och kryptering innebär inte att dokumentet är tillförlitligt. Självsignerade certifikat bör _inte_ användas för autentisering. Du bör använda ett certifikat från en betrodd certifikat utfärdare (CA) i alla autentiserings syfte.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Kontrol lera att du har följande för att kunna kryptera de autentiseringsuppgifter som används för att skydda en DSC-konfiguration:
 
@@ -29,14 +29,17 @@ Kontrol lera att du har följande för att kunna kryptera de autentiseringsuppgi
 - **Varje målnod har ett krypterat certifikat som har sparats i det personliga arkivet**. I Windows PowerShell är sökvägen till arkivet certifikat: \ LocalMachine\My. I exemplen i det här avsnittet används mallen "arbetsstations autentisering", som du hittar (tillsammans med andra certifikatmallar) på [standardmallarna för certifikat](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).
 - Om du kommer att köra den här konfigurationen på en annan dator än målnoden, **Exportera den offentliga nyckeln för certifikatet**och sedan importera den till datorn som du ska köra konfigurationen från. Se till att du endast exporterar den **offentliga** nyckeln. skydda den privata nyckeln.
 
+> [!NOTE]
+> Skript resurser har begränsningar när det kommer att krypteras. Mer information finns i [skript resurs](../reference/resources/windows/scriptResource.md#known-limitations)
+
 ## <a name="overall-process"></a>Övergripande process
 
  1. Konfigurera certifikat, nycklar och tumavtrycken och se till att varje målnod har kopior av certifikatet och att konfigurations datorn har den offentliga nyckeln och tumavtryck.
- 2. Skapa ett konfigurations data block som innehåller sökvägen och tumavtrycket för den offentliga nyckeln.
- 3. Skapa ett konfigurations skript som definierar den önskade konfigurationen för målnoden och ställer in dekryptering på målnoden genom att använda den lokala Konfigurations hanteraren för att dekryptera konfigurations data med hjälp av certifikatet och dess tumavtryck.
- 4. Kör konfigurationen, som anger de lokala Configuration Manager inställningarna och startar DSC-konfigurationen.
+ 1. Skapa ett konfigurations data block som innehåller sökvägen och tumavtrycket för den offentliga nyckeln.
+ 1. Skapa ett konfigurations skript som definierar den önskade konfigurationen för målnoden och ställer in dekryptering på målnoden genom att använda den lokala Konfigurations hanteraren för att dekryptera konfigurations data med hjälp av certifikatet och dess tumavtryck.
+ 1. Kör konfigurationen, som anger de lokala Configuration Manager inställningarna och startar DSC-konfigurationen.
 
-![Diagram1](media/secureMOF/CredentialEncryptionDiagram1.png)
+![Process flöde för kryptering av autentiseringsuppgifter](media/secureMOF/CredentialEncryptionDiagram1.png)
 
 ## <a name="certificate-requirements"></a>Certifikatkrav
 
@@ -45,14 +48,14 @@ För att anta kryptering av autentiseringsuppgifter måste ett offentligt nyckel
 1. **Nyckel användning**:
    - Måste innehålla: ' KeyEncipherment ' och ' DataEncipherment '.
    - Får _inte_ innehålla: digital signatur.
-2. **Förbättrad nyckel användning**:
+1. **Förbättrad nyckel användning**:
    - Måste innehålla: dokument kryptering (1.3.6.1.4.1.311.80.1).
    - Får _inte_ innehålla: klientautentisering (1.3.6.1.5.5.7.3.2) och serverautentisering (1.3.6.1.5.5.7.3.1).
-3. Den privata nyckeln för certifikatet finns på * Target Node_.
-4. **Providern** för certifikatet måste vara "Microsoft RSA SChannel Cryptographic Provider".
+1. Den privata nyckeln för certifikatet finns på * Target Node_.
+1. **Providern** för certifikatet måste vara "Microsoft RSA SChannel Cryptographic Provider".
 
 > [!IMPORTANT]
-> Även om du kan använda ett certifikat med en nyckel användning av "Digital Signature" eller en av EKU för autentisering, så gör detta att krypterings nyckeln blir enklare att använda och sårbar för angrepp. Vi rekommenderar att du använder ett certifikat som har skapats specifikt för att skydda DSC-autentiseringsuppgifter som utesluter denna nyckel användning och EKU.
+> Även om du kan använda ett certifikat som innehåller en nyckel användning av "Digital Signature" eller en av EKU för autentisering, så gör detta att krypterings nyckeln blir enklare att använda och sårbar för angrepp. Vi rekommenderar att du använder ett certifikat som har skapats specifikt för att skydda DSC-autentiseringsuppgifter som utesluter denna nyckel användning och EKU.
 
 Alla befintliga certifikat på _målnoden_ som uppfyller dessa villkor kan användas för att skydda DSC-autentiseringsuppgifter.
 
@@ -61,7 +64,7 @@ Alla befintliga certifikat på _målnoden_ som uppfyller dessa villkor kan anvä
 Det finns två sätt som du kan vidta för att skapa och använda det krypterings certifikat som krävs (offentligt-privat nyckel par).
 
 1. Skapa den på **målnoden** och exportera bara den offentliga nyckeln till **redigerings noden**
-2. Skapa den på **noden redigering** och exportera hela nyckel paret till **målnoden**
+1. Skapa den på **noden redigering** och exportera hela nyckel paret till **målnoden**
 
 Metod 1 rekommenderas eftersom den privata nyckel som används för att dekryptera autentiseringsuppgifter i MOF kvar på målnoden.
 
@@ -70,8 +73,8 @@ Metod 1 rekommenderas eftersom den privata nyckel som används för att dekrypte
 Den privata nyckeln måste hållas hemlig, eftersom används för att dekryptera MOF på **målnoden det enklaste** sättet att göra det är att skapa certifikatet för den privata nyckeln på **målnoden**och kopiera det **offentliga nyckel certifikatet** till den dator som används för att redigera DSC-konfigurationen i en MOF-fil. Följande exempel:
 
 1. skapar ett certifikat på **målnoden**
-2. exporterar certifikatet för den offentliga nyckeln på **målnoden**.
-3. importerar certifikatet för den offentliga nyckeln till **mitt** certifikat Arkiv på **noden redigering**.
+1. exporterar certifikatet för den offentliga nyckeln på **målnoden**.
+1. importerar certifikatet för den offentliga nyckeln till **mitt** certifikat Arkiv på **noden redigering**.
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>På målnoden: skapa och exportera certifikatet
 
@@ -87,8 +90,9 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 När du har exporterat `DscPublicKey.cer` måste du kopiera den till **redigerings-noden**.
 
 > Målnod: Windows Server 2012 R2/Windows 8,1 och tidigare
+
 > [!WARNING]
-> Eftersom `New-SelfSignedCertificate` cmdleten på Windows-operativsystem före Windows 10 och Windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet på dessa operativ system. I det här fallet kan du använda `makecert.exe` eller `certutil.exe` för att skapa certifikatet. En alternativ metod är att [Hämta skriptet New-SelfSignedCertificateEx. ps1 från Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) och använda det för att skapa certifikatet i stället:
+> Eftersom `New-SelfSignedCertificate` cmdleten på Windows-operativsystem före Windows 10 och Windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet på dessa operativ system. I det här fallet kan du använda `makecert.exe` eller `certutil.exe` för att skapa certifikatet. En alternativ metod är att [Ladda ned New-SelfSignedCertificateEx.ps1-skriptet från Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) och använda det för att skapa certifikatet i stället:
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -128,9 +132,9 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 Alternativt kan du skapa krypterings certifikatet på **noden redigering**, som exporteras med den **privata nyckeln** som en PFX-fil och sedan importeras på **målnoden**. Det här är den aktuella metoden för att implementera kryptering av DSC-autentiseringsuppgifter på _Nano Server_. Även om PFX är skyddat med ett lösen ord bör det hållas säkert under överföringen. Följande exempel:
 
 1. skapar ett certifikat på **noden redigering**.
-2. exporterar certifikatet inklusive den privata nyckeln på **noden redigering**.
-3. tar bort den privata nyckeln från **redigerings noden**, men behåller certifikatet för den offentliga nyckeln i **My** Store.
-4. importerar det privata nyckel certifikatet till certifikat arkivet My (personal) på **målnoden**.
+1. exporterar certifikatet inklusive den privata nyckeln på **noden redigering**.
+1. tar bort den privata nyckeln från **redigerings noden**, men behåller certifikatet för den offentliga nyckeln i **My** Store.
+1. importerar det privata nyckel certifikatet till certifikat arkivet My (personal) på **målnoden**.
    - den måste läggas till i rot arkivet så att den är betrodd av **målnoden**.
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>På noden redigering: skapa och exportera certifikatet
@@ -152,8 +156,9 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 När du har exporterat `DscPrivateKey.pfx` måste du kopiera den till **målnoden**.
 
 > Målnod: Windows Server 2012 R2/Windows 8,1 och tidigare
+
 > [!WARNING]
-> Eftersom `New-SelfSignedCertificate` cmdleten på Windows-operativsystem före Windows 10 och Windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet på dessa operativ system. I det här fallet kan du använda `makecert.exe` eller `certutil.exe` för att skapa certifikatet. En alternativ metod är att [Hämta skriptet New-SelfSignedCertificateEx. ps1 från Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) och använda det för att skapa certifikatet i stället:
+> Eftersom `New-SelfSignedCertificate` cmdleten på Windows-operativsystem före Windows 10 och Windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet på dessa operativ system. I det här fallet kan du använda `makecert.exe` eller `certutil.exe` för att skapa certifikatet. En alternativ metod är att [Ladda ned New-SelfSignedCertificateEx.ps1-skriptet från Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) och använda det för att skapa certifikatet i stället:
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -221,8 +226,8 @@ $ConfigData= @{
                 # The thumbprint of the Encryption Certificate
                 # used to decrypt the credentials on target node
                 Thumbprint = "AC23EA3A9E291A75757A556D0B71CBBF8C4F6FD8"
-            };
-        );
+            }
+        )
     }
 ```
 
@@ -237,8 +242,7 @@ configuration CredentialEncryptionExample
         [Parameter(Mandatory=$true)]
         [ValidateNotNullorEmpty()]
         [PsCredential] $credential
-        )
-
+    )
 
     Node $AllNodes.NodeName
     {
@@ -279,8 +283,7 @@ configuration CredentialEncryptionExample
         [Parameter(Mandatory=$true)]
         [ValidateNotNullorEmpty()]
         [PsCredential] $credential
-        )
-
+    )
 
     Node $AllNodes.NodeName
     {
@@ -304,7 +307,7 @@ configuration CredentialEncryptionExample
 I det här läget kan du köra konfigurationen, som kommer att skriva ut två filer:
 
 - En \* . meta. MOF-fil som konfigurerar den lokala Configuration Manager att dekryptera autentiseringsuppgifterna med hjälp av det certifikat som lagras i den lokala datorns Arkiv och identifieras med dess tumavtryck.
-  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx)använder \* . meta. MOF-filen.
+  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) använder \* . meta. MOF-filen.
 - En MOF-fil som faktiskt tillämpar konfigurationen. Start-DscConfiguration tillämpar konfigurationen.
 
 Dessa kommandon utför dessa steg:
@@ -336,8 +339,7 @@ configuration CredentialEncryptionExample
         [Parameter(Mandatory=$true)]
         [ValidateNotNullorEmpty()]
         [PsCredential] $credential
-        )
-
+    )
 
     Node $AllNodes.NodeName
     {
@@ -361,7 +363,6 @@ function Start-CredentialEncryptionExample
 {
     [CmdletBinding()]
     param ($computerName)
-
 
     [string] $thumbprint = Get-EncryptionCertificate -computerName $computerName -Verbose
     Write-Verbose "using cert: $thumbprint"
@@ -394,9 +395,7 @@ function Start-CredentialEncryptionExample
 
     Write-Verbose "Starting Configuration..."
     Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
-
 }
-
 
 #region HelperFunctions
 
@@ -408,28 +407,30 @@ function Get-EncryptionCertificate
 {
     [CmdletBinding()]
     param ($computerName)
+
     $returnValue= Invoke-Command -ComputerName $computerName -ScriptBlock {
-            $certificates = dir Cert:\LocalMachine\my
+        $certificates = dir Cert:\LocalMachine\my
 
-            $certificates | %{
+        $certificates | %{
                     # Verify the certificate is for Encryption and valid
-                    if ($_.PrivateKey.KeyExchangeAlgorithm -and $_.Verify())
-                    {
-                        # Create the folder to hold the exported public key
-                        $folder= Join-Path -Path $env:SystemDrive\ -ChildPath $using:publicKeyFolder
-                        if (! (Test-Path $folder))
-                        {
-                            md $folder | Out-Null
-                        }
+            if ($_.PrivateKey.KeyExchangeAlgorithm -and $_.Verify())
+            {
+                # Create the folder to hold the exported public key
+                $folder= Join-Path -Path $env:SystemDrive\ -ChildPath $using:publicKeyFolder
+                if (! (Test-Path $folder))
+                {
+                    md $folder | Out-Null
+                }
 
-                        # Export the public key to a well known location
-                        $certPath = Export-Certificate -Cert $_ -FilePath (Join-Path -path $folder -childPath "EncryptionCertificate.cer")
+                # Export the public key to a well known location
+                $certPath = Export-Certificate -Cert $_ -FilePath (Join-Path -path $folder -childPath "EncryptionCertificate.cer")
 
-                        # Return the thumbprint, and exported certificate path
-                        return @($_.Thumbprint,$certPath);
-                    }
-                  }
+                # Return the thumbprint, and exported certificate path
+                return @($_.Thumbprint,$certPath);
+            }
         }
+    }
+
     Write-Verbose "Identified and exported cert..."
     # Copy the exported certificate locally
     $destinationPath = join-path -Path "$env:SystemDrive\$script:publicKeyFolder" -childPath "$computername.EncryptionCertificate.cer"

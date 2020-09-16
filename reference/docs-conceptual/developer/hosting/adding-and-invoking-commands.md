@@ -1,19 +1,12 @@
 ---
 title: Lägga till och anropa kommandon | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
-caps.latest.revision: 5
-ms.openlocfilehash: f776f13fe743a3f5f67de0d94883e3f754040ffc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b51c4ae3fa5c5239e3c5c5e65bf7aa63c58c4da9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357759"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779802"
 ---
 # <a name="adding-and-invoking-commands"></a>Lägga till och anropa kommandon
 
@@ -79,7 +72,7 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
- Du kan simulera batching med hjälp av metoden [system. Management. Automation. PowerShell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , som lägger till ytterligare en instruktion i slutet av pipelinen. följande kod hämtar en lista över processer som körs med namnet `PowerShell`och hämtar sedan listan över tjänster som körs.
+ Du kan simulera batching med hjälp av metoden [system. Management. Automation. PowerShell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , som lägger till ytterligare en instruktion i slutet av pipelinen. följande kod hämtar en lista över processer som körs med namnet `PowerShell` och hämtar sedan listan över tjänster som körs.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -90,14 +83,14 @@ ps.Invoke();
 
 ### <a name="addscript"></a>AddScript
 
- Du kan köra ett befintligt skript genom att anropa metoden [system. Management. Automation. PowerShell. Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) . I följande exempel läggs ett skript till i pipelinen och körs. Det här exemplet förutsätter att det redan finns ett skript med namnet `MyScript.ps1` i en mapp med namnet `D:\PSScripts`.
+ Du kan köra ett befintligt skript genom att anropa metoden [system. Management. Automation. PowerShell. Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) . I följande exempel läggs ett skript till i pipelinen och körs. Det här exemplet förutsätter att det redan finns ett skript `MyScript.ps1` som heter i en mapp med namnet `D:\PSScripts` .
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- Det finns också en version av metoden [system. Management. Automation. PowerShell. Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) som tar en boolesk parameter med namnet `useLocalScope`. Om den här parametern är inställd på `true`körs skriptet i det lokala omfånget. Följande kod kommer att köra skriptet i det lokala omfånget.
+ Det finns också en version av metoden [system. Management. Automation. PowerShell. Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) som tar en boolesk parameter med namnet `useLocalScope` . Om den här parametern är inställd på `true` körs skriptet i det lokala omfånget. Följande kod kommer att köra skriptet i det lokala omfånget.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -186,4 +179,4 @@ namespace HostPS3
 
  [Skapa en InitialSessionState](./creating-an-initialsessionstate.md)
 
- [Skapa en begränsad körnings utrymme](./creating-a-constrained-runspace.md)
+ [Skapa ett begränsat körningsutrymme](./creating-a-constrained-runspace.md)

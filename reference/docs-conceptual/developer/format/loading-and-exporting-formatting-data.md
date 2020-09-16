@@ -1,19 +1,12 @@
 ---
 title: Läsa in och exportera formatering av data | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
-caps.latest.revision: 6
-ms.openlocfilehash: 5c5168ffd74c15066b914ad1b39d9ead947c5e7f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b449b280ccee561679d58f2f2a8b467c83150766
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356009"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781128"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>Läsa in och exportera formateringsdata
 
@@ -31,7 +24,7 @@ Att formatera filer kan läsas in i den aktuella sessionen med hjälp av följan
 
 - Om du anropar kommandon program mässigt kan du lägga till en post i det första sessionstillståndet för körnings utrymme där kommandona körs. Mer information om .NET-typen som används för att lägga till format filen finns i [system. Management. Automation. körnings utrymmen. Sessionstateformatentry? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Runspaces.SessionStateFormatEntry) -klass.
 
-När en fil läses in, läggs den till i en intern lista som Windows PowerShell använder för att avgöra vilken vy som ska användas när objekt visas på kommando raden. Du kan lägga formaterings filen till början av listan eller lägga till den i slutet av listan. Att veta var format filen läggs till i listan är viktig om du läser in format filen som definierar en vy för ett objekt som har en befintlig vy definierad, till exempel när du vill ändra hur ett objekt som returneras av en Windows PowerShell Core-cmdlet är  visat. Om du läser in en formateringsinformation som definierar den enda vyn för ett objekt, kan du använda någon av de metoder som beskrivs ovan.  Om du läser in en formateringsinformation som definierar en annan vy för ett objekt måste du använda cmdleten [Update-FormatData](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData) och lägga din fil till början av listan.
+När en fil läses in, läggs den till i en intern lista som Windows PowerShell använder för att avgöra vilken vy som ska användas när objekt visas på kommando raden. Du kan lägga formaterings filen till början av listan eller lägga till den i slutet av listan. Att veta var format filen läggs till i listan är viktig om du läser in format filen som definierar en vy för ett objekt som har en befintlig vy definierad, till exempel när du vill ändra hur ett objekt som returneras av en Windows PowerShell Core-cmdlet visas. Om du läser in en formateringsinformation som definierar den enda vyn för ett objekt, kan du använda någon av de metoder som beskrivs ovan.  Om du läser in en formateringsinformation som definierar en annan vy för ett objekt måste du använda cmdleten [Update-FormatData](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData) och lägga din fil till början av listan.
 
 ## <a name="storing-your-formatting-file"></a>Spara format filen
 

@@ -1,19 +1,12 @@
 ---
 title: Översikt över Windows PowerShell-Provider | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
-caps.latest.revision: 13
-ms.openlocfilehash: 9f1b94e722e59e707a26547949c661b5098d29e0
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: c248f1c337e96a1b83cbeb5fb486147504777eb1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560958"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87778233"
 ---
 # <a name="windows-powershell-provider-overview"></a>Översikt över Windows PowerShell-providers
 
@@ -63,7 +56,7 @@ Leverantörer kan definiera dynamiska parametrar som läggs till i en providers-
 
 ## <a name="provider-capabilities"></a>Leverantörs funktioner
 
-I uppräkningen [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) definieras ett antal funktioner som providers kan stödja. Detta inkluderar möjligheten att använda jokertecken, filtrera objekt och stöd transaktioner. Om du vill ange funktioner för en provider lägger du till en lista med värden för attributet [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) , kombinerat med en logisk `OR` åtgärd, som egenskapen [system. Management. Automation. Provider. Cmdletproviderattribute. ProviderCapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) (den andra parametern för attributet) för attributet [system. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) för din leverantörs klass. Följande attribut anger till exempel att providern stöder funktionerna [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** och [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **transaktioner** .
+I uppräkningen [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) definieras ett antal funktioner som providers kan stödja. Detta inkluderar möjligheten att använda jokertecken, filtrera objekt och stöd transaktioner. Om du vill ange funktioner för en provider lägger du till en lista med värden för attributet  [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) , kombinerat med en logisk `OR` åtgärd, som egenskapen [system. Management. Automation. Provider. Cmdletproviderattribute. ProviderCapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) (den andra parametern för attributet) för attributet [system. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) för din leverantörs klass. Följande attribut anger till exempel att providern stöder funktionerna [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** och [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **transaktioner** .
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]

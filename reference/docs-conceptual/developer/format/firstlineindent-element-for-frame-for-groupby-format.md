@@ -1,25 +1,18 @@
 ---
 title: FirstLineIndent-element för inramad GroupBy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 33be3b9e-53c8-433f-8c11-c65b0d46744c
-caps.latest.revision: 6
-ms.openlocfilehash: 9ba6fc1b9924a4b0d5b56ee15290a2293217403c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: def5b4e9ca98a15edbb36675ca506e886de567dc
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354581"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781672"
 ---
 # <a name="firstlineindent-element-for-frame-for-groupby-format"></a>FirstLineIndent-element för Frame för GroupBy (format)
 
 Anger hur många tecken den första raden med data flyttas till höger. Det här elementet används när du definierar hur en ny grupp av objekt visas.
 
-Konfigurations element (format) ViewDefinitions element (format) visnings element (format) GroupBy-element för View (format) CustomControl-element för GroupBy (format) CustomEntries-element för CustomControl for GroupBy (format) CustomEntry-element för CustomControl for GroupBy (format) CustomItem-element för CustomEntry för GroupBy (format)-ram element för CustomItem för GroupBy (format) FirstLineIndent-element för ram for GroupBy (format)
+Konfigurations element (format) ViewDefinitions element (format) visnings element (format) GroupBy-element för View (format) CustomControl-element för GroupBy (format) CustomEntries-element för CustomControl for GroupBy (format) CustomEntry element for CustomControl for groupby (format) CustomItem-element för CustomEntry-element (format) för CustomItem för (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,34 +22,34 @@ Konfigurations element (format) ViewDefinitions element (format) visnings elemen
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `FirstLineIndent`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `FirstLineIndent` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[Ram element för CustomItem för GroupBy (format)](./frame-element-for-customitem-for-groupby-format.md)|Definierar hur data visas, till exempel att flytta data till vänster eller höger.|
+|[Frame-element för CustomItem för GroupBy (format)](./frame-element-for-customitem-for-groupby-format.md)|Definierar hur data visas, till exempel att flytta data till vänster eller höger.|
 
 ## <a name="text-value"></a>Textvärde
 
 Ange antalet tecken som du vill flytta den första raden i data.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Om det här elementet har angetts kan du inte ange [FirstLineHanging](./firstlinehanging-element-for-frame-for-groupby-format.md) -elementet.
 
 ## <a name="see-also"></a>Se även
 
-[FirstLineHanging-element för inramad GroupBy (format)](./firstlinehanging-element-for-frame-for-groupby-format.md)
+[FirstLineHanging-element för Frame för GroupBy (format)](./firstlinehanging-element-for-frame-for-groupby-format.md)
 
-[Ram element för CustomItem för GroupBy (format)](./frame-element-for-customitem-for-groupby-format.md)
+[Frame-element för CustomItem för GroupBy (format)](./frame-element-for-customitem-for-groupby-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

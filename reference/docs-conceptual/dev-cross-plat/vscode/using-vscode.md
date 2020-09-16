@@ -2,12 +2,12 @@
 title: Använda Visual Studio Code för PowerShell-utveckling
 description: Använda Visual Studio Code för PowerShell-utveckling
 ms.date: 11/07/2019
-ms.openlocfilehash: b492e59f340f4cec92c177ad44bbab9dc95da5da
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 181746e7d3df2880223d1f15a0c8b99b324f5b98
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810318"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782539"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Använda Visual Studio Code för PowerShell-utveckling
 
@@ -54,7 +54,7 @@ För traditionella Windows PowerShell-arbetsbelastningar, se [Installera Windows
    1. Vyn **tillägg** öppnas i sido fältet. Välj PowerShell-tillägget från Microsoft.
       Du bör se en Visual Studio Code-skärm som liknar följande bild:
 
-      ![Visual Studio-koden](media/using-vscode/vscode.png)
+      ![Visual Studio Code – vy över PowerShell-tillägget](media/using-vscode/vscode.png)
 
    1. Klicka på knappen **Installera** i PowerShell-tillägget från Microsoft.
    1. När du har installerat klickar du på **Läs in**igen om du ser knappen **Installera** **igen.**
@@ -113,7 +113,7 @@ När du har läst dokumentationen kan du lägga till konfigurations inställning
 }
 ```
 
-Om du inte vill att de här inställningarna ska påverka alla filtyper kan du också använda Visual Studio Code för konfigurationer på olika språk. Skapa en språkspecifik inställning genom att placera inställningarna i ett `[<language-name>]` fält. Ett exempel:
+Om du inte vill att de här inställningarna ska påverka alla filtyper kan du också använda Visual Studio Code för konfigurationer på olika språk. Skapa en språkspecifik inställning genom att placera inställningarna i ett `[<language-name>]` fält. Exempel:
 
 ```json
 {
@@ -190,7 +190,7 @@ Det aktuella PowerShell-tillägget stöder inte [PowerShell v3 och v4][i1310]. D
 
 Öppna först fönstret tillägg och Sök efter `PowerShell` . Klicka sedan på kugg hjulet och välj **installera en annan version...**.
 
-![Installera en annan version...](media/using-vscode/install-another-version.png)
+![Meny objekt – installera en annan version...](media/using-vscode/install-another-version.png)
 
 Välj sedan **2020.1.0** -versionen. Den här versionen av tillägget var den senaste versionen som stöd för v3 och v4. Se till att lägga till följande inställning så att tilläggs versionen inte uppdateras automatiskt:
 
@@ -224,7 +224,7 @@ Fel sökning av arbets ytan avser fel sökning i kontexten för en mapp som du h
 Följ de här stegen för att skapa en fel söknings konfigurations fil:
 
 1. Öppna vyn **fel sökning** på Windows eller Linux genom att trycka på <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd>. I MacOS trycker du på <kbd>cmd</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd>.
-1. Klicka på länken **skapa en starta. JSON-fil** .
+1. Klicka på länken **skapa en launch.jspå fil** .
 1. Välj **PowerShell**i dialog rutan **Välj miljö** .
 1. Välj den typ av fel sökning du vill använda:
 
@@ -276,7 +276,7 @@ Om du får problem med att använda Visual Studio Code för att utveckla PowerSh
 
 Det finns några videor och blogg inlägg som kan vara till hjälp för att komma igång med PowerShell-tillägget för Visual Studio Code:
 
-### <a name="videos"></a>Videoklipp
+### <a name="videos"></a>Video
 
 - [Använda Visual Studio Code som standard-PowerShell-redigerare](https://youtu.be/bGn45vIeAMM)
 - [Visual Studio Code: djup gå in i fel sökning av PowerShell-skript](https://youtu.be/cSbIXmlkr8o)

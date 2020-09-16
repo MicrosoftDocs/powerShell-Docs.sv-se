@@ -1,19 +1,12 @@
 ---
 title: Dynamiska cmdlet-parametrar | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8ae2196d-d6c8-4101-8805-4190d293af51
-caps.latest.revision: 13
-ms.openlocfilehash: 19d31f6b619dff23e7e35bb53d2397f4f41eb728
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f44f71326d4711242c754c332a151dd997721595
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359444"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782369"
 ---
 # <a name="cmdlet-dynamic-parameters"></a>Dynamiska cmdlet-parametrar
 
@@ -24,9 +17,9 @@ Cmdletar kan definiera parametrar som är tillgängliga för användaren under s
 
 ## <a name="dynamic-parameters-in-powershell-cmdlets"></a>Dynamiska parametrar i PowerShell-cmdletar
 
-PowerShell använder dynamiska parametrar i flera av dess Provider-cmdletar. Till exempel lägger `Get-Item`-och `Get-ChildItem`-cmdletarna till en **CodeSigningCert** -parameter vid körning när parametern **Path** anger sökvägen till **certifikat** leverantören. Om parametern **Path** anger en sökväg för en annan provider är parametern **CodeSigningCert** inte tillgänglig.
+PowerShell använder dynamiska parametrar i flera av dess Provider-cmdletar. Till exempel `Get-Item` `Get-ChildItem` lägger cmdletarna och lägger till en **CodeSigningCert** -parameter vid körning när parametern **Path** anger sökvägen till **certifikat** leverantören. Om parametern **Path** anger en sökväg för en annan provider är parametern **CodeSigningCert** inte tillgänglig.
 
-I följande exempel visas hur **CodeSigningCert** -parametern läggs till vid körning när `Get-Item` körs.
+I följande exempel visas hur **CodeSigningCert** -parametern läggs till vid körning när körs `Get-Item` .
 
 I det här exemplet har PowerShell-körningsmiljön lagt till parametern och cmdleten har slutförts.
 
@@ -63,7 +56,7 @@ För att stödja dynamiska parametrar måste följande element ingå i cmdlet-ko
 [System. Management. Automation. IDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters).
 Det här gränssnittet innehåller den metod som hämtar dynamiska parametrar.
 
-Till exempel:
+Exempel:
 
 `public class SendGreetingCommand : Cmdlet, IDynamicParameters`
 
@@ -72,7 +65,7 @@ Till exempel:
 [System. Management. Automation. IDynamicParameters. GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters).
 Den här metoden hämtar objektet som innehåller definitionerna för dynamiska parametrar.
 
-Till exempel:
+Exempel:
 
 ```csharp
  public object GetDynamicParameters()
@@ -91,7 +84,7 @@ private SendGreetingCommandDynamicParameters context;
 
 En klass som definierar de dynamiska parametrar som ska läggas till. Den här klassen måste innehålla ett **parameter** -attribut för varje parameter och eventuella valfria **alias** -och **verifierings** -attribut som behövs för cmdleten.
 
-Till exempel:
+Exempel:
 
 ```csharp
 public class SendGreetingCommandDynamicParameters
@@ -115,6 +108,6 @@ Ett fullständigt exempel på en cmdlet som stöder dynamiska parametrar finns i
 
 [System. Management. Automation. IDynamicParameters. GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
 
-[Så här deklarerar du dynamiska parametrar](./how-to-declare-dynamic-parameters.md)
+[Deklarera dynamiska parametrar](./how-to-declare-dynamic-parameters.md)
 
 [Skriva en Windows PowerShell-cmdlet](./writing-a-windows-powershell-cmdlet.md)

@@ -1,25 +1,18 @@
 ---
 title: PropertyName-element för ItemSelectionCondition för ListControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d5e707ae-3c84-4ceb-ba31-56b3ffde6d6c
-caps.latest.revision: 7
-ms.openlocfilehash: b15e26e18126f69eee7c3a857f9a461d4bdf5848
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8bdbb05326f7ff5ccffa46215631a5c954080dc1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354098"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780873"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-listcontrol-format"></a>PropertyName-element för ItemSelectionCondition för ListControl (format)
 
-Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas till `true`, uppfylls villkoret och vyn används. Det här elementet används när du definierar en listvy.
+Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas `true` , uppfylls villkoret och vyn används. Det här elementet används när du definierar en listvy.
 
-Konfigurations element (format) ViewDefinitions element (format) View-element (format) ListControl-element (format) element för ListEntries (format) ListEntry-element för ListControl (format) ListItems-element för ListEntry (format) ListControl Element för ListItems för ListControl (format) ItemSelectionCondition-element för ListItem för ListControls PropertyName-element för ItemSelectionCondition för ListControl (format)
+Konfigurations element (format) ViewDefinitions element (format) View-element (format) ListControl-element (format) ListEntries-element (format) ListEntry-element för ListControl (format) ListItems-element för ListEntry (format) ListControl-element för ListItem (format) ListItems-element för ListControl (format) ItemSelectionCondition-element för ListItem-elementet ListControls (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,15 +22,15 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och de överordnade elementen i `PropertyName`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `PropertyName` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -49,7 +42,7 @@ Ingen.
 
 Ange namnet på den egenskap vars värde visas.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Om det här elementet används kan du inte ange [script block](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md) -elementet när du definierar urvals villkoret.
 
@@ -59,4 +52,4 @@ Om det här elementet används kan du inte ange [script block](./scriptblock-ele
 
 [ItemSelectionCondition-element för ListItem för ListControl (format)](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

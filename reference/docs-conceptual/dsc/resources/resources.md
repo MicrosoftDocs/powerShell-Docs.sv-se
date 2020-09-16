@@ -1,13 +1,13 @@
 ---
-ms.date: 02/28/2020
+ms.date: 07/23/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-resurser
-ms.openlocfilehash: bae08447763a3bdb6ee8fcdd4f8d49209a5de805
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 6ab831c9d423c6189951b43bfab92f800366ceca
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692197"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87777919"
 ---
 # <a name="dsc-resources"></a>DSC-resurser
 
@@ -22,11 +22,11 @@ En resurs kan modellera något som generiskt som en fil eller som en inställnin
 Varje resurs har ett *-schema som avgör den syntax som behövs för att använda resursen i en [konfiguration](../configurations/configurations.md).
 En resurs schema kan definieras på följande sätt:
 
-- `Schema.Mof`fil: de flesta resurser definierar _schemat_ i en ' schema. MOF '-fil med hjälp av [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
-- `<Resource Name>.schema.psm1`fil: [sammansatta resurser](../configurations/compositeConfigs.md) definierar deras *schema* i en `<ResourceName>.schema.psm1` fil med hjälp av ett [parameter block](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
-- `<Resource Name>.psm1`fil: klassbaserade DSC-resurser definierar deras _schema_ i klass definitionen. Objekt betecknas som klass egenskaper. Mer information finns i [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
+- `Schema.Mof` fil: de flesta resurser definierar _schemat_ i en `schema.mof` fil med hjälp av [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
+- `<Resource Name>.schema.psm1` fil: [sammansatta resurser](../configurations/compositeConfigs.md) definierar deras _schema_ i en `<ResourceName>.schema.psm1` fil med hjälp av ett [parameter block](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+- `<Resource Name>.psm1` fil: klassbaserade DSC-resurser definierar deras _schema_ i klass definitionen. Objekt betecknas som klass egenskaper. Mer information finns i [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
 
-Om du vill hämta syntaxen för en DSC-resurs använder du cmdleten [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) med `-Syntax` parametern. Den här användningen liknar att använda [Get-Command](/powershell/module/microsoft.powershell.core/get-command) med `-Syntax` parametern för att hämta cmdlet-syntaxen. De utdata som visas visar den mall som används för ett resurs block för den resurs som du anger.
+Om du vill hämta syntaxen för en DSC-resurs använder du cmdleten [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) med parametern **syntax** . Den här användningen liknar att använda [Get-Command](/powershell/module/microsoft.powershell.core/get-command) med parametern **syntax** för att hämta cmdlet-syntaxen. De utdata som visas visar den mall som används för ett resurs block för den resurs som du anger.
 
 ```powershell
 Get-DscResource -Syntax Service
@@ -54,6 +54,9 @@ Service [String] #ResourceName
     [State = [string]{ Running | Stopped }]
 }
 ```
+
+> [!NOTE]
+> I PowerShell-versioner under 7,0 `Get-DscResource` hittar du inte klassbaserade DSC-resurser.
 
 I en konfiguration kan ett **tjänst** resurs block se ut så här för att **säkerställa** att Spooler-tjänsten körs.
 
@@ -106,7 +109,7 @@ Configuration TestConfig
 > [!NOTE]
 > Från och med PowerShell 5,0 lades IntelliSense till för DSC. Med den här nya funktionen kan du <kbd>TAB</kbd> använda TABB <kbd>-och</kbd> + <kbd>rymd utrymme</kbd> för att komplettera nyckel namn automatiskt.
 
-![Slut för ande av resurs flik](media/resources/resource-tabcompletion.png)
+![Resurs-IntelliSense med tabb-slutförande](media/resources/resource-tabcompletion.png)
 
 ## <a name="types-of-resources"></a>Typer av resurser
 

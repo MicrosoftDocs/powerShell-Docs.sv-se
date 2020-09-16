@@ -1,19 +1,12 @@
 ---
 title: Windows PowerShell API-exempel | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 82df2cde-ba12-46d2-b6ec-da5455fd9b57
-caps.latest.revision: 8
-ms.openlocfilehash: eff917e71e91114fad3c78de58291b623aae6797
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d7232bb16851f1d568cbdfc4374e287d0875adc8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565408"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780176"
 ---
 # <a name="windows-powershell-api-samples"></a>Windows PowerShell API-exempel
 
@@ -21,6 +14,6 @@ Det här avsnittet innehåller exempel kod som visar hur du skapar körnings utr
 
 ## <a name="in-this-section"></a>I det här avsnittet
 
-[PowerShell01-exempel](./windows-powershell01-sample.md) Det här exemplet visar hur du använder ett [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt för att begränsa funktionerna i en körnings utrymme. Utdata från det här exemplet visar hur du begränsar språk läget för körnings utrymme, hur du markerar en cmdlet som privat, hur du lägger till och tar bort cmdlets och providers, hur du lägger till ett proxy-kommando med mera.
+[PowerShell01-exempel](./windows-powershell01-sample.md) Det här exemplet visar hur du använder ett [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt för att begränsa funktionerna i en körnings utrymme. Utdata från det här exemplet visar hur du begränsar språk läget för körnings utrymme, hur du markerar en cmdlet som privat, hur du lägger till och tar bort cmdlets och providers, hur du lägger till ett proxy-kommando med mera.
 
 [PowerShell02-exempel](./windows-powershell02-sample.md) Det här exemplet visar hur du kör kommandon asynkront med hjälp av körnings utrymmen i en körnings utrymme-pool. Exemplet genererar en lista med kommandon och kör sedan kommandona medan Windows PowerShell-motorn öppnar en körnings utrymme från poolen när den behövs.

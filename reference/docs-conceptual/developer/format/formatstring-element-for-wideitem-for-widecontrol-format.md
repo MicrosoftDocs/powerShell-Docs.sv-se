@@ -1,19 +1,12 @@
 ---
 title: FormatString-element för WideItem för WideControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5bc6ea26-3ca6-4bab-8a13-29189821ba15
-caps.latest.revision: 7
-ms.openlocfilehash: a1dc145864a6904fd4af6c3b9187819c49e224b0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4f1f0826a1cebb1526858875df640baac9d4ce48
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354546"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781536"
 ---
 # <a name="formatstring-element-for-wideitem-for-widecontrol-format"></a>FormatString-element för WideItem för WideControl (format)
 
@@ -29,15 +22,15 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `FormatString`-elementet.
+I följande avsnitt beskrivs attributen, underordnade element och `FormatString` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -49,7 +42,7 @@ Ingen.
 
 Ange mönstret som används för att formatera data. Du kan till exempel använda det här mönstret för att formatera värdet för alla egenskaper som är av typen [system. TimeSpan](/dotnet/api/System.TimeSpan): {0: MMM} {0: DD} {0: hh}: {0: mm}.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Format strängar kan användas för att skapa tabellvyer, listvyer, breda vyer eller anpassade vyer. Mer information om hur du formaterar ett värde som visas i en vy finns i [Formatera data som visas](./formatting-displayed-data.md).
 
@@ -57,7 +50,7 @@ Mer information om hur du använder format strängar i breda vyer finns i [skapa
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visas hur du definierar en format sträng för värdet för egenskapen `StartTime`.
+I följande exempel visas hur du definierar en format sträng för `StartTime` egenskapens värde.
 
 ```xml
 <WideItem>

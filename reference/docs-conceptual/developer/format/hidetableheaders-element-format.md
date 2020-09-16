@@ -1,19 +1,12 @@
 ---
 title: HideTableHeaders-element (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a20eaa3d-2bca-4a1f-8d40-fe038631d778
-caps.latest.revision: 11
-ms.openlocfilehash: 532563a70c702c05771a37a06124212c9548bb23
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 529a3ebbbc1be17131c17e537311c2c041326393
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354497"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781366"
 ---
 # <a name="hidetableheaders-element-format"></a>HideTableHeaders-element (format)
 
@@ -29,15 +22,15 @@ ViewDefinitions-element (format) View-element (format) TableControl-element (for
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `HideTableHeaders`-elementet.
+I följande avsnitt beskrivs attributen, underordnade element och `HideTableHeaders` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -47,9 +40,9 @@ Ingen.
 
 ## <a name="text-value"></a>Textvärde
 
-Ange `true` för att dölja tabell rubrikerna.
+Ange `true` om tabell rubrikerna ska döljas.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Mer information om komponenterna i en tabellvy finns i [skapa en tabellvy](./creating-a-table-view.md).
 

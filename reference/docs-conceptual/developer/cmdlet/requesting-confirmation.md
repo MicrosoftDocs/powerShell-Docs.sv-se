@@ -1,25 +1,18 @@
 ---
 title: Begär bekräftelse | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 4468066f-6759-402f-84db-0d8303cfd5cb
-caps.latest.revision: 7
-ms.openlocfilehash: c5deaa9bb0dd9621b6f03aeb188cf76ed35dff6c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 42ab001e3e8894f2ca17332634214af108fc5918
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356170"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781791"
 ---
 # <a name="requesting-confirmation"></a>Begära bekräftelse
 
 I det här avsnittet beskrivs bekräftelse meddelanden som kan visas innan en cmdlet, funktion eller provider utför en åtgärd.
 
-## <a name="in-this-section"></a>I detta avsnitt
+## <a name="in-this-section"></a>I det här avsnittet
 
 [Begär bekräftelse process för kommandon](./requesting-confirmation-from-cmdlets.md) Beskriver processen som cmdlets, Functions och providers måste följa för att begära en bekräftelse innan de gör en ändring i systemet.
 

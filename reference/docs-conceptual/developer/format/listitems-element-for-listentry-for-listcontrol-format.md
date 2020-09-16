@@ -1,19 +1,12 @@
 ---
 title: ListItems-element för ListEntry för ListControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d2c1da6d-acc7-4fe8-9e7d-6dcddc2787cd
-caps.latest.revision: 9
-ms.openlocfilehash: c25f18489d9c7abd8889758499dbbacd6ee29304
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 03b89a3df2ab0498533d0c00f303f643e0039b25
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354343"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781145"
 ---
 # <a name="listitems-element-for-listentry-for-listcontrol-format"></a>ListItems-element för ListEntry för ListControl (format)
 
@@ -31,11 +24,11 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `ListItems`-elementet. Det finns ingen gräns för antalet underordnade element som kan anges. Ordningen på underordnade element definierar i vilken ordning värdena visas i listvyn.
+I följande avsnitt beskrivs attributen, underordnade element och `ListItems` elementets överordnade element. Det finns ingen gräns för antalet underordnade element som kan anges. Ordningen på underordnade element definierar i vilken ordning värdena visas i listvyn.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -49,7 +42,7 @@ Ingen.
 |-------------|-----------------|
 |[ListEntry-element för ListControl (format)](./listentry-element-for-listcontrol-format.md)|Ger en definition av listvyn.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Mer information om den här typen av vy finns i [skapa en listvy](./creating-a-list-view.md).
 
@@ -81,4 +74,4 @@ I det här exemplet visas de XML-element som definierar tre rader i listvyn.
 
 [Skapa en listvy](./creating-a-list-view.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

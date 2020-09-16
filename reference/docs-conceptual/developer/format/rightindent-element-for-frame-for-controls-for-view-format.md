@@ -1,25 +1,18 @@
 ---
 title: RightIndent-element för ram för kontroller för vy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: af128d87-24f3-4e33-9457-6f8678993236
-caps.latest.revision: 6
-ms.openlocfilehash: b9b66adb9c36977859c9516dc132f99be424d12b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7a688997791dc901e81236c5d467425ad145eb33
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353972"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780465"
 ---
 # <a name="rightindent-element-for-frame-for-controls-for-view-format"></a>RightIndent-element för Frame för Controls för View (format)
 
 Anger hur många tecken data flyttas bort från högermarginalen. Det här elementet används när du definierar kontroller som kan användas av en vy.
 
-Konfigurations element (format) ViewDefinitions element (format) View-element (format) styr element (format) styr element (format) styr element för Controls (format) CustomControl-element för kontroll för Control for View (format) CustomEntries-element för CustomControl för visnings-(format) CustomEntry-element för CustomEntries för Controls for View (format) CustomItem-elementet for CustomEntry for Controls for View (format) Frame element for CustomItem for Controls for View (format) RightIndent element i Frame of Kontroller för vy (format)
+Konfigurations element (format) ViewDefinitions element (format) View-element (format) styr element (format) styr element (format) styr element för Controls (format) CustomControl-element för Control for View (format) CustomEntries-element för CustomControl för visning (format) CustomEntry-element för CustomEntries for Controls for View (format) CustomItem-element för CustomEntry for Controls for View (format) Frame element for CustomItem for Controls for View (format) RightIndent-elementet i bild rutornas vyer (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,30 +22,30 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `RightIndent`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `RightIndent` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[Ram element för CustomItem för kontroller för vy (format)](./frame-element-for-customitem-for-controls-for-view-format.md)|Definierar hur data visas, till exempel att flytta data till vänster eller höger.|
+|[Frame-element för CustomItem för Controls för View (format)](./frame-element-for-customitem-for-controls-for-view-format.md)|Definierar hur data visas, till exempel att flytta data till vänster eller höger.|
 
 ## <a name="text-value"></a>Textvärde
 
 Ange antalet tecken som du vill flytta data till höger.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 ## <a name="see-also"></a>Se även
 
-[Ram element för CustomItem för kontroller för vy (format)](./frame-element-for-customitem-for-controls-for-view-format.md)
+[Frame-element för CustomItem för Controls för View (format)](./frame-element-for-customitem-for-controls-for-view-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)
