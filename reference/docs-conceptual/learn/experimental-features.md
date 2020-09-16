@@ -1,13 +1,13 @@
 ---
-ms.date: 08/31/2020
+ms.date: 09/14/2020
 title: Använda experimentella funktioner i PowerShell
 description: Visar en lista över tillgängliga experimentella funktioner och hur du använder dem.
-ms.openlocfilehash: f6bd17b0a3bb70d0b538dd6615b905082c87f800
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+ms.openlocfilehash: 74623240bfb19022ae342a5d23e2ed4f455afa45
+ms.sourcegitcommit: 30c0c1563f8e840f24b65297e907f3583d90e677
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236279"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90574478"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Använda experimentella funktioner i PowerShell
 
@@ -24,19 +24,19 @@ Mer information om hur du aktiverar eller inaktiverar dessa funktioner finns [ab
 
 Den här artikeln beskriver de experimentella funktioner som är tillgängliga och hur du använder funktionen.
 
-|                            Name                            |   6,2   |   7,0   | 7,1 (för hands version) |
-| ---------------------------------------------------------- | :-----: | :-----: | :-----------: |
-| PSTempDrive (vanlig i PS 7.0 +)                        | &check; |         |               |
-| PSUseAbbreviationExpansion (vanlig i PS 7.0 +)         | &check; |         |               |
-| PSCommandNotFoundSuggestion                                | &check; | &check; |    &check;    |
-| PSImplicitRemotingBatching                                 | &check; | &check; |    &check;    |
-| Microsoft. PowerShell. Utility. PSManageBreakpointsInRunspace |         | &check; |    &check;    |
-| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; |    &check;    |
-| PSNullConditionalOperators                                 |         | &check; |    &check;    |
-| PSUnixFileStat (endast Windows)                          |         | &check; |    &check;    |
-| PSNativePSPathResolution (vanlig i PS 7.1 +)           |         |         |    &check;    |
-| PSCultureInvariantReplaceOperator                          |         |         |    &check;    |
-| PSNotApplyErrorActionToStderr                              |         |         |    &check;    |
+|                            Name                            |   6,2   |   7,0   |   7.1   |
+| ---------------------------------------------------------- | :-----: | :-----: | :-----: |
+| PSTempDrive (vanlig i PS 7.0 +)                        | &check; |         |         |
+| PSUseAbbreviationExpansion (vanlig i PS 7.0 +)         | &check; |         |         |
+| PSCommandNotFoundSuggestion                                | &check; | &check; | &check; |
+| PSImplicitRemotingBatching                                 | &check; | &check; | &check; |
+| Microsoft. PowerShell. Utility. PSManageBreakpointsInRunspace |         | &check; | &check; |
+| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
+| PSNullConditionalOperators (vanlig i PS 7.1 +)         |         | &check; |         |
+| PSUnixFileStat (endast Windows)                          |         | &check; | &check; |
+| PSNativePSPathResolution (vanlig i PS 7.1 +)           |         |         |         |
+| PSCultureInvariantReplaceOperator                          |         |         | &check; |
+| PSNotApplyErrorActionToStderr                              |         |         | &check; |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Microsoft. PowerShell. Utility. PSManageBreakpointsInRunspace
 
@@ -160,7 +160,9 @@ I Windows, om sökvägen börjar med `~` , är det också som matchas med den fu
 
 När den här experimentella funktionen är aktive rad skrivs fel poster som omdirigeras från interna kommandon, t. ex. När du använder omdirigerings operatorer ( `2>&1` ), inte till `$Error` variabeln och Preference-variabeln `$ErrorActionPreference` påverkar inte de omdirigerade utdata.
 
-Många interna kommandon skriver till `stderr` som en alternativ ström för ytterligare information. Det här beteendet kan orsaka förvirring vid fel sökning. Du kan också förlora ytterligare utdata om `$ErrorActionPreference` är inställt på ett tillstånd som stänger av utdata.
+Många interna kommandon skriver till `stderr` som en alternativ ström för ytterligare information. Det här beteendet kan orsaka förvirring när du tittar på fel eller ytterligare utdata kan gå förlorade till användaren om `$ErrorActionPreference` har angetts till ett tillstånd som inaktive ras av utdata.
+
+Om ett ursprungligt kommando har en slutkod som inte är noll `$?` är inställt på `$false` . Om slut koden är noll `$?` anges till `$true` .
 
 ## <a name="psnullconditionaloperators"></a>PSNullConditionalOperators
 
@@ -182,6 +184,9 @@ Egenskapen `propname` används och värdet returneras endast om `$x` inte är nu
 `?.` `?[]` Operatorerna och är medlemmar i operatorn och ger inte ett blank steg mellan variabel namnet och operatorn.
 
 Eftersom PowerShell tillåter `?` som en del av variabel namnet, krävs avtvetydighet när operatorerna används utan blank steg mellan variabelns namn och operatorn. För att disambiguate ska variablerna använda `{}` runt variabel namnet som: `${x?}?.propertyName` eller `${y}?[0]` .
+
+> [!NOTE]
+> Den här funktionen har flyttat från experiment fasen och är en vanlig funktion i PowerShell 7,1 och högre.
 
 ## <a name="pstempdrive"></a>PSTempDrive
 
