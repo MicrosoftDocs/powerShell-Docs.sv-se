@@ -1,81 +1,84 @@
 ---
-ms.date: 10/31/2017
+ms.date: 07/06/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skydda MOF-filen
-ms.openlocfilehash: 30b7ff276781b398aeae94e710c810f5fccafdfb
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: b1319167010a85e639fdb51a1a0b8b472dfda3a6
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83556395"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87778144"
 ---
-# <a name="securing-the-mof-file"></a><span data-ttu-id="8c5bc-103">Skydda MOF-filen</span><span class="sxs-lookup"><span data-stu-id="8c5bc-103">Securing the MOF File</span></span>
+# <a name="securing-the-mof-file"></a><span data-ttu-id="f13dd-103">Skydda MOF-filen</span><span class="sxs-lookup"><span data-stu-id="f13dd-103">Securing the MOF File</span></span>
 
-> <span data-ttu-id="8c5bc-104">Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0</span><span class="sxs-lookup"><span data-stu-id="8c5bc-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="f13dd-104">Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0</span><span class="sxs-lookup"><span data-stu-id="f13dd-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="8c5bc-105">DSC hanterar konfigurationen av serverklusternoder genom att använda information som lagras i en MOF-fil, där den lokala Configuration Manager (LCM) implementerar det önskade slut läget.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-105">DSC manages the configuration of server nodes by applying information stored in a MOF file, where the Local Configuration Manager (LCM) implements the desired end state.</span></span> <span data-ttu-id="8c5bc-106">Eftersom den här filen innehåller information om konfigurationen är det viktigt att skydda den.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-106">Because this file contains the details of the configuration, it's important to keep it secure.</span></span> <span data-ttu-id="8c5bc-107">I det här avsnittet beskrivs hur du ser till att målnoden har krypterat filen.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-107">This topic describes how to ensure the target node has encrypted the file.</span></span>
+<span data-ttu-id="f13dd-105">DSC hanterar konfigurationen av serverklusternoder genom att använda information som lagras i en MOF-fil, där den lokala Configuration Manager (LCM) implementerar det önskade slut läget.</span><span class="sxs-lookup"><span data-stu-id="f13dd-105">DSC manages the configuration of server nodes by applying information stored in a MOF file, where the Local Configuration Manager (LCM) implements the desired end state.</span></span> <span data-ttu-id="f13dd-106">Eftersom den här filen innehåller information om konfigurationen är det viktigt att skydda den.</span><span class="sxs-lookup"><span data-stu-id="f13dd-106">Because this file contains the details of the configuration, it's important to keep it secure.</span></span> <span data-ttu-id="f13dd-107">I det här avsnittet beskrivs hur du ser till att målnoden har krypterat filen.</span><span class="sxs-lookup"><span data-stu-id="f13dd-107">This topic describes how to ensure the target node has encrypted the file.</span></span>
 
-<span data-ttu-id="8c5bc-108">Från och med PowerShell version 5,0 krypteras hela MOF-filen som standard när den tillämpas på noden med hjälp av `Start-DSCConfiguration` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-108">Beginning with PowerShell version 5.0, the entire MOF file is encrypted by default when it is applied to the node using the `Start-DSCConfiguration` cmdlet.</span></span> <span data-ttu-id="8c5bc-109">Processen som beskrivs i den här artikeln krävs bara när du implementerar en lösning med protokollet för pull-protokollet om certifikat inte hanteras, för att se till att konfigurationer som hämtas av målnoden kan dekrypteras och läsas av systemet innan de tillämpas (till exempel den pull-tjänst som är tillgänglig i Windows Server).</span><span class="sxs-lookup"><span data-stu-id="8c5bc-109">The process described in this article is required only when implementing a solution using the pull service protocol if certificates are not managed, to ensure configurations downloaded by the target node can be decrypted and read by the system before they are applied (for example, the pull service available in Windows Server).</span></span> <span data-ttu-id="8c5bc-110">Noder som är registrerade för [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) har automatiskt certifikat som installeras och hanteras av tjänsten utan att det krävs någon administrativ omkostnader.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-110">Nodes registered to [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) will automatically have certificates installed and managed by the service with no administrative overhead required.</span></span>
+<span data-ttu-id="f13dd-108">Från och med PowerShell version 5,0 krypteras hela MOF-filen som standard när den tillämpas på noden med hjälp av `Start-DSCConfiguration` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="f13dd-108">Beginning with PowerShell version 5.0, the entire MOF file is encrypted by default when it is applied to the node using the `Start-DSCConfiguration` cmdlet.</span></span> <span data-ttu-id="f13dd-109">Processen som beskrivs i den här artikeln krävs bara när du implementerar en lösning med protokollet för pull-protokollet om certifikat inte hanteras, för att se till att konfigurationer som hämtas av målnoden kan dekrypteras och läsas av systemet innan de tillämpas (till exempel den pull-tjänst som är tillgänglig i Windows Server).</span><span class="sxs-lookup"><span data-stu-id="f13dd-109">The process described in this article is required only when implementing a solution using the pull service protocol if certificates are not managed, to ensure configurations downloaded by the target node can be decrypted and read by the system before they are applied (for example, the pull service available in Windows Server).</span></span> <span data-ttu-id="f13dd-110">Noder som är registrerade för [Azure Automation DSC](/azure/automation/automation-dsc-overview) har automatiskt certifikat som installeras och hanteras av tjänsten utan att det krävs någon administrativ omkostnader.</span><span class="sxs-lookup"><span data-stu-id="f13dd-110">Nodes registered to [Azure Automation DSC](/azure/automation/automation-dsc-overview) will automatically have certificates installed and managed by the service with no administrative overhead required.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="8c5bc-111">I det här avsnittet beskrivs certifikat som används för kryptering.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-111">This topic discusses certificates used for encryption.</span></span> <span data-ttu-id="8c5bc-112">För kryptering räcker ett självsignerat certifikat, eftersom den privata nyckeln alltid hålls hemlig och kryptering innebär inte att dokumentet är tillförlitligt.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-112">For encryption, a self-signed certificate is sufficient, because the private key is always kept secret and encryption does not imply trust of the document.</span></span> <span data-ttu-id="8c5bc-113">Självsignerade certifikat bör *inte* användas för autentisering.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-113">Self-signed certificates should *not* be used for authentication purposes.</span></span> <span data-ttu-id="8c5bc-114">Du bör använda ett certifikat från en betrodd certifikat utfärdare (CA) i alla autentiserings syfte.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-114">You should use a certificate from a trusted Certification Authority (CA) for any authentication purposes.</span></span>
+> <span data-ttu-id="f13dd-111">I det här avsnittet beskrivs certifikat som används för kryptering.</span><span class="sxs-lookup"><span data-stu-id="f13dd-111">This topic discusses certificates used for encryption.</span></span> <span data-ttu-id="f13dd-112">För kryptering räcker ett självsignerat certifikat, eftersom den privata nyckeln alltid hålls hemlig och kryptering innebär inte att dokumentet är tillförlitligt.</span><span class="sxs-lookup"><span data-stu-id="f13dd-112">For encryption, a self-signed certificate is sufficient, because the private key is always kept secret and encryption does not imply trust of the document.</span></span> <span data-ttu-id="f13dd-113">Självsignerade certifikat bör _inte_ användas för autentisering.</span><span class="sxs-lookup"><span data-stu-id="f13dd-113">Self-signed certificates should _not_ be used for authentication purposes.</span></span> <span data-ttu-id="f13dd-114">Du bör använda ett certifikat från en betrodd certifikat utfärdare (CA) i alla autentiserings syfte.</span><span class="sxs-lookup"><span data-stu-id="f13dd-114">You should use a certificate from a trusted Certification Authority (CA) for any authentication purposes.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="8c5bc-115">Krav</span><span class="sxs-lookup"><span data-stu-id="8c5bc-115">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="f13dd-115">Förutsättningar</span><span class="sxs-lookup"><span data-stu-id="f13dd-115">Prerequisites</span></span>
 
-<span data-ttu-id="8c5bc-116">Kontrol lera att du har följande för att kunna kryptera de autentiseringsuppgifter som används för att skydda en DSC-konfiguration:</span><span class="sxs-lookup"><span data-stu-id="8c5bc-116">To successfully encrypt the credentials used to secure a DSC configuration, make sure you have the following:</span></span>
+<span data-ttu-id="f13dd-116">Kontrol lera att du har följande för att kunna kryptera de autentiseringsuppgifter som används för att skydda en DSC-konfiguration:</span><span class="sxs-lookup"><span data-stu-id="f13dd-116">To successfully encrypt the credentials used to secure a DSC configuration, make sure you have the following:</span></span>
 
-- <span data-ttu-id="8c5bc-117">**Några sätt att utfärda och distribuera certifikat**.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-117">**Some means of issuing and distributing certificates**.</span></span> <span data-ttu-id="8c5bc-118">I det här avsnittet och dess exempel förutsätter vi att du använder Active Directory certifikat utfärdare.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-118">This topic and its examples assume you are using Active Directory Certification Authority.</span></span> <span data-ttu-id="8c5bc-119">Mer bakgrunds information om Active Directory Certificate Services finns i [Översikt över Active Directory Certificate Services](https://technet.microsoft.com/library/hh831740.aspx) och [Active Directory Certificate Services i Windows Server 2008](https://technet.microsoft.com/windowsserver/dd448615.aspx).</span><span class="sxs-lookup"><span data-stu-id="8c5bc-119">For more background information on Active Directory Certificate Services, see [Active Directory Certificate Services Overview](https://technet.microsoft.com/library/hh831740.aspx) and [Active Directory Certificate Services in Windows Server 2008](https://technet.microsoft.com/windowsserver/dd448615.aspx).</span></span>
-- <span data-ttu-id="8c5bc-120">**Administrativ åtkomst till målnoden eller noder**.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-120">**Administrative access to the target node or nodes**.</span></span>
-- <span data-ttu-id="8c5bc-121">**Varje målnod har ett krypterat certifikat som har sparats i det personliga arkivet**.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-121">**Each target node has an encryption-capable certificate saved its Personal Store**.</span></span> <span data-ttu-id="8c5bc-122">I Windows PowerShell är sökvägen till arkivet certifikat: \ LocalMachine\My.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-122">In Windows PowerShell, the path to the store is Cert:\LocalMachine\My.</span></span> <span data-ttu-id="8c5bc-123">I exemplen i det här avsnittet används mallen "arbetsstations autentisering", som du hittar (tillsammans med andra certifikatmallar) på [standardmallarna för certifikat](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).</span><span class="sxs-lookup"><span data-stu-id="8c5bc-123">The examples in this topic use the "workstation authentication" template, which you can find (along with other certificate templates) at [Default Certificate Templates](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).</span></span>
-- <span data-ttu-id="8c5bc-124">Om du kommer att köra den här konfigurationen på en annan dator än målnoden, **Exportera den offentliga nyckeln för certifikatet**och sedan importera den till datorn som du ska köra konfigurationen från.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-124">If you will be running this configuration on a computer other than the target node, **export the public key of the certificate**, and then import it to the computer you will run the configuration from.</span></span> <span data-ttu-id="8c5bc-125">Se till att du endast exporterar den **offentliga** nyckeln. skydda den privata nyckeln.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-125">Make sure that you export only the **public** key; keep the private key secure.</span></span>
+- <span data-ttu-id="f13dd-117">**Några sätt att utfärda och distribuera certifikat**.</span><span class="sxs-lookup"><span data-stu-id="f13dd-117">**Some means of issuing and distributing certificates**.</span></span> <span data-ttu-id="f13dd-118">I det här avsnittet och dess exempel förutsätter vi att du använder Active Directory certifikat utfärdare.</span><span class="sxs-lookup"><span data-stu-id="f13dd-118">This topic and its examples assume you are using Active Directory Certification Authority.</span></span> <span data-ttu-id="f13dd-119">Mer bakgrunds information om Active Directory Certificate Services finns i [Översikt över Active Directory Certificate Services](https://technet.microsoft.com/library/hh831740.aspx) och [Active Directory Certificate Services i Windows Server 2008](https://technet.microsoft.com/windowsserver/dd448615.aspx).</span><span class="sxs-lookup"><span data-stu-id="f13dd-119">For more background information on Active Directory Certificate Services, see [Active Directory Certificate Services Overview](https://technet.microsoft.com/library/hh831740.aspx) and [Active Directory Certificate Services in Windows Server 2008](https://technet.microsoft.com/windowsserver/dd448615.aspx).</span></span>
+- <span data-ttu-id="f13dd-120">**Administrativ åtkomst till målnoden eller noder**.</span><span class="sxs-lookup"><span data-stu-id="f13dd-120">**Administrative access to the target node or nodes**.</span></span>
+- <span data-ttu-id="f13dd-121">**Varje målnod har ett krypterat certifikat som har sparats i det personliga arkivet**.</span><span class="sxs-lookup"><span data-stu-id="f13dd-121">**Each target node has an encryption-capable certificate saved its Personal Store**.</span></span> <span data-ttu-id="f13dd-122">I Windows PowerShell är sökvägen till arkivet certifikat: \ LocalMachine\My.</span><span class="sxs-lookup"><span data-stu-id="f13dd-122">In Windows PowerShell, the path to the store is Cert:\LocalMachine\My.</span></span> <span data-ttu-id="f13dd-123">I exemplen i det här avsnittet används mallen "arbetsstations autentisering", som du hittar (tillsammans med andra certifikatmallar) på [standardmallarna för certifikat](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).</span><span class="sxs-lookup"><span data-stu-id="f13dd-123">The examples in this topic use the "workstation authentication" template, which you can find (along with other certificate templates) at [Default Certificate Templates](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).</span></span>
+- <span data-ttu-id="f13dd-124">Om du kommer att köra den här konfigurationen på en annan dator än målnoden, **Exportera den offentliga nyckeln för certifikatet**och sedan importera den till datorn som du ska köra konfigurationen från.</span><span class="sxs-lookup"><span data-stu-id="f13dd-124">If you will be running this configuration on a computer other than the target node, **export the public key of the certificate**, and then import it to the computer you will run the configuration from.</span></span> <span data-ttu-id="f13dd-125">Se till att du endast exporterar den **offentliga** nyckeln. skydda den privata nyckeln.</span><span class="sxs-lookup"><span data-stu-id="f13dd-125">Make sure that you export only the **public** key; keep the private key secure.</span></span>
 
-## <a name="overall-process"></a><span data-ttu-id="8c5bc-126">Övergripande process</span><span class="sxs-lookup"><span data-stu-id="8c5bc-126">Overall process</span></span>
+> [!NOTE]
+> <span data-ttu-id="f13dd-126">Skript resurser har begränsningar när det kommer att krypteras.</span><span class="sxs-lookup"><span data-stu-id="f13dd-126">Script Resources have limitations when it comes to encryption.</span></span> <span data-ttu-id="f13dd-127">Mer information finns i [skript resurs](../reference/resources/windows/scriptResource.md#known-limitations)</span><span class="sxs-lookup"><span data-stu-id="f13dd-127">For more information, see [Script Resource](../reference/resources/windows/scriptResource.md#known-limitations)</span></span>
 
- 1. <span data-ttu-id="8c5bc-127">Konfigurera certifikat, nycklar och tumavtrycken och se till att varje målnod har kopior av certifikatet och att konfigurations datorn har den offentliga nyckeln och tumavtryck.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-127">Set up the certificates, keys, and thumbprints, making sure that each target node has copies of the certificate and the configuration computer has the public key and thumbprint.</span></span>
- 2. <span data-ttu-id="8c5bc-128">Skapa ett konfigurations data block som innehåller sökvägen och tumavtrycket för den offentliga nyckeln.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-128">Create a configuration data block that contains the path and thumbprint of the public key.</span></span>
- 3. <span data-ttu-id="8c5bc-129">Skapa ett konfigurations skript som definierar den önskade konfigurationen för målnoden och ställer in dekryptering på målnoden genom att använda den lokala Konfigurations hanteraren för att dekryptera konfigurations data med hjälp av certifikatet och dess tumavtryck.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-129">Create a configuration script that defines your desired configuration for the target node and sets up decryption on the target nodes by commanding the Local Configuration manager to decrypt the configuration data using the certificate and its thumbprint.</span></span>
- 4. <span data-ttu-id="8c5bc-130">Kör konfigurationen, som anger de lokala Configuration Manager inställningarna och startar DSC-konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-130">Run the configuration, which will set the Local Configuration Manager settings and start the DSC configuration.</span></span>
+## <a name="overall-process"></a><span data-ttu-id="f13dd-128">Övergripande process</span><span class="sxs-lookup"><span data-stu-id="f13dd-128">Overall process</span></span>
 
-![Diagram1](media/secureMOF/CredentialEncryptionDiagram1.png)
+ 1. <span data-ttu-id="f13dd-129">Konfigurera certifikat, nycklar och tumavtrycken och se till att varje målnod har kopior av certifikatet och att konfigurations datorn har den offentliga nyckeln och tumavtryck.</span><span class="sxs-lookup"><span data-stu-id="f13dd-129">Set up the certificates, keys, and thumbprints, making sure that each target node has copies of the certificate and the configuration computer has the public key and thumbprint.</span></span>
+ 1. <span data-ttu-id="f13dd-130">Skapa ett konfigurations data block som innehåller sökvägen och tumavtrycket för den offentliga nyckeln.</span><span class="sxs-lookup"><span data-stu-id="f13dd-130">Create a configuration data block that contains the path and thumbprint of the public key.</span></span>
+ 1. <span data-ttu-id="f13dd-131">Skapa ett konfigurations skript som definierar den önskade konfigurationen för målnoden och ställer in dekryptering på målnoden genom att använda den lokala Konfigurations hanteraren för att dekryptera konfigurations data med hjälp av certifikatet och dess tumavtryck.</span><span class="sxs-lookup"><span data-stu-id="f13dd-131">Create a configuration script that defines your desired configuration for the target node and sets up decryption on the target nodes by commanding the Local Configuration manager to decrypt the configuration data using the certificate and its thumbprint.</span></span>
+ 1. <span data-ttu-id="f13dd-132">Kör konfigurationen, som anger de lokala Configuration Manager inställningarna och startar DSC-konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="f13dd-132">Run the configuration, which will set the Local Configuration Manager settings and start the DSC configuration.</span></span>
 
-## <a name="certificate-requirements"></a><span data-ttu-id="8c5bc-132">Certifikatkrav</span><span class="sxs-lookup"><span data-stu-id="8c5bc-132">Certificate Requirements</span></span>
+![Process flöde för kryptering av autentiseringsuppgifter](media/secureMOF/CredentialEncryptionDiagram1.png)
 
-<span data-ttu-id="8c5bc-133">För att anta kryptering av autentiseringsuppgifter måste ett offentligt nyckel certifikat vara tillgängligt på den _målnod_ som är **betrodd** av den dator som används för att redigera DSC-konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-133">To enact credential encryption, a public key certificate must be available on the _Target Node_ that is **trusted** by the computer being used to author the DSC configuration.</span></span> <span data-ttu-id="8c5bc-134">Det här certifikatet för den offentliga nyckeln har särskilda krav för att det ska kunna användas för kryptering av DSC-autentiseringsuppgifter:</span><span class="sxs-lookup"><span data-stu-id="8c5bc-134">This public key certificate has specific requirements for it to be used for DSC credential encryption:</span></span>
+## <a name="certificate-requirements"></a><span data-ttu-id="f13dd-134">Certifikatkrav</span><span class="sxs-lookup"><span data-stu-id="f13dd-134">Certificate Requirements</span></span>
 
-1. <span data-ttu-id="8c5bc-135">**Nyckel användning**:</span><span class="sxs-lookup"><span data-stu-id="8c5bc-135">**Key Usage**:</span></span>
-   - <span data-ttu-id="8c5bc-136">Måste innehålla: ' KeyEncipherment ' och ' DataEncipherment '.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-136">Must contain: 'KeyEncipherment' and 'DataEncipherment'.</span></span>
-   - <span data-ttu-id="8c5bc-137">Får _inte_ innehålla: digital signatur.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-137">Should _not_ contain: 'Digital Signature'.</span></span>
-2. <span data-ttu-id="8c5bc-138">**Förbättrad nyckel användning**:</span><span class="sxs-lookup"><span data-stu-id="8c5bc-138">**Enhanced Key Usage**:</span></span>
-   - <span data-ttu-id="8c5bc-139">Måste innehålla: dokument kryptering (1.3.6.1.4.1.311.80.1).</span><span class="sxs-lookup"><span data-stu-id="8c5bc-139">Must contain: Document Encryption (1.3.6.1.4.1.311.80.1).</span></span>
-   - <span data-ttu-id="8c5bc-140">Får _inte_ innehålla: klientautentisering (1.3.6.1.5.5.7.3.2) och serverautentisering (1.3.6.1.5.5.7.3.1).</span><span class="sxs-lookup"><span data-stu-id="8c5bc-140">Should _not_ contain: Client Authentication (1.3.6.1.5.5.7.3.2) and Server Authentication (1.3.6.1.5.5.7.3.1).</span></span>
-3. <span data-ttu-id="8c5bc-141">Den privata nyckeln för certifikatet finns på \* Target Node_.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-141">The Private Key for the certificate is available on the \*Target Node_.</span></span>
-4. <span data-ttu-id="8c5bc-142">**Providern** för certifikatet måste vara "Microsoft RSA SChannel Cryptographic Provider".</span><span class="sxs-lookup"><span data-stu-id="8c5bc-142">The **Provider** for the certificate must be "Microsoft RSA SChannel Cryptographic Provider".</span></span>
+<span data-ttu-id="f13dd-135">För att anta kryptering av autentiseringsuppgifter måste ett offentligt nyckel certifikat vara tillgängligt på den _målnod_ som är **betrodd** av den dator som används för att redigera DSC-konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="f13dd-135">To enact credential encryption, a public key certificate must be available on the _Target Node_ that is **trusted** by the computer being used to author the DSC configuration.</span></span> <span data-ttu-id="f13dd-136">Det här certifikatet för den offentliga nyckeln har särskilda krav för att det ska kunna användas för kryptering av DSC-autentiseringsuppgifter:</span><span class="sxs-lookup"><span data-stu-id="f13dd-136">This public key certificate has specific requirements for it to be used for DSC credential encryption:</span></span>
+
+1. <span data-ttu-id="f13dd-137">**Nyckel användning**:</span><span class="sxs-lookup"><span data-stu-id="f13dd-137">**Key Usage**:</span></span>
+   - <span data-ttu-id="f13dd-138">Måste innehålla: ' KeyEncipherment ' och ' DataEncipherment '.</span><span class="sxs-lookup"><span data-stu-id="f13dd-138">Must contain: 'KeyEncipherment' and 'DataEncipherment'.</span></span>
+   - <span data-ttu-id="f13dd-139">Får _inte_ innehålla: digital signatur.</span><span class="sxs-lookup"><span data-stu-id="f13dd-139">Should _not_ contain: 'Digital Signature'.</span></span>
+1. <span data-ttu-id="f13dd-140">**Förbättrad nyckel användning**:</span><span class="sxs-lookup"><span data-stu-id="f13dd-140">**Enhanced Key Usage**:</span></span>
+   - <span data-ttu-id="f13dd-141">Måste innehålla: dokument kryptering (1.3.6.1.4.1.311.80.1).</span><span class="sxs-lookup"><span data-stu-id="f13dd-141">Must contain: Document Encryption (1.3.6.1.4.1.311.80.1).</span></span>
+   - <span data-ttu-id="f13dd-142">Får _inte_ innehålla: klientautentisering (1.3.6.1.5.5.7.3.2) och serverautentisering (1.3.6.1.5.5.7.3.1).</span><span class="sxs-lookup"><span data-stu-id="f13dd-142">Should _not_ contain: Client Authentication (1.3.6.1.5.5.7.3.2) and Server Authentication (1.3.6.1.5.5.7.3.1).</span></span>
+1. <span data-ttu-id="f13dd-143">Den privata nyckeln för certifikatet finns på \* Target Node_.</span><span class="sxs-lookup"><span data-stu-id="f13dd-143">The Private Key for the certificate is available on the \*Target Node_.</span></span>
+1. <span data-ttu-id="f13dd-144">**Providern** för certifikatet måste vara "Microsoft RSA SChannel Cryptographic Provider".</span><span class="sxs-lookup"><span data-stu-id="f13dd-144">The **Provider** for the certificate must be "Microsoft RSA SChannel Cryptographic Provider".</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="8c5bc-143">Även om du kan använda ett certifikat med en nyckel användning av "Digital Signature" eller en av EKU för autentisering, så gör detta att krypterings nyckeln blir enklare att använda och sårbar för angrepp.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-143">Although you can use a certificate with containing a Key Usage of 'Digital Signature' or one of the Authentication EKU's, this will enable the encryption key to be more easily misused and vulnerable to attack.</span></span> <span data-ttu-id="8c5bc-144">Vi rekommenderar att du använder ett certifikat som har skapats specifikt för att skydda DSC-autentiseringsuppgifter som utesluter denna nyckel användning och EKU.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-144">So it is best practice to use a certificate created specifically for the purpose of securing DSC credentials that omits these Key Usage and EKUs.</span></span>
+> <span data-ttu-id="f13dd-145">Även om du kan använda ett certifikat som innehåller en nyckel användning av "Digital Signature" eller en av EKU för autentisering, så gör detta att krypterings nyckeln blir enklare att använda och sårbar för angrepp.</span><span class="sxs-lookup"><span data-stu-id="f13dd-145">Although you can use a certificate containing a Key Usage of 'Digital Signature' or one of the Authentication EKU's, this will enable the encryption key to be more easily misused and vulnerable to attack.</span></span> <span data-ttu-id="f13dd-146">Vi rekommenderar att du använder ett certifikat som har skapats specifikt för att skydda DSC-autentiseringsuppgifter som utesluter denna nyckel användning och EKU.</span><span class="sxs-lookup"><span data-stu-id="f13dd-146">So it is best practice to use a certificate created specifically for the purpose of securing DSC credentials that omits these Key Usage and EKUs.</span></span>
 
-<span data-ttu-id="8c5bc-145">Alla befintliga certifikat på _målnoden_ som uppfyller dessa villkor kan användas för att skydda DSC-autentiseringsuppgifter.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-145">Any existing certificate on the _Target Node_ that meets these criteria can be used to secure DSC credentials.</span></span>
+<span data-ttu-id="f13dd-147">Alla befintliga certifikat på _målnoden_ som uppfyller dessa villkor kan användas för att skydda DSC-autentiseringsuppgifter.</span><span class="sxs-lookup"><span data-stu-id="f13dd-147">Any existing certificate on the _Target Node_ that meets these criteria can be used to secure DSC credentials.</span></span>
 
-## <a name="certificate-creation"></a><span data-ttu-id="8c5bc-146">Skapa certifikat</span><span class="sxs-lookup"><span data-stu-id="8c5bc-146">Certificate creation</span></span>
+## <a name="certificate-creation"></a><span data-ttu-id="f13dd-148">Skapa certifikat</span><span class="sxs-lookup"><span data-stu-id="f13dd-148">Certificate creation</span></span>
 
-<span data-ttu-id="8c5bc-147">Det finns två sätt som du kan vidta för att skapa och använda det krypterings certifikat som krävs (offentligt-privat nyckel par).</span><span class="sxs-lookup"><span data-stu-id="8c5bc-147">There are two approaches you can take to create and use the required Encryption Certificate (public-private key pair).</span></span>
+<span data-ttu-id="f13dd-149">Det finns två sätt som du kan vidta för att skapa och använda det krypterings certifikat som krävs (offentligt-privat nyckel par).</span><span class="sxs-lookup"><span data-stu-id="f13dd-149">There are two approaches you can take to create and use the required Encryption Certificate (public-private key pair).</span></span>
 
-1. <span data-ttu-id="8c5bc-148">Skapa den på **målnoden** och exportera bara den offentliga nyckeln till **redigerings noden**</span><span class="sxs-lookup"><span data-stu-id="8c5bc-148">Create it on the **Target Node** and export just the public key to the **Authoring Node**</span></span>
-2. <span data-ttu-id="8c5bc-149">Skapa den på **noden redigering** och exportera hela nyckel paret till **målnoden**</span><span class="sxs-lookup"><span data-stu-id="8c5bc-149">Create it on the **Authoring Node** and export the entire key pair to the **Target Node**</span></span>
+1. <span data-ttu-id="f13dd-150">Skapa den på **målnoden** och exportera bara den offentliga nyckeln till **redigerings noden**</span><span class="sxs-lookup"><span data-stu-id="f13dd-150">Create it on the **Target Node** and export just the public key to the **Authoring Node**</span></span>
+1. <span data-ttu-id="f13dd-151">Skapa den på **noden redigering** och exportera hela nyckel paret till **målnoden**</span><span class="sxs-lookup"><span data-stu-id="f13dd-151">Create it on the **Authoring Node** and export the entire key pair to the **Target Node**</span></span>
 
-<span data-ttu-id="8c5bc-150">Metod 1 rekommenderas eftersom den privata nyckel som används för att dekryptera autentiseringsuppgifter i MOF kvar på målnoden.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-150">Method 1 is recommended because the private key used to decrypt credentials in the MOF stays on the Target Node at all times.</span></span>
+<span data-ttu-id="f13dd-152">Metod 1 rekommenderas eftersom den privata nyckel som används för att dekryptera autentiseringsuppgifter i MOF kvar på målnoden.</span><span class="sxs-lookup"><span data-stu-id="f13dd-152">Method 1 is recommended because the private key used to decrypt credentials in the MOF stays on the Target Node at all times.</span></span>
 
-### <a name="creating-the-certificate-on-the-target-node"></a><span data-ttu-id="8c5bc-151">Skapar certifikatet på målnoden</span><span class="sxs-lookup"><span data-stu-id="8c5bc-151">Creating the Certificate on the Target Node</span></span>
+### <a name="creating-the-certificate-on-the-target-node"></a><span data-ttu-id="f13dd-153">Skapar certifikatet på målnoden</span><span class="sxs-lookup"><span data-stu-id="f13dd-153">Creating the Certificate on the Target Node</span></span>
 
-<span data-ttu-id="8c5bc-152">Den privata nyckeln måste hållas hemlig, eftersom används för att dekryptera MOF på **målnoden det enklaste** sättet att göra det är att skapa certifikatet för den privata nyckeln på **målnoden**och kopiera det **offentliga nyckel certifikatet** till den dator som används för att redigera DSC-konfigurationen i en MOF-fil.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-152">The private key must be kept secret, because is used to decrypt the MOF on the **Target Node** The easiest way to do that is to create the private key certificate on the **Target Node**, and copy the **public key certificate** to the computer being used to author the DSC configuration into a MOF file.</span></span> <span data-ttu-id="8c5bc-153">Följande exempel:</span><span class="sxs-lookup"><span data-stu-id="8c5bc-153">The following example:</span></span>
+<span data-ttu-id="f13dd-154">Den privata nyckeln måste hållas hemlig, eftersom används för att dekryptera MOF på **målnoden det enklaste** sättet att göra det är att skapa certifikatet för den privata nyckeln på **målnoden**och kopiera det **offentliga nyckel certifikatet** till den dator som används för att redigera DSC-konfigurationen i en MOF-fil.</span><span class="sxs-lookup"><span data-stu-id="f13dd-154">The private key must be kept secret, because is used to decrypt the MOF on the **Target Node** The easiest way to do that is to create the private key certificate on the **Target Node**, and copy the **public key certificate** to the computer being used to author the DSC configuration into a MOF file.</span></span> <span data-ttu-id="f13dd-155">Följande exempel:</span><span class="sxs-lookup"><span data-stu-id="f13dd-155">The following example:</span></span>
 
-1. <span data-ttu-id="8c5bc-154">skapar ett certifikat på **målnoden**</span><span class="sxs-lookup"><span data-stu-id="8c5bc-154">creates a certificate on the **Target node**</span></span>
-2. <span data-ttu-id="8c5bc-155">exporterar certifikatet för den offentliga nyckeln på **målnoden**.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-155">exports the public key certificate on the **Target node**.</span></span>
-3. <span data-ttu-id="8c5bc-156">importerar certifikatet för den offentliga nyckeln till **mitt** certifikat Arkiv på **noden redigering**.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-156">imports the public key certificate into the **my** certificate store on the **Authoring node**.</span></span>
+1. <span data-ttu-id="f13dd-156">skapar ett certifikat på **målnoden**</span><span class="sxs-lookup"><span data-stu-id="f13dd-156">creates a certificate on the **Target node**</span></span>
+1. <span data-ttu-id="f13dd-157">exporterar certifikatet för den offentliga nyckeln på **målnoden**.</span><span class="sxs-lookup"><span data-stu-id="f13dd-157">exports the public key certificate on the **Target node**.</span></span>
+1. <span data-ttu-id="f13dd-158">importerar certifikatet för den offentliga nyckeln till **mitt** certifikat Arkiv på **noden redigering**.</span><span class="sxs-lookup"><span data-stu-id="f13dd-158">imports the public key certificate into the **my** certificate store on the **Authoring node**.</span></span>
 
-#### <a name="on-the-target-node-create-and-export-the-certificate"></a><span data-ttu-id="8c5bc-157">På målnoden: skapa och exportera certifikatet</span><span class="sxs-lookup"><span data-stu-id="8c5bc-157">On the Target Node: create and export the certificate</span></span>
+#### <a name="on-the-target-node-create-and-export-the-certificate"></a><span data-ttu-id="f13dd-159">På målnoden: skapa och exportera certifikatet</span><span class="sxs-lookup"><span data-stu-id="f13dd-159">On the Target Node: create and export the certificate</span></span>
 
-> <span data-ttu-id="8c5bc-158">Målnod: Windows Server 2016 och Windows 10</span><span class="sxs-lookup"><span data-stu-id="8c5bc-158">Target Node: Windows Server 2016 and Windows 10</span></span>
+> <span data-ttu-id="f13dd-160">Målnod: Windows Server 2016 och Windows 10</span><span class="sxs-lookup"><span data-stu-id="f13dd-160">Target Node: Windows Server 2016 and Windows 10</span></span>
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -84,11 +87,12 @@ $cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-<span data-ttu-id="8c5bc-159">När du har exporterat `DscPublicKey.cer` måste du kopiera den till **redigerings-noden**.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-159">Once exported, the `DscPublicKey.cer` would need to be copied to the **Authoring Node**.</span></span>
+<span data-ttu-id="f13dd-161">När du har exporterat `DscPublicKey.cer` måste du kopiera den till **redigerings-noden**.</span><span class="sxs-lookup"><span data-stu-id="f13dd-161">Once exported, the `DscPublicKey.cer` would need to be copied to the **Authoring Node**.</span></span>
 
-> <span data-ttu-id="8c5bc-160">Målnod: Windows Server 2012 R2/Windows 8,1 och tidigare</span><span class="sxs-lookup"><span data-stu-id="8c5bc-160">Target Node: Windows Server 2012 R2/Windows 8.1 and earlier</span></span>
+> <span data-ttu-id="f13dd-162">Målnod: Windows Server 2012 R2/Windows 8,1 och tidigare</span><span class="sxs-lookup"><span data-stu-id="f13dd-162">Target Node: Windows Server 2012 R2/Windows 8.1 and earlier</span></span>
+
 > [!WARNING]
-> <span data-ttu-id="8c5bc-161">Eftersom `New-SelfSignedCertificate` cmdleten på Windows-operativsystem före Windows 10 och Windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet på dessa operativ system.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-161">Because the `New-SelfSignedCertificate` cmdlet on Windows Operating Systems prior to Windows 10 and Windows Server 2016 do not support the **Type** parameter, an alternate method of creating this certificate is required on these operating systems.</span></span> <span data-ttu-id="8c5bc-162">I det här fallet kan du använda `makecert.exe` eller `certutil.exe` för att skapa certifikatet.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-162">In this case you can use `makecert.exe` or `certutil.exe` to create the certificate.</span></span> <span data-ttu-id="8c5bc-163">En alternativ metod är att [Hämta skriptet New-SelfSignedCertificateEx. ps1 från Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) och använda det för att skapa certifikatet i stället:</span><span class="sxs-lookup"><span data-stu-id="8c5bc-163">An alternate method is to [download the New-SelfSignedCertificateEx.ps1 script from Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) and use it to create the certificate instead:</span></span>
+> <span data-ttu-id="f13dd-163">Eftersom `New-SelfSignedCertificate` cmdleten på Windows-operativsystem före Windows 10 och Windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet på dessa operativ system.</span><span class="sxs-lookup"><span data-stu-id="f13dd-163">Because the `New-SelfSignedCertificate` cmdlet on Windows Operating Systems prior to Windows 10 and Windows Server 2016 do not support the **Type** parameter, an alternate method of creating this certificate is required on these operating systems.</span></span> <span data-ttu-id="f13dd-164">I det här fallet kan du använda `makecert.exe` eller `certutil.exe` för att skapa certifikatet.</span><span class="sxs-lookup"><span data-stu-id="f13dd-164">In this case you can use `makecert.exe` or `certutil.exe` to create the certificate.</span></span> <span data-ttu-id="f13dd-165">En alternativ metod är att [Ladda ned New-SelfSignedCertificateEx.ps1-skriptet från Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) och använda det för att skapa certifikatet i stället:</span><span class="sxs-lookup"><span data-stu-id="f13dd-165">An alternate method is to [download the New-SelfSignedCertificateEx.ps1 script from Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) and use it to create the certificate instead:</span></span>
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -114,28 +118,28 @@ $Cert = Get-ChildItem -Path cert:\LocalMachine\My | Where-Object {
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-<span data-ttu-id="8c5bc-164">När du har exporterat ```DscPublicKey.cer``` måste du kopiera den till **redigerings-noden**.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-164">Once exported, the ```DscPublicKey.cer``` would need to be copied to the **Authoring Node**.</span></span>
+<span data-ttu-id="f13dd-166">När du har exporterat ```DscPublicKey.cer``` måste du kopiera den till **redigerings-noden**.</span><span class="sxs-lookup"><span data-stu-id="f13dd-166">Once exported, the ```DscPublicKey.cer``` would need to be copied to the **Authoring Node**.</span></span>
 
-#### <a name="on-the-authoring-node-import-the-certs-public-key"></a><span data-ttu-id="8c5bc-165">På noden redigering: importera certifikatets offentliga nyckel</span><span class="sxs-lookup"><span data-stu-id="8c5bc-165">On the Authoring Node: import the cert's public key</span></span>
+#### <a name="on-the-authoring-node-import-the-certs-public-key"></a><span data-ttu-id="f13dd-167">På noden redigering: importera certifikatets offentliga nyckel</span><span class="sxs-lookup"><span data-stu-id="f13dd-167">On the Authoring Node: import the cert's public key</span></span>
 
 ```powershell
 # Import to the my store
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-### <a name="creating-the-certificate-on-the-authoring-node"></a><span data-ttu-id="8c5bc-166">Skapa certifikatet på noden redigering</span><span class="sxs-lookup"><span data-stu-id="8c5bc-166">Creating the Certificate on the Authoring Node</span></span>
+### <a name="creating-the-certificate-on-the-authoring-node"></a><span data-ttu-id="f13dd-168">Skapa certifikatet på noden redigering</span><span class="sxs-lookup"><span data-stu-id="f13dd-168">Creating the Certificate on the Authoring Node</span></span>
 
-<span data-ttu-id="8c5bc-167">Alternativt kan du skapa krypterings certifikatet på **noden redigering**, som exporteras med den **privata nyckeln** som en PFX-fil och sedan importeras på **målnoden**.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-167">Alternately, the encryption certificate can be created on the **Authoring Node**, exported with the **private key** as a PFX file and then imported on the **Target Node**.</span></span> <span data-ttu-id="8c5bc-168">Det här är den aktuella metoden för att implementera kryptering av DSC-autentiseringsuppgifter på _Nano Server_.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-168">This is the current method for implementing DSC credential encryption on _Nano Server_.</span></span> <span data-ttu-id="8c5bc-169">Även om PFX är skyddat med ett lösen ord bör det hållas säkert under överföringen.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-169">Although the PFX is secured with a password it should be kept secure during transit.</span></span> <span data-ttu-id="8c5bc-170">Följande exempel:</span><span class="sxs-lookup"><span data-stu-id="8c5bc-170">The following example:</span></span>
+<span data-ttu-id="f13dd-169">Alternativt kan du skapa krypterings certifikatet på **noden redigering**, som exporteras med den **privata nyckeln** som en PFX-fil och sedan importeras på **målnoden**.</span><span class="sxs-lookup"><span data-stu-id="f13dd-169">Alternately, the encryption certificate can be created on the **Authoring Node**, exported with the **private key** as a PFX file and then imported on the **Target Node**.</span></span> <span data-ttu-id="f13dd-170">Det här är den aktuella metoden för att implementera kryptering av DSC-autentiseringsuppgifter på _Nano Server_.</span><span class="sxs-lookup"><span data-stu-id="f13dd-170">This is the current method for implementing DSC credential encryption on _Nano Server_.</span></span> <span data-ttu-id="f13dd-171">Även om PFX är skyddat med ett lösen ord bör det hållas säkert under överföringen.</span><span class="sxs-lookup"><span data-stu-id="f13dd-171">Although the PFX is secured with a password it should be kept secure during transit.</span></span> <span data-ttu-id="f13dd-172">Följande exempel:</span><span class="sxs-lookup"><span data-stu-id="f13dd-172">The following example:</span></span>
 
-1. <span data-ttu-id="8c5bc-171">skapar ett certifikat på **noden redigering**.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-171">creates a certificate on the **Authoring node**.</span></span>
-2. <span data-ttu-id="8c5bc-172">exporterar certifikatet inklusive den privata nyckeln på **noden redigering**.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-172">exports the certificate including the private key on the **Authoring node**.</span></span>
-3. <span data-ttu-id="8c5bc-173">tar bort den privata nyckeln från **redigerings noden**, men behåller certifikatet för den offentliga nyckeln i **My** Store.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-173">removes the private key from the **Authoring node**, but keeps the public key certificate in the **my** store.</span></span>
-4. <span data-ttu-id="8c5bc-174">importerar det privata nyckel certifikatet till certifikat arkivet My (personal) på **målnoden**.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-174">imports the private key certificate into the My(Personal) certificate store on the **Target node**.</span></span>
-   - <span data-ttu-id="8c5bc-175">den måste läggas till i rot arkivet så att den är betrodd av **målnoden**.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-175">it must be added to the root store so that it will be trusted by the **Target node**.</span></span>
+1. <span data-ttu-id="f13dd-173">skapar ett certifikat på **noden redigering**.</span><span class="sxs-lookup"><span data-stu-id="f13dd-173">creates a certificate on the **Authoring node**.</span></span>
+1. <span data-ttu-id="f13dd-174">exporterar certifikatet inklusive den privata nyckeln på **noden redigering**.</span><span class="sxs-lookup"><span data-stu-id="f13dd-174">exports the certificate including the private key on the **Authoring node**.</span></span>
+1. <span data-ttu-id="f13dd-175">tar bort den privata nyckeln från **redigerings noden**, men behåller certifikatet för den offentliga nyckeln i **My** Store.</span><span class="sxs-lookup"><span data-stu-id="f13dd-175">removes the private key from the **Authoring node**, but keeps the public key certificate in the **my** store.</span></span>
+1. <span data-ttu-id="f13dd-176">importerar det privata nyckel certifikatet till certifikat arkivet My (personal) på **målnoden**.</span><span class="sxs-lookup"><span data-stu-id="f13dd-176">imports the private key certificate into the My(Personal) certificate store on the **Target node**.</span></span>
+   - <span data-ttu-id="f13dd-177">den måste läggas till i rot arkivet så att den är betrodd av **målnoden**.</span><span class="sxs-lookup"><span data-stu-id="f13dd-177">it must be added to the root store so that it will be trusted by the **Target node**.</span></span>
 
-#### <a name="on-the-authoring-node-create-and-export-the-certificate"></a><span data-ttu-id="8c5bc-176">På noden redigering: skapa och exportera certifikatet</span><span class="sxs-lookup"><span data-stu-id="8c5bc-176">On the Authoring Node: create and export the certificate</span></span>
+#### <a name="on-the-authoring-node-create-and-export-the-certificate"></a><span data-ttu-id="f13dd-178">På noden redigering: skapa och exportera certifikatet</span><span class="sxs-lookup"><span data-stu-id="f13dd-178">On the Authoring Node: create and export the certificate</span></span>
 
-> <span data-ttu-id="8c5bc-177">Målnod: Windows Server 2016 och Windows 10</span><span class="sxs-lookup"><span data-stu-id="8c5bc-177">Target Node: Windows Server 2016 and Windows 10</span></span>
+> <span data-ttu-id="f13dd-179">Målnod: Windows Server 2016 och Windows 10</span><span class="sxs-lookup"><span data-stu-id="f13dd-179">Target Node: Windows Server 2016 and Windows 10</span></span>
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -149,11 +153,12 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-<span data-ttu-id="8c5bc-178">När du har exporterat `DscPrivateKey.pfx` måste du kopiera den till **målnoden**.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-178">Once exported, the `DscPrivateKey.pfx` would need to be copied to the **Target Node**.</span></span>
+<span data-ttu-id="f13dd-180">När du har exporterat `DscPrivateKey.pfx` måste du kopiera den till **målnoden**.</span><span class="sxs-lookup"><span data-stu-id="f13dd-180">Once exported, the `DscPrivateKey.pfx` would need to be copied to the **Target Node**.</span></span>
 
-> <span data-ttu-id="8c5bc-179">Målnod: Windows Server 2012 R2/Windows 8,1 och tidigare</span><span class="sxs-lookup"><span data-stu-id="8c5bc-179">Target Node: Windows Server 2012 R2/Windows 8.1 and earlier</span></span>
+> <span data-ttu-id="f13dd-181">Målnod: Windows Server 2012 R2/Windows 8,1 och tidigare</span><span class="sxs-lookup"><span data-stu-id="f13dd-181">Target Node: Windows Server 2012 R2/Windows 8.1 and earlier</span></span>
+
 > [!WARNING]
-> <span data-ttu-id="8c5bc-180">Eftersom `New-SelfSignedCertificate` cmdleten på Windows-operativsystem före Windows 10 och Windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet på dessa operativ system.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-180">Because the `New-SelfSignedCertificate` cmdlet on Windows Operating Systems prior to Windows 10 and Windows Server 2016 do not support the **Type** parameter, an alternate method of creating this certificate is required on these operating systems.</span></span> <span data-ttu-id="8c5bc-181">I det här fallet kan du använda `makecert.exe` eller `certutil.exe` för att skapa certifikatet.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-181">In this case you can use `makecert.exe` or `certutil.exe` to create the certificate.</span></span> <span data-ttu-id="8c5bc-182">En alternativ metod är att [Hämta skriptet New-SelfSignedCertificateEx. ps1 från Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) och använda det för att skapa certifikatet i stället:</span><span class="sxs-lookup"><span data-stu-id="8c5bc-182">An alternate method is to [download the New-SelfSignedCertificateEx.ps1 script from Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) and use it to create the certificate instead:</span></span>
+> <span data-ttu-id="f13dd-182">Eftersom `New-SelfSignedCertificate` cmdleten på Windows-operativsystem före Windows 10 och Windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet på dessa operativ system.</span><span class="sxs-lookup"><span data-stu-id="f13dd-182">Because the `New-SelfSignedCertificate` cmdlet on Windows Operating Systems prior to Windows 10 and Windows Server 2016 do not support the **Type** parameter, an alternate method of creating this certificate is required on these operating systems.</span></span> <span data-ttu-id="f13dd-183">I det här fallet kan du använda `makecert.exe` eller `certutil.exe` för att skapa certifikatet.</span><span class="sxs-lookup"><span data-stu-id="f13dd-183">In this case you can use `makecert.exe` or `certutil.exe` to create the certificate.</span></span> <span data-ttu-id="f13dd-184">En alternativ metod är att [Ladda ned New-SelfSignedCertificateEx.ps1-skriptet från Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) och använda det för att skapa certifikatet i stället:</span><span class="sxs-lookup"><span data-stu-id="f13dd-184">An alternate method is to [download the New-SelfSignedCertificateEx.ps1 script from Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) and use it to create the certificate instead:</span></span>
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -184,7 +189,7 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-#### <a name="on-the-target-node-import-the-certs-private-key-as-a-trusted-root"></a><span data-ttu-id="8c5bc-183">På målnoden: importera certifikatets privata nyckel som en betrodd rot</span><span class="sxs-lookup"><span data-stu-id="8c5bc-183">On the Target Node: import the cert's private key as a trusted root</span></span>
+#### <a name="on-the-target-node-import-the-certs-private-key-as-a-trusted-root"></a><span data-ttu-id="f13dd-185">På målnoden: importera certifikatets privata nyckel som en betrodd rot</span><span class="sxs-lookup"><span data-stu-id="f13dd-185">On the Target Node: import the cert's private key as a trusted root</span></span>
 
 ```powershell
 # Import to the root store so that it is trusted
@@ -192,18 +197,18 @@ $mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
 Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation Cert:\LocalMachine\My -Password $mypwd > $null
 ```
 
-## <a name="configuration-data"></a><span data-ttu-id="8c5bc-184">Konfigurationsdata</span><span class="sxs-lookup"><span data-stu-id="8c5bc-184">Configuration data</span></span>
+## <a name="configuration-data"></a><span data-ttu-id="f13dd-186">Konfigurationsdata</span><span class="sxs-lookup"><span data-stu-id="f13dd-186">Configuration data</span></span>
 
-<span data-ttu-id="8c5bc-185">Konfigurations data blocket definierar vilka mål noder som ska användas, om du vill kryptera autentiseringsuppgifterna, krypterings metoder och annan information.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-185">The configuration data block defines which target nodes to operate on, whether or not to encrypt the credentials, the means of encryption, and other information.</span></span> <span data-ttu-id="8c5bc-186">Mer information om konfigurations data blocket finns i [avgränsa konfigurations-och miljö data](../configurations/configData.md).</span><span class="sxs-lookup"><span data-stu-id="8c5bc-186">For more information on the configuration data block, see [Separating Configuration and Environment Data](../configurations/configData.md).</span></span>
+<span data-ttu-id="f13dd-187">Konfigurations data blocket definierar vilka mål noder som ska användas, om du vill kryptera autentiseringsuppgifterna, krypterings metoder och annan information.</span><span class="sxs-lookup"><span data-stu-id="f13dd-187">The configuration data block defines which target nodes to operate on, whether or not to encrypt the credentials, the means of encryption, and other information.</span></span> <span data-ttu-id="f13dd-188">Mer information om konfigurations data blocket finns i [avgränsa konfigurations-och miljö data](../configurations/configData.md).</span><span class="sxs-lookup"><span data-stu-id="f13dd-188">For more information on the configuration data block, see [Separating Configuration and Environment Data](../configurations/configData.md).</span></span>
 
-<span data-ttu-id="8c5bc-187">De element som kan konfigureras för varje nod som är relaterade till kryptering av autentiseringsuppgifter är:</span><span class="sxs-lookup"><span data-stu-id="8c5bc-187">The elements that can be configured for each node that are related to credential encryption are:</span></span>
+<span data-ttu-id="f13dd-189">De element som kan konfigureras för varje nod som är relaterade till kryptering av autentiseringsuppgifter är:</span><span class="sxs-lookup"><span data-stu-id="f13dd-189">The elements that can be configured for each node that are related to credential encryption are:</span></span>
 
-- <span data-ttu-id="8c5bc-188">**Nodnamn** -namnet på den målnod som kryptering av autentiseringsuppgifter konfigureras för.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-188">**NodeName** - the name of the target node that the credential encryption is being configured for.</span></span>
-- <span data-ttu-id="8c5bc-189">**PsDscAllowPlainTextPassword** – anger om okrypterade autentiseringsuppgifter ska kunna skickas till den här noden.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-189">**PsDscAllowPlainTextPassword** - whether unencrypted credentials will be allowed to be passed to this node.</span></span> <span data-ttu-id="8c5bc-190">Detta **rekommenderas inte**.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-190">This is **not recommended**.</span></span>
-- <span data-ttu-id="8c5bc-191">**Tumavtryck** -tumavtrycket för det certifikat som ska användas för att dekryptera AUTENTISERINGSUPPGIFTERNA i DSC-konfigurationen på _målnoden_.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-191">**Thumbprint** - the thumbprint of the certificate that will be used to decrypt the credentials in the DSC Configuration on the _Target Node_.</span></span> <span data-ttu-id="8c5bc-192">**Det här certifikatet måste finnas i den lokala datorns certifikat Arkiv på målnoden.**</span><span class="sxs-lookup"><span data-stu-id="8c5bc-192">**This certificate must exist in the Local Machine certificate store on the Target Node.**</span></span>
-- <span data-ttu-id="8c5bc-193">**CertificateFile** – certifikat filen (som endast innehåller den offentliga nyckeln) som ska användas för att kryptera autentiseringsuppgifterna för _målnoden_.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-193">**CertificateFile** - the certificate file (containing the public key only) that should be used to encrypt the credentials for the _Target Node_.</span></span> <span data-ttu-id="8c5bc-194">Måste vara antingen en DER-kodad binär X. 509-eller Base-64-kodad X. 509-format certifikat fil.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-194">This must be either a DER encoded binary X.509 or Base-64 encoded X.509 format certificate file.</span></span>
+- <span data-ttu-id="f13dd-190">**Nodnamn** -namnet på den målnod som kryptering av autentiseringsuppgifter konfigureras för.</span><span class="sxs-lookup"><span data-stu-id="f13dd-190">**NodeName** - the name of the target node that the credential encryption is being configured for.</span></span>
+- <span data-ttu-id="f13dd-191">**PsDscAllowPlainTextPassword** – anger om okrypterade autentiseringsuppgifter ska kunna skickas till den här noden.</span><span class="sxs-lookup"><span data-stu-id="f13dd-191">**PsDscAllowPlainTextPassword** - whether unencrypted credentials will be allowed to be passed to this node.</span></span> <span data-ttu-id="f13dd-192">Detta **rekommenderas inte**.</span><span class="sxs-lookup"><span data-stu-id="f13dd-192">This is **not recommended**.</span></span>
+- <span data-ttu-id="f13dd-193">**Tumavtryck** -tumavtrycket för det certifikat som ska användas för att dekryptera AUTENTISERINGSUPPGIFTERNA i DSC-konfigurationen på _målnoden_.</span><span class="sxs-lookup"><span data-stu-id="f13dd-193">**Thumbprint** - the thumbprint of the certificate that will be used to decrypt the credentials in the DSC Configuration on the _Target Node_.</span></span> <span data-ttu-id="f13dd-194">**Det här certifikatet måste finnas i den lokala datorns certifikat Arkiv på målnoden.**</span><span class="sxs-lookup"><span data-stu-id="f13dd-194">**This certificate must exist in the Local Machine certificate store on the Target Node.**</span></span>
+- <span data-ttu-id="f13dd-195">**CertificateFile** – certifikat filen (som endast innehåller den offentliga nyckeln) som ska användas för att kryptera autentiseringsuppgifterna för _målnoden_.</span><span class="sxs-lookup"><span data-stu-id="f13dd-195">**CertificateFile** - the certificate file (containing the public key only) that should be used to encrypt the credentials for the _Target Node_.</span></span> <span data-ttu-id="f13dd-196">Måste vara antingen en DER-kodad binär X. 509-eller Base-64-kodad X. 509-format certifikat fil.</span><span class="sxs-lookup"><span data-stu-id="f13dd-196">This must be either a DER encoded binary X.509 or Base-64 encoded X.509 format certificate file.</span></span>
 
-<span data-ttu-id="8c5bc-195">Det här exemplet visar ett konfigurations data block som anger en målnod som agerar på namngivna targetNode, sökvägen till certifikat filen för offentlig nyckel (med namnet targetNode. cer) och tumavtrycket för den offentliga nyckeln.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-195">This example shows a configuration data block that specifies a target node to act on named targetNode, the path to the public key certificate file (named targetNode.cer), and the thumbprint for the public key.</span></span>
+<span data-ttu-id="f13dd-197">Det här exemplet visar ett konfigurations data block som anger en målnod som agerar på namngivna targetNode, sökvägen till certifikat filen för offentlig nyckel (med namnet targetNode. cer) och tumavtrycket för den offentliga nyckeln.</span><span class="sxs-lookup"><span data-stu-id="f13dd-197">This example shows a configuration data block that specifies a target node to act on named targetNode, the path to the public key certificate file (named targetNode.cer), and the thumbprint for the public key.</span></span>
 
 ```powershell
 $ConfigData= @{
@@ -221,14 +226,14 @@ $ConfigData= @{
                 # The thumbprint of the Encryption Certificate
                 # used to decrypt the credentials on target node
                 Thumbprint = "AC23EA3A9E291A75757A556D0B71CBBF8C4F6FD8"
-            };
-        );
+            }
+        )
     }
 ```
 
-## <a name="configuration-script"></a><span data-ttu-id="8c5bc-196">Konfigurations skript</span><span class="sxs-lookup"><span data-stu-id="8c5bc-196">Configuration script</span></span>
+## <a name="configuration-script"></a><span data-ttu-id="f13dd-198">Konfigurations skript</span><span class="sxs-lookup"><span data-stu-id="f13dd-198">Configuration script</span></span>
 
-<span data-ttu-id="8c5bc-197">I själva konfigurations skriptet använder du `PsCredential` parametern för att se till att autentiseringsuppgifterna lagras på kortast möjliga tid.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-197">In the configuration script itself, use the `PsCredential` parameter to ensure that credentials are stored for the shortest possible time.</span></span> <span data-ttu-id="8c5bc-198">När du kör det angivna exemplet uppmanas du att ange autentiseringsuppgifter för DSC och sedan kryptera MOF-filen med hjälp av den CertificateFile som är kopplad till målnoden i konfigurations data blocket.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-198">When you run the supplied example, DSC will prompt you for credentials and then encrypt the MOF file using the CertificateFile that is associated with the target node in the configuration data block.</span></span> <span data-ttu-id="8c5bc-199">I det här kod exemplet kopieras en fil från en resurs som är skyddad till en användare.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-199">This code example copies a file from a share that is secured to a user.</span></span>
+<span data-ttu-id="f13dd-199">I själva konfigurations skriptet använder du `PsCredential` parametern för att se till att autentiseringsuppgifterna lagras på kortast möjliga tid.</span><span class="sxs-lookup"><span data-stu-id="f13dd-199">In the configuration script itself, use the `PsCredential` parameter to ensure that credentials are stored for the shortest possible time.</span></span> <span data-ttu-id="f13dd-200">När du kör det angivna exemplet uppmanas du att ange autentiseringsuppgifter för DSC och sedan kryptera MOF-filen med hjälp av den CertificateFile som är kopplad till målnoden i konfigurations data blocket.</span><span class="sxs-lookup"><span data-stu-id="f13dd-200">When you run the supplied example, DSC will prompt you for credentials and then encrypt the MOF file using the CertificateFile that is associated with the target node in the configuration data block.</span></span> <span data-ttu-id="f13dd-201">I det här kod exemplet kopieras en fil från en resurs som är skyddad till en användare.</span><span class="sxs-lookup"><span data-stu-id="f13dd-201">This code example copies a file from a share that is secured to a user.</span></span>
 
 ```powershell
 configuration CredentialEncryptionExample
@@ -237,8 +242,7 @@ configuration CredentialEncryptionExample
         [Parameter(Mandatory=$true)]
         [ValidateNotNullorEmpty()]
         [PsCredential] $credential
-        )
-
+    )
 
     Node $AllNodes.NodeName
     {
@@ -252,9 +256,9 @@ configuration CredentialEncryptionExample
 }
 ```
 
-## <a name="setting-up-decryption"></a><span data-ttu-id="8c5bc-200">Konfigurera dekryptering</span><span class="sxs-lookup"><span data-stu-id="8c5bc-200">Setting up decryption</span></span>
+## <a name="setting-up-decryption"></a><span data-ttu-id="f13dd-202">Konfigurera dekryptering</span><span class="sxs-lookup"><span data-stu-id="f13dd-202">Setting up decryption</span></span>
 
-<span data-ttu-id="8c5bc-201">Innan [`Start-DscConfiguration`](https://technet.microsoft.com/library/dn521623.aspx) kan fungera måste du ange den lokala Configuration Manager på varje målnod som certifikatet ska använda för att dekryptera autentiseringsuppgifterna, med hjälp av CertificateID-resursen för att verifiera certifikatets tumavtryck.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-201">Before [`Start-DscConfiguration`](https://technet.microsoft.com/library/dn521623.aspx) can work, you have to tell the Local Configuration Manager on each target node which certificate to use to decrypt the credentials, using the CertificateID resource to verify the certificate's thumbprint.</span></span> <span data-ttu-id="8c5bc-202">Den här exempel funktionen hittar lämpligt lokalt certifikat (du kanske måste anpassa det så att det hittar det exakta certifikat som du vill använda):</span><span class="sxs-lookup"><span data-stu-id="8c5bc-202">This example function will find the appropriate local certificate (you might have to customize it so it will find the exact certificate you want to use):</span></span>
+<span data-ttu-id="f13dd-203">Innan [`Start-DscConfiguration`](https://technet.microsoft.com/library/dn521623.aspx) kan fungera måste du ange den lokala Configuration Manager på varje målnod som certifikatet ska använda för att dekryptera autentiseringsuppgifterna, med hjälp av CertificateID-resursen för att verifiera certifikatets tumavtryck.</span><span class="sxs-lookup"><span data-stu-id="f13dd-203">Before [`Start-DscConfiguration`](https://technet.microsoft.com/library/dn521623.aspx) can work, you have to tell the Local Configuration Manager on each target node which certificate to use to decrypt the credentials, using the CertificateID resource to verify the certificate's thumbprint.</span></span> <span data-ttu-id="f13dd-204">Den här exempel funktionen hittar lämpligt lokalt certifikat (du kanske måste anpassa det så att det hittar det exakta certifikat som du vill använda):</span><span class="sxs-lookup"><span data-stu-id="f13dd-204">This example function will find the appropriate local certificate (you might have to customize it so it will find the exact certificate you want to use):</span></span>
 
 ```powershell
 # Get the certificate that works for encryption
@@ -270,7 +274,7 @@ function Get-LocalEncryptionCertificateThumbprint
 }
 ```
 
-<span data-ttu-id="8c5bc-203">Med certifikatet som identifieras av sitt tumavtryck kan konfigurations skriptet uppdateras för att använda värdet:</span><span class="sxs-lookup"><span data-stu-id="8c5bc-203">With the certificate identified by its thumbprint, the configuration script can be updated to use the value:</span></span>
+<span data-ttu-id="f13dd-205">Med certifikatet som identifieras av sitt tumavtryck kan konfigurations skriptet uppdateras för att använda värdet:</span><span class="sxs-lookup"><span data-stu-id="f13dd-205">With the certificate identified by its thumbprint, the configuration script can be updated to use the value:</span></span>
 
 ```powershell
 configuration CredentialEncryptionExample
@@ -279,8 +283,7 @@ configuration CredentialEncryptionExample
         [Parameter(Mandatory=$true)]
         [ValidateNotNullorEmpty()]
         [PsCredential] $credential
-        )
-
+    )
 
     Node $AllNodes.NodeName
     {
@@ -299,15 +302,15 @@ configuration CredentialEncryptionExample
 }
 ```
 
-## <a name="running-the-configuration"></a><span data-ttu-id="8c5bc-204">Köra konfigurationen</span><span class="sxs-lookup"><span data-stu-id="8c5bc-204">Running the configuration</span></span>
+## <a name="running-the-configuration"></a><span data-ttu-id="f13dd-206">Köra konfigurationen</span><span class="sxs-lookup"><span data-stu-id="f13dd-206">Running the configuration</span></span>
 
-<span data-ttu-id="8c5bc-205">I det här läget kan du köra konfigurationen, som kommer att skriva ut två filer:</span><span class="sxs-lookup"><span data-stu-id="8c5bc-205">At this point, you can run the configuration, which will output two files:</span></span>
+<span data-ttu-id="f13dd-207">I det här läget kan du köra konfigurationen, som kommer att skriva ut två filer:</span><span class="sxs-lookup"><span data-stu-id="f13dd-207">At this point, you can run the configuration, which will output two files:</span></span>
 
-- <span data-ttu-id="8c5bc-206">En \* . meta. MOF-fil som konfigurerar den lokala Configuration Manager att dekryptera autentiseringsuppgifterna med hjälp av det certifikat som lagras i den lokala datorns Arkiv och identifieras med dess tumavtryck.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-206">A \*.meta.mof file that configures the Local Configuration Manager to decrypt the credentials using the certificate that is stored on the local machine store and identified by its thumbprint.</span></span>
-  <span data-ttu-id="8c5bc-207">[`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx)använder \* . meta. MOF-filen.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-207">[`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) applies the \*.meta.mof file.</span></span>
-- <span data-ttu-id="8c5bc-208">En MOF-fil som faktiskt tillämpar konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-208">A MOF file that actually applies the configuration.</span></span> <span data-ttu-id="8c5bc-209">Start-DscConfiguration tillämpar konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-209">Start-DscConfiguration applies the configuration.</span></span>
+- <span data-ttu-id="f13dd-208">En \* . meta. MOF-fil som konfigurerar den lokala Configuration Manager att dekryptera autentiseringsuppgifterna med hjälp av det certifikat som lagras i den lokala datorns Arkiv och identifieras med dess tumavtryck.</span><span class="sxs-lookup"><span data-stu-id="f13dd-208">A \*.meta.mof file that configures the Local Configuration Manager to decrypt the credentials using the certificate that is stored on the local machine store and identified by its thumbprint.</span></span>
+  <span data-ttu-id="f13dd-209">[`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) använder \* . meta. MOF-filen.</span><span class="sxs-lookup"><span data-stu-id="f13dd-209">[`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) applies the \*.meta.mof file.</span></span>
+- <span data-ttu-id="f13dd-210">En MOF-fil som faktiskt tillämpar konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="f13dd-210">A MOF file that actually applies the configuration.</span></span> <span data-ttu-id="f13dd-211">Start-DscConfiguration tillämpar konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="f13dd-211">Start-DscConfiguration applies the configuration.</span></span>
 
-<span data-ttu-id="8c5bc-210">Dessa kommandon utför dessa steg:</span><span class="sxs-lookup"><span data-stu-id="8c5bc-210">These commands will accomplish those steps:</span></span>
+<span data-ttu-id="f13dd-212">Dessa kommandon utför dessa steg:</span><span class="sxs-lookup"><span data-stu-id="f13dd-212">These commands will accomplish those steps:</span></span>
 
 ```powershell
 Write-Host "Generate DSC Configuration..."
@@ -320,13 +323,13 @@ Write-Host "Starting Configuration..."
 Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
 ```
 
-<span data-ttu-id="8c5bc-211">I det här exemplet pushar DSC-konfigurationen till målnoden.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-211">This example would push the DSC configuration to the target node.</span></span> <span data-ttu-id="8c5bc-212">DSC-konfigurationen kan också användas med en DSC-pull-server om en sådan finns tillgänglig.</span><span class="sxs-lookup"><span data-stu-id="8c5bc-212">The DSC configuration can also be applied using a DSC Pull Server if one is available.</span></span>
+<span data-ttu-id="f13dd-213">I det här exemplet pushar DSC-konfigurationen till målnoden.</span><span class="sxs-lookup"><span data-stu-id="f13dd-213">This example would push the DSC configuration to the target node.</span></span> <span data-ttu-id="f13dd-214">DSC-konfigurationen kan också användas med en DSC-pull-server om en sådan finns tillgänglig.</span><span class="sxs-lookup"><span data-stu-id="f13dd-214">The DSC configuration can also be applied using a DSC Pull Server if one is available.</span></span>
 
-<span data-ttu-id="8c5bc-213">Mer information om hur du använder DSC-konfigurationer med en DSC-pull-server finns i [Konfigurera en DSC-pull-klient](pullClient.md) .</span><span class="sxs-lookup"><span data-stu-id="8c5bc-213">See [Setting up a DSC pull client](pullClient.md) for more information on applying DSC configurations using a DSC Pull Server.</span></span>
+<span data-ttu-id="f13dd-215">Mer information om hur du använder DSC-konfigurationer med en DSC-pull-server finns i [Konfigurera en DSC-pull-klient](pullClient.md) .</span><span class="sxs-lookup"><span data-stu-id="f13dd-215">See [Setting up a DSC pull client](pullClient.md) for more information on applying DSC configurations using a DSC Pull Server.</span></span>
 
-## <a name="credential-encryption-module-example"></a><span data-ttu-id="8c5bc-214">Modul för kryptering av autentiseringsuppgifter</span><span class="sxs-lookup"><span data-stu-id="8c5bc-214">Credential Encryption Module Example</span></span>
+## <a name="credential-encryption-module-example"></a><span data-ttu-id="f13dd-216">Modul för kryptering av autentiseringsuppgifter</span><span class="sxs-lookup"><span data-stu-id="f13dd-216">Credential Encryption Module Example</span></span>
 
-<span data-ttu-id="8c5bc-215">Här är ett fullständigt exempel som införlivar alla dessa steg, plus en hjälp-cmdlet som exporterar och kopierar offentliga nycklar:</span><span class="sxs-lookup"><span data-stu-id="8c5bc-215">Here is a full example that incorporates all of these steps, plus a helper cmdlet that exports and copies the public keys:</span></span>
+<span data-ttu-id="f13dd-217">Här är ett fullständigt exempel som införlivar alla dessa steg, plus en hjälp-cmdlet som exporterar och kopierar offentliga nycklar:</span><span class="sxs-lookup"><span data-stu-id="f13dd-217">Here is a full example that incorporates all of these steps, plus a helper cmdlet that exports and copies the public keys:</span></span>
 
 ```powershell
 # A simple example of using credentials
@@ -336,8 +339,7 @@ configuration CredentialEncryptionExample
         [Parameter(Mandatory=$true)]
         [ValidateNotNullorEmpty()]
         [PsCredential] $credential
-        )
-
+    )
 
     Node $AllNodes.NodeName
     {
@@ -361,7 +363,6 @@ function Start-CredentialEncryptionExample
 {
     [CmdletBinding()]
     param ($computerName)
-
 
     [string] $thumbprint = Get-EncryptionCertificate -computerName $computerName -Verbose
     Write-Verbose "using cert: $thumbprint"
@@ -394,9 +395,7 @@ function Start-CredentialEncryptionExample
 
     Write-Verbose "Starting Configuration..."
     Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
-
 }
-
 
 #region HelperFunctions
 
@@ -408,28 +407,30 @@ function Get-EncryptionCertificate
 {
     [CmdletBinding()]
     param ($computerName)
+
     $returnValue= Invoke-Command -ComputerName $computerName -ScriptBlock {
-            $certificates = dir Cert:\LocalMachine\my
+        $certificates = dir Cert:\LocalMachine\my
 
-            $certificates | %{
+        $certificates | %{
                     # Verify the certificate is for Encryption and valid
-                    if ($_.PrivateKey.KeyExchangeAlgorithm -and $_.Verify())
-                    {
-                        # Create the folder to hold the exported public key
-                        $folder= Join-Path -Path $env:SystemDrive\ -ChildPath $using:publicKeyFolder
-                        if (! (Test-Path $folder))
-                        {
-                            md $folder | Out-Null
-                        }
+            if ($_.PrivateKey.KeyExchangeAlgorithm -and $_.Verify())
+            {
+                # Create the folder to hold the exported public key
+                $folder= Join-Path -Path $env:SystemDrive\ -ChildPath $using:publicKeyFolder
+                if (! (Test-Path $folder))
+                {
+                    md $folder | Out-Null
+                }
 
-                        # Export the public key to a well known location
-                        $certPath = Export-Certificate -Cert $_ -FilePath (Join-Path -path $folder -childPath "EncryptionCertificate.cer")
+                # Export the public key to a well known location
+                $certPath = Export-Certificate -Cert $_ -FilePath (Join-Path -path $folder -childPath "EncryptionCertificate.cer")
 
-                        # Return the thumbprint, and exported certificate path
-                        return @($_.Thumbprint,$certPath);
-                    }
-                  }
+                # Return the thumbprint, and exported certificate path
+                return @($_.Thumbprint,$certPath);
+            }
         }
+    }
+
     Write-Verbose "Identified and exported cert..."
     # Copy the exported certificate locally
     $destinationPath = join-path -Path "$env:SystemDrive\$script:publicKeyFolder" -childPath "$computername.EncryptionCertificate.cer"

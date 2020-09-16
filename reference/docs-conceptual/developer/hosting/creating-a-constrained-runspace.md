@@ -1,33 +1,26 @@
 ---
 title: Skapa en begränsad körnings utrymme | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 59125e65-7030-40bb-9926-756120b2d952
-caps.latest.revision: 5
-ms.openlocfilehash: 20ac1e2af8e047b8b572d86a55439676aa8df25c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 30ecb80dbd96278ee9aa5a609d27bfc4eaa423e9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357766"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779819"
 ---
-# <a name="creating-a-constrained-runspace"></a><span data-ttu-id="21a56-102">Skapa ett begränsat körningsutrymme</span><span class="sxs-lookup"><span data-stu-id="21a56-102">Creating a constrained runspace</span></span>
+# <a name="creating-a-constrained-runspace"></a><span data-ttu-id="e21f9-102">Skapa ett begränsat körningsutrymme</span><span class="sxs-lookup"><span data-stu-id="e21f9-102">Creating a constrained runspace</span></span>
 
-<span data-ttu-id="21a56-103">Av prestanda-eller säkerhets skäl kanske du vill begränsa vilka Windows PowerShell-kommandon som är tillgängliga för värd programmet.</span><span class="sxs-lookup"><span data-stu-id="21a56-103">For performance or security reasons, you might want to restrict the Windows PowerShell commands available to your host application.</span></span> <span data-ttu-id="21a56-104">Om du vill göra det skapar du en tom [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) genom att anropa metoden [system. Management. Automation. körnings utrymmen. Initialsessionstate. Create \*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) och lägger sedan till endast de kommandon som du vill använda.</span><span class="sxs-lookup"><span data-stu-id="21a56-104">To do this you create an empty [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) by calling the [System.Management.Automation.Runspaces.Initialsessionstate.Create\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) method, and then add only the commands you want available.</span></span>
+<span data-ttu-id="e21f9-103">Av prestanda-eller säkerhets skäl kanske du vill begränsa vilka Windows PowerShell-kommandon som är tillgängliga för värd programmet.</span><span class="sxs-lookup"><span data-stu-id="e21f9-103">For performance or security reasons, you might want to restrict the Windows PowerShell commands available to your host application.</span></span> <span data-ttu-id="e21f9-104">Om du vill göra det skapar du en tom [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) genom att anropa [System.Management.Automation.Runspaces.Initialsessionstate. Skapa \*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) Metod och Lägg sedan till endast de kommandon som du vill ha tillgängliga.</span><span class="sxs-lookup"><span data-stu-id="e21f9-104">To do this you create an empty [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) by calling the [System.Management.Automation.Runspaces.Initialsessionstate.Create\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) method, and then add only the commands you want available.</span></span>
 
- <span data-ttu-id="21a56-105">Om du använder en körnings utrymme som bara läser in de kommandon som du anger får du avsevärt bättre prestanda.</span><span class="sxs-lookup"><span data-stu-id="21a56-105">Using a runspace that loads only the commands that you specify provides significantly improved performance.</span></span>
+ <span data-ttu-id="e21f9-105">Om du använder en körnings utrymme som bara läser in de kommandon som du anger får du avsevärt bättre prestanda.</span><span class="sxs-lookup"><span data-stu-id="e21f9-105">Using a runspace that loads only the commands that you specify provides significantly improved performance.</span></span>
 
- <span data-ttu-id="21a56-106">Du kan använda metoderna i klassen [system. Management. Automation. körnings utrymmen. Sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) för att definiera cmdletar för det första sessionstillståndet.</span><span class="sxs-lookup"><span data-stu-id="21a56-106">You use the methods of the [System.Management.Automation.Runspaces.Sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) class to define cmdlets for the initial session state.</span></span>
+ <span data-ttu-id="e21f9-106">Du kan använda metoderna i klassen [system. Management. Automation. körnings utrymmen. Sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) för att definiera cmdletar för det första sessionstillståndet.</span><span class="sxs-lookup"><span data-stu-id="e21f9-106">You use the methods of the [System.Management.Automation.Runspaces.Sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) class to define cmdlets for the initial session state.</span></span>
 
- <span data-ttu-id="21a56-107">Du kan också göra kommandon privata.</span><span class="sxs-lookup"><span data-stu-id="21a56-107">You can also make commands private.</span></span> <span data-ttu-id="21a56-108">Privata kommandon kan användas av värd programmet, men inte av användare av programmet.</span><span class="sxs-lookup"><span data-stu-id="21a56-108">Private commands can be used by the host application, but not by users of the application.</span></span>
+ <span data-ttu-id="e21f9-107">Du kan också göra kommandon privata.</span><span class="sxs-lookup"><span data-stu-id="e21f9-107">You can also make commands private.</span></span> <span data-ttu-id="e21f9-108">Privata kommandon kan användas av värd programmet, men inte av användare av programmet.</span><span class="sxs-lookup"><span data-stu-id="e21f9-108">Private commands can be used by the host application, but not by users of the application.</span></span>
 
-## <a name="adding-commands-to-an-empty-runspace"></a><span data-ttu-id="21a56-109">Lägga till kommandon till en tom körnings utrymme</span><span class="sxs-lookup"><span data-stu-id="21a56-109">Adding commands to an empty runspace</span></span>
+## <a name="adding-commands-to-an-empty-runspace"></a><span data-ttu-id="e21f9-109">Lägga till kommandon till en tom körnings utrymme</span><span class="sxs-lookup"><span data-stu-id="e21f9-109">Adding commands to an empty runspace</span></span>
 
- <span data-ttu-id="21a56-110">Följande exempel visar hur du skapar en tom InitialSessionState och lägger till kommandon i den.</span><span class="sxs-lookup"><span data-stu-id="21a56-110">The following example demonstrates how to create an empty InitialSessionState and add commands to it.</span></span>
+ <span data-ttu-id="e21f9-110">Följande exempel visar hur du skapar en tom InitialSessionState och lägger till kommandon i den.</span><span class="sxs-lookup"><span data-stu-id="e21f9-110">The following example demonstrates how to create an empty InitialSessionState and add commands to it.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -107,9 +100,9 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="making-commands-private"></a><span data-ttu-id="21a56-111">Göra kommandon privata</span><span class="sxs-lookup"><span data-stu-id="21a56-111">Making commands private</span></span>
+## <a name="making-commands-private"></a><span data-ttu-id="e21f9-111">Göra kommandon privata</span><span class="sxs-lookup"><span data-stu-id="e21f9-111">Making commands private</span></span>
 
- <span data-ttu-id="21a56-112">Du kan också göra ett kommando privat genom att ställa in egenskapen [system. Management. Automation. Commandinfo. visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) på [system. Management. Automation. SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Private**.</span><span class="sxs-lookup"><span data-stu-id="21a56-112">You can also make a command private, by setting it's [System.Management.Automation.Commandinfo.Visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) property to [System.Management.Automation.SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Private**.</span></span> <span data-ttu-id="21a56-113">Värd programmet och andra kommandon kan anropa det kommandot, men användare av programmet kan inte.</span><span class="sxs-lookup"><span data-stu-id="21a56-113">The host application and other commands can call that command, but the user of the application cannot.</span></span> <span data-ttu-id="21a56-114">I följande exempel är kommandot [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) privat.</span><span class="sxs-lookup"><span data-stu-id="21a56-114">In the following example, the [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) command is private.</span></span>
+ <span data-ttu-id="e21f9-112">Du kan också göra ett kommando privat genom att ställa in egenskapen [system. Management. Automation. Commandinfo. visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) på [system. Management. Automation. SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Private**.</span><span class="sxs-lookup"><span data-stu-id="e21f9-112">You can also make a command private, by setting it's [System.Management.Automation.Commandinfo.Visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) property to [System.Management.Automation.SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Private**.</span></span> <span data-ttu-id="e21f9-113">Värd programmet och andra kommandon kan anropa det kommandot, men användare av programmet kan inte.</span><span class="sxs-lookup"><span data-stu-id="e21f9-113">The host application and other commands can call that command, but the user of the application cannot.</span></span> <span data-ttu-id="e21f9-114">I följande exempel är kommandot [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) privat.</span><span class="sxs-lookup"><span data-stu-id="e21f9-114">In the following example, the [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) command is private.</span></span>
 
 ```csharp
 defaultSessionState = InitialSessionState.CreateDefault();
@@ -120,6 +113,6 @@ this.runspace = RunspaceFactory.CreateRunspace(defaultSessionState);
 this.runspace.Open();
 ```
 
-## <a name="see-also"></a><span data-ttu-id="21a56-115">Se även</span><span class="sxs-lookup"><span data-stu-id="21a56-115">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e21f9-115">Se även</span><span class="sxs-lookup"><span data-stu-id="e21f9-115">See Also</span></span>
 
- [<span data-ttu-id="21a56-116">Skapa en InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="21a56-116">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="e21f9-116">Skapa en InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="e21f9-116">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
