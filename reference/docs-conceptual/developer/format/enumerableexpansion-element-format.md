@@ -1,19 +1,12 @@
 ---
 title: EnumerableExpansion-element (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 93d27173-9ae4-46e5-bb78-90525915cd70
-caps.latest.revision: 9
-ms.openlocfilehash: bc1e58c00ca8419f9204076f0a46050281e704db
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 81a8959c19502a2e56f4cfa48a1e480509d84b6e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358973"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774056"
 ---
 # <a name="enumerableexpansion-element-format"></a>EnumerableExpansion-element (format)
 
@@ -32,18 +25,18 @@ Konfigurations element (format) DefaultSettings-element (format) EnumerableExpan
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `EnumerableExpansion`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `EnumerableExpansion` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
 |[EntrySelectedBy-element för EnumerableExpansion (format)](./entryselectedby-element-for-enumerableexpansion-format.md)|Valfritt element.<br /><br /> Definierar vilka .NET-samlings objekt som expanderas av den här definitionen.|
-|[Expandera element (format)](./expand-element-format.md)|Anger hur Collection-objektet expanderas för den här definitionen.|
+|[Expand-element (format)](./expand-element-format.md)|Anger hur Collection-objektet expanderas för den här definitionen.|
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -51,12 +44,12 @@ Ingen.
 |-------------|-----------------|
 |[EnumerableExpansions-element (format)](./enumerableexpansions-element-format.md)|Definierar de olika sätt som .NET-samlings objekt expanderas när de visas i en vy.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
-Det här elementet används för att definiera hur samlings objekt och objekten i samlingen ska visas. I det här fallet refererar ett samlings objekt till alla objekt som stöder **system. Collections. ICollection** -gränssnittet.
+Det här elementet används för att definiera hur samlings objekt och objekten i samlingen ska visas. I det här fallet refererar ett samlings objekt till alla objekt som stöder  **system. Collections. ICollection** -gränssnittet.
 
 Standard beteendet är att endast visa egenskaperna för objekten i samlingen.
 
 ## <a name="see-also"></a>Se även
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

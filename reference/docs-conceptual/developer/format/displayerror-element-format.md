@@ -1,19 +1,12 @@
 ---
 title: DisplayError-element (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 45c45800-a87d-456e-b07c-12d4d8c27c67
-caps.latest.revision: 8
-ms.openlocfilehash: 2c6a3d678ca68dc0d189f6ab981fdea5fef894cb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5d46c2fbd48f592db5ba1b33eb6cead8dc1c4698
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355218"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774294"
 ---
 # <a name="displayerror-element-format"></a>DisplayError-element (format)
 
@@ -29,15 +22,15 @@ Konfigurations element (format) DefaultSettings-element (format) DisplayError-el
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `DisplayError`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `DisplayError` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -45,7 +38,7 @@ Ingen.
 |-------------|-----------------|
 |[DefaultSettings-element (format)](./defaultsettings-element-format.md)|Definierar vanliga inställningar som gäller för alla vyer i formaterings filen.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 När ett fel inträffar när ett fel inträffar när ett data försöker visas, lämnas som standard data platsen tom. När det här elementet är inställt på True visas #ERR strängen.
 
@@ -53,4 +46,4 @@ När ett fel inträffar när ett fel inträffar när ett data försöker visas, 
 
 [DefaultSettings-element (format)](./defaultsettings-element-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

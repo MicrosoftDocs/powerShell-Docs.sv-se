@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Kontoinställningar för PowerShell-galleriet
-ms.openlocfilehash: 7f67311b42123f247a00a9c7a5bf775685b64d48
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: b71c7f0658c24ec2eeddb050e48b777a37c11917
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560465"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771795"
 ---
 # <a name="powershell-gallery-account-settings"></a>Kontoinställningar för PowerShell-galleriet
 
@@ -36,7 +36,7 @@ PowerShell-galleriet innehåller följande meddelande alternativ:
 - Användarna kan kontakta mig via PowerShell-galleriet
 - Meddela mig när ett paket skickas till PowerShell-galleriet med mitt konto
 
-![Ändra e-postadress](media/managing-account/PSGallery_AccountEmailOptions.png)
+![Välj alternativ för e-postadress](media/managing-account/PSGallery_AccountEmailOptions.png)
 
 Som anges på sidan kan inte kritiska meddelanden från PowerShell-galleriet inaktive ras.
 Dessa omfattar:
@@ -49,20 +49,20 @@ Dessa omfattar:
 
 Om du vill ändra inloggnings kontot måste du vara inloggad med det aktuella kontot. Använd följande steg för att slutföra ändringen.
 
-![Inställningar för inloggnings konto](media/managing-account/PSGallery_LoginAccountSettings.png)
+![Ändra inställningar för inloggnings konto](media/managing-account/PSGallery_LoginAccountSettings.png)
 
 1. Klicka på **Ändra konto**. Ett popup-fönster förklarar att ändringar av inloggnings kontot gäller för all användning av kontot i PowerShell-galleriet. Granska informationen och klicka sedan på **OK** för att fortsätta.
 
-   ![Inställningar för inloggnings konto](media/managing-account/PSGallery_LoginAccountChange-1.png)
+   ![Ändrings bekräftelse – OK/Avbryt](media/managing-account/PSGallery_LoginAccountChange-1.png)
 
 2. Du uppmanas sedan att logga in med det _nya kontot_.
 
-   ![Inställningar för inloggnings konto](media/managing-account/PSGallery_LoginAccountChange-2.png)
+   ![Logga in med det nya kontot](media/managing-account/PSGallery_LoginAccountChange-2.png)
 
 3. När du klickar på **Nästa**visas ett meddelande om att du har loggat in med det aktuella kontot.
    Klicka på **Logga ut och logga in med ett annat konto**.
 
-   ![Inställningar för inloggnings konto](media/managing-account/PSGallery_LoginAccountChange-3.png)
+   ![Logga ut och logga in med ett annat konto](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. Ange lösen ordet för det nya kontot. När du har angett lösen ordet kommer du tillbaka till sidan konto inställningar som visar att inloggnings kontot har uppdaterats.
 

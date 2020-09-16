@@ -3,12 +3,12 @@ ms.date: 09/10/2018
 contributor: JKeithB
 keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Hantera API-nycklar
-ms.openlocfilehash: 0f44a080415f1acf13680771b6e9db5b805f8f45
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: c428689d065c63716db6bc546434623e9375f8ba
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278328"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87777578"
 ---
 # <a name="managing-api-keys"></a>Hantera API-nycklar
 
@@ -59,7 +59,7 @@ De här inställningarna kan inte ändras när nyckeln har skapats. Du kan inte 
 
 Du kan ändra vissa inställningar för en befintlig nyckel. Som tidigare nämnts kan du inte ändra säkerhets omfattningen för en befintlig API-nyckel eller ändra förfallo datumet. De ändrings bara alternativen visas på följande skärm bild:
 
-![Hämtar nytt API-nyckel värde](media/creating-APIkeys/PSGallery_EditAPIKey.png)
+![Redigerar ditt API-nyckel värde](media/creating-APIkeys/PSGallery_EditAPIKey.png)
 
 Om du vill ändra de paket som styrs av en nyckel kan du välja enskilda paket i listan eller ändra BLOB-mönstret.
 

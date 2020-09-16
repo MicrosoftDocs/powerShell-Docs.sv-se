@@ -1,25 +1,18 @@
 ---
 title: FirstLineHanging-element för Frame för CustomControl för vy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: c6ac3d86-0529-4b93-9bc7-ee94fcef9618
-caps.latest.revision: 8
-ms.openlocfilehash: ea43e025f5f653ff000e1d7591b535e73da5c9e5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fa428c1fbe4cd8070e40cf0bc732eb335489ba4e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354637"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87773648"
 ---
 # <a name="firstlinehanging-element-for-frame-for-customcontrol-for-view-format"></a>FirstLineHanging-element för Frame för CustomControl för View (format)
 
 Anger hur många tecken den första raden med data flyttas till vänster. Det här elementet används när du definierar en anpassad kontrol vy.
 
-Konfigurations element (format) ViewDefinitions element (format) View element (format) CustomControl element (format) CustomEntries-element för CustomControl för View (format) CustomEntry-element för CustomEntries för View (format) CustomItem-element för CustomEntry för CustomControlView (format)-ram element för CustomItem för CustomControl för View (format) FirstLineHanging-element för bild ruta för CustomControl för vy (format)
+Konfigurations element (format) ViewDefinitions element (format) View-element (format) CustomControl-element (format) CustomEntries-element för CustomControl för View (format) CustomEntry-element för CustomEntries för View (format) CustomItem-element för CustomEntry för CustomControlView (format)-element för CustomItem för View (format) CustomControl-element för FirstLineHanging för View (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,34 +22,34 @@ Konfigurations element (format) ViewDefinitions element (format) View element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `FirstLineHanging`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `FirstLineHanging` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[Inramat element för CustomItem för CustomControl för vy (format)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|Definierar hur data visas, till exempel att flytta data till vänster eller höger.|
+|[Frame-element för CustomItem för CustomControl för View (format)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|Definierar hur data visas, till exempel att flytta data till vänster eller höger.|
 
 ## <a name="text-value"></a>Textvärde
 
 Ange antalet tecken som du vill flytta den första raden i data.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Om det här elementet har angetts kan du inte ange [FirstLineIndent](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md) -elementet.
 
 ## <a name="see-also"></a>Se även
 
-[FirstLineIndent-element för Frame för CustomControl för vy (format)](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md)
+[FirstLineIndent-element för Frame för CustomControl för View (format)](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md)
 
-[Inramat element för CustomItem för CustomControl för vy (format)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)
+[Frame-element för CustomItem för CustomControl för View (format)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

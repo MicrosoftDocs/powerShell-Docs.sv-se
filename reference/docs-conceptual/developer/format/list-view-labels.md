@@ -1,19 +1,12 @@
 ---
 title: Listvy (etiketter) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 53442bb1-74a3-49f9-9150-3bc3081a7565
-caps.latest.revision: 6
-ms.openlocfilehash: 27de41c88e224f7610c10a764e51524016ecc8cb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: da45bd8dce7ac2149de6a34c11d5419d6cb4ddb0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354378"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87773393"
 ---
 # <a name="list-view-labels"></a>Listvy (etiketter)
 
@@ -23,12 +16,12 @@ I det här exemplet visas hur du implementerar en listvy som visar en anpassad e
 
 1. Kopiera XML-filen från exempel avsnittet i det här avsnittet till en textfil.
 
-2. Spara textfilen. Se till att lägga till `format.ps1xml`-tillägget till filen för att identifiera det som en format fil.
+2. Spara textfilen. Se till att lägga till `format.ps1xml` tillägget i filen för att identifiera det som en format fil.
 
-3. Öppna Windows PowerShell och kör följande kommando för att läsa in formaterings filen i den aktuella sessionen: `Update-formatdata -prependpath PathToFormattingFile`.
+3. Öppna Windows PowerShell och kör följande kommando för att läsa in formaterings filen i den aktuella sessionen: `Update-formatdata -prependpath PathToFormattingFile` .
 
    > [!WARNING]
-   > Den här format filen definierar visningen av ett objekt som redan har definierats av en Windows PowerShell-textfil. Du måste använda parametern `prependPath` när du kör cmdleten, och du kan inte läsa in den här format filen som en modul.
+   > Den här format filen definierar visningen av ett objekt som redan har definierats av en Windows PowerShell-textfil. Du måste använda `prependPath` parametern när du kör cmdleten och du kan inte läsa in den här format filen som en modul.
 
 ## <a name="demonstrates"></a>Demonstrationer
 
@@ -138,6 +131,6 @@ SERVICETYPE property : Win32OwnProcess
 
 ## <a name="see-also"></a>Se även
 
-[Exempel på filer som ska formateras](./examples-of-formatting-files.md)
+[Exempel på formateringsfiler](./examples-of-formatting-files.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

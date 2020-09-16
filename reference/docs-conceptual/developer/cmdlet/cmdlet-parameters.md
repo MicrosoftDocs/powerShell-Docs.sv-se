@@ -1,11 +1,6 @@
 ---
 title: Cmdlet-parametrar | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - optional parameters [PowerShell SDK]
 - aliases [PowerShell SDK]
@@ -14,20 +9,18 @@ helpviewer_keywords:
 - mandatory parameters [PowerShell SDK]
 - positional parameters [PowerShell SDK]
 - cmdlets [PowerShell SDK], parameters
-ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
-caps.latest.revision: 23
-ms.openlocfilehash: c1d8984f4aad7bae6f9be66a2222e2c74c8afa3d
-ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
+ms.openlocfilehash: 98b1d5fd0e7ffbf2d4d161f1bed73fb96a737bd4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022206"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774770"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet-parametrar
 
 Cmdlet-parametrar tillhandahåller mekanismen som tillåter att en cmdlet accepterar ininformation. Parametrar kan acceptera indata direkt från kommando raden eller från objekt som skickas till cmdleten via pipelinen. argumenten (även kallade *värden*) för dessa parametrar kan ange de indata som cmdleten accepterar, hur cmdleten ska utföra sina åtgärder och vilka data som cmdleten returnerar till pipelinen.
 
-## <a name="in-this-section"></a>I detta avsnitt
+## <a name="in-this-section"></a>I det här avsnittet
 
 [Deklarera egenskaper som parametrar](./declaring-properties-as-parameters.md) Innehåller grundläggande information som du måste förstå innan du deklarerar parametrarna för en cmdlet.
 
@@ -47,14 +40,14 @@ Cmdlet-parametrar tillhandahåller mekanismen som tillåter att en cmdlet accept
 
 [Verifierar parameter Indatatyp](./validating-parameter-input.md) Beskriver hur Windows PowerShell validerar argumenten som skickas till cmdlet-parametrar.
 
-[Parametrar för inparametrar](./input-filter-parameters.md) Beskriver parametrarna `Filter`, `Include`och `Exclude` som filtrerar uppsättningen inobjekt som cmdleten påverkar.
+[Parametrar för inparametrar](./input-filter-parameters.md) Beskriver `Filter` parametrarna, `Include` och `Exclude` som filtrerar uppsättningen inobjekt som cmdleten påverkar.
 
-## <a name="related-sections"></a>Relaterade avsnitt
+## <a name="related-sections"></a>Närliggande avsnitt
 
-[Verifiera parameter ingångar](./how-to-validate-parameter-input.md)
+[Verifiera parameterindata](./how-to-validate-parameter-input.md)
 
 ## <a name="see-also"></a>Se även
 
-[Deklaration av parameter attribut](./parameter-attribute-declaration.md)
+[Deklaration av attributet Parameter](./parameter-attribute-declaration.md)
 
 [Windows PowerShell-cmdletar](./cmdlet-overview.md)

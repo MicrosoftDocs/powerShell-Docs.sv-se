@@ -1,25 +1,18 @@
 ---
 title: EntrySelectedBy-element för ListEntry för ListControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0f7a74e9-764d-46ce-ab8e-8b9314ce1659
-caps.latest.revision: 12
-ms.openlocfilehash: 442565d25f60ae8e04501f3f9ffba35d486fbc8a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d6ab1c08dd353da74d1a7d27c569d2fa86e083c3
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355106"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774124"
 ---
 # <a name="entryselectedby-element-for-listentry-for-listcontrol-format"></a>EntrySelectedBy-element för ListEntry för ListControl (format)
 
 Definierar de .NET-typer som använder den här List vydefinitionen eller det villkor som måste finnas för att den här definitionen ska kunna användas. I de flesta fall behövs bara en definition för en listvy. Du kan dock ange flera definitioner för listvyn om du vill använda samma listvy för att visa olika data för olika objekt.
 
-Konfigurations element (format) ViewDefinitions element (format) View-element (format) ListControl element (format) ListEntries-element för ListControl (format) ListEntry-element för ListEntry för ListControl (format) EntrySelectedBy-element för ListEntry för ListControl (format)
+Konfigurations element (format) ViewDefinitions element (format) View-element (format) ListControl element (format) ListEntries-element för ListControl (format) ListEntry-element för ListEntry för ListControl (format) EntrySelectedBy-element för ListEntry (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,11 +26,11 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `EntrySelectedBy`-elementet.
+I följande avsnitt beskrivs attributen, underordnade element och `EntrySelectedBy` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -45,7 +38,7 @@ Ingen.
 |-------------|-----------------|
 |[SelectionCondition-element för EntrySelectedBy för ListControl (format)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|Valfritt element.<br /><br /> Definierar det villkor som måste finnas för att den här List visnings definitionen ska kunna användas.|
 |[SelectionSetName-element för EntrySelectedBy för ListControl (format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger en uppsättning av .NET-typer som använder den här List vydefinitionen.|
-|[Elementet TypeName för EntrySelectedBy för ListControl (format)](./typename-element-for-entryselectedby-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger en .NET-typ som använder den här List vydefinitionen.|
+|[TypeName-element för EntrySelectedBy för ListControl (format)](./typename-element-for-entryselectedby-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger en .NET-typ som använder den här List vydefinitionen.|
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -53,11 +46,11 @@ Ingen.
 |-------------|-----------------|
 |[ListEntry-element för ListControl (format)](./listentry-element-for-listcontrol-format.md)|Definierar hur rader i listan visas.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Du måste ange minst en typ, markerings uppsättning eller ett markerings villkor för en lista med en listvy. Det finns ingen övre gräns för antalet underordnade element som du kan använda.
 
-Urvals villkor används för att definiera ett villkor som måste finnas för att definitionen ska kunna användas, till exempel när ett objekt har en speciell egenskap eller ett angivet egenskaps värde eller skript utvärderar till `true`. Mer information om urvals villkor finns i [definiera villkor för när data visas](./defining-conditions-for-displaying-data.md).
+Urvals villkor används för att definiera ett villkor som måste finnas för att definitionen ska kunna användas, till exempel när ett objekt har en speciell egenskap eller ett angivet egenskaps värde eller skript utvärderas till `true` . Mer information om urvals villkor finns i [definiera villkor för när data visas](./defining-conditions-for-displaying-data.md).
 
 Mer information om komponenterna i en listvy finns i [skapa en listvy](./creating-a-list-view.md).
 
@@ -81,10 +74,10 @@ I följande exempel visas hur du definierar objekten för en listvy med deras .N
 
 [SelectionSetName-element för EntrySelectedBy för ListControl (format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
-[Elementet TypeName för EntrySelectedBy för ListControl (format)](./typename-element-for-entryselectedby-for-listcontrol-format.md)
+[TypeName-element för EntrySelectedBy för ListControl (format)](./typename-element-for-entryselectedby-for-listcontrol-format.md)
 
 [Skapa en listvy](./creating-a-list-view.md)
 
 [Definiera villkor för när data visas](./defining-conditions-for-displaying-data.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

@@ -1,21 +1,14 @@
 ---
 title: Lägga till parameter uppsättningar till en cmdlet | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
-ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
-caps.latest.revision: 8
-ms.openlocfilehash: 6e17ff3d8ad3f7b2c511b879c913633f320bf511
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: b1e808694b02676d81101a2678cbea341c7bd52c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978635"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774991"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Lägga till parameteruppsättningar i en cmdlet
 
@@ -23,11 +16,11 @@ ms.locfileid: "80978635"
 
 Windows PowerShell definierar en parameter uppsättning som en grupp parametrar som fungerar tillsammans. Genom att gruppera parametrarna för en cmdlet kan du skapa en enda cmdlet som kan ändra dess funktioner baserat på vilken grupp av parametrar som användaren anger.
 
-Ett exempel på en cmdlet som använder två parameter uppsättningar för att definiera olika funktioner är den `Get-EventLog`-cmdlet som tillhandahålls av Windows PowerShell. Den här cmdleten returnerar annan information när användaren anger parametern `List` eller `LogName`. Om parametern `LogName` anges, returnerar cmdleten information om händelserna i en viss händelse logg. Om parametern `List` anges, returnerar cmdleten information om själva loggfilerna (inte den händelse information de innehåller). I det här fallet identifierar parametrarna för `List` och `LogName` två separata parameter uppsättningar.
+Ett exempel på en cmdlet som använder två parameter uppsättningar för att definiera olika funktioner är den `Get-EventLog` cmdlet som tillhandahålls av Windows PowerShell. Den här cmdleten returnerar annan information när användaren anger `List` `LogName` parametern eller. Om `LogName` parametern anges returnerar cmdleten information om händelserna i en viss händelse logg. Om `List` parametern anges returnerar cmdleten information om själva loggfilerna (inte den händelse information de innehåller). I det här fallet `List` identifierar och- `LogName` parametrarna två separata parameter uppsättningar.
 
 Två viktiga saker att komma ihåg om parameter uppsättningar är att Windows PowerShell-körningsmiljön endast använder en parameter uppsättning för en viss Indatatyp och att varje parameter uppsättning måste ha minst en parameter som är unik för den parameter uppsättningen.
 
-För att illustrera den sista punkten använder denna Stop-proc-cmdlet tre parameter uppsättningar: `ProcessName`, `ProcessId`och `InputObject`. Var och en av dessa parameter uppsättningar har en parameter som inte finns i de andra parameter uppsättningarna. Parameter uppsättningarna kan dela andra parametrar, men cmdleten använder de unika parametrarna `ProcessName`, `ProcessId`och `InputObject` för att identifiera vilken uppsättning parametrar som Windows PowerShell-körningen ska använda.
+För att illustrera den sista punkten använder denna Stop-proc-cmdlet tre parameter uppsättningar: `ProcessName` , `ProcessId` och `InputObject` . Var och en av dessa parameter uppsättningar har en parameter som inte finns i de andra parameter uppsättningarna. Parameter uppsättningarna kan dela andra parametrar, men cmdleten använder unika parametrar `ProcessName` , `ProcessId` och `InputObject` för att identifiera vilken uppsättning parametrar som ska användas i Windows PowerShell-körningsmiljön.
 
 ## <a name="declaring-the-cmdlet-class"></a>Deklarera cmdlet-klassen
 
@@ -54,11 +47,11 @@ Public Class StopProcCommand
 
 ## <a name="declaring-the-parameters-of-the-cmdlet"></a>Deklarera parametrarna för cmdleten
 
-Den här cmdleten definierar tre parametrar som krävs som indata till cmdleten (dessa parametrar definierar även parameter uppsättningar), samt en `Force` parameter som hanterar vad cmdleten gör och en `PassThru` parameter som avgör om cmdleten skickar ett utdata-objekt via pipelinen. Som standard skickar denna cmdlet inget objekt via pipelinen. Mer information om de sista två parametrarna finns i [skapa en cmdlet som ändrar systemet](./creating-a-cmdlet-that-modifies-the-system.md).
+Den här cmdleten definierar tre parametrar som krävs som indata till cmdleten (dessa parametrar definierar även parameter uppsättningar), samt en `Force` parameter som hanterar vad cmdleten gör och en `PassThru` parameter som avgör om cmdleten skickar ett utdatafilet via pipelinen. Som standard skickar denna cmdlet inget objekt via pipelinen. Mer information om de sista två parametrarna finns i [skapa en cmdlet som ändrar systemet](./creating-a-cmdlet-that-modifies-the-system.md).
 
 ### <a name="declaring-the-name-parameter"></a>Att deklarera namn parametern
 
-Med den här Indataparametern kan användaren ange namnen på de processer som ska stoppas. Observera att attributet `ParameterSetName` attribut för attributet [system. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) anger den `ProcessName` parameter uppsättningen för den här parametern.
+Med den här Indataparametern kan användaren ange namnen på de processer som ska stoppas. Observera att attributet `ParameterSetName` Attribute för attributet [system. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) anger `ProcessName` parameter uppsättningen för den här parametern.
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs" range="44-58":::
 
@@ -84,7 +77,7 @@ Observera också att aliaset "ProcessName" anges för den här parametern.
 
 ### <a name="declaring-the-id-parameter"></a>Deklarera ID-parametern
 
-Med den här Indataparametern kan användaren ange identifierare för de processer som ska stoppas. Observera att attributet `ParameterSetName` attribut för attributet [system. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) anger den `ProcessId` parameter uppsättningen.
+Med den här Indataparametern kan användaren ange identifierare för de processer som ska stoppas. Observera att attributet `ParameterSetName` Attribute för attributet [system. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) anger `ProcessId` parameter uppsättningen.
 
 ```csharp
 [Parameter(
@@ -122,7 +115,7 @@ Observera också att alias "ProcessId" anges för den här parametern.
 
 ### <a name="declaring-the-inputobject-parameter"></a>Deklarera parametern InputObject
 
-Med den här Indataparametern kan användaren ange ett indata-objekt som innehåller information om de processer som ska stoppas. Observera att attributet `ParameterSetName` attribut för attributet [system. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) anger den `InputObject` parameter uppsättningen för den här parametern.
+Med den här Indataparametern kan användaren ange ett indata-objekt som innehåller information om de processer som ska stoppas. Observera att attributet `ParameterSetName` Attribute för attributet [system. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) anger `InputObject` parameter uppsättningen för den här parametern.
 
 ```csharp
 [Parameter(
@@ -213,7 +206,7 @@ De hjälp metoder som anropas av SELECT-instruktionen beskrivs inte här, men du
 
 ## <a name="code-sample"></a>Kod exempel
 
-Den fullständiga C# exempel koden finns i [StopProcessSample04-exempel](./stopprocesssample04-sample.md).
+Den fullständiga exempel koden för C# finns i [StopProcessSample04-exempel](./stopprocesssample04-sample.md).
 
 ## <a name="defining-object-types-and-formatting"></a>Definiera objekt typer och formatering
 
@@ -225,9 +218,9 @@ När du har implementerat en cmdlet måste du registrera den med Windows PowerSh
 
 ## <a name="testing-the-cmdlet"></a>Testa cmdleten
 
-När din cmdlet har registrerats med Windows PowerShell kan du testa den genom att köra den på kommando raden. Här följer några tester som visar hur parametrarna `ProcessId` och `InputObject` kan användas för att testa parameter uppsättningar för att stoppa en process.
+När din cmdlet har registrerats med Windows PowerShell kan du testa den genom att köra den på kommando raden. Här följer några tester som visar hur `ProcessId` parametrarna och `InputObject` kan användas för att testa parameter uppsättningar för att stoppa en process.
 
-- Med Windows PowerShell igång kör du Stop-proc-cmdlet: en med parametern `ProcessId` som har angetts för att stoppa en process baserat på dess identifierare. I det här fallet använder cmdleten `ProcessId` parameter inställd för att stoppa processen.
+- Med Windows PowerShell igång kör du Stop-proc-cmdlet: en med `ProcessId` parametern inställd på att stoppa en process baserat på dess identifierare. I det här fallet använder cmdleten den `ProcessId` parameter som angetts för att stoppa processen.
 
   ```
   PS> stop-proc -Id 444
@@ -237,7 +230,7 @@ När din cmdlet har registrerats med Windows PowerShell kan du testa den genom a
   [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
   ```
 
-- Med Windows PowerShell igång kör du Stop-proc-cmdlet: en med parametern `InputObject` som har angetts för att stoppa processer på objektet Notepad som hämtats av `Get-Process` kommandot.
+- Med Windows PowerShell igång kör du Stop-proc-cmdlet: en med `InputObject` parametern inställd på att stoppa processer i Notepad-objektet som hämtades av `Get-Process` kommandot.
 
   ```
   PS> get-process notepad | stop-proc

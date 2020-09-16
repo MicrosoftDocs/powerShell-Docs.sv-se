@@ -1,19 +1,12 @@
 ---
 title: Så här deklarerar du cmdlet-parametrar | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0c0509cc-5a50-49ad-a74f-5527023d0270
-caps.latest.revision: 10
-ms.openlocfilehash: 80e3e27bcf72b078c192525a843a3b3afb306529
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 97e86a1eb715f149a8383a1a4529c00da4f0eba8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356401"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774396"
 ---
 # <a name="how-to-declare-cmdlet-parameters"></a>Deklarera cmdlet-parametrar
 
@@ -21,7 +14,7 @@ I de här exemplen visas hur du deklarerar namngivna, positionerade, obligatoris
 
 ## <a name="how-to-declare-a-named-parameter"></a>Så här deklarerar du en namngiven parameter
 
-- Definiera en offentlig egenskap som visas i följande kod. När du lägger till attributet parameter utelämnar du nyckelordet `Position` från attributet.
+- Definiera en offentlig egenskap som visas i följande kod. När du lägger till attributet parameter utelämnar du `Position` nyckelordet från attributet.
 
     ```csharp
     [Parameter()]
@@ -53,7 +46,7 @@ Mer information om attributet parameter finns i deklaration av [parameter attrib
 
 ## <a name="how-to-declare-a-mandatory-parameter"></a>Så här deklarerar du en obligatorisk parameter
 
-- Definiera en offentlig egenskap som visas i följande kod. När du lägger till attributet parameter anger du `Mandatory` nyckelordet till `true`.
+- Definiera en offentlig egenskap som visas i följande kod. När du lägger till attributet parameter anger du `Mandatory` nyckelordet till `true` .
 
     ```csharp
     [Parameter(Position = 0, Mandatory = true)]
@@ -69,7 +62,7 @@ Mer information om attributet parameter finns i deklaration av [parameter attrib
 
 ## <a name="how-to-declare-an-optional-parameter"></a>Så här deklarerar du en valfri parameter
 
-- Definiera en offentlig egenskap som visas i följande kod. När du lägger till attributet parameter utelämnar du nyckelordet `Mandatory`.
+- Definiera en offentlig egenskap som visas i följande kod. När du lägger till attributet parameter utelämnar du `Mandatory` nyckelordet.
 
     ```csharp
     [Parameter(Position = 0)]
@@ -118,8 +111,8 @@ Mer information om alias-attributet finns i [deklarationen alias](./alias-attrib
 
 [System. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)
 
-[Deklaration av parameter attribut](./parameter-attribute-declaration.md)
+[Deklaration av attributet Parameter](./parameter-attribute-declaration.md)
 
-[Deklaration av alias-attribut](./alias-attribute-declaration.md)
+[Deklaration av attributet Alias](./alias-attribute-declaration.md)
 
 [Skriva en Windows PowerShell-cmdlet](./writing-a-windows-powershell-cmdlet.md)

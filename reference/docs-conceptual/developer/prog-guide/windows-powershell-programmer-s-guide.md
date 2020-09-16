@@ -1,23 +1,16 @@
 ---
-title: Windows PowerShell Programmer '&#39;s guide | Microsoft Docs
-ms.custom: ''
+title: Windows PowerShell-programmerare&#39;s-guide | Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
-ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
-caps.latest.revision: 9
-ms.openlocfilehash: f8cbaf464345b8f2b693e72f3dbe781a47605b28
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 64feb66b8e42ab12b279025ebe6c86d7f91ecae5
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417786"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771574"
 ---
-# <a name="windows-powershell-programmer39s-guide"></a>Guide för Windows PowerShell&#39;-programmerare
+# <a name="windows-powershell-programmer39s-guide"></a>Guide för Windows PowerShell-programmerare&#39;s
 
 Den här Programmer ' s guide är avsedd för utvecklare som är intresserade av att tillhandahålla en kommando rads hanterings miljö för system administratörer. Windows PowerShell är ett enkelt sätt för dig att skapa hanterings kommandon som visar .NET-objekt, samtidigt som Windows PowerShell kan utföra det mesta av arbetet åt dig.
 
@@ -37,9 +30,9 @@ I traditionell kommando utveckling måste du skriva en parameter tolkare, en par
 
 Windows PowerShell definierar flera typer av kommandon som du kan använda under utveckling. Dessa kommandon omfattar: funktioner, filter, skript, alias och körbara filer (program). Huvud kommando typen som beskrivs i den här guiden är ett enkelt, litet kommando som kallas "cmdlet". Windows PowerShell tillhandahåller en uppsättning cmdlets och har fullt stöd för cmdlet-anpassning för att passa din miljö. Windows PowerShell-körningen bearbetar alla kommando typer precis som den gör-cmdlets med hjälp av pipeliner.
 
-Förutom-kommandon stöder Windows PowerShell olika anpassningsbara Windows PowerShell-leverantörer som gör tillgängliga uppsättningar med cmdletar. Gränssnittet fungerar i Windows PowerShell-värdbaserade program (Windows PowerShell. exe), men är även tillgängligt från ett anpassat värd program som du kan utveckla för att uppfylla specifika krav. Mer information finns i [så här fungerar Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
+Förutom-kommandon stöder Windows PowerShell olika anpassningsbara Windows PowerShell-leverantörer som gör tillgängliga uppsättningar med cmdletar. Gränssnittet fungerar i Windows PowerShell-värdbaserade program (Windows PowerShell.exe), men är även tillgängligt från ett anpassat värd program som du kan utveckla för att uppfylla specifika krav. Mer information finns i [så här fungerar Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
 
-### <a name="windows-powershell-cmdlets"></a>Windows PowerShell-Cmdlets
+### <a name="windows-powershell-cmdlets"></a>Windows PowerShell-cmdletar
 
 En cmdlet är ett lättviktigt kommando som används i Windows PowerShell-miljön. Windows PowerShell-körningen anropar dessa cmdlets inom kontexten för Automation-skript som anges på kommando raden och Windows PowerShell-körningen anropar också dem program mässigt via API: er för Windows PowerShell.
 
@@ -55,7 +48,7 @@ Om du exponerar ett data lager som användaren behöver åtkomst till kan du beh
 
 ### <a name="host-application"></a>Värd program
 
-Windows PowerShell innehåller standard värd programmet PowerShell. exe, som är ett konsol program som interagerar med användaren och som är värd för Windows PowerShell-körningsmiljön med hjälp av ett konsol fönster.
+Windows PowerShell innehåller standard värd programmet powershell.exe, vilket är ett konsol program som interagerar med användaren och som är värd för Windows PowerShell-körningsmiljön med hjälp av ett konsol fönster.
 
 Det är bara sällan att du behöver skriva ditt eget värd program för Windows PowerShell, även om anpassning stöds. Ett fall där du kan behöva ditt eget program är om du har ett krav för ett GUI-gränssnitt som är bättre än det gränssnitt som tillhandahålls av standard värd programmet. Du kanske också vill ha ett anpassat program när du baserar ditt användar gränssnitt på kommando raden. Mer information finns i [så här skapar du ett Windows PowerShell-värdprogram](/powershell/scripting/developer/hosting/writing-a-windows-powershell-host-application).
 
@@ -79,7 +72,7 @@ Windows PowerShell ger till gång till en rad olika objekt, till exempel .NET-oc
 
 - Skriva anpassade objekt.
 
-  Med hjälp av ETS kan du skapa flexibla nya "typer" som är kompatibla med Windows PowerShell-språket. Om du är .NET-utvecklare kan du arbeta med objekt med samma semantik som Windows PowerShell-språket gäller för skript, till exempel för att avgöra om ett objekt utvärderas till `true`.
+  Med hjälp av ETS kan du skapa flexibla nya "typer" som är kompatibla med Windows PowerShell-språket. Om du är .NET-utvecklare kan du arbeta med objekt med samma semantik som Windows PowerShell-språket gäller för skript, till exempel för att avgöra om ett objekt utvärderas till `true` .
 
   Mer information om ETS och hur Windows PowerShell använder objekt finns i [begrepp för Windows PowerShell-objekt](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6).
 
@@ -97,13 +90,13 @@ Mer information om hur du börjar använda Windows PowerShell-gränssnittet finn
 
 ## <a name="contents-of-this-guide"></a>Innehåll i den här guiden
 
-|Ämne|Definition|
+|Avsnitt|Definition|
 |-----------|----------------|
-|[Så här skapar du en Windows PowerShell-Provider](./how-to-create-a-windows-powershell-provider.md)|I det här avsnittet beskrivs hur du skapar en Windows PowerShell-Provider för Windows PowerShell.|
+|[Skapa en Windows PowerShell-provider](./how-to-create-a-windows-powershell-provider.md)|I det här avsnittet beskrivs hur du skapar en Windows PowerShell-Provider för Windows PowerShell.|
 |[Så här skapar du ett Windows PowerShell-värdprogram](/powershell/scripting/developer/hosting/writing-a-windows-powershell-host-application)|I det här avsnittet beskrivs hur du skriver ett värd program som manipulerar en körnings utrymme och hur du skriver ett värd program som implementerar en egen anpassad värd.|
-|[Så här skapar du en Windows PowerShell-snapin-modul](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|I det här avsnittet beskrivs hur du skapar en snapin-modul som används för att registrera alla cmdletar och providrar i en sammansättning och hur du skapar en anpassad snapin-modul.|
-|[Så här skapar du ett konsol gränssnitt](./how-to-create-a-console-shell.md)|I det här avsnittet beskrivs hur du skapar ett konsol gränssnitt som inte är utöknings Bart.|
-|[Windows PowerShell-begrepp](./windows-powershell-concepts.md)|Det här avsnittet innehåller konceptuell information som hjälper dig att förstå Windows PowerShell från en utvecklares synvinkel.|
+|[Skapa en Windows PowerShell-snapin-modul](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|I det här avsnittet beskrivs hur du skapar en snapin-modul som används för att registrera alla cmdletar och providrar i en sammansättning och hur du skapar en anpassad snapin-modul.|
+|[Skapa ett konsolgränssnitt](./how-to-create-a-console-shell.md)|I det här avsnittet beskrivs hur du skapar ett konsol gränssnitt som inte är utöknings Bart.|
+|[Begrepp relaterade till Windows PowerShell](./windows-powershell-concepts.md)|Det här avsnittet innehåller konceptuell information som hjälper dig att förstå Windows PowerShell från en utvecklares synvinkel.|
 
 ## <a name="see-also"></a>Se även
 

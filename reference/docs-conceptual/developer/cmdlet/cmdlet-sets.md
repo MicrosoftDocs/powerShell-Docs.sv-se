@@ -1,19 +1,12 @@
 ---
 title: Cmdlet-uppsättningar | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: bcf0739e-920e-4dd8-afca-2c6d6927bc2a
-caps.latest.revision: 10
-ms.openlocfilehash: ef3b5bab5dcafc578397bcb4f071776bbdeaced1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9595c9ca09148de05c69d60a2ede5688c3db61b0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356464"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774821"
 ---
 # <a name="cmdlet-sets"></a>Cmdlet-uppsättningar
 

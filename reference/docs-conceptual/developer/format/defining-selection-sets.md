@@ -1,23 +1,16 @@
 ---
 title: Definiera urvals uppsättningar | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 00dbb5ee-93d4-4914-a082-ef4d8b236b5c
-caps.latest.revision: 16
-ms.openlocfilehash: 95eeb037b3b9190fec1212a68029624993f3fd9f
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 58c812b69f92c33304bf7fc7b2891cc2a0227918
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692296"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774311"
 ---
 # <a name="defining-selection-sets"></a>Definiera valuppsättningar
 
-När du skapar flera vyer och kontroller kan du definiera uppsättningar av objekt som kallas urvals uppsättningar. Med en urvals uppsättning kan du definiera objekten en gång, utan att behöva definiera dem flera gånger för varje vy eller kontroll. Normalt används urvals uppsättningar när du har en uppsättning relaterade .NET-objekt. Till exempel `FileSystem` definierar format filen (filesystem. format. ps1xml) en urvals uppsättning av de fil system typer som flera vyer använder.
+När du skapar flera vyer och kontroller kan du definiera uppsättningar av objekt som kallas urvals uppsättningar. Med en urvals uppsättning kan du definiera objekten en gång, utan att behöva definiera dem flera gånger för varje vy eller kontroll. Normalt används urvals uppsättningar när du har en uppsättning relaterade .NET-objekt. `FileSystem`Format filen (FileSystem.format.ps1XML) definierar till exempel en urvals uppsättning av de fil system typer som flera vyer använder.
 
 ## <a name="where-selection-sets-are-defined-and-referenced"></a>Där urvals uppsättningar definieras och refereras till
 

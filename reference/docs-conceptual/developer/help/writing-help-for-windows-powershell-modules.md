@@ -1,12 +1,12 @@
 ---
 title: Skriva hjälp för PowerShell-moduler
 ms.date: 04/10/2020
-ms.openlocfilehash: 2c6450c03fb9847de331605fb6b9bfb203af3d89
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 115ea3f3c5941e74ed6ddbc8480d4a21576bc5c6
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810353"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893075"
 ---
 # <a name="writing-help-for-powershell-modules"></a>Skriva hjälp för PowerShell-moduler
 
@@ -29,7 +29,7 @@ En modul kan innehålla följande typer av hjälp.
 - **Konceptuell ("About") hjälp**. Du kan använda ett konceptuellt hjälp avsnitt för att beskriva modulen och dess medlemmar och förklara hur medlemmarna kan användas tillsammans för att utföra uppgifter.
   Konceptuella hjälp ämnen är textfiler med Unicode-kodning (UTF-8). Fil namnet måste använda `about_<name>.help.txt` formatet, till exempel `about_MyModule.help.txt` . Som standard innehåller PowerShell över 100 av dessa begrepp om hjälp avsnitt och de formateras som i följande exempel.
 
-  ```
+  ```Output
   TOPIC
       about_<subject or module name>
 

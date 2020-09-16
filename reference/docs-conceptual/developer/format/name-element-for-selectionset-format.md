@@ -1,19 +1,12 @@
 ---
 title: Namn element för SelectionSet (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 914917f7-0efc-4d1f-88bd-de714bedd98f
-caps.latest.revision: 15
-ms.openlocfilehash: 29dbdbd335511e4ca2706a625541554825838f23
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1fc33eeb87a6912ed6793629ab1969cd65b5f0c5
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354294"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87773308"
 ---
 # <a name="name-element-for-selectionset-format"></a>Name-element för SelectionSet (format)
 
@@ -29,15 +22,15 @@ Konfigurations element (format) SelectionSets-element (format) SelectionSet elem
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `Name`-elementet.
+I följande avsnitt beskrivs attributen, underordnade element och `Name` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -49,13 +42,13 @@ Ingen.
 
 Ange det namn som ska referera till urvals uppsättningen. Det finns inga begränsningar för vilka tecken som kan användas.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
-Namnet som anges här används i `SelectionSetName`-elementet. Den urvals uppsättning som kan användas av en vy, genom en definition av en vy (vyer kan ha flera definitioner) eller när du anger ett urvals villkor. Mer information om urvals uppsättningar finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
+Namnet som anges här används i- `SelectionSetName` elementet. Den urvals uppsättning som kan användas av en vy, genom en definition av en vy (vyer kan ha flera definitioner) eller när du anger ett urvals villkor. Mer information om urvals uppsättningar finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
 
 ## <a name="example"></a>Exempel
 
-I det här exemplet visas ett `SelectionSet`-element som definierar fyra .NET-typer. Namnet på urvals uppsättningen är "FileSystemTypes".
+Det här exemplet visar ett- `SelectionSet` element som definierar fyra .net-typer. Namnet på urvals uppsättningen är "FileSystemTypes".
 
 ```xml
 <SelectionSets>
@@ -73,8 +66,8 @@ I det här exemplet visas ett `SelectionSet`-element som definierar fyra .NET-ty
 
 ## <a name="see-also"></a>Se även
 
-[Definiera urvals uppsättningar](./defining-selection-sets.md)
+[Definiera valuppsättningar](./defining-selection-sets.md)
 
 [SelectionSet-element (format)](./selectionset-element-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

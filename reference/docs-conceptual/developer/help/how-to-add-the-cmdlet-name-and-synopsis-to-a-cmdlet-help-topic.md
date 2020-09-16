@@ -1,32 +1,26 @@
 ---
-title: Så här lägger du till cmdlet-namnet och sammanfattningen i ett hjälp avsnitt för cmdleten | Microsoft Docs
-ms.custom: ''
+title: Lägga till cmdlet-namnet och sammanfattningen i ett cmdlet-hjälpavsnitt
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1d0e1eb1-a962-4406-9625-175cfa3364ad
-caps.latest.revision: 10
-ms.openlocfilehash: 5b4c04a14c3d86c7a3b94b768e8fb59116d8c6f5
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 399defcb596ff9e9a596f4cd25ebcb6bcb7c34d2
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560635"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86892888"
 ---
 # <a name="how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic"></a>Lägga till cmdlet-namnet och sammanfattningen i ett cmdlet-hjälpavsnitt
 
-I det här avsnittet beskrivs hur du lägger till innehåll som visas i avsnitten namn och sammanfattning i cmdlet-hjälpen. I Hjälp filen läggs det här innehållet till i kommando-noden för varje cmdlet.
+I det här avsnittet beskrivs hur du lägger till innehåll som visas i avsnitten **namn** och **Sammanfattning** i cmdlet-hjälpen. I Hjälp filen läggs det här innehållet till i kommando-noden för varje cmdlet.
 
 > [!NOTE]
-> Om du vill se en fullständig vy över en hjälpfil öppnar du en av dll-Help. XML-filerna som finns i installations katalogen för Windows PowerShell. Till exempel innehåller filen Microsoft. PowerShell. commands. Management. dll-Help. XML innehåll för flera av Windows PowerShell-cmdlets.
+> Om du vill se en fullständig vy över en hjälpfil öppnar du en av `dll-Help.xml` filerna som finns i installations katalogen för PowerShell. Filen innehåller till exempel `Microsoft.PowerShell.Commands.Management.dll-Help.xml` innehåll för flera av PowerShell-cmdletarna.
 
-### <a name="to-add-the-cmdlet-name-and-a-synopsis"></a>Lägga till cmdlet-namn och en sammanfattning
+## <a name="to-add-the-cmdlet-name-and-a-synopsis"></a>Lägga till cmdlet-namn och en sammanfattning
 
-- Cmdlet-hjälpen kan visa två beskrivningar för cmdleten. Den första beskrivningen är en kort beskrivning som kallas för sammanfattning. Den andra beskrivningen är en mer detaljerad beskrivning som beskrivs i [avsnittet lägga till detaljerad beskrivning i en cmdlet-hjälpfil](./how-to-add-a-cmdlet-description.md). Båda dessa beskrivningar ska vara skrivna som ett enda stycke.
+- Cmdlet-hjälpen kan visa två beskrivningar för cmdleten. Den första beskrivningen är en kort beskrivning som kallas för sammanfattning. Den andra beskrivningen är en mer detaljerad beskrivning som beskrivs i [avsnittet lägga till detaljerad beskrivning i en cmdlet-hjälpfil](./how-to-add-a-cmdlet-description.md).
+  Båda dessa beskrivningar ska vara skrivna som ett enda stycke.
 
-- I sammanfattningen upprepar du inte cmdlet-namnet. Informerar användaren om att cmdleten Get-server hämtar en server, men inte informativ. Använd i stället synonymer och Lägg till information i beskrivningen.
+- I sammanfattningen upprepar du inte cmdlet-namnet. Informerar användaren om att `Get-Server` cmdleten hämtar en server, men inte informativ. Använd i stället synonymer och Lägg till information i beskrivningen.
 
   Exempel: "hämtar ett objekt som representerar en lokal dator eller fjärrdator."
 
@@ -40,4 +34,4 @@ I det här avsnittet beskrivs hur du lägger till innehåll som visas i avsnitte
 
 ## <a name="see-also"></a>Se även
 
- [Windows PowerShell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)
