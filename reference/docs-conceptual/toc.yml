@@ -73,6 +73,8 @@
           href: learn/deep-dives/everything-about-null.md
         - name: Allt du vill veta om ShouldProcess
           href: learn/deep-dives/everything-about-shouldprocess.md
+        - name: Skrivförlopp vid flertrådskörning
+          href: learn/deep-dives/write-progress-across-multiple-threads.md
     - name: PowerShell-fjärranvändning
       items:
         - name: JEA (Just Enough Administration)
@@ -225,7 +227,7 @@
               href: windows-powershell/wmf/whats-new/bugfixes.md
             - name: Nya och uppdaterade cmdletar
               href: windows-powershell/wmf/whats-new/new-updated-cmdlets.md
-            - name: Skapa anpassade typer med hjälp av PowerShell-klasser
+            - name: Nya språkfunktioner i PowerShell 5.0
               href: windows-powershell/wmf/whats-new/class-overview.md
             - name: Konsolförbättringar i WMF 5.1
               href: windows-powershell/wmf/whats-new/console-improvements.md
@@ -358,7 +360,7 @@
               href: dsc/resources/authoringResourceClass.md
             - name: Skriva sammansatta resurser i PowerShell
               href: dsc/resources/authoringResourceComposite.md
-            - name: 'Skriva MOF-baserade resurser i C#'
+            - name: Skriva MOF-baserade resurser i C#
               href: dsc/resources/authoringResourceMofCS.md
             - name: Använda resursdesignverktyget
               href: dsc/resources/authoringResourceMofDesigner.md
@@ -562,6 +564,8 @@
       href: community/hall-of-fame.md
     - name: Nyheter i dokument
       items:
+        - name: Kvartal 3 2020
+          href: community/2020-Q3.md
         - name: 2020-Kv2
           href: community/2020-Q2.md
         - name: 2020-Kv1
@@ -626,7 +630,7 @@
           href: samples/managing-processes-with-process-cmdlets.md
         - name: Hantera tjänster
           href: samples/managing-services.md
-        - name: Hantera Windows PowerShell-enheter
+        - name: Hantera PowerShell-enheter
           href: samples/managing-windows-powershell-drives.md
         - name: Arbeta med skrivare
           href: samples/working-with-printers.md
@@ -782,8 +786,14 @@
           href: dev-cross-plat/vscode/understanding-file-encoding.md
     - name: Skriva flyttbara moduler
       href: dev-cross-plat/writing-portable-modules.md
+    - name: Skapa modulhjälp med PlatyPS
+      href: dev-cross-plat/create-help-using-platyps.md
     - name: Såhär skapar du en binär modul för standardbibliotek
       href: dev-cross-plat/create-standard-library-binary-module.md
+    - name: Välja rätt NuGet-paket för ditt .NET-projekt
+      href: dev-cross-plat/choosing-the-right-nuget-package.md
+    - name: Lösa beroendekonflikter i modulsammansättningar
+      href: dev-cross-plat/resolving-dependency-conflicts.md
     - name: Äldre PowerShell SDK
       items:
         - name: Översikt
@@ -794,11 +804,11 @@
           href: developer/windows-powershell-reference.md
         - name: Nyheter
           href: developer/windows-powershell-reference-whats-new.md
-        - name: Skriva en Windows PowerShell-cmdlet
+        - name: Skriva en PowerShell-cmdlet
           items:
             - name: Översikt över cmdlets
               href: developer/cmdlet/cmdlet-overview.md
-            - name: Begrepp relaterade till Windows PowerShell-cmdlets
+            - name: Begrepp relaterade till PowerShell-cmdletar
               href: developer/cmdlet/windows-powershell-cmdlet-concepts.md
               items:
                 - name: Riktlinjer för cmdlet-utveckling
@@ -812,7 +822,7 @@
                       href: developer/cmdlet/advisory-development-guidelines.md
                 - name: Cmdlet-klassdeklaration
                   href: developer/cmdlet/cmdlet-class-declaration.md
-                - name: Godkända verb för Windows PowerShell-kommandon
+                - name: Godkända verb för PowerShell-kommandon
                   href: developer/cmdlet/approved-verbs-for-windows-powershell-commands.md
                 - name: Bearbetningsmetoder för cmdlet-indata
                   href: developer/cmdlet/cmdlet-input-processing-methods.md
@@ -910,7 +920,7 @@
                       href: developer/cmdlet/users-requesting-confirmation.md
                     - name: Bekräftelsemeddelanden
                       href: developer/cmdlet/confirmation-messages.md
-                - name: Windows PowerShell-felrapportering
+                - name: PowerShell-felrapportering
                   href: developer/cmdlet/windows-powershell-error-reporting.md
                   items:
                     - name: Begrepp relaterade till felrapportering
@@ -921,7 +931,7 @@
                       href: developer/cmdlet/non-terminating-errors.md
                     - name: Visa felinformation
                       href: developer/cmdlet/displaying-error-information.md
-                    - name: Windows PowerShell-felposter
+                    - name: PowerShell-felposter
                       href: developer/cmdlet/windows-powershell-error-records.md
                     - name: Tolka ErrorRecord-objekt
                       href: developer/cmdlet/interpreting-errorrecord-objects.md
@@ -931,7 +941,7 @@
                   href: developer/cmdlet/invoking-cmdlets-and-scripts-within-a-cmdlet.md
                 - name: Cmdlet-uppsättningar
                   href: developer/cmdlet/cmdlet-sets.md
-                - name: Windows PowerShell-sessionstillstånd
+                - name: PowerShell-sessionstillstånd
                   href: developer/cmdlet/windows-powershell-session-state.md
             - name: Exempel på cmdlet-kod
               href: developer/cmdlet/examples-of-cmdlet-code.md
@@ -1022,11 +1032,11 @@
                   href: developer/cmdlet/stopprocesssample04-sample.md
                 - name: Events01 – exempel
                   href: developer/cmdlet/events01-sample.md
-        - name: Skriva en Windows PowerShell-modul
+        - name: Skriva en PowerShell-modul
           items:
             - name: Översikt
               href: developer/module/writing-a-windows-powershell-module.md
-            - name: Förstå en Windows PowerShell-modul
+            - name: Förstå en PowerShell-modul
               href: developer/module/understanding-a-windows-powershell-module.md
             - name: Skriva en PowerShell-skriptmodul
               href: developer/module/how-to-write-a-powershell-script-module.md
@@ -1050,17 +1060,17 @@
                   items:
                     - name: Översikt
                       href: developer/module/how-to-create-a-windows-powershell-snap-in.md
-                    - name: Skriva en Windows PowerShell-snapin-modul
+                    - name: Skriva en PowerShell-snapin-modul
                       href: developer/module/writing-a-windows-powershell-snap-in.md
-                    - name: Skriva en anpassad Windows PowerShell-snapin-modul
+                    - name: Skriva en anpassad PowerShell-snapin-modul
                       href: developer/module/writing-a-custom-windows-powershell-snap-in.md
             - name: Importera en PowerShell-modul
               href: developer/module/importing-a-powershell-module.md
-        - name: Skriva en Windows PowerShell-provider
+        - name: Skriva en PowerShell-provider
           items:
-            - name: Snabbstart för Windows PowerShell-providers
+            - name: Snabbstart för PowerShell-providers
               href: developer/provider/windows-powershell-provider-quickstart.md
-            - name: Översikt över Windows PowerShell-providers
+            - name: Översikt över PowerShell-providers
               href: developer/provider/windows-powershell-provider-overview.md
               items:
                 - name: Typer av providers
@@ -1092,9 +1102,9 @@
                   href: developer/provider/accessdbprovidersample05.md
                 - name: AccessDBProviderSample06
                   href: developer/provider/accessdbprovidersample06.md
-        - name: Skriva ett Windows PowerShell-värdprogram
+        - name: Skriva ett PowerShell-värdprogram
           items:
-            - name: Snabbstart för Windows PowerShell-värd
+            - name: Snabbstart för PowerShell-värdar
               href: developer/hosting/windows-powershell-host-quickstart.md
             - name: Skapa körningsutrymmen
               href: developer/hosting/creating-runspaces.md
@@ -1114,12 +1124,12 @@
             - name: Exempel på värdprogram
               href: developer/hosting/host-application-samples.md
               items:
-                - name: Windows PowerShell API-exempel
+                - name: API-exempel för PowerShell
                   href: developer/hosting/windows-powershell-api-samples.md
                   items:
-                    - name: Windows PowerShell01 – exempel
+                    - name: PowerShell01-exempel
                       href: developer/hosting/windows-powershell01-sample.md
-                    - name: Windows PowerShell02 – exempel
+                    - name: PowerShell02-exempel
                       href: developer/hosting/windows-powershell02-sample.md
                 - name: Exempel på anpassad värd
                   href: developer/hosting/custom-host-samples.md
@@ -1633,7 +1643,7 @@
                   href: developer/format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
                 - name: WrapTables-element (format)
                   href: developer/format/wraptables-element-format.md
-        - name: Skrivhjälp för Windows PowerShell
+        - name: Skriva hjälp för PowerShell
           items:
             - name: Översikt
               href: developer/help/writing-help-for-windows-powershell-scripts-and-functions.md
@@ -1655,7 +1665,7 @@
                   href: developer/help/examples-of-comment-based-help.md
             - name: Skriva XML-baserade hjälpavsnitt för kommandon
               items:
-                - name: Skriva hjälp för Windows PowerShell-cmdlets
+                - name: Skriva hjälp för PowerShell-cmdletar
                   items:
                     - name: Översikt
                       href: developer/help/writing-help-for-windows-powershell-cmdlets.md
@@ -1679,9 +1689,10 @@
                       href: developer/help/how-to-add-examples-to-a-cmdlet-help-topic.md
                     - name: Lägga till relaterade länkar i ett cmdlet-hjälpavsnitt
                       href: developer/help/how-to-add-related-links-to-a-cmdlet-help-topic.md
-                - name: Skrivhjälp för Windows PowerShell-moduler
-                  href: developer/module/writing-help-for-windows-powershell-modules.md
+                - name: Skriva hjälp för PowerShell-moduler
                   items:
+                    - name: Översikt
+                      href: developer/help/writing-help-for-windows-powershell-modules.md
                     - name: Namnge hjälpfiler
                       href: developer/help/naming-help-files.md
                     - name: Stöd för uppdateringsbar hjälp
@@ -1719,93 +1730,55 @@
                               href: developer/help/how-to-test-updatable-help.md
                         - name: Stöd för onlinehjälp
                           href: developer/help/supporting-online-help.md
-                - name: Skriva hjälp för Windows PowerShell-providers
+                - name: Skriva hjälp för PowerShell-providers
                   items:
                     - name: Lägga till dynamiska parametrar i ett hjälpavsnitt för providers
                       href: developer/help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
                     - name: Lägga till ett ”Se även”-avsnitt i ett hjälpavsnitt för providers
                       href: developer/help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
-        - name: Skapa en Management OData-webbtjänst
+        - name: ETS (Extended Type System)
           items:
-            - name: Översikt
-              href: developer/webservices/creating-a-management-odata-web-service.md
-            - name: Lägga till resurser till en Management OData-webbtjänst
-              href: developer/webservices/adding-resources-to-a-management-odata-web-service.md
-            - name: Implementera anpassad auktorisering för en Management OData-webbtjänst
-              items:
-                - name: Översikt
-                  href: developer/webservices/implementing-custom-authorization-for-a-management-odata-web-service.md
-                - name: Konfigurera rollbaserad auktorisering
-                  href: developer/webservices/configuring-role-based-authorization.md
-                - name: Konfigurationsschema för rollbaserad auktorisering
-                  href: developer/webservices/role-based-authorization-configuration-schema.md
-                - name: Anropa Windows PowerShell-cmdlets med Management OData-webbtjänster
-                  href: developer/webservices/invoking-windows-powershell-cmdlets-with-management-odata-web-services.md
-            - name: Implementera SessionConfiguration för en Management OData-webbtjänst
-              href: developer/webservices/implementing-sessionconfiguration-for-a-management-odata-web-service.md
-            - name: Redigera MOF-schemafilen för en Management OData-webbtjänst
-              href: developer/webservices/authoring-the-mof-schema-file-for-a-management-odata-web-service.md
-            - name: Redigera XML-schemafilen för en Management OData-webbtjänst
-              href: developer/webservices/authoring-the-xml-schema-file-for-a-management-odata-web-service.md
-            - name: Redigera Web.config-filen för en Management OData-webbtjänst
-              href: developer/webservices/authoring-the-web-config-file-for-a-management-odata-web-service.md
-            - name: Distribuera en Management OData-webbtjänst
-              href: developer/webservices/deploying-a-management-odata-web-service.md
-            - name: Associera Management OData-entiteter
-              href: developer/webservices/associating-management-odata-entities.md
-            - name: Management OData IIS Extension-schemafiler
-              items:
-                - name: Översikt
-                  href: developer/webservices/management-odata-iis-extension-schema-files.md
-                - name: Schema för resursmappning
-                  href: developer/webservices/resource-mapping-schema.md
-                - name: Schema för offentliga resurser
-                  href: developer/webservices/public-resource-schema.md
-        - name: Skriva ett Windows PowerShell-arbetsflöde
-          items:
-            - name: Översikt
-              href: developer/workflow/writing-a-windows-powershell-workflow.md
-            - name: Lägga till Windows PowerShell-aktiviteter till Visual Studio Toolbox
-              href: developer/workflow/adding-windows-powershell-activities-to-the-visual-studio-toolbox.md
-            - name: Skapa ett arbetsflöde med Windows PowerShell-aktiviteter
-              href: developer/workflow/creating-a-workflow-with-windows-powershell-activities.md
-            - name: Skapa ett arbetsflöde med hjälp av ett Windows PowerShell-skript
-              href: developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
-            - name: Importera och anropa ett Windows PowerShell-arbetsflöde
-              href: developer/workflow/importing-and-invoking-a-windows-powershell-workflow.md
-            - name: Skapa en arbetsflödesaktivitet från en Windows PowerShell-cmdlet
-              href: developer/workflow/creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md
-            - name: Schemalägga jobb med Windows PowerShell API
-              href: developer/workflow/scheduling-jobs-with-the-windows-powershell-api.md
-            - name: Vanliga arbetsflödesparametrar
-              href: developer/workflow/common-workflow-parameters.md
+            - name: Översikt över ETS
+              href: developer/ets/overview.md
+            - name: ETS-medlemmar
+              href: developer/ets/members.md
+            - name: ETS- medlemsuppsättningar
+              href: developer/ets/membersets.md
+            - name: ETS-egenskaper
+              href: developer/ets/properties.md
+            - name: ETS-metoder
+              href: developer/ets/methods.md
+            - name: ETS-typkonverterare
+              href: developer/ets/typeconverters.md
+            - name: Fel och undantag i ETS
+              href: developer/ets/errors-exceptions.md
         - name: Programmeringsguide för Windows PowerShell
           href: developer/prog-guide/windows-powershell-programmer-s-guide.md
           items:
-            - name: Skapa en Windows PowerShell-provider
+            - name: Så här skapar du en PowerShell-provider
               href: developer/prog-guide/how-to-create-a-windows-powershell-provider.md
               items:
-                - name: Designa en Windows PowerShell-provider
+                - name: Designa en PowerShell-provider
                   href: developer/prog-guide/designing-your-windows-powershell-provider.md
-                - name: Skapa en grundläggande Windows PowerShell-provider
+                - name: Skapa en enkel PowerShell-provider
                   href: developer/prog-guide/creating-a-basic-windows-powershell-provider.md
-                - name: Skapa en Windows PowerShell-enhetsprovider
+                - name: Skapa en PowerShell-enhetsprovider
                   href: developer/prog-guide/creating-a-windows-powershell-drive-provider.md
-                - name: Skapa en Windows PowerShell-objektprovider
+                - name: Skapa en PowerShell-postprovider
                   href: developer/prog-guide/creating-a-windows-powershell-item-provider.md
-                - name: Skapa en Windows PowerShell-containerprovider
+                - name: Skapa en PowerShell-containerprovider
                   href: developer/prog-guide/creating-a-windows-powershell-container-provider.md
-                - name: Skapa en Windows PowerShell-navigeringsprovider
+                - name: Skapa en PowerShell-navigeringsprovider
                   href: developer/prog-guide/creating-a-windows-powershell-navigation-provider.md
-                - name: Skapa en Windows PowerShell-innehållsprovider
+                - name: Skapa en PowerShell-innehållsprovider
                   href: developer/prog-guide/creating-a-windows-powershell-content-provider.md
-                - name: Skapa en Windows PowerShell-egenskapsprovider
+                - name: Skapa en PowerShell-egenskapsprovider
                   href: developer/prog-guide/creating-a-windows-powershell-property-provider.md
             - name: Skapa ett konsolgränssnitt
               href: developer/prog-guide/how-to-create-a-console-shell.md
-            - name: Begrepp relaterade till Windows PowerShell
+            - name: PowerShell-begrepp
               href: developer/prog-guide/windows-powershell-concepts.md
-            - name: Windows PowerShell-exempelkod
+            - name: PowerShell-exempelkod
               href: developer/prog-guide/windows-powershell-sample-code.md
               items:
                 - name: AccessDbProviderSample01 – kodexempel
@@ -1823,68 +1796,68 @@
                 - name: GetProc01 – kodexempel
                   href: developer/prog-guide/getproc01-code-samples.md
                   items:
-                    - name: 'GetProc01 (C#) – kodexempel'
+                    - name: GetProc01 (C#) – kodexempel
                       href: developer/prog-guide/getproc01-csharp-sample-code.md
                     - name: GetProc01 (VB.NET) – kodexempel
                       href: developer/prog-guide/getproc01-vb-net-sample-code.md
                 - name: GetProc02 – kodexempel
                   href: developer/prog-guide/getproc02-code-samples.md
                   items:
-                    - name: 'GetProc02 (C#) – kodexempel'
+                    - name: GetProc02 (C#) – kodexempel
                       href: developer/prog-guide/getproc02-csharp-sample-code.md
                     - name: GetProc02 (VB.NET) – kodexempel
                       href: developer/prog-guide/getproc02-vb-net-sample-code.md
                 - name: GetProc03 – kodexempel
                   href: developer/prog-guide/getproc03-code-samples.md
                   items:
-                    - name: 'GetProc03 (C#) – kodexempel'
+                    - name: GetProc03 (C#) – kodexempel
                       href: developer/prog-guide/getproc03-csharp-sample-code.md
                     - name: GetProc03 (VB.NET) – kodexempel
                       href: developer/prog-guide/getproc03-vb-net-sample-code.md
                 - name: GetProc04 – kodexempel
                   href: developer/prog-guide/getproc04-code-samples.md
                   items:
-                    - name: 'GetProc04 (C#) – kodexempel'
+                    - name: GetProc04 (C#) – kodexempel
                       href: developer/prog-guide/getproc04-csharp-sample-code.md
                     - name: GetProc04 (VB.NET) – kodexempel
                       href: developer/prog-guide/getproc04-vb-net-sample-code.md
                 - name: GetProc05 – kodexempel
                   href: developer/prog-guide/getproc05-code-samples.md
                   items:
-                    - name: 'GetProc05 (C#) – kodexempel'
+                    - name: GetProc05 (C#) – kodexempel
                       href: developer/prog-guide/getproc05-csharp-sample-code.md
                     - name: GetProc05 (VB.NET) – kodexempel
                       href: developer/prog-guide/getproc05-vb-net-sample-code.md
                 - name: StopProc01 – kodexempel
                   href: developer/prog-guide/stopproc01-code-samples.md
                   items:
-                    - name: 'StopProc01 (C#) – kodexempel'
+                    - name: StopProc01 (C#) – kodexempel
                       href: developer/prog-guide/stopproc01-csharp-sample-code.md
                 - name: StopProcessSample04 – kodexempel
                   href: developer/prog-guide/stopprocesssample04-code-samples.md
                   items:
-                    - name: 'StopProcessSample04 (C#) – kodexempel'
+                    - name: StopProcessSample04 (C#) – kodexempel
                       href: developer/prog-guide/stopprocesssample04-csharp-sample-code.md
                     - name: StopProcessSample04 (VB.NET) – kodexempel
                       href: developer/prog-guide/stopprocesssample04-vb-net-sample-code.md
                 - name: Runspace01 – kodexempel
                   href: developer/prog-guide/runspace01-code-samples.md
                   items:
-                    - name: 'Runspace01 (C#) – kodexempel'
+                    - name: Runspace01 (C#) – kodexempel
                       href: developer/prog-guide/runspace01-csharp-code-sample.md
                     - name: Runspace01 (VB.NET) – kodexempel
                       href: developer/prog-guide/runspace01-vb-net-code-sample.md
                 - name: Runspace02 – kodexempel
                   href: developer/prog-guide/runspace02-code-samples.md
                   items:
-                    - name: 'Runspace02 (C#) – kodexempel'
+                    - name: Runspace02 (C#) – kodexempel
                       href: developer/prog-guide/runspace02-csharp-code-sample.md
                     - name: Runspace02 (VB.NET) – kodexempel
                       href: developer/prog-guide/runspace02-vb-net-code-sample.md
                 - name: RunSpace03 – kodexempel
                   href: developer/prog-guide/runspace03-code-samples.md
                   items:
-                    - name: 'RunSpace03 (C#) – kodexempel'
+                    - name: RunSpace03 (C#) – kodexempel
                       href: developer/prog-guide/runspace03-csharp-code-sample.md
                     - name: RunSpace03 (VB.NET) – kodexempel
                       href: developer/prog-guide/runspace03-vb-net-code-sample.md
