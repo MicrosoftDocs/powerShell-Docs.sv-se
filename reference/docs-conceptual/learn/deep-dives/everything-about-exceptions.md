@@ -3,12 +3,12 @@ title: Allt du ville veta om undantag
 description: Fel hanteringen är bara en del av livs cykeln när den kommer att skriva kod.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 3ecb1669fa8d58bc742d4e8e77051b3ace4452a0
-ms.sourcegitcommit: 4a40e3ea3601c02366be3495a5dcc7f4cac9f1ea
+ms.openlocfilehash: cd17ae6b5ded052c93923b648155a4dda8956b34
+ms.sourcegitcommit: 94c39b0d36b948d3a62707ae8a3be00efe606434
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84337190"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90012569"
 ---
 # <a name="everything-you-wanted-to-know-about-exceptions"></a>Allt du ville veta om undantag
 
@@ -82,7 +82,7 @@ Jag nämnde att det `Write-Error` inte uppstår något avslutande fel som standa
 Write-Error -Message "Houston, we have a problem." -ErrorAction Stop
 ```
 
-Tack för att du Pettersson dagligen för att påminna om hur du använder `-ErrorAction Stop` det här sättet.
+Tack för att du Pettersson Dailey för att påminna om hur du använder `-ErrorAction Stop` det här sättet.
 
 #### <a name="cmdlet--erroraction-stop"></a>Cmdlet-ErrorAction-stopp
 
@@ -168,7 +168,7 @@ I de här exemplen använde jag en ogiltig sökväg i `ReadAllText` för att gen
 
 ### <a name="psitemtostring"></a>PSItem. ToString ()
 
-Detta ger dig det rensade meddelande som ska användas vid loggning och allmänna utdata. `ToString()`anropas automatiskt om `$PSItem` är placerad inuti en sträng.
+Detta ger dig det rensade meddelande som ska användas vid loggning och allmänna utdata. `ToString()` anropas automatiskt om `$PSItem` är placerad inuti en sträng.
 
 ```powershell
 catch
@@ -583,5 +583,5 @@ Nu när jag har tagit tid att skriva om undantags hantering i den här informati
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [Reddit/r/PowerShell-community]: https://www.reddit.com/r/PowerShell/comments/64866o/kevmar_all_net_46_exceptions_list_for_use_with/
 [Den stora listan med .NET-undantag]: https://powershellexplained.com/2017-04-07-all-dotnet-exception-list
-[FileNotFoundException]: https://docs.microsoft.com/dotnet/api/System.IO.FileNotFoundException
-[.NET-dokumentation]: https://docs.microsoft.com/dotnet/api
+[FileNotFoundException]: /dotnet/api/System.IO.FileNotFoundException
+[.NET-dokumentation]: /dotnet/api

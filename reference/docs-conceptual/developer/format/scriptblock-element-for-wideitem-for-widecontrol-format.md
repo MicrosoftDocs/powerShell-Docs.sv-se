@@ -1,19 +1,12 @@
 ---
 title: Script block-element för WideItem för WideControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e00e8f36-76f2-49a0-9b02-3a2a7fceb2dd
-caps.latest.revision: 8
-ms.openlocfilehash: 6534e9dbfbe0dedf60dadd6467cff9ad9b447ba4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: be649d6de0d2dfa6bad14f2d7476cced9cd6cb6d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353846"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787605"
 ---
 # <a name="scriptblock-element-for-wideitem-for-widecontrol-format"></a>ScriptBlock-element för WideItem för WideControl (format)
 
@@ -29,15 +22,15 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `ScriptBlock`-elementet.
+I följande avsnitt beskrivs attributen, underordnade element och `ScriptBlock` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -49,13 +42,13 @@ Ingen.
 
 Ange det skript vars värde visas.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Mer information om komponenterna i en bred vy finns i [skapa en bred vy](./creating-a-wide-view.md).
 
 ## <a name="example"></a>Exempel
 
-I det här exemplet visas ett `WideItem`-element som definierar ett skript vars värde visas i vyn.
+Det här exemplet visar ett- `WideItem` element som definierar ett skript vars värde visas i vyn.
 
 ```xml
 <WideItem>
@@ -69,4 +62,4 @@ I det här exemplet visas ett `WideItem`-element som definierar ett skript vars 
 
 [Skapa en bred vy](./creating-a-wide-view.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

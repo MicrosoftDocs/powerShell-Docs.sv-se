@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Avinstallera WMF 5.0
-ms.openlocfilehash: f562a4a4506bfdede6b23bd186b80f40cc9e45ca
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: fa76bacb4b62025d0d2350b9a0e072068ca83ab1
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810192"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236313"
 ---
 # <a name="uninstallation-instructions"></a>Avinstallations anvisningar
 
 ## <a name="using-command-prompt"></a>Använda kommando tolken
 
 1. Öppna **kommando tolken.**
-2. Kör [Windows Update fristående start](https://support.microsoft.com/en-us/kb/934307) programmet som det visas nedan:
+2. Kör [Windows Update fristående start](https://support.microsoft.com/kb/934307) programmet som det visas nedan:
 
 På Windows Server 2012 R2 och Windows 8,1:
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 04/28/2020
+ms.date: 08/31/2020
 title: Använda experimentella funktioner i PowerShell
 description: Visar en lista över tillgängliga experimentella funktioner och hur du använder dem.
-ms.openlocfilehash: 72a4309d6eeede4cd2ff7c38ce8e99ce3ace30eb
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: f6bd17b0a3bb70d0b538dd6615b905082c87f800
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810563"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236279"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Använda experimentella funktioner i PowerShell
 
@@ -24,7 +24,7 @@ Mer information om hur du aktiverar eller inaktiverar dessa funktioner finns [ab
 
 Den här artikeln beskriver de experimentella funktioner som är tillgängliga och hur du använder funktionen.
 
-|                            Name                            |   6.2   |   7.0   | 7,1 (för hands version) |
+|                            Name                            |   6,2   |   7,0   | 7,1 (för hands version) |
 | ---------------------------------------------------------- | :-----: | :-----: | :-----------: |
 | PSTempDrive (vanlig i PS 7.0 +)                        | &check; |         |               |
 | PSUseAbbreviationExpansion (vanlig i PS 7.0 +)         | &check; |         |               |
@@ -34,12 +34,36 @@ Den här artikeln beskriver de experimentella funktioner som är tillgängliga o
 | PSDesiredStateConfiguration.InvokeDscResource              |         | &check; |    &check;    |
 | PSNullConditionalOperators                                 |         | &check; |    &check;    |
 | PSUnixFileStat (endast Windows)                          |         | &check; |    &check;    |
-| PSNativePSPathResolution                                   |         |         |    &check;    |
+| PSNativePSPathResolution (vanlig i PS 7.1 +)           |         |         |    &check;    |
 | PSCultureInvariantReplaceOperator                          |         |         |    &check;    |
+| PSNotApplyErrorActionToStderr                              |         |         |    &check;    |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Microsoft. PowerShell. Utility. PSManageBreakpointsInRunspace
 
-Aktiverar parametern **BreakAll** i `Debug-Runspace` `Debug-Job` cmdletarna och för att tillåta att användarna bestämmer om de vill att PowerShell ska brytas direkt på den aktuella platsen när de bifogar en fel sökare.
+I PowerShell 7,0 aktiverar experimentet **BreakAll** -parametern i `Debug-Runspace` `Debug-Job` cmdletarna och gör att användarna kan välja om de vill att PowerShell ska brytas direkt på den aktuella platsen när de bifogar en fel sökare.
+
+I PowerShell 7,1 lägger detta experiment till att även lägga till parametern **körnings utrymme** i `*-PSBreakpoint` cmdletarna.
+
+- `Disable-PSBreakpoint`
+- `Enable-PSBreakpoint`
+- `Get-PSBreakpoint`
+- `Remove-PSBreakpoint`
+- `Set-PSBreakpoint`
+
+Parametern **körnings utrymme** anger ett **körnings utrymme** -objekt som interagerar med Bryt punkter i den angivna körnings utrymme.
+
+```powershell
+Start-Job -ScriptBlock {
+    Set-PSBreakpoint -Command Start-Sleep
+    Start-Sleep -Seconds 10
+}
+
+$runspace = Get-Runspace -Id 1
+
+$breakpoint = Get-PSBreakPoint -Runspace $runspace
+```
+
+I det här exemplet startas ett jobb och en Bryt punkt anges som Bryt när körs `Set-PSBreakPoint` . Körnings utrymme lagras i en variabel och skickas till `Get-PSBreakPoint` kommandot med parametern **körnings utrymme** . Sedan kan du kontrol lera Bryt punkten i `$breakpoint` variabeln.
 
 ## <a name="pscommandnotfoundsuggestion"></a>PSCommandNotFoundSuggestion
 
@@ -129,6 +153,15 @@ I Windows, om sökvägen börjar med `~` , är det också som matchas med den fu
 - Om sökvägen inte är en PSDrive eller `~` (i Windows) sker inte Sök vägs normalisering
 - Om sökvägen är i enkla citat tecken matchas den inte och behandlas som literal
 
+> [!NOTE]
+> Den här funktionen har flyttat från experiment fasen och är en vanlig funktion i PowerShell 7,1 och högre.
+
+## <a name="psnotapplyerroractiontostderr"></a>PSNotApplyErrorActionToStderr
+
+När den här experimentella funktionen är aktive rad skrivs fel poster som omdirigeras från interna kommandon, t. ex. När du använder omdirigerings operatorer ( `2>&1` ), inte till `$Error` variabeln och Preference-variabeln `$ErrorActionPreference` påverkar inte de omdirigerade utdata.
+
+Många interna kommandon skriver till `stderr` som en alternativ ström för ytterligare information. Det här beteendet kan orsaka förvirring vid fel sökning. Du kan också förlora ytterligare utdata om `$ErrorActionPreference` är inställt på ett tillstånd som stänger av utdata.
+
 ## <a name="psnullconditionaloperators"></a>PSNullConditionalOperators
 
 Introducerar nya operatörer för null-ansvariga för villkorlig medlem- `?.` och `?[]` . Null-ansvariga för medlems åtkomst kan användas för skalära typer och mat ris typer. Returnera värdet för den använda medlemmen om variabeln inte är null. Om värdet för variabeln är null returnerar du null.
@@ -164,7 +197,7 @@ Den här funktionen ger nya beteenden för att inkludera data från UNIX **stat*
 Utdata från `Get-ChildItem` bör se ut ungefär så här:
 
 ```powershell
-PS> dir | select -first 4 -skip 5
+dir | select -first 4 -skip 5
 
 
     Directory: /Users/jimtru/src/github/forks/JamesWTruher/PowerShell-1
@@ -181,10 +214,10 @@ drwxr-xr-x jimtru    staff         11/8/2019 10:37         896 tools
 
 Den här funktionen gör det möjligt att slutföra nedtvingade cmdlets och funktioner:
 
-Ett exempel:
+Exempel:
 
-- `i-psdf<tab>`Returnerar `Import-PowerShellDataFile` .
-- `u-akvmssdr<tab>`avkastning`Undo-AzKeyVaultManagedStorageSasDefinitionRemoval`
+- `i-psdf<tab>` Returnerar `Import-PowerShellDataFile` .
+- `u-akvmssdr<tab>` avkastning `Undo-AzKeyVaultManagedStorageSasDefinitionRemoval`
 
 Detta fungerar bara för slut för ande av flikar (interaktiv användning), så det `i-psdf` är inte ett giltigt cmdlet-namn i ett skript.
 

@@ -1,24 +1,26 @@
 ---
-ms.date: 06/12/2017
+ms.date: 08/11/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: Anropa DSC-resursmetoder direkt
-ms.openlocfilehash: 9955de4f284c182a724b004c17080a8b8e19808d
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 029a278c938e414820e172b85fac3cb3ad4b4afa
+ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692408"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162502"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>Anropa DSC-resursmetoder direkt
 
 >Gäller för: Windows PowerShell 5,0
 
-Du kan använda cmdleten [Invoke-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) för att direkt anropa funktioner eller metoder för en DSC-resurs (funktionen **Get-TargetResource**, **set-TargetResource**och **test-TargetResource** i en MOF-baserad resurs, eller **Get**-, **set**-och **test** metoder för en klass-baserad resurs).
-Detta kan användas av tredje part som vill använda DSC-resurser eller som ett användbart verktyg när du utvecklar resurser.
+Du kan använda cmdleten [Invoke-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) för att direkt anropa funktioner eller metoder för en DSC-resurs ( `Get-TargetResource` , `Set-TargetResource` , och `Test-TargetResource` funktioner i en MOF-baserad resurs, eller metoderna **Get**, **set**och **test** för en klass-baserad resurs). Detta kan användas av tredje part som vill använda DSC-resurser eller som ett användbart verktyg när du utvecklar resurser.
+
+> [!NOTE]
+> I PowerShell 7.0 + `Invoke-DscResource` har inte längre stöd för att anropa WMI DSC-resurser. Detta inkluderar **fil** -och **logg** resurser i **PSDesiredStateConfiguration**.
 
 Denna cmdlet används vanligt vis i kombination med en metaconfiguration `refreshMode = 'Disabled'` -egenskap, men den kan användas oavsett vad **refreshMode** är inställt på.
 
-När du anropar cmdleten **Invoke-dscresource Keyword Supports** anger du vilken metod eller funktion som ska anropas med hjälp av **metod** parametern. Du anger egenskaperna för resursen genom att skicka en hash-egenskap som värde för **egenskaps** parametern.
+När du anropar `Invoke-DscResource` cmdleten anger du vilken metod eller funktion som ska anropas med hjälp av **metod** parametern. Du anger egenskaperna för resursen genom att skicka en hash-egenskap som värde för **egenskaps** parametern.
 
 Följande är exempel på anrop av resurs metoder direkt:
 
@@ -49,7 +51,8 @@ $result = Invoke-DscResource -Name File -Method Get -Property @{
 $result.ItemValue | fl
 ```
 
->**Obs:** Det finns inte stöd för direkt anrop av sammansatta resurs metoder. Anropa i stället metoderna för de underliggande resurserna som utgör den sammansatta resursen.
+>[!NOTE]
+> Det finns inte stöd för direkt anrop av sammansatta resurs metoder. Anropa i stället metoderna för de underliggande resurserna som utgör den sammansatta resursen.
 
 ## <a name="see-also"></a>Se även
 

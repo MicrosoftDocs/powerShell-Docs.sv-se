@@ -1,19 +1,19 @@
 ---
-ms.date: 08/14/2018
-keywords: PowerShell, cmdlet
+ms.date: 08/21/2020
+keywords: powershell,cmdlet
 title: Kör fjärrkommandon
-ms.openlocfilehash: d6609deafd8dec4f34a8412439d87dacd20d46f1
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: ab6d464c31144349ee38cd01e82a2cf1470aaa95
+ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030312"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799629"
 ---
 # <a name="running-remote-commands"></a>Kör fjärrkommandon
 
 Du kan köra kommandon på en eller flera hundra datorer med ett enda PowerShell-kommando. Windows PowerShell stöder fjärrhantering med hjälp av olika tekniker, inklusive WMI, RPC och WS-Management.
 
-PowerShell-kärnan stöder WMI, WS-Management och SSH-fjärrkommunikation. RPC stöds inte längre.
+PowerShell-kärnan stöder WMI, WS-Management och SSH-fjärrkommunikation. I PowerShell 6 stöds inte längre RPC. I PowerShell 7 och senare stöds endast RPC i Windows.
 
 Mer information om fjärr kommunikation i PowerShell Core finns i följande artiklar:
 
@@ -55,8 +55,7 @@ I den här artikeln listas bara några av dem. Mer information finns i [om fjär
 
 ### <a name="start-an-interactive-session"></a>Starta en interaktiv session
 
-Om du vill starta en interaktiv session med en enda fjärrdator använder du cmdleten [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) .
-Om du till exempel vill starta en interaktiv session med Server01 fjärrdator skriver du:
+Om du vill starta en interaktiv session med en enda fjärrdator använder du cmdleten [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) . Om du till exempel vill starta en interaktiv session med Server01 fjärrdator skriver du:
 
 ```powershell
 Enter-PSSession Server01
@@ -94,9 +93,9 @@ LCID    Name     DisplayName               PSComputerName
 
 ### <a name="run-a-script"></a>Kör ett skript
 
-Om du vill köra ett skript på en eller flera fjärrdatorer använder du parametern sökväg `Invoke-Command` för cmdleten. Skriptet måste vara på eller tillgängligt för den lokala datorn. Resultatet returneras till den lokala datorn.
+Om du vill köra ett skript på en eller flera fjärrdatorer använder du parametern sökväg för `Invoke-Command` cmdleten. Skriptet måste vara på eller tillgängligt för den lokala datorn. Resultatet returneras till den lokala datorn.
 
-Följande kommando kör till exempel skriptet DiskCollect. ps1 på fjärrdatorerna, Server01 och Server02.
+Följande kommando kör till exempel DiskCollect.ps1-skriptet på fjärrdatorerna, Server01 och Server02.
 
 ```powershell
 Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
@@ -118,7 +117,7 @@ Följande kommando kör till exempel ett Get-HotFix-kommando i sessionerna i $s-
 Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
-Nu kan du använda data i `$h` variabeln med andra kommandon i samma session. Resultaten visas på den lokala datorn. Ett exempel:
+Nu kan du använda data i `$h` variabeln med andra kommandon i samma session. Resultaten visas på den lokala datorn. Exempel:
 
 ```powershell
 Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
@@ -130,7 +129,7 @@ Windows PowerShell-fjärrhantering börjar bara här. Genom att använda de cmdl
 
 Windows PowerShell innehåller en WSMan-Provider. Providern skapar en `WSMAN:` enhet som gör det möjligt att navigera i en hierarki med konfigurations inställningar på den lokala datorn och fjärrdatorer.
 
-Mer information om WSMan-providern finns i [WSMan-providern](https://technet.microsoft.com/library/dd819476.aspx) och [om WS-Management-cmdletar](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets), eller i Windows PowerShell- `Get-Help wsman`konsolen skriver du.
+Mer information om WSMan-providern finns i [WSMan-providern](https://technet.microsoft.com/library/dd819476.aspx) och [om WS-Management-cmdletar](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets), eller i Windows PowerShell-konsolen skriver du `Get-Help wsman` .
 
 Mer information finns i:
 

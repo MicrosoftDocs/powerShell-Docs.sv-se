@@ -1,19 +1,20 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-skript resurs
-ms.openlocfilehash: 50d4667396c8c619079288ec51599152ed2d6cd5
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 9b89981c17e87b3681c6416c7dee44a75c432ea1
+ms.sourcegitcommit: eb6a7c01e6385809656ac828b9211683e0b1a6fe
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557030"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89041137"
 ---
 # <a name="dsc-script-resource"></a>DSC-skript resurs
 
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
-**Skript** resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att köra Windows PowerShell-skript block på målnoden. **Skript** resursen använder **GetScript**-, **SetScript**-och **TestScript** -egenskaper som innehåller skript block som du definierar för att utföra motsvarande DSC-tillstånds åtgärder.
+`Script`Resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att köra Windows PowerShell-skript block på målnoden. `Script`Resursen använder `GetScript` 
+ `SetScript` och `TestScript` egenskaper som innehåller skript block som du definierar för att utföra motsvarande DSC-tillstånds åtgärder.
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,23 +31,23 @@ Script [string] #ResourceName
 ```
 
 > [!NOTE]
-> **GetScript**-, **TestScript**-och **SetScript** -block lagras som strängar.
+> `GetScript``TestScript`och `SetScript` block lagras som strängar.
 
 ## <a name="properties"></a>Egenskaper
 
-|Egenskap |Beskrivning |
-|---|---|
-|GetScript |Ett skript block som returnerar nodens aktuella tillstånd. |
-|SetScript |Ett skript block som DSC använder för att genomdriva efterlevnad om noden inte har önskat tillstånd. |
-|TestScript |Ett skript block som avgör om noden har önskat tillstånd. |
-|Autentiseringsuppgift |Anger de autentiseringsuppgifter som ska användas för att köra det här skriptet, om autentiseringsuppgifter krävs. |
+|  Egenskap  |                                          Beskrivning                                          |
+| ---------- | --------------------------------------------------------------------------------------------- |
+| GetScript  | Ett skript block som returnerar nodens aktuella tillstånd.                                    |
+| SetScript  | Ett skript block som DSC använder för att genomdriva efterlevnad om noden inte har önskat tillstånd. |
+| TestScript | Ett skript block som avgör om noden har önskat tillstånd.                           |
+| Autentiseringsuppgift | Anger de autentiseringsuppgifter som ska användas för att köra det här skriptet, om autentiseringsuppgifter krävs.        |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 
-|Egenskap |Beskrivning |
-|---|---|
-|DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
-|PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
+|       Egenskap       |                                            Beskrivning                                            |
+| -------------------- | ------------------------------------------------------------------------------------------------- |
+| DependsOn            | Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. |
+| PsDscRunAsCredential | Anger autentiseringsuppgifter för att köra hela resursen som.                                           |
 
 > [!NOTE]
 > Den gemensamma egenskapen **PsDscRunAsCredential** har lagts till i WMF 5,0 för att tillåta körning av DSC-resurser i kontexten för andra autentiseringsuppgifter. Mer information finns i [använda autentiseringsuppgifter med DSC-resurser](../../../configurations/runasuser.md).
@@ -55,21 +56,20 @@ Script [string] #ResourceName
 
 #### <a name="getscript"></a>GetScript
 
-DSC använder inte utdata från **GetScript**. Cmdlet: en [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) kör **GetScript** för att hämta en nods aktuella status. Ett retur värde krävs inte från **GetScript**. Om du anger ett retur värde måste det vara en hash som innehåller en **resultat** nyckel vars värde är en sträng.
+DSC använder inte utdata från `GetScript` cmdleten [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) `GetScript` för att hämta en nods aktuella status. Ett retur värde krävs inte från `GetScript` om du anger ett retur värde, det måste vara en hash-text som innehåller en **resultat** nyckel vars värde är en sträng.
 
 #### <a name="testscript"></a>TestScript
 
-**TestScript** körs av DSC för att avgöra om **SetScript** ska köras. Om **TestScript** returnerar `$false` Kör DSC **SetScript** för att återställa noden till önskat tillstånd. Det måste returnera ett booleskt värde. Resultatet av `$true` indikerar att noden är kompatibel och att **SetScript** inte ska köras.
+`TestScript` körs av DSC för att avgöra om `SetScript` ska köras. Om `TestScript` returnerar `$false` , körs DSC `SetScript` för att flytta tillbaka noden till önskat tillstånd. Det måste returnera ett booleskt värde. Resultatet av `$true` indikerar att noden är kompatibel och `SetScript` inte ska köras.
 
-Cmdleten [test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) kör **TestScript** för att hämta nodernas kompatibilitet med **skript** resurserna.
-I det här fallet körs dock inte **SetScript** , oavsett vilket **TestScript** -block som returneras.
+Cmdleten [test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) körs `TestScript` för att hämta nodernas kompatibilitet med `Script` resurserna. I det här fallet körs dock `SetScript` inte, oavsett vilket `TestScript` block som returneras.
 
 > [!NOTE]
-> Alla utdata från din **TestScript** är en del av dess retur värde. PowerShell tolkar ignorerade utdata som icke-noll, vilket innebär att din **TestScript** returneras `$true` oavsett nodens tillstånd. Detta resulterar i oförutsägbara resultat, falska positiva identifieringar och orsakar problem under fel sökningen.
+> Alla utdata från din `TestScript` är en del av dess retur värde. PowerShell tolkar ignorerade utdata som icke-noll, vilket innebär att dina data `TestScript` returneras `$true` oavsett nodens tillstånd. Detta resulterar i oförutsägbara resultat, falska positiva identifieringar och orsakar problem under fel sökningen.
 
 #### <a name="setscript"></a>SetScript
 
-**SetScript** ändrar noden för att framtvinga det önskade läget. Den anropas av DSC om **TestScript** -skript blocket returnerar `$false` . **SetScript** får inte ha något retur värde.
+`SetScript` ändrar noden för att framtvinga det önskade läget. Den anropas av DSC om `TestScript` skript blocket returnerar `$false` . `SetScript`Ska inte ha något retur värde.
 
 ## <a name="examples"></a>Exempel
 
@@ -100,8 +100,8 @@ Configuration ScriptTest
 
 ### <a name="example-2-compare-version-information-using-a-script-resource"></a>Exempel 2: jämför versions information med hjälp av en skript resurs
 
-I det här exemplet hämtas den *kompatibla* versions informationen från en textfil på den redigerings datorn och lagras i `$version` variabeln. När du genererar nodens MOF-fil ersätter DSC `$using:version` variablerna i varje skript block med värdet för `$version` variabeln.
-Under körningen lagras den *kompatibla* versionen i en textfil på varje nod och jämförs och uppdateras vid efterföljande körningar.
+I det här exemplet hämtas den _kompatibla_ versions informationen från en textfil på den redigerings datorn och lagras i `$version` variabeln. När du genererar nodens MOF-fil ersätter DSC `$using:version` variablerna i varje skript block med värdet för `$version` variabeln.
+Under körningen lagras den _kompatibla_ versionen i en textfil på varje nod och jämförs och uppdateras vid efterföljande körningar.
 
 ```powershell
 $version = Get-Content 'version.txt'
@@ -122,9 +122,9 @@ Configuration ScriptTest
                 # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
                 $state = [scriptblock]::Create($GetScript).Invoke()
 
-                if( $state['Result'] -eq $using:version )
+                if( $state.Result -eq $using:version )
                 {
-                    Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
+                    Write-Verbose -Message ('{0} -eq {1}' -f $state.Result,$using:version)
                     return $true
                 }
                 Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
@@ -140,7 +140,8 @@ Configuration ScriptTest
 
 ### <a name="example-3-utilizing-parameters-in-a-script-resource"></a>Exempel 3: använda parametrar i en skript resurs
 
-I det här exemplet används parametrar från skript resursen genom att använda `using` omfånget. Observera att **ConfigurationData** kan nås på ett liknande sätt. Till exempel 2 förväntas en version lagras i en lokal fil på målnoden. Både den lokala fil Sök vägen och versionen kan konfigureras för att dock koppla ifrån kod från konfigurations data.
+I det här exemplet används parametrar från skript resursen genom att använda `using` omfånget.
+Observera att **ConfigurationData** kan nås på ett liknande sätt. Till exempel 2 förväntas en version lagras i en lokal fil på målnoden. Både den lokala fil Sök vägen och versionen kan konfigureras för att dock koppla ifrån kod från konfigurations data.
 
 ```powershell
 Configuration ScriptTest
@@ -196,3 +197,7 @@ instance of MSFT_ScriptResource as $MSFT_ScriptResource1ref
  SetScript = ...;
 };
 ```
+
+### <a name="known-limitations"></a>Kända begränsningar
+
+- Autentiseringsuppgifter som skickas i en skript resurs är inte alltid tillförlitliga när du använder en pull-eller push-server-modell. Vi rekommenderar att du använder en fullständig resurs i stället för att använda en skript resurs i det här fallet.

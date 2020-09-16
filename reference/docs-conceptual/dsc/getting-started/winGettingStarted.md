@@ -2,12 +2,12 @@
 ms.date: 08/15/2019
 keywords: DSC, PowerShell, konfiguration, installation
 title: Kom igång med önskad tillstånds konfiguration (DSC) för Windows
-ms.openlocfilehash: 2add2c936e60c0c9446bf4b398fbf7b4bd6407f7
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 00e1cf545b19f054b4b1ff468c9f6ad94e5cef55
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75416169"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236330"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Kom igång med önskad tillstånds konfiguration (DSC) för Windows
 
@@ -31,7 +31,7 @@ Den fristående produkt-SKU: n för [Microsoft Hyper-V server](/windows-server/v
 
 ## <a name="installing-dsc"></a>Installerar DSC
 
-PowerShell Desired State Configuration ingår i Windows och uppdateras via Windows Management Framework. Den senaste versionen är [Windows Management Framework 5,1](https://www.microsoft.com/en-us/download/details.aspx?id=54616).
+PowerShell Desired State Configuration ingår i Windows och uppdateras via Windows Management Framework. Den senaste versionen är [Windows Management Framework 5,1](https://www.microsoft.com/download/details.aspx?id=54616).
 
 > [!NOTE]
 > Du behöver inte aktivera Windows Server-funktionen "DSC-service" för att kunna hantera en dator med DSC.
@@ -43,7 +43,7 @@ I följande avsnitt beskrivs hur du skapar och kör DSC-konfigurationer på Wind
 
 ### <a name="creating-a-configuration-mof-document"></a>Skapa ett MOF-dokument för konfiguration
 
-Windows PowerShell `Configuration` -nyckelordet används för att skapa en konfiguration.
+Windows PowerShell- `Configuration` nyckelordet används för att skapa en konfiguration.
 Följande steg beskriver hur du skapar ett konfigurations dokument med hjälp av Windows PowerShell.
 
 #### <a name="define-a-configuration-and-generate-the-configuration-document"></a>Definiera en konfiguration och generera konfigurations dokumentet:
@@ -83,7 +83,7 @@ Install-Module 'PSDscResources' -Verbose
 #### <a name="apply-the-configuration-to-the-machine"></a>Tillämpa konfigurationen på datorn
 
 > [!NOTE]
-> För att DSC ska kunna köras måste Windows konfigureras för att ta emot PowerShell-fjärrkommandon även när du `localhost` kör en konfiguration. För att enkelt konfigurera din miljö på rätt sätt `Set-WsManQuickConfig -Force` kan du bara köra i en upphöjd PowerShell-Terminal.
+> För att DSC ska kunna köras måste Windows konfigureras för att ta emot PowerShell-fjärrkommandon även när du kör en `localhost` konfiguration. För att enkelt konfigurera din miljö på rätt sätt kan du bara köra `Set-WsManQuickConfig -Force` i en upphöjd PowerShell-Terminal.
 
 Konfigurations dokument (MOF-filer) kan tillämpas på machineusing [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) -cmdlet.
 
@@ -124,5 +124,5 @@ Set-DSCLocalConfigurationManager -Path 'c:\metaconfig\localhost.meta.mof' -Verbo
 
 ## <a name="windows-powershell-desired-state-configuration-log-files"></a>Loggfiler för önskad tillstånds konfiguration i Windows PowerShell
 
-Loggar för DSC skrivs till händelse loggen i Windows i sökvägen `Microsoft-Windows-Dsc/Operational`.
+Loggar för DSC skrivs till händelse loggen i Windows i sökvägen `Microsoft-Windows-Dsc/Operational` .
 Ytterligare loggar för fel sökning kan aktive ras enligt stegen i [var DSC-händelseloggar](/powershell/scripting/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs).

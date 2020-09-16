@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 08/28/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC WindowsOptionalFeature-resurs
-ms.openlocfilehash: bca6294db74c92a2c1940cfbe00305542a1c5d19
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: f24173c1a9ed605bac43767a9da2d4dbded78883
+ms.sourcegitcommit: 06b6f4012e4eca71d414733cdba23ef75535223c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565374"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89093258"
 ---
 # <a name="dsc-windowsoptionalfeature-resource"></a>DSC WindowsOptionalFeature-resurs
 
@@ -15,13 +15,15 @@ ms.locfileid: "83565374"
 
 **WindowsOptionalFeature** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att säkerställa att valfria funktioner aktive ras på en målnod.
 
+> [!NOTE]
+> **WindowsOptionalFeature** fungerar bara på Windows-klient datorer som Windows 10.
+
 ## <a name="syntax"></a>Syntax
 
 ```Syntax
 WindowsOptionalFeature [string] #ResourceName
 {
     Name = [string]
-    [ Source = [string[]] ]
     [ NoWindowsUpdateCheck = [bool] ]
     [ RemoveFilesOnDisable = [bool] ]
     [ LogLevel = [string] { ErrorsOnly | ErrorsAndWarning | ErrorsAndWarningAndInformation }  ]
@@ -37,7 +39,6 @@ WindowsOptionalFeature [string] #ResourceName
 |Egenskap |Beskrivning |
 |---|---|
 |Name |Anger namnet på den funktion som du vill se är aktive rad eller inaktive rad. |
-|Källa |Inte implementerat. |
 |NoWindowsUpdateCheck |Anger om DISM-kontakter Windows Update (WU) vid sökning efter källfiler för att aktivera en funktion. Om inte `$true` DISM kontaktar Wu. |
 |RemoveFilesOnDisable |Ange till `$true` om du vill ta bort alla filer som är associerade med funktionen när **Se** till att den är inställd på **frånvarande**. |
 |Loggnivå |Den högsta utmatnings nivån som visas i loggarna. Godkända värden är: **ErrorsOnly**, **ErrorsAndWarning**och **ErrorsAndWarningAndInformation**. |

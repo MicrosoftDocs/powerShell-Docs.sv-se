@@ -2,12 +2,12 @@
 ms.date: 07/09/2019
 keywords: DSC, GPO, PowerShell, konfiguration, installation
 title: Snabb start – konvertera grupprincip till DSC
-ms.openlocfilehash: a9ce9cecd71fe00d2908024a3ee474ec836af3ba
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 852710f261ea1d57228c05d4093c1d78584e0ca5
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808256"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236245"
 ---
 # <a name="quickstart-convert-group-policy-into-dsc"></a>Snabb start: konvertera grupprincip till DSC
 
@@ -15,15 +15,15 @@ ms.locfileid: "83808256"
 
 Du kan generera en DSC-konfiguration från en grupprincip eller Azure Security Center bas linje. [BaselineManagement](https://www.powershellgallery.com/packages/BaselineManagement) -modulen innehåller följande kommandon för att utföra den här uppgiften.
 
-- `ConvertFrom-GPO`– Konverterar grup principer, lagrade som filer. Du kan också ange en katalog som innehåller flera principer som ska kombineras till en konfiguration.
+- `ConvertFrom-GPO` – Konverterar grup principer, lagrade som filer. Du kan också ange en katalog som innehåller flera principer som ska kombineras till en konfiguration.
   - Om du vill exportera grup principer i din miljö använder du cmdleten [Backup-GPO](/powershell/module/grouppolicy/backup-gpo?view=win10-ps) eller följer instruktionerna i [Exportera ett grup princip objekt till en fil](/microsoft-desktop-optimization-pack/agpm/export-a-gpo-to-a-file).
-- `ConvertFrom-SCM`– Konverterar bas linjer för säkerhetscompliance Manager, lagrade som `.xml` filer.
-- `ConvertFrom-ASC`– Konverterar Azure Security Center bas linjer, lagrade som `.json` filer.
-- `Merge-GPOs`– Konverterar grup principer som tillämpas på mål datorn.
+- `ConvertFrom-SCM` – Konverterar bas linjer för säkerhetscompliance Manager, lagrade som `.xml` filer.
+- `ConvertFrom-ASC` – Konverterar Azure Security Center bas linjer, lagrade som `.json` filer.
+- `Merge-GPOs` – Konverterar grup principer som tillämpas på mål datorn.
 
 Cmdletarna som anges ovan konverterar en bas linje till en DSC- `.mof` fil. Du kan också välja att generera ett konfigurations skript ( `.ps1` ) som du kan redigera och kompilera om. Cmdletarna identifierar kompileringsfel för saknade resurser eller duplicerade resurs block. Resurs block som orsakar kompileringsfel är kommenterade.
 
-I följande exempel konverteras en [Microsoft Security-bas linje](https://www.microsoft.com/en-us/download/details.aspx?id=55319) till ett DSC-konfigurationsobjekt ( `.ps1` ) och en `.mof` fil.
+I följande exempel konverteras en [Microsoft Security-bas linje](https://www.microsoft.com/download/details.aspx?id=55319) till ett DSC-konfigurationsobjekt ( `.ps1` ) och en `.mof` fil.
 
 ```powershell
 Install-Module BaselineManagement

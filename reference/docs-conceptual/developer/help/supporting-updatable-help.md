@@ -1,25 +1,16 @@
 ---
-title: Stöd för uppdaterbar hjälp | Microsoft Docs
-ms.custom: ''
+title: Stöd för uppdateringsbar hjälp
 ms.date: 10/28/2012
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-applies_to:
-- Windows PowerShell 3.0
-ms.assetid: 832ea622-25a9-4760-904d-e15d6105bb27
-caps.latest.revision: 7
-ms.openlocfilehash: 331634f44e8c06f7d2a479dccf30dbef1067f515
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: bc5f08d2989b1031806c91acf43dd6a3b2646f04
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810122"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236347"
 ---
 # <a name="supporting-updatable-help"></a>Stöd för uppdateringsbar hjälp
 
-*Windows PowerShells uppdaterings bara hjälp system*, som introducerades i Windows® 8 och Windows Server® 2012, är utformat för att säkerställa att användarna alltid har de senaste hjälp avsnitten i kommando tolken på sina lokala datorer. Tillsammans med Windows PowerShell online-hjälpen ger uppdaterings bara hjälp en komplett hjälp lösning för användare. I det här avsnittet beskrivs det uppdaterings bara hjälp systemet och en förklaring av hur du kan använda uppdaterings bara hjälp för de olika modulerna.
+*Windows PowerShells uppdaterings bara hjälp system*, som introducerades i Windows 8 och Windows Server 2012, är utformat för att säkerställa att användarna alltid har de senaste hjälp avsnitten i kommando tolken på sin lokala dator. Tillsammans med Windows PowerShell online-hjälpen ger uppdaterings bara hjälp en komplett hjälp lösning för användare. I det här avsnittet beskrivs det uppdaterings bara hjälp systemet och en förklaring av hur du kan använda uppdaterings bara hjälp för de olika modulerna.
 
 Det här avsnittet innehåller följande ämnen.
 
@@ -41,4 +32,4 @@ Det här avsnittet innehåller följande ämnen.
 
 [Stöd för onlinehjälp](./supporting-online-help.md)
 
-[Uppdaterings bar hjälp status tabell](https://www.microsoft.com/en-us/itpro/windows)
+[Uppdaterings bar hjälp status tabell](/windows/deployment/deploy-whats-new)

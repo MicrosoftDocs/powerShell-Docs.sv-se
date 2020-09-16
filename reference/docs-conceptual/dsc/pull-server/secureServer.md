@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Metodtips för hämtningsservern
-ms.openlocfilehash: 2d707dc64c327cf30d09104aee140e5b78ee7c29
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 7b717e9e3bd753ef287701f3e2406e3fde1e2542
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692250"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236262"
 ---
 # <a name="pull-server-best-practices"></a>Metodtips för hämtningsservern
 
@@ -64,7 +64,7 @@ Förutom att installera det senaste innehållet från Windows Update, finns det 
 ### <a name="wmf"></a>WMF
 
 Windows Server 2012 R2 innehåller en funktion som kallas DSC-tjänsten. Funktionen DSC-tjänst tillhandahåller hämtnings Server funktioner, inklusive binärfiler som stöder OData-slutpunkten. WMF ingår i Windows Server och uppdateras på en smidig takt mellan Windows Server-versioner.
-[Nya versioner av WMF 5,0](https://www.microsoft.com/en-us/download/details.aspx?id=54616) kan innehålla uppdateringar av DSC-tjänstens funktion. Av den anledningen är det bäst att ladda ned den senaste versionen av WMF och granska viktig information för att ta reda på om versionen innehåller en uppdatering av DSC-tjänstens funktion. Du bör också läsa avsnittet i viktig information som anger om design status för en uppdatering eller ett scenario visas som stabil eller experimentell. För att möjliggöra en smidig lanserings cykel kan enskilda funktioner deklareras som stabila, vilket innebär att funktionen är redo att användas i en produktions miljö även om WMF lanseras i för hands versionen. Andra funktioner som tidigare har uppdaterats av WMF-versioner (mer information finns i versions kommentarerna för WMF):
+[Nya versioner av WMF 5,0](https://www.microsoft.com/download/details.aspx?id=54616) kan innehålla uppdateringar av DSC-tjänstens funktion. Av den anledningen är det bäst att ladda ned den senaste versionen av WMF och granska viktig information för att ta reda på om versionen innehåller en uppdatering av DSC-tjänstens funktion. Du bör också läsa avsnittet i viktig information som anger om design status för en uppdatering eller ett scenario visas som stabil eller experimentell. För att möjliggöra en smidig lanserings cykel kan enskilda funktioner deklareras som stabila, vilket innebär att funktionen är redo att användas i en produktions miljö även om WMF lanseras i för hands versionen. Andra funktioner som tidigare har uppdaterats av WMF-versioner (mer information finns i versions kommentarerna för WMF):
 
 - Windows PowerShell Windows PowerShell-integrerat skript
 - Environment (ISE) Windows PowerShell-webbtjänster (hantering OData
@@ -184,7 +184,7 @@ Klienter som begär en konfiguration kommer att behöva de DSC-moduler som kräv
 
 Det är viktigt att komma ihåg att även för betrodda onlinekällor som PowerShell-galleriet, alla moduler som hämtas från ett offentligt lager bör granskas av någon med PowerShell-erfarenhet och kunskap om miljön där modulerna används innan de används i produktionen. När du slutför den här uppgiften är det en lämplig tid att söka efter ytterligare en nytto Last i modulen som kan tas bort, till exempel dokumentation och exempel skript. Detta minskar nätverks bandbredden per klient i den första begäran, när moduler ska laddas ned över nätverket från server till klient.
 
-Varje modul måste paketeras i ett särskilt format, en ZIP-fil med namnet ModuleName_Version. zip som innehåller modulens nytto Last. När filen har kopierats till servern måste en kontroll Summa fil skapas.
+Varje modul måste paketeras i ett särskilt format, en ZIP-fil med namnet ModuleName_Version.zip som innehåller modulens nytto Last. När filen har kopierats till servern måste en kontroll Summa fil skapas.
 När klienter ansluter till servern används kontroll summan för att kontrol lera att innehållet i DSC-modulen inte har ändrats sedan den publicerades.
 
 ```powershell
@@ -228,7 +228,7 @@ Planerings uppgift
 
 *Skript som anges i det här dokumentet är stabila exempel. Granska alltid skript noggrant innan du kör dem i en produktions miljö.*
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
 Använd följande kommando för att kontrol lera versionen av PowerShell på servern.
 
@@ -541,4 +541,4 @@ En datafil lagras för att skapa information under distributionen av en pull-ser
 - **Windows Server 2012** Filtypen är alltid. mdb
 - **Windows Server 2012 R2** Filtypen används som standard till. edb om inte en. mdb anges i konfigurationen
 
-I det [avancerade exempel skriptet](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) för att installera en hämtnings server hittar du också ett exempel på hur du automatiskt kontrollerar inställningarna för Web. config-filen för att förhindra eventuella fel som orsakas av filtypen.
+I det [avancerade exempel skriptet](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) för att installera en hämtnings server hittar du också ett exempel på hur du automatiskt kontrollerar web.config fil inställningarna för att förhindra eventuella fel som orsakas av filtypen.

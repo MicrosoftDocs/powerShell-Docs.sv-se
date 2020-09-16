@@ -2,12 +2,12 @@
 title: Supportlängd för PowerShell Core
 description: Principer som styr support för PowerShell Core
 ms.date: 03/09/2020
-ms.openlocfilehash: e7ec0fd9a702b7d23a784eff6e730fc3a6c30467
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 717fd5c4845835f314eaf7c3617d5123318da2dc
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560737"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236211"
 ---
 # <a name="powershell-support-lifecycle"></a>Support livs cykel för PowerShell
 
@@ -34,7 +34,7 @@ En aktuell version är en version som sker mellan LTS-versioner. Aktuella versio
 
 PowerShell-kärnan använde [Microsoft modern Lifecycle-principen][modern]. Den här support livs cykeln är avsedd att hålla kunderna uppdaterade med de senaste versionerna.
 
-Grenen version 6. x av PowerShell Core uppdaterades ungefär en gång var sjätte månad (exempel: 6,0, 6,1, 6,2 osv.). Men med lanseringen av PowerShell 7 kommer det inte längre finnas lägre versioner av version 6. x. PowerShell 6.2. x kommer även fortsättnings vis att ta emot service uppdateringar och stöds fortfarande.
+Grenen version 6. x av PowerShell Core uppdaterades ungefär en gång var sjätte månad (exempel: 6,0, 6,1, 6,2 osv.). Men med lanseringen av PowerShell 7 kommer det inte längre finnas lägre versioner av 6. x. PowerShell 6.2. x kommer även fortsättnings vis att ta emot service uppdateringar och stöds fortfarande.
 
 > [!IMPORTANT]
 > Du måste uppdatera inom sex månader efter att varje ny del versions version fortsätter att få support.
@@ -56,7 +56,7 @@ Vår community har också bidragit med paket för vissa plattformar, men de stö
 
 Plattformar som anges som `Experimental` inte stöds officiellt, men som är tillgängliga för experimentering och feedback.
 
-| Plattform                                          |      6.2      |    7.0    |
+| Plattform                                          |      6,2      |    7,0    |
 | ------------------------------------------------- | :-----------: | :-------: |
 | Windows 8,1 och 10                               |   Stöds   | Stöds |
 | Windows Server 2012 R2, 2016                      |   Stöds   | Stöds |
@@ -71,8 +71,8 @@ Plattformar som anges som `Experimental` inte stöds officiellt, men som är til
 | Red Hat Enterprise Linux 7                        |   Stöds   | Stöds |
 | Red Hat Enterprise Linux 8                        | Stöds inte | Stöds |
 | Fedora 30                                         | Stöds inte | Stöds |
-| Alpina 3,8                                        |   Se Obs!    | Se Obs!  |
-| Alpina 3,9 och 3,10                               | Stöds inte | Se Obs!  |
+| Alpina 3,8                                        |   Visa anteckning    | Visa anteckning  |
+| Alpina 3,9 och 3,10                               | Stöds inte | Visa anteckning  |
 | macOS 10.12 +                                      |   Stöds   | Stöds |
 | Båge                                              |   Community   | Community |
 | Raspbian                                          |   Community   | Community |
@@ -92,10 +92,13 @@ I följande tabell visas de datum då olika versioner inte längre stöds, baser
 
 | Version |    Livs längd     |
 | :-----: | ------------------ |
-|   7.0   | 3 december 2022   |
-|   6.2   | 4 september 2020  |
+|   7,0   | 3 december 2022   |
+|   6,2   | 4 september 2020  |
 |   6.1   | 28 september 2019 |
-|   6.0   | 13 februari 2019  |
+|   6,0   | 13 februari 2019  |
+
+> [!NOTE]
+> Det här dokumentet är om stöd för PowerShell Core 6 och PowerShell 7. Windows PowerShell (1,0-5,1) är en del av Windows OS. Komponenterna får samma stöd som den överordnade produkten eller plattformen. Mer information finns i [livs cykel information om produkt och tjänster](/lifecycle/products/)
 
 ## <a name="unsupported-platforms"></a>Plattformar som inte stöds
 
@@ -183,4 +186,4 @@ Följande tabell innehåller en tids linje för de större versionerna av PowerS
 [kompatibilitetslista för modul]: /powershell/scripting/whats-new/module-compatibility
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [Experimentella funktioner]: /powershell/module/microsoft.powershell.core/about/about_powershell_config#experimentalfeatures
-[Microsoft Security Servicing-kriterier för Windows]: https://www.microsoft.com/en-us/msrc/windows-security-servicing-criteria
+[Microsoft Security Servicing-kriterier för Windows]: https://www.microsoft.com/msrc/windows-security-servicing-criteria

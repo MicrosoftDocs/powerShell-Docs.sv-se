@@ -1,13 +1,13 @@
 ---
-ms.date: 05/22/2020
+ms.date: 07/29/2020
 keywords: powershell,cmdlet
 title: Använda PowerShell-dokumentationen
-ms.openlocfilehash: 259eb1eea1dc7e8b5ae5730f97c938b838a320bf
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 1cfeb9eea564e7618062e1b8ada4948bd9e22969
+ms.sourcegitcommit: 9f9eb95bc859e9e0fed48101327a602b2ced351d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808273"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87821537"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>Använda PowerShell-dokumentationen
 
@@ -25,9 +25,9 @@ Som standard visar den här webbplatsen dokumentationen för den senaste utgivna
 
 Använd versions väljaren överst på sidan för att välja den version av PowerShell som du vill använda.
 
-![versionsväljare](media/how-to-use-docs/version-search.gif)
+![Använda versions väljaren](media/how-to-use-docs/version-search.gif)
 
-Du kan kontrol lera vilken version av PowerShell du använder genom att kontrol lera `$PSversionTable.PSVersion` värdet. I följande exempel visas utdata för Windows PowerShell v 5.1.
+Du kan kontrol lera vilken version av PowerShell du använder genom att kontrol lera `$PSversionTable.PSVersion` värdet. I följande exempel visas utdata för Windows PowerShell 5,1.
 
 ```powershell
 $PSVersionTable.PSVersion
@@ -36,8 +36,10 @@ $PSVersionTable.PSVersion
 ```Output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
-5      1      18362  145
+5      1      19041  1
 ```
+
+Om du inte har använt PowerShell igen och behöver hjälp med att förstå kommandosyntaxen, se [about_Command_Syntax](/powershell/module/microsoft.powershell.core/about/about_command_syntax).
 
 ## <a name="finding-articles-for-previous-versions"></a>Hitta artiklar för tidigare versioner
 

@@ -1,13 +1,13 @@
 ---
 title: Installera PowerShell i Windows
 description: Information om hur du installerar PowerShell på Windows
-ms.date: 07/30/2020
-ms.openlocfilehash: 21dc032afd61b628f2c43912ed6673875479ebff
-ms.sourcegitcommit: 79d430fe48ad77a058f42b6bc9955d21b657987e
+ms.date: 09/14/2020
+ms.openlocfilehash: 8f1b60ef6bfef5c2434b0affabb5e0e7af392b96
+ms.sourcegitcommit: 30c0c1563f8e840f24b65297e907f3583d90e677
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87441748"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90574461"
 ---
 # <a name="installing-powershell-on-windows"></a>Installera PowerShell i Windows
 
@@ -64,6 +64,19 @@ msiexec.exe /package PowerShell-7.0.3-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_ME
 ```
 
 En fullständig lista över kommando rads alternativ för `Msiexec.exe` finns i [kommando rads alternativ](/windows/desktop/Msi/command-line-options).
+
+### <a name="registry-keys-created-during-installation"></a>Register nycklar som skapas under installationen
+
+Från och med PowerShell 7,1 skapar MSI-paketet register nycklar som lagrar installations platsen och versionen av PowerShell. Dessa värden finns i `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\<GUID>` . Värdet för `<GUID>` är unikt för varje build-typ (version eller förhands granskning), huvud version och arkitektur.
+
+|    Frisläpp    | Arkitektur |                                          Registernyckel                                           |
+| ------------- | :----------: | ----------------------------------------------------------------------------------------------- |
+| 7.1. x-version |     x86      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\1d00683b-0f84-4db8-a64f-2f98ad42fe06` |
+| 7.1. x-version |     x64      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\31ab5147-9a97-4452-8443-d9709f0516e1` |
+| 7.1. x-förhandsgranskning |     x86      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\86abcfbd-1ccc-4a88-b8b2-0facfde29094` |
+| 7.1. x-förhandsgranskning |     x64      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\39243d76-adaf-42b1-94fb-16ecf83237c8` |
+
+Detta kan användas av administratörer och utvecklare för att hitta sökvägen till PowerShell. `<GUID>`Värdena är desamma för alla för hands versioner och del versioner. `<GUID>`Värdena ändras för varje större version.
 
 ## <a name="installing-the-msix-package"></a><a id="msix" />Installera MSIX-paketet
 

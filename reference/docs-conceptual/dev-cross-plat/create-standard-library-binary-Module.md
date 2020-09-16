@@ -3,14 +3,14 @@ title: Skapa en binär standard biblioteks-modul
 description: Med PowerShell-standardbiblioteket kan vi skapa moduler för flera plattformar som fungerar både i PowerShell Core och med Windows PowerShell 5,1.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 51734fd9232e7c33b11c6c5a6abddbcc1f28413c
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: ff6a49f70a3fb77f5a30cc909d53bb77b3cd7d43
+ms.sourcegitcommit: 8c01e56f0c10ff2637955dc892ea78432d563a7b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149791"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702753"
 ---
-# <a name="how-to-create-a-standard-library-binary-module"></a>Skapa en binär standard biblioteks-modul
+# <a name="how-to-create-a-standard-library-binary-module"></a>Såhär skapar du en binär modul för standardbibliotek
 
 Jag hade nyligen en idé för modulen som jag ville implementera som en binär modul. Jag har ännu inte skapat en med hjälp av [PowerShell-standardbiblioteket][] , så det här är en bra möjlighet. Jag använde guiden [skapa en plattforms oberoende binär modul][] för att skapa den här modulen utan någon hindren.
 Vi ska gå vidare till samma process och lägga till en lite extra kommentarer på vägen.
@@ -247,7 +247,7 @@ Härifrån kan vi släppa `.\Output\$module` mappen i vår `$env:PSModulePath` k
 
 Jag har lärt dig att `dotnet` verktyget har en `PSModule` mall.
 
-Alla steg som beskrivs ovan är fortfarande giltiga, men den här mallen delar många PF-dem. Det är fortfarande en ganska ny mall som fortfarande kommer att få lite polska att placeras på den. Det kan vara bättre att komma igång.
+Alla steg som beskrivs ovan är fortfarande giltiga, men den här mallen delar ut många av dem. Det är fortfarande en ganska ny mall som fortfarande kommer att få lite polska att placeras på den. Det kan vara bättre att komma igång.
 
 Så här använder du installera och använder PSModule-mallen.
 
@@ -276,7 +276,7 @@ Jag gör det mesta av min PowerShell-dev i [vs Code][]. När jag arbetar med en 
 
 ### <a name="nested-powershell-sessions"></a>Kapslade PowerShell-sessioner
 
-Ett annat alternativ är att ha en lämplig pester test täckning. Sedan kan du justera build. ps1-skriptet för att starta en ny PowerShell-session, utföra bygget, köra testerna och stänga sessionen.
+Ett annat alternativ är att ha en lämplig pester test täckning. Sedan kan du justera build.ps1-skriptet för att starta en ny PowerShell-session, utföra bygget, köra testerna och stänga sessionen.
 
 ### <a name="updating-installed-modules"></a>Uppdaterar installerade moduler
 
@@ -316,5 +316,5 @@ Det är enkelt att skapa binära moduler. Jag har inte använt C#-syntaxen för 
 [dotNet Core SDK]: https://www.microsoft.com/net/download/core
 [Använda en NuGet-Server för en PSRepository]: https://powershellexplained.com/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository/
 [Windows PowerShell SDK]: /powershell/scripting/developer/windows-powershell-reference
-[VS Code]: https://code.visualstudio.com
+[VS-kod]: https://code.visualstudio.com
 [NuGet-paket]: https://www.nuget.org/packages/PowerShellStandard.Library/

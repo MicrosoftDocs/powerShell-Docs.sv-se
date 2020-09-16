@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell 7,0
 description: Nya funktioner och ändringar som lanseras i PowerShell 7,0
 ms.date: 03/04/2020
-ms.openlocfilehash: 313ed2b663262b57abd52bfc7378e1f4661dc03a
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: d52b536efd9d7a1f8e6b01a58952f08ca49016b1
+ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808409"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162468"
 ---
 # <a name="whats-new-in-powershell-70"></a>Nyheter i PowerShell 7,0
 
@@ -15,11 +15,11 @@ PowerShell 7,0 är en utgåva med öppen källkod, plattforms oberoende plattfor
 
 I den här versionen har vi introducerat ett antal nya funktioner, bland annat:
 
-- Pipeline-parallellisering med`ForEach-Object -Parallel`
+- Pipeline-parallellisering med `ForEach-Object -Parallel`
 - Nya operatorer:
-  - Ternär operator:`a ? b : c`
-  - Operatorer för pipeline-kedjan: `||` och`&&`
-  - Null-villkorliga operatorer: `??` och`??=`
+  - Ternär operator: `a ? b : c`
+  - Operatorer för pipeline-kedjan: `||` och `&&`
+  - Null-villkorliga operatorer: `??` och `??=`
 - En förenklad och dynamisk felvy och `Get-Error` cmdlet för enklare undersökning av fel
 - Ett kompatibilitetsläge som gör det möjligt för användare att importera moduler i en implicit Windows PowerShell-session
 - Automatiska nya versions meddelanden
@@ -56,14 +56,14 @@ Mer uppdaterad information om operativ system och support livs cykel som stöds 
 PowerShell 7 installerar till en katalog separat från Windows PowerShell.
 På så sätt kan du köra PowerShell 7 sida vid sida med Windows PowerShell 5,1. För PowerShell Core 6. x är PowerShell 7 en uppgradering på plats som tar bort PowerShell Core 6. x.
 
-- PowerShell 7 installeras för att`%programfiles%\PowerShell\7`
+- PowerShell 7 installeras för att `%programfiles%\PowerShell\7`
 - `%programfiles%\PowerShell\7`Mappen läggs till`$env:PATH`
 
 Installations paketet för PowerShell 7 uppgraderar tidigare versioner av PowerShell Core 6. x:
 
-- PowerShell Core 6. x i Windows: `%programfiles%\PowerShell\6` ersätts av`%programfiles%\PowerShell\7`
-- Linux: `/opt/microsoft/powershell/6` ersätts av`/opt/microsoft/powershell/7`
-- macOS: `/usr/local/microsoft/powershell/6` ersätts av`/usr/local/microsoft/powershell/7`
+- PowerShell Core 6. x i Windows: `%programfiles%\PowerShell\6` ersätts av `%programfiles%\PowerShell\7`
+- Linux: `/opt/microsoft/powershell/6` ersätts av `/opt/microsoft/powershell/7`
+- macOS: `/usr/local/microsoft/powershell/6` ersätts av `/usr/local/microsoft/powershell/7`
 
 > [!NOTE]
 > I Windows PowerShell heter den körbara filen för att starta PowerShell `powershell.exe` . I version 6 och senare ändras namnet på den körbara filen till stöd för sida-vid-sida-körning. Det nya namnet på den körbara filen för att starta PowerShell 7 är `pwsh.exe` . För hands versioner är kvar på plats, i `pwsh-preview` stället för i `pwsh` den 7-för hands versions katalogen.
@@ -118,7 +118,7 @@ Villkors uttrycket utvärderas alltid och resultatet konverteras till ett **bool
 - `<if-true>`Uttrycket körs om `<condition>` uttrycket är sant
 - `<if-false>`Uttrycket körs om `<condition>` uttrycket är falskt
 
-Ett exempel:
+Exempel:
 
 ```powershell
 $message = (Test-Path $path) ? "Path exists" : "Path not found"
@@ -130,7 +130,7 @@ För mer information [om](/powershell/module/microsoft.powershell.core/about/abo
 
 ## <a name="pipeline-chain-operators"></a>Operatorer för pipeline-kedjan
 
-PowerShell 7 implementerar `&&` `||` operatorerna och för att villkorligt kedja pipelines. Dessa operatörer är kända i PowerShell som "pipelines kedje operatorer", och liknar och, eller listor i gränssnitt som **bash** och **zsh**, samt villkorsstyrda bearbetnings symboler i Windows Command Shell (**cmd. exe**).
+PowerShell 7 implementerar `&&` `||` operatorerna och för att villkorligt kedja pipelines. De här operatörerna är kända i PowerShell som "pipeline-kedje operatörer" och liknar och och eller visar listor i gränssnitt som **bash** och **zsh**, samt villkorsstyrda bearbetnings symboler i Windows Command Shell (**cmd.exe**).
 
 `&&`Operatören kör den högra pipelinen om den vänstra pipelinen lyckades. I motsatt `||` Kör operatören den högra pipelinen om den vänstra pipelinen misslyckades.
 
@@ -284,7 +284,7 @@ Om felet inträffar under skript körningen eller är ett parsningsfel returnera
 ![Fel vid visning från ett skript](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
 Standardvyn i PowerShell 7 är **ConciseView**. Den tidigare standardvyn var **NormalView** och du kan välja thisby och ställa in variabeln Preference `$ErrorView` .
- 
+
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
 $ErrorView = 'ConciseView' # Sets the error view to ConciseView
@@ -299,7 +299,7 @@ Som standard visar cmdleten fullständig information, inklusive inre undantag, a
 ![Visa från get-Error](./media/What-s-New-in-PowerShell-70/myscript-geterror.png)
 
 `Get-Error`Cmdleten stöder inmatade från pipelinen med hjälp av den inbyggda variabeln `$Error` .
-`Get-Error`visar alla skickas-fel.
+`Get-Error` visar alla skickas-fel.
 
 ```powershell
 $Error | Get-Error
@@ -325,7 +325,7 @@ Som standard prenumererar PowerShell på en av två olika meddelande kanaler, be
 
 Du kan ändra beteendet för uppdaterings aviseringar med hjälp av `$Env:POWERSHELL_UPDATECHECK` miljövariabeln. Följande värden stöds:
 
-- **Standardvärdet** är detsamma som inte definieras`$Env:POWERSHELL_UPDATECHECK`
+- **Standardvärdet** är detsamma som inte definieras `$Env:POWERSHELL_UPDATECHECK`
   - GA-versioner meddelar uppdateringar till GA-versioner
   - Preview/RC-versioner meddelar uppdateringar för GA och för hands versioner
 - **Off** inaktiverar funktionen för uppdaterings avisering
@@ -357,11 +357,12 @@ Mer information [om uppdaterings meddelanden](/powershell/module/microsoft.power
 
 Den här cmdleten anropar en DSC-resurs direkt utan att skapa ett konfigurations dokument. Med den här cmdleten kan konfigurations hanterings produkter hantera Windows eller Linux med hjälp av DSC-resurser. Den här cmdleten aktiverar även fel sökning av resurser när DSC-motorn körs med fel sökning aktiverat.
 
-Det här kommandot anropar **set** -metoden för en resurs med namnet log och anger en **meddelande** egenskap.
+Det här kommandot anropar **set** -metoden för en resurs med namnet **WindowsProcess** och tillhandahåller de obligatoriska **Sök vägs** -och **argument** egenskaperna för att starta den angivna Windows-processen.
 
 ```powershell
-Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
-  Message = 'Hello World'
+Invoke-DscResource -Name WindowsProcess -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
+  Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
+  Arguments = ''
 }
 ```
 
@@ -390,7 +391,7 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 - Uppdatera inställnings PSModulePath för att sammanfoga variablerna för processen och maskin miljön (#11276)
 - Stöta på .NET Core till 3.1.0 (#11260)
 - Korrigera identifiering av $PSHOME framför $env:P ÖKVÄG (#11141)
-- Tillåt att pwsh ärver $env:P SModulePath och gör så att PowerShell. exe startar korrekt (#11057)
+- Tillåt att pwsh ärver $env:P SModulePath och gör det möjligt för powershell.exe att starta korrekt (#11057)
 - Flytta till .NET Core 3,1 Preview 1 (#10798)
 - Kontroll av referens tag gen omstrukturering i fil system leverantören (#10431) (tack @iSazonov !)
 - Ersätt CR och New-raden med ett 0x23CE-tecken i skript loggning (#10616)
@@ -464,7 +465,7 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 - Lägg till stöd för \\ Wsl $ \ sökvägar till fil system leverantören (#10674)
 - Lägg till den token-text som saknas för TokenKind. QuestionMark i parser (#10706)
 - Ange aktuell arbets katalog för varje förgrunds-objekt – parallellt kör skript till samma plats som det anropande skriptet. (#10672)
-- Ersätt API-ms-win-core-File-L1-2 -2. dll med Kernell32. dll för FindFirstStreamW och FindNextStreamW-API: er (#10680) (tack @iSazonov !)
+- Ersätt api-ms-win-core-file-l1-2-2.dll med Kernell32.dll för FindFirstStreamW-och FindNextStreamW-API: er (#10680) (tack @iSazonov !)
 - Ändra skript för hjälp formatering så att det blir mer StrictMode-tolerant (#10563)
 - Add-SecurityDescriptorSDDL-parameter till New-service (#10483) (tack @kvprasoon !)
 - Ta bort informations utdata, konsolidera ping-användning i Test-Connection (#10478) (tack @vexx32 !)
@@ -478,7 +479,7 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 - Uppdatera konsol värden så att den stöder XTPUSHSGR/XTPOPSGR VT-kontroller som används i sammanställnings scenarier. (#10208)
 - Lägg till parametern WorkingDirectory till Start-Job (#10324) (tack @davinci26 !)
 - Ta bort händelse hanteraren som orsakade Bryt punkts ändringar som inte skulle replikeras felaktigt till värd körnings utrymme fel sökning (#10503) (tack @KirkMunro !)
-- Ersätt API-ms-win-core-Job-12-1 -0. dll med Kernell32. dll i Microsoft. PowerShell. commands. NativeMethods P/Invoke API (#10417) (tack @iSazonov !)
+- Ersätt api-ms-win-core-job-12-1-0.dll med Kernell32.dll i Microsoft. PowerShell. commands. NativeMethods P/Invoke API (#10417) (tack @iSazonov !)
 - Åtgärda fel utdata för New-service i variabel tilldelning och-avvariabel (#10444) (tack @kvprasoon !)
 - Åtgärda problem med globala verktyg runt avslutnings kod, kommando rads parametrar och sökväg med blank steg (#10461)
 - Åtgärda rekursion i OneDrive-Change FindFirstFileEx () för att använda SafeFindHandle-typ (#10405)
@@ -490,7 +491,7 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 
 - Undvik att använda avslutning i parser. SaveError (#11006)
 - Förbättra cachelagringen när du skapar nya regex-instanser (#10657) (tack @iSazonov !)
-- Förbättra bearbetningen av inbyggda PowerShell-Datadata från types. ps1xml, typesV3. ps1xml och GetEvent. types. ps1xml (#10898)
+- Förbättra bearbetningen av inbyggda PowerShell-Datadata från types.ps1XML, typesV3.ps1XML och GetEvent.types.ps1XML (#10898)
 - Uppdatera PSConfiguration. ReadValueFromFile för att göra det snabbare och mer minne effektivt (#10839)
 - Lägg till mindre prestanda förbättringar för körnings utrymme-initiering (#10569) (tack @iSazonov !)
 - Gör en förvarsin-objekt snabbare för de scenarier som används ofta (#10454) och åtgärda de stegvisa prestanda problemen för objekt parallellt med många körnings utrymmen (#10455)
@@ -518,7 +519,7 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 - Rensa CodeFactor-formatmallar som kommer att utföras under den senaste månaden (#10591) (tack @iSazonov !)
 - Korrigera skrivfel i beskrivningen av PSTernaryOperator experimentell funktion (#10586) (tack @bergmeister !)
 - Konvertera Åtgärdsinställning. Suspend-uppräkning svärdet till en icke-kompatibel, reserverad status och ta bort begränsningen för att använda Åtgärdsinställning. IGNORE i Preferences-variabler (#10317) (tack @KirkMunro !)
-- Ersätt ArrayList med lista \< T> för att få mer läsbar och tillförlitlig kod utan att ändra funktionerna (#10333) (tack @iSazonov !)
+- Ersätt ArrayList med en lista \<T> för att få mer läsbar och tillförlitlig kod utan att ändra funktioner (#10333) (tack @iSazonov !)
 - Gör kod formats korrigeringar till TestConnectionCommand (#10439) (tack @vexx32 !)
 - Rensa AutomationEngine och ta bort extra SetSessionStateDrive-metod anrop (#10416) (tack @iSazonov !)
 - Byt namn på standard ParameterSetName tillbaka till avgränsare för ConvertTo-CSV och ConvertFrom-CSV (#10425)
@@ -526,13 +527,13 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 ### <a name="tools"></a>Verktyg
 
 - Lägg till standardinställningen för egenskapen SDKToUse så att den skapas i VS (#11085)
-- Install-Powershell. ps1: Lägg till parameter för att använda MSI-installation (#10921) (tack @MJECloud !)
-- Lägg till grundläggande exempel för install-PowerShell. ps1 (#10914) (tack @kilasuit !)
-- Gör Install-PowerShellRemoting. ps1 för att hantera en tom sträng i PowerShellHome-parametern (#10526) (tack @Orca88 !)
+- Install-Powershell.ps1: Lägg till parameter för att använda MSI-installation (#10921) (tack @MJECloud !)
+- Lägg till grundläggande exempel för install-powershell.ps1 (#10914) (tack @kilasuit !)
+- Kontrol Install-PowerShellRemoting.ps1 hantera en tom sträng i PowerShellHome-parametern (#10526) (tack @Orca88 !)
 - Växla från/etc/lsb-release till/etc/OS-release i install-powershell.sh (#10773) (tack @Himura2la !)
-- Kontrol lera pwsh. exe och pwsh i den dagliga versionen av Windows (#10738) (tack @centreboard !)
+- Kontrol lera pwsh.exe och pwsh i den dagliga versionen av Windows (#10738) (tack @centreboard !)
 - Ta bort onödiga tryck i installpsh-osx.sh (#10752)
-- Uppdatera install-PowerShell. ps1 för att söka efter redan installerad daglig build (#10489)
+- Uppdatera install-powershell.ps1 för att söka efter redan installerat dagligt build (#10489)
 
 ### <a name="tests"></a>Tester
 
@@ -560,13 +561,13 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 - Aktivera endast experimentella funktioner före RC (#11162)
 - Uppdatera lägsta macOS-version (#11163)
 - Ojämnhets NJsonSchema från 10.0.27 till 10.0.28 (#11170)
-- Uppdaterar länkar i README.md och metadata. JSON för för hands versionen. 5 (#10854)
+- Uppdaterar länkar i README.md och metadata.jsför för hands version. 5 (#10854)
 - Välj filer för testning av efterlevnad som ägs av PowerShell (#10837)
 - Tillåt att win7x86 msix-paketet skapas. (Internt 10515)
 - Tillåt att semantiska versioner skickas till NormalizeVersion-funktionen (#11087)
 - Stöter på .NET Core Framework till 3,1 – för hands version. 3 (#11079)
 - Ojämnhet PSReadLine från 2.0.0-beta5 till 2.0.0-beta6 i/src/Modules (#11078)
-- Ojämnhet Newtonsoft. JSON från 12.0.2 till 12.0.3 (#11037) (#11038)
+- Ojämnhet Newtonsoft.Jsfrån 12.0.2 till 12.0.3 (#11037) (#11038)
 - Lägg till Debian 10, 11 och CentOS 8-paket (#11028)
 - Ladda upp JSON-filen för build-info med ReleaseDate-fältet (#10986)
 - Stöter på .NET Core Framework till 3,1 – för hands version. 2 (#10993)
@@ -576,7 +577,7 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 - Ojämnhets ThreadJob från 2.0.1 till 2.0.2 (#10886)
 - Uppdatera AppX-manifest och paketera modul så att de överensstämmer med kraven för MS Store (#10878)
 - Uppdatera paket referens för PowerShell SDK för för hands version. 5 (internt 10295)
-- Uppdatera ThirdPartyNotices. txt (#10834)
+- Uppdatera ThirdPartyNotices.txt (#10834)
 - Ojämnhet Microsoft. PowerShell. Native to 7.0.0 – för hands version. 3 (#10826)
 - Ojämnhet Microsoft. ApplicationInsights från 2.10.0 till 2.11.0 (#10608)
 - Ojämnhets NJsonSchema från 10.0.24 till 10.0.27 (#10756)
@@ -590,7 +591,7 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 - Uppdatera MSIX-paket så att versions kraven för Windows Store (#10588)
 - Ojämnhet PowerShellGet-version från 2,2 till 2.2.1 (#10382)
 - Ojämnhet PackageManagement-version från 1.4.3 till 1.4.4 (#10383)
-- Uppdatera README.md och metadata. JSON för 7.0.0-Preview. 4 (internt 10011)
+- Uppdatera README.md och metadata.jspå för 7.0.0-Preview. 4 (internt 10011)
 - Uppgradera .net Core 3,0-versionen från Preview 9 till RC1 (#10552) (tack @bergmeister !)
 - Åtgärda genereringen av ExperimentalFeature-listor (internt 9996)
 - Ojämnhet PSReadLine-version från 2.0.0-beta4 till 2.0.0-beta5 (#10536)
@@ -609,7 +610,7 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 - Åtgärda FWLinks för PowerShell 7 direkt hjälp dokument (#11071)
 - Uppdatera CONTRIBUTING.md (#11096) (tack @mklement0 !)
 - Åtgärda installations dokument länkar i README.md (#11083)
-- Lägger till exempel i skriptet install-PowerShell. ps1 (#11024) (tack @kilasuit !)
+- Lägger till exempel för att install-powershell.ps1 skript (#11024) (tack @kilasuit !)
 - Korrigera för Select-String betoning och import-Dscresource Keyword Supports i CHANGELOG.md (#10890)
 - Ta bort den inaktuella länken från powershell-beginners-guide.md (#10926)
 - Sammanfoga stabila och underhålls ändrings loggar (#10527)
@@ -622,4 +623,4 @@ Mer information om [Invoke-dscresource Keyword Supports](/powershell/module/psde
 - Uppdatera README.md och metadata för v 6.1.6 och v 6.2.3-versioner (#10523)
 - Åtgärda ett stavfel i README.md (#10465) (tack @vedhasp !)
 - Lägg till en referens till PSKoans-modulen i Learning Resources-dokumentationen (#10369) (tack @vexx32 !)
-- Uppdatera README.md och metadata. JSON för 7.0.0-Preview. 3 (#10393)
+- Uppdatera README.md och metadata.jspå för 7.0.0 – för hands version. 3 (#10393)

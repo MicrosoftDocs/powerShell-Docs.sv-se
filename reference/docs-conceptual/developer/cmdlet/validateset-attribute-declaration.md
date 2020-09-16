@@ -1,23 +1,16 @@
 ---
 title: ValidateSet-Attribute-deklaration | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - attributes, ValidateSet
 - ValidateSet attribute, described
 - ValidateSet attribute
-ms.assetid: 4a6f97ab-45b2-4f3d-84d4-30acf8e074d0
-caps.latest.revision: 12
-ms.openlocfilehash: b036f39cd01ffe4b4ce7db9627cb6da0d5327190
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0b6833efb0ce8e9474e9d91049fd201fc845cbea
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355421"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787775"
 ---
 # <a name="validateset-attribute-declaration"></a>Deklaration av attributet ValidateSet
 
@@ -34,16 +27,16 @@ När det här attributet anges avgör Windows PowerShell-körningsmiljön om det
 
 #### <a name="parameters"></a>Parametrar
 
-`ValidValues` ([system. String](/dotnet/api/System.String)) krävs. Anger giltiga parameter element värden. I följande exempel visas hur du anger ett eller flera element.
+`ValidValues` ([System. String](/dotnet/api/System.String)) krävs. Anger giltiga parameter element värden. I följande exempel visas hur du anger ett eller flera element.
 
 ```csharp
 [ValidateSetAttribute("Steve")]
 [ValidateSetAttribute("Steve","Mary")]
 ```
 
-`IgnoreCase` ([system. Boolean](/dotnet/api/System.Boolean)) valfri namngiven parameter. Standardvärdet för `true` indikerar att Skift läget ignoreras. Värdet `false` gör cmdleten Skift läges känslig.
+`IgnoreCase` ([System. Boolean](/dotnet/api/System.Boolean)) valfri namngiven parameter. Standardvärdet för `true` anger att Case ignoreras. Värdet `false` gör cmdlet Skift läges känsligt.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 - Det här attributet kan bara användas en gång per parameter.
 

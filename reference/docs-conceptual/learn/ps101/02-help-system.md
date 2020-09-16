@@ -1,16 +1,16 @@
 ---
-title: Hjälp systemet
+title: Hjälpsystemet
 description: Att hantera hjälp systemet är nyckeln till att lyckas med PowerShell.
 ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 43d2de7e1f59ce5e980c192decb5309d3f6d0ff8
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.openlocfilehash: 8325a32ad8ec137781300e9d46cab52705f0805a
+ms.sourcegitcommit: eaac7af89171379df2e20464ebee9fc7e7d7674a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84436395"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89493665"
 ---
 # <a name="chapter-2---the-help-system"></a>Kapitel 2 – hjälp systemet
 
@@ -34,13 +34,13 @@ Kompilerade kommandon i PowerShell kallas cmdlets. Cmdleten är uttalad "kommand
 
 - `Get-Command`
 - `Get-Help`
-- `Get-Member`(omfattas av kapitel 3)
+- `Get-Member` (omfattas av kapitel 3)
 
 En fråga jag är ofta ombedd Hur tar du reda på vad kommandona är i PowerShell? Både `Get-Command` och `Get-Help` kan användas för att fastställa kommandon.
 
 ## <a name="get-help"></a>Get – hjälp
 
-`Get-Help`är ett kommando för flera syften. `Get-Help`hjälper dig att lära dig hur du använder kommandon när du har hittat dem. `Get-Help`kan också användas för att hitta kommandon, men på ett annat och mer indirekt sätt jämfört med `Get-Command` .
+`Get-Help` är ett kommando för flera syften. `Get-Help` hjälper dig att lära dig hur du använder kommandon när du har hittat dem. `Get-Help` kan också användas för att hitta kommandon, men på ett annat och mer indirekt sätt jämfört med `Get-Command` .
 
 När `Get-Help` används för att hitta kommandon söker den först efter jokertecken matchningar av kommando namn baserat på angivna indata. Om ingen matchning hittas genomsöks hjälp avsnitten i själva hjälpen och om ingen matchning hittas returneras ett fel. Motsats till populär tro `Get-Help` kan användas för att hitta kommandon som inte har hjälp avsnitt.
 
@@ -50,7 +50,7 @@ Det första du behöver veta om hjälp systemet i PowerShell är hur du använde
 Get-Help -Name Get-Help
 ```
 
-```Outpout
+```Output
 Do you want to run Update-Help?
 The Update-Help cmdlet downloads the most current Help files for Windows PowerShell
 modules, and installs them on your computer. For more information about the Update-Help
@@ -60,7 +60,7 @@ cmdlet, see http://go.microsoft.com/fwlink/?LinkId=210614.
 
 Från och med PowerShell version 3 levereras PowerShell-hjälpen inte med operativ systemet. Första gången `Get-Help` körs för ett kommando visas det föregående meddelandet. Om `help` funktionen eller `man` aliaset används i stället för `Get-Help` cmdleten får du inte den här frågan.
 
-Om du svarar ja genom att trycka på <kbd>Y</kbd> körs `Update-Help` cmdleten, vilket kräver Internet åtkomst som standard. `Y`kan anges i antingen versaler eller gemener.
+Om du svarar ja genom att trycka på <kbd>Y</kbd> körs `Update-Help` cmdleten, vilket kräver Internet åtkomst som standard. `Y` kan anges i antingen versaler eller gemener.
 
 När hjälpen har hämtats och uppdateringen är klar returneras hjälp avsnittet för det angivna kommandot:
 
@@ -70,7 +70,7 @@ Get-Help -Name Get-Help
 
 Ta en stund att köra det exemplet på datorn, granska utdata och anteckna hur informationen grupperas:
 
-- NAME
+- NAMN
 - SAMMANFATTNING
 - SYNTAX
 - BESKRIVNING
@@ -79,7 +79,7 @@ Ta en stund att köra det exemplet på datorn, granska utdata och anteckna hur i
 
 Som du kan se kan hjälp avsnitten innehålla en enorma mängd information och detta är inte ens hela hjälp avsnittet.
 
-Även om den inte är speciell för PowerShell, är en parameter ett sätt att tillhandahålla inmatade för ett kommando. `Get-Help`har många parametrar som kan specificeras för att returnera hela hjälp avsnittet eller en delmängd av den.
+Även om den inte är speciell för PowerShell, är en parameter ett sätt att tillhandahålla inmatade för ett kommando. `Get-Help` har många parametrar som kan specificeras för att returnera hela hjälp avsnittet eller en delmängd av den.
 
 I avsnittet syntax i hjälp avsnittet som visas i den föregående uppsättningen med resultat visas alla parametrar för `Get-Help` . Vid första inblicken visas samma parametrar i listan sex olika tider. Vart och ett av dessa olika block i avsnittet syntax är en parameter uppsättning. Det innebär att `Get-Help` cmdleten har sex olika parameter uppsättningar. Om du tar en närmare titt ser du att minst en parameter är annorlunda i varje parameter uppsättning.
 
@@ -108,7 +108,7 @@ Get-Help -Name Get-Help -Full
 
 Ta en stund att köra det exemplet på datorn, granska utdata och anteckna hur informationen grupperas:
 
-- NAME
+- NAMN
 - SAMMANFATTNING
 - SYNTAX
 - BESKRIVNING
@@ -125,7 +125,7 @@ Den **fullständiga** parametern är en switch-parameter. En parameter som inte 
 
 Om du har arbetat genom det här kapitlet i PowerShell-konsolen har du märkt att föregående kommando visar det fullständiga hjälp avsnittet för `Get-Help` reste på skärmen utan att ge dig möjlighet att läsa det. Det finns ett bättre sätt.
 
-`Help`är en funktion som rör `Get-Help` en funktion med namnet `more` , som är en omslutning för den `more.com` körbara filen i Windows. I PowerShell-konsolen visas `help` en sida med hjälp i taget. I ISE fungerar det på samma sätt som `Get-Help` . Min rekommendation är att använda `help` funktionen i stället för `Get-Help` cmdleten eftersom den ger en bättre upplevelse och är mindre för att skriva.
+`Help` är en funktion som rör `Get-Help` en funktion med namnet `more` , som är en omslutning för den `more.com` körbara filen i Windows. I PowerShell-konsolen visas `help` en sida med hjälp i taget. I ISE fungerar det på samma sätt som `Get-Help` . Min rekommendation är att använda `help` funktionen i stället för `Get-Help` cmdleten eftersom den ger en bättre upplevelse och är mindre för att skriva.
 
 Mindre text är dock inte alltid en bra sak. Om du vill spara dina kommandon som ett skript eller dela dem med någon annan, måste du se till att använda fullständiga cmdlet-och parameter namn. De fullständiga namnen är själv dokumenterade, vilket gör dem lättare att förstå. Tänk på nästa person som måste läsa och förstå dina kommandon. Det kan vara du. Dina medarbetare och dig själv är tacksamma.
 
@@ -225,7 +225,7 @@ Get-AppvVirtualProcess            Function  AppvClient                ...
 Start-AppvVirtualProcess          Function  AppvClient                ...
 ```
 
-I det föregående exemplet `*` behövs inte jokertecken och utelämnar dem ger samma resultat. `Get-Help`lägger automatiskt till jokertecken i bakgrunden.
+I det föregående exemplet `*` behövs inte jokertecken och utelämnar dem ger samma resultat. `Get-Help` lägger automatiskt till jokertecken i bakgrunden.
 
 ```powershell
 help process
@@ -416,7 +416,7 @@ Hjälp systemet i PowerShell måste uppdateras för **att det ska** gå att pres
 
 ## <a name="get-command"></a>Get-Command
 
-`Get-Command`är utformad för att hjälpa dig att hitta kommandon. Om `Get-Command` du kör utan parametrar returneras en lista över alla kommandon i systemet. Följande exempel visar hur du använder `Get-Command` cmdleten för att avgöra vilka kommandon som finns för att arbeta med processer:
+`Get-Command` är utformad för att hjälpa dig att hitta kommandon. Om `Get-Command` du kör utan parametrar returneras en lista över alla kommandon i systemet. Följande exempel visar hur du använder `Get-Command` cmdleten för att avgöra vilka kommandon som finns för att arbeta med processer:
 
 ```powershell
 Get-Command -Noun Process
@@ -522,7 +522,7 @@ Mitt utmaning till dig är att lära dig ett PowerShell-kommando per dag.
 Get-Command | Get-Random | Get-Help -Full
 ```
 
-## <a name="review"></a>Granska
+## <a name="review"></a>Genomgång
 
 1. Är **DisplayName** -parametern för `Get-Service` positional?
 1. Hur många parameter uppsättningar `Get-Process` har cmdleten?
@@ -550,5 +550,5 @@ I nästa kapitel lär du dig om `Get-Member` cmdleten samt objekt, egenskaper oc
 [Spara – hjälp]: /powershell/module/microsoft.powershell.core/save-help
 [about_Updatable_Help]: /powershell/module/microsoft.powershell.core/about/about_updatable_help
 [about_Command_Syntax]: /powershell/module/microsoft.powershell.core/about/about_command_syntax
-[PowerShell – dokument]: https://github.com/powershell/powershell
+[PowerShell-dokumentation]: https://github.com/powershell/powershell
 [Bilaga A]: appendix-a.md

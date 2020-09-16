@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-filresurs
-ms.openlocfilehash: 54f4de9b3d337a6b9ad36c143eac70d5ef6b1c15
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 28e9ea3a590a0972e505912efae4a934bc39ba1d
+ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560482"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799612"
 ---
 # <a name="dsc-file-resource"></a>DSC-filresurs
 
@@ -46,7 +46,7 @@ File [string] #ResourceName
 |Innehåll |Endast giltigt när det används med en **typ** **fil**. Anger innehållet som ska **vara** **tillgängligt** eller **saknas** i mål filen. |
 |Autentiseringsuppgift |De autentiseringsuppgifter som krävs för att få åtkomst till resurser, till exempel källfiler. |
 |Force |Åsidosätter åtkomst åtgärder som resulterar i ett fel (till exempel att skriva över en fil eller ta bort en katalog som inte är tom). Standardvärdet är `$false` . |
-|Rekursivt |Endast giltigt när det används med **typ** **katalog**. Utför tillstånds åtgärden rekursivt till alla under kataloger. Standardvärdet är `$false` . |
+|Rekursivt |Endast giltigt när det används med **typ** **katalog**. Utför tillstånds åtgärden rekursivt till alla katalog innehåll, under kataloger och under katalog innehåll. Standardvärdet är `$false` . |
 |Sök |Sökvägen som filen eller mappen ska kopieras från. |
 |Typ |Typ av resurs som konfigureras. Giltiga värden är **katalog** och **fil**. Standardvärdet är **File**. |
 |MatchSource |Anger om resursen ska övervakas för nya filer som har lagts till i käll katalogen efter den första kopian. Värdet `$true` anger att efter den ursprungliga kopian ska alla nya källfiler kopieras till målet. Om värdet `$false` är, cachelagrar resursen innehållet i käll katalogen och ignorerar eventuella filer som lagts till efter den ursprungliga kopian. Standardvärdet är `$false` . |
@@ -69,6 +69,7 @@ File [string] #ResourceName
 
 - Om du bara anger en **DestinationPath**, ser resursen till att sökvägen finns om den **finns eller inte** finns om den **saknas**.
 - När du anger en **SourcePath** och en **DestinationPath** med ett **typ** värde för **katalog**, kopieras käll katalogen till mål Sök vägen med resursen. Egenskaperna **rekursivt**, **Force**och **MatchSource** ändrar vilken typ av kopierings åtgärd som utförs, medan **autentiseringsuppgiften** avgör vilket konto som ska användas för åtkomst till käll katalogen.
+- Om du inte anger egenskapen **rekursivt** till när du `$true` kopierar en katalog kopieras inget innehåll i den befintliga katalogen. Endast den angivna katalogen kommer att kopieras.
 - Om du har angett värdet **ReadOnly** för egenskapen **attribut** tillsammans med en **DestinationPath**, **Se till att** det **finns** en sökväg för att skapa den angivna sökvägen, medan **innehållet** skulle ange innehållet i filen. Inställningen för **att se till att** ingen **kommer att ignorera** egenskapen **attributs** fullständigt och ta bort alla filer på den angivna sökvägen.
 
 ## <a name="example"></a>Exempel
