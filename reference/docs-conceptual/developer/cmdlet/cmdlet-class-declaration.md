@@ -1,22 +1,15 @@
 ---
 title: Cmdlet-klass deklaration | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell SDK], declaring
 - declaring cmdlets [PowerShell SDK]
-ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
-caps.latest.revision: 14
-ms.openlocfilehash: 0de49d979c31b0e8d111323a2e1899d97868ec3f
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 96ce8144795346b6f46878ee6163ce69cdb1799a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978720"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784511"
 ---
 # <a name="cmdlet-class-declaration"></a>Cmdlet-klassdeklaration
 
@@ -30,7 +23,7 @@ När du anger **cmdlet** -attributet måste du ange verb-och-Substantiv-paret so
 
 Substantiv för cmdleten anger de resurser som cmdleten fungerar på. Substantivet särskiljer dina cmdletar från andra cmdletar.
 
-Substantiv i cmdlet-namn måste vara unika, och när det gäller generiska substantiv, till exempel *Server*, är det bäst att lägga till ett kort prefix som särskiljer din resurs från andra liknande resurser. Till exempel är ett cmdlet-namn som innehåller ett substantiv med ett prefix `Get-SQLServer`. Kombinationen av ett visst substantiv med ett mer allmänt verb gör det möjligt för användaren att snabbt hitta cmdleten genom sin åtgärd och sedan identifiera cmdleten med dess resurs samtidigt som den undviker onödiga cmdlet-namnmatchning.
+Substantiv i cmdlet-namn måste vara unika, och när det gäller generiska substantiv, till exempel *Server*, är det bäst att lägga till ett kort prefix som särskiljer din resurs från andra liknande resurser. Till exempel är ett cmdlet-namn som innehåller ett substantiv med ett prefix `Get-SQLServer` . Kombinationen av ett visst substantiv med ett mer allmänt verb gör det möjligt för användaren att snabbt hitta cmdleten genom sin åtgärd och sedan identifiera cmdleten med dess resurs samtidigt som den undviker onödiga cmdlet-namnmatchning.
 
 En lista med specialtecken som inte kan användas i cmdlet-namn finns i [nödvändiga utvecklings rikt linjer](./required-development-guidelines.md).
 
@@ -54,7 +47,7 @@ Följande kod är definitionen för en GetProc-cmdlet-klass. Observera att Pasca
 
 ## <a name="pascal-casing"></a>Pascal-hölje
 
-När du namnger cmdletar använder du Pascal-Skift läge. Till exempel visar cmdletarna `Get-Item` och `Get-ItemProperty` det korrekta sättet att använda versaler när du namnger cmdletar.
+När du namnger cmdletar använder du Pascal-Skift läge. Till exempel `Get-Item` `Get-ItemProperty` visar cmdletarna och det korrekta sättet att använda versaler när du namnger cmdletar.
 
 ## <a name="see-also"></a>Se även
 

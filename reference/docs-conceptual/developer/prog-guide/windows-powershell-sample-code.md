@@ -1,30 +1,23 @@
 ---
 title: Exempel kod för Windows PowerShell | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1106829a-8ddc-454e-bbdd-ade15d4bffb4
-caps.latest.revision: 7
-ms.openlocfilehash: 76b4195eb33a1058109df8f6174a89708ba039d1
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 8dcbe6d8760d77666a8191ca78416ef63dfebdeb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563258"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786942"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell-exempelkod
 
 Windows PowerShell®-exempel är tillgängliga via Windows SDK. Det här avsnittet innehåller exempel koden som finns i Windows SDK exempel.
 
 > [!NOTE]
-> När Windows SDK installeras skapas en **exempel** katalog där alla Windows PowerShell-exempel görs tillgängliga. En typisk installations katalog är **C:\Program\Microsoft SDKs\Windows\v6.0**. Starta Windows PowerShell och skriv **"CD Samples\SysMgmt\PowerShell"** för att hitta mappen Windows PowerShell-exempel. I det här dokumentet kallas Windows PowerShell-exempel katalogen ** \< PowerShell-exempel>**.
+> När Windows SDK installeras skapas en **exempel** katalog där alla Windows PowerShell-exempel görs tillgängliga. En typisk installations katalog är **C:\Program\Microsoft SDKs\Windows\v6.0**. Starta Windows PowerShell och skriv **"CD Samples\SysMgmt\PowerShell"** för att hitta mappen Windows PowerShell-exempel. I det här dokumentet kallas Windows PowerShell-exempel katalogen **\<PowerShell Samples>** .
 
 ## <a name="sample-code-listing"></a>Exempel kod lista
 
-|                                    Exempelkod                                    |                                                                                                                                           Beskrivning                                                                                                                                           |
+|                                    Exempelkod                                    |                                                                                                                                           Description                                                                                                                                           |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [AccessDbProviderSample01 – kodexempel](./accessdbprovidersample01-code-sample.md) | Detta är den provider som beskrivs i [skapa en grundläggande Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md).                                                                                                                                                            |
 | [AccessDbProviderSample02 – kodexempel](./accessdbprovidersample02-code-sample.md) | Det här är den provider som beskrivs i [skapa en Windows PowerShell-enhets leverantör](./creating-a-windows-powershell-drive-provider.md).                                                                                                                                                            |

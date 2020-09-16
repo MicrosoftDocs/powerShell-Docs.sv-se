@@ -1,28 +1,21 @@
 ---
 title: Lägga till parametrar som bearbetar pipeline-ininformation | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], pipeline input
 - parameters [PowerShell Programmer's Guide], pipeline input
-ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
-caps.latest.revision: 8
-ms.openlocfilehash: 4966ac274713899e7ea9e0c375dca220a972a1b5
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: a678df30a13086b317d5680ee0fbc4d3c3391235
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978737"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784562"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Lägga till parametrar som bearbetar pipelineindata
 
 En källa för indata för en cmdlet är ett objekt i pipelinen som härstammar från en överordnad cmdlet. I det här avsnittet beskrivs hur du lägger till en parameter till cmdleten Get-proc (beskrivs i [skapa din första cmdlet](./creating-a-cmdlet-without-parameters.md)) så att cmdleten kan bearbeta pipelines-objekt.
 
-Den här cmdleten Get-proc använder en `Name` parameter som accepterar indata från ett pipeline-objekt, hämtar process information från den lokala datorn baserat på de angivna namnen och visar sedan information om processerna på kommando raden.
+Denna get-proc-cmdlet använder en `Name` parameter som accepterar indata från ett pipeline-objekt, hämtar process information från den lokala datorn baserat på de angivna namnen och visar sedan information om processerna på kommando raden.
 
 ## <a name="defining-the-cmdlet-class"></a>Definiera cmdlet-klassen
 
@@ -43,12 +36,12 @@ Public Class GetProcCommand
 
 ## <a name="defining-input-from-the-pipeline"></a>Definiera ininformation från pipelinen
 
-I det här avsnittet beskrivs hur du definierar ininformation från pipelinen för en cmdlet. Den här cmdleten Get-proc definierar en egenskap som representerar den `Name` parametern enligt beskrivningen i [lägga till parametrar som bearbetar kommando rads indatatyper](./adding-parameters-that-process-command-line-input.md).
+I det här avsnittet beskrivs hur du definierar ininformation från pipelinen för en cmdlet. Den här cmdleten Get-proc definierar en egenskap som representerar `Name` parametern enligt beskrivningen i [lägga till parametrar som bearbetar kommando rads indatatyper](./adding-parameters-that-process-command-line-input.md).
 (Se avsnittet för allmän information om att deklarera parametrar.)
 
-Men när en cmdlet måste bearbeta pipeline-inmatade, måste den ha sina parametrar som är kopplade till indatavärden av Windows PowerShell-körningsmiljön. Om du vill göra detta måste du lägga till nyckelordet `ValueFromPipeline` eller lägga till nyckelordet `ValueFromPipelineByProperty` till attributet [system. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Ange nyckelordet `ValueFromPipeline` om cmdleten har åtkomst till det kompletta indatamängdet. Ange `ValueFromPipelineByProperty` om cmdleten har åtkomst till en egenskap för objektet.
+Men när en cmdlet måste bearbeta pipeline-inmatade, måste den ha sina parametrar som är kopplade till indatavärden av Windows PowerShell-körningsmiljön. Om du vill göra detta måste du lägga till `ValueFromPipeline` nyckelordet eller lägga till `ValueFromPipelineByProperty` nyckelordet i deklarationen för attributet [system. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Ange `ValueFromPipeline` nyckelordet om cmdleten får åtkomst till det kompletta indatamängden. Ange `ValueFromPipelineByProperty` om cmdlet: en får åtkomst till en egenskap för objektet.
 
-Här är parameter deklarationen för `Name`-parametern för den här cmdleten Get-proc som godkänner pipeline-inmatade.
+Här är parameter deklarationen för `Name` parametern för den här get-proc-cmdleten som godkänner pipeline-inflödet.
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs" range="35-44":::
 
@@ -69,16 +62,16 @@ End Property
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesgetproc03#GetProc03VBNameParameter](Msh_samplesgetproc03#GetProc03VBNameParameter)]  -->
 
-I den föregående deklarationen anges `ValueFromPipeline` nyckelordet till `true` så att Windows PowerShell-körningsmiljön binder parametern till det inkommande objektet om objektet är av samma typ som parametern, eller om den kan tvingas till samma typ. Nyckelordet `ValueFromPipelineByPropertyName` är också inställt på `true` så att Windows PowerShell-körningsmiljön kontrollerar det inkommande objektet för en `Name`-egenskap. Om det inkommande objektet har en sådan egenskap, kommer körningen att binda `Name`-parametern till egenskapen `Name` för det inkommande objektet.
+I den föregående deklarationen anges `ValueFromPipeline` nyckelordet till `true` så att Windows PowerShell-körningsmiljön binder parametern till det inkommande objektet om objektet är av samma typ som parametern, eller om den kan tvingas till samma typ. `ValueFromPipelineByPropertyName`Nyckelordet är också inställt på `true` så att Windows PowerShell-körningsmiljön kontrollerar det inkommande objektet för en `Name` egenskap. Om det inkommande objektet har en sådan egenskap, kommer körningen att binda `Name` parametern till `Name` egenskapen för det inkommande objektet.
 
 > [!NOTE]
-> Inställningen för nyckelordet `ValueFromPipeline` attribut för en parameter prioriteras över inställningen för nyckelordet `ValueFromPipelineByPropertyName`.
+> Inställningen av `ValueFromPipeline` nyckelordet attribut för en parameter har företräde framför inställningen för `ValueFromPipelineByPropertyName` nyckelordet.
 
 ## <a name="overriding-an-input-processing-method"></a>Åsidosätta en metod för bearbetning av indata
 
 Om cmdleten ska hantera pipeline-indata måste den åsidosätta lämpliga metoder för bearbetning av indata. De grundläggande metoderna för indata-bearbetning införs när [du skapar din första cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-Den här cmdleten Get-proc åsidosätter metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) för att hantera `Name` parameter-indata från användaren eller ett skript. Med den här metoden hämtas processerna för varje begärt process namn eller alla processer om inget namn anges. Observera att i [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), anropet till [WriteObject (system. Object, system. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) är utmatnings mekanismen för att skicka utgående objekt till pipelinen. Den andra parametern för det här anropet, `enumerateCollection`, har ställts in på `true` för att tala om för Windows PowerShell-körningen att räkna upp matrisen med process objekt och skriva en process i taget till kommando raden.
+Den här cmdleten Get-proc åsidosätter metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) för att hantera `Name` parameter indata från användaren eller ett skript. Med den här metoden hämtas processerna för varje begärt process namn eller alla processer om inget namn anges. Observera att i [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), anropet till [WriteObject (system. Object, system. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) är utmatnings mekanismen för att skicka utgående objekt till pipelinen. Den andra parametern för det här anropet, `enumerateCollection` , är inställd på `true` att meddela Windows PowerShell-körningsmiljön att räkna upp matrisen med process objekt och skriva en process i taget till kommando raden.
 
 ```csharp
 protected override void ProcessRecord()
@@ -127,7 +120,7 @@ End Sub 'ProcessRecord
 
 ## <a name="code-sample"></a>Kod exempel
 
-Den fullständiga C# exempel koden finns i [GetProcessSample03-exempel](./getprocesssample03-sample.md).
+Den fullständiga exempel koden för C# finns i [GetProcessSample03-exempel](./getprocesssample03-sample.md).
 
 ## <a name="defining-object-types-and-formatting"></a>Definiera objekt typer och formatering
 
@@ -158,7 +151,7 @@ När din cmdlet har registrerats med Windows PowerShell kan du testa den genom a
      3927      62  71836   26984    467  195.19  1848  OUTLOOK
   ```
 
-- Ange följande rader för att hämta de process objekt som har en `Name`-egenskap från processerna som kallas "iexplore". I det här exemplet används `Get-Process` cmdlet (tillhandahålls av Windows PowerShell) som ett uppströms kommando för att hämta processerna "iexplore".
+- Ange följande rader för att hämta de process objekt som har en `Name` egenskap från processerna som kallas "iexplore". I det här exemplet används `Get-Process` cmdlet (från Windows PowerShell) som ett uppströms kommando för att hämta processerna "iexplore".
 
   ```powershell
   PS> get-process iexplore | get-proc

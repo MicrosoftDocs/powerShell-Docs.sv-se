@@ -1,25 +1,18 @@
 ---
 title: SelectionSetName-element för EntrySelectedBy för CustomControl för View (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 859d2335-7fcd-4efd-b1cc-3d171e334c6b
-caps.latest.revision: 7
-ms.openlocfilehash: f4bf820be88919af43eeaf043b3ed8b9c06e1bf2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3728a1886d5406b8fa4888125d1c031d0f9b1b03
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355750"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785310"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format"></a>SelectionSetName-element för EntrySelectedBy för CustomControl för View (format)
 
 Anger en uppsättning .NET-objekt för List posten. Det finns ingen gräns för antalet markerings uppsättningar som kan anges för en post.
 
-Konfigurations element (format) ViewDefinitions element (format) View element (format) CustomControl element (format) CustomEntries-element för CustomControl för View (format) CustomEntry-element för CustomEntries för View (format) EntrySelectedBy Element för CustomEntry för View (format) SelectionSetName-element för EntrySelectedBy för CustomEntry (format)
+Konfigurations element (format) ViewDefinitions element (format) View element (format) CustomControl element (format) CustomEntries-element för CustomControl för View (format) CustomEntry-element för CustomEntries för View (format) EntrySelectedBy-element för CustomEntry för View (format) SelectionSetName-element för EntrySelectedBy för CustomEntry (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,15 +22,15 @@ Konfigurations element (format) ViewDefinitions element (format) View element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `SelectionSetName`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `SelectionSetName` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -49,7 +42,7 @@ Ingen.
 
 Ange namnet på urvals uppsättningen.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Varje anpassad kontroll post måste ha minst ett typ namn, en urvals uppsättning eller ett urvals villkor definierat.
 
@@ -63,4 +56,4 @@ Mer information om komponenterna i en anpassad kontroll vy finns i [skapa anpass
 
 [Vy för anpassad kontroll](./creating-custom-controls.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

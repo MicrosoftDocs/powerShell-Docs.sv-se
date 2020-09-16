@@ -1,25 +1,18 @@
 ---
 title: SelectionCondition-element för EntrySelectedBy för EnumerableExpansion (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8c012115-9241-4851-9015-841eb508faf3
-caps.latest.revision: 10
-ms.openlocfilehash: d6adf2fa62384d671fd6a07dd185a941daa44cec
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d5858145e092dc962174a776889a4f62db366d71
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353832"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785344"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format"></a>SelectionCondition-element för EntrySelectedBy för EnumerableExpansion (format)
 
 Definierar det villkor som måste finnas för att expandera samlings objekt i den här definitionen.
 
-Konfigurations element (format) DefaultSettings-element (format) EnumerableExpansions-element (format) EnumerableExpansion-element (format) EntrySelectedBy-element för EnumerableExpansion (format) SelectionCondition-element för EntrySelectedBy för EnumerableExpansion (format)
+Konfigurations element (format) DefaultSettings-element (format) EnumerableExpansions-element (format) EnumerableExpansion-element (format) EntrySelectedBy-element för EnumerableExpansion (format) SelectionCondition-element för EntrySelectedBy (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,20 +27,20 @@ Konfigurations element (format) DefaultSettings-element (format) EnumerableExpan
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `SelectionCondition`-elementet. Du måste ange ett enskilt `PropertyName`-eller `ScriptBlock`-element. `SelectionSetName`-och `TypeName`-element är valfria. Du kan ange ett av båda elementen.
+I följande avsnitt beskrivs attribut, underordnade element och `SelectionCondition` elementets överordnade element. Du måste ange ett enskilt `PropertyName` eller- `ScriptBlock` element. `SelectionSetName` `TypeName` Elementen och är valfria. Du kan ange ett av båda elementen.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
 |[PropertyName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Valfritt element.<br /><br /> Anger den .NET-egenskap som utlöser villkoret.|
-|[Script block-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Valfritt element.<br /><br /> Anger det skript som utlöser villkoret.|
+|[ScriptBlock-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Valfritt element.<br /><br /> Anger det skript som utlöser villkoret.|
 |[SelectionSetName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Valfritt element.<br /><br /> Anger den uppsättning av .NET-typer som utlöser villkoret.|
-|[Elementet TypeName för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)](./typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Valfritt element.<br /><br /> Anger en .NET-typ som utlöser villkoret.|
+|[TypeName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)](./typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Valfritt element.<br /><br /> Anger en .NET-typ som utlöser villkoret.|
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -55,7 +48,7 @@ Ingen.
 |-------------|-----------------|
 |[EntrySelectedBy-element för EnumerableExpansion (format)](./entryselectedby-element-for-enumerableexpansion-format.md)|Definierar vilka .NET-samlings objekt som expanderas av den här definitionen.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Varje definition måste ha minst ett typ namn, en urvals uppsättning eller ett urvals villkor definierat.
 
@@ -73,4 +66,4 @@ Mer information om andra komponenter i en bred vy finns i [wide View](./creating
 
 [Definiera villkor för när data visas](./defining-conditions-for-displaying-data.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

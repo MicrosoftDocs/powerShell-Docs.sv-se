@@ -1,21 +1,14 @@
 ---
 title: Metoder för bearbetning av cmdlet-indata | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - virtual methods (PowerShell SDK]
-ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
-caps.latest.revision: 12
-ms.openlocfilehash: a28c8d3df19bc72bf338d6abc4e02768c5097209
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e69c5a366b2d74ddd92c844bda0b1e3a65539c10
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359478"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784460"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Bearbetningsmetoder för cmdlet-indata
 
@@ -84,7 +77,7 @@ protected override void EndProcessing()
 
 [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
 
-[SelectStr-självstudie](selectstr-tutorial.md)
+[Självstudie om SelectStr](selectstr-tutorial.md)
 
 [System. IDisposable](/dotnet/api/System.IDisposable)
 

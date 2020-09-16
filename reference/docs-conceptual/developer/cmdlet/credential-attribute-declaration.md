@@ -1,19 +1,12 @@
 ---
 title: Deklaration för attribut för autentiseringsuppgift | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 96a5dcad-faed-44d8-8c80-321f10499710
-caps.latest.revision: 6
-ms.openlocfilehash: 49a62ccb09f06f77862d4737199e58293e7fbe0a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a6deca52fa6c9e46138ae92401f58ac5dbd15852
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359418"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784375"
 ---
 # <a name="credential-attribute-declaration"></a>Deklaration av attributet Credential
 
@@ -25,7 +18,7 @@ Attributet Credential är ett valfritt attribut som kan användas med Credential
 [Credential]
 ```
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 - Normalt används det här attributet av parametrar av typen [system. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential) så att en sträng även kan skickas som ett argument till parametern. När ett [system. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential) -objekt skickas till parametern gör Windows PowerShell ingenting.
 
@@ -37,8 +30,8 @@ Attributet Credential är ett valfritt attribut som kan användas med Credential
 
 ## <a name="see-also"></a>Se även
 
-[Parameter-alias](./parameter-aliases.md)
+[Parameteralias](./parameter-aliases.md)
 
-[Deklaration av parameter attribut](./parameter-attribute-declaration.md)
+[Deklaration av attributet Parameter](./parameter-attribute-declaration.md)
 
 [Skriva en Windows PowerShell-cmdlet](./writing-a-windows-powershell-cmdlet.md)

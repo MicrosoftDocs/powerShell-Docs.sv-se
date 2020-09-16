@@ -1,20 +1,18 @@
 ---
 title: Fjärranslutna körningsutrymmen – exempel
 ms.date: 09/13/2016
-ms.topic: article
-ms.assetid: 8c44df35-b22b-41b0-b34c-ba7ce17b889b
-ms.openlocfilehash: ada4a16b3e8142f505a2adb794c746129e3f359c
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 68248f0ba9e816865b6b92dbf6e7686e2d871370
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870446"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783236"
 ---
 # <a name="remote-runspace-samples"></a>Fjärranslutna körningsutrymmen – exempel
 
 Det här avsnittet innehåller exempel kod som visar hur du skapar körnings utrymmen som kan användas för att ansluta till en dator med hjälp av WS-Management-baserad Windows PowerShell-fjärrkommunikation. Du kan använda Microsoft Visual Studio för att skapa ett konsol program och sedan kopiera koden från ämnena i det här avsnittet till värd programmet.
 
-## <a name="in-this-section"></a>I detta avsnitt
+## <a name="in-this-section"></a>I det här avsnittet
 
 > [!NOTE]
 > Mer information om hur du kör kommandon på en fjärrdator finns i [Windows PowerShell-fjärrkommunikation](/previous-versions/ms714644(v=vs.85)).

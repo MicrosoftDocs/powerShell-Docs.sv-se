@@ -1,25 +1,18 @@
 ---
 title: SelectionSetName-element för SelectionCondition för kontroll av konfiguration (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7dcaeadb-4e79-47a0-96e2-8952af26abbe
-caps.latest.revision: 7
-ms.openlocfilehash: 5db35a8094ea2bb966c8d6a96802c72f64c05c17
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 62f186be9e4b1dd5a297add0ce82011bc1ccdcd1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358842"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785242"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format"></a>SelectionSetName-element för SelectionCondition för Controls för Configuration (format)
 
 Anger den uppsättning av .NET-typer som utlöser villkoret. När någon av typerna i den här uppsättningen finns, uppfylls villkoret och objektet visas med hjälp av den här kontrollen. Det här elementet används när du definierar en gemensam kontroll som kan användas av alla vyer i format filen.
 
-Konfigurations element (format) styr element i konfigurations-(format)-kontroll element för Controls (format) CustomControl-element för Control för Configuration (format) CustomEntries-element för CustomControl för kontroller för Konfiguration (format) CustomEntry-element för CustomControl for Controls for Configuration (format) EntrySelectedBy element for CustomEntry for Controls for Configuration (format) SelectionCondition element for EntrySelectedBy for Controls for Konfiguration (format) SelectionSetName-element för SelectionCondition för kontroller för konfiguration (format)
+Konfigurations element (format) styr element i konfigurations-(format)-kontroll element för kontroll för CustomControl-element (format) för Control för Configuration (format) CustomEntries-element för CustomControl för Controls (format) CustomEntry-element för CustomControl for Controls for Configuration (format) EntrySelectedBy-elementet för CustomEntry for Controls for Configuration (format) SelectionCondition element for EntrySelectedBy for Controls for Configuration (format) SelectionSetName element for SelectionCondition for Controls for Configuration (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,27 +22,27 @@ Konfigurations element (format) styr element i konfigurations-(format)-kontroll 
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `SelectionSetName`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `SelectionSetName` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[SelectionCondition-element för EntrySelectedBy för kontroller för konfiguration (format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|Definierar ett villkor som måste finnas för att den kontroll definition som ska användas.|
+|[SelectionCondition-element för EntrySelectedBy för Controls för Configuration (format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|Definierar ett villkor som måste finnas för att den kontroll definition som ska användas.|
 
 ## <a name="text-value"></a>Textvärde
 
 Ange namnet på urvals uppsättningen.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Urvals uppsättningar är vanliga grupper av .NET-objekt som kan användas av alla vyer som format filen definierar. Mer information om hur du skapar och refererar till urvals uppsättningar finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
 
@@ -57,10 +50,10 @@ Urvals villkoret kan ange en urvals uppsättning eller en .NET-typ, men det går
 
 ## <a name="see-also"></a>Se även
 
-[SelectionCondition-element för EntrySelectedBy för kontroller för konfiguration (format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
+[SelectionCondition-element för EntrySelectedBy för Controls för Configuration (format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
 
 [Definiera villkor för när data visas](./defining-conditions-for-displaying-data.md)
 
-[Definiera urvals uppsättningar](./defining-selection-sets.md)
+[Definiera valuppsättningar](./defining-selection-sets.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

@@ -1,27 +1,20 @@
 ---
 title: Utökar utmatnings objekt | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a252e0ec-d456-42d7-bd49-d6b8bc57f388
-caps.latest.revision: 11
-ms.openlocfilehash: 12a826363221b8a7ce06245c787a7bd0529e42f8
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 48f4f2996159d84257ad72d499e3a796aeaa9116
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83690896"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784324"
 ---
 # <a name="extending-output-objects"></a>Utöka utdataobjekt
 
-Du kan utöka .NET Framework objekt som returneras av cmdlets, Functions och scripts genom att använda typer filer (. ps1xml). Filtyper är XML-baserade filer som gör att du kan lägga till egenskaper och metoder i befintliga objekt. Windows PowerShell tillhandahåller till exempel filen types. ps1xml, som lägger till element i flera befintliga .NET Framework-objekt. Filen types. ps1xml finns i installations katalogen för Windows PowerShell ( `$pshome` ). Du kan skapa en egen typ fil för att ytterligare utöka objekten eller för att utöka andra objekt. När du utökar ett objekt med hjälp av en typ fil utökas alla instanser av objektet med de nya elementen.
+Du kan utöka .NET Framework objekt som returneras av cmdlets, Functions och scripts genom att använda typer filer (. ps1xml). Filtyper är XML-baserade filer som gör att du kan lägga till egenskaper och metoder i befintliga objekt. Windows PowerShell tillhandahåller till exempel XML-filen Types.ps1, som lägger till element i flera befintliga .NET Framework objekt. XML-filen Types.ps1finns i installations katalogen för Windows PowerShell ( `$pshome` ). Du kan skapa en egen typ fil för att ytterligare utöka objekten eller för att utöka andra objekt. När du utökar ett objekt med hjälp av en typ fil utökas alla instanser av objektet med de nya elementen.
 
 ## <a name="extending-the-systemarray-object"></a>Utöka system. Array-objektet
 
-I följande exempel visas hur Windows PowerShell utökar [system. Array](/dotnet/api/System.Array) -objektet i filen types. ps1xml. Som standard har [system. Array](/dotnet/api/System.Array) -objekt en `Length` egenskap som visar antalet objekt i matrisen. Men eftersom namnet "Length" inte tydligt beskriver egenskapen, lägger Windows PowerShell till `Count` egenskapen alias som visar samma värde som `Length` egenskapen. Följande XML lägger till `Count` egenskapen i [system. mat ris](/dotnet/api/System.Array) typen.
+I följande exempel visas hur Windows PowerShell utökar [system. Array](/dotnet/api/System.Array) -objektet i Types.ps1XML-filen. Som standard har [system. Array](/dotnet/api/System.Array) -objekt en `Length` egenskap som visar antalet objekt i matrisen. Men eftersom namnet "Length" inte tydligt beskriver egenskapen, lägger Windows PowerShell till `Count` egenskapen alias som visar samma värde som `Length` egenskapen. Följande XML lägger till `Count` egenskapen i [system. mat ris](/dotnet/api/System.Array) typen.
 
 ```xml
 <Type>
@@ -57,7 +50,7 @@ Get            Method        System.Object Get(Int32 )
 Length         Property      System.Int32 Length {get;}
 ```
 
-Du kan använda antingen `Count` egenskapen eller `Length` egenskapen för att avgöra hur många objekt som finns i en matris. Till exempel:
+Du kan använda antingen `Count` egenskapen eller `Length` egenskapen för att avgöra hur många objekt som finns i en matris. Exempel:
 
 ```powershell
 PS> (1, 2, 3, 4).Count
@@ -89,7 +82,7 @@ Om du vill lägga till dina egna utökade typer i filen lägger du till ett typ 
 
 När du har definierat dina egna utökade typer kan du använda någon av följande metoder för att göra dina utökade objekt tillgängliga:
 
-- Använd cmdleten [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) för att lägga till den nya filen för att göra din utökade typ av fil tillgänglig för den aktuella sessionen. Om du vill att typerna ska prioriteras över de typer som har definierats i andra typer av filer (inklusive filen types. ps1xml) använder du `PrependData` parametern för cmdleten [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) .
+- Använd cmdleten [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) för att lägga till den nya filen för att göra din utökade typ av fil tillgänglig för den aktuella sessionen. Om du vill att dina typer ska prioriteras över de typer som har definierats i andra typer av filer (inklusive Types.ps1XML-fil) använder du `PrependData` parametern för cmdleten [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) .
 - Om du vill göra din utöknings bara fil tillgänglig för alla framtida sessioner lägger du till typ filen i en modul, exporterar den aktuella sessionen eller lägger till kommandot [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) i Windows PowerShell-profilen.
 
 ## <a name="signing-types-files"></a>Filer för signerings typer

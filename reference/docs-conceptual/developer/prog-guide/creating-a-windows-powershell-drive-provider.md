@@ -1,23 +1,16 @@
 ---
 title: Skapa en provider för Windows PowerShell-enheter | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - drive providers [PowerShell Programmer's Guide]
 - providers [PowerShell Programmer's Guide], drive provider
 - drives [PowerShell Programmer's Guide]
-ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
-caps.latest.revision: 6
-ms.openlocfilehash: 88be7cc6cc0ab54604bc9de71e0ae07c20457514
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 2a2178714ed548986fe1a1a4de8828e8e0a938cb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978465"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787197"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Skapa en Windows PowerShell-enhetsprovider
 
@@ -44,7 +37,7 @@ De flesta leverantörer (inklusive providern som beskrivs här) kan dock använd
 
 Alla Windows PowerShell-leverantörer betraktas som tillstånds lösa, vilket innebär att din enhets leverantör måste skapa all statusinformation som krävs av Windows PowerShell-körningsmiljön när den anropar din Provider.
 
-I den här enhets leverantören inkluderar tillståndsinformation anslutningen till databasen som behålls som en del av enhets informationen. Här är koden som visar hur informationen lagras i objektet [system. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) som beskriver enheten:
+I den här enhets leverantören inkluderar tillståndsinformation anslutningen till databasen som behålls som en del av enhets informationen. Här är koden som visar hur informationen lagras i det [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -objekt som beskriver enheten:
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="130-151":::
 
@@ -56,17 +49,17 @@ För att Windows PowerShell-körningsmiljön ska kunna skapa en enhet måste pro
 
 Din åsidosättning av den här metoden bör göra följande:
 
-- Kontrol lera att [system. Management. Automation. PSDriveinfo. root *](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) member finns och att en anslutning till data lagret kan göras.
-- Skapa en enhet och fyll i anslutnings medlemmen, som stöd för cmdleten `New-PSDrive`.
-- Verifiera objektet [system. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) för den föreslagna enheten.
-- Ändra objektet [system. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) som beskriver enheten med all nödvändig prestanda-eller Tillförlitlighets information, eller ange extra data för anropare som använder enheten.
-- Hantera felen med metoden [system. Management. Automation. Provider. Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) och returnera sedan `null`.
+- Verifiera att [System.Management.Automation.PSDriveinfo. Rot *](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) medlem finns och att det går att upprätta en anslutning till data lagret.
+- Skapa en enhet och fyll i anslutnings medlemmen i stöd för `New-PSDrive` cmdleten.
+- Verifiera [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -objektet för den föreslagna enheten.
+- Ändra [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -objektet som beskriver enheten med nödvändig prestanda-eller Tillförlitlighets information, eller ange extra data för anropare som använder enheten.
+- Hantera felen med metoden [system. Management. Automation. Provider. Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) och returnera sedan `null` .
 
   Den här metoden returnerar antingen enhets informationen som skickades till metoden eller en leverantörsspecifik version av den.
 
 ## <a name="attaching-dynamic-parameters-to-newdrive"></a>Koppla dynamiska parametrar till NewDrive
 
-Den `New-PSDrive`-cmdlet som stöds av enhets leverantören kan behöva ytterligare parametrar. För att koppla dessa dynamiska parametrar till-cmdleten implementerar providern metoden [system. Management. Automation. Provider. Drivecmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) . Den här metoden returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt.
+Den `New-PSDrive` cmdlet som stöds av din enhets leverantör kan behöva ytterligare parametrar. För att koppla dessa dynamiska parametrar till-cmdleten implementerar providern metoden [system. Management. Automation. Provider. Drivecmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) . Den här metoden returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt.
 
 Den här enhets leverantören åsidosätter inte den här metoden. Följande kod visar dock standard implementeringen av den här metoden:
 
@@ -80,21 +73,21 @@ Följande kod visar implementeringen av metoden [system. Management. Automation.
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="91-116":::
 
-Om enheten kan tas bort ska metoden returnera den information som skickas till metoden via `drive`-parametern. Om enheten inte kan tas bort ska metoden skriva ett undantag och sedan returnera `null`. Om din Provider inte åsidosätter den här metoden returnerar standard implementeringen av den här metoden bara enhets informationen som skickas som indata.
+Om enheten kan tas bort ska metoden returnera den information som skickas till metoden via `drive` parametern. Om enheten inte kan tas bort ska metoden skriva ett undantag och sedan returnera `null` . Om din Provider inte åsidosätter den här metoden returnerar standard implementeringen av den här metoden bara enhets informationen som skickas som indata.
 
 ## <a name="initializing-default-drives"></a>Initierar standard enheter
 
-Din enhets leverantör implementerar-metoden [system. Management. Automation. Provider. Drivecmdletprovider. Initializedefaultdrives *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives) för att montera enheter. Active Directory leverantören kan till exempel montera en enhet för standard namngivnings kontexten om datorn är ansluten till en domän.
+Din enhets leverantör implementerar [System.Management.Automation.Provider.Drivecmdletprovider.Initializedefaultdrives *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives) -metoden för att montera enheter. Active Directory leverantören kan till exempel montera en enhet för standard namngivnings kontexten om datorn är ansluten till en domän.
 
 Den här metoden returnerar en samling enhets information om de initierade enheterna eller en tom samling. Anropet till den här metoden görs efter att Windows PowerShell-körningen anropar metoden [system. Management. Automation. Provider. Cmdletprovider. start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) för att initiera providern.
 
-Den här enhets leverantören åsidosätter inte metoden [system. Management. Automation. Provider. Drivecmdletprovider. Initializedefaultdrives *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives) . Följande kod visar dock standard implementeringen, som returnerar en tom enhets samling:
+Den här enhets leverantören åsidosätter inte metoden [System.Management.Automation.Provider.Drivecmdletprovider.Initializedefaultdrives *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives) . Följande kod visar dock standard implementeringen, som returnerar en tom enhets samling:
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderinitializedefaultdrives](Msh_samplestestcmdlets#testproviderinitializedefaultdrives)]  -->
 
 #### <a name="things-to-remember-about-implementing-initializedefaultdrives"></a>Saker att komma ihåg om att implementera InitializeDefaultDrives
 
-Alla enhets leverantörer ska montera en rot enhet som hjälper användaren att identifiera sig. Rot enheten kan ange platser som fungerar som rötter för andra monterade enheter. Active Directory-providern kan till exempel skapa en enhet som visar namngivnings kontexterna som finns i `namingContext` attribut på root Distributed system Environment (DSE). Detta hjälper användarna att identifiera monterings punkter för andra enheter.
+Alla enhets leverantörer ska montera en rot enhet som hjälper användaren att identifiera sig. Rot enheten kan ange platser som fungerar som rötter för andra monterade enheter. Active Directory leverantören kan till exempel skapa en enhet som visar namngivnings kontexterna som finns i `namingContext` attributen för root Distributed system Environment (DSE). Detta hjälper användarna att identifiera monterings punkter för andra enheter.
 
 ## <a name="code-sample"></a>Kod exempel
 
@@ -104,9 +97,9 @@ Fullständig exempel kod finns i [kod exemplet för AccessDbProviderSample02](./
 
 När din Windows PowerShell-provider har registrerats med Windows PowerShell kan du testa den genom att köra cmdlets som stöds på kommando raden, inklusive alla cmdletar som gjorts tillgängliga av härledning. Nu ska vi testa leverantören av exempel enheten.
 
-1. Kör cmdleten `Get-PSProvider` för att hämta listan över providrar för att se till att providern för AccessDB-enhet finns:
+1. Kör `Get-PSProvider` cmdleten för att hämta listan över providrar för att säkerställa att AccessDB-providern finns:
 
-   **PS > `Get-PSProvider`**
+   **PS-> `Get-PSProvider`**
 
    Följande utdata visas:
 
@@ -121,7 +114,7 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
    Registry             ShouldProcess                 {HKLM, HKCU}
    ```
 
-2. Se till att det finns ett databas server namn (DSN) för databasen genom att komma åt **data källorna** i **administrations verktyg** för operativ systemet. I tabellen **användar-DSN** dubbelklickar du på **MS Access-databas** och lägger till enhets Sök vägen `C:\ps\northwind.mdb`.
+2. Se till att det finns ett databas server namn (DSN) för databasen genom att komma åt **data källorna** i **administrations verktyg** för operativ systemet. I tabellen **användar-DSN** dubbelklickar du på **MS Access-databas** och lägger till sökvägen till enheten `C:\ps\northwind.mdb` .
 
 3. Skapa en ny enhet med hjälp av exempel enhets leverantören:
 
@@ -142,7 +135,7 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
    > [!NOTE]
    > Användaren kan ännu inte interagera med providern som en enhet eftersom providern behöver container funktioner för interaktionen. Mer information finns i [skapa en Windows PowerShell container-Provider](./creating-a-windows-powershell-container-provider.md).
 
-   **PS > (Get-PSDrive mindb). anslutning**
+   **PS> (Get-PSDrive mindb). anslutning**
 
    Följande utdata visas:
 
@@ -171,4 +164,4 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
 
 [Utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md)
 
-[Skapa en grundläggande Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md)
+[Skapa en grundläggande Windows PowerShell-provider](./creating-a-basic-windows-powershell-provider.md)

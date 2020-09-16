@@ -1,25 +1,18 @@
 ---
 title: Etikett element för ListItem för ListControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: c693ff46-d1ad-4dc7-93ac-41ff2fc6c103
-caps.latest.revision: 9
-ms.openlocfilehash: c1293d5a1f942704ac01388c66bd9009fd340e82
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ad80cc0478e7567b12d264ab661d843248ba48e1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354448"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783644"
 ---
 # <a name="label-element-for-listitem-for-listcontrol-format"></a>Label-element för ListItem för ListControl (format)
 
 Anger etiketten som visas till vänster om egenskapen eller skriptets värde på raden.
 
-Konfigurations element (format) ViewDefinitions element (format) View element (format) ListControl element (format) ListEntries-element för ListControl (format) ListEntry-element för ListControl (format) ListItems för ListEntry för ListControl-element ( Format) ListItem-element för ListItems for ListControl (format)-elementet för ListItem för ListControl (format)
+Konfigurations element (format) ViewDefinitions element (format) View-element (format) ListControl-element (format) ListEntries-element för ListControl (format) ListEntry-element för ListControl (format) ListItems för ListEntry för ListControl-element (format) ListItem element for ListItems for ListControl (format) ListItem-element för ListControl (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,15 +22,15 @@ Konfigurations element (format) ViewDefinitions element (format) View element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `Label`-elementet.
+I följande avsnitt beskrivs attributen, underordnade element och `Label` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -49,7 +42,7 @@ Ingen.
 
 Ange etiketten som ska visas till vänster om egenskapen eller värdet för skriptet.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Om en etikett inte anges visas namnet på egenskapen eller skriptet. Mer information om hur du använder etiketter i en listvy finns i [skapa en listvy](./creating-a-list-view.md).
 
@@ -71,4 +64,4 @@ I följande exempel visas hur du lägger till en etikett till en rad.
 
 [ListItem-element (format)](./listitem-element-for-listitems-for-listcontrol-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

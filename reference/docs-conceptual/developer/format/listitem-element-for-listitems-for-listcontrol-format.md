@@ -1,19 +1,12 @@
 ---
 title: ListItem-element för ListItems för ListControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0f96f4f5-8bd5-43ed-95e7-a7358115999a
-caps.latest.revision: 11
-ms.openlocfilehash: 1e0a1b2d20853650328b8cfd1513a08f7e167cd6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e72a887e8bd1f93bacb663e3079eeaec34bdfa51
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356016"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785684"
 ---
 # <a name="listitem-element-for-listitems-for-listcontrol-format"></a>ListItem-element för ListItems för ListControl (format)
 
@@ -35,11 +28,11 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `ListItem`-elementet. Det går bara att ange en egenskap eller ett skript.
+I följande avsnitt beskrivs attributen, underordnade element och `ListItem` elementets överordnade element. Det går bara att ange en egenskap eller ett skript.
 
 ### <a name="attributes"></a>Attribut
 
-Inga
+Inget
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -47,9 +40,9 @@ Inga
 |-------------|-----------------|
 |[FormatString-element för ListItem för ListControl (format)](./formatstring-element-for-listitem-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger en format sträng som definierar hur egenskapen eller skriptets värde visas.|
 |[ItemSelectionCondition-element för ListItem för ListControl (format)](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)|Valfritt element.<br /><br /> Definierar det villkor som måste finnas för att listobjektet ska kunna användas.|
-|[Etikett element för ListItem för ListControl (format)](./label-element-for-listitem-for-listcontrol-format.md)|Valfritt element<br /><br /> Anger etiketten som visas till vänster om egenskapen eller skriptets värde på raden.|
+|[Label-element för ListItem för ListControl (format)](./label-element-for-listitem-for-listcontrol-format.md)|Valfritt element<br /><br /> Anger etiketten som visas till vänster om egenskapen eller skriptets värde på raden.|
 |[PropertyName-element för ListItem för ListControl (format)](./propertyname-element-for-listitem-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger den .NET-egenskap vars värde visas på raden.|
-|[Script block-element för ListItem för ListControl (format)](./scriptblock-element-for-listitem-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger det skript vars värde visas i raden.|
+|[ScriptBlock-element för ListItem för ListControl (format)](./scriptblock-element-for-listitem-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger det skript vars värde visas i raden.|
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -57,7 +50,7 @@ Inga
 |-------------|-----------------|
 |[ListItems-element för List kontroll (format)](./listitems-element-for-listentry-for-listcontrol-format.md)|Definierar egenskaper och skript vars värden visas i listvyn.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Mer information om komponenterna i en listvy finns i [skapa en listvy](./creating-a-list-view.md).
 

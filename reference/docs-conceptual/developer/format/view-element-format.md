@@ -1,19 +1,12 @@
 ---
 title: Visa element (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d837d5d4-ed2e-4d84-a306-0b5d2ad2d0bf
-caps.latest.revision: 24
-ms.openlocfilehash: 2361c1117757569bef0815018c75764430a9e7a8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c0c6fa373cfca3a55a62f201e1eabc6a1e308ef7
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353447"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785038"
 ---
 # <a name="view-element-format"></a>View-element (format)
 
@@ -38,21 +31,21 @@ Konfigurations element (format) ViewDefinitions element (format) Visa element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `View`-elementet. Du måste ange ett och endast ett av de underordnade elementen för kontrollen och du måste ange namnet på vyn och de objekt som använder vyn. Definiera anpassade kontroller, gruppera objekt och ange om vyn är out-of-band är valfri.
+I följande avsnitt beskrivs attributen, underordnade element och `View` elementets överordnade element. Du måste ange ett och endast ett av de underordnade elementen för kontrollen och du måste ange namnet på vyn och de objekt som använder vyn. Definiera anpassade kontroller, gruppera objekt och ange om vyn är out-of-band är valfri.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[Styr element för vy (format)](./controls-element-for-view-format.md)|Valfritt element.<br /><br /> Definierar en uppsättning kontroller som kan refereras till av deras namn inifrån vyn.|
+|[Controls-element för View (format)](./controls-element-for-view-format.md)|Valfritt element.<br /><br /> Definierar en uppsättning kontroller som kan refereras till av deras namn inifrån vyn.|
 |[CustomControl-element (format)](./customcontrol-element-for-groupby-format.md)|Valfritt element.<br /><br /> Definierar ett anpassat kontroll format för vyn.|
-|[GroupBy-element för vy (format)](./groupby-element-for-view-format.md)|Valfritt element.<br /><br /> Definierar hur medlemmarna i .NET-objekten grupperas.|
+|[GroupBy-element för View (format)](./groupby-element-for-view-format.md)|Valfritt element.<br /><br /> Definierar hur medlemmarna i .NET-objekten grupperas.|
 |[ListControl-element (format)](./listcontrol-element-format.md)|Valfritt element.<br /><br /> Definierar ett List format för vyn.|
-|[Namn element för vy (format)](./name-element-for-view-format.md)|Nödvändigt element.<br /><br /> Anger namnet som används för att referera till vyn.|
+|[Name-element för View (format)](./name-element-for-view-format.md)|Nödvändigt element.<br /><br /> Anger namnet som används för att referera till vyn.|
 |[TableControl-element (format)](./tablecontrol-element-format.md)|Valfritt element.<br /><br /> Definierar ett tabell format för vyn.|
 |[ViewSelectedBy-element för vy (format)](./viewselectedby-element-format.md)|Nödvändigt element.<br /><br /> Definierar de .NET-objekt som visas i den här vyn.|
 |[WideControl-element (format)](./widecontrol-element-format.md)|Valfritt element.<br /><br /> Definierar ett brett List format (enskilt värde) för vyn.|
@@ -63,7 +56,7 @@ Ingen.
 |-------------|-----------------|
 |[ViewDefinitions-element (format)](./viewdefinitions-element-format.md)|Definierar de vyer som används för att visa objekt.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Mer information om komponenterna i olika vyer och anpassade kontroller finns i följande avsnitt:
 
@@ -77,7 +70,7 @@ Mer information om komponenterna i olika vyer och anpassade kontroller finns i f
 
 ## <a name="example"></a>Exempel
 
-I det här exemplet visas ett `View`-element som definierar en tabellvy för objektet [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) .
+Det här exemplet visar ett- `View` element som definierar en tabellvy för objektet [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) .
 
 ```xml
 <ViewDefinitions>
@@ -96,13 +89,13 @@ I det här exemplet visas ett `View`-element som definierar en tabellvy för obj
 
 [ViewDefinitions-element (format)](./viewdefinitions-element-format.md)
 
-[Namn element för vy (format)](./name-element-for-view-format.md)
+[Name-element för View (format)](./name-element-for-view-format.md)
 
 [ViewSelectedBy-element (format)](./viewselectedby-element-format.md)
 
-[Styr element för vy (format)](./controls-element-for-view-format.md)
+[Controls-element för View (format)](./controls-element-for-view-format.md)
 
-[GroupBy-element för vy (format)](./groupby-element-for-view-format.md)
+[GroupBy-element för View (format)](./groupby-element-for-view-format.md)
 
 [TableControl-element (format)](./tablecontrol-element-format.md)
 
@@ -112,4 +105,4 @@ I det här exemplet visas ett `View`-element som definierar en tabellvy för obj
 
 [CustomControl-element (format)](./customcontrol-element-for-groupby-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

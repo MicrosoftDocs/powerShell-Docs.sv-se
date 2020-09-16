@@ -1,12 +1,12 @@
 ---
 ms.date: 09/13/2019
 title: Skapar Get-WinEvent-frågor med FilterHashtable
-ms.openlocfilehash: 485b0cf05489d9add201c71c01fe2ed0c48db387
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 002d84515368663e0e807f48ffe883bd533be1d9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563928"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786653"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Skapar Get-WinEvent-frågor med FilterHashtable
 
@@ -52,17 +52,17 @@ I följande tabell visas nyckel namnen, data typerna och om jokertecken accepter
 
 |    Nyckelnamn    | Värde data typ | Accepterar jokertecken? |
 | -------------- | --------------- | ---------------------------- |
-| LogName        | `<String[]>`    | Ja                          |
-| ProviderName   | `<String[]>`    | Ja                          |
-| Sökväg           | `<String[]>`    | Nej                           |
-| Nyckelord       | `<Long[]>`      | Nej                           |
-| ID             | `<Int32[]>`     | Nej                           |
-| Nivå          | `<Int32[]>`     | Nej                           |
-| StartTime      | `<DateTime>`    | Nej                           |
-| EndTime        | `<DateTime>`    | Nej                           |
-| UserID         | `<SID>`         | Nej                           |
-| Data           | `<String[]>`    | Nej                           |
-| `<named-data>` | `<String[]>`    | Nej                           |
+| LogName        | `<String[]>`    | Yes                          |
+| ProviderName   | `<String[]>`    | Yes                          |
+| Sökväg           | `<String[]>`    | No                           |
+| Nyckelord       | `<Long[]>`      | No                           |
+| ID             | `<Int32[]>`     | No                           |
+| Nivå          | `<Int32[]>`     | No                           |
+| StartTime      | `<DateTime>`    | No                           |
+| EndTime        | `<DateTime>`    | No                           |
+| UserID         | `<SID>`         | No                           |
+| Data           | `<String[]>`    | Inga                           |
+| `<named-data>` | `<String[]>`    | Inga                           |
 
 `<named-data>`Nyckeln representerar ett namngivet händelse data fält. Till exempel kan Perflib Event 1008 innehålla följande händelse data:
 
@@ -97,7 +97,7 @@ Get-WinEvent -FilterHashtable @{
 
 Fortsätt att skapa hash-tabellen med **ProviderName** -nyckeln. **ProviderName** är det namn som visas i fältet **källa** i **Windows Loggboken**. Till exempel **.NET Runtime** på följande skärm bild:
 
-![Bild av Windows Loggboken-källor.](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
+![Bild av Windows Loggboken-källor](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
 Uppdatera hash-tabellen och inkludera **nyckel värdes** paret med nyckeln, **ProviderName**och värdet **.NET Runtime**.
 
@@ -127,7 +127,7 @@ För **nyckelords** nyckeln använder PowerShell ett nummer, inte en sträng som
 Öppna **Windows Loggboken** och klicka på **Filtrera aktuell logg**i fönstret **åtgärder** .
 På den nedrullningsbara menyn **nyckelord** visas tillgängliga nyckelord, som du ser på följande skärm bild:
 
-![Bild av Windows Loggboken nyckelord.](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
+![Bild av Windows Loggboken-nyckelord](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
 
 Använd följande kommando för att visa `StandardEventKeywords` egenskaps namnen.
 
@@ -165,7 +165,7 @@ De uppräknade värdena dokumenteras i **.NET Framework**. Mer information finns
 | WdiDiagnostic    | 1125899906842624  |
 | WdiContext       | 562949953421312   |
 | SLA svarstid     | 281474976710656   |
-| Inga             | 0                 |
+| Inget             | 0                 |
 
 Uppdatera hash-tabellen och inkludera **nyckel/värde-** paret med nyckeln, **nyckelorden**och **EventLogClassic** -uppräkning svärdet **36028797018963968**.
 

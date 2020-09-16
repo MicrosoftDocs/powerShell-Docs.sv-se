@@ -1,19 +1,12 @@
 ---
 title: Skapa en listvy | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8c7a40ca-1786-46f0-bab5-6ce229daa7ee
-caps.latest.revision: 14
-ms.openlocfilehash: 25d24063501196d44e0f806a55bb699c82f771ce
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 24eb673e0db011a1439fa5ba1f2966fcc3bdc338
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359078"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783780"
 ---
 # <a name="creating-a-list-view"></a>Skapa en listvy
 
@@ -255,7 +248,7 @@ Ett exempel på en hel format fil som definierar grupper finns i [listvyn (group
 
 ## <a name="using-format-strings"></a>Använda format strängar
 
-Du kan lägga till format strängar i en vy för att ytterligare definiera hur data visas. I följande exempel visas hur du definierar en format sträng för värdet för egenskapen `StartTime`.
+Du kan lägga till format strängar i en vy för att ytterligare definiera hur data visas. I följande exempel visas hur du definierar en format sträng för `StartTime` egenskapens värde.
 
 ```xml
 <ListItem>
@@ -274,7 +267,7 @@ Följande XML-element kan användas för att ange ett format mönster:
 
 - [Script block](./scriptblock-element-for-listitem-for-listcontrol-format.md) -elementet (visas inte) anger det skript vars värde visas i vyn. Du måste ange antingen ett skript eller en egenskap, men du kan inte ange båda.
 
-I följande exempel kallas metoden `ToString` för att formatera skriptets värde. Skript kan anropa vilken metod som helst av ett objekt. Det innebär att om ett objekt har en metod, till exempel `ToString`, som har formateringsegenskaper, kan skriptet anropa metoden för att formatera utdata för skriptet.
+I följande exempel `ToString` kallas metoden för att formatera skriptets värde. Skript kan anropa vilken metod som helst av ett objekt. Om ett objekt har en metod, till exempel `ToString` , som har format parametrar, kan skriptet anropa metoden för att formatera utdata för skriptet.
 
 ```xml
 <ListItem>
@@ -285,7 +278,7 @@ I följande exempel kallas metoden `ToString` för att formatera skriptets värd
 </ListItem>
 ```
 
-Följande XML-element kan användas för att anropa metoden `ToString`:
+Följande XML-element kan användas för att anropa- `ToString` metoden:
 
 - [ListItem](./listitem-element-for-listitems-for-listcontrol-format.md) -elementet anger de data som visas i vyn.
 

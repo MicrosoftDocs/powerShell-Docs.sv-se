@@ -1,19 +1,12 @@
 ---
 title: WideEntries-element för WideControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0c4bff45-0960-4b3a-95e7-47f2cee03ac5
-caps.latest.revision: 12
-ms.openlocfilehash: 083f3c8df8136858e32778ed231943ef983e47aa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 74383b288c945008c1d7b5119363a166c04802ae
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353426"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785055"
 ---
 # <a name="wideentries-element-for-widecontrol-format"></a>WideEntries-element för WideControl (format)
 
@@ -32,11 +25,11 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `WideEntries`-elementet. Minst ett underordnat element måste anges.
+I följande avsnitt beskrivs attributen, underordnade element och `WideEntries` elementets överordnade element. Minst ett underordnat element måste anges.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -50,13 +43,13 @@ Ingen.
 |-------------|-----------------|
 |[WideControl-element (format)](./widecontrol-element-format.md)|Definierar ett brett List format (enskilt värde) för vyn.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 En bred vy är ett List format som visar ett enda egenskaps värde eller skript värde för varje objekt. Mer information om komponenterna i en bred vy finns i [wide View-komponenter](./creating-a-wide-view.md).
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visas ett `WideEntries`-element som definierar ett enskilt `WideEntry`-element. `WideEntry`-elementet innehåller ett enda `WideItem`-element som definierar vilken egenskap eller vilket skript värde som visas i vyn.
+I följande exempel visas ett `WideEntries` element som definierar ett enda `WideEntry` element. `WideEntry`Elementet innehåller ett enda `WideItem` element som definierar vilken egenskap eller vilket skript värde som visas i vyn.
 
 ```xml
 <WideControl>
@@ -78,4 +71,4 @@ Ett fullständigt exempel på en bred vy finns i [wide View (grundläggande)](./
 
 [WideEntry-element (format)](./wideentry-element-for-widecontrol-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

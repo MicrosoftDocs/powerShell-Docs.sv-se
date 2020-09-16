@@ -1,19 +1,12 @@
 ---
 title: Styr element för vy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3bd82666-447f-40fe-bd87-c8b182522f4f
-caps.latest.revision: 14
-ms.openlocfilehash: 477b8b54c8edd2fa0e6939041d04322d861197c9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 26b7e73afd465b1be9632cd71a75e4be6cc4aeca
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354798"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786177"
 ---
 # <a name="controls-element-for-view-format"></a>Controls-element för View (format)
 
@@ -31,11 +24,11 @@ Konfigurations element (format) ViewDefinitions element (format) Visa element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och de överordnade elementen i `Controls`-elementet. Elementet måste ha minst ett underordnat element. Det finns inget maximalt antal underordnade element, eller så är det inte viktigt.
+I följande avsnitt beskrivs attributen, underordnade element och `Controls` elementens överordnade element. Elementet måste ha minst ett underordnat element. Det finns inget maximalt antal underordnade element, eller så är det inte viktigt.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -47,14 +40,14 @@ Ingen.
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[Visa element (format)](./view-element-format.md)|Definierar en vy som används för att visa medlemmar i ett eller flera .NET-objekt.|
+|[View-element (format)](./view-element-format.md)|Definierar en vy som används för att visa medlemmar i ett eller flera .NET-objekt.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 ## <a name="see-also"></a>Se även
 
 [Kontroll element (format)](./control-element-for-controls-for-view-format.md)
 
-[Visa element (format)](./view-element-format.md)
+[View-element (format)](./view-element-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

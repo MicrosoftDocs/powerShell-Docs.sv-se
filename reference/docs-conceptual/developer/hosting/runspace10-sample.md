@@ -1,23 +1,16 @@
 ---
 title: Runspace10-exempel | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7c265084-e072-46ca-9844-c3c0e275d6b0
-caps.latest.revision: 7
-ms.openlocfilehash: 1a73c0b6731073b1bac941e323416e8c45d2c252
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 4d858c432c6221f2347f6de664d1e4ee299f5801
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565248"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784953"
 ---
 # <a name="runspace10-sample"></a>Runspace10 – exempel
 
-Det här exemplet visar hur du skapar ett standard tillstånd för inledande session, hur du lägger till en cmdlet till [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), hur du skapar en körnings utrymme som använder det inledande sessionstillståndet och hur du kör kommandot med hjälp av ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
+Det här exemplet visar hur du skapar ett standard tillstånd för inledande session, hur du lägger till en cmdlet i [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), hur du skapar en körnings utrymme som använder det inledande sessionstillståndet och hur du kör kommandot med hjälp av ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
 
 ## <a name="requirements"></a>Krav
 
@@ -27,9 +20,9 @@ Det här exemplet kräver Windows PowerShell 2,0.
 
 Det här exemplet demonstrerar följande.
 
-- Skapar ett [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt.
+- Skapar ett [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt.
 
-- Lägga till en cmdlet (som definieras av värd programmet) i objektet [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
+- Lägga till en cmdlet (som definieras av värd programmet) i [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objektet.
 
 - Skapar ett [system. Management. Automation. körnings utrymmen. körnings utrymme](/dotnet/api/System.Management.Automation.Runspaces.Runspace) -objekt som använder objektet.
 
@@ -41,7 +34,7 @@ Det här exemplet demonstrerar följande.
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet skapar en körnings utrymme som använder ett [system. Management. Automation. körnings utrymmen. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt för att definiera de element som är tillgängliga när körnings utrymme öppnas. I det här exemplet läggs cmdleten Get-proc (som definieras av värd programmet) till i det första sessionstillståndet och cmdleten körs synkront med hjälp av ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
+Det här exemplet skapar en körnings utrymme som använder ett [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt för att definiera de element som är tillgängliga när körnings utrymme öppnas. I det här exemplet läggs cmdleten Get-proc (som definieras av värd programmet) till i det första sessionstillståndet och cmdleten körs synkront med hjälp av ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

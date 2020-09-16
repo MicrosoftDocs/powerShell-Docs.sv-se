@@ -1,19 +1,12 @@
 ---
 title: Skriver en navigerings leverantör | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
-caps.latest.revision: 5
-ms.openlocfilehash: c557a6ec51d52f529faaaa316c89da359cd97051
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 2fd27314a2b8547a15dd1bb72aa8f970d40b18cc
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83562517"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786789"
 ---
 # <a name="writing-a-navigation-provider"></a>Skriva en navigeringsprovider
 

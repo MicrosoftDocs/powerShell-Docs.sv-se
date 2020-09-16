@@ -1,19 +1,12 @@
 ---
 title: Host05-exempel | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0a49e3c4-6a1b-404c-aefc-134e5ce3d108
-caps.latest.revision: 11
-ms.openlocfilehash: 98271f5f439d10b6d29fd0a6422b5b9b4ab55716
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 043d359fe6db6ebfa68d97002bdb8e5842e4aca5
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357647"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783270"
 ---
 # <a name="host05-sample"></a>Host05 – exempel
 

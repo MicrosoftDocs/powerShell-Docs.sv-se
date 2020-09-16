@@ -1,25 +1,18 @@
 ---
 title: FirstLineIndent-element för Frame för CustomControl för vy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: bb4e1564-3fd3-4be3-b93e-ac90480e05c0
-caps.latest.revision: 6
-ms.openlocfilehash: 3130ecc69f7d1568bcbd392dd24e8cdcc3382905
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0d51be5b5fc04bc0ea8442ca96767b1d9d8473a4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354567"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785820"
 ---
 # <a name="firstlineindent-element-for-frame-for-customcontrol-for-view-format"></a>FirstLineIndent-element för Frame för CustomControl för View (format)
 
 Anger hur många tecken den första raden med data flyttas till höger. Det här elementet används när du definierar en anpassad kontrol vy.
 
-Konfigurations element (format) ViewDefinitions element (format) View element (format) CustomControl element (format) CustomEntries-element för CustomControl för View (format) CustomEntry-element för CustomEntries för View (format) CustomItem-element för CustomEntry för CustomControlView (format)-ram element för CustomItem för CustomControl för View (format) FirstLineIndent-element
+Konfigurations element (format) ViewDefinitions element (format) View-element (format) CustomControl element (format) CustomEntries-element för CustomControl för View (format) CustomEntry-element för CustomEntries för View (format) CustomItem element for CustomEntry for CustomControlView (format) CustomItem-element för CustomControl för View (format) FirstLineIndent-element
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,34 +22,34 @@ Konfigurations element (format) ViewDefinitions element (format) View element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `FirstLineIndent`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `FirstLineIndent` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[Inramat element för CustomItem för CustomControl för vy (format)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|Definierar hur data visas, till exempel att flytta data till vänster eller höger.|
+|[Frame-element för CustomItem för CustomControl för View (format)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|Definierar hur data visas, till exempel att flytta data till vänster eller höger.|
 
 ## <a name="text-value"></a>Textvärde
 
 Ange antalet tecken som du vill flytta den första raden i data.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Om det här elementet har angetts kan du inte ange [FirstLineHanging](./firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md) -elementet.
 
 ## <a name="see-also"></a>Se även
 
-[FirstLineHanging-element för Frame för CustomControl för vy (format)](./firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md)
+[FirstLineHanging-element för Frame för CustomControl för View (format)](./firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md)
 
-[Inramat element för CustomItem för CustomControl för vy (format)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)
+[Frame-element för CustomItem för CustomControl för View (format)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

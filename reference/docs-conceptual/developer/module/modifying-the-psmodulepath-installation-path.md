@@ -1,32 +1,25 @@
 ---
 title: Ändra installations Sök vägen för PSModulePath | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: dc5ce5a2-50e9-4c88-abf1-ac148a8a6b7b
-caps.latest.revision: 15
-ms.openlocfilehash: b176d8439025ac132962859f79e72ae6f9703e82
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.openlocfilehash: 795f2bd52aeceddd3c0ca092d0c0cf2ef44bcf23
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78405046"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784851"
 ---
 # <a name="modifying-the-psmodulepath-installation-path"></a>Ändra installationssökvägen för PSModulePath
 
-I miljövariabeln `PSModulePath` lagras Sök vägarna till platserna för de moduler som är installerade på disk. PowerShell använder den här variabeln för att hitta moduler när användaren inte anger den fullständiga sökvägen till en modul. Sök vägarna i den här variabeln genomsöks i den ordning som de visas.
+`PSModulePath`Miljövariabeln lagrar Sök vägarna till platserna för de moduler som är installerade på disk. PowerShell använder den här variabeln för att hitta moduler när användaren inte anger den fullständiga sökvägen till en modul. Sök vägarna i den här variabeln genomsöks i den ordning som de visas.
 
-När PowerShell startar skapas `PSModulePath` som en system miljö variabel med följande standardvärde: `$HOME\Documents\PowerShell\Modules; $PSHOME\Modules` på Windows och `$HOME/.local/share/powershell/Modules: usr/local/share/powershell/Modules` på Linux eller Mac och `$HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules` för Windows PowerShell.
+När PowerShell startar `PSModulePath` skapas som en system miljö variabel med följande standardvärde: `$HOME\Documents\PowerShell\Modules; $PSHOME\Modules` i Windows och `$HOME/.local/share/powershell/Modules: usr/local/share/powershell/Modules` på Linux eller Mac, och `$HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules` för Windows PowerShell.
 
 > [!NOTE]
-> Den användarspecifika **CurrentUser** -platsen är mappen `WindowsPowerShell\Modules` som finns på **dokument** platsen i din användar profil. Den angivna sökvägen till platsen varierar efter Windows-version och om du använder mappomdirigering. Som standard är den platsen `$HOME\Documents\WindowsPowerShell\Modules`i Windows 10.
+> Den användarspecifika **CurrentUser** -platsen är `WindowsPowerShell\Modules` mappen som finns på **dokument** platsen i din användar profil. Den angivna sökvägen till platsen varierar efter Windows-version och om du använder mappomdirigering. Som standard är den platsen i Windows 10 `$HOME\Documents\WindowsPowerShell\Modules` .
 
 ## <a name="to-view-the-psmodulepath-variable"></a>Så här visar du variabeln PSModulePath
 
-Om du vill visa de sökvägar som anges i variabeln `PSModulePath` anger du följande kommando:
+Om du vill visa Sök vägarna som anges i `PSModulePath` variabeln, skriver du följande kommando:
 
 `$env:PSModulePath`
 
@@ -38,13 +31,13 @@ Använd någon av följande metoder för att lägga till sökvägar till den hä
 
   `$env:PSModulePath = $env:PSModulePath + "$([System.IO.Path]::PathSeparator)$MyModulePath"`
 
-- Om du vill lägga till ett permanent värde som är tillgängligt när en session öppnas, lägger du till kommandot ovan i en PowerShell-profil fil (`$PROFILE`) >
+- Om du vill lägga till ett permanent värde som är tillgängligt när en session öppnas, lägger du till kommandot ovan i en PowerShell-profil fil ( `$PROFILE` ) >
 
   Mer information om profiler finns [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles).
 
 - Om du vill lägga till en beständig variabel i registret skapar du en ny användar miljö variabel som kallas `PSModulePath` med hjälp av miljövariabler-redigeraren i dialog rutan **system egenskaper** .
 
-- Om du vill lägga till en beständig variabel med hjälp av ett skript, använder du .net-metoden [SetEnvironmentVariable](https://docs.microsoft.com/dotnet/api/system.environment.setenvironmentvariable) i klassen [system. Environment](https://docs.microsoft.com/dotnet/api/system.environment) . Följande skript lägger till exempel till `C:\Program Files\Fabrikam\Module` sökvägen till värdet i `PSModulePath` miljövariabeln för datorn. Om du vill lägga till sökvägen till användar `PSModulePath`-miljövariabeln anger du målet till "användare".
+- Om du vill lägga till en beständig variabel med hjälp av ett skript, använder du .net-metoden [SetEnvironmentVariable](/dotnet/api/system.environment.setenvironmentvariable) i klassen [system. Environment](/dotnet/api/system.environment) . Följande skript lägger till exempel till `C:\Program Files\Fabrikam\Module` sökvägen till värdet för `PSModulePath` miljö variabeln för datorn. Om du vill lägga till sökvägen till användar `PSModulePath` miljö variabeln anger du målet till "användare".
 
   ```powershell
   $CurrentValue = [Environment]::GetEnvironmentVariable("PSModulePath", "Machine")
@@ -54,7 +47,7 @@ Använd någon av följande metoder för att lägga till sökvägar till den hä
 
 ## <a name="to-remove-locations-from-the-psmodulepath"></a>Ta bort platser från PSModulePath
 
-Du kan ta bort sökvägar från variabeln med liknande metoder: `$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"` tar till exempel bort **c:\ModulePath** -sökvägen från den aktuella sessionen.
+Du kan ta bort sökvägar från variabeln med liknande metoder: om du till exempel tar `$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"` bort **c:\ModulePath** -sökvägen från den aktuella sessionen.
 
 ## <a name="see-also"></a>Se även
 

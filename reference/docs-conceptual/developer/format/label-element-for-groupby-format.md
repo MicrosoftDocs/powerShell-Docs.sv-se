@@ -1,19 +1,12 @@
 ---
 title: Etikett element för GroupBy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3351d237-e8c2-4ec5-9500-4eceadb407c2
-caps.latest.revision: 11
-ms.openlocfilehash: e7158711c60d13c745bbdfab9b1b9fc7d98b34e2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 07b4d037472a9dd2329e94576ec10f5b82f46b34
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356065"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785786"
 ---
 # <a name="label-element-for-groupby-format"></a>Label-element för GroupBy (format)
 
@@ -29,33 +22,33 @@ Konfigurations element (format) ViewDefinitions element (format) visnings elemen
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `Label`-elementet.
+I följande avsnitt beskrivs attributen, underordnade element och `Label` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[GroupBy-element för vy (format)](./groupby-element-for-view-format.md)|Definierar hur en ny grupp av objekt visas.|
+|[GroupBy-element för View (format)](./groupby-element-for-view-format.md)|Definierar hur en ny grupp av objekt visas.|
 
 ## <a name="text-value"></a>Textvärde
 
 Ange texten som visas när Windows PowerShell påträffar en ny egenskap eller ett nytt skript värde.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Utöver den text som anges av det här elementet visar Windows PowerShell det nya värdet som startar gruppen och lägger till en tom rad före och efter gruppen.
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visas etiketten för en ny grupp. Etiketten som visas ser ut ungefär så här: `Service Type: NewValueofProperty`
+I följande exempel visas etiketten för en ny grupp. Den visade etiketten ser ut ungefär så här: `Service Type: NewValueofProperty`
 
 ```xml
 <GroupBy>
@@ -69,6 +62,6 @@ Ett exempel på en hel format fil som innehåller det här elementet finns i [wi
 
 ## <a name="see-also"></a>Se även
 
-[GroupBy-element för vy (format)](./groupby-element-for-view-format.md)
+[GroupBy-element för View (format)](./groupby-element-for-view-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

@@ -1,25 +1,18 @@
 ---
 title: Formatera XML-referens för schema | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
-caps.latest.revision: 21
-ms.openlocfilehash: 437b3d6bb62fdd3a74f3392ec71df360c01a1974
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 111f90269e669aa6f8f97082ccc6063a62ddc7b1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355029"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785803"
 ---
 # <a name="format-schema-xml-reference"></a>XML-referens för formatschema
 
-Ämnena i det här avsnittet beskriver de XML-element som används för att formatera filer (format. ps1xml-filer). Formaterar filer definierar hur .NET-objektet visas. de ändrar inte själva objektet.
+Ämnena i det här avsnittet beskriver de XML-element som används för att formatera filer (Format.ps1XML-filer). Formaterar filer definierar hur .NET-objektet visas. de ändrar inte själva objektet.
 
-## <a name="in-this-section"></a>I detta avsnitt
+## <a name="in-this-section"></a>I det här avsnittet
 
 [Justerings element för TableColumnHeader för TableControl (format)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md) Definierar hur data i en kolumn rubrik visas.
 
@@ -213,33 +206,33 @@ ms.locfileid: "72355029"
 
 [PropertyName-element för groupby (format)](./propertyname-element-for-groupby-format.md) Anger den .NET-egenskap som startar en ny grupp när dess värde ändras.
 
-[PropertyName-element för ItemSeclectionCondition för kontroll av konfiguration (format)](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas till `true`, uppfylls villkoret och kontrollen används. Det här elementet används när du definierar en gemensam kontroll som kan användas av alla vyer i format filen.
+[PropertyName-element för ItemSeclectionCondition för kontroll av konfiguration (format)](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas `true` , uppfylls villkoret och kontrollen används. Det här elementet används när du definierar en gemensam kontroll som kan användas av alla vyer i format filen.
 
-[PropertyName-element för ItemSelectionCondition för kontroller för vy (format)](./propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas till `true`, uppfylls villkoret och kontrollen används. Det här elementet används när du definierar kontroller som kan användas av en vy.
+[PropertyName-element för ItemSelectionCondition för kontroller för vy (format)](./propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas `true` , uppfylls villkoret och kontrollen används. Det här elementet används när du definierar kontroller som kan användas av en vy.
 
-[PropertyName-element för ItemSelectionCondition för CustomControl för View (format](./propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md) anger den .net-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas till `true`, uppfylls villkoret och kontrollen används. Det här elementet används när du definierar en anpassad kontrol vy.
+[PropertyName-element för ItemSelectionCondition för CustomControl för View (format](./propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md) anger den .net-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas `true` , uppfylls villkoret och kontrollen används. Det här elementet används när du definierar en anpassad kontrol vy.
 
-[PropertyName-element för ItemSelectionCondition för groupby (format)](./propertyname-element-for-itemselectioncondition-for-groupby-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas till `true`, uppfylls villkoret och kontrollen används. Det här elementet används när du definierar hur en ny grupp av objekt visas.
+[PropertyName-element för ItemSelectionCondition för groupby (format)](./propertyname-element-for-itemselectioncondition-for-groupby-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas `true` , uppfylls villkoret och kontrollen används. Det här elementet används när du definierar hur en ny grupp av objekt visas.
 
-[PropertyName-element för ItemSelectionCondition för ListItem (format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas till `true`, uppfylls villkoret och vyn används. Det här elementet används när du definierar en listvy.
+[PropertyName-element för ItemSelectionCondition för ListItem (format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas `true` , uppfylls villkoret och vyn används. Det här elementet används när du definierar en listvy.
 
 [PropertyName-element för ListItem för ListControl (format)](./propertyname-element-for-listitem-for-listcontrol-format.md) Anger den .NET-egenskap vars värde visas i listan.
 
-[PropertyName-element för SelectionCondition för EntrySelectedBy för ListEntry (format)](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas till `true`, uppfylls villkoret och posten används. Det här elementet används när du definierar en gemensam kontroll som kan användas av alla vyer i format filen.
+[PropertyName-element för SelectionCondition för EntrySelectedBy för ListEntry (format)](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas `true` , uppfylls villkoret och posten används. Det här elementet används när du definierar en gemensam kontroll som kan användas av alla vyer i format filen.
 
-[PropertyName-element för SelectionCondition för kontroller för vy (format)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas till `true`, uppfylls villkoret och posten används. Det här elementet används när du definierar kontroller som kan användas av en vy.
+[PropertyName-element för SelectionCondition för kontroller för vy (format)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas `true` , uppfylls villkoret och posten används. Det här elementet används när du definierar kontroller som kan användas av en vy.
 
-[PropertyName-element för SelectionCondition för CustomControl för vy (format)](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas till `true`, uppfylls villkoret och definitionen används. Det här elementet används när du definierar en anpassad kontrol vy.
+[PropertyName-element för SelectionCondition för CustomControl för vy (format)](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas `true` , uppfylls villkoret och definitionen används. Det här elementet används när du definierar en anpassad kontrol vy.
 
-[PropertyName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas till `true`, uppfylls villkoret och definitionen används.
+[PropertyName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas `true` , uppfylls villkoret och definitionen används.
 
-[PropertyName-element för SelectionCondition för groupby (format)](./propertyname-element-for-selectioncondition-for-groupby-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas till `true`, uppfylls villkoret och definitionen används. Det här elementet används när du definierar hur en ny grupp av objekt visas.
+[PropertyName-element för SelectionCondition för groupby (format)](./propertyname-element-for-selectioncondition-for-groupby-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas `true` , uppfylls villkoret och definitionen används. Det här elementet används när du definierar hur en ny grupp av objekt visas.
 
-[PropertyName-element för SelectionCondition för EntrySelectedBy för ListEntry (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas till `true`, uppfylls villkoret och list posten används.
+[PropertyName-element för SelectionCondition för EntrySelectedBy för ListEntry (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas `true` , uppfylls villkoret och list posten används.
 
-[PropertyName-element för SelectionCondition för EntrySelectedBy för TableRowEntry (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas till `true`, uppfylls villkoret och tabell posten används.
+[PropertyName-element för SelectionCondition för EntrySelectedBy för TableRowEntry (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas `true` , uppfylls villkoret och tabell posten används.
 
-[PropertyName-element för SelectionCondition för EntrySelectedBy för WideEntry (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas till `true`, uppfylls villkoret och definitionen används.
+[PropertyName-element för SelectionCondition för EntrySelectedBy för WideEntry (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md) Anger den .NET-egenskap som utlöser villkoret. När den här egenskapen finns eller när den utvärderas `true` , uppfylls villkoret och definitionen används.
 
 [PropertyName-element för TableColumnItem (format)](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md) Anger den egenskap vars värde visas i kolumnen på raden.
 
@@ -263,33 +256,33 @@ ms.locfileid: "72355029"
 
 [Script block-element för groupby (format)](./scriptblock-element-for-groupby-format.md) Anger det skript som startar en ny grupp när dess värde ändras.
 
-[Script block-element för ItemSelectionCondition för kontroller för konfiguration (format)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas till `true`, uppfylls villkoret och kontrollen används. Det här elementet används när du definierar en gemensam kontroll som kan användas av alla vyer i format filen.
+[Script block-element för ItemSelectionCondition för kontroller för konfiguration (format)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas `true` , uppfylls villkoret och kontrollen används. Det här elementet används när du definierar en gemensam kontroll som kan användas av alla vyer i format filen.
 
-[Script block-element för ItemSelectionCondition för kontroller för vy (format)](./scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas till `true`, uppfylls villkoret och kontrollen används. Det här elementet används när du definierar kontroller som kan användas av en vy.
+[Script block-element för ItemSelectionCondition för kontroller för vy (format)](./scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas `true` , uppfylls villkoret och kontrollen används. Det här elementet används när du definierar kontroller som kan användas av en vy.
 
-[Script block-element för ItemSelectionCondition för CustomControl för View (format)](./scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas till `true`, uppfylls villkoret och kontrollen används. Det här elementet används när du definierar en anpassad kontrol vy.
+[Script block-element för ItemSelectionCondition för CustomControl för View (format)](./scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas `true` , uppfylls villkoret och kontrollen används. Det här elementet används när du definierar en anpassad kontrol vy.
 
-[Script block-element för ItemSelectionCondition för groupby (format)](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas till `true`, uppfylls villkoret och kontrollen används. Det här elementet används när du definierar hur en ny grupp av objekt visas.
+[Script block-element för ItemSelectionCondition för groupby (format)](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas `true` , uppfylls villkoret och kontrollen används. Det här elementet används när du definierar hur en ny grupp av objekt visas.
 
-[Script block-element för ItemSelectionCondition för ListControl (format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas till `true`, uppfylls villkoret och listobjektet används. Det här elementet används när du definierar en listvy.
+[Script block-element för ItemSelectionCondition för ListControl (format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas `true` , uppfylls villkoret och listobjektet används. Det här elementet används när du definierar en listvy.
 
 [Script block-element för ListItem (format)](./scriptblock-element-for-listitem-for-listcontrol-format.md) Anger det skript vars värde visas i raden i listan.
 
-[Script block-element för SelectionCondition för kontroller för konfiguration (format)](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas till `true`, uppfylls villkoret och definitionen används. Det här elementet används när du definierar en gemensam kontroll som kan användas av alla vyer i format filen.
+[Script block-element för SelectionCondition för kontroller för konfiguration (format)](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas `true` , uppfylls villkoret och definitionen används. Det här elementet används när du definierar en gemensam kontroll som kan användas av alla vyer i format filen.
 
-[Script block-element för SelectionCondition för kontroller för vy (format)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas till `true`, uppfylls villkoret och definitionen används. Det här elementet används när du definierar kontroller som kan användas av en vy.
+[Script block-element för SelectionCondition för kontroller för vy (format)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas `true` , uppfylls villkoret och definitionen används. Det här elementet används när du definierar kontroller som kan användas av en vy.
 
-[Script block-element för SelectionCondition för CustomControl för View (format)](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas till `true`, uppfylls villkoret och definitionen används. Det här elementet används när du definierar en anpassad kontrol vy.
+[Script block-element för SelectionCondition för CustomControl för View (format)](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas `true` , uppfylls villkoret och definitionen används. Det här elementet används när du definierar en anpassad kontrol vy.
 
 [Script block-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md) Anger det skript som utlöser villkoret.
 
-[Script block-element för SelectionCondition för groupby (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas till `true`, uppfylls villkoret och definitionen används. Det här elementet används när du definierar hur en ny grupp av objekt visas.
+[Script block-element för SelectionCondition för groupby (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas `true` , uppfylls villkoret och definitionen används. Det här elementet används när du definierar hur en ny grupp av objekt visas.
 
-[Script block-element för SelectionCondition för EntrySelectedBy för ListEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas till `true`, uppfylls villkoret och list posten används.
+[Script block-element för SelectionCondition för EntrySelectedBy för ListEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas `true` , uppfylls villkoret och list posten används.
 
-[Script block-element för SelectionCondition för EntrySelectedBy för TableRowEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md) Anger det skript block som utlöser villkoret. När det här skriptet utvärderas till `true`, uppfylls villkoret och tabell posten används.
+[Script block-element för SelectionCondition för EntrySelectedBy för TableRowEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md) Anger det skript block som utlöser villkoret. När det här skriptet utvärderas `true` , uppfylls villkoret och tabell posten används.
 
-[Script block-element för SelectionCondition för EntrySelectedBy för WideEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas till `true`, uppfylls villkoret och den breda post definitionen används.
+[Script block-element för SelectionCondition för EntrySelectedBy för WideEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md) Anger det skript som utlöser villkoret. När det här skriptet utvärderas `true` , uppfylls villkoret och den breda post definitionen används.
 
 [Script block-element för TableColumnItem (format)](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md) Anger det skript vars värde visas i kolumnen på raden.
 
@@ -433,4 +426,4 @@ Omslutande [element (format)](./wrap-element-for-tablerowentry-for-tablecontrol-
 
 ## <a name="see-also"></a>Se även
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

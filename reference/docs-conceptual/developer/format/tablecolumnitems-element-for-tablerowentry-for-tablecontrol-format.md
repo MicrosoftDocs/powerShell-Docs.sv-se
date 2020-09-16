@@ -1,25 +1,18 @@
 ---
 title: TableColumnItems-element för TableRowEntry för TableControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d43684ce-7c3d-4d14-8dbd-061c111ee805
-caps.latest.revision: 12
-ms.openlocfilehash: d05437aaa9652e7f81d0854d1a746acffe145699
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 661b938e8db0e68e10dc05f552e4f3a14608bc55
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353692"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785157"
 ---
 # <a name="tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format"></a>TableColumnItems-element för TableRowEntry för TableControl (format)
 
 Definierar de egenskaper eller skript vars värden visas i en rad.
 
-Konfigurations element (format) ViewDefinitions element (format) View-element (format) TableControl element (format) TableRowEntries-element för TableControl (format) TableRowEntry-element för TableRowEntries (format) TableColumnItems-element för TableControlEntry för TableControl (format)
+Konfigurations element (format) ViewDefinitions element (format) View-element (format) TableControl element (format) TableRowEntries-element för TableControl (format) TableRowEntry-element för TableRowEntries för TableControl (format) TableColumnItems-element för TableControlEntry (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,11 +24,11 @@ TableColumnItems>
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `TableColumnItems`-elementet.
+I följande avsnitt beskrivs attributen, underordnade element och `TableColumnItems` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -49,15 +42,15 @@ Ingen.
 |-------------|-----------------|
 |[TableRowEntry-element för TableRowEntries för TableControl (format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Definierar de data som visas i en rad i tabellen.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
-Ett `TableColumnItem`-element krävs för varje kolumn i raden. Den första posten visas i första kolumnen, den andra posten i den andra kolumnen och så vidare.
+Ett `TableColumnItem` element krävs för varje kolumn i raden. Den första posten visas i första kolumnen, den andra posten i den andra kolumnen och så vidare.
 
 Mer information om komponenterna i en tabellvy finns i [skapa en tabellvy](./creating-a-table-view.md).
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visas ett `TableColumnItems`-element som definierar tre egenskaper för objektet [system. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) .
+I följande exempel visas ett- `TableColumnItems` element som definierar tre egenskaper för objektet [system. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) .
 
 ```xml
 <TableColumnItems>
@@ -82,4 +75,4 @@ I följande exempel visas ett `TableColumnItems`-element som definierar tre egen
 
 [TableRowEntry-element (format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

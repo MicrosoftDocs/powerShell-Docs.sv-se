@@ -1,25 +1,18 @@
 ---
 title: Fel rapportering för cmdlet | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - error records [PowerShell], terminating
 - non-terminating errors [PowerShell]
 - error records [PowerShell]
 - terminating errors [PowerShell]
 - error records [PowerShell], non-terminating
-ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
-caps.latest.revision: 8
-ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 30b19914253db5f517f5ab76623b54aced0c0598
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356569"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784477"
 ---
 # <a name="cmdlet-error-reporting"></a>Fel rapportering för cmdlet
 
@@ -82,11 +75,11 @@ Fel kategorier används för att gruppera fel för användaren. PowerShell defin
 
 En beskrivning av de fel kategorier som är tillgängliga finns i uppräkningen [system. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) . I allmänhet bör du undvika att använda **noerror**, **UndefinedError**och **GenericError** när det är möjligt.
 
-Användare kan visa fel baserat på kategori när de anger `$ErrorView` till **CategoryView**.
+Användare kan visa fel baserat på kategori när de har angetts `$ErrorView` till **CategoryView**.
 
 ## <a name="see-also"></a>Se även
 
-[Cmdlet-översikt](./cmdlet-overview.md)
+[Översikt över cmdlets](./cmdlet-overview.md)
 
 [Typer av cmdlet-utdata](./types-of-cmdlet-output.md)
 

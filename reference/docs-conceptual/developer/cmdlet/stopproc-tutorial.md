@@ -1,19 +1,12 @@
 ---
 title: StopProc-självstudie | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a142aeb6-9c11-44a0-b34f-1f9470fa347b
-caps.latest.revision: 5
-ms.openlocfilehash: 27c8e2c7525aba38e69e50b2b7fd3b18b8e54989
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e298c729b7ac59141638052d19b95ab77aa25cd6
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359228"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786483"
 ---
 # <a name="stopproc-tutorial"></a>Självstudie om StopProc
 
@@ -35,9 +28,9 @@ Avsnitten i den här självstudien är utformade för att läsas sekventiellt, m
 
 [Skapa en cmdlet som ändrar systemet](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[Lägga till användar meddelanden i din cmdlet](./adding-user-messages-to-your-cmdlet.md)
+[Lägga till användarmeddelanden i en cmdlet](./adding-user-messages-to-your-cmdlet.md)
 
-[Lägga till alias, expansion med jokertecken och hjälp till cmdlet-parametrar](./adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters.md)
+[Lägga till alias, jokerteckenexpansion och hjälp i cmdlet-parametrar](./adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters.md)
 
 [Lägga till parameter uppsättningar till cmdletar](./adding-parameter-sets-to-a-cmdlet.md)
 

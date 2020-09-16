@@ -1,19 +1,12 @@
 ---
 title: Så här deklarerar du parameter uppsättningar | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 46905eb9-64d7-4c55-9c2a-7bc7bf04e14b
-caps.latest.revision: 10
-ms.openlocfilehash: 6c2e5891a8e3f24969c12a2e57dc5ae8caa68e41
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e6d06a9a78356693fe7a338dc5c9207044b23441
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356352"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784171"
 ---
 # <a name="how-to-declare-parameter-sets"></a>Deklarera parameteruppsättningar
 
@@ -24,7 +17,7 @@ Det här exemplet visar hur du definierar två parameter uppsättningar när du 
 
 ## <a name="how-to-define-two-parameter-sets"></a>Definiera två parameter uppsättningar
 
-1. Lägg till nyckelordet `ParameterSet` till parametern parameter för den första parameter uppsättningens unika parameter.
+1. Lägg till `ParameterSet` nyckelordet till attributet parameter för den unika parametern för den första parameter uppsättningen.
 
    ```csharp
    [Parameter(Position = 0, Mandatory = true,
@@ -37,7 +30,7 @@ Det här exemplet visar hur du definierar två parameter uppsättningar när du 
    private string userName;
    ```
 
-2. Lägg till nyckelordet `ParameterSet` till attributet parameter för den unika parametern för den andra parameter uppsättningen.
+2. Lägg till `ParameterSet` nyckelordet till attributet parameter för den unika parametern för den andra parameter uppsättningen.
 
    ```csharp
    [Parameter(Position = 0, Mandatory = true,
@@ -65,6 +58,6 @@ Det här exemplet visar hur du definierar två parameter uppsättningar när du 
 
 ## <a name="see-also"></a>Se även
 
-[Cmdlet-parameter uppsättningar](./cmdlet-parameter-sets.md)
+[Cmdlet-parameteruppsättningar](./cmdlet-parameter-sets.md)
 
 [Skriva en Windows PowerShell-cmdlet](./writing-a-windows-powershell-cmdlet.md)

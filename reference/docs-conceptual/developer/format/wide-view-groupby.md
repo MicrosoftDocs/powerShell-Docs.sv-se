@@ -1,34 +1,27 @@
 ---
 title: Bred vy (GroupBy) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 39388197-4ff9-4889-aa32-526011afa1f6
-caps.latest.revision: 6
-ms.openlocfilehash: e95ec550a7815a76a8bd7f9526dfa405a9644360
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e53714f0b4240b5fe7f62cccda83af1e5badd33c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358717"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785004"
 ---
 # <a name="wide-view-groupby"></a>Bred vy (gruppbaserad)
 
-Det här exemplet visar hur du implementerar en bred vy som visar grupper av [system. serviceprocess. ServiceController? Displayproperty = FullName](/dotnet/api/System.ServiceProcess.ServiceController) -objekt som returneras av `Get-Service`-cmdleten. Mer information om komponenterna i en bred vy finns i [skapa en bred vy](./creating-a-wide-view.md).
+Det här exemplet visar hur du implementerar en bred vy som visar grupper av [system. serviceprocess. ServiceController? Displayproperty = FullName](/dotnet/api/System.ServiceProcess.ServiceController) -objekt som returneras av `Get-Service` cmdleten. Mer information om komponenterna i en bred vy finns i [skapa en bred vy](./creating-a-wide-view.md).
 
 ### <a name="to-load-this-formatting-file"></a>Läsa in den här format filen
 
 1. Kopiera XML-filen från exempel avsnittet i det här avsnittet till en textfil.
 
-2. Spara textfilen. Se till att lägga till `format.ps1xml`-tillägget till filen för att identifiera det som en format fil.
+2. Spara textfilen. Se till att lägga till `format.ps1xml` tillägget i filen för att identifiera det som en format fil.
 
-3. Öppna Windows PowerShell och kör följande kommando för att läsa in formaterings filen i den aktuella sessionen: `Update-formatdata -prependpath PathToFormattingFile`.
+3. Öppna Windows PowerShell och kör följande kommando för att läsa in formaterings filen i den aktuella sessionen: `Update-formatdata -prependpath PathToFormattingFile` .
 
    > [!WARNING]
-   > Den här format filen definierar visningen av ett objekt som redan har definierats av en Windows PowerShell-formateringsattribut. Du måste använda parametern `prependPath` när du kör cmdleten, och du kan inte läsa in den här format filen som en modul.
+   > Den här format filen definierar visningen av ett objekt som redan har definierats av en Windows PowerShell-formateringsattribut. Du måste använda `prependPath` parametern när du kör cmdleten och du kan inte läsa in den här format filen som en modul.
 
 ## <a name="demonstrates"></a>Demonstrationer
 
@@ -98,6 +91,6 @@ FwcAgent
 
 ## <a name="see-also"></a>Se även
 
-[Exempel på filer som ska formateras](./examples-of-formatting-files.md)
+[Exempel på formateringsfiler](./examples-of-formatting-files.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

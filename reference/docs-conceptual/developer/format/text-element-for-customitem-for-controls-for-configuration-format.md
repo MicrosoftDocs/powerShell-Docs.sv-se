@@ -1,25 +1,18 @@
 ---
 title: Text element för CustomItem för konfigurations kontroller (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 87a4079e-602c-42de-9de5-9b59df986caa
-caps.latest.revision: 6
-ms.openlocfilehash: b45e96252672a872023a5eb698ffe22d677c5468
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d9f9687f9fb47f2085b25899193dda85b8fa068b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358781"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787401"
 ---
 # <a name="text-element-for-customitem-for-controls-for-configuration-format"></a>Text-element för CustomItem för Controls för Configuration (format)
 
 Anger text som läggs till i data som visas av kontrollen, till exempel en etikett, hakparenteser som omger data och blank steg för att dra in data. Det här elementet används när du definierar en gemensam kontroll som kan användas av alla vyer i format filen.
 
-Konfigurations element (format) styr element i konfigurations-(format) kontroll element för Controls (format) CustomControl-element för Control för Configuration (format) CustomEntries-element för CustomControl för konfiguration ( Format) CustomEntry-element för CustomControl for Controls for Configuration (format) CustomItem element for CustomEntry for Controls for Configuration text element for CustomItem for Controls (format)
+Konfigurations element (format) styr element i konfigurations-(format)-kontroll element för Controls (format) CustomControl-element för Control för Configuration (format) CustomEntries-element för CustomControl för Configuration (format) CustomEntry-element för CustomControl för Controls (format) CustomItem-element för CustomEntry för Controls (format)-element för konfigurations text element för CustomItem.
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,15 +22,15 @@ Konfigurations element (format) styr element i konfigurations-(format) kontroll 
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `Text`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `Text` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -49,10 +42,10 @@ Ingen.
 
 Ange texten för en kontroll för data som du vill visa.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 ## <a name="see-also"></a>Se även
 
 [CustomItem-element för CustomEntry för kontroller för konfiguration](./customitem-element-for-customentry-for-controls-for-configuration-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

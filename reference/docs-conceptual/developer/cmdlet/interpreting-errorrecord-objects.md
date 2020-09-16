@@ -1,19 +1,12 @@
 ---
 title: Tolka ErrorRecord-objekt | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
-caps.latest.revision: 9
-ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 249fff7d14023806d75aeca40f4d9b7231e14311
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356219"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786602"
 ---
 # <a name="interpreting-errorrecord-objects"></a>Tolka ErrorRecord-objekt
 
@@ -52,7 +45,7 @@ Cmdleten kan ange CloseError-, OpenError-, InvalidType-, ReadError-och WriteErro
 
 Undantaget som ingår i fel posten tillhandahålls av cmdleten och kan nås via egenskapen [system. Management. Automation. ErrorRecord. Exception *](/dotnet/api/System.Management.Automation.ErrorRecord.Exception) för objektet [system. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) .
 
-Värd program kan använda nyckelordet `is` för att identifiera att undantaget är en speciell klass eller en härledd klass. Det är bättre att förgrena över undantags typen, som visas i följande exempel.
+Värd program kan använda `is` nyckelordet för att identifiera att undantaget är en speciell klass eller en härledd klass. Det är bättre att förgrena över undantags typen, som visas i följande exempel.
 
 `if (MyNonTerminatingError.Exception is AccessDeniedException)`
 
@@ -90,8 +83,8 @@ Objektet [system. Management. Automation. ErrorRecord](/dotnet/api/System.Manage
 
 [System. Management. Automation. cmdlet. Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[Lägga till icke-avslutande fel rapportering till din cmdlet](./adding-non-terminating-error-reporting-to-your-cmdlet.md)
+[Lägga till rapportering av fel som avbryter körningen i en cmdlet](./adding-non-terminating-error-reporting-to-your-cmdlet.md)
 
-[Windows PowerShell fel rapportering](./error-reporting-concepts.md)
+[Windows PowerShell-felrapportering](./error-reporting-concepts.md)
 
 [Skriva en Windows PowerShell-cmdlet](./writing-a-windows-powershell-cmdlet.md)

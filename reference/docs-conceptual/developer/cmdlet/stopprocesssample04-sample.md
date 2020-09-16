@@ -1,23 +1,16 @@
 ---
 title: StopProcessSample04-exempel | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ac4903f5-fd40-4f1c-b1d1-18923c16ce45
-caps.latest.revision: 8
-ms.openlocfilehash: 26e882dad839af43945f84d4cdd6cda7bdb2d587
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a256d29b9e0be878d805a82ddf5a538461d283d6
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359198"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786432"
 ---
 # <a name="stopprocesssample04-sample"></a>StopProcessSample04 – exempel
 
-Det här exemplet visar hur du skriver en cmdlet som deklarerar parameter uppsättningar, anger standard parameter uppsättningen och kan acceptera ett indatamängds objekt. Denna cmdlet liknar `Stop-Process`-cmdleten som tillhandahålls av Windows PowerShell 2,0.
+Det här exemplet visar hur du skriver en cmdlet som deklarerar parameter uppsättningar, anger standard parameter uppsättningen och kan acceptera ett indatamängds objekt. Denna cmdlet liknar den `Stop-Process` cmdlet som tillhandahålls av Windows PowerShell 2,0.
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Så här skapar du exemplet med hjälp av Visual Studio.
 

@@ -1,23 +1,16 @@
 ---
 title: Filer för anpassad formatering | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 85d27545-8097-4010-9947-6d8b3ce2eac0
-caps.latest.revision: 15
-ms.openlocfilehash: 71c1c181058c5646c817b90d9832976a78c6c7de
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a9633e2ee18e1817459645b4a5950ea8a622850b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359417"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784358"
 ---
 # <a name="custom-formatting-files"></a>Anpassade formateringsfiler
 
-Visnings formatet för de objekt som returneras av cmdlets, Functions och scripts definieras med hjälp av filer (format. ps1xml-filer). Flera av de här filerna tillhandahålls av Windows PowerShell för att definiera standard visnings formatet för de objekt som returneras av Windows PowerShell-cmdlets. Men du kan också skapa egna filer för att skriva över standard visnings formaten eller definiera visningen av objekt som returneras av dina egna kommandon.
+Visnings formatet för de objekt som returneras av cmdlets, Functions och scripts definieras med hjälp av formateringsattribut (format.ps1XML-filer). Flera av de här filerna tillhandahålls av Windows PowerShell för att definiera standard visnings formatet för de objekt som returneras av Windows PowerShell-cmdlets. Men du kan också skapa egna filer för att skriva över standard visnings formaten eller definiera visningen av objekt som returneras av dina egna kommandon.
 
 Windows PowerShell använder datan i dessa filer för att avgöra vad som visas och hur data formateras. De data som visas kan innehålla egenskaperna för ett objekt eller värdet för ett skript block.  Skript block används om du vill visa ett värde som inte är tillgängligt direkt från egenskaperna för ett objekt. Du kanske exempelvis vill lägga till värdet för två egenskaper för ett objekt och Visa summan som en separat del av data. När du skriver din egen fil format måste du definiera *vyer* för de objekt som du vill visa. Du kan definiera en enskild vy för varje objekt, du kan definiera en enskild vy för flera objekt, eller så kan du definiera flera vyer för samma objekt. Det finns ingen gräns för hur många vyer du kan definiera.
 
@@ -40,7 +33,7 @@ Anpassad vy visar en anpassningsbar vy av objekt egenskaper eller skript Blocks 
 
 ## <a name="view-xml-elements"></a>Visa XML-element
 
-I följande exempel visas de XML-taggar som används för att definiera en tabellvy som innehåller två kolumner. [ViewDefinitions](../format/viewdefinitions-element-format.md) -elementet är behållar elementet för alla vyer som definierats i format filen. Elementet [View](../format/view-element-format.md) definierar den aktuella vyn för tabeller, listor, bred eller anpassad. I varje vy anger [Name](../format/name-element-for-view-format.md) -elementet namnet på vyn, [ViewSelectedBy](../format/viewselectedby-element-format.md) -elementet definierar de objekt som använder vyn och de olika kontroll elementen (till exempel `TableControl` element) definierar formatet för vyn.
+I följande exempel visas de XML-taggar som används för att definiera en tabellvy som innehåller två kolumner. [ViewDefinitions](../format/viewdefinitions-element-format.md) -elementet är behållar elementet för alla vyer som definierats i format filen. Elementet [View](../format/view-element-format.md) definierar den aktuella vyn för tabeller, listor, bred eller anpassad. I varje vy anger [Name](../format/name-element-for-view-format.md) -elementet namnet på vyn, [ViewSelectedBy](../format/viewselectedby-element-format.md) -elementet definierar de objekt som använder vyn och de olika kontroll elementen (till exempel `TableControl` elementet) definierar formatet för vyn.
 
 ```xml
 ViewDefinitions

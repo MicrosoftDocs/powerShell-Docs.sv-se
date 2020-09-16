@@ -1,19 +1,12 @@
 ---
 title: TableRowEntry-element för TableRowEntries för TableControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 18d86af7-7ff9-4968-81be-2caa61937d49
-caps.latest.revision: 10
-ms.openlocfilehash: 946ffb3fe857503c02b9000238a86775969abbd6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 83076ae5b2c48992ce5e621c65fc9937efb68b87
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353685"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787418"
 ---
 # <a name="tablerowentry-element-for-tablerowentries-for-tablecontrol-format"></a>TableRowEntry-element för TableRowEntries för TableControl (format)
 
@@ -33,11 +26,11 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `TableRowEntry`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `TableRowEntry` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -53,15 +46,15 @@ Ingen.
 |-------------|-----------------|
 |[TableRowEntries-element för TableControl (format)](./tablerowentries-element-for-tablecontrol-format.md)|Definierar raderna i tabellen.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
-Ett `TableColumnItems`-element och ett `EntrySelectedBy`-element måste anges.
+Ett `TableColumnItems` element och ett `EntrySelectedBy` element måste anges.
 
 Mer information om komponenterna i en tabellvy finns i [skapa en tabellvy](./creating-a-table-view.md).
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visas ett `TableRowEntry`-element som definierar en rad som visar värdena för två egenskaper för objektet [system. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) .
+I följande exempel visas ett- `TableRowEntry` element som definierar en rad som visar värdena för två egenskaper för objektet [system. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) .
 
 ```xml
 <TableRowEntry>
@@ -91,4 +84,4 @@ I följande exempel visas ett `TableRowEntry`-element som definierar en rad som 
 
 [Figursatta element för TableRowEntry för TableControl (format)](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

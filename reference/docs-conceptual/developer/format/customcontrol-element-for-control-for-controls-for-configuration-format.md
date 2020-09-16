@@ -1,19 +1,12 @@
 ---
 title: CustomControl-element för kontroll för konfiguration (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d9d92a9e-c680-46ca-962e-e82452726953
-caps.latest.revision: 10
-ms.openlocfilehash: 1d72ce5b18e89bd81c7f81b27f4b8c60bed99764
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5aacf824421dfce19f1f495fc0a95e766cdbaf8b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359069"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786092"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-configuration-format"></a>CustomControl-element för Control för Controls för Configuration (format)
 
@@ -31,11 +24,11 @@ Konfigurations element (format) styr element i konfigurations-(format)-kontroll 
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `CustomControl`-elementet. Elementet måste ha minst ett underordnat element. Det finns ingen övre gräns för antalet underordnade element som kan anges.
+I följande avsnitt beskrivs attributen, underordnade element och `CustomControl` elementets överordnade element. Elementet måste ha minst ett underordnat element. Det finns ingen övre gräns för antalet underordnade element som kan anges.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -47,14 +40,14 @@ Ingen.
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[Kontroll element för konfigurations kontroll (format)](./control-element-for-controls-for-configuration-format.md)|Definierar en gemensam kontroll som kan användas av alla vyer i format filen och det namn som används för att referera till kontrollen.|
+|[Control-element för Controls för Configuration (format)](./control-element-for-controls-for-configuration-format.md)|Definierar en gemensam kontroll som kan användas av alla vyer i format filen och det namn som används för att referera till kontrollen.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 ## <a name="see-also"></a>Se även
 
-[Kontroll element för konfigurations kontroll (format)](./control-element-for-controls-for-configuration-format.md)
+[Control-element för Controls för Configuration (format)](./control-element-for-controls-for-configuration-format.md)
 
 [CustomEntries-element för CustomControl för konfiguration (format)](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

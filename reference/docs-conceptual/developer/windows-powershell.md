@@ -1,19 +1,18 @@
 ---
 title: Windows PowerShell SDK
 ms.date: 09/13/2016
-ms.topic: article
-ms.openlocfilehash: 7627ab336ddc40ab47c3017eed77c78bbdac4e7f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0501f511499bc5de35fad5d7798f0d16e2d3b36b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356667"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786670"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
 Uppdaterad: 8 juli 2013
 
-Windows PowerShell® är ett aktivitetsbaserat kommandoradsskal och skriptspråk som är särskilt utformat för systemadministration. Windows PowerShell® bygger på .NET Framework och hjälper IT-proffs och privilegierade användare att styra och automatisera administrationen av Windows-operativsystemet och program som körs i Windows.
+Windows PowerShell® är ett uppgifts baserat kommando rads gränssnitt och skript språk som är särskilt utformat för system administration. Windows PowerShell® bygger på .NET Framework och hjälper IT-proffs och privilegierade användare att styra och automatisera administrationen av Windows-operativsystemet och program som körs i Windows.
 
 Dokumenten som publiceras här skrivs främst för cmdlet-, Provider-och värd program utvecklare som behöver referensinformation om de API: er som tillhandahålls av Windows PowerShell.
 System administratörer kan dock också hitta den information som tillhandahålls av dessa dokument.

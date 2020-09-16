@@ -1,23 +1,16 @@
 ---
 title: GetProcessSample03-exempel | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fc9d80ee-6ebd-48cd-a7ea-53cb2b442a22
-caps.latest.revision: 6
-ms.openlocfilehash: ec5a8c284dd3fa772261099281aba1fb68c49118
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 09df93792ab611e167279bc35755d8d6c28e7cf3
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359308"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784222"
 ---
 # <a name="getprocesssample03-sample"></a>GetProcessSample03 – exempel
 
-Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna på den lokala datorn. Det ger en `Name` parameter som kan acceptera ett objekt från pipelinen eller ett värde från en egenskap hos ett objekt vars egenskaps namn är detsamma som parameter namnet. Denna cmdlet är en förenklad version av `Get-Process`-cmdleten som tillhandahålls av Windows PowerShell 2,0.
+Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna på den lokala datorn. Den innehåller en `Name` parameter som kan acceptera ett objekt från pipelinen eller ett värde från en egenskap hos ett objekt vars egenskaps namn är detsamma som parameter namnet. Denna cmdlet är en förenklad version av `Get-Process` cmdleten som tillhandahålls av Windows PowerShell 2,0.
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>Så här skapar du exemplet med Visual Studio.
 
@@ -67,7 +60,7 @@ Det här exemplet demonstrerar följande.
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar en implementering av cmdleten Get-proc som innehåller en `Name` parameter som accepterar ininformation från pipelinen.
+Det här exemplet visar en implementering av cmdleten Get-proc som innehåller en `Name` parameter som accepterar indatamängden från pipelinen.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands

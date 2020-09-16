@@ -1,25 +1,18 @@
 ---
 title: SelectionCondition-element för EntrySelectedBy för kontroller för vy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2623407e-fa10-4d27-a804-204f6d50ef22
-caps.latest.revision: 6
-ms.openlocfilehash: ea15e647a9dd7a7064718a0c536c4a3178d62d95
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1c14b2638249bdbfe25f7a96e917d66ea10ed239
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353860"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787588"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-controls-for-view-format"></a>SelectionCondition-element för EntrySelectedBy för Controls för View (format)
 
 Definierar ett villkor som måste finnas för att den kontroll definition som ska användas. Det här elementet används när du definierar kontroller som kan användas av en vy.
 
-Konfigurations element (format) ViewDefinitions element (format) View-element (format) styr element (format) styr element (format) styr element för Controls (format) CustomControl-element för kontroll för Control for View (format) CustomEntries-element för CustomControl for Controls for View (format) CustomEntry-elementet för CustomEntries for Controls for View (format) EntrySelectedBy-elementet for CustomEntry for Controls for View (format) SelectionCondition element for EntrySelectedBy for Controls for View ( Formatering
+Konfigurations element (format) ViewDefinitions element (format) View-element (format) styr element (format) styr element (format) styr element för Controls (format) CustomControl-element för kontroll för Control for View (format) CustomEntries-element för CustomControl for Controls for View (format) CustomEntry-elementet för CustomEntries for Controls for View (format) EntrySelectedBy-elementet for CustomEntry for Controls for View (format) SelectionCondition element for EntrySelectedBy for Controls for View (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,28 +27,28 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `SelectionCondition`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `SelectionCondition` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[PropertyName-element för SelectionCondition för kontroller för vy (format)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)|Valfritt element.<br /><br /> Anger en .NET-egenskap som utlöser villkoret.|
-|[Script block-element för SelectionCondition för kontroller för vy (format)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md)|Valfritt element.<br /><br /> Anger det skript som utlöser villkoret.|
-|[SelectionSetName-element för SelectionCondition för kontroller för vy (format)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)|Valfritt element.<br /><br /> Anger den uppsättning av .NET-typer som utlöser villkoret.|
-|[Elementet TypeName för SelectionCondition för kontroller för vyn (format)](./typename-element-for-selectioncondition-for-controls-for-view-format.md)|Valfritt element.<br /><br /> Anger en .NET-typ som utlöser villkoret.|
+|[PropertyName-element för SelectionCondition för Controls för View (format)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)|Valfritt element.<br /><br /> Anger en .NET-egenskap som utlöser villkoret.|
+|[ScriptBlock-element för SelectionCondition för Controls för View (format)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md)|Valfritt element.<br /><br /> Anger det skript som utlöser villkoret.|
+|[SelectionSetName-element för SelectionCondition för Controls för View (format)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)|Valfritt element.<br /><br /> Anger den uppsättning av .NET-typer som utlöser villkoret.|
+|[TypeName-element för SelectionCondition för Controls för View (format)](./typename-element-for-selectioncondition-for-controls-for-view-format.md)|Valfritt element.<br /><br /> Anger en .NET-typ som utlöser villkoret.|
 
 ### <a name="parent-elements"></a>Överordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[EntrySelectedBy-element för CustomEntry för kontroller för vy (format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|Definierar de .NET-typer som använder den här kontroll definitionen eller det villkor som måste finnas för att den här definitionen ska kunna användas.|
+|[EntrySelectedBy-element för CustomEntry för Controls för View (format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|Definierar de .NET-typer som använder den här kontroll definitionen eller det villkor som måste finnas för att den här definitionen ska kunna användas.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 När du definierar ett urvals villkor gäller följande krav:
 
@@ -67,14 +60,14 @@ Mer information om hur du använder urvals villkor finns i [definiera villkor f�
 
 ## <a name="see-also"></a>Se även
 
-[PropertyName-element för SelectionCondition för kontroller för vy (format)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)
+[PropertyName-element för SelectionCondition för Controls för View (format)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)
 
-[Script block-element för SelectionCondition för kontroller för vy (format)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md)
+[ScriptBlock-element för SelectionCondition för Controls för View (format)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md)
 
-[SelectionSetName-element för SelectionCondition för kontroller för vy (format)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
+[SelectionSetName-element för SelectionCondition för Controls för View (format)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
 
-[Elementet TypeName för SelectionCondition för kontroller för vyn (format)](./typename-element-for-selectioncondition-for-controls-for-view-format.md)
+[TypeName-element för SelectionCondition för Controls för View (format)](./typename-element-for-selectioncondition-for-controls-for-view-format.md)
 
-[EntrySelectedBy-element för CustomEntry för kontroller för vy (format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)
+[EntrySelectedBy-element för CustomEntry för Controls för View (format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

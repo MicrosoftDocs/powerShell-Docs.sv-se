@@ -1,21 +1,14 @@
 ---
 title: Typer av cmdlet-utdata | Microsoft Docs
-ms.custom: ''
 ms.date: 01/18/2019
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell SDK], output
-ms.assetid: 547e6695-e936-4cac-a90b-417d0dab393d
-caps.latest.revision: 12
-ms.openlocfilehash: de21d9ebfec4f23d3819695df225f7a230864a7b
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 8f761fdddd264b7c580c4a860081fdc5d2776ee7
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83561428"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786364"
 ---
 # <a name="types-of-cmdlet-output"></a>Typer av cmdlet-utdata
 
@@ -62,7 +55,7 @@ För alla Skriv metods anrop bestäms innehålls visningen av vissa körnings va
 
 ## <a name="accessing-the-output-functionality-of-a-host-application"></a>Åtkomst till utmatnings funktionen för ett värd program
 
-Du kan också utforma en cmdlet för att direkt komma åt utmatnings funktionen för ett värd program via PowerShell-körningen. Med hjälp av de värd-API: er som tillhandahålls av PowerShell i stället för [system. Console](/dotnet/api/System.Console) eller [system. Windows. Forms](/dotnet/api/System.Windows.Forms) säkerställer du att cmdleten fungerar med en mängd olika värdar. Exempel: **PowerShell. exe** -konsolens värd, den grafiska **powershell_ise. exe** -värden, PowerShell-fjärrkörnings värden och värdar från tredje part.
+Du kan också utforma en cmdlet för att direkt komma åt utmatnings funktionen för ett värd program via PowerShell-körningen. Med hjälp av de värd-API: er som tillhandahålls av PowerShell i stället för [system. Console](/dotnet/api/System.Console) eller [system. Windows. Forms](/dotnet/api/System.Windows.Forms) säkerställer du att cmdleten fungerar med en mängd olika värdar. Till exempel: **powershell.exe** konsol värd, **powershell_ise.exe** grafiska värd, PowerShell-fjärrkörnings värd och tredjepartsleverantörer.
 
 ## <a name="see-also"></a>Se även
 

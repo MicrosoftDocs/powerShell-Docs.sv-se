@@ -1,19 +1,12 @@
 ---
 title: Typer av cmdlet-parametrar | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 6602730d-3892-4656-80c7-7bca2d14337f
-caps.latest.revision: 14
-ms.openlocfilehash: f5781c0c03aca41d01a44598a9a8c00d6d21d2fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e704aae6e23568be9935e228752f652929863a98
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359180"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786381"
 ---
 # <a name="types-of-cmdlet-parameters"></a>Typer av cmdlet-parametrar
 
@@ -23,7 +16,7 @@ I det här avsnittet beskrivs de olika typerna av parametrar som du kan deklarer
 
 Alla cmdlet-parametrar är antingen namngivna eller positions parametrar. En namngiven parameter kräver att du anger parameter namnet och argumentet när du anropar cmdleten. En positions parameter kräver bara att du skriver argumenten i relativ ordning. Systemet mappar sedan det första argumentet utan namn till den första positions parametern. Systemet mappar det andra namnlösa argumentet till den andra namnlösa parametern och så vidare. Som standard är alla cmdlet-parametrar namngivna parametrar.
 
-Om du vill definiera en namngiven parameter utelämnar du nyckelordet `Position` i **parameter** -attributets deklaration, som du ser i följande parameter deklaration.
+Om du vill definiera en namngiven parameter utelämnar du `Position` nyckelordet i **parameter** -attributets deklaration, som du ser i följande parameter deklaration.
 
 ```csharp
 [Parameter(ValueFromPipeline=true)]
@@ -35,7 +28,7 @@ public string UserName
 private string userName;
 ```
 
-Om du vill definiera en positions parameter lägger du till nyckelordet `Position` i parametern parameter attribut och anger sedan en position. I följande exempel deklareras parametern `UserName` som en positions parameter med position 0. Det innebär att det första argumentet för anropet automatiskt binds till den här parametern.
+Om du vill definiera en positions parameter lägger du till `Position` nyckelordet i parametern parameter attribut och anger sedan en position. I följande exempel `UserName` deklareras parametern som en positions parameter med position 0. Det innebär att det första argumentet för anropet automatiskt binds till den här parametern.
 
 ```csharp
 [Parameter(Position = 0)]
@@ -52,7 +45,7 @@ private string userName;
 
 Positions-och namngivna parametrar accepterar enskilda argument eller flera argument avgränsade med kommatecken. Flera argument tillåts endast om parametern accepterar en samling, till exempel en sträng mat ris. Du kan blanda positions-och namngivna parametrar i samma cmdlet. I det här fallet hämtar systemet de namngivna argumenten först och försöker sedan mappa de återstående namnlösa argumenten till positions parametrarna.
 
-Följande kommandon visar de olika sätt som du kan använda för att ange enstaka och flera argument för parametrarna i `Get-Command`-cmdleten. Observera att i de två sista exemplen behöver inte **-Name** anges, eftersom parametern `Name` definieras som en positions parameter.
+Följande kommandon visar de olika sätt som du kan använda för att ange enstaka och flera argument för `Get-Command` cmdlet: en. Observera att i de två sista exemplen behöver **-namn** inte anges eftersom `Name` parametern definieras som en positions parameter.
 
 ```powershell
 Get-Command -Name get-service
@@ -65,7 +58,7 @@ Get-Command get-service,set-service
 
 Du kan också definiera cmdlet-parametrar som obligatoriska eller valfria parametrar. (En obligatorisk parameter måste anges innan Windows PowerShell-körningsmiljön anropar cmdleten.)  Som standard definieras parametrar som valfria.
 
-Om du vill definiera en obligatorisk parameter lägger du till nyckelordet `Mandatory` i parametern parameter attribut och anger det till `true`, som du ser i följande parameter deklaration.
+Om du vill definiera en obligatorisk parameter lägger du till `Mandatory` nyckelordet i parametern parameter-attribut och anger det till `true` , som du ser i följande parameter deklaration.
 
 ```csharp
 [Parameter(Position = 0, Mandatory = true)]
@@ -77,7 +70,7 @@ public string UserName
 private string userName;
 ```
 
-Om du vill definiera en valfri parameter utelämnar du nyckelordet `Mandatory` i **parameter** -attributets deklaration, som du ser i följande parameter deklaration.
+Om du vill definiera en valfri parameter utelämnar du `Mandatory` nyckelordet i **parameter** -attributets deklaration, som du ser i följande parameter deklaration.
 
 ```csharp
 [Parameter(Position = 0)]
@@ -91,11 +84,11 @@ private string userName;
 
 ## <a name="switch-parameters"></a>Växla parametrar
 
-Windows PowerShell innehåller en typ av [system. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) som gör att du kan definiera en parameter vars värde automatiskt anges till `false` om parametern inte anges när cmdleten anropas. Använd när det är möjligt och Använd switch-parametrar i stället för booleska parametrar.
+Windows PowerShell tillhandahåller en [system. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) -typ som gör att du kan definiera en parameter vars värde automatiskt anges till `false` om parametern inte anges när cmdleten anropas. Använd när det är möjligt och Använd switch-parametrar i stället för booleska parametrar.
 
-Överväg följande exempel. Som standard skickar flera Windows PowerShell-cmdlets inte ett utgående objekt nedåt i pipelinen. Dessa cmdletar har dock en `PassThru` växel parameter som åsidosätter standard beteendet. Om parametern `PassThru` anges när dessa cmdletar anropas, returnerar cmdleten ett utgående objekt till pipelinen.
+Överväg följande exempel. Som standard skickar flera Windows PowerShell-cmdlets inte ett utgående objekt nedåt i pipelinen. Dessa cmdletar har dock en `PassThru` växel parameter som åsidosätter standard beteendet. Om `PassThru` parametern anges när dessa cmdletar anropas, returnerar cmdleten ett utgående objekt till pipelinen.
 
-Om du behöver parametern för att ha ett standardvärde för `true` när parametern inte anges i anropet, bör du överväga att återställa meningen för parametern. För exempel, i stället för att ange parametervärdet till ett booleskt värde för `true`, deklarera egenskapen som [system. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) -typ och ange sedan standardvärdet för parametern som `false`.
+Om du behöver parametern för att ha ett standardvärde för `true` när parametern inte anges i anropet, bör du överväga att återställa meningen för parametern. För exempel, i stället för att ange parametervärdet till ett booleskt värde `true` , deklarerar du egenskapen som [system. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) -typ och anger sedan standardvärdet för parametern till `false` .
 
 För att definiera en switch-parameter, deklarera egenskapen som [system. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) -typ, som du ser i följande exempel.
 

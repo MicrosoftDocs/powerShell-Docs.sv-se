@@ -1,19 +1,12 @@
 ---
 title: Snabb start för Windows PowerShell-Provider | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
-caps.latest.revision: 5
-ms.openlocfilehash: 4693a2ec02a8f010f900bebf5a50853edef88cb1
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 048812d1a4765b2ff0069698615453f91ee95409
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560941"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783134"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Snabbstart för Windows PowerShell-providers
 
@@ -35,9 +28,9 @@ Skapa ett klass biblioteks projekt med namnet AccessDBProviderSample i Visual St
 
 1. Lägg till sammansättningen system. Management. Automation som en referens till ditt projekt.
 
-2. Klicka på **Project > AccessDBProviderSample-egenskaper > Felsök**. I **Start Project**klickar du på **Starta externt program**och navigerar till Windows PowerShell-filen (vanligt vis c:\Windows\System32\WindowsPowerShell\v1.0 \\ . PowerShell. exe).
+2. Klicka på **Project > AccessDBProviderSample-egenskaper > Felsök**. I **Start Project**klickar du på **Starta externt program**och navigerar till Windows PowerShell-filen (vanligt vis c:\Windows\System32\WindowsPowerShell\v1.0 \\.powershell.exe).
 
-3. Under **Start alternativ**anger du följande i rutan **kommando rads argument** :`-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
+3. Under **Start alternativ**anger du följande i rutan **kommando rads argument** : `-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
 
 ### <a name="declaring-the-provider-class"></a>Deklarera Provider-klassen
 

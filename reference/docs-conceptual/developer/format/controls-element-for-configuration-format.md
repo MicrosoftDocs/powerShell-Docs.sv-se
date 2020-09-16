@@ -1,19 +1,12 @@
 ---
 title: Kontrollerar element för konfiguration (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 4d4ef63d-5866-4319-ba00-7ed96de26821
-caps.latest.revision: 18
-ms.openlocfilehash: ac9f7ff08f6e87ef83b5a2fe23fc58ee2651566d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 44b9db0d3523e5e9086da9911882b258a2a54ca6
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359097"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783797"
 ---
 # <a name="controls-element-for-configuration-format"></a>Controls-element för Configuration (format)
 
@@ -31,32 +24,32 @@ Konfigurations element (format) styr elementet i konfigurationen (format)
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `Controls`-elementet.
+I följande avsnitt beskrivs attributen, underordnade element och `Controls` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[Kontroll element för konfigurations kontroll (format)](./control-element-for-controls-for-configuration-format.md)|Nödvändigt element.<br /><br /> Definierar en gemensam kontroll som kan användas av alla vyer i formaterings filen.|
+|[Control-element för Controls för Configuration (format)](./control-element-for-controls-for-configuration-format.md)|Nödvändigt element.<br /><br /> Definierar en gemensam kontroll som kan användas av alla vyer i formaterings filen.|
 
 ### <a name="parent-elements"></a>Överordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[Konfigurations element (format)](./configuration-element-format.md)|Representerar det översta elementet i en textfil.|
+|[Configuration-element (format)](./configuration-element-format.md)|Representerar det översta elementet i en textfil.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Du kan skapa valfritt antal vanliga kontroller. För varje kontroll måste du ange det namn som ska användas för att referera till kontrollen och kontrollens komponenter.
 
 ## <a name="see-also"></a>Se även
 
-[Konfigurations element (format)](./configuration-element-format.md)
+[Configuration-element (format)](./configuration-element-format.md)
 
-[Kontroll element för konfigurations kontroll (format)](./control-element-for-controls-for-configuration-format.md)
+[Control-element för Controls för Configuration (format)](./control-element-for-controls-for-configuration-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

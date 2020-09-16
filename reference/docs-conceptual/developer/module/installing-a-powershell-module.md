@@ -1,19 +1,12 @@
 ---
 title: Installera en PowerShell-modul | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
-caps.latest.revision: 28
-ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6a4e9ac2884d0b300b5c1ad8b6156525438a1650
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357374"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784868"
 ---
 # <a name="installing-a-powershell-module"></a>Installera en PowerShell-modul
 
@@ -62,7 +55,7 @@ Som standard innehåller variabeln **PSModulePath** följande kataloger för sys
   ```
 
   > [!IMPORTANT]
-  > När du har lagt till sökvägen till **PSModulePath**bör du sända ett miljö meddelande om ändringen. Genom att sända ändringen kan andra program, till exempel gränssnittet, Hämta ändringen. Om du vill sända ändringen ska du be din produkt installations kod att skicka ett **WM_SETTINGCHANGE** meddelande med `lParam` inställd på strängen "miljö". Se till att skicka meddelandet efter att modulens installations kod har uppdaterats **PSModulePath**.
+  > När du har lagt till sökvägen till **PSModulePath**bör du sända ett miljö meddelande om ändringen. Genom att sända ändringen kan andra program, till exempel gränssnittet, Hämta ändringen. Om du vill sända ändringen ska du be din produkt installations kod att skicka ett **WM_SETTINGCHANGE** meddelande med `lParam` inställningen "miljö". Se till att skicka meddelandet efter att modulens installations kod har uppdaterats **PSModulePath**.
 
 ### <a name="use-the-correct-module-directory-name"></a>Använd rätt katalog namn för modul
 
@@ -70,7 +63,7 @@ En välformulerad modul är en modul som lagras i en katalog som har samma namn 
 
 "Grund namnet" i en fil är namnet utan fil namns tillägget. I en välformulerad modul måste namnet på den katalog som innehåller module-filerna matcha bas namnet för minst en fil i modulen.
 
-I exempel Fabrikam-modulen är katalogen som innehåller filerna namnet "Fabrikam" och minst en fil har bas namnet "Fabrikam". I det här fallet har både fabrikam. psd1 och fabrikam. dll "Fabrikam"-bas namnet.
+I exempel Fabrikam-modulen är katalogen som innehåller filerna namnet "Fabrikam" och minst en fil har bas namnet "Fabrikam". I det här fallet måste både Fabrikam.psd1 och Fabrikam.dll ha "Fabrikam"-bas namnet.
 
 ```
 C:\Program Files
@@ -89,7 +82,7 @@ Om modulen inte är korrekt utformad och dess plats inte ingår i värdet för *
 
 - Funktionen för automatisk inläsning av modulen kan inte automatiskt importera modulen.
 
-- Den `ListAvailable` parametern för cmdleten [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) kan inte hitta modulen.
+- `ListAvailable`Parametern för cmdleten [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) kan inte hitta modulen.
 
 - Cmdleten [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) kan inte hitta modulen. Om du vill importera modulen måste du ange den fullständiga sökvägen till rot modul filen eller manifest filen för modulen.
 
@@ -101,7 +94,7 @@ Om modulen inte är korrekt utformad och dess plats inte ingår i värdet för *
 
 - Cmdleten [show-Command](/powershell/module/Microsoft.PowerShell.Utility/Show-Command) kan inte hitta och Visa kommandon i modulen.
 
-  Kommandona i modulen saknas i `Show-Command`s fönstret i Windows PowerShell ISE (Integrated Scripting Environment).
+  Kommandona i modulen saknas i `Show-Command` fönstret i Windows POWERSHELL Ise (Integrated Scripting Environment).
 
 ## <a name="where-to-install-modules"></a>Installera moduler
 
@@ -153,7 +146,7 @@ $p += ";C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 
 Om en modul används av flera komponenter i en produkt eller flera versioner av en produkt, installerar du modulen i en modul-Specific-underkatalogen i under katalogen%ProgramFiles%\Common Files\Modules.
 
-I följande exempel installeras modulen Fabrikam i en Fabrikam-under katalog i under katalogen `%ProgramFiles%\Common Files\Modules`. Observera att varje modul finns i en egen under katalog i under katalogen moduler.
+I följande exempel installeras modulen Fabrikam i en Fabrikam-under katalog i under `%ProgramFiles%\Common Files\Modules` katalogen. Observera att varje modul finns i en egen under katalog i under katalogen moduler.
 
 ```
 C:\Program Files
@@ -185,7 +178,7 @@ Om du vill installera flera versioner av samma modul använder du följande proc
 2. Skapa ett modul manifest för varje version av modulen. I värdet för nyckeln **ModuleVersion** i manifestet anger du versions numret för modulen. Spara manifest filen (. psd1) i den versions bara katalogen för modulen.
 3. Lägg till rotmappen för modulen rot i värdet för **PSModulePath** -miljövariabeln, som visas i följande exempel.
 
-Om du vill importera en viss version av modulen kan slutanvändaren använda `MinimumVersion`-eller `RequiredVersion` parametrarna i cmdleten [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
+Om du vill importera en viss version av modulen kan slutanvändaren använda `MinimumVersion` `RequiredVersion` parametrarna eller för cmdleten [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
 
 Om till exempel Fabrikam-modulen är tillgänglig i versionerna 8,0 och 9,0 kan katalog strukturen Fabrikam likna följande.
 
@@ -210,7 +203,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-När de här stegen är klara, hämtar parametern **ListAvailable** för cmdleten [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) båda fabriks modulerna. Om du vill importera en viss modul använder du `MinimumVersion`-eller `RequiredVersion` parametrarna i cmdleten [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
+När de här stegen är klara, hämtar parametern **ListAvailable** för cmdleten [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) båda fabriks modulerna. Om du vill importera en viss modul använder `MinimumVersion` du `RequiredVersion` parametrarna eller för cmdleten [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
 
 Om båda modulerna importeras till samma session och modulerna innehåller cmdlets med samma namn, gäller cmdletarna som importeras sist i sessionen.
 
@@ -220,7 +213,7 @@ Kommando namns konflikter kan uppstå när kommandon som en modul exporterar har
 
 När en session innehåller två kommandon som har samma namn, kör Windows PowerShell den kommando typ som har företräde. När en session innehåller två kommandon som har samma namn och samma typ, kör Windows PowerShell kommandot som har lagts till i sessionen senast. Om du vill köra ett kommando som inte körs som standard kan användare kvalificera sig med kommandots namn med namnet på modulen.
 
-Om sessionen till exempel innehåller en `Get-Date` funktion och `Get-Date` cmdlet, kör Windows PowerShell funktionen som standard. Om du vill köra cmdleten, Inled kommandot med namnet på modulen, till exempel:
+Om sessionen t. ex. innehåller en `Get-Date` funktion och `Get-Date` cmdleten körs funktionen som standard i Windows PowerShell. Om du vill köra cmdleten, Inled kommandot med namnet på modulen, till exempel:
 
 ```powershell
 Microsoft.PowerShell.Utility\Get-Date
@@ -228,7 +221,7 @@ Microsoft.PowerShell.Utility\Get-Date
 
 För att förhindra namn konflikter kan modulen författare använda **DefaultCommandPrefix** -nyckeln i modulen manifest för att ange ett substantiv-prefix för alla kommandon som exporteras från modulen.
 
-Användare kan använda parametern **prefix** i `Import-Module`-cmdleten för att använda ett alternativt prefix. Värdet för parametern **prefix** har företräde framför värdet för **DefaultCommandPrefix** -nyckeln.
+Användare kan använda parametern **prefix** för `Import-Module` cmdleten för att använda ett alternativt prefix. Värdet för parametern **prefix** har företräde framför värdet för **DefaultCommandPrefix** -nyckeln.
 
 ## <a name="see-also"></a>Se även
 

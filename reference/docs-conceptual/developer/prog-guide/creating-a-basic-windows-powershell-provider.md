@@ -1,22 +1,15 @@
 ---
 title: Skapa en grundläggande Windows PowerShell-Provider | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - base provider [PowerShell Programmer's Guide]
 - providers [PowerShell Programmer's Guide], base provider
-ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
-caps.latest.revision: 7
-ms.openlocfilehash: 0f8621cd22ca402f3a564ccdfb36c97da68dac6a
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 16cadb6099bb4f315bacda4aea617b89f9af5626
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978516"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787231"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Skapa en grundläggande Windows PowerShell-provider
 
@@ -29,9 +22,9 @@ Som tidigare nämnts är den grundläggande providern som beskrivs här implemen
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Definiera klassen Windows PowerShell-Provider
 
-Det första steget i att skapa en Windows PowerShell-Provider är att definiera dess .NET-klass. Den här grundläggande providern definierar en klass med namnet `AccessDBProvider` som härleds från Bask Lassen [system. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) .
+Det första steget i att skapa en Windows PowerShell-Provider är att definiera dess .NET-klass. Den här grundläggande providern definierar en klass `AccessDBProvider` med namnet som härleds från Bask Lassen [system. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) .
 
-Vi rekommenderar att du placerar leverantörs klasserna i en `Providers` namnrymd för API-namnrymden, till exempel xxx. PowerShell. providers. Den här providern använder `Microsoft.Samples.PowerShell.Provider` namn området där alla exempel för Windows PowerShell-Provider körs.
+Vi rekommenderar att du placerar leverantörs klasserna i ett `Providers` namn område i API-namnrymden, till exempel xxx. PowerShell. providers. Den här providern använder `Microsoft.Samples.PowerShell.Provider` namn området där alla exempel för Windows PowerShell-Provider körs.
 
 > [!NOTE]
 > Klassen för en Windows PowerShell-Provider måste markeras som offentlig. Klasser som inte är markerade som offentliga kommer att standardvärdet internt och hittas inte av Windows PowerShell-körningsmiljön.
@@ -85,7 +78,7 @@ Fullständig exempel kod finns i [kod exemplet för AccessDbProviderSample01](./
 
 ## <a name="testing-the-windows-powershell-provider"></a>Testa Windows PowerShell-providern
 
-När din Windows PowerShell-provider har registrerats med Windows PowerShell kan du testa den genom att köra cmdlets som stöds på kommando raden. För den här grundläggande providern kör du det nya gränssnittet och använder `Get-PSProvider`-cmdlet: en för att hämta listan över leverantörer och se till att AccessDb-providern finns.
+När din Windows PowerShell-provider har registrerats med Windows PowerShell kan du testa den genom att köra cmdlets som stöds på kommando raden. För den här grundläggande providern kör du det nya gränssnittet och använder `Get-PSProvider` cmdleten för att hämta listan över leverantörer och se till att AccessDb-providern finns.
 
 ```powershell
 Get-PSProvider
@@ -108,4 +101,4 @@ Registry             ShouldProcess                 {HKLM, HKCU}
 
 [Skapa Windows PowerShell-leverantörer](./how-to-create-a-windows-powershell-provider.md)
 
-[Designa din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md)
+[Designa en Windows PowerShell-provider](./designing-your-windows-powershell-provider.md)

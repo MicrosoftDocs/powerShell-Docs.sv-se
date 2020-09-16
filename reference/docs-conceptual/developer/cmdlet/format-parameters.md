@@ -1,19 +1,12 @@
 ---
 title: Format parametrar | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 10e025c5-9aa6-45a5-b851-23d14db1f4cc
-caps.latest.revision: 7
-ms.openlocfilehash: 0bd3888d81aa6d1dde26c0066f7bca9dac8a8bca
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c8e031f62aa8bcb0e9d5b900b2eace7187b1f3dd
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359318"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784290"
 ---
 # <a name="format-parameters"></a>Formatparametrar
 

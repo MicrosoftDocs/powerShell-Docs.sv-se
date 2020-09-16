@@ -1,22 +1,15 @@
 ---
 title: Skapa en cmdlet utan parametrar | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], creating
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
-ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
-caps.latest.revision: 8
-ms.openlocfilehash: af41c2c9855310d047404114a07b27180a7aa8fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a14d25660d596ebd12cd7d74b607eab6ac9fd1be
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74415668"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784392"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Skapa en cmdlet utan parametrar
 
@@ -29,11 +22,11 @@ I det här avsnittet beskrivs hur du skapar en-cmdlet som hämtar information fr
 
 Ett cmdlet-namn består av ett verb som anger vilken åtgärd som cmdleten tar och ett substantiv som anger vilka objekt som cmdleten agerar på. Eftersom den här exempel cmdleten Get-proc hämtar process objekt, används verbet "Get", som definieras av [system. Management. Automation. Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) -uppräkningen och Substantiv "proc" för att indikera att cmdleten fungerar på process objekt.
 
-När du namnger cmdletar ska du inte använda något av följande tecken: #, () {} [] &-/\ $; : "' < > &#124; ? @ ` .
+När du namnger cmdletar ska du inte använda något av följande tecken: #, () {} [] &-/\ $;: "' <> &#124; ? @ ` .
 
 ### <a name="choosing-a-noun"></a>Välja ett substantiv
 
-Du bör välja ett substantiv som är speciellt. Det är bäst att använda en singularisk substantiv med en förkortad version av produkt namnet. Ett exempel på ett cmdlet-namn av den här typen är "`Get-SQLServer`".
+Du bör välja ett substantiv som är speciellt. Det är bäst att använda en singularisk substantiv med en förkortad version av produkt namnet. Ett exempel på ett cmdlet-namn av den här typen är " `Get-SQLServer` ".
 
 ### <a name="choosing-a-verb"></a>Välja ett verb
 
@@ -54,7 +47,7 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-Observera att föregående till klass definitionen, attributet [system. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) , med syntaxen `[Cmdlet(verb, noun, ...)]`, används för att identifiera den här klassen som en cmdlet. Detta är det enda obligatoriska attributet för alla cmdletar, och det gör att Windows PowerShell-körningsmiljön kan anropa dem korrekt. Du kan ange nyckelord för attribut för att ytterligare deklarera klassen om det behövs. Tänk på att attributet deklaration för vår exempel-GetProcCommand klass endast deklarerar Substantiv-och verben för Get-proc-cmdleten.
+Observera att föregående till klass definitionen, attributet [system. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) med syntaxen `[Cmdlet(verb, noun, ...)]` , används för att identifiera den här klassen som en cmdlet. Detta är det enda obligatoriska attributet för alla cmdletar, och det gör att Windows PowerShell-körningsmiljön kan anropa dem korrekt. Du kan ange nyckelord för attribut för att ytterligare deklarera klassen om det behövs. Tänk på att attributet deklaration för vår exempel-GetProcCommand klass endast deklarerar Substantiv-och verben för Get-proc-cmdleten.
 
 > [!NOTE]
 > För alla klasser för Windows PowerShell-attribut är de nyckelord som du kan ange motsvarar egenskaperna för klassen Attribute.
@@ -78,7 +71,7 @@ För alla typer av indata anropar Windows PowerShell-körningen [system. Managem
 > [!NOTE]
 > Windows PowerShell använder termen "Record" för att beskriva den uppsättning parameter värden som anges när en cmdlet anropas.
 
-Om din cmdlet accepterar pipeline-inmatade måste den åsidosätta metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) och eventuellt metoden [system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . En cmdlet kan till exempel åsidosätta båda metoderna om den samlar in alla ininformation med hjälp av [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) och sedan arbetar med inmatat i stället för ett element i taget, som `Sort-Object` cmdleten gör.
+Om din cmdlet accepterar pipeline-inmatade måste den åsidosätta metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) och eventuellt metoden [system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . En cmdlet kan till exempel åsidosätta båda metoderna om den samlar in alla inmatade med hjälp av [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) och sedan arbetar med inmatat i stället för ett element i taget, som `Sort-Object` cmdleten gör.
 
 Om cmdleten inte tar emot pipelinen bör den åsidosätta metoden [system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Tänk på att den här metoden ofta används i stället för [system. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) när cmdleten inte kan köras på ett element i taget, vilket är fallet för en sorterings-cmdlet.
 
@@ -131,7 +124,7 @@ Till exempel kanske [system. Management. Automation. cmdlet. EndProcessing](/dot
 
 ## <a name="code-sample"></a>Kod exempel
 
-Den fullständiga C# exempel koden finns i [GetProcessSample01-exempel](./getprocesssample01-sample.md).
+Den fullständiga exempel koden för C# finns i [GetProcessSample01-exempel](./getprocesssample01-sample.md).
 
 ## <a name="defining-object-types-and-formatting"></a>Definiera objekt typer och formatering
 
@@ -233,7 +226,7 @@ När din cmdlet har registrerats med Windows PowerShell kan du testa den genom a
     ...
     ```
 
-7. Använd `Get-Member`-cmdleten för att visa en lista över de egenskaper som är tillgängliga för varje process.
+7. Använd `Get-Member` cmdleten för att visa en lista över de egenskaper som är tillgängliga för varje process.
 
     ```powershell
     $p | Get-Member -MemberType property

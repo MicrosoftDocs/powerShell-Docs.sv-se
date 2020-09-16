@@ -1,19 +1,12 @@
 ---
 title: Skapa anpassade kontroller | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: c3baa406-cd33-4420-be5a-07ef09d93480
-caps.latest.revision: 8
-ms.openlocfilehash: 3504ab1d974c55e9279172d0e851961474ccb926
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c36fa9b778e01501a3c88f735cdefdfbb04411a0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354791"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786126"
 ---
 # <a name="creating-custom-controls"></a>Skapa anpassade kontroller
 
@@ -21,7 +14,7 @@ Anpassade kontroller är de mest flexibla komponenterna i en format fil. Till sk
 
 ## <a name="custom-control-example"></a>Exempel på anpassad kontroll
 
-I följande exempel visas en anpassad kontroll som definieras i filen certificates. format. ps1xml. Den här anpassade kontrollen används för att separera objekten [system. Management. Automation. Signature](/dotnet/api/System.Management.Automation.Signature) som visas i en tabellvy.
+I följande exempel visas en anpassad kontroll som definieras i Certificates.Format.ps1XML-filen. Den här anpassade kontrollen används för att separera objekten [system. Management. Automation. Signature](/dotnet/api/System.Management.Automation.Signature) som visas i en tabellvy.
 
 ```xml
 <Controls>
@@ -53,4 +46,4 @@ I följande exempel visas en anpassad kontroll som definieras i filen certificat
 
 ## <a name="see-also"></a>Se även
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

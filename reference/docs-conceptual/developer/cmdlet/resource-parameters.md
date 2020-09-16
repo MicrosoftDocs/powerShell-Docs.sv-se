@@ -1,19 +1,12 @@
 ---
 title: Resurs parametrar | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 460c43aa-f5c5-4a1a-a6f2-5e07db143de1
-caps.latest.revision: 5
-ms.openlocfilehash: 9752570e5c997ef4da56a08df14f39b77ba37a4a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e618951d57ff1cf303b38f0278858144df31afaf
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359233"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786534"
 ---
 # <a name="resource-parameters"></a>Resursparametrar
 
@@ -21,24 +14,24 @@ I följande tabell visas de rekommenderade namnen och funktionerna för resurs p
 
 |Parameter|Funktioner|
 |---|---|
-|**Programmet**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett program.|
+|**Program**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett program.|
 |**Sammansättning**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en sammansättning.|
-|**Basattributet**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett attribut.|
-|**Lektion**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en Microsoft .NET Ramverks klass.|
-|**Flernodskluster**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett kluster.|
-|**Substrat**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange kulturen som cmdleten ska köras i.|
+|**Attribut**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett attribut.|
+|**Klass**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en Microsoft .NET Ramverks klass.|
+|**Kluster**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett kluster.|
+|**Kultur**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange kulturen som cmdleten ska köras i.|
 |**Domän**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange domän namnet.|
-|**Kombinationsenhet**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett enhets namn.|
+|**Enhet**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett enhets namn.|
 |**Händelse**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett händelse namn.|
 |**Gränssnitt**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett nätverks gränssnitts namn.|
 |**Adresser**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en IP-adress.|
-|**Jobb**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett jobb.|
+|**Uppgift**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett jobb.|
 |**LiteralPath**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange sökvägen till en resurs när jokertecken inte stöds. (Använd parametern **Path** när jokertecken stöds.)|
 |**Mac**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en MAC-adress (Media Access Controller).|
 |**ParentId**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange den överordnade identifieraren.|
-|**Sökväg**<br>Datatyp: sträng, sträng []|Implementera den här parametern så att användaren kan ange sökvägar till en resurs när jokertecken stöds. (Använd parametern **LiteralPath** när jokertecken inte stöds.) Vi rekommenderar att du utvecklar den här parametern så att den stöder fullständig `provider:path`-syntax som används av providers. Vi rekommenderar också att du utvecklar det så att det fungerar med så många leverantörer som möjligt.|
+|**Sökväg**<br>Datatyp: sträng, sträng []|Implementera den här parametern så att användaren kan ange sökvägar till en resurs när jokertecken stöds. (Använd parametern **LiteralPath** när jokertecken inte stöds.) Vi rekommenderar att du utvecklar den här parametern så att den stöder fullständig `provider:path` syntax som används av leverantörer. Vi rekommenderar också att du utvecklar det så att det fungerar med så många leverantörer som möjligt.|
 |**Port**<br>Datatyp: heltal, sträng|Implementera den här parametern så att användaren kan ange ett heltals värde för nätverk eller ett sträng värde som "BizTalk" för andra typer av portar.|
-|**Skrivarkö**<br>Datatyp: heltal, sträng|Implementera den här parametern så att användaren kan ange skrivare för den cmdlet som ska användas.|
+|**Skrivare**<br>Datatyp: heltal, sträng|Implementera den här parametern så att användaren kan ange skrivare för den cmdlet som ska användas.|
 |**Storlek**<br>Datatyp: Int32|Implementera den här parametern så att användaren kan ange en storlek.|
 |**BEKRÄFTA**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett transaktions-ID (TID) för cmdlet: en.|
 |**Typ**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange vilken typ av resurs som ska användas.|

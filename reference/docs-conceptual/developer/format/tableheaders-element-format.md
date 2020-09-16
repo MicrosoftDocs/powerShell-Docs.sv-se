@@ -1,19 +1,12 @@
 ---
 title: TableHeaders-element (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f9fa2b6f-b99a-42de-9779-44e9cb583f71
-caps.latest.revision: 15
-ms.openlocfilehash: bd44fcf4878c858afe81fb071ce72f627ac465dc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b3176cbe1316d5b30cb61831d9915a80389709a5
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353699"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787435"
 ---
 # <a name="tableheaders-element-format"></a>TableHeaders-element (format)
 
@@ -32,11 +25,11 @@ ViewDefinitions-element (format) View-element (format) TableControl-element (for
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och de överordnade elementen i `TableHeaders`-elementet. Det måste finnas ett underordnat element för varje egenskap i objektet som ska visas. Kolumn rubrik informationen visas i den ordning som de underordnade elementen har angetts.
+I följande avsnitt beskrivs attributen, underordnade element och `TableHeaders` elementens överordnade element. Det måste finnas ett underordnat element för varje egenskap i objektet som ska visas. Kolumn rubrik informationen visas i den ordning som de underordnade elementen har angetts.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -50,13 +43,13 @@ Ingen.
 |-------------|-----------------|
 |[TableControl-element (format)](./tablecontrol-element-format.md)|Definierar ett tabell format för en vy.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Mer information om komponenterna i en tabellvy finns i [skapa en tabellvy](./creating-a-table-view.md).
 
 ## <a name="example"></a>Exempel
 
-I det här exemplet visas ett `TableHeaders`-element som definierar två kolumn rubriker.
+Det här exemplet visar ett `TableHeaders` element som definierar två kolumn rubriker.
 
 ```xml
 <TableHeaders>
@@ -81,4 +74,4 @@ I det här exemplet visas ett `TableHeaders`-element som definierar två kolumn 
 
 [TableControl-element (format)](./tablecontrol-element-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

@@ -1,25 +1,18 @@
 ---
 title: Text element för CustomItem för CustomView för vy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fab6c0f4-ba55-48ae-9c16-f9a998169239
-caps.latest.revision: 9
-ms.openlocfilehash: 00ff3a357cfef0b250bb55dd3a206d69d5d42609
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 94294665b481edabdb8ed920d1a209a609b18fd8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358771"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783389"
 ---
 # <a name="text-element-for-customitem-for-customview-for-view-format"></a>Text-element för CustomItem för CustomView för View (format)
 
 Anger text som läggs till i data som visas av kontrollen, till exempel en etikett, hakparenteser som omger data och blank steg för att dra in data. Det här elementet används när du definierar en anpassad kontrol vy.
 
-Konfigurations element (format) ViewDefinitions element (format) View element (format) CustomControl element (format) CustomEntries-element för CustomControl för View (format) CustomEntry-element för CustomEntries för View (format) CustomItem-element för CustomEntry för visnings-(format)-text element för CustomItem (format)
+Konfigurations element (format) ViewDefinitions element (format) View-element (format) CustomControl element (format) CustomEntries-element för CustomControl för View (format) CustomEntry-element för CustomEntries för View (format) CustomItem-element för CustomEntry för View (format)-text element för CustomItem (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,15 +22,15 @@ Konfigurations element (format) ViewDefinitions element (format) View element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `Text`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `Text` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -49,10 +42,10 @@ Ingen.
 
 Ange texten för en kontroll för data som du vill visa.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 ## <a name="see-also"></a>Se även
 
 [CustomItem-element för CustomEntry för vy (format)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

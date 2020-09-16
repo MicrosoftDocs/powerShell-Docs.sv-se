@@ -1,19 +1,12 @@
 ---
 title: Skapa en tabellvy | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
-caps.latest.revision: 23
-ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cbe81962a0f68d64506062898a8f21a1596cc29a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354812"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786160"
 ---
 # <a name="creating-a-table-view"></a>Skapa en tabellvy
 
@@ -21,7 +14,7 @@ I en tabellvy visas data i en eller flera kolumner. Varje rad i tabellen represe
 
 ## <a name="a-table-view-display"></a>Visa en tabellvy
 
-I följande exempel visas hur Windows PowerShell visar objektet [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) som returneras av cmdleten [Get-service](/powershell/module/microsoft.powershell.management/get-service) . För det här objektet har Windows PowerShell definierat en tabellvy som visar egenskapen `Status`, egenskapen `Name` (den här egenskapen är en Ali Aset för egenskapen `ServiceName`) och egenskapen `DisplayName`. Varje rad i tabellen representerar ett objekt som returneras av cmdleten.
+I följande exempel visas hur Windows PowerShell visar objektet [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) som returneras av cmdleten [Get-service](/powershell/module/microsoft.powershell.management/get-service) . För det här objektet har Windows PowerShell definierat en tabellvy som visar `Status` egenskapen, `Name` egenskapen (den här egenskapen är en alias egenskap för `ServiceName` egenskapen) och `DisplayName` egenskapen. Varje rad i tabellen representerar ett objekt som returneras av cmdleten.
 
 ```output
 Status   Name               DisplayName
@@ -215,7 +208,7 @@ Följande XML-element kan användas för att ange de objekt som används av en b
 
 ## <a name="using-format-strings"></a>Använda format strängar
 
-Du kan lägga till format strängar i en vy för att ytterligare definiera hur data visas. I följande exempel visas hur du definierar en format sträng för värdet för egenskapen `StartTime`.
+Du kan lägga till format strängar i en vy för att ytterligare definiera hur data visas. I följande exempel visas hur du definierar en format sträng för `StartTime` egenskapens värde.
 
 ```xml
 <TableColumnItem>
@@ -232,7 +225,7 @@ Följande XML-element kan användas för att ange ett format mönster:
 
 - [FormatString](./label-element-for-listitem-for-listcontrol-format.md) -elementet anger ett format mönster som definierar hur egenskapen eller skriptets värde visas.
 
-I följande exempel kallas metoden `ToString` för att formatera skriptets värde. Skript kan anropa vilken metod som helst av ett objekt. Det innebär att om ett objekt har en metod, till exempel `ToString`, som har formateringsegenskaper, kan skriptet anropa metoden för att formatera utdata för skriptet.
+I följande exempel `ToString` kallas metoden för att formatera skriptets värde. Skript kan anropa vilken metod som helst av ett objekt. Om ett objekt har en metod, till exempel `ToString` , som har format parametrar, kan skriptet anropa metoden för att formatera utdata för skriptet.
 
 ```xml
 <ListItem>
@@ -243,7 +236,7 @@ I följande exempel kallas metoden `ToString` för att formatera skriptets värd
 </ListItem>
 ```
 
-Följande XML-element kan användas för att anropa metoden `ToString`:
+Följande XML-element kan användas för att anropa- `ToString` metoden:
 
 - [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) -elementet definierar egenskapen eller skriptet vars värde visas i kolumnen i raden. Ett [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) -element krävs för varje kolumn i raden. Den första posten visas i första kolumnen, den andra posten i den andra kolumnen och så vidare.
 
@@ -251,4 +244,4 @@ Följande XML-element kan användas för att anropa metoden `ToString`:
 
 ## <a name="see-also"></a>Se även
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

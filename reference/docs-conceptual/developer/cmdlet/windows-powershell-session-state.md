@@ -1,22 +1,15 @@
 ---
 title: Sessionstillstånd för Windows PowerShell | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Cmdlets [PowerShell], session state
 - session state [PowerShell]
-ms.assetid: 74912940-2b10-4a76-b174-6d035d71c02b
-caps.latest.revision: 8
-ms.openlocfilehash: fa207130bbb120750780bb0aa9b32150a32daaa2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7436e3ebd0e099ead81f9fea01a0a2994b982213
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359109"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783950"
 ---
 # <a name="windows-powershell-session-state"></a>Windows PowerShell-sessionstillstånd
 

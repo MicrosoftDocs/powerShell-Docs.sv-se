@@ -2,12 +2,12 @@
 ms.date: 10/16/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Tillämpa konfigurationer
-ms.openlocfilehash: 3bbe90c7cf09a7e236f6dd14f731ae306f497a0d
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1437521471d95fd80dc6a6cec62a0b75df4224ec
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78277920"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783083"
 ---
 # <a name="enacting-configurations"></a>Tillämpa konfigurationer
 
@@ -17,18 +17,18 @@ Det finns två sätt att dra i PowerShell-konfigurationer för Desired State Con
 
 ## <a name="push-mode"></a>Push-läge
 
-![Push-läge](media/enactingConfigurations/pushModel.png "Så här fungerar push-läget")
+![Översikt över push-läge](media/enactingConfigurations/pushModel.png "Så här fungerar push-läget")
 
 Push-läge refererar till en användare som aktivt använder en konfiguration på en målnod genom att anropa cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) .
 
-När du har skapat och kompilerat en konfiguration kan du använda den i push-läge genom att anropa cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) , ange parametern-Path för cmdleten till den sökväg där MOF-konfigurationsfilen finns. Om t. ex. konfigurations-MOF finns `C:\DSC\Configurations\localhost.mof`på kan du tillämpa den på den lokala datorn med följande kommando:`Start-DscConfiguration -Path 'C:\DSC\Configurations'`
+När du har skapat och kompilerat en konfiguration kan du använda den i push-läge genom att anropa cmdleten [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) , ange parametern-Path för cmdleten till den sökväg där MOF-konfigurationsfilen finns. Om t. ex. konfigurations-MOF finns på `C:\DSC\Configurations\localhost.mof` kan du tillämpa den på den lokala datorn med följande kommando: `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
 > [!NOTE]
 > Som standard kör DSC en konfiguration som ett bakgrunds jobb. Anropa [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) med parametern **wait** för att köra konfigurationen interaktivt.
 
 ## <a name="pull-mode"></a>Pull-läge
 
-![Pull-läge](media/enactingConfigurations/pullModel.png "Så här fungerar pull-läget")
+![Översikt över pull-läge](media/enactingConfigurations/pullModel.png "Så här fungerar pull-läget")
 
 I pull-läge konfigureras pull-klienter för att hämta sina önskade tillstånds konfigurationer från en fjärran sluten pull-tjänst. På samma sätt har pull-tjänsten kon figurer ATS som värd för DSC-tjänsten och har etablerats med de konfigurationer och resurser som krävs av pull-klienterna. Varje pull-klient har en schemalagd händelse som utför en periodisk kontroll av nodens konfiguration. När händelsen utlöses första gången gör den lokala Configuration Manager (LCM) på mottagar klienten en begäran till pull-tjänsten för att hämta konfigurationen som anges i LCM. Om konfigurationen finns i pull-tjänsten och den skickar inledande verifierings kontroller, hämtas konfigurationen till pull-klienten, där den körs av LCM.
 
@@ -40,6 +40,6 @@ Mer information om hur du konfigurerar en pull-tjänst på Windows Server finns 
 
 I följande avsnitt förklaras hämtnings tjänsten och klienter:
 
-- [Översikt över Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
+- [Översikt över Azure Automation DSC](/azure/automation/automation-dsc-overview)
 - [Konfigurera en SMB-pull-server](pullServerSMB.md)
 - [Konfigurera en pull-klient](pullClientConfigID.md)

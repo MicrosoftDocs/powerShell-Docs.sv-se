@@ -1,19 +1,12 @@
 ---
 title: CustomEntry-element för CustomEntries för CustomControl för View (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ac3c0a25-f2ca-4e28-b3dc-9cb06a76d92a
-caps.latest.revision: 11
-ms.openlocfilehash: 7804155bffeb1f0df8339f797bf59f8def56a3fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a13e83ec941bed80eaab02e40131054432fcce00
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355239"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785888"
 ---
 # <a name="customentry-element-for-customentries-for-customcontrol-for-view-format"></a>CustomEntry-element för CustomEntries för CustomControl för View (format)
 
@@ -32,11 +25,11 @@ Konfigurations element (format) ViewDefinitions element (format) View element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `CustomEntry`-elementet. Du måste ange de objekt som ska visas av definitionen.
+I följande avsnitt beskrivs attribut, underordnade element och `CustomEntry` elementets överordnade element. Du måste ange de objekt som ska visas av definitionen.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -49,18 +42,18 @@ Ingen.
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[CustomEntries-element för CustomControl för vy (format)](./customentries-element-for-customcontrol-for-view-format.md)|Innehåller definitionerna för vyn anpassad kontroll. Vyn anpassad kontroll måste ange en eller flera definitioner.|
+|[CustomEntries-element för CustomControl för View (format)](./customentries-element-for-customcontrol-for-view-format.md)|Innehåller definitionerna för vyn anpassad kontroll. Vyn anpassad kontroll måste ange en eller flera definitioner.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 I de flesta fall krävs bara en definition för varje anpassad kontroll, men det är möjligt att ha flera definitioner om du vill använda samma vy för att visa olika .NET-objekt. I dessa fall kan du ange en separat definition för varje objekt eller uppsättning objekt.
 
 ## <a name="see-also"></a>Se även
 
-[CustomControl-element för vy (format)](./customcontrol-element-for-view-format.md)
+[CustomControl-element för View (format)](./customcontrol-element-for-view-format.md)
 
 [CustomItem-element för CustomEntry för vy (format)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
 
 [EntrySelectedBy-element för CustomEntry för vy (format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

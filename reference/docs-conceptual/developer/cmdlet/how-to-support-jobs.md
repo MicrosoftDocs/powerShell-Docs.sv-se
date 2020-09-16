@@ -1,19 +1,12 @@
 ---
 title: Så här stöder du jobb | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
-caps.latest.revision: 9
-ms.openlocfilehash: 65f6b3d44910a0a3e848b4d2cd3e619186e5ed25
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.openlocfilehash: 7ae4e6c118965c73ba6b3d4d38b1bd3171d2b3da
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77706248"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786636"
 ---
 # <a name="how-to-support-jobs"></a>Ge stöd för jobb
 
@@ -47,7 +40,7 @@ Det här exemplet visar hur du stöder jobb när du skriver-cmdletar. Om du vill
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. I en post bearbetnings metod lägger du till en `if`-instruktion för att identifiera om cmdleten ska köras som ett jobb. I följande kod används metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) .
+3. I en post bearbetnings metod lägger du till en `if` instruktion för att identifiera om cmdleten ska köras som ett jobb. I följande kod används metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) .
 
     ```csharp
     protected override void ProcessRecord()

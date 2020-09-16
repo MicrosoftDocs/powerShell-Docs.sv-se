@@ -1,23 +1,16 @@
 ---
 title: GetProcessSample02-exempel | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 481f557d-3344-4d33-b2da-4736a0165181
-caps.latest.revision: 7
-ms.openlocfilehash: fa4cd8a724793e71b615c84a5c5a833aa92c93fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fa10774508b70f4aab4546cf4d6fbe8978032f1b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355624"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784239"
 ---
 # <a name="getprocesssample02-sample"></a>GetProcessSample02 – exempel
 
-Det här exemplet visar hur du skriver en cmdlet som hämtar processerna på den lokala datorn. Det ger en `Name` parameter som kan användas för att ange vilka processer som ska hämtas. Denna cmdlet är en förenklad version av `Get-Process`-cmdleten som tillhandahålls av Windows PowerShell 2,0.
+Det här exemplet visar hur du skriver en cmdlet som hämtar processerna på den lokala datorn. Den innehåller en `Name` parameter som kan användas för att ange vilka processer som ska hämtas. Denna cmdlet är en förenklad version av `Get-Process` cmdleten som tillhandahålls av Windows PowerShell 2,0.
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>Så här skapar du exemplet med Visual Studio.
 
@@ -65,7 +58,7 @@ Det här exemplet demonstrerar följande.
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar en implementering av cmdleten Get-proc som innehåller en `Name`-parameter.
+Det här exemplet visar en implementering av cmdleten Get-proc som innehåller en `Name` parameter.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands

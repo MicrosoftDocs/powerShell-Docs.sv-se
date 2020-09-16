@@ -1,25 +1,18 @@
 ---
 title: SelectionSetName-element för EntrySelectedBy för WideControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: c9c6e18f-6cca-465c-bd20-3969e7897a96
-caps.latest.revision: 10
-ms.openlocfilehash: 6b6a4a4647412d11d947f1dc4ea12d1e05ff536e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 546225b0619ebec83d04a7e27bbc298ffef0a14d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353811"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785259"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-widecontrol-format"></a>SelectionSetName-element för EntrySelectedBy för WideControl (format)
 
 Anger en uppsättning .NET-objekt för definitionen. Definitionen används när något av dessa objekt visas.
 
-Konfigurations element (format) ViewDefinitions element (format) View-element (format) WideControl-element (format) WideEntries-element (format) WideEntry element (format) EntrySelectedBy-element för WideEntry (format) SelectionSetName-element för EntrySelectedBy för WideEntry (format)
+Konfigurations element (format) ViewDefinitions element (format) Visa element (format) WideControl-element (format) WideEntries-element (format) WideEntry element (format) EntrySelectedBy-element för WideEntry (format) SelectionSetName-element för EntrySelectedBy (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,15 +23,15 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `SelectionSetName`-elementet.
+I följande avsnitt beskrivs attributen, underordnade element och `SelectionSetName` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -50,7 +43,7 @@ Ingen.
 
 Ange namnet på urvals uppsättningen.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Varje definition måste ange ett typ namn, en urvals uppsättning eller ett markerings villkor.
 
@@ -62,8 +55,8 @@ Mer information om andra komponenter i en bred vy finns i [skapa en bred vy](./c
 
 [Skapa en bred vy](./creating-a-wide-view.md)
 
-[Definiera urvals uppsättningar](./defining-selection-sets.md)
+[Definiera valuppsättningar](./defining-selection-sets.md)
 
 [EntrySelectedBy-element för WideEntry (format)](./entryselectedby-element-for-wideentry-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

@@ -1,19 +1,12 @@
 ---
 title: ListEntry-element för ListControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 6d16bca8-d025-432d-aa84-8b607b8af3ae
-caps.latest.revision: 12
-ms.openlocfilehash: 1a3bafd4ca94aee70e869c699f7a4ef8befc5511
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d98f0b5215eea7668f866d2733214ade79d748f1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354350"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785701"
 ---
 # <a name="listentry-element-for-listcontrol-format"></a>ListEntry-element för ListControl (format)
 
@@ -32,11 +25,11 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `ListEntry`-elementet.
+I följande avsnitt beskrivs attributen, underordnade element och `ListEntry` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -51,7 +44,7 @@ Ingen.
 |-------------|-----------------|
 |[ListEntries-element (format)](./listentries-element-for-listcontrol-format.md)|Innehåller definitionerna för listvyn.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 En listvy är ett List format som visar egenskaps värden eller skript värden för varje objekt. Mer information om listvyer finns i [skapa en listvy](./creating-a-list-view.md).
 

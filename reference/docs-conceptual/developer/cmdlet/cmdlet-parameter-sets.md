@@ -1,19 +1,12 @@
 ---
-title: Cmdlet-parameter uppsättningar | Microsoft Docs
-ms.custom: ''
+title: Cmdlet-parameteruppsättningar
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f902fd4d-8f6e-4ef1-b07f-59983039a0d1
-caps.latest.revision: 10
-ms.openlocfilehash: 41cb32735091f065a0835378428de190d08f3160
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 202cdd354693b9b7edaca5c127ae1f7d88ff4a28
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278999"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784426"
 ---
 # <a name="cmdlet-parameter-sets"></a>Cmdlet-parameter uppsättningar
 
@@ -21,7 +14,7 @@ PowerShell använder parameter uppsättningar för att ge dig möjlighet att skr
 
 ## <a name="examples-of-parameter-sets"></a>Exempel på parameter uppsättningar
 
-Till exempel returnerar PowerShell `Get-EventLog`-cmdleten olika information beroende på om användaren anger **list** -eller **LogName** -parametern. Om **list** parametern anges, returnerar cmdleten information om själva loggfilerna, men inte den händelse information som de innehåller. Om parametern **LogName** anges returnerar cmdleten information om händelserna i en specifik händelse logg. **List** -och **LogName** -parametrarna identifierar två separata parameter uppsättningar.
+PowerShell- `Get-EventLog` cmdleten returnerar till exempel olika uppgifter beroende på om användaren anger **listan** eller parametern **LogName** . Om **list** parametern anges, returnerar cmdleten information om själva loggfilerna, men inte den händelse information som de innehåller. Om parametern **LogName** anges returnerar cmdleten information om händelserna i en specifik händelse logg. **List** -och **LogName** -parametrarna identifierar två separata parameter uppsättningar.
 
 ## <a name="unique-parameter"></a>Unik parameter
 
@@ -31,7 +24,7 @@ Varje parameter uppsättning måste ha en unik parameter som PowerShell-körning
 
 I följande bild visas tre giltiga parameter uppsättningar i den vänstra kolumnen. **Parametern A** är unik för den första parameter uppsättningen, **parametern B** är unik för den andra parameter uppsättningen och **parametern C** är unik för den tredje parameter uppsättningen. Parameter uppsättningarna i den högra kolumnen har ingen unik parameter.
 
-![ps_parametersets](media/cmdlet-parameter-sets/ps-parametersets.gif)
+![Bild av parameter uppsättningar](media/cmdlet-parameter-sets/ps-parametersets.gif)
 
 ## <a name="parameter-set-requirements"></a>Krav för parameter uppsättning
 
@@ -41,8 +34,8 @@ Följande krav gäller för alla parameter uppsättningar.
 
 - En parameter uppsättning som innehåller flera positions parametrar måste definiera unika positioner för varje parameter. Det går inte att ange samma position med två positions parametrar.
 
-- Endast en parameter i en mängd kan deklarera `ValueFromPipeline` nyckelordet med värdet `true`.
-  Flera parametrar kan definiera nyckelordet `ValueFromPipelineByPropertyName` med värdet `true`.
+- Endast en parameter i en mängd kan deklarera `ValueFromPipeline` nyckelordet med värdet `true` .
+  Flera parametrar kan definiera `ValueFromPipelineByPropertyName` nyckelordet med värdet `true` .
 
 - Om ingen parameter uppsättning anges för en parameter, tillhör parametern alla parameter uppsättningar.
 
@@ -51,13 +44,13 @@ Följande krav gäller för alla parameter uppsättningar.
 
 ## <a name="default-parameter-sets"></a>Standard parameter uppsättningar
 
-När du har definierat flera parameter uppsättningar kan du använda nyckelordet `DefaultParameterSetName` för **cmdlet** -attributet för att ange standard parameter uppsättningen. PowerShell använder standard parameter uppsättningen om den inte kan avgöra vilken parameter som ska användas baserat på den information som tillhandahålls av kommandot. Mer information om **cmdlet** -attributet finns i [deklaration av cmdlet-attribut](./cmdlet-attribute-declaration.md).
+När du har definierat flera parameter uppsättningar kan du `DefaultParameterSetName` Ange standard parameter uppsättningen genom att använda nyckelordet för **cmdlet** -attributet. PowerShell använder standard parameter uppsättningen om den inte kan avgöra vilken parameter som ska användas baserat på den information som tillhandahålls av kommandot. Mer information om **cmdlet** -attributet finns i [deklaration av cmdlet-attribut](./cmdlet-attribute-declaration.md).
 
 ## <a name="declaring-parameter-sets"></a>Deklarera parameter uppsättningar
 
 Om du vill skapa en parameter uppsättning måste du ange `ParameterSetName` nyckelordet när du deklarerar attributet **parameter** för varje parameter i parameter uppsättningen. För parametrar som tillhör flera parameter uppsättningar lägger du till ett **parameter** -attribut för varje parameter uppsättning. Med det här attributet kan du definiera parametern på olika sätt för varje parameter uppsättning. Du kan till exempel definiera en parameter som obligatorisk i en uppsättning och valfri i en annan. Varje parameter uppsättning måste dock innehålla en unik parameter. Mer information finns i [deklaration av parameter attribut](parameter-attribute-declaration.md).
 
-I följande exempel är parametern **username** den unika parametern för den `Test01` parameter uppsättningen och parametern **computername** är den unika parametern för den `Test02` parameter uppsättningen. Parametern **SharedParam** tillhör båda uppsättningarna och är obligatorisk för parametern `Test01`, men valfritt för `Test02`-parameter uppsättningen.
+I följande exempel är parametern **username** den unika parametern för `Test01` parameter uppsättningen och parametern **computername** är den unika parametern för `Test02` parameter uppsättningen. Parametern **SharedParam** tillhör båda uppsättningarna och är obligatorisk för `Test01` parameter uppsättningen men valfritt för `Test02` parameter uppsättningen.
 
 ```csharp
 [Parameter(Position = 0, Mandatory = true, ParameterSetName = "Test01")]

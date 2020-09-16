@@ -1,19 +1,12 @@
 ---
 title: Skapa en bred vy | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2d4303c5-b451-4ccb-9831-b17a17ceac20
-caps.latest.revision: 16
-ms.openlocfilehash: 651de5d3bc2619f20438f3951ac5a8c4b0bf46d4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0cf6a35201c47e4b12dd160191570eccec3427ef
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359073"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786143"
 ---
 # <a name="creating-a-wide-view"></a>Skapa en bred vy
 
@@ -220,7 +213,7 @@ Ett exempel på en hel format fil som definierar grupper finns i [wide View (gro
 
 ## <a name="using-format-strings"></a>Använda format strängar
 
-Format strängar kan läggas till i en bred vy för att ytterligare definiera hur data visas. I följande exempel visas hur du definierar en format sträng för värdet för egenskapen `StartTime`.
+Format strängar kan läggas till i en bred vy för att ytterligare definiera hur data visas. I följande exempel visas hur du definierar en format sträng för `StartTime` egenskapens värde.
 
 ```xml
 <WideItem>
@@ -239,7 +232,7 @@ Följande XML-element kan användas för att ange ett format mönster:
 
 - [Script block](./scriptblock-element-for-wideitem-for-widecontrol-format.md) -elementet (visas inte) anger det skript vars värde visas i vyn. Du måste ange antingen ett skript eller en egenskap, men du kan inte ange båda.
 
-I följande exempel kallas metoden `ToString` för att formatera skriptets värde. Skript kan anropa vilken metod som helst av ett objekt. Det innebär att om ett objekt har en metod, till exempel `ToString`, som har formateringsegenskaper, kan skriptet anropa metoden för att formatera utdata för skriptet.
+I följande exempel `ToString` kallas metoden för att formatera skriptets värde. Skript kan anropa vilken metod som helst av ett objekt. Om ett objekt har en metod, till exempel `ToString` , som har format parametrar, kan skriptet anropa metoden för att formatera utdata för skriptet.
 
 ```xml
 <WideItem>
@@ -250,7 +243,7 @@ I följande exempel kallas metoden `ToString` för att formatera skriptets värd
 </WideItem>
 ```
 
-Följande XML-element kan användas för att anropa metoden `ToString`:
+Följande XML-element kan användas för att anropa- `ToString` metoden:
 
 - [WideItem](./wideitem-element-for-widecontrol-format.md) -elementet anger de data som visas i vyn.
 
@@ -260,6 +253,6 @@ Följande XML-element kan användas för att anropa metoden `ToString`:
 
 [Bred vy (grundläggande)](./wide-view-basic.md)
 
-[Bred vy (GroupBy)](./wide-view-groupby.md)
+[Bred vy (gruppbaserad)](./wide-view-groupby.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

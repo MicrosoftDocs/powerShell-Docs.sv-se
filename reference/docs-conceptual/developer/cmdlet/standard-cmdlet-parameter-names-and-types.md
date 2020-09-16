@@ -1,36 +1,29 @@
 ---
 title: Standard parameter namn och-typer | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fb24e342-0629-47f8-9ed3-1d4e83458b73
-caps.latest.revision: 6
-ms.openlocfilehash: 6eb10d3cba94b55bd92d8070b59153552534791b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 16a8eb101a37865874463859fb55926fc6e84a9d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356149"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784035"
 ---
 # <a name="standard-cmdlet-parameter-names-and-types"></a>Standardnamn och standardtyper för cmdlet-parametrar
 
 Parameter namn för cmdlet ska vara konsekventa i de cmdletar som du utformar. I följande avsnitt listas de parameter namn som vi rekommenderar att du använder när du deklarerar cmdlet-parametrar. I avsnitten beskrivs också den rekommenderade data typen och funktionaliteten för varje parameter.
 
-## <a name="in-this-section"></a>I detta avsnitt
+## <a name="in-this-section"></a>I det här avsnittet
 
-[Aktivitets parametrar](./activity-parameters.md)
+[Aktivitetsparametrar](./activity-parameters.md)
 
-[Datum-och tids parametrar](./date-and-time-parameters.md)
+[Datum- och tidsparametrar](./date-and-time-parameters.md)
 
-[Format parametrar](./format-parameters.md)
+[Formatparametrar](./format-parameters.md)
 
-[Egenskaps parametrar](./property-parameters.md)
+[Egenskapsparametrar](./property-parameters.md)
 
-[Antal parametrar](./quantity-parameters.md)
+[Kvantitetsparametrar](./quantity-parameters.md)
 
-[Resurs parametrar](./resource-parameters.md)
+[Resursparametrar](./resource-parameters.md)
 
-[Säkerhets parametrar](./security-parameters.md)
+[Säkerhetsparametrar](./security-parameters.md)

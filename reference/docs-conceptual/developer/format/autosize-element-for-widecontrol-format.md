@@ -1,19 +1,12 @@
 ---
 title: AutoSize-element för WideControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: def37479-7b6e-40cf-bc81-0f7cbc651b31
-caps.latest.revision: 11
-ms.openlocfilehash: 6dbaef5886a0600bd9fe96dbc8d21f00a674dfcf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 64e62142738916978b37eb1cd3a73536b0447099
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359102"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783882"
 ---
 # <a name="autosize-element-for-widecontrol-format"></a>AutoSize-element för WideControl (format)
 
@@ -29,15 +22,15 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `AutoSize`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `AutoSize` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Inga
+Inget
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -45,9 +38,9 @@ Inga
 |-------------|-----------------|
 |[WideControl-element (format)](./widecontrol-element-format.md)|Definierar ett brett List format (enskilt värde) för vyn.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
-När du definierar en bred vy kan du lägga till `AutoSize`-elementet eller [ColumnNumber](./columnnumber-element-for-widecontrol-format.md) -elementet, men du kan inte lägga till båda.
+När du definierar en bred vy kan du lägga till `AutoSize` elementet eller [ColumnNumber](./columnnumber-element-for-widecontrol-format.md) -elementet, men du kan inte lägga till båda.
 
 Mer information om komponenterna i en bred vy finns i [skapa en bred vy](./creating-a-wide-view.md).
 
@@ -61,4 +54,4 @@ Ett exempel på en bred vy finns i [wide View (grundläggande)](./wide-view-basi
 
 [WideControl-element (format)](./widecontrol-element-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

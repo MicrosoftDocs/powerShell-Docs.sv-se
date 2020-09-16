@@ -1,19 +1,12 @@
 ---
 title: Självstudier för att skriva cmdlets | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d0b548aa-febf-45dd-bf71-2077730b9b73
-caps.latest.revision: 6
-ms.openlocfilehash: 767b392bd1603e83d80bad5b3fd9cb42ff142ce6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 991cceef2b1d18c0cdaad4f092c4affb5c632b0e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359169"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784018"
 ---
 # <a name="tutorials-for-writing-cmdlets"></a>Självstudier för att skriva cmdlets
 
@@ -22,7 +15,7 @@ Det här avsnittet innehåller självstudier för att skriva cmdletar. De här s
 > [!IMPORTANT]
 > För dem som vill ha kod exempel med mindre beskrivning, se [cmdlet-exempel](./cmdlet-samples.md).
 
-## <a name="in-this-section"></a>I detta avsnitt
+## <a name="in-this-section"></a>I det här avsnittet
 
 [GetProc-självstudie](./getproc-tutorial.md) – i den här självstudien beskrivs hur du definierar en cmdlet-klass och lägger till grundläggande funktioner som att lägga till parametrar och rapporterings fel. Cmdleten som beskrivs i den här självstudien liknar cmdleten [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) i Windows PowerShell.
 
@@ -32,10 +25,10 @@ Det här avsnittet innehåller självstudier för att skriva cmdletar. De här s
 
 ## <a name="see-also"></a>Se även
 
-[GetProc-självstudie](./getproc-tutorial.md)
+[Självstudie om GetProc](./getproc-tutorial.md)
 
-[StopProc-självstudie](./stopproc-tutorial.md)
+[Självstudie om StopProc](./stopproc-tutorial.md)
 
-[SelectStr-självstudie](./selectstr-tutorial.md)
+[Självstudie om SelectStr](./selectstr-tutorial.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

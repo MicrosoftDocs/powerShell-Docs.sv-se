@@ -1,19 +1,12 @@
 ---
 title: Namn element för kontroll för konfiguration (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b4371d45-49a4-4303-8384-5b54105bd0d6
-caps.latest.revision: 8
-ms.openlocfilehash: 2704a530e0ae269efb772ac10e531bcbb12f6eff
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3d45ba98b909ebee18e01d2b6985a48906ce39d9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354322"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783542"
 ---
 # <a name="name-element-for-control-for-controls-for-configuration-format"></a>Name-element för Control för Controls för Configuration (format)
 
@@ -30,27 +23,27 @@ Konfigurations element (format) styr element i konfigurations element (format) k
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `Name`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `Name` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[Kontroll element för konfigurations kontroll (format)](./control-element-for-controls-for-configuration-format.md)|Definierar en gemensam kontroll som kan användas av alla vyer i format filen och det namn som används för att referera till kontrollen.|
+|[Control-element för Controls för Configuration (format)](./control-element-for-controls-for-configuration-format.md)|Definierar en gemensam kontroll som kan användas av alla vyer i format filen och det namn som används för att referera till kontrollen.|
 
 ## <a name="text-value"></a>Textvärde
 
 Ange det namn som ska användas för att referera till den här kontrollen.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Namnet som anges här kan användas i följande element för att referera till den här kontrollen.
 
@@ -62,12 +55,12 @@ Namnet som anges här kan användas i följande element för att referera till d
 
 ## <a name="see-also"></a>Se även
 
-[Kontroll element för konfigurations kontroll (format)](./control-element-for-controls-for-configuration-format.md)
+[Control-element för Controls för Configuration (format)](./control-element-for-controls-for-configuration-format.md)
 
-[ExpressionBinding-element för CustomItem för kontroller för konfiguration (format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+[ExpressionBinding-element för CustomItem för Controls för Configuration (format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 
-[ExpressionBinding-element för CustomItem för kontroller för vy (format)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
+[ExpressionBinding-element för CustomItem för Controls för View (format)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
 
-[GroupBy-element för vy (format)](./groupby-element-for-view-format.md)
+[GroupBy-element för View (format)](./groupby-element-for-view-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Paketera och ladda upp resurser till en hämtnings Server
-ms.openlocfilehash: 8aac343d7495ecda94ed76d1d97079397eecd65f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: d0e070b7aa43acbbbf087729d53f06dbc7e7734a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278517"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782896"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Paketera och ladda upp resurser till en hämtnings Server
 
@@ -20,14 +20,14 @@ Varje målnod kan konfigureras för att ladda ned konfigurationer, resurser och 
 
 ## <a name="package-resource-modules"></a>Paketera resurs moduler
 
-Varje resurs som är tillgänglig för en klient som ska laddas ned måste lagras i en zip-fil. I exemplet nedan visas de steg som krävs med hjälp av [xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0) -resursen.
+Varje resurs som är tillgänglig för en klient som ska laddas ned måste lagras i en `.zip` fil. I exemplet nedan visas de steg som krävs med hjälp av [xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0) -resursen.
 
 > [!NOTE]
-> Om du har några klienter som använder PowerShell 4,0 måste du göra en plan för resurs mappstrukturen och ta bort alla versioner av mappar. Mer information finns i [flera resurs versioner](../configurations/import-dscresource.md#multiple-resource-versions).
+> Om du har några klienter som använder PowerShell 4,0 måste du förenkla resurs mappstrukturen och ta bort alla versions-mappar. Mer information finns i [flera resurs versioner](../configurations/import-dscresource.md#multiple-resource-versions).
 
-Du kan komprimera resurs katalogen med valfritt verktyg, skript eller metod som du föredrar. I Windows kan du *högerklicka* på katalogen "xPSDesiredStateConfiguration" och välja "Skicka till" och sedan "komprimerad mapp".
+Du kan komprimera resurs katalogen med valfritt verktyg, skript eller metod som du föredrar. I Windows kan du _högerklicka_ på `xPSDesiredStateConfiguration` katalogen och välja **Skicka till**och sedan på **komprimerad mapp**.
 
-![Högerklicka](media/package-upload-resources/right-click.gif)
+![Högerklicka – skicka till komprimerad mapp](media/package-upload-resources/right-click.gif)
 
 ### <a name="naming-the-resource-archive"></a>Namnge resurs arkivet
 
@@ -37,17 +37,17 @@ Resurs arkivet måste ha namnet med följande format:
 {ModuleName}_{Version}.zip
 ```
 
-I exemplet ovan ska "xPSDesiredStateConfiguration. zip" byta namn till "xPSDesiredStateConfiguration_8.4.4.0. zip".
+I exemplet ovan `xPSDesiredStateConfiguration.zip` bör byta namn `xPSDesiredStateConfiguration_8.4.4.0.zip` .
 
 ### <a name="create-checksums"></a>Skapa kontroll summor
 
-När modulen har komprimerats och bytt namn måste du skapa en **kontroll Summa**.  **Kontroll summan** används av LCM på klienten för att avgöra om resursen har ändrats och måste laddas ned igen. Du kan skapa en **kontroll Summa** med cmdleten [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) , som visas i exemplet nedan.
+När modulen har komprimerats och bytt namn måste du skapa en **kontroll Summa**. **Kontroll summan** används av LCM på klienten för att avgöra om resursen har ändrats och måste laddas ned igen. Du kan skapa en **kontroll Summa** med cmdleten [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) , som visas i exemplet nedan.
 
 ```powershell
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 ```
 
-Inga utdata visas, men nu bör du se en "xPSDesiredStateConfiguration_8.4.4.0. zip. kontroll Summa". Du kan också köra `New-DSCCheckSum` mot en katalog med filer med hjälp `-Path` av parametern. Om det redan finns en kontroll summa kan du tvinga den att skapas igen med `-Force` parametern.
+Inga utdata visas, men nu bör du se en "xPSDesiredStateConfiguration_8.4.4.0.zip. kontroll Summa". Du kan också köra `New-DSCCheckSum` mot en katalog med filer med hjälp av `-Path` parametern. Om det redan finns en kontroll summa kan du tvinga den att skapas igen med `-Force` parametern.
 
 ### <a name="where-to-store-resource-archives"></a>Var resurs Arkiv ska lagras
 

@@ -1,19 +1,12 @@
 ---
 title: AutoSize-element för TableControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1df5de23-9ffc-427e-bb34-f5efe073f3fe
-caps.latest.revision: 11
-ms.openlocfilehash: f50ba257ee57c36aedc6b37c680a0130842b69b0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f29b3eb278fd9ff29d2f6f4fbd000513dcaeec7b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355372"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783899"
 ---
 # <a name="autosize-element-for-tablecontrol-format"></a>AutoSize-element för TableControl (format)
 
@@ -29,15 +22,15 @@ ViewDefinitions-element (format) View-element (format) TableControl element (for
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `AutoSize`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `AutoSize` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -45,7 +38,7 @@ Ingen.
 |-------------|-----------------|
 |[TableControl-element (format)](./tablecontrol-element-format.md)|Definierar ett tabell format för en vy.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Mer information om komponenterna i en tabellvy finns i [skapa en tabellvy](./creating-a-table-view.md).
 
@@ -55,4 +48,4 @@ Mer information om komponenterna i en tabellvy finns i [skapa en tabellvy](./cre
 
 [TableControl-element (format)](./tablecontrol-element-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

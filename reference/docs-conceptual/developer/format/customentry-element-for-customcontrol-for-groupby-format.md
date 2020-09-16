@@ -1,25 +1,18 @@
 ---
 title: CustomEntry-element för CustomControl for GroupBy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2987cb45-f646-45d4-b81b-7871e77af36f
-caps.latest.revision: 5
-ms.openlocfilehash: dcf4f8b2bbd422067ffdf9b3b4972e279e91edf9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4df8e5b96868b3814c6d84fa329950bb5345ef6e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355267"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785922"
 ---
 # <a name="customentry-element-for-customcontrol-for-groupby-format"></a>CustomEntry-element för CustomControl för GroupBy (format)
 
 Ger en definition av kontrollen. Det här elementet används när du definierar hur en ny grupp av objekt visas.
 
-Konfigurations element (format) ViewDefinitions element (format) visnings element (format) GroupBy-element för View (format) CustomControl-element för GroupBy (format) CustomEntries-element för CustomControl for GroupBy (format) CustomEntry-element för CustomControl för GroupBy (format)
+Konfigurations element (format) ViewDefinitions element (format) visnings element (format) GroupBy-element för View (format) CustomControl-element för GroupBy (format) CustomEntries-element för CustomControl for groupby (format) CustomEntry-element för CustomControl för GroupBy (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,11 +25,11 @@ Konfigurations element (format) ViewDefinitions element (format) visnings elemen
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och de överordnade elementen i `CustomEntry`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `CustomEntry` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -51,7 +44,7 @@ Ingen.
 |-------------|-----------------|
 |[CustomEntries-element för CustomControl för GroupBy (format)](./customentries-element-for-customcontrol-for-groupby-format.md)|Innehåller definitionerna för kontrollen.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 ## <a name="see-also"></a>Se även
 
@@ -61,4 +54,4 @@ Ingen.
 
 [CustomEntries-element för CustomControl för GroupBy (format)](./customentries-element-for-customcontrol-for-groupby-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

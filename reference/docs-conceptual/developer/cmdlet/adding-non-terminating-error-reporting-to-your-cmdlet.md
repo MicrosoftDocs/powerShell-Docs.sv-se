@@ -1,25 +1,18 @@
 ---
 title: Lägga till icke-avslutande fel rapportering till din cmdlet | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
-caps.latest.revision: 8
-ms.openlocfilehash: ec29d1cffa083e4cce667d3e1efbd4eeecbffb51
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 6421d510f3701c12807568ad8786459123e80223
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870123"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784596"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Lägga till rapportering av fel som avbryter körningen i en cmdlet
 
 -Cmdletar kan rapportera icke-avslutande fel genom att anropa metoden [system. Management. Automation. cmdlet. WriteError][] och fortfarande fortsätta att använda det aktuella indatamängdet eller på ytterligare inkommande pipelines-objekt. I det här avsnittet beskrivs hur du skapar en-cmdlet som rapporterar att det inte går att avsluta fel från dess metoder för bearbetning av indata.
 
-För att inte avsluta fel (och avsluta fel) måste cmdleten skicka ett [system. Management. Automation. ErrorRecord][] -objekt som identifierar felet. Varje felpost identifieras av en unik sträng som kallas "fel identifierare". Förutom identifieraren anges kategorin för varje fel av konstanter som definieras av en [system. Management. Automation. ErrorCategory][] -uppräkning. Användaren kan visa fel baserat på deras kategori genom att ange `$ErrorView` variabeln till "CategoryView".
+För att inte avsluta fel (och avsluta fel) måste cmdleten skicka ett [system. Management. Automation. ErrorRecord][] -objekt som identifierar felet. Varje felpost identifieras av en unik sträng som kallas "fel identifierare". Förutom identifieraren anges kategorin för varje fel av konstanter som definieras av en [system. Management. Automation. ErrorCategory][] -uppräkning. Användaren kan visa fel baserat på deras kategori genom `$ErrorView` att ange variabeln till "CategoryView".
 
 Mer information om fel poster finns i [fel poster för Windows PowerShell](./windows-powershell-error-records.md).
 
@@ -27,7 +20,7 @@ Mer information om fel poster finns i [fel poster för Windows PowerShell](./win
 
 Det första steget i att skapa en cmdlet namnger alltid cmdleten och deklarerar den .NET-klass som implementerar cmdleten. Den här cmdleten hämtar process information, så verbet som väljs här är "Get". (Nästan alla sorters cmdlets som kan hämta information kan bearbeta kommando rads indata.) Mer information om godkända cmdlet-verb finns i [cmdlet-verb](approved-verbs-for-windows-powershell-commands.md).
 
-Följande är definitionen för denna `Get-Proc`-cmdlet. Information om den här definitionen anges i [skapa din första cmdlet](creating-a-cmdlet-without-parameters.md).
+Följande är definitionen för denna `Get-Proc` cmdlet. Information om den här definitionen anges i [skapa din första cmdlet](creating-a-cmdlet-without-parameters.md).
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "proc")]
@@ -161,13 +154,13 @@ protected override void ProcessRecord()
 
 För ett fel som inte är avslutande måste cmdleten generera en angiven fel identifierare för varje angivet inobjekt.
 
-En cmdlet behöver ofta ändra PowerShell-åtgärden som genereras av ett fel som inte går att avsluta. Det kan du göra genom att definiera `ErrorAction` och `ErrorVariable` parametrar. Om du definierar parametern `ErrorAction`, visar cmdleten användar alternativen [system. Management. Automation. Åtgärdsinställning][]. du kan också direkt påverka åtgärden genom att ställa in `$ErrorActionPreference` variabeln.
+En cmdlet behöver ofta ändra PowerShell-åtgärden som genereras av ett fel som inte går att avsluta. Det kan du göra genom att definiera `ErrorAction` `ErrorVariable` parametrarna och. Om du definierar `ErrorAction` parametern, visar cmdleten användar alternativen [system. Management. Automation. Åtgärdsinställning][]. du kan också direkt påverka åtgärden genom att ställa in `$ErrorActionPreference` variabeln.
 
-Cmdleten kan spara icke-avslutande fel i en variabel med hjälp av parametern `ErrorVariable` som inte påverkas av inställningen för `ErrorAction`. Fel kan läggas till i en befintlig felvariabel genom att lägga till ett plus tecken (+) framför variabelns namn.
+Cmdleten kan spara icke-avslutande fel i en variabel med hjälp av `ErrorVariable` parametern, som inte påverkas av inställningen för `ErrorAction` . Fel kan läggas till i en befintlig felvariabel genom att lägga till ett plus tecken (+) framför variabelns namn.
 
 ## <a name="code-sample"></a>Kod exempel
 
-Den fullständiga C# exempel koden finns i [GetProcessSample04-exempel](./getprocesssample04-sample.md).
+Den fullständiga exempel koden för C# finns i [GetProcessSample04-exempel](./getprocesssample04-sample.md).
 
 ## <a name="define-object-types-and-formatting"></a>Definiera objekt typer och formatering
 
@@ -197,7 +190,7 @@ När din cmdlet har registrerats med PowerShell kan du testa den genom att köra
 
 ## <a name="see-also"></a>Se även
 
-[Lägga till parametrar som bearbetar pipeline-inflöden](./adding-parameters-that-process-pipeline-input.md)
+[Lägga till parametrar som bearbetar pipelineindata](./adding-parameters-that-process-pipeline-input.md)
 
 [Lägga till parametrar som bearbetar kommando rads indatatyper](./adding-parameters-that-process-command-line-input.md)
 

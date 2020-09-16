@@ -5,12 +5,12 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 0f72fb5baf5b829142b18ed774261e9b3b66291b
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.openlocfilehash: e8938a5d36cd1c9c5a74eed1c22cd5d0e1a91966
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84436332"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786755"
 ---
 # <a name="chapter-1---getting-started-with-powershell"></a>Kapitel 1 – Komma igång med PowerShell
 
@@ -29,7 +29,7 @@ Alla moderna versioner av Windows-operativsystem levereras med PowerShell instal
 
 Det enklaste sättet att hitta PowerShell i Windows 10 är att skriva **PowerShell** i Sök fältet som visas i bild 1-1.
 
-![Figur 1-1](media/figure1-1.png)
+![Bild 1-1 – Sök efter PowerShell på Start menyn](media/figure1-1.png)
 
 Observera att fyra olika kortkommandon för PowerShell visas i bild 1-1. Datorn som används i demonstrations syfte i den här boken kör 64-bitars versionen av Windows 10, så det finns en 64-bitars version av PowerShell-konsolen och PowerShell ISE (Integrated Scripting Environment) och en 32-bitars version av var och en som anges av (x86)-suffixet i gen vägarna. Om du råkar köra en 32-bitars version av Windows 10 har du bara två genvägar. Dessa objekt har inte (x86) suffix, men är 32-bitars versioner. Om du har ett 64-bitars operativ system är min rekommendation att köra 64-bitars versionen av PowerShell, om du inte har en unik orsak för att köra 32-bitars versionen.
 
@@ -41,7 +41,7 @@ I produktions företags miljöer som jag stöder använder jag tre olika Active 
 
 Jag har lanserat PowerShell-konsolen genom att klicka på genvägen "Windows PowerShell" som visas i bild 1-1.
 
-![Figur 1-4](media/figure1-4.png)
+![Bild 1-4 – namn listen i PowerShell-fönstret](media/figure1-4.png)
 
 Observera att PowerShell-konsolens namn List säger "Windows PowerShell" som visas i bild 1-4. Vissa kommandon fungerar bra, men PowerShell kan inte delta i användar Access Control (UAC). Det innebär att det inte går att fråga efter utökad behörighet för uppgifter som kräver godkännande av en administratör.
 Följande fel meddelande genereras:
@@ -66,7 +66,7 @@ Så här konfigureras mitt andra domän användar konto. Det här kontot bör in
 
 Stäng PowerShell. Starta om PowerShell-konsolen, förutom den här gången, högerklicka på genvägen **Windows PowerShell** och välj **Kör som administratör** enligt bilden 1-5.
 
-![Figur 1-5](media/figure1-5.png)
+![Bild 1-5 – snabb meny – kör som administratör](media/figure1-5.png)
 
 Om du är inloggad på Windows som en vanlig användare uppmanas du att ange autentiseringsuppgifter. Jag anger autentiseringsuppgifterna för mitt användar konto som är domän användare och lokal administratör enligt bild 1-6.
 
@@ -86,11 +86,11 @@ Sök efter PowerShell igen, förutom den här gången högerklickar du på den o
 
 Högerklicka på PowerShell-genvägen som nu har fästs i aktivitets fältet och välj egenskaper som visas i bild 1-9.
 
-![Figur 1-9](media/figure1-9.png)
+![Figur 1-9-kontroll av användar konto – ange autentiseringsuppgifter](media/figure1-9.png)
 
 Klicka på "Avancerat" som antecknas genom att #1 i bild 1-10, markera kryss rutan Kör som administratör som betecknas genom att #2 i bild 1-10 och klicka sedan på OK två gånger för att acceptera ändringarna och avsluta från båda dialog rutorna.
 
-![Figur 1-10](media/figure1-10.png)
+![Figur 1-10 – namn listen visar "administratör"](media/figure1-10.png)
 
 Du behöver aldrig bekymra dig om att hitta PowerShell eller om den körs som administratör igen.
 
@@ -204,7 +204,7 @@ Start-Service -Name w32time
 
 I det här kapitlet har du lärt dig hur du hittar och startar PowerShell och hur du skapar en genväg som startar PowerShell som administratör. Du har också lärt dig om standard körnings principen och hur du ändrar den.
 
-## <a name="review"></a>Granska
+## <a name="review"></a>Genomgång
 
 1. Hur tar du reda på vilken PowerShell-version en dator kör?
 1. Varför är det viktigt att starta PowerShell som administratör?
@@ -217,13 +217,15 @@ I det här kapitlet har du lärt dig hur du hittar och startar PowerShell och hu
 För dem som vill veta mer om de ämnen som beskrivs i det här kapitlet rekommenderar vi att du läser följande PowerShell-hjälp avsnitt.
 
 - [about_Automatic_Variables][]
+- [about_Hash_Tables][]
 - [about_Execution_Policies][]
 
 I nästa kapitel får du lära dig mer om hur du kan hitta kommandon i PowerShell. Ett av de saker som kommer att omfattas är hur du uppdaterar PowerShell så att hjälp avsnitten kan visas direkt från PowerShell i stället för att behöva visa dem på Internet.
 
 <!-- link references -->
 [about_Automatic_Variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
-[about_Execution_Policies]: /powershell//powershell/module/microsoft.powershell.core/about/about_execution_policies
+[about_Hash_Tables]: /powershell/module/microsoft.powershell.core/about/about_hash_tables
+[about_Execution_Policies]: /powershell/module/microsoft.powershell.core/about/about_execution_policies
 [Uppgradera befintliga Windows PowerShell]: /powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell
 [Installera PowerShell]: /powershell/scripting/install/installing-powershell
 [Starta Windows Powershell]: /powershell/scripting/windows-powershell/starting-windows-powershell

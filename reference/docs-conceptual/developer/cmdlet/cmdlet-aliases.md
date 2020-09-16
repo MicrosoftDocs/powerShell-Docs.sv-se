@@ -1,19 +1,12 @@
 ---
 title: Cmdlet-alias | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d0d70864-33fb-49ce-8054-c41ba19fd554
-caps.latest.revision: 11
-ms.openlocfilehash: 32f45702cc0d28e6652ef61ebdbe085291013408
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fed4055f09e01c5f3fa87584d48551918606f4eb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359457"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784545"
 ---
 # <a name="cmdlet-aliases"></a>Cmdlet-alias
 
@@ -27,7 +20,7 @@ Följ dessa rikt linjer när du skapar inbyggda alias för dina cmdlet: ar:
 
 - Innan du tilldelar alias startar du Windows PowerShell och kör cmdleten [Get-alias](/powershell/module/Microsoft.PowerShell.Utility/Get-Alias) för att se de alias som redan används.
 
-- Inkludera ett alias som refererar till verbet för cmdlet-namnet och ett alias som refererar till substantivet för cmdlet-namnet. Till exempel är alias för `Import-Module` cmdleten "ipmo". En lista över alla verb och deras alias finns i [cmdlet-verb](./approved-verbs-for-windows-powershell-commands.md).
+- Inkludera ett alias som refererar till verbet för cmdlet-namnet och ett alias som refererar till substantivet för cmdlet-namnet. Aliaset för `Import-Module` cmdleten är till exempel "ipmo". En lista över alla verb och deras alias finns i [cmdlet-verb](./approved-verbs-for-windows-powershell-commands.md).
 
 - För cmdletar som har samma verb inkluderar du samma alias. Alias för alla Windows PowerShell-cmdletar som har verbet "Get" i namnet använder till exempel prefixet "g".
 

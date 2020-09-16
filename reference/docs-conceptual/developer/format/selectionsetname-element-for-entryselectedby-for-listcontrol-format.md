@@ -1,25 +1,18 @@
 ---
 title: SelectionSetName-element för EntrySelectedBy för ListControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: cff7763c-5ce0-49c1-a480-1249c9f57a13
-caps.latest.revision: 11
-ms.openlocfilehash: 7fd431b4b1ddecd3a7358c2bf97f299b97162b34
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4315d81da4ceeb7a5b171087434ae15fb09e6592
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353825"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785276"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-listcontrol-format"></a>SelectionSetName-element för EntrySelectedBy för ListControl (format)
 
 Anger en uppsättning .NET-objekt för List posten. Det finns ingen gräns för antalet markerings uppsättningar som kan anges för en post.
 
-Konfigurations element (format) ViewDefinitions element (format) View-element (format) ListControl-element (format) ListEntries-element (format) ListEntry element (format) EntrySelectedBy-element för ListEntry (format) SelectionSetName-element för EntrySelectedBy för ListEntry (format)
+Konfigurations element (format) ViewDefinitions element (format) Visa element (format) ListControl-element (format) ListEntries-element (format) ListEntry element (format) EntrySelectedBy-element för ListEntry (format) SelectionSetName-element för EntrySelectedBy (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,15 +22,15 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `SelectionSetName`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `SelectionSetName` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -49,7 +42,7 @@ Ingen.
 
 Ange namnet på urvals uppsättningen.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Varje List post måste ha minst ett typ namn, en urvals uppsättning eller ett urvals villkor definierat.
 
@@ -76,4 +69,4 @@ I följande exempel visas hur du anger en markerings uppsättning för en post i
 
 [EntrySelectedBy-element för ListEntry (format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

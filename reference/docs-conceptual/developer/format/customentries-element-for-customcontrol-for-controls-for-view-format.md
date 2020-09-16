@@ -1,25 +1,18 @@
 ---
 title: CustomEntries-element för CustomControl för kontroller för vy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3485958a-ba87-4932-907c-a8f140c4abdb
-caps.latest.revision: 8
-ms.openlocfilehash: 4856aee930285781a101868bd6cb67824585bce1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a52bd2368044c34a0b73da331785d55597e30260
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359025"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783712"
 ---
 # <a name="customentries-element-for-customcontrol-for-controls-for-view-format"></a>CustomEntries-element för CustomControl för Controls för View (format)
 
 Innehåller definitionerna för kontrollen. Det här elementet används när du definierar kontroller som kan användas av en vy.
 
-Konfigurations element (format) ViewDefinitions element (format) View-element (format) styr element (format) styr element (format) styr element för Controls (format) CustomControl-element för kontroll för Control for View (format) CustomEntries-element för CustomControl för Visa kontroller (format)
+Konfigurations element (format) ViewDefinitions element (format) Visa element (format) styr element (format) kontroll element (format) styr element (format) kontroll element för Controls för View (format) CustomControl-element för kontroll för kontroller för View (format) CustomEntries-element för CustomControl för kontroller (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,32 +24,32 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och överordnade element i `CustomEntries`-elementet. Det finns ingen övre gräns för antalet underordnade element som kan anges.
+I följande avsnitt beskrivs attribut, underordnade element och `CustomEntries` elementets överordnade element. Det finns ingen övre gräns för antalet underordnade element som kan anges.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[CustomEntry-element för CustomEntries för kontroller för vy (format)](./customentry-element-for-customentries-for-controls-for-view-format.md)|Nödvändigt element.<br /><br /> Ger en definition av kontrollen.|
+|[CustomEntry-element för CustomEntries för Controls för View (format)](./customentry-element-for-customentries-for-controls-for-view-format.md)|Nödvändigt element.<br /><br /> Ger en definition av kontrollen.|
 
 ### <a name="parent-elements"></a>Överordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[CustomControl-element för kontroll för vy (format)](./customcontrol-element-for-control-for-controls-for-view-format.md)|Definierar den kontroll som används i vyn.|
+|[CustomControl-element för Control för Controls för View (format)](./customcontrol-element-for-control-for-controls-for-view-format.md)|Definierar den kontroll som används i vyn.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
-I de flesta fall har en kontroll bara en definition som anges i ett enda `CustomEntry`-element. Det är dock möjligt att tillhandahålla flera definitioner om du vill använda samma kontroll för att visa olika .NET-objekt. I dessa fall kan du definiera ett `CustomEntry`-element för varje objekt eller uppsättning objekt.
+I de flesta fall har en kontroll bara en definition som anges i ett enda `CustomEntry` element. Det är dock möjligt att tillhandahålla flera definitioner om du vill använda samma kontroll för att visa olika .NET-objekt. I dessa fall kan du definiera ett- `CustomEntry` element för varje objekt eller uppsättning objekt.
 
 ## <a name="see-also"></a>Se även
 
-[CustomEntry-element för CustomEntries för kontroller för vy (format)](./customentry-element-for-customentries-for-controls-for-view-format.md)
+[CustomEntry-element för CustomEntries för Controls för View (format)](./customentry-element-for-customentries-for-controls-for-view-format.md)
 
-[CustomControl-element för kontroll för vy (format)](./customcontrol-element-for-control-for-controls-for-view-format.md)
+[CustomControl-element för Control för Controls för View (format)](./customcontrol-element-for-control-for-controls-for-view-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

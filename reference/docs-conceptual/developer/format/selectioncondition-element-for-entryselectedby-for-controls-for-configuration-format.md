@@ -1,25 +1,18 @@
 ---
 title: SelectionCondition-element för EntrySelectedBy för kontroll av konfiguration (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f23ef405-0f1e-4607-b3f4-4017b7ead106
-caps.latest.revision: 7
-ms.openlocfilehash: a5098da55d0a63272a121b973cb05e26dc47e3e1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 748aa1aa0ba603a44334d9401e9e2c0e68f14e03
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358900"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783423"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format"></a>SelectionCondition-element för EntrySelectedBy för Controls för Configuration (format)
 
 Definierar ett villkor som måste finnas för att en gemensam kontroll definition ska kunna användas. Det här elementet används när du definierar en gemensam kontroll som kan användas av alla vyer i format filen.
 
-Konfigurations element (format) styr element i konfigurations-(format)-kontroll element för Controls (format) CustomControl-element för Control för Configuration (format) CustomEntries-element för CustomControl för kontroller för Konfiguration (format) CustomEntry-element för CustomControl for Controls for Configuration (format) EntrySelectedBy-element för CustomEntry for Controls for Configuration (format) SelectionCondition-element för EntrySelectedBy för CustomEntry för Konfiguration (format)
+Konfigurations element (format) styr element i konfigurations-(format)-kontroll element för Controls (format) CustomControl-element för Control för Configuration (format) CustomEntries-element för CustomControl för Controls (format) CustomEntry-element för CustomControl för Controls (format) EntrySelectedBy-element för CustomEntry för Controls (format) SelectionCondition-element för EntrySelectedBy för CustomEntry för konfiguration (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,28 +27,28 @@ Konfigurations element (format) styr element i konfigurations-(format)-kontroll 
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `SelectionCondition`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `SelectionCondition` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[PropertyName-element för SelectionCondition för kontroll av konfiguration (format)](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md)|Valfritt element.<br /><br /> Anger en .NET-egenskap som utlöser villkoret.|
-|[Script block-element för SelectionCondition för kontroller för konfiguration (format)](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md)|Valfritt element.<br /><br /> Anger det skript som utlöser villkoret.|
-|[SelectionSetName-element för SelectionCondition för kontroller för konfiguration (format)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)|Valfritt element.<br /><br /> Anger den uppsättning av .NET-typer som utlöser villkoret.|
-|[Elementet TypeName för SelectionCondition för kontroller för konfiguration (format)](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)|Valfritt element.<br /><br /> Anger en .NET-typ som utlöser villkoret.|
+|[PropertyName-element för SelectionCondition för Controls för Configuration (format)](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md)|Valfritt element.<br /><br /> Anger en .NET-egenskap som utlöser villkoret.|
+|[ScriptBlock-element för SelectionCondition för Controls för Configuration (format)](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md)|Valfritt element.<br /><br /> Anger det skript som utlöser villkoret.|
+|[SelectionSetName-element för SelectionCondition för Controls för Configuration (format)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)|Valfritt element.<br /><br /> Anger den uppsättning av .NET-typer som utlöser villkoret.|
+|[TypeName-element för SelectionCondition för Controls för Configuration (format)](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)|Valfritt element.<br /><br /> Anger en .NET-typ som utlöser villkoret.|
 
 ### <a name="parent-elements"></a>Överordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[EntrySelectedBy-element för CustomEntry för kontroller för konfiguration (format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|Definierar de .NET-typer som använder den här posten i common Control definition.|
+|[EntrySelectedBy-element för CustomEntry för Controls för Configuration (format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|Definierar de .NET-typer som använder den här posten i common Control definition.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Följande rikt linjer måste följas när du definierar ett urvals villkor:
 
@@ -67,14 +60,14 @@ Mer information om hur urvals villkor kan användas finns i [definiera villkor f
 
 ## <a name="see-also"></a>Se även
 
-[PropertyName-element för SelectionCondition för kontroll av konfiguration (format)](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md)
+[PropertyName-element för SelectionCondition för Controls för Configuration (format)](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md)
 
-[Script block-element för SelectionCondition för kontroller för konfiguration (format)](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md)
+[ScriptBlock-element för SelectionCondition för Controls för Configuration (format)](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md)
 
-[SelectionSetName-element för SelectionCondition för kontroller för konfiguration (format)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
+[SelectionSetName-element för SelectionCondition för Controls för Configuration (format)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
 
-[Elementet TypeName för SelectionCondition för kontroller för konfiguration (format)](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)
+[TypeName-element för SelectionCondition för Controls för Configuration (format)](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)
 
-[EntrySelectedBy-element för CustomEntry för kontroller för konfiguration (format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)
+[EntrySelectedBy-element för CustomEntry för Controls för Configuration (format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)
 
 [Skriva en Windows PowerShell-formatering och en typ fil](./writing-a-powershell-formatting-file.md)

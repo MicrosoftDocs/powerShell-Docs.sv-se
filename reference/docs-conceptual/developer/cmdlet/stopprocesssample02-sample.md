@@ -1,23 +1,16 @@
 ---
 title: StopProcessSample02-exempel | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
-caps.latest.revision: 10
-ms.openlocfilehash: 594c06367baedd1f9bfdbfff9f0e072d579b4099
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bab32f5a2544905bd858bcecf5b0b2e2d127e642
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359222"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786449"
 ---
 # <a name="stopprocesssample02-sample"></a>StopProcessSample02 – exempel
 
-Det här exemplet visar hur du skriver en cmdlet som skriver fel sökning (WriteDebug), utförliga (WriteVerbose) och varnings meddelanden (WriteWarning) medan processer stoppas på den lokala datorn. Denna cmdlet liknar `Stop-Process`-cmdleten som tillhandahålls av Windows PowerShell 2,0.
+Det här exemplet visar hur du skriver en cmdlet som skriver fel sökning (WriteDebug), utförliga (WriteVerbose) och varnings meddelanden (WriteWarning) medan processer stoppas på den lokala datorn. Denna cmdlet liknar den `Stop-Process` cmdlet som tillhandahålls av Windows PowerShell 2,0.
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Så här skapar du exemplet med hjälp av Visual Studio.
 
@@ -69,7 +62,7 @@ Det här exemplet demonstrerar följande.
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar hur du skriver fel söknings-, utförliga och varnings meddelanden med hjälp av metoderna `WriteDebug`, `WriteVerbose`och `WriteWarning`.
+Det här exemplet visar hur du skriver fel söknings-, utförliga och varnings meddelanden med hjälp av `WriteDebug` `WriteVerbose` metoderna, och `WriteWarning` .
 
 ```csharp
 using System;

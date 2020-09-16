@@ -1,19 +1,12 @@
 ---
 title: Dynamiska parametrar för provider-cmdlet | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8f1069f7-8fa8-4622-9e2c-af29b0b961c2
-caps.latest.revision: 6
-ms.openlocfilehash: 9e70fbeaef61d04e66f16d06519742ff2f679df6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 4aaa5ee39e98de9a9925fc65cac3cc6c32d9c2bc
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564248"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786823"
 ---
 # <a name="provider-cmdlet-dynamic-parameters"></a>Dynamiska cmdlet-parametrar för providers
 
@@ -65,47 +58,47 @@ internal sealed class CertificateProviderDynamicParameters
 
 Här är en lista över de statiska parametrar som kan användas för att lägga till dynamiska parametrar.
 
-`Clear-Content`cmdlet kan du definiera dynamiska parametrar som utlöses av `Path` parametern för Clear-Clear-cmdleten genom att implementera metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Clearcontentdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters) .
+`Clear-Content` cmdlet kan du definiera dynamiska parametrar som utlöses av `Path` parametern för Clear-Clear-cmdleten genom att implementera metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Clearcontentdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters) .
 
-`Clear-Item`cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` parametern genom att `Clear-Item` implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Clearitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters) .
+`Clear-Item` cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` parametern genom att `Clear-Item` implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Clearitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters) .
 
-`Clear-ItemProperty`cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` parametern genom att `Clear-ItemProperty` implementera metoden [system. Management. Automation. Provider. Ipropertycmdletprovider. Clearpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters) .
+`Clear-ItemProperty` cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` parametern genom att `Clear-ItemProperty` implementera metoden [system. Management. Automation. Provider. Ipropertycmdletprovider. Clearpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters) .
 
-`Copy-Item`cmdlet kan du definiera dynamiska parametrar som utlöses av `Path` `Destination` parametrarna, och `Recurse` för `Copy-Item` cmdleten genom att implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Copyitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) .
+`Copy-Item` cmdlet kan du definiera dynamiska parametrar som utlöses av `Path` `Destination` parametrarna, och `Recurse` för `Copy-Item` cmdleten genom att implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Copyitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) .
 
 Get-ChildItems-cmdlet du kan definiera dynamiska parametrar som utlöses av `Path` cmdlet- `Recurse` parametrarna och, `Get-ChildItem` genom att implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Getchilditemsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) och [system. Management. Automation. Provider. Containercmdletprovider. Getchildnamesdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) .
 
-`Get-Content`cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` parametern genom att `Get-Content` implementera metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentreaderdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) .
+`Get-Content` cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` parametern genom att `Get-Content` implementera metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentreaderdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) .
 
-`Get-Item`cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` parametern genom att `Get-Item` implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Getitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters) .
+`Get-Item` cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` parametern genom att `Get-Item` implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Getitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters) .
 
-`Get-ItemProperty`cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` `Name` parametrarna och genom att `Get-ItemProperty` implementera metoden [system. Management. Automation. Provider. Ipropertycmdletprovider. Getpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters) .
+`Get-ItemProperty` cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` `Name` parametrarna och genom att `Get-ItemProperty` implementera metoden [system. Management. Automation. Provider. Ipropertycmdletprovider. Getpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters) .
 
-`Invoke-Item`cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` parametern genom att `Invoke-Item` implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Invokedefaultactiondynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters) .
+`Invoke-Item` cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` parametern genom att `Invoke-Item` implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Invokedefaultactiondynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters) .
 
-`Move-Item`cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` `Destination` parametrarna och genom att `Move-Item` implementera metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Moveitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters) .
+`Move-Item` cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` `Destination` parametrarna och genom att `Move-Item` implementera metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Moveitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters) .
 
-`New-Item`cmdlet kan du definiera dynamiska parametrar som utlöses av `Path` `ItemType` parametrarna, och `Value` för `New-Item` cmdleten genom att implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Newitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItemDynamicParameters) .
+`New-Item` cmdlet kan du definiera dynamiska parametrar som utlöses av `Path` `ItemType` parametrarna, och `Value` för `New-Item` cmdleten genom att implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Newitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItemDynamicParameters) .
 
-`New-ItemProperty`cmdlet kan du definiera dynamiska parametrar som utlöses av `Path` `Name` cmdleten,, `PropertyType` och `Value` för `New-ItemProperty` cmdleten genom att implementera metoden [system. Management. Automation. Provider. Idynamicpropertycmdletprovider. Newpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters) .
+`New-ItemProperty` cmdlet kan du definiera dynamiska parametrar som utlöses av `Path` `Name` cmdleten,, `PropertyType` och `Value` för `New-ItemProperty` cmdleten genom att implementera metoden [system. Management. Automation. Provider. Idynamicpropertycmdletprovider. Newpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters) .
 
-`New-PSDrive`cmdlet kan du definiera dynamiska parametrar som utlöses av objektet [system. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) som returnerades av `New-PSDrive` cmdleten genom att implementera metoden [system. Management. Automation. Provider. Drivecmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) .
+`New-PSDrive` cmdlet kan du definiera dynamiska parametrar som utlöses av [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -objektet som returneras av `New-PSDrive` cmdleten genom att implementera metoden [system. Management. Automation. Provider. Drivecmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) .
 
-`Remove-Item`Du kan definiera dynamiska parametrar som utlöses av cmdlet- `Path` `Recurse` parametrarna och genom att `Remove-Item` implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Removeitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters) .
+`Remove-Item` Du kan definiera dynamiska parametrar som utlöses av cmdlet- `Path` `Recurse` parametrarna och genom att `Remove-Item` implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Removeitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters) .
 
-`Remove-ItemProperty`Du kan definiera dynamiska parametrar som utlöses av cmdlet- `Path` `Name` parametrarna och genom att `Remove-ItemProperty` implementera metoden [system. Management. Automation. Provider. Idynamicpropertycmdletprovider. Removepropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemovePropertyDynamicParameters) .
+`Remove-ItemProperty` Du kan definiera dynamiska parametrar som utlöses av cmdlet- `Path` `Name` parametrarna och genom att `Remove-ItemProperty` implementera metoden [system. Management. Automation. Provider. Idynamicpropertycmdletprovider. Removepropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemovePropertyDynamicParameters) .
 
-`Rename-Item`cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` `NewName` parametrarna och genom att `Rename-Item` implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Renameitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters) .
+`Rename-Item` cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` `NewName` parametrarna och genom att `Rename-Item` implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Renameitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters) .
 
-`Rename-ItemProperty`Du kan definiera dynamiska parametrar som utlöses av `Path` `Name` parametrarna, och `NewName` för `Rename-ItemProperty` cmdleten genom att implementera metoden [system. Management. Automation. Provider. Idynamicpropertycmdletprovider. Renamepropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenamePropertyDynamicParameters) .
+`Rename-ItemProperty` Du kan definiera dynamiska parametrar som utlöses av `Path` `Name` parametrarna, och `NewName` för `Rename-ItemProperty` cmdleten genom att implementera metoden [system. Management. Automation. Provider. Idynamicpropertycmdletprovider. Renamepropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenamePropertyDynamicParameters) .
 
-`Set-Content`cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` parametern genom att `Set-Content` implementera metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentwriterdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters) .
+`Set-Content` cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` parametern genom att `Set-Content` implementera metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentwriterdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters) .
 
-`Set-Item`cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` `Value` parametrarna och genom att `Set-Item` implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Setitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters) .
+`Set-Item` cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` `Value` parametrarna och genom att `Set-Item` implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Setitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters) .
 
-`Set-ItemProperty`cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` `Value` parametrarna och genom att `Set-Item` implementera metoden [system. Management. Automation. Provider. Ipropertycmdletprovider. Setpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters) .
+`Set-ItemProperty` cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` `Value` parametrarna och genom att `Set-Item` implementera metoden [system. Management. Automation. Provider. Ipropertycmdletprovider. Setpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters) .
 
-`Test-Path`cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` parametern genom att `Test-Path` implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Invokedefaultactiondynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters) .
+`Test-Path` cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` parametern genom att `Test-Path` implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Invokedefaultactiondynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters) .
 
 ## <a name="see-also"></a>Se även
 

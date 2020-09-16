@@ -1,19 +1,12 @@
 ---
 title: ColumnNumber-element för WideControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fe9eb5f9-a193-41a4-ad47-a96ba3f8d7e3
-caps.latest.revision: 8
-ms.openlocfilehash: 49f501538b8f72777984a5e575b999866abcdebf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5f151bb0e629efcebe6295cdcae6cebcbbb1b39b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355379"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783865"
 ---
 # <a name="columnnumber-element-for-widecontrol-format"></a>ColumnNumber-element för WideControl (format)
 
@@ -29,15 +22,15 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `ColumnNumber`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `ColumnNumber` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -49,9 +42,9 @@ Ingen.
 
 Ange ett positivt heltals värde.
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
-När du definierar en bred vy kan du lägga till `AutoSize`-elementet eller `ColumnNumber`-elementet, men du kan inte lägga till båda.
+När du definierar en bred vy kan du lägga till `AutoSize` elementet eller `ColumnNumber` elementet, men du kan inte lägga till båda.
 
 Mer information om komponenterna i en bred vy finns i [skapa en bred vy](./creating-a-wide-view.md).
 
@@ -65,4 +58,4 @@ Ett exempel på en bred vy finns i [wide View (grundläggande)](./wide-view-basi
 
 [Bred vy (grundläggande)](./wide-view-basic.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

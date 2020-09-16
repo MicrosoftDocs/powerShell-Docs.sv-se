@@ -1,25 +1,18 @@
 ---
 title: Elementet TypeName för EntrySelectedBy för CustomEntry för vyn (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 76548af7-05bd-4d12-bf71-6fb69c434ef2
-caps.latest.revision: 10
-ms.openlocfilehash: c3dd761cd9b6c468d4833ea35b897ba5d425f598
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f8dc2c808e6eb3d6a7873cdbddc936b95d94c541
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358761"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785106"
 ---
 # <a name="typename-element-for-entryselectedby-for-customentry-for-view-format"></a>TypeName-element för EntrySelectedBy för CustomEntry för View (format)
 
 Anger en .NET-typ som använder den här definitionen för den anpassade kontrollen. Det finns ingen gräns för antalet typer som kan anges för en definition.
 
-Konfigurations element (format) ViewDefinitions element (format) View element (format) CustomControl element (format) CustomEntries-element för CustomControl för View (format) CustomEntry-element för CustomEntries för View (format) EntrySelectedBy Element för CustomEntry för visnings-(format) elementet TypeName för EntrySelectedBy för CustomEntry för View (format)
+Konfigurations element (format) ViewDefinitions element (format) View element (format) CustomControl element (format) CustomEntries-element för CustomControl för View (format) CustomEntry-element för CustomEntries för View (format) EntrySelectedBy-element för CustomEntry för View (format) elementet TypeName for EntrySelectedBy för View (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,15 +22,15 @@ Konfigurations element (format) ViewDefinitions element (format) View element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `TypeName`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `TypeName` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -47,9 +40,9 @@ Ingen.
 
 ## <a name="text-value"></a>Textvärde
 
-Ange det fullständigt kvalificerade namnet för .NET-typen, t. ex. `System.IO.DirectoryInfo`.
+Ange det fullständigt kvalificerade namnet för .NET-typen, t `System.IO.DirectoryInfo` . ex..
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Varje definition av anpassad kontroll måste ha minst ett typ namn, en urvals uppsättning eller ett urvals villkor definierat.
 
@@ -61,4 +54,4 @@ Mer information om komponenterna i en anpassad kontroll vy finns i [skapa anpass
 
 [EntrySelectedBy-element för CustomEntry för vy (format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

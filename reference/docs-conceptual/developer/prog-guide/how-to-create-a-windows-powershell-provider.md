@@ -1,23 +1,16 @@
 ---
 title: Så här skapar du en Windows PowerShell-Provider | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - providers [PowerShell Programmer's Guide]
 - providers [PowerShellProgrammer's Guide], creating
 - Windows PowerShell Programmer's Guide, providers
-ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
-caps.latest.revision: 5
-ms.openlocfilehash: 4c84d015aba327c0ab039558414c5777d43ec4ba
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 5e7424c035d22d0f5eb154b369427a6da80b1c49
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870888"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787112"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>Skapa en Windows PowerShell-provider
 
@@ -29,7 +22,7 @@ I utvecklaren är Windows PowerShell-providern gränssnittet mellan användaren 
 
 Windows PowerShell innehåller flera providrar (till exempel fil Systems leverantören, register leverantören och Ali Aset Provider) som används för att komma åt kända data lager. Om du vill ha mer information om providern som tillhandahålls av Windows PowerShell använder du följande kommando för att komma åt onlinehjälpen:
 
-**PS > Get-Help about_providers**
+**PS>Get-Help about_providers**
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>Komma åt lagrade data med Windows PowerShell-sökvägar
 
@@ -45,20 +38,20 @@ Windows PowerShell använder följande regler för en Windows PowerShell-enhet:
 - En enhet kan implementeras för alla lagrade data, inte bara fil systemet.
 - Varje enhet behåller sin egen aktuella arbets plats, vilket gör att användaren kan behålla kontexten när de växlar mellan enheter.
 
-## <a name="in-this-section"></a>I detta avsnitt
+## <a name="in-this-section"></a>I det här avsnittet
 
-I följande tabell visas avsnitt som innehåller kod exempel som bygger på varandra. Från och med det andra avsnittet kan Basic Windows PowerShell-providern initieras och avinitieras av Windows PowerShell-körningsmiljön, nästa avsnitt lägger till funktioner för att komma åt data, nästa avsnitt lägger till funktioner för att ändra data ( objekten i lagrade data) och så vidare.
+I följande tabell visas avsnitt som innehåller kod exempel som bygger på varandra. Från och med det andra avsnittet kan Basic Windows PowerShell-providern initieras och avinitieras av Windows PowerShell-körningsmiljön, nästa avsnitt lägger till funktioner för att komma åt data, nästa avsnitt lägger till funktioner för att ändra data (objekten i lagrade data) och så vidare.
 
-|                                                    Ämne                                                    |                                                                                         Definition                                                                                          |
+|                                                    Avsnitt                                                    |                                                                                         Definition                                                                                          |
 | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Designa din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md)               | I det här avsnittet beskrivs saker du bör tänka på innan du implementerar en Windows PowerShell-Provider. Den sammanfattar Windows PowerShell-providerns bas klasser och gränssnitt som används. |
-| [Skapa en grundläggande Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md)           | Det här avsnittet visar hur du skapar en Windows PowerShell-provider som gör det möjligt för Windows PowerShell-körningsmiljön att initiera och avinitiera providern.                                        |
-| [Skapa en Windows PowerShell-enhets leverantör](./creating-a-windows-powershell-drive-provider.md)           | Det här avsnittet visar hur du skapar en Windows PowerShell-provider som ger användaren åtkomst till ett data lager via en Windows PowerShell-enhet.                                                |
-| [Skapa en Windows PowerShell-dataprovider](./creating-a-windows-powershell-item-provider.md)             | Det här avsnittet visar hur du skapar en Windows PowerShell-provider som gör att användaren kan ändra objekten i ett data lager.                                                                  |
-| [Skapa en Windows PowerShell container-Provider](./creating-a-windows-powershell-container-provider.md)   | Det här avsnittet visar hur du skapar en Windows PowerShell-provider som gör att användaren kan arbeta i Multilayer-data lager.                                                                        |
-| [Skapa en Windows PowerShell-navigerings leverantör](./creating-a-windows-powershell-navigation-provider.md) | Det här avsnittet visar hur du skapar en Windows PowerShell-provider som gör att användaren kan navigera i objekt i ett data lager på ett hierarkiskt sätt.                                           |
-| [Skapa en Windows PowerShell-innehålls leverantör](./creating-a-windows-powershell-content-provider.md)       | Det här avsnittet visar hur du skapar en Windows PowerShell-provider som gör att användaren kan ändra innehållet i objekt i ett data lager.                                                       |
-| [Skapa en Windows PowerShell-egenskaps leverantör](./creating-a-windows-powershell-property-provider.md)     | Det här avsnittet visar hur du skapar en Windows PowerShell-provider som gör att användaren kan ändra egenskaperna för objekt i ett data lager.                                                    |
+| [Designa en Windows PowerShell-provider](./designing-your-windows-powershell-provider.md)               | I det här avsnittet beskrivs saker du bör tänka på innan du implementerar en Windows PowerShell-Provider. Den sammanfattar Windows PowerShell-providerns bas klasser och gränssnitt som används. |
+| [Skapa en grundläggande Windows PowerShell-provider](./creating-a-basic-windows-powershell-provider.md)           | Det här avsnittet visar hur du skapar en Windows PowerShell-provider som gör det möjligt för Windows PowerShell-körningsmiljön att initiera och avinitiera providern.                                        |
+| [Skapa en Windows PowerShell-enhetsprovider](./creating-a-windows-powershell-drive-provider.md)           | Det här avsnittet visar hur du skapar en Windows PowerShell-provider som ger användaren åtkomst till ett data lager via en Windows PowerShell-enhet.                                                |
+| [Skapa en Windows PowerShell-objektprovider](./creating-a-windows-powershell-item-provider.md)             | Det här avsnittet visar hur du skapar en Windows PowerShell-provider som gör att användaren kan ändra objekten i ett data lager.                                                                  |
+| [Skapa en Windows PowerShell-containerprovider](./creating-a-windows-powershell-container-provider.md)   | Det här avsnittet visar hur du skapar en Windows PowerShell-provider som gör att användaren kan arbeta i Multilayer-data lager.                                                                        |
+| [Skapa en Windows PowerShell-navigeringsprovider](./creating-a-windows-powershell-navigation-provider.md) | Det här avsnittet visar hur du skapar en Windows PowerShell-provider som gör att användaren kan navigera i objekt i ett data lager på ett hierarkiskt sätt.                                           |
+| [Skapa en Windows PowerShell-innehållsprovider](./creating-a-windows-powershell-content-provider.md)       | Det här avsnittet visar hur du skapar en Windows PowerShell-provider som gör att användaren kan ändra innehållet i objekt i ett data lager.                                                       |
+| [Skapa en Windows PowerShell-egenskapsprovider](./creating-a-windows-powershell-property-provider.md)     | Det här avsnittet visar hur du skapar en Windows PowerShell-provider som gör att användaren kan ändra egenskaperna för objekt i ett data lager.                                                    |
 
 ## <a name="see-also"></a>Se även
 
@@ -66,4 +59,4 @@ I följande tabell visas avsnitt som innehåller kod exempel som bygger på vara
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 
-[Windows PowerShell Programmer ' s guide](./windows-powershell-programmer-s-guide.md)
+[Programmeringsguide för Windows PowerShell](./windows-powershell-programmer-s-guide.md)

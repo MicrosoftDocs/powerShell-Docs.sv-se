@@ -1,23 +1,16 @@
 ---
 title: Så här anropar du en cmdlet inifrån en cmdlet | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: efa4dc9c-ddee-46a3-978a-9dbb61e9bb6f
-caps.latest.revision: 12
-ms.openlocfilehash: 57543a88d04eb66c9d109249a99ddd272b02ef9d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2d5b0788d3310d0dd7b311f86c497afe8eec9d11
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356310"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784154"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Anropa en cmdlet inifrån en cmdlet
 
-Det här exemplet visar hur du anropar en cmdlet från en annan cmdlet, vilket gör att du kan lägga till funktionerna i den anropade cmdleten till den cmdlet som du utvecklar. I det här exemplet anropas `Get-Process`-cmdleten för att hämta de processer som körs på den lokala datorn. Anropet till `Get-Process` cmdlet motsvarar följande kommando. Det här kommandot hämtar alla processer vars namn börjar med tecknen "a" till "t".
+Det här exemplet visar hur du anropar en cmdlet från en annan cmdlet, vilket gör att du kan lägga till funktionerna i den anropade cmdleten till den cmdlet som du utvecklar. I det här exemplet `Get-Process` anropas cmdleten för att hämta de processer som körs på den lokala datorn. Anropet till `Get-Process` cmdleten motsvarar följande kommando. Det här kommandot hämtar alla processer vars namn börjar med tecknen "a" till "t".
 
 ```powershell
 Get-Process -name [a-t]
@@ -28,7 +21,7 @@ Get-Process -name [a-t]
 
 ## <a name="to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Anropa en cmdlet inifrån en cmdlet
 
-1. Kontrol lera att sammansättningen som definierar den cmdlet som ska anropas refereras och att lämplig `using`-instruktion läggs till. I det här exemplet läggs följande namn områden till.
+1. Kontrol lera att sammansättningen som definierar den cmdlet som ska anropas refereras och att lämplig `using` instruktion läggs till. I det här exemplet läggs följande namn områden till.
 
     ```csharp
     using System.Diagnostics;
@@ -43,7 +36,7 @@ Get-Process -name [a-t]
     gp.Name = new string[] { "[a-t]*" };
     ```
 
-3. Anropa metoden [system. Management. Automation. cmdlet. Invoke *](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) för att anropa `Get-Process` cmdlet.
+3. Anropa metoden [system. Management. Automation. cmdlet. Invoke *](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) för att anropa `Get-Process` cmdleten.
 
     ```csharp
       foreach (Process p in gp.Invoke<Process>())
@@ -55,7 +48,7 @@ Get-Process -name [a-t]
 
 ## <a name="example"></a>Exempel
 
-I det här exemplet anropas `Get-Process`-cmdleten i metoden [system. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) för en cmdlet.
+I det här exemplet `Get-Process` anropas cmdleten i metoden [system. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) för en cmdlet.
 
 ```csharp
 using System;

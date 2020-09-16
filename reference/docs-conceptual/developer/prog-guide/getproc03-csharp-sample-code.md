@@ -1,27 +1,20 @@
 ---
 title: GetProc03 (C#) exempel kod | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ebc0d538-69ac-43d5-837d-b6f47344fc6a
-caps.latest.revision: 5
-ms.openlocfilehash: 24f47ab8d99683e6d0024bd8073b6d7bb5dcbd90
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 278c3f36bb975f9ea195978853e6539c0bd15084
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978380"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787129"
 ---
 # <a name="getproc03-c-sample-code"></a>GetProc03 (C#) – kodexempel
 
-Följande kod visar implementeringen av en `Get-Process`-cmdlet som kan acceptera pipeline-inmatade. Den här implementeringen definierar en `Name` parameter som godkänner pipeline-indata, hämtar process information från den lokala datorn baserat på de angivna namnen och använder sedan metoden [WriteObject (system. Object, system. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) som utmatnings funktion för att skicka objekt till pipelinen.
+Följande kod visar implementeringen av en `Get-Process` cmdlet som kan acceptera pipeline-inmatade. Den här implementeringen definierar en `Name` parameter som accepterar pipeline-indata, hämtar process information från den lokala datorn baserat på de angivna namnen och använder sedan metoden [WriteObject (system. Object, system. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) som utmatnings funktion för att skicka objekt till pipelinen.
 
 > [!NOTE]
-> Du kan ladda ned C# käll filen (getprov03.CS) för den här get-proc-cmdleten med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
-> De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** .
+> Du kan hämta C#-källfilen (getprov03.cs) för den här get-proc-cmdleten med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> De hämtade källfilerna är tillgängliga i **\<PowerShell Samples>** katalogen.
 
 ## <a name="code-sample"></a>Kod exempel
 
@@ -29,6 +22,6 @@ Följande kod visar implementeringen av en `Get-Process`-cmdlet som kan accepter
 
 ## <a name="see-also"></a>Se även
 
-[Windows PowerShell Programmer ' s guide](./windows-powershell-programmer-s-guide.md)
+[Programmeringsguide för Windows PowerShell](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

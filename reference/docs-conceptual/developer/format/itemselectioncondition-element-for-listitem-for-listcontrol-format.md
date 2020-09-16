@@ -1,25 +1,18 @@
 ---
 title: ItemSelectionCondition-element för ListItem för ListControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d2668aea-37e9-4753-a4e9-7980ae5ec2eb
-caps.latest.revision: 10
-ms.openlocfilehash: 6bc0ccbcc5bd62429f63ed220da66dc66f44f7ca
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f5c388928668e03b96923130fb5849f637548f12
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356058"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783627"
 ---
 # <a name="itemselectioncondition-element-for-listitem-for-listcontrol-format"></a>ItemSelectionCondition-element för ListItem för ListControl (format)
 
 Definierar det villkor som måste finnas för att listobjektet ska kunna användas.
 
-Konfigurations element (format) ViewDefinitions element (format) View-element (format) ListControl element (format) ListEntries-element för ListControl (format) ListEntry-element för ListEntries för ListControl (format) ListItems-element för ListEntry för ListControl (format) ListItem-elementet för ListItems för ListControl (format) ItemSelectionCondition-elementet för ListItem för ListControl (format)
+Konfigurations element (format) ViewDefinitions element (format) View-element (format) ListControl-element (format) ListEntries-element för ListControl (format) ListEntry-element för ListEntries för ListControl (format) ListItems element for ListEntry for ListControl (format) ListItem element for ListItems for ListControl (format) ItemSelectionCondition element for ListItem for ListControl for (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,18 +25,18 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `ItemSelectionCondition`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `ItemSelectionCondition` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
 |[PropertyName-element för ItemSelectionCondition för ListControl (format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger den .NET-egenskap som utlöser villkoret.|
-|[Script block-element för ItemSelectionCondition för ListControl (format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger det skript som utlöser villkoret.|
+|[ScriptBlock-element för ItemSelectionCondition för ListControl (format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)|Valfritt element.<br /><br /> Anger det skript som utlöser villkoret.|
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -51,7 +44,7 @@ Ingen.
 |-------------|-----------------|
 |[ListItem-element för ListItems för ListControl (format)](./listitem-element-for-listitems-for-listcontrol-format.md)|Definierar egenskapen eller skriptet vars värde visas i en rad i list visningen.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Du kan ange ett egenskaps namn eller ett skript för villkoret, men kan inte ange båda.
 
@@ -61,6 +54,6 @@ Du kan ange ett egenskaps namn eller ett skript för villkoret, men kan inte ang
 
 [PropertyName-element för ItemSelectionCondition för ListControl (format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)
 
-[Script block-element för ItemSelectionCondition för ListControl (format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)
+[ScriptBlock-element för ItemSelectionCondition för ListControl (format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

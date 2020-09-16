@@ -1,19 +1,12 @@
 ---
 title: Kontroll element för konfigurations kontroll (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: bddf7ffa-04d3-4354-90b9-5e714e096260
-caps.latest.revision: 13
-ms.openlocfilehash: 26fe417c9ca60dda22bdc23d9d339d40135a0c9b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9447efac84cff3cc33468aeebc97a8bdd6137518
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359085"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783831"
 ---
 # <a name="control-element-for-controls-for-configuration-format"></a>Control-element för Controls för Configuration (format)
 
@@ -32,17 +25,17 @@ Konfigurations element (format) styr element i konfigurations-(format) kontroll 
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet för `Control`-elementet. Du måste ange ett av varje underordnat element.
+I följande avsnitt beskrivs attributen, underordnade element och `Control` elementets överordnade element. Du måste ange ett av varje underordnat element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[CustomControl-element för kontroll av konfigurations inställningar (format)](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|Nödvändigt element.<br /><br /> Definierar kontrollen.|
+|[CustomControl-element för Control för Controls för Configuration (format)](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|Nödvändigt element.<br /><br /> Definierar kontrollen.|
 |[Namn element för kontroll av konfiguration (format)](./name-element-for-control-for-controls-for-configuration-format.md)|Nödvändigt element.<br /><br /> Anger det namn som ska användas för att referera till kontrollen.|
 
 ### <a name="parent-elements"></a>Överordnade element
@@ -51,7 +44,7 @@ Ingen.
 |-------------|-----------------|
 |[Kontrollerar konfigurations element (format)](./controls-element-for-configuration-format.md)|Definierar de vanliga kontroller som kan användas av alla vyer i formaterings filen eller av andra kontroller.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Det namn som ges till den här kontrollen kan refereras till i följande element:
 
@@ -69,6 +62,6 @@ Det namn som ges till den här kontrollen kan refereras till i följande element
 
 [GroupBy-element för vy (format)](./groupby-element-for-view-format.md)
 
-[Namn element för kontroll för konfiguration (format)](./name-element-for-control-for-controls-for-configuration-format.md)
+[Name-element för Control för Controls för Configuration (format)](./name-element-for-control-for-controls-for-configuration-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

@@ -1,19 +1,12 @@
 ---
 title: Kontroll element för kontroller för vy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1fd53f55-698d-4df5-bb9a-fe28dc3193e1
-caps.latest.revision: 11
-ms.openlocfilehash: df568ccb36a2646b983622cdf95718dd5cac62c3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 13ea2f09aec7fea8e5460197f133b5f5219cd369
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354854"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783814"
 ---
 # <a name="control-element-for-controls-for-view--format"></a>Control-element för Controls för View  (format)
 
@@ -32,18 +25,18 @@ Konfigurations element (format) ViewDefinitions element (format) View-element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `Control`-elementet.
+I följande avsnitt beskrivs attributen, underordnade element och `Control` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
 |[Namn element för kontroll för vy (format)](./name-element-for-control-for-controls-for-view-format.md)|Nödvändigt element.<br /><br /> Anger kontrollens namn.|
-|[CustomControl-element för kontroll för vy (format)](./customcontrol-element-for-control-for-controls-for-view-format.md)|Nödvändigt element.<br /><br /> Definierar den kontroll som används i den här vyn.|
+|[CustomControl-element för Control för Controls för View (format)](./customcontrol-element-for-control-for-controls-for-view-format.md)|Nödvändigt element.<br /><br /> Definierar den kontroll som används i den här vyn.|
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -51,11 +44,11 @@ Ingen.
 |-------------|-----------------|
 |[Kontrollerar element (format)](./controls-element-for-view-format.md)|Definierar de visnings kontroller som kan användas av en speciell vy.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Den här kontrollen kan anges med följande element:
 
-- [CustomControlName-element för ExpressionBinding för kontroller för vy (format)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)
+- [CustomControlName-element för ExpressionBinding för Controls för View (format)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)
 
 - [CustomControlName-element för ExpressionBinding för CustomControl för View (format)](./customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
 
@@ -65,9 +58,9 @@ Den här kontrollen kan anges med följande element:
 
 ## <a name="see-also"></a>Se även
 
-[CustomControl-element för kontroll för vy (format)](./customcontrol-element-for-control-for-controls-for-view-format.md)
+[CustomControl-element för Control för Controls för View (format)](./customcontrol-element-for-control-for-controls-for-view-format.md)
 
-[CustomControlName-element för ExpressionBinding för kontroller för vy (format)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)
+[CustomControlName-element för ExpressionBinding för Controls för View (format)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)
 
 [CustomControlName-element för ExpressionBinding för CustomControl för View (format)](./customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
 
@@ -77,6 +70,6 @@ Den här kontrollen kan anges med följande element:
 
 [Kontrollerar element (format)](./controls-element-for-view-format.md)
 
-[Namn element för kontroll för vy (format)](./name-element-for-control-for-controls-for-view-format.md)
+[Name-element för Control för Controls för View (format)](./name-element-for-control-for-controls-for-view-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

@@ -1,25 +1,18 @@
 ---
 title: Elementet TypeName för EntrySelectedBy för EnumerableExpansion (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: c0506928-db92-4ec4-855f-6f3592a383ae
-caps.latest.revision: 6
-ms.openlocfilehash: 5ead806d956ebbef95eeffc42bb39ef784208017
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 670aeb0986b07c8b7834a9f4f9510f1757a62186
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353650"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785089"
 ---
 # <a name="typename-element-for-entryselectedby-for-enumerableexpansion-format"></a>TypeName-element för EntrySelectedBy för EnumerableExpansion (format)
 
 Anger en .NET-typ som utökas av den här definitionen. Det här elementet används när du definierar en standardinställning.
 
-Konfigurations element (format) DefaultSettings-element (format) EnumerableExpansions-element (format) EnumerableExpansion-element (format) EntrySelectedBy-element för EnumerableExpansion (format) elementet TypeName för EntrySelectedBy för EnumerableExpansion (format)
+Konfigurations element (format) DefaultSettings-element (format) EnumerableExpansions-element (format) EnumerableExpansion-element (format) EntrySelectedBy-element för EnumerableExpansion (format) elementet TypeName för EntrySelectedBy (format)
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,15 +23,15 @@ Konfigurations element (format) DefaultSettings-element (format) EnumerableExpan
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `TypeName`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `TypeName` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Ingen.
+Inga.
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -48,12 +41,12 @@ Ingen.
 
 ## <a name="text-value"></a>Textvärde
 
-Ange det fullständigt kvalificerade namnet för .NET-typen, t. ex. `System.IO.DirectoryInfo`.
+Ange det fullständigt kvalificerade namnet för .NET-typen, t `System.IO.DirectoryInfo` . ex..
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 ## <a name="see-also"></a>Se även
 
 [EntrySelectedBy-element för EnumerableExpansion (format)](./entryselectedby-element-for-enumerableexpansion-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

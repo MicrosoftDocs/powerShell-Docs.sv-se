@@ -1,19 +1,12 @@
 ---
 title: ListControl-element (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 37beeb0b-7a81-4747-becb-e309e17278fb
-caps.latest.revision: 12
-ms.openlocfilehash: 7a117c25b0d117dc846ba8e060e31e838b5edd52
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0173b9797bffcca74f1a32903686f771366ebb1b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354371"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785735"
 ---
 # <a name="listcontrol-element-format"></a>ListControl-element (format)
 
@@ -32,11 +25,11 @@ Konfigurations element (format) ViewDefinitions element (format) Visa element (f
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `ListControl`-elementet. Det här elementet får bara innehålla ett enda underordnat element.
+I följande avsnitt beskrivs attributen, underordnade element och `ListControl` elementets överordnade element. Det här elementet får bara innehålla ett enda underordnat element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -48,9 +41,9 @@ Ingen.
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[Visa element (format)](./view-element-format.md)|Definierar en vy som används för att visa medlemmar i ett eller flera objekt.|
+|[View-element (format)](./view-element-format.md)|Definierar en vy som används för att visa medlemmar i ett eller flera objekt.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Mer information om hur du skapar en listvy finns i [skapa en listvy](./creating-a-list-view.md).
 
@@ -74,7 +67,7 @@ I det här exemplet visas en listvy för objektet [system. serviceprocess. Servi
 
 ## <a name="see-also"></a>Se även
 
-[Visa element (format)](./view-element-format.md)
+[View-element (format)](./view-element-format.md)
 
 [ListEntries-element (format)](./listentries-element-for-listcontrol-format.md)
 

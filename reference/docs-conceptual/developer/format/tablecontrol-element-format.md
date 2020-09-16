@@ -1,19 +1,12 @@
 ---
 title: TableControl-element (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1550b068-dfbc-4ae0-9aa1-72c9a680ec59
-caps.latest.revision: 15
-ms.openlocfilehash: 3942c008e026b0b99db3c77af4a0152b50fffc4e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 34e20006a7501650f2a22f71a3d7e999fb8b2337
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358795"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785140"
 ---
 # <a name="tablecontrol-element-format"></a>TableControl-element (format)
 
@@ -35,11 +28,11 @@ ViewDefinitions-element (format) Visa element (format) TableControl-element (for
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `TableControl`-elementet. Du måste ange raderna i tabellen. Alla andra underordnade element är valfria.
+I följande avsnitt beskrivs attribut, underordnade element och `TableControl` elementets överordnade element. Du måste ange raderna i tabellen. Alla andra underordnade element är valfria.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -54,15 +47,15 @@ Ingen.
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[Visa element (format)](./view-element-format.md)|Definierar en vy som används för att visa medlemmar i ett eller flera objekt.|
+|[View-element (format)](./view-element-format.md)|Definierar en vy som används för att visa medlemmar i ett eller flera objekt.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Mer information om komponenterna i en tabellvy finns i [skapa en tabellvy](./creating-a-table-view.md).
 
 ## <a name="example"></a>Exempel
 
-I det här exemplet visas ett `TableControl`-element som används för att visa egenskaperna för objektet [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) .
+Det här exemplet visar ett- `TableControl` element som används för att visa egenskaperna för [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) -objektet.
 
 ```xml
 <View>
@@ -82,7 +75,7 @@ I det här exemplet visas ett `TableControl`-element som används för att visa 
 
 [Skapa en tabellvy](./creating-a-table-view.md)
 
-[Visa element (format)](./view-element-format.md)
+[View-element (format)](./view-element-format.md)
 
 [AutoSize-element för TableControl (format)](./autosize-element-for-tablecontrol-format.md)
 
@@ -92,4 +85,4 @@ I det här exemplet visas ett `TableControl`-element som används för att visa 
 
 [TableRowEntries-element (format)](./tablerowentries-element-for-tablecontrol-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

@@ -1,19 +1,12 @@
 ---
 title: EntrySelectedBy-element för EnumerableExpansion (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3af6aff8-4c2d-4f08-9bb1-e1f3ed3e583e
-caps.latest.revision: 11
-ms.openlocfilehash: 6a371bdbb85d07730c32931a4a79ee40856ce298
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 031bf10cfb1aed2c737fdd53fa4f20f025351d40
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358987"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783678"
 ---
 # <a name="entryselectedby-element-for-enumerableexpansion-format"></a>EntrySelectedBy-element för EnumerableExpansion (format)
 
@@ -33,11 +26,11 @@ Konfigurations element (format) DefaultSettings-element (format) EnumerableExpan
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attribut, underordnade element och det överordnade elementet i `EntrySelectedBy`-elementet.
+I följande avsnitt beskrivs attribut, underordnade element och `EntrySelectedBy` elementets överordnade element.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
@@ -45,7 +38,7 @@ Ingen.
 |-------------|-----------------|
 |[SelectionCondition-element för EntrySelectedBy för EnumerableExpansion (format)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)|Valfritt element.<br /><br /> Definierar det villkor som måste finnas för att expandera samlings objekt i den här definitionen.|
 |[SelectionSetName-element för EntrySelectedBy för EnumerableExpansion (format)](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)|Valfritt element.<br /><br /> Anger en uppsättning .NET-typer som använder den här definitionen av hur samlings objekt expanderas.|
-|[Elementet TypeName för EntrySelectedBy för EnumerableExpansion (format)](./typename-element-for-entryselectedby-for-enumerableexpansion-format.md)|Valfritt element.<br /><br /> Anger en .NET-typ som använder den här definitionen av hur samlings objekt expanderas.|
+|[TypeName-element för EntrySelectedBy för EnumerableExpansion (format)](./typename-element-for-entryselectedby-for-enumerableexpansion-format.md)|Valfritt element.<br /><br /> Anger en .NET-typ som använder den här definitionen av hur samlings objekt expanderas.|
 
 ### <a name="parent-elements"></a>Överordnade element
 
@@ -53,15 +46,15 @@ Ingen.
 |-------------|-----------------|
 |[EnumerableExpansion-element (format)](./enumerableexpansion-element-format.md)|Definierar hur vissa .NET Collection-objekt expanderas när de visas i en vy.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Du måste ange minst en typ, markerings uppsättning eller ett markerings villkor för en definitions post. Det finns ingen övre gräns för antalet underordnade element som du kan använda.
 
-Urvals villkor används för att definiera ett villkor som måste finnas för att definitionen ska kunna användas, till exempel när ett objekt har en speciell egenskap eller ett angivet egenskaps värde eller skript utvärderar till `true`. Mer information om urvals villkor finns i [definiera villkor för att visa data](./defining-conditions-for-displaying-data.md).
+Urvals villkor används för att definiera ett villkor som måste finnas för att definitionen ska kunna användas, till exempel när ett objekt har en speciell egenskap eller ett angivet egenskaps värde eller skript utvärderas till `true` . Mer information om urvals villkor finns i [definiera villkor för att visa data](./defining-conditions-for-displaying-data.md).
 
 ## <a name="see-also"></a>Se även
 
-[Definiera villkor för visning av data](./defining-conditions-for-displaying-data.md)
+[Definiera villkor för datavisning](./defining-conditions-for-displaying-data.md)
 
 [EnumerableExpansion-element (format)](./enumerableexpansion-element-format.md)
 
@@ -69,6 +62,6 @@ Urvals villkor används för att definiera ett villkor som måste finnas för at
 
 [SelectionSetName-element för EntrySelectedBy för EnumerableExpansion (format)](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)
 
-[Elementet TypeName för EntrySelectedBy för EnumerableExpansion (format)](./typename-element-for-entryselectedby-for-enumerableexpansion-format.md)
+[TypeName-element för EntrySelectedBy för EnumerableExpansion (format)](./typename-element-for-entryselectedby-for-enumerableexpansion-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

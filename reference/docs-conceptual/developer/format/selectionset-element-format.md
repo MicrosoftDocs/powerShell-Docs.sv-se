@@ -1,19 +1,12 @@
 ---
 title: SelectionSet-element (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 848e7acd-d578-4fd1-a575-c0c3b9b5e68a
-caps.latest.revision: 17
-ms.openlocfilehash: c809aa6c3a40d16cfd2fd99065a846d265ec0f61
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cf47229993458492c712d28e04913e75d1bde386
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358869"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783406"
 ---
 # <a name="selectionset-element-format"></a>SelectionSet-element (format)
 
@@ -32,17 +25,17 @@ Konfigurations element (format) SelectionSets-element (format) SelectionSet-elem
 
 ## <a name="attributes-and-elements"></a>Attribut och element
 
-I följande avsnitt beskrivs attributen, underordnade element och det överordnade elementet i `SelectionSet`-elementet. Varje urvals uppsättning måste ha ett namn och måste ange .NET-objekten för uppsättningen.
+I följande avsnitt beskrivs attributen, underordnade element och `SelectionSet` elementets överordnade element. Varje urvals uppsättning måste ha ett namn och måste ange .NET-objekten för uppsättningen.
 
 ### <a name="attributes"></a>Attribut
 
-Ingen.
+Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
 |Element|Beskrivning|
 |-------------|-----------------|
-|[Namn element för SelectionSet (format)](./name-element-for-selectionset-format.md)|Nödvändigt element.<br /><br /> Anger namnet som används för att referera till urvals uppsättningen.|
+|[Name-element för SelectionSet (format)](./name-element-for-selectionset-format.md)|Nödvändigt element.<br /><br /> Anger namnet som används för att referera till urvals uppsättningen.|
 |[Typ element (format)](./types-element-for-selectionset-format.md)|Nödvändigt element.<br /><br /> Definierar de .NET-objekt som finns i urvals uppsättningen.|
 
 ### <a name="parent-elements"></a>Överordnade element
@@ -51,15 +44,15 @@ Ingen.
 |-------------|-----------------|
 |[SelectionSets element format](./selectionsets-element-format.md)|Definierar de gemensamma uppsättningar av .NET-objekt som kan användas av alla vyer i format filen.|
 
-## <a name="remarks"></a>Anmärkningar
+## <a name="remarks"></a>Kommentarer
 
 Du kan använda urvals uppsättningar när du har en uppsättning relaterade objekt som du vill referera till genom att använda ett enda namn, till exempel en uppsättning objekt som är relaterade till arv. När du definierar dina vyer kan du ange en uppsättning objekt genom att använda namnet på urvals uppsättningen i stället för att visa alla objekt i varje vy.
 
-Vanliga urvals uppsättningar anges med deras namn när du definierar vyerna för format filen eller definitionerna för vyerna. I dessa fall anger `SelectionSetName` underordnat element i `ViewSelectedBy` och `EntrySelectedBy` elementen som ska användas. Mer information om urvals uppsättningar finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
+Vanliga urvals uppsättningar anges med deras namn när du definierar vyerna för format filen eller definitionerna för vyerna. I dessa fall anger det `SelectionSetName` underordnade elementet i `ViewSelectedBy` `EntrySelectedBy` elementen och den uppsättning som ska användas. Mer information om urvals uppsättningar finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visas ett `SelectionSet`-element som definierar fyra .NET-typer.
+I följande exempel visas ett- `SelectionSet` element som definierar fyra .net-typer.
 
 ```xml
 <SelectionSets>
@@ -77,7 +70,7 @@ I följande exempel visas ett `SelectionSet`-element som definierar fyra .NET-ty
 
 ## <a name="see-also"></a>Se även
 
-[Definiera urvals uppsättningar](./defining-selection-sets.md)
+[Definiera valuppsättningar](./defining-selection-sets.md)
 
 [Namn element i SelectionSet (format)](./name-element-for-selectionset-format.md)
 
@@ -85,4 +78,4 @@ I följande exempel visas ett `SelectionSet`-element som definierar fyra .NET-ty
 
 [Typ element (format)](./types-element-for-selectionset-format.md)
 
-[Skriva en fil med PowerShell-formatering](./writing-a-powershell-formatting-file.md)
+[Skriva en PowerShell-formateringsfil](./writing-a-powershell-formatting-file.md)

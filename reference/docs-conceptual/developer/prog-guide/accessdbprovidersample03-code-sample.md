@@ -1,19 +1,12 @@
 ---
 title: AccessDbProviderSample03 kod exempel | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: af25b560-017a-4d53-a8c3-97c5ab66b9d4
-caps.latest.revision: 5
-ms.openlocfilehash: ee4a0cb6032361aecdf21ab7346521b4757f7030
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 6eddbec6369fd861a3a67bbbebe3d6f98c4bc164
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978567"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787299"
 ---
 # <a name="accessdbprovidersample03-code-sample"></a>AccessDbProviderSample03 – kodexempel
 
@@ -21,8 +14,8 @@ Följande kod visar implementeringen av Windows PowerShell-providern som beskriv
 Den här providern kan manipulera data i ett data lager.
 
 > [!NOTE]
-> Du kan ladda ned C# käll filen (AccessDBSampleProvider03.CS) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
-> De hämtade källfilerna finns i mappen **\<PowerShell-exempel >** . Mer information om implementeringar av andra Windows PowerShell-leverantörer finns i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md).
+> Du kan hämta C#-källfilen (AccessDBSampleProvider03.cs) för den här providern med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> De hämtade källfilerna är tillgängliga i **\<PowerShell Samples>** katalogen. Mer information om implementeringar av andra Windows PowerShell-leverantörer finns i [utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md).
 
 ## <a name="code-sample"></a>Kod exempel
 
@@ -999,6 +992,6 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ## <a name="see-also"></a>Se även
 
-[Windows PowerShell Programmer ' s guide](./windows-powershell-programmer-s-guide.md)
+[Programmeringsguide för Windows PowerShell](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
