@@ -3,12 +3,12 @@ title: Allt du ville veta om PSCustomObject
 description: PSCustomObject är ett enkelt sätt att skapa strukturerade data.
 ms.date: 07/29/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 9a5cab7e662ef89b6565a29079ce1d5a657f94d0
-ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
+ms.openlocfilehash: 52620fd628d03f62db574210a2a5758c3bf29135
+ms.sourcegitcommit: a1886ba2cf35aebd650aafb3e5d7437c4e381781
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87410146"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90804788"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>Allt du ville veta om PSCustomObject
 
@@ -139,7 +139,7 @@ $myObject.$property
 
 Jag vet att det ser konstigt ut, men det fungerar.
 
-### <a name="convert-pscustombobject-into-a-hashtable"></a>Konvertera PSCustombObject till en hash-form
+### <a name="convert-pscustomobject-into-a-hashtable"></a>Konvertera PSCustomObject till en hash-form
 
 Om du vill fortsätta från det sista avsnittet kan du dynamiskt gå igenom egenskaperna och skapa en hash-grupp från dem.
 
