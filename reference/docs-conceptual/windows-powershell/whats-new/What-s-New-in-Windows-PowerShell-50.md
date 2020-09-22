@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Vad är nytt i Windows PowerShell 5,0
-ms.openlocfilehash: 314be1d4da2d3df967ac8898745b7b1aaf69de2a
-ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
+ms.openlocfilehash: 59ccc83c7d4736181f13b72c4d3725694f80c1c8
+ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216013"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90847042"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Vad är nytt i Windows PowerShell 5,0
 
@@ -470,36 +470,70 @@ Windows PowerShell 3,0 innehåller många funktioner som är utformade för att 
 
 Nya cmdletar har lagts till i Windows PowerShell Core-installationen, inklusive cmdlet: ar för att hantera schemalagda jobb, frånkopplade sessioner, CIM-integrering och det uppdaterings bara hjälp systemet.
 
-|                           |                                 |
-| ------------------------- | ------------------------------- |
-| Add-JobTrigger            | New-JobTrigger                  |
-| Anslut – PSSession         | New-PSSessionConfigurationFile  |
-| ConvertFrom – JSON          | New-PSTransportOption           |
-| ConvertTo-Json            | New-PSWorkflowExecutionOption   |
-| Disable-JobTrigger        | New-PSWorkflowSession           |
-| Disable-ScheduledJob      | New-ScheduledJobOption          |
-| Koppla från-PSSession      | New-WinEvent                    |
-| Aktivera – JobTrigger         | Ta emot – PSSession               |
-| Aktivera – ScheduledJob       | Registrera – CimIndicationEvent     |
-| Get-CimAssociatedInstance | Registrera – ScheduledJob           |
-| Get-CimClass              | Remove-CimInstance              |
-| Get-CimInstance           | Remove-CimSession               |
-| Get-CimSession            | Remove-TypeData                 |
-| Get-ControlPanelItem      | Byt namn – dator                 |
-| Get-IseSnippet            | Återuppta – jobb                      |
-| Get-JobTrigger            | Spara – hjälp                       |
-| Get-ScheduledJob          | Set-CimInstance                 |
-| Get-ScheduledJobOption    | Set-JobTrigger                  |
-| Get-TypeData              | Set-ScheduledJob                |
-| Importera – IseSnippet         | Set-ScheduledJobOption          |
-| Invoke-arbetsflöde         | Visa-kommando                    |
-| Invoke-CimMethod          | Visa ControlPanelItem           |
-| Invoke-RestMethod         | Pausa – jobb                     |
-| Anropa-webbegäran         | Test-PSSessionConfigurationFile |
-| New-CimInstance           | Avblockera – fil                    |
-| New-CimSession            | Avregistrera-ScheduledJob         |
-| New-CimSessionOption      | Uppdatera – hjälp                     |
-| New-IseSnippet            |                                 |
+- CimCmdlets
+  - Get-CimAssociatedInstance
+  - Get-CimClass
+  - Get-CimInstance
+  - Get-CimSession
+  - Invoke-CimMethod
+  - New-CimInstance
+  - New-CimSession
+  - New-CimSessionOption
+  - Registrera – CimIndicationEvent
+  - Remove-CimInstance
+  - Remove-CimSession
+  - Set-CimInstance
+- Microsoft. PowerShell. Core
+  - Anslut – PSSession
+  - Koppla från-PSSession
+  - New-PSSessionConfigurationFile
+  - New-PSTransportOption
+  - Ta emot – PSSession
+  - Återuppta – jobb
+  - Spara – hjälp
+  - Pausa – jobb
+  - Test-PSSessionConfigurationFile
+  - Uppdatera – hjälp
+- Microsoft. PowerShell. Diagnostics
+  - New-WinEvent
+- Microsoft. PowerShell. Management
+  - Get-ControlPanelItem
+  - Byt namn – dator
+  - Visa ControlPanelItem
+- Microsoft.PowerShell.Utility
+  - ConvertFrom – JSON
+  - ConvertTo-Json
+  - Get-TypeData
+  - Invoke-RestMethod
+  - Anropa-webbegäran
+  - Remove-TypeData
+  - Visa-kommando
+  - Avblockera – fil
+- PSScheduledJob
+  - Add-JobTrigger
+  - Disable-JobTrigger
+  - Disable-ScheduledJob
+  - Aktivera – JobTrigger
+  - Aktivera – ScheduledJob
+  - Get-JobTrigger
+  - Get-ScheduledJob
+  - Get-ScheduledJobOption
+  - New-JobTrigger
+  - New-ScheduledJobOption
+  - Registrera – ScheduledJob
+  - Set-JobTrigger
+  - Set-ScheduledJob
+  - Set-ScheduledJobOption
+  - Avregistrera-ScheduledJob
+- PSWorkflow
+  - New-PSWorkflowExecutionOption
+  - New-PSWorkflowSession
+- PSWorkflowUtility
+  - Invoke-arbetsflöde
+- ISE
+  - Get-IseSnippet
+  - Importera – IseSnippet
+  - New-IseSnippet
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Förbättringar av befintliga kärn-cmdlets och providers
 

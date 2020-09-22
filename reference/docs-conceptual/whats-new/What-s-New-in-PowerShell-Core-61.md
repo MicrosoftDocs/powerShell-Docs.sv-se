@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell Core 6,1
 description: Nya funktioner och ändringar som lanseras i PowerShell Core 6,1
 ms.date: 09/13/2018
-ms.openlocfilehash: 7a50bc3a909df38d21a604399d590a2805359593
-ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
+ms.openlocfilehash: 16159059285f89c2ddd85b506b0920f0aa8748ae
+ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85837552"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90846923"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Nyheter i PowerShell Core 6,1
 
@@ -48,10 +48,10 @@ Till exempel `Group-Object` har sped upp med 66%:
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-Object }
 ```
 
-|              | Windows PowerShell 5,1 | PowerShell Core 6,0 | PowerShell Core 6,1 |
-|--------------|------------------------|---------------------|---------------------|
+|    Mått    | Windows PowerShell 5.1 | PowerShell Core 6,0 | PowerShell Core 6,1 |
+| ------------ | ---------------------- | ------------------- | ------------------- |
 | Tid (SEK)   | 25,178                 | 19,653              | 6,641               |
-| Hastighets anslutning (%) | E.t.                    | 21,9%               | 66,2%               |
+| Hastighets anslutning (%) | Saknas                    | 21,9%               | 66,2%               |
 
 På samma sätt har sorterings scenarier som det här förbättrats med mer än 15%:
 
@@ -59,10 +59,10 @@ På samma sätt har sorterings scenarier som det här förbättrats med mer än 
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Object }
 ```
 
-|              | Windows PowerShell 5,1 | PowerShell Core 6,0 | PowerShell Core 6,1 |
-|--------------|------------------------|---------------------|---------------------|
+|    Mått    | Windows PowerShell 5.1 | PowerShell Core 6,0 | PowerShell Core 6,1 |
+| ------------ | ---------------------- | ------------------- | ------------------- |
 | Tid (SEK)   | 12,170                 | 8,493               | 7,08                |
-| Hastighets anslutning (%) | E.t.                    | 30,2%               | 16,6%               |
+| Hastighets anslutning (%) | Saknas                    | 30,2%               | 16,6%               |
 
 `Import-Csv` har också sped varit märkbart efter en regression från Windows PowerShell.
 I följande exempel används en test-CSV med 26 616 rader och sex kolumner:
@@ -71,10 +71,10 @@ I följande exempel används en test-CSV med 26 616 rader och sex kolumner:
 Measure-Command {$a = Import-Csv foo.csv}
 ```
 
-|              | Windows PowerShell 5,1 | PowerShell Core 6,0 | PowerShell Core 6,1    |
-|--------------|------------------------|---------------------|------------------------|
+|    Mått    | Windows PowerShell 5.1 | PowerShell Core 6,0 |  PowerShell Core 6,1   |
+| ------------ | ---------------------- | ------------------- | ---------------------- |
 | Tid (SEK)   | 0,441                  | 1,069               | 0,268                  |
-| Hastighets anslutning (%) | E.t.                    | – 142,4%             | 74,9% (39,2% från WPS) |
+| Hastighets anslutning (%) | Saknas                    | – 142,4%             | 74,9% (39,2% från WPS) |
 
 Till sist har konverteringen från JSON till `PSObject` sped upp med mer än 50% sedan Windows PowerShell.
 I följande exempel används ~ 2 MB test-JSON-fil:
@@ -83,10 +83,10 @@ I följande exempel används ~ 2 MB test-JSON-fil:
 Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 ```
 
-|              | Windows PowerShell 5,1 | PowerShell Core 6,0 | PowerShell Core 6,1    |
-|--------------|------------------------|---------------------|------------------------|
+|    Mått    | Windows PowerShell 5.1 | PowerShell Core 6,0 |  PowerShell Core 6,1   |
+| ------------ | ---------------------- | ------------------- | ---------------------- |
 | Tid (SEK)   | 0,259                  | 0,577               | 0,125                  |
-| Hastighets anslutning (%) | E.t.                    | – 122,8%             | 78,3% (51,7% från WPS) |
+| Hastighets anslutning (%) | Saknas                    | – 122,8%             | 78,3% (51,7% från WPS) |
 
 ## <a name="check-system32-for-compatible-built-in-modules-on-windows"></a>Sök `system32` efter kompatibla inbyggda moduler i Windows
 

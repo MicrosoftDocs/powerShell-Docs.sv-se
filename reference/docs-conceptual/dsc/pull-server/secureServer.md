@@ -1,13 +1,14 @@
 ---
 ms.date: 06/12/2017
+description: Det här dokumentet innehåller metod tips för att hjälpa tekniker som distribuerar DSC-pull-servern.
 keywords: DSC, PowerShell, konfiguration, installation
 title: Metodtips för hämtningsservern
-ms.openlocfilehash: 7b717e9e3bd753ef287701f3e2406e3fde1e2542
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+ms.openlocfilehash: 99009fd73ea08ca4ac42832a055e914a3ce6dbcf
+ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236262"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90846957"
 ---
 # <a name="pull-server-best-practices"></a>Metodtips för hämtningsservern
 
@@ -18,11 +19,9 @@ Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
 Sammanfattning: det här dokumentet är avsett att omfatta process och utöknings barhet för att hjälpa tekniker som förbereder lösningen. Informationen bör ge bästa praxis som identifieras av kunder och sedan verifieras av produkt teamet för att säkerställa att rekommendationerna är stabila och anses stabila.
 
-|           |                      Dokument information                      |
-| :-------- | :------------------------------------------------- |
-| Författare    | Michael Greene                                     |
-| Granskare | Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic |
-| Publicerad | April, 2015                                        |
+- Författare: Michael Greene
+- Granskare: Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic
+- Publicerad: april 2015
 
 ## <a name="abstract"></a>Sammanfattning
 
