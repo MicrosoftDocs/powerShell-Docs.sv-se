@@ -1,13 +1,13 @@
 ---
 title: Installera PowerShell i macOS
 description: Information om hur du installerar PowerShell på macOS
-ms.date: 08/24/2020
-ms.openlocfilehash: 8f38d573d9d67276dbc95cfb70f1fde80af62bb6
-ms.sourcegitcommit: ea9270bacee7dd1b9df2519384de277576357ce2
+ms.date: 09/23/2020
+ms.openlocfilehash: d52595cb7a32a947675486564be2d0230045c709
+ms.sourcegitcommit: 745ccd8f7cea8dc3471cccfaa20ec48bba1448c0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88857893"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91137242"
 ---
 # <a name="installing-powershell-on-macos"></a>Installera PowerShell i macOS
 
@@ -48,7 +48,7 @@ Uppdatera homebrew formel och uppgradera PowerShell när nya versioner av PowerS
 
 ```sh
 brew update
-brew cask upgrade powershell
+brew upgrade --cask powershell
 ```
 
 > [!NOTE]
@@ -80,7 +80,7 @@ Uppdatera homebrew formel och uppgradera PowerShell när nya versioner av PowerS
 
 ```sh
 brew update
-brew cask upgrade powershell-preview
+brew upgrade --cask powershell-preview
 ```
 
 > [!NOTE]
