@@ -3,12 +3,12 @@ title: Allt du ville veta om matriser
 description: Matriser är en grundläggande språk funktion för de flesta programmeringsspråk.
 ms.date: 07/07/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: e744878844a3cfd32d6124538a44a29ba90798ab
-ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
+ms.openlocfilehash: 307189bf27d383159d34181eca4dac1f77792e51
+ms.sourcegitcommit: c8d1ffeab215e74e87ea1b0af8cd606c1a6a80ab
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86092107"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91543380"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>Allt du ville veta om matriser
 
@@ -752,7 +752,10 @@ if ( -not ( $results -ne 'Passed') )
 
 ## <a name="adding-to-arrays"></a>Lägga till i matriser
 
-Nu börjar du med att undrar hur du lägger till objekt i en matris. Det snabba svaret är att du inte kan. En matris är en fast storlek i minnet. Om du behöver utöka den eller lägga till ett enda objekt i det måste du skapa en ny matris och kopiera alla värden från den gamla matrisen. Det här låter dyra och som mycket arbete, men PowerShell döljer komplexiteten för att skapa den nya matrisen.
+Nu börjar du med att undrar hur du lägger till objekt i en matris. Det snabba svaret är att du inte kan. En matris är en fast storlek i minnet. Om du behöver utöka den eller lägga till ett enda objekt i det måste du skapa en ny matris och kopiera alla värden från den gamla matrisen. Detta låter till exempel mycket arbete, men PowerShell döljer komplexiteten vid skapandet av den nya matrisen. I PowerShell implementeras additionsoperatorn ( `+` ) för matriser.
+
+> [!NOTE]
+> PowerShell implementerar inte en subtraktion-åtgärd. Om du vill ha ett flexibelt alternativ till en matris måste du använda ett [generiskt `List` ](#generic-list) objekt.
 
 ### <a name="array-addition"></a>Mat ris tillägg
 
@@ -814,8 +817,6 @@ $array = foreach ( $node in (1..5))
     "ATX-SQL-$node"
 }
 ```
-
-Genom att tilldela resultatet av `foreach` en variabel fångar vi alla objekt och skapar en enda matris.
 
 ## <a name="array-types"></a>Mat ris typer
 
