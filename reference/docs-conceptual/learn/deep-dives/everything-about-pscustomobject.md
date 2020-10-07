@@ -1,14 +1,14 @@
 ---
 title: Allt du ville veta om PSCustomObject
 description: PSCustomObject är ett enkelt sätt att skapa strukturerade data.
-ms.date: 07/29/2020
+ms.date: 10/05/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 52620fd628d03f62db574210a2a5758c3bf29135
-ms.sourcegitcommit: a1886ba2cf35aebd650aafb3e5d7437c4e381781
+ms.openlocfilehash: ccbdcdae5ad38f555233dffbed7e8a6ec2b0726b
+ms.sourcegitcommit: 1695df0d241c0390cac71a7401e61198fc6ff756
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90804788"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91772328"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>Allt du ville veta om PSCustomObject
 
@@ -159,10 +159,10 @@ Om du behöver veta om en egenskap finns kan du bara kontrol lera att egenskapen
 if( $null -ne $myObject.ID )
 ```
 
-Men om värdet kan vara `$null` och du fortfarande behöver söka efter det kan du kontrol lera det `psobject.properties` .
+Men om värdet kan vara `$null` kan du kontrol lera om det finns genom att kontrol lera det `psobject.properties` .
 
 ```powershell
-if( $myobject.psobject.properties.match('ID') )
+if( $myobject.psobject.properties.match('ID').Count )
 ```
 
 ## <a name="adding-object-methods"></a>Lägga till objekt metoder
@@ -264,7 +264,7 @@ PowerShell bestämmer för oss vilka egenskaper som ska visas som standard. Mån
 
 ```powershell
 $defaultDisplaySet = 'Name','Language'
-$defaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet(‘DefaultDisplayPropertySet’,[string[]]$defaultDisplaySet)
+$defaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet('DefaultDisplayPropertySet',[string[]]$defaultDisplaySet)
 $PSStandardMembers = [System.Management.Automation.PSMemberInfo[]]@($defaultDisplayPropertySet)
 $MyObject | Add-Member MemberSet PSStandardMembers $PSStandardMembers
 ```
