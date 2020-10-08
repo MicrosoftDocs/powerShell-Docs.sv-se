@@ -2,12 +2,12 @@
 ms.date: 08/21/2020
 keywords: powershell,cmdlet
 title: Kör fjärrkommandon
-ms.openlocfilehash: ab6d464c31144349ee38cd01e82a2cf1470aaa95
-ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
+ms.openlocfilehash: f12d08b03757b24d1de50402b301faff193f27be
+ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88799629"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91814743"
 ---
 # <a name="running-remote-commands"></a>Kör fjärrkommandon
 
@@ -129,7 +129,7 @@ Windows PowerShell-fjärrhantering börjar bara här. Genom att använda de cmdl
 
 Windows PowerShell innehåller en WSMan-Provider. Providern skapar en `WSMAN:` enhet som gör det möjligt att navigera i en hierarki med konfigurations inställningar på den lokala datorn och fjärrdatorer.
 
-Mer information om WSMan-providern finns i [WSMan-providern](https://technet.microsoft.com/library/dd819476.aspx) och [om WS-Management-cmdletar](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets), eller i Windows PowerShell-konsolen skriver du `Get-Help wsman` .
+Mer information om WSMan-providern finns i [WSMan-providern](https://technet.microsoft.com/library/dd819476.aspx) och [om WS-Management-cmdletar](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets), eller i Windows PowerShell-konsolen skriver du `Get-Help wsman` .
 
 Mer information finns i:
 
