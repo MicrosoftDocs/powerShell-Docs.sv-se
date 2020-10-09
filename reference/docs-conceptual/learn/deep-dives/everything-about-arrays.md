@@ -1,14 +1,14 @@
 ---
 title: Allt du ville veta om matriser
 description: Matriser är en grundläggande språk funktion för de flesta programmeringsspråk.
-ms.date: 07/07/2020
+ms.date: 10/08/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 016c978a00d202a466610c7eaf4a09b9b69f29b2
-ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
+ms.openlocfilehash: b26aa11aadbeea1984b2754cfcad061c7fa3ff1e
+ms.sourcegitcommit: 3445a343e0683124652f64abef6fe911f9eb989f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91814726"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852569"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>Allt du ville veta om matriser
 
@@ -76,7 +76,7 @@ Det är vanligt att du `@()` använder syntaxen för att skapa en matris, men i 
 $data = 'Zero','One','Two','Three'
 ```
 
-#### <a name="write-output-to-create-arrays"></a>Skriva utdata för att skapa matriser
+#### <a name="write-output-to-create-arrays"></a>Write-Output för att skapa matriser
 
 Ett häftigt svårt att nämna är att du kan använda `Write-Output` för att snabbt skapa strängar i-konsolen.
 
@@ -462,7 +462,7 @@ Doe
 
 Uppräkningen utförs fortfarande men vi ser inte komplexiteten bakom den.
 
-### <a name="where-object-filtering"></a>Where-objekt filtrering
+### <a name="where-object-filtering"></a>Where-Object filtrering
 
 `Where-Object`I så fall kan vi filtrera och välja vad du vill ha i matrisen baserat på egenskaperna för objektet.
 
@@ -724,7 +724,7 @@ Om du fortfarande använder PowerShell 5,1 kan du figursätta objektet i en matr
 ```powershell
 if ( @($array).count -gt 0 )
 {
-    'Array isn't empty'
+    "Array isn't empty"
 }
 ```
 
@@ -733,7 +733,7 @@ Kontrol lera och kontrol lera antalet för att kunna spela upp det säkert `$nul
 ```powershell
 if ( $null -ne $array -and @($array).count -gt 0 )
 {
-    'Array isn't empty'
+    "Array isn't empty"
 }
 ```
 
@@ -1034,7 +1034,7 @@ PS> $data[$outside][$inside]
 
 Lägg till en uppsättning hakparenteser för varje nivå av mat ris kapsling. Den första uppsättningen hakparenteser är för den yttre mest matrisen och sedan arbetar du på ditt sätt i därifrån.
 
-### <a name="write-output--noenumerate"></a>Write-output-noenumeration
+### <a name="write-output--noenumerate"></a>Write-Output-noenumeration
 
 PowerShell gillar att packa upp eller räkna upp matriser. Detta är en grund aspekt av hur PowerShell använder pipelinen, men det finns tillfällen då du inte vill att det ska hända.
 
