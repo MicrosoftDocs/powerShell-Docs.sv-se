@@ -2,12 +2,12 @@
 title: Installera PowerShell i Linux
 description: Information om hur du installerar PowerShell på olika Linux-distributioner
 ms.date: 07/30/2020
-ms.openlocfilehash: ce69f75416eb326e38d42991a4ae85a3a7298c5d
-ms.sourcegitcommit: 79d430fe48ad77a058f42b6bc9955d21b657987e
+ms.openlocfilehash: f35366b5b1a0f54ce2c90d0e3cba59be7b9ce82c
+ms.sourcegitcommit: 2ca12827dc64198b4263e8873a45b9466f22a67c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87441772"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079803"
 ---
 # <a name="installing-powershell-on-linux"></a>Installera PowerShell i Linux
 
@@ -57,10 +57,10 @@ Alternativa installations metoder
 
 Stöds för närvarande inte
 
-- Ubuntu 20,04
+- Ubuntu 20.04
 
 > [!NOTE]
-> PowerShell stöder bara de distributioner som stöds av .NET. En lista över distributioner som stöds finns i [viktig information om .net Core][distros] . Om det finns en distrbution som stöds av .NET och som inte visas här, kan du begära att stödet för distributionen ska läggas till. Skicka en begäran med mallen för [distributions support förfrågan][] .
+> PowerShell stöder bara de distributioner som stöds av .NET. En lista över distributioner som stöds finns i [viktig information om .net Core][distros] . Om det finns en distribution som stöds av .NET och som inte visas här, kan du begära att stödet för distributionen ska läggas till. Skicka en begäran med mallen för [distributions support förfrågan][] .
 
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
@@ -71,18 +71,18 @@ PowerShell för Linux publiceras till paket Arkiv för enkel installation och up
 Den bästa metoden är följande:
 
 ```sh
+# Update the list of packages
+sudo apt-get update
+# Install pre-requisite packages.
+sudo apt-get install -y wget apt-transport-https
 # Download the Microsoft repository GPG keys
 wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
-
 # Register the Microsoft repository GPG keys
 sudo dpkg -i packages-microsoft-prod.deb
-
-# Update the list of products
+# Update the list of packages after we added packages.microsoft.com
 sudo apt-get update
-
 # Install PowerShell
 sudo apt-get install -y powershell
-
 # Start PowerShell
 pwsh
 ```
@@ -118,21 +118,20 @@ PowerShell för Linux publiceras till paket Arkiv för enkel installation och up
 Den bästa metoden är följande:
 
 ```sh
+# Update the list of packages
+sudo apt-get update
+# Install pre-requisite packages.
+sudo apt-get install -y wget apt-transport-https
 # Download the Microsoft repository GPG keys
 wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
-
 # Register the Microsoft repository GPG keys
 sudo dpkg -i packages-microsoft-prod.deb
-
 # Update the list of products
 sudo apt-get update
-
 # Enable the "universe" repositories
 sudo add-apt-repository universe
-
 # Install PowerShell
 sudo apt-get install -y powershell
-
 # Start PowerShell
 pwsh
 ```
@@ -173,7 +172,7 @@ Installationen stöds via `snapd` . Instruktioner finns i [snapin-paket][snap].
 > [!NOTE]
 > Ubuntu 19,04 är en [tillfällig version](https://www.ubuntu.com/about/release-cycle) som [stöds av communityn](../powershell-support-lifecycle.md).
 
-## <a name="ubuntu-2004"></a>Ubuntu 20,04
+## <a name="ubuntu-2004"></a>Ubuntu 20.04
 
 Ubuntu 20,04 är en LTS-version. PowerShell stöder för närvarande inte den här versionen. Stöd för den här versionen beaktas för PowerShell 7,1-versionen. Rösta på den här [begäran](https://github.com/PowerShell/PowerShell/issues/12626) om du vill ha stöd för Ubuntu 20,04.
 
