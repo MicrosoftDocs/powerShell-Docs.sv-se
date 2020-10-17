@@ -1,13 +1,13 @@
 ---
-ms.date: 09/14/2020
+ms.date: 10/15/2020
 title: Använda experimentella funktioner i PowerShell
 description: Visar en lista över tillgängliga experimentella funktioner och hur du använder dem.
-ms.openlocfilehash: 74623240bfb19022ae342a5d23e2ed4f455afa45
-ms.sourcegitcommit: 30c0c1563f8e840f24b65297e907f3583d90e677
+ms.openlocfilehash: e98b1222755f3d4ffbd432af6b01d56f63307bb2
+ms.sourcegitcommit: 108686b166672cc08817c637dd93eb1ad830511d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574478"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92156583"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Använda experimentella funktioner i PowerShell
 
@@ -24,7 +24,7 @@ Mer information om hur du aktiverar eller inaktiverar dessa funktioner finns [ab
 
 Den här artikeln beskriver de experimentella funktioner som är tillgängliga och hur du använder funktionen.
 
-|                            Name                            |   6,2   |   7,0   |   7.1   |
+|                            Namn                            |   6,2   |   7.0   |   7.1   |
 | ---------------------------------------------------------- | :-----: | :-----: | :-----: |
 | PSTempDrive (vanlig i PS 7.0 +)                        | &check; |         |         |
 | PSUseAbbreviationExpansion (vanlig i PS 7.0 +)         | &check; |         |         |
@@ -34,9 +34,10 @@ Den här artikeln beskriver de experimentella funktioner som är tillgängliga o
 | PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
 | PSNullConditionalOperators (vanlig i PS 7.1 +)         |         | &check; |         |
 | PSUnixFileStat (endast Windows)                          |         | &check; | &check; |
-| PSNativePSPathResolution (vanlig i PS 7.1 +)           |         |         |         |
+| PSNativePSPathResolution                                   |         |         | &check; |
 | PSCultureInvariantReplaceOperator                          |         |         | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; |
+| PSSubsystemPluginModel                                     |         |         | &check; |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Microsoft. PowerShell. Utility. PSManageBreakpointsInRunspace
 
@@ -153,9 +154,6 @@ I Windows, om sökvägen börjar med `~` , är det också som matchas med den fu
 - Om sökvägen inte är en PSDrive eller `~` (i Windows) sker inte Sök vägs normalisering
 - Om sökvägen är i enkla citat tecken matchas den inte och behandlas som literal
 
-> [!NOTE]
-> Den här funktionen har flyttat från experiment fasen och är en vanlig funktion i PowerShell 7,1 och högre.
-
 ## <a name="psnotapplyerroractiontostderr"></a>PSNotApplyErrorActionToStderr
 
 När den här experimentella funktionen är aktive rad skrivs fel poster som omdirigeras från interna kommandon, t. ex. När du använder omdirigerings operatorer ( `2>&1` ), inte till `$Error` variabeln och Preference-variabeln `$ErrorActionPreference` påverkar inte de omdirigerade utdata.
@@ -228,3 +226,11 @@ Detta fungerar bara för slut för ande av flikar (interaktiv användning), så 
 
 > [!NOTE]
 > Den här funktionen har flyttat från experiment fasen och är en vanlig funktion i PowerShell 7 och högre.
+
+## <a name="pssubsystempluginmodel"></a>PSSubsystemPluginModel
+
+Den här funktionen aktiverar under Systems-plugin-modellen i PowerShell. Funktionen gör det möjligt att separera komponenter i `System.Management.Automation.dll` enskilda under system som finns i en egen sammansättning. Den här separationen minskar den grundläggande PowerShell-motorns disk utrymme och gör att dessa komponenter blir valfria funktioner för en minimal PowerShell-installation.
+
+För närvarande stöds endast under systemet **CommandPredictor** . Det här del systemet används tillsammans med PSReadLine-modulen för att tillhandahålla anpassade förutsägelse-plugin-program. I framtiden kan **jobb**, **CommandCompleter**, **fjärr kommunikation** och andra komponenter delas upp i del system sammansättningar utanför `System.Management.Automation.dll` .
+
+Experiment funktionen innehåller en ny cmdlet, [Get-PSSubsystem](xref:Microsoft.PowerShell.Core.Get-PSSubsystem). Den här cmdleten är endast tillgänglig om funktionen är aktive rad. Denna cmdlet returnerar information om de del system som är tillgängliga i systemet.
