@@ -1,12 +1,12 @@
 ---
 title: Installera en PowerShell-modul | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6a4e9ac2884d0b300b5c1ad8b6156525438a1650
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: 201679c97acdccae9aa4c2be641ee1da09a8275c
+ms.sourcegitcommit: d073e69708bd499ea42642b4b923ce5f11cca295
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784868"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92197833"
 ---
 # <a name="installing-a-powershell-module"></a>Installera en PowerShell-modul
 
@@ -115,7 +115,7 @@ Om du vill att en modul ska vara tillgänglig för alla användar konton på dat
 `$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 > [!NOTE]
-> Platsen för program filer läggs till i värdet för PSModulePath-miljövariabeln som standard i Windows PowerShell 4,0 och senare. För tidigare versioner av Windows PowerShell kan du manuellt skapa platsen för programfiler ((%ProgramFiles%\WindowsPowerShell\Modules) och lägga till den här sökvägen till PSModulePath-miljövariabeln enligt beskrivningen ovan.
+> Platsen för program filer läggs till i värdet för PSModulePath-miljövariabeln som standard i Windows PowerShell 4,0 och senare. För tidigare versioner av Windows PowerShell kan du manuellt skapa platsen för programfiler (%ProgramFiles%\WindowsPowerShell\Modules) och lägga till den här sökvägen till PSModulePath-miljövariabeln enligt beskrivningen ovan.
 
 ### <a name="installing-modules-in-a-product-directory"></a>Installera moduler i en produkt katalog
 

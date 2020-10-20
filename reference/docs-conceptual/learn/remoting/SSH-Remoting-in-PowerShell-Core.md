@@ -1,13 +1,13 @@
 ---
 title: PowerShell fjärrkommunikation via SSH
 description: Fjärr kommunikation i PowerShell Core med SSH
-ms.date: 07/23/2020
-ms.openlocfilehash: cc65db481fcedcafec16093dbf7e6af4975c73db
-ms.sourcegitcommit: 9dddf1d2e91ebcd347fcfb7bf6ef670d49a12ab7
+ms.date: 10/19/2020
+ms.openlocfilehash: b3ffc5e93e72c5b7584bd712ee391e61f773486e
+ms.sourcegitcommit: d073e69708bd499ea42642b4b923ce5f11cca295
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87133477"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92197850"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell fjärrkommunikation via SSH
 
@@ -25,7 +25,7 @@ Med SSH-fjärrkommunikation kan du utföra grundläggande PowerShell-sessioner m
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-Om du vill skapa en fjärrsession anger du mål datorn med parametern **hostname** och anger användar namnet **med användar namnet.** När du kör cmdletarna interaktivt, uppmanas du att ange ett lösen ord. Du kan också använda SSH-nyckel-autentisering med hjälp av en privat nyckel fil med parametern för nyckel **Sök** vägar.
+Om du vill skapa en fjärrsession anger du mål datorn med parametern **hostname** och anger användar namnet **med användar namnet.** När du kör cmdletarna interaktivt, uppmanas du att ange ett lösen ord. Du kan också använda SSH-nyckel-autentisering med hjälp av en privat nyckel fil med parametern för nyckel **Sök** vägar. Att skapa nycklar för SSH-autentisering varierar beroende på plattform.
 
 ## <a name="general-setup-information"></a>Allmän installations information
 
@@ -33,7 +33,7 @@ PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Ins
 
 ## <a name="set-up-on-a-windows-computer"></a>Konfigurera på en Windows-dator
 
-1. Installera den senaste versionen av PowerShell, se [Installera PowerShell Core på Windows](../../install/installing-powershell-core-on-windows.md#msi).
+1. Installera den senaste versionen av PowerShell. Mer information finns i [Installera PowerShell Core på Windows](../../install/installing-powershell-core-on-windows.md#msi).
 
    Du kan kontrol lera att PowerShell har stöd för SSH-fjärrkommunikation genom att lista `New-PSSession` parameter uppsättningarna. Observera att det finns parameter uppsättnings namn som börjar med **SSH**. Parameter uppsättningarna inkluderar **SSH** -parametrar.
 
@@ -99,7 +99,7 @@ PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Ins
    Restart-Service sshd
    ```
 
-1. Lägg till sökvägen där OpenSSH är installerat i din PATH-miljö variabel. Till exempel `C:\Program Files\OpenSSH\`. Med den här posten kan `ssh.exe` du hitta.
+1. Lägg till sökvägen där OpenSSH är installerat i din PATH-miljö variabel. Exempelvis `C:\Program Files\OpenSSH\`. Med den här posten kan `ssh.exe` du hitta.
 
 ## <a name="set-up-on-an-ubuntu-1604-linux-computer"></a>Konfigurera på en Ubuntu 16,04 Linux-dator
 
@@ -119,6 +119,14 @@ PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Ins
    PasswordAuthentication yes
    ```
 
+   Du kan också aktivera nyckel autentisering:
+
+   ```
+   PubkeyAuthentication yes
+   ```
+
+   Mer information om hur du skapar SSH-nycklar på Ubuntu finns i manpage for [ssh-keygen](http://manpages.ubuntu.com/manpages/xenial/man1/ssh-keygen.1.html).
+
    Lägg till en PowerShell-under Systems post:
 
    ```
@@ -134,15 +142,15 @@ PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Ins
    PubkeyAuthentication yes
    ```
 
-1. Starta om **sshd**-tjänsten.
+1. Starta om **SSH** -tjänsten.
 
    ```bash
-   sudo service sshd restart
+   sudo service ssh restart
    ```
 
 ## <a name="set-up-on-a-macos-computer"></a>Konfigurera på en macOS-dator
 
-1. Installera den senaste versionen av PowerShell, se [Installera PowerShell Core på MacOS](../../install/installing-powershell-core-on-macos.md).
+1. Installera den senaste versionen av PowerShell. Mer information finns [i installera PowerShell Core på MacOS](../../install/installing-powershell-core-on-macos.md).
 
    Se till att SSH-fjärrkommunikation är aktiverat genom att följa dessa steg:
 
