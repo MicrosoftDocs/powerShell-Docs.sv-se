@@ -2,12 +2,12 @@
 title: PowerShell fjärrkommunikation via SSH
 description: Fjärr kommunikation i PowerShell Core med SSH
 ms.date: 10/19/2020
-ms.openlocfilehash: b3ffc5e93e72c5b7584bd712ee391e61f773486e
-ms.sourcegitcommit: d073e69708bd499ea42642b4b923ce5f11cca295
+ms.openlocfilehash: 23c5dc9c1ff6427cc718114bd58dc7c568e697bc
+ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92197850"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92298290"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell fjärrkommunikation via SSH
 

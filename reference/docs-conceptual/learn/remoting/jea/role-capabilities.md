@@ -3,11 +3,11 @@ ms.date: 07/10/2019
 keywords: Jea, PowerShell, säkerhet
 title: JEA roll funktioner
 ms.openlocfilehash: 5b5b5977d4fec1ed850f1146fe7c09463908651b
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79406876"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92298350"
 ---
 # <a name="jea-role-capabilities"></a>JEA roll funktioner
 
@@ -51,7 +51,7 @@ Den resulterande roll funktions filen bör redige ras för att tillåta de komma
 
 ### <a name="allowing-powershell-cmdlets-and-functions"></a>Tillåta PowerShell-cmdlets och Functions
 
-Om du vill auktorisera användare att köra PowerShell-cmdletar eller-funktioner lägger du till cmdleten eller funktions namnet i fälten VisibleCmdlets eller VisibleFunctions. Om du inte är säker på om ett kommando är en cmdlet eller funktion kan du `Get-Command <name>` köra och kontrol lera egenskapen **CommandType** i utdata.
+Om du vill auktorisera användare att köra PowerShell-cmdletar eller-funktioner lägger du till cmdleten eller funktions namnet i fälten VisibleCmdlets eller VisibleFunctions. Om du inte är säker på om ett kommando är en cmdlet eller funktion kan du köra `Get-Command <name>` och kontrol lera egenskapen **CommandType** i utdata.
 
 ```powershell
 VisibleCmdlets = 'Restart-Computer', 'Get-NetIPAddress'
@@ -81,9 +81,9 @@ Du kan blanda och matcha något av följande i fältet **VisibleCmdlets** .
 | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `'My-Func'` eller `@{ Name = 'My-Func' }`                                                      | Tillåter användaren att köra `My-Func` utan begränsningar för parametrarna.                                                      |
 | `'MyModule\My-Func'`                                                                        | Tillåter att användaren kör `My-Func` från modulen `MyModule` utan begränsningar för parametrarna.                           |
-| `'My-*'`                                                                                    | Tillåter användaren att köra valfri cmdlet eller funktion med verbet `My`.                                                                 |
-| `'*-Func'`                                                                                  | Tillåter användaren att köra valfri cmdlet eller funktion med Substantiv `Func`.                                                               |
-| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`              | Tillåter användaren att köra `My-Func` med parametrarna `Param1` och. `Param2` Alla värden kan anges för parametrarna.          |
+| `'My-*'`                                                                                    | Tillåter användaren att köra valfri cmdlet eller funktion med verbet `My` .                                                                 |
+| `'*-Func'`                                                                                  | Tillåter användaren att köra valfri cmdlet eller funktion med Substantiv `Func` .                                                               |
+| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`              | Tillåter användaren att köra `My-Func` med `Param1` `Param2` parametrarna och. Alla värden kan anges för parametrarna.          |
 | `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}` | Tillåter användaren att köra `My-Func` med `Param1` parametern. Endast "värde1" och "värde2" kan anges för parametern.        |
 | `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`    | Tillåter användaren att köra `My-Func` med `Param1` parametern. Alla värden som börjar med "contoso" kan anges för parametern. |
 
@@ -108,7 +108,7 @@ Om möjligt kan du använda PowerShell-cmdlet eller Function-motsvarigheter för
 
 Med många körbara filer kan du läsa det aktuella läget och sedan ändra det genom att ange olika parametrar.
 
-Anta till exempel rollen som en fil Server administratör som hanterar nätverks resurser som finns på ett system. Ett sätt att hantera resurser är att använda `net share`. Att tillåta **net. exe** är dock farligt eftersom användaren kan använda kommandot för att få administratörs behörighet `net group Administrators unprivilegedjeauser /add`. Ett säkrare alternativ är att tillåta [Get-SmbShare](/powershell/module/smbshare/get-smbshare), vilket ger samma resultat men har ett mycket mer begränsat omfång.
+Anta till exempel rollen som en fil Server administratör som hanterar nätverks resurser som finns på ett system. Ett sätt att hantera resurser är att använda `net share` . Att tillåta **net.exe** är dock farlig eftersom användaren kan använda kommandot för att få administratörs behörighet `net group Administrators unprivilegedjeauser /add` . Ett säkrare alternativ är att tillåta [Get-SmbShare](/powershell/module/smbshare/get-smbshare), vilket ger samma resultat men har ett mycket mer begränsat omfång.
 
 När du gör externa kommandon tillgängliga för användare i en JEA-session ska du alltid ange den fullständiga sökvägen till den körbara filen. Detta förhindrar körning av liknande namngivna och potentiellt skadliga program som finns på andra platser i systemet.
 
@@ -116,7 +116,7 @@ När du gör externa kommandon tillgängliga för användare i en JEA-session sk
 
 Som standard är inga PowerShell-leverantörer tillgängliga i JEA-sessioner. Detta minskar risken för känslig information och konfigurations inställningar som visas för den anslutande användaren.
 
-Vid behov kan du tillåta åtkomst till PowerShell-providers med hjälp `VisibleProviders` av kommandot. För en fullständig lista över leverantörer, kör `Get-PSProvider`.
+Vid behov kan du tillåta åtkomst till PowerShell-providers med hjälp av `VisibleProviders` kommandot. För en fullständig lista över leverantörer, kör `Get-PSProvider` .
 
 ```powershell
 VisibleProviders = 'Registry'
@@ -146,16 +146,16 @@ FunctionDefinitions = @{
 > [!IMPORTANT]
 > Glöm inte att lägga till namnet på dina anpassade funktioner i fältet **VisibleFunctions** så att de kan köras av Jea-användare.
 
-Texten (skript blocket) för anpassade funktioner körs i standard språk läge för systemet och omfattas inte av JEA språk begränsningar. Det innebär att funktioner kan komma åt fil systemet och registret, och köra kommandon som inte har gjorts synliga i den roll kapacitets filen. Ta hand om att undvika att köra godtycklig kod när du använder parametrar. Undvik att skicka indata från användaren direkt till `Invoke-Expression`cmdletar som.
+Texten (skript blocket) för anpassade funktioner körs i standard språk läge för systemet och omfattas inte av JEA språk begränsningar. Det innebär att funktioner kan komma åt fil systemet och registret, och köra kommandon som inte har gjorts synliga i den roll kapacitets filen. Ta hand om att undvika att köra godtycklig kod när du använder parametrar. Undvik att skicka indata från användaren direkt till cmdletar som `Invoke-Expression` .
 
-I exemplet ovan ser du att det fullständigt kvalificerade modulnamnet (FQMN) `Microsoft.PowerShell.Utility\Select-Object` användes i stället för kort. `Select-Object`
+I exemplet ovan ser du att det fullständigt kvalificerade modulnamnet (FQMN) `Microsoft.PowerShell.Utility\Select-Object` användes i stället för kort `Select-Object` .
 Funktioner som definieras i roll kapacitets filer omfattas fortfarande av omfånget för JEA-sessioner, som innehåller proxy-funktionerna JEA skapar för att begränsa befintliga kommandon.
 
-Som standard `Select-Object` är en begränsad cmdlet i alla Jea-sessioner som inte tillåter val av godtyckliga egenskaper för objekt. Om du vill använda den obegränsade funktionen `Select-Object` i funktioner måste du uttryckligen begära fullständig implementering med hjälp av FQMN. Alla begränsade cmdlets i en JEA-session har samma begränsningar när de anropas från en funktion. Mer information finns i [about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence).
+Som standard `Select-Object` är en begränsad cmdlet i alla Jea-sessioner som inte tillåter val av godtyckliga egenskaper för objekt. Om du vill använda den obegränsade `Select-Object` funktionen i funktioner måste du uttryckligen begära fullständig implementering med hjälp av FQMN. Alla begränsade cmdlets i en JEA-session har samma begränsningar när de anropas från en funktion. Mer information finns i [about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence).
 
 Om du skriver flera anpassade funktioner är det mer praktiskt att använda dem i en PowerShell-modul för-skript. Du gör dessa funktioner synliga i JEA-sessionen med hjälp av **VisibleFunctions** -fältet på samma sätt som med inbyggda moduler och moduler från tredje part.
 
-För att avslutning av flikar ska fungera korrekt i JEA-sessioner måste du inkludera `tabexpansion2` den inbyggda funktionen i **VisibleFunctions** -listan.
+För att avslutning av flikar ska fungera korrekt i JEA-sessioner måste du inkludera den inbyggda funktionen `tabexpansion2` i **VisibleFunctions** -listan.
 
 ## <a name="make-the-role-capabilities-available-to-a-configuration"></a>Gör roll funktionerna tillgängliga för en konfiguration
 
@@ -245,7 +245,7 @@ $mergedAandB = @{
 Alla andra fält i roll kapacitets filen läggs till i en kumulativ uppsättning tillåtna externa kommandon, alias, providers och start skript. Alla kommandon, alias, providers och skript som är tillgängliga i en roll kapacitet är tillgängliga för JEA-användaren.
 
 Var noga med att se till att den kombinerade uppsättningen med providers från en roll kapacitet och cmdlets/Functions/commands från andra inte tillåter användare oavsiktlig åtkomst till system resurser.
-Om till exempel en roll tillåter- `Remove-Item` cmdleten och en annan tillåter `FileSystem` providern, är du utsatt för en Jea-användare som tar bort godtyckliga filer på datorn. Ytterligare information om att identifiera användares gällande behörigheter finns i artikeln [granskning Jea](audit-and-report.md) .
+Om till exempel en roll tillåter `Remove-Item` -cmdleten och en annan tillåter `FileSystem` providern, är du utsatt för en Jea-användare som tar bort godtyckliga filer på datorn. Ytterligare information om att identifiera användares gällande behörigheter finns i artikeln [granskning Jea](audit-and-report.md) .
 
 ## <a name="next-steps"></a>Nästa steg
 
