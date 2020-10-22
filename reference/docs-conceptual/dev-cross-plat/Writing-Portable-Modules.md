@@ -1,13 +1,13 @@
 ---
-ms.date: 01/10/2020
+ms.date: 10/21/2020
 keywords: powershell,cmdlet
 title: Skriva portabla moduler
-ms.openlocfilehash: a6b2f8b263e71b6c9dbd50900536cb5072597e71
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: 9cd9e5bfc1110ce149d552f55ba20e35d9206c46
+ms.sourcegitcommit: 57c3527ec6c3124cb9cdab7b07ebb92ed159cb64
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158130"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92357768"
 ---
 # <a name="portable-modules"></a>Bärbara moduler
 
@@ -17,8 +17,7 @@ Windows PowerShell är skrivet för [.NET Framework][] medan PowerShell-kärnan 
 
 ### <a name="porting-a-pssnapin"></a>Porting a PSSnapIn
 
-PowerShell- [modulerna](/powershell/scripting/developer/cmdlet/modules-and-snap-ins) stöds inte i PowerShell Core. Det är dock enkelt att konvertera en PSSnapIn till en PowerShell-modul. Normalt är registrerings koden PSSnapIn i en enda källfil för en klass som härleds från [PSSnapIn][].
-Ta bort den här käll filen från versionen. det behövs inte längre.
+PowerShell- [modulerna](/powershell/scripting/developer/cmdlet/modules-and-snap-ins) stöds inte i PowerShell Core. Det är dock enkelt att konvertera en PSSnapIn till en PowerShell-modul. Normalt är registrerings koden PSSnapIn i en enda källfil för en klass som härleds från [PSSnapIn][]. Ta bort den här käll filen från versionen. det behövs inte längre.
 
 Använd [New-ModuleManifest][] för att skapa ett nytt modul-manifest som ersätter behovet av registrerings koden för PSSnapIn. Några av värdena från **PSSnapIn** (till exempel **Beskrivning**) kan återanvändas i manifestet för modulen.
 
@@ -65,11 +64,11 @@ Options:
   -lang, --language   Filters templates based on language and specifies the language of the template to create.
 
 
-Templates                                         Short Name         Language          Tags
-----------------------------------------------------------------------------------------------------------------------------
-Console Application                               console            [C#], F#, VB      Common/Console
-Class library                                     classlib           [C#], F#, VB      Common/Library
-PowerShell Standard Module                        psmodule           [C#]              Library/PowerShell/Module
+Templates                        Short Name         Language          Tags
+-----------------------------------------------------------------------------------------------
+Console Application              console            [C#], F#, VB      Common/Console
+Class library                    classlib           [C#], F#, VB      Common/Library
+PowerShell Standard Module       psmodule           [C#]              Library/PowerShell/Module
 ...
 ```
 
@@ -156,9 +155,15 @@ FavoriteNumber FavoritePet
              7 Cat
 ```
 
+### <a name="debugging-the-module"></a>Felsöka modulen
+
+En guide om hur du konfigurerar Visual Studio Code för att felsöka modulen finns i [använda Visual Studio Code för fel sökning av kompilerade cmdlets][].
+
+## <a name="supporting-technologies"></a>Stöd tekniker
+
 I följande avsnitt beskrivs några av de tekniker som används av den här mallen.
 
-## <a name="net-standard-library"></a>.NET standard-bibliotek
+### <a name="net-standard-library"></a>.NET standard-bibliotek
 
 [.Net standard][] är en formell specifikation av .NET-API: er som är tillgängliga i alla .net-implementeringar. Hanterad kod för .NET standard fungerar med de .NET Framework-och .NET Core-versioner som är kompatibla med den versionen av .NET standard.
 
@@ -170,7 +175,7 @@ Genom att använda .NET standard kan du se till att inkompatibla API: er inte ha
 
 Men det är inte nödvändigt att använda .NET standard för att en modul ska fungera med både Windows PowerShell och PowerShell Core, så länge du använder kompatibla API: er. Det mellanliggande språket (IL) är kompatibelt mellan de två körningarna. Du kan rikta .NET Framework 4.6.1, som är kompatibel med .NET standard 2,0. Om du inte använder API: er utanför .NET standard 2,0, fungerar modulen med PowerShell Core 6 utan att kompilera om.
 
-## <a name="powershell-standard-library"></a>PowerShell-standardbibliotek
+### <a name="powershell-standard-library"></a>PowerShell-standardbibliotek
 
 [PowerShell][] -standardbiblioteket är en formell specifikation av PowerShell-API: er som är tillgängliga i alla PowerShell-versioner som är större än eller lika med den standard versionen.
 
@@ -179,9 +184,9 @@ Till exempel är [PowerShell Standard 5,1][] kompatibelt med både Windows Power
 Vi rekommenderar att du kompilerar modulen med PowerShell-standardbiblioteket. Biblioteket säkerställer att API: erna är tillgängliga och implementerade i både Windows PowerShell och PowerShell Core 6.
 PowerShell-standarden är avsedd att alltid vidarebefordras-kompatibel. En modul som skapats med PowerShell standard library 5,1 är alltid kompatibel med framtida versioner av PowerShell.
 
-## <a name="module-manifest"></a>Modul manifest
+### <a name="module-manifest"></a>Modul manifest
 
-### <a name="indicating-compatibility-with-windows-powershell-and-powershell-core"></a>Indikerar kompatibilitet med Windows PowerShell och PowerShell Core
+#### <a name="indicating-compatibility-with-windows-powershell-and-powershell-core"></a>Indikerar kompatibilitet med Windows PowerShell och PowerShell Core
 
 När du har verifierat att modulen fungerar med både Windows PowerShell och PowerShell Core bör modulens manifest uttryckligen indikera kompatibilitet med hjälp av egenskapen [CompatiblePSEditions][] . Värdet `Desktop` innebär att modulen är kompatibel med Windows PowerShell, medan värdet `Core` innebär att modulen är kompatibel med PowerShell Core. Inklusive både `Desktop` och `Core` innebär att modulen är kompatibel med både Windows PowerShell och PowerShell Core.
 
@@ -195,7 +200,7 @@ Kontrol lera först att modulen fungerar på Linux och macOS. Sedan anger du kom
 
 I modulen manifest `PrivateData` har egenskapen en `PSData` underordnad egenskap. Den valfria `Tags` egenskapen för `PSData` tar en matris med värden som visas i PowerShell-galleriet. PowerShell-galleriet har stöd för följande kompatibilitetsinställningar:
 
-| Tagga               | Description                                |
+| Tagga               | Beskrivning                                |
 |-------------------|--------------------------------------------|
 | PSEdition_Core    | Kompatibel med PowerShell Core 6          |
 | PSEdition_Desktop | Kompatibel med Windows PowerShell         |
@@ -249,7 +254,7 @@ Exempel:
 }
 ```
 
-## <a name="dependency-on-native-libraries"></a>Beroende av interna bibliotek
+### <a name="dependency-on-native-libraries"></a>Beroende av interna bibliotek
 
 Moduler som ska användas i olika operativ system eller processor arkitekturer kan vara beroende av ett hanterat bibliotek som är beroende av vissa interna bibliotek.
 
@@ -259,33 +264,33 @@ Med PowerShell 7 genomsöks interna binärfiler i undermappar i det hanterade bi
 
 ```
 managed.dll folder
-                |
-                |--- 'win-x64' folder
-                |       |--- native.dll
-                |
-                |--- 'win-x86' folder
-                |       |--- native.dll
-                |
-                |--- 'win-arm' folder
-                |       |--- native.dll
-                |
-                |--- 'win-arm64' folder
-                |       |--- native.dll
-                |
-                |--- 'linux-x64' folder
-                |       |--- native.so
-                |
-                |--- 'linux-x86' folder
-                |       |--- native.so
-                |
-                |--- 'linux-arm' folder
-                |       |--- native.so
-                |
-                |--- 'linux-arm64' folder
-                |       |--- native.so
-                |
-                |--- 'osx-x64' folder
-                |       |--- native.dylib
+    |
+    |--- 'win-x64' folder
+    |       |--- native.dll
+    |
+    |--- 'win-x86' folder
+    |       |--- native.dll
+    |
+    |--- 'win-arm' folder
+    |       |--- native.dll
+    |
+    |--- 'win-arm64' folder
+    |       |--- native.dll
+    |
+    |--- 'linux-x64' folder
+    |       |--- native.so
+    |
+    |--- 'linux-x86' folder
+    |       |--- native.so
+    |
+    |--- 'linux-arm' folder
+    |       |--- native.so
+    |
+    |--- 'linux-arm64' folder
+    |       |--- native.so
+    |
+    |--- 'osx-x64' folder
+    |       |--- native.dylib
 ```
 
 <!-- reference links -->
@@ -295,6 +300,7 @@ managed.dll folder
 [New-ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
 [körnings kontroller]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
+[Använda Visual Studio Code för fel sökning av kompilerade cmdlets]: vscode/using-vscode-for-debugging-compiled-cmdlets.md
 [.NET Standard]: /dotnet/standard/net-standard
 [PowerShell-standard]: https://github.com/PowerShell/PowerShellStandard
 [PowerShell standard 5,1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
