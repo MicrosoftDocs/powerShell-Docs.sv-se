@@ -778,12 +778,14 @@
       items:
         - name: Använda Visual Studio Code
           href: dev-cross-plat/vscode/using-vscode.md
-        - name: Så här replikerar du ISE-upplevelsen i Visual Studio Code
+        - name: Så här replikerar du ISE-upplevelsen i VS Code
           href: dev-cross-plat/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
-        - name: Använda Visual Studio Code för att fjärredigera och fjärrfelsöka
+        - name: Använda VS Code för att fjärredigera och fjärrfelsöka
           href: dev-cross-plat/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
         - name: Förstå filkodning i VS Code och PowerShell
           href: dev-cross-plat/vscode/understanding-file-encoding.md
+        - name: Använda VS Code för att felsöka kompilerade cmdletar
+          href: dev-cross-plat/vscode/using-vscode-for-debugging-compiled-cmdlets.md
     - name: Skriva flyttbara moduler
       href: dev-cross-plat/writing-portable-modules.md
     - name: Skapa modulhjälp med PlatyPS
