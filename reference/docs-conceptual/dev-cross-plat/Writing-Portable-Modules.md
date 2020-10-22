@@ -1,43 +1,42 @@
 ---
-ms.date: 01/10/2020
+ms.date: 10/21/2020
 keywords: powershell,cmdlet
 title: Skriva portabla moduler
-ms.openlocfilehash: a6b2f8b263e71b6c9dbd50900536cb5072597e71
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: 9cd9e5bfc1110ce149d552f55ba20e35d9206c46
+ms.sourcegitcommit: 57c3527ec6c3124cb9cdab7b07ebb92ed159cb64
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158130"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92357768"
 ---
-# <a name="portable-modules"></a><span data-ttu-id="67f8f-103">Bärbara moduler</span><span class="sxs-lookup"><span data-stu-id="67f8f-103">Portable Modules</span></span>
+# <a name="portable-modules"></a><span data-ttu-id="34d03-103">Bärbara moduler</span><span class="sxs-lookup"><span data-stu-id="34d03-103">Portable Modules</span></span>
 
-<span data-ttu-id="67f8f-104">Windows PowerShell är skrivet för [.NET Framework][] medan PowerShell-kärnan skrivs för [.net Core][].</span><span class="sxs-lookup"><span data-stu-id="67f8f-104">Windows PowerShell is written for [.NET Framework][] while PowerShell Core is written for [.NET Core][].</span></span> <span data-ttu-id="67f8f-105">Bärbara moduler är moduler som fungerar både i Windows PowerShell och PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="67f8f-105">Portable modules are modules that work in both Windows PowerShell and PowerShell Core.</span></span> <span data-ttu-id="67f8f-106">Även om .NET Framework och .NET Core är mycket kompatibla finns det skillnader i de tillgängliga API: erna mellan de två.</span><span class="sxs-lookup"><span data-stu-id="67f8f-106">While .NET Framework and .NET Core are highly compatible, there are differences in the available APIs between the two.</span></span> <span data-ttu-id="67f8f-107">Det finns också skillnader i de API: er som är tillgängliga i Windows PowerShell och PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="67f8f-107">There are also differences in the APIs available in Windows PowerShell and PowerShell Core.</span></span> <span data-ttu-id="67f8f-108">Moduler som är avsedda att användas i båda miljöerna måste vara medvetna om dessa skillnader.</span><span class="sxs-lookup"><span data-stu-id="67f8f-108">Modules intended to be used in both environments need to be aware of these differences.</span></span>
+<span data-ttu-id="34d03-104">Windows PowerShell är skrivet för [.NET Framework][] medan PowerShell-kärnan skrivs för [.net Core][].</span><span class="sxs-lookup"><span data-stu-id="34d03-104">Windows PowerShell is written for [.NET Framework][] while PowerShell Core is written for [.NET Core][].</span></span> <span data-ttu-id="34d03-105">Bärbara moduler är moduler som fungerar både i Windows PowerShell och PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="34d03-105">Portable modules are modules that work in both Windows PowerShell and PowerShell Core.</span></span> <span data-ttu-id="34d03-106">Även om .NET Framework och .NET Core är mycket kompatibla finns det skillnader i de tillgängliga API: erna mellan de två.</span><span class="sxs-lookup"><span data-stu-id="34d03-106">While .NET Framework and .NET Core are highly compatible, there are differences in the available APIs between the two.</span></span> <span data-ttu-id="34d03-107">Det finns också skillnader i de API: er som är tillgängliga i Windows PowerShell och PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="34d03-107">There are also differences in the APIs available in Windows PowerShell and PowerShell Core.</span></span> <span data-ttu-id="34d03-108">Moduler som är avsedda att användas i båda miljöerna måste vara medvetna om dessa skillnader.</span><span class="sxs-lookup"><span data-stu-id="34d03-108">Modules intended to be used in both environments need to be aware of these differences.</span></span>
 
-## <a name="porting-an-existing-module"></a><span data-ttu-id="67f8f-109">Portning av en befintlig modul</span><span class="sxs-lookup"><span data-stu-id="67f8f-109">Porting an Existing Module</span></span>
+## <a name="porting-an-existing-module"></a><span data-ttu-id="34d03-109">Portning av en befintlig modul</span><span class="sxs-lookup"><span data-stu-id="34d03-109">Porting an existing module</span></span>
 
-### <a name="porting-a-pssnapin"></a><span data-ttu-id="67f8f-110">Porting a PSSnapIn</span><span class="sxs-lookup"><span data-stu-id="67f8f-110">Porting a PSSnapIn</span></span>
+### <a name="porting-a-pssnapin"></a><span data-ttu-id="34d03-110">Porting a PSSnapIn</span><span class="sxs-lookup"><span data-stu-id="34d03-110">Porting a PSSnapIn</span></span>
 
-<span data-ttu-id="67f8f-111">PowerShell- [modulerna](/powershell/scripting/developer/cmdlet/modules-and-snap-ins) stöds inte i PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="67f8f-111">PowerShell [SnapIns](/powershell/scripting/developer/cmdlet/modules-and-snap-ins) aren't supported in PowerShell Core.</span></span> <span data-ttu-id="67f8f-112">Det är dock enkelt att konvertera en PSSnapIn till en PowerShell-modul.</span><span class="sxs-lookup"><span data-stu-id="67f8f-112">However, it's trivial to convert a PSSnapIn to a PowerShell module.</span></span> <span data-ttu-id="67f8f-113">Normalt är registrerings koden PSSnapIn i en enda källfil för en klass som härleds från [PSSnapIn][].</span><span class="sxs-lookup"><span data-stu-id="67f8f-113">Typically, the PSSnapIn registration code is in a single source file of a class that derives from [PSSnapIn][].</span></span>
-<span data-ttu-id="67f8f-114">Ta bort den här käll filen från versionen. det behövs inte längre.</span><span class="sxs-lookup"><span data-stu-id="67f8f-114">Remove this source file from the build; it's no longer needed.</span></span>
+<span data-ttu-id="34d03-111">PowerShell- [modulerna](/powershell/scripting/developer/cmdlet/modules-and-snap-ins) stöds inte i PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="34d03-111">PowerShell [SnapIns](/powershell/scripting/developer/cmdlet/modules-and-snap-ins) aren't supported in PowerShell Core.</span></span> <span data-ttu-id="34d03-112">Det är dock enkelt att konvertera en PSSnapIn till en PowerShell-modul.</span><span class="sxs-lookup"><span data-stu-id="34d03-112">However, it's trivial to convert a PSSnapIn to a PowerShell module.</span></span> <span data-ttu-id="34d03-113">Normalt är registrerings koden PSSnapIn i en enda källfil för en klass som härleds från [PSSnapIn][].</span><span class="sxs-lookup"><span data-stu-id="34d03-113">Typically, the PSSnapIn registration code is in a single source file of a class that derives from [PSSnapIn][].</span></span> <span data-ttu-id="34d03-114">Ta bort den här käll filen från versionen. det behövs inte längre.</span><span class="sxs-lookup"><span data-stu-id="34d03-114">Remove this source file from the build; it's no longer needed.</span></span>
 
-<span data-ttu-id="67f8f-115">Använd [New-ModuleManifest][] för att skapa ett nytt modul-manifest som ersätter behovet av registrerings koden för PSSnapIn.</span><span class="sxs-lookup"><span data-stu-id="67f8f-115">Use [New-ModuleManifest][] to create a new module manifest that replaces the need for the PSSnapIn registration code.</span></span> <span data-ttu-id="67f8f-116">Några av värdena från **PSSnapIn** (till exempel **Beskrivning**) kan återanvändas i manifestet för modulen.</span><span class="sxs-lookup"><span data-stu-id="67f8f-116">Some of the values from the **PSSnapIn** (such as **Description**) can be reused within the module manifest.</span></span>
+<span data-ttu-id="34d03-115">Använd [New-ModuleManifest][] för att skapa ett nytt modul-manifest som ersätter behovet av registrerings koden för PSSnapIn.</span><span class="sxs-lookup"><span data-stu-id="34d03-115">Use [New-ModuleManifest][] to create a new module manifest that replaces the need for the PSSnapIn registration code.</span></span> <span data-ttu-id="34d03-116">Några av värdena från **PSSnapIn** (till exempel **Beskrivning**) kan återanvändas i manifestet för modulen.</span><span class="sxs-lookup"><span data-stu-id="34d03-116">Some of the values from the **PSSnapIn** (such as **Description**) can be reused within the module manifest.</span></span>
 
-<span data-ttu-id="67f8f-117">Egenskapen **RootModule** i modulen manifest ska anges till namnet på sammansättningen (dll) som implementerar cmdletarna.</span><span class="sxs-lookup"><span data-stu-id="67f8f-117">The **RootModule** property in the module manifest should be set to the name of the assembly (dll) implementing the cmdlets.</span></span>
+<span data-ttu-id="34d03-117">Egenskapen **RootModule** i modulen manifest ska anges till namnet på sammansättningen (dll) som implementerar cmdletarna.</span><span class="sxs-lookup"><span data-stu-id="34d03-117">The **RootModule** property in the module manifest should be set to the name of the assembly (dll) implementing the cmdlets.</span></span>
 
-### <a name="the-net-portability-analyzer-aka-apiport"></a><span data-ttu-id="67f8f-118">.NET-portbaserad analys för aka (APIPort)</span><span class="sxs-lookup"><span data-stu-id="67f8f-118">The .NET Portability Analyzer (aka APIPort)</span></span>
+### <a name="the-net-portability-analyzer-aka-apiport"></a><span data-ttu-id="34d03-118">.NET-portbaserad analys för aka (APIPort)</span><span class="sxs-lookup"><span data-stu-id="34d03-118">The .NET Portability Analyzer (aka APIPort)</span></span>
 
-<span data-ttu-id="67f8f-119">Om du vill att moduler som är skrivna för Windows PowerShell ska fungera med PowerShell-kärnan börjar du med [.net-ports Analyzer][].</span><span class="sxs-lookup"><span data-stu-id="67f8f-119">To port modules written for Windows PowerShell to work with PowerShell Core, start with the [.NET Portability Analyzer][].</span></span> <span data-ttu-id="67f8f-120">Kör det här verktyget mot den kompilerade sammansättningen för att avgöra om de .NET-API: er som används i modulen är kompatibla med .NET Framework, .NET Core och andra .NET-körningar.</span><span class="sxs-lookup"><span data-stu-id="67f8f-120">Run this tool against your compiled assembly to determine if the .NET APIs used in the module are compatible with .NET Framework, .NET Core, and other .NET runtimes.</span></span> <span data-ttu-id="67f8f-121">Verktyget föreslår alternativa API: er om de finns.</span><span class="sxs-lookup"><span data-stu-id="67f8f-121">The tool suggests alternate APIs if they exist.</span></span> <span data-ttu-id="67f8f-122">Annars kan du behöva lägga till [körnings kontroller][] och begränsa funktioner som inte är tillgängliga i vissa körningar.</span><span class="sxs-lookup"><span data-stu-id="67f8f-122">Otherwise, you may need to add [runtime checks][] and restrict capabilities not available in specific runtimes.</span></span>
+<span data-ttu-id="34d03-119">Om du vill att moduler som är skrivna för Windows PowerShell ska fungera med PowerShell-kärnan börjar du med [.net-ports Analyzer][].</span><span class="sxs-lookup"><span data-stu-id="34d03-119">To port modules written for Windows PowerShell to work with PowerShell Core, start with the [.NET Portability Analyzer][].</span></span> <span data-ttu-id="34d03-120">Kör det här verktyget mot den kompilerade sammansättningen för att avgöra om de .NET-API: er som används i modulen är kompatibla med .NET Framework, .NET Core och andra .NET-körningar.</span><span class="sxs-lookup"><span data-stu-id="34d03-120">Run this tool against your compiled assembly to determine if the .NET APIs used in the module are compatible with .NET Framework, .NET Core, and other .NET runtimes.</span></span> <span data-ttu-id="34d03-121">Verktyget föreslår alternativa API: er om de finns.</span><span class="sxs-lookup"><span data-stu-id="34d03-121">The tool suggests alternate APIs if they exist.</span></span> <span data-ttu-id="34d03-122">Annars kan du behöva lägga till [körnings kontroller][] och begränsa funktioner som inte är tillgängliga i vissa körningar.</span><span class="sxs-lookup"><span data-stu-id="34d03-122">Otherwise, you may need to add [runtime checks][] and restrict capabilities not available in specific runtimes.</span></span>
 
-## <a name="creating-a-new-module"></a><span data-ttu-id="67f8f-123">Skapa en ny modul</span><span class="sxs-lookup"><span data-stu-id="67f8f-123">Creating a New Module</span></span>
+## <a name="creating-a-new-module"></a><span data-ttu-id="34d03-123">Skapa en ny modul</span><span class="sxs-lookup"><span data-stu-id="34d03-123">Creating a new module</span></span>
 
-<span data-ttu-id="67f8f-124">Om du skapar en ny modul är rekommendationen att använda [.net CLI][].</span><span class="sxs-lookup"><span data-stu-id="67f8f-124">If creating a new module, the recommendation is to use the [.NET CLI][].</span></span>
+<span data-ttu-id="34d03-124">Om du skapar en ny modul är rekommendationen att använda [.net CLI][].</span><span class="sxs-lookup"><span data-stu-id="34d03-124">If creating a new module, the recommendation is to use the [.NET CLI][].</span></span>
 
-### <a name="installing-the-powershell-standard-module-template"></a><span data-ttu-id="67f8f-125">Installera PowerShell-modulen för standard mal len</span><span class="sxs-lookup"><span data-stu-id="67f8f-125">Installing the PowerShell Standard Module Template</span></span>
+### <a name="installing-the-powershell-standard-module-template"></a><span data-ttu-id="34d03-125">Installera PowerShell-modulen för standard mal len</span><span class="sxs-lookup"><span data-stu-id="34d03-125">Installing the PowerShell Standard module template</span></span>
 
-<span data-ttu-id="67f8f-126">När .NET CLI har installerats installerar du ett mall bibliotek för att generera en enkel PowerShell-modul.</span><span class="sxs-lookup"><span data-stu-id="67f8f-126">Once the .NET CLI is installed, install a template library to generate a simple PowerShell module.</span></span>
-<span data-ttu-id="67f8f-127">Modulen är kompatibel med Windows PowerShell, PowerShell Core, Windows, Linux och macOS.</span><span class="sxs-lookup"><span data-stu-id="67f8f-127">The module will be compatible with Windows PowerShell, PowerShell Core, Windows, Linux, and macOS.</span></span>
+<span data-ttu-id="34d03-126">När .NET CLI har installerats installerar du ett mall bibliotek för att generera en enkel PowerShell-modul.</span><span class="sxs-lookup"><span data-stu-id="34d03-126">Once the .NET CLI is installed, install a template library to generate a simple PowerShell module.</span></span>
+<span data-ttu-id="34d03-127">Modulen är kompatibel med Windows PowerShell, PowerShell Core, Windows, Linux och macOS.</span><span class="sxs-lookup"><span data-stu-id="34d03-127">The module will be compatible with Windows PowerShell, PowerShell Core, Windows, Linux, and macOS.</span></span>
 
-<span data-ttu-id="67f8f-128">I följande exempel visas hur du installerar mallen:</span><span class="sxs-lookup"><span data-stu-id="67f8f-128">The following example shows how to install the template:</span></span>
+<span data-ttu-id="34d03-128">I följande exempel visas hur du installerar mallen:</span><span class="sxs-lookup"><span data-stu-id="34d03-128">The following example shows how to install the template:</span></span>
 
 ```powershell
 dotnet new -i Microsoft.PowerShell.Standard.Module.Template
@@ -65,17 +64,17 @@ Options:
   -lang, --language   Filters templates based on language and specifies the language of the template to create.
 
 
-Templates                                         Short Name         Language          Tags
-----------------------------------------------------------------------------------------------------------------------------
-Console Application                               console            [C#], F#, VB      Common/Console
-Class library                                     classlib           [C#], F#, VB      Common/Library
-PowerShell Standard Module                        psmodule           [C#]              Library/PowerShell/Module
+Templates                        Short Name         Language          Tags
+-----------------------------------------------------------------------------------------------
+Console Application              console            [C#], F#, VB      Common/Console
+Class library                    classlib           [C#], F#, VB      Common/Library
+PowerShell Standard Module       psmodule           [C#]              Library/PowerShell/Module
 ...
 ```
 
-### <a name="creating-a-new-module-project"></a><span data-ttu-id="67f8f-129">Skapa ett nytt modul-projekt</span><span class="sxs-lookup"><span data-stu-id="67f8f-129">Creating a New Module Project</span></span>
+### <a name="creating-a-new-module-project"></a><span data-ttu-id="34d03-129">Skapa ett nytt modul-projekt</span><span class="sxs-lookup"><span data-stu-id="34d03-129">Creating a new module project</span></span>
 
-<span data-ttu-id="67f8f-130">När mallen har installerats kan du skapa ett nytt PowerShell-Modulnamn med den mallen.</span><span class="sxs-lookup"><span data-stu-id="67f8f-130">After the template is installed, you can create a new PowerShell module project using that template.</span></span> <span data-ttu-id="67f8f-131">I det här exemplet kallas exempel modulen "module".</span><span class="sxs-lookup"><span data-stu-id="67f8f-131">In this example, the sample module is called 'myModule'.</span></span>
+<span data-ttu-id="34d03-130">När mallen har installerats kan du skapa ett nytt PowerShell-Modulnamn med den mallen.</span><span class="sxs-lookup"><span data-stu-id="34d03-130">After the template is installed, you can create a new PowerShell module project using that template.</span></span> <span data-ttu-id="34d03-131">I det här exemplet kallas exempel modulen "module".</span><span class="sxs-lookup"><span data-stu-id="34d03-131">In this example, the sample module is called 'myModule'.</span></span>
 
 ```
 PS> mkdir myModule
@@ -102,9 +101,9 @@ Running 'dotnet restore' on C:\Users\Steve\myModule\myModule.csproj...
 Restore succeeded.
 ```
 
-### <a name="building-the-module"></a><span data-ttu-id="67f8f-132">Modulen skapas</span><span class="sxs-lookup"><span data-stu-id="67f8f-132">Building the Module</span></span>
+### <a name="building-the-module"></a><span data-ttu-id="34d03-132">Modulen skapas</span><span class="sxs-lookup"><span data-stu-id="34d03-132">Building the module</span></span>
 
-<span data-ttu-id="67f8f-133">Använd standard .NET CLI-kommandon för att bygga projektet.</span><span class="sxs-lookup"><span data-stu-id="67f8f-133">Use standard .NET CLI commands to build the project.</span></span>
+<span data-ttu-id="34d03-133">Använd standard .NET CLI-kommandon för att bygga projektet.</span><span class="sxs-lookup"><span data-stu-id="34d03-133">Use standard .NET CLI commands to build the project.</span></span>
 
 ```powershell
 dotnet build
@@ -125,9 +124,9 @@ Build succeeded.
 Time Elapsed 00:00:05.40
 ```
 
-### <a name="testing-the-module"></a><span data-ttu-id="67f8f-134">Testa modulen</span><span class="sxs-lookup"><span data-stu-id="67f8f-134">Testing the Module</span></span>
+### <a name="testing-the-module"></a><span data-ttu-id="34d03-134">Testa modulen</span><span class="sxs-lookup"><span data-stu-id="34d03-134">Testing the module</span></span>
 
-<span data-ttu-id="67f8f-135">När du har skapat modulen kan du importera den och köra exempel-cmdleten.</span><span class="sxs-lookup"><span data-stu-id="67f8f-135">After building the module, you can import it and execute the sample cmdlet.</span></span>
+<span data-ttu-id="34d03-135">När du har skapat modulen kan du importera den och köra exempel-cmdleten.</span><span class="sxs-lookup"><span data-stu-id="34d03-135">After building the module, you can import it and execute the sample cmdlet.</span></span>
 
 ```powershell
 Import-Module .\bin\Debug\netstandard2.0\myModule.dll
@@ -156,54 +155,60 @@ FavoriteNumber FavoritePet
              7 Cat
 ```
 
-<span data-ttu-id="67f8f-136">I följande avsnitt beskrivs några av de tekniker som används av den här mallen.</span><span class="sxs-lookup"><span data-stu-id="67f8f-136">The following sections describe in detail some of the technologies used by this template.</span></span>
+### <a name="debugging-the-module"></a><span data-ttu-id="34d03-136">Felsöka modulen</span><span class="sxs-lookup"><span data-stu-id="34d03-136">Debugging the module</span></span>
 
-## <a name="net-standard-library"></a><span data-ttu-id="67f8f-137">.NET standard-bibliotek</span><span class="sxs-lookup"><span data-stu-id="67f8f-137">.NET Standard Library</span></span>
+<span data-ttu-id="34d03-137">En guide om hur du konfigurerar Visual Studio Code för att felsöka modulen finns i [använda Visual Studio Code för fel sökning av kompilerade cmdlets][].</span><span class="sxs-lookup"><span data-stu-id="34d03-137">For a guide on setting up Visual Studio Code to debug the module, see [Using Visual Studio Code for debugging compiled cmdlets][].</span></span>
 
-<span data-ttu-id="67f8f-138">[.Net standard][] är en formell specifikation av .NET-API: er som är tillgängliga i alla .net-implementeringar.</span><span class="sxs-lookup"><span data-stu-id="67f8f-138">[.NET Standard][] is a formal specification of .NET APIs that are available in all .NET implementations.</span></span> <span data-ttu-id="67f8f-139">Hanterad kod för .NET standard fungerar med de .NET Framework-och .NET Core-versioner som är kompatibla med den versionen av .NET standard.</span><span class="sxs-lookup"><span data-stu-id="67f8f-139">Managed code targeting .NET Standard works with the .NET Framework and .NET Core versions that are compatible with that version of the .NET Standard.</span></span>
+## <a name="supporting-technologies"></a><span data-ttu-id="34d03-138">Stöd tekniker</span><span class="sxs-lookup"><span data-stu-id="34d03-138">Supporting technologies</span></span>
 
-> [!NOTE]
-> <span data-ttu-id="67f8f-140">Även om ett API kan finnas i .NET standard kan API-implementeringen i .NET Core medföra en `PlatformNotSupportedException` vid körning, så för att kontrol lera kompatibilitet med Windows PowerShell och PowerShell Core är det bästa sättet att köra tester för modulen i båda miljöerna.</span><span class="sxs-lookup"><span data-stu-id="67f8f-140">Although an API may exist in .NET Standard, the API implementation in .NET Core may throw a `PlatformNotSupportedException` at runtime, so to verify compatibility with Windows PowerShell and PowerShell Core, the best practice is to run tests for your module within both environments.</span></span>
-> <span data-ttu-id="67f8f-141">Kör även tester på Linux och macOS om modulen är avsedd att vara plattforms oberoende.</span><span class="sxs-lookup"><span data-stu-id="67f8f-141">Also run tests on Linux and macOS if your module is intended to be cross-platform.</span></span>
+<span data-ttu-id="34d03-139">I följande avsnitt beskrivs några av de tekniker som används av den här mallen.</span><span class="sxs-lookup"><span data-stu-id="34d03-139">The following sections describe in detail some of the technologies used by this template.</span></span>
 
-<span data-ttu-id="67f8f-142">Genom att använda .NET standard kan du se till att inkompatibla API: er inte har introducerats av misstag i modulen, eftersom modulen utvecklas.</span><span class="sxs-lookup"><span data-stu-id="67f8f-142">Targeting .NET Standard helps ensure that, as the module evolves, incompatible APIs don't accidentally get introduced into the module.</span></span> <span data-ttu-id="67f8f-143">Inkompatibiliteter upptäcks vid kompilering i stället för körning.</span><span class="sxs-lookup"><span data-stu-id="67f8f-143">Incompatibilities are discovered at compile time instead of runtime.</span></span>
+### <a name="net-standard-library"></a><span data-ttu-id="34d03-140">.NET standard-bibliotek</span><span class="sxs-lookup"><span data-stu-id="34d03-140">.NET Standard Library</span></span>
 
-<span data-ttu-id="67f8f-144">Men det är inte nödvändigt att använda .NET standard för att en modul ska fungera med både Windows PowerShell och PowerShell Core, så länge du använder kompatibla API: er.</span><span class="sxs-lookup"><span data-stu-id="67f8f-144">However, it isn't required to target .NET Standard for a module to work with both Windows PowerShell and PowerShell Core, as long as you use compatible APIs.</span></span> <span data-ttu-id="67f8f-145">Det mellanliggande språket (IL) är kompatibelt mellan de två körningarna.</span><span class="sxs-lookup"><span data-stu-id="67f8f-145">The Intermediate Language (IL) is compatible between the two runtimes.</span></span> <span data-ttu-id="67f8f-146">Du kan rikta .NET Framework 4.6.1, som är kompatibel med .NET standard 2,0.</span><span class="sxs-lookup"><span data-stu-id="67f8f-146">You can target .NET Framework 4.6.1, which is compatible with .NET Standard 2.0.</span></span> <span data-ttu-id="67f8f-147">Om du inte använder API: er utanför .NET standard 2,0, fungerar modulen med PowerShell Core 6 utan att kompilera om.</span><span class="sxs-lookup"><span data-stu-id="67f8f-147">If you don't use APIs outside of .NET Standard 2.0, then your module works with PowerShell Core 6 without recompilation.</span></span>
-
-## <a name="powershell-standard-library"></a><span data-ttu-id="67f8f-148">PowerShell-standardbibliotek</span><span class="sxs-lookup"><span data-stu-id="67f8f-148">PowerShell Standard Library</span></span>
-
-<span data-ttu-id="67f8f-149">[PowerShell][] -standardbiblioteket är en formell specifikation av PowerShell-API: er som är tillgängliga i alla PowerShell-versioner som är större än eller lika med den standard versionen.</span><span class="sxs-lookup"><span data-stu-id="67f8f-149">The [PowerShell Standard][] library is a formal specification of PowerShell APIs available in all PowerShell versions greater than or equal to the version of that standard.</span></span>
-
-<span data-ttu-id="67f8f-150">Till exempel är [PowerShell Standard 5,1][] kompatibelt med både Windows PowerShell 5,1 och PowerShell Core 6,0 eller senare.</span><span class="sxs-lookup"><span data-stu-id="67f8f-150">For example, [PowerShell Standard 5.1][] is compatible with both Windows PowerShell 5.1 and PowerShell Core 6.0 or newer.</span></span>
-
-<span data-ttu-id="67f8f-151">Vi rekommenderar att du kompilerar modulen med PowerShell-standardbiblioteket.</span><span class="sxs-lookup"><span data-stu-id="67f8f-151">We recommend you compile your module using PowerShell Standard Library.</span></span> <span data-ttu-id="67f8f-152">Biblioteket säkerställer att API: erna är tillgängliga och implementerade i både Windows PowerShell och PowerShell Core 6.</span><span class="sxs-lookup"><span data-stu-id="67f8f-152">The library ensures the APIs are available and implemented in both Windows PowerShell and PowerShell Core 6.</span></span>
-<span data-ttu-id="67f8f-153">PowerShell-standarden är avsedd att alltid vidarebefordras-kompatibel.</span><span class="sxs-lookup"><span data-stu-id="67f8f-153">PowerShell Standard is intended to always be forwards-compatible.</span></span> <span data-ttu-id="67f8f-154">En modul som skapats med PowerShell standard library 5,1 är alltid kompatibel med framtida versioner av PowerShell.</span><span class="sxs-lookup"><span data-stu-id="67f8f-154">A module built using PowerShell Standard Library 5.1 will always be compatible with future versions of PowerShell.</span></span>
-
-## <a name="module-manifest"></a><span data-ttu-id="67f8f-155">Modul manifest</span><span class="sxs-lookup"><span data-stu-id="67f8f-155">Module Manifest</span></span>
-
-### <a name="indicating-compatibility-with-windows-powershell-and-powershell-core"></a><span data-ttu-id="67f8f-156">Indikerar kompatibilitet med Windows PowerShell och PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="67f8f-156">Indicating Compatibility With Windows PowerShell and PowerShell Core</span></span>
-
-<span data-ttu-id="67f8f-157">När du har verifierat att modulen fungerar med både Windows PowerShell och PowerShell Core bör modulens manifest uttryckligen indikera kompatibilitet med hjälp av egenskapen [CompatiblePSEditions][] .</span><span class="sxs-lookup"><span data-stu-id="67f8f-157">After validating that your module works with both Windows PowerShell and PowerShell Core, the module manifest should explicitly indicate compatibility by using the [CompatiblePSEditions][] property.</span></span> <span data-ttu-id="67f8f-158">Värdet `Desktop` innebär att modulen är kompatibel med Windows PowerShell, medan värdet `Core` innebär att modulen är kompatibel med PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="67f8f-158">A value of `Desktop` means that the module is compatible with Windows PowerShell, while a value of `Core` means that the module is compatible with PowerShell Core.</span></span> <span data-ttu-id="67f8f-159">Inklusive både `Desktop` och `Core` innebär att modulen är kompatibel med både Windows PowerShell och PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="67f8f-159">Including both `Desktop` and `Core` means that the module is compatible with both Windows PowerShell and PowerShell Core.</span></span>
+<span data-ttu-id="34d03-141">[.Net standard][] är en formell specifikation av .NET-API: er som är tillgängliga i alla .net-implementeringar.</span><span class="sxs-lookup"><span data-stu-id="34d03-141">[.NET Standard][] is a formal specification of .NET APIs that are available in all .NET implementations.</span></span> <span data-ttu-id="34d03-142">Hanterad kod för .NET standard fungerar med de .NET Framework-och .NET Core-versioner som är kompatibla med den versionen av .NET standard.</span><span class="sxs-lookup"><span data-stu-id="34d03-142">Managed code targeting .NET Standard works with the .NET Framework and .NET Core versions that are compatible with that version of the .NET Standard.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="67f8f-160">`Core` innebär inte automatiskt att modulen är kompatibel med Windows, Linux och macOS.</span><span class="sxs-lookup"><span data-stu-id="67f8f-160">`Core` does not automatically mean that the module is compatible with Windows, Linux, and macOS.</span></span>
-> <span data-ttu-id="67f8f-161">Egenskapen **CompatiblePSEditions** introducerades i PowerShell v5.</span><span class="sxs-lookup"><span data-stu-id="67f8f-161">The **CompatiblePSEditions** property was introduced in PowerShell v5.</span></span> <span data-ttu-id="67f8f-162">Modul manifest som använder egenskapen **CompatiblePSEditions** kan inte läsas in i tidigare versioner än PowerShell v5.</span><span class="sxs-lookup"><span data-stu-id="67f8f-162">Module manifests that use the **CompatiblePSEditions** property fail to load in versions prior to PowerShell v5.</span></span>
+> <span data-ttu-id="34d03-143">Även om ett API kan finnas i .NET standard kan API-implementeringen i .NET Core medföra en `PlatformNotSupportedException` vid körning, så för att kontrol lera kompatibilitet med Windows PowerShell och PowerShell Core är det bästa sättet att köra tester för modulen i båda miljöerna.</span><span class="sxs-lookup"><span data-stu-id="34d03-143">Although an API may exist in .NET Standard, the API implementation in .NET Core may throw a `PlatformNotSupportedException` at runtime, so to verify compatibility with Windows PowerShell and PowerShell Core, the best practice is to run tests for your module within both environments.</span></span>
+> <span data-ttu-id="34d03-144">Kör även tester på Linux och macOS om modulen är avsedd att vara plattforms oberoende.</span><span class="sxs-lookup"><span data-stu-id="34d03-144">Also run tests on Linux and macOS if your module is intended to be cross-platform.</span></span>
 
-### <a name="indicating-os-compatibility"></a><span data-ttu-id="67f8f-163">Indikerar OS-kompatibilitet</span><span class="sxs-lookup"><span data-stu-id="67f8f-163">Indicating OS Compatibility</span></span>
+<span data-ttu-id="34d03-145">Genom att använda .NET standard kan du se till att inkompatibla API: er inte har introducerats av misstag i modulen, eftersom modulen utvecklas.</span><span class="sxs-lookup"><span data-stu-id="34d03-145">Targeting .NET Standard helps ensure that, as the module evolves, incompatible APIs don't accidentally get introduced into the module.</span></span> <span data-ttu-id="34d03-146">Inkompatibiliteter upptäcks vid kompilering i stället för körning.</span><span class="sxs-lookup"><span data-stu-id="34d03-146">Incompatibilities are discovered at compile time instead of runtime.</span></span>
 
-<span data-ttu-id="67f8f-164">Kontrol lera först att modulen fungerar på Linux och macOS.</span><span class="sxs-lookup"><span data-stu-id="67f8f-164">First, validate that your module works on Linux and macOS.</span></span> <span data-ttu-id="67f8f-165">Sedan anger du kompatibiliteten med dessa operativ system i manifestet för modulen.</span><span class="sxs-lookup"><span data-stu-id="67f8f-165">Next, indicate compatibility with those operating systems in the module manifest.</span></span> <span data-ttu-id="67f8f-166">Detta gör det enklare för användarna att hitta modulen för sitt operativ system när de publiceras till [PowerShell-galleriet][].</span><span class="sxs-lookup"><span data-stu-id="67f8f-166">This makes it easier for users to find your module for their operating system when published to the [PowerShell Gallery][].</span></span>
+<span data-ttu-id="34d03-147">Men det är inte nödvändigt att använda .NET standard för att en modul ska fungera med både Windows PowerShell och PowerShell Core, så länge du använder kompatibla API: er.</span><span class="sxs-lookup"><span data-stu-id="34d03-147">However, it isn't required to target .NET Standard for a module to work with both Windows PowerShell and PowerShell Core, as long as you use compatible APIs.</span></span> <span data-ttu-id="34d03-148">Det mellanliggande språket (IL) är kompatibelt mellan de två körningarna.</span><span class="sxs-lookup"><span data-stu-id="34d03-148">The Intermediate Language (IL) is compatible between the two runtimes.</span></span> <span data-ttu-id="34d03-149">Du kan rikta .NET Framework 4.6.1, som är kompatibel med .NET standard 2,0.</span><span class="sxs-lookup"><span data-stu-id="34d03-149">You can target .NET Framework 4.6.1, which is compatible with .NET Standard 2.0.</span></span> <span data-ttu-id="34d03-150">Om du inte använder API: er utanför .NET standard 2,0, fungerar modulen med PowerShell Core 6 utan att kompilera om.</span><span class="sxs-lookup"><span data-stu-id="34d03-150">If you don't use APIs outside of .NET Standard 2.0, then your module works with PowerShell Core 6 without recompilation.</span></span>
 
-<span data-ttu-id="67f8f-167">I modulen manifest `PrivateData` har egenskapen en `PSData` underordnad egenskap.</span><span class="sxs-lookup"><span data-stu-id="67f8f-167">Within the module manifest, the `PrivateData` property has a `PSData` sub-property.</span></span> <span data-ttu-id="67f8f-168">Den valfria `Tags` egenskapen för `PSData` tar en matris med värden som visas i PowerShell-galleriet.</span><span class="sxs-lookup"><span data-stu-id="67f8f-168">The optional `Tags` property of `PSData` takes an array of values that show up in PowerShell Gallery.</span></span> <span data-ttu-id="67f8f-169">PowerShell-galleriet har stöd för följande kompatibilitetsinställningar:</span><span class="sxs-lookup"><span data-stu-id="67f8f-169">The PowerShell Gallery supports the following compatibility values:</span></span>
+### <a name="powershell-standard-library"></a><span data-ttu-id="34d03-151">PowerShell-standardbibliotek</span><span class="sxs-lookup"><span data-stu-id="34d03-151">PowerShell Standard Library</span></span>
 
-| <span data-ttu-id="67f8f-170">Tagga</span><span class="sxs-lookup"><span data-stu-id="67f8f-170">Tag</span></span>               | <span data-ttu-id="67f8f-171">Description</span><span class="sxs-lookup"><span data-stu-id="67f8f-171">Description</span></span>                                |
+<span data-ttu-id="34d03-152">[PowerShell][] -standardbiblioteket är en formell specifikation av PowerShell-API: er som är tillgängliga i alla PowerShell-versioner som är större än eller lika med den standard versionen.</span><span class="sxs-lookup"><span data-stu-id="34d03-152">The [PowerShell Standard][] library is a formal specification of PowerShell APIs available in all PowerShell versions greater than or equal to the version of that standard.</span></span>
+
+<span data-ttu-id="34d03-153">Till exempel är [PowerShell Standard 5,1][] kompatibelt med både Windows PowerShell 5,1 och PowerShell Core 6,0 eller senare.</span><span class="sxs-lookup"><span data-stu-id="34d03-153">For example, [PowerShell Standard 5.1][] is compatible with both Windows PowerShell 5.1 and PowerShell Core 6.0 or newer.</span></span>
+
+<span data-ttu-id="34d03-154">Vi rekommenderar att du kompilerar modulen med PowerShell-standardbiblioteket.</span><span class="sxs-lookup"><span data-stu-id="34d03-154">We recommend you compile your module using PowerShell Standard Library.</span></span> <span data-ttu-id="34d03-155">Biblioteket säkerställer att API: erna är tillgängliga och implementerade i både Windows PowerShell och PowerShell Core 6.</span><span class="sxs-lookup"><span data-stu-id="34d03-155">The library ensures the APIs are available and implemented in both Windows PowerShell and PowerShell Core 6.</span></span>
+<span data-ttu-id="34d03-156">PowerShell-standarden är avsedd att alltid vidarebefordras-kompatibel.</span><span class="sxs-lookup"><span data-stu-id="34d03-156">PowerShell Standard is intended to always be forwards-compatible.</span></span> <span data-ttu-id="34d03-157">En modul som skapats med PowerShell standard library 5,1 är alltid kompatibel med framtida versioner av PowerShell.</span><span class="sxs-lookup"><span data-stu-id="34d03-157">A module built using PowerShell Standard Library 5.1 will always be compatible with future versions of PowerShell.</span></span>
+
+### <a name="module-manifest"></a><span data-ttu-id="34d03-158">Modul manifest</span><span class="sxs-lookup"><span data-stu-id="34d03-158">Module Manifest</span></span>
+
+#### <a name="indicating-compatibility-with-windows-powershell-and-powershell-core"></a><span data-ttu-id="34d03-159">Indikerar kompatibilitet med Windows PowerShell och PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="34d03-159">Indicating Compatibility With Windows PowerShell and PowerShell Core</span></span>
+
+<span data-ttu-id="34d03-160">När du har verifierat att modulen fungerar med både Windows PowerShell och PowerShell Core bör modulens manifest uttryckligen indikera kompatibilitet med hjälp av egenskapen [CompatiblePSEditions][] .</span><span class="sxs-lookup"><span data-stu-id="34d03-160">After validating that your module works with both Windows PowerShell and PowerShell Core, the module manifest should explicitly indicate compatibility by using the [CompatiblePSEditions][] property.</span></span> <span data-ttu-id="34d03-161">Värdet `Desktop` innebär att modulen är kompatibel med Windows PowerShell, medan värdet `Core` innebär att modulen är kompatibel med PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="34d03-161">A value of `Desktop` means that the module is compatible with Windows PowerShell, while a value of `Core` means that the module is compatible with PowerShell Core.</span></span> <span data-ttu-id="34d03-162">Inklusive både `Desktop` och `Core` innebär att modulen är kompatibel med både Windows PowerShell och PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="34d03-162">Including both `Desktop` and `Core` means that the module is compatible with both Windows PowerShell and PowerShell Core.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="34d03-163">`Core` innebär inte automatiskt att modulen är kompatibel med Windows, Linux och macOS.</span><span class="sxs-lookup"><span data-stu-id="34d03-163">`Core` does not automatically mean that the module is compatible with Windows, Linux, and macOS.</span></span>
+> <span data-ttu-id="34d03-164">Egenskapen **CompatiblePSEditions** introducerades i PowerShell v5.</span><span class="sxs-lookup"><span data-stu-id="34d03-164">The **CompatiblePSEditions** property was introduced in PowerShell v5.</span></span> <span data-ttu-id="34d03-165">Modul manifest som använder egenskapen **CompatiblePSEditions** kan inte läsas in i tidigare versioner än PowerShell v5.</span><span class="sxs-lookup"><span data-stu-id="34d03-165">Module manifests that use the **CompatiblePSEditions** property fail to load in versions prior to PowerShell v5.</span></span>
+
+### <a name="indicating-os-compatibility"></a><span data-ttu-id="34d03-166">Indikerar OS-kompatibilitet</span><span class="sxs-lookup"><span data-stu-id="34d03-166">Indicating OS Compatibility</span></span>
+
+<span data-ttu-id="34d03-167">Kontrol lera först att modulen fungerar på Linux och macOS.</span><span class="sxs-lookup"><span data-stu-id="34d03-167">First, validate that your module works on Linux and macOS.</span></span> <span data-ttu-id="34d03-168">Sedan anger du kompatibiliteten med dessa operativ system i manifestet för modulen.</span><span class="sxs-lookup"><span data-stu-id="34d03-168">Next, indicate compatibility with those operating systems in the module manifest.</span></span> <span data-ttu-id="34d03-169">Detta gör det enklare för användarna att hitta modulen för sitt operativ system när de publiceras till [PowerShell-galleriet][].</span><span class="sxs-lookup"><span data-stu-id="34d03-169">This makes it easier for users to find your module for their operating system when published to the [PowerShell Gallery][].</span></span>
+
+<span data-ttu-id="34d03-170">I modulen manifest `PrivateData` har egenskapen en `PSData` underordnad egenskap.</span><span class="sxs-lookup"><span data-stu-id="34d03-170">Within the module manifest, the `PrivateData` property has a `PSData` sub-property.</span></span> <span data-ttu-id="34d03-171">Den valfria `Tags` egenskapen för `PSData` tar en matris med värden som visas i PowerShell-galleriet.</span><span class="sxs-lookup"><span data-stu-id="34d03-171">The optional `Tags` property of `PSData` takes an array of values that show up in PowerShell Gallery.</span></span> <span data-ttu-id="34d03-172">PowerShell-galleriet har stöd för följande kompatibilitetsinställningar:</span><span class="sxs-lookup"><span data-stu-id="34d03-172">The PowerShell Gallery supports the following compatibility values:</span></span>
+
+| <span data-ttu-id="34d03-173">Tagga</span><span class="sxs-lookup"><span data-stu-id="34d03-173">Tag</span></span>               | <span data-ttu-id="34d03-174">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="34d03-174">Description</span></span>                                |
 |-------------------|--------------------------------------------|
-| <span data-ttu-id="67f8f-172">PSEdition_Core</span><span class="sxs-lookup"><span data-stu-id="67f8f-172">PSEdition_Core</span></span>    | <span data-ttu-id="67f8f-173">Kompatibel med PowerShell Core 6</span><span class="sxs-lookup"><span data-stu-id="67f8f-173">Compatible with PowerShell Core 6</span></span>          |
-| <span data-ttu-id="67f8f-174">PSEdition_Desktop</span><span class="sxs-lookup"><span data-stu-id="67f8f-174">PSEdition_Desktop</span></span> | <span data-ttu-id="67f8f-175">Kompatibel med Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="67f8f-175">Compatible with Windows PowerShell</span></span>         |
-| <span data-ttu-id="67f8f-176">Windows</span><span class="sxs-lookup"><span data-stu-id="67f8f-176">Windows</span></span>           | <span data-ttu-id="67f8f-177">Kompatibel med Windows</span><span class="sxs-lookup"><span data-stu-id="67f8f-177">Compatible with Windows</span></span>                    |
-| <span data-ttu-id="67f8f-178">Linux</span><span class="sxs-lookup"><span data-stu-id="67f8f-178">Linux</span></span>             | <span data-ttu-id="67f8f-179">Kompatibel med Linux (inga speciella distribution)</span><span class="sxs-lookup"><span data-stu-id="67f8f-179">Compatible with Linux (no specific distro)</span></span> |
-| <span data-ttu-id="67f8f-180">macOS</span><span class="sxs-lookup"><span data-stu-id="67f8f-180">macOS</span></span>             | <span data-ttu-id="67f8f-181">Kompatibel med macOS</span><span class="sxs-lookup"><span data-stu-id="67f8f-181">Compatible with macOS</span></span>                      |
+| <span data-ttu-id="34d03-175">PSEdition_Core</span><span class="sxs-lookup"><span data-stu-id="34d03-175">PSEdition_Core</span></span>    | <span data-ttu-id="34d03-176">Kompatibel med PowerShell Core 6</span><span class="sxs-lookup"><span data-stu-id="34d03-176">Compatible with PowerShell Core 6</span></span>          |
+| <span data-ttu-id="34d03-177">PSEdition_Desktop</span><span class="sxs-lookup"><span data-stu-id="34d03-177">PSEdition_Desktop</span></span> | <span data-ttu-id="34d03-178">Kompatibel med Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="34d03-178">Compatible with Windows PowerShell</span></span>         |
+| <span data-ttu-id="34d03-179">Windows</span><span class="sxs-lookup"><span data-stu-id="34d03-179">Windows</span></span>           | <span data-ttu-id="34d03-180">Kompatibel med Windows</span><span class="sxs-lookup"><span data-stu-id="34d03-180">Compatible with Windows</span></span>                    |
+| <span data-ttu-id="34d03-181">Linux</span><span class="sxs-lookup"><span data-stu-id="34d03-181">Linux</span></span>             | <span data-ttu-id="34d03-182">Kompatibel med Linux (inga speciella distribution)</span><span class="sxs-lookup"><span data-stu-id="34d03-182">Compatible with Linux (no specific distro)</span></span> |
+| <span data-ttu-id="34d03-183">macOS</span><span class="sxs-lookup"><span data-stu-id="34d03-183">macOS</span></span>             | <span data-ttu-id="34d03-184">Kompatibel med macOS</span><span class="sxs-lookup"><span data-stu-id="34d03-184">Compatible with macOS</span></span>                      |
 
-<span data-ttu-id="67f8f-182">Exempel:</span><span class="sxs-lookup"><span data-stu-id="67f8f-182">Example:</span></span>
+<span data-ttu-id="34d03-185">Exempel:</span><span class="sxs-lookup"><span data-stu-id="34d03-185">Example:</span></span>
 
 ```powershell
 @{
@@ -249,43 +254,43 @@ FavoriteNumber FavoritePet
 }
 ```
 
-## <a name="dependency-on-native-libraries"></a><span data-ttu-id="67f8f-183">Beroende av interna bibliotek</span><span class="sxs-lookup"><span data-stu-id="67f8f-183">Dependency on Native Libraries</span></span>
+### <a name="dependency-on-native-libraries"></a><span data-ttu-id="34d03-186">Beroende av interna bibliotek</span><span class="sxs-lookup"><span data-stu-id="34d03-186">Dependency on Native Libraries</span></span>
 
-<span data-ttu-id="67f8f-184">Moduler som ska användas i olika operativ system eller processor arkitekturer kan vara beroende av ett hanterat bibliotek som är beroende av vissa interna bibliotek.</span><span class="sxs-lookup"><span data-stu-id="67f8f-184">Modules intended for use across different operating systems or processor architectures may depend on a managed library that itself depends on some native libraries.</span></span>
+<span data-ttu-id="34d03-187">Moduler som ska användas i olika operativ system eller processor arkitekturer kan vara beroende av ett hanterat bibliotek som är beroende av vissa interna bibliotek.</span><span class="sxs-lookup"><span data-stu-id="34d03-187">Modules intended for use across different operating systems or processor architectures may depend on a managed library that itself depends on some native libraries.</span></span>
 
-<span data-ttu-id="67f8f-185">Före PowerShell 7 måste det finnas en anpassad kod för att läsa in rätt inbyggda DLL-fil så att det hanterade biblioteket kan hitta det korrekt.</span><span class="sxs-lookup"><span data-stu-id="67f8f-185">Prior to PowerShell 7, one would have to have custom code to load the appropriate native dll so that the managed library can find it correctly.</span></span>
+<span data-ttu-id="34d03-188">Före PowerShell 7 måste det finnas en anpassad kod för att läsa in rätt inbyggda DLL-fil så att det hanterade biblioteket kan hitta det korrekt.</span><span class="sxs-lookup"><span data-stu-id="34d03-188">Prior to PowerShell 7, one would have to have custom code to load the appropriate native dll so that the managed library can find it correctly.</span></span>
 
-<span data-ttu-id="67f8f-186">Med PowerShell 7 genomsöks interna binärfiler i undermappar i det hanterade bibliotekets plats enligt en delmängd av [.net RID-katalogens][] notation.</span><span class="sxs-lookup"><span data-stu-id="67f8f-186">With PowerShell 7, native binaries to load are searched in sub-folders within the managed library's location following a subset of the [.NET RID Catalog][] notation.</span></span>
+<span data-ttu-id="34d03-189">Med PowerShell 7 genomsöks interna binärfiler i undermappar i det hanterade bibliotekets plats enligt en delmängd av [.net RID-katalogens][] notation.</span><span class="sxs-lookup"><span data-stu-id="34d03-189">With PowerShell 7, native binaries to load are searched in sub-folders within the managed library's location following a subset of the [.NET RID Catalog][] notation.</span></span>
 
 ```
 managed.dll folder
-                |
-                |--- 'win-x64' folder
-                |       |--- native.dll
-                |
-                |--- 'win-x86' folder
-                |       |--- native.dll
-                |
-                |--- 'win-arm' folder
-                |       |--- native.dll
-                |
-                |--- 'win-arm64' folder
-                |       |--- native.dll
-                |
-                |--- 'linux-x64' folder
-                |       |--- native.so
-                |
-                |--- 'linux-x86' folder
-                |       |--- native.so
-                |
-                |--- 'linux-arm' folder
-                |       |--- native.so
-                |
-                |--- 'linux-arm64' folder
-                |       |--- native.so
-                |
-                |--- 'osx-x64' folder
-                |       |--- native.dylib
+    |
+    |--- 'win-x64' folder
+    |       |--- native.dll
+    |
+    |--- 'win-x86' folder
+    |       |--- native.dll
+    |
+    |--- 'win-arm' folder
+    |       |--- native.dll
+    |
+    |--- 'win-arm64' folder
+    |       |--- native.dll
+    |
+    |--- 'linux-x64' folder
+    |       |--- native.so
+    |
+    |--- 'linux-x86' folder
+    |       |--- native.so
+    |
+    |--- 'linux-arm' folder
+    |       |--- native.so
+    |
+    |--- 'linux-arm64' folder
+    |       |--- native.so
+    |
+    |--- 'osx-x64' folder
+    |       |--- native.dylib
 ```
 
 <!-- reference links -->
@@ -296,6 +301,8 @@ managed.dll folder
 [körnings kontroller]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
 [runtime checks]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
+[Använda Visual Studio Code för fel sökning av kompilerade cmdlets]: vscode/using-vscode-for-debugging-compiled-cmdlets.md
+[Using Visual Studio Code for debugging compiled cmdlets]: vscode/using-vscode-for-debugging-compiled-cmdlets.md
 [.NET Standard]: /dotnet/standard/net-standard
 [PowerShell-standard]: https://github.com/PowerShell/PowerShellStandard
 [PowerShell Standard]: https://github.com/PowerShell/PowerShellStandard
