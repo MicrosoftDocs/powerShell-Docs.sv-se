@@ -1,23 +1,24 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: Hantera processer med Process-cmdletar
-ms.openlocfilehash: 8de0cbae508958bf7970ce69e03257ea0a8dca6f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell innehåller flera cmdletar som hjälper dig att hantera processer på lokala datorer och fjärrdatorer.
+ms.openlocfilehash: 977a3459eeac22536341753ccd59357d718745f2
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75870752"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500444"
 ---
-# <a name="managing-processes-with-process-cmdlets"></a><span data-ttu-id="ea20b-103">Hantera processer med Process-cmdletar</span><span class="sxs-lookup"><span data-stu-id="ea20b-103">Managing Processes with Process Cmdlets</span></span>
+# <a name="managing-processes-with-process-cmdlets"></a><span data-ttu-id="d5fc9-104">Hantera processer med Process-cmdletar</span><span class="sxs-lookup"><span data-stu-id="d5fc9-104">Managing Processes with Process Cmdlets</span></span>
 
-<span data-ttu-id="ea20b-104">Du kan använda process-cmdletar i Windows PowerShell för att hantera lokala och fjärranslutna processer i Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="ea20b-104">You can use the Process cmdlets in Windows PowerShell to manage local and remote processes in Windows PowerShell.</span></span>
+<span data-ttu-id="d5fc9-105">Du kan använda process-cmdletar i Windows PowerShell för att hantera lokala och fjärranslutna processer i Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-105">You can use the Process cmdlets in Windows PowerShell to manage local and remote processes in Windows PowerShell.</span></span>
 
-## <a name="getting-processes-get-process"></a><span data-ttu-id="ea20b-105">Hämtar processer (Get-process)</span><span class="sxs-lookup"><span data-stu-id="ea20b-105">Getting Processes (Get-Process)</span></span>
+## <a name="getting-processes-get-process"></a><span data-ttu-id="d5fc9-106">Hämtar processer (Get-process)</span><span class="sxs-lookup"><span data-stu-id="d5fc9-106">Getting Processes (Get-Process)</span></span>
 
-<span data-ttu-id="ea20b-106">Kör en **Get-process** utan parametrar för att hämta processerna som körs på den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="ea20b-106">To get the processes running on the local computer, run a **Get-Process** with no parameters.</span></span>
+<span data-ttu-id="d5fc9-107">Kör en **Get-process** utan parametrar för att hämta processerna som körs på den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-107">To get the processes running on the local computer, run a **Get-Process** with no parameters.</span></span>
 
-<span data-ttu-id="ea20b-107">Du kan hämta specifika processer genom att ange deras process namn eller process-ID.</span><span class="sxs-lookup"><span data-stu-id="ea20b-107">You can get particular processes by specifying their process names or process IDs.</span></span> <span data-ttu-id="ea20b-108">Följande kommando hämtar inaktiva processen:</span><span class="sxs-lookup"><span data-stu-id="ea20b-108">The following command gets the Idle process:</span></span>
+<span data-ttu-id="d5fc9-108">Du kan hämta specifika processer genom att ange deras process namn eller process-ID.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-108">You can get particular processes by specifying their process names or process IDs.</span></span> <span data-ttu-id="d5fc9-109">Följande kommando hämtar inaktiva processen:</span><span class="sxs-lookup"><span data-stu-id="d5fc9-109">The following command gets the Idle process:</span></span>
 
 ```
 PS> Get-Process -id 0
@@ -27,7 +28,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
       0       0        0         16     0               0 Idle
 ```
 
-<span data-ttu-id="ea20b-109">Även om det är normalt för cmdlets att returnera inga data i vissa situationer, genererar **Get-process** ett fel om den inte hittar några matchningar, eftersom den vanliga avsikten är att hämta en känd process som körs.</span><span class="sxs-lookup"><span data-stu-id="ea20b-109">Although it is normal for cmdlets to return no data in some situations, when you specify a process by its ProcessId, **Get-Process** generates an error if it finds no matches, because the usual intent is to retrieve a known running process.</span></span> <span data-ttu-id="ea20b-110">Om det inte finns någon process med detta ID är det troligt att ID: t är felaktigt eller att ränte processen redan har avslut ATS:</span><span class="sxs-lookup"><span data-stu-id="ea20b-110">If there is no process with that Id, it is likely that the Id is incorrect or that the process of interest has already exited:</span></span>
+<span data-ttu-id="d5fc9-110">Även om det är normalt för cmdlets att returnera inga data i vissa situationer, genererar **Get-process** ett fel om den inte hittar några matchningar, eftersom den vanliga avsikten är att hämta en känd process som körs.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-110">Although it is normal for cmdlets to return no data in some situations, when you specify a process by its ProcessId, **Get-Process** generates an error if it finds no matches, because the usual intent is to retrieve a known running process.</span></span> <span data-ttu-id="d5fc9-111">Om det inte finns någon process med detta ID är det troligt att ID: t är felaktigt eller att ränte processen redan har avslut ATS:</span><span class="sxs-lookup"><span data-stu-id="d5fc9-111">If there is no process with that Id, it is likely that the Id is incorrect or that the process of interest has already exited:</span></span>
 
 ```
 PS> Get-Process -Id 99
@@ -37,9 +38,9 @@ At line:1 char:12
 + Get-Process  <<<< -Id 99
 ```
 
-<span data-ttu-id="ea20b-111">Du kan använda name-parametern i cmdleten Get-process för att ange en delmängd av processerna baserat på processens namn.</span><span class="sxs-lookup"><span data-stu-id="ea20b-111">You can use the Name parameter of the Get-Process cmdlet to specify a subset of processes based on the process name.</span></span> <span data-ttu-id="ea20b-112">Parametern name kan ta flera namn i en kommaavgränsad lista och den stöder användning av jokertecken, så du kan skriva namn mönster.</span><span class="sxs-lookup"><span data-stu-id="ea20b-112">The Name parameter can take multiple names in a comma-separated list and it supports the use of wildcards, so you can type name patterns.</span></span>
+<span data-ttu-id="d5fc9-112">Du kan använda parametern name i Get-Process-cmdlet: en för att ange en delmängd av processerna baserat på processens namn.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-112">You can use the Name parameter of the Get-Process cmdlet to specify a subset of processes based on the process name.</span></span> <span data-ttu-id="d5fc9-113">Parametern name kan ta flera namn i en kommaavgränsad lista och den stöder användning av jokertecken, så du kan skriva namn mönster.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-113">The Name parameter can take multiple names in a comma-separated list and it supports the use of wildcards, so you can type name patterns.</span></span>
 
-<span data-ttu-id="ea20b-113">Följande kommando hämtar till exempel de namn som börjar med "ex".</span><span class="sxs-lookup"><span data-stu-id="ea20b-113">For example, the following command gets process whose names begin with "ex."</span></span>
+<span data-ttu-id="d5fc9-114">Följande kommando hämtar till exempel de namn som börjar med "ex".</span><span class="sxs-lookup"><span data-stu-id="d5fc9-114">For example, the following command gets process whose names begin with "ex."</span></span>
 
 ```
 PS> Get-Process -Name ex*
@@ -50,9 +51,9 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     555      15    34500      12384   134   105.25    728 explorer
 ```
 
-<span data-ttu-id="ea20b-114">Eftersom .NET system. Diagnostics. process-klassen är grunden för Windows PowerShell-processer, följer några av de konventioner som används av system. Diagnostics. process.</span><span class="sxs-lookup"><span data-stu-id="ea20b-114">Because the .NET System.Diagnostics.Process class is the foundation for Windows PowerShell processes, it follows some of the conventions used by System.Diagnostics.Process.</span></span> <span data-ttu-id="ea20b-115">En av dessa konventioner är att process namnet för en körbar fil aldrig innehåller ". exe" i slutet av namnet på den körbara filen.</span><span class="sxs-lookup"><span data-stu-id="ea20b-115">One of those conventions is that the process name for an executable never includes the ".exe" at the end of the executable name.</span></span>
+<span data-ttu-id="d5fc9-115">Eftersom .NET system. Diagnostics. process-klassen är grunden för Windows PowerShell-processer, följer några av de konventioner som används av system. Diagnostics. process.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-115">Because the .NET System.Diagnostics.Process class is the foundation for Windows PowerShell processes, it follows some of the conventions used by System.Diagnostics.Process.</span></span> <span data-ttu-id="d5fc9-116">En av dessa konventioner är att process namnet för en körbar fil aldrig innehåller ". exe" i slutet av namnet på den körbara filen.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-116">One of those conventions is that the process name for an executable never includes the ".exe" at the end of the executable name.</span></span>
 
-<span data-ttu-id="ea20b-116">**Get-process** accepterar också flera värden för parametern name.</span><span class="sxs-lookup"><span data-stu-id="ea20b-116">**Get-Process** also accepts multiple values for the Name parameter.</span></span>
+<span data-ttu-id="d5fc9-117">**Get-process** accepterar också flera värden för parametern name.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-117">**Get-Process** also accepts multiple values for the Name parameter.</span></span>
 
 ```
 PS> Get-Process -Name exp*,power*
@@ -63,7 +64,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     605       9    30668      29800   155     7.11   3052 powershell
 ```
 
-<span data-ttu-id="ea20b-117">Du kan använda parametern ComputerName för Get-process för att få processer på fjärrdatorer.</span><span class="sxs-lookup"><span data-stu-id="ea20b-117">You can use the ComputerName parameter of Get-Process to get processes on remote computers.</span></span> <span data-ttu-id="ea20b-118">Följande kommando hämtar till exempel PowerShell-processerna på den lokala datorn (representeras av "localhost") och på två fjärrdatorer.</span><span class="sxs-lookup"><span data-stu-id="ea20b-118">For example, the following command gets the PowerShell processes on the local computer (represented by "localhost") and on two remote computers.</span></span>
+<span data-ttu-id="d5fc9-118">Du kan använda parametern ComputerName för Get-Process för att få processer på fjärrdatorer.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-118">You can use the ComputerName parameter of Get-Process to get processes on remote computers.</span></span> <span data-ttu-id="d5fc9-119">Följande kommando hämtar till exempel PowerShell-processerna på den lokala datorn (representeras av "localhost") och på två fjärrdatorer.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-119">For example, the following command gets the PowerShell processes on the local computer (represented by "localhost") and on two remote computers.</span></span>
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server02
@@ -75,7 +76,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     605       9    30668      29800   155     7.11   3052 powershell
 ```
 
-<span data-ttu-id="ea20b-119">Dator namnen är inte tydliga i den här vyn, men de lagras i egenskapen MachineName för de process objekt som Get-process returnerar.</span><span class="sxs-lookup"><span data-stu-id="ea20b-119">The computer names are not evident in this display, but they are stored in the MachineName property of the process objects that Get-Process returns.</span></span> <span data-ttu-id="ea20b-120">I följande kommando används format-Table-cmdleten för att Visa process-ID: t, ProcessName och MachineName-egenskaperna (ComputerName) för process objekt.</span><span class="sxs-lookup"><span data-stu-id="ea20b-120">The following command uses the Format-Table cmdlet to display the process ID, ProcessName and MachineName (ComputerName) properties of the process objects.</span></span>
+<span data-ttu-id="d5fc9-120">Dator namnen är inte tydliga i den här vyn, men de lagras i egenskapen MachineName för de process objekt som Get-Process returnerar.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-120">The computer names are not evident in this display, but they are stored in the MachineName property of the process objects that Get-Process returns.</span></span> <span data-ttu-id="d5fc9-121">Följande kommando använder Format-Table-cmdleten för att visa egenskaperna process-ID, ProcessName och MachineName (ComputerName) för process objekt.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-121">The following command uses the Format-Table cmdlet to display the process ID, ProcessName and MachineName (ComputerName) properties of the process objects.</span></span>
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 |
@@ -88,7 +89,7 @@ PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 |
 5816 powershell  localhost
 ```
 
-<span data-ttu-id="ea20b-121">Detta mer komplexa kommando lägger till egenskapen MachineName till standard visningen av hämtnings processen.</span><span class="sxs-lookup"><span data-stu-id="ea20b-121">This more complex command adds the MachineName property to the standard Get-Process display.</span></span>
+<span data-ttu-id="d5fc9-122">Detta mer komplexa kommando lägger till egenskapen MachineName till standard Get-Processs visning.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-122">This more complex command adds the MachineName property to the standard Get-Process display.</span></span>
 
 ```
 PS> Get-Process powershell -ComputerName localhost, Server01, Server02 |
@@ -107,11 +108,11 @@ Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
     605       9  30668 29800   155 7.11    3052 powershell Server02
 ```
 
-## <a name="stopping-processes-stop-process"></a><span data-ttu-id="ea20b-122">Stoppa processer (Stop-process)</span><span class="sxs-lookup"><span data-stu-id="ea20b-122">Stopping Processes (Stop-Process)</span></span>
+## <a name="stopping-processes-stop-process"></a><span data-ttu-id="d5fc9-123">Stoppa processer (Stop-process)</span><span class="sxs-lookup"><span data-stu-id="d5fc9-123">Stopping Processes (Stop-Process)</span></span>
 
-<span data-ttu-id="ea20b-123">Med Windows PowerShell får du flexibilitet för att visa processer, men vad händer om du stoppar en process?</span><span class="sxs-lookup"><span data-stu-id="ea20b-123">Windows PowerShell gives you flexibility for listing processes, but what about stopping a process?</span></span>
+<span data-ttu-id="d5fc9-124">Med Windows PowerShell får du flexibilitet för att visa processer, men vad händer om du stoppar en process?</span><span class="sxs-lookup"><span data-stu-id="d5fc9-124">Windows PowerShell gives you flexibility for listing processes, but what about stopping a process?</span></span>
 
-<span data-ttu-id="ea20b-124">Cmdleten **Stop process** tar ett namn eller ID för att ange en process som du vill stoppa.</span><span class="sxs-lookup"><span data-stu-id="ea20b-124">The **Stop-Process** cmdlet takes a Name or Id to specify a process you want to stop.</span></span> <span data-ttu-id="ea20b-125">Din möjlighet att stoppa processer beror på dina behörigheter.</span><span class="sxs-lookup"><span data-stu-id="ea20b-125">Your ability to stop processes depends on your permissions.</span></span> <span data-ttu-id="ea20b-126">Det går inte att stoppa vissa processer.</span><span class="sxs-lookup"><span data-stu-id="ea20b-126">Some processes cannot be stopped.</span></span> <span data-ttu-id="ea20b-127">Om du till exempel försöker stoppa inaktiva processer får du ett fel meddelande:</span><span class="sxs-lookup"><span data-stu-id="ea20b-127">For example, if you try to stop the idle process, you get an error:</span></span>
+<span data-ttu-id="d5fc9-125">Cmdleten **Stop process** tar ett namn eller ID för att ange en process som du vill stoppa.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-125">The **Stop-Process** cmdlet takes a Name or Id to specify a process you want to stop.</span></span> <span data-ttu-id="d5fc9-126">Din möjlighet att stoppa processer beror på dina behörigheter.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-126">Your ability to stop processes depends on your permissions.</span></span> <span data-ttu-id="d5fc9-127">Det går inte att stoppa vissa processer.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-127">Some processes cannot be stopped.</span></span> <span data-ttu-id="d5fc9-128">Om du till exempel försöker stoppa inaktiva processer får du ett fel meddelande:</span><span class="sxs-lookup"><span data-stu-id="d5fc9-128">For example, if you try to stop the idle process, you get an error:</span></span>
 
 ```
 PS> Stop-Process -Name Idle
@@ -121,7 +122,7 @@ At line:1 char:13
 + Stop-Process  <<<< -Name Idle
 ```
 
-<span data-ttu-id="ea20b-128">Du kan också tvinga fram en fråga med **Confirm** -parametern.</span><span class="sxs-lookup"><span data-stu-id="ea20b-128">You can also force prompting with the **Confirm** parameter.</span></span> <span data-ttu-id="ea20b-129">Den här parametern är särskilt användbar om du använder ett jokertecken när du anger process namnet, eftersom det kan hända att du råkar matcha vissa processer som du inte vill stoppa:</span><span class="sxs-lookup"><span data-stu-id="ea20b-129">This parameter is particularly useful if you use a wildcard when specifying the process name, because you may accidentally match some processes you do not want to stop:</span></span>
+<span data-ttu-id="d5fc9-129">Du kan också tvinga fram en fråga med **Confirm** -parametern.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-129">You can also force prompting with the **Confirm** parameter.</span></span> <span data-ttu-id="d5fc9-130">Den här parametern är särskilt användbar om du använder ett jokertecken när du anger process namnet, eftersom det kan hända att du råkar matcha vissa processer som du inte vill stoppa:</span><span class="sxs-lookup"><span data-stu-id="d5fc9-130">This parameter is particularly useful if you use a wildcard when specifying the process name, because you may accidentally match some processes you do not want to stop:</span></span>
 
 ```
 PS> Stop-Process -Name t*,e* -Confirm
@@ -137,29 +138,29 @@ Performing operation "Stop-Process" on Target "taskmgr (4072)".
 (default is "Y"):n
 ```
 
-<span data-ttu-id="ea20b-130">Det går att hantera komplexa processer med några av objekt filtrerings-cmdletarna.</span><span class="sxs-lookup"><span data-stu-id="ea20b-130">Complex process manipulation is possible by using some of the object filtering cmdlets.</span></span> <span data-ttu-id="ea20b-131">Eftersom ett process objekt har en svarande-egenskap som är sann när den inte längre svarar kan du stoppa alla program som inte svarar med följande kommando:</span><span class="sxs-lookup"><span data-stu-id="ea20b-131">Because a Process object has a Responding property that is true when it is no longer responding, you can stop all nonresponsive applications with the following command:</span></span>
+<span data-ttu-id="d5fc9-131">Det går att hantera komplexa processer med några av objekt filtrerings-cmdletarna.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-131">Complex process manipulation is possible by using some of the object filtering cmdlets.</span></span> <span data-ttu-id="d5fc9-132">Eftersom ett process objekt har en svarande-egenskap som är sann när den inte längre svarar kan du stoppa alla program som inte svarar med följande kommando:</span><span class="sxs-lookup"><span data-stu-id="d5fc9-132">Because a Process object has a Responding property that is true when it is no longer responding, you can stop all nonresponsive applications with the following command:</span></span>
 
 ```powershell
 Get-Process | Where-Object -FilterScript {$_.Responding -eq $false} | Stop-Process
 ```
 
-<span data-ttu-id="ea20b-132">Du kan använda samma metod i andra situationer.</span><span class="sxs-lookup"><span data-stu-id="ea20b-132">You can use the same approach in other situations.</span></span> <span data-ttu-id="ea20b-133">Anta till exempel att ett sekundärt meddelande fält program körs automatiskt när användare startar ett annat program.</span><span class="sxs-lookup"><span data-stu-id="ea20b-133">For example, suppose a secondary notification area application automatically runs when users start another application.</span></span> <span data-ttu-id="ea20b-134">Det kanske inte fungerar korrekt i Terminal Services-sessioner, men du vill fortfarande behålla det i sessioner som körs på den fysiska dator konsolen.</span><span class="sxs-lookup"><span data-stu-id="ea20b-134">You may find that this does not work correctly in Terminal Services sessions, but you still want to keep it in sessions that run on the physical computer console.</span></span> <span data-ttu-id="ea20b-135">Sessioner som är anslutna till den fysiska datorns dator har alltid sessions-ID 0, så du kan stoppa alla instanser av processen som finns i andra sessioner genom att använda **Where-Object** och processen, **SessionID**:</span><span class="sxs-lookup"><span data-stu-id="ea20b-135">Sessions connected to the physical computer desktop always have a session ID of 0, so you can stop all instances of the process that are in other sessions by using **Where-Object** and the process, **SessionId**:</span></span>
+<span data-ttu-id="d5fc9-133">Du kan använda samma metod i andra situationer.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-133">You can use the same approach in other situations.</span></span> <span data-ttu-id="d5fc9-134">Anta till exempel att ett sekundärt meddelande fält program körs automatiskt när användare startar ett annat program.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-134">For example, suppose a secondary notification area application automatically runs when users start another application.</span></span> <span data-ttu-id="d5fc9-135">Det kanske inte fungerar korrekt i Terminal Services-sessioner, men du vill fortfarande behålla det i sessioner som körs på den fysiska dator konsolen.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-135">You may find that this does not work correctly in Terminal Services sessions, but you still want to keep it in sessions that run on the physical computer console.</span></span> <span data-ttu-id="d5fc9-136">Sessioner som är anslutna till den fysiska datorns dator har alltid sessions-ID 0, så du kan stoppa alla instanser av processen som finns i andra sessioner genom att använda **Where-Object** och processen, **SessionID**:</span><span class="sxs-lookup"><span data-stu-id="d5fc9-136">Sessions connected to the physical computer desktop always have a session ID of 0, so you can stop all instances of the process that are in other sessions by using **Where-Object** and the process, **SessionId**:</span></span>
 
 ```powershell
 Get-Process -Name BadApp | Where-Object -FilterScript {$_.SessionId -neq 0} | Stop-Process
 ```
 
-<span data-ttu-id="ea20b-136">Cmdleten för att stoppa processen har ingen ComputerName-parameter.</span><span class="sxs-lookup"><span data-stu-id="ea20b-136">The Stop-Process cmdlet does not have a ComputerName parameter.</span></span> <span data-ttu-id="ea20b-137">Därför måste du använda cmdleten Invoke-Command för att köra kommandot Stop process på en fjärrdator.</span><span class="sxs-lookup"><span data-stu-id="ea20b-137">Therefore, to run a stop process command on a remote computer, you need to use the Invoke-Command cmdlet.</span></span> <span data-ttu-id="ea20b-138">Om du till exempel vill stoppa PowerShell-processen på fjärrdatorn Server01 skriver du:</span><span class="sxs-lookup"><span data-stu-id="ea20b-138">For example, to stop the PowerShell process on the Server01 remote computer, type:</span></span>
+<span data-ttu-id="d5fc9-137">Stop-Process-cmdleten har ingen ComputerName-parameter.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-137">The Stop-Process cmdlet does not have a ComputerName parameter.</span></span> <span data-ttu-id="d5fc9-138">Om du vill köra kommandot Stop process på en fjärrdator måste du därför använda Invoke-Command-cmdleten.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-138">Therefore, to run a stop process command on a remote computer, you need to use the Invoke-Command cmdlet.</span></span> <span data-ttu-id="d5fc9-139">Om du till exempel vill stoppa PowerShell-processen på fjärrdatorn Server01 skriver du:</span><span class="sxs-lookup"><span data-stu-id="d5fc9-139">For example, to stop the PowerShell process on the Server01 remote computer, type:</span></span>
 
 ```powershell
 Invoke-Command -ComputerName Server01 {Stop-Process Powershell}
 ```
 
-## <a name="stopping-all-other-windows-powershell-sessions"></a><span data-ttu-id="ea20b-139">Stoppa alla andra Windows PowerShell-sessioner</span><span class="sxs-lookup"><span data-stu-id="ea20b-139">Stopping All Other Windows PowerShell Sessions</span></span>
+## <a name="stopping-all-other-windows-powershell-sessions"></a><span data-ttu-id="d5fc9-140">Stoppa alla andra Windows PowerShell-sessioner</span><span class="sxs-lookup"><span data-stu-id="d5fc9-140">Stopping All Other Windows PowerShell Sessions</span></span>
 
-<span data-ttu-id="ea20b-140">Det kan ibland vara användbart att kunna stoppa alla andra Windows PowerShell-sessioner som körs, förutom den aktuella sessionen.</span><span class="sxs-lookup"><span data-stu-id="ea20b-140">It may occasionally be useful to be able to stop all running Windows PowerShell sessions other than the current session.</span></span> <span data-ttu-id="ea20b-141">Om en session använder för många resurser eller inte går att komma åt (den kan köras via fjärr anslutning eller i en annan fjärrskrivbordssession), kanske du inte kan stoppa den direkt.</span><span class="sxs-lookup"><span data-stu-id="ea20b-141">If a session is using too many resources or is inaccessible (it may be running remotely or in another desktop session), you may not be able to directly stop it.</span></span> <span data-ttu-id="ea20b-142">Om du försöker stoppa alla pågående sessioner kan den aktuella sessionen avslutas i stället.</span><span class="sxs-lookup"><span data-stu-id="ea20b-142">If you try to stop all running sessions, however, the current session may be terminated instead.</span></span>
+<span data-ttu-id="d5fc9-141">Det kan ibland vara användbart att kunna stoppa alla andra Windows PowerShell-sessioner som körs, förutom den aktuella sessionen.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-141">It may occasionally be useful to be able to stop all running Windows PowerShell sessions other than the current session.</span></span> <span data-ttu-id="d5fc9-142">Om en session använder för många resurser eller inte går att komma åt (den kan köras via fjärr anslutning eller i en annan fjärrskrivbordssession), kanske du inte kan stoppa den direkt.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-142">If a session is using too many resources or is inaccessible (it may be running remotely or in another desktop session), you may not be able to directly stop it.</span></span> <span data-ttu-id="d5fc9-143">Om du försöker stoppa alla pågående sessioner kan den aktuella sessionen avslutas i stället.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-143">If you try to stop all running sessions, however, the current session may be terminated instead.</span></span>
 
-<span data-ttu-id="ea20b-143">Varje Windows PowerShell-session har en miljö variabel i PID som innehåller ID: t för Windows PowerShell-processen.</span><span class="sxs-lookup"><span data-stu-id="ea20b-143">Each Windows PowerShell session has an environment variable PID that contains the Id of the Windows PowerShell process.</span></span> <span data-ttu-id="ea20b-144">Du kan kontrol lera $PID mot ID: t för varje session och endast Avsluta Windows PowerShell-sessioner som har ett annat ID. Följande pipeline-kommando gör detta och returnerar listan över avslutade sessioner (på grund av användningen av parametern **Passthru** ):</span><span class="sxs-lookup"><span data-stu-id="ea20b-144">You can check the $PID against the Id of each session and terminate only Windows PowerShell sessions that have a different Id. The following pipeline command does this and returns the list of terminated sessions (because of the use of the **PassThru** parameter):</span></span>
+<span data-ttu-id="d5fc9-144">Varje Windows PowerShell-session har en miljö variabel i PID som innehåller ID: t för Windows PowerShell-processen.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-144">Each Windows PowerShell session has an environment variable PID that contains the Id of the Windows PowerShell process.</span></span> <span data-ttu-id="d5fc9-145">Du kan kontrol lera $PID mot ID: t för varje session och endast Avsluta Windows PowerShell-sessioner som har ett annat ID. Följande pipeline-kommando gör detta och returnerar listan över avslutade sessioner (på grund av användningen av parametern **Passthru** ):</span><span class="sxs-lookup"><span data-stu-id="d5fc9-145">You can check the $PID against the Id of each session and terminate only Windows PowerShell sessions that have a different Id. The following pipeline command does this and returns the list of terminated sessions (because of the use of the **PassThru** parameter):</span></span>
 
 ```
 PS> Get-Process -Name powershell | Where-Object -FilterScript {$_.Id -ne $PID} | Stop-Process -PassThru
@@ -174,15 +175,15 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     287       9    21044      26928   143     1.02   3672 powershell
 ```
 
-## <a name="starting-debugging-and-waiting-for-processes"></a><span data-ttu-id="ea20b-145">Starta, felsöka och vänta på processer</span><span class="sxs-lookup"><span data-stu-id="ea20b-145">Starting, Debugging, and Waiting for Processes</span></span>
+## <a name="starting-debugging-and-waiting-for-processes"></a><span data-ttu-id="d5fc9-146">Starta, felsöka och vänta på processer</span><span class="sxs-lookup"><span data-stu-id="d5fc9-146">Starting, Debugging, and Waiting for Processes</span></span>
 
-<span data-ttu-id="ea20b-146">Windows PowerShell levereras också med cmdlets för att starta (eller starta om), felsöka en process och vänta tills processen har slutförts innan du kör ett kommando.</span><span class="sxs-lookup"><span data-stu-id="ea20b-146">Windows PowerShell also comes with cmdlets to start (or restart), debug a process, and wait for a process to complete before running a command.</span></span> <span data-ttu-id="ea20b-147">Information om dessa cmdlets finns i hjälp avsnittet om cmdleten för varje cmdlet.</span><span class="sxs-lookup"><span data-stu-id="ea20b-147">For information about these cmdlets, see the cmdlet help topic for each cmdlet.</span></span>
+<span data-ttu-id="d5fc9-147">Windows PowerShell levereras också med cmdlets för att starta (eller starta om), felsöka en process och vänta tills processen har slutförts innan du kör ett kommando.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-147">Windows PowerShell also comes with cmdlets to start (or restart), debug a process, and wait for a process to complete before running a command.</span></span> <span data-ttu-id="d5fc9-148">Information om dessa cmdlets finns i hjälp avsnittet om cmdleten för varje cmdlet.</span><span class="sxs-lookup"><span data-stu-id="d5fc9-148">For information about these cmdlets, see the cmdlet help topic for each cmdlet.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="ea20b-148">Se även</span><span class="sxs-lookup"><span data-stu-id="ea20b-148">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d5fc9-149">Se även</span><span class="sxs-lookup"><span data-stu-id="d5fc9-149">See Also</span></span>
 
-- [<span data-ttu-id="ea20b-149">Hämta process</span><span class="sxs-lookup"><span data-stu-id="ea20b-149">Get-Process</span></span>](/powershell/module/Microsoft.PowerShell.Management/Get-Process)
-- [<span data-ttu-id="ea20b-150">Stoppa – process</span><span class="sxs-lookup"><span data-stu-id="ea20b-150">Stop-Process</span></span>](/powershell/module/Microsoft.PowerShell.Management/Stop-Process)
-- [<span data-ttu-id="ea20b-151">Start process</span><span class="sxs-lookup"><span data-stu-id="ea20b-151">Start-Process</span></span>](/powershell/module/Microsoft.PowerShell.Management/Start-Process)
-- [<span data-ttu-id="ea20b-152">Vänta-process</span><span class="sxs-lookup"><span data-stu-id="ea20b-152">Wait-Process</span></span>](/powershell/module/Microsoft.PowerShell.Management/Wait-Process)
-- [<span data-ttu-id="ea20b-153">Fel sökning – process</span><span class="sxs-lookup"><span data-stu-id="ea20b-153">Debug-Process</span></span>](/powershell/module/Microsoft.PowerShell.Management/Debug-Process)
-- [<span data-ttu-id="ea20b-154">Invoke-kommando</span><span class="sxs-lookup"><span data-stu-id="ea20b-154">Invoke-Command</span></span>](/powershell/module/Microsoft.PowerShell.Core/Invoke-Command)
+- [<span data-ttu-id="d5fc9-150">Hämta process</span><span class="sxs-lookup"><span data-stu-id="d5fc9-150">Get-Process</span></span>](/powershell/module/Microsoft.PowerShell.Management/Get-Process)
+- [<span data-ttu-id="d5fc9-151">Stoppa – process</span><span class="sxs-lookup"><span data-stu-id="d5fc9-151">Stop-Process</span></span>](/powershell/module/Microsoft.PowerShell.Management/Stop-Process)
+- [<span data-ttu-id="d5fc9-152">Start process</span><span class="sxs-lookup"><span data-stu-id="d5fc9-152">Start-Process</span></span>](/powershell/module/Microsoft.PowerShell.Management/Start-Process)
+- [<span data-ttu-id="d5fc9-153">Vänta-process</span><span class="sxs-lookup"><span data-stu-id="d5fc9-153">Wait-Process</span></span>](/powershell/module/Microsoft.PowerShell.Management/Wait-Process)
+- [<span data-ttu-id="d5fc9-154">Fel sökning – process</span><span class="sxs-lookup"><span data-stu-id="d5fc9-154">Debug-Process</span></span>](/powershell/module/Microsoft.PowerShell.Management/Debug-Process)
+- [<span data-ttu-id="d5fc9-155">Invoke-kommando</span><span class="sxs-lookup"><span data-stu-id="d5fc9-155">Invoke-Command</span></span>](/powershell/module/Microsoft.PowerShell.Core/Invoke-Command)
