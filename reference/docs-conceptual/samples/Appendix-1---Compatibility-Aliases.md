@@ -2,12 +2,13 @@
 ms.date: 08/03/2020
 keywords: powershell,cmdlet
 title: Bilaga 1 Kompatibilitetsalias
-ms.openlocfilehash: e5bd170fea6b6109d2ef4fd58863d6cc8a0e3ae1
-ms.sourcegitcommit: d3f78120bdc9096c72aa0dfdbdd91efaf254c738
+description: PowerShell har flera alias som låter UNIX-och cmd.exe användare använda välbekanta kommandon.
+ms.openlocfilehash: 8cbbd5a358de9018fcb5c840e711cd76f7a9a353
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87758507"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500750"
 ---
 # <a name="appendix-1---compatibility-aliases"></a>Bilaga 1 – kompatibilitets-alias
 
@@ -18,7 +19,7 @@ Kommandona och deras relaterade PowerShell-cmdlet och PowerShell-alias visas i f
 | ------------------------------------- | ------------ | ----------------- | ---------------- |
 | **CD**, **chdir**                     | **installations**       | `Set-Location`    | `sl`             |
 | **CLS**                               | **Rensa**    | `Clear-Host`      | `cls`            |
-| **exemplar**                              | **CP**       | `Copy-Item`       | `cpi`            |
+| **kopiering**                              | **CP**       | `Copy-Item`       | `cpi`            |
 | **del**, **Radera**, **RD**, **rmdir** | **RM**       | `Remove-Item`     | `ri`             |
 | **tillämpning**                               | **LS**       | `Get-ChildItem`   | `gci`            |
 | **eko**                              | **eko**     | `Write-Output`    | `write`          |

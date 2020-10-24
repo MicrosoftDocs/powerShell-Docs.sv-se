@@ -1,12 +1,13 @@
 ---
 title: PowerShell 7-modulens kompatibilitet
 ms.date: 02/03/2020
-ms.openlocfilehash: d618f9e55f5997bfd724a4e58bb94c348bd681ce
-ms.sourcegitcommit: 56463fb628a7d83dec4364e89417d83316c3e53b
+description: Den här artikeln visar statusen för PowerShell 7 med PowerShell-moduler publicerade för andra Microsoft-produkter.
+ms.openlocfilehash: f845b33881c93fa076d97adf101f4f3e006df73b
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84722821"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501634"
 ---
 # <a name="powershell-7-module-compatibility"></a>PowerShell 7-modulens kompatibilitet
 
@@ -144,7 +145,7 @@ I Windows 10 görs Windows Management-moduler tillgängliga som Windows- **valfr
 | PKI                                | Testat med kompatibilitetsläge    |                                               |
 | PnpDevice                          | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
 | PowerShellGet                      | Internt kompatibel                  | Inbyggd i PowerShell 7                       |
-| PrintManagement                    | Internt kompatibel                  | Windows Server 1903 + med utskrifts tjänster<br>Windows 10-1903 +  |
+| PrintManagement                    | Internt kompatibel                  | Windows Server 1903 + med Print-Services<br>Windows 10-1903 +  |
 | ProcessMitigations                 | Internt kompatibel                  | Windows Server 1903 +<br>Windows 10-1903 +      |
 | Etablering                       | Testat med kompatibilitetsläge    |                                               |
 | PSDesiredStateConfiguration        | Delvis                            | Inbyggd i PowerShell 7                       |
@@ -191,7 +192,7 @@ I Windows 10 görs Windows Management-moduler tillgängliga som Windows- **valfr
 | WindowsUpdate                      | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +       |
 | WindowsUpdateProvider              | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +       |
 
-## <a name="notes"></a>Kommentarer
+## <a name="notes"></a>Anteckningar
 
 ### <a name="servermanager-module"></a>ServerManager-modul
 

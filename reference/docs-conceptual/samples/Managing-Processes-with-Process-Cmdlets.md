@@ -1,13 +1,14 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: Hantera processer med Process-cmdletar
-ms.openlocfilehash: 8de0cbae508958bf7970ce69e03257ea0a8dca6f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell innehåller flera cmdletar som hjälper dig att hantera processer på lokala datorer och fjärrdatorer.
+ms.openlocfilehash: 977a3459eeac22536341753ccd59357d718745f2
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75870752"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500444"
 ---
 # <a name="managing-processes-with-process-cmdlets"></a>Hantera processer med Process-cmdletar
 
@@ -37,7 +38,7 @@ At line:1 char:12
 + Get-Process  <<<< -Id 99
 ```
 
-Du kan använda name-parametern i cmdleten Get-process för att ange en delmängd av processerna baserat på processens namn. Parametern name kan ta flera namn i en kommaavgränsad lista och den stöder användning av jokertecken, så du kan skriva namn mönster.
+Du kan använda parametern name i Get-Process-cmdlet: en för att ange en delmängd av processerna baserat på processens namn. Parametern name kan ta flera namn i en kommaavgränsad lista och den stöder användning av jokertecken, så du kan skriva namn mönster.
 
 Följande kommando hämtar till exempel de namn som börjar med "ex".
 
@@ -63,7 +64,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     605       9    30668      29800   155     7.11   3052 powershell
 ```
 
-Du kan använda parametern ComputerName för Get-process för att få processer på fjärrdatorer. Följande kommando hämtar till exempel PowerShell-processerna på den lokala datorn (representeras av "localhost") och på två fjärrdatorer.
+Du kan använda parametern ComputerName för Get-Process för att få processer på fjärrdatorer. Följande kommando hämtar till exempel PowerShell-processerna på den lokala datorn (representeras av "localhost") och på två fjärrdatorer.
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server02
@@ -75,7 +76,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     605       9    30668      29800   155     7.11   3052 powershell
 ```
 
-Dator namnen är inte tydliga i den här vyn, men de lagras i egenskapen MachineName för de process objekt som Get-process returnerar. I följande kommando används format-Table-cmdleten för att Visa process-ID: t, ProcessName och MachineName-egenskaperna (ComputerName) för process objekt.
+Dator namnen är inte tydliga i den här vyn, men de lagras i egenskapen MachineName för de process objekt som Get-Process returnerar. Följande kommando använder Format-Table-cmdleten för att visa egenskaperna process-ID, ProcessName och MachineName (ComputerName) för process objekt.
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 |
@@ -88,7 +89,7 @@ PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 |
 5816 powershell  localhost
 ```
 
-Detta mer komplexa kommando lägger till egenskapen MachineName till standard visningen av hämtnings processen.
+Detta mer komplexa kommando lägger till egenskapen MachineName till standard Get-Processs visning.
 
 ```
 PS> Get-Process powershell -ComputerName localhost, Server01, Server02 |
@@ -149,7 +150,7 @@ Du kan använda samma metod i andra situationer. Anta till exempel att ett sekun
 Get-Process -Name BadApp | Where-Object -FilterScript {$_.SessionId -neq 0} | Stop-Process
 ```
 
-Cmdleten för att stoppa processen har ingen ComputerName-parameter. Därför måste du använda cmdleten Invoke-Command för att köra kommandot Stop process på en fjärrdator. Om du till exempel vill stoppa PowerShell-processen på fjärrdatorn Server01 skriver du:
+Stop-Process-cmdleten har ingen ComputerName-parameter. Om du vill köra kommandot Stop process på en fjärrdator måste du därför använda Invoke-Command-cmdleten. Om du till exempel vill stoppa PowerShell-processen på fjärrdatorn Server01 skriver du:
 
 ```powershell
 Invoke-Command -ComputerName Server01 {Stop-Process Powershell}

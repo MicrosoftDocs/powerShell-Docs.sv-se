@@ -1,14 +1,15 @@
 ---
 ms.date: 11/13/2018
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: Avkoda ett PowerShell-kommando från en process som körs
 author: randomnote1
-ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Den här artikeln visar hur du avkodar ett skript block som en PowerShell-process körs för tillfället.
+ms.openlocfilehash: 95b4b806665bf8137712ebb183329039bc1e1deb
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "66470962"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500495"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>Avkoda ett PowerShell-kommando från en process som körs
 
@@ -81,7 +82,7 @@ $commandDetails[0]
 
 Det avkodade kommandot kan nu granskas genom att välja den avkodade kommando egenskapen.
 
-```output
+```Output
 ProcessId      : 8752
 EncodedCommand : IAAKAAoACgAgAAoAIAAgACAAIAAkAGkAIAA9ACAAMQAgAAoACgAKACAACgAgACAAIAAgAHcAaABpAGwAZQAgACgAIAAkAGkAIAAtAG
                  wAZQAgADEAMAAgACkAIAAKAAoACgAgAAoAIAAgACAAIAB7ACAACgAKAAoAIAAKACAAIAAgACAAIAAgACAAIABXAHIAaQB0AGUALQBP

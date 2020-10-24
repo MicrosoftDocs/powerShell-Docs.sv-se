@@ -1,20 +1,19 @@
 ---
 title: Supportlängd för PowerShell Core
-description: Principer som styr support för PowerShell Core
+description: Information om principerna som styr support för PowerShell
 ms.date: 03/09/2020
-ms.openlocfilehash: 717fd5c4845835f314eaf7c3617d5123318da2dc
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+ms.openlocfilehash: 1681df188d03a1115b13518fb88c21ebf79701d4
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236211"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501753"
 ---
 # <a name="powershell-support-lifecycle"></a>Support livs cykel för PowerShell
 
 PowerShell är en distinkt uppsättning verktyg och komponenter som levereras, installeras och konfigureras separat från Windows PowerShell. PowerShell ingår inte i licens avtalen för Windows.
 
-PowerShell stöds i traditionella Microsofts support avtal, inklusive [avgiftsbelagd support][], [Microsoft Enterprise Agreement][enterprise-agreement]och [Microsoft Software Assurance][assurance].
-Du kan också betala för [assisterad support][] för PowerShell genom att skicka en support förfrågan om ditt problem.
+PowerShell stöds i traditionella Microsofts support avtal, inklusive [avgiftsbelagd support][], [Microsoft Enterprise Agreement][enterprise-agreement]och [Microsoft Software Assurance][assurance]. Du kan också betala för [assisterad support][] för PowerShell genom att skicka en support förfrågan om ditt problem.
 
 ## <a name="community-support"></a>Community-support
 
@@ -56,11 +55,11 @@ Vår community har också bidragit med paket för vissa plattformar, men de stö
 
 Plattformar som anges som `Experimental` inte stöds officiellt, men som är tillgängliga för experimentering och feedback.
 
-| Plattform                                          |      6,2      |    7,0    |
+| Plattform                                          |      6,2      |    7.0    |
 | ------------------------------------------------- | :-----------: | :-------: |
 | Windows 8,1 och 10                               |   Stöds   | Stöds |
 | Windows Server 2012 R2, 2016                      |   Stöds   | Stöds |
-| [Windows Server, halvårs kanal][semi-annual] |   Stöds   | Stöds |
+| [Windows Server Semi-Annual-kanal][semi-annual] |   Stöds   | Stöds |
 | Ubuntu 16,04 och 18,04                            |   Stöds   | Stöds |
 | Ubuntu 19,10 (via Snap-paket)                   |   Community   | Community |
 | Ubuntu 20,04 (via Snap-paket)                   |   Community   | Community |
@@ -92,13 +91,13 @@ I följande tabell visas de datum då olika versioner inte längre stöds, baser
 
 | Version |    Livs längd     |
 | :-----: | ------------------ |
-|   7,0   | 3 december 2022   |
+|   7.0   | 3 december 2022   |
 |   6,2   | 4 september 2020  |
 |   6.1   | 28 september 2019 |
-|   6,0   | 13 februari 2019  |
+|   6.0   | 13 februari 2019  |
 
 > [!NOTE]
-> Det här dokumentet är om stöd för PowerShell Core 6 och PowerShell 7. Windows PowerShell (1,0-5,1) är en del av Windows OS. Komponenterna får samma stöd som den överordnade produkten eller plattformen. Mer information finns i [livs cykel information om produkt och tjänster](/lifecycle/products/)
+> Det här dokumentet är om stöd för PowerShell Core 6 och PowerShell 7. Windows PowerShell (1,0-5,1) är en del av Windows OS. Komponenterna får samma stöd som den överordnade produkten eller plattformen. Mer information finns i [livs cykel information om produkt och tjänster](/lifecycle/products/).
 
 ## <a name="unsupported-platforms"></a>Plattformar som inte stöds
 
@@ -157,7 +156,7 @@ I tabellen nedan beskrivs de funktioner som uppfyller underhålls villkoren och 
 
 Följande tabell innehåller en tids linje för de större versionerna av PowerShell. Den här tabellen tillhandahålls för historisk referens. Den är inte avsedd att användas för att fastställa support livs cykeln.
 
-|       Version        | Lanserings datum |                                                                     Anteckning                                                                      |
+|       Version        | Utgivningsdatum |                                                                     Anteckning                                                                      |
 | -------------------- | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | PowerShell 7,0 (LTS) |   Mar – 2020   | Bygger på .NET Core 3,1 (LTS)                                                                                                                  |
 | PowerShell 6,0       |   Jan-2018   | Första versionen bygger på .NET Core 2,1. Kan installeras på Windows, Linux och macOS.                                                              |
@@ -174,7 +173,7 @@ Följande tabell innehåller en tids linje för de större versionerna av PowerS
 [assurance]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx
 [Community-support]: /powershell/scripting/community/community-support
 [pshub]: /powershell
-[PowerShell-Tech-community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
+[PowerShell Tech Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [assisterad support]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [Long-Term]: https://dotnet.microsoft.com/platform/support/policy/dotnet-core

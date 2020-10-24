@@ -1,13 +1,14 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: Skapa en anpassad indataruta
-ms.openlocfilehash: ff0588b44169bc276e2833254cec60eda759e2c8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Den här artikeln visar hur du skapar en anpassad Indatatyp med hjälp av .NET Framework Forms Building-funktioner i Windows PowerShell.
+ms.openlocfilehash: 18fba743b169010936d2ea83dca4e95203664fe9
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77706197"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500563"
 ---
 # <a name="creating-a-custom-input-box"></a>Skapa en anpassad indataruta
 
@@ -152,8 +153,8 @@ Slutligen instruerar koden inuti **IF** -block Windows vad som ska göras med fo
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
-    $x = $textBox.Text
-    $x
+    $x = $textBox.Text
+    $x
 }
 ```
 

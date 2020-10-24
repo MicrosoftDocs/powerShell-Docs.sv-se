@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: Jea, PowerShell, säkerhet
 title: JEA roll funktioner
-ms.openlocfilehash: 5b5b5977d4fec1ed850f1146fe7c09463908651b
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+description: En roll funktion är en PowerShell-datafil med tillägget. psrc som visar alla cmdletar, funktioner, providers och externa program som görs tillgängliga för att ansluta användare.
+ms.openlocfilehash: 233d9081f4a8f977f0959addb5573c4566f885d0
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92298350"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500002"
 ---
 # <a name="jea-role-capabilities"></a>JEA roll funktioner
 
@@ -41,7 +42,7 @@ Följande tabell innehåller exempel på kommandon som kan användas skadligt om
 
 ## <a name="create-a-role-capability-file"></a>Skapa en roll funktions fil
 
-Du kan skapa en ny funktion för PowerShell-roll med cmdleten [New-PSRoleCapabilityFile](/powershell/module/microsoft.powershell.core/new-psrolecapabilityfile?view=powershell-6) .
+Du kan skapa en ny funktion för PowerShell-roll med cmdleten [New-PSRoleCapabilityFile](/powershell/module/microsoft.powershell.core/new-psrolecapabilityfile) .
 
 ```powershell
 New-PSRoleCapabilityFile -Path .\MyFirstJEARole.psrc

@@ -2,12 +2,13 @@
 ms.date: 06/11/2020
 keywords: powershell,cmdlet
 title: Utbildningsresurser för PowerShell
-ms.openlocfilehash: d9d2f77090a7da7a5bef0c6d0c2af80c3a07be46
-ms.sourcegitcommit: 56463fb628a7d83dec4364e89417d83316c3e53b
+description: En lista med resurser för Learning PowerShell och anslutning till andra PowerShell-användare.
+ms.openlocfilehash: 36e4d35007b8697b2926b7db6dbc698e98e5cce3
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84722855"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501532"
 ---
 # <a name="powershell-learning-resources"></a>Utbildningsresurser för PowerShell
 

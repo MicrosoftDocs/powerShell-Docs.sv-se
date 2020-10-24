@@ -1,13 +1,14 @@
 ---
 ms.date: 12/23/2019
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: Välja objekt för objekt Välj objekt
-ms.openlocfilehash: 06b92c7c4c5098c707a7d9f9d9a96e6b6a897f80
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Du kan använda `Select-Object` cmdleten för att skapa nya, anpassade PowerShell-objekt som innehåller egenskaper som valts från objekten i pipelinen.
+ms.openlocfilehash: 92635ac54ea1469739bcb228c5e9a0a8dbfc648b
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75737176"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501039"
 ---
 # <a name="selecting-parts-of-objects-select-object"></a>Välj delar av objekt (Select-Object)
 

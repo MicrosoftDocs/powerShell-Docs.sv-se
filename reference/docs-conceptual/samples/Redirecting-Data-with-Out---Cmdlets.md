@@ -1,13 +1,14 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: Omdirigera data med Out-cmdletar
-ms.openlocfilehash: d4cc14e26bdef0f973f948177d0c1e68929605fa
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Den här artikeln visar hur du använder de cmdletar som hanterar utdata i PowerShell.
+ms.openlocfilehash: 3a9e3b1ac06f5be4e6f3bbc52a15c4afb5b12cef
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030073"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500223"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Omdirigera data med out-*-cmdletar
 
@@ -69,7 +70,7 @@ Detta gäller för alla **out** -cmdletar. En **out** -cmdlet ska alltid visas i
 
 ## <a name="paging-console-output-out-host"></a>Utdata för växlings konsolen (out-Host)
 
-Som standard skickar Windows PowerShell data till värd fönstret, vilket är exakt vad out-Host-cmdleten gör. Den primära användningen för out-Host-cmdleten är växlings data som vi beskrivit tidigare. Följande kommando använder till exempel out-Host för att visa utdata från cmdleten Get-Command:
+Som standard skickar Windows PowerShell data till värd fönstret, vilket är exakt vad Out-Host-cmdleten gör. Den primära användningen av Out-Host-cmdleten är växlingsfiler som vi beskrivit tidigare. Följande kommando använder till exempel Out-Host för att spara utdata från Get-Command-cmdlet:
 
 ```powershell
 Get-Command | Out-Host -Paging
@@ -120,7 +121,7 @@ Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Wri
 
 ## <a name="saving-data-out-file"></a>Spara data (Out-File)
 
-Du kan skicka utdata till en fil i stället för konsol fönstret genom att använda cmdleten **Out-File** . Följande kommando rad skickar en lista över processer till filen **C:\\Temp\\processlist. txt**:
+Du kan skicka utdata till en fil i stället för konsol fönstret genom att använda cmdleten **Out-File** . Följande kommando rad skickar en lista över processer till filen **C: \\ Temp \\processlist.txt**:
 
 ```powershell
 Get-Process | Out-File -FilePath C:\temp\processlist.txt

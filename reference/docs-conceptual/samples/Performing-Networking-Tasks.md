@@ -1,13 +1,14 @@
 ---
 ms.date: 12/23/2019
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: Utför nätverksuppgifter
-ms.openlocfilehash: e0aa3b8ef3d911ab0fe851f6621d70e1265c5bd4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Den här artikeln visar hur du använder WMI-klasser i PowerShell för att hantera nätverks konfigurations inställningar i Windows.
+ms.openlocfilehash: 95b05c193f4168cdcdf8414399c4f8c569bff754
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75737210"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500257"
 ---
 # <a name="performing-networking-tasks"></a>Utför nätverksuppgifter
 
@@ -62,7 +63,7 @@ Om du vill visa detaljerad information om IP-konfigurationen för varje nätverk
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
 ```
 
-Standard visningen för nätverkskortets konfigurations objekt är en mycket begränsad uppsättning av tillgänglig information. För djupgående inspektion och fel sökning använder `Select-Object` eller en format-cmdlet, till exempel `Format-List`, för att ange vilka egenskaper som ska visas.
+Standard visningen för nätverkskortets konfigurations objekt är en mycket begränsad uppsättning av tillgänglig information. För djupgående inspektion och fel sökning använder `Select-Object` eller en format-cmdlet, till exempel `Format-List` , för att ange vilka egenskaper som ska visas.
 
 I moderna TCP/IP-nätverk är du förmodligen inte intresse rad av IPX-eller WINS-egenskaperna. Du kan använda **ExcludeProperty** -parametern för `Select-Object` för att dölja egenskaper med namn som börjar med "WINS" eller "IPX".
 
@@ -81,7 +82,7 @@ Du kan utföra en enkel ping mot en dator med hjälp av **Win32_PingStatus**. F�
 Get-CimInstance -Class Win32_PingStatus -Filter "Address='127.0.0.1'"
 ```
 
-Ett mer användbart formulär för sammanfattnings information som visar egenskaperna Address, SLA svarstid och StatusCode, som genereras av följande kommando. **AutoSize** -parametern `Format-Table` för ändrar storlek på tabell kolumnerna så att de visas korrekt i PowerShell.
+Ett mer användbart formulär för sammanfattnings information som visar egenskaperna Address, SLA svarstid och StatusCode, som genereras av följande kommando. **AutoSize** -parametern för `Format-Table` ändrar storlek på tabell kolumnerna så att de visas korrekt i PowerShell.
 
 ```powershell
 Get-CimInstance -Class Win32_PingStatus -Filter "Address='127.0.0.1'" |
@@ -140,9 +141,9 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
   ForEach-Object -Process { $_.SetDNSDomain('fabrikam.com') }
 ```
 
-Filtrerings instruktionen `IPEnabled=$true` är nödvändig, eftersom även om det finns flera nätverkskort på en dator som bara använder TCP/IP. de är allmänna program varu element som stöder RAS, PPTP, QoS och andra tjänster för alla kort och därför inte har en egen adress.
+Filtrerings instruktionen `IPEnabled=$true` är nödvändig, eftersom även om det finns flera nätverkskort konfigurationer på en dator som bara använder TCP/IP-kort. de är allmänna program varu element som stöder ras, PPTP, QoS och andra tjänster för alla kort och därför inte har en egen adress.
 
-Du kan filtrera kommandot med hjälp av- `Where-Object` cmdleten i stället för att `Get-CimInstance` använda filtret.
+Du kan filtrera kommandot med hjälp av `Where-Object` -cmdleten i stället för att använda `Get-CimInstance` filtret.
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration |
@@ -154,7 +155,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration |
 
 Att ändra DHCP-information innebär att du arbetar med en uppsättning nätverkskort, precis som DNS-konfigurationen gör. Det finns flera olika åtgärder som du kan utföra med hjälp av WMI, och vi kommer att gå igenom några vanliga åtgärder.
 
-### <a name="determining-dhcp-enabled-adapters"></a>Fastställa DHCP-aktiverade nätverkskort
+### <a name="determining-dhcp-enabled-adapters"></a>Bestämma DHCP-Enabled nätverkskort
 
 Använd följande kommando för att hitta de DHCP-aktiverade korten på en dator:
 
@@ -170,7 +171,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$tru
 
 ### <a name="retrieving-dhcp-properties"></a>Hämtar DHCP-egenskaper
 
-Eftersom DHCP-relaterade egenskaper för ett kort i allmänhet börjar `DHCP`med, kan du använda egenskaps parametern `Format-Table` för för att endast visa de egenskaperna:
+Eftersom DHCP-relaterade egenskaper för ett kort i allmänhet börjar med `DHCP` , kan du använda egenskaps parametern för `Format-Table` för att endast visa de egenskaperna:
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" |
@@ -245,7 +246,7 @@ Om du vill skapa en nätverks resurs använder du metoden **skapa** för **Win32
   )
 ```
 
-Du kan också skapa resursen med hjälp `net share` av i PowerShell i Windows:
+Du kan också skapa resursen med hjälp av `net share` i PowerShell i Windows:
 
 ```powershell
 net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
@@ -271,13 +272,13 @@ tempshare was deleted successfully.
 
 ## <a name="connecting-a-windows-accessible-network-drive"></a>Ansluta en Windows-tillgänglig nätverks enhet
 
-`New-PSDrive` Cmdletarna skapar en PowerShell-enhet, men enheter som skapas på det här sättet är bara tillgängliga för PowerShell. Om du vill skapa en ny nätverksansluten enhet kan du använda **wscript. Network** com-objektet. Följande kommando mappar resursen `\\FPS01\users` till en lokal enhet. `B:`
+`New-PSDrive`Cmdletarna skapar en PowerShell-enhet, men enheter som skapas på det här sättet är bara tillgängliga för PowerShell. Om du vill skapa en ny nätverksansluten enhet kan du använda **wscript. Network** com-objektet. Följande kommando mappar resursen till en `\\FPS01\users` lokal enhet `B:` .
 
 ```powershell
 (New-Object -ComObject WScript.Network).MapNetworkDrive('B:', '\\FPS01\users')
 ```
 
-I Windows fungerar `net use` kommandot även:
+I Windows `net use` fungerar kommandot även:
 
 ```powershell
 net use B: \\FPS01\users

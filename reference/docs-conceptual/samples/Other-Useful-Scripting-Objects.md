@@ -1,13 +1,14 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: Andra användbara skriptobjekt
-ms.openlocfilehash: 4f236246714b0608658bbd535851489912430336
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: I den här artikeln beskrivs objekt som innehåller ytterligare skript funktioner i Windows PowerShell ISE.
+ms.openlocfilehash: c20daa0045bc07b1f21aafa42a80ce7c47ee7331
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71325149"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500274"
 ---
 # <a name="other-useful-scripting-objects"></a>Andra användbara skriptobjekt
 
@@ -32,14 +33,14 @@ $psUnsupportedConsoleApplications
 
 ### <a name="pslocalhelp"></a>$psLocalHelp
 
-Detta är ett Dictionary-objekt som upprätthåller en Sammanhangs beroende mappning mellan hjälp ämnen och tillhör ande länkar i den lokala kompilerade HTML-hjälp filen. Den används för att hitta den lokala hjälpen för ett visst ämne. Du kan lägga till eller ta bort ämnen från den här listan. I följande kod exempel visas några exempel på nyckel/värde-par som finns `$psLocalHelp`i.
+Detta är ett Dictionary-objekt som upprätthåller en Sammanhangs beroende mappning mellan hjälp ämnen och tillhör ande länkar i den lokala kompilerade HTML-hjälp filen. Den används för att hitta den lokala hjälpen för ett visst ämne. Du kan lägga till eller ta bort ämnen från den här listan. I följande kod exempel visas några exempel på nyckel/värde-par som finns i `$psLocalHelp` .
 
 ```powershell
 # See the local help map
 $psLocalHelp | Format-List
 ```
 
-```output
+```Output
 Key   : Add-Computer
 Value : WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm
 
@@ -61,7 +62,7 @@ Detta är ett Dictionary-objekt som upprätthåller en Sammanhangs beroende mapp
 $psOnlineHelp | Format-List
 ```
 
-```output
+```Output
 Key   : Add-Computer
 Value : https://go.microsoft.com/fwlink/p/?LinkID=135194
 

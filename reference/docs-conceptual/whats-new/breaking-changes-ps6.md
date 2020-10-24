@@ -2,12 +2,13 @@
 ms.date: 02/03/2020
 keywords: PowerShell, Core
 title: Bryta ändringar för PowerShell 6,0
-ms.openlocfilehash: 9ead635232930598634141369fd2cc299f0b1799
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+description: Den här artikeln sammanfattar skillnaderna mellan Windows PowerShell 5,1 och PowerShell 6,0.
+ms.openlocfilehash: 7ed6e811b9136cb1c35422a9d682ba2bfaa136a0
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158198"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501702"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>Bryta ändringar för PowerShell 6. x
 
@@ -192,15 +193,15 @@ Tidigare, om `-Verbose` eller `-Debug` har angetts, overrode beteendet `$ErrorAc
 
 ### <a name="invoke-restmethod-doesnt-return-useful-info-when-no-data-is-returned-5320"></a>Invoke-RestMethod returnerar inte värdefull information när inga data returneras. [#5320](https://github.com/PowerShell/PowerShell/issues/5320)
 
-När ett API returnerar bara `null` , serialiserar Invoke-RestMethod detta som strängen i `"null"` stället för `$null` . Den här ändringen korrigerar logiken i `Invoke-RestMethod` för korrekt serialisering av ett giltigt JSON-värde för enkel värde `null` som `$null` .
+När ett API returnerar bara `null` , serialiserade Invoke-RestMethod detta som sträng i `"null"` stället för `$null` . Den här ändringen korrigerar logiken i `Invoke-RestMethod` för korrekt serialisering av ett giltigt JSON-värde för enkel värde `null` som `$null` .
 
 ### <a name="remove--protocol-from--computer-cmdlets-5277"></a>Ta bort `-Protocol` från `*-Computer` cmdlets [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
 På grund av problem med RPC-fjärrkommunikation i CoreFX (särskilt på plattformar som inte är Windows) och säkerställer en konsekvent fjärrhantering i PowerShell, `-Protocol` har parametern tagits bort från `\*-Computer` cmdletarna. DCOM stöds inte längre för fjärr kommunikation. Följande cmdletar stöder bara WSMAN-fjärr kommunikation:
 
-- Byt namn – dator
-- Starta om datorn
-- Stoppa – dator
+- Rename-Computer
+- Restart-Computer
+- Stop-Computer
 
 ### <a name="remove--computername-from--service-cmdlets-5090"></a>Ta bort `-ComputerName` från `*-Service` cmdlets [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
@@ -228,7 +229,7 @@ När du använder HTTP skickas innehåll inklusive lösen ord som klartext. Den 
 
 ### <a name="remove-addtypecommandbase-class-5407"></a>Ta bort `AddTypeCommandBase` klass [#5407](https://github.com/PowerShell/PowerShell/issues/5407)
 
-`AddTypeCommandBase`Klassen har tagits bort från `Add-Type` för att förbättra prestandan. Den här klassen används endast av cmdleten Add-Type och bör inte påverka användare.
+`AddTypeCommandBase`Klassen har tagits bort från `Add-Type` för att förbättra prestandan. Den här klassen används endast av Add-Type-cmdleten och bör inte påverka användare.
 
 ### <a name="unify-cmdlets-with-parameter--encoding-to-be-of-type-systemtextencoding-5080"></a>Förena cmdletar med parametern `-Encoding` som typ `System.Text.Encoding` [#5080](https://github.com/PowerShell/PowerShell/issues/5080)
 
@@ -305,7 +306,7 @@ Den här ändringen ger `Get-ChildItem` mer i rad med UNIX- `ls -r` och inbyggda
 
 Tidigare var de utdata `Get-Content -Delimiter` som användes inkonsekventa och olämpliga eftersom det krävde ytterligare bearbetning av data för att ta bort avgränsaren. Den här ändringen tar bort avgränsaren i returnerade rader.
 
-### <a name="implement-format-hex-in-c-3320"></a>Implementera format – hex i C# [#3320](https://github.com/PowerShell/PowerShell/issues/3320)
+### <a name="implement-format-hex-in-c-3320"></a>Implementera Format-Hex i C# [#3320](https://github.com/PowerShell/PowerShell/issues/3320)
 
 `-Raw`Parametern är nu en "No-OP" (där det inte gör något). Om du fortsätter kommer alla utdata att visas med en sann representation av siffror som innehåller alla byte för dess typ (vad den `-Raw` här ändringen hade innan ändringen).
 
@@ -313,7 +314,7 @@ Tidigare var de utdata `Get-Content -Delimiter` som användes inkonsekventa och 
 
 I UNIX är det en konvention för gränssnitt att acceptera `-i` för ett interaktivt gränssnitt och många verktyg förväntar sig detta beteende ( `script` till exempel och när du ställer in PowerShell som standard gränssnitt) och anropar gränssnittet med `-i` växeln. Den här ändringen är Sparad i som `-i` tidigare kunde användas som kort för att matcha `-inputformat` , vilket nu måste vara `-in` .
 
-### <a name="typo-fix-in-get-computerinfo-property-name-3167"></a>Skriv åtgärd i get-ComputerInfo egenskaps namn [#3167](https://github.com/PowerShell/PowerShell/issues/3167)
+### <a name="typo-fix-in-get-computerinfo-property-name-3167"></a>Korrigera skrivfel i Get-ComputerInfo egenskaps namn [#3167](https://github.com/PowerShell/PowerShell/issues/3167)
 
 `BiosSerialNumber` är felstavat `BiosSeralNumber` och har ändrats till rätt stavning.
 

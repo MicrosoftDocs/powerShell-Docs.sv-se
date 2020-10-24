@@ -2,12 +2,13 @@
 ms.date: 10/21/2020
 keywords: powershell,cmdlet
 title: Skriva portabla moduler
-ms.openlocfilehash: 9cd9e5bfc1110ce149d552f55ba20e35d9206c46
-ms.sourcegitcommit: 57c3527ec6c3124cb9cdab7b07ebb92ed159cb64
+description: Den här artikeln förklarar hur du skapar moduler nya moduler eller uppdaterar befintliga moduler så att de fungerar på de plattformar som stöds av PowerShell.
+ms.openlocfilehash: 6d5c36263c3c6d1219f963cea2e94ae92b07e863
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92357768"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500801"
 ---
 # <a name="portable-modules"></a>Bärbara moduler
 
@@ -200,7 +201,7 @@ Kontrol lera först att modulen fungerar på Linux och macOS. Sedan anger du kom
 
 I modulen manifest `PrivateData` har egenskapen en `PSData` underordnad egenskap. Den valfria `Tags` egenskapen för `PSData` tar en matris med värden som visas i PowerShell-galleriet. PowerShell-galleriet har stöd för följande kompatibilitetsinställningar:
 
-| Tagga               | Beskrivning                                |
+| Tagg               | Beskrivning                                |
 |-------------------|--------------------------------------------|
 | PSEdition_Core    | Kompatibel med PowerShell Core 6          |
 | PSEdition_Desktop | Kompatibel med Windows PowerShell         |

@@ -1,13 +1,14 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: Välj objekt från en listruta
-ms.openlocfilehash: 048bccd403e01e2290a8930a0faba30d4c7caa73
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Den här artikeln visar hur du skapar en List Rute kontroll med hjälp av .NET Framework Forms Building-funktioner i Windows PowerShell.
+ms.openlocfilehash: cfd6110a9cfcc3cea891d68d8ce7be5b332a949a
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77706180"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501056"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Välj objekt från en listruta
 
@@ -142,7 +143,7 @@ $listBox.Height = 80
 I nästa avsnitt anger du de värden som du vill att List rutan ska visa för användarna.
 
 > [!NOTE]
-> List rutan som skapats av det här skriptet tillåter endast ett val. Om du vill skapa en List Rute kontroll som tillåter flera val anger du ett värde för egenskapen **SelectionMode** , på samma sätt som följande `$listBox.SelectionMode = 'MultiExtended'`:. Mer information finns i [list rutor med flera val](Multiple-selection-List-Boxes.md).
+> List rutan som skapats av det här skriptet tillåter endast ett val. Om du vill skapa en List Rute kontroll som tillåter flera val anger du ett värde för egenskapen **SelectionMode** , på samma sätt som följande: `$listBox.SelectionMode = 'MultiExtended'` . Mer information finns i [list rutor med flera val](Multiple-selection-List-Boxes.md).
 
 ```powershell
 [void] $listBox.Items.Add('atl-dc-001')
@@ -172,8 +173,8 @@ Slutligen instruerar koden inuti **IF** -block Windows vad som ska göras med fo
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
-    $x = $listBox.SelectedItem
-    $x
+    $x = $listBox.SelectedItem
+    $x
 }
 ```
 

@@ -2,12 +2,13 @@
 ms.date: 05/22/2020
 keywords: powershell,cmdlet
 title: Vad är PowerShell?
-ms.openlocfilehash: 267b2938a0892c99c3a961bc7107f573df40a683
-ms.sourcegitcommit: 38215ad49e237b219e62bb5a5f0eb3b6b048df1e
+description: Den här artikeln är en introduktion till PowerShell-skript miljön och dess funktioner.
+ms.openlocfilehash: 91fc580af9a3adf43a24c40b4aaf3f1843882705
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83868487"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500784"
 ---
 # <a name="what-is-powershell"></a>Vad är PowerShell?
 
@@ -42,7 +43,7 @@ Om du har använt text bearbetnings verktyg för att bearbeta data tidigare komm
 
 ## <a name="the-command-family-is-extensible"></a>Kommando serien är utöknings bar
 
-Gränssnitt som `cmd.exe` inte ger dig möjlighet att direkt utöka den inbyggda kommando uppsättningen. Du kan skapa externa kommando rads verktyg som körs i `cmd.exe` . Men dessa externa verktyg saknar tjänster, till exempel hjälp integrering. `cmd.exe`känner inte automatiskt till att dessa externa verktyg är giltiga kommandon.
+Gränssnitt som `cmd.exe` inte ger dig möjlighet att direkt utöka den inbyggda kommando uppsättningen. Du kan skapa externa kommando rads verktyg som körs i `cmd.exe` . Men dessa externa verktyg saknar tjänster, till exempel hjälp integrering. `cmd.exe` känner inte automatiskt till att dessa externa verktyg är giltiga kommandon.
 
 Kommandona i PowerShell kallas _cmdlets_. Du kan använda varje cmdlet separat, men deras effekt realiseras när du kombinerar dem för att utföra komplexa uppgifter. Precis som många gränssnitt ger PowerShell åtkomst till fil systemet på datorn. Med PowerShell- _providers_ kan du komma åt andra data lager, till exempel registret och certifikat Arkiv, så enkelt som du har åtkomst till fil systemet.
 
@@ -141,7 +142,7 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {get;
 ProviderPath Property   string ProviderPath {get;}
 ```
 
-`Get-Location`Returnerar ett **PathInfo** -objekt som innehåller den aktuella sökvägen och annan information.
+`Get-Location` Returnerar ett **PathInfo** -objekt som innehåller den aktuella sökvägen och annan information.
 
 ## <a name="built-in-help-system"></a>Inbyggt hjälpsystem
 

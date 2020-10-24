@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: Jea, PowerShell, säkerhet
 title: Registrerar JEA-konfigurationer
-ms.openlocfilehash: 7cc67e891bc14dd667c97e9a8b550b33b4c2b874
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: När du registrerar JEA-slutpunkten med systemet blir slut punkten tillgänglig för användning av användare och automatiserings motorer.
+ms.openlocfilehash: 6e7f8cdc1e7a666bddaa42034d70fcbcf55c1972
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77706214"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499917"
 ---
 # <a name="registering-jea-configurations"></a>Registrerar JEA-konfigurationer
 
@@ -24,7 +25,7 @@ Innan du börjar bör du kontrol lera att följande krav är uppfyllda:
 - Användaren som registrerar JEA-konfigurationen har administratörs behörighet på systemet.
 - Du har valt ett namn för din JEA-slutpunkt.
 
-Namnet på JEA-slutpunkten krävs när användare ansluter till systemet med hjälp av JEA. Cmdlet: en [Get-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/get-pssessionconfiguration) visar namnen på slut punkterna i ett system. Slut punkter som börjar med `microsoft` levereras vanligt vis med Windows. `microsoft.powershell` Slut punkten är standard slut punkten som används vid anslutning till en fjärran sluten PowerShell-slutpunkt.
+Namnet på JEA-slutpunkten krävs när användare ansluter till systemet med hjälp av JEA. Cmdlet: en [Get-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/get-pssessionconfiguration) visar namnen på slut punkterna i ett system. Slut punkter som börjar med `microsoft` levereras vanligt vis med Windows. `microsoft.powershell`Slut punkten är standard slut punkten som används vid anslutning till en fjärran sluten PowerShell-slutpunkt.
 
 ```powershell
 Get-PSSessionConfiguration | Select-Object Name
@@ -75,7 +76,7 @@ Följande egenskaper kan konfigureras med hjälp av DSC-resursen:
 
 Syntaxen för var och en av dessa egenskaper i en DSC-konfiguration är konsekvent med konfigurations filen för PowerShell-sessionen.
 
-Nedan visas en exempel-DSC-konfiguration för en generell server underhålls modul. Det förutsätter att en giltig PowerShell-modul som innehåller roll funktioner finns `\\myfileshare\JEA` på fil resursen.
+Nedan visas en exempel-DSC-konfiguration för en generell server underhålls modul. Det förutsätter att en giltig PowerShell-modul som innehåller roll funktioner finns på `\\myfileshare\JEA` fil resursen.
 
 ```powershell
 Configuration JEAMaintenance

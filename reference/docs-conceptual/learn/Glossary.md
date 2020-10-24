@@ -2,12 +2,13 @@
 ms.date: 06/11/2020
 keywords: powershell,cmdlet
 title: PowerShell-ordlista
-ms.openlocfilehash: 8df76fa3a78e9701c28488db0bde25fa245b1160
-ms.sourcegitcommit: 56463fb628a7d83dec4364e89417d83316c3e53b
+description: En ord lista med PowerShell-relaterad terminologi.
+ms.openlocfilehash: 75b1ed69df7547474687361a9ad3a15e1d677cdc
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84722872"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499900"
 ---
 # <a name="powershell-glossary"></a>PowerShell-ordlista
 
@@ -16,7 +17,7 @@ ms.locfileid: "84722872"
 | binär modul               | En PowerShell-modul vars rotnod är en binär modul (. dll). En binär modul kan eventuellt innehålla ett modul manifest. |
 | gemensam parameter            | En parameter som läggs till i alla cmdletar, avancerade funktioner och arbets flöden av PowerShell-motorn. |
 | punkt källa                  | Starta ett kommando genom att skriva en punkt och ett blank steg före kommandot i PowerShell. Kommandon som är punktbaserade körs i det aktuella omfånget i stället för i ett nytt omfång. Variabler, alias, funktioner eller enheter som skapas av kommandot skapas i det aktuella omfånget och är tillgängliga för användarna när kommandot har slutförts. |
-| dynamisk modul              | En modul som bara finns i minnet. Cmdletarna New-module och import-PSSession skapar dynamiska moduler. |
+| dynamisk modul              | En modul som bara finns i minnet. New-Module-och Import-PSSession-cmdletarna skapar dynamiska moduler. |
 | dynamisk parameter           | En parameter som läggs till i en PowerShell-cmdlet, funktion eller skript under vissa förhållanden. Cmdlets, functions, providers och scripts kan lägga till dynamiska parametrar. |
 | formaterar fil             | En PowerShell XML-fil som har `.format.ps1xml` tillägget och som definierar hur PowerShell visar ett objekt baserat på dess .NET Framework typ. |
 | tillstånd för global session        | Sessionstillståndet som innehåller de data som är tillgängliga för användaren av en PowerShell-session. |

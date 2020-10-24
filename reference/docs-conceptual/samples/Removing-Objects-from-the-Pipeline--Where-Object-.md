@@ -1,13 +1,14 @@
 ---
 ms.date: 12/23/2019
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: Ta bort objekt från pipelinen där objektet
-ms.openlocfilehash: 370e7745341b70c0794352a690d5750d21f53ac2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Med Where-Object cmdlet kan du filtrera objekt som skickas i pipelinen.
+ms.openlocfilehash: e744dc671303711f1cbe8cc724a97c3327c1da85
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75737193"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500121"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Ta bort objekt från pipelinen (Where-Object)
 
@@ -17,14 +18,14 @@ PowerShell innehåller en `Where-Object` cmdlet som gör att du kan testa varje 
 
 ## <a name="performing-simple-tests-with-where-object"></a>Utföra enkla tester med Where-Object
 
-Värdet för **FilterScript** är ett *skript block* – ett eller flera PowerShell-kommandon som omges av klammerparenteser (`{}`) – som utvärderas till true eller false. Dessa skript block kan vara väldigt enkla, men att skapa dem kräver att du känner till ett annat PowerShell-begrepp, jämförelse operatorer. En jämförelse operator jämför objekten som visas på varje sida av den. Jämförelse operatorer börjar med ett bindestreck (`-`) och följs av ett namn. Grundläggande jämförelse operatorer fungerar på nästan alla typer av objekt. De mer avancerade jämförelse operatörerna kanske bara arbetar med text eller matriser.
+Värdet för **FilterScript** är ett *skript block* – ett eller flera PowerShell-kommandon som omges av klammerparenteser ( `{}` ) – som utvärderas till true eller false. Dessa skript block kan vara väldigt enkla, men att skapa dem kräver att du känner till ett annat PowerShell-begrepp, jämförelse operatorer. En jämförelse operator jämför objekten som visas på varje sida av den. Jämförelse operatorer börjar med ett bindestreck ( `-` ) och följs av ett namn. Grundläggande jämförelse operatorer fungerar på nästan alla typer av objekt. De mer avancerade jämförelse operatörerna kanske bara arbetar med text eller matriser.
 
 > [!NOTE]
 > När du arbetar med text är PowerShell-jämförelsen som standard Skift läges okänslig.
 
-På grund av tolknings överväganden används symboler `<`som`>`, och `=` inte som jämförelse operatorer. Jämförelse operatorer består i stället av bokstäver. De grundläggande jämförelse operatorerna visas i följande tabell.
+På grund av tolknings överväganden används symboler som `<` , `>` och `=` inte som jämförelse operatorer. Jämförelse operatorer består i stället av bokstäver. De grundläggande jämförelse operatorerna visas i följande tabell.
 
-| Jämförelseoperator |                  Betydelse                   |    Exempel (returnerar true)    |
+| Jämförelseoperator |                  Innebörd                   |    Exempel (returnerar true)    |
 | ------------------- | ------------------------------------------ | ---------------------------- |
 | -EQ                 | är lika med                                | 1 – EQ 1                      |
 | -Ne                 | Är inte lika med                            | 1 – Ne 2                      |
@@ -32,12 +33,12 @@ På grund av tolknings överväganden används symboler `<`som`>`, och `=` inte 
 | -Le                 | Är mindre än eller lika med                   | 1 – Le 2                      |
 | -gt                 | Är större än                            | 2 – gt 1                      |
 | -ge                 | Är större än eller lika med                | 2-ge 1                      |
-| – som               | Liknar (jämförelse av jokertecken för text)     | "File. doc" – som "f *. gör?"    |
-| -notlike            | Liknar inte (jämförelse av jokertecken för text) | "File. doc"-notlike "p*. doc" |
+| – som               | Liknar (jämförelse av jokertecken för text)     | "file.doc" – som "f *. gör?"    |
+| -notlike            | Liknar inte (jämförelse av jokertecken för text) | "file.doc"-notlike "p*. doc" |
 | – innehåller           | Innehåller                                   | 1, 2, 3 – innehåller 1            |
 | -notcontains        | Innehåller inte                           | 1, 2, 3-notcontains 4         |
 
-`Where-Object`skript block använder den särskilda variabeln `$_` för att referera till det aktuella objektet i pipelinen. Här är ett exempel på hur det fungerar. Om du har en lista med tal och bara vill returnera de som är mindre än 3 kan du använda `Where-Object` för att filtrera talen genom att skriva:
+`Where-Object` skript block använder den särskilda variabeln `$_` för att referera till det aktuella objektet i pipelinen. Här är ett exempel på hur det fungerar. Om du har en lista med tal och bara vill returnera de som är mindre än 3 kan du använda `Where-Object` för att filtrera talen genom att skriva:
 
 ```
 1,2,3,4 | Where-Object {$_ -lt 3}
@@ -107,7 +108,7 @@ intelppm               Intel Processor Driver
 ...
 ```
 
-Det finns två `Where-Object` element i ovanstående kommando, men de kan uttryckas i ett enda `Where-Object` element med hjälp av `-and` den logiska operatorn, så här:
+Det finns två `Where-Object` element i ovanstående kommando, men de kan uttryckas i ett enda `Where-Object` element med hjälp av den `-and` logiska operatorn, så här:
 
 ```powershell
 Get-CimInstance -Class Win32_SystemDriver |
@@ -117,7 +118,7 @@ Get-CimInstance -Class Win32_SystemDriver |
 
 De logiska standard operatörerna visas i följande tabell.
 
-| Logisk operator |                 Betydelse                  |  Exempel (returnerar true)  |
+| Logisk operator |                 Innebörd                  |  Exempel (returnerar true)  |
 | ---------------- | ---------------------------------------- | ------------------------ |
 | -och             | Logisk och; sant om båda sidorna är sanna | (1 – EQ 1)-och (2-EQ 2) |
 | -eller              | Logiskt eller; sant om endera sidan är sann  | (1 – EQ 1)-eller (1-EQ 2)  |

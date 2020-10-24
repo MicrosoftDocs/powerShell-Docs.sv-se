@@ -1,17 +1,18 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: Hantera Windows PowerShell-enheter
-ms.openlocfilehash: 5d1aba459caeaab2542e17e74534da6713b0faa9
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: En PowerShell-enhet är en data lager plats som du kan komma åt som en fil system enhet i PowerShell. Som standard innehåller PowerShell providrar som stöder fil systemet, registret, certifikat Arkiv och andra.
+ms.openlocfilehash: e4e5347c3f3458f25cea31c8e5a499474985220a
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "70215520"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500342"
 ---
 # <a name="managing-windows-powershell-drives"></a>Hantera Windows PowerShell-enheter
 
-En *Windows PowerShell-enhet* är en data lager plats som du kan komma åt som en fil system enhet i Windows PowerShell. Windows PowerShell-providern skapar några enheter åt dig, till exempel fil system enheter (inklusive C: och D:), register enheterna (HKCU: och HKLM:) och certifikat enheten (cert:) och du kan skapa egna Windows PowerShell-enheter. De här enheterna är mycket användbara, men de är bara tillgängliga i Windows PowerShell. Du kan inte komma åt dem genom att använda andra Windows-verktyg, till exempel Utforskaren eller cmd. exe.
+En *Windows PowerShell-enhet* är en data lager plats som du kan komma åt som en fil system enhet i Windows PowerShell. Windows PowerShell-providern skapar några enheter åt dig, till exempel fil system enheter (inklusive C: och D:), register enheterna (HKCU: och HKLM:) och certifikat enheten (cert:) och du kan skapa egna Windows PowerShell-enheter. De här enheterna är mycket användbara, men de är bara tillgängliga i Windows PowerShell. Du kan inte komma åt dem med hjälp av andra Windows-verktyg, till exempel Utforskaren eller Cmd.exe.
 
 Windows PowerShell använder substantiv, **PSDrive**, för kommandon som fungerar med Windows PowerShell-enheter. Om du vill ha en lista över Windows PowerShell-enheter i Windows PowerShell-sessionen använder du cmdleten **Get-PSDrive** .
 
@@ -102,7 +103,7 @@ Om du vill skapa en ny Windows PowerShell-enhet måste du ange tre parametrar:
 
 - Roten, det vill säga sökvägen till roten för den nya enheten
 
-Du kan till exempel skapa en enhet med namnet "Office" som är mappad till den mapp som innehåller Microsoft Office-program på datorn, till exempel **C:\\program files\\Microsoft Office\\Office11**. Skriv följande kommando för att skapa enheten:
+Du kan till exempel skapa en enhet med namnet "Office" som är mappad till den mapp som innehåller Microsoft Office-program på datorn, till exempel **C: \\ Program Files \\ Microsoft Office \\ Office11**. Skriv följande kommando för att skapa enheten:
 
 ```
 PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Microsoft Office\OFFICE11"
@@ -117,7 +118,7 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 
 Du kan referera till den nya Windows PowerShell-enheten på samma sätt som du gör med Windows PowerShell-enheter – efter dess namn följt av ett kolon (**:**).
 
-En Windows PowerShell-enhet kan göra många aktiviteter mycket enklare. Några av de viktigaste nycklarna i Windows-registret har till exempel extremt långa sökvägar, vilket gör det svårt att komma åt och svårt att komma ihåg. Viktig konfigurations information finns under **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion**. Om du vill visa och ändra objekt i register nyckeln CurrentVersion, kan du skapa en Windows PowerShell-enhet som är rotad i nyckeln genom att skriva:
+En Windows PowerShell-enhet kan göra många aktiviteter mycket enklare. Några av de viktigaste nycklarna i Windows-registret har till exempel extremt långa sökvägar, vilket gör det svårt att komma åt och svårt att komma ihåg. Viktig konfigurations information finns under **HKEY_LOCAL_MACHINE \\ Software \\ Microsoft \\ Windows \\ CurrentVersion**. Om du vill visa och ändra objekt i register nyckeln CurrentVersion, kan du skapa en Windows PowerShell-enhet som är rotad i nyckeln genom att skriva:
 
 ```
 PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\Windows\CurrentVersion
@@ -143,7 +144,7 @@ Path
 cvkey:\
 ```
 
-Cmdlet: en New-PsDrive lägger bara till den nya enheten till den aktuella Windows PowerShell-sessionen. Om du stänger Windows PowerShell-fönstret går den nya enheten förlorad. Om du vill spara en Windows PowerShell-enhet använder du cmdleten export-Console för att exportera den aktuella Windows PowerShell-sessionen och använder sedan PowerShell. exe **PSConsoleFile** -parametern för att importera den. Eller Lägg till den nya enheten i Windows PowerShell-profilen.
+New-PsDrive-cmdlet: en lägger bara till den nya enheten till den aktuella Windows PowerShell-sessionen. Om du stänger Windows PowerShell-fönstret går den nya enheten förlorad. Om du vill spara en Windows PowerShell-enhet använder du Export-Console cmdlet för att exportera den aktuella Windows PowerShell-sessionen och använder sedan parametern PowerShell.exe **PSConsoleFile** för att importera den. Eller Lägg till den nya enheten i Windows PowerShell-profilen.
 
 ## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Ta bort Windows PowerShell-enheter (Remove-PSDrive)
 
@@ -161,7 +162,7 @@ För att ta bort **cvkey:** Windows PowerShell-enheten, som också visas i avsni
 Remove-PSDrive -Name cvkey
 ```
 
-Det är enkelt att ta bort en Windows PowerShell-enhet, men du kan inte ta bort den när du befinner dig i enheten. Ett exempel:
+Det är enkelt att ta bort en Windows PowerShell-enhet, men du kan inte ta bort den när du befinner dig i enheten. Exempel:
 
 ```
 PS> cd office:

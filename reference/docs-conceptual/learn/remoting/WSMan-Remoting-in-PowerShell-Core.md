@@ -2,34 +2,29 @@
 title: WS-Management-fjärrkommunikation (WSMan) i PowerShell Core
 description: Fjärr kommunikation i PowerShell Core med WSMan
 ms.date: 08/06/2018
-ms.openlocfilehash: 7b090e1463808ab10758bbd417d52fcc16c31366
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: fdc4159279db28b8ee60bc0853e19512a1f9ec14
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564521"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501311"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>WS-Management-fjärrkommunikation (WSMan) i PowerShell Core
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>Instruktioner för att skapa en fjärran sluten slut punkt
 
-PowerShell Core-paketet för Windows innehåller ett WinRM-plugin-program ( `pwrshplugin.dll` ) och ett installations skript ( `Install-PowerShellRemoting.ps1` ) i `$PSHome` .
-De här filerna gör att PowerShell kan acceptera inkommande PowerShell fjärr anslutningar när dess slut punkt anges.
+PowerShell Core-paketet för Windows innehåller ett WinRM-plugin-program ( `pwrshplugin.dll` ) och ett installations skript ( `Install-PowerShellRemoting.ps1` ) i `$PSHome` . De här filerna gör att PowerShell kan acceptera inkommande PowerShell fjärr anslutningar när dess slut punkt anges.
 
 ### <a name="motivation"></a>Motivation
 
-En installation av PowerShell kan upprätta PowerShell-sessioner till fjärrdatorer med hjälp av `New-PSSession` och `Enter-PSSession` .
-För att det ska kunna ta emot inkommande PowerShell-fjärranslutningar måste användaren skapa en WinRM Remoting-slutpunkt.
-Det här är ett explicit scenario där användaren kör Install-PowerShellRemoting. ps1 för att skapa WinRM-slutpunkten.
-Installations skriptet är en kortsiktig lösning tills vi lägger till ytterligare funktioner till `Enable-PSRemoting` för att utföra samma åtgärd.
-Mer information hittar du i problem [#1193](https://github.com/PowerShell/PowerShell/issues/1193).
+En installation av PowerShell kan upprätta PowerShell-sessioner till fjärrdatorer med hjälp av `New-PSSession` och `Enter-PSSession` . För att det ska kunna ta emot inkommande PowerShell-fjärranslutningar måste användaren skapa en WinRM Remoting-slutpunkt. Det här är ett explicit scenario där användaren kör Install-PowerShellRemoting.ps1 för att skapa WinRM-slutpunkten. Installations skriptet är en kortsiktig lösning tills vi lägger till ytterligare funktioner till `Enable-PSRemoting` för att utföra samma åtgärd. Mer information hittar du i problem [#1193](https://github.com/PowerShell/PowerShell/issues/1193).
 
 ### <a name="script-actions"></a>Skript åtgärder
 
 Skriptet
 
-1. Skapar en katalog för plugin-programmet i`$env:windir\System32\PowerShell`
-1. Kopierar pwrshplugin. dll till den platsen
+1. Skapar en katalog för plugin-programmet i `$env:windir\System32\PowerShell`
+1. Kopierar pwrshplugin.dll till den platsen
 1. Genererar en konfigurations fil
 1. Registrerar plugin-programmet med WinRM
 
@@ -56,7 +51,8 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
 
-**Obs:** Registrerings skriptet för fjärr kommunikation startar om WinRM, så att alla befintliga PSRP-sessioner avslutas omedelbart efter att skriptet har körts. Om kör under en fjärrsession kommer detta att avsluta anslutningen.
+> [!NOTE]
+> Registrerings skriptet för fjärr kommunikation startar om WinRM. Alla befintliga PSRP-sessioner avslutas omedelbart efter att skriptet har körts. Om kör under en fjärrsession avslutar skriptet anslutningen.
 
 ## <a name="how-to-connect-to-the-new-endpoint"></a>Så här ansluter du till den nya slut punkten
 

@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: Jea, PowerShell, säkerhet
 title: Granskning och rapportering av JEA
-ms.openlocfilehash: 2afefe83acecc1fc3643d49766120ffecc25378f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Granskningen hjälper dig att utvärdera att rätt personer har åtkomst till JEA-slutpunkten och att de tilldelade rollerna fortfarande är lämpliga.
+ms.openlocfilehash: 2140d6b756ae38d82e4943c373e8a75beea30e28
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "70017925"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500019"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Granskning och rapportering av JEA
 
@@ -120,7 +121,7 @@ Machine: SERVER01 (Microsoft Windows NT 10.0.14393.0)
 [...]
 ```
 
-Bröd texten i avskriften innehåller information om varje kommando som användaren anropade. Den exakta syntaxen för kommandot som används är inte tillgänglig i JEA-sessioner på grund av hur kommandon omvandlas för PowerShell-fjärrkommunikation. Du kan dock fortfarande bestämma det effektiva kommando som kördes. Nedan visas ett exempel på en avskrifts- `Get-Service Dns` kodfragment från en användare som körs i en Jea-session:
+Bröd texten i avskriften innehåller information om varje kommando som användaren anropade. Den exakta syntaxen för kommandot som används är inte tillgänglig i JEA-sessioner på grund av hur kommandon omvandlas för PowerShell-fjärrkommunikation. Du kan dock fortfarande bestämma det effektiva kommando som kördes. Nedan visas ett exempel på en avskrifts-kodfragment från en användare `Get-Service Dns` som körs i en Jea-session:
 
 ```
 PS>CommandInvocation(Get-Service): "Get-Service"
@@ -133,7 +134,7 @@ Running  Dns                DNS Server
 
 En **CommandInvocation** -rad skrivs för varje kommando som en användare kör. **ParameterBindings** spelar in varje parameter och värde som medföljer kommandot. I det tidigare exemplet kan du se att parameter **namnet** angavs med värdet **DNS** för `Get-Service` cmdleten.
 
-Utdata från varje kommando utlöser även en **CommandInvocation**, vanligt vis `Out-Default`till. **InputObject** för `Out-Default` är PowerShell-objektet som returnerades från kommandot. Informationen om objektet skrivs ut några rader nedan, och mimicking vad användaren skulle ha sett.
+Utdata från varje kommando utlöser även en **CommandInvocation**, vanligt vis till `Out-Default` . **InputObject** för `Out-Default` är PowerShell-objektet som returnerades från kommandot. Informationen om objektet skrivs ut några rader nedan, och mimicking vad användaren skulle ha sett.
 
 ## <a name="see-also"></a>Se även
 

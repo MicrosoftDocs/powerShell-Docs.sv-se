@@ -3,12 +3,12 @@ ms.date: 10/19/2020
 keywords: PowerShell, cmdlet, debug
 title: Använda Visual Studio Code för att felsöka kompilerade cmdletar
 description: Så här ställer du in en build-uppgift och startar konfigurationen för ett PSModule-projekt i .NET Core
-ms.openlocfilehash: ffae03b1edaf9d5ffa5da6381e301f829c8bc8f7
-ms.sourcegitcommit: 57c3527ec6c3124cb9cdab7b07ebb92ed159cb64
+ms.openlocfilehash: b51a69110c64b386f5c3ccf2527d1e184ef89257
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92374230"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501651"
 ---
 # <a name="using-visual-studio-code-to-debug-compiled-cmdlets"></a>Använda Visual Studio Code för att felsöka kompilerade cmdletar
 
@@ -124,6 +124,15 @@ När du anropar din cmdlet i terminalsession stoppas fel söknings programmet vi
 
 `program`Fältet används för att starta `pwsh` så att cmdleten som felsöks kan köras. `-NoExit`Argumentet förhindrar att PowerShell-sessionen avslutas så fort modulen importeras.
 Sökvägen i `Import-Module` argumentet är standard för att bygga ut en sökväg när du har följt guiden [skriva portabla moduler][] . Om du har skapat ett modul manifest ( `.psd1` fil) bör du använda sökvägen till den i stället. `/`Sök vägs avgränsaren fungerar på Windows, Linux och MacOS. Du måste använda den integrerade terminalen för att köra de PowerShell-kommandon som du vill felsöka.
+
+> [!NOTE]
+> Om fel söknings programmet inte slutar vid några Bryt punkter, tittar du på fel söknings konsolen i Visual Studio Code för en rad med texten:
+>
+> ```
+> Loaded '/path/to/myModule.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+> ```
+>
+> Om du ser detta lägger du till `"justMyCode": false` i Start konfigurationen (på samma nivå som `"console": "integratedTerminal"` .
 
 ### <a name="configuring-launchjson-for-windows-powershell"></a>Konfigurera launch.jspå för Windows PowerShell
 

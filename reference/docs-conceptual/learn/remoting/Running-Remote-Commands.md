@@ -2,12 +2,13 @@
 ms.date: 08/21/2020
 keywords: powershell,cmdlet
 title: Kör fjärrkommandon
-ms.openlocfilehash: f12d08b03757b24d1de50402b301faff193f27be
-ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
+description: Förklarar metoder för att köra kommandon på fjärrdatorer med hjälp av PowerShell.
+ms.openlocfilehash: e9e07fec96cbd93d3bf06be2a1f98ec7aa7d8f19
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91814743"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501362"
 ---
 # <a name="running-remote-commands"></a>Kör fjärrkommandon
 
@@ -69,7 +70,7 @@ Om du vill avsluta den interaktiva sessionen skriver du:
 Exit-PSSession
 ```
 
-Mer information om cmdletarna Enter-PSSession och exit-PSSession finns i:
+Mer information om Enter-PSSession-och Exit-PSSession-cmdlet: ar finns i:
 
 - [Retur-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession)
 - [Avsluta-PSSession](/powershell/module/microsoft.powershell.core/exit-pssession)
@@ -111,7 +112,7 @@ $s = New-PSSession -ComputerName Server01, Server02
 
 Nu när sessionerna har upprättats kan du köra alla kommandon i dem. Och eftersom sessionerna är permanenta kan du samla in data från ett kommando och använda det i ett annat kommando.
 
-Följande kommando kör till exempel ett Get-HotFix-kommando i sessionerna i $s-variabeln och sparar resultatet i $h-variabeln. Variabeln $h skapas i varje session i $s, men den finns inte i den lokala sessionen.
+Följande kommando kör till exempel ett Get-HotFix-kommando i sessionerna i $s-variabeln och sparar resultatet i $h variabeln. Variabeln $h skapas i varje session i $s, men den finns inte i den lokala sessionen.
 
 ```powershell
 Invoke-Command -Session $s {$h = Get-HotFix}
@@ -129,7 +130,7 @@ Windows PowerShell-fjärrhantering börjar bara här. Genom att använda de cmdl
 
 Windows PowerShell innehåller en WSMan-Provider. Providern skapar en `WSMAN:` enhet som gör det möjligt att navigera i en hierarki med konfigurations inställningar på den lokala datorn och fjärrdatorer.
 
-Mer information om WSMan-providern finns i [WSMan-providern](https://technet.microsoft.com/library/dd819476.aspx) och [om WS-Management-cmdletar](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets), eller i Windows PowerShell-konsolen skriver du `Get-Help wsman` .
+Mer information om WSMan-providern finns i [WSMan-providern](https://technet.microsoft.com/library/dd819476.aspx) och [om WS-Management cmdlets](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets), eller i Windows PowerShell-konsolen skriver du `Get-Help wsman` .
 
 Mer information finns i:
 

@@ -1,15 +1,16 @@
 ---
 ms.date: 06/11/2020
 keywords: powershell,cmdlet
-title: WinRMSecurity
-ms.openlocfilehash: ee7e5f2c9c9a863e29c9278c40703a05c1943246
-ms.sourcegitcommit: fd223afa50092839c74d8d5fbba791869665455f
+title: Säkerhets aspekter för PowerShell-fjärrkommunikation med WinRM
+description: Det här dokumentet beskriver säkerhets problem, rekommendationer och bästa praxis när du använder PowerShell-fjärrkommunikation.
+ms.openlocfilehash: 48167bd297905883b3d75caf9a07d06e6a9fc467
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85353846"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501481"
 ---
-# <a name="powershell-remoting-security-considerations"></a>Säkerhetsöverväganden för PowerShell-fjärrkommunikation
+# <a name="security-considerations-for-powershell-remoting-using-winrm"></a>Säkerhets aspekter för PowerShell-fjärrkommunikation med WinRM
 
 PowerShell-fjärrkommunikation är det rekommenderade sättet att hantera Windows-system. PowerShell-fjärrkommunikation är aktiverat som standard i Windows Server 2012 R2. Det här dokumentet beskriver säkerhets problem, rekommendationer och bästa praxis när du använder PowerShell-fjärrkommunikation.
 

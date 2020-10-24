@@ -1,19 +1,20 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: Skapa .NET-och COM-objekt nytt objekt
-ms.openlocfilehash: 6e98a159451bc7da4ba3b37eaeb813eb71590d2b
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Som ett objektorienterat skript språk stöder PowerShell både .NET och COM-baserade objekt. Den här artikeln visar hur du skapar och interagerar med dessa objekt.
+ms.openlocfilehash: e6189ba465749dd045add7015fc82223c31c7e32
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71325174"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500580"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>Skapa .NET- och COM-objekt (New-Object)
 
 Det finns program komponenter med .NET Framework-och COM-gränssnitt som gör att du kan utföra många system administrations uppgifter. Med Windows PowerShell kan du använda dessa komponenter, så du är inte begränsad till de uppgifter som kan utföras med hjälp av cmdletar. Många av cmdletarna i den första versionen av Windows PowerShell fungerar inte mot fjärrdatorer. Vi visar hur du kommer runt den här begränsningen när du hanterar händelse loggar med hjälp av klassen .NET Framework **system. Diagnostics. EventLog** direkt från Windows PowerShell.
 
-## <a name="using-new-object-for-event-log-access"></a>Använda nytt-objekt för händelse logg åtkomst
+## <a name="using-new-object-for-event-log-access"></a>Använda New-Object för åtkomst till händelse loggen
 
 .NET Framework klass biblioteket innehåller en klass med namnet **system. Diagnostics. EventLog** som kan användas för att hantera händelse loggar. Du kan skapa en ny instans av en .NET Framework-klass med hjälp av cmdleten **New-Object** med parametern **TypeName** . Till exempel skapar följande kommando en händelse logg referens:
 
@@ -120,7 +121,7 @@ PS> $RemoteAppLog
 ## <a name="creating-com-objects-with-new-object"></a>Skapa COM-objekt med New-Object
 Du kan använda **nya-objekt** för att arbeta med Component Object Model (com)-komponenter. Komponenter sträcker sig från de olika bibliotek som ingår i Windows Script Host (WSH) till ActiveX-program, till exempel Internet Explorer som är installerade på de flesta system.
 
-**New-Object** använder .NET Framework runtime-anropade omslutningar för att skapa com-objekt, så den har samma begränsningar som .NET Framework gör vid anrop till com-objekt. Om du vill skapa ett COM-objekt måste du ange parametern **ComObject** med program-ID eller *ProgID* för den com-klass som du vill använda. En fullständig beskrivning av begränsningarna med COM-användning och hur du avgör vilka ProgId som är tillgängliga på ett system ligger utanför den här användarens Användar handbok, men de mest välkända objekten från miljöer som WSH kan användas i Windows PowerShell.
+**New-Object** använder .NET Framework Runtime-Callable-omslutning för att skapa com-objekt, och har samma begränsningar som .NET Framework gör vid anrop till com-objekt. Om du vill skapa ett COM-objekt måste du ange parametern **ComObject** med program-ID eller *ProgID* för den com-klass som du vill använda. En fullständig beskrivning av begränsningarna med COM-användning och hur du avgör vilka ProgId som är tillgängliga på ett system ligger utanför den här användarens Användar handbok, men de mest välkända objekten från miljöer som WSH kan användas i Windows PowerShell.
 
 Du kan skapa WSH-objekt genom att ange dessa ProgID: **wscript. Shell**, **wscript. Network**, **Scripting. Dictionary**och **Scripting. FileSystemObject**. Följande kommandon skapar följande objekt:
 
@@ -141,7 +142,7 @@ En uppgift som snabbt kan utföras med ett COM-objekt är att skapa en genväg. 
 $WshShell = New-Object -ComObject WScript.Shell
 ```
 
-Get-Member fungerar med COM-objekt, så att du kan utforska medlemmar i objektet genom att skriva:
+Get-Member fungerar med COM-objekt, så att du kan utforska medlemmarna i objektet genom att skriva:
 
 ```
 PS> $WshShell | Get-Member
@@ -155,7 +156,7 @@ CreateShortcut           Method                IDispatch CreateShortcut (str...
 ...
 ```
 
-**Get-Member** har en valfri **InputObject** -parameter som du kan använda i stället för rörledningar för att tillhandahålla inmatade **medlemmar**. Du får samma utdata som visas ovan om du i stället använde kommandot **Get-Member-InputObject $WshShell**. Om du använder **InputObject**behandlar den sitt argument som ett enda objekt. Det innebär att om du har flera objekt i en variabel behandlar **Get-Member** dem som en objekt mat ris. Ett exempel:
+**Get-Member** har en valfri **InputObject** -parameter som du kan använda i stället för rörledningar för att tillhandahålla inmatade **medlemmar**. Du får samma utdata som visas ovan om du i stället använde kommandot **Get-Member-InputObject $WshShell**. Om du använder **InputObject**behandlar den sitt argument som ett enda objekt. Det innebär att om du har flera objekt i en variabel behandlar **Get-Member** dem som en objekt mat ris. Exempel:
 
 ```
 PS> $a = 1,2,"three"
@@ -261,7 +262,7 @@ Remove-Variable ie
 > [!NOTE]
 > Det finns ingen gemensam standard för om du avslutar ActiveX-körbara filer eller fortsätter att köra när du tar bort en referens till en. Beroende på omständigheterna, till exempel om programmet är synligt, om ett redigerat dokument körs i det och även om Windows PowerShell fortfarande körs, kan det hända att programmet inte avslutas. Därför bör du testa avslutnings beteendet för varje ActiveX-fil som du vill använda i Windows PowerShell.
 
-## <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>Få varningar om .NET Framework-figursatta COM-objekt
+## <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>Få varningar om .NET Framework-Wrapped COM-objekt
 
 I vissa fall kan ett COM-objekt ha en associerad .NET Framework *runtime-anropad wrapper* eller RCW, och detta kommer att användas av **New-Object**. Eftersom beteendet för RCW kan skilja sig från det normala COM-objektets beteende, har **New-Object** en **strikt** parameter som VARNAr dig om RCW-åtkomst. Om du anger en **strikt** parameter och sedan skapar ett com-objekt som använder en RCW, får du ett varnings meddelande:
 

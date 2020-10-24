@@ -1,12 +1,13 @@
 ---
 ms.date: 09/13/2019
 title: Skapar Get-WinEvent-frågor med FilterHashtable
-ms.openlocfilehash: 002d84515368663e0e807f48ffe883bd533be1d9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: I den här artikeln beskrivs hur du använder FilterHashtable för Get-WinEvent för att skicka frågor till händelse loggarna i Windows.
+ms.openlocfilehash: 8e080f17436d97adda277600cd202a0e6e9283e0
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786653"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500614"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Skapar Get-WinEvent-frågor med FilterHashtable
 
@@ -52,17 +53,17 @@ I följande tabell visas nyckel namnen, data typerna och om jokertecken accepter
 
 |    Nyckelnamn    | Värde data typ | Accepterar jokertecken? |
 | -------------- | --------------- | ---------------------------- |
-| LogName        | `<String[]>`    | Yes                          |
-| ProviderName   | `<String[]>`    | Yes                          |
-| Sökväg           | `<String[]>`    | No                           |
-| Nyckelord       | `<Long[]>`      | No                           |
-| ID             | `<Int32[]>`     | No                           |
-| Nivå          | `<Int32[]>`     | No                           |
-| StartTime      | `<DateTime>`    | No                           |
-| EndTime        | `<DateTime>`    | No                           |
-| UserID         | `<SID>`         | No                           |
-| Data           | `<String[]>`    | Inga                           |
-| `<named-data>` | `<String[]>`    | Inga                           |
+| LogName        | `<String[]>`    | Ja                          |
+| ProviderName   | `<String[]>`    | Ja                          |
+| Sökväg           | `<String[]>`    | Nej                           |
+| Nyckelord       | `<Long[]>`      | Nej                           |
+| ID             | `<Int32[]>`     | Nej                           |
+| Nivå          | `<Int32[]>`     | Nej                           |
+| StartTime      | `<DateTime>`    | Nej                           |
+| EndTime        | `<DateTime>`    | Nej                           |
+| UserID         | `<SID>`         | Nej                           |
+| Data           | `<String[]>`    | Nej                           |
+| `<named-data>` | `<String[]>`    | Nej                           |
 
 `<named-data>`Nyckeln representerar ett namngivet händelse data fält. Till exempel kan Perflib Event 1008 innehålla följande händelse data:
 
@@ -151,11 +152,11 @@ WdiContext       Property   static System.Diagnostics.Eventing.Reader.StandardEv
 WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEventKey…
 ```
 
-De uppräknade värdena dokumenteras i **.NET Framework**. Mer information finns i [StandardEventKeywords-uppräkning](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2).
+De uppräknade värdena dokumenteras i **.NET Framework**. Mer information finns i [StandardEventKeywords-uppräkning](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords).
 
 **Nyckelords** namnen och de uppräknade värdena är följande:
 
-| Name             |  Värde            |
+| Namn             |  Värde            |
 | ---------------- | ------------------|
 | AuditFailure     | 4503599627370496  |
 | AuditSuccess     | 9007199254740992  |
@@ -232,11 +233,11 @@ Verbose       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEventLevel Warning {get;}
 ```
 
-De uppräknade värdena dokumenteras i **.NET Framework**. Mer information finns i [StandardEventLevel-uppräkning](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2).
+De uppräknade värdena dokumenteras i **.NET Framework**. Mer information finns i [StandardEventLevel-uppräkning](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel).
 
 **Nivå** nyckelns namn och uppräknade värden är följande:
 
-| Name           | Värde |
+| Namn           | Värde |
 | -------------- | ----- |
 | Verbose        |   5   |
 | Information  |   4   |

@@ -1,15 +1,16 @@
 ---
-title: Formatering, alias, providers, jämförelse
+title: Formatering, alias, leverantörer, jämförelse
 ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: eb23b048a50f10ea83d156c0499772b1be439336
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+description: I det här kapitlet beskrivs begreppen utdata, kommando-alias, providers och jämförelse åtgärder.
+ms.openlocfilehash: efe70d2d220f8451e781603b6000c3553dda910c
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84436318"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501617"
 ---
 # <a name="chapter-5---formatting-aliases-providers-comparison"></a>Kapitel 5 – formatering, alias, providers, jämförelse
 
@@ -21,7 +22,7 @@ Den SQL Server PowerShell-modulen krävs av några av exemplen som visas i det h
 
 I kapitel 4 har du lärt dig att filtrera så långt till vänster som möjligt. Regeln för manuell formatering av ett kommandos utdata liknar den regeln, förutom att det måste inträffa så långt till höger som möjligt.
 
-De vanligaste format kommandona är `Format-Table` och `Format-List` . `Format-Wide`och `Format-Custom` kan också användas, men är mindre vanliga.
+De vanligaste format kommandona är `Format-Table` och `Format-List` . `Format-Wide` och `Format-Custom` kan också användas, men är mindre vanliga.
 
 Som anges i kapitel 3, ett kommando som returnerar fler än fyra egenskaper till en lista, om inte anpassad formatering används.
 
@@ -413,7 +414,7 @@ Baserat på resultaten från de föregående två exemplen kan du förmodligen g
 True
 ```
 
-`-Like` `-Match` Operatorerna och kan vara förvirrande, även för erfarna PowerShell-användare. `-Like`används med jokertecken för tecknen `*` och `?` för att utföra "Like"-matchningar.
+`-Like` `-Match` Operatorerna och kan vara förvirrande, även för erfarna PowerShell-användare. `-Like` används med jokertecken för tecknen `*` och `?` för att utföra "Like"-matchningar.
 
 ```powershell
 'PowerShell' -like '*shell'
@@ -423,7 +424,7 @@ True
 True
 ```
 
-`-Match`använder ett reguljärt uttryck för att utföra matchningen.
+`-Match` använder ett reguljärt uttryck för att utföra matchningen.
 
 ```powershell
 'PowerShell' -match '^*.shell$'
@@ -462,7 +463,7 @@ $Numbers -contains 10
 True
 ```
 
-`-NotContains`kastar om logiken för att se om `$Numbers` variabeln inte innehåller något värde.
+`-NotContains` kastar om logiken för att se om `$Numbers` variabeln inte innehåller något värde.
 
 ```powershell
 $Numbers -notcontains 15
@@ -582,7 +583,7 @@ Var försiktig när du använder metoder för att transformera data eftersom du 
 
 I det här kapitlet har du lärt dig ett antal olika ämnen för att ta med formatering höger, alias, providers och jämförelse operatorer.
 
-## <a name="review"></a>Granska
+## <a name="review"></a>Genomgång
 
 1. Varför är det nödvändigt att göra formateringen så långt till höger som möjligt?
 1. Hur avgör du vad den faktiska cmdleten är för `%` aliaset?

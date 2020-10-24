@@ -2,12 +2,13 @@
 ms.date: 07/28/2020
 keywords: powershell,cmdlet
 title: Arbeta med filer, mappar och registernycklar
-ms.openlocfilehash: 7ead5d0e82feb852845468fb3a012a0908a4ce75
-ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
+description: Den här artikeln beskriver hur du hanterar aktiviteter för register nyckel hantering med hjälp av PowerShell.
+ms.openlocfilehash: 6f653c1fb409a238aa05658e89261a12e96f6fe1
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87410197"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499985"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Arbeta med filer, mappar och register nycklar
 
@@ -149,7 +150,7 @@ Mode                 LastWriteTime         Length Name
 -a---           3/18/2019  9:44 PM          64792 wtsapi32.dll
 ```
 
-### <a name="mixing-get-childitem-parameters"></a>Blanda get-ChildItem-parametrar
+### <a name="mixing-get-childitem-parameters"></a>Blanda Get-ChildItem parametrar
 
 Du kan använda flera av parametrarna i `Get-ChildItem` cmdleten i samma kommando. Innan du blandar parametrar bör du vara säker på att du förstår matchning med jokertecken. Följande kommando returnerar till exempel inga resultat:
 

@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Listrutor med flera val
-ms.openlocfilehash: 7bf71fb76a11f88c4ad4790bf3a2b383d0babb81
-ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
+description: Den här artikeln visar hur du skapar en List Rute kontroll med flera val med hjälp av .NET Framework Forms Building-funktioner i Windows PowerShell.
+ms.openlocfilehash: e11d1f545f748e0503b92c02bc7a101d8014bd96
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216081"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500291"
 ---
 # <a name="multiple-selection-list-boxes"></a>List rutor med flera val
 

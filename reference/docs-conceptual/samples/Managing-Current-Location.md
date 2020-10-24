@@ -1,17 +1,18 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: Hantera aktuell plats
-ms.openlocfilehash: 42ab56759dec882d140f813c8614e578957722b3
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell använder platsen Substantiv för att referera till arbets katalogen och implementerar en serie cmdlets för att granska och ändra din plats.
+ms.openlocfilehash: 0ce9ed1269921233b0d6b07da832c12e159a84dc
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030198"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500478"
 ---
 # <a name="managing-current-location"></a>Hantera aktuell plats
 
-När du navigerar i mappfönster i Utforskaren har du vanligt vis en speciell arbets plats, nämligen den aktuella öppna mappen. Objekt i den aktuella mappen kan ändras enkelt genom att du klickar på dem. För kommando rads gränssnitt som cmd. exe, när du befinner dig i samma mapp som en viss fil, kan du komma åt den genom att ange ett relativt kort namn, i stället för att behöva ange hela sökvägen till filen. Den aktuella katalogen kallas arbets katalog.
+När du navigerar i mappfönster i Utforskaren har du vanligt vis en speciell arbets plats, nämligen den aktuella öppna mappen. Objekt i den aktuella mappen kan ändras enkelt genom att du klickar på dem. För kommando rads gränssnitt som Cmd.exe, när du befinner dig i samma mapp som en viss fil, kan du komma åt den genom att ange ett relativt kort namn, i stället för att behöva ange hela sökvägen till filen. Den aktuella katalogen kallas arbets katalog.
 
 Windows PowerShell använder **platsen** Substantiv för att referera till arbets katalogen och implementerar en serie cmdlets för att granska och ändra din plats.
 
@@ -27,7 +28,7 @@ C:\Documents and Settings\PowerUser
 ```
 
 > [!NOTE]
-> Cmdleten Get-location liknar kommandot **PWD** i bash-gränssnittet. Cmdleten Set-location liknar **CD-** kommandot i cmd. exe.
+> Get-Location cmdlet liknar **PWD** -kommandot i bash-gränssnittet. Set-Location cmdlet liknar kommandot **CD** i Cmd.exe.
 
 ## <a name="setting-your-current-location-set-location"></a>Ange din aktuella plats (Ange plats)
 
@@ -51,7 +52,7 @@ Parametern **-Passthru** kan användas med många Set-kommandon i Windows PowerS
 
 Du kan ange sökvägar i förhållande till din aktuella plats på samma sätt som i de flesta UNIX-och Windows-kommandofiler. I standard notation för relativa sökvägar, en punkt (**.**) representerar den aktuella mappen och en dubbel period (**..**) representerar den överordnade katalogen för din aktuella plats.
 
-Om du till exempel är i mappen **C:\\Windows** , en punkt (**.**) representerar **c:\\Windows** -och dubbla punkter (**..**) representerar **c:**. Du kan ändra från din aktuella plats till roten på enhet C: genom att skriva:
+Om du till exempel är i mappen **C: \\ Windows** , en punkt (**.**) representerar **c: \\ Windows** -och dubbla punkter (**..**) representerar **c:**. Du kan ändra från din aktuella plats till roten på enhet C: genom att skriva:
 
 ```
 PS> Set-Location -Path .. -PassThru
@@ -61,7 +62,7 @@ Path
 C:\
 ```
 
-Samma teknik fungerar på Windows PowerShell-enheter som inte är fil system enheter, till exempel **HKLM:**. Du kan ange din plats till HKLM\\-program nyckeln i registret genom att skriva:
+Samma teknik fungerar på Windows PowerShell-enheter som inte är fil system enheter, till exempel **HKLM:**. Du kan ange din plats till HKLM- \\ program nyckeln i registret genom att skriva:
 
 ```
 PS> Set-Location -Path HKLM:\SOFTWARE -PassThru
@@ -81,7 +82,7 @@ Path
 HKLM:\
 ```
 
-Du kan skriva set-location eller använda något av de inbyggda Windows PowerShell-aliasen för set-Location (CD, chdir, SL). Ett exempel:
+Du kan skriva Set-Location eller använda något av de inbyggda Windows PowerShell-aliasen för Set-Location (CD, chdir, SL). Exempel:
 
 ```powershell
 cd -Path C:\Windows

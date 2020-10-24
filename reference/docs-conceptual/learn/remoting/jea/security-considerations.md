@@ -2,18 +2,19 @@
 ms.date: 07/10/2019
 keywords: Jea, PowerShell, säkerhet
 title: JEA säkerhets aspekter
-ms.openlocfilehash: befc24fec368c4f6d60477daf63bf17e9431133e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Eftersom JEA tillåter dessa användare att köra administrations kommandon utan att ha fullständig administratörs behörighet kan du ta bort dessa användare från privilegierade säkerhets grupper.
+ms.openlocfilehash: f65f9d6c6620261de0a9c8de7812637565ca1806
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "70017911"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501583"
 ---
 # <a name="jea-security-considerations"></a>JEA säkerhets aspekter
 
 JEA hjälper dig att förbättra din säkerhets-position genom att minska antalet permanenta administratörer på dina datorer. JEA använder en PowerShell-session konfiguration för att skapa en ny start punkt som användare kan använda för att hantera systemet. Användare som behöver förhöjd, men inte obegränsad, åtkomst till datorn för att utföra administrativa uppgifter kan beviljas åtkomst till JEA-slutpunkten. Eftersom JEA tillåter dessa användare att köra administrations kommandon utan att ha fullständig administratörs behörighet kan du ta bort dessa användare från privilegierade säkerhets grupper.
 
-## <a name="run-as-account"></a>Kör som-konto
+## <a name="run-as-account"></a>Run-As konto
 
 Varje JEA-slutpunkt har ett angivet **Kör som-** konto. Detta är det konto under vilket den anslutande användarens åtgärder utförs. Det här kontot kan konfigureras i [konfigurations filen för sessionen](session-configurations.md)och det konto du väljer har stor betydelse för slut punktens säkerhet.
 
@@ -31,12 +32,12 @@ I följande tabell sammanfattas möjliga konfigurations alternativ och resultera
 
 |        Datortyp         | Konfiguration av virtuellt konto grupp |                   Lokal användar kontext                    | Nätverks användar kontext |
 | ---------------------------- | ----------------------------------- | ------------------------------------------------------- | -------------------- |
-| Domänkontrollant            | Standardvärde                             | Domän användare, medlem i "*Domain*\Domain admins"         | Dator konto     |
+| Domänkontrollant            | Standard                             | Domän användare, medlem i "*Domain*\Domain admins"         | Dator konto     |
 | Domänkontrollant            | Domän grupper A och B               | Domän användare, medlem i*domän*\A,*domän*\b       | Dator konto     |
-| Medlems Server eller arbets Station | Standardvärde                             | Lokal användare, medlem i "*Builtin*\Administrators"        | Dator konto     |
+| Medlems Server eller arbets Station | Standard                             | Lokal användare, medlem i "*Builtin*\Administrators"        | Dator konto     |
 | Medlems Server eller arbets Station | Lokala grupper C och D                | Lokal användare, medlem i "*Computer*\c" och "*Computer*\d" | Dator konto     |
 
-När du tittar på säkerhets gransknings händelser och program händelse loggar ser du att varje JEA-användarsession har ett unikt virtuellt konto. Det här unika kontot hjälper dig att spåra användar åtgärder i en JEA-slutpunkt tillbaka till den ursprungliga användare som körde kommandot. Virtuella konto namn följer formatet `WinRM Virtual Users\WinRM_VA_<ACCOUNTNUMBER>_<DOMAIN>_<sAMAccountName>` . om användaren till exempel går in i domän **contoso** och startar om en tjänst i en Jea-slutpunkt, är `WinRM Virtual Users\WinRM_VA_1_contoso_alice`det användar namn som är associerat med alla Service Control Manager-händelser. **Alice**
+När du tittar på säkerhets gransknings händelser och program händelse loggar ser du att varje JEA-användarsession har ett unikt virtuellt konto. Det här unika kontot hjälper dig att spåra användar åtgärder i en JEA-slutpunkt tillbaka till den ursprungliga användare som körde kommandot. Virtuella konto namn följer formatet `WinRM Virtual Users\WinRM_VA_<ACCOUNTNUMBER>_<DOMAIN>_<sAMAccountName>` . om användaren till exempel går **Alice** in i domän **contoso** och startar om en tjänst i en Jea-slutpunkt, är det användar namn som är associerat med alla Service Control Manager-händelser `WinRM Virtual Users\WinRM_VA_1_contoso_alice` .
 
 **Grupphanterade tjänst konton (gMSAs)** är användbara när en medlems Server måste ha åtkomst till nätverks resurser i Jea-sessionen. Till exempel när en JEA-slutpunkt används för att styra åtkomsten till en REST API tjänst som finns på en annan dator. Det är enkelt att skriva funktioner för att anropa REST-API: er, men du behöver en nätverks identitet för att autentisera med API: et. Genom att använda ett grupphanterat tjänst konto gör du det andra hoppet möjligt samtidigt som du behåller kontrollen över vilka datorer som kan använda kontot. De gällande behörigheterna för gMSA definieras av de säkerhets grupper (lokala eller domän) som gMSA-kontot tillhör.
 
@@ -52,7 +53,7 @@ Du bör inte använda en **RunAsCredential** på en Jea-slutpunkt eftersom det �
 
 Precis som med vanliga PowerShell-slutpunkter för fjärrkommunikation har varje JEA-slutpunkt en separat åtkomst kontrol lista (ACL) som styr vem som kan autentisera med JEA-slutpunkten. Om det är felaktigt konfigurerat kanske betrodda användare inte kan komma åt JEA-slutpunkten och ej betrodda användare kan ha åtkomst. WinRM ACL påverkar inte mappningen av användare till JEA-roller. Mappningen styrs av fältet **RoleDefinitions** i den session konfigurations fil som används för att registrera slut punkten.
 
-Som standard konfigureras WinRM ACL som standard för att tillåta åtkomst till alla mappade användare när en JEA-slutpunkt har flera roll funktioner. En JEA-session som kon figurer ATS med hjälp av följande kommandon ger till `CONTOSO\JEA_Lev1` exempel `CONTOSO\JEA_Lev2`fullständig åtkomst till och.
+Som standard konfigureras WinRM ACL som standard för att tillåta åtkomst till alla mappade användare när en JEA-slutpunkt har flera roll funktioner. En JEA-session som kon figurer ATS med hjälp av följande kommandon ger till exempel fullständig åtkomst till `CONTOSO\JEA_Lev1` och `CONTOSO\JEA_Lev2` .
 
 ```powershell
 $roles = @{ 'CONTOSO\JEA_Lev1' = 'Lev1Role'; 'CONTOSO\JEA_Lev2' = 'Lev2Role' }
@@ -73,9 +74,9 @@ CONTOSO\JEA_Lev1 AccessAllowed
 CONTOSO\JEA_Lev2 AccessAllowed
 ```
 
-Om du vill ändra vilka användare som har åtkomst `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -ShowSecurityDescriptorUI` kör du antingen för en `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -SecurityDescriptorSddl <SDDL string>` interaktiv prompt eller uppdaterar behörigheterna. Användare behöver minst *Invoke* -rättigheter för att få åtkomst till Jea-slutpunkten.
+Om du vill ändra vilka användare som har åtkomst kör du antingen `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -ShowSecurityDescriptorUI` för en interaktiv prompt eller `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -SecurityDescriptorSddl <SDDL string>` uppdaterar behörigheterna. Användare behöver minst *Invoke* -rättigheter för att få åtkomst till Jea-slutpunkten.
 
-Det är möjligt att skapa en JEA-slutpunkt som inte mappar en definierad roll till alla användare som har åtkomst. Dessa användare kan starta en JEA-session, men har bara åtkomst till standard-cmdletarna. Du kan granska användar behörigheter i en JEA-slutpunkt genom `Get-PSSessionCapability`att köra. Mer information finns i [granskning och rapportering på Jea](audit-and-report.md).
+Det är möjligt att skapa en JEA-slutpunkt som inte mappar en definierad roll till alla användare som har åtkomst. Dessa användare kan starta en JEA-session, men har bara åtkomst till standard-cmdletarna. Du kan granska användar behörigheter i en JEA-slutpunkt genom att köra `Get-PSSessionCapability` . Mer information finns i [granskning och rapportering på Jea](audit-and-report.md).
 
 ## <a name="least-privilege-roles"></a>Roller för minsta behörighet
 
@@ -90,7 +91,7 @@ Anta till exempel följande roll kapacitets post:
 }
 ```
 
-Med den här rollen kan användarna köra alla PowerShell-cmdletar i Substantiv- **processen** från modulen **Microsoft. PowerShell. Management** . Användare kan behöva åtkomst till cmdletar som `Get-Process` för att se vilka program som körs i systemet och `Stop-Process` för att stoppa program som inte svarar. Posten tillåter `Start-Process`dock också, som kan användas för att starta ett godtyckligt program med fullständiga administratörs behörigheter. Programmet behöver inte installeras lokalt på systemet. En ansluten användare kan starta ett program från en fil resurs som ger användaren lokal administratörs behörighet, kör skadlig kod och mer.
+Med den här rollen kan användarna köra alla PowerShell-cmdletar i Substantiv- **processen** från modulen **Microsoft. PowerShell. Management** . Användare kan behöva åtkomst till cmdletar som `Get-Process` för att se vilka program som körs i systemet och `Stop-Process` för att stoppa program som inte svarar. Posten tillåter dock också `Start-Process` , som kan användas för att starta ett godtyckligt program med fullständiga administratörs behörigheter. Programmet behöver inte installeras lokalt på systemet. En ansluten användare kan starta ett program från en fil resurs som ger användaren lokal administratörs behörighet, kör skadlig kod och mer.
 
 En säkrare version av samma roll kapacitet skulle se ut så här:
 

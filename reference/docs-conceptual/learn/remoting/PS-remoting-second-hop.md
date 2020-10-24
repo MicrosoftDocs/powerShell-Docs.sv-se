@@ -2,12 +2,13 @@
 ms.date: 05/14/2020
 keywords: powershell,cmdlet
 title: Göra det andra hoppet i PowerShell-fjärrkommunikation
-ms.openlocfilehash: 3a9db11726d4c02dc69e52c45da304f7422def39
-ms.sourcegitcommit: 843756c8277e7afb874867703963248abc8a6c91
+description: I den här artikeln beskrivs de olika metoderna för att konfigurera en andra hopp-autentisering för PowerShell-fjärrkommunikation, inklusive säkerhets aspekter och rekommendationer.
+ms.openlocfilehash: 905b27b4e6c612249c945a741bbe0d2ba9ae28aa
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83439384"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501379"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Göra det andra hoppet i PowerShell-fjärrkommunikation
 
@@ -45,7 +46,7 @@ Ett exempel på hur du aktiverar och använder CredSSP för PowerShell-fjärrkom
 
 - Det fungerar för alla servrar med Windows Server 2008 eller senare.
 
-**Nack delar**
+**Nackdelar**
 
 - Säkerhets problem.
 - Kräver konfiguration av både klient-och Server roller.
@@ -60,7 +61,7 @@ Du kan använda en äldre begränsad delegering (inte resurs baserad) för att g
 - Kräver ingen särskild kodning
 - Autentiseringsuppgifterna lagras inte.
 
-**Nack delar**
+**Nackdelar**
 
 - Har inte stöd för det andra hoppet för WinRM.
 - Kräver domän administratörs behörighet för att konfigurera.
@@ -83,7 +84,7 @@ Med hjälp av resurs baserad Kerberos-begränsad delegering (som introducerades 
 - Kräver inte domän administratörs behörighet för att konfigurera.
 - Fungerar över domäner och skogar.
 
-**Nack delar**
+**Nackdelar**
 
 - Kräver Windows Server 2012 eller senare.
 - Har inte stöd för det andra hoppet för WinRM.
@@ -237,7 +238,7 @@ Mer information om JEA finns i [tillräckligt med administration](/powershell/sc
 
 - Inget lösen ords underhåll när du använder ett virtuellt konto.
 
-**Nack delar**
+**Nackdelar**
 
 - Kräver WMF 5,0 eller senare.
 - Kräver konfiguration på varje mellanliggande server (_ServerB_).
@@ -252,12 +253,12 @@ Information om hur du använder **PSSessionConfiguration** och **runas** för at
 
 - Fungerar med valfri server med WMF 3,0 eller senare.
 
-**Nack delar**
+**Nackdelar**
 
 - Kräver konfiguration av **PSSessionConfiguration** och **runas** på varje mellanliggande server (_ServerB_).
 - Kräver lösen ords underhåll när du använder ett domän konto för **runas**
 
-## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Skicka autentiseringsuppgifter i ett Invoke-kommando skript block
+## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Skicka autentiseringsuppgifter i ett Invoke-Command-skript block
 
 Du kan skicka autentiseringsuppgifter i **script block** -parametern för ett anrop till cmdleten [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command) .
 
@@ -266,7 +267,7 @@ Du kan skicka autentiseringsuppgifter i **script block** -parametern för ett an
 - Kräver ingen särskild Server konfiguration.
 - Fungerar på alla servrar som kör WMF 2,0 eller senare.
 
-**Nack delar**
+**Nackdelar**
 
 - Kräver en olämplig kod teknik.
 - Om du kör WMF 2,0 krävs en annan syntax för att skicka argument till en fjärrsession.

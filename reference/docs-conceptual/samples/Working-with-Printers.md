@@ -1,13 +1,14 @@
 ---
 ms.date: 12/23/2019
-keywords: PowerShell, cmdlet
+keywords: powershell,cmdlet
 title: Arbeta med skrivare
-ms.openlocfilehash: 1d6b9a57ec61f06af694757dc8017d50b4dd40fe
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: I den här artikeln beskrivs hur du hanterar skrivare i Windows med WMI-objekt och COM-gränssnitt.
+ms.openlocfilehash: 2606753783043eeae8e9d461e56f0901149cb8e3
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78935201"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501090"
 ---
 # <a name="working-with-printers-in-windows"></a>Arbeta med skrivare i Windows
 

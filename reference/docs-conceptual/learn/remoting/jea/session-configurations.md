@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: Jea, PowerShell, säkerhet
 title: JEA
-ms.openlocfilehash: 650d0d11ef13605847d0822249e29e3491180629
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Sessionsbaserade definierar vem som kan använda JEA-slutpunkten och vilka roller de har åtkomst till.
+ms.openlocfilehash: b616d5bf260bbdfe89b6422fd4a8b4866f7fdc67
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "70017883"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501566"
 ---
 # <a name="jea-session-configurations"></a>JEA
 
@@ -33,15 +34,15 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 > [!TIP]
 > Endast de vanligaste konfigurations alternativen ingår i mallfilen som standard. Använd `-Full` växeln för att inkludera alla tillämpliga inställningar i den genererade PSSC.
 
-`-SessionType RestrictedRemoteServer` Fältet indikerar att konfigurationen av sessionen används av Jea för säker hantering. Sessioner av den här typen körs i **Nolanguage** -läge och har bara åtkomst till följande standard kommandon (och alias):
+`-SessionType RestrictedRemoteServer`Fältet indikerar att konfigurationen av sessionen används av Jea för säker hantering. Sessioner av den här typen körs i **Nolanguage** -läge och har bara åtkomst till följande standard kommandon (och alias):
 
 - Clear-Host (CLS, Clear)
 - Exit-PSSession (exsn, exit)
 - Get-Command (GCM)
 - Get-FormatData
-- Get – hjälp
-- Mått – objekt (mått)
-- Ut-standard
+- Get-Help
+- Measure-Object (mått)
+- Out-Default
 - Select-Object (Välj)
 
 Det finns inga tillgängliga PowerShell-providrar eller externa program (körbara filer eller skript).
@@ -188,11 +189,11 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ### <a name="other-properties"></a>Andra egenskaper
 
 Konfigurationsfiler för sessioner kan också göra allt en roll funktions fil kan göra, precis utan möjligheten att ge användarna åtkomst till olika kommandon. Om du vill ge alla användare åtkomst till vissa cmdletar, funktioner eller providrar kan du göra det direkt i konfigurations filen för sessionen.
-En fullständig lista över vilka egenskaper som stöds i konfigurations filen för sessionen `Get-Help New-PSSessionConfigurationFile -Full`körs.
+En fullständig lista över vilka egenskaper som stöds i konfigurations filen för sessionen körs `Get-Help New-PSSessionConfigurationFile -Full` .
 
 ## <a name="testing-a-session-configuration-file"></a>Testa en konfigurations fil för sessionen
 
-Du kan testa en sessions konfiguration med cmdleten [test-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile) . Vi rekommenderar att du testar din konfigurations fil för `.pssc` sessionen om du har redigerat filen manuellt. Testet ser till att syntaxen är korrekt. Om en sessions konfigurations fil Miss lyckas med det här testet kan den inte registreras i systemet.
+Du kan testa en sessions konfiguration med cmdleten [test-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile) . Vi rekommenderar att du testar din konfigurations fil för sessionen om du har redigerat `.pssc` filen manuellt. Testet ser till att syntaxen är korrekt. Om en sessions konfigurations fil Miss lyckas med det här testet kan den inte registreras i systemet.
 
 ## <a name="sample-session-configuration-file"></a>Exempel på konfigurations fil för sessionen
 
