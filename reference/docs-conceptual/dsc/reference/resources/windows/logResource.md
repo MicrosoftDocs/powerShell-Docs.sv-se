@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC-logg resurs
-ms.openlocfilehash: bc59bb2670561306a039d024fcff5e0746a659f2
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC-logg resurs
+ms.openlocfilehash: c5d965924ac8cc9bb68cf7b4e17c4e521a20548f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464034"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650436"
 ---
 # <a name="dsc-log-resource"></a>DSC-logg resurs
 
@@ -50,7 +51,7 @@ Log [string] #ResourceName
 I följande exempel visas hur du inkluderar ett meddelande i Microsoft-Windows-Desired State Configuration/analytisk händelse logg.
 
 > [!NOTE]
-> Om du kör [test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration?view=powershell-5.1) med den här resursen konfigurerad kommer den alltid att returnera **$false**.
+> Om du kör [test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration) med den här resursen konfigurerad kommer den alltid att returnera **$false** .
 
 ```powershell
 Configuration logResourceTest

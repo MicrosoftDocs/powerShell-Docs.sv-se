@@ -1,12 +1,14 @@
 ---
-title: Anpassade värd exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6a10d3da6d8bf93986a3f5b029fdae3afb23a903
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Exempel på anpassad värd
+description: Exempel på anpassad värd
+ms.openlocfilehash: 939b9f5d6bbc3ccf1ac95343e897ecffef0a2f42
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779530"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649310"
 ---
 # <a name="custom-host-samples"></a>Exempel på anpassad värd
 

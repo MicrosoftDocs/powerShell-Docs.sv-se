@@ -1,12 +1,14 @@
 ---
-title: Visa element (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c0c6fa373cfca3a55a62f201e1eabc6a1e308ef7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View-element (format)
+description: View-element (format)
+ms.openlocfilehash: 6fed1304d94339cc90b6ae53e06483c08d937c12
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785038"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649735"
 ---
 # <a name="view-element-format"></a>View-element (format)
 

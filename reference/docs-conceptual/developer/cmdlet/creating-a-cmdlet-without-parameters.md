@@ -1,26 +1,25 @@
 ---
-title: Skapa en cmdlet utan parametrar | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- cmdlets [PowerShell Programmers Guide], creating
-- cmdlets [PowerShell Programmers Guide], basic cmdlet
-ms.openlocfilehash: a14d25660d596ebd12cd7d74b607eab6ac9fd1be
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skapa en cmdlet utan parametrar
+description: Skapa en cmdlet utan parametrar
+ms.openlocfilehash: 5df27ac4c1f6dfcc3e7596d93f8db0f97aae71c1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784392"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646545"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Skapa en cmdlet utan parametrar
 
-I det här avsnittet beskrivs hur du skapar en-cmdlet som hämtar information från den lokala datorn utan att använda parametrar, och sedan skriver informationen till pipelinen. Den cmdlet som beskrivs här är en get-proc-cmdlet som hämtar information om processerna på den lokala datorn och sedan visar informationen på kommando raden.
+I det här avsnittet beskrivs hur du skapar en-cmdlet som hämtar information från den lokala datorn utan att använda parametrar, och sedan skriver informationen till pipelinen. Den cmdlet som beskrivs här är en Get-Proc-cmdlet som hämtar information om processerna på den lokala datorn och sedan visar informationen på kommando raden.
 
 > [!NOTE]
 > Tänk på att när du skriver cmdlets, kommer Windows PowerShell-® referens sammansättningarna att hämtas till disken (som standard på C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0). De installeras inte i GAC (Global Assembly Cache).
 
 ## <a name="naming-the-cmdlet"></a>Namnge cmdleten
 
-Ett cmdlet-namn består av ett verb som anger vilken åtgärd som cmdleten tar och ett substantiv som anger vilka objekt som cmdleten agerar på. Eftersom den här exempel cmdleten Get-proc hämtar process objekt, används verbet "Get", som definieras av [system. Management. Automation. Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) -uppräkningen och Substantiv "proc" för att indikera att cmdleten fungerar på process objekt.
+Ett cmdlet-namn består av ett verb som anger vilken åtgärd som cmdleten tar och ett substantiv som anger vilka objekt som cmdleten agerar på. Eftersom det här exemplet Get-Proc cmdlet: en hämtar process objekt, används verbet "Get", som definieras av [system. Management. Automation. Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) -uppräkningen och Substantiv "proc" för att indikera att cmdleten arbetar med process objekt.
 
 När du namnger cmdletar ska du inte använda något av följande tecken: #, () {} [] &-/\ $;: "' <> &#124; ? @ ` .
 
@@ -34,7 +33,7 @@ Du bör använda ett verb från uppsättningen godkända cmdlet-verb. Mer inform
 
 ## <a name="defining-the-cmdlet-class"></a>Definiera cmdlet-klassen
 
-När du har valt ett cmdlet-namn definierar du en .NET-klass för att implementera cmdleten. Här är klass definitionen för det här exemplet get-proc-cmdlet:
+När du har valt ett cmdlet-namn definierar du en .NET-klass för att implementera cmdleten. Här är klass definitionen för det här exemplet Get-Proc cmdlet:
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "Proc")]
@@ -47,12 +46,12 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-Observera att föregående till klass definitionen, attributet [system. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) med syntaxen `[Cmdlet(verb, noun, ...)]` , används för att identifiera den här klassen som en cmdlet. Detta är det enda obligatoriska attributet för alla cmdletar, och det gör att Windows PowerShell-körningsmiljön kan anropa dem korrekt. Du kan ange nyckelord för attribut för att ytterligare deklarera klassen om det behövs. Tänk på att attributet deklaration för vår exempel-GetProcCommand klass endast deklarerar Substantiv-och verben för Get-proc-cmdleten.
+Observera att föregående till klass definitionen, attributet [system. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) med syntaxen `[Cmdlet(verb, noun, ...)]` , används för att identifiera den här klassen som en cmdlet. Detta är det enda obligatoriska attributet för alla cmdletar, och det gör att Windows PowerShell-körningsmiljön kan anropa dem korrekt. Du kan ange nyckelord för attribut för att ytterligare deklarera klassen om det behövs. Tänk på att attributet deklaration för vår exempel-GetProcCommand klass endast deklarerar Substantiv-och verben för Get-Proc-cmdleten.
 
 > [!NOTE]
 > För alla klasser för Windows PowerShell-attribut är de nyckelord som du kan ange motsvarar egenskaperna för klassen Attribute.
 
-När du namnger klassen för cmdleten är det en bra idé att spegla cmdlet-namnet i klass namnet. Det gör du genom att använda formatet "VerbNounCommand" och ersätta "verb" och "substantiv" med verbet och substantiv som används i cmdlet-namnet. Som det visas i den föregående klass definitionen definierar cmdleten Get-proc en klass med namnet GetProcCommand, som härleds från Bask Lassen [system. Management. Automation. cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) .
+När du namnger klassen för cmdleten är det en bra idé att spegla cmdlet-namnet i klass namnet. Det gör du genom att använda formatet "VerbNounCommand" och ersätta "verb" och "substantiv" med verbet och substantiv som används i cmdlet-namnet. Som det visas i den föregående klass definitionen definierar exemplet Get-Proc cmdleten en klass med namnet GetProcCommand, som härleds från Bask Lassen [system. Management. Automation. cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) .
 
 > [!IMPORTANT]
 > Om du vill definiera en cmdlet som ansluter till Windows PowerShell-körningen direkt ska din .NET-klass härledas från Bask Lassen [system. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) . Mer information om den här klassen finns i [skapa en cmdlet som definierar parameter uppsättningar](./adding-parameter-sets-to-a-cmdlet.md).
@@ -75,7 +74,7 @@ Om din cmdlet accepterar pipeline-inmatade måste den åsidosätta metoden [syst
 
 Om cmdleten inte tar emot pipelinen bör den åsidosätta metoden [system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Tänk på att den här metoden ofta används i stället för [system. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) när cmdleten inte kan köras på ett element i taget, vilket är fallet för en sorterings-cmdlet.
 
-Eftersom den här exempel cmdleten Get-proc måste ta emot pipeline-inmatade objekt, åsidosätter metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) och använder standard implementeringarna för [system. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) och [system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). Åsidosättningen [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) hämtar processer och skriver dem till kommando raden med hjälp av metoden [system. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) .
+Eftersom det här exemplet Get-Proc cmdlet måste ta emot pipeline-inmatade objekt, åsidosätter metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) och använder standard implementeringarna för [system. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) och [system. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). Åsidosättningen [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) hämtar processer och skriver dem till kommando raden med hjälp av metoden [system. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) .
 
 ```csharp
 protected override void ProcessRecord()
@@ -136,7 +135,7 @@ När du har implementerat en cmdlet måste du registrera den med Windows PowerSh
 
 ## <a name="testing-the-cmdlet"></a>Testa cmdleten
 
-När din cmdlet har registrerats med Windows PowerShell kan du testa den genom att köra den på kommando raden. Koden för vår exempel get-proc cmdlet är liten, men den använder fortfarande Windows PowerShell-körningsmiljön och ett befintligt .NET-objekt, vilket är tillräckligt för att göra det användbart. Vi testar det för att bättre förstå vad get-proc kan göra och hur dess utdata kan användas. Mer information om hur du använder cmdlets från kommando raden finns i [komma igång med Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+När din cmdlet har registrerats med Windows PowerShell kan du testa den genom att köra den på kommando raden. Koden för vår exempel Get-Proc cmdlet är liten, men den använder fortfarande Windows PowerShell-körningsmiljön och ett befintligt .NET-objekt, vilket är tillräckligt för att göra det användbart. Låt oss testa det för att bättre förstå vad Get-Proc kan göra och hur dess utdata kan användas. Mer information om hur du använder cmdlets från kommando raden finns i [komma igång med Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
 1. Starta Windows PowerShell och få de aktuella processerna som körs på datorn.
 

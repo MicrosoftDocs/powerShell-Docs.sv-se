@@ -1,12 +1,14 @@
 ---
-title: ExpressionBinding-element för CustomItem för kontroller för vy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6760bf17be58411948ecb3437bf18bce40073954
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ExpressionBinding-element för CustomItem för Controls för View (format)
+description: ExpressionBinding-element för CustomItem för Controls för View (format)
+ms.openlocfilehash: da87bb26d21dcb051871e67997cc3fba7ce73c74
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773818"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649890"
 ---
 # <a name="expressionbinding-element-for-customitem-for-controls-for-view-format"></a>ExpressionBinding-element för CustomItem för Controls för View (format)
 

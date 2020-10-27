@@ -1,12 +1,14 @@
 ---
-title: Elementet TypeName för EntrySelectedBy för CustomEntry för vyn (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f8dc2c808e6eb3d6a7873cdbddc936b95d94c541
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TypeName-element för EntrySelectedBy för CustomEntry för View (format)
+description: TypeName-element för EntrySelectedBy för CustomEntry för View (format)
+ms.openlocfilehash: 72bb88bccc2bbd62f7ed160b820cf9169cb69341
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785106"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645740"
 ---
 # <a name="typename-element-for-entryselectedby-for-customentry-for-view-format"></a>TypeName-element för EntrySelectedBy för CustomEntry för View (format)
 

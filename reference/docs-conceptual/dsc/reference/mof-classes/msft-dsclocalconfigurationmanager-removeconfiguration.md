@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: RemoveConfiguration-metoden
-ms.openlocfilehash: ef15c873d8dfaf28e5cdeb611b72a70921c099be
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: RemoveConfiguration-metoden
+ms.openlocfilehash: d5988ac014c457407c56a097c9a376427376eb3f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464357"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650733"
 ---
 # <a name="removeconfiguration-method"></a>RemoveConfiguration-metoden
 
@@ -17,8 +18,8 @@ Tar bort konfigurationsfilerna.
 
 ```mof
 uint32 RemoveConfiguration(
-  [in] uint32  Stage,
-  [in] boolean Force
+  [in] uint32  Stage,
+  [in] boolean Force
 );
 ```
 
@@ -46,7 +47,7 @@ Detta är en statisk metod.
 
 **MOF:** DscCore. MOF
 
-**Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Namnrymd** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Se även
 

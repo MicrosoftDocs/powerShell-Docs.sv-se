@@ -1,12 +1,14 @@
 ---
-title: Elementet TypeName för EntrySelectedBy för TableControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c514d3e6155278ddd3a0565c87e9377dc8419356
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TypeName-element för EntrySelectedBy för TableControl (format)
+description: TypeName-element för EntrySelectedBy för TableControl (format)
+ms.openlocfilehash: 5a9f5cda1810d461d19ffb48a1cfa2d41f87ca96
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780210"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651426"
 ---
 # <a name="typename-element-for-entryselectedby-for-tablecontrol-format"></a>TypeName-element för EntrySelectedBy för TableControl (format)
 

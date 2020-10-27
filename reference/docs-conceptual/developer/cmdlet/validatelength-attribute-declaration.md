@@ -1,16 +1,14 @@
 ---
-title: ValidateLength-Attribute-deklaration | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- ValidateLength attribute, described
-- attributes, ValidateLength
-- ValidateLength attribute
-ms.openlocfilehash: 7145dde55e79eeea6e3ceb91dfc1c93043a8857c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Deklaration av attributet ValidateLength
+description: Deklaration av attributet ValidateLength
+ms.openlocfilehash: b35fe24c6fc44aaca6a39d819d6e3fc2d8a2cade
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786313"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646190"
 ---
 # <a name="validatelength-attribute-declaration"></a>Deklaration av attributet ValidateLength
 

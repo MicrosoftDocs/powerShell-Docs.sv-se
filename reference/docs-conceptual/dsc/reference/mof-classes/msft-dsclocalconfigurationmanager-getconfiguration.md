@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: GetConfiguration-metoden
-ms.openlocfilehash: 989aeef4cd9aa5d55741b48c8565c657c4b6512c
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: GetConfiguration-metoden
+ms.openlocfilehash: a49f810bd227142c8c3ae4de45f69450400e4e8c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463830"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650875"
 ---
 # <a name="getconfiguration-method"></a>GetConfiguration-metoden
 
@@ -17,8 +18,8 @@ Skickar konfigurations dokumentet till den hanterade noden och använder **Get**
 
 ```mof
 uint32 GetConfiguration(
-  [in]  uint8            configurationData[],
-  [out] OMI_BaseResource configurations[]
+  [in]  uint8            configurationData[],
+  [out] OMI_BaseResource configurations[]
 );
 ```
 
@@ -40,7 +41,7 @@ Detta är en statisk metod.
 
 **MOF:** DscCore. MOF
 
-**Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Namnrymd** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Se även
 

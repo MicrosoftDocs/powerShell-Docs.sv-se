@@ -1,12 +1,14 @@
 ---
-title: CustomEntries-element för CustomControl för vy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c89eb25f6922a92e2c18298d0128c4c2ca93df3d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: CustomEntries-element för CustomControl för View (format)
+description: CustomEntries-element för CustomControl för View (format)
+ms.openlocfilehash: 6e757bccdface2503667f8786462a2b43134a07d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785973"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649974"
 ---
 # <a name="customentries-element-for-customcontrol-for-view-format"></a>CustomEntries-element för CustomControl för View (format)
 

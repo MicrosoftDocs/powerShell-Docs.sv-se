@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: WMF, powershell, inställning
 title: Informationsström
-ms.openlocfilehash: 1a8df66f7489910b964ec398e90b76e9f30cd2e2
-ms.sourcegitcommit: 87b9b989f261b52969e99159e99ee28ad8d8839a
+description: PowerShell 5,0 lägger till en ny strukturerad **informations** ström för att skicka strukturerade data mellan ett skript och dess värd.
+ms.openlocfilehash: 818c99ce281f5ada596ff92cd7bafb8b7cacf709
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567849"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646708"
 ---
 # <a name="information-stream"></a>Informationsström
 
@@ -60,7 +60,7 @@ $r.Id
 4008
 ```
 
-Till skillnad från `Write-Host` -cmdlet: en **InformationVariable** med parametern InformationVariable `Write-Information` kan du avbilda utdata i en variabel. Med hjälp av **taggen**kan du skapa separata kanaler för meddelanden som skickas till **informations** strömmen.
+Till skillnad från `Write-Host` -cmdlet: en **InformationVariable** med parametern InformationVariable `Write-Information` kan du avbilda utdata i en variabel. Med hjälp av **taggen** kan du skapa separata kanaler för meddelanden som skickas till **informations** strömmen.
 
 ```powershell
 $r = OutputGusher -InformationVariable iv

@@ -1,12 +1,14 @@
 ---
-title: SelectionSetName-element för EntrySelectedBy för kontroll av konfiguration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 72072d8d13e6ca22afdb9bca2e0237d29ba0594f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSetName-element för EntrySelectedBy för Controls för Configuration (format)
+description: SelectionSetName-element för EntrySelectedBy för Controls för Configuration (format)
+ms.openlocfilehash: b775aa8a3184aa3ebcbda17a8e3191c69d67a700
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787571"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645726"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format"></a>SelectionSetName-element för EntrySelectedBy för Controls för Configuration (format)
 

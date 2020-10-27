@@ -1,13 +1,13 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: ISEFileCollection-objektet
-ms.openlocfilehash: 4192afa9dc91d9ea4c4c084d3ba0175483620229
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: ISEFileCollection-objektet är en samling av ISEFile-objekt.
+ms.openlocfilehash: 2feef1200c611d5181bcbc55d5464a0bd390084e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810668"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646750"
 ---
 # <a name="the-isefilecollection-object"></a>ISEFileCollection-objektet
 
@@ -21,7 +21,7 @@ Stöds i Windows PowerShell ISE 2,0 och senare.
 
 Skapar och returnerar en ny namnlös fil och lägger till den i samlingen. **IsUntitled** -egenskapen för den nyligen skapade filen är `$true` .
 
-** \[ Fullpath \] ** – valfri sträng som är den fullständigt angivna sökvägen till filen. Ett undantag skapas om du inkluderar parametern **fullpath** och en relativ sökväg, eller om du använder ett fil namn i stället för den fullständiga sökvägen.
+**\[ Fullpath \]** – valfri sträng som är den fullständigt angivna sökvägen till filen. Ett undantag skapas om du inkluderar parametern **fullpath** och en relativ sökväg, eller om du använder ett fil namn i stället för den fullständiga sökvägen.
 
 ```powershell
 # Adds a new untitled file to the collection of files in the current PowerShell tab.
@@ -39,7 +39,7 @@ Tar bort en angiven fil från den aktuella PowerShell-fliken.
 
 **Filsträng filen ISEFile** som du vill ta bort från samlingen. Om filen inte har sparats, genererar den här metoden ett undantag. Använd parametern **Framtvinga** växel för att tvinga borttagning av en fil som inte sparats.
 
-** \[ \] Tvingande** -valfria booleska om det är inställt på `$true` , ger behörighet att ta bort filen även om den inte har sparats efter den senaste användningen. Standardvärdet är `$false`.
+**\[ \] Tvingande** -valfria booleska om det är inställt på `$true` , ger behörighet att ta bort filen även om den inte har sparats efter den senaste användningen. Standardvärdet är `$false`.
 
 ```powershell
 # Removes the first opened file from the file collection associated with the current PowerShell tab.
@@ -52,7 +52,7 @@ $firstfile = $psISE.CurrentPowerShellTab.Files[0]
 $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 ```
 
-### <a name="setselectedfile-selectedfile-"></a>SetSelectedFile \( selectedFile\)
+### <a name="setselectedfile-selectedfile-"></a>SetSelectedFile \( selectedFile \)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 

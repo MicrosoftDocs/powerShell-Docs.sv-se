@@ -1,17 +1,14 @@
 ---
-title: Skapa en cmdlet som ändrar systemet | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- should process [PowerShell Programmer's Guide]
-- should continue [PowerShell Programmer's Guide]
-- user feedback [PowerShell Programmer's Guide]
-- confirm impact [PowerShell Programmer's Guide]
-ms.openlocfilehash: 03ffe0c9c02dcdeb2dd24f81014b2013ae169aa4
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skapa en cmdlet som ändrar systemet
+description: Skapa en cmdlet som ändrar systemet
+ms.openlocfilehash: d4e941632f4692424009f805178e3fc5275e72b1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782182"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650388"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Skapa en cmdlet som ändrar systemet
 
@@ -34,13 +31,13 @@ Syftet med att ändra systemet syftar på alla cmdletar som kan ändra systemets
 
 ## <a name="the-stopproc-cmdlet"></a>StopProc-cmdleten
 
-I det här avsnittet beskrivs en stop-proc-cmdlet som försöker stoppa processer som hämtas med cmdleten Get-proc (beskrivs i [skapa din första cmdlet](./creating-a-cmdlet-without-parameters.md)).
+I det här avsnittet beskrivs en Stop-Proc-cmdlet som försöker stoppa processer som hämtas med hjälp av Get-Proc-cmdlet (beskrivs i [skapa din första cmdlet](./creating-a-cmdlet-without-parameters.md)).
 
 ## <a name="defining-the-cmdlet"></a>Definiera cmdleten
 
 Det första steget i att skapa en cmdlet namnger alltid cmdleten och deklarerar den .NET-klass som implementerar cmdleten. Eftersom du skriver en cmdlet för att ändra systemet bör den namnges. Den här cmdleten stoppar system processer, så verbet som väljs här är "stopp", som definieras av klassen [system. Management. Automation. Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) , med Substantiv "proc" för att indikera att cmdleten stoppar processer. Mer information om godkända cmdlet-verb finns i [cmdlet-verb](./approved-verbs-for-windows-powershell-commands.md).
 
-Följande är klass definitionen för den här Stop-proc-cmdleten.
+Följande är klass definitionen för denna Stop-Proc-cmdlet.
 
 ```csharp
 [Cmdlet(VerbsLifecycle.Stop, "Proc",
@@ -52,7 +49,7 @@ Observera att [System.Management.Automation.CmdletAttribute](/dotnet/api/System.
 
 ### <a name="extremely-destructive-actions"></a>Extremt destruktiva åtgärder
 
-Vissa åtgärder är extremt destruktiva, t. ex. att omformatera en aktiv hård disk partition. I dessa fall bör cmdleten anges `ConfirmImpact`  =  `ConfirmImpact.High` när du deklarerar attributet [system. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) . Med den här inställningen tvingas cmdleten att begära användar bekräftelse även om användaren inte har angett `Confirm` parametern. Cmdlet-utvecklare bör dock undvika att använda `ConfirmImpact` för åtgärder som är bara potentiellt destruktiva, t. ex. borttagning av ett användar konto. Kom ihåg att om `ConfirmImpact` anges till [system. Management. Automation. ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **High**.
+Vissa åtgärder är extremt destruktiva, t. ex. att omformatera en aktiv hård disk partition. I dessa fall bör cmdleten anges `ConfirmImpact`  =  `ConfirmImpact.High` när du deklarerar attributet [system. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) . Med den här inställningen tvingas cmdleten att begära användar bekräftelse även om användaren inte har angett `Confirm` parametern. Cmdlet-utvecklare bör dock undvika att använda `ConfirmImpact` för åtgärder som är bara potentiellt destruktiva, t. ex. borttagning av ett användar konto. Kom ihåg att om `ConfirmImpact` anges till [system. Management. Automation. ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **High** .
 
 På samma sätt är vissa åtgärder troligen inte destruktiva, men de gör i teorin att ändra körnings läget för ett system utanför Windows PowerShell. Sådana cmdletar kan anges `ConfirmImpact` till [system. Management. Automation. Confirmimpact. Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0). Detta kommer att kringgå bekräftelse begär Anden där användaren har bett att bekräfta endast medels Tor och hög påverkan.
 
@@ -60,7 +57,7 @@ På samma sätt är vissa åtgärder troligen inte destruktiva, men de gör i te
 
 I det här avsnittet beskrivs hur du definierar cmdlet-parametrarna, inklusive de som behövs för att stödja system ändringar. Se [lägga till parametrar som bearbetar kommando rads indata](./adding-parameters-that-process-command-line-input.md) om du behöver allmän information om att definiera parametrar.
 
-Cmdleten Stop-proc definierar tre parametrar: `Name` , `Force` och `PassThru` .
+Stop-Proc cmdleten definierar tre parametrar: `Name` , `Force` , och `PassThru` .
 
 `Name`Parametern motsvarar `Name` egenskapen för objektet bearbeta inobjekt. Tänk på att `Name` parametern i det här exemplet är obligatorisk, eftersom cmdleten Miss kan köras om den inte har en namngiven process att stoppa.
 
@@ -68,7 +65,7 @@ Cmdleten Stop-proc definierar tre parametrar: `Name` , `Force` och `PassThru` .
 
 `PassThru`Parametern gör det möjligt för användaren att ange om cmdleten skickar ett utgående objekt genom pipelinen, i det här fallet när en process har stoppats. Tänk på att den här parametern är kopplad till själva cmdleten i stället för till en egenskap i objektet.
 
-Här är parameter deklarationen för cmdleten Stop-proc.
+Här är parameter deklarationen för Stop-Proc-cmdleten.
 
 ```csharp
 [Parameter(
@@ -113,7 +110,7 @@ private bool passThru;
 
 ## <a name="overriding-an-input-processing-method"></a>Åsidosätta en metod för bearbetning av indata
 
-Cmdleten måste åsidosätta en metod för bearbetning av indata. Följande kod illustrerar åsidosättningen [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) som används i samplet Stop-proc-cmdlet. För varje begärt process namn säkerställer den här metoden att processen inte är en särskild process, försöker stoppa processen och skickar sedan ett utgående objekt om `PassThru` parametern anges.
+Cmdleten måste åsidosätta en metod för bearbetning av indata. Följande kod illustrerar åsidosättningen [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) som används i exempel-Stop-Proc cmdlet. För varje begärt process namn säkerställer den här metoden att processen inte är en särskild process, försöker stoppa processen och skickar sedan ett utgående objekt om `PassThru` parametern anges.
 
 ```csharp
 protected override void ProcessRecord()
@@ -224,7 +221,7 @@ Metoden för bearbetning av indata för cmdleten ska anropa metoden [system. Man
 
 Anropet till [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) skickar namnet på resursen som ska ändras till användaren, med Windows PowerShell-körningsmiljön med hänsyn till alla kommando rads inställningar eller variabler för att fastställa vad som ska visas för användaren.
 
-I följande exempel visas anropet till [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) från åsidosättningen av metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) i samplet Stop-proc-cmdlet.
+I följande exempel visas anropet till [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) från åsidosättningen av metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) i exemplet Stop-Proc cmdlet.
 
 ```csharp
 if (!ShouldProcess(string.Format("{0} ({1})", processName,
@@ -238,7 +235,7 @@ if (!ShouldProcess(string.Format("{0} ({1})", processName,
 
 Anropet till metoden [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) skickar ett sekundärt meddelande till användaren. Anropet görs efter anrop till [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) returnerar `true` och om `Force` parametern inte har angetts till `true` . Användaren kan sedan ge feedback för att säga om åtgärden ska fortsätta. Cmdleten anropar [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) som en ytterligare kontroll för potentiellt skadliga system ändringar eller när du vill ge användaren ja-till-alla-och inga-till-alla-alternativ.
 
-I följande exempel visas anropet till [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) från åsidosättningen av metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) i samplet Stop-proc-cmdlet.
+I följande exempel visas anropet till [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) från åsidosättningen av metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) i exemplet Stop-Proc cmdlet.
 
 ```csharp
 if (criticalProcess &&!force)
@@ -263,7 +260,7 @@ if (criticalProcess &&!force)
 
 ## <a name="stopping-input-processing"></a>Stoppa bearbetning av indata
 
-Metoden för bearbetning av indata för en cmdlet som gör system ändringar måste tillhandahålla ett sätt att stoppa bearbetningen av indata. I händelse av denna Stop-proc-cmdlet görs ett anrop från metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) till metoden [system. Diagnostics. process. kill *](/dotnet/api/System.Diagnostics.Process.Kill) . Eftersom `PassThru` parametern är inställd på `true` , anropar [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) också [system. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) för att skicka processobjektet till pipelinen.
+Metoden för bearbetning av indata för en cmdlet som gör system ändringar måste tillhandahålla ett sätt att stoppa bearbetningen av indata. Om detta Stop-Proc-cmdlet görs ett anrop från metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) till metoden [system. Diagnostics. process. kill *](/dotnet/api/System.Diagnostics.Process.Kill) . Eftersom `PassThru` parametern är inställd på `true` , anropar [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) också [system. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) för att skicka processobjektet till pipelinen.
 
 ## <a name="code-sample"></a>Kod exempel
 
@@ -279,9 +276,9 @@ När du har implementerat en cmdlet måste den vara registrerad med Windows Powe
 
 ## <a name="testing-the-cmdlet"></a>Testa cmdleten
 
-När din cmdlet har registrerats med Windows PowerShell kan du testa den genom att köra den på kommando raden. Här följer flera test som testar cmdleten Stop-proc. Mer information om hur du använder cmdlets från kommando raden finns i [komma igång med Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+När din cmdlet har registrerats med Windows PowerShell kan du testa den genom att köra den på kommando raden. Här följer flera tester som testar Stop-Proc-cmdleten. Mer information om hur du använder cmdlets från kommando raden finns i [komma igång med Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
-- Starta Windows PowerShell och använd Stop-proc-cmdlet: en för att stoppa bearbetningen som visas nedan. Eftersom cmdleten anger `Name` parametern som obligatorisk, frågar cmdleten för parametern.
+- Starta Windows PowerShell och Använd Stop-Proc-cmdleten för att stoppa bearbetningen som visas nedan. Eftersom cmdleten anger `Name` parametern som obligatorisk, frågar cmdleten för parametern.
 
     ```powershell
     PS> stop-proc
@@ -310,7 +307,7 @@ När din cmdlet har registrerats med Windows PowerShell kan du testa den genom a
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-- Använd Stop-proc som visas för att stoppa den kritiska processen med namnet "WINLOGON". Du uppmanas och varnas om att utföra den här åtgärden eftersom det gör att operativ systemet startas om.
+- Använd Stop-Proc som visas för att stoppa den kritiska processen med namnet "WINLOGON". Du uppmanas och varnas om att utföra den här åtgärden eftersom det gör att operativ systemet startas om.
 
     ```powershell
     PS> stop-proc -Name Winlogon
@@ -345,7 +342,7 @@ När din cmdlet har registrerats med Windows PowerShell kan du testa den genom a
 
 ## <a name="see-also"></a>Se även
 
-[Lägga till parametrar som bearbetar kommando rads indatatyper](./adding-parameters-that-process-command-line-input.md)
+[Lägga till parametrar som bearbetar Command-Line-Indatatyp](./adding-parameters-that-process-command-line-input.md)
 
 [Utöka objekt typer och formatering](/previous-versions//ms714665(v=vs.85))
 

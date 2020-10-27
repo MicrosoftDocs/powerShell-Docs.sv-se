@@ -1,18 +1,20 @@
 ---
-title: Nyckelord för kommentarsbaserad hjälp
 ms.date: 06/09/2020
-ms.openlocfilehash: fb737c19d7b7f4d003af3ba36bb396bac52d94e7
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Nyckelord för kommentarsbaserad hjälp
+description: Nyckelord för kommentarsbaserad hjälp
+ms.openlocfilehash: d87dde8700813767f6c09cfce70ed06c7964ebc7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893160"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645472"
 ---
 # <a name="comment-based-help-keywords"></a>Nyckelord för kommentarsbaserad hjälp
 
 Det här avsnittet innehåller information om nyckelorden i kommenterad hjälp.
 
-## <a name="keywords-in-comment-based-help"></a>Nyckelord i kommenterings-baserad hjälp
+## <a name="keywords-in-comment-based-help"></a>Nyckelord i Comment-Based hjälp
 
 Följande är giltiga kommentarer baserade hjälp nyckelord. De visas i den ordning som de normalt visas i ett hjälp avsnitt, tillsammans med deras avsedda användning. Dessa nyckelord kan visas i vilken ordning som helst i den kommenterade hjälpen, och de är inte Skift läges känsliga.
 

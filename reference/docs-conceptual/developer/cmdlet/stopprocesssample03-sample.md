@@ -1,12 +1,14 @@
 ---
-title: StopProcessSample03-exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 76a74c099a3c82cfb55e93e5b6173d728ac88b93
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: StopProcessSample03 – exempel
+description: StopProcessSample03 – exempel
+ms.openlocfilehash: b633161dd7a329dffa076d828862ee39fb256429
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787843"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650163"
 ---
 # <a name="stopprocesssample03-sample"></a>StopProcessSample03 – exempel
 
@@ -18,7 +20,7 @@ Det här exemplet visar hur du skriver en cmdlet vars parametrar har alias och v
 
 2. Dubbelklicka på ikonen för lösnings filen (. SLN). Detta öppnar exempelprojektet i Microsoft Visual Studio.
 
-3. I menyn **build** väljer du **build-lösning**.
+3. I menyn **build** väljer du **build-lösning** .
 
     Biblioteket för exemplet skapas i standardmappen \Bin eller \Bin\Debug.
 

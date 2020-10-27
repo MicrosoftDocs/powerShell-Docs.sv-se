@@ -1,12 +1,14 @@
 ---
-title: Så här skriver du en enkel cmdlet | Microsoft Docs
 ms.date: 01/15/2019
-ms.openlocfilehash: 2ff0b47454804c9becd6f03ac521946b9596bb8b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skriva en enkel cmdlet
+description: Skriva en enkel cmdlet
+ms.openlocfilehash: 59dce5d797f80647e0b70a1f80faf67198652082
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784069"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646499"
 ---
 # <a name="how-to-write-a-cmdlet"></a>Så här skriver du en cmdlet
 

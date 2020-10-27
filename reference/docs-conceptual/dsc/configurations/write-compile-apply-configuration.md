@@ -2,12 +2,13 @@
 ms.date: 06/22/2020
 keywords: DSC, PowerShell, konfiguration, tjänst, installation
 title: Skriva, kompilera och tillämpa en konfiguration
-ms.openlocfilehash: 9acb2db882795d7150326fadb2964deb1105b2cc
-ms.sourcegitcommit: 7eea0885dd7ac90ab36e5664501438a292217f7f
+description: Den här övningen beskriver hur du skapar och använder en DSC-konfiguration från början till slut. I följande exempel får du lära dig hur du skriver och använder en mycket enkel konfiguration
+ms.openlocfilehash: f173fe0dc6cd73e2b49bb8c44a9ee1a53eab475f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85295683"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645035"
 ---
 # <a name="write-compile-and-apply-a-configuration"></a>Skriva, kompilera och tillämpa en konfiguration
 
@@ -69,7 +70,7 @@ Konfigurationen anropar en [resources](../resources/resources.md) `File` resurs,
 
 ## <a name="compile-the-configuration"></a>Kompilera konfigurationen
 
-För att en DSC-konfiguration ska tillämpas på en nod måste den först kompileras till en MOF-fil. Genom att köra konfigurationen som en funktion kompileras en `.mof` fil för varje nod som definieras av `Node` blocket. För att kunna köra konfigurationen måste du _punkt källa_ ditt `HelloWorld.ps1` skript till det aktuella omfånget. Mer information finns i [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).
+För att en DSC-konfiguration ska tillämpas på en nod måste den först kompileras till en MOF-fil. Genom att köra konfigurationen som en funktion kompileras en `.mof` fil för varje nod som definieras av `Node` blocket. För att kunna köra konfigurationen måste du _punkt källa_ ditt `HelloWorld.ps1` skript till det aktuella omfånget. Mer information finns i [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts#script-scope-and-dot-sourcing).
 
 <!-- markdownlint-disable MD038 -->
 _Punkt källa_ ditt `HelloWorld.ps1` skript genom att skriva in sökvägen där du sparade den, efter `. ` (punkt, blank steg). Sedan kan du köra konfigurationen genom att anropa den som en funktion. Du kan också anropa konfigurations funktionen längst ned i skriptet så att du inte behöver punkt källa.

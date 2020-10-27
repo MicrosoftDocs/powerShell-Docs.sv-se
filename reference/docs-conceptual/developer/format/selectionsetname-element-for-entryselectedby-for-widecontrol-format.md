@@ -1,12 +1,14 @@
 ---
-title: SelectionSetName-element för EntrySelectedBy för WideControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 546225b0619ebec83d04a7e27bbc298ffef0a14d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSetName-element för EntrySelectedBy för WideControl (format)
+description: SelectionSetName-element för EntrySelectedBy för WideControl (format)
+ms.openlocfilehash: bf6a44bb733421f36a9140d0ec10e61aedfbda6a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785259"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651690"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-widecontrol-format"></a>SelectionSetName-element för EntrySelectedBy för WideControl (format)
 

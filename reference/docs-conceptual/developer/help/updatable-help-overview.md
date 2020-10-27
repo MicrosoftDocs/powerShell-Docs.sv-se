@@ -1,12 +1,14 @@
 ---
-title: Översikt över uppdateringsbar hjälp
 ms.date: 03/22/2012
-ms.openlocfilehash: 142bac764c93728d302707504d6d3fb2d50a3a7b
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Översikt över uppdateringsbar hjälp
+description: Översikt över uppdateringsbar hjälp
+ms.openlocfilehash: b8008b7c28d94ebaac135934606042e6a6053591
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86892327"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649567"
 ---
 # <a name="updatable-help-overview"></a>Översikt över uppdateringsbar hjälp
 
@@ -26,16 +28,16 @@ Uppdaterings bara hjälp innehåller följande funktioner.
 
 - Cmdleten [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) som laddar ned de senaste hjälpfilerna från Internet och sparar dem i en fil system katalog. Användare kan använda `Update-Help` cmdleten för att hämta hjälpfiler från fil system katalogen och packa upp och installera dem i modulens under kataloger på användarens dator. `Save-Help`Cmdleten är avsedd för användare som har begränsad eller ingen Internet åtkomst och för företag som föredrar att begränsa Internet åtkomst.
 
-- **Hjälp för en modul**. Hjälpfiler för en modul hanteras och levereras som en enhet, så att användarna kan få alla hjälpfilerna för de moduler som de använder. Uppdaterings bara hjälp stöds bara för moduler, inte för Windows PowerShell-snapin-moduler.
+- **Hjälp för en modul** . Hjälpfiler för en modul hanteras och levereras som en enhet, så att användarna kan få alla hjälpfilerna för de moduler som de använder. Uppdaterings bara hjälp stöds bara för moduler, inte för Windows PowerShell-snapin-moduler.
 
-- **Versions stöd**. Uppdaterings bara hjälp använder fyra positioner (N1). N2. N3. N4) versions nummer.
+- **Versions stöd** . Uppdaterings bara hjälp använder fyra positioner (N1). N2. N3. N4) versions nummer.
   Uppdaterings bara hjälp nedladdnings hjälp filer när versions numret för hjälpfilerna på användarens dator (eller i `Save-Help` katalogen) är lägre än hjälp filens versions nummer på Internet platsen.
 
-- **Stöd för flera språk**. Uppdaterings bara hjälp stöder modulens hjälpfiler i flera UI-kulturer.
+- **Stöd för flera språk** . Uppdaterings bara hjälp stöder modulens hjälpfiler i flera UI-kulturer.
   Uppdaterings bara hjälp fil namn är standard språk koder, till exempel "en-US" och "ja-JP", och `Update-Help` - `Save-Help` cmdletarna placerar hjälpfilerna i språkspecifika under kataloger i modulens katalog.
 
-- **Automatiskt genererad hjälp**. Cmdleten [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) visar grundläggande hjälp för kommandon som inte har hjälpfilerna. Den automatiskt genererade hjälpen innehåller kommandosyntaxen och alias och instruktioner för att använda onlinehjälp och uppdaterings bara hjälp.
+- **Automatiskt genererad hjälp** . Cmdleten [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) visar grundläggande hjälp för kommandon som inte har hjälpfilerna. Den automatiskt genererade hjälpen innehåller kommandosyntaxen och alias och instruktioner för att använda onlinehjälp och uppdaterings bara hjälp.
 
-- **Utökad onlinehjälp**. Enkel åtkomst till direkt hjälpen kräver inte längre hjälp filer. **Online** -parametern för `Get-Help` cmdleten hämtar nu URL: en för ett direkt hjälp avsnitt från värdet för egenskapen **HelpUri** för alla kommandon, om den inte kan hitta URL: en direkt hjälp i en hjälp fil. Du kan fylla i egenskapen **HelpUri** genom att lägga till ett **HelpUri** -attribut till koden för cmdlets, Functions och CIM-kommandon, eller genom att använda **. Länka** till kommenterat hjälp direktiv i arbets flöden och skript.
+- **Utökad onlinehjälp** . Enkel åtkomst till direkt hjälpen kräver inte längre hjälp filer. **Online** -parametern för `Get-Help` cmdleten hämtar nu URL: en för ett direkt hjälp avsnitt från värdet för egenskapen **HelpUri** för alla kommandon, om den inte kan hitta URL: en direkt hjälp i en hjälp fil. Du kan fylla i egenskapen **HelpUri** genom att lägga till ett **HelpUri** -attribut till koden för cmdlets, Functions och CIM-kommandon, eller genom att använda **. Länka** till kommenterat hjälp direktiv i arbets flöden och skript.
 
   För att kunna göra våra hjälpfiler uppdaterings bara, kommer Windows PowerShell-modulerna i Windows 8-och Windows Server-vNext inte att medfölja hjälpfilerna. Användare kan använda uppdaterbar hjälp för att installera hjälpfiler och uppdatera dem. Författare till andra moduler kan inkludera hjälpfiler i moduler eller utelämna dem. Stöd för uppdaterbar hjälp är valfritt, men rekommenderas.

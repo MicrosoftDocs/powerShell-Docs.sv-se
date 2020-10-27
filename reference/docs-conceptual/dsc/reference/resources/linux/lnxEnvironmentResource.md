@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC för Linux nxEnvironment-resurs
-ms.openlocfilehash: 2f673dfbc3b6e93d7e186e4a63b75d16a31b5181
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC för Linux nxEnvironment-resurs
+ms.openlocfilehash: 86ed538732254967cb4a3bb55af4f6b179947e52
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463694"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644681"
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>DSC för Linux nxEnvironment-resurs
 
@@ -30,7 +31,7 @@ nxEnvironment <string> #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|Name |Anger namnet på den miljö variabel som du vill säkerställa ett speciellt tillstånd för. |
+|Namn |Anger namnet på den miljö variabel som du vill säkerställa ett speciellt tillstånd för. |
 |Värde |Värdet som ska tilldelas miljövariabeln. |
 |Sökväg |Definierar den miljö variabel som konfigureras. Ange den här egenskapen till `$true` om variabeln är **sökvägsvariabeln** . annars anger du den som `$false` . Standardvärdet är `$false`. Om variabeln som konfigureras är **sökvägsvariabeln,** läggs värdet som anges via egenskapen **Value** till i det befintliga värdet. |
 

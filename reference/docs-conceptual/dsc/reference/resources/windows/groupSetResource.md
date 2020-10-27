@@ -1,14 +1,14 @@
 ---
 ms.date: 09/20/2019
-keywords: DSC, PowerShell, konfiguration, installation
-description: Tillhandahåller en mekanism för att hantera lokala grupper på målnoden.
+ms.topic: reference
 title: DSC GroupSet-resurs
-ms.openlocfilehash: 90e0c3f0e09c6a300988869265dfdb432ed5d217
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC GroupSet-resurs
+ms.openlocfilehash: f0e10409b0c80658ee05358c506b32da4b9deca7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464204"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650474"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet-resurs
 

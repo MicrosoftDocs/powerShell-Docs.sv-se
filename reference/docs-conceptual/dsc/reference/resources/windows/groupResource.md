@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC-gruppresurs
-ms.openlocfilehash: 5570d46d872e205917eef49bfa869419b20a77b0
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC-gruppresurs
+ms.openlocfilehash: 9e8931fe1227f3ac258c46fb1aecf4586958de66
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464221"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650515"
 ---
 # <a name="dsc-group-resource"></a>DSC-gruppresurs
 
@@ -38,7 +39,7 @@ Group [string] #ResourceName
 |---|---|
 |Namn |Namnet på den grupp som du vill säkerställa ett speciellt tillstånd för. |
 |Autentiseringsuppgift |De autentiseringsuppgifter som krävs för att komma åt fjär resurser. Det här kontot måste ha rätt Active Directory behörighet för att lägga till alla icke-lokala konton i gruppen. annars inträffar ett fel när konfigurationen körs på målnoden.
-|Description |Beskrivning av gruppen. |
+|Beskrivning |Beskrivning av gruppen. |
 |Medlemmar |Använd den här egenskapen för att ersätta det aktuella grupp medlemskapet med de angivna medlemmarna. Värdet för den här egenskapen är en matris med strängar i formuläret `Domain\UserName` . Om du ställer in den här egenskapen i en konfiguration ska du inte använda någon av egenskaperna **MembersToExclude** eller **MembersToInclude** . Detta genererar ett fel. |
 |MembersToExclude |Använd den här egenskapen för att ta bort medlemmar från det befintliga medlemskapet i gruppen. Värdet för den här egenskapen är en matris med strängar i formuläret `Domain\UserName` . Om du ställer in den här egenskapen i en konfiguration ska du inte använda egenskapen **medlemmar** . Detta genererar ett fel. |
 |MembersToInclude |Använd den här egenskapen för att lägga till medlemmar i det befintliga medlemskapet i gruppen. Värdet för den här egenskapen är en matris med strängar i formuläret `Domain\UserName` . Om du ställer in den här egenskapen i en konfiguration ska du inte använda egenskapen **medlemmar** . Om du gör det skapas ett fel. |

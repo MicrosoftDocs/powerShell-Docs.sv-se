@@ -1,12 +1,14 @@
 ---
-title: Elementet TypeName för EntrySelectedBy för GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e62762cf142bd2d20b21ad8f4249285bd3679280
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TypeName-element för EntrySelectedBy för GroupBy (format)
+description: TypeName-element för EntrySelectedBy för GroupBy (format)
+ms.openlocfilehash: 07cc92e9c501aa0eb2d219e416851be0fcd80f47
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780277"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645711"
 ---
 # <a name="typename-element-for-entryselectedby-for-groupby-format"></a>TypeName-element för EntrySelectedBy för GroupBy (format)
 

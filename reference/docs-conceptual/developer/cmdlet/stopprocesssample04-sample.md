@@ -1,12 +1,14 @@
 ---
-title: StopProcessSample04-exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a256d29b9e0be878d805a82ddf5a538461d283d6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: StopProcessSample04 – exempel
+description: StopProcessSample04 – exempel
+ms.openlocfilehash: 65588b4d60034d1e6a1e17441a4a640caaacdce8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786432"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650130"
 ---
 # <a name="stopprocesssample04-sample"></a>StopProcessSample04 – exempel
 
@@ -18,7 +20,7 @@ Det här exemplet visar hur du skriver en cmdlet som deklarerar parameter uppsä
 
 2. Dubbelklicka på ikonen för lösnings filen (. SLN). Detta öppnar exempelprojektet i Microsoft Visual Studio.
 
-3. I menyn **build** väljer du **build-lösning**.
+3. I menyn **build** väljer du **build-lösning** .
 
     Biblioteket för exemplet skapas i standardmappen \Bin eller \Bin\Debug.
 
@@ -60,7 +62,7 @@ Det här exemplet demonstrerar följande.
 
 ## <a name="example"></a>Exempel
 
-Följande kod visar en implementering av cmdleten Stop-proc som deklarerar parameter uppsättningar, anger standard parameter uppsättningen och kan acceptera ett indatamängds objekt.
+Följande kod visar en implementering av den Stop-Proc-cmdlet som deklarerar parameter uppsättningar, anger standard parameter uppsättningen och kan acceptera ett indatamängds objekt.
 
 Det här exemplet visar inobjektet, hur du deklarerar parameter uppsättningar och hur du anger standard parameter uppsättningen som ska användas.
 

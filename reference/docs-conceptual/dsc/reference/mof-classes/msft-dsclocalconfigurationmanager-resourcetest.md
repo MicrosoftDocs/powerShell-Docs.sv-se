@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: ResourceTest-metoden
-ms.openlocfilehash: 7ef65227342091cb2a5063aaf95a2780d217f85a
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: ResourceTest-metoden
+ms.openlocfilehash: cbac53ea96a59ec92fa840f75cd264a3125b965a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463813"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650672"
 ---
 # <a name="resourcetest-method"></a>ResourceTest-metoden
 
@@ -17,10 +18,10 @@ Anropar direkt **test** metoden för en DSC-resurs.
 
 ```mof
 uint32 ResourceTest(
-  [in]  string  ResourceType,
-  [in]  string  ModuleName,
-  [in]  uint8   resourceProperty[],
-  [out] boolean InDesiredState
+  [in]  string  ResourceType,
+  [in]  string  ModuleName,
+  [in]  uint8   resourceProperty[],
+  [out] boolean InDesiredState
 );
 ```
 
@@ -30,7 +31,7 @@ uint32 ResourceTest(
 
 **Modulnamn** \[ i \] namnet på den modul som innehåller resursen som ska anropas.
 
-***resourceProperty** \[ i \] anger resurs egenskapens namn och dess värde i en hash-tabell som nyckel och värde respektive. Använd cmdleten [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) för att identifiera resurs egenskaper och deras typer.
+**_resourceProperty_* \[ i \] anger resurs egenskapens namn och dess värde i en hash-tabell som nyckel och värde respektive. Använd cmdleten [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) för att identifiera resurs egenskaper och deras typer.
 
 *InDesiredState* *  InDesiredState \[ ut \] vid retur anges den här egenskapen till **Sant** om målnoden är i önskat tillstånd.
 
@@ -46,7 +47,7 @@ Detta är en statisk metod.
 
 **MOF:** DscCore. MOF
 
-**Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Namnrymd** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Se även
 

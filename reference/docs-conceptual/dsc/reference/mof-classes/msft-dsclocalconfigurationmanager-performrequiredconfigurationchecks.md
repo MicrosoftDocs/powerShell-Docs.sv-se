@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: PerformRequiredConfigurationChecks-metoden
-ms.openlocfilehash: ea4294ffdcb2580fa7b39b18966b642d58073eb6
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: PerformRequiredConfigurationChecks-metoden
+ms.openlocfilehash: c5e847cda6376f4266cc771dc947032a279e25f4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464459"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650834"
 ---
 # <a name="performrequiredconfigurationchecks-method"></a>PerformRequiredConfigurationChecks-metoden
 
@@ -17,7 +18,7 @@ Startar en konsekvens kontroll med hjälp av Schemaläggaren.
 
 ```mof
 uint32 PerformRequiredConfigurationChecks(
-  [in] uint32 Flags
+  [in] uint32 Flags
 );
 ```
 
@@ -29,7 +30,7 @@ uint32 PerformRequiredConfigurationChecks(
 |:--- |:---|
 |**1** | En normal konsekvens kontroll. |
 |**2** | En fortsättning på konsekvens kontroll efter en omstart. Värdet får inte kombineras med andra värden. |
-|**4** | Konfigurationen ska hämtas från den hämtnings server som anges i metaconfiguration för noden. Värdet ska alltid kombineras med **1**, för värdet **5**. |
+|**4** | Konfigurationen ska hämtas från den hämtnings server som anges i metaconfiguration för noden. Värdet ska alltid kombineras med **1** , för värdet **5** . |
 |**8** | Skicka status till rapport servern. |
 
 ## <a name="return-value"></a>Returvärde
@@ -44,7 +45,7 @@ Detta är en statisk metod.
 
 **MOF:** DscCore. MOF
 
-**Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Namnrymd** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Se även
 

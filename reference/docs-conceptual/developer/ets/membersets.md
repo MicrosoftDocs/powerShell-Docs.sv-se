@@ -1,14 +1,16 @@
 ---
-title: Medlems uppsättningar för utökade typ system
 ms.date: 07/09/2020
-ms.openlocfilehash: 3f4e44ed7b498bb7c4a71f7b131270ed4f2ef981
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Medlems uppsättningar för utökade typ system
+description: Medlems uppsättningar för utökade typ system
+ms.openlocfilehash: b04d2618dc4bcf302d2e683d50c351ad3aa076ac
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786262"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650081"
 ---
-# <a name="ets-member-sets"></a>ETS medlems uppsättningar
+# <a name="ets-member-sets"></a>ETS- medlemsuppsättningar
 
 Med medlems uppsättningar kan du partitionera medlemmar av **PSObject** -objektet i två del mängder så att medlemmar i under uppsättningarna kan refereras till tillsammans med deras delmängds namn. De två typerna av del mängder inkluderar egenskaps uppsättningar och medlems uppsättningar. Ett exempel på hur PowerShell använder medlems uppsättningar finns i en viss egenskaps uppsättning med namnet **DefaultDisplayPropertySet** som används för att fastställa, vid körning, vilka egenskaper som ska visas för ett angivet **PSObject** -objekt.
 

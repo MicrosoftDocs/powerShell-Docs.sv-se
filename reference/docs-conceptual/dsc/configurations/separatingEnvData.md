@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Avgränsa konfigurations- och miljödata
-ms.openlocfilehash: 076e17054cfa20fad5ca925df126e239a77268db
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: Det kan vara praktiskt att separera de data som används i en DSC-konfiguration från själva konfigurationen med hjälp av konfigurations data. Genom att göra detta kan du använda en enda konfiguration för flera miljöer.
+ms.openlocfilehash: 84ca4e4945a36111d23116524fd8f98c04e16d32
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692434"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645061"
 ---
 # <a name="separating-configuration-and-environment-data"></a>Avgränsa konfigurations- och miljödata
 
->Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
+> Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
-Det kan vara praktiskt att separera de data som används i en DSC-konfiguration från själva konfigurationen med hjälp av konfigurations data.
-Genom att göra detta kan du använda en enda konfiguration för flera miljöer.
+Det kan vara praktiskt att separera de data som används i en DSC-konfiguration från själva konfigurationen med hjälp av konfigurations data. Genom att göra detta kan du använda en enda konfiguration för flera miljöer.
 
 Om du till exempel utvecklar ett program kan du använda en konfiguration för både utvecklings-och produktions miljöer och använda konfigurations data för att ange data för varje miljö.
 
@@ -26,8 +26,7 @@ En detaljerad beskrivning av **ConfigurationData** -hash-tabellen finns i [anvä
 
 ## <a name="a-simple-example"></a>Ett enkelt exempel
 
-Nu ska vi titta på ett mycket enkelt exempel för att se hur det fungerar.
-Vi ska skapa en enda konfiguration som garanterar att **IIS** finns på vissa noder och att **Hyper-V** finns på andra:
+Nu ska vi titta på ett mycket enkelt exempel för att se hur det fungerar. Vi ska skapa en enda konfiguration som garanterar att **IIS** finns på vissa noder och att **Hyper-V** finns på andra:
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -82,7 +81,7 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
 
-`$MyData`anger två olika noder, var och en med sin egen `NodeName` och `Role` . Konfigurationen skapar automatiskt **Node** -block genom att ta med noderna från `$MyData` (särskilt, `$AllNodes` ) och filter som insamlingen mot `Role` egenskapen.
+`$MyData` anger två olika noder, var och en med sin egen `NodeName` och `Role` . Konfigurationen skapar automatiskt **Node** -block genom att ta med noderna från `$MyData` (särskilt, `$AllNodes` ) och filter som insamlingen mot `Role` egenskapen.
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>Använda konfigurations data för att definiera utvecklings-och produktions miljöer
 
@@ -129,13 +128,11 @@ Vi definierar utvecklings-och produktions miljö data i en fil med namnet `DevPr
 
 ### <a name="configuration-script-file"></a>Konfigurations skript fil
 
-I-konfigurationen, som definieras i en `.ps1` fil, filtrerar vi sedan de noder som vi definierade i `DevProdEnvData.psd1` av deras roll ( `MSSQL` , `Dev` eller båda) och konfigurerar dem därefter.
-Utvecklings miljön har både SQL Server och IIS på en nod, medan produktions miljön har dem på två olika noder.
-Webbplatsens innehåll är också olika, som anges av `SiteContents` egenskaperna.
+I-konfigurationen, som definieras i en `.ps1` fil, filtrerar vi sedan de noder som vi definierade i `DevProdEnvData.psd1` av deras roll ( `MSSQL` , `Dev` eller båda) och konfigurerar dem därefter. Utvecklings miljön har både SQL Server och IIS på en nod, medan produktions miljön har dem på två olika noder. Webbplatsens innehåll är också olika, som anges av `SiteContents` egenskaperna.
 
 I slutet av konfigurations skriptet anropar vi konfigurationen (kompilera den till ett MOF-dokument) och skickar den `DevProdEnvData.psd1` som `$ConfigurationData` parameter.
 
->**Obs:** Den här konfigurationen kräver att modulerna `xSqlPs` och `xWebAdministration` installeras på målnoden.
+> **Obs:** Den här konfigurationen kräver att modulerna `xSqlPs` och `xWebAdministration` installeras på målnoden.
 
 Vi definierar konfigurationen i en fil med namnet `MyWebApp.ps1` :
 
@@ -244,15 +241,9 @@ Mode                LastWriteTime         Length Name
 
 ## <a name="using-non-node-data"></a>Använda data som inte är noder
 
-Du kan lägga till ytterligare nycklar i **ConfigurationData** -hashen för data som inte är en del av en nod.
-Följande konfiguration säkerställer förekomsten av två webbplatser.
-Data för varje webbplats definieras i **AllNodes** -matrisen.
-Filen `Config.xml` används för båda webbplatserna, så vi definierar den i ytterligare en nyckel med namnet `NonNodeData` .
-Observera att du kan ha så många ytterligare nycklar som du vill, och du kan ge dem ett namn som du vill.
-`NonNodeData`är inte ett reserverat ord, det är bara det vi valde att ge den nya nyckeln.
+Du kan lägga till ytterligare nycklar i **ConfigurationData** -hashen för data som inte är en del av en nod. Följande konfiguration säkerställer förekomsten av två webbplatser. Data för varje webbplats definieras i **AllNodes** -matrisen. Filen `Config.xml` används för båda webbplatserna, så vi definierar den i ytterligare en nyckel med namnet `NonNodeData` . Observera att du kan ha så många ytterligare nycklar som du vill, och du kan ge dem ett namn som du vill. `NonNodeData` är inte ett reserverat ord, det är bara det vi valde att ge den nya nyckeln.
 
-Du får åtkomst till ytterligare nycklar med hjälp av den särskilda variabeln **$ConfigurationData**.
-I det här exemplet kan `ConfigFileContents` du komma åt raden:
+Du får åtkomst till ytterligare nycklar med hjälp av den särskilda variabeln **$ConfigurationData** . I det här exemplet kan `ConfigFileContents` du komma åt raden:
 
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
@@ -263,52 +254,52 @@ I det här exemplet kan `ConfigFileContents` du komma åt raden:
 ```powershell
 $MyData =
 @{
-    AllNodes =
-    @(
-        @{
-            NodeName           = "*"
-            LogPath            = "C:\Logs"
-        },
+    AllNodes =
+    @(
+        @{
+            NodeName           = "*"
+            LogPath            = "C:\Logs"
+        },
 
-        @{
-            NodeName = "VM-1"
-            SiteContents = "C:\Site1"
-            SiteName = "Website1"
-        },
+        @{
+            NodeName = "VM-1"
+            SiteContents = "C:\Site1"
+            SiteName = "Website1"
+        },
 
 
-        @{
-            NodeName = "VM-2"
-            SiteContents = "C:\Site2"
-            SiteName = "Website2"
-        }
-    );
+        @{
+            NodeName = "VM-2"
+            SiteContents = "C:\Site2"
+            SiteName = "Website2"
+        }
+    );
 
-    NonNodeData =
-    @{
-        ConfigFileContents = (Get-Content C:\Template\Config.xml)
-     }
+    NonNodeData =
+    @{
+        ConfigFileContents = (Get-Content C:\Template\Config.xml)
+     }
 }
 
 configuration WebsiteConfig
 {
-    Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
+    Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
 
-    node $AllNodes.NodeName
-    {
-        xWebsite Site
-        {
-            Name         = $Node.SiteName
-            PhysicalPath = $Node.SiteContents
-            Ensure       = "Present"
-        }
+    node $AllNodes.NodeName
+    {
+        xWebsite Site
+        {
+            Name         = $Node.SiteName
+            PhysicalPath = $Node.SiteContents
+            Ensure       = "Present"
+        }
 
-        File ConfigFile
-        {
-            DestinationPath = $Node.SiteContents + "\\config.xml"
-            Contents = $ConfigurationData.NonNodeData.ConfigFileContents
-        }
-    }
+        File ConfigFile
+        {
+            DestinationPath = $Node.SiteContents + "\\config.xml"
+            Contents = $ConfigurationData.NonNodeData.ConfigFileContents
+        }
+    }
 }
 ```
 

@@ -1,12 +1,14 @@
 ---
-title: SelectionSetName-element för SelectionCondition för EntrySelectedBy för ListEntry (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 3666888f149f176126d9a19bdbad62469ca9f064
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSetName-element för SelectionCondition för EntrySelectedBy för ListEntry (format)
+description: SelectionSetName-element för SelectionCondition för EntrySelectedBy för ListEntry (format)
+ms.openlocfilehash: f3193799e67706eb07f0fe1c2cd42cce83f7af57
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787486"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651535"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format"></a>SelectionSetName-element för SelectionCondition för EntrySelectedBy för ListEntry (format)
 

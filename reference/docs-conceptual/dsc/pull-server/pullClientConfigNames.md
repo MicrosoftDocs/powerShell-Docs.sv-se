@@ -2,19 +2,20 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Konfigurera en pull-klient med hjälp av konfigurations namn i PowerShell 5,0 och senare
-ms.openlocfilehash: d591e2a757130ccecaf4eaf9f363f607fca82b93
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Artikeln beskriver hur du konfigurerar en pull-klient med hjälp av konfigurations namn i PowerShell 5,0 och senare
+ms.openlocfilehash: db2b08605dd8bc7e48d9d5153861ce9b36118e21
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941721"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644907"
 ---
 # <a name="set-up-a-pull-client-using-configuration-names-in-powershell-50-and-later"></a>Konfigurera en pull-klient med hjälp av konfigurations namn i PowerShell 5,0 och senare
 
 > Gäller för: Windows PowerShell 5,0
 
 > [!IMPORTANT]
-> Hämtnings servern (Windows Feature *DSC-tjänst*) är en komponent som stöds av Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att du börjar överföra hanterade klienter till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver hämtnings servern på Windows Server) eller någon av de community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
+> Hämtnings servern (Windows Feature *DSC-tjänst* ) är en komponent som stöds av Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att du börjar överföra hanterade klienter till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver hämtnings servern på Windows Server) eller någon av de community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
 
 Innan du konfigurerar en pull-klient bör du konfigurera en hämtnings Server. Även om den här ordningen inte krävs, hjälper den med fel sökning och hjälper dig att se till att registreringen lyckades. Om du vill konfigurera en hämtnings Server kan du använda följande guider:
 
@@ -24,14 +25,13 @@ Innan du konfigurerar en pull-klient bör du konfigurera en hämtnings Server. �
 Varje målnod kan konfigureras för att ladda ned konfigurationer, resurser och till och med rapportera dess status. I avsnitten nedan visas hur du konfigurerar en pull-klient med en SMB-resurs eller HTTP DSC-pull-server. När nodens LCM uppdateras, kommer den att kontakta den konfigurerade platsen för att ladda ned alla tilldelade konfigurationer. Om det inte finns några nödvändiga resurser på noden hämtas de automatiskt från den konfigurerade platsen. Om noden har kon figurer ATS med en [rapport Server](reportServer.md), kommer den att rapportera statusen för åtgärden.
 
 > [!NOTE]
-> Det här avsnittet gäller för PowerShell 5,0.
-> Information om hur du konfigurerar en pull-klient i PowerShell 4,0 finns i [Konfigurera en pull-klient med konfigurations-ID i PowerShell 4,0](pullClientConfigID4.md)
+> Det här avsnittet gäller för PowerShell 5,0. Information om hur du konfigurerar en pull-klient i PowerShell 4,0 finns i [Konfigurera en pull-klient med konfigurations-ID i PowerShell 4,0](pullClientConfigID4.md)
 
 ## <a name="configure-the-pull-client-lcm"></a>Konfigurera LCM för pull-klienten
 
-Om du kör något av exemplen nedan skapas en ny mapp med namnet **PullClientConfigName** och en metaconfiguration MOF-fil placeras där. I det här fallet får MOF-filen metaconfiguration namnet `localhost.meta.mof`.
+Om du kör något av exemplen nedan skapas en ny mapp med namnet **PullClientConfigName** och en metaconfiguration MOF-fil placeras där. I det här fallet får MOF-filen metaconfiguration namnet `localhost.meta.mof` .
 
-Om du vill använda konfigurationen anropar du cmdleten **set-DscLocalConfigurationManager** med **sökvägen** inställd på platsen för MOF-filen för metaconfiguration. Ett exempel:
+Om du vill använda konfigurationen anropar du cmdleten **set-DscLocalConfigurationManager** med **sökvägen** inställd på platsen för MOF-filen för metaconfiguration. Exempel:
 
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientConfigName –Verbose.
@@ -39,7 +39,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## <a name="configuration-name"></a>Konfigurations namn
 
-I exemplen nedan anges egenskapen **ConfigurationName** för LCM till namnet på en tidigare kompilerad konfiguration som skapats för det här ändamålet. **ConfigurationName** är vad LCM använder för att hitta rätt konfiguration på hämtnings servern. MOF-konfigurationsfilen på hämtnings servern måste namnges `<ConfigurationName>.mof`, i det här fallet "ClientConfig. MOF". Mer information finns i [publicera konfigurationer till en pull-server (v4/V5)](publishConfigs.md).
+I exemplen nedan anges egenskapen **ConfigurationName** för LCM till namnet på en tidigare kompilerad konfiguration som skapats för det här ändamålet. **ConfigurationName** är vad LCM använder för att hitta rätt konfiguration på hämtnings servern. MOF-konfigurationsfilen på hämtnings servern måste namnges `<ConfigurationName>.mof` , i det här fallet "ClientConfig. MOF". Mer information finns i [publicera konfigurationer till en pull-server (v4/V5)](publishConfigs.md).
 
 ## <a name="set-up-a-pull-client-to-download-configurations"></a>Konfigurera en pull-klient för att hämta konfigurationer
 
@@ -49,14 +49,9 @@ Följande skript konfigurerar LCM att hämta konfigurationer från en server med
 
 - I skriptet definierar **ConfigurationRepositoryWeb** -blocket hämtnings servern. Egenskapen **ServerURL** anger slut punkten för hämtnings servern.
 
-- Egenskapen **RegistrationKey** är en delad nyckel mellan alla klient-noder för en pull-server och den hämtnings servern. Samma värde lagras i en fil på hämtnings servern.
-  > [!NOTE]
-  > Registrerings nycklar fungerar bara med **webb** hämtnings servrar. Du måste fortfarande använda **ConfigurationID** med en **SMB** -pull-server.
-  > Information om hur du konfigurerar en pull-server med hjälp av **ConfigurationID**finns i [Konfigurera en pull-klient med konfigurations-ID](pullClientConfigId.md)
+- Egenskapen **RegistrationKey** är en delad nyckel mellan alla klient-noder för en pull-server och den hämtnings servern. Samma värde lagras i en fil på hämtnings servern. > [!NOTE] > registrerings nycklar fungerar endast med **webb** hämtnings servrar. Du måste fortfarande använda **ConfigurationID** med en **SMB** -pull-server. > information om hur du konfigurerar en pull-server med hjälp av **ConfigurationID** finns i [Konfigurera en pull-klient med konfigurations-ID](pullClientConfigId.md)
 
-- Egenskapen **ConfigurationNames** är en matris som anger namnen på de konfigurationer som är avsedda för-klient-noden.
-  >**Obs:** Om du anger fler än ett värde i **ConfigurationNames**måste du också ange **PartialConfiguration** -block i konfigurationen.
-  >Information om ofullständiga konfigurationer finns i [PowerShell Desired State Configuration del konfigurationer](partialConfigs.md).
+- Egenskapen **ConfigurationNames** är en matris som anger namnen på de konfigurationer som är avsedda för-klient-noden. >**Obs:** Om du anger fler än ett värde i **ConfigurationNames** måste du också ange **PartialConfiguration** -block i konfigurationen. >information om ofullständiga konfigurationer finns i [PowerShell Desired State Configuration del konfigurationer](partialConfigs.md).
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -153,5 +148,5 @@ PullClientConfigNames
 
 ## <a name="see-also"></a>Se även
 
-* [Konfigurera en pull-klient med konfigurations-ID](PullClientConfigNames.md)
-* [Konfigurera en DSC-webb hämtnings Server](pullServer.md)
+- [Konfigurera en pull-klient med konfigurations-ID](PullClientConfigNames.md)
+- [Konfigurera en DSC-webb hämtnings Server](pullServer.md)

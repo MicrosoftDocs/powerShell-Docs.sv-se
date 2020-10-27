@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, inställning
 title: Förbättringar i felsökning av PowerShell-skript
-ms.openlocfilehash: f1771a451ba671da2371fcfc95374e6131573ddc
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5,0 lägger till nya fel söknings funktioner i Windows-PoowerShell.
+ms.openlocfilehash: 5703343e1b85024931638e8b04a09f7208ea123c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810395"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646738"
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>Förbättringar i felsökning av PowerShell-skript
 
@@ -40,9 +41,9 @@ Det finns nya, avancerade fel söknings funktioner som gör att du kan ansluta t
 
 Nya cmdletar har lagts till som gör att du kan lista aktuella körnings utrymmen i en process och koppla PowerShell-konsolen eller PowerShell ISE-felsökaren till den körnings utrymme för skript fel sökning:
 
-- Get-körnings utrymme
-- Felsök – körnings utrymme
-- Aktivera – RunspaceDebug
+- Get-Runspace
+- Debug-Runspace
+- Enable-RunspaceDebug
 - Disable-RunspaceDebug
 - Get-RunspaceDebug
 

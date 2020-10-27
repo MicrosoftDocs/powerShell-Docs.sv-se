@@ -1,12 +1,14 @@
 ---
-title: Skapa en InitialSessionState | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 946adf1006d1afcad2810c85e39f14514e837327
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skapa en InitialSessionState
+description: Skapa en InitialSessionState
+ms.openlocfilehash: d58a32c2ae8a22132f3095d093e3cb322f65c486
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779734"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649420"
 ---
 # <a name="creating-an-initialsessionstate"></a>Skapa en InitialSessionState
 
@@ -23,7 +25,7 @@ Metoden **CreateDefault** skapar en **InitialSessionState** med alla inbyggda ko
 Om du vill begränsa vilka kommandon som är tillgängliga i värd programmet ytterligare måste du skapa en begränsad körnings utrymme.
 Mer information finns i [skapa en begränsad körnings utrymme](creating-a-constrained-runspace.md).
 
-Följande kod visar hur du skapar en **InitialSessionState**, tilldelar den till en körnings utrymme, lägger till kommandon i pipelinen i körnings utrymme och anropar kommandona.
+Följande kod visar hur du skapar en **InitialSessionState** , tilldelar den till en körnings utrymme, lägger till kommandon i pipelinen i körnings utrymme och anropar kommandona.
 Mer information om hur du lägger till och anropar kommandon finns i [lägga till och anropa kommandon](adding-and-invoking-commands.md).
 
 ```csharp

@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: ResourceGet-metoden
-ms.openlocfilehash: aa7671989db6f4a98d879fd449d09503eddbeda3
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: ResourceGet-metoden
+ms.openlocfilehash: bff737f04e02740fa09fd82d7b27c75b11303dad
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463966"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650755"
 ---
 # <a name="resourceget-method"></a>ResourceGet-metoden
 
@@ -17,10 +18,10 @@ Anropar direkt **Get** -metoden för en DSC-resurs.
 
 ```mof
 uint32 ResourceGet(
-  [in]  string           ResourceType,
-  [in]  string           ModuleName,
-  [in]  uint8            resourceProperty[],
-  [out] OMI_BaseResource configurations
+  [in]  string           ResourceType,
+  [in]  string           ModuleName,
+  [in]  uint8            resourceProperty[],
+  [out] OMI_BaseResource configurations
 );
 ```
 
@@ -46,7 +47,7 @@ Detta är en statisk metod.
 
 **MOF:** DscCore. MOF
 
-**Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Namnrymd** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Se även
 

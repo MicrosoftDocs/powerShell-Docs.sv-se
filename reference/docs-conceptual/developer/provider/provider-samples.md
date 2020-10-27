@@ -1,12 +1,14 @@
 ---
-title: Provider-exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9eb8eb64bbe585ebd8024c0215853ff04a5c3e54
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Providerexempel
+description: Providerexempel
+ms.openlocfilehash: e6b1e8ce603092a3fd9dd44d7be428587544466b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778442"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651138"
 ---
 # <a name="provider-samples"></a>Providerexempel
 

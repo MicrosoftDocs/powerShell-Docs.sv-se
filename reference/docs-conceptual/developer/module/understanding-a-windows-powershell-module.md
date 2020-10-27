@@ -1,12 +1,14 @@
 ---
-title: Förstå en Windows PowerShell-modul | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9308ad0fd41aa67ffa8510ae7a3c9cd6a13f4220
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Förstå en Windows PowerShell-modul
+description: Förstå en Windows PowerShell-modul
+ms.openlocfilehash: 882e9db59dc1bc8570676d1da7ce84c808d076e8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779241"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651148"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Förstå en Windows PowerShell-modul
 
@@ -84,7 +86,7 @@ Oavsett sökvägen kallas sökvägen för mappen (typen modulebase), och namnet 
 
 - Dynamiska moduler som skapas av `New-Module` cmdleten kan namnges med hjälp av `Name` parametern för cmdleten.
 
-- Moduler som importeras från Assembly-objekt med kommandot ** `Import-Module` -Assembly** namnges enligt följande syntax: `"dynamic_code_module_" + assembly.GetName()` .
+- Moduler som importeras från Assembly-objekt med kommandot **`Import-Module` -Assembly** namnges enligt följande syntax: `"dynamic_code_module_" + assembly.GetName()` .
 
   Mer information finns i [installera en PowerShell-modul](./installing-a-powershell-module.md) och [ändra installations Sök vägen för PSModulePath](./modifying-the-psmodulepath-installation-path.md).
 

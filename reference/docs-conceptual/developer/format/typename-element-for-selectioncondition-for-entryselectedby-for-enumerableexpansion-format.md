@@ -1,12 +1,14 @@
 ---
-title: Elementet TypeName för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f47384be10705b913d52b5cc8cb4ecf9ba83f17c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TypeName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)
+description: TypeName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)
+ms.openlocfilehash: 1ed638f9b2194745f9ac9cab9aa3331985924886
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787350"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649730"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>TypeName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)
 

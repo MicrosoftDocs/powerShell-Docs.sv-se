@@ -1,12 +1,14 @@
 ---
-title: AutoSize-element för WideControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 64e62142738916978b37eb1cd3a73536b0447099
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: AutoSize-element för WideControl (format)
+description: AutoSize-element för WideControl (format)
+ms.openlocfilehash: 42dfae337ba8805e1ddcff4269401afdb3e281f6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783882"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650018"
 ---
 # <a name="autosize-element-for-widecontrol-format"></a>AutoSize-element för WideControl (format)
 

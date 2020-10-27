@@ -1,16 +1,18 @@
 ---
-title: GetProcessSample05-exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2332d260c6f470d435234c847a59e59fe56f809a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProcessSample05 – exempel
+description: GetProcessSample05 – exempel
+ms.openlocfilehash: d4bfaf52b00bb68cf11d8bbebf72487472d73f6e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784205"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646511"
 ---
 # <a name="getprocesssample05-sample"></a>GetProcessSample05 – exempel
 
-Det här exemplet visar en fullständig version av cmdleten Get-proc.
+I det här exemplet visas en fullständig version av Get-Proc-cmdleten.
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>Så här skapar du exemplet med Visual Studio.
 
@@ -20,7 +22,7 @@ Det här exemplet visar en fullständig version av cmdleten Get-proc.
 
 2. Dubbelklicka på ikonen för lösnings filen (. SLN). Exempel projektet öppnas i Visual Studio.
 
-3. I menyn **build** väljer du **build-lösning**.
+3. I menyn **build** väljer du **build-lösning** .
 
    Biblioteket för exemplet skapas i standard katalogen \Bin eller \Bin\Debug.
 

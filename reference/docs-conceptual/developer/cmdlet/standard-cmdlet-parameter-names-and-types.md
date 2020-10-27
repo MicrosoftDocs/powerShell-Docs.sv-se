@@ -1,12 +1,14 @@
 ---
-title: Standard parameter namn och-typer | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 16a8eb101a37865874463859fb55926fc6e84a9d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Standardnamn och standardtyper för cmdlet-parametrar
+description: Standardnamn och standardtyper för cmdlet-parametrar
+ms.openlocfilehash: 87491d76a827af077decaf933884a06579806e9b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784035"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650183"
 ---
 # <a name="standard-cmdlet-parameter-names-and-types"></a>Standardnamn och standardtyper för cmdlet-parametrar
 
@@ -24,6 +26,6 @@ Parameter namn för cmdlet ska vara konsekventa i de cmdletar som du utformar. I
 
 [Kvantitetsparametrar](./quantity-parameters.md)
 
-[Resursparametrar](./resource-parameters.md)
+[Resurs parametrar](./resource-parameters.md)
 
 [Säkerhetsparametrar](./security-parameters.md)

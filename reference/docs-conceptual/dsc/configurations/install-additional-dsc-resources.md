@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, resurs, Galleri, installation
 title: Installera ytterligare DSC-resurser
-ms.openlocfilehash: 7a6a935349358e11a77d2f00c0bf88e0ad18c097
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Den här artikeln innehåller DSC-resurserna som ingår i PSDesiredStateConfiguration-modulen. Det beskriver också hur du hittar och installerar resurser från PowerShell-galleriet.
+ms.openlocfilehash: e75561ed539e06716c9a103f905b9d1e4f3e71d3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74417791"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645126"
 ---
 # <a name="install-additional-dsc-resources"></a>Installera ytterligare DSC-resurser
 
@@ -18,20 +19,20 @@ Det här är en lista över OOB-resurser som ingår i PowerShell 4,0 och en besk
 > [!NOTE]
 > Det här är en ofullständig lista eftersom antalet OOB-resurser har växt med varje version av PowerShell.
 
-|Resurs  |Beskrivning  |
-|---------|---------|
-|**Fil**|Styr tillstånd för filer och kataloger. Kopierar filer från en **källa** till ett **mål** och uppdaterar dem när **källan** ändras genom att jämföra datum, kontroll summor och hash-värden.|
-|**Arkiv**|Packar upp arkiv och en angiven plats. Validerar arkiven med en angiven **kontroll Summa**.|
-|**Miljö**|Hanterar miljövariabler.|
-|**Grupp**|Hanterar medlemskap i lokala grupper och kontroll grupper.|
-|**Kvorumloggen**|Skriver meddelanden till `Microsoft-Windows-Desired State Configuration/Analytic` händelse loggen.|
-|**Paket**|Installerar eller avinstallerar paket med **argument**, **LogPath**, **ReturnCode**, andra inställningar.|
-|**Registernyckeln**|Hanterar register nycklar och värden.|
-|**Över**|Gör att du kan skapa egna skript block för [Get-test-uppsättning](../resources/get-test-set.md) .|
-|**Tjänst**|Konfigurerar Windows-tjänster.|
-|**Användare** |Hanterar lokala användare och attribut.|
-|**WindowsFeature**|Hanterar roller och funktioner.|
-|**WindowsProcess**|Konfigurerar Windows-processer.|
+|      Resurs      |                                                                                       Beskrivning                                                                                        |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Fil**           | Styr tillstånd för filer och kataloger. Kopierar filer från en **källa** till ett **mål** och uppdaterar dem när **källan** ändras genom att jämföra datum, kontroll summor och hash-värden. |
+| **Arkiv**        | Packar upp arkiv och en angiven plats. Validerar arkiven med en angiven **kontroll Summa** .                                                                                         |
+| **Miljö**    | Hanterar miljövariabler.                                                                                                                                                           |
+| **Grupper**          | Hanterar medlemskap i lokala grupper och kontroll grupper.                                                                                                                                      |
+| **Kvorumloggen**            | Skriver meddelanden till `Microsoft-Windows-Desired State Configuration/Analytic` händelse loggen.                                                                                               |
+| **Paket**        | Installerar eller avinstallerar paket med **argument** , **LogPath** , **ReturnCode** , andra inställningar.                                                                                        |
+| **Register**       | Hanterar register nycklar och värden.                                                                                                                                                        |
+| **Över**         | Gör att du kan skapa egna skript block för [Get-test-uppsättning](../resources/get-test-set.md) .                                                                                                |
+| **Tjänst**        | Konfigurerar Windows-tjänster.                                                                                                                                                             |
+| **Användare**           | Hanterar lokala användare och attribut.                                                                                                                                                      |
+| **WindowsFeature** | Hanterar roller och funktioner.                                                                                                                                                              |
+| **WindowsProcess** | Konfigurerar Windows-processer.                                                                                                                                                            |
 
 OOB-resurserna gör det möjligt att använda en lämplig start punkt för vanliga åtgärder. Om OOB-resurserna inte uppfyller dina behov kan du skriva en egen [anpassad resurs](../resources/authoringResource.md). Innan du skriver en anpassad resurs för att lösa problemet bör du titta igenom det stora antalet DSC-resurser som redan har skapats av både Microsoft och PowerShell-communityn.
 
@@ -51,11 +52,11 @@ Använd först cmdleten [find-dscresource Keyword Supports](/powershell/module/p
 PS> Find-DSCResource
 
 NuGet provider is required to continue
-PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The
-NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
-'C:\Users\xAdministrator\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider
- by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to
-install and import the NuGet provider now?
+PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based
+repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies'
+or 'C:\Users\xAdministrator\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install
+the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201
+-Force'. Do you want PowerShellGet to install and import the NuGet provider now?
 [Y] Yes  [N] No  [?] Help (default is "Y"):
 ```
 
@@ -67,7 +68,7 @@ När du har tryckt på "y" installeras "NuGet"-providern. du ser en lista över 
 Du kan också ange `-Name` parametern med jokertecken eller `-Filter` parameter utan jokertecken för att begränsa sökningen. Det här exemplet försöker hitta en "TimeZone" DSC-resurs med hjälp av jokertecken.
 
 > [!IMPORTANT]
-> För närvarande finns det ett fel i `Find-DSCResource` cmdleten som förhindrar att jokertecken används i `-Name` både `-Filter` parametrarna och. I det andra exemplet nedan visas en lösning `Where-Object`med.
+> För närvarande finns det ett fel i `Find-DSCResource` cmdleten som förhindrar att jokertecken används i `-Name` både `-Filter` parametrarna och. I det andra exemplet nedan visas en lösning med `Where-Object` .
 
 ```
 PS> Find-DSCResource -Name *Time*
@@ -115,9 +116,9 @@ Om du vill installera en DSC-resurs använder du cmdleten [install-module](/powe
 PS> Install-Module -Name ComputerManagementDSC
 
 Untrusted repository
-You are installing the modules from an untrusted repository. If you trust this repository, change its
-InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to install the modules from
-'PSGallery'?
+You are installing the modules from an untrusted repository. If you trust this repository, change
+its InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to
+install the modules from 'PSGallery'?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 

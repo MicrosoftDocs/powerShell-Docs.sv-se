@@ -1,12 +1,14 @@
 ---
-title: Elementet TypeName för SelectionCondition för CustomControl för vyn (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 28409604b8905440890161f66981264748bc2c33
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TypeName-element för SelectionCondition för CustomControl för View  (format)
+description: TypeName-element för SelectionCondition för CustomControl för View  (format)
+ms.openlocfilehash: ab02c6921985dbe86e5adcbc6565c76f6617399a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785072"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651290"
 ---
 # <a name="typename-element-for-selectioncondition-for-customcontrol-for-view--format"></a>TypeName-element för SelectionCondition för CustomControl för View  (format)
 

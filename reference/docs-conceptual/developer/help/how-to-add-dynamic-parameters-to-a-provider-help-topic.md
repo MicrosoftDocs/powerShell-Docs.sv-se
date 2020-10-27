@@ -1,12 +1,14 @@
 ---
-title: Lägga till dynamiska parametrar i ett hjälpavsnitt för providers
 ms.date: 09/13/2016
-ms.openlocfilehash: ddf964292ee7bf477767a2ca17c717aef84bad51
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Lägga till dynamiska parametrar i ett hjälpavsnitt för providers
+description: Lägga till dynamiska parametrar i ett hjälpavsnitt för providers
+ms.openlocfilehash: 9542538cfacf5fb293ca8d1350b80fb250c71ac6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893466"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649636"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>Lägga till dynamiska parametrar i ett hjälpavsnitt för providers
 

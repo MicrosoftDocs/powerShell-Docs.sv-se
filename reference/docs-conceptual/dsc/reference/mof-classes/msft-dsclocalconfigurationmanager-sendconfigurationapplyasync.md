@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: SendConfigurationApplyAsync-metoden
-ms.openlocfilehash: 4cfac5edb5fed94ee69deb98d7aa6be56b51c5b3
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: SendConfigurationApplyAsync-metoden
+ms.openlocfilehash: 92c9d03a7653e72b1ff04084caea4a8b5aadb0e5
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463745"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644796"
 ---
 # <a name="sendconfigurationapplyasync-method"></a>SendConfigurationApplyAsync-metoden
 
@@ -17,9 +18,9 @@ Skickar konfigurations dokumentet asynkront till den hanterade noden och använd
 
 ```mof
 uint32 SendConfigurationApplyAsync(
-  [in] uint8   ConfigurationData[],
-  [in] boolean force,
-  [in] string  jobId
+  [in] uint8   ConfigurationData[],
+  [in] boolean force,
+  [in] string  jobId
 );
 ```
 
@@ -43,7 +44,7 @@ Detta är en statisk metod.
 
 **MOF:** DscCore. MOF
 
-**Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Namnrymd** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Se även
 

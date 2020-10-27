@@ -2,12 +2,13 @@
 ms.date: 07/09/2019
 keywords: DSC, GPO, PowerShell, konfiguration, installation
 title: Snabb start – konvertera grupprincip till DSC
-ms.openlocfilehash: 852710f261ea1d57228c05d4093c1d78584e0ca5
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: I den här snabb starten visas stegen för att konvertera en Windows-grupprincip till en DSC-konfiguration.
+ms.openlocfilehash: b67f6dd2cf6c91d90fa6ac5b6367f9efc7f40ee0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236245"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644696"
 ---
 # <a name="quickstart-convert-group-policy-into-dsc"></a>Snabb start: konvertera grupprincip till DSC
 
@@ -16,7 +17,7 @@ ms.locfileid: "89236245"
 Du kan generera en DSC-konfiguration från en grupprincip eller Azure Security Center bas linje. [BaselineManagement](https://www.powershellgallery.com/packages/BaselineManagement) -modulen innehåller följande kommandon för att utföra den här uppgiften.
 
 - `ConvertFrom-GPO` – Konverterar grup principer, lagrade som filer. Du kan också ange en katalog som innehåller flera principer som ska kombineras till en konfiguration.
-  - Om du vill exportera grup principer i din miljö använder du cmdleten [Backup-GPO](/powershell/module/grouppolicy/backup-gpo?view=win10-ps) eller följer instruktionerna i [Exportera ett grup princip objekt till en fil](/microsoft-desktop-optimization-pack/agpm/export-a-gpo-to-a-file).
+  - Om du vill exportera grup principer i din miljö använder du cmdleten [Backup-GPO](/powershell/module/grouppolicy/backup-gpo) eller följer instruktionerna i [Exportera ett grup princip objekt till en fil](/microsoft-desktop-optimization-pack/agpm/export-a-gpo-to-a-file).
 - `ConvertFrom-SCM` – Konverterar bas linjer för säkerhetscompliance Manager, lagrade som `.xml` filer.
 - `ConvertFrom-ASC` – Konverterar Azure Security Center bas linjer, lagrade som `.json` filer.
 - `Merge-GPOs` – Konverterar grup principer som tillämpas på mål datorn.

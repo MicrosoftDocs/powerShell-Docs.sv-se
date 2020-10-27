@@ -1,12 +1,14 @@
 ---
-title: Uppdatera hjälpfiler
 ms.date: 09/12/2016
-ms.openlocfilehash: 80f7c8865729515de98648765fa36ce540e00162
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Uppdatera hjälpfiler
+description: Uppdatera hjälpfiler
+ms.openlocfilehash: 19bf501cf91b1eb5dabb334c2179953590b40232
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86892956"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649590"
 ---
 # <a name="how-to-update-help-files"></a>Uppdatera hjälpfiler
 

@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: EnableDebugConfiguration-metoden
-ms.openlocfilehash: be75b1012f49db79eb75a68c6912ffd5772bf16f
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: EnableDebugConfiguration-metoden
+ms.openlocfilehash: 536366e6e1627a249f3bc2dc19bfd8ff3de42117
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464102"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644770"
 ---
 # <a name="enabledebugconfiguration-method"></a>EnableDebugConfiguration-metoden
 
@@ -17,7 +18,7 @@ Aktiverar fel sökning av DSC-resurs.
 
 ```mof
 uint32 EnableDebugConfiguration(
-  [in] boolean BreakAll
+  [in] boolean BreakAll
 );
 ```
 
@@ -37,7 +38,7 @@ Detta är en statisk metod.
 
 **MOF:** DscCore. MOF
 
-**Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Namnrymd** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Se även
 

@@ -1,12 +1,14 @@
 ---
-title: Skapar körnings utrymmen | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0c27e2bf54e16a3bdc93c4b91629893bb1cc1e3e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skapa körningsutrymmen
+description: Skapa körningsutrymmen
+ms.openlocfilehash: c6b2c577e435ec88364b189a0c3d065f54f02525
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779581"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649345"
 ---
 # <a name="creating-runspaces"></a>Skapa körningsutrymmen
 

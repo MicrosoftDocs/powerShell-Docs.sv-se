@@ -2,21 +2,22 @@
 ms.date: 08/11/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: Anropa DSC-resursmetoder direkt
-ms.openlocfilehash: 029a278c938e414820e172b85fac3cb3ad4b4afa
-ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
+description: Invoke-DscResource cmdlet kan användas för att anropa funktioner eller metoder för en DSC-resurs. Detta kan användas av tredje part som vill använda DSC-resurser eller som ett användbart verktyg när du utvecklar resurser.
+ms.openlocfilehash: 5ccf0f589b60cef4ec197d1e0a583af9ed60d5e7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88162502"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651005"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>Anropa DSC-resursmetoder direkt
 
->Gäller för: Windows PowerShell 5,0
+> Gäller för: Windows PowerShell 5,0
 
-Du kan använda cmdleten [Invoke-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) för att direkt anropa funktioner eller metoder för en DSC-resurs ( `Get-TargetResource` , `Set-TargetResource` , och `Test-TargetResource` funktioner i en MOF-baserad resurs, eller metoderna **Get**, **set**och **test** för en klass-baserad resurs). Detta kan användas av tredje part som vill använda DSC-resurser eller som ett användbart verktyg när du utvecklar resurser.
+Du kan använda cmdleten [Invoke-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) för att direkt anropa funktioner eller metoder för en DSC-resurs ( `Get-TargetResource` , `Set-TargetResource` , och `Test-TargetResource` funktioner i en MOF-baserad resurs, eller metoderna **Get** , **set** och **test** för en klass-baserad resurs). Detta kan användas av tredje part som vill använda DSC-resurser eller som ett användbart verktyg när du utvecklar resurser.
 
 > [!NOTE]
-> I PowerShell 7.0 + `Invoke-DscResource` har inte längre stöd för att anropa WMI DSC-resurser. Detta inkluderar **fil** -och **logg** resurser i **PSDesiredStateConfiguration**.
+> I PowerShell 7.0 + `Invoke-DscResource` har inte längre stöd för att anropa WMI DSC-resurser. Detta inkluderar **fil** -och **logg** resurser i **PSDesiredStateConfiguration** .
 
 Denna cmdlet används vanligt vis i kombination med en metaconfiguration `refreshMode = 'Disabled'` -egenskap, men den kan användas oavsett vad **refreshMode** är inställt på.
 
@@ -51,7 +52,7 @@ $result = Invoke-DscResource -Name File -Method Get -Property @{
 $result.ItemValue | fl
 ```
 
->[!NOTE]
+> [!NOTE]
 > Det finns inte stöd för direkt anrop av sammansatta resurs metoder. Anropa i stället metoderna för de underliggande resurserna som utgör den sammansatta resursen.
 
 ## <a name="see-also"></a>Se även

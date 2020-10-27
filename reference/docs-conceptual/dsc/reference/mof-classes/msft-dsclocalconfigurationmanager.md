@@ -1,13 +1,14 @@
 ---
 ms.date: 07/14/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: MSFT_DSCLocalConfigurationManager-klass
-ms.openlocfilehash: 20c9ac5128fcfbbcb2113b89d9e5b53693744b45
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: MSFT_DSCLocalConfigurationManager-klass
+ms.openlocfilehash: 31112c7d15884699171ec732ac20b6960b0858a9
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464289"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644811"
 ---
 # <a name="msft_dsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager-klass
 
@@ -34,7 +35,7 @@ class MSFT_DSCLocalConfigurationManager
 
 Klassen **MSFT_DSCLocalConfigurationManager** har dessa metoder.
 
-|Metoder |Description |
+|Metoder |Beskrivning |
 |:--- |:---|
 | [ApplyConfiguration (boolesk)](msft-dsclocalconfigurationmanager-applyconfiguration.md)| Använder konfigurations agenten för att tillämpa den konfiguration som väntar.|
 | [DisableDebugConfiguration ()](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| Inaktiverar fel sökning av DSC-resurs.|
@@ -60,4 +61,4 @@ Klassen **MSFT_DSCLocalConfigurationManager** har dessa metoder.
 
 **MOF:** DscCore. MOF
 
-**Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Namnrymd** : Root\Microsoft\Windows\DesiredStateConfiguration

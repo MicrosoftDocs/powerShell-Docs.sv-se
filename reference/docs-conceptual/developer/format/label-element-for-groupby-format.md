@@ -1,12 +1,14 @@
 ---
-title: Etikett element för GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 07b4d037472a9dd2329e94576ec10f5b82f46b34
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Label-element för GroupBy (format)
+description: Label-element för GroupBy (format)
+ms.openlocfilehash: ff4b0dec01bb5b472b1813540661791b91568eed
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785786"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649791"
 ---
 # <a name="label-element-for-groupby-format"></a>Label-element för GroupBy (format)
 

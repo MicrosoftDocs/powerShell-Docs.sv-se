@@ -1,12 +1,14 @@
 ---
-title: Lägga till en cmdlet-beskrivning
 ms.date: 09/13/2016
-ms.openlocfilehash: 2b98c4cefc3a55eccfeb7eba5a290e7d93a6088b
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Lägga till en cmdlet-beskrivning
+description: Lägga till en cmdlet-beskrivning
+ms.openlocfilehash: 08d21a281881678423bbe3c382279875ed2868db
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893245"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651216"
 ---
 # <a name="how-to-add-a-cmdlet-description"></a>Lägga till en cmdlet-beskrivning
 
