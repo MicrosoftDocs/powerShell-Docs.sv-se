@@ -1,51 +1,53 @@
 ---
-title: Elementet TypeName för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f47384be10705b913d52b5cc8cb4ecf9ba83f17c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TypeName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)
+description: TypeName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)
+ms.openlocfilehash: 1ed638f9b2194745f9ac9cab9aa3331985924886
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787350"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649730"
 ---
-# <a name="typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a><span data-ttu-id="42bc7-102">TypeName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)</span><span class="sxs-lookup"><span data-stu-id="42bc7-102">TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)</span></span>
+# <a name="typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a><span data-ttu-id="28ad8-103">TypeName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)</span><span class="sxs-lookup"><span data-stu-id="28ad8-103">TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)</span></span>
 
-<span data-ttu-id="42bc7-103">Anger en .NET-typ som utlöser villkoret.</span><span class="sxs-lookup"><span data-stu-id="42bc7-103">Specifies a .NET type that triggers the condition.</span></span>
+<span data-ttu-id="28ad8-104">Anger en .NET-typ som utlöser villkoret.</span><span class="sxs-lookup"><span data-stu-id="28ad8-104">Specifies a .NET type that triggers the condition.</span></span>
 
-<span data-ttu-id="42bc7-104">DefaultSettings-element för konfigurations element (format) EnumerableExpansions-element (format) EnumerableExpansions-element (format) EntrySelectedBy-element för EnumerableExpansion (format) SelectionCondition-element för EntrySelectedBy för EnumerableExpansion (format) elementet TypeName för SelectionCondition för EntrySelectedBy (format)</span><span class="sxs-lookup"><span data-stu-id="42bc7-104">Configuration Element DefaultSettings Element (Format) EnumerableExpansions Element (Format) EnumerableExpansions Element (Format) EntrySelectedBy Element for EnumerableExpansion (Format) SelectionCondition Element for EntrySelectedBy for EnumerableExpansion (Format) TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)</span></span>
+<span data-ttu-id="28ad8-105">DefaultSettings-element för konfigurations element (format) EnumerableExpansions-element (format) EnumerableExpansions-element (format) EntrySelectedBy-element för EnumerableExpansion (format) SelectionCondition-element för EntrySelectedBy för EnumerableExpansion (format) elementet TypeName för SelectionCondition för EntrySelectedBy (format)</span><span class="sxs-lookup"><span data-stu-id="28ad8-105">Configuration Element DefaultSettings Element (Format) EnumerableExpansions Element (Format) EnumerableExpansions Element (Format) EntrySelectedBy Element for EnumerableExpansion (Format) SelectionCondition Element for EntrySelectedBy for EnumerableExpansion (Format) TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="42bc7-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="42bc7-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="28ad8-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="28ad8-106">Syntax</span></span>
 
 ```xml
 <TypeName>Nameof.NetType</TypeName>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="42bc7-106">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="42bc7-106">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="28ad8-107">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="28ad8-107">Attributes and Elements</span></span>
 
-<span data-ttu-id="42bc7-107">I följande avsnitt beskrivs attribut, underordnade element och `TypeName` elementets överordnade element.</span><span class="sxs-lookup"><span data-stu-id="42bc7-107">The following sections describe attributes, child elements, and the parent element of the `TypeName` element.</span></span>
+<span data-ttu-id="28ad8-108">I följande avsnitt beskrivs attribut, underordnade element och `TypeName` elementets överordnade element.</span><span class="sxs-lookup"><span data-stu-id="28ad8-108">The following sections describe attributes, child elements, and the parent element of the `TypeName` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="42bc7-108">Attribut</span><span class="sxs-lookup"><span data-stu-id="42bc7-108">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="28ad8-109">Attribut</span><span class="sxs-lookup"><span data-stu-id="28ad8-109">Attributes</span></span>
 
-<span data-ttu-id="42bc7-109">Inga.</span><span class="sxs-lookup"><span data-stu-id="42bc7-109">None.</span></span>
+<span data-ttu-id="28ad8-110">Inga.</span><span class="sxs-lookup"><span data-stu-id="28ad8-110">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="42bc7-110">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="42bc7-110">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="28ad8-111">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="28ad8-111">Child Elements</span></span>
 
-<span data-ttu-id="42bc7-111">Inga.</span><span class="sxs-lookup"><span data-stu-id="42bc7-111">None.</span></span>
+<span data-ttu-id="28ad8-112">Inga.</span><span class="sxs-lookup"><span data-stu-id="28ad8-112">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="42bc7-112">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="42bc7-112">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="28ad8-113">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="28ad8-113">Parent Elements</span></span>
 
-|<span data-ttu-id="42bc7-113">Element</span><span class="sxs-lookup"><span data-stu-id="42bc7-113">Element</span></span>|<span data-ttu-id="42bc7-114">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="42bc7-114">Description</span></span>|
+|<span data-ttu-id="28ad8-114">Element</span><span class="sxs-lookup"><span data-stu-id="28ad8-114">Element</span></span>|<span data-ttu-id="28ad8-115">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="28ad8-115">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="42bc7-115">SelectionCondition-element för EntrySelectedBy för EnumerableExpansion (format)</span><span class="sxs-lookup"><span data-stu-id="42bc7-115">SelectionCondition Element for EntrySelectedBy for EnumerableExpansion (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)|<span data-ttu-id="42bc7-116">Definierar det villkor som måste finnas för att expandera samlings objekt i den här definitionen.</span><span class="sxs-lookup"><span data-stu-id="42bc7-116">Defines the condition that must exist to expand the collection objects of this definition.</span></span>|
+|[<span data-ttu-id="28ad8-116">SelectionCondition-element för EntrySelectedBy för EnumerableExpansion (format)</span><span class="sxs-lookup"><span data-stu-id="28ad8-116">SelectionCondition Element for EntrySelectedBy for EnumerableExpansion (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)|<span data-ttu-id="28ad8-117">Definierar det villkor som måste finnas för att expandera samlings objekt i den här definitionen.</span><span class="sxs-lookup"><span data-stu-id="28ad8-117">Defines the condition that must exist to expand the collection objects of this definition.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="42bc7-117">Textvärde</span><span class="sxs-lookup"><span data-stu-id="42bc7-117">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="28ad8-118">Textvärde</span><span class="sxs-lookup"><span data-stu-id="28ad8-118">Text Value</span></span>
 
-<span data-ttu-id="42bc7-118">Ange det fullständigt kvalificerade namnet för .NET-typen, t `System.IO.DirectoryInfo` . ex..</span><span class="sxs-lookup"><span data-stu-id="42bc7-118">Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.</span></span>
+<span data-ttu-id="28ad8-119">Ange det fullständigt kvalificerade namnet för .NET-typen, t `System.IO.DirectoryInfo` . ex..</span><span class="sxs-lookup"><span data-stu-id="28ad8-119">Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="42bc7-119">Kommentarer</span><span class="sxs-lookup"><span data-stu-id="42bc7-119">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="28ad8-120">Kommentarer</span><span class="sxs-lookup"><span data-stu-id="28ad8-120">Remarks</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="42bc7-120">Se även</span><span class="sxs-lookup"><span data-stu-id="42bc7-120">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="28ad8-121">Se även</span><span class="sxs-lookup"><span data-stu-id="28ad8-121">See Also</span></span>
 
-[<span data-ttu-id="42bc7-121">SelectionCondition-element för EntrySelectedBy för EnumerableExpansion (format)</span><span class="sxs-lookup"><span data-stu-id="42bc7-121">SelectionCondition Element for EntrySelectedBy for EnumerableExpansion (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)
+[<span data-ttu-id="28ad8-122">SelectionCondition-element för EntrySelectedBy för EnumerableExpansion (format)</span><span class="sxs-lookup"><span data-stu-id="28ad8-122">SelectionCondition Element for EntrySelectedBy for EnumerableExpansion (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)
 
-[<span data-ttu-id="42bc7-122">Skriva en PowerShell-formateringsfil</span><span class="sxs-lookup"><span data-stu-id="42bc7-122">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="28ad8-123">Skriva en PowerShell-formateringsfil</span><span class="sxs-lookup"><span data-stu-id="28ad8-123">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
