@@ -10,47 +10,47 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 10/27/2020
 ms.locfileid: "92649791"
 ---
-# <a name="label-element-for-groupby-format"></a><span data-ttu-id="59242-103">Label-element för GroupBy (format)</span><span class="sxs-lookup"><span data-stu-id="59242-103">Label Element for GroupBy (Format)</span></span>
+# <a name="label-element-for-groupby-format"></a><span data-ttu-id="5e844-103">Label-element för GroupBy (format)</span><span class="sxs-lookup"><span data-stu-id="5e844-103">Label Element for GroupBy (Format)</span></span>
 
-<span data-ttu-id="59242-104">Anger en etikett som visas när en ny grupp påträffas.</span><span class="sxs-lookup"><span data-stu-id="59242-104">Specifies a label that is displayed when a new group is encountered.</span></span>
+<span data-ttu-id="5e844-104">Anger en etikett som visas när en ny grupp påträffas.</span><span class="sxs-lookup"><span data-stu-id="5e844-104">Specifies a label that is displayed when a new group is encountered.</span></span>
 
-<span data-ttu-id="59242-105">Konfigurations element (format) ViewDefinitions element (format) visnings element (format) GroupBy-element för visnings-(format) etikett element för GroupBy (format)</span><span class="sxs-lookup"><span data-stu-id="59242-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) GroupBy Element for View (Format) Label Element for GroupBy (Format)</span></span>
+<span data-ttu-id="5e844-105">Konfigurations element (format) ViewDefinitions element (format) visnings element (format) GroupBy-element för visnings-(format) etikett element för GroupBy (format)</span><span class="sxs-lookup"><span data-stu-id="5e844-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) GroupBy Element for View (Format) Label Element for GroupBy (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="59242-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="59242-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="5e844-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="5e844-106">Syntax</span></span>
 
 ```xml
 <Label>DisplayedLabel</Label>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="59242-107">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="59242-107">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="5e844-107">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="5e844-107">Attributes and Elements</span></span>
 
-<span data-ttu-id="59242-108">I följande avsnitt beskrivs attributen, underordnade element och `Label` elementets överordnade element.</span><span class="sxs-lookup"><span data-stu-id="59242-108">The following sections describe the attributes, child elements, and parent element of the `Label` element.</span></span>
+<span data-ttu-id="5e844-108">I följande avsnitt beskrivs attributen, underordnade element och `Label` elementets överordnade element.</span><span class="sxs-lookup"><span data-stu-id="5e844-108">The following sections describe the attributes, child elements, and parent element of the `Label` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="59242-109">Attribut</span><span class="sxs-lookup"><span data-stu-id="59242-109">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="5e844-109">Attribut</span><span class="sxs-lookup"><span data-stu-id="5e844-109">Attributes</span></span>
 
-<span data-ttu-id="59242-110">Inga.</span><span class="sxs-lookup"><span data-stu-id="59242-110">None.</span></span>
+<span data-ttu-id="5e844-110">Inga.</span><span class="sxs-lookup"><span data-stu-id="5e844-110">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="59242-111">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="59242-111">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="5e844-111">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="5e844-111">Child Elements</span></span>
 
-<span data-ttu-id="59242-112">Inga.</span><span class="sxs-lookup"><span data-stu-id="59242-112">None.</span></span>
+<span data-ttu-id="5e844-112">Inga.</span><span class="sxs-lookup"><span data-stu-id="5e844-112">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="59242-113">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="59242-113">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="5e844-113">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="5e844-113">Parent Elements</span></span>
 
-|<span data-ttu-id="59242-114">Element</span><span class="sxs-lookup"><span data-stu-id="59242-114">Element</span></span>|<span data-ttu-id="59242-115">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="59242-115">Description</span></span>|
+|<span data-ttu-id="5e844-114">Element</span><span class="sxs-lookup"><span data-stu-id="5e844-114">Element</span></span>|<span data-ttu-id="5e844-115">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="5e844-115">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="59242-116">GroupBy-element för View (format)</span><span class="sxs-lookup"><span data-stu-id="59242-116">GroupBy Element for View (Format)</span></span>](./groupby-element-for-view-format.md)|<span data-ttu-id="59242-117">Definierar hur en ny grupp av objekt visas.</span><span class="sxs-lookup"><span data-stu-id="59242-117">Defines how a new group of objects is displayed.</span></span>|
+|[<span data-ttu-id="5e844-116">GroupBy-element för View (format)</span><span class="sxs-lookup"><span data-stu-id="5e844-116">GroupBy Element for View (Format)</span></span>](./groupby-element-for-view-format.md)|<span data-ttu-id="5e844-117">Definierar hur en ny grupp av objekt visas.</span><span class="sxs-lookup"><span data-stu-id="5e844-117">Defines how a new group of objects is displayed.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="59242-118">Textvärde</span><span class="sxs-lookup"><span data-stu-id="59242-118">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="5e844-118">Textvärde</span><span class="sxs-lookup"><span data-stu-id="5e844-118">Text Value</span></span>
 
-<span data-ttu-id="59242-119">Ange texten som visas när Windows PowerShell påträffar en ny egenskap eller ett nytt skript värde.</span><span class="sxs-lookup"><span data-stu-id="59242-119">Specify the text that is displayed whenever Windows PowerShell encounters a new property or script value.</span></span>
+<span data-ttu-id="5e844-119">Ange texten som visas när Windows PowerShell påträffar en ny egenskap eller ett nytt skript värde.</span><span class="sxs-lookup"><span data-stu-id="5e844-119">Specify the text that is displayed whenever Windows PowerShell encounters a new property or script value.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="59242-120">Kommentarer</span><span class="sxs-lookup"><span data-stu-id="59242-120">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="5e844-120">Kommentarer</span><span class="sxs-lookup"><span data-stu-id="5e844-120">Remarks</span></span>
 
-<span data-ttu-id="59242-121">Utöver den text som anges av det här elementet visar Windows PowerShell det nya värdet som startar gruppen och lägger till en tom rad före och efter gruppen.</span><span class="sxs-lookup"><span data-stu-id="59242-121">In addition to the text specified by this element, Windows PowerShell displays the new value that starts the group, and adds a blank line before and after the group.</span></span>
+<span data-ttu-id="5e844-121">Utöver den text som anges av det här elementet visar Windows PowerShell det nya värdet som startar gruppen och lägger till en tom rad före och efter gruppen.</span><span class="sxs-lookup"><span data-stu-id="5e844-121">In addition to the text specified by this element, Windows PowerShell displays the new value that starts the group, and adds a blank line before and after the group.</span></span>
 
-## <a name="example"></a><span data-ttu-id="59242-122">Exempel</span><span class="sxs-lookup"><span data-stu-id="59242-122">Example</span></span>
+## <a name="example"></a><span data-ttu-id="5e844-122">Exempel</span><span class="sxs-lookup"><span data-stu-id="5e844-122">Example</span></span>
 
-<span data-ttu-id="59242-123">I följande exempel visas etiketten för en ny grupp.</span><span class="sxs-lookup"><span data-stu-id="59242-123">The following example shows the label for a new group.</span></span> <span data-ttu-id="59242-124">Den visade etiketten ser ut ungefär så här: `Service Type: NewValueofProperty`</span><span class="sxs-lookup"><span data-stu-id="59242-124">The displayed label would look similar to this: `Service Type: NewValueofProperty`</span></span>
+<span data-ttu-id="5e844-123">I följande exempel visas etiketten för en ny grupp.</span><span class="sxs-lookup"><span data-stu-id="5e844-123">The following example shows the label for a new group.</span></span> <span data-ttu-id="5e844-124">Den visade etiketten ser ut ungefär så här: `Service Type: NewValueofProperty`</span><span class="sxs-lookup"><span data-stu-id="5e844-124">The displayed label would look similar to this: `Service Type: NewValueofProperty`</span></span>
 
 ```xml
 <GroupBy>
@@ -60,10 +60,10 @@ ms.locfileid: "92649791"
 
 ```
 
-<span data-ttu-id="59242-125">Ett exempel på en hel format fil som innehåller det här elementet finns i [wide View (groupby)](./wide-view-groupby.md).</span><span class="sxs-lookup"><span data-stu-id="59242-125">For an example of a complete formatting file that includes this element, see [Wide View (GroupBy)](./wide-view-groupby.md).</span></span>
+<span data-ttu-id="5e844-125">Ett exempel på en hel format fil som innehåller det här elementet finns i [wide View (groupby)](./wide-view-groupby.md).</span><span class="sxs-lookup"><span data-stu-id="5e844-125">For an example of a complete formatting file that includes this element, see [Wide View (GroupBy)](./wide-view-groupby.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="59242-126">Se även</span><span class="sxs-lookup"><span data-stu-id="59242-126">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5e844-126">Se även</span><span class="sxs-lookup"><span data-stu-id="5e844-126">See Also</span></span>
 
-[<span data-ttu-id="59242-127">GroupBy-element för View (format)</span><span class="sxs-lookup"><span data-stu-id="59242-127">GroupBy Element for View (Format)</span></span>](./groupby-element-for-view-format.md)
+[<span data-ttu-id="5e844-127">GroupBy-element för View (format)</span><span class="sxs-lookup"><span data-stu-id="5e844-127">GroupBy Element for View (Format)</span></span>](./groupby-element-for-view-format.md)
 
-[<span data-ttu-id="59242-128">Skriva en PowerShell-formateringsfil</span><span class="sxs-lookup"><span data-stu-id="59242-128">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="5e844-128">Skriva en PowerShell-formateringsfil</span><span class="sxs-lookup"><span data-stu-id="5e844-128">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)

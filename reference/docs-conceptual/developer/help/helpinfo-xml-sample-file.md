@@ -10,11 +10,11 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 10/27/2020
 ms.locfileid: "92647767"
 ---
-# <a name="helpinfo-xml-sample-file"></a><span data-ttu-id="a2843-103">HelpInfo-XML-exempelfil</span><span class="sxs-lookup"><span data-stu-id="a2843-103">HelpInfo XML Sample File</span></span>
+# <a name="helpinfo-xml-sample-file"></a><span data-ttu-id="a7101-103">HelpInfo-XML-exempelfil</span><span class="sxs-lookup"><span data-stu-id="a7101-103">HelpInfo XML Sample File</span></span>
 
-<span data-ttu-id="a2843-104">I det här avsnittet visas ett exempel på en välformulerad uppdaterings bar hjälp informations fil, vanligt vis kallad "HelpInfo XML File".</span><span class="sxs-lookup"><span data-stu-id="a2843-104">This topic displays a sample of a well-formed Updatable Help Information file, commonly known as "HelpInfo XML file."</span></span> <span data-ttu-id="a2843-105">I den här exempel filen ordnas GRÄNSSNITTets kultur element i alfabetisk ordning efter användar gränssnittets kultur namn.</span><span class="sxs-lookup"><span data-stu-id="a2843-105">In this sample file, the UI culture elements are arranged in alphabetical order by UI culture name.</span></span> <span data-ttu-id="a2843-106">Alfabetisk ordning är en bra metod, men det är inget krav.</span><span class="sxs-lookup"><span data-stu-id="a2843-106">Alphabetical ordering is a best practice, but it is not required.</span></span>
+<span data-ttu-id="a7101-104">I det här avsnittet visas ett exempel på en välformulerad uppdaterings bar hjälp informations fil, vanligt vis kallad "HelpInfo XML File".</span><span class="sxs-lookup"><span data-stu-id="a7101-104">This topic displays a sample of a well-formed Updatable Help Information file, commonly known as "HelpInfo XML file."</span></span> <span data-ttu-id="a7101-105">I den här exempel filen ordnas GRÄNSSNITTets kultur element i alfabetisk ordning efter användar gränssnittets kultur namn.</span><span class="sxs-lookup"><span data-stu-id="a7101-105">In this sample file, the UI culture elements are arranged in alphabetical order by UI culture name.</span></span> <span data-ttu-id="a7101-106">Alfabetisk ordning är en bra metod, men det är inget krav.</span><span class="sxs-lookup"><span data-stu-id="a7101-106">Alphabetical ordering is a best practice, but it is not required.</span></span>
 
-## <a name="helpinfo-xml-sample-file"></a><span data-ttu-id="a2843-107">HelpInfo-XML-exempelfil</span><span class="sxs-lookup"><span data-stu-id="a2843-107">HelpInfo XML Sample File</span></span>
+## <a name="helpinfo-xml-sample-file"></a><span data-ttu-id="a7101-107">HelpInfo-XML-exempelfil</span><span class="sxs-lookup"><span data-stu-id="a7101-107">HelpInfo XML Sample File</span></span>
 
 ```xml
 

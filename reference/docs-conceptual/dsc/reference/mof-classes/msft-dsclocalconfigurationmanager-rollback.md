@@ -10,11 +10,11 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 10/27/2020
 ms.locfileid: "92650618"
 ---
-# <a name="rollback-method"></a><span data-ttu-id="0cd81-103">RollBack-metoden</span><span class="sxs-lookup"><span data-stu-id="0cd81-103">RollBack method</span></span>
+# <a name="rollback-method"></a><span data-ttu-id="5cac1-103">RollBack-metoden</span><span class="sxs-lookup"><span data-stu-id="5cac1-103">RollBack method</span></span>
 
-<span data-ttu-id="0cd81-104">Återställer konfigurationen till en tidigare version.</span><span class="sxs-lookup"><span data-stu-id="0cd81-104">Rolls back the configuration to a previous version.</span></span>
+<span data-ttu-id="5cac1-104">Återställer konfigurationen till en tidigare version.</span><span class="sxs-lookup"><span data-stu-id="5cac1-104">Rolls back the configuration to a previous version.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="0cd81-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="0cd81-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="5cac1-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="5cac1-105">Syntax</span></span>
 
 ```mof
 uint32 RollBack(
@@ -22,24 +22,24 @@ uint32 RollBack(
 );
 ```
 
-## <a name="parameters"></a><span data-ttu-id="0cd81-106">Parametrar</span><span class="sxs-lookup"><span data-stu-id="0cd81-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="5cac1-106">Parametrar</span><span class="sxs-lookup"><span data-stu-id="5cac1-106">Parameters</span></span>
 
-<span data-ttu-id="0cd81-107">**configurationNumber** \[ i \] anger den begärda konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="0cd81-107">**configurationNumber** \[in\] Specifies the requested configuration.</span></span>
+<span data-ttu-id="5cac1-107">**configurationNumber** \[ i \] anger den begärda konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="5cac1-107">**configurationNumber** \[in\] Specifies the requested configuration.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="0cd81-108">Returvärde</span><span class="sxs-lookup"><span data-stu-id="0cd81-108">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="5cac1-108">Returvärde</span><span class="sxs-lookup"><span data-stu-id="5cac1-108">Return value</span></span>
 
-<span data-ttu-id="0cd81-109">Returnerar noll vid lyckad; annars returneras en felkod.</span><span class="sxs-lookup"><span data-stu-id="0cd81-109">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="5cac1-109">Returnerar noll vid lyckad; annars returneras en felkod.</span><span class="sxs-lookup"><span data-stu-id="5cac1-109">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="0cd81-110">Kommentarer</span><span class="sxs-lookup"><span data-stu-id="0cd81-110">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="5cac1-110">Kommentarer</span><span class="sxs-lookup"><span data-stu-id="5cac1-110">Remarks</span></span>
 
-<span data-ttu-id="0cd81-111">Detta är en statisk metod.</span><span class="sxs-lookup"><span data-stu-id="0cd81-111">This is a static method.</span></span>
+<span data-ttu-id="5cac1-111">Detta är en statisk metod.</span><span class="sxs-lookup"><span data-stu-id="5cac1-111">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="0cd81-112">Krav</span><span class="sxs-lookup"><span data-stu-id="0cd81-112">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="5cac1-112">Krav</span><span class="sxs-lookup"><span data-stu-id="5cac1-112">Requirements</span></span>
 
-<span data-ttu-id="0cd81-113">**MOF:** DscCore. MOF</span><span class="sxs-lookup"><span data-stu-id="0cd81-113">**MOF:** DscCore.mof</span></span>
+<span data-ttu-id="5cac1-113">**MOF:** DscCore. MOF</span><span class="sxs-lookup"><span data-stu-id="5cac1-113">**MOF:** DscCore.mof</span></span>
 
-<span data-ttu-id="0cd81-114">**Namnrymd** : Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="0cd81-114">**Namespace** : Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
+<span data-ttu-id="5cac1-114">**Namnrymd** : Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="5cac1-114">**Namespace** : Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="0cd81-115">Se även</span><span class="sxs-lookup"><span data-stu-id="0cd81-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5cac1-115">Se även</span><span class="sxs-lookup"><span data-stu-id="5cac1-115">See also</span></span>
 
-[<span data-ttu-id="0cd81-116">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="0cd81-116">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+[<span data-ttu-id="5cac1-116">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="5cac1-116">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)

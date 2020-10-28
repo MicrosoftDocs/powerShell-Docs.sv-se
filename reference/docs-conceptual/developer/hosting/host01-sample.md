@@ -10,29 +10,29 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 10/27/2020
 ms.locfileid: "92649254"
 ---
-# <a name="host01-sample"></a><span data-ttu-id="ba027-103">Host01 – exempel</span><span class="sxs-lookup"><span data-stu-id="ba027-103">Host01 Sample</span></span>
+# <a name="host01-sample"></a><span data-ttu-id="cd119-103">Host01 – exempel</span><span class="sxs-lookup"><span data-stu-id="cd119-103">Host01 Sample</span></span>
 
-<span data-ttu-id="ba027-104">Det här exemplet visar hur du implementerar ett värd program som använder en anpassad värd.</span><span class="sxs-lookup"><span data-stu-id="ba027-104">This sample shows how to implement a host application that uses a custom host.</span></span> <span data-ttu-id="ba027-105">I det här exemplet skapas en körnings utrymme som använder den anpassade värden och sedan används [system. Management. Automation. PowerShell](/dotnet/api/System.Management.Automation.PowerShell) API för att köra ett skript som anropar "Exit".</span><span class="sxs-lookup"><span data-stu-id="ba027-105">In this sample a runspace is created that uses the custom host, and then the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API is used to run a script that calls "exit."</span></span> <span data-ttu-id="ba027-106">Värd programmet tittar sedan på utdata från skriptet och skriver ut resultaten.</span><span class="sxs-lookup"><span data-stu-id="ba027-106">The host application then looks at the output of the script and prints out the results.</span></span>
+<span data-ttu-id="cd119-104">Det här exemplet visar hur du implementerar ett värd program som använder en anpassad värd.</span><span class="sxs-lookup"><span data-stu-id="cd119-104">This sample shows how to implement a host application that uses a custom host.</span></span> <span data-ttu-id="cd119-105">I det här exemplet skapas en körnings utrymme som använder den anpassade värden och sedan används [system. Management. Automation. PowerShell](/dotnet/api/System.Management.Automation.PowerShell) API för att köra ett skript som anropar "Exit".</span><span class="sxs-lookup"><span data-stu-id="cd119-105">In this sample a runspace is created that uses the custom host, and then the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API is used to run a script that calls "exit."</span></span> <span data-ttu-id="cd119-106">Värd programmet tittar sedan på utdata från skriptet och skriver ut resultaten.</span><span class="sxs-lookup"><span data-stu-id="cd119-106">The host application then looks at the output of the script and prints out the results.</span></span>
 
- <span data-ttu-id="ba027-107">I det här exemplet används de standard GRÄNSSNITTs funktioner som finns i Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="ba027-107">This sample uses the default UI features provided by Windows PowerShell.</span></span> <span data-ttu-id="ba027-108">Mer information om hur du implementerar UI-funktionerna i en anpassad värd finns i [Host02-exempel](./host02-sample.md).</span><span class="sxs-lookup"><span data-stu-id="ba027-108">For more information about implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).</span></span>
+ <span data-ttu-id="cd119-107">I det här exemplet används de standard GRÄNSSNITTs funktioner som finns i Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="cd119-107">This sample uses the default UI features provided by Windows PowerShell.</span></span> <span data-ttu-id="cd119-108">Mer information om hur du implementerar UI-funktionerna i en anpassad värd finns i [Host02-exempel](./host02-sample.md).</span><span class="sxs-lookup"><span data-stu-id="cd119-108">For more information about implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="ba027-109">Krav</span><span class="sxs-lookup"><span data-stu-id="ba027-109">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="cd119-109">Krav</span><span class="sxs-lookup"><span data-stu-id="cd119-109">Requirements</span></span>
 
- <span data-ttu-id="ba027-110">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="ba027-110">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="cd119-110">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="cd119-110">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="ba027-111">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="ba027-111">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="cd119-111">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="cd119-111">Demonstrates</span></span>
 
-- <span data-ttu-id="ba027-112">Skapa en anpassad värd klass som härleds från klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) .</span><span class="sxs-lookup"><span data-stu-id="ba027-112">Creating a custom host class that derives from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class.</span></span>
+- <span data-ttu-id="cd119-112">Skapa en anpassad värd klass som härleds från klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) .</span><span class="sxs-lookup"><span data-stu-id="cd119-112">Creating a custom host class that derives from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class.</span></span>
 
-- <span data-ttu-id="ba027-113">Skapa en körnings utrymme som använder den anpassade värd klassen.</span><span class="sxs-lookup"><span data-stu-id="ba027-113">Creating a runspace that uses the custom host class.</span></span>
+- <span data-ttu-id="cd119-113">Skapa en körnings utrymme som använder den anpassade värd klassen.</span><span class="sxs-lookup"><span data-stu-id="cd119-113">Creating a runspace that uses the custom host class.</span></span>
 
-- <span data-ttu-id="ba027-114">Skapar ett [system. Management. Automation. PowerShell](/dotnet/api/System.Management.Automation.PowerShell) -objekt som kör ett skript som anropar exit.</span><span class="sxs-lookup"><span data-stu-id="ba027-114">Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.</span></span>
+- <span data-ttu-id="cd119-114">Skapar ett [system. Management. Automation. PowerShell](/dotnet/api/System.Management.Automation.PowerShell) -objekt som kör ett skript som anropar exit.</span><span class="sxs-lookup"><span data-stu-id="cd119-114">Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.</span></span>
 
-- <span data-ttu-id="ba027-115">Verifierar att rätt slutkod användes i avslutnings processen.</span><span class="sxs-lookup"><span data-stu-id="ba027-115">Verifying that the correct exit code was used in the exit process.</span></span>
+- <span data-ttu-id="cd119-115">Verifierar att rätt slutkod användes i avslutnings processen.</span><span class="sxs-lookup"><span data-stu-id="cd119-115">Verifying that the correct exit code was used in the exit process.</span></span>
 
-## <a name="example"></a><span data-ttu-id="ba027-116">Exempel</span><span class="sxs-lookup"><span data-stu-id="ba027-116">Example</span></span>
+## <a name="example"></a><span data-ttu-id="cd119-116">Exempel</span><span class="sxs-lookup"><span data-stu-id="cd119-116">Example</span></span>
 
- <span data-ttu-id="ba027-117">Följande kod visar en implementering av ett värd program som använder ett enkelt anpassat värd gränssnitt.</span><span class="sxs-lookup"><span data-stu-id="ba027-117">The following code shows an implementation of a host application that uses a simple custom host interface.</span></span>
+ <span data-ttu-id="cd119-117">Följande kod visar en implementering av ett värd program som använder ett enkelt anpassat värd gränssnitt.</span><span class="sxs-lookup"><span data-stu-id="cd119-117">The following code shows an implementation of a host application that uses a simple custom host interface.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -132,9 +132,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="ba027-118">Exempel</span><span class="sxs-lookup"><span data-stu-id="ba027-118">Example</span></span>
+## <a name="example"></a><span data-ttu-id="cd119-118">Exempel</span><span class="sxs-lookup"><span data-stu-id="cd119-118">Example</span></span>
 
- <span data-ttu-id="ba027-119">Följande kod är implementeringen av klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) som används av det här värd programmet.</span><span class="sxs-lookup"><span data-stu-id="ba027-119">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="ba027-120">De element som inte implementeras genererar ett undantag eller returnerar ingenting.</span><span class="sxs-lookup"><span data-stu-id="ba027-120">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="cd119-119">Följande kod är implementeringen av klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) som används av det här värd programmet.</span><span class="sxs-lookup"><span data-stu-id="cd119-119">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="cd119-120">De element som inte implementeras genererar ett undantag eller returnerar ingenting.</span><span class="sxs-lookup"><span data-stu-id="cd119-120">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -303,4 +303,4 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="ba027-121">Se även</span><span class="sxs-lookup"><span data-stu-id="ba027-121">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cd119-121">Se även</span><span class="sxs-lookup"><span data-stu-id="cd119-121">See Also</span></span>

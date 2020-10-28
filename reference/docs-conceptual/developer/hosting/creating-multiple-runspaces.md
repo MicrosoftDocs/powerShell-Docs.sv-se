@@ -10,13 +10,13 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 10/27/2020
 ms.locfileid: "92649399"
 ---
-# <a name="creating-multiple-runspaces"></a><span data-ttu-id="b1899-103">Skapa flera körningsutrymmen</span><span class="sxs-lookup"><span data-stu-id="b1899-103">Creating multiple runspaces</span></span>
+# <a name="creating-multiple-runspaces"></a><span data-ttu-id="2de84-103">Skapa flera körningsutrymmen</span><span class="sxs-lookup"><span data-stu-id="2de84-103">Creating multiple runspaces</span></span>
 
-<span data-ttu-id="b1899-104">Om du skapar ett stort antal körnings utrymmen kan du överväga att skapa en körnings utrymme-pool.</span><span class="sxs-lookup"><span data-stu-id="b1899-104">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="b1899-105">Att använda ett [system. Management. Automation. körnings utrymmen. RunspacePool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) -objekt i stället för att skapa ett stort antal enskilda körnings utrymmen med samma egenskaper, kan förbättra prestandan.</span><span class="sxs-lookup"><span data-stu-id="b1899-105">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
+<span data-ttu-id="2de84-104">Om du skapar ett stort antal körnings utrymmen kan du överväga att skapa en körnings utrymme-pool.</span><span class="sxs-lookup"><span data-stu-id="2de84-104">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="2de84-105">Att använda ett [system. Management. Automation. körnings utrymmen. RunspacePool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) -objekt i stället för att skapa ett stort antal enskilda körnings utrymmen med samma egenskaper, kan förbättra prestandan.</span><span class="sxs-lookup"><span data-stu-id="2de84-105">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
 
-## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="b1899-106">Skapa och använda en körnings utrymme-pool.</span><span class="sxs-lookup"><span data-stu-id="b1899-106">Creating and using a runspace pool.</span></span>
+## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="2de84-106">Skapa och använda en körnings utrymme-pool.</span><span class="sxs-lookup"><span data-stu-id="2de84-106">Creating and using a runspace pool.</span></span>
 
- <span data-ttu-id="b1899-107">I följande exempel visas hur du skapar en körnings utrymme-pool och hur du kör ett kommando asynkront i en körnings utrymme i poolen.</span><span class="sxs-lookup"><span data-stu-id="b1899-107">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
+ <span data-ttu-id="2de84-107">I följande exempel visas hur du skapar en körnings utrymme-pool och hur du kör ett kommando asynkront i en körnings utrymme i poolen.</span><span class="sxs-lookup"><span data-stu-id="2de84-107">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
 
 ```csharp
 namespace HostRunspacePool
@@ -74,6 +74,6 @@ namespace HostRunspacePool
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="b1899-108">Se även</span><span class="sxs-lookup"><span data-stu-id="b1899-108">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2de84-108">Se även</span><span class="sxs-lookup"><span data-stu-id="2de84-108">See Also</span></span>
 
- [<span data-ttu-id="b1899-109">Skapa en InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="b1899-109">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="2de84-109">Skapa en InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="2de84-109">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
