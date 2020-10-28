@@ -1,14 +1,14 @@
 ---
-title: Designa din Windows PowerShell-Provider | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- providers [PowerShell Programmer's Guide], designing
-ms.openlocfilehash: dec6c71a2d7bbe5636f96dc140e701213d6f6487
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Designa en Windows PowerShell-provider
+description: Designa en Windows PowerShell-provider
+ms.openlocfilehash: 89e1fa9cfc0a2e5928a358aad4244c8e9152fe1a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778926"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654530"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Designa en Windows PowerShell-provider
 
@@ -20,19 +20,19 @@ Windows PowerShell-körningsmiljön använder sökvägar i Windows PowerShell f�
 
 Mer information om sökvägar i Windows PowerShell finns i så här fungerar Windows PowerShell.
 
-### <a name="defining-a-drive-qualified-path"></a>Definiera en enhet-kvalificerad sökväg
+### <a name="defining-a-drive-qualified-path"></a>Definiera en Drive-Qualified sökväg
 
 Om du vill ge användaren åtkomst till data som finns på en fysisk enhet måste Windows PowerShell-providern ha stöd för en enhets kvalificerad sökväg. Den här sökvägen börjar med enhets namnet följt av ett kolon (:), till exempel min enhet: \ abc\bar.
 
-### <a name="defining-a-provider-qualified-path"></a>Definiera en provider-kvalificerad sökväg
+### <a name="defining-a-provider-qualified-path"></a>Definiera en Provider-Qualified sökväg
 
 Windows PowerShell-providern måste ha stöd för en provider-kvalificerad sökväg för att Windows PowerShell-körningsmiljön ska kunna initiera och avinitiera providern. Till exempel är fil systemet:: \\ \uncshare\abc\bar den provider-kvalificerade sökvägen för fil Systems leverantören som tillhandahålls av Windows PowerShell.
 
-### <a name="defining-a-provider-direct-path"></a>Definiera en provider – direkt sökväg
+### <a name="defining-a-provider-direct-path"></a>Definiera en Provider-Direct sökväg
 
 Om du vill tillåta fjärråtkomst till Windows PowerShell-providern ska den stödja en provider-direkt sökväg för att skicka direkt till Windows PowerShell-providern för den aktuella platsen. Till exempel kan registrets Windows PowerShell-Provider använda \\ \server\regkeypath som en provider-direkt sökväg.
 
-### <a name="defining-a-provider-internal-path"></a>Definiera en provider – intern sökväg
+### <a name="defining-a-provider-internal-path"></a>Definiera en Provider-Internal sökväg
 
 Om du vill tillåta Provider-cmdleten att komma åt data med icke-Windows PowerShell-API: er (Application Programming Interfaces) ska din Windows PowerShell-Provider stödja en provider-intern sökväg. Den här sökvägen anges efter "::" i providerns kvalificerade sökväg. Till exempel är providerns interna sökväg för Windows PowerShell-providern för fil systemet \\ \uncshare\abc\bar.
 
@@ -101,10 +101,10 @@ Klassen [system. Management. Automation. Provider. Navigationcmdletprovider](/do
 
 |    Cmdlet    |                                                                      Definition                                                                      |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Kombinera-sökväg | Kombinerar två sökvägar till en enda sökväg med hjälp av en leverantörsspecifik avgränsare mellan sökvägar. Denna cmdlet strömmar strängar.                               |
+| Combine-Path | Kombinerar två sökvägar till en enda sökväg med hjälp av en leverantörsspecifik avgränsare mellan sökvägar. Denna cmdlet strömmar strängar.                               |
 | `Move-Item`  | Flyttar objekt till den angivna platsen. Denna cmdlet skickar inte ett utgående objekt via pipelinen om inte dess `PassThru` parameter anges. |
 
-En relaterad cmdlet är den grundläggande parsar-Sök vägs cmdleten som tillhandahålls av Windows PowerShell. Denna cmdlet kan användas för att tolka en Windows PowerShell-sökväg som stöd för `Parent` parametern. Den överordnade Sök vägs strängen strömmas.
+En relaterad cmdlet är den grundläggande Parse-Path-cmdleten som tillhandahålls av Windows PowerShell. Denna cmdlet kan användas för att tolka en Windows PowerShell-sökväg som stöd för `Parent` parametern. Den överordnade Sök vägs strängen strömmas.
 
 ## <a name="select-provider-interfaces-to-support"></a>Välj Provider-gränssnitt som ska stödjas
 

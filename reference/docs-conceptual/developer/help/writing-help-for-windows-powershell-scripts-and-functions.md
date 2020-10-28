@@ -1,12 +1,14 @@
 ---
-title: Skriva hjälp för PowerShell-skript och-funktioner
 ms.date: 09/13/2016
-ms.openlocfilehash: 381c501d87b7381075f89412f654c6121493856e
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Skriva hjälp för PowerShell-skript och-funktioner
+description: Skriva hjälp för PowerShell-skript och-funktioner
+ms.openlocfilehash: f72742e2a131f41ba8ffdcec4901c7c3ea1da1ad
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86892922"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654640"
 ---
 # <a name="writing-help-for-powershell-scripts-and-functions"></a>Skriva hjälp för PowerShell-skript och-funktioner
 
@@ -19,11 +21,11 @@ I det här dokumentet beskrivs formatet och rätt placering av hjälp avsnitten,
 
 ## <a name="types-of-script-and-function-help"></a>Typer av skript-och funktions hjälp
 
-### <a name="comment-based-help"></a>Kommenterings-baserad hjälp
+### <a name="comment-based-help"></a>Comment-Based hjälp
 
 Hjälp avsnittet som beskriver ett skript eller en funktion kan implementeras som en uppsättning kommentarer i skriptet eller funktionen. När du skriver en kommenterings-baserad hjälp för ett skript och funktioner i ett skript, bör du tänka noga noga med reglerna för att placera den kommenterade hjälpen. Placeringen avgör om `Get-Help` cmdleten associerar hjälp avsnittet med skriptet eller en funktion. Mer information om hur du skriver kommentarer baserade hjälp avsnitt finns [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
-### <a name="xml-based-command-help"></a>Hjälp för XML-baserat kommando
+### <a name="xml-based-command-help"></a>XML-Based kommando hjälp
 
 Hjälp avsnittet som beskriver ett skript eller en funktion kan implementeras i en XML-fil som använder kommandot hjälp schema för kommandot. Om du vill associera skriptet eller funktionen med XML-filen använder du `ExternalHelp` kommentarens nyckelord följt av XML-filens sökväg och namn.
 
@@ -42,10 +44,10 @@ Du kan dock lägga till konceptuella ämnen i Internet listan över avsnitten oc
 
 - I alla beskrivningar, referera till kommandot som ett skript eller en funktion. Den här informationen hjälper användaren att förstå och hantera kommandot.
 
-  Följande detaljerade Beskrivning anger till exempel att kommandot New-topic är ett skript.
+  Följande detaljerade Beskrivning anger till exempel att kommandot New-Topic är ett skript.
   Detta påminner användarna om att de måste ange sökvägen och det fullständiga namnet när de kör den.
 
-  > "Det nya ämnes skriptet skapar ett tomt konceptuellt avsnitt för varje ämnes namn i indatafilen..."
+  > "New-Topic skriptet skapar ett tomt konceptuellt avsnitt för varje ämnes namn i indatafilen..."
 
   Följande detaljerade beskrivnings steg `Disable-PSRemoting` är en funktion. Den här informationen är särskilt användbar för användare när sessionen innehåller flera kommandon med samma namn, varav vissa kan vara dolda med ett kommando med högre prioritet.
 

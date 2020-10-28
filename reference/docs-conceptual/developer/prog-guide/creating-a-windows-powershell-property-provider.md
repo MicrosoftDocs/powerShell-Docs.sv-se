@@ -1,15 +1,14 @@
 ---
-title: Skapa en Windows PowerShell-egenskaps leverantör | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- property providers [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], property provider
-ms.openlocfilehash: e8ef92629fe036154cdd2f0facbe0cbe8add7533
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skapa en Windows PowerShell-egenskapsprovider
+description: Skapa en Windows PowerShell-egenskapsprovider
+ms.openlocfilehash: ec9c707f094366c14498613f363b7de1cdbfe5ab
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778944"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654589"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Skapa en Windows PowerShell-egenskapsprovider
 
@@ -52,7 +51,7 @@ Följande villkor kan gälla för din implementering av [system. Management. Aut
 
 - Åsidosättningar av den här metoden bör som standard inte hämta en läsare för objekt som är dolda från användaren, om inte egenskapen [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) anges till `true` . Ett fel ska skrivas om sökvägen representerar ett objekt som är dolt från användaren och [system. Management. Automation. Provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) har angetts till `false` .
 
-## <a name="attaching-dynamic-parameters-to-the-get-itemproperty-cmdlet"></a>Koppla dynamiska parametrar till get-ItemProperty-cmdleten
+## <a name="attaching-dynamic-parameters-to-the-get-itemproperty-cmdlet"></a>Bifoga dynamiska parametrar till Get-ItemProperty-cmdleten
 
 `Get-ItemProperty`Cmdleten kan kräva ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell-egenskapsvärdena implementera metoden [system. Management. Automation. Provider. Ipropertycmdletprovider. Getpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters) . `path`Parametern anger en fullständigt kvalificerad Provider – intern sökväg, medan `providerSpecificPickList` parametern anger de providerspecifika egenskaper som anges på kommando raden. Den här parametern kan vara `null` eller tom om egenskaperna är skickas till cmdleten. I det här fallet returnerar den här metoden ett objekt som har egenskaper och fält med parsa attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna i cmdleten.
 
@@ -69,7 +68,7 @@ Här är standard implementeringen av [system. Management. Automation. Provider.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidersetproperty](Msh_samplestestcmdlets#testcmdletspropertyprovidersetproperty)]  -->
 
-#### <a name="things-to-remember-about-implementing-set-itemproperty"></a>Saker att komma ihåg om att implementera Set-ItemProperty
+#### <a name="things-to-remember-about-implementing-set-itemproperty"></a>Saker att komma ihåg om hur du implementerar Set-ItemProperty
 
 Följande villkor kan gälla för en implementering av [system. Management. Automation. Provider. Ipropertycmdletprovider. setProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty):
 
@@ -82,7 +81,7 @@ Följande villkor kan gälla för en implementering av [system. Management. Auto
 
   Efter att anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returneras `true` , om potentiellt skadliga system ändringar kan göras, ska metoden system [. Management. Automation. Provider. Ipropertycmdletprovider. setProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) anropa metoden [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Den här metoden skickar ett bekräftelse meddelande till användaren för att tillåta ytterligare feedback för att visa att åtgärden bör fortsätta.
 
-## <a name="attaching-dynamic-parameters-for-the-set-itemproperty-cmdlet"></a>Bifoga dynamiska parametrar för Set-ItemProperty-cmdleten
+## <a name="attaching-dynamic-parameters-for-the-set-itemproperty-cmdlet"></a>Att bifoga dynamiska parametrar för Set-ItemProperty cmdlet
 
 `Set-ItemProperty`Cmdleten kan kräva ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell-egenskapsvärdena implementera metoden [system. Management. Automation. Provider. Ipropertycmdletprovider. Setpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters) . Den här metoden returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt. `null`Värdet kan returneras om inga dynamiska parametrar ska läggas till.
 
@@ -111,7 +110,7 @@ Följande villkor kan gälla för din implementering av [system. Management. Aut
 
   Efter att anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returneras `true` , om potentiellt skadliga system ändringar kan göras, ska metoden system [. Management. Automation. Provider. Ipropertycmdletprovider. Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) anropa metoden [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Den här metoden skickar ett bekräftelse meddelande till användaren för att tillåta ytterligare feedback för att ange att den potentiellt farliga åtgärden bör fortsätta.
 
-## <a name="attaching-dynamic-parameters-to-the-clear-itemproperty-cmdlet"></a>Koppla dynamiska parametrar till cmdleten Clear-ItemProperty
+## <a name="attaching-dynamic-parameters-to-the-clear-itemproperty-cmdlet"></a>Bifoga dynamiska parametrar till Clear-ItemProperty-cmdleten
 
 `Clear-ItemProperty`Cmdleten kan kräva ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell-egenskapsvärdena implementera metoden [system. Management. Automation. Provider. Ipropertycmdletprovider. Clearpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters) . Den här metoden returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt. `null`Värdet kan returneras om inga dynamiska parametrar ska läggas till.
 
