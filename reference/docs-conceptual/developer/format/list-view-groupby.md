@@ -1,12 +1,14 @@
 ---
-title: Listvy (GroupBy) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7956d13e196454a3f6da185e9be74f9d3cb8ef63
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Listvy (gruppbaserad)
+description: Listvy (gruppbaserad)
+ms.openlocfilehash: e039c38d1e4e93f65a508fe60aaaf35c64ebe2ed
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773410"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666628"
 ---
 # <a name="list-view-groupby"></a>Listvy (gruppbaserad)
 

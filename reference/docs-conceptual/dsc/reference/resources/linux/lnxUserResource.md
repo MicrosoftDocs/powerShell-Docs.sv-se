@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC för Linux nxUser-resurs
-ms.openlocfilehash: 30c9d4efb5bcbce9f18652b6f34e9a1b060cece4
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC för Linux nxUser-resurs
+ms.openlocfilehash: 298caa8f5ea6d4587f9782a02d0544147ee33e84
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463915"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667393"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>DSC för Linux nxUser-resurs
 
@@ -37,7 +38,7 @@ nxUser <string> #ResourceName
 |---|---|
 |Användarnamn |Anger den plats där du vill kontrol lera statusen för en fil eller katalog. |
 |FullName |En sträng som innehåller det fullständiga namnet som ska användas för användar kontot. |
-|Description |Beskrivning av användar kontot. |
+|Beskrivning |Beskrivning av användar kontot. |
 |Lösenord |Hash för användarens lösen ord i rätt format för Linux-datorn. Detta är vanligt vis en saltad SHA-256-eller SHA-512-Hash. I Debian och Ubuntu Linux kan det här värdet genereras med `mkpasswd` kommandot. För andra Linux-distributioner kan du använda metoden cryption för python: s krypterings bibliotek för att generera hashen. |
 |Inaktiverad |Anger om kontot är aktiverat. Ange den här egenskapen till `$true` för att säkerställa att det här kontot är inaktiverat och ange det för att `$false` säkerställa att det är aktiverat. |
 |PasswordChangeRequired |Anger om användaren kan ändra lösen ordet. Ange den här egenskapen till `$true` om du vill se till att användaren inte kan ändra lösen ordet och ange det som `$false` tillåter användaren att ändra lösen ordet. Standardvärdet är `$false`. Den här egenskapen utvärderas bara om användar kontot inte fanns tidigare och skapas. |

@@ -1,12 +1,14 @@
 ---
-title: Etikett element för TableColumnHeader för TableControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: b7b1d6825d3bca0e36b230415d19c2ac48377a46
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Label-element för TableColumnHeader för TableControl (format)
+description: Label-element för TableColumnHeader för TableControl (format)
+ms.openlocfilehash: fe4c209903c04e683b44e2bdcbf381adb6874ace
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785752"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667801"
 ---
 # <a name="label-element-for-tablecolumnheader-for-tablecontrol-format"></a>Label-element för TableColumnHeader för TableControl (format)
 

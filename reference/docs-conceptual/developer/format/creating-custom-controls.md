@@ -1,12 +1,14 @@
 ---
-title: Skapa anpassade kontroller | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c36fa9b778e01501a3c88f735cdefdfbb04411a0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skapa anpassade kontroller
+description: Skapa anpassade kontroller
+ms.openlocfilehash: 78d8cc2970b2b3e493bef25d78404ba1be195bb1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786126"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668056"
 ---
 # <a name="creating-custom-controls"></a>Skapa anpassade kontroller
 

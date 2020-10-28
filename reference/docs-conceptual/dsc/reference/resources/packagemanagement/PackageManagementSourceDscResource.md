@@ -1,13 +1,14 @@
 ---
 ms.date: 07/15/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC PackageManagementSource-resurs
-ms.openlocfilehash: b24558574f192347aace5a809d57385e01d9acb3
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC PackageManagementSource-resurs
+ms.openlocfilehash: 4842a13dbf06073080c0dd02be986b0d7ba051d0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463898"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667359"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource-resurs
 
@@ -39,10 +40,10 @@ PackageManagementSource [String] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|Name |Anger namnet på den paket källa som ska registreras eller avregistreras i systemet. |
+|Namn |Anger namnet på den paket källa som ska registreras eller avregistreras i systemet. |
 |ProviderName |Anger namnet på den OneGet-provider som du kan interopa med paket källan. |
 |SourceLocation |Anger URI för paket källan. |
-|InstallationPolicy |Används av leverantörer, till exempel den inbyggda NuGet-providern. Bestämmer om du litar på paketets källa. Ett av: **ej betrott** eller **betrott**. |
+|InstallationPolicy |Används av leverantörer, till exempel den inbyggda NuGet-providern. Bestämmer om du litar på paketets källa. Ett av: **ej betrott** eller **betrott** . |
 |SourceCredential |Ger åtkomst till paketet på en fjärran sluten källa. |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper

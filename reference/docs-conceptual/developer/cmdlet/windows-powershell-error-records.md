@@ -1,17 +1,14 @@
 ---
-title: Windows PowerShell-felposter | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- error category [PowerShell SDK]
-- error identifier [PowerShell SDK]
-- error records [PowerShell SDK]
-- error category string [PowerShell SDK]
-ms.openlocfilehash: 52243916adf18b4f3a1e00f1fb4199c2619946e9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell-felposter
+description: Windows PowerShell-felposter
+ms.openlocfilehash: 35f814a4b4323adefb310a2f2bac11dc7644af40
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783984"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666866"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell-felposter
 

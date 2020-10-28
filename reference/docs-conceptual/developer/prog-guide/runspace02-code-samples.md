@@ -1,12 +1,14 @@
 ---
-title: Runspace02-kod exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ff05fcff16d2890c90f645886de4513f9f8dedbe
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace02 – kodexempel
+description: Runspace02 – kodexempel
+ms.openlocfilehash: d12c162b9cfabf0fba0f3128af2ee3100db3b300
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778467"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667494"
 ---
 # <a name="runspace02-code-samples"></a>Runspace02 – kodexempel
 

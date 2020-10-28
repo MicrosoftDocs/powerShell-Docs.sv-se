@@ -2,12 +2,13 @@
 ms.date: 07/08/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skriva en anpassad DSC-resurs med PowerShell-klasser
-ms.openlocfilehash: b7f6d3135cb1da7ade106f8a4cc41e3afb7306af
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: Den här artikeln visar hur du skapar en enkel resurs som hanterar en fil i en angiven sökväg.
+ms.openlocfilehash: 72a828795c29e10ff66f164b8871b0fea7a1e0a8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217567"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667325"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Skriva en anpassad DSC-resurs med PowerShell-klasser
 
@@ -17,7 +18,7 @@ Med introduktionen av PowerShell-klasser i Windows PowerShell 5,0 kan du nu defi
 
 I en klass-baserad DSC-resurs definieras schemat som egenskaper för klassen som kan ändras med attribut för att ange egenskaps typen. Resursen implementeras av `Get()` , `Set()` -och `Test()` -metoder (motsvarar `Get-TargetResource` funktionerna, `Set-TargetResource` och `Test-TargetResource` i en skript resurs.
 
-I det här avsnittet ska vi skapa en enkel resurs med namnet **FileResource** som hanterar en fil i en angiven sökväg.
+I den här artikeln ska vi skapa en enkel resurs med namnet **FileResource** som hanterar en fil i en angiven sökväg.
 
 Mer information om DSC-resurser finns i avsnittet om att [bygga anpassade konfigurations resurser för önskad tillstånds konfiguration i Windows PowerShell](authoringResource.md)
 
@@ -66,10 +67,10 @@ DSC-resursschemat definieras som egenskaper för klassen. Vi deklarerar tre egen
 
 Observera att egenskaperna ändras efter attribut. Innebörden av attributen är följande:
 
-- **DscProperty (nyckel)**: egenskapen är obligatorisk. Egenskapen är en nyckel. Värdena för alla egenskaper som har marker ATS som nycklar måste kombineras för att unikt identifiera en resurs instans i en konfiguration.
-- **DscProperty (obligatorisk)**: egenskapen är obligatorisk.
-- **DscProperty (NotConfigurable)**: egenskapen är skrivskyddad. Egenskaper som marker ATS med det här attributet kan inte ställas in med en konfiguration, men fylls i med `Get()` metoden när de är tillgängliga.
-- **DscProperty ()**: egenskapen kan konfigureras, men det är inte obligatoriskt.
+- **DscProperty (nyckel)** : egenskapen är obligatorisk. Egenskapen är en nyckel. Värdena för alla egenskaper som har marker ATS som nycklar måste kombineras för att unikt identifiera en resurs instans i en konfiguration.
+- **DscProperty (obligatorisk)** : egenskapen är obligatorisk.
+- **DscProperty (NotConfigurable)** : egenskapen är skrivskyddad. Egenskaper som marker ATS med det här attributet kan inte ställas in med en konfiguration, men fylls i med `Get()` metoden när de är tillgängliga.
+- **DscProperty ()** : egenskapen kan konfigureras, men det är inte obligatoriskt.
 
 `$Path`Egenskaperna och `$SourcePath` är båda strängarna. `$CreationTime`Är en [datetime](/dotnet/api/system.datetime) -egenskap. `$Ensure`Egenskapen är en uppräknings typ som definieras enligt följande.
 
@@ -481,14 +482,14 @@ Du kan använda egenskapen **PsDscRunAsCredential** i resurs blocket [DSC-konfig
 
 ### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a>Kräv eller Tillåt inte PsDscRunAsCredential för din resurs
 
-`DscResource()`Attributet använder en valfri parameter **RunAsCredential**. Den här parametern använder ett av tre värden:
+`DscResource()`Attributet använder en valfri parameter **RunAsCredential** . Den här parametern använder ett av tre värden:
 
 - `Optional`**PsDscRunAsCredential** är valfritt för konfigurationer som anropar den här resursen. Detta är standardvärdet.
 - `Mandatory`**PsDscRunAsCredential** måste användas för alla konfigurationer som anropar den här resursen.
-- `NotSupported` Konfigurationer som anropar den här resursen kan inte använda **PsDscRunAsCredential**.
+- `NotSupported` Konfigurationer som anropar den här resursen kan inte använda **PsDscRunAsCredential** .
 - `Default` Samma som `Optional` .
 
-Använd till exempel följande attribut för att ange att den anpassade resursen inte stöder användning av **PsDscRunAsCredential**:
+Använd till exempel följande attribut för att ange att den anpassade resursen inte stöder användning av **PsDscRunAsCredential** :
 
 ```powershell
 [DscResource(RunAsCredential=NotSupported)]

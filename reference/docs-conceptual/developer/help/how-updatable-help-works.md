@@ -1,18 +1,20 @@
 ---
-title: Så här fungerar uppdateringsbar hjälp
 ms.date: 09/13/2016
-ms.openlocfilehash: 4849ce81e31171c6822a9078a77ebb45729185a3
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Så här fungerar uppdateringsbar hjälp
+description: Så här fungerar uppdateringsbar hjälp
+ms.openlocfilehash: c0d2413a27b661cdb9a12fa8a0beae5dee8a21b4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893296"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667614"
 ---
 # <a name="how-updatable-help-works"></a>Så här fungerar uppdateringsbar hjälp
 
 I det här avsnittet beskrivs hur uppdaterings bara hjälp bearbetar XML-HelpInfo och CAB-filer för varje modul, och installerar uppdaterad hjälp för användare.
 
-## <a name="the-update-help-process"></a>Processen uppdatering – hjälp
+## <a name="the-update-help-process"></a>Update-Help processen
 
 I följande lista beskrivs åtgärderna i cmdleten [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) när en användare kör ett kommando för att uppdatera hjälpfilerna för en modul i en viss användar gränssnitts kultur.
 
@@ -27,7 +29,7 @@ I följande lista beskrivs åtgärderna i cmdleten [Update-Help](/powershell/mod
 1. `Update-Help` skapar en lokal HelpInfo XML-fil genom att kopiera fjärrHelpInfo XML-filen. Den redigerar den lokala XML-HelpInfo så att den bara innehåller element för den CAB-fil som den är installerad på.
    Sedan sparas den lokala HelpInfo XML-filen i modulens katalog och uppdateringen avslutas.
 
-## <a name="the-save-help-process"></a>Processen Spara – hjälp
+## <a name="the-save-help-process"></a>Save-Help processen
 
 I följande lista beskrivs åtgärderna i cmdletarna [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) och [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) när en användare kör kommandon för att uppdatera hjälpfilerna i en fil resurs och sedan använda filerna för att uppdatera hjälpfilerna på användarens dator.
 

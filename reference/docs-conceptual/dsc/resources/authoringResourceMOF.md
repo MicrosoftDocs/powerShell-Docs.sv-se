@@ -2,18 +2,20 @@
 ms.date: 07/08/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skriva en anpassad DSC-resurs med MOF
-ms.openlocfilehash: ba857fa504bfd84accfd7f260b1fff1228db40ba
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: Den här artikeln definierar schemat för en anpassad DSC-resurs i en MOF-fil och implementerar resursen i en PowerShell-skriptfil.
+ms.openlocfilehash: e79a37699c468b2c55c307c96f1c193a2c1595b3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217533"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667189"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Skriva en anpassad DSC-resurs med MOF
 
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
-I det här avsnittet definierar vi schemat för en anpassad DSC-resurs (Windows PowerShell Desired State Configuration) i en MOF-fil och implementerar resursen i en Windows PowerShell-skriptfil. Den här anpassade resursen används för att skapa och underhålla en webbplats.
+I den här artikeln definierar vi schemat för en anpassad DSC-resurs (Desired State Configuration) i Windows PowerShell i en MOF-fil och implementerar resursen i en Windows PowerShell-skriptfil.
+Den här anpassade resursen används för att skapa och underhålla en webbplats.
 
 ## <a name="creating-the-mof-schema"></a>Skapa MOF-schemat
 
@@ -68,8 +70,7 @@ Observera följande om föregående kod:
 
 ### <a name="writing-the-resource-script"></a>Skriver resurs skriptet
 
-Resurs skriptet implementerar logiken för resursen. I den här modulen måste du inkludera tre funktioner som kallas `Get-TargetResource` , `Set-TargetResource` , och `Test-TargetResource` . Alla tre funktioner måste ha en parameter uppsättning som är identisk med uppsättningen med egenskaper som definierats i MOF-schemat som du skapade för din resurs. I det här dokumentet kallas den här uppsättningen egenskaper för "resurs egenskaper". Lagra dessa tre funktioner i en fil med namnet `<ResourceName>.psm1` .
-I följande exempel lagras funktionerna i en fil med namnet `Demo_IISWebsite.psm1` .
+Resurs skriptet implementerar logiken för resursen. I den här modulen måste du inkludera tre funktioner som kallas `Get-TargetResource` , `Set-TargetResource` , och `Test-TargetResource` . Alla tre funktioner måste ha en parameter uppsättning som är identisk med uppsättningen med egenskaper som definierats i MOF-schemat som du skapade för din resurs. I det här dokumentet kallas den här uppsättningen egenskaper för "resurs egenskaper". Lagra dessa tre funktioner i en fil med namnet `<ResourceName>.psm1` . I följande exempel lagras funktionerna i en fil med namnet `Demo_IISWebsite.psm1` .
 
 > [!NOTE]
 > När du kör samma konfigurations skript på din resurs mer än en gång, bör du få inga fel och resursen ska finnas kvar i samma tillstånd som att köra skriptet en gång. För att åstadkomma detta måste du se till att dina `Get-TargetResource` och- `Test-TargetResource` funktionerna lämnar resursen oförändrade och att anropet till `Set-TargetResource` funktionen mer än en gång i en sekvens med samma parameter värden alltid motsvarar att anropa den en gång.
@@ -77,7 +78,8 @@ I följande exempel lagras funktionerna i en fil med namnet `Demo_IISWebsite.psm
 I `Get-TargetResource` funktions implementeringen använder du de nyckel resurs egenskaps värden som anges som parametrar för att kontrol lera status för den angivna resurs instansen. Den här funktionen måste returnera en hash-tabell som visar alla resurs egenskaper som nycklar och de faktiska värdena för dessa egenskaper som motsvarande värden. Följande kod visar ett exempel.
 
 ```powershell
-# DSC uses the Get-TargetResource function to fetch the status of the resource instance specified in the parameters for the target machine
+# DSC uses the Get-TargetResource function to fetch the status of the resource instance
+# specified in the parameters for the target machine
 function Get-TargetResource
 {
     param
@@ -105,8 +107,11 @@ function Get-TargetResource
 
         $getTargetResourceResult = $null;
 
-        <# Insert logic that uses the mandatory parameter values to get the website and assign it to a variable called $Website #>
-        <# Set $ensureResult to "Present" if the requested website exists and to "Absent" otherwise #>
+        <#
+          Insert logic that uses the mandatory parameter values to get the website and
+          assign it to a variable called $Website
+          Set $ensureResult to "Present" if the requested website exists and to "Absent" otherwise
+        #>
 
         # Add all Website properties to the hash table
         # This simple example assumes that $Website is not null
@@ -161,10 +166,14 @@ function Set-TargetResource
         [string[]]$Protocol
     )
 
-    <# If Ensure is set to "Present" and the website specified in the mandatory input parameters does not exist, then create it using the specified parameter values #>
-    <# Else, if Ensure is set to "Present" and the website does exist, then update its properties to match the values provided in the non-mandatory parameter values #>
-    <# Else, if Ensure is set to "Absent" and the website does not exist, then do nothing #>
-    <# Else, if Ensure is set to "Absent" and the website does exist, then delete the website #>
+    <#
+        If Ensure is set to "Present" and the website specified in the mandatory input parameters
+          does not exist, then create it using the specified parameter values
+        Else, if Ensure is set to "Present" and the website does exist, then update its properties
+          to match the values provided in the non-mandatory parameter values
+        Else, if Ensure is set to "Absent" and the website does not exist, then do nothing
+        Else, if Ensure is set to "Absent" and the website does exist, then delete the website
+    #>
 }
 ```
 
@@ -208,18 +217,19 @@ function Test-TargetResource
     # Get the current state
     $currentState = Get-TargetResource -Ensure $Ensure -Name $Name -PhysicalPath $PhysicalPath -State $State -ApplicationPool $ApplicationPool -BindingInfo $BindingInfo -Protocol $Protocol
 
-    #Write-Verbose "Use this cmdlet to deliver information about command processing."
+    # Write-Verbose "Use this cmdlet to deliver information about command processing."
 
-    #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
+    # Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
-    #Include logic to
+    # Include logic to
     $result = [System.Boolean]
-    #Add logic to test whether the website is present and its status matches the supplied parameter values. If it does, return true. If it does not, return false.
+    # Add logic to test whether the website is present and its status matches the supplied
+    # parameter values. If it does, return true. If it does not, return false.
     $result
 }
 ```
 
-> [!Note]
+> [!NOTE]
 > För enklare fel sökning använder du `Write-Verbose` cmdleten i din implementering av de föregående tre funktionerna. Denna cmdlet skriver text till data strömmen för utförliga meddelanden. Den utförliga meddelande strömmen visas som standard inte, men du kan visa den genom att ändra värdet för variabeln **$VerbosePreference** eller genom att använda **verbose** -parametern i DSC-cmdletar = ny.
 
 ### <a name="creating-the-module-manifest"></a>Skapar modulens manifest
@@ -307,4 +317,4 @@ $global:DSCMachineStatus = 1
 ```
 
 För att LCM ska kunna starta om noden måste flaggan **RebootNodeIfNeeded** anges till `$true` .
-Inställningen **ActionAfterReboot** bör också ställas in på **ContinueConfiguration**, vilket är standardvärdet. Mer information om hur du konfigurerar LCM finns i [Konfigurera den lokala Configuration Manager](../managing-nodes/metaConfig.md)eller [konfigurera den lokala Configuration Manager (v4)](../managing-nodes/metaConfig4.md).
+Inställningen **ActionAfterReboot** bör också ställas in på **ContinueConfiguration** , vilket är standardvärdet. Mer information om hur du konfigurerar LCM finns i [Konfigurera den lokala Configuration Manager](../managing-nodes/metaConfig.md)eller [konfigurera den lokala Configuration Manager (v4)](../managing-nodes/metaConfig4.md).

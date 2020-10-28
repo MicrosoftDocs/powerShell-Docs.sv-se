@@ -1,13 +1,14 @@
 ---
 ms.date: 07/15/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC PackageManagement-resurs
-ms.openlocfilehash: 983a288398f710ecc5d2bc557028282ccd58561b
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC PackageManagement-resurs
+ms.openlocfilehash: b6676860acea094e04479e38f29ee7c72430851b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464272"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667376"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement-resurs
 
@@ -41,7 +42,7 @@ PackageManagement [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|Name |Anger namnet på det paket som ska installeras eller avinstalleras. |
+|Namn |Anger namnet på det paket som ska installeras eller avinstalleras. |
 |AdditionalParameters |Leverantörsspecifik hash-information för parametrar som skulle skickas till `Get-Package -AdditionalArguments` . För NuGet-Provider kan du till exempel skicka ytterligare parametrar som DestinationPath. |
 |MaximumVersion |Anger den högsta tillåtna versionen för det paket som du vill hitta. Om du inte lägger till den här parametern hittar resursen den högsta tillgängliga versionen av paketet. |
 |MinimumVersion |Anger den lägsta tillåtna versionen för det paket som du vill hitta. Om du inte lägger till den här parametern hittar resursen den högsta tillgängliga versionen av paketet som också uppfyller den högsta version som anges av parametern **MaximumVersion** . |
@@ -57,7 +58,7 @@ I följande tabell visas alternativ för egenskapen AdditionalParameters.
 |Parameter |Beskrivning |
 |---|---|
 |DestinationPath |Används av leverantörer, till exempel den inbyggda NuGet-providern. Anger en fil Sök väg dit du vill att paketet ska installeras. |
-|InstallationPolicy |Används av leverantörer, till exempel den inbyggda NuGet-providern. Bestämmer om du litar på paketets källa. Ett av: **ej betrott** eller **betrott**. |
+|InstallationPolicy |Används av leverantörer, till exempel den inbyggda NuGet-providern. Bestämmer om du litar på paketets källa. Ett av: **ej betrott** eller **betrott** . |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 

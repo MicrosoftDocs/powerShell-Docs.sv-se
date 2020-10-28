@@ -1,12 +1,14 @@
 ---
-title: Host05-exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 043d359fe6db6ebfa68d97002bdb8e5842e4aca5
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Host05 – exempel
+description: Host05 – exempel
+ms.openlocfilehash: 8d430043b8e870a207bd9b27990b9ef08de32a6a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783270"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667546"
 ---
 # <a name="host05-sample"></a>Host05 – exempel
 

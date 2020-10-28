@@ -1,12 +1,14 @@
 ---
-title: Så här stöder du transaktioner | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6fda27394091195b589afef5ee53c6d3bec4efc0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Ge stöd för transaktioner
+description: Ge stöd för transaktioner
+ms.openlocfilehash: 5691c246830dab9f4808801c04353ebfb2c3e981
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786619"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666968"
 ---
 # <a name="how-to-support-transactions"></a>Ge stöd för transaktioner
 

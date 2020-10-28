@@ -1,12 +1,14 @@
 ---
-title: Medlemmar i utökad typ system klass
 ms.date: 07/09/2020
-ms.openlocfilehash: 24a57b7fd0b3db47d0d7138859aa0502ca9016f0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Medlemmar i utökad typ system klass
+description: Medlemmar i utökad typ system klass
+ms.openlocfilehash: 06488ce423f363a285ab53b21ab45989654346dc
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786279"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666849"
 ---
 # <a name="extended-type-system-class-members"></a>Medlemmar i utökad typ system klass
 
@@ -22,9 +24,9 @@ ETS refererar till ett antal olika typer av medlemmar vars typer definieras av *
 
 ## <a name="accessing-members"></a>Åtkomst till medlemmar
 
-Samlingar med medlemmar kan nås via egenskaperna **members**, **Method**och **Properties** för **PSObject** -objektet.
+Samlingar med medlemmar kan nås via egenskaperna **members** , **Method** och **Properties** för **PSObject** -objektet.
 
-## <a name="ets-properties"></a>Egenskaper för ETS
+## <a name="ets-properties"></a>ETS-egenskaper
 
 ETS-egenskaper är medlemmar som kan hanteras som en egenskap. De kan egentligen visas till vänster i ett uttryck. De innehåller egenskaper för alias, kod egenskaper, PowerShell-egenskaper, antecknings egenskaper och skript egenskaper. Mer information om dessa typer av egenskaper finns i [ETS-egenskaper](properties.md).
 

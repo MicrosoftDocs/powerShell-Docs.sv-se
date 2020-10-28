@@ -1,24 +1,18 @@
 ---
-title: Cmdlet-parametrar | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- optional parameters [PowerShell SDK]
-- aliases [PowerShell SDK]
-- parameter sets [PowerShell SDK]
-- parameters [PowerShell SDK]
-- mandatory parameters [PowerShell SDK]
-- positional parameters [PowerShell SDK]
-- cmdlets [PowerShell SDK], parameters
-ms.openlocfilehash: 98b1d5fd0e7ffbf2d4d161f1bed73fb96a737bd4
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Cmdlet-parametrar
+description: Cmdlet-parametrar
+ms.openlocfilehash: 1ab495cb674f6b2cd769c3f64d899aec67704216
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774770"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668277"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet-parametrar
 
-Cmdlet-parametrar tillhandahåller mekanismen som tillåter att en cmdlet accepterar ininformation. Parametrar kan acceptera indata direkt från kommando raden eller från objekt som skickas till cmdleten via pipelinen. argumenten (även kallade *värden*) för dessa parametrar kan ange de indata som cmdleten accepterar, hur cmdleten ska utföra sina åtgärder och vilka data som cmdleten returnerar till pipelinen.
+Cmdlet-parametrar tillhandahåller mekanismen som tillåter att en cmdlet accepterar ininformation. Parametrar kan acceptera indata direkt från kommando raden eller från objekt som skickas till cmdleten via pipelinen. argumenten (även kallade *värden* ) för dessa parametrar kan ange de indata som cmdleten accepterar, hur cmdleten ska utföra sina åtgärder och vilka data som cmdleten returnerar till pipelinen.
 
 ## <a name="in-this-section"></a>I det här avsnittet
 

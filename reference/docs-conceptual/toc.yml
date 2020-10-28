@@ -720,8 +720,6 @@
               href: gallery/how-to/working-with-packages/packages-that-require-license-acceptance.md
             - name: Kontakta paketägare
               href: gallery/how-to/working-with-packages/contacting-package-owners.md
-            - name: Ge feedback via sociala medier eller kommentarer
-              href: gallery/how-to/working-with-packages/social-media-feedback.md
         - name: Hantera kontoprofil
           items:
             - name: Kontoinställningar för PowerShell-galleriet

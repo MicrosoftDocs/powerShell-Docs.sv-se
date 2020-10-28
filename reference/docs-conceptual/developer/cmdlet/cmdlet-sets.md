@@ -1,12 +1,14 @@
 ---
-title: Cmdlet-uppsättningar | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9595c9ca09148de05c69d60a2ede5688c3db61b0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Cmdlet-uppsättningar
+description: Cmdlet-uppsättningar
+ms.openlocfilehash: b4bcb6548f9d64a8cc5e3fc3a66c671a5566001d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774821"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668243"
 ---
 # <a name="cmdlet-sets"></a>Cmdlet-uppsättningar
 
@@ -26,7 +28,7 @@ Tänk på följande när du implementerar en basklass.
 
 ## <a name="example"></a>Exempel
 
-I följande exempel visas implementeringen av en basklass som används av Get-proc-och Stop-proc-cmdlet: en som härleds från samma basklass.
+I följande exempel visas implementeringen av en basklass som används av Get-Proc och Stop-Proc cmdlet som härleds från samma basklass.
 
 ```csharp
 using System;

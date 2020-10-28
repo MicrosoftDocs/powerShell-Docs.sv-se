@@ -1,12 +1,14 @@
 ---
-title: Host04-exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a34c8424fd661b9c41e6233c4d8d48177a9cfb4e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Host04 – exempel
+description: Host04 – exempel
+ms.openlocfilehash: 27e3aa18046a82058b11593a3b34650d2c164cbc
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783287"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667580"
 ---
 # <a name="host04-sample"></a>Host04 – exempel
 

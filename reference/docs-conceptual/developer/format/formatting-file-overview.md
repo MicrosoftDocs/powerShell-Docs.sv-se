@@ -1,12 +1,14 @@
 ---
-title: Formaterar fil översikt | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: efdd3eed15c5f3c88636fcbe7a39f6c6cfb20ced
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Översikt över formateringsfiler
+description: Översikt över formateringsfiler
+ms.openlocfilehash: b86119c304c895ec08ac67de693b3a052bc7a2a0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773512"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667835"
 ---
 # <a name="formatting-file-overview"></a>Översikt över formateringsfiler
 
@@ -23,7 +25,7 @@ Varje fil format kan definiera följande komponenter som kan delas över alla vy
 
 - Standard konfigurations inställning, till exempel om data som visas i rader med tabeller ska visas på nästa rad, om data är längre än kolumnens bredd. Mer information om de här inställningarna finns i [definiera vanliga konfigurations inställningar](./defining-common-configuration-features.md).
 
-- Objekt uppsättningar som kan visas av alla vyer i format filen. Mer information om dessa uppsättningar (kallas *urvals uppsättningar*) finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
+- Objekt uppsättningar som kan visas av alla vyer i format filen. Mer information om dessa uppsättningar (kallas *urvals uppsättningar* ) finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
 
 - Vanliga kontroller som kan användas av alla vyer i format filen. Kontrollerna ger dig bättre kontroll över hur data visas. Mer information om kontroller finns i [definiera anpassade kontroller](./creating-custom-controls.md).
 

@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
-keywords: WMF, powershell, inställning
 title: DSC-förbättringar i WMF 5.1
-ms.openlocfilehash: 445d0f7bb54c6b21b6af26c4174f3d6422caf6dd
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: Den här artikeln innehåller förbättringar i önskad tillstånds konfiguration (DSC) som ingår i WMF 5,1
+ms.openlocfilehash: 564cf0e8321b6b2b2e5d856acd4d3644d6566100
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771557"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667285"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Förbättringar i önskad tillstånds konfiguration (DSC) i WMF 5,1
 
@@ -16,7 +15,7 @@ ms.locfileid: "87771557"
 
 I WMF 5,1 har vi åtgärdat följande kända problem:
 
-- Get-DscConfiguration kan returnera tomma värden (null) eller fel om en komplex/hash-tabell typ returneras av Get ()-funktionen för en klassbaserade DSC-resurs.
+- Get-DscConfiguration kan returnera tomma värden (null) eller fel om en komplex/hash-tabell är returnerad av Get ()-funktionen i en klass-baserad DSC-resurs.
 - Get-DscConfiguration returnerar fel om RunAs-autentiseringsuppgiften används i DSC-konfigurationen.
 - Det går inte att använda klassbaserade resurser i en sammansatt konfiguration.
 - Start-DscConfiguration låser sig om klassbaserade resurser har en egenskap av en egen typ.
@@ -149,7 +148,7 @@ Se ögonblicks bilderna nedan:
 
 Vi har lagt till stöd för att använda [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) med [SAMMANsatta](/powershell/scripting/dsc/resources/authoringresourcecomposite) DSC-resurser.
 
-Nu kan du ange ett värde för **PsDscRunAsCredential** när du använder sammansatta resurser i konfigurationer. När det här anges körs alla resurser i en sammansatt resurs som en RunAs-användare. Om en sammansatt resurs anropar en annan sammansatt resurs körs alla dessa resurser också som RunAs-användare. RunAs-autentiseringsuppgifter sprids till valfri nivå i den sammansatta resursens hierarki. Om en resurs i en sammansatt resurs anger sitt eget värde för **PsDscRunAsCredential**uppstår ett sammanfognings fel vid konfigurations kompilering.
+Nu kan du ange ett värde för **PsDscRunAsCredential** när du använder sammansatta resurser i konfigurationer. När det här anges körs alla resurser i en sammansatt resurs som en RunAs-användare. Om en sammansatt resurs anropar en annan sammansatt resurs körs alla dessa resurser också som RunAs-användare. RunAs-autentiseringsuppgifter sprids till valfri nivå i den sammansatta resursens hierarki. Om en resurs i en sammansatt resurs anger sitt eget värde för **PsDscRunAsCredential** uppstår ett sammanfognings fel vid konfigurations kompilering.
 
 Det här exemplet visar användningen med den sammansatta [WindowsFeatureSet](/powershell/scripting/dsc/reference/resources/windows/windowsfeaturesetresource) -resursen som ingår i PSDesiredStateConfiguration-modulen.
 

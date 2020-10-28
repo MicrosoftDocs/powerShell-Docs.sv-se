@@ -1,12 +1,14 @@
 ---
-title: Så här begär du bekräftelser | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ebe928724f1b750afc11c1e3c1207375f4ec8e42
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Begära bekräftelser
+description: Begära bekräftelser
+ms.openlocfilehash: 3e29803407bd9fbf13e6db0d0a02239c34e9c4fa
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784103"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667002"
 ---
 # <a name="how-to-request-confirmations"></a>Begära bekräftelser
 

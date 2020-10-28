@@ -1,12 +1,14 @@
 ---
-title: EnumerableExpansion-element (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 81a8959c19502a2e56f4cfa48a1e480509d84b6e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: EnumerableExpansion-element (format)
+description: EnumerableExpansion-element (format)
+ms.openlocfilehash: 207ad99d5335e99701660159ab77279b55b0b6b5
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774056"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668022"
 ---
 # <a name="enumerableexpansion-element-format"></a>EnumerableExpansion-element (format)
 

@@ -1,12 +1,14 @@
 ---
-title: Styr element för vy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 26b7e73afd465b1be9632cd71a75e4be6cc4aeca
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Controls-element för View (format)
+description: Controls-element för View (format)
+ms.openlocfilehash: 0e41f9ad35a0c45b615251417198a47bc7feb760
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786177"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668073"
 ---
 # <a name="controls-element-for-view-format"></a>Controls-element för View (format)
 

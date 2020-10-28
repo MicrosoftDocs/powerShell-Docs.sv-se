@@ -1,12 +1,14 @@
 ---
-title: Kontrollerar element för konfiguration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 44b9db0d3523e5e9086da9911882b258a2a54ca6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Controls-element för Configuration (format)
+description: Controls-element för Configuration (format)
+ms.openlocfilehash: 53f874ddccf3b4f1f0a23aad608e786524bde830
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783797"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668107"
 ---
 # <a name="controls-element-for-configuration-format"></a>Controls-element för Configuration (format)
 

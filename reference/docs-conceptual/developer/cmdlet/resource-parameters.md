@@ -1,12 +1,14 @@
 ---
-title: Resurs parametrar | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e618951d57ff1cf303b38f0278858144df31afaf
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Resursparametrar
+description: Resursparametrar
+ms.openlocfilehash: 7533f91b6d5858bcefca289eabc7854d6d5d1f2b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786534"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668158"
 ---
 # <a name="resource-parameters"></a>Resursparametrar
 
@@ -25,7 +27,7 @@ I följande tabell visas de rekommenderade namnen och funktionerna för resurs p
 |**Händelse**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett händelse namn.|
 |**Gränssnitt**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett nätverks gränssnitts namn.|
 |**Adresser**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en IP-adress.|
-|**Uppgift**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett jobb.|
+|**Jobb**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange ett jobb.|
 |**LiteralPath**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange sökvägen till en resurs när jokertecken inte stöds. (Använd parametern **Path** när jokertecken stöds.)|
 |**Mac**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en MAC-adress (Media Access Controller).|
 |**ParentId**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange den överordnade identifieraren.|

@@ -1,12 +1,14 @@
 ---
-title: Formatera data som visas | Microsoft Docs
 ms.date: 09/12/2016
-ms.openlocfilehash: 97d23b3079b2779e518b6b6d2f2ac0c5e9d1f3a3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Formatera data som visas
+description: Formatera data som visas
+ms.openlocfilehash: 40f6b3b4fa36062ee0bad3f197ad159f571445c8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781519"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667869"
 ---
 # <a name="formatting-displayed-data"></a>Formatera data som visas
 

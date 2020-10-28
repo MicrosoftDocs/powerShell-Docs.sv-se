@@ -1,12 +1,14 @@
 ---
-title: Tolka ErrorRecord-objekt | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 249fff7d14023806d75aeca40f4d9b7231e14311
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Tolka ErrorRecord-objekt
+description: Tolka ErrorRecord-objekt
+ms.openlocfilehash: 5a8556e0ba83e54dd197ed03665a119f0b565f2b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786602"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666883"
 ---
 # <a name="interpreting-errorrecord-objects"></a>Tolka ErrorRecord-objekt
 
@@ -53,7 +55,7 @@ På så sätt fångar du de härledda klasserna. Det finns dock problem om undan
 
 ### <a name="the-fqid"></a>FQID
 
-FQID är den mest detaljerade information som du kan använda för att identifiera felet. Det är en sträng som innehåller en cmdlet-definierad identifierare, namnet på cmdlet-klassen och källan som rapporterade felet. I allmänhet är en fel post analog till en händelse post i en händelse logg i Windows. FQID är detsamma som i följande tupel, som identifierar klassen för händelse posten: (*logg namn*, *källa*, *händelse-ID*).
+FQID är den mest detaljerade information som du kan använda för att identifiera felet. Det är en sträng som innehåller en cmdlet-definierad identifierare, namnet på cmdlet-klassen och källan som rapporterade felet. I allmänhet är en fel post analog till en händelse post i en händelse logg i Windows. FQID är detsamma som i följande tupel, som identifierar klassen för händelse posten: ( *logg namn* , *källa* , *händelse-ID* ).
 
 FQID är utformad för att kontrol leras som en enskild sträng. Det finns dock fall där fel identifieraren är utformad för att kunna parsas av värd programmet. Följande exempel är ett välformulerat fullständigt fel-ID.
 

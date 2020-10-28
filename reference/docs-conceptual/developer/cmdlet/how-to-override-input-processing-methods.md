@@ -1,12 +1,14 @@
 ---
-title: Så här åsidosätter du metoder för indata-bearbetning | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: b245dc56b78ce9b7f1dea80b5d4988057c2f125f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Åsidosätta bearbetningsmetoder för indata
+description: Åsidosätta bearbetningsmetoder för indata
+ms.openlocfilehash: 4e8d71a34a1480ce63435ac6cc5dce60d4219c03
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784120"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667019"
 ---
 # <a name="how-to-override-input-processing-methods"></a>Åsidosätta bearbetningsmetoder för indata
 

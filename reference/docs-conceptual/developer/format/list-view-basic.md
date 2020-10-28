@@ -1,12 +1,14 @@
 ---
-title: Listvy (Basic) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 74ff8f6eee0a9358c123455aa00736a11e7f085d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Listvy (grundläggande)
+description: Listvy (grundläggande)
+ms.openlocfilehash: d80ac9c6143b976d8bc13e2b184e4f5a2f8a37ab
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783559"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666645"
 ---
 # <a name="list-view-basic"></a>Listvy (grundläggande)
 

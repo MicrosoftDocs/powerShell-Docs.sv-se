@@ -1,12 +1,14 @@
 ---
-title: Lägga till ett ”Se även”-avsnitt i ett hjälpavsnitt för providers
 ms.date: 09/12/2016
-ms.openlocfilehash: 54adf4bb941888583eb749b7b5322b27d84c7af7
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Lägga till ett ”Se även”-avsnitt i ett hjälpavsnitt för providers
+description: Lägga till ett ”Se även”-avsnitt i ett hjälpavsnitt för providers
+ms.openlocfilehash: df0b14ba84e04baf404081944ef62ef6745d74b2
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893483"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667665"
 ---
 # <a name="how-to-add-a-see-also-section-to-a-provider-help-topic"></a>Lägga till ett ”Se även”-avsnitt i ett hjälpavsnitt för providers
 

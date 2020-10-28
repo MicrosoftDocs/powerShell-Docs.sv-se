@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Kapslingskonfigurationer
-ms.openlocfilehash: e74c0fe1d7f7b198c2d6f796c0bf120eb0ec21d9
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+description: Med DSC kan du skapa sammansatta konfigurationer genom att kapsla en konfiguration i en annan konfiguration.
+ms.openlocfilehash: d7a81cb9673126e92e9185aacf19c5c7c17da8ca
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564025"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667427"
 ---
 # <a name="nesting-dsc-configurations"></a>Kapslar av DSC-konfigurationer
 
@@ -49,7 +50,7 @@ Configuration NestedFileConfig
 }
 ```
 
-I det här exemplet `FileConfig` krävs två obligatoriska parametrar, **CopyFrom** och **CopyTo**, som används som värden för egenskaperna **SourcePath** och **DestinationPath** i `File` resurs blocket. `NestedConfig`Konfigurationen anropas `FileConfig` som om den vore en resurs. Egenskaperna i `NestedConfig` resurs blocket (**CopyFrom** och **CopyTo**) är parametrarna i `FileConfig` konfigurationen.
+I det här exemplet `FileConfig` krävs två obligatoriska parametrar, **CopyFrom** och **CopyTo** , som används som värden för egenskaperna **SourcePath** och **DestinationPath** i `File` resurs blocket. `NestedConfig`Konfigurationen anropas `FileConfig` som om den vore en resurs. Egenskaperna i `NestedConfig` resurs blocket ( **CopyFrom** och **CopyTo** ) är parametrarna i `FileConfig` konfigurationen.
 
 DSC stöder för närvarande inte kapsling av konfigurationer i kapslade konfigurationer. Du kan bara kapsla en djup konfiguration av en nivå.
 

@@ -1,14 +1,14 @@
 ---
-title: Så här verifierar du ett argument antal | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- ValidateCount attribute, example
-ms.openlocfilehash: e7c0eb364a6975cec089b984c2100d476631a12d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Verifiera argumentantal
+description: Verifiera argumentantal
+ms.openlocfilehash: 46a32d61138fb50bceea98171f76749c9d96734d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782131"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666951"
 ---
 # <a name="how-to-validate-an-argument-count"></a>Verifiera argumentantal
 

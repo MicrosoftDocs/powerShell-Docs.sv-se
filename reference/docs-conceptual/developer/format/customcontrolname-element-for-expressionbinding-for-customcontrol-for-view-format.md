@@ -1,12 +1,14 @@
 ---
-title: CustomControlName-element för ExpressionBinding för CustomControl för View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6f1ffca045b7efcecb4dce4e788a8c508fa6ef08
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: CustomControlName-element för ExpressionBinding för CustomControl för View (format)
+description: CustomControlName-element för ExpressionBinding för CustomControl för View (format)
+ms.openlocfilehash: 24b27428c07d7178f0069f6d0e5b7ffc555efe34
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783763"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666815"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format"></a>CustomControlName-element för ExpressionBinding för CustomControl för View (format)
 

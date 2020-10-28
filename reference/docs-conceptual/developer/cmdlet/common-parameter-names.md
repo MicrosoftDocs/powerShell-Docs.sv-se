@@ -1,16 +1,18 @@
 ---
-title: Vanliga parameter namn | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d0939cfa5bf90ec55f0c0afcdeff56223d9dc78d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Vanliga parameternamn
+description: Vanliga parameternamn
+ms.openlocfilehash: cf39dd3b04660076718336857d79d55c3784ccd1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782233"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668226"
 ---
 # <a name="common-parameter-names"></a>Vanliga parameternamn
 
-De parametrar som beskrivs i det här avsnittet kallas *vanliga parametrar*. De läggs till i cmdlets av Windows PowerShell-körningsmiljön och kan inte deklareras av cmdleten.
+De parametrar som beskrivs i det här avsnittet kallas *vanliga parametrar* . De läggs till i cmdlets av Windows PowerShell-körningsmiljön och kan inte deklareras av cmdleten.
 
 > [!NOTE]
 > Dessa parametrar läggs också till i Provider-cmdletar och till funktioner som är dekorerade till `CmdletBinding` attributet.
@@ -35,13 +37,13 @@ Den här parametern anger vilken åtgärd som ska utföras när ett fel inträff
 
 Datatyp: sträng
 
-Den här parametern anger vilken variabel som objekt ska placeras i när ett fel inträffar. Om du vill lägga till i den här variabeln använder du +*varname* i stället för att rensa och ange variabeln.
+Den här parametern anger vilken variabel som objekt ska placeras i när ett fel inträffar. Om du vill lägga till i den här variabeln använder du + *varname* i stället för att rensa och ange variabeln.
 
 ### <a name="outvariable-alias-ov"></a>Övervariabel (alias: OV)
 
 Datatyp: sträng
 
-Den här parametern anger den variabel där alla utdata som genereras av cmdleten ska placeras. Om du vill lägga till i den här variabeln använder du +*varname* i stället för att rensa och ange variabeln.
+Den här parametern anger den variabel där alla utdata som genereras av cmdleten ska placeras. Om du vill lägga till i den här variabeln använder du + *varname* i stället för att rensa och ange variabeln.
 
 ### <a name="outbuffer-alias-ob"></a>Utbuffer (alias: OB)
 
@@ -65,9 +67,9 @@ Den här parametern anger vilken åtgärd som ska utföras när cmdleten skriver
 
 Datatyp: sträng
 
-Den här parametern anger vilken variabel som varnings meddelanden kan sparas i. Om du vill lägga till i den här variabeln använder du +*varname* i stället för att rensa och ange variabeln.
+Den här parametern anger vilken variabel som varnings meddelanden kan sparas i. Om du vill lägga till i den här variabeln använder du + *varname* i stället för att rensa och ange variabeln.
 
-## <a name="risk-mitigation-parameters"></a>Risk reducerings parametrar
+## <a name="risk-mitigation-parameters"></a>Risk-Mitigation parametrar
 
 Följande parametrar läggs till i-cmdletar som begär bekräftelse innan de utför sin åtgärd. Mer information om bekräftelse begär Anden finns i [begära bekräftelse](./requesting-confirmation-from-cmdlets.md). De här parametrarna definieras av klassen [system. Management. Automation. Internal. Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) .
 

@@ -1,12 +1,14 @@
 ---
-title: AccessDBProviderSample02 | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e9a0444d17bec230633e1dd1709455f6ba83dd5c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: AccessDBProviderSample02
+description: AccessDBProviderSample02
+ms.openlocfilehash: ebba2381370cf73f1e39015990f81dc4fd6dd937
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786908"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667444"
 ---
 # <a name="accessdbprovidersample02"></a>AccessDBProviderSample02
 

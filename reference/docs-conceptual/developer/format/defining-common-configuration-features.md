@@ -1,12 +1,14 @@
 ---
-title: Definiera vanliga konfigurations funktioner | Microsoft Docs
 ms.date: 09/12/2016
-ms.openlocfilehash: 710099489bdefdf90b899442ac31b6dbfacc9eda
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Definiera vanliga konfigurationsfunktioner
+description: Definiera vanliga konfigurationsfunktioner
+ms.openlocfilehash: 4102df14959e9fa505229dd031df7df6aaf91ead
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787724"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666713"
 ---
 # <a name="defining-common-configuration-features"></a>Definiera vanliga konfigurationsfunktioner
 

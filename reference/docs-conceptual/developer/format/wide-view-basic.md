@@ -1,12 +1,14 @@
 ---
-title: Bred vy (Basic) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d92c29c33c5104b6186ae53ccf544be197d657b1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Bred vy (grundläggande)
+description: Bred vy (grundläggande)
+ms.openlocfilehash: bfc647da9b78fcd22aac83cf330e466b6759471c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772407"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667699"
 ---
 # <a name="wide-view-basic"></a>Bred vy (grundläggande)
 

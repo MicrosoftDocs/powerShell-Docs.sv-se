@@ -1,14 +1,14 @@
 ---
-title: Så här verifierar du ett argument intervall | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- ValidateRange attribute, example
-ms.openlocfilehash: b48b1b87425add51e855c48ec700c78c3ae296c1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Verifiera ett argumentintervall
+description: Verifiera ett argumentintervall
+ms.openlocfilehash: 1c1c53d43350a38beb2193200de3bd6b689366a4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782080"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666934"
 ---
 # <a name="how-to-validate-an-argument-range"></a>Verifiera ett argumentintervall
 

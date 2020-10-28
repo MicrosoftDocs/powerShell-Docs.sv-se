@@ -1,17 +1,17 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell,cmdlet
 title: ISEAddOnTool-objektet
-ms.openlocfilehash: a5357005ec1a883f5a14882a42e3150e09ff33a2
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Ett ISEAddonTool-objekt representerar ett installerat tilläggs verktyg som ger ytterligare funktioner för att Windows PowerShell ISE.
+ms.openlocfilehash: cc2d50881b7d0033e08de9af5d4cc9e1a9aa55db
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811039"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667138"
 ---
 # <a name="the-iseaddontool-object"></a>ISEAddOnTool-objektet
 
-Ett **ISEAddonTool** -objekt representerar ett installerat tilläggs verktyg som tillhandahåller ytterligare funktioner TOWINDOWS PowerShell ISE. Ett exempel är **kommando** verktyget som du kan visa genom att klicka på **Visa**och sedan på **Visa kommando tillägg**. Det här verktyget är sedan tillgängligt för dig genom att ändra de olika tillgängliga **ISEAddOnTool** -objekten.
+Ett **ISEAddonTool** -objekt representerar ett installerat tilläggs verktyg som ger ytterligare funktioner för att Windows PowerShell ISE. Ett exempel är **kommando** verktyget som du kan visa genom att klicka på **Visa** och sedan på **Visa kommando tillägg** . Det här verktyget är sedan tillgängligt för dig genom att ändra de olika tillgängliga **ISEAddOnTool** -objekten.
 
 Varje tilläggs verktyg kan associeras med antingen den lodräta rutan eller det vågräta fönstret. Den lodräta rutan är dockad till den högra kanten av Windows PowerShell ISE. Det vågräta fönstret är dockat till den nedre kanten.
 
@@ -155,7 +155,7 @@ $psISE.CurrentVisibleVerticalTool.IsVisible = $false
 $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible = $true
 ```
 
-### <a name="name"></a>Name
+### <a name="name"></a>Namn
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 

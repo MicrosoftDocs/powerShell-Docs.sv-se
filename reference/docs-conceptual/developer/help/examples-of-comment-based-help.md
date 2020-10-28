@@ -1,18 +1,20 @@
 ---
-title: Exempel på kommentarsbaserad hjälp
 ms.date: 09/12/2016
-ms.openlocfilehash: fe5d054c84952367a4e7c2d5d9e32551a4e5c3a8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Exempel på kommentarsbaserad hjälp
+description: Exempel på kommentarsbaserad hjälp
+ms.openlocfilehash: 35fe9103a261483c56af629f620dbd6b3c642e68
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772305"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667648"
 ---
 # <a name="examples-of-comment-based-help"></a>Exempel på kommentarsbaserad hjälp
 
 Det här avsnittet innehåller exempel som visar hur du använder en kommenterings-baserad hjälp för skript och funktioner.
 
-## <a name="example-1-comment-based-help-for-a-function"></a>Exempel 1: kommenterings-baserad hjälp för en funktion
+## <a name="example-1-comment-based-help-for-a-function"></a>Exempel 1: Comment-Based hjälp för en funktion
 
  Följande exempel funktion innehåller kommenterings-baserad hjälp.
 
@@ -134,7 +136,7 @@ C:\PS> get-help add-extension -full
             Set-Item
 ```
 
-## <a name="example-2-comment-based-help-for-a-script"></a>Exempel 2: kommenterings-baserad hjälp för ett skript
+## <a name="example-2-comment-based-help-for-a-script"></a>Exempel 2: Comment-Based hjälp för ett skript
 
 Följande exempel funktion innehåller kommenterings-baserad hjälp.
 
@@ -304,7 +306,7 @@ function Add-Extension
 
 ## <a name="example-5--redirecting-to-a-different-help-topic"></a>Exempel 5: omdirigera till ett annat hjälp avsnitt
 
-Följande kod är ett utdrag från början av den inbyggda `Help` funktionen i PowerShell, som visar en skärm med hjälp text i taget. Eftersom hjälp avsnittet för cmdleten Get-Help beskriver Help-funktionen, använder Help-funktionen `.ForwardHelpTargetName` `.ForwardHelpCategory` nyckelorden och för att omdirigera användaren till hjälp avsnittet om cmdleten Get-Help.
+Följande kod är ett utdrag från början av den inbyggda `Help` funktionen i PowerShell, som visar en skärm med hjälp text i taget. Eftersom hjälp avsnittet för Get-Help cmdlet: en beskriver hjälp funktionen, använder funktionen och för att `.ForwardHelpTargetName` `.ForwardHelpCategory` omdirigera användaren till hjälp avsnittet om Get-Help cmdlet.
 
 ```powershell
 function help

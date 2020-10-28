@@ -1,15 +1,14 @@
 ---
-title: Sessionstillstånd för Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- Cmdlets [PowerShell], session state
-- session state [PowerShell]
-ms.openlocfilehash: 7436e3ebd0e099ead81f9fea01a0a2994b982213
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell-sessionstillstånd
+description: Windows PowerShell-sessionstillstånd
+ms.openlocfilehash: 51de92f1f392f708cf49c7ccb4a6808fd628076c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783950"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668141"
 ---
 # <a name="windows-powershell-session-state"></a>Windows PowerShell-sessionstillstånd
 
@@ -21,7 +20,7 @@ Från ett utvecklings perspektiv refererar en Windows PowerShell-session till ti
 
 Sessionstillstånd för modulen skapas när modulen eller en av dess kapslade moduler importeras till sessionen. När en modul exporterar ett element, till exempel en cmdlet, en funktion eller ett skript, läggs en referens till det elementet till i sessionens globala sessionstillstånd. Men när elementet körs körs det inom modulens sessionstillstånd.
 
-## <a name="session-state-data"></a>Data för sessionstillstånd
+## <a name="session-state-data"></a>Session-State data
 
 Session State-data kan vara offentliga eller privata. Offentliga data är tillgängliga för anrop från utanför sessionstillståndet, medan privata data bara är tillgängliga för anrop inifrån sessionstillståndet. En modul kan till exempel ha en privat funktion som bara kan anropas av modulen eller bara internt av ett offentligt element som har exporter ATS. Detta liknar privata och offentliga medlemmar av en .NET Framework typ.
 
@@ -37,7 +36,7 @@ Data för sessionstillstånd lagras av den aktuella instansen av körnings motor
 
 - Variabel information för sessionstillstånd
 
-## <a name="accessing-session-state-data-within-cmdlets"></a>Åtkomst till sessionens tillstånds data inom cmdletar
+## <a name="accessing-session-state-data-within-cmdlets"></a>Åtkomst till Session-State data inom cmdletar
 
 -Cmdletar har åtkomst till sessionstillstånd antingen indirekt via egenskapen [system. Management. Automation. PSCmdlet. sessionState *](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState) för cmdlet-klassen eller direkt via klassen [system. Management. Automation. sessionState](/dotnet/api/System.Management.Automation.SessionState) . Klassen [system. Management. Automation. sessionState](/dotnet/api/System.Management.Automation.SessionState) innehåller egenskaper som kan användas för att undersöka olika typer av sessionstillstånd.
 

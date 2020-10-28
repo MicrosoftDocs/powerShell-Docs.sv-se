@@ -1,18 +1,20 @@
 ---
-title: Rikt linjer för utveckling av råd | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: dc8ef586954106f6d7fbce550dc22cd935018936
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Rekommenderade riktlinjer för utveckling
+description: Rekommenderade riktlinjer för utveckling
+ms.openlocfilehash: 1ac18925bbc2506e6a03810d24f58c2f3113fd55
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782437"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668328"
 ---
 # <a name="advisory-development-guidelines"></a>Rekommenderade riktlinjer för utveckling
 
 I det här avsnittet beskrivs rikt linjer som du bör tänka på för att säkerställa bra utvecklings-och användar upplevelser. Ibland kan de tillkomma, och ibland kanske de inte är det.
 
-## <a name="design-guidelines"></a>Design rikt linjer
+## <a name="design-guidelines"></a>Designriktlinjer
 
 Följande rikt linjer bör beaktas när du utformar cmdletar. När du hittar en design rikt linje som gäller din situation bör du titta närmare på kod rikt linjerna för liknande rikt linjer.
 

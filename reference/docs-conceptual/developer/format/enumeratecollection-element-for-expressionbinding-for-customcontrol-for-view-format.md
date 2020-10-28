@@ -1,12 +1,14 @@
 ---
-title: EnumerateCollection-element för ExpressionBinding för CustomControl för View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 91505ca2661c6bfd0dcb2bbdb26a645d237a7fb9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: EnumerateCollection-element för ExpressionBinding för CustomControl för View (format)
+description: EnumerateCollection-element för ExpressionBinding för CustomControl för View (format)
+ms.openlocfilehash: e1df19460afbe813d6a53b88664629662d4abb74
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773937"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667988"
 ---
 # <a name="enumeratecollection-element-for-expressionbinding-for-customcontrol-for-view-format"></a>EnumerateCollection-element för ExpressionBinding för CustomControl för View (format)
 

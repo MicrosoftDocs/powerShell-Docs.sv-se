@@ -1,12 +1,14 @@
 ---
-title: Så här deklarerar du parameter uppsättningar | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e6d06a9a78356693fe7a338dc5c9207044b23441
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Deklarera parameteruppsättningar
+description: Deklarera parameteruppsättningar
+ms.openlocfilehash: bd4d504a9fe6c7f7626901c49bc08851244f0995
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784171"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667070"
 ---
 # <a name="how-to-declare-parameter-sets"></a>Deklarera parameteruppsättningar
 

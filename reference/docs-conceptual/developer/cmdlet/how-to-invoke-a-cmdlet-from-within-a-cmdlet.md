@@ -1,12 +1,14 @@
 ---
-title: Så här anropar du en cmdlet inifrån en cmdlet | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2d5b0788d3310d0dd7b311f86c497afe8eec9d11
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Anropa en cmdlet inifrån en cmdlet
+description: Anropa en cmdlet inifrån en cmdlet
+ms.openlocfilehash: d137ac895f66000329de76a2c16a74b02c0e82ca
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784154"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667053"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Anropa en cmdlet inifrån en cmdlet
 

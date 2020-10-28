@@ -1,19 +1,14 @@
 ---
-title: Lägga till parametrar som bearbetar kommando rads indatatyper | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- cmdlets [PowerShell Programmer's Guide], parameters
-- Get-Proc cmdlet [PowerShell Programmer's Guide]
-- cmdlets [PowerShell Programmer's Guide], command line input
-- command line input [PowerShell Programmer's Guide]
-- parameters [PowerShell Programmer's Guide]
-- cmdlets [PowerShell Programmer's Guide], creating
-ms.openlocfilehash: 6ccc873d9c6b93546b3dae8c0d2e406763fdfb8a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Lägga till parametrar som bearbetar kommandoradsindata
+description: Lägga till parametrar som bearbetar kommandoradsindata
+ms.openlocfilehash: cf2a21aa6b54b463b1af611848c6bf5ecfbadc4a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784579"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668379"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>Lägga till parametrar som bearbetar kommandoradsindata
 
@@ -97,7 +92,7 @@ Denna cmdlet använder en sträng mat ris för `Name` parametern. Om möjligt b�
 
 ## <a name="declaring-parameters-as-positional-or-named"></a>Deklarera parametrar som positions-eller namngivna
 
-En cmdlet måste ange varje parameter som antingen en positions-eller namngiven parameter. Båda typerna av parametrar accepterar enstaka argument, flera argument avgränsade med kommatecken och booleska inställningar. En boolesk parameter, som även kallas för en *växel*, hanterar endast booleska inställningar. Växeln används för att bestämma förekomst av parametern. Det rekommenderade standardvärdet är `false` .
+En cmdlet måste ange varje parameter som antingen en positions-eller namngiven parameter. Båda typerna av parametrar accepterar enstaka argument, flera argument avgränsade med kommatecken och booleska inställningar. En boolesk parameter, som även kallas för en *växel* , hanterar endast booleska inställningar. Växeln används för att bestämma förekomst av parametern. Det rekommenderade standardvärdet är `false` .
 
 Exempel- `Get-Proc` cmdleten definierar `Name` parametern som en positions parameter med position
 0. Det innebär att det första argumentet som användaren anger på kommando raden automatiskt infogas för den här parametern. Om du vill definiera en namngiven parameter för vilken användaren måste ange parameter namnet från kommando raden lämnar du `Position` nyckelordet utanför deklarationen för attributet.

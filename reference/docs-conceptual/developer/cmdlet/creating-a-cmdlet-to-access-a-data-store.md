@@ -1,18 +1,20 @@
 ---
-title: Skapa en cmdlet för att komma åt ett datalager
 ms.date: 09/13/2016
-ms.openlocfilehash: a595805a820c355937e581f0e00fa2a9a9fc3df0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skapa en cmdlet för att komma åt ett datalager
+description: Skapa en cmdlet för att komma åt ett datalager
+ms.openlocfilehash: d6ae4779a96b0789f11952a1d66bb96a394c3211
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782148"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668192"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Skapa en cmdlet för att komma åt ett datalager
 
 I det här avsnittet beskrivs hur du skapar en-cmdlet som använder lagrade data via en Windows PowerShell-Provider. Den här typen av cmdlet använder Windows PowerShell-providerns infrastruktur i Windows PowerShell-körningsmiljön och därför måste cmdlet-klassen härledas från Bask Lassen [system. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) .
 
-Cmdleten Select-Str som beskrivs här kan hitta och välja strängar i en fil eller ett objekt. Mönstren som används för att identifiera strängen kan anges explicit genom `Path` parametern för cmdleten eller implicit via `Script` parametern.
+Select-Str-cmdleten som beskrivs här kan hitta och välja strängar i en fil eller ett objekt. Mönstren som används för att identifiera strängen kan anges explicit genom `Path` parametern för cmdleten eller implicit via `Script` parametern.
 
 Cmdlet: en är utformad för att använda en Windows PowerShell-provider som är härledd från [system. Management. Automation. Provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). Till exempel kan cmdleten ange fil Systems leverantören eller variabel leverantören som tillhandahålls av Windows PowerShell. Mer information aboutWindows PowerShell-leverantörer finns i [utforma din Windows PowerShell-Provider](../prog-guide/designing-your-windows-powershell-provider.md).
 
@@ -22,7 +24,7 @@ Det första steget i att skapa en cmdlet namnger alltid cmdleten och deklarerar 
 
 .NET-klassen för denna cmdlet måste vara härledd från Bask Lassen [system. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) , eftersom den ger support som krävs av Windows PowerShell-körningsmiljön för att exponera infrastrukturen för Windows PowerShell-providern. Observera att denna cmdlet också använder .NET Framework reguljära uttryck klasser, till exempel [system. text. RegularExpressions. regex](/dotnet/api/System.Text.RegularExpressions.Regex).
 
-Följande kod är klass definitionen för den här Select-Str-cmdleten.
+Följande kod är klass definitionen för den här Select-Str cmdleten.
 
 ```csharp
 [Cmdlet(VerbsCommon.Select, "Str", DefaultParameterSetName="PatternParameterSet")]
@@ -368,11 +370,11 @@ protected override void ProcessRecord()
 
 Din cmdlet måste öppna den provider som anges av Windows PowerShell-sökvägen så att den kan komma åt data. Objektet [system. Management. Automation. sessionState](/dotnet/api/System.Management.Automation.SessionState) för körnings utrymme används för åtkomst till providern, medan egenskapen [system. Management. Automation. PSCmdlet. Invokeprovider *](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) för cmdlet används för att öppna providern. Åtkomst till innehåll tillhandahålls genom hämtning av objektet [system. Management. Automation. Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) för den öppna providern.
 
-Det här exemplet Select-Str cmdlet använder egenskapen [system. Management. Automation. Providerintrinsics. Content *](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) för att exponera det innehåll som ska genomsökas. Sedan kan du anropa metoden [system. Management. Automation. Contentcmdletproviderintrinsics. Getreader *](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) genom att skicka den nödvändiga sökvägen för Windows PowerShell.
+Det här exemplet på Select-Str cmdlet använder egenskapen [system. Management. Automation. Providerintrinsics. Content *](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) för att exponera det innehåll som ska genomsökas. Sedan kan du anropa metoden [system. Management. Automation. Contentcmdletproviderintrinsics. Getreader *](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) genom att skicka den nödvändiga sökvägen för Windows PowerShell.
 
 ## <a name="code-sample"></a>Kod exempel
 
-Följande kod visar implementeringen av den här versionen av den här Select-Str-cmdleten. Observera att den här koden innehåller cmdlet-klassen, privata metoder som används av cmdleten och Windows PowerShell snap-in-koden som används för att registrera cmdleten. Mer information om hur du registrerar cmdleten finns i [skapa cmdleten](#defining-the-cmdlet-class).
+Följande kod visar implementeringen av den här versionen av denna Select-Str-cmdlet. Observera att den här koden innehåller cmdlet-klassen, privata metoder som används av cmdleten och Windows PowerShell snap-in-koden som används för att registrera cmdleten. Mer information om hur du registrerar cmdleten finns i [skapa cmdleten](#defining-the-cmdlet-class).
 
 ```csharp
 //
@@ -1087,7 +1089,7 @@ När du har implementerat en cmdlet måste du registrera den med Windows PowerSh
 
 ## <a name="testing-the-cmdlet"></a>Testa cmdleten
 
-När din cmdlet har registrerats med Windows PowerShell kan du testa den genom att köra den på kommando raden. Följande procedur kan användas för att testa Sample Select-Str-cmdleten.
+När din cmdlet har registrerats med Windows PowerShell kan du testa den genom att köra den på kommando raden. Följande procedur kan användas för att testa exempel Select-Str cmdlet.
 
 1. Starta Windows PowerShell och Sök efter förekomster av rader med uttrycket ".NET" i antecknings filen. Observera att citat tecknen runt namnet på sökvägen endast krävs om sökvägen består av mer än ett ord.
 

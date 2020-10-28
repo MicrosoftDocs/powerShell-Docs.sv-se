@@ -1,12 +1,14 @@
 ---
-title: Så här verifierar du parameter inmatade | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f3e43ae4cd421e2beea9ef8419c87e818ed65b6b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Verifiera parameterindata
+description: Verifiera parameterindata
+ms.openlocfilehash: d39f3f61513cbcf2358446c57f403dc7cce4e0c9
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781944"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668175"
 ---
 # <a name="how-to-validate-parameter-input"></a>Verifiera parameterindata
 

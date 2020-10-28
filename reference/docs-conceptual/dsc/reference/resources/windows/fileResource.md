@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC-filresurs
-ms.openlocfilehash: 28e9ea3a590a0972e505912efae4a934bc39ba1d
-ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
+description: DSC-filresurs
+ms.openlocfilehash: 66b81f28060c209e15b2a1817e9b794c081386e1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88799612"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667342"
 ---
 # <a name="dsc-file-resource"></a>DSC-filresurs
 
@@ -41,18 +42,18 @@ File [string] #ResourceName
 |Egenskap |Beskrivning |
 |---|---|
 |DestinationPath |Platsen, på målnoden, du vill se **till att den** **finns** eller **saknas** . |
-|Attribut |Det önskade tillstånd för attributen för mål filen eller katalogen. Giltiga värden är _Arkiv_, _dold_, _ReadOnly_och _system_. |
-|Kontrollsumma |Den typ av kontroll summa som ska användas för att avgöra om två filer är identiska. Giltiga värden är: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. |
-|Innehåll |Endast giltigt när det används med en **typ** **fil**. Anger innehållet som ska **vara** **tillgängligt** eller **saknas** i mål filen. |
+|Attribut |Det önskade tillstånd för attributen för mål filen eller katalogen. Giltiga värden är _Arkiv_ , _dold_ , _ReadOnly_ och _system_ . |
+|Kontrollsumma |Den typ av kontroll summa som ska användas för att avgöra om två filer är identiska. Giltiga värden är: **SHA-1** , **SHA-256** , **SHA-512** , **createdDate** , **modifiedDate** . |
+|Innehåll |Endast giltigt när det används med en **typ** **fil** . Anger innehållet som ska **vara** **tillgängligt** eller **saknas** i mål filen. |
 |Autentiseringsuppgift |De autentiseringsuppgifter som krävs för att få åtkomst till resurser, till exempel källfiler. |
-|Force |Åsidosätter åtkomst åtgärder som resulterar i ett fel (till exempel att skriva över en fil eller ta bort en katalog som inte är tom). Standardvärdet är `$false` . |
-|Rekursivt |Endast giltigt när det används med **typ** **katalog**. Utför tillstånds åtgärden rekursivt till alla katalog innehåll, under kataloger och under katalog innehåll. Standardvärdet är `$false` . |
+|Force |Åsidosätter åtkomst åtgärder som resulterar i ett fel (till exempel att skriva över en fil eller ta bort en katalog som inte är tom). Standardvärdet är `$false`. |
+|Rekursivt |Endast giltigt när det används med **typ** **katalog** . Utför tillstånds åtgärden rekursivt till alla katalog innehåll, under kataloger och under katalog innehåll. Standardvärdet är `$false`. |
 |Sök |Sökvägen som filen eller mappen ska kopieras från. |
-|Typ |Typ av resurs som konfigureras. Giltiga värden är **katalog** och **fil**. Standardvärdet är **File**. |
-|MatchSource |Anger om resursen ska övervakas för nya filer som har lagts till i käll katalogen efter den första kopian. Värdet `$true` anger att efter den ursprungliga kopian ska alla nya källfiler kopieras till målet. Om värdet `$false` är, cachelagrar resursen innehållet i käll katalogen och ignorerar eventuella filer som lagts till efter den ursprungliga kopian. Standardvärdet är `$false` . |
+|Typ |Typ av resurs som konfigureras. Giltiga värden är **katalog** och **fil** . Standardvärdet är **File** . |
+|MatchSource |Anger om resursen ska övervakas för nya filer som har lagts till i käll katalogen efter den första kopian. Värdet `$true` anger att efter den ursprungliga kopian ska alla nya källfiler kopieras till målet. Om värdet `$false` är, cachelagrar resursen innehållet i käll katalogen och ignorerar eventuella filer som lagts till efter den ursprungliga kopian. Standardvärdet är `$false`. |
 
 > [!WARNING]
-> Om du inte anger något värde för **Credential** eller **PSRunAsCredential**använder resursen dator kontot för målnoden för att få åtkomst till **SourcePath**. När **SourcePath** är en UNC-resurs kan detta resultera i ett "åtkomst nekad"-fel. Kontrol lera att dina behörigheter har angetts, eller Använd egenskaperna **Credential** eller **PSRunAsCredential** för att ange det konto som ska användas.
+> Om du inte anger något värde för **Credential** eller **PSRunAsCredential** använder resursen dator kontot för målnoden för att få åtkomst till **SourcePath** . När **SourcePath** är en UNC-resurs kan detta resultera i ett "åtkomst nekad"-fel. Kontrol lera att dina behörigheter har angetts, eller Använd egenskaperna **Credential** eller **PSRunAsCredential** för att ange det konto som ska användas.
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 
@@ -67,10 +68,10 @@ File [string] #ResourceName
 
 ### <a name="additional-information"></a>Ytterligare information
 
-- Om du bara anger en **DestinationPath**, ser resursen till att sökvägen finns om den **finns eller inte** finns om den **saknas**.
-- När du anger en **SourcePath** och en **DestinationPath** med ett **typ** värde för **katalog**, kopieras käll katalogen till mål Sök vägen med resursen. Egenskaperna **rekursivt**, **Force**och **MatchSource** ändrar vilken typ av kopierings åtgärd som utförs, medan **autentiseringsuppgiften** avgör vilket konto som ska användas för åtkomst till käll katalogen.
+- Om du bara anger en **DestinationPath** , ser resursen till att sökvägen finns om den **finns eller inte** finns om den **saknas** .
+- När du anger en **SourcePath** och en **DestinationPath** med ett **typ** värde för **katalog** , kopieras käll katalogen till mål Sök vägen med resursen. Egenskaperna **rekursivt** , **Force** och **MatchSource** ändrar vilken typ av kopierings åtgärd som utförs, medan **autentiseringsuppgiften** avgör vilket konto som ska användas för åtkomst till käll katalogen.
 - Om du inte anger egenskapen **rekursivt** till när du `$true` kopierar en katalog kopieras inget innehåll i den befintliga katalogen. Endast den angivna katalogen kommer att kopieras.
-- Om du har angett värdet **ReadOnly** för egenskapen **attribut** tillsammans med en **DestinationPath**, **Se till att** det **finns** en sökväg för att skapa den angivna sökvägen, medan **innehållet** skulle ange innehållet i filen. Inställningen för **att se till att** ingen **kommer att ignorera** egenskapen **attributs** fullständigt och ta bort alla filer på den angivna sökvägen.
+- Om du har angett värdet **ReadOnly** för egenskapen **attribut** tillsammans med en **DestinationPath** , **Se till att** det **finns** en sökväg för att skapa den angivna sökvägen, medan **innehållet** skulle ange innehållet i filen. Inställningen för **att se till att** ingen **kommer att ignorera** egenskapen **attributs** fullständigt och ta bort alla filer på den angivna sökvägen.
 
 ## <a name="example"></a>Exempel
 
@@ -79,7 +80,7 @@ I följande exempel kopieras en katalog och dess under kataloger från en pull-s
 Käll katalogen är en UNC-sökväg ( `\\PullServer\DemoSource` ) som delas från hämtnings servern. Egenskapen **rekursivt** säkerställer att alla under kataloger också kopieras.
 
 > [!IMPORTANT]
-> LCM på målnoden körs i kontexten för det lokala system kontot som standard. Om du vill bevilja åtkomst till **SourcePath**, ger du målnoden dator konto rätt behörigheter. Både **autentiseringsuppgiften** och **PSDSCRunAsCredential** ändrar den kontext som LCM använder för att få åtkomst till **SourcePath**. Du måste fortfarande bevilja åtkomst till det konto som ska användas för åtkomst till **SourcePath**.
+> LCM på målnoden körs i kontexten för det lokala system kontot som standard. Om du vill bevilja åtkomst till **SourcePath** , ger du målnoden dator konto rätt behörigheter. Både **autentiseringsuppgiften** och **PSDSCRunAsCredential** ändrar den kontext som LCM använder för att få åtkomst till **SourcePath** . Du måste fortfarande bevilja åtkomst till det konto som ska användas för åtkomst till **SourcePath** .
 
 ```powershell
 Configuration FileResourceDemo
