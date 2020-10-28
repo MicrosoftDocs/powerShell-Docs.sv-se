@@ -1,14 +1,15 @@
 ---
 ms.date: 07/29/2020
-title: Nya språk funktioner i PowerShell 5,0
-ms.openlocfilehash: dada39c4121a810c7ce87a642f232934152104e5
-ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
+title: Nya språkfunktioner i PowerShell 5.0
+description: PowerShell 5,0 har lagt till möjligheten att definiera klasser och andra användardefinierade typer med hjälp av formell syntax och semantiska objekt som andra objektorienterade programmeringsspråk.
+ms.openlocfilehash: 31ff54ba6f2800a0680c1a2db3832ca97246973d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87410180"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663301"
 ---
-# <a name="new-language-features-in-powershell-50"></a>Nya språk funktioner i PowerShell 5,0
+# <a name="new-language-features-in-powershell-50"></a>Nya språkfunktioner i PowerShell 5.0
 
 PowerShell 5,0 har lagt till möjligheten att definiera klasser och andra användardefinierade typer med hjälp av formell syntax och semantiska objekt som andra objektorienterade programmeringsspråk. Målet är att göra det möjligt för utvecklare och IT-proffs att använda PowerShell för ett bredare utbud av användnings fall, förenkla utvecklingen av PowerShell-artefakter (till exempel DSC-resurser) och påskynda täckning av hanterings ytor.
 
@@ -55,13 +56,13 @@ enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-### <a name="import-dscresource"></a>Importera – Dscresource Keyword Supports
+### <a name="import-dscresource"></a>Import-DscResource
 
 `Import-DscResource` är nu ett faktiskt dynamiskt nyckelord. PowerShell parsar den angivna modulens rotdomän, söker efter klasser som innehåller attributet **dscresource Keyword Supports** .
 
 ### <a name="implementingassembly"></a>ImplementingAssembly
 
-Ett nytt fält, **ImplementingAssembly**, har lagts till i **ModuleInfo**. Den är inställd på den dynamiska sammansättning som skapats för en skript-modul om skriptet definierar klasser eller den inlästa sammansättningen för binära moduler. Den anges inte när **ModuleType** är **manifest**.
+Ett nytt fält, **ImplementingAssembly** , har lagts till i **ModuleInfo** . Den är inställd på den dynamiska sammansättning som skapats för en skript-modul om skriptet definierar klasser eller den inlästa sammansättningen för binära moduler. Den anges inte när **ModuleType** är **manifest** .
 
 Reflektion i fältet **ImplementingAssembly** identifierar resurser i en modul. Det innebär att du kan identifiera resurser som skrivits på antingen PowerShell eller andra hanterade språk.
 

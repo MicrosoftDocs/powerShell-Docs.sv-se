@@ -2,16 +2,17 @@
 ms.date: 09/06/2019
 keywords: powershell,cmdlet
 title: Nyheter i PowerShell 5,0 ISE
-ms.openlocfilehash: 1f5d32d583165ff8ead0a95b1c882386cf654326
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: I den här artikeln beskrivs nya och uppdaterade funktioner som har introducerats i version 5,0 av Windows PowerShell ISE (Integrated Scripting Environment).
+ms.openlocfilehash: 75d37d0dafe381c84898ac48343336cd525d2dd1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810528"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660824"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Vad är nytt i Windows PowerShell 5,0 ISE
 
-I det här avsnittet beskrivs nya och uppdaterade funktioner som har introducerats i version 5,0 av Windows PowerShell ISE (Integrated Scripting Environment).
+I den här artikeln beskrivs nya och uppdaterade funktioner som har introducerats i version 5,0 av Windows PowerShell ISE (Integrated Scripting Environment).
 
 > [!NOTE]
 > PowerShell ISE är inte längre vid utveckling av aktiva funktioner. Som en leverans komponent i Windows fortsätter den att vara officiellt tillgänglig för säkerhets-och högprioriterade service-korrigeringar.
@@ -54,7 +55,7 @@ Genom att använda kodfragment kan du snabbt sätta samman och skapa skript för
 
 **Vad fungerar inte på samma sätt?**
 
-Om du vill använda kodfragment i Windows PowerShell 3,0 eller senare klickar du på **Starta kodfragment**på **Redigera** -menyn eller trycker på <kbd>CTRL</kbd> + <kbd>J</kbd>.
+Om du vill använda kodfragment i Windows PowerShell 3,0 eller senare klickar du på **Starta kodfragment** på **Redigera** -menyn eller trycker på <kbd>CTRL</kbd> + <kbd>J</kbd>.
 
 ## <a name="add-on-tools"></a>Tilläggs verktyg
 
@@ -116,7 +117,7 @@ De separata kommando-och utdatafönstret som var tillgängliga i den första ver
 - Fel indikation
 - Fullständigt Unicode-stöd
 - <kbd>F1</kbd> Sammanhangs beroende hjälp
-- <kbd>CTRL</kbd> + <kbd>F1</kbd> kontext känsligt show-kommando
+- <kbd>CTRL</kbd> + <kbd>F1</kbd> Sammanhangs beroende Show-Command
 - Komplext skript och stöd från höger till vänster
 - Stöd för teckensnitt
 - Zoom
@@ -135,9 +136,9 @@ Windows PowerShell ISE 2,0 har separata kommando-och utmatnings fönster.
 
 > Tillagt i PowerShell 3,0
 
-Om du startar Windows PowerShell ISE från kommando raden (genom att skriva **powershell_ise. exe**) kan du lägga till följande nya kommando rads växlar.
+Om du startar Windows PowerShell ISE från kommando raden (genom att skriva **powershell_ise.exe** ) kan du lägga till följande nya kommando rads växlar.
 
-- `-NoProfile`: Startar Windows PowerShell ISE utan att köra`$profile`
+- `-NoProfile`: Startar Windows PowerShell ISE utan att köra `$profile`
 - `-Help`: Visar ett hjälp fönster
 - `-mta`: Startar Windows PowerShell ISE i flertrådade Apartment-läge. Standard åtgärds läget för Windows PowerShell ISE är ett entrådat Apartment-läge, eller `-sta` .
 
@@ -180,7 +181,7 @@ Om du trycker på <kbd>F1</kbd> när markören finns i en cmdlet, eller om du ha
 
 Innan du använder den här funktionen kan du hämta den senaste versionen av hjälp avsnitten för Windows PowerShell från Microsofts webbplats. Den enklaste metoden för att hämta hjälp avsnitten är att köra `Update-Help` cmdleten i konsol fönstret när du kör Windows PowerShell ISE som administratör.
 
-Du kan ändra var <kbd>F1</kbd> -nyckeln söker efter hjälp. På menyn **verktyg** / **alternativ** på fliken **allmänna inställningar** under **andra inställningar**, kan du ange eller avmarkera kryss rutan **Använd lokalt hjälp innehåll i stället för online-innehåll**. När det här alternativet är markerat söker klienten efter cmdlet-hjälpen i den nedladdade hjälpen i mappen moduler. Om kryss rutan är avmarkerad söker klienten efter hjälp online.
+Du kan ändra var <kbd>F1</kbd> -nyckeln söker efter hjälp. På menyn **verktyg** / **alternativ** på fliken **allmänna inställningar** under **andra inställningar** , kan du ange eller avmarkera kryss rutan **Använd lokalt hjälp innehåll i stället för online-innehåll** . När det här alternativet är markerat söker klienten efter cmdlet-hjälpen i den nedladdade hjälpen i mappen moduler. Om kryss rutan är avmarkerad söker klienten efter hjälp online.
 
 **Vilket värde medför den här ändringen?**
 
@@ -190,20 +191,20 @@ Sammanhangs beroende hjälp utan att lämna din aktuella cmdlet eller ditt skrip
 
 Om <kbd>du</kbd> trycker på F1 i tidigare versioner av Windows PowerShell ISE öppnat hjälp filen på den lokala datorn. I Windows PowerShell ISE 3,0 och senare öppnas ett fönster som innehåller hjälpen för cmdleten som går att söka efter och som kan konfigureras. Den här hjälp versionen är ny för Windows PowerShell ISE 3,0 och uppdaterings bar hjälp är ny för Windows PowerShell 3,0.
 
-## <a name="show-command-cmdlet"></a>Visa-kommando-cmdlet
+## <a name="show-command-cmdlet"></a>Show-Command cmdlet
 
 > Tillagt i PowerShell 3,0
 
 Med `Show-Command` cmdleten kan du skapa eller köra en cmdlet eller funktion genom att fylla i ett grafiskt formulär. I formuläret kan användarna arbeta med Windows PowerShell i en grafisk miljö.
-`Show-Command`aktiverar även avancerade skript för att skapa ett snabb Windows PowerShell-baserat GUI.
+`Show-Command` aktiverar även avancerade skript för att skapa ett snabb Windows PowerShell-baserat GUI.
 
 **Vilket värde medför den här ändringen?**
 
-Genom att använda `Show-Command` i dina Windows PowerShell-skript kan du ge användarna en grafisk miljö som de är bekanta med. `Show-Command`kan även hjälpa introduktions användare att lära sig Windows PowerShell.
+Genom att använda `Show-Command` i dina Windows PowerShell-skript kan du ge användarna en grafisk miljö som de är bekanta med. `Show-Command` kan även hjälpa introduktions användare att lära sig Windows PowerShell.
 
 **Vad fungerar inte på samma sätt?**
 
-`Show-Command`är New Windows PowerShell ISE 3,0.
+`Show-Command` är New Windows PowerShell ISE 3,0.
 
 ## <a name="see-also"></a>Se även
 

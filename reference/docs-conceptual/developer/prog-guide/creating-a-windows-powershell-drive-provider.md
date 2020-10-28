@@ -1,16 +1,14 @@
 ---
-title: Skapa en provider för Windows PowerShell-enheter | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- drive providers [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], drive provider
-- drives [PowerShell Programmer's Guide]
-ms.openlocfilehash: 2a2178714ed548986fe1a1a4de8828e8e0a938cb
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skapa en Windows PowerShell-enhetsprovider
+description: Skapa en Windows PowerShell-enhetsprovider
+ms.openlocfilehash: 639518fce27d941b7529b091364c5905c91a5c0c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787197"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663029"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Skapa en Windows PowerShell-enhetsprovider
 
@@ -130,7 +128,7 @@ När din Windows PowerShell-provider har registrerats med Windows PowerShell kan
    mydb     AccessDB     c:\ps\northwind.mdb
    ```
 
-4. Verifiera anslutningen. Eftersom anslutningen definieras som medlem i enheten kan du kontrol lera den med hjälp av cmdleten Get-PDDrive.
+4. Verifiera anslutningen. Eftersom anslutningen har definierats som medlem i enheten kan du kontrol lera den med hjälp av Get-PDDrive-cmdleten.
 
    > [!NOTE]
    > Användaren kan ännu inte interagera med providern som en enhet eftersom providern behöver container funktioner för interaktionen. Mer information finns i [skapa en Windows PowerShell container-Provider](./creating-a-windows-powershell-container-provider.md).

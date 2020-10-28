@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: Galleri, PowerShell, cmdlet, psgallery
-title: Funktionen FileList i galleriet
-ms.openlocfilehash: 5f372c943c73fa8e1014657394e40eaedef5d045
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+title: Använda funktionen FileList i galleriet
+description: Använda funktionen FileList i galleriet
+ms.openlocfilehash: 45e39cb3f2620228be9ad16c2bb697f23642195d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71329010"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662267"
 ---
 # <a name="filelist-feature-in-the-gallery"></a>Funktionen FileList i galleriet
 
@@ -18,6 +17,7 @@ Den här funktionen innehåller två delar: lista filerna i paketet och Visa fil
 
 ## <a name="where-to-find-filelist"></a>Var du hittar FileList
 
-På varje enskilt paket sida kommer du att kunna hitta FileList-avsnittet och en **Visa** -länk. Klicka på Visa och du hittar en fullständig lista över objekt som finns i paketet.
+På varje enskilt paket sida kommer du att kunna hitta FileList-avsnittet och en **Visa** -länk.
+Klicka på Visa och du hittar en fullständig lista över objekt som finns i paketet.
 
 Varje filtyp som stöds visas som en hyperlänk och om du klickar på den tas du till en ny sida med fil innehåll som visas i PowerShell-syntaxen. Om du klickar på rubriken eller versionen av paketet, som visas längst upp på skärmen, kommer du tillbaka till paket informations sidan.

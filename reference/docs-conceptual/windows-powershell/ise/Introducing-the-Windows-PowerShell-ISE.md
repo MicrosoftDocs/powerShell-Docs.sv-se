@@ -1,13 +1,13 @@
 ---
 ms.date: 08/14/2018
-keywords: powershell,cmdlet
 title: Introducerar Windows PowerShell ISE
-ms.openlocfilehash: 3e4471d0982ba4d7ef1a9d59906a9ff297f6f7cb
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: PowerShell ISE är ett värd program för Windows PowerShell som gör att du kan köra kommandon och skriva, testa och felsöka skript i ett enda Windows-baserat grafiskt användar gränssnitt.
+ms.openlocfilehash: ab2b11e5d81933b166d404c0b24c96aa73253895
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810220"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663605"
 ---
 # <a name="the-windows-powershell-ise"></a>Windows PowerShell ISE
 
@@ -35,9 +35,9 @@ Med Windows PowerShell ISE kan du anpassa vissa delar av utseendet. Det har ocks
 
 ## <a name="to-start-the-windows-powershell-ise"></a>Starta Windows PowerShell ISE
 
-Klicka på **Start**, Välj **Windows PowerShell**och klicka sedan på **Windows PowerShell ISE**.
+Klicka på **Start** , Välj **Windows PowerShell** och klicka sedan på **Windows PowerShell ISE** .
 Alternativt kan du skriva `powershell_ise.exe` in ett kommando gränssnitt eller i rutan Kör.
 
 ## <a name="to-get-help-in-the-windows-powershell-ise"></a>För att få hjälp i Windows PowerShell ISE
 
-På **Hjälp** -menyn klickar du på **Windows PowerShell-hjälpen**. Eller tryck på <kbd>F1</kbd>. Filen som öppnas beskriver Windows PowerShell ISE och Windows PowerShell, inklusive all hjälp som är tillgänglig från `Get-Help` cmdleten.
+På **Hjälp** -menyn klickar du på **Windows PowerShell-hjälpen** . Eller tryck på <kbd>F1</kbd>. Filen som öppnas beskriver Windows PowerShell ISE och Windows PowerShell, inklusive all hjälp som är tillgänglig från `Get-Help` cmdleten.

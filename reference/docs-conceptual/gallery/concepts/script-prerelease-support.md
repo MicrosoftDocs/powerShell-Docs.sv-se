@@ -1,14 +1,14 @@
 ---
 ms.date: 10/17/2017
-contributor: keithb
-keywords: Galleri, PowerShell, cmdlet, psget
 title: För hands versioner av skript
-ms.openlocfilehash: c0198c2f575d2c004949ccebab49d93ce54716be
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShellGet-modulen ger stöd för att tagga skript med versioner som är större än 1.0.0 som en för hands version med hjälp av semantisk versions hantering.
+ms.openlocfilehash: e9873a69148fd80553e566b31c7455a4ecaee5ce
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71329178"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661468"
+---
 ---
 # <a name="prerelease-versions-of-scripts"></a>För hands versioner av skript
 
@@ -56,12 +56,12 @@ När du publicerar till PowerShell-galleriet måste versionen av skriptet som pu
 
 ## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Hitta och hämta för hands versions paket med PowerShellGet-kommandon
 
-Hantering av för hands versioner av paket med PowerShellGet find-skript, install-skript, Update-script och Save-script-kommandon kräver att flaggan-AllowPrerelease läggs till. Om-AllowPrerelease har angetts inkluderas för hands paketen om de finns. Om-AllowPrerelease-flaggan inte anges visas inte för hands versions paket.
+Hantering av för hands versioner av paket med PowerShellGet find-skript, install-skript, Update-script och Save-Script-kommandon kräver att flaggan-AllowPrerelease läggs till. Om-AllowPrerelease har angetts inkluderas för hands paketen om de finns. Om-AllowPrerelease-flaggan inte anges visas inte för hands versions paket.
 
 De enda undantagen till detta i PowerShellGet-skript kommandon är get-InstalledScript och vissa fall med Uninstall-script.
 
-- Get-InstalledScript visar alltid för hands versions informationen automatiskt i versions strängen om den finns.
-- Uninstall-skriptet avinstallerar som standard den senaste versionen av ett skript om **ingen version** har angetts. Beteendet har inte ändrats. Men om en för hands version anges med `-RequiredVersion`, `-AllowPrerelease` krävs det.
+- Get-InstalledScript alltid automatiskt Visa för hands versions informationen i versions strängen om den finns.
+- Uninstall-Script kommer som standard att avinstallera den senaste versionen av ett skript om **ingen version** har angetts. Beteendet har inte ändrats. Men om en för hands version anges med `-RequiredVersion` , krävs det `-AllowPrerelease` .
 
 ## <a name="examples"></a>Exempel
 
@@ -106,7 +106,7 @@ Version         Name                                Repository           Descrip
 # If -RequiredVersion is not specified, all installed scripts will be displayed by Get-InstalledScript
 ```
 
-Uninstall-skript tar bort den aktuella versionen av ett skript när-RequiredVersion inte anges.
+Uninstall-Script tar bort den aktuella versionen av ett skript när-RequiredVersion inte anges.
 IF-RequiredVersion anges, och är en för hands version,-AllowPrerelease måste läggas till i kommandot.
 
 ``` powershell

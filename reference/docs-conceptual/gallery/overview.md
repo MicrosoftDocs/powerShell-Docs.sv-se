@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: Galleri, PowerShell, cmdlet, psgallery, psget
 title: PowerShell-galleriet
-ms.openlocfilehash: e489d2dd4db087b53eb07d2a8793c8f586c9b210
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell-galleriet är den centrala lagrings platsen för PowerShell-moduler, skript och DSC-resurser.
+ms.openlocfilehash: 1aa3d351e71211259cac4e6d6f0ebd68c0df6ff1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500568"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662112"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell-galleriet
 
@@ -27,7 +26,7 @@ Se [Komma igång](getting-started.md) för mer information om hur du använder P
 
 ## <a name="supported-operating-systems"></a>Operativsystem som stöds
 
-För **PowerShellGet**-modulen krävs **PowerShell version 3.0 eller senare**.
+För **PowerShellGet** -modulen krävs **PowerShell version 3.0 eller senare** .
 
 **PowerShellGet** kräver .NET Framework 4,5 eller senare. Du kan installera .NET Framework 4.5 eller senare [här](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 

@@ -1,14 +1,13 @@
 ---
 ms.date: 09/05/2018
-contributor: JKeithB
-keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Kontoinställningar för PowerShell-galleriet
-ms.openlocfilehash: b71c7f0658c24ec2eeddb050e48b777a37c11917
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: I den här artikeln beskrivs inställningarna för din konto profil i PowerShell-galleriet
+ms.openlocfilehash: ab0e09aae6fea26ac6d85a35e30c8d06f31b121a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771795"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662752"
 ---
 # <a name="powershell-gallery-account-settings"></a>Kontoinställningar för PowerShell-galleriet
 
@@ -39,7 +38,7 @@ PowerShell-galleriet innehåller följande meddelande alternativ:
 ![Välj alternativ för e-postadress](media/managing-account/PSGallery_AccountEmailOptions.png)
 
 Som anges på sidan kan inte kritiska meddelanden från PowerShell-galleriet inaktive ras.
-Dessa omfattar:
+Exempel:
 
 - Säkerhets meddelanden
 - Meddelanden om konto hantering från PowerShell-galleriet administratörer
@@ -51,22 +50,22 @@ Om du vill ändra inloggnings kontot måste du vara inloggad med det aktuella ko
 
 ![Ändra inställningar för inloggnings konto](media/managing-account/PSGallery_LoginAccountSettings.png)
 
-1. Klicka på **Ändra konto**. Ett popup-fönster förklarar att ändringar av inloggnings kontot gäller för all användning av kontot i PowerShell-galleriet. Granska informationen och klicka sedan på **OK** för att fortsätta.
+1. Klicka på **Ändra konto** . Ett popup-fönster förklarar att ändringar av inloggnings kontot gäller för all användning av kontot i PowerShell-galleriet. Granska informationen och klicka sedan på **OK** för att fortsätta.
 
    ![Ändrings bekräftelse – OK/Avbryt](media/managing-account/PSGallery_LoginAccountChange-1.png)
 
-2. Du uppmanas sedan att logga in med det _nya kontot_.
+2. Du uppmanas sedan att logga in med det _nya kontot_ .
 
    ![Logga in med det nya kontot](media/managing-account/PSGallery_LoginAccountChange-2.png)
 
-3. När du klickar på **Nästa**visas ett meddelande om att du har loggat in med det aktuella kontot.
-   Klicka på **Logga ut och logga in med ett annat konto**.
+3. När du klickar på **Nästa** visas ett meddelande om att du har loggat in med det aktuella kontot.
+   Klicka på **Logga ut och logga in med ett annat konto** .
 
    ![Logga ut och logga in med ett annat konto](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. Ange lösen ordet för det nya kontot. När du har angett lösen ordet kommer du tillbaka till sidan konto inställningar som visar att inloggnings kontot har uppdaterats.
 
-## <a name="enable-two-factor-authentication-2fa"></a>Aktivera tvåfaktorautentisering (2FA)
+## <a name="enable-two-factor-authentication-2fa"></a>Aktivera Two-Factor autentisering (2FA)
 
 Tvåfaktorautentisering rekommenderas för alla användare som publicerar manuellt till PowerShell-galleriet. För att möjliggöra tvåfaktorautentisering måste inloggnings kontot ha minst två typer av autentisering registrerade. Ett är ett lösen ord och de andra formulären kan vara:
 

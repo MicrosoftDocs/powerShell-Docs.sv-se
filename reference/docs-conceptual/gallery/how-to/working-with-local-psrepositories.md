@@ -1,14 +1,13 @@
 ---
 ms.date: 11/06/2018
-contributor: JKeithB
-keywords: Galleri, PowerShell, cmdlet, psgallery, psget
 title: Arbeta med lokala PSRepositories
-ms.openlocfilehash: 421b73c141c7551224e2298f51464a19bc736d0e
-ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
+description: PowerShellGet-modulen stöder andra databaser än PowerShell-galleriet. Den här artikeln beskriver hur du konfigurerar en lokal PowerShell-lagringsplats.
+ms.openlocfilehash: 24a2fd23124b3897952d64a347d103d9ee10248f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85837587"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662357"
 ---
 # <a name="working-with-private-powershellget-repositories"></a>Arbeta med privata PowerShellGet-lagringsplatser
 
@@ -62,7 +61,7 @@ Se till att användarna har behörighet att komma åt fil resursen för en fil r
 ## <a name="registering-a-local-repository"></a>Registrera en lokal lagrings plats
 
 Innan du kan använda en lagrings plats måste du registrera den med hjälp av `Register-PSRepository` kommandot.
-I exemplen nedan är **InstallationPolicy** inställt på *betrott*, enligt det antagande att du litar på din egen lagrings plats.
+I exemplen nedan är **InstallationPolicy** inställt på *betrott* , enligt det antagande att du litar på din egen lagrings plats.
 
 ```powershell
 # Register a NuGet-based server
@@ -72,7 +71,7 @@ Register-PSRepository -Name LocalPSRepo -SourceLocation http://MyLocalNuget/Api/
 Register-PSRepository -Name LocalPSRepo -SourceLocation '\\localhost\PSRepoLocal\' -ScriptSourceLocation '\\localhost\PSRepoLocal\' -InstallationPolicy Trusted
 ```
 
-Anteckna skillnaden mellan de två kommandona som hanterar **ScriptSourceLocation**. För en fil resursbaserade databaser måste **SourceLocation** och **ScriptSourceLocation** matcha. För en webbaserad lagrings plats måste de vara olika, så i det här exemplet läggs ett efterföljande "/" till i **SourceLocation**.
+Anteckna skillnaden mellan de två kommandona som hanterar **ScriptSourceLocation** . För en fil resursbaserade databaser måste **SourceLocation** och **ScriptSourceLocation** matcha. För en webbaserad lagrings plats måste de vara olika, så i det här exemplet läggs ett efterföljande "/" till i **SourceLocation** .
 
 Om du vill att det nyligen skapade PSRepository ska vara standard lagrings platsen måste du avregistrera alla andra PSRepositories. Exempel:
 

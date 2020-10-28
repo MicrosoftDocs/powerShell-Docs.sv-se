@@ -1,12 +1,14 @@
 ---
-title: Lägga till parameterinformation
 ms.date: 09/12/2016
-ms.openlocfilehash: 15d0194a1d5449c65977703faf245e449d75d176
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Lägga till parameterinformation
+description: Lägga till parameterinformation
+ms.openlocfilehash: 8f4fc46ef256a77b058df4ba506124f80732cb39
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893398"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663055"
 ---
 # <a name="how-to-add-parameter-information"></a>Lägga till parameterinformation
 
@@ -165,7 +167,7 @@ Här är några saker att komma ihåg när du lägger till parametrar.
 
 Standardvärdet för parametern är det värde som används om parametern inte anges på kommando raden. Observera att standardvärdet är valfritt och att det inte behövs för vissa parametrar, till exempel obligatoriska parametrar. Du bör dock ange ett standardvärde för de flesta valfria parametrar.
 
-Standardvärdet hjälper användaren att förstå effekterna av att inte använda-parametern. Beskriv standardvärdet särskilt, till exempel "aktuell katalog" eller "PowerShell installations katalog ( `$PSHOME` )" för en valfri sökväg. Du kan också skriva en mening som beskriver standard, till exempel följande mening som används för parametern **Passthru** : "om Passthru inte har angetts, skickar inte cmdleten objekt nedåt i pipelinen." Eftersom värdet visas mittemot **standardvärdet**för fält namn, behöver du inte heller ta med termen "standardvärde" i posten.
+Standardvärdet hjälper användaren att förstå effekterna av att inte använda-parametern. Beskriv standardvärdet särskilt, till exempel "aktuell katalog" eller "PowerShell installations katalog ( `$PSHOME` )" för en valfri sökväg. Du kan också skriva en mening som beskriver standard, till exempel följande mening som används för parametern **Passthru** : "om Passthru inte har angetts, skickar inte cmdleten objekt nedåt i pipelinen." Eftersom värdet visas mittemot **standardvärdet** för fält namn, behöver du inte heller ta med termen "standardvärde" i posten.
 
 Standardvärdet för parametern visas inte i alla vyer i hjälp avsnittet för cmdleten. Den visas dock i en tabell (tillsammans med parametervärdena) efter parameter beskrivningen när användaren ställer en **fullständig** ( `Get-Help <cmdletname> -full` ) eller **parameter** ( `Get-Help
 <cmdletname> -parameter` ) vy av ämnet.

@@ -1,14 +1,13 @@
 ---
 ms.date: 06/10/2020
-contributor: manikb
-keywords: Galleri, PowerShell, cmdlet, psget
 title: Moduler med kompatibla PowerShell-versioner
-ms.openlocfilehash: 522493714916e9fd21f67a6e7bc2cfb165041807
-ms.sourcegitcommit: 4a283fe5419f47102e6c1de7060880a934842ee9
+description: Den här artikeln förklarar hur PowerShellGet-cmdlets stöder Desktop-och Core-versioner av PowerShell-moduler.
+ms.openlocfilehash: 530101590cf83a1f43cbb9ce32d07a7e0ec79253
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84671418"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661485"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Moduler med kompatibla PowerShell-versioner
 
@@ -77,7 +76,7 @@ Detta beteende gäller endast för Windows. Utanför det här scenariot används
 
 ## <a name="finding-compatible-modules"></a>Söker efter kompatibla moduler
 
-PowerShell-galleriet användare kan hitta listan över moduler som stöds på en angiven PowerShell-version med hjälp av Taggar **PSEdition_Desktop** och **PSEdition_Core**.
+PowerShell-galleriet användare kan hitta listan över moduler som stöds på en angiven PowerShell-version med hjälp av Taggar **PSEdition_Desktop** och **PSEdition_Core** .
 
 Moduler utan **PSEdition_Desktop** -och **PSEdition_Core** -Taggar anses fungera bra på PowerShell Desktop-versioner.
 
@@ -93,7 +92,7 @@ Find-Module -Tag PSEdition_Core
 
 -Modulen författare kan publicera en enskild modul som riktar sig till antingen eller båda PowerShell-versionerna (Desktop och Core).
 
-En enda modul kan fungera både i Desktop-och Core-versioner, i den här modulen måste författaren lägga till nödvändig logik i antingen RootModule eller i modulens manifest med `$PSEdition` variabeln. Moduler kan ha två uppsättningar med kompilerade dll: er riktade till både **CoreCLR** och **FullCLR**. Här är förpacknings alternativen med logik för att läsa in rätt DLL-filer.
+En enda modul kan fungera både i Desktop-och Core-versioner, i den här modulen måste författaren lägga till nödvändig logik i antingen RootModule eller i modulens manifest med `$PSEdition` variabeln. Moduler kan ha två uppsättningar med kompilerade dll: er riktade till både **CoreCLR** och **FullCLR** . Här är förpacknings alternativen med logik för att läsa in rätt DLL-filer.
 
 ### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Alternativ 1: paketera en modul för att rikta in dig på flera versioner och flera utgåvor av PowerShell
 
@@ -123,13 +122,13 @@ Fil innehåll `PSScriptAnalyzer.psd1`
 @{
 
 # Author of this module
-Author = 'Microsoft Corporation'
+Author = 'Microsoft Corporation'
 
 # Script module or binary module file associated with this manifest.
-RootModule = 'PSScriptAnalyzer.psm1'
+RootModule = 'PSScriptAnalyzer.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.6.1'
+ModuleVersion = '1.6.1'
 
 # ---
 }
@@ -143,33 +142,33 @@ Fil innehåll `PSScriptAnalyzer.psm1` :
 #
 # Script module for module 'PSScriptAnalyzer'
 #
-Set-StrictMode -Version Latest
+Set-StrictMode -Version Latest
 
 # Set up some helper variables to make it easier to work with the module
-$PSModule = $ExecutionContext.SessionState.Module
-$PSModuleRoot = $PSModule.ModuleBase
+$PSModule = $ExecutionContext.SessionState.Module
+$PSModuleRoot = $PSModule.ModuleBase
 
 # Import the appropriate nested binary module based on the current PowerShell version
-$binaryModuleRoot = $PSModuleRoot
+$binaryModuleRoot = $PSModuleRoot
 
 
-if (($PSVersionTable.Keys -contains "PSEdition") -and ($PSVersionTable.PSEdition -ne 'Desktop')) {
-    $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'coreclr'
+if (($PSVersionTable.Keys -contains "PSEdition") -and ($PSVersionTable.PSEdition -ne 'Desktop')) {
+    $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'coreclr'
 }
 else
 {
-    if ($PSVersionTable.PSVersion -lt [Version]'5.0')
+    if ($PSVersionTable.PSVersion -lt [Version]'5.0')
     {
-        $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'PSv3'
-    }
+        $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'PSv3'
+    }
 }
 
-$binaryModulePath = Join-Path -Path $binaryModuleRoot -ChildPath 'Microsoft.Windows.PowerShell.ScriptAnalyzer.dll'
-$binaryModule = Import-Module -Name $binaryModulePath -PassThru
+$binaryModulePath = Join-Path -Path $binaryModuleRoot -ChildPath 'Microsoft.Windows.PowerShell.ScriptAnalyzer.dll'
+$binaryModule = Import-Module -Name $binaryModulePath -PassThru
 
 # When the module is unloaded, remove the nested binary module that was loaded with it
-$PSModule.OnRemove = {
-    Remove-Module -ModuleInfo $binaryModule
+$PSModule.OnRemove = {
+    Remove-Module -ModuleInfo $binaryModule
 }
 ```
 

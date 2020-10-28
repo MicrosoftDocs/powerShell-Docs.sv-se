@@ -1,17 +1,17 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: ISEFile-objektet
-ms.openlocfilehash: 1069e46aa586b8df2050129194a909b90f77b745
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Ett ISEFile-objekt representerar en fil i Windows PowerShell ISE.
+ms.openlocfilehash: 0de19c45bde7e5629d5721635150d3b0915aaa7d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811228"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662140"
 ---
 # <a name="the-isefile-object"></a>ISEFile-objektet
 
-Ett **ISEFile** -objekt representerar en fil i Windows POWERSHELL® Ise (Integrated Scripting Environment). Det är en instans av klassen **Microsoft. PowerShell. Host. ISE. ISEFile** . I det här avsnittet visas dess medlems metoder och medlems egenskaper. `$psISE.CurrentFile`Filerna och filerna i samlingen filer på en PowerShell-flik är alla instanser av klassen * * * * Microsoft. PowerShell. Host. ISE. ISEFile * *.
+Ett **ISEFile** -objekt representerar en fil i Windows PowerShell &reg; Ise (Integrated Scripting Environment). Det är en instans av klassen **Microsoft. PowerShell. Host. ISE. ISEFile** . I det här avsnittet visas dess medlems metoder och medlems egenskaper. `$psISE.CurrentFile`Filerna och filerna i samlingen filer på en PowerShell-flik är alla instanser av klassen * * * * Microsoft. PowerShell. Host. ISE. ISEFile * *.
 
 ## <a name="methods"></a>Metoder
 
@@ -21,11 +21,11 @@ Stöds i Windows PowerShell ISE 2,0 och senare.
 
 Sparar filen på disk.
 
-** \[ saveEncoding \] ** – valfri [system. text. Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) en valfri tecken kodnings parameter som ska användas för den sparade filen. Standardvärdet är **utf8**.
+**\[ saveEncoding \]** – valfri [system. text. Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) en valfri tecken kodnings parameter som ska användas för den sparade filen. Standardvärdet är **utf8** .
 
 ### <a name="exceptions"></a>Undantag
 
-- **System. io. IOException**: det gick inte att spara filen.
+- **System. io. IOException** : det gick inte att spara filen.
 
 ```powershell
 # Save the file using the default encoding (UTF8)
@@ -47,13 +47,13 @@ Sparar filen med det angivna fil namnet och kodningen.
 
 **filename** – sträng namnet som ska användas för att spara filen.
 
-** \[ saveEncoding \] ** – valfri [system. text. Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) en valfri tecken kodnings parameter som ska användas för den sparade filen. Standardvärdet är **utf8**.
+**\[ saveEncoding \]** – valfri [system. text. Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) en valfri tecken kodnings parameter som ska användas för den sparade filen. Standardvärdet är **utf8** .
 
 ### <a name="exceptions"></a>Undantag
 
-- **System. ArgumentNullException**: **fil namns** parametern är null.
-- **System. ArgumentException**: **fil namns** parametern är tom.
-- **System. io. IOException**: det gick inte att spara filen.
+- **System. ArgumentNullException** : **fil namns** parametern är null.
+- **System. ArgumentException** : **fil namns** parametern är tom.
+- **System. io. IOException** : det gick inte att spara filen.
 
 ```powershell
 # Save the file with a full path and name.

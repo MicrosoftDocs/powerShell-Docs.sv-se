@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: WMF, powershell, inställning
 title: Nya och uppdaterade cmdletar
-ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Windows PowerShell 5,1 innehåller många nya eller uppdaterade cmdletar.
+ms.openlocfilehash: bdfbe5a263864a172aefb0aa5731f59b95ab43ca
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810514"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663214"
 ---
 # <a name="new-and-updated-cmdlets"></a>Nya och uppdaterade cmdletar
 
@@ -30,7 +30,7 @@ Dessa genererar och validerar Windows Catalog-filer.
 
 ## <a name="clipboard-cmdlets"></a>Urklipps-cmdletar
 
-`Get-Clipboard`och `Set-Clipboard` gör det enklare för dig att överföra innehåll till och från en Windows PowerShell-session. Urklipps-cmdletarna stöder bilder, ljudfiler, fil listor och text.
+`Get-Clipboard` och `Set-Clipboard` gör det enklare för dig att överföra innehåll till och från en Windows PowerShell-session. Urklipps-cmdletarna stöder bilder, ljudfiler, fil listor och text.
 
 Mer information finns i:
 
@@ -41,7 +41,7 @@ Mer information finns i:
 
 Cmdletarna för kryptografisk meddelandesyntax stöder kryptering och dekryptering av innehåll med hjälp av IETFs standardformat för kryptografiskt skydd av meddelanden som dokumenteras av [RFC5652](https://tools.ietf.org/html/rfc5652.html).
 
-Standardvärdet för CMS-kryptering implementerar kryptering med offentliga nycklar, där nyckeln som används för att kryptera innehåll (den *offentliga nyckeln*) och den nyckel som används för att dekryptera innehållet (den *privata nyckeln*) är separata.
+Standardvärdet för CMS-kryptering implementerar kryptering med offentliga nycklar, där nyckeln som används för att kryptera innehåll (den *offentliga nyckeln* ) och den nyckel som används för att dekryptera innehållet (den *privata nyckeln* ) är separata.
 
 Din offentliga nyckel kan delas mycket och är inte känslig för data. Alla innehåll som krypteras med den offentliga nyckeln kan bara dekrypteras med den privata nyckeln. Mer information finns i [kryptering med offentliga nycklar](https://en.wikipedia.org/wiki/Public-key_cryptography).
 
@@ -59,7 +59,7 @@ Get-ChildItem Cert:\CurrentUser -DocumentEncryptionCert -Recurse
 
 ## <a name="extract-and-parse-structured-objects-from-string-content"></a>Extrahera och parsa strukturerade objekt från sträng innehåll
 
-### <a name="convertfrom-string"></a>ConvertFrom-sträng
+### <a name="convertfrom-string"></a>ConvertFrom-String
 
 Den nya `ConvertFrom-String` cmdleten stöder två lägen:
 
@@ -74,14 +74,14 @@ Mer information finns i [ConvertFrom-String](/powershell/module/Microsoft.PowerS
 
 ### <a name="convert-string"></a>Convert-String
 
-`Convert-String`gör att du kan ange före och efter exempel på hur du vill att texten ska se ut. -Cmdleten formaterar texten automatiskt.
+`Convert-String` gör att du kan ange före och efter exempel på hur du vill att texten ska se ut. -Cmdleten formaterar texten automatiskt.
 
 Mer information finns i [Convert-String](/powershell/module/Microsoft.PowerShell.Utility/Convert-String).
 
 ## <a name="updates-to-fileinfo-object"></a>Uppdateringar till FileInfo-objektet
 
 Fil versions information kan vara missvisande, särskilt i de fall där filen har korrigerats. WMF 5,0 lägger till nya **FileVersionRaw** -och **ProductVersionRaw** -skript egenskaper till **fileinfo** -objekt.
-Här följer de egenskaper som visas för PowerShell. exe (förutsatt att $pid är PowerShell-processens ID):
+Här följer de egenskaper som visas för powershell.exe (förutsatt att $pid är PowerShell-processens ID):
 
 ```powershell
 Get-Process -Id $pid -FileVersionInfo | Format-List *version*
@@ -96,13 +96,13 @@ ProductVersion    : 10.0.17763.1
 
 ## <a name="format-hex"></a>Format-Hex
 
-`Format-Hex`gör att du kan visa text eller binära data i hexadecimalt format.
+`Format-Hex` gör att du kan visa text eller binära data i hexadecimalt format.
 
 Mer information finns i [format-hex](/powershell/module/microsoft.powershell.utility/format-hex).
 
-## <a name="get-childitem-has--depth-parameter"></a>Get-ChildItem har-djupgående-parameter
+## <a name="get-childitem-has--depth-parameter"></a>Get-ChildItem med parametern-djup
 
-`Get-ChildItem`har nu en **djup** parameter som används med **rekursivt** för att begränsa den rekursion:
+`Get-ChildItem` har nu en **djup** parameter som används med **rekursivt** för att begränsa den rekursion:
 
 ## <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Moduler har stöd för att deklarera versions intervall (1. * osv.)
 
@@ -138,7 +138,7 @@ e19d6ea5-3cc2-4db9-8095-0cdaed5a703d
 
 ## <a name="nonewline-parameter"></a>NoNewLine-parameter
 
-`Out-File`, `Add-Content` och `Set-Content` har nu en ny **NoNewline** -växel som utelämnar en ny rad efter utdata. Ett exempel:
+`Out-File`, `Add-Content` och `Set-Content` har nu en ny **NoNewline** -växel som utelämnar en ny rad efter utdata. Exempel:
 
 ```powershell
 "This is " | Out-File -FilePath Example.txt -NoNewline
@@ -172,7 +172,7 @@ Objekt-cmdleten och några relaterade cmdlets har utökats för att stödja symb
 
 ### <a name="symbolic-link-files"></a>Symboliska länkade filer
 
-I det här exemplet skapar vi en ny symbolisk länk fil med namnet MySymLinkFile. txt i C:\Temp som länkar till $pshome \profile.ps1. Alla tre exempel ger samma resultat.
+I det här exemplet skapar vi en ny symbolisk länk fil med namnet MySymLinkFile.txt i C:\Temp som länkar till $pshome\profile.ps1. Alla tre exempel ger samma resultat.
 
 ```powershell
 New-Item -ItemType SymbolicLink -Path C:\Temp -Name MySymLinkFile.txt -Value $pshome\profile.ps1
@@ -208,7 +208,7 @@ New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 
 ### <a name="get-childitem"></a>Get-ChildItem
 
-`Get-ChildItem`visar nu en "l" i egenskapen **mode** för att ange en symbolisk länk fil eller katalog.
+`Get-ChildItem` visar nu en "l" i egenskapen **mode** för att ange en symbolisk länk fil eller katalog.
 
 ```powershell
 Get-ChildItem C:\Temp | sort LastWriteTime -Descending
@@ -225,7 +225,7 @@ d----l 6/13/2014 3:22 PM        MySymLinkDir
 d----l 6/13/2014 3:24 PM        MyJunctionDir
 ```
 
-### <a name="remove-item"></a>Ta bort objekt
+### <a name="remove-item"></a>Remove-Item
 
 Borttagning av symboliska länkar fungerar som att ta bort alla andra objekt typer.
 

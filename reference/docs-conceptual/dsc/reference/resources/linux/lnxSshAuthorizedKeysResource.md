@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC för Linux nxSshAuthorizedKeys-resurs
-ms.openlocfilehash: 3a62bb7a3dbdebae4f0ca6084db1624c1b76ab1f
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC för Linux nxSshAuthorizedKeys-resurs
+ms.openlocfilehash: 881e94aa583a745cdac7f01b6e445352ef4ca937
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464476"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662761"
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>DSC för Linux nxSshAuthorizedKeys-resurs
 
@@ -31,8 +32,8 @@ nxAuthorizedKeys <string> #ResourceName
 |Egenskap |Beskrivning |
 |---|---|
 |Kommentar |En unik kommentar för nyckeln. Detta används för att identifiera nycklar unikt. |
-|Användarnamn |Användar namnet för hantering av SSH-auktoriserade nycklar för. Om den inte är definierad är standard användaren **roten**. |
-|Nyckel |Nyckelns innehåll. Detta **är obligatoriskt om alternativet** är angivet som **tillgängligt**.|
+|Användarnamn |Användar namnet för hantering av SSH-auktoriserade nycklar för. Om den inte är definierad är standard användaren **roten** . |
+|Nyckel |Nyckelns innehåll. Detta **är obligatoriskt om alternativet** är angivet som **tillgängligt** .|
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 

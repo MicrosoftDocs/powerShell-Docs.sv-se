@@ -1,12 +1,14 @@
 ---
-title: Lägga till relaterade länkar i ett cmdlet-hjälpavsnitt
 ms.date: 09/12/2016
-ms.openlocfilehash: 7557b3856d8470434070dd286cd7e30c9ba015c5
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Lägga till relaterade länkar i ett cmdlet-hjälpavsnitt
+description: Lägga till relaterade länkar i ett cmdlet-hjälpavsnitt
+ms.openlocfilehash: 7f1baefea69310bdf835c52461f8d3f49c4d94e8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893381"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661995"
 ---
 # <a name="how-to-add-related-links-to-a-cmdlet-help-topic"></a>Lägga till relaterade länkar i ett cmdlet-hjälpavsnitt
 

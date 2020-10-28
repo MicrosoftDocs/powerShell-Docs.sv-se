@@ -1,12 +1,14 @@
 ---
-title: GetProc05 (C#) exempel kod | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 497b1a3cb3360d0b6b30f33a26a15d78ab6fb672
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProc05 (C#) – kodexempel
+description: GetProc05 (C#) – kodexempel
+ms.openlocfilehash: a030764af240b5f9b1b17d903ed72d420ea16126
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771863"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661834"
 ---
 # <a name="getproc05-c-sample-code"></a>GetProc05 (C#) – kodexempel
 

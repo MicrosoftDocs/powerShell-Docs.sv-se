@@ -1,12 +1,14 @@
 ---
-title: Provider-cmdletar | Microsoft Docs
 ms.date: 09/12/2016
-ms.openlocfilehash: 24838eeec8e2d59ff3cc549c8659d5afb1c8f92f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Cmdlets för providers
+description: Cmdlets för providers
+ms.openlocfilehash: 522dacfe4d7190c12ea0de148fe83bf6b5fed10f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771693"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662904"
 ---
 # <a name="provider-cmdlets"></a>Cmdlets för providers
 

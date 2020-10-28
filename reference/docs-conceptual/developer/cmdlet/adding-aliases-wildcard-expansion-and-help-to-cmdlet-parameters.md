@@ -1,24 +1,26 @@
 ---
-title: Lägga till alias, expansion med jokertecken och hjälp till cmdlet-parametrar | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 244c50c73972c2760e0029c7fa4f4b5764b066da
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Lägga till alias, jokerteckenexpansion och hjälp i cmdlet-parametrar
+description: Lägga till alias, jokerteckenexpansion och hjälp i cmdlet-parametrar
+ms.openlocfilehash: f0f07796370b4613b1ca0ad17b16c6598bfa438d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774974"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660633"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Lägga till alias, jokerteckenexpansion och hjälp i cmdlet-parametrar
 
-I det här avsnittet beskrivs hur du lägger till alias, expansion av jokertecken och hjälp meddelanden till parametrarna i cmdleten Stop-proc (beskrivs i [skapa en cmdlet som ändrar systemet](./creating-a-cmdlet-that-modifies-the-system.md)).
+I det här avsnittet beskrivs hur du lägger till alias, utökning av jokertecken och hjälp meddelanden till parametrarna i Stop-Proc-cmdleten (beskrivs i [skapa en cmdlet som ändrar systemet](./creating-a-cmdlet-that-modifies-the-system.md)).
 
-Den här cmdleten Stop-proc försöker stoppa processer som hämtas med hjälp av cmdleten Get-proc (beskrivs i [skapa din första cmdlet](./creating-a-cmdlet-without-parameters.md)).
+Den här Stop-Proc cmdleten försöker stoppa processer som hämtas med hjälp av Get-Proc-cmdlet (beskrivs i [skapa din första cmdlet](./creating-a-cmdlet-without-parameters.md)).
 
 ## <a name="defining-the-cmdlet"></a>Definiera cmdleten
 
 Det första steget i att skapa en cmdlet namnger alltid cmdleten och deklarerar den .NET-klass som implementerar cmdleten. Eftersom du skriver en cmdlet för att ändra systemet bör den namnges. Eftersom denna cmdlet stoppar system processer använder den verbet "Stop", som definieras av klassen [system. Management. Automation. Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) , med Substantiv "proc" för att indikera processen. Mer information om godkända cmdlet-verb finns i [cmdlet-verb](./approved-verbs-for-windows-powershell-commands.md).
 
-Följande kod är klass definitionen för den här Stop-proc-cmdleten.
+Följande kod är klass definitionen för den här Stop-Proc cmdleten.
 
 ```csharp
 [Cmdlet(VerbsLifecycle.Stop, "proc",
@@ -63,7 +65,7 @@ Förutom att använda attributet [system. Management. Automation. Aliasattribute
 
 Med Windows PowerShell kan du skapa hjälp för cmdlet-parametrar. Gör detta för alla parametrar som används för system ändringar och feedback från användare. För varje parameter som stöd för hjälp kan du ange `HelpMessage` nyckelordet Attribute i deklarationen [system. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) -attribut. Det här nyckelordet definierar texten som ska visas för användaren för hjälp med att använda-parametern. Du kan också ange `HelpMessageBaseName` nyckelordet för att identifiera bas namnet för en resurs som ska användas för meddelandet. Om du anger det här nyckelordet måste du också ange ett `HelpMessageResourceId` nyckelord för att ange resurs-ID.
 
-Följande kod från denna Stop-proc-cmdlet definierar `HelpMessage` attributets nyckelord för `Name` parametern.
+Följande kod från denna Stop-Proc-cmdlet definierar `HelpMessage` attributets nyckelord för `Name` parametern.
 
 ```csharp
 /// <summary>
@@ -135,9 +137,9 @@ När du har implementerat en cmdlet måste den vara registrerad med Windows Powe
 
 ## <a name="testing-the-cmdlet"></a>Testa cmdleten
 
-När din cmdlet har registrerats med Windows PowerShell kan du testa den genom att köra den på kommando raden. Nu ska vi testa samplet Stop-proc-cmdlet. Mer information om hur du använder cmdlets från kommando raden finns i [komma igång med Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+När din cmdlet har registrerats med Windows PowerShell kan du testa den genom att köra den på kommando raden. Nu ska vi testa exemplet Stop-Proc cmdlet. Mer information om hur du använder cmdlets från kommando raden finns i [komma igång med Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
-- Starta Windows PowerShell och använd Stop-PROC för att stoppa en process med ProcessName-aliaset för `Name` parametern.
+- Starta Windows PowerShell och Använd Stop-Proc för att stoppa en process med hjälp av ProcessName-aliaset för `Name` parametern.
 
     ```powershell
     PS> stop-proc -ProcessName notepad

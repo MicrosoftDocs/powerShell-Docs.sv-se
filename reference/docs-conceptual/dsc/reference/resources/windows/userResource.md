@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC-användar resurs
-ms.openlocfilehash: 340fce45a2074930ae14ca1aaeef7eff78531916
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC-användar resurs
+ms.openlocfilehash: 97e68addab7c6048b33a158473f7292f2abadb78
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463779"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661545"
 ---
 # <a name="dsc-user-resource"></a>DSC-användar resurs
 
@@ -39,7 +40,7 @@ User [string] #ResourceName
 |Egenskap |Beskrivning |
 |---|---|
 |Användarnamn |Anger det konto namn som du vill säkerställa ett speciellt tillstånd för. |
-|Description |Anger beskrivningen som du vill använda för användar kontot. |
+|Beskrivning |Anger beskrivningen som du vill använda för användar kontot. |
 |Inaktiverad |Anger om kontot är aktiverat. Ange den här egenskapen till `$true` för att säkerställa att det här kontot är inaktiverat och ange det för att `$false` säkerställa att det är aktiverat. |
 |FullName |Representerar en sträng med det fullständiga namn som du vill använda för användar kontot. |
 |Lösenord |Anger det lösen ord som du vill använda för det här kontot. |

@@ -1,21 +1,19 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Filtrera Sök Resultat
-ms.openlocfilehash: 51f8d243cb9b1f4ff7413eec8839697299e8dd52
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: I den här artikeln beskrivs användar gränssnittet som används för att filtrera innehåll i PowerShell-galleriet.
+ms.openlocfilehash: cc375f3ddb35c95ed134776500bd326bc3db6b1a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83691459"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661404"
 ---
 # <a name="filtering-search-results"></a>Filtrera Sök Resultat
 
 [Fliken paket](https://www.powershellgallery.com/packages) visar alla tillgängliga paket i PowerShell-galleriet.
 
-Det finns flera sätt att filtrera, sortera och söka i paketen.
-Klicka på paketet om du vill se mer information om ett visst paket.
+Det finns flera sätt att filtrera, sortera och söka i paketen. Klicka på paketet om du vill se mer information om ett visst paket.
 
 ## <a name="filter-by"></a>Filtrera efter
 
@@ -38,15 +36,10 @@ Med kryss rutorna under List rutan kan användarna filtrera resultaten genom att
   - Roll kapacitet
   - Arbetsflöde
 
-Om du bara vill se moduler i PowerShell-galleriet kontrollerar du modulen i paket typerna.
-På samma sätt kan du kontrol lera skriptet i paket typerna om du bara vill se skript i PowerShell-galleriet.
+Om du bara vill se moduler i PowerShell-galleriet kontrollerar du modulen i paket typerna. På samma sätt kan du kontrol lera skriptet i paket typerna om du bara vill se skript i PowerShell-galleriet.
 
 > [!NOTE]
-> Filtren är inkluderade.
-> Exempel: ett paket som innehåller båda cmdletar och funktioner visas om antingen cmdlet eller function (eller båda) är markerade.
-> Om ingen väljs visas inte paketet.
-> På samma sätt visas bara paket som innehåller en av dessa kategorier om du väljer alla kategorier.
-> **Paket som inte tillhör någon av dessa kategorier visas inte.**
+> Filtren är inkluderade. Exempel: ett paket som innehåller båda cmdletar och funktioner visas om antingen cmdlet eller function (eller båda) är markerade. Om ingen väljs visas inte paketet. På samma sätt visas bara paket som innehåller en av dessa kategorier om du väljer alla kategorier. **Paket som inte tillhör någon av dessa kategorier visas inte.**
 
 ## <a name="sort-by"></a>Sortera efter
 

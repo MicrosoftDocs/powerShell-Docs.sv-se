@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Kom igång med PowerShell-galleriet
-ms.openlocfilehash: bae0af144e6f520142e7eaea3dd0e1039976dae4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Den här artikeln förklarar hur du kommer igång med PowerShell-galleriet och PowerShellGet-cmdletar
+ms.openlocfilehash: 02d84c64e39245b2a16c03029982796a74301bd6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81219701"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661416"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Komma igång med PowerShell-galleriet
 
@@ -19,11 +18,11 @@ PowerShell-galleriet är en paket lagrings plats som innehåller skript, moduler
 
 ## <a name="discovering-packages-from-the-powershell-gallery"></a>Identifiera paket från PowerShell-galleriet
 
-Du kan hitta paket i PowerShell-galleriet med hjälp av **Sök** kontrollen på [start sidan](https://www.powershellgallery.com)för PowerShell-galleriet eller genom att bläddra bland modulerna och skripten på [sidan paket](https://www.powershellgallery.com/packages). Du kan också hitta paket från PowerShell-galleriet genom att köra cmdletarna [find-module][], [find-dscresource Keyword Supports]och [find-script][] , beroende på paket typen, med `-Repository PSGallery`.
+Du kan hitta paket i PowerShell-galleriet med hjälp av **Sök** kontrollen på [start sidan](https://www.powershellgallery.com)för PowerShell-galleriet eller genom att bläddra bland modulerna och skripten på [sidan paket](https://www.powershellgallery.com/packages). Du kan också hitta paket från PowerShell-galleriet genom att köra cmdletarna [find-module][], [find-dscresource Keyword Supports]och [find-script][] , beroende på paket typen, med `-Repository PSGallery` .
 
 Du kan filtrera resultat från galleriet med hjälp av följande parametrar:
 
-- Name
+- Namn
 - AllVersions
 - MinimumVersion
 - RequiredVersion
@@ -32,9 +31,9 @@ Du kan filtrera resultat från galleriet med hjälp av följande parametrar:
 - Dscresource Keyword Supports
 - RoleCapability
 - Kommando
-- Filter
+- Filtrera
 
-Om du bara är intresse rad av att identifiera vissa DSC-resurser i galleriet kan du köra cmdleten [find-dscresource Keyword Supports][] . Find-Dscresource Keyword Supports returnerar data på DSC-resurser som finns i galleriet. Eftersom DSC-resurser alltid levereras som en del av en modul, behöver du fortfarande köra [install-module][] för att installera dessa DSC-resurser.
+Om du bara är intresse rad av att identifiera vissa DSC-resurser i galleriet kan du köra cmdleten [find-dscresource Keyword Supports][] . Find-DscResource returnerar data på DSC-resurser som finns i galleriet. Eftersom DSC-resurser alltid levereras som en del av en modul, behöver du fortfarande köra [install-module][] för att installera dessa DSC-resurser.
 
 ## <a name="learning-about-packages-in-the-powershell-gallery"></a>Lär dig om paket i PowerShell-galleriet
 
@@ -42,7 +41,7 @@ När du har identifierat ett paket som du är intresse rad av kanske du vill vet
 
 Om du upptäcker ett paket som du tycker att du inte har publicerat i en godkänd tro klickar du på **rapportera missbruk** på paketets sida.
 
-Om du kör [find-module][] eller [find-script][]kan du visa dessa data i det returnerade PSGetModuleInfo-objektet. Att köra `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` returnerar till exempel data i PSReadLine-modulen i galleriet.
+Om du kör [find-module][] eller [find-script][]kan du visa dessa data i det returnerade PSGetModuleInfo-objektet. Att köra returnerar till exempel `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` data i PSReadLine-modulen i galleriet.
 
 ## <a name="downloading-packages-from-the-powershell-gallery"></a>Hämta paket från PowerShell-galleriet
 
@@ -60,25 +59,25 @@ Om du upptäcker ett paket som du tycker att du inte har publicerat i en godkän
 
 Om du vill installera ett paket från galleriet för användning kör du antingen cmdleten [install-module][] eller [install-script][] , beroende på typ av paket.
 
-[Installera-modulen][] installerar modulen `$env:ProgramFiles\WindowsPowerShell\Modules` som standard.
+[Installera-modulen][] installerar modulen som `$env:ProgramFiles\WindowsPowerShell\Modules` standard.
 Detta kräver ett administratörs konto. Om du lägger till `-Scope CurrentUser` parametern installeras modulen till `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` .
 
 [Install-script][] installerar skriptet till `$env:ProgramFiles\WindowsPowerShell\Scripts` som standard.
 Detta kräver ett administratörs konto. Om du lägger till `-Scope CurrentUser` parametern installeras skriptet till `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` .
 
-Som standard installerar [install-module][] och [install-script][] den senaste versionen av ett paket. Lägg till `-RequiredVersion` parametern om du vill installera en äldre version av paketet.
+Som standard installerar [install-module][] och [install-script][] den senaste versionen av ett paket. Lägg till parametern om du vill installera en äldre version av paketet `-RequiredVersion` .
 
 ### <a name="deploy"></a>Distribuera
 
-Om du vill distribuera ett paket från PowerShell-galleriet till Azure Automation klickar du på **Azure Automation**och klickar sedan på **distribuera till Azure Automation** på paket informations sidan. Du omdirigeras till Azure-Hanteringsportal där du loggar in med dina autentiseringsuppgifter för Azure-kontot. Observera att distribution av paket med beroenden distribuerar alla beroenden till Azure Automation. Knappen distribuera till Azure Automation kan inaktive ras genom att **AzureAutomationNotSupported** -taggen läggs till i paketets metadata.
+Om du vill distribuera ett paket från PowerShell-galleriet till Azure Automation klickar du på **Azure Automation** och klickar sedan på **distribuera till Azure Automation** på paket informations sidan. Du omdirigeras till Azure-Hanteringsportal där du loggar in med dina autentiseringsuppgifter för Azure-kontot. Observera att distribution av paket med beroenden distribuerar alla beroenden till Azure Automation. Knappen distribuera till Azure Automation kan inaktive ras genom att **AzureAutomationNotSupported** -taggen läggs till i paketets metadata.
 
 Mer information om Azure Automation finns i [Azure Automation](/azure/automation) -dokumentationen.
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>Uppdaterar paket från PowerShell-galleriet
 
-Om du vill uppdatera paket som är installerade från PowerShell-galleriet kör du antingen cmdleten [Update-module][] eller [Update-script][] . Om du kör utan ytterligare parametrar försöker [Update-module][] uppdatera alla moduler som installerats genom att köra [install-module][]. Om du vill uppdatera moduler selektivt `-Name` lägger du till parametern.
+Om du vill uppdatera paket som är installerade från PowerShell-galleriet kör du antingen cmdleten [Update-module][] eller [Update-script][] . Om du kör utan ytterligare parametrar försöker [Update-module][] uppdatera alla moduler som installerats genom att köra [install-module][]. Om du vill uppdatera moduler selektivt lägger du till `-Name` parametern.
 
-Vid körning utan ytterligare parametrar försöker [Update-script][] också uppdatera alla skript som installeras genom att köra [install-script][]. Om du vill uppdatera skript selektivt `-Name` lägger du till parametern.
+Vid körning utan ytterligare parametrar försöker [Update-script][] också uppdatera alla skript som installeras genom att köra [install-script][]. Om du vill uppdatera skript selektivt lägger du till `-Name` parametern.
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>List paket som du har installerat från PowerShell-galleriet
 
@@ -90,9 +89,9 @@ Om du vill ta reda på vilka skript som du har installerat från PowerShell-gall
 
 PowerShell-galleriet använder följande värdnamn.
 
-- `psg-prod-eastus.azureedge.net`– CDN-värdnamnet
-- `devopsgallerystorage.blob.core.windows.net`– lagrings kontots värdnamn
-- `*.powershellgallery.com`– webbplatsen
+- `psg-prod-eastus.azureedge.net` – CDN-värdnamnet
+- `devopsgallerystorage.blob.core.windows.net` – lagrings kontots värdnamn
+- `*.powershellgallery.com` – webbplatsen
 
 Dessa värdnamn ska läggas till i listan över tillåtna som styr åtkomst från nätverket.
 

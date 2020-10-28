@@ -1,12 +1,14 @@
 ---
-title: Dynamiska parametrar för provider-cmdlet | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4aaa5ee39e98de9a9925fc65cac3cc6c32d9c2bc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Dynamiska cmdlet-parametrar för providers
+description: Dynamiska cmdlet-parametrar för providers
+ms.openlocfilehash: ac05a847afb0729c34d733fa4ba8da11f46746fe
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786823"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662981"
 ---
 # <a name="provider-cmdlet-dynamic-parameters"></a>Dynamiska cmdlet-parametrar för providers
 
@@ -58,7 +60,7 @@ internal sealed class CertificateProviderDynamicParameters
 
 Här är en lista över de statiska parametrar som kan användas för att lägga till dynamiska parametrar.
 
-`Clear-Content` cmdlet kan du definiera dynamiska parametrar som utlöses av `Path` parametern för Clear-Clear-cmdleten genom att implementera metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Clearcontentdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters) .
+`Clear-Content` cmdlet du kan definiera dynamiska parametrar som utlöses av `Path` parametern för Clear-Clear cmdlet genom att implementera metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Clearcontentdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters) .
 
 `Clear-Item` cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` parametern genom att `Clear-Item` implementera metoden [system. Management. Automation. Provider. Itemcmdletprovider. Clearitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters) .
 
@@ -66,7 +68,7 @@ Här är en lista över de statiska parametrar som kan användas för att lägga
 
 `Copy-Item` cmdlet kan du definiera dynamiska parametrar som utlöses av `Path` `Destination` parametrarna, och `Recurse` för `Copy-Item` cmdleten genom att implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Copyitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) .
 
-Get-ChildItems-cmdlet du kan definiera dynamiska parametrar som utlöses av `Path` cmdlet- `Recurse` parametrarna och, `Get-ChildItem` genom att implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Getchilditemsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) och [system. Management. Automation. Provider. Containercmdletprovider. Getchildnamesdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) .
+Get-ChildItems cmdleten kan du definiera dynamiska parametrar som utlöses av `Path` cmdlet- `Recurse` parametrarna och, `Get-ChildItem` genom att implementera parametrarna [system. Management. Automation. Provider. Containercmdletprovider. Getchilditemsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) och [system. Management. Automation. Provider. Containercmdletprovider. Getchildnamesdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) .
 
 `Get-Content` cmdlet kan du definiera dynamiska parametrar som utlöses av cmdlet- `Path` parametern genom att `Get-Content` implementera metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentreaderdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) .
 

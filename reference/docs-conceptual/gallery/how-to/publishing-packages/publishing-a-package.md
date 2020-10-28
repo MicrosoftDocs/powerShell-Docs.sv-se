@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Skapa och publicera ett objekt
-ms.openlocfilehash: 1aa9cc84f259869ca6f8b8e2f6952e43eaac14df
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Den här artikeln beskriver Mechanics och viktiga steg för att förbereda ett skript eller en modul och publicera den på PowerShell-galleriet
+ms.openlocfilehash: be846799aff71d38bdd0c98b3f43eaee5aef7798
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328786"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662506"
 ---
 # <a name="creating-and-publishing-an-item"></a>Skapa och publicera ett objekt
 
@@ -21,7 +20,7 @@ Minimi kraven för att publicera ett objekt till PowerShell-galleriet är:
 - Ha ett PowerShell-galleriet konto och den API-nyckel som är kopplad till den
 - Se till att nödvändiga metadata finns i ditt objekt
 - Använd för validerings verktygen för att se till att ditt objekt är klart att publicera
-- Publicera objektet till PowerShell-galleriet med kommandona publicera-modul och publicera-skript
+- Publicera objektet till PowerShell-galleriet med kommandona Publish-Module och Publish-Script
 - Svara på frågor eller problem om ditt objekt
 
 PowerShell-galleriet accepterar PowerShell-moduler och PowerShell-skript. När vi refererar till skript, innebär det ett PowerShell-skript som är en enskild fil och inte en del av en större modul.
@@ -62,12 +61,13 @@ Författare och ägare av PowerShell-galleriet objekt är relaterade begrepp, me
 Det finns några verktyg som du behöver köra mot din kod innan du publicerar ditt objekt till PowerShell-galleriet:
 
 - [PowerShell-skript analys](https://www.powershellgallery.com/packages/PSScriptAnalyzer/), som finns i PowerShell-galleriet
-- För moduler, test-ModuleManifest som är en del av PowerShell
-- För skript, test-ScriptFileInfo som medföljer PowerShell Hämta
+- För moduler Test-ModuleManifest som är en del av PowerShell
+- För skript Test-ScriptFileInfo som levereras med PowerShell Hämta
 
 [PowerShell script Analyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer/) är ett statiskt kod analys verktyg som söker igenom koden för att säkerställa att den uppfyller Basics rikt linjer för PowerShell-kodning. Det här verktyget identifierar vanliga och kritiska problem i koden och bör köras regelbundet under utvecklingen för att hjälpa dig att få ditt objekt att publicera. PowerShell script Analyzer visar en lista över problem som identifieras som fel, varning och information. Alla fel måste åtgärdas innan du publicerar till PowerShell-galleriet. Varningar måste granskas och de flesta bör åtgärdas. PowerShell skript analys körs varje gång ett objekt publiceras eller uppdateras i PowerShell-galleriet. Galleri drifts teamet kontaktar objekt ägare för att åtgärda fel som hittas.
 
-Om manifest informationen i objektet inte kan läsas av PowerShell-galleriet-infrastrukturen kommer du inte att kunna publicera. [Test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) kommer att fånga vanliga problem som kan leda till att modulen inte kan användas när den är installerad. Den måste köras för varje modul innan den kan publiceras på PowerShell-galleriet.
+Om manifest informationen i objektet inte kan läsas av PowerShell-galleriet-infrastrukturen kommer du inte att kunna publicera.
+[Test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) kommer att fånga vanliga problem som kan leda till att modulen inte kan användas när den är installerad. Den måste köras för varje modul innan den kan publiceras på PowerShell-galleriet.
 
 På samma sätt verifierar [test-ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo) metadata i ett skript och måste köras på alla skript (publicerade separat från en modul) innan de publiceras till PowerShell-galleriet.
 
@@ -94,4 +94,3 @@ Alla objekt som publiceras till PowerShell-galleriet genomsöks efter virus och 
 När du har publicerat ett objekt till PowerShell-galleriet måste du titta efter feedback om ditt objekt.
 
 - Se till att du övervakar den e-postadress som är kopplad till det konto som används för att publicera. Användare och PowerShell-galleriet drifts teamet ger feedback via kontot, inklusive problem från PSSA eller antivirus genomsökningar. Om e-postkontot är ogiltigt, eller om allvarliga problem rapporteras till kontot och lämnas olöst under en längre tid, kan objekt anses vara övergivna och tas bort från PowerShell-galleriet enligt beskrivningen i våra [användnings villkor](https://www.powershellgallery.com/policies/Terms).
-- Vi rekommenderar att du prenumererar på kommentarer för varje PowerShell-galleriet objekt som du publicerar. På så sätt kan du få ett meddelande om alla kommentarer om dina objekt i PowerShell-galleriet. Detta är valfritt, eftersom det krävs att du skapar ett konto med LiveFyre.

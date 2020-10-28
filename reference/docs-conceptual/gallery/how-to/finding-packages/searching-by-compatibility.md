@@ -1,14 +1,13 @@
 ---
 ms.date: 12/11/2018
-contributor: JKeithB, SydneyhSmith
-keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Paket med kompatibla PowerShell-utgåvor eller operativ system
-ms.openlocfilehash: fce1383fa604a555a40b050ce92c5cc45ca7054c
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: Den här artikeln beskriver hur du söker i PowerShell-galleriet efter kompatibilitet med en speciell plattform eller utgåva.
+ms.openlocfilehash: 9806c09c85febfd74bb69adf3d294fb4f559ff23
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83691448"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661256"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Paket med kompatibla PowerShell-utgåvor eller operativ system
 
@@ -32,18 +31,17 @@ Du kan också söka efter kompatibla paket med PowerShell.
 
 Använd Taggar: "PSEdition_Desktop" och Taggar: "PSEdition_Core" för att filtrera paketen på PowerShell-galleriet.
 
-### <a name="use-tagspsedition_core-to-search-items-compatible-with-powershell-core-edition"></a>Använd Taggar: "PSEdition_Core" om du vill söka efter objekt som är kompatibla med PowerShell Core Edition.
+### <a name="use-tagspsedition_core-to-search-items-compatible-with-powershell-core-edition"></a>Använd Taggar: "PSEdition_Core" för att söka efter objekt som är kompatibla med PowerShell Core Edition
 
 ![Sök Resultat för objekt som är kompatibla med Core-PSEdition](media/searching-by-compatibility/searchresultswithpseditions.PNG)
 
-### <a name="use-tagspsedition_desktop-to-search-items-compatible-with-powershell-desktop-edition"></a>Använd Taggar: "PSEdition_Desktop" om du vill söka efter objekt som är kompatibla med PowerShell Desktop Edition.
+### <a name="use-tagspsedition_desktop-to-search-items-compatible-with-powershell-desktop-edition"></a>Använd Taggar: "PSEdition_Desktop" för att söka efter objekt som är kompatibla med PowerShell Desktop Edition
 
 ![Sök Resultat för objekt som är kompatibla med Desktop-PSEdition](media/searching-by-compatibility/searchresultswithpseditionsdesktop.PNG)
 
 ### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>Sök efter paket för att hitta kompatibla utgåvor med PowerShell
-Du kan ange taggar för att filtrera PowerShell-versionen och operativ systemet.
-Du använder `Find-Package` cmdleten som anger `-Tag` parametern för att ange den utgåva (och OS) som du är mål för.
-Gillar det här:
+
+Du kan ange taggar för att filtrera PowerShell-versionen och operativ systemet. Du använder `Find-Package` cmdleten som anger `-Tag` parametern för att ange den utgåva (och OS) som du är mål för. Gillar det här:
 
 ```powershell
 # Find modules compatible with PowerShell Core:

@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: Resurs för DSC-paket
-ms.openlocfilehash: faeebc5bac7caad733600720f1c9f3d916d4c0a8
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Resurs för DSC-paket
+ms.openlocfilehash: 44a975f33012ca9d49bf69aaafc0b23f625d1424
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464017"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662731"
 ---
 # <a name="dsc-package-resource"></a>Resurs för DSC-paket
 
@@ -37,7 +38,7 @@ Package [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|Name |Anger namnet på det paket som du vill säkerställa ett speciellt tillstånd för. |
+|Namn |Anger namnet på det paket som du vill säkerställa ett speciellt tillstånd för. |
 |Sökväg |Anger sökvägen dit paketet finns. |
 |ProductId |Anger det produkt-ID som unikt identifierar paketet. |
 |Argument |Visar en sträng med argument som skickas till paketet exakt som de anges. |

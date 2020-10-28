@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: WMF, powershell, inställning
 title: Kända problem och begränsningar för Desired State Configuration (DSC)
-ms.openlocfilehash: a76c5bb336804c5b384e6b6ba6a705c6049ef7fb
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Kända problem och begränsningar i DSC i Windows PowerShell 5. x
+ms.openlocfilehash: 1163ed9e130430f6bbca98405a8993bb054dd1a8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810206"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662050"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Kända problem och begränsningar för Desired State Configuration (DSC)
 
@@ -19,7 +19,7 @@ I WMF 4,0-och WMF 5,0 Preview-versioner tillåter DSC inte att lösen ord i konf
 
 ## <a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>DSC-cmdletar kan Miss lyckas efter installation av WMF 5,0 RTM
 
-`Start-DscConfiguration`och andra DSC-cmdletar kan Miss lyckas efter installation av WMF 5,0 RTM med följande fel:
+`Start-DscConfiguration` och andra DSC-cmdletar kan Miss lyckas efter installation av WMF 5,0 RTM med följande fel:
 
 ```Output
 LCM failed to retrieve the property PendingJobStep from the object of class dscInternalCache .
@@ -42,25 +42,25 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof
 ```
 
-## <a name="lcm-can-go-into-an-unstable-state-while-using-get-dscconfiguration-in-debugmode"></a>LCM kan hamna i ett instabilt tillstånd när du använder Get-DscConfiguration i DebugMode
+## <a name="lcm-can-go-into-an-unstable-state-while-using-get-dscconfiguration-in-debugmode"></a>LCM kan hamna i ett instabilt tillstånd när Get-DscConfiguration används i DebugMode
 
 Om LCM finns i DebugMode, trycker du på CTRL + C för att stoppa bearbetningen av `Get-DscConfiguration` kan orsaka att LCM går in i ett instabilt tillstånd så att majoriteten av DSC-cmdlets inte fungerar.
 
 **Lösning:** Tryck inte på CTRL + C vid fel sökning av `Get-DscConfiguration` cmdlet.
 
-## <a name="stop-dscconfiguration-may-not-respond-in-debugmode"></a>Stop-DscConfiguration får inte svara i DebugMode
+## <a name="stop-dscconfiguration-may-not-respond-in-debugmode"></a>Stop-DscConfiguration kan inte svara i DebugMode
 
-Om LCM finns i DebugMode, `Stop-DscConfiguration` kan inte svara vid försök att stoppa en åtgärd som startats av`Get-DscConfiguration`
+Om LCM finns i DebugMode, `Stop-DscConfiguration` kan inte svara vid försök att stoppa en åtgärd som startats av `Get-DscConfiguration`
 
 **Lösning:** Slutför fel sökningen av åtgärden som startades av `Get-DscConfiguration` som beskrivs i [Felsöka DSC-resurser](/powershell/scripting/dsc/troubleshooting/debugResource).
 
 ## <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>Inga utförliga fel meddelanden visas i DebugMode
 
-Om LCM finns i **DebugMode**, visas inga utförliga fel meddelanden från DSC-resurser.
+Om LCM finns i **DebugMode** , visas inga utförliga fel meddelanden från DSC-resurser.
 
 **Lösning:** Inaktivera **DebugMode** för att se utförliga meddelanden från resursen
 
-## <a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>Invoke-Dscresource Keyword Supports-åtgärder kan inte hämtas av Get-DscConfigurationStatus-cmdleten
+## <a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>Invoke-DscResource åtgärder kan inte hämtas av Get-DscConfigurationStatus cmdlet
 
 När `Invoke-DscResource` du har använt cmdlet för att direkt anropa alla resurs metoder går det inte att hämta posterna för sådan åtgärd via `Get-DscConfigurationStatus` .
 
@@ -72,13 +72,13 @@ När en nod ställs in på Hämta uppdaterings läge, `Get-DscConfigurationStatu
 
 **Lösning:** Alternativet.
 
-## <a name="invoke-dscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>Invoke-Dscresource Keyword Supports-cmdlet returnerar inte meddelandet i den ordning som de producerade
+## <a name="invoke-dscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>Invoke-DscResource cmdlet returnerar inte meddelandet i den ordning de skapades
 
 `Invoke-DscResource`Cmdleten returnerar inte utförliga, varnings-och fel meddelanden i den ordning som de producerade av LCM eller DSC-resursen.
 
 **Lösning:** Alternativet.
 
-## <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>DSC-resurser kan inte felsökas enkelt när de används med Invoke-Dscresource Keyword Supports
+## <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>DSC-resurser kan inte felsökas enkelt när de används med Invoke-DscResource
 
 När LCM körs i fel söknings läge `Invoke-DscResource` ger cmdleten inte information om körnings utrymme för att ansluta till för fel sökning. Mer information finns i [fel sökning av DSC-resurser](/powershell/scripting/dsc/troubleshooting/debugResource).
 
@@ -138,7 +138,7 @@ Fel sökning av klassbaserade DSC-resurser stöds inte i den här versionen.
 
 **Lösning:** Alternativet.
 
-## <a name="variables-and-functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Variabler och funktioner som definieras i $script omfång i en klass baserad DSC-resurs bevaras inte över flera anrop till en DSC-resurs
+## <a name="variables-and-functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Variabler och funktioner som definieras i $script omfång i DSC-Class-Based resurs bevaras inte över flera anrop till en DSC-resurs
 
 Flera anrop i följd `Start-DSCConfiguration` Miss lyckas om konfigurationen använder en klassbaserade resurs som har variabler eller funktioner definierade i `$script` området.
 
@@ -154,7 +154,7 @@ DSC-resurs fel sökning när en resurs använder egenskapen **PSDscRunAsCredenti
 
 **Lösning:** Använd egenskapen autentiseringsuppgifter om den är tillgänglig. Exempel på ServiceSet och WindowsFeatureSet
 
-## <a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>Get-Dscresource Keyword Supports-syntaxen visar inte PsDscRunAsCredential korrekt
+## <a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>Get-DscResource-syntaxen visar inte PsDscRunAsCredential korrekt
 
 Parametern **syntax** reflekterar inte **PsDscRunAsCredential** korrekt när resursen markerar den som obligatorisk eller inte stöder den.
 
@@ -164,7 +164,7 @@ Parametern **syntax** reflekterar inte **PsDscRunAsCredential** korrekt när res
 
 **WindowsOptionalFeature** DSC-resursen är inte tillgänglig i Windows 7. Den här resursen kräver DISM-modulen och DISM-cmdletar som är tillgängliga från och med Windows 8 och nyare versioner av Windows operativ system.
 
-## <a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>Import-Dscresource Keyword Supports-ModuleVersion kanske inte fungerar som förväntat för klassbaserade DSC-resurser
+## <a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>Import-DscResource-ModuleVersion kanske inte fungerar som förväntat för klassbaserade DSC-resurser
 
 Om noden kompilering har flera versioner av en klass-baserad DSC-resurs, `Import-DscResource -ModuleVersion` väljer inte den angivna versionen och resulterar i följande kompileringsfel.
 

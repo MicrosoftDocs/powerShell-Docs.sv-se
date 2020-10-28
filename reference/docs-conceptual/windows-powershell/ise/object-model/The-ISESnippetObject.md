@@ -1,13 +1,13 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell,cmdlet
 title: ISESnippetObject
-ms.openlocfilehash: f810e6b26f0ded04be15bdc37f336d7890e29dad
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Ett ISESnippet-objekt är en instans av klassen Microsoft. PowerShell. Host. ISE. ISESnippet.
+ms.openlocfilehash: 602b344686cbcfb1e994914d4e26438ff7e4b1de
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810934"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663400"
 ---
 # <a name="the-isesnippetobject"></a>ISESnippetObject
 

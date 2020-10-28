@@ -1,12 +1,14 @@
 ---
-title: Ändra installations Sök vägen för PSModulePath | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 795f2bd52aeceddd3c0ca092d0c0cf2ef44bcf23
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Ändra installationssökvägen för PSModulePath
+description: Ändra installationssökvägen för PSModulePath
+ms.openlocfilehash: b802492bf9b49e8165e296817e3f80b9ae8265a6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784851"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661946"
 ---
 # <a name="modifying-the-psmodulepath-installation-path"></a>Ändra installationssökvägen för PSModulePath
 

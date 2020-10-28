@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: WMF, powershell, inställning
 title: Avinstallera WMF 5.0
-ms.openlocfilehash: fa76bacb4b62025d0d2350b9a0e072068ca83ab1
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: Den här artikeln förklarar hur du avinstallerar WMF från äldre versioner av Windows.
+ms.openlocfilehash: d8078ea918db2c1cf9a7ddd6ea8d1413b593c0ff
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236313"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660806"
 ---
 # <a name="uninstallation-instructions"></a>Avinstallations anvisningar
 
@@ -37,6 +37,6 @@ wusa /uninstall /kb:3134760
 ## <a name="using-control-panel"></a>Använda kontroll panelen
 
 1. Öppna **kontroll panelen.**
-2. Öppna **program**och öppna sedan **Avinstallera ett program.**
+2. Öppna **program** och öppna sedan **Avinstallera ett program.**
 3. Klicka på **Visa installerade uppdateringar.**
-4. Välj **Windows Management Framework 5,0** i listan över installerade uppdateringar. Detta motsvarar *KB3134758*, *KB3134759*eller *KB3134760*. Klicka på **Avinstallera.**
+4. Välj **Windows Management Framework 5,0** i listan över installerade uppdateringar. Detta motsvarar *KB3134758* , *KB3134759* eller *KB3134760* . Klicka på **Avinstallera.**

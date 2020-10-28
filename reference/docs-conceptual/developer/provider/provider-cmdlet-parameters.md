@@ -1,12 +1,14 @@
 ---
-title: Parametrar för provider-cmdlet | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 04ce4f3dc2b4549b0ff0f0b7e92a4d2b4f383996
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Cmdlet-parametrar för providers
+description: Cmdlet-parametrar för providers
+ms.openlocfilehash: 6fd340f22202d984b7111c34806e3461a356c670
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771608"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662786"
 ---
 # <a name="provider-cmdlet-parameters"></a>Cmdlet-parametrar för providers
 
@@ -24,7 +26,7 @@ Statiska parametrar definieras av Windows PowerShell. En stor uppsättning param
 
 `Copy-Item` cmdlet kan du definiera hur providern ska använda värdena som skickas till `Path` parametrarna, `Destination` , och `Recurse` för `Copy-Item` cmdleten genom att implementera metoden [system. Management. Automation. Provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) .
 
-Get-ChildItems-cmdlet du kan definiera hur providern ska använda värdena som skickas till `Path` `Recurse` cmdlet-parametrarna och `Get-ChildItem` genom att implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) och [system. Management. Automation. Provider. Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) .
+Get-ChildItems cmdleten kan du definiera hur providern ska använda värdena som skickas till `Path` `Recurse` cmdlet-parametrarna och `Get-ChildItem` genom att implementera parametrarna [system. Management. Automation. Provider. Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) och [system. Management. Automation. Provider. Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) .
 
 `Get-Content` cmdlet kan du definiera hur providern ska använda värdena som skickas till `Path` cmdlet-parametern `Get-Content` genom att implementera metoden [system. Management. Automation. Provider. Icontentcmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) .
 

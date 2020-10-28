@@ -1,12 +1,14 @@
 ---
-title: Typer av leverantörer | Microsoft Docs
 ms.date: 08/21/2019
-ms.openlocfilehash: 03b6b2d02d603632399ea455c2832742e0964d62
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Typer av providers
+description: Typer av providers
+ms.openlocfilehash: 9d3b458d7647a297fcda086db3540a0c15c576db
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778240"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661758"
 ---
 # <a name="provider-types"></a>Typer av providers
 
@@ -112,7 +114,7 @@ Gränssnittet **system. Management. Automation. Provider. IContentCmdletProvider
 ## <a name="property-enabled-providers"></a>Egenskaps-aktiverade providrar
 
 Egenskaps-aktiverade providers gör att användaren kan hantera egenskaperna för objekten i data lagret.
-Om du vill skapa en egenskaps aktive rad Provider måste din leverantörs klass implementera metoderna i [system. Management. Automation. Provider. IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) och [system. Management. Automation. Provider. IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) -gränssnitt. I de flesta fall måste du skriva över metoden som PowerShell-motorn anropar för att anropa cmdleten, till exempel `ClearProperty` metoden för cmdleten Clear-Property, och eventuellt skriva över en andra metod, till exempel `ClearPropertyDynamicParameters` , för att lägga till dynamiska parametrar till cmdleten.
+Om du vill skapa en egenskaps aktive rad Provider måste din leverantörs klass implementera metoderna i [system. Management. Automation. Provider. IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) och [system. Management. Automation. Provider. IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) -gränssnitt. I de flesta fall, för att stödja en provider-cmdlet måste du skriva över metoden som PowerShell-motorn anropar för att anropa cmdleten, till exempel `ClearProperty` metoden för Clear-Property-cmdlet, och om du vill kan du skriva över en andra metod, till exempel `ClearPropertyDynamicParameters` , för att lägga till dynamiska parametrar till cmdleten.
 
 Gränssnittet **system. Management. Automation. Provider. IPropertyCmdletProvider** definierar följande metoder för att implementera vissa Provider-cmdlet: ar:
 

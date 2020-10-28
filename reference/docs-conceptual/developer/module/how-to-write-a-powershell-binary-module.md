@@ -1,12 +1,14 @@
 ---
-title: Så här skriver du en PowerShell-modul för binär | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 92395bd6b8be1bd3741888eb3716d62f0253e213
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skriva en binär PowerShell-modul
+description: Skriva en binär PowerShell-modul
+ms.openlocfilehash: 1d5cea474ac418f78cc782360b7c23b7614d6669
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779275"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663066"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>Skriva en binär PowerShell-modul
 

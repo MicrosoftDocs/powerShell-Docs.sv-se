@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Paketera och ladda upp resurser till en hämtnings Server
-ms.openlocfilehash: d0e070b7aa43acbbbf087729d53f06dbc7e7734a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: Den här artikeln visar hur du överför resurser till en pull-server så att de kan hämtas av konfigurationer på noderna som hanteras av DSC.
+ms.openlocfilehash: a19d04346a0ae546cfcaf70701fde870d3839f65
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782896"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661694"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Paketera och ladda upp resurser till en hämtnings Server
 
@@ -25,7 +26,7 @@ Varje resurs som är tillgänglig för en klient som ska laddas ned måste lagra
 > [!NOTE]
 > Om du har några klienter som använder PowerShell 4,0 måste du förenkla resurs mappstrukturen och ta bort alla versions-mappar. Mer information finns i [flera resurs versioner](../configurations/import-dscresource.md#multiple-resource-versions).
 
-Du kan komprimera resurs katalogen med valfritt verktyg, skript eller metod som du föredrar. I Windows kan du _högerklicka_ på `xPSDesiredStateConfiguration` katalogen och välja **Skicka till**och sedan på **komprimerad mapp**.
+Du kan komprimera resurs katalogen med valfritt verktyg, skript eller metod som du föredrar. I Windows kan du _högerklicka_ på `xPSDesiredStateConfiguration` katalogen och välja **Skicka till** och sedan på **komprimerad mapp** .
 
 ![Högerklicka – skicka till komprimerad mapp](media/package-upload-resources/right-click.gif)
 
@@ -41,7 +42,7 @@ I exemplet ovan `xPSDesiredStateConfiguration.zip` bör byta namn `xPSDesiredSta
 
 ### <a name="create-checksums"></a>Skapa kontroll summor
 
-När modulen har komprimerats och bytt namn måste du skapa en **kontroll Summa**. **Kontroll summan** används av LCM på klienten för att avgöra om resursen har ändrats och måste laddas ned igen. Du kan skapa en **kontroll Summa** med cmdleten [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) , som visas i exemplet nedan.
+När modulen har komprimerats och bytt namn måste du skapa en **kontroll Summa** . **Kontroll summan** används av LCM på klienten för att avgöra om resursen har ändrats och måste laddas ned igen. Du kan skapa en **kontroll Summa** med cmdleten [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) , som visas i exemplet nedan.
 
 ```powershell
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
@@ -68,7 +69,7 @@ När du konfigurerar din HTTP-pull-server, enligt beskrivningen i [Konfigurera e
 
 #### <a name="on-an-smb-share"></a>På en SMB-resurs
 
-Om du har angett en **ResourceRepositoryShare**när du konfigurerar din pull-klient, lagrar Arkiv och kontroll summor i katalogen **SourcePath** från **ResourceRepositoryShare** -blocket.
+Om du har angett en **ResourceRepositoryShare** när du konfigurerar din pull-klient, lagrar Arkiv och kontroll summor i katalogen **SourcePath** från **ResourceRepositoryShare** -blocket.
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -82,7 +83,7 @@ ResourceRepositoryShare SMBResourceServer
 }
 ```
 
-Om du bara har angett en **ConfigurationRepositoryShare**, när du konfigurerar din pull-klient, lagrar Arkiv och kontroll summor i **SourcePath** -katalogen från **ConfigurationRepositoryShare** -blocket.
+Om du bara har angett en **ConfigurationRepositoryShare** , när du konfigurerar din pull-klient, lagrar Arkiv och kontroll summor i **SourcePath** -katalogen från **ConfigurationRepositoryShare** -blocket.
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer

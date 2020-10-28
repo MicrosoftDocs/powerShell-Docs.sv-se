@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC register resurs
-ms.openlocfilehash: da4be9152a58d9945051f9c811270e871612ca0d
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC register resurs
+ms.openlocfilehash: d2b88a4aefe704aa4d337ec53202669b43412802
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463626"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661558"
 ---
 # <a name="dsc-registry-resource"></a>DSC register resurs
 
@@ -37,7 +38,7 @@ Registry [string] #ResourceName
 |Egenskap |Beskrivning |
 |---|---|
 |Nyckel |Anger sökvägen till den register nyckel för vilken du vill säkerställa ett angivet tillstånd. Den här sökvägen måste innehålla Hive. |
-|Värdets namn |Anger namnet på registervärdet. Om du vill lägga till eller ta bort en register nyckel anger du den här egenskapen som en tom sträng utan att ange **ValueType** eller **ValueData**. Om du vill ändra eller ta bort standardvärdet för en register nyckel anger du den här egenskapen som en tom sträng och även anger **ValueType** eller **ValueData**. |
+|Värdets namn |Anger namnet på registervärdet. Om du vill lägga till eller ta bort en register nyckel anger du den här egenskapen som en tom sträng utan att ange **ValueType** eller **ValueData** . Om du vill ändra eller ta bort standardvärdet för en register nyckel anger du den här egenskapen som en tom sträng och även anger **ValueType** eller **ValueData** . |
 |Force |Om den angivna register nyckeln **finns skrivs den** över med det nya värdet. Om du tar bort en register nyckel med under nycklar måste detta vara `$true` . |
 |Hexadecimal |Anger om data ska uttryckas i hexadecimalt format. Om det här alternativet anges visas DWORD/QWORD-värdet i hexadecimalt format. Inte giltigt för andra typer. Standardvärdet är `$false`. |
 |ValueData |Data för registervärdet. |
@@ -48,7 +49,7 @@ Registry [string] #ResourceName
 |Egenskap |Beskrivning |
 |---|---|
 |DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
-|Kontrol |Anger om nyckeln och värdet finns. För att se till att de gör det anger du att den här egenskapen är **tillgänglig**. För att säkerställa att de inte finns, ställer du in egenskapen på **saknas**. Standardvärdet finns **.** |
+|Kontrol |Anger om nyckeln och värdet finns. För att se till att de gör det anger du att den här egenskapen är **tillgänglig** . För att säkerställa att de inte finns, ställer du in egenskapen på **saknas** . Standardvärdet finns **.** |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 
 > [!NOTE]
@@ -75,7 +76,7 @@ Configuration RegistryTest
 
 ### <a name="example-2-ensure-specified-registry-key-exists"></a>Exempel 2: kontrol lera att den angivna register nyckeln finns
 
-Det här exemplet ser till att en nyckel med namnet "ExampleKey2" finns i den lokala datahive- ** \_ \_ datorns** Hive.
+Det här exemplet ser till att en nyckel med namnet "ExampleKey2" finns i den lokala datahive- **\_ \_ datorns** Hive.
 
 ```powershell
 Configuration RegistryTest

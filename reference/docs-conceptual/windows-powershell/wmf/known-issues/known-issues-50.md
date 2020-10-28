@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: WMF, powershell, inställning
 title: Kända problem i WMF 5.0
-ms.openlocfilehash: 1db656884736c742ef78354b7452879e319d4a0a
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Kända problem i WMF 5.0
+ms.openlocfilehash: 3f8dcf0f7aab27ff9d3c3a17377959988844a430
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810493"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663370"
 ---
 # <a name="known-issues-in-wmf-50"></a>Kända problem i WMF 5.0
 
@@ -42,7 +42,7 @@ När du installerar WMF 5,0 på en Windows Server 2012 R2 som redan kör SIL sto
 
 **Lösning:** Kör `Start-SilLogging` cmdleten en gång efter WMF-installationen, som installations processen kommer att felaktigt stoppa funktionen för Software Inventory Logging.
 
-## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>`Get-ChildItem`fungerar inte om-LiteralPath och-rekursivt används tillsammans
+## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>`Get-ChildItem` fungerar inte om-LiteralPath och-rekursivt används tillsammans
 
 Om ett katalog namn innehåller ett ogiltigt jokertecken `Get-ChildItem` kommer inte att generera förväntade resultat när både-LiteralPath och-rekursivt används tillsammans.
 
@@ -78,8 +78,8 @@ Det finns två sätt att lösa problemet, beroende på vilken version av Windows
 
 - För system som kör **Windows Server 2012**
   1. Logga in som administratör när du har installerat WMF 5,0 på servern som ska Sysprep.
-  2. Kopiera Generize. XML från katalogen `\Windows\System32\Sysprep\ActionFiles\` till en plats utanför Windows-katalogen, till `C:\` exempel.
-  3. Öppna din generalize. XML-kopia med anteckningar.
+  2. Kopiera Generize.xml från katalogen `\Windows\System32\Sysprep\ActionFiles\` till en plats utanför Windows-katalogen, till `C:\` exempel.
+  3. Öppna din Generalize.xml kopia med anteckningar.
   4. Hitta och ta bort följande text, en instans av varje måste tas bort (de kommer snart i slutet av dokumentet).
 
      ```xml
@@ -87,9 +87,9 @@ Det finns två sätt att lösa problemet, beroende på vilken version av Windows
      <sysprepOrder order="0x3300"></sysprepOrder>
      ```
 
-  5. Spara den redigerade kopian av generalize. xml och Stäng filen.
+  5. Spara den redigerade kopian av Generalize.xml och Stäng filen.
   6. Öppna en kommando tolk som administratör
-  7. Kör följande kommando för att bli ägare till filen generalize. xml i mappen System32:
+  7. Kör följande kommando för att bli ägare till Generalize.xml-filen i mappen System32:
 
      ```powershell
      Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml
@@ -111,6 +111,6 @@ Det finns två sätt att lösa problemet, beroende på vilken version av Windows
      ```
 
      - Svara ja till Skriv över (Observera att om det inte finns någon uppfråga för att skriva över, måste du kontrol lera sökvägen som anges).
-     - Förutsätter att din redigerade kopia av generalize. XML har kopierats till C:\.
+     - Förutsätter att din redigerade kopia av Generalize.xml har kopierats till C:\.
 
-  10. Generalize. XML har nu uppdaterats med lösningen. Kör Sysprep med generalize-alternativet aktiverat.
+  10. Generalize.xml har nu uppdaterats med lösningen. Kör Sysprep med generalize-alternativet aktiverat.

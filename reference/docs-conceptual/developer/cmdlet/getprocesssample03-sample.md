@@ -1,12 +1,14 @@
 ---
-title: GetProcessSample03-exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 09df93792ab611e167279bc35755d8d6c28e7cf3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProcessSample03 – exempel
+description: GetProcessSample03 – exempel
+ms.openlocfilehash: 7827247238f3dad2018b55e396b73d1fa434eb97
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784222"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660727"
 ---
 # <a name="getprocesssample03-sample"></a>GetProcessSample03 – exempel
 
@@ -18,7 +20,7 @@ Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna p
 
 2. Dubbelklicka på ikonen för lösnings filen (. SLN). Exempel projektet öppnas i Visual Studio.
 
-3. I menyn **build** väljer du **build-lösning**.
+3. I menyn **build** väljer du **build-lösning** .
 
     Biblioteket för exemplet skapas i standardmappen \Bin eller \Bin\Debug.
 
@@ -60,7 +62,7 @@ Det här exemplet demonstrerar följande.
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar en implementering av cmdleten Get-proc som innehåller en `Name` parameter som accepterar indatamängden från pipelinen.
+Det här exemplet visar en implementering av Get-Proc-cmdleten som innehåller en `Name` parameter som accepterar inmatade från pipelinen.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands

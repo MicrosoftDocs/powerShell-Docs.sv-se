@@ -1,18 +1,17 @@
 ---
 ms.date: 06/12/2017
-contributor: Farehar
-keywords: Galleri, PowerShell, psgallery
 title: Kräv godkännande av licens
-ms.openlocfilehash: 4b293ea693062cf9717fa4ca913c3eb9abaf7014
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Så här visar du paket licensen på sidan objekt information
+ms.openlocfilehash: 0d8a9ed671f7993726bc3fa41d11159b366e5a28
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278674"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662296"
 ---
 # <a name="require-license-acceptance"></a>Kräv godkännande av licens
 
-Kräv att licens godkännande text visas på sidan objekt information för moduler som kräver licens godkännande. Du kan visa licensen för modulen genom att klicka på länken Visa licens. txt.
+Kräv att licens godkännande text visas på sidan objekt information för moduler som kräver licens godkännande. Du kan visa licensen för modulen genom att klicka på **visa License.txt** länk.
 
 ![Kräv godkännande av licens](media/packages-that-require-license-acceptance/RequireLicenseAcceptance.png)
 
@@ -26,5 +25,5 @@ Om modulen som distribueras till Azure Automation kräver licens godkännande, v
 
 ## <a name="more-details"></a>Mer information
 
-[Kräv licens godkännande på PowerShellGet](../../concepts/module-license-acceptance.md)
-[Azure Automation webbplats](/azure/automation)
+[Kräv licens godkännande i PowerShellGet](../../concepts/module-license-acceptance.md) 
+ [Azure Automation webbplats](/azure/automation)

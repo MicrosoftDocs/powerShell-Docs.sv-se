@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC-skript resurs
-ms.openlocfilehash: 9b89981c17e87b3681c6416c7dee44a75c432ea1
-ms.sourcegitcommit: eb6a7c01e6385809656ac828b9211683e0b1a6fe
+description: DSC-skript resurs
+ms.openlocfilehash: f0df91032cdf4f28b0a2d97e864a66f830531f39
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89041137"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662695"
 ---
 # <a name="dsc-script-resource"></a>DSC-skript resurs
 

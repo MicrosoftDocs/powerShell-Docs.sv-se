@@ -1,14 +1,13 @@
 ---
 ms.date: 09/19/2019
-contributor: manikb
-keywords: Galleri, PowerShell, cmdlet, psget
 title: Installera PowerShellGet
-ms.openlocfilehash: 4a10699be9ff2b64e5848c6749bdd3dedf55e3c7
-ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
+description: Den här artikeln beskriver hur du installerar PowerShellGet-modulen i olika versioner av PowerShell.
+ms.openlocfilehash: 06ec331446849784bb8464912fbce0e5a940823f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88162519"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662156"
 ---
 # <a name="installing-powershellget"></a>Installera PowerShellGet
 
@@ -21,7 +20,7 @@ ms.locfileid: "88162519"
 
 ## <a name="get-the-latest-version-from-powershell-gallery"></a>Hämta den senaste versionen från PowerShell-galleriet
 
-Innan du uppdaterar **PowerShellGet**bör du alltid installera den senaste **NuGet** -providern. Kör följande kommando från en upphöjd PowerShell-session.
+Innan du uppdaterar **PowerShellGet** bör du alltid installera den senaste **NuGet** -providern. Kör följande kommando från en upphöjd PowerShell-session.
 
 ```powershell
 Install-PackageProvider -Name NuGet -Force
@@ -56,7 +55,7 @@ Mer information finns i [Save-module](/powershell/module/PowershellGet/Save-Modu
 #### <a name="preparatory-step-on-computers-running-powershell-30"></a>Förberedelse steg för datorer som kör PowerShell 3,0
 
 Anvisningarna i avsnitten nedan installerar modulerna i katalogen `$env:ProgramFiles\WindowsPowerShell\Modules` .
-I PowerShell 3,0 visas den här katalogen inte i som `$env:PSModulePath` standard, så du måste lägga till den för att modulerna ska kunna läsas in automatiskt. 
+I PowerShell 3,0 visas den här katalogen inte i som `$env:PSModulePath` standard, så du måste lägga till den för att modulerna ska kunna läsas in automatiskt.
 
 Öppna en upphöjd PowerShell-session och kör följande kommando (som börjar gälla i framtida sessioner):
 
@@ -70,11 +69,11 @@ I PowerShell 3,0 visas den här katalogen inte i som `$env:PSModulePath` standar
 
 #### <a name="computers-with-the-packagemanagement-preview-installed"></a>Datorer med PackageManagement-förhands granskning installerad
 
-> [!NOTE] 
+> [!NOTE]
 > PackageManagement Preview var en nedladdnings bar komponent som gjorde PowerShellGet tillgänglig för PowerShell-versionerna 3 och 4, men den är inte längre tillgänglig.
 > Kör om du vill testa om den har installerats på en specifik dator `Get-Module -ListAvailable PowerShellGet` .
 
-1. Från en PowerShell-session använder `Save-Module` du för att hämta den aktuella versionen av **PowerShellGet**. Två mappar hämtas: **PowerShellGet** och **PackageManagement**. Varje mapp innehåller en undermapp med ett versions nummer.
+1. Från en PowerShell-session använder `Save-Module` du för att hämta den aktuella versionen av **PowerShellGet** . Två mappar hämtas: **PowerShellGet** och **PackageManagement** . Varje mapp innehåller en undermapp med ett versions nummer.
 
    ```powershell
    Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
@@ -85,7 +84,7 @@ I PowerShell 3,0 visas den här katalogen inte i som `$env:PSModulePath` standar
 1. Öppna PowerShell-konsolen igen med utökade behörigheter och kör följande kommando.
 
    ```powershell
-   'PowerShellGet', 'PackageManagement' | % { 
+   'PowerShellGet', 'PackageManagement' | % {
      $targetDir = "$env:ProgramFiles\WindowsPowerShell\Modules\$_"
      Remove-Item $targetDir\* -Recurse -Force
      Copy-Item C:\LocalFolder\$_\*\* $targetDir\ -Recurse -Force
@@ -96,14 +95,14 @@ I PowerShell 3,0 visas den här katalogen inte i som `$env:PSModulePath` standar
 
 För datorer utan någon version av **PowerShellGet** installerat (test med `Get-Module -ListAvailable PowerShellGet` ) krävs en dator med **PowerShellGet** installerat för att hämta modulerna.
 
-1. Använd **PowerShellGet** `Save-Module` för att hämta den aktuella versionen av **PowerShellGet**från den dator som har installerat PowerShellGet. Två mappar hämtas: **PowerShellGet** och **PackageManagement**. Varje mapp innehåller en undermapp med ett versions nummer.
+1. Använd **PowerShellGet** `Save-Module` för att hämta den aktuella versionen av **PowerShellGet** från den dator som har installerat PowerShellGet. Två mappar hämtas: **PowerShellGet** och **PackageManagement** . Varje mapp innehåller en undermapp med ett versions nummer.
 
    ```powershell
    Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
    ```
 
 1. Kopiera respektive `<version>` undermapp i mapparna **PowerShellGet** och **PackageManagement** till datorn som inte har **PowerShellGet** installerad, i mappar `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` och `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` som kräver en upphöjd session.
-   
+
 1. Om du till exempel har åtkomst till download-mappen på den andra datorn, t. ex `ws1` . från mål datorn via en UNC-sökväg, så `\\ws1\C$\LocalFolder` öppnar du en PowerShell-konsol med förhöjd behörighet och kör följande kommando:
 
    ```powershell

@@ -1,14 +1,13 @@
 ---
 ms.date: 09/10/2018
-contributor: JKeithB
-keywords: Galleri, PowerShell, cmdlet, psgallery
 title: Hantera API-nycklar
-ms.openlocfilehash: c428689d065c63716db6bc546434623e9375f8ba
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: PowerShell-galleriet använder API-nycklar för att autentisera åtkomst till galleriet för innehålls utgivare.
+ms.openlocfilehash: 4b70ac7d56fc1d63719c2acf93da3dd4ac22abed
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777578"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661124"
 ---
 # <a name="managing-api-keys"></a>Hantera API-nycklar
 
@@ -21,7 +20,7 @@ Följande bild visar de alternativ som är tillgängliga när du skapar en omfå
 
 ![Skapar API-nycklar](media/creating-APIkeys/PSGallery_KeyScoped.png)
 
-I det här exemplet har vi skapat en API-nyckel med namnet **AzureRMDataFactory**. Detta nyckel värde kan användas för att skicka paket med namn som börjar med "AzureRM. DataFactory" och som är giltiga i 365 dagar. Detta är ett typiskt scenario när olika team inom samma organisation arbetar med olika paket. Medlemmarna i teamet har en nyckel som ger dem behörighet för det aktuella paketet som de arbetar med.
+I det här exemplet har vi skapat en API-nyckel med namnet **AzureRMDataFactory** . Detta nyckel värde kan användas för att skicka paket med namn som börjar med "AzureRM. DataFactory" och som är giltiga i 365 dagar. Detta är ett typiskt scenario när olika team inom samma organisation arbetar med olika paket. Medlemmarna i teamet har en nyckel som ger dem behörighet för det aktuella paketet som de arbetar med.
 Värdet för förfallo datum förhindrar att inaktuella eller bortglömt nycklar används.
 
 ## <a name="using-glob-patterns"></a>Använda BLOB mönster

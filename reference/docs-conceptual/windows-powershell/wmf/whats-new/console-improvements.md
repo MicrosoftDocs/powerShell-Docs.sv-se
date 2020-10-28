@@ -1,26 +1,26 @@
 ---
 ms.date: 06/12/2017
-keywords: WMF, powershell, inställning
 title: Konsolförbättringar i WMF 5.1
-ms.openlocfilehash: ae3d08a34a09bc32d40a8a45788999ee9c54a562
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5,1 lägger till nya funktioner i konsol miljön för Windows PowerShell 5,1.
+ms.openlocfilehash: 9a86a2ed4787554e7255bedf1c2ae6e798fefa45
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810423"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660758"
 ---
 # <a name="console-improvements-in-wmf-51"></a>Konsolförbättringar i WMF 5.1
 
 ## <a name="powershell-console-improvements"></a>Förbättringar i PowerShell-konsolen
 
-Följande ändringar har gjorts i PowerShell. exe i WMF 5,1 för att förbättra konsol upplevelsen:
+Följande ändringar har gjorts i powershell.exe WMF 5,1 för att förbättra konsol upplevelsen:
 
 ### <a name="vt100-support"></a>VT100-support
 
 Windows 10 har lagt till stöd för [VT100 escape-sekvenser](/windows/console/console-virtual-terminal-sequences).
 PowerShell kommer att ignorera vissa VT100-formateringar när du beräknar tabell bredder.
 
-PowerShell har även lagt till ett nytt API som kan användas i formateringsregler för att avgöra om VT100 stöds. Ett exempel:
+PowerShell har även lagt till ett nytt API som kan användas i formateringsregler för att avgöra om VT100 stöds. Exempel:
 
 ```powershell
 if ($host.UI.SupportsVirtualTerminal)

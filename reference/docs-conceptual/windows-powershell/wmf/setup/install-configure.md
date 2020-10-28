@@ -1,15 +1,13 @@
 ---
 ms.date: 06/10/2020
-ms.topic: conceptual
-keywords: WMF, powershell, inställning
-contributor: keithb
 title: Installera och konfigurera WMF 5.1
-ms.openlocfilehash: 9e0b4b6ed387b0a0d7fcf62a913677986d70de92
-ms.sourcegitcommit: 4a283fe5419f47102e6c1de7060880a934842ee9
+description: I den här artikeln beskrivs hur du installerar WMF 5,1 och dess krav.
+ms.openlocfilehash: 0e076bfab684b6c83d62d236eea3bbd7ab2ad411
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84671401"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660838"
 ---
 # <a name="install-and-configure-wmf-51"></a>Installera och konfigurera WMF 5,1
 
@@ -26,7 +24,7 @@ Hämta WMF 5,1-paketet för det operativ system och den arkitektur som du vill i
 | Windows Server 2012 R2 |                         | [Win 8.1 AndW2K12R2-KB3191564-x64. msu][] |
 | Windows Server 2012    |                         | [W2K12-KB3191565-x64. msu][]            |
 | Windows Server 2008 R2 | [.NET Framework 4.5.2][]| [Win7AndW2K8R2-KB3191566-x64.ZIP][]    |
-| Windows 8,1            |                         | **x64:** [Win 8.1 andw2k12r2-kb3191564-x64. msu][]</br>**x86:** [Win 8.1-kb3191564-x86. msu][] |
+| Windows 8.1            |                         | **x64:** [Win 8.1 andw2k12r2-kb3191564-x64. msu][]</br>**x86:** [Win 8.1-kb3191564-x86. msu][] |
 | Windows 7 SP1          | [.NET Framework 4.5.2][]| **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP][]</br>**x86:** [Win7-KB3191566-x86.ZIP][] |
 
 [.NET Framework 4.5.2]: https://www.microsoft.com/download/details.aspx?id=42642
@@ -57,7 +55,7 @@ Installationen av WMF 5,1 på antingen Windows Server 2008 R2 SP1 eller Windows 
 
 1. Navigera till den mapp där du laddade ned ZIP-filen.
 
-1. Högerklicka på ZIP-filen och välj **extrahera alla..**.. ZIP-filen innehåller två filer: en MSU-och `Install-WMF5.1.ps1` skript fil. När du har packat upp ZIP-filen kan du kopiera innehållet till alla datorer som kör Windows 7 eller Windows Server 2008 R2.
+1. Högerklicka på ZIP-filen och välj **extrahera alla..** .. ZIP-filen innehåller två filer: en MSU-och `Install-WMF5.1.ps1` skript fil. När du har packat upp ZIP-filen kan du kopiera innehållet till alla datorer som kör Windows 7 eller Windows Server 2008 R2.
 
 1. När du har extraherat ZIP-filens innehåll öppnar du PowerShell som administratör och navigerar sedan till den mapp som innehåller innehållet i ZIP-filen.
 
@@ -65,8 +63,8 @@ Installationen av WMF 5,1 på antingen Windows Server 2008 R2 SP1 eller Windows 
 
    `Install-WMF5.1.ps1` använder följande parametrar för att under lätta automatiserad installation av Windows Server 2008 R2 och Windows 7:
 
-   - **AcceptEula**: när den här parametern ingår godkänns licens avtalet automatiskt och visas inte.
-   - **AllowRestart**: den här parametern kan endast användas om AcceptEula har angetts. Om den här parametern tas med och en omstart krävs efter installation av WMF 5,1 sker omstarten utan att du tillförar omedelbart efter att installationen har slutförts.
+   - **AcceptEula** : när den här parametern ingår godkänns licens avtalet automatiskt och visas inte.
+   - **AllowRestart** : den här parametern kan endast användas om AcceptEula har angetts. Om den här parametern tas med och en omstart krävs efter installation av WMF 5,1 sker omstarten utan att du tillförar omedelbart efter att installationen har slutförts.
 
 ## <a name="winrm-dependency"></a>WinRM-beroende
 

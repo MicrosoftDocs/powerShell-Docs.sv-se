@@ -2,17 +2,18 @@
 ms.date: 07/08/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skriva en DSC-resurs med en enskild instans (metodtips)
-ms.openlocfilehash: cd6048c0f8aeef7fb5458a5f0bfefef25169297c
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: Den här artikeln beskriver en bästa praxis för att definiera en DSC-resurs som bara tillåter en enda instans i en konfiguration.
+ms.openlocfilehash: 4744136b5a733c86b517b239b2c37ce57a4246f7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217618"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662646"
 ---
 # <a name="writing-a-single-instance-dsc-resource-best-practice"></a>Skriva en DSC-resurs med en enskild instans (metodtips)
 
 > [!NOTE]
-> I det här avsnittet beskrivs bästa praxis för att definiera en DSC-resurs som bara tillåter en enda instans i en konfiguration. Det finns för närvarande ingen inbyggd DSC-funktion för detta. Detta kan ändras i framtiden.
+> Den här artikeln beskriver en bästa praxis för att definiera en DSC-resurs som bara tillåter en enda instans i en konfiguration. Det finns för närvarande ingen inbyggd DSC-funktion för detta. Detta kan ändras i framtiden.
 
 Det finns situationer där du inte vill tillåta att en resurs används flera gånger i en konfiguration. I en tidigare implementering av [xTimeZone](https://github.com/PowerShell/xTimeZone) -resursen kan en konfiguration exempelvis anropa resursen flera gånger, vilket ställer in tids zonen till en annan inställning i varje resurs block:
 
@@ -47,9 +48,9 @@ Configuration SetTimeZone
 }
 ```
 
-Detta beror på hur DSC-resursens nycklar fungerar. En resurs måste ha minst en nyckel egenskap. En resurs instans betraktas som unik om kombinationen av värdena för alla nyckel egenskaper är unik. I den tidigare implementeringen hade [xTimeZone](https://github.com/PowerShell/xTimeZone) -resursen bara en egenskap--**timezone**, som krävdes för att vara en nyckel. Därför skulle en konfiguration som ovan kompileras och köras utan varning. Var och en av **xTimeZone** -resurs blocken betraktas som unika. Detta skulle göra att konfigurationen upprepas flera gånger på noden, och att den försätts i timezone och tillbaka.
+Detta beror på hur DSC-resursens nycklar fungerar. En resurs måste ha minst en nyckel egenskap. En resurs instans betraktas som unik om kombinationen av värdena för alla nyckel egenskaper är unik. I den tidigare implementeringen hade [xTimeZone](https://github.com/PowerShell/xTimeZone) -resursen bara en egenskap-- **timezone** , som krävdes för att vara en nyckel. Därför skulle en konfiguration som ovan kompileras och köras utan varning. Var och en av **xTimeZone** -resurs blocken betraktas som unika. Detta skulle göra att konfigurationen upprepas flera gånger på noden, och att den försätts i timezone och tillbaka.
 
-För att säkerställa att en konfiguration bara kan ställa in tids zonen för en målnod en gång, uppdaterades resursen för att lägga till en andra egenskap, **IsSingleInstance**, som blev nyckel egenskapen. **IsSingleInstance** var begränsad till ett enda värde, "Ja" med hjälp av en **ValueMap**. Det gamla MOF-schemat för resursen var:
+För att säkerställa att en konfiguration bara kan ställa in tids zonen för en målnod en gång, uppdaterades resursen för att lägga till en andra egenskap, **IsSingleInstance** , som blev nyckel egenskapen. **IsSingleInstance** var begränsad till ett enda värde, "Ja" med hjälp av en **ValueMap** . Det gamla MOF-schemat för resursen var:
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]

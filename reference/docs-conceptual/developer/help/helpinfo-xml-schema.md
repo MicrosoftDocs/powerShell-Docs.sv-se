@@ -1,12 +1,14 @@
 ---
-title: HelpInfo-XML-schema
 ms.date: 09/12/2016
-ms.openlocfilehash: f94d053b8fc558d9efc13e6b9fbd597287970e38
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.topic: reference
+title: HelpInfo-XML-schema
+description: HelpInfo-XML-schema
+ms.openlocfilehash: 157fd9c0f47c57efbaa9b7888fa174a34ad9567d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953258"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662009"
 ---
 # <a name="helpinfo-xml-schema"></a>HelpInfo-XML-schema
 
@@ -55,4 +57,4 @@ XML-filen HelpInfo innehåller följande element.
 
 - **UICultureName** – innehåller språk koden för den gränssnitts kultur som hjälpfilerna skrivs till.
 
-- **UICultureVersion** – innehåller ett 4-delar av versions numret i "N1. N2. N3. N4 "-format som representerar versionen av CAB-filen för hjälp i användar gränssnitts kulturen. Öka det här versions numret när du överför nya CAB-filer för hjälpfiler i användar gränssnitts kulturen som anges av **UICultureName**. Mer information om det här värdet finns i [versions klass](/dotnet/api/system.version).
+- **UICultureVersion** – innehåller ett 4-delar av versions numret i "N1. N2. N3. N4 "-format som representerar versionen av CAB-filen för hjälp i användar gränssnitts kulturen. Öka det här versions numret när du överför nya CAB-filer för hjälpfiler i användar gränssnitts kulturen som anges av **UICultureName** . Mer information om det här värdet finns i [versions klass](/dotnet/api/system.version).

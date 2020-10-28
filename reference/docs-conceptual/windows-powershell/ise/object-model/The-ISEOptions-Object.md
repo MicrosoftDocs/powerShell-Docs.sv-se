@@ -1,13 +1,13 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: ISEOptions-objektet
-ms.openlocfilehash: 9caa78a70cb837c755b2eff9af6ce0aa5dbb7452
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Objektet ISEOptions representerar olika inställningar för Windows PowerShell ISE.
+ms.openlocfilehash: 4f790550796f40c7a2d4882cc0444fa7a55eeee9
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810101"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661022"
 ---
 # <a name="the-iseoptions-object"></a>ISEOptions-objektet
 

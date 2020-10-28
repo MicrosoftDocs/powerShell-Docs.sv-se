@@ -1,23 +1,23 @@
 ---
 ms.date: 06/12/2017
-keywords: WMF, powershell, inställning
 title: Skriptspårning och -loggning
-ms.openlocfilehash: dd18453c041428d5a6537c413c3ebe324a62dfee
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Windows PowerShell 5. x lägger till ny händelse loggning som gör att du kan granska skript block körning.
+ms.openlocfilehash: d47fb6fdd1ee4b9372fab7b81e6dc94fb45b8880
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811200"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663123"
 ---
 # <a name="script-tracing-and-logging"></a>Skriptspårning och -loggning
 
-Även om PowerShell redan har inställningen **LogPipelineExecutionDetails** grupprincip för att logga anropet av cmdlets, har PowerShell: s skript språk flera funktioner som du kanske vill logga och granska. Den nya detaljerade skript spårnings funktionen ger detaljerad spårning och analys av PowerShell-skript aktivitet på ett system. När du har aktiverat detaljerad skript spårning loggar PowerShell alla skript block till ETW-händelseloggen, **Microsoft-Windows-PowerShell/Operational**. Om ett skript block skapar ett annat skript block, till exempel genom `Invoke-Expression` att anropa, loggas även det anropade skript blocket.
+Även om PowerShell redan har inställningen **LogPipelineExecutionDetails** grupprincip för att logga anropet av cmdlets, har PowerShell: s skript språk flera funktioner som du kanske vill logga och granska. Den nya detaljerade skript spårnings funktionen ger detaljerad spårning och analys av PowerShell-skript aktivitet på ett system. När du har aktiverat detaljerad skript spårning loggar PowerShell alla skript block till ETW-händelseloggen, **Microsoft-Windows-PowerShell/Operational** . Om ett skript block skapar ett annat skript block, till exempel genom `Invoke-Expression` att anropa, loggas även det anropade skript blocket.
 
-Loggning har Aktiver ATS med inställningen **Aktivera PowerShell-skript block loggning** Grupprincip i **administrativa mallar**  ->  **Windows-komponenter**  ->  **Windows PowerShell**.
+Loggning har Aktiver ATS med inställningen **Aktivera PowerShell-skript block loggning** Grupprincip i **administrativa mallar**  ->  **Windows-komponenter**  ->  **Windows PowerShell** .
 
 Händelserna är:
 
-| Kanal |                               Verksamhetsrelaterade                               |
+| Kanal |                               Operativ                               |
 | ------- | ----------------------------------------------------------------------- |
 | Nivå   | Verbose                                                                 |
 | Opcode  | Skapa                                                                  |
@@ -30,7 +30,7 @@ Texten som är inbäddad i meddelandet är den kompilerade skript blockets omfat
 
 När du aktiverar utförlig loggning skriver funktionen start-och slut markörer:
 
-| Kanal |                                 Verksamhetsrelaterade                                |
+| Kanal |                                 Operativ                                |
 | ------- | -------------------------------------------------------------------------- |
 | Nivå   | Verbose                                                                    |
 | Opcode  | Öppna/Stäng                                                               |
@@ -41,7 +41,7 @@ När du aktiverar utförlig loggning skriver funktionen start-och slut markörer
 
 ID: t är det GUID som representerar skript blocket (som kan korreleras med händelse-ID 0x1008) och körnings utrymme-ID: t representerar den körnings utrymme som det här skript blocket kördes i.
 
-Procent tecken i anrops meddelandet representerar strukturerade ETW-egenskaper. Medan de ersätts med de faktiska värdena i meddelande texten, är ett mer robust sätt att komma åt dem att hämta meddelandet med cmdleten Get-WinEvent och sedan använda meddelandets **egenskaps** mat ris.
+Procent tecken i anrops meddelandet representerar strukturerade ETW-egenskaper. Medan de ersätts med de faktiska värdena i meddelande texten, är ett mer robust sätt att komma åt dem att hämta meddelandet med Get-WinEvent-cmdlet och sedan använda meddelandets **egenskaps** mat ris.
 
 Här är ett exempel på hur den här funktionen kan hjälpa dig att packa upp ett skadligt försök att kryptera och obfuscate ett skript:
 

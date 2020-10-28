@@ -1,14 +1,13 @@
 ---
 ms.date: 09/11/2018
-contributor: JKeithB
-keywords: Galleri, PowerShell, psgallery
 title: Manuell paketnedladdning
-ms.openlocfilehash: 3e29437c4e35e47ab2028a7eea9f408daf1a59e1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: Beskriver hur du manuellt laddar ned ett paket från PowerShell-galleriet.
+ms.openlocfilehash: 50cd51d970bf21f8e957e60ceed2e98f306b57ab
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782862"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662284"
 ---
 # <a name="manual-package-download"></a>Manuell paketnedladdning
 
@@ -24,7 +23,7 @@ Varje sida har en länk för manuell hämtning, som du ser här:
 
 ![Sidan paket visning med installations alternativ](media/manual-download/packagedisplaypagewithpseditions.png)
 
-Om du vill ladda ned manuellt klickar **du på Hämta RAW nupkg-filen**. En kopia av paketet kopieras till download-mappen för din webbläsare med namnet `<name>.<version>.nupkg` .
+Om du vill ladda ned manuellt klickar **du på Hämta RAW nupkg-filen** . En kopia av paketet kopieras till download-mappen för din webbläsare med namnet `<name>.<version>.nupkg` .
 
 Ett NuGet-paket är ett ZIP-arkiv med extra filer som innehåller information om paketets innehåll. Vissa webbläsare, till exempel Internet Explorer, ersätter `.nupkg` fil tillägget automatiskt med `.zip` . Om du vill expandera paketet, byter du namn på `.nupkg` filen till `.zip` , om det behövs, och extraherar sedan innehållet till en lokal mapp.
 
@@ -47,10 +46,10 @@ En lista över NuGet element finns i [använda manuell hämtning för att hämta
 Stegen är följande:
 
 1. Avblockera den Internet-hämtade NuGet Package ( `.nupkg` )-filen, till exempel med hjälp av `Unblock-File -Path C:\Downloads\module.nupkg` cmdlet.
-2. Extrahera innehållet i NuGet-paketet till en lokal mapp.
-2. Ta bort de NuGet elementen från mappen.
-3. Byt namn på mappen. Standard namnet på mappen är vanligt vis `<name>.<version>` . Versionen kan inkludera `-prerelease` om modulen är Taggad som en för hands version. Byt namn på mappen till bara modulnamnet. Till exempel `azurerm.storage.5.0.4-preview` blir `azurerm.storage` .
-4. Kopiera mappen till en av mapparna i `$env:PSModulePath value` . `$env:PSModulePath` är en semikolonavgränsad uppsättning med sökvägar som PowerShell ska söka efter moduler i.
+1. Extrahera innehållet i NuGet-paketet till en lokal mapp.
+1. Ta bort de NuGet elementen från mappen.
+1. Byt namn på mappen. Standard namnet på mappen är vanligt vis `<name>.<version>` . Versionen kan inkludera `-prerelease` om modulen är Taggad som en för hands version. Byt namn på mappen till bara modulnamnet. Till exempel `azurerm.storage.5.0.4-preview` blir `azurerm.storage` .
+1. Kopiera mappen till en av mapparna i `$env:PSModulePath value` . `$env:PSModulePath` är en semikolonavgränsad uppsättning med sökvägar som PowerShell ska söka efter moduler i.
 
 > [!IMPORTANT]
 > Den manuella hämtningen innehåller inte några beroenden som krävs av modulen. Om paketet har beroenden måste de installeras i systemet för att modulen ska fungera korrekt. PowerShell-galleriet visar alla beroenden som krävs av paketet.
@@ -65,9 +64,9 @@ Den enklaste metoden är att extrahera NuGet-paketet och sedan använda skriptet
 Stegen är följande:
 
 1. Avblockera den Internet-hämtade NuGet Package ( `.nupkg` )-filen, till exempel med hjälp av `Unblock-File -Path C:\Downloads\package.nupkg` cmdlet.
-2. Extrahera innehållet i NuGet-paketet.
-2. `.PS1`Filen i mappen kan användas direkt från den här platsen.
-3. Du kan ta bort de NuGet elementen i mappen.
+1. Extrahera innehållet i NuGet-paketet.
+1. `.PS1`Filen i mappen kan användas direkt från den här platsen.
+1. Du kan ta bort de NuGet elementen i mappen.
 
 En lista över NuGet element finns i [använda manuell hämtning för att hämta ett paket](#using-manual-download-to-acquire-a-package).
 
