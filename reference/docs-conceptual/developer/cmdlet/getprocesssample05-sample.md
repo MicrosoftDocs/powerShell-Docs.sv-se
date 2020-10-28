@@ -10,65 +10,65 @@ ms.contentlocale: sv-SE
 ms.lasthandoff: 10/27/2020
 ms.locfileid: "92646511"
 ---
-# <a name="getprocesssample05-sample"></a><span data-ttu-id="cb92f-103">GetProcessSample05 – exempel</span><span class="sxs-lookup"><span data-stu-id="cb92f-103">GetProcessSample05 Sample</span></span>
+# <a name="getprocesssample05-sample"></a><span data-ttu-id="1d009-103">GetProcessSample05 – exempel</span><span class="sxs-lookup"><span data-stu-id="1d009-103">GetProcessSample05 Sample</span></span>
 
-<span data-ttu-id="cb92f-104">I det här exemplet visas en fullständig version av Get-Proc-cmdleten.</span><span class="sxs-lookup"><span data-stu-id="cb92f-104">This sample shows a complete version of the Get-Proc cmdlet.</span></span>
+<span data-ttu-id="1d009-104">I det här exemplet visas en fullständig version av Get-Proc-cmdleten.</span><span class="sxs-lookup"><span data-stu-id="1d009-104">This sample shows a complete version of the Get-Proc cmdlet.</span></span>
 
-## <a name="how-to-build-the-sample-using-visual-studio"></a><span data-ttu-id="cb92f-105">Så här skapar du exemplet med Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="cb92f-105">How to build the sample using Visual Studio.</span></span>
+## <a name="how-to-build-the-sample-using-visual-studio"></a><span data-ttu-id="1d009-105">Så här skapar du exemplet med Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="1d009-105">How to build the sample using Visual Studio.</span></span>
 
-1. <span data-ttu-id="cb92f-106">Öppna Utforskaren och gå till katalogen GetProcessSample05 under exempel katalogen.</span><span class="sxs-lookup"><span data-stu-id="cb92f-106">Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.</span></span>
+1. <span data-ttu-id="1d009-106">Öppna Utforskaren och gå till katalogen GetProcessSample05 under exempel katalogen.</span><span class="sxs-lookup"><span data-stu-id="1d009-106">Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.</span></span>
 
-   <span data-ttu-id="cb92f-107">Med Windows PowerShell 2,0 SDK installerat navigerar du till mappen GetProcessSample05</span><span class="sxs-lookup"><span data-stu-id="cb92f-107">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder.</span></span> <span data-ttu-id="cb92f-108">Standard platsen är C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span><span class="sxs-lookup"><span data-stu-id="cb92f-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span></span>
+   <span data-ttu-id="1d009-107">Med Windows PowerShell 2,0 SDK installerat navigerar du till mappen GetProcessSample05</span><span class="sxs-lookup"><span data-stu-id="1d009-107">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder.</span></span> <span data-ttu-id="1d009-108">Standard platsen är C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span><span class="sxs-lookup"><span data-stu-id="1d009-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span></span>
 
-2. <span data-ttu-id="cb92f-109">Dubbelklicka på ikonen för lösnings filen (. SLN).</span><span class="sxs-lookup"><span data-stu-id="cb92f-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="cb92f-110">Exempel projektet öppnas i Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="cb92f-110">This opens the sample project in Visual Studio.</span></span>
+2. <span data-ttu-id="1d009-109">Dubbelklicka på ikonen för lösnings filen (. SLN).</span><span class="sxs-lookup"><span data-stu-id="1d009-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="1d009-110">Exempel projektet öppnas i Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="1d009-110">This opens the sample project in Visual Studio.</span></span>
 
-3. <span data-ttu-id="cb92f-111">I menyn **build** väljer du **build-lösning** .</span><span class="sxs-lookup"><span data-stu-id="cb92f-111">In the **Build** menu, select **Build Solution** .</span></span>
+3. <span data-ttu-id="1d009-111">I menyn **build** väljer du **build-lösning** .</span><span class="sxs-lookup"><span data-stu-id="1d009-111">In the **Build** menu, select **Build Solution** .</span></span>
 
-   <span data-ttu-id="cb92f-112">Biblioteket för exemplet skapas i standard katalogen \Bin eller \Bin\Debug.</span><span class="sxs-lookup"><span data-stu-id="cb92f-112">The library for the sample will be built in the default \bin or \bin\debug directories.</span></span>
+   <span data-ttu-id="1d009-112">Biblioteket för exemplet skapas i standard katalogen \Bin eller \Bin\Debug.</span><span class="sxs-lookup"><span data-stu-id="1d009-112">The library for the sample will be built in the default \bin or \bin\debug directories.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="cb92f-113">Köra exemplet</span><span class="sxs-lookup"><span data-stu-id="cb92f-113">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="1d009-113">Köra exemplet</span><span class="sxs-lookup"><span data-stu-id="1d009-113">How to run the sample</span></span>
 
-1. <span data-ttu-id="cb92f-114">Skapa följande modul-mapp:</span><span class="sxs-lookup"><span data-stu-id="cb92f-114">Create the following module folder:</span></span>
+1. <span data-ttu-id="1d009-114">Skapa följande modul-mapp:</span><span class="sxs-lookup"><span data-stu-id="1d009-114">Create the following module folder:</span></span>
 
    `[user]/documents/windowspowershell/modules/GetProcessSample05`
 
-2. <span data-ttu-id="cb92f-115">Kopiera exempel sammansättningen till module-mappen.</span><span class="sxs-lookup"><span data-stu-id="cb92f-115">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="1d009-115">Kopiera exempel sammansättningen till module-mappen.</span><span class="sxs-lookup"><span data-stu-id="1d009-115">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="cb92f-116">Starta Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="cb92f-116">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="1d009-116">Starta Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="1d009-116">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="cb92f-117">Kör följande kommando för att läsa in sammansättningen i Windows PowerShell:</span><span class="sxs-lookup"><span data-stu-id="cb92f-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="1d009-117">Kör följande kommando för att läsa in sammansättningen i Windows PowerShell:</span><span class="sxs-lookup"><span data-stu-id="1d009-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
    `Import-module getprossessample05`
 
-5. <span data-ttu-id="cb92f-118">Kör följande kommando för att köra cmdleten:</span><span class="sxs-lookup"><span data-stu-id="cb92f-118">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="1d009-118">Kör följande kommando för att köra cmdleten:</span><span class="sxs-lookup"><span data-stu-id="1d009-118">Run the following command to run the cmdlet:</span></span>
 
    `get-proc`
 
-## <a name="requirements"></a><span data-ttu-id="cb92f-119">Krav</span><span class="sxs-lookup"><span data-stu-id="cb92f-119">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="1d009-119">Krav</span><span class="sxs-lookup"><span data-stu-id="1d009-119">Requirements</span></span>
 
-<span data-ttu-id="cb92f-120">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="cb92f-120">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="1d009-120">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="1d009-120">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="cb92f-121">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="cb92f-121">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="1d009-121">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="1d009-121">Demonstrates</span></span>
 
-<span data-ttu-id="cb92f-122">Det här exemplet demonstrerar följande.</span><span class="sxs-lookup"><span data-stu-id="cb92f-122">This sample demonstrates the following.</span></span>
+<span data-ttu-id="1d009-122">Det här exemplet demonstrerar följande.</span><span class="sxs-lookup"><span data-stu-id="1d009-122">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="cb92f-123">Deklarera en cmdlet-klass med cmdlet-attributet.</span><span class="sxs-lookup"><span data-stu-id="cb92f-123">Declaring a cmdlet class using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="1d009-123">Deklarera en cmdlet-klass med cmdlet-attributet.</span><span class="sxs-lookup"><span data-stu-id="1d009-123">Declaring a cmdlet class using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="cb92f-124">Deklarera en cmdlet-parameter med attributet parameter.</span><span class="sxs-lookup"><span data-stu-id="cb92f-124">Declaring a cmdlet parameter using the Parameter attribute.</span></span>
+- <span data-ttu-id="1d009-124">Deklarera en cmdlet-parameter med attributet parameter.</span><span class="sxs-lookup"><span data-stu-id="1d009-124">Declaring a cmdlet parameter using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="cb92f-125">Anger positioner för parametrar.</span><span class="sxs-lookup"><span data-stu-id="cb92f-125">Specifying positions for parameters.</span></span>
+- <span data-ttu-id="1d009-125">Anger positioner för parametrar.</span><span class="sxs-lookup"><span data-stu-id="1d009-125">Specifying positions for parameters.</span></span>
 
-- <span data-ttu-id="cb92f-126">Ange att parametrar kan ta emot indata från pipelinen.</span><span class="sxs-lookup"><span data-stu-id="cb92f-126">Specifying that parameters can take input from the pipeline.</span></span> <span data-ttu-id="cb92f-127">Indatamängden kan hämtas från ett objekt eller ett värde från en egenskap för ett objekt vars egenskaps namn är detsamma som parameter namnet.</span><span class="sxs-lookup"><span data-stu-id="cb92f-127">The input can be taken from an object or a value from a property of an object whose property name is the same as the parameter name.</span></span>
+- <span data-ttu-id="1d009-126">Ange att parametrar kan ta emot indata från pipelinen.</span><span class="sxs-lookup"><span data-stu-id="1d009-126">Specifying that parameters can take input from the pipeline.</span></span> <span data-ttu-id="1d009-127">Indatamängden kan hämtas från ett objekt eller ett värde från en egenskap för ett objekt vars egenskaps namn är detsamma som parameter namnet.</span><span class="sxs-lookup"><span data-stu-id="1d009-127">The input can be taken from an object or a value from a property of an object whose property name is the same as the parameter name.</span></span>
 
-- <span data-ttu-id="cb92f-128">Deklarera ett verifierings attribut för parameter indatatypen.</span><span class="sxs-lookup"><span data-stu-id="cb92f-128">Declaring a validation attribute for the parameter input.</span></span>
+- <span data-ttu-id="1d009-128">Deklarera ett verifierings attribut för parameter indatatypen.</span><span class="sxs-lookup"><span data-stu-id="1d009-128">Declaring a validation attribute for the parameter input.</span></span>
 
-- <span data-ttu-id="cb92f-129">Hantering av fel och undantag.</span><span class="sxs-lookup"><span data-stu-id="cb92f-129">Handling errors and exceptions.</span></span>
+- <span data-ttu-id="1d009-129">Hantering av fel och undantag.</span><span class="sxs-lookup"><span data-stu-id="1d009-129">Handling errors and exceptions.</span></span>
 
-- <span data-ttu-id="cb92f-130">Skriver fel söknings meddelanden.</span><span class="sxs-lookup"><span data-stu-id="cb92f-130">Writing debug messages.</span></span>
+- <span data-ttu-id="1d009-130">Skriver fel söknings meddelanden.</span><span class="sxs-lookup"><span data-stu-id="1d009-130">Writing debug messages.</span></span>
 
-## <a name="example"></a><span data-ttu-id="cb92f-131">Exempel</span><span class="sxs-lookup"><span data-stu-id="cb92f-131">Example</span></span>
+## <a name="example"></a><span data-ttu-id="1d009-131">Exempel</span><span class="sxs-lookup"><span data-stu-id="1d009-131">Example</span></span>
 
-<span data-ttu-id="cb92f-132">Det här exemplet visar hur du skapar en-cmdlet som visar en lista över angivna processer.</span><span class="sxs-lookup"><span data-stu-id="cb92f-132">This sample shows how to create a cmdlet that displays a list of specified processes.</span></span>
+<span data-ttu-id="1d009-132">Det här exemplet visar hur du skapar en-cmdlet som visar en lista över angivna processer.</span><span class="sxs-lookup"><span data-stu-id="1d009-132">This sample shows how to create a cmdlet that displays a list of specified processes.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands
@@ -474,6 +474,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="cb92f-133">Se även</span><span class="sxs-lookup"><span data-stu-id="cb92f-133">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1d009-133">Se även</span><span class="sxs-lookup"><span data-stu-id="1d009-133">See Also</span></span>
 
-[<span data-ttu-id="cb92f-134">Skriva en Windows PowerShell-cmdlet</span><span class="sxs-lookup"><span data-stu-id="cb92f-134">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="1d009-134">Skriva en Windows PowerShell-cmdlet</span><span class="sxs-lookup"><span data-stu-id="1d009-134">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
