@@ -1,12 +1,14 @@
 ---
-title: RightIndent-element för ram för kontroller för vy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7a688997791dc901e81236c5d467425ad145eb33
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: RightIndent-element för Frame för Controls för View (format)
+description: RightIndent-element för Frame för Controls för View (format)
+ms.openlocfilehash: 6bd7e0239777e1015f34827e3bad75e5fd560fc0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780465"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665505"
 ---
 # <a name="rightindent-element-for-frame-for-controls-for-view-format"></a>RightIndent-element för Frame för Controls för View (format)
 

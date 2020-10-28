@@ -1,12 +1,14 @@
 ---
-title: Namn element för vy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 670b089f850fa4b39b7b100ca1e1ce45b05ea72d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Name-element för View (format)
+description: Name-element för View (format)
+ms.openlocfilehash: 5781bcdf7a0e1eb5e9c7e97bb6acc0a383dc0262
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773240"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666473"
 ---
 # <a name="name-element-for-view-format"></a>Name-element för View (format)
 

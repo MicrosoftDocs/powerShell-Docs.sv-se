@@ -1,12 +1,14 @@
 ---
-title: Filer för Windows PowerShell-formatering | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 54fae12163f8d439c2acc24df17ed140a556cba0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell-formateringsfiler
+description: Windows PowerShell-formateringsfiler
+ms.openlocfilehash: 7fa58a3463dc4b2a23d38d161d83387744334d44
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783508"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666373"
 ---
 # <a name="windows-powershell-formatting-files"></a>Windows PowerShell-formateringsfiler
 

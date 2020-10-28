@@ -1,24 +1,24 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,cmdlet
 title: Utforska Windows PowerShell ISE
-ms.openlocfilehash: 03728a8c83962894b27738609a5b1bec841fdb13
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Den här artikeln är en översikt över funktionerna i Windows PowerShell ISE
+ms.openlocfilehash: f389ac60da13141329d81baf08e9100b144022c3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811109"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663821"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Utforska Windows PowerShell ISE
 
-Du kan använda Windows PowerShell-® Integrated Scripting Environment (ISE) för att skapa, köra och felsöka kommandon och skript. Windows PowerShell ISE består av meny raden, Windows PowerShell-flikar, verktygsfältet, skript flikar, ett skript fönster, ett fönster, ett statusfält, ett skjutreglage för text storlek och Sammanhangs beroende hjälp.
+Du kan använda Windows PowerShell &reg; Ise (Integrated Scripting Environment) för att skapa, köra och felsöka kommandon och skript. Windows PowerShell ISE består av meny raden, Windows PowerShell-flikar, verktygsfältet, skript flikar, ett skript fönster, ett fönster, ett statusfält, ett skjutreglage för text storlek och Sammanhangs beroende hjälp.
 
 > [!NOTE]
 > Från och med Windows PowerShell ISE 3,0 kombineras kommando-och utdatafönstret i ett enda konsol fönster.
 
 ## <a name="menu-bar"></a>Menyrad
 
-Meny raden innehåller **filen**, **Redigera**, **Visa**, **verktyg**, **Felsök**, **tillägg**och **Hjälp** menyer. Med knapparna på menyerna kan du utföra uppgifter som är relaterade till att skriva och köra skript och köra kommandon i Windows PowerShell ISE. Dessutom kan ett [tilläggs verktyg](object-model/The-ISEAddOnTool-Object.md) placeras på Meny raden genom att köra skript som använder- [hierarkin för objekt modellen ISE](object-model/The-ISE-Object-Model-Hierarchy.md).
+Meny raden innehåller **filen** , **Redigera** , **Visa** , **verktyg** , **Felsök** , **tillägg** och **Hjälp** menyer. Med knapparna på menyerna kan du utföra uppgifter som är relaterade till att skriva och köra skript och köra kommandon i Windows PowerShell ISE. Dessutom kan ett [tilläggs verktyg](object-model/The-ISEAddOnTool-Object.md) placeras på Meny raden genom att köra skript som använder- [hierarkin för objekt modellen ISE](object-model/The-ISE-Object-Model-Hierarchy.md).
 
 > [!NOTE]
 > I Windows PowerShell ISE 2,0 fanns inte **verktyg** -och **tilläggs** menyerna.
@@ -46,7 +46,7 @@ Följande knappar finns i verktygsfältet.
 | **Kör val**              | Kör en markerad del av ett skript.                                                                                                                                             |
 | **Stoppa körning**             | Stoppar ett skript som körs.                                                                                                                                                  |
 | **Fliken Ny fjärr-PowerShell**  | Skapar en ny PowerShell-flik som upprättar en session på en fjärran sluten dator. En dialog ruta visas där du uppmanas att ange information som krävs för att upprätta en fjärr anslutning. |
-| **Starta PowerShell. exe**       | Öppnar en PowerShell-konsol.                                                                                                                                                      |
+| **Starta PowerShell.exe**       | Öppnar en PowerShell-konsol.                                                                                                                                                      |
 | **Visa skript fönstret överst**       | Flyttar skript fönstret överst i visningen.                                                                                                                                 |
 | **Visa skript fönstrets höger**     | Flyttar skript fönstret till höger i visningen.                                                                                                                               |
 | **Visa skript fönstret maximerat** | Maximerar skript fönstret.                                                                                                                                                       |
@@ -69,11 +69,11 @@ Visar resultatet av de kommandon och skript som du har kört. Du kan också kopi
 
 Gör att du kan skriva kommandon. Du kan köra ett kommando rads kommando eller ett flera rader kommando i kommando fönstret. Tryck på <kbd>SKIFT</kbd> + <kbd>RETUR</kbd> för att ange varje rad i ett flerradig kommando och tryck på <kbd>RETUR</kbd> efter den sista raden för att köra kommandot Multiline. Den prompt som visas överst i kommando fönstret visar sökvägen till den aktuella arbets katalogen.
 
-## <a name="status-bar"></a>Statusrad
+## <a name="status-bar"></a>Statusfält
 
 Gör att du kan se om de kommandon och skript som du kör är slutförda. Statusfältet visas längst ned i visningen. De valda delarna av fel meddelanden visas i statusfältet.
 
-## <a name="text-size-slider"></a>Skjutreglage för text storlek
+## <a name="text-size-slider"></a>Text-Size skjutreglage
 
 Ökar eller minskar storleken på texten på skärmen.
 

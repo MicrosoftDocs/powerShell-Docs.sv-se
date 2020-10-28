@@ -1,12 +1,14 @@
 ---
-title: PropertyName-element för ExpressionBinding för kontroller för vy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: bf0c03ec7a34eb8bc9e2c5418d60986887c50b8f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: PropertyName-element för ExpressionBinding för Controls för View (format)
+description: PropertyName-element för ExpressionBinding för Controls för View (format)
+ms.openlocfilehash: f53f966456746e85d01503c9c151f2538c89006a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773206"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666220"
 ---
 # <a name="propertyname-element-for-expressionbinding-for-controls-for-view-format"></a>PropertyName-element för ExpressionBinding för Controls för View (format)
 

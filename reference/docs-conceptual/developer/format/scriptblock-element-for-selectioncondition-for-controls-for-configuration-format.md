@@ -1,12 +1,14 @@
 ---
-title: Script block-element för SelectionCondition för kontroll av konfiguration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 24584aacd7869abd3dcfc6ff546e6dea4c2c04fc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ScriptBlock-element för SelectionCondition för Controls för Configuration (format)
+description: ScriptBlock-element för SelectionCondition för Controls för Configuration (format)
+ms.openlocfilehash: 42e9d2b00f7690e46242b2c4602245e4bf391bbf
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785446"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664961"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-controls-for-configuration-format"></a>ScriptBlock-element för SelectionCondition för Controls för Configuration (format)
 

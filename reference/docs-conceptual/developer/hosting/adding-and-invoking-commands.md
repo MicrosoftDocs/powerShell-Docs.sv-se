@@ -1,12 +1,14 @@
 ---
-title: Lägga till och anropa kommandon | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: b51c4ae3fa5c5239e3c5c5e65bf7aa63c58c4da9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Lägga till och anropa kommandon
+description: Lägga till och anropa kommandon
+ms.openlocfilehash: 476ab754ad6c61f18295157c5e215011c67dfdcb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779802"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664571"
 ---
 # <a name="adding-and-invoking-commands"></a>Lägga till och anropa kommandon
 

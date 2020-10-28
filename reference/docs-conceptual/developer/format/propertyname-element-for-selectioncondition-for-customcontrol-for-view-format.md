@@ -1,12 +1,14 @@
 ---
-title: PropertyName-element för SelectionCondition för CustomControl för vy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: aa3955b84b8de9901f394e8108f31440fcb6c942
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: PropertyName-element för SelectionCondition för CustomControl för View (format)
+description: PropertyName-element för SelectionCondition för CustomControl för View (format)
+ms.openlocfilehash: 1dd325a58b29a0f13b1341559c2a7dfe251c6b36
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780805"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665863"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-customcontrol-for-view-format"></a>PropertyName-element för SelectionCondition för CustomControl för View (format)
 

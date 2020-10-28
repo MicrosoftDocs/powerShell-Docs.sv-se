@@ -1,12 +1,14 @@
 ---
-title: PropertyName-element för ExpressionBinding för kontroll av konfiguration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f4343eeb157a1e3fc94a43c610ca5bdc94a5f667
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: PropertyName-element för ExpressionBinding för Controls för Configuration (format)
+description: PropertyName-element för ExpressionBinding för Controls för Configuration (format)
+ms.openlocfilehash: 1deb49c92a9457d8e1032c1ce698d7d9488edd8e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780923"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666254"
 ---
 # <a name="propertyname-element-for-expressionbinding-for-controls-for-configuration-format"></a>PropertyName-element för ExpressionBinding för Controls för Configuration (format)
 

@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Använda Windows PowerShell 2,0-motorn
-ms.openlocfilehash: c5ac92159d63e5669643908016186ed32dfb46db
-ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
+description: Windows PowerShell 2,0-motorn är avsedd att användas endast när ett befintligt skript eller värd program inte kan köras eftersom värd program som skrivits för Windows PowerShell 2,0 och kompilerats med CLR 2,0 inte kan köras utan ändringar.
+ms.openlocfilehash: 214b87b7314f31974801bb07f98ddea3b68008f0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216030"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663998"
 ---
 # <a name="using-the-windows-powershell-20-engine"></a>Använda Windows PowerShell 2,0-motorn
 
@@ -40,7 +41,7 @@ PowerShell.exe -Version 2
 
 ## <a name="how-to-start-a-remote-session-with-the-windows-powershell-20-engine"></a>Så här startar du en fjärrsession med Windows PowerShell 2,0-motorn
 
-Om du vill köra Windows PowerShell 2,0-motorn i en fjärran sluten session skapar du en sessionsnyckel (kallas även _slut punkt_) på den fjärrdator som läser in Windows PowerShell 2,0-motorn. Konfigurationen av sessionen sparas på fjärrdatorn och kan användas av alla auktoriserade användare för att skapa sessioner som använder Windows PowerShell 2,0-motorn.
+Om du vill köra Windows PowerShell 2,0-motorn i en fjärran sluten session skapar du en sessionsnyckel (kallas även _slut punkt_ ) på den fjärrdator som läser in Windows PowerShell 2,0-motorn. Konfigurationen av sessionen sparas på fjärrdatorn och kan användas av alla auktoriserade användare för att skapa sessioner som använder Windows PowerShell 2,0-motorn.
 
 Detta är en avancerad uppgift som vanligt vis utförs av en system administratör.
 

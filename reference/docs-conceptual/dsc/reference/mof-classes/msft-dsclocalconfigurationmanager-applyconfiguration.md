@@ -1,13 +1,14 @@
 ---
 ms.date: 07/14/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: ApplyConfiguration-metoden
-ms.openlocfilehash: bec74ccd6f75448484adfd26bf8a4af4e224eb3f
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: ApplyConfiguration-metoden
+ms.openlocfilehash: aa99221b33d39c3ecc70156a11eaee10b540e2dc
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463847"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664272"
 ---
 # <a name="applyconfiguration-method"></a>ApplyConfiguration-metoden
 
@@ -19,7 +20,7 @@ Om det inte finns någon väntande konfiguration, tillämpar den här metoden de
 
 ```mof
 uint32 ApplyConfiguration(
-  [in] boolean force
+  [in] boolean force
 );
 ```
 
@@ -27,7 +28,7 @@ uint32 ApplyConfiguration(
 
 ### <a name="force"></a>inför
 
-Om detta är **Sant**tillämpas den aktuella konfigurationen igen, även om det finns en väntande konfiguration.
+Om detta är **Sant** tillämpas den aktuella konfigurationen igen, även om det finns en väntande konfiguration.
 
 ## <a name="return-value"></a>Returvärde
 
@@ -41,7 +42,7 @@ Detta är en statisk metod.
 
 **MOF:** DscCore. MOF
 
-**Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Namnrymd** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Se även
 

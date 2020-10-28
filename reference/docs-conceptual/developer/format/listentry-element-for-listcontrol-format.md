@@ -1,12 +1,14 @@
 ---
-title: ListEntry-element för ListControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d98f0b5215eea7668f866d2733214ade79d748f1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ListEntry-element för ListControl (format)
+description: ListEntry-element för ListControl (format)
+ms.openlocfilehash: 96ae5fcdd837d2491d6c7ff6a375fef1d83ae3e9
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785701"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666577"
 ---
 # <a name="listentry-element-for-listcontrol-format"></a>ListEntry-element för ListControl (format)
 

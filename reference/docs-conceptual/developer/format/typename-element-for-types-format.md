@@ -1,12 +1,14 @@
 ---
-title: Elementet TypeName för typer (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 40fad73c66124d6c3b0d969b4268713a492c963a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TypeName-element för Types (format)
+description: TypeName-element för Types (format)
+ms.openlocfilehash: c656b8e7e5877b72ff2164e5b417857273cada61
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772543"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664619"
 ---
 # <a name="typename-element-for-types-format"></a>TypeName-element för Types (format)
 

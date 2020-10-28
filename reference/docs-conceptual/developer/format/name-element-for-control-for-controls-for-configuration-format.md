@@ -1,12 +1,14 @@
 ---
-title: Namn element för kontroll för konfiguration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 3d45ba98b909ebee18e01d2b6985a48906ce39d9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Name-element för Control för Controls för Configuration (format)
+description: Name-element för Control för Controls för Configuration (format)
+ms.openlocfilehash: 0c1c83f827482886ca742f2c0174e8383f87fb52
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783542"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666509"
 ---
 # <a name="name-element-for-control-for-controls-for-configuration-format"></a>Name-element för Control för Controls för Configuration (format)
 

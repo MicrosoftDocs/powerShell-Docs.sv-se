@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC ServiceSet-resurs
-ms.openlocfilehash: b51cfa86aa6d2114553a0eee681cb88ea93e213f
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC ServiceSet-resurs
+ms.openlocfilehash: 4115dd3e19121656c7448b4088346e5a1abf6af1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464408"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664152"
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet-resurs
 
@@ -37,10 +38,10 @@ ServiceSet [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|Name |Anger tjänst namn. Observera att ibland skiljer det sig från visnings namnen. Du kan hämta en lista över tjänsterna och deras aktuella status med `Get-Service` cmdleten. |
-|Startuptype tjänst |Anger start typen för tjänsterna. De värden som tillåts för den här egenskapen är: **Automatisk**, **inaktive rad**och **manuell**. |
-|BuiltInAccount |Anger det inloggnings konto som ska användas för tjänsterna. De värden som tillåts för den här egenskapen är: **LocalService**, **LocalSystem**och **NetworkService**. |
-|Stat |Anger det tillstånd som du vill säkerställa för tjänsterna: **stoppas** eller **körs**. |
+|Namn |Anger tjänst namn. Observera att ibland skiljer det sig från visnings namnen. Du kan hämta en lista över tjänsterna och deras aktuella status med `Get-Service` cmdleten. |
+|Startuptype tjänst |Anger start typen för tjänsterna. De värden som tillåts för den här egenskapen är: **Automatisk** , **inaktive rad** och **manuell** . |
+|BuiltInAccount |Anger det inloggnings konto som ska användas för tjänsterna. De värden som tillåts för den här egenskapen är: **LocalService** , **LocalSystem** och **NetworkService** . |
+|Tillstånd |Anger det tillstånd som du vill säkerställa för tjänsterna: **stoppas** eller **körs** . |
 |Autentiseringsuppgift |Anger autentiseringsuppgifter för det konto som tjänst resursen kommer att köras under. Den här egenskapen och egenskapen **BuiltinAccount** kan inte användas tillsammans. |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper

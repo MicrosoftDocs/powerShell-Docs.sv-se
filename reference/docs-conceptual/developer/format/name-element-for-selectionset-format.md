@@ -1,12 +1,14 @@
 ---
-title: Namn element för SelectionSet (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1fc33eeb87a6912ed6793629ab1969cd65b5f0c5
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Name-element för SelectionSet (format)
+description: Name-element för SelectionSet (format)
+ms.openlocfilehash: 98c13be6ea352055231fbdb3a60f0eb508f661b8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773308"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666474"
 ---
 # <a name="name-element-for-selectionset-format"></a>Name-element för SelectionSet (format)
 

@@ -1,12 +1,14 @@
 ---
-title: Läsa in och exportera formatering av data | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: b449b280ccee561679d58f2f2a8b467c83150766
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Läsa in och exportera formateringsdata
+description: Läsa in och exportera formateringsdata
+ms.openlocfilehash: 38857526801051bf6d31d300d5be1a3fd2c80391
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781128"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666526"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>Läsa in och exportera formateringsdata
 
@@ -30,7 +32,7 @@ När en fil läses in, läggs den till i en intern lista som Windows PowerShell 
 
 Det finns inget krav på var filerna lagras på disk. Det rekommenderas dock starkt att du lagrar dem i följande mapp: `user\documents\windowspowershell\`
 
-#### <a name="loading-a-format-file-using-import-formatdata"></a>Läsa in en format fil med hjälp av import-FormatData
+#### <a name="loading-a-format-file-using-import-formatdata"></a>Läsa in en format fil med Import-FormatData
 
 1. Lagra format filen på disk.
 

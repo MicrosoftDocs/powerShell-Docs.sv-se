@@ -1,12 +1,14 @@
 ---
-title: PropertyName-element för ItemSelectionCondition för ListControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 8bdbb05326f7ff5ccffa46215631a5c954080dc1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: PropertyName-element för ItemSelectionCondition för ListControl (format)
+description: PropertyName-element för ItemSelectionCondition för ListControl (format)
+ms.openlocfilehash: c515efe70afdb1c1186c0a07fe1f52dc49ad57b9
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780873"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665999"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-listcontrol-format"></a>PropertyName-element för ItemSelectionCondition för ListControl (format)
 

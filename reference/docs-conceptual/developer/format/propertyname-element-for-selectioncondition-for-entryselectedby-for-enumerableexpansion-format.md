@@ -1,12 +1,14 @@
 ---
-title: PropertyName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c0081cb724ccaf1c04241aafa177880d7c0e5dbe
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: PropertyName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)
+description: PropertyName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)
+ms.openlocfilehash: 8e28118894661b50e90a5ccc86a36fbbe77e4b03
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783474"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665846"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>PropertyName-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)
 

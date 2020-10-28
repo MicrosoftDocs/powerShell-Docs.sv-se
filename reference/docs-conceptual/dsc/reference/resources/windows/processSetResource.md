@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC ProcessSet-resurs
-ms.openlocfilehash: b96c6e6830a53d93cf8144cba28e264e23912306
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC ProcessSet-resurs
+ms.openlocfilehash: 46e2cf8409448c2d4b7adb4da4fb51a5779c7c8f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464000"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664247"
 ---
 # <a name="dsc-processset-resource"></a>DSC ProcessSet-resurs
 
@@ -48,7 +49,7 @@ ProcessSet [string] #ResourceName
 |Egenskap |Beskrivning |
 |---|---|
 |DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
-|Kontrol |Anger om processerna finns. Ange att den här egenskapen **finns** för att se till att processen finns. Annars anger du det som **frånvarande**. Standardvärdet finns **.** |
+|Kontrol |Anger om processerna finns. Ange att den här egenskapen **finns** för att se till att processen finns. Annars anger du det som **frånvarande** . Standardvärdet finns **.** |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 
 > [!NOTE]

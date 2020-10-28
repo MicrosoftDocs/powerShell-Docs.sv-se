@@ -1,13 +1,13 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,cmdlet
 title: Skapa en PowerShell-flik i Windows PowerShell ISE
-ms.openlocfilehash: 39df0b76c337bb7c02d36d66b325c5396afbbe00
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Med hjälp av flikarna i Windows PowerShell ISE (Integrated Scripting Environment) kan du samtidigt skapa och använda flera körnings miljöer i samma program. Varje PowerShell-flik motsvarar en annan körnings miljö eller-session.
+ms.openlocfilehash: 62054014be9890b3fa0296f717f65a85534628d8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810304"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663781"
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>Skapa en PowerShell-flik i Windows PowerShell ISE
 
@@ -20,7 +20,7 @@ Använd följande steg för att öppna eller stänga en flik i Windows PowerShel
 
 ## <a name="to-create-and-use-a-new-powershell-tab"></a>Skapa och använda en ny PowerShell-flik
 
-På **Arkiv** -menyn klickar du på **ny PowerShell-flik**. Den nya PowerShell-fliken öppnas alltid som det aktiva fönstret. PowerShell-flikar är stegvisa numrerade i den ordning som de är öppna. Varje flik är kopplad till ett eget fönster i Windows PowerShell-konsolen. Du kan ha upp till 32 PowerShell-flikar med sin egen session öppen i taget (detta är begränsat till 8 på Windows PowerShell ISE 2,0.)
+På **Arkiv** -menyn klickar du på **ny PowerShell-flik** . Den nya PowerShell-fliken öppnas alltid som det aktiva fönstret. PowerShell-flikar är stegvisa numrerade i den ordning som de är öppna. Varje flik är kopplad till ett eget fönster i Windows PowerShell-konsolen. Du kan ha upp till 32 PowerShell-flikar med sin egen session öppen i taget (detta är begränsat till 8 på Windows PowerShell ISE 2,0.)
 
 Observera att om du klickar på de **nya** eller **Öppna** ikonerna i verktygsfältet skapas ingen ny flik med en separat session. I stället öppnar dessa knappar en ny eller befintlig skript fil på den aktuella aktiva fliken med en session. Du kan ha flera öppna skriptfiler med varje flik och session. Skript flikarna för en session visas bara under session-flikarna när den associerade sessionen är aktiv.
 
@@ -36,7 +36,7 @@ Om du vill stänga en flik kan du använda någon av följande metoder:
 
 - Klicka på den flik som du vill stänga.
 
-- På **Arkiv** -menyn klickar du på **Stäng PowerShell-fliken**eller på knappen Stäng (**X**) på en aktiv flik för att stänga fliken.
+- På **Arkiv** -menyn klickar du på **Stäng PowerShell-fliken** eller på knappen Stäng ( **X** ) på en aktiv flik för att stänga fliken.
 
 Om du har osparade filer öppna på fliken PowerShell som du stänger, uppmanas du att spara eller ta bort dem. Mer information om hur du sparar ett skript finns i [så här sparar du ett skript](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md#how-to-save-a-script).
 

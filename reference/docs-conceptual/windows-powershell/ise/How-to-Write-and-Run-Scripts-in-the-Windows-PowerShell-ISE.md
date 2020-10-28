@@ -1,13 +1,13 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,cmdlet
 title: Skriv och kör skript i Windows PowerShell ISE
-ms.openlocfilehash: 2e3122a3b436ba878d2c5f9d72d4f9e024d4d031
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Den här artikeln beskriver hur du skapar, redigerar, kör och sparar skript i fönstret skript.
+ms.openlocfilehash: 8e85da1d4eecbb975f2dd799c91512e0081309d2
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810248"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663649"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Skriv och kör skript i Windows PowerShell ISE
 
@@ -22,15 +22,15 @@ Du kan öppna och redigera Windows PowerShell-filer i skript fönstret. Specifik
 
 ### <a name="to-create-a-new-script-file"></a>Så här skapar du en ny skript fil
 
-I verktygsfältet klickar du på **nytt**eller på **nytt**på **Arkiv** -menyn. Den skapade filen visas på fliken ny fil på fliken aktuell PowerShell. kom ihåg att PowerShell-flikarna bara visas när det finns fler än en. Som standard skapas en fil av typen script ( `.ps1` ), men den kan sparas med ett nytt namn och tillägg. Du kan skapa flera skriptfiler på samma PowerShell-flik.
+I verktygsfältet klickar du på **nytt** eller på **nytt** på **Arkiv** -menyn. Den skapade filen visas på fliken ny fil på fliken aktuell PowerShell. Kom ihåg att PowerShell-flikarna bara visas när det finns fler än en. Som standard skapas en fil av typen script ( `.ps1` ), men den kan sparas med ett nytt namn och tillägg. Du kan skapa flera skriptfiler på samma PowerShell-flik.
 
 ### <a name="to-open-an-existing-script"></a>Öppna ett befintligt skript
 
-Klicka på **Öppna**i verktygsfältet, eller klicka på **Öppna**på **Arkiv** -menyn. I dialog rutan **Öppna** väljer du den fil som du vill öppna. Den öppna filen visas på en ny flik.
+Klicka på **Öppna** i verktygsfältet, eller klicka på **Öppna** på **Arkiv** -menyn. I dialog rutan **Öppna** väljer du den fil som du vill öppna. Den öppna filen visas på en ny flik.
 
 ### <a name="to-close-a-script-tab"></a>Stänga en skript-flik
 
-Klicka på ikonen **Stäng** (**X**) på fliken Arkiv som du vill stänga eller Välj menyn **Arkiv** och klicka på **Stäng**.
+Klicka på ikonen **Stäng** ( **X** ) på fliken Arkiv som du vill stänga eller Välj menyn **Arkiv** och klicka på **Stäng** .
 
 Om filen har ändrats sedan den senast sparades uppmanas du att spara eller ta bort den.
 
@@ -40,12 +40,12 @@ Peka på fil namnet på fliken fil. Den fullständigt kvalificerade sökvägen t
 
 ### <a name="to-run-a-script"></a>Köra ett skript
 
-I verktygsfältet klickar du på **Kör skript**eller på **Arkiv** -menyn och sedan på **Kör**.
+I verktygsfältet klickar du på **Kör skript** eller på **Arkiv** -menyn och sedan på **Kör** .
 
 ### <a name="to-run-a-portion-of-a-script"></a>Köra en del av ett skript
 
 1. I fönstret skript väljer du en del av ett skript.
-2. På **Arkiv** -menyn klickar du på **Kör markering**eller på verktygsfältet klickar du på **Kör markering**.
+2. På **Arkiv** -menyn klickar du på **Kör markering** eller på verktygsfältet klickar du på **Kör markering** .
 
 ### <a name="to-stop-a-running-script"></a>Stoppa ett skript som körs
 
@@ -53,7 +53,7 @@ Det finns flera sätt att stoppa ett skript som körs.
 
 - Klicka på **stoppa åtgärd** i verktygsfältet
 - Tryck på <kbd>CTRL</kbd> + <kbd>Break</kbd>
-- Välj menyn **Arkiv** och klicka på **stoppa åtgärd**.
+- Välj menyn **Arkiv** och klicka på **stoppa åtgärd** .
 
 Att trycka på <kbd>CTRL</kbd> + <kbd>c</kbd> fungerar även om inte någon text är markerad, i vilket fall <kbd>CTRL</kbd> + <kbd>C</kbd> mappar till kopierings funktionen för den markerade texten.
 
@@ -69,17 +69,17 @@ Du kan kopiera, klippa ut, klistra in, söka och ersätta text i skript fönstre
 
 ### <a name="to-find-text-in-the-script-pane"></a>Hitta text i skript fönstret
 
-1. Om du vill söka efter text var som helst, trycker du på <kbd>CTRL</kbd> + <kbd>F</kbd> eller på **Redigera** -menyn och klickar på **Sök i skript**.
-2. Om du vill hitta text efter markören trycker du på <kbd>F3</kbd> eller på menyn **Redigera** klickar du på **Sök nästa i skript**.
-3. Om du vill söka efter text före markören trycker du på <kbd>SKIFT</kbd> + <kbd>F3</kbd> eller på **Redigera** -menyn och klickar på **Sök föregående i skript**.
+1. Om du vill söka efter text var som helst, trycker du på <kbd>CTRL</kbd> + <kbd>F</kbd> eller på **Redigera** -menyn och klickar på **Sök i skript** .
+2. Om du vill hitta text efter markören trycker du på <kbd>F3</kbd> eller på menyn **Redigera** klickar du på **Sök nästa i skript** .
+3. Om du vill söka efter text före markören trycker du på <kbd>SKIFT</kbd> + <kbd>F3</kbd> eller på **Redigera** -menyn och klickar på **Sök föregående i skript** .
 
 ### <a name="to-find-and-replace-text-in-the-script-pane"></a>Söka efter och ersätta text i skript fönstret
 
-Tryck på <kbd>CTRL</kbd> + <kbd>H</kbd> eller på **Redigera** -menyn, klicka på **Ersätt i skript**. Ange den text som du vill söka efter och ersättnings texten och tryck sedan på <kbd>RETUR</kbd>.
+Tryck på <kbd>CTRL</kbd> + <kbd>H</kbd> eller på **Redigera** -menyn, klicka på **Ersätt i skript** . Ange den text som du vill söka efter och ersättnings texten och tryck sedan på <kbd>RETUR</kbd>.
 
 ### <a name="to-go-to-a-particular-line-of-text-in-the-script-pane"></a>För att gå till en viss textrad i skript fönstret
 
-1. Tryck på <kbd>CTRL +</kbd>G i rutan skript och + <kbd>G</kbd> Klicka på **gå till rad**på **Redigera** -menyn.
+1. Tryck på <kbd>CTRL +</kbd>G i rutan skript och + <kbd>G</kbd> Klicka på **gå till rad** på **Redigera** -menyn.
 
 2. Ange ett rad nummer.
 
@@ -87,24 +87,24 @@ Tryck på <kbd>CTRL</kbd> + <kbd>H</kbd> eller på **Redigera** -menyn, klicka p
 
 1. I rutan skript väljer du den text som du vill kopiera.
 
-2. Tryck på <kbd>CTRL</kbd> + <kbd>C</kbd> eller, i verktygsfältet, klicka på **Kopiera** -ikonen eller på **Redigera** -menyn och klicka på **Kopiera**.
+2. Tryck på <kbd>CTRL</kbd> + <kbd>C</kbd> eller, i verktygsfältet, klicka på **Kopiera** -ikonen eller på **Redigera** -menyn och klicka på **Kopiera** .
 
 ### <a name="to-cut-text-in-the-script-pane"></a>Klippa ut text i skript fönstret
 
 1. I rutan skript väljer du den text som du vill klippa ut.
-2. Tryck på <kbd>CTRL</kbd> + <kbd>X</kbd> eller, i verktygsfältet, klicka på **Klipp ut** -ikonen eller på **Redigera** -menyn och klicka på **Klipp ut**.
+2. Tryck på <kbd>CTRL</kbd> + <kbd>X</kbd> eller, i verktygsfältet, klicka på **Klipp ut** -ikonen eller på **Redigera** -menyn och klicka på **Klipp ut** .
 
 ### <a name="to-paste-text-into-the-script-pane"></a>Klistra in text i skript fönstret
 
-Tryck på <kbd>CTRL</kbd> + <kbd>V</kbd> eller, i verktygsfältet, klicka på ikonen **Klistra in** eller på **Redigera** -menyn och klicka på **Klistra in**.
+Tryck på <kbd>CTRL</kbd> + <kbd>V</kbd> eller, i verktygsfältet, klicka på ikonen **Klistra in** eller på **Redigera** -menyn och klicka på **Klistra in** .
 
 ### <a name="to-undo-an-action-in-the-script-pane"></a>Ångra en åtgärd i skript fönstret
 
-Tryck på <kbd>CTRL</kbd> + <kbd>Z</kbd> eller, i verktygsfältet, klicka på ikonen **Ångra** eller på **Redigera** -menyn och klicka på **Ångra**.
+Tryck på <kbd>CTRL</kbd> + <kbd>Z</kbd> eller, i verktygsfältet, klicka på ikonen **Ångra** eller på **Redigera** -menyn och klicka på **Ångra** .
 
 ### <a name="to-redo-an-action-in-the-script-pane"></a>Göra om en åtgärd i skript fönstret
 
-Tryck på <kbd>CTRL</kbd> + <kbd>Y</kbd> eller, i verktygsfältet, klicka på ikonen **gör** om eller på **Redigera** -menyn och klicka på **gör**om.
+Tryck på <kbd>CTRL</kbd> + <kbd>Y</kbd> eller, i verktygsfältet, klicka på ikonen **gör** om eller på **Redigera** -menyn och klicka på **gör** om.
 
 ## <a name="how-to-save-a-script"></a>Så här sparar du ett skript
 
@@ -112,20 +112,20 @@ En asterisk visas bredvid skript namnet för att markera en fil som inte har spa
 
 ### <a name="to-save-a-script"></a>Så här sparar du ett skript
 
-Tryck på <kbd>CTRL</kbd> + <kbd>S</kbd> eller, i verktygsfältet, klicka på ikonen **Spara** eller på **Arkiv** -menyn och sedan på **Spara**.
+Tryck på <kbd>CTRL</kbd> + <kbd>S</kbd> eller, i verktygsfältet, klicka på ikonen **Spara** eller på **Arkiv** -menyn och sedan på **Spara** .
 
 ### <a name="to-save-and-name-a-script"></a>Spara och namnge ett skript
 
-1. Klicka på **Spara som** på **Arkiv**-menyn. Dialog rutan **Spara som** visas.
+1. Klicka på **Spara som** på menyn **Arkiv** . Dialog rutan **Spara som** visas.
 2. Ange ett namn på filen i rutan **fil namn** .
 3. I rutan fil **format** väljer du en filtyp. I rutan **fil format** väljer du exempelvis PowerShell-skript ( `*.ps1` ).
-4. Klicka på **Spara**.
+4. Klicka på **Spara** .
 
 ### <a name="to-save-a-script-in-ascii-encoding"></a>Så här sparar du ett skript i ASCII-kodning
 
 Som standard sparar Windows PowerShell ISE nya skriptfiler ( `.ps1` ), skriptfiler () `.psd1` och skript-filer ( `.psm1` ) som Unicode (BigEndianUnicode) som standard. Om du vill spara ett skript i en annan kodning, till exempel ASCII (ANSI), använder du metoderna **Save** eller **savee** som på objektet [$psISE. CurrentFile](object-model/the-ise-object-model-hierarchy.md) .
 
-Följande kommando sparar ett nytt skript som skript. ps1 med ASCII-kodning.
+Följande kommando sparar ett nytt skript som MyScript.ps1 med ASCII-kodning.
 
 ```powershell
 $psISE.CurrentFile.SaveAs("MyScript.ps1", [System.Text.Encoding]::ASCII)

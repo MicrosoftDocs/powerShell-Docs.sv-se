@@ -1,12 +1,14 @@
 ---
-title: Script block-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 71fd969fd3e5c0a4e39762c9a026982a8ca2a9d1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ScriptBlock-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)
+description: ScriptBlock-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)
+ms.openlocfilehash: bd72a9bc914ea6543d8dab768b5e20e9a580ada7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785378"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664902"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>ScriptBlock-element för SelectionCondition för EntrySelectedBy för EnumerableExpansion (format)
 

@@ -1,13 +1,13 @@
 ---
 ms.date: 08/09/2017
-keywords: PowerShell, cmdlet, Hämta, installera, konfigurera, Windows 10, Windows 8,1, Windows 8.0, Windows 7
 title: Installera Windows PowerShell
-ms.openlocfilehash: 26675eb0b213818eaa72e148f0814545ee9f960e
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: Den här artikeln beskriver hur du installerar Windows PowerShell på olika versioner av Windows.
+ms.openlocfilehash: 04e6d791e6895dd50825c58c905ff9cf8fa86ca8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236228"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663990"
 ---
 # <a name="installing-windows-powershell"></a>Installera Windows PowerShell
 
@@ -34,12 +34,12 @@ Följande tabeller bör hjälpa dig att hitta PowerShell i Windows-versionen. Al
 |     Version      |                                                            Plats                                                            |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | Windows 10       | Klicka på vänster nedre hörn på Windows-ikonen, börja skriva ISE                                                                         |
-| Windows 8,1, 8,0 | På Start skärmen skriver du **POWERSHELL ISE**.<br/>Om du har på Skriv bordet, klickar du på vänster nedre hörn på Windows-ikonen, skriver **POWERSHELL ISE** |
+| Windows 8,1, 8,0 | På Start skärmen skriver du **POWERSHELL ISE** .<br/>Om du har på Skriv bordet, klickar du på vänster nedre hörn på Windows-ikonen, skriver **POWERSHELL ISE** |
 | Windows 7 SP1    | Klicka på vänster nedre hörn på Windows-ikonen i rutan Sök börjar du skriva PowerShell                                                |
 
 ## <a name="finding-powershell-in-windows-server-versions"></a>Hitta PowerShell i Windows Server-versioner
 
-Från och med Windows Server 2008 R2 kan Windows-operativsystemet installeras utan grafiskt användar gränssnitt (GUI). Versioner av Windows Server utan GUI heter **Core** -versioner och versioner med det grafiska användar gränssnittet kallas **Skriv bord**.
+Från och med Windows Server 2008 R2 kan Windows-operativsystemet installeras utan grafiskt användar gränssnitt (GUI). Versioner av Windows Server utan GUI heter **Core** -versioner och versioner med det grafiska användar gränssnittet kallas **Skriv bord** .
 
 ### <a name="windows-server-core-editions"></a>Windows Server Core-versioner
 
@@ -55,7 +55,7 @@ Det enda undantaget till regeln ovan är ISE i Windows Server 2008 R2 SP1; i det
 
 ## <a name="how-to-check-the-version-of-powershell"></a>Kontrol lera versionen av PowerShell
 
-Om du vill ta reda på vilken version av PowerShell som du har installerat startar du en PowerShell-konsol (eller ISE) och skriver `$PSVersionTable` och trycker på **RETUR**. Leta efter `PSVersion` värdet.
+Om du vill ta reda på vilken version av PowerShell som du har installerat startar du en PowerShell-konsol (eller ISE) och skriver `$PSVersionTable` och trycker på **RETUR** . Leta efter `PSVersion` värdet.
 
 ## <a name="upgrading-existing-windows-powershell"></a>Uppgradera befintliga Windows PowerShell
 
@@ -66,7 +66,7 @@ Om du behöver uppdatera din befintliga version av PowerShell i Windows, använd
 |                    Windows                     |                                  PS 3,0                                   |                                  PS 4,0                                   |                                  PS 5,0                                   |                                  PS 5,1                                   |
 | ---------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | Windows 10 (se Note1)<br/>Windows Server 2016 | -                                                                         | -                                                                         | -                                                                         | installeras                                                                 |
-| Windows 8,1<br/>Windows Server 2012 R2         | -                                                                         | installeras                                                                 | [WMF 5.0](https://www.microsoft.com/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616) |
+| Windows 8.1<br/>Windows Server 2012 R2         | -                                                                         | installeras                                                                 | [WMF 5.0](https://www.microsoft.com/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616) |
 | Windows 8<br/>Windows Server 2012              | installeras                                                                 | [WMF 4,0](https://www.microsoft.com/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616) |
 | Windows 7 SP1<br/>Windows Server 2008 R2 SP1   | [WMF 3,0](https://www.microsoft.com/download/details.aspx?id=34595) | [WMF 4,0](https://www.microsoft.com/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616) |
 
@@ -75,7 +75,7 @@ Om du behöver uppdatera din befintliga version av PowerShell i Windows, använd
 
 ## <a name="need-azure-powershell"></a>Behöver Azure PowerShell
 
-Om du letar efter **Azure PowerShell**, kan du börja med en [Översikt över Azure PowerShell](/powershell/azure/overview).
+Om du letar efter **Azure PowerShell** , kan du börja med en [Översikt över Azure PowerShell](/powershell/azure/overview).
 
 Annars kan du behöva [Installera och konfigurera Azure PowerShell](/powershell/azure/install-az-ps)
 

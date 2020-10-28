@@ -1,13 +1,13 @@
 ---
 ms.date: 12/19/2019
-keywords: powershell,cmdlet
 title: Hjälpmedelsfunktioner i Windows PowerShell ISE
-ms.openlocfilehash: 89eff839d69fdbd5a1fa48b61dab627ef83f751b
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: I det här avsnittet beskrivs hjälpmedels funktionerna i Windows PowerShell ISE (Integrated Scripting Environment) som du kan ha nytta av.
+ms.openlocfilehash: 18acf447965eaaa7f93bb4c443a304b37216a9ba
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809996"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663843"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Hjälpmedelsfunktioner i Windows PowerShell ISE
 
@@ -46,11 +46,11 @@ Du kan använda följande steg för att ändra storlek och plats för konsol fö
 
 Gör något av följande:
 
-- Om du vill flytta skript fönstret ovanför konsol fönstret trycker du på <kbd>CTRL</kbd> + <kbd>1</kbd> eller, i verktygsfältet, klickar på ikonen **Visa skript fönstret överst** eller på menyn **Visa** klickar du på **Visa skript fönster överst**.
+- Om du vill flytta skript fönstret ovanför konsol fönstret trycker du på <kbd>CTRL</kbd> + <kbd>1</kbd> eller, i verktygsfältet, klickar på ikonen **Visa skript fönstret överst** eller på menyn **Visa** klickar du på **Visa skript fönster överst** .
 
-- Om du vill flytta skript fönstret till höger om konsol fönstret trycker du på <kbd>CTRL</kbd> + <kbd>2</kbd> eller, i verktygsfältet, på höger ikon i fönstret **Visa skript** eller på **Visa** -menyn, klicka på **Visa skript fönstret till höger**.
+- Om du vill flytta skript fönstret till höger om konsol fönstret trycker du på <kbd>CTRL</kbd> + <kbd>2</kbd> eller, i verktygsfältet, på höger ikon i fönstret **Visa skript** eller på **Visa** -menyn, klicka på **Visa skript fönstret till höger** .
 
-- För att maximera skript fönstret, tryck på <kbd>CTRL</kbd> + <kbd>3</kbd> eller, i verktygsfältet, klicka på ikonen för att **Visa skript fönstret** , eller **på Visa** -menyn, klicka på **Visa skript fönstret maximerat**.
+- För att maximera skript fönstret, tryck på <kbd>CTRL</kbd> + <kbd>3</kbd> eller, i verktygsfältet, klicka på ikonen för att **Visa skript fönstret** , eller **på Visa** -menyn, klicka på **Visa skript fönstret maximerat** .
 
 - Om du vill maximera konsol fönstret och dölja skript fönstret klickar du på ikonen **Dölj skript** fönster på menyn **Visa** på den högra kanten av raden med flikar. Klicka sedan på meny alternativet **Visa skript fönster** .
 
@@ -129,9 +129,9 @@ Du kan använda följande kortkommandon vid fel sökning av skript.
 | **Stega in**                           | <kbd>S</kbd>                 | Konsol fönster, vid fel sökning av ett skript |
 | **Steg över**                           | <kbd>Lodrät</kbd>                 | Konsol fönster, vid fel sökning av ett skript |
 | **Gå ut**                            | <kbd>A</kbd>                 | Konsol fönster, vid fel sökning av ett skript |
-| **Upprepa det senaste kommandot**(Stega in/över) | <kbd>GÅR</kbd>             | Konsol fönster, vid fel sökning av ett skript |
-| **Visa anrops stack**                  | <kbd>KB</kbd>                 | Konsol fönster, vid fel sökning av ett skript |
-| **Stoppa fel sökning**                      | <kbd>C</kbd>                 | Konsol fönster, vid fel sökning av ett skript |
+| **Upprepa det senaste kommandot** (Stega in/över) | <kbd>GÅR</kbd>             | Konsol fönster, vid fel sökning av ett skript |
+| **Visa anrops stack**                  | <kbd>K</kbd>                 | Konsol fönster, vid fel sökning av ett skript |
+| **Stoppa fel sökning**                      | <kbd>Q</kbd>                 | Konsol fönster, vid fel sökning av ett skript |
 | **Lista skriptet**                     | <kbd>L</kbd>                 | Konsol fönster, vid fel sökning av ett skript |
 | **Visa kommandon för konsol fel sökning**  | <kbd>H</kbd> eller <kbd>?</kbd> | Konsol fönster, vid fel sökning av ett skript |
 
@@ -148,12 +148,12 @@ Du kan använda följande kortkommandon när du använder Windows PowerShell-fli
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Kortkommandon för att starta och avsluta
 
-Du kan använda följande kortkommandon för att starta Windows PowerShell-konsolen (**PowerShell. exe**) eller avsluta Windows PowerShell ISE.
+Du kan använda följande kortkommandon för att starta Windows PowerShell-konsolen ( **PowerShell.exe** ) eller avsluta Windows PowerShell ISE.
 
 |                        Åtgärd                         |               Kortkommando               |
 | ----------------------------------------------------- | --------------------------------------------- |
 | **Avsluta**                                              | <kbd>Alt</kbd> + <kbd>F4</kbd>                  |
-| **Starta PowerShell. exe** (Windows PowerShell-konsol) | <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> |
+| **Starta PowerShell.exe** (Windows PowerShell-konsolen) | <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> |
 
 ## <a name="breakpoint-management"></a>Bryt punkts hantering
 

@@ -1,12 +1,14 @@
 ---
-title: Rad matnings element för CustomItem för kontroller för vy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e55e07ede3c394cabbda25aa1ec3bf03683c1c6b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: NewLine-element för CustomItem för Controls för View (format)
+description: NewLine-element för CustomItem för Controls för View (format)
+ms.openlocfilehash: 3b368f021fcbd2ecabf2032b951afe2979a3d027
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785667"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666441"
 ---
 # <a name="newline-element-for-customitem-for-controls-for-view-format"></a>NewLine-element för CustomItem för Controls för View (format)
 

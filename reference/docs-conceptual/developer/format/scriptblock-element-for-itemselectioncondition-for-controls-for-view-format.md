@@ -1,12 +1,14 @@
 ---
-title: Script block-element för ItemSelectionCondition för kontroller för vy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 74b3e23005f595c4c550320849cac5b196e9d479
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ScriptBlock-element för ItemSelectionCondition för Controls för View (format)
+description: ScriptBlock-element för ItemSelectionCondition för Controls för View (format)
+ms.openlocfilehash: c005215f7b7984541806d2f5de47372d536787ff
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787673"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665192"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-controls-for-view-format"></a>ScriptBlock-element för ItemSelectionCondition för Controls för View (format)
 

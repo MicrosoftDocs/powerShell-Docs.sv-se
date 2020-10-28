@@ -1,12 +1,14 @@
 ---
-title: Rad matnings element för CustomItem for GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0c998c9a85238feaa8bc48fd3eb4f66b4f7f8d66
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: NewLine-element för CustomItem för GroupBy (format)
+description: NewLine-element för CustomItem för GroupBy (format)
+ms.openlocfilehash: 7068288e40bf4b7539290ab5deb5f8fe086c4c9e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783525"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666407"
 ---
 # <a name="newline-element-for-customitem-for-groupby-format"></a>NewLine-element för CustomItem för GroupBy (format)
 

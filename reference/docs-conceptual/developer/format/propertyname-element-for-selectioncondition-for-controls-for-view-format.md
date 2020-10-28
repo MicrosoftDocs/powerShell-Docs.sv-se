@@ -1,12 +1,14 @@
 ---
-title: PropertyName-element för SelectionCondition för kontroller för vy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 251fc129896cfa4a6255330e23854b014675ac5f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: PropertyName-element för SelectionCondition för Controls för View (format)
+description: PropertyName-element för SelectionCondition för Controls för View (format)
+ms.openlocfilehash: 7783e5a9b7f8ec3d3077d87778e9f77ffe858a7f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780822"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665880"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-controls-for-view-format"></a>PropertyName-element för SelectionCondition för Controls för View (format)
 

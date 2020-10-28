@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Installera Windows PowerShell 2.0-motorn
-ms.openlocfilehash: ca0e83209324b28bd41f65ced61bfe9003d98553
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Windows PowerShell 2,0-motorn är en valfri funktion i Windows. Den här artikeln beskriver hur du installerar funktionen och de nödvändiga kraven.
+ms.openlocfilehash: c82725c34f5c5864eba0c88eb33ecac9e43f86d3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810066"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663976"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>Installera Windows PowerShell 2.0-motorn
 
@@ -17,7 +18,7 @@ Windows PowerShell 3,0 är avsett att vara bakåtkompatibla med Windows PowerShe
 
 För att upprätthålla bakåtkompatibilitet med kommandon och värd program som påverkas av dessa ändringar, är Windows PowerShell 2,0, Windows PowerShell 3,0 och Windows PowerShell 4,0-motorer utformade för att köras sida vid sida. Windows PowerShell 2,0-motorn ingår också i Windows Server 2012 R2, Windows 8,1, Windows 8, Windows Server 2012 och Windows Management Framework 3,0. Windows PowerShell 2,0-motorn är avsedd att användas endast när ett befintligt skript eller värd program inte kan köras eftersom det är inkompatibelt med Windows PowerShell 3,0, Windows PowerShell 4,0 eller Microsoft .NET Framework 4. Sådana fall förväntas vara ovanliga.
 
-Windows PowerShell 2,0-motorn är en valfri funktion i Windows Server 2012 R2, Windows 8,1, Windows® 8 och Windows Server® 2012. När du installerar Windows Management Framework 3,0 i tidigare versioner av Windows ersätter installationen av Windows PowerShell 3,0 fullständigt Windows PowerShell 2,0-installationen i installations katalogen för Windows PowerShell. Windows PowerShell 2,0-motorn behålls dock.
+Windows PowerShell 2,0-motorn är en valfri funktion i Windows Server 2012 R2, Windows 8,1, Windows &reg; 8 och Windows Server &reg; 2012. När du installerar Windows Management Framework 3,0 i tidigare versioner av Windows ersätter installationen av Windows PowerShell 3,0 fullständigt Windows PowerShell 2,0-installationen i installations katalogen för Windows PowerShell. Windows PowerShell 2,0-motorn behålls dock.
 
 Information om hur du startar Windows PowerShell 2,0-motorn finns i [Starta Windows PowerShell 2,0-motorn](../Starting-the-Windows-PowerShell-2.0-Engine.md).
 
@@ -28,17 +29,17 @@ Men om du vill använda det måste du aktivera alternativet för Microsoft .NET 
 
 #### <a name="to-turn-on-net-framework-35"></a>Aktivera .NET Framework 3,5
 
-1. Skriv **Windows-funktioner**på **Start** skärmen.
-2. I fältet **appar** klickar du på **Inställningar**och sedan på **Aktivera eller inaktivera Windows-funktioner**.
+1. Skriv **Windows-funktioner** på **Start** skärmen.
+2. I fältet **appar** klickar du på **Inställningar** och sedan på **Aktivera eller inaktivera Windows-funktioner** .
 3. I rutan **Windows-funktioner** klickar du på **.NET Framework 3,5 (omfattar .net 2,0 och 3,0** för att välja den.
 
-   När du väljer **.NET Framework 3,5 (inklusive .net 2,0 och 3,0**) fyller rutan för att indikera att endast en del av funktionen är markerad. Detta räcker dock för Windows PowerShell 2,0-motorn.
+   När du väljer **.NET Framework 3,5 (inklusive .net 2,0 och 3,0** ) fyller rutan för att indikera att endast en del av funktionen är markerad. Detta räcker dock för Windows PowerShell 2,0-motorn.
 
 #### <a name="to-turn-the-windows-powershell-20-engine-on-and-off"></a>Aktivera och inaktivera Windows PowerShell 2,0-motorn
 
-1. Skriv **Windows-funktioner**på **Start** skärmen.
+1. Skriv **Windows-funktioner** på **Start** skärmen.
 
-2. I fältet **appar** klickar du på **Inställningar**och sedan på **Aktivera eller inaktivera Windows-funktioner**.
+2. I fältet **appar** klickar du på **Inställningar** och sedan på **Aktivera eller inaktivera Windows-funktioner** .
 
 3. I rutan **Windows-funktioner** expanderar du noden **Windows PowerShell 2,0** och klickar på **Windows PowerShell 2,0-motor** rutan för att markera eller avmarkera den.
 
@@ -48,25 +49,25 @@ Använd följande procedurer för att lägga till Windows PowerShell 2,0-motorn 
 
 #### <a name="to-add-the-net-framework-35-feature"></a>Lägga till .NET Framework 3,5-funktionen
 
-1. I **Serverhanteraren**väljer du **Lägg till roller och funktioner**i menyn **Hantera** .
+1. I **Serverhanteraren** väljer du **Lägg till roller och funktioner** i menyn **Hantera** .
 
-    Du kan också klicka på **alla servrar**i **Serverhanteraren**, högerklicka på ett server namn och sedan välja **Lägg till roller och funktioner**.
+    Du kan också klicka på **alla servrar** i **Serverhanteraren** , högerklicka på ett server namn och sedan välja **Lägg till roller och funktioner** .
 
-2. På sidan **Installations typ** väljer du **rollbaserad eller funktions baserad installation**.
+2. På sidan **Installations typ** väljer du **rollbaserad eller funktions baserad installation** .
 
-3. På sidan **funktioner** expanderar du noden **.net 3,5 Framework-funktioner** och väljer **.NET Framework 3,5 (inklusive .NET 2,0 och 3,0)**.
+3. På sidan **funktioner** expanderar du noden **.net 3,5 Framework-funktioner** och väljer **.NET Framework 3,5 (inklusive .NET 2,0 och 3,0)** .
 
    De andra alternativen under noden krävs inte för Windows PowerShell 2,0-motorn.
 
 #### <a name="to-add-the-windows-powershell-20-engine-feature"></a>Lägga till Windows PowerShell 2,0-motor funktionen
 
-- I **Serverhanteraren**väljer du **Lägg till roller och funktioner**i menyn **Hantera** .
+- I **Serverhanteraren** väljer du **Lägg till roller och funktioner** i menyn **Hantera** .
 
-  Eller **Serverhanteraren**, klickar du på **alla servrar**, högerklickar på ett server namn och väljer sedan **Lägg till roller och funktioner**.
+  Eller **Serverhanteraren** , klickar du på **alla servrar** , högerklickar på ett server namn och väljer sedan **Lägg till roller och funktioner** .
 
-- På sidan **Installations typ** väljer du **rollbaserad eller funktions baserad installation**.
+- På sidan **Installations typ** väljer du **rollbaserad eller funktions baserad installation** .
 
-- På sidan **funktioner** expanderar du noden **Windows PowerShell (installerad)** och väljer **Windows PowerShell 2,0-motor**.
+- På sidan **funktioner** expanderar du noden **Windows PowerShell (installerad)** och väljer **Windows PowerShell 2,0-motor** .
 
 Information om hur du startar Windows PowerShell 2,0-motorn finns i [Starta Windows PowerShell 2,0-motorn](../Starting-the-Windows-PowerShell-2.0-Engine.md).
 

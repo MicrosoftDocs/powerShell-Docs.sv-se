@@ -1,12 +1,14 @@
 ---
-title: Script block-element för ExpressionBinding för CustomControl för View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: de8dc60ac92d92b85c88f222db0d8e237cd5c858
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ScriptBlock-element för ExpressionBinding för CustomControl för View (format)
+description: ScriptBlock-element för ExpressionBinding för CustomControl för View (format)
+ms.openlocfilehash: 343f4e8621b52f9c268b725a89c97746599ef14a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785480"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665316"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-customcontrol-for-view-format"></a>ScriptBlock-element för ExpressionBinding för CustomControl för View (format)
 

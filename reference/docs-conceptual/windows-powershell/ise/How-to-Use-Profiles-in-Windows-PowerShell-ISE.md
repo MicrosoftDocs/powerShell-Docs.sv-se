@@ -1,17 +1,17 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,cmdlet
 title: Använd profiler Windows PowerShell ISE
-ms.openlocfilehash: da7dc2f234ad0c2968fbb213e9e57da875f456e4
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Den här artikeln förklarar hur du använder profiler i Windows PowerShell ISE.
+ms.openlocfilehash: e677a4aaa3b2b8b76f289b0797aaa75c80c2b370
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810290"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663743"
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>Använd profiler Windows PowerShell ISE
 
-I det här avsnittet beskrivs hur du använder profiler i Windows PowerShell® Integrated Scripting Environment (ISE). Innan du utför uppgifterna i det här avsnittet rekommenderar vi att du granskar [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles)eller i konsol fönstret, skriver `Get-Help about_Profiles` och trycker på <kbd>RETUR</kbd>.
+Den här artikeln förklarar hur du använder profiler i Windows PowerShell &reg; Ise (Integrated Scripting Environment). Innan du utför uppgifterna i det här avsnittet rekommenderar vi att du granskar [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles)eller i konsol fönstret, skriver `Get-Help about_Profiles` och trycker på <kbd>RETUR</kbd>.
 
 En profil är ett Windows PowerShell ISE-skript som körs automatiskt när du startar en ny session.
 Du kan skapa en eller flera Windows PowerShell-profiler för Windows PowerShell ISE och använda dem för att lägga till konfigurera Windows PowerShell-eller Windows PowerShell ISE-miljön, förbereda den för användning med variabler, alias, funktioner och färg och teckensnitts inställningar som du vill ha tillgängliga. En profil påverkar varje Windows PowerShell ISE session som du startar.
@@ -72,15 +72,15 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
 ## <a name="to-edit-a-profile"></a>Redigera en profil
 
-1. Om du vill öppna profilen kör du kommandot `psEdit` med variabeln som anger den profil som du vill redigera. Om du till exempel vill öppna profilen "aktuell användare, Windows PowerShell ISE" skriver du:`psEdit $PROFILE`
+1. Om du vill öppna profilen kör du kommandot `psEdit` med variabeln som anger den profil som du vill redigera. Om du till exempel vill öppna profilen "aktuell användare, Windows PowerShell ISE" skriver du: `psEdit $PROFILE`
 
 2. Lägg till några objekt i din profil. Nedan följer några exempel på hur du kan komma igång:
 
    - Ändra standard bakgrunds färgen för konsol fönstret till blått i profil fil typen: `$psISE.Options.OutputPaneBackground = 'blue'` . Mer information om `$psISE` variabeln finns i [Windows PowerShell ISE objekt modell referens](object-model/The-ISE-Object-Model-Hierarchy.md).
 
-   - Om du vill ändra tecken storleken till 20, i profil fil typen:`$psISE.Options.FontSize =20`
+   - Om du vill ändra tecken storleken till 20, i profil fil typen: `$psISE.Options.FontSize =20`
 
-3. Spara profil filen genom att klicka på **Spara**på **Arkiv** -menyn. Nästa gången du öppnar Windows PowerShell ISE tillämpas dina anpassningar.
+3. Spara profil filen genom att klicka på **Spara** på **Arkiv** -menyn. Nästa gången du öppnar Windows PowerShell ISE tillämpas dina anpassningar.
 
 ## <a name="see-also"></a>Se även
 

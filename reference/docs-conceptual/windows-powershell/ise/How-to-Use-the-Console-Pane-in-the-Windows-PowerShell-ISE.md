@@ -1,13 +1,13 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,cmdlet
 title: Använd konsolfönstret i Windows PowerShell ISE
-ms.openlocfilehash: f0ef07e410ed494f5732eab360c4e050c9c09a7f
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Använd konsolfönstret i Windows PowerShell ISE
+ms.openlocfilehash: 7f6d3f5a3e4e596beb0d5c0bc395e3e7bf39906d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810227"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663667"
 ---
 # <a name="how-to-use-the-console-pane-in-the-windows-powershell-ise"></a>Använd konsolfönstret i Windows PowerShell ISE
 
@@ -15,7 +15,7 @@ Konsol fönstret i Windows PowerShell ISE (Integrated Scripting Environment) fun
 
 Om du vill köra ett kommando i konsol fönstret skriver du ett kommando och trycker på <kbd>RETUR</kbd>. Ange flera kommandon som du vill köra i följd genom att skriva <kbd>Shift</kbd> + <kbd>RETUR</kbd> mellan kommandon. Se [hur du använder slut för ande av flikar i skript fönstret och konsol fönstret](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) för att få hjälp med att skriva kommandon.
 
-Stoppa ett kommando genom att klicka på **stoppa åtgärd**i verktygsfältet eller trycka på <kbd>CTRL</kbd> + <kbd>Break</kbd>. Du kan också använda <kbd>CTRL</kbd> + <kbd>C</kbd> för att stoppa ett kommando om kontexten är tvetydig. Om t. ex. en text har marker ATS i den aktuella rutan, <kbd>CTRL</kbd> + mappas CTRL<kbd>C</kbd> till kopierings åtgärden.
+Stoppa ett kommando genom att klicka på **stoppa åtgärd** i verktygsfältet eller trycka på <kbd>CTRL</kbd> + <kbd>Break</kbd>. Du kan också använda <kbd>CTRL</kbd> + <kbd>C</kbd> för att stoppa ett kommando om kontexten är tvetydig. Om t. ex. en text har marker ATS i den aktuella rutan, <kbd>CTRL</kbd> + mappas CTRL<kbd>C</kbd> till kopierings åtgärden.
 
 Från och med Windows PowerShell v3 kombinerades fönstret utdata med konsol fönstret. Detta har fördelen att du fungerar som en fristående Windows PowerShell-konsol och eliminerar skillnaderna i de procedurer som behövdes när de var separata. Du kan:
 

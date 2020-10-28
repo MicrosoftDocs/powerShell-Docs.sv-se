@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 description: Det här dokumentet innehåller metod tips för att hjälpa tekniker som distribuerar DSC-pull-servern.
 keywords: DSC, PowerShell, konfiguration, installation
 title: Metodtips för hämtningsservern
-ms.openlocfilehash: 99009fd73ea08ca4ac42832a055e914a3ce6dbcf
-ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
+ms.openlocfilehash: 0021baa219a0936405eccf2cc7741e042f8bf09f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90846957"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664322"
 ---
 # <a name="pull-server-best-practices"></a>Metodtips för hämtningsservern
 
 Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
 > [!IMPORTANT]
-> Hämtnings servern (Windows Feature *DSC-tjänst*) är en komponent som stöds av Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att du börjar överföra hanterade klienter till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver hämtnings servern på Windows Server) eller någon av de community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
+> Hämtnings servern (Windows Feature *DSC-tjänst* ) är en komponent som stöds av Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att du börjar överföra hanterade klienter till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver hämtnings servern på Windows Server) eller någon av de community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
 
 Sammanfattning: det här dokumentet är avsett att omfatta process och utöknings barhet för att hjälpa tekniker som förbereder lösningen. Informationen bör ge bästa praxis som identifieras av kunder och sedan verifieras av produkt teamet för att säkerställa att rekommendationerna är stabila och anses stabila.
 
@@ -72,7 +72,7 @@ Windows Server 2012 R2 innehåller en funktion som kallas DSC-tjänsten. Funktio
 
 ### <a name="dsc-resource"></a>DSC-resurs
 
-En pull-Server-distribution kan för enklas genom att tillhandahålla tjänsten med hjälp av ett DSC-konfigurations skript. Det här dokumentet innehåller konfigurations skript som kan användas för att distribuera en produktions klar Server-nod. Om du vill använda konfigurations skripten krävs en DSC-modul som inte ingår i Windows Server. Namnet på den obligatoriska modulen är **xPSDesiredStateConfiguration**, som innehåller DSC- **xDscWebService**. XPSDesiredStateConfiguration-modulen kan hämtas [här](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d).
+En pull-Server-distribution kan för enklas genom att tillhandahålla tjänsten med hjälp av ett DSC-konfigurations skript. Det här dokumentet innehåller konfigurations skript som kan användas för att distribuera en produktions klar Server-nod. Om du vill använda konfigurations skripten krävs en DSC-modul som inte ingår i Windows Server. Namnet på den obligatoriska modulen är **xPSDesiredStateConfiguration** , som innehåller DSC- **xDscWebService** . XPSDesiredStateConfiguration-modulen kan hämtas [här](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d).
 
 Använd `Install-Module` cmdleten från **PowerShellGet** -modulen.
 
@@ -119,8 +119,7 @@ I test miljöer används vanligt vis serverns värdnamn, eller så kan IP-adress
 
 Med en DNS CNAME kan du skapa ett alias för att referera till värd posten (A). Avsikten med den extra namn posten är att öka flexibiliteten om en ändring krävs i framtiden. En CNAME kan hjälpa till att isolera klient konfigurationen så att ändringar i Server miljön, till exempel att ersätta en hämtnings Server eller lägga till ytterligare pull-servrar, kräver ingen motsvarande ändring i klient konfigurationen.
 
-Behåll lösnings arkitekturen i åtanke när du väljer ett namn för DNS-posten.
-Om du använder belastnings utjämning måste certifikatet som används för att skydda trafik över HTTPS dela samma namn som DNS-posten.
+Behåll lösnings arkitekturen i åtanke när du väljer ett namn för DNS-posten. Om du använder belastnings utjämning måste certifikatet som används för att skydda trafik över HTTPS dela samma namn som DNS-posten.
 
 |       Scenario        |                                                                                         Metodtips
 |:--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -140,7 +139,7 @@ Planerings uppgift
 ### <a name="public-key-infrastructure"></a>Infrastruktur för offentliga nycklar
 
 De flesta organisationer i dag kräver att nätverks trafik, särskilt trafik som inkluderar sådana känsliga data som servrar konfigureras, måste verifieras och/eller krypteras under överföringen.
-Även om det är möjligt att distribuera en pull-server med HTTP som underlättar klient begär anden i klartext, är det en bra idé att skydda trafiken med HTTPS. Tjänsten kan konfigureras att använda HTTPS med en uppsättning parametrar i DSC- **xPSDesiredStateConfiguration**.
+Även om det är möjligt att distribuera en pull-server med HTTP som underlättar klient begär anden i klartext, är det en bra idé att skydda trafiken med HTTPS. Tjänsten kan konfigureras att använda HTTPS med en uppsättning parametrar i DSC- **xPSDesiredStateConfiguration** .
 
 Certifikat kraven för säker HTTPS-trafik för hämtnings servern skiljer sig inte från att skydda andra HTTPS-webbplatser. **Webb server** mal len i en Windows Server Certificate Services uppfyller de funktioner som krävs.
 
@@ -203,7 +202,7 @@ Planerings uppgift
 
 #### <a name="dsc-configurations"></a>DSC-konfigurationer
 
-Syftet med en pull-server är att tillhandahålla en central mekanism för att distribuera DSC-konfigurationer till klient-noder. Konfigurationerna lagras på servern som MOF-dokument. Varje dokument får ett unikt **GUID**-namn. När klienterna är konfigurerade för att ansluta till en pull-server får de också **GUID** för den konfiguration de bör begära. Det här systemet med referenser till konfigurationer efter **GUID** garanterar global unikhet och är flexibelt så att en konfiguration kan tillämpas med granularitet per nod, eller som en roll konfiguration som omfattar många servrar som ska ha identiska konfigurationer.
+Syftet med en pull-server är att tillhandahålla en central mekanism för att distribuera DSC-konfigurationer till klient-noder. Konfigurationerna lagras på servern som MOF-dokument. Varje dokument får ett unikt **GUID** -namn. När klienterna är konfigurerade för att ansluta till en pull-server får de också **GUID** för den konfiguration de bör begära. Det här systemet med referenser till konfigurationer efter **GUID** garanterar global unikhet och är flexibelt så att en konfiguration kan tillämpas med granularitet per nod, eller som en roll konfiguration som omfattar många servrar som ska ha identiska konfigurationer.
 
 #### <a name="guids"></a>GUID
 
@@ -212,7 +211,7 @@ Planering av konfigurations- **GUID** är värda ytterligare uppmärksamhet vid 
 - **Tilldelning av GUID per server** – ger ett mått på att varje server konfiguration kontrol leras individuellt. Detta ger en nivå av precision kring uppdateringar och kan fungera bra i miljöer med några få servrar.
 - **Tilldela GUID per server roll** – alla servrar som utför samma funktion, till exempel webb servrar, använder samma GUID för att referera till nödvändiga konfigurations data. Tänk på att om många servrar delar samma GUID, så uppdateras alla samtidigt när konfigurationen ändras.
 
-  GUID är något som ska betraktas som känsliga data eftersom det kan utnyttjas av någon med skadlig avsikt för att få information om hur servrar distribueras och konfigureras i din miljö. Mer information finns i avsnittet om att [allokera GUID i PowerShell Desired State Configuration pull-läge](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/).
+  GUID är något som ska betraktas som känsliga data eftersom det kan utnyttjas av någon med skadlig avsikt för att få information om hur servrar distribueras och konfigureras i din miljö. Mer information finns i avsnittet om att [allokera GUID i PowerShell Desired State Configuration pull-läge](https://devblogs.microsoft.com/powershell/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/).
 
 Planerings uppgift
 
@@ -537,7 +536,7 @@ PowerShell-funktionen för att [skapa en kontroll summa och publicera DSC MOF ti
 
 En datafil lagras för att skapa information under distributionen av en pull-server som inkluderar OData-webbtjänsten. Vilken typ av fil som används beror på operativ systemet, enligt beskrivningen nedan.
 
-- **Windows Server 2012** Filtypen är alltid. mdb
-- **Windows Server 2012 R2** Filtypen används som standard till. edb om inte en. mdb anges i konfigurationen
+- **Windows Server 2012** – filtypen är alltid `.mdb`
+- **Windows Server 2012 R2** – filtypen används som standard `.edb` om inte en `.mdb` anges i konfigurationen
 
 I det [avancerade exempel skriptet](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) för att installera en hämtnings server hittar du också ett exempel på hur du automatiskt kontrollerar web.config fil inställningarna för att förhindra eventuella fel som orsakas av filtypen.

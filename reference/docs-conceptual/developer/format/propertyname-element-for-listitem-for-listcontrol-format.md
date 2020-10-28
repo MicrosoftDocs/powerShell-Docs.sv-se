@@ -1,12 +1,14 @@
 ---
-title: PropertyName-element för ListItem för ListControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9ee466d7f73e53b129f8d46f49a21549683bb32c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: PropertyName-element för ListItem för ListControl (format)
+description: PropertyName-element för ListItem för ListControl (format)
+ms.openlocfilehash: 30cd48f9549e1a091776cd5f8395e1a71314ea1b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780839"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665982"
 ---
 # <a name="propertyname-element-for-listitem-for-listcontrol-format"></a>PropertyName-element för ListItem för ListControl (format)
 

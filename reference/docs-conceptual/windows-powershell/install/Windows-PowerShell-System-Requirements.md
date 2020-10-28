@@ -2,22 +2,23 @@
 ms.date: 12/06/2019
 keywords: powershell,cmdlet
 title: Windows PowerShell-systemkrav
-ms.openlocfilehash: 883da2f91c4a0b46e4bccbacd9933a52f8f476f6
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: Den här artikeln innehåller en lista över system kraven för Windows PowerShell 3,0, Windows PowerShell 4,0, Windows PowerShell 5,0 och Windows PowerShell 5,1.
+ms.openlocfilehash: a82c0b1d6bf53e4a97db8414050a122ae5b7745d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236092"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663840"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell-systemkrav
 
 Den här artikeln innehåller en lista över system kraven för Windows PowerShell 3,0, Windows PowerShell 4,0, Windows PowerShell 5,0 och Windows PowerShell 5,1. Och särskilda funktioner, till exempel Windows PowerShell ISE (Integrated Scripting Environment), Common Information Model (CIM) kommandon och arbets flöden.
 
-Windows® 8,1 och Windows Server® 2012 R2 innehåller alla program som krävs. Den här artikeln är avsedd för användare av tidigare versioner av Windows.
+Windows &reg; 8,1 och Windows Server &reg; 2012 R2 innehåller alla program som krävs. Den här artikeln är avsedd för användare av tidigare versioner av Windows.
 
 ## <a name="operating-system-requirements"></a>Operativsystemskrav
 
-### <a name="windows-powershell-51"></a>Windows PowerShell 5,1
+### <a name="windows-powershell-51"></a>Windows PowerShell 5.1
 
 Windows PowerShell 5,1 körs i följande versioner av Windows. Installera Windows Management Framework 5,1 för att köra Windows PowerShell 5,1. Mer information finns i [Installera och konfigurera WMF 5,1](../wmf/setup/install-configure.md).
 
@@ -30,7 +31,7 @@ Windows PowerShell 5,1 körs i följande versioner av Windows. Installera Window
 | Windows Server 2008 R2 med Service Pack 1 | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
 | Windows 10 version 1607 och senare             | Installeras som standard                                                    |
 | Windows 10, version 1507, 1511              | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
-| Windows 8,1                                | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
+| Windows 8.1                                | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
 | Windows 7 med Service Pack 1              | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
 
 ### <a name="windows-powershell-50"></a>Windows PowerShell 5.0
@@ -46,7 +47,7 @@ Windows PowerShell 5,0 körs i följande versioner av Windows. Installera Window
 | Windows Server 2008 R2 med Service Pack 1 | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
 | Windows 10 version 1607 och senare             | Högre version installeras som standard                                     |
 | Windows 10, version 1507, 1511              | Installeras som standard                                                    |
-| Windows 8,1                                | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
+| Windows 8.1                                | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
 | Windows 7 med Service Pack 1              | Installera [Windows Management Framework 5,1](https://aka.ms/wmf5download) |
 
 ### <a name="windows-powershell-40"></a>Windows PowerShell 4.0
@@ -55,10 +56,10 @@ Windows PowerShell 4,0 körs i följande versioner av Windows. Om du vill köra 
 
 |               Windows-version               |                                             Systemkrav                                             |
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| Windows 8,1                                 | Installeras som standard                                                                                       |
+| Windows 8.1                                 | Installeras som standard                                                                                       |
 | Windows Server 2012 R2                      | Installeras som standard                                                                                       |
-| Windows® 7 med Service Pack 1              | Installera [Windows Management Framework 4,0](https://www.microsoft.com/download/details.aspx?id=40855) |
-| Windows Server® 2008 R2 med Service Pack 1 | Installera [Windows Management Framework 4,0](https://www.microsoft.com/download/details.aspx?id=40855) |
+| Windows &reg; 7 med Service Pack 1              | Installera [Windows Management Framework 4,0](https://www.microsoft.com/download/details.aspx?id=40855) |
+| Windows Server &reg; 2008 R2 med Service Pack 1 | Installera [Windows Management Framework 4,0](https://www.microsoft.com/download/details.aspx?id=40855) |
 
 ### <a name="windows-powershell-30"></a>Windows PowerShell 3.0
 
@@ -68,8 +69,8 @@ Windows PowerShell 3,0 körs i följande versioner av Windows. Om du vill köra 
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Windows 8                                   | Installeras som standard                                                                                       |
 | Windows Server 2012                         | Installeras som standard                                                                                       |
-| Windows® 7 med Service Pack 1              | Installera [Windows Management Framework 3,0](https://www.microsoft.com/download/details.aspx?id=34595) |
-| Windows Server® 2008 R2 med Service Pack 1 | Installera [Windows Management Framework 3,0](https://www.microsoft.com/download/details.aspx?id=34595) |
+| Windows &reg; 7 med Service Pack 1              | Installera [Windows Management Framework 3,0](https://www.microsoft.com/download/details.aspx?id=34595) |
+| Windows Server &reg; 2008 R2 med Service Pack 1 | Installera [Windows Management Framework 3,0](https://www.microsoft.com/download/details.aspx?id=34595) |
 | Windows Server 2008 med Service Pack 2     | Installera [Windows Management Framework 3,0](https://www.microsoft.com/download/details.aspx?id=34595) |
 
 ## <a name="microsoft-net-framework-requirements"></a>Krav för Microsoft .NET Framework
@@ -78,7 +79,7 @@ I följande tabell visas .NET Framework krav för Windows PowerShell.
 
 |        Version         |                                                                                 .NET-krav                                                                                  |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Windows PowerShell 5,1 | Kräver en fullständig installation av Microsoft .NET Framework 4,5. Windows 8,1 och Windows Server 2012 R2 inkluderar Microsoft .NET Framework 4,5 som standard.                           |
+| Windows PowerShell 5.1 | Kräver en fullständig installation av Microsoft .NET Framework 4,5. Windows 8,1 och Windows Server 2012 R2 inkluderar Microsoft .NET Framework 4,5 som standard.                           |
 | Windows PowerShell 5.0 | Kräver en fullständig installation av Microsoft .NET Framework 4,5. Windows 8,1 och Windows Server 2012 R2 inkluderar Microsoft .NET Framework 4,5 som standard.                           |
 | Windows PowerShell 4.0 | Kräver en fullständig installation av Microsoft .NET Framework 4,5. Windows 8,1 och Windows Server 2012 R2 inkluderar Microsoft .NET Framework 4,5 som standard.                           |
 | Windows PowerShell 3.0 | Kräver en fullständig installation av Microsoft .NET Framework 4. Windows 8 och Windows Server 2012 innehåller Microsoft .NET Framework 4,5 som standard, vilket uppfyller det här kravet. |
@@ -137,7 +138,7 @@ Information om hur du lägger till eller installerar Windows PowerShell 2,0-moto
 
 Windows PowerShell 2,0, Windows PowerShell 3,0 och Windows PowerShell 4,0 körs i Windows Preinstallation Environment (Windows PE). Följande cmdletar stöds dock inte.
 
-- Background Intelligent Transfer Service-cmdletar (BITS). Mer information finns i [BitsTransfer](/powershell/module/bitstransfer/?view=win10-ps).
+- Background Intelligent Transfer Service-cmdletar (BITS). Mer information finns i [BitsTransfer](/powershell/module/bitstransfer/).
 - [Get-EventLog](/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 - [Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 - [Spara – hjälp](/powershell/module/Microsoft.PowerShell.Core/Save-Help)
