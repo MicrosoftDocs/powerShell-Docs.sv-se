@@ -1,46 +1,48 @@
 ---
-title: GetProcessSample01-exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 84956fbafdd58623ca4f332efc940fb93b421c6e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProcessSample01 – exempel
+description: GetProcessSample01 – exempel
+ms.openlocfilehash: 159c277d17a8551d2b5c52377a230babacafc9ab
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784256"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652762"
 ---
-# <a name="getprocesssample01-sample"></a><span data-ttu-id="c2335-102">GetProcessSample01 – exempel</span><span class="sxs-lookup"><span data-stu-id="c2335-102">GetProcessSample01 Sample</span></span>
+# <a name="getprocesssample01-sample"></a><span data-ttu-id="942ec-103">GetProcessSample01 – exempel</span><span class="sxs-lookup"><span data-stu-id="942ec-103">GetProcessSample01 Sample</span></span>
 
-<span data-ttu-id="c2335-103">Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna på den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="c2335-103">This sample shows how to implement a cmdlet that retrieves the processes on the local computer.</span></span> <span data-ttu-id="c2335-104">Denna cmdlet är en förenklad version av `Get-Process` cmdleten som tillhandahålls av Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="c2335-104">This cmdlet is a simplified version of the `Get-Process` cmdlet that is provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="942ec-104">Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna på den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="942ec-104">This sample shows how to implement a cmdlet that retrieves the processes on the local computer.</span></span> <span data-ttu-id="942ec-105">Denna cmdlet är en förenklad version av `Get-Process` cmdleten som tillhandahålls av Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="942ec-105">This cmdlet is a simplified version of the `Get-Process` cmdlet that is provided by Windows PowerShell 2.0.</span></span>
 
-## <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="c2335-105">Så här skapar du exemplet med hjälp av Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="c2335-105">How to build the sample by using Visual Studio.</span></span>
+## <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="942ec-106">Så här skapar du exemplet med hjälp av Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="942ec-106">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="c2335-106">Med Windows PowerShell 2,0 SDK installerat navigerar du till mappen GetProcessSample01</span><span class="sxs-lookup"><span data-stu-id="c2335-106">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample01 folder.</span></span> <span data-ttu-id="c2335-107">Standard platsen är C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample01.</span><span class="sxs-lookup"><span data-stu-id="c2335-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample01.</span></span>
+1. <span data-ttu-id="942ec-107">Med Windows PowerShell 2,0 SDK installerat navigerar du till mappen GetProcessSample01</span><span class="sxs-lookup"><span data-stu-id="942ec-107">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample01 folder.</span></span> <span data-ttu-id="942ec-108">Standard platsen är C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample01.</span><span class="sxs-lookup"><span data-stu-id="942ec-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample01.</span></span>
 
-2. <span data-ttu-id="c2335-108">Dubbelklicka på ikonen för lösnings filen (. SLN).</span><span class="sxs-lookup"><span data-stu-id="c2335-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="c2335-109">Detta öppnar exempelprojektet i Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="c2335-109">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="942ec-109">Dubbelklicka på ikonen för lösnings filen (. SLN).</span><span class="sxs-lookup"><span data-stu-id="942ec-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="942ec-110">Detta öppnar exempelprojektet i Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="942ec-110">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="c2335-110">I menyn **build** väljer du **build-lösning**.</span><span class="sxs-lookup"><span data-stu-id="c2335-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="942ec-111">I menyn **build** väljer du **build-lösning** .</span><span class="sxs-lookup"><span data-stu-id="942ec-111">In the **Build** menu, select **Build Solution** .</span></span>
 
-  <span data-ttu-id="c2335-111">Biblioteket för exemplet skapas i standardmappen \Bin eller \Bin\Debug.</span><span class="sxs-lookup"><span data-stu-id="c2335-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+  <span data-ttu-id="942ec-112">Biblioteket för exemplet skapas i standardmappen \Bin eller \Bin\Debug.</span><span class="sxs-lookup"><span data-stu-id="942ec-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="c2335-112">Köra exemplet</span><span class="sxs-lookup"><span data-stu-id="c2335-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="942ec-113">Köra exemplet</span><span class="sxs-lookup"><span data-stu-id="942ec-113">How to run the sample</span></span>
 
-1. <span data-ttu-id="c2335-113">Öppna ett kommandotolksfönster.</span><span class="sxs-lookup"><span data-stu-id="c2335-113">Open a Command Prompt window.</span></span>
+1. <span data-ttu-id="942ec-114">Öppna ett kommandotolksfönster.</span><span class="sxs-lookup"><span data-stu-id="942ec-114">Open a Command Prompt window.</span></span>
 
-2. <span data-ttu-id="c2335-114">Navigera till den katalog som innehåller Sample. dll-filen.</span><span class="sxs-lookup"><span data-stu-id="c2335-114">Navigate to the directory containing the sample .dll file.</span></span>
+2. <span data-ttu-id="942ec-115">Navigera till den katalog som innehåller Sample. dll-filen.</span><span class="sxs-lookup"><span data-stu-id="942ec-115">Navigate to the directory containing the sample .dll file.</span></span>
 
-3. <span data-ttu-id="c2335-115">Kör InstallUtil "GetProcessSample01.dll".</span><span class="sxs-lookup"><span data-stu-id="c2335-115">Run installutil "GetProcessSample01.dll".</span></span>
+3. <span data-ttu-id="942ec-116">Kör InstallUtil "GetProcessSample01.dll".</span><span class="sxs-lookup"><span data-stu-id="942ec-116">Run installutil "GetProcessSample01.dll".</span></span>
 
-4. <span data-ttu-id="c2335-116">Starta Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="c2335-116">Start Windows PowerShell.</span></span>
+4. <span data-ttu-id="942ec-117">Starta Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="942ec-117">Start Windows PowerShell.</span></span>
 
-5. <span data-ttu-id="c2335-117">Kör följande kommando för att lägga till snapin-modulen i gränssnittet.</span><span class="sxs-lookup"><span data-stu-id="c2335-117">Run the following command to add the snap-in to the shell.</span></span>
+5. <span data-ttu-id="942ec-118">Kör följande kommando för att lägga till snapin-modulen i gränssnittet.</span><span class="sxs-lookup"><span data-stu-id="942ec-118">Run the following command to add the snap-in to the shell.</span></span>
 
    `Add-PSSnapin GetProcPSSnapIn01`
 
-6. <span data-ttu-id="c2335-118">Ange följande kommando för att köra cmdleten.</span><span class="sxs-lookup"><span data-stu-id="c2335-118">Enter the following command to run the cmdlet.</span></span> `get-proc`
+6. <span data-ttu-id="942ec-119">Ange följande kommando för att köra cmdleten.</span><span class="sxs-lookup"><span data-stu-id="942ec-119">Enter the following command to run the cmdlet.</span></span> `get-proc`
 
    `get-proc`
 
-   <span data-ttu-id="c2335-119">Detta är ett exempel på utdata som resulterar i följande steg.</span><span class="sxs-lookup"><span data-stu-id="c2335-119">This is a sample output that results from following these steps.</span></span>
+   <span data-ttu-id="942ec-120">Detta är ett exempel på utdata som resulterar i följande steg.</span><span class="sxs-lookup"><span data-stu-id="942ec-120">This is a sample output that results from following these steps.</span></span>
 
    ```output
    Id              Name            State      HasMoreData     Location             Command
@@ -57,23 +59,23 @@ ms.locfileid: "87784256"
    A file was created in the TEMP directory
    ```
 
-## <a name="requirements"></a><span data-ttu-id="c2335-120">Krav</span><span class="sxs-lookup"><span data-stu-id="c2335-120">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="942ec-121">Krav</span><span class="sxs-lookup"><span data-stu-id="942ec-121">Requirements</span></span>
 
-<span data-ttu-id="c2335-121">Det här exemplet kräver Windows PowerShell 1,0 eller senare.</span><span class="sxs-lookup"><span data-stu-id="c2335-121">This sample requires Windows PowerShell 1.0 or later.</span></span>
+<span data-ttu-id="942ec-122">Det här exemplet kräver Windows PowerShell 1,0 eller senare.</span><span class="sxs-lookup"><span data-stu-id="942ec-122">This sample requires Windows PowerShell 1.0 or later.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="c2335-122">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="c2335-122">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="942ec-123">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="942ec-123">Demonstrates</span></span>
 
-<span data-ttu-id="c2335-123">Det här exemplet demonstrerar följande.</span><span class="sxs-lookup"><span data-stu-id="c2335-123">This sample demonstrates the following.</span></span>
+<span data-ttu-id="942ec-124">Det här exemplet demonstrerar följande.</span><span class="sxs-lookup"><span data-stu-id="942ec-124">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="c2335-124">Skapar en grundläggande exempel-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="c2335-124">Creating a basic sample cmdlet.</span></span>
+- <span data-ttu-id="942ec-125">Skapar en grundläggande exempel-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="942ec-125">Creating a basic sample cmdlet.</span></span>
 
-- <span data-ttu-id="c2335-125">Definiera en cmdlet-klass med hjälp av cmdlet-attributet.</span><span class="sxs-lookup"><span data-stu-id="c2335-125">Defining a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="942ec-126">Definiera en cmdlet-klass med hjälp av cmdlet-attributet.</span><span class="sxs-lookup"><span data-stu-id="942ec-126">Defining a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="c2335-126">Skapa en snapin-modul som fungerar med både Windows PowerShell 1,0 och Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="c2335-126">Creating a snap-in that works with both Windows PowerShell 1.0 and Windows PowerShell 2.0.</span></span> <span data-ttu-id="c2335-127">Efterföljande exempel använder moduler i stället för snapin-moduler så att de kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="c2335-127">Subsequent samples use modules instead of snap-ins so they require Windows PowerShell 2.0.</span></span>
+- <span data-ttu-id="942ec-127">Skapa en snapin-modul som fungerar med både Windows PowerShell 1,0 och Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="942ec-127">Creating a snap-in that works with both Windows PowerShell 1.0 and Windows PowerShell 2.0.</span></span> <span data-ttu-id="942ec-128">Efterföljande exempel använder moduler i stället för snapin-moduler så att de kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="942ec-128">Subsequent samples use modules instead of snap-ins so they require Windows PowerShell 2.0.</span></span>
 
-## <a name="example"></a><span data-ttu-id="c2335-128">Exempel</span><span class="sxs-lookup"><span data-stu-id="c2335-128">Example</span></span>
+## <a name="example"></a><span data-ttu-id="942ec-129">Exempel</span><span class="sxs-lookup"><span data-stu-id="942ec-129">Example</span></span>
 
-<span data-ttu-id="c2335-129">Det här exemplet visar hur du skapar en enkel cmdlet och dess snapin-modul.</span><span class="sxs-lookup"><span data-stu-id="c2335-129">This sample shows how to create a simple cmdlet and its snap-in.</span></span>
+<span data-ttu-id="942ec-130">Det här exemplet visar hur du skapar en enkel cmdlet och dess snapin-modul.</span><span class="sxs-lookup"><span data-stu-id="942ec-130">This sample shows how to create a simple cmdlet and its snap-in.</span></span>
 
 ```csharp
 using System;
@@ -185,6 +187,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="c2335-130">Se även</span><span class="sxs-lookup"><span data-stu-id="c2335-130">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="942ec-131">Se även</span><span class="sxs-lookup"><span data-stu-id="942ec-131">See Also</span></span>
 
-[<span data-ttu-id="c2335-131">Skriva en Windows PowerShell-cmdlet</span><span class="sxs-lookup"><span data-stu-id="c2335-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="942ec-132">Skriva en Windows PowerShell-cmdlet</span><span class="sxs-lookup"><span data-stu-id="942ec-132">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

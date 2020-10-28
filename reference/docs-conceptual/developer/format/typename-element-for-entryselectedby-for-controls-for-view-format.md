@@ -1,52 +1,54 @@
 ---
-title: Elementet TypeName för EntrySelectedBy för kontrollerna för View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6eaa4f80a18c91ca351657fd40a8cac6f688c22f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TypeName-element för EntrySelectedBy för Controls för View (format)
+description: TypeName-element för EntrySelectedBy för Controls för View (format)
+ms.openlocfilehash: 03a70b0c6c71910932f1d032c94c602cef8ab964
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783338"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647884"
 ---
-# <a name="typename-element-for-entryselectedby-for-controls-for-view-format"></a><span data-ttu-id="7477a-102">TypeName-element för EntrySelectedBy för Controls för View (format)</span><span class="sxs-lookup"><span data-stu-id="7477a-102">TypeName Element for EntrySelectedBy for Controls for View (Format)</span></span>
+# <a name="typename-element-for-entryselectedby-for-controls-for-view-format"></a><span data-ttu-id="8fa62-103">TypeName-element för EntrySelectedBy för Controls för View (format)</span><span class="sxs-lookup"><span data-stu-id="8fa62-103">TypeName Element for EntrySelectedBy for Controls for View (Format)</span></span>
 
-<span data-ttu-id="7477a-103">Anger en .NET-typ som använder den här definitionen av kontrollen.</span><span class="sxs-lookup"><span data-stu-id="7477a-103">Specifies a .NET type that uses this definition of the control.</span></span> <span data-ttu-id="7477a-104">Det här elementet används när du definierar kontroller som kan användas av en vy.</span><span class="sxs-lookup"><span data-stu-id="7477a-104">This element is used when defining controls that can be used by a view.</span></span>
+<span data-ttu-id="8fa62-104">Anger en .NET-typ som använder den här definitionen av kontrollen.</span><span class="sxs-lookup"><span data-stu-id="8fa62-104">Specifies a .NET type that uses this definition of the control.</span></span> <span data-ttu-id="8fa62-105">Det här elementet används när du definierar kontroller som kan användas av en vy.</span><span class="sxs-lookup"><span data-stu-id="8fa62-105">This element is used when defining controls that can be used by a view.</span></span>
 
-<span data-ttu-id="7477a-105">Konfigurations element (format) ViewDefinitions element (format) visar element (format) styr element (format) styr element (format) styr element (format) kontroll element för Controls for View (format) CustomControl-elementet för Control for View (format) CustomEntries-element för CustomControl for Controls for View (format) CustomEntry-element för CustomEntries för Controls for View (format)-elementet för</span><span class="sxs-lookup"><span data-stu-id="7477a-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) Controls Element (Format) Control Element for Controls for View (Format) CustomControl Element for Control for Controls for View (Format) CustomEntries Element for CustomControl for Controls for View (Format) CustomEntry Element for CustomEntries for Controls for View (Format) TypeName Element for EntrySelectedBy for Controls for View (Format)</span></span>
+<span data-ttu-id="8fa62-106">Konfigurations element (format) ViewDefinitions element (format) visar element (format) styr element (format) styr element (format) styr element (format) kontroll element för Controls for View (format) CustomControl-elementet för Control for View (format) CustomEntries-element för CustomControl for Controls for View (format) CustomEntry-element för CustomEntries för Controls for View (format)-elementet för</span><span class="sxs-lookup"><span data-stu-id="8fa62-106">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) Controls Element (Format) Control Element for Controls for View (Format) CustomControl Element for Control for Controls for View (Format) CustomEntries Element for CustomControl for Controls for View (Format) CustomEntry Element for CustomEntries for Controls for View (Format) TypeName Element for EntrySelectedBy for Controls for View (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="7477a-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="7477a-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="8fa62-107">Syntax</span><span class="sxs-lookup"><span data-stu-id="8fa62-107">Syntax</span></span>
 
 ```xml
 <TypeName>Nameof.NetType</TypeName>
 
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="7477a-107">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="7477a-107">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="8fa62-108">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="8fa62-108">Attributes and Elements</span></span>
 
-<span data-ttu-id="7477a-108">I följande avsnitt beskrivs attribut, underordnade element och `TypeName` elementets överordnade element.</span><span class="sxs-lookup"><span data-stu-id="7477a-108">The following sections describe attributes, child elements, and the parent element of the `TypeName` element.</span></span>
+<span data-ttu-id="8fa62-109">I följande avsnitt beskrivs attribut, underordnade element och `TypeName` elementets överordnade element.</span><span class="sxs-lookup"><span data-stu-id="8fa62-109">The following sections describe attributes, child elements, and the parent element of the `TypeName` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="7477a-109">Attribut</span><span class="sxs-lookup"><span data-stu-id="7477a-109">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="8fa62-110">Attribut</span><span class="sxs-lookup"><span data-stu-id="8fa62-110">Attributes</span></span>
 
-<span data-ttu-id="7477a-110">Inga.</span><span class="sxs-lookup"><span data-stu-id="7477a-110">None.</span></span>
+<span data-ttu-id="8fa62-111">Inga.</span><span class="sxs-lookup"><span data-stu-id="8fa62-111">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="7477a-111">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="7477a-111">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="8fa62-112">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="8fa62-112">Child Elements</span></span>
 
-<span data-ttu-id="7477a-112">Inga.</span><span class="sxs-lookup"><span data-stu-id="7477a-112">None.</span></span>
+<span data-ttu-id="8fa62-113">Inga.</span><span class="sxs-lookup"><span data-stu-id="8fa62-113">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="7477a-113">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="7477a-113">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="8fa62-114">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="8fa62-114">Parent Elements</span></span>
 
-|<span data-ttu-id="7477a-114">Element</span><span class="sxs-lookup"><span data-stu-id="7477a-114">Element</span></span>|<span data-ttu-id="7477a-115">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="7477a-115">Description</span></span>|
+|<span data-ttu-id="8fa62-115">Element</span><span class="sxs-lookup"><span data-stu-id="8fa62-115">Element</span></span>|<span data-ttu-id="8fa62-116">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="8fa62-116">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="7477a-116">EntrySelectedBy-element för CustomEntry för Controls för View (format)</span><span class="sxs-lookup"><span data-stu-id="7477a-116">EntrySelectedBy Element for CustomEntry for Controls for View (Format)</span></span>](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|<span data-ttu-id="7477a-117">Definierar de .NET-typer som använder den här kontroll definitionen eller det villkor som måste finnas för att den här definitionen ska kunna användas.</span><span class="sxs-lookup"><span data-stu-id="7477a-117">Defines the .NET types that use this control definition or the condition that must exist for this definition to be used.</span></span>|
+|[<span data-ttu-id="8fa62-117">EntrySelectedBy-element för CustomEntry för Controls för View (format)</span><span class="sxs-lookup"><span data-stu-id="8fa62-117">EntrySelectedBy Element for CustomEntry for Controls for View (Format)</span></span>](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|<span data-ttu-id="8fa62-118">Definierar de .NET-typer som använder den här kontroll definitionen eller det villkor som måste finnas för att den här definitionen ska kunna användas.</span><span class="sxs-lookup"><span data-stu-id="8fa62-118">Defines the .NET types that use this control definition or the condition that must exist for this definition to be used.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="7477a-118">Textvärde</span><span class="sxs-lookup"><span data-stu-id="7477a-118">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="8fa62-119">Textvärde</span><span class="sxs-lookup"><span data-stu-id="8fa62-119">Text Value</span></span>
 
-<span data-ttu-id="7477a-119">Ange det fullständigt kvalificerade namnet för .NET-typen, t `System.IO.DirectoryInfo` . ex..</span><span class="sxs-lookup"><span data-stu-id="7477a-119">Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.</span></span>
+<span data-ttu-id="8fa62-120">Ange det fullständigt kvalificerade namnet för .NET-typen, t `System.IO.DirectoryInfo` . ex..</span><span class="sxs-lookup"><span data-stu-id="8fa62-120">Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="7477a-120">Kommentarer</span><span class="sxs-lookup"><span data-stu-id="7477a-120">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="8fa62-121">Kommentarer</span><span class="sxs-lookup"><span data-stu-id="8fa62-121">Remarks</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="7477a-121">Se även</span><span class="sxs-lookup"><span data-stu-id="7477a-121">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8fa62-122">Se även</span><span class="sxs-lookup"><span data-stu-id="8fa62-122">See Also</span></span>
 
-[<span data-ttu-id="7477a-122">EntrySelectedBy-element för CustomEntry för Controls för View (format)</span><span class="sxs-lookup"><span data-stu-id="7477a-122">EntrySelectedBy Element for CustomEntry for Controls for View (Format)</span></span>](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)
+[<span data-ttu-id="8fa62-123">EntrySelectedBy-element för CustomEntry för Controls för View (format)</span><span class="sxs-lookup"><span data-stu-id="8fa62-123">EntrySelectedBy Element for CustomEntry for Controls for View (Format)</span></span>](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)
 
-[<span data-ttu-id="7477a-123">Skriva en PowerShell-formateringsfil</span><span class="sxs-lookup"><span data-stu-id="7477a-123">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="8fa62-124">Skriva en PowerShell-formateringsfil</span><span class="sxs-lookup"><span data-stu-id="8fa62-124">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)

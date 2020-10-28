@@ -1,20 +1,22 @@
 ---
-title: Schemalägga jobb med Windows PowerShell API
 ms.date: 09/13/2016
-ms.openlocfilehash: 19962d3140b6e20164c378e63a317b888120e13b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Schemalägga jobb med Windows PowerShell API
+description: Schemalägga jobb med Windows PowerShell API
+ms.openlocfilehash: c42b3ea311a5db4dcb6e11bb587f01f3deefe49b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786738"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647133"
 ---
-# <a name="scheduling-jobs-with-the-windows-powershell-api"></a><span data-ttu-id="9348f-102">Schemalägga jobb med Windows PowerShell API</span><span class="sxs-lookup"><span data-stu-id="9348f-102">Scheduling Jobs with the Windows PowerShell API</span></span>
+# <a name="scheduling-jobs-with-the-windows-powershell-api"></a><span data-ttu-id="edc56-103">Schemalägga jobb med Windows PowerShell API</span><span class="sxs-lookup"><span data-stu-id="edc56-103">Scheduling Jobs with the Windows PowerShell API</span></span>
 
-<span data-ttu-id="9348f-103">Du kan använda objekten som exponeras av N:Microsoft.PowerShell.ScheduledJob-namnområdet för att skapa ett schemalagt jobb, definiera när det körs och få resultat om det slutförda jobbet när det har körts.</span><span class="sxs-lookup"><span data-stu-id="9348f-103">You can use the objects exposed by the N:Microsoft.PowerShell.ScheduledJob namespace to create a scheduled job, define when it runs, and get results about the completed job after it has run.</span></span>
+<span data-ttu-id="edc56-104">Du kan använda objekten som exponeras av N:Microsoft.PowerShell.ScheduledJob-namnområdet för att skapa ett schemalagt jobb, definiera när det körs och få resultat om det slutförda jobbet när det har körts.</span><span class="sxs-lookup"><span data-stu-id="edc56-104">You can use the objects exposed by the N:Microsoft.PowerShell.ScheduledJob namespace to create a scheduled job, define when it runs, and get results about the completed job after it has run.</span></span>
 
-## <a name="triggering-the-job"></a><span data-ttu-id="9348f-104">Utlösa jobbet</span><span class="sxs-lookup"><span data-stu-id="9348f-104">Triggering the Job</span></span>
+## <a name="triggering-the-job"></a><span data-ttu-id="edc56-105">Utlösa jobbet</span><span class="sxs-lookup"><span data-stu-id="edc56-105">Triggering the Job</span></span>
 
-<span data-ttu-id="9348f-105">Det första steget när du skapar ett schemalagt jobb är att ange när jobbet ska köras.</span><span class="sxs-lookup"><span data-stu-id="9348f-105">The first step in creating a scheduled job is specifying when the job should run.</span></span> <span data-ttu-id="9348f-106">Gör detta genom att skapa och konfigurera ett T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger-objekt.</span><span class="sxs-lookup"><span data-stu-id="9348f-106">Do this by creating and configuring a T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger object.</span></span> <span data-ttu-id="9348f-107">Följande kod skapar en utlösare som schemalägger ett jobb att köras en gång i 20 sekunder i framtiden.</span><span class="sxs-lookup"><span data-stu-id="9348f-107">The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.</span></span>
+<span data-ttu-id="edc56-106">Det första steget när du skapar ett schemalagt jobb är att ange när jobbet ska köras.</span><span class="sxs-lookup"><span data-stu-id="edc56-106">The first step in creating a scheduled job is specifying when the job should run.</span></span> <span data-ttu-id="edc56-107">Gör detta genom att skapa och konfigurera ett T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger-objekt.</span><span class="sxs-lookup"><span data-stu-id="edc56-107">Do this by creating and configuring a T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger object.</span></span> <span data-ttu-id="edc56-108">Följande kod skapar en utlösare som schemalägger ett jobb att köras en gång i 20 sekunder i framtiden.</span><span class="sxs-lookup"><span data-stu-id="edc56-108">The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.</span></span>
 
 ```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
@@ -26,20 +28,20 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
     true);                              // Create trigger enabled
 ```
 
-## <a name="defining-the-job"></a><span data-ttu-id="9348f-108">Definiera jobbet</span><span class="sxs-lookup"><span data-stu-id="9348f-108">Defining the Job</span></span>
+## <a name="defining-the-job"></a><span data-ttu-id="edc56-109">Definiera jobbet</span><span class="sxs-lookup"><span data-stu-id="edc56-109">Defining the Job</span></span>
 
-<span data-ttu-id="9348f-109">Du definierar ett Windows PowerShell-jobb genom att skapa en parameter ord lista.</span><span class="sxs-lookup"><span data-stu-id="9348f-109">You define a Windows PowerShell job by creating a parameter dictionary.</span></span> <span data-ttu-id="9348f-110">Följande parametrar stöds.</span><span class="sxs-lookup"><span data-stu-id="9348f-110">The following parameters are supported.</span></span>
+<span data-ttu-id="edc56-110">Du definierar ett Windows PowerShell-jobb genom att skapa en parameter ord lista.</span><span class="sxs-lookup"><span data-stu-id="edc56-110">You define a Windows PowerShell job by creating a parameter dictionary.</span></span> <span data-ttu-id="edc56-111">Följande parametrar stöds.</span><span class="sxs-lookup"><span data-stu-id="edc56-111">The following parameters are supported.</span></span>
 
-|<span data-ttu-id="9348f-111">Parameternamn</span><span class="sxs-lookup"><span data-stu-id="9348f-111">Parameter Name</span></span>|<span data-ttu-id="9348f-112">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="9348f-112">Description</span></span>|
+|<span data-ttu-id="edc56-112">Parameternamn</span><span class="sxs-lookup"><span data-stu-id="edc56-112">Parameter Name</span></span>|<span data-ttu-id="edc56-113">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="edc56-113">Description</span></span>|
 |---|---|
-|<span data-ttu-id="9348f-113">Name</span><span class="sxs-lookup"><span data-stu-id="9348f-113">Name</span></span>|<span data-ttu-id="9348f-114">Namnet på jobbet.</span><span class="sxs-lookup"><span data-stu-id="9348f-114">The name of the job.</span></span>|
-|<span data-ttu-id="9348f-115">ScriptBock</span><span class="sxs-lookup"><span data-stu-id="9348f-115">ScriptBock</span></span>|<span data-ttu-id="9348f-116">Ett Windows PowerShell-skript block som anger vad jobbet gör.</span><span class="sxs-lookup"><span data-stu-id="9348f-116">A Windows PowerShell script block that specifies what the job does.</span></span>|
-|<span data-ttu-id="9348f-117">FilePath</span><span class="sxs-lookup"><span data-stu-id="9348f-117">FilePath</span></span>|<span data-ttu-id="9348f-118">En sökväg till en fil som innehåller skript block för Windows PowerShell som anger vad jobbet gör.</span><span class="sxs-lookup"><span data-stu-id="9348f-118">A path to a file that contains Windows PowerShell script block that specifies what the job does.</span></span>|
-|<span data-ttu-id="9348f-119">InitializationScript</span><span class="sxs-lookup"><span data-stu-id="9348f-119">InitializationScript</span></span>|<span data-ttu-id="9348f-120">Ett Windows PowerShell-skript block som initierar jobbet.</span><span class="sxs-lookup"><span data-stu-id="9348f-120">A Windows PowerShell script block that initializes the job.</span></span>|
-|<span data-ttu-id="9348f-121">Argument List</span><span class="sxs-lookup"><span data-stu-id="9348f-121">ArgumentList</span></span>|<span data-ttu-id="9348f-122">En matris med objekt som anger argument som jobbet tar.</span><span class="sxs-lookup"><span data-stu-id="9348f-122">An array of objects that specify arguments that the job takes.</span></span>|
-|<span data-ttu-id="9348f-123">RunAs32</span><span class="sxs-lookup"><span data-stu-id="9348f-123">RunAs32</span></span>|<span data-ttu-id="9348f-124">Ett booleskt värde som anger om jobbet ska köras i en 32-bitars process.</span><span class="sxs-lookup"><span data-stu-id="9348f-124">A boolean value that specifies whether to run the job in a 32-bit process.</span></span>|
+|<span data-ttu-id="edc56-114">Namn</span><span class="sxs-lookup"><span data-stu-id="edc56-114">Name</span></span>|<span data-ttu-id="edc56-115">Namnet på jobbet.</span><span class="sxs-lookup"><span data-stu-id="edc56-115">The name of the job.</span></span>|
+|<span data-ttu-id="edc56-116">ScriptBock</span><span class="sxs-lookup"><span data-stu-id="edc56-116">ScriptBock</span></span>|<span data-ttu-id="edc56-117">Ett Windows PowerShell-skript block som anger vad jobbet gör.</span><span class="sxs-lookup"><span data-stu-id="edc56-117">A Windows PowerShell script block that specifies what the job does.</span></span>|
+|<span data-ttu-id="edc56-118">FilePath</span><span class="sxs-lookup"><span data-stu-id="edc56-118">FilePath</span></span>|<span data-ttu-id="edc56-119">En sökväg till en fil som innehåller skript block för Windows PowerShell som anger vad jobbet gör.</span><span class="sxs-lookup"><span data-stu-id="edc56-119">A path to a file that contains Windows PowerShell script block that specifies what the job does.</span></span>|
+|<span data-ttu-id="edc56-120">InitializationScript</span><span class="sxs-lookup"><span data-stu-id="edc56-120">InitializationScript</span></span>|<span data-ttu-id="edc56-121">Ett Windows PowerShell-skript block som initierar jobbet.</span><span class="sxs-lookup"><span data-stu-id="edc56-121">A Windows PowerShell script block that initializes the job.</span></span>|
+|<span data-ttu-id="edc56-122">Argument List</span><span class="sxs-lookup"><span data-stu-id="edc56-122">ArgumentList</span></span>|<span data-ttu-id="edc56-123">En matris med objekt som anger argument som jobbet tar.</span><span class="sxs-lookup"><span data-stu-id="edc56-123">An array of objects that specify arguments that the job takes.</span></span>|
+|<span data-ttu-id="edc56-124">RunAs32</span><span class="sxs-lookup"><span data-stu-id="edc56-124">RunAs32</span></span>|<span data-ttu-id="edc56-125">Ett booleskt värde som anger om jobbet ska köras i en 32-bitars process.</span><span class="sxs-lookup"><span data-stu-id="edc56-125">A boolean value that specifies whether to run the job in a 32-bit process.</span></span>|
 
-<span data-ttu-id="9348f-125">Följande kod skapar ett objekt i parameter ord listan och anger namnet och script block-parametrarna.</span><span class="sxs-lookup"><span data-stu-id="9348f-125">The following code creates a parameter dictionary object and sets the Name and ScriptBlock parameters.</span></span>
+<span data-ttu-id="edc56-126">Följande kod skapar ett objekt i parameter ord listan och anger namnet och script block-parametrarna.</span><span class="sxs-lookup"><span data-stu-id="edc56-126">The following code creates a parameter dictionary object and sets the Name and ScriptBlock parameters.</span></span>
 
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
@@ -51,9 +53,9 @@ jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script Fi
                                                    // is required.
 ```
 
-## <a name="creating-the-invocation-and-job-definition-objects"></a><span data-ttu-id="9348f-126">Skapa anrops-och jobb definitions objekt</span><span class="sxs-lookup"><span data-stu-id="9348f-126">Creating the Invocation and Job Definition Objects</span></span>
+## <a name="creating-the-invocation-and-job-definition-objects"></a><span data-ttu-id="edc56-127">Skapa anrops-och jobb definitions objekt</span><span class="sxs-lookup"><span data-stu-id="edc56-127">Creating the Invocation and Job Definition Objects</span></span>
 
-<span data-ttu-id="9348f-127">Sedan skapar du ScheduledJobInvocationInfo-och ScheduledJobDefinition-objekt för att köra jobbet.</span><span class="sxs-lookup"><span data-stu-id="9348f-127">You then create ScheduledJobInvocationInfo and ScheduledJobDefinition objects to run the job.</span></span> <span data-ttu-id="9348f-128">Följande kod visar detta.</span><span class="sxs-lookup"><span data-stu-id="9348f-128">The following code demonstrates this.</span></span>
+<span data-ttu-id="edc56-128">Sedan skapar du ScheduledJobInvocationInfo-och ScheduledJobDefinition-objekt för att köra jobbet.</span><span class="sxs-lookup"><span data-stu-id="edc56-128">You then create ScheduledJobInvocationInfo and ScheduledJobDefinition objects to run the job.</span></span> <span data-ttu-id="edc56-129">Följande kod visar detta.</span><span class="sxs-lookup"><span data-stu-id="edc56-129">The following code demonstrates this.</span></span>
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
@@ -68,9 +70,9 @@ schedJobDefinition = new ScheduledJobDefinition(
                                                 // in default Task Scheduler process, account.
 ```
 
-## <a name="registering-the-job-with-the-task-scheduler"></a><span data-ttu-id="9348f-129">Jobbet registreras med Schemaläggaren</span><span class="sxs-lookup"><span data-stu-id="9348f-129">Registering the Job with the Task Scheduler</span></span>
+## <a name="registering-the-job-with-the-task-scheduler"></a><span data-ttu-id="edc56-130">Jobbet registreras med Schemaläggaren</span><span class="sxs-lookup"><span data-stu-id="edc56-130">Registering the Job with the Task Scheduler</span></span>
 
-<span data-ttu-id="9348f-130">Följande kod registrerar jobbet med Schemaläggaren i Windows.</span><span class="sxs-lookup"><span data-stu-id="9348f-130">The following code registers the job with the Windows Task Scheduler.</span></span>
+<span data-ttu-id="edc56-131">Följande kod registrerar jobbet med Schemaläggaren i Windows.</span><span class="sxs-lookup"><span data-stu-id="edc56-131">The following code registers the job with the Windows Task Scheduler.</span></span>
 
 ```csharp
 schedJobDefinition.Register();
@@ -78,9 +80,9 @@ registrationSucceeded = true;
 Console.WriteLine("Scheduled job has been registered.  Waiting 30 seconds for it to be started and run.");
 ```
 
-## <a name="complete-code-example"></a><span data-ttu-id="9348f-131">Fullständigt kod exempel</span><span class="sxs-lookup"><span data-stu-id="9348f-131">Complete Code Example</span></span>
+## <a name="complete-code-example"></a><span data-ttu-id="edc56-132">Fullständigt kod exempel</span><span class="sxs-lookup"><span data-stu-id="edc56-132">Complete Code Example</span></span>
 
-<span data-ttu-id="9348f-132">Följande är det fullständiga kod exemplet som användes i föregående kodfragment.</span><span class="sxs-lookup"><span data-stu-id="9348f-132">The following is the complete code example from which the previous snippets were taken.</span></span>
+<span data-ttu-id="edc56-133">Följande är det fullständiga kod exemplet som användes i föregående kodfragment.</span><span class="sxs-lookup"><span data-stu-id="edc56-133">The following is the complete code example from which the previous snippets were taken.</span></span>
 
 ```csharp
 using System;
