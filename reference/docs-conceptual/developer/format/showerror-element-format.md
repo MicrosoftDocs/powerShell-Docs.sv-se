@@ -1,45 +1,47 @@
 ---
-title: ShowError-element (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4b48e532aeb51a947b1dc4f49c2487bb41e5d0bb
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ShowError-element (format)
+description: ShowError-element (format)
+ms.openlocfilehash: 278d379c55dc768b703bed3938bf556cbfceabb5
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785225"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654851"
 ---
-# <a name="showerror-element-format"></a><span data-ttu-id="c1de2-102">ShowError-element (format)</span><span class="sxs-lookup"><span data-stu-id="c1de2-102">ShowError Element (Format)</span></span>
+# <a name="showerror-element-format"></a><span data-ttu-id="f469a-103">ShowError-element (format)</span><span class="sxs-lookup"><span data-stu-id="f469a-103">ShowError Element (Format)</span></span>
 
-<span data-ttu-id="c1de2-103">Anger att den fullständiga fel posten visas när ett fel inträffar när en del av data visas.</span><span class="sxs-lookup"><span data-stu-id="c1de2-103">Specifies that the full error record is displayed when an error occurs while displaying a piece of data.</span></span>
+<span data-ttu-id="f469a-104">Anger att den fullständiga fel posten visas när ett fel inträffar när en del av data visas.</span><span class="sxs-lookup"><span data-stu-id="f469a-104">Specifies that the full error record is displayed when an error occurs while displaying a piece of data.</span></span>
 
-<span data-ttu-id="c1de2-104">Konfigurations element (format) DefaultSettings-element (format) ShowError-element (format)</span><span class="sxs-lookup"><span data-stu-id="c1de2-104">Configuration Element (Format) DefaultSettings Element (Format) ShowError Element (Format)</span></span>
+<span data-ttu-id="f469a-105">Konfigurations element (format) DefaultSettings-element (format) ShowError-element (format)</span><span class="sxs-lookup"><span data-stu-id="f469a-105">Configuration Element (Format) DefaultSettings Element (Format) ShowError Element (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="c1de2-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="c1de2-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="f469a-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="f469a-106">Syntax</span></span>
 
 ```scr
 <ShowError/>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="c1de2-106">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="c1de2-106">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="f469a-107">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="f469a-107">Attributes and Elements</span></span>
 
-<span data-ttu-id="c1de2-107">I följande avsnitt beskrivs attribut, underordnade element och `ShowError` elementets överordnade element.</span><span class="sxs-lookup"><span data-stu-id="c1de2-107">The following sections describe attributes, child elements, and the parent element of the `ShowError` element.</span></span> <span data-ttu-id="c1de2-108">Standardvärdet för det här elementet är `false` .</span><span class="sxs-lookup"><span data-stu-id="c1de2-108">The default value for this element is `false`.</span></span>
+<span data-ttu-id="f469a-108">I följande avsnitt beskrivs attribut, underordnade element och `ShowError` elementets överordnade element.</span><span class="sxs-lookup"><span data-stu-id="f469a-108">The following sections describe attributes, child elements, and the parent element of the `ShowError` element.</span></span> <span data-ttu-id="f469a-109">Standardvärdet för det här elementet är `false` .</span><span class="sxs-lookup"><span data-stu-id="f469a-109">The default value for this element is `false`.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="c1de2-109">Attribut</span><span class="sxs-lookup"><span data-stu-id="c1de2-109">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="f469a-110">Attribut</span><span class="sxs-lookup"><span data-stu-id="f469a-110">Attributes</span></span>
 
-<span data-ttu-id="c1de2-110">Inga.</span><span class="sxs-lookup"><span data-stu-id="c1de2-110">None.</span></span>
+<span data-ttu-id="f469a-111">Inga.</span><span class="sxs-lookup"><span data-stu-id="f469a-111">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="c1de2-111">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="c1de2-111">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="f469a-112">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="f469a-112">Child Elements</span></span>
 
-<span data-ttu-id="c1de2-112">Inga.</span><span class="sxs-lookup"><span data-stu-id="c1de2-112">None.</span></span>
+<span data-ttu-id="f469a-113">Inga.</span><span class="sxs-lookup"><span data-stu-id="f469a-113">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="c1de2-113">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="c1de2-113">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="f469a-114">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="f469a-114">Parent Elements</span></span>
 
-|<span data-ttu-id="c1de2-114">Element</span><span class="sxs-lookup"><span data-stu-id="c1de2-114">Element</span></span>|<span data-ttu-id="c1de2-115">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="c1de2-115">Description</span></span>|
+|<span data-ttu-id="f469a-115">Element</span><span class="sxs-lookup"><span data-stu-id="f469a-115">Element</span></span>|<span data-ttu-id="f469a-116">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="f469a-116">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="c1de2-116">DefaultSettings-element (format)</span><span class="sxs-lookup"><span data-stu-id="c1de2-116">DefaultSettings Element (Format)</span></span>](./defaultsettings-element-format.md)|<span data-ttu-id="c1de2-117">Definierar vanliga inställningar som gäller för alla vyer i formaterings filen.</span><span class="sxs-lookup"><span data-stu-id="c1de2-117">Defines common settings that apply to all the views of the formatting file.</span></span>|
+|[<span data-ttu-id="f469a-117">DefaultSettings-element (format)</span><span class="sxs-lookup"><span data-stu-id="f469a-117">DefaultSettings Element (Format)</span></span>](./defaultsettings-element-format.md)|<span data-ttu-id="f469a-118">Definierar vanliga inställningar som gäller för alla vyer i formaterings filen.</span><span class="sxs-lookup"><span data-stu-id="f469a-118">Defines common settings that apply to all the views of the formatting file.</span></span>|
 
-## <a name="remarks"></a><span data-ttu-id="c1de2-118">Kommentarer</span><span class="sxs-lookup"><span data-stu-id="c1de2-118">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="f469a-119">Kommentarer</span><span class="sxs-lookup"><span data-stu-id="f469a-119">Remarks</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="c1de2-119">Se även</span><span class="sxs-lookup"><span data-stu-id="c1de2-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f469a-120">Se även</span><span class="sxs-lookup"><span data-stu-id="f469a-120">See Also</span></span>
 
-[<span data-ttu-id="c1de2-120">Skriva en PowerShell-formateringsfil</span><span class="sxs-lookup"><span data-stu-id="c1de2-120">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="f469a-121">Skriva en PowerShell-formateringsfil</span><span class="sxs-lookup"><span data-stu-id="f469a-121">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
