@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Felsöka DSC-resurser
-ms.openlocfilehash: 53ee9ea5652ffb577f0c7fba2f240f63816281db
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: Den här artikeln visar hur du aktiverar fel sökning för DSC-konfigurationer.
+ms.openlocfilehash: 5dda217e8dc9cc4b8699c82153c1a588d405d99e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83691967"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654128"
 ---
 # <a name="debugging-dsc-resources"></a>Felsöka DSC-resurser
 
@@ -16,8 +17,8 @@ ms.locfileid: "83691967"
 I PowerShell 5,0 introducerades en ny funktion i önskad tillstånds konfiguration (DSC) som gör att du kan felsöka en DSC-resurs när en konfiguration tillämpas.
 
 ## <a name="enabling-dsc-debugging"></a>Aktivera DSC-felsökning
-Innan du kan felsöka en resurs måste du aktivera fel sökning genom att anropa cmdleten [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) .
-Denna cmdlet använder en obligatorisk parameter, **BreakAll**.
+
+Innan du kan felsöka en resurs måste du aktivera fel sökning genom att anropa cmdleten [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) . Denna cmdlet använder en obligatorisk parameter, **BreakAll** .
 
 Du kan kontrol lera att fel sökning har Aktiver ATS genom att titta på resultatet av ett anrop till [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager).
 
@@ -41,8 +42,8 @@ PS C:\DebugTest>
 ```
 
 ## <a name="starting-a-configuration-with-debug-enabled"></a>Starta en konfiguration med fel sökning aktiverat
-Om du vill felsöka en DSC-resurs startar du en konfiguration som anropar resursen.
-I det här exemplet ska vi titta på en enkel konfiguration som anropar **WindowsFeature** -resursen för att se till att funktionen "WindowsPowerShellWebAccess" är installerad:
+
+Om du vill felsöka en DSC-resurs startar du en konfiguration som anropar resursen. I det här exemplet ska vi titta på en enkel konfiguration som anropar **WindowsFeature** -resursen för att se till att funktionen "WindowsPowerShellWebAccess" är installerad:
 
 ```powershell
 Configuration PSWebAccess
@@ -60,9 +61,7 @@ Configuration PSWebAccess
 PSWebAccess
 ```
 
-När du har kompilerat konfigurationen startar du den genom att anropa [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration).
-Konfigurationen stoppas när den lokala Configuration Manager (LCM) anropar den första resursen i konfigurationen.
-Om du använder `-Verbose` -och `-Wait` -parametrarna visar utdata de rader du behöver ange för att starta fel sökningen.
+När du har kompilerat konfigurationen startar du den genom att anropa [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration). Konfigurationen stoppas när den lokala Configuration Manager (LCM) anropar den första resursen i konfigurationen. Om du använder `-Verbose` -och `-Wait` -parametrarna visar utdata de rader du behöver ange för att starta fel sökningen.
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -85,27 +84,24 @@ Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
 
-I det här läget har LCM anropat resursen och kommer till den första Bryt punkten.
-De sista tre raderna i utdata visar hur du ansluter till processen och startar fel sökning av resurs skriptet.
+I det här läget har LCM anropat resursen och kommer till den första Bryt punkten. De sista tre raderna i utdata visar hur du ansluter till processen och startar fel sökning av resurs skriptet.
 
 ## <a name="debugging-the-resource-script"></a>Fel sökning av resurs skriptet
 
-Starta en ny instans av PowerShell ISE.
-I konsol fönstret anger du de tre sista raderna i utdata från `Start-DscConfiguration` utdata som-kommandon, och ersätter `<credentials>` med giltiga användarautentiseringsuppgifter.
-Nu bör du se en prompt som ser ut ungefär så här:
+Starta en ny instans av PowerShell ISE. I konsol fönstret anger du de tre sista raderna i utdata från `Start-DscConfiguration` utdata som-kommandon, och ersätter `<credentials>` med giltiga användarautentiseringsuppgifter. Nu bör du se en prompt som ser ut ungefär så här:
 
 ```powershell
 [TEST-SRV]: [DBG]: [Process:9000]: [RemoteHost]: PS C:\DebugTest>>
 ```
 
-Resurs skriptet öppnas i skript fönstret och fel söknings programmet stoppas på den första raden i **test-TargetResource** -funktionen (metoden **test ()** i en klass-baserad resurs).
-Nu kan du använda fel söknings kommandona i ISE för att gå igenom resurs skriptet, titta på variabla värden, Visa anrops stacken och så vidare. Kom ihåg att varje rad i resurs skriptet (eller klassen) anges som en Bryt punkt.
+Resurs skriptet öppnas i skript fönstret och fel söknings programmet stoppas på den första raden i **test-TargetResource** -funktionen (metoden **test ()** i en klass-baserad resurs). Nu kan du använda fel söknings kommandona i ISE för att gå igenom resurs skriptet, titta på variabla värden, Visa anrops stacken och så vidare. Kom ihåg att varje rad i resurs skriptet (eller klassen) anges som en Bryt punkt.
 
 ## <a name="disabling-dsc-debugging"></a>Inaktiverar DSC-felsökning
 
 När du har anropat [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug)kommer alla anrop till [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) att resultera i att konfigurationen delas in i fel söknings programmet. Om du vill tillåta konfigurationer att köras normalt måste du inaktivera fel sökning genom att anropa cmdleten [disable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Disable-DscDebug) .
 
->**Obs:** Vid omstart ändras inte fel söknings läget för LCM. Om fel sökning har Aktiver ATS avbryts start konfigurationen fortfarande till fel söknings programmet efter en omstart.
+> [!NOTE]
+> Vid omstart ändras inte fel söknings läget för LCM. Om fel sökning har Aktiver ATS avbryts start konfigurationen fortfarande till fel söknings programmet efter en omstart.
 
 ## <a name="see-also"></a>Se även
 

@@ -2,24 +2,26 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Använda en DSC-rapportserver
-ms.openlocfilehash: 1ccd4f96b782b41b7d7c953735cb41b3ba3d2bce
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Den lokala Configuration Manager (LCM) för en nod kan konfigureras för att skicka rapporter om dess konfigurations status till en pull-server som sedan kan frågas för att hämta dessa data.
+ms.openlocfilehash: 58ff1684bbe1d23fa68296aa56dd94ba6bc5b148
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941686"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653720"
 ---
 # <a name="using-a-dsc-report-server"></a>Använda en DSC-rapportserver
 
 Gäller för: Windows PowerShell 5,0
 
 > [!IMPORTANT]
-> Hämtnings servern (Windows Feature *DSC-tjänst*) är en komponent som stöds av Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att du börjar överföra hanterade klienter till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver hämtnings servern på Windows Server) eller någon av de community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
+> Hämtnings servern (Windows Feature *DSC-tjänst* ) är en komponent som stöds av Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att du börjar överföra hanterade klienter till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver hämtnings servern på Windows Server) eller någon av de community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
 >
 > [!NOTE]
 > Rapport servern som beskrivs i det här avsnittet är inte tillgänglig i PowerShell 4,0.
 
-Den lokala Configuration Manager (LCM) för en nod kan konfigureras för att skicka rapporter om dess konfigurations status till en pull-server, som sedan kan frågas för att hämta dessa data. Varje gången noden kontrollerar och tillämpar en konfiguration skickas en rapport till rapport servern. Dessa rapporter lagras i en databas på servern och kan hämtas genom att anropa rapport webb tjänsten. Varje rapport innehåller information, till exempel vilka konfigurationer som har tillämpats och om de lyckades, vilka resurser som använts, eventuella fel som har utlösts och start-och slut tider.
+Den lokala Configuration Manager (LCM) för en nod kan konfigureras för att skicka rapporter om dess konfigurations status till en pull-server som sedan kan frågas för att hämta dessa data. Varje gången noden kontrollerar och tillämpar en konfiguration skickas en rapport till rapport servern. Dessa rapporter lagras i en databas på servern och kan hämtas genom att anropa rapport webb tjänsten.
+Varje rapport innehåller information, till exempel vilka konfigurationer som har tillämpats och om de lyckades, vilka resurser som använts, eventuella fel som har utlösts och start-och slut tider.
 
 ## <a name="configuring-a-node-to-send-reports"></a>Konfigurera en nod för att skicka rapporter
 
@@ -98,8 +100,11 @@ PullClientConfig
 
 ## <a name="getting-report-data"></a>Hämtar rapport data
 
-Rapporter som skickas till pull-servern registreras i en databas på servern. Rapporterna är tillgängliga via anrop till webb tjänsten. Om du vill hämta rapporter för en speciell nod skickar du en HTTP-begäran till rapport webb tjänsten i följande format:`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
-där `MyNodeAgentId` är AgentId för den nod som du vill hämta rapporter för. Du kan hämta AgentID för en nod genom att anropa [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) på den noden.
+Rapporter som skickas till pull-servern registreras i en databas på servern. Rapporterna är tillgängliga via anrop till webb tjänsten. Om du vill hämta rapporter för en speciell nod skickar du en HTTP-begäran till rapport webb tjänsten i följande format:
+
+`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
+
+Där `MyNodeAgentId` är AgentId för den nod som du vill hämta rapporter för. Du kan hämta AgentID för en nod genom att anropa [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) på den noden.
 
 Rapporterna returneras som en matris med JSON-objekt.
 
@@ -110,7 +115,7 @@ function GetReport
 {
     param
     (
-        $AgentId = "$((glcm).AgentId)", 
+        $AgentId = "$((glcm).AgentId)",
         $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc"
     )
 
@@ -166,7 +171,7 @@ StatusData           : {{"StartDate":"2016-04-03T06:21:43.7220000-07:00","IPV6Ad
 AdditionalData       : {}
 ```
 
-Som standard sorteras rapporterna efter **JobID**. För att få den senaste rapporten kan du sortera rapporterna genom att fallande **StartTime** -egenskapen och hämta det första elementet i matrisen:
+Som standard sorteras rapporterna efter **JobID** . För att få den senaste rapporten kan du sortera rapporterna genom att fallande **StartTime** -egenskapen och hämta det första elementet i matrisen:
 
 ```powershell
 $reportsByStartTime = $reports | Sort-Object {$_."StartTime" -as [DateTime] } -Descending
@@ -233,7 +238,7 @@ ConfigurationName : Sample_ArchiveFirewall
 InDesiredState    : True
 ```
 
-Observera att de här exemplen är avsedda att ge dig en uppfattning om vad du kan göra med rapport data. En introduktion till hur du arbetar med JSON i PowerShell finns i [spela med JSON och PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
+Observera att de här exemplen är avsedda att ge dig en uppfattning om vad du kan göra med rapport data. En introduktion till hur du arbetar med JSON i PowerShell finns i [spela med JSON och PowerShell](https://devblogs.microsoft.com/scripting/playing-with-json-and-powershell/).
 
 ## <a name="see-also"></a>Se även
 

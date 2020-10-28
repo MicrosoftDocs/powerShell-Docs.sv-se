@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: WMF, powershell, inställning
 title: Förbättringar i JEA (Just Enough Administration)
-ms.openlocfilehash: 9bb45ad2ddd459b99fc58610dfd8145992093624
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: JEA är en ny funktion i WMF 5,0 som möjliggör rollbaserad administration via PowerShell-fjärrkommunikation. Den utökar den befintliga begränsade slut punkts infrastrukturen genom att tillåta icke-administratörer att köra vissa kommandon, skript och körbara filer som administratör.
+ms.openlocfilehash: f255d0ecbd4bbd9a5ade4b6e19f066cc007481fb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810367"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654021"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Förbättringar i JEA (Just Enough Administration)
 

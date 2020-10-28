@@ -1,12 +1,14 @@
 ---
-title: Aktivitets parametrar | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c3014b21aca85f3efa161c185e691bdd1f19f79b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Aktivitetsparametrar
+description: Aktivitetsparametrar
+ms.openlocfilehash: 241fb8a7796d1c9dc10e8410d6daef4db70c9b4e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784613"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653705"
 ---
 # <a name="activity-parameters"></a>Aktivitetsparametrar
 
@@ -34,7 +36,7 @@ I följande tabell visas de rekommenderade namnen och funktionerna för aktivite
 |**Inkrementellt**<br>Datatyp: SwitchParameter|Implementera den här parametern för att ange att bearbetningen utförs stegvis när parametern anges. Med den här parametern kan en användare exempelvis utföra stegvisa säkerhets kopieringar som bara säkerhetskopierar filer sedan den senaste säkerhets kopieringen.|
 |**InputObject**<br>Datatyp: objekt|Implementera den här parametern när cmdleten tar emot information från andra cmdletar. När du definierar en **InputObject** -parameter ska du alltid ange nyckelordet **ValueFromPipeline** när du deklarerar attributet **parameter** . Mer information om att använda inkommande filter finns i [Parametrar för indatafiler](./input-filter-parameters.md).|
 |**Infoga**<br>Datatyp: SwitchParameter|Implementera den här parametern så att cmdleten infogar ett objekt när parametern anges.|
-|**Ej**<br>Datatyp: SwitchParameter|Implementera den här parametern så att cmdleten fungerar interaktivt med användaren när parametern anges.|
+|**Interaktiv**<br>Datatyp: SwitchParameter|Implementera den här parametern så att cmdleten fungerar interaktivt med användaren när parametern anges.|
 |**Intervall**<br>Datatyp: hash-värde|Implementera den här parametern så att användaren kan ange en hash-tabell med nyckelord som innehåller värdena. I följande exempel visas exempel värden för parametern **Interval** : `-interval @{ResumeScan=15; Retry=3}` .|
 |**Kvorumloggen**<br>Datatyp: SwitchParameter|Implementera den här parametern granska åtgärdens åtgärder för cmdleten när parametern anges.|
 |**NoClobber**<br>Datatyp: SwitchParameter|Implementera den här parametern så att resursen inte kommer att skrivas över när parametern anges. Den här parametern gäller vanligt vis för cmdletar som skapar nya objekt så att de kan förhindras från att skriva över befintliga objekt med samma namn.|

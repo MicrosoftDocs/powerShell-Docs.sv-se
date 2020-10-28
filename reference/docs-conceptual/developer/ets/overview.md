@@ -1,12 +1,14 @@
 ---
-title: Översikt över utökad typ system
 ms.date: 07/09/2020
-ms.openlocfilehash: 5c190f0d9b852a4b5658227085092f33d71453c9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Översikt över utökad typ system
+description: Översikt över utökad typ system
+ms.openlocfilehash: f4a789f779fa8a52f0fe524abff7ec3311e93b6c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786228"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655727"
 ---
 # <a name="extended-type-system-overview"></a>Översikt över utökad typ system
 
@@ -21,7 +23,7 @@ För det första har vissa .NET-objekt inte det nödvändiga standard beteendet 
 - Vissa .NET-objekt är "meta"-objekt (till exempel: WMI-objekt, ADO-objekt och XML-objekt) vars medlemmar beskriver de data de innehåller. I en skript miljö är det dock de data som är mest intressanta, inte beskrivningen av de data som finns. ETS löser det här problemet genom att introducera begreppet kort som anpassar det underliggande .NET-objektet så att de förväntade standardsemantiken förväntas.
 - Vissa .NET-objekt medlemmar är inkonsekventa namngivna, tillhandahåller en otillräcklig uppsättning offentliga medlemmar eller ger otillräcklig funktion. ETS löser det här problemet genom att introducera möjligheten att utöka .NET-objektet med ytterligare medlemmar.
 
-För det andra är PowerShell-skript språket _typ_ lös i att en variabel inte behöver deklareras av en viss typ. Det vill säga att de variabler som en skript utvecklare skapar är av _typen typ_gräns. PowerShell-systemet är dock "typ driven" i att det är beroende av att ett typnamn används för grundläggande åtgärder, till exempel för att lägga till resultat eller sortera.
+För det andra är PowerShell-skript språket _typ_ lös i att en variabel inte behöver deklareras av en viss typ. Det vill säga att de variabler som en skript utvecklare skapar är av _typen typ_ gräns. PowerShell-systemet är dock "typ driven" i att det är beroende av att ett typnamn används för grundläggande åtgärder, till exempel för att lägga till resultat eller sortera.
 
 Därför måste en skript utvecklare ha möjlighet att ange typen av en av deras variabler och skapa en egen uppsättning av dynamiskt skrivna "objekt" som innehåller egenskaper och metoder och som kan delta i det typ drivna systemet. ETS löser detta problem genom att tillhandahålla ett gemensamt objekt för skript språket som har möjlighet att ange dess typ dynamiskt och lägga till medlemmar dynamiskt.
 
@@ -94,6 +96,6 @@ När ett bas objekt är ett meta-objekt, en som innehåller data i ett generiskt
 
 Förutom medlemmar som görs tillgängliga från bas-eller anpassnings medlemmar som skapats av PowerShell, kan en **PSObject** också definiera utökade medlemmar som utökar det ursprungliga bas objektet med ytterligare information som är användbar i skript miljön.
 
-Till exempel, alla kärn-cmdletar som tillhandahålls av PowerShell, till exempel cmdletarna get-Content och set-Content, tar du en Sök vägs parameter. För att säkerställa att dessa cmdletar, och andra, kan fungera mot objekt av olika typer, kan en Sök vägs medlem läggas till i dessa objekt så att de anger information på ett vanligt sätt. Den här utökade Sök vägs medlemmen säkerställer att cmdletarna kan fungera mot alla dessa typer även om Bask Lassen kanske inte har en Sök vägs medlem.
+Till exempel, alla kärn-cmdletar som tillhandahålls av PowerShell, till exempel Get-Content-och Set-Content-cmdletar, tar du en Sök vägs parameter. För att säkerställa att dessa cmdletar, och andra, kan fungera mot objekt av olika typer, kan en Sök vägs medlem läggas till i dessa objekt så att de anger information på ett vanligt sätt. Den här utökade Sök vägs medlemmen säkerställer att cmdletarna kan fungera mot alla dessa typer även om Bask Lassen kanske inte har en Sök vägs medlem.
 
 Utökade medlemmar, anpassade medlemmar och bas objekts medlemmar kan nås via egenskapen members.

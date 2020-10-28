@@ -1,12 +1,14 @@
 ---
-title: Kod exempel för RunSpace03 (C#) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: df34652f60ed85b13739a04485cf6622cf924872
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: RunSpace03 (C#) – kodexempel
+description: RunSpace03 (C#) – kodexempel
+ms.openlocfilehash: cdb08811de13f8bbf5cd91fcbef552c78594b788
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784800"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653839"
 ---
 # <a name="runspace03-c-code-sample"></a>RunSpace03 (C#) – kodexempel
 

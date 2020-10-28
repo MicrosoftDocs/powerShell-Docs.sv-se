@@ -1,12 +1,14 @@
 ---
-title: Icke-avslutande fel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d74c248e6ef54151400b8060d76524e89d87352c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Fel som inte avbryter körningen
+description: Fel som inte avbryter körningen
+ms.openlocfilehash: d23642103e005c6d3a6168b317b11f40001b6bbe
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786568"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655735"
 ---
 # <a name="non-terminating-errors"></a>Fel som inte avbryter körningen
 

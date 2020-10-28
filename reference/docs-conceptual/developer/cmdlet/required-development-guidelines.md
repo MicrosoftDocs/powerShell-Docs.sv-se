@@ -1,12 +1,14 @@
 ---
-title: Nödvändiga utvecklings rikt linjer | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ca0168050e3c1c2e7537036f96da62f52d50982e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Obligatoriska riktlinjer för utveckling
+description: Obligatoriska riktlinjer för utveckling
+ms.openlocfilehash: 98db075b314eb7f54f2deb56022799d9f830f9ef
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781706"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655753"
 ---
 # <a name="required-development-guidelines"></a>Obligatoriska riktlinjer för utveckling
 
@@ -14,7 +16,7 @@ Följande rikt linjer måste följas när du skriver dina cmdletar. De är indel
 
 ## <a name="in-this-topic"></a>I det här avsnittet
 
-### <a name="design-guidelines"></a>Design rikt linjer
+### <a name="design-guidelines"></a>Designriktlinjer
 
 - [Använd endast godkända verb (RD01)](./required-development-guidelines.md#use-only-approved-verbs-rd01)
 
@@ -44,7 +46,7 @@ Följande rikt linjer måste följas när du skriver dina cmdletar. De är indel
 
 - [Använd en Windows PowerShell-modul för att distribuera dina cmdlets (RC07)](./required-development-guidelines.md#use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07)
 
-## <a name="design-guidelines"></a>Design rikt linjer
+## <a name="design-guidelines"></a>Designriktlinjer
 
 Följande rikt linjer måste följas när du utformar cmdlets för att säkerställa en konsekvent användar upplevelse mellan att använda dina cmdletar och andra cmdletar. När du hittar en design rikt linje som gäller din situation bör du titta närmare på kod rikt linjerna för liknande rikt linjer.
 
@@ -74,7 +76,7 @@ Användare behöver en uppsättning som identifierar och förväntade cmdlet-nam
 
 Använd inte något av följande specialtecken när du namnger cmdletar.
 
-|Tecken|Name|
+|Tecken|Namn|
 |---------------|----------|
 |#|nummer tecken|
 |,|kommaseparerade|
@@ -167,7 +169,7 @@ Mer information om hur du deklarerar cmdlet-attributet finns i [CmdletAttribute-
 
 ### <a name="override-an-input-processing-method-rc03"></a>Åsidosätt en metod för bearbetning av indata (RC03)
 
-För att cmdleten ska delta i Windows PowerShell-miljön, måste den åsidosätta minst en av följande *metoder för bearbetning av indata*.
+För att cmdleten ska delta i Windows PowerShell-miljön, måste den åsidosätta minst en av följande *metoder för bearbetning av indata* .
 
 [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) den här metoden kallas en gång och används för att tillhandahålla för bearbetnings funktioner.
 

@@ -1,16 +1,14 @@
 ---
-title: Deklaration av cmdlet-attribut | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- Cmdlet attribute, described
-- attributes, Cmdlet
-- Cmdlet attribute
-ms.openlocfilehash: 672609f1f50e4600aebcbb7e6e79bb7353ec867d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Deklaration av attributet Cmdlet
+description: Deklaration av attributet Cmdlet
+ms.openlocfilehash: 6bdfe39a4ab9ef4d4cc98daa592f69f7fab95e84
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774838"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653548"
 ---
 # <a name="cmdlet-attribute-declaration"></a>Deklaration av attributet Cmdlet
 

@@ -2,12 +2,13 @@
 ms.date: 04/19/2019
 keywords: WMF, powershell, inställning
 title: Windows Management Framework (WMF)
-ms.openlocfilehash: d581370fd602e03c86aa549eb8b273ff4d01b4e5
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF är ett krav för Windows PowerShell. I den här artikeln visas historiken över WMF-versioner och innehåller information om hur du hittar och installerar WMF.
+ms.openlocfilehash: 339b140325befea0b28aa470d4249170937f2c37
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810199"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654040"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
 
@@ -41,7 +42,7 @@ Om du vill veta mer om olika förbättringar i PowerShell och andra komponenter 
 | Windows Server 2016                     | Box-inlevereras |                             |              |              |              |
 | Windows 10                              | Box-inlevereras | Box-inlevereras                |              |              |              |
 | Windows Server 2012 R2                  | Ja          | Ja                         | Box-inlevereras |              |              |
-| Windows 8,1                             | Ja          | Ja                         | Box-inlevereras |              |              |
+| Windows 8.1                             | Ja          | Ja                         | Box-inlevereras |              |              |
 | Windows Server 2012                     | Ja          | Ja                         | Ja          | Box-inlevereras |              |
 | Windows 8<br>*Stöds inte*           |              |                             |              | Box-inlevereras |              |
 | Windows Server 2008 R2 SP1              | Ja          | Ja                         | Ja          | Ja          | Box-inlevereras |
@@ -51,13 +52,13 @@ Om du vill veta mer om olika förbättringar i PowerShell och andra komponenter 
 | Windows Server 2003<br>*Stöds inte* |              |                             |              |              | Ja          |
 | Windows XP<br>*Stöds inte*          |              |                             |              | Ja          | Ja          |
 
-- **Levereras i Box**: funktionerna i den angivna versionen av WMF levererades i den angivna versionen av Windows-klienten eller Windows Server.
-- **Out-of-support**: de här produkterna stöds inte längre av Microsoft. Du måste uppgradera till en ny version som stöds. Mer information finns på sidan [Microsoft livs cykel princip][] .
+- **Levereras i Box** : funktionerna i den angivna versionen av WMF levererades i den angivna versionen av Windows-klienten eller Windows Server.
+- **Out-of-support** : de här produkterna stöds inte längre av Microsoft. Du måste uppgradera till en ny version som stöds. Mer information finns på sidan [Microsoft livs cykel princip][] .
 
 > [!NOTE]
 > Installations programmet för WMF 5,0 är inte längre tillgängligt eller stöds inte längre. Den har ersatts av WMF 5,1.
 
-[Microsofts livs cykel princip]: https://support.microsoft.com/lifecycle
+[Microsofts livscykelprincip]: https://support.microsoft.com/lifecycle
 [WMF 5.1]: https://aka.ms/wmf51download
 [WMF 4,0]: https://aka.ms/wmf4download
 [WMF 3,0]: https://aka.ms/wmf3download

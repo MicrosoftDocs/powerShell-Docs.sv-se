@@ -1,13 +1,13 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: ISEEditor-objektet
-ms.openlocfilehash: cb63acebc1a8bb9fa6cc07199088ae0d5441bc91
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Ett ISEEditor-objekt är en instans av klassen Microsoft. PowerShell. Host. ISE. ISEEditor. Konsol fönstret är ett ISEEditor-objekt.
+ms.openlocfilehash: ffcb6e35e1160beab6efb29cc84847fa9ffd012b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811018"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654059"
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor-objektet
 
@@ -50,7 +50,7 @@ Ställer in fokus på redigeraren.
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
 
-### <a name="getlinelengthint-linenumber-"></a>GetLineLength \( int lineNumber\)
+### <a name="getlinelengthint-linenumber-"></a>GetLineLength \( int lineNumber \)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -76,7 +76,7 @@ Flyttar cirkumflexet till det matchande tecknet om egenskapen **CanGoToMatch** f
 $psISE.CurrentPowerShellTab.ConsolePane.GoToMatch()
 ```
 
-### <a name="inserttext-text-"></a>InsertText- \( text\)
+### <a name="inserttext-text-"></a>InsertText- \( text \)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -86,11 +86,11 @@ Ersätter markeringen med text eller infogar text vid den aktuella cirkumflexens
 
 Se [skript exemplet](#scripting-example) senare i det här avsnittet.
 
-### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Välj \( startline, startColumn, SourceLocation, endColumn\)
+### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Välj \( startline, startColumn, SourceLocation, endColumn \)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
-Markerar texten från parametrarna **startline**, **startColumn**, **SourceLocation**och **endColumn** .
+Markerar texten från parametrarna **startline** , **startColumn** , **SourceLocation** och **endColumn** .
 
 **startline** – heltals linjen där valet börjar.
 
@@ -100,7 +100,7 @@ Markerar texten från parametrarna **startline**, **startColumn**, **SourceLocat
 
 **endColumn** – Markera kolumnen i slut raden där markeringen slutar.
 
-Se [skript exemplet](#scripting-example) senare i det här avsnittet.
+Se  [skript exemplet](#scripting-example) senare i det här avsnittet.
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
 
@@ -115,7 +115,7 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 $psISE.CurrentFile.Editor.SelectCaretLine()
 ```
 
-### <a name="setcaretposition-linenumber-columnnumber-"></a>SetCaretPosition \( lineNumber, columnNumber\)
+### <a name="setcaretposition-linenumber-columnnumber-"></a>SetCaretPosition \( lineNumber, columnNumber \)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 
@@ -204,7 +204,7 @@ Stöds i Windows PowerShell ISE 2,0 och senare.
 
 Den skrivskyddade egenskapen som hämtar den markerade texten från redigeraren.
 
-Se [skript exemplet](#scripting-example) senare i det här avsnittet.
+Se  [skript exemplet](#scripting-example) senare i det här avsnittet.
 
 ### <a name="text"></a>Text
 

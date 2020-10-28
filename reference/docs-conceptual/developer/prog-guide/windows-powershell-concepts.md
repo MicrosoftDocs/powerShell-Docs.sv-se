@@ -1,18 +1,20 @@
 ---
-title: Windows PowerShell-koncept | Microsoft Docs
-ms.date: 6/12/2019
-ms.openlocfilehash: a31c1df784b7b5f872c4647aece8fafa535db66b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.date: 06/12/2019
+ms.topic: reference
+title: Begrepp relaterade till Windows PowerShell
+description: Begrepp relaterade till Windows PowerShell
+ms.openlocfilehash: d4a6ce0a041ace2e6a66030a0b0abbded111a9a9
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786959"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653768"
 ---
 # <a name="windows-powershell-concepts"></a>Begrepp relaterade till Windows PowerShell
 
 Det här avsnittet innehåller konceptuell information som hjälper dig att förstå PowerShell från en utvecklares synvinkel.
 
-|Ämnes namn|Description|
+|Ämnes namn|Beskrivning|
 |----------------|-----------------|
 |[about_Objects](/powershell/module/microsoft.powershell.core/about/about_objects)|Beskrivning av PowerShell-objekt. Mer information finns i [om att skapa objekt](/powershell/module/microsoft.powershell.core/about/about_object_creation)|
 |[Skapa körningsutrymmen](../hosting/creating-runspaces.md)|De drift miljöer där kommandon bearbetas. Mer information finns i [körnings utrymme-klass](/dotnet/api/system.management.automation.runspaces.runspace).|

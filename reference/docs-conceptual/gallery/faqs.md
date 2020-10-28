@@ -1,16 +1,15 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: Galleri, PowerShell, cmdlet, psgallery
 title: PowerShell-galleriet vanliga frågor
-ms.openlocfilehash: 29f930cf552abec8acbbf02f5570c6ac0a14066d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: Vanliga frågor och svar om PowerShell-galleriet
+ms.openlocfilehash: 045db04d49e0c65f807fef254a17bf20bb877ff6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777830"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654166"
 ---
-# <a name="frequently-asked-questions"></a>Vanliga frågor och svar
+# <a name="frequently-asked-questions-about-the-powershell-gallery"></a>Vanliga frågor och svar om PowerShell-galleriet
 
 ## <a name="what-is-a-powershell-module"></a>Vad är en PowerShell-modul?
 
@@ -65,7 +64,7 @@ Alla typer av PowerShell-moduler (skript moduler, binära moduler eller manifest
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>Hur gör jag för att skapa ett korrekt formaterat modul manifest?
 
-Det enklaste sättet att skapa ett modul manifest är att köra cmdleten [New-ModuleManifest][] . I PowerShell 5,0 eller senare genererar New-ModuleManifest ett korrekt formaterat modul manifest med tomma fält för användbara metadata som **ProjectUri**, **LicenseUri**och **taggar**. Fyll bara i tomma eller Använd det genererade manifestet som ett exempel på korrekt formatering.
+Det enklaste sättet att skapa ett modul manifest är att köra cmdleten [New-ModuleManifest][] . I PowerShell 5,0 eller senare genererar New-ModuleManifest ett korrekt formaterat modul manifest med tomma fält för användbara metadata som **ProjectUri** , **LicenseUri** och **taggar** . Fyll bara i tomma eller Använd det genererade manifestet som ett exempel på korrekt formatering.
 
 Använd cmdleten [test-ModuleManifest][] för att kontrol lera att alla obligatoriska metadatafält har fyllts i korrekt.
 
@@ -94,7 +93,7 @@ Så när du till exempel söker efter PowerShellVersion: "2.0" visas endast resu
 
 ## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>Hur gör jag för att skapa en korrekt formaterad skript fil?
 
-Det enklaste sättet att skapa en korrekt formaterad skript fil är att köra cmdleten [New-ScriptFileInfo][] . I PowerShell 5,0 genererar New-ScriptFileInfo en korrekt formaterad skript fil med tomma fält för användbara metadata som **ProjectUri**, **LicenseUri**och **taggar**. Fyll bara i tomma eller Använd den genererade skript filen som ett exempel på korrekt formatering.
+Det enklaste sättet att skapa en korrekt formaterad skript fil är att köra cmdleten [New-ScriptFileInfo][] . I PowerShell 5,0 genererar New-ScriptFileInfo en korrekt formaterad skript fil med tomma fält för användbara metadata som **ProjectUri** , **LicenseUri** och **taggar** . Fyll bara i tomma eller Använd den genererade skript filen som ett exempel på korrekt formatering.
 
 Använd cmdleten [test-ScriptFileInfo][] för att kontrol lera att alla obligatoriska metadatafält har fyllts i korrekt.
 
@@ -112,7 +111,7 @@ Alla moduler i galleriet innehåller modul manifest och de flesta av de här mod
 
 PackageManagement är ett gemensamt gränssnitt för att arbeta med alla paket hanterare. Om du arbetar med PowerShell-moduler, MSIs, ruby-Gems, NuGet-paket eller perl-moduler, bör du använda PackageManagement-kommandon (Find-Package och install-Package) för att hitta och installera dem. PackageManagement gör detta genom att ha en paket leverantör för varje paket hanterare som ansluter till PackageManagement. Leverantörer utför allt verkligt arbete; de hämtar innehåll från databaser och installerar innehållet lokalt. Ofta omsluts paket leverantörer runt de befintliga Package Manager-verktygen för en specifik paket typ.
 
-PowerShellGet är paket hanteraren för PowerShell-paket. Det finns en PSModule-paketfil som exponerar PowerShellGet-funktionen via PackageManagement. Därför kan du antingen köra [install-module][] eller install-Package-Provider-PSModule för att installera en modul från PowerShell-galleriet. Vissa PowerShellGet-funktioner, inklusive [Update-module][] och [Publish-module][], kan inte nås via PackageManagement-kommandon.
+PowerShellGet är paket hanteraren för PowerShell-paket. Det finns en PSModule-paketfil som exponerar PowerShellGet-funktionen via PackageManagement. Därför kan du antingen köra [install-module][] eller Install-Package-Provider PSModule för att installera en modul från PowerShell-galleriet. Vissa PowerShellGet-funktioner, inklusive [Update-module][] och [Publish-module][], kan inte nås via PackageManagement-kommandon.
 
 I sammanfattning fokuserar PowerShellGet bara på att ha en förstklassig paket hanterings upplevelse för PowerShell-innehåll. PackageManagement fokuserar på att exponera alla paket hanterings upplevelser via en allmän uppsättning verktyg. Om du tycker att det här svaret inte uppfyller, finns det ett långt svar längst ned i det här dokumentet, i avsnittet **hur refererar PackageManagement faktiskt till PowerShellGet?** .
 
@@ -145,7 +144,7 @@ Bild 1: PowerShellGet-arkitektur
 
 I allmänhet rekommenderar vi att du väljer den senaste versionen av PowerShellGet-modulen (Observera att .NET 4,5 krävs).
 
-För **PowerShellGet**-modulen krävs **PowerShell version 3.0 eller senare**.
+För **PowerShellGet** -modulen krävs **PowerShell version 3.0 eller senare** .
 
 Det innebär att **PowerShellGet** kräver något av följande operativsystem:
 
