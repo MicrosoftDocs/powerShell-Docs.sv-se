@@ -1,20 +1,22 @@
 ---
-title: ListControl-element (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0173b9797bffcca74f1a32903686f771366ebb1b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ListControl-element (format)
+description: ListControl-element (format)
+ms.openlocfilehash: cd5687ac8e94e2245d1ae2de8b2206185e5b8ca4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785735"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666594"
 ---
-# <a name="listcontrol-element-format"></a><span data-ttu-id="d83e0-102">ListControl-element (format)</span><span class="sxs-lookup"><span data-stu-id="d83e0-102">ListControl Element (Format)</span></span>
+# <a name="listcontrol-element-format"></a><span data-ttu-id="b29b1-103">ListControl-element (format)</span><span class="sxs-lookup"><span data-stu-id="b29b1-103">ListControl Element (Format)</span></span>
 
-<span data-ttu-id="d83e0-103">Definierar ett List format för vyn.</span><span class="sxs-lookup"><span data-stu-id="d83e0-103">Defines a list format for the view.</span></span>
+<span data-ttu-id="b29b1-104">Definierar ett List format för vyn.</span><span class="sxs-lookup"><span data-stu-id="b29b1-104">Defines a list format for the view.</span></span>
 
-<span data-ttu-id="d83e0-104">Konfigurations element (format) ViewDefinitions element (format) Visa element (format) ListControl-element (format)</span><span class="sxs-lookup"><span data-stu-id="d83e0-104">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) ListControl Element (Format)</span></span>
+<span data-ttu-id="b29b1-105">Konfigurations element (format) ViewDefinitions element (format) Visa element (format) ListControl-element (format)</span><span class="sxs-lookup"><span data-stu-id="b29b1-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) ListControl Element (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="d83e0-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="d83e0-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="b29b1-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="b29b1-106">Syntax</span></span>
 
 ```xml
 <ListControl>
@@ -23,33 +25,33 @@ ms.locfileid: "87785735"
 
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="d83e0-106">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="d83e0-106">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="b29b1-107">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="b29b1-107">Attributes and Elements</span></span>
 
-<span data-ttu-id="d83e0-107">I följande avsnitt beskrivs attributen, underordnade element och `ListControl` elementets överordnade element.</span><span class="sxs-lookup"><span data-stu-id="d83e0-107">The following sections describe the attributes, child elements, and the parent element of the `ListControl` element.</span></span> <span data-ttu-id="d83e0-108">Det här elementet får bara innehålla ett enda underordnat element.</span><span class="sxs-lookup"><span data-stu-id="d83e0-108">This element must contain only a single child element.</span></span>
+<span data-ttu-id="b29b1-108">I följande avsnitt beskrivs attributen, underordnade element och `ListControl` elementets överordnade element.</span><span class="sxs-lookup"><span data-stu-id="b29b1-108">The following sections describe the attributes, child elements, and the parent element of the `ListControl` element.</span></span> <span data-ttu-id="b29b1-109">Det här elementet får bara innehålla ett enda underordnat element.</span><span class="sxs-lookup"><span data-stu-id="b29b1-109">This element must contain only a single child element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="d83e0-109">Attribut</span><span class="sxs-lookup"><span data-stu-id="d83e0-109">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="b29b1-110">Attribut</span><span class="sxs-lookup"><span data-stu-id="b29b1-110">Attributes</span></span>
 
-<span data-ttu-id="d83e0-110">Inga.</span><span class="sxs-lookup"><span data-stu-id="d83e0-110">None.</span></span>
+<span data-ttu-id="b29b1-111">Inga.</span><span class="sxs-lookup"><span data-stu-id="b29b1-111">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="d83e0-111">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="d83e0-111">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="b29b1-112">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="b29b1-112">Child Elements</span></span>
 
-|<span data-ttu-id="d83e0-112">Element</span><span class="sxs-lookup"><span data-stu-id="d83e0-112">Element</span></span>|<span data-ttu-id="d83e0-113">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="d83e0-113">Description</span></span>|
+|<span data-ttu-id="b29b1-113">Element</span><span class="sxs-lookup"><span data-stu-id="b29b1-113">Element</span></span>|<span data-ttu-id="b29b1-114">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="b29b1-114">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="d83e0-114">ListEntries-element (format)</span><span class="sxs-lookup"><span data-stu-id="d83e0-114">ListEntries Element (Format)</span></span>](./listentries-element-for-listcontrol-format.md)|<span data-ttu-id="d83e0-115">Nödvändigt element.</span><span class="sxs-lookup"><span data-stu-id="d83e0-115">Required element.</span></span><br /><br /> <span data-ttu-id="d83e0-116">Innehåller definitionerna för listvyn.</span><span class="sxs-lookup"><span data-stu-id="d83e0-116">Provides the definitions of the list view.</span></span>|
+|[<span data-ttu-id="b29b1-115">ListEntries-element (format)</span><span class="sxs-lookup"><span data-stu-id="b29b1-115">ListEntries Element (Format)</span></span>](./listentries-element-for-listcontrol-format.md)|<span data-ttu-id="b29b1-116">Nödvändigt element.</span><span class="sxs-lookup"><span data-stu-id="b29b1-116">Required element.</span></span><br /><br /> <span data-ttu-id="b29b1-117">Innehåller definitionerna för listvyn.</span><span class="sxs-lookup"><span data-stu-id="b29b1-117">Provides the definitions of the list view.</span></span>|
 
-### <a name="parent-elements"></a><span data-ttu-id="d83e0-117">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="d83e0-117">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="b29b1-118">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="b29b1-118">Parent Elements</span></span>
 
-|<span data-ttu-id="d83e0-118">Element</span><span class="sxs-lookup"><span data-stu-id="d83e0-118">Element</span></span>|<span data-ttu-id="d83e0-119">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="d83e0-119">Description</span></span>|
+|<span data-ttu-id="b29b1-119">Element</span><span class="sxs-lookup"><span data-stu-id="b29b1-119">Element</span></span>|<span data-ttu-id="b29b1-120">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="b29b1-120">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="d83e0-120">View-element (format)</span><span class="sxs-lookup"><span data-stu-id="d83e0-120">View Element (Format)</span></span>](./view-element-format.md)|<span data-ttu-id="d83e0-121">Definierar en vy som används för att visa medlemmar i ett eller flera objekt.</span><span class="sxs-lookup"><span data-stu-id="d83e0-121">Defines a view that is used to display the members of one or more objects.</span></span>|
+|[<span data-ttu-id="b29b1-121">View-element (format)</span><span class="sxs-lookup"><span data-stu-id="b29b1-121">View Element (Format)</span></span>](./view-element-format.md)|<span data-ttu-id="b29b1-122">Definierar en vy som används för att visa medlemmar i ett eller flera objekt.</span><span class="sxs-lookup"><span data-stu-id="b29b1-122">Defines a view that is used to display the members of one or more objects.</span></span>|
 
-## <a name="remarks"></a><span data-ttu-id="d83e0-122">Kommentarer</span><span class="sxs-lookup"><span data-stu-id="d83e0-122">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="b29b1-123">Kommentarer</span><span class="sxs-lookup"><span data-stu-id="b29b1-123">Remarks</span></span>
 
-<span data-ttu-id="d83e0-123">Mer information om hur du skapar en listvy finns i [skapa en listvy](./creating-a-list-view.md).</span><span class="sxs-lookup"><span data-stu-id="d83e0-123">For more information about creating a list view, see [Creating a List View](./creating-a-list-view.md).</span></span>
+<span data-ttu-id="b29b1-124">Mer information om hur du skapar en listvy finns i [skapa en listvy](./creating-a-list-view.md).</span><span class="sxs-lookup"><span data-stu-id="b29b1-124">For more information about creating a list view, see [Creating a List View](./creating-a-list-view.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="d83e0-124">Exempel</span><span class="sxs-lookup"><span data-stu-id="d83e0-124">Example</span></span>
+## <a name="example"></a><span data-ttu-id="b29b1-125">Exempel</span><span class="sxs-lookup"><span data-stu-id="b29b1-125">Example</span></span>
 
-<span data-ttu-id="d83e0-125">I det här exemplet visas en listvy för objektet [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) .</span><span class="sxs-lookup"><span data-stu-id="d83e0-125">This example shows a list view for the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) object.</span></span>
+<span data-ttu-id="b29b1-126">I det här exemplet visas en listvy för objektet [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) .</span><span class="sxs-lookup"><span data-stu-id="b29b1-126">This example shows a list view for the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) object.</span></span>
 
 ```
 <View>
@@ -65,12 +67,12 @@ ms.locfileid: "87785735"
 </View>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="d83e0-126">Se även</span><span class="sxs-lookup"><span data-stu-id="d83e0-126">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b29b1-127">Se även</span><span class="sxs-lookup"><span data-stu-id="b29b1-127">See Also</span></span>
 
-[<span data-ttu-id="d83e0-127">View-element (format)</span><span class="sxs-lookup"><span data-stu-id="d83e0-127">View Element (Format)</span></span>](./view-element-format.md)
+[<span data-ttu-id="b29b1-128">View-element (format)</span><span class="sxs-lookup"><span data-stu-id="b29b1-128">View Element (Format)</span></span>](./view-element-format.md)
 
-[<span data-ttu-id="d83e0-128">ListEntries-element (format)</span><span class="sxs-lookup"><span data-stu-id="d83e0-128">ListEntries Element (Format)</span></span>](./listentries-element-for-listcontrol-format.md)
+[<span data-ttu-id="b29b1-129">ListEntries-element (format)</span><span class="sxs-lookup"><span data-stu-id="b29b1-129">ListEntries Element (Format)</span></span>](./listentries-element-for-listcontrol-format.md)
 
-[<span data-ttu-id="d83e0-129">Skapa en listvy</span><span class="sxs-lookup"><span data-stu-id="d83e0-129">Creating a List View</span></span>](./creating-a-list-view.md)
+[<span data-ttu-id="b29b1-130">Skapa en listvy</span><span class="sxs-lookup"><span data-stu-id="b29b1-130">Creating a List View</span></span>](./creating-a-list-view.md)
 
-[<span data-ttu-id="d83e0-130">Skriva en Windows PowerShell-formatering och en typ fil</span><span class="sxs-lookup"><span data-stu-id="d83e0-130">Writing a Windows PowerShell Formatting and Types File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="b29b1-131">Skriva en Windows PowerShell-formatering och en typ fil</span><span class="sxs-lookup"><span data-stu-id="b29b1-131">Writing a Windows PowerShell Formatting and Types File</span></span>](./writing-a-powershell-formatting-file.md)

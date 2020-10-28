@@ -1,19 +1,20 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC för Linux nxGroup-resurs
-ms.openlocfilehash: f196c74b94ec27818d58b59d1e489facd8ab0a65
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC för Linux nxGroup-resurs
+ms.openlocfilehash: 3544bee763c0a4456002f9a02fde38de5d4fb65c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464442"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664252"
 ---
-# <a name="dsc-for-linux-nxgroup-resource"></a><span data-ttu-id="26da2-103">DSC för Linux nxGroup-resurs</span><span class="sxs-lookup"><span data-stu-id="26da2-103">DSC for Linux nxGroup Resource</span></span>
+# <a name="dsc-for-linux-nxgroup-resource"></a><span data-ttu-id="01421-103">DSC för Linux nxGroup-resurs</span><span class="sxs-lookup"><span data-stu-id="01421-103">DSC for Linux nxGroup Resource</span></span>
 
-<span data-ttu-id="26da2-104">**NxGroup** -resursen i PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera lokala grupper på en Linux-nod.</span><span class="sxs-lookup"><span data-stu-id="26da2-104">The **nxGroup** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage local groups on a Linux node.</span></span>
+<span data-ttu-id="01421-104">**NxGroup** -resursen i PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera lokala grupper på en Linux-nod.</span><span class="sxs-lookup"><span data-stu-id="01421-104">The **nxGroup** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage local groups on a Linux node.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="26da2-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="26da2-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="01421-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="01421-105">Syntax</span></span>
 
 ```Syntax
 nxGroup <string> #ResourceName
@@ -28,26 +29,26 @@ nxGroup <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="26da2-106">Egenskaper</span><span class="sxs-lookup"><span data-stu-id="26da2-106">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="01421-106">Egenskaper</span><span class="sxs-lookup"><span data-stu-id="01421-106">Properties</span></span>
 
-|<span data-ttu-id="26da2-107">Egenskap</span><span class="sxs-lookup"><span data-stu-id="26da2-107">Property</span></span> |<span data-ttu-id="26da2-108">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="26da2-108">Description</span></span> |
+|<span data-ttu-id="01421-107">Egenskap</span><span class="sxs-lookup"><span data-stu-id="01421-107">Property</span></span> |<span data-ttu-id="01421-108">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="01421-108">Description</span></span> |
 |---|---|
-|<span data-ttu-id="26da2-109">Namn</span><span class="sxs-lookup"><span data-stu-id="26da2-109">GroupName</span></span> |<span data-ttu-id="26da2-110">Anger namnet på den grupp som du vill säkerställa ett speciellt tillstånd för.</span><span class="sxs-lookup"><span data-stu-id="26da2-110">Specifies the name of the group for which you want to ensure a specific state.</span></span> |
-|<span data-ttu-id="26da2-111">Medlemmar</span><span class="sxs-lookup"><span data-stu-id="26da2-111">Members</span></span> |<span data-ttu-id="26da2-112">Anger de medlemmar som utgör gruppen.</span><span class="sxs-lookup"><span data-stu-id="26da2-112">Specifies the members that form the group.</span></span> |
-|<span data-ttu-id="26da2-113">MembersToInclude</span><span class="sxs-lookup"><span data-stu-id="26da2-113">MembersToInclude</span></span> |<span data-ttu-id="26da2-114">Anger de användare som du vill ska vara medlemmar i gruppen.</span><span class="sxs-lookup"><span data-stu-id="26da2-114">Specifies the users who you want to ensure are members of the group.</span></span> |
-|<span data-ttu-id="26da2-115">MembersToExclude</span><span class="sxs-lookup"><span data-stu-id="26da2-115">MembersToExclude</span></span> |<span data-ttu-id="26da2-116">Anger de användare som du vill säkerställa inte är medlemmar i gruppen.</span><span class="sxs-lookup"><span data-stu-id="26da2-116">Specifies the users who you want to ensure are not members of the group.</span></span> |
-|<span data-ttu-id="26da2-117">PreferredGroupID</span><span class="sxs-lookup"><span data-stu-id="26da2-117">PreferredGroupID</span></span> |<span data-ttu-id="26da2-118">Anger grupp-ID till det angivna värdet om det är möjligt.</span><span class="sxs-lookup"><span data-stu-id="26da2-118">Sets the group id to the provided value if possible.</span></span> <span data-ttu-id="26da2-119">Om grupp-ID: t används för närvarande används nästa tillgängliga grupp-ID.</span><span class="sxs-lookup"><span data-stu-id="26da2-119">If the group id is currently in use, the next available group id is used.</span></span> |
+|<span data-ttu-id="01421-109">Namn</span><span class="sxs-lookup"><span data-stu-id="01421-109">GroupName</span></span> |<span data-ttu-id="01421-110">Anger namnet på den grupp som du vill säkerställa ett speciellt tillstånd för.</span><span class="sxs-lookup"><span data-stu-id="01421-110">Specifies the name of the group for which you want to ensure a specific state.</span></span> |
+|<span data-ttu-id="01421-111">Medlemmar</span><span class="sxs-lookup"><span data-stu-id="01421-111">Members</span></span> |<span data-ttu-id="01421-112">Anger de medlemmar som utgör gruppen.</span><span class="sxs-lookup"><span data-stu-id="01421-112">Specifies the members that form the group.</span></span> |
+|<span data-ttu-id="01421-113">MembersToInclude</span><span class="sxs-lookup"><span data-stu-id="01421-113">MembersToInclude</span></span> |<span data-ttu-id="01421-114">Anger de användare som du vill ska vara medlemmar i gruppen.</span><span class="sxs-lookup"><span data-stu-id="01421-114">Specifies the users who you want to ensure are members of the group.</span></span> |
+|<span data-ttu-id="01421-115">MembersToExclude</span><span class="sxs-lookup"><span data-stu-id="01421-115">MembersToExclude</span></span> |<span data-ttu-id="01421-116">Anger de användare som du vill säkerställa inte är medlemmar i gruppen.</span><span class="sxs-lookup"><span data-stu-id="01421-116">Specifies the users who you want to ensure are not members of the group.</span></span> |
+|<span data-ttu-id="01421-117">PreferredGroupID</span><span class="sxs-lookup"><span data-stu-id="01421-117">PreferredGroupID</span></span> |<span data-ttu-id="01421-118">Anger grupp-ID till det angivna värdet om det är möjligt.</span><span class="sxs-lookup"><span data-stu-id="01421-118">Sets the group id to the provided value if possible.</span></span> <span data-ttu-id="01421-119">Om grupp-ID: t används för närvarande används nästa tillgängliga grupp-ID.</span><span class="sxs-lookup"><span data-stu-id="01421-119">If the group id is currently in use, the next available group id is used.</span></span> |
 
-## <a name="common-properties"></a><span data-ttu-id="26da2-120">Gemensamma egenskaper</span><span class="sxs-lookup"><span data-stu-id="26da2-120">Common properties</span></span>
+## <a name="common-properties"></a><span data-ttu-id="01421-120">Gemensamma egenskaper</span><span class="sxs-lookup"><span data-stu-id="01421-120">Common properties</span></span>
 
-|<span data-ttu-id="26da2-121">Egenskap</span><span class="sxs-lookup"><span data-stu-id="26da2-121">Property</span></span> |<span data-ttu-id="26da2-122">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="26da2-122">Description</span></span> |
+|<span data-ttu-id="01421-121">Egenskap</span><span class="sxs-lookup"><span data-stu-id="01421-121">Property</span></span> |<span data-ttu-id="01421-122">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="01421-122">Description</span></span> |
 |---|---|
-|<span data-ttu-id="26da2-123">DependsOn</span><span class="sxs-lookup"><span data-stu-id="26da2-123">DependsOn</span></span> |<span data-ttu-id="26da2-124">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS.</span><span class="sxs-lookup"><span data-stu-id="26da2-124">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="26da2-125">Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` .</span><span class="sxs-lookup"><span data-stu-id="26da2-125">For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span> |
-|<span data-ttu-id="26da2-126">Kontrol</span><span class="sxs-lookup"><span data-stu-id="26da2-126">Ensure</span></span> |<span data-ttu-id="26da2-127">Anger om gruppen finns eller inte.</span><span class="sxs-lookup"><span data-stu-id="26da2-127">Determines whether to check if the group exists.</span></span> <span data-ttu-id="26da2-128">Ange att den här egenskapen **finns för att** säkerställa att gruppen finns.</span><span class="sxs-lookup"><span data-stu-id="26da2-128">Set this property to **Present** to ensure the group exists.</span></span> <span data-ttu-id="26da2-129">Ange det som **frånvarande** för att se till att gruppen inte finns.</span><span class="sxs-lookup"><span data-stu-id="26da2-129">Set it to **Absent** to ensure the group does not exist.</span></span> <span data-ttu-id="26da2-130">Standardvärdet finns **.**</span><span class="sxs-lookup"><span data-stu-id="26da2-130">The default value is **Present**.</span></span> |
+|<span data-ttu-id="01421-123">DependsOn</span><span class="sxs-lookup"><span data-stu-id="01421-123">DependsOn</span></span> |<span data-ttu-id="01421-124">Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS.</span><span class="sxs-lookup"><span data-stu-id="01421-124">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="01421-125">Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` .</span><span class="sxs-lookup"><span data-stu-id="01421-125">For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span> |
+|<span data-ttu-id="01421-126">Kontrol</span><span class="sxs-lookup"><span data-stu-id="01421-126">Ensure</span></span> |<span data-ttu-id="01421-127">Anger om gruppen finns eller inte.</span><span class="sxs-lookup"><span data-stu-id="01421-127">Determines whether to check if the group exists.</span></span> <span data-ttu-id="01421-128">Ange att den här egenskapen **finns för att** säkerställa att gruppen finns.</span><span class="sxs-lookup"><span data-stu-id="01421-128">Set this property to **Present** to ensure the group exists.</span></span> <span data-ttu-id="01421-129">Ange det som **frånvarande** för att se till att gruppen inte finns.</span><span class="sxs-lookup"><span data-stu-id="01421-129">Set it to **Absent** to ensure the group does not exist.</span></span> <span data-ttu-id="01421-130">Standardvärdet finns **.**</span><span class="sxs-lookup"><span data-stu-id="01421-130">The default value is **Present** .</span></span> |
 
-## <a name="example"></a><span data-ttu-id="26da2-131">Exempel</span><span class="sxs-lookup"><span data-stu-id="26da2-131">Example</span></span>
+## <a name="example"></a><span data-ttu-id="01421-131">Exempel</span><span class="sxs-lookup"><span data-stu-id="01421-131">Example</span></span>
 
-<span data-ttu-id="26da2-132">I följande exempel ser du till att användaren ' monuser ' finns och är medlem i gruppen ' DBusers '.</span><span class="sxs-lookup"><span data-stu-id="26da2-132">The following example ensures that the user 'monuser' exists and is a member of the group 'DBusers'.</span></span>
+<span data-ttu-id="01421-132">I följande exempel ser du till att användaren ' monuser ' finns och är medlem i gruppen ' DBusers '.</span><span class="sxs-lookup"><span data-stu-id="01421-132">The following example ensures that the user 'monuser' exists and is a member of the group 'DBusers'.</span></span>
 
 ```powershell
 Import-DSCResource -Module nx
