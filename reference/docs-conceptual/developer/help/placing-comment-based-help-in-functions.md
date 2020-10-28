@@ -1,18 +1,20 @@
 ---
-title: Lägga till kommentarsbaserad hjälp i funktioner
 ms.date: 09/12/2016
-ms.openlocfilehash: c7a8f8db6c71fa2ef12aaa4df0f78815626ec8d6
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Lägga till kommentarsbaserad hjälp i funktioner
+description: Lägga till kommentarsbaserad hjälp i funktioner
+ms.openlocfilehash: 3bd72f0c71d8f6ad54c43c99f044423c072fdeeb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893211"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658213"
 ---
 # <a name="placing-comment-based-help-in-functions"></a>Lägga till kommentarsbaserad hjälp i funktioner
 
 I det här avsnittet beskrivs var du kan placera den kommenterade hjälpen för en funktion så att `Get-Help` cmdleten associerar det kommenterade hjälp avsnittet med rätt funktion.
 
-## <a name="where-to-place-comment-based-help-for-a-function"></a>Var du vill placera kommenterings hjälpen för en funktion
+## <a name="where-to-place-comment-based-help-for-a-function"></a>Var du ska placera Comment-Based hjälp för en funktion
 
 - I början av funktions texten.
 

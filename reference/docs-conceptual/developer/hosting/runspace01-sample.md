@@ -1,12 +1,14 @@
 ---
-title: Runspace01-exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1ac286512f3cb3b97a6b3179c9dd45f1fefe1ecf
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace01 – exempel
+description: Runspace01 – exempel
+ms.openlocfilehash: f47f79dd507db258119016353dc5a72d110d9252
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772203"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657916"
 ---
 # <a name="runspace01-sample"></a>Runspace01 – exempel
 

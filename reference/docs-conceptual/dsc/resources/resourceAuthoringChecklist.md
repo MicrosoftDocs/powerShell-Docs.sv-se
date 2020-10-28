@@ -2,12 +2,13 @@
 ms.date: 07/08/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: Checklista för resursskapande
-ms.openlocfilehash: f21e2e8563880e0c10cf50b044e9c56ca09fe0fa
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: Den här artikeln innehåller en check lista med bästa praxis som ska användas när du redigerar en ny DSC-resurs.
+ms.openlocfilehash: 5b618511f730c80104620c84e693c13ae4f536ac
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217652"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656333"
 ---
 # <a name="resource-authoring-checklist"></a>Checklista för resursskapande
 
@@ -119,7 +120,7 @@ Här är ett mer konkret exempel med hjälp av register resurser:
 
 Se till att testa `Get/Set/Test-TargetResource` funktionerna som implementeras i din resurs genom att anropa dem direkt och kontrol lera att de fungerar som förväntat.
 
-## <a name="verify-end-to-end-using-start-dscconfiguration"></a>Verifiera slut punkt till slut punkt med start-DscConfiguration
+## <a name="verify-end-to-end-using-start-dscconfiguration"></a>Verifiera slut punkt till slut punkt med hjälp av Start-DscConfiguration
 
 `Get/Set/Test-TargetResource`Att testa funktioner genom att anropa dem direkt är viktigt, men alla problem kommer inte att upptäckas på det här sättet. Du bör fokusera en betydande del av testningen på att använda `Start-DscConfiguration` eller hämtnings servern. Detta är i själva verket hur användarna kommer att använda resursen, så funktionen underskattar inte betydelsen av den här typen av tester. Möjliga typer av problem:
 
@@ -134,7 +135,7 @@ Resursen ska fungera på alla plattformar som stöds av DSC (Windows Server 2008
 
 Ett mycket vanligt test glapp verifierar bara resursen på Server versioner av Windows. Många resurser är också utformade för att fungera på klient-SKU: er, så om det är sant i ditt fall kan du inte glömma att testa det på dessa plattformar.
 
-## <a name="get-dscresource-lists-the-resource"></a>Get-Dscresource Keyword Supports visar resursen
+## <a name="get-dscresource-lists-the-resource"></a>Get-DSCResource visar en lista över resurser
 
 När du har distribuerat modulen `Get-DscResource` ska du ange en lista över din resurs bland andra som ett resultat. Om du inte hittar din resurs i listan ser du till att schema. MOF-filen för resursen finns.
 

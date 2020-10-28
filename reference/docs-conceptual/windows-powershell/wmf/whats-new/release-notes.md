@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
-keywords: WMF, powershell, inställning
 title: Versionsinformation för WMF 5.x
-ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Versionsinformation för WMF 5.x
+ms.openlocfilehash: d783592104262b08815b12bd8de01adf13b60372
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811207"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655840"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Viktig information om Windows Management Framework (WMF) 5. x
 
@@ -55,7 +54,7 @@ Från och med version 5,1 är PowerShell tillgängligt i olika versioner som kä
 ### <a name="learn-more-about-using-powershell-editions"></a>Lär dig mer om att använda PowerShell-versioner
 
 - [Bestämma vilken version av PowerShell som körs med hjälp av $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
-- [Filtrera get-module-resultat efter CompatiblePSEditions med parametern PSEdition](/powershell/module/microsoft.powershell.core/get-module)
+- [Filtrera Get-Module resultat efter CompatiblePSEditions med parametern PSEdition](/powershell/module/microsoft.powershell.core/get-module)
 - [Förhindra skript körning om den inte körs på en kompatibel version av PowerShell](/powershell/scripting/gallery/concepts/script-psedition-support)
 - [Deklarera en moduls kompatibilitet för vissa PowerShell-versioner](/powershell/scripting/gallery/concepts/module-psedition-support)
 
@@ -92,7 +91,7 @@ Tidigare hade du inget sätt att ange en viss version av modulen. om det finns f
 
 I WMF 5,1:
 
-- Du kan använda [ModuleSpecification-konstruktorn (hash)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
+- Du kan använda [ModuleSpecification-konstruktorn (hash)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 
   Den här hash-tabellen har samma format som `Get-Module -FullyQualifiedName` .
 

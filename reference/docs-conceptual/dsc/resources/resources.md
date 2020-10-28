@@ -2,12 +2,13 @@
 ms.date: 07/23/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-resurser
-ms.openlocfilehash: 6ab831c9d423c6189951b43bfab92f800366ceca
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: DSC-resurser tillhandahåller Bygg stenar för en DSC-konfiguration. En resurs exponerar egenskaper som kan konfigureras (schema) och innehåller de PowerShell-skript funktioner som används av LCM för att tillämpa konfigurationen.
+ms.openlocfilehash: 1634db84deff8de3b33c941ad738dc21cf3017ac
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777919"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658445"
 ---
 # <a name="dsc-resources"></a>DSC-resurser
 
@@ -19,11 +20,10 @@ DSC-resurser (Desired State Configuration) tillhandahåller Bygg stenar för en 
 
 En resurs kan modellera något som generiskt som en fil eller som en inställning för IIS-servern. Grupper av resurser som är kombinerade i till en DSC-modul som organiserar alla nödvändiga filer i en struktur som är portabel och innehåller metadata för att identifiera hur resurserna är avsedda att användas.
 
-Varje resurs har ett *-schema som avgör den syntax som behövs för att använda resursen i en [konfiguration](../configurations/configurations.md).
-En resurs schema kan definieras på följande sätt:
+Varje resurs har ett *-schema som avgör den syntax som behövs för att använda resursen i en [konfiguration](../configurations/configurations.md). En resurs schema kan definieras på följande sätt:
 
 - `Schema.Mof` fil: de flesta resurser definierar _schemat_ i en `schema.mof` fil med hjälp av [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
-- `<Resource Name>.schema.psm1` fil: [sammansatta resurser](../configurations/compositeConfigs.md) definierar deras _schema_ i en `<ResourceName>.schema.psm1` fil med hjälp av ett [parameter block](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+- `<Resource Name>.schema.psm1` fil: [sammansatta resurser](../configurations/compositeConfigs.md) definierar deras _schema_ i en `<ResourceName>.schema.psm1` fil med hjälp av ett [parameter block](/powershell/module/microsoft.powershell.core/about/about_functions#functions-with-parameters).
 - `<Resource Name>.psm1` fil: klassbaserade DSC-resurser definierar deras _schema_ i klass definitionen. Objekt betecknas som klass egenskaper. Mer information finns i [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
 
 Om du vill hämta syntaxen för en DSC-resurs använder du cmdleten [Get-dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) med parametern **syntax** . Den här användningen liknar att använda [Get-Command](/powershell/module/microsoft.powershell.core/get-command) med parametern **syntax** för att hämta cmdlet-syntaxen. De utdata som visas visar den mall som används för ett resurs block för den resurs som du anger.
@@ -66,11 +66,13 @@ I en konfiguration kan ett **tjänst** resurs block se ut så här för att **s�
 ```powershell
 Configuration TestConfig
 {
-    # It is best practice to always directly import resources, even if the resource is a built-in resource.
+    # It is best practice to always directly import resources, even if the
+    # resource is a built-in resource.
     Import-DSCResource -Name Service
     Node localhost
     {
-        # The name of this resource block, can be anything you choose, as long as it is of type [String] as indicated by the schema.
+        # The name of this resource block, can be anything you choose, as l
+        # ong as it is of type [String] as indicated by the schema.
         Service "Spooler:Running"
         {
             Name = "Spooler"
@@ -85,18 +87,21 @@ Konfigurationer kan innehålla flera instanser av samma resurs typ. Varje instan
 ```powershell
 Configuration TestConfig
 {
-    # It is best practice to always directly import resources, even if the resource is a built-in resource.
+    # It is best practice to always directly import resources, even if the
+    # resource is a built-in resource.
     Import-DSCResource -Name Service
     Node localhost
     {
-        # The name of this resource block, can be anything you choose, as long as it is of type [String] as indicated by the schema.
+        # The name of this resource block, can be anything you choose, as
+        # long as it is of type [String] as indicated by the schema.
         Service "Spooler:Running"
         {
             Name = "Spooler"
             State = "Running"
         }
 
-        # To configure a second service resource block, add another Service resource block and use a unique name.
+        # To configure a second service resource block, add another Service
+        # resource block and use a unique name.
         Service "DHCP:Running"
         {
             Name = "DHCP"
@@ -113,7 +118,7 @@ Configuration TestConfig
 
 ## <a name="types-of-resources"></a>Typer av resurser
 
-Windows levereras med inbyggda resurser och Linux har leverantörsspecifika resurser. Det finns resurser för [över-nod-beroenden](../configurations/crossNodeDependencies.md), paket hanterings resurser samt[ägda och bevarade resurser](https://github.com/dsccommunity). Du kan använda ovanstående steg för att fastställa syntaxen för dessa resurser och hur du använder dem. De sidor som hanterar dessa resurser har arkiverats under **referens**.
+Windows levereras med inbyggda resurser och Linux har leverantörsspecifika resurser. Det finns resurser för [över-nod-beroenden](../configurations/crossNodeDependencies.md), paket hanterings resurser samt[ägda och bevarade resurser](https://github.com/dsccommunity). Du kan använda ovanstående steg för att fastställa syntaxen för dessa resurser och hur du använder dem. De sidor som hanterar dessa resurser har arkiverats under **referens** .
 
 ### <a name="windows-built-in-resources"></a>Inbyggda resurser i Windows
 

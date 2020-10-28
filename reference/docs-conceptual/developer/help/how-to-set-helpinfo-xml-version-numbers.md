@@ -1,12 +1,14 @@
 ---
-title: Konfigurera versionsnummer för HelpInfo-XML-filer
 ms.date: 09/12/2016
-ms.openlocfilehash: 42164f98414da0b6f1a0021e9d860c57a63a9eec
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Konfigurera versionsnummer för HelpInfo-XML-filer
+description: Konfigurera versionsnummer för HelpInfo-XML-filer
+ms.openlocfilehash: 9ef1940ca05d8aa9b04770013287490b71c8065a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86892990"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658842"
 ---
 # <a name="how-to-set-helpinfo-xml-version-numbers"></a>Konfigurera versionsnummer för HelpInfo-XML-filer
 

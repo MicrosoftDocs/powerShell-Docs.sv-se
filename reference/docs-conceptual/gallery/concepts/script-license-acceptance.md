@@ -1,20 +1,19 @@
 ---
 ms.date: 06/09/2017
-schema: 2.0.0
-keywords: powershell
 title: Kräver godkännande av licens för skript
-ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Artikeln förklarar hur du arbetar med skript som publicerats i PowerShell-galleriet som kräver godkännande av en slut användar licens.
+ms.openlocfilehash: d82974810fd1e73ef8d9e5771fc430d0f7964e87
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328898"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656085"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>Kräver godkännande av licens för skript
 
 Licens godkännande stöds inte för skript. Scenariot där ett skript är beroende av en modul som kräver godkännande av licenser stöds dock.
 
-Skript kommandon (install-script/Save-script/Update-script) har stöd för en ny parameter-AcceptLicense som beter sig som om användaren såg licensen. IF-AcceptLicense har inte angetts; användaren kommer att se License. txt för en beroende modul och uppmanas att godkänna licensen.
+Skript kommandona PowerShellGet stöder parametern **AcceptLicense** som beter sig som om användaren såg licensen. Om **AcceptLicense** inte anges visas `license.txt` filen för en beroende modul och du uppmanas att godkänna licensen.
 
 ## <a name="examples"></a>EXEMPEL
 

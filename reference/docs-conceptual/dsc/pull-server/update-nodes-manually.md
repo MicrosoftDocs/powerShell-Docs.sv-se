@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Uppdatera noder från en hämtningsserver
-ms.openlocfilehash: fa59a2f6574db2dbc96621be4326f1d5a55e5de9
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Den här artikeln förklarar hur du uppdaterar DSC-hanterade noder från en hämtnings Server
+ms.openlocfilehash: 7256a0e1fdfaa8e56150c4f7299640bc95b82cee
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500663"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656757"
 ---
 # <a name="update-nodes-from-a-pull-server"></a>Uppdatera noder från en hämtningsserver
 
@@ -18,7 +19,7 @@ I avsnitten nedan förutsätts att du redan har konfigurerat en hämtnings Serve
 
 Varje målnod kan konfigureras för att ladda ned konfigurationer, resurser och till och med rapportera dess status. Den här artikeln visar hur du laddar upp resurser så att de kan laddas ned och konfigurera klienterna att ladda ned resurser automatiskt. När noden tar emot en tilldelad konfiguration via **pull** eller **push** (V5) laddar den automatiskt ned eventuella resurser som krävs av konfigurationen från den plats som anges i LCM.
 
-## <a name="using-the-update-dscconfiguration-cmdlet"></a>Använda cmdleten Update-DSCConfiguration
+## <a name="using-the-update-dscconfiguration-cmdlet"></a>Använda Update-DSCConfiguration cmdlet
 
 Med början i PowerShell 5,0 är cmdleten [Update-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/update-dscconfiguration) en nod för att uppdatera konfigurationen från den hämtnings server som kon figurer ATS i LCM.
 

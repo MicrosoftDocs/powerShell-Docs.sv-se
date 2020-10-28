@@ -2,19 +2,19 @@
 ms.date: 07/08/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: Använda Resource designer-verktyget
-ms.openlocfilehash: 04fd2fbcc5afd9f1c7cbfaa44d6bdfde93bca399
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: Resource designer-verktyget är en uppsättning cmdlets som exponeras av xDscResourceDesigner-modulen som gör det enklare att skapa PowerShell DSC-resurser.
+ms.openlocfilehash: efe36d045ac3fba3823cb1f812bb5761d238fdf1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217499"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656482"
 ---
 # <a name="using-the-resource-designer-tool"></a>Använda Resource designer-verktyget
 
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
-Resource designer-verktyget är en uppsättning cmdlets som exponeras av **xDscResourceDesigner** -modulen som gör det enklare att skapa Windows PowerShell-resurser för Desired State Configuration (DSC). Cmdletarna i den här resursen hjälper dig att skapa MOF-schemat,-modulen och katalog strukturen för den nya resursen. Mer information om DSC-resurser finns i avsnittet om hur du [skapar anpassade Windows PowerShell Desired State Configuration-resurser](authoringResource.md).
-I det här avsnittet ska vi skapa en DSC-resurs som hanterar Active Directory användare. Använd cmdleten [install-module](/powershell/module/PowershellGet/Install-Module) för att installera **xDscResourceDesigner** -modulen.
+Resource designer-verktyget är en uppsättning cmdlets som exponeras av **xDscResourceDesigner** -modulen som gör det enklare att skapa Windows PowerShell-resurser för Desired State Configuration (DSC). Cmdletarna i den här resursen hjälper dig att skapa MOF-schemat,-modulen och katalog strukturen för den nya resursen. Mer information om DSC-resurser finns i avsnittet om hur du [skapar anpassade Windows PowerShell Desired State Configuration-resurser](authoringResource.md). I den här artikeln ska vi skapa en DSC-resurs som hanterar Active Directory användare. Använd cmdleten [install-module](/powershell/module/PowershellGet/Install-Module) för att installera **xDscResourceDesigner** -modulen.
 
 ## <a name="creating-resource-properties"></a>Skapar resurs egenskaper
 
@@ -22,10 +22,10 @@ Det första vi behöver göra är att bestämma vilka egenskaper som resursen sk
 
 Beskrivning av parameter namn
 
-- **Användar namn**: nyckel egenskap som unikt identifierar en användare.
-- **Se till att**: anger om användar kontot ska finnas eller saknas. Den här parametern har bara två möjliga värden.
-- **DomainCredential**: användarens domän lösen ord.
-- **Lösen ord**: det önskade lösen ordet för användaren så att en konfiguration kan ändra användarens lösen ord om det behövs.
+- **Användar namn** : nyckel egenskap som unikt identifierar en användare.
+- **Se till att** : anger om användar kontot ska finnas eller saknas. Den här parametern har bara två möjliga värden.
+- **DomainCredential** : användarens domän lösen ord.
+- **Lösen ord** : det önskade lösen ordet för användaren så att en konfiguration kan ändra användarens lösen ord om det behövs.
 
 Vi använder cmdleten för att skapa egenskaperna `New-xDscResourceProperty` . Följande PowerShell-kommandon skapar de egenskaper som beskrivs ovan.
 

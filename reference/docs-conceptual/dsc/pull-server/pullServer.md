@@ -2,19 +2,22 @@
 ms.date: 01/08/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-hämtningstjänsten
-ms.openlocfilehash: c4e725569db776fe0dbd5395b2f0f8b8e70cbbeb
-ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
+description: Lokala Configuration Manager (LCM) kan hanteras centralt av en pull service-lösning. När du använder den här metoden registreras noden som hanteras med en tjänst och tilldelas en konfiguration i LCM-inställningar.
+ms.openlocfilehash: 67d405deda23569964e5eb401a4405a584369430
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85837485"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659128"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Mottagar tjänst för önskad tillstånds konfiguration
 
 > [!IMPORTANT]
-> Hämtnings servern (Windows Feature *DSC-tjänst*) är en komponent som stöds av Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att du börjar överföra hanterade klienter till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver hämtnings servern på Windows Server) eller någon av de community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
+> Hämtnings servern (Windows Feature *DSC-tjänst* ) är en komponent som stöds av Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att du börjar överföra hanterade klienter till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver hämtnings servern på Windows Server) eller någon av de community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
 
-Lokala Configuration Manager (LCM) kan hanteras centralt av en pull service-lösning. När du använder den här metoden registreras noden som hanteras med en tjänst och tilldelas en konfiguration i LCM-inställningar. Konfigurationen och alla DSC-resurser som krävs som beroenden för konfigurationen laddas ned till datorn och används av LCM för att hantera konfigurationen. Information om statusen för den dator som hanteras överförs till tjänsten för rapportering. Det här begreppet kallas "pull-tjänst".
+Lokala Configuration Manager (LCM) kan hanteras centralt av en pull service-lösning. När du använder den här metoden registreras noden som hanteras med en tjänst och tilldelas en konfiguration i LCM-inställningar. Konfigurationen och alla DSC-resurser som krävs som beroenden för konfigurationen laddas ned till datorn och används av LCM för att hantera konfigurationen.
+Information om statusen för den dator som hanteras överförs till tjänsten för rapportering.
+Det här begreppet kallas "pull-tjänst".
 
 De aktuella alternativen för pull service är:
 
@@ -31,7 +34,7 @@ Den rekommenderade skalningen för varje lösning är följande:
 | Windows pull-server med SQL Database       | Upp till 3500 noder                       |
 | Azure Automation DSC                         | Både små och stora miljöer      |
 
-**Den rekommenderade lösningen**och alternativet med de mest tillgängliga funktionerna är [Azure Automation DSC](/azure/automation/automation-dsc-getting-started). En övre gräns för antalet noder per Automation-konto har inte identifierats.
+**Den rekommenderade lösningen** och alternativet med de mest tillgängliga funktionerna är [Azure Automation DSC](/azure/automation/automation-dsc-getting-started). En övre gräns för antalet noder per Automation-konto har inte identifierats.
 
 Azure-tjänsten kan hantera noder lokalt i privata data Center eller i offentliga moln, till exempel Azure och AWS. För privata miljöer där servrar inte kan ansluta direkt till Internet bör du överväga att begränsa utgående trafik till endast det publicerade Azure IP-intervallet (se [Azure datacenter IP-intervall](https://www.microsoft.com/download/details.aspx?id=41653)).
 
@@ -50,7 +53,7 @@ Funktioner i online tjänsten som inte är tillgängliga i pull-tjänsten på Wi
 
 ## <a name="dsc-pull-service-in-windows-server"></a>DSC-pull-tjänst i Windows Server
 
-Det är möjligt att konfigurera en pull-tjänst för att köras på Windows Server. Vi rekommenderar att lösningen för pull-tjänster som ingår i Windows Server bara innehåller funktioner för att lagra konfigurationer/moduler för att hämta och samla in rapport data i en databas. Det innehåller inte många av de funktioner som erbjuds av tjänsten i Azure och är därför inte ett lämpligt verktyg för att utvärdera hur tjänsten används.
+Det är möjligt att konfigurera en pull-tjänst för att köras på Windows Server. Vi rekommenderar att lösningen för pull-tjänster som ingår i Windows Server bara innehåller funktioner för att lagra konfigurationer och moduler för att hämta och samla in rapport data i en databas. Det innehåller inte många av de funktioner som erbjuds av tjänsten i Azure och är därför inte ett lämpligt verktyg för att utvärdera hur tjänsten används.
 
 Pull-tjänsten som erbjuds i Windows Server är en webb tjänst i IIS som använder ett OData-gränssnitt för att göra DSC-konfigurationsfiler tillgängliga för mål noder när noderna begär det.
 
@@ -70,13 +73,13 @@ Det bästa sättet att konfigurera Windows Server som värd för pull-tjänst ä
 | ------- | -------------------- | -------------------- | ---------------------------------------------- |
 | MDB     | ESENT (standard), MDB | ESENT (standard), MDB | ESENT (standard), SQL Server, MDB               |
 
-Från och med version 17090 av Windows Server är SQL Server ett alternativ som stöds för pull-tjänsten (Windows Feature *DSC-service*). Detta ger ett nytt alternativ för skalning av stora DSC-miljöer som inte har migrerats till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+Från och med version 17090 av Windows Server är SQL Server ett alternativ som stöds för pull-tjänsten (Windows Feature *DSC-service* ). Detta ger ett nytt alternativ för skalning av stora DSC-miljöer som inte har migrerats till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
 > [!NOTE]
 > SQL Server-stöd kommer inte att läggas till i tidigare versioner av WMF 5,1 (eller tidigare) och är bara tillgängliga på Windows Server-versioner som är större än eller lika med 17090.
 
 Konfigurera hämtnings servern för att använda SQL Server genom att ange **SqlProvider** till `$true` och **SqlConnectionString** till en giltig SQL Server anslutnings sträng. Mer information finns i [anslutnings strängar för SqlClient](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
-Ett exempel på SQL Server konfiguration med **xDscWebService**får du först läsa [med xDscWebService-resursen](#using-the-xdscwebservice-resource) och sedan granska [Sample_xDscWebServiceRegistration_UseSQLProvider.ps1 på GitHub](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
+Ett exempel på SQL Server konfiguration med **xDscWebService** får du först läsa [med xDscWebService-resursen](#using-the-xdscwebservice-resource) och sedan granska [Sample_xDscWebServiceRegistration_UseSQLProvider.ps1 på GitHub](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
 
 ### <a name="using-the-xdscwebservice-resource"></a>Använda xDscWebService-resursen
 
@@ -91,7 +94,7 @@ Det enklaste sättet att konfigurera en webb hämtnings Server är att använda 
 1. Installera certifikatet på den nod som ska bli DSC-pull-server på standard platsen, vilket ska vara `CERT:\LocalMachine\My` .
    - Anteckna tumavtryck för certifikatet.
 1. Välj en GUID som ska användas som registrerings nyckel. Om du vill generera en med PowerShell anger du följande vid PS-prompten och trycker på RETUR: `[guid]::newGuid()` eller `New-Guid` . Den här nyckeln används av-klient noder som en delad nyckel för att autentisera vid registreringen. Mer information finns i avsnittet registrerings nyckel nedan.
-1. I PowerShell ISE startar du (<kbd>F5</kbd>) följande konfigurations skript (ingår i mappen i **xPSDesiredStateConfiguration** -modulen som `Sample_xDscWebServiceRegistration.ps1` ). Det här skriptet konfigurerar hämtnings servern.
+1. I PowerShell ISE startar du ( <kbd>F5</kbd>) följande konfigurations skript (ingår i mappen i **xPSDesiredStateConfiguration** -modulen som `Sample_xDscWebServiceRegistration.ps1` ). Det här skriptet konfigurerar hämtnings servern.
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -150,8 +153,10 @@ Det enklaste sättet att konfigurera en webb hämtnings Server är att använda 
 1. Kör konfigurationen och skicka tumavtrycket för SSL-certifikatet som parametern **certificateThumbPrint** och en GUID-registrerings nyckel som parametern **RegistrationKey** :
 
     ```powershell
-    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
-    # and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
+    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all
+    # certificates in your local store and then copy the thumbprint for the appropriate certificate
+    # by     reviewing the certificate subjects
+
     dir Cert:\LocalMachine\my
 
     # Then include this thumbprint when running the configuration
@@ -248,15 +253,16 @@ Följande verktyg ingår som exempel i den senaste versionen av xPSDesiredStateC
    Exempel nedan:
 
     ```powershell
-        # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
-         $moduleList = @('xWebAdministration', 'xPhp')
-         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList
+    # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
+    $moduleList = @('xWebAdministration', 'xPhp')
+    Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList
 
-         # Example 2 - Package modules and mof documents from c:\LocalDepot
-         Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
+    # Example 2 - Package modules and mof documents from c:\LocalDepot
+    Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
     ```
 
-1. Ett skript som verifierar hämtnings servern är korrekt konfigurerat. [PullServerSetupTests.ps1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetupTest/DscPullServerSetupTest.ps1).
+1. Ett skript som verifierar hämtnings servern är korrekt konfigurerat.
+   [PullServerSetupTests.ps1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetupTest/DscPullServerSetupTest.ps1).
 
 ## <a name="community-solutions-for-pull-service"></a>Community-lösningar för pull-tjänst
 

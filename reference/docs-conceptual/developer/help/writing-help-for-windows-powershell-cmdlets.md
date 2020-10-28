@@ -1,12 +1,14 @@
 ---
-title: Skriva hjälp för PowerShell-cmdletar
 ms.date: 09/13/2016
-ms.openlocfilehash: 4e1070e90cf3ed83c1d97a3b620e00f65d09989e
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Skriva hjälp för PowerShell-cmdletar
+description: Skriva hjälp för PowerShell-cmdletar
+ms.openlocfilehash: b1deaa5998dbc54add93764db785d57afcc0a779
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893092"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658105"
 ---
 # <a name="writing-help-for-powershell-cmdlets"></a>Skriva hjälp för PowerShell-cmdletar
 
@@ -26,7 +28,7 @@ Använd enkla ord och fraser. Undvik jargong. Tänk på att många läsare bara 
 
 ### <a name="write-consistently"></a>Skriv konsekvent
 
-Hjälp för relaterade cmdlets bör vara liknande (till exempel get-x och set-x). Använd standard beskrivningarna för standard parametrar som **Force** och **InputObject**. (Kopiera dem från hjälp för Core-cmdletar.) Använd standard villkor. Använd till exempel "parameter", inte "argument" och Använd "cmdlet" inte "Command" eller "kommando-let".
+Hjälp för relaterade cmdlets bör vara liknande (till exempel get-x och set-x). Använd standard beskrivningarna för standard parametrar som **Force** och **InputObject** . (Kopiera dem från hjälp för Core-cmdletar.) Använd standard villkor. Använd till exempel "parameter", inte "argument" och Använd "cmdlet" inte "Command" eller "kommando-let".
 
 ### <a name="start-the-synopsis-with-a-verb"></a>Starta sammanfattningen med ett verb
 
@@ -42,7 +44,7 @@ Visa en kort lista över allt som cmdleten kan göra i den detaljerade beskrivni
 
 ### <a name="use-conventional-syntax"></a>Använd konventionell syntax
 
-Använd det vanliga Naur-formatet som är vanligt för kommando rads hjälpen för Windows och UNIX.
+Använd standard Backus-Naur formatet som är vanligt för kommando rads hjälpen för Windows och UNIX.
 
 ### <a name="use-microsoft-net-types-for-parameter-values"></a>Använd Microsoft .NET typer för parameter värden
 

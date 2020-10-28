@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC WindowsFeature-resurs
-ms.openlocfilehash: b15b267c6898697816b386a381e5a6d59acd492a
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WindowsFeature-resurs
+ms.openlocfilehash: b47febd201a9f7aff3b9ff712bd033ee30f974f9
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464119"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656394"
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature-resurs
 
@@ -34,7 +35,7 @@ WindowsFeature [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|Name |Anger namnet på den roll eller funktion som du vill se till att den läggs till eller tas bort. Detta är samma som egenskapen **Name** från cmdleten [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) och inte visnings namnet för rollen eller funktionen. |
+|Namn |Anger namnet på den roll eller funktion som du vill se till att den läggs till eller tas bort. Detta är samma som egenskapen **Name** från cmdleten [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) och inte visnings namnet för rollen eller funktionen. |
 |Autentiseringsuppgift |Anger de autentiseringsuppgifter som ska användas för att lägga till eller ta bort rollen eller funktionen. |
 |IncludeAllSubFeature |Ange den här egenskapen till för att se till att `$true` alla nödvändiga underfunktioner har statusen för den funktion som du anger med egenskapen **Name** . |
 |LogPath |Anger sökvägen till en loggfil där du vill att resurs leverantören ska logga åtgärden. |
@@ -44,7 +45,7 @@ WindowsFeature [string] #ResourceName
 |Egenskap |Beskrivning |
 |---|---|
 |DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
-|Kontrol |Anger om rollen eller funktionen har lagts till. Om du vill se till att rollen eller funktionen har lagts till ställer du in den här egenskapen som **tillgänglig**. För att säkerställa att rollen eller funktionen tas bort ställer du in egenskapen på **saknas**. Standardvärdet finns **.** |
+|Kontrol |Anger om rollen eller funktionen har lagts till. Om du vill se till att rollen eller funktionen har lagts till ställer du in den här egenskapen som **tillgänglig** . För att säkerställa att rollen eller funktionen tas bort ställer du in egenskapen på **saknas** . Standardvärdet finns **.** |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 
 > [!NOTE]

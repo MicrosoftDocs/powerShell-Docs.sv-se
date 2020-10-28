@@ -2,19 +2,20 @@
 ms.date: 04/11/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Konfigurera en DSC SMB-hämtningsserver
-ms.openlocfilehash: be41f7a708f1a129919fae8300fc4307441097f7
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: En DSC SMB-pull-server är en dator som är värd för SMB-filresurser som gör DSC-konfigurationsfiler och DSC-resurser tillgängliga för att rikta noder när dessa noder begär det.
+ms.openlocfilehash: 4ac1b0db719fa124d6fa9a654acb64ec24d9ea41
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500709"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658424"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Konfigurera en DSC SMB-hämtningsserver
 
 Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
 > [!IMPORTANT]
-> Hämtnings servern (Windows Feature *DSC-tjänst*) är en komponent som stöds av Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att du börjar överföra hanterade klienter till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver hämtnings servern på Windows Server) eller någon av de community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
+> Hämtnings servern (Windows Feature *DSC-tjänst* ) är en komponent som stöds av Windows Server men det finns inga planer på att erbjuda nya funktioner eller funktioner. Vi rekommenderar att du börjar överföra hanterade klienter till [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inklusive funktioner utöver hämtnings servern på Windows Server) eller någon av de community-lösningar som anges [här](pullserver.md#community-solutions-for-pull-service).
 
 En DSC [SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) -pull-server är en dator som är värd för SMB-filresurser som gör DSC-KONFIGURATIONSFILER och DSC-resurser tillgängliga för att rikta noder när dessa noder begär det.
 
@@ -32,8 +33,8 @@ Det finns ett antal sätt att konfigurera en SMB-filresurs, men vi ska titta på
 Anropa cmdleten [install-module](/powershell/module/PowershellGet/Install-Module) för att installera **xSmbShare** -modulen.
 
 > [!NOTE]
-> `Install-Module`ingår i **PowerShellGet** -modulen, som ingår i PowerShell 5,0.
-> **XSmbShare** innehåller DSC- **xSmbShare**som kan användas för att skapa en SMB-filresurs.
+> `Install-Module` ingår i **PowerShellGet** -modulen, som ingår i PowerShell 5,0.
+> **XSmbShare** innehåller DSC- **xSmbShare** som kan användas för att skapa en SMB-filresurs.
 
 ### <a name="create-the-directory-and-file-share"></a>Skapa katalogen och fil resursen
 
@@ -69,7 +70,7 @@ Configuration SmbShare
 }
 ```
 
-Konfigurationen skapar katalogen `C:\DscSmbShare`, om den inte redan finns, och använder den katalogen som en SMB-filresurs. **FullAccess** bör ges till alla konton som behöver skrivas till eller tas bort från fil resursen. **ReadAccess** måste ges till alla-klientsessioner som får konfigurationer och/eller DSC-resurser från resursen.
+Konfigurationen skapar katalogen `C:\DscSmbShare` , om den inte redan finns, och använder den katalogen som en SMB-filresurs. **FullAccess** bör ges till alla konton som behöver skrivas till eller tas bort från fil resursen. **ReadAccess** måste ges till alla-klientsessioner som får konfigurationer och/eller DSC-resurser från resursen.
 
 > [!NOTE]
 > DSC körs som standard system kontot, så själva datorn måste ha åtkomst till resursen.
@@ -131,23 +132,23 @@ Configuration DSCSMB
 
 Spara eventuella konfigurations-MOF-filer och/eller DSC-resurser som du vill att klientsessioner ska hämta i mappen SMB-resurs.
 
-En MOF-konfigurationsfil måste ha namnet *ConfigurationID*. MOF, där *ConfigurationID* är värdet för egenskapen **ConfigurationID** i nodens LCM. Mer information om hur du konfigurerar pull-klienter finns i [Konfigurera en pull-klient med hjälp av konfigurations-ID](pullClientConfigID.md).
+En MOF-konfigurationsfil måste ha namnet *ConfigurationID* . MOF, där *ConfigurationID* är värdet för egenskapen **ConfigurationID** i nodens LCM. Mer information om hur du konfigurerar pull-klienter finns i [Konfigurera en pull-klient med hjälp av konfigurations-ID](pullClientConfigID.md).
 
 > [!NOTE]
 > Du måste använda konfigurations-ID: n om du använder en SMB-pull-server. Konfigurations namn stöds inte för SMB.
 
-Varje resurs-modul måste vara zippad och namngiven enligt följande mönster `{Module Name}_{Module Version}.zip`. Till exempel skulle en modul med namnet xWebAdminstration med en modul version av 3.1.2.0 heta "xWebAdministration_3.2.1.0. zip". Varje version av en modul måste finnas i en enda zip-fil. Separata versioner av en modul i en zip-fil stöds inte.
+Varje resurs-modul måste vara zippad och namngiven enligt följande mönster `{Module Name}_{Module Version}.zip` . Till exempel skulle en modul med namnet xWebAdminstration med en modul version av 3.1.2.0 heta "xWebAdministration_3.2.1.0.zip". Varje version av en modul måste finnas i en enda zip-fil. Separata versioner av en modul i en zip-fil stöds inte.
 Innan du packar upp DSC-resurspooler för användning med pull server måste du göra en liten ändring i katalog strukturen.
 
-Standardformat för moduler som innehåller DSC-resurser i WMF `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`5,0 är.
+Standardformat för moduler som innehåller DSC-resurser i WMF 5,0 är `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\` .
 
-Innan du packar upp för pull-servern tar `{Module version}` du bara bort mappen så `{Module Folder}\DscResources\{DSC Resource Folder}\`att sökvägen blir. Med den här ändringen zip-mappen enligt beskrivningen ovan och placera dessa zip-filer i mappen SMB-resurs.
+Innan du packar upp för pull-servern tar du bara bort `{Module version}` mappen så att sökvägen blir `{Module Folder}\DscResources\{DSC Resource Folder}\` . Med den här ändringen zip-mappen enligt beskrivningen ovan och placera dessa zip-filer i mappen SMB-resurs.
 
 ## <a name="creating-the-mof-checksum"></a>Skapa MOF-kontrollsumma
 
-En konfigurations-MOF-fil måste kombineras med en kontroll Summa fil så att en LCM på en målnod kan verifiera konfigurationen. Om du vill skapa en kontroll Summa anropar du cmdleten [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) . Cmdleten tar en `Path` parameter som anger den mapp där MOF-konfigurationsfilen finns. Cmdleten skapar en kontroll Summa fil `ConfigurationMOFName.mof.checksum`med namnet `ConfigurationMOFName` , där är namnet på MOF-konfigurationsfilen. Om det finns fler än en konfigurations-MOF-fil i den angivna mappen skapas en kontroll summa för varje konfiguration i mappen.
+En konfigurations-MOF-fil måste kombineras med en kontroll Summa fil så att en LCM på en målnod kan verifiera konfigurationen. Om du vill skapa en kontroll Summa anropar du cmdleten [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) . Cmdleten tar en `Path` parameter som anger den mapp där MOF-konfigurationsfilen finns. Cmdleten skapar en kontroll Summa fil med namnet `ConfigurationMOFName.mof.checksum` , där `ConfigurationMOFName` är namnet på MOF-konfigurationsfilen. Om det finns fler än en konfigurations-MOF-fil i den angivna mappen skapas en kontroll summa för varje konfiguration i mappen.
 
-Kontroll Summa filen måste finnas i samma katalog som MOF-filen för konfiguration (`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` som standard) och ha samma namn med `.checksum` tillägget bifogad.
+Kontroll Summa filen måste finnas i samma katalog som MOF-filen för konfiguration ( `$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` som standard) och ha samma namn med `.checksum` tillägget bifogad.
 
 > [!NOTE]
 > Om du ändrar konfigurations-MOF-filen på valfritt sätt måste du också återskapa kontroll Summa filen.
@@ -203,7 +204,7 @@ $ConfigurationData = @{
 }
 ```
 
-## <a name="acknowledgements"></a>Bekräftelser
+## <a name="acknowledgements"></a>Erkännanden
 
 Särskilt tack för följande individer:
 

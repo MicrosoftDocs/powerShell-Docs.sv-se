@@ -1,12 +1,14 @@
 ---
-title: Snabb start för Windows PowerShell-värd | Microsoft Docs
 ms.date: 09/12/2016
-ms.openlocfilehash: fea6bd5ae49ecf552c583271ee9d869b1ccebae8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Snabbstart för Windows PowerShell-värd
+description: Snabbstart för Windows PowerShell-värd
+ms.openlocfilehash: 4cb7dae60342abb40bd7a989a27a692826b360e5
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779411"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657430"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Snabbstart för Windows PowerShell-värd
 

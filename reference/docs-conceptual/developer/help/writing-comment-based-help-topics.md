@@ -1,12 +1,14 @@
 ---
-title: Skriva kommentarsbaserade hjälpavsnitt
 ms.date: 09/13/2016
-ms.openlocfilehash: f29a30d27eba2b84883c4c2bd3cee68349c94e19
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Skriva kommentarsbaserade hjälpavsnitt
+description: Skriva kommentarsbaserade hjälpavsnitt
+ms.openlocfilehash: 11bbadfde27a74bde29d336b91516939e7265b3b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893109"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658802"
 ---
 # <a name="writing-comment-based-help-topics"></a>Skriva kommentarsbaserade hjälpavsnitt
 
@@ -18,10 +20,10 @@ Du kan skriva kommentarer baserade hjälp avsnitt för funktioner och skript gen
 
 ## <a name="in-this-section"></a>I det här avsnittet
 
- [Syntax för kommenterings-baserad hjälp](./syntax-of-comment-based-help.md) Beskriver syntaxen för kommenterings-baserad hjälp.
+ [Syntax för Comment-Based hjälp](./syntax-of-comment-based-help.md) Beskriver syntaxen för kommenterings-baserad hjälp.
 
  [Kommentera-baserade hjälp nyckelord](./comment-based-help-keywords.md) Visar en lista över nyckelord i kommenterad hjälp.
 
- [Placera kommenterings beroende hjälp i functions](./placing-comment-based-help-in-functions.md) Visar var du kan placera den kommenterade hjälpen för en funktion.
+ [Att placera Comment-Based hjälp i functions](./placing-comment-based-help-in-functions.md) Visar var du kan placera den kommenterade hjälpen för en funktion.
 
- [Placera kommenterad hjälp i skript](./placing-comment-based-help-in-scripts.md) Visar var du kan placera den kommenterade hjälpen för ett skript.
+ [Att placera Comment-Based hjälp i skript](./placing-comment-based-help-in-scripts.md) Visar var du kan placera den kommenterade hjälpen för ett skript.

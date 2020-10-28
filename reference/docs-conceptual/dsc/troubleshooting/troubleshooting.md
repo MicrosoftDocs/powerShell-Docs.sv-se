@@ -2,18 +2,19 @@
 ms.date: 10/30/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Felsöka DSC
-ms.openlocfilehash: 83e59b9f7148b52071d4782522ca7642027d795a
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: Den här artikeln innehåller fel söknings instruktioner för vanliga fel.
+ms.openlocfilehash: 2ac86689fa2695add247995bfb91c0ea85e22d60
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692308"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656247"
 ---
 # <a name="troubleshooting-dsc"></a>Felsöka DSC
 
-_Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0_
+> Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
-I det här avsnittet beskrivs olika sätt att felsöka DSC när det uppstår problem.
+Den här artikeln innehåller fel söknings instruktioner för vanliga fel.
 
 ## <a name="winrm-dependency"></a>WinRM-beroende
 
@@ -25,7 +26,7 @@ Windows PowerShell Desired State Configuration (DSC) är beroende av WinRM. WinR
 
 - Alla resurser som misslyckats
 - Alla resurser som begärde en omstart
-- Inställningar för meta-konfiguration vid körning av konfigurations körning
+- Meta-Configuration inställningar vid körning av konfigurations körning
 - O.s.v.
 
 Följande parameter uppsättning returnerar statusinformation för den senaste konfigurations körningen:
@@ -82,8 +83,8 @@ PSComputerName        :
 
 ## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>Skriptet körs inte: använda DSC-loggar för att diagnostisera skript fel
 
-Precis som all Windows-programvara registrerar DSC fel och händelser i [loggar](/windows/desktop/EventLog/about-event-logging) som kan visas från [Loggboken](https://support.microsoft.com/hub/4338813/windows-help).
-Genom att undersöka dessa loggar kan du hjälpa dig att förstå varför en viss åtgärd misslyckades och hur du kan förhindra fel i framtiden. Det kan vara svårt att skriva konfigurations skript, så att det blir enklare att spåra fel när du redigerar, använda DSC-logg resurs för att följa förloppet för din konfiguration i händelse loggen för DSC-analys.
+Precis som all Windows-programvara registrerar DSC fel och händelser i [loggar](/windows/desktop/EventLog/about-event-logging) som kan visas från [Loggboken](https://support.microsoft.com/hub/4338813/windows-help). Genom att undersöka dessa loggar kan du hjälpa dig att förstå varför en viss åtgärd misslyckades och hur du kan förhindra fel i framtiden.
+Det kan vara svårt att skriva konfigurations skript, så att det blir enklare att spåra fel när du redigerar, använda DSC-logg resurs för att följa förloppet för din konfiguration i händelse loggen för DSC-analys.
 
 ## <a name="where-are-dsc-event-logs"></a>Var finns DSC-händelseloggar?
 
@@ -101,8 +102,9 @@ TimeCreated                     Id LevelDisplayName Message
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-Som visas ovan är DSC: s primära logg namn **Microsoft->Windows->DSC** (andra logg namn under Windows visas inte här för det kortfattat). Det primära namnet läggs till i kanal namnet för att skapa det fullständiga logg namnet. DSC-motorn skriver huvudsakligen i tre typer av loggar: [operativa, analytiska och fel söknings loggar](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)). Eftersom de analytiska och fel söknings loggarna är inaktiverade som standard bör du aktivera dem i Loggboken. Det gör du genom att öppna Loggboken genom att skriva show-EventLog i Windows PowerShell; Du kan också klicka på knappen **Starta** , klicka på **kontroll panelen**, klicka på **administrations verktyg**och sedan klicka på **Loggboken**.
-I menyn **Visa** i logg boken klickar du på **Visa analytiska loggar och fel söknings loggar**. Logg namnet för den analytiska kanalen är **Microsoft-Windows-DSC/analytisk**och fel söknings kanalen är **Microsoft-Windows-DSC/debug**. Du kan också använda verktyget [wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) för att aktivera loggarna, som du ser i följande exempel.
+Som visas ovan är DSC: s primära logg namn **Microsoft->Windows->DSC** (andra logg namn under Windows visas inte här för det kortfattat). Det primära namnet läggs till i kanal namnet för att skapa det fullständiga logg namnet. DSC-motorn skriver huvudsakligen i tre typer av loggar: [operativa, analytiska och fel söknings loggar](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)).
+Eftersom de analytiska och fel söknings loggarna är inaktiverade som standard bör du aktivera dem i Loggboken.
+Det gör du genom att öppna Loggboken genom att skriva Show-EventLog i Windows PowerShell; Du kan också klicka på knappen **Starta** , klicka på **kontroll panelen** , klicka på **administrations verktyg** och sedan klicka på **Loggboken** . I menyn **Visa** i logg boken klickar du på **Visa analytiska loggar och fel söknings loggar** . Logg namnet för den analytiska kanalen är **Microsoft-Windows-DSC/analytisk** och fel söknings kanalen är **Microsoft-Windows-DSC/debug** . Du kan också använda verktyget [wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) för att aktivera loggarna, som du ser i följande exempel.
 
 ```powershell
 wevtutil.exe set-log "Microsoft-Windows-Dsc/Analytic" /q:true /e:true
@@ -245,7 +247,7 @@ Displaying messages from built-in DSC resources:
 
 ### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4: fel meddelanden loggade för senaste misslyckade åtgärder
 
-`$SeparateDscOperations[0].Group`innehåller en uppsättning händelser för den senaste åtgärden. Kör `Where-Object` cmdleten för att filtrera händelserna baserat på deras nivå visnings namn. Resultaten lagras i `$myFailedEvent` variabeln, som kan visas ytterligare för att hämta händelse meddelandet:
+`$SeparateDscOperations[0].Group` innehåller en uppsättning händelser för den senaste åtgärden. Kör `Where-Object` cmdleten för att filtrera händelserna baserat på deras nivå visnings namn. Resultaten lagras i `$myFailedEvent` variabeln, som kan visas ytterligare för att hämta händelse meddelandet:
 
 ```powershell
 PS C:\> $myFailedEvent = ($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
@@ -254,14 +256,14 @@ PS C:\> $myFailedEvent.Message
 
 Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} :
 DSC Engine Error :
- Error Message Current configuration does not exist. Execute Start-DscConfiguration command with -Path pa
-rameter to specify a configuration file and create a current configuration first.
+ Error Message Current configuration does not exist. Execute Start-DscConfiguration command with
+ -Path parameter to specify a configuration file and create a current configuration first.
 Error Code : 1
 ```
 
 ### <a name="5-all-events-generated-for-a-particular-job-id"></a>5: alla händelser som genereras för ett visst jobb-ID.
 
-`$SeparateDscOperations`är en uppsättning grupper, som var och en har samma namn som det unika jobb-ID: t. Genom att köra `Where-Object` cmdleten kan du extrahera dessa grupper med händelser som har ett visst jobb-ID:
+`$SeparateDscOperations` är en uppsättning grupper, som var och en har samma namn som det unika jobb-ID: t. Genom att köra `Where-Object` cmdleten kan du extrahera dessa grupper med händelser som har ett visst jobb-ID:
 
 ```powershell
 PS C:\> ($SeparateDscOperations | Where-Object {$_.Name -eq $jobX} ).Group
@@ -489,7 +491,7 @@ Get-Process -Id $dscProcessID | Stop-Process
 
 ## <a name="using-debugmode"></a>Använda DebugMode
 
-Du kan konfigurera den lokala DSC-Configuration Manager (LCM) att använda `DebugMode` för att alltid rensa cacheminnet när värd processen startas om. När värdet är **True**, gör det att motorn alltid laddar om PowerShell DSC-resursen. När du har skrivit din resurs kan du ange den till **false** så att motorn återgår till att cachelagra modulerna.
+Du kan konfigurera den lokala DSC-Configuration Manager (LCM) att använda `DebugMode` för att alltid rensa cacheminnet när värd processen startas om. När värdet är **True** , gör det att motorn alltid laddar om PowerShell DSC-resursen. När du har skrivit din resurs kan du ange den till **false** så att motorn återgår till att cachelagra modulerna.
 
 Följande är en demonstration som visar hur `DebugMode` kan uppdatera cacheminnet automatiskt. Först ska vi titta på standard konfigurationen:
 
@@ -514,7 +516,7 @@ RefreshMode                    : PUSH
 PSComputerName                 :
 ```
 
-Du kan se att `DebugMode` är inställt på **"ingen"**.
+Du kan se att `DebugMode` är inställt på **"ingen"** .
 
 Om du vill konfigurera `DebugMode` demonstrationen använder du följande PowerShell-resurs:
 
@@ -565,7 +567,7 @@ Configuration ConfigTestDebugMode
 ConfigTestDebugMode
 ```
 
-Filens innehåll visas: `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` är **1**.
+Filens innehåll visas: `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` är **1** .
 
 Uppdatera nu leverantörs koden med följande skript:
 
@@ -602,7 +604,7 @@ function Test-TargetResource
 "@ | Out-File -FilePath "C:\Program Files\WindowsPowerShell\Modules\MyPowerShellModules\DSCResources\TestProviderDebugMode\TestProviderDebugMode.psm1
 ```
 
-Det här skriptet genererar ett slumpmässigt nummer och uppdaterar leverantörs koden på motsvarande sätt. Om `DebugMode` värdet är false ändras inte innehållet i filen "**$env: SystemDrive\OutputFromTestProviderDebugMode.txt**".
+Det här skriptet genererar ett slumpmässigt nummer och uppdaterar leverantörs koden på motsvarande sätt. Om `DebugMode` värdet är false ändras inte innehållet i filen `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` .
 
 Ange nu `DebugMode` till **"ForceModuleImport"** i konfigurations skriptet:
 
@@ -633,16 +635,15 @@ onlyProperty                            PSComputerName
 
 När du använder en metaconfiguration på en server för att registrera den med en instans av Windows pull server kan du stöta på följande fel.
 
-```PowerShell
-Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server 
+```
+Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server
 https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned unexpected response code InternalServerError. .
     + CategoryInfo          : InvalidResult: (root/Microsoft/...gurationManager:String) [], CimException
     + FullyQualifiedErrorId : RegisterDscAgentUnsuccessful,Microsoft.PowerShell.DesiredStateConfiguration.Commands.RegisterDscAgentCommand
     + PSComputerName        : <computername>
 ```
 
-Detta kan inträffa när certifikatet som används på servern för att kryptera trafik har ett eget namn (CN) som skiljer sig från det DNS-namn som används av noden för att matcha URL: en.
-Uppdatera Windows pull Server-instansen för att använda ett certifikat med ett korrigerat namn.
+Detta kan inträffa när certifikatet som används på servern för att kryptera trafik har ett eget namn (CN) som skiljer sig från det DNS-namn som används av noden för att matcha URL: en. Uppdatera Windows pull Server-instansen för att använda ett certifikat med ett korrigerat namn.
 
 ## <a name="error-when-running-sysprep-after-applying-a-dsc-configuration"></a>Fel vid körning av Sysprep efter användning av en DSC-konfiguration
 
@@ -652,7 +653,7 @@ När du försöker köra Sysprep för att generalisera en Windows Server efter a
 SYSPRP LaunchDll:Failure occurred while executing 'DscCore.dll,SysPrep_Cleanup', returned error code 0x2
 ```
 
-Att generalisera en server när den har kon figurer ATS med hjälp av Windows PowerShell Desired State Configuration är inte ett scenario som stöds.  Använd i stället konfigurationer för Windows när specialize-fasen i Installationsprogrammet för Windows har slutförts.
+Att generalisera en server när den har kon figurer ATS med hjälp av Windows PowerShell Desired State Configuration är inte ett scenario som stöds. Använd i stället konfigurationer för Windows när specialize-fasen i Installationsprogrammet för Windows har slutförts.
 
 ## <a name="see-also"></a>Se även
 

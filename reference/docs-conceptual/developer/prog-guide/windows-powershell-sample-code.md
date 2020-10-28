@@ -1,23 +1,25 @@
 ---
-title: Exempel kod för Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 8dcbe6d8760d77666a8191ca78416ef63dfebdeb
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell-exempelkod
+description: Windows PowerShell-exempelkod
+ms.openlocfilehash: bfda7d2edc4ab4e01808367c8e2edd01517a5f48
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786942"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656966"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell-exempelkod
 
 Windows PowerShell®-exempel är tillgängliga via Windows SDK. Det här avsnittet innehåller exempel koden som finns i Windows SDK exempel.
 
 > [!NOTE]
-> När Windows SDK installeras skapas en **exempel** katalog där alla Windows PowerShell-exempel görs tillgängliga. En typisk installations katalog är **C:\Program\Microsoft SDKs\Windows\v6.0**. Starta Windows PowerShell och skriv **"CD Samples\SysMgmt\PowerShell"** för att hitta mappen Windows PowerShell-exempel. I det här dokumentet kallas Windows PowerShell-exempel katalogen **\<PowerShell Samples>** .
+> När Windows SDK installeras skapas en **exempel** katalog där alla Windows PowerShell-exempel görs tillgängliga. En typisk installations katalog är **C:\Program\Microsoft SDKs\Windows\v6.0** . Starta Windows PowerShell och skriv **"CD Samples\SysMgmt\PowerShell"** för att hitta mappen Windows PowerShell-exempel. I det här dokumentet kallas Windows PowerShell-exempel katalogen **\<PowerShell Samples>** .
 
 ## <a name="sample-code-listing"></a>Exempel kod lista
 
-|                                    Exempelkod                                    |                                                                                                                                           Description                                                                                                                                           |
+|                                    Exempelkod                                    |                                                                                                                                           Beskrivning                                                                                                                                           |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [AccessDbProviderSample01 – kodexempel](./accessdbprovidersample01-code-sample.md) | Detta är den provider som beskrivs i [skapa en grundläggande Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md).                                                                                                                                                            |
 | [AccessDbProviderSample02 – kodexempel](./accessdbprovidersample02-code-sample.md) | Det här är den provider som beskrivs i [skapa en Windows PowerShell-enhets leverantör](./creating-a-windows-powershell-drive-provider.md).                                                                                                                                                            |
@@ -26,7 +28,7 @@ Windows PowerShell®-exempel är tillgängliga via Windows SDK. Det här avsnitt
 | [AccessDbProviderSample05 – kodexempel](./accessdbprovidersample05-code-sample.md) | Detta är den provider som beskrivs i [skapa en Windows PowerShell-navigerings leverantör](./creating-a-windows-powershell-navigation-provider.md).                                                                                                                                                  |
 | [AccessDbProviderSample06 – kodexempel](./accessdbprovidersample06-code-sample.md) | Detta är den provider som beskrivs i [skapa en Windows PowerShell-innehålls leverantör](./creating-a-windows-powershell-content-provider.md).                                                                                                                                                        |
 | [GetProc01 – kodexempel](./getproc01-code-samples.md)                             | Det här är det grundläggande `Get-Process` cmdlet-exemplet som beskrivs i [skapa din första cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md).                                                                                                                                                     |
-| [GetProc02 – kodexempel](./getproc02-code-samples.md)                             | Detta är det `Get-Process` cmdlet-exempel som beskrivs i [lägga till parametrar som bearbetar kommando rads indatatyper](../cmdlet/adding-parameters-that-process-command-line-input.md).                                                                                                                       |
+| [GetProc02 – kodexempel](./getproc02-code-samples.md)                             | Detta är det `Get-Process` cmdlet-exempel som beskrivs i [lägga till parametrar som bearbetar Command-Line-Indatatyp](../cmdlet/adding-parameters-that-process-command-line-input.md).                                                                                                                       |
 | [GetProc03 – kodexempel](./getproc03-code-samples.md)                             | Detta är det `Get-Process` cmdlet-exempel som beskrivs i [lägga till parametrar som bearbetar pipeline-inflöden](../cmdlet/adding-parameters-that-process-pipeline-input.md).                                                                                                                               |
 | [GetProc04 – kodexempel](./getproc04-code-samples.md)                             | Detta är det `Get-Process` cmdlet-exempel som beskrivs i [lägga till fel rapportering som inte avslutas till din cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).                                                                                                                |
 | [GetProc05 – kodexempel](./getproc05-code-samples.md)                             | Denna `Get-Process` cmdlet liknar den cmdlet som beskrivs i [lägga till fel rapportering som inte avslutas till din cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).                                                                                                     |

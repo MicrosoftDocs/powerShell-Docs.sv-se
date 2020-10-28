@@ -1,13 +1,13 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: ISEAddOnToolCollection-objektet
-ms.openlocfilehash: e07a47169381307b50ac190165307c926b4ad94e
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: ISEAddOnToolCollection-objektet är en samling av **ISEAddOnTool** -objekt.
+ms.openlocfilehash: ba08ffd82a7ff2fa469540a5ea542abee8d4dc82
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811032"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658315"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>ISEAddOnToolCollection-objektet
 
@@ -25,7 +25,7 @@ Lägger till ett nytt tilläggs verktyg i samlingen. Det returnerar det nyligen 
 
 **ControlType** – typ anger den kontroll som läggs till.
 
-** \[ IsVisible \] ** – valfria booleska om det är inställt på `$true` , visas tilläggs verktyget direkt i det associerade verktygs fönstret.
+**\[ IsVisible \]** – valfria booleska om det är inställt på `$true` , visas tilläggs verktyget direkt i det associerade verktygs fönstret.
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE
@@ -33,7 +33,7 @@ Lägger till ett nytt tilläggs verktyg i samlingen. Det returnerar det nyligen 
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
 ```
 
-### <a name="remove-item-"></a>Ta bort \( objekt\)
+### <a name="remove-item-"></a>Ta bort \( objekt \)
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
@@ -47,7 +47,7 @@ Tar bort det angivna tilläggs verktyget från samlingen.
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
 ```
 
-### <a name="setselectedpowershelltab-pstab-"></a>SetSelectedPowerShellTab \( psTab\)
+### <a name="setselectedpowershelltab-pstab-"></a>SetSelectedPowerShellTab \( psTab \)
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
@@ -61,7 +61,7 @@ $newTab = $psISE.PowerShellTabs.Add()
 $newTab.DisplayName = 'Brand New Tab'
 ```
 
-### <a name="remove-pstab-"></a>Ta bort \( psTab\)
+### <a name="remove-pstab-"></a>Ta bort \( psTab \)
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 

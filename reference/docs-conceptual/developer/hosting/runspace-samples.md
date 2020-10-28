@@ -1,12 +1,14 @@
 ---
-title: Körnings utrymme-exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f7c11101a570f89657f9ffc4d52fa6ebce3a91e1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Exempel på körningsutrymmen
+description: Exempel på körningsutrymmen
+ms.openlocfilehash: 0171622f3ade3b341bc226f14398d6d293262f0c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772220"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657954"
 ---
 # <a name="runspace-samples"></a>Exempel på körningsutrymmen
 
@@ -25,9 +27,9 @@ Det här avsnittet innehåller exempel kod som visar hur du använder olika type
 
  [Runspace04-exempel](./runspace04-sample.md) Det här exemplet visar hur du använder klassen [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) för att köra kommandon och hur du fångar upp avslutande fel som uppstår när du kör kommandona. Två kommandon körs och det sista kommandot skickas till ett parameter argument som inte är giltigt. Som ett resultat returneras inga objekt och ett avslutande fel uppstår.
 
- [Runspace05-exempel](./runspace05-sample.md) Det här exemplet visar hur du lägger till en snapin-modul till ett [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt så att cmdleten för snapin-modulen är tillgänglig när körnings utrymme öppnas. Snapin-modulen innehåller en get-proc-cmdlet (definieras av [GetProcessSample01-exemplet](../cmdlet/getprocesssample01-sample.md)) som körs synkront med ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
+ [Runspace05-exempel](./runspace05-sample.md) Det här exemplet visar hur du lägger till en snapin-modul till ett [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt så att cmdleten för snapin-modulen är tillgänglig när körnings utrymme öppnas. Snapin-modulen innehåller en Get-Proc-cmdlet (definieras av [GetProcessSample01-exemplet](../cmdlet/getprocesssample01-sample.md)) som körs synkront med ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
 
- [Runspace06-exempel](./runspace06-sample.md) Det här exemplet visar hur du lägger till en modul i ett [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt så att modulen läses in när körnings utrymme öppnas. Modulen innehåller en get-proc-cmdlet (definieras av [GetProcessSample02-exemplet](../cmdlet/getprocesssample02-sample.md)) som körs synkront med ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
+ [Runspace06-exempel](./runspace06-sample.md) Det här exemplet visar hur du lägger till en modul i ett [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -objekt så att modulen läses in när körnings utrymme öppnas. Modulen innehåller en Get-Proc-cmdlet (definieras av [GetProcessSample02-exemplet](../cmdlet/getprocesssample02-sample.md)) som körs synkront med ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
 
  [Runspace07-exempel](./runspace07-sample.md) Det här exemplet visar hur du skapar en körnings utrymme och sedan använder den körnings utrymme för att köra två cmdlets synkront med hjälp av ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.
 

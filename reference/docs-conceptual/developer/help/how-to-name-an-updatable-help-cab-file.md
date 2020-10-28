@@ -1,12 +1,14 @@
 ---
-title: Namnge en CAB-fil för uppdateringsbar hjälp
 ms.date: 09/12/2016
-ms.openlocfilehash: 42486461d92f1f6fcff452a4539edf5be7a66f22
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Namnge en CAB-fil för uppdateringsbar hjälp
+description: Namnge en CAB-fil för uppdateringsbar hjälp
+ms.openlocfilehash: 57ea188d07a382d1a986a49c9ae22c5919dafa8e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893007"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658919"
 ---
 # <a name="how-to-name-an-updatable-help-cab-file"></a>Namnge en CAB-fil för uppdateringsbar hjälp
 

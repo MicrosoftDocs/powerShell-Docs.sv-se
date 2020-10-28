@@ -2,24 +2,24 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, konfiguration, installation
 title: Villkorssatser och slingor i konfigurationer
-ms.openlocfilehash: 86f75be4a3d1c1760dd6269335431e8ab9fd8d09
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Den här artikeln visar hur du kan använda villkorliga uttryck och slingor för att göra konfigurationen mer dynamisk. Genom att kombinera villkorliga uttryck och slingor med parametrar och konfigurations data kan du öka flexibiliteten och kontrollen när du kompilerar konfigurationen.
+ms.openlocfilehash: 7af8a360c17a0842fa2b95d1d1fb288323c327ef
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75736904"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658458"
 ---
 # <a name="conditional-statements-and-loops-in-a-configuration"></a>Villkors uttryck och slingor i en konfiguration
 
-Du kan göra [konfigurationen](configurations.md) mer dynamisk med hjälp av PowerShell Flow-Control-nyckelord. Den här artikeln visar hur du kan använda villkors satser och slingor för att göra `Configuration` mer dynamiska. Genom att kombinera villkorliga uttryck och slingor med [parametrar](add-parameters-to-a-configuration.md) och [konfigurations data](configData.md) kan du öka flexibiliteten och `Configuration`kontrollen när du kompilerar.
+Du kan göra [konfigurationen](configurations.md) mer dynamisk med hjälp av PowerShell Flow-Control-nyckelord. Den här artikeln visar hur du kan använda villkors satser och slingor för att göra `Configuration` mer dynamiska. Genom att kombinera villkorliga uttryck och slingor med [parametrar](add-parameters-to-a-configuration.md) och [konfigurations data](configData.md) kan du öka flexibiliteten och kontrollen när du kompilerar `Configuration` .
 
-Precis som en funktion eller ett skript block kan du använda valfri PowerShell-språkfunktion i en `Configuration`.
-De instruktioner du använder utvärderas bara när du anropar `Configuration` för att kompilera en `.mof` fil. I exemplen nedan visas scenarier för att demonstrera koncept. Villkors uttryck och slingor används oftare med parametrar och konfigurations data.
+Precis som en funktion eller ett skript block kan du använda valfri PowerShell-språkfunktion i en `Configuration` . De instruktioner du använder utvärderas bara när du anropar `Configuration` för att kompilera en `.mof` fil. I exemplen nedan visas scenarier för att demonstrera koncept. Villkors uttryck och slingor används oftare med parametrar och konfigurations data.
 
 I det här exemplet hämtar **tjänst** resurs blocket det aktuella läget för en tjänst vid kompileringen för att skapa en `.mof` fil som upprätthåller dess aktuella tillstånd.
 
 > [!NOTE]
-> Om du använder dynamiska resurs block blockeras effektiviteten i IntelliSense. PowerShell-parsern kan inte avgöra om de angivna värdena är acceptabla `Configuration` tills kompileraren kompileras.
+> Om du använder dynamiska resurs block blockeras effektiviteten i IntelliSense. PowerShell-parsern kan inte avgöra om de angivna värdena är acceptabla tills `Configuration` kompileraren kompileras.
 
 ```powershell
 Configuration ServiceState
@@ -60,7 +60,7 @@ Configuration ServiceState
 }
 ```
 
-Du kan också skapa en `Configuration` endast för datorer som är online med hjälp av `if` en instruktion.
+Du kan också skapa en `Configuration` endast för datorer som är online med hjälp av en `if` instruktion.
 
 ```powershell
 Configuration ServiceState
@@ -94,7 +94,7 @@ Mention Get-DSCConfigurationFromSystem
 
 ## <a name="summary"></a>Sammanfattning
 
-Sammanfattnings vis kan du använda valfri PowerShell-språkfunktion i `Configuration`en.
+Sammanfattnings vis kan du använda valfri PowerShell-språkfunktion i en `Configuration` .
 
 Detta inkluderar sådant som:
 
@@ -106,7 +106,7 @@ Detta inkluderar sådant som:
 - ActiveDirectory-objekt
 - med flera...
 
-Alla PowerShell-koder som definieras `Configuration` i a utvärderas vid kompilering, men du kan också placera kod i skriptet som innehåller din `Configuration`. All kod utanför `Configuration` blocket körs när du importerar din `Configuration`.
+Alla PowerShell-koder som definieras i a `Configuration` utvärderas vid kompilering, men du kan också placera kod i skriptet som innehåller din `Configuration` . All kod utanför `Configuration` blocket körs när du importerar din `Configuration` .
 
 ## <a name="see-also"></a>Se även
 

@@ -1,12 +1,14 @@
 ---
-title: Lägga till syntax till ett cmdlet-hjälpavsnitt
 ms.date: 09/12/2016
-ms.openlocfilehash: 3457341a577b283bf3da5dc010de9bbbb36b78d2
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Lägga till syntax till ett cmdlet-hjälpavsnitt
+description: Lägga till syntax till ett cmdlet-hjälpavsnitt
+ms.openlocfilehash: bcc037d22051c162cd0f70702da17afe7ed9c01a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893058"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659069"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Lägga till syntax till ett cmdlet-hjälpavsnitt
 
@@ -14,7 +16,7 @@ Innan du börjar koda XML för syntax-diagrammet i cmdlet-hjälpen läser du det
 
 ## <a name="parameter-attributes"></a>Parameter-attribut
 
-- Obligatorisk
+- Krävs
   - Om värdet är true måste parametern visas i alla kommandon som använder parameter uppsättningen.
   - Om värdet är false är parametern valfri i alla kommandon som använder parameter uppsättningen.
 - Position
@@ -32,7 +34,7 @@ Innan du börjar koda XML för syntax-diagrammet i cmdlet-hjälpen läser du det
 
 ### <a name="parameter-value-attributes"></a>Attribut för parameter värde
 
-- Obligatorisk
+- Krävs
   - Om värdet är true måste det angivna värdet användas när parametern i ett kommando används.
   - Om värdet är false är parametervärdet valfritt. Normalt är ett värde bara valfritt när det är ett av flera giltiga värden för en parameter, till exempel i en uppräknings typ.
 
@@ -52,7 +54,7 @@ Vanligt vis krävs parameter värden som är plats hållare och parameter värde
    ```
 
 1. Visa en lista med alla parametrar för cmdleten. Skriv ett bindestreck ( `-` ) (ASCII 45) före varje parameter namn.
-   Avgränsa parametrarna i parameter uppsättningar (vissa cmdletar får bara ha en parameter uppsättning). I det här exemplet har get-Tech-cmdleten två parameter uppsättningar.
+   Avgränsa parametrarna i parameter uppsättningar (vissa cmdletar får bara ha en parameter uppsättning). I det här exemplet har Get-Tech-cmdlet två parameter uppsättningar.
 
    ```
    SYNTAX
@@ -81,9 +83,9 @@ Vanligt vis krävs parameter värden som är plats hållare och parameter värde
        Get-Tech -ID int -list -type basic advanced
    ```
 
-   Förkorta typer så länge deras innebörd är klar, till exempel **sträng** för **system. String** och **int** för **system. Int32**.
+   Förkorta typer så länge deras innebörd är klar, till exempel **sträng** för **system. String** och **int** för **system. Int32** .
 
-   Visa alla värden för uppräkningar, till exempel `-type` parametern i föregående exempel, som kan anges till **Basic** eller **Advanced**.
+   Visa alla värden för uppräkningar, till exempel `-type` parametern i föregående exempel, som kan anges till **Basic** eller **Advanced** .
 
    Växla parametrar, t `-list` . ex. i föregående exempel, saknar värden.
 

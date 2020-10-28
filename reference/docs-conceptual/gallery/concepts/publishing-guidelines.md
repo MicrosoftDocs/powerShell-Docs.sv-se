@@ -1,15 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB, SydneyhSmith
-keywords: Galleri, PowerShell, cmdlet, psgallery
-description: Rikt linjer för utgivare
+description: I den här artikeln beskrivs rekommenderade steg för att se till att paketen som publiceras till PowerShell-galleriet är mycket antagna och ger användarna ett högt värde.
 title: PowerShell-galleriet publicerings rikt linjer och metod tips
-ms.openlocfilehash: c58b23b0021e0745ee690a78f7e42c821d59cdb0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: 949340aeba36df26c68f92422b8c11869ed3bf11
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777858"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656148"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery publicerings rikt linjer och metod tips
 
@@ -43,7 +41,7 @@ Var och en av dessa omfattas kortfattat i avsnitten nedan.
 
 ## <a name="use-psscriptanalyzer"></a>Använd PSScriptAnalyzer
 
-[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) är ett kostnads fritt statiskt kod analys verktyg som fungerar med PowerShell-kod. **PSScriptAnalyzer** kommer att identifiera de vanligaste problemen som visas i PowerShell-koden och ofta en rekommendation för hur du kan åtgärda problemet. Verktyget är enkelt att använda och kategoriserar problemen som fel (allvarligt, måste åtgärdas), varning (måste granskas och bör åtgärdas) och information (värt att kolla för bästa praxis). Alla paket som publiceras till PowerShell-galleriet genomsöks med hjälp av **PSScriptAnalyzer**och eventuella fel rapporteras tillbaka till ägaren och måste åtgärdas.
+[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) är ett kostnads fritt statiskt kod analys verktyg som fungerar med PowerShell-kod. **PSScriptAnalyzer** kommer att identifiera de vanligaste problemen som visas i PowerShell-koden och ofta en rekommendation för hur du kan åtgärda problemet. Verktyget är enkelt att använda och kategoriserar problemen som fel (allvarligt, måste åtgärdas), varning (måste granskas och bör åtgärdas) och information (värt att kolla för bästa praxis). Alla paket som publiceras till PowerShell-galleriet genomsöks med hjälp av **PSScriptAnalyzer** och eventuella fel rapporteras tillbaka till ägaren och måste åtgärdas.
 
 Den bästa metoden är att köra `Invoke-ScriptAnalyzer` med `-Recurse` och `-Severity` varning.
 
@@ -52,7 +50,7 @@ Granska resultaten och se till att:
 - Alla fel korrigeras eller åtgärdas i dokumentationen.
 - Alla varningar granskas och åtgärdas där det är tillämpligt.
 
-Användare som laddar ned paket från PowerShell-galleriet är starkt uppmanade att köra **PSScriptAnalyzer** och utvärdera alla fel och varningar. Användare kan förmodligen kontakta paket ägare om de ser att det finns ett fel rapporterat av **PSScriptAnalyzer**. Om det finns en övertygande anledning för ditt paket att behålla kod som flaggats som ett fel, lägger du till den informationen i dokumentationen för att undvika att behöva besvara samma fråga flera gånger.
+Användare som laddar ned paket från PowerShell-galleriet är starkt uppmanade att köra **PSScriptAnalyzer** och utvärdera alla fel och varningar. Användare kan förmodligen kontakta paket ägare om de ser att det finns ett fel rapporterat av **PSScriptAnalyzer** . Om det finns en övertygande anledning för ditt paket att behålla kod som flaggats som ett fel, lägger du till den informationen i dokumentationen för att undvika att behöva besvara samma fråga flera gånger.
 
 ## <a name="include-documentation-and-examples"></a>Ta med dokumentation och exempel
 
@@ -73,7 +71,7 @@ Ett utmärkt mönster för exempel finns i [PSDscResource-modulen](https://www.p
 
 ## <a name="manage-dependencies"></a>Hantera beroenden
 
-Det är viktigt att ange moduler som modulen är beroende av i manifestet för modulen. Detta gör det möjligt för slutanvändaren att inte behöva oroa sig för att installera rätt versioner av moduler som ditt tar ett beroende på. Om du vill ange beroende moduler ska du använda fältet obligatorisk modul i manifestet för modulen. Detta läser in moduler som visas i den globala miljön innan du importerar modulen om de inte redan har lästs in. Till exempel kanske vissa moduler redan har lästs in av en annan modul. Det är också möjligt att ange en angiven version som ska läsas in med fältet **RequiredVersion** i stället för fältet **ModuleVersion** . När du använder **ModuleVersion**kommer den att läsa in den senaste versionen som är tillgänglig med minst den angivna versionen. Om du inte använder fältet **RequiredVersion** för att ange en speciell version är det viktigt att övervaka versions uppdateringar till modulen som krävs. Det är särskilt viktigt att vara medveten om eventuella större ändringar som kan påverka användar upplevelsen med modulen.
+Det är viktigt att ange moduler som modulen är beroende av i manifestet för modulen. Detta gör det möjligt för slutanvändaren att inte behöva oroa sig för att installera rätt versioner av moduler som ditt tar ett beroende på. Om du vill ange beroende moduler ska du använda fältet obligatorisk modul i manifestet för modulen. Detta läser in moduler som visas i den globala miljön innan du importerar modulen om de inte redan har lästs in. Till exempel kanske vissa moduler redan har lästs in av en annan modul. Det är också möjligt att ange en angiven version som ska läsas in med fältet **RequiredVersion** i stället för fältet **ModuleVersion** . När du använder **ModuleVersion** kommer den att läsa in den senaste versionen som är tillgänglig med minst den angivna versionen. Om du inte använder fältet **RequiredVersion** för att ange en speciell version är det viktigt att övervaka versions uppdateringar till modulen som krävs. Det är särskilt viktigt att vara medveten om eventuella större ändringar som kan påverka användar upplevelsen med modulen.
 
 ```powershell
 Example: RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
@@ -85,10 +83,9 @@ Example: RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="
 
 Paket ägare som svarar korrekt på feedback är mycket värdefulla för communityn. Användare som tillhandahåller informell feedback är viktiga att svara på eftersom de är tillräckligt intressanta i paketet för att försöka hjälpa till att förbättra det.
 
-Det finns två återkopplings metoder som är tillgängliga i PowerShell-galleriet:
+Det finns en feedback-metod som är tillgänglig i PowerShell-galleriet:
 
 - Kontakt ägare: det gör att en användare kan skicka ett e-postmeddelande till paketets ägare. Som paket ägare är det viktigt att övervaka den e-postadress som används med PowerShell-galleriet-paket och svara på problem som aktive ras. Den enda nack delen med den här metoden är att endast användaren och ägaren kommer att se kommunikationen, så att ägaren kan behöva besvara samma fråga flera gånger.
-- Kommentarer: längst ned på sidan paket finns ett **kommentars** fält. Fördelen med det här systemet är att andra användare kan se kommentarer och svar, vilket minskar antalet gånger som en enskild fråga måste besvaras. Som paket ägare rekommenderar vi starkt att du följer de kommentarer som gjorts för varje paket. Mer information om hur du gör detta finns i [ge feedback via sociala medier eller kommentarer](../how-to/working-with-packages/social-media-feedback.md) .
 
 Ägare som svarar på feedback informellt uppskattas av communityn. Använd affärs möjligheten i rapporten för att begära mer information. Om det behövs kan du ange en lösning eller identifiera om en uppdatering åtgärdar ett problem.
 
@@ -142,7 +139,7 @@ Målen för test täckningen anropas i dokumentationen för [resurs modulen med 
 
 ## <a name="include-andor-link-to-license-terms"></a>Inkludera och/eller länka till licens villkoren
 
-Alla paket som har publicerats till PowerShell-galleriet måste ange licens villkoren eller vara kopplade till den licens som ingår i [användnings villkoren](https://www.powershellgallery.com/policies/Terms) . **Exhibit A** Den bästa metoden för att ange en annan licens är att tillhandahålla en länk till licensen med hjälp av **LicenseURI** i **PSData**. Mer information finns i avsnittet om [paket manifest-och Galleri gränssnitt](package-manifest-affecting-ui.md).
+Alla paket som har publicerats till PowerShell-galleriet måste ange licens villkoren eller vara kopplade till den licens som ingår i [användnings villkoren](https://www.powershellgallery.com/policies/Terms) . **Exhibit A** Den bästa metoden för att ange en annan licens är att tillhandahålla en länk till licensen med hjälp av **LicenseURI** i **PSData** . Mer information finns i avsnittet om [paket manifest-och Galleri gränssnitt](package-manifest-affecting-ui.md).
 
 ```powershell
 PrivateData = @{
@@ -193,9 +190,9 @@ PowerShell-galleriet är inte avsedd att vara ett mål för att testa publicerin
 - Konfigurera en lokal PowerShell-galleriet instans med hjälp av [projektet PS, privat Galleri](https://github.com/PowerShell/PSPrivateGallery) i GitHub. I det här för hands versionen av projektet får du hjälp att skapa en instans av PowerShell-galleriet som du kan styra och använda för dina tester.
 - Konfigurera en [intern NuGet-lagringsplats](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/).
   Detta kräver mer arbete för att konfigureras, men har fördelen att du verifierar några av kraven, särskilt att validera användningen av en API-nyckel och om beroenden finns i målet när du publicerar.
-- Konfigurera en fil resurs som test **lagrings plats**. Detta är enkelt att konfigurera, men eftersom det är en fil resurs kommer de verifieringar som anges ovan inte att äga rum. En möjlig fördel i detta fall är att fil resursen inte kontrollerar den nödvändiga API-nyckeln, så du kan använda samma nyckel som du skulle använda för att publicera till PowerShell-galleriet.
+- Konfigurera en fil resurs som test **lagrings plats** . Detta är enkelt att konfigurera, men eftersom det är en fil resurs kommer de verifieringar som anges ovan inte att äga rum. En möjlig fördel i detta fall är att fil resursen inte kontrollerar den nödvändiga API-nyckeln, så du kan använda samma nyckel som du skulle använda för att publicera till PowerShell-galleriet.
 
-Med någon av dessa lösningar använder `Register-PSRepository` du för att definiera en ny **lagrings plats**som du använder i- `-Repository` parametern för `Publish-Module` .
+Med någon av dessa lösningar använder `Register-PSRepository` du för att definiera en ny **lagrings plats** som du använder i- `-Repository` parametern för `Publish-Module` .
 
 En ytterligare punkt om test publicering: alla paket som du publicerar till PowerShell-galleriet kan inte tas bort utan hjälp från Operations-teamet, som bekräftar att inget är beroende av det paket som du vill publicera. Därför stöder vi inte PowerShell-galleriet som ett test mål och kommer att kontakta alla utgivare som gör det.
 
@@ -204,7 +201,7 @@ En ytterligare punkt om test publicering: alla paket som du publicerar till Powe
 Vi rekommenderar starkt att utgivare använder `Publish-Module` `Publish-Script` cmdletarna och när de arbetar med PowerShell-galleriet. **PowerShellGet** har skapats för att hjälpa dig att undvika att komma ihåg viktig information om hur du installerar från och publicerar till PowerShell-galleriet. Ibland har utgivare valt att hoppa över **PowerShellGet** och använda **NuGet** -klienten, eller **PackageManagement** -cmdlets i stället för `Publish-Module` . Det finns ett antal information som är lätt att missa, vilket resulterar i en rad olika support förfrågningar.
 
 Om det är en anledning att du inte kan använda `Publish-Module` eller, kan du `Publish-Script` berätta för oss.
-Skriv ett problem i **PowerShellGet** GitHub-lagrings platsen och ange information som gör det möjligt att välja **NuGet** eller **PackageManagement**.
+Skriv ett problem i **PowerShellGet** GitHub-lagrings platsen och ange information som gör det möjligt att välja **NuGet** eller **PackageManagement** .
 
 ## <a name="recommended-workflow"></a>Rekommenderat arbets flöde
 

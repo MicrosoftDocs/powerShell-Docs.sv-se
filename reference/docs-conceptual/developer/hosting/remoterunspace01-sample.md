@@ -1,12 +1,14 @@
 ---
-title: RemoteRunspace01-exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f9ae846d70412858b32bfe32ba5bfbf2063d9eb1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: RemoteRunspace01 – exempel
+description: RemoteRunspace01 – exempel
+ms.openlocfilehash: 13c6213089700e779eb185fe48a67c1616fad437
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783219"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658025"
 ---
 # <a name="remoterunspace01-sample"></a>RemoteRunspace01 – exempel
 

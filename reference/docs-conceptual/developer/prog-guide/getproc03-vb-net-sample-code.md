@@ -1,12 +1,14 @@
 ---
-title: GetProc03 (VB.NET) exempel kod | Microsoft Docs
 ms.date: 09/12/2016
-ms.openlocfilehash: ad8a7b13d30b77acdaa2f5365b9b2da02aaeedce
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProc03 (VB.NET) – kodexempel
+description: GetProc03 (VB.NET) – kodexempel
+ms.openlocfilehash: 6d51c3bf65ccb37811acce0ab5f59daaac91118b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771931"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657209"
 ---
 # <a name="getproc03-vbnet-sample-code"></a>GetProc03 (VB.NET) – kodexempel
 

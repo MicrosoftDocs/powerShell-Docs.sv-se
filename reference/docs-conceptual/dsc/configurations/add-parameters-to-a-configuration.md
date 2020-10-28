@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, resurs, Galleri, installation
 title: Lägga till parametrar i en konfiguration
-ms.openlocfilehash: 9aa4c746042e89d7767e1b326233dcca1e5c4c24
-ms.sourcegitcommit: b80ce0396550d0896189d0205d6c4b4372ac2015
+description: DSC-konfigurationer kan vara parameterstyrda för att tillåta fler dynamiska konfigurationer utifrån användarindata.
+ms.openlocfilehash: aea230d34994a7b20076559c44990abe554d5395
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141409"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656814"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Lägga till parametrar i en konfiguration
 
@@ -42,7 +43,7 @@ Till skillnad från en Function-CmdletBinding, lägger attributet [CmdletBinding
 | `-DependsOn`            | Används i definiera [sammansatta konfigurationer](compositeconfigs.md)                             |
 | `-PSDSCRunAsCredential` | Används i definiera [sammansatta konfigurationer](compositeconfigs.md)                             |
 | `-ConfigurationData`    | Används för att skicka strukturerade [konfigurations data](configData.md) för användning i konfigurationen. |
-| `-OutputPath`           | Används för att ange var din\<"\>ComputerName. MOF"-fil ska kompileras                      |
+| `-OutputPath`           | Används för att ange var din " \<computername\> . MOF"-fil ska kompileras                      |
 
 ## <a name="adding-your-own-parameters-to-configurations"></a>Lägga till egna parametrar i konfigurationer
 
@@ -60,7 +61,7 @@ Configuration TestConfig
 
 ### <a name="add-a-computername-parameter"></a>Lägg till en ComputerName-parameter
 
-Den första parametern som du kan lägga till `-Computername` är en parameter så att du dynamiskt kan kompilera en ". MOF" `-Computername` -fil för alla som du skickar till din konfiguration. Precis som funktioner kan du också definiera ett standardvärde, om användaren inte skickar något värde för`-ComputerName`
+Den första parametern som du kan lägga till är en `-Computername` parameter så att du dynamiskt kan kompilera en ". MOF"-fil för alla `-Computername` som du skickar till din konfiguration. Precis som funktioner kan du också definiera ett standardvärde, om användaren inte skickar något värde för `-ComputerName`
 
 ```powershell
 param
@@ -119,7 +120,7 @@ TestConfig -ComputerName "server01", "server02", "server03"
 ## <a name="advanced-parameters-in-configurations"></a>Avancerade parametrar i konfigurationer
 
 Förutom en `-ComputerName` parameter kan vi lägga till parametrar för tjänstens namn och tillstånd.
-I följande exempel lägger du till ett parameter block `-ServiceName` med en parameter och använder den för att dynamiskt definiera **tjänst** resurs blocket. Den lägger också till `-State` en parameter för att dynamiskt definiera **statusen** i **tjänst** resurs blocket.
+I följande exempel lägger du till ett parameter block med en `-ServiceName` parameter och använder den för att dynamiskt definiera **tjänst** resurs blocket. Den lägger också till en `-State` parameter för att dynamiskt definiera **statusen** i **tjänst** resurs blocket.
 
 ```powershell
 Configuration TestConfig
@@ -153,7 +154,7 @@ Configuration TestConfig
 > [!NOTE]
 > I mer avancerade scenarier kan det vara mer meningsfullt att flytta dina dynamiska data till en strukturerad [konfigurations data](configData.md).
 
-Exempel konfigurationen tar nu en dynamisk `$ServiceName`, men om ingen anges kompileras resultatet i ett fel. Du kan lägga till ett standardvärde som det här exemplet.
+Exempel konfigurationen tar nu en dynamisk `$ServiceName` , men om ingen anges kompileras resultatet i ett fel. Du kan lägga till ett standardvärde som det här exemplet.
 
 ```powershell
 [String]
@@ -178,7 +179,7 @@ Du kan ange argument för varje `parameter` attribut, för att styra aspekter av
 $ServiceName
 ```
 
-För- `$State` parametern skulle vi vilja hindra användaren från att ange värden utanför en fördefinierad uppsättning (som att köra, stoppa) `ValidationSet*`attributet skulle hindra användaren från att ange värden utanför en fördefinierad uppsättning (t. ex. igång, stoppad). I följande exempel läggs `ValidationSet` attributet till i `$State` parametern. Eftersom vi inte vill göra `$State` parametern **obligatorisk**, måste du lägga till ett standardvärde för den.
+För `$State` -parametern skulle vi vilja hindra användaren från att ange värden utanför en fördefinierad uppsättning (som att köra, stoppa) `ValidationSet*` attributet skulle hindra användaren från att ange värden utanför en fördefinierad uppsättning (t. ex. igång, stoppad). I följande exempel läggs `ValidationSet` attributet till i `$State` parametern. Eftersom vi inte vill göra `$State` parametern **obligatorisk** , måste du lägga till ett standardvärde för den.
 
 ```powershell
 [ValidateSet("Running", "Stopped")]
@@ -187,13 +188,13 @@ $State="Running"
 ```
 
 > [!NOTE]
-> Du behöver inte ange ett `parameter` attribut när du använder ett `validation` -attribut.
+> Du behöver inte ange ett `parameter` attribut när du använder ett- `validation` attribut.
 
-Du kan läsa mer om verifierings- `parameter` och verifierings-attributen i [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters).
+Du kan läsa mer om `parameter` verifierings-och verifierings-attributen i [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters).
 
 ## <a name="fully-parameterized-configuration"></a>Helt parametriserad konfiguration
 
-Nu har vi en parametriserad konfiguration som tvingar användaren att ange en `-InstanceName`, `-ServiceName`och verifierar `-State` parametern.
+Nu har vi en parametriserad konfiguration som tvingar användaren att ange en `-InstanceName` , `-ServiceName` och verifierar `-State` parametern.
 
 ```powershell
 Configuration TestConfig

@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
-keywords: WMF, powershell, inställning
 title: Förbättringar i PowerShell-motorn i WMF 5.1
-ms.openlocfilehash: cccfcf8872ac60e0902669bcc797d0ed250317ba
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Den här artikeln innehåller prestanda förbättringar i Windows PowerShell 5,1
+ms.openlocfilehash: 34a4ed1ae4b00f5763848deaf2edad895e70c59a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810381"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655855"
 ---
 # <a name="powershell-engine-improvements"></a>Förbättringar i PowerShell-motorn
 
@@ -26,8 +25,8 @@ Några exempel på förbättringar (resultatet kan variera beroende på maskin v
 | Scenario | 5,0 tid (MS) | 5,1 tid (MS) |
 | -------- | :---------------: | :---------------: |
 | `powershell -command "echo 1"` | 900 | 250 |
-| Första gången PowerShell kördes:`powershell -command "Unknown-Command"` | 30000 | 13000 |
-| Kommando analys-cache har skapats:`powershell -command "Unknown-Command"` | 7000 | 520 |
+| Första gången PowerShell kördes: `powershell -command "Unknown-Command"` | 30000 | 13000 |
+| Kommando analys-cache har skapats: `powershell -command "Unknown-Command"` | 7000 | 520 |
 | <code>1..1000000 &#124; % { }</code> | 1400 | 750 |
 
 > [!NOTE]

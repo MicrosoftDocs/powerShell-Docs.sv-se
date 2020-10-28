@@ -1,13 +1,13 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell,cmdlet
 title: PowerShellTabCollection-objektet
-ms.openlocfilehash: 0aad885afd3ba3ae3b00f5c11d2c62a9ff303798
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: PowerShellTab Collection-objektet är en samling PowerShellTab-objekt. Varje PowerShellTab-objekt fungerar som en separat körnings miljö.
+ms.openlocfilehash: 60f8001f096b50bd8433a5685f1f70a350f07f61
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810052"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658269"
 ---
 # <a name="the-powershelltabcollection-object"></a>PowerShellTabCollection-objektet
 

@@ -1,21 +1,21 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: ISEMenuItemCollection-objektet
-ms.openlocfilehash: 39e8547c9b19ba323d4b224a46eda416542b2807
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Ett ISEMenuItemCollection-objekt är en samling av ISEMenuItem-objekt.
+ms.openlocfilehash: cd86768d13b1326a8f35c44f0391ab60669cee4f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810941"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655990"
 ---
 # <a name="the-isemenuitemcollection-object"></a>ISEMenuItemCollection-objektet
 
-Ett **ISEMenuItemCollection** -objekt är en samling av **ISEMenuItem** -objekt. Det är en instans av klassen **Microsoft. PowerShell. Host. ISE. ISEMenuItemCollection** . Ett exempel är det `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus` objekt som används för att anpassa **tilläggs** menyn i Windows PowerShell® ISE (Integrated Scripting Environment).
+Ett **ISEMenuItemCollection** -objekt är en samling av **ISEMenuItem** -objekt. Det är en instans av klassen **Microsoft. PowerShell. Host. ISE. ISEMenuItemCollection** . Ett exempel är det `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus` objekt som används för att anpassa **tilläggs** menyn i Windows PowerShell &reg; Ise (Integrated Scripting Environment).
 
 ## <a name="method"></a>Metod
 
-### <a name="addstring-displayname-systemmanagementautomationscriptblock-action-systemwindowsinputkeygesture-shortcut-"></a>Lägg till \( sträng DisplayName, system. Management. Automation. script block Action, system. Windows. inmatad. gest gen väg\)
+### <a name="addstring-displayname-systemmanagementautomationscriptblock-action-systemwindowsinputkeygesture-shortcut-"></a>Lägg till \( sträng DisplayName, system. Management. Automation. script block Action, system. Windows. inmatad. gest gen väg \)
 
 Stöds i Windows PowerShell ISE 2,0 och senare.
 

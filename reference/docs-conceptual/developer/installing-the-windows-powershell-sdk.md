@@ -1,12 +1,14 @@
 ---
-title: Installera Windows PowerShell SDK:n
 ms.date: 03/30/2020
-ms.openlocfilehash: 91cf57510bb7f44799cfdaf7cadcc7bcd505c977
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Installera Windows PowerShell SDK:n
+description: Installera Windows PowerShell SDK:n
+ms.openlocfilehash: 07108ede640b8c6c02bea6d9e2b63116b5b8f969
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771982"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657300"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Installera Windows PowerShell SDK:n
 
@@ -74,8 +76,8 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` . Följande avsnitt inneh�
 - Runspace02 – visar hur du använder PowerShell-klassen för att köra `Get-Process` och- `Sort-Object` cmdlets synkront. `Get-Process`Cmdleten returnerar process objekt för varje process som körs på den lokala datorn och `Sort-Object` sorterar objekten baserat på deras ID-egenskap. Resultatet av dessa kommandon visas med hjälp av en DataGridView-kontroll.
 - Runspace03 – visar hur du använder PowerShell-klassen för att köra ett skript synkront och hur du hanterar icke-avslutande fel. Skriptet tar emot en lista över process namn och hämtar sedan dessa processer. Resultatet av skriptet, inklusive eventuella icke-avslutande fel som genererades när skriptet kördes, visas i konsol fönstret.
 - Runspace04 – visar hur du använder PowerShell-klassen för att köra kommandon och hur du fångar upp avslutande fel som genereras när du kör kommandona. Två kommandon körs och det sista kommandot skickas till ett parameter argument som inte är giltigt. Därför returneras inga objekt och ett avslutande fel genereras.
-- Runspace05 – visar hur du lägger till en snapin-modul i ett InitialSessionState-objekt så att cmdleten för snapin-modulen är tillgänglig när körnings utrymme öppnas. Snapin-modulen innehåller en get-proc-cmdlet (definieras av GetProcessSample01-exemplet) som körs synkront med ett PowerShell-objekt.
-- Runspace06 – visar hur du lägger till en modul i ett InitialSessionState-objekt så att modulen läses in när körnings utrymme öppnas. Modulen innehåller en get-proc-cmdlet (definieras av GetProcessSample02-exemplet) som körs synkront med ett PowerShell-objekt.
+- Runspace05 – visar hur du lägger till en snapin-modul i ett InitialSessionState-objekt så att cmdleten för snapin-modulen är tillgänglig när körnings utrymme öppnas. Snapin-modulen innehåller en Get-Proc-cmdlet (definieras av GetProcessSample01-exemplet) som körs synkront med ett PowerShell-objekt.
+- Runspace06 – visar hur du lägger till en modul i ett InitialSessionState-objekt så att modulen läses in när körnings utrymme öppnas. Modulen innehåller en Get-Proc-cmdlet (definieras av GetProcessSample02-exemplet) som körs synkront med ett PowerShell-objekt.
 - Runspace07 – visar hur du skapar en körnings utrymme och använder sedan den körnings utrymme för att köra två cmdlets synkront med ett PowerShell-objekt.
 - Runspace08 – visar hur du lägger till kommandon och argument i pipelinen för ett PowerShell-objekt och hur du kör kommandona synkront.
 - Runspace09 – visar hur du lägger till ett skript i pipelinen för ett PowerShell-objekt och hur du kör skriptet asynkront. Händelser används för att hantera utdata från skriptet.

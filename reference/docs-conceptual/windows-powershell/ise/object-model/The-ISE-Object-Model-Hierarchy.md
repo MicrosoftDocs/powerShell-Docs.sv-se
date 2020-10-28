@@ -1,17 +1,17 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: ISE-objektmodellhierarkin
-ms.openlocfilehash: 1ec5810fc5e7b765c2a08af83bce0415dd61a54b
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Den här artikeln visar hierarkin med objekt som är en del av Windows PowerShell ISE.
+ms.openlocfilehash: 00980cda72f05bc6ccb398079b129de13a98f783
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811046"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658318"
 ---
 # <a name="the-ise-object-model-hierarchy"></a>ISE-objektmodellhierarkin
 
-I det här avsnittet visas hierarkin för objekt som ingår i Windows PowerShell ISE (Integrated Scripting Environment). Windows PowerShell ISE ingår i Windows PowerShell 3,0, 4,0 och 5,1. Klicka på ett objekt för att ta dig till referens dokumentationen för den klass som definierar objektet.
+Den här artikeln visar hierarkin med objekt som ingår i Windows PowerShell ISE (Integrated Scripting Environment). Windows PowerShell ISE ingår i Windows PowerShell 3,0, 4,0 och 5,1. Klicka på ett objekt för att ta dig till referens dokumentationen för den klass som definierar objektet.
 
 ## <a name="psise-object"></a>$psISE objekt
 

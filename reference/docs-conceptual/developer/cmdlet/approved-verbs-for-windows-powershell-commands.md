@@ -1,16 +1,14 @@
 ---
-title: Godkända verb för PowerShell-kommandon | Microsoft Docs
 ms.date: 09/07/2018
-helpviewer_keywords:
-- action names [PowerShell SDK]
-- verb names [PowerShell SDK]
-- cmdlets [PowerShell SDK], verb names
-ms.openlocfilehash: 96ba7397f46bfcb7036f0242da1367c3df5d3de9
-ms.sourcegitcommit: 0e18be0a2869beaa711ba3eca7a8a15514e5e962
+ms.topic: reference
+title: Godkända verb för PowerShell-kommandon
+description: Godkända verb för PowerShell-kommandon
+ms.openlocfilehash: 237355ba9729cfe16c335b39f19ab20e40999457
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91899864"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655822"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>Godkända verb för PowerShell-kommandon
 
@@ -75,7 +73,7 @@ Använd `Test` verbet.
 
 PowerShell använder uppräknings klassen [system. Management. Automation. VerbsCommon](/dotnet/api/System.Management.Automation.VerbsCommon) för att definiera allmänna åtgärder som kan tillämpas på nästan vilken cmdlet som helst. I följande tabell visas de flesta av de definierade verben.
 
-|Verb (alias)|Action|Synonymer för att undvika|
+|Verb (alias)|Åtgärd|Synonymer för att undvika|
 |--------------------|------------|--------------|
 |[Lägg till](/dotnet/api/System.Management.Automation.VerbsCommon.Add) (a)|Lägger till en resurs i en behållare eller bifogar ett objekt till ett annat objekt. Till exempel `Add-Content` lägger cmdleten till innehåll till en fil. Verbet är länkat till `Remove` .|Lägg till, bifoga, sammanfoga, infoga|
 |[Rensa](/dotnet/api/System.Management.Automation.VerbsCommon.Clear) (cl)|Tar bort alla resurser från en behållare men tar inte bort behållaren. Till exempel `Clear-Content` tar cmdleten bort innehållet i en fil men tar inte bort filen.|Rensa, radera, släppa, avmarkera, unset, upphäver|
@@ -83,7 +81,7 @@ PowerShell använder uppräknings klassen [system. Management. Automation. Verbs
 |[Kopiera](/dotnet/api/System.Management.Automation.VerbsCommon.Copy) (CP)|Kopierar en resurs till ett annat namn eller till en annan behållare. Till exempel `Copy-Item` kopierar cmdleten ett objekt (till exempel en fil) från en plats i data lagret till en annan plats.|Duplicera, klona, replikera, synkronisera|
 |[RETUR](/dotnet/api/System.Management.Automation.VerbsCommon.Enter) (et)|Anger en åtgärd som gör det möjligt för användaren att flytta till en resurs. Till exempel `Enter-PSSession` placerar cmdleten användaren i en interaktiv session. Verbet är länkat till `Exit` .|Push-överför till|
 |[Avsluta](/dotnet/api/System.Management.Automation.VerbsCommon.Exit) (t ex)|Anger den aktuella miljön eller kontexten till den senast använda kontexten. Till exempel `Exit-PSSession` placerar cmdleten användaren i sessionen som användes för att starta den interaktiva sessionen. Verbet är länkat till `Enter` .|Pop, ut|
-|[Sök](/dotnet/api/System.Management.Automation.VerbsCommon.Find) (fd)|Söker efter ett objekt i en behållare som är okänt, underförstådd, valfri eller angiven.|Search|
+|[Sök](/dotnet/api/System.Management.Automation.VerbsCommon.Find) (fd)|Söker efter ett objekt i en behållare som är okänt, underförstådd, valfri eller angiven.|Sök|
 |[Hämta](/dotnet/api/System.Management.Automation.VerbsCommon.Get) (g)|Anger en åtgärd som hämtar en resurs. Verbet är länkat till `Set` .|Läsa, öppna, katta, skriva, dir, Hämta, dumpa, Hämta, undersöka, söka efter|
 |[Dölj](/dotnet/api/System.Management.Automation.VerbsCommon.Hide) (h)|Gör en resurs okänd. Till exempel kan en-cmdlet som innehåller namnet Dölj verb dölja en tjänst från en användare. Verbet är länkat till `Show` .|Blockera|
 |[Anslut](/dotnet/api/System.Management.Automation.VerbsCommon.Join) (j)|Kombinerar resurser till en resurs. Till exempel `Join-Path` kombinerar cmdleten en sökväg med en av dess underordnade sökvägar för att skapa en enskild sökväg. Verbet är länkat till `Split` .|Kombinera, Unita, Anslut, koppla|
@@ -115,7 +113,7 @@ PowerShell använder uppräknings klassen [system. Management. Automation. Verbs
 
 PowerShell använder klassen [system. Management. Automation. VerbsCommunications](/dotnet/api/System.Management.Automation.VerbsCommunications) för att definiera åtgärder som gäller för kommunikation. I följande tabell visas de flesta av de definierade verben.
 
-|Verb (alias)|Action|Synonymer för att undvika|
+|Verb (alias)|Åtgärd|Synonymer för att undvika|
 |--------------------|------------|--------------|
 |[Anslut](/dotnet/api/System.Management.Automation.VerbsCommunications.Connect) (CC)|Skapar en länk mellan en källa och ett mål. Verbet är länkat till `Disconnect` .|Anslut till, Telnet|
 |[Koppla från](/dotnet/api/System.Management.Automation.VerbsCommunications.Disconnect) (DC)|Bryter länken mellan en källa och ett mål. Verbet är länkat till `Connect` .|Bryt, logga ut|
@@ -128,7 +126,7 @@ PowerShell använder klassen [system. Management. Automation. VerbsCommunication
 
 PowerShell använder klassen [system. Management. Automation. VerbsData](/dotnet/api/System.Management.Automation.VerbsData) för att definiera åtgärder som gäller för data hantering. I följande tabell visas de flesta av de definierade verben.
 
-|Verb (alias)|Action|Synonymer för att undvika|
+|Verb (alias)|Åtgärd|Synonymer för att undvika|
 |-------------------------|------------|--------------|
 |[Säkerhets kopiering](/dotnet/api/System.Management.Automation.VerbsData.Backup) (ba)|Lagrar data genom att replikeras.|Spara, Bränn, replikera, synkronisera|
 |[Kontroll punkt](/dotnet/api/System.Management.Automation.VerbsData.Checkpoint) (CH)|Skapar en ögonblicks bild av dataens aktuella tillstånd eller dess konfiguration.|Diff|
@@ -158,7 +156,7 @@ PowerShell använder klassen [system. Management. Automation. VerbsData](/dotnet
 
 PowerShell använder klassen [system. Management. Automation. VerbsDiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic) för att definiera åtgärder som gäller diagnostik. I följande tabell visas de flesta av de definierade verben.
 
-|Verb (alias)|Action|Synonymer för att undvika|
+|Verb (alias)|Åtgärd|Synonymer för att undvika|
 |--------------------|------------|--------------|
 |[Felsöka](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Debug) (dB)|Undersöker en resurs för att diagnosticera drifts problem.|Diagnostisera|
 |[Mått](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Measure) (MS)|Identifierar resurser som används av en angiven åtgärd eller hämtar statistik om en resurs.|Beräkna, bestämma, analysera|
@@ -171,7 +169,7 @@ PowerShell använder klassen [system. Management. Automation. VerbsDiagnostic](/
 
 PowerShell använder klassen [system. Management. Automation. VerbsLifeCycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) för att definiera åtgärder som gäller för livs cykeln för en resurs. I följande tabell visas de flesta av de definierade verben.
 
-|Verb (alias)|Action|Synonymer för att undvika|
+|Verb (alias)|Åtgärd|Synonymer för att undvika|
 |--------------------|------------|--------------|
 |[Godkänn](/dotnet/api/System.Management.Automation.VerbsLifecycle.Approve) (AP)|Bekräftar eller accepterar status för en resurs eller process.||
 |[Assert](/dotnet/api/System.Management.Automation.VerbsLifecycle.Assert) (as)|Bekräftar statusen för en resurs.|Certify|
@@ -200,7 +198,7 @@ PowerShell använder klassen [system. Management. Automation. VerbsLifeCycle](/d
 
 PowerShell använder klassen [system. Management. Automation. VerbsSecurity](/dotnet/api/System.Management.Automation.VerbsSecurity) för att definiera åtgärder som ska vidtas för säkerhet. I följande tabell visas de flesta av de definierade verben.
 
-|Verb (alias)|Action|Synonymer för att undvika|
+|Verb (alias)|Åtgärd|Synonymer för att undvika|
 |--------------------|------------|--------------|
 |[Blockera](/dotnet/api/System.Management.Automation.VerbsSecurity.Block) (bl)|Begränsar åtkomsten till en resurs. Verbet är länkat till `Unblock` .|Förhindra, begränsa, neka|
 |[Bevilja](/dotnet/api/System.Management.Automation.VerbsSecurity.Grant) (gr)|Tillåter åtkomst till en resurs. Verbet är länkat till `Revoke` .|Tillåt, aktivera|
@@ -213,7 +211,7 @@ PowerShell använder klassen [system. Management. Automation. VerbsSecurity](/do
 
 PowerShell använder klassen [system. Management. Automation. VerbsOther](/dotnet/api/System.Management.Automation.VerbsOther) för att definiera kanoniska verb som inte passar in i en viss kategori för verb, till exempel verben common, Communications, data, Lifecycle eller Security verb.
 
-|Verb (alias)|Action|Synonymer för att undvika|
+|Verb (alias)|Åtgärd|Synonymer för att undvika|
 |--------------------|------------|--------------|
 |[Använd](/dotnet/api/System.Management.Automation.VerbsOther.Use) (u)|Använder eller innehåller en resurs för att göra något.||
 

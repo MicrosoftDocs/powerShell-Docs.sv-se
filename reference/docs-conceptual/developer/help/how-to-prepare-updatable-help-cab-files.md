@@ -1,12 +1,14 @@
 ---
-title: Förbereda CAB-filer för uppdateringsbar hjälp
 ms.date: 09/03/2012
-ms.openlocfilehash: 7f3ed2fcf03585a41e571eb2a5ebb4d850d64e01
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Förbereda CAB-filer för uppdateringsbar hjälp
+description: Förbereda CAB-filer för uppdateringsbar hjälp
+ms.openlocfilehash: df403bd025601fd88f8384efed9452c139f85a82
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893330"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658899"
 ---
 # <a name="how-to-prepare-updatable-help-cab-files"></a>Förbereda CAB-filer för uppdateringsbar hjälp
 

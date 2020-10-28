@@ -1,14 +1,14 @@
 ---
-title: Windows PowerShell-referens | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- Windows PowerShell SDK
-ms.openlocfilehash: 1c1a3a4de2df2043fe12cad6a69b7bc36ab9d3d7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell-referens
+description: Windows PowerShell-referens
+ms.openlocfilehash: bea8fb0057a8294abcbbf8e9c5e098290048a903
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786687"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656877"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell-referens
 
@@ -41,7 +41,7 @@ Använd Windows Live Search för att hitta andra Windows PowerShell-Bloggar och-
 
 [System. Management. Automation. Provider](/dotnet/api/System.Management.Automation.Provider) denna namnrymd innehåller de klasser, uppräkningar och gränssnitt som krävs för att implementera en Windows PowerShell-Provider. I synnerhet är klassen [system. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) den basklass från vilken alla klasser för Windows PowerShell-leverantörer måste härledas.
 
-[Microsoft. PowerShell. kommandon](/dotnet/api/Microsoft.PowerShell.Commands) denna namnrymd innehåller klasserna för de cmdlets och providers som implementeras av Windows PowerShell. På samma sätt rekommenderar vi att du skapar en *dittnamn*. Kommando namn området för de cmdlets som du implementerar.
+[Microsoft. PowerShell. kommandon](/dotnet/api/Microsoft.PowerShell.Commands) denna namnrymd innehåller klasserna för de cmdlets och providers som implementeras av Windows PowerShell. På samma sätt rekommenderar vi att du skapar en *dittnamn* . Kommando namn området för de cmdlets som du implementerar.
 
 [System. Management. Automation. Host](/dotnet/api/System.Management.Automation.Host) denna namnrymd innehåller de klasser, uppräkningar och gränssnitt som cmdleten använder för att definiera interaktionen mellan användaren och Windows PowerShell.
 
