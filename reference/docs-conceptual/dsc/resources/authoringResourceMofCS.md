@@ -2,53 +2,54 @@
 ms.date: 07/08/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: 'Redigera en DSC-resurs i C #'
-ms.openlocfilehash: 4652d5d99c32685e124f2cd1b718f973380ab16a
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: Den här artikeln visar hur du skapar en DSC-resurs som en cmdlet som skrivits i C#.
+ms.openlocfilehash: 61c4d1e332a22f97a89cd740e03235ddfdcfabd2
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217516"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667172"
 ---
-# <a name="authoring-a-dsc-resource-in-c"></a><span data-ttu-id="de938-103">Redigera en DSC-resurs i C\#</span><span class="sxs-lookup"><span data-stu-id="de938-103">Authoring a DSC resource in C\#</span></span>
+# <a name="authoring-a-dsc-resource-in-c"></a><span data-ttu-id="f5480-104">Redigera en DSC-resurs i C\#</span><span class="sxs-lookup"><span data-stu-id="f5480-104">Authoring a DSC resource in C\#</span></span>
 
-> <span data-ttu-id="de938-104">Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0</span><span class="sxs-lookup"><span data-stu-id="de938-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="f5480-105">Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0</span><span class="sxs-lookup"><span data-stu-id="f5480-105">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="de938-105">Normalt implementeras en anpassad DSC-resurs (Windows PowerShell Desired State Configuration) i ett PowerShell-skript.</span><span class="sxs-lookup"><span data-stu-id="de938-105">Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script.</span></span> <span data-ttu-id="de938-106">Du kan dock också implementera funktionerna i en anpassad DSC-resurs genom att skriva cmdlet: ar i C#.</span><span class="sxs-lookup"><span data-stu-id="de938-106">However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#.</span></span> <span data-ttu-id="de938-107">En introduktion till hur du skriver cmdlets i C# finns i [skriva en Windows PowerShell-cmdlet](/powershell/scripting/developer/windows-powershell).</span><span class="sxs-lookup"><span data-stu-id="de938-107">For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell).</span></span>
+<span data-ttu-id="f5480-106">Normalt implementeras en anpassad DSC-resurs (Windows PowerShell Desired State Configuration) i ett PowerShell-skript.</span><span class="sxs-lookup"><span data-stu-id="f5480-106">Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script.</span></span> <span data-ttu-id="f5480-107">Du kan dock också implementera funktionerna i en anpassad DSC-resurs genom att skriva cmdlet: ar i C#.</span><span class="sxs-lookup"><span data-stu-id="f5480-107">However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#.</span></span> <span data-ttu-id="f5480-108">En introduktion till hur du skriver cmdlets i C# finns i [skriva en Windows PowerShell-cmdlet](/powershell/scripting/developer/windows-powershell).</span><span class="sxs-lookup"><span data-stu-id="f5480-108">For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell).</span></span>
 
-<span data-ttu-id="de938-108">Förutom att implementera resursen i C# som cmdlets, är processen för att skapa MOF-schemat, skapa mappstrukturen, importera och använda din anpassade DSC-resurs samma som beskrivs i [skriva en anpassad DSC-resurs med MOF](authoringResourceMOF.md).</span><span class="sxs-lookup"><span data-stu-id="de938-108">Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).</span></span>
+<span data-ttu-id="f5480-109">Förutom att implementera resursen i C# som cmdlets, är processen för att skapa MOF-schemat, skapa mappstrukturen, importera och använda din anpassade DSC-resurs samma som beskrivs i [skriva en anpassad DSC-resurs med MOF](authoringResourceMOF.md).</span><span class="sxs-lookup"><span data-stu-id="f5480-109">Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).</span></span>
 
-## <a name="writing-a-cmdlet-based-resource"></a><span data-ttu-id="de938-109">Skriva en cmdlet-baserad resurs</span><span class="sxs-lookup"><span data-stu-id="de938-109">Writing a cmdlet-based resource</span></span>
+## <a name="writing-a-cmdlet-based-resource"></a><span data-ttu-id="f5480-110">Skriva en cmdlet-baserad resurs</span><span class="sxs-lookup"><span data-stu-id="f5480-110">Writing a cmdlet-based resource</span></span>
 
-<span data-ttu-id="de938-110">I det här exemplet ska vi implementera en enkel resurs som hanterar en textfil och dess innehåll.</span><span class="sxs-lookup"><span data-stu-id="de938-110">For this example, we will implement a simple resource that manages a text file and its contents.</span></span>
+<span data-ttu-id="f5480-111">I det här exemplet ska vi implementera en enkel resurs som hanterar en textfil och dess innehåll.</span><span class="sxs-lookup"><span data-stu-id="f5480-111">For this example, we will implement a simple resource that manages a text file and its contents.</span></span>
 
-### <a name="writing-the-mof-schema"></a><span data-ttu-id="de938-111">Skriva MOF-schemat</span><span class="sxs-lookup"><span data-stu-id="de938-111">Writing the MOF schema</span></span>
+### <a name="writing-the-mof-schema"></a><span data-ttu-id="f5480-112">Skriva MOF-schemat</span><span class="sxs-lookup"><span data-stu-id="f5480-112">Writing the MOF schema</span></span>
 
-<span data-ttu-id="de938-112">Följande är definition av MOF-resurs.</span><span class="sxs-lookup"><span data-stu-id="de938-112">The following is the MOF resource definition.</span></span>
+<span data-ttu-id="f5480-113">Följande är definition av MOF-resurs.</span><span class="sxs-lookup"><span data-stu-id="f5480-113">The following is the MOF resource definition.</span></span>
 
 ```
 [ClassVersion("1.0.0"), FriendlyName("xDemoFile")]
 class MSFT_XDemoFile : OMI_BaseResource
 {
-                [Key, Description("path")] String Path;
-                [Write, Description("Should the file be present"), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] String Ensure;
-                [Write, Description("Contentof file.")] String Content;
+     [Key, Description("path")] String Path;
+     [Write, Description("Should the file be present"), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] String Ensure;
+     [Write, Description("Contentof file.")] String Content;
 };
 ```
 
-### <a name="setting-up-the-visual-studio-project"></a><span data-ttu-id="de938-113">Skapa Visual Studio-projektet</span><span class="sxs-lookup"><span data-stu-id="de938-113">Setting up the Visual Studio project</span></span>
+### <a name="setting-up-the-visual-studio-project"></a><span data-ttu-id="f5480-114">Skapa Visual Studio-projektet</span><span class="sxs-lookup"><span data-stu-id="f5480-114">Setting up the Visual Studio project</span></span>
 
-#### <a name="setting-up-a-cmdlet-project"></a><span data-ttu-id="de938-114">Konfigurera ett cmdlet-projekt</span><span class="sxs-lookup"><span data-stu-id="de938-114">Setting up a cmdlet project</span></span>
+#### <a name="setting-up-a-cmdlet-project"></a><span data-ttu-id="f5480-115">Konfigurera ett cmdlet-projekt</span><span class="sxs-lookup"><span data-stu-id="f5480-115">Setting up a cmdlet project</span></span>
 
-1. <span data-ttu-id="de938-115">Öppna Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="de938-115">Open Visual Studio.</span></span>
-1. <span data-ttu-id="de938-116">Skapa ett C#-projekt och ange namnet.</span><span class="sxs-lookup"><span data-stu-id="de938-116">Create a C# project and provide the name.</span></span>
-1. <span data-ttu-id="de938-117">Välj **klass bibliotek** från tillgängliga projektmallar.</span><span class="sxs-lookup"><span data-stu-id="de938-117">Select **Class Library** from the available project templates.</span></span>
-1. <span data-ttu-id="de938-118">Klicka på **OK**.</span><span class="sxs-lookup"><span data-stu-id="de938-118">Click **Ok**.</span></span>
-1. <span data-ttu-id="de938-119">Lägg till en sammansättnings referens till System.Automation.Management.dll i projektet.</span><span class="sxs-lookup"><span data-stu-id="de938-119">Add an assembly reference to System.Automation.Management.dll to your project.</span></span>
-1. <span data-ttu-id="de938-120">Ändra sammansättnings namnet så att det matchar resurs namnet.</span><span class="sxs-lookup"><span data-stu-id="de938-120">Change the assembly name to match the resource name.</span></span> <span data-ttu-id="de938-121">I det här fallet ska sammansättningen namnges **MSFT_XDemoFile**.</span><span class="sxs-lookup"><span data-stu-id="de938-121">In this case, the assembly should be named **MSFT_XDemoFile**.</span></span>
+1. <span data-ttu-id="f5480-116">Öppna Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="f5480-116">Open Visual Studio.</span></span>
+1. <span data-ttu-id="f5480-117">Skapa ett C#-projekt och ange namnet.</span><span class="sxs-lookup"><span data-stu-id="f5480-117">Create a C# project and provide the name.</span></span>
+1. <span data-ttu-id="f5480-118">Välj **klass bibliotek** från tillgängliga projektmallar.</span><span class="sxs-lookup"><span data-stu-id="f5480-118">Select **Class Library** from the available project templates.</span></span>
+1. <span data-ttu-id="f5480-119">Klicka på **OK** .</span><span class="sxs-lookup"><span data-stu-id="f5480-119">Click **Ok** .</span></span>
+1. <span data-ttu-id="f5480-120">Lägg till en sammansättnings referens till System.Automation.Management.dll i projektet.</span><span class="sxs-lookup"><span data-stu-id="f5480-120">Add an assembly reference to System.Automation.Management.dll to your project.</span></span>
+1. <span data-ttu-id="f5480-121">Ändra sammansättnings namnet så att det matchar resurs namnet.</span><span class="sxs-lookup"><span data-stu-id="f5480-121">Change the assembly name to match the resource name.</span></span> <span data-ttu-id="f5480-122">I det här fallet ska sammansättningen namnges **MSFT_XDemoFile** .</span><span class="sxs-lookup"><span data-stu-id="f5480-122">In this case, the assembly should be named **MSFT_XDemoFile** .</span></span>
 
-### <a name="writing-the-cmdlet-code"></a><span data-ttu-id="de938-122">Skriver cmdlet-koden</span><span class="sxs-lookup"><span data-stu-id="de938-122">Writing the cmdlet code</span></span>
+### <a name="writing-the-cmdlet-code"></a><span data-ttu-id="f5480-123">Skriver cmdlet-koden</span><span class="sxs-lookup"><span data-stu-id="f5480-123">Writing the cmdlet code</span></span>
 
-<span data-ttu-id="de938-123">Följande C#-kod implementerar `Get-TargetResource` `Set-TargetResource` cmdletarna,, och `Test-TargetResource` .</span><span class="sxs-lookup"><span data-stu-id="de938-123">The following C# code implements the `Get-TargetResource`, `Set-TargetResource`, and `Test-TargetResource` cmdlets.</span></span>
+<span data-ttu-id="f5480-124">Följande C#-kod implementerar `Get-TargetResource` `Set-TargetResource` cmdletarna,, och `Test-TargetResource` .</span><span class="sxs-lookup"><span data-stu-id="f5480-124">The following C# code implements the `Get-TargetResource`, `Set-TargetResource`, and `Test-TargetResource` cmdlets.</span></span>
 
 ```C#
 namespace cSharpDSCResourceExample
@@ -68,8 +69,9 @@ namespace cSharpDSCResourceExample
         public string Path { get; set; }
 
         /// <summary>
-        /// Implement the logic to return the current state of the resource as a hashtable with keys being the resource properties
-        /// and the values are the corresponding current value on the machine.
+        /// Implement the logic to return the current state of the resource as a hashtable with
+        /// keys being the resource properties and the values are the corresponding current
+        /// value on the machine.
         /// </summary>
         protected override void ProcessRecord()
         {
@@ -262,9 +264,9 @@ namespace cSharpDSCResourceExample
 }
 ```
 
-### <a name="deploying-the-resource"></a><span data-ttu-id="de938-124">Distribuera resursen</span><span class="sxs-lookup"><span data-stu-id="de938-124">Deploying the resource</span></span>
+### <a name="deploying-the-resource"></a><span data-ttu-id="f5480-125">Distribuera resursen</span><span class="sxs-lookup"><span data-stu-id="f5480-125">Deploying the resource</span></span>
 
-<span data-ttu-id="de938-125">Den kompilerade DLL-filen ska sparas i en fil struktur som liknar en skript-baserad resurs.</span><span class="sxs-lookup"><span data-stu-id="de938-125">The compiled dll file should be saved in a file structure similar to a script-based resource.</span></span> <span data-ttu-id="de938-126">Följande är mappstrukturen för den här resursen.</span><span class="sxs-lookup"><span data-stu-id="de938-126">The following is the folder structure for this resource.</span></span>
+<span data-ttu-id="f5480-126">Den kompilerade DLL-filen ska sparas i en fil struktur som liknar en skript-baserad resurs.</span><span class="sxs-lookup"><span data-stu-id="f5480-126">The compiled dll file should be saved in a file structure similar to a script-based resource.</span></span> <span data-ttu-id="f5480-127">Följande är mappstrukturen för den här resursen.</span><span class="sxs-lookup"><span data-stu-id="f5480-127">The following is the folder structure for this resource.</span></span>
 
 ```
 $env: psmodulepath (folder)
@@ -277,12 +279,12 @@ $env: psmodulepath (folder)
                 |- MSFT_XDemoFile.schema.mof (file, required)
 ```
 
-### <a name="see-also"></a><span data-ttu-id="de938-127">Se även</span><span class="sxs-lookup"><span data-stu-id="de938-127">See Also</span></span>
+### <a name="see-also"></a><span data-ttu-id="f5480-128">Se även</span><span class="sxs-lookup"><span data-stu-id="f5480-128">See Also</span></span>
 
-#### <a name="concepts"></a><span data-ttu-id="de938-128">Begrepp</span><span class="sxs-lookup"><span data-stu-id="de938-128">Concepts</span></span>
+#### <a name="concepts"></a><span data-ttu-id="f5480-129">Begrepp</span><span class="sxs-lookup"><span data-stu-id="f5480-129">Concepts</span></span>
 
-[<span data-ttu-id="de938-129">Skriva en anpassad DSC-resurs med MOF</span><span class="sxs-lookup"><span data-stu-id="de938-129">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
+[<span data-ttu-id="f5480-130">Skriva en anpassad DSC-resurs med MOF</span><span class="sxs-lookup"><span data-stu-id="f5480-130">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
 
-#### <a name="other-resources"></a><span data-ttu-id="de938-130">Andra resurser</span><span class="sxs-lookup"><span data-stu-id="de938-130">Other Resources</span></span>
+#### <a name="other-resources"></a><span data-ttu-id="f5480-131">Andra resurser</span><span class="sxs-lookup"><span data-stu-id="f5480-131">Other Resources</span></span>
 
-[<span data-ttu-id="de938-131">Skriva en Windows PowerShell-cmdlet</span><span class="sxs-lookup"><span data-stu-id="de938-131">Writing a Windows PowerShell Cmdlet</span></span>](/powershell/scripting/developer/windows-powershell)
+[<span data-ttu-id="f5480-132">Skriva en Windows PowerShell-cmdlet</span><span class="sxs-lookup"><span data-stu-id="f5480-132">Writing a Windows PowerShell Cmdlet</span></span>](/powershell/scripting/developer/windows-powershell)

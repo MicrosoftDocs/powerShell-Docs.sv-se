@@ -1,20 +1,22 @@
 ---
-title: Så här deklarerar du cmdlet-parametrar | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 97e86a1eb715f149a8383a1a4529c00da4f0eba8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Deklarera cmdlet-parametrar
+description: Deklarera cmdlet-parametrar
+ms.openlocfilehash: ed53f9788c9afb142b137e08966dff33551b9d0f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774396"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667104"
 ---
-# <a name="how-to-declare-cmdlet-parameters"></a><span data-ttu-id="a51c4-102">Deklarera cmdlet-parametrar</span><span class="sxs-lookup"><span data-stu-id="a51c4-102">How to Declare Cmdlet Parameters</span></span>
+# <a name="how-to-declare-cmdlet-parameters"></a><span data-ttu-id="021e3-103">Deklarera cmdlet-parametrar</span><span class="sxs-lookup"><span data-stu-id="021e3-103">How to Declare Cmdlet Parameters</span></span>
 
-<span data-ttu-id="a51c4-103">I de här exemplen visas hur du deklarerar namngivna, positionerade, obligatoriska, valfria och växla parametrar.</span><span class="sxs-lookup"><span data-stu-id="a51c4-103">These examples show how to declare named, positional, required, optional, and switch parameters.</span></span> <span data-ttu-id="a51c4-104">De här exemplen visar också hur du definierar ett parameter Ali Aset.</span><span class="sxs-lookup"><span data-stu-id="a51c4-104">These examples also show how to define a parameter alias.</span></span>
+<span data-ttu-id="021e3-104">I de här exemplen visas hur du deklarerar namngivna, positionerade, obligatoriska, valfria och växla parametrar.</span><span class="sxs-lookup"><span data-stu-id="021e3-104">These examples show how to declare named, positional, required, optional, and switch parameters.</span></span> <span data-ttu-id="021e3-105">De här exemplen visar också hur du definierar ett parameter Ali Aset.</span><span class="sxs-lookup"><span data-stu-id="021e3-105">These examples also show how to define a parameter alias.</span></span>
 
-## <a name="how-to-declare-a-named-parameter"></a><span data-ttu-id="a51c4-105">Så här deklarerar du en namngiven parameter</span><span class="sxs-lookup"><span data-stu-id="a51c4-105">How to Declare a Named Parameter</span></span>
+## <a name="how-to-declare-a-named-parameter"></a><span data-ttu-id="021e3-106">Så här deklarerar du en namngiven parameter</span><span class="sxs-lookup"><span data-stu-id="021e3-106">How to Declare a Named Parameter</span></span>
 
-- <span data-ttu-id="a51c4-106">Definiera en offentlig egenskap som visas i följande kod.</span><span class="sxs-lookup"><span data-stu-id="a51c4-106">Define a public property as shown in the following code.</span></span> <span data-ttu-id="a51c4-107">När du lägger till attributet parameter utelämnar du `Position` nyckelordet från attributet.</span><span class="sxs-lookup"><span data-stu-id="a51c4-107">When you add the Parameter attribute, omit the `Position` keyword from the attribute.</span></span>
+- <span data-ttu-id="021e3-107">Definiera en offentlig egenskap som visas i följande kod.</span><span class="sxs-lookup"><span data-stu-id="021e3-107">Define a public property as shown in the following code.</span></span> <span data-ttu-id="021e3-108">När du lägger till attributet parameter utelämnar du `Position` nyckelordet från attributet.</span><span class="sxs-lookup"><span data-stu-id="021e3-108">When you add the Parameter attribute, omit the `Position` keyword from the attribute.</span></span>
 
     ```csharp
     [Parameter()]
@@ -26,11 +28,11 @@ ms.locfileid: "87774396"
     private string userName;
     ```
 
-<span data-ttu-id="a51c4-108">Mer information om attributet parameter finns i deklaration av [parameter attribut](./parameter-attribute-declaration.md).</span><span class="sxs-lookup"><span data-stu-id="a51c4-108">For more information about the Parameter attribute, see [Parameter Attribute Declaration](./parameter-attribute-declaration.md).</span></span>
+<span data-ttu-id="021e3-109">Mer information om attributet parameter finns i deklaration av [parameter attribut](./parameter-attribute-declaration.md).</span><span class="sxs-lookup"><span data-stu-id="021e3-109">For more information about the Parameter attribute, see [Parameter Attribute Declaration](./parameter-attribute-declaration.md).</span></span>
 
-## <a name="how-to-declare-a-positional-parameter"></a><span data-ttu-id="a51c4-109">Så här deklarerar du en positions parameter</span><span class="sxs-lookup"><span data-stu-id="a51c4-109">How to Declare a Positional Parameter</span></span>
+## <a name="how-to-declare-a-positional-parameter"></a><span data-ttu-id="021e3-110">Så här deklarerar du en positions parameter</span><span class="sxs-lookup"><span data-stu-id="021e3-110">How to Declare a Positional Parameter</span></span>
 
-- <span data-ttu-id="a51c4-110">Definiera en offentlig egenskap som visas i följande kod.</span><span class="sxs-lookup"><span data-stu-id="a51c4-110">Define a public property as shown in the following code.</span></span> <span data-ttu-id="a51c4-111">När du lägger till attributet parameter anger du `Position` nyckelordet till argument positionen.</span><span class="sxs-lookup"><span data-stu-id="a51c4-111">When you add the Parameter attribute, set the `Position` keyword to the argument position.</span></span> <span data-ttu-id="a51c4-112">Värdet 0 anger den första positionen.</span><span class="sxs-lookup"><span data-stu-id="a51c4-112">A value of 0 indicates the first position.</span></span>
+- <span data-ttu-id="021e3-111">Definiera en offentlig egenskap som visas i följande kod.</span><span class="sxs-lookup"><span data-stu-id="021e3-111">Define a public property as shown in the following code.</span></span> <span data-ttu-id="021e3-112">När du lägger till attributet parameter anger du `Position` nyckelordet till argument positionen.</span><span class="sxs-lookup"><span data-stu-id="021e3-112">When you add the Parameter attribute, set the `Position` keyword to the argument position.</span></span> <span data-ttu-id="021e3-113">Värdet 0 anger den första positionen.</span><span class="sxs-lookup"><span data-stu-id="021e3-113">A value of 0 indicates the first position.</span></span>
 
     ```csharp
     [Parameter(Position = 0)]
@@ -42,11 +44,11 @@ ms.locfileid: "87774396"
     private string userName;
     ```
 
-<span data-ttu-id="a51c4-113">Mer information om attributet parameter finns i deklaration av [parameter attribut](./parameter-attribute-declaration.md).</span><span class="sxs-lookup"><span data-stu-id="a51c4-113">For more information about the Parameter attribute, see [Parameter Attribute Declaration](./parameter-attribute-declaration.md).</span></span>
+<span data-ttu-id="021e3-114">Mer information om attributet parameter finns i deklaration av [parameter attribut](./parameter-attribute-declaration.md).</span><span class="sxs-lookup"><span data-stu-id="021e3-114">For more information about the Parameter attribute, see [Parameter Attribute Declaration](./parameter-attribute-declaration.md).</span></span>
 
-## <a name="how-to-declare-a-mandatory-parameter"></a><span data-ttu-id="a51c4-114">Så här deklarerar du en obligatorisk parameter</span><span class="sxs-lookup"><span data-stu-id="a51c4-114">How to Declare a Mandatory Parameter</span></span>
+## <a name="how-to-declare-a-mandatory-parameter"></a><span data-ttu-id="021e3-115">Så här deklarerar du en obligatorisk parameter</span><span class="sxs-lookup"><span data-stu-id="021e3-115">How to Declare a Mandatory Parameter</span></span>
 
-- <span data-ttu-id="a51c4-115">Definiera en offentlig egenskap som visas i följande kod.</span><span class="sxs-lookup"><span data-stu-id="a51c4-115">Define a public property as shown in the following code.</span></span> <span data-ttu-id="a51c4-116">När du lägger till attributet parameter anger du `Mandatory` nyckelordet till `true` .</span><span class="sxs-lookup"><span data-stu-id="a51c4-116">When you add the Parameter attribute, set the `Mandatory` keyword to `true`.</span></span>
+- <span data-ttu-id="021e3-116">Definiera en offentlig egenskap som visas i följande kod.</span><span class="sxs-lookup"><span data-stu-id="021e3-116">Define a public property as shown in the following code.</span></span> <span data-ttu-id="021e3-117">När du lägger till attributet parameter anger du `Mandatory` nyckelordet till `true` .</span><span class="sxs-lookup"><span data-stu-id="021e3-117">When you add the Parameter attribute, set the `Mandatory` keyword to `true`.</span></span>
 
     ```csharp
     [Parameter(Position = 0, Mandatory = true)]
@@ -58,11 +60,11 @@ ms.locfileid: "87774396"
     private string userName;
     ```
 
-<span data-ttu-id="a51c4-117">Mer information om attributet parameter finns i deklaration av [parameter attribut](./parameter-attribute-declaration.md).</span><span class="sxs-lookup"><span data-stu-id="a51c4-117">For more information about the Parameter attribute, see [Parameter Attribute Declaration](./parameter-attribute-declaration.md).</span></span>
+<span data-ttu-id="021e3-118">Mer information om attributet parameter finns i deklaration av [parameter attribut](./parameter-attribute-declaration.md).</span><span class="sxs-lookup"><span data-stu-id="021e3-118">For more information about the Parameter attribute, see [Parameter Attribute Declaration](./parameter-attribute-declaration.md).</span></span>
 
-## <a name="how-to-declare-an-optional-parameter"></a><span data-ttu-id="a51c4-118">Så här deklarerar du en valfri parameter</span><span class="sxs-lookup"><span data-stu-id="a51c4-118">How to Declare an Optional Parameter</span></span>
+## <a name="how-to-declare-an-optional-parameter"></a><span data-ttu-id="021e3-119">Så här deklarerar du en valfri parameter</span><span class="sxs-lookup"><span data-stu-id="021e3-119">How to Declare an Optional Parameter</span></span>
 
-- <span data-ttu-id="a51c4-119">Definiera en offentlig egenskap som visas i följande kod.</span><span class="sxs-lookup"><span data-stu-id="a51c4-119">Define a public property as shown in the following code.</span></span> <span data-ttu-id="a51c4-120">När du lägger till attributet parameter utelämnar du `Mandatory` nyckelordet.</span><span class="sxs-lookup"><span data-stu-id="a51c4-120">When you add the Parameter attribute, omit the `Mandatory` keyword.</span></span>
+- <span data-ttu-id="021e3-120">Definiera en offentlig egenskap som visas i följande kod.</span><span class="sxs-lookup"><span data-stu-id="021e3-120">Define a public property as shown in the following code.</span></span> <span data-ttu-id="021e3-121">När du lägger till attributet parameter utelämnar du `Mandatory` nyckelordet.</span><span class="sxs-lookup"><span data-stu-id="021e3-121">When you add the Parameter attribute, omit the `Mandatory` keyword.</span></span>
 
     ```csharp
     [Parameter(Position = 0)]
@@ -74,9 +76,9 @@ ms.locfileid: "87774396"
     private string userName;
     ```
 
-## <a name="how-to-declare-a-switch-parameter"></a><span data-ttu-id="a51c4-121">Så här deklarerar du en växel parameter</span><span class="sxs-lookup"><span data-stu-id="a51c4-121">How to Declare a Switch Parameter</span></span>
+## <a name="how-to-declare-a-switch-parameter"></a><span data-ttu-id="021e3-122">Så här deklarerar du en växel parameter</span><span class="sxs-lookup"><span data-stu-id="021e3-122">How to Declare a Switch Parameter</span></span>
 
-- <span data-ttu-id="a51c4-122">Definiera en offentlig egenskap som typ [system. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)och deklarera sedan attributet parameter.</span><span class="sxs-lookup"><span data-stu-id="a51c4-122">Define a public property as type [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter), and then declare the Parameter attribute.</span></span>
+- <span data-ttu-id="021e3-123">Definiera en offentlig egenskap som typ [system. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)och deklarera sedan attributet parameter.</span><span class="sxs-lookup"><span data-stu-id="021e3-123">Define a public property as type [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter), and then declare the Parameter attribute.</span></span>
 
     ```csharp
     [Parameter(Position = 1)]
@@ -88,11 +90,11 @@ ms.locfileid: "87774396"
     private bool goodbye;
     ```
 
-<span data-ttu-id="a51c4-123">Mer information om attributet parameter finns i deklaration av [parameter attribut](./parameter-attribute-declaration.md).</span><span class="sxs-lookup"><span data-stu-id="a51c4-123">For more information about the Parameter attribute, see [Parameter Attribute Declaration](./parameter-attribute-declaration.md).</span></span>
+<span data-ttu-id="021e3-124">Mer information om attributet parameter finns i deklaration av [parameter attribut](./parameter-attribute-declaration.md).</span><span class="sxs-lookup"><span data-stu-id="021e3-124">For more information about the Parameter attribute, see [Parameter Attribute Declaration](./parameter-attribute-declaration.md).</span></span>
 
-## <a name="how-to-declare-a-parameter-with-aliases"></a><span data-ttu-id="a51c4-124">Så här deklarerar du en parameter med alias</span><span class="sxs-lookup"><span data-stu-id="a51c4-124">How to Declare a Parameter with Aliases</span></span>
+## <a name="how-to-declare-a-parameter-with-aliases"></a><span data-ttu-id="021e3-125">Så här deklarerar du en parameter med alias</span><span class="sxs-lookup"><span data-stu-id="021e3-125">How to Declare a Parameter with Aliases</span></span>
 
-- <span data-ttu-id="a51c4-125">Definiera en offentlig egenskap som visas i följande kod.</span><span class="sxs-lookup"><span data-stu-id="a51c4-125">Define a public property as shown in the following code.</span></span> <span data-ttu-id="a51c4-126">Lägg till ett alias som visar ett alias för parametern.</span><span class="sxs-lookup"><span data-stu-id="a51c4-126">Add an Alias attribute that lists the aliases for the parameter.</span></span> <span data-ttu-id="a51c4-127">I det här exemplet definieras tre alias för samma parameter.</span><span class="sxs-lookup"><span data-stu-id="a51c4-127">In this example, three aliases are defined for the same parameter.</span></span> <span data-ttu-id="a51c4-128">Det första aliaset innehåller en genväg.</span><span class="sxs-lookup"><span data-stu-id="a51c4-128">The first alias provides a shortcut.</span></span> <span data-ttu-id="a51c4-129">Det andra och tredje aliaset ger namn som du kan använda för olika scenarier.</span><span class="sxs-lookup"><span data-stu-id="a51c4-129">The second and third aliases provide names you can use for different scenarios.</span></span>
+- <span data-ttu-id="021e3-126">Definiera en offentlig egenskap som visas i följande kod.</span><span class="sxs-lookup"><span data-stu-id="021e3-126">Define a public property as shown in the following code.</span></span> <span data-ttu-id="021e3-127">Lägg till ett alias som visar ett alias för parametern.</span><span class="sxs-lookup"><span data-stu-id="021e3-127">Add an Alias attribute that lists the aliases for the parameter.</span></span> <span data-ttu-id="021e3-128">I det här exemplet definieras tre alias för samma parameter.</span><span class="sxs-lookup"><span data-stu-id="021e3-128">In this example, three aliases are defined for the same parameter.</span></span> <span data-ttu-id="021e3-129">Det första aliaset innehåller en genväg.</span><span class="sxs-lookup"><span data-stu-id="021e3-129">The first alias provides a shortcut.</span></span> <span data-ttu-id="021e3-130">Det andra och tredje aliaset ger namn som du kan använda för olika scenarier.</span><span class="sxs-lookup"><span data-stu-id="021e3-130">The second and third aliases provide names you can use for different scenarios.</span></span>
 
     ```csharp
     [Alias("UN","Writer","Editor")]
@@ -105,14 +107,14 @@ ms.locfileid: "87774396"
     private string userName;
     ```
 
-<span data-ttu-id="a51c4-130">Mer information om alias-attributet finns i [deklarationen alias](./alias-attribute-declaration.md).</span><span class="sxs-lookup"><span data-stu-id="a51c4-130">For more information about the Alias attribute, see [Alias Attribute Declaration](./alias-attribute-declaration.md).</span></span>
+<span data-ttu-id="021e3-131">Mer information om alias-attributet finns i [deklarationen alias](./alias-attribute-declaration.md).</span><span class="sxs-lookup"><span data-stu-id="021e3-131">For more information about the Alias attribute, see [Alias Attribute Declaration](./alias-attribute-declaration.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="a51c4-131">Se även</span><span class="sxs-lookup"><span data-stu-id="a51c4-131">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="021e3-132">Se även</span><span class="sxs-lookup"><span data-stu-id="021e3-132">See Also</span></span>
 
-[<span data-ttu-id="a51c4-132">System. Management. Automation. SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="a51c4-132">System.Management.Automation.SwitchParameter</span></span>](/dotnet/api/System.Management.Automation.SwitchParameter)
+[<span data-ttu-id="021e3-133">System. Management. Automation. SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="021e3-133">System.Management.Automation.SwitchParameter</span></span>](/dotnet/api/System.Management.Automation.SwitchParameter)
 
-[<span data-ttu-id="a51c4-133">Deklaration av attributet Parameter</span><span class="sxs-lookup"><span data-stu-id="a51c4-133">Parameter Attribute Declaration</span></span>](./parameter-attribute-declaration.md)
+[<span data-ttu-id="021e3-134">Deklaration av attributet Parameter</span><span class="sxs-lookup"><span data-stu-id="021e3-134">Parameter Attribute Declaration</span></span>](./parameter-attribute-declaration.md)
 
-[<span data-ttu-id="a51c4-134">Deklaration av attributet Alias</span><span class="sxs-lookup"><span data-stu-id="a51c4-134">Alias Attribute Declaration</span></span>](./alias-attribute-declaration.md)
+[<span data-ttu-id="021e3-135">Deklaration av attributet Alias</span><span class="sxs-lookup"><span data-stu-id="021e3-135">Alias Attribute Declaration</span></span>](./alias-attribute-declaration.md)
 
-[<span data-ttu-id="a51c4-135">Skriva en Windows PowerShell-cmdlet</span><span class="sxs-lookup"><span data-stu-id="a51c4-135">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="021e3-136">Skriva en Windows PowerShell-cmdlet</span><span class="sxs-lookup"><span data-stu-id="021e3-136">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
