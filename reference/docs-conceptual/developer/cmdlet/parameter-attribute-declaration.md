@@ -1,16 +1,14 @@
 ---
-title: Deklaration av parameter-attribut | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- attributes, Parameter
-- Parameter attribute, described
-- Parameter attribute
-ms.openlocfilehash: 55b157b93c3a42324d63e16ddfa8db1f0d38f82b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Deklaration av attributet Parameter
+description: Deklaration av attributet Parameter
+ms.openlocfilehash: bab48a94cb4b1e8501fb79c2f3ef71393fa2ee68
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781859"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650358"
 ---
 # <a name="parameter-attribute-declaration"></a>Deklaration av attributet Parameter
 

@@ -1,14 +1,14 @@
 ---
-title: Verifiera en argument uppsättning | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- ValidateSet attribute, example
-ms.openlocfilehash: 6173f1380583f5b27e2b188990a5ea041f447c57
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Verifiera en argumentuppsättning
+description: Verifiera en argumentuppsättning
+ms.openlocfilehash: 50ec0a48277893584d896e14ad6aa843682a28cc
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782012"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650364"
 ---
 # <a name="how-to-validate-an-argument-set"></a>Verifiera en argumentuppsättning
 

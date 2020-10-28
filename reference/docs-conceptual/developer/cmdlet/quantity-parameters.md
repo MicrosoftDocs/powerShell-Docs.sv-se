@@ -1,12 +1,14 @@
 ---
-title: Antal parametrar | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7ff6562380bb6336b08879b31d8d9fed47bfb6a7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Kvantitetsparametrar
+description: Kvantitetsparametrar
+ms.openlocfilehash: 3f7c23eec34a709b1f2d59f611c93909b20f4124
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781825"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650304"
 ---
 # <a name="quantity-parameters"></a>Kvantitetsparametrar
 

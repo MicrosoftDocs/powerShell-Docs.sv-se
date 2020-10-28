@@ -1,15 +1,14 @@
 ---
-title: Skapa en grundläggande Windows PowerShell-Provider | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- base provider [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], base provider
-ms.openlocfilehash: 16cadb6099bb4f315bacda4aea617b89f9af5626
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skapa en grundläggande Windows PowerShell-provider
+description: Skapa en grundläggande Windows PowerShell-provider
+ms.openlocfilehash: 03b5784fd063b5457fc64d92a32e286e3bf9cce4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787231"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647519"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Skapa en grundläggande Windows PowerShell-provider
 
@@ -40,7 +39,7 @@ Du kan ange nyckelord för attribut för att ytterligare deklarera klassen om de
 > [!NOTE]
 > Det fullständigt kvalificerade namnet för Windows PowerShell-providern innehåller sammansättnings namnet och andra attribut som fastställs av Windows PowerShell vid registreringen av providern.
 
-## <a name="defining-provider-specific-state-information"></a>Definiera leverantörsspecifik statusinformation
+## <a name="defining-provider-specific-state-information"></a>Definiera information om Provider-Specific tillstånd
 
 Bask Lassen [system. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) och alla härledda klasser betraktas som tillstånds lösa eftersom Windows PowerShell-körningsmiljön endast skapar Provider-instanser som obligatoriska. Om din Provider kräver fullständig kontroll och tillstånds underhåll för providerspecifika data, måste det därför härleda en klass från klassen [system. Management. Automation. providerInfo](/dotnet/api/System.Management.Automation.ProviderInfo) . Den härledda klassen bör definiera de medlemmar som krävs för att upprätthålla statusen så att de providerspecifika data kan nås när Windows PowerShell-körningen anropar metoden [system. Management. Automation. Provider. Cmdletprovider. start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) för att initiera providern.
 

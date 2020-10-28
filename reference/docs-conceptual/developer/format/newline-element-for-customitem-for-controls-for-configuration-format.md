@@ -1,12 +1,14 @@
 ---
-title: Rad matnings element för CustomItem för kontroll av konfiguration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ff17484e368ad84d45935bf139e9a95bc293523e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: NewLine-element för CustomItem för Controls för Configuration (format)
+description: NewLine-element för CustomItem för Controls för Configuration (format)
+ms.openlocfilehash: 4f6912530b27979c8fd0b30b02e39c7d102d55bb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773223"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647944"
 ---
 # <a name="newline-element-for-customitem-for-controls-for-configuration-format"></a>NewLine-element för CustomItem för Controls för Configuration (format)
 

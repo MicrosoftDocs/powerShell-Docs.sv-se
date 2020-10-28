@@ -1,12 +1,14 @@
 ---
-title: Säkerhets parametrar | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 290905b04547af932182005869b18dc1bc210ca4
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Säkerhetsparametrar
+description: Säkerhetsparametrar
+ms.openlocfilehash: 2c73a3372fa719ea436d4a3ae1223d4cbaaf9108
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786517"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650257"
 ---
 # <a name="security-parameters"></a>Säkerhetsparametrar
 
