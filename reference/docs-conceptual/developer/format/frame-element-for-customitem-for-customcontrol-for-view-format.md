@@ -1,12 +1,14 @@
 ---
-title: Frame-element för CustomItem för CustomControl för vy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4864ea1a865f77c9de6e495d7e8296e81c19b366
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Frame-element för CustomItem för CustomControl för View (format)
+description: Frame-element för CustomItem för CustomControl för View (format)
+ms.openlocfilehash: 1ffe071bb6c4f590e4c79803a3faff2108c7b636
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781451"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652185"
 ---
 # <a name="frame-element-for-customitem-for-customcontrol-for-view-format"></a>Frame-element för CustomItem för CustomControl för View (format)
 

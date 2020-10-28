@@ -1,12 +1,14 @@
 ---
-title: SelectionSetName-element för ViewSelectedBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f6410b463bcb00d2758849c2f7e13cd839277e50
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSetName-element för ViewSelectedBy (format)
+description: SelectionSetName-element för ViewSelectedBy (format)
+ms.openlocfilehash: a1a1816761715a138bcb3c2bd4cb9dbbb2f9cb92
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772611"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654915"
 ---
 # <a name="selectionsetname-element-for-viewselectedby-format"></a>SelectionSetName-element för ViewSelectedBy (format)
 

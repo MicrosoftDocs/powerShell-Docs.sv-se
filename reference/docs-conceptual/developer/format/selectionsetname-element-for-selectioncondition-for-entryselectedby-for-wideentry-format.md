@@ -1,12 +1,14 @@
 ---
-title: SelectionSetName-element för SelectionCondition för EntrySelectedBy för WideEntry (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 44c88ce75ae485e1c48ceb08bfd12f739a632996
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSetName-element för SelectionCondition för EntrySelectedBy för WideEntry (format)
+description: SelectionSetName-element för SelectionCondition för EntrySelectedBy för WideEntry (format)
+ms.openlocfilehash: c6466e3ac6e1f194df9172468d26448f9630da6a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787452"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655003"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format"></a>SelectionSetName-element för SelectionCondition för EntrySelectedBy för WideEntry (format)
 

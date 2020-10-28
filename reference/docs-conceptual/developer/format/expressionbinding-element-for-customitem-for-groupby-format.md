@@ -1,12 +1,14 @@
 ---
-title: ExpressionBinding-element för CustomItem for GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 5b0017e487aab4ffcbf901cd44aad9b275b22832
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ExpressionBinding-element för CustomItem för GroupBy (format)
+description: ExpressionBinding-element för CustomItem för GroupBy (format)
+ms.openlocfilehash: 742d9f081a674dc3ee4c84d600933aaf57b2aa6b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773733"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655301"
 ---
 # <a name="expressionbinding-element-for-customitem-for-groupby-format"></a>ExpressionBinding-element för CustomItem för GroupBy (format)
 

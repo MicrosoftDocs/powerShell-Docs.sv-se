@@ -1,12 +1,14 @@
 ---
-title: SelectionCondition-element för EntrySelectedBy för ListControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 29626b181f21d168e1ebf973e01afeb411d9ef54
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionCondition-element för EntrySelectedBy för ListControl (format)
+description: SelectionCondition-element för EntrySelectedBy för ListControl (format)
+ms.openlocfilehash: e93499691dd0046265e43abd26497b2974546083
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772781"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655100"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>SelectionCondition-element för EntrySelectedBy för ListControl (format)
 

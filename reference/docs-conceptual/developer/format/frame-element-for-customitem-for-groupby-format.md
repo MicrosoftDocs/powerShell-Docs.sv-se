@@ -1,12 +1,14 @@
 ---
-title: Ram element för CustomItem for GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1568236ff7b6142f7e41be70a3ae5e28307cf790
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Frame-element för CustomItem för GroupBy (format)
+description: Frame-element för CustomItem för GroupBy (format)
+ms.openlocfilehash: 86b51766974ebfcae06583ade237a77c6db92866
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785769"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652178"
 ---
 # <a name="frame-element-for-customitem-for-groupby-format"></a>Frame-element för CustomItem för GroupBy (format)
 

@@ -1,12 +1,14 @@
 ---
-title: Script block-element för TableColumnItem för TableControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 676d2462de077213a933eff632a4e3d23757b731
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ScriptBlock-element för TableColumnItem för TableControl (format)
+description: ScriptBlock-element för TableColumnItem för TableControl (format)
+ms.openlocfilehash: 5928a67fc09ddc2dcace64635fee055c620b17d3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783440"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651946"
 ---
 # <a name="scriptblock-element-for-tablecolumnitem-for-tablecontrol-format"></a>ScriptBlock-element för TableColumnItem för TableControl (format)
 

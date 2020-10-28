@@ -1,12 +1,14 @@
 ---
-title: Skriva hjälp för PowerShell-moduler
 ms.date: 04/10/2020
-ms.openlocfilehash: 115ea3f3c5941e74ed6ddbc8480d4a21576bc5c6
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Skriva hjälp för PowerShell-moduler
+description: Skriva hjälp för PowerShell-moduler
+ms.openlocfilehash: 3bef45c0dd8a7e63bc419bb3e5a7a1783810105b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893075"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654660"
 ---
 # <a name="writing-help-for-powershell-modules"></a>Skriva hjälp för PowerShell-moduler
 
@@ -18,15 +20,15 @@ I det här dokumentet beskrivs formatet och rätt placering av hjälp avsnitt f�
 
 En modul kan innehålla följande typer av hjälp.
 
-- **Cmdlet-hjälp**. Hjälp avsnitten som beskriver cmdlets i en modul är XML-filer som använder kommandot hjälp schema för kommandot
+- **Cmdlet-hjälp** . Hjälp avsnitten som beskriver cmdlets i en modul är XML-filer som använder kommandot hjälp schema för kommandot
 
-- **Leverantörs hjälp**. Hjälp avsnitten som beskriver leverantörer i en modul är XML-filer som använder providerns hjälp schema.
+- **Leverantörs hjälp** . Hjälp avsnitten som beskriver leverantörer i en modul är XML-filer som använder providerns hjälp schema.
 
-- **Funktions hjälp**. Hjälp avsnitten som beskriver funktioner i en modul kan vara XML-filer som använder kommandot hjälp schema eller kommentarer baserade hjälp avsnitt i funktionen, skript-eller skript-modulen
+- **Funktions hjälp** . Hjälp avsnitten som beskriver funktioner i en modul kan vara XML-filer som använder kommandot hjälp schema eller kommentarer baserade hjälp avsnitt i funktionen, skript-eller skript-modulen
 
-- **Skript hjälp**. De hjälp avsnitt som beskriver skript i en modul kan vara XML-filer som använder kommandot hjälp schema eller kommentarer baserade hjälp avsnitt i skript-eller skript-modulen.
+- **Skript hjälp** . De hjälp avsnitt som beskriver skript i en modul kan vara XML-filer som använder kommandot hjälp schema eller kommentarer baserade hjälp avsnitt i skript-eller skript-modulen.
 
-- **Konceptuell ("About") hjälp**. Du kan använda ett konceptuellt hjälp avsnitt för att beskriva modulen och dess medlemmar och förklara hur medlemmarna kan användas tillsammans för att utföra uppgifter.
+- **Konceptuell ("About") hjälp** . Du kan använda ett konceptuellt hjälp avsnitt för att beskriva modulen och dess medlemmar och förklara hur medlemmarna kan användas tillsammans för att utföra uppgifter.
   Konceptuella hjälp ämnen är textfiler med Unicode-kodning (UTF-8). Fil namnet måste använda `about_<name>.help.txt` formatet, till exempel `about_MyModule.help.txt` . Som standard innehåller PowerShell över 100 av dessa begrepp om hjälp avsnitt och de formateras som i följande exempel.
 
   ```Output

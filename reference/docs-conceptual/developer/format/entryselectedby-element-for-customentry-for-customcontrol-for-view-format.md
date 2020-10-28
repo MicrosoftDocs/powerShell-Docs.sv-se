@@ -1,12 +1,14 @@
 ---
-title: EntrySelectedBy-element för CustomEntry för CustomControl för View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4d4900cefb0d499397fc9dff7e037ce0a541f72f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: EntrySelectedBy-element för CustomEntry för CustomControl för View (format)
+description: EntrySelectedBy-element för CustomEntry för CustomControl för View (format)
+ms.openlocfilehash: 4821f22560f35034f90d018e5a109004f331441f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783695"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655354"
 ---
 # <a name="entryselectedby-element-for-customentry-for-customcontrol-for-view-format"></a>EntrySelectedBy-element för CustomEntry för CustomControl för View (format)
 

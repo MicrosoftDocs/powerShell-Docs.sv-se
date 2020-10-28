@@ -1,12 +1,14 @@
 ---
-title: Ram element för CustomItem för kontroll av konfiguration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: fa435b8d6b868d2d7c94b7926321d94edc2ec290
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Frame-element för CustomItem för Controls för Configuration (format)
+description: Frame-element för CustomItem för Controls för Configuration (format)
+ms.openlocfilehash: 85d095b9b0c25b68b2353bce56b85333aff91b98
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781485"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652243"
 ---
 # <a name="frame-element-for-customitem-for-controls-for-configuration-format"></a>Frame-element för CustomItem för Controls för Configuration (format)
 

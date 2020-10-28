@@ -1,12 +1,14 @@
 ---
-title: PropertyName-element för ItemSeclectionCondition för kontroll av konfiguration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0e304af1dbe816753d6dcd1dd8149f950f2a0941
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: PropertyName-element för ItemSeclectionCondition för Controls för Configuration (format)
+description: PropertyName-element för ItemSeclectionCondition för Controls för Configuration (format)
+ms.openlocfilehash: 860683eb54b2a3579767640c1d3f0937897b8f8e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785599"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655124"
 ---
 # <a name="propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format"></a>PropertyName-element för ItemSeclectionCondition för Controls för Configuration (format)
 

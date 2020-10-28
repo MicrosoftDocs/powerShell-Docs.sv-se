@@ -1,12 +1,14 @@
 ---
-title: GroupBy-element för vy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2f9071a3ebbc7cc2ccb7721dd518e82723e9cc4e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy-element för View (format)
+description: GroupBy-element för View (format)
+ms.openlocfilehash: d8ca93a3b2c1490928885579919c07f5eb274cd8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781434"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652099"
 ---
 # <a name="groupby-element-for-view-format"></a>GroupBy-element för View (format)
 

@@ -1,12 +1,14 @@
 ---
-title: EntrySelectedBy-element för ListEntry för ListControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d6ab1c08dd353da74d1a7d27c569d2fa86e083c3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: EntrySelectedBy-element för ListEntry för ListControl (format)
+description: EntrySelectedBy-element för ListEntry för ListControl (format)
+ms.openlocfilehash: 1981c8fae65f494504d6cdd9f59337d555350b07
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774124"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652296"
 ---
 # <a name="entryselectedby-element-for-listentry-for-listcontrol-format"></a>EntrySelectedBy-element för ListEntry för ListControl (format)
 

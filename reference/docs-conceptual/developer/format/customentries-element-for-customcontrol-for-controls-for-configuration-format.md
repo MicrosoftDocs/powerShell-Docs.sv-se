@@ -1,12 +1,14 @@
 ---
-title: CustomEntries-element för CustomControl för kontroll av konfiguration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: b1f494cf1a254d71362830ba9eb0f4905a2a484d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: CustomEntries-element för CustomControl för Controls för Configuration (format)
+description: CustomEntries-element för CustomControl för Controls för Configuration (format)
+ms.openlocfilehash: 86c2b517d0d7075a355a3190a14e25d9dd4fe374
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785990"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655393"
 ---
 # <a name="customentries-element-for-customcontrol-for-controls-for-configuration-format"></a>CustomEntries-element för CustomControl för Controls för Configuration (format)
 

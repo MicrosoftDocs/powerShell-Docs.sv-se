@@ -1,12 +1,14 @@
 ---
-title: SelectionSetName-element för EntrySelectedBy för ListControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4315d81da4ceeb7a5b171087434ae15fb09e6592
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSetName-element för EntrySelectedBy för ListControl (format)
+description: SelectionSetName-element för EntrySelectedBy för ListControl (format)
+ms.openlocfilehash: 413a77f7ba06fe952e574061e58d0b5d80c5b3c4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785276"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651838"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-listcontrol-format"></a>SelectionSetName-element för EntrySelectedBy för ListControl (format)
 

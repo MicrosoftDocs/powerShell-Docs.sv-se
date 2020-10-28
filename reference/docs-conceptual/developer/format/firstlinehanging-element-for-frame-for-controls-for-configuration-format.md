@@ -1,12 +1,14 @@
 ---
-title: FirstLineHanging-element för ram för kontroll av konfiguration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6c0429a5caa5d20370acff72fa5707ed8cf7ad01
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: FirstLineHanging-element för Frame för Controls för Configuration (format)
+description: FirstLineHanging-element för Frame för Controls för Configuration (format)
+ms.openlocfilehash: 94d59ef7b54e036f76e38a3b06b769700443b9fb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773750"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655229"
 ---
 # <a name="firstlinehanging-element-for-frame-for-controls-for-configuration-format"></a>FirstLineHanging-element för Frame för Controls för Configuration (format)
 

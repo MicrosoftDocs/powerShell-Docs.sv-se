@@ -1,12 +1,14 @@
 ---
-title: Skapa en bred vy | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0cf6a35201c47e4b12dd160191570eccec3427ef
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skapa en bred vy
+description: Skapa en bred vy
+ms.openlocfilehash: 4230ef91a3612e962b2773b12e8016df6f760eae
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786143"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655612"
 ---
 # <a name="creating-a-wide-view"></a>Skapa en bred vy
 

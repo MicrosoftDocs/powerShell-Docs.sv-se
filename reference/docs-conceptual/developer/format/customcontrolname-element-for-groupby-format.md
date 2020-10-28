@@ -1,12 +1,14 @@
 ---
-title: CustomControlName-element för GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4e3102f12cd37fa72a2de1bf1db5d1f82db31222
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: CustomControlName-element för GroupBy (format)
+description: CustomControlName-element för GroupBy (format)
+ms.openlocfilehash: 03664fe4d5559312e2720a3892493c90c15f7501
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783746"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655411"
 ---
 # <a name="customcontrolname-element-for-groupby-format"></a>CustomControlName-element för GroupBy (format)
 

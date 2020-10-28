@@ -1,12 +1,14 @@
 ---
-title: SelectionSetName-element för EntrySelectedBy för EnumerableExpansion (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 8745ef9e6f326c3e8a5dbf185a595bbe93e92414
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSetName-element för EntrySelectedBy för EnumerableExpansion (format)
+description: SelectionSetName-element för EntrySelectedBy för EnumerableExpansion (format)
+ms.openlocfilehash: 074f810f5a3cbad61ee8be69408967758f0591df
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785327"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651886"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format"></a>SelectionSetName-element för EntrySelectedBy för EnumerableExpansion (format)
 
