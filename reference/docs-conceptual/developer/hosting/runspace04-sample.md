@@ -1,42 +1,44 @@
 ---
-title: Runspace04-exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 73f48c797a4ce9bf4bc78ff34abb5efa41cda121
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace04 – exempel
+description: Runspace04 – exempel
+ms.openlocfilehash: 5a2e1137963e02def419bb924c63b0d651b0fdfa
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779513"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657754"
 ---
-# <a name="runspace04-sample"></a><span data-ttu-id="c005e-102">Runspace04 – exempel</span><span class="sxs-lookup"><span data-stu-id="c005e-102">Runspace04 Sample</span></span>
+# <a name="runspace04-sample"></a><span data-ttu-id="512ec-103">Runspace04 – exempel</span><span class="sxs-lookup"><span data-stu-id="512ec-103">Runspace04 Sample</span></span>
 
-<span data-ttu-id="c005e-103">Det här exemplet visar hur du använder klassen [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) för att köra kommandon och hur du fångar upp avslutande fel som uppstår när du kör kommandona.</span><span class="sxs-lookup"><span data-stu-id="c005e-103">This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run commands, and how to catch terminating errors that are thrown when running the commands.</span></span> <span data-ttu-id="c005e-104">Två kommandon körs och det sista kommandot skickas till ett parameter argument som inte är giltigt.</span><span class="sxs-lookup"><span data-stu-id="c005e-104">Two commands are run, and the last command is passed a parameter argument that is not valid.</span></span> <span data-ttu-id="c005e-105">Därför returneras inga objekt och ett avslutande fel genereras.</span><span class="sxs-lookup"><span data-stu-id="c005e-105">As a result, no objects are returned and a terminating error is thrown.</span></span>
+<span data-ttu-id="512ec-104">Det här exemplet visar hur du använder klassen [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) för att köra kommandon och hur du fångar upp avslutande fel som uppstår när du kör kommandona.</span><span class="sxs-lookup"><span data-stu-id="512ec-104">This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run commands, and how to catch terminating errors that are thrown when running the commands.</span></span> <span data-ttu-id="512ec-105">Två kommandon körs och det sista kommandot skickas till ett parameter argument som inte är giltigt.</span><span class="sxs-lookup"><span data-stu-id="512ec-105">Two commands are run, and the last command is passed a parameter argument that is not valid.</span></span> <span data-ttu-id="512ec-106">Därför returneras inga objekt och ett avslutande fel genereras.</span><span class="sxs-lookup"><span data-stu-id="512ec-106">As a result, no objects are returned and a terminating error is thrown.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="c005e-106">Krav</span><span class="sxs-lookup"><span data-stu-id="c005e-106">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="512ec-107">Krav</span><span class="sxs-lookup"><span data-stu-id="512ec-107">Requirements</span></span>
 
-<span data-ttu-id="c005e-107">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="c005e-107">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="512ec-108">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="512ec-108">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="c005e-108">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="c005e-108">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="512ec-109">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="512ec-109">Demonstrates</span></span>
 
-<span data-ttu-id="c005e-109">Det här exemplet demonstrerar följande.</span><span class="sxs-lookup"><span data-stu-id="c005e-109">This sample demonstrates the following.</span></span>
+<span data-ttu-id="512ec-110">Det här exemplet demonstrerar följande.</span><span class="sxs-lookup"><span data-stu-id="512ec-110">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="c005e-110">Skapar ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.</span><span class="sxs-lookup"><span data-stu-id="c005e-110">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="512ec-111">Skapar ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.</span><span class="sxs-lookup"><span data-stu-id="512ec-111">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="c005e-111">Lägger till kommandon i pipelinen för objektet [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .</span><span class="sxs-lookup"><span data-stu-id="c005e-111">Adding commands to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="512ec-112">Lägger till kommandon i pipelinen för objektet [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .</span><span class="sxs-lookup"><span data-stu-id="512ec-112">Adding commands to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="c005e-112">Lägger till parameter argument i pipelinen.</span><span class="sxs-lookup"><span data-stu-id="c005e-112">Adding parameter arguments to the pipeline.</span></span>
+- <span data-ttu-id="512ec-113">Lägger till parameter argument i pipelinen.</span><span class="sxs-lookup"><span data-stu-id="512ec-113">Adding parameter arguments to the pipeline.</span></span>
 
-- <span data-ttu-id="c005e-113">Anropar kommandona synkront.</span><span class="sxs-lookup"><span data-stu-id="c005e-113">Invoking the commands synchronously.</span></span>
+- <span data-ttu-id="512ec-114">Anropar kommandona synkront.</span><span class="sxs-lookup"><span data-stu-id="512ec-114">Invoking the commands synchronously.</span></span>
 
-- <span data-ttu-id="c005e-114">Med hjälp av [system. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) -objekt kan du extrahera och Visa egenskaper från de objekt som returneras av kommandona.</span><span class="sxs-lookup"><span data-stu-id="c005e-114">Using [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects to extract and display properties from the objects returned by the commands.</span></span>
+- <span data-ttu-id="512ec-115">Med hjälp av [system. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) -objekt kan du extrahera och Visa egenskaper från de objekt som returneras av kommandona.</span><span class="sxs-lookup"><span data-stu-id="512ec-115">Using [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects to extract and display properties from the objects returned by the commands.</span></span>
 
-- <span data-ttu-id="c005e-115">Hämta och Visa fel poster som genererades under körningen av kommandona.</span><span class="sxs-lookup"><span data-stu-id="c005e-115">Retrieving and displaying error records that were generated during the running of the commands.</span></span>
+- <span data-ttu-id="512ec-116">Hämta och Visa fel poster som genererades under körningen av kommandona.</span><span class="sxs-lookup"><span data-stu-id="512ec-116">Retrieving and displaying error records that were generated during the running of the commands.</span></span>
 
-- <span data-ttu-id="c005e-116">Fånga och Visa avslutande undantag som har utlösts av kommandona.</span><span class="sxs-lookup"><span data-stu-id="c005e-116">Catching and displaying terminating exceptions thrown by the commands.</span></span>
+- <span data-ttu-id="512ec-117">Fånga och Visa avslutande undantag som har utlösts av kommandona.</span><span class="sxs-lookup"><span data-stu-id="512ec-117">Catching and displaying terminating exceptions thrown by the commands.</span></span>
 
-## <a name="example"></a><span data-ttu-id="c005e-117">Exempel</span><span class="sxs-lookup"><span data-stu-id="c005e-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="512ec-118">Exempel</span><span class="sxs-lookup"><span data-stu-id="512ec-118">Example</span></span>
 
-<span data-ttu-id="c005e-118">Det här exemplet kör kommandon synkront i standard-körnings utrymme som tillhandahålls av Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="c005e-118">This sample runs commands synchronously in the default runspace provided by Windows PowerShell.</span></span> <span data-ttu-id="c005e-119">Det sista kommandot genererar ett avslutande fel eftersom ett parameter argument som inte är giltigt skickas till kommandot.</span><span class="sxs-lookup"><span data-stu-id="c005e-119">The last command throws a terminating error because a parameter argument that is not valid is passed to the command.</span></span> <span data-ttu-id="c005e-120">Det avslutande felet fångas och visas.</span><span class="sxs-lookup"><span data-stu-id="c005e-120">The terminating error is trapped and displayed.</span></span>
+<span data-ttu-id="512ec-119">Det här exemplet kör kommandon synkront i standard-körnings utrymme som tillhandahålls av Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="512ec-119">This sample runs commands synchronously in the default runspace provided by Windows PowerShell.</span></span> <span data-ttu-id="512ec-120">Det sista kommandot genererar ett avslutande fel eftersom ett parameter argument som inte är giltigt skickas till kommandot.</span><span class="sxs-lookup"><span data-stu-id="512ec-120">The last command throws a terminating error because a parameter argument that is not valid is passed to the command.</span></span> <span data-ttu-id="512ec-121">Det avslutande felet fångas och visas.</span><span class="sxs-lookup"><span data-stu-id="512ec-121">The terminating error is trapped and displayed.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -116,6 +118,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="c005e-121">Se även</span><span class="sxs-lookup"><span data-stu-id="c005e-121">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="512ec-122">Se även</span><span class="sxs-lookup"><span data-stu-id="512ec-122">See Also</span></span>
 
-[<span data-ttu-id="c005e-122">Skriva ett Windows PowerShell-värdprogram</span><span class="sxs-lookup"><span data-stu-id="c005e-122">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="512ec-123">Skriva ett Windows PowerShell-värdprogram</span><span class="sxs-lookup"><span data-stu-id="512ec-123">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
