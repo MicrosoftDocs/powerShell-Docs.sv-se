@@ -1,12 +1,14 @@
 ---
-title: Översikt över cmdlets
 ms.date: 06/11/2020
-ms.openlocfilehash: 576df03f35dff80479d1fce18cf4306c9219d42f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Översikt över cmdlets
+description: Översikt över cmdlets
+ms.openlocfilehash: ed3082e1a821bb9643ea2eef13b7348eb48488e4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784409"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653227"
 ---
 # <a name="cmdlet-overview"></a>Översikt över cmdlets
 
@@ -115,7 +117,7 @@ Mer information om rikt linjerna för att skriva cmdlets finns i [rikt linjer f�
 
 ## <a name="see-also"></a>Se även
 
-[PowerShell-cmdlet-koncept](./windows-powershell-cmdlet-concepts.md)
+[Begrepp relaterade till PowerShell-cmdletar](./windows-powershell-cmdlet-concepts.md)
 
 [Skriva en PowerShell-cmdlet](./writing-a-windows-powershell-cmdlet.md)
 

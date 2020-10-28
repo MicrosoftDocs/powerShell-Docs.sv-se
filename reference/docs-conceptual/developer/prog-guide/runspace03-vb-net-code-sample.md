@@ -1,12 +1,14 @@
 ---
-title: Kod exempel för RunSpace03 (VB.NET) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 3b4181889ed15e14c59e3f47a09e39a2696df28c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: RunSpace03 (VB.NET) – kodexempel
+description: RunSpace03 (VB.NET) – kodexempel
+ms.openlocfilehash: 796e550d05de5c425dcabdb5ccf735acfb8f9ff0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784783"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647423"
 ---
 # <a name="runspace03-vbnet-code-sample"></a>RunSpace03 (VB.NET) – kodexempel
 

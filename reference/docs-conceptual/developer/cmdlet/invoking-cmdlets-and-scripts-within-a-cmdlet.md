@@ -1,12 +1,14 @@
 ---
-title: Anropar cmdlets och skript inom en cmdlet | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 3d5f76242c02763c41b81215bbb031e19869066a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Anropa cmdlets och skript inuti en cmdlet
+description: Anropa cmdlets och skript inuti en cmdlet
+ms.openlocfilehash: 246c61661f2d290e7e7ac62a8ad303b05bdc7582
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786585"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652645"
 ---
 # <a name="invoking-cmdlets-and-scripts-within-a-cmdlet"></a>Anropa cmdlets och skript inuti en cmdlet
 
@@ -24,7 +26,7 @@ Metoden [system. Management. Automation. cmdlet. Invoke *](/dotnet/api/System.Ma
 
 ## <a name="examples"></a>Exempel
 
-|Exempel|Description|
+|Exempel|Beskrivning|
 |-------------|-----------------|
 |[Anropa cmdlets i en cmdlet](./how-to-invoke-a-cmdlet-from-within-a-cmdlet.md)|I det här exemplet visas hur du anropar en cmdlet från en annan cmdlet.|
 |[Anropa skript i en cmdlet](./how-to-invoke-scripts-within-a-cmdlet.md)|I det här exemplet visas hur du anropar ett skript som har angetts för cmdleten från en annan cmdlet.|

@@ -1,12 +1,14 @@
 ---
-title: Definiera standard metoder för objekt | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 10917de9e897fc1eed362430d63ff5b9cb7e813d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Definiera standardmetoder för objekt
+description: Definiera standardmetoder för objekt
+ms.openlocfilehash: b3b61b552d0f5ef4a018c6f1dd495ac0c770cddc
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774600"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653112"
 ---
 # <a name="defining-default-methods-for-objects"></a>Definiera standardmetoder för objekt
 

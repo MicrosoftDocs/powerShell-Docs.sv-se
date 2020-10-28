@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Förstå DSC-rollen i en CI/CD-pipeline
-ms.openlocfilehash: 6df621f45caed3ac8a8b4dd1afa575d413259e0d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: I den här artikeln beskrivs vilka typer av metoder som är tillgängliga för att kombinera konfigurationer och resurser i en CI/CD-pipeline.
+ms.openlocfilehash: 8d06b86724eb25e657687e6518c01bb29d984264
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783117"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647032"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Förstå DSC-rollen i en CI/CD-pipeline
 
@@ -82,7 +83,7 @@ Configuration Name
 
 Sammansatta resurser befordrar både komposition och samarbete med en pipeline medan man skapar drifts löp tid.
 
-Du kanske redan använder sammansatta resurser utan att realisera den. Ett exempel är **ServiceSet**.
+Du kanske redan använder sammansatta resurser utan att realisera den. Ett exempel är **ServiceSet** .
 Den här resursen hanterar statusen för flera Windows-tjänster utan att lista dem separat. Egenskapen Name accepterar en sträng mat ris som anger namnet på varje tjänst. När konfigurationen kompileras innehåller MOF ett unikt tjänst avsnitt för varje namn som skickas till ServiceSet.
 
 Organisationer kan ha "agenter" eller "mellanprogram" som ska installeras på alla servrar. En sammansatt resurs är det bästa svaret på att hantera beroenden, installation och konfiguration av sådana verktyg och verktyg.

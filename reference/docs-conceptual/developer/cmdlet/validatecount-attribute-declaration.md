@@ -1,16 +1,14 @@
 ---
-title: ValidateCount-Attribute-deklaration | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- attributes, ValidateCount
-- ValidateCount attribute, described
-- ValidateCount attribute
-ms.openlocfilehash: c013a354ee339bd14508fe30549673bc79d5c616
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Deklaration av attributet ValidateCount
+description: Deklaration av attributet ValidateCount
+ms.openlocfilehash: 6acdd02a10ecc1bc2be0e6be88cf2f42a3673eb8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786330"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646274"
 ---
 # <a name="validatecount-attribute-declaration"></a>Deklaration av attributet ValidateCount
 

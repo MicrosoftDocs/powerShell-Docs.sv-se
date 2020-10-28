@@ -1,12 +1,14 @@
 ---
-title: Skapa en HelpInfo-XML-fil
 ms.date: 09/13/2016
-ms.openlocfilehash: e395746e51309477bbcbff51b4591de3f73ce0db
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Skapa en HelpInfo-XML-fil
+description: Skapa en HelpInfo-XML-fil
+ms.openlocfilehash: d5a24306aa6488fdefad0b7b1ea9e2978a93a7b5
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893313"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647724"
 ---
 # <a name="how-to-create-a-helpinfo-xml-file"></a>Skapa en HelpInfo-XML-fil
 

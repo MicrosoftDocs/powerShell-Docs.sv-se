@@ -1,12 +1,14 @@
 ---
-title: Justerings element för TableColumnItem för TableControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: baa858b7c15b5afcc7f6087e8a9eace8d8fb67bb
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Alignment-element för TableColumnItem för TableControl (format)
+description: Alignment-element för TableColumnItem för TableControl (format)
+ms.openlocfilehash: d2bb81ff894cad44e16212891faffd22ee627383
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783916"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646116"
 ---
 # <a name="alignment-element-for-tablecolumnitem-for-tablecontrol-format"></a>Alignment-element för TableColumnItem för TableControl (format)
 

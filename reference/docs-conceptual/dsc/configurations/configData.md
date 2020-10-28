@@ -2,31 +2,27 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Använda konfigurations data
-ms.openlocfilehash: 5eb7fedec9a0abece1068496cdf5cb940eae3340
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+description: I det här avsnittet beskrivs strukturen för ConfigurationData-hash-tabellen. På så sätt kan du skapa en enda konfiguration som kan användas för flera noder eller för olika miljöer.
+ms.openlocfilehash: aa4a0545aec529dbc923908612d2e1f9e60b3c9c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557047"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647106"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Använda konfigurations data i DSC
 
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0
 
-Med hjälp av den inbyggda DSC **ConfigurationData** -parametern kan du definiera data som kan användas i en konfiguration.
-På så sätt kan du skapa en enda konfiguration som kan användas för flera noder eller för olika miljöer.
-Om du till exempel utvecklar ett program kan du använda en konfiguration för både utvecklings-och produktions miljöer och använda konfigurations data för att ange data för varje miljö.
+Med hjälp av den inbyggda DSC **ConfigurationData** -parametern kan du definiera data som kan användas i en konfiguration. På så sätt kan du skapa en enda konfiguration som kan användas för flera noder eller för olika miljöer. Om du till exempel utvecklar ett program kan du använda en konfiguration för både utvecklings-och produktions miljöer och använda konfigurations data för att ange data för varje miljö.
 
-I det här avsnittet beskrivs strukturen för **ConfigurationData** -hash-tabellen.
-Exempel på hur du använder konfigurations data finns i [avgränsa konfigurations-och miljö data](separatingEnvData.md).
+I det här avsnittet beskrivs strukturen för **ConfigurationData** -hash-tabellen. Exempel på hur du använder konfigurations data finns i [avgränsa konfigurations-och miljö data](separatingEnvData.md).
 
 ## <a name="the-configurationdata-common-parameter"></a>Den gemensamma ConfigurationData-parametern
 
-En DSC-konfiguration använder en gemensam parameter, **ConfigurationData**, som du anger när du kompilerar konfigurationen.
-Information om hur du kompilerar konfigurationer finns i [DSC-konfigurationer](configurations.md).
+En DSC-konfiguration använder en gemensam parameter, **ConfigurationData** , som du anger när du kompilerar konfigurationen. Information om hur du kompilerar konfigurationer finns i [DSC-konfigurationer](configurations.md).
 
-Parametern **ConfigurationData** är en hash som måste ha minst en nyckel med namnet **AllNodes**.
-Den kan också ha en eller flera andra nycklar.
+Parametern **ConfigurationData** är en hash som måste ha minst en nyckel med namnet **AllNodes** . Den kan också ha en eller flera andra nycklar.
 
 > [!NOTE]
 > I exemplen i det här avsnittet används en enda ytterligare nyckel (förutom den namngivna **AllNodes** -nyckeln) med namnet `NonNodeData` , men du kan ta med valfritt antal ytterligare nycklar och ge dem de namn du vill.
@@ -39,7 +35,7 @@ $MyData =
 }
 ```
 
-Värdet för **AllNodes** -nyckeln är en matris. Varje element i matrisen är också en hash-tabell som måste ha minst en nyckel med namnet **nodnamn**:
+Värdet för **AllNodes** -nyckeln är en matris. Varje element i matrisen är också en hash-tabell som måste ha minst en nyckel med namnet **nodnamn** :
 
 ```powershell
 $MyData =
@@ -94,8 +90,7 @@ $MyData =
 }
 ```
 
-Om du vill tillämpa en egenskap på alla noder kan du skapa en medlem i **AllNodes** -matrisen som har en **nodnamn** av `*` .
-Om du till exempel vill ge varje nod en `LogPath` egenskap kan du göra följande:
+Om du vill tillämpa en egenskap på alla noder kan du skapa en medlem i **AllNodes** -matrisen som har en **nodnamn** av `*` . Om du till exempel vill ge varje nod en `LogPath` egenskap kan du göra följande:
 
 ```powershell
 $MyData =
@@ -136,8 +131,7 @@ Detta är detsamma som att lägga till en egenskap med namnet `LogPath` med ett 
 
 ## <a name="defining-the-configurationdata-hashtable"></a>Definiera ConfigurationData-hash
 
-Du kan definiera **ConfigurationData** antingen som en variabel i samma skript fil som en konfiguration (som i våra tidigare exempel) eller i en separat `.psd1` fil.
-Om du vill definiera **ConfigurationData** i en `.psd1` fil skapar du en fil som bara innehåller den hash som representerar konfigurations data.
+Du kan definiera **ConfigurationData** antingen som en variabel i samma skript fil som en konfiguration (som i våra tidigare exempel) eller i en separat `.psd1` fil. Om du vill definiera **ConfigurationData** i en `.psd1` fil skapar du en fil som bara innehåller den hash som representerar konfigurations data.
 
 Du kan till exempel skapa en fil med namnet `MyData.psd1` med följande innehåll:
 
@@ -162,8 +156,7 @@ Du kan till exempel skapa en fil med namnet `MyData.psd1` med följande innehål
 
 Om du vill kompilera en konfiguration för vilken du har definierat konfigurations data skickar du konfigurations data som värdet för parametern **ConfigurationData** .
 
-Då skapas en MOF-fil för varje post i **AllNodes** -matrisen.
-Varje MOF-fil får namnet med `NodeName` egenskapen för motsvarande mat ris post.
+Då skapas en MOF-fil för varje post i **AllNodes** -matrisen. Varje MOF-fil får namnet med `NodeName` egenskapen för motsvarande mat ris post.
 
 Om du till exempel definierar konfigurations data som i `MyData.psd1` filen ovan skapas både och filer när du kompilerar en konfiguration `VM-1.mof` `VM-2.mof` .
 
@@ -187,17 +180,15 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 DSC tillhandahåller följande särskilda variabler som kan användas i ett konfigurations skript:
 
-- **$AllNodes** refererar till hela samlingen av noder som definierats i **ConfigurationData**. Du kan filtrera **AllNodes** -samlingen med hjälp av **. Där ()** och **. ()**.
+- **$AllNodes** refererar till hela samlingen av noder som definierats i **ConfigurationData** . Du kan filtrera **AllNodes** -samlingen med hjälp av **. Där ()** och **. ()** .
 - **ConfigurationData** refererar till hela hash-tabellen som skickas som parameter när en konfiguration kompileras.
 - **TypeName** innehåller [konfigurations](configurations.md) namnet som variabeln används i. I-konfigurationen har till exempel `MyDscConfiguration` `$MyTypeName` värdet `MyDscConfiguration` .
-- **Node** refererar till en viss post i **AllNodes** -samlingen när den filtreras med hjälp av **. Där ()** eller **. ()**.
+- **Node** refererar till en viss post i **AllNodes** -samlingen när den filtreras med hjälp av **. Där ()** eller **. ()** .
   - Du kan läsa mer om de här metoderna i [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 ## <a name="using-non-node-data"></a>Använda data som inte är noder
 
-Som vi har sett i föregående exempel kan **ConfigurationData** hash-tabellen ha en eller flera nycklar utöver den nödvändiga **AllNodes** -nyckeln.
-I exemplen i det här avsnittet har vi bara använt en enda nod och namngett den `NonNodeData` .
-Du kan dock definiera valfritt antal ytterligare nycklar och ge dem namn som du vill.
+Som vi har sett i föregående exempel kan **ConfigurationData** hash-tabellen ha en eller flera nycklar utöver den nödvändiga **AllNodes** -nyckeln. I exemplen i det här avsnittet har vi bara använt en enda nod och namngett den `NonNodeData` . Du kan dock definiera valfritt antal ytterligare nycklar och ge dem namn som du vill.
 
 Ett exempel på hur du använder data som inte finns på en nod finns i [avgränsa konfigurations-och miljö data](separatingEnvData.md).
 

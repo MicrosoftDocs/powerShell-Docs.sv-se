@@ -1,12 +1,14 @@
 ---
-title: Utöka egenskaper för objekt | Microsoft Docs
 ms.date: 08/21/2019
-ms.openlocfilehash: acd20c7e2b6ef84a9c932538eb8e167d68c8a660
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Utöka egenskaper för objekt
+description: Utöka egenskaper för objekt
+ms.openlocfilehash: 37803d9fd87319204565c2abde62f269744481b9
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784307"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652888"
 ---
 # <a name="extending-properties-for-objects"></a>Utöka egenskaper för objekt
 
@@ -58,7 +60,7 @@ I följande exempel läggs egenskapen **mode** till i typen [system. io. Directo
 
 En antecknings egenskap definierar en egenskap med ett statiskt värde.
 
-I följande exempel läggs **status** egenskapen, vars värde alltid **lyckas**, till i [system. io. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) -typen. [NoteProperty](/dotnet/api/system.management.automation.psnoteproperty) -elementet definierar den utökade egenskapen som en antecknings egenskap. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name) anger namnet på den utökade egenskapen. [Värdet](/dotnet/api/system.management.automation.psnoteproperty.value) -elementet anger det statiska värdet för den utökade egenskapen. `NoteProperty`Elementet kan också läggas till i medlemmarna i [MemberSet](/dotnet/api/system.management.automation.psmemberset) -elementet.
+I följande exempel läggs **status** egenskapen, vars värde alltid **lyckas** , till i [system. io. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) -typen. [NoteProperty](/dotnet/api/system.management.automation.psnoteproperty) -elementet definierar den utökade egenskapen som en antecknings egenskap. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name) anger namnet på den utökade egenskapen. [Värdet](/dotnet/api/system.management.automation.psnoteproperty.value) -elementet anger det statiska värdet för den utökade egenskapen. `NoteProperty`Elementet kan också läggas till i medlemmarna i [MemberSet](/dotnet/api/system.management.automation.psmemberset) -elementet.
 
 ```xml
 <Type>
@@ -98,7 +100,7 @@ En egenskaps uppsättning definierar en grupp utökade egenskaper som kan refere
 Egenskaps parametern [format-tabell](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) 
  **Property** kan till exempel ange att en speciell egenskaps uppsättning ska visas. När en egenskaps uppsättning anges visas endast de egenskaper som tillhör uppsättningen.
 
-Det finns ingen begränsning för antalet egenskaps uppsättningar som kan definieras för ett objekt. Egenskaps uppsättningarna som används för att definiera standard visnings egenskaperna för ett objekt måste dock anges i **PSStandardMembers** -medlems uppsättningen. I `Types.ps1xml` typ filen inkluderar standard egenskaperna för egenskaps uppsättning namn **DefaultDisplayProperty**, **DefaultDisplayPropertySet**och **DefaultKeyPropertySet**. Eventuella ytterligare egenskaps uppsättningar som du lägger till i **PSStandardMembers** -medlems uppsättningen ignoreras.
+Det finns ingen begränsning för antalet egenskaps uppsättningar som kan definieras för ett objekt. Egenskaps uppsättningarna som används för att definiera standard visnings egenskaperna för ett objekt måste dock anges i **PSStandardMembers** -medlems uppsättningen. I `Types.ps1xml` typ filen inkluderar standard egenskaperna för egenskaps uppsättning namn **DefaultDisplayProperty** , **DefaultDisplayPropertySet** och **DefaultKeyPropertySet** . Eventuella ytterligare egenskaps uppsättningar som du lägger till i **PSStandardMembers** -medlems uppsättningen ignoreras.
 
 I följande exempel läggs egenskaps uppsättningen **DefaultDisplayPropertySet** till i **PSStandardMembers** -medlems uppsättningen för [system. serviceprocess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) -typen. [PropertySet](/dotnet/api/system.management.automation.pspropertyset) -elementet definierar gruppen med egenskaper. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name) anger namnet på egenskaps uppsättningen. Och [ReferencedProperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames) -elementet anger egenskaperna för uppsättningen. Du kan också lägga till `PropertySet` elementet i medlemmar av [typen](/dotnet/api/system.management.automation.pstypename) element.
 

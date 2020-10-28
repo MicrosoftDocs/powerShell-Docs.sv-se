@@ -1,12 +1,14 @@
 ---
-title: Lägga till indatatyper i ett cmdlet-hjälpavsnitt
 ms.date: 09/12/2016
-ms.openlocfilehash: d41c49ff48cf361c2ba694d11576e84a9367eef5
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Lägga till indatatyper i ett cmdlet-hjälpavsnitt
+description: Lägga till indatatyper i ett cmdlet-hjälpavsnitt
+ms.openlocfilehash: 1a8f04832ddfdf796596da2367a5c599aa0f245e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893432"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647745"
 ---
 # <a name="how-to-add-input-types-to-a-cmdlet-help-topic"></a>Lägga till indatatyper i ett cmdlet-hjälpavsnitt
 

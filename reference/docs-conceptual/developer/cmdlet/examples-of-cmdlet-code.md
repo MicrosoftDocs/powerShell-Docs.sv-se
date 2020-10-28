@@ -1,12 +1,14 @@
 ---
-title: Exempel på cmdlet-kod | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2d2597d3d3f64cae1c1494eb2f05873f6feae5e0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Exempel på cmdlet-kod
+description: Exempel på cmdlet-kod
+ms.openlocfilehash: 91dd2019300504697ad9a7a0c155a04600d09c58
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784341"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652914"
 ---
 # <a name="examples-of-cmdlet-code"></a>Exempel på cmdlet-kod
 

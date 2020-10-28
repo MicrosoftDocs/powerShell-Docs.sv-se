@@ -1,18 +1,20 @@
 ---
-title: Starkt uppmuntrande utvecklings rikt linjer | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 02488fea557b42ed30ea5cfde177b3efe0b3f559
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Starkt rekommenderade riktlinjer för utveckling
+description: Starkt rekommenderade riktlinjer för utveckling
+ms.openlocfilehash: 786ce66ed6289e91b532b0c31ed797afad4574b3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787826"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646430"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Starkt rekommenderade riktlinjer för utveckling
 
 I det här avsnittet beskrivs rikt linjer som du bör följa när du skriver dina cmdlets. De är indelade i rikt linjer för att utforma cmdlets och rikt linjer för att skriva din cmdlet-kod. Du kanske upptäcker att dessa rikt linjer inte gäller för varje scenario. Men om de tillämpas och du inte följer dessa rikt linjer, kan användarna ha en dålig upplevelse när de använder dina cmdletar.
 
-## <a name="design-guidelines"></a>Design rikt linjer
+## <a name="design-guidelines"></a>Designriktlinjer
 
 - [Använd ett angivet Substantiv för ett cmdlet-namn (SD01)](./strongly-encouraged-development-guidelines.md#use-a-specific-noun-for-a-cmdlet-name-sd01)
 
@@ -32,9 +34,9 @@ I det här avsnittet beskrivs rikt linjer som du bör följa när du skriver din
 
 - [Skriv enskilda poster till pipelinen (SC03)](./strongly-encouraged-development-guidelines.md#write-single-records-to-the-pipeline-sc03)
 
-- [Gör cmdletar Skift läges okänsliga och Skift läges bevarande (SC04)](./strongly-encouraged-development-guidelines.md#make-cmdlets-case-insensitive-and-case-preserving-sc04)
+- [Skapa cmdlets Case-Insensitive och Case-Preserving (SC04)](./strongly-encouraged-development-guidelines.md#make-cmdlets-case-insensitive-and-case-preserving-sc04)
 
-## <a name="design-guidelines"></a>Design rikt linjer
+## <a name="design-guidelines"></a>Designriktlinjer
 
 Följande rikt linjer bör följas när du utformar cmdlets för att säkerställa en konsekvent användar upplevelse mellan att använda dina cmdletar och andra cmdletar. När du hittar en design rikt linje som gäller din situation bör du titta närmare på kod rikt linjerna för liknande rikt linjer.
 
@@ -42,7 +44,7 @@ Följande rikt linjer bör följas när du utformar cmdlets för att säkerstäl
 
 Substantiv som används i cmdlet-namn måste vara särskilt så att användaren kan identifiera dina cmdletar. Prefix för generiska substantiv som "Server" med en förkortad version av produkt namnet. Om t. ex. ett substantiv refererar till en server som kör en instans av Microsoft SQL Server, använder du ett substantiv som "SQLServer". Kombinationen av vissa Substantiv och den korta listan över godkända verb gör det möjligt för användaren att snabbt upptäcka och förutse funktioner samtidigt som du undviker duplicering mellan cmdlet-namn.
 
-För att förbättra användar upplevelsen ska det substantiv som du väljer för ett cmdlet-namn vara singular. Använd till exempel namnet `Get-Process` i stället för **Get-processs**. Det är bäst att följa den här regeln för alla cmdlet-namn, även om en cmdlet förmodligen fungerar på mer än ett objekt.
+För att förbättra användar upplevelsen ska det substantiv som du väljer för ett cmdlet-namn vara singular. Använd till exempel namnet `Get-Process` i stället för **Get-processs** . Det är bäst att följa den här regeln för alla cmdlet-namn, även om en cmdlet förmodligen fungerar på mer än ett objekt.
 
 ### <a name="use-pascal-case-for-cmdlet-names-sd02"></a>Använd Pascal-fall för cmdlet-namn (SD02)
 
@@ -84,7 +86,7 @@ Det finns två sätt att skapa en parameter vars värde kan väljas från en upp
 
 Använd standard typer för parametrar där det är möjligt för att säkerställa konsekvens med andra cmdletar. Mer information om vilka typer som ska användas för olika parametrar finns i [standard parameter namn och typer](./standard-cmdlet-parameter-names-and-types.md). Det här avsnittet innehåller länkar till flera avsnitt som beskriver namn och .NET Framework typer för grupper med standard parametrar, t. ex. "aktivitets parametrar".
 
-#### <a name="use-strongly-typed-net-framework-types"></a>Använd typer av starkt skrivna .NET Framework
+#### <a name="use-strongly-typed-net-framework-types"></a>Använd Strongly-Typed .NET Framework typer
 
 Parametrar ska definieras som .NET Framework typer för att ge bättre parameter validering. Till exempel ska parametrar som är begränsade till ett värde från en uppsättning värden definieras som en uppräknings typ. För att stödja ett Uniform Resource Identifier (URI)-värde definierar du parametern som en [system. URI](/dotnet/api/System.Uri) -typ. Undvik grundläggande sträng parametrar för alla fält med fri Forms egenskaper.
 
@@ -197,7 +199,7 @@ Definiera standard medlemmar för att utöka en objekt typ i en anpassad Types.p
 
 Om du skapar ett objekt för en cmdlet bör du se till att dess medlemmar mappar direkt till parametrarna för de cmdletar som ska använda den. Med den här mappningen kan objektet enkelt skickas till pipelinen och skickas från en-cmdlet till en annan.
 
-Befintliga .NET Framework objekt som returneras av cmdlets ofta saknar vissa viktiga eller praktiska medlemmar som krävs av skript utvecklaren eller användaren. De medlemmar som saknas kan vara särskilt viktiga för att visa och för att skapa rätt medlems namn så att objektet kan skickas korrekt till pipelinen. Skapa en anpassad Types.ps1XML-fil för att dokumentera de nödvändiga medlemmarna. När du skapar den här filen rekommenderar vi följande namngivnings konvention: *<Your_Product_Name>*.Types.ps1XML.
+Befintliga .NET Framework objekt som returneras av cmdlets ofta saknar vissa viktiga eller praktiska medlemmar som krävs av skript utvecklaren eller användaren. De medlemmar som saknas kan vara särskilt viktiga för att visa och för att skapa rätt medlems namn så att objektet kan skickas korrekt till pipelinen. Skapa en anpassad Types.ps1XML-fil för att dokumentera de nödvändiga medlemmarna. När du skapar den här filen rekommenderar vi följande namngivnings konvention: *<Your_Product_Name>* .Types.ps1XML.
 
 Du kan till exempel lägga till en `Mode` skript egenskap i typen [system. io. fileinfo](/dotnet/api/System.IO.FileInfo) för att visa attributen för en fil tydligare. Dessutom kan du lägga till en `Count` aliasresurspost till [system. mat ris](/dotnet/api/System.Array) typen för att tillåta konsekvent användning av egenskaps namnet (i stället för `Length` ).
 
@@ -207,7 +209,7 @@ Implementera ett [system. IComparable](/dotnet/api/System.IComparable) -gränssn
 
 ##### <a name="update-display-information"></a>Uppdatera visnings information
 
-Om visningen för ett objekt inte ger det förväntade resultatet skapar du en anpassad *\<YourProductName>*.Format.ps1XML-fil för objektet.
+Om visningen för ett objekt inte ger det förväntade resultatet skapar du en anpassad *\<YourProductName>* .Format.ps1XML-fil för objektet.
 
 ### <a name="support-well-defined-pipeline-input-sc02"></a>Support bra definierade pipeline-inmatare (SC02)
 
@@ -229,7 +231,7 @@ Om du vill acceptera alla poster från föregående cmdlet i pipelinen måste di
 
 När en cmdlet returnerar objekt ska cmdleten skriva objekten direkt när de genereras. Cmdleten bör inte innehålla dem för att buffra dem i en kombinerad matris. De cmdletar som tar emot objekten som indata kommer sedan att kunna bearbeta, Visa eller bearbeta och visa utdata utan fördröjning. En cmdlet som genererar utdata en i taget bör anropa metoden [system. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) . En cmdlet som genererar utdata i batchar (till exempel eftersom ett underliggande API returnerar en matris med utgående objekt) bör anropa metoden [system. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) med dess andra parameter inställd på `true` .
 
-### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Gör cmdletar Skift läges okänsliga och Skift läges bevarande (SC04)
+### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Skapa cmdlets Case-Insensitive och Case-Preserving (SC04)
 
 Som standard är Windows PowerShell inte Skift läges känsligt. Men eftersom det behandlar flera befintliga system, bevarar Windows PowerShell Skift läge för enkel drift och kompatibilitet. Om ett tecken i versaler anges med versaler, så behåller Windows PowerShell det med versala bokstäver. För att system ska fungera bra måste en cmdlet följa denna konvention. Om möjligt bör det köras på ett skift läges okänsligt sätt. Det bör dock behålla det ursprungliga fallet för cmdletar som sker senare i ett kommando eller i pipelinen.
 

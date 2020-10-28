@@ -1,12 +1,14 @@
 ---
-title: ItemSelectionCondition-element för ExpressionBinding för CustomControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6a5c66a63c02980b16c2d2d9dd689410c8aec51c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ItemSelectionCondition-element för ExpressionBinding för CustomControl (format)
+description: ItemSelectionCondition-element för ExpressionBinding för CustomControl (format)
+ms.openlocfilehash: 38c88ad47e57cd20902c6b8aabdb0b8e8b682ba4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781196"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648037"
 ---
 # <a name="itemselectioncondition-element-for-expressionbinding-for-customcontrol-format"></a>ItemSelectionCondition-element för ExpressionBinding för CustomControl (format)
 

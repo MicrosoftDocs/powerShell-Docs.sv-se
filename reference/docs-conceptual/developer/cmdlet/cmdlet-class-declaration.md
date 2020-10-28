@@ -1,15 +1,14 @@
 ---
-title: Cmdlet-klass deklaration | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- cmdlets [PowerShell SDK], declaring
-- declaring cmdlets [PowerShell SDK]
-ms.openlocfilehash: 96ce8144795346b6f46878ee6163ce69cdb1799a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Cmdlet-klassdeklaration
+description: Cmdlet-klassdeklaration
+ms.openlocfilehash: 854b0a4ca9f6c87c4fad3b71ee726beade585e02
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784511"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653496"
 ---
 # <a name="cmdlet-class-declaration"></a>Cmdlet-klassdeklaration
 
@@ -23,7 +22,7 @@ När du anger **cmdlet** -attributet måste du ange verb-och-Substantiv-paret so
 
 Substantiv för cmdleten anger de resurser som cmdleten fungerar på. Substantivet särskiljer dina cmdletar från andra cmdletar.
 
-Substantiv i cmdlet-namn måste vara unika, och när det gäller generiska substantiv, till exempel *Server*, är det bäst att lägga till ett kort prefix som särskiljer din resurs från andra liknande resurser. Till exempel är ett cmdlet-namn som innehåller ett substantiv med ett prefix `Get-SQLServer` . Kombinationen av ett visst substantiv med ett mer allmänt verb gör det möjligt för användaren att snabbt hitta cmdleten genom sin åtgärd och sedan identifiera cmdleten med dess resurs samtidigt som den undviker onödiga cmdlet-namnmatchning.
+Substantiv i cmdlet-namn måste vara unika, och när det gäller generiska substantiv, till exempel *Server* , är det bäst att lägga till ett kort prefix som särskiljer din resurs från andra liknande resurser. Till exempel är ett cmdlet-namn som innehåller ett substantiv med ett prefix `Get-SQLServer` . Kombinationen av ett visst substantiv med ett mer allmänt verb gör det möjligt för användaren att snabbt hitta cmdleten genom sin åtgärd och sedan identifiera cmdleten med dess resurs samtidigt som den undviker onödiga cmdlet-namnmatchning.
 
 En lista med specialtecken som inte kan användas i cmdlet-namn finns i [nödvändiga utvecklings rikt linjer](./required-development-guidelines.md).
 

@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: TestConfiguration-metoden
-ms.openlocfilehash: 0611c4d5543c49b879bef9b60cafdd0b055c9b86
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: TestConfiguration-metoden
+ms.openlocfilehash: ed26fcad2286ca753fb4b1845b8c6ad0741d491b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464306"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648920"
 ---
 # <a name="testconfiguration-method"></a>TestConfiguration-metoden
 
@@ -17,10 +18,10 @@ Skickar konfigurations dokumentet till den hanterade noden och verifierar den ak
 
 ```mof
 uint32 TestConfiguration(
-  [in]  uint8                          configurationData[],
-  [out] boolean                        InDesiredState,
-  [out] MSFT_ResourceInDesiredState    ResourcesInDesiredState[],
-  [out] MSFT_ResourceNotInDesiredState ResourcesNotInDesiredState[]
+  [in]  uint8                          configurationData[],
+  [out] boolean                        InDesiredState,
+  [out] MSFT_ResourceInDesiredState    ResourcesInDesiredState[],
+  [out] MSFT_ResourceNotInDesiredState ResourcesNotInDesiredState[]
 );
 ```
 
@@ -46,7 +47,7 @@ Detta är en statisk metod.
 
 **MOF:** DscCore. MOF
 
-**Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Namnrymd** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Se även
 

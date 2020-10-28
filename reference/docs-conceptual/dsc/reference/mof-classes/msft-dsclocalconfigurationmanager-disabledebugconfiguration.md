@@ -1,13 +1,14 @@
 ---
 ms.date: 07/14/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DisableDebugConfiguration-metoden
-ms.openlocfilehash: 52d55ff6b1fd126482bbaa9480efc131ab2f100c
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DisableDebugConfiguration-metoden
+ms.openlocfilehash: 6894f86d9626ca03f93477477f573f45a5de4c49
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463762"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648986"
 ---
 # <a name="disabledebugconfiguration-method"></a>DisableDebugConfiguration-metoden
 
@@ -35,7 +36,7 @@ Detta är en statisk metod.
 
 **MOF:** DscCore. MOF
 
-**Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Namnrymd** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Se även
 

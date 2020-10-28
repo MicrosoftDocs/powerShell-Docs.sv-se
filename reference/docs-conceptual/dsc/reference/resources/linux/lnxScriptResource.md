@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC för Linux nxScript-resurs
-ms.openlocfilehash: e39808e110d5ee4bf9d0ccd418ca3b15ac9fe420
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC för Linux nxScript-resurs
+ms.openlocfilehash: c92d7ac76323d39167512734ef743c299857c9a6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463660"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648802"
 ---
 # <a name="dsc-for-linux-nxscript-resource"></a>DSC för Linux nxScript-resurs
 
@@ -33,7 +34,7 @@ nxScript <string> #ResourceName
 |---|---|
 |GetScript |Innehåller ett skript för att returnera datorns aktuella status. Det här skriptet körs när du anropar [GetDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) -skriptet. Skriptet måste börja med en Shebang, till exempel `#!/bin/bash` . |
 |SetScript |Innehåller ett skript som placerar datorn i korrekt tillstånd. När du anropar [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) -skriptet körs **TestScript** först. Om **TestScript** -blocket returnerar en annan slutkod än 0, kommer **SetScript** -blocket att köras. Om **TestScript** returnerar slut koden 0 så körs inte **SetScript** . Skriptet måste börja med en Shebang, till exempel `#!/bin/bash` . |
-|TestScript |Innehåller ett skript som utvärderar om noden för närvarande är i rätt tillstånd. När du anropar [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) -skriptet körs det här skriptet. Om den returnerar en annan slutkod än 0, kommer **SetScript** att köras. Om den returnerar slut koden 0 körs inte **SetScript** . **TestScript** körs också när du anropar [TestDscConfiguration](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) -skriptet. I det här fallet kommer dock **SetScript** inte att köras, oavsett vilken slutkod som returneras från **TestScript**. **TestScript** måste innehålla innehåll och måste returnera avslutnings koden 0 om den faktiska konfigurationen matchar den aktuella önskade tillstånds konfigurationen och en annan slutkod än 0 om den inte matchar. Den aktuella önskade tillstånds konfigurationen är den sista konfigurationen som används på den nod som använder DSC. Skriptet måste börja med en Shebang, till exempel `#!/bin/bash` . |
+|TestScript |Innehåller ett skript som utvärderar om noden för närvarande är i rätt tillstånd. När du anropar [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) -skriptet körs det här skriptet. Om den returnerar en annan slutkod än 0, kommer **SetScript** att köras. Om den returnerar slut koden 0 körs inte **SetScript** . **TestScript** körs också när du anropar [TestDscConfiguration](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) -skriptet. I det här fallet kommer dock **SetScript** inte att köras, oavsett vilken slutkod som returneras från **TestScript** . **TestScript** måste innehålla innehåll och måste returnera avslutnings koden 0 om den faktiska konfigurationen matchar den aktuella önskade tillstånds konfigurationen och en annan slutkod än 0 om den inte matchar. Den aktuella önskade tillstånds konfigurationen är den sista konfigurationen som används på den nod som använder DSC. Skriptet måste börja med en Shebang, till exempel `#!/bin/bash` . |
 |Användare |Användaren att köra skriptet som. |
 |Group |Gruppen att köra skriptet som. |
 

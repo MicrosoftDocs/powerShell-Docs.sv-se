@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: SendMetaConfigurationApply-metoden
-ms.openlocfilehash: 896afe2f3370e108b48583aafb33ee7b0eb1301b
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: SendMetaConfigurationApply-metoden
+ms.openlocfilehash: 27c58819c0249ace011c475e500e565e5daed9bb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463728"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648964"
 ---
 # <a name="sendmetaconfigurationapply-method"></a>SendMetaConfigurationApply-metoden
 
@@ -17,8 +18,8 @@ Anger de lokala Configuration Manager inställningar som används för att kontr
 
 ```mof
 uint32 SendMetaConfigurationApply(
-  [in] uint8   ConfigurationData[],
-  [in] boolean force
+  [in] uint8   ConfigurationData[],
+  [in] boolean force
 );
 ```
 
@@ -40,7 +41,7 @@ Detta är en statisk metod.
 
 **MOF:** DscCore. MOF
 
-**Namnrymd**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Namnrymd** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Se även
 

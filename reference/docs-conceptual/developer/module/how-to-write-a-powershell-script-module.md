@@ -1,12 +1,14 @@
 ---
-title: Så här skriver du en PowerShell-modul för skript | Microsoft Docs
 ms.date: 11/21/2019
-ms.openlocfilehash: dc387909a9e55df9f1846b02755e284c408f7dc6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skriva en PowerShell-skriptmodul
+description: Skriva en PowerShell-skriptmodul
+ms.openlocfilehash: c44b09a915501fb10773ab11cf13136d5035ba69
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784902"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649143"
 ---
 # <a name="how-to-write-a-powershell-script-module"></a>Skriva en PowerShell-skriptmodul
 
@@ -82,7 +84,7 @@ Följande steg beskriver hur du skapar en PowerShell-modul.
    > [!NOTE]
    > `Remove-Module` tar bort en modul från den aktuella PowerShell-sessionen, men avinstallerar inte modulen eller tar bort modulens filer.
 
-## <a name="show-calendar-code-example"></a>Visa – kalender kod exempel
+## <a name="show-calendar-code-example"></a>Exempel på Show-Calendar kod
 
 Följande exempel är en skript-modul som innehåller en enda funktion med namnet `Show-Calendar` . Den här funktionen visar en visuell representation av en kalender. Exemplet innehåller PowerShell-hjälp strängar för sammanfattning, beskrivning, parameter värden och kod. När modulen importeras `Export-ModuleMember` ser kommandot till att `Show-Calendar` funktionen exporteras som en modul medlem.
 

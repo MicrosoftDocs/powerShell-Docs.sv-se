@@ -1,12 +1,14 @@
 ---
-title: Elementet TypeName för EntrySelectedBy för kontrollerna för View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6eaa4f80a18c91ca351657fd40a8cac6f688c22f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TypeName-element för EntrySelectedBy för Controls för View (format)
+description: TypeName-element för EntrySelectedBy för Controls för View (format)
+ms.openlocfilehash: 03a70b0c6c71910932f1d032c94c602cef8ab964
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783338"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647884"
 ---
 # <a name="typename-element-for-entryselectedby-for-controls-for-view-format"></a>TypeName-element för EntrySelectedBy för Controls för View (format)
 

@@ -1,12 +1,14 @@
 ---
-title: Utdata för cmdlet | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7697db01c8c4d1c831202c07256559bf638aeaef
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Cmdlet-utdata
+description: Cmdlet-utdata
+ms.openlocfilehash: 37606e57d9dff3ed9fa25b2b99eb07efa0147127
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784443"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653254"
 ---
 # <a name="cmdlet-output"></a>Cmdlet-utdata
 

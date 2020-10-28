@@ -1,12 +1,14 @@
 ---
-title: Events01-exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c7b0f759ca6f3c078649a462eac1713e8214a237
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Events01 – exempel
+description: Events01 – exempel
+ms.openlocfilehash: 1d9ef1f71fe38ca788cc50c02367701986ed87b2
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774465"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652965"
 ---
 # <a name="events01-sample"></a>Events01 – exempel
 
@@ -22,7 +24,7 @@ Det här exemplet härleds från Bask Lassen [Microsoft. PowerShell. commands. O
 2. Dubbelklicka på ikonen för lösnings filen (. SLN).
    Detta öppnar exempelprojektet i Microsoft Visual Studio.
 
-3. I menyn **build** väljer du **build-lösning**.
+3. I menyn **build** väljer du **build-lösning** .
    Biblioteket för exemplet skapas i standard- `\bin` eller- `\bin\debug` mapparna.
 
 ### <a name="how-to-run-the-sample"></a>Köra exemplet
@@ -41,7 +43,7 @@ Det här exemplet härleds från Bask Lassen [Microsoft. PowerShell. commands. O
     import-module events01
     ```
 
-5. Använd cmdleten register-FileSystemEvent för att registrera en åtgärd som ska skriva ett meddelande när en fil skapas i TEMP-katalogen.
+5. Använd Register-FileSystemEvent-cmdlet för att registrera en åtgärd som ska skriva ett meddelande när en fil skapas under TEMP-katalogen.
 
     ```powershell
     Register-FileSystemEvent $env:temp Created -filter "*.txt" -action { Write-Host "A file was created in the TEMP directory" }

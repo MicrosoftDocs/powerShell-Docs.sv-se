@@ -2,12 +2,13 @@
 ms.date: 10/13/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Desired State Configuration-översikt för tekniker
-ms.openlocfilehash: dbed274d5333c216970247b88d2a0956025e969d
-ms.sourcegitcommit: a5e945e0889d0635b7af767d80d6a13bc5526269
+description: Det här dokumentet är avsett för utvecklare och drifts team för att förstå fördelarna med PowerShell-tjänsten för önskad tillstånds konfiguration (DSC).
+ms.openlocfilehash: c98295d0e78f4dc89e5df429e3c1de9a0c024054
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82584522"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646940"
 ---
 # <a name="desired-state-configuration-overview-for-engineers"></a>Desired State Configuration-översikt för tekniker
 
@@ -67,7 +68,7 @@ else
 }
 ```
 
-Det här skriptet är mer komplicerat, med massor av logik-och fel hantering. Skriptet är mer komplicerat eftersom du inte längre anger vad du vill göra, men _hur du gör det_.
+Det här skriptet är mer komplicerat, med massor av logik-och fel hantering. Skriptet är mer komplicerat eftersom du inte längre anger vad du vill göra, men _hur du gör det_ .
 
 DSC låter dig säga vad du vill göra och den underliggande logiken är indelad.
 

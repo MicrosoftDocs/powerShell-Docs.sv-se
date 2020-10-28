@@ -1,12 +1,14 @@
 ---
-title: AccessDbProviderSample04 kod exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 05509c5b36475bcd3f91c9ab7413974994d668d6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: AccessDbProviderSample04 – kodexempel
+description: AccessDbProviderSample04 – kodexempel
+ms.openlocfilehash: bb70ce9f1b1c94349c354a8771fedf7fcb1bb320
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787282"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647563"
 ---
 # <a name="accessdbprovidersample04-code-sample"></a>AccessDbProviderSample04 – kodexempel
 

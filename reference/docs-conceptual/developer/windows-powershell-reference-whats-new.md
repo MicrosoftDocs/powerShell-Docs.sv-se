@@ -1,12 +1,14 @@
 ---
-title: Windows PowerShell-referens – nyheter
 ms.date: 09/13/2016
-ms.openlocfilehash: 4e87fce34f74e0fcbfe25939e1555df308a7f7d0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell-referens – nyheter
+description: Windows PowerShell-referens – nyheter
+ms.openlocfilehash: b6fa97eacd476f055dd0c69eed2e547c450b85e1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786704"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647116"
 ---
 # <a name="whats-new"></a>Nyheter
 

@@ -1,12 +1,14 @@
 ---
-title: Deklaration för attribut för autentiseringsuppgift | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a6deca52fa6c9e46138ae92401f58ac5dbd15852
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Deklaration av attributet Credential
+description: Deklaration av attributet Credential
+ms.openlocfilehash: fb826d9a46cadc021fe0c667091bbc7a9251aaa8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784375"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648604"
 ---
 # <a name="credential-attribute-declaration"></a>Deklaration av attributet Credential
 

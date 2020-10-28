@@ -1,12 +1,14 @@
 ---
-title: Skapa en Windows PowerShell-containerprovider
 ms.date: 09/13/2016
-ms.openlocfilehash: a5bcba425909eb98c010a1ea010cb02b995771f3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skapa en Windows PowerShell-containerprovider
+description: Skapa en Windows PowerShell-containerprovider
+ms.openlocfilehash: 999bd69e3c16bfc0a74519986654ec15bbc0da6d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787214"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645362"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Skapa en Windows PowerShell-containerprovider
 
@@ -122,7 +124,7 @@ Följande villkor kan gälla för din implementering av [system. Management. Aut
 
 - Din implementering av [system. Management. Automation. Provider. Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) ansvarar för att förhindra oändlig rekursion när det finns cirkel länkar och liknande. Ett lämpligt avslutande undantag bör utsättas för att avspegla ett sådant villkor.
 
-## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet"></a>Koppla dynamiska parametrar till get-ChildItem-cmdleten
+## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet"></a>Bifoga dynamiska parametrar till Get-ChildItem-cmdleten
 
 Ibland `Get-ChildItem` kräver cmdleten som anropar [system. Management. Automation. Provider. Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell container Provider implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Getchilditemsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) . Den här metoden hämtar dynamiska parametrar för objektet på den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna i `Get-ChildItem` cmdleten.
 
@@ -197,7 +199,7 @@ Följande villkor kan gälla för din implementering av [system. Management. Aut
 
 - Din implementering av [system. Management. Automation. Provider. Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) ansvarar för att förhindra oändlig rekursion när det finns cirkel länkar och liknande. Ett lämpligt avslutande undantag bör utsättas för att avspegla ett sådant villkor.
 
-## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet-name"></a>Bifoga dynamiska parametrar till get-ChildItem-cmdleten (namn)
+## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet-name"></a>Bifoga dynamiska parametrar till Get-ChildItem-cmdleten (namn)
 
 Ibland `Get-ChildItem` kräver cmdleten (med `Name` parametern) ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell container Provider implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Getchildnamesdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) . Den här metoden hämtar dynamiska parametrar för objektet på den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna i `Get-ChildItem` cmdleten.
 
@@ -229,7 +231,7 @@ Följande villkor kan gälla för din implementering av [system. Management. Aut
 
   Efter att anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar `true` , ska metoden system [. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) anropa metoden [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Den här metoden skickar ett meddelande till användaren för att tillåta ytterligare feedback för att säga om åtgärden bör fortsätta. En provider bör anropa [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) som ytterligare kontroll för potentiellt skadliga system ändringar.
 
-## <a name="attaching-dynamic-parameters-to-the-rename-item-cmdlet"></a>Koppla dynamiska parametrar till cmdleten Rename-Item
+## <a name="attaching-dynamic-parameters-to-the-rename-item-cmdlet"></a>Bifoga dynamiska parametrar till Rename-Item-cmdleten
 
 Ibland `Rename-Item` kräver cmdleten ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell container Provider implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Renameitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters) . Den här metoden hämtar parametrarna för objektet vid den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna i `Rename-Item` cmdleten.
 
@@ -275,7 +277,7 @@ Följande villkor kan gälla för din implementering av [system. Management. Aut
 
 - Din implementering av metoden [system. Management. Automation. Provider. Containercmdletprovider. NewItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) ska anropa [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och kontrol lera dess retur värde innan du gör några ändringar i data lagret. Efter anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar true, metoden [system. Management. Automation. Provider. Containercmdletprovider. NewItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) anropa metoden [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) som ytterligare kontroll för potentiellt skadliga system ändringar.
 
-## <a name="attaching-dynamic-parameters-to-the-new-item-cmdlet"></a>Koppla dynamiska parametrar till cmdleten New-Item
+## <a name="attaching-dynamic-parameters-to-the-new-item-cmdlet"></a>Bifoga dynamiska parametrar till New-Item-cmdleten
 
 Ibland `New-Item` kräver cmdleten ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar måste container leverantören implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Newitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItemDynamicParameters) . Den här metoden hämtar parametrarna för objektet vid den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna i `New-Item` cmdleten.
 
@@ -303,7 +305,7 @@ Följande villkor kan gälla för din implementering av [system. Management. Aut
 
 - Din implementering av metoden [system. Management. Automation. Provider. Containercmdletprovider. RemoveItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) ska anropa [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och kontrol lera dess retur värde innan du gör några ändringar i data lagret. Efter att anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar `true` , ska metoden system [. Management. Automation. Provider. Containercmdletprovider. RemoveItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) anropa metoden [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) som ytterligare kontroll för potentiellt skadliga system ändringar.
 
-## <a name="attaching-dynamic-parameters-to-the-remove-item-cmdlet"></a>Bifoga dynamiska parametrar till cmdleten Remove-Item
+## <a name="attaching-dynamic-parameters-to-the-remove-item-cmdlet"></a>Bifoga dynamiska parametrar till Remove-Item-cmdleten
 
 Ibland `Remove-Item` kräver cmdleten ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar måste container leverantören implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Removeitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters) för att hantera dessa parametrar. Den här metoden hämtar dynamiska parametrar för objektet på den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna i `Remove-Item` cmdleten.
 
@@ -352,7 +354,7 @@ Följande villkor kan gälla för din implementering av [system. Management. Aut
 
 - Din implementering av metoden [system. Management. Automation. Provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) ska anropa [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) och kontrol lera dess retur värde innan du gör några ändringar i data lagret. Efter anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar true, metoden system. Management. Automation. Provider [. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) ska anropa metoden [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) som en ytterligare kontroll för potentiellt skadliga system ändringar. Mer information om hur du anropar dessa metoder finns i avsnittet [byta namn på objekt](#renaming-items).
 
-## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>Koppla dynamiska parametrar till cmdleten Copy-Item
+## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>Bifoga dynamiska parametrar till Copy-Item-cmdleten
 
 Ibland `Copy-Item` kräver cmdleten ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar måste Windows PowerShell container Provider implementera metoden [system. Management. Automation. Provider. Containercmdletprovider. Copyitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) för att hantera dessa parametrar. Den här metoden hämtar parametrarna för objektet vid den angivna sökvägen och returnerar ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt. Windows PowerShell-körningsmiljön använder det returnerade objektet för att lägga till parametrarna i `Copy-Item` cmdleten.
 

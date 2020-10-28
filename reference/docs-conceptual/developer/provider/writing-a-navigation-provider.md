@@ -1,12 +1,14 @@
 ---
-title: Skriver en navigerings leverantör | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2fd27314a2b8547a15dd1bb72aa8f970d40b18cc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skriva en navigeringsprovider
+description: Skriva en navigeringsprovider
+ms.openlocfilehash: d9e2bcb02d8f2a396db453d7102ff356570d7bfc
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786789"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647341"
 ---
 # <a name="writing-a-navigation-provider"></a>Skriva en navigeringsprovider
 

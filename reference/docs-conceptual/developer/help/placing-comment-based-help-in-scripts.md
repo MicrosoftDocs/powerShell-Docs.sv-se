@@ -1,18 +1,20 @@
 ---
-title: Lägga till kommentarsbaserat hjälp i skript
 ms.date: 09/12/2016
-ms.openlocfilehash: a3ade6c3138826b924939056b9d1ffb233006d44
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Lägga till kommentarsbaserat hjälp i skript
+description: Lägga till kommentarsbaserat hjälp i skript
+ms.openlocfilehash: b0d32b7ab063269085899a643b0c3a17da2073fc
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893194"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645433"
 ---
 # <a name="placing-comment-based-help-in-scripts"></a>Lägga till kommentarsbaserat hjälp i skript
 
 I det här avsnittet beskrivs var du kan placera den kommenterade hjälpen för ett skript så att `Get-Help` cmdleten associerar det kommenterade hjälp avsnittet med skript och inte med funktioner som kan finnas i skriptet.
 
-## <a name="where-to-place-comment-based-help-for-a-script"></a>Var du vill placera kommenterad hjälp för ett skript
+## <a name="where-to-place-comment-based-help-for-a-script"></a>Plats Comment-Based hjälp för ett skript
 
 - I början av skript filen.
 

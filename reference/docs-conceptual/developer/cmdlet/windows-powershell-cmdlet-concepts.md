@@ -1,12 +1,14 @@
 ---
-title: Begrepp för Windows PowerShell-cmdlet | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 8c5462bbebd1be536b83854ca260592b841035fe
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Begrepp relaterade till Windows PowerShell-cmdlets
+description: Begrepp relaterade till Windows PowerShell-cmdlets
+ms.openlocfilehash: da34d3d229f6d57ee22d84fc024b31eb2ee27ba3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787758"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652525"
 ---
 # <a name="windows-powershell-cmdlet-concepts"></a>Begrepp relaterade till Windows PowerShell-cmdlets
 

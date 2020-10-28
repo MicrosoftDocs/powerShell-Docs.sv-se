@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, konfiguration, installation
 title: Använda DSC på Nano Server
-ms.openlocfilehash: fb826455c21833ae4c8dc2ecd731ffce6bf7eaba
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: DSC är ett valfritt paket som kan installeras när du skapar en virtuell hård disk för en Windows Nano-Server.
+ms.openlocfilehash: 18585323359abd85515d4db194dae4adbad7c3d8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941882"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647071"
 ---
 # <a name="using-dsc-on-nano-server"></a>Använda DSC på Nano Server
 
@@ -44,7 +45,7 @@ Både push-och pull-lägen
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
 - [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
 - [Invoke-Dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource)
-- [Find-Dscresource Keyword Supports](/powershell/module/powershellget/find-dscresource?view=powershell-6)
+- [Find-Dscresource Keyword Supports](/powershell/module/powershellget/find-dscresource)
 - [Get-Dscresource Keyword Supports](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)
 - [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
 
@@ -80,34 +81,38 @@ Både push-och pull-lägen
 
 - Resurser som är helt funktionella
 
-- **Arkiv**
-- **Miljö**
-- **Fil**
-- **Kvorumloggen**
-- **ProcessSet**
-- **Registernyckeln**
-- **Över**
-- **WindowsPackageCab**
-- **WindowsProcess**
-- **WaitForAll** (se [ange beroenden mellan noder](../configurations/crossNodeDependencies.md))
-- **WaitForAny** (se [ange beroenden mellan noder](../configurations/crossNodeDependencies.md))
-- **WaitForSome** (se [ange beroenden mellan noder](../configurations/crossNodeDependencies.md))
+  - **Arkiv**
+  - **Miljö**
+  - **Fil**
+  - **Kvorumloggen**
+  - **ProcessSet**
+  - **Register**
+  - **Över**
+  - **WindowsPackageCab**
+  - **WindowsProcess**
+  - **WaitForAll** (se [ange beroenden mellan noder](../configurations/crossNodeDependencies.md))
+  - **WaitForAny** (se [ange beroenden mellan noder](../configurations/crossNodeDependencies.md))
+  - **WaitForSome** (se [ange beroenden mellan noder](../configurations/crossNodeDependencies.md))
 
 - Resurser som är delvis funktionella
-- **Grupp**
-- **GroupSet**
 
-  **Problem:** Över resurser fungerar inte om en speciell instans anropas två gånger (kör samma konfiguration två gånger)
+  - **Grupper**
+  - **GroupSet**
 
-- **Tjänst**
-- **ServiceSet**
+    **Problem:** Över resurser fungerar inte om en speciell instans anropas två gånger (kör samma konfiguration två gånger)
 
-  **Problem:** Fungerar bara för att starta/stoppa tjänsten (status). Miss lyckas, om ett försök att ändra andra tjänsteattribut som startuptype tjänst, autentiseringsuppgifter, beskrivning osv. Det fel som har utlösts liknar:
+  - **Tjänst**
+  - **ServiceSet**
 
-  *Det går inte att hitta typen [Management. managementobject]: kontrol lera att sammansättningen som innehåller den här typen har lästs in.*
+    **Problem:** Fungerar bara för att starta/stoppa tjänsten (status). Miss lyckas, om ett försök att ändra andra tjänsteattribut som startuptype tjänst, autentiseringsuppgifter, beskrivning osv. Det fel som har utlösts liknar:
+
+    ```
+    Cannot find type [management.managementobject]: verify that the assembly containing this type is loaded.
+    ```
 
 - Resurser som inte fungerar
-- **Användare**
+
+  - **Användare**
 
 ## <a name="dsc-features-not-available-on-nano-server"></a>DSC-funktioner är inte tillgängliga på Nano Server
 

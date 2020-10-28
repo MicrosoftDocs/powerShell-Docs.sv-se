@@ -1,12 +1,14 @@
 ---
-title: Stöd för onlinehjälp
 ms.date: 09/13/2016
-ms.openlocfilehash: b2d8eae2137e0e564a9baf271962b8669dd5eac5
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Stöd för onlinehjälp
+description: Stöd för onlinehjälp
+ms.openlocfilehash: 0164b5e6c6c8d66a6ab2467a8adfb7efffe0fe17
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86892871"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645424"
 ---
 # <a name="supporting-online-help"></a>Stöd för onlinehjälp
 
@@ -18,7 +20,7 @@ Direkt hjälpen har alltid varit en viktig del av PowerShell. Även om `Get-Help
 
 Med ankomsten för uppdaterings bar hjälp i PowerShell 3,0 spelar onlinehjälpen fortfarande en viktig roll. Förutom den flexibla användar upplevelsen ger online-hjälpen hjälp till användare som inte kan använda uppdaterings bara hjälp för att hämta hjälp ämnen.
 
-## <a name="how-get-help--online-works"></a>Hur Get-Help – Online fungerar
+## <a name="how-get-help--online-works"></a>Så här fungerar Get-Help – online
 
 För att hjälpa användarna att hitta Onlines hjälp avsnitt för kommandon, `Get-Help` har kommandot en online-version som öppnar online-versionen av hjälp avsnittet för ett kommando i användarens standard webbläsare.
 

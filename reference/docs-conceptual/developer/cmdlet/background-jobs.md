@@ -1,20 +1,22 @@
 ---
-title: Bakgrunds jobb | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2a1297b8dfe087474564078cca2a5a0526ed0f36
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Bakgrundsjobb
+description: Bakgrundsjobb
+ms.openlocfilehash: 5478789a2ee1f2eabc71a46673e3a707643cdba8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774855"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648616"
 ---
 # <a name="background-jobs"></a>Bakgrundsjobb
 
-Cmdlets kan utföra sina åtgärder internt eller som ett*bakgrunds jobb*i Windows PowerShell. När en cmdlet körs som ett bakgrunds jobb utförs arbetet asynkront i sin egen tråd separat från pipeline-tråden som cmdleten använder. När en cmdlet körs som ett bakgrunds jobb i användar perspektivet returnerar kommando tolken omedelbart även om jobbet tar en längre tid att slutföra, och användaren kan fortsätta utan avbrott medan jobbet körs.
+Cmdlets kan utföra sina åtgärder internt eller som ett *bakgrunds jobb* i Windows PowerShell. När en cmdlet körs som ett bakgrunds jobb utförs arbetet asynkront i sin egen tråd separat från pipeline-tråden som cmdleten använder. När en cmdlet körs som ett bakgrunds jobb i användar perspektivet returnerar kommando tolken omedelbart även om jobbet tar en längre tid att slutföra, och användaren kan fortsätta utan avbrott medan jobbet körs.
 
 ## <a name="background-jobs-child-jobs-and-the-job-repository"></a>Bakgrunds jobb, underordnade jobb och jobb databasen
 
-Jobbobjektet som returneras av de cmdletar som har stöd för bakgrunds jobb definierar jobbet. (Cmdleten [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) returnerar också ett Job-objekt.) Namnet på jobbet, en identifierare som används för att ange jobbet, tillståndsinformation och de underordnade jobben ingår i den här definitionen. Jobbet utför inget arbete. Varje bakgrunds jobb har minst ett underordnat jobb eftersom det underordnade jobbet utför det faktiska arbetet. När du kör en cmdlet så att arbetet utförs som ett bakgrunds jobb måste cmdleten lägga till jobbet och de underordnade jobben till en gemensam lagrings plats, som kallas *jobbets lagrings plats*.
+Jobbobjektet som returneras av de cmdletar som har stöd för bakgrunds jobb definierar jobbet. (Cmdleten [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) returnerar också ett Job-objekt.) Namnet på jobbet, en identifierare som används för att ange jobbet, tillståndsinformation och de underordnade jobben ingår i den här definitionen. Jobbet utför inget arbete. Varje bakgrunds jobb har minst ett underordnat jobb eftersom det underordnade jobbet utför det faktiska arbetet. När du kör en cmdlet så att arbetet utförs som ett bakgrunds jobb måste cmdleten lägga till jobbet och de underordnade jobben till en gemensam lagrings plats, som kallas *jobbets lagrings plats* .
 
 Mer information om hur bakgrunds jobb hanteras på kommando raden finns i följande avsnitt:
 
@@ -40,7 +42,7 @@ Om du vill skriva en-cmdlet som kan köras som ett bakgrunds jobb måste du utf�
 
 Ett kod exempel finns i [så här stöder du jobb](./how-to-support-jobs.md).
 
-## <a name="background-job-related-apis"></a>API: er för bakgrunds jobb
+## <a name="background-job-related-apis"></a>API: er för bakgrunds Job-Related
 
 Följande API: er tillhandahålls av Windows PowerShell för att hantera bakgrunds jobb.
 

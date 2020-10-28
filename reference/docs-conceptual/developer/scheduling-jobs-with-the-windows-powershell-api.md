@@ -1,12 +1,14 @@
 ---
-title: Schemalägga jobb med Windows PowerShell API
 ms.date: 09/13/2016
-ms.openlocfilehash: 19962d3140b6e20164c378e63a317b888120e13b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Schemalägga jobb med Windows PowerShell API
+description: Schemalägga jobb med Windows PowerShell API
+ms.openlocfilehash: c42b3ea311a5db4dcb6e11bb587f01f3deefe49b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786738"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647133"
 ---
 # <a name="scheduling-jobs-with-the-windows-powershell-api"></a>Schemalägga jobb med Windows PowerShell API
 
@@ -32,7 +34,7 @@ Du definierar ett Windows PowerShell-jobb genom att skapa en parameter ord lista
 
 |Parameternamn|Beskrivning|
 |---|---|
-|Name|Namnet på jobbet.|
+|Namn|Namnet på jobbet.|
 |ScriptBock|Ett Windows PowerShell-skript block som anger vad jobbet gör.|
 |FilePath|En sökväg till en fil som innehåller skript block för Windows PowerShell som anger vad jobbet gör.|
 |InitializationScript|Ett Windows PowerShell-skript block som initierar jobbet.|

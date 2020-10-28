@@ -1,12 +1,14 @@
 ---
-title: Självstudier för att skriva cmdlets | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 991cceef2b1d18c0cdaad4f092c4affb5c632b0e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Självstudier för att skriva cmdlets
+description: Självstudier för att skriva cmdlets
+ms.openlocfilehash: 7ec20b845f8547d346c3777bd52984337d37b83a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784018"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646374"
 ---
 # <a name="tutorials-for-writing-cmdlets"></a>Självstudier för att skriva cmdlets
 

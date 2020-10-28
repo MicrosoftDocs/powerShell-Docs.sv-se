@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, konfiguration, installation
+ms.topic: reference
 title: DSC-Arkiv resurs
-ms.openlocfilehash: cbe32012c2035fb3e145bd06fadd73cdba93fd3e
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC-Arkiv resurs
+ms.openlocfilehash: 1116ed068fab09b61daaeb7cdeba7bdbd27da6d8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463796"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648687"
 ---
 # <a name="dsc-archive-resource"></a>DSC-Arkiv resurs
 
@@ -38,17 +39,17 @@ Archive [string] #ResourceName
 |---|---|
 | Mål | Anger den plats där du vill se till att Arkiv innehållet extraheras. |
 | Sökväg | Anger Arkiv filens käll Sök väg. |
-| Kontrollsumma | Definierar den typ som ska användas för att avgöra om två filer är identiska. Om ingen **kontroll Summa** anges används bara fil-eller katalog namnet för jämförelse. Giltiga värden är: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. Om du anger **kontroll Summa** utan att validera, kommer konfigurationen att Miss **förklaras**. |
+| Kontrollsumma | Definierar den typ som ska användas för att avgöra om två filer är identiska. Om ingen **kontroll Summa** anges används bara fil-eller katalog namnet för jämförelse. Giltiga värden är: **SHA-1** , **SHA-256** , **SHA-512** , **createdDate** , **modifiedDate** . Om du anger **kontroll Summa** utan att validera, kommer konfigurationen att Miss **förklaras** . |
 | Autentiseringsuppgift | Autentiseringsuppgifterna för ett användar konto med behörighet att komma åt den angivna Arkiv Sök vägen och målet vid behov. |
-| Force | Vissa fil åtgärder (till exempel att skriva över en fil eller ta bort en katalog som inte är tom) resulterar i ett fel. Om du använder **Force** -egenskapen åsidosätts sådana fel. Standardvärdet är **false**. |
-| Verifiera| Använder egenskapen **kontroll Summa** för att avgöra om arkivet matchar signaturen. Om du anger **kontroll Summa** utan att validera, kommer konfigurationen att Miss **förklaras**. Om du anger **Verifiera** utan **kontroll Summa**används en _SHA-256-_ **kontrollsumma** som standard. |
+| Force | Vissa fil åtgärder (till exempel att skriva över en fil eller ta bort en katalog som inte är tom) resulterar i ett fel. Om du använder **Force** -egenskapen åsidosätts sådana fel. Standardvärdet är **false** . |
+| Verifiera| Använder egenskapen **kontroll Summa** för att avgöra om arkivet matchar signaturen. Om du anger **kontroll Summa** utan att validera, kommer konfigurationen att Miss **förklaras** . Om du anger **Verifiera** utan **kontroll Summa** används en _SHA-256-_ **kontrollsumma** som standard. |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
 
 |Egenskap |Beskrivning |
 |---|---|
 |DependsOn |Anger att konfigurationen av en annan resurs måste köras innan den här resursen har kon figurer ATS. Exempel: om ID: t för skript blocket för resurs konfigurationen som du vill köra först är ResourceName och dess typ är ResourceType, är syntaxen för att använda den här egenskapen `DependsOn = "[ResourceType]ResourceName"` . |
-|Kontrol |Avgör om du ska kontrol lera om arkivets innehåll finns vid **målet**. Ange att den här egenskapen **finns för att** se till att innehållet finns. Ange det som **frånvarande** för att se till att de inte finns. Standardvärdet finns **.** |
+|Kontrol |Avgör om du ska kontrol lera om arkivets innehåll finns vid **målet** . Ange att den här egenskapen **finns för att** se till att innehållet finns. Ange det som **frånvarande** för att se till att de inte finns. Standardvärdet finns **.** |
 |PsDscRunAsCredential |Anger autentiseringsuppgifter för att köra hela resursen som. |
 
 > [!NOTE]

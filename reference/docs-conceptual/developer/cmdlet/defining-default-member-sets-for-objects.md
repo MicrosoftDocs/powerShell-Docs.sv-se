@@ -1,12 +1,14 @@
 ---
-title: Definiera standard medlems uppsättningar för objekt | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 80e1f54890d3aac1702414699ead16fcf38271e1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Definiera standardmedlemsuppsättningar för objekt
+description: Definiera standardmedlemsuppsättningar för objekt
+ms.openlocfilehash: 919f7ba65322c6a56a27e046fb211bde151abf7d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774634"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653126"
 ---
 # <a name="defining-default-member-sets-for-objects"></a>Definiera standardmedlemsuppsättningar för objekt
 

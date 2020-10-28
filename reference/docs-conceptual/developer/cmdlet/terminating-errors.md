@@ -1,12 +1,14 @@
 ---
-title: Avsluta fel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 272e6cdd9a1da3cfd2e4f730f6aeb27577948278
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Fel som avbryter körningen
+description: Fel som avbryter körningen
+ms.openlocfilehash: b7c9b949a654f10a0421ea69dfe955c8dfb5627e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786398"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652551"
 ---
 # <a name="terminating-errors"></a>Fel som avbryter körningen
 

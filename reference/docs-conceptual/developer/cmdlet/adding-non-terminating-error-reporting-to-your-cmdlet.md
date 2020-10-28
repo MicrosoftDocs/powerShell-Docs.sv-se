@@ -1,12 +1,14 @@
 ---
-title: Lägga till icke-avslutande fel rapportering till din cmdlet | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6421d510f3701c12807568ad8786459123e80223
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Lägga till rapportering av fel som avbryter körningen i en cmdlet
+description: Lägga till rapportering av fel som avbryter körningen i en cmdlet
+ms.openlocfilehash: 883ff2d522266495e409fb0d45f29713baa6f047
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784596"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648666"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Lägga till rapportering av fel som avbryter körningen i en cmdlet
 
@@ -35,9 +37,9 @@ Public Class GetProcCommand
 
 ## <a name="defining-parameters"></a>Definiera parametrar
 
-Vid behov måste cmdleten definiera parametrar för att bearbeta indata. Den här cmdleten Get-proc definierar en **namn** parameter enligt beskrivningen i [lägga till parametrar som bearbetar kommando rads indatatyper](adding-parameters-that-process-command-line-input.md).
+Vid behov måste cmdleten definiera parametrar för att bearbeta indata. Den här Get-Proc cmdleten definierar en **namn** parameter som beskrivs i [lägga till parametrar som bearbetar Command-Line inmatade](adding-parameters-that-process-command-line-input.md).
 
-Här är parameter deklarationen för **namn** parametern för Get-proc-cmdleten.
+Här är parameter deklarationen för **namn** parametern för denna Get-Proc-cmdlet.
 
 ```csharp
 [Parameter(
@@ -76,7 +78,7 @@ Alla cmdletar måste åsidosätta minst en av de metoder för bearbetning av ind
 > [!NOTE]
 > Din cmdlet ska hantera varje post så oberoende som möjligt.
 
-Den här cmdleten Get-proc åsidosätter metoden [system. Management. Automation. cmdlet. ProcessRecord][] för att hantera **namn** parametern för indata som tillhandahålls av användaren eller ett skript. Med den här metoden hämtas processerna för varje begärt process namn eller alla processer om inget namn anges. Information om den här åsidosättningen anges i [skapa din första cmdlet](creating-a-cmdlet-without-parameters.md).
+Den här Get-Proc cmdleten åsidosätter metoden [system. Management. Automation. cmdlet. ProcessRecord][] för att hantera **namn** parametern för indata från användaren eller ett skript. Med den här metoden hämtas processerna för varje begärt process namn eller alla processer om inget namn anges. Information om den här åsidosättningen anges i [skapa din första cmdlet](creating-a-cmdlet-without-parameters.md).
 
 ### <a name="things-to-remember-when-reporting-errors"></a>Saker att komma ihåg när du rapporterar fel
 
@@ -110,7 +112,7 @@ Ohanterade undantag fångas inte av PowerShell i följande fall:
 
 Någon av metoderna för bearbetning av indata kan rapportera ett fel som inte kan avslutas till utdataströmmen med hjälp av metoden [system. Management. Automation. cmdlet. WriteError][] .
 
-Här är ett kod exempel från den här cmdleten Get-proc som illustrerar anropet till [system. Management. Automation. cmdlet. WriteError][] inifrån åsidosättningen av metoden [system. Management. Automation. cmdlet. ProcessRecord][] . I det här fallet görs anropet om cmdleten inte kan hitta någon process för en angiven process-ID.
+Här är ett kod exempel från den här Get-Proc cmdleten som illustrerar anropet till [system. Management. Automation. cmdlet. WriteError][] inifrån åsidosättningen av metoden [system. Management. Automation. cmdlet. ProcessRecord][] . I det här fallet görs anropet om cmdleten inte kan hitta någon process för en angiven process-ID.
 
 ```csharp
 protected override void ProcessRecord()
@@ -172,9 +174,9 @@ När du har implementerat en cmdlet måste du registrera den med Windows PowerSh
 
 ## <a name="testing-the-cmdlet"></a>Testa cmdleten
 
-När din cmdlet har registrerats med PowerShell kan du testa den genom att köra den på kommando raden. Nu ska vi testa cmdleten Get-PROC för att se om den rapporterar ett fel:
+När din cmdlet har registrerats med PowerShell kan du testa den genom att köra den på kommando raden. Nu ska vi testa exemplet Get-Proc cmdlet för att se om det rapporterar ett fel:
 
-- Starta PowerShell och Använd cmdleten Get-PROC för att hämta processerna med namnet "TEST".
+- Starta PowerShell och Använd Get-Proc cmdlet för att hämta processerna med namnet "TEST".
 
   ```powershell
   get-proc -name test
@@ -192,7 +194,7 @@ När din cmdlet har registrerats med PowerShell kan du testa den genom att köra
 
 [Lägga till parametrar som bearbetar pipelineindata](./adding-parameters-that-process-pipeline-input.md)
 
-[Lägga till parametrar som bearbetar kommando rads indatatyper](./adding-parameters-that-process-command-line-input.md)
+[Lägga till parametrar som bearbetar Command-Line-Indatatyp](./adding-parameters-that-process-command-line-input.md)
 
 [Skapa din första cmdlet](./creating-a-cmdlet-without-parameters.md)
 

@@ -1,12 +1,14 @@
 ---
-title: Översikt över Windows PowerShell-Provider | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c248f1c337e96a1b83cbeb5fb486147504777eb1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Översikt över Windows PowerShell-providers
+description: Översikt över Windows PowerShell-providers
+ms.openlocfilehash: 9877647f936d36b2f195d5d9178f882e79258639
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778233"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647355"
 ---
 # <a name="windows-powershell-provider-overview"></a>Översikt över Windows PowerShell-providers
 

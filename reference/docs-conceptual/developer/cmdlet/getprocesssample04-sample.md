@@ -1,12 +1,14 @@
 ---
-title: GetProcessSample04-exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4858c44302f7315625be02dd0dc1d335b9c3f158
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProcessSample04 – exempel
+description: GetProcessSample04 – exempel
+ms.openlocfilehash: 4b2b7f7ed5fd87711d0d7872caaf75d453de4832
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774430"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652726"
 ---
 # <a name="getprocesssample04-sample"></a>GetProcessSample04 – exempel
 
@@ -18,7 +20,7 @@ Det här exemplet visar hur du implementerar en cmdlet som hämtar processerna p
 
 2. Dubbelklicka på ikonen för lösnings filen (. SLN). Exempel projektet öppnas i Visual Studio.
 
-3. I menyn **build** väljer du **build-lösning**.
+3. I menyn **build** väljer du **build-lösning** .
 
     Biblioteket för exemplet skapas i standardmappen \Bin eller \Bin\Debug.
 

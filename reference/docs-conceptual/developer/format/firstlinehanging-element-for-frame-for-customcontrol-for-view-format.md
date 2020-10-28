@@ -1,12 +1,14 @@
 ---
-title: FirstLineHanging-element för Frame för CustomControl för vy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: fa428c1fbe4cd8070e40cf0bc732eb335489ba4e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: FirstLineHanging-element för Frame för CustomControl för View (format)
+description: FirstLineHanging-element för Frame för CustomControl för View (format)
+ms.openlocfilehash: 8b9601b2afd7ab5523e339fb45119f5cf9f4a535
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773648"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648136"
 ---
 # <a name="firstlinehanging-element-for-frame-for-customcontrol-for-view-format"></a>FirstLineHanging-element för Frame för CustomControl för View (format)
 

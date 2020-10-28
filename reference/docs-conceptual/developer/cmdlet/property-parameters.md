@@ -1,12 +1,14 @@
 ---
-title: Egenskaps parametrar | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0ded22dcda2b4eb957834ec092466767a4121f0e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Egenskapsparametrar
+description: Egenskapsparametrar
+ms.openlocfilehash: eff51fcd395e5f9570193ea91684f9e70030bc7d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781842"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652600"
 ---
 # <a name="property-parameters"></a>Egenskapsparametrar
 
@@ -16,7 +18,7 @@ I följande tabell visas de rekommenderade namnen och egenskaperna för egenskap
 |---|---|
 |**Reparationer**<br>Datatyp: Int32|Implementera den här parametern så att användaren kan ange antalet objekt som ska bearbetas.|
 |**Beskrivning**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en beskrivning för en resurs.|
-|**Som**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange det referens objekt som informationen ska hämtas från.|
+|**Från**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange det referens objekt som informationen ska hämtas från.|
 |**Identitet**<br>Datatyp: resurs beroende|Implementera den här parametern så att användaren kan ange identifieraren för en resurs.|
 |**Indata**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange specifikationen för indatafilen.|
 |**Plats**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange resursens plats.|
@@ -28,7 +30,7 @@ I följande tabell visas de rekommenderade namnen och egenskaperna för egenskap
 |**Orsak**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange varför denna cmdlet anropas.|
 |**Verifiering**<br>Datatyp: SwitchParameter|Implementera den här parametern så att reguljära uttryck används när parametern anges. När den här parametern anges matchas inte jokertecken.|
 |**Hastighet**<br>Datatyp: Int32|Implementera den här parametern så att användaren kan ange överföringshastigheten. Användaren anger den här parametern till resursens hastighet.|
-|**Stat**<br>Datatyp: nyckelords mat ris|Implementera den här parametern så att användaren kan ange namn på tillstånd, t. ex. NEDPIL.|
+|**Låst**<br>Datatyp: nyckelords mat ris|Implementera den här parametern så att användaren kan ange namn på tillstånd, t. ex. NEDPIL.|
 |**Värde**<br>Datatyp: objekt|Implementera den här parametern så att användaren kan ange ett värde som ska användas för cmdleten.|
 |**Version**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange version för egenskapen.|
 

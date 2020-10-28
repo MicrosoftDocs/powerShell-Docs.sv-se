@@ -1,12 +1,14 @@
 ---
-title: Filer för anpassad formatering | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a9633e2ee18e1817459645b4a5950ea8a622850b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Anpassade formateringsfiler
+description: Anpassade formateringsfiler
+ms.openlocfilehash: 16e1c1046e25b35ff346585a5fd930c449c04bf8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784358"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653244"
 ---
 # <a name="custom-formatting-files"></a>Anpassade formateringsfiler
 
